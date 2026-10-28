@@ -165,7 +165,7 @@ details.metodos summary{cursor:pointer;font:15px/1.4 var(--sistema);color:var(--
 
   <section id="indicadores">
   <h2>Os indicadores</h2>
-  <p class="lead">Seis sinais com pesos publicados antes da primeira conta. Cada um é comparado a um valor neutro e tem efeito máximo limitado. A coluna de pontos é a parte de cada um na chance de 12 meses.</p>
+  <p class="lead">{{ ["Nenhum", "Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove"][n_ind] if n_ind < 10 else n_ind }} sinais com pesos publicados antes de entrarem na conta. Cada um é comparado a um valor neutro e tem efeito máximo limitado. A coluna de pontos é a parte de cada um na chance de 12 meses.</p>
   <div class="tabela"><table>
     <thead><tr><th>Indicador</th><th class="n">Valor</th><th>Referência</th><th class="n">Pontos</th></tr></thead>
     <tbody>
