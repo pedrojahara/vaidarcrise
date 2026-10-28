@@ -21,6 +21,7 @@ import model  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 EVENTOS = ROOT / "data" / "eventos.json"
+VISTAS = ROOT / "data" / "noticias_vistas.json"
 RUNS = ROOT / "runs"
 
 
@@ -55,9 +56,17 @@ def main() -> dict:
     ativos = [e for e in todos if model.efeito_evento(e, hoje, cfg) != 0]
     vals = model.contribuicoes_indicadores(model.valores_indicadores(snap), cfg)
 
+    # Cada manchete é classificada uma vez só: as janelas de coleta se sobrepõem entre rodadas,
+    # e reclassificar a mesma notícia daria leituras diferentes do mesmo fato.
+    vistas = _ler(VISTAS, {})
+    noticias["itens"] = [it for it in noticias["itens"] if it["url"] not in vistas]
     llm = {"ok": False, "saida": None, "meta": {"erro": "pulado (--sem-llm)"}}
     if not args.sem_llm:
         llm = classify_news.classificar(noticias, ativos, _contexto(vals))
+        if llm["ok"]:
+            vistas.update({it["url"]: hoje.isoformat() for it in noticias["itens"]})
+            limite = (hoje - dt.timedelta(days=10)).isoformat()
+            VISTAS.write_text(json.dumps({u: d for u, d in vistas.items() if d >= limite}, indent=0))
     print("LLM:", "ok" if llm["ok"] else f"falhou: {llm['meta'].get('erro')}", "| custo:", llm["meta"].get("custo_usd"))
 
     por_id = {it["id"]: it for it in noticias["itens"]}
