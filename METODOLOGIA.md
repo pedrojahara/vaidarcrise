@@ -103,7 +103,11 @@ Se o backtest não bater a taxa-base, o site vai dizer isso em público, e a not
 
 ## Onde erramos
 
-Nenhuma correção registrada até agora. Erros serão listados aqui com data, o que estava errado e o efeito na nota. Achou um? [Abra uma issue](https://github.com/pedrojahara/vaidarcrise/issues).
+Erros são listados aqui com data, o que estava errado e o efeito na nota.
+
+| Data | O que estava errado | Efeito na nota |
+| --- | --- | --- |
+| 28/10/2026 | A segunda atualização deu a quatro eventos novos os mesmos códigos de eventos antigos, o que embaralhou a explicação da variação. Os eventos foram renumerados e a decomposição refeita no mesmo dia. | Nenhum: a nota (77,9) não mudou, só a repartição dos pontos. | Achou um? [Abra uma issue](https://github.com/pedrojahara/vaidarcrise/issues).
 
 ## Fontes
 

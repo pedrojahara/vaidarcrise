@@ -63,7 +63,8 @@ def main() -> dict:
     por_id = {it["id"]: it for it in noticias["itens"]}
     novos, descartados = [], []
     if llm["ok"]:
-        seq = 1 + sum(1 for e in todos if e["data"] == hoje.isoformat())
+        prefixo = f"ev-{hoje:%Y%m%d}-"
+        seq = 1 + max((int(e["id"][len(prefixo):]) for e in todos if e["id"].startswith(prefixo)), default=0)
         for ev in llm["saida"]["eventos"]:
             fontes = [{k: por_id[i][k] for k in ("veiculo", "titulo", "url", "publicado_em")} for i in ev["noticia_ids"]]
             if ev["ja_nos_indicadores"]:
