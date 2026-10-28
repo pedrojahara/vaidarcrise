@@ -34,6 +34,19 @@
 .cen{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
 .legenda{font-size:13px;color:var(--tinta2);display:flex;gap:16px;flex-wrap:wrap;margin-top:6px}
 .legenda i{display:inline-block;width:18px;height:3px;vertical-align:middle;margin-right:6px}
+.pilha{display:grid;grid-template-columns:150px 1fr;gap:10px 14px;align-items:center;margin:4px 0 14px}
+.pilha .rot{font-size:14px;color:var(--tinta2);line-height:1.3}
+.barra{display:flex;gap:2px;height:36px;min-width:0}
+.seg{display:flex;align-items:center;justify-content:center;font:600 14px/1 "IBM Plex Sans",system-ui,sans-serif;color:#fff;white-space:nowrap;min-width:0}
+.seg:first-child{border-radius:4px 0 0 4px} .seg.fim{border-radius:0 4px 4px 0}
+.seg.h{background:var(--hist)} .seg.p{background:var(--quente)} .seg.h2{background:var(--hist2);color:var(--hist2-ink)}
+.seg.resto{background:transparent;color:var(--tinta2);justify-content:flex-start;padding-left:8px;font-weight:500}
+.pilha-leg{font-size:13px;color:var(--tinta2);display:flex;gap:6px 16px;flex-wrap:wrap}
+.pilha-leg i{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+:root{--hist:#2f6fa8;--hist2:#9dbfe0;--hist2-ink:#1d1a16}
+@media (prefers-color-scheme: dark){:root{--hist:#4f8fd0;--hist2:#2b5583;--hist2-ink:#efe8da}}
+details.metodos summary{cursor:pointer;font-size:15px;color:var(--tinta2);margin-top:12px}
+@media (max-width:640px){.pilha{grid-template-columns:1fr}.pilha .rot{margin-top:4px}}
 @media (max-width:640px){.cartoes{grid-template-columns:1fr 1fr}.cartoes .cartao:last-child{grid-column:span 2}.lados,.cen{grid-template-columns:1fr}nav a:first-child{display:none}}
 {% endblock %}
 {% block corpo %}
@@ -50,8 +63,8 @@
   {{ medidor|safe }}
   <div class="cartoes">
     <div class="cartao"><b>{{ curto|num(0) }}%</b><span>de chance de a recessão começar nos próximos 4 trimestres ({{ estrutura.inicios[0] }} a {{ estrutura.inicios[3] }})</span></div>
-    <div class="cartao"><b>{{ base|num(0) }}%</b><span>é o que a história brasileira dá sozinha, antes de qualquer dado ou notícia</span></div>
-    <div class="cartao"><b>{% if variacao %}{{ variacao.delta|sinal }}{% else %}novo{% endif %}</b><span>{% if variacao %}pontos desde a atualização anterior ({{ variacao.de|num }} → {{ variacao.para|num }}){% else %}primeira nota publicada; a variação aparece a partir da próxima atualização{% endif %}</span></div>
+    <div class="cartao"><b>{{ base|num(0) }}%</b><span>é o que a história brasileira dá sozinha, antes de qualquer dado ou notícia{% if faixa_base %} (de {{ faixa_base[0]|num(0) }} a {{ faixa_base[1]|num(0) }}, conforme o método){% endif %}</span></div>
+    <div class="cartao"><b>{% if variacao %}{{ variacao.delta|sinal }}{% else %}novo{% endif %}</b><span>{% if variacao %}pontos desde a atualização anterior ({{ variacao.de|num }} → {{ variacao.para|num }}){% if variacao.versao_anterior %}, incluindo a mudança para a metodologia v{{ cfg.versao }}{% endif %}{% else %}primeira nota publicada; a variação aparece a partir da próxima atualização{% endif %}</span></div>
   </div>
   <div class="meta">
     <span>Atualizado em <time datetime="{{ atualizado_iso }}">{{ atualizado }}</time> · modelo v{{ cfg.versao }}</span>
@@ -66,14 +79,26 @@
 {% if variacao %}
 <section id="mudou"><div class="w">
   <h2>O que mudou desde a última atualização</h2>
-  <p class="lead">De {{ variacao.de|num }} para {{ variacao.para|num }} ({{ variacao.delta|sinal }} pontos). Cada barra é a contribuição exata de um fator, calculada com valores de Shapley; elas somam a variação inteira.</p>
+  <p class="lead">De {{ variacao.de|num }} para {{ variacao.para|num }} ({{ variacao.delta|sinal }} pontos). Cada barra é a contribuição exata de um fator, calculada com valores de Shapley; elas somam a variação inteira.{% if variacao.versao_anterior %} Nesta atualização, a metodologia mudou de v{{ variacao.versao_anterior }} para v{{ cfg.versao }}: a barra "Nova metodologia" é a nota anterior refeita com a regra nova, e o motivo está na <a href="/metodologia/#versoes">metodologia</a>.{% endif %}</p>
   {% if variacao.svg %}{{ variacao.svg|safe }}{% else %}<p>Nada mudou nos insumos.</p>{% endif %}
 </div></section>
 {% endif %}
 
 <section id="por-que"><div class="w">
   <h2>Por que {{ nota_int }}</h2>
-  <p class="lead">A história brasileira sozinha dá {{ base|num(0) }}. Os indicadores econômicos somam {{ indicadores_pts|sinal }} pontos e as notícias, {{ noticias_pts|sinal }}{% if calendario_pts %}; os trimestres já divulgados, {{ calendario_pts|sinal }}{% endif %}. Indicadores e notícias só mexem no risco dos próximos trimestres; depois do 6º trimestre vale de novo a taxa histórica, e por isso a nota se move devagar.</p>
+  {% set hz = horizonte %}
+  <p class="lead">A nota tem dois pedaços. {{ hz.ate_fmt|capitalize }} ({{ hz.n }} trimestres), a chance de a recessão começar é de <strong>{{ hz.perto_pct|num(0) }}%</strong>; só pela história seria {{ hz.perto_base_pct|num(0) }}%. É aqui que os dados e as notícias de hoje pesam. Depois disso ninguém enxerga: vale a frequência histórica, que acrescenta {{ hz.seg_depois }} pontos.</p>
+  <div class="pilha-leg" aria-hidden="true"><span><i style="background:var(--hist)"></i>História, {{ hz.ate_fmt }}</span><span><i style="background:var(--quente)"></i>Dados e notícias de hoje</span><span><i style="background:var(--hist2)"></i>História, depois disso</span></div>
+  <div class="pilha">
+    <div class="rot">A nota de hoje</div>
+    <div class="barra" role="img" aria-label="{{ hz.seg_base }} pontos da história e {{ hz.seg_presente }} dos dados de hoje {{ hz.ate_fmt }}, mais {{ hz.seg_depois }} da história depois disso">
+      {% for v, c in [(hz.seg_base, 'h'), (hz.seg_presente, 'p'), (hz.seg_depois, 'h2')] %}{% if v > 0 %}<div class="seg {{ c }}{{ ' fim' if loop.last }}" style="flex:0 0 calc({{ v }}% - 2px)">{{ v if v >= 6 else '' }}</div>{% endif %}{% endfor %}
+      <div class="seg resto" style="flex:1 1 auto">= {{ nota_int }}</div>
+    </div>
+  </div>
+  <p class="peq">Por que o presente parece pesar pouco na nota até 2030: a pergunta é "pelo menos uma recessão até o fim de 2030". Uma recessão provável mais cedo toma o lugar de uma que viria depois, então a parte de depois encolhe quando a de perto cresce.</p>
+  <h3 style="margin-top:26px">Quanto cada fator acrescenta</h3>
+  <p class="peq">A história brasileira sozinha dá {{ base|num(0) }}. Os indicadores econômicos somam {{ indicadores_pts|sinal }} pontos e as notícias, {{ noticias_pts|sinal }}{% if calendario_pts %}; os trimestres já divulgados, {{ calendario_pts|sinal }}{% endif %}. Indicadores e notícias só mexem no risco dos próximos trimestres; depois do 6º trimestre vale de novo a taxa histórica, e por isso a nota se move devagar.</p>
   {{ cascata|safe }}
   <p class="peq">Barras vermelhas aumentam o risco; verdes reduzem. A conta é feita em log-odds e repartida em pontos com valores de Shapley. <a href="/metodologia/#a-conta">Como a conta funciona</a>.</p>
 </div></section>
@@ -143,17 +168,26 @@
 
 <section id="regua"><div class="w">
   <h2>A régua: quanto da nota é escolha</h2>
-  <p class="lead">A maior escolha do modelo é o período histórico de referência. Usamos um risco de {{ (cfg.taxa_base.risco_trimestral*100)|num }}% por trimestre, a média de 1995–2026 e 2004–2026. Quem discorda pode refazer a conta:</p>
+  <p class="lead">A maior escolha do modelo é o ponto de partida histórico. {% if metodos %}Usamos {{ h0|num }}% de chance por trimestre de uma recessão começar: a mediana de {{ metodos|length }} métodos que não escolhem o período a dedo, com faixa de {{ faixa_base[0]|num(0) }} a {{ faixa_base[1]|num(0) }} até 2030.{% else %}Usamos um risco de {{ h0|num }}% por trimestre.{% endif %} Quem discorda pode refazer a conta:</p>
   <div class="tabela"><table>
     <thead><tr><th>Período de referência</th><th class="n">Só a história</th><th class="n">Com dados e notícias de hoje</th></tr></thead>
     <tbody>
       {% set alt = alternativas %}
       <tr><td>{{ alt[0].nome }} <span class="peq">({{ alt[0].leitura }})</span></td><td class="n mono">{{ (alt[0].manchete_sem_ajustes*100)|num(0) }}%</td><td class="n mono">{{ (alt[0].manchete*100)|num(0) }}%</td></tr>
-      <tr><td><strong>Média usada pelo site</strong></td><td class="n mono"><strong>{{ base|num(0) }}%</strong></td><td class="n mono"><strong>{{ nota|num(0) }}%</strong></td></tr>
+      <tr><td><strong>{% if metodos %}Mediana dos métodos, usada pelo site{% else %}Usada pelo site{% endif %}</strong></td><td class="n mono"><strong>{{ base|num(0) }}%</strong></td><td class="n mono"><strong>{{ nota|num(0) }}%</strong></td></tr>
       <tr><td>{{ alt[1].nome }} <span class="peq">({{ alt[1].leitura }})</span></td><td class="n mono">{{ (alt[1].manchete_sem_ajustes*100)|num(0) }}%</td><td class="n mono">{{ (alt[1].manchete*100)|num(0) }}%</td></tr>
     </tbody>
   </table></div>
-  <p class="peq">Base: datação de recessões do CODACE/FGV IBRE. Detalhes na <a href="/metodologia/#taxa-base">metodologia</a>.</p>
+  {% if metodos %}
+  <details class="metodos"><summary>Os {{ metodos|length }} métodos da âncora</summary>
+  <div class="tabela"><table>
+    <thead><tr><th>Método</th><th class="n">Risco por trimestre</th><th class="n">Só a história, até 2030</th></tr></thead>
+    <tbody>{% for m in metodos %}<tr><td>{{ m.nome }}</td><td class="n mono">{{ m.h|num(2) }}%</td><td class="n mono">{{ m.base|num(0) }}%</td></tr>{% endfor %}</tbody>
+  </table></div>
+  </details>
+  {% endif %}
+  <p class="peq">De onde pode vir uma recessão: desde 1999, as cinco recessões vieram de choques globais (2008–09 e 2020), de crises domésticas de confiança fiscal e política (2003 e 2014–16) e de um choque de oferta somado à crise argentina (2001). Recessões globais aparecem uma vez a cada 10 a 14 anos e, desde 1980, todas coincidiram com recessão aqui. Só por esse canal, mesmo um Brasil impecável teria de 22% a 30% de chance até 2030.</p>
+  <p class="peq">Base: datação de recessões do CODACE/FGV IBRE e recessões técnicas de 8 emergentes parecidos. A conta está em <a href="{{ repo }}/blob/main/src/taxa_base.py">src/taxa_base.py</a>; detalhes na <a href="/metodologia/#taxa-base">metodologia</a>.</p>
 </div></section>
 
 <section id="historico"><div class="w">

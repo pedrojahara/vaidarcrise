@@ -1,6 +1,6 @@
-# Metodologia v1.0
+# Metodologia v1.1
 
-Pré-registrada em 28 de outubro de 2026, antes da primeira nota. Os parâmetros estão em [`config/modelo.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json), e cada atualização grava o hash desse arquivo. Mudança de regra ou de peso só acontece com nova versão e nota explicando o efeito.
+Pré-registrada em 28 de outubro de 2026, antes da primeira nota, e revisada na v1.1 (veja [Versões](#versoes)). Os parâmetros estão em [`config/modelo.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json), e cada atualização grava o hash desse arquivo. Mudança de regra ou de peso só acontece com nova versão e nota explicando o efeito.
 
 ## O que a nota mede
 
@@ -8,7 +8,7 @@ A nota é a probabilidade, de 0 a 100, de esta pergunta ter resposta "sim":
 
 > O PIB do Brasil terá dois trimestres seguidos de queda entre o 3º trimestre de 2026 e o 4º trimestre de 2030?
 
-- **Dado:** PIB trimestral dessazonalizado do IBGE ([tabela 5932](https://sidra.ibge.gov.br/tabela/5932), taxa contra o trimestre imediatamente anterior).
+- **Dado:** PIB trimestral dessazonalizado do IBGE ([tabela 5932](https://sidra.ibge.gov.br/tabela/5932), taxa contra o trimestre imediatamente anterior). Queda é a taxa divulgada, com uma casa decimal, abaixo de zero; 0,0% não conta.
 - **Quando se resolve:** na série vigente em março de 2031. O PIB é revisado; em 2021, uma recessão técnica anunciada sumiu na revisão seguinte.
 - **Auditoria:** se a datação do CODACE/FGV IBRE divergir da regra técnica, o site publica as duas leituras.
 
@@ -18,18 +18,47 @@ O nome do site fala em crise; a métrica é recessão técnica. "Vai dar crise?"
 
 ## Taxa-base
 
-Antes de olhar qualquer dado ou notícia, a história já diz muito. O CODACE datou 10 recessões desde 1980. Dividindo os inícios de recessão pelos trimestres em expansão:
+Antes de olhar qualquer dado ou notícia, a história já diz muito. O CODACE datou 10 recessões desde 1980. Dividindo os inícios de recessão pelos trimestres em expansão, o resultado depende de onde a conta começa:
 
 | Período de referência | Risco por trimestre | Até o 4T30 (17 inícios possíveis) |
 | --- | --- | --- |
 | 1980–2026 (10 recessões) | 7,5% | 73% |
 | 1995–2026, pós-Real (7) | 7,1% | 71% |
-| 2004–2026, metas de inflação maduras (3) | 4,0% | 50% |
-| 2004–2026 sem a pandemia (2) | 2,7% | 37% |
+| 2T99–2026, metas de inflação e câmbio flutuante (5) | 5,6% | 63% |
+| 2004–2026 (3) | 4,0% | 50% |
 
-O site usa **5,5% por trimestre**, a média das classes 1995–2026 e 2004–2026. Excluir a pandemia é tentador e errado: choques externos fazem parte do risco até 2030. Essa é a escolha que mais pesa na nota, e por isso a página inicial mostra a conta com as alternativas.
+Escolher uma linha dessa tabela é escolher a nota. Por isso, desde a v1.1, o site não escolhe: a âncora é a **mediana de nove métodos**, e cada um tem uma regra fixa para decidir quanto o passado pesa.
 
-Um início de recessão no trimestre *t* exige que *t* e *t+1* estejam na janela, então há 17 inícios possíveis (3T26 a 3T30). Com 5,5% por trimestre, a chance só pela história é 1 − 0,945¹⁷ ≈ 62%.
+| Método | Risco por trimestre | Até o 4T30 |
+| --- | --- | --- |
+| Desde 2T99: metas de inflação e câmbio flutuante | 5,62% | 63% |
+| Desde 1T00: com a Lei de Responsabilidade Fiscal | 5,81% | 64% |
+| 1980 em diante, peso cai à metade a cada 10 anos | 4,89% | 57% |
+| 1980 em diante, peso cai à metade a cada 15 anos | 5,68% | 63% |
+| 1980 em diante, peso cai à metade a cada 20 anos | 6,12% | 66% |
+| Média das janelas iniciadas entre 1T95 e 4T12 | 5,06% | 59% |
+| Quebra estrutural em data desconhecida (bayesiano) | 5,28% | 60% |
+| Brasil desde 2T99 + 8 emergentes, peso de 10 anos | 4,92% | 58% |
+| Brasil desde 2T99 + 8 emergentes, peso de 25 anos | 4,43% | 54% |
+| **Mediana, usada pelo site** | **5,3%** | **60%** |
+
+- **Janelas com data justificada:** 2T99 marca o fim do câmbio fixo, o canal das recessões de 1995 e 1998.
+- **Peso que decai:** todo trimestre desde 1980 conta, mas o peso cai à metade a cada 10, 15 ou 20 anos. Com meia-vida de 15 anos, o início da recessão de 2014–16 ainda pesa 57% e o do Plano Collor pesa 19%.
+- **Média de janelas:** em vez de uma data de início, a média de todas as que começam entre 1995 e 2012.
+- **Quebra em data desconhecida:** um modelo bayesiano compara "nada mudou" com "mudou em alguma data entre 1988 e 2022" e pondera as duas hipóteses pelos dados.
+- **Brasil e vizinhos:** o risco do Brasil desde 2T99 é puxado para a média de 8 emergentes parecidos (México, Chile, Colômbia, Peru, Argentina, África do Sul, Turquia e Rússia), de 3,4% por trimestre, com peso equivalente a 10 ou 25 anos de dados ([`data/emergentes.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/data/emergentes.json)).
+
+Os nove métodos vão de 54% a 66%, e a página inicial mostra essa faixa ao lado da nota. Qualquer pessoa refaz a conta com [`src/taxa_base.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/taxa_base.py) e a cronologia em [`data/cronologia.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/data/cronologia.json).
+
+**O que ficou de fora.**
+
+- **Tirar a pandemia:** daria 2,7% por trimestre desde 2004 (37% até 2030). Choques externos fazem parte do risco até 2030: das cinco recessões desde 1999, duas vieram de choques globais (2008 e 2020).
+- **Começar em 2004:** com só três recessões, o intervalo de 90% para o risco vai de 1,4% a 9,4% por trimestre, e a diferença para antes de 2004 não é estatisticamente significativa (p ≈ 0,09).
+- **Começar em 1980:** trataria hiperinflação e câmbio fixo como riscos de hoje.
+
+**Conferência com o IBGE.** A pergunta se resolve pela regra técnica do IBGE, mas a taxa-base usa a datação do CODACE. Em 28/10/2026, recontamos a série atual da tabela 5932 (2T96 a 2T26). Todo episódio de dois trimestres seguidos de queda cai dentro de uma recessão do CODACE, e nenhum fica de fora. 2021 não conta: na série revisada, a queda do 2T21 (−0,7%) ficou isolada. Quando quedas separadas por um único trimestre de alta contam como um episódio só (2014–16 teve três), os riscos coincidem com os do CODACE: 5,6% por trimestre desde 2T99 e 4,0% desde 2004. Contar cada recaída como recessão nova daria 7,7% desde 2T99, mas a nota pergunta pela primeira recessão, não pelas recaídas.
+
+Um início de recessão no trimestre *t* exige que *t* e *t+1* estejam na janela, então há 17 inícios possíveis (3T26 a 3T30). Com 5,3% por trimestre, a chance só pela história é 1 − 0,947¹⁷ ≈ 60%.
 
 ## A conta
 
@@ -40,12 +69,14 @@ logit(h_t) = logit(h0) + w_t × (I + N)
 P(recessão até 4T30) = 1 − Π (1 − h_t)
 ```
 
-- **h0** é a taxa-base de 5,5% por trimestre.
+- **h0** é a taxa-base de 5,3% por trimestre.
 - **I** é a soma das contribuições dos indicadores.
 - **N** é a soma das contribuições das notícias.
 - **w_t** é o peso no tempo: 1 nos quatro primeiros trimestres ainda não divulgados, 2/3 no quinto, 1/3 no sexto e zero daí em diante.
 
-Ninguém prevê recessão a quatro anos com dados de hoje: os melhores métodos acertam de 6 a 18 meses. Por isso indicadores e notícias mexem só no risco dos próximos trimestres, e a nota até 2030 se move devagar. A página também mostra a probabilidade dos próximos 4 trimestres, que é onde as notícias aparecem.
+Ninguém prevê recessão a quatro anos com dados de hoje: os melhores métodos acertam de 6 a 18 meses. Por isso indicadores e notícias mexem só no risco dos próximos trimestres, e a nota até 2030 se move devagar.
+
+**Nota por horizonte.** A página separa a nota em duas partes: a chance de recessão até o último trimestre em que dados e notícias ainda pesam (hoje, o fim de 2027) e o que 2028–2030 acrescenta. Com os dados de 28/10/2026, dados e notícias levam a primeira parte de 28% para 58%. A segunda parte cai de 33% para 19%, porque uma recessão até 2027 já resolve a pergunta e não pode ser contada de novo. Por isso o presente parece acrescentar só 16 pontos à nota até 2030, embora mais que dobre o risco até o fim de 2027.
 
 **Trimestres divulgados.** Quando o IBGE divulga um trimestre, ele sai da janela (efeito tempo). Se dois trimestres seguidos vierem negativos, a pergunta está resolvida e a nota vai a 100. Se o último trimestre divulgado vier negativo, a chance de o seguinte também cair parte de 50% (parâmetro por julgamento, a calibrar com a série do IBGE) e recebe o mesmo deslocamento de curto prazo.
 
@@ -97,7 +128,8 @@ Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta. Re
 - Backtest de 1996 a 2026 das camadas 1 e 2, com os dados como eram conhecidos na época. O LLM não entra no backtest, porque ele sabe o que aconteceu em 2015 e 2020.
 - Teste mensal de troca de nomes: reprocessar uma amostra de notícias trocando os atores e publicar se a classificação mudou.
 - Probit em painel com cerca de 20 emergentes para estimar os pesos com mais dados do que as 7 recessões brasileiras desde 1995.
-- Calibrar com a série do IBGE a chance de um trimestre negativo ser seguido de outro.
+- Calibrar a chance de um trimestre negativo ser seguido de outro. Na recontagem de 28/10/2026, isso aconteceu em 7 de 16 casos desde 1996 (44%); o parâmetro fica em 50% até o backtest.
+- Avaliar um multiplicador limitado para vulnerabilidades domésticas (fiscal, juros, crédito), com base nas causas das recessões passadas. Ele só entra se melhorar o backtest.
 
 Se o backtest não bater a taxa-base, o site vai dizer isso em público, e a nota passa a ser só taxa-base mais notícias explicadas.
 
@@ -107,7 +139,20 @@ Erros são listados aqui com data, o que estava errado e o efeito na nota.
 
 | Data | O que estava errado | Efeito na nota |
 | --- | --- | --- |
-| 28/10/2026 | A segunda atualização deu a quatro eventos novos os mesmos códigos de eventos antigos, o que embaralhou a explicação da variação. Os eventos foram renumerados e a decomposição refeita no mesmo dia. | Nenhum: a nota (77,9) não mudou, só a repartição dos pontos. | Achou um? [Abra uma issue](https://github.com/pedrojahara/vaidarcrise/issues).
+| 28/10/2026 | A segunda atualização deu a quatro eventos novos os mesmos códigos de eventos antigos, o que embaralhou a explicação da variação. Os eventos foram renumerados e a decomposição refeita no mesmo dia. | Nenhum: a nota (77,9) não mudou, só a repartição dos pontos. |
+
+Achou um? [Abra uma issue](https://github.com/pedrojahara/vaidarcrise/issues).
+
+## Versões
+
+Toda mudança de regra ou de peso ganha uma versão nova. Na atualização em que ela entra, o gráfico da variação mostra uma barra "Nova metodologia": a nota anterior refeita com a regra nova. Essa barra não conta para o disjuntor.
+
+| Versão | Decidida em | O que mudou | Efeito na nota |
+| --- | --- | --- | --- |
+| 1.0 | 28/10/2026 | Primeira versão. Taxa-base de 5,5% por trimestre, a média das janelas 1995–2026 e 2004–2026. | — |
+| 1.1 | 28/10/2026 | Taxa-base passa a ser a mediana de nove métodos (5,3%), com a faixa publicada. A página separa a nota por horizonte. | −1,2 ponto com os dados de 28/10 (77,9 → 76,7) |
+
+A v1.0 escolhia duas datas de início por julgamento, e cada data dava uma nota diferente. A v1.1 troca a escolha por uma regra que qualquer pessoa pode refazer.
 
 ## Fontes
 
@@ -117,3 +162,5 @@ Erros são listados aqui com data, o que estava errado e o efeito na nota.
 - An, Jalles e Loungani (2018), *How well do economists forecast recessions?*, FMI
 - Chinn e Ferrara (2024), curva de juros em emergentes, NBER w32084
 - Tetlock e Gardner (2015), *Superforecasting*, sobre classes de referência
+- Pesaran e Timmermann (2007), *Selection of estimation window in the presence of breaks*, Journal of Econometrics
+- Pesaran, Pettenuzzo e Timmermann (2006), *Forecasting time series subject to multiple structural breaks*, Review of Economic Studies

@@ -105,9 +105,13 @@ def main() -> dict:
     res = model.calcular(snap, todos, hoje, cfg)
     ant = ultima_rodada()
     variacao = None
-    if ant and ant.get("modelo", {}).get("versao") == cfg["versao"]:
+    if ant:
         variacao = model.decompor_variacao(ant["resultado"], res, ant["insumos"]["pib"], snap.get("pib", []), cfg)
-    em_revisao = bool(variacao and abs(variacao["para"] - variacao["de"]) > cfg["disjuntor_pontos"])
+        if ant.get("modelo", {}).get("versao") != cfg["versao"]:
+            variacao["versao_anterior"] = ant["modelo"]["versao"]
+    # O disjuntor olha só o que dados e notícias moveram; mudança de versão é revisada antes de publicar.
+    movimento = variacao["para"] - variacao["de"] - variacao["partes"].get("metodologia", 0.0) if variacao else 0.0
+    em_revisao = abs(movimento) > cfg["disjuntor_pontos"]
 
     rodada = {
         "id": agora.strftime("%Y-%m-%dT%H%M"), "gerado_em": agora.isoformat(timespec="seconds"),
