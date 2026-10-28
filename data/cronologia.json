@@ -1,0 +1,17 @@
+{
+ "descricao": "Recessões do Brasil usadas na taxa-base. Trimestres de início e fim, inclusive. Fonte: CODACE/FGV IBRE (datação oficial a partir de 1980). Conferida em 28/10/2026 contra a série atual do IBGE (tabela 5932, 2T96–2T26): todo episódio de dois trimestres seguidos de queda cai dentro destas recessões, e 2021 não forma episódio.",
+ "fonte": "https://portalibre.fgv.br/codace",
+ "observado_ate": "2T26",
+ "recessoes": [
+  {"inicio": "1T81", "fim": "1T83", "fonte": "CODACE", "gatilho": "Crise da dívida externa (choque de juros dos EUA)", "canal": "global"},
+  {"inicio": "3T87", "fim": "4T88", "fonte": "CODACE", "gatilho": "Fracasso do Cruzado, moratória", "canal": "inflação alta"},
+  {"inicio": "3T89", "fim": "1T92", "fonte": "CODACE", "gatilho": "Hiperinflação, Plano Collor", "canal": "inflação alta"},
+  {"inicio": "2T95", "fim": "3T95", "fonte": "CODACE", "gatilho": "Crise do México e aperto pós-Real", "canal": "câmbio fixo"},
+  {"inicio": "1T98", "fim": "1T99", "fonte": "CODACE", "gatilho": "Ásia e Rússia, juros para defender o câmbio", "canal": "câmbio fixo"},
+  {"inicio": "2T01", "fim": "4T01", "fonte": "CODACE", "gatilho": "Apagão, Argentina, 11 de setembro", "canal": "oferta e regional"},
+  {"inicio": "1T03", "fim": "2T03", "fonte": "CODACE", "gatilho": "Crise de confiança da eleição de 2002 e aperto", "canal": "doméstico"},
+  {"inicio": "4T08", "fim": "1T09", "fonte": "CODACE", "gatilho": "Crise financeira global", "canal": "global"},
+  {"inicio": "2T14", "fim": "4T16", "fonte": "CODACE", "gatilho": "Fim das commodities, crise fiscal, aperto, Lava Jato", "canal": "doméstico"},
+  {"inicio": "1T20", "fim": "2T20", "fonte": "CODACE", "gatilho": "Pandemia", "canal": "global"}
+ ]
+}

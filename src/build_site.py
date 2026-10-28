@@ -136,6 +136,8 @@ def rotulos(rodada: dict, eventos: dict) -> dict[str, str]:
     r.update({f"not:{k}": f"Notícia: {e['titulo_evento']}" for k, e in eventos.items()})
     r["not:outras"] = "Outras notícias"
     r["calendario"] = "Trimestres já divulgados"
+    v = rodada.get("variacao") or {}
+    r["metodologia"] = f"Nova metodologia (v{v.get('versao_anterior', '?')} → v{rodada['modelo']['versao']})"
     return r
 
 
@@ -154,6 +156,7 @@ def contexto(rodada: dict, todas: list[dict], eventos_lista: list[dict], casos: 
         vp = sorted(((rot.get(k, k), x) for k, x in v["partes"].items()), key=lambda x: -abs(x[1]))
         # A variação exibida é a diferença das notas como aparecem (1 casa), para a conta fechar na tela.
         variacao = {"de": v["de"], "para": v["para"], "delta": round(v["para"], 1) - round(v["de"], 1), "partes": vp,
+                    "versao_anterior": v.get("versao_anterior"),
                     "svg": svg_cascata(v["de"], v["para"], vp, "Nota anterior", "Nota de hoje") if vp else ""}
 
     hoje = dt.date.fromisoformat(rodada["gerado_em"][:10])
@@ -194,6 +197,20 @@ def contexto(rodada: dict, todas: list[dict], eventos_lista: list[dict], casos: 
                        + model.label(*model.prox(*model.tri(ate))), "status": "em aberto"})
 
     estr = res["estrutura"]
+    hz = res.get("por_horizonte") or model.por_horizonte(res, cfg)
+    # Pontos inteiros que fecham com a nota exibida: história perto + presente perto + depois.
+    p_base, p_perto, p_nota = round(100 * hz["perto_base"]), round(100 * hz["perto"]), int(round(nota))
+    horizonte = {**hz, "ate_fmt": _ate(hz["ate"]), "seg_base": p_base, "seg_presente": p_perto - p_base,
+                 "seg_depois": p_nota - p_perto, "perto_pct": 100 * hz["perto"], "perto_base_pct": 100 * hz["perto_base"]}
+    # Páginas de dias antigos mostram a régua da versão em que foram calculadas.
+    mesma_versao = rodada["modelo"]["versao"] == cfg["versao"]
+    estr_vazia = model.estrutura([], cfg)
+    metodos = [{"nome": m["nome"], "h": 100 * m["risco_trimestral"],
+                "base": 100 * model.prob(estr_vazia, 0.0, m["risco_trimestral"], cfg)}
+               for m in cfg["taxa_base"].get("metodos", [])] if mesma_versao else []
+    faixa = res.get("taxa_base_faixa")
+    if faixa is None and mesma_versao and cfg["taxa_base"].get("faixa"):
+        faixa = [model.prob(estr_vazia, 0.0, cfg["taxa_base"]["faixa"][k], cfg) for k in ("min", "max")]
     return {
         "site": SITE, "repo": REPO, "rodada": rodada, "cfg": cfg,
         "nota": nota, "nota_int": int(round(nota)), "nota_fmt": num(nota), "curto": 100 * res["curto_prazo_4t"],
@@ -209,7 +226,17 @@ def contexto(rodada: dict, todas: list[dict], eventos_lista: list[dict], casos: 
         "indicadores_pts": sum(sh.get(f"ind:{x['id']}", 0) for x in res["indicadores"]),
         "noticias_pts": sum(v for k, v in sh.items() if k.startswith("not:")),
         "calendario_pts": sh.get("calendario", 0.0),
+        "horizonte": horizonte, "metodos": metodos, "h0": 100 * res["h0"],
+        "faixa_base": [100 * x for x in faixa] if faixa else None,
     }
+
+
+def _ate(rotulo: str | None) -> str:
+    """'4T27' -> 'até o fim de 2027'; '2T27' -> 'até o 2º trimestre de 2027'."""
+    if not rotulo:
+        return ""
+    q, a = rotulo.split("T")
+    return f"até o fim de 20{a}" if q == "4" else f"até o {q}º trimestre de 20{a}"
 
 
 def dados_publicos(rodada: dict, ctx: dict) -> dict:
@@ -217,7 +244,13 @@ def dados_publicos(rodada: dict, ctx: dict) -> dict:
     return {
         "nota": round(ctx["nota"], 1), "probabilidade_recessao_ate_4T30": round(res["manchete"], 4),
         "probabilidade_proximos_4_trimestres": round(res["curto_prazo_4t"], 4),
-        "taxa_base": round(res["taxa_base_manchete"], 4), "atualizado_em": rodada["gerado_em"],
+        "taxa_base": round(res["taxa_base_manchete"], 4),
+        "taxa_base_faixa": [round(x / 100, 4) for x in ctx["faixa_base"]] if ctx["faixa_base"] else None,
+        "risco_trimestral_base": res["h0"],
+        "por_horizonte": {"ate": ctx["horizonte"]["ate"], "probabilidade": round(ctx["horizonte"]["perto"], 4),
+                          "so_historia": round(ctx["horizonte"]["perto_base"], 4),
+                          "depois_acrescenta": round(ctx["horizonte"]["depois"], 4)},
+        "atualizado_em": rodada["gerado_em"],
         "versao_modelo": rodada["modelo"]["versao"], "regra": ctx["cfg"]["regra_de_resolucao"],
         "decomposicao_pontos": {k: round(v, 2) for k, v in res["shapley_desde_base"].items()},
         "indicadores": [{k: x[k] for k in ("id", "nome", "valor", "unidade", "ref", "logit")} for x in res["indicadores"]],

@@ -1,14 +1,30 @@
 {
-  "versao": "1.0",
+  "versao": "1.1",
   "pre_registrado_em": "2026-10-28",
+  "versoes": [
+    {"versao": "1.0", "data": "2026-10-28", "mudanca": "Primeira versão."},
+    {"versao": "1.1", "data": "2026-10-28", "mudanca": "Taxa-base passa de 5,5% (média de 1995–2026 e 2004–2026) para a mediana de nove métodos que não escolhem o período a dedo (5,3%), com a faixa publicada. A página separa a nota por horizonte."}
+  ],
   "regra_de_resolucao": "Sim se o PIB trimestral dessazonalizado do IBGE (tabela 5932, taxa contra o trimestre imediatamente anterior) tiver dois trimestres seguidos de queda, ambos entre o 3º tri de 2026 e o 4º tri de 2030, na série vigente em março de 2031.",
   "janela": {"primeiro_trimestre": "3T26", "ultimo_trimestre": "4T30"},
   "taxa_base": {
-    "risco_trimestral": 0.055,
-    "descricao": "Média das classes de referência 1995–2026 (7,1% por trimestre) e 2004–2026 (4,0%), a partir da datação do CODACE/FGV IBRE.",
+    "risco_trimestral": 0.053,
+    "descricao": "Mediana de nove métodos que não escolhem o período a dedo (src/taxa_base.py), a partir da datação do CODACE/FGV IBRE e de 8 emergentes parecidos.",
+    "faixa": {"min": 0.0443, "max": 0.0612},
+    "metodos": [
+      {"nome": "Desde 2T99: metas de inflação e câmbio flutuante", "risco_trimestral": 0.0562},
+      {"nome": "Desde 1T00: com a Lei de Responsabilidade Fiscal", "risco_trimestral": 0.0581},
+      {"nome": "1980 em diante, peso cai à metade a cada 10 anos", "risco_trimestral": 0.0489},
+      {"nome": "1980 em diante, peso cai à metade a cada 15 anos", "risco_trimestral": 0.0568},
+      {"nome": "1980 em diante, peso cai à metade a cada 20 anos", "risco_trimestral": 0.0612},
+      {"nome": "Média das janelas iniciadas entre 1T95 e 4T12", "risco_trimestral": 0.0506},
+      {"nome": "Quebra estrutural em data desconhecida (bayesiano)", "risco_trimestral": 0.0528},
+      {"nome": "Brasil desde 2T99 + 8 emergentes, peso de 10 anos", "risco_trimestral": 0.0492},
+      {"nome": "Brasil desde 2T99 + 8 emergentes, peso de 25 anos", "risco_trimestral": 0.0443}
+    ],
     "alternativas": [
-      {"nome": "2004–2026 sem a pandemia", "risco_trimestral": 0.027, "leitura": "para quem acha que o Brasil mudou depois de 2004"},
-      {"nome": "1980–2026", "risco_trimestral": 0.075, "leitura": "para quem acha que não mudou"}
+      {"nome": "2004–2026", "risco_trimestral": 0.04, "leitura": "para quem acha que o Brasil mudou depois de 2004"},
+      {"nome": "1980–2026", "risco_trimestral": 0.0752, "leitura": "para quem acha que não mudou"}
     ]
   },
   "pesos_no_tempo": [1, 1, 1, 1, 0.6667, 0.3333],

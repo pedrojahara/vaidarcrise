@@ -7,7 +7,8 @@
 
 As camadas 2 e 3 valem por inteiro nos 4 primeiros trimestres ainda não
 divulgados e somem até o 7º; daí em diante só vale a taxa-base. A manchete é a
-chance de pelo menos um início de recessão dentro da janela.
+chance de pelo menos um início de recessão dentro da janela. A taxa-base vem de
+src/taxa_base.py e fica congelada em config/modelo.json a cada versão.
 """
 from __future__ import annotations
 
@@ -250,16 +251,36 @@ def calcular(snap: dict, eventos: list[dict], hoje: dt.date, cfg: dict) -> dict:
     sh = shapley(jog, f) if jog else {}
     sem = {x["id"]: 100 * prob(estr, desloc - x["logit"], h0, cfg) for x in nots}
 
-    return {
+    faixa = cfg["taxa_base"].get("faixa")
+    res = {
         "estrutura": estr, "h0": h0, "deslocamento_logit": desloc,
         "indicadores_logit": s_ind, "noticias_logit": s_not,
         "manchete": manchete, "curto_prazo_4t": curto, "taxa_base_manchete": base_pura,
         "taxa_base_4t": prob(estr_base, 0.0, h0, cfg, horizonte=4),
+        "taxa_base_faixa": [prob(estr_base, 0.0, faixa[k], cfg) for k in ("min", "max")] if faixa else None,
         "alternativas": alternativas,
         "risco_trimestral": [{"trimestre": t, "risco": h} for t, h in zip(estr["inicios"], caminho(estr, desloc, h0, cfg))],
         "indicadores": ind, "noticias": nots, "agrupados": sorted(agrupados),
         "shapley_desde_base": sh, "contrafactual_sem_evento": sem,
     }
+    res["por_horizonte"] = por_horizonte(res, cfg)
+    return res
+
+
+def por_horizonte(res: dict, cfg: dict) -> dict:
+    """A nota em dois pedaços que o leitor consegue conferir.
+
+    `perto` é a chance de a recessão começar nos trimestres em que dados e notícias pesam;
+    `depois` é o que o resto da janela acrescenta, só com a taxa-base. Como a pergunta é
+    "pelo menos uma recessão", uma recessão provável mais cedo toma o lugar de uma que
+    viria depois: por isso `depois` encolhe quando `perto` cresce.
+    """
+    estr, h0, desloc = res["estrutura"], res["h0"], res["deslocamento_logit"]
+    n = sum(1 for w in cfg["pesos_no_tempo"] if w > 0)
+    tris = estr["inicios"][:n]
+    perto = prob(estr, desloc, h0, cfg, horizonte=n)
+    return {"ate": tris[-1] if tris else None, "n": len(tris), "perto": perto,
+            "perto_base": prob(estr, 0.0, h0, cfg, horizonte=n), "depois": res["manchete"] - perto}
 
 
 def cenarios_pib(snap: dict, res: dict, cfg: dict) -> list[dict]:
@@ -299,4 +320,9 @@ def decompor_variacao(ant: dict, atual: dict, snap_ant_pib: list, snap_pib: list
         return 100 * prob(e, base_old + sum(delta[k] for k in s if k != "calendario"), h0, cfg)
 
     sh = shapley(jog, f) if jog else {}
+    # Numa troca de versão, a taxa-base muda: a parte "metodologia" é a nota antiga refeita com a
+    # regra nova, menos a nota antiga. O resto da variação é dado e notícia, já na regra nova.
+    metodologia = f(frozenset()) - 100 * ant["manchete"]
+    if abs(metodologia) > 1e-9:
+        sh["metodologia"] = metodologia
     return {"de": 100 * ant["manchete"], "para": 100 * atual["manchete"], "partes": sh, "agrupados": sorted(agrupados)}
