@@ -1,0 +1,18 @@
+{
+  "descricao": "Datas da lateral 'Datas importantes'. As decisões de juros não têm API: a lista vem dos calendários publicados pelo Banco Central (Copom) e pelo Fed (FOMC) e precisa ser atualizada quando sair o calendário do ano seguinte. As datas do IBGE vêm da API de calendário (src/calendario.py); as daqui são reserva, conferidas à mão, para quando a API falhar.",
+  "juros": [
+    {"data": "2026-11-04", "tipo": "copom"},
+    {"data": "2026-12-09", "tipo": "copom"},
+    {"data": "2026-12-09", "tipo": "fed"}
+  ],
+  "ibge_reserva": [
+    {"data": "2026-10-30", "tipo": "pnad"},
+    {"data": "2026-11-05", "tipo": "pim"},
+    {"data": "2026-11-12", "tipo": "ipca"},
+    {"data": "2026-11-13", "tipo": "pmc"},
+    {"data": "2026-11-26", "tipo": "ipca15"},
+    {"data": "2026-11-27", "tipo": "pnad"},
+    {"data": "2026-12-02", "tipo": "pib"},
+    {"data": "2026-12-03", "tipo": "pim"}
+  ]
+}

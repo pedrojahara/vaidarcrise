@@ -158,6 +158,19 @@ def efeito_evento(ev: dict, hoje: dt.date, cfg: dict) -> float:
     return ev["efeito_inicial"] * (1 - idade / c["dias_de_decaimento"])
 
 
+def peso_estagio(ev: dict, cfg: dict) -> float:
+    """Quanto do efeito vale, conforme o pé em que o fato está (v1.2). Eventos sem estágio valem inteiros."""
+    pesos = cfg["noticias"].get("peso_por_estagio")
+    est = ev.get("estagio")
+    if not pesos or est not in pesos:
+        return 1.0
+    if pesos[est] == "chance_aprovacao":
+        lo, hi = cfg["noticias"]["faixa_chance_aprovacao"]
+        ch = ev.get("chance_aprovacao")
+        return min(hi, max(lo, ch if ch is not None else (lo + hi) / 2))
+    return float(pesos[est])
+
+
 def efeito_inicial(ev: dict, n_veiculos: int, cfg: dict) -> float:
     c = cfg["noticias"]
     e = c["efeito_por_magnitude_logit"][str(ev["magnitude"])]
@@ -165,6 +178,7 @@ def efeito_inicial(ev: dict, n_veiculos: int, cfg: dict) -> float:
         e *= c["fator_ja_no_preco"]
     if n_veiculos < 2:
         e *= c["fator_fonte_unica"]
+    e *= peso_estagio(ev, cfg)
     return ev["direcao"] * min(e, c["teto_por_evento_logit"])
 
 
@@ -287,6 +301,29 @@ def decompor_perto(res: dict, cfg: dict) -> dict[str, float]:
     return shapley(list(partes), lambda s: 100 * prob(estr, sum(partes[k] for k in s), h0, cfg, horizonte=n)) if partes else {}
 
 
+def decompor_12m(res: dict, cfg: dict) -> dict[str, float]:
+    """Shapley da chance de recessão nos próximos 4 trimestres, do normal até a de hoje, em pontos.
+
+    O normal é a taxa-base de 4 trimestres, sem nenhum PIB divulgado na janela. Os fatores
+    (indicadores, notícias e, quando muda a conta, os trimestres já divulgados) somam
+    exatamente a diferença entre a chance de hoje e o normal.
+    """
+    estr, h0 = res["estrutura"], res["h0"]
+    estr_base = estrutura([], cfg)
+    partes = {f"ind:{x['id']}": x["logit"] for x in res["indicadores"]}
+    partes.update({f"not:{x['id']}": x["logit"] for x in res["noticias"]})
+    partes, _ = agrupar(partes, 12, "not:outras")
+    jog = list(partes)
+    if estr["inicios"][:4] != estr_base["inicios"][:4] or estr["pendente_negativo"]:
+        jog.append("calendario")
+
+    def f(s: frozenset) -> float:
+        e = estr if "calendario" in s else estr_base
+        return 100 * prob(e, sum(partes[k] for k in s if k != "calendario"), h0, cfg, horizonte=4)
+
+    return shapley(jog, f) if jog else {}
+
+
 def por_horizonte(res: dict, cfg: dict) -> dict:
     """A nota em dois pedaços que o leitor consegue conferir.
 
@@ -314,12 +351,21 @@ def cenarios_pib(snap: dict, res: dict, cfg: dict) -> list[dict]:
     for nome, val in (("negativo", -0.1), ("zero ou positivo", 0.1)):
         e = estrutura(pib + [{"trimestre": alvo, "var_qoq": val}], cfg)
         out.append({"trimestre": alvo, "cenario": nome,
-                    "manchete": prob(e, res["deslocamento_logit"], res["h0"], cfg)})
+                    "manchete": prob(e, res["deslocamento_logit"], res["h0"], cfg),
+                    "curto_prazo_4t": prob(e, res["deslocamento_logit"], res["h0"], cfg, horizonte=4)})
     return out
 
 
-def decompor_variacao(ant: dict, atual: dict, snap_ant_pib: list, snap_pib: list, cfg: dict) -> dict:
-    """Shapley da variação entre duas atualizações: cada indicador, cada notícia e o calendário."""
+def decompor_variacao(ant: dict, atual: dict, snap_ant_pib: list, snap_pib: list, cfg: dict,
+                      novos: frozenset[str] = frozenset(), horizonte: int | None = None) -> dict:
+    """Shapley da variação entre duas atualizações: cada indicador, cada notícia nova e o calendário.
+
+    As notícias que já valiam antes só perdem força com o tempo; elas entram juntas,
+    como "not:antigas", para o post do dia mostrar cada fato novo pelo nome. Com
+    horizonte=4, decompõe a chance dos próximos 4 trimestres (a do topo do site) em vez
+    da nota até 2030.
+    """
+    chave = "curto_prazo_4t" if horizonte == 4 else "manchete"
     h0 = cfg["taxa_base"]["risco_trimestral"]
     e_ant, e_at = estrutura(snap_ant_pib, cfg), estrutura(snap_pib, cfg)
     old = {f"ind:{x['id']}": x["logit"] for x in ant["indicadores"]}
@@ -329,7 +375,12 @@ def decompor_variacao(ant: dict, atual: dict, snap_ant_pib: list, snap_pib: list
     chaves = sorted(set(old) | set(new))
     delta = {k: new.get(k, 0.0) - old.get(k, 0.0) for k in chaves}
     delta = {k: d for k, d in delta.items() if abs(d) > 1e-9}
-    delta, agrupados = agrupar(delta, 11, "not:outras")
+    antigas = [k for k in delta if k.startswith("not:") and k[4:] not in novos]
+    if antigas:
+        soma = sum(delta.pop(k) for k in antigas)
+        if abs(soma) > 1e-9:
+            delta["not:antigas"] = soma
+    delta, agrupados = agrupar(delta, 15, "not:outras")
     jog = list(delta)
     if e_ant["inicios"] != e_at["inicios"] or e_ant["pendente_negativo"] != e_at["pendente_negativo"]:
         jog.append("calendario")
@@ -337,12 +388,12 @@ def decompor_variacao(ant: dict, atual: dict, snap_ant_pib: list, snap_pib: list
 
     def f(s: frozenset) -> float:
         e = e_at if "calendario" in s else e_ant
-        return 100 * prob(e, base_old + sum(delta[k] for k in s if k != "calendario"), h0, cfg)
+        return 100 * prob(e, base_old + sum(delta[k] for k in s if k != "calendario"), h0, cfg, horizonte=horizonte)
 
     sh = shapley(jog, f) if jog else {}
     # Numa troca de versão, a taxa-base muda: a parte "metodologia" é a nota antiga refeita com a
     # regra nova, menos a nota antiga. O resto da variação é dado e notícia, já na regra nova.
-    metodologia = f(frozenset()) - 100 * ant["manchete"]
+    metodologia = f(frozenset()) - 100 * ant[chave]
     if abs(metodologia) > 1e-9:
         sh["metodologia"] = metodologia
-    return {"de": 100 * ant["manchete"], "para": 100 * atual["manchete"], "partes": sh, "agrupados": sorted(agrupados)}
+    return {"de": 100 * ant[chave], "para": 100 * atual[chave], "partes": sh, "agrupados": sorted(agrupados)}

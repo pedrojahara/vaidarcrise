@@ -1,0 +1,60 @@
+"""Confere o texto do LLM contra os moldes que denunciam piloto automático.
+
+Não bloqueia nada: devolve a lista de problemas, que o post usa para pedir uma
+reescrita e a rodada grava no registro.
+"""
+from __future__ import annotations
+
+import re
+from collections import Counter
+
+MOLDES = [
+    (re.compile(r"^(Aumenta|Reduz)\b"), "abre com Aumenta/Reduz"),
+    (re.compile(r"\bpelo canal\b", re.I), "usa 'pelo canal'"),
+    (re.compile(r"[—–]"), "travessão"),
+    (re.compile(r"\b(vale (destacar|ressaltar|notar|lembrar)|é importante|além disso|nesse sentido|em suma|crucial|"
+                r"robust[oa]s?|desafiador[ae]?s?)\b", re.I), "expressão de piloto automático"),
+    (re.compile(r"\bnão (só|apenas)\b[^.]*\bmas\b", re.I), "não só X, mas Y"),
+    (re.compile(r"\bgrande banco\b", re.I), "empresa sem nome"),
+    (re.compile(r"!"), "ponto de exclamação"),
+]
+
+
+def _moldes(texto: str) -> list[str]:
+    return [nome for rx, nome in MOLDES if rx.search(texto)]
+
+
+def _aberturas(textos: list[str], limite: int = 2) -> list[str]:
+    """Aberturas repetidas: mais de `limite` textos começando com as mesmas duas palavras."""
+    ab = Counter(" ".join(t.lower().split()[:2]) for t in textos if t.strip())
+    return [f"{n} textos abrem com '{a}'" for a, n in ab.items() if n > limite]
+
+
+def problemas_classificacao(saida: dict) -> list[str]:
+    out = []
+    for ev in saida.get("eventos", []):
+        t = ev["titulo_evento"]
+        if len(t) > 80:
+            out.append(f"título com {len(t)} caracteres: {t[:60]}")
+        if ";" in t:
+            out.append(f"título com ponto e vírgula: {t[:60]}")
+        out += [f"{m}: {t[:60]}" for m in sorted(set(_moldes(t)) | set(_moldes(ev["porque"])))]
+    out += _aberturas([ev["porque"] for ev in saida.get("eventos", [])])
+    return out
+
+
+def problemas_post(post: dict) -> list[str]:
+    out = []
+    t = post["titulo"]
+    if len(t) > 80:
+        out.append(f"título com {len(t)} caracteres")
+    if t.rstrip().endswith("?"):
+        out.append("título em forma de pergunta")
+    for i, p in enumerate(post["paragrafos"], 1):
+        out += [f"parágrafo {i}: {m}" for m in _moldes(p)]
+        if len(p.split()) > 110:
+            out.append(f"parágrafo {i} com {len(p.split())} palavras")
+        if re.search(r"\b(eu|nós|nosso|nossa)\b", p, flags=re.IGNORECASE):
+            out.append(f"parágrafo {i} em primeira pessoa")
+    out += _aberturas(post["paragrafos"], limite=1)
+    return out

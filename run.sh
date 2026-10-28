@@ -1,12 +1,22 @@
 #!/bin/zsh
-# Rodada agendada: coleta, classifica, calcula, gera o site e publica (git push -> GitHub Pages).
-# Uso manual: ./run.sh            (rodada normal)
+# Atualização agendada: lê as manchetes do dia anterior, calcula, escreve o post, gera o site
+# e publica (git push -> GitHub Pages). Só publica uma vez por dia.
+# Uso manual: ./run.sh            (atualização do dia; se já houver uma hoje, só coleta)
+#             ./run.sh --forcar   (publica de novo hoje)
 #             ./run.sh --sem-llm  (só dados, sem ler notícias)
+#             ./run.sh --coletar  (só junta manchetes ao acervo local; sem git e sem publicar)
 set -u
 cd "$(dirname "$0")"
 export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export LANG=pt_BR.UTF-8
 mkdir -p logs
+
+if [[ "${1:-}" == "--coletar" ]]; then
+  exec >> "logs/coleta-$(date +%Y-%m).log" 2>&1
+  echo "$(date '+%Y-%m-%dT%H:%M:%S%z') $(.venv/bin/python src/run.py --coletar | tail -1)"
+  exit 0
+fi
+
 exec >> "logs/run-$(date +%Y-%m).log" 2>&1
 echo "=== $(date '+%Y-%m-%dT%H:%M:%S%z') início"
 
@@ -18,11 +28,12 @@ if ! /usr/bin/caffeinate -i .venv/bin/python src/run.py "$@"; then
 fi
 
 nota=$(jq -r '.nota' docs/data.json)
+risco=$(jq -r '.multiplicador_12m * 10 | round / 10' docs/data.json)
 git add -A runs data docs
 if git diff --cached --quiet; then
   echo "nada mudou"
 else
-  git commit -q -m "Atualização $(date '+%d/%m/%Y %Hh%M'): nota ${nota}"
+  git commit -q -m "Post de $(date '+%d/%m/%Y'): risco ${risco}x o normal, nota ${nota}"
   for i in 1 2 3 4; do
     git push -q origin main && break
     echo "push falhou (tentativa $i)"; sleep $((2 ** i))

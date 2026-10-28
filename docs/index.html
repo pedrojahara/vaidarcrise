@@ -2,503 +2,243 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Vai dar crise? 79% de chance de recessão no Brasil até 2030</title>
-<meta name="description" content="Em 100 Brasis como este, 79 entram em recessão até o fim de 2030. Nota de 28/10/2026, com a explicação de cada ponto.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vai dar crise? Risco de recessão 2,7× o normal</title>
+<meta name="description" content="Risco de recessão no Brasil nos próximos 12 meses: 2,7 vezes o de um ano normal, piorando. Post do dia: O risco foi de 2,5× para 2,7× o normal com 5 notícias novas.">
 <link rel="canonical" href="https://vaidarcrise.com.br/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
-<meta property="og:title" content="Vai dar crise? 79% de chance de recessão no Brasil até 2030">
-<meta property="og:description" content="Em 100 Brasis como este, 79 entram em recessão até o fim de 2030. Nota de 28/10/2026, com a explicação de cada ponto.">
+<meta property="og:title" content="Vai dar crise? Risco de recessão 2,7× o normal">
+<meta property="og:description" content="Risco de recessão no Brasil nos próximos 12 meses: 2,7 vezes o de um ano normal, piorando. Post do dia: O risco foi de 2,5× para 2,7× o normal com 5 notícias novas.">
 <meta property="og:url" content="https://vaidarcrise.com.br/">
 <meta property="og:image" content="https://vaidarcrise.com.br/og/2026-10-28.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f4efe4">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b8361e'/%3E%3Ctext x='32' y='45' font-family='Georgia' font-size='38' font-weight='700' fill='%23fff' text-anchor='middle'%3E%3F%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161718" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='13' y='13' width='38' height='38' rx='6' transform='rotate(45 32 32)' fill='%23ffc20e' stroke='%23000' stroke-width='4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
+/* O × da Charis é largo e solto ("2,7 ×"); só esse caractere vem de uma sem serifa do sistema. */
+@font-face{font-family:"Vezes";src:local("Arial"),local("ArialMT"),local("Helvetica"),local("Roboto"),local("Liberation Sans");unicode-range:U+00D7}
 :root{
-  --papel:#f4efe4; --papel2:#ebe4d4; --tinta:#1d1a16; --tinta2:#5b544a; --linha:#d6ccb8;
-  --quente:#b8361e; --morno:#d98a2b; --frio:#3f7d5c; --acento:#b8361e; --bom:#2f6f4f;
-  --cartao:#fbf8f1; --sombra:0 1px 0 rgba(0,0,0,.04);
+  /* Página branca de blog: o texto em serifa, dados e avisos na letra do sistema. A plaquinha amarela é a única cor de marca. */
+  --papel:#ffffff; --tinta:#1e1f21; --meta:#62666b; --fio:#e4e6e8; --maquina:#f4f5f6;
+  --link:#1f4fbf; --placa:#ffc20e; --placa-tinta:#000000; --sobe:#c3102b; --desce:#00733a;
+  --hist:#5d6570; --hist2:#c6cbd1; --hist2-tinta:#1e1f21; --nota-fundo:#fffaeb;
+  --serifa:"Vezes","Charis SIL",Charter,"Bitstream Charter","Iowan Old Style",Georgia,serif;
+  --sistema:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
-@media (prefers-color-scheme: dark){
-  :root{ --papel:#16130f; --papel2:#201c16; --tinta:#efe8da; --tinta2:#b2a894; --linha:#3a332a;
-    --quente:#e0583c; --morno:#e3a04a; --frio:#5fae84; --acento:#e0583c; --bom:#6cc196; --cartao:#1d1914; }
-}
+@media (prefers-color-scheme: dark){:root{--papel:#161718;--tinta:#e8e9ea;--meta:#a3a7ac;--fio:#2f3134;--maquina:#1f2123;--link:#94b4ff;--sobe:#ff7373;--desce:#52c993;--hist:#8d96a1;--hist2:#3d4248;--hist2-tinta:#e8e9ea;--nota-fundo:#1f1d16;color-scheme:dark}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.6 "IBM Plex Sans",system-ui,sans-serif}
-a{color:inherit;text-decoration-color:var(--acento);text-underline-offset:3px}
-a:hover{color:var(--acento)}
-.w{max-width:860px;margin:0 auto;padding:0 16px}
-header.topo{border-bottom:1px solid var(--linha)}
-header.topo .w{display:flex;justify-content:space-between;align-items:center;height:56px;gap:12px}
-.marca{font:900 20px/1 Fraunces,Georgia,serif;letter-spacing:-.01em;text-decoration:none}
-.marca span{color:var(--acento)}
-nav a{font-size:14px;color:var(--tinta2);text-decoration:none;margin-left:16px}
-nav a:hover{color:var(--tinta)}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;letter-spacing:-.01em;line-height:1.15}
-h2{font-size:28px;font-weight:700;margin:0 0 8px}
-h3{font-size:19px;font-weight:700;margin:0 0 6px}
-section{padding:44px 0;border-bottom:1px solid var(--linha)}
-.lead{font-size:18px;color:var(--tinta2);margin:0 0 20px;max-width:680px}
-.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.95em}
-.peq{font-size:14px;color:var(--tinta2)}
-.chip{display:inline-block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border:1px solid var(--linha);border-radius:99px;color:var(--tinta2)}
-.medidor{position:relative;margin:30px 0 4px;padding-top:4px}
-.trilho{position:relative;height:16px;border-radius:8px;background:linear-gradient(90deg,var(--frio),var(--morno) 50%,var(--quente))}
-.trilho .pt{position:absolute;top:50%;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;background:var(--papel);border:4px solid var(--tinta)}
-.trilho .lb{position:absolute;top:-8px;bottom:-8px;width:0;border-left:2px dashed var(--tinta)}
-.medidor .hb{position:absolute;top:-22px;transform:translateX(-50%);font-size:13px;color:var(--tinta2);white-space:nowrap}
-.tqs{position:relative;height:22px;margin-top:6px}
-.tq{position:absolute;transform:translateX(-50%);font-size:12px;color:var(--tinta2)}
-.tq:first-child{transform:none}.tq:last-child{transform:translateX(-100%)}
-.medidor .cc{margin:0;text-align:center;font-size:13px;font-style:italic;color:var(--tinta2)}
-.cascata{display:grid;gap:6px;margin:8px 0 14px}
-.cr{display:grid;grid-template-columns:minmax(120px,38%) 1fr 56px;align-items:center;gap:10px;font-size:14px}
-.cr .cn{text-align:right;line-height:1.25}
-.cr .ct{position:relative;height:20px}
-.cr .ct i{position:absolute;top:0;bottom:0;border-radius:2px}
-.cr.up i{background:var(--quente)} .cr.dn i{background:var(--frio)} .cr.tot i{background:var(--tinta2)}
-.cr.tot .cn,.cr.tot .cv{font-weight:600}
-.cr .cv{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--tinta2)}
-.cr.tot .cv{color:var(--tinta)}
-@media (max-width:640px){.cr{grid-template-columns:1fr 52px;row-gap:2px}.cr .cn{grid-column:1/-1;text-align:left}.cr .ct{grid-column:1}}
-.mais{color:var(--quente)} .menos{color:var(--bom)}
-table{width:100%;border-collapse:collapse;font-size:15px}
-th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--linha);vertical-align:top}
-th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--tinta2);font-weight:600}
-td.n,th.n{text-align:right;white-space:nowrap}
-.tabela{overflow-x:auto}
-footer{padding:40px 0 60px;font-size:14px;color:var(--tinta2)}
-footer p{margin:6px 0}
-svg text{font-family:"IBM Plex Sans",system-ui,sans-serif}
-.tl{font-size:14px;fill:var(--tinta2)} .it{font-style:italic}
-.tk{stroke:var(--tinta2);stroke-width:1}
-.base{stroke:var(--tinta);stroke-width:2;stroke-dasharray:3 3}
-.mk{fill:var(--papel);stroke:var(--tinta);stroke-width:4}
-.cl{font-size:13px;fill:var(--tinta)} .cv{font-size:13px;fill:var(--tinta2)} .b{font-weight:600;fill:var(--tinta)}
-.gl{stroke:var(--linha);stroke-width:1} .g50{stroke:var(--tinta2);stroke-width:1;stroke-dasharray:4 4}
-.l1{fill:none;stroke:var(--quente);stroke-width:2.5} .l1d{fill:var(--quente)}
-.l2{fill:none;stroke:var(--tinta2);stroke-width:2;stroke-dasharray:5 4} .l2d{fill:var(--tinta2)}
+body{margin:0;background:var(--papel);color:var(--tinta);font:19px/1.62 var(--serifa)}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+.in{max-width:1000px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.peq{font:14px/1.5 var(--sistema);color:var(--meta)}
+.mais{color:var(--sobe)}.menos{color:var(--desce)}
 
-.hero{padding:40px 0 36px;border-bottom:1px solid var(--linha)}
-.kicker{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--acento);margin:0 0 6px}
-.pergunta{font:900 clamp(40px,9vw,72px)/1 Fraunces,Georgia,serif;margin:0 0 18px;letter-spacing:-.02em}
-.placa{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap}
-.nota{font:900 clamp(110px,26vw,190px)/.82 Fraunces,Georgia,serif;letter-spacing:-.04em;color:var(--acento)}
-.nota small{font-size:.28em;letter-spacing:0;color:var(--tinta2);font-weight:500;margin-left:4px}
-.frase{font-size:clamp(19px,3.4vw,24px);line-height:1.35;max-width:430px;margin:0 0 10px;font-family:Fraunces,Georgia,serif;font-weight:500}
-.cartoes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
-.cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:12px 14px}
-.cartao b{display:block;font:700 28px/1.1 Fraunces,Georgia,serif}
-.cartao span{font-size:13px;color:var(--tinta2);line-height:1.35;display:block;margin-top:4px}
-.meta{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--tinta2)}
-.aviso{background:var(--papel2);border-left:4px solid var(--morno);padding:10px 14px;margin:0 0 18px;font-size:15px;border-radius:4px}
+/* cabeçalho */
+.cab .in{padding-top:28px}
+.cab .faixa{padding-bottom:18px;border-bottom:1px solid var(--fio)}
+.marca{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--tinta)}
+.marca:hover{color:var(--tinta)}
+.mini{width:18px;height:18px;flex:none;transform:rotate(45deg);background:var(--placa);border-radius:3px;box-shadow:inset 0 0 0 2px var(--placa),inset 0 0 0 3.5px var(--placa-tinta)}
+.marca b{font:700 30px/1.1 var(--serifa);letter-spacing:-.01em}
+.linha-fina{margin:8px 0 12px;font:16px/1.45 var(--sistema);color:var(--meta)}
+.cab nav{display:flex;flex-wrap:wrap;gap:6px 18px;font:15px/1.4 var(--sistema)}
+
+/* o topo: só o multiplicador e a seta (bloco próprio em _nota.html); o resto vai para as notas do rodapé */
+.nota{margin-bottom:30px;min-width:0}
+.nota .topo{display:flex;align-items:center;gap:16px}
+.placa{width:84px;height:84px;margin:13px;flex:none;transform:rotate(45deg);background:var(--placa);border-radius:10px;box-shadow:inset 0 0 0 4px var(--placa),inset 0 0 0 7px var(--placa-tinta)}
+.placa span{display:grid;place-items:center;height:100%;transform:rotate(-45deg);font:800 29px/1 var(--sistema);color:var(--placa-tinta);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.leitura{display:flex;flex-direction:column;gap:2px;min-width:0;margin:0}
+.leitura .seta{font:700 20px/1.2 var(--sistema);white-space:nowrap}
+.leitura .seta.sobe{color:var(--sobe)}.leitura .seta.desce{color:var(--desce)}.leitura .seta.igual{color:var(--tinta)}
+.leitura .seta b{font-size:1.15em;margin-right:4px}
+sup{font:600 .55em/0 var(--sistema);margin-left:2px;vertical-align:super}
+sup a{text-decoration:none;color:var(--link)}
+.nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:10px 0 0}
+.aviso{font:15px/1.45 var(--sistema);background:var(--maquina);border-left:4px solid var(--placa);padding:8px 12px;margin:12px 0 0}
 .aviso[hidden]{display:none}
-.hist{width:100%;height:auto}
-.eventos{display:grid;gap:12px}
-.ev{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:16px;overflow-wrap:anywhere}
-.ev .topo-ev{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
-.ev .pts{font:700 22px/1 Fraunces,Georgia,serif;white-space:nowrap}
-.ev p{margin:8px 0}
-.ev ul{margin:6px 0 0;padding-left:18px;font-size:14px}
-.ev .rodape{font-size:13px;color:var(--tinta2);margin-top:8px}
-.lados{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.lado{border-top:4px solid;padding-top:10px;overflow-wrap:anywhere}
-.lado.mais{border-color:var(--quente)} .lado.menos{border-color:var(--bom)}
-.lado ol{padding-left:20px;margin:8px 0 0;color:var(--tinta)} .lado li{margin-bottom:10px}
-.lado .f{font-size:13px;color:var(--tinta2)}
-.cen{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-.legenda{font-size:13px;color:var(--tinta2);display:flex;gap:16px;flex-wrap:wrap;margin-top:6px}
-.legenda i{display:inline-block;width:18px;height:3px;vertical-align:middle;margin-right:6px}
-.pilha{display:grid;grid-template-columns:150px 1fr;gap:10px 14px;align-items:center;margin:14px 0 18px}
-.pilha .rot{font-size:14px;color:var(--tinta2);line-height:1.3}
-.pilha .rot b{font:700 22px/1 Fraunces,Georgia,serif;color:var(--tinta);margin-left:6px}
-.barra{display:flex;gap:2px;height:36px;min-width:0;background:var(--papel2);border-radius:4px}
-.seg{display:flex;align-items:center;justify-content:center;font:600 14px/1 "IBM Plex Sans",system-ui,sans-serif;color:#fff;white-space:nowrap;min-width:0}
-.seg:first-child{border-radius:4px 0 0 4px} .seg.fim{border-radius:0 4px 4px 0}
-.seg.h{background:var(--hist)} .seg.p{background:var(--quente)} .seg.m{background:var(--bom)} .seg.h2{background:var(--hist2);color:var(--hist2-ink)}
-.parcelas{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:14px}
-.parcelas li{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:start}
-.parcelas .v{font:700 26px/1.1 Fraunces,Georgia,serif;text-align:right;border-right:4px solid;padding-right:10px}
-.parcelas .v.h{border-color:var(--hist)} .parcelas .v.p{border-color:var(--quente)} .parcelas .v.h2{border-color:var(--hist2)}
-.parcelas p{margin:0}
-.pilha-leg{font-size:13px;color:var(--tinta2);display:flex;gap:6px 16px;flex-wrap:wrap}
-.pilha-leg i{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
-:root{--hist:#2f6fa8;--hist2:#9dbfe0;--hist2-ink:#1d1a16}
-@media (prefers-color-scheme: dark){:root{--hist:#4f8fd0;--hist2:#2b5583;--hist2-ink:#efe8da}}
-details.metodos summary{cursor:pointer;font-size:15px;color:var(--tinta2);margin-top:12px}
-@media (max-width:640px){.pilha{grid-template-columns:1fr;gap:4px}.pilha .rot{margin-top:8px}.parcelas li{grid-template-columns:52px 1fr}.parcelas .v{font-size:22px}}
-@media (max-width:640px){.cartoes{grid-template-columns:1fr 1fr}.cartoes .cartao:last-child{grid-column:span 2}.lados,.cen{grid-template-columns:1fr}nav a:first-child{display:none}}
+
+/* lateral */
+.lado{font:15.5px/1.5 var(--sistema);border-top:1px solid var(--fio);padding-top:22px}
+.bloco{margin-bottom:30px}
+.bloco h3{font:700 17px/1.3 var(--serifa);margin:0 0 6px}
+.bloco p{margin:0 0 6px}
+.bloco ul{list-style:none;padding:0;margin:0}
+.bloco li{display:flex;justify-content:space-between;gap:12px;padding:3px 0;border-bottom:1px solid var(--fio);font-variant-numeric:tabular-nums}
+.bloco .datas li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:10px;justify-content:start}
+.datas time{font-weight:600;color:var(--tinta)}
+.datas li.chave{background:var(--nota-fundo);padding:6px;margin:2px -6px;border-bottom:0;border-radius:4px}
+
+/* rodapé */
+.pe{font:14px/1.55 var(--sistema);color:var(--meta)}
+.pe .in{padding-top:22px;padding-bottom:56px;border-top:1px solid var(--fio)}
+.pe p{margin:0 0 8px;max-width:640px}
+.pe a{color:var(--meta)}
+@media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:25px}.nota .resp{font-size:22px}.marca b{font-size:26px}}
+
+.blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado" "rod rod";grid-template-rows:auto 1fr auto;padding-top:28px;padding-bottom:28px}
+.nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}.rod{grid-area:rod;min-width:0}
+@media (max-width:820px){.blog{grid-template-columns:minmax(0,1fr);grid-template-areas:"nota" "feed" "lado" "rod";grid-template-rows:auto}
+  .lado{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}}
+@media (max-width:620px){.lado{grid-template-columns:minmax(0,1fr)}}
+
+/* notas do topo, no rodapé da página */
+.rod{border-top:1px solid var(--fio);padding-top:18px;margin-top:8px;font:13.5px/1.5 var(--sistema);color:var(--meta)}
+.rod h2{font:700 15px/1.3 var(--sistema);color:var(--tinta);margin:0 0 8px}
+.rodape-notas{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 32px;counter-reset:n}
+.rodape-notas li{display:grid;grid-template-columns:1.2em minmax(0,1fr);gap:4px;counter-increment:n}
+.rodape-notas li::before{content:counter(n);font-weight:700;color:var(--tinta)}
+.rodape-notas li:target{background:var(--nota-fundo);outline:6px solid var(--nota-fundo)}
+.rodape-notas b{color:var(--tinta);font-weight:600}
+.rod .fontes{margin:12px 0 0}
+.rod .fontes a{color:var(--meta)}
+@media (max-width:620px){.rodape-notas{grid-template-columns:minmax(0,1fr)}}
+
+/* post */
+.post{margin-bottom:44px}
+.post .data{font:600 14px/1.3 var(--sistema);color:var(--meta);margin:0 0 6px}
+.titulo-post{font:700 30px/1.2 var(--serifa);margin:0 0 10px;letter-spacing:-.005em;text-wrap:balance}
+.titulo-post a{color:var(--tinta);text-decoration:none}
+.titulo-post a:hover{text-decoration:underline}
+.post .autoria{font:14.5px/1.5 var(--sistema);color:var(--meta);margin:0 0 18px;max-width:640px}
+.post p{margin:0 0 16px;max-width:660px}
+.post .rodape{font:14px/1.55 var(--sistema);color:var(--meta);margin-top:14px}
+.post .rodape a{color:var(--meta)}
+
+/* a conta do dia: dado da máquina, na letra do sistema */
+.conta{background:var(--maquina);border-radius:6px;padding:16px 20px 6px;font:16px/1.5 var(--sistema);margin:22px 0 4px}
+.conta-cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px;border-bottom:1px solid var(--fio);padding-bottom:8px;margin-bottom:6px}
+.conta-cab h3{font:700 19px/1.3 var(--sistema);margin:0}
+.conta-cab p{margin:0;font-variant-numeric:tabular-nums}
+.conta h4{font:700 13.5px/1.3 var(--sistema);color:var(--meta);margin:16px 0 8px;letter-spacing:.01em}
+.conta .abre{margin:8px 0 4px}
+.itens{list-style:none;padding:0;margin:0 0 6px;display:grid;gap:12px}
+.itens li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:10px;overflow-wrap:anywhere}
+.itens .pts{font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+.itens .pts.fora{font-weight:600;color:var(--meta);font-size:14px;padding-top:1px}
+.itens b{display:block}
+.itens .peso{display:block;font-size:14px;color:var(--meta)}
+.itens .f{font-size:14px;color:var(--meta)}
+.itens .f a{color:var(--meta)}
+.fora-conta{font-size:14.5px;color:var(--meta);border-top:1px solid var(--fio);padding-top:10px;margin:14px 0 10px}
+
+/* arquivo e vizinhos */
+.arquivo h2{font:700 20px/1.3 var(--serifa);margin:0 0 8px}
+.arquivo ul{list-style:none;padding:0;margin:0;font:15.5px/1.45 var(--sistema)}
+.arquivo li{padding:9px 0;border-top:1px solid var(--fio)}
+.arquivo li span{display:block;color:var(--meta);font-size:14px}
+.vizinhos{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;font:15px/1.4 var(--sistema);border-top:1px solid var(--fio);padding-top:14px}
+@media (max-width:620px){.titulo-post{font-size:26px}.conta{padding:14px 14px 4px;margin-left:-4px;margin-right:-4px}}
 
 </style>
 </head>
 <body>
-<header class="topo"><div class="w">
-  <a class="marca" href="/">Vai dar crise<span>?</span></a>
-  <nav><a href="/#por-que">Por quê</a><a href="/metodologia/">Metodologia</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
-</div></header>
+<header class="cab"><div class="in"><div class="faixa">
+  <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
+  <p class="linha-fina">Um palpite com conta sobre a próxima recessão brasileira.</p>
+  <nav aria-label="Seções"><a href="/">Atualizações</a><a href="/nota/">Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
+</div></div></header>
 
-<main>
-<div class="hero"><div class="w">
-  <p class="kicker">Probabilidade de recessão no Brasil até 2030</p>
-  <h1 class="pergunta">Vai dar crise?</h1>
+<div class="in blog">
   
-  <div class="aviso" id="defasado" hidden><strong>Dado defasado.</strong> Esta nota tem mais de 36 horas. A atualização automática pode ter falhado; confira o <a href="https://github.com/pedrojahara/vaidarcrise/commits/main">histórico de atualizações</a>.</div>
-  <div class="placa">
-    <div class="nota" aria-label="79 por cento">79<small>%</small></div>
-    <p class="frase">Em 100 Brasis como este, <strong>79</strong> entram em recessão até o fim de 2030.</p>
+<section class="nota" aria-label="O risco de hoje">
+  <div class="topo">
+    <div class="placa" role="img" aria-label="2,7 vezes o normal"><span>2,7×</span></div>
+    <p class="leitura"><span class="seta sobe"><b aria-hidden="true">↑</b>piorando<sup><a href="#n1">1</a>,<a href="#n2">2</a></sup></span></p>
   </div>
-  <div class="medidor" role="img" aria-label="Nota 79 de 100; taxa histórica 60"><span class="hb" style="left:60.38%">história: 60</span><div class="trilho"><span class="lb" style="left:60.38%"></span><span class="pt" style="left:79.01%"></span></div><div class="tqs"><span class="tq" style="left:0%">0</span><span class="tq" style="left:25%">25</span><span class="tq" style="left:50%">50</span><span class="tq" style="left:75%">75</span><span class="tq" style="left:100%">100</span></div><p class="cc">50 = cara ou coroa</p></div>
-  <div class="cartoes">
-    <div class="cartao"><b>53%</b><span>de chance de a recessão começar nos próximos 4 trimestres (3T26 a 2T27)</span></div>
-    <div class="cartao"><b>60%</b><span>é o que a história brasileira dá sozinha, sem os indicadores e as notícias de hoje (de 54 a 66, conforme o método)</span></div>
-    <div class="cartao"><b>+1,1</b><span>pontos desde a atualização anterior (77,9 → 79,0), incluindo a mudança para a metodologia v1.1</span></div>
+  <p class="atual">Atualizado em 28/10 | próxima atualização às 06h30</p>
+  
+  <p class="aviso" id="defasado" hidden><strong>Dado defasado.</strong> Esta conta tem mais de 36 horas. A atualização automática pode ter falhado; veja o <a href="https://github.com/pedrojahara/vaidarcrise/commits/main">histórico</a>.</p>
+</section>
+  <main class="feed">
+    
+<article class="post">
+  <p class="data">Quarta, 28 de outubro de 2026</p>
+  <h2 class="titulo-post"><a href="/2026-10-28/">O risco foi de 2,5× para 2,7× o normal com 5 notícias novas</a></h2>
+  <p class="autoria">Atualização automática das 15h24, de antes do post diário: só a conta, feita por código.</p>
+  
+  
+  
+  <section class="conta" aria-label="A conta do dia">
+    <div class="conta-cab"><h3>A conta do dia</h3><p>2,45× → <strong>2,70×</strong> <span class="mais">(+0,25)</span></p></div>
+    <p class="abre">Quanto cada fato mexeu no risco de recessão dos próximos 12 meses, em vezes o normal. Foram lidas 50 manchetes de 8 jornais.</p>
+    
+    <h4>Notícias</h4>
+    <ul class="itens">
+      <li><span class="pts mais">+0,07</span><div><b>CNI reduz projeção de crescimento do PIB de 2026 de 2% para 1,6% e projeta inflação de 5,15% e dívida/PIB de 83,7%</b> Aumenta o risco porque a revisão indica perda de ritmo da atividade com inflação e dívida mais altas, pelo canal de atividade e fiscal, como nas revisões sucessivas de 2014. <span class="f"><a href="https://www.infomoney.com.br/economia/cni-reduz-projecao-para-o-pib-e-eleva-estimativas-de-inflacao-e-divida-publica/" rel="nofollow noopener">InfoMoney</a>, <a href="https://valor.globo.com/brasil/noticia/2026/10/28/cni-reduz-de-2percent-para-16percent-projecao-de-crescimento-do-pib-em-2026.ghtml" rel="nofollow noopener">Valor</a></span></div></li><li><span class="pts mais">+0,07</span><div><b>Estados aprovam aumento do ICMS sobre gasolina, diesel e gás a partir de fevereiro de 2027; diesel e biodiesel com alta de 11,1%</b> Aumenta o risco porque eleva o custo de combustíveis e frete, pressionando inflação e juros, pelo canal de oferta, como no choque do diesel de 2018. <span class="f"><a href="https://www.poder360.com.br/poder-economia/estados-aprovam-aumento-de-icms-sobre-gasolina-diesel-e-gas-para-2027/" rel="nofollow noopener">Poder360</a>, <a href="https://www.gazetadopovo.com.br/economia/estados-vao-aumentar-imposto-sobre-combustiveis-a-partir-de-2027/" rel="nofollow noopener">Gazeta do Povo</a></span></div></li><li><span class="pts mais">+0,03</span><div><b>Vendas de máquinas e equipamentos acumulam queda de 13,4% no ano até setembro, com juros altos e concorrência de importados</b> Aumenta o risco porque a queda nas vendas de bens de capital antecipa investimento menor, pelo canal de atividade, como na contração do investimento em 2014-2015. <span class="f"><a href="https://valor.globo.com/empresas/noticia/2026/10/28/vendas-de-maquinas-acumulam-queda-de-134percent-no-ano-ate-setembro.ghtml" rel="nofollow noopener">Valor</a></span></div></li><li><span class="pts mais">+0,03</span><div><b>Grande banco eleva taxa mínima do crédito imobiliário de 11,69% para 15% ao ano</b> Aumenta o risco porque encarece e freia novas contratações de financiamento habitacional, pelo canal de crédito e construção civil, como no recuo do crédito imobiliário em 2015. <span class="f"><a href="https://www.poder360.com.br/poder-economia/em-salto-inedito-bradesco-sobe-juro-da-casa-propria-para-15-ao-ano/" rel="nofollow noopener">Poder360</a></span></div></li><li><span class="pts mais">+0,03</span><div><b>Fed mantém juros em 3,75%-4,00% ao ano, com dois votos divergentes a favor de alta de 0,25 ponto</b> Aumenta levemente o risco porque os votos por alta sinalizam juros americanos altos por mais tempo, pelo canal de fluxo de capital e câmbio, como no aperto do Fed de 2022. A manutenção era esperada. <span class="f"><a href="https://valor.globo.com/financas/noticia/2026/10/28/fed-mantem-taxa-de-juros-inalterada-no-intervalo-de-375percent-a-400percent-ao-ano.ghtml" rel="nofollow noopener">Valor</a>, <a href="https://www.infomoney.com.br/economia/decisao-do-fed-nao-foi-unanime-duas-dirigentes-votaram-por-aperto-de-025-ponto/" rel="nofollow noopener">InfoMoney</a>, <a href="https://www.estadao.com.br/economia/bc-americano-mantem-taxa-de-juros/" rel="nofollow noopener">Estadão</a>, <a href="https://www.infomoney.com.br/economia/juros-fed-eua-outubro-2026/" rel="nofollow noopener">InfoMoney</a></span></div></li>
+    </ul>
+    
+    
+    <h4>Também mexeu</h4>
+    <ul class="itens">
+      <li><span class="pts mais">+0,02</span><div><b>Nova metodologia (v1.0 → v1.1)</b></div></li>
+    </ul>
+    
+    <p class="fora-conta">Também lidas e deixadas de fora: 1 notícia que só repetia dados que os indicadores já medem, e 2 sobre fatos que já estavam na conta.</p>
+    
+  </section>
+  
+  
+  <p class="rodape">Erros vão para <a href="/metodologia/#onde-erramos">Onde erramos</a>. <a href="/2026-10-28/">Link permanente</a> | <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-28T1524.json">Registro da rodada</a> | <a href="/nota/">Como a conta funciona</a></p>
+  
+</article>
+    
+<article class="post">
+  <p class="data">Quarta, 28 de outubro de 2026</p>
+  <h2 class="titulo-post"><a href="/textos/por-que-fiz-este-site/">Por que fiz este site</a></h2>
+  
+  
+  <p>Em toda mesa de bar alguém pergunta se vai dar crise, e ninguém responde com uma conta. Este site responde: quanto o risco de recessão nos próximos 12 meses está acima ou abaixo do normal, recalculado todo dia às 06h30.</p>
+<p>A conta é pública e foi escrita antes da primeira nota. Uma máquina lê as manchetes e separa o que importa; os pesos e o resultado saem de código que qualquer pessoa pode refazer. Quando eu errar, o erro vai estar em <a href="/metodologia/#onde-erramos">Onde erramos</a>, com data.</p>
+  
+  
+  <p class="rodape"><a href="/textos/por-que-fiz-este-site/">Link permanente</a> | sobre</p>
+  
+</article>
+    
+  </main>
+  <aside class="lado" aria-label="Datas e fontes">
+  
+  <div class="bloco">
+    <h3>Datas importantes</h3>
+    <ul class="datas">
+      <li><time datetime="2026-10-30">30/10</time><span>Desemprego até setembro (IBGE)</span></li><li><time datetime="2026-11-04">4/11</time><span>Copom decide a Selic</span></li><li><time datetime="2026-11-05">5/11</time><span>Produção industrial de setembro (IBGE)</span></li><li><time datetime="2026-11-12">12/11</time><span>Inflação de outubro, IPCA (IBGE)</span></li><li><time datetime="2026-11-13">13/11</time><span>Vendas do varejo de setembro (IBGE)</span></li><li><time datetime="2026-11-26">26/11</time><span>Prévia da inflação de novembro, IPCA-15 (IBGE)</span></li><li><time datetime="2026-11-27">27/11</time><span>Desemprego até outubro (IBGE)</span></li><li class="chave"><time datetime="2026-12-02">2/12</time><span>PIB do 3º trimestre (IBGE). Se vier negativo, o risco vai a <b class="mais">4,6×</b>; se não, fica em 2,7×.</span></li><li><time datetime="2026-12-03">3/12</time><span>Produção industrial de outubro (IBGE)</span></li><li><time datetime="2026-12-09">9/12</time><span>Copom e Fed decidem os juros</span></li>
+    </ul>
   </div>
-  <div class="meta">
-    <span>Atualizado em <time datetime="2026-10-28T15:24:26-03:00">28 de outubro de 2026, às 15h24</time> · modelo v1.1</span>
+  
+  <div class="bloco">
+    <h3>Sobre</h3>
+    <p>Os números vêm do Banco Central (SGS e Focus) e do IBGE (PIB trimestral e PNAD Contínua).</p>
+    <p>As notícias vêm de 8 jornais: Folha, Valor, Estadão, g1, InfoMoney, Poder360, Agência Brasil e Gazeta do Povo. Um modelo de linguagem lê as manchetes do dia anterior às 06h30.</p>
   </div>
-</div></div>
-
-<section id="por-que"><div class="w">
-  <h2>Por que 79</h2>
-  
-  <p class="lead">A nota tem três parcelas, e só a do meio depende dos dados e das notícias de hoje. Somadas, dão os 79 Brasis em 100 que entram em recessão até o fim de 2030.</p>
-  <div class="pilha-leg" aria-hidden="true"><span><i style="background:var(--hist)"></i>História, até o fim de 2027</span><span><i style="background:var(--quente)"></i>Dados e notícias de hoje</span><span><i style="background:var(--hist2)"></i>História, de 2028 a 2030</span></div>
-  <div class="pilha">
-    
-    <div class="rot">Só a história<b>60</b></div>
-    <div class="barra" role="img" aria-label="Só a história: 28 + 32 = 60">
-      <div class="seg h" style="flex:0 0 calc(28% - 2px)">28</div><div class="seg h2 fim" style="flex:0 0 calc(32% - 2px)">32</div>
-    </div>
-    
-    <div class="rot">Hoje<b>79</b></div>
-    <div class="barra" role="img" aria-label="Hoje: 28 + 34 + 17 = 79">
-      <div class="seg h" style="flex:0 0 calc(28% - 2px)">28</div><div class="seg p" style="flex:0 0 calc(34% - 2px)">34</div><div class="seg h2 fim" style="flex:0 0 calc(17% - 2px)">17</div>
-    </div>
-    
-  </div>
-  <ol class="parcelas">
-    <li><span class="v h">28</span><p><strong>História, até o fim de 2027.</strong> Uma recessão começa em 5,3% dos trimestres (a <a href="#regua">âncora histórica</a>). Nos 6 trimestres de 3T26 a 4T27, isso dá 28 em 100.</p></li>
-    <li><span class="v p">+34</span><p><strong>Dados e notícias de hoje.</strong> Os 6 indicadores e as 15 notícias valendo agora mexem só no risco desses 6 trimestres e levam a chance até o fim de 2027 de 28 para 62. A cascata abaixo mostra quanto cada um acrescenta.</p></li>
-    <li><span class="v h2">+17</span><p><strong>História, de 2028 a 2030.</strong> Daí em diante ninguém enxerga e vale de novo a âncora de 5,3%. Dos 38 Brasis que chegam a 2028 sem recessão, 45% entram em uma: mais 17 em 100. Só pela história seriam 32: com mais recessões antes, sobram menos Brasis para entrar depois, e cada um conta uma vez só.</p></li>
-  </ol>
-  <p class="peq">Por isso a nota fica 19 pontos acima da história (60 → 79), e não 34: os dados de hoje somam 34 até o fim de 2027 e tiram 15 de depois.</p>
-  
-  <h3 style="margin-top:26px">De onde vêm os 34 pontos de hoje</h3>
-  <p class="peq">Os indicadores somam +21,7 e as notícias, +12,2. São os mesmos números da tabela de indicadores e dos cartões de notícia abaixo.</p>
-  <div class="cascata" role="img" aria-label="Decomposição da nota"><div class="cr tot"><span class="cn">História, até o fim de 2027</span><span class="ct"><i style="left:0;width:41.77%"></i></span><span class="cv">27,9</span></div><div class="cr up"><span class="cn">Atividade (IBC-Br)</span><span class="ct"><i style="left:41.77%;width:13.32%"></i></span><span class="cv">+8,9</span></div><div class="cr up"><span class="cn">Juro real ex-ante</span><span class="ct"><i style="left:55.09%;width:8.83%"></i></span><span class="cv">+5,9</span></div><div class="cr up"><span class="cn">Outras notícias</span><span class="ct"><i style="left:63.92%;width:7.78%"></i></span><span class="cv">+5,2</span></div><div class="cr up"><span class="cn">Notícia: Bolsa cai 13,88% e dólar sobe 8,21% no dia seguinte à eleição presidencial, com…</span><span class="ct"><i style="left:71.71%;width:7.49%"></i></span><span class="cv">+5,0</span></div><div class="cr up"><span class="cn">Dívida pública</span><span class="ct"><i style="left:79.19%;width:5.24%"></i></span><span class="cv">+3,5</span></div><div class="cr up"><span class="cn">Dívida das famílias</span><span class="ct"><i style="left:84.43%;width:4.79%"></i></span><span class="cv">+3,2</span></div><div class="cr up"><span class="cn">Câmbio</span><span class="ct"><i style="left:89.22%;width:1.95%"></i></span><span class="cv">+1,3</span></div><div class="cr dn"><span class="cn">Desemprego (regra de Sahm adaptada)</span><span class="ct"><i style="left:89.52%;width:1.65%"></i></span><span class="cv">−1,1</span></div><div class="cr up"><span class="cn">Notícia: TCU propõe alíquota de referência de 11,3% para a CBS em 2027; mercado avalia…</span><span class="ct"><i style="left:89.52%;width:1.50%"></i></span><span class="cv">+1,0</span></div><div class="cr up"><span class="cn">Notícia: CNI reduz projeção de crescimento do PIB de 2026 de 2% para 1,6% e projeta…</span><span class="ct"><i style="left:91.02%;width:1.50%"></i></span><span class="cv">+1,0</span></div><div class="cr up"><span class="cn">Notícia: Estados aprovam aumento do ICMS sobre gasolina, diesel e gás a partir de…</span><span class="ct"><i style="left:92.51%;width:1.50%"></i></span><span class="cv">+1,0</span></div><div class="cr dn"><span class="cn">Notícia: Fazenda anuncia projeto de lei para cumprir o centro da meta fiscal e reafirma…</span><span class="ct"><i style="left:92.51%;width:1.50%"></i></span><span class="cv">−1,0</span></div><div class="cr tot"><span class="cn">Com os dados de hoje, até o fim de 2027</span><span class="ct"><i style="left:0;width:92.51%"></i></span><span class="cv">61,8</span></div></div>
-  <p class="peq">Barras vermelhas aumentam o risco até o fim de 2027; verdes reduzem. A conta é feita em log-odds e repartida em pontos com valores de Shapley, que somam exatamente a parcela. <a href="/metodologia/#a-conta">Como a conta funciona</a>.</p>
-  
-  
-</div></section>
-
-
-<section id="mudou"><div class="w">
-  <h2>O que mudou desde a última atualização</h2>
-  <p class="lead">De 77,9 para 79,0 (+1,1 pontos na nota até 2030). Cada barra é o quanto um fator mexeu na nota, calculado com valores de Shapley; elas somam a variação inteira. Nesta atualização, a metodologia mudou de v1.0 para v1.1: a barra "Nova metodologia" é a nota anterior refeita com a regra nova, e o motivo está na <a href="/metodologia/#versoes">metodologia</a>.</p>
-  <div class="cascata" role="img" aria-label="Decomposição da nota"><div class="cr tot"><span class="cn">Nota anterior</span><span class="ct"><i style="left:0;width:50.77%"></i></span><span class="cv">77,9</span></div><div class="cr dn"><span class="cn">Nova metodologia (v1.0 → v1.1)</span><span class="ct"><i style="left:38.71%;width:12.06%"></i></span><span class="cv">−1,2</span></div><div class="cr up"><span class="cn">Notícia: CNI reduz projeção de crescimento do PIB de 2026 de 2% para 1,6% e projeta…</span><span class="ct"><i style="left:38.71%;width:6.42%"></i></span><span class="cv">+0,7</span></div><div class="cr up"><span class="cn">Notícia: Estados aprovam aumento do ICMS sobre gasolina, diesel e gás a partir de…</span><span class="ct"><i style="left:45.13%;width:6.42%"></i></span><span class="cv">+0,7</span></div><div class="cr up"><span class="cn">Notícia: Fed mantém juros em 3,75%-4,00% ao ano, com dois votos divergentes a favor de…</span><span class="ct"><i style="left:51.55%;width:3.21%"></i></span><span class="cv">+0,3</span></div><div class="cr up"><span class="cn">Notícia: Vendas de máquinas e equipamentos acumulam queda de 13,4% no ano até setembro…</span><span class="ct"><i style="left:54.76%;width:3.21%"></i></span><span class="cv">+0,3</span></div><div class="cr up"><span class="cn">Notícia: Grande banco eleva taxa mínima do crédito imobiliário de 11,69% para 15% ao ano</span><span class="ct"><i style="left:57.97%;width:3.21%"></i></span><span class="cv">+0,3</span></div><div class="cr up"><span class="cn">Câmbio</span><span class="ct"><i style="left:61.18%;width:0.40%"></i></span><span class="cv">0,0</span></div><div class="cr tot"><span class="cn">Nota de hoje</span><span class="ct"><i style="left:0;width:61.29%"></i></span><span class="cv">79,0</span></div></div>
-</div></section>
-
-
-<section id="noticias"><div class="w">
-  <h2>As notícias que movem a nota</h2>
-  <p class="lead">Cada notícia vira um evento com canal, direção e tamanho. Nenhum evento move o risco de curto prazo mais que 0,2 em log-odds, e o efeito some em 75 dias. O número no canto é a parte dela nos 34 pontos de hoje (veja <a href="#por-que">Por que 79</a>).</p>
-  
-  <div class="eventos">
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Mercado</span> <span class="peq">26/10/2026</span>
-          <h3 style="margin-top:6px">Bolsa cai 13,88% e dólar sobe 8,21% no dia seguinte à eleição presidencial, com primeiro circuit breaker desde 2020 e perda de 14% na semana</h3></div>
-        <div class="pts mais">+5,0</div>
-      </div>
-      <p>Aumenta o risco porque a queda do patrimônio e a alta do prêmio de risco pioram as condições financeiras, o investimento e o consumo, pelo canal de mercado. O precedente é a eleição de 2002, quando o choque de confiança encareceu o crédito e freou a atividade.</p>
-      <ul><li><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula" rel="nofollow noopener">Agência Brasil: Dólar sobe 8,21%, e bolsa cai 13,88% após reeleição de Lula</a></li><li><a href="https://g1.globo.com/economia/noticia/2026/10/26/circuit-breaker-e-acionado-pela-primeira-vez-desde-a-pandemia-de-covid-19-relembre-todas-as-vezes-em-que-a-bolsa-parou.ghtml" rel="nofollow noopener">g1: Circuit breaker é acionado pela primeira vez desde a pandemia de Covid-19; relembre todas as vezes em que a Bolsa parou</a></li><li><a href="https://www.gazetadopovo.com.br/economia/vitoria-de-lula-provoca-tombo-historico-na-bolsa-faz-o-dolar-disparar-e-pressiona-os-juros/" rel="nofollow noopener">Gazeta do Povo: Vitória de Lula provoca tombo histórico na Bolsa, faz o dólar disparar e pressiona os juros</a></li><li><a href="https://g1.globo.com/economia/noticia/2026/10/28/dolar-ibovespa.ghtml" rel="nofollow noopener">g1: Ibovespa opera em queda e já acumula perda de 14% na semana; dólar recua à espera do Fed</a></li></ul>
-      <p class="rodape">O efeito some até 09/01/2027.</p>
-    </article>
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Fiscal</span> <span class="peq">28/10/2026</span>
-          <h3 style="margin-top:6px">TCU propõe alíquota de referência de 11,3% para a CBS em 2027; mercado avalia impacto inflacionário da reforma tributária</h3></div>
-        <div class="pts mais">+1,0</div>
-      </div>
-      <p>Aumenta levemente o risco porque a transição tributária pode pressionar preços em 2027, pelo canal de inflação e juros, como em reformas de IVA em outros países. Valor ainda depende do Senado.</p>
-      <ul><li><a href="https://g1.globo.com/economia/noticia/2026/10/28/tcu-propoe-aliquota-de-113percent-para-o-futuro-imposto-sobre-consumo-do-governo-federal-em-2027-senado-tem-que-aprovar-valor.ghtml" rel="nofollow noopener">g1: TCU propõe alíquota de 11,3% para o futuro imposto sobre consumo do governo federal em 2027; Senado tem que aprovar valor</a></li><li><a href="https://valor.globo.com/brasil/noticia/2026/10/28/tcu-define-alquota-de-referncia-da-cbs-em-113-pontos-percentuais.ghtml" rel="nofollow noopener">Valor: TCU propõe alíquota de referência da CBS em 11,3%</a></li><li><a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/tcu-propoe-aliquota-de-113-para-nova-contribuicao-da-reforma-tributaria-em-2027.shtml" rel="nofollow noopener">Folha: TCU propõe alíquota de 11,3% para nova contribuição da reforma tributária em 2027</a></li><li><a href="https://g1.globo.com/economia/noticia/2026/10/28/reforma-tributaria-tcu-propos-aliquota-de-113percent-para-o-imposto-federal-sobre-consumo-veja-o-que-muda-para-empresas-em-2027.ghtml" rel="nofollow noopener">g1: Reforma tributária: TCU propôs alíquota de 11,3% para o imposto federal sobre consumo; veja o que muda para empresas em 2027</a></li></ul>
-      <p class="rodape">O efeito some até 11/01/2027.</p>
-    </article>
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Atividade</span> <span class="peq">28/10/2026</span>
-          <h3 style="margin-top:6px">CNI reduz projeção de crescimento do PIB de 2026 de 2% para 1,6% e projeta inflação de 5,15% e dívida/PIB de 83,7%</h3></div>
-        <div class="pts mais">+1,0</div>
-      </div>
-      <p>Aumenta o risco porque a revisão indica perda de ritmo da atividade com inflação e dívida mais altas, pelo canal de atividade e fiscal, como nas revisões sucessivas de 2014.</p>
-      <ul><li><a href="https://www.infomoney.com.br/economia/cni-reduz-projecao-para-o-pib-e-eleva-estimativas-de-inflacao-e-divida-publica/" rel="nofollow noopener">InfoMoney: CNI reduz projeção para o PIB e eleva estimativas de inflação e dívida pública</a></li><li><a href="https://valor.globo.com/brasil/noticia/2026/10/28/cni-reduz-de-2percent-para-16percent-projecao-de-crescimento-do-pib-em-2026.ghtml" rel="nofollow noopener">Valor: CNI reduz de 2% para 1,6% projeção de crescimento do PIB em 2026</a></li></ul>
-      <p class="rodape">O efeito some até 11/01/2027.</p>
-    </article>
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Oferta</span> <span class="peq">28/10/2026</span>
-          <h3 style="margin-top:6px">Estados aprovam aumento do ICMS sobre gasolina, diesel e gás a partir de fevereiro de 2027; diesel e biodiesel com alta de 11,1%</h3></div>
-        <div class="pts mais">+1,0</div>
-      </div>
-      <p>Aumenta o risco porque eleva o custo de combustíveis e frete, pressionando inflação e juros, pelo canal de oferta, como no choque do diesel de 2018.</p>
-      <ul><li><a href="https://www.poder360.com.br/poder-economia/estados-aprovam-aumento-de-icms-sobre-gasolina-diesel-e-gas-para-2027/" rel="nofollow noopener">Poder360: Estados aprovam aumento de ICMS sobre gasolina, diesel e gás para 2027</a></li><li><a href="https://www.gazetadopovo.com.br/economia/estados-vao-aumentar-imposto-sobre-combustiveis-a-partir-de-2027/" rel="nofollow noopener">Gazeta do Povo: Estados vão aumentar imposto sobre combustíveis a partir de 2027</a></li></ul>
-      <p class="rodape">O efeito some até 11/01/2027.</p>
-    </article>
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Fiscal</span> <span class="peq">27/10/2026</span>
-          <h3 style="margin-top:6px">Fazenda anuncia projeto de lei para cumprir o centro da meta fiscal e reafirma o centro da meta de inflação</h3></div>
-        <div class="pts menos">−1,0</div>
-      </div>
-      <p>Reduz o risco se as medidas forem aprovadas, porque uma âncora fiscal crível diminui o prêmio de risco e os juros longos, pelo canal fiscal, como na aprovação do teto de gastos em 2016. Por enquanto é só anúncio, sem medidas detalhadas.</p>
-      <ul><li><a href="https://g1.globo.com/economia/noticia/2026/10/27/ministro-da-fazenda-anuncia-projeto-para-mirar-centro-da-meta-fiscal-e-diz-que-espera-racionalidade-do-mercado.ghtml" rel="nofollow noopener">g1: Durigan anuncia projeto para cumprir centro da meta fiscal e pede &#39;racionalidade&#39; do mercado</a></li><li><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/governo-buscara-cumprir-meta-fiscal-com-dialogo-diz-durigan" rel="nofollow noopener">Agência Brasil: Governo buscará cumprir meta fiscal com diálogo, diz Durigan</a></li><li><a href="https://www.gazetadopovo.com.br/economia/ministro-lula-esperar-racionalidade-mercado-um-dia-depois-reacao-negativa/" rel="nofollow noopener">Gazeta do Povo: Ministro de Lula diz esperar “racionalidade” do mercado um dia depois de reação negativa</a></li></ul>
-      <p class="rodape">O efeito some até 10/01/2027.</p>
-    </article>
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Crédito</span> <span class="peq">27/10/2026</span>
-          <h3 style="margin-top:6px">BC: 20,3 milhões de pessoas em endividamento de risco (+75% em 5 anos); grande banco tem lucro 28% menor por causa das provisões contra calotes</h3></div>
-        
-      </div>
-      <p>Aumenta o risco porque a inadimplência crescente faz os bancos subirem provisões e restringirem o crédito, pelo canal de crédito às famílias, como em 2015-16. O BC afirma que a estabilidade financeira não está em risco.</p>
-      <ul><li><a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/numero-de-superendividados-no-brasil-cresce-75-em-cinco-anos-diz-bc.shtml" rel="nofollow noopener">Folha: Número de superendividados no Brasil cresce 75% em cinco anos, diz BC</a></li><li><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/numero-de-superendividados-no-brasil-cresceu-75-em-cinco-anos-diz-bc" rel="nofollow noopener">Agência Brasil: Número de superendividados no Brasil cresceu 75% em cinco anos, diz BC</a></li><li><a href="https://g1.globo.com/economia/noticia/2026/10/27/principais-preocupacoes-dos-bancos-sao-com-as-contas-publicas-e-inadimplencia-diz-relatorio-do-banco-central.ghtml" rel="nofollow noopener">g1: Principais preocupações dos bancos são com as contas públicas e inadimplência, diz Banco Central</a></li><li><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/banco-central-diz-que-estabilidade-financeira-nao-esta-em-risco" rel="nofollow noopener">Agência Brasil: Banco Central diz que estabilidade financeira não está em risco</a></li></ul>
-      <p class="rodape">Entra em "Outras notícias" na cascata. O efeito some até 10/01/2027.</p>
-    </article>
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Oferta</span> <span class="peq">27/10/2026</span>
-          <h3 style="margin-top:6px">Um El Niño forte pode reduzir a safra de soja 2026/27 em cerca de 10% (perda de R$ 33 bilhões); alimentos ficam 2,40% mais caros nas fábricas</h3></div>
-        
-      </div>
-      <p>Aumenta o risco porque uma quebra de safra derruba o PIB agro no 1º e no 2º trimestres e pressiona a inflação de alimentos, pelo canal de oferta, como no El Niño de 2015-16. O efeito depende da intensidade do fenômeno.</p>
-      <ul><li><a href="https://g1.globo.com/economia/agronegocios/noticia/2026/10/27/el-nino-pode-reduzir-safra-de-soja-do-brasil-em-10percent-projeta-serasa.ghtml" rel="nofollow noopener">g1: El Niño pode provocar perdas de R$ 33 bilhões na safra de soja do Brasil; entenda os riscos</a></li><li><a href="https://www.gazetadopovo.com.br/economia/inflacao-avanca-e-alimentos-saem-das-fabricas-240-mais-caros/" rel="nofollow noopener">Gazeta do Povo: Inflação avança e alimentos saem das fábricas 2,40% mais caros</a></li></ul>
-      <p class="rodape">Entra em "Outras notícias" na cascata. O efeito some até 10/01/2027.</p>
-    </article>
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Atividade</span> <span class="peq">28/10/2026</span>
-          <h3 style="margin-top:6px">Confiança da indústria cai pelo terceiro mês seguido em outubro, com piora da avaliação da situação atual</h3></div>
-        
-      </div>
-      <p>Aumenta o risco porque a confiança em queda antecipa cortes de produção e de investimento, pelo canal de atividade, como nas quedas de confiança de 2014. A pesquisa foi feita antes do choque de mercado pós-eleição.</p>
-      <ul><li><a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://aovivo.folha.uol.com.br/mercado/2026/10/25/6568-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post467994" rel="nofollow noopener">Folha: Confiança da indústria brasileira cai pelo terceiro mês seguido, diz FGV</a></li></ul>
-      <p class="rodape">Entra em "Outras notícias" na cascata. Só um veículo noticiou, então vale metade. O efeito some até 11/01/2027.</p>
-    </article>
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Crédito</span> <span class="peq">28/10/2026</span>
-          <h3 style="margin-top:6px">Governo avalia cobrar IOF por decreto sobre LCI, LCA e outros títulos isentos</h3></div>
-        
-      </div>
-      <p>Aumenta o risco porque encarece o funding do crédito imobiliário e rural, pelo canal de crédito, como no aumento de IOF de 2025. Ainda é só proposta em avaliação.</p>
-      <ul><li><a href="https://www.poder360.com.br/poder-economia/governo-avalia-cobrar-iof-sobre-lci-lca-e-outros-titulos/" rel="nofollow noopener">Poder360: Governo avalia cobrar IOF sobre LCI, LCA e outros títulos</a></li><li><a href="https://valor.globo.com/financas/noticia/2026/10/28/mercado-defende-limitar-tributao-de-ttulos-isentos-a-lci-e-lca-governo-estuda-iof-nesses-papis-dizem-fontes.ghtml" rel="nofollow noopener">Valor: Mercado defende limitar tributação de títulos isentos a LCI e LCA; governo estuda IOF nesses papéis, dizem fontes</a></li><li><a href="https://valor.globo.com/financas/noticia/2026/10/28/taxa-de-ttulos-isentos-sobe-menos-que-a-de-papis-pblicos-aps-2-turno-da-eleio-e-spread-cai-diz-vitrify.ghtml" rel="nofollow noopener">Valor: Taxa de títulos isentos sobe menos que a de papéis públicos após 2º turno da eleição e spread cai, diz Vitrify</a></li></ul>
-      <p class="rodape">Entra em "Outras notícias" na cascata. Só um veículo noticiou, então vale metade. O efeito some até 11/01/2027.</p>
-    </article>
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Atividade</span> <span class="peq">28/10/2026</span>
-          <h3 style="margin-top:6px">Vendas de máquinas e equipamentos acumulam queda de 13,4% no ano até setembro, com juros altos e concorrência de importados</h3></div>
-        
-      </div>
-      <p>Aumenta o risco porque a queda nas vendas de bens de capital antecipa investimento menor, pelo canal de atividade, como na contração do investimento em 2014-2015.</p>
-      <ul><li><a href="https://valor.globo.com/empresas/noticia/2026/10/28/vendas-de-maquinas-acumulam-queda-de-134percent-no-ano-ate-setembro.ghtml" rel="nofollow noopener">Valor: Vendas de máquinas acumulam queda de 13,4% no ano até setembro</a></li></ul>
-      <p class="rodape">Entra em "Outras notícias" na cascata. Só um veículo noticiou, então vale metade. O efeito some até 11/01/2027.</p>
-    </article>
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Crédito</span> <span class="peq">28/10/2026</span>
-          <h3 style="margin-top:6px">Grande banco eleva taxa mínima do crédito imobiliário de 11,69% para 15% ao ano</h3></div>
-        
-      </div>
-      <p>Aumenta o risco porque encarece e freia novas contratações de financiamento habitacional, pelo canal de crédito e construção civil, como no recuo do crédito imobiliário em 2015.</p>
-      <ul><li><a href="https://www.poder360.com.br/poder-economia/em-salto-inedito-bradesco-sobe-juro-da-casa-propria-para-15-ao-ano/" rel="nofollow noopener">Poder360: Em salto inédito, Bradesco sobe juro da casa própria para 15% ao ano</a></li></ul>
-      <p class="rodape">Entra em "Outras notícias" na cascata. Só um veículo noticiou, então vale metade. O efeito some até 11/01/2027.</p>
-    </article>
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Externo</span> <span class="peq">28/10/2026</span>
-          <h3 style="margin-top:6px">Fed mantém juros em 3,75%-4,00% ao ano, com dois votos divergentes a favor de alta de 0,25 ponto</h3></div>
-        
-      </div>
-      <p>Aumenta levemente o risco porque os votos por alta sinalizam juros americanos altos por mais tempo, pelo canal de fluxo de capital e câmbio, como no aperto do Fed de 2022. A manutenção era esperada.</p>
-      <ul><li><a href="https://valor.globo.com/financas/noticia/2026/10/28/fed-mantem-taxa-de-juros-inalterada-no-intervalo-de-375percent-a-400percent-ao-ano.ghtml" rel="nofollow noopener">Valor: Fed mantém taxa de juros inalterada no intervalo de 3,75% a 4,00% ao ano</a></li><li><a href="https://www.infomoney.com.br/economia/decisao-do-fed-nao-foi-unanime-duas-dirigentes-votaram-por-aperto-de-025-ponto/" rel="nofollow noopener">InfoMoney: Decisão do Fed não foi unânime; duas dirigentes votaram por aperto de 0,25 ponto</a></li><li><a href="https://www.estadao.com.br/economia/bc-americano-mantem-taxa-de-juros/" rel="nofollow noopener">Estadão: BC americano mantém taxa de juros, mas expõe divergências</a></li><li><a href="https://www.infomoney.com.br/economia/juros-fed-eua-outubro-2026/" rel="nofollow noopener">InfoMoney: Fed mantém taxa de juros enquanto aguarda por mais dados sobre inflação</a></li></ul>
-      <p class="rodape">Entra em "Outras notícias" na cascata. O mercado já esperava isso, então vale metade. O efeito some até 11/01/2027.</p>
-    </article>
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Externo</span> <span class="peq">27/10/2026</span>
-          <h3 style="margin-top:6px">Banco Mundial prevê alta de 23% nas commodities em 2026, puxada pela energia; governo prorroga por 30 dias a subvenção de R$ 2,12/litro ao diesel</h3></div>
-        
-      </div>
-      <p>Aumenta o risco porque a energia cara pressiona a inflação e os juros, e o subsídio renovado pesa nas contas públicas, pelo canal externo e fiscal, como em 2022. Como exportador de petróleo, o país compensa parte do efeito nos termos de troca.</p>
-      <ul><li><a href="https://valor.globo.com/mundo/noticia/2026/10/28/banco-mundial-prev-alta-de-23-pontos-percentuais-nos-preos-das-commodities-em-2026.ghtml" rel="nofollow noopener">Valor: Banco Mundial prevê alta de 23% nos preços das commodities em 2026</a></li><li><a href="https://g1.globo.com/economia/agronegocios/noticia/2026/10/28/por-que-o-agro-e-tao-vulneravel-a-alta-do-diesel.ghtml" rel="nofollow noopener">g1: Governo renova subsídio ao diesel; por que o agro é tão vulnerável à alta do combustível?</a></li><li><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/governo-prorroga-por-um-mes-subvencao-de-r-212-ao-diesel" rel="nofollow noopener">Agência Brasil: Governo prorroga por um mês subvenção de R$ 2,12 ao diesel</a></li><li><a href="https://g1.globo.com/economia/noticia/2026/10/27/governo-prorroga-subvencao-ao-diesel-por-mais-30-dias.ghtml" rel="nofollow noopener">g1: Governo prorroga subvenção ao diesel por mais 30 dias, em meio à alta do petróleo</a></li></ul>
-      <p class="rodape">Entra em "Outras notícias" na cascata. O mercado já esperava isso, então vale metade. O efeito some até 10/01/2027.</p>
-    </article>
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Institucional</span> <span class="peq">27/10/2026</span>
-          <h3 style="margin-top:6px">Indefinição sobre o comando do Ministério da Fazenda no novo mandato; mercado cobra nome e regra fiscal crível</h3></div>
-        
-      </div>
-      <p>Aumenta o risco porque a demora em definir a política fiscal mantém o prêmio de risco elevado, pelo canal de expectativas e juros longos, como na transição de 2022 para 2023.</p>
-      <ul><li><a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/mercado-cobra-rapidez-de-lula-em-nome-para-fazenda-mas-petistas-rejeitam-pressao-em-ressaca-eleitoral.shtml" rel="nofollow noopener">Folha: Mercado cobra rapidez de Lula em nome para Fazenda, mas petistas rejeitam pressão em &#39;ressaca eleitoral&#39;</a></li><li><a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/colunas/painelsa/2026/10/dizer-que-mercado-aceitou-fonteles-e-forcar-a-tinta-diz-gestor.shtml" rel="nofollow noopener">Folha: &#39;Dizer que mercado aceitou Fonteles é forçar a tinta&#39;, diz gestor</a></li><li><a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/cotado-para-a-fazenda-fonteles-propos-conter-alta-do-deficit-no-piaui-com-regra-que-limita-gastos.shtml" rel="nofollow noopener">Folha: Cotado para a Fazenda, Fonteles propôs conter alta do déficit no Piauí com regra que limita gastos</a></li><li><a href="https://www.estadao.com.br/economia/o-brasil-e-o-cenario-fiscal-a-situacao-das-contas-demanda-imediato-tratamento-pelo-governo-eleito/" rel="nofollow noopener">Estadão: O Brasil e o cenário fiscal: a situação das contas demanda imediato tratamento pelo governo eleito</a></li></ul>
-      <p class="rodape">Entra em "Outras notícias" na cascata. O mercado já esperava isso, então vale metade. O efeito some até 10/01/2027.</p>
-    </article>
-  
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="chip">Mercado</span> <span class="peq">27/10/2026</span>
-          <h3 style="margin-top:6px">Tesouro anuncia recompra de NTN-B com vencimentos de 2030 a 2045 para conter oscilações</h3></div>
-        
-      </div>
-      <p>Reduz o risco porque limita disfuncionalidade nos juros longos, pelo canal de liquidez do mercado de títulos, como nas recompras do Tesouro em março de 2020.</p>
-      <ul><li><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/para-conter-oscilacoes-tesouro-anuncia-nova-recompra-de-titulos" rel="nofollow noopener">Agência Brasil: Para conter oscilações, Tesouro anuncia nova recompra de títulos</a></li></ul>
-      <p class="rodape">Entra em "Outras notícias" na cascata. Só um veículo noticiou, então vale metade. O efeito some até 10/01/2027.</p>
-    </article>
-  
-  </div>
-</div></section>
-
-<section id="indicadores"><div class="w">
-  <h2>Os indicadores</h2>
-  <p class="lead">Seis sinais com pesos publicados antes da primeira nota. Cada um é comparado a um valor neutro e tem efeito máximo limitado. A coluna de pontos é a parte de cada um nos 34 pontos de hoje.</p>
-  <div class="tabela"><table>
-    <thead><tr><th>Indicador</th><th class="n">Valor</th><th>Referência</th><th class="n">Pontos</th></tr></thead>
-    <tbody>
-    
-      <tr><td><strong>Atividade (IBC-Br)</strong><br><span class="peq">Média dos últimos 3 meses do IBC-Br dessazonalizado contra a média dos 3 meses anteriores. <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.24364/dados/ultimos/12?formato=json" rel="nofollow">BCB, série 24364</a></span></td>
-        <td class="n mono">−0,64 %</td><td>ago/2026</td>
-        <td class="n mono mais">+8,9</td></tr>
-    
-      <tr><td><strong>Juro real ex-ante</strong><br><span class="peq">Selic meta descontada da inflação esperada para 12 meses (Focus, suavizada), comparada a um juro neutro de 5%. Hoje: Selic de 13,75% e inflação esperada de 4,53% (Focus de 23/10). <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados/ultimos/1?formato=json" rel="nofollow">BCB, série 432 e Focus</a></span></td>
-        <td class="n mono">8,82 % a.a.</td><td>28/10/2026</td>
-        <td class="n mono mais">+5,9</td></tr>
-    
-      <tr><td><strong>Dívida pública</strong><br><span class="peq">Variação da dívida bruta do governo geral em 12 meses. Hoje: 82,9% do PIB. <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados/ultimos/13?formato=json" rel="nofollow">BCB, série 13762</a></span></td>
-        <td class="n mono">+5,56 p.p. do PIB</td><td>ago/2026</td>
-        <td class="n mono mais">+3,5</td></tr>
-    
-      <tr><td><strong>Dívida das famílias</strong><br><span class="peq">Comprometimento de renda das famílias com dívidas (dessazonalizado) menos a sua média dos últimos 36 meses. Hoje: 28,7% da renda. <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.29034/dados/ultimos/36?formato=json" rel="nofollow">BCB, série 29034</a></span></td>
-        <td class="n mono">+1,65 p.p.</td><td>jul/2026</td>
-        <td class="n mono mais">+3,2</td></tr>
-    
-      <tr><td><strong>Câmbio</strong><br><span class="peq">Variação do dólar PTAX em cerca de 3 meses (63 dias úteis). Hoje: R$ 5,34. <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/64?formato=json" rel="nofollow">BCB, série 1 (PTAX)</a></span></td>
-        <td class="n mono">+4,30 %</td><td>28/10/2026</td>
-        <td class="n mono mais">+1,3</td></tr>
-    
-      <tr><td><strong>Desemprego (regra de Sahm adaptada)</strong><br><span class="peq">Média de 3 meses da desocupação da PNAD menos o menor valor dessa média nos 12 meses anteriores. <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.24369/dados/ultimos/24?formato=json" rel="nofollow">IBGE/BCB, série 24369</a></span></td>
-        <td class="n mono">+0,10 p.p.</td><td>ago/2026</td>
-        <td class="n mono menos">−1,1</td></tr>
-    
-    </tbody>
-  </table></div>
-</div></section>
-
-
-<section id="dois-lados"><div class="w">
-  <h2>Os dois lados</h2>
-  <p class="lead">Os três melhores argumentos de cada lado, escritos para convencer quem pensa diferente. Atualizados em 28/10/2026.</p>
-  <div class="lados">
-    <div class="lado mais"><h3>O caso por mais crise</h3><ol>
-      <li>O estresse de mercado não se dissipou: a bolsa voltou a cair 3% após a forte correção pós-eleição, e o dólar chegou a R$ 5,60. Condições financeiras apertadas por semanas costumam se transmitir para crédito e investimento.<br><span class="f"><a href="https://www.infomoney.com.br/mercados/ibovespa-estresse-continua-por-que-indice-cai-forte-apos-terca-mais-tranquila-no-mercado-28102026/" rel="nofollow noopener">InfoMoney</a>, <a href="https://valor.globo.com/patrocinado/pulse-brand/noticia/2026/10/28/depois-da-eleicao-choque-no-dolar-testa-o-hedge-em-camadas-e-muda-a-conta-da-protecao-de-2027-1.ghtml" rel="nofollow noopener">Valor</a></span></li><li>O crédito já está se fechando na ponta: um grande banco elevou o juro da casa própria de 11,69% para 15%, e as vendas de máquinas caem 13,4% no ano. Isso aponta para queda de investimento e construção, componentes que puxam recessões.<br><span class="f"><a href="https://www.poder360.com.br/poder-economia/em-salto-inedito-bradesco-sobe-juro-da-casa-propria-para-15-ao-ano/" rel="nofollow noopener">Poder360</a>, <a href="https://valor.globo.com/empresas/noticia/2026/10/28/vendas-de-maquinas-acumulam-queda-de-134percent-no-ano-ate-setembro.ghtml" rel="nofollow noopener">Valor</a></span></li><li>Há várias pressões inflacionárias para 2027: CBS de 11,3%, ICMS maior sobre combustíveis e Fed com votos por alta. Isso dificulta cortes de juros num momento em que a CNI já revisa o PIB para baixo e a dívida para 83,7%.<br><span class="f"><a href="https://valor.globo.com/brasil/noticia/2026/10/28/tributaristas-consideram-alta-cbs-de-113-pontos-percentuais-que-pode-levar-iva-a-mais-de-30.ghtml" rel="nofollow noopener">Valor</a>, <a href="https://www.gazetadopovo.com.br/economia/estados-vao-aumentar-imposto-sobre-combustiveis-a-partir-de-2027/" rel="nofollow noopener">Gazeta do Povo</a>, <a href="https://valor.globo.com/brasil/noticia/2026/10/28/cni-reduz-de-2percent-para-16percent-projecao-de-crescimento-do-pib-em-2026.ghtml" rel="nofollow noopener">Valor</a></span></li>
-    </ol></div>
-    <div class="lado menos"><h3>O caso por menos crise</h3><ol>
-      <li>A economia ainda cresce: mesmo após a revisão, a CNI projeta alta de 1,6% do PIB em 2026, longe de contração. Para haver recessão técnica, seriam necessários dois trimestres seguidos de queda.<br><span class="f"><a href="https://valor.globo.com/brasil/noticia/2026/10/28/cni-reduz-de-2percent-para-16percent-projecao-de-crescimento-do-pib-em-2026.ghtml" rel="nofollow noopener">Valor</a></span></li><li>O choque externo não piorou: o Fed manteve os juros, como o mercado esperava, sem nova alta. Assim, o diferencial de juros que sustenta o real continua igual.<br><span class="f"><a href="https://valor.globo.com/financas/noticia/2026/10/28/fed-mantem-taxa-de-juros-inalterada-no-intervalo-de-375percent-a-400percent-ao-ano.ghtml" rel="nofollow noopener">Valor</a>, <a href="https://www.infomoney.com.br/economia/juros-fed-eua-outubro-2026/" rel="nofollow noopener">InfoMoney</a></span></li><li>O mercado de crédito privado funcionou no estresse: as taxas dos títulos isentos subiram menos que as dos títulos públicos e o spread caiu. O consumo de alimentos também cresce 6,5% em relação ao ano anterior.<br><span class="f"><a href="https://valor.globo.com/financas/noticia/2026/10/28/taxa-de-ttulos-isentos-sobe-menos-que-a-de-papis-pblicos-aps-2-turno-da-eleio-e-spread-cai-diz-vitrify.ghtml" rel="nofollow noopener">Valor</a>, <a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/consumo-de-alimentos-cresce-apos-proibicao-das-bets-no-pais-diz-abras" rel="nofollow noopener">Agência Brasil</a></span></li>
-    </ol></div>
-  </div>
-</div></section>
-
-
-
-<section id="gatilho"><div class="w">
-  <h2>O próximo gatilho</h2>
-  <p class="lead">O IBGE divulga o PIB do 3T26 em 2 de dezembro de 2026. Com tudo mais igual, a nota vai para:</p>
-  <div class="cen">
-    <div class="cartao"><b class="mais">95%</b><span>se o PIB do 3T26 vier negativo</span></div><div class="cartao"><b class="menos">78%</b><span>se o PIB do 3T26 vier zero ou positivo</span></div>
-  </div>
-  <p class="peq">Um trimestre negativo já é metade de uma recessão técnica. Se vier positivo, a janela perde um trimestre e a nota cai um pouco por efeito do tempo.</p>
-</div></section>
-
-
-<section id="regua"><div class="w">
-  <h2>A régua: quanto da nota é escolha</h2>
-  <p class="lead">A maior escolha do modelo é o ponto de partida histórico. Usamos 5,3% de chance por trimestre de uma recessão começar: a mediana de 9 métodos que não escolhem o período a dedo, com faixa de 54 a 66 até 2030. Quem discorda pode refazer a conta:</p>
-  <div class="tabela"><table>
-    <thead><tr><th>Período de referência</th><th class="n">Só a história</th><th class="n">Com dados e notícias de hoje</th></tr></thead>
-    <tbody>
-      
-      <tr><td>2004–2026 <span class="peq">(para quem acha que o Brasil mudou depois de 2004)</span></td><td class="n mono">50%</td><td class="n mono">69%</td></tr>
-      <tr><td><strong>Mediana dos métodos, usada pelo site</strong></td><td class="n mono"><strong>60%</strong></td><td class="n mono"><strong>79%</strong></td></tr>
-      <tr><td>1980–2026 <span class="peq">(para quem acha que não mudou)</span></td><td class="n mono">74%</td><td class="n mono">89%</td></tr>
-    </tbody>
-  </table></div>
-  
-  <details class="metodos"><summary>Os 9 métodos da âncora</summary>
-  <div class="tabela"><table>
-    <thead><tr><th>Método</th><th class="n">Risco por trimestre</th><th class="n">Só a história, até 2030</th></tr></thead>
-    <tbody><tr><td>Desde 2T99: metas de inflação e câmbio flutuante</td><td class="n mono">5,62%</td><td class="n mono">63%</td></tr><tr><td>Desde 1T00: com a Lei de Responsabilidade Fiscal</td><td class="n mono">5,81%</td><td class="n mono">64%</td></tr><tr><td>1980 em diante, peso cai à metade a cada 10 anos</td><td class="n mono">4,89%</td><td class="n mono">57%</td></tr><tr><td>1980 em diante, peso cai à metade a cada 15 anos</td><td class="n mono">5,68%</td><td class="n mono">63%</td></tr><tr><td>1980 em diante, peso cai à metade a cada 20 anos</td><td class="n mono">6,12%</td><td class="n mono">66%</td></tr><tr><td>Média das janelas iniciadas entre 1T95 e 4T12</td><td class="n mono">5,06%</td><td class="n mono">59%</td></tr><tr><td>Quebra estrutural em data desconhecida (bayesiano)</td><td class="n mono">5,28%</td><td class="n mono">60%</td></tr><tr><td>Brasil desde 2T99 + 8 emergentes, peso de 10 anos</td><td class="n mono">4,92%</td><td class="n mono">58%</td></tr><tr><td>Brasil desde 2T99 + 8 emergentes, peso de 25 anos</td><td class="n mono">4,43%</td><td class="n mono">54%</td></tr></tbody>
-  </table></div>
-  </details>
-  
-  <p class="peq">De onde pode vir uma recessão: desde 1999, as cinco recessões vieram de choques globais (2008–09 e 2020), de crises domésticas de confiança fiscal e política (2003 e 2014–16) e de um choque de oferta somado à crise argentina (2001). Recessões globais aparecem uma vez a cada 10 a 14 anos e, desde 1980, todas coincidiram com recessão aqui. Só por esse canal, mesmo um Brasil impecável teria de 22% a 30% de chance até 2030.</p>
-  <p class="peq">Base: datação de recessões do CODACE/FGV IBRE e recessões técnicas de 8 emergentes parecidos. A conta está em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/taxa_base.py">src/taxa_base.py</a>; detalhes na <a href="/metodologia/#taxa-base">metodologia</a>.</p>
-</div></section>
-
-<section id="historico"><div class="w">
-  <h2>Histórico e placar</h2>
-  <p class="lead">Cada atualização fica gravada e nunca é recalculada. A pergunta de 2030 só se resolve em 2031; até lá, quem avalia o site são as previsões de 12 meses, que vencem uma a uma.</p>
-  <svg viewBox="0 0 480 230" class="hist" role="img" aria-label="Histórico da nota"><line x1="34" y1="196.0" x2="470" y2="196.0" class="gl"/><text x="26" y="200.0" class="tl" text-anchor="end">0</text><line x1="34" y1="150.75" x2="470" y2="150.75" class="gl"/><text x="26" y="154.75" class="tl" text-anchor="end">25</text><line x1="34" y1="105.5" x2="470" y2="105.5" class="g50"/><text x="26" y="109.5" class="tl" text-anchor="end">50</text><line x1="34" y1="60.25" x2="470" y2="60.25" class="gl"/><text x="26" y="64.25" class="tl" text-anchor="end">75</text><line x1="34" y1="15.0" x2="470" y2="15.0" class="gl"/><text x="26" y="19.0" class="tl" text-anchor="end">100</text><polyline points="34.0,56.7 34.1,55.0 36.1,53.0" class="l1"/><circle cx="34.0" cy="56.7" r="4" class="l1d"/><circle cx="34.1" cy="55.0" r="4" class="l1d"/><circle cx="36.1" cy="53.0" r="4" class="l1d"/><polyline points="34.0,109.5 34.1,106.1 36.1,100.2" class="l2"/><circle cx="34.0" cy="109.5" r="4" class="l2d"/><circle cx="34.1" cy="106.1" r="4" class="l2d"/><circle cx="36.1" cy="100.2" r="4" class="l2d"/><text x="34" y="224" class="tl">28/10/2026</text><text x="470" y="224" class="tl" text-anchor="end">27/11/2026</text></svg>
-  <div class="legenda"><span><i style="background:var(--quente)"></i>Até 2030</span><span><i style="background:var(--tinta2)"></i>Próximos 4 trimestres</span></div>
-  <h3 style="margin-top:26px">Previsões de 12 meses registradas</h3>
-  <div class="tabela"><table>
-    <thead><tr><th>Registrada em</th><th>Recessão começando entre</th><th class="n">Probabilidade</th><th>Vence</th><th>Resultado</th></tr></thead>
-    <tbody><tr><td>28/10/2026</td><td>3T26 e 2T27</td><td class="n mono">48%</td><td>quando o IBGE divulgar o 3T27</td><td>em aberto</td></tr></tbody>
-  </table></div>
-</div></section>
-
-
-<section id="ancoras"><div class="w">
-  <h2>O que diz o mercado</h2>
-  <p class="lead">Mediana do Boletim Focus para o crescimento do PIB. O Focus é exibido como comparação e não entra na conta.</p>
-  <div class="tabela"><table>
-    <thead><tr><th class="n">2026</th><th class="n">2027</th><th class="n">2028</th><th class="n">2029</th><th class="n">2030</th></tr></thead>
-    <tbody><tr><td class="n mono">1,80%</td><td class="n mono">1,31%</td><td class="n mono">1,81%</td><td class="n mono">2,00%</td><td class="n mono">2,00%</td></tr></tbody>
-  </table></div>
-  <p class="peq">Fonte: <a href="https://www.bcb.gov.br/publicacoes/focus">Banco Central, Focus</a>, dados de 23/10/2026. O Focus não previu a recessão de 2015: em janeiro daquele ano, a mediana era de crescimento.</p>
-</div></section>
-
-</main>
+</aside>
+  <footer class="rod" aria-label="Notas">
+    <h2>Notas</h2>
+    <ol class="rodape-notas">
+      <li id="n1"><span><b>O normal.</b> Num ano comum, a chance de uma recessão começar nos 12 meses seguintes é de cerca de 20%, pela história das recessões no Brasil (a <a href="/metodologia/#taxa-base">âncora histórica</a>). Hoje a conta dá 53%, 2,7 vezes isso.</span></li>
+      <li id="n2"><span><b>A seta</b> compara com 30 dias atrás e só muda se o multiplicador andar mais de 10%.</span></li>
+    </ol>
+    <p class="fontes">Datas: calendário do <a href="https://servicodados.ibge.gov.br/api/v3/calendario/">IBGE</a>, reuniões do Copom de 2026 publicadas pelo Banco Central e do FOMC publicadas pelo Fed.</p>
+  </footer>
+</div>
 <script>
 (function(){var t=new Date("2026-10-28T15:24:26-03:00");if((Date.now()-t)/36e5>36){document.getElementById("defasado").hidden=false}})();
 </script>
 
-<footer><div class="w">
-  <p><strong>Vai dar crise?</strong> mede a probabilidade de recessão técnica no Brasil (dois trimestres seguidos de queda do PIB) até o 4º trimestre de 2030, com <a href="/metodologia/">metodologia pré-registrada</a>.</p>
-  <p>Não é recomendação de investimento. Os dados vêm do Banco Central e do IBGE; as notícias são lidas por um modelo de linguagem que só classifica fatos, com teto e prazo de validade.</p>
-  <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico completo no GitHub</a> · <a href="/data.json">data.json</a> · <a href="/historico.json">historico.json</a> · <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Abra uma issue</a></p>
+<footer class="pe"><div class="in">
+  <p>O Vai dar crise? mede a chance de recessão técnica no Brasil (dois trimestres seguidos de queda do PIB) até o 4º trimestre de 2030, com <a href="/metodologia/">metodologia pré-registrada</a>. Não é recomendação de investimento.</p>
+  <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Abra uma issue</a></p>
 </div></footer>
 </body>
 </html>
