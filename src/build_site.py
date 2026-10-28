@@ -275,7 +275,7 @@ def main() -> None:
     (DOCS / "historico.json").write_text(json.dumps(
         [{"id": r["id"], "gerado_em": r["gerado_em"], "nota": round(100 * r["resultado"]["manchete"], 1),
           "proximos_4_trimestres": round(100 * r["resultado"]["curto_prazo_4t"], 1)} for r in todas], indent=1))
-    (DOCS / "CNAME").write_text("vaidarcrise.com.br\n")
+    (DOCS / "CNAME").write_text("vaidarcrise.com.br")
     (DOCS / ".nojekyll").touch()
     (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
     urls = [f"{SITE}/", f"{SITE}/metodologia/"] + [f"{SITE}/{d}/" for d in sorted(por_dia)]
