@@ -2,13 +2,13 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Metodologia · Vai dar crise?</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Metodologia | Vai dar crise?</title>
 <meta name="description" content="Como o Vai dar crise? calcula a probabilidade de recessão no Brasil até 2030: regra de resolução, taxa-base, indicadores, notícias e salvaguardas.">
 <link rel="canonical" href="https://vaidarcrise.com.br/metodologia/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
-<meta property="og:title" content="Metodologia · Vai dar crise?">
+<meta property="og:title" content="Metodologia | Vai dar crise?">
 <meta property="og:description" content="Como o Vai dar crise? calcula a probabilidade de recessão no Brasil até 2030: regra de resolução, taxa-base, indicadores, notícias e salvaguardas.">
 <meta property="og:url" content="https://vaidarcrise.com.br/metodologia/">
 <meta property="og:image" content="https://vaidarcrise.com.br/og.png">
@@ -16,100 +16,103 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f4efe4">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b8361e'/%3E%3Ctext x='32' y='45' font-family='Georgia' font-size='38' font-weight='700' fill='%23fff' text-anchor='middle'%3E%3F%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161718" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='13' y='13' width='38' height='38' rx='6' transform='rotate(45 32 32)' fill='%23ffc20e' stroke='%23000' stroke-width='4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
+/* O × da Charis é largo e solto ("2,7 ×"); só esse caractere vem de uma sem serifa do sistema. */
+@font-face{font-family:"Vezes";src:local("Arial"),local("ArialMT"),local("Helvetica"),local("Roboto"),local("Liberation Sans");unicode-range:U+00D7}
 :root{
-  --papel:#f4efe4; --papel2:#ebe4d4; --tinta:#1d1a16; --tinta2:#5b544a; --linha:#d6ccb8;
-  --quente:#b8361e; --morno:#d98a2b; --frio:#3f7d5c; --acento:#b8361e; --bom:#2f6f4f;
-  --cartao:#fbf8f1; --sombra:0 1px 0 rgba(0,0,0,.04);
+  /* Página branca de blog: o texto em serifa, dados e avisos na letra do sistema. A plaquinha amarela é a única cor de marca. */
+  --papel:#ffffff; --tinta:#1e1f21; --meta:#62666b; --fio:#e4e6e8; --maquina:#f4f5f6;
+  --link:#1f4fbf; --placa:#ffc20e; --placa-tinta:#000000; --sobe:#c3102b; --desce:#00733a;
+  --hist:#5d6570; --hist2:#c6cbd1; --hist2-tinta:#1e1f21; --nota-fundo:#fffaeb;
+  --serifa:"Vezes","Charis SIL",Charter,"Bitstream Charter","Iowan Old Style",Georgia,serif;
+  --sistema:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
-@media (prefers-color-scheme: dark){
-  :root{ --papel:#16130f; --papel2:#201c16; --tinta:#efe8da; --tinta2:#b2a894; --linha:#3a332a;
-    --quente:#e0583c; --morno:#e3a04a; --frio:#5fae84; --acento:#e0583c; --bom:#6cc196; --cartao:#1d1914; }
-}
+@media (prefers-color-scheme: dark){:root{--papel:#161718;--tinta:#e8e9ea;--meta:#a3a7ac;--fio:#2f3134;--maquina:#1f2123;--link:#94b4ff;--sobe:#ff7373;--desce:#52c993;--hist:#8d96a1;--hist2:#3d4248;--hist2-tinta:#e8e9ea;--nota-fundo:#1f1d16;color-scheme:dark}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.6 "IBM Plex Sans",system-ui,sans-serif}
-a{color:inherit;text-decoration-color:var(--acento);text-underline-offset:3px}
-a:hover{color:var(--acento)}
-.w{max-width:860px;margin:0 auto;padding:0 16px}
-header.topo{border-bottom:1px solid var(--linha)}
-header.topo .w{display:flex;justify-content:space-between;align-items:center;height:56px;gap:12px}
-.marca{font:900 20px/1 Fraunces,Georgia,serif;letter-spacing:-.01em;text-decoration:none}
-.marca span{color:var(--acento)}
-nav a{font-size:14px;color:var(--tinta2);text-decoration:none;margin-left:16px}
-nav a:hover{color:var(--tinta)}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;letter-spacing:-.01em;line-height:1.15}
-h2{font-size:28px;font-weight:700;margin:0 0 8px}
-h3{font-size:19px;font-weight:700;margin:0 0 6px}
-section{padding:44px 0;border-bottom:1px solid var(--linha)}
-.lead{font-size:18px;color:var(--tinta2);margin:0 0 20px;max-width:680px}
-.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.95em}
-.peq{font-size:14px;color:var(--tinta2)}
-.chip{display:inline-block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border:1px solid var(--linha);border-radius:99px;color:var(--tinta2)}
-.medidor{position:relative;margin:30px 0 4px;padding-top:4px}
-.trilho{position:relative;height:16px;border-radius:8px;background:linear-gradient(90deg,var(--frio),var(--morno) 50%,var(--quente))}
-.trilho .pt{position:absolute;top:50%;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;background:var(--papel);border:4px solid var(--tinta)}
-.trilho .lb{position:absolute;top:-8px;bottom:-8px;width:0;border-left:2px dashed var(--tinta)}
-.medidor .hb{position:absolute;top:-22px;transform:translateX(-50%);font-size:13px;color:var(--tinta2);white-space:nowrap}
-.tqs{position:relative;height:22px;margin-top:6px}
-.tq{position:absolute;transform:translateX(-50%);font-size:12px;color:var(--tinta2)}
-.tq:first-child{transform:none}.tq:last-child{transform:translateX(-100%)}
-.medidor .cc{margin:0;text-align:center;font-size:13px;font-style:italic;color:var(--tinta2)}
-.cascata{display:grid;gap:6px;margin:8px 0 14px}
-.cr{display:grid;grid-template-columns:minmax(120px,38%) 1fr 56px;align-items:center;gap:10px;font-size:14px}
-.cr .cn{text-align:right;line-height:1.25}
-.cr .ct{position:relative;height:20px}
-.cr .ct i{position:absolute;top:0;bottom:0;border-radius:2px}
-.cr.up i{background:var(--quente)} .cr.dn i{background:var(--frio)} .cr.tot i{background:var(--tinta2)}
-.cr.tot .cn,.cr.tot .cv{font-weight:600}
-.cr .cv{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--tinta2)}
-.cr.tot .cv{color:var(--tinta)}
-@media (max-width:640px){.cr{grid-template-columns:1fr 52px;row-gap:2px}.cr .cn{grid-column:1/-1;text-align:left}.cr .ct{grid-column:1}}
-.mais{color:var(--quente)} .menos{color:var(--bom)}
-table{width:100%;border-collapse:collapse;font-size:15px}
-th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--linha);vertical-align:top}
-th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--tinta2);font-weight:600}
-td.n,th.n{text-align:right;white-space:nowrap}
-.tabela{overflow-x:auto}
-footer{padding:40px 0 60px;font-size:14px;color:var(--tinta2)}
-footer p{margin:6px 0}
-svg text{font-family:"IBM Plex Sans",system-ui,sans-serif}
-.tl{font-size:14px;fill:var(--tinta2)} .it{font-style:italic}
-.tk{stroke:var(--tinta2);stroke-width:1}
-.base{stroke:var(--tinta);stroke-width:2;stroke-dasharray:3 3}
-.mk{fill:var(--papel);stroke:var(--tinta);stroke-width:4}
-.cl{font-size:13px;fill:var(--tinta)} .cv{font-size:13px;fill:var(--tinta2)} .b{font-weight:600;fill:var(--tinta)}
-.gl{stroke:var(--linha);stroke-width:1} .g50{stroke:var(--tinta2);stroke-width:1;stroke-dasharray:4 4}
-.l1{fill:none;stroke:var(--quente);stroke-width:2.5} .l1d{fill:var(--quente)}
-.l2{fill:none;stroke:var(--tinta2);stroke-width:2;stroke-dasharray:5 4} .l2d{fill:var(--tinta2)}
+body{margin:0;background:var(--papel);color:var(--tinta);font:19px/1.62 var(--serifa)}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+.in{max-width:1000px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.peq{font:14px/1.5 var(--sistema);color:var(--meta)}
+.mais{color:var(--sobe)}.menos{color:var(--desce)}
 
-.texto{padding:36px 0 20px}
-.texto h1{font-size:clamp(34px,7vw,52px);margin:0 0 18px}
-.texto h2{margin-top:40px;padding-top:8px}
-.texto h3{margin-top:26px}
-.texto p,.texto li{max-width:700px}
-.texto code{font-family:"IBM Plex Mono",monospace;font-size:.9em;background:var(--papel2);padding:1px 5px;border-radius:4px}
-.texto pre{background:var(--papel2);padding:12px;border-radius:8px;overflow-x:auto}
+/* cabeçalho */
+.cab .in{padding-top:28px}
+.cab .faixa{padding-bottom:18px;border-bottom:1px solid var(--fio)}
+.marca{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--tinta)}
+.marca:hover{color:var(--tinta)}
+.mini{width:18px;height:18px;flex:none;transform:rotate(45deg);background:var(--placa);border-radius:3px;box-shadow:inset 0 0 0 2px var(--placa),inset 0 0 0 3.5px var(--placa-tinta)}
+.marca b{font:700 30px/1.1 var(--serifa);letter-spacing:-.01em}
+.linha-fina{margin:8px 0 12px;font:16px/1.45 var(--sistema);color:var(--meta)}
+.cab nav{display:flex;flex-wrap:wrap;gap:6px 18px;font:15px/1.4 var(--sistema)}
+
+/* o topo: só o multiplicador e a seta (bloco próprio em _nota.html); o resto vai para as notas do rodapé */
+.nota{margin-bottom:30px;min-width:0}
+.nota .topo{display:flex;align-items:center;gap:16px}
+.placa{width:84px;height:84px;margin:13px;flex:none;transform:rotate(45deg);background:var(--placa);border-radius:10px;box-shadow:inset 0 0 0 4px var(--placa),inset 0 0 0 7px var(--placa-tinta)}
+.placa span{display:grid;place-items:center;height:100%;transform:rotate(-45deg);font:800 29px/1 var(--sistema);color:var(--placa-tinta);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.leitura{display:flex;flex-direction:column;gap:2px;min-width:0;margin:0}
+.leitura .seta{font:700 20px/1.2 var(--sistema);white-space:nowrap}
+.leitura .seta.sobe{color:var(--sobe)}.leitura .seta.desce{color:var(--desce)}.leitura .seta.igual{color:var(--tinta)}
+.leitura .seta b{font-size:1.15em;margin-right:4px}
+sup{font:600 .55em/0 var(--sistema);margin-left:2px;vertical-align:super}
+sup a{text-decoration:none;color:var(--link)}
+.nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:10px 0 0}
+.aviso{font:15px/1.45 var(--sistema);background:var(--maquina);border-left:4px solid var(--placa);padding:8px 12px;margin:12px 0 0}
+.aviso[hidden]{display:none}
+
+/* lateral */
+.lado{font:15.5px/1.5 var(--sistema);border-top:1px solid var(--fio);padding-top:22px}
+.bloco{margin-bottom:30px}
+.bloco h3{font:700 17px/1.3 var(--serifa);margin:0 0 6px}
+.bloco p{margin:0 0 6px}
+.bloco ul{list-style:none;padding:0;margin:0}
+.bloco li{display:flex;justify-content:space-between;gap:12px;padding:3px 0;border-bottom:1px solid var(--fio);font-variant-numeric:tabular-nums}
+.bloco .datas li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:10px;justify-content:start}
+.datas time{font-weight:600;color:var(--tinta)}
+.datas li.chave{background:var(--nota-fundo);padding:6px;margin:2px -6px;border-bottom:0;border-radius:4px}
+
+/* rodapé */
+.pe{font:14px/1.55 var(--sistema);color:var(--meta)}
+.pe .in{padding-top:22px;padding-bottom:56px;border-top:1px solid var(--fio)}
+.pe p{margin:0 0 8px;max-width:640px}
+.pe a{color:var(--meta)}
+@media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:25px}.nota .resp{font-size:22px}.marca b{font-size:26px}}
+
+.texto{padding-top:30px;padding-bottom:40px}
+.texto > *{max-width:760px}
+.texto h1{font:700 34px/1.15 var(--serifa);margin:0 0 16px}
+.texto h2{font:700 25px/1.2 var(--serifa);margin:40px 0 10px;padding-top:24px;border-top:1px solid var(--fio)}
+.texto h3{font:700 19px/1.3 var(--serifa);margin:26px 0 6px}
+.texto code{font:.85em/1 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--maquina);padding:1px 5px;border-radius:4px}
+.texto pre{background:var(--maquina);padding:12px;border-radius:6px;overflow-x:auto}
 .texto pre code{background:none;padding:0}
-.texto blockquote{margin:16px 0;padding:4px 16px;border-left:4px solid var(--acento);color:var(--tinta2)}
-.texto table{margin:12px 0}
+.texto blockquote{margin:16px 0;padding:4px 16px;border-left:4px solid var(--placa)}
+.texto table{display:block;overflow-x:auto;border-collapse:collapse;font:15px/1.45 var(--sistema);margin:12px 0}
+.texto th,.texto td{text-align:left;padding:8px;border-bottom:1px solid var(--fio);vertical-align:top}
+.texto th{font-size:13px;color:var(--meta);font-weight:600}
+@media (max-width:620px){.texto h1{font-size:29px}.texto h2{font-size:22px}}
 
 </style>
 </head>
 <body>
-<header class="topo"><div class="w">
-  <a class="marca" href="/">Vai dar crise<span>?</span></a>
-  <nav><a href="/#por-que">Por quê</a><a href="/metodologia/">Metodologia</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
-</div></header>
+<header class="cab"><div class="in"><div class="faixa">
+  <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
+  <p class="linha-fina">Um palpite com conta sobre a próxima recessão brasileira.</p>
+  <nav aria-label="Seções"><a href="/">Atualizações</a><a href="/nota/">Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
+</div></div></header>
 
-<main class="w texto">
-<h1 id="metodologia-v11">Metodologia v1.1</h1>
-<p>Pré-registrada em 28 de outubro de 2026, antes da primeira nota, e revisada na v1.1 (veja <a href="#versoes">Versões</a>). Os parâmetros estão em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json"><code>config/modelo.json</code></a>, e cada atualização grava o hash desse arquivo. Mudança de regra ou de peso só acontece com nova versão e nota explicando o efeito.</p>
+<main class="in texto">
+<h1 id="metodologia-v12">Metodologia v1.2</h1>
+<p>Pré-registrada em 28 de outubro de 2026, antes da primeira nota, e revisada nas v1.1 e v1.2 (veja <a href="#versoes">Versões</a>). Os parâmetros estão em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json"><code>config/modelo.json</code></a>, e cada atualização grava o hash desse arquivo. Mudança de regra ou de peso só acontece com nova versão e nota explicando o efeito.</p>
 <h2 id="o-que-a-nota-mede">O que a nota mede</h2>
 <p>A nota é a probabilidade, de 0 a 100, de esta pergunta ter resposta "sim":</p>
 <blockquote>
@@ -122,6 +125,8 @@ svg text{font-family:"IBM Plex Sans",system-ui,sans-serif}
 </ul>
 <p>O nome do site fala em crise; a métrica é recessão técnica. "Vai dar crise?" é a pergunta de bar; a resposta é uma probabilidade com regra escrita antes.</p>
 <p><strong>Como ler a nota.</strong> 50 significa cara ou coroa, não "risco médio". A nota 70 quer dizer que, em 100 Brasis com os dados de hoje, 70 entrariam em recessão até o fim de 2030.</p>
+<p><strong>O número do topo.</strong> Desde a v1.2, o topo do site mostra outra leitura da mesma conta: quantas vezes a chance de uma recessão começar nos próximos 12 meses (os quatro trimestres ainda não divulgados) está acima do normal. O normal é essa mesma chance só com a taxa-base, cerca de 20%. Em 28/10/2026 a conta dava 53%, 2,7 vezes o normal. O horizonte de 12 meses é onde dados e notícias pesam inteiros; a nota até 2030 continua sendo a pergunta que o placar vai resolver, e aparece em "Como a conta funciona" com a faixa da taxa-base.</p>
+<p><strong>A seta.</strong> Ao lado do multiplicador, a seta compara com a atualização mais próxima de 30 dias atrás (ou com a primeira, enquanto o site tiver menos de 30 dias). Se o multiplicador subiu mais de 10%, "piorando"; se caiu mais de 10%, "melhorando"; senão, "estável".</p>
 <h2 id="taxa-base">Taxa-base</h2>
 <p>Antes de olhar qualquer dado ou notícia, a história já diz muito. O CODACE datou 10 recessões desde 1980. Dividindo os inícios de recessão pelos trimestres em expansão, o resultado depende de onde a conta começa:</p>
 <table>
@@ -244,15 +249,9 @@ P(recessão até 4T30) = 1 − Π (1 − h_t)</code></p>
 <li><strong>w_t</strong> é o peso no tempo: 1 nos quatro primeiros trimestres ainda não divulgados, 2/3 no quinto, 1/3 no sexto e zero daí em diante.</li>
 </ul>
 <p>Ninguém prevê recessão a quatro anos com dados de hoje: os melhores métodos acertam de 6 a 18 meses. Por isso indicadores e notícias mexem só no risco dos próximos trimestres, e a nota até 2030 se move devagar.</p>
-<p><strong>Nota por horizonte.</strong> A página monta a nota em três parcelas que somam exatamente a nota:</p>
-<ol>
-<li><strong>História até o horizonte:</strong> a chance de a recessão começar até o último trimestre em que dados e notícias ainda pesam (hoje, o fim de 2027), só com a taxa-base.</li>
-<li><strong>Dados e notícias:</strong> o que indicadores e notícias acrescentam a essa mesma chance.</li>
-<li><strong>História depois:</strong> o que o resto da janela (hoje, 2028–2030) acrescenta só com a taxa-base, entre os Brasis que chegam lá sem recessão.</li>
-</ol>
-<p>A terceira parcela encolhe quando a segunda cresce, porque uma recessão até 2027 já resolve a pergunta e não pode ser contada de novo. Na nota de 28/10/2026 às 15h24 (79), as parcelas eram 28 + 34 + 17, e só pela história seriam 28 + 32 = 60. Os dados de hoje somavam 34 pontos até 2027 e tiravam 15 de depois, e a nota ficava 19 acima da história.</p>
+<p><strong>De onde vem o multiplicador.</strong> A página "Como a conta funciona" parte do normal de 12 meses e soma o que cada indicador e cada notícia acrescenta, em pontos percentuais, até chegar à chance de hoje. Na v1.1, a página repartia a nota até 2030 em parcelas por horizonte; a v1.2 trocou essa repartição pela de 12 meses, que é o número do topo.</p>
 <p><strong>Trimestres divulgados.</strong> Quando o IBGE divulga um trimestre, ele sai da janela (efeito tempo). Se dois trimestres seguidos vierem negativos, a pergunta está resolvida e a nota vai a 100. Se o último trimestre divulgado vier negativo, a chance de o seguinte também cair parte de 50% (parâmetro por julgamento, a calibrar com a série do IBGE) e recebe o mesmo deslocamento de curto prazo.</p>
-<p><strong>Decomposição.</strong> A conversão de log-odds para probabilidade não é linear, então a repartição em pontos usa valores de Shapley exatos: cada fator recebe a sua contribuição média sobre todas as ordens possíveis, e a soma bate exatamente com o total repartido. Na seção "Por que", os fatores repartem a parcela de dados e notícias; a tabela de indicadores e os cartões de notícia mostram esses mesmos pontos. Em "O que mudou", os fatores repartem a variação da nota entre duas atualizações. Com mais de 12 fatores, as notícias menores são agrupadas em "outras notícias". Os números exibidos são arredondados de modo que as parcelas somem o total exibido.</p>
+<p><strong>Decomposição.</strong> A conversão de log-odds para probabilidade não é linear, então a repartição em pontos usa valores de Shapley exatos: cada fator recebe a sua contribuição média sobre todas as ordens possíveis, e a soma bate exatamente com o total repartido. Em "De onde vem", os fatores repartem a diferença entre a chance de 12 meses de hoje e o normal; a tabela de indicadores e a lista de notícias mostram esses mesmos pontos. Em "O que mudou" e na conta do dia de cada post, os fatores repartem a variação entre duas atualizações; no post, a variação aparece em vezes o normal, com duas casas. Com mais de 12 fatores, as notícias menores são agrupadas em "outras notícias". Os números exibidos são arredondados de modo que as parcelas somem o total exibido.</p>
 <h2 id="indicadores">Indicadores</h2>
 <p>Seis sinais, cada um com valor neutro, inclinação e efeito máximo, publicados antes da primeira nota. Os pesos são de julgamento, com encolhimento de 25% na soma para não contar duas vezes sinais correlacionados (juros, câmbio e dívida andam juntos), e teto de 1,2 em log-odds para a camada inteira.</p>
 <table>
@@ -312,7 +311,40 @@ P(recessão até 4T30) = 1 − Π (1 − h_t)</code></p>
 </table>
 <p>Ficaram de fora no MVP, por falta de fonte gratuita estável: inclinação da curva de juros (B3), incerteza (FGV IBRE), CDS e indicador antecedente composto. A curva de juros, a mais citada na literatura, quase não tem poder preditivo em emergentes e não foi robusta no Brasil em 2005–2023.</p>
 <h2 id="noticias">Notícias</h2>
-<p>Um modelo de linguagem (Claude, chamado sem ferramentas e com saída em esquema JSON validado por código) lê as manchetes do dia de oito veículos com linhas editoriais diferentes: Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1. Ele transforma os fatos relevantes em eventos estruturados; a conta é feita por código.</p>
+<p>Um modelo de linguagem (Claude, chamado sem ferramentas e com saída em esquema JSON validado por código) lê as manchetes de oito veículos com linhas editoriais diferentes: Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1. Ele transforma os fatos relevantes em eventos estruturados; a conta é feita por código.</p>
+<p><strong>Uma atualização por dia.</strong> As manchetes são coletadas de hora em hora e guardadas na máquina que roda o site. Às 06h30, a atualização lê as manchetes do dia anterior que ainda não foram lidas, calcula a nota e publica um post. Cada manchete é lida uma vez só.</p>
+<p><strong>Estágio.</strong> Cada evento recebe o estágio em que o fato está, e o estágio multiplica o efeito (v1.2):</p>
+<table>
+<thead>
+<tr>
+<th>Estágio</th>
+<th>Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dado divulgado (estatística oficial, resultado publicado)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Decisão tomada (lei sancionada, decisão do Copom, medida publicada)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Proposta em votação (projeto enviado, votação marcada)</td>
+<td>a chance estimada de aprovação, entre 0,2 e 0,8</td>
+</tr>
+<tr>
+<td>Anúncio sem ato formal</td>
+<td>0,3</td>
+</tr>
+<tr>
+<td>Rumor, bastidor ou plano em estudo</td>
+<td>0,1</td>
+</tr>
+</tbody>
+</table>
+<p>Na dúvida, o classificador usa o estágio menos avançado. O peso vale para eventos lidos a partir de 29/10/2026; os anteriores mantêm o efeito com que foram publicados.</p>
 <table>
 <thead>
 <tr>
@@ -349,16 +381,21 @@ P(recessão até 4T30) = 1 − Π (1 − h_t)</code></p>
 <td>Notícia que só relata um dado já medido</td>
 <td>não conta (evita dupla contagem)</td>
 </tr>
+<tr>
+<td>Estágio do fato</td>
+<td>multiplica o efeito (tabela acima)</td>
+</tr>
 </tbody>
 </table>
 <p>O LLM extrai e narra; não prevê. Ele não vê os pesos, não escolhe a direção da nota e não edita o site. O texto das notícias é tratado como dado, nunca como instrução, e nenhuma notícia pode alterar pesos ou regras. A linguagem dos eventos descreve políticas e números, não pessoas ou partidos.</p>
+<p><strong>O post do dia.</strong> Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o que mudou, quanto cada fato mexeu e o que acompanhar. Ele não muda a nota. Um verificador em código procura moldes de texto automático e pede uma reescrita no máximo; se a escrita falhar, o site publica a conta do dia sem texto corrido.</p>
 <p>Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta. Respostas antigas nunca são recalculadas: o que foi publicado fica congelado.</p>
 <h2 id="salvaguardas">Salvaguardas</h2>
 <ul>
 <li><strong>Disjuntor:</strong> variação de mais de 5 pontos num dia sai com o selo "em revisão".</li>
 <li><strong>Dado defasado:</strong> se a nota passar de 36 horas sem atualização, a página avisa.</li>
 <li><strong>Falha do LLM:</strong> a atualização sai só com dados, e os eventos que já valiam continuam decaindo.</li>
-<li><strong>Os dois lados:</strong> a página mostra os três melhores argumentos por mais crise e por menos crise.</li>
+<li><strong>Os dois lados:</strong> a página mostra até quatro argumentos por mais crise e por menos crise, tirados das manchetes. Só troca de lista quando a leitura do dia traz pelo menos um argumento de cada lado.</li>
 <li><strong>Placar:</strong> as previsões de 12 meses ficam registradas e serão pontuadas pelo escore de Brier quando vencerem.</li>
 </ul>
 <h2 id="o-que-ainda-falta-fase-2">O que ainda falta (fase 2)</h2>
@@ -413,6 +450,12 @@ P(recessão até 4T30) = 1 − Π (1 − h_t)</code></p>
 <td>Taxa-base passa a ser a mediana de nove métodos (5,3%), com a faixa publicada. A página separa a nota por horizonte.</td>
 <td>−1,2 ponto com os dados de 28/10 (77,9 → 76,7)</td>
 </tr>
+<tr>
+<td>1.2</td>
+<td>28/10/2026</td>
+<td>Peso por estágio das notícias (dado e decisão 1; em votação, a chance de aprovação; anúncio 0,3; rumor 0,1). Topo passa a mostrar o risco de 12 meses em vezes o normal. Uma atualização por dia, às 06h30, com post.</td>
+<td>Nenhum na data da mudança: o peso vale só para notícias lidas a partir de 29/10/2026.</td>
+</tr>
 </tbody>
 </table>
 <p>A v1.0 escolhia duas datas de início por julgamento, e cada data dava uma nota diferente. A v1.1 troca a escolha por uma regra que qualquer pessoa pode refazer.</p>
@@ -429,10 +472,9 @@ P(recessão até 4T30) = 1 − Π (1 − h_t)</code></p>
 </ul>
 </main>
 
-<footer><div class="w">
-  <p><strong>Vai dar crise?</strong> mede a probabilidade de recessão técnica no Brasil (dois trimestres seguidos de queda do PIB) até o 4º trimestre de 2030, com <a href="/metodologia/">metodologia pré-registrada</a>.</p>
-  <p>Não é recomendação de investimento. Os dados vêm do Banco Central e do IBGE; as notícias são lidas por um modelo de linguagem que só classifica fatos, com teto e prazo de validade.</p>
-  <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico completo no GitHub</a> · <a href="/data.json">data.json</a> · <a href="/historico.json">historico.json</a> · <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Abra uma issue</a></p>
+<footer class="pe"><div class="in">
+  <p>O Vai dar crise? mede a chance de recessão técnica no Brasil (dois trimestres seguidos de queda do PIB) até o 4º trimestre de 2030, com <a href="/metodologia/">metodologia pré-registrada</a>. Não é recomendação de investimento.</p>
+  <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Abra uma issue</a></p>
 </div></footer>
 </body>
 </html>

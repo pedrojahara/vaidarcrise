@@ -127,7 +127,8 @@ def gdelt(horas: int) -> tuple[list[dict], dict]:
     return itens, {"http": 200, "itens": len(itens)}
 
 
-def coletar(horas: int = 36, limite: int = 160) -> dict:
+def coletar(horas: int = 36) -> dict:
+    """Manchetes de economia publicadas nas últimas `horas`, sem repetição e sem link reciclado."""
     agora = dt.datetime.now(dt.timezone.utc)
     desde = agora - dt.timedelta(hours=horas)
     itens, status = rss(desde)
@@ -136,7 +137,7 @@ def coletar(horas: int = 36, limite: int = 160) -> dict:
     itens += g
     vistos, unicos = set(), []
     for it in sorted(itens, key=lambda x: x["publicado_em"], reverse=True):
-        chave = re.sub(r"[^a-z0-9 ]", "", _norm(it["titulo"]))[:90]
+        chave = chave_titulo(it["titulo"])
         if not it["titulo"] or not it["url"] or chave in vistos or url_antiga(it["url"], it["publicado_em"]):
             continue
         texto = _norm(it["titulo"] + " " + it["trecho"])
@@ -144,25 +145,42 @@ def coletar(horas: int = 36, limite: int = 160) -> dict:
             continue
         vistos.add(chave)
         unicos.append(it)
-    # Teto por veículo para a cesta não ser dominada por quem publica mais.
-    por_veiculo: dict[str, int] = {}
-    cesta = []
-    teto = max(12, limite // 6)
-    for it in unicos:
-        if por_veiculo.get(it["veiculo"], 0) >= teto:
-            continue
-        por_veiculo[it["veiculo"]] = por_veiculo.get(it["veiculo"], 0) + 1
-        cesta.append(it)
-        if len(cesta) >= limite:
-            break
-    for i, it in enumerate(cesta, 1):
-        it["id"] = f"n{i:03d}"
     return {"coletado_em": agora.isoformat(timespec="seconds"), "janela_horas": horas,
-            "status_fontes": status, "por_veiculo": por_veiculo, "itens": cesta}
+            "status_fontes": status, "itens": unicos}
+
+
+def chave_titulo(titulo: str) -> str:
+    return re.sub(r"[^a-z0-9 ]", "", _norm(titulo))[:90]
+
+
+def cesta(itens: list[dict], limite: int = 240) -> tuple[list[dict], dict[str, int]]:
+    """Escolhe as manchetes que vão para o LLM e numera.
+
+    Teto por veículo para a cesta não ser dominada por quem publica mais. Quando um
+    veículo passa do teto, as escolhidas ficam espalhadas pelo dia, não só as mais recentes.
+    """
+    teto = max(12, limite // 6)
+    por: dict[str, list[dict]] = {}
+    for it in sorted(itens, key=lambda x: x["publicado_em"], reverse=True):
+        por.setdefault(it["veiculo"], []).append(it)
+    escolhidas = []
+    for v, lst in por.items():
+        if len(lst) > teto:
+            passo = len(lst) / teto
+            lst = [lst[int(i * passo)] for i in range(teto)]
+        escolhidas += lst
+    escolhidas = sorted(escolhidas, key=lambda x: x["publicado_em"], reverse=True)[:limite]
+    contagem: dict[str, int] = {}
+    out = []
+    for i, it in enumerate(escolhidas, 1):
+        contagem[it["veiculo"]] = contagem.get(it["veiculo"], 0) + 1
+        out.append({**it, "id": f"n{i:03d}"})
+    return out, contagem
 
 
 def main(horas: int = 36) -> Path:
     res = coletar(horas)
+    res["itens"], res["por_veiculo"] = cesta(res["itens"])
     out = ROOT / "data" / "raw" / dt.date.today().isoformat() / "noticias.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(res, ensure_ascii=False, indent=1))

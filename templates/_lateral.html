@@ -1,0 +1,15 @@
+<aside class="lado" aria-label="Datas e fontes">
+  {% if datas %}
+  <div class="bloco">
+    <h3>Datas importantes</h3>
+    <ul class="datas">
+      {% for x in datas %}<li{% if x.cenarios %} class="chave"{% endif %}><time datetime="{{ x.data }}">{{ x.dia }}</time><span>{{ x.rotulo }}{% if x.cenarios %}. {% for c in x.cenarios %}{% if loop.first %}Se vier {{ c.cenario }}, o risco vai a <b class="{{ 'mais' if c.m > mult + 0.05 else 'menos' if c.m < mult - 0.05 }}">{{ c.m|mult }}</b>{% else %}; se não, {{ 'fica em' if (c.m - mult)|abs < 0.05 else 'vai a' }} {{ c.m|mult }}{% endif %}{% endfor %}.{% endif %}</span></li>{% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  <div class="bloco">
+    <h3>Sobre</h3>
+    <p>Os números vêm do Banco Central (SGS e Focus) e do IBGE (PIB trimestral e PNAD Contínua).</p>
+    <p>As notícias vêm de 8 jornais: {{ jornais }}. Um modelo de linguagem lê as manchetes do dia anterior às 06h30.</p>
+  </div>
+</aside>

@@ -1,6 +1,6 @@
-# Metodologia v1.1
+# Metodologia v1.2
 
-Pré-registrada em 28 de outubro de 2026, antes da primeira nota, e revisada na v1.1 (veja [Versões](#versoes)). Os parâmetros estão em [`config/modelo.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json), e cada atualização grava o hash desse arquivo. Mudança de regra ou de peso só acontece com nova versão e nota explicando o efeito.
+Pré-registrada em 28 de outubro de 2026, antes da primeira nota, e revisada nas v1.1 e v1.2 (veja [Versões](#versoes)). Os parâmetros estão em [`config/modelo.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json), e cada atualização grava o hash desse arquivo. Mudança de regra ou de peso só acontece com nova versão e nota explicando o efeito.
 
 ## O que a nota mede
 
@@ -15,6 +15,10 @@ A nota é a probabilidade, de 0 a 100, de esta pergunta ter resposta "sim":
 O nome do site fala em crise; a métrica é recessão técnica. "Vai dar crise?" é a pergunta de bar; a resposta é uma probabilidade com regra escrita antes.
 
 **Como ler a nota.** 50 significa cara ou coroa, não "risco médio". A nota 70 quer dizer que, em 100 Brasis com os dados de hoje, 70 entrariam em recessão até o fim de 2030.
+
+**O número do topo.** Desde a v1.2, o topo do site mostra outra leitura da mesma conta: quantas vezes a chance de uma recessão começar nos próximos 12 meses (os quatro trimestres ainda não divulgados) está acima do normal. O normal é essa mesma chance só com a taxa-base, cerca de 20%. Em 28/10/2026 a conta dava 53%, 2,7 vezes o normal. O horizonte de 12 meses é onde dados e notícias pesam inteiros; a nota até 2030 continua sendo a pergunta que o placar vai resolver, e aparece em "Como a conta funciona" com a faixa da taxa-base.
+
+**A seta.** Ao lado do multiplicador, a seta compara com a atualização mais próxima de 30 dias atrás (ou com a primeira, enquanto o site tiver menos de 30 dias). Se o multiplicador subiu mais de 10%, "piorando"; se caiu mais de 10%, "melhorando"; senão, "estável".
 
 ## Taxa-base
 
@@ -76,17 +80,11 @@ P(recessão até 4T30) = 1 − Π (1 − h_t)
 
 Ninguém prevê recessão a quatro anos com dados de hoje: os melhores métodos acertam de 6 a 18 meses. Por isso indicadores e notícias mexem só no risco dos próximos trimestres, e a nota até 2030 se move devagar.
 
-**Nota por horizonte.** A página monta a nota em três parcelas que somam exatamente a nota:
-
-1. **História até o horizonte:** a chance de a recessão começar até o último trimestre em que dados e notícias ainda pesam (hoje, o fim de 2027), só com a taxa-base.
-2. **Dados e notícias:** o que indicadores e notícias acrescentam a essa mesma chance.
-3. **História depois:** o que o resto da janela (hoje, 2028–2030) acrescenta só com a taxa-base, entre os Brasis que chegam lá sem recessão.
-
-A terceira parcela encolhe quando a segunda cresce, porque uma recessão até 2027 já resolve a pergunta e não pode ser contada de novo. Na nota de 28/10/2026 às 15h24 (79), as parcelas eram 28 + 34 + 17, e só pela história seriam 28 + 32 = 60. Os dados de hoje somavam 34 pontos até 2027 e tiravam 15 de depois, e a nota ficava 19 acima da história.
+**De onde vem o multiplicador.** A página "Como a conta funciona" parte do normal de 12 meses e soma o que cada indicador e cada notícia acrescenta, em pontos percentuais, até chegar à chance de hoje. Na v1.1, a página repartia a nota até 2030 em parcelas por horizonte; a v1.2 trocou essa repartição pela de 12 meses, que é o número do topo.
 
 **Trimestres divulgados.** Quando o IBGE divulga um trimestre, ele sai da janela (efeito tempo). Se dois trimestres seguidos vierem negativos, a pergunta está resolvida e a nota vai a 100. Se o último trimestre divulgado vier negativo, a chance de o seguinte também cair parte de 50% (parâmetro por julgamento, a calibrar com a série do IBGE) e recebe o mesmo deslocamento de curto prazo.
 
-**Decomposição.** A conversão de log-odds para probabilidade não é linear, então a repartição em pontos usa valores de Shapley exatos: cada fator recebe a sua contribuição média sobre todas as ordens possíveis, e a soma bate exatamente com o total repartido. Na seção "Por que", os fatores repartem a parcela de dados e notícias; a tabela de indicadores e os cartões de notícia mostram esses mesmos pontos. Em "O que mudou", os fatores repartem a variação da nota entre duas atualizações. Com mais de 12 fatores, as notícias menores são agrupadas em "outras notícias". Os números exibidos são arredondados de modo que as parcelas somem o total exibido.
+**Decomposição.** A conversão de log-odds para probabilidade não é linear, então a repartição em pontos usa valores de Shapley exatos: cada fator recebe a sua contribuição média sobre todas as ordens possíveis, e a soma bate exatamente com o total repartido. Em "De onde vem", os fatores repartem a diferença entre a chance de 12 meses de hoje e o normal; a tabela de indicadores e a lista de notícias mostram esses mesmos pontos. Em "O que mudou" e na conta do dia de cada post, os fatores repartem a variação entre duas atualizações; no post, a variação aparece em vezes o normal, com duas casas. Com mais de 12 fatores, as notícias menores são agrupadas em "outras notícias". Os números exibidos são arredondados de modo que as parcelas somem o total exibido.
 
 ## Indicadores
 
@@ -105,7 +103,21 @@ Ficaram de fora no MVP, por falta de fonte gratuita estável: inclinação da cu
 
 ## Notícias
 
-Um modelo de linguagem (Claude, chamado sem ferramentas e com saída em esquema JSON validado por código) lê as manchetes do dia de oito veículos com linhas editoriais diferentes: Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1. Ele transforma os fatos relevantes em eventos estruturados; a conta é feita por código.
+Um modelo de linguagem (Claude, chamado sem ferramentas e com saída em esquema JSON validado por código) lê as manchetes de oito veículos com linhas editoriais diferentes: Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1. Ele transforma os fatos relevantes em eventos estruturados; a conta é feita por código.
+
+**Uma atualização por dia.** As manchetes são coletadas de hora em hora e guardadas na máquina que roda o site. Às 06h30, a atualização lê as manchetes do dia anterior que ainda não foram lidas, calcula a nota e publica um post. Cada manchete é lida uma vez só.
+
+**Estágio.** Cada evento recebe o estágio em que o fato está, e o estágio multiplica o efeito (v1.2):
+
+| Estágio | Peso |
+| --- | --- |
+| Dado divulgado (estatística oficial, resultado publicado) | 1 |
+| Decisão tomada (lei sancionada, decisão do Copom, medida publicada) | 1 |
+| Proposta em votação (projeto enviado, votação marcada) | a chance estimada de aprovação, entre 0,2 e 0,8 |
+| Anúncio sem ato formal | 0,3 |
+| Rumor, bastidor ou plano em estudo | 0,1 |
+
+Na dúvida, o classificador usa o estágio menos avançado. O peso vale para eventos lidos a partir de 29/10/2026; os anteriores mantêm o efeito com que foram publicados.
 
 | Regra | Valor |
 | --- | --- |
@@ -116,8 +128,11 @@ Um modelo de linguagem (Claude, chamado sem ferramentas e com saída em esquema 
 | Teto da camada de notícias | 0,6 em log-odds |
 | Prazo de validade | o efeito cai em linha reta até zero em 75 dias |
 | Notícia que só relata um dado já medido | não conta (evita dupla contagem) |
+| Estágio do fato | multiplica o efeito (tabela acima) |
 
 O LLM extrai e narra; não prevê. Ele não vê os pesos, não escolhe a direção da nota e não edita o site. O texto das notícias é tratado como dado, nunca como instrução, e nenhuma notícia pode alterar pesos ou regras. A linguagem dos eventos descreve políticas e números, não pessoas ou partidos.
+
+**O post do dia.** Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o que mudou, quanto cada fato mexeu e o que acompanhar. Ele não muda a nota. Um verificador em código procura moldes de texto automático e pede uma reescrita no máximo; se a escrita falhar, o site publica a conta do dia sem texto corrido.
 
 Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta. Respostas antigas nunca são recalculadas: o que foi publicado fica congelado.
 
@@ -126,7 +141,7 @@ Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta. Re
 - **Disjuntor:** variação de mais de 5 pontos num dia sai com o selo "em revisão".
 - **Dado defasado:** se a nota passar de 36 horas sem atualização, a página avisa.
 - **Falha do LLM:** a atualização sai só com dados, e os eventos que já valiam continuam decaindo.
-- **Os dois lados:** a página mostra os três melhores argumentos por mais crise e por menos crise.
+- **Os dois lados:** a página mostra até quatro argumentos por mais crise e por menos crise, tirados das manchetes. Só troca de lista quando a leitura do dia traz pelo menos um argumento de cada lado.
 - **Placar:** as previsões de 12 meses ficam registradas e serão pontuadas pelo escore de Brier quando vencerem.
 
 ## O que ainda falta (fase 2)
@@ -157,6 +172,7 @@ Toda mudança de regra ou de peso ganha uma versão nova. Na atualização em qu
 | --- | --- | --- | --- |
 | 1.0 | 28/10/2026 | Primeira versão. Taxa-base de 5,5% por trimestre, a média das janelas 1995–2026 e 2004–2026. | — |
 | 1.1 | 28/10/2026 | Taxa-base passa a ser a mediana de nove métodos (5,3%), com a faixa publicada. A página separa a nota por horizonte. | −1,2 ponto com os dados de 28/10 (77,9 → 76,7) |
+| 1.2 | 28/10/2026 | Peso por estágio das notícias (dado e decisão 1; em votação, a chance de aprovação; anúncio 0,3; rumor 0,1). Topo passa a mostrar o risco de 12 meses em vezes o normal. Uma atualização por dia, às 06h30, com post. | Nenhum na data da mudança: o peso vale só para notícias lidas a partir de 29/10/2026. |
 
 A v1.0 escolhia duas datas de início por julgamento, e cada data dava uma nota diferente. A v1.1 troca a escolha por uma regra que qualquer pessoa pode refazer.
 

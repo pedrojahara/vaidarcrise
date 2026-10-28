@@ -1,0 +1,11 @@
+{# O topo: quanto o risco de recessão nos próximos 12 meses está acima do normal e para onde vai.
+   Fica num arquivo só para poder ser trocado sem mexer no resto da página. #}
+<section class="nota" aria-label="O risco de hoje">
+  <div class="topo">
+    <div class="placa" role="img" aria-label="{{ mult|num }} vezes o normal"><span>{{ mult_fmt }}</span></div>
+    <p class="leitura">{% if seta %}<span class="seta {{ seta.tipo }}"><b aria-hidden="true">{{ seta.simbolo }}</b>{{ seta.palavra }}<sup><a href="#n1">1</a>,<a href="#n2">2</a></sup></span>{% else %}<span class="seta igual">primeira conta<sup><a href="#n1">1</a></sup></span>{% endif %}</p>
+  </div>
+  <p class="atual">{% if permalink %}Conta de {{ data_curta(dia)[:5] }}, às {{ hora }}{% else %}Atualizado em {{ data_curta(dia)[:5] }} | próxima atualização às 06h30{% endif %}</p>
+  {% if em_revisao %}<p class="aviso"><strong>Em revisão.</strong> A conta mudou mais de {{ cfg.disjuntor_pontos }} pontos desde a atualização anterior. Saiu como a conta mandou e está marcada para revisão.</p>{% endif %}
+  {% if not permalink %}<p class="aviso" id="defasado" hidden><strong>Dado defasado.</strong> Esta conta tem mais de 36 horas. A atualização automática pode ter falhado; veja o <a href="{{ repo }}/commits/main">histórico</a>.</p>{% endif %}
+</section>

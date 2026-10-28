@@ -6,3 +6,5 @@ logs/
 .env
 # Trechos de notícias não são republicados: ficam só na máquina.
 data/raw/*/noticias.json
+# Acervo de manchetes da coleta de hora em hora: também fica só na máquina.
+data/manchetes.json
