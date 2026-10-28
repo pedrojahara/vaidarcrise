@@ -43,7 +43,13 @@ FONTES_IND = {
     "familias": ("BCB, série 29034", "https://api.bcb.gov.br/dados/serie/bcdata.sgs.29034/dados/ultimos/36?formato=json"),
     "fiscal": ("BCB, série 13762", "https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados/ultimos/13?formato=json"),
     "cambio": ("BCB, série 1 (PTAX)", "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/64?formato=json"),
+    "mercado": ("Tesouro Direto, Tesouro IPCA+", "https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto"),
 }
+# Os temas da pressão das notícias (v1.3), na ordem em que costumam pesar.
+TEMAS = {"fiscal": "Contas públicas", "monetario": "Juros e inflação", "credito": "Crédito",
+         "atividade": "Atividade e emprego", "externo": "Mundo", "mercado": "Mercado financeiro",
+         "institucional": "Instituições", "oferta": "Energia, safra e preços"}
+SENTIDOS = {"sobe": ("↑", "para cima"), "desce": ("↓", "para baixo"), "igual": ("→", "sem pressão clara")}
 
 
 # ------------------------------------------------------------------ formatos
@@ -178,7 +184,9 @@ def _esc(s: str) -> str:
 # ------------------------------------------------------------------ contexto
 def rotulos(rodada: dict, eventos: dict) -> dict[str, str]:
     res = rodada["resultado"]
-    r = {f"ind:{x['id']}": x["nome"] for x in res["indicadores"]}
+    # Um indicador que faltou na rodada (fonte fora do ar) ainda aparece pelo nome na variação.
+    r = {f"ind:{k}": v["nome"] for k, v in model.carregar_config()["indicadores"].items()}
+    r.update({f"ind:{x['id']}": x["nome"] for x in res["indicadores"]})
     r.update({f"not:{k}": f"Notícia: {curto(e['titulo_evento'])}" for k, e in eventos.items()})
     r["not:outras"] = "Outras notícias"
     r["not:antigas"] = "Notícias de dias anteriores, perdendo força"
@@ -197,22 +205,35 @@ def mult_fmt(m: float, d: int = 1) -> str:
     return num(m, d) + "×"
 
 
+def referencia_seta(gerado_em: str, todas: list[dict]) -> dict | None:
+    """A rodada mais próxima de 30 dias antes de `gerado_em`; com menos histórico, a primeira."""
+    antes = [r for r in todas if r["gerado_em"] < gerado_em]
+    if not antes:
+        return None
+    quando = lambda iso: dt.datetime.fromisoformat(iso)  # noqa: E731
+    alvo = quando(gerado_em) - dt.timedelta(days=30)
+    if quando(antes[0]["gerado_em"]) > alvo:
+        return antes[0]
+    return min(antes, key=lambda r: abs(quando(r["gerado_em"]) - alvo))
+
+
 def seta(rodada: dict, todas: list[dict]) -> dict | None:
     """Compara com a rodada mais próxima de 30 dias atrás; com menos histórico, com a primeira.
 
-    A seta só sai do "estável" se o multiplicador andar mais de 10%.
+    A seta só sai do "estável" se o multiplicador andar mais de 10%. Se a referência é de
+    outra versão da metodologia, vale o multiplicador dela refeito com a regra da rodada
+    (gravado em "seta_ref"), para a troca de regra não parecer melhora ou piora.
     """
-    antes = [r for r in todas if r["gerado_em"] < rodada["gerado_em"]]
-    if not antes:
+    ref = referencia_seta(rodada["gerado_em"], todas)
+    if not ref:
         return None
-    quando = lambda r: dt.datetime.fromisoformat(r["gerado_em"])  # noqa: E731
-    alvo = quando(rodada) - dt.timedelta(days=30)
-    ref = antes[0] if quando(antes[0]) > alvo else min(antes, key=lambda r: abs(quando(r) - alvo))
-    razao = multiplicador(rodada) / multiplicador(ref)
+    sr = rodada.get("seta_ref") or {}
+    de = sr["multiplicador"] if sr.get("id") == ref["id"] else multiplicador(ref)
+    razao = multiplicador(rodada) / de
     tipo = "sobe" if razao > 1.10 else "desce" if razao < 0.90 else "igual"
     return {"tipo": tipo, "simbolo": {"sobe": "↑", "desce": "↓", "igual": "→"}[tipo],
             "palavra": {"sobe": "piorando", "desce": "melhorando", "igual": "estável"}[tipo],
-            "desde": ref["gerado_em"], "de": multiplicador(ref), "razao": razao}
+            "desde": ref["gerado_em"], "de": de, "razao": razao}
 
 
 def variacao_12m(rodada: dict, anterior: dict | None, cfg: dict) -> dict | None:
@@ -260,13 +281,15 @@ def contexto(rodada: dict, todas: list[dict], eventos_lista: list[dict], casos: 
     inds = []
     for x in res["indicadores"]:
         fonte = FONTES_IND.get(x["id"], ("BCB", SGS_URL))
-        inds.append({**x, "valor_fmt": f"{sinal(x['valor'], 2) if x['id'] in ('atividade', 'trabalho', 'familias', 'fiscal', 'cambio') else num(x['valor'], 2)} {x['unidade']}",
+        inds.append({**x, "valor_fmt": f"{sinal(x['valor'], 2) if x['id'] in ('atividade', 'trabalho', 'familias', 'fiscal', 'cambio', 'mercado') else num(x['valor'], 2)} {x['unidade']}",
                      "ref_fmt": ref_fmt(x["ref"]), "pts": pts.get(f"ind:{x['id']}", 0.0),
                      "fonte_nome": fonte[0], "fonte_url": fonte[1]})
     inds.sort(key=lambda x: -abs(x["pts"]))
 
     evs = []
-    for x in res["noticias"]:
+    # Desde a v1.3 as notícias não entram na conta: a página lista as que valem na pressão.
+    ativos = [{"id": i} for t in (res.get("pressao") or {}).get("temas", {}).values() for i in t["eventos"]]
+    for x in res["noticias"] or [eventos[a["id"]] | {"logit": 0.0} for a in ativos if a["id"] in eventos]:
         e = eventos.get(x["id"], x)
         fim = dt.date.fromisoformat(e["data"]) + dt.timedelta(days=cfg["noticias"]["dias_de_decaimento"])
         evs.append({**e, "canal_nome": CANAIS.get(e["canal"], e["canal"]),
@@ -311,10 +334,43 @@ def contexto(rodada: dict, todas: list[dict], eventos_lista: list[dict], casos: 
         "llm_ok": rodada["llm"]["ok"], "num": num, "sinal": sinal, "data_curta": data_curta,
         "mult_fmt_f": mult_fmt, "h0": 100 * res["h0"], "estagios": ESTAGIOS,
         "n_ind": len(res["indicadores"]), "n_not": len(res["noticias"]),
+        "pressao": pressao_do_dia(rodada, eventos, por_tema=None, validade=cfg["noticias"]["dias_de_decaimento"]),
     }
 
 
 # ------------------------------------------------------------- post do dia
+def pressao_do_dia(rodada: dict, eventos: dict, por_tema: int | None = 3, validade: int = 75) -> dict | None:
+    """Para que lado as notícias empurram, tema a tema (v1.3). Não tem número: só a seta.
+
+    Os temas com seta vêm primeiro, os mais fortes antes; em cada um, as notícias que mais
+    pesam. Os temas sem pressão clara saem numa linha só.
+    """
+    p = rodada["resultado"].get("pressao")
+    if not p:
+        return None
+    novos = set(rodada.get("eventos_novos", []))
+    temas = []
+    for canal, t in sorted(p["temas"].items(), key=lambda kv: -abs(kv[1]["saldo"])):
+        simbolo, palavra = SENTIDOS[t["sentido"]]
+        nots = []
+        for i in t["eventos"][:por_tema]:
+            e = eventos.get(i)
+            if e:
+                fim = dt.date.fromisoformat(e["data"]) + dt.timedelta(days=validade)
+                # Notícia que empurra contra a seta do tema ganha a palavra "alivia" ou "pesa".
+                contra = (e["direcao"] > 0) != (t["saldo"] > 0) if t["sentido"] != "igual" else False
+                nots.append({"titulo": e["titulo_evento"], "estagio": ESTAGIOS.get(e.get("estagio")),
+                             "contra": ("alivia" if e["direcao"] < 0 else "pesa") if contra else None,
+                             "fontes": e.get("fontes", []), "novo": i in novos, "data": data_curta(e["data"])[:5],
+                             "porque": e.get("porque", ""), "vale_ate": data_curta(fim.isoformat())})
+        temas.append({"chave": canal, "nome": TEMAS.get(canal, canal), "sentido": t["sentido"],
+                      "simbolo": simbolo, "palavra": palavra, "noticias": nots, "n": len(t["eventos"])})
+    simbolo, palavra = SENTIDOS[p["sentido"]]
+    return {"sentido": p["sentido"], "simbolo": simbolo, "palavra": palavra,
+            "com_seta": [t for t in temas if t["sentido"] != "igual"],
+            "sem_seta": [t for t in temas if t["sentido"] == "igual"]}
+
+
 def conta_do_dia(rodada: dict, eventos: dict, anterior: dict | None, cfg: dict) -> dict | None:
     """A variação do multiplicador repartida entre as notícias novas (uma a uma) e o resto (em grupos).
 
@@ -324,7 +380,7 @@ def conta_do_dia(rodada: dict, eventos: dict, anterior: dict | None, cfg: dict) 
     arredondado pelo maior resto, para a soma fechar com a variação exibida.
     """
     v = variacao_12m(rodada, anterior, cfg)
-    if not v:
+    if not v or not anterior:
         return None
     normal = 100 * rodada["resultado"]["taxa_base_4t"]
     de_m, para_m = multiplicador(anterior), multiplicador(rodada)
@@ -376,8 +432,9 @@ def post_de(rodada: dict, eventos: dict, anterior: dict | None, cfg: dict) -> di
     nots = rodada["insumos"]["noticias"]
     n, k = nots["n_itens"], len(nots.get("por_veiculo", {}))
     dias = (rodada.get("cobertura") or {}).get("dias", [])
-    lidas = (f"{n} manchetes de {k} jornais publicadas em {', '.join(data_curta(d)[:5] for d in dias)}" if dias
-             else f"{n} manchetes de {k} jornais")
+    jornais = "jornal" if k == 1 else "jornais"
+    lidas = (f"{n} manchetes de {k} {jornais} publicadas em {', '.join(data_curta(d)[:5] for d in dias)}" if dias
+             else f"{n} manchetes de {k} {jornais}")
     p = rodada.get("post") or {}
     novos = len(rodada.get("eventos_novos", []))
     m = multiplicador(rodada)
@@ -404,6 +461,7 @@ def post_de(rodada: dict, eventos: dict, anterior: dict | None, cfg: dict) -> di
         rodape = "Erros vão para"
     return {"dia": dia, "data_extenso": data_extenso(dia), "titulo": titulo, "paragrafos": paragrafos, "abre": abre,
             "autoria": autoria, "rodape": rodape, "conta": conta, "mult": m, "llm": bool(p.get("ok")),
+            "pressao": pressao_do_dia(rodada, eventos, validade=cfg["noticias"]["dias_de_decaimento"]),
             "link": f"/{dia}/", "registro": f"{REPO}/blob/main/runs/{rodada['id']}.json",
             "llm_ok": rodada["llm"]["ok"]}
 
@@ -437,8 +495,13 @@ def dados_publicos(rodada: dict, ctx: dict) -> dict:
         "atualizado_em": rodada["gerado_em"],
         "versao_modelo": rodada["modelo"]["versao"], "regra": ctx["cfg"]["regra_de_resolucao"],
         "indicadores": [{k: x[k] for k in ("id", "nome", "valor", "unidade", "ref", "logit")} for x in res["indicadores"]],
-        "noticias": [{"id": x["id"], "titulo": x["titulo_evento"], "logit": round(x["logit"], 4), "data": x["data"],
-                      "estagio": x.get("estagio"), "origem": x.get("origem")} for x in res["noticias"]],
+        "noticias_na_conta": [{"id": x["id"], "titulo": x["titulo_evento"], "logit": round(x["logit"], 4),
+                               "data": x["data"], "estagio": x.get("estagio"), "origem": x.get("origem")}
+                              for x in res["noticias"]],
+        # v1.3: as notícias ficam fora do número e mostram a pressão por tema (saldo com retorno decrescente).
+        "pressao_noticias": {"sentido": res["pressao"]["sentido"], "saldo": round(res["pressao"]["saldo"], 4),
+                             "temas": {k: {"sentido": t["sentido"], "saldo": round(t["saldo"], 4), "eventos": t["eventos"]}
+                                       for k, t in res["pressao"]["temas"].items()}} if res.get("pressao") else None,
         "registro_completo": f"{REPO}/blob/main/runs/{rodada['id']}.json",
     }
 

@@ -6,7 +6,9 @@ PIB e IBC-Br são revisados e o backtest precisa saber o que se sabia em cada di
 """
 from __future__ import annotations
 
+import csv
 import datetime as dt
+import io
 import json
 import time
 from pathlib import Path
@@ -27,6 +29,10 @@ SGS = {
     "dolar_ptax": (1, "Dólar PTAX venda (R$)"),
 }
 OLINDA = "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata"
+# Taxas do Tesouro Direto, todos os títulos, desde 2002 (Tesouro Transparente). Sai em D-1.
+TESOURO = ("https://www.tesourotransparente.gov.br/ckan/dataset/df56aa42-484a-4a59-8184-7676580c81e3/"
+           "resource/796d2059-14e9-44e3-80c9-2d9e30b405c1/download/PrecoTaxaTesouroDireto.csv")
+TESOURO_CACHE = ROOT / "data" / "raw" / "tesouro_direto.csv"
 IBGE_PIB = (
     "https://servicodados.ibge.gov.br/api/v3/agregados/5932/periodos/{periodos}"
     "/variaveis/6564?localidades=N1[all]&classificacao=11255[90707]"
@@ -96,6 +102,41 @@ def pib_trimestral() -> list[dict]:
     return out
 
 
+def juro_real_longo(inicio: dt.date) -> list[dict]:
+    """Taxa de venda (manhã) do Tesouro IPCA+ com vencimento mais perto de 10 anos, dia a dia.
+
+    O arquivo tem uns 15 MB e fica numa cópia local fora do git: se o download falhar, a
+    cópia de até 5 dias vale; mais velha que isso, o indicador sai da conta naquele dia.
+    """
+    try:
+        texto = _get(TESOURO).content.decode("latin-1")
+        TESOURO_CACHE.parent.mkdir(parents=True, exist_ok=True)
+        TESOURO_CACHE.write_text(texto, encoding="latin-1")
+    except Exception:  # noqa: BLE001
+        idade = (dt.datetime.now().timestamp() - TESOURO_CACHE.stat().st_mtime) / 86400 if TESOURO_CACHE.exists() else 99
+        if idade > 5:
+            raise
+        texto = TESOURO_CACHE.read_text(encoding="latin-1")
+    por_dia: dict[dt.date, list[tuple[dt.date, float]]] = {}
+    for linha in csv.DictReader(io.StringIO(texto), delimiter=";"):
+        if linha.get("Tipo Titulo", "").strip() != "Tesouro IPCA+":
+            continue
+        try:
+            base = dt.datetime.strptime(linha["Data Base"], "%d/%m/%Y").date()
+            venc = dt.datetime.strptime(linha["Data Vencimento"], "%d/%m/%Y").date()
+            taxa = float(linha["Taxa Venda Manha"].replace(",", "."))
+        except (KeyError, ValueError):
+            continue
+        if base >= inicio and taxa > 0:
+            por_dia.setdefault(base, []).append((venc, taxa))
+    out = []
+    for base in sorted(por_dia):
+        alvo = base + dt.timedelta(days=3652)
+        venc, taxa = min(por_dia[base], key=lambda t: abs((t[0] - alvo).days))
+        out.append({"data": base.isoformat(), "valor": taxa, "vencimento": venc.isoformat()})
+    return out
+
+
 def coletar() -> dict:
     hoje = dt.date.today()
     inicio = hoje - dt.timedelta(days=3 * 365)
@@ -108,6 +149,14 @@ def coletar() -> dict:
         except Exception as e:  # noqa: BLE001
             snap["erros"].append(f"SGS {code}: {e}")
         time.sleep(0.5)
+    # Três anos de mediana para hoje e para a rodada de 30 dias atrás, com folga.
+    try:
+        snap["series"]["juro_real_longo"] = {
+            "nome": "Tesouro IPCA+ de cerca de 10 anos, taxa de venda pela manhã (% a.a.)",
+            "dados": juro_real_longo(hoje - dt.timedelta(days=3 * 365 + 90)),
+            "fonte": "https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto"}
+    except Exception as e:  # noqa: BLE001
+        snap["erros"].append(f"Tesouro Direto: {e}")
     for ind in ("PIB Total", "IPCA", "Selic"):
         try:
             snap["focus"][ind] = focus_anual(ind)

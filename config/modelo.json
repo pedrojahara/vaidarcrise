@@ -1,10 +1,11 @@
 {
-  "versao": "1.2",
+  "versao": "1.3",
   "pre_registrado_em": "2026-10-28",
   "versoes": [
     {"versao": "1.0", "data": "2026-10-28", "mudanca": "Primeira versão."},
     {"versao": "1.1", "data": "2026-10-28", "mudanca": "Taxa-base passa de 5,5% (média de 1995–2026 e 2004–2026) para a mediana de nove métodos que não escolhem o período a dedo (5,3%), com a faixa publicada. A página separa a nota por horizonte."},
-    {"versao": "1.2", "data": "2026-10-28", "mudanca": "Cada notícia nova ganha um estágio, que pesa no efeito: dado divulgado e decisão tomada valem inteiros, proposta em votação vale pela chance de aprovação estimada (de 0,2 a 0,8), anúncio sem ato formal vale 0,3 e rumor vale 0,1. Notícias já contadas não mudam. O topo do site passa a mostrar o risco dos próximos 12 meses comparado ao normal, e a atualização passa a ser uma por dia, às 06h30."}
+    {"versao": "1.2", "data": "2026-10-28", "mudanca": "Cada notícia nova ganha um estágio, que pesa no efeito: dado divulgado e decisão tomada valem inteiros, proposta em votação vale pela chance de aprovação estimada (de 0,2 a 0,8), anúncio sem ato formal vale 0,3 e rumor vale 0,1. Notícias já contadas não mudam. O topo do site passa a mostrar o risco dos próximos 12 meses comparado ao normal, e a atualização passa a ser uma por dia, às 06h30."},
+    {"versao": "1.3", "data": "2026-10-28", "mudanca": "As notícias deixam de mexer no número: a soma de muitas manchetes enchia o teto em poucos dias e travava o número, e o volume de notícias ruins puxava tudo para cima. Elas passam a mostrar à parte a pressão por tema, para cima ou para baixo. Entra um indicador de mercado que reage no mesmo dia: o juro real longo do Tesouro IPCA+ contra a sua mediana de 3 anos."}
   ],
   "regra_de_resolucao": "Sim se o PIB trimestral dessazonalizado do IBGE (tabela 5932, taxa contra o trimestre imediatamente anterior) tiver dois trimestres seguidos de queda, ambos entre o 3º tri de 2026 e o 4º tri de 2030, na série vigente em março de 2031.",
   "janela": {"primeiro_trimestre": "3T26", "ultimo_trimestre": "4T30"},
@@ -44,7 +45,9 @@
     "fiscal": {"nome": "Dívida pública", "unidade": "p.p. do PIB", "neutro": 1.0, "inclinacao": 0.04, "min": -0.10, "max": 0.25,
                 "definicao": "Variação da dívida bruta do governo geral em 12 meses."},
     "cambio": {"nome": "Câmbio", "unidade": "%", "neutro": 0.0, "inclinacao": 0.015, "min": -0.10, "max": 0.25,
-                "definicao": "Variação do dólar PTAX em cerca de 3 meses (63 dias úteis)."}
+                "definicao": "Variação do dólar PTAX em cerca de 3 meses (63 dias úteis)."},
+    "mercado": {"nome": "Juro real longo (mercado)", "unidade": "p.p.", "neutro": 0.0, "inclinacao": 0.25, "min": -0.15, "max": 0.40,
+                 "definicao": "Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (Tesouro Direto, venda pela manhã) menos a sua mediana nos 3 anos anteriores."}
   },
   "noticias": {
     "efeito_por_magnitude_logit": {"1": 0.04, "2": 0.12, "3": 0.2},
@@ -54,7 +57,9 @@
     "teto_total_logit": 0.6,
     "dias_de_decaimento": 75,
     "peso_por_estagio": {"dado": 1, "decidido": 1, "em_votacao": "chance_aprovacao", "anuncio": 0.3, "rumor": 0.1},
-    "faixa_chance_aprovacao": [0.2, 0.8]
+    "faixa_chance_aprovacao": [0.2, 0.8],
+    "entram_na_conta": false,
+    "pressao": {"fator_retorno": 0.5, "corte_tema": 0.05, "corte_geral": 0.10}
   },
   "disjuntor_pontos": 5
 }

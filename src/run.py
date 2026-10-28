@@ -187,18 +187,36 @@ def main() -> dict | None:
 
     res = model.calcular(snap, todos, hoje, cfg)
     ant = ultima_rodada()
+    serie_mercado = model._serie(snap, "juro_real_longo")
+
+    def refeita(r: dict | None) -> dict | None:
+        """A rodada `r` refeita com a regra de hoje, se ela é de outra versão; senão, None."""
+        if not r or r["modelo"]["versao"] == cfg["versao"]:
+            return None
+        return model.refazer(r["resultado"], r["insumos"]["pib"], cfg,
+                             model.valor_mercado(serie_mercado, antes_de=r["gerado_em"][:10]))
+
     variacao = variacao_12m = None
     if ant:
+        ant_refeito = refeita(ant)
         variacao = model.decompor_variacao(ant["resultado"], res, ant["insumos"]["pib"], snap.get("pib", []), cfg,
-                                           frozenset(e["id"] for e in novos))
+                                           frozenset(e["id"] for e in novos), ant_refeito=ant_refeito)
         # A mesma decomposição na chance de 12 meses, que é a do topo do site e a do post.
         variacao_12m = model.decompor_variacao(ant["resultado"], res, ant["insumos"]["pib"], snap.get("pib", []),
-                                               cfg, frozenset(e["id"] for e in novos), horizonte=4)
+                                               cfg, frozenset(e["id"] for e in novos), horizonte=4,
+                                               ant_refeito=ant_refeito)
         if ant.get("modelo", {}).get("versao") != cfg["versao"]:
             variacao["versao_anterior"] = variacao_12m["versao_anterior"] = ant["modelo"]["versao"]
     # O disjuntor olha só o que dados e notícias moveram; mudança de versão é revisada antes de publicar.
     movimento = variacao["para"] - variacao["de"] - variacao["partes"].get("metodologia", 0.0) if variacao else 0.0
     em_revisao = abs(movimento) > cfg["disjuntor_pontos"]
+
+    # A seta compara com a rodada de 30 dias atrás; se ela é de outra versão, refeita com a regra de hoje.
+    todas = [json.loads(p.read_text()) for p in sorted(RUNS.glob("*.json"))]
+    ref = build_site.referencia_seta(agora.isoformat(timespec="seconds"), todas)
+    ref_refeita = refeita(ref)
+    seta_ref = ({"id": ref["id"], "versao": ref["modelo"]["versao"],
+                 "multiplicador": ref_refeita["curto_prazo_4t"] / ref_refeita["taxa_base_4t"]} if ref_refeita else None)
 
     rodada = {
         "id": agora.strftime("%Y-%m-%dT%H%M"), "gerado_em": agora.isoformat(timespec="seconds"),
@@ -212,7 +230,7 @@ def main() -> dict | None:
         "llm": {"ok": llm["ok"], "meta": llm["meta"], "saida": llm["saida"]},
         "eventos_novos": [e["id"] for e in novos], "eventos_descartados": descartados,
         "resultado": res, "cenarios": model.cenarios_pib(snap, res, cfg),
-        "variacao": variacao, "variacao_12m": variacao_12m, "em_revisao": em_revisao,
+        "variacao": variacao, "variacao_12m": variacao_12m, "em_revisao": em_revisao, "seta_ref": seta_ref,
         "anterior": ant["id"] if ant else None,
         "revisao_texto": {"classificacao": revisa_texto.problemas_classificacao(llm["saida"]) if llm["ok"] else []},
     }
@@ -221,7 +239,7 @@ def main() -> dict | None:
     if llm["ok"]:
         conta = build_site.conta_do_dia(rodada, {e["id"]: e for e in todos}, ant, cfg)
         datas = calendario.janela(calendario.carregar(), hoje)
-        post = escreve_post.escrever(rodada, conta, cfg, datas)
+        post = escreve_post.escrever(rodada, conta, cfg, datas, eventos={e["id"]: e for e in todos})
         print("post:", post.get("titulo") if post["ok"] else f"falhou: {post.get('erro') or post['meta'][-1].get('erro')}",
               "| problemas:", post.get("problemas"))
     rodada["post"] = post
@@ -232,6 +250,7 @@ def main() -> dict | None:
     EVENTOS.write_text(json.dumps(todos, ensure_ascii=False, indent=1))
     print(f"nota {100 * res['manchete']:.1f} | 4 tri {100 * res['curto_prazo_4t']:.1f} | "
           f"indicadores {res['indicadores_logit']:+.3f} | notícias {res['noticias_logit']:+.3f} | "
+          f"pressão das notícias {(res.get('pressao') or {}).get('sentido', '-')} | "
           f"eventos novos {len(novos)} | em revisão: {em_revisao}")
     build_site.main()
     return rodada

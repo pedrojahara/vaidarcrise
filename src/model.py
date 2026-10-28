@@ -17,7 +17,7 @@ import itertools
 import json
 import math
 from pathlib import Path
-from statistics import mean
+from statistics import mean, median
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -125,11 +125,35 @@ def valores_indicadores(snap: dict) -> dict:
     if len(db) >= 13:
         v["fiscal"] = {"valor": db[-1]["valor"] - db[-13]["valor"], "ref": db[-1]["data"][:7],
                        "detalhe": f"{_br(db[-1]['valor'], 1)}% do PIB"}
+    m = valor_mercado(_serie(snap, "juro_real_longo"))
+    if m:
+        v["mercado"] = m
     fx = _serie(snap, "dolar_ptax")
     if len(fx) >= 64:
         v["cambio"] = {"valor": 100 * (fx[-1]["valor"] / fx[-64]["valor"] - 1), "ref": fx[-1]["data"],
                        "detalhe": f"R$ {_br(fx[-1]['valor'])}"}
     return v
+
+
+def valor_mercado(dados: list[dict], antes_de: str | None = None) -> dict | None:
+    """Juro real longo (v1.3): a taxa do Tesouro IPCA+ de cerca de 10 anos menos a sua mediana nos 3 anos anteriores.
+
+    É o indicador que reage no mesmo dia a um choque de confiança. `antes_de` refaz o valor
+    que valia numa data passada (só com o que já era conhecido nela), para comparar rodadas.
+    """
+    if antes_de:
+        dados = [x for x in dados if x["data"] < antes_de]
+    if not dados:
+        return None
+    ult = dados[-1]
+    ini = (dt.date.fromisoformat(ult["data"]) - dt.timedelta(days=3 * 365)).isoformat()
+    janela = [x["valor"] for x in dados[:-1] if x["data"] >= ini]
+    if len(janela) < 250:
+        return None
+    med = median(janela)
+    return {"valor": ult["valor"] - med, "ref": ult["data"],
+            "detalhe": f"taxa de {_br(ult['valor'])}% ao ano acima da inflação, contra a mediana de {_br(med)}% "
+                       f"nos 3 anos anteriores (Tesouro IPCA+ {ult['vencimento'][:4]})"}
 
 
 def contribuicoes_indicadores(vals: dict, cfg: dict) -> list[dict]:
@@ -180,6 +204,36 @@ def efeito_inicial(ev: dict, n_veiculos: int, cfg: dict) -> float:
         e *= c["fator_fonte_unica"]
     e *= peso_estagio(ev, cfg)
     return ev["direcao"] * min(e, c["teto_por_evento_logit"])
+
+
+def pressao_por_tema(eventos: list[dict], hoje: dt.date, cfg: dict) -> dict:
+    """v1.3: as notícias não mexem no número; cada tema mostra para que lado elas empurram.
+
+    Em cada tema, conta o evento mais forte de cada sentido, metade do segundo, um quarto do
+    terceiro e assim por diante: dez manchetes sobre o mesmo aperto não valem dez vezes uma.
+    O efeito de cada evento já vem com o peso do estágio e perde força em linha reta até
+    sumir. A seta do tema só sai de "sem pressão clara" quando o saldo passa do corte.
+    """
+    p = cfg["noticias"]["pressao"]
+
+    def lado(vals: list[float]) -> float:
+        return sum(v * p["fator_retorno"] ** i for i, v in enumerate(sorted(vals, reverse=True)))
+
+    def sentido(x: float, corte: float) -> str:
+        return "sobe" if x >= corte else "desce" if x <= -corte else "igual"
+
+    por_canal: dict[str, list[tuple[float, str]]] = {}
+    for ev in eventos:
+        e = efeito_evento(ev, hoje, cfg)
+        if e:
+            por_canal.setdefault(ev["canal"], []).append((e, ev["id"]))
+    temas = {}
+    for canal, lst in por_canal.items():
+        saldo = lado([e for e, _ in lst if e > 0]) - lado([-e for e, _ in lst if e < 0])
+        temas[canal] = {"saldo": saldo, "sentido": sentido(saldo, p["corte_tema"]),
+                        "eventos": [i for _, i in sorted(lst, key=lambda t: -abs(t[0]))]}
+    total = sum(t["saldo"] for t in temas.values())
+    return {"temas": temas, "saldo": total, "sentido": sentido(total, p["corte_geral"])}
 
 
 def contribuicoes_noticias(eventos: list[dict], hoje: dt.date, cfg: dict) -> list[dict]:
@@ -237,7 +291,8 @@ def calcular(snap: dict, eventos: list[dict], hoje: dt.date, cfg: dict) -> dict:
     estr = estrutura(snap.get("pib", []), cfg)
     h0 = cfg["taxa_base"]["risco_trimestral"]
     ind = contribuicoes_indicadores(valores_indicadores(snap), cfg)
-    nots = contribuicoes_noticias(eventos, hoje, cfg)
+    # Desde a v1.3 as notícias não entram no número: viram pressão por tema, mostrada à parte.
+    nots = contribuicoes_noticias(eventos, hoje, cfg) if cfg["noticias"].get("entram_na_conta", True) else []
     s_ind = sum(x["logit"] for x in ind)
     s_not = sum(x["logit"] for x in nots)
     desloc = s_ind + s_not
@@ -277,9 +332,31 @@ def calcular(snap: dict, eventos: list[dict], hoje: dt.date, cfg: dict) -> dict:
         "indicadores": ind, "noticias": nots, "agrupados": sorted(agrupados),
         "shapley_desde_base": sh, "contrafactual_sem_evento": sem,
     }
+    if "pressao" in cfg["noticias"]:
+        res["pressao"] = pressao_por_tema(eventos, hoje, cfg)
     res["por_horizonte"] = por_horizonte(res, cfg)
     res["shapley_perto"] = decompor_perto(res, cfg)
     return res
+
+
+def refazer(ant_res: dict, ant_pib: list, cfg: dict, mercado: dict | None) -> dict:
+    """Uma rodada antiga refeita com a regra de hoje: os mesmos valores dos indicadores, o indicador
+    de mercado daquela data, a taxa-base atual e as notícias só se a regra atual as conta.
+
+    Serve para a seta e para "Nova metodologia" medirem só a troca de regra, e não confundirem
+    a troca com melhora ou piora dos dados.
+    """
+    vals = {x["id"]: {k: x[k] for k in ("valor", "ref", "detalhe") if k in x} for x in ant_res["indicadores"]}
+    if mercado and "mercado" not in vals:
+        vals["mercado"] = mercado
+    ind = contribuicoes_indicadores(vals, cfg)
+    nots = ant_res["noticias"] if cfg["noticias"].get("entram_na_conta", True) else []
+    desloc = sum(x["logit"] for x in ind) + sum(x["logit"] for x in nots)
+    estr, estr_base = estrutura(ant_pib, cfg), estrutura([], cfg)
+    h0 = cfg["taxa_base"]["risco_trimestral"]
+    return {"indicadores": ind, "noticias": nots, "deslocamento_logit": desloc,
+            "curto_prazo_4t": prob(estr, desloc, h0, cfg, horizonte=4), "manchete": prob(estr, desloc, h0, cfg),
+            "taxa_base_4t": prob(estr_base, 0.0, h0, cfg, horizonte=4)}
 
 
 def _n_perto(cfg: dict) -> int:
@@ -357,7 +434,8 @@ def cenarios_pib(snap: dict, res: dict, cfg: dict) -> list[dict]:
 
 
 def decompor_variacao(ant: dict, atual: dict, snap_ant_pib: list, snap_pib: list, cfg: dict,
-                      novos: frozenset[str] = frozenset(), horizonte: int | None = None) -> dict:
+                      novos: frozenset[str] = frozenset(), horizonte: int | None = None,
+                      ant_refeito: dict | None = None) -> dict:
     """Shapley da variação entre duas atualizações: cada indicador, cada notícia nova e o calendário.
 
     As notícias que já valiam antes só perdem força com o tempo; elas entram juntas,
@@ -368,8 +446,10 @@ def decompor_variacao(ant: dict, atual: dict, snap_ant_pib: list, snap_pib: list
     chave = "curto_prazo_4t" if horizonte == 4 else "manchete"
     h0 = cfg["taxa_base"]["risco_trimestral"]
     e_ant, e_at = estrutura(snap_ant_pib, cfg), estrutura(snap_pib, cfg)
-    old = {f"ind:{x['id']}": x["logit"] for x in ant["indicadores"]}
-    old.update({f"not:{x['id']}": x["logit"] for x in ant["noticias"]})
+    # Numa troca de regra, o ponto de partida é a rodada anterior refeita com a regra nova.
+    base = ant_refeito or ant
+    old = {f"ind:{x['id']}": x["logit"] for x in base["indicadores"]}
+    old.update({f"not:{x['id']}": x["logit"] for x in base["noticias"]})
     new = {f"ind:{x['id']}": x["logit"] for x in atual["indicadores"]}
     new.update({f"not:{x['id']}": x["logit"] for x in atual["noticias"]})
     chaves = sorted(set(old) | set(new))
