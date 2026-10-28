@@ -14,22 +14,27 @@
   "so_historia": 0.2787,
   "depois_acrescenta": 0.1722
  },
+ "parcelas_pontos": {
+  "historia_ate_o_horizonte": 27.87,
+  "dados_e_noticias": 33.92,
+  "historia_depois": 17.22
+ },
  "atualizado_em": "2026-10-28T15:24:26-03:00",
  "versao_modelo": "1.1",
  "regra": "Sim se o PIB trimestral dessazonalizado do IBGE (tabela 5932, taxa contra o trimestre imediatamente anterior) tiver dois trimestres seguidos de queda, ambos entre o 3º tri de 2026 e o 4º tri de 2030, na série vigente em março de 2031.",
- "decomposicao_pontos": {
-  "ind:atividade": 4.9,
-  "ind:juro_real": 3.26,
-  "not:ev-20261028-01": 2.77,
-  "ind:fiscal": 1.94,
-  "ind:familias": 1.75,
-  "ind:cambio": 0.68,
-  "ind:trabalho": -0.63,
-  "not:ev-20261028-10": 0.57,
-  "not:ev-20261028-11": 0.57,
-  "not:ev-20261028-14": 0.57,
-  "not:ev-20261028-02": -0.56,
-  "not:outras": 2.83
+ "dados_e_noticias_por_fator_pontos": {
+  "ind:atividade": 8.92,
+  "ind:juro_real": 5.93,
+  "not:ev-20261028-01": 5.04,
+  "ind:fiscal": 3.53,
+  "ind:familias": 3.19,
+  "ind:cambio": 1.25,
+  "ind:trabalho": -1.15,
+  "not:ev-20261028-10": 1.03,
+  "not:ev-20261028-11": 1.03,
+  "not:ev-20261028-14": 1.03,
+  "not:ev-20261028-02": -1.01,
+  "not:outras": 5.14
  },
  "indicadores": [
   {

@@ -95,6 +95,8 @@ def main() -> dict:
             novos.append(novo)
             seq += 1
         todos += novos
+    # Uma rodada sem manchetes novas devolve os dois lados vazios: fica valendo a versão anterior.
+    if llm["ok"] and all(len(llm["saida"][lado]) == 3 for lado in ("caso_mais_crise", "caso_menos_crise")):
         (ROOT / "data" / "casos.json").write_text(json.dumps(
             {"gerado_em": agora.isoformat(timespec="seconds"),
              **{lado: [{"argumento": a["argumento"],

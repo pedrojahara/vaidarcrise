@@ -1,4 +1,4 @@
-"""Imagem de prévia 1200×630 para WhatsApp, X e Bluesky, com nota, variação e data."""
+"""Imagem de prévia de links 1200×630, com nota, variação e data."""
 from __future__ import annotations
 
 from pathlib import Path

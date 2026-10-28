@@ -76,11 +76,17 @@ P(recessão até 4T30) = 1 − Π (1 − h_t)
 
 Ninguém prevê recessão a quatro anos com dados de hoje: os melhores métodos acertam de 6 a 18 meses. Por isso indicadores e notícias mexem só no risco dos próximos trimestres, e a nota até 2030 se move devagar.
 
-**Nota por horizonte.** A página separa a nota em duas partes: a chance de recessão até o último trimestre em que dados e notícias ainda pesam (hoje, o fim de 2027) e o que 2028–2030 acrescenta. Com os dados de 28/10/2026, dados e notícias levam a primeira parte de 28% para 58%. A segunda parte cai de 33% para 19%, porque uma recessão até 2027 já resolve a pergunta e não pode ser contada de novo. Por isso o presente parece acrescentar só 16 pontos à nota até 2030, embora mais que dobre o risco até o fim de 2027.
+**Nota por horizonte.** A página monta a nota em três parcelas que somam exatamente a nota:
+
+1. **História até o horizonte:** a chance de a recessão começar até o último trimestre em que dados e notícias ainda pesam (hoje, o fim de 2027), só com a taxa-base.
+2. **Dados e notícias:** o que indicadores e notícias acrescentam a essa mesma chance.
+3. **História depois:** o que o resto da janela (hoje, 2028–2030) acrescenta só com a taxa-base, entre os Brasis que chegam lá sem recessão.
+
+A terceira parcela encolhe quando a segunda cresce, porque uma recessão até 2027 já resolve a pergunta e não pode ser contada de novo. Na nota de 28/10/2026 às 15h24 (79), as parcelas eram 28 + 34 + 17, e só pela história seriam 28 + 32 = 60. Os dados de hoje somavam 34 pontos até 2027 e tiravam 15 de depois, e a nota ficava 19 acima da história.
 
 **Trimestres divulgados.** Quando o IBGE divulga um trimestre, ele sai da janela (efeito tempo). Se dois trimestres seguidos vierem negativos, a pergunta está resolvida e a nota vai a 100. Se o último trimestre divulgado vier negativo, a chance de o seguinte também cair parte de 50% (parâmetro por julgamento, a calibrar com a série do IBGE) e recebe o mesmo deslocamento de curto prazo.
 
-**Decomposição.** A conversão de log-odds para probabilidade não é linear, então a repartição em pontos usa valores de Shapley exatos: cada fator recebe a sua contribuição média sobre todas as ordens possíveis, e a soma bate exatamente com a variação. Com mais de 12 fatores, as notícias menores são agrupadas em "outras notícias".
+**Decomposição.** A conversão de log-odds para probabilidade não é linear, então a repartição em pontos usa valores de Shapley exatos: cada fator recebe a sua contribuição média sobre todas as ordens possíveis, e a soma bate exatamente com o total repartido. Na seção "Por que", os fatores repartem a parcela de dados e notícias; a tabela de indicadores e os cartões de notícia mostram esses mesmos pontos. Em "O que mudou", os fatores repartem a variação da nota entre duas atualizações. Com mais de 12 fatores, as notícias menores são agrupadas em "outras notícias". Os números exibidos são arredondados de modo que as parcelas somem o total exibido.
 
 ## Indicadores
 

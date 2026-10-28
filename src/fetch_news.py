@@ -69,6 +69,22 @@ def _data(entry) -> dt.datetime | None:
     return None
 
 
+def url_antiga(url: str, publicado_em: str, dias: int = 45) -> bool:
+    """Link cujo caminho traz uma data bem anterior à publicação.
+
+    O ao-vivo do Valor reaproveita uma URL de 2023 todo dia: o feed a publica com data de
+    hoje, mas o link mostra outro conteúdo amanhã e parece uma matéria antiga.
+    """
+    m = re.search(r"/(20\d\d)[/-](\d\d)(?:/(\d\d))?/", url)
+    if not m:
+        return False
+    try:
+        no_link = dt.date(int(m[1]), int(m[2]), int(m[3] or 1))
+    except ValueError:
+        return False
+    return (dt.datetime.fromisoformat(publicado_em).date() - no_link).days > dias
+
+
 def rss(desde: dt.datetime) -> tuple[list[dict], dict]:
     itens, status = [], {}
     for veiculo, url in FEEDS.items():
@@ -121,7 +137,7 @@ def coletar(horas: int = 36, limite: int = 160) -> dict:
     vistos, unicos = set(), []
     for it in sorted(itens, key=lambda x: x["publicado_em"], reverse=True):
         chave = re.sub(r"[^a-z0-9 ]", "", _norm(it["titulo"]))[:90]
-        if not it["titulo"] or not it["url"] or chave in vistos:
+        if not it["titulo"] or not it["url"] or chave in vistos or url_antiga(it["url"], it["publicado_em"]):
             continue
         texto = _norm(it["titulo"] + " " + it["trecho"])
         if not any(t in texto for t in TERMOS):

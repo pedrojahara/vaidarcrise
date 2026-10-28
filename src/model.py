@@ -264,7 +264,27 @@ def calcular(snap: dict, eventos: list[dict], hoje: dt.date, cfg: dict) -> dict:
         "shapley_desde_base": sh, "contrafactual_sem_evento": sem,
     }
     res["por_horizonte"] = por_horizonte(res, cfg)
+    res["shapley_perto"] = decompor_perto(res, cfg)
     return res
+
+
+def _n_perto(cfg: dict) -> int:
+    return sum(1 for w in cfg["pesos_no_tempo"] if w > 0)
+
+
+def decompor_perto(res: dict, cfg: dict) -> dict[str, float]:
+    """Shapley da parcela de dados e notícias da nota por horizonte, em pontos.
+
+    Reparte a diferença entre `perto` e `perto_base`: os fatores somam exatamente essa
+    parcela. Usa o h0 da rodada, para dias antigos renderizarem com a regra em que foram
+    calculados.
+    """
+    estr, h0 = res["estrutura"], res["h0"]
+    n = _n_perto(cfg)
+    partes = {f"ind:{x['id']}": x["logit"] for x in res["indicadores"]}
+    partes.update({f"not:{x['id']}": x["logit"] for x in res["noticias"]})
+    partes, _ = agrupar(partes, 12, "not:outras")
+    return shapley(list(partes), lambda s: 100 * prob(estr, sum(partes[k] for k in s), h0, cfg, horizonte=n)) if partes else {}
 
 
 def por_horizonte(res: dict, cfg: dict) -> dict:
@@ -276,7 +296,7 @@ def por_horizonte(res: dict, cfg: dict) -> dict:
     viria depois: por isso `depois` encolhe quando `perto` cresce.
     """
     estr, h0, desloc = res["estrutura"], res["h0"], res["deslocamento_logit"]
-    n = sum(1 for w in cfg["pesos_no_tempo"] if w > 0)
+    n = _n_perto(cfg)
     tris = estr["inicios"][:n]
     perto = prob(estr, desloc, h0, cfg, horizonte=n)
     return {"ate": tris[-1] if tris else None, "n": len(tris), "perto": perto,

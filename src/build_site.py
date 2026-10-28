@@ -1,12 +1,13 @@
 """Gera o site estático em docs/ a partir dos registros em runs/.
 
 A nota vai escrita no HTML (não carregada por JavaScript) para aparecer em
-prévias de WhatsApp, X e buscadores.
+prévias de links e buscadores.
 """
 from __future__ import annotations
 
 import datetime as dt
 import json
+import math
 import shutil
 import sys
 from pathlib import Path
@@ -59,6 +60,27 @@ def data_curta(iso: str) -> str:
     return f"{d.day:02d}/{d.month:02d}/{d.year}"
 
 
+def fechar(valores: list[float], total: float, d: int = 1) -> list[float]:
+    """Arredonda cada valor a `d` casas pelo maior resto, para a soma dar exatamente `total`."""
+    if not valores:
+        return []
+    q = 10 ** d
+    piso = [math.floor(v * q) for v in valores]
+    falta = round(total * q) - sum(piso)
+    ordem = sorted(range(len(valores)), key=lambda i: piso[i] - valores[i] * q)  # maior resto primeiro
+    for k in range(abs(falta)):
+        i = ordem[k % len(ordem)] if falta > 0 else ordem[-1 - k % len(ordem)]
+        piso[i] += 1 if falta > 0 else -1
+    return [p / q for p in piso]
+
+
+def curto(s: str, n: int = 80) -> str:
+    """Corta no fim de uma palavra: os títulos do LLM podem ter até 160 caracteres."""
+    if len(s) <= n:
+        return s
+    return s[:n].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+
+
 def ref_fmt(ref: str) -> str:
     if len(ref) == 7:
         a, m = ref.split("-")
@@ -77,13 +99,17 @@ def svg_medidor(nota: float, base: float) -> str:
             f'<div class="tqs">{ticks}</div><p class="cc">50 = cara ou coroa</p></div>')
 
 
-def svg_cascata(inicio: float, fim: float, partes: list[tuple[str, float]], rot_ini: str, rot_fim: str) -> str:
-    """Cascata em HTML: cada linha é um fator; as barras flutuam do acumulado anterior."""
+def svg_cascata(inicio: float, fim: float, partes: list[tuple[str, float]], rot_ini: str, rot_fim: str,
+                do_zero: bool = False) -> str:
+    """Cascata em HTML: cada linha é um fator; as barras flutuam do acumulado anterior.
+
+    `do_zero` começa o eixo em 0, para a barra inicial não parecer menor do que é.
+    """
     vals, acc = [inicio, fim], inicio
     for _, v in partes:
         acc += v
         vals.append(acc)
-    lo = max(0.0, min(vals) - 4)
+    lo = 0.0 if do_zero else max(0.0, min(vals) - 4)
     hi = min(100.0, max(vals) + 4)
     pc = lambda v: 100 * (v - lo) / (hi - lo)  # noqa: E731
     linhas = [f'<div class="cr tot"><span class="cn">{_esc(rot_ini)}</span><span class="ct">'
@@ -133,7 +159,7 @@ def _esc(s: str) -> str:
 def rotulos(rodada: dict, eventos: dict) -> dict[str, str]:
     res = rodada["resultado"]
     r = {f"ind:{x['id']}": x["nome"] for x in res["indicadores"]}
-    r.update({f"not:{k}": f"Notícia: {e['titulo_evento']}" for k, e in eventos.items()})
+    r.update({f"not:{k}": f"Notícia: {curto(e['titulo_evento'])}" for k, e in eventos.items()})
     r["not:outras"] = "Outras notícias"
     r["calendario"] = "Trimestres já divulgados"
     v = rodada.get("variacao") or {}
@@ -145,10 +171,13 @@ def contexto(rodada: dict, todas: list[dict], eventos_lista: list[dict], casos: 
     res = rodada["resultado"]
     eventos = {e["id"]: e for e in eventos_lista}
     rot = rotulos(rodada, eventos)
-    sh = res["shapley_desde_base"]
-    partes = sorted(((rot.get(k, k), v) for k, v in sh.items()), key=lambda x: -abs(x[1]))
     nota = 100 * res["manchete"]
-    base = 100 * res["taxa_base_manchete"]
+    estr = res["estrutura"]
+    # Só a história com o calendário de hoje: é a mesma conta da barra "Só a história".
+    base = 100 * model.prob(estr, 0.0, res["h0"], cfg)
+    hz = res.get("por_horizonte") or model.por_horizonte(res, cfg)
+    pq = parcelas(nota, base, hz, res.get("shapley_perto") or model.decompor_perto(res, cfg), estr, rot,
+                  len(res["indicadores"]), len(res["noticias"]))
 
     variacao = None
     if rodada.get("variacao"):
@@ -164,7 +193,7 @@ def contexto(rodada: dict, todas: list[dict], eventos_lista: list[dict], casos: 
     for x in res["indicadores"]:
         fonte = FONTES_IND.get(x["id"], ("BCB", SGS_URL))
         inds.append({**x, "valor_fmt": f"{sinal(x['valor'], 2) if x['id'] in ('atividade', 'trabalho', 'familias', 'fiscal', 'cambio') else num(x['valor'], 2)} {x['unidade']}",
-                     "ref_fmt": ref_fmt(x["ref"]), "pts": sh.get(f"ind:{x['id']}", 0.0),
+                     "ref_fmt": ref_fmt(x["ref"]), "pts": pq["pts"].get(f"ind:{x['id']}", 0.0),
                      "fonte_nome": fonte[0], "fonte_url": fonte[1]})
     inds.sort(key=lambda x: -abs(x["pts"]))
 
@@ -173,8 +202,7 @@ def contexto(rodada: dict, todas: list[dict], eventos_lista: list[dict], casos: 
         e = eventos.get(x["id"], x)
         fim = dt.date.fromisoformat(e["data"]) + dt.timedelta(days=cfg["noticias"]["dias_de_decaimento"])
         evs.append({**e, "canal_nome": CANAIS.get(e["canal"], e["canal"]),
-                    "pts": sh.get(f"not:{x['id']}", None), "logit": x["logit"],
-                    "sem": res["contrafactual_sem_evento"].get(x["id"]), "vale_ate": data_curta(fim.isoformat()),
+                    "pts": pq["pts"].get(f"not:{x['id']}"), "logit": x["logit"], "vale_ate": data_curta(fim.isoformat()),
                     "data_fmt": data_curta(e["data"]), "dias": (hoje - dt.date.fromisoformat(e["data"])).days})
     evs.sort(key=lambda x: -abs(x["logit"]))
 
@@ -196,39 +224,93 @@ def contexto(rodada: dict, todas: list[dict], eventos_lista: list[dict], casos: 
                        "de": inicios[0], "ate": ate, "vence": "quando o IBGE divulgar o "
                        + model.label(*model.prox(*model.tri(ate))), "status": "em aberto"})
 
-    estr = res["estrutura"]
-    hz = res.get("por_horizonte") or model.por_horizonte(res, cfg)
-    # Pontos inteiros que fecham com a nota exibida: história perto + presente perto + depois.
-    p_base, p_perto, p_nota = round(100 * hz["perto_base"]), round(100 * hz["perto"]), int(round(nota))
-    horizonte = {**hz, "ate_fmt": _ate(hz["ate"]), "seg_base": p_base, "seg_presente": p_perto - p_base,
-                 "seg_depois": p_nota - p_perto, "perto_pct": 100 * hz["perto"], "perto_base_pct": 100 * hz["perto_base"]}
     # Páginas de dias antigos mostram a régua da versão em que foram calculadas.
     mesma_versao = rodada["modelo"]["versao"] == cfg["versao"]
-    estr_vazia = model.estrutura([], cfg)
     metodos = [{"nome": m["nome"], "h": 100 * m["risco_trimestral"],
-                "base": 100 * model.prob(estr_vazia, 0.0, m["risco_trimestral"], cfg)}
+                "base": 100 * model.prob(estr, 0.0, m["risco_trimestral"], cfg)}
                for m in cfg["taxa_base"].get("metodos", [])] if mesma_versao else []
     faixa = res.get("taxa_base_faixa")
-    if faixa is None and mesma_versao and cfg["taxa_base"].get("faixa"):
-        faixa = [model.prob(estr_vazia, 0.0, cfg["taxa_base"]["faixa"][k], cfg) for k in ("min", "max")]
+    if mesma_versao and cfg["taxa_base"].get("faixa"):
+        faixa = [model.prob(estr, 0.0, cfg["taxa_base"]["faixa"][k], cfg) for k in ("min", "max")]
     return {
         "site": SITE, "repo": REPO, "rodada": rodada, "cfg": cfg,
         "nota": nota, "nota_int": int(round(nota)), "nota_fmt": num(nota), "curto": 100 * res["curto_prazo_4t"],
         "base": base, "base_4t": 100 * res["taxa_base_4t"], "alternativas": res["alternativas"],
         "atualizado": data_longa(rodada["gerado_em"]), "atualizado_iso": rodada["gerado_em"],
-        "dia": rodada["gerado_em"][:10], "medidor": svg_medidor(nota, base),
-        "partes": partes, "cascata": svg_cascata(base, nota, partes, "Taxa histórica", "Nota de hoje"),
+        "dia": rodada["gerado_em"][:10], "medidor": svg_medidor(nota, base), "pq": pq,
         "variacao": variacao, "indicadores": inds, "eventos": evs, "casos": casos,
         "cenarios": rodada.get("cenarios", []), "focus": focus, "historico": svg_historico(pontos),
         "n_rodadas": len(pontos), "placar": placar, "estrutura": estr, "em_revisao": rodada.get("em_revisao"),
         "llm_ok": rodada["llm"]["ok"], "riscos": res["risco_trimestral"],
         "num": num, "sinal": sinal, "data_curta": data_curta,
-        "indicadores_pts": sum(sh.get(f"ind:{x['id']}", 0) for x in res["indicadores"]),
-        "noticias_pts": sum(v for k, v in sh.items() if k.startswith("not:")),
-        "calendario_pts": sh.get("calendario", 0.0),
-        "horizonte": horizonte, "metodos": metodos, "h0": 100 * res["h0"],
+        "horizonte": hz, "metodos": metodos, "h0": 100 * res["h0"],
+        "n_ind": len(res["indicadores"]), "n_not": len(res["noticias"]),
         "faixa_base": [100 * x for x in faixa] if faixa else None,
     }
+
+
+def parcelas(nota: float, historia: float, hz: dict, sh: dict[str, float], estr: dict, rot: dict,
+             n_ind: int, n_not: int) -> dict:
+    """A nota em três parcelas: história até o horizonte, dados e notícias, história depois.
+
+    É a única decomposição da página. Os inteiros das barras saem de arredondamentos
+    acumulados e os fatores da cascata, do maior resto, para toda soma fechar na tela.
+    """
+    simples = estr["resolvido"] or not hz["n"]
+    out = {"simples": simples, "pts": {}, "sh": sh, "pendente": estr["pendente_negativo"], "n": hz["n"]}
+    if simples:
+        return out
+    perto, perto_base = 100 * hz["perto"], 100 * hz["perto_base"]
+    i_base, i_perto, i_nota, i_hist = (int(round(x)) for x in (perto_base, perto, nota, historia))
+    presente, depois, depois_hist = i_perto - i_base, i_nota - i_perto, i_hist - i_base
+    ini, fim = round(perto_base, 1), round(perto, 1)
+    chaves = sorted(sh, key=lambda k: -abs(sh[k]))
+    pts = dict(zip(chaves, fechar([sh[k] for k in chaves], fim - ini)))
+    ate = _ate(hz["ate"])
+    so_hist = [(i_base, "h"), (depois_hist, "h2")]
+    # Se dados e notícias reduzem o risco, a parcela de perto encolhe: a barra nunca ganha segmento negativo.
+    hoje = [(i_base, "h"), (presente, "p"), (depois, "h2")] if presente >= 0 else [(i_perto, "m"), (depois, "h2")]
+    tem_depois = len(estr["inicios"]) > hz["n"]
+    out.update({
+        "ate_fmt": ate, "de": estr["inicios"][0], "ate": hz["ate"], "depois_fmt": _depois(hz["ate"], estr["inicios"][-1]),
+        "chegada": _chegada(hz["ate"]),
+        "base": i_base, "perto": i_perto, "presente": presente, "depois": depois, "depois_hist": depois_hist,
+        "historia": i_hist, "nota": i_nota, "tira": depois_hist - depois, "liquido": i_nota - i_hist,
+        "sobram": 100 - i_perto, "cond": 100 * hz["depois"] / (1 - hz["perto"]) if hz["perto"] < 1 else 0.0,
+        "tem_depois": tem_depois, "pts": pts, "sujeito": _sujeito(n_ind, n_not), "plural": n_ind + n_not > 1,
+        "ind_pts": sum(v for k, v in pts.items() if k.startswith("ind:")),
+        "not_pts": sum(v for k, v in pts.items() if k.startswith("not:")),
+        "barras": [{"nome": "Só a história", "total": i_hist, "segs": so_hist},
+                   {"nome": "Hoje", "total": i_nota, "segs": hoje}],
+        "cascata": svg_cascata(ini, fim, [(rot.get(k, k), pts[k]) for k in chaves],
+                               f"História, {ate}", f"Com os dados de hoje, {ate}", do_zero=True),
+    })
+    return out
+
+
+def _sujeito(n_ind: int, n_not: int) -> str:
+    partes = []
+    if n_ind:
+        partes.append(f"os {n_ind} indicadores" if n_ind > 1 else "o único indicador disponível")
+    if n_not:
+        partes.append(f"as {n_not} notícias valendo agora" if n_not > 1 else "a única notícia valendo agora")
+    s = " e ".join(partes)
+    return s[:1].upper() + s[1:]
+
+
+def _depois(ate: str, ultimo: str) -> str:
+    """O pedaço da janela depois do horizonte: 'de 2028 a 2030'."""
+    a, q = model.prox(*model.tri(ate))
+    fim = model.tri(ultimo)[0]
+    if q == 1:
+        return f"em {a}" if a == fim else f"de {a} a {fim}"
+    return f"do {q}º trimestre de {a} até {fim}"
+
+
+def _chegada(ate: str) -> str:
+    """O primeiro trimestre depois do horizonte: 'a 2028' ou 'ao 2º trimestre de 2028'."""
+    a, q = model.prox(*model.tri(ate))
+    return f"a {a}" if q == 1 else f"ao {q}º trimestre de {a}"
 
 
 def _ate(rotulo: str | None) -> str:
@@ -244,15 +326,19 @@ def dados_publicos(rodada: dict, ctx: dict) -> dict:
     return {
         "nota": round(ctx["nota"], 1), "probabilidade_recessao_ate_4T30": round(res["manchete"], 4),
         "probabilidade_proximos_4_trimestres": round(res["curto_prazo_4t"], 4),
-        "taxa_base": round(res["taxa_base_manchete"], 4),
+        "taxa_base": round(ctx["base"] / 100, 4),
         "taxa_base_faixa": [round(x / 100, 4) for x in ctx["faixa_base"]] if ctx["faixa_base"] else None,
         "risco_trimestral_base": res["h0"],
         "por_horizonte": {"ate": ctx["horizonte"]["ate"], "probabilidade": round(ctx["horizonte"]["perto"], 4),
                           "so_historia": round(ctx["horizonte"]["perto_base"], 4),
                           "depois_acrescenta": round(ctx["horizonte"]["depois"], 4)},
+        # As três parcelas somam a nota; os fatores somam a parcela do meio.
+        "parcelas_pontos": {"historia_ate_o_horizonte": round(100 * ctx["horizonte"]["perto_base"], 2),
+                            "dados_e_noticias": round(100 * (ctx["horizonte"]["perto"] - ctx["horizonte"]["perto_base"]), 2),
+                            "historia_depois": round(100 * ctx["horizonte"]["depois"], 2)},
         "atualizado_em": rodada["gerado_em"],
         "versao_modelo": rodada["modelo"]["versao"], "regra": ctx["cfg"]["regra_de_resolucao"],
-        "decomposicao_pontos": {k: round(v, 2) for k, v in res["shapley_desde_base"].items()},
+        "dados_e_noticias_por_fator_pontos": {k: round(v, 2) for k, v in ctx["pq"]["sh"].items()},
         "indicadores": [{k: x[k] for k in ("id", "nome", "valor", "unidade", "ref", "logit")} for x in res["indicadores"]],
         "noticias": [{"id": x["id"], "titulo": x["titulo_evento"], "logit": round(x["logit"], 4), "data": x["data"]}
                      for x in res["noticias"]],
@@ -293,8 +379,7 @@ def main() -> None:
 
     ctx = contexto(ultima, todas, eventos, casos, cfg)
     dia = ultima["gerado_em"][:10]
-    ctx.update({"canonical": f"{SITE}/", "og_url": f"{SITE}/og/{dia}.png", "permalink": False,
-                "link_compartilhar": f"{SITE}/{dia}/"})
+    ctx.update({"canonical": f"{SITE}/", "og_url": f"{SITE}/og/{dia}.png", "permalink": False})
     (DOCS / "index.html").write_text(env.get_template("index.html").render(**ctx))
     shutil.copy(DOCS / "og" / f"{dia}.png", DOCS / "og.png")
 
