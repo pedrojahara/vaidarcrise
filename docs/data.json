@@ -1,24 +1,35 @@
 {
- "nota": 77.9,
- "probabilidade_recessao_ate_4T30": 0.7792,
- "probabilidade_proximos_4_trimestres": 0.4967,
- "taxa_base": 0.6178,
- "atualizado_em": "2026-10-28T12:07:00-03:00",
- "versao_modelo": "1.0",
+ "nota": 79.0,
+ "probabilidade_recessao_ate_4T30": 0.7901,
+ "probabilidade_proximos_4_trimestres": 0.5292,
+ "taxa_base": 0.6038,
+ "taxa_base_faixa": [
+  0.5371,
+  0.6582
+ ],
+ "risco_trimestral_base": 0.053,
+ "por_horizonte": {
+  "ate": "4T27",
+  "probabilidade": 0.6179,
+  "so_historia": 0.2787,
+  "depois_acrescenta": 0.1722
+ },
+ "atualizado_em": "2026-10-28T15:24:26-03:00",
+ "versao_modelo": "1.1",
  "regra": "Sim se o PIB trimestral dessazonalizado do IBGE (tabela 5932, taxa contra o trimestre imediatamente anterior) tiver dois trimestres seguidos de queda, ambos entre o 3º tri de 2026 e o 4º tri de 2030, na série vigente em março de 2031.",
  "decomposicao_pontos": {
-  "ind:atividade": 4.75,
-  "ind:juro_real": 3.17,
-  "not:ev-20261028-01": 2.69,
-  "ind:fiscal": 1.89,
-  "ind:familias": 1.7,
-  "ind:cambio": 0.66,
-  "ind:trabalho": -0.62,
-  "not:ev-20261028-10": 0.55,
-  "not:ev-20261028-02": -0.54,
-  "not:ev-20261028-03": 0.54,
-  "not:ev-20261028-04": 0.54,
-  "not:outras": 0.82
+  "ind:atividade": 4.9,
+  "ind:juro_real": 3.26,
+  "not:ev-20261028-01": 2.77,
+  "ind:fiscal": 1.94,
+  "ind:familias": 1.75,
+  "ind:cambio": 0.68,
+  "ind:trabalho": -0.63,
+  "not:ev-20261028-10": 0.57,
+  "not:ev-20261028-11": 0.57,
+  "not:ev-20261028-14": 0.57,
+  "not:ev-20261028-02": -0.56,
+  "not:outras": 2.83
  },
  "indicadores": [
   {
@@ -64,10 +75,10 @@
   {
    "id": "cambio",
    "nome": "Câmbio",
-   "valor": 4.238232018289456,
+   "valor": 4.301306206923483,
    "unidade": "%",
-   "ref": "2026-10-27",
-   "logit": 0.04768011020575638
+   "ref": "2026-10-28",
+   "logit": 0.048389694827889185
   }
  ],
  "noticias": [
@@ -130,7 +141,37 @@
    "titulo": "TCU propõe alíquota de referência de 11,3% para a CBS em 2027; mercado avalia impacto inflacionário da reforma tributária",
    "logit": 0.04,
    "data": "2026-10-28"
+  },
+  {
+   "id": "ev-20261028-11",
+   "titulo": "CNI reduz projeção de crescimento do PIB de 2026 de 2% para 1,6% e projeta inflação de 5,15% e dívida/PIB de 83,7%",
+   "logit": 0.04,
+   "data": "2026-10-28"
+  },
+  {
+   "id": "ev-20261028-12",
+   "titulo": "Vendas de máquinas e equipamentos acumulam queda de 13,4% no ano até setembro, com juros altos e concorrência de importados",
+   "logit": 0.02,
+   "data": "2026-10-28"
+  },
+  {
+   "id": "ev-20261028-13",
+   "titulo": "Grande banco eleva taxa mínima do crédito imobiliário de 11,69% para 15% ao ano",
+   "logit": 0.02,
+   "data": "2026-10-28"
+  },
+  {
+   "id": "ev-20261028-14",
+   "titulo": "Estados aprovam aumento do ICMS sobre gasolina, diesel e gás a partir de fevereiro de 2027; diesel e biodiesel com alta de 11,1%",
+   "logit": 0.04,
+   "data": "2026-10-28"
+  },
+  {
+   "id": "ev-20261028-15",
+   "titulo": "Fed mantém juros em 3,75%-4,00% ao ano, com dois votos divergentes a favor de alta de 0,25 ponto",
+   "logit": 0.02,
+   "data": "2026-10-28"
   }
  ],
- "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-28T1207.json"
+ "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-28T1524.json"
 }
