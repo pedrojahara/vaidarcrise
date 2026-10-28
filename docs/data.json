@@ -1,0 +1,112 @@
+{
+ "nota": 77.0,
+ "probabilidade_recessao_ate_4T30": 0.7696,
+ "probabilidade_proximos_4_trimestres": 0.4778,
+ "taxa_base": 0.6178,
+ "atualizado_em": "2026-10-28T11:58:02-03:00",
+ "versao_modelo": "1.0",
+ "regra": "Sim se o PIB trimestral dessazonalizado do IBGE (tabela 5932, taxa contra o trimestre imediatamente anterior) tiver dois trimestres seguidos de queda, ambos entre o 3º tri de 2026 e o 4º tri de 2030, na série vigente em março de 2031.",
+ "decomposicao_pontos": {
+  "ind:atividade": 4.71,
+  "ind:trabalho": -0.61,
+  "ind:juro_real": 3.14,
+  "ind:familias": 1.69,
+  "ind:fiscal": 1.87,
+  "ind:cambio": 0.65,
+  "not:ev-20261028-01": 2.66,
+  "not:ev-20261028-02": -0.54,
+  "not:ev-20261028-03": 0.54,
+  "not:ev-20261028-04": 0.54,
+  "not:ev-20261028-05": 0.27,
+  "not:ev-20261028-06": 0.27
+ },
+ "indicadores": [
+  {
+   "id": "atividade",
+   "nome": "Atividade (IBC-Br)",
+   "valor": -0.6424554746393363,
+   "unidade": "%",
+   "ref": "2026-08",
+   "logit": 0.3427366423918009
+  },
+  {
+   "id": "trabalho",
+   "nome": "Desemprego (regra de Sahm adaptada)",
+   "valor": 0.09999999999999964,
+   "unidade": "p.p.",
+   "ref": "2026-08",
+   "logit": -0.04500000000000031
+  },
+  {
+   "id": "juro_real",
+   "nome": "Juro real ex-ante",
+   "valor": 8.816686692125785,
+   "unidade": "% a.a.",
+   "ref": "2026-10-28",
+   "logit": 0.2290012015275471
+  },
+  {
+   "id": "familias",
+   "nome": "Dívida das famílias",
+   "valor": 1.6457575757575746,
+   "unidade": "p.p.",
+   "ref": "2026-07",
+   "logit": 0.12343181818181811
+  },
+  {
+   "id": "fiscal",
+   "nome": "Dívida pública",
+   "valor": 5.560000000000002,
+   "unidade": "p.p. do PIB",
+   "ref": "2026-08",
+   "logit": 0.13680000000000006
+  },
+  {
+   "id": "cambio",
+   "nome": "Câmbio",
+   "valor": 4.238232018289456,
+   "unidade": "%",
+   "ref": "2026-10-27",
+   "logit": 0.04768011020575638
+  }
+ ],
+ "noticias": [
+  {
+   "id": "ev-20261028-01",
+   "titulo": "Bolsa cai 13,88% e dólar sobe 8,21% no dia seguinte à eleição presidencial, com primeiro circuit breaker desde 2020 e perda de 14% na semana",
+   "logit": 0.1947,
+   "data": "2026-10-26"
+  },
+  {
+   "id": "ev-20261028-02",
+   "titulo": "Fazenda anuncia projeto de lei para cumprir o centro da meta fiscal e reafirma o centro da meta de inflação",
+   "logit": -0.0395,
+   "data": "2026-10-27"
+  },
+  {
+   "id": "ev-20261028-03",
+   "titulo": "BC: 20,3 milhões de pessoas em endividamento de risco (+75% em 5 anos); grande banco tem lucro 28% menor por causa das provisões contra calotes",
+   "logit": 0.0395,
+   "data": "2026-10-27"
+  },
+  {
+   "id": "ev-20261028-04",
+   "titulo": "Um El Niño forte pode reduzir a safra de soja 2026/27 em cerca de 10% (perda de R$ 33 bilhões); alimentos ficam 2,40% mais caros nas fábricas",
+   "logit": 0.0395,
+   "data": "2026-10-27"
+  },
+  {
+   "id": "ev-20261028-05",
+   "titulo": "Banco Mundial prevê alta de 23% nas commodities em 2026, puxada pela energia; governo prorroga por 30 dias a subvenção de R$ 2,12/litro ao diesel",
+   "logit": 0.0197,
+   "data": "2026-10-27"
+  },
+  {
+   "id": "ev-20261028-06",
+   "titulo": "Confiança da indústria cai pelo terceiro mês seguido em outubro, com piora da avaliação da situação atual",
+   "logit": 0.02,
+   "data": "2026-10-28"
+  }
+ ],
+ "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-28T1158.json"
+}

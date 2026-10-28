@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+logs/
+*.pyc
+.DS_Store
+.env
+# Trechos de notícias não são republicados: ficam só na máquina.
+data/raw/*/noticias.json

@@ -1,0 +1,41 @@
+{
+  "versao": "1.0",
+  "pre_registrado_em": "2026-10-28",
+  "regra_de_resolucao": "Sim se o PIB trimestral dessazonalizado do IBGE (tabela 5932, taxa contra o trimestre imediatamente anterior) tiver dois trimestres seguidos de queda, ambos entre o 3º tri de 2026 e o 4º tri de 2030, na série vigente em março de 2031.",
+  "janela": {"primeiro_trimestre": "3T26", "ultimo_trimestre": "4T30"},
+  "taxa_base": {
+    "risco_trimestral": 0.055,
+    "descricao": "Média das classes de referência 1995–2026 (7,1% por trimestre) e 2004–2026 (4,0%), a partir da datação do CODACE/FGV IBRE.",
+    "alternativas": [
+      {"nome": "2004–2026 sem a pandemia", "risco_trimestral": 0.027, "leitura": "para quem acha que o Brasil mudou depois de 2004"},
+      {"nome": "1980–2026", "risco_trimestral": 0.075, "leitura": "para quem acha que não mudou"}
+    ]
+  },
+  "pesos_no_tempo": [1, 1, 1, 1, 0.6667, 0.3333],
+  "continuacao_apos_trimestre_negativo": 0.5,
+  "encolhimento_indicadores": 0.75,
+  "teto_indicadores_logit": 1.2,
+  "indicadores": {
+    "atividade": {"nome": "Atividade (IBC-Br)", "unidade": "%", "neutro": 0.5, "inclinacao": -0.40, "min": -0.30, "max": 0.60,
+                   "definicao": "Média dos últimos 3 meses do IBC-Br dessazonalizado contra a média dos 3 meses anteriores."},
+    "trabalho": {"nome": "Desemprego (regra de Sahm adaptada)", "unidade": "p.p.", "neutro": 0.15, "inclinacao": 1.20, "min": -0.20, "max": 0.70,
+                  "definicao": "Média de 3 meses da desocupação da PNAD menos o menor valor dessa média nos 12 meses anteriores."},
+    "juro_real": {"nome": "Juro real ex-ante", "unidade": "% a.a.", "neutro": 5.0, "inclinacao": 0.08, "min": -0.20, "max": 0.40,
+                   "definicao": "Selic meta descontada da inflação esperada para 12 meses (Focus, suavizada), comparada a um juro neutro de 5%."},
+    "familias": {"nome": "Dívida das famílias", "unidade": "p.p.", "neutro": 0.0, "inclinacao": 0.10, "min": -0.15, "max": 0.30,
+                  "definicao": "Comprometimento de renda das famílias com dívidas (dessazonalizado) menos a sua média dos últimos 36 meses."},
+    "fiscal": {"nome": "Dívida pública", "unidade": "p.p. do PIB", "neutro": 1.0, "inclinacao": 0.04, "min": -0.10, "max": 0.25,
+                "definicao": "Variação da dívida bruta do governo geral em 12 meses."},
+    "cambio": {"nome": "Câmbio", "unidade": "%", "neutro": 0.0, "inclinacao": 0.015, "min": -0.10, "max": 0.25,
+                "definicao": "Variação do dólar PTAX em cerca de 3 meses (63 dias úteis)."}
+  },
+  "noticias": {
+    "efeito_por_magnitude_logit": {"1": 0.04, "2": 0.12, "3": 0.2},
+    "fator_ja_no_preco": 0.5,
+    "fator_fonte_unica": 0.5,
+    "teto_por_evento_logit": 0.2,
+    "teto_total_logit": 0.6,
+    "dias_de_decaimento": 75
+  },
+  "disjuntor_pontos": 5
+}

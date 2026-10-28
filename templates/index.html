@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% block titulo %}Vai dar crise? {{ nota_int }}% de chance de recessão no Brasil até 2030{% endblock %}
+{% block descricao %}Em 100 Brasis como este, {{ nota_int }} entram em recessão até o fim de 2030. Nota de {{ data_curta(dia) }}, com a explicação de cada ponto.{% endblock %}
+{% block estilo %}
+.hero{padding:40px 0 36px;border-bottom:1px solid var(--linha)}
+.kicker{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--acento);margin:0 0 6px}
+.pergunta{font:900 clamp(40px,9vw,72px)/1 Fraunces,Georgia,serif;margin:0 0 18px;letter-spacing:-.02em}
+.placa{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.nota{font:900 clamp(110px,26vw,190px)/.82 Fraunces,Georgia,serif;letter-spacing:-.04em;color:var(--acento)}
+.nota small{font-size:.28em;letter-spacing:0;color:var(--tinta2);font-weight:500;margin-left:4px}
+.frase{font-size:clamp(19px,3.4vw,24px);line-height:1.35;max-width:430px;margin:0 0 10px;font-family:Fraunces,Georgia,serif;font-weight:500}
+.medidor{width:100%;height:auto;margin:22px 0 6px}
+.cartoes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:12px 14px}
+.cartao b{display:block;font:700 28px/1.1 Fraunces,Georgia,serif}
+.cartao span{font-size:13px;color:var(--tinta2);line-height:1.35;display:block;margin-top:4px}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--tinta2)}
+.share a{display:inline-block;padding:7px 12px;border:1px solid var(--linha);border-radius:99px;text-decoration:none;font-size:14px;margin:2px 0 2px 4px;background:var(--cartao)}
+.share a.wa{background:#1f8b4c;border-color:#1f8b4c;color:#fff}
+.aviso{background:var(--papel2);border-left:4px solid var(--morno);padding:10px 14px;margin:0 0 18px;font-size:15px;border-radius:4px}
+.aviso[hidden]{display:none}
+.cascata,.hist{width:100%;height:auto}
+.eventos{display:grid;gap:12px}
+.ev{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:16px}
+.ev .topo-ev{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.ev .pts{font:700 22px/1 Fraunces,Georgia,serif;white-space:nowrap}
+.ev p{margin:8px 0}
+.ev ul{margin:6px 0 0;padding-left:18px;font-size:14px}
+.ev .rodape{font-size:13px;color:var(--tinta2);margin-top:8px}
+.lados{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lado{border-top:4px solid;padding-top:10px}
+.lado.mais{border-color:var(--quente)} .lado.menos{border-color:var(--bom)}
+.lado ol{padding-left:20px;margin:8px 0 0;color:var(--tinta)} .lado li{margin-bottom:10px}
+.lado .f{font-size:13px;color:var(--tinta2)}
+.cen{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.legenda{font-size:13px;color:var(--tinta2);display:flex;gap:16px;flex-wrap:wrap;margin-top:6px}
+.legenda i{display:inline-block;width:18px;height:3px;vertical-align:middle;margin-right:6px}
+@media (max-width:640px){.cartoes{grid-template-columns:1fr 1fr}.cartoes .cartao:last-child{grid-column:span 2}.lados,.cen{grid-template-columns:1fr}nav a:first-child{display:none}}
+{% endblock %}
+{% block corpo %}
+<main>
+<div class="hero"><div class="w">
+  <p class="kicker">Probabilidade de recessão no Brasil até 2030</p>
+  <h1 class="pergunta">Vai dar crise?</h1>
+  {% if em_revisao %}<div class="aviso"><strong>Em revisão.</strong> A nota mudou mais de {{ cfg.disjuntor_pontos }} pontos desde a última atualização. Ela foi publicada como saiu da conta, mas está marcada para revisão humana.</div>{% endif %}
+  <div class="aviso" id="defasado" hidden><strong>Dado defasado.</strong> Esta nota tem mais de 36 horas. A atualização automática pode ter falhado; confira o <a href="{{ repo }}/commits/main">histórico de atualizações</a>.</div>
+  <div class="placa">
+    <div class="nota" aria-label="{{ nota_int }} por cento">{{ nota_int }}<small>%</small></div>
+    <p class="frase">Em 100 Brasis como este, <strong>{{ nota_int }}</strong> entram em recessão até o fim de 2030.</p>
+  </div>
+  {{ medidor|safe }}
+  <div class="cartoes">
+    <div class="cartao"><b>{{ curto|num(0) }}%</b><span>de chance de a recessão começar nos próximos 4 trimestres ({{ estrutura.inicios[0] }} a {{ estrutura.inicios[3] }})</span></div>
+    <div class="cartao"><b>{{ base|num(0) }}%</b><span>é o que a história brasileira dá sozinha, antes de qualquer dado ou notícia</span></div>
+    <div class="cartao"><b>{% if variacao %}{{ variacao.delta|sinal }}{% else %}novo{% endif %}</b><span>{% if variacao %}pontos desde a atualização anterior ({{ variacao.de|num }} → {{ variacao.para|num }}){% else %}primeira nota publicada; a variação aparece a partir da próxima atualização{% endif %}</span></div>
+  </div>
+  <div class="meta">
+    <span>Atualizado em <time datetime="{{ atualizado_iso }}">{{ atualizado }}</time> · modelo v{{ cfg.versao }}</span>
+    <span class="share">
+      <a class="wa" href="https://wa.me/?text={{ ('Vai dar crise? ' ~ nota_int ~ '% de chance de recessão no Brasil até 2030. ' ~ (link_compartilhar or canonical))|urlencode }}">WhatsApp</a>
+      <a href="https://x.com/intent/post?text={{ ('Vai dar crise? ' ~ nota_int ~ '% de chance de recessão no Brasil até 2030')|urlencode }}&url={{ (link_compartilhar or canonical)|urlencode }}">X</a>
+      <a href="https://bsky.app/intent/compose?text={{ ('Vai dar crise? ' ~ nota_int ~ '% de chance de recessão no Brasil até 2030 ' ~ (link_compartilhar or canonical))|urlencode }}">Bluesky</a>
+    </span>
+  </div>
+</div></div>
+
+{% if variacao %}
+<section id="mudou"><div class="w">
+  <h2>O que mudou desde a última atualização</h2>
+  <p class="lead">De {{ variacao.de|num }} para {{ variacao.para|num }} ({{ variacao.delta|sinal }} pontos). Cada barra é a contribuição exata de um fator, calculada com valores de Shapley; elas somam a variação inteira.</p>
+  {% if variacao.svg %}{{ variacao.svg|safe }}{% else %}<p>Nada mudou nos insumos.</p>{% endif %}
+</div></section>
+{% endif %}
+
+<section id="por-que"><div class="w">
+  <h2>Por que {{ nota_int }}</h2>
+  <p class="lead">A história brasileira sozinha dá {{ base|num(0) }}. Os indicadores econômicos somam {{ indicadores_pts|sinal }} pontos e as notícias, {{ noticias_pts|sinal }}{% if calendario_pts %}; os trimestres já divulgados, {{ calendario_pts|sinal }}{% endif %}. Indicadores e notícias só mexem no risco dos próximos trimestres; depois do 6º trimestre vale de novo a taxa histórica, e por isso a nota se move devagar.</p>
+  {{ cascata|safe }}
+  <p class="peq">Barras vermelhas aumentam o risco; verdes reduzem. A conta é feita em log-odds e repartida em pontos com valores de Shapley. <a href="/metodologia/#a-conta">Como a conta funciona</a>.</p>
+</div></section>
+
+<section id="noticias"><div class="w">
+  <h2>As notícias que movem a nota</h2>
+  <p class="lead">Cada notícia vira um evento com canal, direção e tamanho. Nenhum evento move o risco de curto prazo mais que 0,2 em log-odds, e o efeito some em {{ cfg.noticias.dias_de_decaimento }} dias.</p>
+  {% if not llm_ok %}<div class="aviso">A leitura de notícias falhou nesta atualização. A nota usa só os eventos que já estavam valendo.</div>{% endif %}
+  <div class="eventos">
+  {% for e in eventos %}
+    <article class="ev">
+      <div class="topo-ev">
+        <div><span class="chip">{{ e.canal_nome }}</span> <span class="peq">{{ e.data_fmt }}</span>
+          <h3 style="margin-top:6px">{{ e.titulo_evento }}</h3></div>
+        {% if e.pts is not none %}<div class="pts {{ 'mais' if e.pts > 0 else 'menos' }}">{{ e.pts|sinal }}</div>{% endif %}
+      </div>
+      <p>{{ e.porque }}</p>
+      <ul>{% for f in e.fontes[:4] %}<li><a href="{{ f.url }}" rel="nofollow noopener">{{ f.veiculo }}: {{ f.titulo }}</a></li>{% endfor %}</ul>
+      <p class="rodape">{% if e.sem is not none %}Sem esta notícia, a nota seria {{ e.sem|num }}. {% endif %}{% if e.ja_no_preco %}O mercado já esperava isso, então vale metade. {% endif %}{% if e.veiculos|length < 2 %}Só um veículo noticiou, então vale metade. {% endif %}O efeito some até {{ e.vale_ate }}.</p>
+    </article>
+  {% else %}
+    <p>Nenhum evento valendo agora.</p>
+  {% endfor %}
+  </div>
+</div></section>
+
+<section id="indicadores"><div class="w">
+  <h2>Os indicadores</h2>
+  <p class="lead">Seis sinais com pesos publicados antes da primeira nota. Cada um é comparado a um valor neutro e tem efeito máximo limitado.</p>
+  <div class="tabela"><table>
+    <thead><tr><th>Indicador</th><th class="n">Valor</th><th>Referência</th><th class="n">Efeito</th></tr></thead>
+    <tbody>
+    {% for x in indicadores %}
+      <tr><td><strong>{{ x.nome }}</strong><br><span class="peq">{{ x.definicao }}{% if x.detalhe %} Hoje: {{ x.detalhe }}.{% endif %} <a href="{{ x.fonte_url }}" rel="nofollow">{{ x.fonte_nome }}</a></span></td>
+        <td class="n mono">{{ x.valor_fmt }}</td><td>{{ x.ref_fmt }}</td>
+        <td class="n mono {{ 'mais' if x.pts > 0 else 'menos' }}">{{ x.pts|sinal }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+</div></section>
+
+{% if casos %}
+<section id="dois-lados"><div class="w">
+  <h2>Os dois lados</h2>
+  <p class="lead">Os três melhores argumentos de cada lado, escritos para convencer quem pensa diferente. Atualizados em {{ data_curta(casos.gerado_em) }}.</p>
+  <div class="lados">
+    <div class="lado mais"><h3>O caso por mais crise</h3><ol>
+      {% for a in casos.caso_mais_crise %}<li>{{ a.argumento }}{% if a.fontes %}<br><span class="f">{% for f in a.fontes %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.veiculo }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}</li>{% endfor %}
+    </ol></div>
+    <div class="lado menos"><h3>O caso por menos crise</h3><ol>
+      {% for a in casos.caso_menos_crise %}<li>{{ a.argumento }}{% if a.fontes %}<br><span class="f">{% for f in a.fontes %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.veiculo }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}</li>{% endfor %}
+    </ol></div>
+  </div>
+</div></section>
+{% endif %}
+
+{% if cenarios %}
+<section id="gatilho"><div class="w">
+  <h2>O próximo gatilho</h2>
+  <p class="lead">O IBGE divulga o PIB do {{ cenarios[0].trimestre }} {% if cenarios[0].trimestre == '3T26' %}em 2 de dezembro de 2026{% else %}na próxima divulgação trimestral{% endif %}. Com tudo mais igual, a nota vai para:</p>
+  <div class="cen">
+    {% for c in cenarios %}<div class="cartao"><b class="{{ 'mais' if c.manchete*100 > nota else 'menos' }}">{{ (c.manchete*100)|num(0) }}%</b><span>se o PIB do {{ c.trimestre }} vier {{ c.cenario }}</span></div>{% endfor %}
+  </div>
+  <p class="peq">Um trimestre negativo já é metade de uma recessão técnica. Se vier positivo, a janela perde um trimestre e a nota cai um pouco por efeito do tempo.</p>
+</div></section>
+{% endif %}
+
+<section id="regua"><div class="w">
+  <h2>A régua: quanto da nota é escolha</h2>
+  <p class="lead">A maior escolha do modelo é o período histórico de referência. Usamos um risco de {{ (cfg.taxa_base.risco_trimestral*100)|num }}% por trimestre, a média de 1995–2026 e 2004–2026. Quem discorda pode refazer a conta:</p>
+  <div class="tabela"><table>
+    <thead><tr><th>Período de referência</th><th class="n">Só a história</th><th class="n">Com dados e notícias de hoje</th></tr></thead>
+    <tbody>
+      {% set alt = alternativas %}
+      <tr><td>{{ alt[0].nome }} <span class="peq">({{ alt[0].leitura }})</span></td><td class="n mono">{{ (alt[0].manchete_sem_ajustes*100)|num(0) }}%</td><td class="n mono">{{ (alt[0].manchete*100)|num(0) }}%</td></tr>
+      <tr><td><strong>Média usada pelo site</strong></td><td class="n mono"><strong>{{ base|num(0) }}%</strong></td><td class="n mono"><strong>{{ nota|num(0) }}%</strong></td></tr>
+      <tr><td>{{ alt[1].nome }} <span class="peq">({{ alt[1].leitura }})</span></td><td class="n mono">{{ (alt[1].manchete_sem_ajustes*100)|num(0) }}%</td><td class="n mono">{{ (alt[1].manchete*100)|num(0) }}%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="peq">Base: datação de recessões do CODACE/FGV IBRE. Detalhes na <a href="/metodologia/#taxa-base">metodologia</a>.</p>
+</div></section>
+
+<section id="historico"><div class="w">
+  <h2>Histórico e placar</h2>
+  <p class="lead">Cada atualização fica gravada e nunca é recalculada. A pergunta de 2030 só se resolve em 2031; até lá, quem avalia o site são as previsões de 12 meses, que vencem uma a uma.</p>
+  {{ historico|safe }}
+  <div class="legenda"><span><i style="background:var(--quente)"></i>Até 2030</span><span><i style="background:var(--tinta2)"></i>Próximos 4 trimestres</span></div>
+  <h3 style="margin-top:26px">Previsões de 12 meses registradas</h3>
+  <div class="tabela"><table>
+    <thead><tr><th>Registrada em</th><th>Recessão começando entre</th><th class="n">Probabilidade</th><th>Vence</th><th>Resultado</th></tr></thead>
+    <tbody>{% for p in placar %}<tr><td>{{ p.data }}</td><td>{{ p.de }} e {{ p.ate }}</td><td class="n mono">{{ p.prob|num(0) }}%</td><td>{{ p.vence }}</td><td>{{ p.status }}</td></tr>{% endfor %}</tbody>
+  </table></div>
+</div></section>
+
+{% if focus %}
+<section id="ancoras"><div class="w">
+  <h2>O que diz o mercado</h2>
+  <p class="lead">Mediana do Boletim Focus para o crescimento do PIB. O Focus é exibido como comparação e não entra na conta.</p>
+  <div class="tabela"><table>
+    <thead><tr>{% for f in focus|sort(attribute='DataReferencia') %}<th class="n">{{ f.DataReferencia }}</th>{% endfor %}</tr></thead>
+    <tbody><tr>{% for f in focus|sort(attribute='DataReferencia') %}<td class="n mono">{{ (f.Mediana|float)|num(2) }}%</td>{% endfor %}</tr></tbody>
+  </table></div>
+  <p class="peq">Fonte: <a href="https://www.bcb.gov.br/publicacoes/focus">Banco Central, Focus</a>, dados de {{ data_curta(focus[0].Data) }}. O Focus não previu a recessão de 2015: em janeiro daquele ano, a mediana era de crescimento.</p>
+</div></section>
+{% endif %}
+</main>
+<script>
+(function(){var t=new Date("{{ atualizado_iso }}");if((Date.now()-t)/36e5>36){document.getElementById("defasado").hidden=false}})();
+</script>
+{% endblock %}

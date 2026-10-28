@@ -1,0 +1,990 @@
+{
+ "id": "2026-10-28T1158",
+ "gerado_em": "2026-10-28T11:58:02-03:00",
+ "modelo": {
+  "versao": "1.0",
+  "config_sha256": "4a637d864faa46e5bcfcea67345eb2f0b8b4814c1a851226f9b9ddf861de7491"
+ },
+ "insumos": {
+  "indicadores_coletados_em": "2026-10-28T11:58:02-03:00",
+  "erros_coleta": [],
+  "pib": [
+   {
+    "trimestre": "1T23",
+    "periodo": "202301",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T23",
+    "periodo": "202302",
+    "var_qoq": 0.8
+   },
+   {
+    "trimestre": "3T23",
+    "periodo": "202303",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T23",
+    "periodo": "202304",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "1T24",
+    "periodo": "202401",
+    "var_qoq": 0.7
+   },
+   {
+    "trimestre": "2T24",
+    "periodo": "202402",
+    "var_qoq": 1.7
+   },
+   {
+    "trimestre": "3T24",
+    "periodo": "202403",
+    "var_qoq": 0.9
+   },
+   {
+    "trimestre": "4T24",
+    "periodo": "202404",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "1T25",
+    "periodo": "202501",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T25",
+    "periodo": "202502",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "3T25",
+    "periodo": "202503",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T25",
+    "periodo": "202504",
+    "var_qoq": 0.2
+   },
+   {
+    "trimestre": "1T26",
+    "periodo": "202601",
+    "var_qoq": 1.1
+   },
+   {
+    "trimestre": "2T26",
+    "periodo": "202602",
+    "var_qoq": 0.5
+   }
+  ],
+  "focus": {
+   "PIB Total": [
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2026",
+     "Mediana": 1.8,
+     "numeroRespondentes": 113
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2027",
+     "Mediana": 1.3145,
+     "numeroRespondentes": 113
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2028",
+     "Mediana": 1.81,
+     "numeroRespondentes": 83
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2029",
+     "Mediana": 2.0,
+     "numeroRespondentes": 76
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2030",
+     "Mediana": 2.0,
+     "numeroRespondentes": 74
+    }
+   ],
+   "IPCA": [
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2026",
+     "Mediana": 5.1891,
+     "numeroRespondentes": 142
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2027",
+     "Mediana": 4.3368,
+     "numeroRespondentes": 142
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2028",
+     "Mediana": 3.75,
+     "numeroRespondentes": 124
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2029",
+     "Mediana": 3.5,
+     "numeroRespondentes": 116
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2030",
+     "Mediana": 3.5,
+     "numeroRespondentes": 108
+    }
+   ],
+   "Selic": [
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2026",
+     "Mediana": 13.25,
+     "numeroRespondentes": 137
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2027",
+     "Mediana": 11.75,
+     "numeroRespondentes": 136
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2028",
+     "Mediana": 10.0,
+     "numeroRespondentes": 115
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2029",
+     "Mediana": 10.0,
+     "numeroRespondentes": 110
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2030",
+     "Mediana": 10.0,
+     "numeroRespondentes": 107
+    }
+   ],
+   "IPCA 12m": {
+    "Data": "2026-10-23",
+    "Mediana": 4.5336,
+    "numeroRespondentes": 129
+   }
+  },
+  "noticias": {
+   "coletado_em": "2026-10-28T14:58:07+00:00",
+   "janela_horas": 96,
+   "por_veiculo": {
+    "InfoMoney": 7,
+    "g1": 26,
+    "Valor": 26,
+    "Poder360": 5,
+    "Estadão": 11,
+    "Folha": 26,
+    "Agência Brasil": 9,
+    "Gazeta do Povo": 17
+   },
+   "status_fontes": {
+    "Agência Brasil": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Folha": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 100
+    },
+    "Estadão": {
+     "http": 200,
+     "itens_no_feed": 20,
+     "na_janela": 20
+    },
+    "Valor": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 100
+    },
+    "InfoMoney": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Poder360": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Gazeta do Povo": {
+     "http": 200,
+     "itens_no_feed": 24,
+     "na_janela": 24
+    },
+    "g1": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 54
+    },
+    "GDELT": {
+     "http": 429,
+     "erro": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic us"
+    }
+   },
+   "n_itens": 127
+  }
+ },
+ "llm": {
+  "ok": true,
+  "meta": {
+   "modelo_pedido": "opus",
+   "prompt_sha256": "fa6d7bc1e2d83ab87b8edce85efc7cecb47204db337b35a26c3a4f3d97dea19c",
+   "system_sha256": "bcd2b1deedc60a5ad8283fabf3881c0dddafb3b87aef2ac0f1a0c9c928bc704f",
+   "returncode": 0,
+   "is_error": false,
+   "custo_usd": 0.26181469999999996,
+   "modelos": [
+    "claude-haiku-5-5",
+    "claude-opus-5-5"
+   ],
+   "permission_denials": [],
+   "session_id": "1ac07354-b63c-4467-9b1b-3e59ac87cc2b"
+  },
+  "saida": {
+   "eventos": [
+    {
+     "noticia_ids": [
+      "n117",
+      "n114",
+      "n113",
+      "n003",
+      "n044",
+      "n115"
+     ],
+     "titulo_evento": "Bolsa cai 13,88% e dólar sobe 8,21% no dia seguinte à eleição presidencial, com primeiro circuit breaker desde 2020 e perda de 14% na semana",
+     "canal": "mercado",
+     "direcao": 1,
+     "magnitude": 3,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Aumenta o risco porque a queda do patrimônio e a alta do prêmio de risco pioram as condições financeiras, o investimento e o consumo, pelo canal de mercado. O precedente é a eleição de 2002, quando o choque de confiança encareceu o crédito e freou a atividade."
+    },
+    {
+     "noticia_ids": [
+      "n112",
+      "n121",
+      "n122",
+      "n100",
+      "n003"
+     ],
+     "titulo_evento": "Juros futuros disparam, Tesouro Direto suspende negociações, leilões são cancelados e Tesouro recompra R$ 7,1 bilhões em títulos",
+     "canal": "mercado",
+     "direcao": 1,
+     "magnitude": 2,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": true,
+     "duplicata_de": null,
+     "porque": "Aumenta o risco porque a alta das taxas longas encarece o crédito e a rolagem da dívida pública, pelo canal de juros e risco fiscal, como em 2015. O juro real e o câmbio já entram nos indicadores, por isso não devem contar duas vezes."
+    },
+    {
+     "noticia_ids": [
+      "n098",
+      "n097",
+      "n094"
+     ],
+     "titulo_evento": "Fazenda anuncia projeto de lei para cumprir o centro da meta fiscal e reafirma o centro da meta de inflação",
+     "canal": "fiscal",
+     "direcao": -1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Reduz o risco se as medidas forem aprovadas, porque uma âncora fiscal crível diminui o prêmio de risco e os juros longos, pelo canal fiscal, como na aprovação do teto de gastos em 2016. Por enquanto é só anúncio, sem medidas detalhadas."
+    },
+    {
+     "noticia_ids": [
+      "n055",
+      "n091",
+      "n104",
+      "n106",
+      "n065",
+      "n029"
+     ],
+     "titulo_evento": "BC: 20,3 milhões de pessoas em endividamento de risco (+75% em 5 anos); grande banco tem lucro 28% menor por causa das provisões contra calotes",
+     "canal": "credito",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Aumenta o risco porque a inadimplência crescente faz os bancos subirem provisões e restringirem o crédito, pelo canal de crédito às famílias, como em 2015-16. O BC afirma que a estabilidade financeira não está em risco."
+    },
+    {
+     "noticia_ids": [
+      "n092",
+      "n096"
+     ],
+     "titulo_evento": "Um El Niño forte pode reduzir a safra de soja 2026/27 em cerca de 10% (perda de R$ 33 bilhões); alimentos ficam 2,40% mais caros nas fábricas",
+     "canal": "oferta",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Aumenta o risco porque uma quebra de safra derruba o PIB agro no 1º e no 2º trimestres e pressiona a inflação de alimentos, pelo canal de oferta, como no El Niño de 2015-16. O efeito depende da intensidade do fenômeno."
+    },
+    {
+     "noticia_ids": [
+      "n012",
+      "n064",
+      "n099",
+      "n107",
+      "n039"
+     ],
+     "titulo_evento": "Banco Mundial prevê alta de 23% nas commodities em 2026, puxada pela energia; governo prorroga por 30 dias a subvenção de R$ 2,12/litro ao diesel",
+     "canal": "externo",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Aumenta o risco porque a energia cara pressiona a inflação e os juros, e o subsídio renovado pesa nas contas públicas, pelo canal externo e fiscal, como em 2022. Como exportador de petróleo, o país compensa parte do efeito nos termos de troca."
+    },
+    {
+     "noticia_ids": [
+      "n058"
+     ],
+     "titulo_evento": "Confiança da indústria cai pelo terceiro mês seguido em outubro, com piora da avaliação da situação atual",
+     "canal": "atividade",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Aumenta o risco porque a confiança em queda antecipa cortes de produção e de investimento, pelo canal de atividade, como nas quedas de confiança de 2014. A pesquisa foi feita antes do choque de mercado pós-eleição."
+    }
+   ],
+   "caso_mais_crise": [
+    {
+     "argumento": "O choque pós-eleição foi histórico: bolsa -13,88% num dia, dólar +8,21%, circuit breaker inédito desde 2020 e Tesouro Direto suspenso. Condições financeiras apertadas assim, com a atividade já caindo (IBC-Br -0,64%), repetem o roteiro de 2002 e 2015.",
+     "noticia_ids": [
+      "n117",
+      "n114",
+      "n112"
+     ]
+    },
+    {
+     "argumento": "As famílias estão sem fôlego: 20,3 milhões em endividamento de risco (+75% em 5 anos) e bancos elevando provisões. Com juro real perto de 9%, o crédito tende a encolher e o consumo também.",
+     "noticia_ids": [
+      "n055",
+      "n065",
+      "n104"
+     ]
+    },
+    {
+     "argumento": "Há choques de oferta no horizonte: um El Niño forte pode cortar 10% da soja no 1º semestre de 2027, e a energia cara mantém a inflação e os juros altos, o que pode produzir dois trimestres seguidos de queda.",
+     "noticia_ids": [
+      "n092",
+      "n012",
+      "n096"
+     ]
+    }
+   ],
+   "caso_menos_crise": [
+    {
+     "argumento": "Parte do choque já se desfez: no dia seguinte, o dólar caiu quase 1% e voltou a R$ 5,35. O Tesouro recomprou títulos para conter a volatilidade. Choques eleitorais costumam se dissipar quando sai a política econômica.",
+     "noticia_ids": [
+      "n090",
+      "n102",
+      "n122"
+     ]
+    },
+    {
+     "argumento": "A Fazenda anunciou um projeto de lei para cumprir o centro da meta fiscal e o mercado cobra rapidez na escolha da equipe. Uma resposta crível pode baixar o prêmio de risco, como em 2003 e 2016.",
+     "noticia_ids": [
+      "n098",
+      "n097",
+      "n080"
+     ]
+    },
+    {
+     "argumento": "O BC não vê risco relevante à estabilidade financeira, e o lucro do banco veio em linha com o esperado. A piora do crédito é gradual, não uma crise bancária.",
+     "noticia_ids": [
+      "n106",
+      "n029"
+     ]
+    }
+   ]
+  }
+ },
+ "eventos_novos": [
+  "ev-20261028-01",
+  "ev-20261028-02",
+  "ev-20261028-03",
+  "ev-20261028-04",
+  "ev-20261028-05",
+  "ev-20261028-06"
+ ],
+ "eventos_descartados": [
+  {
+   "noticia_ids": [
+    "n112",
+    "n121",
+    "n122",
+    "n100",
+    "n003"
+   ],
+   "titulo_evento": "Juros futuros disparam, Tesouro Direto suspende negociações, leilões são cancelados e Tesouro recompra R$ 7,1 bilhões em títulos",
+   "canal": "mercado",
+   "direcao": 1,
+   "magnitude": 2,
+   "ja_no_preco": false,
+   "ja_nos_indicadores": true,
+   "duplicata_de": null,
+   "porque": "Aumenta o risco porque a alta das taxas longas encarece o crédito e a rolagem da dívida pública, pelo canal de juros e risco fiscal, como em 2015. O juro real e o câmbio já entram nos indicadores, por isso não devem contar duas vezes.",
+   "motivo": "já medido pelos indicadores",
+   "fontes": [
+    {
+     "veiculo": "Gazeta do Povo",
+     "titulo": "Tesouro Nacional trava venda de títulos públicos após disparada dos juros",
+     "url": "https://www.gazetadopovo.com.br/economia/tesouro-nacional-trava-venda-de-titulos-publicos-apos-disparada-dos-juros/",
+     "publicado_em": "2026-10-26T21:03+00:00"
+    },
+    {
+     "veiculo": "Gazeta do Povo",
+     "titulo": "Tesouro Direto suspende negociações após disparada dos juros",
+     "url": "https://www.gazetadopovo.com.br/economia/tesouro-direto-suspende-negociacoes-apos-disparada-dos-juros/",
+     "publicado_em": "2026-10-26T17:02+00:00"
+    },
+    {
+     "veiculo": "g1",
+     "titulo": "Em dia de nervosismo no mercado, Tesouro Nacional recompra R$ 7,1 bilhões em títulos públicos",
+     "url": "https://g1.globo.com/economia/noticia/2026/10/26/em-dia-de-nervosismo-no-mercado-tesouro-nacional-recompra-r-71-bilhoes-em-titulos-publicos.ghtml",
+     "publicado_em": "2026-10-26T15:53+00:00"
+    },
+    {
+     "veiculo": "Agência Brasil",
+     "titulo": "Para conter oscilações, Tesouro anuncia nova recompra de títulos",
+     "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/para-conter-oscilacoes-tesouro-anuncia-nova-recompra-de-titulos",
+     "publicado_em": "2026-10-27T12:36-03:00"
+    },
+    {
+     "veiculo": "Valor",
+     "titulo": "Ibovespa recua 3%, dólar apaga queda e juros futuros voltam a subir antes do Fed e com governo Lula 4 no foco",
+     "url": "https://valor.globo.com/financas/ao-vivo/2023/06/16/dolar-avanca-e-ibovespa-recua-em-dia-de-correcao-siga-os-mercados.ghtml",
+     "publicado_em": "2026-10-28T14:39+00:00"
+    }
+   ]
+  }
+ ],
+ "resultado": {
+  "estrutura": {
+   "janela": [
+    "3T26",
+    "4T26",
+    "1T27",
+    "2T27",
+    "3T27",
+    "4T27",
+    "1T28",
+    "2T28",
+    "3T28",
+    "4T28",
+    "1T29",
+    "2T29",
+    "3T29",
+    "4T29",
+    "1T30",
+    "2T30",
+    "3T30",
+    "4T30"
+   ],
+   "publicados_na_janela": [],
+   "resolvido": false,
+   "pendente_negativo": false,
+   "inicios": [
+    "3T26",
+    "4T26",
+    "1T27",
+    "2T27",
+    "3T27",
+    "4T27",
+    "1T28",
+    "2T28",
+    "3T28",
+    "4T28",
+    "1T29",
+    "2T29",
+    "3T29",
+    "4T29",
+    "1T30",
+    "2T30",
+    "3T30"
+   ],
+   "ultimo_publicado": "2T26"
+  },
+  "h0": 0.055,
+  "deslocamento_logit": 1.1085164389735889,
+  "indicadores_logit": 0.8346497723069223,
+  "noticias_logit": 0.2738666666666667,
+  "manchete": 0.7695593376099312,
+  "curto_prazo_4t": 0.477763801923101,
+  "taxa_base_manchete": 0.6177559405506803,
+  "taxa_base_4t": 0.2025063493749999,
+  "alternativas": [
+   {
+    "nome": "2004–2026 sem a pandemia",
+    "risco_trimestral": 0.027,
+    "leitura": "para quem acha que o Brasil mudou depois de 2004",
+    "manchete_sem_ajustes": 0.37205980348907364,
+    "manchete": 0.5131713563369269
+   },
+   {
+    "nome": "1980–2026",
+    "risco_trimestral": 0.075,
+    "leitura": "para quem acha que não mudou",
+    "manchete_sem_ajustes": 0.7342890472931115,
+    "manchete": 0.865205254257396
+   }
+  ],
+  "risco_trimestral": [
+   {
+    "trimestre": "3T26",
+    "risco": 0.14990640744905565
+   },
+   {
+    "trimestre": "4T26",
+    "risco": 0.14990640744905565
+   },
+   {
+    "trimestre": "1T27",
+    "risco": 0.14990640744905565
+   },
+   {
+    "trimestre": "2T27",
+    "risco": 0.14990640744905565
+   },
+   {
+    "trimestre": "3T27",
+    "risco": 0.10863079014867134
+   },
+   {
+    "trimestre": "4T27",
+    "risco": 0.07767363793167856
+   },
+   {
+    "trimestre": "1T28",
+    "risco": 0.05499999999999999
+   },
+   {
+    "trimestre": "2T28",
+    "risco": 0.05499999999999999
+   },
+   {
+    "trimestre": "3T28",
+    "risco": 0.05499999999999999
+   },
+   {
+    "trimestre": "4T28",
+    "risco": 0.05499999999999999
+   },
+   {
+    "trimestre": "1T29",
+    "risco": 0.05499999999999999
+   },
+   {
+    "trimestre": "2T29",
+    "risco": 0.05499999999999999
+   },
+   {
+    "trimestre": "3T29",
+    "risco": 0.05499999999999999
+   },
+   {
+    "trimestre": "4T29",
+    "risco": 0.05499999999999999
+   },
+   {
+    "trimestre": "1T30",
+    "risco": 0.05499999999999999
+   },
+   {
+    "trimestre": "2T30",
+    "risco": 0.05499999999999999
+   },
+   {
+    "trimestre": "3T30",
+    "risco": 0.05499999999999999
+   }
+  ],
+  "indicadores": [
+   {
+    "id": "atividade",
+    "nome": "Atividade (IBC-Br)",
+    "unidade": "%",
+    "definicao": "Média dos últimos 3 meses do IBC-Br dessazonalizado contra a média dos 3 meses anteriores.",
+    "valor": -0.6424554746393363,
+    "ref": "2026-08",
+    "bruto": 0.4569821898557345,
+    "logit": 0.3427366423918009
+   },
+   {
+    "id": "trabalho",
+    "nome": "Desemprego (regra de Sahm adaptada)",
+    "unidade": "p.p.",
+    "definicao": "Média de 3 meses da desocupação da PNAD menos o menor valor dessa média nos 12 meses anteriores.",
+    "valor": 0.09999999999999964,
+    "ref": "2026-08",
+    "bruto": -0.060000000000000414,
+    "logit": -0.04500000000000031
+   },
+   {
+    "id": "juro_real",
+    "nome": "Juro real ex-ante",
+    "unidade": "% a.a.",
+    "definicao": "Selic meta descontada da inflação esperada para 12 meses (Focus, suavizada), comparada a um juro neutro de 5%.",
+    "valor": 8.816686692125785,
+    "ref": "2026-10-28",
+    "detalhe": "Selic de 13,75% e inflação esperada de 4,53% (Focus de 23/10)",
+    "bruto": 0.3053349353700628,
+    "logit": 0.2290012015275471
+   },
+   {
+    "id": "familias",
+    "nome": "Dívida das famílias",
+    "unidade": "p.p.",
+    "definicao": "Comprometimento de renda das famílias com dívidas (dessazonalizado) menos a sua média dos últimos 36 meses.",
+    "valor": 1.6457575757575746,
+    "ref": "2026-07",
+    "detalhe": "28,7% da renda",
+    "bruto": 0.1645757575757575,
+    "logit": 0.12343181818181811
+   },
+   {
+    "id": "fiscal",
+    "nome": "Dívida pública",
+    "unidade": "p.p. do PIB",
+    "definicao": "Variação da dívida bruta do governo geral em 12 meses.",
+    "valor": 5.560000000000002,
+    "ref": "2026-08",
+    "detalhe": "82,9% do PIB",
+    "bruto": 0.1824000000000001,
+    "logit": 0.13680000000000006
+   },
+   {
+    "id": "cambio",
+    "nome": "Câmbio",
+    "unidade": "%",
+    "definicao": "Variação do dólar PTAX em cerca de 3 meses (63 dias úteis).",
+    "valor": 4.238232018289456,
+    "ref": "2026-10-27",
+    "detalhe": "R$ 5,33",
+    "bruto": 0.06357348027434184,
+    "logit": 0.04768011020575638
+   }
+  ],
+  "noticias": [
+   {
+    "id": "ev-20261028-01",
+    "data": "2026-10-26",
+    "titulo_evento": "Bolsa cai 13,88% e dólar sobe 8,21% no dia seguinte à eleição presidencial, com primeiro circuit breaker desde 2020 e perda de 14% na semana",
+    "canal": "mercado",
+    "direcao": 1,
+    "magnitude": 3,
+    "ja_no_preco": false,
+    "porque": "Aumenta o risco porque a queda do patrimônio e a alta do prêmio de risco pioram as condições financeiras, o investimento e o consumo, pelo canal de mercado. O precedente é a eleição de 2002, quando o choque de confiança encareceu o crédito e freou a atividade.",
+    "veiculos": [
+     "Agência Brasil",
+     "Gazeta do Povo",
+     "Valor",
+     "g1"
+    ],
+    "fontes": [
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Dólar sobe 8,21%, e bolsa cai 13,88% após reeleição de Lula",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula",
+      "publicado_em": "2026-10-26T19:07-03:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Circuit breaker é acionado pela primeira vez desde a pandemia de Covid-19; relembre todas as vezes em que a Bolsa parou",
+      "url": "https://g1.globo.com/economia/noticia/2026/10/26/circuit-breaker-e-acionado-pela-primeira-vez-desde-a-pandemia-de-covid-19-relembre-todas-as-vezes-em-que-a-bolsa-parou.ghtml",
+      "publicado_em": "2026-10-26T20:54+00:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Vitória de Lula provoca tombo histórico na Bolsa, faz o dólar disparar e pressiona os juros",
+      "url": "https://www.gazetadopovo.com.br/economia/vitoria-de-lula-provoca-tombo-historico-na-bolsa-faz-o-dolar-disparar-e-pressiona-os-juros/",
+      "publicado_em": "2026-10-26T21:00+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Ibovespa recua 3%, dólar apaga queda e juros futuros voltam a subir antes do Fed e com governo Lula 4 no foco",
+      "url": "https://valor.globo.com/financas/ao-vivo/2023/06/16/dolar-avanca-e-ibovespa-recua-em-dia-de-correcao-siga-os-mercados.ghtml",
+      "publicado_em": "2026-10-28T14:39+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Ibovespa opera em queda e já acumula perda de 14% na semana; dólar recua à espera do Fed",
+      "url": "https://g1.globo.com/economia/noticia/2026/10/28/dolar-ibovespa.ghtml",
+      "publicado_em": "2026-10-28T12:00+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Ibovespa desaba após reeleição de Lula e ações recuam até 58%; veja as maiores quedas",
+      "url": "https://g1.globo.com/economia/noticia/2026/10/26/ibovespa-desaba-reeleicao-lula-acoes-recuam.ghtml",
+      "publicado_em": "2026-10-26T20:05+00:00"
+     }
+    ],
+    "efeito_inicial": 0.2,
+    "logit": 0.19466666666666668
+   },
+   {
+    "id": "ev-20261028-02",
+    "data": "2026-10-27",
+    "titulo_evento": "Fazenda anuncia projeto de lei para cumprir o centro da meta fiscal e reafirma o centro da meta de inflação",
+    "canal": "fiscal",
+    "direcao": -1,
+    "magnitude": 1,
+    "ja_no_preco": false,
+    "porque": "Reduz o risco se as medidas forem aprovadas, porque uma âncora fiscal crível diminui o prêmio de risco e os juros longos, pelo canal fiscal, como na aprovação do teto de gastos em 2016. Por enquanto é só anúncio, sem medidas detalhadas.",
+    "veiculos": [
+     "Agência Brasil",
+     "Gazeta do Povo",
+     "g1"
+    ],
+    "fontes": [
+     {
+      "veiculo": "g1",
+      "titulo": "Durigan anuncia projeto para cumprir centro da meta fiscal e pede 'racionalidade' do mercado",
+      "url": "https://g1.globo.com/economia/noticia/2026/10/27/ministro-da-fazenda-anuncia-projeto-para-mirar-centro-da-meta-fiscal-e-diz-que-espera-racionalidade-do-mercado.ghtml",
+      "publicado_em": "2026-10-27T13:03+00:00"
+     },
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Governo buscará cumprir meta fiscal com diálogo, diz Durigan",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/governo-buscara-cumprir-meta-fiscal-com-dialogo-diz-durigan",
+      "publicado_em": "2026-10-27T13:04-03:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Ministro de Lula diz esperar “racionalidade” do mercado um dia depois de reação negativa",
+      "url": "https://www.gazetadopovo.com.br/economia/ministro-lula-esperar-racionalidade-mercado-um-dia-depois-reacao-negativa/",
+      "publicado_em": "2026-10-27T14:18+00:00"
+     }
+    ],
+    "efeito_inicial": -0.04,
+    "logit": -0.03946666666666667
+   },
+   {
+    "id": "ev-20261028-03",
+    "data": "2026-10-27",
+    "titulo_evento": "BC: 20,3 milhões de pessoas em endividamento de risco (+75% em 5 anos); grande banco tem lucro 28% menor por causa das provisões contra calotes",
+    "canal": "credito",
+    "direcao": 1,
+    "magnitude": 1,
+    "ja_no_preco": false,
+    "porque": "Aumenta o risco porque a inadimplência crescente faz os bancos subirem provisões e restringirem o crédito, pelo canal de crédito às famílias, como em 2015-16. O BC afirma que a estabilidade financeira não está em risco.",
+    "veiculos": [
+     "Agência Brasil",
+     "Folha",
+     "Valor",
+     "g1"
+    ],
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "Número de superendividados no Brasil cresce 75% em cinco anos, diz BC",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/numero-de-superendividados-no-brasil-cresce-75-em-cinco-anos-diz-bc.shtml",
+      "publicado_em": "2026-10-28T09:53-03:00"
+     },
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Número de superendividados no Brasil cresceu 75% em cinco anos, diz BC",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/numero-de-superendividados-no-brasil-cresceu-75-em-cinco-anos-diz-bc",
+      "publicado_em": "2026-10-27T17:58-03:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Principais preocupações dos bancos são com as contas públicas e inadimplência, diz Banco Central",
+      "url": "https://g1.globo.com/economia/noticia/2026/10/27/principais-preocupacoes-dos-bancos-sao-com-as-contas-publicas-e-inadimplencia-diz-relatorio-do-banco-central.ghtml",
+      "publicado_em": "2026-10-27T11:41+00:00"
+     },
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Banco Central diz que estabilidade financeira não está em risco",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/banco-central-diz-que-estabilidade-financeira-nao-esta-em-risco",
+      "publicado_em": "2026-10-27T11:28-03:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Lucro do Santander cai 28% sob pressão de provisões contra calotes",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/financas/2026/10/lucro-do-santander-cai-28-sob-pressao-de-provisoes-contra-calotes.shtml",
+      "publicado_em": "2026-10-28T07:49-03:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Analistas destacam tendências fracas do Santander, apesar de resultado em linha com esperado; units caem",
+      "url": "https://valor.globo.com/financas/noticia/2026/10/28/analistas-destacam-tendncias-fracas-do-santander-apesar-de-resultado-em-linha-com-esperado.ghtml",
+      "publicado_em": "2026-10-28T13:06+00:00"
+     }
+    ],
+    "efeito_inicial": 0.04,
+    "logit": 0.03946666666666667
+   },
+   {
+    "id": "ev-20261028-04",
+    "data": "2026-10-27",
+    "titulo_evento": "Um El Niño forte pode reduzir a safra de soja 2026/27 em cerca de 10% (perda de R$ 33 bilhões); alimentos ficam 2,40% mais caros nas fábricas",
+    "canal": "oferta",
+    "direcao": 1,
+    "magnitude": 1,
+    "ja_no_preco": false,
+    "porque": "Aumenta o risco porque uma quebra de safra derruba o PIB agro no 1º e no 2º trimestres e pressiona a inflação de alimentos, pelo canal de oferta, como no El Niño de 2015-16. O efeito depende da intensidade do fenômeno.",
+    "veiculos": [
+     "Gazeta do Povo",
+     "g1"
+    ],
+    "fontes": [
+     {
+      "veiculo": "g1",
+      "titulo": "El Niño pode provocar perdas de R$ 33 bilhões na safra de soja do Brasil; entenda os riscos",
+      "url": "https://g1.globo.com/economia/agronegocios/noticia/2026/10/27/el-nino-pode-reduzir-safra-de-soja-do-brasil-em-10percent-projeta-serasa.ghtml",
+      "publicado_em": "2026-10-27T15:57+00:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Inflação avança e alimentos saem das fábricas 2,40% mais caros",
+      "url": "https://www.gazetadopovo.com.br/economia/inflacao-avanca-e-alimentos-saem-das-fabricas-240-mais-caros/",
+      "publicado_em": "2026-10-27T13:09+00:00"
+     }
+    ],
+    "efeito_inicial": 0.04,
+    "logit": 0.03946666666666667
+   },
+   {
+    "id": "ev-20261028-05",
+    "data": "2026-10-27",
+    "titulo_evento": "Banco Mundial prevê alta de 23% nas commodities em 2026, puxada pela energia; governo prorroga por 30 dias a subvenção de R$ 2,12/litro ao diesel",
+    "canal": "externo",
+    "direcao": 1,
+    "magnitude": 1,
+    "ja_no_preco": true,
+    "porque": "Aumenta o risco porque a energia cara pressiona a inflação e os juros, e o subsídio renovado pesa nas contas públicas, pelo canal externo e fiscal, como em 2022. Como exportador de petróleo, o país compensa parte do efeito nos termos de troca.",
+    "veiculos": [
+     "Agência Brasil",
+     "Valor",
+     "g1"
+    ],
+    "fontes": [
+     {
+      "veiculo": "Valor",
+      "titulo": "Banco Mundial prevê alta de 23% nos preços das commodities em 2026",
+      "url": "https://valor.globo.com/mundo/noticia/2026/10/28/banco-mundial-prev-alta-de-23-pontos-percentuais-nos-preos-das-commodities-em-2026.ghtml",
+      "publicado_em": "2026-10-28T14:11+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Governo renova subsídio ao diesel; por que o agro é tão vulnerável à alta do combustível?",
+      "url": "https://g1.globo.com/economia/agronegocios/noticia/2026/10/28/por-que-o-agro-e-tao-vulneravel-a-alta-do-diesel.ghtml",
+      "publicado_em": "2026-10-28T08:00+00:00"
+     },
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Governo prorroga por um mês subvenção de R$ 2,12 ao diesel",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/governo-prorroga-por-um-mes-subvencao-de-r-212-ao-diesel",
+      "publicado_em": "2026-10-27T12:41-03:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Governo prorroga subvenção ao diesel por mais 30 dias, em meio à alta do petróleo",
+      "url": "https://g1.globo.com/economia/noticia/2026/10/27/governo-prorroga-subvencao-ao-diesel-por-mais-30-dias.ghtml",
+      "publicado_em": "2026-10-27T11:13+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Lucro da Equinor dobra no 3º trimestre para US$ 12,35 bi com turbulência nos mercados",
+      "url": "https://valor.globo.com/empresas/noticia/2026/10/28/lucro-da-equinor-dobra-no-3o-trimestre-para-us-1235-bi-com-turbulencia-nos-mercados.ghtml",
+      "publicado_em": "2026-10-28T12:39+00:00"
+     }
+    ],
+    "efeito_inicial": 0.02,
+    "logit": 0.019733333333333335
+   },
+   {
+    "id": "ev-20261028-06",
+    "data": "2026-10-28",
+    "titulo_evento": "Confiança da indústria cai pelo terceiro mês seguido em outubro, com piora da avaliação da situação atual",
+    "canal": "atividade",
+    "direcao": 1,
+    "magnitude": 1,
+    "ja_no_preco": false,
+    "porque": "Aumenta o risco porque a confiança em queda antecipa cortes de produção e de investimento, pelo canal de atividade, como nas quedas de confiança de 2014. A pesquisa foi feita antes do choque de mercado pós-eleição.",
+    "veiculos": [
+     "Folha"
+    ],
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "Confiança da indústria brasileira cai pelo terceiro mês seguido, diz FGV",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://aovivo.folha.uol.com.br/mercado/2026/10/25/6568-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post467994",
+      "publicado_em": "2026-10-28T09:37-03:00"
+     }
+    ],
+    "efeito_inicial": 0.02,
+    "logit": 0.02
+   }
+  ],
+  "agrupados": [],
+  "shapley_desde_base": {
+   "ind:atividade": 4.707522639130192,
+   "ind:trabalho": -0.6118338395279969,
+   "ind:juro_real": 3.136225391663534,
+   "ind:familias": 1.6857741837565063,
+   "ind:fiscal": 1.8690080880782245,
+   "ind:cambio": 0.649886653061839,
+   "not:ev-20261028-01": 2.6636317946961774,
+   "not:ev-20261028-02": -0.5366810126388737,
+   "not:ev-20261028-03": 0.5378184491606993,
+   "not:ev-20261028-04": 0.5378184491606993,
+   "not:ev-20261028-05": 0.26876748649778737,
+   "not:ev-20261028-06": 0.2724014228863038
+  },
+  "contrafactual_sem_evento": {
+   "ev-20261028-01": 73.86931864892296,
+   "ev-20261028-02": 77.59190281588619,
+   "ev-20261028-03": 76.32260492022628,
+   "ev-20261028-04": 76.32260492022628,
+   "ev-20261028-05": 76.6388994658759,
+   "ev-20261028-06": 76.63462010789904
+  }
+ },
+ "cenarios": [
+  {
+   "trimestre": "3T26",
+   "cenario": "negativo",
+   "manchete": 0.9394885806989614
+  },
+  {
+   "trimestre": "3T26",
+   "cenario": "zero ou positivo",
+   "manchete": 0.7561474472062765
+  }
+ ],
+ "variacao": null,
+ "em_revisao": false,
+ "anterior": null
+}
