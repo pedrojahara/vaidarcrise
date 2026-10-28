@@ -1,7 +1,8 @@
 """Confere o texto do LLM contra os moldes que denunciam piloto automático.
 
-Não bloqueia nada: devolve a lista de problemas, que o post usa para pedir uma
-reescrita e a rodada grava no registro.
+Devolve a lista de problemas, que o post usa para pedir uma reescrita e a rodada
+grava no registro. Os problemas graves (afirmações que o texto não pode fazer)
+barram o post se sobrarem depois da reescrita; os moldes só pedem a reescrita.
 """
 from __future__ import annotations
 
@@ -18,6 +19,22 @@ MOLDES = [
     (re.compile(r"\bgrande banco\b", re.I), "empresa sem nome"),
     (re.compile(r"!"), "ponto de exclamação"),
 ]
+
+
+# Afirmações erradas por construção: o post não sabe por que um nome faltou nem tem motivo para dar
+# sobre o que ficou fora da conta.
+GRAVES = [
+    (re.compile(r"\b(cujo nome|sem (o )?nome|nome não (aparece|foi|é|vem)|não (traz|trazem|cita|citam|informa|"
+                r"informam|divulga|divulgam|revela|revelam|identifica|identificam) o nome|não identificad[oa]s?|"
+                r"não nomead[oa]s?)\b", re.I), "comenta a falta de um nome"),
+    (re.compile(r"\bindicadores já (a |o |as |os )?med", re.I), "dá motivo para notícia fora da conta"),
+]
+
+
+def graves_post(post: dict) -> list[str]:
+    textos = [post["titulo"], *post["paragrafos"]]
+    return [f"{'título' if i == 0 else f'parágrafo {i}'}: {nome}"
+            for i, t in enumerate(textos) for rx, nome in GRAVES if rx.search(t)]
 
 
 def _moldes(texto: str) -> list[str]:
@@ -57,4 +74,4 @@ def problemas_post(post: dict) -> list[str]:
         if re.search(r"\b(eu|nós|nosso|nossa)\b", p, flags=re.IGNORECASE):
             out.append(f"parágrafo {i} em primeira pessoa")
     out += _aberturas(post["paragrafos"], limite=1)
-    return out
+    return out + graves_post(post)

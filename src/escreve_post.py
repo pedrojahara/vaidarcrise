@@ -38,10 +38,10 @@ Regras:
 2. Use só os fatos e os números que estão nos dados, com os mesmos valores. Não invente número, data, nome, causa ou previsão. Não recalcule nada. Fale do risco em "vezes o normal", como nos dados; não o converta em porcentagem.
 3. O leitor é uma pessoa curiosa que não é economista. Explique o termo técnico na primeira vez que ele aparecer.
 4. Cada fato vem com o estágio em que está, e o estágio pesa na conta: dado divulgado e decisão tomada valem inteiros, proposta em votação vale pela chance de passar, anúncio vale 0,3 e rumor quase nada. Deixe claro o que é dado, o que é decisão, o que ainda está em votação e o que é só rumor.
-5. Diga quanto os fatos principais mexeram no risco. Fato que quase não mexeu não deve parecer mais importante do que os que mexeram.
+5. Diga quanto os fatos principais mexeram no risco. Fato que quase não mexeu não deve parecer mais importante do que os que mexeram. Das notícias fora da conta, diga só que ficaram fora da conta, sem dar motivo.
 6. Formato: um título de até 70 caracteres e de 2 a 4 parágrafos curtos, de até 90 palavras cada. O título afirma o fato principal do dia; não é pergunta nem trocadilho. O primeiro parágrafo diz o que mudou no risco e por quê. O último diz o que acompanhar, com a data do próximo gatilho quando ela estiver nos dados. Dia sem novidade relevante pede um post curto, de um ou dois parágrafos, que diga isso.
 7. Escreva como a redação de um jornal de economia brasileiro: frase curta, voz ativa, verbo concreto. Números no formato brasileiro (2,7×; R$ 13 bilhões; 15%).
-8. Instituições e empresas vão pelo nome (Copom, Fazenda, IBGE, Bradesco, Fed). Pessoas e partidos não: use o cargo ou a instituição. Sem adjetivos de juízo, e o mesmo critério para fatos que agradam a qualquer lado.
+8. Instituições e empresas vão pelo nome que aparece no fato ou nas manchetes dele (Copom, Fazenda, IBGE, Bradesco, Fed). Se o nome não estiver nos dados, descreva o fato sem nome e sem comentar a falta dele. Pessoas e partidos não: use o cargo ou a instituição. Sem adjetivos de juízo, e o mesmo critério para fatos que agradam a qualquer lado.
 9. Não escreva em primeira pessoa (nada de "eu", "nós", "nosso"): o post é assinado como texto de um modelo de linguagem.
 10. Não use travessão, ponto de exclamação, pergunta retórica, lista, emoji, "vale destacar", "é importante", "além disso", "nesse sentido", "em suma", "crucial", "robusto", "desafiador" nem a construção "não só X, mas Y". Não comece dois parágrafos com a mesma palavra.
 """
@@ -49,6 +49,10 @@ Regras:
 
 def _lista(fontes: list[dict]) -> str:
     return ", ".join(sorted({f["veiculo"] for f in fontes}))
+
+
+def _manchetes(fontes: list[dict], n: int = 3) -> str:
+    return "; ".join(f"\"{f['titulo']}\" ({f['veiculo']})" for f in fontes[:n])
 
 
 def dados_texto(rodada: dict, conta: dict | None, cfg: dict, datas: list[dict] | None = None) -> str:
@@ -73,14 +77,13 @@ def dados_texto(rodada: dict, conta: dict | None, cfg: dict, datas: list[dict] |
             est = build_site.ESTAGIOS.get(it.get("estagio"), "notícia")
             peso = f", peso {build_site.peso_fmt(it['peso'])}" if it.get("peso") is not None else ""
             l.append(f"- {sinal(it['pts'], 2)} | {est}{peso} | {it['titulo']} | por quê: {it['porque']} | "
-                     f"jornais: {_lista(it['fontes'])}")
+                     f"jornais: {_lista(it['fontes'])} | manchetes: {_manchetes(it['fontes'])}")
         for g in conta["outros"]:
             det = "; ".join(f"{nome} {sinal(p, 2)}" for nome, p in g.get("detalhe", []))
             l.append(f"- {sinal(g['pts'], 2)} | {g['nome']}" + (f" ({det})" if det else "")
                      + (f". {g['nota']}" if g.get("nota") else ""))
         if conta["repetidos"]:
-            l += ["", f"Fora da conta: {len(conta['repetidos'])} notícia(s) só repetiam dados que os indicadores já "
-                  "medem: " + "; ".join(d["titulo_evento"] for d in conta["repetidos"][:4])]
+            l += ["", "Ficaram fora da conta: " + "; ".join(d["titulo_evento"] for d in conta["repetidos"][:4])]
     else:
         l.append(f"Risco de recessão nos próximos 12 meses: {mult(m, 2)} o normal. Primeira conta, sem variação.")
     cen = [c for c in (rodada.get("cenarios") or []) if "curto_prazo_4t" in c]
@@ -102,7 +105,10 @@ def dados_texto(rodada: dict, conta: dict | None, cfg: dict, datas: list[dict] |
 
 def escrever(rodada: dict, conta: dict | None, cfg: dict, datas: list[dict] | None = None,
              budget_usd: float = 1.0) -> dict:
-    """Devolve {"ok", "titulo", "paragrafos", "problemas", "meta"}. Nunca levanta exceção."""
+    """Devolve {"ok", "titulo", "paragrafos", "problemas", "meta"}. Nunca levanta exceção.
+
+    Molde de texto pede uma reescrita; problema grave que sobra depois dela barra o texto (ok = False).
+    """
     dados = dados_texto(rodada, conta, cfg, datas)
     prompt = f"<dados>\n{dados}\n</dados>\n\nEscreva o post do dia conforme as regras e devolva o JSON do esquema."
     r = classify_news.chamar_claude(SYSTEM, prompt, SCHEMA, budget_usd)
@@ -110,6 +116,7 @@ def escrever(rodada: dict, conta: dict | None, cfg: dict, datas: list[dict] | No
     if not r["ok"]:
         return {"ok": False, "problemas": [], "meta": metas}
     post, probs = r["saida"], revisa_texto.problemas_post(r["saida"])
+    graves = revisa_texto.graves_post(post)
     if probs:
         # Uma reescrita só. Se ainda sobrar problema, publica assim e o registro guarda a lista.
         refaz = (f"{prompt}\n\nSua primeira versão foi esta:\n{json.dumps(post, ensure_ascii=False)}\n\n"
@@ -117,9 +124,13 @@ def escrever(rodada: dict, conta: dict | None, cfg: dict, datas: list[dict] | No
         r2 = classify_news.chamar_claude(SYSTEM, refaz, SCHEMA, budget_usd)
         metas.append(r2["meta"])
         if r2["ok"]:
-            p2 = revisa_texto.problemas_post(r2["saida"])
-            if len(p2) <= len(probs):
-                post, probs = r2["saida"], p2
+            p2, g2 = revisa_texto.problemas_post(r2["saida"]), revisa_texto.graves_post(r2["saida"])
+            if (len(g2), len(p2)) <= (len(graves), len(probs)):
+                post, probs, graves = r2["saida"], p2, g2
+    if graves:
+        # Erro de fato no texto não sai publicado: o site mostra só a conta do dia.
+        return {"ok": False, "erro": "texto barrado pelo verificador: " + "; ".join(graves), "problemas": probs,
+                "rascunho": post, "meta": metas}
     return {"ok": True, "titulo": post["titulo"], "paragrafos": post["paragrafos"], "problemas": probs, "meta": metas}
 
 
