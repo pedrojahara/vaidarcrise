@@ -52,6 +52,8 @@ td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 .ev ul{margin:6px 0 0;padding-left:18px;font:14.5px/1.5 var(--sistema)}
 .ev .rodape{font:14px/1.5 var(--sistema);color:var(--meta)}
 .ev .peso{font:600 14px/1.5 var(--sistema);color:var(--meta)}
+h3.tema{margin:28px 0 0;font-size:20px}
+h3.tema span{font:600 15px/1.3 var(--sistema);margin-left:6px;white-space:nowrap}
 .pesos{font:15px/1.5 var(--sistema);margin:0 0 18px;padding-left:20px}
 .lados{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
 .lados > div{border-top:4px solid;padding-top:10px;overflow-wrap:anywhere}
@@ -88,9 +90,9 @@ details.metodos summary{cursor:pointer;font:15px/1.4 var(--sistema);color:var(--
   {% elif cascata %}
   <section id="de-onde">
   <h2>De onde vem o {{ mult_fmt }}</h2>
-  <p class="lead">Do normal ({{ normal|num }}%) até a chance de hoje ({{ curto|num }}%), cada barra é quanto um indicador ou uma notícia acrescenta ou tira, em pontos percentuais. {% if n_ind and n_not %}Os indicadores somam {{ ind_pts|sinal }} e as notícias, {{ not_pts|sinal }}.{% elif n_ind %}Sem notícias valendo, os indicadores somam tudo.{% endif %}</p>
+  <p class="lead">Do normal ({{ normal|num }}%) até a chance de hoje ({{ curto|num }}%), cada barra é quanto {{ 'um indicador ou uma notícia acrescenta' if n_not else 'um indicador acrescenta' }} ou tira, em pontos percentuais. {% if pressao and not n_not %}As notícias ficam fora desta conta e aparecem como <a href="#noticias">pressão por tema</a>.{% elif n_ind and n_not %}Os indicadores somam {{ ind_pts|sinal }} e as notícias, {{ not_pts|sinal }}.{% elif n_ind %}Sem notícias valendo, os indicadores somam tudo.{% endif %}</p>
   {{ cascata|safe }}
-  <p class="peq">Barras vermelhas aumentam o risco; verdes reduzem. A conta é feita em log-odds e repartida em pontos com valores de Shapley, que somam exatamente a diferença. São os mesmos números da lista de notícias e da tabela de indicadores abaixo. <a href="/metodologia/#a-conta">Detalhes da conta</a>.</p>
+  <p class="peq">Barras vermelhas aumentam o risco; verdes reduzem. A conta é feita em log-odds e repartida em pontos com valores de Shapley, que somam exatamente a diferença. São os mesmos números {{ 'da lista de notícias e ' if n_not }}da tabela de indicadores abaixo. <a href="/metodologia/#a-conta">Detalhes da conta</a>.</p>
   </section>
   {% endif %}
 
@@ -102,6 +104,35 @@ details.metodos summary{cursor:pointer;font:15px/1.4 var(--sistema);color:var(--
   </section>
   {% endif %}
 
+  {% if pressao and not n_not %}
+  <section id="noticias">
+  <h2>A pressão das notícias</h2>
+  <p class="lead">As notícias não mexem no número. Elas mostram para que lado o risco está sendo empurrado, tema a tema, antes de os dados confirmarem. {% if pressao.sentido == 'sobe' %}Hoje, no conjunto, empurram para cima.{% elif pressao.sentido == 'desce' %}Hoje, no conjunto, aliviam.{% else %}Hoje, no conjunto, não empurram para um lado claro.{% endif %}</p>
+  <ul class="pesos">
+    <li>em cada tema, conta inteira a notícia mais forte de cada lado, metade da segunda, um quarto da terceira, e assim por diante: dez manchetes sobre o mesmo aperto não valem dez vezes uma;</li>
+    <li>o estágio pesa: dado divulgado e decisão tomada valem inteiros, proposta em votação vale pela chance de passar, anúncio vale {{ cfg.noticias.peso_por_estagio.anuncio|peso }} e rumor vale {{ cfg.noticias.peso_por_estagio.rumor|peso }};</li>
+    <li>cada notícia perde força em linha reta e some em {{ cfg.noticias.dias_de_decaimento }} dias;</li>
+    <li>a seta de um tema só aparece quando o saldo passa do corte publicado na <a href="/metodologia/#noticias">metodologia</a>.</li>
+  </ul>
+  {% if not llm_ok %}<div class="aviso-falha">A leitura de notícias falhou nesta atualização: valem só as notícias que já estavam registradas.</div>{% endif %}
+  {% for t in pressao.com_seta + pressao.sem_seta %}
+  <h3 class="tema">{{ t.nome }} <span class="{{ 'mais' if t.sentido == 'sobe' else 'menos' if t.sentido == 'desce' }}">{{ t.simbolo }} {{ t.palavra }}</span></h3>
+  <div class="eventos">
+  {% for n in t.noticias %}
+    <article class="ev">
+      <span class="peq">{{ n.data }}{% if n.estagio %} | {{ n.estagio }}{% endif %}{% if n.contra %} | {{ n.contra }}{% endif %}</span>
+      <h3>{{ n.titulo }}</h3>
+      {% if n.porque %}<p>{{ n.porque }}</p>{% endif %}
+      <ul>{% for f in n.fontes[:4] %}<li><a href="{{ f.url }}" rel="nofollow noopener">{{ f.veiculo }}: {{ f.titulo }}</a></li>{% endfor %}</ul>
+      <p class="rodape">Some da pressão até {{ n.vale_ate }}.</p>
+    </article>
+  {% endfor %}
+  </div>
+  {% else %}
+  <p>Nenhuma notícia valendo agora.</p>
+  {% endfor %}
+  </section>
+  {% else %}
   <section id="noticias">
   <h2>As notícias que valem agora</h2>
   <p class="lead">Cada notícia vira um evento com canal, direção, tamanho e estágio. O estágio pesa na conta:</p>
@@ -130,6 +161,7 @@ details.metodos summary{cursor:pointer;font:15px/1.4 var(--sistema);color:var(--
   {% endfor %}
   </div>
   </section>
+  {% endif %}
 
   <section id="indicadores">
   <h2>Os indicadores</h2>

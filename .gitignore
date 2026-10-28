@@ -8,3 +8,5 @@ logs/
 data/raw/*/noticias.json
 # Acervo de manchetes da coleta de hora em hora: também fica só na máquina.
 data/manchetes.json
+# Cópia local das taxas do Tesouro Direto (~15 MB), refeita a cada atualização.
+data/raw/tesouro_direto.csv
