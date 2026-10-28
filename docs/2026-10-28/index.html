@@ -51,7 +51,25 @@ section{padding:44px 0;border-bottom:1px solid var(--linha)}
 .mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.95em}
 .peq{font-size:14px;color:var(--tinta2)}
 .chip{display:inline-block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border:1px solid var(--linha);border-radius:99px;color:var(--tinta2)}
-.up{fill:var(--quente)} .dn{fill:var(--frio)} .tot{fill:var(--tinta2)}
+.medidor{position:relative;margin:30px 0 4px;padding-top:4px}
+.trilho{position:relative;height:16px;border-radius:8px;background:linear-gradient(90deg,var(--frio),var(--morno) 50%,var(--quente))}
+.trilho .pt{position:absolute;top:50%;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;background:var(--papel);border:4px solid var(--tinta)}
+.trilho .lb{position:absolute;top:-8px;bottom:-8px;width:0;border-left:2px dashed var(--tinta)}
+.medidor .hb{position:absolute;top:-22px;transform:translateX(-50%);font-size:13px;color:var(--tinta2);white-space:nowrap}
+.tqs{position:relative;height:22px;margin-top:6px}
+.tq{position:absolute;transform:translateX(-50%);font-size:12px;color:var(--tinta2)}
+.tq:first-child{transform:none}.tq:last-child{transform:translateX(-100%)}
+.medidor .cc{margin:0;text-align:center;font-size:13px;font-style:italic;color:var(--tinta2)}
+.cascata{display:grid;gap:6px;margin:8px 0 14px}
+.cr{display:grid;grid-template-columns:minmax(120px,38%) 1fr 56px;align-items:center;gap:10px;font-size:14px}
+.cr .cn{text-align:right;line-height:1.25}
+.cr .ct{position:relative;height:20px}
+.cr .ct i{position:absolute;top:0;bottom:0;border-radius:2px}
+.cr.up i{background:var(--quente)} .cr.dn i{background:var(--frio)} .cr.tot i{background:var(--tinta2)}
+.cr.tot .cn,.cr.tot .cv{font-weight:600}
+.cr .cv{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--tinta2)}
+.cr.tot .cv{color:var(--tinta)}
+@media (max-width:640px){.cr{grid-template-columns:1fr 52px;row-gap:2px}.cr .cn{grid-column:1/-1;text-align:left}.cr .ct{grid-column:1}}
 .mais{color:var(--quente)} .menos{color:var(--bom)}
 table{width:100%;border-collapse:collapse;font-size:15px}
 th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--linha);vertical-align:top}
@@ -61,7 +79,7 @@ td.n,th.n{text-align:right;white-space:nowrap}
 footer{padding:40px 0 60px;font-size:14px;color:var(--tinta2)}
 footer p{margin:6px 0}
 svg text{font-family:"IBM Plex Sans",system-ui,sans-serif}
-.tl{font-size:12px;fill:var(--tinta2)} .it{font-style:italic}
+.tl{font-size:14px;fill:var(--tinta2)} .it{font-style:italic}
 .tk{stroke:var(--tinta2);stroke-width:1}
 .base{stroke:var(--tinta);stroke-width:2;stroke-dasharray:3 3}
 .mk{fill:var(--papel);stroke:var(--tinta);stroke-width:4}
@@ -77,7 +95,6 @@ svg text{font-family:"IBM Plex Sans",system-ui,sans-serif}
 .nota{font:900 clamp(110px,26vw,190px)/.82 Fraunces,Georgia,serif;letter-spacing:-.04em;color:var(--acento)}
 .nota small{font-size:.28em;letter-spacing:0;color:var(--tinta2);font-weight:500;margin-left:4px}
 .frase{font-size:clamp(19px,3.4vw,24px);line-height:1.35;max-width:430px;margin:0 0 10px;font-family:Fraunces,Georgia,serif;font-weight:500}
-.medidor{width:100%;height:auto;margin:22px 0 6px}
 .cartoes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
 .cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:12px 14px}
 .cartao b{display:block;font:700 28px/1.1 Fraunces,Georgia,serif}
@@ -87,7 +104,7 @@ svg text{font-family:"IBM Plex Sans",system-ui,sans-serif}
 .share a.wa{background:#1f8b4c;border-color:#1f8b4c;color:#fff}
 .aviso{background:var(--papel2);border-left:4px solid var(--morno);padding:10px 14px;margin:0 0 18px;font-size:15px;border-radius:4px}
 .aviso[hidden]{display:none}
-.cascata,.hist{width:100%;height:auto}
+.hist{width:100%;height:auto}
 .eventos{display:grid;gap:12px}
 .ev{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:16px}
 .ev .topo-ev{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
@@ -123,15 +140,7 @@ svg text{font-family:"IBM Plex Sans",system-ui,sans-serif}
     <div class="nota" aria-label="77 por cento">77<small>%</small></div>
     <p class="frase">Em 100 Brasis como este, <strong>77</strong> entram em recessão até o fim de 2030.</p>
   </div>
-  <svg viewBox="0 0 640 92" class="medidor" role="img" aria-label="Nota 77 de 100; taxa histórica 62">
-<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="var(--frio)"/><stop offset=".5" stop-color="var(--morno)"/><stop offset="1" stop-color="var(--quente)"/></linearGradient></defs>
-<rect x="20" y="26" width="600" height="16" rx="8" fill="url(#g)" opacity=".9"/>
-<line x1="20.0" y1="44" x2="20.0" y2="50" class="tk"/><text x="20.0" y="66" class="tl" text-anchor="middle">0</text><line x1="170.0" y1="44" x2="170.0" y2="50" class="tk"/><text x="170.0" y="66" class="tl" text-anchor="middle">25</text><line x1="320.0" y1="44" x2="320.0" y2="50" class="tk"/><text x="320.0" y="66" class="tl" text-anchor="middle">50</text><line x1="470.0" y1="44" x2="470.0" y2="50" class="tk"/><text x="470.0" y="66" class="tl" text-anchor="middle">75</text><line x1="620.0" y1="44" x2="620.0" y2="50" class="tk"/><text x="620.0" y="66" class="tl" text-anchor="middle">100</text>
-<line x1="390.6535643304082" y1="20" x2="390.6535643304082" y2="48" class="base"/>
-<text x="390.6535643304082" y="14" class="tl" text-anchor="middle">história: 62</text>
-<circle cx="481.7356025659587" cy="34" r="13" class="mk"/>
-<text x="320.0" y="84" class="tl it" text-anchor="middle">50 = cara ou coroa</text>
-</svg>
+  <div class="medidor" role="img" aria-label="Nota 77 de 100; taxa histórica 62"><span class="hb" style="left:61.78%">história: 62</span><div class="trilho"><span class="lb" style="left:61.78%"></span><span class="pt" style="left:76.96%"></span></div><div class="tqs"><span class="tq" style="left:0%">0</span><span class="tq" style="left:25%">25</span><span class="tq" style="left:50%">50</span><span class="tq" style="left:75%">75</span><span class="tq" style="left:100%">100</span></div><p class="cc">50 = cara ou coroa</p></div>
   <div class="cartoes">
     <div class="cartao"><b>48%</b><span>de chance de a recessão começar nos próximos 4 trimestres (3T26 a 2T27)</span></div>
     <div class="cartao"><b>62%</b><span>é o que a história brasileira dá sozinha, antes de qualquer dado ou notícia</span></div>
@@ -152,7 +161,7 @@ svg text{font-family:"IBM Plex Sans",system-ui,sans-serif}
 <section id="por-que"><div class="w">
   <h2>Por que 77</h2>
   <p class="lead">A história brasileira sozinha dá 62. Os indicadores econômicos somam +11,4 pontos e as notícias, +3,7. Indicadores e notícias só mexem no risco dos próximos trimestres; depois do 6º trimestre vale de novo a taxa histórica, e por isso a nota se move devagar.</p>
-  <svg viewBox="0 0 640 430" class="cascata" role="img" aria-label="Decomposição da nota"><text x="250" y="24" class="cl" text-anchor="end">Taxa histórica</text><rect x="260.0" y="11" width="55.21920801155562" height="18" class="tot"/><text x="321.2192080115556" y="25" class="cv b">61,8</text><text x="250" y="54" class="cl" text-anchor="end">Atividade (IBC-Br)</text><rect x="315.2192080115556" y="41" width="64.98641795730936" height="18" class="up"/><text x="386.205625968865" y="55" class="cv">+4,7</text><text x="250" y="84" class="cl" text-anchor="end">Juro real ex-ante</text><rect x="380.205625968865" y="71" width="43.29497056834771" height="18" class="up"/><text x="429.5005965372127" y="85" class="cv">+3,1</text><text x="250" y="114" class="cl" text-anchor="end">Notícia: Bolsa cai 13,88% e dólar sobe…</text><rect x="423.5005965372127" y="101" width="36.77090953438028" height="18" class="up"/><text x="466.27150607159297" y="115" class="cv">+2,7</text><text x="250" y="144" class="cl" text-anchor="end">Dívida pública</text><rect x="460.27150607159297" y="131" width="25.801286597717763" height="18" class="up"/><text x="492.07279266931073" y="145" class="cv">+1,9</text><text x="250" y="174" class="cl" text-anchor="end">Dívida das famílias</text><rect x="486.07279266931073" y="161" width="23.271778828340246" height="18" class="up"/><text x="515.344571497651" y="175" class="cv">+1,7</text><text x="250" y="204" class="cl" text-anchor="end">Câmbio</text><rect x="509.344571497651" y="191" width="8.971556569838924" height="18" class="up"/><text x="524.3161280674899" y="205" class="cv">+0,6</text><text x="250" y="234" class="cl" text-anchor="end">Desemprego (regra de Sahm adaptada)</text><rect x="509.8698830541385" y="221" width="8.446245013351415" height="18" class="dn"/><text x="524.3161280674899" y="235" class="cv">−0,6</text><text x="250" y="264" class="cl" text-anchor="end">Notícia: BC: 20,3 milhões de pessoas e…</text><rect x="509.8698830541385" y="251" width="7.424477204164248" height="18" class="up"/><text x="523.2943602583027" y="265" class="cv">+0,5</text><text x="250" y="294" class="cl" text-anchor="end">Notícia: Um El Niño forte pode reduzir…</text><rect x="517.2943602583027" y="281" width="7.424477204164077" height="18" class="up"/><text x="530.7188374624668" y="295" class="cv">+0,5</text><text x="250" y="324" class="cl" text-anchor="end">Notícia: Fazenda anuncia projeto de le…</text><rect x="517.3100623442772" y="311" width="7.408775118189624" height="18" class="dn"/><text x="530.7188374624668" y="325" class="cv">−0,5</text><text x="250" y="354" class="cl" text-anchor="end">Notícia: Confiança da indústria cai pe…</text><rect x="517.3100623442772" y="341" width="3.7604477082506946" height="18" class="up"/><text x="527.0705100525279" y="355" class="cv">+0,3</text><text x="250" y="384" class="cl" text-anchor="end">Notícia: Banco Mundial prevê alta de 2…</text><rect x="521.0705100525279" y="371" width="3.7102819359161003" height="18" class="up"/><text x="530.780791988444" y="385" class="cv">+0,3</text><text x="250" y="414" class="cl" text-anchor="end">Nota de hoje</text><rect x="260.0" y="401" width="264.78079198844443" height="18" class="tot"/><text x="530.7807919884444" y="415" class="cv b">77,0</text></svg>
+  <div class="cascata" role="img" aria-label="Decomposição da nota"><div class="cr tot"><span class="cn">Taxa histórica</span><span class="ct"><i style="left:0;width:17.26%"></i></span><span class="cv">61,8</span></div><div class="cr up"><span class="cn">Atividade (IBC-Br)</span><span class="ct"><i style="left:17.26%;width:20.31%"></i></span><span class="cv">+4,7</span></div><div class="cr up"><span class="cn">Juro real ex-ante</span><span class="ct"><i style="left:37.56%;width:13.53%"></i></span><span class="cv">+3,1</span></div><div class="cr up"><span class="cn">Notícia: Bolsa cai 13,88% e dólar sobe 8,21% no dia seguinte à eleição presidencial, com primeiro circuit breaker desde 2020 e perda de 14% na semana</span><span class="ct"><i style="left:51.09%;width:11.49%"></i></span><span class="cv">+2,7</span></div><div class="cr up"><span class="cn">Dívida pública</span><span class="ct"><i style="left:62.58%;width:8.06%"></i></span><span class="cv">+1,9</span></div><div class="cr up"><span class="cn">Dívida das famílias</span><span class="ct"><i style="left:70.65%;width:7.27%"></i></span><span class="cv">+1,7</span></div><div class="cr up"><span class="cn">Câmbio</span><span class="ct"><i style="left:77.92%;width:2.80%"></i></span><span class="cv">+0,6</span></div><div class="cr dn"><span class="cn">Desemprego (regra de Sahm adaptada)</span><span class="ct"><i style="left:78.08%;width:2.64%"></i></span><span class="cv">−0,6</span></div><div class="cr up"><span class="cn">Notícia: BC: 20,3 milhões de pessoas em endividamento de risco (+75% em 5 anos); grande banco tem lucro 28% menor por causa das provisões contra calotes</span><span class="ct"><i style="left:78.08%;width:2.32%"></i></span><span class="cv">+0,5</span></div><div class="cr up"><span class="cn">Notícia: Um El Niño forte pode reduzir a safra de soja 2026/27 em cerca de 10% (perda de R$ 33 bilhões); alimentos ficam 2,40% mais caros nas fábricas</span><span class="ct"><i style="left:80.40%;width:2.32%"></i></span><span class="cv">+0,5</span></div><div class="cr dn"><span class="cn">Notícia: Fazenda anuncia projeto de lei para cumprir o centro da meta fiscal e reafirma o centro da meta de inflação</span><span class="ct"><i style="left:80.41%;width:2.32%"></i></span><span class="cv">−0,5</span></div><div class="cr up"><span class="cn">Notícia: Confiança da indústria cai pelo terceiro mês seguido em outubro, com piora da avaliação da situação atual</span><span class="ct"><i style="left:80.41%;width:1.18%"></i></span><span class="cv">+0,3</span></div><div class="cr up"><span class="cn">Notícia: Banco Mundial prevê alta de 23% nas commodities em 2026, puxada pela energia; governo prorroga por 30 dias a subvenção de R$ 2,12/litro ao diesel</span><span class="ct"><i style="left:81.58%;width:1.16%"></i></span><span class="cv">+0,3</span></div><div class="cr tot"><span class="cn">Nota de hoje</span><span class="ct"><i style="left:0;width:82.74%"></i></span><span class="cv">77,0</span></div></div>
   <p class="peq">Barras vermelhas aumentam o risco; verdes reduzem. A conta é feita em log-odds e repartida em pontos com valores de Shapley. <a href="/metodologia/#a-conta">Como a conta funciona</a>.</p>
 </div></section>
 
@@ -310,7 +319,7 @@ svg text{font-family:"IBM Plex Sans",system-ui,sans-serif}
 <section id="historico"><div class="w">
   <h2>Histórico e placar</h2>
   <p class="lead">Cada atualização fica gravada e nunca é recalculada. A pergunta de 2030 só se resolve em 2031; até lá, quem avalia o site são as previsões de 12 meses, que vencem uma a uma.</p>
-  <svg viewBox="0 0 640 220" class="hist" role="img" aria-label="Histórico da nota"><line x1="40" y1="190.0" x2="620" y2="190.0" class="gl"/><text x="32" y="194.0" class="tl" text-anchor="end">0</text><line x1="40" y1="146.25" x2="620" y2="146.25" class="gl"/><text x="32" y="150.25" class="tl" text-anchor="end">25</text><line x1="40" y1="102.5" x2="620" y2="102.5" class="g50"/><text x="32" y="106.5" class="tl" text-anchor="end">50</text><line x1="40" y1="58.75" x2="620" y2="58.75" class="gl"/><text x="32" y="62.75" class="tl" text-anchor="end">75</text><line x1="40" y1="15.0" x2="620" y2="15.0" class="gl"/><text x="32" y="19.0" class="tl" text-anchor="end">100</text><circle cx="40.0" cy="55.3" r="4" class="l1d"/><circle cx="40.0" cy="106.4" r="4" class="l2d"/><text x="40" y="214" class="tl">28/10/2026</text><text x="620" y="214" class="tl" text-anchor="end">27/11/2026</text></svg>
+  <svg viewBox="0 0 480 230" class="hist" role="img" aria-label="Histórico da nota"><line x1="34" y1="196.0" x2="470" y2="196.0" class="gl"/><text x="26" y="200.0" class="tl" text-anchor="end">0</text><line x1="34" y1="150.75" x2="470" y2="150.75" class="gl"/><text x="26" y="154.75" class="tl" text-anchor="end">25</text><line x1="34" y1="105.5" x2="470" y2="105.5" class="g50"/><text x="26" y="109.5" class="tl" text-anchor="end">50</text><line x1="34" y1="60.25" x2="470" y2="60.25" class="gl"/><text x="26" y="64.25" class="tl" text-anchor="end">75</text><line x1="34" y1="15.0" x2="470" y2="15.0" class="gl"/><text x="26" y="19.0" class="tl" text-anchor="end">100</text><circle cx="34.0" cy="56.7" r="4" class="l1d"/><circle cx="34.0" cy="109.5" r="4" class="l2d"/><text x="34" y="224" class="tl">28/10/2026</text><text x="470" y="224" class="tl" text-anchor="end">27/11/2026</text></svg>
   <div class="legenda"><span><i style="background:var(--quente)"></i>Até 2030</span><span><i style="background:var(--tinta2)"></i>Próximos 4 trimestres</span></div>
   <h3 style="margin-top:26px">Previsões de 12 meses registradas</h3>
   <div class="tabela"><table>

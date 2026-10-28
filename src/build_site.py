@@ -68,55 +68,41 @@ def ref_fmt(ref: str) -> str:
 
 # --------------------------------------------------------------------- SVGs
 def svg_medidor(nota: float, base: float) -> str:
-    w, h, x0, x1 = 640, 92, 20, 620
-    px = lambda v: x0 + (x1 - x0) * v / 100  # noqa: E731
-    ticks = "".join(f'<line x1="{px(v)}" y1="44" x2="{px(v)}" y2="50" class="tk"/>'
-                    f'<text x="{px(v)}" y="66" class="tl" text-anchor="middle">{v}</text>' for v in (0, 25, 50, 75, 100))
-    return f'''<svg viewBox="0 0 {w} {h}" class="medidor" role="img" aria-label="Nota {num(nota, 0)} de 100; taxa histórica {num(base, 0)}">
-<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="var(--frio)"/><stop offset=".5" stop-color="var(--morno)"/><stop offset="1" stop-color="var(--quente)"/></linearGradient></defs>
-<rect x="{x0}" y="26" width="{x1 - x0}" height="16" rx="8" fill="url(#g)" opacity=".9"/>
-{ticks}
-<line x1="{px(base)}" y1="20" x2="{px(base)}" y2="48" class="base"/>
-<text x="{px(base)}" y="14" class="tl" text-anchor="middle">história: {num(base, 0)}</text>
-<circle cx="{px(nota)}" cy="34" r="13" class="mk"/>
-<text x="{px(50)}" y="84" class="tl it" text-anchor="middle">50 = cara ou coroa</text>
-</svg>'''
+    """Medidor em HTML/CSS: legível no celular, sem texto encolhido de SVG."""
+    ticks = "".join(f'<span class="tq" style="left:{v}%">{v}</span>' for v in (0, 25, 50, 75, 100))
+    return (f'<div class="medidor" role="img" aria-label="Nota {num(nota, 0)} de 100; taxa histórica {num(base, 0)}">'
+            f'<span class="hb" style="left:{base:.2f}%">história: {num(base, 0)}</span>'
+            f'<div class="trilho"><span class="lb" style="left:{base:.2f}%"></span>'
+            f'<span class="pt" style="left:{nota:.2f}%"></span></div>'
+            f'<div class="tqs">{ticks}</div><p class="cc">50 = cara ou coroa</p></div>')
 
 
 def svg_cascata(inicio: float, fim: float, partes: list[tuple[str, float]], rot_ini: str, rot_fim: str) -> str:
-    linhas = [(rot_ini, None, inicio)] + [(n, v, None) for n, v in partes] + [(rot_fim, None, fim)]
+    """Cascata em HTML: cada linha é um fator; as barras flutuam do acumulado anterior."""
     vals, acc = [inicio, fim], inicio
-    for _, v, _ in linhas[1:-1]:
+    for _, v in partes:
         acc += v
         vals.append(acc)
-    lo = max(0, min(vals) - 4)
-    hi = min(100, max(vals) + 4)
-    w, lab, rh = 640, 250, 30
-    x0, x1 = lab + 10, w - 60
-    px = lambda v: x0 + (x1 - x0) * (v - lo) / (hi - lo)  # noqa: E731
-    h = rh * len(linhas) + 10
-    out = [f'<svg viewBox="0 0 {w} {h}" class="cascata" role="img" aria-label="Decomposição da nota">']
+    lo = max(0.0, min(vals) - 4)
+    hi = min(100.0, max(vals) + 4)
+    pc = lambda v: 100 * (v - lo) / (hi - lo)  # noqa: E731
+    linhas = [f'<div class="cr tot"><span class="cn">{_esc(rot_ini)}</span><span class="ct">'
+              f'<i style="left:0;width:{pc(inicio):.2f}%"></i></span><span class="cv">{num(inicio)}</span></div>']
     acc = inicio
-    for i, (nome, v, tot) in enumerate(linhas):
-        y = 5 + i * rh
-        nome_curto = nome if len(nome) <= 40 else nome[:38] + "…"
-        out.append(f'<text x="{lab}" y="{y + 19}" class="cl" text-anchor="end">{_esc(nome_curto)}</text>')
-        if tot is not None:
-            out.append(f'<rect x="{px(lo)}" y="{y + 6}" width="{px(tot) - px(lo)}" height="18" class="tot"/>')
-            out.append(f'<text x="{px(tot) + 6}" y="{y + 20}" class="cv b">{num(tot)}</text>')
-        else:
-            a, b = acc, acc + v
-            xa, xb = px(min(a, b)), px(max(a, b))
-            cls = "up" if v > 0 else "dn"
-            out.append(f'<rect x="{xa}" y="{y + 6}" width="{max(xb - xa, 1.5)}" height="18" class="{cls}"/>')
-            out.append(f'<text x="{xb + 6}" y="{y + 20}" class="cv">{sinal(v)}</text>')
-            acc = b
-    out.append("</svg>")
-    return "".join(out)
+    for nome, v in partes:
+        a, b = acc, acc + v
+        cls = "up" if v > 0 else "dn"
+        linhas.append(f'<div class="cr {cls}"><span class="cn">{_esc(nome)}</span><span class="ct">'
+                      f'<i style="left:{pc(min(a, b)):.2f}%;width:{max(pc(max(a, b)) - pc(min(a, b)), 0.4):.2f}%"></i></span>'
+                      f'<span class="cv">{sinal(v)}</span></div>')
+        acc = b
+    linhas.append(f'<div class="cr tot"><span class="cn">{_esc(rot_fim)}</span><span class="ct">'
+                  f'<i style="left:0;width:{pc(fim):.2f}%"></i></span><span class="cv">{num(fim)}</span></div>')
+    return f'<div class="cascata" role="img" aria-label="Decomposição da nota">{"".join(linhas)}</div>'
 
 
 def svg_historico(pontos: list[dict]) -> str:
-    w, h, x0, x1, y0, y1 = 640, 220, 40, 620, 15, 190
+    w, h, x0, x1, y0, y1 = 480, 230, 34, 470, 15, 196
     py = lambda v: y1 - (y1 - y0) * v / 100  # noqa: E731
     datas = [dt.datetime.fromisoformat(p["gerado_em"]) for p in pontos]
     ini = min(datas)
