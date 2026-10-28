@@ -152,7 +152,8 @@ def contexto(rodada: dict, todas: list[dict], eventos_lista: list[dict], casos: 
     if rodada.get("variacao"):
         v = rodada["variacao"]
         vp = sorted(((rot.get(k, k), x) for k, x in v["partes"].items()), key=lambda x: -abs(x[1]))
-        variacao = {"de": v["de"], "para": v["para"], "delta": v["para"] - v["de"], "partes": vp,
+        # A variação exibida é a diferença das notas como aparecem (1 casa), para a conta fechar na tela.
+        variacao = {"de": v["de"], "para": v["para"], "delta": round(v["para"], 1) - round(v["de"], 1), "partes": vp,
                     "svg": svg_cascata(v["de"], v["para"], vp, "Nota anterior", "Nota de hoje") if vp else ""}
 
     hoje = dt.date.fromisoformat(rodada["gerado_em"][:10])
