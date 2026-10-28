@@ -222,7 +222,7 @@ def main() -> dict | None:
         conta = build_site.conta_do_dia(rodada, {e["id"]: e for e in todos}, ant, cfg)
         datas = calendario.janela(calendario.carregar(), hoje)
         post = escreve_post.escrever(rodada, conta, cfg, datas)
-        print("post:", post.get("titulo") if post["ok"] else f"falhou: {post['meta'][-1].get('erro')}",
+        print("post:", post.get("titulo") if post["ok"] else f"falhou: {post.get('erro') or post['meta'][-1].get('erro')}",
               "| problemas:", post.get("problemas"))
     rodada["post"] = post
 

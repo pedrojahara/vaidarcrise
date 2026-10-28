@@ -21,7 +21,7 @@
       {% for g in c.outros %}<li><span class="pts {{ 'mais' if g.pts > 0 else 'menos' if g.pts < 0 }}">{{ g.pts|sinal(2) }}</span><div><b>{{ g.nome }}</b>{% if g.detalhe %} {% for nome, v in g.detalhe %}{{ nome }} {{ v|sinal(2) }}{{ ', ' if not loop.last else '.' }}{% endfor %}{% endif %}{% if g.nota %} {{ g.nota }}{% endif %}</div></li>{% endfor %}
     </ul>
     {% endif %}
-    {% if c.repetidos or c.duplicados %}<p class="fora-conta">Também lidas e deixadas de fora: {% if c.repetidos %}{{ c.repetidos|length }} {{ 'notícia que só repetia' if c.repetidos|length == 1 else 'notícias que só repetiam' }} dados que os indicadores já medem{% endif %}{% if c.repetidos and c.duplicados %}, e {% endif %}{% if c.duplicados %}{{ c.duplicados|length }} sobre {{ 'um fato que já estava' if c.duplicados|length == 1 else 'fatos que já estavam' }} na conta{% endif %}.</p>{% endif %}
+    {% if c.repetidos or c.duplicados %}<p class="fora-conta">Também lidas e deixadas fora da conta: {% if c.repetidos %}{{ c.repetidos|length }} {{ 'notícia' if c.repetidos|length == 1 else 'notícias' }}{% endif %}{% if c.repetidos and c.duplicados %}, e {% endif %}{% if c.duplicados %}{{ c.duplicados|length }} sobre {{ 'um fato que já estava' if c.duplicados|length == 1 else 'fatos que já estavam' }} na conta{% endif %}.</p>{% endif %}
     {% if not post.llm_ok %}<p class="fora-conta">A leitura de notícias falhou nesta atualização. A nota usa só os eventos que já estavam valendo.</p>{% endif %}
   </section>
   {% elif post.abre %}<p>{{ post.abre }}</p>{% endif %}
