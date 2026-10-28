@@ -1,9 +1,9 @@
 {
- "nota": 77.0,
- "probabilidade_recessao_ate_4T30": 0.7696,
- "probabilidade_proximos_4_trimestres": 0.4778,
+ "nota": 77.9,
+ "probabilidade_recessao_ate_4T30": 0.7792,
+ "probabilidade_proximos_4_trimestres": 0.4967,
  "taxa_base": 0.6178,
- "atualizado_em": "2026-10-28T11:58:02-03:00",
+ "atualizado_em": "2026-10-28T12:07:00-03:00",
  "versao_modelo": "1.0",
  "regra": "Sim se o PIB trimestral dessazonalizado do IBGE (tabela 5932, taxa contra o trimestre imediatamente anterior) tiver dois trimestres seguidos de queda, ambos entre o 3º tri de 2026 e o 4º tri de 2030, na série vigente em março de 2031.",
  "decomposicao_pontos": {
@@ -14,10 +14,10 @@
   "ind:fiscal": 1.87,
   "ind:cambio": 0.65,
   "not:ev-20261028-01": 2.66,
-  "not:ev-20261028-02": -0.54,
-  "not:ev-20261028-03": 0.54,
-  "not:ev-20261028-04": 0.54,
-  "not:ev-20261028-05": 0.27,
+  "not:ev-20261028-02": 0.27,
+  "not:ev-20261028-03": 0.27,
+  "not:ev-20261028-04": -0.27,
+  "not:ev-20261028-05": 0.55,
   "not:ev-20261028-06": 0.27
  },
  "indicadores": [
@@ -106,7 +106,31 @@
    "titulo": "Confiança da indústria cai pelo terceiro mês seguido em outubro, com piora da avaliação da situação atual",
    "logit": 0.02,
    "data": "2026-10-28"
+  },
+  {
+   "id": "ev-20261028-02",
+   "titulo": "Indefinição sobre o comando do Ministério da Fazenda no novo mandato; mercado cobra nome e regra fiscal crível",
+   "logit": 0.0197,
+   "data": "2026-10-27"
+  },
+  {
+   "id": "ev-20261028-03",
+   "titulo": "Governo avalia cobrar IOF por decreto sobre LCI, LCA e outros títulos isentos",
+   "logit": 0.02,
+   "data": "2026-10-28"
+  },
+  {
+   "id": "ev-20261028-04",
+   "titulo": "Tesouro anuncia recompra de NTN-B com vencimentos de 2030 a 2045 para conter oscilações",
+   "logit": -0.0197,
+   "data": "2026-10-27"
+  },
+  {
+   "id": "ev-20261028-05",
+   "titulo": "TCU propõe alíquota de referência de 11,3% para a CBS em 2027; mercado avalia impacto inflacionário da reforma tributária",
+   "logit": 0.04,
+   "data": "2026-10-28"
   }
  ],
- "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-28T1158.json"
+ "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-28T1207.json"
 }

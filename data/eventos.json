@@ -218,6 +218,12 @@
     "titulo": "Lucro da Equinor dobra no 3º trimestre para US$ 12,35 bi com turbulência nos mercados",
     "url": "https://valor.globo.com/empresas/noticia/2026/10/28/lucro-da-equinor-dobra-no-3o-trimestre-para-us-1235-bi-com-turbulencia-nos-mercados.ghtml",
     "publicado_em": "2026-10-28T12:39+00:00"
+   },
+   {
+    "veiculo": "Valor",
+    "titulo": "Exclusivo: Crise do petróleo leva Latam a cancelar 2.476 voos no 2° trimestre de 2027",
+    "url": "https://valor.globo.com/empresas/noticia/2026/10/28/exclusivo-crise-do-petroleo-leva-latam-a-cancelar-2476-voos-no-2-trimestre-de-2027.ghtml",
+    "publicado_em": "2026-10-28T14:48+00:00"
    }
   ],
   "efeito_inicial": 0.02
@@ -243,5 +249,132 @@
    }
   ],
   "efeito_inicial": 0.02
+ },
+ {
+  "id": "ev-20261028-02",
+  "data": "2026-10-27",
+  "titulo_evento": "Indefinição sobre o comando do Ministério da Fazenda no novo mandato; mercado cobra nome e regra fiscal crível",
+  "canal": "institucional",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": true,
+  "porque": "Aumenta o risco porque a demora em definir a política fiscal mantém o prêmio de risco elevado, pelo canal de expectativas e juros longos, como na transição de 2022 para 2023.",
+  "veiculos": [
+   "Estadão",
+   "Folha"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Folha",
+    "titulo": "Mercado cobra rapidez de Lula em nome para Fazenda, mas petistas rejeitam pressão em 'ressaca eleitoral'",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/mercado-cobra-rapidez-de-lula-em-nome-para-fazenda-mas-petistas-rejeitam-pressao-em-ressaca-eleitoral.shtml",
+    "publicado_em": "2026-10-27T23:00-03:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "'Dizer que mercado aceitou Fonteles é forçar a tinta', diz gestor",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/colunas/painelsa/2026/10/dizer-que-mercado-aceitou-fonteles-e-forcar-a-tinta-diz-gestor.shtml",
+    "publicado_em": "2026-10-28T10:38-03:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Cotado para a Fazenda, Fonteles propôs conter alta do déficit no Piauí com regra que limita gastos",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/cotado-para-a-fazenda-fonteles-propos-conter-alta-do-deficit-no-piaui-com-regra-que-limita-gastos.shtml",
+    "publicado_em": "2026-10-27T23:00-03:00"
+   },
+   {
+    "veiculo": "Estadão",
+    "titulo": "O Brasil e o cenário fiscal: a situação das contas demanda imediato tratamento pelo governo eleito",
+    "url": "https://www.estadao.com.br/economia/o-brasil-e-o-cenario-fiscal-a-situacao-das-contas-demanda-imediato-tratamento-pelo-governo-eleito/",
+    "publicado_em": "2026-10-28T01:00+00:00"
+   }
+  ],
+  "efeito_inicial": 0.02
+ },
+ {
+  "id": "ev-20261028-03",
+  "data": "2026-10-28",
+  "titulo_evento": "Governo avalia cobrar IOF por decreto sobre LCI, LCA e outros títulos isentos",
+  "canal": "credito",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "Aumenta o risco porque encarece o funding do crédito imobiliário e rural, pelo canal de crédito, como no aumento de IOF de 2025. Ainda é só proposta em avaliação.",
+  "veiculos": [
+   "Poder360"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Poder360",
+    "titulo": "Governo avalia cobrar IOF sobre LCI, LCA e outros títulos",
+    "url": "https://www.poder360.com.br/poder-economia/governo-avalia-cobrar-iof-sobre-lci-lca-e-outros-titulos/",
+    "publicado_em": "2026-10-28T12:30+00:00"
+   }
+  ],
+  "efeito_inicial": 0.02
+ },
+ {
+  "id": "ev-20261028-04",
+  "data": "2026-10-27",
+  "titulo_evento": "Tesouro anuncia recompra de NTN-B com vencimentos de 2030 a 2045 para conter oscilações",
+  "canal": "mercado",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "Reduz o risco porque limita disfuncionalidade nos juros longos, pelo canal de liquidez do mercado de títulos, como nas recompras do Tesouro em março de 2020.",
+  "veiculos": [
+   "Agência Brasil"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Agência Brasil",
+    "titulo": "Para conter oscilações, Tesouro anuncia nova recompra de títulos",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/para-conter-oscilacoes-tesouro-anuncia-nova-recompra-de-titulos",
+    "publicado_em": "2026-10-27T12:36-03:00"
+   }
+  ],
+  "efeito_inicial": -0.02
+ },
+ {
+  "id": "ev-20261028-05",
+  "data": "2026-10-28",
+  "titulo_evento": "TCU propõe alíquota de referência de 11,3% para a CBS em 2027; mercado avalia impacto inflacionário da reforma tributária",
+  "canal": "fiscal",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "Aumenta levemente o risco porque a transição tributária pode pressionar preços em 2027, pelo canal de inflação e juros, como em reformas de IVA em outros países. Valor ainda depende do Senado.",
+  "veiculos": [
+   "Folha",
+   "Valor",
+   "g1"
+  ],
+  "fontes": [
+   {
+    "veiculo": "g1",
+    "titulo": "TCU propõe alíquota de 11,3% para o futuro imposto sobre consumo do governo federal em 2027; Senado tem que aprovar valor",
+    "url": "https://g1.globo.com/economia/noticia/2026/10/28/tcu-propoe-aliquota-de-113percent-para-o-futuro-imposto-sobre-consumo-do-governo-federal-em-2027-senado-tem-que-aprovar-valor.ghtml",
+    "publicado_em": "2026-10-28T14:39+00:00"
+   },
+   {
+    "veiculo": "Valor",
+    "titulo": "TCU propõe alíquota de referência da CBS em 11,3%",
+    "url": "https://valor.globo.com/brasil/noticia/2026/10/28/tcu-define-alquota-de-referncia-da-cbs-em-113-pontos-percentuais.ghtml",
+    "publicado_em": "2026-10-28T14:14+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "TCU propõe alíquota de 11,3% para nova contribuição da reforma tributária em 2027",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/tcu-propoe-aliquota-de-113-para-nova-contribuicao-da-reforma-tributaria-em-2027.shtml",
+    "publicado_em": "2026-10-28T10:51-03:00"
+   },
+   {
+    "veiculo": "Valor",
+    "titulo": "Ibovespa recua quase 3% antes do Fed e com governo Lula 4 no foco; dólar e juros futuros sobem",
+    "url": "https://valor.globo.com/financas/ao-vivo/2023/06/16/dolar-avanca-e-ibovespa-recua-em-dia-de-correcao-siga-os-mercados.ghtml",
+    "publicado_em": "2026-10-28T14:48+00:00"
+   }
+  ],
+  "efeito_inicial": 0.04
  }
 ]
