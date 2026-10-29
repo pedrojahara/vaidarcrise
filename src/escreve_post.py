@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import build_site  # noqa: E402
 import classify_news  # noqa: E402
+import model  # noqa: E402
 import revisa_texto  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -87,7 +88,16 @@ def dados_texto(rodada: dict, conta: dict | None, cfg: dict, datas: list[dict] |
         if conta["repetidos"] and not pressao:
             l += ["", "Ficaram fora da conta: " + "; ".join(d["titulo_evento"] for d in conta["repetidos"][:4])]
     else:
-        l.append(f"Risco de recessão nos próximos 12 meses: {mult(m, 2)} o normal. Primeira conta, sem variação.")
+        # Sem atualização anterior para comparar: o que move o número é o caminho do normal até hoje.
+        l.append(f"Risco de recessão nos próximos 12 meses: {mult(m, 2)} o normal. Não há atualização anterior "
+                 "para comparar.")
+        sh = model.decompor_12m(res, cfg)
+        if sh:
+            chaves = sorted(sh, key=lambda k: -abs(sh[k]))
+            pts = build_site.fechar([sh[k] / (100 * res["taxa_base_4t"]) for k in chaves], round(m, 2) - 1, 2)
+            rot = build_site.rotulos(rodada, eventos or {})
+            l += ["", "De onde vem o número, do normal (1,00×) até hoje (em vezes o normal; a soma dá a diferença):"]
+            l += [f"- {sinal(p, 2)} | {rot.get(k, k)}" for k, p in zip(chaves, pts) if p]
     if pressao:
         l += ["", "Pressão das notícias (NÃO entra no número; por tema, sem número). No conjunto: "
               + {"sobe": "para cima", "desce": "para baixo", "igual": "sem pressão clara"}[pressao["sentido"]] + "."]

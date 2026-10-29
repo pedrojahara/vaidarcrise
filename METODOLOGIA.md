@@ -1,6 +1,6 @@
-# Metodologia v1.3
+# Metodologia
 
-Pré-registrada em 28 de outubro de 2026, antes da primeira nota, e revisada nas v1.1, v1.2 e v1.3 (veja [Versões](#versoes)). Os parâmetros estão em [`config/modelo.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json), e cada atualização grava o hash desse arquivo. Mudança de regra ou de peso só acontece com nova versão e nota explicando o efeito.
+Pré-registrada em 28 de outubro de 2026. Os parâmetros estão em [`config/modelo.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json), e cada atualização grava o hash desse arquivo. Mudança de regra ou de peso só acontece com nova versão e nota explicando o efeito.
 
 ## O que a nota mede
 
@@ -16,9 +16,9 @@ O nome do site fala em crise; a métrica é recessão técnica. "Vai dar crise?"
 
 **Como ler a nota.** 50 significa cara ou coroa, não "risco médio". A nota 70 quer dizer que, em 100 Brasis com os dados de hoje, 70 entrariam em recessão até o fim de 2030.
 
-**O número do topo.** Desde a v1.2, o topo do site mostra outra leitura da mesma conta: quantas vezes a chance de uma recessão começar nos próximos 12 meses (os quatro trimestres ainda não divulgados) está acima do normal. O normal é essa mesma chance só com a taxa-base, cerca de 20%. Em 28/10/2026 a conta dava 53%, 2,7 vezes o normal (na regra da v1.3, 42%, 2,1 vezes). O horizonte de 12 meses é onde os indicadores pesam inteiros; a nota até 2030 continua sendo a pergunta que o placar vai resolver, e aparece em "Como a conta funciona" com a faixa da taxa-base.
+**O número do topo.** O topo do site mostra outra leitura da mesma conta: quantas vezes a chance de uma recessão começar nos próximos 12 meses (os quatro trimestres ainda não divulgados) está acima do normal. O normal é essa mesma chance só com a taxa-base, cerca de 20%. Em 29/10/2026 a conta dava 42%, 2,1 vezes o normal. O horizonte de 12 meses é onde os indicadores pesam inteiros; a nota até 2030 continua sendo a pergunta que o placar vai resolver, e aparece em "Como a conta funciona" com a faixa da taxa-base.
 
-**A seta.** Ao lado do multiplicador, a seta compara com a atualização mais próxima de 30 dias atrás (ou com a primeira, enquanto o site tiver menos de 30 dias). Se o multiplicador subiu mais de 10%, "piorando"; se caiu mais de 10%, "melhorando"; senão, "estável".
+**A seta.** Ao lado do multiplicador, a seta compara com a atualização mais próxima de 30 dias atrás (ou com a primeira, enquanto o site tiver menos de 30 dias; na primeira atualização, não há seta). Se o multiplicador subiu mais de 10%, "piorando"; se caiu mais de 10%, "melhorando"; senão, "estável".
 
 ## Taxa-base
 
@@ -31,7 +31,7 @@ Antes de olhar qualquer dado ou notícia, a história já diz muito. O CODACE da
 | 2T99–2026, metas de inflação e câmbio flutuante (5) | 5,6% | 63% |
 | 2004–2026 (3) | 4,0% | 50% |
 
-Escolher uma linha dessa tabela é escolher a nota. Por isso, desde a v1.1, o site não escolhe: a âncora é a **mediana de nove métodos**, e cada um tem uma regra fixa para decidir quanto o passado pesa.
+Escolher uma linha dessa tabela é escolher a nota. Por isso o site não escolhe: a âncora é a **mediana de nove métodos**, e cada um tem uma regra fixa para decidir quanto o passado pesa.
 
 | Método | Risco por trimestre | Até o 4T30 |
 | --- | --- | --- |
@@ -66,7 +66,7 @@ Um início de recessão no trimestre *t* exige que *t* e *t+1* estejam na janela
 
 ## A conta
 
-O modelo soma duas camadas na escala de log-odds (logit), o que torna cada contribuição exata e aditiva. Desde a v1.3, as notícias não entram na conta: elas aparecem à parte, como pressão por tema (veja [Notícias](#noticias)).
+O modelo soma duas camadas na escala de log-odds (logit), o que torna cada contribuição exata e aditiva. As notícias não entram na conta: elas aparecem à parte, como pressão por tema (veja [Notícias](#noticias)).
 
 ```
 logit(h_t) = logit(h0) + w_t × I
@@ -79,15 +79,15 @@ P(recessão até 4T30) = 1 − Π (1 − h_t)
 
 Ninguém prevê recessão a quatro anos com dados de hoje: os melhores métodos acertam de 6 a 18 meses. Por isso os indicadores mexem só no risco dos próximos trimestres, e a nota até 2030 se move devagar.
 
-**De onde vem o multiplicador.** A página "Como a conta funciona" parte do normal de 12 meses e soma o que cada indicador acrescenta (até a v1.2, também cada notícia), em pontos percentuais, até chegar à chance de hoje. Na v1.1, a página repartia a nota até 2030 em parcelas por horizonte; a v1.2 trocou essa repartição pela de 12 meses, que é o número do topo.
+**De onde vem o multiplicador.** A página "Como a conta funciona" parte do normal de 12 meses e soma o que cada indicador acrescenta, em pontos percentuais, até chegar à chance de hoje.
 
 **Trimestres divulgados.** Quando o IBGE divulga um trimestre, ele sai da janela (efeito tempo). Se dois trimestres seguidos vierem negativos, a pergunta está resolvida e a nota vai a 100. Se o último trimestre divulgado vier negativo, a chance de o seguinte também cair parte de 50% (parâmetro por julgamento, a calibrar com a série do IBGE) e recebe o mesmo deslocamento de curto prazo.
 
-**Decomposição.** A conversão de log-odds para probabilidade não é linear, então a repartição em pontos usa valores de Shapley exatos: cada fator recebe a sua contribuição média sobre todas as ordens possíveis, e a soma bate exatamente com o total repartido. Em "De onde vem", os fatores repartem a diferença entre a chance de 12 meses de hoje e o normal; a tabela de indicadores e a lista de notícias mostram esses mesmos pontos. Em "O que mudou" e na conta do dia de cada post, os fatores repartem a variação entre duas atualizações; no post, a variação aparece em vezes o normal, com duas casas. Com mais de 12 fatores, as notícias menores são agrupadas em "outras notícias". Os números exibidos são arredondados de modo que as parcelas somem o total exibido.
+**Decomposição.** A conversão de log-odds para probabilidade não é linear, então a repartição em pontos usa valores de Shapley exatos: cada fator recebe a sua contribuição média sobre todas as ordens possíveis, e a soma bate exatamente com o total repartido. Em "De onde vem", os fatores repartem a diferença entre a chance de 12 meses de hoje e o normal; a tabela de indicadores mostra esses mesmos pontos. Em "O que mudou" e na conta do dia de cada post, os fatores repartem a variação entre duas atualizações; no post, a variação aparece em vezes o normal, com duas casas. Os números exibidos são arredondados de modo que as parcelas somem o total exibido.
 
 ## Indicadores
 
-Sete sinais, cada um com valor neutro, inclinação e efeito máximo, publicados antes de entrarem na conta (os seis primeiros antes da primeira nota; o de mercado na v1.3). Os pesos são de julgamento, com encolhimento de 25% na soma para não contar duas vezes sinais correlacionados (juros, câmbio e dívida andam juntos), e teto de 1,2 em log-odds para a camada inteira.
+Sete sinais, cada um com valor neutro, inclinação e efeito máximo, publicados antes de entrarem na conta. Os pesos são de julgamento, com encolhimento de 25% na soma para não contar duas vezes sinais correlacionados (juros, câmbio e dívida andam juntos), e teto de 1,2 em log-odds para a camada inteira.
 
 | Indicador | Definição | Neutro | Efeito por unidade | Faixa do efeito |
 | --- | --- | --- | --- | --- |
@@ -99,7 +99,7 @@ Sete sinais, cada um com valor neutro, inclinação e efeito máximo, publicados
 | Câmbio | Variação do dólar PTAX em 63 dias úteis (BCB 1) | 0% | +0,015 por p.p. | −0,10 a +0,25 |
 | Juro real longo (mercado) | Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos ([Tesouro Direto](https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto), venda pela manhã) menos a sua mediana nos 3 anos anteriores | 0 p.p. | +0,25 por p.p. | −0,15 a +0,40 |
 
-**Por que um indicador de mercado (v1.3).** As notícias saíram da conta, e o número precisava de algo que reagisse no mesmo dia a um choque de confiança, como o do dia seguinte à eleição de 2026 (a taxa de 10 anos foi de 6,9% para 8,1%). O juro real longo resume, em preço, o prêmio que o mercado cobra pelo risco fiscal e pela incerteza, e não depende de quem escreve as manchetes. A série sai com um dia de atraso; se o arquivo do Tesouro não puder ser baixado e a cópia local tiver mais de 5 dias, o indicador sai da conta naquele dia. O peso é de julgamento: num teste com dados de 1999 a 2025, nenhum modelo de pilares estimado, nem um com o prêmio de risco (EMBI+), bateu a taxa-base fora da amostra. Ele sobrepõe em parte o juro real ex-ante, e o encolhimento de 25% e o teto da camada valem para os sete juntos.
+**Por que um indicador de mercado.** Como as notícias ficam fora da conta, o número precisa de algo que reaja no mesmo dia a um choque de confiança, como o do dia seguinte à eleição de 2026 (a taxa de 10 anos foi de 6,9% para 8,1%). O juro real longo resume, em preço, o prêmio que o mercado cobra pelo risco fiscal e pela incerteza, e não depende de quem escreve as manchetes. A série sai com um dia de atraso; se o arquivo do Tesouro não puder ser baixado e a cópia local tiver mais de 5 dias, o indicador sai da conta naquele dia. O peso é de julgamento: num teste com dados de 1999 a 2025, nenhum modelo de pilares estimado, nem um com o prêmio de risco (EMBI+), bateu a taxa-base fora da amostra. Ele sobrepõe em parte o juro real ex-ante, e o encolhimento de 25% e o teto da camada valem para os sete juntos.
 
 Ficaram de fora no MVP, por falta de fonte gratuita estável: inclinação da curva de juros (B3), incerteza (FGV IBRE), CDS e indicador antecedente composto. A curva de juros, a mais citada na literatura, quase não tem poder preditivo em emergentes e não foi robusta no Brasil em 2005–2023.
 
@@ -107,7 +107,7 @@ Ficaram de fora no MVP, por falta de fonte gratuita estável: inclinação da cu
 
 Um modelo de linguagem (Claude, chamado sem ferramentas e com saída em esquema JSON validado por código) lê as manchetes de oito veículos com linhas editoriais diferentes: Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1. Ele transforma os fatos relevantes em eventos estruturados: tema, direção, tamanho e estágio.
 
-**Desde a v1.3, as notícias não mexem no número.** Na v1.2, cada notícia somava um pedaço, até um teto. Com uma ou duas notícias ruins por dia, o teto enchia em poucos dias e o número travava; e, como os jornais publicam mais notícia ruim que boa, a camada tendia a ficar sempre no limite de cima. Agora o número só se mexe com dados e mercado, e as notícias mostram, à parte, para que lado o risco está sendo empurrado antes de os dados confirmarem.
+**As notícias não mexem no número.** Se cada notícia somasse um pedaço até um teto, uma ou duas notícias ruins por dia encheriam o teto em poucos dias e o número travaria; e, como os jornais publicam mais notícia ruim que boa, a camada tenderia a ficar sempre no limite de cima. Por isso o número só se mexe com dados e mercado, e as notícias mostram, à parte, para que lado o risco está sendo empurrado antes de os dados confirmarem.
 
 **Uma atualização por dia.** As manchetes são coletadas de hora em hora e guardadas na máquina que roda o site. Às 06h30, a atualização lê as manchetes do dia anterior que ainda não foram lidas, calcula o número e publica um post. Cada manchete é lida uma vez só.
 
@@ -119,7 +119,7 @@ Um modelo de linguagem (Claude, chamado sem ferramentas e com saída em esquema 
 
 A pressão não tem número na página: só a seta de cada tema e as notícias que mais pesam nela. O cálculo é feito por código, a partir dos eventos já classificados; o modelo de linguagem não decide a seta.
 
-**Estágio.** Cada evento recebe o estágio em que o fato está, e o estágio multiplica o efeito (desde a v1.2):
+**Estágio.** Cada evento recebe o estágio em que o fato está, e o estágio multiplica o efeito:
 
 | Estágio | Peso |
 | --- | --- |
@@ -168,26 +168,13 @@ Se o backtest não bater a taxa-base, o site vai dizer isso em público. Em 28/1
 
 ## Onde erramos
 
-Erros são listados aqui com data, o que estava errado e o efeito na nota.
-
-| Data | O que estava errado | Efeito na nota |
-| --- | --- | --- |
-| 28/10/2026 | A segunda atualização deu a quatro eventos novos os mesmos códigos de eventos antigos, o que embaralhou a explicação da variação. Os eventos foram renumerados e a decomposição refeita no mesmo dia. | Nenhum: a nota (77,9) não mudou, só a repartição dos pontos. |
+Erros são listados aqui com data, o que estava errado e o efeito na nota. Nenhum até agora.
 
 Achou um? [Abra uma issue](https://github.com/pedrojahara/vaidarcrise/issues).
 
-## Versões
+## Mudanças de regra
 
-Toda mudança de regra ou de peso ganha uma versão nova. Na atualização em que ela entra, o gráfico da variação mostra uma barra "Nova metodologia": a conta anterior refeita com a regra nova. Essa barra não conta para o disjuntor. A seta do topo também compara com a conta antiga refeita na regra nova, para que a troca de regra não apareça como melhora ou piora.
-
-| Versão | Decidida em | O que mudou | Efeito na nota |
-| --- | --- | --- | --- |
-| 1.0 | 28/10/2026 | Primeira versão. Taxa-base de 5,5% por trimestre, a média das janelas 1995–2026 e 2004–2026. | — |
-| 1.1 | 28/10/2026 | Taxa-base passa a ser a mediana de nove métodos (5,3%), com a faixa publicada. A página separa a nota por horizonte. | −1,2 ponto com os dados de 28/10 (77,9 → 76,7) |
-| 1.2 | 28/10/2026 | Peso por estágio das notícias (dado e decisão 1; em votação, a chance de aprovação; anúncio 0,3; rumor 0,1). Topo passa a mostrar o risco de 12 meses em vezes o normal. Uma atualização por dia, às 06h30, com post. | Nenhum na data da mudança: o peso vale só para notícias lidas a partir de 29/10/2026. |
-| 1.3 | 28/10/2026 | Notícias saem da conta e viram pressão por tema, calculada por regra. Entra o juro real longo do Tesouro IPCA+ como indicador de mercado. | Com os dados de 28/10: de 2,7× para 2,1× o normal em 12 meses (indicadores 2,0×; mercado +0,1×). |
-
-A v1.0 escolhia duas datas de início por julgamento, e cada data dava uma nota diferente. A v1.1 troca a escolha por uma regra que qualquer pessoa pode refazer.
+Toda mudança de regra ou de peso ganha uma versão nova, listada aqui com a data e o efeito no número. Na atualização em que ela entra, o gráfico da variação mostra uma barra "Nova metodologia": a conta anterior refeita com a regra nova. Essa barra não conta para o disjuntor. A seta do topo também compara com a conta antiga refeita na regra nova, para que a troca de regra não apareça como melhora ou piora.
 
 ## Fontes
 
