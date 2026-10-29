@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block titulo %}Como a conta funciona | Vai dar crise?{% endblock %}
-{% block descricao %}De onde vem o risco de recessão de {{ mult_fmt }} o normal em {{ data_curta(dia) }}: indicadores do Banco Central e do IBGE e as notícias que estão valendo, ponto a ponto.{% endblock %}
+{% block descricao %}De onde vem o risco de recessão de {{ mult_fmt }} o normal em {{ data_curta(dia) }}: indicadores do Banco Central e do IBGE e a taxa do Tesouro IPCA+, ponto a ponto, e para que lado as notícias empurram.{% endblock %}
 {% block estilo %}
 .detalhe{padding-top:30px;padding-bottom:40px}
 .detalhe > *{max-width:760px}
@@ -90,21 +90,21 @@ details.metodos summary{cursor:pointer;font:15px/1.4 var(--sistema);color:var(--
   {% elif cascata %}
   <section id="de-onde">
   <h2>De onde vem o {{ mult_fmt }}</h2>
-  <p class="lead">Do normal ({{ normal|num }}%) até a chance de hoje ({{ curto|num }}%), cada barra é quanto {{ 'um indicador ou uma notícia acrescenta' if n_not else 'um indicador acrescenta' }} ou tira, em pontos percentuais. {% if pressao and not n_not %}As notícias ficam fora desta conta e aparecem como <a href="#noticias">pressão por tema</a>.{% elif n_ind and n_not %}Os indicadores somam {{ ind_pts|sinal }} e as notícias, {{ not_pts|sinal }}.{% elif n_ind %}Sem notícias valendo, os indicadores somam tudo.{% endif %}</p>
+  <p class="lead">Do normal ({{ normal|num }}%) até a chance de hoje ({{ curto|num }}%), cada barra é quanto um indicador acrescenta ou tira, em pontos percentuais.</p>
   {{ cascata|safe }}
-  <p class="peq">Barras vermelhas aumentam o risco; verdes reduzem. A conta é feita em log-odds e repartida em pontos com valores de Shapley, que somam exatamente a diferença. São os mesmos números {{ 'da lista de notícias e ' if n_not }}da tabela de indicadores abaixo. <a href="/metodologia/#a-conta">Detalhes da conta</a>.</p>
+  <p class="peq">Barras vermelhas aumentam o risco; verdes reduzem. A conta é feita em log-odds e repartida em pontos com valores de Shapley, que somam exatamente a diferença. São os mesmos números da tabela de indicadores abaixo. <a href="/metodologia/#a-conta">Detalhes da conta</a>.</p>
   </section>
   {% endif %}
 
   {% if variacao %}
   <section id="mudou">
   <h2>O que mudou desde a atualização anterior</h2>
-  <p class="lead">A chance de 12 meses foi de {{ variacao.de|num }}% para {{ variacao.para|num }}% ({{ variacao.delta|sinal }} ponto{{ 's' if variacao.delta|abs >= 2 }}), e o multiplicador, de {{ mult_fmt_f(variacao.de_m) }} para {{ mult_fmt }}.{% if variacao.versao_anterior %} Nesta atualização a metodologia mudou de v{{ variacao.versao_anterior }} para v{{ rodada.modelo.versao }}; a barra "Nova metodologia" é a conta anterior refeita com a regra nova, e o motivo está na <a href="/metodologia/#versoes">metodologia</a>.{% endif %}</p>
+  <p class="lead">A chance de 12 meses foi de {{ variacao.de|num }}% para {{ variacao.para|num }}% ({{ variacao.delta|sinal }} ponto{{ 's' if variacao.delta|abs >= 2 }}), e o multiplicador, de {{ mult_fmt_f(variacao.de_m) }} para {{ mult_fmt }}.{% if variacao.versao_anterior %} A barra "Nova metodologia" é a conta anterior refeita com a regra de hoje.{% endif %}</p>
   {% if variacao.svg %}{{ variacao.svg|safe }}{% else %}<p>Nada mudou nos insumos.</p>{% endif %}
   </section>
   {% endif %}
 
-  {% if pressao and not n_not %}
+  {% if pressao %}
   <section id="noticias">
   <h2>A pressão das notícias</h2>
   <p class="lead">As notícias não mexem no número. Elas mostram para que lado o risco está sendo empurrado, tema a tema, antes de os dados confirmarem. {% if pressao.sentido == 'sobe' %}Hoje, no conjunto, empurram para cima.{% elif pressao.sentido == 'desce' %}Hoje, no conjunto, aliviam.{% else %}Hoje, no conjunto, não empurram para um lado claro.{% endif %}</p>
@@ -131,35 +131,6 @@ details.metodos summary{cursor:pointer;font:15px/1.4 var(--sistema);color:var(--
   {% else %}
   <p>Nenhuma notícia valendo agora.</p>
   {% endfor %}
-  </section>
-  {% else %}
-  <section id="noticias">
-  <h2>As notícias que valem agora</h2>
-  <p class="lead">Cada notícia vira um evento com canal, direção, tamanho e estágio. O estágio pesa na conta:</p>
-  <ul class="pesos">
-    <li>dado divulgado e decisão tomada valem inteiros;</li>
-    <li>proposta em votação vale pela chance de passar, estimada pelo modelo de linguagem entre 0,2 e 0,8;</li>
-    <li>anúncio sem ato formal vale {{ cfg.noticias.peso_por_estagio.anuncio|peso }};</li>
-    <li>rumor vale {{ cfg.noticias.peso_por_estagio.rumor|peso }}, quase nada.</li>
-  </ul>
-  <p class="peq">Nenhum evento passa de 0,2 em log-odds, e o efeito some em {{ cfg.noticias.dias_de_decaimento }} dias. O número ao lado é a parte dela na chance de 12 meses, em pontos. Notícias de antes de 29/10/2026 foram contadas sem estágio, pela regra da época.</p>
-  {% if not llm_ok %}<div class="aviso-falha">A leitura de notícias falhou nesta atualização. A conta usa só os eventos que já estavam valendo.</div>{% endif %}
-  <div class="eventos">
-  {% for e in eventos %}
-    <article class="ev">
-      <div class="topo-ev">
-        <div><span class="peq">{{ e.data_fmt }} | {{ e.canal_nome }}{% if e.estagio %} | {{ estagios[e.estagio] }}, peso {{ (e.peso_estagio or 1)|peso }}{% endif %}</span>
-          <h3>{{ e.titulo_evento }}</h3></div>
-        {% if e.pts is not none %}<div class="pts {{ 'mais' if e.pts > 0 else 'menos' }}">{{ e.pts|sinal }}</div>{% endif %}
-      </div>
-      <p>{{ e.porque }}</p>
-      <ul>{% for f in e.fontes[:4] %}<li><a href="{{ f.url }}" rel="nofollow noopener">{{ f.veiculo }}: {{ f.titulo }}</a></li>{% endfor %}</ul>
-      <p class="rodape">{% if e.pts is none %}Entra em "Outras notícias" na cascata. {% endif %}{% if e.ja_no_preco %}O mercado já esperava isso, então vale metade. {% endif %}{% if e.veiculos|length < 2 %}Só um veículo noticiou, então vale metade. {% endif %}O efeito some até {{ e.vale_ate }}.</p>
-    </article>
-  {% else %}
-    <p>Nenhum evento valendo agora.</p>
-  {% endfor %}
-  </div>
   </section>
   {% endif %}
 
@@ -219,7 +190,7 @@ details.metodos summary{cursor:pointer;font:15px/1.4 var(--sistema);color:var(--
   {% if focus %}
   <section id="mercado">
   <h2>O que diz o mercado</h2>
-  <p class="lead">Mediana do Boletim Focus para o crescimento do PIB. O Focus é exibido como comparação e não entra na conta.</p>
+  <p class="lead">Mediana do Boletim Focus para o crescimento do PIB. Essa previsão aparece só como comparação e não entra na conta.</p>
   <div class="tabela"><table>
     <thead><tr>{% for f in focus|sort(attribute='DataReferencia') %}<th class="n">{{ f.DataReferencia }}</th>{% endfor %}</tr></thead>
     <tbody><tr>{% for f in focus|sort(attribute='DataReferencia') %}<td class="n mono">{{ (f.Mediana|float)|num(2) }}%</td>{% endfor %}</tr></tbody>
@@ -230,7 +201,7 @@ details.metodos summary{cursor:pointer;font:15px/1.4 var(--sistema);color:var(--
 
   <section id="ate-2030">
   <h2>E até 2030?</h2>
-  <p class="lead">A mesma conta, estendida até o 4º trimestre de 2030, dá {{ nota|num(0) }}% de chance de pelo menos uma recessão técnica até lá. Conforme o período histórico usado como âncora, fica entre {{ faixa_2030[0]|num(0) }}% e {{ faixa_2030[1]|num(0) }}%. É a pergunta que o site vai resolver em 2031, com a regra escrita antes da primeira conta: veja a <a href="/metodologia/">metodologia</a>.</p>
+  <p class="lead">A mesma conta, estendida até o 4º trimestre de 2030, dá {{ nota|num(0) }}% de chance de pelo menos uma recessão técnica até lá. Conforme o método usado para a âncora histórica, fica entre {{ faixa_2030[0]|num(0) }}% e {{ faixa_2030[1]|num(0) }}%. A resposta sai em 2031, com a série do PIB vigente em março daquele ano, pela regra da <a href="/metodologia/">metodologia</a>.</p>
   </section>
 </main>
 {% endblock %}

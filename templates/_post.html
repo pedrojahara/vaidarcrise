@@ -9,7 +9,7 @@
   <section class="conta" aria-label="A conta do dia">
     {% if c %}
     <div class="conta-cab"><h3>A conta do dia</h3><p>{{ c.de|mult(2) }} → <strong>{{ c.para|mult(2) }}</strong> <span class="{{ 'mais' if c.delta > 0 else 'menos' if c.delta < 0 }}">({{ c.delta|sinal(2) }})</span></p></div>
-    <p class="abre">Quanto cada fator mexeu no risco de recessão dos próximos 12 meses, em vezes o normal.{% if post.abre %} {{ post.abre }}{% endif %}</p>
+    <p class="abre">Quanto cada fator mexeu no risco, em vezes o normal.{% if post.abre %} {{ post.abre }}{% endif %}</p>
     {% for nome, itens in c.secoes %}
     <h4>{{ nome }}</h4>
     <ul class="itens">
@@ -24,8 +24,9 @@
     {% endif %}
     {% endif %}
     {% if pr %}
-    {% if c %}<h4>Pressão das notícias, fora do número</h4>{% else %}<div class="conta-cab"><h3>Pressão das notícias</h3></div>{% endif %}
-    <p class="abre">{% if pr.sentido == 'sobe' %}No conjunto, as notícias empurram o risco para cima.{% elif pr.sentido == 'desce' %}No conjunto, as notícias aliviam o risco.{% else %}No conjunto, as notícias não empurram o risco para um lado claro.{% endif %} Elas não entram no número, que só se mexe com dados e mercado.</p>
+    {% if c %}<h4>Pressão das notícias</h4>{% else %}<div class="conta-cab"><h3>Pressão das notícias</h3></div>{% endif %}
+    {# Com texto do dia, o post já diz para que lado as notícias empurram. #}
+    {% if not post.llm %}<p class="abre">{% if pr.sentido == 'sobe' %}No conjunto, as notícias empurram o risco para cima.{% elif pr.sentido == 'desce' %}No conjunto, as notícias aliviam o risco.{% else %}No conjunto, as notícias não empurram o risco para um lado claro.{% endif %}</p>{% endif %}
     {% if not pr.com_seta and not pr.sem_seta %}<p class="fora-conta">Nenhuma notícia de economia está valendo agora.</p>{% endif %}
     {% if pr.com_seta %}
     <ul class="itens">

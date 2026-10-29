@@ -314,8 +314,9 @@ def contexto(rodada: dict, todas: list[dict], eventos_lista: list[dict], casos: 
                        "de": inicios[0], "ate": ate, "vence": "quando o IBGE divulgar o "
                        + model.label(*model.prox(*model.tri(ate))), "status": "em aberto"})
 
-    # A chance até 2030 aparece como faixa: o período histórico usado como âncora muda o número.
-    alt = sorted(100 * a["manchete"] for a in res["alternativas"])
+    # A chance até 2030 aparece com a faixa dos nove métodos da taxa-base, com os mesmos indicadores.
+    fx = cfg["taxa_base"]["faixa"]
+    alt = sorted(100 * model.prob(estr, res["deslocamento_logit"], fx[k], cfg) for k in ("min", "max"))
     cen = rodada.get("cenarios") or []
     if cen and "curto_prazo_4t" not in cen[0]:  # rodadas de antes da v1.2 não gravaram o cenário de 12 meses
         cen = model.cenarios_pib({"pib": rodada["insumos"]["pib"]}, res, cfg)
@@ -433,16 +434,16 @@ def post_de(rodada: dict, eventos: dict, anterior: dict | None, cfg: dict) -> di
     n, k = nots["n_itens"], len(nots.get("por_veiculo", {}))
     dias = (rodada.get("cobertura") or {}).get("dias", [])
     jornais = "jornal" if k == 1 else "jornais"
-    lidas = (f"{n} manchetes de {k} {jornais} publicadas em {', '.join(data_curta(d)[:5] for d in dias)}" if dias
-             else f"{n} manchetes de {k} {jornais}")
+    dd = [data_curta(d)[:5] for d in dias]
+    lidas = (f"{n} manchetes de {k} {jornais} publicadas em {' e '.join(filter(None, [', '.join(dd[:-1]), dd[-1]]))}"
+             if dias else f"{n} manchetes de {k} {jornais}")
     p = rodada.get("post") or {}
     novos = len(rodada.get("eventos_novos", []))
     m = multiplicador(rodada)
     if p.get("ok"):
         titulo, paragrafos, abre = p["titulo"], p["paragrafos"], None
         autoria = f"Escrito por um modelo de linguagem (Claude) às {hora(rodada['gerado_em'])}, depois de ler {lidas}."
-        rodape = ("O risco e os pontos saem de código com pesos publicados; o texto não passa por revisão humana "
-                  "antes de publicar. Erros vão para")
+        rodape = "O texto não passa por revisão humana antes de publicar. Erros vão para"
     else:
         if conta and round(conta["de"], 1) != round(conta["para"], 1):
             titulo = f"O risco foi de {mult_fmt(conta['de'])} para {mult_fmt(conta['para'])} o normal"
@@ -451,7 +452,7 @@ def post_de(rodada: dict, eventos: dict, anterior: dict | None, cfg: dict) -> di
         if novos:
             titulo += f" com {novos} {'notícia nova' if novos == 1 else 'notícias novas'}"
         paragrafos = []
-        abre = f"Foram lidas {lidas}." + (" Nenhuma entrou na conta." if not novos and rodada["llm"]["ok"] else "")
+        abre = f"Foram lidas {lidas}."
         if "post" in rodada:
             autoria = (f"Atualização automática das {hora(rodada['gerado_em'])}. O texto do dia não saiu, "
                        "então fica só a conta, feita por código.")
@@ -592,7 +593,7 @@ def main() -> None:
     (DOCS / "metodologia").mkdir(exist_ok=True)
     (DOCS / "metodologia" / "index.html").write_text(env.get_template("pagina.html").render(
         titulo="Metodologia", corpo=met, canonical=f"{SITE}/metodologia/", og_url=f"{SITE}/og.png", site=SITE,
-        repo=REPO, cfg=cfg))
+        repo=REPO, cfg=cfg, normal=ctx["normal"]))
 
     publico = dados_publicos(ultima, ctx)
     publico["post_do_dia"] = {"titulo": posts[dia]["titulo"], "url": f"{SITE}/{dia}/",

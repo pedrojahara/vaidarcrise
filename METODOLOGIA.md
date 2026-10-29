@@ -1,24 +1,26 @@
 # Metodologia
 
-Pré-registrada em 28 de outubro de 2026. Os parâmetros estão em [`config/modelo.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json), e cada atualização grava o hash desse arquivo. Mudança de regra ou de peso só acontece com nova versão e nota explicando o efeito.
+Os parâmetros estão em [`config/modelo.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json). Cada atualização grava a versão da regra e o hash desse arquivo, e o histórico dele fica no GitHub.
 
-## O que a nota mede
+## O que o site mede
 
-A nota é a probabilidade, de 0 a 100, de esta pergunta ter resposta "sim":
+**O número do topo.** Quantas vezes a chance de uma recessão começar nos próximos 12 meses (os quatro trimestres ainda não divulgados) está acima do normal. O normal é essa mesma chance só com a história das recessões brasileiras (a [taxa-base](#taxa-base)): cerca de 20%. Com 2×, a chance é o dobro da de um ano comum. Doze meses é o horizonte em que os indicadores pesam inteiros.
+
+**A seta.** Ao lado do número, a seta compara com a atualização mais próxima de 30 dias atrás (ou com a primeira, enquanto o site tiver menos de 30 dias; na primeira atualização, não há seta). Se o multiplicador subiu mais de 10%, "piorando"; se caiu mais de 10%, "melhorando"; senão, "estável".
+
+**Recessão técnica.** Dois trimestres seguidos de queda do PIB:
+
+- **Dado:** PIB trimestral dessazonalizado do IBGE ([tabela 5932](https://sidra.ibge.gov.br/tabela/5932), taxa contra o trimestre imediatamente anterior). Queda é a taxa divulgada, com uma casa decimal, abaixo de zero; 0,0% não conta.
+- **Revisões:** o PIB é revisado; em 2021, uma recessão técnica anunciada sumiu na revisão seguinte.
+- **Auditoria:** se a datação do CODACE/FGV IBRE divergir da regra técnica, o site publica as duas leituras.
+
+O nome do site fala em crise; a métrica é recessão técnica. "Vai dar crise?" é a pergunta de bar; a resposta é uma conta com regra escrita.
+
+**E até 2030.** A mesma conta, estendida, dá a chance de pelo menos uma recessão técnica até o fim de 2030:
 
 > O PIB do Brasil terá dois trimestres seguidos de queda entre o 3º trimestre de 2026 e o 4º trimestre de 2030?
 
-- **Dado:** PIB trimestral dessazonalizado do IBGE ([tabela 5932](https://sidra.ibge.gov.br/tabela/5932), taxa contra o trimestre imediatamente anterior). Queda é a taxa divulgada, com uma casa decimal, abaixo de zero; 0,0% não conta.
-- **Quando se resolve:** na série vigente em março de 2031. O PIB é revisado; em 2021, uma recessão técnica anunciada sumiu na revisão seguinte.
-- **Auditoria:** se a datação do CODACE/FGV IBRE divergir da regra técnica, o site publica as duas leituras.
-
-O nome do site fala em crise; a métrica é recessão técnica. "Vai dar crise?" é a pergunta de bar; a resposta é uma probabilidade com regra escrita antes.
-
-**Como ler a nota.** 50 significa cara ou coroa, não "risco médio". A nota 70 quer dizer que, em 100 Brasis com os dados de hoje, 70 entrariam em recessão até o fim de 2030.
-
-**O número do topo.** O topo do site mostra outra leitura da mesma conta: quantas vezes a chance de uma recessão começar nos próximos 12 meses (os quatro trimestres ainda não divulgados) está acima do normal. O normal é essa mesma chance só com a taxa-base, cerca de 20%. Em 29/10/2026 a conta dava 42%, 2,1 vezes o normal. O horizonte de 12 meses é onde os indicadores pesam inteiros; a nota até 2030 continua sendo a pergunta que o placar vai resolver, e aparece em "Como a conta funciona" com a faixa da taxa-base.
-
-**A seta.** Ao lado do multiplicador, a seta compara com a atualização mais próxima de 30 dias atrás (ou com a primeira, enquanto o site tiver menos de 30 dias; na primeira atualização, não há seta). Se o multiplicador subiu mais de 10%, "piorando"; se caiu mais de 10%, "melhorando"; senão, "estável".
+A resposta sai na série vigente em março de 2031. Essa chance aparece no fim de "Como a conta funciona", com a faixa dos nove métodos da taxa-base. Ela se move devagar, porque os indicadores só pesam nos próximos trimestres.
 
 ## Taxa-base
 
@@ -31,7 +33,7 @@ Antes de olhar qualquer dado ou notícia, a história já diz muito. O CODACE da
 | 2T99–2026, metas de inflação e câmbio flutuante (5) | 5,6% | 63% |
 | 2004–2026 (3) | 4,0% | 50% |
 
-Escolher uma linha dessa tabela é escolher a nota. Por isso o site não escolhe: a âncora é a **mediana de nove métodos**, e cada um tem uma regra fixa para decidir quanto o passado pesa.
+Escolher uma linha dessa tabela é escolher o resultado. Por isso o site não escolhe: a âncora é a **mediana de nove métodos**, e cada um tem uma regra fixa para decidir quanto o passado pesa.
 
 | Método | Risco por trimestre | Até o 4T30 |
 | --- | --- | --- |
@@ -52,7 +54,7 @@ Escolher uma linha dessa tabela é escolher a nota. Por isso o site não escolhe
 - **Quebra em data desconhecida:** um modelo bayesiano compara "nada mudou" com "mudou em alguma data entre 1988 e 2022" e pondera as duas hipóteses pelos dados.
 - **Brasil e vizinhos:** o risco do Brasil desde 2T99 é puxado para a média de 8 emergentes parecidos (México, Chile, Colômbia, Peru, Argentina, África do Sul, Turquia e Rússia), de 3,4% por trimestre, com peso equivalente a 10 ou 25 anos de dados ([`data/emergentes.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/data/emergentes.json)).
 
-Os nove métodos vão de 54% a 66%, e a página inicial mostra essa faixa ao lado da nota. Qualquer pessoa refaz a conta com [`src/taxa_base.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/taxa_base.py) e a cronologia em [`data/cronologia.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/data/cronologia.json).
+Só com a história, os nove métodos vão de 54% a 66% até 2030. Qualquer pessoa refaz a conta com [`src/taxa_base.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/taxa_base.py) e a cronologia em [`data/cronologia.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/data/cronologia.json).
 
 **O que ficou de fora.**
 
@@ -60,7 +62,7 @@ Os nove métodos vão de 54% a 66%, e a página inicial mostra essa faixa ao lad
 - **Começar em 2004:** com só três recessões, o intervalo de 90% para o risco vai de 1,4% a 9,4% por trimestre, e a diferença para antes de 2004 não é estatisticamente significativa (p ≈ 0,09).
 - **Começar em 1980:** trataria hiperinflação e câmbio fixo como riscos de hoje.
 
-**Conferência com o IBGE.** A pergunta se resolve pela regra técnica do IBGE, mas a taxa-base usa a datação do CODACE. Em 28/10/2026, recontamos a série atual da tabela 5932 (2T96 a 2T26). Todo episódio de dois trimestres seguidos de queda cai dentro de uma recessão do CODACE, e nenhum fica de fora. 2021 não conta: na série revisada, a queda do 2T21 (−0,7%) ficou isolada. Quando quedas separadas por um único trimestre de alta contam como um episódio só (2014–16 teve três), os riscos coincidem com os do CODACE: 5,6% por trimestre desde 2T99 e 4,0% desde 2004. Contar cada recaída como recessão nova daria 7,7% desde 2T99, mas a nota pergunta pela primeira recessão, não pelas recaídas.
+**Conferência com o IBGE.** A pergunta se resolve pela regra técnica do IBGE, mas a taxa-base usa a datação do CODACE. Na série atual da tabela 5932 (2T96 a 2T26), todo episódio de dois trimestres seguidos de queda cai dentro de uma recessão do CODACE, e nenhum fica de fora. 2021 não conta: na série revisada, a queda do 2T21 (−0,7%) ficou isolada. Quando quedas separadas por um único trimestre de alta contam como um episódio só (2014–16 teve três), os riscos coincidem com os do CODACE: 5,6% por trimestre desde 2T99 e 4,0% desde 2004. Contar cada recaída como recessão nova daria 7,7% desde 2T99, mas a pergunta é pela primeira recessão, não pelas recaídas.
 
 Um início de recessão no trimestre *t* exige que *t* e *t+1* estejam na janela, então há 17 inícios possíveis (3T26 a 3T30). Com 5,3% por trimestre, a chance só pela história é 1 − 0,947¹⁷ ≈ 60%.
 
@@ -70,18 +72,20 @@ O modelo soma duas camadas na escala de log-odds (logit), o que torna cada contr
 
 ```
 logit(h_t) = logit(h0) + w_t × I
-P(recessão até 4T30) = 1 − Π (1 − h_t)
+chance de 12 meses = 1 − Π (1 − h_t), nos quatro primeiros trimestres
+multiplicador = chance de 12 meses ÷ normal
+P(recessão até 4T30) = 1 − Π (1 − h_t), em todos os trimestres até o 3T30
 ```
 
-- **h0** é a taxa-base de 5,3% por trimestre.
+- **h0** é a taxa-base de 5,3% por trimestre. O normal é a chance de 12 meses com I = 0: 1 − 0,947⁴ ≈ 19,6%.
 - **I** é a soma das contribuições dos indicadores, inclusive o de mercado.
 - **w_t** é o peso no tempo: 1 nos quatro primeiros trimestres ainda não divulgados, 2/3 no quinto, 1/3 no sexto e zero daí em diante.
 
-Ninguém prevê recessão a quatro anos com dados de hoje: os melhores métodos acertam de 6 a 18 meses. Por isso os indicadores mexem só no risco dos próximos trimestres, e a nota até 2030 se move devagar.
+Ninguém prevê recessão a quatro anos com dados de hoje: os melhores métodos acertam de 6 a 18 meses. Por isso os indicadores mexem só no risco dos próximos trimestres, e a chance até 2030 se move devagar.
 
 **De onde vem o multiplicador.** A página "Como a conta funciona" parte do normal de 12 meses e soma o que cada indicador acrescenta, em pontos percentuais, até chegar à chance de hoje.
 
-**Trimestres divulgados.** Quando o IBGE divulga um trimestre, ele sai da janela (efeito tempo). Se dois trimestres seguidos vierem negativos, a pergunta está resolvida e a nota vai a 100. Se o último trimestre divulgado vier negativo, a chance de o seguinte também cair parte de 50% (parâmetro por julgamento, a calibrar com a série do IBGE) e recebe o mesmo deslocamento de curto prazo.
+**Trimestres divulgados.** Quando o IBGE divulga um trimestre, ele sai da janela (efeito tempo). Se dois trimestres seguidos vierem negativos, a pergunta está resolvida e a chance vai a 100%. Se o último trimestre divulgado vier negativo, a chance de o seguinte também cair parte de 50% (parâmetro por julgamento, a calibrar com a série do IBGE) e recebe o mesmo deslocamento de curto prazo.
 
 **Decomposição.** A conversão de log-odds para probabilidade não é linear, então a repartição em pontos usa valores de Shapley exatos: cada fator recebe a sua contribuição média sobre todas as ordens possíveis, e a soma bate exatamente com o total repartido. Em "De onde vem", os fatores repartem a diferença entre a chance de 12 meses de hoje e o normal; a tabela de indicadores mostra esses mesmos pontos. Em "O que mudou" e na conta do dia de cada post, os fatores repartem a variação entre duas atualizações; no post, a variação aparece em vezes o normal, com duas casas. Os números exibidos são arredondados de modo que as parcelas somem o total exibido.
 
@@ -101,7 +105,7 @@ Sete sinais, cada um com valor neutro, inclinação e efeito máximo, publicados
 
 **Por que um indicador de mercado.** Como as notícias ficam fora da conta, o número precisa de algo que reaja no mesmo dia a um choque de confiança, como o do dia seguinte à eleição de 2026 (a taxa de 10 anos foi de 6,9% para 8,1%). O juro real longo resume, em preço, o prêmio que o mercado cobra pelo risco fiscal e pela incerteza, e não depende de quem escreve as manchetes. A série sai com um dia de atraso; se o arquivo do Tesouro não puder ser baixado e a cópia local tiver mais de 5 dias, o indicador sai da conta naquele dia. O peso é de julgamento: num teste com dados de 1999 a 2025, nenhum modelo de pilares estimado, nem um com o prêmio de risco (EMBI+), bateu a taxa-base fora da amostra. Ele sobrepõe em parte o juro real ex-ante, e o encolhimento de 25% e o teto da camada valem para os sete juntos.
 
-Ficaram de fora no MVP, por falta de fonte gratuita estável: inclinação da curva de juros (B3), incerteza (FGV IBRE), CDS e indicador antecedente composto. A curva de juros, a mais citada na literatura, quase não tem poder preditivo em emergentes e não foi robusta no Brasil em 2005–2023.
+Ficaram de fora, por falta de fonte gratuita estável: inclinação da curva de juros (B3), incerteza (FGV IBRE), CDS e indicador antecedente composto. A curva de juros, a mais citada na literatura, quase não tem poder preditivo em emergentes e não foi robusta no Brasil em 2005–2023.
 
 ## Notícias
 
@@ -129,7 +133,7 @@ A pressão não tem número na página: só a seta de cada tema e as notícias q
 | Anúncio sem ato formal | 0,3 |
 | Rumor, bastidor ou plano em estudo | 0,1 |
 
-Na dúvida, o classificador usa o estágio menos avançado. Eventos lidos antes de 29/10/2026 não têm estágio e valem inteiros.
+Na dúvida, o classificador usa o estágio menos avançado. Evento sem estágio marcado vale inteiro.
 
 | Regra | Valor |
 | --- | --- |
@@ -149,32 +153,28 @@ Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta. Re
 
 ## Salvaguardas
 
-- **Disjuntor:** variação de mais de 5 pontos num dia sai com o selo "em revisão".
-- **Dado defasado:** se a nota passar de 36 horas sem atualização, a página avisa.
+- **Disjuntor:** se a chance até 2030 andar mais de 5 pontos de uma atualização para a outra, a conta sai com o selo "em revisão".
+- **Dado defasado:** se a conta passar de 36 horas sem atualização, a página avisa.
 - **Falha do LLM:** a atualização sai só com dados, e a pressão mostra só os eventos que já valiam, perdendo força.
 - **Falha do Tesouro Direto:** vale a cópia local de até 5 dias; mais velha, o indicador de mercado sai da conta naquele dia.
 - **Os dois lados:** a página mostra até quatro argumentos por mais crise e por menos crise, tirados das manchetes. Só troca de lista quando a leitura do dia traz pelo menos um argumento de cada lado.
 - **Placar:** as previsões de 12 meses ficam registradas e serão pontuadas pelo escore de Brier quando vencerem.
 
-## O que ainda falta (fase 2)
+## O que ainda falta
 
 - Backtest de 1996 a 2026 das camadas 1 e 2, com os dados como eram conhecidos na época. O LLM não entra no backtest, porque ele sabe o que aconteceu em 2015 e 2020.
 - Teste mensal de troca de nomes: reprocessar uma amostra de notícias trocando os atores e publicar se a classificação mudou.
 - Probit em painel com cerca de 20 emergentes para estimar os pesos com mais dados do que as 7 recessões brasileiras desde 1995.
-- Calibrar a chance de um trimestre negativo ser seguido de outro. Na recontagem de 28/10/2026, isso aconteceu em 7 de 16 casos desde 1996 (44%); o parâmetro fica em 50% até o backtest.
-- Avaliar um multiplicador limitado para vulnerabilidades domésticas (fiscal, juros, crédito), com base nas causas das recessões passadas. Ele só entra se melhorar o backtest.
+- Calibrar a chance de um trimestre negativo ser seguido de outro. Na série atual do IBGE, isso aconteceu em 7 de 16 casos desde 1996 (44%); o parâmetro fica em 50% até o backtest.
+- Avaliar um ajuste limitado para vulnerabilidades domésticas (fiscal, juros, crédito), com base nas causas das recessões passadas. Ele só entra se melhorar o backtest.
 
-Se o backtest não bater a taxa-base, o site vai dizer isso em público. Em 28/10/2026, um teste com seis séries do Banco Central e o EMBI+ (1999–2025) não bateu: os pesos estimados mudavam de sinal conforme a versão, e o erro fora da amostra ficou de 8% a 58% maior que o da taxa-base. Por isso os pesos continuam de julgamento.
+Se o backtest não bater a taxa-base, o site vai dizer isso em público. Um teste com seis séries do Banco Central e o EMBI+ (1999–2025) não bateu: os pesos estimados mudavam de sinal conforme a versão, e o erro fora da amostra ficou de 8% a 58% maior que o da taxa-base. Por isso os pesos continuam de julgamento.
 
 ## Onde erramos
 
-Erros são listados aqui com data, o que estava errado e o efeito na nota. Nenhum até agora.
+Erros são listados aqui com data, o que estava errado e o efeito no número. Nenhum até agora.
 
 Achou um? [Abra uma issue](https://github.com/pedrojahara/vaidarcrise/issues).
-
-## Mudanças de regra
-
-Toda mudança de regra ou de peso ganha uma versão nova, listada aqui com a data e o efeito no número. Na atualização em que ela entra, o gráfico da variação mostra uma barra "Nova metodologia": a conta anterior refeita com a regra nova. Essa barra não conta para o disjuntor. A seta do topo também compara com a conta antiga refeita na regra nova, para que a troca de regra não apareça como melhora ou piora.
 
 ## Fontes
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{% block titulo %}Vai dar crise?{% endblock %}</title>
-<meta name="description" content="{% block descricao %}Chance de recessão no Brasil até 2030, com a conta aberta e um post por dia sobre as notícias da véspera.{% endblock %}">
+<meta name="description" content="{% block descricao %}Risco de recessão no Brasil nos próximos 12 meses, comparado ao de um ano normal, com a conta aberta e um post por dia sobre as notícias da véspera.{% endblock %}">
 <link rel="canonical" href="{{ canonical }}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
@@ -54,7 +54,7 @@ a:hover{text-decoration-thickness:2px}
 .linha-fina{margin:8px 0 12px;font:16px/1.45 var(--sistema);color:var(--meta)}
 .cab nav{display:flex;flex-wrap:wrap;gap:6px 18px;font:15px/1.4 var(--sistema)}
 
-/* o topo: só o multiplicador e a seta (bloco próprio em _nota.html); o resto vai para as notas do rodapé */
+/* o topo: só o multiplicador e a seta (bloco próprio em _nota.html); o que eles querem dizer fica no rodapé */
 .nota{margin-bottom:30px;min-width:0}
 .nota .topo{display:flex;align-items:center;gap:16px}
 .placa{width:84px;height:84px;margin:13px;flex:none;transform:rotate(45deg);background:var(--placa);border-radius:10px;box-shadow:inset 0 0 0 4px var(--placa),inset 0 0 0 7px var(--placa-tinta)}
@@ -79,6 +79,7 @@ sup a{text-decoration:none;color:var(--link)}
 .bloco .datas li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:10px;justify-content:start}
 .datas time{font-weight:600;color:var(--tinta)}
 .datas li.chave{background:var(--nota-fundo);padding:6px;margin:2px -6px;border-bottom:0;border-radius:4px}
+.bloco .fontes-datas{margin:10px 0 0}.fontes-datas a{color:var(--meta)}
 
 /* rodapé */
 .pe{font:14px/1.55 var(--sistema);color:var(--meta)}
@@ -97,7 +98,7 @@ sup a{text-decoration:none;color:var(--link)}
 </div></div></header>
 {% block corpo %}{% endblock %}
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mede a chance de recessão técnica no Brasil (dois trimestres seguidos de queda do PIB) até o 4º trimestre de 2030, com <a href="/metodologia/">metodologia pré-registrada</a>. Não é recomendação de investimento.</p>
+  <p>O Vai dar crise? mostra quantas vezes a chance de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima da de um ano comum, que pela história das recessões brasileiras é de cerca de {{ normal|num(0) }}%. A seta compara com a conta de 30 dias antes e só muda quando o risco anda mais de 10%. <a href="{{ link_nota or '/nota/' }}">Como a conta funciona</a>. Não é recomendação de investimento.</p>
   <p><a href="{{ repo }}">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="{{ repo }}/issues">Achou um erro? Abra uma issue</a></p>
 </div></footer>
 </body>

@@ -1,9 +1,11 @@
-"""O modelo: três camadas somadas em log-odds.
+"""O modelo: camadas somadas em log-odds.
 
 1. Taxa-base: risco histórico de uma recessão começar num trimestre (h0).
-2. Indicadores: sinais com pesos pré-registrados que deslocam o risco dos
-   próximos trimestres.
+2. Indicadores: sinais com pesos publicados (inclusive o juro real longo do
+   Tesouro) que deslocam o risco dos próximos trimestres.
 3. Notícias: eventos classificados pelo LLM, cada um com teto e prazo de validade.
+   Desde a v1.3 ficam fora do número (`noticias.entram_na_conta`) e viram a
+   pressão por tema.
 
 As camadas 2 e 3 valem por inteiro nos 4 primeiros trimestres ainda não
 divulgados e somem até o 7º; daí em diante só vale a taxa-base. A manchete é a
