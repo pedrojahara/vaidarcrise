@@ -4,7 +4,11 @@ Grava data/historico/series.json com as séries mensais (e as diárias que o mod
 usa dia a dia) desde 2002, mais o PIB trimestral desde 1996. Roda de vez em quando,
 não todo dia: a calibração só muda quando alguém decide recalibrar.
 
-Uso: python src/historico.py
+Uso: python src/historico.py              (baixa tudo de novo)
+     python src/historico.py --faltando    (só as séries que faltam no arquivo)
+
+O Banco Central às vezes devolve uma página vazia em vez do JSON: cada consulta é
+repetida algumas vezes, e uma série que falha mantém a versão já gravada.
 """
 from __future__ import annotations
 
@@ -36,6 +40,17 @@ FRED = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={id}"
 FRED_SERIES = {"commodities": "PALLFNFINDEXM"}
 
 
+def com_paciencia(f, tentativas: int = 4):
+    """Repete a consulta com pausas crescentes (o SGS recusa rajadas)."""
+    for i in range(tentativas):
+        try:
+            return f()
+        except Exception:  # noqa: BLE001
+            if i == tentativas - 1:
+                raise
+            time.sleep(15 * (i + 1))
+
+
 def sgs_longo(code: int, inicio: dt.date) -> list[dict]:
     """O SGS limita consultas diárias a 10 anos: busca em blocos."""
     out: list[dict] = []
@@ -44,12 +59,12 @@ def sgs_longo(code: int, inicio: dt.date) -> list[dict]:
     while a <= hoje:
         b = min(dt.date(a.year + 9, 12, 31), hoje)
         url = f"https://api.bcb.gov.br/dados/serie/bcdata.sgs.{code}/dados"
-        r = fetch_data._get(url, {"formato": "json", "dataInicial": a.strftime("%d/%m/%Y"),
-                                  "dataFinal": b.strftime("%d/%m/%Y")})
+        params = {"formato": "json", "dataInicial": a.strftime("%d/%m/%Y"), "dataFinal": b.strftime("%d/%m/%Y")}
+        lote = com_paciencia(lambda: fetch_data._get(url, params).json())
         out += [{"data": dt.datetime.strptime(x["data"], "%d/%m/%Y").date().isoformat(), "valor": float(x["valor"])}
-                for x in r.json() if x.get("valor") not in (None, "")]
+                for x in lote if x.get("valor") not in (None, "")]
         a = b + dt.timedelta(days=1)
-        time.sleep(0.5)
+        time.sleep(2)
     dedup = {x["data"]: x for x in out if x["data"] <= hoje.isoformat()}
     return [dedup[k] for k in sorted(dedup)]
 
@@ -124,16 +139,21 @@ def fred(serie: str) -> list[dict]:
 
 
 def main() -> None:
+    faltando = "--faltando" in sys.argv
+    antigo = json.loads(SAIDA.read_text()) if SAIDA.exists() else {"series": {}}
     res: dict = {"coletado_em": dt.datetime.now().astimezone().isoformat(timespec="seconds"),
-                 "series": {}, "erros": []}
+                 "series": dict(antigo["series"]), "erros": []}
 
     def tenta(nome, f):
+        if faltando and res["series"].get(nome):
+            return
         try:
-            res["series"][nome] = f()
-            print(f"{nome}: {len(res['series'][nome])} pontos")
+            res["series"][nome] = com_paciencia(f)
+            print(f"{nome}: {len(res['series'][nome])} pontos", flush=True)
         except Exception as e:  # noqa: BLE001
             res["erros"].append(f"{nome}: {e}")
-            print(f"ERRO {nome}: {e}")
+            print(f"ERRO {nome}: {e}" + (" (fica a versão anterior)" if nome in res["series"] else ""), flush=True)
+        time.sleep(2)
 
     for nome, code in MENSAIS.items():
         tenta(nome, lambda code=code: fetch_data.sgs(code, INICIO))
