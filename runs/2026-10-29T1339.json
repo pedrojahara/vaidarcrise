@@ -1,0 +1,1118 @@
+{
+ "id": "2026-10-29T1339",
+ "gerado_em": "2026-10-29T13:39:44-03:00",
+ "regras": {
+  "config_sha256": "9428653c780b850e72da44d24dc3da9c3cd544d4fac6f9e349debc44ebde6f98",
+  "calibracao_sha256": "db84e3fb497e4faa833d0788ea7d2860abe3c81c5a85fc120baafac7a6c32cce"
+ },
+ "insumos": {
+  "indicadores_coletados_em": "2026-10-29T16:00:13+00:00",
+  "erros_coleta": [],
+  "pib": [
+   {
+    "trimestre": "1T23",
+    "periodo": "202301",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T23",
+    "periodo": "202302",
+    "var_qoq": 0.8
+   },
+   {
+    "trimestre": "3T23",
+    "periodo": "202303",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T23",
+    "periodo": "202304",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "1T24",
+    "periodo": "202401",
+    "var_qoq": 0.7
+   },
+   {
+    "trimestre": "2T24",
+    "periodo": "202402",
+    "var_qoq": 1.7
+   },
+   {
+    "trimestre": "3T24",
+    "periodo": "202403",
+    "var_qoq": 0.9
+   },
+   {
+    "trimestre": "4T24",
+    "periodo": "202404",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "1T25",
+    "periodo": "202501",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T25",
+    "periodo": "202502",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "3T25",
+    "periodo": "202503",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T25",
+    "periodo": "202504",
+    "var_qoq": 0.2
+   },
+   {
+    "trimestre": "1T26",
+    "periodo": "202601",
+    "var_qoq": 1.1
+   },
+   {
+    "trimestre": "2T26",
+    "periodo": "202602",
+    "var_qoq": 0.5
+   }
+  ],
+  "focus": {
+   "PIB Total": [
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2026",
+     "Mediana": 1.8,
+     "numeroRespondentes": 113
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2027",
+     "Mediana": 1.3145,
+     "numeroRespondentes": 113
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2028",
+     "Mediana": 1.81,
+     "numeroRespondentes": 83
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2029",
+     "Mediana": 2.0,
+     "numeroRespondentes": 76
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2030",
+     "Mediana": 2.0,
+     "numeroRespondentes": 74
+    }
+   ],
+   "IPCA": [
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2026",
+     "Mediana": 5.1891,
+     "numeroRespondentes": 142
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2027",
+     "Mediana": 4.3368,
+     "numeroRespondentes": 142
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2028",
+     "Mediana": 3.75,
+     "numeroRespondentes": 124
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2029",
+     "Mediana": 3.5,
+     "numeroRespondentes": 116
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2030",
+     "Mediana": 3.5,
+     "numeroRespondentes": 108
+    }
+   ],
+   "Selic": [
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2026",
+     "Mediana": 13.25,
+     "numeroRespondentes": 137
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2027",
+     "Mediana": 11.75,
+     "numeroRespondentes": 136
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2028",
+     "Mediana": 10.0,
+     "numeroRespondentes": 115
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2029",
+     "Mediana": 10.0,
+     "numeroRespondentes": 110
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2030",
+     "Mediana": 10.0,
+     "numeroRespondentes": 107
+    }
+   ],
+   "IPCA 12m": {
+    "Data": "2026-10-23",
+    "Mediana": 4.5336,
+    "numeroRespondentes": 129
+   },
+   "Câmbio": [
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2026",
+     "Mediana": 5.05
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2027",
+     "Mediana": 5.15
+    }
+   ]
+  },
+  "nota": "Primeira atualização. Indicadores do histórico baixado às 13h de 29/10; Focus do boletim de 26/10 (o câmbio do Focus foi lido do boletim publicado, porque a coleta da manhã não o pedia). Notícias: os 18 eventos tirados por claude -p das manchetes de 26 a 28/10, com fator e estágio revistos.",
+  "noticias": {
+   "coletado_em": "2026-10-29T06:58:00-03:00",
+   "janela_horas": null,
+   "por_veiculo": {
+    "Agência Brasil": 8,
+    "g1": 11,
+    "Gazeta do Povo": 7,
+    "Valor": 16,
+    "Poder360": 5,
+    "Folha": 16,
+    "Estadão": 4,
+    "InfoMoney": 3
+   },
+   "status_fontes": null,
+   "n_itens": null
+  }
+ },
+ "cobertura": {
+  "dias": [
+   "2026-10-26",
+   "2026-10-27",
+   "2026-10-28"
+  ],
+  "no_acervo": null,
+  "na_cesta": null,
+  "coletas_24h": null
+ },
+ "llm": {
+  "ok": true,
+  "meta": {
+   "nota": "eventos de rodadas anteriores de claude -p; post escrito por Claude na sessão que montou o site"
+  },
+  "saida": null
+ },
+ "eventos_novos": [
+  "ev-20261028-01",
+  "ev-20261028-02",
+  "ev-20261028-03",
+  "ev-20261028-04",
+  "ev-20261028-05",
+  "ev-20261028-06",
+  "ev-20261028-07",
+  "ev-20261028-08",
+  "ev-20261028-09",
+  "ev-20261028-10",
+  "ev-20261028-11",
+  "ev-20261028-12",
+  "ev-20261028-13",
+  "ev-20261028-14",
+  "ev-20261028-15",
+  "ev-20261029-01",
+  "ev-20261029-02",
+  "ev-20261029-03"
+ ],
+ "eventos_descartados": [],
+ "resultado": {
+  "nivel": {
+   "indice": 2,
+   "nome": "Normal",
+   "anterior": null,
+   "bruto": 2,
+   "nome_bruto": "Normal"
+  },
+  "composto": 0.05281136168652738,
+  "chance_relativa": 0.9259651730617241,
+  "indicadores": [
+   {
+    "id": "ibcbr",
+    "fator": "atividade",
+    "nome": "IBC-Br",
+    "unidade": "%",
+    "definicao": "IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores.",
+    "direcao": -1,
+    "peso": 3.809524,
+    "limite": -0.9958,
+    "faixa_normal": [
+     0.17389593411978876,
+     1.5540157157443613
+    ],
+    "escala": [
+     -1.8905237539573132,
+     3.858615649410845
+    ],
+    "nsr": 0.2625,
+    "episodios_avisados": 3,
+    "episodios_na_amostra": 3,
+    "motivo": null,
+    "forca": "Forte",
+    "valor": -0.6424554746393363,
+    "ref": "2026-08",
+    "sinal": 0,
+    "situacao": "pior",
+    "parte": 0.0
+   },
+   {
+    "id": "focus_pib",
+    "fator": "atividade",
+    "nome": "PIB esperado pelo Focus",
+    "unidade": "%",
+    "definicao": "Crescimento do PIB esperado para os próximos 12 meses: mediana do Focus para o ano corrente e o seguinte, ponderada pelos meses que faltam em cada um.",
+    "direcao": -1,
+    "peso": 1.837798,
+    "limite": 1.937083,
+    "faixa_normal": [
+     1.9370833333333333,
+     3.5512499999999996
+    ],
+    "escala": [
+     0.48466666666666663,
+     5.338666666666667
+    ],
+    "nsr": 0.54413,
+    "episodios_avisados": 4,
+    "episodios_na_amostra": 4,
+    "motivo": null,
+    "forca": "Moderada",
+    "valor": 1.3954166666666667,
+    "ref": "2026-10-23",
+    "ano": 1.8,
+    "ano_seguinte": 1.3145,
+    "sinal": 1,
+    "situacao": "alerta",
+    "parte": 0.0312007415930989
+   },
+   {
+    "id": "juro_real",
+    "fator": "juro",
+    "nome": "Juro real",
+    "unidade": "% ao ano",
+    "definicao": "Selic meta (BCB 432) descontada da inflação esperada para 12 meses (Focus, suavizada): (1 + Selic) / (1 + inflação esperada) − 1.",
+    "direcao": 1,
+    "peso": 0.0,
+    "limite": 8.293316,
+    "faixa_normal": [
+     2.914348853017601,
+     8.830537388775817
+    ],
+    "escala": [
+     -1.2748581669407275,
+     14.13649058544286
+    ],
+    "nsr": 1.136095,
+    "episodios_avisados": 2,
+    "episodios_na_amostra": 4,
+    "motivo": "deu mais alarme falso que aviso certo",
+    "forca": "Não antecipou recessões",
+    "valor": 8.816686692125785,
+    "ref": "2026-10-29",
+    "selic": 13.75,
+    "inflacao_esperada": 4.5336,
+    "focus_data": "2026-10-23",
+    "sinal": 0,
+    "situacao": "normal",
+    "parte": 0.0
+   },
+   {
+    "id": "comprometimento",
+    "fator": "credito",
+    "nome": "Renda comprometida com dívidas",
+    "unidade": "p.p.",
+    "definicao": "Comprometimento de renda das famílias com dívidas, dessazonalizado (BCB 29034), menos a média dos 36 meses anteriores.",
+    "direcao": 1,
+    "peso": 0.0,
+    "limite": null,
+    "faixa_normal": [
+     -0.5638888888888882,
+     1.8826388888888896
+    ],
+    "escala": [
+     -2.2143333333333333,
+     3.7749444444444458
+    ],
+    "nsr": null,
+    "episodios_avisados": null,
+    "episodios_na_amostra": 3,
+    "motivo": "não avisou pelo menos 2 recessões",
+    "forca": "Não antecipou recessões",
+    "valor": 1.8797222222222203,
+    "ref": "2026-08",
+    "nivel": 28.99,
+    "sinal": 0,
+    "situacao": "normal",
+    "parte": 0.0
+   },
+   {
+    "id": "tesouro",
+    "fator": "mercado",
+    "nome": "Juro do Tesouro IPCA+",
+    "unidade": "p.p.",
+    "definicao": "Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (Tesouro Direto, venda pela manhã) menos a sua mediana nos 3 anos anteriores.",
+    "direcao": 1,
+    "peso": 1.272917,
+    "limite": 0.473,
+    "faixa_normal": [
+     -1.0200000000000005,
+     0.6499999999999999
+    ],
+    "escala": [
+     -2.2667999999999995,
+     2.1787999999999994
+    ],
+    "nsr": 0.785597,
+    "episodios_avisados": 2,
+    "episodios_na_amostra": 3,
+    "motivo": null,
+    "forca": "Fraca",
+    "valor": 0.5600000000000005,
+    "ref": "2026-10-28",
+    "nivel": 7.94,
+    "mediana": 7.38,
+    "vencimento": "2035-05-15",
+    "sinal": 1,
+    "situacao": "alerta",
+    "parte": 0.02161062009342848
+   },
+   {
+    "id": "dolar",
+    "fator": "mercado",
+    "nome": "Dólar",
+    "unidade": "%",
+    "definicao": "Variação do dólar PTAX (BCB 1) em 3 meses.",
+    "direcao": 1,
+    "peso": 48.5,
+    "limite": 18.764558,
+    "faixa_normal": [
+     -4.2166409418831785,
+     4.667190744916944
+    ],
+    "escala": [
+     -12.530521481369727,
+     27.446907840969114
+    ],
+    "nsr": 0.020619,
+    "episodios_avisados": 3,
+    "episodios_na_amostra": 4,
+    "motivo": null,
+    "forca": "Forte",
+    "valor": 4.382828223616064,
+    "ref": "2026-10-28",
+    "nivel": 5.342,
+    "sinal": 0,
+    "situacao": "normal",
+    "parte": 0.0
+   },
+   {
+    "id": "divida",
+    "fator": "contas",
+    "nome": "Dívida pública",
+    "unidade": "p.p. do PIB",
+    "definicao": "Variação da dívida bruta do governo geral (BCB 13762) em 12 meses.",
+    "direcao": 1,
+    "peso": 0.0,
+    "limite": null,
+    "faixa_normal": [
+     -2.7249999999999943,
+     3.065000000000005
+    ],
+    "escala": [
+     -8.720799999999992,
+     11.288000000000013
+    ],
+    "nsr": null,
+    "episodios_avisados": null,
+    "episodios_na_amostra": 3,
+    "motivo": "não avisou pelo menos 2 recessões",
+    "forca": "Não antecipou recessões",
+    "valor": 5.560000000000002,
+    "ref": "2026-08",
+    "nivel": 82.87,
+    "sinal": 0,
+    "situacao": "pior",
+    "parte": 0.0
+   },
+   {
+    "id": "sahm",
+    "fator": "emprego",
+    "nome": "Regra de Sahm",
+    "unidade": "p.p.",
+    "definicao": "Média de 3 meses da desocupação da PNAD Contínua (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores.",
+    "direcao": 1,
+    "peso": 0.0,
+    "limite": 0.633333,
+    "faixa_normal": [
+     -0.1000000000000012,
+     0.6916666666666673
+    ],
+    "escala": [
+     -0.5333333333333332,
+     3.305999999999998
+    ],
+    "nsr": 1.288889,
+    "episodios_avisados": 2,
+    "episodios_na_amostra": 2,
+    "motivo": "deu mais alarme falso que aviso certo",
+    "forca": "Não antecipou recessões",
+    "valor": 0.09999999999999964,
+    "ref": "2026-08",
+    "nivel": 5.3,
+    "sinal": 0,
+    "situacao": "normal",
+    "parte": 0.0
+   },
+   {
+    "id": "commodities",
+    "fator": "externo",
+    "nome": "Preço das commodities",
+    "unidade": "%",
+    "definicao": "Variação em 6 meses do índice de preços de todas as commodities do FMI (FRED PALLFNFINDEXM).",
+    "direcao": -1,
+    "peso": 3.482143,
+    "limite": -16.00042,
+    "faixa_normal": [
+     -1.911626276268158,
+     15.22542221199711
+    ],
+    "escala": [
+     -24.20553904113642,
+     30.962338849784093
+    ],
+    "nsr": 0.287179,
+    "episodios_avisados": 2,
+    "episodios_na_amostra": 4,
+    "motivo": null,
+    "forca": "Forte",
+    "valor": 1.6727586354593926,
+    "ref": "2026-09",
+    "nivel": 222.4285486100514,
+    "sinal": 0,
+    "situacao": "normal",
+    "parte": 0.0
+   }
+  ],
+  "fatores": [
+   {
+    "id": "atividade",
+    "nome": "Atividade",
+    "indicadores": [
+     "ibcbr",
+     "focus_pib"
+    ],
+    "parte": 0.0312007415930989,
+    "peso_rotulo": "Pequeno",
+    "situacao": "alerta",
+    "situacao_nome": "Zona de alerta",
+    "forca": "Forte",
+    "avisou": [
+     3,
+     3
+    ]
+   },
+   {
+    "id": "mercado",
+    "nome": "Mercado financeiro",
+    "indicadores": [
+     "tesouro",
+     "dolar"
+    ],
+    "parte": 0.02161062009342848,
+    "peso_rotulo": "Pequeno",
+    "situacao": "alerta",
+    "situacao_nome": "Zona de alerta",
+    "forca": "Forte",
+    "avisou": [
+     3,
+     4
+    ]
+   },
+   {
+    "id": "contas",
+    "nome": "Contas públicas",
+    "indicadores": [
+     "divida"
+    ],
+    "parte": 0.0,
+    "peso_rotulo": "Nenhum hoje",
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal",
+    "forca": "Não antecipou recessões",
+    "avisou": null
+   },
+   {
+    "id": "juro",
+    "nome": "Juro real e inflação",
+    "indicadores": [
+     "juro_real"
+    ],
+    "parte": 0.0,
+    "peso_rotulo": "Nenhum hoje",
+    "situacao": "normal",
+    "situacao_nome": "Normal",
+    "forca": "Não antecipou recessões",
+    "avisou": null
+   },
+   {
+    "id": "credito",
+    "nome": "Crédito e famílias",
+    "indicadores": [
+     "comprometimento"
+    ],
+    "parte": 0.0,
+    "peso_rotulo": "Nenhum hoje",
+    "situacao": "normal",
+    "situacao_nome": "Normal",
+    "forca": "Não antecipou recessões",
+    "avisou": null
+   },
+   {
+    "id": "emprego",
+    "nome": "Emprego",
+    "indicadores": [
+     "sahm"
+    ],
+    "parte": 0.0,
+    "peso_rotulo": "Nenhum hoje",
+    "situacao": "normal",
+    "situacao_nome": "Normal",
+    "forca": "Não antecipou recessões",
+    "avisou": null
+   },
+   {
+    "id": "externo",
+    "nome": "Cenário externo",
+    "indicadores": [
+     "commodities"
+    ],
+    "parte": 0.0,
+    "peso_rotulo": "Nenhum hoje",
+    "situacao": "normal",
+    "situacao_nome": "Normal",
+    "forca": "Forte",
+    "avisou": [
+     2,
+     4
+    ]
+   }
+  ],
+  "gatilhos": [
+   {
+    "id": "dolar",
+    "limite": 18.764558,
+    "nivel": 4,
+    "nome_nivel": "Muito acima"
+   }
+  ],
+  "reaproveitados": [],
+  "faltando": []
+ },
+ "pressao": {
+  "fatores": {
+   "mercado": {
+    "saldo": 3.5,
+    "sentido": "piora",
+    "eventos": [
+     "ev-20261028-01",
+     "ev-20261029-01",
+     "ev-20261028-09"
+    ]
+   },
+   "contas": {
+    "saldo": 0.3625,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261028-10",
+     "ev-20261028-02",
+     "ev-20261029-03",
+     "ev-20261028-07"
+    ]
+   },
+   "credito": {
+    "saldo": 1.2625,
+    "sentido": "piora",
+    "eventos": [
+     "ev-20261028-03",
+     "ev-20261028-13",
+     "ev-20261028-08"
+    ]
+   },
+   "atividade": {
+    "saldo": 1.71875,
+    "sentido": "piora",
+    "eventos": [
+     "ev-20261028-04",
+     "ev-20261028-11",
+     "ev-20261028-06",
+     "ev-20261028-12",
+     "ev-20261029-02"
+    ]
+   },
+   "externo": {
+    "saldo": 0.75,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261028-05",
+     "ev-20261028-15"
+    ]
+   },
+   "juro": {
+    "saldo": 1.0,
+    "sentido": "piora",
+    "eventos": [
+     "ev-20261028-14"
+    ]
+   }
+  },
+  "saldo": 8.59375,
+  "sentido": "piora",
+  "n": 18
+ },
+ "leituras": {
+  "descricao": "Leitura de tendência de cada fator para os próximos 6 meses. Os fatos de dados saem de código (src/dossie.py), todo dia; aqui ficam a tendência, os fatos de notícia que a sustentam (no máximo 2, válidos por 180 dias), o que outras instituições projetam e o que melhoraria ou pioraria o fator. O LLM só propõe revisões, e o código decide o que entra.",
+  "fatores": {
+   "atividade": {
+    "tendencia": "piora",
+    "desde": "2026-10-29",
+    "como": "É a melhor pista do PIB antes de o IBGE divulgá-lo.",
+    "noticias": [
+     {
+      "texto": "Venda de máquinas e equipamentos cai 13,4% no ano até setembro: investimento fraco.",
+      "data": "2026-10-28",
+      "fonte": {
+       "veiculo": "Valor",
+       "url": "https://valor.globo.com/empresas/noticia/2026/10/28/vendas-de-maquinas-acumulam-queda-de-134percent-no-ano-ate-setembro.ghtml"
+      }
+     },
+     {
+      "texto": "CNI corta a projeção do PIB de 2026 de 2% para 1,6%.",
+      "data": "2026-10-28",
+      "fonte": {
+       "veiculo": "InfoMoney",
+       "url": "https://www.infomoney.com.br/economia/cni-reduz-projecao-para-o-pib-e-eleva-estimativas-de-inflacao-e-divida-publica/"
+      }
+     }
+    ],
+    "outros_automatico": true,
+    "melhora_se": [
+     "Indústria e serviços voltam a crescer",
+     "Safra e exportações acima do esperado"
+    ],
+    "piora_se": [
+     "Nova queda do IBC-Br",
+     "Quebra da safra com o El Niño"
+    ],
+    "fatos": [
+     {
+      "texto": "IBC-Br −0,6% no trimestre até agosto, contra os 3 meses anteriores, a maior queda desde ago/25.",
+      "fonte": "BC"
+     }
+    ],
+    "outros": {
+     "tipo": "concorda",
+     "texto": "Focus cortou a projeção de PIB em 3 meses: 1,8% em 2026 e 1,3% em 2027 (eram 2,0% e 1,6%).",
+     "fonte": {
+      "veiculo": "Focus 23/10",
+      "url": "https://www.bcb.gov.br/publicacoes/focus"
+     }
+    }
+   },
+   "juro": {
+    "tendencia": "estavel",
+    "desde": "2026-10-29",
+    "como": "Juro alto encarece crédito e investimento. O efeito chega em 1 a 2 anos.",
+    "noticias": [
+     {
+      "texto": "Estados aprovam ICMS maior sobre gasolina, diesel e gás a partir de 2027: pressão sobre a inflação.",
+      "data": "2026-10-28",
+      "fonte": {
+       "veiculo": "Poder360",
+       "url": "https://www.poder360.com.br/poder-economia/estados-aprovam-aumento-de-icms-sobre-gasolina-diesel-e-gas-para-2027/"
+      }
+     },
+     {
+      "texto": "Inflação esperada para 2027 sobe de novo no Focus, acima do centro da meta.",
+      "data": "2026-10-26",
+      "fonte": {
+       "veiculo": "XP",
+       "url": "https://conteudos.xpi.com.br/economia/boletim-focus-inflacao-de-2027-continua-em-trajetoria-de-alta-26-10-2026/"
+      }
+     }
+    ],
+    "outros_automatico": true,
+    "melhora_se": [
+     "BC corta a Selic mais rápido que a queda da inflação esperada",
+     "Alimentos e energia mais baratos"
+    ],
+    "piora_se": [
+     "Inflação esperada sobe e a Selic para de cair",
+     "Dólar caro por mais tempo"
+    ],
+    "fatos": [
+     {
+      "texto": "Juro real em 8,8% ao ano: Selic de 13,75% menos a inflação esperada de 4,5%.",
+      "fonte": "BC e Focus"
+     },
+     {
+      "texto": "Selic em 13,75% desde 17/9/26; antes, 14,00%. Em 12 meses, chegou a 15,00%.",
+      "fonte": "BC"
+     }
+    ],
+    "outros": {
+     "tipo": "discorda",
+     "texto": "Focus espera Selic de 13,25% no fim de 2026 e 11,75% no fim de 2027, ou seja, juro em queda.",
+     "fonte": {
+      "veiculo": "Focus 23/10",
+      "url": "https://www.bcb.gov.br/publicacoes/focus"
+     }
+    }
+   },
+   "credito": {
+    "tendencia": "piora",
+    "desde": "2026-10-29",
+    "como": "Parcela alta corta consumo. Costuma vir antes de crescimento menor.",
+    "noticias": [
+     {
+      "texto": "Bradesco sobe a taxa mínima do crédito imobiliário de 11,69% para 15% ao ano.",
+      "data": "2026-10-28",
+      "fonte": {
+       "veiculo": "Poder360",
+       "url": "https://www.poder360.com.br/poder-economia/em-salto-inedito-bradesco-sobe-juro-da-casa-propria-para-15-ao-ano/"
+      }
+     },
+     {
+      "texto": "Inadimplência das famílias chega a 6% em agosto, a maior da série do Banco Central.",
+      "data": "2026-09-29",
+      "fonte": {
+       "veiculo": "Agência Brasil",
+       "url": "https://agenciabrasil.ebc.com.br/radioagencia-nacional/economia/audio/2026-09/inadimplencia-das-familias-sobe-em-agosto-diz-banco-central"
+      }
+     }
+    ],
+    "outros": {
+     "tipo": "neutro",
+     "texto": "Nenhuma instituição publica projeção regular para a renda comprometida com dívidas.",
+     "fonte": null
+    },
+    "melhora_se": [
+     "Renda cresce mais que as parcelas",
+     "Juros do crédito caem"
+    ],
+    "piora_se": [
+     "Bancos apertam mais o crédito",
+     "IOF sobre LCI e LCA, hoje em avaliação"
+    ],
+    "fatos": [
+     {
+      "texto": "29,0% da renda das famílias vai para dívidas (ago/26), o maior nível da série, que começa em 2005; eram 27,6% um ano antes.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "mercado": {
+    "tendencia": "piora",
+    "desde": "2026-10-29",
+    "como": "Juros longos e dólar altos encarecem o crédito de empresas e do governo.",
+    "noticias": [
+     {
+      "texto": "No dia seguinte à eleição, dólar sobe 8,2% e a Bolsa cai 13,9%.",
+      "data": "2026-10-27",
+      "fonte": {
+       "veiculo": "Agência Brasil",
+       "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula"
+      }
+     },
+     {
+      "texto": "Tesouro anuncia recompra de títulos de 2030 a 2045 para conter as oscilações.",
+      "data": "2026-10-28",
+      "fonte": {
+       "veiculo": "Agência Brasil",
+       "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/para-conter-oscilacoes-tesouro-anuncia-nova-recompra-de-titulos"
+      }
+     }
+    ],
+    "outros_automatico": true,
+    "melhora_se": [
+     "Regra fiscal crível",
+     "Recompras do Tesouro acalmam os títulos"
+    ],
+    "piora_se": [
+     "Mais dúvida sobre as contas públicas",
+     "Fed sobe os juros"
+    ],
+    "fatos": [
+     {
+      "texto": "Tesouro IPCA+ 2035 a 7,94% ao ano em 28/10, 0,56 ponto acima da mediana de 3 anos.",
+      "fonte": "Tesouro Direto"
+     },
+     {
+      "texto": "Dólar a R$ 5,34 em 28/10, +4,4% em 3 meses.",
+      "fonte": "BC"
+     }
+    ],
+    "outros": {
+     "tipo": "discorda",
+     "texto": "Focus espera dólar a R$ 5,05 no fim de 2026, contra R$ 5,34 hoje.",
+     "fonte": {
+      "veiculo": "Focus 23/10",
+      "url": "https://www.bcb.gov.br/publicacoes/focus"
+     }
+    }
+   },
+   "contas": {
+    "tendencia": "piora",
+    "desde": "2026-10-29",
+    "como": "Pesa pelos juros: se a dívida assusta o investidor, o crédito encarece para todos.",
+    "noticias": [
+     {
+      "texto": "Governo federal: déficit de R$ 90 bilhões até setembro, menor que os R$ 100 bilhões de 2025.",
+      "data": "2026-10-29",
+      "fonte": {
+       "veiculo": "Jornal do Comércio",
+       "url": "https://www.jornaldocomercio.com/economia/2026/10/1268689-governo-central-tem-superavit-primario-de-rs-4839-bi-em-setembro.html"
+      }
+     },
+     {
+      "texto": "Gastos fora da meta fiscal crescem no ano eleitoral.",
+      "data": "2026-10-20",
+      "fonte": {
+       "veiculo": "Itatiaia",
+       "url": "https://www.itatiaia.com.br/economia/governo-amplia-gastos-fora-do-arcabouco-e-aumenta-pressao-sobre-meta-fiscal/"
+      }
+     }
+    ],
+    "outros": {
+     "tipo": "concorda",
+     "texto": "IFI projeta dívida bruta de 82,5% do PIB em 2026 e 86,4% em 2027.",
+     "fonte": {
+      "veiculo": "IFI",
+      "url": "https://www12.senado.leg.br/ifi"
+     }
+    },
+    "melhora_se": [
+     "Meta fiscal cumprida com regra crível",
+     "PIB crescendo acima do juro real"
+    ],
+    "piora_se": [
+     "Gasto novo sem receita",
+     "Juro alto por mais tempo"
+    ],
+    "fatos": [
+     {
+      "texto": "Dívida bruta em 82,9% do PIB (ago/26), +5,6 pontos em 12 meses.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "Setor público (União, estados e municípios): déficit de 0,6% do PIB em 12 meses até ago/26, contra déficit de 0,2% um ano antes.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "emprego": {
+    "tendencia": "estavel",
+    "desde": "2026-10-29",
+    "como": "Sobe quando a recessão já começou. Confirma, não antecipa.",
+    "noticias": [],
+    "outros": {
+     "tipo": "neutro",
+     "texto": "O IBGE divulga o desemprego até setembro em 30/10.",
+     "fonte": null
+    },
+    "melhora_se": [
+     "Contratações firmes nos serviços"
+    ],
+    "piora_se": [
+     "Demissões na indústria e na construção",
+     "Juros e inadimplência altos chegando ao emprego"
+    ],
+    "fatos": [
+     {
+      "texto": "Desemprego em 5,3% no trimestre até agosto; a mínima da série, que começa em 2012, foi 5,1% (dez/25).",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "Regra de Sahm em +0,1 ponto: o desemprego médio de 3 meses contra a mínima de 12 meses.",
+      "fonte": "IBGE"
+     }
+    ]
+   },
+   "externo": {
+    "tendencia": "sem_direcao",
+    "desde": "2026-10-29",
+    "como": "Commodities e juros americanos movem boa parte do ciclo dos emergentes.",
+    "noticias": [
+     {
+      "texto": "Fed mantém os juros entre 3,75% e 4% ao ano, com dois votos por alta.",
+      "data": "2026-10-28",
+      "fonte": {
+       "veiculo": "Valor",
+       "url": "https://valor.globo.com/financas/noticia/2026/10/28/fed-mantem-taxa-de-juros-inalterada-no-intervalo-de-375percent-a-400percent-ao-ano.ghtml"
+      }
+     },
+     {
+      "texto": "Banco Mundial prevê alta de 23 pontos percentuais nos preços das commodities em 2026, puxada pela energia.",
+      "data": "2026-10-28",
+      "fonte": {
+       "veiculo": "Valor",
+       "url": "https://valor.globo.com/mundo/noticia/2026/10/28/banco-mundial-prev-alta-de-23-pontos-percentuais-nos-preos-das-commodities-em-2026.ghtml"
+      }
+     }
+    ],
+    "outros": {
+     "tipo": "neutro",
+     "texto": "O Fed decide os juros de novo em 9/12.",
+     "fonte": null
+    },
+    "melhora_se": [
+     "Commodities que o Brasil exporta sobem",
+     "Fed corta os juros"
+    ],
+    "piora_se": [
+     "Commodities caem",
+     "China desacelera"
+    ],
+    "fatos": [
+     {
+      "texto": "Preço das commodities +1,7% em 6 meses até setembro (índice do FMI).",
+      "fonte": "FMI"
+     }
+    ]
+   }
+  }
+ },
+ "revisoes": [],
+ "placar": {
+  "registradas": [
+   {
+    "fator": "atividade",
+    "leitura": "piora",
+    "data": "2026-10-29",
+    "conferir_em": "2027-04-28",
+    "medida": "ibcbr_3m",
+    "inicial": {
+     "valor": -0.6424554746393363,
+     "ref": "2026-08"
+    },
+    "resultado": null
+   },
+   {
+    "fator": "juro",
+    "leitura": "estavel",
+    "data": "2026-10-29",
+    "conferir_em": "2027-04-28",
+    "medida": "juro_real",
+    "inicial": {
+     "valor": 8.816686692125785,
+     "ref": "2026-10-29"
+    },
+    "resultado": null
+   },
+   {
+    "fator": "credito",
+    "leitura": "piora",
+    "data": "2026-10-29",
+    "conferir_em": "2027-04-28",
+    "medida": "comprometimento_nivel",
+    "inicial": {
+     "valor": 28.99,
+     "ref": "2026-08"
+    },
+    "resultado": null
+   },
+   {
+    "fator": "mercado",
+    "leitura": "piora",
+    "data": "2026-10-29",
+    "conferir_em": "2027-04-28",
+    "medida": "tesouro_nivel",
+    "inicial": {
+     "valor": 7.94,
+     "ref": "2026-10-28"
+    },
+    "resultado": null
+   },
+   {
+    "fator": "contas",
+    "leitura": "piora",
+    "data": "2026-10-29",
+    "conferir_em": "2027-04-28",
+    "medida": "divida_nivel",
+    "inicial": {
+     "valor": 82.87,
+     "ref": "2026-08"
+    },
+    "resultado": null
+   },
+   {
+    "fator": "emprego",
+    "leitura": "estavel",
+    "data": "2026-10-29",
+    "conferir_em": "2027-04-28",
+    "medida": "desocupacao",
+    "inicial": {
+     "valor": 5.3,
+     "ref": "2026-08"
+    },
+    "resultado": null
+   }
+  ],
+  "conferidas": []
+ },
+ "anterior": null,
+ "revisao_texto": {
+  "classificacao": [],
+  "post": []
+ },
+ "post": {
+  "ok": true,
+  "titulo": "Risco de recessão começa no normal, com a atividade em alerta",
+  "paragrafos": [
+   "O risco de uma recessão começar nos próximos 12 meses está no nível normal. É a primeira atualização, sem anterior para comparar. Dois fatores estão na zona de alerta. Na atividade, o IBC-Br, índice do Banco Central que antecipa o PIB, caiu 0,6% no trimestre até agosto, e o Focus espera crescimento de 1,8% em 2026 e 1,3% em 2027. No mercado financeiro, o Tesouro IPCA+ 2035 paga 7,94% ao ano, 0,56 ponto acima da mediana de 3 anos. O dólar subiu 4,4% em 3 meses, dentro do normal.",
+   "A dívida das famílias está no maior nível da série: 29,0% da renda vai para parcelas. A dívida bruta do governo subiu 5,6 pontos em 12 meses, para 82,9% do PIB. O juro real, a Selic descontada a inflação esperada, está em 8,8% ao ano. O desemprego, em 5,3%, segue perto da mínima da série.",
+   "As notícias de 26 a 28 de outubro empurram para piorar. No mercado, a Bolsa caiu 13,88% e o dólar subiu 8,21% no dia seguinte à eleição, e os juros futuros longos voltaram a subir. Na atividade, a CNI cortou a projeção do PIB de 2026 de 2% para 1,6%. No crédito, o Bradesco elevou a taxa mínima do financiamento imobiliário de 11,69% para 15% ao ano. Nos juros, os estados aprovaram ICMS maior sobre combustíveis a partir de 2027.",
+   "Nas contas públicas, as notícias não apontam um lado: a Fazenda anunciou um projeto para cumprir a meta fiscal, e o ministro da articulação política disse que um ajuste não está em discussão. Amanhã, 30/10, o IBGE divulga o desemprego até setembro. O Copom decide a Selic em 4/11, e o PIB do 3º trimestre sai em 2/12."
+  ],
+  "problemas": [],
+  "meta": [
+   {
+    "autor": "Claude"
+   }
+  ]
+ }
+}

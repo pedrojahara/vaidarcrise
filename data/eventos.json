@@ -3,11 +3,14 @@
   "id": "ev-20261028-01",
   "data": "2026-10-26",
   "titulo_evento": "Bolsa cai 13,88% e dólar sobe 8,21% no dia seguinte à eleição presidencial",
-  "canal": "mercado",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "mercado",
   "direcao": 1,
   "magnitude": 3,
   "ja_no_preco": false,
   "porque": "Foi o primeiro circuit breaker desde 2020, e a Bolsa perdeu 14% na semana. A queda do patrimônio e a alta do prêmio de risco encarecem o crédito e travam investimento e consumo, como na eleição de 2002.",
+  "chance_aprovacao": null,
   "veiculos": [
    "Agência Brasil",
    "Gazeta do Povo",
@@ -69,17 +72,20 @@
     "publicado_em": "2026-10-28T17:39-03:00"
    }
   ],
-  "efeito_inicial": 0.2
+  "pontos": 3.0
  },
  {
   "id": "ev-20261028-02",
   "data": "2026-10-27",
   "titulo_evento": "Fazenda anuncia projeto de lei para cumprir o centro da meta fiscal",
-  "canal": "fiscal",
+  "estagio": "anuncio",
+  "origem": "politica",
+  "fator": "contas",
   "direcao": -1,
   "magnitude": 1,
   "ja_no_preco": false,
   "porque": "Uma meta fiscal crível baixa o prêmio de risco e os juros longos, como na aprovação do teto de gastos em 2016. Por enquanto é só anúncio, sem medidas detalhadas.",
+  "chance_aprovacao": null,
   "veiculos": [
    "Agência Brasil",
    "Gazeta do Povo",
@@ -105,17 +111,20 @@
     "publicado_em": "2026-10-27T14:18+00:00"
    }
   ],
-  "efeito_inicial": -0.04
+  "pontos": -0.3
  },
  {
   "id": "ev-20261028-03",
   "data": "2026-10-27",
   "titulo_evento": "BC: 20,3 milhões de pessoas em endividamento de risco, 75% a mais em 5 anos",
-  "canal": "credito",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "credito",
   "direcao": 1,
   "magnitude": 1,
   "ja_no_preco": false,
   "porque": "O lucro do Santander caiu 28% com as provisões contra calotes. Com a inadimplência em alta, os bancos emprestam menos às famílias, como em 2015-16. O BC afirma que a estabilidade financeira não está em risco.",
+  "chance_aprovacao": null,
   "veiculos": [
    "Agência Brasil",
    "Folha",
@@ -160,17 +169,20 @@
     "publicado_em": "2026-10-28T13:06+00:00"
    }
   ],
-  "efeito_inicial": 0.04
+  "pontos": 1.0
  },
  {
   "id": "ev-20261028-04",
   "data": "2026-10-27",
   "titulo_evento": "El Niño forte pode reduzir a safra de soja 2026/27 em cerca de 10%",
-  "canal": "oferta",
+  "estagio": "dado",
+  "origem": "natureza",
+  "fator": "atividade",
   "direcao": 1,
   "magnitude": 1,
   "ja_no_preco": false,
   "porque": "Uma quebra de safra derruba o PIB agro no 1º e no 2º trimestres e encarece os alimentos, que já saem das fábricas 2,40% mais caros. O efeito depende da intensidade do fenômeno, como no El Niño de 2015-16.",
+  "chance_aprovacao": null,
   "veiculos": [
    "Gazeta do Povo",
    "g1"
@@ -189,17 +201,20 @@
     "publicado_em": "2026-10-27T13:09+00:00"
    }
   ],
-  "efeito_inicial": 0.04
+  "pontos": 1.0
  },
  {
   "id": "ev-20261028-05",
   "data": "2026-10-27",
   "titulo_evento": "Banco Mundial prevê alta de 23% nas commodities em 2026, puxada pela energia",
-  "canal": "externo",
+  "estagio": "dado",
+  "origem": "mundo",
+  "fator": "externo",
   "direcao": 1,
   "magnitude": 1,
   "ja_no_preco": true,
   "porque": "Energia cara pressiona inflação e juros, como em 2022. O governo prorrogou por 30 dias a subvenção de R$ 2,12 por litro ao diesel, que pesa nas contas públicas. Como exportador de petróleo, o país compensa parte do efeito.",
+  "chance_aprovacao": null,
   "veiculos": [
    "Agência Brasil",
    "Valor",
@@ -255,17 +270,20 @@
     "publicado_em": "2026-10-28T20:40-03:00"
    }
   ],
-  "efeito_inicial": 0.02
+  "pontos": 0.5
  },
  {
   "id": "ev-20261028-06",
   "data": "2026-10-28",
   "titulo_evento": "Confiança da indústria cai pelo terceiro mês seguido em outubro",
-  "canal": "atividade",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "atividade",
   "direcao": 1,
   "magnitude": 1,
   "ja_no_preco": false,
   "porque": "Confiança em queda costuma antecipar cortes de produção e de investimento, como em 2014. A pesquisa foi feita antes do choque de mercado pós-eleição.",
+  "chance_aprovacao": null,
   "veiculos": [
    "Folha"
   ],
@@ -277,17 +295,20 @@
     "publicado_em": "2026-10-28T09:37-03:00"
    }
   ],
-  "efeito_inicial": 0.02
+  "pontos": 0.5
  },
  {
   "id": "ev-20261028-07",
   "data": "2026-10-27",
   "titulo_evento": "Comando da Fazenda no novo mandato segue indefinido, e mercado cobra nome",
-  "canal": "institucional",
+  "estagio": "rumor",
+  "origem": "politica",
+  "fator": "contas",
   "direcao": 1,
   "magnitude": 1,
   "ja_no_preco": true,
   "porque": "Sem definição sobre a política fiscal, o prêmio de risco segue alto, como na transição de 2022 para 2023.",
+  "chance_aprovacao": null,
   "veiculos": [
    "Estadão",
    "Folha"
@@ -336,17 +357,20 @@
     "publicado_em": "2026-10-27T16:15-03:00"
    }
   ],
-  "efeito_inicial": 0.02
+  "pontos": 0.05
  },
  {
   "id": "ev-20261028-08",
   "data": "2026-10-28",
   "titulo_evento": "Governo avalia cobrar IOF por decreto sobre LCI, LCA e outros títulos isentos",
-  "canal": "credito",
+  "estagio": "rumor",
+  "origem": "politica",
+  "fator": "credito",
   "direcao": 1,
   "magnitude": 1,
   "ja_no_preco": false,
   "porque": "O imposto encarece o dinheiro que financia o crédito imobiliário e rural, como no aumento de IOF de 2025. Ainda é só proposta em avaliação.",
+  "chance_aprovacao": null,
   "veiculos": [
    "Poder360"
   ],
@@ -370,17 +394,20 @@
     "publicado_em": "2026-10-28T17:29+00:00"
    }
   ],
-  "efeito_inicial": 0.02
+  "pontos": 0.05
  },
  {
   "id": "ev-20261028-09",
   "data": "2026-10-27",
   "titulo_evento": "Tesouro anuncia recompra de NTN-B de 2030 a 2045 para conter oscilações",
-  "canal": "mercado",
+  "estagio": "decidido",
+  "origem": "politica",
+  "fator": "mercado",
   "direcao": -1,
   "magnitude": 1,
   "ja_no_preco": false,
   "porque": "A recompra limita oscilações bruscas nos juros longos, como nas recompras do Tesouro em março de 2020.",
+  "chance_aprovacao": null,
   "veiculos": [
    "Agência Brasil"
   ],
@@ -392,17 +419,20 @@
     "publicado_em": "2026-10-27T12:36-03:00"
    }
   ],
-  "efeito_inicial": -0.02
+  "pontos": -0.5
  },
  {
   "id": "ev-20261028-10",
   "data": "2026-10-28",
   "titulo_evento": "TCU propõe alíquota de referência de 11,3% para a CBS em 2027",
-  "canal": "fiscal",
+  "estagio": "em_votacao",
+  "origem": "politica",
+  "fator": "contas",
   "direcao": 1,
   "magnitude": 1,
   "ja_no_preco": false,
   "porque": "A transição tributária pode pressionar preços em 2027, e com eles os juros. A alíquota ainda depende do Senado.",
+  "chance_aprovacao": null,
   "veiculos": [
    "Folha",
    "Valor",
@@ -476,17 +506,20 @@
     "publicado_em": "2026-10-28T22:15+00:00"
    }
   ],
-  "efeito_inicial": 0.04
+  "pontos": 0.5
  },
  {
   "id": "ev-20261028-11",
   "data": "2026-10-28",
   "titulo_evento": "CNI reduz projeção de crescimento do PIB de 2026 de 2% para 1,6%",
-  "canal": "atividade",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "atividade",
   "direcao": 1,
   "magnitude": 1,
   "ja_no_preco": false,
   "porque": "A CNI também elevou as projeções de inflação, para 5,15%, e de dívida, para 83,7% do PIB. Revisões em série assim marcaram 2014.",
+  "chance_aprovacao": null,
   "veiculos": [
    "InfoMoney",
    "Valor"
@@ -505,17 +538,20 @@
     "publicado_em": "2026-10-28T17:40+00:00"
    }
   ],
-  "efeito_inicial": 0.04
+  "pontos": 1.0
  },
  {
   "id": "ev-20261028-12",
   "data": "2026-10-28",
   "titulo_evento": "Vendas de máquinas e equipamentos acumulam queda de 13,4% no ano até setembro",
-  "canal": "atividade",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "atividade",
   "direcao": 1,
   "magnitude": 1,
   "ja_no_preco": false,
   "porque": "Juro alto e concorrência de importados explicam a queda. Venda menor de máquinas antecipa investimento menor, como na contração de 2014-2015.",
+  "chance_aprovacao": null,
   "veiculos": [
    "Valor"
   ],
@@ -527,17 +563,20 @@
     "publicado_em": "2026-10-28T18:02+00:00"
    }
   ],
-  "efeito_inicial": 0.02
+  "pontos": 0.5
  },
  {
   "id": "ev-20261028-13",
   "data": "2026-10-28",
   "titulo_evento": "Bradesco eleva taxa mínima do crédito imobiliário de 11,69% para 15% ao ano",
-  "canal": "credito",
+  "estagio": "decidido",
+  "origem": "dados",
+  "fator": "credito",
   "direcao": 1,
   "magnitude": 1,
   "ja_no_preco": false,
   "porque": "O juro mais alto encarece e freia novos financiamentos habitacionais e a construção civil, como no recuo do crédito imobiliário em 2015.",
+  "chance_aprovacao": null,
   "veiculos": [
    "Poder360"
   ],
@@ -549,17 +588,20 @@
     "publicado_em": "2026-10-28T17:08+00:00"
    }
   ],
-  "efeito_inicial": 0.02
+  "pontos": 0.5
  },
  {
   "id": "ev-20261028-14",
   "data": "2026-10-28",
   "titulo_evento": "Estados aprovam ICMS maior sobre combustíveis a partir de fevereiro de 2027",
-  "canal": "oferta",
+  "estagio": "decidido",
+  "origem": "politica",
+  "fator": "juro",
   "direcao": 1,
   "magnitude": 1,
   "ja_no_preco": false,
   "porque": "Diesel e biodiesel sobem 11,1%. Combustível e frete mais caros pressionam inflação e juros, como no choque do diesel de 2018.",
+  "chance_aprovacao": null,
   "veiculos": [
    "Gazeta do Povo",
    "Poder360"
@@ -578,17 +620,20 @@
     "publicado_em": "2026-10-28T15:48+00:00"
    }
   ],
-  "efeito_inicial": 0.04
+  "pontos": 1.0
  },
  {
   "id": "ev-20261028-15",
   "data": "2026-10-28",
   "titulo_evento": "Fed mantém juros em 3,75%-4,00% ao ano, com dois votos por alta",
-  "canal": "externo",
+  "estagio": "decidido",
+  "origem": "mundo",
+  "fator": "externo",
   "direcao": 1,
   "magnitude": 1,
   "ja_no_preco": true,
   "porque": "Os votos por alta sinalizam juros americanos altos por mais tempo, o que pesa no fluxo de capital e no câmbio, como em 2022. A manutenção era esperada.",
+  "chance_aprovacao": null,
   "veiculos": [
    "Estadão",
    "Folha",
@@ -646,7 +691,7 @@
     "publicado_em": "2026-10-28T20:25+00:00"
    }
   ],
-  "efeito_inicial": 0.02
+  "pontos": 0.5
  },
  {
   "id": "ev-20261029-01",
@@ -654,7 +699,7 @@
   "titulo_evento": "Juros futuros longos sobem forte com prêmio de risco local",
   "estagio": "dado",
   "origem": "dados",
-  "canal": "mercado",
+  "fator": "mercado",
   "direcao": 1,
   "magnitude": 2,
   "ja_no_preco": false,
@@ -678,8 +723,7 @@
     "publicado_em": "2026-10-28T20:04+00:00"
    }
   ],
-  "peso_estagio": 1.0,
-  "efeito_inicial": 0.12
+  "pontos": 2.0
  },
  {
   "id": "ev-20261029-02",
@@ -687,7 +731,7 @@
   "titulo_evento": "Intenção de consumo das famílias cai 0,8% em outubro, terceira queda seguida",
   "estagio": "dado",
   "origem": "dados",
-  "canal": "atividade",
+  "fator": "atividade",
   "direcao": 1,
   "magnitude": 1,
   "ja_no_preco": false,
@@ -704,8 +748,7 @@
     "publicado_em": "2026-10-28T20:31+00:00"
    }
   ],
-  "peso_estagio": 1.0,
-  "efeito_inicial": 0.02
+  "pontos": 0.5
  },
  {
   "id": "ev-20261029-03",
@@ -713,7 +756,7 @@
   "titulo_evento": "Ministro da articulação política diz que ajuste fiscal não está em discussão",
   "estagio": "anuncio",
   "origem": "politica",
-  "canal": "fiscal",
+  "fator": "contas",
   "direcao": 1,
   "magnitude": 1,
   "ja_no_preco": false,
@@ -737,7 +780,6 @@
     "publicado_em": "2026-10-29T00:29+00:00"
    }
   ],
-  "peso_estagio": 0.3,
-  "efeito_inicial": 0.012
+  "pontos": 0.3
  }
 ]

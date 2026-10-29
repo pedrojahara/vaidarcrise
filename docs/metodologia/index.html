@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Metodologia | Vai dar crise?</title>
-<meta name="description" content="Como o Vai dar crise? calcula o risco de recessão no Brasil: taxa-base, indicadores, mercado, pressão das notícias e salvaguardas.">
+<meta name="description" content="Como o Vai dar crise? calcula o nível de risco de recessão no Brasil: indicadores, limites de alerta, teste fora da amostra, tendência das notícias e placar.">
 <link rel="canonical" href="https://vaidarcrise.com.br/metodologia/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
 <meta property="og:title" content="Metodologia | Vai dar crise?">
-<meta property="og:description" content="Como o Vai dar crise? calcula o risco de recessão no Brasil: taxa-base, indicadores, mercado, pressão das notícias e salvaguardas.">
+<meta property="og:description" content="Como o Vai dar crise? calcula o nível de risco de recessão no Brasil: indicadores, limites de alerta, teste fora da amostra, tendência das notícias e placar.">
 <meta property="og:url" content="https://vaidarcrise.com.br/metodologia/">
 <meta property="og:image" content="https://vaidarcrise.com.br/og.png">
 <meta property="og:image:width" content="1200">
@@ -23,17 +23,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-/* O × da Charis é largo e solto ("2,7 ×"); só esse caractere vem de uma sem serifa do sistema. */
-@font-face{font-family:"Vezes";src:local("Arial"),local("ArialMT"),local("Helvetica"),local("Roboto"),local("Liberation Sans");unicode-range:U+00D7}
 :root{
   /* Página branca de blog: o texto em serifa, dados e avisos na letra do sistema. A plaquinha amarela é a única cor de marca. */
   --papel:#ffffff; --tinta:#1e1f21; --meta:#62666b; --fio:#e4e6e8; --maquina:#f4f5f6;
-  --link:#1f4fbf; --placa:#ffc20e; --placa-tinta:#000000; --sobe:#c3102b; --desce:#00733a;
-  --hist:#5d6570; --hist2:#c6cbd1; --hist2-tinta:#1e1f21; --nota-fundo:#fffaeb;
-  --serifa:"Vezes","Charis SIL",Charter,"Bitstream Charter","Iowan Old Style",Georgia,serif;
+  --link:#1f4fbf; --placa:#ffc20e; --placa-tinta:#000000; --sobe:#c3102b; --desce:#00733a; --atencao:#965a00;
+  --hist:#5d6570; --nota-fundo:#fffaeb; --alerta-fundo:#f8d9de; --normal-fundo:#cfd6dd; --rec:#eceef0;
+  --serifa:"Charis SIL",Charter,"Bitstream Charter","Iowan Old Style",Georgia,serif;
   --sistema:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
-@media (prefers-color-scheme: dark){:root{--papel:#161718;--tinta:#e8e9ea;--meta:#a3a7ac;--fio:#2f3134;--maquina:#1f2123;--link:#94b4ff;--sobe:#ff7373;--desce:#52c993;--hist:#8d96a1;--hist2:#3d4248;--hist2-tinta:#e8e9ea;--nota-fundo:#1f1d16;color-scheme:dark}}
+@media (prefers-color-scheme: dark){:root{--papel:#161718;--tinta:#e8e9ea;--meta:#a3a7ac;--fio:#2f3134;--maquina:#1f2123;--link:#94b4ff;--sobe:#ff7373;--desce:#52c993;--atencao:#f0b45a;--hist:#8d96a1;--nota-fundo:#1f1d16;--alerta-fundo:#45232a;--normal-fundo:#3a4048;--rec:#232527;color-scheme:dark}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--papel);color:var(--tinta);font:19px/1.62 var(--serifa)}
@@ -42,7 +40,8 @@ a:hover{text-decoration-thickness:2px}
 :focus-visible{outline:3px solid var(--link);outline-offset:2px}
 .in{max-width:1000px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .peq{font:14px/1.5 var(--sistema);color:var(--meta)}
-.mais{color:var(--sobe)}.menos{color:var(--desce)}
+.mais{color:var(--sobe)}.menos{color:var(--desce)}.igual{color:var(--tinta)}
+[hidden]{display:none!important}
 
 /* cabeçalho */
 .cab .in{padding-top:28px}
@@ -54,18 +53,26 @@ a:hover{text-decoration-thickness:2px}
 .linha-fina{margin:8px 0 12px;font:16px/1.45 var(--sistema);color:var(--meta)}
 .cab nav{display:flex;flex-wrap:wrap;gap:6px 18px;font:15px/1.4 var(--sistema)}
 
-/* o topo: só o multiplicador e a seta (bloco próprio em _nota.html); o que eles querem dizer fica no rodapé */
+/* o nível de hoje (bloco próprio em _nota.html) */
 .nota{margin-bottom:30px;min-width:0}
 .nota .topo{display:flex;align-items:center;gap:16px}
 .placa{width:84px;height:84px;margin:13px;flex:none;transform:rotate(45deg);background:var(--placa);border-radius:10px;box-shadow:inset 0 0 0 4px var(--placa),inset 0 0 0 7px var(--placa-tinta)}
-.placa span{display:grid;place-items:center;height:100%;transform:rotate(-45deg);font:800 29px/1 var(--sistema);color:var(--placa-tinta);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.placa span{display:grid;place-items:center;height:100%;transform:rotate(-45deg);font:800 21px/1.05 var(--sistema);color:var(--placa-tinta);letter-spacing:-.01em;text-align:center}
+.placa span.dupla{font-size:17px}
 .leitura{display:flex;flex-direction:column;gap:2px;min-width:0;margin:0}
-.leitura .seta{font:700 20px/1.2 var(--sistema);white-space:nowrap}
-.leitura .seta.sobe{color:var(--sobe)}.leitura .seta.desce{color:var(--desce)}.leitura .seta.igual{color:var(--tinta)}
-.leitura .seta b{font-size:1.15em;margin-right:4px}
-sup{font:600 .55em/0 var(--sistema);margin-left:2px;vertical-align:super}
-sup a{text-decoration:none;color:var(--link)}
-.nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:10px 0 0}
+.leitura .rot{font:700 22px/1.15 var(--sistema)}
+.leitura .sub{font:14.5px/1.4 var(--sistema);color:var(--meta)}
+.escala{list-style:none;padding:0;margin:14px 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;font:12.5px/1.25 var(--sistema);color:var(--meta)}
+.escala li{display:flex;flex-direction:column;gap:5px;text-align:center;min-width:0}
+.escala li::before{content:"";display:block;height:8px;background:var(--fio)}
+.escala li:first-child::before{border-radius:4px 0 0 4px}.escala li:last-child::before{border-radius:0 4px 4px 0}
+.escala li.aqui{color:var(--tinta);font-weight:700}
+.escala li.aqui::before{background:var(--tinta)}
+.escala.grande{font-size:14px;gap:4px}
+.escala.grande li::before{height:12px}
+.tend-noticias{font:15px/1.45 var(--sistema);margin:14px 0 0}
+.tend-noticias b{font-size:1.1em;margin-right:3px}
+.nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:8px 0 0}
 .aviso{font:15px/1.45 var(--sistema);background:var(--maquina);border-left:4px solid var(--placa);padding:8px 12px;margin:12px 0 0}
 .aviso[hidden]{display:none}
 
@@ -86,7 +93,8 @@ sup a{text-decoration:none;color:var(--link)}
 .pe .in{padding-top:22px;padding-bottom:56px;border-top:1px solid var(--fio)}
 .pe p{margin:0 0 8px;max-width:640px}
 .pe a{color:var(--meta)}
-@media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:25px}.nota .resp{font-size:22px}.marca b{font-size:26px}}
+.cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
+@media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:18px}.placa span.dupla{font-size:15px}.marca b{font-size:26px}}
 
 .texto{padding-top:30px;padding-bottom:40px}
 .texto > *{max-width:760px}
@@ -108,249 +116,229 @@ sup a{text-decoration:none;color:var(--link)}
 <header class="cab"><div class="in"><div class="faixa">
   <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
   <p class="linha-fina">Um palpite com conta sobre a próxima recessão brasileira.</p>
-  <nav aria-label="Seções"><a href="/">Atualizações</a><a href="/nota/">Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
+  <nav aria-label="Seções"><a href="/">Atualizações</a><a href="/resumo/">Resumo</a><a href="/nota/">Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
 </div></div></header>
 
 <main class="in texto">
 <h1 id="metodologia">Metodologia</h1>
-<p>Os parâmetros estão em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json"><code>config/modelo.json</code></a>. Cada atualização grava a versão da regra e o hash desse arquivo, e o histórico dele fica no GitHub.</p>
-<h2 id="o-que-o-site-mede">O que o site mede</h2>
-<p><strong>O número do topo.</strong> Quantas vezes a chance de uma recessão começar nos próximos 12 meses (os quatro trimestres ainda não divulgados) está acima do normal. O normal é essa mesma chance só com a história das recessões brasileiras (a <a href="#taxa-base">taxa-base</a>): cerca de 20%. Com 2×, a chance é o dobro da de um ano comum. Doze meses é o horizonte em que os indicadores pesam inteiros.</p>
-<p><strong>A seta.</strong> Ao lado do número, a seta compara com a atualização mais próxima de 30 dias atrás (ou com a primeira, enquanto o site tiver menos de 30 dias; na primeira atualização, não há seta). Se o multiplicador subiu mais de 10%, "piorando"; se caiu mais de 10%, "melhorando"; senão, "estável".</p>
-<p><strong>Recessão técnica.</strong> Dois trimestres seguidos de queda do PIB:</p>
-<ul>
-<li><strong>Dado:</strong> PIB trimestral dessazonalizado do IBGE (<a href="https://sidra.ibge.gov.br/tabela/5932">tabela 5932</a>, taxa contra o trimestre imediatamente anterior). Queda é a taxa divulgada, com uma casa decimal, abaixo de zero; 0,0% não conta.</li>
-<li><strong>Revisões:</strong> o PIB é revisado; em 2021, uma recessão técnica anunciada sumiu na revisão seguinte.</li>
-<li><strong>Auditoria:</strong> se a datação do CODACE/FGV IBRE divergir da regra técnica, o site publica as duas leituras.</li>
-</ul>
-<p>O nome do site fala em crise; a métrica é recessão técnica. "Vai dar crise?" é a pergunta de bar; a resposta é uma conta com regra escrita.</p>
-<p><strong>E até 2030.</strong> A mesma conta, estendida, dá a chance de pelo menos uma recessão técnica até o fim de 2030:</p>
+<p>As regras estão em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json"><code>config/modelo.json</code></a>. O que foi estimado com os dados (limites, pesos, regressão) está em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/calibracao.json"><code>config/calibracao.json</code></a>, e os indicadores mês a mês, em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/mensal.json"><code>data/historico/mensal.json</code></a>. Cada atualização grava o hash dos dois arquivos de regra.</p>
+<h2 id="a-pergunta">A pergunta</h2>
 <blockquote>
-<p>O PIB do Brasil terá dois trimestres seguidos de queda entre o 3º trimestre de 2026 e o 4º trimestre de 2030?</p>
+<p>O risco de o Brasil entrar em recessão técnica nos próximos 12 meses está acima ou abaixo do normal?</p>
 </blockquote>
-<p>A resposta sai na série vigente em março de 2031. Essa chance aparece no fim de "Como a conta funciona", com a faixa dos nove métodos da taxa-base. Ela se move devagar, porque os indicadores só pesam nos próximos trimestres.</p>
-<h2 id="taxa-base">Taxa-base</h2>
-<p>Antes de olhar qualquer dado ou notícia, a história já diz muito. O CODACE datou 10 recessões desde 1980. Dividindo os inícios de recessão pelos trimestres em expansão, o resultado depende de onde a conta começa:</p>
-<table>
-<thead>
-<tr>
-<th>Período de referência</th>
-<th>Risco por trimestre</th>
-<th>Até o 4T30 (17 inícios possíveis)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1980–2026 (10 recessões)</td>
-<td>7,5%</td>
-<td>73%</td>
-</tr>
-<tr>
-<td>1995–2026, pós-Real (7)</td>
-<td>7,1%</td>
-<td>71%</td>
-</tr>
-<tr>
-<td>2T99–2026, metas de inflação e câmbio flutuante (5)</td>
-<td>5,6%</td>
-<td>63%</td>
-</tr>
-<tr>
-<td>2004–2026 (3)</td>
-<td>4,0%</td>
-<td>50%</td>
-</tr>
-</tbody>
-</table>
-<p>Escolher uma linha dessa tabela é escolher o resultado. Por isso o site não escolhe: a âncora é a <strong>mediana de nove métodos</strong>, e cada um tem uma regra fixa para decidir quanto o passado pesa.</p>
-<table>
-<thead>
-<tr>
-<th>Método</th>
-<th>Risco por trimestre</th>
-<th>Até o 4T30</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Desde 2T99: metas de inflação e câmbio flutuante</td>
-<td>5,62%</td>
-<td>63%</td>
-</tr>
-<tr>
-<td>Desde 1T00: com a Lei de Responsabilidade Fiscal</td>
-<td>5,81%</td>
-<td>64%</td>
-</tr>
-<tr>
-<td>1980 em diante, peso cai à metade a cada 10 anos</td>
-<td>4,89%</td>
-<td>57%</td>
-</tr>
-<tr>
-<td>1980 em diante, peso cai à metade a cada 15 anos</td>
-<td>5,68%</td>
-<td>63%</td>
-</tr>
-<tr>
-<td>1980 em diante, peso cai à metade a cada 20 anos</td>
-<td>6,12%</td>
-<td>66%</td>
-</tr>
-<tr>
-<td>Média das janelas iniciadas entre 1T95 e 4T12</td>
-<td>5,06%</td>
-<td>59%</td>
-</tr>
-<tr>
-<td>Quebra estrutural em data desconhecida (bayesiano)</td>
-<td>5,28%</td>
-<td>60%</td>
-</tr>
-<tr>
-<td>Brasil desde 2T99 + 8 emergentes, peso de 10 anos</td>
-<td>4,92%</td>
-<td>58%</td>
-</tr>
-<tr>
-<td>Brasil desde 2T99 + 8 emergentes, peso de 25 anos</td>
-<td>4,43%</td>
-<td>54%</td>
-</tr>
-<tr>
-<td><strong>Mediana, usada pelo site</strong></td>
-<td><strong>5,3%</strong></td>
-<td><strong>60%</strong></td>
-</tr>
-</tbody>
-</table>
 <ul>
-<li><strong>Janelas com data justificada:</strong> 2T99 marca o fim do câmbio fixo, o canal das recessões de 1995 e 1998.</li>
-<li><strong>Peso que decai:</strong> todo trimestre desde 1980 conta, mas o peso cai à metade a cada 10, 15 ou 20 anos. Com meia-vida de 15 anos, o início da recessão de 2014–16 ainda pesa 57% e o do Plano Collor pesa 19%.</li>
-<li><strong>Média de janelas:</strong> em vez de uma data de início, a média de todas as que começam entre 1995 e 2012.</li>
-<li><strong>Quebra em data desconhecida:</strong> um modelo bayesiano compara "nada mudou" com "mudou em alguma data entre 1988 e 2022" e pondera as duas hipóteses pelos dados.</li>
-<li><strong>Brasil e vizinhos:</strong> o risco do Brasil desde 2T99 é puxado para a média de 8 emergentes parecidos (México, Chile, Colômbia, Peru, Argentina, África do Sul, Turquia e Rússia), de 3,4% por trimestre, com peso equivalente a 10 ou 25 anos de dados (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/emergentes.json"><code>data/emergentes.json</code></a>).</li>
+<li><strong>Recessão técnica:</strong> dois trimestres seguidos de queda do PIB dessazonalizado do IBGE (<a href="https://sidra.ibge.gov.br/tabela/5932">tabela 5932</a>, taxa contra o trimestre anterior, com uma casa decimal; 0,0% não é queda).</li>
+<li><strong>Recaídas:</strong> quedas separadas por um só trimestre sem queda contam como uma recessão só. 2014–16 é um episódio, não três.</li>
+<li><strong>Próximos 12 meses:</strong> os 4 trimestres a partir do primeiro que o IBGE ainda não divulgou. O IBGE leva cerca de 60 dias para divulgar cada trimestre.</li>
+<li><strong>Normal:</strong> a média dos meses desde 2002.</li>
+<li><strong>Recessões na série atual do IBGE:</strong> 2T01–4T01, 1T03–2T03, 4T08–1T09, 2T14–4T16 e 1T20–2T20. Todas caem dentro de recessões datadas pelo <a href="https://portalibre.fgv.br/codace">CODACE/FGV IBRE</a>. 2021 não conta: na série revisada, a queda do 2T21 ficou isolada.</li>
 </ul>
-<p>Só com a história, os nove métodos vão de 54% a 66% até 2030. Qualquer pessoa refaz a conta com <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/taxa_base.py"><code>src/taxa_base.py</code></a> e a cronologia em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/cronologia.json"><code>data/cronologia.json</code></a>.</p>
-<p><strong>O que ficou de fora.</strong></p>
-<ul>
-<li><strong>Tirar a pandemia:</strong> daria 2,7% por trimestre desde 2004 (37% até 2030). Choques externos fazem parte do risco até 2030: das cinco recessões desde 1999, duas vieram de choques globais (2008 e 2020).</li>
-<li><strong>Começar em 2004:</strong> com só três recessões, o intervalo de 90% para o risco vai de 1,4% a 9,4% por trimestre, e a diferença para antes de 2004 não é estatisticamente significativa (p ≈ 0,09).</li>
-<li><strong>Começar em 1980:</strong> trataria hiperinflação e câmbio fixo como riscos de hoje.</li>
-</ul>
-<p><strong>Conferência com o IBGE.</strong> A pergunta se resolve pela regra técnica do IBGE, mas a taxa-base usa a datação do CODACE. Na série atual da tabela 5932 (2T96 a 2T26), todo episódio de dois trimestres seguidos de queda cai dentro de uma recessão do CODACE, e nenhum fica de fora. 2021 não conta: na série revisada, a queda do 2T21 (−0,7%) ficou isolada. Quando quedas separadas por um único trimestre de alta contam como um episódio só (2014–16 teve três), os riscos coincidem com os do CODACE: 5,6% por trimestre desde 2T99 e 4,0% desde 2004. Contar cada recaída como recessão nova daria 7,7% desde 2T99, mas a pergunta é pela primeira recessão, não pelas recaídas.</p>
-<p>Um início de recessão no trimestre <em>t</em> exige que <em>t</em> e <em>t+1</em> estejam na janela, então há 17 inícios possíveis (3T26 a 3T30). Com 5,3% por trimestre, a chance só pela história é 1 − 0,947¹⁷ ≈ 60%.</p>
-<h2 id="a-conta">A conta</h2>
-<p>O modelo soma duas camadas na escala de log-odds (logit), o que torna cada contribuição exata e aditiva. As notícias não entram na conta: elas aparecem à parte, como pressão por tema (veja <a href="#noticias">Notícias</a>).</p>
-<p><code>logit(h_t) = logit(h0) + w_t × I
-chance de 12 meses = 1 − Π (1 − h_t), nos quatro primeiros trimestres
-multiplicador = chance de 12 meses ÷ normal
-P(recessão até 4T30) = 1 − Π (1 − h_t), em todos os trimestres até o 3T30</code></p>
-<ul>
-<li><strong>h0</strong> é a taxa-base de 5,3% por trimestre. O normal é a chance de 12 meses com I = 0: 1 − 0,947⁴ ≈ 19,6%.</li>
-<li><strong>I</strong> é a soma das contribuições dos indicadores, inclusive o de mercado.</li>
-<li><strong>w_t</strong> é o peso no tempo: 1 nos quatro primeiros trimestres ainda não divulgados, 2/3 no quinto, 1/3 no sexto e zero daí em diante.</li>
-</ul>
-<p>Ninguém prevê recessão a quatro anos com dados de hoje: os melhores métodos acertam de 6 a 18 meses. Por isso os indicadores mexem só no risco dos próximos trimestres, e a chance até 2030 se move devagar.</p>
-<p><strong>De onde vem o multiplicador.</strong> A página "Como a conta funciona" parte do normal de 12 meses e soma o que cada indicador acrescenta, em pontos percentuais, até chegar à chance de hoje.</p>
-<p><strong>Trimestres divulgados.</strong> Quando o IBGE divulga um trimestre, ele sai da janela (efeito tempo). Se dois trimestres seguidos vierem negativos, a pergunta está resolvida e a chance vai a 100%. Se o último trimestre divulgado vier negativo, a chance de o seguinte também cair parte de 50% (parâmetro por julgamento, a calibrar com a série do IBGE) e recebe o mesmo deslocamento de curto prazo.</p>
-<p><strong>Decomposição.</strong> A conversão de log-odds para probabilidade não é linear, então a repartição em pontos usa valores de Shapley exatos: cada fator recebe a sua contribuição média sobre todas as ordens possíveis, e a soma bate exatamente com o total repartido. Em "De onde vem", os fatores repartem a diferença entre a chance de 12 meses de hoje e o normal; a tabela de indicadores mostra esses mesmos pontos. Em "O que mudou" e na conta do dia de cada post, os fatores repartem a variação entre duas atualizações; no post, a variação aparece em vezes o normal, com duas casas. Os números exibidos são arredondados de modo que as parcelas somem o total exibido.</p>
-<h2 id="indicadores">Indicadores</h2>
-<p>Sete sinais, cada um com valor neutro, inclinação e efeito máximo, publicados antes de entrarem na conta. Os pesos são de julgamento, com encolhimento de 25% na soma para não contar duas vezes sinais correlacionados (juros, câmbio e dívida andam juntos), e teto de 1,2 em log-odds para a camada inteira.</p>
+<p>O nome do site fala em crise; a métrica é recessão técnica.</p>
+<h2 id="o-nivel">O nível</h2>
+<p>Cinco níveis: Muito abaixo, Abaixo, Normal, Acima e Muito acima. O nível sai só de dados, em cinco passos.</p>
+<p><strong>1. Nove indicadores</strong>, cada um calculado só com o que já tinha sido divulgado no dia:</p>
 <table>
 <thead>
 <tr>
 <th>Indicador</th>
+<th>Fator</th>
 <th>Definição</th>
-<th>Neutro</th>
-<th>Efeito por unidade</th>
-<th>Faixa do efeito</th>
+<th>Alerta quando</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>IBC-Br</td>
 <td>Atividade</td>
-<td>IBC-Br dessazonalizado, média de 3 meses contra os 3 anteriores (BCB 24364)</td>
-<td>+0,5%</td>
-<td>−0,40 por p.p.</td>
-<td>−0,30 a +0,60</td>
+<td>IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores</td>
+<td>cai</td>
 </tr>
 <tr>
-<td>Desemprego</td>
-<td>Regra de Sahm adaptada: média de 3 meses da desocupação da PNAD menos o mínimo dessa média nos 12 meses anteriores (BCB 24369)</td>
-<td>0,15 p.p.</td>
-<td>+1,20 por p.p.</td>
-<td>−0,20 a +0,70</td>
+<td>PIB esperado pelo Focus</td>
+<td>Atividade</td>
+<td>Mediana do Focus para o PIB do ano e do seguinte, ponderada pelos meses que faltam em cada um (próximos 12 meses)</td>
+<td>cai</td>
 </tr>
 <tr>
-<td>Juro real ex-ante</td>
-<td>Selic meta (BCB 432) descontada da inflação esperada para 12 meses (Focus)</td>
-<td>5%</td>
-<td>+0,08 por p.p.</td>
-<td>−0,20 a +0,40</td>
+<td>Juro real</td>
+<td>Juro real e inflação</td>
+<td>Selic meta (BCB 432) descontada da inflação esperada em 12 meses (Focus)</td>
+<td>sobe</td>
 </tr>
 <tr>
-<td>Dívida das famílias</td>
-<td>Comprometimento de renda com dívidas (BCB 29034) menos a média de 36 meses</td>
-<td>0</td>
-<td>+0,10 por p.p.</td>
-<td>−0,15 a +0,30</td>
+<td>Renda comprometida com dívidas</td>
+<td>Crédito e famílias</td>
+<td>Comprometimento de renda das famílias (BCB 29034) menos a média dos 36 meses anteriores</td>
+<td>sobe</td>
+</tr>
+<tr>
+<td>Juro do Tesouro IPCA+</td>
+<td>Mercado financeiro</td>
+<td>Taxa do título IPCA+ com vencimento mais perto de 10 anos menos a sua mediana nos 3 anos anteriores</td>
+<td>sobe</td>
+</tr>
+<tr>
+<td>Dólar</td>
+<td>Mercado financeiro</td>
+<td>Variação do dólar PTAX (BCB 1) em 3 meses</td>
+<td>sobe</td>
 </tr>
 <tr>
 <td>Dívida pública</td>
-<td>Variação da dívida bruta do governo geral em 12 meses (BCB 13762)</td>
-<td>+1 p.p. do PIB</td>
-<td>+0,04 por p.p.</td>
-<td>−0,10 a +0,25</td>
+<td>Contas públicas</td>
+<td>Variação da dívida bruta do governo geral (BCB 13762) em 12 meses, em pontos do PIB</td>
+<td>sobe</td>
 </tr>
 <tr>
-<td>Câmbio</td>
-<td>Variação do dólar PTAX em 63 dias úteis (BCB 1)</td>
-<td>0%</td>
-<td>+0,015 por p.p.</td>
-<td>−0,10 a +0,25</td>
+<td>Regra de Sahm</td>
+<td>Emprego</td>
+<td>Média de 3 meses da desocupação da PNAD (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores</td>
+<td>sobe</td>
 </tr>
 <tr>
-<td>Juro real longo (mercado)</td>
-<td>Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (<a href="https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto">Tesouro Direto</a>, venda pela manhã) menos a sua mediana nos 3 anos anteriores</td>
-<td>0 p.p.</td>
-<td>+0,25 por p.p.</td>
-<td>−0,15 a +0,40</td>
+<td>Preço das commodities</td>
+<td>Cenário externo</td>
+<td>Variação em 6 meses do índice de commodities do FMI (FRED PALLFNFINDEXM)</td>
+<td>cai</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Por que um indicador de mercado.</strong> Como as notícias ficam fora da conta, o número precisa de algo que reaja no mesmo dia a um choque de confiança, como o do dia seguinte à eleição de 2026 (a taxa de 10 anos foi de 6,9% para 8,1%). O juro real longo resume, em preço, o prêmio que o mercado cobra pelo risco fiscal e pela incerteza, e não depende de quem escreve as manchetes. A série sai com um dia de atraso; se o arquivo do Tesouro não puder ser baixado e a cópia local tiver mais de 5 dias, o indicador sai da conta naquele dia. O peso é de julgamento: num teste com dados de 1999 a 2025, nenhum modelo de pilares estimado, nem um com o prêmio de risco (EMBI+), bateu a taxa-base fora da amostra. Ele sobrepõe em parte o juro real ex-ante, e o encolhimento de 25% e o teto da camada valem para os sete juntos.</p>
-<p>Ficaram de fora, por falta de fonte gratuita estável: inclinação da curva de juros (B3), incerteza (FGV IBRE), CDS e indicador antecedente composto. A curva de juros, a mais citada na literatura, quase não tem poder preditivo em emergentes e não foi robusta no Brasil em 2005–2023.</p>
-<h2 id="noticias">Notícias</h2>
-<p>Um modelo de linguagem (Claude, chamado sem ferramentas e com saída em esquema JSON validado por código) lê as manchetes de oito veículos com linhas editoriais diferentes: Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1. Ele transforma os fatos relevantes em eventos estruturados: tema, direção, tamanho e estágio.</p>
-<p><strong>As notícias não mexem no número.</strong> Se cada notícia somasse um pedaço até um teto, uma ou duas notícias ruins por dia encheriam o teto em poucos dias e o número travaria; e, como os jornais publicam mais notícia ruim que boa, a camada tenderia a ficar sempre no limite de cima. Por isso o número só se mexe com dados e mercado, e as notícias mostram, à parte, para que lado o risco está sendo empurrado antes de os dados confirmarem.</p>
-<p><strong>Uma atualização por dia.</strong> As manchetes são coletadas de hora em hora e guardadas na máquina que roda o site. Às 06h30, a atualização lê as manchetes do dia anterior que ainda não foram lidas, calcula o número e publica um post. Cada manchete é lida uma vez só.</p>
-<p><strong>A pressão por tema.</strong> Cada evento entra num de oito temas: contas públicas, juros e inflação, crédito, atividade e emprego, mundo, mercado financeiro, instituições, e energia, safra e preços. Em cada tema:</p>
-<ol>
-<li>Cada evento tem um efeito, em log-odds, conforme o tamanho e o estágio do fato (tabelas abaixo). O efeito cai em linha reta até zero em 75 dias.</li>
-<li>De cada lado (o que pesa e o que alivia), conta inteiro o evento mais forte, metade do segundo, um quarto do terceiro, e assim por diante. Dez manchetes sobre o mesmo aperto não valem dez vezes uma.</li>
-<li>O saldo do tema é o que pesa menos o que alivia. A seta do tema sobe com saldo de 0,05 ou mais, desce com −0,05 ou menos e fica em "sem pressão clara" no meio. A seta geral soma os saldos dos temas, com corte de 0,10.</li>
-</ol>
-<p>A pressão não tem número na página: só a seta de cada tema e as notícias que mais pesam nela. O cálculo é feito por código, a partir dos eventos já classificados; o modelo de linguagem não decide a seta.</p>
-<p><strong>Estágio.</strong> Cada evento recebe o estágio em que o fato está, e o estágio multiplica o efeito:</p>
+<p><strong>2. Um limite de alerta para cada indicador</strong>, pelo método de sinais de Kaminsky, Lizondo e Reinhart (1998):</p>
+<ul>
+<li>Candidatos: os percentis 70, 75, 80, 85, 90 e 95 da história do próprio indicador, do lado ruim.</li>
+<li>Fica o candidato com a menor razão ruído/sinal: a fração de alarmes falsos nos meses sem recessão à frente, dividida pela fração de alertas certos nos meses com recessão à frente.</li>
+<li>O indicador precisa ter alertado antes de pelo menos 2 recessões. Um indicador sem nenhum alarme falso é tratado como se tivesse dado um, para o peso não ficar infinito.</li>
+</ul>
+<p><strong>3. Pesos pelo histórico.</strong> Peso = 1 ÷ razão ruído/sinal. Razão de 1 ou mais (mais alarme falso que alerta certo) dá peso zero, e o indicador aparece como "não antecipou recessões". O composto do mês é a soma dos pesos dos indicadores em alerta, dividida pela soma dos pesos dos indicadores com dado. São precisos pelo menos 3 indicadores com dado.</p>
+<p><strong>4. Do composto ao nível.</strong></p>
+<p><code>logit(p) = logit(p̄) + k × (a + b × composto − logit(p̄))
+razão = p ÷ p̄</code></p>
+<ul>
+<li><strong>a</strong> e <strong>b</strong> saem de uma regressão logística dos meses com recessão à frente contra o composto, com uma penalidade mínima (0,01 × b²) só para a conta ter solução quando o composto separa os meses sem erro.</li>
+<li><strong>p̄</strong> é a média da amostra. <strong>k</strong> puxa a estimativa para a média; ele é escolhido no teste fora da amostra (abaixo).</li>
+<li>Cortes da razão: abaixo de 0,5, Muito abaixo; de 0,5 a 0,8, Abaixo; de 0,8 a 1,25, Normal; de 1,25 a 2, Acima; 2 ou mais, Muito acima.</li>
+</ul>
+<p><strong>5. Confirmação.</strong> O nível só muda quando duas atualizações diárias seguidas dão o mesmo nível novo. Uma atualização refeita no mesmo dia não confirma a si mesma.</p>
+<p><strong>O resultado com os dados de 2002 a agosto de 2025</strong> (243 meses, 48 com recessão à frente):</p>
 <table>
 <thead>
 <tr>
-<th>Estágio</th>
-<th>Peso</th>
+<th>Indicador</th>
+<th>Limite de alerta</th>
+<th>Alertou antes de</th>
+<th>Parte do peso</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Dado divulgado (estatística oficial, resultado publicado)</td>
-<td>1</td>
+<td>Dólar</td>
+<td>alta de 18,8% em 3 meses</td>
+<td>3 de 4 recessões</td>
+<td>82%</td>
 </tr>
 <tr>
-<td>Decisão tomada (lei sancionada, decisão do Copom, medida publicada)</td>
-<td>1</td>
+<td>IBC-Br</td>
+<td>queda de 1,0% no trimestre</td>
+<td>3 de 3</td>
+<td>6%</td>
 </tr>
 <tr>
-<td>Proposta em votação (projeto enviado, votação marcada)</td>
+<td>Preço das commodities</td>
+<td>queda de 16% em 6 meses</td>
+<td>2 de 4</td>
+<td>6%</td>
+</tr>
+<tr>
+<td>PIB esperado pelo Focus</td>
+<td>abaixo de 1,9% em 12 meses</td>
+<td>4 de 4</td>
+<td>3%</td>
+</tr>
+<tr>
+<td>Juro do Tesouro IPCA+</td>
+<td>0,47 ponto acima da mediana de 3 anos</td>
+<td>2 de 3</td>
+<td>2%</td>
+</tr>
+<tr>
+<td>Juro real, regra de Sahm</td>
+<td>mais alarme falso que alerta certo</td>
+<td>–</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Renda comprometida, dívida pública</td>
+<td>alertaram antes de menos de 2 recessões</td>
+<td>–</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>"Recessões" aqui são as que cada série alcança: a de 2001 começou antes da amostra, e várias séries começam depois de 2002.</p>
+<h2 id="o-teste-fora-da-amostra">O teste fora da amostra</h2>
+<ul>
+<li>A amostra foi cortada em blocos de 3 anos. Um corte que cairia dentro do período de aviso de uma recessão foi empurrado para o fim dele.</li>
+<li>Cada bloco foi previsto por uma conta que não o viu: limites, pesos e regressão reestimados só com os outros blocos.</li>
+<li>Medida de erro: escore de Brier (o quadrado da diferença entre a chance prevista e o que aconteceu).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Conta</th>
+<th>Erro fora da amostra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Repetir sempre a média</td>
+<td>0,171</td>
+</tr>
+<tr>
+<td>A conta do site (k = 0,8)</td>
+<td>0,159, ou 7% menor</td>
+</tr>
+<tr>
+<td>A conta do site sem o dólar</td>
+<td>não ganha da média (k = 0)</td>
+</tr>
+<tr>
+<td>Todos os pesos iguais</td>
+<td>não ganha da média (k = 0)</td>
+</tr>
+</tbody>
+</table>
+<p>O que isso quer dizer, sem enfeite:</p>
+<ul>
+<li><strong>O ganho é pequeno e depende do dólar.</strong> Os outros indicadores, somados por esse método, não acrescentam acerto fora da amostra.</li>
+<li><strong>Por isso o nível fica no normal na maior parte do tempo.</strong> Sem o dólar em alerta, a conta vai de Abaixo a Acima; com ele, vai a Muito acima.</li>
+<li><strong>Parte do acerto é de diagnóstico, não de previsão.</strong> Em 2008 e 2020, o dólar disparou junto com o começo da recessão, meses antes de o IBGE confirmá-la. Em 2002, o alerta veio meses antes da recessão de 2003.</li>
+<li><strong>Muito abaixo não aparece.</strong> Os indicadores medem perigo, não calmaria. Sem nenhum alerta, a razão fica em cerca de 0,77, que é Abaixo.</li>
+<li><strong>Quatro recessões é pouco.</strong> Um limite ou um peso pode mudar bastante com a próxima recessão. A calibração é refeita quando o IBGE confirmar um novo episódio.</li>
+<li><strong>Os dados são os de hoje.</strong> A série do PIB e a do IBC-Br usadas no teste são as revisadas, não as divulgadas na época. O teste respeita os atrasos de divulgação, mas não as revisões.</li>
+</ul>
+<p>O resultado não cria valor do zero: ele diz que, desde 2002, só choques grandes de câmbio separaram com clareza os meses antes de recessões. O resto dos fatores aparece no Resumo com o seu peso de hoje, quase sempre pequeno, e com a sua tendência.</p>
+<h2 id="tendencia-e-noticias">Tendência e notícias</h2>
+<p>As notícias não mexem no nível. Se cada notícia somasse um pedaço, como os jornais publicam mais notícia ruim que boa, o nível tenderia a ficar sempre em cima. As notícias servem para a tendência de cada fator nos próximos 6 meses.</p>
+<p><strong>A leitura das manchetes.</strong> As manchetes de oito jornais com linhas editoriais diferentes (Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1) são coletadas de hora em hora. Às 06h30, um modelo de linguagem (Claude, sem ferramentas, com saída em esquema JSON validado por código) lê as do dia anterior e transforma os fatos em eventos: fator, lado, tamanho (1 a 3) e estágio. Notícia que só repete um dado já medido pelos indicadores fica de fora.</p>
+<p><strong>A pressão do dia, por fator:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Regra</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pontos por tamanho do fato</td>
+<td>1, 2 ou 3</td>
+</tr>
+<tr>
+<td>Dado divulgado, decisão tomada</td>
+<td>vale inteiro</td>
+</tr>
+<tr>
+<td>Proposta em votação</td>
 <td>a chance estimada de aprovação, entre 0,2 e 0,8</td>
 </tr>
 <tr>
@@ -361,86 +349,78 @@ P(recessão até 4T30) = 1 − Π (1 − h_t), em todos os trimestres até o 3T3
 <td>Rumor, bastidor ou plano em estudo</td>
 <td>0,1</td>
 </tr>
-</tbody>
-</table>
-<p>Na dúvida, o classificador usa o estágio menos avançado. Evento sem estágio marcado vale inteiro.</p>
-<table>
-<thead>
 <tr>
-<th>Regra</th>
-<th>Valor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Efeito por tamanho do fato (1, 2, 3)</td>
-<td>0,04, 0,12 e 0,20 em log-odds</td>
+<td>Fato de um só jornal</td>
+<td>vale metade</td>
 </tr>
 <tr>
 <td>Fato que o mercado já esperava</td>
 <td>vale metade</td>
 </tr>
 <tr>
-<td>Fato noticiado por um só veículo</td>
-<td>vale metade</td>
+<td>Vários fatos do mesmo lado</td>
+<td>o mais forte conta inteiro, o segundo metade, o terceiro um quarto</td>
 </tr>
 <tr>
-<td>Teto por evento</td>
-<td>0,2 em log-odds</td>
+<td>Seta do fator</td>
+<td>saldo de 1 ou mais (pesa) ou de −1 ou menos (alivia)</td>
 </tr>
 <tr>
-<td>Prazo de validade</td>
-<td>o efeito cai em linha reta até zero em 75 dias</td>
-</tr>
-<tr>
-<td>Notícia que só relata um dado já medido</td>
-<td>fica de fora (evita dupla contagem)</td>
-</tr>
-<tr>
-<td>Estágio do fato</td>
-<td>multiplica o efeito (tabela acima)</td>
+<td>Seta geral</td>
+<td>soma dos fatores, com corte de 2</td>
 </tr>
 </tbody>
 </table>
-<p>O LLM extrai e narra; não prevê. Ele não vê os pesos, não escolhe a direção do número nem da pressão e não edita o site. O texto das notícias é tratado como dado, nunca como instrução, e nenhuma notícia pode alterar pesos ou regras. A linguagem dos eventos descreve políticas e números, não pessoas ou partidos.</p>
-<p><strong>O post do dia.</strong> Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o que moveu o número, para que lado as notícias empurram, tema a tema, e o que acompanhar. Ele não muda o número nem a pressão. Um verificador em código procura moldes de texto automático e pede uma reescrita no máximo; se a escrita falhar, o site publica a conta do dia sem texto corrido.</p>
-<p>Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta. Respostas antigas nunca são recalculadas: o que foi publicado fica congelado.</p>
+<p><strong>A tendência de cada fator.</strong> Fica em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/dossie.json"><code>data/dossie.json</code></a>: piora, estável, melhora ou sem direção clara.</p>
+<ul>
+<li><strong>Fatos de dados:</strong> saem de código, todo dia, comparando o dado de hoje com a série desde 2002 ("o maior desde…").</li>
+<li><strong>Fatos de notícia:</strong> no máximo 2 por fator, válidos por 180 dias.</li>
+<li><strong>O que outros projetam, em igual destaque:</strong> em atividade, juro e mercado, o Focus, calculado por código; nos demais, a projeção pública mais recente de uma instituição (IFI, por exemplo). Quando a projeção aponta para o lado contrário da nossa tendência, aparece como "Discordam".</li>
+<li><strong>Quem muda o quê:</strong> o modelo de linguagem só propõe. Fato de notícia novo entra sempre. Troca de tendência só entra com dado divulgado ou decisão tomada, noticiados por pelo menos 2 jornais. Nos fatores com Focus, a projeção não aceita troca pelo modelo.</li>
+<li><strong>Os dois lados:</strong> cada fator mostra o que o melhoraria e o que o pioraria. Os textos descrevem mecanismos e números, não intenções, pessoas ou partidos, e nunca dizem o que um governo deveria fazer.</li>
+</ul>
+<p><strong>O placar.</strong> Cada tendência é registrada e conferida 6 meses depois contra uma medida fixa por fator (atividade: IBC-Br; juro: juro real; crédito: renda comprometida; mercado: taxa do Tesouro IPCA+; contas: dívida bruta; emprego: desemprego; externo: índice de commodities).</p>
+<ul>
+<li>"Estável" acerta se a medida andou menos de um quarto do desvio-padrão das variações de 6 meses desde 2002; "piora" e "melhora", se andou mais que isso para o lado dito.</li>
+<li>Leitura trocada antes do prazo fica registrada como substituída, sem resultado.</li>
+<li>Para comparar: por acaso, desde 2002, "piora" acertaria 41% das vezes, "estável" 21% e "melhora" 39%, na média dos fatores. Em crédito e contas públicas, "piora" acertaria mais da metade das vezes, porque essas séries subiram na maior parte do período.</li>
+</ul>
+<h2 id="o-post-do-dia">O post do dia</h2>
+<p>Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o nível, os fatores que pesam, para que lado as notícias empurram e as próximas datas. Ele não muda o nível, a pressão nem a tendência. Um verificador em código procura moldes de texto automático, afirmações de chance de recessão e explicações de método, e pede uma reescrita no máximo. Se a escrita falhar, sai a atualização sem texto corrido.</p>
+<p>Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em <a href="https://github.com/pedrojahara/vaidarcrise/tree/main/runs"><code>runs/</code></a>. O que foi publicado fica congelado.</p>
 <h2 id="salvaguardas">Salvaguardas</h2>
 <ul>
-<li><strong>Disjuntor:</strong> se a chance até 2030 andar mais de 5 pontos de uma atualização para a outra, a conta sai com o selo "em revisão".</li>
-<li><strong>Dado defasado:</strong> se a conta passar de 36 horas sem atualização, a página avisa.</li>
-<li><strong>Falha do LLM:</strong> a atualização sai só com dados, e a pressão mostra só os eventos que já valiam, perdendo força.</li>
-<li><strong>Falha do Tesouro Direto:</strong> vale a cópia local de até 5 dias; mais velha, o indicador de mercado sai da conta naquele dia.</li>
-<li><strong>Os dois lados:</strong> a página mostra até quatro argumentos por mais crise e por menos crise, tirados das manchetes. Só troca de lista quando a leitura do dia traz pelo menos um argumento de cada lado.</li>
-<li><strong>Placar:</strong> as previsões de 12 meses ficam registradas e serão pontuadas pelo escore de Brier quando vencerem.</li>
+<li><strong>Dado defasado:</strong> se a página passar de 36 horas sem atualização, ela avisa.</li>
+<li><strong>Falha de coleta:</strong> vale o último valor de até 10 dias (dado diário) ou 70 dias (dado mensal). Mais velho, o indicador sai da conta do dia, e o composto usa só os que têm dado.</li>
+<li><strong>Falha do modelo de linguagem:</strong> a atualização sai só com dados e sem pressão de notícias.</li>
+<li><strong>Texto das notícias:</strong> é tratado como dado, nunca como instrução. Nenhuma notícia muda pesos ou regras.</li>
 </ul>
 <h2 id="o-que-ainda-falta">O que ainda falta</h2>
 <ul>
-<li>Backtest de 1996 a 2026 das camadas 1 e 2, com os dados como eram conhecidos na época. O LLM não entra no backtest, porque ele sabe o que aconteceu em 2015 e 2020.</li>
-<li>Teste mensal de troca de nomes: reprocessar uma amostra de notícias trocando os atores e publicar se a classificação mudou.</li>
-<li>Probit em painel com cerca de 20 emergentes para estimar os pesos com mais dados do que as 7 recessões brasileiras desde 1995.</li>
-<li>Calibrar a chance de um trimestre negativo ser seguido de outro. Na série atual do IBGE, isso aconteceu em 7 de 16 casos desde 1996 (44%); o parâmetro fica em 50% até o backtest.</li>
-<li>Avaliar um ajuste limitado para vulnerabilidades domésticas (fiscal, juros, crédito), com base nas causas das recessões passadas. Ele só entra se melhorar o backtest.</li>
+<li>Refazer o teste com os dados como eram divulgados na época (com revisões), quando houver séries de vintage para todos os indicadores.</li>
+<li>Estimar os limites com um painel de emergentes, para ter mais que quatro recessões.</li>
+<li>Teste de troca de nomes: reprocessar uma amostra de notícias trocando os atores e publicar se a classificação mudou.</li>
+<li>Conferir o placar contra o Focus, além do dado.</li>
 </ul>
-<p>Se o backtest não bater a taxa-base, o site vai dizer isso em público. Um teste com seis séries do Banco Central e o EMBI+ (1999–2025) não bateu: os pesos estimados mudavam de sinal conforme a versão, e o erro fora da amostra ficou de 8% a 58% maior que o da taxa-base. Por isso os pesos continuam de julgamento.</p>
 <h2 id="onde-erramos">Onde erramos</h2>
-<p>Erros são listados aqui com data, o que estava errado e o efeito no número. Nenhum até agora.</p>
+<p>Erros são listados aqui com data, o que estava errado e o efeito no nível. Nenhum até agora.</p>
 <p>Achou um? <a href="https://github.com/pedrojahara/vaidarcrise/issues">Abra uma issue</a>.</p>
 <h2 id="fontes">Fontes</h2>
 <ul>
+<li>Kaminsky, Lizondo e Reinhart (1998), <em>Leading indicators of currency crises</em>, IMF Staff Papers</li>
+<li>Sahm (2019), <em>Direct stimulus payments to individuals</em>, Brookings, sobre a regra de Sahm</li>
+<li>Brier (1950), <em>Verification of forecasts expressed in terms of probability</em>, Monthly Weather Review</li>
 <li><a href="https://portalibre.fgv.br/codace">Datação dos ciclos econômicos brasileiros, CODACE/FGV IBRE</a></li>
 <li><a href="https://www3.bcb.gov.br/sgspub/">Banco Central: séries temporais (SGS)</a> e <a href="https://www.bcb.gov.br/publicacoes/focus">Focus</a></li>
 <li><a href="https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9300-contas-nacionais-trimestrais.html">IBGE: Contas Nacionais Trimestrais</a></li>
+<li><a href="https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto">Tesouro Direto: taxas dos títulos</a></li>
+<li><a href="https://fred.stlouisfed.org/series/PALLFNFINDEXM">FMI, índice de preços de commodities, via FRED</a></li>
 <li>An, Jalles e Loungani (2018), <em>How well do economists forecast recessions?</em>, FMI</li>
-<li>Chinn e Ferrara (2024), curva de juros em emergentes, NBER w32084</li>
-<li>Tetlock e Gardner (2015), <em>Superforecasting</em>, sobre classes de referência</li>
-<li>Pesaran e Timmermann (2007), <em>Selection of estimation window in the presence of breaks</em>, Journal of Econometrics</li>
-<li>Pesaran, Pettenuzzo e Timmermann (2006), <em>Forecasting time series subject to multiple structural breaks</em>, Review of Economic Studies</li>
 </ul>
 </main>
 
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mostra quantas vezes a chance de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima da de um ano comum, que pela história das recessões brasileiras é de cerca de 20%. A seta compara com a conta de 30 dias antes e só muda quando o risco anda mais de 10%. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
+  <p>O Vai dar crise? mostra se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal da história brasileira desde 2002. O nível sai só de dados. As notícias mostram a tendência e não mexem no nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
   <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Abra uma issue</a></p>
 </div></footer>
 </body>
