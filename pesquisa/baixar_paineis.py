@@ -171,6 +171,53 @@ def fmi() -> None:
     (OUT / "fmi_datamapper.json").write_text(json.dumps(tudo))
 
 
+# ---------------------------------------------------------------- DBnomics e OECD (PIB trimestral, plano B do FRED)
+def dbnomics() -> None:
+    pedidos = {
+        "ifs_pib_real_sa": ("IMF/IFS", {"FREQ": ["Q"], "INDICATOR": ["NGDP_R_SA_XDC"]}),
+        "ifs_pib_real": ("IMF/IFS", {"FREQ": ["Q"], "INDICATOR": ["NGDP_R_XDC"]}),
+        "ifs_juro_politica": ("IMF/IFS", {"FREQ": ["M"], "INDICATOR": ["FPOLM_PA"]}),
+        "ifs_cpi": ("IMF/IFS", {"FREQ": ["M"], "INDICATOR": ["PCPI_IX"]}),
+        "oecd_qna_cresc": ("OECD/DSD_NAMAIN1@DF_QNA_EXPENDITURE_GROWTH_OECD", {"FREQ": ["Q"]}),
+        "bis_credito": ("BIS/WS_TC", {"FREQ": ["Q"]}),
+        "bis_hiato": ("BIS/WS_CREDIT_GAP", {"FREQ": ["Q"]}),
+        "bis_dsr": ("BIS/WS_DSR", {"FREQ": ["Q"]}),
+    }
+    for nome, (ds, dims) in pedidos.items():
+        series, offset = [], 0
+        while True:
+            u = (f"https://api.db.nomics.io/v22/series/{ds}?dimensions={requests.utils.quote(json.dumps(dims))}"
+                 f"&observations=1&limit=1000&offset={offset}")
+            b = baixar(u, timeout=180)
+            try:
+                j = json.loads(b) if b else None
+                docs = j["series"]["docs"] if j else []
+                total = j["series"]["num_found"] if j else 0
+            except (ValueError, KeyError, TypeError):
+                docs, total = [], 0
+            series += [{"codigo": x.get("series_code"), "dims": x.get("dimensions"), "periodo": x.get("period"),
+                        "valor": x.get("value")} for x in docs]
+            offset += 1000
+            if not docs or offset >= total or offset > 20000:
+                break
+        (OUT / f"dbn_{nome}.json").write_text(json.dumps(series))
+        registrar(f"dbn_{nome}", bool(series), series=len(series))
+
+
+def oecd() -> None:
+    base = "https://sdmx.oecd.org/public/rest/data/"
+    pedidos = {
+        "oecd_qna_cresc": "OECD.SDD.NAD,DSD_NAMAIN1@DF_QNA_EXPENDITURE_GROWTH_OECD,/all?startPeriod=1990-Q1&dimensionAtObservation=AllDimensions&format=csvfilewithlabels",
+        "oecd_qna_cresc_b": "OECD.SDD.NAD,DSD_NAMAIN1@DF_QNA_EXPENDITURE_GROWTH_OECD,/Q..............?startPeriod=1990-Q1&format=csv",
+        "oecd_kei_juro": "OECD.SDD.STES,DSD_KEI@DF_KEI,/all?startPeriod=1990-01&format=csv",
+    }
+    for nome, q in pedidos.items():
+        b = baixar(base + q, timeout=600)
+        if b and len(b) > 1000:
+            (OUT / f"{nome}.csv").write_bytes(b)
+        registrar(nome, bool(b and len(b) > 1000), bytes=len(b) if b else 0)
+
+
 # ---------------------------------------------------------------- JST Macrohistory (anual, 18 países ricos)
 def jst() -> None:
     for u in ("https://www.macrohistory.net/app/download/9834512469/JSTdatasetR6.xlsx",
@@ -186,7 +233,8 @@ def jst() -> None:
 if __name__ == "__main__":
     import sys
     alvo = sys.argv[1] if len(sys.argv) > 1 else "tudo"
-    fontes = {"bis": bis, "fred_globais": fred_globais, "banco_mundial": banco_mundial, "fmi": fmi, "jst": jst}
+    fontes = {"bis": bis, "fred_globais": fred_globais, "banco_mundial": banco_mundial, "fmi": fmi, "jst": jst,
+              "dbnomics": dbnomics, "oecd": oecd}
     fontes.update({f"fred_{v}": (lambda v=v: fred_var(v)) for v in MODELOS_FRED})
     for nome, f in fontes.items():
         if alvo not in ("tudo", nome):

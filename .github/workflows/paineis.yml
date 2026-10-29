@@ -2,9 +2,6 @@ name: paineis
 # Estudo: baixa dados de vários países (BIS, FRED, Banco Mundial, FMI, JST) para pesquisa/dados/.
 # Uma tarefa por fonte; cada uma grava o que conseguiu, mesmo que outra falhe.
 on:
-  push:
-    branches: [claude/project-thread-a3loy5]
-    paths: [pesquisa/baixar_paineis.py, .github/workflows/paineis.yml]
   workflow_dispatch:
 permissions:
   contents: write
