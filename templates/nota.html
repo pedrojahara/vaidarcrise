@@ -1,207 +1,116 @@
 {% extends "base.html" %}
 {% block titulo %}Como a conta funciona | Vai dar crise?{% endblock %}
-{% block descricao %}De onde vem o risco de recessão de {{ mult_fmt }} o normal em {{ data_curta(dia) }}: indicadores do Banco Central e do IBGE e a taxa do Tesouro IPCA+, ponto a ponto, e para que lado as notícias empurram.{% endblock %}
+{% block descricao %}De onde vem o nível de risco de recessão de {{ data_curta(dia) }}: nove indicadores do Banco Central, do IBGE, do Tesouro e do FMI, com limites de alerta tirados da história desde 2002.{% endblock %}
 {% block estilo %}
-.detalhe{padding-top:30px;padding-bottom:40px}
-.detalhe > *{max-width:760px}
-.detalhe .data{font:600 14px/1.3 var(--sistema);color:var(--meta);margin:0 0 6px}
-.detalhe h1{font:700 34px/1.15 var(--serifa);margin:0 0 12px}
-.detalhe h2{font:700 26px/1.2 var(--serifa);margin:0 0 10px}
-.detalhe h3{font:700 19px/1.3 var(--serifa);margin:0 0 6px}
-.detalhe section{padding:34px 0 30px;border-top:1px solid var(--fio)}
-.detalhe .lead{margin:0 0 18px}
-.detalhe .topo-nota{margin-bottom:28px}
-.detalhe .topo-nota .nota{margin-bottom:0}
-.tabela{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font:15px/1.45 var(--sistema)}
-th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--fio);vertical-align:top}
-th{font-size:13px;color:var(--meta);font-weight:600}
+.detalhe{padding-top:28px;padding-bottom:40px;font-family:var(--sistema)}
+.detalhe-topo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px 48px;align-items:start;padding-bottom:26px;border-bottom:1px solid var(--fio)}
+.detalhe-topo .nota{margin:0}
+.detalhe h1{font:700 30px/1.2 var(--serifa);margin:0 0 12px;text-wrap:balance}
+.detalhe h2{font:700 22px/1.3 var(--serifa);margin:0 0 12px}
+.detalhe section{padding:28px 0 6px;border-bottom:1px solid var(--fio)}
+.detalhe section:last-child{border-bottom:0}
+.detalhe section > *{max-width:760px}
+.detalhe section > .tabela{max-width:none}
+.topicos{margin:0;padding-left:1.1em;display:grid;gap:7px;font:16.5px/1.45 var(--sistema)}
+.passos{margin:0 0 18px;padding-left:1.3em;display:grid;gap:9px;font:16.5px/1.45 var(--sistema)}
+.passos b{font-weight:700}
+@media (max-width:820px){.detalhe-topo{grid-template-columns:minmax(0,1fr)}}
+.tabela{overflow-x:auto;margin:0 0 18px}
+table{width:100%;min-width:720px;border-collapse:collapse;font:14.5px/1.4 var(--sistema)}
+th,td{text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--fio);vertical-align:top}
+th{font-size:12.5px;color:var(--meta);font-weight:600;letter-spacing:.03em}
 td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
-.mono{font-variant-numeric:tabular-nums}
-.cascata{display:grid;gap:6px;margin:8px 0 14px;font-family:var(--sistema)}
-.cr{display:grid;grid-template-columns:minmax(120px,38%) 1fr 56px;align-items:center;gap:10px;font-size:14px}
-.cr .cn{text-align:right;line-height:1.25}
-.cr .ct{position:relative;height:18px}
-.cr .ct i{position:absolute;top:0;bottom:0;border-radius:2px}
-.cr.up i{background:var(--sobe)} .cr.dn i{background:var(--desce)} .cr.tot i{background:var(--hist)}
-.cr.tot .cn,.cr.tot .cv{font-weight:600}
-.cr .cv{font-size:13.5px;color:var(--meta);font-variant-numeric:tabular-nums}
-.cr.tot .cv{color:var(--tinta)}
-@media (max-width:640px){.cr{grid-template-columns:1fr 52px;row-gap:2px}.cr .cn{grid-column:1/-1;text-align:left}.cr .ct{grid-column:1}}
-.pilha{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px 14px;align-items:center;margin:14px 0 18px;font-family:var(--sistema)}
-.pilha .rot{font-size:14px;color:var(--meta);line-height:1.3}
-.pilha .rot b{font:700 21px/1 var(--sistema);color:var(--tinta);margin-left:6px}
-.barra{display:flex;gap:2px;height:34px;min-width:0;background:var(--maquina);border-radius:4px}
-.seg{display:flex;align-items:center;justify-content:center;font:600 14px/1 var(--sistema);color:#fff;white-space:nowrap;min-width:0}
-.seg:first-child{border-radius:4px 0 0 4px} .seg.fim{border-radius:0 4px 4px 0}
-.seg.h{background:var(--hist)} .seg.p{background:var(--sobe)} .seg.m{background:var(--desce)} .seg.h2{background:var(--hist2);color:var(--hist2-tinta)}
-.parcelas{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:14px}
-.parcelas li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;align-items:start}
-.parcelas .v{font:700 24px/1.15 var(--sistema);text-align:right;border-right:4px solid;padding-right:10px;font-variant-numeric:tabular-nums}
-.parcelas .v.h{border-color:var(--hist)} .parcelas .v.p{border-color:var(--sobe)} .parcelas .v.h2{border-color:var(--hist2)}
-.parcelas p{margin:0}
-.pilha-leg{font:13.5px/1.4 var(--sistema);color:var(--meta);display:flex;gap:6px 16px;flex-wrap:wrap}
-.pilha-leg i{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
-.eventos{display:grid;gap:0}
-.ev{padding:16px 0;border-bottom:1px solid var(--fio);overflow-wrap:anywhere}
-.ev:first-child{border-top:1px solid var(--fio)}
-.ev .topo-ev{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
-.ev h3{margin:4px 0 0}
-.ev .pts{font:700 20px/1.2 var(--sistema);white-space:nowrap;font-variant-numeric:tabular-nums}
-.ev p{margin:8px 0}
-.ev ul{margin:6px 0 0;padding-left:18px;font:14.5px/1.5 var(--sistema)}
-.ev .rodape{font:14px/1.5 var(--sistema);color:var(--meta)}
-.ev .peso{font:600 14px/1.5 var(--sistema);color:var(--meta)}
-h3.tema{margin:28px 0 0;font-size:20px}
-h3.tema span{font:600 15px/1.3 var(--sistema);margin-left:6px;white-space:nowrap}
-.pesos{font:15px/1.5 var(--sistema);margin:0 0 18px;padding-left:20px}
-.lados{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
-.lados > div{border-top:4px solid;padding-top:10px;overflow-wrap:anywhere}
-.lados > .mais{border-color:var(--sobe)} .lados > .menos{border-color:var(--desce)}
-.lados h3{color:var(--tinta)}
-.lados ol{padding-left:20px;margin:8px 0 0;color:var(--tinta)} .lados li{margin-bottom:10px}
-.lados .f{font:14px/1.5 var(--sistema);color:var(--meta)}
-.lados .f a{color:var(--meta)}
-.cen{list-style:none;padding:0;margin:12px 0;font:16px/1.5 var(--sistema)}
-.cen li{padding:6px 0;border-bottom:1px solid var(--fio)}
-.cen b{display:inline-block;min-width:2.4em;font-size:20px;font-variant-numeric:tabular-nums}
-.hist{width:100%;height:auto}
+td b{display:block}
+td .def{display:block;color:var(--meta);font-size:13px;margin-top:2px;max-width:30em}
+.chip{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 9px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.chip.alerta{color:var(--sobe)}.chip.atencao{color:var(--atencao)}.chip.normal{color:var(--meta)}
+.chip.semdado{color:var(--meta);border-style:dashed}
+.nota-tab{font:14px/1.5 var(--sistema);color:var(--meta);margin:0 0 18px}
+.hist{width:100%;height:auto;max-width:760px}
 svg text{font-family:var(--sistema)}
-.tl{font-size:14px;fill:var(--meta)}
-.gl{stroke:var(--fio);stroke-width:1} .g50{stroke:var(--meta);stroke-width:1;stroke-dasharray:4 4}
-.l1{fill:none;stroke:var(--tinta);stroke-width:2.5} .l1d{fill:var(--tinta)}
-.l2{fill:none;stroke:var(--meta);stroke-width:2;stroke-dasharray:5 4} .l2d{fill:var(--meta)}
-.legenda{font:13.5px/1.4 var(--sistema);color:var(--meta);display:flex;gap:16px;flex-wrap:wrap;margin-top:6px}
-.legenda i{display:inline-block;width:18px;height:3px;vertical-align:middle;margin-right:6px}
-.legenda i.tracejado{background:repeating-linear-gradient(90deg,var(--meta) 0 5px,transparent 5px 9px)}
-details.metodos summary{cursor:pointer;font:15px/1.4 var(--sistema);color:var(--meta);margin-top:12px}
-.aviso-falha{font:15px/1.45 var(--sistema);background:var(--maquina);border-left:4px solid var(--placa);padding:8px 12px;margin:0 0 16px}
-@media (max-width:640px){.pilha{grid-template-columns:minmax(0,1fr);gap:4px}.pilha .rot{margin-top:8px}.parcelas li{grid-template-columns:52px minmax(0,1fr)}.parcelas .v{font-size:20px}.lados{grid-template-columns:minmax(0,1fr)}.detalhe h1{font-size:29px}.detalhe h2{font-size:23px}}
+.tl{font-size:13px;fill:var(--meta)}
+.gl{stroke:var(--fio);stroke-width:1}
+.l1{fill:none;stroke:var(--tinta);stroke-width:2}
+.rec{fill:var(--alerta-fundo)}
+.legenda{font:13.5px/1.4 var(--sistema);color:var(--meta);display:flex;gap:16px;flex-wrap:wrap;margin:4px 0 14px}
+.legenda i{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px;background:var(--alerta-fundo)}
+.legenda i.linha{height:3px;background:var(--tinta);vertical-align:3px}
+.mais-info{font:15px/1.5 var(--sistema);margin:0 0 18px}
+@media (max-width:620px){.detalhe h1{font-size:26px}}
 {% endblock %}
 {% block corpo %}
+{% set val = cal.validacao %}
+{% set sem = val.sem_o_maior_peso %}
 <main class="in detalhe">
-  <p class="data">{{ data_extenso(dia) }}, conta das {{ hora }}</p>
-  <h1>Como a conta funciona</h1>
-  <p class="lead">O topo mostra quanto a chance de uma recessão começar nos próximos 12 meses{% if estrutura.inicios|length > 3 %} ({{ estrutura.inicios[0] }} a {{ estrutura.inicios[3] }}){% endif %} está acima ou abaixo do normal. Recessão aqui é técnica: dois trimestres seguidos de queda do PIB, na série do IBGE. O normal é {{ normal|num }}%, a chance num ano comum pela história das recessões no Brasil (a <a href="/metodologia/#taxa-base">âncora histórica</a>). A conta de {{ data_curta(dia)[:5] }} dá {{ curto|num }}%, ou {{ mult_fmt }} o normal.{% if post %} O que mudou no dia está no <a href="{{ post.link }}">post de {{ data_curta(dia)[:5] }}</a>.{% endif %}</p>
-
-  {% if estrutura.resolvido %}
-  <section id="de-onde"><h2>A pergunta já foi respondida</h2>
-  <p class="lead">O IBGE divulgou dois trimestres seguidos de queda do PIB dentro da janela que o site acompanha. A recessão técnica aconteceu.</p></section>
-  {% elif cascata %}
-  <section id="de-onde">
-  <h2>De onde vem o {{ mult_fmt }}</h2>
-  <p class="lead">Do normal ({{ normal|num }}%) até a chance de hoje ({{ curto|num }}%), cada barra é quanto um indicador acrescenta ou tira, em pontos percentuais.</p>
-  {{ cascata|safe }}
-  <p class="peq">Barras vermelhas aumentam o risco; verdes reduzem. A conta é feita em log-odds e repartida em pontos com valores de Shapley, que somam exatamente a diferença. São os mesmos números da tabela de indicadores abaixo. <a href="/metodologia/#a-conta">Detalhes da conta</a>.</p>
-  </section>
-  {% endif %}
-
-  {% if variacao %}
-  <section id="mudou">
-  <h2>O que mudou desde a atualização anterior</h2>
-  <p class="lead">A chance de 12 meses foi de {{ variacao.de|num }}% para {{ variacao.para|num }}% ({{ variacao.delta|sinal }} ponto{{ 's' if variacao.delta|abs >= 2 }}), e o multiplicador, de {{ mult_fmt_f(variacao.de_m) }} para {{ mult_fmt }}.{% if variacao.versao_anterior %} A barra "Nova metodologia" é a conta anterior refeita com a regra de hoje.{% endif %}</p>
-  {% if variacao.svg %}{{ variacao.svg|safe }}{% else %}<p>Nada mudou nos insumos.</p>{% endif %}
-  </section>
-  {% endif %}
-
-  {% if pressao %}
-  <section id="noticias">
-  <h2>A pressão das notícias</h2>
-  <p class="lead">As notícias não mexem no número. Elas mostram para que lado o risco está sendo empurrado, tema a tema, antes de os dados confirmarem. {% if pressao.sentido == 'sobe' %}Hoje, no conjunto, empurram para cima.{% elif pressao.sentido == 'desce' %}Hoje, no conjunto, aliviam.{% else %}Hoje, no conjunto, não empurram para um lado claro.{% endif %}</p>
-  <ul class="pesos">
-    <li>em cada tema, conta inteira a notícia mais forte de cada lado, metade da segunda, um quarto da terceira, e assim por diante: dez manchetes sobre o mesmo aperto não valem dez vezes uma;</li>
-    <li>o estágio pesa: dado divulgado e decisão tomada valem inteiros, proposta em votação vale pela chance de passar, anúncio vale {{ cfg.noticias.peso_por_estagio.anuncio|peso }} e rumor vale {{ cfg.noticias.peso_por_estagio.rumor|peso }};</li>
-    <li>cada notícia perde força em linha reta e some em {{ cfg.noticias.dias_de_decaimento }} dias;</li>
-    <li>a seta de um tema só aparece quando o saldo passa do corte publicado na <a href="/metodologia/#noticias">metodologia</a>.</li>
-  </ul>
-  {% if not llm_ok %}<div class="aviso-falha">A leitura de notícias falhou nesta atualização: valem só as notícias que já estavam registradas.</div>{% endif %}
-  {% for t in pressao.com_seta + pressao.sem_seta %}
-  <h3 class="tema">{{ t.nome }} <span class="{{ 'mais' if t.sentido == 'sobe' else 'menos' if t.sentido == 'desce' }}">{{ t.simbolo }} {{ t.palavra }}</span></h3>
-  <div class="eventos">
-  {% for n in t.noticias %}
-    <article class="ev">
-      <span class="peq">{{ n.data }}{% if n.estagio %} | {{ n.estagio }}{% endif %}{% if n.contra %} | {{ n.contra }}{% endif %}</span>
-      <h3>{{ n.titulo }}</h3>
-      {% if n.porque %}<p>{{ n.porque }}</p>{% endif %}
-      <ul>{% for f in n.fontes[:4] %}<li><a href="{{ f.url }}" rel="nofollow noopener">{{ f.veiculo }}: {{ f.titulo }}</a></li>{% endfor %}</ul>
-      <p class="rodape">Some da pressão até {{ n.vale_ate }}.</p>
-    </article>
-  {% endfor %}
+  <div class="detalhe-topo">
+    {% with grande = True %}{% include "_nota.html" %}{% endwith %}
+    <div>
+      <h1>Como a conta funciona</h1>
+      <ul class="topicos">
+        <li>A pergunta: o risco de o Brasil entrar em recessão nos próximos 12 meses está acima ou abaixo do normal?</li>
+        <li>Recessão: dois trimestres seguidos de queda do PIB, medido pelo IBGE.</li>
+        <li>Normal: o que se viu desde 2002.</li>
+        <li>O nível sai só de dados. As notícias não mexem nele.</li>
+      </ul>
+    </div>
   </div>
-  {% else %}
-  <p>Nenhuma notícia valendo agora.</p>
-  {% endfor %}
-  </section>
-  {% endif %}
 
-  <section id="indicadores">
-  <h2>Os indicadores</h2>
-  <p class="lead">{{ ["Nenhum", "Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove"][n_ind] if n_ind < 10 else n_ind }} sinais com pesos publicados antes de entrarem na conta. Cada um é comparado a um valor neutro e tem efeito máximo limitado. A coluna de pontos é a parte de cada um na chance de 12 meses.</p>
-  <div class="tabela"><table>
-    <thead><tr><th>Indicador</th><th class="n">Valor</th><th>Referência</th><th class="n">Pontos</th></tr></thead>
-    <tbody>
-    {% for x in indicadores %}
-      <tr><td><strong>{{ x.nome }}</strong><br><span class="peq">{{ x.definicao }}{% if x.detalhe %} Hoje: {{ x.detalhe }}.{% endif %} <a href="{{ x.fonte_url }}" rel="nofollow">{{ x.fonte_nome }}</a></span></td>
-        <td class="n mono">{{ x.valor_fmt }}</td><td>{{ x.ref_fmt }}</td>
-        <td class="n mono {{ 'mais' if x.pts > 0 else 'menos' }}">{{ x.pts|sinal }}</td></tr>
-    {% endfor %}
-    </tbody>
-  </table></div>
+  <section aria-labelledby="t-passos">
+    <h2 id="t-passos">Em quatro passos</h2>
+    <ol class="passos">
+      <li><b>Nove indicadores</b> do Banco Central, do IBGE, do Tesouro, do FMI e do Focus.</li>
+      <li><b>Um limite de alerta para cada um</b>, tirado da história: o ponto que melhor separou os meses antes de recessões dos outros meses.</li>
+      <li><b>Pesos pelo histórico.</b> Quem acertou mais e deu menos alarme falso pesa mais. Quem deu mais alarme falso que aviso certo fica com peso zero.</li>
+      <li><b>O nível.</b> Os alertas do dia, somados pelo peso, são comparados aos meses de recessão desde 2002. O nível só muda quando duas atualizações seguidas concordam.</li>
+    </ol>
   </section>
 
-  {% if casos and casos.caso_mais_crise and casos.caso_menos_crise %}
-  <section id="dois-lados">
-  <h2>Os dois lados</h2>
-  <p class="lead">Os melhores argumentos de cada lado que as notícias sustentam, escritos para convencer quem pensa diferente. Atualizados em {{ data_curta(casos.gerado_em) }}.</p>
-  <div class="lados">
-    <div class="mais"><h3>Por mais crise</h3><ol>
-      {% for a in casos.caso_mais_crise %}<li>{{ a.argumento }}{% if a.fontes %}<br><span class="f">{% for f in a.fontes %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.veiculo }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}</li>{% endfor %}
-    </ol></div>
-    <div class="menos"><h3>Por menos crise</h3><ol>
-      {% for a in casos.caso_menos_crise %}<li>{{ a.argumento }}{% if a.fontes %}<br><span class="f">{% for f in a.fontes %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.veiculo }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}</li>{% endfor %}
-    </ol></div>
-  </div>
-  </section>
-  {% endif %}
-
-  {% if cenarios and cenarios[0].m %}
-  <section id="gatilho">
-  <h2>O próximo gatilho</h2>
-  <p class="lead">O IBGE divulga o PIB do {{ tri_extenso(cenarios[0].trimestre) }}{% if pib_data %} em {{ pib_data }}{% endif %}. Com tudo mais igual, o risco vai para:</p>
-  <ul class="cen">
-    {% for c in cenarios %}<li><b class="{{ 'mais' if c.m > mult + 0.05 else 'menos' if c.m < mult - 0.05 }}">{{ c.m|mult }}</b> se o PIB vier {{ c.cenario }}</li>{% endfor %}
-  </ul>
-  <p class="peq">Um trimestre negativo já é metade de uma recessão técnica. Se vier positivo, a janela anda um trimestre e o risco quase não muda.</p>
-  </section>
-  {% endif %}
-
-  <section id="historico">
-  <h2>Histórico e placar</h2>
-  <p class="lead">Cada atualização fica gravada e nunca é recalculada. Quem avalia o site são as previsões de 12 meses, que vencem uma a uma.</p>
-  {{ historico|safe }}
-  <div class="legenda"><span><i style="background:var(--tinta)"></i>Risco de 12 meses, em vezes o normal</span><span><i class="tracejado"></i>1× = normal</span></div>
-  <h3 style="margin-top:26px">Previsões de 12 meses registradas</h3>
-  <div class="tabela"><table>
-    <thead><tr><th>Registrada em</th><th>Recessão começando entre</th><th class="n">Probabilidade</th><th>Vence</th><th>Resultado</th></tr></thead>
-    <tbody>{% for p in placar %}<tr><td>{{ p.data }}</td><td>{{ p.de }} e {{ p.ate }}</td><td class="n mono">{{ p.prob|num(0) }}%</td><td>{{ p.vence }}</td><td>{{ p.status }}</td></tr>{% endfor %}</tbody>
-  </table></div>
+  <section aria-labelledby="t-ind">
+    <h2 id="t-ind">Os indicadores em {{ data_curta(dia) }}</h2>
+    <div class="tabela">
+      <table>
+        <thead><tr><th>Indicador</th><th>Fator</th><th class="n">Hoje</th><th class="n">Faixa normal</th><th class="n">Limite de alerta</th><th>Situação</th><th class="n">Peso</th><th>Histórico</th></tr></thead>
+        <tbody>
+          {% for x in tabela %}<tr><td><b>{{ x.nome }}</b><span class="def">{{ x.definicao }}</span></td><td>{{ x.fator }}</td><td class="n">{{ x.hoje }}</td><td class="n">{{ x.faixa }}</td><td class="n">{{ x.limite }}</td><td><span class="chip {{ x.chip }}">{{ x.situacao }}</span></td><td class="n">{{ x.peso }}</td><td>{{ x.historico }}</td></tr>{% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p class="nota-tab">Faixa normal: metade dos meses desde 2002 ficou dentro dela. Peso: parte de cada indicador no total dos pesos. Histórico: recessões que a série alcança.</p>
+    {% for p in pontos if p.rot == "Mudaria o nível" %}<p class="mais-info"><b>Mudaria o nível hoje:</b> {{ p.texto }}</p>{% endfor %}
   </section>
 
-  {% if focus %}
-  <section id="mercado">
-  <h2>O que diz o mercado</h2>
-  <p class="lead">Mediana do Boletim Focus para o crescimento do PIB. Essa previsão aparece só como comparação e não entra na conta.</p>
-  <div class="tabela"><table>
-    <thead><tr>{% for f in focus|sort(attribute='DataReferencia') %}<th class="n">{{ f.DataReferencia }}</th>{% endfor %}</tr></thead>
-    <tbody><tr>{% for f in focus|sort(attribute='DataReferencia') %}<td class="n mono">{{ (f.Mediana|float)|num(2) }}%</td>{% endfor %}</tr></tbody>
-  </table></div>
-  <p class="peq">Fonte: <a href="https://www.bcb.gov.br/publicacoes/focus">Banco Central, Focus</a>, dados de {{ data_curta(focus[0].Data) }}. O Focus não previu a recessão de 2015: em janeiro daquele ano, a mediana era de crescimento.</p>
+  <section aria-labelledby="t-hist">
+    <h2 id="t-hist">A conta desde 2002</h2>
+    {% if historico_svg %}
+    {{ historico_svg|safe }}
+    <p class="legenda"><span><i class="linha"></i>nível de cada mês, calculado sem ver o bloco de 3 anos em que está</span><span><i></i>recessão</span></p>
+    {% endif %}
+    <ul class="topicos">
+      <li>No teste, cada bloco de 3 anos foi previsto por uma conta que não o viu. Ela errou {{ (100 * val.ganho_sobre_a_media)|round|int }}% menos do que repetir sempre o risco médio.</li>
+      <li>É pouco, e quase tudo vem de um indicador: sem o {{ cfg.indicadores[sem.indicador].nome|lower }}, a conta não ganha da média.</li>
+      <li>Por isso o nível fica no normal na maior parte do tempo e sobe forte com choques de câmbio, como em 2002, 2008 e 2020.</li>
+      <li>Em 2008 e 2020, o dólar disparou junto com o começo da recessão, meses antes de o IBGE confirmá-la.</li>
+      <li>Muito abaixo não apareceu desde 2002. Os indicadores medem sinais de perigo, não de calmaria. Sem nenhum alerta, a conta para em Abaixo.</li>
+    </ul>
   </section>
-  {% endif %}
 
-  <section id="ate-2030">
-  <h2>E até 2030?</h2>
-  <p class="lead">A mesma conta, estendida até o 4º trimestre de 2030, dá {{ nota|num(0) }}% de chance de pelo menos uma recessão técnica até lá. Conforme o método usado para a âncora histórica, fica entre {{ faixa_2030[0]|num(0) }}% e {{ faixa_2030[1]|num(0) }}%. A resposta sai em 2031, com a série do PIB vigente em março daquele ano, pela regra da <a href="/metodologia/">metodologia</a>.</p>
+  <section aria-labelledby="t-not">
+    <h2 id="t-not">E as notícias?</h2>
+    <ul class="topicos">
+      <li>Não mexem no nível. Mostram para que lado cada fator tende a ir nos próximos 6 meses, no <a href="{{ link_resumo }}">Resumo</a>.</li>
+      <li>Toda manhã, um modelo de linguagem lê as manchetes do dia anterior em 8 jornais e marca o fator, o lado e o tamanho de cada fato.</li>
+      <li>Dado divulgado e decisão tomada contam inteiros. Anúncio conta 0,3; rumor, 0,1. Fato de um jornal só ou já esperado pelo mercado conta metade.</li>
+      <li>Cada leitura de tendência é conferida em 6 meses contra o dado, no placar do Resumo.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="t-mais">
+    <h2 id="t-mais">Para conferir</h2>
+    <ul class="topicos">
+      <li><a href="/metodologia/">Metodologia completa</a>, com as fórmulas e os limites da conta.</li>
+      <li><a href="{{ repo }}/blob/main/config/calibracao.json">Limites e pesos</a> e <a href="{{ repo }}/blob/main/data/historico/mensal.json">os indicadores mês a mês</a>, para refazer a conta.</li>
+      <li><a href="{{ post.registro }}">Registro desta atualização</a>, com todos os números e notícias usados.</li>
+    </ul>
   </section>
 </main>
 {% endblock %}

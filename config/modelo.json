@@ -1,89 +1,223 @@
 {
-  "pre_registrado_em": "2026-10-29",
-  "pergunta": "O risco de o Brasil entrar em recessão técnica nos próximos 12 meses está acima ou abaixo do normal?",
-  "recessao": {
-    "definicao": "Dois trimestres seguidos de queda do PIB dessazonalizado do IBGE (tabela 5932, taxa contra o trimestre anterior, uma casa decimal; 0,0% não é queda).",
-    "juntar_quedas_separadas_por_um_trimestre": true,
-    "horizonte_trimestres": 4,
-    "horizonte": "Os 4 trimestres a partir do primeiro que o IBGE ainda não divulgou. O IBGE divulga cada trimestre cerca de 60 dias depois do fim dele: no fim de outubro, o 3º trimestre ainda não saiu, e o horizonte é do 3º trimestre ao 2º do ano seguinte.",
-    "fora_da_amostra": "Meses em que o primeiro trimestre não divulgado fica dentro de uma recessão já começada (depois do primeiro trimestre dela)."
+ "regras_fixadas_em": "2026-10-29",
+ "pergunta": "O risco de o Brasil entrar em recessão técnica nos próximos 12 meses está acima ou abaixo do normal?",
+ "recessao": {
+  "definicao": "Dois trimestres seguidos de queda do PIB dessazonalizado do IBGE (tabela 5932, taxa contra o trimestre anterior, uma casa decimal; 0,0% não é queda).",
+  "juntar_quedas_separadas_por_um_trimestre": true,
+  "horizonte_trimestres": 4,
+  "horizonte": "Os 4 trimestres a partir do primeiro que o IBGE ainda não divulgou. O IBGE divulga cada trimestre cerca de 60 dias depois do fim dele: no fim de outubro, o 3º trimestre ainda não saiu, e o horizonte é do 3º trimestre ao 2º do ano seguinte.",
+  "fora_da_amostra": "Meses em que o primeiro trimestre não divulgado fica dentro de uma recessão já começada (depois do primeiro trimestre dela)."
+ },
+ "amostra_inicio": "2002-01",
+ "minimo_indicadores_no_mes": 3,
+ "fatores": {
+  "atividade": "Atividade",
+  "juro": "Juro real e inflação",
+  "credito": "Crédito e famílias",
+  "mercado": "Mercado financeiro",
+  "contas": "Contas públicas",
+  "emprego": "Emprego",
+  "externo": "Cenário externo"
+ },
+ "indicadores": {
+  "ibcbr": {
+   "fator": "atividade",
+   "nome": "IBC-Br",
+   "unidade": "%",
+   "direcao": -1,
+   "defasagem_meses": 2,
+   "definicao": "IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores."
   },
-  "amostra_inicio": "2002-01",
-  "minimo_indicadores_no_mes": 3,
-  "fatores": {
-    "atividade": "Atividade",
-    "juro": "Juro real e inflação",
-    "credito": "Crédito e famílias",
-    "mercado": "Mercado financeiro",
-    "contas": "Contas públicas",
-    "emprego": "Emprego",
-    "externo": "Cenário externo"
+  "focus_pib": {
+   "fator": "atividade",
+   "nome": "PIB esperado pelo Focus",
+   "unidade": "%",
+   "direcao": -1,
+   "defasagem_meses": 0,
+   "definicao": "Crescimento do PIB esperado para os próximos 12 meses: mediana do Focus para o ano corrente e o seguinte, ponderada pelos meses que faltam em cada um."
   },
-  "indicadores": {
-    "ibcbr": {"fator": "atividade", "nome": "IBC-Br", "unidade": "%", "direcao": -1, "defasagem_meses": 2,
-              "definicao": "IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores."},
-    "focus_pib": {"fator": "atividade", "nome": "PIB esperado pelo Focus", "unidade": "%", "direcao": -1, "defasagem_meses": 0,
-                  "definicao": "Crescimento do PIB esperado para os próximos 12 meses: mediana do Focus para o ano corrente e o seguinte, ponderada pelos meses que faltam em cada um."},
-    "juro_real": {"fator": "juro", "nome": "Juro real", "unidade": "% ao ano", "direcao": 1, "defasagem_meses": 0,
-                  "definicao": "Selic meta (BCB 432) descontada da inflação esperada para 12 meses (Focus, suavizada): (1 + Selic) / (1 + inflação esperada) − 1."},
-    "comprometimento": {"fator": "credito", "nome": "Renda comprometida com dívidas", "unidade": "p.p.", "direcao": 1, "defasagem_meses": 3,
-                        "definicao": "Comprometimento de renda das famílias com dívidas, dessazonalizado (BCB 29034), menos a média dos 36 meses anteriores."},
-    "tesouro": {"fator": "mercado", "nome": "Juro do Tesouro IPCA+", "unidade": "p.p.", "direcao": 1, "defasagem_meses": 0,
-                "definicao": "Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (Tesouro Direto, venda pela manhã) menos a sua mediana nos 3 anos anteriores."},
-    "dolar": {"fator": "mercado", "nome": "Dólar", "unidade": "%", "direcao": 1, "defasagem_meses": 0,
-              "definicao": "Variação do dólar PTAX (BCB 1) em 3 meses."},
-    "divida": {"fator": "contas", "nome": "Dívida pública", "unidade": "p.p. do PIB", "direcao": 1, "defasagem_meses": 2,
-               "definicao": "Variação da dívida bruta do governo geral (BCB 13762) em 12 meses."},
-    "sahm": {"fator": "emprego", "nome": "Regra de Sahm", "unidade": "p.p.", "direcao": 1, "defasagem_meses": 1,
-             "definicao": "Média de 3 meses da desocupação da PNAD Contínua (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores."},
-    "commodities": {"fator": "externo", "nome": "Preço das commodities", "unidade": "%", "direcao": -1, "defasagem_meses": 1,
-                    "definicao": "Variação em 6 meses do índice de preços de todas as commodities do FMI (FRED PALLFNFINDEXM)."}
+  "juro_real": {
+   "fator": "juro",
+   "nome": "Juro real",
+   "unidade": "% ao ano",
+   "direcao": 1,
+   "defasagem_meses": 0,
+   "definicao": "Selic meta (BCB 432) descontada da inflação esperada para 12 meses (Focus, suavizada): (1 + Selic) / (1 + inflação esperada) − 1."
   },
-  "sinais": {
-    "metodo": "Sinais de Kaminsky, Lizondo e Reinhart (1998), indicador por indicador.",
-    "percentis": [70, 75, 80, 85, 90, 95],
-    "criterio": "Limite que dá a menor razão ruído/sinal (sinais falsos sobre meses sem recessão à frente, divididos pelos sinais certos sobre meses com recessão à frente). Empate fica com o percentil mais alto.",
-    "minimo_episodios_avisados": 2,
-    "peso": "1 / (razão ruído/sinal) quando a razão é menor que 1; senão, peso zero e o indicador aparece como 'não antecipou recessões'."
+  "comprometimento": {
+   "fator": "credito",
+   "nome": "Renda comprometida com dívidas",
+   "unidade": "p.p.",
+   "direcao": 1,
+   "defasagem_meses": 3,
+   "definicao": "Comprometimento de renda das famílias com dívidas, dessazonalizado (BCB 29034), menos a média dos 36 meses anteriores."
   },
-  "faixa_normal_percentis": [25, 75],
-  "composto": "Soma dos pesos dos indicadores em sinal, dividida pela soma dos pesos dos indicadores com dado no mês.",
-  "probabilidade": {
-    "modelo": "Regressão logística do mês com recessão à frente contra o composto (2 parâmetros).",
-    "encolhimento": "logit(p) = logit(p_medio) + k × (logit(p_modelo) − logit(p_medio)), com k escolhido na grade abaixo pelo menor erro de Brier fora da amostra. Empate fica com o k menor.",
-    "grade_k": [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-    "validacao": "Blocos de 3 anos seguidos a partir de 2002; um corte que cairia dentro da janela de aviso de uma recessão é empurrado para o fim dela. Em cada bloco deixado de fora, tudo é reestimado só com os outros: limites, pesos e regressão."
+  "tesouro": {
+   "fator": "mercado",
+   "nome": "Juro do Tesouro IPCA+",
+   "unidade": "p.p.",
+   "direcao": 1,
+   "defasagem_meses": 0,
+   "definicao": "Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (Tesouro Direto, venda pela manhã) menos a sua mediana nos 3 anos anteriores."
   },
-  "niveis": {
-    "nomes": ["Muito abaixo", "Abaixo", "Normal", "Acima", "Muito acima"],
-    "cortes_razao": [0.5, 0.8, 1.25, 2.0],
-    "razao": "Chance estimada de recessão à frente dividida pela média da amostra.",
-    "folga": 0.10,
-    "folga_regra": "Para sair do nível atual, a razão precisa passar do corte com 10% de folga."
+  "dolar": {
+   "fator": "mercado",
+   "nome": "Dólar",
+   "unidade": "%",
+   "direcao": 1,
+   "defasagem_meses": 0,
+   "definicao": "Variação do dólar PTAX (BCB 1) em 3 meses."
   },
-  "peso_hoje": {"forte": 0.25, "moderado": 0.10},
-  "forca_historica": {"forte": 0.3, "moderada": 0.6},
-  "noticias": {
-    "pontos_por_magnitude": {"1": 1, "2": 2, "3": 3},
-    "peso_por_estagio": {"dado": 1, "decidido": 1, "em_votacao": "chance_aprovacao", "anuncio": 0.3, "rumor": 0.1},
-    "faixa_chance_aprovacao": [0.2, 0.8],
-    "fator_fonte_unica": 0.5,
-    "fator_ja_no_preco": 0.5,
-    "retorno": 0.5,
-    "corte_fator": 1.0,
-    "corte_geral": 2.0
+  "divida": {
+   "fator": "contas",
+   "nome": "Dívida pública",
+   "unidade": "p.p. do PIB",
+   "direcao": 1,
+   "defasagem_meses": 2,
+   "definicao": "Variação da dívida bruta do governo geral (BCB 13762) em 12 meses."
   },
-  "placar": {
-    "meses": 6,
-    "tolerancia_desvios": 0.25,
-    "medidas": {
-      "atividade": {"serie": "ibcbr_3m", "direcao": -1, "nome": "IBC-Br, média de 3 meses contra os 3 anteriores"},
-      "juro": {"serie": "juro_real", "direcao": 1, "nome": "Juro real"},
-      "credito": {"serie": "comprometimento_nivel", "direcao": 1, "nome": "Renda comprometida com dívidas"},
-      "mercado": {"serie": "tesouro_nivel", "direcao": 1, "nome": "Taxa do Tesouro IPCA+ de cerca de 10 anos"},
-      "contas": {"serie": "divida_nivel", "direcao": 1, "nome": "Dívida bruta do governo geral"},
-      "emprego": {"serie": "desocupacao", "direcao": 1, "nome": "Desemprego"},
-      "externo": {"serie": "commodities_nivel", "direcao": -1, "nome": "Índice de commodities do FMI"}
-    }
+  "sahm": {
+   "fator": "emprego",
+   "nome": "Regra de Sahm",
+   "unidade": "p.p.",
+   "direcao": 1,
+   "defasagem_meses": 1,
+   "definicao": "Média de 3 meses da desocupação da PNAD Contínua (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores."
+  },
+  "commodities": {
+   "fator": "externo",
+   "nome": "Preço das commodities",
+   "unidade": "%",
+   "direcao": -1,
+   "defasagem_meses": 1,
+   "definicao": "Variação em 6 meses do índice de preços de todas as commodities do FMI (FRED PALLFNFINDEXM)."
   }
+ },
+ "sinais": {
+  "metodo": "Sinais de Kaminsky, Lizondo e Reinhart (1998), indicador por indicador.",
+  "percentis": [
+   70,
+   75,
+   80,
+   85,
+   90,
+   95
+  ],
+  "criterio": "Limite que dá a menor razão ruído/sinal (sinais falsos sobre meses sem recessão à frente, divididos pelos sinais certos sobre meses com recessão à frente). Empate fica com o percentil mais alto.",
+  "minimo_episodios_avisados": 2,
+  "peso": "1 / (razão ruído/sinal) quando a razão é menor que 1; senão, peso zero e o indicador aparece como 'não antecipou recessões'."
+ },
+ "faixa_normal_percentis": [
+  25,
+  75
+ ],
+ "composto": "Soma dos pesos dos indicadores em sinal, dividida pela soma dos pesos dos indicadores com dado no mês.",
+ "probabilidade": {
+  "modelo": "Regressão logística do mês com recessão à frente contra o composto (2 parâmetros), com uma penalidade mínima (0,01 × inclinação²) só para a conta ter solução quando o composto separa os meses sem erro.",
+  "penalidade": 0.01,
+  "encolhimento": "logit(p) = logit(p_medio) + k × (logit(p_modelo) − logit(p_medio)), com k escolhido na grade abaixo pelo menor erro de Brier fora da amostra. Empate fica com o k menor.",
+  "grade_k": [
+   0,
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5,
+   0.6,
+   0.7,
+   0.8,
+   0.9,
+   1
+  ],
+  "validacao": "Blocos de 3 anos seguidos a partir de 2002; um corte que cairia dentro da janela de aviso de uma recessão é empurrado para o fim dela. Em cada bloco deixado de fora, tudo é reestimado só com os outros: limites, pesos e regressão."
+ },
+ "niveis": {
+  "nomes": [
+   "Muito abaixo",
+   "Abaixo",
+   "Normal",
+   "Acima",
+   "Muito acima"
+  ],
+  "cortes_razao": [
+   0.5,
+   0.8,
+   1.25,
+   2.0
+  ],
+  "razao": "Chance estimada de recessão à frente dividida pela média da amostra.",
+  "confirmacao": "O nível só muda quando duas atualizações diárias seguidas dão o mesmo nível novo. Assim um indicador oscilando em cima do limite não faz o nível piscar."
+ },
+ "peso_hoje": {
+  "forte": 0.25,
+  "moderado": 0.1
+ },
+ "forca_historica": {
+  "forte": 0.3,
+  "moderada": 0.6
+ },
+ "noticias": {
+  "pontos_por_magnitude": {
+   "1": 1,
+   "2": 2,
+   "3": 3
+  },
+  "peso_por_estagio": {
+   "dado": 1,
+   "decidido": 1,
+   "em_votacao": "chance_aprovacao",
+   "anuncio": 0.3,
+   "rumor": 0.1
+  },
+  "faixa_chance_aprovacao": [
+   0.2,
+   0.8
+  ],
+  "fator_fonte_unica": 0.5,
+  "fator_ja_no_preco": 0.5,
+  "retorno": 0.5,
+  "corte_fator": 1.0,
+  "corte_geral": 2.0
+ },
+ "placar": {
+  "meses": 6,
+  "tolerancia_desvios": 0.25,
+  "medidas": {
+   "atividade": {
+    "serie": "ibcbr_3m",
+    "direcao": -1,
+    "nome": "IBC-Br, média de 3 meses contra os 3 anteriores"
+   },
+   "juro": {
+    "serie": "juro_real",
+    "direcao": 1,
+    "nome": "Juro real"
+   },
+   "credito": {
+    "serie": "comprometimento_nivel",
+    "direcao": 1,
+    "nome": "Renda comprometida com dívidas"
+   },
+   "mercado": {
+    "serie": "tesouro_nivel",
+    "direcao": 1,
+    "nome": "Taxa do Tesouro IPCA+ de cerca de 10 anos"
+   },
+   "contas": {
+    "serie": "divida_nivel",
+    "direcao": 1,
+    "nome": "Dívida bruta do governo geral"
+   },
+   "emprego": {
+    "serie": "desocupacao",
+    "direcao": 1,
+    "nome": "Desemprego"
+   },
+   "externo": {
+    "serie": "commodities_nivel",
+    "direcao": -1,
+    "nome": "Índice de commodities do FMI"
+   }
+  }
+ }
 }

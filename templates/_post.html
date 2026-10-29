@@ -1,47 +1,26 @@
-{% set c = post.conta %}{% set pr = post.pressao %}
+{% set pr = post.pressao %}
 <article class="post">
   <p class="data">{{ post.data_extenso }}</p>
   {% if permalink %}<h1 class="titulo-post">{{ post.titulo }}</h1>{% else %}<h2 class="titulo-post"><a href="{{ post.link }}">{{ post.titulo }}</a></h2>{% endif %}
   {% if post.autoria %}<p class="autoria">{{ post.autoria }}</p>{% endif %}
   {% for par in post.paragrafos %}<p>{{ par }}</p>{% endfor %}
   {% if post.corpo_html %}{{ post.corpo_html|safe }}{% endif %}
-  {% if c or pr %}
-  <section class="conta" aria-label="A conta do dia">
-    {% if c %}
-    <div class="conta-cab"><h3>A conta do dia</h3><p>{{ c.de|mult(2) }} → <strong>{{ c.para|mult(2) }}</strong> <span class="{{ 'mais' if c.delta > 0 else 'menos' if c.delta < 0 }}">({{ c.delta|sinal(2) }})</span></p></div>
-    <p class="abre">Quanto cada fator mexeu no risco, em vezes o normal.{% if post.abre %} {{ post.abre }}{% endif %}</p>
-    {% for nome, itens in c.secoes %}
-    <h4>{{ nome }}</h4>
+  {% if pr %}
+  <section class="conta" aria-label="Pressão das notícias">
+    <div class="conta-cab"><h3>Pressão das notícias, por fator</h3></div>
+    {% if pr.com %}
     <ul class="itens">
-      {% for it in itens %}<li><span class="pts {{ 'mais' if it.pts > 0 else 'menos' if it.pts < 0 }}">{{ it.pts|sinal(2) }}</span><div><b>{{ it.titulo }}</b>{% if it.peso is not none and it.peso < 1 %}<span class="peso">Peso {{ it.peso|peso }}{% if it.estagio == 'em_votacao' %}, a chance estimada de passar{% endif %}.</span>{% endif %}{% if it.porque %} {{ it.porque }}{% endif %}{% if it.fontes %} <span class="f">{% for f in it.fontes[:4] %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.veiculo }}</a>{{ ', ' if not loop.last }}{% endfor %}</span>{% endif %}</div></li>{% endfor %}
+      {% for t in pr.com %}<li><span class="pts seta {{ t.cls }}" aria-label="{{ t.palavra }}">{{ t.simbolo }}</span><div><b>{{ t.nome }} <a class="ver" href="{{ post.resumo }}#{{ t.id }}">ver no Resumo</a></b>{% for n in t.noticias %}<span class="nt">{{ n.titulo }} <span class="f">{% if n.meta %}{{ n.meta }}{% if n.fonte %}, {% endif %}{% endif %}{% if n.fonte %}<a href="{{ n.fonte.url }}" rel="nofollow noopener">{{ n.fonte.veiculo }}</a>{% endif %}</span></span>{% endfor %}</div></li>{% endfor %}
     </ul>
-    {% endfor %}
-    {% if c.outros %}
-    <h4>{{ 'Também mexeu' if c.itens else 'O que mexeu' }}</h4>
-    <ul class="itens">
-      {% for g in c.outros %}<li><span class="pts {{ 'mais' if g.pts > 0 else 'menos' if g.pts < 0 }}">{{ g.pts|sinal(2) }}</span><div><b>{{ g.nome }}</b>{% if g.detalhe %} {% for nome, v in g.detalhe %}{{ nome }} {{ v|sinal(2) }}{{ ', ' if not loop.last else '.' }}{% endfor %}{% endif %}{% if g.nota %} {{ g.nota }}{% endif %}</div></li>{% endfor %}
-    </ul>
-    {% endif %}
-    {% endif %}
-    {% if pr %}
-    {% if c %}<h4>Pressão das notícias</h4>{% else %}<div class="conta-cab"><h3>Pressão das notícias</h3></div>{% endif %}
-    {# Com texto do dia, o post já diz para que lado as notícias empurram. #}
-    {% if not post.llm %}<p class="abre">{% if pr.sentido == 'sobe' %}No conjunto, as notícias empurram o risco para cima.{% elif pr.sentido == 'desce' %}No conjunto, as notícias aliviam o risco.{% else %}No conjunto, as notícias não empurram o risco para um lado claro.{% endif %}</p>{% endif %}
-    {% if not pr.com_seta and not pr.sem_seta %}<p class="fora-conta">Nenhuma notícia de economia está valendo agora.</p>{% endif %}
-    {% if pr.com_seta %}
-    <ul class="itens">
-      {% for t in pr.com_seta %}<li><span class="pts seta {{ 'mais' if t.sentido == 'sobe' else 'menos' }}" aria-label="{{ t.palavra }}">{{ t.simbolo }}</span><div><b>{{ t.nome }}</b>{% for n in t.noticias %}<span class="nt">{{ n.titulo }} <span class="f">{% set meta = [n.estagio|lower if n.estagio, n.contra] | select | list %}{{ meta|join(', ') }}{% if n.fontes %}{{ ', ' if meta }}<a href="{{ n.fontes[0].url }}" rel="nofollow noopener">{{ n.fontes[0].veiculo }}</a>{% endif %}</span></span>{% endfor %}</div></li>{% endfor %}
-    </ul>
-    {% endif %}
-    {% if pr.sem_seta %}<p class="fora-conta">Sem pressão clara: {% for t in pr.sem_seta %}{{ t.nome|lower if not loop.first else t.nome }}{{ ', ' if not loop.last else '.' }}{% endfor %}</p>{% endif %}
-    {% endif %}
-    {% if c and (c.repetidos or c.duplicados) %}<p class="fora-conta">Também lidas e deixadas de lado: {% if c.repetidos %}{{ c.repetidos|length }} {{ 'notícia' if c.repetidos|length == 1 else 'notícias' }}{% endif %}{% if c.repetidos and c.duplicados %}, e {% endif %}{% if c.duplicados %}{{ c.duplicados|length }} sobre {{ 'um fato que já estava registrado' if c.duplicados|length == 1 else 'fatos que já estavam registrados' }}{% endif %}.</p>{% endif %}
-    {% if not post.llm_ok %}<p class="fora-conta">A leitura de notícias falhou nesta atualização: valem só as notícias que já estavam registradas.</p>{% endif %}
+    {% elif pr.n %}<p class="fora-conta">Nenhum fator recebeu pressão clara das notícias {{ pr.quando }}.</p>
+    {% else %}<p class="fora-conta">Nenhuma notícia {{ pr.quando }} mexeu nos fatores.</p>{% endif %}
+    {% if pr.com and pr.sem %}<p class="fora-conta">Sem pressão clara: {% for n in pr.sem %}{{ n if loop.first else n[0]|lower ~ n[1:] }}{{ ', ' if not loop.last else '.' }}{% endfor %}</p>{% endif %}
+    {% if not post.llm_ok %}<p class="fora-conta">A leitura de notícias falhou nesta atualização.</p>{% endif %}
   </section>
-  {% elif post.abre %}<p>{{ post.abre }}</p>{% endif %}
+  {% endif %}
   {% if post.editor %}
   <p class="rodape">{% if not permalink %}<a href="{{ post.link }}">Link permanente</a>{% else %}Postado em {{ data_curta(post.dia) }}{% endif %}{% if post.tags %} | {{ post.tags }}{% endif %}</p>
   {% else %}
-  <p class="rodape">{{ post.rodape }} <a href="/metodologia/#onde-erramos">Onde erramos</a>. {% if not permalink %}<a href="{{ post.link }}">Link permanente</a> | {% endif %}<a href="{{ post.registro }}">Registro da rodada</a> | <a href="{{ link_nota }}">Como a conta funciona</a></p>
+  <p class="rodape">{{ post.rodape }} <a href="/metodologia/#onde-erramos">Onde erramos</a>. {% if not permalink %}<a href="{{ post.link }}">Link permanente</a> | {% endif %}<a href="{{ post.resumo }}">Resumo</a> | <a href="{{ post.registro }}">Registro da atualização</a></p>
   {% endif %}
 </article>

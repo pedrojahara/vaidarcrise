@@ -3,14 +3,14 @@
   <div class="bloco">
     <h3>Datas importantes</h3>
     <ul class="datas">
-      {% for x in datas %}<li{% if x.cenarios %} class="chave"{% endif %}><time datetime="{{ x.data }}">{{ x.dia }}</time><span>{{ x.rotulo }}{% if x.cenarios %}. {% for c in x.cenarios %}{% if loop.first %}Se vier {{ c.cenario }}, o risco vai a <b class="{{ 'mais' if c.m > mult + 0.05 else 'menos' if c.m < mult - 0.05 }}">{{ c.m|mult }}</b>{% else %}; se não, {{ 'fica em' if (c.m - mult)|abs < 0.05 else 'vai a' }} {{ c.m|mult }}{% endif %}{% endfor %}.{% endif %}</span></li>{% endfor %}
+      {% for x in datas %}<li{% if x.tipo == 'pib' %} class="chave"{% endif %}><time datetime="{{ x.data }}">{{ x.dia }}</time><span>{{ x.rotulo }}{% if x.tipo == 'pib' %}. É o dado que responde à pergunta do site.{% endif %}</span></li>{% endfor %}
     </ul>
     <p class="peq fontes-datas">Fontes: calendário do <a href="https://servicodados.ibge.gov.br/api/v3/calendario/">IBGE</a>, Banco Central (Copom) e Fed.</p>
   </div>
   {% endif %}
   <div class="bloco">
     <h3>Sobre</h3>
-    <p>Os números vêm do Banco Central (SGS e Focus), do IBGE (PIB trimestral e PNAD Contínua) e do Tesouro Direto (taxa do Tesouro IPCA+).</p>
+    <p>Os números vêm do Banco Central (SGS e Focus), do IBGE (PIB e PNAD Contínua), do Tesouro Direto e do FMI.</p>
     <p>As notícias vêm de 8 jornais: {{ jornais }}. Às 06h30, um modelo de linguagem lê as manchetes do dia anterior e escreve o post do dia.</p>
   </div>
 </aside>

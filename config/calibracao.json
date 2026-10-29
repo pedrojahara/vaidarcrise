@@ -1,0 +1,336 @@
+{
+ "calibrado_em": "2026-10-29T16:29:07+00:00",
+ "dados_de": "2026-10-29T16:00:13+00:00",
+ "recessoes": [
+  {
+   "inicio": "2T2001",
+   "fim": "4T2001"
+  },
+  {
+   "inicio": "1T2003",
+   "fim": "2T2003"
+  },
+  {
+   "inicio": "4T2008",
+   "fim": "1T2009"
+  },
+  {
+   "inicio": "2T2014",
+   "fim": "4T2016"
+  },
+  {
+   "inicio": "1T2020",
+   "fim": "2T2020"
+  }
+ ],
+ "amostra": {
+  "inicio": "2002-03",
+  "fim": "2025-08",
+  "meses": 243,
+  "meses_com_recessao_a_frente": 48,
+  "meses_na_regressao": 242
+ },
+ "indicadores": {
+  "ibcbr": {
+   "meses": 228,
+   "episodios_na_amostra": 3,
+   "amostra": [
+    "2003-09",
+    "2025-08"
+   ],
+   "faixa_normal": [
+    0.17389593411978876,
+    1.5540157157443613
+   ],
+   "escala": [
+    -1.8905237539573132,
+    3.858615649410845
+   ],
+   "percentil": 95,
+   "limite": -0.9958,
+   "nsr": 0.2625,
+   "episodios_avisados": 3,
+   "acertos": 5,
+   "falsos": 7,
+   "perdidos": 31,
+   "peso": 3.809524,
+   "motivo": null
+  },
+  "focus_pib": {
+   "meses": 243,
+   "episodios_na_amostra": 4,
+   "amostra": [
+    "2002-03",
+    "2025-08"
+   ],
+   "faixa_normal": [
+    1.9370833333333333,
+    3.5512499999999996
+   ],
+   "escala": [
+    0.48466666666666663,
+    5.338666666666667
+   ],
+   "percentil": 75,
+   "limite": 1.937083,
+   "nsr": 0.54413,
+   "episodios_avisados": 4,
+   "acertos": 19,
+   "falsos": 42,
+   "perdidos": 29,
+   "peso": 1.837798,
+   "motivo": null
+  },
+  "juro_real": {
+   "meses": 243,
+   "episodios_na_amostra": 4,
+   "amostra": [
+    "2002-03",
+    "2025-08"
+   ],
+   "faixa_normal": [
+    2.914348853017601,
+    8.830537388775817
+   ],
+   "escala": [
+    -1.2748581669407275,
+    14.13649058544286
+   ],
+   "percentil": 70,
+   "limite": 8.293316,
+   "nsr": 1.136095,
+   "episodios_avisados": 2,
+   "acertos": 13,
+   "falsos": 60,
+   "perdidos": 35,
+   "peso": 0.0,
+   "motivo": "deu mais alarme falso que aviso certo"
+  },
+  "comprometimento": {
+   "meses": 171,
+   "episodios_na_amostra": 3,
+   "amostra": [
+    "2008-06",
+    "2025-08"
+   ],
+   "faixa_normal": [
+    -0.5638888888888882,
+    1.8826388888888896
+   ],
+   "escala": [
+    -2.2143333333333333,
+    3.7749444444444458
+   ],
+   "peso": 0.0,
+   "motivo": "não avisou pelo menos 2 recessões"
+  },
+  "tesouro": {
+   "meses": 177,
+   "episodios_na_amostra": 3,
+   "amostra": [
+    "2007-12",
+    "2025-08"
+   ],
+   "faixa_normal": [
+    -1.0200000000000005,
+    0.6499999999999999
+   ],
+   "escala": [
+    -2.2667999999999995,
+    2.1787999999999994
+   ],
+   "percentil": 70,
+   "limite": 0.473,
+   "nsr": 0.785597,
+   "episodios_avisados": 2,
+   "acertos": 13,
+   "falsos": 40,
+   "perdidos": 23,
+   "peso": 1.272917,
+   "motivo": null
+  },
+  "dolar": {
+   "meses": 242,
+   "episodios_na_amostra": 4,
+   "amostra": [
+    "2002-04",
+    "2025-08"
+   ],
+   "faixa_normal": [
+    -4.2166409418831785,
+    4.667190744916944
+   ],
+   "escala": [
+    -12.530521481369727,
+    27.446907840969114
+   ],
+   "percentil": 95,
+   "limite": 18.764558,
+   "nsr": 0.020619,
+   "episodios_avisados": 3,
+   "acertos": 12,
+   "falsos": 1,
+   "perdidos": 36,
+   "peso": 48.5,
+   "motivo": null
+  },
+  "divida": {
+   "meses": 175,
+   "episodios_na_amostra": 3,
+   "amostra": [
+    "2008-02",
+    "2025-08"
+   ],
+   "faixa_normal": [
+    -2.7249999999999943,
+    3.065000000000005
+   ],
+   "escala": [
+    -8.720799999999992,
+    11.288000000000013
+   ],
+   "peso": 0.0,
+   "motivo": "não avisou pelo menos 2 recessões"
+  },
+  "sahm": {
+   "meses": 114,
+   "episodios_na_amostra": 2,
+   "amostra": [
+    "2013-06",
+    "2025-08"
+   ],
+   "faixa_normal": [
+    -0.1000000000000012,
+    0.6916666666666673
+   ],
+   "escala": [
+    -0.5333333333333332,
+    3.305999999999998
+   ],
+   "percentil": 70,
+   "limite": 0.633333,
+   "nsr": 1.288889,
+   "episodios_avisados": 2,
+   "acertos": 6,
+   "falsos": 29,
+   "perdidos": 18,
+   "peso": 0.0,
+   "motivo": "deu mais alarme falso que aviso certo"
+  },
+  "commodities": {
+   "meses": 243,
+   "episodios_na_amostra": 4,
+   "amostra": [
+    "2002-03",
+    "2025-08"
+   ],
+   "faixa_normal": [
+    -1.911626276268158,
+    15.22542221199711
+   ],
+   "escala": [
+    -24.20553904113642,
+    30.962338849784093
+   ],
+   "percentil": 95,
+   "limite": -16.00042,
+   "nsr": 0.287179,
+   "episodios_avisados": 2,
+   "acertos": 6,
+   "falsos": 7,
+   "perdidos": 42,
+   "peso": 3.482143,
+   "motivo": null
+  }
+ },
+ "regressao": {
+  "a": -1.7870094921644575,
+  "b": 5.141201376370759
+ },
+ "media": 0.19834710743801653,
+ "k": 0.8,
+ "validacao": {
+  "blocos": [
+   [
+    "2002-03",
+    "2004-12"
+   ],
+   [
+    "2005-01",
+    "2007-12"
+   ],
+   [
+    "2008-01",
+    "2010-12"
+   ],
+   [
+    "2011-01",
+    "2014-08"
+   ],
+   [
+    "2017-03",
+    "2020-05"
+   ],
+   [
+    "2020-09",
+    "2022-12"
+   ],
+   [
+    "2023-01",
+    "2025-08"
+   ]
+  ],
+  "meses": 242,
+  "brier_por_k": {
+   "0": 0.170757,
+   "0.1": 0.168889,
+   "0.2": 0.166892,
+   "0.3": 0.164853,
+   "0.4": 0.162901,
+   "0.5": 0.16119,
+   "0.6": 0.159878,
+   "0.7": 0.159096,
+   "0.8": 0.158921,
+   "0.9": 0.159371,
+   "1": 0.160411
+  },
+  "brier_media": 0.170757,
+  "brier_escolhido": 0.158921,
+  "ganho_sobre_a_media": 0.0693,
+  "sem_o_maior_peso": {
+   "indicador": "dolar",
+   "k": 0,
+   "ganho_sobre_a_media": 0.0
+  }
+ },
+ "placar": {
+  "atividade": {
+   "desvio_6m": 2.861105903423897,
+   "tolerancia": 0.7152764758559742
+  },
+  "juro": {
+   "desvio_6m": 1.9911360570345584,
+   "tolerancia": 0.4977840142586396
+  },
+  "credito": {
+   "desvio_6m": 1.0003441867994696,
+   "tolerancia": 0.2500860466998674
+  },
+  "mercado": {
+   "desvio_6m": 0.9197830144115512,
+   "tolerancia": 0.2299457536028878
+  },
+  "contas": {
+   "desvio_6m": 2.8493620677179488,
+   "tolerancia": 0.7123405169294872
+  },
+  "emprego": {
+   "desvio_6m": 1.1942938786080777,
+   "tolerancia": 0.2985734696520194
+  },
+  "externo": {
+   "desvio_6m": 13.271040235280951,
+   "tolerancia": 3.317760058820238
+  }
+ }
+}
