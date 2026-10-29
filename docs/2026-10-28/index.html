@@ -129,6 +129,8 @@ sup a{text-decoration:none;color:var(--link)}
 .itens .pts.fora{font-weight:600;color:var(--meta);font-size:14px;padding-top:1px}
 .itens b{display:block}
 .itens .peso{display:block;font-size:14px;color:var(--meta)}
+.itens .pts.seta{font-size:18px;line-height:1.3}
+.itens .nt{display:block;margin-top:2px}
 .itens .f{font-size:14px;color:var(--meta)}
 .itens .f a{color:var(--meta)}
 .fora-conta{font-size:14.5px;color:var(--meta);border-top:1px solid var(--fio);padding-top:10px;margin:14px 0 10px}
@@ -171,8 +173,9 @@ sup a{text-decoration:none;color:var(--link)}
   
   
   <section class="conta" aria-label="A conta do dia">
+    
     <div class="conta-cab"><h3>A conta do dia</h3><p>2,45× → <strong>2,70×</strong> <span class="mais">(+0,25)</span></p></div>
-    <p class="abre">Quanto cada fato mexeu no risco de recessão dos próximos 12 meses, em vezes o normal. Foram lidas 50 manchetes de 8 jornais.</p>
+    <p class="abre">Quanto cada fator mexeu no risco de recessão dos próximos 12 meses, em vezes o normal. Foram lidas 50 manchetes de 8 jornais.</p>
     
     <h4>Notícias</h4>
     <ul class="itens">
@@ -185,7 +188,9 @@ sup a{text-decoration:none;color:var(--link)}
       <li><span class="pts mais">+0,02</span><div><b>Nova metodologia (v1.0 → v1.1)</b></div></li>
     </ul>
     
-    <p class="fora-conta">Também lidas e deixadas fora da conta: 1 notícia, e 2 sobre fatos que já estavam na conta.</p>
+    
+    
+    <p class="fora-conta">Também lidas e deixadas de lado: 1 notícia, e 2 sobre fatos que já estavam registrados.</p>
     
   </section>
   
@@ -198,7 +203,7 @@ sup a{text-decoration:none;color:var(--link)}
     <nav class="vizinhos" aria-label="Outros dias">
       <span></span>
       <a href="/">Todos os posts</a>
-      <span></span>
+      <span><a href="/2026-10-29/">29/10 →</a></span>
     </nav>
     
   </main>
@@ -207,13 +212,13 @@ sup a{text-decoration:none;color:var(--link)}
   <div class="bloco">
     <h3>Datas importantes</h3>
     <ul class="datas">
-      <li><time datetime="2026-10-30">30/10</time><span>Desemprego até setembro (IBGE)</span></li><li><time datetime="2026-11-04">4/11</time><span>Copom decide a Selic</span></li><li><time datetime="2026-11-05">5/11</time><span>Produção industrial de setembro (IBGE)</span></li><li><time datetime="2026-11-12">12/11</time><span>Inflação de outubro, IPCA (IBGE)</span></li><li><time datetime="2026-11-13">13/11</time><span>Vendas do varejo de setembro (IBGE)</span></li><li><time datetime="2026-11-26">26/11</time><span>Prévia da inflação de novembro, IPCA-15 (IBGE)</span></li><li><time datetime="2026-11-27">27/11</time><span>Desemprego até outubro (IBGE)</span></li><li class="chave"><time datetime="2026-12-02">2/12</time><span>PIB do 3º trimestre (IBGE). Se vier negativo, o risco vai a <b class="mais">4,6×</b>; se não, fica em 2,7×.</span></li><li><time datetime="2026-12-03">3/12</time><span>Produção industrial de outubro (IBGE)</span></li><li><time datetime="2026-12-09">9/12</time><span>Copom e Fed decidem os juros</span></li>
+      <li><time datetime="2026-10-30">30/10</time><span>Desemprego até setembro (IBGE)</span></li><li><time datetime="2026-11-04">4/11</time><span>Copom decide a Selic</span></li><li><time datetime="2026-11-05">5/11</time><span>Produção industrial de setembro (IBGE)</span></li><li><time datetime="2026-11-12">12/11</time><span>Inflação de outubro, IPCA (IBGE)</span></li><li><time datetime="2026-11-13">13/11</time><span>Vendas do varejo de setembro (IBGE)</span></li><li><time datetime="2026-11-26">26/11</time><span>Prévia da inflação de novembro, IPCA-15 (IBGE)</span></li><li><time datetime="2026-11-27">27/11</time><span>Desemprego até outubro (IBGE)</span></li><li class="chave"><time datetime="2026-12-02">2/12</time><span>PIB do 3º trimestre (IBGE). Se vier negativo, o risco vai a <b class="mais">4,6×</b>; se não, fica em 2,7×.</span></li><li><time datetime="2026-12-03">3/12</time><span>Produção industrial de outubro (IBGE)</span></li><li><time datetime="2026-12-08">8/12</time><span>Vendas do varejo de outubro (IBGE)</span></li><li><time datetime="2026-12-09">9/12</time><span>Copom e Fed decidem os juros</span></li>
     </ul>
   </div>
   
   <div class="bloco">
     <h3>Sobre</h3>
-    <p>Os números vêm do Banco Central (SGS e Focus) e do IBGE (PIB trimestral e PNAD Contínua).</p>
+    <p>Os números vêm do Banco Central (SGS e Focus), do IBGE (PIB trimestral e PNAD Contínua) e do Tesouro Direto (taxa do Tesouro IPCA+).</p>
     <p>As notícias vêm de 8 jornais: Folha, Valor, Estadão, g1, InfoMoney, Poder360, Agência Brasil e Gazeta do Povo. Um modelo de linguagem lê as manchetes do dia anterior às 06h30.</p>
   </div>
 </aside>

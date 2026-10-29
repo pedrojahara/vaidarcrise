@@ -1,0 +1,1055 @@
+{
+ "id": "2026-10-29T0658",
+ "gerado_em": "2026-10-29T06:58:18-03:00",
+ "modelo": {
+  "versao": "1.3",
+  "config_sha256": "ea72b25e858d7d22e5b6fcdf00645022cbff366accadddd417ba7468f754fd51"
+ },
+ "insumos": {
+  "indicadores_coletados_em": "2026-10-29T06:58:30-03:00",
+  "erros_coleta": [],
+  "pib": [
+   {
+    "trimestre": "1T23",
+    "periodo": "202301",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T23",
+    "periodo": "202302",
+    "var_qoq": 0.8
+   },
+   {
+    "trimestre": "3T23",
+    "periodo": "202303",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T23",
+    "periodo": "202304",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "1T24",
+    "periodo": "202401",
+    "var_qoq": 0.7
+   },
+   {
+    "trimestre": "2T24",
+    "periodo": "202402",
+    "var_qoq": 1.7
+   },
+   {
+    "trimestre": "3T24",
+    "periodo": "202403",
+    "var_qoq": 0.9
+   },
+   {
+    "trimestre": "4T24",
+    "periodo": "202404",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "1T25",
+    "periodo": "202501",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T25",
+    "periodo": "202502",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "3T25",
+    "periodo": "202503",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T25",
+    "periodo": "202504",
+    "var_qoq": 0.2
+   },
+   {
+    "trimestre": "1T26",
+    "periodo": "202601",
+    "var_qoq": 1.1
+   },
+   {
+    "trimestre": "2T26",
+    "periodo": "202602",
+    "var_qoq": 0.5
+   }
+  ],
+  "focus": {
+   "PIB Total": [
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2026",
+     "Mediana": 1.8,
+     "numeroRespondentes": 113
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2027",
+     "Mediana": 1.3145,
+     "numeroRespondentes": 113
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2028",
+     "Mediana": 1.81,
+     "numeroRespondentes": 83
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2029",
+     "Mediana": 2.0,
+     "numeroRespondentes": 76
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2030",
+     "Mediana": 2.0,
+     "numeroRespondentes": 74
+    }
+   ],
+   "IPCA": [
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2026",
+     "Mediana": 5.1891,
+     "numeroRespondentes": 142
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2027",
+     "Mediana": 4.3368,
+     "numeroRespondentes": 142
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2028",
+     "Mediana": 3.75,
+     "numeroRespondentes": 124
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2029",
+     "Mediana": 3.5,
+     "numeroRespondentes": 116
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2030",
+     "Mediana": 3.5,
+     "numeroRespondentes": 108
+    }
+   ],
+   "Selic": [
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2026",
+     "Mediana": 13.25,
+     "numeroRespondentes": 137
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2027",
+     "Mediana": 11.75,
+     "numeroRespondentes": 136
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2028",
+     "Mediana": 10.0,
+     "numeroRespondentes": 115
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2029",
+     "Mediana": 10.0,
+     "numeroRespondentes": 110
+    },
+    {
+     "Data": "2026-10-23",
+     "DataReferencia": "2030",
+     "Mediana": 10.0,
+     "numeroRespondentes": 107
+    }
+   ],
+   "IPCA 12m": {
+    "Data": "2026-10-23",
+    "Mediana": 4.5336,
+    "numeroRespondentes": 129
+   }
+  },
+  "noticias": {
+   "coletado_em": "2026-10-29T09:58:18+00:00",
+   "janela_horas": 32,
+   "por_veiculo": {
+    "Valor": 40,
+    "Estadão": 5,
+    "Gazeta do Povo": 5,
+    "Folha": 39,
+    "g1": 3,
+    "Poder360": 5,
+    "InfoMoney": 4,
+    "Agência Brasil": 4
+   },
+   "status_fontes": {
+    "Agência Brasil": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 8
+    },
+    "Folha": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 85
+    },
+    "Estadão": {
+     "http": 200,
+     "itens_no_feed": 20,
+     "na_janela": 20
+    },
+    "Valor": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 100
+    },
+    "InfoMoney": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Poder360": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Gazeta do Povo": {
+     "http": 200,
+     "itens_no_feed": 24,
+     "na_janela": 12
+    },
+    "g1": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 40
+    },
+    "GDELT": {
+     "http": 429,
+     "erro": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic us"
+    }
+   },
+   "n_itens": 105
+  }
+ },
+ "cobertura": {
+  "dias": [
+   "2026-10-27",
+   "2026-10-28"
+  ],
+  "no_acervo": 108,
+  "na_cesta": 105,
+  "coletas_24h": 3
+ },
+ "llm": {
+  "ok": true,
+  "meta": {
+   "modelo_pedido": "opus",
+   "prompt_sha256": "508bdd21a93e4a00e09ebe093603bcf16c25734b70b3ad2745d5100c42ab1165",
+   "system_sha256": "c90c7e546ca9764bbed589fcefa8f416afb9950e4b4af46e3d7ea5244085adb1",
+   "returncode": 0,
+   "is_error": false,
+   "custo_usd": 0.2434232,
+   "modelos": [
+    "claude-haiku-5-5",
+    "claude-opus-5-5"
+   ],
+   "permission_denials": [],
+   "session_id": "73b14792-024e-419b-acf6-974148fa371a"
+  },
+  "saida": {
+   "eventos": [
+    {
+     "noticia_ids": [
+      "n040",
+      "n028",
+      "n054",
+      "n076"
+     ],
+     "titulo_evento": "Ibovespa cai 2,7% na terceira sessão seguida e perde quase 17% desde a eleição",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "canal": "mercado",
+     "direcao": 1,
+     "magnitude": 2,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261028-01",
+     "porque": "A queda prolongada encarece o capital das empresas e corrói a riqueza financeira das famílias. Estrangeiros retiraram R$ 2,8 bilhões só na segunda. Acompanhar o fluxo externo nos próximos pregões."
+    },
+    {
+     "noticia_ids": [
+      "n038",
+      "n045"
+     ],
+     "titulo_evento": "Juros futuros longos sobem forte com prêmio de risco local",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "canal": "mercado",
+     "direcao": 1,
+     "magnitude": 2,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A inclinação da curva encarece o crédito de longo prazo e o financiamento do investimento. A S&P Global cobra sinal concreto sobre as contas públicas. Vale observar os leilões do Tesouro."
+    },
+    {
+     "noticia_ids": [
+      "n039"
+     ],
+     "titulo_evento": "Intenção de consumo das famílias cai 0,8% em outubro, terceira queda seguida",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "canal": "atividade",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O índice da CNC chega ao menor nível desde janeiro, com temor sobre o emprego. Consumo das famílias é o maior componente do PIB. Próximo passo é conferir as vendas do varejo de outubro."
+    },
+    {
+     "noticia_ids": [
+      "n101",
+      "n004"
+     ],
+     "titulo_evento": "Ministro da articulação política diz que ajuste fiscal não está em discussão",
+     "estagio": "anuncio",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "canal": "fiscal",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A fala contrasta com o projeto da Fazenda para cumprir a meta e pode elevar o prêmio de risco que pesa sobre juros e investimento. Resta ver o que o novo ministro da Fazenda vai propor."
+    },
+    {
+     "noticia_ids": [
+      "n030",
+      "n080",
+      "n092"
+     ],
+     "titulo_evento": "Governador do Piauí é cotado para a Fazenda e promete responsabilidade fiscal",
+     "estagio": "rumor",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "canal": "institucional",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261028-07",
+     "porque": "O nome enfrenta questionamentos sobre o déficit do Piauí, e a demora na escolha mantém a incerteza sobre a regra fiscal. O anúncio oficial do ministro é o próximo marco."
+    },
+    {
+     "noticia_ids": [
+      "n086",
+      "n008",
+      "n015"
+     ],
+     "titulo_evento": "TCU aprova por unanimidade alíquota de 11,3% da CBS, acima das projeções",
+     "estagio": "decidido",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "canal": "fiscal",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261028-10",
+     "porque": "Com a alíquota acima do previsto, empresas terão de rever o planejamento de 2027 e a carga tributária pode subir. Preços e margens tendem a sentir no início da transição."
+    },
+    {
+     "noticia_ids": [
+      "n050",
+      "n033"
+     ],
+     "titulo_evento": "Petróleo sobe forte com receio de escalada no Oriente Médio",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "canal": "externo",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261028-05",
+     "porque": "Combustível mais caro pressiona a inflação e adia o corte de juros, num momento em que o Banco Mundial prevê alimentos 10% mais caros em 2026 e 7% em 2027. Atenção ao preço do diesel."
+    },
+    {
+     "noticia_ids": [
+      "n003",
+      "n041"
+     ],
+     "titulo_evento": "Fed mantém juros com discurso duro e mercado aposta em alta em dezembro",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "canal": "externo",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261028-15",
+     "porque": "Uma alta nos EUA atrairia capital para fora de emergentes e pressionaria o câmbio e os juros no Brasil. A reunião de dezembro do Fed é o próximo teste."
+    }
+   ],
+   "caso_mais_crise": [
+    {
+     "argumento": "O mercado segue em estresse: o Ibovespa perde quase 17% desde a eleição, estrangeiros sacaram R$ 2,8 bilhões num só dia e os juros longos sobem, o que encarece o investimento.",
+     "noticia_ids": [
+      "n040",
+      "n076",
+      "n038"
+     ]
+    },
+    {
+     "argumento": "Enquanto o governo diz que ajuste fiscal não é prioridade, o nome da Fazenda segue indefinido e analistas esperam meses de tensão fiscal.",
+     "noticia_ids": [
+      "n101",
+      "n092",
+      "n097"
+     ]
+    },
+    {
+     "argumento": "A demanda doméstica perde força: a intenção de consumo cai pelo terceiro mês, as empresas recorrem a recebíveis por crédito caro e o varejo passa por uma onda de recuperações judiciais.",
+     "noticia_ids": [
+      "n039",
+      "n002",
+      "n077"
+     ]
+    },
+    {
+     "argumento": "Os custos sobem por várias frentes ao mesmo tempo: CBS de 11,3% acima do previsto, ICMS maior nos combustíveis em 2027 e petróleo em alta.",
+     "noticia_ids": [
+      "n086",
+      "n068",
+      "n050"
+     ]
+    }
+   ],
+   "caso_menos_crise": [
+    {
+     "argumento": "O dólar fechou em leve queda a R$ 5,34 e o fluxo cambial teve entrada de US$ 3,5 bilhões na semana até 23 de outubro, sem sinal de fuga desordenada de capital.",
+     "noticia_ids": [
+      "n028",
+      "n037",
+      "n072"
+     ]
+    },
+    {
+     "argumento": "Analistas avaliam que o mercado já virou a página da eleição, e a carta golpista não teve efeito sobre os preços.",
+     "noticia_ids": [
+      "n011",
+      "n012"
+     ]
+    },
+    {
+     "argumento": "O Tesouro está autorizado a recomprar títulos e o BC promete atuar se o câmbio ficar disfuncional, o que limita o risco de um choque financeiro.",
+     "noticia_ids": [
+      "n103",
+      "n099"
+     ]
+    }
+   ]
+  }
+ },
+ "eventos_novos": [
+  "ev-20261029-01",
+  "ev-20261029-02",
+  "ev-20261029-03"
+ ],
+ "eventos_descartados": [
+  {
+   "noticia_ids": [
+    "n040",
+    "n028",
+    "n054",
+    "n076"
+   ],
+   "titulo_evento": "Ibovespa cai 2,7% na terceira sessão seguida e perde quase 17% desde a eleição",
+   "estagio": "dado",
+   "chance_aprovacao": null,
+   "origem": "dados",
+   "canal": "mercado",
+   "direcao": 1,
+   "magnitude": 2,
+   "ja_no_preco": false,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261028-01",
+   "porque": "A queda prolongada encarece o capital das empresas e corrói a riqueza financeira das famílias. Estrangeiros retiraram R$ 2,8 bilhões só na segunda. Acompanhar o fluxo externo nos próximos pregões.",
+   "motivo": "mesmo fato do evento ev-20261028-01",
+   "fontes": [
+    {
+     "veiculo": "Valor",
+     "titulo": "Ibovespa cai pela 3ª sessão e perdas chegam a quase 17% após reeleição de Lula",
+     "url": "https://valor.globo.com/financas/noticia/2026/10/28/ibovespa-cai-pela-3a-sessao-e-perdas-chegam-a-quase-17percent-apos-reeleicao-de-lula.ghtml",
+     "publicado_em": "2026-10-28T20:26+00:00"
+    },
+    {
+     "veiculo": "Poder360",
+     "titulo": "Ibovespa cai 2,71%; dólar recua 0,19%, a R$ 5,340",
+     "url": "https://www.poder360.com.br/poder-economia/ibovespa-cai-271-dolar-recua-019-a-r-5340/",
+     "publicado_em": "2026-10-28T20:55+00:00"
+    },
+    {
+     "veiculo": "Agência Brasil",
+     "titulo": "Ibovespa cai 2,68%, e dólar fecha em leve baixa a R$ 5,34",
+     "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/ibovespa-cai-268-e-dolar-fecha-em-leve-baixa-r-534",
+     "publicado_em": "2026-10-28T19:28-03:00"
+    },
+    {
+     "veiculo": "Folha",
+     "titulo": "Investidores estrangeiros retiram R$ 2,8 bi da Bolsa na 2ª feira após eleição de Lula",
+     "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/investidores-estrangeiros-retiram-r-28-bi-da-bolsa-na-2a-feira-apos-eleicao-de-lula.shtml",
+     "publicado_em": "2026-10-28T17:39-03:00"
+    }
+   ]
+  },
+  {
+   "noticia_ids": [
+    "n030",
+    "n080",
+    "n092"
+   ],
+   "titulo_evento": "Governador do Piauí é cotado para a Fazenda e promete responsabilidade fiscal",
+   "estagio": "rumor",
+   "chance_aprovacao": null,
+   "origem": "politica",
+   "canal": "institucional",
+   "direcao": 1,
+   "magnitude": 1,
+   "ja_no_preco": false,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261028-07",
+   "porque": "O nome enfrenta questionamentos sobre o déficit do Piauí, e a demora na escolha mantém a incerteza sobre a regra fiscal. O anúncio oficial do ministro é o próximo marco.",
+   "motivo": "mesmo fato do evento ev-20261028-07",
+   "fontes": [
+    {
+     "veiculo": "Gazeta do Povo",
+     "titulo": "Cotado para a Fazenda, Rafael Fonteles enfrenta questionamentos sobre contas do Piauí",
+     "url": "https://www.gazetadopovo.com.br/economia/rafael-fonteles-fazenda-mercado-deficit-piaui/",
+     "publicado_em": "2026-10-28T20:43+00:00"
+    },
+    {
+     "veiculo": "Folha",
+     "titulo": "Lula fará governo ousado para melhorar a vida do povo, mas terá responsabilidade fiscal, diz Fonteles",
+     "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/lula-fara-governo-ousado-para-melhorar-a-vida-do-povo-mas-tera-responsabilidade-fiscal-diz-fonteles.shtml",
+     "publicado_em": "2026-10-28T16:47-03:00"
+    },
+    {
+     "veiculo": "Folha",
+     "titulo": "Prioridade de Lula deve ser apagar incêndio com nome para Fazenda, diz Garman, da Eurasia",
+     "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/c-level-entrevista/2026/10/prioridade-de-lula-deve-ser-apagar-incendio-com-nome-para-fazenda-diz-garman-do-eurasia.shtml",
+     "publicado_em": "2026-10-27T16:15-03:00"
+    }
+   ]
+  },
+  {
+   "noticia_ids": [
+    "n086",
+    "n008",
+    "n015"
+   ],
+   "titulo_evento": "TCU aprova por unanimidade alíquota de 11,3% da CBS, acima das projeções",
+   "estagio": "decidido",
+   "chance_aprovacao": null,
+   "origem": "politica",
+   "canal": "fiscal",
+   "direcao": 1,
+   "magnitude": 1,
+   "ja_no_preco": false,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261028-10",
+   "porque": "Com a alíquota acima do previsto, empresas terão de rever o planejamento de 2027 e a carga tributária pode subir. Preços e margens tendem a sentir no início da transição.",
+   "motivo": "mesmo fato do evento ev-20261028-10",
+   "fontes": [
+    {
+     "veiculo": "Folha",
+     "titulo": "Alíquota de 11,3% da CBS supera projeções e acende alerta no mercado",
+     "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/blogs/que-imposto-e-esse/2026/10/aliquota-de-113-da-cbs-supera-projecoes-e-acende-alerta-no-mercado.shtml",
+     "publicado_em": "2026-10-28T15:35-03:00"
+    },
+    {
+     "veiculo": "Folha",
+     "titulo": "Tributo da reforma maior que o previsto obriga empresas a rever planejamento para 2027",
+     "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/10/tributo-da-reforma-maior-que-o-previsto-obriga-empresas-a-rever-planejamento-para-2027.shtml",
+     "publicado_em": "2026-10-28T23:00-03:00"
+    },
+    {
+     "veiculo": "Estadão",
+     "titulo": "Alíquota de novo imposto da reforma tributária assusta e carga tributária pode subir em 2027",
+     "url": "https://www.estadao.com.br/economia/aliquota-de-novo-imposto-da-reforma-tributaria-assusta-e-carga-tributaria-pode-subir-em-2027/",
+     "publicado_em": "2026-10-28T22:15+00:00"
+    }
+   ]
+  },
+  {
+   "noticia_ids": [
+    "n050",
+    "n033"
+   ],
+   "titulo_evento": "Petróleo sobe forte com receio de escalada no Oriente Médio",
+   "estagio": "dado",
+   "chance_aprovacao": null,
+   "origem": "mundo",
+   "canal": "externo",
+   "direcao": 1,
+   "magnitude": 1,
+   "ja_no_preco": false,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261028-05",
+   "porque": "Combustível mais caro pressiona a inflação e adia o corte de juros, num momento em que o Banco Mundial prevê alimentos 10% mais caros em 2026 e 7% em 2027. Atenção ao preço do diesel.",
+   "motivo": "mesmo fato do evento ev-20261028-05",
+   "fontes": [
+    {
+     "veiculo": "Valor",
+     "titulo": "Petróleo sobe com receio de escalada da violência no Oriente Médio",
+     "url": "https://valor.globo.com/financas/noticia/2026/10/28/petroleo-sobe-com-receio-de-escalada-da-violencia-no-oriente-medio.ghtml",
+     "publicado_em": "2026-10-28T19:39+00:00"
+    },
+    {
+     "veiculo": "Folha",
+     "titulo": "Commodities alimentícias vão subir em 2026 e 2027, diz Banco Mundial",
+     "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/colunas/vaivem/2026/10/commodities-alimenticias-vao-subir-em-2026-e-2027-diz-banco-mundial.shtml",
+     "publicado_em": "2026-10-28T20:40-03:00"
+    }
+   ]
+  },
+  {
+   "noticia_ids": [
+    "n003",
+    "n041"
+   ],
+   "titulo_evento": "Fed mantém juros com discurso duro e mercado aposta em alta em dezembro",
+   "estagio": "dado",
+   "chance_aprovacao": null,
+   "origem": "mundo",
+   "canal": "externo",
+   "direcao": 1,
+   "magnitude": 1,
+   "ja_no_preco": true,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261028-15",
+   "porque": "Uma alta nos EUA atrairia capital para fora de emergentes e pressionaria o câmbio e os juros no Brasil. A reunião de dezembro do Fed é o próximo teste.",
+   "motivo": "mesmo fato do evento ev-20261028-15",
+   "fontes": [
+    {
+     "veiculo": "Estadão",
+     "titulo": "Fed segura juro, mas segue com discurso duro; mercado vê alta em dezembro",
+     "url": "https://www.estadao.com.br/economia/fed-segura-juro-mas-segue-com-discurso-duro-mercado-ve-alta-em-dezembro/",
+     "publicado_em": "2026-10-29T00:36+00:00"
+    },
+    {
+     "veiculo": "Valor",
+     "titulo": "Bolsas de NY têm leve alta após decisão do Fed e antes de balanços de ‘big techs’",
+     "url": "https://valor.globo.com/financas/noticia/2026/10/28/bolsas-de-ny-tem-leve-alta-apos-decisao-do-fed-e-antes-de-balancos-de-big-techs.ghtml",
+     "publicado_em": "2026-10-28T20:25+00:00"
+    }
+   ]
+  }
+ ],
+ "resultado": {
+  "estrutura": {
+   "janela": [
+    "3T26",
+    "4T26",
+    "1T27",
+    "2T27",
+    "3T27",
+    "4T27",
+    "1T28",
+    "2T28",
+    "3T28",
+    "4T28",
+    "1T29",
+    "2T29",
+    "3T29",
+    "4T29",
+    "1T30",
+    "2T30",
+    "3T30",
+    "4T30"
+   ],
+   "publicados_na_janela": [],
+   "resolvido": false,
+   "pendente_negativo": false,
+   "inicios": [
+    "3T26",
+    "4T26",
+    "1T27",
+    "2T27",
+    "3T27",
+    "4T27",
+    "1T28",
+    "2T28",
+    "3T28",
+    "4T28",
+    "1T29",
+    "2T29",
+    "3T29",
+    "4T29",
+    "1T30",
+    "2T30",
+    "3T30"
+   ],
+   "ultimo_publicado": "2T26"
+  },
+  "h0": 0.053,
+  "deslocamento_logit": 0.956296856929055,
+  "indicadores_logit": 0.956296856929055,
+  "noticias_logit": 0,
+  "manchete": 0.7322288771008506,
+  "curto_prazo_4t": 0.4194657682299767,
+  "taxa_base_manchete": 0.6037679119743016,
+  "taxa_base_4t": 0.1957336175190002,
+  "taxa_base_faixa": [
+   0.5371215498657952,
+   0.6582233601341487
+  ],
+  "alternativas": [
+   {
+    "nome": "2004–2026",
+    "risco_trimestral": 0.04,
+    "leitura": "para quem acha que o Brasil mudou depois de 2004",
+    "manchete_sem_ajustes": 0.5004131923201864,
+    "manchete": 0.6293064049694788
+   },
+   {
+    "nome": "1980–2026",
+    "risco_trimestral": 0.0752,
+    "leitura": "para quem acha que não mudou",
+    "manchete_sem_ajustes": 0.7352640270332623,
+    "manchete": 0.8469179110273406
+   }
+  ],
+  "risco_trimestral": [
+   {
+    "trimestre": "3T26",
+    "risco": 0.12711514493721102
+   },
+   {
+    "trimestre": "4T26",
+    "risco": 0.12711514493721102
+   },
+   {
+    "trimestre": "1T27",
+    "risco": 0.12711514493721102
+   },
+   {
+    "trimestre": "2T27",
+    "risco": 0.12711514493721102
+   },
+   {
+    "trimestre": "3T27",
+    "risco": 0.09574317562585519
+   },
+   {
+    "trimestre": "4T27",
+    "risco": 0.07147341586202896
+   },
+   {
+    "trimestre": "1T28",
+    "risco": 0.053000000000000005
+   },
+   {
+    "trimestre": "2T28",
+    "risco": 0.053000000000000005
+   },
+   {
+    "trimestre": "3T28",
+    "risco": 0.053000000000000005
+   },
+   {
+    "trimestre": "4T28",
+    "risco": 0.053000000000000005
+   },
+   {
+    "trimestre": "1T29",
+    "risco": 0.053000000000000005
+   },
+   {
+    "trimestre": "2T29",
+    "risco": 0.053000000000000005
+   },
+   {
+    "trimestre": "3T29",
+    "risco": 0.053000000000000005
+   },
+   {
+    "trimestre": "4T29",
+    "risco": 0.053000000000000005
+   },
+   {
+    "trimestre": "1T30",
+    "risco": 0.053000000000000005
+   },
+   {
+    "trimestre": "2T30",
+    "risco": 0.053000000000000005
+   },
+   {
+    "trimestre": "3T30",
+    "risco": 0.053000000000000005
+   }
+  ],
+  "indicadores": [
+   {
+    "id": "atividade",
+    "nome": "Atividade (IBC-Br)",
+    "unidade": "%",
+    "definicao": "Média dos últimos 3 meses do IBC-Br dessazonalizado contra a média dos 3 meses anteriores.",
+    "valor": -0.6424554746393363,
+    "ref": "2026-08",
+    "bruto": 0.4569821898557345,
+    "logit": 0.3427366423918009
+   },
+   {
+    "id": "trabalho",
+    "nome": "Desemprego (regra de Sahm adaptada)",
+    "unidade": "p.p.",
+    "definicao": "Média de 3 meses da desocupação da PNAD menos o menor valor dessa média nos 12 meses anteriores.",
+    "valor": 0.09999999999999964,
+    "ref": "2026-08",
+    "bruto": -0.060000000000000414,
+    "logit": -0.04500000000000031
+   },
+   {
+    "id": "juro_real",
+    "nome": "Juro real ex-ante",
+    "unidade": "% a.a.",
+    "definicao": "Selic meta descontada da inflação esperada para 12 meses (Focus, suavizada), comparada a um juro neutro de 5%.",
+    "valor": 8.816686692125785,
+    "ref": "2026-10-29",
+    "detalhe": "Selic de 13,75% e inflação esperada de 4,53% (Focus de 23/10)",
+    "bruto": 0.3053349353700628,
+    "logit": 0.2290012015275471
+   },
+   {
+    "id": "familias",
+    "nome": "Dívida das famílias",
+    "unidade": "p.p.",
+    "definicao": "Comprometimento de renda das famílias com dívidas (dessazonalizado) menos a sua média dos últimos 36 meses.",
+    "valor": 1.6457575757575746,
+    "ref": "2026-07",
+    "detalhe": "28,7% da renda",
+    "bruto": 0.1645757575757575,
+    "logit": 0.12343181818181811
+   },
+   {
+    "id": "fiscal",
+    "nome": "Dívida pública",
+    "unidade": "p.p. do PIB",
+    "definicao": "Variação da dívida bruta do governo geral em 12 meses.",
+    "valor": 5.560000000000002,
+    "ref": "2026-08",
+    "detalhe": "82,9% do PIB",
+    "bruto": 0.1824000000000001,
+    "logit": 0.13680000000000006
+   },
+   {
+    "id": "cambio",
+    "nome": "Câmbio",
+    "unidade": "%",
+    "definicao": "Variação do dólar PTAX em cerca de 3 meses (63 dias úteis).",
+    "valor": 4.301306206923483,
+    "ref": "2026-10-28",
+    "detalhe": "R$ 5,34",
+    "bruto": 0.06451959310385225,
+    "logit": 0.048389694827889185
+   },
+   {
+    "id": "mercado",
+    "nome": "Juro real longo (mercado)",
+    "unidade": "p.p.",
+    "definicao": "Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (Tesouro Direto, venda pela manhã) menos a sua mediana nos 3 anos anteriores.",
+    "valor": 0.6449999999999996,
+    "ref": "2026-10-27",
+    "detalhe": "taxa de 8,02% ao ano acima da inflação, contra a mediana de 7,38% nos 3 anos anteriores (Tesouro IPCA+ 2035)",
+    "bruto": 0.1612499999999999,
+    "logit": 0.12093749999999992
+   }
+  ],
+  "noticias": [],
+  "agrupados": [],
+  "shapley_desde_base": {
+   "ind:atividade": 4.611777406177249,
+   "ind:trabalho": -0.6018213793717501,
+   "ind:juro_real": 3.076069412085466,
+   "ind:familias": 1.6552609491429042,
+   "ind:fiscal": 1.8349219296762822,
+   "ind:cambio": 0.6481411973704787,
+   "ind:mercado": 1.6217469975742729
+  },
+  "contrafactual_sem_evento": {},
+  "pressao": {
+   "temas": {
+    "mercado": {
+     "saldo": 0.23173333333333332,
+     "sentido": "sobe",
+     "eventos": [
+      "ev-20261028-01",
+      "ev-20261029-01",
+      "ev-20261028-09"
+     ]
+    },
+    "fiscal": {
+     "saldo": 0.006373333333333335,
+     "sentido": "igual",
+     "eventos": [
+      "ev-20261028-10",
+      "ev-20261028-02",
+      "ev-20261029-03"
+     ]
+    },
+    "credito": {
+     "saldo": 0.053733333333333334,
+     "sentido": "sobe",
+     "eventos": [
+      "ev-20261028-03",
+      "ev-20261028-08",
+      "ev-20261028-13"
+     ]
+    },
+    "oferta": {
+     "saldo": 0.05893333333333334,
+     "sentido": "sobe",
+     "eventos": [
+      "ev-20261028-14",
+      "ev-20261028-04"
+     ]
+    },
+    "externo": {
+     "saldo": 0.02946666666666667,
+     "sentido": "igual",
+     "eventos": [
+      "ev-20261028-15",
+      "ev-20261028-05"
+     ]
+    },
+    "atividade": {
+     "saldo": 0.05673333333333334,
+     "sentido": "sobe",
+     "eventos": [
+      "ev-20261028-11",
+      "ev-20261028-06",
+      "ev-20261028-12",
+      "ev-20261029-02"
+     ]
+    },
+    "institucional": {
+     "saldo": 0.019466666666666667,
+     "sentido": "igual",
+     "eventos": [
+      "ev-20261028-07"
+     ]
+    }
+   },
+   "saldo": 0.45644,
+   "sentido": "sobe"
+  },
+  "por_horizonte": {
+   "ate": "4T27",
+   "n": 6,
+   "perto": 0.512568074663223,
+   "perto_base": 0.27872666979359706,
+   "depois": 0.21966080243762764
+  },
+  "shapley_perto": {
+   "ind:atividade": 8.394958784126475,
+   "ind:trabalho": -1.0955137748983157,
+   "ind:juro_real": 5.5994627791402865,
+   "ind:familias": 3.013121887976631,
+   "ind:fiscal": 3.3401642392994066,
+   "ind:cambio": 1.1798311494677607,
+   "ind:mercado": 2.952115421850344
+  }
+ },
+ "cenarios": [
+  {
+   "trimestre": "3T26",
+   "cenario": "negativo",
+   "manchete": 0.9215008628404011,
+   "curto_prazo_4t": 0.8388319483625692
+  },
+  {
+   "trimestre": "3T26",
+   "cenario": "zero ou positivo",
+   "manchete": 0.7172427424507398,
+   "curto_prazo_4t": 0.4194657682299767
+  }
+ ],
+ "variacao": {
+  "de": 79.01146895924312,
+  "para": 73.22288771008506,
+  "partes": {
+   "metodologia": -5.788581249158057
+  },
+  "agrupados": [],
+  "versao_anterior": "1.1"
+ },
+ "variacao_12m": {
+  "de": 52.92430606405492,
+  "para": 41.94657682299767,
+  "partes": {
+   "metodologia": -10.977729241057247
+  },
+  "agrupados": [],
+  "versao_anterior": "1.1"
+ },
+ "em_revisao": false,
+ "seta_ref": {
+  "id": "2026-10-28T1158",
+  "versao": "1.0",
+  "multiplicador": 2.1419741090753
+ },
+ "anterior": "2026-10-28T1524",
+ "revisao_texto": {
+  "classificacao": []
+ },
+ "post": {
+  "ok": true,
+  "titulo": "Risco cai a 2,14× com nova metodologia; notícias empurram para cima",
+  "paragrafos": [
+   "O risco de a recessão técnica começar nos próximos 12 meses caiu de 2,70× para 2,14× o normal, queda de 0,56. Recessão técnica é a queda do PIB por dois trimestres seguidos. Nenhum dado novo da economia mexeu na conta. A variação inteira vem da troca de metodologia do modelo, da versão 1.1 para a 1.3.",
+   "As notícias andam no sentido oposto e empurram o risco para cima. No mercado financeiro, os juros futuros longos, taxas que o mercado negocia hoje para prazos de vários anos, subiram forte. O movimento reflete mais prêmio de risco, a compensação extra que o investidor cobra pela incerteza no país. A S&P Global cobra um sinal concreto sobre as contas públicas. O Tesouro já tinha anunciado recompra de títulos para conter as oscilações.",
+   "Nas contas públicas, o tema segue sem pressão clara. O ministro da articulação política afirmou que o ajuste fiscal não está em discussão. A fala contrasta com o projeto anunciado pela Fazenda para cumprir o centro da meta fiscal, que ainda não tem medidas detalhadas. No crédito, a pressão é para cima: o Bradesco elevou a taxa mínima do financiamento imobiliário de 11,69% para 15% ao ano, e o governo avalia, ainda como proposta, cobrar IOF sobre LCI e LCA, títulos hoje isentos de imposto.",
+   "Amanhã, 30/10, o IBGE divulga o desemprego até setembro. Em 4/11, o Copom decide a Selic, a taxa básica de juros. O gatilho principal chega em 2/12, com o PIB do 3º trimestre. Se vier negativo, o risco sobe a 4,3×. Se vier zero ou positivo, vai a 2,1×."
+  ],
+  "problemas": [],
+  "meta": [
+   {
+    "modelo_pedido": "opus",
+    "prompt_sha256": "734deb39749bd94a4a6a44f60f31781cdd2677c1a2d90437c4ea88fbf71a66a3",
+    "system_sha256": "9377de851f4e6c39ef68b18d70d6853481f05951abc418e36dd3b7ff62ec0f83",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.1264183,
+    "modelos": [
+     "claude-haiku-5-5",
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "6ebc4853-790f-416a-a1c4-030679b56544"
+   }
+  ]
+ }
+}

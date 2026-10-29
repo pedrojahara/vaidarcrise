@@ -1,33 +1,28 @@
 {
- "multiplicador_12m": 2.704,
+ "multiplicador_12m": 2.143,
  "normal_12m": 0.1957,
- "probabilidade_proximos_4_trimestres": 0.5292,
- "seta": "piorando",
+ "probabilidade_proximos_4_trimestres": 0.4195,
+ "seta": "estável",
  "seta_desde": "2026-10-28T11:58:02-03:00",
- "seta_razao": 1.146,
+ "seta_razao": 1.0,
  "fatores_12m_pontos": {
-  "ind:atividade": 8.7,
-  "ind:juro_real": 5.8,
-  "not:outras": 5.1,
-  "not:ev-20261028-01": 5.0,
-  "ind:fiscal": 3.5,
-  "ind:familias": 3.1,
-  "ind:cambio": 1.2,
-  "ind:trabalho": -1.1,
-  "not:ev-20261028-10": 1.0,
-  "not:ev-20261028-11": 1.0,
-  "not:ev-20261028-14": 1.0,
-  "not:ev-20261028-02": -1.0
+  "ind:atividade": 8.0,
+  "ind:juro_real": 5.4,
+  "ind:fiscal": 3.2,
+  "ind:familias": 2.9,
+  "ind:mercado": 2.8,
+  "ind:cambio": 1.1,
+  "ind:trabalho": -1.1
  },
- "probabilidade_recessao_ate_4T30": 0.7901,
- "nota": 79.0,
+ "probabilidade_recessao_ate_4T30": 0.7322,
+ "nota": 73.2,
  "probabilidade_ate_4T30_faixa": [
-  0.6929,
-  0.8902
+  0.6293,
+  0.8469
  ],
  "risco_trimestral_base": 0.053,
- "atualizado_em": "2026-10-28T15:24:26-03:00",
- "versao_modelo": "1.1",
+ "atualizado_em": "2026-10-29T06:58:18-03:00",
+ "versao_modelo": "1.3",
  "regra": "Sim se o PIB trimestral dessazonalizado do IBGE (tabela 5932, taxa contra o trimestre imediatamente anterior) tiver dois trimestres seguidos de queda, ambos entre o 3º tri de 2026 e o 4º tri de 2030, na série vigente em março de 2031.",
  "indicadores": [
   {
@@ -51,7 +46,7 @@
    "nome": "Juro real ex-ante",
    "valor": 8.816686692125785,
    "unidade": "% a.a.",
-   "ref": "2026-10-28",
+   "ref": "2026-10-29",
    "logit": 0.2290012015275471
   },
   {
@@ -77,134 +72,87 @@
    "unidade": "%",
    "ref": "2026-10-28",
    "logit": 0.048389694827889185
+  },
+  {
+   "id": "mercado",
+   "nome": "Juro real longo (mercado)",
+   "valor": 0.6449999999999996,
+   "unidade": "p.p.",
+   "ref": "2026-10-27",
+   "logit": 0.12093749999999992
   }
  ],
- "noticias": [
-  {
-   "id": "ev-20261028-01",
-   "titulo": "Bolsa cai 13,88% e dólar sobe 8,21% no dia seguinte à eleição presidencial, com primeiro circuit breaker desde 2020 e perda de 14% na semana",
-   "logit": 0.1947,
-   "data": "2026-10-26",
-   "estagio": null,
-   "origem": null
-  },
-  {
-   "id": "ev-20261028-02",
-   "titulo": "Fazenda anuncia projeto de lei para cumprir o centro da meta fiscal e reafirma o centro da meta de inflação",
-   "logit": -0.0395,
-   "data": "2026-10-27",
-   "estagio": null,
-   "origem": null
-  },
-  {
-   "id": "ev-20261028-03",
-   "titulo": "BC: 20,3 milhões de pessoas em endividamento de risco (+75% em 5 anos); grande banco tem lucro 28% menor por causa das provisões contra calotes",
-   "logit": 0.0395,
-   "data": "2026-10-27",
-   "estagio": null,
-   "origem": null
-  },
-  {
-   "id": "ev-20261028-04",
-   "titulo": "Um El Niño forte pode reduzir a safra de soja 2026/27 em cerca de 10% (perda de R$ 33 bilhões); alimentos ficam 2,40% mais caros nas fábricas",
-   "logit": 0.0395,
-   "data": "2026-10-27",
-   "estagio": null,
-   "origem": null
-  },
-  {
-   "id": "ev-20261028-05",
-   "titulo": "Banco Mundial prevê alta de 23% nas commodities em 2026, puxada pela energia; governo prorroga por 30 dias a subvenção de R$ 2,12/litro ao diesel",
-   "logit": 0.0197,
-   "data": "2026-10-27",
-   "estagio": null,
-   "origem": null
-  },
-  {
-   "id": "ev-20261028-06",
-   "titulo": "Confiança da indústria cai pelo terceiro mês seguido em outubro, com piora da avaliação da situação atual",
-   "logit": 0.02,
-   "data": "2026-10-28",
-   "estagio": null,
-   "origem": null
-  },
-  {
-   "id": "ev-20261028-07",
-   "titulo": "Indefinição sobre o comando do Ministério da Fazenda no novo mandato; mercado cobra nome e regra fiscal crível",
-   "logit": 0.0197,
-   "data": "2026-10-27",
-   "estagio": null,
-   "origem": null
-  },
-  {
-   "id": "ev-20261028-08",
-   "titulo": "Governo avalia cobrar IOF por decreto sobre LCI, LCA e outros títulos isentos",
-   "logit": 0.02,
-   "data": "2026-10-28",
-   "estagio": null,
-   "origem": null
-  },
-  {
-   "id": "ev-20261028-09",
-   "titulo": "Tesouro anuncia recompra de NTN-B com vencimentos de 2030 a 2045 para conter oscilações",
-   "logit": -0.0197,
-   "data": "2026-10-27",
-   "estagio": null,
-   "origem": null
-  },
-  {
-   "id": "ev-20261028-10",
-   "titulo": "TCU propõe alíquota de referência de 11,3% para a CBS em 2027; mercado avalia impacto inflacionário da reforma tributária",
-   "logit": 0.04,
-   "data": "2026-10-28",
-   "estagio": null,
-   "origem": null
-  },
-  {
-   "id": "ev-20261028-11",
-   "titulo": "CNI reduz projeção de crescimento do PIB de 2026 de 2% para 1,6% e projeta inflação de 5,15% e dívida/PIB de 83,7%",
-   "logit": 0.04,
-   "data": "2026-10-28",
-   "estagio": null,
-   "origem": null
-  },
-  {
-   "id": "ev-20261028-12",
-   "titulo": "Vendas de máquinas e equipamentos acumulam queda de 13,4% no ano até setembro, com juros altos e concorrência de importados",
-   "logit": 0.02,
-   "data": "2026-10-28",
-   "estagio": null,
-   "origem": null
-  },
-  {
-   "id": "ev-20261028-13",
-   "titulo": "Grande banco eleva taxa mínima do crédito imobiliário de 11,69% para 15% ao ano",
-   "logit": 0.02,
-   "data": "2026-10-28",
-   "estagio": null,
-   "origem": null
-  },
-  {
-   "id": "ev-20261028-14",
-   "titulo": "Estados aprovam aumento do ICMS sobre gasolina, diesel e gás a partir de fevereiro de 2027; diesel e biodiesel com alta de 11,1%",
-   "logit": 0.04,
-   "data": "2026-10-28",
-   "estagio": null,
-   "origem": null
-  },
-  {
-   "id": "ev-20261028-15",
-   "titulo": "Fed mantém juros em 3,75%-4,00% ao ano, com dois votos divergentes a favor de alta de 0,25 ponto",
-   "logit": 0.02,
-   "data": "2026-10-28",
-   "estagio": null,
-   "origem": null
+ "noticias_na_conta": [],
+ "pressao_noticias": {
+  "sentido": "sobe",
+  "saldo": 0.4564,
+  "temas": {
+   "mercado": {
+    "sentido": "sobe",
+    "saldo": 0.2317,
+    "eventos": [
+     "ev-20261028-01",
+     "ev-20261029-01",
+     "ev-20261028-09"
+    ]
+   },
+   "fiscal": {
+    "sentido": "igual",
+    "saldo": 0.0064,
+    "eventos": [
+     "ev-20261028-10",
+     "ev-20261028-02",
+     "ev-20261029-03"
+    ]
+   },
+   "credito": {
+    "sentido": "sobe",
+    "saldo": 0.0537,
+    "eventos": [
+     "ev-20261028-03",
+     "ev-20261028-08",
+     "ev-20261028-13"
+    ]
+   },
+   "oferta": {
+    "sentido": "sobe",
+    "saldo": 0.0589,
+    "eventos": [
+     "ev-20261028-14",
+     "ev-20261028-04"
+    ]
+   },
+   "externo": {
+    "sentido": "igual",
+    "saldo": 0.0295,
+    "eventos": [
+     "ev-20261028-15",
+     "ev-20261028-05"
+    ]
+   },
+   "atividade": {
+    "sentido": "sobe",
+    "saldo": 0.0567,
+    "eventos": [
+     "ev-20261028-11",
+     "ev-20261028-06",
+     "ev-20261028-12",
+     "ev-20261029-02"
+    ]
+   },
+   "institucional": {
+    "sentido": "igual",
+    "saldo": 0.0195,
+    "eventos": [
+     "ev-20261028-07"
+    ]
+   }
   }
- ],
- "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-28T1524.json",
+ },
+ "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-29T0658.json",
  "post_do_dia": {
-  "titulo": "O risco foi de 2,5× para 2,7× o normal com 5 notícias novas",
-  "url": "https://vaidarcrise.com.br/2026-10-28/",
-  "escrito_por_llm": false
+  "titulo": "Risco cai a 2,14× com nova metodologia; notícias empurram para cima",
+  "url": "https://vaidarcrise.com.br/2026-10-29/",
+  "escrito_por_llm": true
  }
 }
