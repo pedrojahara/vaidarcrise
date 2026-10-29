@@ -69,7 +69,7 @@ def bis() -> None:
 
 # ---------------------------------------------------------------- FRED (sem chave): PIB trimestral e outros
 def fred_serie(sid: str) -> list[tuple[str, float]] | None:
-    b = baixar(f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}", timeout=60, tentativas=2)
+    b = baixar(f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}", timeout=25, tentativas=1)
     if not b:
         return None
     linhas = b.decode("utf-8", "replace").strip().splitlines()[1:]
@@ -83,34 +83,37 @@ def fred_serie(sid: str) -> list[tuple[str, float]] | None:
     return out or None
 
 
-def fred() -> None:
-    modelos = {
-        "pib_real_sa": ["NGDPRSAXDC{c}Q", "CLVMNACSCAB1GQ{c}", "NAEXKP01{c}Q189S"],
-        "credito_privado_pib": ["Q{c}PAM770A"],
-        "credito_familias_pib": ["Q{c}HAM770A"],
-        "credito_empresas_pib": ["Q{c}NAM770A"],
-        "credito_governo_pib": ["Q{c}GAM770A"],
-        "juro_curto": ["IR3TIB01{c}M156N", "INTDSR{c}M193N", "IRSTCI01{c}M156N"],
-        "juro_longo": ["IRLTLT01{c}M156N"],
-        "cambio_real_efetivo": ["RB{c}BIS"],
-        "imovel_real": ["Q{c}R628BIS"],
-        "cpi": ["{c3}CPIALLMINMEI", "FPCPITOTLZG{c3}"],
-        "desemprego": ["LRHUTTTT{c}M156S", "LRUNTTTT{c}Q156S"],
-    }
+MODELOS_FRED = {
+    "pib_real_sa": ["NGDPRSAXDC{c}Q", "CLVMNACSCAB1GQ{c}", "NAEXKP01{c}Q189S"],
+    "credito_privado_pib": ["Q{c}PAM770A"],
+    "credito_familias_pib": ["Q{c}HAM770A"],
+    "credito_empresas_pib": ["Q{c}NAM770A"],
+    "credito_governo_pib": ["Q{c}GAM770A"],
+    "juro_curto": ["IR3TIB01{c}M156N", "INTDSR{c}M193N", "IRSTCI01{c}M156N"],
+    "juro_longo": ["IRLTLT01{c}M156N"],
+    "cambio_real_efetivo": ["RB{c}BIS"],
+    "imovel_real": ["Q{c}R628BIS"],
+    "cpi": ["{c3}CPIALLMINMEI", "FPCPITOTLZG{c3}"],
+    "desemprego": ["LRHUTTTT{c}M156S", "LRUNTTTT{c}Q156S"],
+}
+
+
+def fred_var(var: str) -> None:
     iso3 = json.loads((Path(__file__).resolve().parent / "iso.json").read_text())
-    dados: dict[str, dict[str, dict]] = {k: {} for k in modelos}
+    dados: dict[str, dict] = {}
     for c in PAISES:
-        for var, ids in modelos.items():
-            for m in ids:
-                sid = m.format(c=c, c3=iso3.get(c, c))
-                s = fred_serie(sid)
-                time.sleep(0.4)
-                if s:
-                    dados[var][c] = {"id": sid, "serie": s}
-                    break
-    for var, d in dados.items():
-        (OUT / f"fred_{var}.json").write_text(json.dumps(d))
-        registrar(f"fred_{var}", bool(d), paises=sorted(d))
+        for m in MODELOS_FRED[var]:
+            sid = m.format(c=c, c3=iso3.get(c, c))
+            s = fred_serie(sid)
+            time.sleep(0.2)
+            if s:
+                dados[c] = {"id": sid, "serie": s}
+                break
+    (OUT / f"fred_{var}.json").write_text(json.dumps(dados))
+    registrar(f"fred_{var}", bool(dados), paises=sorted(dados))
+
+
+def fred_globais() -> None:
     globais = {"vix": "VIXCLS", "fed_funds": "FEDFUNDS", "us_10a_3m": "T10Y3M", "us_recessao": "USREC",
                "commodities_fmi": "PALLFNFINDEXM", "petroleo_brent": "POILBREUSDM", "dolar_amplo": "DTWEXBGS",
                "dolar_amplo_antigo": "TWEXBMTH", "us_baa_10a": "BAA10YM", "pib_mundo_fmi": "NYGDPMKTPKDWLD",
@@ -181,9 +184,15 @@ def jst() -> None:
 
 
 if __name__ == "__main__":
-    for f in (bis, fred, banco_mundial, fmi, jst):
+    import sys
+    alvo = sys.argv[1] if len(sys.argv) > 1 else "tudo"
+    fontes = {"bis": bis, "fred_globais": fred_globais, "banco_mundial": banco_mundial, "fmi": fmi, "jst": jst}
+    fontes.update({f"fred_{v}": (lambda v=v: fred_var(v)) for v in MODELOS_FRED})
+    for nome, f in fontes.items():
+        if alvo not in ("tudo", nome):
+            continue
         try:
             f()
         except Exception as e:  # uma fonte quebrada não derruba as outras
-            registrar(f.__name__, False, erro=repr(e))
-    (OUT / "manifesto.json").write_text(json.dumps(MANIFESTO, indent=1, ensure_ascii=False))
+            registrar(nome, False, erro=repr(e))
+    (OUT / f"manifesto_{alvo}.json").write_text(json.dumps(MANIFESTO, indent=1, ensure_ascii=False))
