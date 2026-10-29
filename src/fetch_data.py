@@ -1,5 +1,5 @@
-"""Coleta os indicadores econômicos (BCB SGS, Focus/Olinda, IBGE) e grava um
-snapshot com data de coleta em data/raw/<data>/indicadores.json.
+"""Coleta os indicadores econômicos (BCB SGS, Focus/Olinda, IBGE, Tesouro Direto e FMI via FRED)
+e grava um snapshot com data de coleta em data/raw/<data>/indicadores.json.
 
 Cada série é guardada como veio da fonte, com a data em que foi coletada, porque
 PIB e IBC-Br são revisados e o backtest precisa saber o que se sabia em cada dia.
@@ -33,6 +33,8 @@ OLINDA = "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata"
 TESOURO = ("https://www.tesourotransparente.gov.br/ckan/dataset/df56aa42-484a-4a59-8184-7676580c81e3/"
            "resource/796d2059-14e9-44e3-80c9-2d9e30b405c1/download/PrecoTaxaTesouroDireto.csv")
 TESOURO_CACHE = ROOT / "data" / "raw" / "tesouro_direto.csv"
+# Índice de preços de todas as commodities do FMI, mensal (fator Cenário externo).
+FRED_COMMODITIES = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PALLFNFINDEXM"
 IBGE_PIB = (
     "https://servicodados.ibge.gov.br/api/v3/agregados/5932/periodos/{periodos}"
     "/variaveis/6564?localidades=N1[all]&classificacao=11255[90707]"
@@ -137,9 +139,20 @@ def juro_real_longo(inicio: dt.date) -> list[dict]:
     return out
 
 
+def commodities(inicio: dt.date) -> list[dict]:
+    r = _get(FRED_COMMODITIES)
+    out = []
+    for linha in r.text.strip().splitlines()[1:]:
+        d, v = linha.split(",")[:2]
+        if v not in (".", "") and d >= inicio.isoformat():
+            out.append({"data": d, "valor": float(v)})
+    return out
+
+
 def coletar() -> dict:
     hoje = dt.date.today()
-    inicio = hoje - dt.timedelta(days=3 * 365)
+    # 4 anos: a média de 36 meses do comprometimento de renda precisa de 37 meses de dado, com folga.
+    inicio = hoje - dt.timedelta(days=4 * 365)
     snap: dict = {"coletado_em": dt.datetime.now().astimezone().isoformat(timespec="seconds"),
                   "series": {}, "focus": {}, "erros": []}
     for key, (code, nome) in SGS.items():
@@ -157,7 +170,13 @@ def coletar() -> dict:
             "fonte": "https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto"}
     except Exception as e:  # noqa: BLE001
         snap["erros"].append(f"Tesouro Direto: {e}")
-    for ind in ("PIB Total", "IPCA", "Selic"):
+    try:
+        snap["series"]["commodities"] = {"nome": "Índice de preços de todas as commodities do FMI (2016 = 100)",
+                                         "dados": commodities(inicio),
+                                         "fonte": "https://fred.stlouisfed.org/series/PALLFNFINDEXM"}
+    except Exception as e:  # noqa: BLE001
+        snap["erros"].append(f"FRED commodities: {e}")
+    for ind in ("PIB Total", "IPCA", "Selic", "Câmbio"):
         try:
             snap["focus"][ind] = focus_anual(ind)
         except Exception as e:  # noqa: BLE001

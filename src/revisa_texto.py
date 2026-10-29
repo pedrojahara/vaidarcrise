@@ -18,7 +18,8 @@ MOLDES = [
     (re.compile(r"\bnão (só|apenas)\b[^.]*\bmas\b", re.I), "não só X, mas Y"),
     (re.compile(r"\bgrande banco\b", re.I), "empresa sem nome"),
     (re.compile(r"!"), "ponto de exclamação"),
-    (re.compile(r"\b(metodologia|log-?odds|Shapley|taxa-base|pesam? pouco)\b", re.I), "explica a conta ao leitor"),
+    (re.compile(r"\b(metodologia|log-?odds|Shapley|taxa-base|pesam? pouco|composto|regressão|calibra\w*|"
+                r"limite de alerta|nova regra|versão do (site|modelo))\b", re.I), "explica a conta ao leitor"),
 ]
 
 
@@ -29,10 +30,14 @@ GRAVES = [
                 r"informam|divulga|divulgam|revela|revelam|identifica|identificam) o nome|não identificad[oa]s?|"
                 r"não nomead[oa]s?)\b", re.I), "comenta a falta de um nome"),
     (re.compile(r"\bindicadores já (a |o |as |os )?med", re.I), "dá motivo para notícia fora da conta"),
+    # O risco de recessão é qualitativo: nunca vira número.
+    (re.compile(r"(\d+(,\d+)?\s*(%|por cento)\s*de (chance|probabilidade|risco)|(chance|probabilidade|risco) "
+                r"(de recessão )?(é |fica |sobe para |cai para |vai a |de )?(de )?\d+(,\d+)?\s*(%|por cento)|"
+                r"\d+(,\d+)?\s*(×|vezes o normal|vezes a chance)|\bvezes o normal\b)", re.I), "dá número ao risco de recessão"),
     # O post conta o dia; como a conta funciona fica na página da conta.
     (re.compile(r"\b((não|nem) (entra|entram|mexe|mexem|move|movem) "
-                r"(n[oa] |o |a )?(número|conta)|entram? n[oa] (número|conta)|só se (mexe|move)|"
-                r"(fora|dentro) d[oa] (número|conta))\b", re.I), "explica como o número funciona"),
+                r"(n[oa] |o |a )?(número|conta|nível)|entram? n[oa] (número|conta|nível)|só se (mexe|move)|"
+                r"(fora|dentro) d[oa] (número|conta|nível))\b", re.I), "explica como o nível funciona"),
 ]
 
 

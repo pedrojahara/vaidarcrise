@@ -1,157 +1,207 @@
 {
- "multiplicador_12m": 2.143,
- "normal_12m": 0.1957,
- "probabilidade_proximos_4_trimestres": 0.4195,
- "seta": null,
- "seta_desde": null,
- "seta_razao": null,
- "fatores_12m_pontos": {
-  "ind:atividade": 8.0,
-  "ind:juro_real": 5.4,
-  "ind:fiscal": 3.2,
-  "ind:familias": 2.9,
-  "ind:mercado": 2.8,
-  "ind:cambio": 1.1,
-  "ind:trabalho": -1.1
- },
- "probabilidade_recessao_ate_4T30": 0.7322,
- "nota": 73.2,
- "probabilidade_ate_4T30_faixa": [
-  0.6671,
-  0.7821
+ "nivel": "Normal",
+ "escala": [
+  "Muito abaixo",
+  "Abaixo",
+  "Normal",
+  "Acima",
+  "Muito acima"
  ],
- "risco_trimestral_base": 0.053,
- "atualizado_em": "2026-10-29T06:58:18-03:00",
- "versao_modelo": "1.3",
- "regra": "Sim se o PIB trimestral dessazonalizado do IBGE (tabela 5932, taxa contra o trimestre imediatamente anterior) tiver dois trimestres seguidos de queda, ambos entre o 3º tri de 2026 e o 4º tri de 2030, na série vigente em março de 2031.",
- "indicadores": [
+ "pergunta": "O risco de o Brasil entrar em recessão técnica nos próximos 12 meses está acima ou abaixo do normal?",
+ "atualizado_em": "2026-10-29T13:39:44-03:00",
+ "fatores": [
   {
    "id": "atividade",
-   "nome": "Atividade (IBC-Br)",
-   "valor": -0.6424554746393363,
-   "unidade": "%",
-   "ref": "2026-08",
-   "logit": 0.3427366423918009
-  },
-  {
-   "id": "trabalho",
-   "nome": "Desemprego (regra de Sahm adaptada)",
-   "valor": 0.09999999999999964,
-   "unidade": "p.p.",
-   "ref": "2026-08",
-   "logit": -0.04500000000000031
-  },
-  {
-   "id": "juro_real",
-   "nome": "Juro real ex-ante",
-   "valor": 8.816686692125785,
-   "unidade": "% a.a.",
-   "ref": "2026-10-29",
-   "logit": 0.2290012015275471
-  },
-  {
-   "id": "familias",
-   "nome": "Dívida das famílias",
-   "valor": 1.6457575757575746,
-   "unidade": "p.p.",
-   "ref": "2026-07",
-   "logit": 0.12343181818181811
-  },
-  {
-   "id": "fiscal",
-   "nome": "Dívida pública",
-   "valor": 5.560000000000002,
-   "unidade": "p.p. do PIB",
-   "ref": "2026-08",
-   "logit": 0.13680000000000006
-  },
-  {
-   "id": "cambio",
-   "nome": "Câmbio",
-   "valor": 4.301306206923483,
-   "unidade": "%",
-   "ref": "2026-10-28",
-   "logit": 0.048389694827889185
+   "nome": "Atividade",
+   "peso_hoje": "Pequeno",
+   "situacao": "Zona de alerta",
+   "tendencia": "piora"
   },
   {
    "id": "mercado",
-   "nome": "Juro real longo (mercado)",
-   "valor": 0.6449999999999996,
-   "unidade": "p.p.",
-   "ref": "2026-10-27",
-   "logit": 0.12093749999999992
+   "nome": "Mercado financeiro",
+   "peso_hoje": "Pequeno",
+   "situacao": "Zona de alerta",
+   "tendencia": "piora"
+  },
+  {
+   "id": "contas",
+   "nome": "Contas públicas",
+   "peso_hoje": "Não entra no nível",
+   "situacao": "Pior que o normal",
+   "tendencia": "piora"
+  },
+  {
+   "id": "juro",
+   "nome": "Juro real e inflação",
+   "peso_hoje": "Não entra no nível",
+   "situacao": "Normal",
+   "tendencia": "estavel"
+  },
+  {
+   "id": "credito",
+   "nome": "Crédito e famílias",
+   "peso_hoje": "Não entra no nível",
+   "situacao": "Normal",
+   "tendencia": "piora"
+  },
+  {
+   "id": "emprego",
+   "nome": "Emprego",
+   "peso_hoje": "Não entra no nível",
+   "situacao": "Normal",
+   "tendencia": "estavel"
+  },
+  {
+   "id": "externo",
+   "nome": "Cenário externo",
+   "peso_hoje": "Nenhum hoje",
+   "situacao": "Normal",
+   "tendencia": "sem_direcao"
   }
  ],
- "noticias_na_conta": [],
+ "indicadores": [
+  {
+   "id": "ibcbr",
+   "nome": "IBC-Br",
+   "fator": "atividade",
+   "valor": -0.6425,
+   "unidade": "%",
+   "ref": "2026-08",
+   "situacao": "Pior que o normal",
+   "limite_de_alerta": -0.9958,
+   "faixa_normal": [
+    0.1739,
+    1.554
+   ]
+  },
+  {
+   "id": "focus_pib",
+   "nome": "PIB esperado pelo Focus",
+   "fator": "atividade",
+   "valor": 1.3954,
+   "unidade": "%",
+   "ref": "2026-10-23",
+   "situacao": "Zona de alerta",
+   "limite_de_alerta": 1.9371,
+   "faixa_normal": [
+    1.9371,
+    3.5512
+   ]
+  },
+  {
+   "id": "juro_real",
+   "nome": "Juro real",
+   "fator": "juro",
+   "valor": 8.8167,
+   "unidade": "% ao ano",
+   "ref": "2026-10-29",
+   "situacao": "Normal",
+   "limite_de_alerta": null,
+   "faixa_normal": [
+    2.9143,
+    8.8305
+   ]
+  },
+  {
+   "id": "comprometimento",
+   "nome": "Renda comprometida com dívidas",
+   "fator": "credito",
+   "valor": 1.8797,
+   "unidade": "p.p.",
+   "ref": "2026-08",
+   "situacao": "Normal",
+   "limite_de_alerta": null,
+   "faixa_normal": [
+    -0.5639,
+    1.8826
+   ]
+  },
+  {
+   "id": "tesouro",
+   "nome": "Juro do Tesouro IPCA+",
+   "fator": "mercado",
+   "valor": 0.56,
+   "unidade": "p.p.",
+   "ref": "2026-10-28",
+   "situacao": "Zona de alerta",
+   "limite_de_alerta": 0.473,
+   "faixa_normal": [
+    -1.02,
+    0.65
+   ]
+  },
+  {
+   "id": "dolar",
+   "nome": "Dólar",
+   "fator": "mercado",
+   "valor": 4.3828,
+   "unidade": "%",
+   "ref": "2026-10-28",
+   "situacao": "Normal",
+   "limite_de_alerta": 18.7646,
+   "faixa_normal": [
+    -4.2166,
+    4.6672
+   ]
+  },
+  {
+   "id": "divida",
+   "nome": "Dívida pública",
+   "fator": "contas",
+   "valor": 5.56,
+   "unidade": "p.p. do PIB",
+   "ref": "2026-08",
+   "situacao": "Pior que o normal",
+   "limite_de_alerta": null,
+   "faixa_normal": [
+    -2.725,
+    3.065
+   ]
+  },
+  {
+   "id": "sahm",
+   "nome": "Regra de Sahm",
+   "fator": "emprego",
+   "valor": 0.1,
+   "unidade": "p.p.",
+   "ref": "2026-08",
+   "situacao": "Normal",
+   "limite_de_alerta": null,
+   "faixa_normal": [
+    -0.1,
+    0.6917
+   ]
+  },
+  {
+   "id": "commodities",
+   "nome": "Preço das commodities",
+   "fator": "externo",
+   "valor": 1.6728,
+   "unidade": "%",
+   "ref": "2026-09",
+   "situacao": "Normal",
+   "limite_de_alerta": -16.0004,
+   "faixa_normal": [
+    -1.9116,
+    15.2254
+   ]
+  }
+ ],
  "pressao_noticias": {
-  "sentido": "sobe",
-  "saldo": 0.4564,
-  "temas": {
-   "mercado": {
-    "sentido": "sobe",
-    "saldo": 0.2317,
-    "eventos": [
-     "ev-20261028-01",
-     "ev-20261029-01",
-     "ev-20261028-09"
-    ]
-   },
-   "fiscal": {
-    "sentido": "igual",
-    "saldo": 0.0064,
-    "eventos": [
-     "ev-20261028-10",
-     "ev-20261028-02",
-     "ev-20261029-03"
-    ]
-   },
-   "credito": {
-    "sentido": "sobe",
-    "saldo": 0.0537,
-    "eventos": [
-     "ev-20261028-03",
-     "ev-20261028-08",
-     "ev-20261028-13"
-    ]
-   },
-   "oferta": {
-    "sentido": "sobe",
-    "saldo": 0.0589,
-    "eventos": [
-     "ev-20261028-14",
-     "ev-20261028-04"
-    ]
-   },
-   "externo": {
-    "sentido": "igual",
-    "saldo": 0.0295,
-    "eventos": [
-     "ev-20261028-15",
-     "ev-20261028-05"
-    ]
-   },
-   "atividade": {
-    "sentido": "sobe",
-    "saldo": 0.0567,
-    "eventos": [
-     "ev-20261028-11",
-     "ev-20261028-06",
-     "ev-20261028-12",
-     "ev-20261029-02"
-    ]
-   },
-   "institucional": {
-    "sentido": "igual",
-    "saldo": 0.0195,
-    "eventos": [
-     "ev-20261028-07"
-    ]
-   }
+  "sentido": "piora",
+  "fatores": {
+   "mercado": "piora",
+   "contas": "igual",
+   "credito": "piora",
+   "atividade": "piora",
+   "externo": "igual",
+   "juro": "piora"
   }
  },
- "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-29T0658.json",
+ "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-29T1339.json",
  "post_do_dia": {
-  "titulo": "Risco de recessão começa em 2,14× o normal, puxado pela atividade",
+  "titulo": "Risco de recessão começa no normal, com a atividade em alerta",
   "url": "https://vaidarcrise.com.br/2026-10-29/",
   "escrito_por_llm": true
  }

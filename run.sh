@@ -27,16 +27,15 @@ if ! /usr/bin/caffeinate -i .venv/bin/python src/run.py "$@"; then
   exit 1
 fi
 
-nota=$(jq -r '.nota' docs/data.json)
-risco=$(jq -r '.multiplicador_12m * 10 | round / 10' docs/data.json)
+nivel=$(jq -r '.nivel' docs/data.json)
 git add -A runs data docs
 if git diff --cached --quiet; then
   echo "nada mudou"
 else
-  git commit -q -m "Post de $(date '+%d/%m/%Y'): risco ${risco}x o normal, nota ${nota}"
+  git commit -q -m "Post de $(date '+%d/%m/%Y'): risco ${nivel:l}"
   for i in 1 2 3 4; do
     git push -q origin main && break
     echo "push falhou (tentativa $i)"; sleep $((2 ** i))
   done
 fi
-echo "=== $(date '+%Y-%m-%dT%H:%M:%S%z') fim (nota ${nota})"
+echo "=== $(date '+%Y-%m-%dT%H:%M:%S%z') fim (nível ${nivel})"

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{% block titulo %}Vai dar crise?{% endblock %}</title>
-<meta name="description" content="{% block descricao %}Risco de recessão no Brasil nos próximos 12 meses, comparado ao de um ano normal, com a conta aberta e um post por dia sobre as notícias da véspera.{% endblock %}">
+<meta name="description" content="{% block descricao %}Se o risco de recessão no Brasil nos próximos 12 meses está acima ou abaixo do normal, com a conta aberta, um resumo por fator e um post por dia sobre as notícias da véspera.{% endblock %}">
 <link rel="canonical" href="{{ canonical }}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
@@ -23,17 +23,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-/* O × da Charis é largo e solto ("2,7 ×"); só esse caractere vem de uma sem serifa do sistema. */
-@font-face{font-family:"Vezes";src:local("Arial"),local("ArialMT"),local("Helvetica"),local("Roboto"),local("Liberation Sans");unicode-range:U+00D7}
 :root{
   /* Página branca de blog: o texto em serifa, dados e avisos na letra do sistema. A plaquinha amarela é a única cor de marca. */
   --papel:#ffffff; --tinta:#1e1f21; --meta:#62666b; --fio:#e4e6e8; --maquina:#f4f5f6;
-  --link:#1f4fbf; --placa:#ffc20e; --placa-tinta:#000000; --sobe:#c3102b; --desce:#00733a;
-  --hist:#5d6570; --hist2:#c6cbd1; --hist2-tinta:#1e1f21; --nota-fundo:#fffaeb;
-  --serifa:"Vezes","Charis SIL",Charter,"Bitstream Charter","Iowan Old Style",Georgia,serif;
+  --link:#1f4fbf; --placa:#ffc20e; --placa-tinta:#000000; --sobe:#c3102b; --desce:#00733a; --atencao:#965a00;
+  --hist:#5d6570; --nota-fundo:#fffaeb; --alerta-fundo:#f8d9de; --normal-fundo:#cfd6dd; --rec:#eceef0;
+  --serifa:"Charis SIL",Charter,"Bitstream Charter","Iowan Old Style",Georgia,serif;
   --sistema:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
-@media (prefers-color-scheme: dark){:root{--papel:#161718;--tinta:#e8e9ea;--meta:#a3a7ac;--fio:#2f3134;--maquina:#1f2123;--link:#94b4ff;--sobe:#ff7373;--desce:#52c993;--hist:#8d96a1;--hist2:#3d4248;--hist2-tinta:#e8e9ea;--nota-fundo:#1f1d16;color-scheme:dark}}
+@media (prefers-color-scheme: dark){:root{--papel:#161718;--tinta:#e8e9ea;--meta:#a3a7ac;--fio:#2f3134;--maquina:#1f2123;--link:#94b4ff;--sobe:#ff7373;--desce:#52c993;--atencao:#f0b45a;--hist:#8d96a1;--nota-fundo:#1f1d16;--alerta-fundo:#45232a;--normal-fundo:#3a4048;--rec:#232527;color-scheme:dark}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--papel);color:var(--tinta);font:19px/1.62 var(--serifa)}
@@ -42,7 +40,8 @@ a:hover{text-decoration-thickness:2px}
 :focus-visible{outline:3px solid var(--link);outline-offset:2px}
 .in{max-width:1000px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .peq{font:14px/1.5 var(--sistema);color:var(--meta)}
-.mais{color:var(--sobe)}.menos{color:var(--desce)}
+.mais{color:var(--sobe)}.menos{color:var(--desce)}.igual{color:var(--tinta)}
+[hidden]{display:none!important}
 
 /* cabeçalho */
 .cab .in{padding-top:28px}
@@ -54,18 +53,26 @@ a:hover{text-decoration-thickness:2px}
 .linha-fina{margin:8px 0 12px;font:16px/1.45 var(--sistema);color:var(--meta)}
 .cab nav{display:flex;flex-wrap:wrap;gap:6px 18px;font:15px/1.4 var(--sistema)}
 
-/* o topo: só o multiplicador e a seta (bloco próprio em _nota.html); o que eles querem dizer fica no rodapé */
+/* o nível de hoje (bloco próprio em _nota.html) */
 .nota{margin-bottom:30px;min-width:0}
 .nota .topo{display:flex;align-items:center;gap:16px}
 .placa{width:84px;height:84px;margin:13px;flex:none;transform:rotate(45deg);background:var(--placa);border-radius:10px;box-shadow:inset 0 0 0 4px var(--placa),inset 0 0 0 7px var(--placa-tinta)}
-.placa span{display:grid;place-items:center;height:100%;transform:rotate(-45deg);font:800 29px/1 var(--sistema);color:var(--placa-tinta);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.placa span{display:grid;place-items:center;height:100%;transform:rotate(-45deg);font:800 21px/1.05 var(--sistema);color:var(--placa-tinta);letter-spacing:-.01em;text-align:center}
+.placa span.dupla{font-size:17px}
 .leitura{display:flex;flex-direction:column;gap:2px;min-width:0;margin:0}
-.leitura .seta{font:700 20px/1.2 var(--sistema);white-space:nowrap}
-.leitura .seta.sobe{color:var(--sobe)}.leitura .seta.desce{color:var(--desce)}.leitura .seta.igual{color:var(--tinta)}
-.leitura .seta b{font-size:1.15em;margin-right:4px}
-sup{font:600 .55em/0 var(--sistema);margin-left:2px;vertical-align:super}
-sup a{text-decoration:none;color:var(--link)}
-.nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:10px 0 0}
+.leitura .rot{font:700 22px/1.15 var(--sistema)}
+.leitura .sub{font:14.5px/1.4 var(--sistema);color:var(--meta)}
+.escala{list-style:none;padding:0;margin:14px 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;font:12.5px/1.25 var(--sistema);color:var(--meta)}
+.escala li{display:flex;flex-direction:column;gap:5px;text-align:center;min-width:0}
+.escala li::before{content:"";display:block;height:8px;background:var(--fio)}
+.escala li:first-child::before{border-radius:4px 0 0 4px}.escala li:last-child::before{border-radius:0 4px 4px 0}
+.escala li.aqui{color:var(--tinta);font-weight:700}
+.escala li.aqui::before{background:var(--tinta)}
+.escala.grande{font-size:14px;gap:4px}
+.escala.grande li::before{height:12px}
+.tend-noticias{font:15px/1.45 var(--sistema);margin:14px 0 0}
+.tend-noticias b{font-size:1.1em;margin-right:3px}
+.nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:8px 0 0}
 .aviso{font:15px/1.45 var(--sistema);background:var(--maquina);border-left:4px solid var(--placa);padding:8px 12px;margin:12px 0 0}
 .aviso[hidden]{display:none}
 
@@ -86,7 +93,8 @@ sup a{text-decoration:none;color:var(--link)}
 .pe .in{padding-top:22px;padding-bottom:56px;border-top:1px solid var(--fio)}
 .pe p{margin:0 0 8px;max-width:640px}
 .pe a{color:var(--meta)}
-@media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:25px}.nota .resp{font-size:22px}.marca b{font-size:26px}}
+.cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
+@media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:18px}.placa span.dupla{font-size:15px}.marca b{font-size:26px}}
 {% block estilo %}{% endblock %}
 </style>
 </head>
@@ -94,11 +102,11 @@ sup a{text-decoration:none;color:var(--link)}
 <header class="cab"><div class="in"><div class="faixa">
   <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
   <p class="linha-fina">Um palpite com conta sobre a próxima recessão brasileira.</p>
-  <nav aria-label="Seções"><a href="/">Atualizações</a><a href="{{ link_nota or '/nota/' }}">Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="{{ repo }}">Código</a></nav>
+  <nav aria-label="Seções"><a href="{{ link_inicio or '/' }}"{% if aba == 'inicio' %} aria-current="page"{% endif %}>Atualizações</a><a href="{{ link_resumo or '/resumo/' }}"{% if aba == 'resumo' %} aria-current="page"{% endif %}>Resumo</a><a href="{{ link_nota or '/nota/' }}"{% if aba == 'nota' %} aria-current="page"{% endif %}>Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="{{ repo }}">Código</a></nav>
 </div></div></header>
 {% block corpo %}{% endblock %}
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mostra quantas vezes a chance de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima da de um ano comum, que pela história das recessões brasileiras é de cerca de {{ normal|num(0) }}%. A seta compara com a conta de 30 dias antes e só muda quando o risco anda mais de 10%. <a href="{{ link_nota or '/nota/' }}">Como a conta funciona</a>. Não é recomendação de investimento.</p>
+  <p>O Vai dar crise? mostra se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal da história brasileira desde 2002. O nível sai só de dados. As notícias mostram a tendência e não mexem no nível. <a href="{{ link_nota or '/nota/' }}">Como a conta funciona</a>. Não é recomendação de investimento.</p>
   <p><a href="{{ repo }}">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="{{ repo }}/issues">Achou um erro? Abra uma issue</a></p>
 </div></footer>
 </body>
