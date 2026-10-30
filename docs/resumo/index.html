@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Resumo de 29 de outubro: risco normal | Vai dar crise?</title>
-<meta name="description" content="O que pesa no risco de recessão no Brasil em 29/10/2026, fator a fator: o dado de hoje, a faixa normal, a tendência para os próximos 6 meses e o que outras instituições projetam.">
+<meta name="description" content="O risco de recessão no Brasil em 29/10/2026, fator a fator: o que entra na conta, o dado de hoje contra o normal, a tendência para os próximos 6 meses e o que outras instituições projetam.">
 <link rel="canonical" href="https://vaidarcrise.com.br/resumo/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
 <meta property="og:title" content="Resumo de 29 de outubro: risco normal | Vai dar crise?">
-<meta property="og:description" content="O que pesa no risco de recessão no Brasil em 29/10/2026, fator a fator: o dado de hoje, a faixa normal, a tendência para os próximos 6 meses e o que outras instituições projetam.">
+<meta property="og:description" content="O risco de recessão no Brasil em 29/10/2026, fator a fator: o que entra na conta, o dado de hoje contra o normal, a tendência para os próximos 6 meses e o que outras instituições projetam.">
 <meta property="og:url" content="https://vaidarcrise.com.br/resumo/">
 <meta property="og:image" content="https://vaidarcrise.com.br/og/2026-10-29.png">
 <meta property="og:image:width" content="1200">
@@ -70,6 +70,12 @@ a:hover{text-decoration-thickness:2px}
 .escala li.aqui::before{background:var(--tinta)}
 .escala.grande{font-size:14px;gap:4px}
 .escala.grande li::before{height:12px}
+.cenarios{list-style:none;padding:12px 14px;margin:16px 0 0;background:var(--maquina);border-radius:6px;font:15px/1.4 var(--sistema);display:grid;gap:8px}
+.cenarios li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:baseline}
+.cenarios li > :last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.cenarios b{font-size:17px;color:var(--sobe)}
+.cenarios .ref{color:var(--meta);font-size:14px}
+.cenarios .cab-cen{display:block;font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em}
 .tend-noticias{font:15px/1.45 var(--sistema);margin:14px 0 0}
 .tend-noticias b{font-size:1.1em;margin-right:3px}
 .nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:8px 0 0}
@@ -118,11 +124,12 @@ a:hover{text-decoration-thickness:2px}
 .v-tend{font-weight:600}
 @media (max-width:620px){.visao-cab{display:none}.visao li{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.v-nome{grid-column:1/-1}}
 .chip{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 9px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
-.chip.alerta{color:var(--sobe)}.chip.atencao{color:var(--atencao)}.chip.normal{color:var(--meta)}
+.chip.atencao{color:var(--atencao)}.chip.normal{color:var(--meta)}
 .chip.semdado{color:var(--meta);border-style:dashed}
 .peso{display:inline-flex;align-items:center;gap:8px;font:14px/1.3 var(--sistema)}
 .barra{position:relative;display:inline-block;width:70px;height:10px;background:var(--fio);border-radius:2px;flex:none;overflow:hidden}
 .barra i{position:absolute;left:0;top:0;bottom:0;background:var(--sobe)}
+.peso.menos .barra i{background:var(--desce)}
 .peso.fora{color:var(--meta)}
 
 /* cartão de cada fator: à esquerda o dado, à direita a nossa leitura */
@@ -140,14 +147,13 @@ a:hover{text-decoration-thickness:2px}
 .regua{margin:12px 0 10px}
 .regua figcaption{font:600 12.5px/1.3 var(--sistema);color:var(--meta);margin:0 0 4px}
 .trilho{position:relative;height:10px;background:var(--fio);border-radius:5px;margin-top:22px}
-.z-normal,.z-alerta{position:absolute;top:0;bottom:0}
-.z-normal{background:var(--normal-fundo)}.z-alerta{background:var(--alerta-fundo)}
+.z-normal{position:absolute;top:0;bottom:0;background:var(--normal-fundo)}
 .agulha{position:absolute;top:-5px;bottom:-5px;width:3px;margin-left:-1.5px;background:var(--tinta);border-radius:2px}
 .agulha b{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:3px;font:700 12.5px/1 var(--sistema);white-space:nowrap;font-variant-numeric:tabular-nums}
 .eixo{display:flex;justify-content:space-between;gap:8px;font:12px/1.3 var(--sistema);color:var(--meta);margin-top:6px;font-variant-numeric:tabular-nums}
 .eixo span:nth-child(2){display:inline-flex;align-items:center;gap:4px}
 .sw{display:inline-block;width:12px;height:8px;border-radius:2px}
-.sw-normal{background:var(--normal-fundo)}.sw-alerta{background:var(--alerta-fundo);margin-left:6px}
+.sw-normal{background:var(--normal-fundo)}
 .ficha{margin:8px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px;border-top:1px solid var(--fio);padding-top:10px}
 .ficha div{min-width:0}
 .ficha .larga{grid-column:1/-1}
@@ -194,58 +200,66 @@ a:hover{text-decoration-thickness:2px}
 <section class="nota" aria-label="O risco de hoje">
   <div class="topo">
     <div class="placa" role="img" aria-label="Risco normal"><span>Normal</span></div>
-    <p class="leitura"><span class="rot">risco normal</span><span class="sub">risco de recessão nos próximos 12 meses</span></p>
+    <p class="leitura"><span class="rot">risco normal</span><span class="sub">de recessão nos próximos 12 meses</span></p>
   </div>
   <ol class="escala grande" aria-label="Escala de cinco níveis de risco"><li><span>Muito abaixo</span></li><li><span>Abaixo</span></li><li class="aqui" aria-current="true"><span>Normal</span></li><li><span>Acima</span></li><li><span>Muito acima</span></li></ol>
+  
+  <ul class="cenarios" aria-label="PIB nos próximos 12 meses">
+    <li class="cab-cen">PIB nos próximos 12 meses</li>
+    <li class="ref"><span>Mais provável, segundo o Focus</span><span>+1,4%</span></li>
+    <li class="pior"><span>Cenário ruim: 1 chance em 10 de ser pior</span><b>−1,8%</b></li>
+    <li class="ref"><span>O mesmo cenário em tempos normais</span><span>−1,9%</span></li>
+  </ul>
+  
   
   
 </section>
     <div>
       <h1>Resumo de 29 de outubro</h1>
       <ul class="pontos">
-        <li><b>Pesam mais</b><span>Atividade e mercado financeiro.</span></li><li><b>Tendem a piorar</b><span class="mais">Atividade, mercado financeiro, contas públicas e crédito.</span></li><li><b>Estáveis</b><span>Juro real e emprego.</span></li><li><b>Discordamos do Focus</b><span>Mercado financeiro e juro real.</span></li><li><b>Mudaria o nível</b><span>Dólar subir 18,8% em 3 meses levaria o risco a muito acima do normal.</span></li>
+        <li><b>Cenário ruim</b><span>PIB −1,8% em 12 meses. Em tempos normais, −1,9%.</span></li><li><b>Aliviam</b><span class="menos">Juro.</span></li><li><b>Tendem a piorar</b><span class="mais">Atividade, crédito, contas públicas e mercado financeiro.</span></li><li><b>Estáveis</b><span>Juro e emprego.</span></li><li><b>Discordamos do Focus</b><span>Juro e mercado financeiro.</span></li><li><b>Mudaria o nível</b><span>Risco acima do normal se crescimento em 12 meses cair para −1,2%, Selic subir para 17,8% ou IPCA em 12 meses subir para 9,4%, com o resto parado.</span></li>
       </ul>
       <p class="atual-resumo">Atualizado em 29/10, às 13h39. <a href="/">Post do dia</a></p>
     </div>
   </div>
 
-  <h2 class="secao-tit">Os fatores, do que mais pesa ao que menos pesa</h2>
-  <div class="visao-cab" aria-hidden="true"><span>Fator e valor de hoje</span><span>Situação</span><span>Peso no risco hoje</span><span>Tendência em 6 meses</span></div>
+  <h2 class="secao-tit">Os fatores, primeiro os que entram na conta</h2>
+  <div class="visao-cab" aria-hidden="true"><span>Fator e valor de hoje</span><span>Situação</span><span>Efeito no cenário ruim</span><span>Tendência em 6 meses</span></div>
   <ul class="visao">
     <li>
-      <a class="v-nome" href="#atividade">Atividade<span>IBC-Br −0,6% no trimestre</span></a>
-      <span><span class="chip alerta">Zona de alerta</span></span>
-      <span><span class="peso"><span class="barra" aria-hidden="true"><i style="width:6.2%"></i></span><span>Pequeno</span></span></span>
+      <a class="v-nome" href="#atividade">Atividade<span>Crescimento de +1,4% em 12 meses</span></a>
+      <span><span class="chip atencao">Pior que o normal</span></span>
+      <span><span class="peso"><span class="barra" aria-hidden="true"></span><span>Neutro</span></span></span>
       <span class="v-tend mais">↑ Tende a piorar</span>
     </li><li>
-      <a class="v-nome" href="#mercado">Mercado financeiro<span>Tesouro IPCA+ a 7,94%</span></a>
-      <span><span class="chip alerta">Zona de alerta</span></span>
-      <span><span class="peso"><span class="barra" aria-hidden="true"><i style="width:4.3%"></i></span><span>Pequeno</span></span></span>
+      <a class="v-nome" href="#juro">Juro e inflação<span>Selic −1,25 ponto em 12 meses</span></a>
+      <span><span class="chip normal">Normal</span></span>
+      <span><span class="peso menos"><span class="barra" aria-hidden="true"><i style="width:38.9%"></i></span><span>Alivia 0,19 ponto</span></span></span>
+      <span class="v-tend igual">→ Estável</span>
+    </li><li>
+      <a class="v-nome" href="#credito">Crédito e famílias<span>29,0% da renda em dívidas</span></a>
+      <span><span class="chip atencao">Pior que o normal</span></span>
+      <span><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Fora da conta</span></span></span>
       <span class="v-tend mais">↑ Tende a piorar</span>
     </li><li>
       <a class="v-nome" href="#contas">Contas públicas<span>Dívida em 82,9% do PIB</span></a>
       <span><span class="chip atencao">Pior que o normal</span></span>
-      <span><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Não entra no nível</span></span></span>
+      <span><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Fora da conta</span></span></span>
       <span class="v-tend mais">↑ Tende a piorar</span>
     </li><li>
-      <a class="v-nome" href="#juro">Juro real e inflação<span>8,8% ao ano</span></a>
+      <a class="v-nome" href="#mercado">Mercado financeiro<span>Tesouro IPCA+ a 7,94%</span></a>
       <span><span class="chip normal">Normal</span></span>
-      <span><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Não entra no nível</span></span></span>
-      <span class="v-tend igual">→ Estável</span>
-    </li><li>
-      <a class="v-nome" href="#credito">Crédito e famílias<span>29,0% da renda em dívidas</span></a>
-      <span><span class="chip normal">Normal</span></span>
-      <span><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Não entra no nível</span></span></span>
+      <span><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Fora da conta</span></span></span>
       <span class="v-tend mais">↑ Tende a piorar</span>
     </li><li>
       <a class="v-nome" href="#emprego">Emprego<span>Desemprego em 5,3%</span></a>
       <span><span class="chip normal">Normal</span></span>
-      <span><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Não entra no nível</span></span></span>
+      <span><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Fora da conta</span></span></span>
       <span class="v-tend igual">→ Estável</span>
     </li><li>
       <a class="v-nome" href="#externo">Cenário externo<span>Commodities +1,7% em 6 meses</span></a>
       <span><span class="chip normal">Normal</span></span>
-      <span><span class="peso"><span class="barra" aria-hidden="true"></span><span>Nenhum hoje</span></span></span>
+      <span><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Fora da conta</span></span></span>
       <span class="v-tend igual">→ Sem direção clara</span>
     </li>
   </ul>
@@ -254,40 +268,54 @@ a:hover{text-decoration-thickness:2px}
   <section class="fator" id="atividade" aria-labelledby="t-atividade">
     <header class="fator-cab">
       <h2 id="t-atividade">Atividade</h2>
-      <span class="chip alerta">Zona de alerta</span>
+      <span class="chip atencao">Pior que o normal</span>
       <span class="tend-cab mais">↑ Tende a piorar</span>
     </header>
     <div class="fator-corpo">
       <div class="dado">
-        <p class="valor"><b>−0,6%</b><span>IBC-Br, jun. a ago. contra os 3 meses anteriores</span></p>
+        <p class="valor"><b>+1,4%</b><span>Crescimento em 12 meses: IBC-Br de jun. a ago. contra um ano antes</span></p>
+        
+        <figure class="regua"><figcaption>Na conta: crescimento em 12 meses, %</figcaption>
+          <div class="trilho" role="img" aria-label="Hoje em 1,4, comparado à faixa normal">
+            <span class="z-normal" style="left:43.9%;width:21.3%"></span>
+            <span class="agulha" style="left:49.4%"><b>+1,4</b></span>
+          </div>
+          <div class="eixo"><span>−7,2</span><span><i class="sw sw-normal"></i>normal</span><span>10,2</span></div>
+        </figure>
+        
+        <figure class="regua"><figcaption>Na conta: crescimento médio em 10 anos, %</figcaption>
+          <div class="trilho" role="img" aria-label="Hoje em 1,7, comparado à faixa normal">
+            <span class="z-normal" style="left:27.5%;width:51.7%"></span>
+            <span class="agulha" style="left:40.5%"><b>1,7</b></span>
+          </div>
+          <div class="eixo"><span>0,1</span><span><i class="sw sw-normal"></i>normal</span><span>4,1</span></div>
+        </figure>
         
         <figure class="regua"><figcaption>IBC-Br: 3 meses contra os 3 anteriores, %</figcaption>
-          <div class="trilho" role="img" aria-label="Hoje em −0,6, comparado à faixa normal e à zona de alerta">
-            <span class="z-normal" style="left:37.4%;width:21.5%"></span>
-            <span class="z-alerta" style="left:0.0%;width:19.3%"></span>
-            <span class="agulha" style="left:24.7%"><b>−0,6</b></span>
+          <div class="trilho" role="img" aria-label="Hoje em −0,6, comparado à faixa normal">
+            <span class="z-normal" style="left:47.7%;width:20.7%"></span>
+            <span class="agulha" style="left:41.6%"><b>−0,6</b></span>
           </div>
-          <div class="eixo"><span>−2,2</span><span><i class="sw sw-normal"></i>normal <i class="sw sw-alerta"></i>alerta</span><span>4,2</span></div>
+          <div class="eixo"><span>−3,8</span><span><i class="sw sw-normal"></i>normal</span><span>3,8</span></div>
         </figure>
         
         <figure class="regua"><figcaption>PIB esperado para os próximos 12 meses (Focus), %</figcaption>
-          <div class="trilho" role="img" aria-label="Hoje em 1,4, comparado à faixa normal e à zona de alerta">
-            <span class="z-normal" style="left:32.1%;width:29.7%"></span>
-            <span class="z-alerta" style="left:0.0%;width:32.1%"></span>
-            <span class="agulha" style="left:22.1%"><b>1,4</b></span>
+          <div class="trilho" role="img" aria-label="Hoje em 1,4, comparado à faixa normal">
+            <span class="z-normal" style="left:50.6%;width:22.6%"></span>
+            <span class="agulha" style="left:47.9%"><b>1,4</b></span>
           </div>
-          <div class="eixo"><span>0,2</span><span><i class="sw sw-normal"></i>normal <i class="sw sw-alerta"></i>alerta</span><span>5,6</span></div>
+          <div class="eixo"><span>−2,6</span><span><i class="sw sw-normal"></i>normal</span><span>5,7</span></div>
         </figure>
         
         <dl class="ficha">
-          <div><dt>Peso no risco hoje</dt><dd><span class="peso"><span class="barra" aria-hidden="true"><i style="width:6.2%"></i></span><span>Pequeno</span></span></dd></div>
-          <div><dt>Histórico</dt><dd>Forte: alertou antes de 3 de 3 recessões medidas</dd></div>
+          <div><dt>Efeito no cenário ruim</dt><dd><span class="peso"><span class="barra" aria-hidden="true"></span><span>Neutro</span></span></dd></div>
+          <div class="larga"><dt>Na conta do nível</dt><dd>Crescimento médio em 10 anos: alivia 0,15 ponto; crescimento em 12 meses: piora 0,15 ponto.</dd></div>
           <div class="larga"><dt>Como afeta</dt><dd>É a melhor pista do PIB antes de o IBGE divulgá-lo.</dd></div>
         </dl>
       </div>
       <div class="leitura-f">
         <h3>Por quê</h3>
-        <ul class="porque"><li>IBC-Br −0,6% no trimestre até agosto, contra os 3 meses anteriores, a maior queda desde ago/25. <span class="f">BC</span></li><li>Venda de máquinas e equipamentos cai 13,4% no ano até setembro: investimento fraco. <span class="f"><a href="https://valor.globo.com/empresas/noticia/2026/10/28/vendas-de-maquinas-acumulam-queda-de-134percent-no-ano-ate-setembro.ghtml" rel="nofollow noopener">Valor</a></span></li><li>CNI corta a projeção do PIB de 2026 de 2% para 1,6%. <span class="f"><a href="https://www.infomoney.com.br/economia/cni-reduz-projecao-para-o-pib-e-eleva-estimativas-de-inflacao-e-divida-publica/" rel="nofollow noopener">InfoMoney</a></span></li></ul>
+        <ul class="porque"><li>Crescimento de +1,4% em 12 meses (IBC-Br de jun. a ago. contra um ano antes); o normal desde 2004 vai de +0,4% a +4,1%. <span class="f">BC</span></li><li>IBC-Br −0,6% no trimestre até agosto, contra os 3 meses anteriores, a maior queda desde ago/25. <span class="f">BC</span></li><li>Venda de máquinas e equipamentos cai 13,4% no ano até setembro: investimento fraco. <span class="f"><a href="https://valor.globo.com/empresas/noticia/2026/10/28/vendas-de-maquinas-acumulam-queda-de-134percent-no-ano-ate-setembro.ghtml" rel="nofollow noopener">Valor</a></span></li><li>CNI corta a projeção do PIB de 2026 de 2% para 1,6%. <span class="f"><a href="https://www.infomoney.com.br/economia/cni-reduz-projecao-para-o-pib-e-eleva-estimativas-de-inflacao-e-divida-publica/" rel="nofollow noopener">InfoMoney</a></span></li></ul>
         <p class="outros concorda"><b>Concordam:</b> Focus cortou a projeção de PIB em 3 meses: 1,8% em 2026 e 1,3% em 2027 (eram 2,0% e 1,6%). <span class="f"><a href="https://www.bcb.gov.br/publicacoes/focus" rel="nofollow noopener">Focus 23/10</a></span></p>
         
         <div class="se">
@@ -299,121 +327,49 @@ a:hover{text-decoration-thickness:2px}
     </div>
   </section>
   
-  <section class="fator" id="mercado" aria-labelledby="t-mercado">
-    <header class="fator-cab">
-      <h2 id="t-mercado">Mercado financeiro</h2>
-      <span class="chip alerta">Zona de alerta</span>
-      <span class="tend-cab mais">↑ Tende a piorar</span>
-    </header>
-    <div class="fator-corpo">
-      <div class="dado">
-        <p class="valor"><b>7,94% ao ano</b><span>Tesouro IPCA+ 2035 em 28/10; dólar a R$ 5,34 em 28/10</span></p>
-        
-        <figure class="regua"><figcaption>Tesouro IPCA+ contra a mediana de 3 anos, pontos</figcaption>
-          <div class="trilho" role="img" aria-label="Hoje em 0,56, comparado à faixa normal e à zona de alerta">
-            <span class="z-normal" style="left:30.4%;width:33.5%"></span>
-            <span class="z-alerta" style="left:60.4%;width:39.6%"></span>
-            <span class="agulha" style="left:62.1%"><b>+0,56</b></span>
-          </div>
-          <div class="eixo"><span>−2,5</span><span><i class="sw sw-normal"></i>normal <i class="sw sw-alerta"></i>alerta</span><span>2,4</span></div>
-        </figure>
-        
-        <figure class="regua"><figcaption>Dólar, variação em 3 meses, %</figcaption>
-          <div class="trilho" role="img" aria-label="Hoje em 4,4, comparado à faixa normal e à zona de alerta">
-            <span class="z-normal" style="left:23.9%;width:19.9%"></span>
-            <span class="z-alerta" style="left:75.3%;width:24.700000000000003%"></span>
-            <span class="agulha" style="left:43.1%"><b>+4,4</b></span>
-          </div>
-          <div class="eixo"><span>−14,9</span><span><i class="sw sw-normal"></i>normal <i class="sw sw-alerta"></i>alerta</span><span>29,8</span></div>
-        </figure>
-        
-        <dl class="ficha">
-          <div><dt>Peso no risco hoje</dt><dd><span class="peso"><span class="barra" aria-hidden="true"><i style="width:4.3%"></i></span><span>Pequeno</span></span></dd></div>
-          <div><dt>Histórico</dt><dd>Forte: alertou antes de 3 de 4 recessões medidas</dd></div>
-          <div class="larga"><dt>Como afeta</dt><dd>Juros longos e dólar altos encarecem o crédito de empresas e do governo.</dd></div>
-        </dl>
-      </div>
-      <div class="leitura-f">
-        <h3>Por quê</h3>
-        <ul class="porque"><li>Tesouro IPCA+ 2035 a 7,94% ao ano em 28/10, 0,56 ponto acima da mediana de 3 anos. <span class="f">Tesouro Direto</span></li><li>Dólar a R$ 5,34 em 28/10, +4,4% em 3 meses. <span class="f">BC</span></li><li>No dia seguinte à eleição, dólar sobe 8,2% e a Bolsa cai 13,9%. <span class="f"><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula" rel="nofollow noopener">Agência Brasil</a></span></li><li>Tesouro anuncia recompra de títulos de 2030 a 2045 para conter as oscilações. <span class="f"><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/para-conter-oscilacoes-tesouro-anuncia-nova-recompra-de-titulos" rel="nofollow noopener">Agência Brasil</a></span></li></ul>
-        <p class="outros discorda"><b>Discordam:</b> Focus espera dólar a R$ 5,05 no fim de 2026, contra R$ 5,34 hoje. <span class="f"><a href="https://www.bcb.gov.br/publicacoes/focus" rel="nofollow noopener">Focus 23/10</a></span></p>
-        
-        <div class="se">
-          <div><b class="menos">↓ Melhora se</b><ul><li>Regra fiscal crível</li><li>Recompras do Tesouro acalmam os títulos</li></ul></div>
-          <div><b class="mais">↑ Piora se</b><ul><li>Mais dúvida sobre as contas públicas</li><li>Fed sobe os juros</li></ul></div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-  
-  <section class="fator" id="contas" aria-labelledby="t-contas">
-    <header class="fator-cab">
-      <h2 id="t-contas">Contas públicas</h2>
-      <span class="chip atencao">Pior que o normal</span>
-      <span class="tend-cab mais">↑ Tende a piorar</span>
-    </header>
-    <div class="fator-corpo">
-      <div class="dado">
-        <p class="valor"><b>82,9% do PIB</b><span>Dívida bruta do governo geral, agosto</span></p>
-        
-        <figure class="regua"><figcaption>Alta em 12 meses, pontos do PIB</figcaption>
-          <div class="trilho" role="img" aria-label="Hoje em 5,6, comparado à faixa normal e à zona de alerta">
-            <span class="z-normal" style="left:32.1%;width:25.8%"></span>
-            
-            <span class="agulha" style="left:69.1%"><b>+5,6</b></span>
-          </div>
-          <div class="eixo"><span>−9,9</span><span><i class="sw sw-normal"></i>normal</span><span>12,5</span></div>
-        </figure>
-        
-        <dl class="ficha">
-          <div><dt>Peso no risco hoje</dt><dd><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Não entra no nível</span></span></dd></div>
-          <div><dt>Histórico</dt><dd>Não antecipou as recessões desde 2002: não avisou pelo menos 2 recessões</dd></div>
-          <div class="larga"><dt>Como afeta</dt><dd>Pesa pelos juros: se a dívida assusta o investidor, o crédito encarece para todos.</dd></div>
-        </dl>
-      </div>
-      <div class="leitura-f">
-        <h3>Por quê</h3>
-        <ul class="porque"><li>Dívida bruta em 82,9% do PIB (ago/26), +5,6 pontos em 12 meses. <span class="f">BC</span></li><li>Setor público (União, estados e municípios): déficit de 0,6% do PIB em 12 meses até ago/26, contra déficit de 0,2% um ano antes. <span class="f">BC</span></li><li>Governo federal: déficit de R$ 90 bilhões até setembro, menor que os R$ 100 bilhões de 2025. <span class="f"><a href="https://www.jornaldocomercio.com/economia/2026/10/1268689-governo-central-tem-superavit-primario-de-rs-4839-bi-em-setembro.html" rel="nofollow noopener">Jornal do Comércio</a></span></li><li>Gastos fora da meta fiscal crescem no ano eleitoral. <span class="f"><a href="https://www.itatiaia.com.br/economia/governo-amplia-gastos-fora-do-arcabouco-e-aumenta-pressao-sobre-meta-fiscal/" rel="nofollow noopener">Itatiaia</a></span></li></ul>
-        <p class="outros concorda"><b>Concordam:</b> IFI projeta dívida bruta de 82,5% do PIB em 2026 e 86,4% em 2027. <span class="f"><a href="https://www12.senado.leg.br/ifi" rel="nofollow noopener">IFI</a></span></p>
-        
-        <div class="se">
-          <div><b class="menos">↓ Melhora se</b><ul><li>Meta fiscal cumprida com regra crível</li><li>PIB crescendo acima do juro real</li></ul></div>
-          <div><b class="mais">↑ Piora se</b><ul><li>Gasto novo sem receita</li><li>Juro alto por mais tempo</li></ul></div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-  
   <section class="fator" id="juro" aria-labelledby="t-juro">
     <header class="fator-cab">
-      <h2 id="t-juro">Juro real e inflação</h2>
+      <h2 id="t-juro">Juro e inflação</h2>
       <span class="chip normal">Normal</span>
       <span class="tend-cab igual">→ Estável</span>
     </header>
     <div class="fator-corpo">
       <div class="dado">
-        <p class="valor"><b>8,8% ao ano</b><span>Selic de 13,75% menos a inflação esperada em 12 meses (4,5%)</span></p>
+        <p class="valor"><b>Selic 13,75%</b><span>1,25 ponto abaixo de um ano antes; IPCA em 12 meses de 4,58%</span></p>
+        
+        <figure class="regua"><figcaption>Na conta: Selic, variação em 12 meses, pontos</figcaption>
+          <div class="trilho" role="img" aria-label="Hoje em −1,2, comparado à faixa normal">
+            <span class="z-normal" style="left:25.1%;width:29.8%"></span>
+            <span class="agulha" style="left:35.5%"><b>−1,2</b></span>
+          </div>
+          <div class="eixo"><span>−7,2</span><span><i class="sw sw-normal"></i>normal</span><span>9,6</span></div>
+        </figure>
+        
+        <figure class="regua"><figcaption>Na conta: inflação de 12 meses, variação em 12 meses, pontos</figcaption>
+          <div class="trilho" role="img" aria-label="Hoje em −0,59, comparado à faixa normal">
+            <span class="z-normal" style="left:46.0%;width:18.8%"></span>
+            <span class="agulha" style="left:52.7%"><b>−0,59</b></span>
+          </div>
+          <div class="eixo"><span>−9,1</span><span><i class="sw sw-normal"></i>normal</span><span>7,1</span></div>
+        </figure>
         
         <figure class="regua"><figcaption>Juro real ex-ante, % ao ano</figcaption>
-          <div class="trilho" role="img" aria-label="Hoje em 8,8, comparado à faixa normal e à zona de alerta">
-            <span class="z-normal" style="left:29.6%;width:34.3%"></span>
-            
-            <span class="agulha" style="left:63.8%"><b>8,8</b></span>
+          <div class="trilho" role="img" aria-label="Hoje em 8,8, comparado à faixa normal">
+            <span class="z-normal" style="left:35.0%;width:28.5%"></span>
+            <span class="agulha" style="left:61.7%"><b>8,8</b></span>
           </div>
-          <div class="eixo"><span>−2,2</span><span><i class="sw sw-normal"></i>normal</span><span>15,1</span></div>
+          <div class="eixo"><span>−2,1</span><span><i class="sw sw-normal"></i>normal</span><span>15,6</span></div>
         </figure>
         
         <dl class="ficha">
-          <div><dt>Peso no risco hoje</dt><dd><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Não entra no nível</span></span></dd></div>
-          <div><dt>Histórico</dt><dd>Não antecipou as recessões desde 2002: deu mais alarme falso que aviso certo</dd></div>
+          <div><dt>Efeito no cenário ruim</dt><dd><span class="peso menos"><span class="barra" aria-hidden="true"><i style="width:38.9%"></i></span><span>Alivia 0,19 ponto</span></span></dd></div>
+          <div class="larga"><dt>Na conta do nível</dt><dd>Selic: variação em 12 meses: alivia 0,13 ponto; inflação: variação em 12 meses: alivia 0,07 ponto.</dd></div>
           <div class="larga"><dt>Como afeta</dt><dd>Juro alto encarece crédito e investimento. O efeito chega em 1 a 2 anos.</dd></div>
         </dl>
       </div>
       <div class="leitura-f">
         <h3>Por quê</h3>
-        <ul class="porque"><li>Juro real em 8,8% ao ano: Selic de 13,75% menos a inflação esperada de 4,5%. <span class="f">BC e Focus</span></li><li>Selic em 13,75% desde 17/9/26; antes, 14,00%. Em 12 meses, chegou a 15,00%. <span class="f">BC</span></li><li>Estados aprovam ICMS maior sobre gasolina, diesel e gás a partir de 2027: pressão sobre a inflação. <span class="f"><a href="https://www.poder360.com.br/poder-economia/estados-aprovam-aumento-de-icms-sobre-gasolina-diesel-e-gas-para-2027/" rel="nofollow noopener">Poder360</a></span></li><li>Inflação esperada para 2027 sobe de novo no Focus, acima do centro da meta. <span class="f"><a href="https://conteudos.xpi.com.br/economia/boletim-focus-inflacao-de-2027-continua-em-trajetoria-de-alta-26-10-2026/" rel="nofollow noopener">XP</a></span></li></ul>
+        <ul class="porque"><li>IPCA de 4,58% em 12 meses até setembro, 0,59 ponto abaixo de um ano antes (5,17%). <span class="f">IBGE</span></li><li>Juro real em 8,8% ao ano: Selic de 13,75% menos a inflação esperada de 4,5%. <span class="f">BC e Focus</span></li><li>Selic em 13,75% desde 17/9/26; antes, 14,00%. Em 12 meses, chegou a 15,00%. <span class="f">BC</span></li><li>Estados aprovam ICMS maior sobre gasolina, diesel e gás a partir de 2027: pressão sobre a inflação. <span class="f"><a href="https://www.poder360.com.br/poder-economia/estados-aprovam-aumento-de-icms-sobre-gasolina-diesel-e-gas-para-2027/" rel="nofollow noopener">Poder360</a></span></li><li>Inflação esperada para 2027 sobe de novo no Focus, acima do centro da meta. <span class="f"><a href="https://conteudos.xpi.com.br/economia/boletim-focus-inflacao-de-2027-continua-em-trajetoria-de-alta-26-10-2026/" rel="nofollow noopener">XP</a></span></li></ul>
         <p class="outros discorda"><b>Discordam:</b> Focus espera Selic de 13,25% no fim de 2026 e 11,75% no fim de 2027, ou seja, juro em queda. <span class="f"><a href="https://www.bcb.gov.br/publicacoes/focus" rel="nofollow noopener">Focus 23/10</a></span></p>
         
         <div class="se">
@@ -428,7 +384,7 @@ a:hover{text-decoration-thickness:2px}
   <section class="fator" id="credito" aria-labelledby="t-credito">
     <header class="fator-cab">
       <h2 id="t-credito">Crédito e famílias</h2>
-      <span class="chip normal">Normal</span>
+      <span class="chip atencao">Pior que o normal</span>
       <span class="tend-cab mais">↑ Tende a piorar</span>
     </header>
     <div class="fator-corpo">
@@ -436,17 +392,16 @@ a:hover{text-decoration-thickness:2px}
         <p class="valor"><b>29,0% da renda</b><span>Parte da renda das famílias que vai para dívidas, agosto</span></p>
         
         <figure class="regua"><figcaption>Contra a média dos 3 anos anteriores, pontos</figcaption>
-          <div class="trilho" role="img" aria-label="Hoje em 1,9, comparado à faixa normal e à zona de alerta">
-            <span class="z-normal" style="left:30.0%;width:36.4%"></span>
-            
-            <span class="agulha" style="left:66.4%"><b>+1,9</b></span>
+          <div class="trilho" role="img" aria-label="Hoje em 1,9, comparado à faixa normal">
+            <span class="z-normal" style="left:30.9%;width:30.9%"></span>
+            <span class="agulha" style="left:64.9%"><b>+1,9</b></span>
           </div>
-          <div class="eixo"><span>−2,6</span><span><i class="sw sw-normal"></i>normal</span><span>4,1</span></div>
+          <div class="eixo"><span>−2,2</span><span><i class="sw sw-normal"></i>normal</span><span>4,1</span></div>
         </figure>
         
         <dl class="ficha">
-          <div><dt>Peso no risco hoje</dt><dd><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Não entra no nível</span></span></dd></div>
-          <div><dt>Histórico</dt><dd>Não antecipou as recessões desde 2002: não avisou pelo menos 2 recessões</dd></div>
+          
+          <div class="larga"><dt>Na conta do nível</dt><dd>Não entra: no teste em 44 países, o crédito melhorou a previsão do PIB em menos de 1%.</dd></div>
           <div class="larga"><dt>Como afeta</dt><dd>Parcela alta corta consumo. Costuma vir antes de crescimento menor.</dd></div>
         </dl>
       </div>
@@ -464,6 +419,90 @@ a:hover{text-decoration-thickness:2px}
     </div>
   </section>
   
+  <section class="fator" id="contas" aria-labelledby="t-contas">
+    <header class="fator-cab">
+      <h2 id="t-contas">Contas públicas</h2>
+      <span class="chip atencao">Pior que o normal</span>
+      <span class="tend-cab mais">↑ Tende a piorar</span>
+    </header>
+    <div class="fator-corpo">
+      <div class="dado">
+        <p class="valor"><b>82,9% do PIB</b><span>Dívida bruta do governo geral, agosto</span></p>
+        
+        <figure class="regua"><figcaption>Alta em 12 meses, pontos do PIB</figcaption>
+          <div class="trilho" role="img" aria-label="Hoje em 5,6, comparado à faixa normal">
+            <span class="z-normal" style="left:36.4%;width:27.7%"></span>
+            <span class="agulha" style="left:70.3%"><b>+5,6</b></span>
+          </div>
+          <div class="eixo"><span>−9,6</span><span><i class="sw sw-normal"></i>normal</span><span>11,9</span></div>
+        </figure>
+        
+        <dl class="ficha">
+          
+          <div class="larga"><dt>Na conta do nível</dt><dd>Não entra: no teste em 44 países, a dívida pública não melhorou a previsão do PIB.</dd></div>
+          <div class="larga"><dt>Como afeta</dt><dd>Pesa pelos juros: se a dívida assusta o investidor, o crédito encarece para todos.</dd></div>
+        </dl>
+      </div>
+      <div class="leitura-f">
+        <h3>Por quê</h3>
+        <ul class="porque"><li>Dívida bruta em 82,9% do PIB (ago/26), +5,6 pontos em 12 meses. <span class="f">BC</span></li><li>Setor público (União, estados e municípios): déficit de 0,6% do PIB em 12 meses até ago/26, contra déficit de 0,2% um ano antes. <span class="f">BC</span></li><li>Governo federal: déficit de R$ 90 bilhões até setembro, menor que os R$ 100 bilhões de 2025. <span class="f"><a href="https://www.jornaldocomercio.com/economia/2026/10/1268689-governo-central-tem-superavit-primario-de-rs-4839-bi-em-setembro.html" rel="nofollow noopener">Jornal do Comércio</a></span></li><li>Gastos fora da meta fiscal crescem no ano eleitoral. <span class="f"><a href="https://www.itatiaia.com.br/economia/governo-amplia-gastos-fora-do-arcabouco-e-aumenta-pressao-sobre-meta-fiscal/" rel="nofollow noopener">Itatiaia</a></span></li></ul>
+        <p class="outros concorda"><b>Concordam:</b> IFI projeta dívida bruta de 82,5% do PIB em 2026 e 86,4% em 2027. <span class="f"><a href="https://www12.senado.leg.br/ifi" rel="nofollow noopener">IFI</a></span></p>
+        
+        <div class="se">
+          <div><b class="menos">↓ Melhora se</b><ul><li>Meta fiscal cumprida com regra crível</li><li>PIB crescendo acima do juro real</li></ul></div>
+          <div><b class="mais">↑ Piora se</b><ul><li>Gasto novo sem receita</li><li>Juro alto por mais tempo</li></ul></div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="fator" id="mercado" aria-labelledby="t-mercado">
+    <header class="fator-cab">
+      <h2 id="t-mercado">Mercado financeiro</h2>
+      <span class="chip normal">Normal</span>
+      <span class="tend-cab mais">↑ Tende a piorar</span>
+    </header>
+    <div class="fator-corpo">
+      <div class="dado">
+        <p class="valor"><b>7,94% ao ano</b><span>Tesouro IPCA+ 2035 em 28/10; dólar a R$ 5,34 em 28/10</span></p>
+        
+        <figure class="regua"><figcaption>Tesouro IPCA+ contra a mediana de 3 anos, pontos</figcaption>
+          <div class="trilho" role="img" aria-label="Hoje em 0,56, comparado à faixa normal">
+            <span class="z-normal" style="left:31.5%;width:36.8%"></span>
+            <span class="agulha" style="left:62.4%"><b>+0,56</b></span>
+          </div>
+          <div class="eixo"><span>−2,5</span><span><i class="sw sw-normal"></i>normal</span><span>2,4</span></div>
+        </figure>
+        
+        <figure class="regua"><figcaption>Dólar, variação em 3 meses, %</figcaption>
+          <div class="trilho" role="img" aria-label="Hoje em 4,4, comparado à faixa normal">
+            <span class="z-normal" style="left:27.3%;width:19.9%"></span>
+            <span class="agulha" style="left:45.6%"><b>+4,4</b></span>
+          </div>
+          <div class="eixo"><span>−16,9</span><span><i class="sw sw-normal"></i>normal</span><span>29,7</span></div>
+        </figure>
+        
+        <dl class="ficha">
+          
+          <div class="larga"><dt>Na conta do nível</dt><dd>Não entra: no teste em 44 países, câmbio e juro longo não melhoraram a previsão do PIB de forma clara. A bolsa melhorou, mas ainda não há coleta diária confiável do Ibovespa.</dd></div>
+          <div class="larga"><dt>Como afeta</dt><dd>Juros longos e dólar altos encarecem o crédito de empresas e do governo.</dd></div>
+        </dl>
+      </div>
+      <div class="leitura-f">
+        <h3>Por quê</h3>
+        <ul class="porque"><li>Tesouro IPCA+ 2035 a 7,94% ao ano em 28/10, 0,56 ponto acima da mediana de 3 anos. <span class="f">Tesouro Direto</span></li><li>Dólar a R$ 5,34 em 28/10, +4,4% em 3 meses. <span class="f">BC</span></li><li>No dia seguinte à eleição, dólar sobe 8,2% e a Bolsa cai 13,9%. <span class="f"><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula" rel="nofollow noopener">Agência Brasil</a></span></li><li>Tesouro anuncia recompra de títulos de 2030 a 2045 para conter as oscilações. <span class="f"><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/para-conter-oscilacoes-tesouro-anuncia-nova-recompra-de-titulos" rel="nofollow noopener">Agência Brasil</a></span></li></ul>
+        <p class="outros discorda"><b>Discordam:</b> Focus espera dólar a R$ 5,05 no fim de 2026, contra R$ 5,34 hoje. <span class="f"><a href="https://www.bcb.gov.br/publicacoes/focus" rel="nofollow noopener">Focus 23/10</a></span></p>
+        
+        <div class="se">
+          <div><b class="menos">↓ Melhora se</b><ul><li>Regra fiscal crível</li><li>Recompras do Tesouro acalmam os títulos</li></ul></div>
+          <div><b class="mais">↑ Piora se</b><ul><li>Mais dúvida sobre as contas públicas</li><li>Fed sobe os juros</li></ul></div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
   <section class="fator" id="emprego" aria-labelledby="t-emprego">
     <header class="fator-cab">
       <h2 id="t-emprego">Emprego</h2>
@@ -475,17 +514,16 @@ a:hover{text-decoration-thickness:2px}
         <p class="valor"><b>5,3%</b><span>Desemprego no trimestre até agosto (PNAD)</span></p>
         
         <figure class="regua"><figcaption>Regra de Sahm, pontos</figcaption>
-          <div class="trilho" role="img" aria-label="Hoje em 0,10, comparado à faixa normal e à zona de alerta">
-            <span class="z-normal" style="left:15.4%;width:18.4%"></span>
-            
-            <span class="agulha" style="left:20.1%"><b>+0,10</b></span>
+          <div class="trilho" role="img" aria-label="Hoje em 0,10, comparado à faixa normal">
+            <span class="z-normal" style="left:16.6%;width:36.7%"></span>
+            <span class="agulha" style="left:20.7%"><b>+0,10</b></span>
           </div>
-          <div class="eixo"><span>−0,8</span><span><i class="sw sw-normal"></i>normal</span><span>3,5</span></div>
+          <div class="eixo"><span>−0,7</span><span><i class="sw sw-normal"></i>normal</span><span>3,3</span></div>
         </figure>
         
         <dl class="ficha">
-          <div><dt>Peso no risco hoje</dt><dd><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Não entra no nível</span></span></dd></div>
-          <div><dt>Histórico</dt><dd>Não antecipou as recessões desde 2002: deu mais alarme falso que aviso certo</dd></div>
+          
+          <div class="larga"><dt>Na conta do nível</dt><dd>Não entra: no teste em 44 países, o desemprego piorou a previsão do PIB.</dd></div>
           <div class="larga"><dt>Como afeta</dt><dd>Sobe quando a recessão já começou. Confirma, não antecipa.</dd></div>
         </dl>
       </div>
@@ -514,17 +552,16 @@ a:hover{text-decoration-thickness:2px}
         <p class="valor"><b>+1,7%</b><span>Preço das commodities em 6 meses até setembro (índice do FMI)</span></p>
         
         <figure class="regua"><figcaption>Variação em 6 meses, %</figcaption>
-          <div class="trilho" role="img" aria-label="Hoje em 1,7, comparado à faixa normal e à zona de alerta">
-            <span class="z-normal" style="left:41.4%;width:27.8%"></span>
-            <span class="z-alerta" style="left:0.0%;width:18.6%"></span>
-            <span class="agulha" style="left:47.2%"><b>+1,7</b></span>
+          <div class="trilho" role="img" aria-label="Hoje em 1,7, comparado à faixa normal">
+            <span class="z-normal" style="left:41.6%;width:27.3%"></span>
+            <span class="agulha" style="left:50.5%"><b>+1,7</b></span>
           </div>
-          <div class="eixo"><span>−27,5</span><span><i class="sw sw-normal"></i>normal <i class="sw sw-alerta"></i>alerta</span><span>34,3</span></div>
+          <div class="eixo"><span>−31,5</span><span><i class="sw sw-normal"></i>normal</span><span>34,2</span></div>
         </figure>
         
         <dl class="ficha">
-          <div><dt>Peso no risco hoje</dt><dd><span class="peso"><span class="barra" aria-hidden="true"></span><span>Nenhum hoje</span></span></dd></div>
-          <div><dt>Histórico</dt><dd>Forte: alertou antes de 2 de 4 recessões medidas</dd></div>
+          
+          <div class="larga"><dt>Na conta do nível</dt><dd>Não entra: o preço das commodities não foi testado no painel de países.</dd></div>
           <div class="larga"><dt>Como afeta</dt><dd>Commodities e juros americanos movem boa parte do ciclo dos emergentes.</dd></div>
         </dl>
       </div>
@@ -551,7 +588,7 @@ a:hover{text-decoration-thickness:2px}
       <table>
         <thead><tr><th>Fator</th><th>Leitura</th><th>Feita em</th><th>Conferir em</th><th>Resultado</th></tr></thead>
         <tbody>
-          <tr><td>Atividade</td><td class="mais">↑ Tende a piorar</td><td>29/10/2026</td><td>28/04/2027</td><td class="aguarda">aguardando</td></tr><tr><td>Juro real e inflação</td><td class="igual">→ Estável</td><td>29/10/2026</td><td>28/04/2027</td><td class="aguarda">aguardando</td></tr><tr><td>Crédito e famílias</td><td class="mais">↑ Tende a piorar</td><td>29/10/2026</td><td>28/04/2027</td><td class="aguarda">aguardando</td></tr><tr><td>Mercado financeiro</td><td class="mais">↑ Tende a piorar</td><td>29/10/2026</td><td>28/04/2027</td><td class="aguarda">aguardando</td></tr><tr><td>Contas públicas</td><td class="mais">↑ Tende a piorar</td><td>29/10/2026</td><td>28/04/2027</td><td class="aguarda">aguardando</td></tr><tr><td>Emprego</td><td class="igual">→ Estável</td><td>29/10/2026</td><td>28/04/2027</td><td class="aguarda">aguardando</td></tr>
+          <tr><td>Atividade</td><td class="mais">↑ Tende a piorar</td><td>29/10/2026</td><td>28/04/2027</td><td class="aguarda">aguardando</td></tr><tr><td>Juro e inflação</td><td class="igual">→ Estável</td><td>29/10/2026</td><td>28/04/2027</td><td class="aguarda">aguardando</td></tr><tr><td>Crédito e famílias</td><td class="mais">↑ Tende a piorar</td><td>29/10/2026</td><td>28/04/2027</td><td class="aguarda">aguardando</td></tr><tr><td>Mercado financeiro</td><td class="mais">↑ Tende a piorar</td><td>29/10/2026</td><td>28/04/2027</td><td class="aguarda">aguardando</td></tr><tr><td>Contas públicas</td><td class="mais">↑ Tende a piorar</td><td>29/10/2026</td><td>28/04/2027</td><td class="aguarda">aguardando</td></tr><tr><td>Emprego</td><td class="igual">→ Estável</td><td>29/10/2026</td><td>28/04/2027</td><td class="aguarda">aguardando</td></tr>
         </tbody>
       </table>
     </div>
@@ -560,7 +597,7 @@ a:hover{text-decoration-thickness:2px}
 </main>
 
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mostra se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal da história brasileira desde 2002. O nível sai só de dados. As notícias mostram a tendência e não mexem no nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
+  <p>O Vai dar crise? mostra se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal. O nível sai do cenário ruim do PIB, estimado com dados de 44 países e comparado ao Brasil desde 2004. As notícias mostram a tendência e não mexem no nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
   <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Abra uma issue</a></p>
 </div></footer>
 </body>

@@ -1,6 +1,6 @@
 # Metodologia
 
-As regras estão em [`config/modelo.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json). O que foi estimado com os dados (limites, pesos, regressão) está em [`config/calibracao.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/calibracao.json), e os indicadores mês a mês, em [`data/historico/mensal.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/mensal.json). Cada atualização grava o hash dos dois arquivos de regra.
+As regras estão em [`config/modelo.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json). O que foi estimado com os dados (coeficientes, ajuste, cortes dos níveis, faixas normais) está em [`config/calibracao.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/calibracao.json). O painel de países está em [`data/historico/painel_ocde.csv`](https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/painel_ocde.csv), e o Brasil mês a mês, em [`data/historico/mensal.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/mensal.json). A conta é refeita por [`src/calibra.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/calibra.py). Cada atualização grava o hash dos dois arquivos de regra.
 
 ## A pergunta
 
@@ -9,87 +9,110 @@ As regras estão em [`config/modelo.json`](https://github.com/pedrojahara/vaidar
 - **Recessão técnica:** dois trimestres seguidos de queda do PIB dessazonalizado do IBGE ([tabela 5932](https://sidra.ibge.gov.br/tabela/5932), taxa contra o trimestre anterior, com uma casa decimal; 0,0% não é queda).
 - **Recaídas:** quedas separadas por um só trimestre sem queda contam como uma recessão só. 2014–16 é um episódio, não três.
 - **Próximos 12 meses:** os 4 trimestres a partir do primeiro que o IBGE ainda não divulgou. O IBGE leva cerca de 60 dias para divulgar cada trimestre.
-- **Normal:** a média dos meses desde 2002.
+- **Normal:** o Brasil de maio de 2004 até hoje.
 - **Recessões na série atual do IBGE:** 2T01–4T01, 1T03–2T03, 4T08–1T09, 2T14–4T16 e 1T20–2T20. Todas caem dentro de recessões datadas pelo [CODACE/FGV IBRE](https://portalibre.fgv.br/codace). 2021 não conta: na série revisada, a queda do 2T21 ficou isolada.
 
 O nome do site fala em crise; a métrica é recessão técnica.
 
 ## O nível
 
-Cinco níveis: Muito abaixo, Abaixo, Normal, Acima e Muito acima. O nível sai só de dados, em cinco passos.
+Cinco níveis: Muito abaixo, Abaixo, Normal, Acima e Muito acima. O nível sai só de dados.
 
-**1. Nove indicadores**, cada um calculado só com o que já tinha sido divulgado no dia:
+**A ideia.** Risco de recessão tem duas partes: a chance de a economia encolher e o tamanho da queda. As duas aparecem num número só, o **cenário ruim do PIB**: o crescimento nos 12 meses seguintes que tem só 1 chance em 10 de ser pior. Quanto pior esse cenário, mais alto o risco. É o método do FMI chamado crescimento em risco (*growth-at-risk*; Adrian, Boyarchenko e Giannone, 2019).
 
-| Indicador | Fator | Definição | Alerta quando |
-| --- | --- | --- | --- |
-| IBC-Br | Atividade | IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores | cai |
-| PIB esperado pelo Focus | Atividade | Mediana do Focus para o PIB do ano e do seguinte, ponderada pelos meses que faltam em cada um (próximos 12 meses) | cai |
-| Juro real | Juro real e inflação | Selic meta (BCB 432) descontada da inflação esperada em 12 meses (Focus) | sobe |
-| Renda comprometida com dívidas | Crédito e famílias | Comprometimento de renda das famílias (BCB 29034) menos a média dos 36 meses anteriores | sobe |
-| Juro do Tesouro IPCA+ | Mercado financeiro | Taxa do título IPCA+ com vencimento mais perto de 10 anos menos a sua mediana nos 3 anos anteriores | sobe |
-| Dólar | Mercado financeiro | Variação do dólar PTAX (BCB 1) em 3 meses | sobe |
-| Dívida pública | Contas públicas | Variação da dívida bruta do governo geral (BCB 13762) em 12 meses, em pontos do PIB | sobe |
-| Regra de Sahm | Emprego | Média de 3 meses da desocupação da PNAD (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores | sobe |
-| Preço das commodities | Cenário externo | Variação em 6 meses do índice de commodities do FMI (FRED PALLFNFINDEXM) | cai |
+**1. Quatro entradas do Brasil**, cada uma com o que já tinha sido divulgado no dia:
 
-**2. Um limite de alerta para cada indicador**, pelo método de sinais de Kaminsky, Lizondo e Reinhart (1998):
+| Entrada | Definição |
+| --- | --- |
+| Crescimento em 12 meses | IBC-Br dessazonalizado (BCB 24364): média dos 3 últimos meses contra os mesmos 3 meses um ano antes |
+| Crescimento médio em 10 anos | Média do crescimento em 12 meses do PIB do IBGE nos 40 últimos trimestres divulgados |
+| Selic: variação em 12 meses | Selic meta (BCB 432) de hoje menos a de um ano antes, em pontos |
+| Inflação: variação em 12 meses | IPCA em 12 meses (BCB 13522) do último mês menos o de um ano antes, em pontos |
 
-- Candidatos: os percentis 70, 75, 80, 85, 90 e 95 da história do próprio indicador, do lado ruim.
-- Fica o candidato com a menor razão ruído/sinal: a fração de alarmes falsos nos meses sem recessão à frente, dividida pela fração de alertas certos nos meses com recessão à frente.
-- O indicador precisa ter alertado antes de pelo menos 2 recessões. Um indicador sem nenhum alarme falso é tratado como se tivesse dado um, para o peso não ficar infinito.
-
-**3. Pesos pelo histórico.** Peso = 1 ÷ razão ruído/sinal. Razão de 1 ou mais (mais alarme falso que alerta certo) dá peso zero, e o indicador aparece como "não antecipou recessões". O composto do mês é a soma dos pesos dos indicadores em alerta, dividida pela soma dos pesos dos indicadores com dado. São precisos pelo menos 3 indicadores com dado.
-
-**4. Do composto ao nível.**
+**2. A conta, tirada de 44 países.** Uma regressão de quantil (Koenker e Bassett, 1978) do crescimento do PIB nos 4 trimestres seguintes, no quantil 10%, num painel trimestral de 44 países (OCDE e grandes emergentes, Brasil incluído) com dados da OCDE: 4.669 trimestres, de 1995 a 2025. Com 4 recessões no Brasil desde 2002, uma conta só com o Brasil não teria dados para separar sinal de acaso; o painel tem centenas.
 
 ```
-logit(p) = logit(p̄) + k × (a + b × composto − logit(p̄))
-razão = p ÷ p̄
+cenário ruim = −0,71 − 0,20 × média de 10 anos + 0,23 × crescimento em 12 meses
+               − 0,15 × variação da Selic − 0,13 × variação da inflação − 1,31
 ```
 
-- **a** e **b** saem de uma regressão logística dos meses com recessão à frente contra o composto, com uma penalidade mínima (0,01 × b²) só para a conta ter solução quando o composto separa os meses sem erro.
-- **p̄** é a média da amostra. **k** puxa a estimativa para a média; ele é escolhido no teste fora da amostra (abaixo).
-- Cortes da razão: abaixo de 0,5, Muito abaixo; de 0,5 a 0,8, Abaixo; de 0,8 a 1,25, Normal; de 1,25 a 2, Acima; 2 ou mais, Muito acima.
+- Crescimentos em 100 × log; no site, convertidos para variação %.
+- **Juro subindo e inflação acelerando** pioram o cenário ruim: costumam vir antes de recessões, em países ricos e emergentes.
+- **Crescer forte hoje** melhora o ano seguinte.
+- **Crescimento médio alto** piora o cenário ruim: vem junto com economias que oscilam mais, como as emergentes.
+- **O ajuste de −1,31** vem do teste fora da amostra (abaixo): sem ele, 15% dos resultados ficaram abaixo do cenário ruim, e não 10%.
 
-**5. Confirmação.** O nível só muda quando duas atualizações diárias seguidas dão o mesmo nível novo. Uma atualização refeita no mesmo dia não confirma a si mesma.
+**3. O nível.** O cenário ruim de hoje contra o do Brasil em cada mês desde maio de 2004:
 
-**O resultado com os dados de 2002 a agosto de 2025** (243 meses, 48 com recessão à frente):
+| Cenário ruim do PIB em 12 meses | Nível |
+| --- | --- |
+| Entre os 10% piores meses (−3,5% ou pior) | Muito acima |
+| Entre os 10% e os 30% piores (até −2,4%) | Acima |
+| No meio (de −2,4% a −1,4%) | Normal |
+| Entre os 30% e os 10% melhores (até −0,6%) | Abaixo |
+| Entre os 10% melhores (melhor que −0,6%) | Muito abaixo |
 
-| Indicador | Limite de alerta | Alertou antes de | Parte do peso |
-| --- | --- | --- | --- |
-| Dólar | alta de 18,8% em 3 meses | 3 de 4 recessões | 82% |
-| IBC-Br | queda de 1,0% no trimestre | 3 de 3 | 6% |
-| Preço das commodities | queda de 16% em 6 meses | 2 de 4 | 6% |
-| PIB esperado pelo Focus | abaixo de 1,9% em 12 meses | 4 de 4 | 3% |
-| Juro do Tesouro IPCA+ | 0,47 ponto acima da mediana de 3 anos | 2 de 3 | 2% |
-| Juro real, regra de Sahm | mais alarme falso que alerta certo | – | 0 |
-| Renda comprometida, dívida pública | alertaram antes de menos de 2 recessões | – | 0 |
+No mês típico, o cenário ruim é de −1,9%. É a linha "o mesmo cenário em tempos normais" do selo.
 
-"Recessões" aqui são as que cada série alcança: a de 2001 começou antes da amostra, e várias séries começam depois de 2002.
+**4. Confirmação.** O nível só muda quando duas atualizações diárias seguidas dão o mesmo nível novo. Uma atualização refeita no mesmo dia não confirma a si mesma.
+
+**Mais provável.** O selo mostra também a mediana do Focus para o PIB dos próximos 12 meses (a do ano corrente e a do seguinte, ponderadas pelos meses que faltam). É o mercado, não a conta do site: no Brasil desde 2004, o Focus errou menos que a mediana do painel.
+
+**Os sete fatores do Resumo.** Atividade e juro e inflação entram na conta pelas entradas acima; o Resumo mostra quanto cada uma mexe no cenário ruim, contra a mediana do Brasil desde 2004. Crédito, mercado financeiro, contas públicas, emprego e cenário externo ficam fora do nível e aparecem com o dado de hoje contra a faixa normal desde 2002 (metade dos meses dentro dela) e com a tendência.
+
+| Indicador do Resumo | Fator | Definição |
+| --- | --- | --- |
+| IBC-Br | Atividade | Média dos últimos 3 meses contra a dos 3 anteriores |
+| PIB esperado pelo Focus | Atividade | PIB dos próximos 12 meses, como acima |
+| Juro real | Juro e inflação | Selic meta descontada da inflação esperada em 12 meses (Focus) |
+| Renda comprometida com dívidas | Crédito e famílias | Comprometimento de renda das famílias (BCB 29034) menos a média dos 36 meses anteriores |
+| Juro do Tesouro IPCA+ | Mercado financeiro | Taxa do título IPCA+ com vencimento mais perto de 10 anos menos a sua mediana nos 3 anos anteriores |
+| Dólar | Mercado financeiro | Variação do dólar PTAX (BCB 1) em 3 meses |
+| Dívida pública | Contas públicas | Variação da dívida bruta do governo geral (BCB 13762) em 12 meses, em pontos do PIB |
+| Regra de Sahm | Emprego | Média de 3 meses da desocupação da PNAD (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores |
+| Preço das commodities | Cenário externo | Variação em 6 meses do índice de commodities do FMI (FRED PALLFNFINDEXM) |
+
+## Por que essas entradas
+
+As entradas foram escolhidas fora da amostra no painel, pelo erro da regressão de quantil (perda *pinball*), com a mesma validação descrita abaixo. Cada candidata foi somada às quatro e ficaria só se o erro de anos não vistos caísse 1% ou mais.
+
+| Candidata | Erro fora da amostra |
+| --- | --- |
+| Bolsa (retorno real em 12 meses) | 4,6% menor |
+| Crédito acima da tendência | 0,7% menor |
+| Juro longo subindo | 0,3% menor |
+| Dívida pública | igual |
+| Câmbio real acima da média de 10 anos | 0,6% maior |
+| Desemprego subindo | 0,9% maior |
+| Hiato do produto | 2,7% maior |
+| Câmbio (alta em 12 meses) | 2,9% maior |
+| Curva de juros | 4,8% maior |
+
+- **A bolsa ficou de fora pela coleta, não pelo teste.** A atualização automática ainda não tem uma fonte diária do Ibovespa testada. Entra quando tiver.
+- **Nível alto e parado não avisa.** Dívida, juro e inflação altos não somam à conta. O que avisa é o movimento: juro subindo, inflação acelerando.
 
 ## O teste fora da amostra
 
-- A amostra foi cortada em blocos de 3 anos. Um corte que cairia dentro do período de aviso de uma recessão foi empurrado para o fim dele.
-- Cada bloco foi previsto por uma conta que não o viu: limites, pesos e regressão reestimados só com os outros blocos.
-- Medida de erro: escore de Brier (o quadrado da diferença entre a chance prevista e o que aconteceu).
+- **No painel:** cada ano, de 2004 a 2026, foi previsto com coeficientes estimados só com os trimestres cujo PIB 4 trimestres à frente já tinha saído no começo daquele ano. São 3.625 trimestres.
+- **No Brasil:** o mesmo, mês a mês, de maio de 2004 a hoje, com os atrasos de divulgação de cada série. São 270 meses.
 
-| Conta | Erro fora da amostra |
+| Medida | Resultado |
 | --- | --- |
-| Repetir sempre a média | 0,171 |
-| A conta do site (k = 0,8) | 0,159, ou 7% menor |
-| A conta do site sem o dólar | não ganha da média (k = 0) |
-| Todos os pesos iguais | não ganha da média (k = 0) |
+| Erro da conta contra usar só o crescimento médio do país (painel) | 3% menor |
+| Resultados abaixo do cenário ruim, sem ajuste (painel) | 15% |
+| Resultados abaixo do cenário ruim, com ajuste (Brasil, 259 meses) | 8% |
+| PIB médio nos 12 meses seguintes, meses em Acima ou Muito acima (Brasil) | +0,8% |
+| PIB médio nos 12 meses seguintes, demais meses (Brasil) | +2,8% |
+| Recessão à frente, meses em Acima ou Muito acima contra os demais (Brasil) | 1,8 vez mais |
+| Chance de um mês com recessão à frente ter nível mais alto que um mês sem (Brasil, 220 meses; 0,5 é o acaso) | 0,60 |
 
 O que isso quer dizer, sem enfeite:
 
-- **O ganho é pequeno e depende do dólar.** Os outros indicadores, somados por esse método, não acrescentam acerto fora da amostra.
-- **Por isso o nível fica no normal na maior parte do tempo.** Sem o dólar em alerta, a conta vai de Abaixo a Acima; com ele, vai a Muito acima.
-- **Parte do acerto é de diagnóstico, não de previsão.** Em 2008 e 2020, o dólar disparou junto com o começo da recessão, meses antes de o IBGE confirmá-la. Em 2002, o alerta veio meses antes da recessão de 2003.
-- **Muito abaixo não aparece.** Os indicadores medem perigo, não calmaria. Sem nenhum alerta, a razão fica em cerca de 0,77, que é Abaixo.
-- **Quatro recessões é pouco.** Um limite ou um peso pode mudar bastante com a próxima recessão. A calibração é refeita quando o IBGE confirmar um novo episódio.
-- **Os dados são os de hoje.** A série do PIB e a do IBC-Br usadas no teste são as revisadas, não as divulgadas na época. O teste respeita os atrasos de divulgação, mas não as revisões.
-
-O resultado não cria valor do zero: ele diz que, desde 2002, só choques grandes de câmbio separaram com clareza os meses antes de recessões. O resto dos fatores aparece no Resumo com o seu peso de hoje, quase sempre pequeno, e com a sua tendência.
+- **O ganho é modesto.** A conta separa bem anos de crescimento fraco de anos de crescimento forte, mas não acerta a data em que cada recessão começa: nos 44 países, nesse ponto, não faz melhor que o acaso.
+- **Choques de fora não aparecem antes.** Em 2008 e em 2020, o nível estava entre Abaixo e Normal antes da recessão.
+- **A recessão de 2014, feita em casa, apareceu, mas cedo.** O nível ficou em Acima de meados de 2011 em diante.
+- **Quatro recessões no Brasil é pouco.** Por isso a conta vem do painel; o Brasil só define o que é normal aqui.
+- **Os dados são os de hoje.** PIB, IBC-Br e o painel usados no teste são os revisados, não os divulgados na época. O teste respeita os atrasos de divulgação, mas não as revisões.
 
 ## Tendência e notícias
 
@@ -114,7 +137,7 @@ As notícias não mexem no nível. Se cada notícia somasse um pedaço, como os 
 
 **A tendência de cada fator.** Fica em [`data/dossie.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/data/dossie.json): piora, estável, melhora ou sem direção clara.
 
-- **Fatos de dados:** saem de código, todo dia, comparando o dado de hoje com a série desde 2002 ("o maior desde…").
+- **Fatos de dados:** saem de código, todo dia, comparando o dado de hoje com a série histórica ("o maior desde…").
 - **Fatos de notícia:** no máximo 2 por fator, válidos por 180 dias.
 - **O que outros projetam, em igual destaque:** em atividade, juro e mercado, o Focus, calculado por código; nos demais, a projeção pública mais recente de uma instituição (IFI, por exemplo). Quando a projeção aponta para o lado contrário da nossa tendência, aparece como "Discordam".
 - **Quem muda o quê:** o modelo de linguagem só propõe. Fato de notícia novo entra sempre. Troca de tendência só entra com dado divulgado ou decisão tomada, noticiados por pelo menos 2 jornais. Nos fatores com Focus, a projeção não aceita troca pelo modelo.
@@ -128,21 +151,22 @@ As notícias não mexem no nível. Se cada notícia somasse um pedaço, como os 
 
 ## O post do dia
 
-Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o nível, os fatores que pesam, para que lado as notícias empurram e as próximas datas. Ele não muda o nível, a pressão nem a tendência. Um verificador em código procura moldes de texto automático, afirmações de chance de recessão e explicações de método, e pede uma reescrita no máximo. Se a escrita falhar, sai a atualização sem texto corrido.
+Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o nível, o cenário ruim do PIB, o que pesa e o que alivia, para que lado as notícias empurram e as próximas datas. Ele não muda o nível, a pressão nem a tendência. Um verificador em código procura moldes de texto automático, afirmações de chance de recessão e explicações de método, e pede uma reescrita no máximo. Se a escrita falhar, sai a atualização sem texto corrido.
 
 Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em [`runs/`](https://github.com/pedrojahara/vaidarcrise/tree/main/runs). O que foi publicado fica congelado.
 
 ## Salvaguardas
 
 - **Dado defasado:** se a página passar de 36 horas sem atualização, ela avisa.
-- **Falha de coleta:** vale o último valor de até 10 dias (dado diário) ou 70 dias (dado mensal). Mais velho, o indicador sai da conta do dia, e o composto usa só os que têm dado.
+- **Falha de coleta:** vale o último valor de até 10 dias (dado diário), 101 dias (dado mensal) ou 200 dias (PIB trimestral). Se faltar uma entrada da conta mesmo assim, a atualização não sai, e o site avisa que está defasado.
 - **Falha do modelo de linguagem:** a atualização sai só com dados e sem pressão de notícias.
 - **Texto das notícias:** é tratado como dado, nunca como instrução. Nenhuma notícia muda pesos ou regras.
 
 ## O que ainda falta
 
-- Refazer o teste com os dados como eram divulgados na época (com revisões), quando houver séries de vintage para todos os indicadores.
-- Estimar os limites com um painel de emergentes, para ter mais que quatro recessões.
+- Pôr a bolsa na conta, com uma coleta diária do Ibovespa testada.
+- Testar o preço das commodities, que o painel de países não tem.
+- Refazer o teste com os dados como eram divulgados na época (com revisões).
 - Teste de troca de nomes: reprocessar uma amostra de notícias trocando os atores e publicar se a classificação mudou.
 - Conferir o placar contra o Focus, além do dado.
 
@@ -154,9 +178,11 @@ Achou um? [Abra uma issue](https://github.com/pedrojahara/vaidarcrise/issues).
 
 ## Fontes
 
-- Kaminsky, Lizondo e Reinhart (1998), *Leading indicators of currency crises*, IMF Staff Papers
+- Adrian, Boyarchenko e Giannone (2019), *Vulnerable growth*, American Economic Review
+- FMI (2017), *Financial conditions and growth at risk*, Global Financial Stability Report, outubro, capítulo 3
+- Koenker e Bassett (1978), *Regression quantiles*, Econometrica
+- [OCDE: PIB trimestral, juros e preços ao consumidor](https://data-explorer.oecd.org/)
 - Sahm (2019), *Direct stimulus payments to individuals*, Brookings, sobre a regra de Sahm
-- Brier (1950), *Verification of forecasts expressed in terms of probability*, Monthly Weather Review
 - [Datação dos ciclos econômicos brasileiros, CODACE/FGV IBRE](https://portalibre.fgv.br/codace)
 - [Banco Central: séries temporais (SGS)](https://www3.bcb.gov.br/sgspub/) e [Focus](https://www.bcb.gov.br/publicacoes/focus)
 - [IBGE: Contas Nacionais Trimestrais](https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9300-contas-nacionais-trimestrais.html)

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block titulo %}Como a conta funciona | Vai dar crise?{% endblock %}
-{% block descricao %}De onde vem o nível de risco de recessão de {{ data_curta(dia) }}: nove indicadores do Banco Central, do IBGE, do Tesouro e do FMI, com limites de alerta tirados da história desde 2002.{% endblock %}
+{% block descricao %}De onde vem o nível de risco de recessão de {{ data_curta(dia) }}: o cenário ruim do PIB nos próximos 12 meses, estimado com dados de 44 países e comparado ao Brasil desde 2004.{% endblock %}
 {% block estilo %}
 .detalhe{padding-top:28px;padding-bottom:40px;font-family:var(--sistema)}
 .detalhe-topo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px 48px;align-items:start;padding-bottom:26px;border-bottom:1px solid var(--fio)}
@@ -23,7 +23,7 @@ td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 td b{display:block}
 td .def{display:block;color:var(--meta);font-size:13px;margin-top:2px;max-width:30em}
 .chip{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 9px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
-.chip.alerta{color:var(--sobe)}.chip.atencao{color:var(--atencao)}.chip.normal{color:var(--meta)}
+.chip.atencao{color:var(--atencao)}.chip.normal{color:var(--meta)}
 .chip.semdado{color:var(--meta);border-style:dashed}
 .nota-tab{font:14px/1.5 var(--sistema);color:var(--meta);margin:0 0 18px}
 .hist{width:100%;height:auto;max-width:760px}
@@ -39,8 +39,8 @@ svg text{font-family:var(--sistema)}
 @media (max-width:620px){.detalhe h1{font-size:26px}}
 {% endblock %}
 {% block corpo %}
-{% set val = cal.validacao %}
-{% set sem = val.sem_o_maior_peso %}
+{% set g = cal.gar %}
+{% set val = g.validacao %}
 <main class="in detalhe">
   <div class="detalhe-topo">
     {% with grande = True %}{% include "_nota.html" %}{% endwith %}
@@ -49,8 +49,8 @@ svg text{font-family:var(--sistema)}
       <ul class="topicos">
         <li>A pergunta: o risco de o Brasil entrar em recessão nos próximos 12 meses está acima ou abaixo do normal?</li>
         <li>Recessão: dois trimestres seguidos de queda do PIB, medido pelo IBGE.</li>
-        <li>Normal: o que se viu desde 2002.</li>
-        <li>O nível sai só de dados. As notícias não mexem nele.</li>
+        <li>O nível sai do cenário ruim do PIB: o crescimento em 12 meses que tem só 1 chance em 10 de ser pior. Quanto pior esse cenário, mais alto o risco.</li>
+        <li>Normal: o que se viu no Brasil desde 2004. As notícias não mexem no nível.</li>
       </ul>
     </div>
   </div>
@@ -58,39 +58,51 @@ svg text{font-family:var(--sistema)}
   <section aria-labelledby="t-passos">
     <h2 id="t-passos">Em quatro passos</h2>
     <ol class="passos">
-      <li><b>Nove indicadores</b> do Banco Central, do IBGE, do Tesouro, do FMI e do Focus.</li>
-      <li><b>Um limite de alerta para cada um</b>, tirado da história: o ponto que melhor separou os meses antes de recessões dos outros meses.</li>
-      <li><b>Pesos pelo histórico.</b> Quem acertou mais e deu menos alarme falso pesa mais. Quem deu mais alarme falso que aviso certo fica com peso zero.</li>
-      <li><b>O nível.</b> Os alertas do dia, somados pelo peso, são comparados aos meses de recessão desde 2002. O nível só muda quando duas atualizações seguidas concordam.</li>
+      <li><b>Quatro dados do Brasil:</b> o crescimento em 12 meses (IBC-Br), o crescimento médio em 10 anos (PIB), quanto a Selic mudou em 12 meses e quanto a inflação mudou em 12 meses.</li>
+      <li><b>Uma conta tirada de {{ g.painel.paises }} países.</b> Em {{ "{:,}".format(g.painel.trimestres).replace(",", ".") }} trimestres desde {{ g.painel.inicio[:4] }}, mede como esses dados mudam o pior resultado provável do PIB no ano seguinte. É o método do FMI, chamado crescimento em risco.</li>
+      <li><b>O cenário ruim de hoje:</b> a conta aplicada ao Brasil, com um ajuste para que 1 em cada 10 resultados fique abaixo dele também em anos que a conta não viu.</li>
+      <li><b>O nível:</b> o cenário de hoje contra o de cada mês desde 2004. Entre os 10% piores meses, Muito acima; entre os 30% piores, Acima; no meio, Normal; Abaixo e Muito abaixo, o espelho. Só muda quando duas atualizações seguidas concordam.</li>
     </ol>
   </section>
 
-  <section aria-labelledby="t-ind">
-    <h2 id="t-ind">Os indicadores em {{ data_curta(dia) }}</h2>
+  <section aria-labelledby="t-conta">
+    <h2 id="t-conta">A conta em {{ data_curta(dia) }}</h2>
     <div class="tabela">
       <table>
-        <thead><tr><th>Indicador</th><th>Fator</th><th class="n">Hoje</th><th class="n">Faixa normal</th><th class="n">Limite de alerta</th><th>Situação</th><th class="n">Peso</th><th>Histórico</th></tr></thead>
+        <thead><tr><th>Entrada</th><th class="n">Hoje</th><th class="n">Normal no Brasil</th><th class="n">Efeito no cenário ruim</th></tr></thead>
         <tbody>
-          {% for x in tabela %}<tr><td><b>{{ x.nome }}</b><span class="def">{{ x.definicao }}</span></td><td>{{ x.fator }}</td><td class="n">{{ x.hoje }}</td><td class="n">{{ x.faixa }}</td><td class="n">{{ x.limite }}</td><td><span class="chip {{ x.chip }}">{{ x.situacao }}</span></td><td class="n">{{ x.peso }}</td><td>{{ x.historico }}</td></tr>{% endfor %}
+          {% for x in entradas %}<tr><td><b>{{ x.nome }}</b><span class="def">{{ x.definicao }}</span></td><td class="n">{{ x.hoje }}</td><td class="n">{{ x.faixa }}</td><td class="n {{ x.cls }}">{{ x.efeito }}</td></tr>{% endfor %}
         </tbody>
       </table>
     </div>
-    <p class="nota-tab">Faixa normal: metade dos meses desde 2002 ficou dentro dela. Peso: parte de cada indicador no total dos pesos. Histórico: recessões que a série alcança.</p>
-    {% for p in pontos if p.rot == "Mudaria o nível" %}<p class="mais-info"><b>Mudaria o nível hoje:</b> {{ p.texto }}</p>{% endfor %}
+    <p class="nota-tab">Normal: metade dos meses desde 2004 ficou nessa faixa. Efeito: quanto a entrada de hoje, contra a do Brasil típico, mexe no cenário ruim, em pontos do PIB.</p>
+    <ul class="topicos">
+      <li>Juro subindo e inflação acelerando costumam vir antes de recessões, em países ricos e emergentes.</li>
+      <li>Crescer forte hoje ajuda o ano seguinte. Já um crescimento médio alto vem junto com quedas mais fundas: é o caso de economias que oscilam mais.</li>
+      {% for x in gatilhos %}<li><b>{{ x.texto }}</b></li>{% endfor %}
+    </ul>
+  </section>
+
+  <section aria-labelledby="t-fora">
+    <h2 id="t-fora">O que ficou de fora</h2>
+    <ul class="topicos">
+      <li>Câmbio, crédito, dívida pública, curva de juros, juro longo, hiato do produto e desemprego. Testados nos {{ g.painel.paises }} países, melhoraram a previsão em menos de 1% ou a pioraram.</li>
+      <li>A bolsa melhorou a previsão, mas ainda não há coleta diária confiável do Ibovespa. Entra quando houver.</li>
+      <li>Ficar de fora do nível não quer dizer que não importa. Os sete fatores seguem no <a href="{{ link_resumo }}">Resumo</a>, com o dado de hoje contra o normal e a tendência.</li>
+    </ul>
   </section>
 
   <section aria-labelledby="t-hist">
-    <h2 id="t-hist">A conta desde 2002</h2>
+    <h2 id="t-hist">A conta desde 2004</h2>
     {% if historico_svg %}
     {{ historico_svg|safe }}
-    <p class="legenda"><span><i class="linha"></i>nível de cada mês, calculado sem ver o bloco de 3 anos em que está</span><span><i></i>recessão</span></p>
+    <p class="legenda"><span><i class="linha"></i>nível de cada mês, com uma conta que não viu aquele ano</span><span><i></i>recessão</span></p>
     {% endif %}
     <ul class="topicos">
-      <li>No teste, cada bloco de 3 anos foi previsto por uma conta que não o viu. Ela errou {{ (100 * val.ganho_sobre_a_media)|round|int }}% menos do que repetir sempre o risco médio.</li>
-      <li>É pouco, e quase tudo vem de um indicador: sem o {{ cfg.indicadores[sem.indicador].nome|lower }}, a conta não ganha da média.</li>
-      <li>Por isso o nível fica no normal na maior parte do tempo e sobe forte com choques de câmbio, como em 2002, 2008 e 2020.</li>
-      <li>Em 2008 e 2020, o dólar disparou junto com o começo da recessão, meses antes de o IBGE confirmá-la.</li>
-      <li>Muito abaixo não apareceu desde 2002. Os indicadores medem sinais de perigo, não de calmaria. Sem nenhum alerta, a conta para em Abaixo.</li>
+      <li>Nos meses em Acima ou Muito acima, o PIB cresceu em média {{ val.acima_crescimento_medio_seguinte|num }}% nos 12 meses seguintes. Nos outros, {{ val.demais_crescimento_medio_seguinte|num }}%.</li>
+      <li>Recessões começaram em seguida {{ (val.acima_meses_com_recessao_a_frente / val.demais_meses_com_recessao_a_frente)|num }} vez mais nos meses em Acima ou Muito acima do que nos outros.</li>
+      <li>O ganho é modesto. Nos {{ g.painel.paises }} países, a conta erra {{ (100 * val.painel_ganho_sobre_a_media_do_pais)|round|int }}% menos que usar só o crescimento médio do país, e não acerta melhor a data em que cada recessão começa.</li>
+      <li>Choques de fora, como a pandemia em 2020, não aparecem antes. O nível estava no Normal.</li>
     </ul>
   </section>
 
@@ -107,8 +119,8 @@ svg text{font-family:var(--sistema)}
   <section aria-labelledby="t-mais">
     <h2 id="t-mais">Para conferir</h2>
     <ul class="topicos">
-      <li><a href="/metodologia/">Metodologia completa</a>, com as fórmulas e os limites da conta.</li>
-      <li><a href="{{ repo }}/blob/main/config/calibracao.json">Limites e pesos</a> e <a href="{{ repo }}/blob/main/data/historico/mensal.json">os indicadores mês a mês</a>, para refazer a conta.</li>
+      <li><a href="/metodologia/">Metodologia completa</a>, com as fórmulas, os testes e os limites da conta.</li>
+      <li><a href="{{ repo }}/blob/main/config/calibracao.json">Coeficientes e cortes</a>, <a href="{{ repo }}/blob/main/data/historico/painel_ocde.csv">o painel de países</a> e <a href="{{ repo }}/blob/main/data/historico/mensal.json">o Brasil mês a mês</a>, para refazer a conta.</li>
       <li><a href="{{ post.registro }}">Registro desta atualização</a>, com todos os números e notícias usados.</li>
     </ul>
   </section>

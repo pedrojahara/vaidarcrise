@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Metodologia | Vai dar crise?</title>
-<meta name="description" content="Como o Vai dar crise? calcula o nível de risco de recessão no Brasil: indicadores, limites de alerta, teste fora da amostra, tendência das notícias e placar.">
+<meta name="description" content="Como o Vai dar crise? calcula o nível de risco de recessão no Brasil: o cenário ruim do PIB, o painel de 44 países, o teste fora da amostra, a tendência das notícias e o placar.">
 <link rel="canonical" href="https://vaidarcrise.com.br/metodologia/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
 <meta property="og:title" content="Metodologia | Vai dar crise?">
-<meta property="og:description" content="Como o Vai dar crise? calcula o nível de risco de recessão no Brasil: indicadores, limites de alerta, teste fora da amostra, tendência das notícias e placar.">
+<meta property="og:description" content="Como o Vai dar crise? calcula o nível de risco de recessão no Brasil: o cenário ruim do PIB, o painel de 44 países, o teste fora da amostra, a tendência das notícias e o placar.">
 <meta property="og:url" content="https://vaidarcrise.com.br/metodologia/">
 <meta property="og:image" content="https://vaidarcrise.com.br/og.png">
 <meta property="og:image:width" content="1200">
@@ -70,6 +70,12 @@ a:hover{text-decoration-thickness:2px}
 .escala li.aqui::before{background:var(--tinta)}
 .escala.grande{font-size:14px;gap:4px}
 .escala.grande li::before{height:12px}
+.cenarios{list-style:none;padding:12px 14px;margin:16px 0 0;background:var(--maquina);border-radius:6px;font:15px/1.4 var(--sistema);display:grid;gap:8px}
+.cenarios li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:baseline}
+.cenarios li > :last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.cenarios b{font-size:17px;color:var(--sobe)}
+.cenarios .ref{color:var(--meta);font-size:14px}
+.cenarios .cab-cen{display:block;font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em}
 .tend-noticias{font:15px/1.45 var(--sistema);margin:14px 0 0}
 .tend-noticias b{font-size:1.1em;margin-right:3px}
 .nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:8px 0 0}
@@ -121,7 +127,7 @@ a:hover{text-decoration-thickness:2px}
 
 <main class="in texto">
 <h1 id="metodologia">Metodologia</h1>
-<p>As regras estão em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json"><code>config/modelo.json</code></a>. O que foi estimado com os dados (limites, pesos, regressão) está em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/calibracao.json"><code>config/calibracao.json</code></a>, e os indicadores mês a mês, em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/mensal.json"><code>data/historico/mensal.json</code></a>. Cada atualização grava o hash dos dois arquivos de regra.</p>
+<p>As regras estão em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json"><code>config/modelo.json</code></a>. O que foi estimado com os dados (coeficientes, ajuste, cortes dos níveis, faixas normais) está em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/calibracao.json"><code>config/calibracao.json</code></a>. O painel de países está em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/painel_ocde.csv"><code>data/historico/painel_ocde.csv</code></a>, e o Brasil mês a mês, em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/mensal.json"><code>data/historico/mensal.json</code></a>. A conta é refeita por <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/calibra.py"><code>src/calibra.py</code></a>. Cada atualização grava o hash dos dois arquivos de regra.</p>
 <h2 id="a-pergunta">A pergunta</h2>
 <blockquote>
 <p>O risco de o Brasil entrar em recessão técnica nos próximos 12 meses está acima ou abaixo do normal?</p>
@@ -130,193 +136,244 @@ a:hover{text-decoration-thickness:2px}
 <li><strong>Recessão técnica:</strong> dois trimestres seguidos de queda do PIB dessazonalizado do IBGE (<a href="https://sidra.ibge.gov.br/tabela/5932">tabela 5932</a>, taxa contra o trimestre anterior, com uma casa decimal; 0,0% não é queda).</li>
 <li><strong>Recaídas:</strong> quedas separadas por um só trimestre sem queda contam como uma recessão só. 2014–16 é um episódio, não três.</li>
 <li><strong>Próximos 12 meses:</strong> os 4 trimestres a partir do primeiro que o IBGE ainda não divulgou. O IBGE leva cerca de 60 dias para divulgar cada trimestre.</li>
-<li><strong>Normal:</strong> a média dos meses desde 2002.</li>
+<li><strong>Normal:</strong> o Brasil de maio de 2004 até hoje.</li>
 <li><strong>Recessões na série atual do IBGE:</strong> 2T01–4T01, 1T03–2T03, 4T08–1T09, 2T14–4T16 e 1T20–2T20. Todas caem dentro de recessões datadas pelo <a href="https://portalibre.fgv.br/codace">CODACE/FGV IBRE</a>. 2021 não conta: na série revisada, a queda do 2T21 ficou isolada.</li>
 </ul>
 <p>O nome do site fala em crise; a métrica é recessão técnica.</p>
 <h2 id="o-nivel">O nível</h2>
-<p>Cinco níveis: Muito abaixo, Abaixo, Normal, Acima e Muito acima. O nível sai só de dados, em cinco passos.</p>
-<p><strong>1. Nove indicadores</strong>, cada um calculado só com o que já tinha sido divulgado no dia:</p>
+<p>Cinco níveis: Muito abaixo, Abaixo, Normal, Acima e Muito acima. O nível sai só de dados.</p>
+<p><strong>A ideia.</strong> Risco de recessão tem duas partes: a chance de a economia encolher e o tamanho da queda. As duas aparecem num número só, o <strong>cenário ruim do PIB</strong>: o crescimento nos 12 meses seguintes que tem só 1 chance em 10 de ser pior. Quanto pior esse cenário, mais alto o risco. É o método do FMI chamado crescimento em risco (<em>growth-at-risk</em>; Adrian, Boyarchenko e Giannone, 2019).</p>
+<p><strong>1. Quatro entradas do Brasil</strong>, cada uma com o que já tinha sido divulgado no dia:</p>
 <table>
 <thead>
 <tr>
-<th>Indicador</th>
+<th>Entrada</th>
+<th>Definição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crescimento em 12 meses</td>
+<td>IBC-Br dessazonalizado (BCB 24364): média dos 3 últimos meses contra os mesmos 3 meses um ano antes</td>
+</tr>
+<tr>
+<td>Crescimento médio em 10 anos</td>
+<td>Média do crescimento em 12 meses do PIB do IBGE nos 40 últimos trimestres divulgados</td>
+</tr>
+<tr>
+<td>Selic: variação em 12 meses</td>
+<td>Selic meta (BCB 432) de hoje menos a de um ano antes, em pontos</td>
+</tr>
+<tr>
+<td>Inflação: variação em 12 meses</td>
+<td>IPCA em 12 meses (BCB 13522) do último mês menos o de um ano antes, em pontos</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2. A conta, tirada de 44 países.</strong> Uma regressão de quantil (Koenker e Bassett, 1978) do crescimento do PIB nos 4 trimestres seguintes, no quantil 10%, num painel trimestral de 44 países (OCDE e grandes emergentes, Brasil incluído) com dados da OCDE: 4.669 trimestres, de 1995 a 2025. Com 4 recessões no Brasil desde 2002, uma conta só com o Brasil não teria dados para separar sinal de acaso; o painel tem centenas.</p>
+<p><code>cenário ruim = −0,71 − 0,20 × média de 10 anos + 0,23 × crescimento em 12 meses
+               − 0,15 × variação da Selic − 0,13 × variação da inflação − 1,31</code></p>
+<ul>
+<li>Crescimentos em 100 × log; no site, convertidos para variação %.</li>
+<li><strong>Juro subindo e inflação acelerando</strong> pioram o cenário ruim: costumam vir antes de recessões, em países ricos e emergentes.</li>
+<li><strong>Crescer forte hoje</strong> melhora o ano seguinte.</li>
+<li><strong>Crescimento médio alto</strong> piora o cenário ruim: vem junto com economias que oscilam mais, como as emergentes.</li>
+<li><strong>O ajuste de −1,31</strong> vem do teste fora da amostra (abaixo): sem ele, 15% dos resultados ficaram abaixo do cenário ruim, e não 10%.</li>
+</ul>
+<p><strong>3. O nível.</strong> O cenário ruim de hoje contra o do Brasil em cada mês desde maio de 2004:</p>
+<table>
+<thead>
+<tr>
+<th>Cenário ruim do PIB em 12 meses</th>
+<th>Nível</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entre os 10% piores meses (−3,5% ou pior)</td>
+<td>Muito acima</td>
+</tr>
+<tr>
+<td>Entre os 10% e os 30% piores (até −2,4%)</td>
+<td>Acima</td>
+</tr>
+<tr>
+<td>No meio (de −2,4% a −1,4%)</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>Entre os 30% e os 10% melhores (até −0,6%)</td>
+<td>Abaixo</td>
+</tr>
+<tr>
+<td>Entre os 10% melhores (melhor que −0,6%)</td>
+<td>Muito abaixo</td>
+</tr>
+</tbody>
+</table>
+<p>No mês típico, o cenário ruim é de −1,9%. É a linha "o mesmo cenário em tempos normais" do selo.</p>
+<p><strong>4. Confirmação.</strong> O nível só muda quando duas atualizações diárias seguidas dão o mesmo nível novo. Uma atualização refeita no mesmo dia não confirma a si mesma.</p>
+<p><strong>Mais provável.</strong> O selo mostra também a mediana do Focus para o PIB dos próximos 12 meses (a do ano corrente e a do seguinte, ponderadas pelos meses que faltam). É o mercado, não a conta do site: no Brasil desde 2004, o Focus errou menos que a mediana do painel.</p>
+<p><strong>Os sete fatores do Resumo.</strong> Atividade e juro e inflação entram na conta pelas entradas acima; o Resumo mostra quanto cada uma mexe no cenário ruim, contra a mediana do Brasil desde 2004. Crédito, mercado financeiro, contas públicas, emprego e cenário externo ficam fora do nível e aparecem com o dado de hoje contra a faixa normal desde 2002 (metade dos meses dentro dela) e com a tendência.</p>
+<table>
+<thead>
+<tr>
+<th>Indicador do Resumo</th>
 <th>Fator</th>
 <th>Definição</th>
-<th>Alerta quando</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>IBC-Br</td>
 <td>Atividade</td>
-<td>IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores</td>
-<td>cai</td>
+<td>Média dos últimos 3 meses contra a dos 3 anteriores</td>
 </tr>
 <tr>
 <td>PIB esperado pelo Focus</td>
 <td>Atividade</td>
-<td>Mediana do Focus para o PIB do ano e do seguinte, ponderada pelos meses que faltam em cada um (próximos 12 meses)</td>
-<td>cai</td>
+<td>PIB dos próximos 12 meses, como acima</td>
 </tr>
 <tr>
 <td>Juro real</td>
-<td>Juro real e inflação</td>
-<td>Selic meta (BCB 432) descontada da inflação esperada em 12 meses (Focus)</td>
-<td>sobe</td>
+<td>Juro e inflação</td>
+<td>Selic meta descontada da inflação esperada em 12 meses (Focus)</td>
 </tr>
 <tr>
 <td>Renda comprometida com dívidas</td>
 <td>Crédito e famílias</td>
 <td>Comprometimento de renda das famílias (BCB 29034) menos a média dos 36 meses anteriores</td>
-<td>sobe</td>
 </tr>
 <tr>
 <td>Juro do Tesouro IPCA+</td>
 <td>Mercado financeiro</td>
 <td>Taxa do título IPCA+ com vencimento mais perto de 10 anos menos a sua mediana nos 3 anos anteriores</td>
-<td>sobe</td>
 </tr>
 <tr>
 <td>Dólar</td>
 <td>Mercado financeiro</td>
 <td>Variação do dólar PTAX (BCB 1) em 3 meses</td>
-<td>sobe</td>
 </tr>
 <tr>
 <td>Dívida pública</td>
 <td>Contas públicas</td>
 <td>Variação da dívida bruta do governo geral (BCB 13762) em 12 meses, em pontos do PIB</td>
-<td>sobe</td>
 </tr>
 <tr>
 <td>Regra de Sahm</td>
 <td>Emprego</td>
 <td>Média de 3 meses da desocupação da PNAD (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores</td>
-<td>sobe</td>
 </tr>
 <tr>
 <td>Preço das commodities</td>
 <td>Cenário externo</td>
 <td>Variação em 6 meses do índice de commodities do FMI (FRED PALLFNFINDEXM)</td>
-<td>cai</td>
 </tr>
 </tbody>
 </table>
-<p><strong>2. Um limite de alerta para cada indicador</strong>, pelo método de sinais de Kaminsky, Lizondo e Reinhart (1998):</p>
-<ul>
-<li>Candidatos: os percentis 70, 75, 80, 85, 90 e 95 da história do próprio indicador, do lado ruim.</li>
-<li>Fica o candidato com a menor razão ruído/sinal: a fração de alarmes falsos nos meses sem recessão à frente, dividida pela fração de alertas certos nos meses com recessão à frente.</li>
-<li>O indicador precisa ter alertado antes de pelo menos 2 recessões. Um indicador sem nenhum alarme falso é tratado como se tivesse dado um, para o peso não ficar infinito.</li>
-</ul>
-<p><strong>3. Pesos pelo histórico.</strong> Peso = 1 ÷ razão ruído/sinal. Razão de 1 ou mais (mais alarme falso que alerta certo) dá peso zero, e o indicador aparece como "não antecipou recessões". O composto do mês é a soma dos pesos dos indicadores em alerta, dividida pela soma dos pesos dos indicadores com dado. São precisos pelo menos 3 indicadores com dado.</p>
-<p><strong>4. Do composto ao nível.</strong></p>
-<p><code>logit(p) = logit(p̄) + k × (a + b × composto − logit(p̄))
-razão = p ÷ p̄</code></p>
-<ul>
-<li><strong>a</strong> e <strong>b</strong> saem de uma regressão logística dos meses com recessão à frente contra o composto, com uma penalidade mínima (0,01 × b²) só para a conta ter solução quando o composto separa os meses sem erro.</li>
-<li><strong>p̄</strong> é a média da amostra. <strong>k</strong> puxa a estimativa para a média; ele é escolhido no teste fora da amostra (abaixo).</li>
-<li>Cortes da razão: abaixo de 0,5, Muito abaixo; de 0,5 a 0,8, Abaixo; de 0,8 a 1,25, Normal; de 1,25 a 2, Acima; 2 ou mais, Muito acima.</li>
-</ul>
-<p><strong>5. Confirmação.</strong> O nível só muda quando duas atualizações diárias seguidas dão o mesmo nível novo. Uma atualização refeita no mesmo dia não confirma a si mesma.</p>
-<p><strong>O resultado com os dados de 2002 a agosto de 2025</strong> (243 meses, 48 com recessão à frente):</p>
+<h2 id="por-que-essas-entradas">Por que essas entradas</h2>
+<p>As entradas foram escolhidas fora da amostra no painel, pelo erro da regressão de quantil (perda <em>pinball</em>), com a mesma validação descrita abaixo. Cada candidata foi somada às quatro e ficaria só se o erro de anos não vistos caísse 1% ou mais.</p>
 <table>
 <thead>
 <tr>
-<th>Indicador</th>
-<th>Limite de alerta</th>
-<th>Alertou antes de</th>
-<th>Parte do peso</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Dólar</td>
-<td>alta de 18,8% em 3 meses</td>
-<td>3 de 4 recessões</td>
-<td>82%</td>
-</tr>
-<tr>
-<td>IBC-Br</td>
-<td>queda de 1,0% no trimestre</td>
-<td>3 de 3</td>
-<td>6%</td>
-</tr>
-<tr>
-<td>Preço das commodities</td>
-<td>queda de 16% em 6 meses</td>
-<td>2 de 4</td>
-<td>6%</td>
-</tr>
-<tr>
-<td>PIB esperado pelo Focus</td>
-<td>abaixo de 1,9% em 12 meses</td>
-<td>4 de 4</td>
-<td>3%</td>
-</tr>
-<tr>
-<td>Juro do Tesouro IPCA+</td>
-<td>0,47 ponto acima da mediana de 3 anos</td>
-<td>2 de 3</td>
-<td>2%</td>
-</tr>
-<tr>
-<td>Juro real, regra de Sahm</td>
-<td>mais alarme falso que alerta certo</td>
-<td>–</td>
-<td>0</td>
-</tr>
-<tr>
-<td>Renda comprometida, dívida pública</td>
-<td>alertaram antes de menos de 2 recessões</td>
-<td>–</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-<p>"Recessões" aqui são as que cada série alcança: a de 2001 começou antes da amostra, e várias séries começam depois de 2002.</p>
-<h2 id="o-teste-fora-da-amostra">O teste fora da amostra</h2>
-<ul>
-<li>A amostra foi cortada em blocos de 3 anos. Um corte que cairia dentro do período de aviso de uma recessão foi empurrado para o fim dele.</li>
-<li>Cada bloco foi previsto por uma conta que não o viu: limites, pesos e regressão reestimados só com os outros blocos.</li>
-<li>Medida de erro: escore de Brier (o quadrado da diferença entre a chance prevista e o que aconteceu).</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Conta</th>
+<th>Candidata</th>
 <th>Erro fora da amostra</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Repetir sempre a média</td>
-<td>0,171</td>
+<td>Bolsa (retorno real em 12 meses)</td>
+<td>4,6% menor</td>
 </tr>
 <tr>
-<td>A conta do site (k = 0,8)</td>
-<td>0,159, ou 7% menor</td>
+<td>Crédito acima da tendência</td>
+<td>0,7% menor</td>
 </tr>
 <tr>
-<td>A conta do site sem o dólar</td>
-<td>não ganha da média (k = 0)</td>
+<td>Juro longo subindo</td>
+<td>0,3% menor</td>
 </tr>
 <tr>
-<td>Todos os pesos iguais</td>
-<td>não ganha da média (k = 0)</td>
+<td>Dívida pública</td>
+<td>igual</td>
+</tr>
+<tr>
+<td>Câmbio real acima da média de 10 anos</td>
+<td>0,6% maior</td>
+</tr>
+<tr>
+<td>Desemprego subindo</td>
+<td>0,9% maior</td>
+</tr>
+<tr>
+<td>Hiato do produto</td>
+<td>2,7% maior</td>
+</tr>
+<tr>
+<td>Câmbio (alta em 12 meses)</td>
+<td>2,9% maior</td>
+</tr>
+<tr>
+<td>Curva de juros</td>
+<td>4,8% maior</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>A bolsa ficou de fora pela coleta, não pelo teste.</strong> A atualização automática ainda não tem uma fonte diária do Ibovespa testada. Entra quando tiver.</li>
+<li><strong>Nível alto e parado não avisa.</strong> Dívida, juro e inflação altos não somam à conta. O que avisa é o movimento: juro subindo, inflação acelerando.</li>
+</ul>
+<h2 id="o-teste-fora-da-amostra">O teste fora da amostra</h2>
+<ul>
+<li><strong>No painel:</strong> cada ano, de 2004 a 2026, foi previsto com coeficientes estimados só com os trimestres cujo PIB 4 trimestres à frente já tinha saído no começo daquele ano. São 3.625 trimestres.</li>
+<li><strong>No Brasil:</strong> o mesmo, mês a mês, de maio de 2004 a hoje, com os atrasos de divulgação de cada série. São 270 meses.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Medida</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Erro da conta contra usar só o crescimento médio do país (painel)</td>
+<td>3% menor</td>
+</tr>
+<tr>
+<td>Resultados abaixo do cenário ruim, sem ajuste (painel)</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Resultados abaixo do cenário ruim, com ajuste (Brasil, 259 meses)</td>
+<td>8%</td>
+</tr>
+<tr>
+<td>PIB médio nos 12 meses seguintes, meses em Acima ou Muito acima (Brasil)</td>
+<td>+0,8%</td>
+</tr>
+<tr>
+<td>PIB médio nos 12 meses seguintes, demais meses (Brasil)</td>
+<td>+2,8%</td>
+</tr>
+<tr>
+<td>Recessão à frente, meses em Acima ou Muito acima contra os demais (Brasil)</td>
+<td>1,8 vez mais</td>
+</tr>
+<tr>
+<td>Chance de um mês com recessão à frente ter nível mais alto que um mês sem (Brasil, 220 meses; 0,5 é o acaso)</td>
+<td>0,60</td>
 </tr>
 </tbody>
 </table>
 <p>O que isso quer dizer, sem enfeite:</p>
 <ul>
-<li><strong>O ganho é pequeno e depende do dólar.</strong> Os outros indicadores, somados por esse método, não acrescentam acerto fora da amostra.</li>
-<li><strong>Por isso o nível fica no normal na maior parte do tempo.</strong> Sem o dólar em alerta, a conta vai de Abaixo a Acima; com ele, vai a Muito acima.</li>
-<li><strong>Parte do acerto é de diagnóstico, não de previsão.</strong> Em 2008 e 2020, o dólar disparou junto com o começo da recessão, meses antes de o IBGE confirmá-la. Em 2002, o alerta veio meses antes da recessão de 2003.</li>
-<li><strong>Muito abaixo não aparece.</strong> Os indicadores medem perigo, não calmaria. Sem nenhum alerta, a razão fica em cerca de 0,77, que é Abaixo.</li>
-<li><strong>Quatro recessões é pouco.</strong> Um limite ou um peso pode mudar bastante com a próxima recessão. A calibração é refeita quando o IBGE confirmar um novo episódio.</li>
-<li><strong>Os dados são os de hoje.</strong> A série do PIB e a do IBC-Br usadas no teste são as revisadas, não as divulgadas na época. O teste respeita os atrasos de divulgação, mas não as revisões.</li>
+<li><strong>O ganho é modesto.</strong> A conta separa bem anos de crescimento fraco de anos de crescimento forte, mas não acerta a data em que cada recessão começa: nos 44 países, nesse ponto, não faz melhor que o acaso.</li>
+<li><strong>Choques de fora não aparecem antes.</strong> Em 2008 e em 2020, o nível estava entre Abaixo e Normal antes da recessão.</li>
+<li><strong>A recessão de 2014, feita em casa, apareceu, mas cedo.</strong> O nível ficou em Acima de meados de 2011 em diante.</li>
+<li><strong>Quatro recessões no Brasil é pouco.</strong> Por isso a conta vem do painel; o Brasil só define o que é normal aqui.</li>
+<li><strong>Os dados são os de hoje.</strong> PIB, IBC-Br e o painel usados no teste são os revisados, não os divulgados na época. O teste respeita os atrasos de divulgação, mas não as revisões.</li>
 </ul>
-<p>O resultado não cria valor do zero: ele diz que, desde 2002, só choques grandes de câmbio separaram com clareza os meses antes de recessões. O resto dos fatores aparece no Resumo com o seu peso de hoje, quase sempre pequeno, e com a sua tendência.</p>
 <h2 id="tendencia-e-noticias">Tendência e notícias</h2>
 <p>As notícias não mexem no nível. Se cada notícia somasse um pedaço, como os jornais publicam mais notícia ruim que boa, o nível tenderia a ficar sempre em cima. As notícias servem para a tendência de cada fator nos próximos 6 meses.</p>
 <p><strong>A leitura das manchetes.</strong> As manchetes de oito jornais com linhas editoriais diferentes (Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1) são coletadas de hora em hora. Às 06h30, um modelo de linguagem (Claude, sem ferramentas, com saída em esquema JSON validado por código) lê as do dia anterior e transforma os fatos em eventos: fator, lado, tamanho (1 a 3) e estágio. Notícia que só repete um dado já medido pelos indicadores fica de fora.</p>
@@ -373,7 +430,7 @@ razão = p ÷ p̄</code></p>
 </table>
 <p><strong>A tendência de cada fator.</strong> Fica em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/dossie.json"><code>data/dossie.json</code></a>: piora, estável, melhora ou sem direção clara.</p>
 <ul>
-<li><strong>Fatos de dados:</strong> saem de código, todo dia, comparando o dado de hoje com a série desde 2002 ("o maior desde…").</li>
+<li><strong>Fatos de dados:</strong> saem de código, todo dia, comparando o dado de hoje com a série histórica ("o maior desde…").</li>
 <li><strong>Fatos de notícia:</strong> no máximo 2 por fator, válidos por 180 dias.</li>
 <li><strong>O que outros projetam, em igual destaque:</strong> em atividade, juro e mercado, o Focus, calculado por código; nos demais, a projeção pública mais recente de uma instituição (IFI, por exemplo). Quando a projeção aponta para o lado contrário da nossa tendência, aparece como "Discordam".</li>
 <li><strong>Quem muda o quê:</strong> o modelo de linguagem só propõe. Fato de notícia novo entra sempre. Troca de tendência só entra com dado divulgado ou decisão tomada, noticiados por pelo menos 2 jornais. Nos fatores com Focus, a projeção não aceita troca pelo modelo.</li>
@@ -386,19 +443,20 @@ razão = p ÷ p̄</code></p>
 <li>Para comparar: por acaso, desde 2002, "piora" acertaria 41% das vezes, "estável" 21% e "melhora" 39%, na média dos fatores. Em crédito e contas públicas, "piora" acertaria mais da metade das vezes, porque essas séries subiram na maior parte do período.</li>
 </ul>
 <h2 id="o-post-do-dia">O post do dia</h2>
-<p>Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o nível, os fatores que pesam, para que lado as notícias empurram e as próximas datas. Ele não muda o nível, a pressão nem a tendência. Um verificador em código procura moldes de texto automático, afirmações de chance de recessão e explicações de método, e pede uma reescrita no máximo. Se a escrita falhar, sai a atualização sem texto corrido.</p>
+<p>Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o nível, o cenário ruim do PIB, o que pesa e o que alivia, para que lado as notícias empurram e as próximas datas. Ele não muda o nível, a pressão nem a tendência. Um verificador em código procura moldes de texto automático, afirmações de chance de recessão e explicações de método, e pede uma reescrita no máximo. Se a escrita falhar, sai a atualização sem texto corrido.</p>
 <p>Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em <a href="https://github.com/pedrojahara/vaidarcrise/tree/main/runs"><code>runs/</code></a>. O que foi publicado fica congelado.</p>
 <h2 id="salvaguardas">Salvaguardas</h2>
 <ul>
 <li><strong>Dado defasado:</strong> se a página passar de 36 horas sem atualização, ela avisa.</li>
-<li><strong>Falha de coleta:</strong> vale o último valor de até 10 dias (dado diário) ou 70 dias (dado mensal). Mais velho, o indicador sai da conta do dia, e o composto usa só os que têm dado.</li>
+<li><strong>Falha de coleta:</strong> vale o último valor de até 10 dias (dado diário), 101 dias (dado mensal) ou 200 dias (PIB trimestral). Se faltar uma entrada da conta mesmo assim, a atualização não sai, e o site avisa que está defasado.</li>
 <li><strong>Falha do modelo de linguagem:</strong> a atualização sai só com dados e sem pressão de notícias.</li>
 <li><strong>Texto das notícias:</strong> é tratado como dado, nunca como instrução. Nenhuma notícia muda pesos ou regras.</li>
 </ul>
 <h2 id="o-que-ainda-falta">O que ainda falta</h2>
 <ul>
-<li>Refazer o teste com os dados como eram divulgados na época (com revisões), quando houver séries de vintage para todos os indicadores.</li>
-<li>Estimar os limites com um painel de emergentes, para ter mais que quatro recessões.</li>
+<li>Pôr a bolsa na conta, com uma coleta diária do Ibovespa testada.</li>
+<li>Testar o preço das commodities, que o painel de países não tem.</li>
+<li>Refazer o teste com os dados como eram divulgados na época (com revisões).</li>
 <li>Teste de troca de nomes: reprocessar uma amostra de notícias trocando os atores e publicar se a classificação mudou.</li>
 <li>Conferir o placar contra o Focus, além do dado.</li>
 </ul>
@@ -407,9 +465,11 @@ razão = p ÷ p̄</code></p>
 <p>Achou um? <a href="https://github.com/pedrojahara/vaidarcrise/issues">Abra uma issue</a>.</p>
 <h2 id="fontes">Fontes</h2>
 <ul>
-<li>Kaminsky, Lizondo e Reinhart (1998), <em>Leading indicators of currency crises</em>, IMF Staff Papers</li>
+<li>Adrian, Boyarchenko e Giannone (2019), <em>Vulnerable growth</em>, American Economic Review</li>
+<li>FMI (2017), <em>Financial conditions and growth at risk</em>, Global Financial Stability Report, outubro, capítulo 3</li>
+<li>Koenker e Bassett (1978), <em>Regression quantiles</em>, Econometrica</li>
+<li><a href="https://data-explorer.oecd.org/">OCDE: PIB trimestral, juros e preços ao consumidor</a></li>
 <li>Sahm (2019), <em>Direct stimulus payments to individuals</em>, Brookings, sobre a regra de Sahm</li>
-<li>Brier (1950), <em>Verification of forecasts expressed in terms of probability</em>, Monthly Weather Review</li>
 <li><a href="https://portalibre.fgv.br/codace">Datação dos ciclos econômicos brasileiros, CODACE/FGV IBRE</a></li>
 <li><a href="https://www3.bcb.gov.br/sgspub/">Banco Central: séries temporais (SGS)</a> e <a href="https://www.bcb.gov.br/publicacoes/focus">Focus</a></li>
 <li><a href="https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9300-contas-nacionais-trimestrais.html">IBGE: Contas Nacionais Trimestrais</a></li>
@@ -420,7 +480,7 @@ razão = p ÷ p̄</code></p>
 </main>
 
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mostra se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal da história brasileira desde 2002. O nível sai só de dados. As notícias mostram a tendência e não mexem no nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
+  <p>O Vai dar crise? mostra se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal. O nível sai do cenário ruim do PIB, estimado com dados de 44 países e comparado ao Brasil desde 2004. As notícias mostram a tendência e não mexem no nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
   <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Abra uma issue</a></p>
 </div></footer>
 </body>

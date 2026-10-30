@@ -97,6 +97,22 @@ def fatos_de_dados(res: dict, snap: dict, mensal: dict | None = None, hist: dict
     def hist_ind(k: str) -> dict[str, float]:
         return (mensal.get("indicadores") or {}).get(k, {})
 
+    # As entradas da conta do nível vêm primeiro no fator delas.
+    ent = {x["id"]: x for x in (res.get("gar") or {}).get("entradas", [])}
+    x = ent.get("crescimento")
+    if x:
+        m = x["ref"]
+        ini = _mais_meses(m, -2)
+        out["atividade"].append({"texto": f"Crescimento de {sinal(x['valor'])}% em 12 meses (IBC-Br de {MESES[int(ini[5:7]) - 1][:3]}. a "
+                                          f"{MESES[int(m[5:7]) - 1][:3]}. contra um ano antes); o normal desde 2004 vai de "
+                                          f"{sinal(x['faixa_normal'][0])}% a {sinal(x['faixa_normal'][1])}%.", "fonte": "BC"})
+    x = ent.get("inflacao")
+    if x:
+        m = x["ref"]
+        out["juro"].append({"texto": f"IPCA de {num(x['nivel'], 2)}% em 12 meses até {MESES[int(m[5:7]) - 1]}, "
+                                     f"{num(abs(x['valor']), 2)} ponto {'abaixo' if x['valor'] < 0 else 'acima'} de um ano antes "
+                                     f"({num(x['antes'], 2)}%).", "fonte": "IBGE"})
+
     x = ind.get("ibcbr")
     if x and x.get("valor") is not None:
         m = x["ref"]
@@ -202,10 +218,8 @@ def fatos_de_dados(res: dict, snap: dict, mensal: dict | None = None, hist: dict
         if mn_m:
             txt += f"; a mínima da série, que começa em 2012, foi {num(h[mn_m])}% ({mes_ano(mn_m)})"
         out["emprego"].append({"texto": txt + ".", "fonte": "IBGE"})
-        lim = x.get("limite")
-        txt = f"Regra de Sahm em {sinal(x['valor'])} ponto"
-        txt += f", abaixo do alerta de {sinal(lim)}" if lim is not None and x["peso"] else ": o desemprego médio de 3 meses contra a mínima de 12 meses"
-        out["emprego"].append({"texto": txt + ".", "fonte": "IBGE"})
+        out["emprego"].append({"texto": f"Regra de Sahm em {sinal(x['valor'])} ponto: o desemprego médio de 3 meses "
+                                        "contra a mínima de 12 meses.", "fonte": "IBGE"})
 
     x = ind.get("commodities")
     if x and x.get("valor") is not None:

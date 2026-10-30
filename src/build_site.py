@@ -35,9 +35,9 @@ SENTIDOS = {"piora": ("↑", "mais", "para piorar"), "melhora": ("↓", "menos",
 TENDENCIAS = {"piora": ("mais", "↑", "Tende a piorar"), "estavel": ("igual", "→", "Estável"),
               "melhora": ("menos", "↓", "Tende a melhorar"), "sem_direcao": ("igual", "→", "Sem direção clara")}
 # Nomes curtos para listas corridas ("Atividade, crédito e juro real"), sem o "e" de dentro dos nomes.
-CURTOS = {"atividade": "Atividade", "juro": "Juro real", "credito": "Crédito", "mercado": "Mercado financeiro",
+CURTOS = {"atividade": "Atividade", "juro": "Juro", "credito": "Crédito", "mercado": "Mercado financeiro",
           "contas": "Contas públicas", "emprego": "Emprego", "externo": "Cenário externo"}
-CHIPS = {"alerta": "alerta", "pior": "atencao", "normal": "normal", "melhor": "normal", "semdado": "semdado"}
+CHIPS = {"pior": "atencao", "normal": "normal", "melhor": "normal", "semdado": "semdado"}
 OUTROS_ROT = {"concorda": "Concordam", "discorda": "Discordam", "neutro": "Outros"}
 
 
@@ -88,14 +88,22 @@ def mes_antes(ref: str, n: int) -> str:
 
 # --------------------------------------------------------------------- nível
 def nivel_ctx(rodada: dict, cfg: dict) -> dict:
-    n = rodada["resultado"]["nivel"]
+    res = rodada["resultado"]
+    n = res["nivel"]
     nome = n["nome"]
+    g = res.get("gar") or {}
+    focus = next((x for x in res["indicadores"] if x["id"] == "focus_pib" and x.get("valor") is not None), None)
+    cen = None
+    if g:
+        cen = {"ruim": f"{sinal(g['cenario_ruim'])}%", "normal": f"{sinal(g['cenario_normal'])}%",
+               "focus": f"{sinal(focus['valor'])}%" if focus else None}
     return {"nome": nome, "indice": n["indice"], "nomes": cfg["niveis"]["nomes"],
             "placa": nome.replace(" ", "<br>") if nome.startswith("Muito") else nome,
-            "rot": "risco normal" if nome == "Normal" else "do normal",
+            "rot": "risco normal" if nome == "Normal" else f"risco {nome.lower()} do normal",
             "frase": "normal" if nome == "Normal" else f"{nome.lower()} do normal",
             "anterior": cfg["niveis"]["nomes"][n["anterior"]] if n.get("anterior") is not None else None,
-            "pendente": n["nome_bruto"] if n.get("bruto") is not None and n["bruto"] != n["indice"] else None}
+            "pendente": n["nome_bruto"] if n.get("bruto") is not None and n["bruto"] != n["indice"] else None,
+            "cenarios": cen}
 
 
 # --------------------------------------------------------------------- notícias
@@ -137,46 +145,46 @@ def pressao_ctx(rodada: dict, eventos: dict, cfg: dict, por_fator: int = 3) -> d
 
 # ------------------------------------------------------------------- fatores
 def _regua(x: dict, cap: str) -> dict | None:
-    """Régua de um indicador: a faixa normal, a zona de alerta e a agulha de hoje."""
+    """Régua de um indicador ou entrada da conta: a faixa normal e a agulha de hoje."""
     if x.get("valor") is None or not x.get("escala"):
         return None
     v, (lo, hi), (n0, n1) = x["valor"], x["escala"], x["faixa_normal"]
-    lim = x["limite"] if x.get("peso") else None
-    mn = min(lo, v, n0, lim if lim is not None else lo)
-    mx = max(hi, v, n1, lim if lim is not None else hi)
+    mn, mx = min(lo, v, n0), max(hi, v, n1)
     folga = (mx - mn) * 0.06 or 1
     mn, mx = mn - folga, mx + folga
 
     def pc(a: float) -> float:
         return round(100 * (a - mn) / (mx - mn), 1)
 
-    alerta = None
-    if lim is not None:
-        alerta = (pc(lim), 100 - pc(lim)) if x["direcao"] > 0 else (0.0, pc(lim))
-    d = 2 if abs(v) < 1 and x["unidade"] in ("p.p.", "p.p. do PIB") else 1
-    return {"cap": cap, "normal": (pc(n0), round(pc(n1) - pc(n0), 1)), "alerta": alerta, "agulha": pc(v),
-            "rot": sinal(v, d) if x["unidade"] in ("p.p.", "p.p. do PIB", "%") and x["id"] != "focus_pib" else num(v, d),
-            "eixo": (num(mn, 1), num(mx, 1)), "aria": f"Hoje em {num(v, d)}, comparado à faixa normal e à zona de alerta"}
+    d = 2 if abs(v) < 1 and x["unidade"] in ("p.p.", "p.p. do PIB", "pontos") else 1
+    return {"cap": cap, "normal": (pc(n0), round(pc(n1) - pc(n0), 1)), "agulha": pc(v),
+            "rot": sinal(v, d) if x["unidade"] in ("p.p.", "p.p. do PIB", "%", "pontos") and x["id"] not in ("focus_pib", "tendencia") else num(v, d),
+            "eixo": (num(mn, 1), num(mx, 1)), "aria": f"Hoje em {num(v, d)}, comparado à faixa normal"}
 
 
-def _exibicao(fid: str, ind: dict) -> dict:
-    """O valor grande do cartão, a legenda e as réguas de cada fator."""
+def _exibicao(fid: str, ind: dict, ent: dict) -> dict:
+    """O valor grande do cartão, a legenda e as réguas de cada fator. Nos fatores da conta, as
+    réguas das entradas vêm primeiro."""
     g = ind.get
     if fid == "atividade":
-        x = g("ibcbr") or {}
-        ref = x.get("ref")
-        return {"valor": f"{sinal(x['valor'])}%" if x.get("valor") is not None else "Sem dado",
-                "legenda": f"IBC-Br, {mes_curto(mes_antes(ref, 2))} a {mes_curto(ref)} contra os 3 meses anteriores" if ref else "",
-                "hoje": f"IBC-Br {sinal(x['valor'])}% no trimestre" if x.get("valor") is not None else "Sem dado",
-                "reguas": [r for r in (_regua(x, "IBC-Br: 3 meses contra os 3 anteriores, %"),
+        c = ent.get("crescimento") or {}
+        ref = c.get("ref")
+        return {"valor": f"{sinal(c['valor'])}%" if c else "Sem dado",
+                "legenda": f"Crescimento em 12 meses: IBC-Br de {mes_curto(mes_antes(ref, 2))} a {mes_curto(ref)} contra um ano antes" if ref else "",
+                "hoje": f"Crescimento de {sinal(c['valor'])}% em 12 meses" if c else "Sem dado",
+                "reguas": [r for r in (_regua(c, "Na conta: crescimento em 12 meses, %"),
+                                       _regua(ent.get("tendencia") or {}, "Na conta: crescimento médio em 10 anos, %"),
+                                       _regua(g("ibcbr") or {}, "IBC-Br: 3 meses contra os 3 anteriores, %"),
                                        _regua(g("focus_pib") or {}, "PIB esperado para os próximos 12 meses (Focus), %")) if r]}
     if fid == "juro":
-        x = g("juro_real") or {}
-        ok = x.get("valor") is not None
-        return {"valor": f"{num(x['valor'])}% ao ano" if ok else "Sem dado",
-                "legenda": f"Selic de {num(x['selic'], 2)}% menos a inflação esperada em 12 meses ({num(x['inflacao_esperada'])}%)" if ok else "",
-                "hoje": f"{num(x['valor'])}% ao ano" if ok else "Sem dado",
-                "reguas": [r for r in (_regua(x, "Juro real ex-ante, % ao ano"),) if r]}
+        j, i, x = ent.get("juro") or {}, ent.get("inflacao") or {}, g("juro_real") or {}
+        return {"valor": f"Selic {num(j['nivel'], 2)}%" if j else "Sem dado",
+                "legenda": (f"{num(abs(j['valor']), 2)} ponto {'abaixo' if j['valor'] < 0 else 'acima'} de um ano antes; "
+                            f"IPCA em 12 meses de {num(i['nivel'], 2)}%" if j and i else ""),
+                "hoje": f"Selic {sinal(j['valor'], 2)} ponto em 12 meses" if j else "Sem dado",
+                "reguas": [r for r in (_regua(j, "Na conta: Selic, variação em 12 meses, pontos"),
+                                       _regua(i, "Na conta: inflação de 12 meses, variação em 12 meses, pontos"),
+                                       _regua(x, "Juro real ex-ante, % ao ano")) if r]}
     if fid == "credito":
         x = g("comprometimento") or {}
         ok = x.get("valor") is not None
@@ -216,9 +224,19 @@ def _exibicao(fid: str, ind: dict) -> dict:
             "reguas": [r for r in (_regua(x, "Variação em 6 meses, %"),) if r]}
 
 
+def efeito_txt(e: float | None) -> tuple[str, str]:
+    """O efeito de um fator no cenário ruim, em palavras, e a cor: ('Piora 0,2 ponto', 'mais')."""
+    if e is None:
+        return "Fora da conta", ""
+    if abs(e) < 0.05:
+        return "Neutro", ""
+    return (f"Piora {num(abs(e), 2)} ponto", "mais") if e < 0 else (f"Alivia {num(e, 2)} ponto", "menos")
+
+
 def fatores_ctx(rodada: dict, cfg: dict) -> list[dict]:
     res = rodada["resultado"]
     ind = {x["id"]: x for x in res["indicadores"]}
+    ent = {x["id"]: x for x in (res.get("gar") or {}).get("entradas", [])}
     leit = (rodada.get("leituras") or {}).get("fatores", {})
     out = []
     for f in res["fatores"]:
@@ -226,19 +244,16 @@ def fatores_ctx(rodada: dict, cfg: dict) -> list[dict]:
         t = d.get("tendencia", "sem_direcao")
         cls, seta, palavra = TENDENCIAS[t]
         outros = d.get("outros") or {"tipo": "neutro", "texto": "", "fonte": None}
-        mine = [ind[i] for i in f["indicadores"] if i in ind]
-        na_conta = any(x.get("peso") for x in mine)
-        if f.get("avisou"):
-            a, n = f["avisou"]
-            historico = f"{f['forca']}: alertou antes de {a} de {n} recessões medidas"
+        rot, cor = efeito_txt(f.get("efeito"))
+        if f["na_conta"]:
+            partes = [f"{ent[i]['nome']}: {efeito_txt(ent[i]['efeito'])[0].lower()}" for i in f["entradas"] if i in ent]
+            conta = "; ".join([partes[0]] + [x[0].lower() + x[1:] for x in partes[1:]]) + "." if partes else ""
         else:
-            motivos = sorted({x["motivo"] for x in mine if x.get("motivo")})
-            historico = "Não antecipou as recessões desde 2002" + (f": {motivos[0]}" if len(motivos) == 1 else "")
+            conta = cfg["fora_da_conta"].get(f["id"], "")
         out.append({
-            **f, **_exibicao(f["id"], ind), "chip": CHIPS[f["situacao"]], "tend": {"cls": cls, "seta": seta, "palavra": palavra, "id": t},
-            "peso_rotulo": f["peso_rotulo"] if na_conta else "Não entra no nível", "na_conta": na_conta,
-            "barra": round(100 * min(f["parte"] / 0.5, 1), 1), "como": d.get("como", ""),
-            "historico": historico,
+            **f, **_exibicao(f["id"], ind, ent), "chip": CHIPS[f["situacao"]], "tend": {"cls": cls, "seta": seta, "palavra": palavra, "id": t},
+            "efeito_rot": rot, "efeito_cls": cor, "conta": conta,
+            "barra": round(100 * min(abs(f.get("efeito") or 0) / 0.5, 1), 1) if cor else 0, "como": d.get("como", ""),
             "porque": [{"texto": x["texto"], "fonte": x.get("fonte"), "url": None} for x in d.get("fatos", [])]
                       + [{"texto": n["texto"], "fonte": n["fonte"]["veiculo"], "url": n["fonte"]["url"]} for n in d.get("noticias", [])],
             "outros": {"rot": OUTROS_ROT.get(outros.get("tipo"), "Outros"), "cls": outros.get("tipo", "neutro"),
@@ -256,31 +271,52 @@ def _juntar(nomes: list[str]) -> str:
     return ns[0] if len(ns) == 1 else ", ".join(ns[:-1]) + " e " + ns[-1]
 
 
-def gatilho_txt(g: dict, x: dict) -> str:
-    """O que mudaria o nível, em palavras: 'dólar subir 18,8% em 3 meses'."""
-    lim = g["limite"]
-    return {
-        "ibcbr": f"IBC-Br cair {num(abs(lim))}% no trimestre",
-        "focus_pib": f"Focus esperar PIB abaixo de {num(lim)}% em 12 meses",
-        "tesouro": f"Tesouro IPCA+ subir {num(lim, 2)} ponto acima da mediana de 3 anos",
-        "dolar": f"dólar subir {num(lim)}% em 3 meses",
-        "commodities": f"commodities caírem {num(abs(lim))}% em 6 meses",
-        "juro_real": f"juro real passar de {num(lim)}%",
-        "comprometimento": f"renda comprometida subir {num(lim)} ponto acima da média de 3 anos",
-        "divida": f"dívida subir {num(lim)} pontos do PIB em 12 meses",
-        "sahm": f"regra de Sahm passar de {num(lim)} ponto",
-    }.get(g["id"], x.get("nome", g["id"]))
+def gatilho_txt(g: dict, ent: dict) -> str:
+    """O que mudaria o nível, em palavras: 'Selic subir para 17,8%'."""
+    x, v = ent[g["id"]], g["valor"]
+    if g["id"] == "crescimento":
+        return f"crescimento em 12 meses {'cair' if v < x['valor'] else 'subir'} para {sinal(v)}%"
+    alvo = x["antes"] + v
+    nome = "Selic" if g["id"] == "juro" else "IPCA em 12 meses"
+    if alvo < 0:
+        return f"{nome} cair abaixo de zero"
+    return f"{nome} {'subir' if alvo > x['nivel'] else 'cair'} para {num(alvo, 1)}%"
+
+
+def gatilhos_ctx(res: dict) -> list[dict]:
+    """Uma frase por nível vizinho: 'Acima do normal se ...'."""
+    ent = {x["id"]: x for x in (res.get("gar") or {}).get("entradas", [])}
+    out = []
+    for nivel in sorted({g["nivel"] for g in res.get("gatilhos", [])}, reverse=True):
+        gs = [g for g in res["gatilhos"] if g["nivel"] == nivel]
+        txts = [gatilho_txt(g, ent) for g in gs]
+        quais = txts[0] if len(txts) == 1 else ", ".join(txts[:-1]) + " ou " + txts[-1]
+        nome = gs[0]["nome_nivel"]
+        alvo = "normal" if nome == "Normal" else f"{nome.lower()} do normal"
+        out.append({"nivel": nivel, "sobe": nivel > res["nivel"].get("bruto", res["nivel"]["indice"]),
+                    "rot": nome, "texto": f"Risco {alvo} se {quais}, com o resto parado."})
+    return out
 
 
 def pontos_ctx(fatores: list[dict], res: dict | None = None) -> list[dict]:
     """Os tópicos do topo do resumo."""
-    pesam = [CURTOS.get(f["id"], f["nome"]) for f in fatores if f["peso_rotulo"] in ("Forte", "Moderado")] or \
-            [CURTOS.get(f["id"], f["nome"]) for f in fatores if f["parte"] > 0]
+    out = []
+    if res is not None and res.get("gar"):
+        g = res["gar"]
+        out.append({"rot": "Cenário ruim", "cls": "",
+                    "texto": f"PIB {sinal(g['cenario_ruim'])}% em 12 meses. Em tempos normais, {sinal(g['cenario_normal'])}%."})
+    pesam = [CURTOS.get(f["id"], f["nome"]) for f in fatores if f["efeito_cls"] == "mais"]
+    aliviam = [CURTOS.get(f["id"], f["nome"]) for f in fatores if f["efeito_cls"] == "menos"]
+    if pesam:
+        out.append({"rot": "Pioram", "texto": _juntar(pesam) + ".", "cls": "mais"})
+    if aliviam:
+        out.append({"rot": "Aliviam", "texto": _juntar(aliviam) + ".", "cls": "menos"})
+    if not pesam and not aliviam:
+        out.append({"rot": "Na conta", "texto": "Nada se afasta do normal.", "cls": ""})
     piora = [CURTOS.get(f["id"], f["nome"]) for f in fatores if f["tend"]["id"] == "piora"]
     melhora = [CURTOS.get(f["id"], f["nome"]) for f in fatores if f["tend"]["id"] == "melhora"]
     estaveis = [CURTOS.get(f["id"], f["nome"]) for f in fatores if f["tend"]["id"] == "estavel"]
     disc = [f for f in fatores if f["outros"]["cls"] == "discorda"]
-    out = [{"rot": "Pesam mais", "texto": (_juntar(pesam) + ".") if pesam else "Nenhum fator está na zona de alerta.", "cls": ""}]
     if piora:
         out.append({"rot": "Tendem a piorar", "texto": _juntar(piora) + ".", "cls": "mais"})
     if melhora:
@@ -292,18 +328,9 @@ def pontos_ctx(fatores: list[dict], res: dict | None = None) -> list[dict]:
         out.append({"rot": "Discordamos" + (f" do {quem[0]}" if len(quem) == 1 else ""),
                     "texto": _juntar([CURTOS.get(f["id"], f["nome"]) for f in disc]) + ".", "cls": ""})
     if res is not None:
-        ind = {x["id"]: x for x in res["indicadores"]}
-        g = res.get("gatilhos") or []
-        sobe = [x for x in g if x["nivel"] > res["nivel"].get("bruto", res["nivel"]["indice"])]
-        if sobe:
-            txts = [gatilho_txt(x, ind.get(x["id"], {})) for x in sobe]
-            quais = txts[0] if len(txts) == 1 else ", ".join(txts[:-1]) + " ou " + txts[-1]
-            nomes = {x["nome_nivel"] for x in sobe}
-            alvo = "um nível acima" if len(nomes) > 1 else "normal" if nomes == {"Normal"} else f"{nomes.pop().lower()} do normal"
-            frase = f"{quais} levaria o risco a {alvo}."
-            out.append({"rot": "Mudaria o nível", "cls": "", "texto": frase[0].upper() + frase[1:]})
-        else:
-            out.append({"rot": "Mudaria o nível", "cls": "", "texto": "Nenhum indicador sozinho muda o nível hoje."})
+        sobe = [x for x in gatilhos_ctx(res) if x["sobe"]]
+        out.append({"rot": "Mudaria o nível", "cls": "",
+                    "texto": sobe[0]["texto"] if sobe else "Já está no nível mais alto."})
     return out
 
 
@@ -318,21 +345,26 @@ def _fmt(v: float, x: dict) -> str:
 
 
 def indicadores_ctx(res: dict, cfg: dict) -> list[dict]:
-    """A tabela da página da conta: cada indicador com o valor de hoje, a faixa normal, o limite e o peso."""
-    total = sum(x["peso"] for x in res["indicadores"]) or 1
+    """A tabela dos indicadores do Resumo: o valor de hoje contra a faixa normal desde 2002."""
     out = []
-    for x in sorted(res["indicadores"], key=lambda x: (-x["peso"], x["nome"])):
-        if x.get("peso"):
-            hist = f"Alertou antes de {x['episodios_avisados']} de {x['episodios_na_amostra']} recessões"
-        else:
-            hist = (x.get("motivo") or "sem dado suficiente").capitalize()
+    for x in sorted(res["indicadores"], key=lambda x: (list(cfg["fatores"]).index(x["fator"]), x["nome"])):
         out.append({"id": x["id"], "nome": x["nome"], "fator": cfg["fatores"][x["fator"]], "definicao": x["definicao"],
                     "hoje": _fmt(x["valor"], x) if x.get("valor") is not None else "Sem dado",
                     "ref": x.get("ref"), "faixa": (f"{_fmt(x['faixa_normal'][0], x)} a {_fmt(x['faixa_normal'][1], x)}"
                                                    if x.get("faixa_normal") else "–"),
-                    "limite": _fmt(x["limite"], x) if x.get("peso") and x.get("limite") is not None else "–",
-                    "situacao": model.SITUACOES[x["situacao"]], "chip": CHIPS[x["situacao"]],
-                    "peso": f"{round(100 * x['peso'] / total)}%" if x.get("peso") else "0", "historico": hist})
+                    "situacao": model.SITUACOES[x["situacao"]], "chip": CHIPS[x["situacao"]]})
+    return out
+
+
+def entradas_ctx(res: dict, cfg: dict) -> list[dict]:
+    """A tabela da conta: cada entrada, o valor de hoje, o normal no Brasil e o efeito no cenário ruim."""
+    out = []
+    for x in (res.get("gar") or {}).get("entradas", []):
+        def f(v: float) -> str:
+            return f"{num(v)}%" if x["id"] == "tendencia" else f"{sinal(v)}%" if x["unidade"] == "%" else f"{sinal(v, 2)} p.p."
+        out.append({"nome": x["nome"], "definicao": cfg["gar"]["entradas"][x["id"]], "hoje": f(x["valor"]),
+                    "faixa": f"{f(x['faixa_normal'][0])} a {f(x['faixa_normal'][1])}",
+                    "efeito": efeito_txt(x["efeito"])[0], "cls": efeito_txt(x["efeito"])[1]})
     return out
 
 
@@ -352,7 +384,7 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
     niv = nivel_ctx(rodada, cfg)
     if p.get("ok"):
         titulo, paragrafos = p["titulo"], p["paragrafos"]
-        autoria = f"Escrito por um modelo de linguagem (Claude) às {hora(rodada['gerado_em'])}, depois de ler {lidas}."
+        autoria = f"Escrito por um modelo de linguagem (Claude) às {hora(p.get('escrito_em') or rodada['gerado_em'])}, depois de ler {lidas}."
         rodape = "O texto não passa por revisão humana antes de publicar. Erros vão para"
     else:
         if niv["anterior"] and niv["anterior"] != niv["nome"]:
@@ -408,7 +440,7 @@ def placar_ctx(placar: list[dict], cfg: dict, ate: str) -> dict:
 
 # ---------------------------------------------------------- histórico do nível
 def svg_niveis(historico: list[dict], recessoes: list[dict], nomes: list[str]) -> str:
-    """O nível mês a mês, como a conta teria dito sem ver o bloco de anos de cada mês, e as recessões."""
+    """O nível mês a mês, como a conta teria dito com coeficientes que não viram aquele ano, e as recessões."""
     if not historico:
         return ""
     w, h, x0, x1, y0, y1 = 760, 210, 96, 750, 12, 172
@@ -423,7 +455,7 @@ def svg_niveis(historico: list[dict], recessoes: list[dict], nomes: list[str]) -
     def py(i: int) -> float:
         return y1 - (y1 - y0) * i / 4
 
-    out = [f'<svg viewBox="0 0 {w} {h}" class="hist" role="img" aria-label="Nível de risco mês a mês desde 2002, com as recessões">']
+    out = [f'<svg viewBox="0 0 {w} {h}" class="hist" role="img" aria-label="Nível de risco mês a mês desde 2004, com as recessões">']
     for r in recessoes:
         q, a = r["inicio"].split("T")
         ini = f"{a}-{(int(q) - 1) * 3 + 1:02d}"
@@ -454,17 +486,20 @@ def svg_niveis(historico: list[dict], recessoes: list[dict], nomes: list[str]) -
 def dados_publicos(rodada: dict, ctx: dict) -> dict:
     res = rodada["resultado"]
     leit = (rodada.get("leituras") or {}).get("fatores", {})
+    g = res.get("gar") or {}
     return {
         "nivel": res["nivel"]["nome"], "escala": ctx["cfg"]["niveis"]["nomes"],
         "pergunta": ctx["cfg"]["pergunta"], "atualizado_em": rodada["gerado_em"],
-        "fatores": [{"id": f["id"], "nome": f["nome"],
-                     "peso_hoje": f["peso_rotulo"] if any(x["peso"] for x in res["indicadores"] if x["fator"] == f["id"])
-                     else "Não entra no nível", "situacao": f["situacao_nome"],
-                     "tendencia": leit.get(f["id"], {}).get("tendencia")} for f in res["fatores"]],
+        "pib_12_meses": {"cenario_ruim_pct": round(g["cenario_ruim"], 2), "cenario_ruim_em_tempos_normais_pct": round(g["cenario_normal"], 2),
+                         "o_que_e": "Crescimento do PIB nos 4 trimestres seguintes ao último divulgado que tem 1 chance em 10 de ser pior."} if g else None,
+        "entradas": [{"id": x["id"], "nome": x["nome"], "valor": round(x["valor"], 4), "ref": x["ref"],
+                      "efeito_no_cenario_ruim_pontos": round(x["efeito"], 4)} for x in g.get("entradas", [])],
+        "fatores": [{"id": f["id"], "nome": f["nome"], "na_conta": f["na_conta"],
+                     "efeito_no_cenario_ruim_pontos": round(f["efeito"], 4) if f.get("efeito") is not None else None,
+                     "situacao": f["situacao_nome"], "tendencia": leit.get(f["id"], {}).get("tendencia")} for f in res["fatores"]],
         "indicadores": [{"id": x["id"], "nome": x["nome"], "fator": x["fator"],
                          "valor": round(x["valor"], 4) if x.get("valor") is not None else None, "unidade": x["unidade"],
                          "ref": x.get("ref"), "situacao": model.SITUACOES[x["situacao"]],
-                         "limite_de_alerta": round(x["limite"], 4) if x.get("peso") and x.get("limite") is not None else None,
                          "faixa_normal": [round(v, 4) for v in x["faixa_normal"]] if x.get("faixa_normal") else None}
                         for x in res["indicadores"]],
         "pressao_noticias": {"sentido": rodada["pressao"]["sentido"],
@@ -525,7 +560,8 @@ def main() -> None:
         return {"cfg": cfg, "cal": cal, "repo": REPO, "site": SITE, "dia": dia, "permalink": permalink,
                 "nivel": nivel_ctx(r, cfg), "post": posts[dia], "fatores": fat, "pontos": pontos_ctx(fat, r["resultado"]),
                 "data_titulo": f"{int(dia[8:10])} de {MESES[int(dia[5:7]) - 1]}",
-                "tabela": indicadores_ctx(r["resultado"], cfg),
+                "tabela": indicadores_ctx(r["resultado"], cfg), "entradas": entradas_ctx(r["resultado"], cfg),
+                "gatilhos": gatilhos_ctx(r["resultado"]),
                 "indicadores": r["resultado"]["indicadores"], "placar": placar_ctx(placar, cfg, dia),
                 "datas": calendario.janela(agenda, dt.date.fromisoformat(dia)), "jornais": JORNAIS,
                 "hora": hora(r["gerado_em"]), "atualizado_iso": r["gerado_em"],

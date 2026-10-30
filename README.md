@@ -1,6 +1,6 @@
 # Vai dar crise?
 
-Se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal desde 2002, em cinco níveis, com um resumo por fator e um post por dia sobre as notícias da véspera. No ar em **[vaidarcrise.com.br](https://vaidarcrise.com.br)**.
+Se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal, em cinco níveis, com um resumo por fator e um post por dia sobre as notícias da véspera. No ar em **[vaidarcrise.com.br](https://vaidarcrise.com.br)**.
 
 A metodologia está em [METODOLOGIA.md](METODOLOGIA.md), as regras em [config/modelo.json](config/modelo.json) e o que foi estimado com os dados em [config/calibracao.json](config/calibracao.json). Cada atualização grava um registro imutável em [`runs/`](runs/) com insumos, hash das regras e do prompt e a resposta do modelo de linguagem.
 
@@ -13,7 +13,8 @@ launchd, de hora em hora (minuto 5) → run.sh --coletar
 launchd, todo dia às 06h30 → run.sh   (uma publicação por dia; se o Mac dormir, roda ao acordar)
   ├─ src/fetch_data.py      BCB SGS, Focus, IBGE, Tesouro Direto e FMI (FRED) → data/raw/<dia>/indicadores.json
   ├─ src/calendario.py      calendário de divulgações do IBGE + config/datas.json → data/calendario.json
-  ├─ src/model.py           nível: nove indicadores (src/indicadores.py) contra os limites de config/calibracao.json
+  ├─ src/model.py           nível: cenário ruim do PIB (src/gar.py) contra os cortes de config/calibracao.json;
+  │                         os nove indicadores do Resumo (src/indicadores.py) contra a faixa normal
   ├─ src/classify_news.py   claude -p, sem ferramentas, saída em esquema JSON: manchetes do dia anterior → eventos e revisões
   ├─ src/dossie.py          tendência de cada fator, fatos de dados, Focus e placar → data/dossie.json, data/placar.json
   ├─ src/escreve_post.py    claude -p escreve o post a partir da conta pronta; src/revisa_texto.py confere o texto
@@ -27,8 +28,9 @@ O LLM classifica manchetes, propõe revisões das tendências e redige o post. O
 Calibração (rodar só quando mudar uma regra ou o IBGE confirmar uma recessão nova):
 
 ```
-src/historico.py   baixa as séries desde 2002 → data/historico/series.json (o PIB fica em data/historico/pib.json)
-src/calibra.py     limites, pesos, regressão e teste fora da amostra → config/calibracao.json, data/historico/mensal.json
+src/historico.py   baixa as séries do Brasil desde 2002 → data/historico/series.json (o PIB fica em data/historico/pib.json)
+src/calibra.py     regressão de quantil no painel de 44 países (data/historico/painel_ocde.csv), cortes dos níveis e
+                   teste fora da amostra → config/calibracao.json, data/historico/mensal.json (precisa de pandas e statsmodels)
 ```
 
 ## Rodar
@@ -50,7 +52,7 @@ Textos escritos à mão ficam em `editor/AAAA-MM-DD-slug.md` (cabeçalho, `---`,
 
 ## Dados públicos
 
-- [`/data.json`](https://vaidarcrise.com.br/data.json): nível, fatores, indicadores com faixa normal e limite de alerta, pressão das notícias.
+- [`/data.json`](https://vaidarcrise.com.br/data.json): nível, cenário ruim do PIB, entradas da conta, fatores, indicadores com faixa normal, pressão das notícias.
 - [`/historico.json`](https://vaidarcrise.com.br/historico.json): o nível de todas as atualizações publicadas.
 
 Não é recomendação de investimento.

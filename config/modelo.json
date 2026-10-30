@@ -1,5 +1,5 @@
 {
- "regras_fixadas_em": "2026-10-29",
+ "regras_fixadas_em": "2026-10-30",
  "pergunta": "O risco de o Brasil entrar em recessão técnica nos próximos 12 meses está acima ou abaixo do normal?",
  "recessao": {
   "definicao": "Dois trimestres seguidos de queda do PIB dessazonalizado do IBGE (tabela 5932, taxa contra o trimestre anterior, uma casa decimal; 0,0% não é queda).",
@@ -9,15 +9,59 @@
   "fora_da_amostra": "Meses em que o primeiro trimestre não divulgado fica dentro de uma recessão já começada (depois do primeiro trimestre dela)."
  },
  "amostra_inicio": "2002-01",
- "minimo_indicadores_no_mes": 3,
+ "gar": {
+  "metodo": "Crescimento em risco (growth-at-risk), como no FMI (Adrian, Boyarchenko e Giannone, 2019; FMI, Global Financial Stability Report, out/2017): regressão de quantil do crescimento do PIB nos 4 trimestres seguintes.",
+  "quantil": 0.1,
+  "painel": "44 países (OCDE e grandes emergentes, Brasil incluído), trimestral, desde 1990: PIB real, juro de curto prazo e inflação ao consumidor da OCDE.",
+  "alvo": "Crescimento do PIB real nos 4 trimestres seguintes, em 100 × log.",
+  "entradas": {
+   "tendencia": "Média do crescimento em 12 meses do PIB nos 40 trimestres anteriores (mínimo 20). Brasil: PIB do IBGE (tabela 5932), só trimestres já divulgados.",
+   "crescimento": "Crescimento em 12 meses. Brasil: IBC-Br dessazonalizado (BCB 24364), média dos 3 últimos meses contra os mesmos 3 meses um ano antes.",
+   "juro": "Variação em 12 meses do juro de curto prazo, em pontos. Brasil: Selic meta (BCB 432).",
+   "inflacao": "Variação em 12 meses da inflação ao consumidor em 12 meses, em pontos. Brasil: IPCA em 12 meses (BCB 13522)."
+  },
+  "defasagem_meses": {
+   "crescimento": 2,
+   "inflacao": 1
+  },
+  "selecao": "Entradas escolhidas fora da amostra no painel: cada candidata foi somada às quatro e ficaria só se o erro fora da amostra caísse 1% ou mais (o resultado de cada uma está em calibracao.json, gar.validacao.candidatas_ganho_fora_da_amostra). A bolsa passou, mas fica de fora até haver coleta diária confiável do Ibovespa.",
+  "validacao_desde": 2004,
+  "validacao": "Cada ano, de 2004 em diante, é previsto com coeficientes estimados só com os trimestres cujo PIB 4 trimestres à frente já tinha saído no começo daquele ano.",
+  "ajuste": "O cenário ruim mostrado soma à regressão o quantil 10% dos erros fora da amostra no painel, para que 1 em cada 10 resultados fique abaixo dele também fora da amostra.",
+  "percentis_dos_cortes": [
+   10,
+   30,
+   70,
+   90
+  ],
+  "niveis": "Cenário ruim de hoje comparado ao do Brasil em todos os meses desde 2004: entre os 10% piores, Muito acima; entre 10% e 30%, Acima; entre 30% e 70%, Normal; entre 70% e 90%, Abaixo; entre os 10% melhores, Muito abaixo.",
+  "candidatas": {
+   "bolsa": "acoes_4t",
+   "divida_publica": "divida",
+   "credito_acima_da_tendencia": "credito_gap",
+   "cambio_real_acima_da_media": "reer_gap10",
+   "cambio_alta_12m": "dep_4t",
+   "hiato_do_produto": "hiato",
+   "curva_de_juros": "inclinacao",
+   "juro_longo_subindo": "d4_longo",
+   "desemprego_subindo": "d4_desemp"
+  }
+ },
  "fatores": {
   "atividade": "Atividade",
-  "juro": "Juro real e inflação",
+  "juro": "Juro e inflação",
   "credito": "Crédito e famílias",
   "mercado": "Mercado financeiro",
   "contas": "Contas públicas",
   "emprego": "Emprego",
   "externo": "Cenário externo"
+ },
+ "fora_da_conta": {
+  "credito": "Não entra: no teste em 44 países, o crédito melhorou a previsão do PIB em menos de 1%.",
+  "mercado": "Não entra: no teste em 44 países, câmbio e juro longo não melhoraram a previsão do PIB de forma clara. A bolsa melhorou, mas ainda não há coleta diária confiável do Ibovespa.",
+  "contas": "Não entra: no teste em 44 países, a dívida pública não melhorou a previsão do PIB.",
+  "emprego": "Não entra: no teste em 44 países, o desemprego piorou a previsão do PIB.",
+  "externo": "Não entra: o preço das commodities não foi testado no painel de países."
  },
  "indicadores": {
   "ibcbr": {
@@ -93,44 +137,6 @@
    "definicao": "Variação em 6 meses do índice de preços de todas as commodities do FMI (FRED PALLFNFINDEXM)."
   }
  },
- "sinais": {
-  "metodo": "Sinais de Kaminsky, Lizondo e Reinhart (1998), indicador por indicador.",
-  "percentis": [
-   70,
-   75,
-   80,
-   85,
-   90,
-   95
-  ],
-  "criterio": "Limite que dá a menor razão ruído/sinal (sinais falsos sobre meses sem recessão à frente, divididos pelos sinais certos sobre meses com recessão à frente). Empate fica com o percentil mais alto.",
-  "minimo_episodios_avisados": 2,
-  "peso": "1 / (razão ruído/sinal) quando a razão é menor que 1; senão, peso zero e o indicador aparece como 'não antecipou recessões'."
- },
- "faixa_normal_percentis": [
-  25,
-  75
- ],
- "composto": "Soma dos pesos dos indicadores em sinal, dividida pela soma dos pesos dos indicadores com dado no mês.",
- "probabilidade": {
-  "modelo": "Regressão logística do mês com recessão à frente contra o composto (2 parâmetros), com uma penalidade mínima (0,01 × inclinação²) só para a conta ter solução quando o composto separa os meses sem erro.",
-  "penalidade": 0.01,
-  "encolhimento": "logit(p) = logit(p_medio) + k × (logit(p_modelo) − logit(p_medio)), com k escolhido na grade abaixo pelo menor erro de Brier fora da amostra. Empate fica com o k menor.",
-  "grade_k": [
-   0,
-   0.1,
-   0.2,
-   0.3,
-   0.4,
-   0.5,
-   0.6,
-   0.7,
-   0.8,
-   0.9,
-   1
-  ],
-  "validacao": "Blocos de 3 anos seguidos a partir de 2002; um corte que cairia dentro da janela de aviso de uma recessão é empurrado para o fim dela. Em cada bloco deixado de fora, tudo é reestimado só com os outros: limites, pesos e regressão."
- },
  "niveis": {
   "nomes": [
    "Muito abaixo",
@@ -139,22 +145,7 @@
    "Acima",
    "Muito acima"
   ],
-  "cortes_razao": [
-   0.5,
-   0.8,
-   1.25,
-   2.0
-  ],
-  "razao": "Chance estimada de recessão à frente dividida pela média da amostra.",
-  "confirmacao": "O nível só muda quando duas atualizações diárias seguidas dão o mesmo nível novo. Assim um indicador oscilando em cima do limite não faz o nível piscar."
- },
- "peso_hoje": {
-  "forte": 0.25,
-  "moderado": 0.1
- },
- "forca_historica": {
-  "forte": 0.3,
-  "moderada": 0.6
+  "confirmacao": "O nível só muda quando duas atualizações diárias seguidas dão o mesmo nível novo. Assim uma entrada oscilando perto de um corte não faz o nível piscar."
  },
  "noticias": {
   "pontos_por_magnitude": {
@@ -219,5 +210,9 @@
     "nome": "Índice de commodities do FMI"
    }
   }
- }
+ },
+ "faixa_normal_percentis": [
+  25,
+  75
+ ]
 }

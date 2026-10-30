@@ -1,11 +1,12 @@
-"""Calibração do nível: limites, faixas normais, pesos e a regressão, com validação fora da amostra.
+"""Calibração do nível: o cenário ruim do PIB (crescimento em risco), os cortes dos níveis e a validação.
 
-Segue as regras de config/modelo.json, registradas antes de olhar o histórico. Lê
-data/historico/series.json (src/historico.py) e grava:
-- config/calibracao.json: o que a conta do dia usa (limites, pesos, regressão, k);
-- data/historico/mensal.json: os indicadores mês a mês, como eram conhecidos em cada mês,
-  o alvo e o nível fora da amostra, para quem quiser refazer a conta.
+Segue as regras de config/modelo.json. Lê o painel de países em data/historico/painel_ocde.csv
+e as séries do Brasil em data/historico/series.json (src/historico.py), e grava:
+- config/calibracao.json: o que a conta do dia usa (coeficientes, cortes, faixas normais);
+- data/historico/mensal.json: os indicadores e as entradas do Brasil mês a mês, como eram
+  conhecidos em cada mês, o alvo e o nível fora da amostra, para quem quiser refazer a conta.
 
+Precisa de pandas e statsmodels, que a atualização diária não usa: pip install pandas statsmodels.
 Uso: python src/calibra.py
 """
 from __future__ import annotations
@@ -13,26 +14,24 @@ from __future__ import annotations
 import datetime as dt
 import json
 import math
-import os
 import sys
 from pathlib import Path
-from statistics import mean, pstdev
+from statistics import pstdev
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import gar  # noqa: E402
 import indicadores as ind  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 HIST = ROOT / "data" / "historico" / "series.json"
 SAIDA = ROOT / "config" / "calibracao.json"
 MENSAL = ROOT / "data" / "historico" / "mensal.json"
+PAINEL = ROOT / "data" / "historico" / "painel_ocde.csv"
 
 
 def carregar_config() -> dict:
-    cfg = json.loads((ROOT / "config" / "modelo.json").read_text())
-    if os.environ.get("VDC_PESOS"):  # para comparar regras de peso sem mexer no arquivo
-        cfg["sinais"]["pesos"] = os.environ["VDC_PESOS"]
-    return cfg
+    return json.loads((ROOT / "config" / "modelo.json").read_text())
 
 
 # ------------------------------------------------------------------- meses
@@ -161,164 +160,173 @@ def percentil(xs: list[float], p: float) -> float:
     return s[lo] + (s[hi] - s[lo]) * (pos - lo)
 
 
-def sinal(x: float, limite: float, direcao: int) -> int:
-    return int(x >= limite) if direcao > 0 else int(x <= limite)
-
-
-def klr(x: dict[str, float], y: dict[str, int], meses: set[str], direcao: int, cfg: dict,
-        janelas: list[set[str]]) -> dict:
-    """Melhor limite de um indicador pela razão ruído/sinal, só com os meses de treino."""
-    usa = sorted(m for m in meses if m in x and y.get(m) is not None)
-    if not usa:
-        return {"peso": 0.0, "motivo": "sem dado"}
-    vals = [x[m] for m in usa]
-    eps = [j & set(usa) for j in janelas]
-    eps = [j for j in eps if any(y[m] == 1 for m in j)]
-    regra = cfg["sinais"]
-    base = {"meses": len(usa), "episodios_na_amostra": len(eps), "amostra": [usa[0], usa[-1]],
-            "faixa_normal": [percentil(vals, p) for p in cfg["faixa_normal_percentis"]],
-            "escala": [percentil(vals, 2), percentil(vals, 98)]}
-    melhor = None
-    for p in regra["percentis"]:
-        lim = percentil(vals, p if direcao > 0 else 100 - p)
-        a = b = c = d = 0
-        for m in usa:
-            s = sinal(x[m], lim, direcao)
-            if y[m] == 1:
-                a += s
-                c += 1 - s
-            else:
-                b += s
-                d += 1 - s
-        avisados = sum(1 for j in eps if any(sinal(x[m], lim, direcao) for m in j if y[m] == 1))
-        if a == 0 or avisados < regra["minimo_episodios_avisados"]:
-            continue
-        # Um indicador que nunca deu alarme falso é tratado como se tivesse dado um: o peso não fica infinito.
-        nsr = (max(b, 1) / (b + d)) / (a / (a + c)) if b + d else 1.0
-        cand = {"percentil": p, "limite": lim, "nsr": nsr, "episodios_avisados": avisados,
-                "acertos": a, "falsos": b, "perdidos": c}
-        if melhor is None or nsr < melhor["nsr"] - 1e-12 or (abs(nsr - melhor["nsr"]) <= 1e-12 and p > melhor["percentil"]):
-            melhor = cand
-    if melhor is None:
-        return {**base, "peso": 0.0, "motivo": "não avisou pelo menos 2 recessões"}
-    if melhor["nsr"] >= 1:
-        peso = 0.0
-    elif regra.get("pesos", "inverso") == "iguais":
-        peso = 1.0
-    else:
-        peso = 1 / melhor["nsr"]
-    return {**base, **melhor, "peso": peso,
-            "motivo": None if peso else "deu mais alarme falso que aviso certo"}
-
-
-def composto(xs: dict[str, dict[str, float]], params: dict, cfg: dict, m: str) -> tuple[float, int] | None:
-    num = den = 0.0
-    n = 0
-    for k, p in params.items():
-        if p["peso"] <= 0 or m not in xs[k]:
-            continue
-        den += p["peso"]
-        num += p["peso"] * sinal(xs[k][m], p["limite"], cfg["indicadores"][k]["direcao"])
-        n += 1
-    if n < cfg["minimo_indicadores_no_mes"] or not den:
+def auc(pontos: list[tuple[float, int]]) -> float | None:
+    """Chance de um mês com recessão à frente ter nota maior que um mês sem (empate vale meio)."""
+    pos = [x for x, y in pontos if y == 1]
+    neg = [x for x, y in pontos if y == 0]
+    if not pos or not neg:
         return None
-    return num / den, n
+    ganha = sum((a > b) + 0.5 * (a == b) for a in pos for b in neg)
+    return ganha / (len(pos) * len(neg))
 
 
-def logistica(pares: list[tuple[float, int]], pen: float) -> tuple[float, float]:
-    """Máxima verossimilhança penalizada (pen × b²) por Newton-Raphson."""
-    a = b = 0.0
-    ybar = mean(y for _, y in pares)
-    a = math.log(ybar / (1 - ybar))
-    for _ in range(100):
-        ga = gb = haa = hab = hbb = 0.0
-        for x, y in pares:
-            p = 1 / (1 + math.exp(-(a + b * x)))
-            w = p * (1 - p)
-            ga += y - p
-            gb += (y - p) * x
-            haa += w
-            hab += w * x
-            hbb += w * x * x
-        gb -= 2 * pen * b
-        hbb += 2 * pen
-        det = haa * hbb - hab * hab
-        if det <= 1e-12:
-            break
-        da = (hbb * ga - hab * gb) / det
-        db = (haa * gb - hab * ga) / det
-        a, b = a + da, b + db
-        if abs(da) + abs(db) < 1e-10:
-            break
-    return a, b
+def nivel_de(g: float, cortes: list[float]) -> int:
+    """Índice do nível (0 = Muito abaixo, 4 = Muito acima): quanto pior o cenário ruim, mais alto."""
+    return sum(1 for c in cortes if g <= c)
 
 
-def logit(p: float) -> float:
-    return math.log(p / (1 - p))
+# ------------------------------------------------------- crescimento em risco
+def entradas_brasil(series: dict, pib: list[tuple[int, float]], m: str, defas: dict) -> dict[str, float] | None:
+    """As quatro entradas do Brasil com o que já tinha sido divulgado no fim do mês m."""
+    n = mes_num(m)
+
+    def ate(k: str) -> str:
+        return num_mes(n - defas[k]) + "-31"
+
+    selic = {x["data"][:7]: x["valor"] for x in series.get("selic_meta", [])}
+    fu = primeiro_nao_divulgado(m)
+    e = {
+        "tendencia": gar.tendencia([(t, v) for t, v in pib if t < fu]),
+        "crescimento": gar.crescimento(cortar(series.get("ibcbr", []), ate("crescimento"))),
+        "juro": selic[m] - selic[num_mes(n - 12)] if m in selic and num_mes(n - 12) in selic else None,
+        "inflacao": gar.variacao_mensal(cortar(series.get("ipca_12m", []), ate("inflacao"))),
+    }
+    return None if any(v is None for v in e.values()) else e
 
 
-def sigm(z: float) -> float:
-    return 1 / (1 + math.exp(-z))
+def realizado(pib: dict[int, float], m: str) -> float | None:
+    """O crescimento que de fato veio nos 4 trimestres a partir do primeiro não divulgado no mês m."""
+    fu = primeiro_nao_divulgado(m)
+    if not all(t in pib for t in range(fu, fu + 4)):
+        return None
+    return sum(100 * math.log(1 + pib[t] / 100) for t in range(fu, fu + 4))
 
 
-def prever(c: float, a: float, b: float, pbar: float, k: float) -> float:
-    return sigm(logit(pbar) + k * (a + b * c - logit(pbar)))
+def calibrar_gar(cfg: dict, series: dict, pib: dict[int, float], y: dict, meses: list[str]) -> tuple[dict, dict]:
+    """Estima o cenário ruim (quantil 10%) no painel, valida fora da amostra e monta o histórico do Brasil.
+    Devolve (bloco 'gar' da calibração, histórico mês a mês)."""
+    import numpy as np
+    import pandas as pd
+    import statsmodels.api as sm
 
+    g = cfg["gar"]
+    col = [gar.NO_PAINEL[k] for k in gar.ENTRADAS]
+    painel = pd.read_csv(PAINEL)
+    painel["t"] = painel.q.map(lambda q: int(q[:4]) * 4 + int(q[-1]) - 1)
+    treino_total = painel.dropna(subset=["y4"])
 
-def ajustar(xs: dict, y: dict, meses: set[str], cfg: dict, janelas: list[set[str]], fora: str | None = None) -> dict:
-    """Tudo o que se estima, só com os meses dados: limites, pesos, regressão e a média.
-    `fora` zera o peso de um indicador, para medir quanto do acerto depende dele."""
-    params = {k: klr(xs[k], y, meses, v["direcao"], cfg, janelas) for k, v in cfg["indicadores"].items()}
-    if fora:
-        params[fora] = {**params[fora], "peso": 0.0}
-    pares = []
-    for m in sorted(meses):
-        if y.get(m) is None:
-            continue
-        c = composto(xs, params, cfg, m)
-        if c is not None:
-            pares.append((c[0], y[m]))
-    if not pares or all(yy == pares[0][1] for _, yy in pares):
-        return {"params": params, "a": 0.0, "b": 0.0, "pbar": mean(yy for _, yy in pares) if pares else 0.0, "n": len(pares)}
-    pbar = mean(yy for _, yy in pares)
-    if not any(p["peso"] > 0 for p in params.values()):
-        return {"params": params, "a": logit(pbar), "b": 0.0, "pbar": pbar, "n": len(pares)}
-    a, b = logistica(pares, cfg["probabilidade"]["penalidade"])
-    return {"params": params, "a": a, "b": b, "pbar": pbar, "n": len(pares)}
+    def ajustar(df: pd.DataFrame, tau: float) -> dict[str, float]:
+        r = sm.QuantReg(df.y4, sm.add_constant(df[col])).fit(q=tau, max_iter=5000).params
+        return {"const": float(r["const"]), **{k: float(r[gar.NO_PAINEL[k]]) for k in gar.ENTRADAS}}
 
+    def prever(df: pd.DataFrame, c: dict) -> np.ndarray:
+        return c["const"] + sum(c[k] * df[gar.NO_PAINEL[k]].to_numpy() for k in gar.ENTRADAS)
 
-def nivel_de(r: float, cortes: list[float]) -> int:
-    """Índice do nível (0 a 4) pela razão."""
-    return sum(1 for c in cortes if r >= c)
+    tau = g["quantil"]
+    q10 = ajustar(treino_total, tau)
 
+    # Fora da amostra no painel: cada ano é previsto só com os trimestres cujo PIB 4 trimestres à frente
+    # já tinha saído no começo daquele ano. Mede o ganho sobre a conta só com a média do país e a cobertura.
+    def pinball(u: np.ndarray) -> float:
+        return float(np.mean(np.maximum(tau * u, (tau - 1) * u)))
 
-def blocos(meses: list[str], janelas: list[set[str]], anos: int = 3) -> list[set[str]]:
-    """Blocos de 3 anos; um corte dentro da janela de aviso de uma recessão vai para o fim dela."""
-    if not meses:
-        return []
-    ini_ano = int(meses[0][:4])
-    cortes = []
-    a = ini_ano + anos
-    while a <= int(meses[-1][:4]):
-        corte = f"{a:04d}-01"
-        for j in janelas:
-            if j and min(j) < corte <= max(j):
-                corte = num_mes(mes_num(max(j)) + 1)
-        cortes.append(corte)
-        a += anos
-    cortes = sorted(set(cortes))
-    out, atual = [], set()
-    i = 0
+    oos, oos0, coef_ano = [], [], {}
+    for ano in range(g["validacao_desde"], int(meses[-1][:4]) + 1):
+        corte = (ano - 2) * 4 + 3  # até o 3º trimestre de dois anos antes
+        tr = treino_total[treino_total.t < corte]
+        c = ajustar(tr, tau)
+        c0 = sm.QuantReg(tr.y4, sm.add_constant(tr[["media_pais"]])).fit(q=tau, max_iter=5000).params
+        coef_ano[ano] = c
+        te = treino_total[(treino_total.t >= ano * 4) & (treino_total.t < ano * 4 + 4)]
+        if len(te):
+            oos.append(te.y4.to_numpy() - prever(te, c))
+            oos0.append(te.y4.to_numpy() - (c0["const"] + c0["media_pais"] * te.media_pais.to_numpy()))
+    u, u0 = np.concatenate(oos), np.concatenate(oos0)
+    ajuste = float(np.quantile(u, tau))
+
+    # Candidatas a quinta entrada: cada uma somada às quatro, com a mesma validação, na amostra em que
+    # ela existe. O número é quanto o erro fora da amostra cai (positivo) ou sobe (negativo).
+    def erro_fora(df: pd.DataFrame, xs: list[str]) -> float:
+        us = []
+        for ano in range(g["validacao_desde"], int(meses[-1][:4]) + 1):
+            tr = df[df.t < (ano - 2) * 4 + 3]
+            te = df[(df.t >= ano * 4) & (df.t < ano * 4 + 4)]
+            if len(te) and len(tr) > 200:
+                r = sm.QuantReg(tr.y4, sm.add_constant(tr[xs])).fit(q=tau, max_iter=5000).params
+                us.append(te.y4.to_numpy() - (r["const"] + te[xs].to_numpy() @ r[xs].to_numpy()))
+        return pinball(np.concatenate(us))
+
+    candidatas = {}
+    for nome, coluna in g["candidatas"].items():
+        df = treino_total.dropna(subset=[coluna])
+        candidatas[nome] = round(1 - erro_fora(df, col + [coluna]) / erro_fora(df, col), 4)
+
+    # O Brasil mês a mês: entradas, cenário ruim com os coeficientes finais e fora da amostra.
+    defas = g["defasagem_meses"]
+    pib_lista = sorted(pib.items())
+    hist, fora = {}, {}
     for m in meses:
-        while i < len(cortes) and m >= cortes[i]:
-            if atual:
-                out.append(atual)
-            atual = set()
-            i += 1
-        atual.add(m)
-    if atual:
-        out.append(atual)
-    return out
+        e = entradas_brasil(series, pib_lista, m, defas)
+        if e is None:
+            continue
+        hist[m] = {"entradas": e, "ruim": gar.cenario(e, q10), "realizado": realizado(pib, m),
+                   "recessao_a_frente": y.get(m)}
+        a = int(m[:4])
+        if a in coef_ano:
+            fora[m] = gar.cenario(e, coef_ano[a])
+    ruins = [h["ruim"] for h in hist.values()]
+    cortes = [percentil(ruins, p) for p in g["percentis_dos_cortes"]]
+    normal = percentil(ruins, 50)
+    referencia = {k: percentil([h["entradas"][k] for h in hist.values()], 50) for k in gar.ENTRADAS}
+    faixas = {}
+    for k in gar.ENTRADAS:
+        vals = [h["entradas"][k] for h in hist.values()]
+        faixas[k] = {"faixa_normal": [round(percentil(vals, p), 4) for p in cfg["faixa_normal_percentis"]],
+                     "escala": [round(percentil(vals, 2), 4), round(percentil(vals, 98), 4)]}
+
+    # O nível fora da amostra: o cenário ruim de cada mês com coeficientes que não viram o ano dele,
+    # nos cortes da própria série fora da amostra.
+    vals = list(fora.values())
+    cortes_fora = [percentil(vals, p) for p in g["percentis_dos_cortes"]]
+    nivel_fora = {m: nivel_de(v, cortes_fora) for m, v in fora.items()}
+    com_y = [(m, hist[m]["recessao_a_frente"]) for m in fora if hist[m]["recessao_a_frente"] is not None]
+    cobertos = [(fora[m], hist[m]["realizado"]) for m in fora if hist[m]["realizado"] is not None]
+    altos = [hist[m]["realizado"] for m in fora if nivel_fora[m] >= 3 and hist[m]["realizado"] is not None]
+    outros = [hist[m]["realizado"] for m in fora if nivel_fora[m] < 3 and hist[m]["realizado"] is not None]
+    rec_altos = [y for m, y in com_y if nivel_fora[m] >= 3]
+    rec_outros = [y for m, y in com_y if nivel_fora[m] < 3]
+    validacao = {
+        "painel_ganho_sobre_a_media_do_pais": round(1 - pinball(u) / pinball(u0), 4),
+        "painel_cobertura_fora_da_amostra": round(float(np.mean(u < 0)), 4),
+        "painel_trimestres_fora_da_amostra": int(len(u)),
+        "candidatas_ganho_fora_da_amostra": candidatas,
+        "brasil_meses_fora_da_amostra": len(fora),
+        "brasil_auc_recessao_a_frente": round(auc([(-fora[m], yy) for m, yy in com_y]), 4),
+        "brasil_auc_nivel": round(auc([(nivel_fora[m], yy) for m, yy in com_y]), 4),
+        "brasil_meses_com_resposta": len(com_y),
+        "brasil_cobertura_sem_ajuste": round(sum(r < v for v, r in cobertos) / len(cobertos), 4),
+        "brasil_cobertura_com_ajuste": round(sum(r < v + ajuste for v, r in cobertos) / len(cobertos), 4),
+        "brasil_meses_com_pib_realizado": len(cobertos),
+        "acima_crescimento_medio_seguinte": round(gar.pct(sum(altos) / len(altos)), 2) if altos else None,
+        "demais_crescimento_medio_seguinte": round(gar.pct(sum(outros) / len(outros)), 2) if outros else None,
+        "acima_meses_com_recessao_a_frente": round(sum(rec_altos) / len(rec_altos), 4) if rec_altos else None,
+        "demais_meses_com_recessao_a_frente": round(sum(rec_outros) / len(rec_outros), 4) if rec_outros else None,
+        "acima_pior_crescimento_seguinte": round(gar.pct(min(altos)), 2) if altos else None,
+        "demais_pior_crescimento_seguinte": round(gar.pct(min(outros)), 2) if outros else None,
+    }
+    bloco = {
+        "painel": {"paises": int(painel.pais.nunique()), "trimestres": int(len(treino_total)),
+                   "inicio": str(treino_total.q.min()), "fim": str(treino_total.q.max())},
+        "coeficientes": q10, "ajuste": ajuste,
+        "referencia": referencia, "faixas": faixas, "cortes": cortes, "normal": normal,
+        "historico": {"inicio": min(hist), "fim": max(hist), "meses": len(hist)},
+        "validacao": validacao,
+    }
+    mensal_gar = {m: {"ruim": round(h["ruim"], 3),
+                      "fora_da_amostra": round(fora[m], 3) if m in fora else None,
+                      "nivel_fora_da_amostra": nivel_fora.get(m),
+                      **{k: round(v, 3) for k, v in h["entradas"].items()}} for m, h in hist.items()}
+    return bloco, mensal_gar
 
 
 def main() -> None:
@@ -338,56 +346,19 @@ def main() -> None:
     todos_meses = [num_mes(n) for n in range(mes_num(inicio), mes_num(fim_dados) + 1)]
     y = {m: alvo(m, eps, ultimo_pib, h) for m in todos_meses}
     amostra = [m for m in todos_meses if y[m] is not None]
-    # Janela de aviso de cada recessão: os meses com y = 1 que apontam para ela.
-    janelas = [{m for m in amostra if y[m] == 1 and primeiro_nao_divulgado(m) <= ini < primeiro_nao_divulgado(m) + h}
-               for ini, _ in eps]
 
-    final = ajustar(xs, y, set(amostra), cfg, janelas)
-
-    # Validação: cada bloco é previsto por um modelo que nunca viu os meses dele.
-    grade = cfg["probabilidade"]["grade_k"]
-    bl = blocos(amostra, janelas)
-
-    def validar(fora: str | None = None) -> tuple[dict, dict]:
-        oof: dict[str, dict] = {}
-        for b in bl:
-            fit = ajustar(xs, y, set(amostra) - b, cfg, janelas, fora)
-            for m in sorted(b):
-                c = composto(xs, fit["params"], cfg, m)
-                if c is None:
-                    continue
-                oof[m] = {"c": c[0], "y": y[m], "pbar": fit["pbar"],
-                          "p": {k: prever(c[0], fit["a"], fit["b"], fit["pbar"], k) for k in grade}}
-        return oof, {k: mean((o["p"][k] - o["y"]) ** 2 for o in oof.values()) for k in grade}
-
-    def ganho(br: dict) -> tuple[float, float]:
-        kb = min(grade, key=lambda k: (round(br[k], 12), k))
-        return kb, (round(1 - br[kb] / br[0], 4) if br[0] else 0.0)
-
-    oof, brier = validar()
-    k_best = min(grade, key=lambda k: (round(brier[k], 12), k))
-    # O mesmo teste sem o indicador de maior peso: quanto do acerto depende dele.
-    maior = max(final["params"], key=lambda k: final["params"][k]["peso"])
-    k_sem, ganho_sem = ganho(validar(maior)[1])
-
-    # O nível fora da amostra, mês a mês (a conta de cada mês; a confirmação diária não se aplica aqui).
-    cortes = cfg["niveis"]["cortes_razao"]
-    historico = []
-    for m in sorted(oof):
-        o = oof[m]
-        r = o["p"][k_best] / o["pbar"] if o["pbar"] else 1.0
-        historico.append({"mes": m, "nivel": nivel_de(r, cortes), "recessao_a_frente": o["y"]})
-
-    # Também o nível dos meses ainda sem resposta (de setembro de 2025 até hoje), com o modelo final.
-    recentes = []
-    for m in todos_meses:
-        if m in oof or m < (amostra[-1] if amostra else m):
+    # Os indicadores do Resumo: faixa normal (metade dos meses desde 2002) e a régua de cada um.
+    indicadores = {}
+    for k, s in xs.items():
+        vals = [s[m] for m in sorted(s)]
+        if not vals:
+            indicadores[k] = {"meses": 0}
             continue
-        c = composto(xs, final["params"], cfg, m)
-        if c is None:
-            continue
-        p = prever(c[0], final["a"], final["b"], final["pbar"], k_best)
-        recentes.append({"mes": m, "nivel": nivel_de(p / final["pbar"], cortes)})
+        indicadores[k] = {"meses": len(vals), "amostra": [min(s), max(s)],
+                          "faixa_normal": [round(percentil(vals, p), 6) for p in cfg["faixa_normal_percentis"]],
+                          "escala": [round(percentil(vals, 2), 6), round(percentil(vals, 98), 6)]}
+
+    bloco_gar, mensal_gar = calibrar_gar(cfg, series, {tri_num(t): v for t, v in pib.items()}, y, todos_meses)
 
     # Desvio das variações de 6 meses de cada medida do placar: a tolerância de "estável".
     def nivel_mensal(nome: str) -> dict[str, float]:
@@ -417,52 +388,33 @@ def main() -> None:
         placar[fator] = {"desvio_6m": pstdev(dif) if len(dif) > 2 else None,
                          "tolerancia": cfg["placar"]["tolerancia_desvios"] * pstdev(dif) if len(dif) > 2 else None}
 
-    def limpo(p: dict) -> dict:
-        return {k: (round(v, 6) if isinstance(v, float) else v) for k, v in p.items()}
-
     res = {
         "calibrado_em": dt.datetime.now().astimezone().isoformat(timespec="seconds"),
         "dados_de": hist["coletado_em"],
         "recessoes": [{"inicio": num_tri(a), "fim": num_tri(b)} for a, b in eps],
         "amostra": {"inicio": amostra[0], "fim": amostra[-1], "meses": len(amostra),
-                    "meses_com_recessao_a_frente": sum(y[m] for m in amostra),
-                    "meses_na_regressao": final["n"]},
-        "indicadores": {k: limpo(p) for k, p in final["params"].items()},
-        "regressao": {"a": final["a"], "b": final["b"]},
-        "media": final["pbar"],
-        "k": k_best,
-        "validacao": {
-            "blocos": [[min(b), max(b)] for b in bl],
-            "meses": len(oof),
-            "brier_por_k": {str(k): round(v, 6) for k, v in brier.items()},
-            "brier_media": round(brier[0], 6),
-            "brier_escolhido": round(brier[k_best], 6),
-            "ganho_sobre_a_media": round(1 - brier[k_best] / brier[0], 4) if brier[0] else None,
-            "sem_o_maior_peso": {"indicador": maior, "k": k_sem, "ganho_sobre_a_media": ganho_sem},
-        },
+                    "meses_com_recessao_a_frente": sum(y[m] for m in amostra)},
+        "gar": bloco_gar,
+        "indicadores": indicadores,
         "placar": placar,
     }
     SAIDA.write_text(json.dumps(res, ensure_ascii=False, indent=1))
+    historico = [{"mes": m, "nivel": v["nivel_fora_da_amostra"], "recessao_a_frente": y.get(m)}
+                 for m, v in sorted(mensal_gar.items()) if v["nivel_fora_da_amostra"] is not None]
     MENSAL.write_text(json.dumps({
         "gerado_em": res["calibrado_em"],
         "indicadores": {k: {m: round(v, 4) for m, v in sorted(s.items())} for k, s in xs.items()},
         "recessao_a_frente": {m: y[m] for m in todos_meses if y[m] is not None},
+        "crescimento_em_risco": mensal_gar,
         "nivel_fora_da_amostra": historico,
-        "nivel_meses_recentes": recentes,
     }, ensure_ascii=False, separators=(",", ":")))
 
+    gb = bloco_gar
     print(f"recessões: {', '.join(f'{num_tri(a)}–{num_tri(b)}' for a, b in eps)}")
-    print(f"amostra {amostra[0]}..{amostra[-1]}: {len(amostra)} meses, {res['amostra']['meses_com_recessao_a_frente']} com recessão à frente")
-    for k, p in final["params"].items():
-        if p.get("peso"):
-            print(f"  {k:16s} limite {p['limite']:8.3f} (p{p['percentil']}) NSR {p['nsr']:.3f} peso {p['peso']:.2f} "
-                  f"avisou {p['episodios_avisados']}/{p['episodios_na_amostra']} | normal {p['faixa_normal'][0]:.2f}..{p['faixa_normal'][1]:.2f}")
-        else:
-            print(f"  {k:16s} peso 0: {p.get('motivo')} | {p.get('amostra')} {p.get('episodios_na_amostra')} episódios")
-    print(f"regressão a={final['a']:.3f} b={final['b']:.3f} média={final['pbar']:.4f} | k={k_best}")
-    print("Brier por k:", {k: round(v, 4) for k, v in brier.items()})
-    print(f"ganho fora da amostra sobre a média: {res['validacao']['ganho_sobre_a_media']} "
-          f"(sem {maior}: {ganho_sem}, k={k_sem})")
+    print(f"painel: {gb['painel']} | q10 {({k: round(v, 4) for k, v in gb['coeficientes'].items()})} | ajuste {gb['ajuste']:.3f}")
+    print(f"Brasil {gb['historico']} | cortes {[round(c, 3) for c in gb['cortes']]} | normal {gb['normal']:.3f}")
+    print(f"referência {({k: round(v, 3) for k, v in gb['referencia'].items()})}")
+    print("validação:", json.dumps(gb["validacao"], ensure_ascii=False))
 
 
 if __name__ == "__main__":

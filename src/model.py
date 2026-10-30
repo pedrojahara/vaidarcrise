@@ -1,23 +1,32 @@
 """O nível do dia.
 
-Nove indicadores, cada um com o seu limite de alerta estimado na história desde 2002
-(src/calibra.py, config/calibracao.json). Os que passam do limite entram num composto;
-o composto vira uma chance de recessão à frente relativa à média da história; e essa
-razão vira um de cinco níveis, que só muda quando duas atualizações seguidas concordam. As notícias não
-entram aqui.
+O nível sai do cenário ruim do PIB dos próximos 12 meses (src/gar.py): o crescimento que tem
+só 1 chance em 10 de ser pior, estimado num painel de 44 países a partir de quatro entradas do
+Brasil. O cenário ruim de hoje é comparado ao de todos os meses desde 2004 (config/calibracao.json)
+e vira um de cinco níveis, que só muda quando duas atualizações seguidas concordam.
+
+Os nove indicadores do Resumo ficam ao lado, com a sua faixa normal, para contar a história de
+cada fator; não entram no nível. As notícias também não.
 """
 from __future__ import annotations
 
+import datetime as dt
 import json
-import math
 from pathlib import Path
 
+import gar
 import indicadores as ind
 
 ROOT = Path(__file__).resolve().parent.parent
-SITUACOES = {"alerta": "Zona de alerta", "pior": "Pior que o normal", "normal": "Normal",
-             "melhor": "Melhor que o normal", "semdado": "Sem dado"}
-ORDEM_SITUACAO = ["alerta", "pior", "normal", "melhor", "semdado"]
+SITUACOES = {"pior": "Pior que o normal", "normal": "Normal", "melhor": "Melhor que o normal", "semdado": "Sem dado"}
+ORDEM_SITUACAO = ["pior", "normal", "melhor", "semdado"]
+# Cada entrada da conta, o fator a que pertence e o seu nome no site.
+ENTRADAS = {
+    "tendencia": {"fator": "atividade", "nome": "Crescimento médio em 10 anos", "unidade": "%"},
+    "crescimento": {"fator": "atividade", "nome": "Crescimento em 12 meses", "unidade": "%"},
+    "juro": {"fator": "juro", "nome": "Selic: variação em 12 meses", "unidade": "pontos"},
+    "inflacao": {"fator": "juro", "nome": "Inflação: variação em 12 meses", "unidade": "pontos"},
+}
 
 
 def carregar_config() -> dict:
@@ -26,14 +35,6 @@ def carregar_config() -> dict:
 
 def carregar_calibracao() -> dict:
     return json.loads((ROOT / "config" / "calibracao.json").read_text())
-
-
-def logit(p: float) -> float:
-    return math.log(p / (1 - p))
-
-
-def sigm(z: float) -> float:
-    return 1 / (1 + math.exp(-z))
 
 
 def _serie(snap: dict, key: str) -> list[dict]:
@@ -95,17 +96,14 @@ def valores(snap: dict) -> dict[str, dict]:
 
 
 def situacao(x: float, cal: dict, direcao: int) -> str:
-    if cal.get("peso") and cal.get("limite") is not None:
-        if (direcao > 0 and x >= cal["limite"]) or (direcao < 0 and x <= cal["limite"]):
-            return "alerta"
     lo, hi = cal["faixa_normal"]
     ruim, bom = (x > hi, x < lo) if direcao > 0 else (x < lo, x > hi)
     return "pior" if ruim else "melhor" if bom else "normal"
 
 
-def nivel_de(r: float, cortes: list[float]) -> int:
-    """Índice do nível pela razão (0 = Muito abaixo, 4 = Muito acima)."""
-    return sum(1 for c in cortes if r >= c)
+def nivel_de(g: float, cortes: list[float]) -> int:
+    """Índice do nível (0 = Muito abaixo, 4 = Muito acima): quanto pior o cenário ruim, mais alto."""
+    return sum(1 for c in cortes if g <= c)
 
 
 def confirmar(bruto: int, anterior: int | None, bruto_anterior: int | None) -> int:
@@ -115,31 +113,103 @@ def confirmar(bruto: int, anterior: int | None, bruto_anterior: int | None) -> i
     return anterior
 
 
-def peso_rotulo(share: float, cfg: dict) -> str:
-    c = cfg["peso_hoje"]
-    if share >= c["forte"]:
-        return "Forte"
-    if share >= c["moderado"]:
-        return "Moderado"
-    return "Pequeno" if share > 0 else "Nenhum hoje"
+# ------------------------------------------------------------------ entradas
+def pib_trimestral(snap: dict) -> list[tuple[int, float]]:
+    """PIB trimestral do IBGE: a cópia longa em data/historico/pib.json, atualizada pela coleta do dia."""
+    base = json.loads((ROOT / "data" / "historico" / "pib.json").read_text())["pib"]
+    qoq = {gar.tri_num(x["trimestre"]): x["var_qoq"] for x in base}
+    qoq.update({gar.tri_num(x["trimestre"]): x["var_qoq"] for x in snap.get("pib") or []})
+    return sorted(qoq.items())
 
 
-def forca_rotulo(cal: dict, cfg: dict) -> str:
-    if not cal.get("peso"):
-        return "Não antecipou recessões"
-    c = cfg["forca_historica"]
-    return "Forte" if cal["nsr"] < c["forte"] else "Moderada" if cal["nsr"] < c["moderada"] else "Fraca"
+def entradas(snap: dict) -> dict[str, dict]:
+    """As quatro entradas de hoje, com a data de referência e o dado que explica cada uma."""
+    e: dict[str, dict] = {}
+    pib = pib_trimestral(snap)
+    x = gar.tendencia(pib)
+    if x is not None:
+        e["tendencia"] = {"valor": x, "ref": gar.num_tri(pib[-1][0])}
+    s = _serie(snap, "ibcbr")
+    x = gar.crescimento(s)
+    if x is not None:
+        e["crescimento"] = {"valor": x, "ref": s[-1]["data"][:7]}
+    s = _serie(snap, "selic_meta")
+    x = gar.variacao_diaria(s)
+    if x is not None:
+        e["juro"] = {"valor": x, "ref": s[-1]["data"], "nivel": s[-1]["valor"], "antes": s[-1]["valor"] - x}
+    s = _serie(snap, "ipca_12m")
+    x = gar.variacao_mensal(s)
+    if x is not None:
+        e["inflacao"] = {"valor": x, "ref": s[-1]["data"][:7], "nivel": s[-1]["valor"], "antes": s[-1]["valor"] - x}
+    return e
+
+
+def idade_ok(ref: str, hoje: dt.date) -> bool:
+    """Um valor guardado cobre falha de coleta até 10 dias (dado diário), 101 dias (mensal) ou 200 (trimestral)."""
+    if "T" in ref:
+        q, a = ref.split("T")
+        ref, limite = f"{a}-{int(q) * 3:02d}-01", 200
+    elif len(ref) == 10:
+        limite = 10
+    else:
+        ref, limite = ref + "-01", 101
+    return (hoje - dt.date.fromisoformat(ref)).days <= limite
 
 
 def calcular(snap: dict, cfg: dict, cal: dict, anterior: int | None, guardados: dict | None = None,
-             bruto_anterior: int | None = None) -> dict:
+             bruto_anterior: int | None = None, hoje: dt.date | None = None) -> dict:
     """O nível de hoje. `anterior` e `bruto_anterior` são o nível publicado e a conta da atualização
-    do dia anterior. `guardados` traz os valores da rodada anterior, usados quando a coleta de um
-    indicador falha (no máximo 10 dias de idade para os diários e 70 para os mensais)."""
-    vals = valores(snap)
+    do dia anterior. `guardados` traz os valores da rodada anterior (indicadores e entradas), usados
+    quando a coleta de um deles falha."""
+    hoje = hoje or dt.date.today()
+    guardados = guardados or {}
     reaproveitados = []
-    for k, x in (guardados or {}).items():
-        if k not in vals and x.get("valor") is not None:
+
+    # 1. As entradas e o cenário ruim.
+    ent = entradas(snap)
+    for k in gar.ENTRADAS:
+        x = guardados.get("entrada:" + k)
+        if k not in ent and x and idade_ok(x["ref"], hoje):
+            ent[k] = {**x, "reaproveitado": True}
+            reaproveitados.append(k)
+    falta = [k for k in gar.ENTRADAS if k not in ent]
+    if falta:
+        raise RuntimeError(f"sem dado para a conta do nível: {', '.join(falta)}")
+    g = cal["gar"]
+    coef, ref = g["coeficientes"], g["referencia"]
+    valores_e = {k: ent[k]["valor"] for k in gar.ENTRADAS}
+    ruim = gar.cenario(valores_e, coef)
+    linhas_e = []
+    for k in gar.ENTRADAS:
+        meta = ENTRADAS[k]
+        linhas_e.append({"id": k, **meta, **ent[k], "referencia": ref[k], "coef": coef[k],
+                         "faixa_normal": g["faixas"][k]["faixa_normal"], "escala": g["faixas"][k]["escala"],
+                         # Quanto a entrada de hoje, diferente da do Brasil típico, mexe no cenário ruim (pontos do PIB).
+                         "efeito": coef[k] * (ent[k]["valor"] - ref[k])})
+
+    niv = cfg["niveis"]
+    cortes = g["cortes"]
+    bruto = nivel_de(ruim, cortes)
+    idx = confirmar(bruto, anterior, bruto_anterior)
+
+    # O que mudaria o nível: o valor que cada entrada (com as outras paradas) precisaria ter para
+    # levar o cenário ruim ao corte do nível vizinho. A tendência de 10 anos quase não se mexe e fica de fora.
+    gatilhos = []
+    for alvo, corte in ((bruto + 1, cortes[::-1][bruto] if bruto < 4 else None),
+                        (bruto - 1, cortes[::-1][bruto - 1] if bruto > 0 else None)):
+        if corte is None:
+            continue
+        for x in linhas_e:
+            if x["id"] == "tendencia":
+                continue
+            novo = x["valor"] + (corte - ruim) / x["coef"]
+            gatilhos.append({"id": x["id"], "nivel": alvo, "nome_nivel": niv["nomes"][alvo], "valor": novo,
+                             "hoje": x["valor"]})
+
+    # 2. Os indicadores do Resumo, com a faixa normal desde 2002.
+    vals = valores(snap)
+    for k, x in guardados.items():
+        if not k.startswith("entrada:") and k not in vals and x.get("valor") is not None:
             vals[k] = {**x, "reaproveitado": True}
             reaproveitados.append(k)
     linhas = []
@@ -147,58 +217,32 @@ def calcular(snap: dict, cfg: dict, cal: dict, anterior: int | None, guardados: 
         c = cal["indicadores"].get(k, {})
         x = vals.get(k)
         linha = {"id": k, "fator": meta["fator"], "nome": meta["nome"], "unidade": meta["unidade"],
-                 "definicao": meta["definicao"], "direcao": meta["direcao"], "peso": c.get("peso", 0.0),
-                 "limite": c.get("limite"), "faixa_normal": c.get("faixa_normal"), "escala": c.get("escala"),
-                 "nsr": c.get("nsr"), "episodios_avisados": c.get("episodios_avisados"),
-                 "episodios_na_amostra": c.get("episodios_na_amostra"), "motivo": c.get("motivo"),
-                 "forca": forca_rotulo(c, cfg) if c else "Sem dado"}
+                 "definicao": meta["definicao"], "direcao": meta["direcao"],
+                 "faixa_normal": c.get("faixa_normal"), "escala": c.get("escala")}
         if x is None or not c.get("faixa_normal"):
-            linha.update({"valor": None, "sinal": 0, "situacao": "semdado"})
+            linha.update({"valor": None, "situacao": "semdado"})
         else:
-            sit = situacao(x["valor"], c, meta["direcao"])
-            linha.update({**x, "sinal": int(sit == "alerta"), "situacao": sit})
+            linha.update({**x, "situacao": situacao(x["valor"], c, meta["direcao"])})
         linhas.append(linha)
-
-    com_dado = [x for x in linhas if x["peso"] > 0 and x["valor"] is not None]
-    den = sum(x["peso"] for x in com_dado)
-    comp = sum(x["peso"] * x["sinal"] for x in com_dado) / den if den else 0.0
-    for x in linhas:
-        x["parte"] = x["peso"] * x["sinal"] / den if den and x["valor"] is not None else 0.0
-    a, b = cal["regressao"]["a"], cal["regressao"]["b"]
-    pbar, k = cal["media"], cal["k"]
-
-    def razao_de(c: float) -> float:
-        return sigm(logit(pbar) + k * (a + b * c - logit(pbar))) / pbar
-
-    razao = razao_de(comp)
-    niv = cfg["niveis"]
-    bruto = nivel_de(razao, niv["cortes_razao"])
-    idx = confirmar(bruto, anterior, bruto_anterior)
-    # O que mudaria o nível sozinho: cada indicador fora do alerta que, se passasse do limite,
-    # levaria a conta a outro nível.
-    gatilhos = []
-    for x in com_dado:
-        if x["sinal"]:
-            continue
-        novo = nivel_de(razao_de(comp + x["peso"] / den), niv["cortes_razao"])
-        if novo != bruto:
-            gatilhos.append({"id": x["id"], "limite": x["limite"], "nivel": novo, "nome_nivel": niv["nomes"][novo]})
 
     fatores = []
     for fid, nome in cfg["fatores"].items():
         mine = [x for x in linhas if x["fator"] == fid]
-        share = sum(x["parte"] for x in mine)
-        sit = min((x["situacao"] for x in mine), key=ORDEM_SITUACAO.index)
-        com_peso = [x for x in mine if x["peso"] > 0]
-        melhor = min(com_peso, key=lambda x: x["nsr"]) if com_peso else None
-        fatores.append({"id": fid, "nome": nome, "indicadores": [x["id"] for x in mine], "parte": share,
-                        "peso_rotulo": peso_rotulo(share, cfg), "situacao": sit, "situacao_nome": SITUACOES[sit],
-                        "forca": melhor["forca"] if melhor else "Não antecipou recessões",
-                        "avisou": [melhor["episodios_avisados"], melhor["episodios_na_amostra"]] if melhor else None})
-    fatores.sort(key=lambda f: (-f["parte"], ORDEM_SITUACAO.index(f["situacao"])))
+        das_entradas = [x for x in linhas_e if x["fator"] == fid]
+        sit = min((x["situacao"] for x in mine), key=ORDEM_SITUACAO.index) if mine else "semdado"
+        fatores.append({"id": fid, "nome": nome, "indicadores": [x["id"] for x in mine],
+                        "entradas": [x["id"] for x in das_entradas], "na_conta": bool(das_entradas),
+                        "efeito": sum(x["efeito"] for x in das_entradas) if das_entradas else None,
+                        "situacao": sit, "situacao_nome": SITUACOES[sit]})
+    # Primeiro os fatores da conta, do que mais piora ao que mais alivia; depois os outros.
+    fatores.sort(key=lambda f: (not f["na_conta"], f["efeito"] if f["na_conta"] else 0,
+                                ORDEM_SITUACAO.index(f["situacao"])))
     return {"nivel": {"indice": idx, "nome": niv["nomes"][idx], "anterior": anterior,
                       "bruto": bruto, "nome_bruto": niv["nomes"][bruto]},
-            "composto": comp, "chance_relativa": razao, "indicadores": linhas, "fatores": fatores, "gatilhos": gatilhos,
+            "gar": {"entradas": linhas_e, "ruim": ruim, "cenario_ruim": gar.pct(ruim + g["ajuste"]),
+                    "cenario_normal": gar.pct(g["normal"] + g["ajuste"]), "cortes": cortes,
+                    "ref_pib": ent["tendencia"]["ref"]},
+            "indicadores": linhas, "fatores": fatores, "gatilhos": gatilhos,
             "reaproveitados": reaproveitados, "faltando": [x["id"] for x in linhas if x["valor"] is None]}
 
 

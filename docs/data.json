@@ -9,53 +9,95 @@
  ],
  "pergunta": "O risco de o Brasil entrar em recessão técnica nos próximos 12 meses está acima ou abaixo do normal?",
  "atualizado_em": "2026-10-29T13:39:44-03:00",
+ "pib_12_meses": {
+  "cenario_ruim_pct": -1.79,
+  "cenario_ruim_em_tempos_normais_pct": -1.89,
+  "o_que_e": "Crescimento do PIB nos 4 trimestres seguintes ao último divulgado que tem 1 chance em 10 de ser pior."
+ },
+ "entradas": [
+  {
+   "id": "tendencia",
+   "nome": "Crescimento médio em 10 anos",
+   "valor": 1.7328,
+   "ref": "2T2026",
+   "efeito_no_cenario_ruim_pontos": 0.1504
+  },
+  {
+   "id": "crescimento",
+   "nome": "Crescimento em 12 meses",
+   "valor": 1.3821,
+   "ref": "2026-08",
+   "efeito_no_cenario_ruim_pontos": -0.1477
+  },
+  {
+   "id": "juro",
+   "nome": "Selic: variação em 12 meses",
+   "valor": -1.25,
+   "ref": "2026-10-29",
+   "efeito_no_cenario_ruim_pontos": 0.1289
+  },
+  {
+   "id": "inflacao",
+   "nome": "Inflação: variação em 12 meses",
+   "valor": -0.59,
+   "ref": "2026-09",
+   "efeito_no_cenario_ruim_pontos": 0.0656
+  }
+ ],
  "fatores": [
   {
    "id": "atividade",
    "nome": "Atividade",
-   "peso_hoje": "Pequeno",
-   "situacao": "Zona de alerta",
-   "tendencia": "piora"
-  },
-  {
-   "id": "mercado",
-   "nome": "Mercado financeiro",
-   "peso_hoje": "Pequeno",
-   "situacao": "Zona de alerta",
-   "tendencia": "piora"
-  },
-  {
-   "id": "contas",
-   "nome": "Contas públicas",
-   "peso_hoje": "Não entra no nível",
+   "na_conta": true,
+   "efeito_no_cenario_ruim_pontos": 0.0027,
    "situacao": "Pior que o normal",
    "tendencia": "piora"
   },
   {
    "id": "juro",
-   "nome": "Juro real e inflação",
-   "peso_hoje": "Não entra no nível",
+   "nome": "Juro e inflação",
+   "na_conta": true,
+   "efeito_no_cenario_ruim_pontos": 0.1945,
    "situacao": "Normal",
    "tendencia": "estavel"
   },
   {
    "id": "credito",
    "nome": "Crédito e famílias",
-   "peso_hoje": "Não entra no nível",
+   "na_conta": false,
+   "efeito_no_cenario_ruim_pontos": null,
+   "situacao": "Pior que o normal",
+   "tendencia": "piora"
+  },
+  {
+   "id": "contas",
+   "nome": "Contas públicas",
+   "na_conta": false,
+   "efeito_no_cenario_ruim_pontos": null,
+   "situacao": "Pior que o normal",
+   "tendencia": "piora"
+  },
+  {
+   "id": "mercado",
+   "nome": "Mercado financeiro",
+   "na_conta": false,
+   "efeito_no_cenario_ruim_pontos": null,
    "situacao": "Normal",
    "tendencia": "piora"
   },
   {
    "id": "emprego",
    "nome": "Emprego",
-   "peso_hoje": "Não entra no nível",
+   "na_conta": false,
+   "efeito_no_cenario_ruim_pontos": null,
    "situacao": "Normal",
    "tendencia": "estavel"
   },
   {
    "id": "externo",
    "nome": "Cenário externo",
-   "peso_hoje": "Nenhum hoje",
+   "na_conta": false,
+   "efeito_no_cenario_ruim_pontos": null,
    "situacao": "Normal",
    "tendencia": "sem_direcao"
   }
@@ -69,10 +111,9 @@
    "unidade": "%",
    "ref": "2026-08",
    "situacao": "Pior que o normal",
-   "limite_de_alerta": -0.9958,
    "faixa_normal": [
-    0.1739,
-    1.554
+    -0.1789,
+    1.4095
    ]
   },
   {
@@ -82,11 +123,10 @@
    "valor": 1.3954,
    "unidade": "%",
    "ref": "2026-10-23",
-   "situacao": "Zona de alerta",
-   "limite_de_alerta": 1.9371,
+   "situacao": "Pior que o normal",
    "faixa_normal": [
-    1.9371,
-    3.5512
+    1.6177,
+    3.4994
    ]
   },
   {
@@ -97,10 +137,9 @@
    "unidade": "% ao ano",
    "ref": "2026-10-29",
    "situacao": "Normal",
-   "limite_de_alerta": null,
    "faixa_normal": [
-    2.9143,
-    8.8305
+    4.062,
+    9.1335
    ]
   },
   {
@@ -110,11 +149,10 @@
    "valor": 1.8797,
    "unidade": "p.p.",
    "ref": "2026-08",
-   "situacao": "Normal",
-   "limite_de_alerta": null,
+   "situacao": "Pior que o normal",
    "faixa_normal": [
-    -0.5639,
-    1.8826
+    -0.2683,
+    1.6869
    ]
   },
   {
@@ -124,11 +162,10 @@
    "valor": 0.56,
    "unidade": "p.p.",
    "ref": "2026-10-28",
-   "situacao": "Zona de alerta",
-   "limite_de_alerta": 0.473,
+   "situacao": "Normal",
    "faixa_normal": [
-    -1.02,
-    0.65
+    -0.95,
+    0.845
    ]
   },
   {
@@ -139,10 +176,9 @@
    "unidade": "%",
    "ref": "2026-10-28",
    "situacao": "Normal",
-   "limite_de_alerta": 18.7646,
    "faixa_normal": [
-    -4.2166,
-    4.6672
+    -4.1516,
+    5.1163
    ]
   },
   {
@@ -153,10 +189,9 @@
    "unidade": "p.p. do PIB",
    "ref": "2026-08",
    "situacao": "Pior que o normal",
-   "limite_de_alerta": null,
    "faixa_normal": [
-    -2.725,
-    3.065
+    -1.74,
+    4.22
    ]
   },
   {
@@ -167,10 +202,9 @@
    "unidade": "p.p.",
    "ref": "2026-08",
    "situacao": "Normal",
-   "limite_de_alerta": null,
    "faixa_normal": [
-    -0.1,
-    0.6917
+    -0.0667,
+    1.4333
    ]
   },
   {
@@ -181,10 +215,9 @@
    "unidade": "%",
    "ref": "2026-09",
    "situacao": "Normal",
-   "limite_de_alerta": -16.0004,
    "faixa_normal": [
-    -1.9116,
-    15.2254
+    -4.1969,
+    13.7214
    ]
   }
  ],
@@ -201,7 +234,7 @@
  },
  "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-29T1339.json",
  "post_do_dia": {
-  "titulo": "Risco de recessão começa no normal, com a atividade em alerta",
+  "titulo": "Bolsa cai 13,88% após eleição, e risco de recessão fica no normal",
   "url": "https://vaidarcrise.com.br/2026-10-29/",
   "escrito_por_llm": true
  }

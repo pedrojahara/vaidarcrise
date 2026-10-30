@@ -70,6 +70,12 @@ a:hover{text-decoration-thickness:2px}
 .escala li.aqui::before{background:var(--tinta)}
 .escala.grande{font-size:14px;gap:4px}
 .escala.grande li::before{height:12px}
+.cenarios{list-style:none;padding:12px 14px;margin:16px 0 0;background:var(--maquina);border-radius:6px;font:15px/1.4 var(--sistema);display:grid;gap:8px}
+.cenarios li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:baseline}
+.cenarios li > :last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.cenarios b{font-size:17px;color:var(--sobe)}
+.cenarios .ref{color:var(--meta);font-size:14px}
+.cenarios .cab-cen{display:block;font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em}
 .tend-noticias{font:15px/1.45 var(--sistema);margin:14px 0 0}
 .tend-noticias b{font-size:1.1em;margin-right:3px}
 .nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:8px 0 0}
@@ -149,9 +155,17 @@ a:hover{text-decoration-thickness:2px}
 <section class="nota" aria-label="O risco de hoje">
   <div class="topo">
     <div class="placa" role="img" aria-label="Risco normal"><span>Normal</span></div>
-    <p class="leitura"><span class="rot">risco normal</span><span class="sub">risco de recessão nos próximos 12 meses</span></p>
+    <p class="leitura"><span class="rot">risco normal</span><span class="sub">de recessão nos próximos 12 meses</span></p>
   </div>
   <ol class="escala" aria-label="Escala de cinco níveis de risco"><li><span>Muito abaixo</span></li><li><span>Abaixo</span></li><li class="aqui" aria-current="true"><span>Normal</span></li><li><span>Acima</span></li><li><span>Muito acima</span></li></ol>
+  
+  <ul class="cenarios" aria-label="PIB nos próximos 12 meses">
+    <li class="cab-cen">PIB nos próximos 12 meses</li>
+    <li class="ref"><span>Mais provável, segundo o Focus</span><span>+1,4%</span></li>
+    <li class="pior"><span>Cenário ruim: 1 chance em 10 de ser pior</span><b>−1,8%</b></li>
+    <li class="ref"><span>O mesmo cenário em tempos normais</span><span>−1,9%</span></li>
+  </ul>
+  
   
   
   <p class="tend-noticias"><b class="igual" aria-hidden="true">→</b>  <a href="/resumo/">Ver o resumo</a></p>
@@ -194,7 +208,7 @@ a:hover{text-decoration-thickness:2px}
   
   <div class="bloco">
     <h3>Sobre</h3>
-    <p>Os números vêm do Banco Central (SGS e Focus), do IBGE (PIB e PNAD Contínua), do Tesouro Direto e do FMI.</p>
+    <p>Os números vêm do Banco Central (SGS e Focus), do IBGE (PIB e PNAD Contínua), do Tesouro Direto, do FMI e da OCDE (44 países).</p>
     <p>As notícias vêm de 8 jornais: Folha, Valor, Estadão, g1, InfoMoney, Poder360, Agência Brasil e Gazeta do Povo. Às 06h30, um modelo de linguagem lê as manchetes do dia anterior e escreve o post do dia.</p>
   </div>
 </aside>
@@ -202,7 +216,7 @@ a:hover{text-decoration-thickness:2px}
 
 
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mostra se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal da história brasileira desde 2002. O nível sai só de dados. As notícias mostram a tendência e não mexem no nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
+  <p>O Vai dar crise? mostra se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal. O nível sai do cenário ruim do PIB, estimado com dados de 44 países e comparado ao Brasil desde 2004. As notícias mostram a tendência e não mexem no nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
   <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Abra uma issue</a></p>
 </div></footer>
 </body>
