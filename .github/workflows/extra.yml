@@ -1,0 +1,31 @@
+name: extra
+# Estudo: câmbio e bolsa da OCDE e teste das séries novas do Banco Central e da bolsa.
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/project-thread-a3loy5]
+    paths: [pesquisa/baixar_extra.py, .github/workflows/extra.yml]
+permissions:
+  contents: write
+jobs:
+  baixar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests==2.32.3
+      - run: timeout 1200 python pesquisa/baixar_extra.py || true
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pesquisa/dados
+          git commit -m "Estudo: câmbio, bolsa e séries novas do Banco Central" || exit 0
+          for i in 1 2 3 4 5 6; do
+            git pull --rebase origin ${GITHUB_REF_NAME} && git push origin HEAD:${GITHUB_REF_NAME} && exit 0
+            sleep $((RANDOM % 20 + 5))
+          done
+          exit 1
