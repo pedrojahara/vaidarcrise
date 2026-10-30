@@ -2,8 +2,8 @@
  "id": "2026-10-29T1339",
  "gerado_em": "2026-10-29T13:39:44-03:00",
  "regras": {
-  "config_sha256": "9428653c780b850e72da44d24dc3da9c3cd544d4fac6f9e349debc44ebde6f98",
-  "calibracao_sha256": "db84e3fb497e4faa833d0788ea7d2860abe3c81c5a85fc120baafac7a6c32cce"
+  "config_sha256": "5f411f23c731f61b39eb16bf9f557a08da10d2b18fad1fb371ab390a94c147a9",
+  "calibracao_sha256": "6d12213cb123afd001a3f90ce65dd0530696063f7072d891dc19da878432bb35"
  },
  "insumos": {
   "indicadores_coletados_em": "2026-10-29T16:00:13+00:00",
@@ -259,8 +259,100 @@
    "bruto": 2,
    "nome_bruto": "Normal"
   },
-  "composto": 0.05281136168652738,
-  "chance_relativa": 0.9259651730617241,
+  "gar": {
+   "entradas": [
+    {
+     "id": "tendencia",
+     "fator": "atividade",
+     "nome": "Crescimento médio em 10 anos",
+     "unidade": "%",
+     "valor": 1.7328366710913756,
+     "ref": "2T2026",
+     "referencia": 2.4697807384106563,
+     "coef": -0.20407155569770025,
+     "faixa_normal": [
+      1.2052,
+      3.3021
+     ],
+     "escala": [
+      0.3054,
+      3.9289
+     ],
+     "efeito": 0.15038932228003635
+    },
+    {
+     "id": "crescimento",
+     "fator": "atividade",
+     "nome": "Crescimento em 12 meses",
+     "unidade": "%",
+     "valor": 1.3821346612817385,
+     "ref": "2026-08",
+     "referencia": 2.029441313073013,
+     "coef": 0.2281557601628648,
+     "faixa_normal": [
+      0.4274,
+      4.1388
+     ],
+     "escala": [
+      -6.2893,
+      9.267
+     ],
+     "efeito": -0.14768674119791708
+    },
+    {
+     "id": "juro",
+     "fator": "juro",
+     "nome": "Selic: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -1.25,
+     "ref": "2026-10-29",
+     "nivel": 13.75,
+     "antes": 15.0,
+     "referencia": -0.375,
+     "coef": -0.1473323685958321,
+     "faixa_normal": [
+      -3.0,
+      2.0
+     ],
+     "escala": [
+      -6.31,
+      8.655
+     ],
+     "efeito": 0.12891582252135309
+    },
+    {
+     "id": "inflacao",
+     "fator": "juro",
+     "nome": "Inflação: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -0.5899999999999999,
+     "ref": "2026-09",
+     "nivel": 4.58,
+     "antes": 5.17,
+     "referencia": -0.06499999999999995,
+     "coef": -0.12500236363708112,
+     "faixa_normal": [
+      -1.665,
+      1.3725
+     ],
+     "escala": [
+      -8.2538,
+      6.2048
+     ],
+     "efeito": 0.06562624090946757
+    }
+   ],
+   "ruim": -0.49423883953664693,
+   "cenario_ruim": -1.7876180427753297,
+   "cenario_normal": -1.8914573730774542,
+   "cortes": [
+    -2.253090277294695,
+    -1.094150109523146,
+    -0.07323292299512922,
+    0.7382055828202851
+   ],
+   "ref_pib": "2T2026"
+  },
   "indicadores": [
    {
     "id": "ibcbr",
@@ -269,26 +361,17 @@
     "unidade": "%",
     "definicao": "IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores.",
     "direcao": -1,
-    "peso": 3.809524,
-    "limite": -0.9958,
     "faixa_normal": [
-     0.17389593411978876,
-     1.5540157157443613
+     -0.178879,
+     1.409462
     ],
     "escala": [
-     -1.8905237539573132,
-     3.858615649410845
+     -3.422733,
+     3.418644
     ],
-    "nsr": 0.2625,
-    "episodios_avisados": 3,
-    "episodios_na_amostra": 3,
-    "motivo": null,
-    "forca": "Forte",
     "valor": -0.6424554746393363,
     "ref": "2026-08",
-    "sinal": 0,
-    "situacao": "pior",
-    "parte": 0.0
+    "situacao": "pior"
    },
    {
     "id": "focus_pib",
@@ -297,28 +380,19 @@
     "unidade": "%",
     "definicao": "Crescimento do PIB esperado para os próximos 12 meses: mediana do Focus para o ano corrente e o seguinte, ponderada pelos meses que faltam em cada um.",
     "direcao": -1,
-    "peso": 1.837798,
-    "limite": 1.937083,
     "faixa_normal": [
-     1.9370833333333333,
-     3.5512499999999996
+     1.617708,
+     3.499375
     ],
     "escala": [
-     0.48466666666666663,
-     5.338666666666667
+     -2.139717,
+     5.282417
     ],
-    "nsr": 0.54413,
-    "episodios_avisados": 4,
-    "episodios_na_amostra": 4,
-    "motivo": null,
-    "forca": "Moderada",
     "valor": 1.3954166666666667,
     "ref": "2026-10-23",
     "ano": 1.8,
     "ano_seguinte": 1.3145,
-    "sinal": 1,
-    "situacao": "alerta",
-    "parte": 0.0312007415930989
+    "situacao": "pior"
    },
    {
     "id": "juro_real",
@@ -327,29 +401,20 @@
     "unidade": "% ao ano",
     "definicao": "Selic meta (BCB 432) descontada da inflação esperada para 12 meses (Focus, suavizada): (1 + Selic) / (1 + inflação esperada) − 1.",
     "direcao": 1,
-    "peso": 0.0,
-    "limite": 8.293316,
     "faixa_normal": [
-     2.914348853017601,
-     8.830537388775817
+     4.062007,
+     9.133549
     ],
     "escala": [
-     -1.2748581669407275,
-     14.13649058544286
+     -1.195693,
+     14.660898
     ],
-    "nsr": 1.136095,
-    "episodios_avisados": 2,
-    "episodios_na_amostra": 4,
-    "motivo": "deu mais alarme falso que aviso certo",
-    "forca": "Não antecipou recessões",
     "valor": 8.816686692125785,
     "ref": "2026-10-29",
     "selic": 13.75,
     "inflacao_esperada": 4.5336,
     "focus_data": "2026-10-23",
-    "sinal": 0,
-    "situacao": "normal",
-    "parte": 0.0
+    "situacao": "normal"
    },
    {
     "id": "comprometimento",
@@ -358,27 +423,18 @@
     "unidade": "p.p.",
     "definicao": "Comprometimento de renda das famílias com dívidas, dessazonalizado (BCB 29034), menos a média dos 36 meses anteriores.",
     "direcao": 1,
-    "peso": 0.0,
-    "limite": null,
     "faixa_normal": [
-     -0.5638888888888882,
-     1.8826388888888896
+     -0.268333,
+     1.686944
     ],
     "escala": [
-     -2.2143333333333333,
-     3.7749444444444458
+     -1.879444,
+     3.762167
     ],
-    "nsr": null,
-    "episodios_avisados": null,
-    "episodios_na_amostra": 3,
-    "motivo": "não avisou pelo menos 2 recessões",
-    "forca": "Não antecipou recessões",
     "valor": 1.8797222222222203,
     "ref": "2026-08",
     "nivel": 28.99,
-    "sinal": 0,
-    "situacao": "normal",
-    "parte": 0.0
+    "situacao": "pior"
    },
    {
     "id": "tesouro",
@@ -387,29 +443,20 @@
     "unidade": "p.p.",
     "definicao": "Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (Tesouro Direto, venda pela manhã) menos a sua mediana nos 3 anos anteriores.",
     "direcao": 1,
-    "peso": 1.272917,
-    "limite": 0.473,
     "faixa_normal": [
-     -1.0200000000000005,
-     0.6499999999999999
+     -0.95,
+     0.845
     ],
     "escala": [
-     -2.2667999999999995,
-     2.1787999999999994
+     -2.2292,
+     2.1344
     ],
-    "nsr": 0.785597,
-    "episodios_avisados": 2,
-    "episodios_na_amostra": 3,
-    "motivo": null,
-    "forca": "Fraca",
     "valor": 0.5600000000000005,
     "ref": "2026-10-28",
     "nivel": 7.94,
     "mediana": 7.38,
     "vencimento": "2035-05-15",
-    "sinal": 1,
-    "situacao": "alerta",
-    "parte": 0.02161062009342848
+    "situacao": "normal"
    },
    {
     "id": "dolar",
@@ -418,27 +465,18 @@
     "unidade": "%",
     "definicao": "Variação do dólar PTAX (BCB 1) em 3 meses.",
     "direcao": 1,
-    "peso": 48.5,
-    "limite": 18.764558,
     "faixa_normal": [
-     -4.2166409418831785,
-     4.667190744916944
+     -4.151625,
+     5.11632
     ],
     "escala": [
-     -12.530521481369727,
-     27.446907840969114
+     -14.383365,
+     27.223675
     ],
-    "nsr": 0.020619,
-    "episodios_avisados": 3,
-    "episodios_na_amostra": 4,
-    "motivo": null,
-    "forca": "Forte",
     "valor": 4.382828223616064,
     "ref": "2026-10-28",
     "nivel": 5.342,
-    "sinal": 0,
-    "situacao": "normal",
-    "parte": 0.0
+    "situacao": "normal"
    },
    {
     "id": "divida",
@@ -447,27 +485,18 @@
     "unidade": "p.p. do PIB",
     "definicao": "Variação da dívida bruta do governo geral (BCB 13762) em 12 meses.",
     "direcao": 1,
-    "peso": 0.0,
-    "limite": null,
     "faixa_normal": [
-     -2.7249999999999943,
-     3.065000000000005
+     -1.74,
+     4.22
     ],
     "escala": [
-     -8.720799999999992,
-     11.288000000000013
+     -8.4312,
+     10.7912
     ],
-    "nsr": null,
-    "episodios_avisados": null,
-    "episodios_na_amostra": 3,
-    "motivo": "não avisou pelo menos 2 recessões",
-    "forca": "Não antecipou recessões",
     "valor": 5.560000000000002,
     "ref": "2026-08",
     "nivel": 82.87,
-    "sinal": 0,
-    "situacao": "pior",
-    "parte": 0.0
+    "situacao": "pior"
    },
    {
     "id": "sahm",
@@ -476,27 +505,18 @@
     "unidade": "p.p.",
     "definicao": "Média de 3 meses da desocupação da PNAD Contínua (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores.",
     "direcao": 1,
-    "peso": 0.0,
-    "limite": 0.633333,
     "faixa_normal": [
-     -0.1000000000000012,
-     0.6916666666666673
+     -0.066667,
+     1.433333
     ],
     "escala": [
-     -0.5333333333333332,
-     3.305999999999998
+     -0.526667,
+     3.126667
     ],
-    "nsr": 1.288889,
-    "episodios_avisados": 2,
-    "episodios_na_amostra": 2,
-    "motivo": "deu mais alarme falso que aviso certo",
-    "forca": "Não antecipou recessões",
     "valor": 0.09999999999999964,
     "ref": "2026-08",
     "nivel": 5.3,
-    "sinal": 0,
-    "situacao": "normal",
-    "parte": 0.0
+    "situacao": "normal"
    },
    {
     "id": "commodities",
@@ -505,27 +525,18 @@
     "unidade": "%",
     "definicao": "Variação em 6 meses do índice de preços de todas as commodities do FMI (FRED PALLFNFINDEXM).",
     "direcao": -1,
-    "peso": 3.482143,
-    "limite": -16.00042,
     "faixa_normal": [
-     -1.911626276268158,
-     15.22542221199711
+     -4.196915,
+     13.721388
     ],
     "escala": [
-     -24.20553904113642,
-     30.962338849784093
+     -28.018093,
+     30.645307
     ],
-    "nsr": 0.287179,
-    "episodios_avisados": 2,
-    "episodios_na_amostra": 4,
-    "motivo": null,
-    "forca": "Forte",
     "valor": 1.6727586354593926,
     "ref": "2026-09",
     "nivel": 222.4285486100514,
-    "sinal": 0,
-    "situacao": "normal",
-    "parte": 0.0
+    "situacao": "normal"
    }
   ],
   "fatores": [
@@ -536,15 +547,53 @@
      "ibcbr",
      "focus_pib"
     ],
-    "parte": 0.0312007415930989,
-    "peso_rotulo": "Pequeno",
-    "situacao": "alerta",
-    "situacao_nome": "Zona de alerta",
-    "forca": "Forte",
-    "avisou": [
-     3,
-     3
-    ]
+    "entradas": [
+     "tendencia",
+     "crescimento"
+    ],
+    "na_conta": true,
+    "efeito": 0.0027025810821192653,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "juro",
+    "nome": "Juro e inflação",
+    "indicadores": [
+     "juro_real"
+    ],
+    "entradas": [
+     "juro",
+     "inflacao"
+    ],
+    "na_conta": true,
+    "efeito": 0.19454206343082064,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   },
+   {
+    "id": "credito",
+    "nome": "Crédito e famílias",
+    "indicadores": [
+     "comprometimento"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "contas",
+    "nome": "Contas públicas",
+    "indicadores": [
+     "divida"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
    },
    {
     "id": "mercado",
@@ -553,54 +602,11 @@
      "tesouro",
      "dolar"
     ],
-    "parte": 0.02161062009342848,
-    "peso_rotulo": "Pequeno",
-    "situacao": "alerta",
-    "situacao_nome": "Zona de alerta",
-    "forca": "Forte",
-    "avisou": [
-     3,
-     4
-    ]
-   },
-   {
-    "id": "contas",
-    "nome": "Contas públicas",
-    "indicadores": [
-     "divida"
-    ],
-    "parte": 0.0,
-    "peso_rotulo": "Nenhum hoje",
-    "situacao": "pior",
-    "situacao_nome": "Pior que o normal",
-    "forca": "Não antecipou recessões",
-    "avisou": null
-   },
-   {
-    "id": "juro",
-    "nome": "Juro real e inflação",
-    "indicadores": [
-     "juro_real"
-    ],
-    "parte": 0.0,
-    "peso_rotulo": "Nenhum hoje",
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
     "situacao": "normal",
-    "situacao_nome": "Normal",
-    "forca": "Não antecipou recessões",
-    "avisou": null
-   },
-   {
-    "id": "credito",
-    "nome": "Crédito e famílias",
-    "indicadores": [
-     "comprometimento"
-    ],
-    "parte": 0.0,
-    "peso_rotulo": "Nenhum hoje",
-    "situacao": "normal",
-    "situacao_nome": "Normal",
-    "forca": "Não antecipou recessões",
-    "avisou": null
+    "situacao_nome": "Normal"
    },
    {
     "id": "emprego",
@@ -608,12 +614,11 @@
     "indicadores": [
      "sahm"
     ],
-    "parte": 0.0,
-    "peso_rotulo": "Nenhum hoje",
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
     "situacao": "normal",
-    "situacao_nome": "Normal",
-    "forca": "Não antecipou recessões",
-    "avisou": null
+    "situacao_nome": "Normal"
    },
    {
     "id": "externo",
@@ -621,23 +626,55 @@
     "indicadores": [
      "commodities"
     ],
-    "parte": 0.0,
-    "peso_rotulo": "Nenhum hoje",
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
     "situacao": "normal",
-    "situacao_nome": "Normal",
-    "forca": "Forte",
-    "avisou": [
-     2,
-     4
-    ]
+    "situacao_nome": "Normal"
    }
   ],
   "gatilhos": [
    {
-    "id": "dolar",
-    "limite": 18.764558,
-    "nivel": 4,
-    "nome_nivel": "Muito acima"
+    "id": "crescimento",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": -1.2472588265629843,
+    "hoje": 1.3821346612817385
+   },
+   {
+    "id": "juro",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": 2.8218226123968666,
+    "hoje": -1.25
+   },
+   {
+    "id": "inflacao",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": 4.209199411366487,
+    "hoje": -0.5899999999999999
+   },
+   {
+    "id": "crescimento",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": 3.2273912361803534,
+    "hoje": 1.3821346612817385
+   },
+   {
+    "id": "juro",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": -4.107524931920681,
+    "hoje": -1.25
+   },
+   {
+    "id": "inflacao",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": -3.957983646803852,
+    "hoje": -0.5899999999999999
    }
   ],
   "reaproveitados": [],
@@ -740,6 +777,10 @@
     ],
     "fatos": [
      {
+      "texto": "Crescimento de +1,4% em 12 meses (IBC-Br de jun. a ago. contra um ano antes); o normal desde 2004 vai de +0,4% a +4,1%.",
+      "fonte": "BC"
+     },
+     {
       "texto": "IBC-Br −0,6% no trimestre até agosto, contra os 3 meses anteriores, a maior queda desde ago/25.",
       "fonte": "BC"
      }
@@ -785,6 +826,10 @@
      "Dólar caro por mais tempo"
     ],
     "fatos": [
+     {
+      "texto": "IPCA de 4,58% em 12 meses até setembro, 0,59 ponto abaixo de um ano antes (5,17%).",
+      "fonte": "IBGE"
+     },
      {
       "texto": "Juro real em 8,8% ao ano: Selic de 13,75% menos a inflação esperada de 4,5%.",
       "fonte": "BC e Focus"

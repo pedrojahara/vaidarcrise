@@ -1,11 +1,19 @@
-{# O nível de hoje: a plaquinha, a escala de cinco níveis e para que lado as notícias empurram.
-   Fica num arquivo só para ser usado na página principal, no resumo e na conta. #}
+{# O nível de hoje: a plaquinha, a escala de cinco níveis, o PIB no cenário ruim e para que lado as
+   notícias empurram. Fica num arquivo só para ser usado na página principal, no resumo e na conta. #}
 <section class="nota" aria-label="O risco de hoje">
   <div class="topo">
     <div class="placa" role="img" aria-label="Risco {{ nivel.frase }}"><span{% if nivel.nome.startswith('Muito') %} class="dupla"{% endif %}>{{ nivel.placa|safe }}</span></div>
-    <p class="leitura"><span class="rot">{{ nivel.rot }}</span><span class="sub">risco de recessão nos próximos 12 meses</span></p>
+    <p class="leitura"><span class="rot">{{ nivel.rot }}</span><span class="sub">de recessão nos próximos 12 meses</span></p>
   </div>
   <ol class="escala{% if grande %} grande{% endif %}" aria-label="Escala de cinco níveis de risco">{% for n in nivel.nomes %}<li{% if loop.index0 == nivel.indice %} class="aqui" aria-current="true"{% endif %}><span>{{ n }}</span></li>{% endfor %}</ol>
+  {% if nivel.cenarios %}
+  <ul class="cenarios" aria-label="PIB nos próximos 12 meses">
+    <li class="cab-cen">PIB nos próximos 12 meses</li>
+    {% if nivel.cenarios.focus %}<li class="ref"><span>Mais provável, segundo o Focus</span><span>{{ nivel.cenarios.focus }}</span></li>{% endif %}
+    <li class="pior"><span>Cenário ruim: 1 chance em 10 de ser pior</span><b>{{ nivel.cenarios.ruim }}</b></li>
+    <li class="ref"><span>O mesmo cenário em tempos normais</span><span>{{ nivel.cenarios.normal }}</span></li>
+  </ul>
+  {% endif %}
   {% if nivel.pendente %}<p class="atual">A conta de hoje deu {{ nivel.pendente }}. O nível muda se a de amanhã repetir.</p>{% endif %}
   {% if not grande %}
   <p class="tend-noticias"><b class="{{ post.pressao.cls if post.pressao else 'igual' }}" aria-hidden="true">{{ post.pressao.simbolo if post.pressao else '→' }}</b> {{ post.pressao.frase if post.pressao else '' }} <a href="{{ link_resumo }}">Ver o resumo</a></p>

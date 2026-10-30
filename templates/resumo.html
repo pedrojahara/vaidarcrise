@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block titulo %}Resumo de {{ data_titulo }}: risco {{ nivel.frase }} | Vai dar crise?{% endblock %}
-{% block descricao %}O que pesa no risco de recessão no Brasil em {{ data_curta(dia) }}, fator a fator: o dado de hoje, a faixa normal, a tendência para os próximos 6 meses e o que outras instituições projetam.{% endblock %}
+{% block descricao %}O risco de recessão no Brasil em {{ data_curta(dia) }}, fator a fator: o que entra na conta, o dado de hoje contra o normal, a tendência para os próximos 6 meses e o que outras instituições projetam.{% endblock %}
 {% block estilo %}
 .resumo{padding-top:28px;padding-bottom:28px;font-family:var(--sistema)}
 .resumo-topo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px 48px;align-items:start;padding-bottom:26px;border-bottom:1px solid var(--fio)}
@@ -24,11 +24,12 @@
 .v-tend{font-weight:600}
 @media (max-width:620px){.visao-cab{display:none}.visao li{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.v-nome{grid-column:1/-1}}
 .chip{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 9px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
-.chip.alerta{color:var(--sobe)}.chip.atencao{color:var(--atencao)}.chip.normal{color:var(--meta)}
+.chip.atencao{color:var(--atencao)}.chip.normal{color:var(--meta)}
 .chip.semdado{color:var(--meta);border-style:dashed}
 .peso{display:inline-flex;align-items:center;gap:8px;font:14px/1.3 var(--sistema)}
 .barra{position:relative;display:inline-block;width:70px;height:10px;background:var(--fio);border-radius:2px;flex:none;overflow:hidden}
 .barra i{position:absolute;left:0;top:0;bottom:0;background:var(--sobe)}
+.peso.menos .barra i{background:var(--desce)}
 .peso.fora{color:var(--meta)}
 
 /* cartão de cada fator: à esquerda o dado, à direita a nossa leitura */
@@ -46,14 +47,13 @@
 .regua{margin:12px 0 10px}
 .regua figcaption{font:600 12.5px/1.3 var(--sistema);color:var(--meta);margin:0 0 4px}
 .trilho{position:relative;height:10px;background:var(--fio);border-radius:5px;margin-top:22px}
-.z-normal,.z-alerta{position:absolute;top:0;bottom:0}
-.z-normal{background:var(--normal-fundo)}.z-alerta{background:var(--alerta-fundo)}
+.z-normal{position:absolute;top:0;bottom:0;background:var(--normal-fundo)}
 .agulha{position:absolute;top:-5px;bottom:-5px;width:3px;margin-left:-1.5px;background:var(--tinta);border-radius:2px}
 .agulha b{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:3px;font:700 12.5px/1 var(--sistema);white-space:nowrap;font-variant-numeric:tabular-nums}
 .eixo{display:flex;justify-content:space-between;gap:8px;font:12px/1.3 var(--sistema);color:var(--meta);margin-top:6px;font-variant-numeric:tabular-nums}
 .eixo span:nth-child(2){display:inline-flex;align-items:center;gap:4px}
 .sw{display:inline-block;width:12px;height:8px;border-radius:2px}
-.sw-normal{background:var(--normal-fundo)}.sw-alerta{background:var(--alerta-fundo);margin-left:6px}
+.sw-normal{background:var(--normal-fundo)}
 .ficha{margin:8px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px;border-top:1px solid var(--fio);padding-top:10px}
 .ficha div{min-width:0}
 .ficha .larga{grid-column:1/-1}
@@ -84,7 +84,7 @@
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 {% endblock %}
 {% block corpo %}
-{% macro barra(f) %}<span class="peso{% if not f.na_conta %} fora{% endif %}"><span class="barra" aria-hidden="true">{% if f.barra %}<i style="width:{{ f.barra }}%"></i>{% endif %}</span><span>{{ f.peso_rotulo }}</span></span>{% endmacro %}
+{% macro barra(f) %}<span class="peso{% if not f.na_conta %} fora{% endif %}{% if f.efeito_cls %} {{ f.efeito_cls }}{% endif %}"><span class="barra" aria-hidden="true">{% if f.barra %}<i style="width:{{ f.barra }}%"></i>{% endif %}</span><span>{{ f.efeito_rot }}</span></span>{% endmacro %}
 {% macro fonte(x) %}{% if x %}{% if x.url is defined and x.url %} <span class="f"><a href="{{ x.url }}" rel="nofollow noopener">{{ x.veiculo }}</a></span>{% elif x.veiculo is defined %} <span class="f">{{ x.veiculo }}</span>{% else %} <span class="f">{{ x }}</span>{% endif %}{% endif %}{% endmacro %}
 <main class="in resumo">
   <div class="resumo-topo">
@@ -98,8 +98,8 @@
     </div>
   </div>
 
-  <h2 class="secao-tit">Os fatores, do que mais pesa ao que menos pesa</h2>
-  <div class="visao-cab" aria-hidden="true"><span>Fator e valor de hoje</span><span>Situação</span><span>Peso no risco hoje</span><span>Tendência em 6 meses</span></div>
+  <h2 class="secao-tit">Os fatores, primeiro os que entram na conta</h2>
+  <div class="visao-cab" aria-hidden="true"><span>Fator e valor de hoje</span><span>Situação</span><span>Efeito no cenário ruim</span><span>Tendência em 6 meses</span></div>
   <ul class="visao">
     {% for f in fatores %}<li>
       <a class="v-nome" href="#{{ f.id }}">{{ f.nome }}<span>{{ f.hoje }}</span></a>
@@ -123,15 +123,14 @@
         <figure class="regua"><figcaption>{{ r.cap }}</figcaption>
           <div class="trilho" role="img" aria-label="{{ r.aria }}">
             <span class="z-normal" style="left:{{ r.normal[0] }}%;width:{{ r.normal[1] }}%"></span>
-            {% if r.alerta %}<span class="z-alerta" style="left:{{ r.alerta[0] }}%;width:{{ r.alerta[1] }}%"></span>{% endif %}
             <span class="agulha" style="left:{{ r.agulha }}%"><b>{{ r.rot }}</b></span>
           </div>
-          <div class="eixo"><span>{{ r.eixo[0] }}</span><span><i class="sw sw-normal"></i>normal{% if r.alerta %} <i class="sw sw-alerta"></i>alerta{% endif %}</span><span>{{ r.eixo[1] }}</span></div>
+          <div class="eixo"><span>{{ r.eixo[0] }}</span><span><i class="sw sw-normal"></i>normal</span><span>{{ r.eixo[1] }}</span></div>
         </figure>
         {% else %}<p class="sem-dado">Sem dado nesta atualização.</p>{% endfor %}
         <dl class="ficha">
-          <div><dt>Peso no risco hoje</dt><dd>{{ barra(f) }}</dd></div>
-          <div><dt>Histórico</dt><dd>{{ f.historico }}</dd></div>
+          <div><dt>Efeito no cenário ruim</dt><dd>{{ barra(f) }}</dd></div>
+          <div class="larga"><dt>Na conta do nível</dt><dd>{{ f.conta }}</dd></div>
           {% if f.como %}<div class="larga"><dt>Como afeta</dt><dd>{{ f.como }}</dd></div>{% endif %}
         </dl>
       </div>

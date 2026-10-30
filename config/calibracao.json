@@ -1,5 +1,5 @@
 {
- "calibrado_em": "2026-10-29T16:29:07+00:00",
+ "calibrado_em": "2026-10-30T02:05:15+00:00",
  "dados_de": "2026-10-29T16:00:13+00:00",
  "recessoes": [
   {
@@ -27,280 +27,248 @@
   "inicio": "2002-03",
   "fim": "2025-08",
   "meses": 243,
-  "meses_com_recessao_a_frente": 48,
-  "meses_na_regressao": 242
+  "meses_com_recessao_a_frente": 48
+ },
+ "gar": {
+  "painel": {
+   "paises": 44,
+   "trimestres": 4669,
+   "inicio": "1995Q4",
+   "fim": "2025Q3"
+  },
+  "coeficientes": {
+   "const": -0.7138750038798525,
+   "tendencia": -0.20407155569770025,
+   "crescimento": 0.2281557601628648,
+   "juro": -0.1473323685958321,
+   "inflacao": -0.12500236363708112
+  },
+  "ajuste": -1.3095501003436267,
+  "referencia": {
+   "tendencia": 2.4697807384106563,
+   "crescimento": 2.029441313073013,
+   "juro": -0.375,
+   "inflacao": -0.06499999999999995
+  },
+  "faixas": {
+   "tendencia": {
+    "faixa_normal": [
+     1.2052,
+     3.3021
+    ],
+    "escala": [
+     0.3054,
+     3.9289
+    ]
+   },
+   "crescimento": {
+    "faixa_normal": [
+     0.4274,
+     4.1388
+    ],
+    "escala": [
+     -6.2893,
+     9.267
+    ]
+   },
+   "juro": {
+    "faixa_normal": [
+     -3.0,
+     2.0
+    ],
+    "escala": [
+     -6.31,
+     8.655
+    ]
+   },
+   "inflacao": {
+    "faixa_normal": [
+     -1.665,
+     1.3725
+    ],
+    "escala": [
+     -8.2538,
+     6.2048
+    ]
+   }
+  },
+  "cortes": [
+   -2.253090277294695,
+   -1.094150109523146,
+   -0.07323292299512922,
+   0.7382055828202851
+  ],
+  "normal": -0.600024140013969,
+  "historico": {
+   "inicio": "2004-05",
+   "fim": "2026-10",
+   "meses": 270
+  },
+  "validacao": {
+   "painel_ganho_sobre_a_media_do_pais": 0.03,
+   "painel_cobertura_fora_da_amostra": 0.1512,
+   "painel_trimestres_fora_da_amostra": 3625,
+   "candidatas_ganho_fora_da_amostra": {
+    "bolsa": 0.0457,
+    "divida_publica": -0.0001,
+    "credito_acima_da_tendencia": 0.007,
+    "cambio_real_acima_da_media": -0.006,
+    "cambio_alta_12m": -0.0288,
+    "hiato_do_produto": -0.0273,
+    "curva_de_juros": -0.0479,
+    "juro_longo_subindo": 0.0034,
+    "desemprego_subindo": -0.0094
+   },
+   "brasil_meses_fora_da_amostra": 270,
+   "brasil_auc_recessao_a_frente": 0.5753,
+   "brasil_auc_nivel": 0.5957,
+   "brasil_meses_com_resposta": 220,
+   "brasil_cobertura_sem_ajuste": 0.1313,
+   "brasil_cobertura_com_ajuste": 0.0772,
+   "brasil_meses_com_pib_realizado": 259,
+   "acima_crescimento_medio_seguinte": 0.81,
+   "demais_crescimento_medio_seguinte": 2.8,
+   "acima_meses_com_recessao_a_frente": 0.25,
+   "demais_meses_com_recessao_a_frente": 0.1395,
+   "acima_pior_crescimento_seguinte": -6.06,
+   "demais_pior_crescimento_seguinte": -10.19
+  }
  },
  "indicadores": {
   "ibcbr": {
-   "meses": 228,
-   "episodios_na_amostra": 3,
+   "meses": 279,
    "amostra": [
-    "2003-09",
-    "2025-08"
+    "2003-08",
+    "2026-10"
    ],
    "faixa_normal": [
-    0.17389593411978876,
-    1.5540157157443613
+    -0.178879,
+    1.409462
    ],
    "escala": [
-    -1.8905237539573132,
-    3.858615649410845
-   ],
-   "percentil": 95,
-   "limite": -0.9958,
-   "nsr": 0.2625,
-   "episodios_avisados": 3,
-   "acertos": 5,
-   "falsos": 7,
-   "perdidos": 31,
-   "peso": 3.809524,
-   "motivo": null
+    -3.422733,
+    3.418644
+   ]
   },
   "focus_pib": {
-   "meses": 243,
-   "episodios_na_amostra": 4,
+   "meses": 298,
    "amostra": [
-    "2002-03",
-    "2025-08"
+    "2002-01",
+    "2026-10"
    ],
    "faixa_normal": [
-    1.9370833333333333,
-    3.5512499999999996
+    1.617708,
+    3.499375
    ],
    "escala": [
-    0.48466666666666663,
-    5.338666666666667
-   ],
-   "percentil": 75,
-   "limite": 1.937083,
-   "nsr": 0.54413,
-   "episodios_avisados": 4,
-   "acertos": 19,
-   "falsos": 42,
-   "perdidos": 29,
-   "peso": 1.837798,
-   "motivo": null
+    -2.139717,
+    5.282417
+   ]
   },
   "juro_real": {
-   "meses": 243,
-   "episodios_na_amostra": 4,
+   "meses": 298,
    "amostra": [
-    "2002-03",
-    "2025-08"
+    "2002-01",
+    "2026-10"
    ],
    "faixa_normal": [
-    2.914348853017601,
-    8.830537388775817
+    4.062007,
+    9.133549
    ],
    "escala": [
-    -1.2748581669407275,
-    14.13649058544286
-   ],
-   "percentil": 70,
-   "limite": 8.293316,
-   "nsr": 1.136095,
-   "episodios_avisados": 2,
-   "acertos": 13,
-   "falsos": 60,
-   "perdidos": 35,
-   "peso": 0.0,
-   "motivo": "deu mais alarme falso que aviso certo"
+    -1.195693,
+    14.660898
+   ]
   },
   "comprometimento": {
-   "meses": 171,
-   "episodios_na_amostra": 3,
+   "meses": 221,
    "amostra": [
     "2008-06",
-    "2025-08"
+    "2026-10"
    ],
    "faixa_normal": [
-    -0.5638888888888882,
-    1.8826388888888896
+    -0.268333,
+    1.686944
    ],
    "escala": [
-    -2.2143333333333333,
-    3.7749444444444458
-   ],
-   "peso": 0.0,
-   "motivo": "não avisou pelo menos 2 recessões"
+    -1.879444,
+    3.762167
+   ]
   },
   "tesouro": {
-   "meses": 177,
-   "episodios_na_amostra": 3,
+   "meses": 227,
    "amostra": [
     "2007-12",
-    "2025-08"
+    "2026-10"
    ],
    "faixa_normal": [
-    -1.0200000000000005,
-    0.6499999999999999
+    -0.95,
+    0.845
    ],
    "escala": [
-    -2.2667999999999995,
-    2.1787999999999994
-   ],
-   "percentil": 70,
-   "limite": 0.473,
-   "nsr": 0.785597,
-   "episodios_avisados": 2,
-   "acertos": 13,
-   "falsos": 40,
-   "perdidos": 23,
-   "peso": 1.272917,
-   "motivo": null
+    -2.2292,
+    2.1344
+   ]
   },
   "dolar": {
-   "meses": 242,
-   "episodios_na_amostra": 4,
+   "meses": 295,
    "amostra": [
     "2002-04",
-    "2025-08"
+    "2026-10"
    ],
    "faixa_normal": [
-    -4.2166409418831785,
-    4.667190744916944
+    -4.151625,
+    5.11632
    ],
    "escala": [
-    -12.530521481369727,
-    27.446907840969114
-   ],
-   "percentil": 95,
-   "limite": 18.764558,
-   "nsr": 0.020619,
-   "episodios_avisados": 3,
-   "acertos": 12,
-   "falsos": 1,
-   "perdidos": 36,
-   "peso": 48.5,
-   "motivo": null
+    -14.383365,
+    27.223675
+   ]
   },
   "divida": {
-   "meses": 175,
-   "episodios_na_amostra": 3,
+   "meses": 225,
    "amostra": [
     "2008-02",
-    "2025-08"
+    "2026-10"
    ],
    "faixa_normal": [
-    -2.7249999999999943,
-    3.065000000000005
+    -1.74,
+    4.22
    ],
    "escala": [
-    -8.720799999999992,
-    11.288000000000013
-   ],
-   "peso": 0.0,
-   "motivo": "não avisou pelo menos 2 recessões"
+    -8.4312,
+    10.7912
+   ]
   },
   "sahm": {
-   "meses": 114,
-   "episodios_na_amostra": 2,
+   "meses": 161,
    "amostra": [
     "2013-06",
-    "2025-08"
+    "2026-10"
    ],
    "faixa_normal": [
-    -0.1000000000000012,
-    0.6916666666666673
+    -0.066667,
+    1.433333
    ],
    "escala": [
-    -0.5333333333333332,
-    3.305999999999998
-   ],
-   "percentil": 70,
-   "limite": 0.633333,
-   "nsr": 1.288889,
-   "episodios_avisados": 2,
-   "acertos": 6,
-   "falsos": 29,
-   "perdidos": 18,
-   "peso": 0.0,
-   "motivo": "deu mais alarme falso que aviso certo"
+    -0.526667,
+    3.126667
+   ]
   },
   "commodities": {
-   "meses": 243,
-   "episodios_na_amostra": 4,
+   "meses": 298,
    "amostra": [
-    "2002-03",
-    "2025-08"
+    "2002-01",
+    "2026-10"
    ],
    "faixa_normal": [
-    -1.911626276268158,
-    15.22542221199711
+    -4.196915,
+    13.721388
    ],
    "escala": [
-    -24.20553904113642,
-    30.962338849784093
-   ],
-   "percentil": 95,
-   "limite": -16.00042,
-   "nsr": 0.287179,
-   "episodios_avisados": 2,
-   "acertos": 6,
-   "falsos": 7,
-   "perdidos": 42,
-   "peso": 3.482143,
-   "motivo": null
-  }
- },
- "regressao": {
-  "a": -1.7870094921644575,
-  "b": 5.141201376370759
- },
- "media": 0.19834710743801653,
- "k": 0.8,
- "validacao": {
-  "blocos": [
-   [
-    "2002-03",
-    "2004-12"
-   ],
-   [
-    "2005-01",
-    "2007-12"
-   ],
-   [
-    "2008-01",
-    "2010-12"
-   ],
-   [
-    "2011-01",
-    "2014-08"
-   ],
-   [
-    "2017-03",
-    "2020-05"
-   ],
-   [
-    "2020-09",
-    "2022-12"
-   ],
-   [
-    "2023-01",
-    "2025-08"
+    -28.018093,
+    30.645307
    ]
-  ],
-  "meses": 242,
-  "brier_por_k": {
-   "0": 0.170757,
-   "0.1": 0.168889,
-   "0.2": 0.166892,
-   "0.3": 0.164853,
-   "0.4": 0.162901,
-   "0.5": 0.16119,
-   "0.6": 0.159878,
-   "0.7": 0.159096,
-   "0.8": 0.158921,
-   "0.9": 0.159371,
-   "1": 0.160411
-  },
-  "brier_media": 0.170757,
-  "brier_escolhido": 0.158921,
-  "ganho_sobre_a_media": 0.0693,
-  "sem_o_maior_peso": {
-   "indicador": "dolar",
-   "k": 0,
-   "ganho_sobre_a_media": 0.0
   }
  },
  "placar": {

@@ -60,10 +60,14 @@ def ultima_rodada(antes_de: dt.date | None = None) -> dict | None:
 
 def guardados(ant: dict | None, hoje: dt.date) -> dict:
     """Valores da rodada anterior que podem cobrir uma falha de coleta: até 10 dias para dado diário,
-    70 para mensal (a data de referência é que conta)."""
+    70 para mensal (a data de referência é que conta). As entradas da conta do nível vão com o prefixo
+    'entrada:' e a idade delas é conferida em model.calcular."""
     if not ant:
         return {}
     out = {}
+    for x in (ant["resultado"].get("gar") or {}).get("entradas", []):
+        if not x.get("reaproveitado"):
+            out["entrada:" + x["id"]] = {k: v for k, v in x.items() if k in ("valor", "ref", "nivel", "antes")}
     for x in ant["resultado"]["indicadores"]:
         if x.get("valor") is None or x.get("reaproveitado"):
             continue
@@ -147,7 +151,7 @@ def main() -> dict | None:
     nivel_ant = ref["resultado"]["nivel"]["indice"] if ref else None
     bruto_ant = ref["resultado"]["nivel"].get("bruto") if ref else None
     res = model.calcular(snap, cfg, cal, nivel_ant, guardados(ant, hoje), bruto_ant)
-    print(f"nível: {res['nivel']['nome']} (composto {res['composto']:.3f}; antes: "
+    print(f"nível: {res['nivel']['nome']} (cenário ruim {res['gar']['cenario_ruim']:+.2f}%; antes: "
           f"{cfg['niveis']['nomes'][nivel_ant] if nivel_ant is not None else '-'}) | faltando: {res['faltando']} "
           f"| reaproveitados: {res['reaproveitados']}")
 

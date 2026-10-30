@@ -27,6 +27,7 @@ SGS = {
     "divida_bruta": (13762, "Dívida bruta do governo geral (% do PIB)"),
     "primario_12m": (5793, "Resultado primário do setor público, 12 meses (% do PIB, + = déficit)"),
     "dolar_ptax": (1, "Dólar PTAX venda (R$)"),
+    "ipca_12m": (13522, "IPCA acumulado em 12 meses (%)"),
 }
 OLINDA = "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata"
 # Taxas do Tesouro Direto, todos os títulos, desde 2002 (Tesouro Transparente). Sai em D-1.

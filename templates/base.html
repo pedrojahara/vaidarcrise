@@ -70,6 +70,12 @@ a:hover{text-decoration-thickness:2px}
 .escala li.aqui::before{background:var(--tinta)}
 .escala.grande{font-size:14px;gap:4px}
 .escala.grande li::before{height:12px}
+.cenarios{list-style:none;padding:12px 14px;margin:16px 0 0;background:var(--maquina);border-radius:6px;font:15px/1.4 var(--sistema);display:grid;gap:8px}
+.cenarios li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:baseline}
+.cenarios li > :last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.cenarios b{font-size:17px;color:var(--sobe)}
+.cenarios .ref{color:var(--meta);font-size:14px}
+.cenarios .cab-cen{display:block;font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em}
 .tend-noticias{font:15px/1.45 var(--sistema);margin:14px 0 0}
 .tend-noticias b{font-size:1.1em;margin-right:3px}
 .nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:8px 0 0}
@@ -106,7 +112,7 @@ a:hover{text-decoration-thickness:2px}
 </div></div></header>
 {% block corpo %}{% endblock %}
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mostra se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal da história brasileira desde 2002. O nível sai só de dados. As notícias mostram a tendência e não mexem no nível. <a href="{{ link_nota or '/nota/' }}">Como a conta funciona</a>. Não é recomendação de investimento.</p>
+  <p>O Vai dar crise? mostra se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal. O nível sai do cenário ruim do PIB, estimado com dados de 44 países e comparado ao Brasil desde 2004. As notícias mostram a tendência e não mexem no nível. <a href="{{ link_nota or '/nota/' }}">Como a conta funciona</a>. Não é recomendação de investimento.</p>
   <p><a href="{{ repo }}">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="{{ repo }}/issues">Achou um erro? Abra uma issue</a></p>
 </div></footer>
 </body>
