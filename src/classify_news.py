@@ -110,11 +110,11 @@ Revisões das leituras (lista revisoes; quase sempre vazia ou curta):
 16. Nos tipos que não usam tendencia ou posicao, devolva null nesses campos. Cada revisão cita as manchetes que a sustentam (noticia_ids).
 
 Como escrever (titulo_evento, porque e textos das revisões):
-17. Escreva como a redação de um jornal de economia brasileiro: frase curta, voz ativa, verbo concreto, número quando a manchete tiver.
+17. O leitor é um brasileiro adulto que gosta de política, não estudou economia e lê pelo celular. Palavra de conversa, frase curta, voz ativa, verbo concreto, número quando a manchete tiver. Sem jargão: em vez de política monetária, fiscal, interanual, commodities ou pontos-base, diga juro, contas do governo, contra um ano antes, produtos como soja e petróleo, pontos. Inflação menor é "preços sobem mais devagar", não "inflação cai".
 18. Instituições e empresas vão pelo nome (Copom, Fazenda, Bradesco, CNI, Petrobras, Fed). Pessoas e partidos não: use o cargo ou a instituição. Sem adjetivos de juízo, e o mesmo critério para fatos que agradam a qualquer lado. Fatos e números, nunca intenções atribuídas a alguém.
 19. titulo_evento: até 80 caracteres, sem ponto e vírgula. Diga o fato, não a conclusão ("Copom mantém a Selic em 15%", não "Copom sinaliza cautela").
 20. porque: até 240 caracteres, uma ou duas frases sobre o efeito na atividade. Não comece com "Aumenta" nem "Reduz", não use "pelo canal" e não force precedente histórico. Varie as aberturas entre os eventos.
-21. Não use travessão, "vale destacar", "é importante", "além disso", "nesse sentido", "em suma", "crucial", "robusto", "desafiador" nem a construção "não só X, mas Y". Não invente números que não estejam nas manchetes.
+21. Não use travessão, "vale destacar", "é importante", "além disso", "nesse sentido", "em suma", "crucial", "robusto", "desafiador" nem a construção "não só X, mas Y". Nada de palavra de alarme (despenca, explode, derrete, colapso, tombo) nem de palavra com lado (rombo, gastança, farra, herança maldita). Não invente números que não estejam nas manchetes.
 """
 
 
