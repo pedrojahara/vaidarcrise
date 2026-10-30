@@ -88,7 +88,7 @@ As entradas foram escolhidas fora da amostra no painel, pelo erro da regressão 
 | Câmbio (alta em 12 meses) | 2,9% maior |
 | Curva de juros | 4,8% maior |
 
-- **A bolsa ficou de fora pela coleta, não pelo teste.** A atualização automática ainda não tem uma fonte diária do Ibovespa testada. Entra quando tiver.
+- **A bolsa passou no painel, mas não no Brasil.** Com o retorno real do Ibovespa em 12 meses (B3) como quinta entrada, o erro fora da amostra no Brasil subiu 3,9%. Como a pergunta é sobre o Brasil, ficou de fora.
 - **Nível alto e parado não avisa.** Dívida, juro e inflação altos não somam à conta. O que avisa é o movimento: juro subindo, inflação acelerando.
 
 ## O teste fora da amostra
@@ -99,6 +99,7 @@ As entradas foram escolhidas fora da amostra no painel, pelo erro da regressão 
 | Medida | Resultado |
 | --- | --- |
 | Erro da conta contra usar só o crescimento médio do país (painel) | 3% menor |
+| Erro da conta contra usar só o crescimento médio do país (Brasil, 259 meses) | 20% menor |
 | Resultados abaixo do cenário ruim, sem ajuste (painel) | 15% |
 | Resultados abaixo do cenário ruim, com ajuste (Brasil, 259 meses) | 8% |
 | PIB médio nos 12 meses seguintes, meses em Acima ou Muito acima (Brasil) | +0,8% |
@@ -108,7 +109,7 @@ As entradas foram escolhidas fora da amostra no painel, pelo erro da regressão 
 
 O que isso quer dizer, sem enfeite:
 
-- **O ganho é modesto.** A conta separa bem anos de crescimento fraco de anos de crescimento forte, mas não acerta a data em que cada recessão começa: nos 44 países, nesse ponto, não faz melhor que o acaso.
+- **O ganho é modesto.** A conta separa anos de crescimento fraco de anos de crescimento forte, mas não acerta a data em que cada recessão começa: nos 44 países, nesse ponto, não faz melhor que o acaso.
 - **Choques de fora não aparecem antes.** Em 2008 e em 2020, o nível estava entre Abaixo e Normal antes da recessão.
 - **A recessão de 2014, feita em casa, apareceu, mas cedo.** O nível ficou em Acima de meados de 2011 em diante.
 - **Quatro recessões no Brasil é pouco.** Por isso a conta vem do painel; o Brasil só define o que é normal aqui.
@@ -164,7 +165,6 @@ Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em 
 
 ## O que ainda falta
 
-- Pôr a bolsa na conta, com uma coleta diária do Ibovespa testada.
 - Testar o preço das commodities, que o painel de países não tem.
 - Refazer o teste com os dados como eram divulgados na época (com revisões).
 - Teste de troca de nomes: reprocessar uma amostra de notícias trocando os atores e publicar se a classificação mudou.
@@ -182,6 +182,7 @@ Achou um? [Abra uma issue](https://github.com/pedrojahara/vaidarcrise/issues).
 - FMI (2017), *Financial conditions and growth at risk*, Global Financial Stability Report, outubro, capítulo 3
 - Koenker e Bassett (1978), *Regression quantiles*, Econometrica
 - [OCDE: PIB trimestral, juros e preços ao consumidor](https://data-explorer.oecd.org/)
+- [B3: estatísticas do Ibovespa](https://www.b3.com.br/pt_br/market-data-e-indices/indices/indices-amplos/ibovespa.htm), para o teste da bolsa
 - Sahm (2019), *Direct stimulus payments to individuals*, Brookings, sobre a regra de Sahm
 - [Datação dos ciclos econômicos brasileiros, CODACE/FGV IBRE](https://portalibre.fgv.br/codace)
 - [Banco Central: séries temporais (SGS)](https://www3.bcb.gov.br/sgspub/) e [Focus](https://www.bcb.gov.br/publicacoes/focus)

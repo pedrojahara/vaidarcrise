@@ -230,13 +230,16 @@ def calibrar_gar(cfg: dict, series: dict, pib: dict[int, float], y: dict, meses:
     def pinball(u: np.ndarray) -> float:
         return float(np.mean(np.maximum(tau * u, (tau - 1) * u)))
 
-    oos, oos0, coef_ano = [], [], {}
+    oos, oos0, coef_ano, coef_ano0, coef_bolsa = [], [], {}, {}, {}
+    com_bolsa = treino_total.dropna(subset=["acoes_4t"])
     for ano in range(g["validacao_desde"], int(meses[-1][:4]) + 1):
         corte = (ano - 2) * 4 + 3  # até o 3º trimestre de dois anos antes
         tr = treino_total[treino_total.t < corte]
         c = ajustar(tr, tau)
         c0 = sm.QuantReg(tr.y4, sm.add_constant(tr[["media_pais"]])).fit(q=tau, max_iter=5000).params
-        coef_ano[ano] = c
+        coef_ano[ano], coef_ano0[ano] = c, c0
+        r5 = com_bolsa[com_bolsa.t < corte]
+        coef_bolsa[ano] = sm.QuantReg(r5.y4, sm.add_constant(r5[col + ["acoes_4t"]])).fit(q=tau, max_iter=5000).params
         te = treino_total[(treino_total.t >= ano * 4) & (treino_total.t < ano * 4 + 4)]
         if len(te):
             oos.append(te.y4.to_numpy() - prever(te, c))
@@ -284,6 +287,30 @@ def calibrar_gar(cfg: dict, series: dict, pib: dict[int, float], y: dict, meses:
         faixas[k] = {"faixa_normal": [round(percentil(vals, p), 4) for p in cfg["faixa_normal_percentis"]],
                      "escala": [round(percentil(vals, 2), 4), round(percentil(vals, 98), 4)]}
 
+    # No Brasil, fora da amostra: a conta contra só a média do país, e com a bolsa como quinta entrada
+    # (retorno real do Ibovespa em 12 meses: média dos 3 últimos meses, menos o IPCA de 12 meses).
+    ibov = {x["data"][:7]: x["valor"] for x in series.get("ibovespa", [])}
+    ipca = {x["data"][:7]: x["valor"] for x in series.get("ipca_12m", [])}
+
+    def bolsa(m: str) -> float | None:
+        n = mes_num(m)
+        meses_ = [(num_mes(n - k), num_mes(n - k - 12)) for k in range(3)]
+        if not all(a in ibov and b in ibov for a, b in meses_) or num_mes(n - 1) not in ipca:
+            return None
+        return sum(100 * (ibov[a] / ibov[b] - 1) for a, b in meses_) / 3 - ipca[num_mes(n - 1)]
+
+    b4, b0, b5 = [], [], []
+    for m, v in fora.items():
+        r, a, h = hist[m]["realizado"], int(m[:4]), hist[m]["entradas"]
+        b = bolsa(m)
+        if r is None or b is None:
+            continue
+        c0, c5 = coef_ano0[a], coef_bolsa[a]
+        b4.append(r - v)
+        b0.append(r - (c0["const"] + c0["media_pais"] * h["tendencia"]))
+        b5.append(r - (c5["const"] + sum(c5[gar.NO_PAINEL[k]] * h[k] for k in gar.ENTRADAS) + c5["acoes_4t"] * b))
+    b4, b0, b5 = np.array(b4), np.array(b0), np.array(b5)
+
     # O nível fora da amostra: o cenário ruim de cada mês com coeficientes que não viram o ano dele,
     # nos cortes da própria série fora da amostra.
     vals = list(fora.values())
@@ -300,6 +327,8 @@ def calibrar_gar(cfg: dict, series: dict, pib: dict[int, float], y: dict, meses:
         "painel_cobertura_fora_da_amostra": round(float(np.mean(u < 0)), 4),
         "painel_trimestres_fora_da_amostra": int(len(u)),
         "candidatas_ganho_fora_da_amostra": candidatas,
+        "brasil_ganho_sobre_a_media_do_pais": round(1 - pinball(b4) / pinball(b0), 4),
+        "brasil_bolsa_ganho_fora_da_amostra": round(1 - pinball(b5) / pinball(b4), 4),
         "brasil_meses_fora_da_amostra": len(fora),
         "brasil_auc_recessao_a_frente": round(auc([(-fora[m], yy) for m, yy in com_y]), 4),
         "brasil_auc_nivel": round(auc([(nivel_fora[m], yy) for m, yy in com_y]), 4),
