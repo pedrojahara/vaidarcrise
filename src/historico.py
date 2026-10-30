@@ -128,6 +128,23 @@ def pib_desde_1996() -> list[dict]:
             if v not in ("...", "-", "", None, "X")]
 
 
+def ibovespa_b3() -> list[dict]:
+    """Ibovespa: média do fechamento diário em cada mês, das estatísticas do índice na B3 (um ano por consulta).
+    Só para a calibração, que testa a bolsa como entrada da conta; a atualização diária não usa."""
+    import base64
+    url = "https://sistemaswebb3-listados.b3.com.br/indexStatisticsProxy/IndexCall/GetPortfolioDay/"
+    por_mes: dict[str, list[float]] = {}
+    for ano in range(INICIO.year, dt.date.today().year + 1):
+        q = base64.b64encode(json.dumps({"language": "pt-br", "index": "IBOV", "year": str(ano)}).encode()).decode()
+        for linha in com_paciencia(lambda q=q: fetch_data._get(url + q).json())["results"]:
+            for m in range(1, 13):
+                v = linha.get(f"rateValue{m}")
+                if v:
+                    por_mes.setdefault(f"{ano}-{m:02d}", []).append(float(v.replace(".", "").replace(",", ".")))
+        time.sleep(1)
+    return [{"data": k + "-01", "valor": sum(v) / len(v), "dias": len(v)} for k, v in sorted(por_mes.items())]
+
+
 def fred(serie: str) -> list[dict]:
     r = fetch_data._get(FRED.format(id=serie))
     linhas = r.text.strip().splitlines()[1:]
@@ -167,6 +184,7 @@ def main() -> None:
     tenta("pib", pib_desde_1996)
     for nome, sid in FRED_SERIES.items():
         tenta(nome, lambda sid=sid: fred(sid))
+    tenta("ibovespa", ibovespa_b3)
 
     SAIDA.parent.mkdir(parents=True, exist_ok=True)
     SAIDA.write_text(json.dumps(res, ensure_ascii=False, separators=(",", ":")))

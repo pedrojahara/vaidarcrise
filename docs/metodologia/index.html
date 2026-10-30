@@ -320,7 +320,7 @@ a:hover{text-decoration-thickness:2px}
 </tbody>
 </table>
 <ul>
-<li><strong>A bolsa ficou de fora pela coleta, não pelo teste.</strong> A atualização automática ainda não tem uma fonte diária do Ibovespa testada. Entra quando tiver.</li>
+<li><strong>A bolsa passou no painel, mas não no Brasil.</strong> Com o retorno real do Ibovespa em 12 meses (B3) como quinta entrada, o erro fora da amostra no Brasil subiu 3,9%. Como a pergunta é sobre o Brasil, ficou de fora.</li>
 <li><strong>Nível alto e parado não avisa.</strong> Dívida, juro e inflação altos não somam à conta. O que avisa é o movimento: juro subindo, inflação acelerando.</li>
 </ul>
 <h2 id="o-teste-fora-da-amostra">O teste fora da amostra</h2>
@@ -339,6 +339,10 @@ a:hover{text-decoration-thickness:2px}
 <tr>
 <td>Erro da conta contra usar só o crescimento médio do país (painel)</td>
 <td>3% menor</td>
+</tr>
+<tr>
+<td>Erro da conta contra usar só o crescimento médio do país (Brasil, 259 meses)</td>
+<td>20% menor</td>
 </tr>
 <tr>
 <td>Resultados abaixo do cenário ruim, sem ajuste (painel)</td>
@@ -368,7 +372,7 @@ a:hover{text-decoration-thickness:2px}
 </table>
 <p>O que isso quer dizer, sem enfeite:</p>
 <ul>
-<li><strong>O ganho é modesto.</strong> A conta separa bem anos de crescimento fraco de anos de crescimento forte, mas não acerta a data em que cada recessão começa: nos 44 países, nesse ponto, não faz melhor que o acaso.</li>
+<li><strong>O ganho é modesto.</strong> A conta separa anos de crescimento fraco de anos de crescimento forte, mas não acerta a data em que cada recessão começa: nos 44 países, nesse ponto, não faz melhor que o acaso.</li>
 <li><strong>Choques de fora não aparecem antes.</strong> Em 2008 e em 2020, o nível estava entre Abaixo e Normal antes da recessão.</li>
 <li><strong>A recessão de 2014, feita em casa, apareceu, mas cedo.</strong> O nível ficou em Acima de meados de 2011 em diante.</li>
 <li><strong>Quatro recessões no Brasil é pouco.</strong> Por isso a conta vem do painel; o Brasil só define o que é normal aqui.</li>
@@ -454,7 +458,6 @@ a:hover{text-decoration-thickness:2px}
 </ul>
 <h2 id="o-que-ainda-falta">O que ainda falta</h2>
 <ul>
-<li>Pôr a bolsa na conta, com uma coleta diária do Ibovespa testada.</li>
 <li>Testar o preço das commodities, que o painel de países não tem.</li>
 <li>Refazer o teste com os dados como eram divulgados na época (com revisões).</li>
 <li>Teste de troca de nomes: reprocessar uma amostra de notícias trocando os atores e publicar se a classificação mudou.</li>
@@ -469,6 +472,7 @@ a:hover{text-decoration-thickness:2px}
 <li>FMI (2017), <em>Financial conditions and growth at risk</em>, Global Financial Stability Report, outubro, capítulo 3</li>
 <li>Koenker e Bassett (1978), <em>Regression quantiles</em>, Econometrica</li>
 <li><a href="https://data-explorer.oecd.org/">OCDE: PIB trimestral, juros e preços ao consumidor</a></li>
+<li><a href="https://www.b3.com.br/pt_br/market-data-e-indices/indices/indices-amplos/ibovespa.htm">B3: estatísticas do Ibovespa</a>, para o teste da bolsa</li>
 <li>Sahm (2019), <em>Direct stimulus payments to individuals</em>, Brookings, sobre a regra de Sahm</li>
 <li><a href="https://portalibre.fgv.br/codace">Datação dos ciclos econômicos brasileiros, CODACE/FGV IBRE</a></li>
 <li><a href="https://www3.bcb.gov.br/sgspub/">Banco Central: séries temporais (SGS)</a> e <a href="https://www.bcb.gov.br/publicacoes/focus">Focus</a></li>
