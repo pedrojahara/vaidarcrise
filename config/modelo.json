@@ -24,7 +24,7 @@
    "crescimento": 2,
    "inflacao": 1
   },
-  "selecao": "Entradas escolhidas fora da amostra no painel: cada candidata foi somada às quatro e ficaria só se o erro fora da amostra caísse 1% ou mais (o resultado de cada uma está em calibracao.json, gar.validacao.candidatas_ganho_fora_da_amostra). A bolsa passou, mas fica de fora até haver uma fonte oficial e gratuita do Ibovespa dia a dia.",
+  "selecao": "Entradas escolhidas fora da amostra no painel: cada candidata foi somada às quatro e ficaria só se o erro fora da amostra caísse 1% ou mais (o resultado de cada uma está em calibracao.json, gar.validacao.candidatas_ganho_fora_da_amostra). A bolsa passou, mas fica de fora até haver coleta diária confiável do Ibovespa.",
   "validacao_desde": 2004,
   "validacao": "Cada ano, de 2004 em diante, é previsto com coeficientes estimados só com os trimestres cujo PIB 4 trimestres à frente já tinha saído no começo daquele ano.",
   "ajuste": "O cenário ruim mostrado soma à regressão o quantil 10% dos erros fora da amostra no painel, para que 1 em cada 10 resultados fique abaixo dele também fora da amostra.",
@@ -57,11 +57,11 @@
   "externo": "Cenário externo"
  },
  "fora_da_conta": {
-  "credito": "Fora da conta: no teste em 44 países, o crédito melhorou a previsão do PIB em menos de 1%.",
-  "mercado": "Fora da conta: no teste em 44 países, câmbio e juro longo não melhoraram a previsão do PIB de forma clara. A bolsa melhorou, mas falta uma fonte oficial do Ibovespa dia a dia.",
-  "contas": "Fora da conta: no teste em 44 países, a dívida pública não melhorou a previsão do PIB.",
-  "emprego": "Fora da conta: no teste em 44 países, o desemprego piorou a previsão do PIB.",
-  "externo": "Fora da conta: o preço das commodities não foi testado no painel de países."
+  "credito": "Não entra: no teste em 44 países, o crédito melhorou a previsão do PIB em menos de 1%.",
+  "mercado": "Não entra: no teste em 44 países, câmbio e juro longo não melhoraram a previsão do PIB de forma clara. A bolsa melhorou, mas ainda não há coleta diária confiável do Ibovespa.",
+  "contas": "Não entra: no teste em 44 países, a dívida pública não melhorou a previsão do PIB.",
+  "emprego": "Não entra: no teste em 44 países, o desemprego piorou a previsão do PIB.",
+  "externo": "Não entra: o preço das commodities não foi testado no painel de países."
  },
  "indicadores": {
   "ibcbr": {

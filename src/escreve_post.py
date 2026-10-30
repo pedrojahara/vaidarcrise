@@ -62,8 +62,8 @@ def _manchetes(fontes: list[dict], n: int = 3) -> str:
     return "; ".join(f"\"{f['titulo']}\" ({f['veiculo']})" for f in fontes[:n])
 
 
-def _br(x: float, d: int = 1) -> str:
-    return f"{x:+.{d}f}".replace(".", ",").replace("-", "−")
+def _br(x: float, d: int = 1, com_sinal: bool = True) -> str:
+    return f"{x:{'+' if com_sinal else ''}.{d}f}".replace(".", ",").replace("-", "−")
 
 
 def _gatilhos(res: dict) -> list[str]:
@@ -76,7 +76,7 @@ def _gatilhos(res: dict) -> list[str]:
             alvo = f"crescimento em 12 meses em {_br(g['valor'])}% (hoje {_br(e['valor'])}%)"
         else:
             nome = "Selic" if g["id"] == "juro" else "IPCA em 12 meses"
-            alvo = f"{nome} em {_br(e['antes'] + g['valor']).lstrip('+')}% (hoje {_br(e['nivel'], 2).lstrip('+')}%)"
+            alvo = f"{nome} em {_br(e['antes'] + g['valor'], 1, False)}% (hoje {_br(e['nivel'], 2, False)}%)"
         out.append(f"Mudaria o nível para {g['nome_nivel']}, com o resto parado: {alvo}.")
     return out
 
@@ -117,10 +117,11 @@ def dados_texto(rodada: dict, cfg: dict, datas: list[dict] | None = None, evento
     for e in g["entradas"]:
         detalhe = ""
         if e["id"] == "juro":
-            detalhe = f" (Selic de {_br(e['nivel'], 2)}%, contra {_br(e['antes'], 2)}% um ano antes)"
+            detalhe = f" (Selic de {_br(e['nivel'], 2, False)}%, contra {_br(e['antes'], 2, False)}% um ano antes)"
         elif e["id"] == "inflacao":
-            detalhe = f" (IPCA de {_br(e['nivel'], 2)}% em 12 meses, contra {_br(e['antes'], 2)}% um ano antes)"
-        l.append(f"- {e['nome']}: {_br(e['valor'], 2)} {e['unidade']}{detalhe}; efeito {_br(e['efeito'], 2)} ponto.")
+            detalhe = f" (IPCA de {_br(e['nivel'], 2, False)}% em 12 meses, contra {_br(e['antes'], 2, False)}% um ano antes)"
+        unidade = "%" if e["unidade"] == "%" else " pontos"
+        l.append(f"- {e['nome']}: {_br(e['valor'], 2, e['id'] != 'tendencia')}{unidade}{detalhe}; efeito {_br(e['efeito'], 2)} ponto.")
     for t in _gatilhos(res):
         l.append(t)
     leit = rodada.get("leituras", {}).get("fatores", {})

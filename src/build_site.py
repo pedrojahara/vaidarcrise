@@ -230,7 +230,7 @@ def efeito_txt(e: float | None) -> tuple[str, str]:
         return "Fora da conta", ""
     if abs(e) < 0.05:
         return "Neutro", ""
-    return (f"Piora {num(abs(e))} ponto", "mais") if e < 0 else (f"Alivia {num(e)} ponto", "menos")
+    return (f"Piora {num(abs(e), 2)} ponto", "mais") if e < 0 else (f"Alivia {num(e, 2)} ponto", "menos")
 
 
 def fatores_ctx(rodada: dict, cfg: dict) -> list[dict]:
@@ -246,13 +246,14 @@ def fatores_ctx(rodada: dict, cfg: dict) -> list[dict]:
         outros = d.get("outros") or {"tipo": "neutro", "texto": "", "fonte": None}
         rot, cor = efeito_txt(f.get("efeito"))
         if f["na_conta"]:
-            conta = "; ".join(f"{ent[i]['nome']}: {efeito_txt(ent[i]['efeito'])[0].lower()}" for i in f["entradas"] if i in ent) + "."
+            partes = [f"{ent[i]['nome']}: {efeito_txt(ent[i]['efeito'])[0].lower()}" for i in f["entradas"] if i in ent]
+            conta = "; ".join([partes[0]] + [x[0].lower() + x[1:] for x in partes[1:]]) + "." if partes else ""
         else:
             conta = cfg["fora_da_conta"].get(f["id"], "")
         out.append({
             **f, **_exibicao(f["id"], ind, ent), "chip": CHIPS[f["situacao"]], "tend": {"cls": cls, "seta": seta, "palavra": palavra, "id": t},
             "efeito_rot": rot, "efeito_cls": cor, "conta": conta,
-            "barra": round(100 * min(abs(f.get("efeito") or 0) / 0.5, 1), 1), "como": d.get("como", ""),
+            "barra": round(100 * min(abs(f.get("efeito") or 0) / 0.5, 1), 1) if cor else 0, "como": d.get("como", ""),
             "porque": [{"texto": x["texto"], "fonte": x.get("fonte"), "url": None} for x in d.get("fatos", [])]
                       + [{"texto": n["texto"], "fonte": n["fonte"]["veiculo"], "url": n["fonte"]["url"]} for n in d.get("noticias", [])],
             "outros": {"rot": OUTROS_ROT.get(outros.get("tipo"), "Outros"), "cls": outros.get("tipo", "neutro"),
@@ -383,7 +384,7 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
     niv = nivel_ctx(rodada, cfg)
     if p.get("ok"):
         titulo, paragrafos = p["titulo"], p["paragrafos"]
-        autoria = f"Escrito por um modelo de linguagem (Claude) às {hora(rodada['gerado_em'])}, depois de ler {lidas}."
+        autoria = f"Escrito por um modelo de linguagem (Claude) às {hora(p.get('escrito_em') or rodada['gerado_em'])}, depois de ler {lidas}."
         rodape = "O texto não passa por revisão humana antes de publicar. Erros vão para"
     else:
         if niv["anterior"] and niv["anterior"] != niv["nome"]:

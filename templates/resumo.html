@@ -129,7 +129,7 @@
         </figure>
         {% else %}<p class="sem-dado">Sem dado nesta atualização.</p>{% endfor %}
         <dl class="ficha">
-          <div><dt>Efeito no cenário ruim</dt><dd>{{ barra(f) }}</dd></div>
+          {% if f.na_conta %}<div><dt>Efeito no cenário ruim</dt><dd>{{ barra(f) }}</dd></div>{% endif %}
           <div class="larga"><dt>Na conta do nível</dt><dd>{{ f.conta }}</dd></div>
           {% if f.como %}<div class="larga"><dt>Como afeta</dt><dd>{{ f.como }}</dd></div>{% endif %}
         </dl>

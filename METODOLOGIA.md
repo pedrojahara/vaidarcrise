@@ -88,7 +88,7 @@ As entradas foram escolhidas fora da amostra no painel, pelo erro da regressão 
 | Câmbio (alta em 12 meses) | 2,9% maior |
 | Curva de juros | 4,8% maior |
 
-- **A bolsa ficou de fora pela fonte, não pelo teste.** Não há série oficial e gratuita do Ibovespa dia a dia que a atualização automática possa ler com segurança. Entra quando houver.
+- **A bolsa ficou de fora pela coleta, não pelo teste.** A atualização automática ainda não tem uma fonte diária do Ibovespa testada. Entra quando tiver.
 - **Nível alto e parado não avisa.** Dívida, juro e inflação altos não somam à conta. O que avisa é o movimento: juro subindo, inflação acelerando.
 
 ## O teste fora da amostra
@@ -164,7 +164,7 @@ Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em 
 
 ## O que ainda falta
 
-- Pôr a bolsa na conta quando houver uma fonte oficial do Ibovespa dia a dia.
+- Pôr a bolsa na conta, com uma coleta diária do Ibovespa testada.
 - Testar o preço das commodities, que o painel de países não tem.
 - Refazer o teste com os dados como eram divulgados na época (com revisões).
 - Teste de troca de nomes: reprocessar uma amostra de notícias trocando os atores e publicar se a classificação mudou.
