@@ -1,0 +1,26 @@
+name: ibov
+# Estudo: baixa o Ibovespa diário da B3 para testar a bolsa na conta. Não vai para a main.
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/project-thread-a3loy5]
+    paths: [pesquisa/baixar_ibovespa.py, .github/workflows/ibov.yml]
+permissions:
+  contents: write
+jobs:
+  baixar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests==2.32.3
+      - run: python pesquisa/baixar_ibovespa.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pesquisa/ibovespa_b3.json
+          git commit -m "Estudo: Ibovespa diário da B3" || exit 0
+          git push origin HEAD:${GITHUB_REF_NAME}
