@@ -150,6 +150,39 @@ As notícias não mexem no nível. Se cada notícia somasse um pedaço, como os 
 - Leitura trocada antes do prazo fica registrada como substituída, sem resultado.
 - Para comparar: por acaso, desde 2002, "piora" acertaria 41% das vezes, "estável" 21% e "melhora" 39%, na média dos fatores. Em crédito e contas públicas, "piora" acertaria mais da metade das vezes, porque essas séries subiram na maior parte do período.
 
+## O que causa recessão
+
+A aba [O que causa recessão](https://vaidarcrise.com.br/causas/) resume duas pesquisas para quem não é economista. Nada dela entra no nível.
+
+**Gatilhos e fragilidades.** Recessões de 166 países, com dados anuais (Global Macro Database, FMI, Banco Mundial e Jordà, Schularick e Taylor). AUC: 0,5 é cara ou coroa; 1 acerta sempre.
+
+- Dívida, déficit, juro real e inflação altos, em nível ou parados por anos, não preveem a data da recessão em 1, 2 a 3 ou 5 anos (AUC de 0,43 a 0,53).
+- O que avisa é o movimento: juro subindo (0,56 a 0,65, em ricos e emergentes) e inflação acelerando (cerca de 0,60 em 1 ano).
+- Crédito alto aprofunda a queda: depois de um boom de crédito, a perda de PIB chega ao dobro (Jordà, Schularick e Taylor, 2013).
+- Tamanho da queda em 196 recessões do painel de 44 países (abaixo), desde 1996: crédito subindo, crédito acima da tendência e déficit externo vieram com quedas mais fundas; dívida e déficit públicos, não. Juro real acima do crescimento veio com quedas menores: o Banco Central tinha espaço para cortar. Romer e Romer (2018) acham o mesmo para espaço fiscal e monetário.
+
+**O que faz o juro subir.** AUC de cada sinal para "juro 1 ponto ou mais acima nos 12 meses seguintes", um sinal por vez.
+
+- 44 países: painel trimestral da OCDE e grandes emergentes, de 1991 a 2026; juro de curto prazo da OCDE, commodities do FMI, dívida e déficit anuais da Global Macro Database.
+- Brasil: Selic meta, mês a mês, de 2002 a 2026; 117 de 286 meses tiveram alta. Cada sinal com o que já tinha saído no mês (IBC-Br, primário e dívida com 2 meses de atraso; commodities com 1). Refeito por [`src/causas.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/causas.py) a partir de `data/historico/series.json`; os números dos 44 países ficam em [`config/causas.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/causas.json).
+
+| Sinal | Definição no Brasil | 44 países | Brasil |
+| --- | --- | --- | --- |
+| Contas do governo piorando | Déficit primário em 12 meses (BCB 5793) contra um ano antes | 0,48 | 0,72 |
+| Inflação esperada subindo | Focus, IPCA esperado para 12 meses, contra 6 meses antes | — | 0,72 |
+| Juro perto da inflação | Focus menos Selic (juro real baixo) | 0,59 | 0,68 |
+| Economia aquecida | IBC-Br em 12 meses | 0,69 | 0,55 |
+| Soja, minério e petróleo subindo | Índice de commodities do FMI em 12 meses | 0,68 | 0,48 |
+| Dívida pública alta | Dívida bruta do governo geral (BCB 13762) | 0,46 | 0,50 |
+
+- No começo de cada ciclo de alta da Selic, o déficit primário em 12 meses tinha mudado: 2004, −0,2 ponto do PIB; 2008, +0,1; 2010, +0,6; 2013, +1,1; 2021, +8,4 (pandemia); 2024, +1,5. A alta de 2002 começa antes da série.
+- O caminho é a dominância fiscal de Blanchard (2004), escrita sobre o Brasil: déficit subindo eleva a inflação esperada, e o Banco Central sobe o juro. O déficit subindo não avisa a recessão direto (0,48): age pelo juro, que já está na conta.
+- Juro americano e commodities, testados como quinta entrada da conta, pioraram o erro fora da amostra em 12 meses: 5,1% e 5,8% no painel; 15,1% e 23,5% no Brasil.
+
+**O Brasil hoje.** Cada linha contra os meses desde 2004. Atenção quando o dado passa da faixa normal (a metade do meio dos meses) para o lado que pressiona. Selic e IPCA usam a faixa da conta; juro real e dívida, a do Resumo. Déficit primário (variação em 12 meses), inflação esperada (variação em 6 meses) e renda comprometida (nível) usam o percentil 75 de `data/historico/series.json`. A inflação esperada também acende Atenção acima do teto da meta (3% mais 1,5 ponto).
+
+**Limites.** Um sinal por vez mostra o que vem antes, não o que causa, e dois sinais podem contar a mesma história. Nada disso passou por teste fora da amostra, exceto a quinta entrada. O Brasil teve sete ciclos de alta desde 2002: a margem de erro é grande. No painel, dívida e déficit são anuais e chegam com 1 ano de atraso, o que enfraquece o fiscal ali.
+
 ## O post do dia
 
 Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o nível, o cenário ruim do PIB, o que pesa e o que alivia, para que lado as notícias empurram e as próximas datas. Ele não muda o nível, a pressão nem a tendência. Um verificador em código procura moldes de texto automático, afirmações de chance de recessão e explicações de método, e pede uma reescrita no máximo. Se a escrita falhar, sai a atualização sem texto corrido.
@@ -190,3 +223,7 @@ Achou um? [Abra uma issue](https://github.com/pedrojahara/vaidarcrise/issues).
 - [Tesouro Direto: taxas dos títulos](https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto)
 - [FMI, índice de preços de commodities, via FRED](https://fred.stlouisfed.org/series/PALLFNFINDEXM)
 - An, Jalles e Loungani (2018), *How well do economists forecast recessions?*, FMI
+- Blanchard (2004), *Fiscal dominance and inflation targeting: lessons from Brazil*, NBER Working Paper 10389
+- Jordà, Schularick e Taylor (2013), *When credit bites back*, Journal of Money, Credit and Banking
+- Romer e Romer (2018), *Why some times are different: macroeconomic policy and the aftermath of financial crises*, Economica
+- Müller, Xu, Lehbib e Chen (2025), *The Global Macro Database*, NBER Working Paper 33714
