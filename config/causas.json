@@ -1,0 +1,13 @@
+{
+  "_sobre": "Aba /causas/. 'paises': chance de o sinal vir antes de o juro subir 1 ponto ou mais nos 4 trimestres seguintes, no painel trimestral de 44 países (OCDE e grandes emergentes, desde 1991; PIB, juro, inflação e desemprego da OCDE, commodities do FMI, dívida e déficit anuais da Global Macro Database). 0,5 é cara ou coroa; 1 acerta sempre. O Brasil é refeito por src/causas.py a partir de data/historico/series.json.",
+  "meta_inflacao": 3.0,
+  "tolerancia_meta": 1.5,
+  "sinais": [
+    {"id": "deficit_sobe", "nome": "Contas do governo piorando", "paises": 0.48},
+    {"id": "expectativa_sobe", "nome": "Inflação esperada subindo", "paises": null},
+    {"id": "juro_real_baixo", "nome": "Juro perto da inflação", "paises": 0.59},
+    {"id": "economia", "nome": "Economia aquecida", "paises": 0.69},
+    {"id": "preco_fora", "nome": "Soja, minério e petróleo subindo", "paises": 0.68},
+    {"id": "divida", "nome": "Dívida pública alta", "paises": 0.46}
+  ]
+}

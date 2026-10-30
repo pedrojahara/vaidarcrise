@@ -17,6 +17,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import calendario  # noqa: E402
+import causas  # noqa: E402
 import model  # noqa: E402
 import og_image  # noqa: E402
 
@@ -482,6 +483,24 @@ def svg_niveis(historico: list[dict], recessoes: list[dict], nomes: list[str]) -
     return "".join(out)
 
 
+# ------------------------------------------------------------- o que causa
+def causas_ctx(dia: str, rodada: dict, todas: list[dict]) -> dict:
+    """A aba /causas/: o que veio antes das altas de juro (44 países e Brasil) e o Brasil de hoje em cada elo."""
+    cfg = causas.carregar_config()
+    series = json.loads(causas.HIST.read_text())["series"]
+    br = causas.aucs_brasil(series)
+
+    def largura(a: float | None) -> float:
+        return round(max(0.0, (a - 0.5) / 0.5) * 100, 1) if a is not None else 0.0
+
+    sinais = [{**x, "brasil": br["aucs"].get(x["id"]), "w_paises": largura(x.get("paises")),
+               "w_brasil": largura(br["aucs"].get(x["id"]))} for x in cfg["sinais"]]
+    brutos = sorted(p for p in (ROOT / "data" / "raw").glob("*/indicadores.json") if p.parent.name <= dia)
+    bruto = json.loads(brutos[-1].read_text()) if brutos else None
+    hoje = causas.brasil_hoje(series, rodada["resultado"], bruto, [r for r in todas if r["gerado_em"][:10] <= dia], cfg)
+    return {"sinais": sinais, "altas": br["altas"], "meses": br["meses"], "hoje": hoje}
+
+
 # --------------------------------------------------------------------- dados
 def dados_publicos(rodada: dict, ctx: dict) -> dict:
     res = rodada["resultado"]
@@ -570,7 +589,7 @@ def main() -> None:
                 "data_curta": data_curta, "data_extenso": data_extenso, "historico_svg": historico_svg,
                 "og_url": f"{SITE}/og/{dia}.png", "dia_mes": dia_mes}
 
-    abas = {"index.html": "inicio", "resumo.html": "resumo", "nota.html": "nota"}
+    abas = {"index.html": "inicio", "resumo.html": "resumo", "causas.html": "causas", "nota.html": "nota"}
 
     def gravar(caminho: Path, tpl: str, ctx: dict, canonical: str) -> None:
         caminho.mkdir(parents=True, exist_ok=True)
@@ -590,6 +609,11 @@ def main() -> None:
     gravar(DOCS, "index.html", {**ctx, "anteriores": arquivo, "destaque": destaque}, f"{SITE}/")
     gravar(DOCS / "resumo", "resumo.html", ctx, f"{SITE}/resumo/")
     gravar(DOCS / "nota", "nota.html", ctx, f"{SITE}/nota/")
+    try:
+        gravar(DOCS / "causas", "causas.html", {**ctx, "causas": causas_ctx(dia, ultima, todas), "og_url": f"{SITE}/og.png"},
+               f"{SITE}/causas/")
+    except (KeyError, OSError, ValueError, ZeroDivisionError) as e:  # a aba não pode derrubar a atualização do dia
+        print(f"aviso: a aba /causas/ não foi refeita ({e!r})")
     for t in textos:
         gravar(DOCS / "textos" / t["slug"], "index.html",
                {**ctx, "post": t, "permalink": True, "dia_antes": None, "dia_depois": None}, f"{SITE}{t['link']}")
@@ -608,7 +632,7 @@ def main() -> None:
     (DOCS / "CNAME").write_text("vaidarcrise.com.br")
     (DOCS / ".nojekyll").touch()
     (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
-    urls = [f"{SITE}/", f"{SITE}/resumo/", f"{SITE}/nota/", f"{SITE}/metodologia/"] \
+    urls = [f"{SITE}/", f"{SITE}/resumo/", f"{SITE}/causas/", f"{SITE}/nota/", f"{SITE}/metodologia/"] \
         + [f"{SITE}/{d}/{s}" for d in dias for s in ("", "resumo/", "nota/")] + [f"{SITE}{t['link']}" for t in textos]
     (DOCS / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                       + "\n".join(f"<url><loc>{u}</loc></url>" for u in urls) + "\n</urlset>\n")
