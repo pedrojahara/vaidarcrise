@@ -8,7 +8,7 @@
   "Muito acima"
  ],
  "pergunta": "O risco de o Brasil entrar em recessão técnica nos próximos 12 meses está acima ou abaixo do normal?",
- "atualizado_em": "2026-10-29T13:39:44-03:00",
+ "atualizado_em": "2026-10-30T06:30:07-03:00",
  "pib_12_meses": {
   "cenario_ruim_pct": -1.79,
   "cenario_ruim_em_tempos_normais_pct": -1.89,
@@ -33,7 +33,7 @@
    "id": "juro",
    "nome": "Selic: variação em 12 meses",
    "valor": -1.25,
-   "ref": "2026-10-29",
+   "ref": "2026-10-30",
    "efeito_no_cenario_ruim_pontos": 0.1289
   },
   {
@@ -135,7 +135,7 @@
    "fator": "juro",
    "valor": 8.8167,
    "unidade": "% ao ano",
-   "ref": "2026-10-29",
+   "ref": "2026-10-30",
    "situacao": "Normal",
    "faixa_normal": [
     4.062,
@@ -172,9 +172,9 @@
    "id": "dolar",
    "nome": "Dólar",
    "fator": "mercado",
-   "valor": 4.3828,
+   "valor": 4.9339,
    "unidade": "%",
-   "ref": "2026-10-28",
+   "ref": "2026-10-29",
    "situacao": "Normal",
    "faixa_normal": [
     -4.1516,
@@ -185,9 +185,9 @@
    "id": "divida",
    "nome": "Dívida pública",
    "fator": "contas",
-   "valor": 5.56,
+   "valor": 5.09,
    "unidade": "p.p. do PIB",
-   "ref": "2026-08",
+   "ref": "2026-09",
    "situacao": "Pior que o normal",
    "faixa_normal": [
     -1.74,
@@ -224,18 +224,16 @@
  "pressao_noticias": {
   "sentido": "piora",
   "fatores": {
-   "mercado": "piora",
-   "contas": "igual",
+   "contas": "piora",
    "credito": "piora",
-   "atividade": "piora",
-   "externo": "igual",
-   "juro": "piora"
+   "mercado": "piora",
+   "juro": "igual"
   }
  },
- "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-29T1339.json",
+ "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-30T0630.json",
  "post_do_dia": {
-  "titulo": "Bolsa cai 13,88% após eleição, e risco de recessão fica no normal",
-  "url": "https://vaidarcrise.com.br/2026-10-29/",
+  "titulo": "Risco segue normal, e inadimplência das famílias bate recorde",
+  "url": "https://vaidarcrise.com.br/2026-10-30/",
   "escrito_por_llm": true
  }
 }

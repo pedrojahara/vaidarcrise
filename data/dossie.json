@@ -6,94 +6,230 @@
    "desde": "2026-10-29",
    "como": "É a melhor pista do PIB antes de o IBGE divulgá-lo.",
    "noticias": [
-    {"texto": "Venda de máquinas e equipamentos cai 13,4% no ano até setembro: investimento fraco.", "data": "2026-10-28",
-     "fonte": {"veiculo": "Valor", "url": "https://valor.globo.com/empresas/noticia/2026/10/28/vendas-de-maquinas-acumulam-queda-de-134percent-no-ano-ate-setembro.ghtml"}},
-    {"texto": "CNI corta a projeção do PIB de 2026 de 2% para 1,6%.", "data": "2026-10-28",
-     "fonte": {"veiculo": "InfoMoney", "url": "https://www.infomoney.com.br/economia/cni-reduz-projecao-para-o-pib-e-eleva-estimativas-de-inflacao-e-divida-publica/"}}
+    {
+     "texto": "Venda de máquinas e equipamentos cai 13,4% no ano até setembro: investimento fraco.",
+     "data": "2026-10-28",
+     "fonte": {
+      "veiculo": "Valor",
+      "url": "https://valor.globo.com/empresas/noticia/2026/10/28/vendas-de-maquinas-acumulam-queda-de-134percent-no-ano-ate-setembro.ghtml"
+     }
+    },
+    {
+     "texto": "CNI corta a projeção do PIB de 2026 de 2% para 1,6%.",
+     "data": "2026-10-28",
+     "fonte": {
+      "veiculo": "InfoMoney",
+      "url": "https://www.infomoney.com.br/economia/cni-reduz-projecao-para-o-pib-e-eleva-estimativas-de-inflacao-e-divida-publica/"
+     }
+    }
    ],
    "outros_automatico": true,
-   "melhora_se": ["Indústria e serviços voltam a crescer", "Safra e exportações acima do esperado"],
-   "piora_se": ["Nova queda do IBC-Br", "Quebra da safra com o El Niño"]
+   "melhora_se": [
+    "Indústria e serviços voltam a crescer",
+    "Safra e exportações acima do esperado"
+   ],
+   "piora_se": [
+    "Nova queda do IBC-Br",
+    "Quebra da safra com o El Niño"
+   ]
   },
   "juro": {
    "tendencia": "estavel",
    "desde": "2026-10-29",
    "como": "Juro alto encarece crédito e investimento. O efeito chega em 1 a 2 anos.",
    "noticias": [
-    {"texto": "Estados aprovam ICMS maior sobre gasolina, diesel e gás a partir de 2027: pressão sobre a inflação.", "data": "2026-10-28",
-     "fonte": {"veiculo": "Poder360", "url": "https://www.poder360.com.br/poder-economia/estados-aprovam-aumento-de-icms-sobre-gasolina-diesel-e-gas-para-2027/"}},
-    {"texto": "Inflação esperada para 2027 sobe de novo no Focus, acima do centro da meta.", "data": "2026-10-26",
-     "fonte": {"veiculo": "XP", "url": "https://conteudos.xpi.com.br/economia/boletim-focus-inflacao-de-2027-continua-em-trajetoria-de-alta-26-10-2026/"}}
+    {
+     "texto": "Estados aprovam ICMS maior sobre gasolina, diesel e gás a partir de 2027: pressão sobre a inflação.",
+     "data": "2026-10-28",
+     "fonte": {
+      "veiculo": "Poder360",
+      "url": "https://www.poder360.com.br/poder-economia/estados-aprovam-aumento-de-icms-sobre-gasolina-diesel-e-gas-para-2027/"
+     }
+    },
+    {
+     "texto": "Inflação esperada para 2027 sobe de novo no Focus, acima do centro da meta.",
+     "data": "2026-10-26",
+     "fonte": {
+      "veiculo": "XP",
+      "url": "https://conteudos.xpi.com.br/economia/boletim-focus-inflacao-de-2027-continua-em-trajetoria-de-alta-26-10-2026/"
+     }
+    }
    ],
    "outros_automatico": true,
-   "melhora_se": ["BC corta a Selic mais rápido que a queda da inflação esperada", "Alimentos e energia mais baratos"],
-   "piora_se": ["Inflação esperada sobe e a Selic para de cair", "Dólar caro por mais tempo"]
+   "melhora_se": [
+    "BC corta a Selic mais rápido que a queda da inflação esperada",
+    "Alimentos e energia mais baratos"
+   ],
+   "piora_se": [
+    "Inflação esperada sobe e a Selic para de cair",
+    "Dólar caro por mais tempo"
+   ]
   },
   "credito": {
    "tendencia": "piora",
    "desde": "2026-10-29",
    "como": "Parcela alta corta consumo. Costuma vir antes de crescimento menor.",
    "noticias": [
-    {"texto": "Bradesco sobe a taxa mínima do crédito imobiliário de 11,69% para 15% ao ano.", "data": "2026-10-28",
-     "fonte": {"veiculo": "Poder360", "url": "https://www.poder360.com.br/poder-economia/em-salto-inedito-bradesco-sobe-juro-da-casa-propria-para-15-ao-ano/"}},
-    {"texto": "Inadimplência das famílias chega a 6% em agosto, a maior da série do Banco Central.", "data": "2026-09-29",
-     "fonte": {"veiculo": "Agência Brasil", "url": "https://agenciabrasil.ebc.com.br/radioagencia-nacional/economia/audio/2026-09/inadimplencia-das-familias-sobe-em-agosto-diz-banco-central"}}
+    {
+     "texto": "Inadimplência das pessoas físicas no crédito livre sobe a 8,1% em setembro, recorde da série iniciada em 2011.",
+     "data": "2026-10-30",
+     "fonte": {
+      "veiculo": "Valor",
+      "url": "https://valor.globo.com/financas/noticia/2026/10/29/juro-medio-das-operacoes-de-credito-sobe-em-setembro-e-inadimplencia-fica-estavel-em-5percent-aponta-bc.ghtml"
+     }
+    },
+    {
+     "texto": "Bradesco sobe a taxa mínima do crédito imobiliário de 11,69% para 15% ao ano.",
+     "data": "2026-10-28",
+     "fonte": {
+      "veiculo": "Poder360",
+      "url": "https://www.poder360.com.br/poder-economia/em-salto-inedito-bradesco-sobe-juro-da-casa-propria-para-15-ao-ano/"
+     }
+    }
    ],
-   "outros": {"tipo": "neutro", "texto": "Nenhuma instituição publica projeção regular para a renda comprometida com dívidas.", "fonte": null},
-   "melhora_se": ["Renda cresce mais que as parcelas", "Juros do crédito caem"],
-   "piora_se": ["Bancos apertam mais o crédito", "IOF sobre LCI e LCA, hoje em avaliação"]
+   "outros": {
+    "tipo": "concorda",
+    "texto": "JPMorgan vê piora gradual do ciclo de crédito, com mais endividamento das famílias e ativos de pior qualidade.",
+    "data": "2026-10-30",
+    "fonte": {
+     "veiculo": "InfoMoney",
+     "url": "https://www.infomoney.com.br/mercados/jpmorgan-ve-piora-gradual-do-ciclo-de-credito-e-mantem-cautela-com-bancos-brasileiros/"
+    }
+   },
+   "melhora_se": [
+    "Renda cresce mais que as parcelas",
+    "Juros do crédito caem"
+   ],
+   "piora_se": [
+    "Bancos apertam mais o crédito",
+    "IOF sobre LCI e LCA, hoje em avaliação"
+   ]
   },
   "mercado": {
    "tendencia": "piora",
    "desde": "2026-10-29",
    "como": "Juros longos e dólar altos encarecem o crédito de empresas e do governo.",
    "noticias": [
-    {"texto": "No dia seguinte à eleição, dólar sobe 8,2% e a Bolsa cai 13,9%.", "data": "2026-10-27",
-     "fonte": {"veiculo": "Agência Brasil", "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula"}},
-    {"texto": "Tesouro anuncia recompra de títulos de 2030 a 2045 para conter as oscilações.", "data": "2026-10-28",
-     "fonte": {"veiculo": "Agência Brasil", "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/para-conter-oscilacoes-tesouro-anuncia-nova-recompra-de-titulos"}}
+    {
+     "texto": "No dia seguinte à eleição, dólar sobe 8,2% e a Bolsa cai 13,9%.",
+     "data": "2026-10-27",
+     "fonte": {
+      "veiculo": "Agência Brasil",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula"
+     }
+    },
+    {
+     "texto": "Tesouro anuncia recompra de títulos de 2030 a 2045 para conter as oscilações.",
+     "data": "2026-10-28",
+     "fonte": {
+      "veiculo": "Agência Brasil",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/para-conter-oscilacoes-tesouro-anuncia-nova-recompra-de-titulos"
+     }
+    }
    ],
    "outros_automatico": true,
-   "melhora_se": ["Regra fiscal crível", "Recompras do Tesouro acalmam os títulos"],
-   "piora_se": ["Mais dúvida sobre as contas públicas", "Fed sobe os juros"]
+   "melhora_se": [
+    "Regra fiscal crível",
+    "Recompras do Tesouro acalmam os títulos"
+   ],
+   "piora_se": [
+    "Mais dúvida sobre as contas públicas",
+    "Fed sobe os juros"
+   ]
   },
   "contas": {
    "tendencia": "piora",
    "desde": "2026-10-29",
    "como": "Pesa pelos juros: se a dívida assusta o investidor, o crédito encarece para todos.",
    "noticias": [
-    {"texto": "Governo federal: déficit de R$ 90 bilhões até setembro, menor que os R$ 100 bilhões de 2025.", "data": "2026-10-29",
-     "fonte": {"veiculo": "Jornal do Comércio", "url": "https://www.jornaldocomercio.com/economia/2026/10/1268689-governo-central-tem-superavit-primario-de-rs-4839-bi-em-setembro.html"}},
-    {"texto": "Gastos fora da meta fiscal crescem no ano eleitoral.", "data": "2026-10-20",
-     "fonte": {"veiculo": "Itatiaia", "url": "https://www.itatiaia.com.br/economia/governo-amplia-gastos-fora-do-arcabouco-e-aumenta-pressao-sobre-meta-fiscal/"}}
+    {
+     "texto": "Governo federal: déficit de R$ 90 bilhões até setembro, menor que os R$ 100 bilhões de 2025.",
+     "data": "2026-10-29",
+     "fonte": {
+      "veiculo": "Jornal do Comércio",
+      "url": "https://www.jornaldocomercio.com/economia/2026/10/1268689-governo-central-tem-superavit-primario-de-rs-4839-bi-em-setembro.html"
+     }
+    },
+    {
+     "texto": "Gastos fora da meta fiscal crescem no ano eleitoral.",
+     "data": "2026-10-20",
+     "fonte": {
+      "veiculo": "Itatiaia",
+      "url": "https://www.itatiaia.com.br/economia/governo-amplia-gastos-fora-do-arcabouco-e-aumenta-pressao-sobre-meta-fiscal/"
+     }
+    }
    ],
-   "outros": {"tipo": "concorda", "texto": "IFI projeta dívida bruta de 82,5% do PIB em 2026 e 86,4% em 2027.",
-              "fonte": {"veiculo": "IFI", "url": "https://www12.senado.leg.br/ifi"}},
-   "melhora_se": ["Meta fiscal cumprida com regra crível", "PIB crescendo acima do juro real"],
-   "piora_se": ["Gasto novo sem receita", "Juro alto por mais tempo"]
+   "outros": {
+    "tipo": "concorda",
+    "texto": "IFI vê déficit primário de até 1% do PIB em 2027 com R$ 40 bi em medidas sem previsão no Orçamento.",
+    "data": "2026-10-30",
+    "fonte": {
+     "veiculo": "Valor",
+     "url": "https://valor.globo.com/brasil/noticia/2026/10/29/pacote-de-bondades-do-governo-pode-levar-deficit-primario-a-1percent-do-pib-em-2027-nota-ifi.ghtml"
+    }
+   },
+   "melhora_se": [
+    "Meta fiscal cumprida com regra crível",
+    "PIB crescendo acima do juro real"
+   ],
+   "piora_se": [
+    "Gasto novo sem receita",
+    "Juro alto por mais tempo"
+   ]
   },
   "emprego": {
    "tendencia": "estavel",
    "desde": "2026-10-29",
    "como": "Sobe quando a recessão já começou. Confirma, não antecipa.",
    "noticias": [],
-   "outros": {"tipo": "neutro", "texto": "O IBGE divulga o desemprego até setembro em 30/10.", "fonte": null},
-   "melhora_se": ["Contratações firmes nos serviços"],
-   "piora_se": ["Demissões na indústria e na construção", "Juros e inadimplência altos chegando ao emprego"]
+   "outros": {
+    "tipo": "neutro",
+    "texto": "O IBGE divulga o desemprego até setembro em 30/10.",
+    "fonte": null
+   },
+   "melhora_se": [
+    "Contratações firmes nos serviços"
+   ],
+   "piora_se": [
+    "Demissões na indústria e na construção",
+    "Juros e inadimplência altos chegando ao emprego"
+   ]
   },
   "externo": {
    "tendencia": "sem_direcao",
    "desde": "2026-10-29",
    "como": "Commodities e juros americanos movem boa parte do ciclo dos emergentes.",
    "noticias": [
-    {"texto": "Fed mantém os juros entre 3,75% e 4% ao ano, com dois votos por alta.", "data": "2026-10-28",
-     "fonte": {"veiculo": "Valor", "url": "https://valor.globo.com/financas/noticia/2026/10/28/fed-mantem-taxa-de-juros-inalterada-no-intervalo-de-375percent-a-400percent-ao-ano.ghtml"}},
-    {"texto": "Banco Mundial prevê alta de 23 pontos percentuais nos preços das commodities em 2026, puxada pela energia.", "data": "2026-10-28",
-     "fonte": {"veiculo": "Valor", "url": "https://valor.globo.com/mundo/noticia/2026/10/28/banco-mundial-prev-alta-de-23-pontos-percentuais-nos-preos-das-commodities-em-2026.ghtml"}}
+    {
+     "texto": "Fed mantém os juros entre 3,75% e 4% ao ano, com dois votos por alta.",
+     "data": "2026-10-28",
+     "fonte": {
+      "veiculo": "Valor",
+      "url": "https://valor.globo.com/financas/noticia/2026/10/28/fed-mantem-taxa-de-juros-inalterada-no-intervalo-de-375percent-a-400percent-ao-ano.ghtml"
+     }
+    },
+    {
+     "texto": "Banco Mundial prevê alta de 23 pontos percentuais nos preços das commodities em 2026, puxada pela energia.",
+     "data": "2026-10-28",
+     "fonte": {
+      "veiculo": "Valor",
+      "url": "https://valor.globo.com/mundo/noticia/2026/10/28/banco-mundial-prev-alta-de-23-pontos-percentuais-nos-preos-das-commodities-em-2026.ghtml"
+     }
+    }
    ],
-   "outros": {"tipo": "neutro", "texto": "O Fed decide os juros de novo em 9/12.", "fonte": null},
-   "melhora_se": ["Commodities que o Brasil exporta sobem", "Fed corta os juros"],
-   "piora_se": ["Commodities caem", "China desacelera"]
+   "outros": {
+    "tipo": "neutro",
+    "texto": "O Fed decide os juros de novo em 9/12.",
+    "fonte": null
+   },
+   "melhora_se": [
+    "Commodities que o Brasil exporta sobem",
+    "Fed corta os juros"
+   ],
+   "piora_se": [
+    "Commodities caem",
+    "China desacelera"
+   ]
   }
  }
 }
