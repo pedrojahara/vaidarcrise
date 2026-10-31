@@ -187,9 +187,20 @@ A prévia de link (`docs/causas/og.png`) e as versões dos desenhos para a pági
 
 **Limites.** Um sinal por vez mostra o que vem antes, não o que causa, e dois sinais podem contar a mesma história. Nada disso passou por teste fora da amostra, exceto a quinta entrada. O Brasil teve sete ciclos de alta desde 2002: a margem de erro é grande. No painel, dívida e déficit são anuais e chegam com 1 ano de atraso, o que enfraquece o fiscal ali.
 
-## O post do dia
+## Os posts
 
-Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o nível, o PIB num ano ruim, o que pesa e o que ajuda, para que lado as notícias empurram e as próximas datas. O texto segue o guia do leitor ([`PERSONA.md`](https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md)), o mesmo das outras páginas. Ele não muda o nível, a pressão nem a tendência. Um verificador em código procura moldes de texto automático, afirmações de chance de recessão e explicações de método, e pede uma reescrita no máximo. Se a escrita falhar, sai a atualização sem texto corrido.
+É um post por dia, escrito na mesma atualização das 06h30, e o tipo muda com o dia ([`PERSONA.md`](https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md), "Os tipos de post"):
+
+| Tipo | Quando | O que recebe | Tamanho |
+| --- | --- | --- | --- |
+| Fato do dia | Segunda a sábado | As notícias da véspera por fator, os fatos de dados dos fatores com notícia e, só se o nível mudou, o PIB num ano ruim e as entradas da conta | Até 100 palavras |
+| A semana | Domingo, com atualizações em pelo menos 4 dos 6 dias anteriores | As atualizações de segunda a domingo: nível, entradas e fatores que mudaram, dados novos, notícias somadas por fator (mesma conta da pressão do dia) e as datas da semana seguinte | Até 250 palavras |
+| O mês | Primeiro domingo do mês, no lugar da semana, se as atualizações do mês anterior começaram até o dia 8 e cobrem pelo menos 15 dias dele | As atualizações do mês anterior e dos primeiros dias deste, mais quatro partes feitas por código: o que mudou em cada fator, o bolso (emprego, preços, parcelas e dólar), o que faria o risco mudar e o placar | Até 300 palavras de texto; com as tabelas, cerca de 450 |
+| Retrato do Brasil | Fixo no topo, escrito à mão em `editor/` | Os números do dia em que foi escrito, com a data | 500 a 600 palavras |
+
+Sem atualizações bastantes, a semana e o mês viram fato do dia. A semana e o mês saem dos registros em `runs/`, nunca dos posts anteriores. Cada post recebe o anterior do mesmo tipo só para não copiar frases dele.
+
+O modelo de linguagem recebe os fatos prontos e só redige. Ele não muda o nível, a pressão nem a tendência. Um verificador em código ([`src/revisa_texto.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/revisa_texto.py)) procura moldes de texto automático, jargão, afirmações de chance de recessão e explicações de método. Nos posts, também confere: número ou data que não está nos dados que o modelo recebeu (com a folga do arredondamento), texto acima do tamanho do tipo, fato do dia que repete o nível sem mudança, data futura no fato do dia (as datas ficam na lateral) e frase copiada do post anterior do mesmo tipo. Qualquer problema pede uma reescrita, no máximo uma. Número fora dos dados, chance de recessão ou mais de uma frase sobre a conta, se sobrarem, barram o texto, e sai a atualização sem texto corrido.
 
 Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em [`runs/`](https://github.com/pedrojahara/vaidarcrise/tree/main/runs). Depois do lançamento oficial do site, o que foi publicado fica congelado. Antes dele, os textos antigos acompanham as mudanças do site, com os mesmos números e datas.
 
@@ -206,12 +217,6 @@ Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em 
 - Refazer o teste com os dados como eram divulgados na época (com revisões).
 - Teste de troca de nomes: reprocessar uma amostra de notícias trocando os atores e publicar se a classificação mudou.
 - Conferir o placar contra o Focus, além do dado.
-
-## Onde erramos
-
-Erros são listados aqui com data, o que estava errado e o efeito no nível. Nenhum até agora.
-
-Achou um? [Avise aqui](https://github.com/pedrojahara/vaidarcrise/issues).
 
 ## Fontes
 

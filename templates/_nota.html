@@ -16,7 +16,8 @@
   {% endif %}
   {% if nivel.pendente %}<p class="atual">A conta de hoje deu {{ nivel.pendente }}. O nível só muda se amanhã der o mesmo.</p>{% endif %}
   {% if not grande %}
-  <p class="tend-noticias"><b class="{{ post.pressao.cls if post.pressao else 'igual' }}" aria-hidden="true">{{ post.pressao.simbolo if post.pressao else '→' }}</b> {{ post.pressao.frase if post.pressao else '' }} <a href="{{ link_resumo }}">Ver fator por fator</a></p>
+  {% if post.pressao %}<p class="tend-noticias"><b class="{{ post.pressao.cls }}" aria-hidden="true">{{ post.pressao.simbolo }}</b> {{ post.pressao.frase }} <a href="{{ link_resumo }}">Ver fator por fator</a></p>
+  {% else %}<p class="tend-noticias"><a href="{{ link_resumo }}">Ver fator por fator</a></p>{% endif %}
   <p class="atual">{% if permalink %}Atualização de {{ dia_mes(dia) }}, às {{ hora }}{% else %}Atualizado em {{ dia_mes(dia) }} | próxima atualização às 06h30{% endif %}</p>
   {% if not permalink %}<p class="aviso" id="defasado" hidden><strong>Atenção: números velhos.</strong> Esta atualização tem mais de 36 horas. A atualização automática pode ter falhado; veja o <a href="{{ repo }}/commits/main">histórico</a>.</p>{% endif %}
   {% endif %}

@@ -67,7 +67,10 @@ def gerar(caminho: Path, ctx: dict) -> None:
                fill=TINTA if i == niv["indice"] else META, anchor="ma")
 
     d.line([(64, 548), (W - 64, 548)], fill=FIO, width=2)
-    d.text((64, 570), "Medido com dados todo dia.", font=sans(26), fill=META)
+    # A semana e o mês vão para o WhatsApp: a prévia diz que tipo de post é.
+    tipo = ctx.get("tipo_nome") if ctx.get("tipo") in ("semana", "mes") else None
+    d.text((64, 570), f"{tipo}, em poucas linhas." if tipo else "Medido com dados todo dia.", font=sans(26, 600 if tipo else 500),
+           fill=TINTA if tipo else META)
     d.text((W - 64, 570), f"vaidarcrise.com.br  |  {ctx['data_curta'](ctx['dia'])}", font=sans(26, 600),
            fill=TINTA, anchor="ra")
     caminho.parent.mkdir(parents=True, exist_ok=True)

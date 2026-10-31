@@ -1094,7 +1094,7 @@
     "como": "Parcela alta faz a família comprar menos. Costuma vir antes de a economia crescer menos.",
     "noticias": [
      {
-      "texto": "Atraso de mais de 90 dias nos empréstimos às pessoas chega a 8,1% em setembro, o maior desde 2011.",
+      "texto": "Atraso de mais de 90 dias nos empréstimos às pessoas chega a 8,1% em setembro, o maior desde o início da série, em 2011.",
       "data": "2026-10-30",
       "fonte": {
        "veiculo": "Valor",
@@ -1366,14 +1366,13 @@
   ]
  },
  "post": {
+  "tipo": "dia",
   "ok": true,
-  "titulo": "Risco segue normal, e Bolsa cai 18,1% na semana depois da eleição",
+  "titulo": "Bolsa cai 18,1% na semana depois da eleição, e dólar sobe 9%",
   "paragrafos": [
-   "O risco de recessão segue normal, como ontem. Num ano ruim, daqueles com 1 chance em 10, o PIB cairia 1,8%. Em tempos normais, cairia 1,9%.",
-   "Ajuda: a Selic, o juro básico, caiu de 15% para 13,75% em um ano, e os preços sobem mais devagar. Atrapalha: a economia cresceu 1,4% em um ano, menos que o típico desde 2004.",
-   "Nas notícias de sexta, o mercado puxa para pior. Na semana depois da eleição, a Bolsa caiu 18,1%, a mesma queda de uma semana de 2001. O dólar subiu 9%, a maior alta em uma semana desde 2008. Lá fora, o petróleo subiu mais de 14% em outubro.",
-   "O ritmo da economia também puxa para pior. O Itaú reduziu a previsão do PIB de 2027 para 0,5%. O desemprego caiu a 5,2% no trimestre até setembro, mas a renda parou de crescer. Nas contas do governo, há só relatos de pressão pelo fim da regra de gastos.",
-   "Em 4/11, quarta, o Banco Central decide o juro. Em 12/11, sai a inflação de outubro. Em 2/12, o PIB do trimestre mostra se houve dois trimestres seguidos de queda."
+   "A Bolsa caiu 18,1% na semana depois da eleição, a mesma queda de uma semana de 2001. O dólar subiu 9%, a maior alta em uma semana desde 2008.",
+   "Com o dólar mais caro, fica mais caro o que vem de fora, como celular, peça de carro e passagem de avião.",
+   "Isso não muda o risco de recessão, porque Bolsa e dólar ficam fora da conta do nível."
   ],
   "problemas": [],
   "meta": [
@@ -1391,6 +1390,15 @@
     "session_id": "19591842-6ca8-4144-b2fc-d1595e0d8487"
    }
   ],
-  "revisao_manual": "2026-10-31: texto reescrito no estilo do PERSONA.md, com os mesmos números e datas."
+  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas.",
+  "secoes": [
+   {
+    "paragrafos": [
+     "A Bolsa caiu 18,1% na semana depois da eleição, a mesma queda de uma semana de 2001. O dólar subiu 9%, a maior alta em uma semana desde 2008.",
+     "Com o dólar mais caro, fica mais caro o que vem de fora, como celular, peça de carro e passagem de avião.",
+     "Isso não muda o risco de recessão, porque Bolsa e dólar ficam fora da conta do nível."
+    ]
+   }
+  ]
  }
 }

@@ -1,6 +1,6 @@
 # Vai dar crise?
 
-Se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal, em cinco níveis, com uma página fator por fator e um post por dia sobre as notícias da véspera. No ar em **[vaidarcrise.com.br](https://vaidarcrise.com.br)**.
+Se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal, em cinco níveis, com uma página fator por fator e um post por dia: o fato do dia de segunda a sábado, a semana aos domingos e o mês no primeiro domingo do mês, com o Retrato do Brasil fixo no topo. No ar em **[vaidarcrise.com.br](https://vaidarcrise.com.br)**.
 
 A metodologia está em [METODOLOGIA.md](METODOLOGIA.md), as regras em [config/modelo.json](config/modelo.json) e o que foi estimado com os dados em [config/calibracao.json](config/calibracao.json). Cada atualização grava um registro em [`runs/`](runs/), imutável depois do lançamento oficial, com insumos, hash das regras e do prompt e a resposta do modelo de linguagem. Para quem os textos são escritos (leitor, tom, palavras, números e a lista que todo texto passa) está em [PERSONA.md](PERSONA.md); [CLAUDE.md](CLAUDE.md) manda todo texto novo passar por ele.
 
@@ -17,7 +17,8 @@ launchd, todo dia às 06h30 → run.sh   (uma publicação por dia; se o Mac dor
   │                         os nove indicadores do Resumo (src/indicadores.py) contra a faixa normal
   ├─ src/classify_news.py   claude -p, sem ferramentas, saída em esquema JSON: manchetes do dia anterior → eventos e revisões
   ├─ src/dossie.py          tendência de cada fator, fatos de dados, Focus e placar → data/dossie.json, data/placar.json
-  ├─ src/escreve_post.py    claude -p escreve o post a partir da conta pronta; src/revisa_texto.py confere o texto
+  ├─ src/escreve_post.py    claude -p escreve o post do tipo do dia (fato do dia, semana ou mês) a partir da conta pronta
+  │                         e dos registros em runs/; src/revisa_texto.py confere o texto e os números
   ├─ src/run.py             grava runs/<id>.json e data/eventos.json
   ├─ src/build_site.py      gera docs/ (HTML estático, og.png, data.json) com editor/*.md;
   │                         a aba O que causa recessão sai de src/causas.py e config/causas.json
@@ -44,17 +45,18 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 ./run.sh --sem-llm  # só dados
 ./run.sh --coletar  # só junta manchetes ao acervo
 .venv/bin/python src/build_site.py              # só regerar o site
-.venv/bin/python src/escreve_post.py            # escreve o post da última atualização e imprime, sem gravar
-.venv/bin/python src/escreve_post.py --so-dados # só os dados que o post recebe, sem chamar o LLM
+.venv/bin/python src/escreve_post.py                      # escreve o post da última atualização e imprime, sem gravar
+.venv/bin/python src/escreve_post.py --so-dados            # só os dados que o post recebe, sem chamar o LLM
+.venv/bin/python src/escreve_post.py --tipo semana --so-dados  # força o tipo (dia, semana ou mes)
 ```
 
 Agendamento: copie `launchd/com.pedrojahara.vaidarcrise.plist` (06h30) e `launchd/com.pedrojahara.vaidarcrise.coleta.plist` (de hora em hora) para `~/Library/LaunchAgents` e carregue com `launchctl bootstrap gui/$(id -u) <arquivo>`. Logs em `logs/`.
 
-Textos escritos à mão ficam em `editor/AAAA-MM-DD-slug.md` (cabeçalho, `---`, Markdown) e entram no blog na próxima geração do site.
+Textos escritos à mão ficam em `editor/AAAA-MM-DD-slug.md` (cabeçalho, `---`, Markdown) e entram no blog na próxima geração do site. Com `tipo: retrato` no cabeçalho, o texto vira o Retrato do Brasil, fixo no topo da página principal (vale o mais novo).
 
 ## Dados públicos
 
-- [`/data.json`](https://vaidarcrise.com.br/data.json): nível, cenário ruim do PIB, entradas da conta, fatores, indicadores com faixa normal, pressão das notícias.
+- [`/data.json`](https://vaidarcrise.com.br/data.json): nível, cenário ruim do PIB, entradas da conta, fatores, indicadores com faixa normal, pressão das notícias e o post do dia, com o tipo.
 - [`/historico.json`](https://vaidarcrise.com.br/historico.json): o nível de todas as atualizações publicadas.
 
 Não é recomendação de investimento.

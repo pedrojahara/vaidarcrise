@@ -123,7 +123,7 @@ a:hover{text-decoration-thickness:2px}
 <header class="cab"><div class="in"><div class="faixa">
   <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
   <p class="linha-fina">O risco de recessão no Brasil, medido com dados todo dia.</p>
-  <nav aria-label="Seções"><a href="/">Hoje</a><a href="/resumo/">Fator por fator</a><a href="/causas/">O que causa recessão</a><a href="/nota/">Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
+  <nav aria-label="Seções"><a href="/">Hoje</a><a href="/resumo/">Fator por fator</a><a href="/causas/">O que causa recessão</a><a href="/nota/">Como a conta funciona</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
 </div></div></header>
 
 <main class="in texto">
@@ -519,8 +519,46 @@ a:hover{text-decoration-thickness:2px}
 <p><strong>Números fixos da aba, com data.</strong> Juros nominais do setor público em 12 meses até agosto de 2026: R$ 1,18 trilhão, 8,9% do PIB (Banco Central, estatísticas fiscais, pela imprensa); cerca de R$ 5.500 por brasileiro, com 213 milhões de habitantes. Resultado sem juros no mesmo período: 0,6% do PIB a mais de gasto que de receita (BCB 5793). Sobra sem juros que estabilizaria a dívida bruta: 2,1% do PIB por ano (IFI, Relatório de Acompanhamento Fiscal de agosto de 2026). Dívida federal em reais: 96% (Tesouro, agosto de 2026); não residentes têm cerca de 10% da dívida interna. IPCA de 2021: 10,06%, com gasolina em 47,5% e energia elétrica em 21,2% (IBGE), com o setor público arrecadando 0,7% do PIB a mais do que gastou, sem juros. Desemprego (PNAD): 6,2% em dezembro de 2013, 13,9% em março de 2017, 14,9% em março de 2021 e 7,9% em dezembro de 2022. Índice de commodities do FMI: caiu 49% de junho de 2014 a janeiro de 2016 e subiu 132% de junho de 2020 a junho de 2022. Resultado sem juros do setor público (BCB 5793): sobra de 1,7% do PIB em 2013 e falta de 1,9% em 2015; sobra de 0,7% em 2021 e de 1,3% em 2022. Dívida bruta (BCB 13762): de 51,5% do PIB em 2013 para 69,8% em 2016; de 86,9% em 2020 para 71,7% em 2022. A aba não diz "não houve recessão" em 2021 e 2022: a primeira divulgação do IBGE do terceiro trimestre de 2021 trouxe duas quedas pequenas seguidas (0,4% e 0,1%); diz que a economia cresceu nos dois anos, que é o que o PIB anual mostra. Títulos da dívida federal ligados à Selic: cerca de metade (51% em julho de 2026, Tesouro, pela imprensa).</p>
 <p><strong>Onde a ligação com as contas do governo é forte e onde é fraca.</strong> Procura acima da capacidade vira preço, e o Banco Central diz que, com a economia no limite, estímulo do governo vira mais inflação que crescimento (ata do Copom de dezembro de 2022). No Brasil, contas piorando vieram antes das altas da Selic (0,72, acima); nos 44 países, não (0,48). Nem toda inflação vem do gasto: 2021 é o contraexemplo. A bola de neve é aritmética (juro acima do crescimento e sem sobra, a dívida sobe); o círculo de volta para o juro, via dólar e inflação esperada, é o de Blanchard (2004), com força que varia com a confiança. Por isso a corrente da aba tem duas partes. A entrada (gasto acima da arrecadação vira preço) leva a condição "com a economia no limite": empréstimo, por si, não gera inflação, e com gente parada o mesmo gasto vira emprego. O círculo (passos 3 a 6) fecha pela desconfiança, não por mais gasto: pegar emprestado para pagar juros põe pouco dinheiro novo na economia, mas a dívida maior encarece o crédito ao governo, sobe o dólar e mantém o juro alto. Hoje os juros (8,9% do PIB) pesam quase 15 vezes mais que o gasto sem juros acima da arrecadação (0,6%), por isso a aba diz que o círculo gira pelos passos 3 a 6. Dívida alta não marcou a data das recessões em 166 países, por isso a aba não fala em espiral nem em prazo.</p>
 <p><strong>Limites.</strong> Um sinal por vez mostra o que vem antes, não o que causa, e dois sinais podem contar a mesma história. Nada disso passou por teste fora da amostra, exceto a quinta entrada. O Brasil teve sete ciclos de alta desde 2002: a margem de erro é grande. No painel, dívida e déficit são anuais e chegam com 1 ano de atraso, o que enfraquece o fiscal ali.</p>
-<h2 id="o-post-do-dia">O post do dia</h2>
-<p>Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o nível, o PIB num ano ruim, o que pesa e o que ajuda, para que lado as notícias empurram e as próximas datas. O texto segue o guia do leitor (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md"><code>PERSONA.md</code></a>), o mesmo das outras páginas. Ele não muda o nível, a pressão nem a tendência. Um verificador em código procura moldes de texto automático, afirmações de chance de recessão e explicações de método, e pede uma reescrita no máximo. Se a escrita falhar, sai a atualização sem texto corrido.</p>
+<h2 id="os-posts">Os posts</h2>
+<p>É um post por dia, escrito na mesma atualização das 06h30, e o tipo muda com o dia (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md"><code>PERSONA.md</code></a>, "Os tipos de post"):</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Quando</th>
+<th>O que recebe</th>
+<th>Tamanho</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fato do dia</td>
+<td>Segunda a sábado</td>
+<td>As notícias da véspera por fator, os fatos de dados dos fatores com notícia e, só se o nível mudou, o PIB num ano ruim e as entradas da conta</td>
+<td>Até 100 palavras</td>
+</tr>
+<tr>
+<td>A semana</td>
+<td>Domingo, com atualizações em pelo menos 4 dos 6 dias anteriores</td>
+<td>As atualizações de segunda a domingo: nível, entradas e fatores que mudaram, dados novos, notícias somadas por fator (mesma conta da pressão do dia) e as datas da semana seguinte</td>
+<td>Até 250 palavras</td>
+</tr>
+<tr>
+<td>O mês</td>
+<td>Primeiro domingo do mês, no lugar da semana, se as atualizações do mês anterior começaram até o dia 8 e cobrem pelo menos 15 dias dele</td>
+<td>As atualizações do mês anterior e dos primeiros dias deste, mais quatro partes feitas por código: o que mudou em cada fator, o bolso (emprego, preços, parcelas e dólar), o que faria o risco mudar e o placar</td>
+<td>Até 300 palavras de texto; com as tabelas, cerca de 450</td>
+</tr>
+<tr>
+<td>Retrato do Brasil</td>
+<td>Fixo no topo, escrito à mão em <code>editor/</code></td>
+<td>Os números do dia em que foi escrito, com a data</td>
+<td>500 a 600 palavras</td>
+</tr>
+</tbody>
+</table>
+<p>Sem atualizações bastantes, a semana e o mês viram fato do dia. A semana e o mês saem dos registros em <code>runs/</code>, nunca dos posts anteriores. Cada post recebe o anterior do mesmo tipo só para não copiar frases dele.</p>
+<p>O modelo de linguagem recebe os fatos prontos e só redige. Ele não muda o nível, a pressão nem a tendência. Um verificador em código (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/revisa_texto.py"><code>src/revisa_texto.py</code></a>) procura moldes de texto automático, jargão, afirmações de chance de recessão e explicações de método. Nos posts, também confere: número ou data que não está nos dados que o modelo recebeu (com a folga do arredondamento), texto acima do tamanho do tipo, fato do dia que repete o nível sem mudança, data futura no fato do dia (as datas ficam na lateral) e frase copiada do post anterior do mesmo tipo. Qualquer problema pede uma reescrita, no máximo uma. Número fora dos dados, chance de recessão ou mais de uma frase sobre a conta, se sobrarem, barram o texto, e sai a atualização sem texto corrido.</p>
 <p>Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em <a href="https://github.com/pedrojahara/vaidarcrise/tree/main/runs"><code>runs/</code></a>. Depois do lançamento oficial do site, o que foi publicado fica congelado. Antes dele, os textos antigos acompanham as mudanças do site, com os mesmos números e datas.</p>
 <h2 id="salvaguardas">Salvaguardas</h2>
 <ul>
@@ -536,9 +574,6 @@ a:hover{text-decoration-thickness:2px}
 <li>Teste de troca de nomes: reprocessar uma amostra de notícias trocando os atores e publicar se a classificação mudou.</li>
 <li>Conferir o placar contra o Focus, além do dado.</li>
 </ul>
-<h2 id="onde-erramos">Onde erramos</h2>
-<p>Erros são listados aqui com data, o que estava errado e o efeito no nível. Nenhum até agora.</p>
-<p>Achou um? <a href="https://github.com/pedrojahara/vaidarcrise/issues">Avise aqui</a>.</p>
 <h2 id="fontes">Fontes</h2>
 <ul>
 <li>Adrian, Boyarchenko e Giannone (2019), <em>Vulnerable growth</em>, American Economic Review</li>
@@ -562,7 +597,7 @@ a:hover{text-decoration-thickness:2px}
 
 <footer class="pe"><div class="in">
   <p>O Vai dar crise? diz se o risco de recessão no Brasil nos próximos 12 meses está acima ou abaixo do normal. Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos. A conta usa dados de 44 países e compara com o Brasil desde 2004. As notícias mostram para onde cada parte da economia vai, mas não mudam o nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
-  <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Avise aqui</a></p>
+  <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
 </body>
 </html>

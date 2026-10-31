@@ -1153,7 +1153,7 @@
     "como": "Parcela alta faz a família comprar menos. Costuma vir antes de a economia crescer menos.",
     "noticias": [
      {
-      "texto": "Atraso de mais de 90 dias nos empréstimos às pessoas chega a 8,1% em setembro, o maior desde 2011.",
+      "texto": "Atraso de mais de 90 dias nos empréstimos às pessoas chega a 8,1% em setembro, o maior desde o início da série, em 2011.",
       "data": "2026-10-30",
       "fonte": {
        "veiculo": "Valor",
@@ -1415,14 +1415,13 @@
   ]
  },
  "post": {
+  "tipo": "dia",
   "ok": true,
-  "titulo": "Risco segue normal, e atraso nas dívidas bate recorde",
+  "titulo": "Atraso nas dívidas das pessoas sobe a 8,1%, o maior já registrado",
   "paragrafos": [
-   "O risco de recessão segue normal, como ontem. Num ano ruim, daqueles com 1 chance em 10, o PIB cairia 1,8%. Em tempos normais, cairia 1,9%.",
-   "Ajuda: a Selic, o juro básico, caiu de 15% para 13,75% em um ano, e os preços sobem mais devagar. Atrapalha: a economia cresceu 1,4% em um ano, menos que o típico desde 2004. A prévia do PIB caiu no trimestre até agosto.",
-   "Nas notícias de ontem, as dívidas das famílias pioram. O atraso de mais de 90 dias nos empréstimos às pessoas bateu 8,1%, recorde desde 2011. Do lado bom, a Fazenda liberou até R$ 30 bilhões do BNDES para carro de aplicativo e táxi.",
-   "As contas do governo também pesam. A IFI, órgão do Senado que acompanha o Orçamento, calcula R$ 40 bilhões em medidas novas. Com elas, o governo gastaria 1% do PIB a mais do que arrecada em 2027. Em setembro, porém, arrecadou R$ 4,8 bilhões a mais do que gastou.",
-   "Hoje sai o desemprego até setembro. Em 4/11, o Banco Central decide o juro, e em 12/11 sai a inflação de outubro. Em 2/12, o PIB do trimestre mostra se houve dois trimestres seguidos de queda."
+   "O atraso de mais de 90 dias nos empréstimos às pessoas subiu a 8,1% em setembro, recorde, segundo o Banco Central. E 29% da renda das famílias já vai para parcelas e juros, o maior desde o início da série, em 2005.",
+   "Com mais gente atrasando, os bancos emprestam menos e cobram mais caro. No mesmo dia, Itaú e Santander seguiram o Bradesco e subiram o juro da casa própria.",
+   "Do outro lado, a Fazenda liberou até R$ 30 bilhões do BNDES para financiar carro de aplicativo e táxi."
   ],
   "problemas": [],
   "meta": [
@@ -1440,6 +1439,15 @@
     "session_id": "67eb6caf-c765-421e-8401-825373b36a40"
    }
   ],
-  "revisao_manual": "2026-10-31: texto reescrito no estilo do PERSONA.md, com os mesmos números e datas."
+  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas.",
+  "secoes": [
+   {
+    "paragrafos": [
+     "O atraso de mais de 90 dias nos empréstimos às pessoas subiu a 8,1% em setembro, recorde, segundo o Banco Central. E 29% da renda das famílias já vai para parcelas e juros, o maior desde o início da série, em 2005.",
+     "Com mais gente atrasando, os bancos emprestam menos e cobram mais caro. No mesmo dia, Itaú e Santander seguiram o Bradesco e subiram o juro da casa própria.",
+     "Do outro lado, a Fazenda liberou até R$ 30 bilhões do BNDES para financiar carro de aplicativo e táxi."
+    ]
+   }
+  ]
  }
 }
