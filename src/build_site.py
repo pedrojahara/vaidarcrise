@@ -17,7 +17,6 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import calendario  # noqa: E402
-import causas  # noqa: E402
 import model  # noqa: E402
 import og_image  # noqa: E402
 
@@ -517,24 +516,6 @@ def svg_niveis(historico: list[dict], recessoes: list[dict], nomes: list[str]) -
     return "".join(out)
 
 
-# ------------------------------------------------------------- o que causa
-def causas_ctx(dia: str, rodada: dict, agenda: list[dict]) -> dict:
-    """A aba /causas/: as quatro perguntas de "E hoje?" e as próximas datas que mexem no juro."""
-    series = json.loads(causas.HIST.read_text())["series"]
-    brutos = sorted(p for p in (ROOT / "data" / "raw").glob("*/indicadores.json") if p.parent.name <= dia)
-    bruto = json.loads(brutos[-1].read_text()) if brutos else None
-    futuro = [e for e in agenda if e["data"] >= dia]
-    proximas = []
-    for tipo in ("copom", "ipca"):
-        e = next((x for x in futuro if x["tipo"] == tipo), None)
-        if e:
-            d = dt.date.fromisoformat(e["data"])
-            proximas.append({"data": f"{d.day} de {MESES[d.month - 1]}",
-                             "o_que": "o Banco Central decide o juro" if tipo == "copom" else
-                             f"sai a inflação de {MESES[(d.month - 2) % 12]}, pelo IPCA do IBGE"})
-    return {"perguntas": causas.perguntas_hoje(series, rodada["resultado"], bruto), "proximas": proximas}
-
-
 # --------------------------------------------------------------------- dados
 def dados_publicos(rodada: dict, ctx: dict) -> dict:
     res = rodada["resultado"]
@@ -644,9 +625,7 @@ def main() -> None:
     gravar(DOCS / "resumo", "resumo.html", ctx, f"{SITE}/resumo/")
     gravar(DOCS / "nota", "nota.html", ctx, f"{SITE}/nota/")
     try:
-        gravar(DOCS / "causas", "causas.html", {**ctx, "causas": causas_ctx(dia, ultima, agenda),
-                                                "og_url": f"{SITE}/causas/og.png"},
-               f"{SITE}/causas/")
+        gravar(DOCS / "causas", "causas.html", {**ctx, "og_url": f"{SITE}/causas/og.png"}, f"{SITE}/causas/")
     except (KeyError, OSError, ValueError, ZeroDivisionError) as e:  # a aba não pode derrubar a atualização do dia
         print(f"aviso: a aba /causas/ não foi refeita ({e!r})")
     for t in textos:
