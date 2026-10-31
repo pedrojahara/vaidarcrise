@@ -4,12 +4,12 @@ Todo texto do site e do blog (posts, abas, títulos de evento, nota, imagem de c
 
 ## Em uma tela
 
-Escrevemos para um adulto de uns 35 a 45 anos, sem diploma universitário, que acompanha política pelo celular, tem lado (ou desconfia dos dois) e sente a economia no preço do mercado, na fatura do cartão e no emprego. Ele quer saber em 10 segundos: vai dar crise, e o que isso muda para mim?
+Escrevemos para um adulto de uns 35 a 45 anos, sem diploma universitário, que acompanha política pelo celular, tem lado (ou desconfia dos dois) e sente a economia no preço do mercado, na fatura do cartão e no emprego. Ele quer saber em 10 segundos: o risco de crise está subindo ou caindo, e o que isso muda para mim?
 
-- **Resposta primeiro.** O nível do risco, em palavras, na primeira frase.
+- **Resposta primeiro.** Para que lado anda o risco (subindo, igual ou caindo), em palavras, na primeira frase.
 - **Palavra de conversa.** Nada de economês. Sigla só com tradução.
-- **Um número por ideia**, arredondado e sempre com comparação: contra o normal ou contra um ano atrás.
-- **Risco em frequência:** "1 chance em 10", nunca "quantil 10%".
+- **Um número por ideia**, arredondado e sempre com comparação: contra 3 meses antes, contra o normal ou contra um ano atrás.
+- **Risco sem número:** subindo, igual ou caindo, nunca chance em porcentagem. Quando um risco precisa de número, em frequência: "1 chance em 10", nunca "quantil 10%".
 - **Mesma régua para os dois lados.** O texto sairia igual com outro governo no poder.
 - **Calma.** Sem alarme e sem consolo.
 - **Explicação por inteiro.** Frase completa, causa e efeito em ordem, com exemplo. Veja [O jeito de escrever do site](#o-jeito-de-escrever-do-site).
@@ -76,7 +76,7 @@ Ela se informa pelo celular, em rede social e vídeo, desconfia de notícia e fo
 | Lê jornal impresso | 10% (2025); eram 50% em 2013 | Reuters Institute, 2025 |
 | Lê a página palavra por palavra | 16%; 79% passam o olho (teste de 1997) | Nielsen |
 
-- **O primeiro contato é um print ou um link no WhatsApp.** O título e a imagem de compartilhamento têm de dizer o nível sozinhos, sem o resto da página.
+- **O primeiro contato é um print ou um link no WhatsApp.** O título e a imagem de compartilhamento têm de dizer para que lado anda o risco sozinhos, sem o resto da página.
 - **A tela tem uns 7 cm de largura.** Um parágrafo de 3 linhas no computador vira 7 ou 8 no celular.
 - **Ela passa o olho.** A primeira palavra de cada parágrafo e de cada item carrega o assunto.
 - **Confiança se mostra, não se pede.** Cada número leva a fonte (IBGE, Banco Central) a um toque. Marca constante ganha mais confiança que "notícia" em geral.
@@ -93,7 +93,7 @@ Ela lê economia com lente de torcida, e os dois lados acham que o mesmo texto n
 
 **O que quebra a confiança:** adjetivo ("desastroso", "histórico"), intenção atribuída a alguém, fato escolhido a dedo, número sem fonte, previsão com certeza, alarme.
 
-**O que constrói:** a mesma régua para notícia boa e ruim, fonte a um toque, dizer o que não se sabe, mostrar o placar de acertos e admitir erro.
+**O que constrói:** a mesma régua para notícia boa e ruim, fonte a um toque, dizer o que não se sabe, mostrar como a regra se saiu no passado e admitir erro.
 
 1. **Teste da troca.** Imagine outro governo no poder e releia. A frase seria a mesma? Se não, reescreva.
 2. **Teste do print.** Se alguém recortar uma frase e mandar num grupo de torcida, ela ainda diz só o que o dado diz?
@@ -104,8 +104,8 @@ Fale como alguém que entende de economia explicando no almoço de domingo: calm
 
 | É | Não é | Exemplo |
 | --- | --- | --- |
-| Calmo | Alarmista | "O risco subiu para acima do normal", não "O Brasil à beira do abismo" |
-| Direto | Professor | "O juro básico caiu", não "É importante entender que a política monetária..." |
+| Calmo | Alarmista | "O risco de recessão está subindo", não "O Brasil à beira do abismo" |
+| Direto | Professor | "O Banco Central baixou o juro", não "É importante entender que a política monetária..." |
 | Concreto | Abstrato | "Crédito mais caro", não "condições financeiras mais apertadas" |
 | Respeitoso | Condescendente | Explica o termo uma vez, sem "como todo mundo sabe" nem "de forma simples" |
 | Honesto sobre a dúvida | Cheio de ressalva | Uma frase sobre o que não se sabe, não "talvez" em toda frase |
@@ -129,7 +129,7 @@ Fale como alguém que entende de economia explicando no almoço de domingo: calm
 **Números**
 
 - Uma comparação por frase (o número de hoje e a régua dele) e no máximo quatro números por parágrafo.
-- Sempre com comparação: contra o normal ou contra um ano atrás. Número sozinho não diz nada a ela.
+- Sempre com comparação: contra 3 meses antes, contra o normal ou contra um ano atrás. Número sozinho não diz nada a ela.
 - Arredonde: 1,38% vira 1,4%; 5,17% vira 5,2%. Duas casas só na Selic, que é decidida assim.
 - Queda com verbo, não com sinal: "o PIB cai 1,8%", não "−1,8%".
 - Diferença de taxas em pontos, com os dois valores: "subiu 3 pontos, de 10% para 13%".
@@ -139,10 +139,10 @@ Fale como alguém que entende de economia explicando no almoço de domingo: calm
 **Visual**
 
 - Celular primeiro: letra de 16 px ou mais, uma coluna.
-- Cor nunca sozinha: sempre com palavra ("acima do normal") e posição na escala, por causa do daltonismo e do print em preto e branco.
-- A escala de 5 graus mostra sempre onde estamos e onde fica o normal.
+- Cor nunca sozinha: sempre com palavra ("Subindo", "Apertou") e seta, por causa do daltonismo e do print em preto e branco.
+- A direção mostra sempre desde quando está assim e o que cada pressão fez em 3 meses.
 - Um gráfico por ideia, com título que conclui ("Juro caiu 1,25 ponto em um ano"). Linha com rótulo na ponta, sem legenda. Nada de dois eixos.
-- Seta de tendência sempre com a palavra ao lado ("tende a piorar").
+- Seta sempre com a palavra ao lado ("Subindo", "Apertou").
 
 ## O jeito de escrever do site
 
@@ -176,7 +176,7 @@ Cada post responde a uma pergunta só e compara com o próprio período. Ela qua
 
 | Tipo | Pergunta que responde | Quando | Tamanho | Abre com |
 | --- | --- | --- | --- | --- |
-| Retrato do Brasil | Como está a economia, e como ler o site? | Fixo no topo, com data; refeito quando o editor decidir | 500 a 600 palavras | O nível e o que ele quer dizer |
+| Retrato do Brasil | Por que o site existe, e como usá-lo? | Fixo no topo; refeito quando o editor decidir | Até 800 palavras | O que o site faz e para quem |
 | Fato do dia | O que mudou ontem, e o que isso muda para mim? | De segunda a sábado | Até 100 palavras | O fato, com número e régua |
 | A semana | O que a semana mudou, e o que vem na próxima? | Domingo | Até 250 palavras | O que se moveu na semana |
 | O mês | Estamos melhor ou pior que há um mês? E no bolso? | Primeiro domingo do mês, no lugar da semana | Até 450 palavras, com as tabelas (300 de texto) | O que mudou no mês |
@@ -185,12 +185,12 @@ Cada post responde a uma pergunta só e compara com o próprio período. Ela qua
 
 | Informação | Dono | O que o post faz com ela |
 | --- | --- | --- |
-| Nível de hoje e PIB num ano ruim | A placa do topo | O fato do dia só fala do nível se ele mudou. A semana e o mês dizem há quanto tempo ele está igual. |
-| Notícias de ontem, por fator | A caixa "Para onde as notícias empurram" | O fato do dia conta uma, a mais importante, até o bolso. |
+| A direção do risco e desde quando | A placa do topo | O fato do dia só fala da direção se ela mudou. A semana e o mês dizem desde quando ela está assim. |
+| Notícias de ontem, por assunto | A caixa "Para onde as notícias empurram" | O fato do dia conta uma, a mais importante, até o bolso. |
 | Próximas datas | A lateral "Datas importantes" | O fato do dia só cita o dado que sai hoje. A semana diz o que olhar na semana seguinte. |
-| Situação de cada fator | Fator por fator | O mês conta só o que mudou. |
+| O que cada pressão fez em 3 meses, e a folga | O topo, abaixo da placa | O mês conta só o que mudou de lado. |
 | Como a recessão acontece | O que causa recessão | Uma frase de mecanismo, quando o fato pede. |
-| Como o nível é calculado | Como a conta funciona | Uma frase, quando a notícia parece contradizer o nível: "Isso não muda o risco de recessão, porque a Bolsa fica fora da conta do nível." |
+| Como a direção é calculada | Como funciona | Uma frase, quando a notícia parece contradizer a direção: "Isso não muda a direção do risco, porque a Bolsa fica fora da conta." |
 
 - **Compare com o próprio período.** O fato do dia, com ontem; a semana, com a semana anterior; o mês, com o mês anterior. Comparação mais longa só como régua de um número (contra um ano antes, contra o normal).
 - **Dia sem novidade** ganha um fato do dia de uma frase, que diz isso. É informação.
@@ -262,13 +262,17 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 
 | Coisa | Nome no site |
 | --- | --- |
-| Abas | Hoje, Fator por fator, O que causa recessão, Como a conta funciona |
-| Os sete fatores | Ritmo da economia, Juro e inflação, Dívidas das famílias, Dólar e juro longo, Contas do governo, Emprego, Economia lá fora |
-| O número que decide o nível | o PIB num ano ruim (1 chance em 10); "num ano ruim, em tempos normais" para a comparação |
+| Abas | Hoje, O que causa recessão, Como funciona |
+| A direção | "O risco de recessão está subindo", "está igual" ou "está caindo", desde (mês); "A economia está encolhendo" quando a prévia do PIB cai mais de 1,5% em 3 meses. Na placa: Subindo, Igual, Caindo, Encolhendo |
+| As cinco pressões | Contas do governo, Dívidas das famílias, Dólar e juro longo, Inflação esperada, Juro |
+| Fora da soma | Ritmo da economia, Emprego |
+| O que cada pressão fez em 3 meses | Apertou, Igual, Folgou; no ritmo, Esfriou, Igual, Acelerou; no emprego, Piorou, Igual, Melhorou |
+| A régua de cada pressão | o vaivém normal de 3 meses (só no topo aberto e em Como funciona) |
+| Quanto falta para o pior já visto | Folga: Nenhuma, Quase nenhuma, Pouca, Média, Muita |
+| O que amortece um susto | O que segura |
+| Os assuntos das notícias | Ritmo da economia, Juro e inflação, Dívidas das famílias, Dólar e juro longo, Contas do governo, Emprego, Economia lá fora |
+| A conta dos 44 países (só em Como funciona) | o PIB num ano ruim (1 chance em 10); "num ano ruim, em tempos normais" para a comparação |
 | Boletim Focus | os bancos (Focus) |
-| Efeito no nível | ajuda, pesa (0,19 ponto) |
-| Projeção de terceiros | Analistas concordam, Analistas veem diferente, Para acompanhar |
-| Previsão de 6 meses | Devem piorar, Devem ficar como estão, Devem melhorar; em cada fator, Tende a piorar, Estável, Tende a melhorar |
 | Copom | o Banco Central decide o juro (Copom) |
 | Diferença entre taxas | pontos, abreviado "pt" em tabela |
 | Tipos de post | Retrato do Brasil, Fato do dia, A semana, O mês |
@@ -282,7 +286,7 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 
 Os itens 3, 5, 9 e 12, e parte do 11, o código confere nos posts (`src/revisa_texto.py`); os outros pedem leitura.
 
-1. **Resposta primeiro.** O título e a primeira frase respondem à pergunta do texto: no fato do dia, o fato principal; o nível, só quando mudou.
+1. **Resposta primeiro.** O título e a primeira frase respondem à pergunta do texto: no fato do dia, o fato principal; a direção do risco, só quando mudou.
 2. **Sozinho no print.** Só o título e a primeira frase já se entendem, sem o resto da página.
 3. **Frase curta.** Nenhuma frase passa de 20 palavras; nenhum parágrafo, de 50.
 4. **Zero jargão solto.** Todo termo da tabela acima está traduzido ou fora.
@@ -293,7 +297,7 @@ Os itens 3, 5, 9 e 12, e parte do 11, o código confere nos posts (`src/revisa_t
 9. **Sem alarme, sem consolo, sem molde.** Nenhuma palavra de alarme ou com lado; nenhuma expressão de piloto automático.
 10. **Em voz alta.** Lido em voz alta, soa como gente explicando para gente.
 11. **Explicação por inteiro.** Passa nas sete regras de "O jeito de escrever do site": frase completa, causa e efeito em ordem com exemplo, condição por inteiro, nenhuma fórmula de efeito, causa de fora dita, casos com as mesmas linhas e amarração ao que veio antes.
-12. **Nada repetido.** O texto não repete o que a placa, a caixa de notícias ou a lateral já mostram, nem frase do post anterior do mesmo tipo. Todo número está nos dados.
+12. **Nada repetido.** O texto não repete o que o topo, a caixa de notícias ou a lateral já mostram, nem frase do post anterior do mesmo tipo. Todo número está nos dados.
 
 ### Antes e depois: a frase, com o post de 30/10/2026
 
@@ -301,19 +305,15 @@ Este exemplo mostra a frase e o número; a estrutura está no exemplo seguinte. 
 
 > **Antes.** O risco de recessão técnica, que são dois trimestres seguidos de queda do PIB, segue normal, o mesmo nível da atualização anterior. No cenário ruim, com só 1 chance em 10 de ser pior, o PIB cai 1,8% em 12 meses, contra −1,9% em tempos normais. A Selic, juro básico, caiu de 15,00% para 13,75% em um ano, e o IPCA recuou de 5,17% para 4,58%. Os dois aliviam esse cenário. O crescimento de 1,38% em 12 meses pesa, e o IBC-Br, prévia do PIB, caiu 0,6% no trimestre até agosto.
 
-> **Depois.** O risco de recessão segue normal. Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos.
+> **Depois.** A Selic caiu de 15% para 13,75% em um ano. A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos.
 >
-> Ajuda: a Selic caiu de 15% para 13,75% em um ano. A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos. E os preços sobem mais devagar: 4,6% em um ano, contra 5,2% antes.
->
-> Atrapalha: a economia cresce menos que o normal, 1,4% em um ano. A prévia do PIB do Banco Central caiu no trimestre até agosto.
->
-> Num ano ruim, daqueles com 1 chance em 10, o PIB cairia 1,8%. Em tempos normais, cairia 1,9%.
+> Os preços sobem mais devagar: 4,6% em um ano, contra 5,2% antes. A economia cresce menos que o normal, 1,4% em um ano, e a prévia do PIB do Banco Central caiu no trimestre até agosto.
 
-Mesmos fatos, mesma ordem de importância. A diferença está no rótulo antes de cada bloco (ajuda, atrapalha), no verbo que não engana e em metade dos números.
+Mesmos fatos, mesma ordem de importância. A diferença está no verbo que não engana ("sobem mais devagar", e não "recuou"), na Selic explicada pelo que ela faz e em metade dos números.
 
 ### Antes e depois: a estrutura, com o post de 31/10/2026
 
-O post de 31/10 tinha 197 palavras, e 97 delas repetiam o dia anterior e algo que já estava na tela: o nível e o PIB num ano ruim (a placa), o que ajuda e o que atrapalha (Fator por fator) e as próximas datas (a lateral). O nível mudou 2 vezes por ano desde 2004; um post que abre com ele diz "segue normal" quase todo dia.
+O post de 31/10 tinha 197 palavras, e 97 delas repetiam o dia anterior e algo que já estava na tela: o risco do dia (a placa), o que ajuda e o que atrapalha (a antiga aba Fator por fator) e as próximas datas (a lateral). A direção do risco muda umas duas vezes por ano desde 2004; um post que abre com ela diz "segue subindo" quase todo dia.
 
 > **Antes.** Risco segue normal, e Bolsa cai 18,1% na semana depois da eleição. O risco de recessão segue normal, como ontem. Num ano ruim [...]. Ajuda: a Selic [...]. Nas notícias de sexta, o mercado puxa para pior [...]. O ritmo da economia também puxa para pior [...]. Em 4/11, quarta, o Banco Central decide o juro [...].
 
@@ -322,19 +322,18 @@ O post de 31/10 tinha 197 palavras, e 97 delas repetiam o dia anterior e algo qu
 > A Bolsa caiu 18,1% na semana depois da eleição, a mesma queda de uma semana de 2001. O dólar subiu 9%, a maior alta em uma semana desde 2008.
 >
 > Com o dólar mais caro, fica mais caro o que vem de fora, como celular, peça de carro e passagem de avião.
->
-> Isso não muda o risco de recessão, porque Bolsa e dólar ficam fora da conta do nível.
 
-Um fato, contado até o bolso, e a única pergunta que ele levanta respondida em uma frase. Para onde a notícia empurra o fator fica na caixa logo abaixo do post.
+Um fato, contado até o bolso. O que o dólar fez em 3 meses fica no topo, em "Dólar e juro longo", e para onde a notícia empurra cada assunto fica na caixa logo abaixo do post.
 
 ## Onde o guia vale no código
 
 - `src/escreve_post.py`: um prompt por tipo de post (fato do dia, a semana, o mês), com as regras comuns de leitor, frase, números, palavras proibidas, mecanismo e causa e efeito por extenso. O código monta os fatos de cada tipo; a semana e o mês saem das rodadas guardadas em `runs/`.
 - `src/run.py`: escolhe o tipo pela data (domingo, a semana; primeiro domingo do mês, o mês), com volta ao fato do dia quando faltam rodadas.
-- `src/classify_news.py`, regras 17 e 21: títulos de evento e "por quê" com a mesma linguagem.
-- `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, nível repetido sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados que sobra depois da reescrita barra o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
-- `src/dossie.py`: as frases de dados de cada fator (queda no verbo, mês por extenso, sem sigla solta); `data/dossie.json` guarda os textos que ficam de um dia para o outro.
-- `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas.
+- `src/classify_news.py`, regras 12 a 16: títulos de evento e "por quê" com a mesma linguagem.
+- `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, direção repetida sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados, previsão de recessão e risco em porcentagem que sobram depois da reescrita barram o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
+- `src/dossie.py`: as frases de dados de cada assunto, que o post usa como contexto (queda no verbo, mês por extenso, sem sigla solta).
+- `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas; no topo, as frases de cada pressão, do vaivém normal e da folga saem de `src/build_site.py`.
+- `config/modelo.json`, seção `direcao`: os nomes das pressões, quem mexe em cada uma e o que segura.
 - Textos escritos à mão (`editor/`, `templates/`) seguem a lista acima na leitura. `METODOLOGIA.md` é técnica de propósito, para quem quer refazer a conta, mas usa os mesmos nomes do site.
 - `CLAUDE.md` manda qualquer sessão do Claude que escreva no repositório passar o texto por este guia.
 

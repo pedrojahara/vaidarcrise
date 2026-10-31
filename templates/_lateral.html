@@ -3,14 +3,14 @@
   <div class="bloco">
     <h3>Datas importantes</h3>
     <ul class="datas">
-      {% for x in datas %}<li{% if x.tipo == 'pib' %} class="chave"{% endif %}><time datetime="{{ x.data }}">{{ x.dia }}</time><span>{{ x.rotulo }}{% if x.tipo == 'pib' %}. É o dado que responde à pergunta do site.{% endif %}</span></li>{% endfor %}
+      {% for x in datas %}<li{% if x.tipo == 'pib' %} class="chave"{% endif %}><time datetime="{{ x.data }}">{{ x.dia }}</time><span>{{ x.rotulo }}{% if x.tipo == 'pib' %}. É o dado que diz se a economia encolheu.{% endif %}</span></li>{% endfor %}
     </ul>
     <p class="peq fontes-datas">Fontes: calendário do <a href="https://servicodados.ibge.gov.br/api/v3/calendario/">IBGE</a>, Banco Central (Copom) e Fed.</p>
   </div>
   {% endif %}
   <div class="bloco">
     <h3>Sobre</h3>
-    <p>Os números vêm do Banco Central, do IBGE, do Tesouro, do FMI e da OCDE, que reúne dados de 44 países.</p>
+    <p>Os números vêm do Banco Central, do IBGE, do Tesouro e dos bancos que respondem ao Boletim Focus. A direção do risco sai de uma regra fixa, a mesma para qualquer governo, testada com os dados do Brasil desde 2004.</p>
     <p>As notícias vêm de 8 jornais: {{ jornais }}. Às 06h30, um programa de inteligência artificial lê as manchetes da véspera e escreve o post: o fato do dia, de segunda a sábado; a semana, aos domingos; e o mês, no primeiro domingo do mês.</p>
   </div>
 </aside>

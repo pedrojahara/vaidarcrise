@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Bolsa cai 13,9% e dólar sobe 8,2% no dia seguinte à eleição | Vai dar crise?</title>
-<meta name="description" content="Fato do dia, quinta, 29 de outubro de 2026. Risco de recessão no Brasil nos 12 meses seguintes: normal.">
+<meta name="description" content="Fato do dia, quinta, 29 de outubro de 2026. O risco de recessão está subindo, desde junho.">
 <link rel="canonical" href="https://vaidarcrise.com.br/2026-10-29/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
 <meta property="og:title" content="Bolsa cai 13,9% e dólar sobe 8,2% no dia seguinte à eleição | Vai dar crise?">
-<meta property="og:description" content="Fato do dia, quinta, 29 de outubro de 2026. Risco de recessão no Brasil nos 12 meses seguintes: normal.">
+<meta property="og:description" content="Fato do dia, quinta, 29 de outubro de 2026. O risco de recessão está subindo, desde junho.">
 <meta property="og:url" content="https://vaidarcrise.com.br/2026-10-29/">
 <meta property="og:image" content="https://vaidarcrise.com.br/og/2026-10-29.png">
 <meta property="og:image:width" content="1200">
@@ -53,32 +53,39 @@ a:hover{text-decoration-thickness:2px}
 .linha-fina{margin:8px 0 12px;font:16px/1.45 var(--sistema);color:var(--meta)}
 .cab nav{display:flex;flex-wrap:wrap;gap:6px 18px;font:15px/1.4 var(--sistema)}
 
-/* o nível de hoje (bloco próprio em _nota.html) */
-.nota{margin-bottom:30px;min-width:0}
+/* a direção do risco (bloco próprio em _nota.html) */
+.nota{margin-bottom:30px;min-width:0;font-family:var(--sistema)}
 .nota .topo{display:flex;align-items:center;gap:16px}
 .placa{width:84px;height:84px;margin:13px;flex:none;transform:rotate(45deg);background:var(--placa);border-radius:10px;box-shadow:inset 0 0 0 4px var(--placa),inset 0 0 0 7px var(--placa-tinta)}
-.placa span{display:grid;place-items:center;height:100%;transform:rotate(-45deg);font:800 21px/1.05 var(--sistema);color:var(--placa-tinta);letter-spacing:-.01em;text-align:center}
-.placa span.dupla{font-size:17px}
+.placa span{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;transform:rotate(-45deg);font:800 14.5px/1.05 var(--sistema);color:var(--placa-tinta);letter-spacing:-.01em;text-align:center}
+.placa span b{font-size:26px;line-height:1}
+.placa span.longa{font-size:11px}
 .leitura{display:flex;flex-direction:column;gap:2px;min-width:0;margin:0}
 .leitura .rot{font:700 22px/1.15 var(--sistema)}
-.leitura .sub{font:14.5px/1.4 var(--sistema);color:var(--meta)}
-.escala{list-style:none;padding:0;margin:14px 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;font:12.5px/1.25 var(--sistema);color:var(--meta)}
-.escala li{display:flex;flex-direction:column;gap:5px;text-align:center;min-width:0}
-.escala li::before{content:"";display:block;height:8px;background:var(--fio)}
-.escala li:first-child::before{border-radius:4px 0 0 4px}.escala li:last-child::before{border-radius:0 4px 4px 0}
-.escala li.aqui{color:var(--tinta);font-weight:700}
-.escala li.aqui::before{background:var(--tinta)}
-.escala.grande{font-size:14px;gap:4px}
-.escala.grande li::before{height:12px}
-.cenarios{list-style:none;padding:12px 14px;margin:16px 0 0;background:var(--maquina);border-radius:6px;font:15px/1.4 var(--sistema);display:grid;gap:8px}
-.cenarios li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:baseline}
-.cenarios li > :last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
-.cenarios b{font-size:17px;color:var(--sobe)}
-.cenarios .ref{color:var(--meta);font-size:14px}
-.cenarios .cab-cen{display:block;font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em}
+.leitura .sub{font:15px/1.4 var(--sistema);color:var(--meta)}
+.conta-dir{font:16px/1.45 var(--sistema);margin:12px 0 0}
+.partes{list-style:none;padding:0;margin:16px 0 0;font:15px/1.4 var(--sistema)}
+.partes .cab-p{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;padding:0 0 6px}
+.partes li[id]{border-top:1px solid var(--fio);scroll-margin-top:12px}
+.partes li[id]:last-child{border-bottom:1px solid var(--fio)}
+.partes summary{display:grid;gap:2px;padding:9px 22px 9px 0;cursor:pointer;list-style:none;position:relative}
+.partes summary::-webkit-details-marker{display:none}
+.partes summary::after{content:"+";position:absolute;right:2px;top:8px;font:600 17px/1 var(--sistema);color:var(--meta)}
+.partes details[open] summary::after{content:"−"}
+.p-cab{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.p-lado{font-weight:700;white-space:nowrap}
+.p-frase{color:var(--tinta)}
+.p-folga{font-size:13.5px;color:var(--meta)}
+.p-mais{padding:0 0 10px;font-size:14.5px;color:var(--tinta)}
+.p-mais p{margin:0 0 6px}
+.partes.fora .p-lado{font-weight:600}
+.historia{font:14.5px/1.45 var(--sistema);color:var(--meta);margin:14px 0 0}
+.segura{margin:18px 0 0;padding:12px 14px;background:var(--maquina);border-radius:6px}
+.segura h3{font:700 15px/1.3 var(--sistema);margin:0 0 6px}
+.segura ul{margin:0;padding-left:1.1em;font:14.5px/1.45 var(--sistema);display:grid;gap:6px}
 .tend-noticias{font:15px/1.45 var(--sistema);margin:14px 0 0}
 .tend-noticias b{font-size:1.1em;margin-right:3px}
-.nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:8px 0 0}
+.nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:10px 0 0}
 .aviso{font:15px/1.45 var(--sistema);background:var(--maquina);border-left:4px solid var(--placa);padding:8px 12px;margin:12px 0 0}
 .aviso[hidden]{display:none}
 
@@ -100,7 +107,7 @@ a:hover{text-decoration-thickness:2px}
 .pe p{margin:0 0 8px;max-width:640px}
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
-@media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:18px}.placa span.dupla{font-size:15px}.marca b{font-size:26px}}
+@media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
 
 .blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado";grid-template-rows:auto 1fr;padding-top:28px;padding-bottom:28px}
 .blog .nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}
@@ -161,32 +168,104 @@ a:hover{text-decoration-thickness:2px}
 <body>
 <header class="cab"><div class="in"><div class="faixa">
   <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
-  <p class="linha-fina">O risco de recessão no Brasil, medido com dados todo dia.</p>
-  <nav aria-label="Seções"><a href="/2026-10-29/" aria-current="page">Hoje</a><a href="/2026-10-29/resumo/">Fator por fator</a><a href="/causas/">O que causa recessão</a><a href="/2026-10-29/nota/">Como a conta funciona</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
+  <p class="linha-fina">Para onde vai o risco de recessão no Brasil, com dados todo dia.</p>
+  <nav aria-label="Seções"><a href="/2026-10-29/" aria-current="page">Hoje</a><a href="/causas/">O que causa recessão</a><a href="/nota/">Como funciona</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
 </div></div></header>
 
 <div class="in blog">
   
-<section class="nota" aria-label="O risco de hoje">
+<section class="nota" aria-label="Para onde vai o risco de recessão">
   <div class="topo">
-    <div class="placa" role="img" aria-label="Risco normal"><span>Normal</span></div>
-    <p class="leitura"><span class="rot">risco normal</span><span class="sub">de recessão nos próximos 12 meses</span></p>
+    <div class="placa" role="img" aria-label="Risco subindo"><span><b aria-hidden="true">↑</b>Subindo</span></div>
+    <p class="leitura"><span class="rot">O risco de recessão está subindo</span><span class="sub">desde junho</span></p>
   </div>
-  <ol class="escala" aria-label="Escala de cinco níveis de risco"><li><span>Muito abaixo</span></li><li><span>Abaixo</span></li><li class="aqui" aria-current="true"><span>Normal</span></li><li><span>Acima</span></li><li><span>Muito acima</span></li></ol>
+  <p class="conta-dir">Quatro das cinco pressões que costumam vir antes de uma recessão apertaram nos últimos 3 meses. Nenhuma folgou.</p>
   
-  <ul class="cenarios" aria-label="PIB nos próximos 12 meses">
-    <li class="cab-cen">O PIB nos próximos 12 meses</li>
-    <li class="ref"><span>Mais provável, para os bancos (Focus)</span><span>cresce 1,4%</span></li>
-    <li class="pior"><span>Num ano ruim (1 chance em 10)</span><b>cai 1,8%</b></li>
-    <li class="ref"><span>Num ano ruim, em tempos normais</span><span>cai 1,9%</span></li>
+  <ul class="partes" aria-label="As cinco pressões">
+    <li class="cab-p">As cinco pressões, nos últimos 3 meses</li>
+    
+<li id="parte-contas"><details>
+  <summary><span class="p-cab"><b>Contas do governo</b><span class="p-lado mais">Apertou</span></span><span class="p-frase">A dívida do governo foi de 81,0% para 82,9% do PIB, de maio a agosto.</span><span class="p-folga">Folga: quase nenhuma</span></summary>
+  <div class="p-mais">
+    <p>Sem contar os juros, o governo gastou 0,6% do PIB a mais do que arrecadou nos 12 meses até agosto, contra 1,1% nos 12 meses até maio.</p><p>A dívida sobe mesmo assim, porque os juros sobre ela pesam mais que essa melhora.</p>
+    <p>Passou do vaivém normal de 3 meses, que vai até 0,95 ponto.</p>
+    <p><b>Folga: quase nenhuma.</b> A dívida está mais alta que em 95% dos meses desde 2006.</p>
+    <p>Quem mexe: o governo e o Congresso, nos gastos e nos impostos, e o juro do Banco Central, que muda a conta dos juros da dívida.</p>
+    <p><a href="/causas/#t-divida">Como isso funciona</a></p>
+  </div>
+</details></li>
+<li id="parte-parcelas"><details>
+  <summary><span class="p-cab"><b>Dívidas das famílias</b><span class="p-lado mais">Apertou</span></span><span class="p-frase">A parte da renda das famílias que vai para parcelas e juros foi de 28,5% para 29,0%, de maio a agosto.</span><span class="p-folga">Folga: nenhuma</span></summary>
+  <div class="p-mais">
+    
+    <p>Passou do vaivém normal de 3 meses, que vai até 0,38 ponto.</p>
+    <p><b>Folga: nenhuma.</b> É a maior desde 2005, quando começa a série.</p>
+    <p>Quem mexe: as famílias e os bancos, quando pegam e dão empréstimo, e o juro do Banco Central, que muda o preço da parcela.</p>
+    <p><a href="/causas/#t-doem">Como isso funciona</a></p>
+  </div>
+</details></li>
+<li id="parte-mercado"><details>
+  <summary><span class="p-cab"><b>Dólar e juro longo</b><span class="p-lado mais">Apertou</span></span><span class="p-frase">O dólar foi de R$ 5,08 para R$ 5,34, do fim de julho a 28/10 (alta de 5,2%).</span><span class="p-folga">Folga: quase nenhuma</span></summary>
+  <div class="p-mais">
+    <p>O juro que o governo paga, acima da inflação, para pegar dinheiro por uns 10 anos foi de 8,3% para 7,9% ao ano.</p>
+    <p>Dólar: passou raspando do vaivém normal de 3 meses, que vai até 4,8%. Juro de 10 anos: ficou dentro do vaivém normal de 3 meses, que vai até 0,43 ponto. Os dois contam como um só: se um aperta e o outro folga, fica igual.</p>
+    <p><b>Folga: quase nenhuma.</b> O juro de 10 anos está mais alto que em 90% dos meses desde 2005.</p>
+    <p>Quem mexe: quem compra e vende dólar e títulos do governo, aqui e lá fora. As contas do governo e o juro dos Estados Unidos pesam nessa escolha.</p>
+    <p><a href="/causas/#t-outros">Como isso funciona</a></p>
+  </div>
+</details></li>
+<li id="parte-inflacao"><details>
+  <summary><span class="p-cab"><b>Inflação esperada</b><span class="p-lado mais">Apertou</span></span><span class="p-frase">Os bancos (Focus) esperam que os preços subam 4,53% nos próximos 12 meses. Em julho, esperavam 4,19%.</span><span class="p-folga">Folga: média</span></summary>
+  <div class="p-mais">
+    
+    <p>Passou raspando do vaivém normal de 3 meses, que vai até 0,32 ponto.</p>
+    <p><b>Folga: média.</b> A inflação esperada está no meio do que o Brasil viu desde 2001. Mas está acima do teto da meta do Banco Central, de 4,5%.</p>
+    <p>Quem mexe: o Banco Central, com o juro, e preços que vêm de fora, como o petróleo e o dólar.</p>
+    <p><a href="/causas/#t-precos">Como isso funciona</a></p>
+  </div>
+</details></li>
+<li id="parte-juro"><details>
+  <summary><span class="p-cab"><b>Juro</b><span class="p-lado igual">Igual</span></span><span class="p-frase">A Selic caiu de 14,25% para 13,75%, de julho a outubro.</span><span class="p-folga">Folga: pouca</span></summary>
+  <div class="p-mais">
+    <p>A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos.</p>
+    <p>Ficou dentro do vaivém normal de 3 meses, que vai até 0,83 ponto.</p>
+    <p><b>Folga: pouca.</b> Descontada a inflação esperada, a Selic dá 8,8% ao ano e está mais alta que em 73% dos meses desde 2002.</p>
+    <p>Quem decide: o Banco Central, oito vezes por ano.</p>
+    <p><a href="/causas/#t-freio">Como isso funciona</a></p>
+  </div>
+</details></li>
   </ul>
-  
-  
-  
-  <p class="tend-noticias"><b class="mais" aria-hidden="true">↑</b> As notícias de 26/10 a 28/10 puxam para pior. <a href="/2026-10-29/resumo/">Ver fator por fator</a></p>
-  
-  <p class="atual">Atualização de 29/10, às 13h39</p>
-  
+  <ul class="partes fora" aria-label="Ritmo da economia e emprego">
+    <li class="cab-p">Fora da soma: como a economia está agora</li>
+    
+<li id="parte-ritmo"><details>
+  <summary><span class="p-cab"><b>Ritmo da economia</b><span class="p-lado igual">Igual</span></span><span class="p-frase">A prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto, contra os 3 meses anteriores.</span></summary>
+  <div class="p-mais">
+    
+    <p>Ficou dentro do vaivém normal de 3 meses, que vai até 0,89%.</p>
+    
+    <p>Mostra como a economia está agora. Se a prévia do PIB cair mais de 1,5% em 3 meses, o topo passa a dizer que a economia está encolhendo.</p>
+    <p><a href="/causas/#t-freio">Como isso funciona</a></p>
+  </div>
+</details></li>
+<li id="parte-emprego"><details>
+  <summary><span class="p-cab"><b>Emprego</b><span class="p-lado igual">Igual</span></span><span class="p-frase">O desemprego foi de 5,6% para 5,3%, no trimestre até agosto, contra o trimestre até maio.</span><span class="p-folga">Folga: muita</span></summary>
+  <div class="p-mais">
+    
+    <p>Ficou dentro do vaivém normal de 3 meses, que vai até 0,56 ponto.</p>
+    <p><b>Folga: muita.</b> O desemprego está mais baixo que em 99% dos meses desde 2012.</p>
+    <p>O emprego costuma ser o último a piorar numa recessão: as empresas primeiro vendem menos e só depois demitem.</p>
+    <p><a href="/causas/#t-doem">Como isso funciona</a></p>
+  </div>
+</details></li>
+  </ul>
+  <p class="historia">Desde 2004, depois dos meses em que o risco esteve subindo, o PIB cresceu em média 0,3% nos 12 meses seguintes. Não é previsão: a direção diz para que lado o risco andou.</p>
+  <div class="segura">
+    <h3>O que segura</h3>
+    <ul><li>Quase toda a dívida do governo é em reais: 96% da dívida federal, pelo Tesouro, em agosto de 2026. Quando o dólar sobe, a dívida não cresce junto, como cresceu em 2002.</li><li>O Banco Central guarda reservas em dólar. Num susto, ele vende parte delas e o dólar sobe menos.</li><li>O Banco Central decide o juro com autonomia garantida por lei desde 2021. O diretor não pode ser trocado no meio do mandato por causa de uma decisão.</li></ul>
+  </div>
+  <p class="tend-noticias"><b class="mais" aria-hidden="true">↑</b> As notícias de 26/10 a 28/10 puxam para pior.</p>
+  <p class="atual"><a href="/nota/">Como funciona</a> | Atualização de 29/10, às 13h39</p>
   
 </section>
   <main class="feed">
@@ -199,7 +278,7 @@ a:hover{text-decoration-thickness:2px}
   
   
   
-  <p>A Bolsa caiu 13,9% e o dólar subiu 8,2% no dia seguinte à eleição. A queda foi tão forte que os negócios na Bolsa chegaram a parar, o que não acontecia desde 2020.</p><p>Dois dias depois, subiu o juro que o governo paga para pegar dinheiro por muitos anos. Quando esse juro sobe, os bancos cobram mais nos empréstimos longos. O Bradesco levou o juro mínimo da casa própria de 11,7% para 15% ao ano.</p><p>Isso não muda o risco de recessão, porque Bolsa e dólar ficam fora da conta do nível.</p>
+  <p>A Bolsa caiu 13,9% e o dólar subiu 8,2% no dia seguinte à eleição. A queda foi tão forte que os negócios na Bolsa chegaram a parar, o que não acontecia desde 2020.</p><p>Dois dias depois, subiu o juro que o governo paga para pegar dinheiro por muitos anos. Quando esse juro sobe, os bancos cobram mais nos empréstimos longos. O Bradesco levou o juro mínimo da casa própria de 11,7% para 15% ao ano.</p>
   
   
   
@@ -210,7 +289,7 @@ a:hover{text-decoration-thickness:2px}
     <div class="conta-cab"><h3>Para onde as notícias empurram</h3></div>
     
     <ul class="itens">
-      <li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Dólar e juro longo <a class="ver" href="/2026-10-29/resumo/#mercado">detalhes</a></b><span class="nt">Bolsa cai 13,9% e dólar sobe 8,2% no dia seguinte à eleição <span class="f"><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula" rel="nofollow noopener">Agência Brasil</a></span></span><span class="nt">Juro de longo prazo sobe forte, com investidor cobrando mais do Brasil <span class="f"><a href="https://valor.globo.com/financas/noticia/2026/10/28/juros-longos-tem-forte-alta-com-novo-acrescimo-de-premios-por-mal-estar-local.ghtml" rel="nofollow noopener">Valor</a></span></span><span class="nt">Tesouro vai recomprar títulos de 2030 a 2045 para acalmar o mercado <span class="f">decisão tomada, alivia, <a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/para-conter-oscilacoes-tesouro-anuncia-nova-recompra-de-titulos" rel="nofollow noopener">Agência Brasil</a></span></span></div></li><li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Ritmo da economia <a class="ver" href="/2026-10-29/resumo/#atividade">detalhes</a></b><span class="nt">El Niño forte pode reduzir a safra de soja de 2026/27 em cerca de 10% <span class="f"><a href="https://g1.globo.com/economia/agronegocios/noticia/2026/10/27/el-nino-pode-reduzir-safra-de-soja-do-brasil-em-10percent-projeta-serasa.ghtml" rel="nofollow noopener">g1</a></span></span><span class="nt">CNI, da indústria, reduz a previsão do PIB de 2026 de 2% para 1,6% <span class="f"><a href="https://www.infomoney.com.br/economia/cni-reduz-projecao-para-o-pib-e-eleva-estimativas-de-inflacao-e-divida-publica/" rel="nofollow noopener">InfoMoney</a></span></span><span class="nt">Confiança da indústria cai pelo terceiro mês seguido em outubro <span class="f"><a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://aovivo.folha.uol.com.br/mercado/2026/10/25/6568-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post467994" rel="nofollow noopener">Folha</a></span></span></div></li><li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Dívidas das famílias <a class="ver" href="/2026-10-29/resumo/#credito">detalhes</a></b><span class="nt">Banco Central: 20,3 milhões com dívida de risco, 75% a mais em 5 anos <span class="f"><a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/numero-de-superendividados-no-brasil-cresce-75-em-cinco-anos-diz-bc.shtml" rel="nofollow noopener">Folha</a></span></span><span class="nt">Bradesco sobe o juro mínimo da casa própria de 11,7% para 15% ao ano <span class="f">decisão tomada, <a href="https://www.poder360.com.br/poder-economia/em-salto-inedito-bradesco-sobe-juro-da-casa-propria-para-15-ao-ano/" rel="nofollow noopener">Poder360</a></span></span><span class="nt">Governo estuda cobrar imposto (IOF) sobre LCI, LCA e outras aplicações isentas <span class="f">rumor, <a href="https://www.poder360.com.br/poder-economia/governo-avalia-cobrar-iof-sobre-lci-lca-e-outros-titulos/" rel="nofollow noopener">Poder360</a></span></span></div></li><li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Juro e inflação <a class="ver" href="/2026-10-29/resumo/#juro">detalhes</a></b><span class="nt">Estados sobem o imposto (ICMS) dos combustíveis a partir de fevereiro de 2027 <span class="f">decisão tomada, <a href="https://www.poder360.com.br/poder-economia/estados-aprovam-aumento-de-icms-sobre-gasolina-diesel-e-gas-para-2027/" rel="nofollow noopener">Poder360</a></span></span></div></li>
+      <li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Dólar e juro longo</b><span class="nt">Bolsa cai 13,9% e dólar sobe 8,2% no dia seguinte à eleição <span class="f"><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula" rel="nofollow noopener">Agência Brasil</a></span></span><span class="nt">Juro de longo prazo sobe forte, com investidor cobrando mais do Brasil <span class="f"><a href="https://valor.globo.com/financas/noticia/2026/10/28/juros-longos-tem-forte-alta-com-novo-acrescimo-de-premios-por-mal-estar-local.ghtml" rel="nofollow noopener">Valor</a></span></span><span class="nt">Tesouro vai recomprar títulos de 2030 a 2045 para acalmar o mercado <span class="f">decisão tomada, alivia, <a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/para-conter-oscilacoes-tesouro-anuncia-nova-recompra-de-titulos" rel="nofollow noopener">Agência Brasil</a></span></span></div></li><li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Ritmo da economia</b><span class="nt">El Niño forte pode reduzir a safra de soja de 2026/27 em cerca de 10% <span class="f"><a href="https://g1.globo.com/economia/agronegocios/noticia/2026/10/27/el-nino-pode-reduzir-safra-de-soja-do-brasil-em-10percent-projeta-serasa.ghtml" rel="nofollow noopener">g1</a></span></span><span class="nt">CNI, da indústria, reduz a previsão do PIB de 2026 de 2% para 1,6% <span class="f"><a href="https://www.infomoney.com.br/economia/cni-reduz-projecao-para-o-pib-e-eleva-estimativas-de-inflacao-e-divida-publica/" rel="nofollow noopener">InfoMoney</a></span></span><span class="nt">Confiança da indústria cai pelo terceiro mês seguido em outubro <span class="f"><a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://aovivo.folha.uol.com.br/mercado/2026/10/25/6568-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post467994" rel="nofollow noopener">Folha</a></span></span></div></li><li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Dívidas das famílias</b><span class="nt">Banco Central: 20,3 milhões com dívida de risco, 75% a mais em 5 anos <span class="f"><a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/numero-de-superendividados-no-brasil-cresce-75-em-cinco-anos-diz-bc.shtml" rel="nofollow noopener">Folha</a></span></span><span class="nt">Bradesco sobe o juro mínimo da casa própria de 11,7% para 15% ao ano <span class="f">decisão tomada, <a href="https://www.poder360.com.br/poder-economia/em-salto-inedito-bradesco-sobe-juro-da-casa-propria-para-15-ao-ano/" rel="nofollow noopener">Poder360</a></span></span><span class="nt">Governo estuda cobrar imposto (IOF) sobre LCI, LCA e outras aplicações isentas <span class="f">rumor, <a href="https://www.poder360.com.br/poder-economia/governo-avalia-cobrar-iof-sobre-lci-lca-e-outros-titulos/" rel="nofollow noopener">Poder360</a></span></span></div></li><li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Juro e inflação</b><span class="nt">Estados sobem o imposto (ICMS) dos combustíveis a partir de fevereiro de 2027 <span class="f">decisão tomada, <a href="https://www.poder360.com.br/poder-economia/estados-aprovam-aumento-de-icms-sobre-gasolina-diesel-e-gas-para-2027/" rel="nofollow noopener">Poder360</a></span></span></div></li>
     </ul>
     
     <p class="fora-conta">Sem lado claro: Contas do governo, emprego, economia lá fora.</p>
@@ -218,7 +297,7 @@ a:hover{text-decoration-thickness:2px}
   </section>
   
   
-  <p class="rodape">Ninguém revisa o texto antes de ele sair. <a href="/2026-10-29/resumo/">Fator por fator</a> | <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-29T1339.json">Todos os números de hoje</a></p>
+  <p class="rodape">Ninguém revisa o texto antes de ele sair. <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-29T1339.json">Todos os números de hoje</a></p>
   
 </article>
     
@@ -234,14 +313,14 @@ a:hover{text-decoration-thickness:2px}
   <div class="bloco">
     <h3>Datas importantes</h3>
     <ul class="datas">
-      <li><time datetime="2026-10-30">30/10</time><span>Desemprego até setembro (IBGE)</span></li><li><time datetime="2026-11-04">4/11</time><span>Banco Central decide o juro (Copom)</span></li><li><time datetime="2026-11-05">5/11</time><span>Produção industrial de setembro (IBGE)</span></li><li><time datetime="2026-11-12">12/11</time><span>Inflação de outubro, IPCA (IBGE)</span></li><li><time datetime="2026-11-13">13/11</time><span>Vendas do varejo de setembro (IBGE)</span></li><li><time datetime="2026-11-26">26/11</time><span>Prévia da inflação de novembro, IPCA-15 (IBGE)</span></li><li><time datetime="2026-11-27">27/11</time><span>Desemprego até outubro (IBGE)</span></li><li class="chave"><time datetime="2026-12-02">2/12</time><span>PIB do 3º trimestre (IBGE). É o dado que responde à pergunta do site.</span></li><li><time datetime="2026-12-03">3/12</time><span>Produção industrial de outubro (IBGE)</span></li><li><time datetime="2026-12-08">8/12</time><span>Vendas do varejo de outubro (IBGE)</span></li><li><time datetime="2026-12-09">9/12</time><span>Banco Central e Fed (EUA) decidem o juro</span></li>
+      <li><time datetime="2026-10-30">30/10</time><span>Desemprego até setembro (IBGE)</span></li><li><time datetime="2026-11-04">4/11</time><span>Banco Central decide o juro (Copom)</span></li><li><time datetime="2026-11-05">5/11</time><span>Produção industrial de setembro (IBGE)</span></li><li><time datetime="2026-11-12">12/11</time><span>Inflação de outubro, IPCA (IBGE)</span></li><li><time datetime="2026-11-13">13/11</time><span>Vendas do varejo de setembro (IBGE)</span></li><li><time datetime="2026-11-26">26/11</time><span>Prévia da inflação de novembro, IPCA-15 (IBGE)</span></li><li><time datetime="2026-11-27">27/11</time><span>Desemprego até outubro (IBGE)</span></li><li class="chave"><time datetime="2026-12-02">2/12</time><span>PIB do 3º trimestre (IBGE). É o dado que diz se a economia encolheu.</span></li><li><time datetime="2026-12-03">3/12</time><span>Produção industrial de outubro (IBGE)</span></li><li><time datetime="2026-12-08">8/12</time><span>Vendas do varejo de outubro (IBGE)</span></li><li><time datetime="2026-12-09">9/12</time><span>Banco Central e Fed (EUA) decidem o juro</span></li>
     </ul>
     <p class="peq fontes-datas">Fontes: calendário do <a href="https://servicodados.ibge.gov.br/api/v3/calendario/">IBGE</a>, Banco Central (Copom) e Fed.</p>
   </div>
   
   <div class="bloco">
     <h3>Sobre</h3>
-    <p>Os números vêm do Banco Central, do IBGE, do Tesouro, do FMI e da OCDE, que reúne dados de 44 países.</p>
+    <p>Os números vêm do Banco Central, do IBGE, do Tesouro e dos bancos que respondem ao Boletim Focus. A direção do risco sai de uma regra fixa, a mesma para qualquer governo, testada com os dados do Brasil desde 2004.</p>
     <p>As notícias vêm de 8 jornais: Folha, Valor, Estadão, g1, InfoMoney, Poder360, Agência Brasil e Gazeta do Povo. Às 06h30, um programa de inteligência artificial lê as manchetes da véspera e escreve o post: o fato do dia, de segunda a sábado; a semana, aos domingos; e o mês, no primeiro domingo do mês.</p>
   </div>
 </aside>
@@ -249,7 +328,7 @@ a:hover{text-decoration-thickness:2px}
 
 
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? diz se o risco de recessão no Brasil nos próximos 12 meses está acima ou abaixo do normal. Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos. A conta usa dados de 44 países e compara com o Brasil desde 2004. As notícias mostram para onde cada parte da economia vai, mas não mudam o nível. <a href="/2026-10-29/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
+  <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão apertando ou folgando, contra 3 meses antes. Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias mostram para onde cada parte da economia é empurrada, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
   <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
 </body>

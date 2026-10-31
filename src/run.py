@@ -1,4 +1,4 @@
-"""A atualização do dia: calcula o nível, lê as manchetes do dia anterior, revisa as leituras, escreve o post e gera o site.
+"""A atualização do dia: calcula a direção do risco, lê as manchetes do dia anterior, escreve o post e gera o site.
 
 O post muda de tipo com o dia (src/escreve_post.py): fato do dia de segunda a sábado, a semana aos
 domingos e o mês no primeiro domingo do mês. É sempre um post por dia, nesta mesma atualização.
@@ -14,7 +14,6 @@ hora junta tudo num acervo local, e a atualização das 06h30 lê o dia anterior
 from __future__ import annotations
 
 import argparse
-import copy
 import datetime as dt
 import fcntl
 import hashlib
@@ -27,6 +26,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_site  # noqa: E402
 import calendario  # noqa: E402
 import classify_news  # noqa: E402
+import direcao  # noqa: E402
 import dossie as dossie_mod  # noqa: E402
 import escreve_post  # noqa: E402
 import fetch_data  # noqa: E402
@@ -144,17 +144,20 @@ def main() -> dict | None:
     snap = json.loads(fetch_data.main().read_text())
     calendario.atualizar(hoje)
 
-    # 1. O nível: só dados.
-    recentes_r = [json.loads(p.read_text()) for p in sorted(RUNS.glob("*.json"))[-RODADAS_GUARDADAS:]][::-1]
+    # 1. A direção do risco: só dados. A conta dos 44 países (o PIB num ano ruim) segue calculada para a
+    # página Como funciona, mas não decide nada no topo.
+    todas_r = [json.loads(p.read_text()) for p in sorted(RUNS.glob("*.json"))]
+    recentes_r = todas_r[-RODADAS_GUARDADAS:][::-1]
     ant = recentes_r[0] if recentes_r else None
     # O nível de referência é o do último dia anterior: uma atualização refeita no mesmo dia não confirma a si mesma.
     ref = ultima_rodada(antes_de=hoje)
     nivel_ant = ref["resultado"]["nivel"]["indice"] if ref else None
     bruto_ant = ref["resultado"]["nivel"].get("bruto") if ref else None
     res = model.calcular(snap, cfg, cal, nivel_ant, guardados(recentes_r), bruto_ant)
-    print(f"nível: {res['nivel']['nome']} (cenário ruim {res['gar']['cenario_ruim']:+.2f}%; antes: "
-          f"{cfg['niveis']['nomes'][nivel_ant] if nivel_ant is not None else '-'}) | faltando: {res['faltando']} "
-          f"| reaproveitados: {res['reaproveitados']}")
+    res["direcao"] = direcao.calcular(snap, cfg, cal, [r for r in todas_r if r["gerado_em"][:10] < hoje.isoformat()], hoje)
+    d = res["direcao"]
+    print(f"direção: {d['estado']} desde {d['desde']} (soma {d['soma']}; {d['apertaram']} apertaram, {d['folgaram']} folgaram)"
+          f" | num ano ruim, PIB {res['gar']['cenario_ruim']:+.2f}% | faltando: {res['faltando']} | reaproveitados: {res['reaproveitados']}")
 
     # 2. As notícias do dia anterior.
     vistas = _ler(VISTAS, {})
@@ -175,11 +178,10 @@ def main() -> dict | None:
     todos = _ler(EVENTOS, [])
     limite = (hoje - dt.timedelta(days=DIAS_RECENTES)).isoformat()
     recentes = [e for e in todos if e["data"] >= limite]
-    dossie = dossie_mod.carregar()
 
     llm = {"ok": False, "saida": None, "meta": {"erro": "pulado (--sem-llm)"}}
     if not args.sem_llm:
-        llm = classify_news.classificar(noticias, recentes, _contexto(res), dossie)
+        llm = classify_news.classificar(noticias, recentes, _contexto(res))
         if llm["ok"]:
             # Cada manchete é lida uma vez só, inclusive as que ficaram fora da cesta.
             vistas.update({it["url"]: hoje.isoformat() for it in pendentes})
@@ -192,11 +194,10 @@ def main() -> dict | None:
     def fontes_de(ids: list[str]) -> list[dict]:
         return [{k: por_id[i][k] for k in ("veiculo", "titulo", "url", "publicado_em")} for i in ids if i in por_id]
 
-    novos, descartados, revisoes = [], [], []
+    novos, descartados = [], []
     if llm["ok"]:
         prefixo = f"ev-{hoje:%Y%m%d}-"
         seq = 1 + max((int(e["id"][len(prefixo):]) for e in todos if e["id"].startswith(prefixo)), default=0)
-        ev_por_noticia: dict[str, dict] = {}
         for ev in llm["saida"]["eventos"]:
             fontes = fontes_de(ev["noticia_ids"])
             if ev["ja_nos_indicadores"]:
@@ -218,29 +219,15 @@ def main() -> dict | None:
                     "veiculos": veiculos, "fontes": fontes}
             novo["pontos"] = model.efeito(novo, cfg)
             novos.append(novo)
-            for i in ev["noticia_ids"]:
-                ev_por_noticia[i] = novo
             seq += 1
         todos += novos
-        fontes_noticia = {i: {"veiculo": it["veiculo"], "url": it["url"]} for i, it in por_id.items()}
-        revisoes = dossie_mod.aplicar_revisoes(dossie, llm["saida"]["revisoes"], ev_por_noticia, fontes_noticia, hoje)
-        dossie_mod.DOSSIE.write_text(json.dumps(dossie, ensure_ascii=False, indent=1))
 
     pressao = model.pressao(novos, cfg)
 
-    # 3. As leituras do dia: fatos de dados com a história, o Focus em igual destaque e o placar.
+    # 3. Os fatos de dados do dia, com a história de cada um, para o post.
     mensal = _ler(ROOT / "data" / "historico" / "mensal.json", {})
-    leituras = copy.deepcopy(dossie)
     fatos = dossie_mod.fatos_de_dados(res, snap, mensal)
-    outros = dossie_mod.focus_outros(res, snap, dossie)
-    for fid, f in leituras["fatores"].items():
-        f["fatos"] = fatos.get(fid, [])
-        if f.get("outros_automatico"):
-            f["outros"] = outros.get(fid) or {"tipo": "neutro", "texto": "Sem projeção do Focus nesta atualização.", "fonte": None}
-    placar = dossie_mod.carregar_placar()
-    conferidas = dossie_mod.conferir(placar, res, cfg, cal, hoje)
-    registradas = dossie_mod.registrar(placar, dossie, res, cfg, hoje)
-    dossie_mod.PLACAR.write_text(json.dumps(placar, ensure_ascii=False, indent=1))
+    leituras = {"fatores": {fid: {"fatos": fatos.get(fid, [])} for fid in cfg["fatores"]}}
 
     rodada = {
         "id": agora.strftime("%Y-%m-%dT%H%M"), "gerado_em": agora.isoformat(timespec="seconds"),
@@ -254,8 +241,7 @@ def main() -> dict | None:
         "cobertura": cobertura,
         "llm": {"ok": llm["ok"], "meta": llm["meta"], "saida": llm["saida"]},
         "eventos_novos": [e["id"] for e in novos], "eventos_descartados": descartados,
-        "resultado": res, "pressao": pressao, "leituras": leituras, "revisoes": revisoes,
-        "placar": {"registradas": registradas, "conferidas": conferidas},
+        "resultado": res, "pressao": pressao, "leituras": leituras,
         "anterior": ant["id"] if ant else None,
         "revisao_texto": {"classificacao": revisa_texto.problemas_classificacao(llm["saida"]) if llm["ok"] else []},
     }
@@ -265,9 +251,9 @@ def main() -> dict | None:
         datas = calendario.janela(calendario.carregar(), hoje)
         # A semana e o mês saem do registro das rodadas; 40 dias cobrem o mês anterior inteiro.
         corte = (hoje - dt.timedelta(days=40)).isoformat()
-        anteriores = [json.loads(p.read_text()) for p in sorted(RUNS.glob("*.json")) if p.name[:10] >= corte]
+        anteriores = [r for r in todas_r if r["id"][:10] >= corte]
         post = escreve_post.escrever(rodada, cfg, datas, eventos={e["id"]: e for e in todos}, anterior=ant,
-                                     rodadas=anteriores, mensal=mensal, placar=placar)
+                                     rodadas=anteriores)
         print(f"post ({post.get('tipo', 'dia')}):", post.get("titulo") if post["ok"] else f"falhou: {post.get('erro') or post['meta'][-1].get('erro')}",
               "| problemas:", post.get("problemas"))
     rodada["post"] = post
@@ -276,9 +262,7 @@ def main() -> dict | None:
     (RUNS / f"{rodada['id']}.json").write_text(json.dumps(rodada, ensure_ascii=False, indent=1))
     EVENTOS.parent.mkdir(exist_ok=True)
     EVENTOS.write_text(json.dumps(todos, ensure_ascii=False, indent=1))
-    print(f"nível {res['nivel']['nome']} | pressão das notícias: {pressao['sentido']} | eventos novos {len(novos)} | "
-          f"revisões aplicadas {sum(1 for r in revisoes if r.get('aplicada'))} de {len(revisoes)} | "
-          f"placar: {len(registradas)} registradas, {len(conferidas)} conferidas")
+    print(f"direção {res['direcao']['estado']} | pressão das notícias: {pressao['sentido']} | eventos novos {len(novos)}")
     build_site.main()
     return rodada
 

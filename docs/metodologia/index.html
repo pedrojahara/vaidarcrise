@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Metodologia | Vai dar crise?</title>
-<meta name="description" content="Como o Vai dar crise? calcula o nível de risco de recessão no Brasil: o PIB num ano ruim, o painel de 44 países, o teste fora da amostra, a tendência das notícias e o placar.">
+<meta name="description" content="Como o Vai dar crise? calcula para que lado anda o risco de recessão no Brasil: as cinco pressões, o vaivém normal de cada uma, o teste desde 2004, a leitura das notícias e a conta dos 44 países.">
 <link rel="canonical" href="https://vaidarcrise.com.br/metodologia/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
 <meta property="og:title" content="Metodologia | Vai dar crise?">
-<meta property="og:description" content="Como o Vai dar crise? calcula o nível de risco de recessão no Brasil: o PIB num ano ruim, o painel de 44 países, o teste fora da amostra, a tendência das notícias e o placar.">
+<meta property="og:description" content="Como o Vai dar crise? calcula para que lado anda o risco de recessão no Brasil: as cinco pressões, o vaivém normal de cada uma, o teste desde 2004, a leitura das notícias e a conta dos 44 países.">
 <meta property="og:url" content="https://vaidarcrise.com.br/metodologia/">
 <meta property="og:image" content="https://vaidarcrise.com.br/og.png">
 <meta property="og:image:width" content="1200">
@@ -53,32 +53,39 @@ a:hover{text-decoration-thickness:2px}
 .linha-fina{margin:8px 0 12px;font:16px/1.45 var(--sistema);color:var(--meta)}
 .cab nav{display:flex;flex-wrap:wrap;gap:6px 18px;font:15px/1.4 var(--sistema)}
 
-/* o nível de hoje (bloco próprio em _nota.html) */
-.nota{margin-bottom:30px;min-width:0}
+/* a direção do risco (bloco próprio em _nota.html) */
+.nota{margin-bottom:30px;min-width:0;font-family:var(--sistema)}
 .nota .topo{display:flex;align-items:center;gap:16px}
 .placa{width:84px;height:84px;margin:13px;flex:none;transform:rotate(45deg);background:var(--placa);border-radius:10px;box-shadow:inset 0 0 0 4px var(--placa),inset 0 0 0 7px var(--placa-tinta)}
-.placa span{display:grid;place-items:center;height:100%;transform:rotate(-45deg);font:800 21px/1.05 var(--sistema);color:var(--placa-tinta);letter-spacing:-.01em;text-align:center}
-.placa span.dupla{font-size:17px}
+.placa span{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;transform:rotate(-45deg);font:800 14.5px/1.05 var(--sistema);color:var(--placa-tinta);letter-spacing:-.01em;text-align:center}
+.placa span b{font-size:26px;line-height:1}
+.placa span.longa{font-size:11px}
 .leitura{display:flex;flex-direction:column;gap:2px;min-width:0;margin:0}
 .leitura .rot{font:700 22px/1.15 var(--sistema)}
-.leitura .sub{font:14.5px/1.4 var(--sistema);color:var(--meta)}
-.escala{list-style:none;padding:0;margin:14px 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;font:12.5px/1.25 var(--sistema);color:var(--meta)}
-.escala li{display:flex;flex-direction:column;gap:5px;text-align:center;min-width:0}
-.escala li::before{content:"";display:block;height:8px;background:var(--fio)}
-.escala li:first-child::before{border-radius:4px 0 0 4px}.escala li:last-child::before{border-radius:0 4px 4px 0}
-.escala li.aqui{color:var(--tinta);font-weight:700}
-.escala li.aqui::before{background:var(--tinta)}
-.escala.grande{font-size:14px;gap:4px}
-.escala.grande li::before{height:12px}
-.cenarios{list-style:none;padding:12px 14px;margin:16px 0 0;background:var(--maquina);border-radius:6px;font:15px/1.4 var(--sistema);display:grid;gap:8px}
-.cenarios li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:baseline}
-.cenarios li > :last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
-.cenarios b{font-size:17px;color:var(--sobe)}
-.cenarios .ref{color:var(--meta);font-size:14px}
-.cenarios .cab-cen{display:block;font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em}
+.leitura .sub{font:15px/1.4 var(--sistema);color:var(--meta)}
+.conta-dir{font:16px/1.45 var(--sistema);margin:12px 0 0}
+.partes{list-style:none;padding:0;margin:16px 0 0;font:15px/1.4 var(--sistema)}
+.partes .cab-p{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;padding:0 0 6px}
+.partes li[id]{border-top:1px solid var(--fio);scroll-margin-top:12px}
+.partes li[id]:last-child{border-bottom:1px solid var(--fio)}
+.partes summary{display:grid;gap:2px;padding:9px 22px 9px 0;cursor:pointer;list-style:none;position:relative}
+.partes summary::-webkit-details-marker{display:none}
+.partes summary::after{content:"+";position:absolute;right:2px;top:8px;font:600 17px/1 var(--sistema);color:var(--meta)}
+.partes details[open] summary::after{content:"−"}
+.p-cab{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.p-lado{font-weight:700;white-space:nowrap}
+.p-frase{color:var(--tinta)}
+.p-folga{font-size:13.5px;color:var(--meta)}
+.p-mais{padding:0 0 10px;font-size:14.5px;color:var(--tinta)}
+.p-mais p{margin:0 0 6px}
+.partes.fora .p-lado{font-weight:600}
+.historia{font:14.5px/1.45 var(--sistema);color:var(--meta);margin:14px 0 0}
+.segura{margin:18px 0 0;padding:12px 14px;background:var(--maquina);border-radius:6px}
+.segura h3{font:700 15px/1.3 var(--sistema);margin:0 0 6px}
+.segura ul{margin:0;padding-left:1.1em;font:14.5px/1.45 var(--sistema);display:grid;gap:6px}
 .tend-noticias{font:15px/1.45 var(--sistema);margin:14px 0 0}
 .tend-noticias b{font-size:1.1em;margin-right:3px}
-.nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:8px 0 0}
+.nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:10px 0 0}
 .aviso{font:15px/1.45 var(--sistema);background:var(--maquina);border-left:4px solid var(--placa);padding:8px 12px;margin:12px 0 0}
 .aviso[hidden]{display:none}
 
@@ -100,7 +107,7 @@ a:hover{text-decoration-thickness:2px}
 .pe p{margin:0 0 8px;max-width:640px}
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
-@media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:18px}.placa span.dupla{font-size:15px}.marca b{font-size:26px}}
+@media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
 
 .texto{padding-top:30px;padding-bottom:40px}
 .texto > *{max-width:760px}
@@ -122,214 +129,344 @@ a:hover{text-decoration-thickness:2px}
 <body>
 <header class="cab"><div class="in"><div class="faixa">
   <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
-  <p class="linha-fina">O risco de recessão no Brasil, medido com dados todo dia.</p>
-  <nav aria-label="Seções"><a href="/">Hoje</a><a href="/resumo/">Fator por fator</a><a href="/causas/">O que causa recessão</a><a href="/nota/">Como a conta funciona</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
+  <p class="linha-fina">Para onde vai o risco de recessão no Brasil, com dados todo dia.</p>
+  <nav aria-label="Seções"><a href="/">Hoje</a><a href="/causas/">O que causa recessão</a><a href="/nota/">Como funciona</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
 </div></div></header>
 
 <main class="in texto">
-<p class="intro-met">Esta página é para quem quer conferir ou refazer a conta, com as fórmulas e os testes. A versão curta está em <a href="/nota/">Como a conta funciona</a>.</p>
+<p class="intro-met">Esta página é para quem quer conferir ou refazer a conta, com as fórmulas e os testes. A versão curta está em <a href="/nota/">Como funciona</a>.</p>
 <h1 id="metodologia">Metodologia</h1>
-<p>As regras estão em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json"><code>config/modelo.json</code></a>. O que foi estimado com os dados (coeficientes, ajuste, cortes dos níveis, faixas normais) está em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/calibracao.json"><code>config/calibracao.json</code></a>. O painel de países está em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/painel_ocde.csv"><code>data/historico/painel_ocde.csv</code></a>, e o Brasil mês a mês, em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/mensal.json"><code>data/historico/mensal.json</code></a>. A conta é refeita por <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/calibra.py"><code>src/calibra.py</code></a>. Cada atualização grava o hash dos dois arquivos de regra.</p>
+<p>A regra da direção está em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/direcao.py"><code>src/direcao.py</code></a>, com as escolhas fixas em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json"><code>config/modelo.json</code></a> (seção <code>direcao</code>) e o que sai dos dados (o vaivém normal de cada medida e o teste desde 2004) em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/calibracao.json"><code>config/calibracao.json</code></a> (seção <code>direcao</code>). As séries mensais do Brasil ficam em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/series.json"><code>data/historico/series.json</code></a>. <code>python src/direcao.py --calibrar AAAA-MM</code> refaz os cortes e o teste. Cada atualização grava o hash dos dois arquivos de regra.</p>
 <h2 id="a-pergunta">A pergunta</h2>
 <blockquote>
-<p>O risco de o Brasil entrar em recessão técnica nos próximos 12 meses está acima ou abaixo do normal?</p>
+<p>Para que lado anda o risco de recessão no Brasil: as pressões que costumam vir antes de uma recessão estão apertando ou folgando?</p>
 </blockquote>
 <ul>
 <li><strong>Recessão técnica:</strong> dois trimestres seguidos de queda do PIB dessazonalizado do IBGE (<a href="https://sidra.ibge.gov.br/tabela/5932">tabela 5932</a>, taxa contra o trimestre anterior, com uma casa decimal; 0,0% não é queda).</li>
 <li><strong>Recaídas:</strong> quedas separadas por um só trimestre sem queda contam como uma recessão só. 2014–16 é um episódio, não três.</li>
-<li><strong>Próximos 12 meses:</strong> os 4 trimestres a partir do primeiro que o IBGE ainda não divulgou. O IBGE leva cerca de 60 dias para divulgar cada trimestre.</li>
-<li><strong>Normal:</strong> o Brasil de maio de 2004 até hoje.</li>
 <li><strong>Recessões na série atual do IBGE:</strong> 2T01–4T01, 1T03–2T03, 4T08–1T09, 2T14–4T16 e 1T20–2T20. Todas caem dentro de recessões datadas pelo <a href="https://portalibre.fgv.br/codace">CODACE/FGV IBRE</a>. 2021 não conta: na série revisada, a queda do 2T21 ficou isolada.</li>
+<li><strong>Direção, não previsão.</strong> O site não diz se vai haver recessão nem quando. Diz se as pressões que costumam vir antes de uma recessão andaram para o lado ruim ou para o lado bom nos últimos 3 meses. A data de uma recessão não se prevê com segurança: nem os economistas profissionais acertam (An, Jalles e Loungani, 2018), e o teste abaixo mostra o mesmo para esta regra.</li>
 </ul>
 <p>O nome do site fala em crise; a métrica é recessão técnica.</p>
-<h2 id="o-nivel">O nível</h2>
-<p>Cinco níveis: Muito abaixo, Abaixo, Normal, Acima e Muito acima. O nível sai só de dados.</p>
-<p><strong>A ideia.</strong> Risco de recessão tem duas partes: a chance de a economia encolher e o tamanho da queda. As duas aparecem num número só, o <strong>PIB num ano ruim</strong> (no jargão, o cenário ruim, ou quantil 10%): o crescimento nos 12 meses seguintes que tem só 1 chance em 10 de ser pior. Quanto pior esse ano ruim, mais alto o risco. É o método do FMI chamado crescimento em risco (<em>growth-at-risk</em>; Adrian, Boyarchenko e Giannone, 2019).</p>
-<p><strong>1. Quatro entradas do Brasil</strong>, cada uma com o que já tinha sido divulgado no dia:</p>
+<h2 id="a-regra-da-direcao">A regra da direção</h2>
+<p><strong>1. Cinco pressões</strong>, escolhidas pelo que a pesquisa da seção O que causa recessão, abaixo, mostra que vem antes de uma recessão: juro subindo, inflação esperada subindo, dívida das famílias subindo, dólar e juro longo subindo com desconfiança das contas do governo, e as contas do governo piorando.</p>
 <table>
 <thead>
 <tr>
-<th>Entrada</th>
-<th>Definição</th>
+<th>Pressão</th>
+<th>Medida</th>
+<th>Série</th>
+<th>Lado ruim</th>
+<th>Atraso de divulgação</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Crescimento em 12 meses</td>
-<td>IBC-Br dessazonalizado (BCB 24364): média dos 3 últimos meses contra os mesmos 3 meses um ano antes</td>
+<td>Contas do governo</td>
+<td>Dívida bruta do governo geral, % do PIB</td>
+<td>BCB 13762 (desde dezembro de 2006)</td>
+<td>subir</td>
+<td>2 meses</td>
 </tr>
 <tr>
-<td>Crescimento médio em 10 anos</td>
-<td>Média do crescimento em 12 meses do PIB do IBGE nos 40 últimos trimestres divulgados</td>
+<td>Contas do governo, antes de 2007</td>
+<td>Resultado sem juros do setor público em 12 meses, % do PIB</td>
+<td>BCB 5793</td>
+<td>gastar mais do que arrecada</td>
+<td>2 meses</td>
 </tr>
 <tr>
-<td>Selic: variação em 12 meses</td>
-<td>Selic meta (BCB 432) de hoje menos a de um ano antes, em pontos</td>
-</tr>
-<tr>
-<td>Inflação: variação em 12 meses</td>
-<td>IPCA em 12 meses (BCB 13522) do último mês menos o de um ano antes, em pontos</td>
-</tr>
-</tbody>
-</table>
-<p><strong>2. A conta, tirada de 44 países.</strong> Uma regressão de quantil (Koenker e Bassett, 1978) do crescimento do PIB nos 4 trimestres seguintes, no quantil 10%, num painel trimestral de 44 países (OCDE e grandes emergentes, Brasil incluído) com dados da OCDE: 4.669 trimestres, de 1995 a 2025. Com 4 recessões no Brasil desde 2002, uma conta só com o Brasil não teria dados para separar sinal de acaso; o painel tem centenas.</p>
-<p><code>ano ruim = −0,71 − 0,20 × média de 10 anos + 0,23 × crescimento em 12 meses
-               − 0,15 × variação da Selic − 0,13 × variação da inflação − 1,31</code></p>
-<ul>
-<li>Crescimentos em 100 × log; no site, convertidos para variação %.</li>
-<li><strong>Juro subindo e inflação acelerando</strong> pioram o ano ruim: costumam vir antes de recessões, em países ricos e emergentes.</li>
-<li><strong>Crescer forte hoje</strong> melhora o ano seguinte.</li>
-<li><strong>Crescimento médio alto</strong> piora o ano ruim: vem junto com economias que oscilam mais, como as emergentes.</li>
-<li><strong>O ajuste de −1,31</strong> vem do teste fora da amostra (abaixo): sem ele, 15% dos resultados ficaram abaixo do ano ruim, e não 10%.</li>
-</ul>
-<p><strong>3. O nível.</strong> O ano ruim de hoje contra o do Brasil em cada mês desde maio de 2004:</p>
-<table>
-<thead>
-<tr>
-<th>PIB num ano ruim, em 12 meses</th>
-<th>Nível</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Entre os 10% piores meses (−3,5% ou pior)</td>
-<td>Muito acima</td>
-</tr>
-<tr>
-<td>Entre os 10% e os 30% piores (até −2,4%)</td>
-<td>Acima</td>
-</tr>
-<tr>
-<td>No meio (de −2,4% a −1,4%)</td>
-<td>Normal</td>
-</tr>
-<tr>
-<td>Entre os 30% e os 10% melhores (até −0,6%)</td>
-<td>Abaixo</td>
-</tr>
-<tr>
-<td>Entre os 10% melhores (melhor que −0,6%)</td>
-<td>Muito abaixo</td>
-</tr>
-</tbody>
-</table>
-<p>No mês típico, o ano ruim é de −1,9%. É a linha "Num ano ruim, em tempos normais" do selo.</p>
-<p><strong>4. Confirmação.</strong> O nível só muda quando duas atualizações diárias seguidas dão o mesmo nível novo. Uma atualização refeita no mesmo dia não confirma a si mesma.</p>
-<p><strong>Mais provável.</strong> O selo mostra também a mediana do Focus para o PIB dos próximos 12 meses (a do ano corrente e a do seguinte, ponderadas pelos meses que faltam). É o mercado, não a conta do site: no Brasil desde 2004, o Focus errou menos que a mediana do painel.</p>
-<p><strong>Os sete fatores de Fator por fator.</strong> Ritmo da economia e juro e inflação entram na conta pelas entradas acima; a página Fator por fator mostra quanto cada uma mexe no ano ruim, contra a mediana do Brasil desde 2004. Dívidas das famílias, dólar e juro longo, contas do governo, emprego e economia lá fora ficam fora do nível e aparecem com o dado de hoje contra a faixa normal desde 2002 (metade dos meses dentro dela) e com a tendência.</p>
-<table>
-<thead>
-<tr>
-<th>Indicador de Fator por fator</th>
-<th>Fator</th>
-<th>Definição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>IBC-Br</td>
-<td>Ritmo da economia</td>
-<td>Média dos últimos 3 meses contra a dos 3 anteriores</td>
-</tr>
-<tr>
-<td>PIB esperado pelo Focus</td>
-<td>Ritmo da economia</td>
-<td>PIB dos próximos 12 meses, como acima</td>
-</tr>
-<tr>
-<td>Juro real</td>
-<td>Juro e inflação</td>
-<td>Selic meta descontada da inflação esperada em 12 meses (Focus)</td>
-</tr>
-<tr>
-<td>Renda comprometida com dívidas</td>
 <td>Dívidas das famílias</td>
-<td>Comprometimento de renda das famílias (BCB 29034) menos a média dos 36 meses anteriores</td>
+<td>Parte da renda das famílias que vai para parcelas e juros, com ajuste sazonal</td>
+<td>BCB 29034</td>
+<td>subir</td>
+<td>3 meses</td>
 </tr>
 <tr>
-<td>Juro do Tesouro IPCA+</td>
 <td>Dólar e juro longo</td>
-<td>Taxa do título IPCA+ com vencimento mais perto de 10 anos menos a sua mediana nos 3 anos anteriores</td>
+<td>Dólar PTAX, variação %</td>
+<td>BCB 1</td>
+<td>subir</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Dólar e juro longo</td>
+<td>Taxa real do Tesouro IPCA+ com vencimento mais perto de 10 anos</td>
+<td>Tesouro Direto</td>
+<td>subir</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Inflação esperada</td>
+<td>Mediana do Focus para o IPCA dos 12 meses seguintes</td>
+<td>Focus</td>
+<td>subir</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Juro</td>
+<td>Selic meta</td>
+<td>BCB 432</td>
+<td>subir</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Fora da soma, a página mostra o <strong>ritmo da economia</strong> (IBC-Br dessazonalizado, BCB 24364: média dos 3 últimos meses contra a dos 3 anteriores; atraso de 2 meses) e o <strong>emprego</strong> (desocupação da PNAD, BCB 24369; atraso de 1 mês). Eles descrevem a economia de agora; o emprego é o último a piorar numa recessão.</p>
+<p><strong>2. Cada medida contra 3 meses antes.</strong> A mudança é a diferença em pontos (em % no dólar e na média do IBC-Br) entre o dado de referência e o de 3 meses antes dele.</p>
+<p><strong>3. O vaivém normal de cada medida</strong> é 1,4826 vezes o desvio absoluto mediano das mudanças de 3 meses desde janeiro de 2002, com o atraso de divulgação de cada série. É uma régua robusta: uma crise grande, como 2008 ou 2020, não a alarga. Nas contas do governo, a régua junta as mudanças da dívida (desde 2007) e as do resultado sem juros (antes), e o mesmo corte vale para as duas.</p>
+<p><strong>4. Apertou, igual ou folgou.</strong> A medida apertou se andou para o lado ruim mais que três quartos do vaivém normal (<code>corte_vaivem</code> = 0,75); folgou se andou isso para o lado bom; no resto, ficou igual. Os cortes de hoje:</p>
+<table>
+<thead>
+<tr>
+<th>Medida</th>
+<th>Vaivém normal em 3 meses</th>
+<th>Corte (0,75 ×)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dívida do governo (régua das contas)</td>
+<td>1,26 ponto do PIB</td>
+<td>0,95 ponto</td>
+</tr>
+<tr>
+<td>Parcelas das famílias</td>
+<td>0,50 ponto da renda</td>
+<td>0,38 ponto</td>
 </tr>
 <tr>
 <td>Dólar</td>
-<td>Dólar e juro longo</td>
-<td>Variação do dólar PTAX (BCB 1) em 3 meses</td>
+<td>6,4%</td>
+<td>4,8%</td>
 </tr>
 <tr>
-<td>Dívida pública</td>
-<td>Contas do governo</td>
-<td>Variação da dívida bruta do governo geral (BCB 13762) em 12 meses, em pontos do PIB</td>
+<td>Juro de 10 anos</td>
+<td>0,58 ponto</td>
+<td>0,43 ponto</td>
 </tr>
 <tr>
-<td>Regra de Sahm</td>
-<td>Emprego</td>
-<td>Média de 3 meses da desocupação da PNAD (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores</td>
+<td>Inflação esperada</td>
+<td>0,42 ponto</td>
+<td>0,32 ponto</td>
 </tr>
 <tr>
-<td>Preço das commodities</td>
-<td>Economia lá fora</td>
-<td>Variação em 6 meses do índice de commodities do FMI (FRED PALLFNFINDEXM)</td>
+<td>Selic</td>
+<td>1,11 ponto</td>
+<td>0,83 ponto</td>
+</tr>
+<tr>
+<td>Ritmo da economia (fora da soma)</td>
+<td>1,19%</td>
+<td>0,89%</td>
+</tr>
+<tr>
+<td>Emprego (fora da soma)</td>
+<td>0,74 ponto</td>
+<td>0,56 ponto</td>
 </tr>
 </tbody>
 </table>
-<h2 id="por-que-essas-entradas">Por que essas entradas</h2>
-<p>As entradas foram escolhidas fora da amostra no painel, pelo erro da regressão de quantil (perda <em>pinball</em>), com a mesma validação descrita abaixo. Cada candidata foi somada às quatro e ficaria só se o erro de anos não vistos caísse 1% ou mais.</p>
+<p>Dólar e juro longo contam como uma pressão só: o sinal da soma dos dois lados (se um aperta e o outro folga, fica igual; se um aperta e o outro fica igual, apertou).</p>
+<p><strong>5. A soma decide.</strong> Pressões que apertaram menos as que folgaram: 2 ou mais, <strong>subindo</strong>; −2 ou menos, <strong>caindo</strong>; no meio, <strong>igual</strong>. Pressão sem dado fica fora da soma naquele dia.</p>
+<p><strong>6. Confirmação.</strong> A direção só muda quando o resultado novo se repete no mês seguinte. No mês da primeira vez, a página avisa: "Pelos dados de hoje, a direção seria (...)".</p>
+<p><strong>7. Encolhendo.</strong> Se o IBC-Br (média de 3 meses contra os 3 anteriores) cair mais de 1,5%, o topo diz "A economia está encolhendo", no lugar da direção. A essa altura, a pergunta de para que lado anda o risco já perdeu o sentido.</p>
+<p><strong>Meses passados e mês corrente.</strong> Na linha do tempo e no teste, cada mês usa o dado com o atraso típico de divulgação da série. No mês corrente, entra o último dado que já saiu, comparado com o de 3 meses antes dele: o dólar de ontem, a dívida de dois meses atrás. O Focus mensal vem da série guardada e, nos meses do site, da coleta de cada atualização.</p>
+<p><strong>A folga.</strong> Cada pressão (menos o dólar, cujo valor em reais não se compara entre décadas) e o emprego mostram o nível de hoje contra todos os meses desde o começo da série: a dívida desde 2006, as parcelas desde 2005, o juro de 10 anos desde 2005, a inflação esperada desde 2001, o juro descontado da inflação esperada (Selic e Focus, pela fórmula de Fisher) desde 2002 e o desemprego desde 2012.</p>
 <table>
 <thead>
 <tr>
-<th>Candidata</th>
-<th>Erro fora da amostra</th>
+<th>Onde está hoje</th>
+<th>Folga</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Bolsa (retorno real em 12 meses)</td>
-<td>4,6% menor</td>
+<td>O pior valor da série</td>
+<td>Nenhuma</td>
 </tr>
 <tr>
-<td>Crédito acima da tendência</td>
-<td>0,7% menor</td>
+<td>Pior que 90% dos meses ou mais</td>
+<td>Quase nenhuma</td>
 </tr>
 <tr>
-<td>Juro longo subindo</td>
-<td>0,3% menor</td>
+<td>Pior que 70% a 89% dos meses</td>
+<td>Pouca</td>
 </tr>
 <tr>
-<td>Dívida pública</td>
-<td>igual</td>
+<td>No meio</td>
+<td>Média</td>
 </tr>
 <tr>
-<td>Câmbio real acima da média de 10 anos</td>
-<td>0,6% maior</td>
+<td>Melhor que 70% dos meses ou mais, ou o melhor da série</td>
+<td>Muita</td>
+</tr>
+</tbody>
+</table>
+<p>A folga não entra na soma. Nível alto e parado não marca a data de recessão nenhuma (veja a pesquisa de 166 países, abaixo); a folga diz quanto espaço sobra se a pressão continuar apertando. Na inflação esperada, a página diz também se ela está acima do teto da meta (4,5%).</p>
+<p><strong>O que segura.</strong> Três fatos fixos, com fonte, que amortecem um susto sem mudar a direção: a dívida federal em reais (96%, Tesouro, agosto de 2026), as reservas em dólar do Banco Central e a autonomia do Banco Central (Lei Complementar 179, de 2021).</p>
+<h2 id="por-que-esta-regra">Por que esta regra</h2>
+<p>A regra foi escolhida por quatro critérios fixados antes de olhar o resultado por governo:</p>
+<ol>
+<li>não ficar em subindo quase sempre (vira papel de parede);</li>
+<li>não mudar toda hora;</li>
+<li>deixar o PIB dos 12 meses seguintes em ordem: pior depois de subindo, melhor depois de caindo;</li>
+<li>apontar subindo antes da recessão de 2014, a única feita em casa desde 2004.</li>
+</ol>
+<p>Foram umas 25 versões. As mais próximas:</p>
+<table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Meses em subindo</th>
+<th>Mudanças por ano</th>
+<th>PIB em 12 meses, depois de subindo e de caindo</th>
+<th>Meses em subindo nos 12 antes de 2014</th>
+<th>Outubro de 2026</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A escolhida</strong></td>
+<td>17%</td>
+<td>2,0</td>
+<td>+0,3% e +4,3%</td>
+<td>6</td>
+<td>Subindo</td>
 </tr>
 <tr>
-<td>Desemprego subindo</td>
-<td>0,9% maior</td>
+<td>Corte de meio vaivém</td>
+<td>22%</td>
+<td>2,4</td>
+<td>+1,1% e +4,2%</td>
+<td>4</td>
+<td>Subindo</td>
 </tr>
 <tr>
-<td>Hiato do produto</td>
-<td>2,7% maior</td>
+<td>Corte de um vaivém inteiro</td>
+<td>11%</td>
+<td>1,6</td>
+<td>+0,1% e +3,9%</td>
+<td>0</td>
+<td>Igual</td>
 </tr>
 <tr>
-<td>Câmbio (alta em 12 meses)</td>
-<td>2,9% maior</td>
+<td>Vaivém pelo desvio padrão comum</td>
+<td>11%</td>
+<td>1,5</td>
+<td>−0,7% e +3,4%</td>
+<td>0</td>
+<td>Igual</td>
 </tr>
 <tr>
-<td>Curva de juros</td>
-<td>4,8% maior</td>
+<td>Comparar com 6 meses antes</td>
+<td>19%</td>
+<td>1,4</td>
+<td>+1,1% e +4,5%</td>
+<td>6</td>
+<td>Igual</td>
+</tr>
+<tr>
+<td>Basta uma pressão para subir</td>
+<td>43%</td>
+<td>2,1</td>
+<td>+0,8% e +3,6%</td>
+<td>11</td>
+<td>Subindo</td>
+</tr>
+<tr>
+<td>Sem esperar o mês seguinte</td>
+<td>20%</td>
+<td>4,0</td>
+<td>+0,8% e +3,7%</td>
+<td>5</td>
+<td>Subindo</td>
+</tr>
+<tr>
+<td>Contas com dívida e resultado sem juros juntos</td>
+<td>16%</td>
+<td>1,8</td>
+<td>+0,4% e +4,4%</td>
+<td>6</td>
+<td>Subindo</td>
+</tr>
+<tr>
+<td>Inflação do mês (IPCA) em vez da esperada</td>
+<td>15%</td>
+<td>1,8</td>
+<td>−0,4% e +3,2%</td>
+<td>3</td>
+<td>Igual</td>
+</tr>
+<tr>
+<td>Inflação do mês e esperada juntas</td>
+<td>17%</td>
+<td>1,8</td>
+<td>−0,4% e +3,5%</td>
+<td>6</td>
+<td>Subindo</td>
+</tr>
+<tr>
+<td>Dólar e juro longo só com o dólar</td>
+<td>17%</td>
+<td>1,9</td>
+<td>−0,1% e +4,3%</td>
+<td>2</td>
+<td>Subindo</td>
+</tr>
+<tr>
+<td>Sete partes, com ritmo e emprego na soma</td>
+<td>10%</td>
+<td>2,2</td>
+<td>−2,1% e +4,1%</td>
+<td>0</td>
+<td>Subindo</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li><strong>A bolsa passou no painel, mas não no Brasil.</strong> Com o retorno real do Ibovespa em 12 meses (B3) como quinta entrada, o erro fora da amostra no Brasil subiu 3,9%. Como a pergunta é sobre o Brasil, ficou de fora.</li>
-<li><strong>Nível alto e parado não avisa.</strong> Dívida, juro e inflação altos não somam à conta. O que avisa é o movimento: juro subindo, inflação acelerando.</li>
+<li><strong>Basta uma pressão</strong> vira papel de parede. <strong>Sem esperar o mês seguinte</strong>, a direção muda 4 vezes por ano.</li>
+<li><strong>Corte de um vaivém inteiro</strong> e <strong>desvio padrão comum</strong> ficam em igual em três de cada quatro meses e não viram nada antes de 2014.</li>
+<li><strong>Sete partes</strong> parece melhor no PIB seguinte, mas porque o ritmo e o emprego descrevem a recessão que já chegou. Antes de 2014, ficou em igual o ano todo.</li>
+<li><strong>Comparar com 6 meses antes</strong>, <strong>contas juntas</strong> e <strong>inflação juntas</strong> quase empatam com a escolhida; ficou a mais simples de explicar.</li>
+<li><strong>Por que a dívida, e não o resultado sem juros, nas contas do governo.</strong> É a dívida que quem empresta ao governo olha, e ela inclui o custo dos juros. Hoje as duas andam em lados opostos: o resultado sem juros melhorou, e a dívida subiu porque os juros pesam mais que essa melhora. A página mostra as duas.</li>
 </ul>
-<h2 id="o-teste-fora-da-amostra">O teste fora da amostra</h2>
-<ul>
-<li><strong>No painel:</strong> cada ano, de 2004 a 2026, foi previsto com coeficientes estimados só com os trimestres cujo PIB 4 trimestres à frente já tinha saído no começo daquele ano. São 3.625 trimestres.</li>
-<li><strong>No Brasil:</strong> o mesmo, mês a mês, de maio de 2004 a hoje, com os atrasos de divulgação de cada série. São 270 meses.</li>
-</ul>
+<h2 id="o-teste-desde-2004">O teste desde 2004</h2>
+<p>De janeiro de 2004 a outubro de 2026 (274 meses), com os atrasos de divulgação e a confirmação de um mês:</p>
+<table>
+<thead>
+<tr>
+<th>Medida</th>
+<th>Subindo</th>
+<th>Igual</th>
+<th>Caindo</th>
+<th>Encolhendo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parte dos meses</td>
+<td>17%</td>
+<td>63%</td>
+<td>13%</td>
+<td>7%</td>
+</tr>
+<tr>
+<td>PIB médio nos 12 meses seguintes</td>
+<td>+0,3%</td>
+<td>+2,1%</td>
+<td>+4,3%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Meses com recessão começando no ano seguinte</td>
+<td>21%</td>
+<td>16%</td>
+<td>3%</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -339,51 +476,78 @@ a:hover{text-decoration-thickness:2px}
 </thead>
 <tbody>
 <tr>
-<td>Erro da conta contra usar só o crescimento médio do país (painel)</td>
-<td>3% menor</td>
+<td>Mudanças de direção por ano</td>
+<td>2,0</td>
 </tr>
 <tr>
-<td>Erro da conta contra usar só o crescimento médio do país (Brasil, 259 meses)</td>
-<td>20% menor</td>
+<td>Chance de um mês com recessão à frente ter soma maior que um mês sem (0,5 é cara ou coroa)</td>
+<td>0,55</td>
 </tr>
 <tr>
-<td>Resultados abaixo do ano ruim, sem ajuste (painel)</td>
-<td>15%</td>
+<td>Meses em subindo nos 12 antes de cada recessão</td>
+<td>2008: 0; 2014: 6; 2020: 0</td>
 </tr>
 <tr>
-<td>Resultados abaixo do ano ruim, com ajuste (Brasil, 259 meses)</td>
-<td>8%</td>
-</tr>
-<tr>
-<td>PIB médio nos 12 meses seguintes, meses em Acima ou Muito acima (Brasil)</td>
-<td>+0,8%</td>
-</tr>
-<tr>
-<td>PIB médio nos 12 meses seguintes, demais meses (Brasil)</td>
-<td>+2,8%</td>
-</tr>
-<tr>
-<td>Recessão à frente, meses em Acima ou Muito acima contra os demais (Brasil)</td>
-<td>1,8 vez mais</td>
-</tr>
-<tr>
-<td>Chance de um mês com recessão à frente ter nível mais alto que um mês sem (Brasil, 220 meses; 0,5 é o acaso)</td>
-<td>0,60</td>
+<td>Parte dos meses em que cada pressão apertou / folgou</td>
+<td>contas 31% / 16%; parcelas 32% / 17%; dólar e juro longo 30% / 34%; inflação esperada 18% / 23%; juro 19% / 24%</td>
 </tr>
 </tbody>
 </table>
 <p>O que isso quer dizer, sem enfeite:</p>
 <ul>
-<li><strong>O ganho é modesto.</strong> A conta separa anos de crescimento fraco de anos de crescimento forte, mas não acerta a data em que cada recessão começa: nos 44 países, nesse ponto, não faz melhor que o acaso.</li>
-<li><strong>Choques de fora não aparecem antes.</strong> Em 2008 e em 2020, o nível estava entre Abaixo e Normal antes da recessão.</li>
-<li><strong>A recessão de 2014, feita em casa, apareceu, mas cedo.</strong> O nível ficou em Acima de meados de 2011 em diante.</li>
-<li><strong>Quatro recessões no Brasil é pouco.</strong> Por isso a conta vem do painel; o Brasil só define o que é normal aqui.</li>
-<li><strong>Os dados são os de hoje.</strong> PIB, IBC-Br e o painel usados no teste são os revisados, não os divulgados na época. O teste respeita os atrasos de divulgação, mas não as revisões.</li>
+<li><strong>A regra separa anos fracos de anos fortes, mas não marca a data da recessão.</strong> A soma quase não distingue um mês com recessão à frente de um sem (0,55). Com três recessões desde 2004, nenhuma regra simples passa disso.</li>
+<li><strong>Choques de fora passam batido no começo.</strong> Em 2008, a regra ficou em igual até dezembro. Em abril de 2020, disse caindo, porque o juro e a inflação esperada caíram rápido; só em maio a prévia do PIB mostrou a queda e o topo passou a dizer "encolhendo".</li>
+<li><strong>A recessão de 2014, feita em casa, apareceu:</strong> subindo de setembro de 2013 a fevereiro de 2014.</li>
+<li><strong>Os dados são os revisados de hoje</strong>, e não os que saíram na época. A dívida é a série que menos muda; o PIB e o IBC-Br mudam mais.</li>
 </ul>
-<h2 id="tendencia-e-noticias">Tendência e notícias</h2>
-<p>As notícias não mexem no nível. Se cada notícia somasse um pedaço, como os jornais publicam mais notícia ruim que boa, o nível tenderia a ficar sempre em cima. As notícias servem para a tendência de cada fator nos próximos 6 meses.</p>
-<p><strong>A leitura das manchetes.</strong> As manchetes de oito jornais com linhas editoriais diferentes (Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1) são coletadas de hora em hora. Às 06h30, um modelo de linguagem (Claude, sem ferramentas, com saída em esquema JSON validado por código) lê as do dia anterior e transforma os fatos em eventos: fator, lado, tamanho (1 a 3) e estágio. Notícia que só repete um dado já medido pelos indicadores fica de fora.</p>
-<p><strong>A pressão do dia, por fator:</strong></p>
+<p><strong>Por governo, só para conferência.</strong> Nenhuma escolha da regra olhou esta tabela. A regra é a mesma para todos.</p>
+<table>
+<thead>
+<tr>
+<th>Governo</th>
+<th>Subindo</th>
+<th>Igual</th>
+<th>Caindo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lula 1 e 2 (2004 a 2010)</td>
+<td>2%</td>
+<td>73%</td>
+<td>19%</td>
+</tr>
+<tr>
+<td>Dilma (2011 a abril de 2016)</td>
+<td>27%</td>
+<td>55%</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>Temer (maio de 2016 a 2018)</td>
+<td>9%</td>
+<td>66%</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>Bolsonaro (2019 a 2022)</td>
+<td>19%</td>
+<td>65%</td>
+<td>4%</td>
+</tr>
+<tr>
+<td>Lula 3 (2023 a outubro de 2026)</td>
+<td>33%</td>
+<td>52%</td>
+<td>15%</td>
+</tr>
+</tbody>
+</table>
+<p>O resto de cada linha é encolhendo. No governo atual, a mesma regra disse caindo em meados de 2023 e no começo de 2024, e subindo de agosto de 2024 a março de 2025 (com a Selic subindo e o dólar passando de R$ 6) e na maior parte de 2026.</p>
+<h2 id="as-noticias">As notícias</h2>
+<p>As notícias não mudam a direção. Se cada notícia somasse um pedaço, como os jornais publicam mais notícia ruim que boa, a direção tenderia a ficar sempre em subindo. Elas mostram, na caixa "Para onde as notícias empurram", para que lado cada assunto é empurrado.</p>
+<p><strong>A leitura das manchetes.</strong> As manchetes de oito jornais com linhas editoriais diferentes (Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1) são coletadas de hora em hora. Às 06h30, um modelo de linguagem (Claude, sem ferramentas, com saída em esquema JSON validado por código) lê as do dia anterior e transforma os fatos em eventos: assunto, lado, tamanho (1 a 3) e estágio. Notícia que só repete um dado já medido fica de fora. Os assuntos são sete: Ritmo da economia, Juro e inflação, Dívidas das famílias, Dólar e juro longo, Contas do governo, Emprego e Economia lá fora.</p>
+<p><strong>A pressão do dia, por assunto:</strong></p>
 <table>
 <thead>
 <tr>
@@ -425,31 +589,18 @@ a:hover{text-decoration-thickness:2px}
 <td>o mais forte conta inteiro, o segundo metade, o terceiro um quarto</td>
 </tr>
 <tr>
-<td>Seta do fator</td>
+<td>Seta do assunto</td>
 <td>saldo de 1 ou mais (pesa) ou de −1 ou menos (alivia)</td>
 </tr>
 <tr>
 <td>Seta geral</td>
-<td>soma dos fatores, com corte de 2</td>
+<td>soma dos assuntos, com corte de 2</td>
 </tr>
 </tbody>
 </table>
-<p><strong>A tendência de cada fator.</strong> Fica em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/dossie.json"><code>data/dossie.json</code></a>: piora, estável, melhora ou sem direção clara.</p>
-<ul>
-<li><strong>Fatos de dados:</strong> saem de código, todo dia, comparando o dado de hoje com a série histórica ("o maior desde…").</li>
-<li><strong>Fatos de notícia:</strong> no máximo 2 por fator, válidos por 180 dias.</li>
-<li><strong>O que outros projetam, em igual destaque:</strong> em ritmo da economia, juro e inflação e dólar e juro longo, o Focus, calculado por código; nos demais, a projeção pública mais recente de uma instituição (IFI, por exemplo). Quando a projeção aponta para o lado contrário da tendência do site, aparece como "Analistas veem diferente"; para o mesmo lado, "Analistas concordam".</li>
-<li><strong>Quem muda o quê:</strong> o modelo de linguagem só propõe. Fato de notícia novo entra sempre. Troca de tendência só entra com dado divulgado ou decisão tomada, noticiados por pelo menos 2 jornais. Nos fatores com Focus, a projeção não aceita troca pelo modelo.</li>
-<li><strong>Os dois lados:</strong> cada fator mostra o que o melhoraria e o que o pioraria. Os textos descrevem mecanismos e números, não intenções, pessoas ou partidos, e nunca dizem o que um governo deveria fazer.</li>
-</ul>
-<p><strong>O placar.</strong> Cada tendência é registrada e conferida 6 meses depois contra uma medida fixa por fator (ritmo da economia: IBC-Br; juro e inflação: juro real; dívidas das famílias: renda comprometida; dólar e juro longo: taxa do Tesouro IPCA+; contas do governo: dívida bruta; emprego: desemprego; economia lá fora: índice de commodities).</p>
-<ul>
-<li>"Estável" acerta se a medida andou menos de um quarto do desvio-padrão das variações de 6 meses desde 2002; "piora" e "melhora", se andou mais que isso para o lado dito.</li>
-<li>Leitura trocada antes do prazo fica registrada como substituída, sem resultado.</li>
-<li>Para comparar: por acaso, desde 2002, "piora" acertaria 41% das vezes, "estável" 21% e "melhora" 39%, na média dos fatores. Em dívidas das famílias e contas do governo, "piora" acertaria mais da metade das vezes, porque essas séries subiram na maior parte do período.</li>
-</ul>
+<p><strong>Fatos de dados.</strong> Saem de código (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/dossie.py"><code>src/dossie.py</code></a>), todo dia, comparando o dado de hoje com a série histórica ("o maior desde…"). O post os recebe como contexto.</p>
 <h2 id="o-que-causa-recessao">O que causa recessão</h2>
-<p>A aba <a href="https://vaidarcrise.com.br/causas/">O que causa recessão</a> explica o caminho mais comum até a recessão para quem não é economista: por que os preços sobem, o juro alto como freio, a bola de neve das famílias endividadas, os casos de 2013 a 2016 e de 2021 e 2022, a bola de neve da dívida do governo e, no fim, um mapa que junta as partes. Ela não mostra dados do dia; os números com data ficam listados abaixo. Segue a seção "Como explicar um mecanismo" do <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md">PERSONA.md</a>. Nada dela entra no nível. As duas pesquisas abaixo sustentam o que a aba diz; os números delas ficam aqui, não na aba.</p>
+<p>A aba <a href="https://vaidarcrise.com.br/causas/">O que causa recessão</a> explica o caminho mais comum até a recessão para quem não é economista: por que os preços sobem, o juro alto como freio, a bola de neve das famílias endividadas, os casos de 2013 a 2016 e de 2021 e 2022, a bola de neve da dívida do governo e, no fim, um mapa que junta as partes. Ela não mostra dados do dia; os números com data ficam listados abaixo. Segue a seção "Como explicar um mecanismo" do <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md">PERSONA.md</a>. Nada dela entra na direção. As duas pesquisas abaixo sustentam o que a aba diz; os números delas ficam aqui, não na aba.</p>
 <p><strong>Gatilhos e fragilidades.</strong> Recessões de 166 países, com dados anuais (Global Macro Database, FMI, Banco Mundial e Jordà, Schularick e Taylor). AUC: 0,5 é cara ou coroa; 1 acerta sempre.</p>
 <ul>
 <li>Dívida, déficit, juro real e inflação altos, em nível ou parados por anos, não preveem a data da recessão em 1, 2 a 3 ou 5 anos (AUC de 0,43 a 0,53).</li>
@@ -512,13 +663,13 @@ a:hover{text-decoration-thickness:2px}
 </table>
 <ul>
 <li>No começo de cada ciclo de alta da Selic, o déficit primário em 12 meses tinha mudado: 2004, −0,2 ponto do PIB; 2008, +0,1; 2010, +0,6; 2013, +1,1; 2021, +8,4 (pandemia); 2024, +1,5. A alta de 2002 começa antes da série.</li>
-<li>O caminho é a dominância fiscal de Blanchard (2004), escrita sobre o Brasil: déficit subindo eleva a inflação esperada, e o Banco Central sobe o juro. O déficit subindo não avisa a recessão direto (0,48): age pelo juro, que já está na conta.</li>
-<li>Juro americano e commodities, testados como quinta entrada da conta, pioraram o erro fora da amostra em 12 meses: 5,1% e 5,8% no painel; 15,1% e 23,5% no Brasil.</li>
+<li>O caminho é a dominância fiscal de Blanchard (2004), escrita sobre o Brasil: déficit subindo eleva a inflação esperada, e o Banco Central sobe o juro. O déficit subindo não avisa a recessão direto (0,48): age pela inflação esperada e pelo juro, que são duas das cinco pressões da direção.</li>
+<li>Juro americano e commodities, testados como quinta entrada da conta dos 44 países (apêndice), pioraram o erro fora da amostra em 12 meses: 5,1% e 5,8% no painel; 15,1% e 23,5% no Brasil.</li>
 </ul>
 <p>A prévia de link (<code>docs/causas/og.png</code>) e as versões dos desenhos para a página saem de <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/imagens_causas.py"><code>src/imagens_causas.py</code></a>, rodado à mão; a atualização diária não os refaz. Os desenhos foram gerados pelo modelo de imagem Gemini, do Google, a partir do roteiro da aba; os originais ficam em <code>assets/causas/</code>.</p>
 <p><strong>Números fixos da aba, com data.</strong> Juros nominais do setor público em 12 meses até agosto de 2026: R$ 1,18 trilhão, 8,9% do PIB (Banco Central, estatísticas fiscais, pela imprensa); cerca de R$ 5.500 por brasileiro, com 213 milhões de habitantes. Resultado sem juros no mesmo período: 0,6% do PIB a mais de gasto que de receita (BCB 5793). Sobra sem juros que estabilizaria a dívida bruta: 2,1% do PIB por ano (IFI, Relatório de Acompanhamento Fiscal de agosto de 2026). Dívida federal em reais: 96% (Tesouro, agosto de 2026); não residentes têm cerca de 10% da dívida interna. IPCA de 2021: 10,06%, com gasolina em 47,5% e energia elétrica em 21,2% (IBGE), com o setor público arrecadando 0,7% do PIB a mais do que gastou, sem juros. Desemprego (PNAD): 6,2% em dezembro de 2013, 13,9% em março de 2017, 14,9% em março de 2021 e 7,9% em dezembro de 2022. Índice de commodities do FMI: caiu 49% de junho de 2014 a janeiro de 2016 e subiu 132% de junho de 2020 a junho de 2022. Resultado sem juros do setor público (BCB 5793): sobra de 1,7% do PIB em 2013 e falta de 1,9% em 2015; sobra de 0,7% em 2021 e de 1,3% em 2022. Dívida bruta (BCB 13762): de 51,5% do PIB em 2013 para 69,8% em 2016; de 86,9% em 2020 para 71,7% em 2022. A aba não diz "não houve recessão" em 2021 e 2022: a primeira divulgação do IBGE do terceiro trimestre de 2021 trouxe duas quedas pequenas seguidas (0,4% e 0,1%); diz que a economia cresceu nos dois anos, que é o que o PIB anual mostra. Títulos da dívida federal ligados à Selic: cerca de metade (51% em julho de 2026, Tesouro, pela imprensa). Parte da renda das famílias usada para pagar dívidas, com ajuste sazonal (BCB 29034): 29,0% em agosto de 2026, a maior desde o começo da série, em março de 2005; 22,8% na média de 2014.</p>
 <p><strong>Onde a ligação com as contas do governo é forte e onde é fraca.</strong> Procura acima da capacidade vira preço, e o Banco Central diz que, com a economia no limite, estímulo do governo vira mais inflação que crescimento (ata do Copom de dezembro de 2022). No Brasil, contas piorando vieram antes das altas da Selic (0,72, acima); nos 44 países, não (0,48). Nem toda inflação vem do gasto: 2021 é o contraexemplo. A bola de neve é aritmética (juro acima do crescimento e sem sobra, a dívida sobe); o círculo de volta para o juro, via dólar e inflação esperada, é o de Blanchard (2004), com força que varia com a confiança. Por isso a corrente da aba tem duas partes. A entrada (gasto acima da arrecadação vira preço) leva a condição "com a economia no limite": empréstimo, por si, não gera inflação, e com gente parada o mesmo gasto vira emprego. O círculo (passos 3 a 6) fecha pela desconfiança, não por mais gasto: pegar emprestado para pagar juros põe pouco dinheiro novo na economia, mas a dívida maior encarece o crédito ao governo, sobe o dólar e mantém o juro alto. Hoje os juros (8,9% do PIB) pesam quase 15 vezes mais que o gasto sem juros acima da arrecadação (0,6%), por isso a aba diz que o círculo gira pelos passos 3 a 6. Dívida alta não marcou a data das recessões em 166 países, por isso a aba não fala em espiral nem em prazo.</p>
-<p><strong>Limites.</strong> Um sinal por vez mostra o que vem antes, não o que causa, e dois sinais podem contar a mesma história. Nada disso passou por teste fora da amostra, exceto a quinta entrada. O Brasil teve sete ciclos de alta desde 2002: a margem de erro é grande. No painel, dívida e déficit são anuais e chegam com 1 ano de atraso, o que enfraquece o fiscal ali.</p>
+<p><strong>Limites.</strong> Um sinal por vez mostra o que vem antes, não o que causa, e dois sinais podem contar a mesma história. Nada disso passou por teste fora da amostra, exceto a quinta entrada da conta dos 44 países. O Brasil teve sete ciclos de alta desde 2002: a margem de erro é grande. No painel, dívida e déficit são anuais e chegam com 1 ano de atraso, o que enfraquece o fiscal ali.</p>
 <h2 id="os-posts">Os posts</h2>
 <p>É um post por dia, escrito na mesma atualização das 06h30, e o tipo muda com o dia (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md"><code>PERSONA.md</code></a>, "Os tipos de post"):</p>
 <table>
@@ -534,46 +685,164 @@ a:hover{text-decoration-thickness:2px}
 <tr>
 <td>Fato do dia</td>
 <td>Segunda a sábado</td>
-<td>As notícias da véspera por fator, os fatos de dados dos fatores com notícia e, só se o nível mudou, o PIB num ano ruim e as entradas da conta</td>
+<td>As notícias da véspera por assunto, os fatos de dados dos assuntos com notícia, as cinco pressões com as frases do topo e, se a direção mudou ou uma pressão mudou de lado, a mudança</td>
 <td>Até 100 palavras</td>
 </tr>
 <tr>
 <td>A semana</td>
 <td>Domingo, com atualizações em pelo menos 4 dos 6 dias anteriores</td>
-<td>As atualizações de segunda a domingo: nível, entradas e fatores que mudaram, dados novos, notícias somadas por fator (mesma conta da pressão do dia) e as datas da semana seguinte</td>
+<td>As atualizações de segunda a domingo: a direção em cada dia, as pressões que mudaram de lado, os dados novos, as notícias somadas por assunto (mesma conta da pressão do dia) e as datas da semana seguinte</td>
 <td>Até 250 palavras</td>
 </tr>
 <tr>
 <td>O mês</td>
 <td>Primeiro domingo do mês, no lugar da semana, se as atualizações do mês anterior começaram até o dia 8 e cobrem pelo menos 15 dias dele</td>
-<td>As atualizações do mês anterior e dos primeiros dias deste, mais quatro partes feitas por código: o que mudou em cada fator, o bolso (emprego, preços, parcelas e dólar), o que faria o risco mudar e o placar</td>
+<td>As atualizações do mês anterior e dos primeiros dias deste, mais duas tabelas feitas por código: cada pressão no começo e no fim do mês, e o bolso (emprego, preços, parcelas e dólar)</td>
 <td>Até 300 palavras de texto; com as tabelas, cerca de 450</td>
 </tr>
 <tr>
 <td>Retrato do Brasil</td>
 <td>Fixo no topo, escrito à mão em <code>editor/</code></td>
-<td>Os números do dia em que foi escrito, com a data</td>
-<td>500 a 600 palavras</td>
+<td>Por que o site nasceu e como usar, sem números do dia</td>
+<td>Até 800 palavras</td>
 </tr>
 </tbody>
 </table>
 <p>Sem atualizações bastantes, a semana e o mês viram fato do dia. A semana e o mês saem dos registros em <code>runs/</code>, nunca dos posts anteriores. Cada post recebe o anterior do mesmo tipo só para não copiar frases dele.</p>
-<p>O modelo de linguagem recebe os fatos prontos e só redige. Ele não muda o nível, a pressão nem a tendência. Um verificador em código (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/revisa_texto.py"><code>src/revisa_texto.py</code></a>) procura moldes de texto automático, jargão, afirmações de chance de recessão e explicações de método. Nos posts, também confere: número ou data que não está nos dados que o modelo recebeu (com a folga do arredondamento), texto acima do tamanho do tipo, fato do dia que repete o nível sem mudança, data futura no fato do dia (as datas ficam na lateral) e frase copiada do post anterior do mesmo tipo. Qualquer problema pede uma reescrita, no máximo uma. Número fora dos dados, chance de recessão ou mais de uma frase sobre a conta, se sobrarem, barram o texto, e sai a atualização sem texto corrido.</p>
-<p>Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em <a href="https://github.com/pedrojahara/vaidarcrise/tree/main/runs"><code>runs/</code></a>. Depois do lançamento oficial do site, o que foi publicado fica congelado. Antes dele, os textos antigos acompanham as mudanças do site, com os mesmos números e datas.</p>
+<p>O modelo de linguagem recebe os fatos prontos e só redige. Ele não muda a direção nem a pressão das notícias. Um verificador em código (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/revisa_texto.py"><code>src/revisa_texto.py</code></a>) procura moldes de texto automático, jargão, risco de recessão em porcentagem, previsão de recessão e explicações de método. Nos posts, também confere: número ou data que não está nos dados que o modelo recebeu (com a folga do arredondamento), texto acima do tamanho do tipo, fato do dia que repete a direção sem mudança, data futura no fato do dia (as datas ficam na lateral) e frase copiada do post anterior do mesmo tipo. Qualquer problema pede uma reescrita, no máximo uma. Número fora dos dados, risco em porcentagem, previsão de recessão ou mais de uma frase sobre a conta, se sobrarem, barram o texto, e sai a atualização sem texto corrido.</p>
+<p>Cada atualização guarda o prompt (hash), o modelo usado, a resposta bruta e a direção do dia em <a href="https://github.com/pedrojahara/vaidarcrise/tree/main/runs"><code>runs/</code></a>. Depois do lançamento oficial do site, o que foi publicado fica congelado. Antes dele, os textos e os registros antigos acompanham as mudanças do site, com os mesmos números e datas.</p>
 <h2 id="salvaguardas">Salvaguardas</h2>
 <ul>
 <li><strong>Números velhos:</strong> se a página passar de 36 horas sem atualização, ela avisa.</li>
-<li><strong>Falha de coleta:</strong> cada fonte tem até 4 tentativas, e a série do Banco Central que falha tenta de novo no fim. O desemprego tem uma segunda fonte, o próprio IBGE. Se ainda faltar, vale o último valor guardado enquanto ele for o mais novo que a fonte deveria ter: 10 dias para dado diário, 200 para o PIB trimestral e, para dado mensal, até 15 dias depois do mês em que o seguinte deveria sair (pela defasagem de cada série). Exemplo: o desemprego do trimestre até agosto vale até 15 de novembro. O cartão do fator avisa quando o dado é de uma atualização anterior. Se faltar uma entrada da conta mesmo assim, a atualização não sai, e o site avisa que está defasado.</li>
+<li><strong>Falha de coleta:</strong> cada fonte tem até 4 tentativas, e a série do Banco Central que falha tenta de novo no fim. O desemprego tem uma segunda fonte, o próprio IBGE. Se ainda faltar, vale o último valor guardado enquanto ele for o mais novo que a fonte deveria ter: 10 dias para dado diário, 200 para o PIB trimestral e, para dado mensal, até 15 dias depois do mês em que o seguinte deveria sair (pela defasagem de cada série). Exemplo: o desemprego do trimestre até agosto vale até 15 de novembro. O registro da atualização marca o valor reaproveitado. Pressão sem dado fica fora da soma e aparece como "Sem dado".</li>
 <li><strong>Falha do modelo de linguagem:</strong> a atualização sai só com dados e sem pressão de notícias.</li>
-<li><strong>Texto das notícias:</strong> é tratado como dado, nunca como instrução. Nenhuma notícia muda pesos ou regras.</li>
+<li><strong>Texto das notícias:</strong> é tratado como dado, nunca como instrução. Nenhuma notícia muda regras nem a direção.</li>
 </ul>
 <h2 id="o-que-ainda-falta">O que ainda falta</h2>
 <ul>
-<li>Testar o preço das commodities, que o painel de países não tem.</li>
 <li>Refazer o teste com os dados como eram divulgados na época (com revisões).</li>
+<li>Testar a direção em outros países com as mesmas cinco pressões, para ver se a ordem do PIB seguinte se repete fora do Brasil.</li>
 <li>Teste de troca de nomes: reprocessar uma amostra de notícias trocando os atores e publicar se a classificação mudou.</li>
-<li>Conferir o placar contra o Focus, além do dado.</li>
+<li>Pôr o valor das reservas em dólar em "O que segura", com a série do Banco Central.</li>
 </ul>
+<h2 id="apendice-o-pib-num-ano-ruim-pela-conta-de-44-paises">Apêndice: o PIB num ano ruim, pela conta de 44 países</h2>
+<p>A aba Como funciona mostra, no fim, um segundo número que não entra na direção: o <strong>PIB num ano ruim</strong> (no jargão, o cenário ruim, ou quantil 10%), o crescimento nos 12 meses seguintes que tem só 1 chance em 10 de ser pior. É o método do FMI chamado crescimento em risco (<em>growth-at-risk</em>; Adrian, Boyarchenko e Giannone, 2019). A conta fica em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/model.py"><code>src/model.py</code></a> e <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/calibra.py"><code>src/calibra.py</code></a>; o painel, em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/painel_ocde.csv"><code>data/historico/painel_ocde.csv</code></a>; o Brasil mês a mês, em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/mensal.json"><code>data/historico/mensal.json</code></a>.</p>
+<p><strong>Quatro entradas do Brasil</strong>, cada uma com o que já tinha sido divulgado no dia:</p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Definição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crescimento em 12 meses</td>
+<td>IBC-Br dessazonalizado (BCB 24364): média dos 3 últimos meses contra os mesmos 3 meses um ano antes</td>
+</tr>
+<tr>
+<td>Crescimento médio em 10 anos</td>
+<td>Média do crescimento em 12 meses do PIB do IBGE nos 40 últimos trimestres divulgados</td>
+</tr>
+<tr>
+<td>Selic: variação em 12 meses</td>
+<td>Selic meta (BCB 432) de hoje menos a de um ano antes, em pontos</td>
+</tr>
+<tr>
+<td>Inflação: variação em 12 meses</td>
+<td>IPCA em 12 meses (BCB 13522) do último mês menos o de um ano antes, em pontos</td>
+</tr>
+</tbody>
+</table>
+<p><strong>A conta, tirada de 44 países.</strong> Uma regressão de quantil (Koenker e Bassett, 1978) do crescimento do PIB nos 4 trimestres seguintes, no quantil 10%, num painel trimestral de 44 países (OCDE e grandes emergentes, Brasil incluído) com dados da OCDE: 4.669 trimestres, de 1995 a 2025. Com 4 recessões no Brasil desde 2002, uma conta só com o Brasil não teria dados para separar sinal de acaso.</p>
+<p><code>ano ruim = −0,71 − 0,20 × média de 10 anos + 0,23 × crescimento em 12 meses
+               − 0,15 × variação da Selic − 0,13 × variação da inflação − 1,31</code></p>
+<ul>
+<li>Crescimentos em 100 × log; no site, convertidos para variação %.</li>
+<li><strong>Juro subindo e inflação acelerando</strong> pioram o ano ruim; <strong>crescer forte hoje</strong> melhora o ano seguinte; <strong>crescimento médio alto</strong> piora o ano ruim, porque vem junto com economias que oscilam mais.</li>
+<li><strong>O ajuste de −1,31</strong> vem do teste fora da amostra: sem ele, 15% dos resultados ficaram abaixo do ano ruim, e não 10%.</li>
+<li><strong>Em tempos normais</strong>, o mês típico do Brasil desde maio de 2004, o ano ruim é de −1,9%. A aba mostra os dois números lado a lado.</li>
+</ul>
+<p><strong>Por que essas entradas.</strong> Escolhidas fora da amostra no painel, pelo erro da regressão de quantil (perda <em>pinball</em>). Cada candidata foi somada às quatro e ficaria só se o erro de anos não vistos caísse 1% ou mais.</p>
+<table>
+<thead>
+<tr>
+<th>Candidata</th>
+<th>Erro fora da amostra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bolsa (retorno real em 12 meses)</td>
+<td>4,6% menor</td>
+</tr>
+<tr>
+<td>Crédito acima da tendência</td>
+<td>0,7% menor</td>
+</tr>
+<tr>
+<td>Juro longo subindo</td>
+<td>0,3% menor</td>
+</tr>
+<tr>
+<td>Dívida pública</td>
+<td>igual</td>
+</tr>
+<tr>
+<td>Câmbio real acima da média de 10 anos</td>
+<td>0,6% maior</td>
+</tr>
+<tr>
+<td>Desemprego subindo</td>
+<td>0,9% maior</td>
+</tr>
+<tr>
+<td>Hiato do produto</td>
+<td>2,7% maior</td>
+</tr>
+<tr>
+<td>Câmbio (alta em 12 meses)</td>
+<td>2,9% maior</td>
+</tr>
+<tr>
+<td>Curva de juros</td>
+<td>4,8% maior</td>
+</tr>
+</tbody>
+</table>
+<p>A bolsa passou no painel, mas não no Brasil: com o retorno real do Ibovespa em 12 meses (B3) como quinta entrada, o erro fora da amostra no Brasil subiu 3,9%.</p>
+<p><strong>O teste fora da amostra.</strong> No painel, cada ano de 2004 a 2026 foi previsto com coeficientes estimados só com os trimestres cujo PIB 4 trimestres à frente já tinha saído no começo daquele ano (3.625 trimestres). No Brasil, o mesmo, mês a mês, de maio de 2004 a hoje, com os atrasos de divulgação.</p>
+<table>
+<thead>
+<tr>
+<th>Medida</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Erro da conta contra usar só o crescimento médio do país (painel)</td>
+<td>3% menor</td>
+</tr>
+<tr>
+<td>Erro da conta contra usar só o crescimento médio do país (Brasil, 259 meses)</td>
+<td>20% menor</td>
+</tr>
+<tr>
+<td>Resultados abaixo do ano ruim, sem ajuste (painel)</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Resultados abaixo do ano ruim, com ajuste (Brasil, 259 meses)</td>
+<td>8%</td>
+</tr>
+<tr>
+<td>Chance de um mês com recessão à frente ter ano ruim pior que um mês sem (Brasil, 220 meses; 0,5 é o acaso)</td>
+<td>0,60</td>
+</tr>
+</tbody>
+</table>
+<p>O ganho é modesto e, como a direção, a conta não acerta a data em que cada recessão começa. Em 2008 e em 2020 ela não viu a recessão antes; a de 2014 apareceu cedo, desde meados de 2011. Por isso o número fica no fim de Como funciona, como segunda opinião, e não no topo.</p>
 <h2 id="fontes">Fontes</h2>
 <ul>
 <li>Adrian, Boyarchenko e Giannone (2019), <em>Vulnerable growth</em>, American Economic Review</li>
@@ -581,12 +850,16 @@ a:hover{text-decoration-thickness:2px}
 <li>Koenker e Bassett (1978), <em>Regression quantiles</em>, Econometrica</li>
 <li><a href="https://data-explorer.oecd.org/">OCDE: PIB trimestral, juros e preços ao consumidor</a></li>
 <li><a href="https://www.b3.com.br/pt_br/market-data-e-indices/indices/indices-amplos/ibovespa.htm">B3: estatísticas do Ibovespa</a>, para o teste da bolsa</li>
-<li>Sahm (2019), <em>Direct stimulus payments to individuals</em>, Brookings, sobre a regra de Sahm</li>
 <li><a href="https://portalibre.fgv.br/codace">Datação dos ciclos econômicos brasileiros, CODACE/FGV IBRE</a></li>
 <li><a href="https://www3.bcb.gov.br/sgspub/">Banco Central: séries temporais (SGS)</a> e <a href="https://www.bcb.gov.br/publicacoes/focus">Focus</a></li>
 <li><a href="https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9300-contas-nacionais-trimestrais.html">IBGE: Contas Nacionais Trimestrais</a></li>
 <li><a href="https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto">Tesouro Direto: taxas dos títulos</a></li>
 <li><a href="https://fred.stlouisfed.org/series/PALLFNFINDEXM">FMI, índice de preços de commodities, via FRED</a></li>
+<li>Rousseeuw e Croux (1993), <em>Alternatives to the median absolute deviation</em>, Journal of the American Statistical Association, sobre a régua robusta do vaivém</li>
+<li>Tesouro Nacional, Relatório Mensal da Dívida Pública Federal (agosto de 2026), para a parte da dívida federal em reais</li>
+<li><a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp179.htm">Lei Complementar 179, de 2021</a>, autonomia do Banco Central</li>
+<li><a href="https://www.imf.org/en/Publications/WEO">FMI, World Economic Outlook</a>, dívida bruta do governo da Argentina em 2001 e do Japão, citadas em Como funciona</li>
+<li>Mian, Sufi e Verner (2017), <em>Household debt and business cycles worldwide</em>, Quarterly Journal of Economics</li>
 <li>An, Jalles e Loungani (2018), <em>How well do economists forecast recessions?</em>, FMI</li>
 <li>Blanchard (2004), <em>Fiscal dominance and inflation targeting: lessons from Brazil</em>, NBER Working Paper 10389</li>
 <li>Jordà, Schularick e Taylor (2013), <em>When credit bites back</em>, Journal of Money, Credit and Banking</li>
@@ -596,7 +869,7 @@ a:hover{text-decoration-thickness:2px}
 </main>
 
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? diz se o risco de recessão no Brasil nos próximos 12 meses está acima ou abaixo do normal. Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos. A conta usa dados de 44 países e compara com o Brasil desde 2004. As notícias mostram para onde cada parte da economia vai, mas não mudam o nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
+  <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão apertando ou folgando, contra 3 meses antes. Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias mostram para onde cada parte da economia é empurrada, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
   <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
 </body>

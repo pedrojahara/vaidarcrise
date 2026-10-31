@@ -1,6 +1,6 @@
 {
  "regras_fixadas_em": "2026-10-30",
- "pergunta": "O risco de o Brasil entrar em recessão técnica nos próximos 12 meses está acima ou abaixo do normal?",
+ "pergunta": "Para que lado anda o risco de recessão no Brasil: as pressões que costumam vir antes de uma recessão estão apertando ou folgando?",
  "recessao": {
   "definicao": "Dois trimestres seguidos de queda do PIB dessazonalizado do IBGE (tabela 5932, taxa contra o trimestre anterior, uma casa decimal; 0,0% não é queda).",
   "juntar_quedas_separadas_por_um_trimestre": true,
@@ -9,6 +9,60 @@
   "fora_da_amostra": "Meses em que o primeiro trimestre não divulgado fica dentro de uma recessão já começada (depois do primeiro trimestre dela)."
  },
  "amostra_inicio": "2002-01",
+ "direcao": {
+  "o_que_e": "A direção do risco: as cinco pressões que costumam vir antes de uma recessão, cada uma comparada com 3 meses antes (src/direcao.py). Não é previsão: diz para que lado o risco andou.",
+  "partes": "Contas do governo (dívida bruta do governo geral, BCB 13762; antes de 2007, o resultado sem juros, BCB 5793), dívidas das famílias (comprometimento de renda, BCB 29034), dólar e juro longo (dólar PTAX, BCB 1, em %; Tesouro IPCA+ de cerca de 10 anos; contam como uma só: se um aperta e o outro folga, fica igual), inflação esperada (Focus, IPCA 12 meses, suavizada) e juro (Selic meta, BCB 432). Fora da soma: ritmo da economia (IBC-Br, média de 3 meses contra os 3 anteriores) e emprego (desocupação da PNAD, BCB 24369).",
+  "amostra_inicio": "2002-01",
+  "teste_inicio": "2004-01",
+  "janela_meses": 3,
+  "corte_vaivem": 0.75,
+  "corte_soma": 2,
+  "confirma_meses": 2,
+  "encolhe_pct": 1.5,
+  "teto_meta_inflacao": 4.5,
+  "atraso": "Nos meses passados e no teste, cada série entra com o atraso típico de divulgação: dívida e resultado sem juros 2 meses, comprometimento de renda 3, IBC-Br 2, desocupação 1, os outros 0. No mês corrente, entra o último dado que saiu, comparado com o de 3 meses antes dele.",
+  "nomes": {
+   "contas": "Contas do governo",
+   "parcelas": "Dívidas das famílias",
+   "mercado": "Dólar e juro longo",
+   "inflacao": "Inflação esperada",
+   "juro": "Juro",
+   "ritmo": "Ritmo da economia",
+   "emprego": "Emprego"
+  },
+  "quem_mexe": {
+   "contas": "Quem mexe: o governo e o Congresso, nos gastos e nos impostos, e o juro do Banco Central, que muda a conta dos juros da dívida.",
+   "parcelas": "Quem mexe: as famílias e os bancos, quando pegam e dão empréstimo, e o juro do Banco Central, que muda o preço da parcela.",
+   "mercado": "Quem mexe: quem compra e vende dólar e títulos do governo, aqui e lá fora. As contas do governo e o juro dos Estados Unidos pesam nessa escolha.",
+   "inflacao": "Quem mexe: o Banco Central, com o juro, e preços que vêm de fora, como o petróleo e o dólar.",
+   "juro": "Quem decide: o Banco Central, oito vezes por ano.",
+   "ritmo": "Mostra como a economia está agora. Se a prévia do PIB cair mais de 1,5% em 3 meses, o topo passa a dizer que a economia está encolhendo.",
+   "emprego": "O emprego costuma ser o último a piorar numa recessão: as empresas primeiro vendem menos e só depois demitem."
+  },
+  "causas": {
+   "contas": "/causas/#t-divida",
+   "parcelas": "/causas/#t-doem",
+   "mercado": "/causas/#t-outros",
+   "inflacao": "/causas/#t-precos",
+   "juro": "/causas/#t-freio",
+   "ritmo": "/causas/#t-freio",
+   "emprego": "/causas/#t-doem"
+  },
+  "o_que_segura": [
+   {
+    "texto": "Quase toda a dívida do governo é em reais: 96% da dívida federal, pelo Tesouro, em agosto de 2026. Quando o dólar sobe, a dívida não cresce junto, como cresceu em 2002.",
+    "fonte": "Tesouro Nacional, Relatório Mensal da Dívida"
+   },
+   {
+    "texto": "O Banco Central guarda reservas em dólar{reservas}. Num susto, ele vende parte delas e o dólar sobe menos.",
+    "fonte": "Banco Central"
+   },
+   {
+    "texto": "O Banco Central decide o juro com autonomia garantida por lei desde 2021. O diretor não pode ser trocado no meio do mandato por causa de uma decisão.",
+    "fonte": "Lei Complementar 179, de 2021"
+   }
+  ]
+ },
  "gar": {
   "metodo": "Crescimento em risco (growth-at-risk), como no FMI (Adrian, Boyarchenko e Giannone, 2019; FMI, Global Financial Stability Report, out/2017): regressão de quantil do crescimento do PIB nos 4 trimestres seguintes.",
   "quantil": 0.1,
@@ -56,13 +110,6 @@
   "contas": "Contas do governo",
   "emprego": "Emprego",
   "externo": "Economia lá fora"
- },
- "fora_da_conta": {
-  "credito": "Fica fora da conta: nos 44 países testados, quase não melhorou a previsão do PIB.",
-  "mercado": "Fica fora da conta: nos 44 países, dólar e juro longo não melhoraram a previsão com clareza. A bolsa melhorou nos 44 países, mas piorou no Brasil.",
-  "contas": "Fica fora da conta: nos 44 países, a dívida do governo não melhorou a previsão do PIB.",
-  "emprego": "Fica fora da conta: o desemprego sobe depois que a recessão começa, e piorou a previsão nos 44 países.",
-  "externo": "Fica fora da conta: o preço desses produtos não foi testado nos 44 países."
  },
  "indicadores": {
   "ibcbr": {
@@ -170,47 +217,6 @@
   "retorno": 0.5,
   "corte_fator": 1.0,
   "corte_geral": 2.0
- },
- "placar": {
-  "meses": 6,
-  "tolerancia_desvios": 0.25,
-  "medidas": {
-   "atividade": {
-    "serie": "ibcbr_3m",
-    "direcao": -1,
-    "nome": "IBC-Br, média de 3 meses contra os 3 anteriores"
-   },
-   "juro": {
-    "serie": "juro_real",
-    "direcao": 1,
-    "nome": "Juro real"
-   },
-   "credito": {
-    "serie": "comprometimento_nivel",
-    "direcao": 1,
-    "nome": "Renda comprometida com dívidas"
-   },
-   "mercado": {
-    "serie": "tesouro_nivel",
-    "direcao": 1,
-    "nome": "Taxa do Tesouro IPCA+ de cerca de 10 anos"
-   },
-   "contas": {
-    "serie": "divida_nivel",
-    "direcao": 1,
-    "nome": "Dívida bruta do governo geral"
-   },
-   "emprego": {
-    "serie": "desocupacao",
-    "direcao": 1,
-    "nome": "Desemprego"
-   },
-   "externo": {
-    "serie": "commodities_nivel",
-    "direcao": -1,
-    "nome": "Índice de commodities do FMI"
-   }
-  }
  },
  "faixa_normal_percentis": [
   25,

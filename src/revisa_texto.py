@@ -19,7 +19,8 @@ MOLDES = [
     (re.compile(r"\bgrande banco\b", re.I), "empresa sem nome"),
     (re.compile(r"!"), "ponto de exclamação"),
     (re.compile(r"\b(metodologia|log-?odds|Shapley|taxa-base|pesam? pouco|composto|regressão|calibra\w*|"
-                r"limite de alerta|nova regra|versão do (site|modelo))\b", re.I), "explica a conta ao leitor"),
+                r"limite de alerta|nova regra|versão do (site|modelo)|vaivém normal|desvio (absoluto|padrão))\b", re.I),
+     "explica a conta ao leitor"),
     # O leitor (PERSONA.md) não estudou economia e tem lado político.
     (re.compile(r"\b(política monetária|aperto monetário|interanual|dessazonalizad\w*|commodities|pontos?[- ]base|"
                 r"hiato do produto|PIB potencial|quantil|desancorad\w*|curva de juros|estagflação|spread)\b", re.I),
@@ -54,6 +55,9 @@ GRAVES = [
                 r"informam|divulga|divulgam|revela|revelam|identifica|identificam) o nome|não identificad[oa]s?|"
                 r"não nomead[oa]s?)\b", re.I), "comenta a falta de um nome"),
     (re.compile(r"\bindicadores já (a |o |as |os )?med", re.I), "dá motivo para notícia fora da conta"),
+    # A direção diz para que lado o risco andou; não é previsão de recessão.
+    (re.compile(r"\b(vai|deve|irá) (ter|haver|entrar em) (uma )?recessão|recessão (vem|virá|é certa)|"
+                r"(não|nem) (vai|deve) (ter|haver) (uma )?recessão\b", re.I), "prevê recessão"),
     # O risco de recessão é qualitativo: nunca vira número.
     (re.compile(r"(\d+(,\d+)?\s*(%|por cento)\s*de (chance|probabilidade|risco)|(chance|probabilidade|risco) "
                 r"(de recessão )?(é |fica |sobe para |cai para |vai a |de )?(de )?\d+(,\d+)?\s*(%|por cento)|"
@@ -61,16 +65,17 @@ GRAVES = [
 ]
 
 
-# O post conta o fato; como a conta funciona fica na página da conta. Uma frase só pode dizer que um
-# fato fica fora da conta do nível, quando ele parece contradizer o nível (PERSONA.md, regra 6 do prompt).
-NIVEL_FUNCIONA = re.compile(r"\b((não|nem) (entra|entram|mexe|mexem|move|movem) "
-                            r"(n[oa] |o |a )?(número|conta|nível)|entram? n[oa] (número|conta|nível)|só se (mexe|move)|"
-                            r"(fora|dentro) d[oa] (número|conta|nível))\b", re.I)
+# O post conta o fato; como a conta funciona fica na aba Como funciona. Uma frase só pode dizer que um
+# fato fica fora da conta, quando ele parece contradizer a direção (regra 6 do prompt do post).
+CONTA_FUNCIONA = re.compile(r"\b((não|nem) (entra|entram|mexe|mexem|move|movem|muda|mudam|altera|alteram) "
+                            r"(n[oa] |o |a )?(número|conta|soma|direção)|entram? n[oa] (número|conta|soma|direção)|"
+                            r"só se (mexe|move)|(fora|dentro) d[oa] (número|conta|soma|direção))\b", re.I)
 
-# Fato do dia com o nível parado: a placa do topo já mostra o nível e o PIB num ano ruim.
-NIVEL_REPETIDO = re.compile(r"\b(num ano ruim|em tempos normais|risco( de recessão)?[^.]{0,30}\b(segue|seguiu|continua|"
-                            r"continuou|está|fica|ficou|permanece|permaneceu)\b[^.]{0,12}\b(normal|acima|abaixo)|"
-                            r"nível (segue|continua|está|fica|permanece|é|de) (o )?(muito )?(normal|acima|abaixo))", re.I)
+# Fato do dia com a direção parada: o topo da página já mostra a direção, desde quando e as cinco pressões.
+DIRECAO_REPETIDA = re.compile(r"\b(risco( de recessão)?[^.]{0,30}\b(segue|seguiu|continua|continuou|está|fica|ficou|"
+                              r"permanece|permaneceu)\b[^.]{0,12}\b(subindo|igual|caindo|em alta|em queda)|"
+                              r"direção (do risco )?(segue|continua|está|fica|permanece|é|de)\b|"
+                              r"(uma|duas|três|quatro|cinco|\d) das cinco pressões)", re.I)
 
 LIMITE_PALAVRAS = {"dia": 120, "semana": 300, "mes": 360}
 MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro",
@@ -78,8 +83,8 @@ MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "a
 DATA_BARRA = re.compile(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?:/(\d{4}))?(?![\d/])")
 DATA_EXTENSO = re.compile(r"\b(\d{1,2})(?:º)? de (" + "|".join(MESES) + r")\b", re.I)
 NUM = re.compile(r"(?<![A-Za-z0-9_,.])(\d{1,3}(?:\.\d{3})+|\d+)(?:,(\d+))?(?![\d])")
-# Números que o prompt dá ao modelo fora dos dados: desde 2004, 1 chance em 10, 12 meses, cinco níveis.
-CONSTANTES = "2004 10 12 5"
+# Números que o prompt dá ao modelo fora dos dados: desde 2004, 3 meses, 12 meses, cinco pressões.
+CONSTANTES = "2004 3 12 5"
 
 
 def _datas(texto: str) -> set[tuple[int, int]]:
@@ -130,11 +135,11 @@ def graves_post(post: dict, tipo: str = "dia", dados: str | None = None, **_) ->
     textos = _prosa(post)
     out = [f"{'título' if i == 0 else f'parágrafo {i}'}: {nome}"
            for i, t in enumerate(textos) for rx, nome in GRAVES if rx.search(t)]
-    if NIVEL_FUNCIONA.search(post["titulo"]):
-        out.append("título: explica como o nível funciona")
-    n = sum(1 for f in _frases(post["paragrafos"]) if NIVEL_FUNCIONA.search(f))
+    if CONTA_FUNCIONA.search(post["titulo"]):
+        out.append("título: explica como a conta da direção funciona")
+    n = sum(1 for f in _frases(post["paragrafos"]) if CONTA_FUNCIONA.search(f))
     if n > 1:
-        out.append(f"{n} frases explicam como o nível funciona (o post pode ter uma, quando o fato parece contradizer o nível)")
+        out.append(f"{n} frases explicam como a conta funciona (o post pode ter uma, quando o fato parece contradizer a direção)")
     if dados is not None:
         fora = numeros_fora(textos, dados)
         if fora:
@@ -167,8 +172,8 @@ def problemas_classificacao(saida: dict) -> list[str]:
 
 
 def problemas_post(post: dict, tipo: str = "dia", dados: str | None = None, hoje=None, anterior: dict | None = None,
-                   nivel_mudou: bool = True, **_) -> list[str]:
-    """Moldes de texto e, nos posts, o que repete a página: nível parado, data da lateral, frase do post anterior."""
+                   direcao_mudou: bool = True, **_) -> list[str]:
+    """Moldes de texto e, nos posts, o que repete a página: direção parada, data da lateral, frase do post anterior."""
     import datetime as dt
     from difflib import SequenceMatcher
 
@@ -196,10 +201,10 @@ def problemas_post(post: dict, tipo: str = "dia", dados: str | None = None, hoje
     palavras = sum(len(p.split()) for p in post["paragrafos"])
     if palavras > LIMITE_PALAVRAS.get(tipo, 10**6):
         out.append(f"texto com {palavras} palavras (o limite é {LIMITE_PALAVRAS[tipo] * 5 // 6})")
-    if tipo == "dia" and not nivel_mudou:
-        rep = [f for f in _frases(_prosa(post)) if NIVEL_REPETIDO.search(f)]
+    if tipo == "dia" and not direcao_mudou:
+        rep = [f for f in _frases(_prosa(post)) if DIRECAO_REPETIDA.search(f) and not CONTA_FUNCIONA.search(f)]
         if rep:
-            out.append("repete o nível ou o PIB num ano ruim, que não mudaram e já estão na placa: " + rep[0][:70])
+            out.append("repete a direção do risco, que não mudou e já está no topo da página: " + rep[0][:70])
     if tipo == "dia" and hoje is not None:
         hoje = hoje if isinstance(hoje, dt.date) else dt.date.fromisoformat(str(hoje)[:10])
         futuras = []
@@ -215,7 +220,7 @@ def problemas_post(post: dict, tipo: str = "dia", dados: str | None = None, hoje
     if anterior and anterior.get("paragrafos"):
         velhas = [f for f in _frases([anterior.get("titulo", ""), *anterior["paragrafos"]]) if len(f.split()) >= 6]
         for f in _frases(_prosa(post)):
-            # A frase da regra 6 ("Isso não muda o risco de recessão, porque...") é fórmula: pode repetir.
-            if len(f.split()) >= 6 and not NIVEL_FUNCIONA.search(f) and any(SequenceMatcher(None, f.lower(), v.lower()).ratio() > 0.8 for v in velhas):
+            # A frase da regra 6 ("Isso não muda a direção do risco, porque...") é fórmula: pode repetir.
+            if len(f.split()) >= 6 and not CONTA_FUNCIONA.search(f) and any(SequenceMatcher(None, f.lower(), v.lower()).ratio() > 0.8 for v in velhas):
                 out.append(f"frase copiada do post anterior: {f[:70]}")
     return out + graves_post(post, tipo=tipo, dados=dados)

@@ -1,4 +1,4 @@
-"""Imagem de prévia de links 1200×630: repete o topo do site (plaquinha com o nível e a escala de cinco níveis)."""
+"""Imagem de prévia de links 1200×630: repete o topo do site (a plaquinha com a direção do risco e o desde quando)."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -40,31 +40,31 @@ def gerar(caminho: Path, ctx: dict) -> None:
     serifa = lambda t: _fonte("CharisSIL-Bold.ttf", t)  # noqa: E731
     sans = lambda t, p=500: _fonte("IBMPlexSans.ttf", t, p)  # noqa: E731
 
-    # O topo do site: a plaquinha com o nível.
-    niv = ctx["nivel"]
+    # O topo do site: a plaquinha com a seta e a direção.
+    dr = ctx["dir"]
     cx, cy = 290, 290
     pl = _placa(300)
     im.paste(pl, (cx - pl.width // 2, cy - pl.height // 2), pl)
-    palavras = niv["nome"].split(" ") if niv["nome"].startswith("Muito") else [niv["nome"]]
-    tam = 66 if len(palavras) == 1 else 58
-    for i, pal in enumerate(palavras):
-        d.text((cx, cy + (i - (len(palavras) - 1) / 2) * tam * 1.05), pal, font=sans(tam, 700), fill="#000000", anchor="mm")
+    tam = 44 if dr["longa"] else 56
+    d.text((cx, cy - 40), dr["seta"], font=sans(96, 700), fill="#000000", anchor="mm")
+    d.text((cx, cy + 46), dr["placa"], font=sans(tam, 700), fill="#000000", anchor="mm")
 
     x = 580
     d.text((x, 120), "Vai dar crise?", font=serifa(64), fill=TINTA)
-    d.text((x, 222), niv["rot"].capitalize() if niv["nome"] == "Normal" else f"{niv['nome']} do normal",
-           font=sans(56, 700), fill=TINTA)
-    for i, l in enumerate(["de recessão no Brasil", "nos próximos 12 meses."]):
-        d.text((x, 310 + i * 44), l, font=sans(32), fill=TINTA)
-    # A escala de cinco níveis, com o de hoje marcado.
-    nomes = niv["nomes"]
-    x0, x1, y = x, W - 64, 430
-    w = (x1 - x0 - 4 * 6) / 5
-    for i, n in enumerate(nomes):
-        a = x0 + i * (w + 6)
-        d.rectangle([a, y, a + w, y + 14], fill=TINTA if i == niv["indice"] else FIO)
-        d.text((a + w / 2, y + 26), n, font=sans(19, 700 if i == niv["indice"] else 500),
-               fill=TINTA if i == niv["indice"] else META, anchor="ma")
+    if dr["estado"] == "encolhendo":
+        linhas = [("A economia", 56, 700), ("está encolhendo", 56, 700)]
+    else:
+        linhas = [("O risco de recessão", 44, 700), (f"está {dr['estado']}", 56, 700)]
+    y = 222
+    for txt, t, peso in linhas:
+        d.text((x, y), txt, font=sans(t, peso), fill=TINTA)
+        y += t + 14
+    d.text((x, y + 6), dr["desde"].capitalize() + ".", font=sans(32), fill=META)
+    pres = dr["pressoes"]
+    ap = sum(1 for p in pres if p["palavra"] == "Apertou")
+    fo = sum(1 for p in pres if p["palavra"] == "Folgou")
+    d.text((x, y + 62), f"Das 5 pressões: {ap} {'apertou' if ap == 1 else 'apertaram'}, {fo} {'folgou' if fo == 1 else 'folgaram'}.",
+           font=sans(30), fill=TINTA)
 
     d.line([(64, 548), (W - 64, 548)], fill=FIO, width=2)
     # A semana e o mês vão para o WhatsApp: a prévia diz que tipo de post é.

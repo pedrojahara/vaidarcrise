@@ -1,24 +1,27 @@
-{# O nível de hoje: a plaquinha, a escala de cinco níveis, o PIB no cenário ruim e para que lado as
-   notícias empurram. Fica num arquivo só para ser usado na página principal, no resumo e na conta. #}
-<section class="nota" aria-label="O risco de hoje">
+{# O topo da página: para que lado anda o risco de recessão, desde quando, as cinco pressões com a folga de
+   cada uma, o ritmo e o emprego (fora da soma) e o que segura. Fica num arquivo só para a página principal
+   e para a página de cada dia. #}
+<section class="nota" aria-label="Para onde vai o risco de recessão">
   <div class="topo">
-    <div class="placa" role="img" aria-label="Risco {{ nivel.frase }}"><span{% if nivel.nome.startswith('Muito') %} class="dupla"{% endif %}>{{ nivel.placa|safe }}</span></div>
-    <p class="leitura"><span class="rot">{{ nivel.rot }}</span><span class="sub">de recessão nos próximos 12 meses</span></p>
+    <div class="placa" role="img" aria-label="Risco {{ dir.palavra }}"><span{% if dir.longa %} class="longa"{% endif %}><b aria-hidden="true">{{ dir.seta }}</b>{{ dir.placa }}</span></div>
+    <p class="leitura"><span class="rot">{{ dir.titulo }}</span><span class="sub">{{ dir.desde }}</span></p>
   </div>
-  <ol class="escala{% if grande %} grande{% endif %}" aria-label="Escala de cinco níveis de risco">{% for n in nivel.nomes %}<li{% if loop.index0 == nivel.indice %} class="aqui" aria-current="true"{% endif %}><span>{{ n }}</span></li>{% endfor %}</ol>
-  {% if nivel.cenarios %}
-  <ul class="cenarios" aria-label="PIB nos próximos 12 meses">
-    <li class="cab-cen">O PIB nos próximos 12 meses</li>
-    {% if nivel.cenarios.focus %}<li class="ref"><span>Mais provável, para os bancos (Focus)</span><span>{{ nivel.cenarios.focus }}</span></li>{% endif %}
-    <li class="pior"><span>Num ano ruim (1 chance em 10)</span><b>{{ nivel.cenarios.ruim }}</b></li>
-    <li class="ref"><span>Num ano ruim, em tempos normais</span><span>{{ nivel.cenarios.normal }}</span></li>
+  <p class="conta-dir">{{ dir.conta }}</p>
+  {% if dir.pendente %}<p class="atual">{{ dir.pendente }}</p>{% endif %}
+  <ul class="partes" aria-label="As cinco pressões">
+    <li class="cab-p">As cinco pressões, nos últimos 3 meses</li>
+    {% for x in dir.pressoes %}{% include "_parte.html" %}{% endfor %}
   </ul>
-  {% endif %}
-  {% if nivel.pendente %}<p class="atual">A conta de hoje deu {{ nivel.pendente }}. O nível só muda se amanhã der o mesmo.</p>{% endif %}
-  {% if not grande %}
-  {% if post.pressao %}<p class="tend-noticias"><b class="{{ post.pressao.cls }}" aria-hidden="true">{{ post.pressao.simbolo }}</b> {{ post.pressao.frase }} <a href="{{ link_resumo }}">Ver fator por fator</a></p>
-  {% else %}<p class="tend-noticias"><a href="{{ link_resumo }}">Ver fator por fator</a></p>{% endif %}
-  <p class="atual">{% if permalink %}Atualização de {{ dia_mes(dia) }}, às {{ hora }}{% else %}Atualizado em {{ dia_mes(dia) }} | próxima atualização às 06h30{% endif %}</p>
+  <ul class="partes fora" aria-label="Ritmo da economia e emprego">
+    <li class="cab-p">Fora da soma: como a economia está agora</li>
+    {% for x in dir.fora %}{% include "_parte.html" %}{% endfor %}
+  </ul>
+  {% if dir.historia %}<p class="historia">{{ dir.historia }} Não é previsão: a direção diz para que lado o risco andou.</p>{% endif %}
+  <div class="segura">
+    <h3>O que segura</h3>
+    <ul>{% for s in dir.segura %}<li>{{ s.texto }}</li>{% endfor %}</ul>
+  </div>
+  {% if post.pressao %}<p class="tend-noticias"><b class="{{ post.pressao.cls }}" aria-hidden="true">{{ post.pressao.simbolo }}</b> {{ post.pressao.frase }}</p>{% endif %}
+  <p class="atual"><a href="/nota/">Como funciona</a> | {% if permalink %}Atualização de {{ dia_mes(dia) }}, às {{ hora }}{% else %}Atualizado em {{ dia_mes(dia) }} | próxima atualização às 06h30{% endif %}</p>
   {% if not permalink %}<p class="aviso" id="defasado" hidden><strong>Atenção: números velhos.</strong> Esta atualização tem mais de 36 horas. A atualização automática pode ter falhado; veja o <a href="{{ repo }}/commits/main">histórico</a>.</p>{% endif %}
-  {% endif %}
 </section>
