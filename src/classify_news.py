@@ -114,7 +114,7 @@ Como escrever (titulo_evento, porque e textos das revisões):
 18. Instituições e empresas vão pelo nome (Banco Central, Fazenda, Bradesco, CNI, Petrobras, Fed). Sigla pouco conhecida diz quem é (a IFI, do Senado; a CNI, da indústria). Pessoas e partidos não: use o cargo ou a instituição. Sem adjetivos de juízo, e o mesmo critério para fatos que agradam a qualquer lado. Fatos e números, nunca intenções atribuídas a alguém.
 19. titulo_evento: até 80 caracteres, sem ponto e vírgula. Diga o fato, não a conclusão ("Banco Central mantém a Selic em 15%", não "Banco Central sinaliza cautela").
 20. porque: até 240 caracteres, uma ou duas frases sobre o efeito na atividade. Não comece com "Aumenta" nem "Reduz", não use "pelo canal" e não force precedente histórico. Varie as aberturas entre os eventos.
-21. Não use travessão, "vale destacar", "é importante", "além disso", "nesse sentido", "em suma", "crucial", "robusto", "desafiador" nem a construção "não só X, mas Y". Nada de palavra de alarme (despenca, explode, derrete, colapso, tombo) nem de palavra com lado (rombo, gastança, farra, herança maldita). Não invente números que não estejam nas manchetes.
+21. Não use travessão, "vale destacar", "é importante", "além disso", "nesse sentido", "em suma", "crucial", "robusto", "desafiador" nem a construção "não só X, mas Y". Nada de palavra de alarme (despenca, explode, derrete, colapso, tombo) nem de palavra com lado (rombo, gastança, farra, herança maldita). Não invente números que não estejam nas manchetes. No "por quê", escreva causa e efeito por extenso ("o petróleo subiu lá fora, e a gasolina sobe aqui"), sem frase de efeito como "aumento puxa aumento"; quando a causa vem de fora do país, diga isso.
 """
 
 
