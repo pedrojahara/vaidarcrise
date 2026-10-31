@@ -4,7 +4,7 @@ O cenário ruim é o quantil 10% do crescimento do PIB nos 4 trimestres seguinte
 num painel de 46 países da OCDE desde 1990 (src/calibra.py) contra quatro entradas:
 - tendencia: o crescimento médio do país nos 10 anos anteriores;
 - crescimento: o crescimento dos últimos 12 meses;
-- juro: quanto o juro básico mudou em 12 meses;
+- juro: quanto a Selic mudou em 12 meses;
 - inflacao: quanto a inflação de 12 meses mudou em 12 meses.
 
 As entradas do Brasil saem daqui, do mesmo jeito na calibração (mês a mês, com o que já tinha

@@ -9,9 +9,9 @@ Normal não quer dizer tranquilo. Num ano ruim, daqueles com 1 chance em 10, o P
 
 ### Por que normal, se tanta coisa piorou
 
-A conta do nível usa o crescimento da economia, a Selic e a inflação. Nos testes, foram os dados que mais melhoraram a previsão de um ano ruim para o PIB. Hoje, eles se equilibram:
+A conta do nível usa o crescimento da economia, a Selic e a inflação. A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos. Nos testes, foram os dados que mais melhoraram a previsão de um ano ruim para o PIB. Hoje, eles se equilibram:
 
-- **Ajuda:** a Selic, o juro básico, caiu de 15% para 13,75% em um ano.
+- **Ajuda:** a Selic caiu de 15% para 13,75% em um ano.
 - **Ajuda:** os preços subiram 4,6% em um ano até setembro, contra 5,2% um ano antes. Eles sobem mais devagar.
 - **Pesa:** a economia cresceu 1,4% em um ano até agosto, menos que o típico.
 

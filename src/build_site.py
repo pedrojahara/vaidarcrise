@@ -199,7 +199,7 @@ def _exibicao(fid: str, ind: dict, ent: dict) -> dict:
     if fid == "juro":
         j, i, x = ent.get("juro") or {}, ent.get("inflacao") or {}, g("juro_real") or {}
         return {"valor": f"Selic {num(j['nivel'], 2)}%" if j else "Sem dado",
-                "legenda": (f"Juro básico, {num(abs(j['valor']), 2)} ponto {'abaixo' if j['valor'] < 0 else 'acima'} de um ano antes. "
+                "legenda": (f"Juro que o Banco Central decide, {num(abs(j['valor']), 2)} ponto {'abaixo' if j['valor'] < 0 else 'acima'} de um ano antes. "
                             f"Preços subiram {num(i['nivel'])}% em um ano (IPCA)" if j and i else ""),
                 "hoje": f"Selic {'caiu' if j['valor'] < 0 else 'subiu'} {num(abs(j['valor']), 2)} ponto em um ano" if j else "Sem dado",
                 "reguas": [r for r in (_regua(j, "Na conta: quanto a Selic mudou em um ano, pontos"),

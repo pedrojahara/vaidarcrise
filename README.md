@@ -21,7 +21,8 @@ launchd, todo dia às 06h30 → run.sh   (uma publicação por dia; se o Mac dor
   │                         e dos registros em runs/; src/revisa_texto.py confere o texto e os números
   ├─ src/run.py             grava runs/<id>.json e data/eventos.json
   ├─ src/build_site.py      gera docs/ (HTML estático, og.png, data.json) com editor/*.md;
-  │                         a aba O que causa recessão sai de src/causas.py e config/causas.json
+  │                         a aba O que causa recessão é texto fixo em templates/causas.html
+  │                         (a pesquisa por trás dela, na metodologia: src/causas.py e config/causas.json)
   │                         (desenhos e prévia da aba: src/imagens_causas.py, rodado à mão)
   └─ git push               GitHub Pages publica docs/
 ```

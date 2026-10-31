@@ -221,11 +221,13 @@ O resto do guia cuida da palavra. Esta parte cuida de como ensinar: por que os p
 
 O termo técnico pode aparecer só se o leitor vai encontrá-lo em outro lugar (Selic, PIB, IPCA), e sempre traduzido na primeira vez. O resto sai do texto.
 
+Traduzir é dizer o que o termo faz na vida de quem lê. Trocar por outro termo não basta: no teste com a primeira leitora, "Selic, o juro básico" não explicou a Selic.
+
 | Em vez de | Escreva |
 | --- | --- |
 | Recessão técnica | PIB caindo dois trimestres seguidos |
 | PIB | PIB, tudo o que o país produz |
-| Selic | Selic, o juro básico do país |
+| Selic | na primeira vez, numa frase própria: "A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos." Nunca só "juro básico". |
 | Copom | o Banco Central (ou "o comitê do BC que decide o juro") |
 | IPCA, IPCA em 12 meses | inflação oficial; quanto os preços subiram em um ano |
 | Inflação desacelera, recua | os preços sobem mais devagar |
@@ -301,7 +303,7 @@ Este exemplo mostra a frase e o número; a estrutura está no exemplo seguinte. 
 
 > **Depois.** O risco de recessão segue normal. Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos.
 >
-> Ajuda: o juro básico caiu de 15% para 13,75% em um ano. E os preços sobem mais devagar: 4,6% em um ano, contra 5,2% antes.
+> Ajuda: a Selic caiu de 15% para 13,75% em um ano. A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos. E os preços sobem mais devagar: 4,6% em um ano, contra 5,2% antes.
 >
 > Atrapalha: a economia cresce menos que o normal, 1,4% em um ano. A prévia do PIB do Banco Central caiu no trimestre até agosto.
 >
