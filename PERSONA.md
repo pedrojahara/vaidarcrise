@@ -284,7 +284,7 @@ Mesmos fatos, mesma ordem de importância. A diferença está no rótulo antes d
 
 - `src/escreve_post.py`, regras 4, 8, 9 e 12 do prompt: leitor, tamanho, frase, números e palavras proibidas; regras 13 e 14: como explicar um mecanismo no post, com causa e efeito por extenso.
 - `src/classify_news.py`, regras 17 e 21: títulos de evento e "por quê" com a mesma linguagem.
-- `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
+- `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
 - `src/dossie.py`: as frases de dados de cada fator (queda no verbo, mês por extenso, sem sigla solta); `data/dossie.json` guarda os textos que ficam de um dia para o outro.
 - `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas.
 - Textos escritos à mão (`editor/`, `templates/`) seguem a lista acima na leitura. `METODOLOGIA.md` é técnica de propósito, para quem quer refazer a conta, mas usa os mesmos nomes do site.

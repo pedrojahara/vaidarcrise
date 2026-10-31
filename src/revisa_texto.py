@@ -31,8 +31,9 @@ MOLDES = [
     (re.compile(r"\b(gatilhos?|fragilidades?|segunda derivada|AUC|fora da amostra|\d+ países)\b", re.I),
      "termo da pesquisa do site que o leitor não conhece"),
     # PERSONA.md, regra 11: causa e efeito por extenso, sem frase de efeito no lugar da explicação.
-    (re.compile(r"(,\s*(sim|não)\.(\s|$)|\b(\w{4,}) (puxa|chama|gera|traz) \4\b|ninguém controla)", re.I),
-     "frase de efeito no lugar de causa e efeito ('X, sim.', 'aumento puxa aumento')"),
+    (re.compile(r"(,\s*(sim|não)\.(\s|$)|,\s+não\s+(?:[ao]s?\s+)?\w+\.(\s|$)|\b(\w{4,}) (puxa|chama|gera|traz) \5\b|"
+                r"ninguém controla|\bna dose certa\b)", re.I),
+     "frase de efeito no lugar de causa e efeito ('X, sim.', 'isto, não aquilo', 'aumento puxa aumento')"),
     (re.compile(r"\b(cenário ruim|inadimplência|(déficit|superávit) primário|crédito livre)\b", re.I),
      "palavra que o site trocou (num ano ruim, atraso nas dívidas, gasta mais do que arrecada)"),
 ]
