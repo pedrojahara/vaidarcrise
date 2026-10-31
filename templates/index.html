@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block titulo %}{% if permalink %}{{ post.titulo }} | Vai dar crise?{% else %}Vai dar crise? Risco de recessão {{ nivel.frase }}{% endif %}{% endblock %}
-{% block descricao %}{% if permalink %}{{ post.data_extenso }}. Risco de recessão no Brasil nos 12 meses seguintes: {{ nivel.frase }}.{% else %}Risco de recessão no Brasil nos próximos 12 meses: {{ nivel.frase }}. Post do dia: {{ post.titulo }}.{% endif %}{% endblock %}
+{% block descricao %}{% if permalink %}{% if post.tipo_nome %}{{ post.tipo_nome }}, {{ post.data_extenso|lower }}{% else %}{{ post.data_extenso }}{% endif %}. Risco de recessão no Brasil nos 12 meses seguintes: {{ nivel.frase }}.{% else %}Risco de recessão no Brasil nos próximos 12 meses: {{ nivel.frase }}. {{ post.tipo_nome }}: {{ post.titulo }}.{% endif %}{% endblock %}
 {% block estilo %}
 .blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado";grid-template-rows:auto 1fr;padding-top:28px;padding-bottom:28px}
 .blog .nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}
@@ -18,6 +18,21 @@
 .post p{margin:0 0 16px;max-width:660px}
 .post .rodape{font:14px/1.55 var(--sistema);color:var(--meta);margin-top:14px}
 .post .rodape a{color:var(--meta)}
+.post .tipo{color:var(--tinta)}
+.post h3.sec,.post .corpo h3{font:700 21px/1.3 var(--serifa);margin:28px 0 10px}
+.post .corpo ul,.post .movs{margin:0 0 16px;padding-left:1.1em;max-width:660px}
+.post .corpo li,.post .movs li{margin:0 0 10px}
+.tab{overflow-x:auto;margin:0 0 18px;max-width:660px}
+.tab table{border-collapse:collapse;width:100%;font:15px/1.45 var(--sistema)}
+.tab th,.tab td{text-align:left;vertical-align:top;padding:8px 10px 8px 0;border-bottom:1px solid var(--fio)}
+.tab thead th{font-size:13px;color:var(--meta);font-weight:600}
+.tab tbody th{font-weight:600}
+
+/* o retrato, fixo no topo */
+.comece{display:block;background:var(--nota-fundo);border-left:4px solid var(--placa);border-radius:4px;padding:14px 16px;margin:0 0 30px;color:var(--tinta);text-decoration:none;font:16px/1.45 var(--sistema)}
+.comece:hover{color:var(--tinta)}.comece:hover b{text-decoration:underline}
+.comece .rot{display:block;font-size:13px;font-weight:600;color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.comece b{display:block;font:700 20px/1.3 var(--serifa);margin-bottom:4px}
 
 /* pressão das notícias: dado da máquina, na letra do sistema */
 .conta{background:var(--maquina);border-radius:6px;padding:16px 20px 6px;font:16px/1.5 var(--sistema);margin:22px 0 4px}
@@ -45,8 +60,8 @@
 <div class="in blog">
   {% include "_nota.html" %}
   <main class="feed">
+    {% if retrato and not permalink %}<a class="comece" href="{{ retrato.link }}"><span class="rot">Comece por aqui</span><b>Retrato do Brasil</b>Como está a economia e como ler o site, em {{ (retrato.palavras / 220)|round|int }} minutos de leitura. Com os dados de {{ data_curta(retrato.dia)[:5] }}.</a>{% endif %}
     {% include "_post.html" %}
-    {% if destaque and not permalink %}{% with post = destaque %}{% include "_post.html" %}{% endwith %}{% endif %}
     {% if permalink %}
     <nav class="vizinhos" aria-label="Outros dias">
       <span>{% if dia_antes %}<a href="/{{ dia_antes }}/">← {{ data_curta(dia_antes)[:5] }}</a>{% endif %}</span>
@@ -54,9 +69,9 @@
       <span>{% if dia_depois %}<a href="/{{ dia_depois }}/">{{ data_curta(dia_depois)[:5] }} →</a>{% endif %}</span>
     </nav>
     {% elif anteriores %}
-    <section class="arquivo" aria-label="Dias anteriores">
-      <h2>Dias anteriores</h2>
-      <ul>{% for x in anteriores %}<li><a href="{{ x.link }}">{{ x.titulo }}</a><span>{{ x.data }} | {% if x.nivel is none %}texto do editor{% else %}risco {{ x.nivel|lower if x.nivel != 'Normal' else 'normal' }}{% endif %}</span></li>{% endfor %}</ul>
+    <section class="arquivo" aria-label="Posts anteriores">
+      <h2>Posts anteriores</h2>
+      <ul>{% for x in anteriores %}<li><a href="{{ x.link }}">{{ x.titulo }}</a><span>{{ x.data }} | {{ x.tipo }}</span></li>{% endfor %}</ul>
     </section>
     {% endif %}
   </main>

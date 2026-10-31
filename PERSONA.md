@@ -1,6 +1,6 @@
 # Para quem escrevemos
 
-Todo texto do site e do blog (post diário, abas, títulos de evento, nota, imagem de compartilhamento) é escrito para a pessoa descrita aqui. Quando este arquivo mudar, atualize os prompts e o verificador listados em [Onde o guia vale no código](#onde-o-guia-vale-no-código).
+Todo texto do site e do blog (posts, abas, títulos de evento, nota, imagem de compartilhamento) é escrito para a pessoa descrita aqui. Quando este arquivo mudar, atualize os prompts e o verificador listados em [Onde o guia vale no código](#onde-o-guia-vale-no-código).
 
 ## Em uma tela
 
@@ -113,17 +113,17 @@ Fale como alguém que entende de economia explicando no almoço de domingo: calm
 
 **Estrutura de todo texto**
 
-1. **A resposta.** O nível do risco e se mudou.
-2. **O porquê.** O que ajuda e o que atrapalha, dois ou três fatores.
+1. **A resposta.** A resposta à pergunta do texto, na primeira frase. No post, a pergunta muda com o tipo (veja [Os tipos de post](#os-tipos-de-post)).
+2. **O porquê.** Dois ou três fatores, ou a corrente de causa e efeito.
 3. **O que muda na vida.** Quando houver ponte clara: emprego, preço, parcela.
-4. **O que acompanhar.** O próximo dado e a data.
+4. **O que acompanhar.** O próximo dado e a data, quando isso não está já ao lado, na mesma página.
 
 **Frase e parágrafo**
 
 - Ordem direta, voz ativa, uma ideia por frase. São as técnicas da Lei 15.263/2025, de linguagem simples.
 - Até 20 palavras por frase; média perto de 12.
 - Até 3 frases ou 50 palavras por parágrafo.
-- Título afirma o fato do dia, com verbo, em até 70 caracteres. Sem pergunta e sem trocadilho.
+- Título afirma o fato principal, com verbo, em até 70 caracteres. Sem pergunta e sem trocadilho.
 - "Você" pode aparecer quando liga o dado à vida do leitor. "Eu" e "nós" não: o site não tem rosto.
 
 **Números**
@@ -170,9 +170,36 @@ Este é o padrão de todo texto do site, do post diário às abas, aprovado em 3
 >
 > **Depois.** É a padaria do começo da página. Em 2014, o forno já estava cheio. O juro alto veio com dois problemas: o Brasil passou a vender mais barato, e as contas do governo pioraram.
 
+## Os tipos de post
+
+Cada post responde a uma pergunta só e compara com o próprio período. Ela quase nunca volta todo dia: o fato do dia serve a quem volta em 10 segundos, e o domingo é o post que ela lê com calma e encaminha no WhatsApp. É um post por dia, às 06h30; o tipo muda com o dia.
+
+| Tipo | Pergunta que responde | Quando | Tamanho | Abre com |
+| --- | --- | --- | --- | --- |
+| Retrato do Brasil | Como está a economia, e como ler o site? | Fixo no topo, com data; refeito quando o editor decidir | 500 a 600 palavras | O nível e o que ele quer dizer |
+| Fato do dia | O que mudou ontem, e o que isso muda para mim? | De segunda a sábado | Até 100 palavras | O fato, com número e régua |
+| A semana | O que a semana mudou, e o que vem na próxima? | Domingo | Até 250 palavras | O que se moveu na semana |
+| O mês | Estamos melhor ou pior que há um mês? E no bolso? | Primeiro domingo do mês, no lugar da semana | Até 450 palavras, com as tabelas (300 de texto) | O que mudou no mês |
+
+**Cada informação tem um dono.** O post não repete o que a página já mostra ao lado dele. Ele diz o que só ele pode dizer: a ligação entre os fatos, a comparação e o efeito no bolso.
+
+| Informação | Dono | O que o post faz com ela |
+| --- | --- | --- |
+| Nível de hoje e PIB num ano ruim | A placa do topo | O fato do dia só fala do nível se ele mudou. A semana e o mês dizem há quanto tempo ele está igual. |
+| Notícias de ontem, por fator | A caixa "Para onde as notícias empurram" | O fato do dia conta uma, a mais importante, até o bolso. |
+| Próximas datas | A lateral "Datas importantes" | O fato do dia só cita o dado que sai hoje. A semana diz o que olhar na semana seguinte. |
+| Situação de cada fator | Fator por fator | O mês conta só o que mudou. |
+| Como a recessão acontece | O que causa recessão | Uma frase de mecanismo, quando o fato pede. |
+| Como o nível é calculado | Como a conta funciona | Uma frase, quando a notícia parece contradizer o nível: "Isso não muda o risco de recessão, porque a Bolsa fica fora da conta do nível." |
+
+- **Compare com o próprio período.** O fato do dia, com ontem; a semana, com a semana anterior; o mês, com o mês anterior. Comparação mais longa só como régua de um número (contra um ano antes, contra o normal).
+- **Dia sem novidade** ganha um fato do dia de uma frase, que diz isso. É informação.
+- **Nada de frase do post anterior.** O fato de hoje não copia o de ontem; a semana não copia o fato do dia.
+- **A semana e o mês saem do registro, não dos posts.** O código junta os fatos das rodadas da semana ou do mês, e a inteligência artificial só escreve.
+
 ## Como explicar um mecanismo
 
-O resto do guia cuida da palavra. Esta parte cuida de como ensinar: por que os preços sobem, por que o juro alto tira emprego, por que a dívida do governo cresce. Vale para as abas que explicam, para imagens e vídeos e, em parte, para o post diário. A aba [O que causa recessão](https://vaidarcrise.com.br/causas/) é o exemplo.
+O resto do guia cuida da palavra. Esta parte cuida de como ensinar: por que os preços sobem, por que o juro alto tira emprego, por que a dívida do governo cresce. Vale para as abas que explicam, para imagens e vídeos e, em parte, para os posts. A aba [O que causa recessão](https://vaidarcrise.com.br/causas/) é o exemplo.
 
 1. **Comece pela pergunta dela, não pela nossa estrutura.** "Vou perder o emprego?" vem antes de "o que causa recessão". Moldura inventada por nós ("gatilho e fragilidade", "segunda derivada") obriga a leitora a aprender o nosso vocabulário antes do assunto.
 2. **Ensine a peça-chave antes da corrente.** Sem saber por que os preços sobem, o freio do juro não faz sentido. A peça vem antes, numa parte só dela (pré-treino, Mayer).
@@ -186,7 +213,7 @@ O resto do guia cuida da palavra. Esta parte cuida de como ensinar: por que os p
 10. **Causa sem culpado.** Com mais de uma causa, mostre todas. Diga com todas as letras quais vêm de fora (seca, petróleo, guerra, juro dos Estados Unidos) e qual o governo influencia, e como: "Das três causas, o governo influencia uma com as próprias contas: o dólar." Quando os dados não separam duas leituras, mostre as duas.
 11. **Causa e efeito por extenso, com exemplo e tempo.** Diga o que acontece, em ordem, com um caso concreto, e chame causa de fora de causa de fora. As regras e os exemplos estão em [O jeito de escrever do site](#o-jeito-de-escrever-do-site).
 
-**No post diário** valem 3, 4, 10 e 11, em uma frase cada: o mecanismo com imagem do dia a dia quando ele muda a leitura do dia, a crença errada corrigida de frente, a causa sem culpado e a corrente de causa e efeito por extenso. Regras 13 e 14 do prompt em `src/escreve_post.py`.
+**Nos posts** valem 3, 4, 10 e 11, em uma frase cada: o mecanismo com imagem do dia a dia quando ele muda a leitura do dia, a crença errada corrigida de frente, a causa sem culpado e a corrente de causa e efeito por extenso. Regras do prompt em `src/escreve_post.py`.
 
 **Formato.** Texto simples primeiro: linguagem clara rendeu mais que recurso visual (Bholat e outros, 2019). Depois desenho com legenda. Vídeo narrado ajuda mais quem lê pouco (Meppelink e outros, 2015), com até 2 minutos por ideia. Rolagem animada não ensina mais que texto.
 
@@ -242,6 +269,7 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 | Previsão de 6 meses | Devem piorar, Devem ficar como estão, Devem melhorar; em cada fator, Tende a piorar, Estável, Tende a melhorar |
 | Copom | o Banco Central decide o juro (Copom) |
 | Diferença entre taxas | pontos, abreviado "pt" em tabela |
+| Tipos de post | Retrato do Brasil, Fato do dia, A semana, O mês |
 | Quem escreve o post | inteligência artificial (Claude) |
 
 **Palavras com lado.** Fora do texto: "gastança", "rombo", "herança maldita", "austericídio", "desgoverno", "farra". No lugar, o número e o que ele mede.
@@ -250,9 +278,9 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 
 ## O que todo texto passa antes de sair
 
-Os itens 3, 5 e 9, e parte do 11, o código confere no post diário (`src/revisa_texto.py`); os outros pedem leitura.
+Os itens 3, 5, 9 e 12, e parte do 11, o código confere nos posts (`src/revisa_texto.py`); os outros pedem leitura.
 
-1. **Resposta primeiro.** O título e a primeira frase dizem o nível do risco ou o fato principal.
+1. **Resposta primeiro.** O título e a primeira frase respondem à pergunta do texto: no fato do dia, o fato principal; o nível, só quando mudou.
 2. **Sozinho no print.** Só o título e a primeira frase já se entendem, sem o resto da página.
 3. **Frase curta.** Nenhuma frase passa de 20 palavras; nenhum parágrafo, de 50.
 4. **Zero jargão solto.** Todo termo da tabela acima está traduzido ou fora.
@@ -263,10 +291,11 @@ Os itens 3, 5 e 9, e parte do 11, o código confere no post diário (`src/revisa
 9. **Sem alarme, sem consolo, sem molde.** Nenhuma palavra de alarme ou com lado; nenhuma expressão de piloto automático.
 10. **Em voz alta.** Lido em voz alta, soa como gente explicando para gente.
 11. **Explicação por inteiro.** Passa nas sete regras de "O jeito de escrever do site": frase completa, causa e efeito em ordem com exemplo, condição por inteiro, nenhuma fórmula de efeito, causa de fora dita, casos com as mesmas linhas e amarração ao que veio antes.
+12. **Nada repetido.** O texto não repete o que a placa, a caixa de notícias ou a lateral já mostram, nem frase do post anterior do mesmo tipo. Todo número está nos dados.
 
-### Antes e depois, com o post de 30/10/2026
+### Antes e depois: a frase, com o post de 30/10/2026
 
-O post do dia 30 tem frases de 18 palavras em média, mas o primeiro parágrafo carrega oito porcentagens. Dois verbos ainda confundem: "o IPCA recuou" soa como preço caindo, e "o crescimento pesa" parece contradição.
+Este exemplo mostra a frase e o número; a estrutura está no exemplo seguinte. O post do dia 30 tem frases de 18 palavras em média, mas o primeiro parágrafo carrega oito porcentagens. Dois verbos ainda confundem: "o IPCA recuou" soa como preço caindo, e "o crescimento pesa" parece contradição.
 
 > **Antes.** O risco de recessão técnica, que são dois trimestres seguidos de queda do PIB, segue normal, o mesmo nível da atualização anterior. No cenário ruim, com só 1 chance em 10 de ser pior, o PIB cai 1,8% em 12 meses, contra −1,9% em tempos normais. A Selic, juro básico, caiu de 15,00% para 13,75% em um ano, e o IPCA recuou de 5,17% para 4,58%. Os dois aliviam esse cenário. O crescimento de 1,38% em 12 meses pesa, e o IBC-Br, prévia do PIB, caiu 0,6% no trimestre até agosto.
 
@@ -280,11 +309,28 @@ O post do dia 30 tem frases de 18 palavras em média, mas o primeiro parágrafo 
 
 Mesmos fatos, mesma ordem de importância. A diferença está no rótulo antes de cada bloco (ajuda, atrapalha), no verbo que não engana e em metade dos números.
 
+### Antes e depois: a estrutura, com o post de 31/10/2026
+
+O post de 31/10 tinha 197 palavras, e 97 delas repetiam o dia anterior e algo que já estava na tela: o nível e o PIB num ano ruim (a placa), o que ajuda e o que atrapalha (Fator por fator) e as próximas datas (a lateral). O nível mudou 2 vezes por ano desde 2004; um post que abre com ele diz "segue normal" quase todo dia.
+
+> **Antes.** Risco segue normal, e Bolsa cai 18,1% na semana depois da eleição. O risco de recessão segue normal, como ontem. Num ano ruim [...]. Ajuda: a Selic [...]. Nas notícias de sexta, o mercado puxa para pior [...]. O ritmo da economia também puxa para pior [...]. Em 4/11, quarta, o Banco Central decide o juro [...].
+
+> **Depois.** **Bolsa cai 18,1% na semana depois da eleição, e dólar sobe 9%**
+>
+> A Bolsa caiu 18,1% na semana depois da eleição, a mesma queda de uma semana de 2001. O dólar subiu 9%, a maior alta em uma semana desde 2008.
+>
+> Com o dólar mais caro, fica mais caro o que vem de fora, como celular, peça de carro e passagem de avião.
+>
+> Isso não muda o risco de recessão, porque Bolsa e dólar ficam fora da conta do nível.
+
+Um fato, contado até o bolso, e a única pergunta que ele levanta respondida em uma frase. Para onde a notícia empurra o fator fica na caixa logo abaixo do post.
+
 ## Onde o guia vale no código
 
-- `src/escreve_post.py`, regras 4, 8, 9 e 12 do prompt: leitor, tamanho, frase, números e palavras proibidas; regras 13 e 14: como explicar um mecanismo no post, com causa e efeito por extenso.
+- `src/escreve_post.py`: um prompt por tipo de post (fato do dia, a semana, o mês), com as regras comuns de leitor, frase, números, palavras proibidas, mecanismo e causa e efeito por extenso. O código monta os fatos de cada tipo; a semana e o mês saem das rodadas guardadas em `runs/`.
+- `src/run.py`: escolhe o tipo pela data (domingo, a semana; primeiro domingo do mês, o mês), com volta ao fato do dia quando faltam rodadas.
 - `src/classify_news.py`, regras 17 e 21: títulos de evento e "por quê" com a mesma linguagem.
-- `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
+- `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, nível repetido sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados que sobra depois da reescrita barra o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
 - `src/dossie.py`: as frases de dados de cada fator (queda no verbo, mês por extenso, sem sigla solta); `data/dossie.json` guarda os textos que ficam de um dia para o outro.
 - `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas.
 - Textos escritos à mão (`editor/`, `templates/`) seguem a lista acima na leitura. `METODOLOGIA.md` é técnica de propósito, para quem quer refazer a conta, mas usa os mesmos nomes do site.

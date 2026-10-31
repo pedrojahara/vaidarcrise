@@ -95,7 +95,7 @@
       <ul class="pontos">
         {% for p in pontos %}<li><b>{{ p.rot }}</b><span{% if p.cls %} class="{{ p.cls }}"{% endif %}>{{ p.texto }}</span></li>{% endfor %}
       </ul>
-      <p class="atual-resumo">{% if permalink %}Como estava em {{ data_curta(dia) }}, às {{ hora }}{% else %}Atualizado em {{ dia_mes(dia) }}, às {{ hora }}{% endif %}. <a href="{{ link_inicio }}">Post do dia</a></p>
+      <p class="atual-resumo">{% if permalink %}Como estava em {{ data_curta(dia) }}, às {{ hora }}{% else %}Atualizado em {{ dia_mes(dia) }}, às {{ hora }}{% endif %}. <a href="{{ link_inicio }}">{{ post.tipo_nome or 'Post do dia' }}</a></p>
     </div>
   </div>
 

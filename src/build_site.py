@@ -12,6 +12,8 @@ import shutil
 import sys
 from pathlib import Path
 
+from urllib.parse import quote
+
 import markdown
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -28,6 +30,8 @@ MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "a
          "outubro", "novembro", "dezembro"]
 DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
 JORNAIS = "Folha, Valor, Estadão, g1, InfoMoney, Poder360, Agência Brasil e Gazeta do Povo"
+# Os tipos de post (PERSONA.md): o retrato, escrito à mão, fica fixo no topo; os outros saem da atualização das 06h30.
+TIPOS_POST = {"dia": "Fato do dia", "semana": "A semana", "mes": "O mês", "retrato": "Retrato do Brasil"}
 ESTAGIOS = {"dado": "dado divulgado", "decidido": "decisão tomada", "em_votacao": "em votação",
             "anuncio": "anúncio", "rumor": "rumor"}
 SENTIDOS = {"piora": ("↑", "mais", "para pior"), "melhora": ("↓", "menos", "para melhor"),
@@ -415,12 +419,22 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
     lidas = (f"{quantas} de {k} {jornais} publicadas em {' e '.join(filter(None, [', '.join(dd[:-1]), dd[-1]]))}"
              if dias else f"{quantas} de {k} {jornais}")
     p = rodada.get("post") or {}
+    tipo = p.get("tipo") or "dia"
     niv = nivel_ctx(rodada, cfg)
+    secoes = []
     if p.get("ok"):
         titulo, paragrafos = p["titulo"], p["paragrafos"]
-        autoria = f"Escrito por inteligência artificial (Claude) às {hora(p.get('escrito_em') or rodada['gerado_em'])}, depois de ler {lidas}."
-        rodape = "Ninguém revisa o texto antes de ele sair. Erros vão para"
+        secoes = p.get("secoes") or [{"paragrafos": paragrafos}]
+        hr = hora(p.get("escrito_em") or rodada["gerado_em"])
+        per = p.get("periodo") or {}
+        if tipo in ("semana", "mes") and per:
+            autoria = (f"Escrito por inteligência artificial (Claude) às {hr}, com as {per['rodadas']} atualizações do site "
+                       f"de {dia_mes(per['de'])} a {dia_mes(per['ate'])}.")
+        else:
+            autoria = f"Escrito por inteligência artificial (Claude) às {hr}, depois de ler {lidas}."
+        rodape = "Ninguém revisa o texto antes de ele sair."
     else:
+        tipo = "dia"
         if niv["anterior"] and niv["anterior"] != niv["nome"]:
             sobe = rodada["resultado"]["nivel"]["indice"] > rodada["resultado"]["nivel"]["anterior"]
             titulo = f"Risco de recessão {'sobe' if sobe else 'cai'} para {niv['frase']}"
@@ -429,10 +443,15 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
         paragrafos = []
         autoria = (f"Atualização automática das {hora(rodada['gerado_em'])}, depois de ler {lidas}. "
                    "O texto do dia não saiu. Ficam o nível e as notícias, organizados pelo programa.")
-        rodape = "Erros vão para"
-    return {"dia": dia, "data_extenso": data_extenso(dia), "titulo": titulo, "paragrafos": paragrafos,
+        rodape = ""
+    link = f"/{dia}/"
+    zap = None
+    if tipo in ("semana", "mes"):
+        zap = "https://wa.me/?text=" + quote(f"{titulo} {SITE}{link}")
+    return {"dia": dia, "data_extenso": data_extenso(dia), "titulo": titulo, "paragrafos": paragrafos, "secoes": secoes,
+            "tipo": tipo, "tipo_nome": TIPOS_POST[tipo], "zap": zap,
             "autoria": autoria, "rodape": rodape, "nivel": niv["nome"], "llm": bool(p.get("ok")),
-            "pressao": pressao_ctx(rodada, eventos, cfg), "link": f"/{dia}/", "resumo": f"/{dia}/resumo/",
+            "pressao": pressao_ctx(rodada, eventos, cfg), "link": link, "resumo": f"/{dia}/resumo/",
             "registro": f"{REPO}/blob/main/runs/{rodada['id']}.json", "llm_ok": rodada["llm"]["ok"]}
 
 
@@ -443,10 +462,12 @@ def textos_do_editor() -> list[dict]:
         cab, corpo = arq.read_text().split("\n---\n", 1)
         meta = {k.strip(): v.strip() for k, v in (linha.split(":", 1) for linha in cab.strip().splitlines())}
         slug = arq.stem[11:] if arq.stem[:10] == meta["data"] else arq.stem
+        tipo = meta.get("tipo", "")
         out.append({"dia": meta["data"], "data_extenso": data_extenso(meta["data"]), "titulo": meta["titulo"],
-                    "corpo_html": markdown.markdown(corpo), "paragrafos": [], "pressao": None,
+                    "corpo_html": markdown.markdown(corpo, extensions=["tables"]), "paragrafos": [], "secoes": [],
+                    "pressao": None, "tipo": tipo, "tipo_nome": TIPOS_POST.get(tipo, ""), "autoria": meta.get("autoria"),
                     "tags": meta.get("tags", ""), "editor": True, "link": f"/textos/{slug}/", "slug": slug,
-                    "llm_ok": True})
+                    "llm_ok": True, "palavras": len(corpo.split())})
     return sorted(out, key=lambda t: t["dia"], reverse=True)
 
 
@@ -578,12 +599,13 @@ def main() -> None:
             p.unlink()
 
     posts = {d: post_de(por_dia[d], idx, cfg) for d in dias}
-    lista = [{"dia": d, "data": data_curta(d)[:5], "nivel": posts[d]["nivel"], "titulo": posts[d]["titulo"],
+    lista = [{"dia": d, "data": data_curta(d)[:5], "tipo": posts[d]["tipo_nome"], "titulo": posts[d]["titulo"],
               "link": f"/{d}/"} for d in reversed(dias)]
     textos = textos_do_editor()
-    destaque = textos[0] if textos else None
-    arquivo = sorted(lista[1:] + [{"dia": t["dia"], "data": data_curta(t["dia"])[:5], "nivel": None,
-                                   "titulo": t["titulo"], "link": t["link"]} for t in textos[1:]],
+    # O retrato mais novo fica fixo no topo da página principal; o resto dos textos à mão entra no arquivo.
+    retrato = next((t for t in textos if t["tipo"] == "retrato"), None)
+    arquivo = sorted(lista[1:] + [{"dia": t["dia"], "data": data_curta(t["dia"])[:5], "tipo": t["tipo_nome"] or "Texto",
+                                   "titulo": t["titulo"], "link": t["link"]} for t in textos if t is not retrato],
                      key=lambda x: x["dia"], reverse=True)
     historico_svg = svg_niveis(mensal.get("nivel_fora_da_amostra", []), cal.get("recessoes", []), cfg["niveis"]["nomes"])
 
@@ -614,23 +636,35 @@ def main() -> None:
     for dia, r in por_dia.items():
         ctx = contexto(dia, r, True)
         og = DOCS / "og" / f"{dia}.png"
-        og_image.gerar(og, {"nivel": ctx["nivel"], "dia": dia, "data_curta": data_curta})
+        og_image.gerar(og, {"nivel": ctx["nivel"], "dia": dia, "data_curta": data_curta,
+                            "tipo": posts[dia]["tipo"], "tipo_nome": posts[dia]["tipo_nome"]})
         gravar(DOCS / dia, "index.html", ctx, f"{SITE}/{dia}/")
         gravar(DOCS / dia / "resumo", "resumo.html", ctx, f"{SITE}/{dia}/resumo/")
         gravar(DOCS / dia / "nota", "nota.html", ctx, f"{SITE}/{dia}/nota/")
 
     dia = ultima["gerado_em"][:10]
     ctx = contexto(dia, ultima, False)
-    gravar(DOCS, "index.html", {**ctx, "anteriores": arquivo, "destaque": destaque}, f"{SITE}/")
+    gravar(DOCS, "index.html", {**ctx, "anteriores": arquivo, "retrato": retrato}, f"{SITE}/")
     gravar(DOCS / "resumo", "resumo.html", ctx, f"{SITE}/resumo/")
     gravar(DOCS / "nota", "nota.html", ctx, f"{SITE}/nota/")
     try:
         gravar(DOCS / "causas", "causas.html", {**ctx, "og_url": f"{SITE}/causas/og.png"}, f"{SITE}/causas/")
     except (KeyError, OSError, ValueError, ZeroDivisionError) as e:  # a aba não pode derrubar a atualização do dia
         print(f"aviso: a aba /causas/ não foi refeita ({e!r})")
+    for p in (DOCS / "textos").glob("*"):
+        if p.is_dir() and p.name not in {t["slug"] for t in textos}:  # texto apagado de editor/: sai do site
+            shutil.rmtree(p)
     for t in textos:
         gravar(DOCS / "textos" / t["slug"], "index.html",
                {**ctx, "post": t, "permalink": True, "dia_antes": None, "dia_depois": None}, f"{SITE}{t['link']}")
+    # Links fixos para encaminhar: /semana/ e /mes/ mostram o último post de cada tipo, com o link do dia como canônico
+    # (por isso ficam fora do sitemap).
+    for tipo, pasta in (("semana", "semana"), ("mes", "mes")):
+        d = next((d for d in reversed(dias) if posts[d]["tipo"] == tipo), None)
+        if d:
+            gravar(DOCS / pasta, "index.html", contexto(d, por_dia[d], True), f"{SITE}/{d}/")
+        elif (DOCS / pasta).exists():
+            shutil.rmtree(DOCS / pasta)
     shutil.copy(DOCS / "og" / f"{dia}.png", DOCS / "og.png")
 
     met = ('<p class="intro-met">Esta página é para quem quer conferir ou refazer a conta, com as fórmulas e os testes. '
@@ -640,7 +674,8 @@ def main() -> None:
            f"{SITE}/metodologia/")
 
     publico = dados_publicos(ultima, ctx)
-    publico["post_do_dia"] = {"titulo": posts[dia]["titulo"], "url": f"{SITE}/{dia}/", "escrito_por_llm": posts[dia]["llm"]}
+    publico["post_do_dia"] = {"tipo": posts[dia]["tipo_nome"], "titulo": posts[dia]["titulo"], "url": f"{SITE}/{dia}/",
+                              "escrito_por_llm": posts[dia]["llm"]}
     (DOCS / "data.json").write_text(json.dumps(publico, ensure_ascii=False, indent=1))
     (DOCS / "historico.json").write_text(json.dumps(
         [{"id": r["id"], "gerado_em": r["gerado_em"], "nivel": r["resultado"]["nivel"]["nome"]} for r in todas],

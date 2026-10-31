@@ -55,17 +55,89 @@ GRAVES = [
     (re.compile(r"(\d+(,\d+)?\s*(%|por cento)\s*de (chance|probabilidade|risco)|(chance|probabilidade|risco) "
                 r"(de recessão )?(é |fica |sobe para |cai para |vai a |de )?(de )?\d+(,\d+)?\s*(%|por cento)|"
                 r"\d+(,\d+)?\s*(×|vezes o normal|vezes a chance)|\bvezes o normal\b)", re.I), "dá número ao risco de recessão"),
-    # O post conta o dia; como a conta funciona fica na página da conta.
-    (re.compile(r"\b((não|nem) (entra|entram|mexe|mexem|move|movem) "
-                r"(n[oa] |o |a )?(número|conta|nível)|entram? n[oa] (número|conta|nível)|só se (mexe|move)|"
-                r"(fora|dentro) d[oa] (número|conta|nível))\b", re.I), "explica como o nível funciona"),
 ]
 
 
-def graves_post(post: dict) -> list[str]:
-    textos = [post["titulo"], *post["paragrafos"]]
-    return [f"{'título' if i == 0 else f'parágrafo {i}'}: {nome}"
-            for i, t in enumerate(textos) for rx, nome in GRAVES if rx.search(t)]
+# O post conta o fato; como a conta funciona fica na página da conta. Uma frase só pode dizer que um
+# fato fica fora da conta do nível, quando ele parece contradizer o nível (PERSONA.md, regra 6 do prompt).
+NIVEL_FUNCIONA = re.compile(r"\b((não|nem) (entra|entram|mexe|mexem|move|movem) "
+                            r"(n[oa] |o |a )?(número|conta|nível)|entram? n[oa] (número|conta|nível)|só se (mexe|move)|"
+                            r"(fora|dentro) d[oa] (número|conta|nível))\b", re.I)
+
+# Fato do dia com o nível parado: a placa do topo já mostra o nível e o PIB num ano ruim.
+NIVEL_REPETIDO = re.compile(r"\b(num ano ruim|em tempos normais|risco( de recessão)?[^.]{0,30}\b(segue|seguiu|continua|"
+                            r"continuou|está|fica|ficou|permanece|permaneceu)\b[^.]{0,12}\b(normal|acima|abaixo)|"
+                            r"nível (segue|continua|está|fica|permanece|é|de) (o )?(muito )?(normal|acima|abaixo))", re.I)
+
+LIMITE_PALAVRAS = {"dia": 120, "semana": 300, "mes": 360}
+MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro",
+         "novembro", "dezembro"]
+DATA_BARRA = re.compile(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?:/(\d{4}))?(?![\d/])")
+DATA_EXTENSO = re.compile(r"\b(\d{1,2})(?:º)? de (" + "|".join(MESES) + r")\b", re.I)
+NUM = re.compile(r"(?<![A-Za-z0-9_,.])(\d{1,3}(?:\.\d{3})+|\d+)(?:,(\d+))?(?![\d])")
+# Números que o prompt dá ao modelo fora dos dados: desde 2004, 1 chance em 10, 12 meses, cinco níveis.
+CONSTANTES = "2004 10 12 5"
+
+
+def _datas(texto: str) -> set[tuple[int, int]]:
+    out = {(int(d), int(m)) for d, m, _ in DATA_BARRA.findall(texto)}
+    out |= {(int(d), MESES.index(m.lower()) + 1) for d, m in DATA_EXTENSO.findall(texto)}
+    return {(d, m) for d, m in out if 1 <= d <= 31 and 1 <= m <= 12}
+
+
+def _sem_datas(texto: str) -> str:
+    return DATA_EXTENSO.sub(" ", DATA_BARRA.sub(" ", texto))
+
+
+def _numeros(texto: str) -> list[tuple[str, float, int]]:
+    """(como está escrito, valor, casas decimais) de cada número do texto, sem as datas."""
+    out = []
+    for m in NUM.finditer(_sem_datas(texto)):
+        inteiro, dec = m.group(1), m.group(2) or ""
+        out.append((m.group(0), float(inteiro.replace(".", "") + ("." + dec if dec else "")), len(dec)))
+    return out
+
+
+def numeros_fora(textos: list[str], dados: str) -> list[str]:
+    """Números e datas do texto que não estão nos dados, com a folga de arredondamento da casa decimal usada."""
+    base = sorted({v for _, v, _ in _numeros(dados + " " + CONSTANTES)})
+    datas = _datas(dados)
+    out = []
+    for t in textos:
+        for d, m in sorted(_datas(t) - datas):
+            out.append(f"{d}/{m}")
+        for bruto, v, casas in _numeros(t):
+            if casas == 0 and v <= 12:
+                continue
+            folga = 0.5 * 10 ** -casas + 1e-9
+            if not any(abs(v - b) <= folga for b in base):
+                out.append(bruto)
+    return list(dict.fromkeys(out))
+
+
+def _prosa(post: dict) -> list[str]:
+    return [post["titulo"], *post["paragrafos"]]
+
+
+def _frases(textos: list[str]) -> list[str]:
+    return [f.strip() for t in textos for f in FRASE.split(t) if f.strip()]
+
+
+def graves_post(post: dict, tipo: str = "dia", dados: str | None = None, **_) -> list[str]:
+    textos = _prosa(post)
+    out = [f"{'título' if i == 0 else f'parágrafo {i}'}: {nome}"
+           for i, t in enumerate(textos) for rx, nome in GRAVES if rx.search(t)]
+    if NIVEL_FUNCIONA.search(post["titulo"]):
+        out.append("título: explica como o nível funciona")
+    n = sum(1 for f in _frases(post["paragrafos"]) if NIVEL_FUNCIONA.search(f))
+    if n > 1:
+        out.append(f"{n} frases explicam como o nível funciona (o post pode ter uma, quando o fato parece contradizer o nível)")
+    if dados is not None:
+        fora = numeros_fora(textos, dados)
+        if fora:
+            out.append("número ou data que não está nos dados: " + ", ".join(fora[:6])
+                       + " (use só os números dos dados, sem recalcular)")
+    return out
 
 
 def _moldes(texto: str) -> list[str]:
@@ -91,13 +163,19 @@ def problemas_classificacao(saida: dict) -> list[str]:
     return out
 
 
-def problemas_post(post: dict) -> list[str]:
+def problemas_post(post: dict, tipo: str = "dia", dados: str | None = None, hoje=None, anterior: dict | None = None,
+                   nivel_mudou: bool = True, **_) -> list[str]:
+    """Moldes de texto e, nos posts, o que repete a página: nível parado, data da lateral, frase do post anterior."""
+    import datetime as dt
+    from difflib import SequenceMatcher
+
     out = []
     t = post["titulo"]
     if len(t) > 80:
         out.append(f"título com {len(t)} caracteres")
     if t.rstrip().endswith("?"):
         out.append("título em forma de pergunta")
+    out += [f"título: {m}" for m in _moldes(t) if m in ("travessão", "ponto de exclamação", "palavra de alarme", "palavra com lado")]
     for i, p in enumerate(post["paragrafos"], 1):
         out += [f"parágrafo {i}: {m}" for m in _moldes(p)]
         if len(p.split()) > 65:
@@ -112,4 +190,29 @@ def problemas_post(post: dict) -> list[str]:
         if re.search(r"\b(eu|nós|nosso|nossa)\b", p, flags=re.IGNORECASE):
             out.append(f"parágrafo {i} em primeira pessoa")
     out += _aberturas(post["paragrafos"], limite=1)
-    return out + graves_post(post)
+    palavras = sum(len(p.split()) for p in post["paragrafos"])
+    if palavras > LIMITE_PALAVRAS.get(tipo, 10**6):
+        out.append(f"texto com {palavras} palavras (o limite é {LIMITE_PALAVRAS[tipo] * 5 // 6})")
+    if tipo == "dia" and not nivel_mudou:
+        rep = [f for f in _frases(_prosa(post)) if NIVEL_REPETIDO.search(f)]
+        if rep:
+            out.append("repete o nível ou o PIB num ano ruim, que não mudaram e já estão na placa: " + rep[0][:70])
+    if tipo == "dia" and hoje is not None:
+        hoje = hoje if isinstance(hoje, dt.date) else dt.date.fromisoformat(str(hoje)[:10])
+        futuras = []
+        for d, m in _datas(" ".join(_prosa(post))):
+            ano = hoje.year + (1 if m < hoje.month - 6 else 0)
+            try:
+                if dt.date(ano, m, d) > hoje:
+                    futuras.append(f"{d}/{m}")
+            except ValueError:
+                pass
+        if futuras:
+            out.append("data futura (as próximas datas ficam na lateral): " + ", ".join(sorted(futuras)))
+    if anterior and anterior.get("paragrafos"):
+        velhas = [f for f in _frases([anterior.get("titulo", ""), *anterior["paragrafos"]]) if len(f.split()) >= 6]
+        for f in _frases(_prosa(post)):
+            # A frase da regra 6 ("Isso não muda o risco de recessão, porque...") é fórmula: pode repetir.
+            if len(f.split()) >= 6 and not NIVEL_FUNCIONA.search(f) and any(SequenceMatcher(None, f.lower(), v.lower()).ratio() > 0.8 for v in velhas):
+                out.append(f"frase copiada do post anterior: {f[:70]}")
+    return out + graves_post(post, tipo=tipo, dados=dados)

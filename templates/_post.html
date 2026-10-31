@@ -1,10 +1,22 @@
 {% set pr = post.pressao %}
 <article class="post">
-  <p class="data">{{ post.data_extenso }}</p>
+  <p class="data">{% if post.tipo_nome %}<span class="tipo">{{ post.tipo_nome }}</span> | {% endif %}{{ post.data_extenso }}</p>
   {% if permalink %}<h1 class="titulo-post">{{ post.titulo }}</h1>{% else %}<h2 class="titulo-post"><a href="{{ post.link }}">{{ post.titulo }}</a></h2>{% endif %}
   {% if post.autoria %}<p class="autoria">{{ post.autoria }}</p>{% endif %}
+  {% if post.secoes %}
+  {% for s in post.secoes %}
+  {% if s.titulo %}<h3 class="sec">{{ s.titulo }}</h3>{% endif %}
+  {% for par in s.paragrafos or [] %}<p>{{ par }}</p>{% endfor %}
+  {% if s.itens %}<ul class="movs">{% for i in s.itens %}<li><b>{{ i.rotulo }}:</b> {{ i.texto }}</li>{% endfor %}</ul>{% endif %}
+  {% if s.tabela %}<div class="tab"><table>
+    <thead><tr>{% for c in s.tabela.cab %}<th scope="col">{{ c }}</th>{% endfor %}</tr></thead>
+    <tbody>{% for l in s.tabela.linhas %}<tr>{% for c in l %}{% if loop.first %}<th scope="row">{{ c }}</th>{% else %}<td>{{ c }}</td>{% endif %}{% endfor %}</tr>{% endfor %}</tbody>
+  </table></div>{% endif %}
+  {% endfor %}
+  {% else %}
   {% for par in post.paragrafos %}<p>{{ par }}</p>{% endfor %}
-  {% if post.corpo_html %}{{ post.corpo_html|safe }}{% endif %}
+  {% endif %}
+  {% if post.corpo_html %}<div class="corpo">{{ post.corpo_html|safe }}</div>{% endif %}
   {% if pr %}
   <section class="conta" aria-label="Pressão das notícias">
     <div class="conta-cab"><h3>Para onde as notícias empurram</h3></div>
@@ -21,6 +33,6 @@
   {% if post.editor %}
   <p class="rodape">{% if not permalink %}<a href="{{ post.link }}">Link permanente</a>{% else %}Postado em {{ data_curta(post.dia) }}{% endif %}{% if post.tags %} | {{ post.tags }}{% endif %}</p>
   {% else %}
-  <p class="rodape">{{ post.rodape }} <a href="/metodologia/#onde-erramos">Onde erramos</a>. {% if not permalink %}<a href="{{ post.link }}">Link permanente</a> | {% endif %}<a href="{{ post.resumo }}">Fator por fator</a> | <a href="{{ post.registro }}">Todos os números de hoje</a></p>
+  <p class="rodape">{% if post.rodape %}{{ post.rodape }} {% endif %}{% if post.zap %}<a href="{{ post.zap }}" rel="noopener">Mandar no WhatsApp</a> | {% endif %}{% if not permalink %}<a href="{{ post.link }}">Link permanente</a> | {% endif %}<a href="{{ post.resumo }}">Fator por fator</a> | <a href="{{ post.registro }}">Todos os números de hoje</a></p>
   {% endif %}
 </article>

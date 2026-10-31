@@ -1,5 +1,8 @@
 """A atualização do dia: calcula o nível, lê as manchetes do dia anterior, revisa as leituras, escreve o post e gera o site.
 
+O post muda de tipo com o dia (src/escreve_post.py): fato do dia de segunda a sábado, a semana aos
+domingos e o mês no primeiro domingo do mês. É sempre um post por dia, nesta mesma atualização.
+
 Uso: python src/run.py             (atualização do dia; não faz nada se já houver uma hoje)
      python src/run.py --coletar   (só junta manchetes ao acervo, sem LLM e sem publicar)
      python src/run.py --forcar    (atualiza mesmo que já haja uma hoje)
@@ -260,8 +263,12 @@ def main() -> dict | None:
     post = {"ok": False, "meta": [{"erro": "pulado: sem leitura de notícias"}]}
     if llm["ok"]:
         datas = calendario.janela(calendario.carregar(), hoje)
-        post = escreve_post.escrever(rodada, cfg, datas, eventos={e["id"]: e for e in todos}, anterior=ant)
-        print("post:", post.get("titulo") if post["ok"] else f"falhou: {post.get('erro') or post['meta'][-1].get('erro')}",
+        # A semana e o mês saem do registro das rodadas; 40 dias cobrem o mês anterior inteiro.
+        corte = (hoje - dt.timedelta(days=40)).isoformat()
+        anteriores = [json.loads(p.read_text()) for p in sorted(RUNS.glob("*.json")) if p.name[:10] >= corte]
+        post = escreve_post.escrever(rodada, cfg, datas, eventos={e["id"]: e for e in todos}, anterior=ant,
+                                     rodadas=anteriores, mensal=mensal, placar=placar)
+        print(f"post ({post.get('tipo', 'dia')}):", post.get("titulo") if post["ok"] else f"falhou: {post.get('erro') or post['meta'][-1].get('erro')}",
               "| problemas:", post.get("problemas"))
     rodada["post"] = post
 
