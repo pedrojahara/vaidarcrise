@@ -48,24 +48,38 @@ def _odata(url: str, params: dict) -> str:
     return url + "?" + "&".join(f"{k}={quote(str(v), safe=safe)}" for k, v in params.items())
 
 
-def _get(url: str, params: dict | None = None, tries: int = 3) -> requests.Response:
+PAUSAS = (5, 15, 30)  # segundos entre as tentativas
+
+
+def _get(url: str, params: dict | None = None, tries: int = 4, json: bool = False) -> requests.Response:
+    """Busca com novas tentativas. O Banco Central às vezes responde 200 com uma página vazia (ou HTML)
+    no lugar do JSON: com json=True, isso conta como falha e é tentado de novo, como erro de rede."""
     last = None
     for i in range(tries):
         try:
             r = requests.get(url, params=params, headers=UA, timeout=40)
-            if r.status_code == 200:
+            if r.status_code != 200:
+                last = RuntimeError(f"HTTP {r.status_code} em {r.url}")
+            elif not json:
                 return r
-            last = RuntimeError(f"HTTP {r.status_code} em {r.url}")
+            else:
+                try:
+                    r.json()
+                    return r
+                except ValueError:
+                    last = RuntimeError(f"resposta sem JSON ({r.headers.get('Content-Type') or 'sem tipo'}, "
+                                        f"{len(r.content)} bytes: {r.text[:60]!r})")
         except requests.RequestException as e:  # noqa: PERF203
             last = e
-        time.sleep(3 * (i + 1))
+        if i < tries - 1:
+            time.sleep(PAUSAS[min(i, len(PAUSAS) - 1)])
     raise RuntimeError(f"falha ao buscar {url}: {last}")
 
 
 def sgs(code: int, inicio: dt.date) -> list[dict]:
     url = f"https://api.bcb.gov.br/dados/serie/bcdata.sgs.{code}/dados"
     r = _get(url, {"formato": "json", "dataInicial": inicio.strftime("%d/%m/%Y"),
-                   "dataFinal": dt.date.today().strftime("%d/%m/%Y")})
+                   "dataFinal": dt.date.today().strftime("%d/%m/%Y")}, json=True)
     rows = [{"data": dt.datetime.strptime(x["data"], "%d/%m/%Y").date().isoformat(),
              "valor": float(x["valor"])} for x in r.json() if x.get("valor") not in (None, "")]
     rows.sort(key=lambda x: x["data"])
@@ -78,7 +92,7 @@ def focus_anual(indicador: str) -> list[dict]:
     r = _get(_odata(f"{OLINDA}/ExpectativasMercadoAnuais", {
         "$top": 40, "$format": "json", "$orderby": "Data desc",
         "$filter": f"Indicador eq '{indicador}' and baseCalculo eq 0",
-        "$select": "Data,DataReferencia,Mediana,numeroRespondentes"}))
+        "$select": "Data,DataReferencia,Mediana,numeroRespondentes"}), json=True)
     vals = r.json()["value"]
     ultima = vals[0]["Data"]
     return [v for v in vals if v["Data"] == ultima]
@@ -88,14 +102,14 @@ def focus_ipca_12m() -> dict:
     r = _get(_odata(f"{OLINDA}/ExpectativasMercadoInflacao12Meses", {
         "$top": 1, "$format": "json", "$orderby": "Data desc",
         "$filter": "Indicador eq 'IPCA' and Suavizada eq 'S' and baseCalculo eq 0",
-        "$select": "Data,Mediana,numeroRespondentes"}))
+        "$select": "Data,Mediana,numeroRespondentes"}), json=True)
     return r.json()["value"][0]
 
 
 def pib_trimestral() -> list[dict]:
     hoje = dt.date.today()
     periodos = "|".join(f"{a}0{q}" for a in range(2023, hoje.year + 1) for q in range(1, 5))
-    r = _get(IBGE_PIB.format(periodos=periodos))
+    r = _get(IBGE_PIB.format(periodos=periodos), json=True)
     serie = r.json()[0]["resultados"][0]["series"][0]["serie"]
     out = []
     for per, val in sorted(serie.items()):
@@ -155,13 +169,19 @@ def coletar() -> dict:
     # 4 anos: a média de 36 meses do comprometimento de renda precisa de 37 meses de dado, com folga.
     inicio = hoje - dt.timedelta(days=4 * 365)
     snap: dict = {"coletado_em": dt.datetime.now().astimezone().isoformat(timespec="seconds"),
-                  "series": {}, "focus": {}, "erros": []}
-    for key, (code, nome) in SGS.items():
+                  "series": {}, "focus": {}, "erros": [], "avisos": []}
+
+    def serie_sgs(key: str) -> dict:
+        code, nome = SGS[key]
+        return {"codigo_sgs": code, "nome": nome, "dados": sgs(code, inicio),
+                "fonte": f"https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo={code}"}
+
+    falhas: dict[str, Exception] = {}
+    for key in SGS:
         try:
-            snap["series"][key] = {"codigo_sgs": code, "nome": nome, "dados": sgs(code, inicio),
-                                   "fonte": f"https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo={code}"}
+            snap["series"][key] = serie_sgs(key)
         except Exception as e:  # noqa: BLE001
-            snap["erros"].append(f"SGS {code}: {e}")
+            falhas[key] = e
         time.sleep(0.5)
     # Três anos de mediana para hoje e para a rodada de 30 dias atrás, com folga.
     try:
@@ -190,6 +210,15 @@ def coletar() -> dict:
         snap["pib"] = pib_trimestral()
     except Exception as e:  # noqa: BLE001
         snap["erros"].append(f"IBGE PIB: {e}")
+    # Uma série do SGS que falhou tem mais uma chance no fim, depois das outras fontes, para dar tempo
+    # a uma falha passageira do Banco Central. Se falhar de novo, vale o valor guardado (model.calcular).
+    for key, e in falhas.items():
+        code = SGS[key][0]
+        try:
+            snap["series"][key] = serie_sgs(key)
+            snap["avisos"].append(f"SGS {code}: veio na segunda rodada; a primeira falhou: {e}")
+        except Exception as e2:  # noqa: BLE001
+            snap["erros"].append(f"SGS {code}: {e2}")
     return snap
 
 
@@ -201,6 +230,8 @@ def main() -> Path:
     print(f"indicadores: {len(snap['series'])} séries, {len(snap['erros'])} erros -> {out}")
     for e in snap["erros"]:
         print("  ERRO", e)
+    for e in snap["avisos"]:
+        print("  aviso:", e)
     return out
 
 

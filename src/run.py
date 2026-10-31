@@ -38,6 +38,8 @@ ACERVO = ROOT / "data" / "manchetes.json"
 RUNS = ROOT / "runs"
 DIAS_NO_ACERVO = 5
 DIAS_RECENTES = 10
+# Quantas rodadas para trás se procura um valor guardado (a idade do dado é que decide se ele vale).
+RODADAS_GUARDADAS = 40
 
 
 def _ler(p: Path, padrao):
@@ -58,25 +60,20 @@ def ultima_rodada(antes_de: dt.date | None = None) -> dict | None:
     return json.loads(arqs[-1].read_text()) if arqs else None
 
 
-def guardados(ant: dict | None, hoje: dt.date) -> dict:
-    """Valores da rodada anterior que podem cobrir uma falha de coleta: até 10 dias para dado diário,
-    70 para mensal (a data de referência é que conta). As entradas da conta do nível vão com o prefixo
-    'entrada:' e a idade delas é conferida em model.calcular."""
-    if not ant:
-        return {}
-    out = {}
-    for x in (ant["resultado"].get("gar") or {}).get("entradas", []):
-        if not x.get("reaproveitado"):
-            out["entrada:" + x["id"]] = {k: v for k, v in x.items() if k in ("valor", "ref", "nivel", "antes")}
-    for x in ant["resultado"]["indicadores"]:
-        if x.get("valor") is None or x.get("reaproveitado"):
-            continue
-        ref = x["ref"] if len(x["ref"]) == 10 else x["ref"] + "-01"
-        idade = (hoje - dt.date.fromisoformat(ref)).days
-        if idade <= (10 if len(x["ref"]) == 10 else 70 + 31):
-            out[x["id"]] = {k: v for k, v in x.items() if k in ("valor", "ref", "nivel", "mediana", "vencimento",
-                                                                 "selic", "inflacao_esperada", "focus_data",
-                                                                 "ano", "ano_seguinte")}
+def guardados(rodadas: list[dict]) -> dict:
+    """Os valores que podem cobrir uma falha de coleta: para cada indicador e entrada, o da rodada mais
+    recente que o tinha (rodadas da mais nova para a mais velha), inclusive os que ela mesma já tinha
+    reaproveitado, porque a falha pode durar mais de um dia. A idade (pela data de referência do dado)
+    é conferida em model.calcular. As entradas da conta do nível vão com o prefixo 'entrada:'."""
+    out: dict[str, dict] = {}
+    for ant in rodadas:
+        for x in (ant["resultado"].get("gar") or {}).get("entradas", []):
+            out.setdefault("entrada:" + x["id"], {k: v for k, v in x.items() if k in ("valor", "ref", "nivel", "antes")})
+        for x in ant["resultado"]["indicadores"]:
+            if x.get("valor") is not None:
+                out.setdefault(x["id"], {k: v for k, v in x.items() if k in (
+                    "valor", "ref", "nivel", "mediana", "vencimento", "selic", "inflacao_esperada", "focus_data",
+                    "ano", "ano_seguinte")})
     return out
 
 
@@ -145,12 +142,13 @@ def main() -> dict | None:
     calendario.atualizar(hoje)
 
     # 1. O nível: só dados.
-    ant = ultima_rodada()
+    recentes_r = [json.loads(p.read_text()) for p in sorted(RUNS.glob("*.json"))[-RODADAS_GUARDADAS:]][::-1]
+    ant = recentes_r[0] if recentes_r else None
     # O nível de referência é o do último dia anterior: uma atualização refeita no mesmo dia não confirma a si mesma.
     ref = ultima_rodada(antes_de=hoje)
     nivel_ant = ref["resultado"]["nivel"]["indice"] if ref else None
     bruto_ant = ref["resultado"]["nivel"].get("bruto") if ref else None
-    res = model.calcular(snap, cfg, cal, nivel_ant, guardados(ant, hoje), bruto_ant)
+    res = model.calcular(snap, cfg, cal, nivel_ant, guardados(recentes_r), bruto_ant)
     print(f"nível: {res['nivel']['nome']} (cenário ruim {res['gar']['cenario_ruim']:+.2f}%; antes: "
           f"{cfg['niveis']['nomes'][nivel_ant] if nivel_ant is not None else '-'}) | faltando: {res['faltando']} "
           f"| reaproveitados: {res['reaproveitados']}")
