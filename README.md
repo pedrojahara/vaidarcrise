@@ -21,6 +21,7 @@ launchd, todo dia às 06h30 → run.sh   (uma publicação por dia; se o Mac dor
   ├─ src/run.py             grava runs/<id>.json e data/eventos.json
   ├─ src/build_site.py      gera docs/ (HTML estático, og.png, data.json) com editor/*.md;
   │                         a aba O que causa recessão sai de src/causas.py e config/causas.json
+  │                         (desenhos, resumo em imagem e prévia da aba: src/resumo_causas.py, rodado à mão uma vez)
   └─ git push               GitHub Pages publica docs/
 ```
 

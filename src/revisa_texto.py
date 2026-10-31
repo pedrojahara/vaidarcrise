@@ -27,6 +27,9 @@ MOLDES = [
     (re.compile(r"\b(despenc\w*|explod\w*|explos\w*|derret\w*|colaps\w*|tomb[oa]s?|sangria)\b", re.I), "palavra de alarme"),
     (re.compile(r"\b(rombo|gastança|farra|herança maldita|austericídio|desgoverno)\b", re.I), "palavra com lado"),
     (re.compile(r"(^|[\s(])[−-]\d"), "queda com sinal de menos em vez de verbo"),
+    # PERSONA.md, "Como explicar um mecanismo": nada do vocabulário e do bastidor da nossa pesquisa.
+    (re.compile(r"\b(gatilhos?|fragilidades?|segunda derivada|AUC|fora da amostra|\d+ países)\b", re.I),
+     "termo da pesquisa do site que o leitor não conhece"),
     (re.compile(r"\b(cenário ruim|inadimplência|(déficit|superávit) primário|crédito livre)\b", re.I),
      "palavra que o site trocou (num ano ruim, atraso nas dívidas, gasta mais do que arrecada)"),
 ]

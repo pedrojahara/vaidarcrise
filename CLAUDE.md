@@ -2,7 +2,7 @@
 
 ## Todo texto passa pelo leitor
 
-O site escreve para o brasileiro médio que gosta de política, não estudou economia e lê pelo celular. Antes de escrever ou mudar qualquer texto que alguém vai ler, leia [PERSONA.md](PERSONA.md) e passe o texto pela lista "O que todo texto passa antes de sair". Use os nomes da tabela "Os nomes do site".
+O site escreve para o brasileiro médio que gosta de política, não estudou economia e lê pelo celular. Antes de escrever ou mudar qualquer texto que alguém vai ler, leia [PERSONA.md](PERSONA.md) e passe o texto pela lista "O que todo texto passa antes de sair". Use os nomes da tabela "Os nomes do site". Para explicar como algo funciona (abas, desenhos, vídeos, o porquê de um fato no post), siga também "Como explicar um mecanismo": pergunta da leitora primeiro, uma imagem do dia a dia por ideia, a crença errada corrigida de frente e nada do bastidor da pesquisa na página.
 
 Vale para tudo o que chega ao leitor:
 

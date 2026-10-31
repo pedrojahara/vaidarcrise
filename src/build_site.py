@@ -518,21 +518,21 @@ def svg_niveis(historico: list[dict], recessoes: list[dict], nomes: list[str]) -
 
 
 # ------------------------------------------------------------- o que causa
-def causas_ctx(dia: str, rodada: dict, todas: list[dict]) -> dict:
-    """A aba /causas/: o que veio antes das altas de juro (44 países e Brasil) e o Brasil de hoje em cada elo."""
-    cfg = causas.carregar_config()
+def causas_ctx(dia: str, rodada: dict, agenda: list[dict]) -> dict:
+    """A aba /causas/: as quatro perguntas de "E hoje?" e as próximas datas que mexem no juro."""
     series = json.loads(causas.HIST.read_text())["series"]
-    br = causas.aucs_brasil(series)
-
-    def largura(a: float | None) -> float:
-        return round(max(0.0, (a - 0.5) / 0.5) * 100, 1) if a is not None else 0.0
-
-    sinais = [{**x, "brasil": br["aucs"].get(x["id"]), "w_paises": largura(x.get("paises")),
-               "w_brasil": largura(br["aucs"].get(x["id"]))} for x in cfg["sinais"]]
     brutos = sorted(p for p in (ROOT / "data" / "raw").glob("*/indicadores.json") if p.parent.name <= dia)
     bruto = json.loads(brutos[-1].read_text()) if brutos else None
-    hoje = causas.brasil_hoje(series, rodada["resultado"], bruto, [r for r in todas if r["gerado_em"][:10] <= dia], cfg)
-    return {"sinais": sinais, "altas": br["altas"], "meses": br["meses"], "hoje": hoje}
+    futuro = [e for e in agenda if e["data"] >= dia]
+    proximas = []
+    for tipo in ("copom", "ipca"):
+        e = next((x for x in futuro if x["tipo"] == tipo), None)
+        if e:
+            d = dt.date.fromisoformat(e["data"])
+            proximas.append({"data": f"{d.day} de {MESES[d.month - 1]}",
+                             "o_que": "o Banco Central decide o juro" if tipo == "copom" else
+                             f"sai a inflação de {MESES[(d.month - 2) % 12]}, pelo IPCA do IBGE"})
+    return {"perguntas": causas.perguntas_hoje(series, rodada["resultado"], bruto), "proximas": proximas}
 
 
 # --------------------------------------------------------------------- dados
@@ -644,7 +644,8 @@ def main() -> None:
     gravar(DOCS / "resumo", "resumo.html", ctx, f"{SITE}/resumo/")
     gravar(DOCS / "nota", "nota.html", ctx, f"{SITE}/nota/")
     try:
-        gravar(DOCS / "causas", "causas.html", {**ctx, "causas": causas_ctx(dia, ultima, todas), "og_url": f"{SITE}/og.png"},
+        gravar(DOCS / "causas", "causas.html", {**ctx, "causas": causas_ctx(dia, ultima, agenda),
+                                                "og_url": f"{SITE}/causas/og.png"},
                f"{SITE}/causas/")
     except (KeyError, OSError, ValueError, ZeroDivisionError) as e:  # a aba não pode derrubar a atualização do dia
         print(f"aviso: a aba /causas/ não foi refeita ({e!r})")

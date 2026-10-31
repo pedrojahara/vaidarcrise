@@ -143,6 +143,25 @@ Fale como alguém que entende de economia explicando no almoço de domingo: calm
 - Um gráfico por ideia, com título que conclui ("Juro caiu 1,25 ponto em um ano"). Linha com rótulo na ponta, sem legenda. Nada de dois eixos.
 - Seta de tendência sempre com a palavra ao lado ("tende a piorar").
 
+## Como explicar um mecanismo
+
+O resto do guia cuida da palavra. Esta parte cuida de como ensinar: por que os preços sobem, por que o juro alto tira emprego, por que a dívida do governo cresce. Vale para as abas que explicam, para imagens e vídeos e, em parte, para o post diário. A aba [O que causa recessão](https://vaidarcrise.com.br/causas/) é o exemplo.
+
+1. **Comece pela pergunta dela, não pela nossa estrutura.** "Vou perder o emprego?" vem antes de "o que causa recessão". Moldura inventada por nós ("gatilho e fragilidade", "segunda derivada") obriga a leitora a aprender o nosso vocabulário antes do assunto.
+2. **Ensine a peça-chave antes da corrente.** Sem saber por que os preços sobem, o freio do juro não faz sentido. A peça vem antes, numa parte só dela (pré-treino, Mayer).
+3. **Uma imagem do dia a dia por ideia, do começo ao fim.** Inflação: a padaria com o forno no limite, onde dinheiro a mais vira pão mais caro, não mais pão. Dívida: o rotativo do cartão. Na mesma tela, diga onde a comparação falha ("governo não é família: cobra imposto e deve em reais").
+4. **Corrija a crença errada de frente.** Diga o que ela provavelmente acha e, logo depois, por que não é assim. Texto que refuta ensina mais que explicação neutra (Schroeder e Kucera, 2022). As mais comuns: juro alto encarece o mercado (Andre e outros, 2022); economia bombando é sempre bom (Leiser e Aroch, 2009); preço sobe porque alguém quis (Stantcheva, 2024).
+5. **Peça um palpite antes da resposta.** "Quando o juro sobe, os preços sobem mais rápido ou mais devagar?" Quem chuta antes lembra mais (Kim, Reinecke e Hullman, 2017).
+6. **Um caso que ela viveu vale mais que uma regra.** 2015 e 2021 dizem mais que "em 44 países". Dois casos lado a lado, em governos diferentes, passam no teste da troca.
+7. **Partes curtas que se leem sozinhas.** Até 70 palavras e um desenho por parte. As duas primeiras já dão a resposta (segmentação, Mayer).
+8. **Corte o que não ensina.** Barra de acerto, número de países, teste estatístico e tabela de sinais vão para a metodologia. Detalhe curioso que não serve à ideia atrapalha (coerência, Mayer).
+9. **Desenho que mostra a ideia, com legenda que conclui.** Imagem decorativa não ajuda; imagem ligada ao texto ajuda mais quem lê pouco (Houts e outros, 2006). Desenho sem letra dentro: o texto fica na legenda.
+10. **Causa sem culpado.** Com mais de uma causa, mostre todas e diga o que dá para controlar ("chuva e petróleo ninguém controla; as contas do governo, sim"). Quando os dados não separam duas leituras, mostre as duas.
+
+**No post diário** valem 3, 4 e 10, em uma frase cada: o mecanismo com imagem do dia a dia quando ele muda a leitura do dia, a crença errada corrigida de frente e a causa sem culpado. Regra 13 do prompt em `src/escreve_post.py`.
+
+**Formato.** Texto simples primeiro: linguagem clara rendeu mais que recurso visual (Bholat e outros, 2019). Depois desenho com legenda. Vídeo narrado ajuda mais quem lê pouco (Meppelink e outros, 2015), com até 2 minutos por ideia. Rolagem animada não ensina mais que texto.
+
 ## Jargões e o que escrever no lugar
 
 O termo técnico pode aparecer só se o leitor vai encontrá-lo em outro lugar (Selic, PIB, IPCA), e sempre traduzido na primeira vez. O resto sai do texto.
@@ -234,9 +253,9 @@ Mesmos fatos, mesma ordem de importância. A diferença está no rótulo antes d
 
 ## Onde o guia vale no código
 
-- `src/escreve_post.py`, regras 4, 8, 9 e 12 do prompt: leitor, tamanho, frase, números e palavras proibidas.
+- `src/escreve_post.py`, regras 4, 8, 9 e 12 do prompt: leitor, tamanho, frase, números e palavras proibidas; regra 13: como explicar um mecanismo no post.
 - `src/classify_news.py`, regras 17 e 21: títulos de evento e "por quê" com a mesma linguagem.
-- `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
+- `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
 - `src/dossie.py`: as frases de dados de cada fator (queda no verbo, mês por extenso, sem sigla solta); `data/dossie.json` guarda os textos que ficam de um dia para o outro.
 - `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas.
 - Textos escritos à mão (`editor/`, `templates/`) seguem a lista acima na leitura. `METODOLOGIA.md` é técnica de propósito, para quem quer refazer a conta, mas usa os mesmos nomes do site.
@@ -262,3 +281,13 @@ O ambiente em que a pesquisa foi feita não abria a maioria dos sites; os númer
 - Nielsen (1997), como se lê na web: [NN/g](https://www.nngroup.com/articles/how-users-read-on-the-web/)
 - [Lei 15.263/2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15263.htm), Política Nacional de Linguagem Simples
 - [GOV.UK, linguagem clara](https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/writing-guidelines/clear-language/)
+- Mayer, *Multimedia Learning* (Cambridge University Press): princípios de coerência, segmentação e pré-treino
+- Schroeder e Kucera (2022), meta-análise sobre texto de refutação, *Educational Psychology Review*
+- Andre, Pizzinelli, Roth e Wohlfart (2022), o que leigos acham do juro, *Review of Economic Studies*: [texto](https://warwick.ac.uk/fac/soc/economics/research/workingpapers/2021/twerp_1342_-_roth.pdf)
+- Leiser e Aroch (2009), "bom puxa bom" na leitura leiga da economia, *Applied Psychology*
+- Stantcheva (2024), por que não gostamos de inflação, *Brookings Papers*: [texto](https://www.brookings.edu/wp-content/uploads/2024/03/1_Stantcheva_unembargoed.pdf)
+- Kim, Reinecke e Hullman (2017), *Explaining the gap*: palpite antes do gráfico, CHI
+- Houts, Doak, Doak e Loscalzo (2006), imagens em comunicação de saúde, *Patient Education and Counseling*
+- Bholat, Broughton, Ter Meer e Walczak (2019), comunicação simples do Banco da Inglaterra, *Journal of Monetary Economics*
+- Meppelink, van Weert, Haven e Smit (2015), animação narrada e leitores com pouca escolaridade, *Journal of Medical Internet Research*
+- Barnes e Hicks (2022), a comparação do governo com a família não muda opinião, *British Journal of Political Science*: [texto](https://discovery-pp.ucl.ac.uk/id/eprint/10129856)
