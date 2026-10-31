@@ -277,7 +277,10 @@
     }
    },
    "n_itens": 159
-  }
+  },
+  "correcoes": [
+   "Desemprego: a série 24369 falhou às 06h30 e foi coletada às 10h43 de 31/10 (dado até setembro, 5,2%). Só o fator Emprego mudou; o nível e as entradas da conta ficaram iguais."
+  ]
  },
  "cobertura": {
   "dias": [
@@ -760,8 +763,10 @@
      -0.526667,
      3.126667
     ],
-    "valor": null,
-    "situacao": "semdado"
+    "valor": 0.033333333333333215,
+    "ref": "2026-09",
+    "nivel": 5.2,
+    "situacao": "normal"
    },
    {
     "id": "commodities",
@@ -787,7 +792,7 @@
   "fatores": [
    {
     "id": "atividade",
-    "nome": "Atividade",
+    "nome": "Ritmo da economia",
     "indicadores": [
      "ibcbr",
      "focus_pib"
@@ -818,7 +823,7 @@
    },
    {
     "id": "credito",
-    "nome": "Crédito e famílias",
+    "nome": "Dívidas das famílias",
     "indicadores": [
      "comprometimento"
     ],
@@ -830,7 +835,7 @@
    },
    {
     "id": "mercado",
-    "nome": "Mercado financeiro",
+    "nome": "Dólar e juro longo",
     "indicadores": [
      "tesouro",
      "dolar"
@@ -843,7 +848,7 @@
    },
    {
     "id": "contas",
-    "nome": "Contas públicas",
+    "nome": "Contas do governo",
     "indicadores": [
      "divida"
     ],
@@ -854,18 +859,6 @@
     "situacao_nome": "Pior que o normal"
    },
    {
-    "id": "externo",
-    "nome": "Cenário externo",
-    "indicadores": [
-     "commodities"
-    ],
-    "entradas": [],
-    "na_conta": false,
-    "efeito": null,
-    "situacao": "normal",
-    "situacao_nome": "Normal"
-   },
-   {
     "id": "emprego",
     "nome": "Emprego",
     "indicadores": [
@@ -874,8 +867,20 @@
     "entradas": [],
     "na_conta": false,
     "efeito": null,
-    "situacao": "semdado",
-    "situacao_nome": "Sem dado"
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   },
+   {
+    "id": "externo",
+    "nome": "Economia lá fora",
+    "indicadores": [
+     "commodities"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
    }
   ],
   "gatilhos": [
@@ -923,9 +928,7 @@
    }
   ],
   "reaproveitados": [],
-  "faltando": [
-   "sahm"
-  ]
+  "faltando": []
  },
  "pressao": {
   "fatores": {
@@ -1257,7 +1260,16 @@
      "Demissões na indústria e na construção",
      "Juros e inadimplência altos chegando ao emprego"
     ],
-    "fatos": []
+    "fatos": [
+     {
+      "texto": "Desemprego em 5,2% no trimestre até setembro. O menor desde 2012 foi 5,1%, em dezembro de 2025.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "O desemprego médio de 3 meses está igual ao menor do último ano.",
+      "fonte": "IBGE"
+     }
+    ]
    },
    "externo": {
     "tendencia": "sem_direcao",

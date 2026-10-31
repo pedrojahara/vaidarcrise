@@ -192,7 +192,7 @@ Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em 
 ## Salvaguardas
 
 - **Números velhos:** se a página passar de 36 horas sem atualização, ela avisa.
-- **Falha de coleta:** cada fonte tem até 4 tentativas, e a série do Banco Central que falha tenta de novo no fim. Se ainda faltar, vale o último valor guardado enquanto ele for o mais novo que a fonte deveria ter: 10 dias para dado diário, 200 para o PIB trimestral e, para dado mensal, até 15 dias depois do mês em que o seguinte deveria sair (pela defasagem de cada série). Exemplo: o desemprego do trimestre até agosto vale até 15 de novembro. Se faltar uma entrada da conta mesmo assim, a atualização não sai, e o site avisa que está defasado.
+- **Falha de coleta:** cada fonte tem até 4 tentativas, e a série do Banco Central que falha tenta de novo no fim. O desemprego tem uma segunda fonte, o próprio IBGE. Se ainda faltar, vale o último valor guardado enquanto ele for o mais novo que a fonte deveria ter: 10 dias para dado diário, 200 para o PIB trimestral e, para dado mensal, até 15 dias depois do mês em que o seguinte deveria sair (pela defasagem de cada série). Exemplo: o desemprego do trimestre até agosto vale até 15 de novembro. O cartão do fator avisa quando o dado é de uma atualização anterior. Se faltar uma entrada da conta mesmo assim, a atualização não sai, e o site avisa que está defasado.
 - **Falha do modelo de linguagem:** a atualização sai só com dados e sem pressão de notícias.
 - **Texto das notícias:** é tratado como dado, nunca como instrução. Nenhuma notícia muda pesos ou regras.
 
