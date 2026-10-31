@@ -17,4 +17,4 @@ Vale para tudo o que chega ao leitor:
 
 - Gere o site com `.venv/bin/python src/build_site.py` e confira as páginas mudadas a 390 px de largura.
 - O post diário passa por `src/revisa_texto.py`; texto à mão, leia em voz alta.
-- `runs/` é registro imutável: não reescreva posts nem leituras já publicados. O texto novo vale a partir da próxima atualização.
+- Até o lançamento oficial (Pedro avisa quando), toda mudança importante vale para o site inteiro, inclusive o passado: reescreva posts antigos, títulos de notícia e leituras em `runs/` e `data/`, com os mesmos números e datas. Depois do lançamento, `runs/` passa a ser registro imutável.
