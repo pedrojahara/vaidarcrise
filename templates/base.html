@@ -108,7 +108,7 @@ a:hover{text-decoration-thickness:2px}
 <header class="cab"><div class="in"><div class="faixa">
   <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
   <p class="linha-fina">Um palpite com conta sobre a próxima recessão brasileira.</p>
-  <nav aria-label="Seções"><a href="{{ link_inicio or '/' }}"{% if aba == 'inicio' %} aria-current="page"{% endif %}>Atualizações</a><a href="{{ link_resumo or '/resumo/' }}"{% if aba == 'resumo' %} aria-current="page"{% endif %}>Resumo</a><a href="{{ link_nota or '/nota/' }}"{% if aba == 'nota' %} aria-current="page"{% endif %}>Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="{{ repo }}">Código</a></nav>
+  <nav aria-label="Seções"><a href="{{ link_inicio or '/' }}"{% if aba == 'inicio' %} aria-current="page"{% endif %}>Atualizações</a><a href="{{ link_resumo or '/resumo/' }}"{% if aba == 'resumo' %} aria-current="page"{% endif %}>Resumo</a><a href="/causas/"{% if aba == 'causas' %} aria-current="page"{% endif %}>O que causa recessão</a><a href="{{ link_nota or '/nota/' }}"{% if aba == 'nota' %} aria-current="page"{% endif %}>Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="{{ repo }}">Código</a></nav>
 </div></div></header>
 {% block corpo %}{% endblock %}
 <footer class="pe"><div class="in">

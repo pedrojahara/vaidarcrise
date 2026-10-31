@@ -1119,5 +1119,313 @@
    }
   ],
   "pontos": -1.0
+ },
+ {
+  "id": "ev-20261031-01",
+  "data": "2026-10-30",
+  "titulo_evento": "Ibovespa cai 18,12% na semana e dólar sobe 9,03%, maior alta desde 2008",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "mercado",
+  "direcao": 1,
+  "magnitude": 2,
+  "ja_no_preco": false,
+  "porque": "A perda semanal iguala a de 2001, e os fundos perderam R$ 157,5 bilhões em patrimônio. Ativos mais baratos e câmbio mais fraco encarecem o capital e pressionam a inflação.",
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Agência Brasil",
+   "Folha",
+   "Gazeta do Povo",
+   "Poder360"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Poder360",
+    "titulo": "Bolsa tem 5ª maior queda desde Plano Real após reeleição de Lula",
+    "url": "https://www.poder360.com.br/poder-economia/bolsa-tem-5a-maior-queda-desde-plano-real-apos-reeleicao-de-lula/",
+    "publicado_em": "2026-10-30T21:56+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Bolsa cai 18% na semana da vitória de Lula e tem pior resultado desde 2020; dólar tem maior alta desde 2008",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/bolsa-cai-175-na-semana-da-vitoria-de-lula-e-tem-pior-resultado-desde-2020.shtml",
+    "publicado_em": "2026-10-30T17:45-03:00"
+   },
+   {
+    "veiculo": "Agência Brasil",
+    "titulo": "Dólar fecha a R$ 5,44 e registra maior alta semanal desde 2008",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-fecha-r-544-e-registra-maior-alta-semanal-desde-2008",
+    "publicado_em": "2026-10-30T19:40-03:00"
+   },
+   {
+    "veiculo": "Gazeta do Povo",
+    "titulo": "Após reeleição de Lula, Ibovespa tem pior semana desde a pandemia e dólar dispara",
+    "url": "https://www.gazetadopovo.com.br/economia/apos-reeleicao-de-lula-ibovespa-tem-pior-semana-desde-a-pandemia-e-dolar-dispara/",
+    "publicado_em": "2026-10-30T23:04+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Fundos de investimento perdem R$ 157,5 bilhões após reeleição de Lula",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/financas/2026/10/fundos-de-investimento-perdem-r-1575-bilhoes-apos-reeleicao-de-lula.shtml",
+    "publicado_em": "2026-10-30T23:00-03:00"
+   }
+  ],
+  "pontos": 2.0
+ },
+ {
+  "id": "ev-20261031-02",
+  "data": "2026-10-30",
+  "titulo_evento": "Itaú corta projeção do PIB de 2027 para 0,5% e vê inflação acima do teto",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "atividade",
+  "direcao": 1,
+  "magnitude": 2,
+  "ja_no_preco": false,
+  "porque": "Com crescimento de 0,5% em 2027, a economia fica perto da estagnação. Inflação acima do teto limita o espaço para cortes da Selic.",
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Folha"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Folha",
+    "titulo": "Itaú corta projeção do PIB de 2027 para 0,5% e vê inflação acima da meta",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta.shtml",
+    "publicado_em": "2026-10-30T22:45-03:00"
+   }
+  ],
+  "pontos": 1.0
+ },
+ {
+  "id": "ev-20261031-03",
+  "data": "2026-10-30",
+  "titulo_evento": "Desemprego cai a 5,2% no trimestre até setembro, menor da série para o período",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "emprego",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": true,
+  "porque": "O mercado de trabalho apertado sustenta o consumo das famílias. A renda parou de crescer, o que limita esse apoio nos próximos meses.",
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Agência Brasil",
+   "Estadão",
+   "Folha",
+   "InfoMoney",
+   "Poder360",
+   "g1"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Estadão",
+    "titulo": "Desemprego até setembro fica em 5,2%, menor taxa para o período da série histórica, aponta IBGE",
+    "url": "https://www.estadao.com.br/economia/ibge-pnad-desemprego-setembro-2026/",
+    "publicado_em": "2026-10-30T12:07+00:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Brasil tem desemprego de 5,2% no tri até setembro, em linha com o esperado",
+    "url": "https://www.infomoney.com.br/economia/brasil-tem-desemprego-de-52-no-tri-ate-setembro-em-linha-com-o-esperado/",
+    "publicado_em": "2026-10-30T12:02+00:00"
+   },
+   {
+    "veiculo": "Poder360",
+    "titulo": "Desemprego cai para 5,2% no trimestre encerrado em setembro, diz IBGE",
+    "url": "https://www.poder360.com.br/poder-economia/desemprego-cai-para-52-no-trimestre-encerrado-em-setembro-diz-ibge/",
+    "publicado_em": "2026-10-30T12:01+00:00"
+   },
+   {
+    "veiculo": "g1",
+    "titulo": "Desemprego cai no Brasil e atinge menor taxa para o terceiro trimestre em 14 anos",
+    "url": "https://g1.globo.com/economia/noticia/2026/10/30/desocupacao-fica-em-52percent-a-menor-para-um-terceiro-trimestre-desde-2012.ghtml",
+    "publicado_em": "2026-10-30T12:00+00:00"
+   },
+   {
+    "veiculo": "Agência Brasil",
+    "titulo": "Desemprego de 5,2% no 3° trimestre é o menor para o período desde 2012",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/desemprego-de-52-no-3deg-trimestre-e-o-menor-para-o-periodo-desde-2012",
+    "publicado_em": "2026-10-30T09:50-03:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Desemprego é o menor até setembro com criação de vagas na construção; renda estaciona",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/desemprego-fica-em-52-e-tem-menor-taxa-ate-setembro-na-serie-historica.shtml",
+    "publicado_em": "2026-10-30T09:01-03:00"
+   }
+  ],
+  "pontos": -0.5
+ },
+ {
+  "id": "ev-20261031-04",
+  "data": "2026-10-30",
+  "titulo_evento": "Petróleo Brent sobe mais de 14% em outubro com conflito no Irã",
+  "estagio": "dado",
+  "origem": "mundo",
+  "fator": "externo",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "Petróleo mais caro pressiona combustíveis e expectativas de inflação no Brasil. Juros altos por mais tempo tendem a frear a atividade.",
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Folha",
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Folha",
+    "titulo": "Petróleo sobe mais de 14% em outubro e encerra mês no maior valor desde maio",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/petroleo-sobe-mais-de-14-em-outubro-e-encerra-mes-no-maior-valor-desde-maio.shtml",
+    "publicado_em": "2026-10-30T19:35-03:00"
+   },
+   {
+    "veiculo": "Valor",
+    "titulo": "Ouro fica abaixo de US$ 4 mil, no menor nível em um ano, diante de expectativa de juros mais altos",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/30/ouro-fica-abaixo-de-us-4-mil-no-menor-nivel-em-um-ano-diante-de-expectativa-de-juros-mais-altos.ghtml",
+    "publicado_em": "2026-10-30T18:41+00:00"
+   }
+  ],
+  "pontos": 1.0
+ },
+ {
+  "id": "ev-20261031-05",
+  "data": "2026-10-30",
+  "titulo_evento": "Nasdaq cai 2,86% e Bolsa da China tem o pior mês desde 2016",
+  "estagio": "dado",
+  "origem": "mundo",
+  "fator": "externo",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "A venda de ações de tecnologia reduz o apetite global por risco. Emergentes como o Brasil tendem a perder capital estrangeiro nesse ambiente.",
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Folha",
+   "Poder360",
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Poder360",
+    "titulo": "Bolsas dos EUA fecham em forte queda com tombo da tecnologia",
+    "url": "https://www.poder360.com.br/poder-economia/bolsas-dos-eua-fecham-em-forte-queda-com-tombo-da-tecnologia/",
+    "publicado_em": "2026-10-31T01:56+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Ações de tecnologia desabam nos EUA com novas dúvidas sobre gastos em IA",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/nasdaq-cai-ao-menor-nivel-em-tres-meses-com-duvidas-sobre-gastos-com-ia.shtml",
+    "publicado_em": "2026-10-30T15:30-03:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Big techs perdem quase US$ 900 bilhões após manterem investimentos bilionários em IA",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/10/big-techs-perdem-quase-us-900-bilhoes-apos-manterem-investimentos-bilionarios-em-ia.shtml",
+    "publicado_em": "2026-10-30T11:21-03:00"
+   },
+   {
+    "veiculo": "Valor",
+    "titulo": "Gastos e perda de receita com IA derrubam ações do Google",
+    "url": "https://valor.globo.com/impresso/noticia/2026/10/30/gastos-e-perda-de-receita-com-ia-derrubam-acoes-do-google.ghtml",
+    "publicado_em": "2026-10-30T08:00+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Bolsa da China cai 8,5% em outubro e tem pior mês em mais de uma década",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://aovivo.folha.uol.com.br/mercado/2026/10/25/6568-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post468003",
+    "publicado_em": "2026-10-30T08:13-03:00"
+   }
+  ],
+  "pontos": 1.0
+ },
+ {
+  "id": "ev-20261031-06",
+  "data": "2026-10-30",
+  "titulo_evento": "Base governista pressiona contra cortes de gastos e pelo fim do arcabouço",
+  "estagio": "rumor",
+  "origem": "politica",
+  "fator": "contas",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "Sem regra fiscal clara, o prêmio de risco e os juros longos tendem a subir. O Copom fica como única âncora, o que mantém o crédito caro.",
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Gazeta do Povo",
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Gazeta do Povo",
+    "titulo": "Base governista pressiona Lula para descartar cortes de gastos e fim de regras",
+    "url": "https://www.gazetadopovo.com.br/economia/base-governista-pressiona-lula-para-descartar-cortes-de-gastos-e-fim-de-regras/",
+    "publicado_em": "2026-10-30T18:31+00:00"
+   },
+   {
+    "veiculo": "Gazeta do Povo",
+    "titulo": "Aliados de Lula rejeitam ajuste nas contas e já falam em derrubar o arcabouço fiscal",
+    "url": "https://www.gazetadopovo.com.br/economia/aliados-lula-rejeitam-ajuste-fiscal-contas-publicas/",
+    "publicado_em": "2026-10-30T14:31+00:00"
+   },
+   {
+    "veiculo": "Valor",
+    "titulo": "Análise: Sem rumo fiscal claro no Lula 4, Copom enfrenta teste como única âncora da economia",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/30/analise-sem-rumo-fiscal-claro-no-lula-4-copom-enfrenta-teste-como-unica-ancora-da-economia.ghtml",
+    "publicado_em": "2026-10-30T14:26+00:00"
+   }
+  ],
+  "pontos": 0.1
+ },
+ {
+  "id": "ev-20261031-07",
+  "data": "2026-10-30",
+  "titulo_evento": "CNI: situação financeira das pequenas indústrias cai a 38,5 pontos, pior em 5 anos",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "atividade",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "Juros elevados, carga tributária e demanda fraca apertam o caixa das pequenas indústrias. Com isso, o investimento e as contratações devem desacelerar.",
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Gazeta do Povo"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Gazeta do Povo",
+    "titulo": "Pequenas indústrias registram pior situação financeira em cinco anos, aponta CNI",
+    "url": "https://www.gazetadopovo.com.br/economia/pequenas-industrias-registram-pior-situacao-financeira-cinco-anos-aponta-cni/",
+    "publicado_em": "2026-10-30T17:49+00:00"
+   }
+  ],
+  "pontos": 0.5
+ },
+ {
+  "id": "ev-20261031-08",
+  "data": "2026-10-30",
+  "titulo_evento": "Saldo de crédito sobe 0,4% em setembro e expansão perde força",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "credito",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "O saldo chega a R$ 7,444 trilhões, com alta de 8,6% em 12 meses e ritmo em queda. Menos crédito novo tende a esfriar o consumo e o investimento.",
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Valor",
+    "titulo": "Expansão do crédito perde força",
+    "url": "https://valor.globo.com/financas/noticia/2026/10/30/expansao-do-credito-perde-forca.ghtml",
+    "publicado_em": "2026-10-30T08:00+00:00"
+   }
+  ],
+  "pontos": 0.5
  }
 ]

@@ -19,7 +19,8 @@ launchd, todo dia às 06h30 → run.sh   (uma publicação por dia; se o Mac dor
   ├─ src/dossie.py          tendência de cada fator, fatos de dados, Focus e placar → data/dossie.json, data/placar.json
   ├─ src/escreve_post.py    claude -p escreve o post a partir da conta pronta; src/revisa_texto.py confere o texto
   ├─ src/run.py             grava runs/<id>.json e data/eventos.json
-  ├─ src/build_site.py      gera docs/ (HTML estático, og.png, data.json) com editor/*.md
+  ├─ src/build_site.py      gera docs/ (HTML estático, og.png, data.json) com editor/*.md;
+  │                         a aba O que causa recessão sai de src/causas.py e config/causas.json
   └─ git push               GitHub Pages publica docs/
 ```
 

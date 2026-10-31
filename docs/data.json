@@ -8,7 +8,7 @@
   "Muito acima"
  ],
  "pergunta": "O risco de o Brasil entrar em recessão técnica nos próximos 12 meses está acima ou abaixo do normal?",
- "atualizado_em": "2026-10-30T06:30:07-03:00",
+ "atualizado_em": "2026-10-31T06:30:03-03:00",
  "pib_12_meses": {
   "cenario_ruim_pct": -1.79,
   "cenario_ruim_em_tempos_normais_pct": -1.89,
@@ -33,7 +33,7 @@
    "id": "juro",
    "nome": "Selic: variação em 12 meses",
    "valor": -1.25,
-   "ref": "2026-10-30",
+   "ref": "2026-10-31",
    "efeito_no_cenario_ruim_pontos": 0.1289
   },
   {
@@ -70,6 +70,14 @@
    "tendencia": "piora"
   },
   {
+   "id": "mercado",
+   "nome": "Mercado financeiro",
+   "na_conta": false,
+   "efeito_no_cenario_ruim_pontos": null,
+   "situacao": "Pior que o normal",
+   "tendencia": "piora"
+  },
+  {
    "id": "contas",
    "nome": "Contas públicas",
    "na_conta": false,
@@ -78,28 +86,20 @@
    "tendencia": "piora"
   },
   {
-   "id": "mercado",
-   "nome": "Mercado financeiro",
-   "na_conta": false,
-   "efeito_no_cenario_ruim_pontos": null,
-   "situacao": "Normal",
-   "tendencia": "piora"
-  },
-  {
-   "id": "emprego",
-   "nome": "Emprego",
-   "na_conta": false,
-   "efeito_no_cenario_ruim_pontos": null,
-   "situacao": "Normal",
-   "tendencia": "estavel"
-  },
-  {
    "id": "externo",
    "nome": "Cenário externo",
    "na_conta": false,
    "efeito_no_cenario_ruim_pontos": null,
    "situacao": "Normal",
    "tendencia": "sem_direcao"
+  },
+  {
+   "id": "emprego",
+   "nome": "Emprego",
+   "na_conta": false,
+   "efeito_no_cenario_ruim_pontos": null,
+   "situacao": "Sem dado",
+   "tendencia": "estavel"
   }
  ],
  "indicadores": [
@@ -135,7 +135,7 @@
    "fator": "juro",
    "valor": 8.8167,
    "unidade": "% ao ano",
-   "ref": "2026-10-30",
+   "ref": "2026-10-31",
    "situacao": "Normal",
    "faixa_normal": [
     4.062,
@@ -159,9 +159,9 @@
    "id": "tesouro",
    "nome": "Juro do Tesouro IPCA+",
    "fator": "mercado",
-   "valor": 0.56,
+   "valor": 0.515,
    "unidade": "p.p.",
-   "ref": "2026-10-28",
+   "ref": "2026-10-29",
    "situacao": "Normal",
    "faixa_normal": [
     -0.95,
@@ -172,10 +172,10 @@
    "id": "dolar",
    "nome": "Dólar",
    "fator": "mercado",
-   "valor": 4.9339,
+   "valor": 6.8448,
    "unidade": "%",
-   "ref": "2026-10-29",
-   "situacao": "Normal",
+   "ref": "2026-10-30",
+   "situacao": "Pior que o normal",
    "faixa_normal": [
     -4.1516,
     5.1163
@@ -198,10 +198,10 @@
    "id": "sahm",
    "nome": "Regra de Sahm",
    "fator": "emprego",
-   "valor": 0.1,
+   "valor": null,
    "unidade": "p.p.",
-   "ref": "2026-08",
-   "situacao": "Normal",
+   "ref": null,
+   "situacao": "Sem dado",
    "faixa_normal": [
     -0.0667,
     1.4333
@@ -224,16 +224,18 @@
  "pressao_noticias": {
   "sentido": "piora",
   "fatores": {
-   "contas": "piora",
-   "credito": "piora",
    "mercado": "piora",
-   "juro": "igual"
+   "atividade": "piora",
+   "emprego": "igual",
+   "externo": "piora",
+   "contas": "igual",
+   "credito": "igual"
   }
  },
- "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-30T0630.json",
+ "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-10-31T0630.json",
  "post_do_dia": {
-  "titulo": "Risco segue normal, e inadimplência das famílias bate recorde",
-  "url": "https://vaidarcrise.com.br/2026-10-30/",
+  "titulo": "Risco de recessão segue normal; Bolsa cai 18,12% na semana",
+  "url": "https://vaidarcrise.com.br/2026-10-31/",
   "escrito_por_llm": true
  }
 }

@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+{% block titulo %}O que causa uma recessão | Vai dar crise?{% endblock %}
+{% block descricao %}Recessão quase sempre é um gatilho (juro subindo, inflação acelerando) encontrando uma fragilidade (dívida demais, dependência de dólar). O que faz o juro subir no Brasil e onde o país está hoje.{% endblock %}
+{% block estilo %}
+.causas{padding-top:28px;padding-bottom:40px;font-family:var(--sistema)}
+.causas h1{font:700 30px/1.2 var(--serifa);margin:0 0 6px;text-wrap:balance}
+.causas h2{font:700 22px/1.3 var(--serifa);margin:0 0 12px}
+.causas h3{font:700 18px/1.3 var(--serifa);margin:26px 0 10px}
+.causas section{padding:28px 0 8px;border-bottom:1px solid var(--fio)}
+.causas section:last-child{border-bottom:0}
+.causas section > *{max-width:760px}
+.causas .def-rec{font:15.5px/1.45 var(--sistema);color:var(--meta);margin:0}
+.topicos{margin:0 0 18px;padding-left:1.1em;display:grid;gap:7px;font:16.5px/1.45 var(--sistema)}
+.intro{font:16.5px/1.45 var(--sistema);margin:0 0 16px}
+
+/* a resposta: gatilho + fragilidade = recessão */
+.formula{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:22px 0 4px;font:700 32px/1.15 var(--serifa)}
+.formula .op{font-weight:400;color:var(--meta)}
+.formula .fim{color:var(--sobe)}
+.duas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 40px;max-width:none!important;margin-top:16px}
+.duas > div{border-top:3px solid var(--tinta);padding-top:10px}
+.duas h2{margin:0}
+.duas .sub{font:15px/1.4 var(--sistema);color:var(--meta);margin:2px 0 10px}
+.duas ul{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:10px;font:16px/1.45 var(--sistema)}
+.duas b{display:block}
+.parado{font:15.5px/1.45 var(--sistema);background:var(--maquina);border-left:4px solid var(--tinta);padding:10px 14px;margin:8px 0 0}
+
+/* a cadeia até a recessão */
+.raizes{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;font:15px/1.4 var(--sistema)}
+.raizes li{border:1px solid var(--fio);border-radius:6px;padding:9px 12px}
+.raizes b{display:block;font-size:16px}
+.raizes span{color:var(--meta)}
+.elos{list-style:none;padding:0;margin:0 0 10px;display:grid;font:16px/1.4 var(--sistema)}
+.elos li{position:relative;margin-top:30px;padding:9px 12px;border:1px solid var(--tinta);border-radius:6px;font-weight:600}
+.elos li::before{content:"";position:absolute;left:50%;top:-24px;width:2px;height:16px;background:var(--meta);transform:translateX(-50%)}
+.elos li::after{content:"";position:absolute;left:50%;top:-10px;border:6px solid transparent;border-top-color:var(--meta);transform:translateX(-50%)}
+.elos li.fim{background:var(--alerta-fundo);border-color:var(--alerta-fundo)}
+.elos li.fim span{font-weight:400}
+.cada-passo{font:14.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 6px}
+
+/* barras: o que veio antes das altas de juro */
+.barras{margin:4px 0 8px;font:15px/1.35 var(--sistema)}
+.barras .lin{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) minmax(0,1fr);gap:6px 16px;align-items:center;padding:8px 0;border-bottom:1px solid var(--fio)}
+.barras .cab-b{font:600 13px/1.3 var(--sistema);color:var(--meta);border-bottom:1px solid var(--tinta);align-items:end}
+.barras .cab-b small{display:flex;justify-content:space-between;font-weight:400;font-size:12px;margin-top:2px}
+.trilho{display:block;position:relative;height:14px;background:var(--maquina);border-radius:2px}
+.trilho i{position:absolute;left:0;top:0;bottom:0;border-radius:2px;background:var(--tinta)}
+.trilho.pais i{background:var(--hist)}
+.trilho em{position:absolute;left:6px;top:-1px;font:normal 12px/16px var(--sistema);color:var(--meta)}
+.rot-pais{display:none}
+.legenda-b{font:13.5px/1.4 var(--sistema);color:var(--meta);margin:0 0 16px}
+details{font:14.5px/1.45 var(--sistema);margin:0 0 18px}
+summary{cursor:pointer;color:var(--link)}
+details table{border-collapse:collapse;margin:10px 0 6px;font:14px/1.4 var(--sistema)}
+details th,details td{text-align:left;padding:5px 14px 5px 0;border-bottom:1px solid var(--fio)}
+details td.n,details th.n{text-align:right;font-variant-numeric:tabular-nums}
+details p{margin:6px 0;color:var(--meta)}
+
+/* o Brasil hoje */
+.hoje{width:100%;border-collapse:collapse;font:15px/1.4 var(--sistema);margin:0 0 14px}
+.hoje th,.hoje td{text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--fio);vertical-align:top}
+.hoje thead th{font-size:12.5px;color:var(--meta);font-weight:600;letter-spacing:.03em}
+.hoje tbody th{font-weight:600}
+.hoje .grupo th{font:700 16px/1.3 var(--serifa);padding-top:18px;border-bottom:1px solid var(--tinta)}
+.hoje td.n{font-variant-numeric:tabular-nums}
+.hoje td.n b{font-weight:600;white-space:nowrap}
+.hoje tbody th{width:34%}
+.hoje .def{display:block;color:var(--meta);font-size:13px;font-weight:400;margin-top:2px}
+.hoje td:last-child{text-align:right;width:1%}
+.chip{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 9px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.chip.atencao{color:var(--atencao)}.chip.normal{color:var(--meta)}
+.nota-tab{font:14px/1.5 var(--sistema);color:var(--meta);margin:0 0 18px}
+.leitura-hoje{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:6px;font:16.5px/1.45 var(--sistema)}
+.leitura-hoje li{padding-left:14px;border-left:3px solid var(--fio)}
+
+@media (max-width:620px){
+  .causas h1{font-size:26px}
+  .duas{grid-template-columns:minmax(0,1fr);gap:12px}
+  .raizes{grid-template-columns:minmax(0,1fr)}
+  .barras .lin{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .barras .lin > :first-child{grid-column:1 / -1}
+  .barras .cab-b > :first-child{display:none}
+  .rot-pais{display:block;font-size:12px;color:var(--meta);margin-bottom:2px}
+  .hoje thead{display:none}
+  .hoje tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:9px 0;border-bottom:1px solid var(--fio)}
+  .hoje tr.grupo{display:block;border-bottom:0;padding:0}
+  .hoje th,.hoje td{border-bottom:0;padding:0}
+  .hoje tbody th{width:auto}
+  .hoje .grupo th{display:block;padding:18px 0 6px;border-bottom:1px solid var(--tinta)}
+  .hoje td.n{grid-column:1 / -1;grid-row:2}
+  .hoje td:last-child{grid-column:2;grid-row:1;width:auto}
+  .formula{font-size:24px;gap:2px 8px}
+}
+{% endblock %}
+{% block corpo %}
+{% set c = causas %}
+<main class="in causas">
+  <h1>O que causa uma recessão</h1>
+  <p class="def-rec">Recessão: o PIB, tudo o que o país produz, cai por dois trimestres seguidos. Costuma vir com menos emprego e renda.</p>
+
+  <p class="formula" aria-label="Gatilho mais fragilidade igual a recessão"><span>Gatilho</span><span class="op">+</span><span>fragilidade</span><span class="op">=</span><span class="fim">recessão</span></p>
+  <div class="duas">
+    <div>
+      <h2>Gatilho</h2>
+      <p class="sub">o que dispara a queda</p>
+      <ul>
+        <li><b>Juro subindo.</b> O Banco Central sobe a Selic, o juro básico. A parcela do crédito aumenta, e o consumo cai.</li>
+        <li><b>Inflação acelerando.</b> Os preços sobem mais rápido que o salário, e o Banco Central sobe o juro.</li>
+        <li><b>Choque de fora.</b> Pandemia, guerra, crise mundial. Ninguém prevê.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Fragilidade</h2>
+      <p class="sub">o que faz a queda ser maior</p>
+      <ul>
+        <li><b>Famílias e empresas devendo demais.</b> Quando a renda cai, a parcela aperta. Depois de anos de crédito fácil, a queda chega ao dobro.</li>
+        <li><b>Dependência de dólar de fora.</b> Se o dinheiro de fora sai, o dólar sobe, e os preços sobem junto.</li>
+        <li><b>Pouco espaço para cortar o juro.</b> Com o juro já baixo, o Banco Central tem menos como socorrer.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="parado"><b>Parado não avisa.</b> Dívida pública, juro e inflação altos, mas parados, não marcaram a data das recessões em 166 países. O que avisa é o movimento.</p>
+
+  <section aria-labelledby="t-juro">
+    <h2 id="t-juro">O que faz o juro subir</h2>
+    <p class="intro">O Banco Central sobe o juro quando vê inflação vindo. Quatro coisas trazem inflação:</p>
+    <ul class="raizes">
+      <li><b>Economia aquecida</b><span>Todo mundo comprando mais do que o país produz.</span></li>
+      <li><b>Preço de fora</b><span>Soja, minério e petróleo subindo, ou juro subindo nos Estados Unidos.</span></li>
+      <li><b>Contas do governo piorando</b><span>O déficit cresce, e mais dinheiro circula na economia.</span></li>
+      <li><b>Inflação esperada subindo</b><span>Bancos, fundos e empresas passam a esperar preços subindo mais rápido.</span></li>
+    </ul>
+    <ol class="elos">
+      <li>A inflação sobe, ou ameaça subir</li>
+      <li>O Banco Central sobe a Selic</li>
+      <li>A parcela do crédito aumenta, e famílias e empresas gastam menos</li>
+      <li class="fim">Recessão: menos emprego e renda. <span>Maior se houver fragilidade.</span></li>
+    </ol>
+    <p class="cada-passo">Cada passo perde força: nem toda alta de juro vira recessão.</p>
+
+    <h3>No Brasil, as contas do governo e a inflação esperada avisam mais</h3>
+    <div class="barras" role="table" aria-label="O que veio antes das altas de juro, nos 44 países e no Brasil">
+      <div class="lin cab-b" role="row"><span role="columnheader">O que veio antes das altas de juro</span><span role="columnheader">44 países<small><span>cara ou coroa</span><span>acerta sempre</span></small></span><span role="columnheader">Brasil<small><span>cara ou coroa</span><span>acerta sempre</span></small></span></div>
+      {% for x in c.sinais %}
+      <div class="lin" role="row">
+        <span role="rowheader">{{ x.nome }}</span>
+        <span role="cell"><span class="rot-pais">44 países</span>{% if x.paises is not none %}<span class="trilho pais" title="{{ x.paises|num(2) }}"><i style="width:{{ x.w_paises }}%"></i></span>{% else %}<span class="trilho pais"><em>sem dado</em></span>{% endif %}</span>
+        <span role="cell"><span class="rot-pais">Brasil</span>{% if x.brasil is not none %}<span class="trilho" title="{{ x.brasil|num(2) }}"><i style="width:{{ x.w_brasil }}%"></i></span>{% else %}<span class="trilho"><em>sem dado</em></span>{% endif %}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="legenda-b">Barra cheia: o sinal aparece antes de toda alta e nunca fora delas. Vazia: avisa tanto quanto jogar uma moeda.</p>
+    <details>
+      <summary>Os números do gráfico</summary>
+      <table>
+        <thead><tr><th>Sinal</th><th class="n">44 países</th><th class="n">Brasil</th></tr></thead>
+        <tbody>{% for x in c.sinais %}<tr><td>{{ x.nome }}</td><td class="n">{{ x.paises|num(2) if x.paises is not none else "—" }}</td><td class="n">{{ x.brasil|num(2) if x.brasil is not none else "—" }}</td></tr>{% endfor %}</tbody>
+      </table>
+      <p>Chance de um momento antes de uma alta de juro ter o sinal mais forte que um momento sem alta (área sob a curva ROC). 0,5 é cara ou coroa; 1 acerta sempre. Alta: juro 1 ponto ou mais acima em 12 meses. No Brasil, {{ c.altas }} de {{ c.meses }} meses desde 2002, refeitos pelo <a href="{{ repo }}/blob/main/src/causas.py">código</a>. A inflação esperada vem do boletim Focus, do Banco Central, que só existe no Brasil.</p>
+    </details>
+    <ul class="topicos">
+      <li><b>Nos 44 países,</b> o juro sobe quando a economia esquenta e o preço de fora sobe.</li>
+      <li><b>No Brasil,</b> os melhores avisos de alta da Selic desde 2002 são as contas do governo piorando e a inflação esperada subindo.</li>
+      <li><b>As contas do governo pesam quando se mexem.</b> Pioravam no começo das altas da Selic de 2013, 2021 (gastos da pandemia) e 2024. Dívida alta e parada não avisou.</li>
+      <li><b>Nem toda alta veio das contas do governo.</b> Em 2004 e em 2008, elas não pioravam; a alta veio da economia aquecida.</li>
+      <li><b>A bonança planta a fragilidade.</b> Crédito e dependência de dólar crescem depois de anos de economia forte.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="t-hoje">
+    <h2 id="t-hoje">O Brasil hoje</h2>
+    <p class="nota-tab">Último dado de cada série até {{ data_curta(dia) }}.</p>
+    <table class="hoje">
+      <thead><tr><th scope="col">Sinal</th><th scope="col">Hoje</th><th scope="col">Leitura</th></tr></thead>
+      {% for gr in c.hoje.grupos if gr.linhas %}
+      <tbody>
+        <tr class="grupo"><th colspan="3" scope="colgroup">{{ gr.nome }}</th></tr>
+        {% for x in gr.linhas %}<tr><th scope="row">{{ x.nome }}</th><td class="n"><b>{{ x.hoje }}</b>{% if x.nota %}<span class="def">{{ x.nota }}</span>{% endif %}</td><td><span class="chip {{ 'atencao' if x.atencao else 'normal' }}">{{ x.leitura }}</span></td></tr>{% endfor %}
+      </tbody>
+      {% endfor %}
+    </table>
+    <p class="nota-tab">Atenção: o dado pressiona mais do que em 3 de cada 4 meses desde 2004.</p>
+    <ul class="leitura-hoje">
+      {% for t in c.hoje.resumo %}<li>{{ t }}</li>{% endfor %}
+      <li>O nível de risco de hoje está <b>{{ nivel.frase }}</b>. A conta usa os gatilhos e o crescimento da economia. O resto ainda não passou no teste para entrar. <a href="{{ link_nota }}">Como a conta funciona</a>.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="t-fontes">
+    <h2 id="t-fontes">De onde vêm esses números</h2>
+    <ul class="topicos">
+      <li>Gatilhos e fragilidades: as recessões de 166 países, ano a ano.</li>
+      <li>O que faz o juro subir: 44 países a cada trimestre, desde os anos 1990, e o Brasil mês a mês, desde 2002.</li>
+      <li>Mostram o que veio antes, não provam a causa. O Brasil teve sete ciclos de alta da Selic desde 2002. Com tão poucos casos, a margem de erro é grande.</li>
+      <li>Detalhes, testes e limites na <a href="/metodologia/#o-que-causa-recessao">metodologia</a>.</li>
+    </ul>
+  </section>
+</main>
+{% endblock %}
