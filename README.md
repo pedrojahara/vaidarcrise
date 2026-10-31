@@ -1,8 +1,8 @@
 # Vai dar crise?
 
-Se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal, em cinco níveis, com um resumo por fator e um post por dia sobre as notícias da véspera. No ar em **[vaidarcrise.com.br](https://vaidarcrise.com.br)**.
+Se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal, em cinco níveis, com uma página fator por fator e um post por dia sobre as notícias da véspera. No ar em **[vaidarcrise.com.br](https://vaidarcrise.com.br)**.
 
-A metodologia está em [METODOLOGIA.md](METODOLOGIA.md), as regras em [config/modelo.json](config/modelo.json) e o que foi estimado com os dados em [config/calibracao.json](config/calibracao.json). Cada atualização grava um registro imutável em [`runs/`](runs/) com insumos, hash das regras e do prompt e a resposta do modelo de linguagem.
+A metodologia está em [METODOLOGIA.md](METODOLOGIA.md), as regras em [config/modelo.json](config/modelo.json) e o que foi estimado com os dados em [config/calibracao.json](config/calibracao.json). Cada atualização grava um registro imutável em [`runs/`](runs/) com insumos, hash das regras e do prompt e a resposta do modelo de linguagem. Para quem os textos são escritos (leitor, tom, palavras, números e a lista que todo texto passa) está em [PERSONA.md](PERSONA.md); [CLAUDE.md](CLAUDE.md) manda todo texto novo passar por ele.
 
 ## Como funciona
 

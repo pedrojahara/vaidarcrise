@@ -45,12 +45,26 @@ def num(x: float, d: int = 1) -> str:
     return ("−" if x < 0 and round(abs(x), d) != 0 else "") + s
 
 
-def sinal(x: float, d: int = 1) -> str:
-    return num(0, d) if round(x, d) == 0 else ("+" if x > 0 else "−") + num(abs(x), d)
+def enxuto(x: float, d: int = 1) -> str:
+    """Sem zeros que não dizem nada: 14,00 vira 14 e 29,0 vira 29; 13,75 fica."""
+    s = num(x, d)
+    return s.split(",")[0] if "," in s and set(s.split(",")[1]) == {"0"} else s
 
 
-def mes_ano(m: str) -> str:
-    return f"{MESES[int(m[5:7]) - 1][:3]}/{m[2:4]}"
+def pontos(x: float) -> str:
+    """'0,6 ponto', '5,1 pontos': singular abaixo de 2."""
+    return f"{num(abs(x))} ponto{'s' if round(abs(x), 1) >= 2 else ''}"
+
+
+def faixa(lo: float, hi: float) -> str:
+    """A faixa normal sem sinal de menos: 'de queda de 0,4% a alta de 4,1%' ou 'de 0,4% a 4,1%'."""
+    if lo < 0:
+        return f"de queda de {num(abs(lo))}% a alta de {num(hi)}%" if hi > 0 else f"de queda de {num(abs(lo))}% a {num(abs(hi))}%"
+    return f"de {num(lo)}% a {num(hi)}%"
+
+
+def alta_queda(x: float) -> str:
+    return f"queda de {enxuto(abs(x))}%" if round(x, 1) < 0 else f"alta de {enxuto(x)}%"
 
 
 def mes_extenso(m: str) -> str:
@@ -73,7 +87,7 @@ def _historia(hist: dict, chave: str, snap_serie: list[dict] | None = None, por_
 
 
 def desde(serie: dict[str, float], mes: str, valor: float, maior: bool) -> str | None:
-    """'o maior desde mar/16': o último mês antes de `mes` com valor pelo menos tão extremo.
+    """'o maior desde março de 2016': o último mês antes de `mes` com valor pelo menos tão extremo.
 
     Devolve None quando o valor não é o mais extremo de pelo menos 12 meses."""
     anteriores = [(m, v) for m, v in serie.items() if m < mes]
@@ -82,12 +96,14 @@ def desde(serie: dict[str, float], mes: str, valor: float, maior: bool) -> str |
     for m, v in reversed(anteriores):
         if (v >= valor if maior else v <= valor):
             meses = (int(mes[:4]) - int(m[:4])) * 12 + int(mes[5:7]) - int(m[5:7])
-            return f"desde {mes_ano(m)}" if meses >= 12 else None
-    return f"da série, que começa em {anteriores[0][0][:4]}"
+            return f"desde {mes_extenso(m)}" if meses >= 12 else None
+    return f"desde o início da série, em {anteriores[0][0][:4]}"
 
 
 def fatos_de_dados(res: dict, snap: dict, mensal: dict | None = None, hist: dict | None = None) -> dict[str, list[dict]]:
-    """Um ou dois fatos de dados por fator, com o contexto da história. Cada fato: {texto, fonte}."""
+    """Um ou dois fatos de dados por fator, com o contexto da história. Cada fato: {texto, fonte}.
+
+    Os textos seguem PERSONA.md: queda no verbo, uma comparação por frase, sem sigla solta."""
     hist = hist if hist is not None else _ler(HIST, {"series": {}})
     mensal = mensal or {}
     ind = {x["id"]: x for x in res["indicadores"]}
@@ -103,31 +119,35 @@ def fatos_de_dados(res: dict, snap: dict, mensal: dict | None = None, hist: dict
     if x:
         m = x["ref"]
         ini = _mais_meses(m, -2)
-        out["atividade"].append({"texto": f"Crescimento de {sinal(x['valor'])}% em 12 meses (IBC-Br de {MESES[int(ini[5:7]) - 1][:3]}. a "
-                                          f"{MESES[int(m[5:7]) - 1][:3]}. contra um ano antes); o normal desde 2004 vai de "
-                                          f"{sinal(x['faixa_normal'][0])}% a {sinal(x['faixa_normal'][1])}%.", "fonte": "BC"})
+        v = x["valor"]
+        verbo = "ficou parada" if round(v, 1) == 0 else f"cresceu {num(v)}%" if v > 0 else f"encolheu {num(abs(v))}%"
+        out["atividade"].append({"texto": f"A economia {verbo} em um ano (prévia do PIB, de {MESES[int(ini[5:7]) - 1]} a "
+                                          f"{MESES[int(m[5:7]) - 1]}). O normal desde 2004 vai "
+                                          f"{faixa(*x['faixa_normal'])}.", "fonte": "BC"})
     x = ent.get("inflacao")
     if x:
         m = x["ref"]
-        out["juro"].append({"texto": f"IPCA de {num(x['nivel'], 2)}% em 12 meses até {MESES[int(m[5:7]) - 1]}, "
-                                     f"{num(abs(x['valor']), 2)} ponto {'abaixo' if x['valor'] < 0 else 'acima'} de um ano antes "
-                                     f"({num(x['antes'], 2)}%).", "fonte": "IBGE"})
+        ritmo = ("no mesmo ritmo" if round(x["valor"], 1) == 0 else "mais devagar" if x["valor"] < 0 else "mais rápido")
+        out["juro"].append({"texto": f"Os preços subiram {num(x['nivel'])}% em um ano até {MESES[int(m[5:7]) - 1]} (IPCA). "
+                                     f"Um ano antes, a alta era de {num(x['antes'])}%: os preços sobem {ritmo}.", "fonte": "IBGE"})
 
     x = ind.get("ibcbr")
     if x and x.get("valor") is not None:
         m = x["ref"]
-        txt = f"IBC-Br {sinal(x['valor'])}% no trimestre até {MESES[int(m[5:7]) - 1]}, contra os 3 meses anteriores"
+        v = x["valor"]
+        verbo = "ficou parada" if round(v, 1) == 0 else f"cresceu {num(v)}%" if v > 0 else f"caiu {num(abs(v))}%"
+        txt = f"A prévia do PIB {verbo} no trimestre até {MESES[int(m[5:7]) - 1]}, contra os 3 meses anteriores"
         if x["valor"] < 0:
             # A série mensal da calibração é indexada pelo mês da conta (2 meses depois do dado).
             h = {_mais_meses(k, -2): v for k, v in hist_ind("ibcbr").items()}
             ctx = desde(h, m, x["valor"], maior=False)
             if ctx:
-                txt += f", a maior queda {ctx}"
+                txt += f". É a maior queda {ctx}"
         out["atividade"].append({"texto": txt + ".", "fonte": "BC"})
     x = ind.get("focus_pib")
     if x and x.get("valor") is not None:
         ano = int(x["ref"][:4])
-        txt = f"Focus espera PIB de {num(x['ano'])}% em {ano} e {num(x['ano_seguinte'])}% em {ano + 1}"
+        txt = f"Os bancos (Focus) esperam {alta_queda(x['ano'])} do PIB em {ano} e {alta_queda(x['ano_seguinte'])} em {ano + 1}"
         antes = {f["data"][:7]: f for f in hist.get("series", {}).get("focus_pib", [])}.get(_mais_meses(x["ref"][:7], -3))
         # Com a comparação de 3 meses, o Focus aparece no quadro de quem projeta (focus_outros), não aqui.
         if not antes:
@@ -135,7 +155,8 @@ def fatos_de_dados(res: dict, snap: dict, mensal: dict | None = None, hist: dict
 
     x = ind.get("juro_real")
     if x and x.get("valor") is not None:
-        txt = f"Juro real em {num(x['valor'])}% ao ano: Selic de {num(x['selic'], 2)}% menos a inflação esperada de {num(x['inflacao_esperada'])}%"
+        txt = (f"Descontada a inflação esperada ({num(x['inflacao_esperada'])}%), a Selic de {enxuto(x['selic'], 2)}% "
+               f"rende {num(x['valor'])}% ao ano")
         h = dict(hist_ind("juro_real"))
         mes = x["ref"][:7]
         h.pop(mes, None)
@@ -143,7 +164,7 @@ def fatos_de_dados(res: dict, snap: dict, mensal: dict | None = None, hist: dict
         if hi is not None and x["valor"] > hi:
             ctx = desde(h, mes, x["valor"], maior=True)
             if ctx:
-                txt += f", o maior {ctx}"
+                txt += f". É o maior {ctx}"
         out["juro"].append({"texto": txt + ".", "fonte": "BC e Focus"})
         selic = ser.get("selic_meta", {}).get("dados", [])
         if selic:
@@ -151,30 +172,31 @@ def fatos_de_dados(res: dict, snap: dict, mensal: dict | None = None, hist: dict
             mudou = next((s for s in reversed(selic) if s["valor"] != ult), None)
             if mudou:
                 ini = next(s for s in selic if s["data"] > mudou["data"])
-                txt = f"Selic em {num(ult, 2)}% desde {dia_mes(ini['data'])}/{ini['data'][2:4]}; antes, {num(mudou['valor'], 2)}%"
+                quando = dia_mes(ini["data"]) + ("" if ini["data"][:4] == selic[-1]["data"][:4] else f"/{ini['data'][:4]}")
+                txt = f"Selic em {enxuto(ult, 2)}% desde {quando}. Antes, era {enxuto(mudou['valor'], 2)}%"
                 pico = max(s["valor"] for s in selic if s["data"] >= _mais_meses(selic[-1]["data"][:7], -12))
                 if pico > ult:
-                    txt += f". Em 12 meses, chegou a {num(pico, 2)}%"
+                    txt += f". Nos últimos 12 meses, chegou a {enxuto(pico, 2)}%"
                 out["juro"].append({"texto": txt + ".", "fonte": "BC"})
 
     x = ind.get("comprometimento")
     if x and x.get("valor") is not None:
         h = _historia(hist, "comprometimento_renda", ser.get("comprometimento_renda", {}).get("dados"))
         mes = x["ref"][:7]
-        txt = f"{num(x['nivel'])}% da renda das famílias vai para dívidas ({mes_ano(mes)})"
+        txt = f"{enxuto(x['nivel'])}% da renda das famílias vai para parcelas e juros ({MESES[int(mes[5:7]) - 1]})"
         ctx = desde({k: v for k, v in h.items() if k != mes}, mes, x["nivel"], maior=True)
         if ctx:
-            txt += f", o maior nível {ctx}"
+            txt += f", o maior {ctx}"
         ant = h.get(_mais_meses(mes, -12))
         if ant is not None:
-            txt += f"; eram {num(ant)}% um ano antes"
+            txt += f". Um ano antes, eram {enxuto(ant)}%"
         out["credito"].append({"texto": txt + ".", "fonte": "BC"})
 
     x = ind.get("tesouro")
     if x and x.get("valor") is not None:
         venc = (x.get("vencimento") or "")[:4]
-        txt = (f"Tesouro IPCA+ {venc} a {num(x['nivel'], 2)}% ao ano em {dia_mes(x['ref'])}, "
-               f"{num(abs(x['valor']), 2)} ponto {'acima' if x['valor'] >= 0 else 'abaixo'} da mediana de 3 anos")
+        txt = (f"O governo paga {num(x['nivel'])}% ao ano acima da inflação para pegar dinheiro até {venc} ({dia_mes(x['ref'])}). "
+               f"É {pontos(x['valor'])} {'acima' if x['valor'] >= 0 else 'abaixo'} do normal dos últimos 3 anos")
         h = {}
         for p in hist.get("series", {}).get("juro_real_longo", []):
             h[p["data"][:7]] = max(h.get(p["data"][:7], -99), p["valor"])
@@ -182,17 +204,21 @@ def fatos_de_dados(res: dict, snap: dict, mensal: dict | None = None, hist: dict
         h.pop(mes, None)
         ctx = desde(h, mes, x["nivel"], maior=True)
         if ctx:
-            txt += f"; a taxa mais alta {ctx}"
+            txt += f", a taxa mais alta {ctx}"
         out["mercado"].append({"texto": txt + ".", "fonte": "Tesouro Direto"})
     x = ind.get("dolar")
     if x and x.get("valor") is not None:
-        out["mercado"].append({"texto": f"Dólar a R$ {num(x['nivel'], 2)} em {dia_mes(x['ref'])}, {sinal(x['valor'])}% em 3 meses.",
+        v = x["valor"]
+        quanto = "o mesmo preço de 3 meses atrás" if round(v, 1) == 0 else f"{num(abs(v))}% mais {'caro' if v > 0 else 'barato'} que há 3 meses"
+        out["mercado"].append({"texto": f"Dólar a R$ {num(x['nivel'], 2)} em {dia_mes(x['ref'])}, {quanto}.",
                                "fonte": "BC"})
 
     x = ind.get("divida")
     if x and x.get("valor") is not None:
         mes = x["ref"][:7]
-        txt = f"Dívida bruta em {num(x['nivel'])}% do PIB ({mes_ano(mes)}), {sinal(x['valor'])} pontos em 12 meses"
+        v = x["valor"]
+        txt = (f"Dívida do governo em {num(x['nivel'])}% do PIB ({MESES[int(mes[5:7]) - 1]}). "
+               + ("Igual a um ano antes" if round(v, 1) == 0 else f"{'Subiu' if v > 0 else 'Caiu'} {pontos(v)} em um ano"))
         h = {_mais_meses(k, -2): v for k, v in hist_ind("divida").items()}
         h.pop(mes, None)
         if x["valor"] > 0:
@@ -204,10 +230,14 @@ def fatos_de_dados(res: dict, snap: dict, mensal: dict | None = None, hist: dict
     if len(prim) >= 13:
         a, b = prim[-1], next((p for p in reversed(prim) if p["data"][:7] == _mais_meses(prim[-1]["data"][:7], -12)), None)
         if b:
-            def lado(v: float) -> str:
-                return f"déficit de {num(abs(v))}%" if v > 0 else f"superávit de {num(abs(v))}%"
-            out["contas"].append({"texto": f"Setor público (União, estados e municípios): {lado(a['valor'])} do PIB em 12 meses até "
-                                           f"{mes_ano(a['data'][:7])}, contra {lado(b['valor'])} um ano antes.", "fonte": "BC"})
+            # + é déficit: o governo gasta mais do que arrecada, sem contar juros.
+            def lado(v: float, passado: bool) -> str:
+                g, r = ("gastavam", "arrecadavam") if passado else ("gastaram", "arrecadaram")
+                return f"{g} {num(abs(v))}% do PIB a mais do que {r}" if v > 0 else f"{r} {num(abs(v))}% do PIB a mais do que {g}"
+            antes = (f"Um ano antes, eram {num(abs(b['valor']))}%" if (a["valor"] > 0) == (b["valor"] > 0)
+                     else f"Um ano antes, {lado(b['valor'], True)}")
+            out["contas"].append({"texto": f"União, estados e municípios {lado(a['valor'], False)} nos 12 meses até "
+                                           f"{MESES[int(a['data'][5:7]) - 1]}, sem contar juros. {antes}.", "fonte": "BC"})
 
     x = ind.get("sahm")
     if x and x.get("valor") is not None:
@@ -216,16 +246,19 @@ def fatos_de_dados(res: dict, snap: dict, mensal: dict | None = None, hist: dict
         mn_m = min((k for k in h if k < mes), key=lambda k: (h[k], k), default=None)
         txt = f"Desemprego em {num(x['nivel'])}% no trimestre até {MESES[int(mes[5:7]) - 1]}"
         if mn_m:
-            txt += f"; a mínima da série, que começa em 2012, foi {num(h[mn_m])}% ({mes_ano(mn_m)})"
+            txt += f". O menor desde 2012 foi {num(h[mn_m])}%, em {mes_extenso(mn_m)}"
         out["emprego"].append({"texto": txt + ".", "fonte": "IBGE"})
-        out["emprego"].append({"texto": f"Regra de Sahm em {sinal(x['valor'])} ponto: o desemprego médio de 3 meses "
-                                        "contra a mínima de 12 meses.", "fonte": "IBGE"})
+        v = x["valor"]
+        quanto = "igual ao" if round(v, 1) == 0 else f"{pontos(v)} {'acima' if v > 0 else 'abaixo'} do"
+        out["emprego"].append({"texto": f"O desemprego médio de 3 meses está {quanto} menor do último ano.", "fonte": "IBGE"})
 
     x = ind.get("commodities")
     if x and x.get("valor") is not None:
         mes = x["ref"][:7]
-        out["externo"].append({"texto": f"Preço das commodities {sinal(x['valor'])}% em 6 meses até {MESES[int(mes[5:7]) - 1]} "
-                                        f"(índice do FMI).", "fonte": "FMI"})
+        v = x["valor"]
+        quanto = "ficaram com o mesmo preço" if round(v, 1) == 0 else f"ficaram {num(abs(v))}% mais {'caros' if v > 0 else 'baratos'}"
+        out["externo"].append({"texto": f"Soja, minério, petróleo e outros produtos básicos {quanto} em 6 meses até "
+                                        f"{MESES[int(mes[5:7]) - 1]} (FMI).", "fonte": "FMI"})
     return out
 
 
@@ -258,10 +291,10 @@ def focus_outros(res: dict, snap: dict, dossie: dict, hist: dict | None = None) 
             v0 = I.focus_pib(antes["ano"], antes["ano_seguinte"], antes["dia"])
             d = x["valor"] - v0
             lado = "piora" if d <= -0.2 else "melhora" if d >= 0.2 else "estavel"
-            verbo = {"piora": "cortou", "melhora": "subiu", "estavel": "manteve perto de"}[lado]
+            verbo = {"piora": "reduziram", "melhora": "aumentaram", "estavel": "mantiveram"}[lado]
             ano = int(x["ref"][:4])
-            txt = (f"Focus {verbo} a projeção de PIB em 3 meses: {num(x['ano'])}% em {ano} e {num(x['ano_seguinte'])}% em {ano + 1}"
-                   f" (eram {num(antes['ano'])}% e {num(antes['ano_seguinte'])}%).")
+            txt = (f"Os bancos (Focus) {verbo} a previsão do PIB: {enxuto(x['ano'])}% em {ano} e {enxuto(x['ano_seguinte'])}% em {ano + 1}."
+                   f" Há 3 meses, eram {enxuto(antes['ano'])}% e {enxuto(antes['ano_seguinte'])}%.")
             out["atividade"] = {"tipo": posicao(lado, "atividade"), "texto": txt, "fonte": {"veiculo": f"Focus {dia_mes(x['ref'])}", "url": "https://www.bcb.gov.br/publicacoes/focus"}}
     sel = focus.get("Selic") or []
     jr = ind.get("juro_real")
@@ -272,8 +305,9 @@ def focus_outros(res: dict, snap: dict, dossie: dict, hist: dict | None = None) 
         if str(ano) in por_ano and str(ano + 1) in por_ano:
             d = por_ano[str(ano + 1)] - jr["selic"]
             lado = "melhora" if d <= -1.0 else "piora" if d >= 0.5 else "estavel"
-            txt = (f"Focus espera Selic de {num(por_ano[str(ano)], 2)}% no fim de {ano} e {num(por_ano[str(ano + 1)], 2)}% no fim de {ano + 1}"
-                   + (", ou seja, juro em queda." if lado == "melhora" else "."))
+            txt = (f"Os bancos (Focus) esperam a Selic em {enxuto(por_ano[str(ano)], 2)}% no fim de {ano} e em "
+                   f"{enxuto(por_ano[str(ano + 1)], 2)}% no fim de {ano + 1}"
+                   + {"melhora": ": juro caindo.", "piora": ": juro subindo.", "estavel": "."}[lado])
             out["juro"] = {"tipo": posicao(lado, "juro"), "texto": txt, "fonte": {"veiculo": f"Focus {dia_mes(data)}", "url": "https://www.bcb.gov.br/publicacoes/focus"}}
     cam = focus.get("Câmbio") or []
     dol = ind.get("dolar")
@@ -285,7 +319,7 @@ def focus_outros(res: dict, snap: dict, dossie: dict, hist: dict | None = None) 
             alvo = por_ano[str(ano)]
             rel = alvo / dol["nivel"] - 1
             lado = "melhora" if rel <= -0.03 else "piora" if rel >= 0.03 else "estavel"
-            txt = f"Focus espera dólar a R$ {num(alvo, 2)} no fim de {ano}, contra R$ {num(dol['nivel'], 2)} hoje."
+            txt = f"Os bancos (Focus) esperam o dólar a R$ {num(alvo, 2)} no fim de {ano}. Hoje está em R$ {num(dol['nivel'], 2)}."
             out["mercado"] = {"tipo": posicao(lado, "mercado"), "texto": txt, "fonte": {"veiculo": f"Focus {dia_mes(data)}", "url": "https://www.bcb.gov.br/publicacoes/focus"}}
     return out
 

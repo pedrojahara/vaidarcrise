@@ -146,8 +146,8 @@ a:hover{text-decoration-thickness:2px}
 <body>
 <header class="cab"><div class="in"><div class="faixa">
   <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
-  <p class="linha-fina">Um palpite com conta sobre a próxima recessão brasileira.</p>
-  <nav aria-label="Seções"><a href="/" aria-current="page">Atualizações</a><a href="/resumo/">Resumo</a><a href="/causas/">O que causa recessão</a><a href="/nota/">Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
+  <p class="linha-fina">O risco de recessão no Brasil, medido com dados todo dia.</p>
+  <nav aria-label="Seções"><a href="/" aria-current="page">Hoje</a><a href="/resumo/">Fator por fator</a><a href="/causas/">O que causa recessão</a><a href="/nota/">Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
 </div></div></header>
 
 <div class="in blog">
@@ -160,15 +160,15 @@ a:hover{text-decoration-thickness:2px}
   <ol class="escala" aria-label="Escala de cinco níveis de risco"><li><span>Muito abaixo</span></li><li><span>Abaixo</span></li><li class="aqui" aria-current="true"><span>Normal</span></li><li><span>Acima</span></li><li><span>Muito acima</span></li></ol>
   
   <ul class="cenarios" aria-label="PIB nos próximos 12 meses">
-    <li class="cab-cen">PIB nos próximos 12 meses</li>
-    <li class="ref"><span>Mais provável, segundo o Focus</span><span>+1,4%</span></li>
-    <li class="pior"><span>Cenário ruim: 1 chance em 10 de ser pior</span><b>−1,8%</b></li>
-    <li class="ref"><span>O mesmo cenário em tempos normais</span><span>−1,9%</span></li>
+    <li class="cab-cen">O PIB nos próximos 12 meses</li>
+    <li class="ref"><span>Mais provável, para os bancos (Focus)</span><span>cresce 1,4%</span></li>
+    <li class="pior"><span>Num ano ruim (1 chance em 10)</span><b>cai 1,8%</b></li>
+    <li class="ref"><span>Num ano ruim, em tempos normais</span><span>cai 1,9%</span></li>
   </ul>
   
   
   
-  <p class="tend-noticias"><b class="igual" aria-hidden="true">→</b>  <a href="/resumo/">Ver o resumo</a></p>
+  <p class="tend-noticias"><b class="igual" aria-hidden="true">→</b>  <a href="/resumo/">Ver fator por fator</a></p>
   <p class="atual">Atualização de 31/10, às 06h30</p>
   
   
@@ -201,23 +201,23 @@ a:hover{text-decoration-thickness:2px}
   <div class="bloco">
     <h3>Datas importantes</h3>
     <ul class="datas">
-      <li><time datetime="2026-11-04">4/11</time><span>Copom decide a Selic</span></li><li><time datetime="2026-11-05">5/11</time><span>Produção industrial de setembro (IBGE)</span></li><li><time datetime="2026-11-12">12/11</time><span>Inflação de outubro, IPCA (IBGE)</span></li><li><time datetime="2026-11-13">13/11</time><span>Vendas do varejo de setembro (IBGE)</span></li><li><time datetime="2026-11-26">26/11</time><span>Prévia da inflação de novembro, IPCA-15 (IBGE)</span></li><li><time datetime="2026-11-27">27/11</time><span>Desemprego até outubro (IBGE)</span></li><li class="chave"><time datetime="2026-12-02">2/12</time><span>PIB do 3º trimestre (IBGE). É o dado que responde à pergunta do site.</span></li><li><time datetime="2026-12-03">3/12</time><span>Produção industrial de outubro (IBGE)</span></li><li><time datetime="2026-12-08">8/12</time><span>Vendas do varejo de outubro (IBGE)</span></li><li><time datetime="2026-12-09">9/12</time><span>Copom e Fed decidem os juros</span></li>
+      <li><time datetime="2026-11-04">4/11</time><span>Banco Central decide o juro (Copom)</span></li><li><time datetime="2026-11-05">5/11</time><span>Produção industrial de setembro (IBGE)</span></li><li><time datetime="2026-11-12">12/11</time><span>Inflação de outubro, IPCA (IBGE)</span></li><li><time datetime="2026-11-13">13/11</time><span>Vendas do varejo de setembro (IBGE)</span></li><li><time datetime="2026-11-26">26/11</time><span>Prévia da inflação de novembro, IPCA-15 (IBGE)</span></li><li><time datetime="2026-11-27">27/11</time><span>Desemprego até outubro (IBGE)</span></li><li class="chave"><time datetime="2026-12-02">2/12</time><span>PIB do 3º trimestre (IBGE). É o dado que responde à pergunta do site.</span></li><li><time datetime="2026-12-03">3/12</time><span>Produção industrial de outubro (IBGE)</span></li><li><time datetime="2026-12-08">8/12</time><span>Vendas do varejo de outubro (IBGE)</span></li><li><time datetime="2026-12-09">9/12</time><span>Banco Central e Fed (EUA) decidem o juro</span></li>
     </ul>
     <p class="peq fontes-datas">Fontes: calendário do <a href="https://servicodados.ibge.gov.br/api/v3/calendario/">IBGE</a>, Banco Central (Copom) e Fed.</p>
   </div>
   
   <div class="bloco">
     <h3>Sobre</h3>
-    <p>Os números vêm do Banco Central (SGS e Focus), do IBGE (PIB e PNAD Contínua), do Tesouro Direto, do FMI e da OCDE (44 países).</p>
-    <p>As notícias vêm de 8 jornais: Folha, Valor, Estadão, g1, InfoMoney, Poder360, Agência Brasil e Gazeta do Povo. Às 06h30, um modelo de linguagem lê as manchetes do dia anterior e escreve o post do dia.</p>
+    <p>Os números vêm do Banco Central, do IBGE, do Tesouro, do FMI e da OCDE, que reúne dados de 44 países.</p>
+    <p>As notícias vêm de 8 jornais: Folha, Valor, Estadão, g1, InfoMoney, Poder360, Agência Brasil e Gazeta do Povo. Às 06h30, um programa de inteligência artificial lê as manchetes da véspera e escreve o post do dia.</p>
   </div>
 </aside>
 </div>
 
 
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mostra se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal. O nível sai do cenário ruim do PIB, estimado com dados de 44 países e comparado ao Brasil desde 2004. As notícias mostram a tendência e não mexem no nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
-  <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Abra uma issue</a></p>
+  <p>O Vai dar crise? diz se o risco de recessão no Brasil nos próximos 12 meses está acima ou abaixo do normal. Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos. A conta usa dados de 44 países e compara com o Brasil desde 2004. As notícias mostram para onde cada parte da economia vai, mas não mudam o nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
+  <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Avise aqui</a></p>
 </div></footer>
 </body>
 </html>

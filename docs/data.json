@@ -47,7 +47,7 @@
  "fatores": [
   {
    "id": "atividade",
-   "nome": "Atividade",
+   "nome": "Ritmo da economia",
    "na_conta": true,
    "efeito_no_cenario_ruim_pontos": 0.0027,
    "situacao": "Pior que o normal",
@@ -63,7 +63,7 @@
   },
   {
    "id": "credito",
-   "nome": "Crédito e famílias",
+   "nome": "Dívidas das famílias",
    "na_conta": false,
    "efeito_no_cenario_ruim_pontos": null,
    "situacao": "Pior que o normal",
@@ -71,7 +71,7 @@
   },
   {
    "id": "mercado",
-   "nome": "Mercado financeiro",
+   "nome": "Dólar e juro longo",
    "na_conta": false,
    "efeito_no_cenario_ruim_pontos": null,
    "situacao": "Pior que o normal",
@@ -79,7 +79,7 @@
   },
   {
    "id": "contas",
-   "nome": "Contas públicas",
+   "nome": "Contas do governo",
    "na_conta": false,
    "efeito_no_cenario_ruim_pontos": null,
    "situacao": "Pior que o normal",
@@ -87,7 +87,7 @@
   },
   {
    "id": "externo",
-   "nome": "Cenário externo",
+   "nome": "Economia lá fora",
    "na_conta": false,
    "efeito_no_cenario_ruim_pontos": null,
    "situacao": "Normal",

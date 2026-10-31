@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block titulo %}Resumo de {{ data_titulo }}: risco {{ nivel.frase }} | Vai dar crise?{% endblock %}
+{% block titulo %}Fator por fator, {{ data_titulo }}: risco {{ nivel.frase }} | Vai dar crise?{% endblock %}
 {% block descricao %}O risco de recessão no Brasil em {{ data_curta(dia) }}, fator a fator: o que entra na conta, o dado de hoje contra o normal, a tendência para os próximos 6 meses e o que outras instituições projetam.{% endblock %}
 {% block estilo %}
 .resumo{padding-top:28px;padding-bottom:28px;font-family:var(--sistema)}
@@ -90,7 +90,7 @@
   <div class="resumo-topo">
     {% with grande = True %}{% include "_nota.html" %}{% endwith %}
     <div>
-      <h1>Resumo de {{ data_titulo }}</h1>
+      <h1>Fator por fator, {{ data_titulo }}</h1>
       <ul class="pontos">
         {% for p in pontos %}<li><b>{{ p.rot }}</b><span{% if p.cls %} class="{{ p.cls }}"{% endif %}>{{ p.texto }}</span></li>{% endfor %}
       </ul>
@@ -98,8 +98,8 @@
     </div>
   </div>
 
-  <h2 class="secao-tit">Os fatores, primeiro os que entram na conta</h2>
-  <div class="visao-cab" aria-hidden="true"><span>Fator e valor de hoje</span><span>Situação</span><span>Efeito no cenário ruim</span><span>Tendência em 6 meses</span></div>
+  <h2 class="secao-tit">Sete partes da economia. As duas primeiras entram na conta do nível</h2>
+  <div class="visao-cab" aria-hidden="true"><span>Parte da economia, hoje</span><span>Contra o normal</span><span>Peso no risco</span><span>Daqui a 6 meses</span></div>
   <ul class="visao">
     {% for f in fatores %}<li>
       <a class="v-nome" href="#{{ f.id }}">{{ f.nome }}<span>{{ f.hoje }}</span></a>
@@ -129,13 +129,13 @@
         </figure>
         {% else %}<p class="sem-dado">Sem dado nesta atualização.</p>{% endfor %}
         <dl class="ficha">
-          {% if f.na_conta %}<div><dt>Efeito no cenário ruim</dt><dd>{{ barra(f) }}</dd></div>{% endif %}
+          {% if f.na_conta %}<div><dt>Peso no ano ruim</dt><dd>{{ barra(f) }}</dd></div>{% endif %}
           <div class="larga"><dt>Na conta do nível</dt><dd>{{ f.conta }}</dd></div>
-          {% if f.como %}<div class="larga"><dt>Como afeta</dt><dd>{{ f.como }}</dd></div>{% endif %}
+          {% if f.como %}<div class="larga"><dt>Por que importa</dt><dd>{{ f.como }}</dd></div>{% endif %}
         </dl>
       </div>
       <div class="leitura-f">
-        <h3>Por quê</h3>
+        <h3>Por que essa previsão</h3>
         {% if f.porque %}<ul class="porque">{% for x in f.porque %}<li>{{ x.texto }}{% if x.url %} <span class="f"><a href="{{ x.url }}" rel="nofollow noopener">{{ x.fonte }}</a></span>{% elif x.fonte %} <span class="f">{{ x.fonte }}</span>{% endif %}</li>{% endfor %}</ul>{% else %}<p class="sem-dado">Sem fato novo.</p>{% endif %}
         {% if f.outros.texto %}<p class="outros {{ f.outros.cls }}"><b>{{ f.outros.rot }}:</b> {{ f.outros.texto }}{{ fonte(f.outros.fonte) }}</p>{% endif %}
         {% if f.melhora or f.piora %}
@@ -150,12 +150,12 @@
   {% endfor %}
 
   <section class="placar" id="placar" aria-labelledby="t-placar">
-    <h2 class="secao-tit" id="t-placar">Placar das nossas leituras</h2>
+    <h2 class="secao-tit" id="t-placar">Placar: as previsões do site, conferidas</h2>
     <p class="sub">{{ placar.sub }}</p>
     {% if placar.linhas %}
     <div class="tabela">
       <table>
-        <thead><tr><th>Fator</th><th>Leitura</th><th>Feita em</th><th>Conferir em</th><th>Resultado</th></tr></thead>
+        <thead><tr><th>Parte da economia</th><th>Previsão</th><th>Feita em</th><th>Conferir em</th><th>Resultado</th></tr></thead>
         <tbody>
           {% for x in placar.linhas %}<tr><td>{{ x.fator }}</td><td class="{{ x.cls }}">{{ x.leitura }}</td><td>{{ x.data }}</td><td>{{ x.conferir }}</td>{% if x.resultado %}<td>{{ x.resultado }}</td>{% else %}<td class="aguarda">aguardando</td>{% endif %}</tr>{% endfor %}
         </tbody>

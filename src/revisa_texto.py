@@ -20,7 +20,21 @@ MOLDES = [
     (re.compile(r"!"), "ponto de exclamação"),
     (re.compile(r"\b(metodologia|log-?odds|Shapley|taxa-base|pesam? pouco|composto|regressão|calibra\w*|"
                 r"limite de alerta|nova regra|versão do (site|modelo))\b", re.I), "explica a conta ao leitor"),
+    # O leitor (PERSONA.md) não estudou economia e tem lado político.
+    (re.compile(r"\b(política monetária|aperto monetário|interanual|dessazonalizad\w*|commodities|pontos?[- ]base|"
+                r"hiato do produto|PIB potencial|quantil|desancorad\w*|curva de juros|estagflação|spread)\b", re.I),
+     "jargão que o leitor não conhece"),
+    (re.compile(r"\b(despenc\w*|explod\w*|explos\w*|derret\w*|colaps\w*|tomb[oa]s?|sangria)\b", re.I), "palavra de alarme"),
+    (re.compile(r"\b(rombo|gastança|farra|herança maldita|austericídio|desgoverno)\b", re.I), "palavra com lado"),
+    (re.compile(r"(^|[\s(])[−-]\d"), "queda com sinal de menos em vez de verbo"),
+    (re.compile(r"\b(cenário ruim|inadimplência|(déficit|superávit) primário|crédito livre)\b", re.I),
+     "palavra que o site trocou (num ano ruim, atraso nas dívidas, gasta mais do que arrecada)"),
 ]
+
+FRASE = re.compile(r"(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9\"“])")
+NUMERO = re.compile(r"\d+(?:,\d+)?\s*(?:%|pontos?\b)|R\$\s*\d")
+# "A inflação recuou" soa como preço caindo; o leitor precisa ler que os preços sobem mais devagar.
+INFLACAO_CAI = re.compile(r"\b(inflação|IPCA)\b[^.]{0,60}\b(recu\w*|ca(i|iu|ía|indo|em|ir)|diminu\w*)\b", re.I)
 
 
 # Afirmações erradas por construção: o post não sabe por que um nome faltou nem tem motivo para dar
@@ -79,8 +93,15 @@ def problemas_post(post: dict) -> list[str]:
         out.append("título em forma de pergunta")
     for i, p in enumerate(post["paragrafos"], 1):
         out += [f"parágrafo {i}: {m}" for m in _moldes(p)]
-        if len(p.split()) > 110:
+        if len(p.split()) > 65:
             out.append(f"parágrafo {i} com {len(p.split())} palavras")
+        longas = [len(f.split()) for f in FRASE.split(p) if len(f.split()) > 25]
+        if longas:
+            out.append(f"parágrafo {i} com frase de {max(longas)} palavras")
+        if len(NUMERO.findall(p)) > 4:
+            out.append(f"parágrafo {i} com {len(NUMERO.findall(p))} números")
+        if any(INFLACAO_CAI.search(f) and "mais devagar" not in f for f in FRASE.split(p)):
+            out.append(f"parágrafo {i}: inflação que 'cai' ou 'recua' sem dizer que os preços sobem mais devagar")
         if re.search(r"\b(eu|nós|nosso|nossa)\b", p, flags=re.IGNORECASE):
             out.append(f"parágrafo {i} em primeira pessoa")
     out += _aberturas(post["paragrafos"], limite=1)

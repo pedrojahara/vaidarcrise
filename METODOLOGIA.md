@@ -18,7 +18,7 @@ O nome do site fala em crise; a métrica é recessão técnica.
 
 Cinco níveis: Muito abaixo, Abaixo, Normal, Acima e Muito acima. O nível sai só de dados.
 
-**A ideia.** Risco de recessão tem duas partes: a chance de a economia encolher e o tamanho da queda. As duas aparecem num número só, o **cenário ruim do PIB**: o crescimento nos 12 meses seguintes que tem só 1 chance em 10 de ser pior. Quanto pior esse cenário, mais alto o risco. É o método do FMI chamado crescimento em risco (*growth-at-risk*; Adrian, Boyarchenko e Giannone, 2019).
+**A ideia.** Risco de recessão tem duas partes: a chance de a economia encolher e o tamanho da queda. As duas aparecem num número só, o **PIB num ano ruim** (no jargão, o cenário ruim, ou quantil 10%): o crescimento nos 12 meses seguintes que tem só 1 chance em 10 de ser pior. Quanto pior esse ano ruim, mais alto o risco. É o método do FMI chamado crescimento em risco (*growth-at-risk*; Adrian, Boyarchenko e Giannone, 2019).
 
 **1. Quatro entradas do Brasil**, cada uma com o que já tinha sido divulgado no dia:
 
@@ -32,19 +32,19 @@ Cinco níveis: Muito abaixo, Abaixo, Normal, Acima e Muito acima. O nível sai s
 **2. A conta, tirada de 44 países.** Uma regressão de quantil (Koenker e Bassett, 1978) do crescimento do PIB nos 4 trimestres seguintes, no quantil 10%, num painel trimestral de 44 países (OCDE e grandes emergentes, Brasil incluído) com dados da OCDE: 4.669 trimestres, de 1995 a 2025. Com 4 recessões no Brasil desde 2002, uma conta só com o Brasil não teria dados para separar sinal de acaso; o painel tem centenas.
 
 ```
-cenário ruim = −0,71 − 0,20 × média de 10 anos + 0,23 × crescimento em 12 meses
+ano ruim = −0,71 − 0,20 × média de 10 anos + 0,23 × crescimento em 12 meses
                − 0,15 × variação da Selic − 0,13 × variação da inflação − 1,31
 ```
 
 - Crescimentos em 100 × log; no site, convertidos para variação %.
-- **Juro subindo e inflação acelerando** pioram o cenário ruim: costumam vir antes de recessões, em países ricos e emergentes.
+- **Juro subindo e inflação acelerando** pioram o ano ruim: costumam vir antes de recessões, em países ricos e emergentes.
 - **Crescer forte hoje** melhora o ano seguinte.
-- **Crescimento médio alto** piora o cenário ruim: vem junto com economias que oscilam mais, como as emergentes.
-- **O ajuste de −1,31** vem do teste fora da amostra (abaixo): sem ele, 15% dos resultados ficaram abaixo do cenário ruim, e não 10%.
+- **Crescimento médio alto** piora o ano ruim: vem junto com economias que oscilam mais, como as emergentes.
+- **O ajuste de −1,31** vem do teste fora da amostra (abaixo): sem ele, 15% dos resultados ficaram abaixo do ano ruim, e não 10%.
 
-**3. O nível.** O cenário ruim de hoje contra o do Brasil em cada mês desde maio de 2004:
+**3. O nível.** O ano ruim de hoje contra o do Brasil em cada mês desde maio de 2004:
 
-| Cenário ruim do PIB em 12 meses | Nível |
+| PIB num ano ruim, em 12 meses | Nível |
 | --- | --- |
 | Entre os 10% piores meses (−3,5% ou pior) | Muito acima |
 | Entre os 10% e os 30% piores (até −2,4%) | Acima |
@@ -52,25 +52,25 @@ cenário ruim = −0,71 − 0,20 × média de 10 anos + 0,23 × crescimento em 1
 | Entre os 30% e os 10% melhores (até −0,6%) | Abaixo |
 | Entre os 10% melhores (melhor que −0,6%) | Muito abaixo |
 
-No mês típico, o cenário ruim é de −1,9%. É a linha "o mesmo cenário em tempos normais" do selo.
+No mês típico, o ano ruim é de −1,9%. É a linha "Num ano ruim, em tempos normais" do selo.
 
 **4. Confirmação.** O nível só muda quando duas atualizações diárias seguidas dão o mesmo nível novo. Uma atualização refeita no mesmo dia não confirma a si mesma.
 
 **Mais provável.** O selo mostra também a mediana do Focus para o PIB dos próximos 12 meses (a do ano corrente e a do seguinte, ponderadas pelos meses que faltam). É o mercado, não a conta do site: no Brasil desde 2004, o Focus errou menos que a mediana do painel.
 
-**Os sete fatores do Resumo.** Atividade e juro e inflação entram na conta pelas entradas acima; o Resumo mostra quanto cada uma mexe no cenário ruim, contra a mediana do Brasil desde 2004. Crédito, mercado financeiro, contas públicas, emprego e cenário externo ficam fora do nível e aparecem com o dado de hoje contra a faixa normal desde 2002 (metade dos meses dentro dela) e com a tendência.
+**Os sete fatores de Fator por fator.** Ritmo da economia e juro e inflação entram na conta pelas entradas acima; a página Fator por fator mostra quanto cada uma mexe no ano ruim, contra a mediana do Brasil desde 2004. Dívidas das famílias, dólar e juro longo, contas do governo, emprego e economia lá fora ficam fora do nível e aparecem com o dado de hoje contra a faixa normal desde 2002 (metade dos meses dentro dela) e com a tendência.
 
-| Indicador do Resumo | Fator | Definição |
+| Indicador de Fator por fator | Fator | Definição |
 | --- | --- | --- |
-| IBC-Br | Atividade | Média dos últimos 3 meses contra a dos 3 anteriores |
-| PIB esperado pelo Focus | Atividade | PIB dos próximos 12 meses, como acima |
+| IBC-Br | Ritmo da economia | Média dos últimos 3 meses contra a dos 3 anteriores |
+| PIB esperado pelo Focus | Ritmo da economia | PIB dos próximos 12 meses, como acima |
 | Juro real | Juro e inflação | Selic meta descontada da inflação esperada em 12 meses (Focus) |
-| Renda comprometida com dívidas | Crédito e famílias | Comprometimento de renda das famílias (BCB 29034) menos a média dos 36 meses anteriores |
-| Juro do Tesouro IPCA+ | Mercado financeiro | Taxa do título IPCA+ com vencimento mais perto de 10 anos menos a sua mediana nos 3 anos anteriores |
-| Dólar | Mercado financeiro | Variação do dólar PTAX (BCB 1) em 3 meses |
-| Dívida pública | Contas públicas | Variação da dívida bruta do governo geral (BCB 13762) em 12 meses, em pontos do PIB |
+| Renda comprometida com dívidas | Dívidas das famílias | Comprometimento de renda das famílias (BCB 29034) menos a média dos 36 meses anteriores |
+| Juro do Tesouro IPCA+ | Dólar e juro longo | Taxa do título IPCA+ com vencimento mais perto de 10 anos menos a sua mediana nos 3 anos anteriores |
+| Dólar | Dólar e juro longo | Variação do dólar PTAX (BCB 1) em 3 meses |
+| Dívida pública | Contas do governo | Variação da dívida bruta do governo geral (BCB 13762) em 12 meses, em pontos do PIB |
 | Regra de Sahm | Emprego | Média de 3 meses da desocupação da PNAD (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores |
-| Preço das commodities | Cenário externo | Variação em 6 meses do índice de commodities do FMI (FRED PALLFNFINDEXM) |
+| Preço das commodities | Economia lá fora | Variação em 6 meses do índice de commodities do FMI (FRED PALLFNFINDEXM) |
 
 ## Por que essas entradas
 
@@ -100,8 +100,8 @@ As entradas foram escolhidas fora da amostra no painel, pelo erro da regressão 
 | --- | --- |
 | Erro da conta contra usar só o crescimento médio do país (painel) | 3% menor |
 | Erro da conta contra usar só o crescimento médio do país (Brasil, 259 meses) | 20% menor |
-| Resultados abaixo do cenário ruim, sem ajuste (painel) | 15% |
-| Resultados abaixo do cenário ruim, com ajuste (Brasil, 259 meses) | 8% |
+| Resultados abaixo do ano ruim, sem ajuste (painel) | 15% |
+| Resultados abaixo do ano ruim, com ajuste (Brasil, 259 meses) | 8% |
 | PIB médio nos 12 meses seguintes, meses em Acima ou Muito acima (Brasil) | +0,8% |
 | PIB médio nos 12 meses seguintes, demais meses (Brasil) | +2,8% |
 | Recessão à frente, meses em Acima ou Muito acima contra os demais (Brasil) | 1,8 vez mais |
@@ -140,15 +140,15 @@ As notícias não mexem no nível. Se cada notícia somasse um pedaço, como os 
 
 - **Fatos de dados:** saem de código, todo dia, comparando o dado de hoje com a série histórica ("o maior desde…").
 - **Fatos de notícia:** no máximo 2 por fator, válidos por 180 dias.
-- **O que outros projetam, em igual destaque:** em atividade, juro e mercado, o Focus, calculado por código; nos demais, a projeção pública mais recente de uma instituição (IFI, por exemplo). Quando a projeção aponta para o lado contrário da nossa tendência, aparece como "Discordam".
+- **O que outros projetam, em igual destaque:** em ritmo da economia, juro e inflação e dólar e juro longo, o Focus, calculado por código; nos demais, a projeção pública mais recente de uma instituição (IFI, por exemplo). Quando a projeção aponta para o lado contrário da tendência do site, aparece como "Analistas veem diferente"; para o mesmo lado, "Analistas concordam".
 - **Quem muda o quê:** o modelo de linguagem só propõe. Fato de notícia novo entra sempre. Troca de tendência só entra com dado divulgado ou decisão tomada, noticiados por pelo menos 2 jornais. Nos fatores com Focus, a projeção não aceita troca pelo modelo.
 - **Os dois lados:** cada fator mostra o que o melhoraria e o que o pioraria. Os textos descrevem mecanismos e números, não intenções, pessoas ou partidos, e nunca dizem o que um governo deveria fazer.
 
-**O placar.** Cada tendência é registrada e conferida 6 meses depois contra uma medida fixa por fator (atividade: IBC-Br; juro: juro real; crédito: renda comprometida; mercado: taxa do Tesouro IPCA+; contas: dívida bruta; emprego: desemprego; externo: índice de commodities).
+**O placar.** Cada tendência é registrada e conferida 6 meses depois contra uma medida fixa por fator (ritmo da economia: IBC-Br; juro e inflação: juro real; dívidas das famílias: renda comprometida; dólar e juro longo: taxa do Tesouro IPCA+; contas do governo: dívida bruta; emprego: desemprego; economia lá fora: índice de commodities).
 
 - "Estável" acerta se a medida andou menos de um quarto do desvio-padrão das variações de 6 meses desde 2002; "piora" e "melhora", se andou mais que isso para o lado dito.
 - Leitura trocada antes do prazo fica registrada como substituída, sem resultado.
-- Para comparar: por acaso, desde 2002, "piora" acertaria 41% das vezes, "estável" 21% e "melhora" 39%, na média dos fatores. Em crédito e contas públicas, "piora" acertaria mais da metade das vezes, porque essas séries subiram na maior parte do período.
+- Para comparar: por acaso, desde 2002, "piora" acertaria 41% das vezes, "estável" 21% e "melhora" 39%, na média dos fatores. Em dívidas das famílias e contas do governo, "piora" acertaria mais da metade das vezes, porque essas séries subiram na maior parte do período.
 
 ## O que causa recessão
 
@@ -179,19 +179,19 @@ A aba [O que causa recessão](https://vaidarcrise.com.br/causas/) resume duas pe
 - O caminho é a dominância fiscal de Blanchard (2004), escrita sobre o Brasil: déficit subindo eleva a inflação esperada, e o Banco Central sobe o juro. O déficit subindo não avisa a recessão direto (0,48): age pelo juro, que já está na conta.
 - Juro americano e commodities, testados como quinta entrada da conta, pioraram o erro fora da amostra em 12 meses: 5,1% e 5,8% no painel; 15,1% e 23,5% no Brasil.
 
-**O Brasil hoje.** Cada linha contra os meses desde 2004. Atenção quando o dado passa da faixa normal (a metade do meio dos meses) para o lado que pressiona. Selic e IPCA usam a faixa da conta; juro real e dívida, a do Resumo. Déficit primário (variação em 12 meses), inflação esperada (variação em 6 meses) e renda comprometida (nível) usam o percentil 75 de `data/historico/series.json`. A inflação esperada também acende Atenção acima do teto da meta (3% mais 1,5 ponto).
+**O Brasil hoje.** Cada linha contra os meses desde 2004. Atenção quando o dado passa da faixa normal (a metade do meio dos meses) para o lado que pressiona. Selic e IPCA usam a faixa da conta; juro real e dívida, a de Fator por fator. Déficit primário (variação em 12 meses), inflação esperada (variação em 6 meses) e renda comprometida (nível) usam o percentil 75 de `data/historico/series.json`. A inflação esperada também acende Atenção acima do teto da meta (3% mais 1,5 ponto).
 
 **Limites.** Um sinal por vez mostra o que vem antes, não o que causa, e dois sinais podem contar a mesma história. Nada disso passou por teste fora da amostra, exceto a quinta entrada. O Brasil teve sete ciclos de alta desde 2002: a margem de erro é grande. No painel, dívida e déficit são anuais e chegam com 1 ano de atraso, o que enfraquece o fiscal ali.
 
 ## O post do dia
 
-Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o nível, o cenário ruim do PIB, o que pesa e o que alivia, para que lado as notícias empurram e as próximas datas. Ele não muda o nível, a pressão nem a tendência. Um verificador em código procura moldes de texto automático, afirmações de chance de recessão e explicações de método, e pede uma reescrita no máximo. Se a escrita falhar, sai a atualização sem texto corrido.
+Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o nível, o PIB num ano ruim, o que pesa e o que ajuda, para que lado as notícias empurram e as próximas datas. O texto segue o guia do leitor ([`PERSONA.md`](https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md)), o mesmo das outras páginas. Ele não muda o nível, a pressão nem a tendência. Um verificador em código procura moldes de texto automático, afirmações de chance de recessão e explicações de método, e pede uma reescrita no máximo. Se a escrita falhar, sai a atualização sem texto corrido.
 
 Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em [`runs/`](https://github.com/pedrojahara/vaidarcrise/tree/main/runs). O que foi publicado fica congelado.
 
 ## Salvaguardas
 
-- **Dado defasado:** se a página passar de 36 horas sem atualização, ela avisa.
+- **Números velhos:** se a página passar de 36 horas sem atualização, ela avisa.
 - **Falha de coleta:** vale o último valor de até 10 dias (dado diário), 101 dias (dado mensal) ou 200 dias (PIB trimestral). Se faltar uma entrada da conta mesmo assim, a atualização não sai, e o site avisa que está defasado.
 - **Falha do modelo de linguagem:** a atualização sai só com dados e sem pressão de notícias.
 - **Texto das notícias:** é tratado como dado, nunca como instrução. Nenhuma notícia muda pesos ou regras.
@@ -207,7 +207,7 @@ Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em 
 
 Erros são listados aqui com data, o que estava errado e o efeito no nível. Nenhum até agora.
 
-Achou um? [Abra uma issue](https://github.com/pedrojahara/vaidarcrise/issues).
+Achou um? [Avise aqui](https://github.com/pedrojahara/vaidarcrise/issues).
 
 ## Fontes
 

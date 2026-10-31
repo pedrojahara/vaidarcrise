@@ -1,0 +1,264 @@
+# Para quem escrevemos
+
+Todo texto do site e do blog (post diário, abas, títulos de evento, nota, imagem de compartilhamento) é escrito para a pessoa descrita aqui. Quando este arquivo mudar, atualize os prompts e o verificador listados em [Onde o guia vale no código](#onde-o-guia-vale-no-código).
+
+## Em uma tela
+
+Escrevemos para um adulto de uns 35 a 45 anos, sem diploma universitário, que acompanha política pelo celular, tem lado (ou desconfia dos dois) e sente a economia no preço do mercado, na fatura do cartão e no emprego. Ele quer saber em 10 segundos: vai dar crise, e o que isso muda para mim?
+
+- **Resposta primeiro.** O nível do risco, em palavras, na primeira frase.
+- **Palavra de conversa.** Nada de economês. Sigla só com tradução.
+- **Um número por ideia**, arredondado e sempre com comparação: contra o normal ou contra um ano atrás.
+- **Risco em frequência:** "1 chance em 10", nunca "quantil 10%".
+- **Mesma régua para os dois lados.** O texto sairia igual com outro governo no poder.
+- **Calma.** Sem alarme e sem consolo.
+
+**Teste de todo texto:** dá para entender lendo só o título e a primeira frase, no celular, em pé no ônibus?
+
+## Quem é
+
+O leitor é o brasileiro típico com um traço a mais: gosta de política. Esse traço pesa mais que a renda ou o estudo, porque ele chega ao site com lado.
+
+> Patrícia, 38 anos, auxiliar administrativa em Contagem (MG). Terminou o ensino médio. A casa vive com uns R$ 5 mil por mês, para três pessoas. Usa a internet só pelo celular. Vê notícia no Instagram e no YouTube e recebe muita coisa no grupo da família no WhatsApp. Discute política, tem candidato e desconfia de jornal. Tem compra parcelada no cartão e um financiamento. Sabe que "o juro subiu", mas não sabe quem decide. Para ela, crise é perder o emprego ou o mercado ficar caro.
+
+| Traço | Dado | Fonte |
+| --- | --- | --- |
+| Idade | Metade dos brasileiros tem menos de 35 anos (2022) | IBGE, Censo |
+| Estudo (25 anos ou mais) | 56% terminaram o ensino médio; 20,5% têm diploma universitário (2024) | IBGE, PNAD Educação |
+| Renda | R$ 2.264 por pessoa da casa, por mês, em média (2025) | IBGE, PNAD |
+| Leitura (15 a 64 anos) | 29% são analfabetos funcionais, 36% param no nível elementar, 10% são proficientes (2024) | Inaf |
+| Dívidas | 82% das famílias têm dívida; 30% têm conta atrasada (jul/2026) | CNC, Peic |
+| Internet | 60% dos usuários entram só pelo celular; 86% nas classes D e E (2024) | Cetic.br, TIC Domicílios |
+| Lado político | 40% se dizem petistas e 34%, bolsonaristas (dez/2025) | Datafolha |
+| O que mais preocupa | Crime (49%), corrupção (40%), saúde (38%) (fev/2026) | Ipsos |
+
+**Ponto cego.** "Brasileiro médio" e "interessado em política" não são a mesma pessoa. Quem acha um site chamado "Vai dar crise?" tende a ter mais estudo que a média. Mesmo assim, escrever para o nível elementar é a escolha certa: texto claro não perde quem sabe mais, e quem sabe mais também prefere texto claro (o guia do GOV.UK cita 80% de preferência, maior entre especialistas). O contrário perde a maioria.
+
+## O que ela sabe de economia
+
+Ela entende economia pelo bolso, não pelo conceito. Sabe que inflação é o custo de vida subindo, mas só 1 em cada 7 adultos acerta uma conta de juro simples.
+
+| Pergunta | Resultado | Fonte |
+| --- | --- | --- |
+| Inflação é o aumento do custo de vida? | 85% sabem | BCB e FGC, 2023 |
+| O que a inflação faz com o poder de compra, num caso prático | 54% acertam | BCB e FGC, 2023 |
+| Conta de juro simples | 14% acertam | BCB e FGC, 2023 |
+| Quem define a taxa de juros no Brasil | 46% não sabem ou não respondem | Quaest (ano não confirmado) |
+| O que é o arcabouço fiscal | 77% não sabem | PoderData |
+| Jovens de 15 anos abaixo do nível básico em educação financeira | 45% no Brasil, 18% na média da OCDE | OCDE, Pisa 2022 |
+
+**Ela conhece a palavra, não o mecanismo.** "Inflação", "juro" e "dólar" são familiares. "Selic", "IPCA" e "PIB" ela reconhece, mas não sabe explicar. "Fiscal", "curva de juros", "IBC-Br" e "Focus" são opacos.
+
+Confusões que o texto tem de prevenir:
+
+- **Inflação caindo não é preço caindo.** De 5,2% para 4,6% = os preços sobem mais devagar.
+- **Desacelerar não é encolher.** A economia pode crescer menos e continuar crescendo.
+- **Endividado não é inadimplente.** 82% das famílias têm dívida; 30% estão com conta atrasada.
+- **Ponto não é por cento.** Selic de 15% para 13,75% caiu 1,25 ponto, não 1,25%.
+- **Recessão não é crise nem desemprego.** O site mede uma coisa: o PIB cair dois trimestres seguidos.
+- **"O mercado" não é uma pessoa nem um partido.** São bancos, fundos e empresas que emprestam e investem.
+
+**Ela sente a economia por quatro portas:** o emprego, o preço do mercado, a parcela e o juro do cartão, e o dólar (gasolina, eletrônico, viagem). Todo número grande precisa de uma ponte para uma dessas portas: juro alto deixa o crédito caro, e com crédito caro a empresa contrata menos.
+
+## Como ela se informa
+
+Ela se informa pelo celular, em rede social e vídeo, desconfia de notícia e foge dela quando cansa. A confiança dos brasileiros nas notícias caiu para 36% em 2026, a menor em 12 anos.
+
+| Hábito | Dado | Fonte |
+| --- | --- | --- |
+| Confia nas notícias em geral | 36% (2026); eram 62% em 2015 | Reuters Institute, 2026 |
+| Confia nas marcas de jornalismo que conhece | De 47% a 62% | Reuters Institute, 2026 |
+| Evita notícia às vezes ou sempre | 47% (2026) | Reuters Institute, 2026 |
+| Rede social contra TV, como fonte semanal | Rede social 9 pontos à frente (2026) | Reuters Institute, 2026 |
+| Acompanha criadores e influenciadores de notícia | 33% (2026) | Reuters Institute, 2026 |
+| Redes mais usadas para notícia | YouTube e Instagram (37% cada) e WhatsApp (36%) (2025) | Reuters Institute, 2025 |
+| Lê jornal impresso | 10% (2025); eram 50% em 2013 | Reuters Institute, 2025 |
+| Lê a página palavra por palavra | 16%; 79% passam o olho (teste de 1997) | Nielsen |
+
+- **O primeiro contato é um print ou um link no WhatsApp.** O título e a imagem de compartilhamento têm de dizer o nível sozinhos, sem o resto da página.
+- **A tela tem uns 7 cm de largura.** Um parágrafo de 3 linhas no computador vira 7 ou 8 no celular.
+- **Ela passa o olho.** A primeira palavra de cada parágrafo e de cada item carrega o assunto.
+- **Confiança se mostra, não se pede.** Cada número leva a fonte (IBGE, Banco Central) a um toque. Marca constante ganha mais confiança que "notícia" em geral.
+- **Notícia ruim em excesso afasta.** Quase metade já evita notícia. O texto termina com o que acompanhar e quando, o que dá controle em vez de medo.
+
+## Como ela lê economia com a política na cabeça
+
+Ela lê economia com lente de torcida, e os dois lados acham que o mesmo texto neutro está contra eles. Por isso não basta ser neutro: a neutralidade tem de ser verificável na própria frase.
+
+- **Quase todo mundo tem lado.** 74% se dizem petistas ou bolsonaristas (Datafolha, dez/2025). Pela Quaest, cerca de um terço se diz independente. Os números mudam com a pergunta; o lado, não.
+- **Efeito da mídia hostil.** Torcedores dos dois lados veem o mesmo texto como enviesado contra si, e o efeito é mais forte em quem acompanha política de perto (Vallone, Ross e Lepper, 1985). É exatamente o nosso leitor.
+- **A divisão chega à imprensa.** No Brasil, esquerda e direita se informam por canais diferentes e julgam a cobertura de forma oposta (Reuters Institute, 2026).
+- **O que ela sente pode não bater com o dado.** Em julho de 2026, 66% disseram que a comida subiu no último mês (Quaest). Dizer "a economia vai bem" a quem sente o contrário perde o leitor. Comece pelo que ela sente e mostre o dado ao lado.
+
+**O que quebra a confiança:** adjetivo ("desastroso", "histórico"), intenção atribuída a alguém, fato escolhido a dedo, número sem fonte, previsão com certeza, alarme.
+
+**O que constrói:** a mesma régua para notícia boa e ruim, fonte a um toque, dizer o que não se sabe, mostrar o placar de acertos e admitir erro.
+
+1. **Teste da troca.** Imagine outro governo no poder e releia. A frase seria a mesma? Se não, reescreva.
+2. **Teste do print.** Se alguém recortar uma frase e mandar num grupo de torcida, ela ainda diz só o que o dado diz?
+
+## Como falar com ela
+
+Fale como alguém que entende de economia explicando no almoço de domingo: calmo, direto, sem se exibir e sem tomar lado.
+
+| É | Não é | Exemplo |
+| --- | --- | --- |
+| Calmo | Alarmista | "O risco subiu para acima do normal", não "O Brasil à beira do abismo" |
+| Direto | Professor | "O juro básico caiu", não "É importante entender que a política monetária..." |
+| Concreto | Abstrato | "Crédito mais caro", não "condições financeiras mais apertadas" |
+| Respeitoso | Condescendente | Explica o termo uma vez, sem "como todo mundo sabe" nem "de forma simples" |
+| Honesto sobre a dúvida | Cheio de ressalva | Uma frase sobre o que não se sabe, não "talvez" em toda frase |
+| Sem lado | Militante | Fato e número, nunca o que o governo deveria fazer |
+
+**Estrutura de todo texto**
+
+1. **A resposta.** O nível do risco e se mudou.
+2. **O porquê.** O que ajuda e o que atrapalha, dois ou três fatores.
+3. **O que muda na vida.** Quando houver ponte clara: emprego, preço, parcela.
+4. **O que acompanhar.** O próximo dado e a data.
+
+**Frase e parágrafo**
+
+- Ordem direta, voz ativa, uma ideia por frase. São as técnicas da Lei 15.263/2025, de linguagem simples.
+- Até 20 palavras por frase; média perto de 12.
+- Até 3 frases ou 50 palavras por parágrafo.
+- Título afirma o fato do dia, com verbo, em até 70 caracteres. Sem pergunta e sem trocadilho.
+- "Você" pode aparecer quando liga o dado à vida do leitor. "Eu" e "nós" não: o site não tem rosto.
+
+**Números**
+
+- Uma comparação por frase (o número de hoje e a régua dele) e no máximo quatro números por parágrafo.
+- Sempre com comparação: contra o normal ou contra um ano atrás. Número sozinho não diz nada a ela.
+- Arredonde: 1,38% vira 1,4%; 5,17% vira 5,2%. Duas casas só na Selic, que é decidida assim.
+- Queda com verbo, não com sinal: "o PIB cai 1,8%", não "−1,8%".
+- Diferença de taxas em pontos, com os dois valores: "subiu 3 pontos, de 10% para 13%".
+- Risco em frequência: "1 chance em 10". Leigos entendem melhor frequência que porcentagem (Gigerenzer e Hoffrage, 1995).
+- Valor grande ganha escala quando der: R$ 30 bilhões é cerca de R$ 140 por brasileiro.
+
+**Visual**
+
+- Celular primeiro: letra de 16 px ou mais, uma coluna.
+- Cor nunca sozinha: sempre com palavra ("acima do normal") e posição na escala, por causa do daltonismo e do print em preto e branco.
+- A escala de 5 graus mostra sempre onde estamos e onde fica o normal.
+- Um gráfico por ideia, com título que conclui ("Juro caiu 1,25 ponto em um ano"). Linha com rótulo na ponta, sem legenda. Nada de dois eixos.
+- Seta de tendência sempre com a palavra ao lado ("tende a piorar").
+
+## Jargões e o que escrever no lugar
+
+O termo técnico pode aparecer só se o leitor vai encontrá-lo em outro lugar (Selic, PIB, IPCA), e sempre traduzido na primeira vez. O resto sai do texto.
+
+| Em vez de | Escreva |
+| --- | --- |
+| Recessão técnica | PIB caindo dois trimestres seguidos |
+| PIB | PIB, tudo o que o país produz |
+| Selic | Selic, o juro básico do país |
+| Copom | o Banco Central (ou "o comitê do BC que decide o juro") |
+| IPCA, IPCA em 12 meses | inflação oficial; quanto os preços subiram em um ano |
+| Inflação desacelera, recua | os preços sobem mais devagar |
+| Deflação | os preços caem |
+| Desaceleração | a economia cresce mais devagar |
+| Contração, retração | a economia encolhe |
+| IBC-Br | a prévia do PIB feita pelo Banco Central |
+| Variação interanual | contra o mesmo mês do ano passado |
+| Dessazonalizado | descontado o efeito da época do ano |
+| Pontos-base | pontos (0,25 ponto, não 25 pontos-base) |
+| Política monetária, aperto monetário | juro; juro alto para segurar os preços |
+| Política fiscal, quadro fiscal | as contas do governo |
+| Déficit primário | o governo gastou mais do que arrecadou, sem contar os juros da dívida |
+| Dívida bruta/PIB | dívida do governo em X% do PIB (na primeira vez, "de tudo o que o país produz em um ano") |
+| Arcabouço fiscal | a regra de gastos do governo |
+| Câmbio, depreciação do real | dólar mais caro |
+| Commodities | produtos como soja, minério e petróleo |
+| Choque externo | problema que vem de fora (guerra, crise nos EUA, China comprando menos) |
+| Curva de juros invertida | juro de curto prazo maior que o de longo prazo: sinal de que o mercado espera economia mais fraca |
+| Expectativas desancoradas | o mercado acha que a inflação vai passar da meta |
+| Boletim Focus | a pesquisa semanal do Banco Central com bancos e consultorias |
+| O mercado | bancos, fundos e empresas que emprestam e investem |
+| Inadimplência | conta atrasada (nos dados do Banco Central, há mais de 90 dias) |
+| Endividamento | ter dívida (parcela, cartão, financiamento) |
+| Crédito livre | empréstimo, cartão e financiamento com juro definido pelo banco |
+| Quantil 10%, cenário de cauda, cenário ruim | num ano ruim, daqueles com 1 chance em 10 |
+| Estagflação | economia parada com preço subindo |
+
+## Os nomes do site
+
+O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os nomes dos fatores ficam em `config/modelo.json`; os outros, nos templates e em `src/build_site.py`.
+
+| Coisa | Nome no site |
+| --- | --- |
+| Abas | Hoje, Fator por fator, O que causa recessão, Como a conta funciona |
+| Os sete fatores | Ritmo da economia, Juro e inflação, Dívidas das famílias, Dólar e juro longo, Contas do governo, Emprego, Economia lá fora |
+| O número que decide o nível | o PIB num ano ruim (1 chance em 10); "num ano ruim, em tempos normais" para a comparação |
+| Boletim Focus | os bancos (Focus) |
+| Efeito no nível | ajuda, pesa (0,19 ponto) |
+| Projeção de terceiros | Analistas concordam, Analistas veem diferente, Para acompanhar |
+| Previsão de 6 meses | Devem piorar, Devem ficar como estão, Devem melhorar; em cada fator, Tende a piorar, Estável, Tende a melhorar |
+| Copom | o Banco Central decide o juro (Copom) |
+| Diferença entre taxas | pontos, abreviado "pt" em tabela |
+| Quem escreve o post | inteligência artificial (Claude) |
+
+**Palavras com lado.** Fora do texto: "gastança", "rombo", "herança maldita", "austericídio", "desgoverno", "farra". No lugar, o número e o que ele mede.
+
+**Palavras de alarme.** Fora do texto: "despenca", "explode", "derrete", "colapso", "tombo", "sangria". No lugar, o verbo neutro ("cai", "sobe") e o tamanho da mudança.
+
+## O que todo texto passa antes de sair
+
+Os itens 3, 5 e 9 o código confere no post diário (`src/revisa_texto.py`); os outros pedem leitura.
+
+1. **Resposta primeiro.** O título e a primeira frase dizem o nível do risco ou o fato principal.
+2. **Sozinho no print.** Só o título e a primeira frase já se entendem, sem o resto da página.
+3. **Frase curta.** Nenhuma frase passa de 20 palavras; nenhum parágrafo, de 50.
+4. **Zero jargão solto.** Todo termo da tabela acima está traduzido ou fora.
+5. **Número com régua.** Cada número tem comparação e unidade; no máximo quatro por parágrafo; arredondado.
+6. **Ponte para o bolso.** Quando a ligação é clara, o texto diz o que muda no emprego, no preço ou na parcela.
+7. **Teste da troca.** Com outro governo no poder, a frase sairia igual.
+8. **Estágio claro.** Diz se é dado divulgado, decisão tomada, proposta, anúncio ou rumor.
+9. **Sem alarme, sem consolo, sem molde.** Nenhuma palavra de alarme ou com lado; nenhuma expressão de piloto automático.
+10. **Em voz alta.** Lido em voz alta, soa como gente explicando para gente.
+
+### Antes e depois, com o post de 30/10/2026
+
+O post do dia 30 tem frases de 18 palavras em média, mas o primeiro parágrafo carrega oito porcentagens. Dois verbos ainda confundem: "o IPCA recuou" soa como preço caindo, e "o crescimento pesa" parece contradição.
+
+> **Antes.** O risco de recessão técnica, que são dois trimestres seguidos de queda do PIB, segue normal, o mesmo nível da atualização anterior. No cenário ruim, com só 1 chance em 10 de ser pior, o PIB cai 1,8% em 12 meses, contra −1,9% em tempos normais. A Selic, juro básico, caiu de 15,00% para 13,75% em um ano, e o IPCA recuou de 5,17% para 4,58%. Os dois aliviam esse cenário. O crescimento de 1,38% em 12 meses pesa, e o IBC-Br, prévia do PIB, caiu 0,6% no trimestre até agosto.
+
+> **Depois.** O risco de recessão segue normal. Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos.
+>
+> Ajuda: o juro básico caiu de 15% para 13,75% em um ano. E os preços sobem mais devagar: 4,6% em um ano, contra 5,2% antes.
+>
+> Atrapalha: a economia cresce menos que o normal, 1,4% em um ano. A prévia do PIB do Banco Central caiu no trimestre até agosto.
+>
+> Num ano ruim, daqueles com 1 chance em 10, o PIB cairia 1,8%. Em tempos normais, cairia 1,9%.
+
+Mesmos fatos, mesma ordem de importância. A diferença está no rótulo antes de cada bloco (ajuda, atrapalha), no verbo que não engana e em metade dos números.
+
+## Onde o guia vale no código
+
+- `src/escreve_post.py`, regras 4, 8, 9 e 12 do prompt: leitor, tamanho, frase, números e palavras proibidas.
+- `src/classify_news.py`, regras 17 e 21: títulos de evento e "por quê" com a mesma linguagem.
+- `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
+- `src/dossie.py`: as frases de dados de cada fator (queda no verbo, mês por extenso, sem sigla solta); `data/dossie.json` guarda os textos que ficam de um dia para o outro.
+- `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas.
+- Textos escritos à mão (`editor/`, `templates/`) seguem a lista acima na leitura. `METODOLOGIA.md` é técnica de propósito, para quem quer refazer a conta, mas usa os mesmos nomes do site.
+- `CLAUDE.md` manda qualquer sessão do Claude que escreva no repositório passar o texto por este guia.
+
+## Fontes
+
+O ambiente em que a pesquisa foi feita não abria a maioria dos sites; os números foram conferidos nos resultados de busca, em pelo menos duas reportagens quando havia. Quaest sobre quem define o juro e PoderData sobre o arcabouço têm data não confirmada.
+
+- IBGE: [Censo 2022, idade](https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-denoticias/noticias/38186-); [PNAD Educação 2024](https://biblioteca.ibge.gov.br/visualizacao/livros/liv102180_informativo.pdf); [PNAD rendimentos 2025](https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2012-agencia-de-noticias/noticias/46579-rendimento-medio-da-populacao-brasileira-atinge-r-3-367-em-2025.html)
+- Inaf 2024, Ação Educativa e Instituto Paulo Montenegro: [Unicef](https://www.unicef.org/brazil/comunicados-de-imprensa/analfabetismo-funcional-nao-apresenta-melhora-e-alcanca-29-por-cento-dos-brasileiros-mesmo-patamar-de-2018-aponta-novo-levantamento-do-inaf); [dados](https://static.poder360.com.br/2025/08/dados-inaf-2024.pdf)
+- Banco Central e FGC, pesquisa de letramento financeiro 2023: [Convergência Digital](https://convergenciadigital.com.br/governo/banco-central-brasileiro-no-sabe-calcular-juros-mas-conhece-apps-financeiros-e-adora-pix)
+- OCDE: [Pisa 2022, educação financeira no Brasil](https://www.oecd.org/en/publications/pisa-2022-results-volume-iv-factsheets_34d60137-en/brazil_1c815ef9-en.html)
+- CNC: [Peic, julho de 2026](https://mercadoeconsumo.com.br/06/08/2026/noticias/cnc-endividamento-das-familias-sobe-para-82-mas-inadimplencia-cai/)
+- Cetic.br: [TIC Domicílios 2024](https://cetic.br/media/analises/tic_domicilios_2024_principais_resultados.pdf)
+- Reuters Institute: [Digital News Report 2026, Brasil](https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/brazil); [Como os brasileiros se informam](https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/how-brazilians-get-their-news-ahead-years-election-0); [2025, redes](https://canaltech.com.br/internet/instagram-e-youtube-sao-as-redes-mais-usadas-para-consumir-noticias-no-brasil/); [2025, impresso](https://www.poder360.com.br/poder-midia/so-10-dos-brasileiros-leem-jornal-impresso-diz-estudo/)
+- Datafolha, dez/2025: [identificação política](https://www.diariodepernambuco.com.br/politica/2025/12/11703644-datafolha-40-dos-brasileiros-se-identificam-como-petistas-e-34-como-bolsonaristas.html)
+- Quaest: [independentes](https://www.jornalopcao.com.br/ultimas-noticias/lula-amplia-vantagem-sobre-flavio-bolsonaro-apos-caso-master-aponta-quaest-835016/); [preço da comida, jul/2026](https://ohoje.com/2026/07/15/pesquisa-genial-quaest-indica-lula-com-ampla-vantagem-sobre-flavio-bolsonaro-na-disputa-presidencial/); [quem define o juro](https://www.cartacapital.com.br/?p=327550)
+- PoderData: [arcabouço fiscal](https://www.poder360.com.br/pesquisas/77-dos-brasileiros-nao-sabem-o-que-e-o-marco-fiscal-diz-pesquisa/)
+- Ipsos: [O que preocupa o mundo, Brasil, fev/2026](https://www.ipsos.com/sites/default/files/ct/publication/documents/2026-03/WWW%20Brasil%20FEV%2026%20PT-BR.pdf)
+- Vallone, Ross e Lepper (1985), efeito da mídia hostil: [resumo](https://en.wikipedia.org/wiki/Hostile_media_effect)
+- Gigerenzer e Hoffrage (1995), *Psychological Review* 102(4): [registro](https://serval.unil.ch/notice/serval:BIB_285729DDD792)
+- Nielsen (1997), como se lê na web: [NN/g](https://www.nngroup.com/articles/how-users-read-on-the-web/)
+- [Lei 15.263/2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15263.htm), Política Nacional de Linguagem Simples
+- [GOV.UK, linguagem clara](https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/writing-guidelines/clear-language/)

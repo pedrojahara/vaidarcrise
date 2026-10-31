@@ -8,16 +8,16 @@
   <ol class="escala{% if grande %} grande{% endif %}" aria-label="Escala de cinco níveis de risco">{% for n in nivel.nomes %}<li{% if loop.index0 == nivel.indice %} class="aqui" aria-current="true"{% endif %}><span>{{ n }}</span></li>{% endfor %}</ol>
   {% if nivel.cenarios %}
   <ul class="cenarios" aria-label="PIB nos próximos 12 meses">
-    <li class="cab-cen">PIB nos próximos 12 meses</li>
-    {% if nivel.cenarios.focus %}<li class="ref"><span>Mais provável, segundo o Focus</span><span>{{ nivel.cenarios.focus }}</span></li>{% endif %}
-    <li class="pior"><span>Cenário ruim: 1 chance em 10 de ser pior</span><b>{{ nivel.cenarios.ruim }}</b></li>
-    <li class="ref"><span>O mesmo cenário em tempos normais</span><span>{{ nivel.cenarios.normal }}</span></li>
+    <li class="cab-cen">O PIB nos próximos 12 meses</li>
+    {% if nivel.cenarios.focus %}<li class="ref"><span>Mais provável, para os bancos (Focus)</span><span>{{ nivel.cenarios.focus }}</span></li>{% endif %}
+    <li class="pior"><span>Num ano ruim (1 chance em 10)</span><b>{{ nivel.cenarios.ruim }}</b></li>
+    <li class="ref"><span>Num ano ruim, em tempos normais</span><span>{{ nivel.cenarios.normal }}</span></li>
   </ul>
   {% endif %}
-  {% if nivel.pendente %}<p class="atual">A conta de hoje deu {{ nivel.pendente }}. O nível muda se a de amanhã repetir.</p>{% endif %}
+  {% if nivel.pendente %}<p class="atual">A conta de hoje deu {{ nivel.pendente }}. O nível só muda se amanhã der o mesmo.</p>{% endif %}
   {% if not grande %}
-  <p class="tend-noticias"><b class="{{ post.pressao.cls if post.pressao else 'igual' }}" aria-hidden="true">{{ post.pressao.simbolo if post.pressao else '→' }}</b> {{ post.pressao.frase if post.pressao else '' }} <a href="{{ link_resumo }}">Ver o resumo</a></p>
+  <p class="tend-noticias"><b class="{{ post.pressao.cls if post.pressao else 'igual' }}" aria-hidden="true">{{ post.pressao.simbolo if post.pressao else '→' }}</b> {{ post.pressao.frase if post.pressao else '' }} <a href="{{ link_resumo }}">Ver fator por fator</a></p>
   <p class="atual">{% if permalink %}Atualização de {{ dia_mes(dia) }}, às {{ hora }}{% else %}Atualizado em {{ dia_mes(dia) }} | próxima atualização às 06h30{% endif %}</p>
-  {% if not permalink %}<p class="aviso" id="defasado" hidden><strong>Dado defasado.</strong> Esta atualização tem mais de 36 horas. A atualização automática pode ter falhado; veja o <a href="{{ repo }}/commits/main">histórico</a>.</p>{% endif %}
+  {% if not permalink %}<p class="aviso" id="defasado" hidden><strong>Atenção: números velhos.</strong> Esta atualização tem mais de 36 horas. A atualização automática pode ter falhado; veja o <a href="{{ repo }}/commits/main">histórico</a>.</p>{% endif %}
   {% endif %}
 </section>

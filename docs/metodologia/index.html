@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Metodologia | Vai dar crise?</title>
-<meta name="description" content="Como o Vai dar crise? calcula o nível de risco de recessão no Brasil: o cenário ruim do PIB, o painel de 44 países, o teste fora da amostra, a tendência das notícias e o placar.">
+<meta name="description" content="Como o Vai dar crise? calcula o nível de risco de recessão no Brasil: o PIB num ano ruim, o painel de 44 países, o teste fora da amostra, a tendência das notícias e o placar.">
 <link rel="canonical" href="https://vaidarcrise.com.br/metodologia/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
 <meta property="og:title" content="Metodologia | Vai dar crise?">
-<meta property="og:description" content="Como o Vai dar crise? calcula o nível de risco de recessão no Brasil: o cenário ruim do PIB, o painel de 44 países, o teste fora da amostra, a tendência das notícias e o placar.">
+<meta property="og:description" content="Como o Vai dar crise? calcula o nível de risco de recessão no Brasil: o PIB num ano ruim, o painel de 44 países, o teste fora da amostra, a tendência das notícias e o placar.">
 <meta property="og:url" content="https://vaidarcrise.com.br/metodologia/">
 <meta property="og:image" content="https://vaidarcrise.com.br/og.png">
 <meta property="og:image:width" content="1200">
@@ -110,6 +110,7 @@ a:hover{text-decoration-thickness:2px}
 .texto code{font:.85em/1 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--maquina);padding:1px 5px;border-radius:4px}
 .texto pre{background:var(--maquina);padding:12px;border-radius:6px;overflow-x:auto}
 .texto pre code{background:none;padding:0}
+.intro-met{font:16px/1.5 var(--sistema);background:var(--maquina);border-left:4px solid var(--placa);padding:10px 14px}
 .texto blockquote{margin:16px 0;padding:4px 16px;border-left:4px solid var(--placa)}
 .texto table{display:block;overflow-x:auto;border-collapse:collapse;font:15px/1.45 var(--sistema);margin:12px 0}
 .texto th,.texto td{text-align:left;padding:8px;border-bottom:1px solid var(--fio);vertical-align:top}
@@ -121,11 +122,12 @@ a:hover{text-decoration-thickness:2px}
 <body>
 <header class="cab"><div class="in"><div class="faixa">
   <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
-  <p class="linha-fina">Um palpite com conta sobre a próxima recessão brasileira.</p>
-  <nav aria-label="Seções"><a href="/">Atualizações</a><a href="/resumo/">Resumo</a><a href="/causas/">O que causa recessão</a><a href="/nota/">Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
+  <p class="linha-fina">O risco de recessão no Brasil, medido com dados todo dia.</p>
+  <nav aria-label="Seções"><a href="/">Hoje</a><a href="/resumo/">Fator por fator</a><a href="/causas/">O que causa recessão</a><a href="/nota/">Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
 </div></div></header>
 
 <main class="in texto">
+<p class="intro-met">Esta página é para quem quer conferir ou refazer a conta, com as fórmulas e os testes. A versão curta está em <a href="/nota/">Como a conta funciona</a>.</p>
 <h1 id="metodologia">Metodologia</h1>
 <p>As regras estão em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json"><code>config/modelo.json</code></a>. O que foi estimado com os dados (coeficientes, ajuste, cortes dos níveis, faixas normais) está em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/calibracao.json"><code>config/calibracao.json</code></a>. O painel de países está em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/painel_ocde.csv"><code>data/historico/painel_ocde.csv</code></a>, e o Brasil mês a mês, em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/mensal.json"><code>data/historico/mensal.json</code></a>. A conta é refeita por <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/calibra.py"><code>src/calibra.py</code></a>. Cada atualização grava o hash dos dois arquivos de regra.</p>
 <h2 id="a-pergunta">A pergunta</h2>
@@ -142,7 +144,7 @@ a:hover{text-decoration-thickness:2px}
 <p>O nome do site fala em crise; a métrica é recessão técnica.</p>
 <h2 id="o-nivel">O nível</h2>
 <p>Cinco níveis: Muito abaixo, Abaixo, Normal, Acima e Muito acima. O nível sai só de dados.</p>
-<p><strong>A ideia.</strong> Risco de recessão tem duas partes: a chance de a economia encolher e o tamanho da queda. As duas aparecem num número só, o <strong>cenário ruim do PIB</strong>: o crescimento nos 12 meses seguintes que tem só 1 chance em 10 de ser pior. Quanto pior esse cenário, mais alto o risco. É o método do FMI chamado crescimento em risco (<em>growth-at-risk</em>; Adrian, Boyarchenko e Giannone, 2019).</p>
+<p><strong>A ideia.</strong> Risco de recessão tem duas partes: a chance de a economia encolher e o tamanho da queda. As duas aparecem num número só, o <strong>PIB num ano ruim</strong> (no jargão, o cenário ruim, ou quantil 10%): o crescimento nos 12 meses seguintes que tem só 1 chance em 10 de ser pior. Quanto pior esse ano ruim, mais alto o risco. É o método do FMI chamado crescimento em risco (<em>growth-at-risk</em>; Adrian, Boyarchenko e Giannone, 2019).</p>
 <p><strong>1. Quatro entradas do Brasil</strong>, cada uma com o que já tinha sido divulgado no dia:</p>
 <table>
 <thead>
@@ -171,20 +173,20 @@ a:hover{text-decoration-thickness:2px}
 </tbody>
 </table>
 <p><strong>2. A conta, tirada de 44 países.</strong> Uma regressão de quantil (Koenker e Bassett, 1978) do crescimento do PIB nos 4 trimestres seguintes, no quantil 10%, num painel trimestral de 44 países (OCDE e grandes emergentes, Brasil incluído) com dados da OCDE: 4.669 trimestres, de 1995 a 2025. Com 4 recessões no Brasil desde 2002, uma conta só com o Brasil não teria dados para separar sinal de acaso; o painel tem centenas.</p>
-<p><code>cenário ruim = −0,71 − 0,20 × média de 10 anos + 0,23 × crescimento em 12 meses
+<p><code>ano ruim = −0,71 − 0,20 × média de 10 anos + 0,23 × crescimento em 12 meses
                − 0,15 × variação da Selic − 0,13 × variação da inflação − 1,31</code></p>
 <ul>
 <li>Crescimentos em 100 × log; no site, convertidos para variação %.</li>
-<li><strong>Juro subindo e inflação acelerando</strong> pioram o cenário ruim: costumam vir antes de recessões, em países ricos e emergentes.</li>
+<li><strong>Juro subindo e inflação acelerando</strong> pioram o ano ruim: costumam vir antes de recessões, em países ricos e emergentes.</li>
 <li><strong>Crescer forte hoje</strong> melhora o ano seguinte.</li>
-<li><strong>Crescimento médio alto</strong> piora o cenário ruim: vem junto com economias que oscilam mais, como as emergentes.</li>
-<li><strong>O ajuste de −1,31</strong> vem do teste fora da amostra (abaixo): sem ele, 15% dos resultados ficaram abaixo do cenário ruim, e não 10%.</li>
+<li><strong>Crescimento médio alto</strong> piora o ano ruim: vem junto com economias que oscilam mais, como as emergentes.</li>
+<li><strong>O ajuste de −1,31</strong> vem do teste fora da amostra (abaixo): sem ele, 15% dos resultados ficaram abaixo do ano ruim, e não 10%.</li>
 </ul>
-<p><strong>3. O nível.</strong> O cenário ruim de hoje contra o do Brasil em cada mês desde maio de 2004:</p>
+<p><strong>3. O nível.</strong> O ano ruim de hoje contra o do Brasil em cada mês desde maio de 2004:</p>
 <table>
 <thead>
 <tr>
-<th>Cenário ruim do PIB em 12 meses</th>
+<th>PIB num ano ruim, em 12 meses</th>
 <th>Nível</th>
 </tr>
 </thead>
@@ -211,14 +213,14 @@ a:hover{text-decoration-thickness:2px}
 </tr>
 </tbody>
 </table>
-<p>No mês típico, o cenário ruim é de −1,9%. É a linha "o mesmo cenário em tempos normais" do selo.</p>
+<p>No mês típico, o ano ruim é de −1,9%. É a linha "Num ano ruim, em tempos normais" do selo.</p>
 <p><strong>4. Confirmação.</strong> O nível só muda quando duas atualizações diárias seguidas dão o mesmo nível novo. Uma atualização refeita no mesmo dia não confirma a si mesma.</p>
 <p><strong>Mais provável.</strong> O selo mostra também a mediana do Focus para o PIB dos próximos 12 meses (a do ano corrente e a do seguinte, ponderadas pelos meses que faltam). É o mercado, não a conta do site: no Brasil desde 2004, o Focus errou menos que a mediana do painel.</p>
-<p><strong>Os sete fatores do Resumo.</strong> Atividade e juro e inflação entram na conta pelas entradas acima; o Resumo mostra quanto cada uma mexe no cenário ruim, contra a mediana do Brasil desde 2004. Crédito, mercado financeiro, contas públicas, emprego e cenário externo ficam fora do nível e aparecem com o dado de hoje contra a faixa normal desde 2002 (metade dos meses dentro dela) e com a tendência.</p>
+<p><strong>Os sete fatores de Fator por fator.</strong> Ritmo da economia e juro e inflação entram na conta pelas entradas acima; a página Fator por fator mostra quanto cada uma mexe no ano ruim, contra a mediana do Brasil desde 2004. Dívidas das famílias, dólar e juro longo, contas do governo, emprego e economia lá fora ficam fora do nível e aparecem com o dado de hoje contra a faixa normal desde 2002 (metade dos meses dentro dela) e com a tendência.</p>
 <table>
 <thead>
 <tr>
-<th>Indicador do Resumo</th>
+<th>Indicador de Fator por fator</th>
 <th>Fator</th>
 <th>Definição</th>
 </tr>
@@ -226,12 +228,12 @@ a:hover{text-decoration-thickness:2px}
 <tbody>
 <tr>
 <td>IBC-Br</td>
-<td>Atividade</td>
+<td>Ritmo da economia</td>
 <td>Média dos últimos 3 meses contra a dos 3 anteriores</td>
 </tr>
 <tr>
 <td>PIB esperado pelo Focus</td>
-<td>Atividade</td>
+<td>Ritmo da economia</td>
 <td>PIB dos próximos 12 meses, como acima</td>
 </tr>
 <tr>
@@ -241,22 +243,22 @@ a:hover{text-decoration-thickness:2px}
 </tr>
 <tr>
 <td>Renda comprometida com dívidas</td>
-<td>Crédito e famílias</td>
+<td>Dívidas das famílias</td>
 <td>Comprometimento de renda das famílias (BCB 29034) menos a média dos 36 meses anteriores</td>
 </tr>
 <tr>
 <td>Juro do Tesouro IPCA+</td>
-<td>Mercado financeiro</td>
+<td>Dólar e juro longo</td>
 <td>Taxa do título IPCA+ com vencimento mais perto de 10 anos menos a sua mediana nos 3 anos anteriores</td>
 </tr>
 <tr>
 <td>Dólar</td>
-<td>Mercado financeiro</td>
+<td>Dólar e juro longo</td>
 <td>Variação do dólar PTAX (BCB 1) em 3 meses</td>
 </tr>
 <tr>
 <td>Dívida pública</td>
-<td>Contas públicas</td>
+<td>Contas do governo</td>
 <td>Variação da dívida bruta do governo geral (BCB 13762) em 12 meses, em pontos do PIB</td>
 </tr>
 <tr>
@@ -266,7 +268,7 @@ a:hover{text-decoration-thickness:2px}
 </tr>
 <tr>
 <td>Preço das commodities</td>
-<td>Cenário externo</td>
+<td>Economia lá fora</td>
 <td>Variação em 6 meses do índice de commodities do FMI (FRED PALLFNFINDEXM)</td>
 </tr>
 </tbody>
@@ -345,11 +347,11 @@ a:hover{text-decoration-thickness:2px}
 <td>20% menor</td>
 </tr>
 <tr>
-<td>Resultados abaixo do cenário ruim, sem ajuste (painel)</td>
+<td>Resultados abaixo do ano ruim, sem ajuste (painel)</td>
 <td>15%</td>
 </tr>
 <tr>
-<td>Resultados abaixo do cenário ruim, com ajuste (Brasil, 259 meses)</td>
+<td>Resultados abaixo do ano ruim, com ajuste (Brasil, 259 meses)</td>
 <td>8%</td>
 </tr>
 <tr>
@@ -436,15 +438,15 @@ a:hover{text-decoration-thickness:2px}
 <ul>
 <li><strong>Fatos de dados:</strong> saem de código, todo dia, comparando o dado de hoje com a série histórica ("o maior desde…").</li>
 <li><strong>Fatos de notícia:</strong> no máximo 2 por fator, válidos por 180 dias.</li>
-<li><strong>O que outros projetam, em igual destaque:</strong> em atividade, juro e mercado, o Focus, calculado por código; nos demais, a projeção pública mais recente de uma instituição (IFI, por exemplo). Quando a projeção aponta para o lado contrário da nossa tendência, aparece como "Discordam".</li>
+<li><strong>O que outros projetam, em igual destaque:</strong> em ritmo da economia, juro e inflação e dólar e juro longo, o Focus, calculado por código; nos demais, a projeção pública mais recente de uma instituição (IFI, por exemplo). Quando a projeção aponta para o lado contrário da tendência do site, aparece como "Analistas veem diferente"; para o mesmo lado, "Analistas concordam".</li>
 <li><strong>Quem muda o quê:</strong> o modelo de linguagem só propõe. Fato de notícia novo entra sempre. Troca de tendência só entra com dado divulgado ou decisão tomada, noticiados por pelo menos 2 jornais. Nos fatores com Focus, a projeção não aceita troca pelo modelo.</li>
 <li><strong>Os dois lados:</strong> cada fator mostra o que o melhoraria e o que o pioraria. Os textos descrevem mecanismos e números, não intenções, pessoas ou partidos, e nunca dizem o que um governo deveria fazer.</li>
 </ul>
-<p><strong>O placar.</strong> Cada tendência é registrada e conferida 6 meses depois contra uma medida fixa por fator (atividade: IBC-Br; juro: juro real; crédito: renda comprometida; mercado: taxa do Tesouro IPCA+; contas: dívida bruta; emprego: desemprego; externo: índice de commodities).</p>
+<p><strong>O placar.</strong> Cada tendência é registrada e conferida 6 meses depois contra uma medida fixa por fator (ritmo da economia: IBC-Br; juro e inflação: juro real; dívidas das famílias: renda comprometida; dólar e juro longo: taxa do Tesouro IPCA+; contas do governo: dívida bruta; emprego: desemprego; economia lá fora: índice de commodities).</p>
 <ul>
 <li>"Estável" acerta se a medida andou menos de um quarto do desvio-padrão das variações de 6 meses desde 2002; "piora" e "melhora", se andou mais que isso para o lado dito.</li>
 <li>Leitura trocada antes do prazo fica registrada como substituída, sem resultado.</li>
-<li>Para comparar: por acaso, desde 2002, "piora" acertaria 41% das vezes, "estável" 21% e "melhora" 39%, na média dos fatores. Em crédito e contas públicas, "piora" acertaria mais da metade das vezes, porque essas séries subiram na maior parte do período.</li>
+<li>Para comparar: por acaso, desde 2002, "piora" acertaria 41% das vezes, "estável" 21% e "melhora" 39%, na média dos fatores. Em dívidas das famílias e contas do governo, "piora" acertaria mais da metade das vezes, porque essas séries subiram na maior parte do período.</li>
 </ul>
 <h2 id="o-que-causa-recessao">O que causa recessão</h2>
 <p>A aba <a href="https://vaidarcrise.com.br/causas/">O que causa recessão</a> resume duas pesquisas para quem não é economista. Nada dela entra no nível.</p>
@@ -513,14 +515,14 @@ a:hover{text-decoration-thickness:2px}
 <li>O caminho é a dominância fiscal de Blanchard (2004), escrita sobre o Brasil: déficit subindo eleva a inflação esperada, e o Banco Central sobe o juro. O déficit subindo não avisa a recessão direto (0,48): age pelo juro, que já está na conta.</li>
 <li>Juro americano e commodities, testados como quinta entrada da conta, pioraram o erro fora da amostra em 12 meses: 5,1% e 5,8% no painel; 15,1% e 23,5% no Brasil.</li>
 </ul>
-<p><strong>O Brasil hoje.</strong> Cada linha contra os meses desde 2004. Atenção quando o dado passa da faixa normal (a metade do meio dos meses) para o lado que pressiona. Selic e IPCA usam a faixa da conta; juro real e dívida, a do Resumo. Déficit primário (variação em 12 meses), inflação esperada (variação em 6 meses) e renda comprometida (nível) usam o percentil 75 de <code>data/historico/series.json</code>. A inflação esperada também acende Atenção acima do teto da meta (3% mais 1,5 ponto).</p>
+<p><strong>O Brasil hoje.</strong> Cada linha contra os meses desde 2004. Atenção quando o dado passa da faixa normal (a metade do meio dos meses) para o lado que pressiona. Selic e IPCA usam a faixa da conta; juro real e dívida, a de Fator por fator. Déficit primário (variação em 12 meses), inflação esperada (variação em 6 meses) e renda comprometida (nível) usam o percentil 75 de <code>data/historico/series.json</code>. A inflação esperada também acende Atenção acima do teto da meta (3% mais 1,5 ponto).</p>
 <p><strong>Limites.</strong> Um sinal por vez mostra o que vem antes, não o que causa, e dois sinais podem contar a mesma história. Nada disso passou por teste fora da amostra, exceto a quinta entrada. O Brasil teve sete ciclos de alta desde 2002: a margem de erro é grande. No painel, dívida e déficit são anuais e chegam com 1 ano de atraso, o que enfraquece o fiscal ali.</p>
 <h2 id="o-post-do-dia">O post do dia</h2>
-<p>Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o nível, o cenário ruim do PIB, o que pesa e o que alivia, para que lado as notícias empurram e as próximas datas. Ele não muda o nível, a pressão nem a tendência. Um verificador em código procura moldes de texto automático, afirmações de chance de recessão e explicações de método, e pede uma reescrita no máximo. Se a escrita falhar, sai a atualização sem texto corrido.</p>
+<p>Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o nível, o PIB num ano ruim, o que pesa e o que ajuda, para que lado as notícias empurram e as próximas datas. O texto segue o guia do leitor (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md"><code>PERSONA.md</code></a>), o mesmo das outras páginas. Ele não muda o nível, a pressão nem a tendência. Um verificador em código procura moldes de texto automático, afirmações de chance de recessão e explicações de método, e pede uma reescrita no máximo. Se a escrita falhar, sai a atualização sem texto corrido.</p>
 <p>Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em <a href="https://github.com/pedrojahara/vaidarcrise/tree/main/runs"><code>runs/</code></a>. O que foi publicado fica congelado.</p>
 <h2 id="salvaguardas">Salvaguardas</h2>
 <ul>
-<li><strong>Dado defasado:</strong> se a página passar de 36 horas sem atualização, ela avisa.</li>
+<li><strong>Números velhos:</strong> se a página passar de 36 horas sem atualização, ela avisa.</li>
 <li><strong>Falha de coleta:</strong> vale o último valor de até 10 dias (dado diário), 101 dias (dado mensal) ou 200 dias (PIB trimestral). Se faltar uma entrada da conta mesmo assim, a atualização não sai, e o site avisa que está defasado.</li>
 <li><strong>Falha do modelo de linguagem:</strong> a atualização sai só com dados e sem pressão de notícias.</li>
 <li><strong>Texto das notícias:</strong> é tratado como dado, nunca como instrução. Nenhuma notícia muda pesos ou regras.</li>
@@ -534,7 +536,7 @@ a:hover{text-decoration-thickness:2px}
 </ul>
 <h2 id="onde-erramos">Onde erramos</h2>
 <p>Erros são listados aqui com data, o que estava errado e o efeito no nível. Nenhum até agora.</p>
-<p>Achou um? <a href="https://github.com/pedrojahara/vaidarcrise/issues">Abra uma issue</a>.</p>
+<p>Achou um? <a href="https://github.com/pedrojahara/vaidarcrise/issues">Avise aqui</a>.</p>
 <h2 id="fontes">Fontes</h2>
 <ul>
 <li>Adrian, Boyarchenko e Giannone (2019), <em>Vulnerable growth</em>, American Economic Review</li>
@@ -557,8 +559,8 @@ a:hover{text-decoration-thickness:2px}
 </main>
 
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mostra se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal. O nível sai do cenário ruim do PIB, estimado com dados de 44 países e comparado ao Brasil desde 2004. As notícias mostram a tendência e não mexem no nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
-  <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Abra uma issue</a></p>
+  <p>O Vai dar crise? diz se o risco de recessão no Brasil nos próximos 12 meses está acima ou abaixo do normal. Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos. A conta usa dados de 44 países e compara com o Brasil desde 2004. As notícias mostram para onde cada parte da economia vai, mas não mudam o nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
+  <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Avise aqui</a></p>
 </div></footer>
 </body>
 </html>

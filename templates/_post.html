@@ -7,20 +7,20 @@
   {% if post.corpo_html %}{{ post.corpo_html|safe }}{% endif %}
   {% if pr %}
   <section class="conta" aria-label="Pressão das notícias">
-    <div class="conta-cab"><h3>Pressão das notícias, por fator</h3></div>
+    <div class="conta-cab"><h3>Para onde as notícias empurram</h3></div>
     {% if pr.com %}
     <ul class="itens">
-      {% for t in pr.com %}<li><span class="pts seta {{ t.cls }}" aria-label="{{ t.palavra }}">{{ t.simbolo }}</span><div><b>{{ t.nome }} <a class="ver" href="{{ post.resumo }}#{{ t.id }}">ver no Resumo</a></b>{% for n in t.noticias %}<span class="nt">{{ n.titulo }} <span class="f">{% if n.meta %}{{ n.meta }}{% if n.fonte %}, {% endif %}{% endif %}{% if n.fonte %}<a href="{{ n.fonte.url }}" rel="nofollow noopener">{{ n.fonte.veiculo }}</a>{% endif %}</span></span>{% endfor %}</div></li>{% endfor %}
+      {% for t in pr.com %}<li><span class="pts seta {{ t.cls }}" aria-label="{{ t.palavra }}">{{ t.simbolo }}</span><div><b>{{ t.nome }} <a class="ver" href="{{ post.resumo }}#{{ t.id }}">detalhes</a></b>{% for n in t.noticias %}<span class="nt">{{ n.titulo }} <span class="f">{% if n.meta %}{{ n.meta }}{% if n.fonte %}, {% endif %}{% endif %}{% if n.fonte %}<a href="{{ n.fonte.url }}" rel="nofollow noopener">{{ n.fonte.veiculo }}</a>{% endif %}</span></span>{% endfor %}</div></li>{% endfor %}
     </ul>
-    {% elif pr.n %}<p class="fora-conta">Nenhum fator recebeu pressão clara das notícias {{ pr.quando }}.</p>
-    {% else %}<p class="fora-conta">Nenhuma notícia {{ pr.quando }} mexeu nos fatores.</p>{% endif %}
-    {% if pr.com and pr.sem %}<p class="fora-conta">Sem pressão clara: {% for n in pr.sem %}{{ n if loop.first else n[0]|lower ~ n[1:] }}{{ ', ' if not loop.last else '.' }}{% endfor %}</p>{% endif %}
-    {% if not post.llm_ok %}<p class="fora-conta">A leitura de notícias falhou nesta atualização.</p>{% endif %}
+    {% elif pr.n %}<p class="fora-conta">As notícias {{ pr.quando }} não empurraram nenhuma parte da economia para um lado claro.</p>
+    {% else %}<p class="fora-conta">Nenhuma notícia {{ pr.quando }} mexeu com o risco.</p>{% endif %}
+    {% if pr.com and pr.sem %}<p class="fora-conta">Sem lado claro: {% for n in pr.sem %}{{ n if loop.first else n[0]|lower ~ n[1:] }}{{ ', ' if not loop.last else '.' }}{% endfor %}</p>{% endif %}
+    {% if not post.llm_ok %}<p class="fora-conta">A leitura das notícias falhou hoje.</p>{% endif %}
   </section>
   {% endif %}
   {% if post.editor %}
   <p class="rodape">{% if not permalink %}<a href="{{ post.link }}">Link permanente</a>{% else %}Postado em {{ data_curta(post.dia) }}{% endif %}{% if post.tags %} | {{ post.tags }}{% endif %}</p>
   {% else %}
-  <p class="rodape">{{ post.rodape }} <a href="/metodologia/#onde-erramos">Onde erramos</a>. {% if not permalink %}<a href="{{ post.link }}">Link permanente</a> | {% endif %}<a href="{{ post.resumo }}">Resumo</a> | <a href="{{ post.registro }}">Registro da atualização</a></p>
+  <p class="rodape">{{ post.rodape }} <a href="/metodologia/#onde-erramos">Onde erramos</a>. {% if not permalink %}<a href="{{ post.link }}">Link permanente</a> | {% endif %}<a href="{{ post.resumo }}">Fator por fator</a> | <a href="{{ post.registro }}">Todos os números de hoje</a></p>
   {% endif %}
 </article>
