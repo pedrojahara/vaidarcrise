@@ -86,20 +86,20 @@
    "tendencia": "piora"
   },
   {
+   "id": "emprego",
+   "nome": "Emprego",
+   "na_conta": false,
+   "efeito_no_cenario_ruim_pontos": null,
+   "situacao": "Normal",
+   "tendencia": "estavel"
+  },
+  {
    "id": "externo",
    "nome": "Economia lá fora",
    "na_conta": false,
    "efeito_no_cenario_ruim_pontos": null,
    "situacao": "Normal",
    "tendencia": "sem_direcao"
-  },
-  {
-   "id": "emprego",
-   "nome": "Emprego",
-   "na_conta": false,
-   "efeito_no_cenario_ruim_pontos": null,
-   "situacao": "Sem dado",
-   "tendencia": "estavel"
   }
  ],
  "indicadores": [
@@ -198,10 +198,10 @@
    "id": "sahm",
    "nome": "Regra de Sahm",
    "fator": "emprego",
-   "valor": null,
+   "valor": 0.0333,
    "unidade": "p.p.",
-   "ref": null,
-   "situacao": "Sem dado",
+   "ref": "2026-09",
+   "situacao": "Normal",
    "faixa_normal": [
     -0.0667,
     1.4333

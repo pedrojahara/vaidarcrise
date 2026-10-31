@@ -252,6 +252,18 @@ def efeito_txt(e: float | None) -> tuple[str, str]:
     return (f"Pesa {num(abs(e), 2)} ponto", "mais") if e < 0 else (f"Ajuda {num(e, 2)} ponto", "menos")
 
 
+def nota_guardado(xs: list[dict]) -> str:
+    """Aviso no cartão quando um dado do fator veio de uma atualização anterior, porque a fonte falhou."""
+    velhos = [x for x in xs if x.get("reaproveitado") and x.get("ref")]
+    if not velhos:
+        return ""
+    if len(velhos) > 1:
+        return "Alguns dados são de antes: a fonte não respondeu nesta atualização."
+    ref = velhos[0]["ref"]
+    quando = dia_mes(ref) if len(ref) == 10 else mes_nome(ref) if len(ref) == 7 else "antes"
+    return f"Dado de {quando}, o último que temos: a fonte não respondeu nesta atualização."
+
+
 def fatores_ctx(rodada: dict, cfg: dict) -> list[dict]:
     res = rodada["resultado"]
     ind = {x["id"]: x for x in res["indicadores"]}
@@ -272,6 +284,7 @@ def fatores_ctx(rodada: dict, cfg: dict) -> list[dict]:
         out.append({
             **f, "nome": cfg["fatores"].get(f["id"], f["nome"]), **_exibicao(f["id"], ind, ent), "chip": CHIPS[f["situacao"]], "tend": {"cls": cls, "seta": seta, "palavra": palavra, "id": t},
             "efeito_rot": rot, "efeito_cls": cor, "conta": conta,
+            "nota": nota_guardado([ind[i] for i in f["indicadores"] if i in ind] + [ent[i] for i in f["entradas"] if i in ent]),
             "barra": round(100 * min(abs(f.get("efeito") or 0) / 0.5, 1), 1) if cor else 0, "como": d.get("como", ""),
             "porque": [{"texto": x["texto"], "fonte": x.get("fonte"), "url": None} for x in d.get("fatos", [])]
                       + [{"texto": n["texto"], "fonte": n["fonte"]["veiculo"], "url": n["fonte"]["url"]} for n in d.get("noticias", [])],

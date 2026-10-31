@@ -36,6 +36,10 @@ TESOURO = ("https://www.tesourotransparente.gov.br/ckan/dataset/df56aa42-484a-4a
 TESOURO_CACHE = ROOT / "data" / "raw" / "tesouro_direto.csv"
 # Índice de preços de todas as commodities do FMI, mensal (fator Cenário externo).
 FRED_COMMODITIES = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PALLFNFINDEXM"
+# Desemprego direto do IBGE (PNAD Contínua, trimestre móvel), para quando a série 24369 do SGS falha.
+# O período 202608 é o trimestre até agosto, o mesmo mês que o SGS marca como 2026-08-01.
+IBGE_DESOCUPACAO = ("https://servicodados.ibge.gov.br/api/v3/agregados/6381/periodos/{periodos}"
+                    "/variaveis/4099?localidades=N1[all]")
 IBGE_PIB = (
     "https://servicodados.ibge.gov.br/api/v3/agregados/5932/periodos/{periodos}"
     "/variaveis/6564?localidades=N1[all]&classificacao=11255[90707]"
@@ -117,6 +121,16 @@ def pib_trimestral() -> list[dict]:
             continue
         out.append({"trimestre": f"{int(per[-1])}T{per[2:4]}", "periodo": per, "var_qoq": float(val)})
     return out
+
+
+def desocupacao_ibge(inicio: dt.date) -> list[dict]:
+    """A taxa de desocupação pelo IBGE, no mesmo formato da série 24369 do SGS."""
+    hoje = dt.date.today()
+    meses = range(inicio.year * 12 + inicio.month - 1, hoje.year * 12 + hoje.month)
+    r = _get(IBGE_DESOCUPACAO.format(periodos="|".join(f"{m // 12}{m % 12 + 1:02d}" for m in meses)), json=True)
+    serie = r.json()[0]["resultados"][0]["series"][0]["serie"]
+    return [{"data": f"{per[:4]}-{per[4:6]}-01", "valor": float(val)} for per, val in sorted(serie.items())
+            if val not in ("...", "-", "", None, "X")]
 
 
 def juro_real_longo(inicio: dt.date) -> list[dict]:
@@ -219,6 +233,15 @@ def coletar() -> dict:
             snap["avisos"].append(f"SGS {code}: veio na segunda rodada; a primeira falhou: {e}")
         except Exception as e2:  # noqa: BLE001
             snap["erros"].append(f"SGS {code}: {e2}")
+    # O desemprego é do IBGE: se o Banco Central não entregou, busca na fonte.
+    if "desocupacao" not in snap["series"]:
+        try:
+            snap["series"]["desocupacao"] = {
+                "nome": SGS["desocupacao"][1], "dados": desocupacao_ibge(inicio),
+                "fonte": "https://sidra.ibge.gov.br/tabela/6381"}
+            snap["avisos"].append("desocupacao: veio do IBGE (tabela 6381), porque o SGS 24369 falhou")
+        except Exception as e:  # noqa: BLE001
+            snap["erros"].append(f"IBGE desocupação: {e}")
     return snap
 
 
