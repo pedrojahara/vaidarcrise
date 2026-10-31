@@ -4,7 +4,8 @@ Duas partes:
 - O que veio antes das altas da Selic no Brasil desde 2002, refeito aqui a partir de
   data/historico/series.json. Os números dos 44 países vêm do painel da pesquisa e ficam
   fixos em config/causas.json.
-- O Brasil de hoje em cada elo da cadeia: o dado mais recente contra os meses desde 2004.
+- As quatro perguntas de "E hoje?" (economia no limite, juro freando, dívida crescendo, famílias
+  apertadas): o dado mais recente contra a faixa normal ou contra os meses desde 2004.
 
 Uso: python src/causas.py   (imprime a chance de cada sinal vir antes de uma alta da Selic)
 """
@@ -109,124 +110,83 @@ def pct(x: float, d: int = 2) -> str:
     return s.rstrip("0").rstrip(",") if "," in s else s
 
 
-def rumo(v: float, parado: float = 0.25) -> str:
-    return "subiu" if v >= parado else "caiu" if v <= -parado else "ficou parado"
+def _pontos(v: float) -> str:
+    """'0,6 ponto', '5,1 pontos'."""
+    return f"{num(abs(v))} ponto{'s' if round(abs(v), 1) >= 2 else ''}"
 
 
-def brasil_hoje(series: dict, res: dict, bruto: dict | None, runs: list[dict], cfg: dict) -> dict:
-    """Cada elo da cadeia com o dado de hoje e a leitura (Atenção ou Calmo).
+def perguntas_hoje(series: dict, res: dict, bruto: dict | None) -> list[dict]:
+    """As quatro perguntas de "E hoje?", com resposta curta e o dado que a sustenta.
 
-    Atenção quando o dado sai da metade do meio dos meses desde 2004 para o lado que pressiona,
-    como no Resumo: pela faixa normal da calibração, quando o dado já está na conta ou no Resumo;
-    pelos meses de data/historico/series.json, quando não está.
+    O tom (atencao, meio, calmo) segue o Resumo: atenção quando o dado sai da faixa normal da
+    calibração para o lado que pressiona; sem faixa, quando passa dos 3 de cada 4 meses desde 2004.
     """
-    s = series_brasil(series)
+    hist = {k: mensal(series[k]) for k in ("desocupacao", "comprometimento_renda") if k in series}
     ind = {x["id"]: x for x in res["indicadores"]}
     ent = {x["id"]: x for x in (res.get("gar") or {}).get("entradas", [])}
-    foc = dict(s["focus_ipca_12m"])
-    for r in runs:  # a expectativa mês a mês continua nas atualizações diárias
-        jr = next((x for x in r["resultado"]["indicadores"] if x["id"] == "juro_real"), None)
-        if jr and jr.get("inflacao_esperada") is not None and jr.get("focus_data"):
-            foc[jr["focus_data"][:7]] = jr["inflacao_esperada"]
-
-    def linha(nome, hoje, atencao, o_que, nota=""):
-        return {"nome": nome, "hoje": hoje, "nota": nota, "atencao": atencao, "o_que": o_que,
-                "leitura": "Atenção" if atencao else "Calmo"}
-
-    def acima(x, v):
-        return v > x["faixa_normal"][1] if x.get("faixa_normal") else False
-
-    def alto(hist, v):
-        return percentil(hist, v) > CORTE
-
-    def mudou(v, unidade="ponto"):
-        """A mudança no verbo: 'subiu 0,2 ponto', 'caiu 1,3 ponto'."""
-        if round(v, 1) == 0:
-            return "igual"
-        u = unidade if round(abs(v), 1) < 2 else unidade + "s"
-        return f"{'subiu' if v > 0 else 'caiu'} {num(abs(v))} {u}"
-
-    g, r, f = [], [], []
-    rumos = {}
-    if "juro" in ent:
-        x = ent["juro"]
-        rumos["Selic"] = rumo(x["valor"])
-        g.append(linha("Selic", f"{pct(x['nivel'])}%", acima(x, x["valor"]), "Selic subindo",
-                       f"o juro básico; era {pct(x['antes'])}% um ano antes"))
-    if "inflacao" in ent:
-        x = ent["inflacao"]
-        rumos["Inflação"] = rumo(x["valor"])
-        g.append(linha("Inflação", f"{num(x['nivel'])}%", acima(x, x["valor"]), "inflação acelerando",
-                       f"alta dos preços em 12 meses (IPCA); era {num(x['antes'])}% um ano antes"))
-    prim = {p["data"][:7]: p["valor"] for p in ((bruto or {}).get("series", {}).get("primario_12m", {}).get("dados") or [])}
-    if prim:
-        m = max(prim)
-        antes = prim.get(num_mes(mes_num(m) - 12))
-        if antes is not None:
-            v, z = prim[m] - antes, prim[m]
-            # + é déficit: subir é piorar
-            r.append(linha("Contas do governo", f"gasta {num(z)}% do PIB a mais do que arrecada" if z > 0
-                           else f"arrecada {num(-z)}% do PIB a mais do que gasta",
-                           alto(var(s["primario_12m"], 12), v), "contas do governo piorando",
-                           ("igual a um ano antes" if round(v, 1) == 0 else
-                            f"{'piorou' if v > 0 else 'melhorou'} {num(abs(v))} ponto{'s' if round(abs(v), 1) >= 2 else ''} em 12 meses")
-                           + "; sem contar juros da dívida"))
-    jr = ind.get("juro_real") or {}
-    if jr.get("inflacao_esperada") is not None:
-        e, m = jr["inflacao_esperada"], (jr.get("focus_data") or jr["ref"])[:7]
-        antes = foc.get(num_mes(mes_num(m) - 6))
-        teto = cfg["meta_inflacao"] + cfg["tolerancia_meta"]
-        if antes is not None:
-            v = e - antes
-            sobe = alto(var(foc, 6), v)
-            o_que = ("inflação esperada acima do teto da meta" if round(e, 1) > teto else
-                     "inflação esperada no teto da meta" if e > teto else "inflação esperada subindo")
-            r.append(linha("Inflação esperada", f"{num(e)}%", sobe or e > teto, o_que,
-                           f"o que bancos e empresas esperam em 12 meses; meta de {pct(cfg['meta_inflacao'])}%, "
-                           f"teto de {pct(teto, 1)}%; {mudou(v)} em 6 meses"))
-    if jr.get("valor") is not None:
-        lo, hi = jr.get("faixa_normal") or (None, None)
-        baixo = lo is not None and jr["valor"] < lo
-        nota = ("Selic menos a inflação esperada; baixo: o Banco Central está atrás da inflação" if baixo else
-                "Selic menos a inflação esperada; alto: freia a economia e deixa espaço para cortar" if hi is not None and jr["valor"] > hi else
-                f"Selic menos a inflação esperada; normal no Brasil: de {num(lo)}% a {num(hi)}%" if lo is not None else "")
-        r.append(linha("Juro descontado da inflação", f"{num(jr['valor'])}% ao ano", baixo, "juro baixo perto da inflação", nota))
-    if (ind.get("divida") or {}).get("valor") is not None:
-        x = ind["divida"]
-        r.append(linha("Dívida do governo", f"{num(x['nivel'])}% do PIB", acima(x, x["valor"]), "dívida subindo",
-                       f"{mudou(x['valor'])} em 12 meses"))
-    if (ind.get("comprometimento") or {}).get("nivel") is not None:
-        x, hist = ind["comprometimento"], s["comprometimento_renda"]
-        recorde = x["nivel"] >= max(hist.values())
-        f.append(linha("Famílias endividadas", f"{num(x['nivel'])}% da renda", alto(hist, x["nivel"]), "famílias endividadas",
-                       "vai para parcelas e juros" + (f"; o maior desde {min(hist)[:4]}" if recorde else "")))
-    return {"grupos": [{"nome": "Gatilhos", "linhas": g},
-                       {"nome": "O que pode fazer o juro subir", "linhas": r},
-                       {"nome": "Fragilidade", "linhas": f}],
-            "resumo": resumo(g, r, f, rumos)}
-
-
-def _lista(xs: list[str]) -> str:
-    return xs[0] if len(xs) == 1 else ", ".join(xs[:-1]) + " e " + xs[-1]
-
-
-SELIC = {"subiu": "a Selic subiu", "caiu": "a Selic caiu", "ficou parado": "a Selic ficou parada"}
-PRECOS = {"subiu": "os preços sobem mais rápido", "caiu": "os preços sobem mais devagar",
-          "ficou parado": "os preços sobem no mesmo ritmo"}
-
-
-def resumo(g: list[dict], r: list[dict], f: list[dict], rumos: dict[str, str]) -> list[str]:
     out = []
-    ligados = [x["o_que"] for x in g if x["atencao"]]
-    if ligados:
-        out.append(f"Gatilho ligado: {_lista(ligados)}.")
-    elif rumos:
-        partes = ([SELIC[rumos["Selic"]]] if "Selic" in rumos else []) + ([PRECOS[rumos["Inflação"]]] if "Inflação" in rumos else [])
-        out.append(f"Gatilhos calmos: em 12 meses, {', e '.join(partes)}.")
-    pressao = [x["o_que"] for x in r if x["atencao"]]
-    out.append(f"Pode puxar o juro para cima: {_lista(pressao)}." if pressao else "Nada empurra o juro para cima agora.")
-    frag = [x["o_que"] for x in f if x["atencao"]]
-    out.append(f"Fragilidade: {_lista(frag)}." if frag else "Sem fragilidade acima do normal.")
+
+    def p(pergunta, resposta, tom, texto):
+        out.append({"pergunta": pergunta, "resposta": resposta, "tom": tom, "texto": texto})
+
+    # 1. A economia no limite: desemprego baixo (a padaria com o forno cheio).
+    sahm = ind.get("sahm") or {}
+    if sahm.get("nivel") is not None and hist.get("desocupacao"):
+        d, h = sahm["nivel"], hist["desocupacao"]
+        menor = min(h.values())
+        cheio = percentil(h, d) <= 100 - CORTE
+        t = (f"O desemprego está em {pct(d, 1)}%, perto do menor desde 2012 ({pct(menor, 1)}%)." if d - menor <= 0.5
+             else f"O desemprego está em {pct(d, 1)}%. O menor desde 2012 foi {pct(menor, 1)}%.")
+        devagar = "crescimento" in ent and "tendencia" in ent and ent["crescimento"]["valor"] < ent["tendencia"]["valor"]
+        if "crescimento" in ent and "tendencia" in ent:
+            c, m = ent["crescimento"]["valor"], ent["tendencia"]["valor"]
+            t += (f" {'Mas a' if cheio and devagar else 'A'} economia cresce {pct(c, 1)}% em um ano, "
+                  f"{'abaixo' if devagar else 'acima'} da média de 10 anos ({pct(m, 1)}%).")
+        p("A economia está no limite?", ("Quase" if devagar else "Sim") if cheio else "Não",
+          "atencao" if cheio and not devagar else "meio" if cheio else "calmo", t)
+
+    # 2. O freio: juro descontada a inflação esperada, contra a faixa normal do Brasil.
+    jr = ind.get("juro_real") or {}
+    if jr.get("valor") is not None and jr.get("faixa_normal"):
+        v, (lo, hi) = jr["valor"], jr["faixa_normal"]
+        if v > hi:
+            r, tom, onde = "Sim", "atencao", "Fica acima do normal"
+        elif v >= lo + 0.75 * (hi - lo):
+            r, tom, onde = "Quase", "meio", "Fica perto do teto do normal"
+        elif v < lo:
+            r, tom, onde = "Não", "calmo", "Fica abaixo do normal"
+        else:
+            r, tom, onde = "No normal", "calmo", "Fica dentro do normal"
+        t = (f"Descontada a inflação esperada, o juro está em {pct(v, 1)}% ao ano. "
+             f"{onde} no Brasil (de {pct(lo, 1)}% a {pct(hi, 1)}%).")
+        if "juro" in ent and ent["juro"].get("nivel") is not None:
+            t += f" A Selic está em {pct(ent['juro']['nivel'])}%, contra {pct(ent['juro']['antes'])}% um ano antes."
+        p("O juro está freando a economia?", r, tom, t)
+
+    # 3. A bola de neve: dívida contra um ano antes, e o que o governo gasta além do que arrecada, sem juros.
+    dv = ind.get("divida") or {}
+    if dv.get("valor") is not None and dv.get("nivel") is not None:
+        v, n = dv["valor"], dv["nivel"]
+        hi = (dv.get("faixa_normal") or [None, float("inf")])[1]
+        r, tom = ("Sim", "atencao") if v > hi else ("Devagar", "meio") if v > 0 else ("Não", "calmo")
+        t = (f"A dívida do governo está em {pct(n, 1)}% do PIB, {_pontos(v)} {'acima' if v > 0 else 'abaixo'} de um ano antes."
+             if round(v, 1) != 0 else f"A dívida do governo está em {pct(n, 1)}% do PIB, igual a um ano antes.")
+        prim = (bruto or {}).get("series", {}).get("primario_12m", {}).get("dados") or []
+        if prim:
+            z = prim[-1]["valor"]  # + é gastar mais do que arrecada
+            t += (f" Sem contar os juros, o governo gasta {pct(z, 1)}% do PIB a mais do que arrecada." if z > 0 else
+                  f" Sem contar os juros, o governo arrecada {pct(-z, 1)}% do PIB a mais do que gasta.")
+        p("A dívida do governo está crescendo?", r, tom, t)
+
+    # 4. As famílias: quanto da renda vai para parcelas e juros.
+    cp = ind.get("comprometimento") or {}
+    if cp.get("nivel") is not None and hist.get("comprometimento_renda"):
+        n, h = cp["nivel"], hist["comprometimento_renda"]
+        alto, recorde = percentil(h, n) > CORTE, n >= max(h.values())
+        fim = (f", o maior desde {min(h)[:4]}." if recorde else
+               f", mais do que em 3 de cada 4 meses desde {INICIO_HOJE[:4]}." if alto else ", dentro do normal.")
+        p("As famílias estão apertadas?", "Sim" if alto else "Não", "atencao" if alto else "calmo",
+          f"{pct(n, 1)}% da renda das famílias vai para parcelas e juros{fim}")
     return out
 
 

@@ -152,7 +152,7 @@ As notícias não mexem no nível. Se cada notícia somasse um pedaço, como os 
 
 ## O que causa recessão
 
-A aba [O que causa recessão](https://vaidarcrise.com.br/causas/) resume duas pesquisas para quem não é economista. Nada dela entra no nível.
+A aba [O que causa recessão](https://vaidarcrise.com.br/causas/) explica o caminho mais comum até a recessão para quem não é economista: por que os preços sobem, o juro alto como freio, os casos de 2013 a 2016 e de 2021 e 2022, a bola de neve da dívida do governo e o que faz algumas quedas doerem mais. Segue a seção "Como explicar um mecanismo" do [PERSONA.md](https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md). Nada dela entra no nível. As duas pesquisas abaixo sustentam o que a aba diz; os números delas ficam aqui, não na aba.
 
 **Gatilhos e fragilidades.** Recessões de 166 países, com dados anuais (Global Macro Database, FMI, Banco Mundial e Jordà, Schularick e Taylor). AUC: 0,5 é cara ou coroa; 1 acerta sempre.
 
@@ -179,7 +179,18 @@ A aba [O que causa recessão](https://vaidarcrise.com.br/causas/) resume duas pe
 - O caminho é a dominância fiscal de Blanchard (2004), escrita sobre o Brasil: déficit subindo eleva a inflação esperada, e o Banco Central sobe o juro. O déficit subindo não avisa a recessão direto (0,48): age pelo juro, que já está na conta.
 - Juro americano e commodities, testados como quinta entrada da conta, pioraram o erro fora da amostra em 12 meses: 5,1% e 5,8% no painel; 15,1% e 23,5% no Brasil.
 
-**O Brasil hoje.** Cada linha contra os meses desde 2004. Atenção quando o dado passa da faixa normal (a metade do meio dos meses) para o lado que pressiona. Selic e IPCA usam a faixa da conta; juro real e dívida, a de Fator por fator. Déficit primário (variação em 12 meses), inflação esperada (variação em 6 meses) e renda comprometida (nível) usam o percentil 75 de `data/historico/series.json`. A inflação esperada também acende Atenção acima do teto da meta (3% mais 1,5 ponto).
+**E hoje?** Quatro perguntas, refeitas a cada atualização por `perguntas_hoje` em [`src/causas.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/causas.py):
+
+- *A economia está no limite?* Sim quando o desemprego (PNAD, último mês) está entre os 25% de meses mais baixos desde 2012 e a economia cresce acima da média de 10 anos; Quase quando o desemprego está baixo, mas o crescimento em 12 meses fica abaixo dessa média; Não quando o desemprego não está baixo.
+- *O juro está freando a economia?* Juro descontada a inflação esperada contra a faixa normal de Fator por fator: Sim acima dela, Quase no quarto de cima, No normal no resto, Não abaixo.
+- *A dívida do governo está crescendo?* Dívida bruta contra um ano antes: Sim acima da faixa normal de Fator por fator, Devagar entre zero e o teto dela, Não se caiu. O texto traz o resultado do governo sem os juros (BCB 5793).
+- *As famílias estão apertadas?* Renda comprometida com dívidas acima do percentil 75 dos meses desde 2004.
+
+O resumo em imagem (`docs/causas/resumo-2026-10-31.png`) e a prévia de link (`docs/causas/og.png`) foram feitos uma vez por [`src/resumo_causas.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/resumo_causas.py), com a situação de 31/10/2026; a atualização diária não os refaz. Os desenhos foram gerados pelo modelo de imagem Gemini, do Google, a partir do roteiro da aba; os originais ficam em `assets/causas/`.
+
+**Números fixos da aba, com data.** Juros nominais do setor público em 12 meses até agosto de 2026: R$ 1,18 trilhão, 8,9% do PIB (Banco Central, estatísticas fiscais, pela imprensa); cerca de R$ 5.500 por brasileiro, com 213 milhões de habitantes. Resultado sem juros no mesmo período: 0,6% do PIB a mais de gasto que de receita (BCB 5793). Sobra sem juros que estabilizaria a dívida bruta: 2,1% do PIB por ano (IFI, Relatório de Acompanhamento Fiscal de agosto de 2026). Dívida federal em reais: 96% (Tesouro, agosto de 2026); não residentes têm cerca de 10% da dívida interna. IPCA de 2021: 10,06%, com gasolina em 47,5% e energia elétrica em 21,2% (IBGE), com o setor público arrecadando 0,7% do PIB a mais do que gastou, sem juros. Desemprego de 6,2% em dezembro de 2013 e 13,9% em março de 2017 (PNAD).
+
+**Onde a ligação com as contas do governo é forte e onde é fraca.** Procura acima da capacidade vira preço, e o Banco Central diz que, com a economia no limite, estímulo do governo vira mais inflação que crescimento (ata do Copom de dezembro de 2022). No Brasil, contas piorando vieram antes das altas da Selic (0,72, acima); nos 44 países, não (0,48). Nem toda inflação vem do gasto: 2021 é o contraexemplo. A bola de neve é aritmética (juro acima do crescimento e sem sobra, a dívida sobe); o círculo de volta para o juro, via dólar e inflação esperada, é o de Blanchard (2004), com força que varia com a confiança. Dívida alta não marcou a data das recessões em 166 países, por isso a aba não fala em espiral nem em prazo.
 
 **Limites.** Um sinal por vez mostra o que vem antes, não o que causa, e dois sinais podem contar a mesma história. Nada disso passou por teste fora da amostra, exceto a quinta entrada. O Brasil teve sete ciclos de alta desde 2002: a margem de erro é grande. No painel, dívida e déficit são anuais e chegam com 1 ano de atraso, o que enfraquece o fiscal ali.
 
