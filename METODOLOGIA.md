@@ -31,11 +31,11 @@ Fora da soma, a página mostra o **ritmo da economia** (IBC-Br dessazonalizado, 
 
 **2. Cada medida contra 3 meses antes.** A mudança é a diferença em pontos (em % no dólar e na média do IBC-Br) entre o dado de referência e o de 3 meses antes dele.
 
-**3. O vaivém normal de cada medida** é 1,4826 vezes o desvio absoluto mediano das mudanças de 3 meses desde janeiro de 2002, com o atraso de divulgação de cada série. É uma régua robusta: uma crise grande, como 2008 ou 2020, não a alarga. Nas contas do governo, a régua junta as mudanças da dívida (desde 2007) e as do resultado sem juros (antes), e o mesmo corte vale para as duas.
+**3. A escala de cada medida** é 1,4826 vezes o desvio absoluto mediano das mudanças de 3 meses desde janeiro de 2002, com o atraso de divulgação de cada série (em `config/calibracao.json`, `direcao.cortes`). É uma régua robusta: uma crise grande, como 2008 ou 2020, não a alarga. Nas contas do governo, a escala junta as mudanças da dívida (desde 2007) e as do resultado sem juros (antes), e o mesmo corte vale para as duas.
 
-**4. Apertou, igual ou folgou.** A medida apertou se andou para o lado ruim mais que três quartos do vaivém normal (`corte_vaivem` = 0,75); folgou se andou isso para o lado bom; no resto, ficou igual. Os cortes de hoje:
+**4. Apertou, igual ou folgou.** O corte é três quartos da escala (`corte_vaivem` = 0,75); é o que a página chama de vaivém normal de 3 meses. A medida apertou se andou para o lado ruim mais que o corte; folgou se andou isso para o lado bom; no resto, ficou igual. A página diz "passou raspando" quando a mudança fica abaixo de 1,25 vez o corte. Os cortes de hoje:
 
-| Medida | Vaivém normal em 3 meses | Corte (0,75 ×) |
+| Medida | Escala em 3 meses | Corte, o vaivém normal da página (0,75 × escala) |
 | --- | --- | --- |
 | Dívida do governo (régua das contas) | 1,26 ponto do PIB | 0,95 ponto |
 | Parcelas das famílias | 0,50 ponto da renda | 0,38 ponto |
@@ -84,9 +84,9 @@ Foram umas 25 versões. As mais próximas:
 | Versão | Meses em subindo | Mudanças por ano | PIB em 12 meses, depois de subindo e de caindo | Meses em subindo nos 12 antes de 2014 | Outubro de 2026 |
 | --- | --- | --- | --- | --- | --- |
 | **A escolhida** | 17% | 2,0 | +0,3% e +4,3% | 6 | Subindo |
-| Corte de meio vaivém | 22% | 2,4 | +1,1% e +4,2% | 4 | Subindo |
-| Corte de um vaivém inteiro | 11% | 1,6 | +0,1% e +3,9% | 0 | Igual |
-| Vaivém pelo desvio padrão comum | 11% | 1,5 | −0,7% e +3,4% | 0 | Igual |
+| Corte de meia escala | 22% | 2,4 | +1,1% e +4,2% | 4 | Subindo |
+| Corte de uma escala inteira | 11% | 1,6 | +0,1% e +3,9% | 0 | Igual |
+| Escala pelo desvio padrão comum | 11% | 1,5 | −0,7% e +3,4% | 0 | Igual |
 | Comparar com 6 meses antes | 19% | 1,4 | +1,1% e +4,5% | 6 | Igual |
 | Basta uma pressão para subir | 43% | 2,1 | +0,8% e +3,6% | 11 | Subindo |
 | Sem esperar o mês seguinte | 20% | 4,0 | +0,8% e +3,7% | 5 | Subindo |
@@ -97,7 +97,7 @@ Foram umas 25 versões. As mais próximas:
 | Sete partes, com ritmo e emprego na soma | 10% | 2,2 | −2,1% e +4,1% | 0 | Subindo |
 
 - **Basta uma pressão** vira papel de parede. **Sem esperar o mês seguinte**, a direção muda 4 vezes por ano.
-- **Corte de um vaivém inteiro** e **desvio padrão comum** ficam em igual em três de cada quatro meses e não viram nada antes de 2014.
+- **Corte de uma escala inteira** e **desvio padrão comum** ficam em igual em três de cada quatro meses e não viram nada antes de 2014.
 - **Sete partes** parece melhor no PIB seguinte, mas porque o ritmo e o emprego descrevem a recessão que já chegou. Antes de 2014, ficou em igual o ano todo.
 - **Comparar com 6 meses antes**, **contas juntas** e **inflação juntas** quase empatam com a escolhida; ficou a mais simples de explicar.
 - **Por que a dívida, e não o resultado sem juros, nas contas do governo.** É a dívida que quem empresta ao governo olha, e ela inclui o custo dos juros. Hoje as duas andam em lados opostos: o resultado sem juros melhorou, e a dívida subiu porque os juros pesam mais que essa melhora. A página mostra as duas.
@@ -294,7 +294,7 @@ O ganho é modesto e, como a direção, a conta não acerta a data em que cada r
 - [IBGE: Contas Nacionais Trimestrais](https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9300-contas-nacionais-trimestrais.html)
 - [Tesouro Direto: taxas dos títulos](https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto)
 - [FMI, índice de preços de commodities, via FRED](https://fred.stlouisfed.org/series/PALLFNFINDEXM)
-- Rousseeuw e Croux (1993), *Alternatives to the median absolute deviation*, Journal of the American Statistical Association, sobre a régua robusta do vaivém
+- Rousseeuw e Croux (1993), *Alternatives to the median absolute deviation*, Journal of the American Statistical Association, sobre a escala robusta
 - Tesouro Nacional, Relatório Mensal da Dívida Pública Federal (agosto de 2026), para a parte da dívida federal em reais
 - [Lei Complementar 179, de 2021](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp179.htm), autonomia do Banco Central
 - [FMI, World Economic Outlook](https://www.imf.org/en/Publications/WEO), dívida bruta do governo da Argentina em 2001 e do Japão, citadas em Como funciona

@@ -342,7 +342,7 @@ def calibrar(ate: str) -> dict:
             blocos.append({"inicio": x["mes"], "fim": x["mes"], "estado": c})
     return {
         "cortes": {k: round(v, 4) for k, v in escalas.items()},
-        "o_que_e": "Vaivém normal de cada medida: 1,4826 × desvio absoluto mediano das mudanças de 3 meses desde 2002, com o atraso de divulgação de cada série. A pressão aperta ou folga quando a mudança passa de corte_vaivem (config/modelo.json) vezes esse número. Em 'divida', a régua das contas: dívida bruta desde 2007, resultado sem juros antes.",
+        "o_que_e": "Escala de cada medida: 1,4826 × desvio absoluto mediano das mudanças de 3 meses desde 2002, com o atraso de divulgação de cada série. A pressão aperta ou folga quando a mudança passa de corte_vaivem (config/modelo.json) vezes essa escala, o que a página chama de vaivém normal. Em 'divida', a régua das contas: dívida bruta desde 2007, resultado sem juros antes.",
         "teste": {
             "de": teste[0]["mes"], "ate": teste[-1]["mes"], "meses": n,
             "parte_dos_meses": {ESTADOS[e]: parte(e) for e in (1, 0, -1, 2)},

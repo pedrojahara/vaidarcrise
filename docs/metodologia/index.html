@@ -214,14 +214,14 @@ a:hover{text-decoration-thickness:2px}
 </table>
 <p>Fora da soma, a página mostra o <strong>ritmo da economia</strong> (IBC-Br dessazonalizado, BCB 24364: média dos 3 últimos meses contra a dos 3 anteriores; atraso de 2 meses) e o <strong>emprego</strong> (desocupação da PNAD, BCB 24369; atraso de 1 mês). Eles descrevem a economia de agora; o emprego é o último a piorar numa recessão.</p>
 <p><strong>2. Cada medida contra 3 meses antes.</strong> A mudança é a diferença em pontos (em % no dólar e na média do IBC-Br) entre o dado de referência e o de 3 meses antes dele.</p>
-<p><strong>3. O vaivém normal de cada medida</strong> é 1,4826 vezes o desvio absoluto mediano das mudanças de 3 meses desde janeiro de 2002, com o atraso de divulgação de cada série. É uma régua robusta: uma crise grande, como 2008 ou 2020, não a alarga. Nas contas do governo, a régua junta as mudanças da dívida (desde 2007) e as do resultado sem juros (antes), e o mesmo corte vale para as duas.</p>
-<p><strong>4. Apertou, igual ou folgou.</strong> A medida apertou se andou para o lado ruim mais que três quartos do vaivém normal (<code>corte_vaivem</code> = 0,75); folgou se andou isso para o lado bom; no resto, ficou igual. Os cortes de hoje:</p>
+<p><strong>3. A escala de cada medida</strong> é 1,4826 vezes o desvio absoluto mediano das mudanças de 3 meses desde janeiro de 2002, com o atraso de divulgação de cada série (em <code>config/calibracao.json</code>, <code>direcao.cortes</code>). É uma régua robusta: uma crise grande, como 2008 ou 2020, não a alarga. Nas contas do governo, a escala junta as mudanças da dívida (desde 2007) e as do resultado sem juros (antes), e o mesmo corte vale para as duas.</p>
+<p><strong>4. Apertou, igual ou folgou.</strong> O corte é três quartos da escala (<code>corte_vaivem</code> = 0,75); é o que a página chama de vaivém normal de 3 meses. A medida apertou se andou para o lado ruim mais que o corte; folgou se andou isso para o lado bom; no resto, ficou igual. A página diz "passou raspando" quando a mudança fica abaixo de 1,25 vez o corte. Os cortes de hoje:</p>
 <table>
 <thead>
 <tr>
 <th>Medida</th>
-<th>Vaivém normal em 3 meses</th>
-<th>Corte (0,75 ×)</th>
+<th>Escala em 3 meses</th>
+<th>Corte, o vaivém normal da página (0,75 × escala)</th>
 </tr>
 </thead>
 <tbody>
@@ -335,7 +335,7 @@ a:hover{text-decoration-thickness:2px}
 <td>Subindo</td>
 </tr>
 <tr>
-<td>Corte de meio vaivém</td>
+<td>Corte de meia escala</td>
 <td>22%</td>
 <td>2,4</td>
 <td>+1,1% e +4,2%</td>
@@ -343,7 +343,7 @@ a:hover{text-decoration-thickness:2px}
 <td>Subindo</td>
 </tr>
 <tr>
-<td>Corte de um vaivém inteiro</td>
+<td>Corte de uma escala inteira</td>
 <td>11%</td>
 <td>1,6</td>
 <td>+0,1% e +3,9%</td>
@@ -351,7 +351,7 @@ a:hover{text-decoration-thickness:2px}
 <td>Igual</td>
 </tr>
 <tr>
-<td>Vaivém pelo desvio padrão comum</td>
+<td>Escala pelo desvio padrão comum</td>
 <td>11%</td>
 <td>1,5</td>
 <td>−0,7% e +3,4%</td>
@@ -426,7 +426,7 @@ a:hover{text-decoration-thickness:2px}
 </table>
 <ul>
 <li><strong>Basta uma pressão</strong> vira papel de parede. <strong>Sem esperar o mês seguinte</strong>, a direção muda 4 vezes por ano.</li>
-<li><strong>Corte de um vaivém inteiro</strong> e <strong>desvio padrão comum</strong> ficam em igual em três de cada quatro meses e não viram nada antes de 2014.</li>
+<li><strong>Corte de uma escala inteira</strong> e <strong>desvio padrão comum</strong> ficam em igual em três de cada quatro meses e não viram nada antes de 2014.</li>
 <li><strong>Sete partes</strong> parece melhor no PIB seguinte, mas porque o ritmo e o emprego descrevem a recessão que já chegou. Antes de 2014, ficou em igual o ano todo.</li>
 <li><strong>Comparar com 6 meses antes</strong>, <strong>contas juntas</strong> e <strong>inflação juntas</strong> quase empatam com a escolhida; ficou a mais simples de explicar.</li>
 <li><strong>Por que a dívida, e não o resultado sem juros, nas contas do governo.</strong> É a dívida que quem empresta ao governo olha, e ela inclui o custo dos juros. Hoje as duas andam em lados opostos: o resultado sem juros melhorou, e a dívida subiu porque os juros pesam mais que essa melhora. A página mostra as duas.</li>
@@ -855,7 +855,7 @@ a:hover{text-decoration-thickness:2px}
 <li><a href="https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9300-contas-nacionais-trimestrais.html">IBGE: Contas Nacionais Trimestrais</a></li>
 <li><a href="https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto">Tesouro Direto: taxas dos títulos</a></li>
 <li><a href="https://fred.stlouisfed.org/series/PALLFNFINDEXM">FMI, índice de preços de commodities, via FRED</a></li>
-<li>Rousseeuw e Croux (1993), <em>Alternatives to the median absolute deviation</em>, Journal of the American Statistical Association, sobre a régua robusta do vaivém</li>
+<li>Rousseeuw e Croux (1993), <em>Alternatives to the median absolute deviation</em>, Journal of the American Statistical Association, sobre a escala robusta</li>
 <li>Tesouro Nacional, Relatório Mensal da Dívida Pública Federal (agosto de 2026), para a parte da dívida federal em reais</li>
 <li><a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp179.htm">Lei Complementar 179, de 2021</a>, autonomia do Banco Central</li>
 <li><a href="https://www.imf.org/en/Publications/WEO">FMI, World Economic Outlook</a>, dívida bruta do governo da Argentina em 2001 e do Japão, citadas em Como funciona</li>

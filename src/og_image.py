@@ -63,8 +63,13 @@ def gerar(caminho: Path, ctx: dict) -> None:
     pres = dr["pressoes"]
     ap = sum(1 for p in pres if p["palavra"] == "Apertou")
     fo = sum(1 for p in pres if p["palavra"] == "Folgou")
-    d.text((x, y + 62), f"Das 5 pressões: {ap} {'apertou' if ap == 1 else 'apertaram'}, {fo} {'folgou' if fo == 1 else 'folgaram'}.",
+    nums = ["nenhuma", "uma", "duas", "três", "quatro", "cinco"]
+
+    def conta(n: int, um: str, varios: str) -> str:
+        return f"{nums[n]} {um if n <= 1 else varios}"
+    d.text((x, y + 62), f"{conta(ap, 'apertou', 'apertaram').replace(' ', ' das 5 pressões ', 1).capitalize()}.",
            font=sans(30), fill=TINTA)
+    d.text((x, y + 102), f"{conta(fo, 'folgou', 'folgaram').capitalize()}.", font=sans(30), fill=TINTA)
 
     d.line([(64, 548), (W - 64, 548)], fill=FIO, width=2)
     # A semana e o mês vão para o WhatsApp: a prévia diz que tipo de post é.
