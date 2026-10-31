@@ -34,6 +34,9 @@ MOLDES = [
     (re.compile(r"(,\s*(sim|não)\.(\s|$)|,\s+não\s+(?:[ao]s?\s+)?\w+\.(\s|$)|\b(\w{4,}) (puxa|chama|gera|traz) \5\b|"
                 r"ninguém controla|\bna dose certa\b)", re.I),
      "frase de efeito no lugar de causa e efeito ('X, sim.', 'isto, não aquilo', 'aumento puxa aumento')"),
+    # PERSONA.md, "Jargões": a Selic se explica pelo que faz, não por outro termo.
+    (re.compile(r"\bjuro básico\b", re.I),
+     "'juro básico' troca jargão por jargão: diga que é o juro que o Banco Central decide e que serve de base para os juros dos bancos"),
     (re.compile(r"\b(cenário ruim|inadimplência|(déficit|superávit) primário|crédito livre)\b", re.I),
      "palavra que o site trocou (num ano ruim, atraso nas dívidas, gasta mais do que arrecada)"),
 ]

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block titulo %}O que causa uma recessão | Vai dar crise?{% endblock %}
-{% block descricao %}Por que os preços sobem, por que o juro alto tira emprego e por que a dívida do governo vira bola de neve. Explicado com uma padaria e com casos que o Brasil viveu.{% endblock %}
+{% block descricao %}Por que os preços sobem, por que o juro alto tira emprego e por que as dívidas das famílias e do governo aumentam a queda. Explicado com uma padaria e com casos que o Brasil viveu.{% endblock %}
 {% block estilo %}
 .causas{padding-top:28px;padding-bottom:40px}
 .causas > *{max-width:680px}
@@ -58,6 +58,17 @@
 .ciclo-box::before{content:"";position:absolute;right:14px;top:20px;bottom:20px;width:38px;border:2px solid var(--meta);border-left:0;border-radius:0 14px 14px 0}
 .ciclo-box::after{content:"";position:absolute;right:50px;top:13px;border:7px solid transparent;border-right-color:var(--meta)}
 .ciclo-box .volta{position:absolute;right:6px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font:600 13px/1 var(--sistema);color:var(--meta);background:var(--papel);padding:6px 3px;white-space:nowrap}
+.so-ciclo .ciclo-box{margin-top:0}
+.so-ciclo .ciclo-box .ciclo li:first-child::before,.so-ciclo .ciclo-box .ciclo li:first-child::after{content:none}
+
+/* mapa do fim: o que faz os preços subirem, o caminho e o que deixa a queda maior */
+.mapa{margin:8px 0 20px;font:16px/1.4 var(--sistema)}
+.mapa-entradas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:26px}
+.causas .mapa-entradas p{position:relative;margin:0;padding:10px 12px;border:1.5px dashed var(--meta);border-radius:8px;font-size:15px;line-height:1.4}
+.mapa-entradas p::before{content:"";position:absolute;left:50%;margin-left:-1px;top:calc(100% + 4px);width:2px;height:13px;background:var(--meta)}
+.mapa-entradas p::after{content:"";position:absolute;left:50%;margin-left:-6px;top:calc(100% + 16px);border:6px solid transparent;border-top-color:var(--meta)}
+.causas .mapa-caminho .piora{margin:8px 0 2px;padding:6px 10px;border-left:4px solid var(--placa);background:var(--nota-fundo);font-size:15px;line-height:1.4}
+.mapa-caminho .fim{background:var(--tinta);color:var(--papel);border-color:var(--tinta);font-weight:700}
 .dado{font:16px/1.5 var(--sistema);background:var(--maquina);border-radius:8px;padding:12px 14px}
 
 .fontes{font:15px/1.5 var(--sistema);color:var(--meta);padding-left:1.1em}
@@ -75,7 +86,7 @@
 {% block corpo %}
 <main class="in causas">
   <h1>O que causa uma recessão</h1>
-  <p class="resposta">Quase sempre, o mesmo caminho: os preços sobem rápido, o juro sobe para segurar, e a economia esfria demais.</p>
+  <p class="resposta">A recessão quase sempre começa do mesmo jeito: os preços sobem rápido, o Banco Central sobe o juro para segurar, e a economia esfria demais. A queda é maior quando as famílias e o governo já devem muito.</p>
   <p class="def-rec">Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos. Costuma vir com menos emprego e menos renda.</p>
 
   <section aria-labelledby="t-precos">
@@ -109,17 +120,42 @@
 
   <section aria-labelledby="t-freio">
     <h2 id="t-freio">O remédio: juro alto</h2>
+    <p>A Selic é o juro que o Banco Central decide. Os bancos partem dela para cobrar o juro do cartão, do empréstimo e do financiamento. Quando a Selic sobe, esses juros sobem junto.</p>
     <details class="palpite">
       <summary><b>Palpite:</b> quando o juro sobe, os preços do mercado sobem mais rápido ou mais devagar?<br><span>Ver a resposta</span></summary>
       <p><b>Mais devagar</b>, embora muita gente pense o contrário. O juro alto deixa a compra a prazo mais cara. As pessoas compram menos, e as lojas param de subir os preços para não perder cliente.</p>
     </details>
     <ol class="quadros">
-      <li><img src="/causas/img/freio-1-juro.webp" width="900" height="900" loading="lazy" alt="Uma mão puxa uma alavanca de freio amarela."><p><b>1.</b> O Banco Central sobe a Selic, o juro básico, para segurar os preços.</p></li>
+      <li><img src="/causas/img/freio-1-juro.webp" width="900" height="900" loading="lazy" alt="Uma mão puxa uma alavanca de freio amarela."><p><b>1.</b> O Banco Central sobe a Selic para segurar os preços.</p></li>
       <li><img src="/causas/img/freio-2-prazo.webp" width="900" height="900" loading="lazy" alt="Na mesma padaria, só dois clientes na fila. Uma cliente olha o cartão de crédito, em dúvida."><p><b>2.</b> Comprar a prazo fica caro. A fila diminui, e o padeiro para de subir o preço.</p></li>
       <li><img src="/causas/img/freio-3-vende-menos.webp" width="900" height="900" loading="lazy" alt="A padaria vazia, com cestas cheias de pão que não foi vendido. O padeiro olha a porta, preocupado."><p><b>3.</b> Mas ele vende menos, e sobra pão.</p></li>
       <li><img src="/causas/img/freio-4-demissao.webp" width="900" height="900" loading="lazy" alt="Na porta da padaria, o padeiro se despede do ajudante, que vai embora com o avental dobrado."><p><b>4.</b> Vendendo menos, ele dispensa o ajudante. Quando muitas lojas fazem isso ao mesmo tempo, vem a recessão.</p></li>
     </ol>
     <p>Se o juro sobe na medida certa, os preços sobem mais devagar e pouca gente perde o emprego. Se sobe demais, ou fica alto por muito tempo, as demissões se espalham e vem a recessão.</p>
+  </section>
+
+  <section aria-labelledby="t-doem">
+    <h2 id="t-doem">Por que algumas quedas doem mais</h2>
+    <figure class="des meio">
+      <img src="/causas/img/familia-contas.webp" width="900" height="900" loading="lazy" alt="Uma família na mesa da cozinha, com carnês e contas. O pai faz contas no celular, e a mãe segura um boleto.">
+      <figcaption>Quem já paga muitas parcelas fica sem folga quando a renda cai.</figcaption>
+    </figure>
+    <p>Lembra do ajudante que o padeiro dispensou no quadro 4? A recessão fica maior ou menor conforme o que acontece com ele depois.</p>
+    <p>Se ele tem a parcela da moto e a fatura do cartão para pagar, a demissão dele leva a outras:</p>
+    <div class="corrente so-ciclo">
+      <div class="ciclo-box">
+        <ol class="ciclo" aria-label="A bola de neve das famílias: do passo 4, volta ao passo 1">
+          <li><span class="n">1.</span> O ajudante perde o emprego e atrasa a parcela e a fatura. Em muitas casas acontece o mesmo.</li>
+          <li><span class="n">2.</span> Com muita gente atrasando, o banco perde dinheiro e passa a emprestar menos, até para quem paga em dia.</li>
+          <li><span class="n">3.</span> Quem ainda tem emprego também gasta menos, porque a parcela está cara e o crédito ficou difícil.</li>
+          <li><span class="n">4.</span> As lojas vendem menos e dispensam mais gente.</li>
+        </ol>
+        <span class="volta" aria-hidden="true">e mais gente atrasa as contas</span>
+      </div>
+    </div>
+    <p>Quando as famílias devem pouco, o ajudante corta gastos, mas consegue pagar o que deve. O banco não perde dinheiro, e a corrente para logo no começo.</p>
+    <p class="dado">Em agosto de 2026, as famílias usavam 29% da renda para pagar dívidas. É o maior valor desde 2005, quando o Banco Central começou a medir. Em 2014, eram 23%.</p>
+    <p>Uma recessão também machuca mais quando o país depende de dinheiro de fora. Se esse dinheiro vai embora, o dólar sobe e os preços sobem junto. Aí o Banco Central tende a subir o juro ainda mais.</p>
   </section>
 
   <section aria-labelledby="t-casos">
@@ -175,7 +211,6 @@
       </div>
     </div>
     <p>Do passo 3 ao 6, a bola de neve cresce sozinha, como no rotativo do cartão. Mesmo sem gasto novo, os juros fazem a dívida crescer, e a dívida maior mantém o juro alto.</p>
-    <p>O círculo também pode começar por fora. Em 2021, a gasolina e a falta de chuva subiram os preços, e o juro subiu junto.</p>
 
     <h3>Como está hoje</h3>
     <p class="dado">Em 12 meses, até agosto de 2026, os juros da dívida custaram R$ 1,2 trilhão, 8,9% do PIB. Dá cerca de R$ 5.500 por brasileiro. No mesmo período, sem contar os juros, o governo gastou 0,6% do PIB a mais do que arrecadou.</p>
@@ -188,14 +223,28 @@
     <p>Por isso, dívida alta não significa crise no ano seguinte. O custo vem aos poucos: sobra menos dinheiro para saúde, escola e obras, ou o imposto sobe.</p>
   </section>
 
-  <section aria-labelledby="t-doem">
-    <h2 id="t-doem">Por que algumas quedas doem mais</h2>
-    <figure class="des meio">
-      <img src="/causas/img/familia-contas.webp" width="900" height="900" loading="lazy" alt="Uma família na mesa da cozinha, com carnês e contas. O pai faz contas no celular, e a mãe segura um boleto.">
-      <figcaption>Quem já paga muitas parcelas sente mais o juro alto.</figcaption>
-    </figure>
-    <p>Uma recessão machuca mais quando as famílias já devem muito. Com o juro alto, cartão, cheque especial e crédito novo ficam mais caros. Sobra menos para o resto, e as lojas vendem ainda menos.</p>
-    <p>Também machuca mais quando o país depende de dinheiro de fora. Se esse dinheiro vai embora, o dólar sobe e os preços sobem junto. Aí o Banco Central tende a subir o juro ainda mais.</p>
+  <section aria-labelledby="t-mapa">
+    <h2 id="t-mapa">Como as partes se juntam</h2>
+    <details class="palpite">
+      <summary><b>Antes de ver o mapa:</b> sem voltar na página, o que faz o Banco Central subir o juro? E o que deixa a queda maior?<br><span>Ver a resposta</span></summary>
+      <p>O juro sobe para segurar os preços. Eles sobem quando há gente demais comprando com a economia no limite, ou quando produzir fica mais caro. A queda é maior quando as famílias e o governo já devem muito.</p>
+    </details>
+    <p>O caminho da padaria fica no meio. As caixas tracejadas, no alto, mostram o que faz os preços subirem. As faixas amarelas mostram o que deixa a queda maior.</p>
+    <div class="mapa">
+      <div class="mapa-entradas">
+        <p>Há gente demais comprando com a economia no limite. Isso vem do crédito fácil ou do governo gastando mais do que arrecada.</p>
+        <p>Seca, petróleo ou dólar deixam a produção mais cara.</p>
+      </div>
+      <ol class="ciclo mapa-caminho" aria-label="O caminho até a recessão">
+        <li>Os preços sobem rápido.</li>
+        <li>O Banco Central sobe a Selic para segurar os preços.
+          <p class="piora">Se o governo deve muito, quem empresta desconfia. O dólar sobe, e o juro fica alto por mais tempo.</p></li>
+        <li>Comprar a prazo fica caro, e as lojas vendem menos.</li>
+        <li>As lojas demitem.
+          <p class="piora">Se as famílias devem muito, quem perde o emprego deixa de pagar. O banco empresta menos, quem tem emprego corta gastos, e mais lojas demitem.</p></li>
+        <li class="fim">Quando muitas lojas demitem ao mesmo tempo, vem a recessão.</li>
+      </ol>
+    </div>
   </section>
 
   <section aria-labelledby="t-fontes">
@@ -203,7 +252,7 @@
     <ul class="fontes">
       <li>Selic, desemprego, contas do governo e dívida de 2013 a 2022: Banco Central e IBGE. Preços de soja, minério e petróleo: índice de preços de matérias-primas do FMI.</li>
       <li>Juros da dívida até agosto de 2026: Banco Central. Parte da dívida ligada à Selic: Tesouro Nacional. Sobra de 2,1% do PIB: IFI, do Senado, agosto de 2026.</li>
-      <li>Preços de 2021: IBGE.</li>
+      <li>Preços de 2021: IBGE. Parte da renda das famílias usada para pagar dívidas: Banco Central.</li>
       <li>A pesquisa por trás desta página, com testes e limites, está na <a href="/metodologia/#o-que-causa-recessao">metodologia</a>.</li>
       <li>Desenhos gerados por inteligência artificial (Gemini, do Google).</li>
     </ul>
