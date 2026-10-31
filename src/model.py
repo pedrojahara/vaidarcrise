@@ -144,16 +144,24 @@ def entradas(snap: dict) -> dict[str, dict]:
     return e
 
 
-def idade_ok(ref: str, hoje: dt.date) -> bool:
-    """Um valor guardado cobre falha de coleta até 10 dias (dado diário), 101 dias (mensal) ou 200 (trimestral)."""
+FOLGA_MENSAL = 15  # dias além do mês em que o dado seguinte já deveria ter saído
+
+
+def idade_ok(ref: str, hoje: dt.date, defasagem_meses: int = 0) -> bool:
+    """Se um valor guardado ainda pode cobrir uma falha de coleta. Conta a data de referência do dado,
+    não a da rodada que o guardou: um valor passa de rodada em rodada, mas envelhece do mesmo jeito.
+
+    Dado diário: até 10 dias. PIB trimestral: até 200 dias. Dado mensal: até 15 dias depois do fim do mês
+    em que o mês seguinte já deveria estar publicado, pela defasagem da calibração (config/modelo.json).
+    Desemprego de agosto (defasagem 1): o de setembro sai até o fim de outubro; agosto vale até 15/11."""
     if "T" in ref:
         q, a = ref.split("T")
-        ref, limite = f"{a}-{int(q) * 3:02d}-01", 200
-    elif len(ref) == 10:
-        limite = 10
-    else:
-        ref, limite = ref + "-01", 101
-    return (hoje - dt.date.fromisoformat(ref)).days <= limite
+        return (hoje - dt.date.fromisoformat(f"{a}-{int(q) * 3:02d}-01")).days <= 200
+    if len(ref) == 10:
+        return (hoje - dt.date.fromisoformat(ref)).days <= 10
+    meses = int(ref[:4]) * 12 + int(ref[5:7]) - 1 + 2 + defasagem_meses
+    fim = dt.date(meses // 12, meses % 12 + 1, 1)  # 1º dia do mês depois da próxima divulgação
+    return hoje < fim + dt.timedelta(days=FOLGA_MENSAL)
 
 
 def calcular(snap: dict, cfg: dict, cal: dict, anterior: int | None, guardados: dict | None = None,
@@ -167,9 +175,10 @@ def calcular(snap: dict, cfg: dict, cal: dict, anterior: int | None, guardados: 
 
     # 1. As entradas e o cenário ruim.
     ent = entradas(snap)
+    defas_e = cfg["gar"].get("defasagem_meses", {})
     for k in gar.ENTRADAS:
         x = guardados.get("entrada:" + k)
-        if k not in ent and x and idade_ok(x["ref"], hoje):
+        if k not in ent and x and idade_ok(x["ref"], hoje, defas_e.get(k, 0)):
             ent[k] = {**x, "reaproveitado": True}
             reaproveitados.append(k)
     falta = [k for k in gar.ENTRADAS if k not in ent]
@@ -209,7 +218,9 @@ def calcular(snap: dict, cfg: dict, cal: dict, anterior: int | None, guardados: 
     # 2. Os indicadores do Resumo, com a faixa normal desde 2002.
     vals = valores(snap)
     for k, x in guardados.items():
-        if not k.startswith("entrada:") and k not in vals and x.get("valor") is not None:
+        if k.startswith("entrada:") or k in vals or x.get("valor") is None:
+            continue
+        if idade_ok(x["ref"], hoje, cfg["indicadores"].get(k, {}).get("defasagem_meses", 0)):
             vals[k] = {**x, "reaproveitado": True}
             reaproveitados.append(k)
     linhas = []
