@@ -12,6 +12,7 @@ Escrevemos para um adulto de uns 35 a 45 anos, sem diploma universitário, que a
 - **Risco em frequência:** "1 chance em 10", nunca "quantil 10%".
 - **Mesma régua para os dois lados.** O texto sairia igual com outro governo no poder.
 - **Calma.** Sem alarme e sem consolo.
+- **Explicação por inteiro.** Frase completa, causa e efeito em ordem, com exemplo. Veja [O jeito de escrever do site](#o-jeito-de-escrever-do-site).
 
 **Teste de todo texto:** dá para entender lendo só o título e a primeira frase, no celular, em pé no ônibus?
 
@@ -143,6 +144,32 @@ Fale como alguém que entende de economia explicando no almoço de domingo: calm
 - Um gráfico por ideia, com título que conclui ("Juro caiu 1,25 ponto em um ano"). Linha com rótulo na ponta, sem legenda. Nada de dois eixos.
 - Seta de tendência sempre com a palavra ao lado ("tende a piorar").
 
+## O jeito de escrever do site
+
+Este é o padrão de todo texto do site, do post diário às abas, aprovado em 31/10/2026 na revisão da aba O que causa recessão. Escreva como alguém explicando em voz alta: frases completas, uma coisa levando à outra, com exemplo. O texto robótico resume a ideia numa fórmula e explica depois. A leitora decora a fórmula sem entender.
+
+1. **Frase completa, com quem faz o quê.** "O padeiro não consegue fazer mais pão. Então ele sobe o preço.", não "Forno no limite: pão mais caro."
+2. **Causa e efeito em ordem, com exemplo e tempo.** "Se a gasolina sobe em janeiro, o frete sobe junto. Nos meses seguintes, arroz e feijão chegam mais caros ao mercado.", não "Aumento puxa aumento."
+3. **A condição dita por inteiro.** "Se há muita gente sem emprego, esse gasto faz as empresas contratarem. Se a economia já está no limite, ele só faz os preços subirem.", não "Com o forno cheio, vira preço."
+4. **Nada de fórmula de efeito.** Sem rótulo em negrito com a explicação depois, sem contraste cortado ("X ninguém controla. Y, sim."), sem troca em espelho ("encarece a parcela, não o pão"; "vira preço, não produto") e sem par simétrico ("Na dose certa... Na dose errada..."). Rótulo que só separa ("Ajuda:", "Atrapalha:", "No fim") pode.
+5. **Diga de onde vem a causa.** Causa de fora é chamada de causa de fora, e o texto diz o que o governo influencia e como: "Das três causas externas, o governo influencia uma com as próprias contas: o dólar."
+6. **Compare com as mesmas linhas.** Dois casos lado a lado respondem às mesmas perguntas (juro, folga da economia, preços lá fora, contas do governo, como terminou), e o texto diz qual diferença mudou o final.
+7. **Amarre ao que a leitora já viu.** "É a padaria do começo da página." Cada parte usa a imagem da anterior em vez de inventar outra.
+
+**Antes e depois, na aba O que causa recessão**
+
+> **Antes.** Chuva e petróleo ninguém controla. As contas do governo, sim. Quando elas assustam, o dólar sobe e todo mundo passa a esperar preço maior.
+>
+> **Depois.** Das três causas externas, o governo influencia uma com as próprias contas: o dólar. Quando as contas pioram, quem investe tira dinheiro do Brasil. O dólar sobe, e os preços sobem junto.
+
+> **Antes.** Aumento puxa aumento. Aluguel, tarifas e salários são reajustados pela inflação passada. O aumento de ontem vira o de amanhã.
+>
+> **Depois.** Muitos preços também são corrigidos pela inflação do ano anterior, como o aluguel e o salário mínimo. Se os preços subiram 5% neste ano, o aluguel tende a subir perto de 5% no ano que vem.
+
+> **Antes.** Nem todo freio derruba. Depende do que vem junto.
+>
+> **Depois.** É a padaria do começo da página. Em 2014, o forno já estava cheio. O juro alto veio com dois problemas: o Brasil passou a vender mais barato, e as contas do governo pioraram.
+
 ## Como explicar um mecanismo
 
 O resto do guia cuida da palavra. Esta parte cuida de como ensinar: por que os preços sobem, por que o juro alto tira emprego, por que a dívida do governo cresce. Vale para as abas que explicam, para imagens e vídeos e, em parte, para o post diário. A aba [O que causa recessão](https://vaidarcrise.com.br/causas/) é o exemplo.
@@ -157,7 +184,7 @@ O resto do guia cuida da palavra. Esta parte cuida de como ensinar: por que os p
 8. **Corte o que não ensina.** Barra de acerto, número de países, teste estatístico e tabela de sinais vão para a metodologia. Detalhe curioso que não serve à ideia atrapalha (coerência, Mayer).
 9. **Desenho que mostra a ideia, com legenda que conclui.** Imagem decorativa não ajuda; imagem ligada ao texto ajuda mais quem lê pouco (Houts e outros, 2006). Desenho sem letra dentro: o texto fica na legenda.
 10. **Causa sem culpado.** Com mais de uma causa, mostre todas. Diga com todas as letras quais vêm de fora (seca, petróleo, guerra, juro dos Estados Unidos) e qual o governo influencia, e como: "Das três causas, o governo influencia uma com as próprias contas: o dólar." Quando os dados não separam duas leituras, mostre as duas.
-11. **Causa e efeito por extenso, com exemplo e tempo.** Diga o que acontece, em ordem, com um caso concreto: "Se a gasolina sobe em janeiro, o frete do caminhão sobe junto. Nos meses seguintes, arroz e feijão chegam mais caros ao mercado." Nada de frase de efeito com a explicação depois ("Aumento puxa aumento. Aluguel e salários..."), nem de jogo de contraste ("Chuva e petróleo ninguém controla. As contas do governo, sim."). A leitora entende a corrente; a frase de efeito ela só decora, quando entende. Rótulo que só separa ("Ajuda:", "Atrapalha:") pode.
+11. **Causa e efeito por extenso, com exemplo e tempo.** Diga o que acontece, em ordem, com um caso concreto, e chame causa de fora de causa de fora. As regras e os exemplos estão em [O jeito de escrever do site](#o-jeito-de-escrever-do-site).
 
 **No post diário** valem 3, 4, 10 e 11, em uma frase cada: o mecanismo com imagem do dia a dia quando ele muda a leitura do dia, a crença errada corrigida de frente, a causa sem culpado e a corrente de causa e efeito por extenso. Regras 13 e 14 do prompt em `src/escreve_post.py`.
 
@@ -235,7 +262,7 @@ Os itens 3, 5 e 9, e parte do 11, o código confere no post diário (`src/revisa
 8. **Estágio claro.** Diz se é dado divulgado, decisão tomada, proposta, anúncio ou rumor.
 9. **Sem alarme, sem consolo, sem molde.** Nenhuma palavra de alarme ou com lado; nenhuma expressão de piloto automático.
 10. **Em voz alta.** Lido em voz alta, soa como gente explicando para gente.
-11. **Causa e efeito por extenso.** Nenhuma frase de efeito no lugar da explicação. O texto diz o que acontece, em ordem, com exemplo e, quando houver, quando. Causa de fora é chamada de causa de fora.
+11. **Explicação por inteiro.** Passa nas sete regras de "O jeito de escrever do site": frase completa, causa e efeito em ordem com exemplo, condição por inteiro, nenhuma fórmula de efeito, causa de fora dita, casos com as mesmas linhas e amarração ao que veio antes.
 
 ### Antes e depois, com o post de 30/10/2026
 
@@ -257,7 +284,7 @@ Mesmos fatos, mesma ordem de importância. A diferença está no rótulo antes d
 
 - `src/escreve_post.py`, regras 4, 8, 9 e 12 do prompt: leitor, tamanho, frase, números e palavras proibidas; regras 13 e 14: como explicar um mecanismo no post, com causa e efeito por extenso.
 - `src/classify_news.py`, regras 17 e 21: títulos de evento e "por quê" com a mesma linguagem.
-- `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
+- `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
 - `src/dossie.py`: as frases de dados de cada fator (queda no verbo, mês por extenso, sem sigla solta); `data/dossie.json` guarda os textos que ficam de um dia para o outro.
 - `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas.
 - Textos escritos à mão (`editor/`, `templates/`) seguem a lista acima na leitura. `METODOLOGIA.md` é técnica de propósito, para quem quer refazer a conta, mas usa os mesmos nomes do site.
