@@ -20,10 +20,10 @@ Dólar, dívida do governo e dívidas das famílias pioraram. Eles ficam fora da
 ### As sete partes da economia hoje
 
 - O **ritmo da economia** está pior que o normal. A prévia do PIB, feita pelo Banco Central, caiu 0,6% no trimestre até agosto, a maior queda desde agosto de 2025.
-- **Juro e inflação** estão no normal. A Selic está em 13,75%. Descontada a inflação esperada, ela rende 8,8% ao ano.
-- As **dívidas das famílias** estão piores que o normal. Hoje, 29% da renda das famílias vai para parcelas e juros, o maior desde o início da série, em 2005. O atraso de mais de 90 dias nos empréstimos às pessoas chegou a 8,1% em setembro, recorde.
-- **Dólar e juro longo** estão piores que o normal. O dólar fechou a R$ 5,42 em 30/10, 6,8% mais caro que há 3 meses.
-- As **contas do governo** estão piores que o normal. A dívida do governo está em 82,9% do PIB, 5,1 pontos acima de um ano antes. União, estados e municípios gastaram 0,5% do PIB a mais do que arrecadaram em 12 meses, sem contar os juros.
+- **Juro e inflação** estão no normal. Descontada a inflação esperada, a Selic de 13,75% rende 8,8% ao ano.
+- As **dívidas das famílias** estão piores que o normal. Em agosto, 29% da renda das famílias ia para parcelas e juros, o maior desde o início da série, em 2005. O atraso de mais de 90 dias nos empréstimos às pessoas chegou a 8,1% em setembro, recorde.
+- **Dólar e juro longo** estão piores que o normal. Pela cotação oficial do Banco Central, o dólar valia R$ 5,42 em 30/10, 6,8% a mais que há 3 meses.
+- As **contas do governo** estão piores que o normal. A dívida do governo está em 82,9% do PIB, 5,1 pontos acima de um ano antes.
 - O **emprego** está no normal. O desemprego ficou em 5,2% no trimestre até setembro.
 - A **economia lá fora** está no normal. Soja, minério, petróleo e outros produtos básicos ficaram 1,7% mais caros em 6 meses.
 
@@ -31,13 +31,13 @@ Dólar, dívida do governo e dívidas das famílias pioraram. Eles ficam fora da
 
 O risco iria para acima do normal se a economia encolher 1,2% em um ano, a Selic subir para 17,8% ou a inflação de um ano subir para 9,4%. Basta um deles, com o resto parado.
 
-O risco iria para abaixo do normal se a economia crescer 3,2% em um ano, a Selic cair para 10,9% ou a inflação de um ano cair para 1,2%. Basta um deles, com o resto parado.
+O risco iria para abaixo do normal se a economia crescer 3,2% em um ano, a Selic cair para 10,9% ou a inflação de um ano cair para 1,2%.
 
 ### Como ler o site
 
 - **A placa amarela** mostra o nível de hoje e o PIB num ano ruim. Muda pouco: desde 2004, umas duas vezes por ano.
 - **O post de cada dia** conta o que mudou. De segunda a sábado, o fato do dia. Aos domingos, a semana. No primeiro domingo do mês, o mês.
 - **Para onde as notícias empurram**, abaixo do post, mostra as notícias da véspera por parte da economia.
-- **[Fator por fator](/resumo/)** mostra as sete partes, com o dado de hoje contra o normal e a previsão para 6 meses.
+- **[Fator por fator](/resumo/)** mostra as sete partes, uma a uma, com a previsão para 6 meses.
 - **[O que causa recessão](/causas/)** explica como juro, preços e dívida do governo levam a uma recessão.
 - **[Como a conta funciona](/nota/)** mostra de onde sai o nível.
