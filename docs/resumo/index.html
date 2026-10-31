@@ -144,6 +144,7 @@ a:hover{text-decoration-thickness:2px}
 .valor b{display:block;font:800 27px/1.1 var(--sistema);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
 .valor span{display:block;font-size:13.5px;color:var(--meta);margin-top:2px}
 .sem-dado{color:var(--meta);margin:10px 0}
+.nota-dado{font-size:13.5px;color:var(--meta);margin:6px 0 0;padding-left:8px;border-left:2px solid var(--fio)}
 .regua{margin:12px 0 10px}
 .regua figcaption{font:600 12.5px/1.3 var(--sistema);color:var(--meta);margin:0 0 4px}
 .trilho{position:relative;height:10px;background:var(--fio);border-radius:5px;margin-top:22px}
@@ -252,15 +253,15 @@ a:hover{text-decoration-thickness:2px}
       <span><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Fora da conta</span></span></span>
       <span class="v-tend mais">↑ Tende a piorar</span>
     </li><li>
+      <a class="v-nome" href="#emprego">Emprego<span>Desemprego em 5,2%</span></a>
+      <span><span class="chip normal">Normal</span></span>
+      <span><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Fora da conta</span></span></span>
+      <span class="v-tend igual">→ Estável</span>
+    </li><li>
       <a class="v-nome" href="#externo">Economia lá fora<span>Produtos básicos subiram 1,7% em 6 meses</span></a>
       <span><span class="chip normal">Normal</span></span>
       <span><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Fora da conta</span></span></span>
       <span class="v-tend igual">→ Sem direção clara</span>
-    </li><li>
-      <a class="v-nome" href="#emprego">Emprego<span>Sem dado</span></a>
-      <span><span class="chip semdado">Sem dado</span></span>
-      <span><span class="peso fora"><span class="barra" aria-hidden="true"></span><span>Fora da conta</span></span></span>
-      <span class="v-tend igual">→ Estável</span>
     </li>
   </ul>
 
@@ -503,6 +504,44 @@ a:hover{text-decoration-thickness:2px}
     </div>
   </section>
   
+  <section class="fator" id="emprego" aria-labelledby="t-emprego">
+    <header class="fator-cab">
+      <h2 id="t-emprego">Emprego</h2>
+      <span class="chip normal">Normal</span>
+      <span class="tend-cab igual">→ Estável</span>
+    </header>
+    <div class="fator-corpo">
+      <div class="dado">
+        <p class="valor"><b>5,2%</b><span>Desemprego no trimestre até setembro (IBGE)</span></p>
+        
+        <figure class="regua"><figcaption>Desemprego médio de 3 meses contra o menor do último ano, pontos</figcaption>
+          <div class="trilho" role="img" aria-label="Hoje em 0,03, comparado à faixa normal">
+            <span class="z-normal" style="left:16.6%;width:36.7%"></span>
+            <span class="agulha" style="left:19.0%"><b>+0,03</b></span>
+          </div>
+          <div class="eixo"><span>−0,7</span><span><i class="sw sw-normal"></i>normal</span><span>3,3</span></div>
+        </figure>
+        
+        <dl class="ficha">
+          
+          <div class="larga"><dt>Na conta do nível</dt><dd>Fica fora da conta: o desemprego sobe depois que a recessão começa, e piorou a previsão nos 44 países.</dd></div>
+          <div class="larga"><dt>Por que importa</dt><dd>Sobe quando a recessão já começou. Confirma, não antecipa.</dd></div>
+        </dl>
+      </div>
+      <div class="leitura-f">
+        <h3>Por que essa previsão</h3>
+        <ul class="porque"><li>Desemprego em 5,2% no trimestre até setembro. O menor desde 2012 foi 5,1%, em dezembro de 2025. <span class="f">IBGE</span></li><li>O desemprego médio de 3 meses está igual ao menor do último ano. <span class="f">IBGE</span></li><li>Desemprego cai a 5,2% no trimestre até setembro, o menor para o período desde 2012, e a renda estaciona. <span class="f"><a href="https://www.estadao.com.br/economia/ibge-pnad-desemprego-setembro-2026/" rel="nofollow noopener">Estadão</a></span></li></ul>
+        <p class="outros neutro"><b>Para acompanhar:</b> O IBGE divulga o desemprego até setembro em 30/10.</p>
+        
+        <div class="se">
+          <div><b class="menos">↓ Melhora se</b><ul><li>Contratações firmes nos serviços</li></ul></div>
+          <div><b class="mais">↑ Piora se</b><ul><li>Demissões na indústria e na construção</li><li>Juros e inadimplência altos chegando ao emprego</li></ul></div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
   <section class="fator" id="externo" aria-labelledby="t-externo">
     <header class="fator-cab">
       <h2 id="t-externo">Economia lá fora</h2>
@@ -535,36 +574,6 @@ a:hover{text-decoration-thickness:2px}
         <div class="se">
           <div><b class="menos">↓ Melhora se</b><ul><li>Commodities que o Brasil exporta sobem</li><li>Fed corta os juros</li></ul></div>
           <div><b class="mais">↑ Piora se</b><ul><li>Commodities caem</li><li>China desacelera</li></ul></div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-  
-  <section class="fator" id="emprego" aria-labelledby="t-emprego">
-    <header class="fator-cab">
-      <h2 id="t-emprego">Emprego</h2>
-      <span class="chip semdado">Sem dado</span>
-      <span class="tend-cab igual">→ Estável</span>
-    </header>
-    <div class="fator-corpo">
-      <div class="dado">
-        <p class="valor"><b>Sem dado</b></p>
-        <p class="sem-dado">Sem dado nesta atualização.</p>
-        <dl class="ficha">
-          
-          <div class="larga"><dt>Na conta do nível</dt><dd>Fica fora da conta: o desemprego sobe depois que a recessão começa, e piorou a previsão nos 44 países.</dd></div>
-          <div class="larga"><dt>Por que importa</dt><dd>Sobe quando a recessão já começou. Confirma, não antecipa.</dd></div>
-        </dl>
-      </div>
-      <div class="leitura-f">
-        <h3>Por que essa previsão</h3>
-        <ul class="porque"><li>Desemprego cai a 5,2% no trimestre até setembro, o menor para o período desde 2012, e a renda estaciona. <span class="f"><a href="https://www.estadao.com.br/economia/ibge-pnad-desemprego-setembro-2026/" rel="nofollow noopener">Estadão</a></span></li></ul>
-        <p class="outros neutro"><b>Para acompanhar:</b> O IBGE divulga o desemprego até setembro em 30/10.</p>
-        
-        <div class="se">
-          <div><b class="menos">↓ Melhora se</b><ul><li>Contratações firmes nos serviços</li></ul></div>
-          <div><b class="mais">↑ Piora se</b><ul><li>Demissões na indústria e na construção</li><li>Juros e inadimplência altos chegando ao emprego</li></ul></div>
         </div>
         
       </div>

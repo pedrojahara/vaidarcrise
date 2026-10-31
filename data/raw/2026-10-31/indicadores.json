@@ -15086,6 +15086,203 @@
     }
    ],
    "fonte": "https://fred.stlouisfed.org/series/PALLFNFINDEXM"
+  },
+  "desocupacao": {
+   "codigo_sgs": 24369,
+   "nome": "Taxa de desocupação, PNAD Contínua (%)",
+   "dados": [
+    {
+     "data": "2022-11-01",
+     "valor": 8.1
+    },
+    {
+     "data": "2022-12-01",
+     "valor": 7.9
+    },
+    {
+     "data": "2023-01-01",
+     "valor": 8.4
+    },
+    {
+     "data": "2023-02-01",
+     "valor": 8.6
+    },
+    {
+     "data": "2023-03-01",
+     "valor": 8.8
+    },
+    {
+     "data": "2023-04-01",
+     "valor": 8.5
+    },
+    {
+     "data": "2023-05-01",
+     "valor": 8.3
+    },
+    {
+     "data": "2023-06-01",
+     "valor": 8.0
+    },
+    {
+     "data": "2023-07-01",
+     "valor": 7.9
+    },
+    {
+     "data": "2023-08-01",
+     "valor": 7.8
+    },
+    {
+     "data": "2023-09-01",
+     "valor": 7.7
+    },
+    {
+     "data": "2023-10-01",
+     "valor": 7.6
+    },
+    {
+     "data": "2023-11-01",
+     "valor": 7.5
+    },
+    {
+     "data": "2023-12-01",
+     "valor": 7.4
+    },
+    {
+     "data": "2024-01-01",
+     "valor": 7.6
+    },
+    {
+     "data": "2024-02-01",
+     "valor": 7.8
+    },
+    {
+     "data": "2024-03-01",
+     "valor": 7.9
+    },
+    {
+     "data": "2024-04-01",
+     "valor": 7.5
+    },
+    {
+     "data": "2024-05-01",
+     "valor": 7.1
+    },
+    {
+     "data": "2024-06-01",
+     "valor": 6.9
+    },
+    {
+     "data": "2024-07-01",
+     "valor": 6.8
+    },
+    {
+     "data": "2024-08-01",
+     "valor": 6.6
+    },
+    {
+     "data": "2024-09-01",
+     "valor": 6.4
+    },
+    {
+     "data": "2024-10-01",
+     "valor": 6.2
+    },
+    {
+     "data": "2024-11-01",
+     "valor": 6.1
+    },
+    {
+     "data": "2024-12-01",
+     "valor": 6.2
+    },
+    {
+     "data": "2025-01-01",
+     "valor": 6.5
+    },
+    {
+     "data": "2025-02-01",
+     "valor": 6.8
+    },
+    {
+     "data": "2025-03-01",
+     "valor": 7.0
+    },
+    {
+     "data": "2025-04-01",
+     "valor": 6.6
+    },
+    {
+     "data": "2025-05-01",
+     "valor": 6.2
+    },
+    {
+     "data": "2025-06-01",
+     "valor": 5.8
+    },
+    {
+     "data": "2025-07-01",
+     "valor": 5.6
+    },
+    {
+     "data": "2025-08-01",
+     "valor": 5.6
+    },
+    {
+     "data": "2025-09-01",
+     "valor": 5.6
+    },
+    {
+     "data": "2025-10-01",
+     "valor": 5.4
+    },
+    {
+     "data": "2025-11-01",
+     "valor": 5.2
+    },
+    {
+     "data": "2025-12-01",
+     "valor": 5.1
+    },
+    {
+     "data": "2026-01-01",
+     "valor": 5.4
+    },
+    {
+     "data": "2026-02-01",
+     "valor": 5.8
+    },
+    {
+     "data": "2026-03-01",
+     "valor": 6.1
+    },
+    {
+     "data": "2026-04-01",
+     "valor": 5.8
+    },
+    {
+     "data": "2026-05-01",
+     "valor": 5.6
+    },
+    {
+     "data": "2026-06-01",
+     "valor": 5.4
+    },
+    {
+     "data": "2026-07-01",
+     "valor": 5.3
+    },
+    {
+     "data": "2026-08-01",
+     "valor": 5.3
+    },
+    {
+     "data": "2026-09-01",
+     "valor": 5.2
+    }
+   ],
+   "fonte": "https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=24369",
+   "coletado_em": "2026-10-31T10:43:10-03:00",
+   "nota": "Coletada depois da atualização das 06h30, em que o SGS 24369 falhou. Os 47 meses conferem com o IBGE (tabela 6381)."
   }
  },
  "focus": {
@@ -15297,5 +15494,8 @@
    "periodo": "202602",
    "var_qoq": 0.5
   }
+ ],
+ "avisos": [
+  "SGS 24369: série coletada às 10h43 de 31/10, depois da atualização; às 06h30 a consulta falhou"
  ]
 }
