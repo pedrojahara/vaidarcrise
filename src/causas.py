@@ -157,7 +157,7 @@ def brasil_hoje(series: dict, res: dict, bruto: dict | None, runs: list[dict], c
         x = ent["inflacao"]
         rumos["Inflação"] = rumo(x["valor"])
         g.append(linha("Inflação", f"{num(x['nivel'])}%", acima(x, x["valor"]), "inflação acelerando",
-                       f"IPCA em 12 meses; era {num(x['antes'])}% um ano antes"))
+                       f"alta dos preços em 12 meses (IPCA); era {num(x['antes'])}% um ano antes"))
     prim = {p["data"][:7]: p["valor"] for p in ((bruto or {}).get("series", {}).get("primario_12m", {}).get("dados") or [])}
     if prim:
         m = max(prim)
@@ -165,7 +165,8 @@ def brasil_hoje(series: dict, res: dict, bruto: dict | None, runs: list[dict], c
         if antes is not None:
             v, z = prim[m] - antes, prim[m]
             # + é déficit: subir é piorar
-            r.append(linha("Contas do governo", f"déficit de {num(z)}% do PIB" if z > 0 else f"superávit de {num(-z)}% do PIB",
+            r.append(linha("Contas do governo", f"gasta {num(z)}% do PIB a mais do que arrecada" if z > 0
+                           else f"arrecada {num(-z)}% do PIB a mais do que gasta",
                            alto(var(s["primario_12m"], 12), v), "contas do governo piorando",
                            ("igual a um ano antes" if round(v, 1) == 0 else
                             f"{'piorou' if v > 0 else 'melhorou'} {num(abs(v))} ponto{'s' if round(abs(v), 1) >= 2 else ''} em 12 meses")
@@ -192,13 +193,13 @@ def brasil_hoje(series: dict, res: dict, bruto: dict | None, runs: list[dict], c
         r.append(linha("Juro descontado da inflação", f"{num(jr['valor'])}% ao ano", baixo, "juro baixo perto da inflação", nota))
     if (ind.get("divida") or {}).get("valor") is not None:
         x = ind["divida"]
-        r.append(linha("Dívida pública", f"{num(x['nivel'])}% do PIB", acima(x, x["valor"]), "dívida subindo",
+        r.append(linha("Dívida do governo", f"{num(x['nivel'])}% do PIB", acima(x, x["valor"]), "dívida subindo",
                        f"{mudou(x['valor'])} em 12 meses"))
     if (ind.get("comprometimento") or {}).get("nivel") is not None:
         x, hist = ind["comprometimento"], s["comprometimento_renda"]
         recorde = x["nivel"] >= max(hist.values())
         f.append(linha("Famílias endividadas", f"{num(x['nivel'])}% da renda", alto(hist, x["nivel"]), "famílias endividadas",
-                       "vai para pagar dívidas" + (f"; o maior desde {min(hist)[:4]}" if recorde else "")))
+                       "vai para parcelas e juros" + (f"; o maior desde {min(hist)[:4]}" if recorde else "")))
     return {"grupos": [{"nome": "Gatilhos", "linhas": g},
                        {"nome": "O que pode fazer o juro subir", "linhas": r},
                        {"nome": "Fragilidade", "linhas": f}],

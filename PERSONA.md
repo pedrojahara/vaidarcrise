@@ -165,7 +165,7 @@ O termo técnico pode aparecer só se o leitor vai encontrá-lo em outro lugar (
 | Política monetária, aperto monetário | juro; juro alto para segurar os preços |
 | Política fiscal, quadro fiscal | as contas do governo |
 | Déficit primário | o governo gastou mais do que arrecadou, sem contar os juros da dívida |
-| Dívida bruta/PIB | dívida do governo do tamanho de X% de tudo o que o país produz em um ano |
+| Dívida bruta/PIB | dívida do governo em X% do PIB (na primeira vez, "de tudo o que o país produz em um ano") |
 | Arcabouço fiscal | a regra de gastos do governo |
 | Câmbio, depreciação do real | dólar mais caro |
 | Commodities | produtos como soja, minério e petróleo |
@@ -177,8 +177,25 @@ O termo técnico pode aparecer só se o leitor vai encontrá-lo em outro lugar (
 | Inadimplência | conta atrasada (nos dados do Banco Central, há mais de 90 dias) |
 | Endividamento | ter dívida (parcela, cartão, financiamento) |
 | Crédito livre | empréstimo, cartão e financiamento com juro definido pelo banco |
-| Quantil 10%, cenário de cauda | cenário ruim: só 1 chance em 10 de ser pior |
+| Quantil 10%, cenário de cauda, cenário ruim | num ano ruim, daqueles com 1 chance em 10 |
 | Estagflação | economia parada com preço subindo |
+
+## Os nomes do site
+
+O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os nomes dos fatores ficam em `config/modelo.json`; os outros, nos templates e em `src/build_site.py`.
+
+| Coisa | Nome no site |
+| --- | --- |
+| Abas | Hoje, Fator por fator, O que causa recessão, Como a conta funciona |
+| Os sete fatores | Ritmo da economia, Juro e inflação, Dívidas das famílias, Dólar e juro longo, Contas do governo, Emprego, Economia lá fora |
+| O número que decide o nível | o PIB num ano ruim (1 chance em 10); "num ano ruim, em tempos normais" para a comparação |
+| Boletim Focus | os bancos (Focus) |
+| Efeito no nível | ajuda, pesa (0,19 ponto) |
+| Projeção de terceiros | Analistas concordam, Analistas veem diferente, Para acompanhar |
+| Previsão de 6 meses | Devem piorar, Devem ficar como estão, Devem melhorar; em cada fator, Tende a piorar, Estável, Tende a melhorar |
+| Copom | o Banco Central decide o juro (Copom) |
+| Diferença entre taxas | pontos, abreviado "pt" em tabela |
+| Quem escreve o post | inteligência artificial (Claude) |
 
 **Palavras com lado.** Fora do texto: "gastança", "rombo", "herança maldita", "austericídio", "desgoverno", "farra". No lugar, o número e o que ele mede.
 
@@ -211,7 +228,7 @@ O post do dia 30 tem frases de 18 palavras em média, mas o primeiro parágrafo 
 >
 > Atrapalha: a economia cresce menos que o normal, 1,4% em um ano. A prévia do PIB do Banco Central caiu no trimestre até agosto.
 >
-> Num cenário ruim, com só 1 chance em 10 de ser pior, o PIB cairia 1,8% em um ano. Em tempos normais, essa conta daria queda de 1,9%.
+> Num ano ruim, daqueles com 1 chance em 10, o PIB cairia 1,8%. Em tempos normais, cairia 1,9%.
 
 Mesmos fatos, mesma ordem de importância. A diferença está no rótulo antes de cada bloco (ajuda, atrapalha), no verbo que não engana e em metade dos números.
 
@@ -220,7 +237,10 @@ Mesmos fatos, mesma ordem de importância. A diferença está no rótulo antes d
 - `src/escreve_post.py`, regras 4, 8, 9 e 12 do prompt: leitor, tamanho, frase, números e palavras proibidas.
 - `src/classify_news.py`, regras 17 e 21: títulos de evento e "por quê" com a mesma linguagem.
 - `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
-- Textos escritos à mão (`editor/`, `templates/`, `METODOLOGIA.md` no que vai ao site) seguem a lista acima na leitura.
+- `src/dossie.py`: as frases de dados de cada fator (queda no verbo, mês por extenso, sem sigla solta); `data/dossie.json` guarda os textos que ficam de um dia para o outro.
+- `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas.
+- Textos escritos à mão (`editor/`, `templates/`) seguem a lista acima na leitura. `METODOLOGIA.md` é técnica de propósito, para quem quer refazer a conta, mas usa os mesmos nomes do site.
+- `CLAUDE.md` manda qualquer sessão do Claude que escreva no repositório passar o texto por este guia.
 
 ## Fontes
 

@@ -49,20 +49,20 @@
   "candidata_no_brasil": "Bolsa no Brasil: retorno real do Ibovespa em 12 meses (média mensal do fechamento diário da B3; média dos 3 últimos meses contra os mesmos meses um ano antes, menos o IPCA de 12 meses)."
  },
  "fatores": {
-  "atividade": "Atividade",
+  "atividade": "Ritmo da economia",
   "juro": "Juro e inflação",
-  "credito": "Crédito e famílias",
-  "mercado": "Mercado financeiro",
-  "contas": "Contas públicas",
+  "credito": "Dívidas das famílias",
+  "mercado": "Dólar e juro longo",
+  "contas": "Contas do governo",
   "emprego": "Emprego",
-  "externo": "Cenário externo"
+  "externo": "Economia lá fora"
  },
  "fora_da_conta": {
-  "credito": "Não entra: no teste em 44 países, o crédito melhorou a previsão do PIB em menos de 1%.",
-  "mercado": "Não entra: no teste em 44 países, câmbio e juro longo não melhoraram a previsão do PIB de forma clara. A bolsa melhorou nos 44 países, mas piorou a previsão no Brasil.",
-  "contas": "Não entra: no teste em 44 países, a dívida pública não melhorou a previsão do PIB.",
-  "emprego": "Não entra: no teste em 44 países, o desemprego piorou a previsão do PIB.",
-  "externo": "Não entra: o preço das commodities não foi testado no painel de países."
+  "credito": "Fica fora da conta: nos 44 países testados, quase não melhorou a previsão do PIB.",
+  "mercado": "Fica fora da conta: nos 44 países, dólar e juro longo não melhoraram a previsão com clareza. A bolsa melhorou nos 44 países, mas piorou no Brasil.",
+  "contas": "Fica fora da conta: nos 44 países, a dívida do governo não melhorou a previsão do PIB.",
+  "emprego": "Fica fora da conta: o desemprego sobe depois que a recessão começa, e piorou a previsão nos 44 países.",
+  "externo": "Fica fora da conta: o preço desses produtos não foi testado nos 44 países."
  },
  "indicadores": {
   "ibcbr": {

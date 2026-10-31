@@ -56,7 +56,7 @@
     {% elif anteriores %}
     <section class="arquivo" aria-label="Dias anteriores">
       <h2>Dias anteriores</h2>
-      <ul>{% for x in anteriores %}<li><a href="{{ x.link }}">{{ x.titulo }}</a><span>{{ x.data }} | {% if x.nivel is none %}nota do editor{% else %}risco {{ x.nivel|lower if x.nivel != 'Normal' else 'normal' }}{% endif %}</span></li>{% endfor %}</ul>
+      <ul>{% for x in anteriores %}<li><a href="{{ x.link }}">{{ x.titulo }}</a><span>{{ x.data }} | {% if x.nivel is none %}texto do editor{% else %}risco {{ x.nivel|lower if x.nivel != 'Normal' else 'normal' }}{% endif %}</span></li>{% endfor %}</ul>
     </section>
     {% endif %}
   </main>

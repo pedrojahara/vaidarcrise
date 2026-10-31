@@ -197,8 +197,8 @@ details p{margin:6px 0;color:var(--meta)}
 <body>
 <header class="cab"><div class="in"><div class="faixa">
   <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
-  <p class="linha-fina">Um palpite com conta sobre a próxima recessão brasileira.</p>
-  <nav aria-label="Seções"><a href="/">Atualizações</a><a href="/resumo/">Resumo</a><a href="/causas/" aria-current="page">O que causa recessão</a><a href="/nota/">Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
+  <p class="linha-fina">O risco de recessão no Brasil, medido com dados todo dia.</p>
+  <nav aria-label="Seções"><a href="/">Hoje</a><a href="/resumo/">Fator por fator</a><a href="/causas/" aria-current="page">O que causa recessão</a><a href="/nota/">Como a conta funciona</a><a href="/metodologia/#onde-erramos">Onde erramos</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
 </div></div></header>
 
 
@@ -227,7 +227,7 @@ details p{margin:6px 0;color:var(--meta)}
       </ul>
     </div>
   </div>
-  <p class="parado"><b>Parado não avisa.</b> Dívida pública, juro e inflação altos, mas parados, não marcaram a data das recessões em 166 países. O que avisa é o movimento.</p>
+  <p class="parado"><b>Parado não avisa.</b> Dívida do governo, juro e inflação altos, mas parados, não marcaram a data das recessões em 166 países. O que avisa é o movimento.</p>
 
   <section aria-labelledby="t-juro">
     <h2 id="t-juro">O que faz o juro subir</h2>
@@ -235,7 +235,7 @@ details p{margin:6px 0;color:var(--meta)}
     <ul class="raizes">
       <li><b>Economia aquecida</b><span>Todo mundo comprando mais do que o país produz.</span></li>
       <li><b>Preço de fora</b><span>Soja, minério e petróleo subindo, ou juro subindo nos Estados Unidos.</span></li>
-      <li><b>Contas do governo piorando</b><span>O déficit cresce, e mais dinheiro circula na economia.</span></li>
+      <li><b>Contas do governo piorando</b><span>O governo gasta cada vez mais do que arrecada, e mais dinheiro circula na economia.</span></li>
       <li><b>Inflação esperada subindo</b><span>Bancos, fundos e empresas passam a esperar preços subindo mais rápido.</span></li>
     </ul>
     <ol class="elos">
@@ -281,7 +281,7 @@ details p{margin:6px 0;color:var(--meta)}
       </div>
       
       <div class="lin" role="row">
-        <span role="rowheader">Dívida pública alta</span>
+        <span role="rowheader">Dívida do governo alta</span>
         <span role="cell"><span class="rot-pais">44 países</span><span class="trilho pais" title="0,46"><i style="width:0.0%"></i></span></span>
         <span role="cell"><span class="rot-pais">Brasil</span><span class="trilho" title="0,50"><i style="width:0.0%"></i></span></span>
       </div>
@@ -292,9 +292,9 @@ details p{margin:6px 0;color:var(--meta)}
       <summary>Os números do gráfico</summary>
       <table>
         <thead><tr><th>Sinal</th><th class="n">44 países</th><th class="n">Brasil</th></tr></thead>
-        <tbody><tr><td>Contas do governo piorando</td><td class="n">0,48</td><td class="n">0,72</td></tr><tr><td>Inflação esperada subindo</td><td class="n">—</td><td class="n">0,72</td></tr><tr><td>Juro perto da inflação</td><td class="n">0,59</td><td class="n">0,68</td></tr><tr><td>Economia aquecida</td><td class="n">0,69</td><td class="n">0,55</td></tr><tr><td>Soja, minério e petróleo subindo</td><td class="n">0,68</td><td class="n">0,48</td></tr><tr><td>Dívida pública alta</td><td class="n">0,46</td><td class="n">0,50</td></tr></tbody>
+        <tbody><tr><td>Contas do governo piorando</td><td class="n">0,48</td><td class="n">0,72</td></tr><tr><td>Inflação esperada subindo</td><td class="n">—</td><td class="n">0,72</td></tr><tr><td>Juro perto da inflação</td><td class="n">0,59</td><td class="n">0,68</td></tr><tr><td>Economia aquecida</td><td class="n">0,69</td><td class="n">0,55</td></tr><tr><td>Soja, minério e petróleo subindo</td><td class="n">0,68</td><td class="n">0,48</td></tr><tr><td>Dívida do governo alta</td><td class="n">0,46</td><td class="n">0,50</td></tr></tbody>
       </table>
-      <p>Chance de um momento antes de uma alta de juro ter o sinal mais forte que um momento sem alta (área sob a curva ROC). 0,5 é cara ou coroa; 1 acerta sempre. Alta: juro 1 ponto ou mais acima em 12 meses. No Brasil, 117 de 286 meses desde 2002, refeitos pelo <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/causas.py">código</a>. A inflação esperada vem do boletim Focus, do Banco Central, que só existe no Brasil.</p>
+      <p>Chance de o sinal estar mais forte antes de uma alta de juro do que fora dela. 0,5 é cara ou coroa; 1 acerta sempre. Alta: juro 1 ponto ou mais acima em 12 meses. No Brasil, 117 de 286 meses desde 2002, refeitos pelo <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/causas.py">código</a>. A inflação esperada vem do boletim Focus, do Banco Central, que só existe no Brasil.</p>
     </details>
     <ul class="topicos">
       <li><b>Nos 44 países,</b> o juro sobe quando a economia esquenta e o preço de fora sobe.</li>
@@ -309,21 +309,21 @@ details p{margin:6px 0;color:var(--meta)}
     <h2 id="t-hoje">O Brasil hoje</h2>
     <p class="nota-tab">Último dado de cada série até 31/10/2026.</p>
     <table class="hoje">
-      <thead><tr><th scope="col">Sinal</th><th scope="col">Hoje</th><th scope="col">Leitura</th></tr></thead>
+      <thead><tr><th scope="col">Sinal</th><th scope="col">Hoje</th><th scope="col">Como está</th></tr></thead>
       
       <tbody>
         <tr class="grupo"><th colspan="3" scope="colgroup">Gatilhos</th></tr>
-        <tr><th scope="row">Selic</th><td class="n"><b>13,75%</b><span class="def">o juro básico; era 15% um ano antes</span></td><td><span class="chip normal">Calmo</span></td></tr><tr><th scope="row">Inflação</th><td class="n"><b>4,6%</b><span class="def">IPCA em 12 meses; era 5,2% um ano antes</span></td><td><span class="chip normal">Calmo</span></td></tr>
+        <tr><th scope="row">Selic</th><td class="n"><b>13,75%</b><span class="def">o juro básico; era 15% um ano antes</span></td><td><span class="chip normal">Calmo</span></td></tr><tr><th scope="row">Inflação</th><td class="n"><b>4,6%</b><span class="def">alta dos preços em 12 meses (IPCA); era 5,2% um ano antes</span></td><td><span class="chip normal">Calmo</span></td></tr>
       </tbody>
       
       <tbody>
         <tr class="grupo"><th colspan="3" scope="colgroup">O que pode fazer o juro subir</th></tr>
-        <tr><th scope="row">Contas do governo</th><td class="n"><b>déficit de 0,5% do PIB</b><span class="def">piorou 0,2 ponto em 12 meses; sem contar juros da dívida</span></td><td><span class="chip normal">Calmo</span></td></tr><tr><th scope="row">Inflação esperada</th><td class="n"><b>4,5%</b><span class="def">o que bancos e empresas esperam em 12 meses; meta de 3%, teto de 4,5%; subiu 0,5 ponto em 6 meses</span></td><td><span class="chip atencao">Atenção</span></td></tr><tr><th scope="row">Juro descontado da inflação</th><td class="n"><b>8,8% ao ano</b><span class="def">Selic menos a inflação esperada; normal no Brasil: de 4,1% a 9,1%</span></td><td><span class="chip normal">Calmo</span></td></tr><tr><th scope="row">Dívida pública</th><td class="n"><b>82,9% do PIB</b><span class="def">subiu 5,1 pontos em 12 meses</span></td><td><span class="chip atencao">Atenção</span></td></tr>
+        <tr><th scope="row">Contas do governo</th><td class="n"><b>gasta 0,5% do PIB a mais do que arrecada</b><span class="def">piorou 0,2 ponto em 12 meses; sem contar juros da dívida</span></td><td><span class="chip normal">Calmo</span></td></tr><tr><th scope="row">Inflação esperada</th><td class="n"><b>4,5%</b><span class="def">o que bancos e empresas esperam em 12 meses; meta de 3%, teto de 4,5%; subiu 0,5 ponto em 6 meses</span></td><td><span class="chip atencao">Atenção</span></td></tr><tr><th scope="row">Juro descontado da inflação</th><td class="n"><b>8,8% ao ano</b><span class="def">Selic menos a inflação esperada; normal no Brasil: de 4,1% a 9,1%</span></td><td><span class="chip normal">Calmo</span></td></tr><tr><th scope="row">Dívida do governo</th><td class="n"><b>82,9% do PIB</b><span class="def">subiu 5,1 pontos em 12 meses</span></td><td><span class="chip atencao">Atenção</span></td></tr>
       </tbody>
       
       <tbody>
         <tr class="grupo"><th colspan="3" scope="colgroup">Fragilidade</th></tr>
-        <tr><th scope="row">Famílias endividadas</th><td class="n"><b>29,0% da renda</b><span class="def">vai para pagar dívidas; o maior desde 2005</span></td><td><span class="chip atencao">Atenção</span></td></tr>
+        <tr><th scope="row">Famílias endividadas</th><td class="n"><b>29,0% da renda</b><span class="def">vai para parcelas e juros; o maior desde 2005</span></td><td><span class="chip atencao">Atenção</span></td></tr>
       </tbody>
       
     </table>
@@ -346,8 +346,8 @@ details p{margin:6px 0;color:var(--meta)}
 </main>
 
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mostra se o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB) nos próximos 12 meses está acima ou abaixo do normal. O nível sai do cenário ruim do PIB, estimado com dados de 44 países e comparado ao Brasil desde 2004. As notícias mostram a tendência e não mexem no nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
-  <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Abra uma issue</a></p>
+  <p>O Vai dar crise? diz se o risco de recessão no Brasil nos próximos 12 meses está acima ou abaixo do normal. Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos. A conta usa dados de 44 países e compara com o Brasil desde 2004. As notícias mostram para onde cada parte da economia vai, mas não mudam o nível. <a href="/nota/">Como a conta funciona</a>. Não é recomendação de investimento.</p>
+  <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a> | <a href="https://github.com/pedrojahara/vaidarcrise/issues">Achou um erro? Avise aqui</a></p>
 </div></footer>
 </body>
 </html>
