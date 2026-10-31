@@ -187,7 +187,7 @@ A aba [O que causa recessão](https://vaidarcrise.com.br/causas/) resume duas pe
 
 Depois da conta, o modelo de linguagem recebe os números prontos e escreve o post: o nível, o PIB num ano ruim, o que pesa e o que ajuda, para que lado as notícias empurram e as próximas datas. O texto segue o guia do leitor ([`PERSONA.md`](https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md)), o mesmo das outras páginas. Ele não muda o nível, a pressão nem a tendência. Um verificador em código procura moldes de texto automático, afirmações de chance de recessão e explicações de método, e pede uma reescrita no máximo. Se a escrita falhar, sai a atualização sem texto corrido.
 
-Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em [`runs/`](https://github.com/pedrojahara/vaidarcrise/tree/main/runs). O que foi publicado fica congelado.
+Cada atualização guarda o prompt (hash), o modelo usado e a resposta bruta em [`runs/`](https://github.com/pedrojahara/vaidarcrise/tree/main/runs). Depois do lançamento oficial do site, o que foi publicado fica congelado. Antes dele, os textos antigos acompanham as mudanças do site, com os mesmos números e datas.
 
 ## Salvaguardas
 
