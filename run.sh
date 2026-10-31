@@ -27,12 +27,12 @@ if ! /usr/bin/caffeinate -i .venv/bin/python src/run.py "$@"; then
   exit 1
 fi
 
-nivel=$(jq -r '.nivel' docs/data.json)
+direcao=$(jq -r '.direcao' docs/data.json)
 git add -A runs data docs
 if git diff --cached --quiet; then
   echo "nada mudou"
 else
-  git commit -q -m "Post de $(date '+%d/%m/%Y'): risco ${nivel:l}"
+  git commit -q -m "Post de $(date '+%d/%m/%Y'): risco ${direcao}"
   for i in 1 2 3 4; do
     git push -q origin main && break
     echo "push falhou (tentativa $i)"; sleep $((2 ** i))
