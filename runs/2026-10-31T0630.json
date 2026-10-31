@@ -928,7 +928,1335 @@
    }
   ],
   "reaproveitados": [],
-  "faltando": []
+  "faltando": [],
+  "direcao": {
+   "estado": "subindo",
+   "desde": "2026-06",
+   "soma": 4,
+   "bruto": "subindo",
+   "pendente": null,
+   "apertaram": 4,
+   "folgaram": 0,
+   "partes": [
+    {
+     "id": "contas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "divida": {
+       "agora": 82.93,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 81.95,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 0.980000000000004,
+       "corte": 0.9451499999999999,
+       "lado": 1,
+       "como": "pontos"
+      },
+      "primario": {
+       "agora": 0.52,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 1.19,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.6699999999999999,
+       "corte": 0.311325,
+       "lado": -1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "divida_bruta",
+      "valor": 82.93,
+      "ref": "2026-09",
+      "desde": "2006",
+      "meses": 238,
+      "pior_que_pct": 96,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "parcelas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "parcelas": {
+       "agora": 28.99,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 28.47,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": 0.5199999999999996,
+       "corte": 0.378075,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "comprometimento_renda",
+      "valor": 28.99,
+      "ref": "2026-08",
+      "desde": "2005",
+      "meses": 258,
+      "pior_que_pct": 100,
+      "recorde_ruim": true,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "mercado",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "dolar": {
+       "agora": 5.4212,
+       "dia": "2026-10-30",
+       "ref": "2026-10",
+       "antes": 5.0773,
+       "dia_antes": "2026-07-31",
+       "ref_antes": "2026-07",
+       "mudanca": 6.773285013688368,
+       "corte": 4.765725,
+       "lado": 1,
+       "como": "pct"
+      },
+      "juro_longo": {
+       "agora": 7.9,
+       "dia": "2026-10-29",
+       "ref": "2026-10",
+       "antes": 8.27,
+       "dia_antes": "2026-07-31",
+       "ref_antes": "2026-07",
+       "mudanca": -0.3699999999999992,
+       "corte": 0.43365000000000004,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "juro_real_longo",
+      "valor": 7.9,
+      "ref": "2026-10",
+      "desde": "2005",
+      "meses": 256,
+      "pior_que_pct": 89,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "inflacao",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "inflacao": {
+       "agora": 4.5336,
+       "dia": "2026-10-23",
+       "ref": "2026-10",
+       "antes": 4.1883,
+       "dia_antes": "2026-07-31",
+       "ref_antes": "2026-07",
+       "mudanca": 0.34529999999999994,
+       "corte": 0.316875,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "focus_ipca_12m",
+      "valor": 4.5336,
+      "ref": "2026-10",
+      "desde": "2001",
+      "meses": 299,
+      "pior_que_pct": 41,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "juro",
+     "lado": 0,
+     "na_soma": true,
+     "medidas": {
+      "juro": {
+       "agora": 13.75,
+       "dia": "2026-10-31",
+       "ref": "2026-10",
+       "antes": 14.25,
+       "dia_antes": "2026-07-31",
+       "ref_antes": "2026-07",
+       "mudanca": -0.5,
+       "corte": 0.833925,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "juro_real",
+      "valor": 8.816686692125785,
+      "ref": "2026-10",
+      "desde": "2002",
+      "meses": 298,
+      "pior_que_pct": 73,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "ritmo",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "ritmo": {
+       "agora": 110.40624,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 111.25061,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": -0.6424554746393252,
+       "corte": 0.88905,
+       "lado": 0,
+       "como": "media"
+      }
+     },
+     "folga": null
+    },
+    {
+     "id": "emprego",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "emprego": {
+       "agora": 5.2,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 5.4,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.20000000000000018,
+       "corte": 0.555975,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "desocupacao",
+      "valor": 5.2,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    }
+   ],
+   "mes": "2026-10",
+   "linha": [
+    {
+     "mes": "2004-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2005-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2005-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-01",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-02",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-03",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-04",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-11",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2020-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2021-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-10",
+     "estado": "S"
+    }
+   ]
+  }
  },
  "pressao": {
   "fatores": {
@@ -982,39 +2310,8 @@
   "n": 8
  },
  "leituras": {
-  "descricao": "Leitura de tendência de cada fator para os próximos 6 meses. Os fatos de dados saem de código (src/dossie.py), todo dia; aqui ficam a tendência, os fatos de notícia que a sustentam (no máximo 2, válidos por 180 dias), o que outras instituições projetam e o que melhoraria ou pioraria o fator. O LLM só propõe revisões, e o código decide o que entra.",
   "fatores": {
    "atividade": {
-    "tendencia": "piora",
-    "desde": "2026-10-29",
-    "como": "A prévia do PIB é a melhor pista do PIB antes de o IBGE divulgá-lo.",
-    "noticias": [
-     {
-      "texto": "Venda de máquinas e equipamentos cai 13,4% no ano até setembro: empresas investem pouco.",
-      "data": "2026-10-28",
-      "fonte": {
-       "veiculo": "Valor",
-       "url": "https://valor.globo.com/empresas/noticia/2026/10/28/vendas-de-maquinas-acumulam-queda-de-134percent-no-ano-ate-setembro.ghtml"
-      }
-     },
-     {
-      "texto": "A CNI, da indústria, reduz a previsão do PIB de 2026 de 2% para 1,6%.",
-      "data": "2026-10-28",
-      "fonte": {
-       "veiculo": "InfoMoney",
-       "url": "https://www.infomoney.com.br/economia/cni-reduz-projecao-para-o-pib-e-eleva-estimativas-de-inflacao-e-divida-publica/"
-      }
-     }
-    ],
-    "outros_automatico": true,
-    "melhora_se": [
-     "Indústria e serviços voltam a crescer",
-     "Safra e exportações acima do esperado"
-    ],
-    "piora_se": [
-     "Nova queda da prévia do PIB",
-     "Safra quebra com o El Niño"
-    ],
     "fatos": [
      {
       "texto": "A economia cresceu 1,4% em um ano (prévia do PIB, de junho a agosto). O normal desde 2004 vai de 0,4% a 4,1%.",
@@ -1024,47 +2321,9 @@
       "texto": "A prévia do PIB caiu 0,6% no trimestre até agosto, contra os 3 meses anteriores. É a maior queda desde agosto de 2025.",
       "fonte": "BC"
      }
-    ],
-    "outros": {
-     "tipo": "concorda",
-     "texto": "Os bancos (Focus) reduziram a previsão do PIB: 1,8% em 2026 e 1,3% em 2027. Há 3 meses, eram 2% e 1,6%.",
-     "fonte": {
-      "veiculo": "Focus 23/10",
-      "url": "https://www.bcb.gov.br/publicacoes/focus"
-     }
-    }
+    ]
    },
    "juro": {
-    "tendencia": "estavel",
-    "desde": "2026-10-29",
-    "como": "Juro alto deixa o crédito caro, e as empresas investem menos. O efeito leva de 1 a 2 anos para chegar.",
-    "noticias": [
-     {
-      "texto": "Estados aprovam imposto maior (ICMS) sobre gasolina, diesel e gás a partir de 2027. Pressiona os preços.",
-      "data": "2026-10-28",
-      "fonte": {
-       "veiculo": "Poder360",
-       "url": "https://www.poder360.com.br/poder-economia/estados-aprovam-aumento-de-icms-sobre-gasolina-diesel-e-gas-para-2027/"
-      }
-     },
-     {
-      "texto": "Os bancos esperam inflação maior em 2027, acima do centro da meta (Focus).",
-      "data": "2026-10-26",
-      "fonte": {
-       "veiculo": "XP",
-       "url": "https://conteudos.xpi.com.br/economia/boletim-focus-inflacao-de-2027-continua-em-trajetoria-de-alta-26-10-2026/"
-      }
-     }
-    ],
-    "outros_automatico": true,
-    "melhora_se": [
-     "Banco Central corta a Selic mais rápido do que cai a inflação esperada",
-     "Comida e energia mais baratas"
-    ],
-    "piora_se": [
-     "Inflação esperada sobe e a Selic para de cair",
-     "Dólar caro por mais tempo"
-    ],
     "fatos": [
      {
       "texto": "Os preços subiram 4,6% em um ano até setembro (IPCA). Um ano antes, a alta era de 5,2%: os preços sobem mais devagar.",
@@ -1078,55 +2337,9 @@
       "texto": "Selic em 13,75% desde 17/9. Antes, era 14%. Nos últimos 12 meses, chegou a 15%.",
       "fonte": "BC"
      }
-    ],
-    "outros": {
-     "tipo": "discorda",
-     "texto": "Os bancos (Focus) esperam a Selic em 13,25% no fim de 2026 e em 11,75% no fim de 2027: juro caindo.",
-     "fonte": {
-      "veiculo": "Focus 23/10",
-      "url": "https://www.bcb.gov.br/publicacoes/focus"
-     }
-    }
+    ]
    },
    "credito": {
-    "tendencia": "piora",
-    "desde": "2026-10-29",
-    "como": "Parcela alta faz a família comprar menos. Costuma vir antes de a economia crescer menos.",
-    "noticias": [
-     {
-      "texto": "Atraso de mais de 90 dias nos empréstimos às pessoas chega a 8,1% em setembro, o maior desde o início da série, em 2011.",
-      "data": "2026-10-30",
-      "fonte": {
-       "veiculo": "Valor",
-       "url": "https://valor.globo.com/financas/noticia/2026/10/29/juro-medio-das-operacoes-de-credito-sobe-em-setembro-e-inadimplencia-fica-estavel-em-5percent-aponta-bc.ghtml"
-      }
-     },
-     {
-      "texto": "Bradesco sobe o juro mínimo da casa própria de 11,7% para 15% ao ano.",
-      "data": "2026-10-28",
-      "fonte": {
-       "veiculo": "Poder360",
-       "url": "https://www.poder360.com.br/poder-economia/em-salto-inedito-bradesco-sobe-juro-da-casa-propria-para-15-ao-ano/"
-      }
-     }
-    ],
-    "outros": {
-     "tipo": "concorda",
-     "texto": "O banco JPMorgan espera piora aos poucos do crédito, com famílias mais endividadas e mais empréstimos em atraso.",
-     "data": "2026-10-30",
-     "fonte": {
-      "veiculo": "InfoMoney",
-      "url": "https://www.infomoney.com.br/mercados/jpmorgan-ve-piora-gradual-do-ciclo-de-credito-e-mantem-cautela-com-bancos-brasileiros/"
-     }
-    },
-    "melhora_se": [
-     "Renda cresce mais que as parcelas",
-     "Juro dos empréstimos cai"
-    ],
-    "piora_se": [
-     "Bancos emprestam menos",
-     "Imposto (IOF) sobre as aplicações LCI e LCA, hoje em estudo"
-    ],
     "fatos": [
      {
       "texto": "29% da renda das famílias vai para parcelas e juros (agosto), o maior desde o início da série, em 2005. Um ano antes, eram 27,6%.",
@@ -1135,36 +2348,6 @@
     ]
    },
    "mercado": {
-    "tendencia": "piora",
-    "desde": "2026-10-29",
-    "como": "Juro longo e dólar altos deixam o crédito mais caro para empresas e para o governo.",
-    "noticias": [
-     {
-      "texto": "Na semana depois da eleição, a Bolsa cai 18,1% e o dólar sobe 9%, a maior alta em uma semana desde 2008.",
-      "data": "2026-10-31",
-      "fonte": {
-       "veiculo": "Poder360",
-       "url": "https://www.poder360.com.br/poder-economia/bolsa-tem-5a-maior-queda-desde-plano-real-apos-reeleicao-de-lula/"
-      }
-     },
-     {
-      "texto": "No dia seguinte à eleição, o dólar sobe 8,2% e a Bolsa cai 13,9%.",
-      "data": "2026-10-27",
-      "fonte": {
-       "veiculo": "Agência Brasil",
-       "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula"
-      }
-     }
-    ],
-    "outros_automatico": true,
-    "melhora_se": [
-     "Regra de gastos do governo em que o mercado acredite",
-     "Recompras do Tesouro acalmam o mercado"
-    ],
-    "piora_se": [
-     "Mais dúvida sobre as contas do governo",
-     "Fed sobe o juro dos EUA"
-    ],
     "fatos": [
      {
       "texto": "O governo paga 7,9% ao ano acima da inflação para pegar dinheiro até 2035 (29/10). É 0,5 ponto acima do normal dos últimos 3 anos.",
@@ -1174,55 +2357,9 @@
       "texto": "Dólar a R$ 5,42 em 30/10, 6,8% mais caro que há 3 meses.",
       "fonte": "BC"
      }
-    ],
-    "outros": {
-     "tipo": "discorda",
-     "texto": "Os bancos (Focus) esperam o dólar a R$ 5,05 no fim de 2026. Hoje está em R$ 5,42.",
-     "fonte": {
-      "veiculo": "Focus 23/10",
-      "url": "https://www.bcb.gov.br/publicacoes/focus"
-     }
-    }
+    ]
    },
    "contas": {
-    "tendencia": "piora",
-    "desde": "2026-10-29",
-    "como": "Pesa pelo juro: se a dívida assusta quem empresta, o crédito fica mais caro para todos.",
-    "noticias": [
-     {
-      "texto": "Governo federal gasta R$ 90 bilhões a mais do que arrecada até setembro. Em 2025, foram R$ 100 bilhões.",
-      "data": "2026-10-29",
-      "fonte": {
-       "veiculo": "Jornal do Comércio",
-       "url": "https://www.jornaldocomercio.com/economia/2026/10/1268689-governo-central-tem-superavit-primario-de-rs-4839-bi-em-setembro.html"
-      }
-     },
-     {
-      "texto": "Gastos que ficam fora da meta do governo crescem no ano de eleição.",
-      "data": "2026-10-20",
-      "fonte": {
-       "veiculo": "Itatiaia",
-       "url": "https://www.itatiaia.com.br/economia/governo-amplia-gastos-fora-do-arcabouco-e-aumenta-pressao-sobre-meta-fiscal/"
-      }
-     }
-    ],
-    "outros": {
-     "tipo": "concorda",
-     "texto": "A IFI, do Senado, vê o governo gastando até 1% do PIB a mais do que arrecada em 2027. Pesam R$ 40 bilhões em medidas sem previsão no Orçamento.",
-     "data": "2026-10-30",
-     "fonte": {
-      "veiculo": "Valor",
-      "url": "https://valor.globo.com/brasil/noticia/2026/10/29/pacote-de-bondades-do-governo-pode-levar-deficit-primario-a-1percent-do-pib-em-2027-nota-ifi.ghtml"
-     }
-    },
-    "melhora_se": [
-     "Governo cumpre a meta, com regra em que o mercado acredite",
-     "Economia cresce mais que o juro descontado da inflação"
-    ],
-    "piora_se": [
-     "Gasto novo sem receita nova",
-     "Juro alto por mais tempo"
-    ],
     "fatos": [
      {
       "texto": "Dívida do governo em 82,9% do PIB (setembro). Subiu 5,1 pontos em um ano.",
@@ -1235,31 +2372,6 @@
     ]
    },
    "emprego": {
-    "tendencia": "estavel",
-    "desde": "2026-10-29",
-    "como": "Sobe quando a recessão já começou. Confirma, não avisa antes.",
-    "noticias": [
-     {
-      "texto": "Desemprego cai a 5,2% no trimestre até setembro, o menor para essa época do ano desde 2012. A renda fica parada.",
-      "data": "2026-10-31",
-      "fonte": {
-       "veiculo": "Estadão",
-       "url": "https://www.estadao.com.br/economia/ibge-pnad-desemprego-setembro-2026/"
-      }
-     }
-    ],
-    "outros": {
-     "tipo": "neutro",
-     "texto": "O IBGE divulga o desemprego até outubro em 27/11.",
-     "fonte": null
-    },
-    "melhora_se": [
-     "Contratações firmes nos serviços"
-    ],
-    "piora_se": [
-     "Demissões na indústria e na construção",
-     "Juro alto e dívidas em atraso chegando ao emprego"
-    ],
     "fatos": [
      {
       "texto": "Desemprego em 5,2% no trimestre até setembro. O menor desde 2012 foi 5,1%, em dezembro de 2025.",
@@ -1272,40 +2384,6 @@
     ]
    },
    "externo": {
-    "tendencia": "sem_direcao",
-    "desde": "2026-10-29",
-    "como": "O preço de soja, minério e petróleo e o juro dos EUA puxam boa parte da economia de países como o Brasil.",
-    "noticias": [
-     {
-      "texto": "Fed, o banco central dos EUA, mantém o juro entre 3,75% e 4% ao ano. Dois diretores votaram por subir.",
-      "data": "2026-10-28",
-      "fonte": {
-       "veiculo": "Valor",
-       "url": "https://valor.globo.com/financas/noticia/2026/10/28/fed-mantem-taxa-de-juros-inalterada-no-intervalo-de-375percent-a-400percent-ao-ano.ghtml"
-      }
-     },
-     {
-      "texto": "Banco Mundial prevê alta de 23 pontos no preço de produtos básicos em 2026, puxada pela energia.",
-      "data": "2026-10-28",
-      "fonte": {
-       "veiculo": "Valor",
-       "url": "https://valor.globo.com/mundo/noticia/2026/10/28/banco-mundial-prev-alta-de-23-pontos-percentuais-nos-preos-das-commodities-em-2026.ghtml"
-      }
-     }
-    ],
-    "outros": {
-     "tipo": "neutro",
-     "texto": "O Fed decide o juro dos EUA de novo em 9/12.",
-     "fonte": null
-    },
-    "melhora_se": [
-     "Produtos que o Brasil exporta ficam mais caros",
-     "Fed corta o juro dos EUA"
-    ],
-    "piora_se": [
-     "Produtos básicos ficam mais baratos",
-     "China cresce mais devagar"
-    ],
     "fatos": [
      {
       "texto": "Soja, minério, petróleo e outros produtos básicos ficaram 1,7% mais caros em 6 meses até setembro (FMI).",
@@ -1314,50 +2392,6 @@
     ]
    }
   }
- },
- "revisoes": [
-  {
-   "fator": "atividade",
-   "tipo": "outros",
-   "tendencia": null,
-   "posicao": "concorda",
-   "texto": "Itaú corta a projeção do PIB de 2027 para 0,5% e vê inflação acima do teto da meta.",
-   "noticia_ids": [
-    "n015"
-   ],
-   "aplicada": false,
-   "motivo": "fator com projeção do Focus calculada por código"
-  },
-  {
-   "fator": "emprego",
-   "tipo": "noticia",
-   "tendencia": null,
-   "posicao": null,
-   "texto": "Desemprego cai a 5,2% no trimestre até setembro, o menor para o período desde 2012, e a renda estaciona.",
-   "noticia_ids": [
-    "n086",
-    "n089",
-    "n118"
-   ],
-   "aplicada": true
-  },
-  {
-   "fator": "mercado",
-   "tipo": "noticia",
-   "tendencia": null,
-   "posicao": null,
-   "texto": "Ibovespa cai 18,12% na semana após a eleição, e o dólar sobe 9,03%, a maior alta semanal desde 2008.",
-   "noticia_ids": [
-    "n016",
-    "n030",
-    "n048"
-   ],
-   "aplicada": true
-  }
- ],
- "placar": {
-  "registradas": [],
-  "conferidas": []
  },
  "anterior": "2026-10-30T0630",
  "revisao_texto": {
@@ -1371,8 +2405,7 @@
   "titulo": "Bolsa cai 18,1% na semana depois da eleição, e dólar sobe 9%",
   "paragrafos": [
    "A Bolsa caiu 18,1% na semana depois da eleição, a mesma queda de uma semana de 2001. O dólar subiu 9%, a maior alta em uma semana desde 2008.",
-   "Com o dólar mais caro, fica mais caro o que vem de fora, como celular, peça de carro e passagem de avião.",
-   "Isso não muda o risco de recessão, porque Bolsa e dólar ficam fora da conta do nível."
+   "Com o dólar mais caro, fica mais caro o que vem de fora, como celular, peça de carro e passagem de avião."
   ],
   "problemas": [],
   "meta": [
@@ -1390,13 +2423,12 @@
     "session_id": "19591842-6ca8-4144-b2fc-d1595e0d8487"
    }
   ],
-  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas.",
+  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-10-31: tirada a frase sobre o dólar ficar fora da conta, porque o dólar passou a contar na direção do risco.",
   "secoes": [
    {
     "paragrafos": [
      "A Bolsa caiu 18,1% na semana depois da eleição, a mesma queda de uma semana de 2001. O dólar subiu 9%, a maior alta em uma semana desde 2008.",
-     "Com o dólar mais caro, fica mais caro o que vem de fora, como celular, peça de carro e passagem de avião.",
-     "Isso não muda o risco de recessão, porque Bolsa e dólar ficam fora da conta do nível."
+     "Com o dólar mais caro, fica mais caro o que vem de fora, como celular, peça de carro e passagem de avião."
     ]
    }
   ]

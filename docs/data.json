@@ -1,226 +1,243 @@
 {
- "nivel": "Normal",
- "escala": [
-  "Muito abaixo",
-  "Abaixo",
-  "Normal",
-  "Acima",
-  "Muito acima"
- ],
- "pergunta": "O risco de o Brasil entrar em recessão técnica nos próximos 12 meses está acima ou abaixo do normal?",
+ "direcao": "subindo",
+ "desde": "2026-06",
+ "pergunta": "Para que lado anda o risco de recessão no Brasil: as pressões que costumam vir antes de uma recessão estão apertando ou folgando?",
  "atualizado_em": "2026-10-31T06:30:03-03:00",
- "pib_12_meses": {
-  "cenario_ruim_pct": -1.79,
-  "cenario_ruim_em_tempos_normais_pct": -1.89,
-  "o_que_e": "Crescimento do PIB nos 4 trimestres seguintes ao último divulgado que tem 1 chance em 10 de ser pior."
- },
- "entradas": [
+ "soma": 4,
+ "apertaram": 4,
+ "folgaram": 0,
+ "partes": [
   {
-   "id": "tendencia",
-   "nome": "Crescimento médio em 10 anos",
-   "valor": 1.7328,
-   "ref": "2T2026",
-   "efeito_no_cenario_ruim_pontos": 0.1504
+   "id": "contas",
+   "nome": "Contas do governo",
+   "na_soma": true,
+   "lado": "apertou",
+   "medidas": {
+    "divida": {
+     "agora": 82.93,
+     "dia": "2026-09-01",
+     "ref": "2026-09",
+     "antes": 81.95,
+     "dia_antes": "2026-06-01",
+     "ref_antes": "2026-06",
+     "mudanca": 0.98,
+     "corte": 0.9451,
+     "lado": 1,
+     "como": "pontos"
+    },
+    "primario": {
+     "agora": 0.52,
+     "dia": "2026-09-01",
+     "ref": "2026-09",
+     "antes": 1.19,
+     "dia_antes": "2026-06-01",
+     "ref_antes": "2026-06",
+     "mudanca": -0.67,
+     "corte": 0.3113,
+     "lado": -1,
+     "como": "pontos"
+    }
+   },
+   "folga": {
+    "serie": "divida_bruta",
+    "valor": 82.93,
+    "ref": "2026-09",
+    "desde": "2006",
+    "meses": 238,
+    "pior_que_pct": 96,
+    "recorde_ruim": false,
+    "recorde_bom": false
+   }
   },
   {
-   "id": "crescimento",
-   "nome": "Crescimento em 12 meses",
-   "valor": 1.3821,
-   "ref": "2026-08",
-   "efeito_no_cenario_ruim_pontos": -0.1477
-  },
-  {
-   "id": "juro",
-   "nome": "Selic: variação em 12 meses",
-   "valor": -1.25,
-   "ref": "2026-10-31",
-   "efeito_no_cenario_ruim_pontos": 0.1289
-  },
-  {
-   "id": "inflacao",
-   "nome": "Inflação: variação em 12 meses",
-   "valor": -0.59,
-   "ref": "2026-09",
-   "efeito_no_cenario_ruim_pontos": 0.0656
-  }
- ],
- "fatores": [
-  {
-   "id": "atividade",
-   "nome": "Ritmo da economia",
-   "na_conta": true,
-   "efeito_no_cenario_ruim_pontos": 0.0027,
-   "situacao": "Pior que o normal",
-   "tendencia": "piora"
-  },
-  {
-   "id": "juro",
-   "nome": "Juro e inflação",
-   "na_conta": true,
-   "efeito_no_cenario_ruim_pontos": 0.1945,
-   "situacao": "Normal",
-   "tendencia": "estavel"
-  },
-  {
-   "id": "credito",
+   "id": "parcelas",
    "nome": "Dívidas das famílias",
-   "na_conta": false,
-   "efeito_no_cenario_ruim_pontos": null,
-   "situacao": "Pior que o normal",
-   "tendencia": "piora"
+   "na_soma": true,
+   "lado": "apertou",
+   "medidas": {
+    "parcelas": {
+     "agora": 28.99,
+     "dia": "2026-08-01",
+     "ref": "2026-08",
+     "antes": 28.47,
+     "dia_antes": "2026-05-01",
+     "ref_antes": "2026-05",
+     "mudanca": 0.52,
+     "corte": 0.3781,
+     "lado": 1,
+     "como": "pontos"
+    }
+   },
+   "folga": {
+    "serie": "comprometimento_renda",
+    "valor": 28.99,
+    "ref": "2026-08",
+    "desde": "2005",
+    "meses": 258,
+    "pior_que_pct": 100,
+    "recorde_ruim": true,
+    "recorde_bom": false
+   }
   },
   {
    "id": "mercado",
    "nome": "Dólar e juro longo",
-   "na_conta": false,
-   "efeito_no_cenario_ruim_pontos": null,
-   "situacao": "Pior que o normal",
-   "tendencia": "piora"
+   "na_soma": true,
+   "lado": "apertou",
+   "medidas": {
+    "dolar": {
+     "agora": 5.4212,
+     "dia": "2026-10-30",
+     "ref": "2026-10",
+     "antes": 5.0773,
+     "dia_antes": "2026-07-31",
+     "ref_antes": "2026-07",
+     "mudanca": 6.7733,
+     "corte": 4.7657,
+     "lado": 1,
+     "como": "pct"
+    },
+    "juro_longo": {
+     "agora": 7.9,
+     "dia": "2026-10-29",
+     "ref": "2026-10",
+     "antes": 8.27,
+     "dia_antes": "2026-07-31",
+     "ref_antes": "2026-07",
+     "mudanca": -0.37,
+     "corte": 0.4337,
+     "lado": 0,
+     "como": "pontos"
+    }
+   },
+   "folga": {
+    "serie": "juro_real_longo",
+    "valor": 7.9,
+    "ref": "2026-10",
+    "desde": "2005",
+    "meses": 256,
+    "pior_que_pct": 89,
+    "recorde_ruim": false,
+    "recorde_bom": false
+   }
   },
   {
-   "id": "contas",
-   "nome": "Contas do governo",
-   "na_conta": false,
-   "efeito_no_cenario_ruim_pontos": null,
-   "situacao": "Pior que o normal",
-   "tendencia": "piora"
+   "id": "inflacao",
+   "nome": "Inflação esperada",
+   "na_soma": true,
+   "lado": "apertou",
+   "medidas": {
+    "inflacao": {
+     "agora": 4.5336,
+     "dia": "2026-10-23",
+     "ref": "2026-10",
+     "antes": 4.1883,
+     "dia_antes": "2026-07-31",
+     "ref_antes": "2026-07",
+     "mudanca": 0.3453,
+     "corte": 0.3169,
+     "lado": 1,
+     "como": "pontos"
+    }
+   },
+   "folga": {
+    "serie": "focus_ipca_12m",
+    "valor": 4.5336,
+    "ref": "2026-10",
+    "desde": "2001",
+    "meses": 299,
+    "pior_que_pct": 41,
+    "recorde_ruim": false,
+    "recorde_bom": false
+   }
+  },
+  {
+   "id": "juro",
+   "nome": "Juro",
+   "na_soma": true,
+   "lado": "igual",
+   "medidas": {
+    "juro": {
+     "agora": 13.75,
+     "dia": "2026-10-31",
+     "ref": "2026-10",
+     "antes": 14.25,
+     "dia_antes": "2026-07-31",
+     "ref_antes": "2026-07",
+     "mudanca": -0.5,
+     "corte": 0.8339,
+     "lado": 0,
+     "como": "pontos"
+    }
+   },
+   "folga": {
+    "serie": "juro_real",
+    "valor": 8.816686692125785,
+    "ref": "2026-10",
+    "desde": "2002",
+    "meses": 298,
+    "pior_que_pct": 73,
+    "recorde_ruim": false,
+    "recorde_bom": false
+   }
+  },
+  {
+   "id": "ritmo",
+   "nome": "Ritmo da economia",
+   "na_soma": false,
+   "lado": "igual",
+   "medidas": {
+    "ritmo": {
+     "agora": 110.4062,
+     "dia": "2026-08-01",
+     "ref": "2026-08",
+     "antes": 111.2506,
+     "dia_antes": "2026-05-01",
+     "ref_antes": "2026-05",
+     "mudanca": -0.6425,
+     "corte": 0.8891,
+     "lado": 0,
+     "como": "media"
+    }
+   },
+   "folga": null
   },
   {
    "id": "emprego",
    "nome": "Emprego",
-   "na_conta": false,
-   "efeito_no_cenario_ruim_pontos": null,
-   "situacao": "Normal",
-   "tendencia": "estavel"
-  },
-  {
-   "id": "externo",
-   "nome": "Economia lá fora",
-   "na_conta": false,
-   "efeito_no_cenario_ruim_pontos": null,
-   "situacao": "Normal",
-   "tendencia": "sem_direcao"
+   "na_soma": false,
+   "lado": "igual",
+   "medidas": {
+    "emprego": {
+     "agora": 5.2,
+     "dia": "2026-09-01",
+     "ref": "2026-09",
+     "antes": 5.4,
+     "dia_antes": "2026-06-01",
+     "ref_antes": "2026-06",
+     "mudanca": -0.2,
+     "corte": 0.556,
+     "lado": 0,
+     "como": "pontos"
+    }
+   },
+   "folga": {
+    "serie": "desocupacao",
+    "valor": 5.2,
+    "ref": "2026-09",
+    "desde": "2012",
+    "meses": 175,
+    "pior_que_pct": 1,
+    "recorde_ruim": false,
+    "recorde_bom": false
+   }
   }
  ],
- "indicadores": [
-  {
-   "id": "ibcbr",
-   "nome": "IBC-Br",
-   "fator": "atividade",
-   "valor": -0.6425,
-   "unidade": "%",
-   "ref": "2026-08",
-   "situacao": "Pior que o normal",
-   "faixa_normal": [
-    -0.1789,
-    1.4095
-   ]
-  },
-  {
-   "id": "focus_pib",
-   "nome": "PIB esperado pelo Focus",
-   "fator": "atividade",
-   "valor": 1.3954,
-   "unidade": "%",
-   "ref": "2026-10-23",
-   "situacao": "Pior que o normal",
-   "faixa_normal": [
-    1.6177,
-    3.4994
-   ]
-  },
-  {
-   "id": "juro_real",
-   "nome": "Juro real",
-   "fator": "juro",
-   "valor": 8.8167,
-   "unidade": "% ao ano",
-   "ref": "2026-10-31",
-   "situacao": "Normal",
-   "faixa_normal": [
-    4.062,
-    9.1335
-   ]
-  },
-  {
-   "id": "comprometimento",
-   "nome": "Renda comprometida com dívidas",
-   "fator": "credito",
-   "valor": 1.8797,
-   "unidade": "p.p.",
-   "ref": "2026-08",
-   "situacao": "Pior que o normal",
-   "faixa_normal": [
-    -0.2683,
-    1.6869
-   ]
-  },
-  {
-   "id": "tesouro",
-   "nome": "Juro do Tesouro IPCA+",
-   "fator": "mercado",
-   "valor": 0.515,
-   "unidade": "p.p.",
-   "ref": "2026-10-29",
-   "situacao": "Normal",
-   "faixa_normal": [
-    -0.95,
-    0.845
-   ]
-  },
-  {
-   "id": "dolar",
-   "nome": "Dólar",
-   "fator": "mercado",
-   "valor": 6.8448,
-   "unidade": "%",
-   "ref": "2026-10-30",
-   "situacao": "Pior que o normal",
-   "faixa_normal": [
-    -4.1516,
-    5.1163
-   ]
-  },
-  {
-   "id": "divida",
-   "nome": "Dívida pública",
-   "fator": "contas",
-   "valor": 5.09,
-   "unidade": "p.p. do PIB",
-   "ref": "2026-09",
-   "situacao": "Pior que o normal",
-   "faixa_normal": [
-    -1.74,
-    4.22
-   ]
-  },
-  {
-   "id": "sahm",
-   "nome": "Regra de Sahm",
-   "fator": "emprego",
-   "valor": 0.0333,
-   "unidade": "p.p.",
-   "ref": "2026-09",
-   "situacao": "Normal",
-   "faixa_normal": [
-    -0.0667,
-    1.4333
-   ]
-  },
-  {
-   "id": "commodities",
-   "nome": "Preço das commodities",
-   "fator": "externo",
-   "valor": 1.6728,
-   "unidade": "%",
-   "ref": "2026-09",
-   "situacao": "Normal",
-   "faixa_normal": [
-    -4.1969,
-    13.7214
-   ]
-  }
- ],
+ "pib_num_ano_ruim_12_meses": {
+  "pct": -1.79,
+  "em_tempos_normais_pct": -1.89,
+  "o_que_e": "Crescimento do PIB nos 4 trimestres seguintes ao último divulgado que tem 1 chance em 10 de ser pior (conta dos 44 países)."
+ },
  "pressao_noticias": {
   "sentido": "piora",
   "fatores": {

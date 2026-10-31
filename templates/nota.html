@@ -1,127 +1,118 @@
 {% extends "base.html" %}
-{% block titulo %}Como a conta funciona | Vai dar crise?{% endblock %}
-{% block descricao %}De onde vem o nível de risco de recessão de {{ data_curta(dia) }}: o PIB num ano ruim, daqueles com 1 chance em 10, estimado com dados de 44 países e comparado ao Brasil desde 2004.{% endblock %}
+{% set t = teste %}
+{% set p = cfg.direcao %}
+{% set k = p.corte_vaivem %}
+{% set c = cal.direcao.cortes %}
+{% block titulo %}Como funciona | Vai dar crise?{% endblock %}
+{% block descricao %}Como o site diz se o risco de recessão no Brasil está subindo, igual ou caindo: cinco pressões comparadas com 3 meses antes, a folga de cada uma e o teste da regra desde 2004.{% endblock %}
 {% block estilo %}
 .detalhe{padding-top:28px;padding-bottom:40px;font-family:var(--sistema)}
-.detalhe-topo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px 48px;align-items:start;padding-bottom:26px;border-bottom:1px solid var(--fio)}
-.detalhe-topo .nota{margin:0}
 .detalhe h1{font:700 30px/1.2 var(--serifa);margin:0 0 12px;text-wrap:balance}
 .detalhe h2{font:700 22px/1.3 var(--serifa);margin:0 0 12px}
-.detalhe section{padding:28px 0 6px;border-bottom:1px solid var(--fio)}
-.detalhe section:last-child{border-bottom:0}
-.detalhe section > *{max-width:760px}
-.detalhe section > .tabela{max-width:none}
-.topicos{margin:0;padding-left:1.1em;display:grid;gap:7px;font:16.5px/1.45 var(--sistema)}
-.passos{margin:0 0 18px;padding-left:1.3em;display:grid;gap:9px;font:16.5px/1.45 var(--sistema)}
-.passos b{font-weight:700}
-@media (max-width:820px){.detalhe-topo{grid-template-columns:minmax(0,1fr)}}
-.tabela{overflow-x:auto;margin:0 0 18px}
-table{width:100%;min-width:720px;border-collapse:collapse;font:14.5px/1.4 var(--sistema)}
-th,td{text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--fio);vertical-align:top}
-th{font-size:12.5px;color:var(--meta);font-weight:600;letter-spacing:.03em}
-td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
-td b{display:block}
-td .def{display:block;color:var(--meta);font-size:13px;margin-top:2px;max-width:30em}
-.chip{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 9px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
-.chip.atencao{color:var(--atencao)}.chip.normal{color:var(--meta)}
-.chip.semdado{color:var(--meta);border-style:dashed}
-.nota-tab{font:14px/1.5 var(--sistema);color:var(--meta);margin:0 0 18px}
-.hist{width:100%;height:auto;max-width:760px}
+.detalhe .abre{font:17px/1.5 var(--sistema);max-width:720px;margin:0 0 6px}
+.detalhe section{padding:26px 0 8px;border-top:1px solid var(--fio);max-width:760px}
+.detalhe section p{font:16.5px/1.5 var(--sistema);margin:0 0 12px}
+.topicos{margin:0 0 12px;padding-left:1.1em;display:grid;gap:8px;font:16.5px/1.5 var(--sistema)}
+.topicos b{font-weight:700}
+.linha-dir{width:100%;height:auto;max-width:640px;display:block;margin:4px 0 6px}
 svg text{font-family:var(--sistema)}
-.tl{font-size:13px;fill:var(--meta)}
-.gl{stroke:var(--fio);stroke-width:1}
-.l1{fill:none;stroke:var(--tinta);stroke-width:2}
-.rec{fill:var(--alerta-fundo)}
-.legenda{font:13.5px/1.4 var(--sistema);color:var(--meta);display:flex;gap:16px;flex-wrap:wrap;margin:4px 0 14px}
-.legenda i{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px;background:var(--alerta-fundo)}
-.legenda i.linha{height:3px;background:var(--tinta);vertical-align:3px}
-.mais-info{font:15px/1.5 var(--sistema);margin:0 0 18px}
+.tl{font-size:10px;fill:var(--meta)}
+.tg{font-size:9.5px;fill:var(--tinta)}
+.gov{stroke:var(--meta);stroke-width:1}
+.d-s{fill:var(--sobe);fill-opacity:.6}.d-e{fill:var(--sobe)}.d-c{fill:var(--desce);fill-opacity:.6}.d-i{fill:var(--fio)}
+.rec{fill:var(--tinta);fill-opacity:.55}
+.legenda{font:13.5px/1.4 var(--sistema);color:var(--meta);display:flex;gap:6px 16px;flex-wrap:wrap;margin:0 0 16px;padding:0;list-style:none}
+.legenda i{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.legenda .d-s{background:var(--sobe);opacity:.6}.legenda .d-e{background:var(--sobe)}.legenda .d-c{background:var(--desce);opacity:.6}.legenda .d-i{background:var(--fio)}.legenda .rec{background:var(--tinta);opacity:.55}
 @media (max-width:620px){.detalhe h1{font-size:26px}}
 {% endblock %}
 {% block corpo %}
-{% set g = cal.gar %}
-{% set val = g.validacao %}
 <main class="in detalhe">
-  <div class="detalhe-topo">
-    {% with grande = True %}{% include "_nota.html" %}{% endwith %}
-    <div>
-      <h1>Como a conta funciona</h1>
-      <ul class="topicos">
-        <li>A pergunta: o risco de recessão no Brasil nos próximos 12 meses está acima ou abaixo do normal?</li>
-        <li>Recessão: o PIB, tudo o que o país produz, cair dois trimestres seguidos, segundo o IBGE.</li>
-        <li>O nível sai de um ano ruim para o PIB: o resultado que só tem 1 chance em 10 de ser pior. Quanto pior esse ano ruim, maior o risco.</li>
-        <li>Normal: o que se viu no Brasil desde 2004. As notícias não mudam o nível.</li>
-      </ul>
-    </div>
-  </div>
+  <h1>Como funciona</h1>
+  <p class="abre">O site responde a uma pergunta: o risco de recessão no Brasil está subindo, igual ou caindo? Ele não tenta acertar quando vem a próxima recessão. Mostra para que lado o risco andou nos últimos 3 meses, com uma regra fixa, a mesma para qualquer governo.</p>
+  <p class="abre">Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos, segundo o IBGE.</p>
 
-  <section aria-labelledby="t-passos">
-    <h2 id="t-passos">Em quatro passos</h2>
-    <ol class="passos">
-      <li><b>Quatro dados do Brasil:</b> quanto a economia cresceu no último ano, quanto cresceu por ano nos últimos 10, quanto a Selic mudou em um ano e quanto a inflação mudou em um ano.</li>
-      <li><b>Uma conta tirada de {{ g.painel.paises }} países:</b> em {{ "{:,}".format(g.painel.trimestres).replace(",", ".") }} trimestres desde {{ g.painel.inicio[:4] }}, ela mede como esses quatro dados mudam o PIB de um ano ruim. É um método do FMI.</li>
-      <li><b>O ano ruim de hoje:</b> a conta aplicada ao Brasil, com um ajuste para que só 1 em cada 10 anos fique abaixo dele, inclusive em anos que a conta não viu.</li>
-      <li><b>O nível:</b> o ano ruim de hoje contra o de cada mês desde 2004. Se está entre o pior 1 em cada 10 meses, Muito acima. Entre os 3 em cada 10 piores, Acima. No meio, Normal. Abaixo e Muito abaixo são o espelho. Só muda quando duas atualizações seguidas concordam.</li>
-    </ol>
-  </section>
-
-  <section aria-labelledby="t-conta">
-    <h2 id="t-conta">A conta em {{ data_curta(dia) }}</h2>
-    <div class="tabela">
-      <table>
-        <thead><tr><th>Dado</th><th class="n">Hoje</th><th class="n">Normal no Brasil</th><th class="n">Peso no ano ruim</th></tr></thead>
-        <tbody>
-          {% for x in entradas %}<tr><td><b>{{ x.nome }}</b><span class="def">{{ x.definicao }}</span></td><td class="n">{{ x.hoje }}</td><td class="n">{{ x.faixa }}</td><td class="n {{ x.cls }}">{{ x.efeito }}</td></tr>{% endfor %}
-        </tbody>
-      </table>
-    </div>
-    <p class="nota-tab">Normal: metade dos meses desde 2004 ficou nessa faixa. Peso: quanto o dado de hoje, comparado ao de um Brasil típico, muda o PIB do ano ruim, em pontos. "pt" quer dizer pontos: de 15% para 13,75% são 1,25 ponto.</p>
+  <section aria-labelledby="t-direcao">
+    <h2 id="t-direcao">O que quer dizer subindo, igual e caindo?</h2>
+    <p>Cinco coisas costumam piorar antes de uma recessão no Brasil. O site chama cada uma de pressão e compara o valor de hoje com o de 3 meses antes. Uma pressão aperta quando anda para o lado ruim mais do que o normal, e folga quando anda isso para o lado bom.</p>
     <ul class="topicos">
-      <li>Juro subindo e inflação acelerando costumam vir antes de recessões, em países ricos e emergentes.</li>
-      <li>Crescer forte hoje ajuda o ano seguinte. Já um crescimento médio alto vem junto com quedas mais fundas: é o caso de economias que oscilam mais.</li>
-      {% for x in gatilhos %}<li><b>{{ x.texto }}</b></li>{% endfor %}
+      <li><b>Subindo:</b> as pressões que apertaram passam das que folgaram por duas ou mais.</li>
+      <li><b>Caindo:</b> o contrário, as que folgaram passam das que apertaram por duas ou mais.</li>
+      <li><b>Igual:</b> todo o resto.</li>
+      <li><b>Encolhendo:</b> aparece no lugar da direção quando a prévia do PIB do Banco Central cai mais de {{ p.encolhe_pct|num }}% em 3 meses. Aí a economia já está encolhendo.</li>
     </ul>
+    <p>A direção só muda quando o resultado novo se repete no mês seguinte. Assim, um mês fora da curva não muda o topo da página.</p>
+    <p>Subindo não quer dizer que a recessão vem. Desde 2004, depois dos meses em subindo, o PIB cresceu em média {{ t.pib_12m_depois.subindo|num }}% nos 12 meses seguintes. Depois dos meses em igual, {{ t.pib_12m_depois.igual|num }}%. Depois dos meses em caindo, {{ t.pib_12m_depois.caindo|num }}%. Uma recessão começou no ano seguinte em {{ (100 * t.recessao_a_frente.subindo)|round|int }} de cada 100 meses em subindo, {{ (100 * t.recessao_a_frente.igual)|round|int }} em igual e {{ (100 * t.recessao_a_frente.caindo)|round|int }} em caindo.</p>
   </section>
 
-  <section aria-labelledby="t-fora">
-    <h2 id="t-fora">O que ficou de fora</h2>
+  <section aria-labelledby="t-pressoes">
+    <h2 id="t-pressoes">Quais são as cinco pressões, e por que elas?</h2>
     <ul class="topicos">
-      <li>Dólar, crédito, dívida do governo, juro de longo prazo, a distância entre juro curto e longo, o quanto a economia está acima do seu ritmo normal e o desemprego. Nos {{ g.painel.paises }} países, quase não melhoraram a previsão, ou a pioraram.</li>
-      <li>A bolsa melhorou a previsão nos {{ g.painel.paises }} países, mas piorou no Brasil. Fica de fora.</li>
-      <li>Ficar fora da conta não quer dizer que não importa. As sete partes da economia seguem em <a href="{{ link_resumo }}">Fator por fator</a>, com o dado de hoje contra o normal e a previsão para 6 meses.</li>
-      <li>O que vem antes de o juro subir, como as contas do governo e a inflação esperada, está em <a href="/causas/">O que causa recessão</a>.</li>
+      <li><b>Contas do governo.</b> A dívida do governo, em % do PIB. Quando ela sobe rápido, quem empresta ao governo passa a cobrar mais caro, e o juro e o dólar sobem junto. É a <a href="/causas/#t-divida">bola de neve</a> da aba O que causa recessão.</li>
+      <li><b>Dívidas das famílias.</b> A parte da renda que vai para parcelas e juros. Quem já paga muita parcela corta o resto primeiro quando a renda aperta, e as lojas vendem menos. <a href="/causas/#t-doem">Por que essa queda dói mais</a>.</li>
+      <li><b>Dólar e juro longo.</b> O dólar e o juro que o governo paga, acima da inflação, para pegar dinheiro por uns 10 anos (Tesouro IPCA+). Quando quem investe desconfia do Brasil, vende reais e títulos do governo, e os dois sobem. Contam como uma pressão só: se um aperta e o outro folga, fica igual.</li>
+      <li><b>Inflação esperada.</b> Quanto os bancos esperam que os preços subam nos próximos 12 meses (Focus). Se esperam mais, o Banco Central tende a subir o juro para segurar os preços. <a href="/causas/#t-precos">Por que os preços sobem</a>.</li>
+      <li><b>Juro.</b> A Selic, o juro que o Banco Central decide e que serve de base para os juros dos bancos. Com a Selic subindo, a compra a prazo fica cara, as pessoas compram menos e as lojas vendem menos. <a href="/causas/#t-freio">O remédio que esfria a economia</a>.</li>
     </ul>
+    <p>O ritmo da economia e o emprego aparecem no topo, mas não entram na soma. Eles mostram como a economia está agora, e o emprego costuma ser o último a piorar: quando ele piora, a recessão em geral já chegou.</p>
   </section>
 
-  <section aria-labelledby="t-hist">
-    <h2 id="t-hist">A conta desde 2004</h2>
-    {% if historico_svg %}
-    {{ historico_svg|safe }}
-    <p class="legenda"><span><i class="linha"></i>nível de cada mês, com uma conta que não viu aquele ano</span><span><i></i>recessão</span></p>
-    {% endif %}
+  <section aria-labelledby="t-normal">
+    <h2 id="t-normal">Quanto é andar mais que o normal?</h2>
+    <p>Toda pressão sobe e desce um pouco de um trimestre para o outro, como a balança do banheiro, que muda meio quilo de um dia para o outro sem que ninguém tenha engordado. O site mede esse vaivém normal de cada pressão com os dados do Brasil desde 2002 e só conta o que passa dele.</p>
     <ul class="topicos">
-      <li>Nos meses em Acima ou Muito acima, o PIB cresceu em média {{ val.acima_crescimento_medio_seguinte|num }}% nos 12 meses seguintes. Nos outros, {{ val.demais_crescimento_medio_seguinte|num }}%.</li>
-      <li>Recessões começaram em seguida {{ (val.acima_meses_com_recessao_a_frente / val.demais_meses_com_recessao_a_frente)|num }} vez mais nos meses em Acima ou Muito acima do que nos outros.</li>
-      <li>Contra usar só o crescimento médio do país, a conta erra {{ (100 * val.brasil_ganho_sobre_a_media_do_pais)|round|int }}% menos no Brasil e {{ (100 * val.painel_ganho_sobre_a_media_do_pais)|round|int }}% menos nos {{ g.painel.paises }} países. Não acerta melhor a data em que cada recessão começa.</li>
-      <li>Choques de fora, como a pandemia em 2020, não aparecem antes. O nível estava no Normal.</li>
+      <li>Dívida do governo: até {{ (k * c.divida)|num(2) }} ponto do PIB em 3 meses.</li>
+      <li>Parte da renda das famílias com parcelas: até {{ (k * c.parcelas)|num(2) }} ponto.</li>
+      <li>Dólar: até {{ (k * c.dolar)|num }}%. Juro de 10 anos: até {{ (k * c.juro_longo)|num(2) }} ponto.</li>
+      <li>Inflação esperada: até {{ (k * c.inflacao)|num(2) }} ponto.</li>
+      <li>Selic: até {{ (k * c.juro)|num(2) }} ponto.</li>
+    </ul>
+    <p>Na página de hoje, cada pressão mostra o número de agora, o de 3 meses antes e se passou desse vaivém com folga ou raspando.</p>
+  </section>
+
+  <section aria-labelledby="t-folga">
+    <h2 id="t-folga">O que é a folga?</h2>
+    <p>A direção diz para onde o risco anda. A folga diz quanto espaço ainda sobra. Uma pressão pode ficar igual em 3 meses e mesmo assim estar no limite, como uma conta bancária que parou de cair, mas já está no vermelho.</p>
+    <p>A folga compara o valor de hoje com todos os meses desde o começo de cada série. Nenhuma, quando é o pior valor já visto. Quase nenhuma, entre os 10% piores. Pouca, entre os 30% piores. Média, no meio. Muita, entre os 30% melhores.</p>
+    <p>Muita gente acha que existe um limite para a dívida do governo, como 100% do PIB, a partir do qual vem a crise. Esse número não existe. A Argentina deu calote em 2001 devendo cerca de metade do PIB, e o Japão deve mais de duas vezes o PIB sem crise. Pesa mais em que moeda e para quem o governo deve. O Brasil deve quase tudo em reais, a maior parte a brasileiros. É uma das coisas que o bloco "O que segura" mostra.</p>
+  </section>
+
+  <section aria-labelledby="t-teste">
+    <h2 id="t-teste">A regra acerta?</h2>
+    {{ linha_svg|safe }}
+    <ul class="legenda"><li><i class="d-s"></i>subindo</li><li><i class="d-i"></i>igual</li><li><i class="d-c"></i>caindo</li><li><i class="d-e"></i>encolhendo</li><li><i class="rec"></i>recessão</li></ul>
+    <ul class="topicos">
+      <li>Desde 2004, o risco esteve subindo em {{ (100 * t.parte_dos_meses.subindo)|round|int }} de cada 100 meses, e a direção mudou cerca de {{ t.trocas_por_ano|round|int }} vezes por ano.</li>
+      <li>Antes da recessão de 2014, a regra disse subindo em {{ t.subindo_antes_das_recessoes['2014'] }} dos 12 meses anteriores.</li>
+      <li>Ela não viu as recessões de 2008 e de 2020, que vieram de fora: a crise dos bancos nos Estados Unidos e a pandemia. Num choque assim, o topo só muda quando a economia já está encolhendo.</li>
+      <li>Ela não diz quando a recessão vem. Diz se o ano seguinte tende a ser mais fraco ou mais forte.</li>
+      <li>A regra é a mesma para todos os governos, e subindo e caindo aparecem nos dois lados da política. Os números por governo estão na <a href="/metodologia/">metodologia</a>.</li>
+      <li>O teste usa os dados revisados de hoje, que podem ser um pouco diferentes dos que saíram na época.</li>
     </ul>
   </section>
 
   <section aria-labelledby="t-not">
     <h2 id="t-not">E as notícias?</h2>
     <ul class="topicos">
-      <li>Não mudam o nível. Mostram para que lado cada parte da economia deve ir nos próximos 6 meses, em <a href="{{ link_resumo }}">Fator por fator</a>.</li>
+      <li>Não mudam a direção. Mostram para que lado cada parte da economia é empurrada, na caixa logo abaixo do post.</li>
       <li>Toda manhã, um programa de inteligência artificial lê as manchetes da véspera em 8 jornais. Para cada fato, marca a parte da economia, o lado e o tamanho.</li>
       <li>Dado divulgado e decisão tomada valem inteiros. Anúncio vale 3 em 10; rumor, 1 em 10. Fato de um jornal só, ou que o mercado já esperava, vale metade.</li>
-      <li>Cada previsão é conferida 6 meses depois, contra o dado, no placar de Fator por fator.</li>
     </ul>
   </section>
+
+  {% if gar %}
+  <section aria-labelledby="t-ano-ruim">
+    <h2 id="t-ano-ruim">E o PIB num ano ruim?</h2>
+    <p>Há também uma conta que olha só os próximos 12 meses. Com dados de 44 países, ela estima o PIB num ano ruim, daqueles com 1 chance em 10. Hoje, num ano ruim, o PIB {{ gar.ruim }} em 12 meses. Em tempos normais, desde 2004, um ano ruim daria {{ gar.normal }}.</p>
+    <p>Ela fica aqui, e não no topo, porque só vê o crescimento, o juro e a inflação. As contas do governo, as dívidas das famílias e o dólar ficam fora dela.</p>
+  </section>
+  {% endif %}
 
   <section aria-labelledby="t-mais">
     <h2 id="t-mais">Para conferir</h2>
     <ul class="topicos">
-      <li><a href="/metodologia/">Metodologia completa</a>, com as fórmulas, os testes e os limites da conta.</li>
-      <li><a href="{{ repo }}/blob/main/config/calibracao.json">Coeficientes e cortes</a>, <a href="{{ repo }}/blob/main/data/historico/painel_ocde.csv">o painel de países</a> e <a href="{{ repo }}/blob/main/data/historico/mensal.json">o Brasil mês a mês</a>, para refazer a conta.</li>
+      <li><a href="/metodologia/">Metodologia completa</a>, com a regra inteira, as séries, os cortes, as variações testadas e os números por governo.</li>
+      <li><a href="{{ repo }}/blob/main/src/direcao.py">O código da regra</a>, <a href="{{ repo }}/blob/main/config/modelo.json">as regras fixas</a> e <a href="{{ repo }}/blob/main/config/calibracao.json">os cortes e o teste desde 2004</a>, para refazer a conta.</li>
       <li><a href="{{ post.registro }}">Registro desta atualização</a>, com todos os números e notícias usados.</li>
     </ul>
   </section>

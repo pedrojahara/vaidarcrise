@@ -22,7 +22,7 @@
     <div class="conta-cab"><h3>Para onde as notícias empurram</h3></div>
     {% if pr.com %}
     <ul class="itens">
-      {% for t in pr.com %}<li><span class="pts seta {{ t.cls }}" aria-label="{{ t.palavra }}">{{ t.simbolo }}</span><div><b>{{ t.nome }} <a class="ver" href="{{ post.resumo }}#{{ t.id }}">detalhes</a></b>{% for n in t.noticias %}<span class="nt">{{ n.titulo }} <span class="f">{% if n.meta %}{{ n.meta }}{% if n.fonte %}, {% endif %}{% endif %}{% if n.fonte %}<a href="{{ n.fonte.url }}" rel="nofollow noopener">{{ n.fonte.veiculo }}</a>{% endif %}</span></span>{% endfor %}</div></li>{% endfor %}
+      {% for t in pr.com %}<li><span class="pts seta {{ t.cls }}" aria-label="{{ t.palavra }}">{{ t.simbolo }}</span><div><b>{{ t.nome }}</b>{% for n in t.noticias %}<span class="nt">{{ n.titulo }} <span class="f">{% if n.meta %}{{ n.meta }}{% if n.fonte %}, {% endif %}{% endif %}{% if n.fonte %}<a href="{{ n.fonte.url }}" rel="nofollow noopener">{{ n.fonte.veiculo }}</a>{% endif %}</span></span>{% endfor %}</div></li>{% endfor %}
     </ul>
     {% elif pr.n %}<p class="fora-conta">As notícias {{ pr.quando }} não empurraram nenhuma parte da economia para um lado claro.</p>
     {% else %}<p class="fora-conta">Nenhuma notícia {{ pr.quando }} mexeu com o risco.</p>{% endif %}
@@ -33,6 +33,6 @@
   {% if post.editor %}
   <p class="rodape">{% if not permalink %}<a href="{{ post.link }}">Link permanente</a>{% else %}Postado em {{ data_curta(post.dia) }}{% endif %}{% if post.tags %} | {{ post.tags }}{% endif %}</p>
   {% else %}
-  <p class="rodape">{% if post.rodape %}{{ post.rodape }} {% endif %}{% if post.zap %}<a href="{{ post.zap }}" rel="noopener">Mandar no WhatsApp</a> | {% endif %}{% if not permalink %}<a href="{{ post.link }}">Link permanente</a> | {% endif %}<a href="{{ post.resumo }}">Fator por fator</a> | <a href="{{ post.registro }}">Todos os números de hoje</a></p>
+  <p class="rodape">{% if post.rodape %}{{ post.rodape }} {% endif %}{% if post.zap %}<a href="{{ post.zap }}" rel="noopener">Mandar no WhatsApp</a> | {% endif %}{% if not permalink %}<a href="{{ post.link }}">Link permanente</a> | {% endif %}<a href="{{ post.registro }}">Todos os números de hoje</a></p>
   {% endif %}
 </article>

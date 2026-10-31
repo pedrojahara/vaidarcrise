@@ -273,34 +273,277 @@
    ]
   }
  },
- "placar": {
-  "atividade": {
-   "desvio_6m": 2.861105903423897,
-   "tolerancia": 0.7152764758559742
+ "direcao": {
+  "cortes": {
+   "divida": 1.2602,
+   "primario": 0.4151,
+   "parcelas": 0.5041,
+   "dolar": 6.3543,
+   "juro_longo": 0.5782,
+   "inflacao": 0.4225,
+   "juro": 1.1119,
+   "ritmo": 1.1854,
+   "emprego": 0.7413
   },
-  "juro": {
-   "desvio_6m": 1.9911360570345584,
-   "tolerancia": 0.4977840142586396
-  },
-  "credito": {
-   "desvio_6m": 1.0003441867994696,
-   "tolerancia": 0.2500860466998674
-  },
-  "mercado": {
-   "desvio_6m": 0.9197830144115512,
-   "tolerancia": 0.2299457536028878
-  },
-  "contas": {
-   "desvio_6m": 2.8493620677179488,
-   "tolerancia": 0.7123405169294872
-  },
-  "emprego": {
-   "desvio_6m": 1.1942938786080777,
-   "tolerancia": 0.2985734696520194
-  },
-  "externo": {
-   "desvio_6m": 13.271040235280951,
-   "tolerancia": 3.317760058820238
+  "o_que_e": "Escala de cada medida: 1,4826 × desvio absoluto mediano das mudanças de 3 meses desde 2002, com o atraso de divulgação de cada série. A pressão aperta ou folga quando a mudança passa de corte_vaivem (config/modelo.json) vezes essa escala, o que a página chama de vaivém normal. Em 'divida', a régua das contas: dívida bruta desde 2007, resultado sem juros antes.",
+  "teste": {
+   "de": "2004-01",
+   "ate": "2026-10",
+   "meses": 274,
+   "parte_dos_meses": {
+    "subindo": 0.168,
+    "igual": 0.628,
+    "caindo": 0.131,
+    "encolhendo": 0.073
+   },
+   "trocas_por_ano": 1.97,
+   "pib_12m_depois": {
+    "subindo": 0.315,
+    "igual": 2.134,
+    "caindo": 4.252
+   },
+   "recessao_a_frente": {
+    "subindo": 0.214,
+    "igual": 0.159,
+    "caindo": 0.03
+   },
+   "subindo_antes_das_recessoes": {
+    "2008": 0,
+    "2014": 6,
+    "2020": 0
+   },
+   "blocos": [
+    {
+     "inicio": "2004-01",
+     "fim": "2004-03",
+     "estado": "C"
+    },
+    {
+     "inicio": "2004-04",
+     "fim": "2004-05",
+     "estado": "I"
+    },
+    {
+     "inicio": "2004-06",
+     "fim": "2004-07",
+     "estado": "S"
+    },
+    {
+     "inicio": "2004-08",
+     "fim": "2005-06",
+     "estado": "I"
+    },
+    {
+     "inicio": "2005-07",
+     "fim": "2005-08",
+     "estado": "C"
+    },
+    {
+     "inicio": "2005-09",
+     "fim": "2006-09",
+     "estado": "I"
+    },
+    {
+     "inicio": "2006-10",
+     "fim": "2007-05",
+     "estado": "C"
+    },
+    {
+     "inicio": "2007-06",
+     "fim": "2008-12",
+     "estado": "I"
+    },
+    {
+     "inicio": "2009-01",
+     "fim": "2009-05",
+     "estado": "E"
+    },
+    {
+     "inicio": "2009-06",
+     "fim": "2009-08",
+     "estado": "C"
+    },
+    {
+     "inicio": "2009-09",
+     "fim": "2012-09",
+     "estado": "I"
+    },
+    {
+     "inicio": "2012-10",
+     "fim": "2012-11",
+     "estado": "C"
+    },
+    {
+     "inicio": "2012-12",
+     "fim": "2013-08",
+     "estado": "I"
+    },
+    {
+     "inicio": "2013-09",
+     "fim": "2014-02",
+     "estado": "S"
+    },
+    {
+     "inicio": "2014-03",
+     "fim": "2014-07",
+     "estado": "I"
+    },
+    {
+     "inicio": "2014-08",
+     "fim": "2014-10",
+     "estado": "E"
+    },
+    {
+     "inicio": "2014-11",
+     "fim": "2015-05",
+     "estado": "S"
+    },
+    {
+     "inicio": "2015-06",
+     "fim": "2015-11",
+     "estado": "E"
+    },
+    {
+     "inicio": "2015-12",
+     "fim": "2016-03",
+     "estado": "S"
+    },
+    {
+     "inicio": "2016-04",
+     "fim": "2016-06",
+     "estado": "C"
+    },
+    {
+     "inicio": "2016-07",
+     "fim": "2017-02",
+     "estado": "I"
+    },
+    {
+     "inicio": "2017-03",
+     "fim": "2017-05",
+     "estado": "C"
+    },
+    {
+     "inicio": "2017-06",
+     "fim": "2017-08",
+     "estado": "I"
+    },
+    {
+     "inicio": "2017-09",
+     "fim": "2017-10",
+     "estado": "C"
+    },
+    {
+     "inicio": "2017-11",
+     "fim": "2018-08",
+     "estado": "I"
+    },
+    {
+     "inicio": "2018-09",
+     "fim": "2018-11",
+     "estado": "S"
+    },
+    {
+     "inicio": "2018-12",
+     "fim": "2019-01",
+     "estado": "C"
+    },
+    {
+     "inicio": "2019-02",
+     "fim": "2020-03",
+     "estado": "I"
+    },
+    {
+     "inicio": "2020-04",
+     "fim": "2020-04",
+     "estado": "C"
+    },
+    {
+     "inicio": "2020-05",
+     "fim": "2020-09",
+     "estado": "E"
+    },
+    {
+     "inicio": "2020-10",
+     "fim": "2021-01",
+     "estado": "I"
+    },
+    {
+     "inicio": "2021-02",
+     "fim": "2021-05",
+     "estado": "S"
+    },
+    {
+     "inicio": "2021-06",
+     "fim": "2021-06",
+     "estado": "I"
+    },
+    {
+     "inicio": "2021-07",
+     "fim": "2021-07",
+     "estado": "E"
+    },
+    {
+     "inicio": "2021-08",
+     "fim": "2021-08",
+     "estado": "I"
+    },
+    {
+     "inicio": "2021-09",
+     "fim": "2022-01",
+     "estado": "S"
+    },
+    {
+     "inicio": "2022-02",
+     "fim": "2023-04",
+     "estado": "I"
+    },
+    {
+     "inicio": "2023-05",
+     "fim": "2023-08",
+     "estado": "C"
+    },
+    {
+     "inicio": "2023-09",
+     "fim": "2023-12",
+     "estado": "I"
+    },
+    {
+     "inicio": "2024-01",
+     "fim": "2024-03",
+     "estado": "C"
+    },
+    {
+     "inicio": "2024-04",
+     "fim": "2024-07",
+     "estado": "I"
+    },
+    {
+     "inicio": "2024-08",
+     "fim": "2025-03",
+     "estado": "S"
+    },
+    {
+     "inicio": "2025-04",
+     "fim": "2025-12",
+     "estado": "I"
+    },
+    {
+     "inicio": "2026-01",
+     "fim": "2026-02",
+     "estado": "S"
+    },
+    {
+     "inicio": "2026-03",
+     "fim": "2026-05",
+     "estado": "I"
+    },
+    {
+     "inicio": "2026-06",
+     "fim": "2026-10",
+     "estado": "S"
+    }
+   ]
   }
  }
 }

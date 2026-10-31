@@ -1,42 +1,23 @@
-"""A camada de tendência: o que o site acha que cada fator vai fazer nos próximos 6 meses.
+"""Os fatos de dados de cada parte da economia: o valor de hoje contra a história desde 2002.
 
-- data/dossie.json guarda, por fator, a tendência, os fatos de notícia que a sustentam,
-  o que outras instituições projetam e o que melhoraria ou pioraria o fator.
-- Os fatos de dados (valor de hoje contra a história desde 2002) saem de código, todo dia,
-  para nunca ficarem velhos.
-- O LLM só propõe revisões; este módulo decide o que entra. Uma troca de tendência só
-  vale com fato divulgado ou decisão tomada, noticiado por pelo menos 2 jornais.
-- data/placar.json registra cada leitura com a data de conferir (6 meses depois) e o
-  resultado contra o dado.
+Saem de código, todo dia, para nunca ficarem velhos, e vão para o post (src/escreve_post.py) como
+contexto, com a mesma frase em todas as atualizações. O site não faz previsão para os próximos meses.
 """
 from __future__ import annotations
 
-import datetime as dt
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DOSSIE = ROOT / "data" / "dossie.json"
-PLACAR = ROOT / "data" / "placar.json"
 HIST = ROOT / "data" / "historico" / "series.json"
 MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro",
          "outubro", "novembro", "dezembro"]
-TENDENCIAS = {"piora": ("mais", "↑", "Tende a piorar"), "estavel": ("igual", "→", "Estável"),
-              "melhora": ("menos", "↓", "Tende a melhorar"), "sem_direcao": ("igual", "→", "Sem direção clara")}
-MAX_NOTICIAS = 2
-VALIDADE_NOTICIA_DIAS = 180
 
 
 def _ler(p: Path, padrao):
     return json.loads(p.read_text()) if p.exists() else padrao
 
 
-def carregar() -> dict:
-    return _ler(DOSSIE, {"fatores": {}})
-
-
-def carregar_placar() -> list[dict]:
-    return _ler(PLACAR, [])
 
 
 # ------------------------------------------------------------------ formatos
@@ -148,10 +129,7 @@ def fatos_de_dados(res: dict, snap: dict, mensal: dict | None = None, hist: dict
     if x and x.get("valor") is not None:
         ano = int(x["ref"][:4])
         txt = f"Os bancos (Focus) esperam {alta_queda(x['ano'])} do PIB em {ano} e {alta_queda(x['ano_seguinte'])} em {ano + 1}"
-        antes = {f["data"][:7]: f for f in hist.get("series", {}).get("focus_pib", [])}.get(_mais_meses(x["ref"][:7], -3))
-        # Com a comparação de 3 meses, o Focus aparece no quadro de quem projeta (focus_outros), não aqui.
-        if not antes:
-            out["atividade"].append({"texto": txt + ".", "fonte": "Focus"})
+        out["atividade"].append({"texto": txt + ".", "fonte": "Focus"})
 
     x = ind.get("juro_real")
     if x and x.get("valor") is not None:
@@ -265,175 +243,3 @@ def fatos_de_dados(res: dict, snap: dict, mensal: dict | None = None, hist: dict
 def _mais_meses(m: str, n: int) -> str:
     a, mm = divmod(int(m[:4]) * 12 + int(m[5:7]) - 1 + n, 12)
     return f"{a:04d}-{mm + 1:02d}"
-
-
-# --------------------------------------------------------------- o que outros projetam
-def focus_outros(res: dict, snap: dict, dossie: dict, hist: dict | None = None) -> dict[str, dict]:
-    """O Focus em igual destaque, onde ele projeta o fator. A posição sai por regra: concorda quando a
-    projeção aponta para o mesmo lado da tendência do site."""
-    hist = hist if hist is not None else _ler(HIST, {"series": {}})
-    ind = {x["id"]: x for x in res["indicadores"]}
-    focus = snap.get("focus", {})
-    fat = dossie.get("fatores", {})
-    out = {}
-
-    def posicao(lado_focus: str, fid: str) -> str:
-        nossa = fat.get(fid, {}).get("tendencia")
-        if nossa in (None, "sem_direcao"):
-            return "neutro"
-        return "concorda" if nossa == lado_focus else "discorda"
-
-    x = ind.get("focus_pib")
-    if x and x.get("valor") is not None:
-        antes = {f["data"][:7]: f for f in hist.get("series", {}).get("focus_pib", [])}.get(_mais_meses(x["ref"][:7], -3))
-        if antes:
-            import indicadores as I
-            v0 = I.focus_pib(antes["ano"], antes["ano_seguinte"], antes["dia"])
-            d = x["valor"] - v0
-            lado = "piora" if d <= -0.2 else "melhora" if d >= 0.2 else "estavel"
-            verbo = {"piora": "reduziram", "melhora": "aumentaram", "estavel": "mantiveram"}[lado]
-            ano = int(x["ref"][:4])
-            txt = (f"Os bancos (Focus) {verbo} a previsão do PIB: {enxuto(x['ano'])}% em {ano} e {enxuto(x['ano_seguinte'])}% em {ano + 1}."
-                   f" Há 3 meses, eram {enxuto(antes['ano'])}% e {enxuto(antes['ano_seguinte'])}%.")
-            out["atividade"] = {"tipo": posicao(lado, "atividade"), "texto": txt, "fonte": {"veiculo": f"Focus {dia_mes(x['ref'])}", "url": "https://www.bcb.gov.br/publicacoes/focus"}}
-    sel = focus.get("Selic") or []
-    jr = ind.get("juro_real")
-    if sel and jr and jr.get("valor") is not None:
-        data = sel[0]["Data"]
-        ano = int(data[:4])
-        por_ano = {str(r["DataReferencia"]): float(r["Mediana"]) for r in sel}
-        if str(ano) in por_ano and str(ano + 1) in por_ano:
-            d = por_ano[str(ano + 1)] - jr["selic"]
-            lado = "melhora" if d <= -1.0 else "piora" if d >= 0.5 else "estavel"
-            txt = (f"Os bancos (Focus) esperam a Selic em {enxuto(por_ano[str(ano)], 2)}% no fim de {ano} e em "
-                   f"{enxuto(por_ano[str(ano + 1)], 2)}% no fim de {ano + 1}"
-                   + {"melhora": ": juro caindo.", "piora": ": juro subindo.", "estavel": "."}[lado])
-            out["juro"] = {"tipo": posicao(lado, "juro"), "texto": txt, "fonte": {"veiculo": f"Focus {dia_mes(data)}", "url": "https://www.bcb.gov.br/publicacoes/focus"}}
-    cam = focus.get("Câmbio") or []
-    dol = ind.get("dolar")
-    if cam and dol and dol.get("valor") is not None:
-        data = cam[0]["Data"]
-        ano = int(data[:4])
-        por_ano = {str(r["DataReferencia"]): float(r["Mediana"]) for r in cam}
-        if str(ano) in por_ano:
-            alvo = por_ano[str(ano)]
-            rel = alvo / dol["nivel"] - 1
-            lado = "melhora" if rel <= -0.03 else "piora" if rel >= 0.03 else "estavel"
-            txt = f"Os bancos (Focus) esperam o dólar a R$ {num(alvo, 2)} no fim de {ano}. Hoje está em R$ {num(dol['nivel'], 2)}."
-            out["mercado"] = {"tipo": posicao(lado, "mercado"), "texto": txt, "fonte": {"veiculo": f"Focus {dia_mes(data)}", "url": "https://www.bcb.gov.br/publicacoes/focus"}}
-    return out
-
-
-# ------------------------------------------------------------- revisões do LLM
-def aplicar_revisoes(dossie: dict, revisoes: list[dict], eventos_por_noticia: dict[str, dict],
-                     fontes_por_noticia: dict[str, dict], hoje: dt.date) -> list[dict]:
-    """Aplica o que as regras permitem e devolve a lista do que mudou (e do que foi recusado, com motivo)."""
-    log = []
-    for rv in revisoes:
-        f = dossie["fatores"].get(rv["fator"])
-        if f is None:
-            continue
-        evs = [eventos_por_noticia[i] for i in rv["noticia_ids"] if i in eventos_por_noticia]
-        fontes = [fontes_por_noticia[i] for i in rv["noticia_ids"] if i in fontes_por_noticia]
-        if rv["tipo"] == "noticia":
-            if not fontes:
-                log.append({**rv, "aplicada": False, "motivo": "sem manchete"})
-                continue
-            f.setdefault("noticias", []).insert(0, {"texto": rv["texto"], "data": hoje.isoformat(),
-                                                   "fonte": {"veiculo": fontes[0]["veiculo"], "url": fontes[0]["url"]}})
-            f["noticias"] = f["noticias"][:MAX_NOTICIAS]
-            log.append({**rv, "aplicada": True})
-        elif rv["tipo"] == "outros":
-            if not fontes or rv.get("posicao") not in ("concorda", "discorda"):
-                log.append({**rv, "aplicada": False, "motivo": "sem manchete ou sem posição"})
-                continue
-            if f.get("outros_automatico"):
-                log.append({**rv, "aplicada": False, "motivo": "fator com projeção do Focus calculada por código"})
-                continue
-            f["outros"] = {"tipo": rv["posicao"], "texto": rv["texto"], "data": hoje.isoformat(),
-                           "fonte": {"veiculo": fontes[0]["veiculo"], "url": fontes[0]["url"]}}
-            log.append({**rv, "aplicada": True})
-        elif rv["tipo"] == "tendencia":
-            nova = rv.get("tendencia")
-            fortes = [e for e in evs if e.get("estagio") in ("dado", "decidido")]
-            veiculos = {v for e in fortes for v in e.get("veiculos", [])}
-            if nova not in TENDENCIAS or nova == f.get("tendencia"):
-                log.append({**rv, "aplicada": False, "motivo": "tendência igual ou inválida"})
-            elif not fortes or len(veiculos) < 2:
-                log.append({**rv, "aplicada": False, "motivo": "troca exige fato divulgado ou decisão em 2 jornais"})
-            else:
-                f.setdefault("leituras", []).append({"tendencia": f.get("tendencia"), "ate": hoje.isoformat()})
-                f["tendencia"], f["desde"], f["motivo_troca"] = nova, hoje.isoformat(), rv["texto"]
-                log.append({**rv, "aplicada": True})
-    corte = (hoje - dt.timedelta(days=VALIDADE_NOTICIA_DIAS)).isoformat()
-    for f in dossie["fatores"].values():
-        f["noticias"] = [n for n in f.get("noticias", []) if n.get("data", "9999") >= corte]
-    return log
-
-
-# ------------------------------------------------------------------- placar
-MEDIDAS_NIVEL = {"comprometimento_nivel": ("comprometimento", "nivel"), "tesouro_nivel": ("tesouro", "nivel"),
-                 "divida_nivel": ("divida", "nivel"), "desocupacao": ("sahm", "nivel"),
-                 "commodities_nivel": ("commodities", "nivel"), "ibcbr_3m": ("ibcbr", "valor"),
-                 "juro_real": ("juro_real", "valor")}
-
-
-def medida(res: dict, serie: str) -> dict | None:
-    ind = {x["id"]: x for x in res["indicadores"]}
-    k, campo = MEDIDAS_NIVEL[serie]
-    x = ind.get(k)
-    if not x or x.get(campo) is None:
-        return None
-    return {"valor": x[campo], "ref": x["ref"]}
-
-
-def registrar(placar: list[dict], dossie: dict, res: dict, cfg: dict, hoje: dt.date) -> list[dict]:
-    """Registra a leitura de cada fator que ainda não tem leitura aberta igual. Devolve as novas."""
-    novas = []
-    meses = cfg["placar"]["meses"]
-    for fid, f in dossie["fatores"].items():
-        t = f.get("tendencia")
-        if t not in ("piora", "estavel", "melhora"):
-            continue
-        aberta = next((p for p in placar if p["fator"] == fid and p.get("resultado") is None), None)
-        if aberta and aberta["leitura"] == t:
-            continue
-        med = cfg["placar"]["medidas"][fid]
-        m = medida(res, med["serie"])
-        if m is None:
-            continue
-        a, mm = divmod(hoje.year * 12 + hoje.month - 1 + meses, 12)
-        dia = min(hoje.day, 28)
-        p = {"fator": fid, "leitura": t, "data": hoje.isoformat(), "conferir_em": dt.date(a, mm + 1, dia).isoformat(),
-             "medida": med["serie"], "inicial": m, "resultado": None}
-        if aberta:
-            # Leitura trocada antes do prazo: a antiga fica registrada como substituída, sem resultado.
-            aberta["resultado"] = "substituida"
-            aberta["substituida_em"] = hoje.isoformat()
-        placar.append(p)
-        novas.append(p)
-    return novas
-
-
-def conferir(placar: list[dict], res: dict, cfg: dict, cal: dict, hoje: dt.date) -> list[dict]:
-    """Confere as leituras vencidas contra o dado: piora acerta se a medida andou para o lado ruim mais que a
-    tolerância; estável, se ficou dentro dela; melhora, se andou para o lado bom."""
-    feitas = []
-    for p in placar:
-        if p.get("resultado") is not None or p["conferir_em"] > hoje.isoformat():
-            continue
-        med = cfg["placar"]["medidas"][p["fator"]]
-        m = medida(res, med["serie"])
-        tol = (cal.get("placar", {}).get(p["fator"]) or {}).get("tolerancia")
-        if m is None or tol is None:
-            continue
-        if med["serie"] == "commodities_nivel":
-            delta = 100 * (m["valor"] / p["inicial"]["valor"] - 1)
-        else:
-            delta = m["valor"] - p["inicial"]["valor"]
-        ruim = delta * med["direcao"]
-        certo = {"piora": ruim > tol, "estavel": abs(ruim) <= tol, "melhora": ruim < -tol}[p["leitura"]]
-        p.update({"final": m, "variacao": delta, "tolerancia": tol, "resultado": "acertou" if certo else "errou",
-                  "conferido_em": hoje.isoformat()})
-        feitas.append(p)
-    return feitas

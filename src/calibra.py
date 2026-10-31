@@ -1,8 +1,9 @@
-"""Calibração do nível: o cenário ruim do PIB (crescimento em risco), os cortes dos níveis e a validação.
+"""Calibração: o PIB num ano ruim (crescimento em risco, a conta dos 44 países da página Como funciona) e,
+no fim, os cortes da direção do risco (src/direcao.py).
 
 Segue as regras de config/modelo.json. Lê o painel de países em data/historico/painel_ocde.csv
 e as séries do Brasil em data/historico/series.json (src/historico.py), e grava:
-- config/calibracao.json: o que a conta do dia usa (coeficientes, cortes, faixas normais);
+- config/calibracao.json: o que a conta do dia usa (coeficientes, cortes, faixas normais e a direção);
 - data/historico/mensal.json: os indicadores e as entradas do Brasil mês a mês, como eram
   conhecidos em cada mês, o alvo e o nível fora da amostra, para quem quiser refazer a conta.
 
@@ -16,10 +17,10 @@ import json
 import math
 import sys
 from pathlib import Path
-from statistics import pstdev
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import direcao  # noqa: E402
 import gar  # noqa: E402
 import indicadores as ind  # noqa: E402
 
@@ -389,34 +390,6 @@ def main() -> None:
 
     bloco_gar, mensal_gar = calibrar_gar(cfg, series, {tri_num(t): v for t, v in pib.items()}, y, todos_meses)
 
-    # Desvio das variações de 6 meses de cada medida do placar: a tolerância de "estável".
-    def nivel_mensal(nome: str) -> dict[str, float]:
-        if nome == "ibcbr_3m":
-            return xs["ibcbr"]
-        if nome == "juro_real":
-            return xs["juro_real"]
-        fonte = {"comprometimento_nivel": "comprometimento_renda", "divida_nivel": "divida_bruta",
-                 "desocupacao": "desocupacao", "commodities_nivel": "commodities"}.get(nome)
-        if fonte:
-            return {x["data"][:7]: x["valor"] for x in series.get(fonte, [])}
-        if nome == "tesouro_nivel":
-            out = {}
-            for x in series.get("juro_real_longo", []):
-                out[x["data"][:7]] = x["valor"]
-            return out
-        return {}
-
-    placar = {}
-    for fator, med in cfg["placar"]["medidas"].items():
-        s = nivel_mensal(med["serie"])
-        ms = sorted(s)
-        if med["serie"] == "commodities_nivel":
-            dif = [100 * (s[m] / s[num_mes(mes_num(m) - 6)] - 1) for m in ms if num_mes(mes_num(m) - 6) in s]
-        else:
-            dif = [s[m] - s[num_mes(mes_num(m) - 6)] for m in ms if num_mes(mes_num(m) - 6) in s]
-        placar[fator] = {"desvio_6m": pstdev(dif) if len(dif) > 2 else None,
-                         "tolerancia": cfg["placar"]["tolerancia_desvios"] * pstdev(dif) if len(dif) > 2 else None}
-
     res = {
         "calibrado_em": dt.datetime.now().astimezone().isoformat(timespec="seconds"),
         "dados_de": hist["coletado_em"],
@@ -425,7 +398,6 @@ def main() -> None:
                     "meses_com_recessao_a_frente": sum(y[m] for m in amostra)},
         "gar": bloco_gar,
         "indicadores": indicadores,
-        "placar": placar,
     }
     SAIDA.write_text(json.dumps(res, ensure_ascii=False, indent=1))
     historico = [{"mes": m, "nivel": v["nivel_fora_da_amostra"], "recessao_a_frente": y.get(m)}
@@ -437,6 +409,9 @@ def main() -> None:
         "crescimento_em_risco": mensal_gar,
         "nivel_fora_da_amostra": historico,
     }, ensure_ascii=False, separators=(",", ":")))
+    # Os cortes da direção do risco e o teste desde 2004 (src/direcao.py), com o mesmo histórico.
+    res["direcao"] = direcao.calibrar(hist["coletado_em"][:7])
+    SAIDA.write_text(json.dumps(res, ensure_ascii=False, indent=1))
 
     gb = bloco_gar
     print(f"recessões: {', '.join(f'{num_tri(a)}–{num_tri(b)}' for a, b in eps)}")

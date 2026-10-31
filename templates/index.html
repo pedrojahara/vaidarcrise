@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block titulo %}{% if permalink %}{{ post.titulo }} | Vai dar crise?{% else %}Vai dar crise? Risco de recessão {{ nivel.frase }}{% endif %}{% endblock %}
-{% block descricao %}{% if permalink %}{% if post.tipo_nome %}{{ post.tipo_nome }}, {{ post.data_extenso|lower }}{% else %}{{ post.data_extenso }}{% endif %}. Risco de recessão no Brasil nos 12 meses seguintes: {{ nivel.frase }}.{% else %}Risco de recessão no Brasil nos próximos 12 meses: {{ nivel.frase }}. {{ post.tipo_nome }}: {{ post.titulo }}.{% endif %}{% endblock %}
+{% block titulo %}{% if permalink %}{{ post.titulo }} | Vai dar crise?{% else %}Vai dar crise? {{ dir.titulo }}{% endif %}{% endblock %}
+{% block descricao %}{% if permalink %}{% if post.tipo_nome %}{{ post.tipo_nome }}, {{ post.data_extenso|lower }}{% else %}{{ post.data_extenso }}{% endif %}. {{ dir.titulo }}, {{ dir.desde }}.{% else %}{{ dir.titulo }}, {{ dir.desde }}. {{ dir.conta }} {{ post.tipo_nome }}: {{ post.titulo }}.{% endif %}{% endblock %}
 {% block estilo %}
 .blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado";grid-template-rows:auto 1fr;padding-top:28px;padding-bottom:28px}
 .blog .nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}
@@ -60,7 +60,7 @@
 <div class="in blog">
   {% include "_nota.html" %}
   <main class="feed">
-    {% if retrato and not permalink %}<a class="comece" href="{{ retrato.link }}"><span class="rot">Comece por aqui</span><b>Retrato do Brasil</b>Como está a economia e como ler o site, em {{ (retrato.palavras / 220)|round|int }} minutos de leitura. Com os dados de {{ data_curta(retrato.dia)[:5] }}.</a>{% endif %}
+    {% if retrato and not permalink %}<a class="comece" href="{{ retrato.link }}"><span class="rot">Comece por aqui</span><b>Retrato do Brasil</b>Por que o site nasceu, o que ele mostra e como usar, em {{ (retrato.palavras / 220)|round|int }} minutos de leitura.</a>{% endif %}
     {% include "_post.html" %}
     {% if permalink %}
     <nav class="vizinhos" aria-label="Outros dias">

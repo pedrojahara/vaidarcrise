@@ -1,43 +1,62 @@
-titulo: Risco de recessão normal, com 4 de 7 partes da economia piores que o normal
+titulo: O site nasceu na eleição para explicar a economia sem torcida
 data: 2026-10-31
 tipo: retrato
-autoria: Escrito por inteligência artificial (Claude) com os dados de 31/10/2026. Os números de hoje ficam na placa e em Fator por fator.
+autoria: Escrito por inteligência artificial (Claude) em 31/10/2026, a partir da ideia de quem criou o site.
 ---
-O risco de o Brasil entrar em recessão nos próximos 12 meses está **normal**: nem acima nem abaixo do que costuma ser desde 2004. Recessão é o PIB, tudo o que o país produz, cair dois trimestres seguidos. Pela conta refeita mês a mês, o risco está normal desde novembro de 2024.
+Este site explica a economia do Brasil para quem nunca estudou o assunto, sem torcer por nenhum lado. Ele mostra, com dados e estudos, se o risco de recessão está subindo ou caindo, e por quê.
 
-Normal não quer dizer tranquilo. Num ano ruim, daqueles com 1 chance em 10, o PIB cairia 1,8% nos próximos 12 meses. Em tempos normais, um ano ruim daria queda de 1,9%. Os dois números estão perto, e por isso o nível é normal.
+### Por que o site nasceu
 
-### Por que normal, se tanta coisa piorou
+A ideia veio da eleição de 2026. No grupo da família, nos vídeos e na TV, todo mundo tinha certeza sobre a economia. Um lado mostrava o emprego, e o outro mostrava a dívida do governo.
 
-A conta do nível usa o crescimento da economia, a Selic e a inflação. A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos. Nos testes, foram os dados que mais melhoraram a previsão de um ano ruim para o PIB. Hoje, eles se equilibram:
+Muitas vezes, os dois números eram verdadeiros, e cada um contava metade da história. Nos debates, quase nunca se ouviu quanto custava cada promessa e quem pagaria a conta.
 
-- **Ajuda:** a Selic caiu de 15% para 13,75% em um ano.
-- **Ajuda:** os preços subiram 4,6% em um ano até setembro, contra 5,2% um ano antes. Eles sobem mais devagar.
-- **Pesa:** a economia cresceu 1,4% em um ano até agosto, menos que o típico.
+Depois do segundo turno, a Bolsa caiu e o dólar subiu muito em poucos dias. Uns viram ali o sinal de que o Brasil vai quebrar. Outros viram o mercado fazendo pressão porque só pensa em lucro.
 
-Dólar, dívida do governo e dívidas das famílias pioraram. Eles ficam fora da conta do nível, porque nos testes quase não melhoraram essa previsão. Ficar fora da conta não quer dizer que não importa. Com o dólar mais caro, o que vem de fora encarece e os preços sobem mais rápido. Aí o Banco Central pode subir o juro para segurar os preços, e o juro está na conta.
+Para julgar as duas leituras, é preciso entender como a economia funciona. É isso que o site quer ensinar, com fatos e estudos.
 
-### As sete partes da economia hoje
+### O Brasil vai quebrar?
 
-- O **ritmo da economia** está pior que o normal. A prévia do PIB, feita pelo Banco Central, caiu 0,6% no trimestre até agosto, a maior queda desde agosto de 2025.
-- **Juro e inflação** estão no normal. Descontada a inflação esperada, a Selic de 13,75% rende 8,8% ao ano.
-- As **dívidas das famílias** estão piores que o normal. Em agosto, 29% da renda das famílias ia para parcelas e juros, o maior desde o início da série, em 2005. O atraso de mais de 90 dias nos empréstimos às pessoas chegou a 8,1% em setembro, recorde.
-- **Dólar e juro longo** estão piores que o normal. Pela cotação oficial do Banco Central, o dólar valia R$ 5,42 em 30/10, 6,8% a mais que há 3 meses.
-- As **contas do governo** estão piores que o normal. A dívida do governo está em 82,9% do PIB, 5,1 pontos acima de um ano antes.
-- O **emprego** está no normal. O desemprego ficou em 5,2% no trimestre até setembro.
-- A **economia lá fora** está no normal. Soja, minério, petróleo e outros produtos básicos ficaram 1,7% mais caros em 6 meses.
+Quebrar lembra uma família que não paga o banco. O Brasil já passou por isso em 1987, quando parou de pagar os juros da dívida em dólar. Em 1990, o governo bloqueou o dinheiro da poupança para tentar parar uma inflação de mais de 80% ao mês.
 
-### O que faria o risco mudar
+Hoje, o governo deve quase tudo em reais, a maior parte a brasileiros, e não depende de dólar para pagar. O Banco Central guarda mais dólares do que o governo deve lá fora. E, desde 2021, ele tem autonomia por lei para segurar os preços.
 
-O risco iria para acima do normal se a economia encolher 1,2% em um ano, a Selic subir para 17,8% ou a inflação de um ano subir para 9,4%. Basta um deles, com o resto parado.
+Por isso, o Brasil dificilmente quebra de um dia para o outro. O risco que existe chega devagar.
 
-O risco iria para abaixo do normal se a economia crescer 3,2% em um ano, a Selic cair para 10,9% ou a inflação de um ano cair para 1,2%.
+Quando o governo gasta mais do que arrecada, põe dinheiro na mão das pessoas, e isso ajuda hoje. Nos anos seguintes, a dívida cresce e quem empresta ao governo cobra mais juro, que aumenta a dívida de novo.
 
-### Como ler o site
+É a bola de neve que a aba [O que causa recessão](/causas/#t-divida) compara ao rotativo do cartão. A conta chega como parcela mais cara, preço maior e menos dinheiro para saúde e escola. Quem diz que a dívida não importa também se engana, porque esse custo aparece todo ano.
 
-- **A placa amarela** mostra o nível de hoje e o PIB num ano ruim. Muda pouco: desde 2004, umas duas vezes por ano.
-- **O post de cada dia** conta o que mudou. De segunda a sábado, o fato do dia. Aos domingos, a semana. No primeiro domingo do mês, o mês.
-- **Para onde as notícias empurram**, abaixo do post, mostra as notícias da véspera por parte da economia.
-- **[Fator por fator](/resumo/)** mostra as sete partes, uma a uma, com a previsão para 6 meses.
-- **[O que causa recessão](/causas/)** explica como juro, preços e dívida do governo levam a uma recessão.
-- **[Como a conta funciona](/nota/)** mostra de onde sai o nível.
+### O mercado é um inimigo?
+
+Mercado é o nome que se dá a bancos, fundos e empresas que emprestam e investem. Boa parte desse dinheiro é de gente comum, guardado na previdência, em fundos e no Tesouro Direto. Quem empresta quer ganhar, como quem deixa dinheiro na poupança quer rendimento.
+
+Quando quem empresta desconfia das contas do governo, cobra mais juro ou leva o dinheiro para fora. Aí o dólar sobe, e nos meses seguintes sobem o pão, a gasolina e o celular.
+
+Foi assim em 2015, 2021 e 2024, com presidentes de lados opostos. Nas três vezes, as contas do governo pareceram piores, e o dólar subiu.
+
+Em 2002, o dólar subiu muito com medo de que o novo governo não pagasse a dívida. O governo que assumiu pagou e manteve as regras, e em 2003 o dólar caiu.
+
+Há quem diga que o mercado exagerou, e há quem diga que o medo fez o governo manter as regras. Em qualquer caso, o dólar mais caro chega ao seu bolso. Por isso, "Dólar e juro longo" é uma das cinco pressões que o site acompanha.
+
+### Como usar o site
+
+No alto da página, a placa diz se o risco de recessão está subindo, igual ou caindo, e desde quando. Recessão é o PIB, tudo o que o país produz, cair dois trimestres seguidos.
+
+A placa não diz quando a recessão vem, porque ninguém acerta essa data com segurança. Ela diz se as cinco pressões que costumam vir antes dela estão apertando ou folgando. Cada pressão mostra também quanta folga ainda tem e quem mexe nela.
+
+Todo dia, às 06h30, sai um post:
+
+- **O fato do dia**, de segunda a sábado, conta uma notícia de ontem e o efeito dela no seu bolso.
+- **A semana**, no domingo, junta o que mudou e diz o que olhar nos dias seguintes.
+- **O mês**, no primeiro domingo, compara com o mês anterior, inclusive no bolso.
+
+Abaixo do post, a caixa "Para onde as notícias empurram" mostra para que lado cada notícia da véspera empurra. A aba [O que causa recessão](/causas/) explica como preço, juro e dívida levam a uma recessão. A aba [Como funciona](/nota/) mostra a regra inteira, para quem quer conferir.
+
+### Como o site evita tomar lado
+
+Todo texto do site segue um teste: com outro governo no poder, a frase sairia igual? Se não sairia, ela tem de ser reescrita. Os números vêm de fontes públicas, como o IBGE e o Banco Central.
+
+O site não dá nota ao governo nem recomenda investimento. Ele mostra o que depende do governo, do Congresso e do Banco Central, e o que vem de fora. Quem julga é você.
+
+Faça o mesmo teste com o que chega no seu WhatsApp, inclusive com o que sai daqui.

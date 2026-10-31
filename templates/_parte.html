@@ -1,0 +1,11 @@
+{# Uma parte do topo: fechada, o nome, o que aconteceu em 3 meses e a folga; aberta, o resto. #}
+<li id="parte-{{ x.id }}"><details>
+  <summary><span class="p-cab"><b>{{ x.nome }}</b><span class="p-lado {{ x.cls }}">{{ x.palavra }}</span></span><span class="p-frase">{{ x.frase }}</span>{% if x.folga %}<span class="p-folga">Folga: {{ x.folga.rot|lower }}</span>{% endif %}</summary>
+  <div class="p-mais">
+    {% for f in x.mais %}<p>{{ f }}</p>{% endfor %}
+    {% if x.normal %}<p>{{ x.normal }}</p>{% endif %}
+    {% if x.folga %}<p><b>Folga: {{ x.folga.rot|lower }}.</b> {{ x.folga.texto }}</p>{% endif %}
+    {% if x.quem %}<p>{{ x.quem }}</p>{% endif %}
+    {% if x.causas %}<p><a href="{{ x.causas }}">Como isso funciona</a></p>{% endif %}
+  </div>
+</details></li>

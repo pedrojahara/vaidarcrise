@@ -7,11 +7,11 @@ O site escreve para o brasileiro médio que gosta de política, não estudou eco
 Vale para tudo o que chega ao leitor:
 
 - páginas: `templates/`, rótulos e legendas em `src/build_site.py`, `src/causas.py`, `config/causas.json`, `src/calendario.py`, `src/og_image.py`;
-- frases geradas por código: `src/dossie.py` (fatos de dados e projeções do Focus) e os textos guardados em `data/dossie.json`;
+- frases geradas por código: o topo da página em `src/build_site.py` (cada pressão, o vaivém normal e a folga), os textos da seção `direcao` de `config/modelo.json` (quem mexe, o que segura) e `src/dossie.py` (fatos de dados que o post recebe);
 - prompts da IA: `src/escreve_post.py` (post) e `src/classify_news.py` (títulos de notícia e leituras). Mudou o guia, mude as regras dos prompts e os moldes de `src/revisa_texto.py`;
 - textos à mão em `editor/`.
 
-`METODOLOGIA.md` é a exceção: fica técnica de propósito, para quem quer conferir ou refazer a conta, mas usa os mesmos nomes do site. Os nomes dos fatores ficam em `config/modelo.json`.
+`METODOLOGIA.md` é a exceção: fica técnica de propósito, para quem quer conferir ou refazer a conta, mas usa os mesmos nomes do site. Os nomes das pressões e dos assuntos das notícias ficam em `config/modelo.json`.
 
 ## Antes de entregar
 
