@@ -35,20 +35,26 @@
 .palpite p{margin:10px 0 0}
 
 /* dois casos lado a lado */
-.casos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 16px}
+.casos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 18px}
 .casos > div{border-top:3px solid var(--tinta);padding-top:10px;font:16px/1.45 var(--sistema)}
-.casos h3{margin:0 0 6px}
-.casos p{margin:0 0 8px}
+.casos h3{margin:0 0 4px}
+.casos dl{margin:0}
+.casos dt{font:600 13.5px/1.3 var(--sistema);color:var(--meta);margin-top:12px}
+.casos dd{margin:3px 0 0}
 .casos .fim{font-weight:700}
 
-/* o círculo da dívida */
-.ciclo-box{position:relative;padding-right:54px;margin:8px 0 20px}
-.ciclo{list-style:none;padding:0;margin:0;font:16px/1.4 var(--sistema)}
+/* a corrente da dívida: dois passos de entrada e um círculo de quatro */
+.corrente{margin:8px 0 20px;font:16px/1.4 var(--sistema)}
+.ciclo{list-style:none;padding:0;margin:0}
 .ciclo li{position:relative;margin-top:26px;padding:10px 14px;border:1.5px solid var(--tinta);border-radius:8px;background:var(--papel)}
-.ciclo li:first-child{margin-top:0;background:var(--nota-fundo)}
-.ciclo li + li::before{content:"";position:absolute;left:28px;top:-22px;width:2px;height:13px;background:var(--meta)}
-.ciclo li + li::after{content:"";position:absolute;left:23px;top:-10px;border:6px solid transparent;border-top-color:var(--meta)}
+.ciclo li:first-child{margin-top:0}
+.ciclo li .n{font-weight:700;margin-right:4px}
 .ciclo li small{display:block;color:var(--meta);font-size:14px;margin-top:2px}
+.entrada li{border-style:dashed;border-color:var(--meta)}
+.ciclo li + li::before,.ciclo-box .ciclo li:first-child::before{content:"";position:absolute;left:28px;top:-22px;width:2px;height:13px;background:var(--meta)}
+.ciclo li + li::after,.ciclo-box .ciclo li:first-child::after{content:"";position:absolute;left:23px;top:-10px;border:6px solid transparent;border-top-color:var(--meta)}
+.ciclo-box{position:relative;padding-right:54px;margin-top:26px}
+.ciclo-box .ciclo li:first-child{background:var(--nota-fundo)}
 .ciclo-box::before{content:"";position:absolute;right:14px;top:20px;bottom:20px;width:38px;border:2px solid var(--meta);border-left:0;border-radius:0 14px 14px 0}
 .ciclo-box::after{content:"";position:absolute;right:50px;top:13px;border:7px solid transparent;border-right-color:var(--meta)}
 .ciclo-box .volta{position:absolute;right:6px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font:600 13px/1 var(--sistema);color:var(--meta);background:var(--papel);padding:6px 3px;white-space:nowrap}
@@ -118,7 +124,7 @@
     <p>Se a gasolina sobe em janeiro, o frete do caminhão sobe junto. Nos meses seguintes, arroz, feijão e carne chegam mais caros ao mercado.</p>
     <p>Foi o que aconteceu em 2021. A gasolina subiu com o petróleo, e a falta de chuva encareceu a conta de luz. Os preços subiram 10%, mesmo com as contas do governo no azul, sem contar os juros.</p>
     <p>Muitos preços também são corrigidos pela inflação do ano anterior, como o aluguel e o salário mínimo. Se os preços subiram 5% neste ano, o aluguel tende a subir perto de 5% no ano que vem.</p>
-    <p class="chave">Das três causas, o governo influencia uma com as próprias contas: o dólar. Quando as contas pioram, quem investe tira dinheiro do Brasil. O dólar sobe, e os preços sobem junto.</p>
+    <p class="chave">Das três causas externas, o governo influencia uma com as próprias contas: o dólar. Quando as contas pioram, quem investe tira dinheiro do Brasil. O dólar sobe, e os preços sobem junto.</p>
   </section>
 
   <section aria-labelledby="t-freio">
@@ -138,19 +144,31 @@
 
   <section aria-labelledby="t-casos">
     <h2 id="t-casos">Já aconteceu, com finais diferentes</h2>
+    <p>Nas duas vezes, o Banco Central subiu muito o juro. Na primeira, o PIB encolheu por quase três anos. Na segunda, a economia cresceu. Compare o que acontecia ao mesmo tempo:</p>
     <div class="casos">
       <div>
         <h3>2013 a 2016</h3>
-        <p>A Selic subiu de 7,25% para 14,25%. Ao mesmo tempo, soja e minério ficaram mais baratos, e as contas do governo pioraram.</p>
-        <p class="fim">O PIB encolheu de 2014 a 2016. O desemprego mais que dobrou, de 6,2% para 13,9%.</p>
+        <dl>
+          <dt>Juro</dt><dd>A Selic subiu de 7,25% para 14,25%.</dd>
+          <dt>A economia, no começo</dt><dd>No limite, como a padaria com o forno cheio. O desemprego estava em 6,2%, o menor até então.</dd>
+          <dt>O que o Brasil vende lá fora</dt><dd>Soja, minério e petróleo ficaram bem mais baratos. O país passou a ganhar menos com eles.</dd>
+          <dt>Contas do governo</dt><dd>O governo passou a gastar mais do que arrecadava, sem contar os juros. A dívida subiu de 52% para 70% do PIB.</dd>
+          <dt>No fim</dt><dd class="fim">O PIB encolheu de 2014 a 2016. O desemprego mais que dobrou, para 13,9%.</dd>
+        </dl>
       </div>
       <div>
         <h3>2021 e 2022</h3>
-        <p>A Selic subiu de 2% para 13,75%. Os preços tinham subido mais pela gasolina e pela luz. E a economia voltava da pandemia, com muita gente sem emprego e espaço para crescer.</p>
-        <p class="fim">Não houve recessão.</p>
+        <dl>
+          <dt>Juro</dt><dd>A Selic subiu de 2% para 13,75%.</dd>
+          <dt>A economia, no começo</dt><dd>Com folga, como a padaria com o forno meio vazio. O país voltava da pandemia, com 14,9% de desemprego.</dd>
+          <dt>O que o Brasil vende lá fora</dt><dd>Soja, minério e petróleo ficaram bem mais caros. O país passou a ganhar mais com eles.</dd>
+          <dt>Contas do governo</dt><dd>O governo arrecadou mais do que gastou, sem contar os juros, com ajuda desses preços altos e da inflação. A dívida caiu de 87% para 72% do PIB.</dd>
+          <dt>No fim</dt><dd class="fim">A economia cresceu nos dois anos. O desemprego caiu quase pela metade, para 7,9%.</dd>
+        </dl>
       </div>
     </div>
-    <p>O juro subiu muito nas duas vezes. A recessão veio quando, ao mesmo tempo, soja e minério ficaram mais baratos e as contas do governo pioraram.</p>
+    <p>É a padaria do começo da página. Em 2014, o forno já estava cheio. O juro alto veio com dois problemas: o Brasil passou a vender mais barato, e as contas do governo pioraram.</p>
+    <p>Em 2021, o forno estava meio vazio. Mesmo com o juro subindo, havia gente parada para voltar ao trabalho. E o mundo pagava caro pelo que o Brasil vende.</p>
   </section>
 
   <section aria-labelledby="t-divida">
@@ -159,21 +177,33 @@
       <img src="/causas/img/cartao-rotativo.webp" width="900" height="900" loading="lazy" alt="Uma mulher na mesa da cozinha segura a fatura do cartão. O papel se desenrola pelo chão e termina enrolado como uma bola de neve.">
       <figcaption>Como no rotativo do cartão: quem paga só uma parte vê a dívida crescer sozinha, juro sobre juro.</figcaption>
     </figure>
-    <p>Quando gasta mais do que arrecada, o governo pega dinheiro emprestado. Sobre essa dívida, paga juros, que sobem e descem com a Selic.</p>
-    <p>É como o rotativo do cartão: se o juro é alto e você não paga a fatura inteira, a dívida cresce sozinha. Com o governo, isso vira um círculo:</p>
-    <div class="ciclo-box">
-      <ol class="ciclo" aria-label="O círculo da dívida: os quatro passos se repetem">
-        <li>Juro alto</li>
-        <li>A dívida do governo cresce mais rápido<small>e cresce mais se o governo gasta mais do que arrecada</small></li>
-        <li>O dólar e a inflação esperada sobem</li>
-        <li>O Banco Central demora a baixar o juro</li>
+    <p>Quando gasta mais do que arrecada, o governo pega dinheiro emprestado. Sobre essa dívida, paga juros. Cerca de metade dela acompanha a Selic: se a Selic sobe, a conta de juros sobe junto.</p>
+    <p>Juntando as partes desta página, o caminho é este:</p>
+    <div class="corrente">
+      <ol class="ciclo entrada" aria-label="Como a bola de neve começa">
+        <li><span class="n">1.</span> O governo gasta mais do que arrecada e pega dinheiro emprestado.</li>
+        <li><span class="n">2.</span> Com a economia no limite, o dinheiro a mais faz os preços subirem, como na padaria.</li>
       </ol>
-      <span class="volta" aria-hidden="true">e volta ao começo</span>
+      <div class="ciclo-box">
+        <ol class="ciclo" aria-label="O círculo da dívida: do passo 6, volta ao passo 3">
+          <li><span class="n">3.</span> O Banco Central sobe o juro para segurar os preços.</li>
+          <li><span class="n">4.</span> Os juros da dívida ficam mais caros.</li>
+          <li><span class="n">5.</span> O que o governo arrecada não cobre as contas e os juros. Ele pega mais emprestado, e a dívida cresce.</li>
+          <li><span class="n">6.</span> Quem empresta ao governo passa a desconfiar e cobra mais. O dólar sobe, e os preços também.</li>
+        </ol>
+        <span class="volta" aria-hidden="true">e o juro continua alto</span>
+      </div>
     </div>
-    <p class="dado">Em 12 meses, até agosto de 2026, os juros da dívida custaram R$ 1,2 trilhão. Dá cerca de R$ 5.500 por brasileiro. No mesmo período, sem contar os juros, o governo gastou 0,6% do PIB a mais do que arrecadou.</p>
-    <p>Ou seja, hoje a dívida cresce mais pelos juros do que pelo gasto acima da arrecadação.</p>
-    <p>Uns dizem que o problema é o juro alto do Banco Central. Outros, que o juro está alto porque as contas do governo não convencem. Uma coisa piora a outra.</p>
-    <p>Para a dívida parar de crescer, o governo precisa arrecadar mais do que gasta, sem contar os juros. Ou o juro precisa cair. Pela conta da IFI, do Senado, essa sobra teria de ser de 2,1% do PIB por ano.</p>
+    <p>Do passo 3 ao 6, a bola de neve cresce sozinha, como no rotativo do cartão. Mesmo sem gasto novo, os juros fazem a dívida crescer, e a dívida maior mantém o juro alto.</p>
+    <p>O círculo também pode começar por fora. Em 2021, a gasolina e a falta de chuva subiram os preços, e o juro subiu junto.</p>
+
+    <h3>Como está hoje</h3>
+    <p class="dado">Em 12 meses, até agosto de 2026, os juros da dívida custaram R$ 1,2 trilhão, 8,9% do PIB. Dá cerca de R$ 5.500 por brasileiro. No mesmo período, sem contar os juros, o governo gastou 0,6% do PIB a mais do que arrecadou.</p>
+    <p>Ou seja, hoje os juros pesam quase 15 vezes mais que o gasto além da arrecadação. O círculo está girando pelos passos 3 a 6.</p>
+    <p>Uns dizem que o problema é o juro alto do Banco Central. Outros, que o juro está alto porque as contas do governo não convencem. Os dois falam de partes do mesmo círculo.</p>
+
+    <h3>Como a bola para</h3>
+    <p>Para a dívida parar de crescer, há duas saídas. O governo arrecada mais do que gasta, sem contar os juros, ou o juro cai. Pela conta da IFI, do Senado, essa sobra teria de ser de 2,1% do PIB por ano.</p>
     <p>A dívida do governo, porém, é diferente da sua. O governo pode cobrar imposto e não tem prazo para acabar. E deve quase tudo em reais, a maior parte a brasileiros.</p>
     <p>Por isso, dívida alta não significa crise no ano seguinte. O custo vem aos poucos: sobra menos dinheiro para saúde, escola e obras, ou o imposto sobe.</p>
   </section>
