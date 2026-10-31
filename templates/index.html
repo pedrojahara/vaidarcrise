@@ -60,7 +60,7 @@
 <div class="in blog">
   {% include "_nota.html" %}
   <main class="feed">
-    {% if retrato and not permalink %}<a class="comece" href="{{ retrato.link }}"><span class="rot">Comece por aqui</span><b>Retrato do Brasil</b>Como está a economia e como ler o site, em {{ (retrato.palavras / 220)|round|int }} minutos de leitura. Com os dados de {{ data_curta(retrato.dia)[:5] }}.</a>{% endif %}
+    {% if retrato and not permalink %}<a class="comece" href="{{ retrato.link }}"><span class="rot">Comece por aqui</span><b>Retrato do Brasil</b>Por que o site nasceu, o que ele mostra e como usar, em {{ (retrato.palavras / 220)|round|int }} minutos de leitura.</a>{% endif %}
     {% include "_post.html" %}
     {% if permalink %}
     <nav class="vizinhos" aria-label="Outros dias">
