@@ -1,7 +1,7 @@
 titulo: O site nasceu na eleição para explicar a economia sem torcida
-data: 2026-10-31
+data: 2026-10-28
 tipo: retrato
-autoria: Escrito por inteligência artificial (Claude) em 31/10/2026, a partir da ideia de quem criou o site.
+autoria: Escrito por inteligência artificial (Claude), a partir da ideia de quem criou o site.
 ---
 Este site explica a economia do Brasil para quem nunca estudou o assunto, sem torcer por nenhum lado. Ele mostra, com dados e estudos, se o risco de recessão está subindo ou caindo, e por quê.
 

@@ -176,7 +176,7 @@ Cada post responde a uma pergunta só e compara com o próprio período. Ela qua
 
 | Tipo | Pergunta que responde | Quando | Tamanho | Abre com |
 | --- | --- | --- | --- | --- |
-| Retrato do Brasil | Por que o site existe, e como usá-lo? | Fixo no topo; refeito quando o editor decidir | Até 800 palavras | O que o site faz e para quem |
+| Retrato do Brasil | Por que o site existe, e como usá-lo? | No cartão do topo e na rolagem, como o post de 28/10; refeito quando o editor decidir | Até 800 palavras | O que o site faz e para quem |
 | Fato do dia | O que mudou ontem, e o que isso muda para mim? | De segunda a sábado | Até 100 palavras | O fato, com número e régua |
 | A semana | O que a semana mudou, e o que vem na próxima? | Domingo | Até 250 palavras | O que se moveu na semana |
 | O mês | Estamos melhor ou pior que há um mês? E no bolso? | Primeiro domingo do mês, no lugar da semana | Até 450 palavras, com as tabelas (300 de texto) | O que mudou no mês |

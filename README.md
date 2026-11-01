@@ -1,6 +1,6 @@
 # Vai dar crise?
 
-Para que lado anda o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB): subindo, igual ou caindo, conforme cinco pressões que costumam vir antes de uma recessão (contas do governo, dívidas das famílias, dólar e juro longo, inflação esperada e juro) apertam ou folgam contra 3 meses antes. Com um post por dia: o fato do dia de segunda a sábado, a semana aos domingos e o mês no primeiro domingo do mês, com o Retrato do Brasil fixo no topo. No ar em **[vaidarcrise.com.br](https://vaidarcrise.com.br)**.
+Para que lado anda o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB): subindo, igual ou caindo, conforme cinco pressões que costumam vir antes de uma recessão (contas do governo, dívidas das famílias, dólar e juro longo, inflação esperada e juro) apertam ou folgam contra 3 meses antes. Com um post por dia: o fato do dia de segunda a sábado, a semana aos domingos e o mês no primeiro domingo do mês, num blog de rolagem só, do post mais novo ao mais antigo, com o Retrato do Brasil também no topo. No ar em **[vaidarcrise.com.br](https://vaidarcrise.com.br)**.
 
 A metodologia está em [METODOLOGIA.md](METODOLOGIA.md), a regra da direção em [src/direcao.py](src/direcao.py), as escolhas fixas em [config/modelo.json](config/modelo.json) e o que sai dos dados (o vaivém normal de cada pressão e o teste desde 2004) em [config/calibracao.json](config/calibracao.json). Cada atualização grava um registro em [`runs/`](runs/), imutável depois do lançamento oficial, com insumos, hash das regras e do prompt e a resposta do modelo de linguagem. Para quem os textos são escritos (leitor, tom, palavras, números e a lista que todo texto passa) está em [PERSONA.md](PERSONA.md); [CLAUDE.md](CLAUDE.md) manda todo texto novo passar por ele.
 
@@ -57,7 +57,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
 Agendamento: copie `launchd/com.pedrojahara.vaidarcrise.plist` (06h30) e `launchd/com.pedrojahara.vaidarcrise.coleta.plist` (de hora em hora) para `~/Library/LaunchAgents` e carregue com `launchctl bootstrap gui/$(id -u) <arquivo>`. Logs em `logs/`.
 
-Textos escritos à mão ficam em `editor/AAAA-MM-DD-slug.md` (cabeçalho, `---`, Markdown) e entram no blog na próxima geração do site. Com `tipo: retrato` no cabeçalho, o texto vira o Retrato do Brasil, fixo no topo da página principal (vale o mais novo).
+Textos escritos à mão ficam em `editor/AAAA-MM-DD-slug.md` (cabeçalho, `---`, Markdown) e entram no blog na próxima geração do site. Todo post, do dia ou escrito à mão, entra na rolagem da página principal na data do cabeçalho, do mais novo ao mais antigo: a página traz os 5 primeiros, e o resto vem de `docs/posts/` (um pedaço de HTML por post e `indice.json`) quando a leitora chega ao fim. Com `tipo: retrato` no cabeçalho, o texto vira o Retrato do Brasil e também fica no cartão "Comece por aqui", no topo da página principal (vale o mais novo).
 
 ## Dados públicos
 
