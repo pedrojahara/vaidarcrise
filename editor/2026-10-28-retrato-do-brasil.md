@@ -37,7 +37,7 @@ Foi assim em 2015, 2021 e 2024, com presidentes de lados opostos. Nas três veze
 
 Em 2002, o dólar subiu muito com medo de que o novo governo não pagasse a dívida. O governo que assumiu pagou e manteve as regras, e em 2003 o dólar caiu.
 
-Há quem diga que o mercado exagerou, e há quem diga que o medo fez o governo manter as regras. Em qualquer caso, o dólar mais caro chega ao seu bolso. Por isso, "Dólar e juro longo" é uma das cinco pressões que o site acompanha.
+Há quem diga que o mercado exagerou, e há quem diga que o medo fez o governo manter as regras. Em qualquer caso, o dólar mais caro chega ao seu bolso. Por isso, uma das cinco pressões que o site acompanha é a "Desconfiança de quem investe", medida pelo dólar e pelo juro que o governo paga para pegar dinheiro emprestado.
 
 ### Como usar o site
 

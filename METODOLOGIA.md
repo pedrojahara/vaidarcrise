@@ -15,15 +15,15 @@ O nome do site fala em crise; a métrica é recessão técnica.
 
 ## A regra da direção
 
-**1. Cinco pressões**, escolhidas pelo que a pesquisa da seção O que causa recessão, abaixo, mostra que vem antes de uma recessão: juro subindo, inflação esperada subindo, dívida das famílias subindo, dólar e juro longo subindo com desconfiança das contas do governo, e as contas do governo piorando.
+**1. Cinco pressões**, escolhidas pelo que a pesquisa da seção O que causa recessão, abaixo, mostra que vem antes de uma recessão: juro subindo, inflação esperada subindo, dívida das famílias subindo, desconfiança de quem investe (dólar e juro de 10 anos subindo, muitas vezes por medo das contas do governo), e as contas do governo piorando.
 
 | Pressão | Medida | Série | Lado ruim | Atraso de divulgação |
 | --- | --- | --- | --- | --- |
 | Contas do governo | Dívida bruta do governo geral, % do PIB | BCB 13762 (desde dezembro de 2006) | subir | 2 meses |
 | Contas do governo, antes de 2007 | Resultado sem juros do setor público em 12 meses, % do PIB | BCB 5793 | gastar mais do que arrecada | 2 meses |
 | Dívidas das famílias | Parte da renda das famílias que vai para parcelas e juros, com ajuste sazonal | BCB 29034 | subir | 3 meses |
-| Dólar e juro longo | Dólar PTAX, variação % | BCB 1 | subir | 0 |
-| Dólar e juro longo | Taxa real do Tesouro IPCA+ com vencimento mais perto de 10 anos | Tesouro Direto | subir | 0 |
+| Desconfiança de quem investe | Dólar PTAX, variação % | BCB 1 | subir | 0 |
+| Desconfiança de quem investe | Juro de 10 anos: taxa real do Tesouro IPCA+ com vencimento mais perto de 10 anos | Tesouro Direto | subir | 0 |
 | Inflação esperada | Mediana do Focus para o IPCA dos 12 meses seguintes | Focus | subir | 0 |
 | Juro | Selic meta | BCB 432 | subir | 0 |
 
@@ -57,7 +57,7 @@ O emprego é o último a piorar numa recessão, porque as empresas primeiro vend
 
 As reservas ainda não têm corte em `config/calibracao.json`. Enquanto não têm, o corte sai na hora, com a mesma conta, das variações de 3 meses que a coleta do dia traz desde janeiro de 2002 (`src/fetch_data.py` busca essa série inteira); com menos de 36 variações, a linha fica sem lado. Só a atualização do Mac coleta a série, e a página esconde a linha enquanto ela não tem dado. Depois que `src/historico.py` guardar a série, `python src/direcao.py --calibrar` grava o corte das reservas junto com os outros.
 
-Dólar e juro longo contam como uma pressão só: o sinal da soma dos dois lados (se um aperta e o outro folga, fica igual; se um aperta e o outro fica igual, apertou).
+O dólar e o juro de 10 anos contam como uma pressão só, a Desconfiança de quem investe: o sinal da soma dos dois lados (se um aperta e o outro folga, fica igual; se um aperta e o outro fica igual, apertou).
 
 **5. A soma decide.** Pressões que apertaram menos as que folgaram: 2 ou mais, **subindo**; −2 ou menos, **caindo**; no meio, **igual**. Pressão sem dado fica fora da soma naquele dia.
 
@@ -123,7 +123,7 @@ Foram umas 25 versões. As mais próximas:
 | Contas com dívida e resultado sem juros juntos | 16% | 1,8 | +0,4% e +4,4% | 6 | Subindo |
 | Inflação do mês (IPCA) em vez da esperada | 15% | 1,8 | −0,4% e +3,2% | 3 | Igual |
 | Inflação do mês e esperada juntas | 17% | 1,8 | −0,4% e +3,5% | 6 | Subindo |
-| Dólar e juro longo só com o dólar | 17% | 1,9 | −0,1% e +4,3% | 2 | Subindo |
+| Desconfiança de quem investe só com o dólar | 17% | 1,9 | −0,1% e +4,3% | 2 | Subindo |
 | Sete partes, com ritmo e emprego na soma | 10% | 2,2 | −2,1% e +4,1% | 0 | Subindo |
 
 - **Basta uma pressão** vira papel de parede. **Sem esperar o mês seguinte**, a direção muda 4 vezes por ano.
@@ -147,7 +147,7 @@ De janeiro de 2004 a outubro de 2026 (274 meses), com os atrasos de divulgação
 | Mudanças de direção por ano | 2,0 |
 | Chance de um mês com recessão à frente ter soma maior que um mês sem (0,5 é cara ou coroa) | 0,55 |
 | Meses em subindo nos 12 antes de cada recessão | 2008: 0; 2014: 6; 2020: 0 |
-| Parte dos meses em que cada pressão apertou / folgou | contas 31% / 16%; parcelas 32% / 17%; dólar e juro longo 30% / 34%; inflação esperada 18% / 23%; juro 19% / 24% |
+| Parte dos meses em que cada pressão apertou / folgou | contas 31% / 16%; parcelas 32% / 17%; desconfiança de quem investe 30% / 34%; inflação esperada 18% / 23%; juro 19% / 24% |
 
 O que isso quer dizer, sem enfeite:
 
@@ -172,7 +172,7 @@ O resto de cada linha é encolhendo. No governo atual, a mesma regra disse caind
 
 As notícias não mudam a direção. Se cada notícia somasse um pedaço, como os jornais publicam mais notícia ruim que boa, a direção tenderia a ficar sempre em subindo. Elas mostram, na caixa "Para onde as notícias empurram", para que lado cada assunto é empurrado.
 
-**A leitura das manchetes.** As manchetes de oito jornais com linhas editoriais diferentes (Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1) são coletadas de hora em hora. Às 06h30, um modelo de linguagem (Claude, sem ferramentas, com saída em esquema JSON validado por código) lê as do dia anterior e transforma os fatos em eventos: assunto, lado, tamanho (1 a 3) e estágio. Notícia que só repete um dado já medido fica de fora. Os assuntos são sete: Ritmo da economia, Juro e inflação, Dívidas das famílias, Dólar e juro longo, Contas do governo, Emprego e Economia lá fora.
+**A leitura das manchetes.** As manchetes de oito jornais com linhas editoriais diferentes (Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1) são coletadas de hora em hora. Às 06h30, um modelo de linguagem (Claude, sem ferramentas, com saída em esquema JSON validado por código) lê as do dia anterior e transforma os fatos em eventos: assunto, lado, tamanho (1 a 3) e estágio. Notícia que só repete um dado já medido fica de fora. Os assuntos são sete: Ritmo da economia, Juro e inflação, Dívidas das famílias, Desconfiança de quem investe, Contas do governo, Emprego e Economia lá fora.
 
 **A pressão do dia, por assunto:**
 
@@ -291,7 +291,7 @@ ano ruim = −0,71 − 0,20 × média de 10 anos + 0,23 × crescimento em 12 mes
 | --- | --- |
 | Bolsa (retorno real em 12 meses) | 4,6% menor |
 | Crédito acima da tendência | 0,7% menor |
-| Juro longo subindo | 0,3% menor |
+| Juro de 10 anos subindo | 0,3% menor |
 | Dívida pública | igual |
 | Câmbio real acima da média de 10 anos | 0,6% maior |
 | Desemprego subindo | 0,9% maior |

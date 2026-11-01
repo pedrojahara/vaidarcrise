@@ -266,13 +266,14 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 | Abas | Hoje, O que causa recessão, Como funciona |
 | A direção | "O risco de recessão está subindo", "está igual" ou "está caindo"; nos resumos, com desde quando ("desde junho de 2026"); "A economia está encolhendo" quando a prévia do PIB cai mais de 1,5% em 3 meses. Na placa: Subindo, Igual, Caindo, Encolhendo |
 | O crescimento, logo abaixo da placa | Crescimento em 12 meses: Antes, Agora, Previsão. À direita do título, como o Apertou de cada pressão: Acelerando, Desacelerando ou No mesmo ritmo. O bloco não tem rodapé; o normal desde 2004 e o erro da previsão "dos bancos (Focus)" ficam em Como funciona |
-| As cinco pressões | Contas do governo, Dívidas das famílias, Dólar e juro longo, Inflação esperada, Juro |
+| As cinco pressões | Contas do governo, Dívidas das famílias, Desconfiança de quem investe, Inflação esperada, Juro |
+| Os dois números da Desconfiança de quem investe | o dólar e o juro de 10 anos, os dois na linha fechada; na primeira vez, "o juro de 10 anos é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos". Nunca "juro longo", "juros futuros" ou "prêmio de risco" |
 | As linhas que não mudam a placa | Também acompanhamos: Emprego, Reservas em dólar, Dívida em reais. Aberta, cada uma diz "Esta linha não muda a placa, porque..." |
 | O que cada linha fez em 3 meses | Apertou, Igual, Folgou; no emprego e nas reservas, Piorou, Igual, Melhorou |
 | O que abre cada linha | Uma seta para baixo, sem texto, à direita da primeira linha, logo depois da palavra (Apertou, Igual...); aberta, a seta vira para cima. A linha inteira abre com um toque |
 | A régua de cada pressão | o vaivém normal de 3 meses (só no topo aberto e em Como funciona) |
 | Quanto falta para o pior já visto | Na página, só a frase que compara com o passado, na linha aberta: "A dívida está mais alta que em 96% dos meses desde 2006." No recorde, com sujeito: "A parte da renda que vai para dívidas é a maior desde 2005, quando começa a série." Nunca "Folga: x" na página; as palavras Nenhuma, Quase nenhuma, Pouca, Média e Muita ficam só no `data.json`. Em Como funciona, a seção "Quanto espaço ainda sobra?" |
-| Os assuntos das notícias | Ritmo da economia, Juro e inflação, Dívidas das famílias, Dólar e juro longo, Contas do governo, Emprego, Economia lá fora |
+| Os assuntos das notícias | Ritmo da economia, Juro e inflação, Dívidas das famílias, Desconfiança de quem investe, Contas do governo, Emprego, Economia lá fora |
 | A conta dos 44 países (só em Como funciona) | o PIB num ano ruim (1 chance em 10); "num ano ruim, em tempos normais" para a comparação |
 | Boletim Focus | os bancos (Focus) |
 | Copom | o Banco Central decide o juro (Copom) |
@@ -325,7 +326,7 @@ O post de 31/10 tinha 197 palavras, e 97 delas repetiam o dia anterior e algo qu
 >
 > Com o dólar mais caro, fica mais caro o que vem de fora, como celular, peça de carro e passagem de avião.
 
-Um fato, contado até o bolso. O que o dólar fez em 3 meses fica no topo, em "Dólar e juro longo", e para onde a notícia empurra cada assunto fica na caixa logo abaixo do post.
+Um fato, contado até o bolso. O que o dólar fez em 3 meses fica no topo, em "Desconfiança de quem investe", e para onde a notícia empurra cada assunto fica na caixa logo abaixo do post.
 
 ## Onde o guia vale no código
 
