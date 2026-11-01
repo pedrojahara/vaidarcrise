@@ -1,4 +1,4 @@
-{# Uma linha do topo. Fechada: o nome, a palavra do que aconteceu em 3 meses, a seta que abre e a frase com os números. #}
+{# Uma linha do topo. Fechada: o nome, a palavra do que aconteceu, a seta que abre e a frase com os números. #}
 <li id="parte-{{ x.id }}"><details>
   <summary><span class="p-cab"><b>{{ x.nome }}</b><span class="p-dir">{% if x.palavra %}<span class="p-lado {{ x.cls }}">{{ x.palavra }}</span>{% endif %}<svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="p-frase">{{ x.frase }}</span></summary>
   <div class="p-mais">

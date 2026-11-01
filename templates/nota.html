@@ -4,7 +4,7 @@
 {% set k = p.corte_vaivem %}
 {% set c = cal.direcao.cortes %}
 {% block titulo %}Como funciona | Vai dar crise?{% endblock %}
-{% block descricao %}Como o site diz se o risco de recessão no Brasil está subindo, igual ou caindo: cinco pressões comparadas com 3 meses antes, quanto espaço ainda sobra em cada uma e o teste da regra desde 2004.{% endblock %}
+{% block descricao %}Como o site diz se o risco de recessão no Brasil está subindo, igual ou caindo: cinco pressões, cada uma comparada com o próprio dado de três meses antes, quanto espaço ainda sobra em cada uma e o teste da regra desde 2004.{% endblock %}
 {% block estilo %}
 .detalhe{padding-top:28px;padding-bottom:40px;font-family:var(--sistema)}
 .detalhe h1{font:700 30px/1.2 var(--serifa);margin:0 0 12px;text-wrap:balance}
@@ -29,12 +29,12 @@ svg text{font-family:var(--sistema)}
 {% block corpo %}
 <main class="in detalhe">
   <h1>Como funciona</h1>
-  <p class="abre">O site responde a uma pergunta: o risco de recessão no Brasil está subindo, igual ou caindo? Ele não tenta acertar quando vem a próxima recessão. Mostra para que lado o risco andou nos últimos 3 meses, com uma regra fixa, a mesma para qualquer governo.</p>
+  <p class="abre">O site responde a uma pergunta: o risco de recessão no Brasil está subindo, igual ou caindo? Ele não tenta acertar quando vem a próxima recessão. Mostra para que lado o risco andou nos meses mais recentes, com uma regra fixa, a mesma para qualquer governo.</p>
   <p class="abre">Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos, segundo o IBGE.</p>
 
   <section aria-labelledby="t-direcao">
     <h2 id="t-direcao">O que quer dizer subindo, igual e caindo?</h2>
-    <p>Cinco coisas costumam piorar antes de uma recessão no Brasil. O site chama cada uma de pressão e compara o valor de hoje com o de 3 meses antes. Uma pressão piora quando anda para o lado ruim mais do que o normal, e melhora quando anda isso para o lado bom.</p>
+    <p>Cinco coisas costumam piorar antes de uma recessão no Brasil. O site chama cada uma de pressão e compara o último dado dela com o de três meses antes: a dívida do governo de setembro com a de junho, a Selic de novembro com a de agosto. Uma pressão piora quando anda para o lado ruim mais do que o normal, e melhora quando anda isso para o lado bom.</p>
     <ul class="topicos">
       <li><b>Subindo:</b> as pressões que pioraram passam das que melhoraram por duas ou mais.</li>
       <li><b>Caindo:</b> o contrário, as que melhoraram passam das que pioraram por duas ou mais.</li>
@@ -77,12 +77,12 @@ svg text{font-family:var(--sistema)}
       <li>Selic: até {{ (k * c.juro)|num(2) }} ponto.</li>
       <li>Desemprego, em Também acompanhamos: até {{ (k * c.emprego)|num(2) }} ponto.</li>
     </ul>
-    <p>Na página de hoje, cada pressão mostra o número de agora e o de 3 meses antes. Aberta, ela diz se passou do vaivém, se passou raspando ou se ficou dentro dele.</p>
+    <p>Na página de hoje, cada pressão mostra o número de agora e o de três meses antes, com os meses de cada um. Aberta, ela diz se passou do vaivém, se passou raspando ou se ficou dentro dele.</p>
   </section>
 
   <section aria-labelledby="t-folga">
     <h2 id="t-folga">Quanto espaço ainda sobra?</h2>
-    <p>A direção diz para onde o risco anda, mas não diz quanto espaço ainda sobra. Uma pressão pode ficar igual em 3 meses e mesmo assim estar no limite, como uma conta bancária que parou de cair, mas já está no vermelho.</p>
+    <p>A direção diz para onde o risco anda, mas não diz quanto espaço ainda sobra. Uma pressão pode ficar igual na comparação e mesmo assim estar no limite, como uma conta bancária que parou de cair, mas já está no vermelho.</p>
     <p>Por isso, quem abre uma linha vê o valor de hoje comparado com todos os meses desde o começo da série. Quando a linha diz, por exemplo, que a dívida está mais alta que em 90% dos meses desde 2006, quer dizer que ela quase nunca esteve tão alta. Quanto mais perto de 100%, menos espaço sobra.</p>
     <p>Muita gente acha que existe um limite para a dívida do governo, como 100% do PIB, a partir do qual vem a crise. Esse número não existe. A Argentina deu calote em 2001 devendo cerca de metade do PIB, e o Japão deve mais de duas vezes o PIB sem crise. Pesa mais em que moeda e para quem o governo deve. O Brasil deve quase tudo em reais, a maior parte a brasileiros. Na página Hoje, a linha <a href="/#parte-divida_reais">Dívida em reais</a> mostra quanto da dívida é em reais.</p>
   </section>

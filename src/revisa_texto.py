@@ -58,6 +58,11 @@ MOLDES = [
      "conta as pressões em vez de citar cada uma pelo nome"),
     (re.compile(r"(?<=\w\s)(Contas do governo|Dívidas das famílias|Desconfiança de quem investe|Inflação esperada|Juro)\b"),
      "nome de pressão com maiúscula no meio da frase: use minúscula e artigo ('as contas do governo', 'o juro')"),
+    # PERSONA.md, "O jeito de escrever do site": a comparação diz o mês, e produto de outro país é importado.
+    (re.compile(r"\b((contra|que|de|com) 3 meses antes|há 3 meses|nos últimos 3 meses|3 meses atrás)\b", re.I),
+     "compara com '3 meses antes' em vez de dizer o mês ('se compararmos com julho', 'mais caro que no fim de julho')"),
+    (re.compile(r"\b(o|tudo o) que vem de fora\b", re.I),
+     "diga 'os importados' (ou 'a importação') em vez de 'o que vem de fora'"),
     (re.compile(r"(?:^|(?<=[.!?:]\s))No bolso\b"),
      "categoria que o site não usa: use os nomes do topo (as cinco pressões e Também acompanhamos)"),
 ]
@@ -176,6 +181,24 @@ def _nomes_do_site() -> set[str]:
     return {*cfg["direcao"]["nomes"].values(), *cfg["fatores"].values()}
 
 
+# Siglas que todo mundo conhece; as outras vão por extenso ou com link (glossario em config/modelo.json).
+SIGLAS_CONHECIDAS = {"PIB", "IBGE", "EUA", "INSS", "FGTS", "SUS", "STF", "ONU", "US", "PIX", "CPF", "MEI", "IPVA", "IPTU"}
+SIGLA = re.compile(r"\b[A-Z][A-Z0-9]{1,5}\b")
+
+
+def _glossario() -> list[re.Pattern]:
+    import json
+    from pathlib import Path
+    cfg = json.loads((Path(__file__).resolve().parent.parent / "config" / "modelo.json").read_text())
+    return [re.compile(g["rx"]) for g in (cfg.get("glossario") or {}).get("termos", [])]
+
+
+def siglas_soltas(texto: str) -> list[str]:
+    """Siglas que a leitora não conhece e que o site não liga à Wikipédia (PERSONA.md, "O jeito de escrever do site")."""
+    com_link = {m.group(0) for rx in _glossario() for m in rx.finditer(texto)}
+    return sorted({s for s in SIGLA.findall(texto) if s not in SIGLAS_CONHECIDAS and not any(s in c for c in com_link)})
+
+
 def _moldes(texto: str) -> list[str]:
     return [nome for rx, nome in MOLDES if rx.search(texto)]
 
@@ -195,6 +218,9 @@ def problemas_classificacao(saida: dict) -> list[str]:
         if ";" in t:
             out.append(f"título com ponto e vírgula: {t[:60]}")
         out += [f"{m}: {t[:60]}" for m in sorted(set(_moldes(t)) | set(_moldes(ev["porque"])))]
+        sig = siglas_soltas(t)
+        if sig:
+            out.append(f"sigla que a leitora não conhece ({', '.join(sig)}): escreva o nome por extenso, se ele explica: {t[:60]}")
     out += _aberturas([ev["porque"] for ev in saida.get("eventos", [])])
     return out
 
@@ -232,6 +258,13 @@ def problemas_post(post: dict, tipo: str = "dia", dados: str | None = None, hoje
             out.append(f"parágrafo {i}: inflação que 'cai' ou 'recua' sem dizer que os preços sobem mais devagar")
         if re.search(r"\b(eu|nós|nosso|nossa)\b", p, flags=re.IGNORECASE):
             out.append(f"parágrafo {i} em primeira pessoa")
+    sig = siglas_soltas(" ".join(_prosa(post)))
+    if sig:
+        out.append(f"sigla que a leitora não conhece ({', '.join(sig)}): escreva o nome por extenso quando ele explica "
+                   "(Confederação Nacional da Indústria, Tribunal de Contas da União); IFI e BNDES podem ficar, porque o site liga")
+    dez = len(re.findall(r"\bpor (uns |cerca de )?10 anos\b", " ".join(post["paragrafos"])))
+    if dez > 1:
+        out.append("repete 'por 10 anos': depois da primeira vez, 'quando o governo paga mais para pegar dinheiro emprestado' basta")
     out += _aberturas(post["paragrafos"], limite=1)
     palavras = sum(len(p.split()) for p in post["paragrafos"])
     if palavras > LIMITE_PALAVRAS.get(tipo, 10**6):

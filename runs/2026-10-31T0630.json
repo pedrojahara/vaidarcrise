@@ -2354,7 +2354,7 @@
       "fonte": "Tesouro Direto"
      },
      {
-      "texto": "Dólar a R$ 5,42 em 30/10, 6,8% mais caro que há 3 meses.",
+      "texto": "Dólar a R$ 5,42 em 30/10, 6,8% mais caro que no fim de julho.",
       "fonte": "BC"
      }
     ]
@@ -2402,38 +2402,71 @@
  "post": {
   "tipo": "dia",
   "ok": true,
-  "titulo": "Dólar tem a maior alta semanal desde 2008, e a Bolsa cai 18,1%",
+  "titulo": "Bolsa cai 18,1% e dólar sobe 9% na semana, maior alta desde 2008",
   "paragrafos": [
-   "O dólar subiu 9% na semana da reeleição do presidente, a maior alta semanal desde 2008, e a Bolsa caiu 18,1%. Ontem o dólar fechou a R$ 5,42, ou 6,8% mais caro que há 3 meses.",
-   "A alta tem duas leituras: quem investe pode ter exagerado no susto da eleição, ou passou a desconfiar das contas do governo. Aliados do governo falam contra cortes de gastos, o que pesa a favor da segunda leitura, mas por enquanto é conversa, sem decisão tomada.",
-   "Com o dólar mais caro, o que vem de fora encarece, e o combustível sofre em dobro, porque o petróleo subiu mais de 14% em outubro com o conflito no Irã."
+   "A Bolsa caiu 18,1% na semana da reeleição do presidente, a mesma queda de uma semana de 2001, e o dólar subiu 9%, a maior alta semanal desde 2008. A queda da Bolsa não muda a direção do risco, porque a Bolsa fica fora da conta.",
+   "Com o dólar 6,8% mais caro que no fim de julho, peças, combustível e outros importados ficam mais caros nos meses seguintes.",
+   "A alta tem duas leituras: quem investe reagiu demais à eleição, ou passou a desconfiar das contas do governo."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "O dólar subiu 9% na semana da reeleição do presidente, a maior alta semanal desde 2008, e a Bolsa caiu 18,1%. Ontem o dólar fechou a R$ 5,42, ou 6,8% mais caro que há 3 meses.",
-     "A alta tem duas leituras: quem investe pode ter exagerado no susto da eleição, ou passou a desconfiar das contas do governo. Aliados do governo falam contra cortes de gastos, o que pesa a favor da segunda leitura, mas por enquanto é conversa, sem decisão tomada.",
-     "Com o dólar mais caro, o que vem de fora encarece, e o combustível sofre em dobro, porque o petróleo subiu mais de 14% em outubro com o conflito no Irã."
+     "A Bolsa caiu 18,1% na semana da reeleição do presidente, a mesma queda de uma semana de 2001, e o dólar subiu 9%, a maior alta semanal desde 2008. A queda da Bolsa não muda a direção do risco, porque a Bolsa fica fora da conta.",
+     "Com o dólar 6,8% mais caro que no fim de julho, peças, combustível e outros importados ficam mais caros nos meses seguintes.",
+     "A alta tem duas leituras: quem investe reagiu demais à eleição, ou passou a desconfiar das contas do governo."
     ]
    }
   ],
   "problemas": [],
+  "edicao": {
+   "sugestoes": [
+    {
+     "trecho": "A Bolsa caiu 18,1% e o dólar subiu 9% na semana da reeleição do presidente, a maior alta semanal do dólar desde 2008.",
+     "problema": "A queda de 18,1% da Bolsa não tem comparação, e o guia pede que todo número venha com uma régua. Os dados trazem essa régua: a perda iguala a de uma semana de 2001.",
+     "como_fica": "A Bolsa caiu 18,1% na semana da reeleição do presidente, a mesma queda de uma semana de 2001, e o dólar subiu 9%, a maior alta semanal desde 2008."
+    },
+    {
+     "trecho": "Com o dólar a R$ 5,42, 6,8% mais caro que no fim de julho, peças, combustível e outros importados ficam mais caros nos meses seguintes. A alta tem duas leituras: [...]",
+     "problema": "O parágrafo tem 55 palavras, e o guia permite até 50. Ele vira dois parágrafos, e o valor em reais sai para o texto não passar de 100 palavras. A comparação com julho continua.",
+     "como_fica": "Com o dólar 6,8% mais caro que no fim de julho, peças, combustível e outros importados ficam mais caros nos meses seguintes. (A frase das duas leituras passa para um terceiro parágrafo.)"
+    },
+    {
+     "trecho": "A alta tem duas leituras: quem investe exagerou na reação à eleição, ou desconfia das contas do governo, com a dívida subindo de 82,0% para 82,9% do PIB desde junho.",
+     "problema": "A frase passa de 30 palavras, e o \"com\" não deixa claro que a dívida maior é o motivo da desconfiança. O certo é ligar a causa com \"já que\".",
+     "como_fica": "A alta tem duas leituras: quem investe reagiu demais à eleição, ou desconfia das contas do governo, já que a dívida subiu de 82,0% para 82,9% do PIB desde junho."
+    }
+   ],
+   "aplicada": true
+  },
   "meta": [
    {
     "modelo_pedido": "opus",
-    "prompt_sha256": "7fd0861b1dcff67fbd73a13e3c4a6e58f89436618a5a663aad7c0b618c92d0a1",
-    "system_sha256": "792d3374eeaab52187b59cab85681cb17ea0461bbe0fd6572c1bc17a8716fedf",
+    "prompt_sha256": "f086b92a9be48b07ab3b594dc27a1ede68da818abef6a5c253e4aab1befa92c4",
+    "system_sha256": "fd9a8be54c94ed707c0b33221d75dd0e5cfea05070c681fc31e30145ca999d63",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.07850120000000001,
+    "custo_usd": 0.0861648,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "69cf6156-a5cf-40b6-a533-dbe4d11770fa"
+    "session_id": "f2618fa1-9a75-4618-9139-15aa603ef5d4"
+   },
+   {
+    "modelo_pedido": "opus",
+    "prompt_sha256": "281dc67ff3013bd097115483c3062232859e87a6c3771478b82e5339281e653d",
+    "system_sha256": "742a9166ecb7708349c5ccb68828d68c7cf9d6db13c33b0eb25536b9574c5d87",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.2692692,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "6d893ec3-b07a-4e47-b8bb-caaf4d782db2"
    }
   ],
-  "escrito_em": "2026-11-01T17:20:00-03:00",
-  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-10-31: tirada a frase sobre o dólar ficar fora da conta, porque o dólar passou a contar na direção do risco. 2026-11-01, à noite: refeito pelo mesmo programa no jeito de escrever novo, a pedido do Pedro: frases ligadas em vez de empilhadas, sem definir PIB, IPCA, Selic e Focus (o site liga esses termos à Wikipédia) e com o \"e daí\" de cada fato. Mesmos números e datas."
+  "escrito_em": "2026-11-01T18:50:00-03:00",
+  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-10-31: tirada a frase sobre o dólar ficar fora da conta, porque o dólar passou a contar na direção do risco. 2026-11-01, à noite: refeito pelo mesmo programa no jeito de escrever novo, a pedido do Pedro: frases ligadas em vez de empilhadas, sem definir PIB, IPCA, Selic e Focus (o site liga esses termos à Wikipédia) e com o \"e daí\" de cada fato. Mesmos números e datas. 2026-11-01, mais tarde: refeito pelo redator e pelo editor novo (src/edita_texto.py), a pedido do Pedro: comparação com o mês (e não \"contra 3 meses antes\"), importados no lugar de \"o que vem de fora\", sigla por extenso ou com link e quem paga o quê. As sugestões do editor estão em edicao. Mesmos números e datas. Correções à mão, sem mudar número: \"ou desconfia das contas do governo, já que a dívid\" → \"ou passou a desconfiar das contas do governo.\"."
  }
 }

@@ -23,7 +23,7 @@
   <div class="por-que" id="por-que">
   <button class="pq" type="button" aria-expanded="false" aria-controls="pq-corpo"><span>{{ dir.pergunta }}</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   <div class="pq-corpo" id="pq-corpo">
-  <p class="cab-p" id="cab-pressoes">As cinco pressões, nos últimos 3 meses</p>
+  <p class="cab-p" id="cab-pressoes">As cinco pressões{% if dir.comparado %}, comparadas com {{ dir.comparado }}{% endif %}</p>
   <ul class="partes" aria-labelledby="cab-pressoes">
     {% for x in dir.pressoes %}{% include "_parte.html" %}{% endfor %}
   </ul>
