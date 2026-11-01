@@ -431,44 +431,13 @@ def pressao_ctx(rodada: dict, eventos: dict, cfg: dict, por_fator: int = 3) -> d
 
 
 # --------------------------------------------------------------------- posts
-def autoria_resumo(tipo: str, per: dict, hr: str) -> str:
-    """A assinatura do resumo da semana ou do mês: com o que foi escrito e as notícias que o site não leu."""
-    cob = per.get("noticias") or {}
-    ia = f"Escrito por inteligência artificial (Claude) às {hr}"
-    if tipo == "mes" and per.get("mes"):
-        nome = mes_nome(per["mes"])
-        if not cob.get("dias"):
-            txt = f"{ia}, com os dados oficiais de {nome}. O site não leu notícias nesse mês."
-        elif cob.get("comeco"):
-            txt = (f"{ia}, com os dados oficiais de {nome}. As notícias são só de {dia_mes(cob['de'])} a "
-                   f"{dia_mes(cob['ate'])}, porque o site começou a ler notícias em {dia_mes(cob['comeco'])}.")
-        else:
-            txt = f"{ia}, com os dados oficiais e as notícias de {nome}."
-    else:
-        txt = f"{ia}, com as {per['rodadas']} atualizações do site de {dia_mes(per['de'])} a {dia_mes(per['ate'])}."
-        if cob.get("comeco"):
-            txt += f" O site começou a ler notícias em {dia_mes(cob['comeco'])}."
-    falta = cob.get("faltam") or []
-    if falta and cob.get("dias"):
-        if len(falta) <= 4:
-            dias = " e ".join(filter(None, [", ".join(dia_mes(d) for d in falta[:-1]), dia_mes(falta[-1])]))
-            txt += f" O site não leu as notícias de {dias}."
-        else:
-            txt += f" O site não leu as notícias de {len(falta)} dias."
-    return txt
+# A assinatura de todo post escrito pelo modelo (Pedro, 1/11): sem horário, sem contagem de notícias.
+ASSINATURA = "Escrito pelo Claude com a ajuda do Pedro."
 
 
 def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
     """O post de um dia. Sem texto do LLM, sai um título feito por código e a caixa das notícias."""
     dia = rodada["gerado_em"][:10]
-    nots = rodada["insumos"]["noticias"]
-    n, k = nots["n_itens"], len(nots.get("por_veiculo", {}))
-    dias = (rodada.get("cobertura") or {}).get("dias", [])
-    jornais = "jornal" if k == 1 else "jornais"
-    dd = [data_curta(d)[:5] for d in dias]
-    quantas = f"{n} manchetes" if n is not None else "as manchetes"
-    lidas = (f"{quantas} de {k} {jornais} publicadas em {' e '.join(filter(None, [', '.join(dd[:-1]), dd[-1]]))}"
-             if dias else f"{quantas} de {k} {jornais}")
     p = rodada.get("post") or {}
     tipo = p.get("tipo") or "dia"
     d = rodada["resultado"]["direcao"]
@@ -476,20 +445,14 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
     if p.get("ok"):
         titulo, paragrafos = p["titulo"], p["paragrafos"]
         secoes = p.get("secoes") or [{"paragrafos": paragrafos}]
-        hr = hora(p.get("escrito_em") or rodada["gerado_em"])
-        per = p.get("periodo") or {}
-        if tipo in ("semana", "mes") and per:
-            autoria = autoria_resumo(tipo, per, hr)
-        else:
-            autoria = f"Escrito por inteligência artificial (Claude) às {hr}, depois de ler {lidas}."
-        rodape = "Ninguém revisa o texto antes de ele sair."
+        autoria = ASSINATURA
+        rodape = ""
     else:
         tipo = "dia"
         titulo = ("A economia está encolhendo" if d["estado"] == "encolhendo"
                   else f"O risco de recessão está {d['estado']}")
         paragrafos = []
-        autoria = (f"Atualização automática das {hora(rodada['gerado_em'])}, depois de ler {lidas}. "
-                   "O texto do dia não saiu. Ficam a direção do risco e as notícias, organizadas pelo programa.")
+        autoria = "O texto do dia não saiu. Ficam a direção do risco e as notícias, organizadas pelo programa."
         rodape = ""
     link = f"/{dia}/"
     zap = None
