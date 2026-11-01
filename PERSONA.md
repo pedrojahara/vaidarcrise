@@ -268,6 +268,7 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 | O crescimento, logo abaixo da placa | Crescimento em 12 meses: Antes, Agora, Previsão. À direita do título, como o Apertou de cada pressão: Acelerando, Desacelerando ou No mesmo ritmo. O bloco não tem rodapé; o normal desde 2004 e o erro da previsão "dos bancos (Focus)" ficam em Como funciona |
 | As cinco pressões | Contas do governo, Dívidas das famílias, Desconfiança de quem investe, Inflação esperada, Juro |
 | Os dois números da Desconfiança de quem investe | o dólar e o juro de 10 anos, os dois na linha fechada; na primeira vez, "o juro de 10 anos é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos". Nunca "juro longo", "juros futuros" ou "prêmio de risco" |
+| O botão que abre as pressões no celular | "Por que está subindo? Veja as cinco pressões" (ou caindo, ou igual); quando a economia encolhe, "Como estão as cinco pressões?". Só aparece quando a página tem uma coluna; no computador, a lista fica aberta |
 | As linhas que não mudam a placa | Também acompanhamos: Emprego, Reservas em dólar, Dívida em reais. Aberta, cada uma diz "Esta linha não muda a placa, porque..." |
 | O que cada linha fez em 3 meses | Apertou, Igual, Folgou; no emprego e nas reservas, Piorou, Igual, Melhorou |
 | O que abre cada linha | Uma seta para baixo, sem texto, à direita da primeira linha, logo depois da palavra (Apertou, Igual...); aberta, a seta vira para cima. A linha inteira abre com um toque |

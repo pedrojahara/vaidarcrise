@@ -1,6 +1,7 @@
 {# O topo da página: para que lado anda o risco de recessão, quanto a economia cresceu, as cinco pressões e, no
    mesmo desenho, o que acompanhamos sem mudar a placa. Fica num arquivo só para a página
-   principal e para a página de cada dia. #}
+   principal e para a página de cada dia. No celular (uma coluna só), as duas listas ficam atrás do botão com a
+   pergunta da leitora, para o blog vir logo depois da resposta; no computador, ficam abertas e o botão não aparece. #}
 <section class="nota" aria-label="Para onde vai o risco de recessão">
   <div class="topo">
     <div class="placa" role="img" aria-label="Risco {{ dir.palavra }}"><span{% if dir.longa %} class="longa"{% endif %}><b aria-hidden="true">{{ dir.seta }}</b>{{ dir.placa }}</span></div>
@@ -19,6 +20,9 @@
     </div>
     {% if r.encolhe %}<p class="r-enc">{{ r.encolhe }}</p>{% endif %}
   </div>{% endif %}
+  <div class="por-que" id="por-que">
+  <button class="pq" type="button" aria-expanded="false" aria-controls="pq-corpo"><span>{{ dir.pergunta }}</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="pq-corpo" id="pq-corpo">
   <p class="cab-p" id="cab-pressoes">As cinco pressões, nos últimos 3 meses</p>
   <ul class="partes" aria-labelledby="cab-pressoes">
     {% for x in dir.pressoes %}{% include "_parte.html" %}{% endfor %}
@@ -27,6 +31,21 @@
   <ul class="partes" aria-labelledby="cab-tambem">
     {% for x in dir.tambem %}{% include "_parte.html" %}{% endfor %}
   </ul>
+  </div>
+  </div>
+  <script>
+  /* O botão só aparece no celular (CSS). Um link para uma linha (/#parte-...) abre a lista e a linha. */
+  (function(){
+    var box=document.getElementById("por-que"),b=box.querySelector(".pq");
+    function abre(v){box.classList.toggle("aberto",v);b.setAttribute("aria-expanded",v?"true":"false")}
+    b.addEventListener("click",function(){abre(!box.classList.contains("aberto"))});
+    function alvo(){
+      var h=decodeURIComponent(location.hash.slice(1)),li=h.indexOf("parte-")===0&&document.getElementById(h);
+      if(!li)return;abre(true);var d=li.querySelector("details");if(d)d.open=true;li.scrollIntoView();
+    }
+    alvo();addEventListener("hashchange",alvo);
+  })();
+  </script>
   {% if post.pressao %}<p class="tend-noticias"><b class="{{ post.pressao.cls }}" aria-hidden="true">{{ post.pressao.simbolo }}</b> {{ post.pressao.frase }}</p>{% endif %}
   <p class="atual"><a href="/nota/">Como funciona</a> | {% if permalink %}Atualização de {{ dia_mes(dia) }}, às {{ hora }}{% else %}Atualizado em {{ dia_mes(dia) }} | próxima atualização às 06h30{% endif %}</p>
   {% if not permalink %}<p class="aviso" id="defasado" hidden><strong>Atenção: números velhos.</strong> Esta atualização tem mais de 36 horas. A atualização automática pode ter falhado; veja o <a href="{{ repo }}/commits/main">histórico</a>.</p>{% endif %}
