@@ -330,7 +330,10 @@ def direcao_ctx(rodada: dict, cfg: dict, cal: dict) -> dict:
             "desde": f"desde {mes_ano(desde, hoje=hoje)}" if desde[:7] < hoje[:7] else "neste mês",
             "conta": conta, "pendente": pend, "pressoes": pressoes, "tambem": tambem,
             "ritmo": ritmo_ctx(hoje, rodada, cal, enc), "ritmo_parte": next((x for x in partes if x["id"] == "ritmo"), None),
-            "placa": nome, "longa": len(nome) > 8}
+            "placa": nome, "longa": len(nome) > 8,
+            # No celular, as pressões ficam atrás de um botão com a pergunta da leitora.
+            "pergunta": ("Como estão as cinco pressões?" if d["estado"] == "encolhendo"
+                         else f"Por que está {d['estado']}? Veja as cinco pressões")}
 
 
 def gar_ctx(rodada: dict) -> dict | None:

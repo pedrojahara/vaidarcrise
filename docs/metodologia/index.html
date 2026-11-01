@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.className+=" js"</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Metodologia | Vai dar crise?</title>
 <meta name="description" content="Como o Vai dar crise? calcula para que lado anda o risco de recessão no Brasil: as cinco pressões, o vaivém normal de cada uma, o teste desde 2004, a leitura das notícias e a conta dos 44 países.">
@@ -95,6 +96,16 @@ a:hover{text-decoration-thickness:2px}
 .r-c.prev .r-v{color:var(--meta)}
 .r-enc{font:14px/1.4 var(--sistema);margin:10px 0 0}
 @media (prefers-reduced-motion: reduce){.p-cab .seta{transition:none}}
+/* no celular, as pressões ficam atrás deste botão; sem JavaScript ou no computador, a lista fica aberta e o botão some */
+.pq{display:none}
+@media (max-width:820px){
+  .js .pq{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;margin:14px 0 0;padding:12px 12px 12px 14px;
+    border:1px solid var(--fio);border-radius:10px;background:transparent;color:var(--tinta);font:600 16px/1.35 var(--sistema);text-align:left;cursor:pointer}
+  .js .pq .seta{width:18px;height:18px;flex:none;transition:transform .15s}
+  .js .por-que.aberto .pq .seta{transform:rotate(180deg)}
+  .js .por-que:not(.aberto) .pq-corpo{display:none}
+}
+@media (max-width:820px) and (prefers-reduced-motion: reduce){.js .pq .seta{transition:none}}
 .tend-noticias{font:15px/1.45 var(--sistema);margin:14px 0 0}
 .tend-noticias b{font-size:1.1em;margin-right:3px}
 .nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:10px 0 0}
@@ -359,7 +370,7 @@ a:hover{text-decoration-thickness:2px}
 <p>A palavra fica só no <code>data.json</code>; a página não a mostra, nem na linha fechada nem na aberta. Aberta, a linha diz só a frase da comparação, com os mesmos cortes: "A dívida está mais alta que em 96% dos meses desde 2006." No pior ou no melhor valor da série, a frase leva o sujeito da medida: "A parte da renda que vai para dívidas é a maior desde 2005, quando começa a série." Em Como funciona, a seção que explica a conta se chama "Quanto espaço ainda sobra?" (âncora <code>t-folga</code>).</p>
 <p>A folga não entra na soma. Nível alto e parado não marca a data de recessão nenhuma (veja a pesquisa de 166 países, abaixo); a folga diz quanto espaço sobra se a pressão continuar apertando. Na inflação esperada, a página diz também se ela está acima do teto da meta (4,5%).</p>
 <h3 id="o-topo-da-pagina">O topo da página</h3>
-<p>Abaixo da placa vêm, nesta ordem, o crescimento em 12 meses, as cinco pressões e Também acompanhamos. A primeira linha de cada pressão e de Também acompanhamos tem o nome à esquerda e, à direita, a palavra do que a medida fez em 3 meses (Apertou, Igual, Folgou; no emprego e nas reservas, Piorou, Igual, Melhorou; a dívida em reais ainda não tem palavra), seguida de uma seta para baixo, sem texto. A linha inteira abre com um toque; aberta, a seta vira para cima e a linha mostra o que vale para ela entre o vaivém normal e a frase da folga; nas linhas de Também acompanhamos, também por que ela importa (<code>direcao.por_que_importa</code> em <code>config/modelo.json</code>). A seta fica à direita porque foi o único ícone que se saiu melhor que nenhum ícone nos testes do Nielsen Norman Group, que a puseram à direita; à direita também é o padrão no celular na maioria dos sistemas de design (ao alcance do polegar) e deixa o nome alinhado com o texto de baixo. Mais que o lado, conta usar o mesmo em todas as linhas.</p>
+<p>Abaixo da placa vêm, nesta ordem, o crescimento em 12 meses, as cinco pressões e Também acompanhamos. Quando a página tem uma coluna só (celular e tablet em pé, até 820 px), as duas listas ficam atrás de um botão com a pergunta da leitora ("Por que está subindo? Veja as cinco pressões") e o blog vem logo depois, porque a placa muda umas duas vezes por ano e o post muda todo dia; um link para uma linha (<code>/#parte-...</code>) abre a lista e a linha. Sem JavaScript, a lista fica aberta. A primeira linha de cada pressão e de Também acompanhamos tem o nome à esquerda e, à direita, a palavra do que a medida fez em 3 meses (Apertou, Igual, Folgou; no emprego e nas reservas, Piorou, Igual, Melhorou; a dívida em reais ainda não tem palavra), seguida de uma seta para baixo, sem texto. A linha inteira abre com um toque; aberta, a seta vira para cima e a linha mostra o que vale para ela entre o vaivém normal e a frase da folga; nas linhas de Também acompanhamos, também por que ela importa (<code>direcao.por_que_importa</code> em <code>config/modelo.json</code>). A seta fica à direita porque foi o único ícone que se saiu melhor que nenhum ícone nos testes do Nielsen Norman Group, que a puseram à direita; à direita também é o padrão no celular na maioria dos sistemas de design (ao alcance do polegar) e deixa o nome alinhado com o texto de baixo. Mais que o lado, conta usar o mesmo em todas as linhas.</p>
 <p><strong>Crescimento em 12 meses.</strong> É o bloco logo abaixo da placa. O título tem à direita a palavra do bloco, no mesmo lugar e no mesmo estilo do Apertou de cada pressão. O bloco não tem frase de rodapé: a faixa normal e o erro do Focus continuam calculados (seção <code>ritmo</code> de <code>config/calibracao.json</code>) e ficam explicados em Como funciona. Os três números saem de <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/ritmo.py"><code>src/ritmo.py</code></a>:</p>
 <table>
 <thead>
