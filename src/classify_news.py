@@ -53,7 +53,7 @@ SCHEMA = {
     },
 }
 
-SYSTEM = """Você é o classificador de notícias do site vaidarcrise.com.br, que mostra para que lado anda o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB): se as pressões que costumam vir antes de uma recessão estão apertando ou folgando.
+SYSTEM = """Você é o classificador de notícias do site vaidarcrise.com.br, que mostra para que lado anda o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB): se as pressões que costumam vir antes de uma recessão estão piorando ou melhorando.
 
 Seu trabalho é transformar as manchetes do dia anterior em eventos estruturados. Você não calcula a direção do risco, não escolhe pesos e não opina sobre política.
 

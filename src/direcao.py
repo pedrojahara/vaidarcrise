@@ -6,10 +6,10 @@ A regra (config/modelo.json, seção "direcao"; os cortes de cada pressão em co
    famílias (parte da renda que vai para parcelas e juros), desconfiança de quem investe (dólar e juro de
    10 anos, que contam como uma só),
    inflação esperada (Focus, 12 meses) e juro (Selic).
-2. Cada uma é comparada com 3 meses antes. Apertou se andou para o lado ruim mais que três quartos do
-   vaivém normal dela desde 2002 (1,4826 × desvio absoluto mediano das mudanças de 3 meses); folgou se
+2. Cada uma é comparada com 3 meses antes. Piorou se andou para o lado ruim mais que três quartos do
+   vaivém normal dela desde 2002 (1,4826 × desvio absoluto mediano das mudanças de 3 meses); melhorou se
    andou isso para o lado bom; no resto, ficou igual.
-3. A soma (as que apertaram menos as que folgaram) decide: 2 ou mais, subindo; −2 ou menos, caindo.
+3. A soma (as que pioraram menos as que melhoraram) decide: 2 ou mais, subindo; −2 ou menos, caindo.
 4. A direção só muda se o novo resultado se repetir no mês seguinte.
 5. Se a prévia do PIB (IBC-Br, média de 3 meses contra os 3 anteriores) cair mais de 1,5%, o topo diz
    que a economia está encolhendo.
@@ -19,7 +19,7 @@ na soma. Cada parte mostra também a folga: o nível de hoje contra todos os mes
 
 Uma medida sem corte em config/calibracao.json (uma série nova, como as reservas, antes do próximo
 --calibrar) tem o corte tirado na hora, com a mesma conta, das mudanças de 3 meses que já existem desde
-o começo da amostra. Com menos de MIN_MUDANCAS mudanças, ela fica sem lado (nem apertou, nem igual).
+o começo da amostra. Com menos de MIN_MUDANCAS mudanças, ela fica sem lado (nem piorou, nem igual).
 
 Nos meses passados, cada série entra com o atraso típico de divulgação (o mesmo do teste desde 2004).
 No mês corrente, entra o último dado que já saiu, comparado com o de 3 meses antes dele.
@@ -162,7 +162,7 @@ def escala_robusta(xs: list[float]) -> float:
 
 
 def lado(x: float | None, corte: float | None, ruim: int) -> int | None:
-    """+1 apertou, −1 folgou, 0 igual (no lado ruim da medida). Sem dado ou sem corte, None."""
+    """+1 piorou, −1 melhorou, 0 igual (no lado ruim da medida). Sem dado ou sem corte, None."""
     if x is None or corte is None:
         return None
     x *= ruim
@@ -379,7 +379,7 @@ def calibrar(ate: str) -> dict:
             blocos.append({"inicio": x["mes"], "fim": x["mes"], "estado": c})
     return {
         "cortes": {k: round(v, 4) for k, v in escalas.items()},
-        "o_que_e": "Escala de cada medida: 1,4826 × desvio absoluto mediano das mudanças de 3 meses desde 2002, com o atraso de divulgação de cada série. A pressão aperta ou folga quando a mudança passa de corte_vaivem (config/modelo.json) vezes essa escala, o que a página chama de vaivém normal. Em 'divida', a régua das contas: dívida bruta desde 2007, resultado sem juros antes.",
+        "o_que_e": "Escala de cada medida: 1,4826 × desvio absoluto mediano das mudanças de 3 meses desde 2002, com o atraso de divulgação de cada série. A pressão piora ou melhora quando a mudança passa de corte_vaivem (config/modelo.json) vezes essa escala, o que a página chama de vaivém normal. Em 'divida', a régua das contas: dívida bruta desde 2007, resultado sem juros antes.",
         "teste": {
             "de": teste[0]["mes"], "ate": teste[-1]["mes"], "meses": n,
             "parte_dos_meses": {ESTADOS[e]: parte(e) for e in (1, 0, -1, 2)},

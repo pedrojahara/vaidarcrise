@@ -44,6 +44,16 @@ MOLDES = [
     (re.compile(r"\b(juros? longos?|juros futuros|prêmios? de risco|dólar e juro longo)\b", re.I),
      "palavra que o site trocou: diga o juro de 10 anos (o que o governo paga, acima da inflação, para pegar dinheiro "
      "emprestado por uns 10 anos) e, para a pressão, Desconfiança de quem investe"),
+    # PERSONA.md, "Os nomes do site": cada pressão piorou, ficou igual ou melhorou, citada pelo nome, e só as
+    # categorias do topo (as cinco pressões e Também acompanhamos).
+    (re.compile(r"\b(apert(ou|aram|ava|avam|ando|a|am|ar|ad[oa]s?)|folg(ou|aram|ava|avam|ando|a|am|ar|ad[oa]s?))\b", re.I),
+     "palavra que o site trocou: cada pressão piorou, ficou igual ou melhorou"),
+    (re.compile(r"\b(uma|duas|três|quatro|cinco|nenhuma) das (cinco )?pressões\b", re.I),
+     "conta as pressões em vez de citar cada uma pelo nome"),
+    (re.compile(r"(?<=\w\s)(Contas do governo|Dívidas das famílias|Desconfiança de quem investe|Inflação esperada|Juro)\b"),
+     "nome de pressão com maiúscula no meio da frase: use minúscula e artigo ('as contas do governo', 'o juro')"),
+    (re.compile(r"(?:^|(?<=[.!?:]\s))No bolso\b"),
+     "categoria que o site não usa: use os nomes do topo (as cinco pressões e Também acompanhamos)"),
 ]
 
 FRASE = re.compile(r"(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9\"“])")
@@ -152,6 +162,14 @@ def graves_post(post: dict, tipo: str = "dia", dados: str | None = None, **_) ->
     return out
 
 
+def _nomes_do_site() -> set[str]:
+    """Os nomes das pressões, das linhas do topo e dos assuntos das notícias (config/modelo.json)."""
+    import json
+    from pathlib import Path
+    cfg = json.loads((Path(__file__).resolve().parent.parent / "config" / "modelo.json").read_text())
+    return {*cfg["direcao"]["nomes"].values(), *cfg["fatores"].values()}
+
+
 def _moldes(texto: str) -> list[str]:
     return [nome for rx, nome in MOLDES if rx.search(texto)]
 
@@ -187,7 +205,14 @@ def problemas_post(post: dict, tipo: str = "dia", dados: str | None = None, hoje
         out.append(f"título com {len(t)} caracteres")
     if t.rstrip().endswith("?"):
         out.append("título em forma de pergunta")
-    out += [f"título: {m}" for m in _moldes(t) if m in ("travessão", "ponto de exclamação", "palavra de alarme", "palavra com lado")]
+    out += [f"título: {m}" for m in _moldes(t) if m in ("travessão", "ponto de exclamação", "palavra de alarme", "palavra com lado")
+            or m.startswith(("palavra que o site trocou", "conta as pressões"))]
+    # Os rótulos do resumo da semana usam os nomes do site: uma pressão ou um assunto das notícias.
+    nomes = _nomes_do_site()
+    for sec in post.get("secoes") or []:
+        for it in sec.get("itens") or []:
+            if it.get("rotulo") and it["rotulo"] not in nomes:
+                out.append(f"rótulo \"{it['rotulo']}\" não é nome do site: use o nome de uma pressão ou de um assunto das notícias")
     for i, p in enumerate(post["paragrafos"], 1):
         out += [f"parágrafo {i}: {m}" for m in _moldes(p)]
         if len(p.split()) > 65:

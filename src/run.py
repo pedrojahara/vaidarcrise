@@ -156,7 +156,7 @@ def main() -> dict | None:
     res = model.calcular(snap, cfg, cal, nivel_ant, guardados(recentes_r), bruto_ant)
     res["direcao"] = direcao.calcular(snap, cfg, cal, [r for r in todas_r if r["gerado_em"][:10] < hoje.isoformat()], hoje)
     d = res["direcao"]
-    print(f"direção: {d['estado']} desde {d['desde']} (soma {d['soma']}; {d['apertaram']} apertaram, {d['folgaram']} folgaram)"
+    print(f"direção: {d['estado']} desde {d['desde']} (soma {d['soma']}; {d['apertaram']} pioraram, {d['folgaram']} melhoraram)"
           f" | num ano ruim, PIB {res['gar']['cenario_ruim']:+.2f}% | faltando: {res['faltando']} | reaproveitados: {res['reaproveitados']}")
 
     # 2. As notícias do dia anterior.

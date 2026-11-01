@@ -94,10 +94,12 @@ def mes_antes(ref: str, n: int) -> str:
 # -------------------------------------------------------------------- direção
 ESTADO = {"subindo": ("↑", "mais", "Subindo"), "igual": ("→", "igual", "Igual"), "caindo": ("↓", "menos", "Caindo"),
           "encolhendo": ("↓", "mais", "Encolhendo")}
-LADO_PRESSAO = {1: ("Apertou", "mais"), 0: ("Igual", "igual"), -1: ("Folgou", "menos"), None: ("Sem dado", "igual")}
-LADO_RITMO = {1: ("Esfriou", "mais"), 0: ("Igual", "igual"), -1: ("Acelerou", "menos"), None: ("Sem dado", "igual")}
+LADO_PRESSAO = {1: ("Piorou", "mais"), 0: ("Igual", "igual"), -1: ("Melhorou", "menos"), None: ("Sem dado", "igual")}
+# O verbo de cada lado, no singular e no plural, para a frase que cita as pressões pelo nome.
+VERBO_PRESSAO = {1: ("piorou", "pioraram"), 0: ("ficou igual", "ficaram iguais"), -1: ("melhorou", "melhoraram"),
+                 None: ("ficou sem dado", "ficaram sem dado")}
+LADO_RITMO = {1: ("Desacelerou", "mais"), 0: ("Igual", "igual"), -1: ("Acelerou", "menos"), None: ("Sem dado", "igual")}
 LADO_EMPREGO = {1: ("Piorou", "mais"), 0: ("Igual", "igual"), -1: ("Melhorou", "menos"), None: ("Sem dado", "igual")}
-NUMERAIS = ["Nenhuma", "Uma", "Duas", "Três", "Quatro", "Cinco"]
 
 
 def mes_ano(ref: str, com_ano: bool | None = None, hoje: str | None = None) -> str:
@@ -226,8 +228,8 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
         normal = alta + " " + _quanto_normal(d, "%")[0].lower() + _quanto_normal(d, "%")[1:]
         if j:
             normal += " O juro de 10 anos " + _quanto_normal(j, " ponto")[0].lower() + _quanto_normal(j, " ponto")[1:]
-            normal += (" Os dois contam como um só. Se um aperta e o outro fica dentro do normal, a pressão aperta; "
-                       "se um aperta e o outro folga, ela fica igual.")
+            normal += (" Os dois contam como um só. Se um piora e o outro fica dentro do normal, a pressão piora; "
+                       "se um piora e o outro melhora, ela fica igual.")
     elif pid == "inflacao" and m and m["agora"] is not None:
         cd = 2 if abs(m["agora"] - p["teto_meta_inflacao"]) < 0.05 else _casas(m)  # perto do teto da meta, a segunda casa decide
         frases.append(f"Os bancos (Focus) esperam que os preços subam {num(m['agora'], cd)}% "
@@ -257,7 +259,7 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
             normal = _quanto_normal(m, "%")
     if not frases:
         frases.append("Sem dado nesta atualização.")
-    return {"id": pid, "nome": p["nomes"][pid], "palavra": palavra, "cls": cls, "na_soma": x["na_soma"],
+    return {"id": pid, "nome": p["nomes"][pid], "palavra": palavra, "cls": cls, "na_soma": x["na_soma"], "lado": x["lado"],
             "frase": frases[0], "mais": frases[1:], "normal": normal,
             "folga": folga_ctx(pid, x.get("folga"), p.get("teto_meta_inflacao")),
             "importa": p["por_que_importa"].get(pid, ""), "causas": p["causas"].get(pid),
@@ -290,6 +292,29 @@ def ritmo_ctx(dia: str, rodada: dict, cal: dict, enc: str | None) -> dict | None
             "encolhe": enc}
 
 
+# O artigo de cada pressão, para citá-la no meio da frase ("as contas do governo", "o juro").
+ARTIGO = {"contas": "as", "parcelas": "as", "mercado": "a", "inflacao": "a", "juro": "o"}
+
+
+def _e(nomes: list[str]) -> str:
+    return nomes[0] if len(nomes) == 1 else ", ".join(nomes[:-1]) + " e " + nomes[-1]
+
+
+def frase_pressoes(pressoes: list[dict]) -> str:
+    """O que cada pressão fez em 3 meses, citada pelo nome, nunca pela contagem ("quatro das cinco")."""
+    frases = []
+    for lado in (1, 0, -1, None):
+        nomes = [f"{ARTIGO.get(x['id'], 'a')} {x['nome'][0].lower()}{x['nome'][1:]}" for x in pressoes if x["lado"] == lado]
+        if nomes:
+            um, varios = VERBO_PRESSAO[lado]
+            frases.append(f"{_e(nomes)} {um if len(nomes) == 1 else varios}.")
+    frases = ["Nos últimos 3 meses, " + frases[0], *[f[0].upper() + f[1:] for f in frases[1:]]]
+    for lado in (1, -1):
+        if not any(x["lado"] == lado for x in pressoes):
+            frases.append(f"Nenhuma pressão {VERBO_PRESSAO[lado][0]}.")
+    return " ".join(frases)
+
+
 def direcao_ctx(rodada: dict, cfg: dict, cal: dict) -> dict:
     """O topo da página: para que lado anda o risco, o crescimento da economia, as cinco pressões e o que mais acompanhamos."""
     d = rodada["resultado"]["direcao"]
@@ -297,18 +322,7 @@ def direcao_ctx(rodada: dict, cfg: dict, cal: dict) -> dict:
     seta, cls, nome = ESTADO[d["estado"]]
     partes = [_parte_ctx(x, cfg, hoje) for x in d["partes"]]
     pressoes = [x for x in partes if x["na_soma"]]
-    ap, fo = d["apertaram"], d["folgaram"]
-    if ap and fo:
-        conta = (f"{NUMERAIS[ap]} das cinco pressões que costumam vir antes de uma recessão {'apertou' if ap == 1 else 'apertaram'} "
-                 f"nos últimos 3 meses, e {NUMERAIS[fo].lower()} {'folgou' if fo == 1 else 'folgaram'}.")
-    elif ap:
-        conta = (f"{NUMERAIS[ap]} das cinco pressões que costumam vir antes de uma recessão {'apertou' if ap == 1 else 'apertaram'} "
-                 "nos últimos 3 meses. Nenhuma folgou.")
-    elif fo:
-        conta = (f"{NUMERAIS[fo]} das cinco pressões que costumam vir antes de uma recessão {'folgou' if fo == 1 else 'folgaram'} "
-                 "nos últimos 3 meses. Nenhuma apertou.")
-    else:
-        conta = "Nenhuma das cinco pressões que costumam vir antes de uma recessão andou mais que o normal nos últimos 3 meses."
+    conta = frase_pressoes(pressoes)
     enc = None
     if d["estado"] == "encolhendo":
         rit = next((x for x in d["partes"] if x["id"] == "ritmo"), {})
@@ -486,9 +500,9 @@ def dados_publicos(rodada: dict, ctx: dict) -> dict:
     g = res.get("gar") or {}
     return {
         "direcao": d["estado"], "desde": d["desde"], "pergunta": ctx["cfg"]["pergunta"], "atualizado_em": rodada["gerado_em"],
-        "soma": d["soma"], "apertaram": d["apertaram"], "folgaram": d["folgaram"],
+        "soma": d["soma"], "pioraram": d["apertaram"], "melhoraram": d["folgaram"],
         "partes": [{"id": x["id"], "nome": ctx["cfg"]["direcao"]["nomes"][x["id"]], "na_soma": x["na_soma"],
-                    "lado": {1: "apertou", 0: "igual", -1: "folgou", None: None}[x["lado"]],
+                    "lado": {1: "piorou", 0: "igual", -1: "melhorou", None: None}[x["lado"]],
                     "medidas": {k: {c: (round(v, 4) if isinstance(v, float) else v) for c, v in m.items()}
                                 for k, m in x["medidas"].items()},
                     "folga": x.get("folga")} for x in d["partes"]],
