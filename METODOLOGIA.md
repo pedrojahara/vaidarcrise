@@ -1,6 +1,6 @@
 # Metodologia
 
-A regra da direção está em [`src/direcao.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/direcao.py), com as escolhas fixas em [`config/modelo.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json) (seção `direcao`) e o que sai dos dados (o vaivém normal de cada medida e o teste desde 2004) em [`config/calibracao.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/calibracao.json) (seção `direcao`). As séries mensais do Brasil ficam em [`data/historico/series.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/series.json). `python src/direcao.py --calibrar AAAA-MM` refaz os cortes e o teste. Cada atualização grava o hash dos dois arquivos de regra.
+A regra da direção está em [`src/direcao.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/direcao.py), com as escolhas fixas em [`config/modelo.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json) (seção `direcao`) e o que sai dos dados (o vaivém normal de cada medida e o teste desde 2004) em [`config/calibracao.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/config/calibracao.json) (seção `direcao`). As séries mensais do Brasil ficam em [`data/historico/series.json`](https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/series.json). `python src/direcao.py --calibrar AAAA-MM` refaz os cortes e o teste. O crescimento em 12 meses que fica logo abaixo da placa sai de [`src/ritmo.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/ritmo.py), e `python src/ritmo.py --calibrar` refaz a faixa normal dele e o erro do Focus (seção `ritmo` de `config/calibracao.json`). Cada atualização grava o hash dos dois arquivos de regra.
 
 ## A pergunta
 
@@ -27,7 +27,15 @@ O nome do site fala em crise; a métrica é recessão técnica.
 | Inflação esperada | Mediana do Focus para o IPCA dos 12 meses seguintes | Focus | subir | 0 |
 | Juro | Selic meta | BCB 432 | subir | 0 |
 
-Fora da soma, a página mostra o **ritmo da economia** (IBC-Br dessazonalizado, BCB 24364: média dos 3 últimos meses contra a dos 3 anteriores; atraso de 2 meses) e o **emprego** (desocupação da PNAD, BCB 24369; atraso de 1 mês). Eles descrevem a economia de agora; o emprego é o último a piorar numa recessão.
+Fora da soma, a conta acompanha o **ritmo da economia** (IBC-Br dessazonalizado, BCB 24364: média dos 3 últimos meses contra a dos 3 anteriores; atraso de 2 meses). Ele só decide o "encolhendo" (passo 7) e não é linha da página. Abaixo das cinco pressões, em **Também acompanhamos**, a página mostra três linhas que não mudam a placa:
+
+| Linha | Medida | Série | Lado ruim | Atraso de divulgação |
+| --- | --- | --- | --- | --- |
+| Emprego | Desocupação da PNAD | BCB 24369 | subir | 1 mês |
+| Reservas em dólar | Reservas internacionais do Banco Central, conceito liquidez, fim do mês, em US$ milhões; variação % em 3 meses | BCB 3546 | cair | 1 mês |
+| Dívida em reais | Parte da dívida pública federal em reais | Tesouro, Relatório Mensal da Dívida, posta à mão em `config/modelo.json` (`direcao.divida_reais`) | cair; a linha ainda não diz o que a parte fez em 3 meses | posta à mão quando sai o relatório do mês |
+
+O emprego é o último a piorar numa recessão, porque as empresas primeiro vendem menos e só depois demitem. As reservas e a dívida em reais amortecem um susto do dólar, mas não avisam que uma recessão vem. Por isso nenhuma das três entra na soma.
 
 **2. Cada medida contra 3 meses antes.** A mudança é a diferença em pontos (em % no dólar e na média do IBC-Br) entre o dado de referência e o de 3 meses antes dele.
 
@@ -43,8 +51,11 @@ Fora da soma, a página mostra o **ritmo da economia** (IBC-Br dessazonalizado, 
 | Juro de 10 anos | 0,58 ponto | 0,43 ponto |
 | Inflação esperada | 0,42 ponto | 0,32 ponto |
 | Selic | 1,11 ponto | 0,83 ponto |
-| Ritmo da economia (fora da soma) | 1,19% | 0,89% |
-| Emprego (fora da soma) | 0,74 ponto | 0,56 ponto |
+| Ritmo da economia (só para o "encolhendo"; não é linha da página) | 1,19% | 0,89% |
+| Emprego (Também acompanhamos) | 0,74 ponto | 0,56 ponto |
+| Reservas em dólar (Também acompanhamos) | tirada na hora das variações de 3 meses desde 2002 | 0,75 × essa escala; o valor aparece depois da primeira coleta do Mac |
+
+As reservas ainda não têm corte em `config/calibracao.json`. Enquanto não têm, o corte sai na hora, com a mesma conta, das variações de 3 meses que a coleta do dia traz desde janeiro de 2002 (`src/fetch_data.py` busca essa série inteira); com menos de 36 variações, a linha fica sem lado. Só a atualização do Mac coleta a série, e a página esconde a linha enquanto ela não tem dado. Depois que `src/historico.py` guardar a série, `python src/direcao.py --calibrar` grava o corte das reservas junto com os outros.
 
 Dólar e juro longo contam como uma pressão só: o sinal da soma dos dois lados (se um aperta e o outro folga, fica igual; se um aperta e o outro fica igual, apertou).
 
@@ -56,7 +67,7 @@ Dólar e juro longo contam como uma pressão só: o sinal da soma dos dois lados
 
 **Meses passados e mês corrente.** Na linha do tempo e no teste, cada mês usa o dado com o atraso típico de divulgação da série. No mês corrente, entra o último dado que já saiu, comparado com o de 3 meses antes dele: o dólar de ontem, a dívida de dois meses atrás. O Focus mensal vem da série guardada e, nos meses do site, da coleta de cada atualização.
 
-**A folga.** Cada pressão (menos o dólar, cujo valor em reais não se compara entre décadas) e o emprego mostram o nível de hoje contra todos os meses desde o começo da série: a dívida desde 2006, as parcelas desde 2005, o juro de 10 anos desde 2005, a inflação esperada desde 2001, o juro descontado da inflação esperada (Selic e Focus, pela fórmula de Fisher) desde 2002 e o desemprego desde 2012.
+**A folga.** Cada pressão (menos o dólar, cujo valor em reais não se compara entre décadas) e o emprego mostram o nível de hoje contra todos os meses desde o começo da série: a dívida desde 2006, as parcelas desde 2005, o juro de 10 anos desde 2005, a inflação esperada desde 2001, o juro descontado da inflação esperada (Selic e Focus, pela fórmula de Fisher) desde 2002 e o desemprego desde 2012. As reservas em dólar também ficam sem folga, porque o valor em dólares de hoje não se compara com o de 2002.
 
 | Onde está hoje | Folga |
 | --- | --- |
@@ -68,7 +79,24 @@ Dólar e juro longo contam como uma pressão só: o sinal da soma dos dois lados
 
 A folga não entra na soma. Nível alto e parado não marca a data de recessão nenhuma (veja a pesquisa de 166 países, abaixo); a folga diz quanto espaço sobra se a pressão continuar apertando. Na inflação esperada, a página diz também se ela está acima do teto da meta (4,5%).
 
-**O que segura.** Três fatos fixos, com fonte, que amortecem um susto sem mudar a direção: a dívida federal em reais (96%, Tesouro, agosto de 2026), as reservas em dólar do Banco Central e a autonomia do Banco Central (Lei Complementar 179, de 2021).
+### O topo da página
+
+Abaixo da placa vêm, nesta ordem, o crescimento da economia, as cinco pressões e Também acompanhamos. Cada linha das pressões e de Também acompanhamos termina numa pergunta azul com uma seta para baixo ("Isso é muito? Quem mexe?", "Isso é muito? Quem decide?", "Isso é muito? Por que importa?", "Para que servem?", "Por que isso protege?"). Aberta, a linha mostra o que vale para ela entre o vaivém normal, a folga e quem mexe, e a pergunta vira "Fechar". A seta com texto segue testes de uso do Nielsen Norman Group, em que a seta para baixo foi o único ícone que se saiu melhor que nenhum ícone, e a troca do "+" por seta e texto no GOV.UK.
+
+**Quanto a economia cresceu em 12 meses.** É o bloco logo abaixo da placa, com três números ([`src/ritmo.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/ritmo.py)):
+
+| Número | Conta | Hoje |
+| --- | --- | --- |
+| Agora | IBC-Br dessazonalizado (BCB 24364): soma dos 12 meses até o último dado contra a soma dos 12 meses anteriores | 1,4%, até agosto de 2026 |
+| Antes | A mesma conta, 12 meses antes | 3,5%, até agosto de 2025 |
+| Previsão | Mediana do Focus para o PIB do ano corrente e do seguinte, com peso pelos meses que faltam: ((12 − m) × ano corrente + m × ano seguinte) / 12, com m o mês do Focus (`indicadores.focus_pib`) | 1,4%, para os próximos 12 meses |
+
+- **A palavra do bloco** compara agora e antes, os dois com uma casa, como a página mostra. Diferença de até 0,1 ponto é "no mesmo ritmo"; acima disso, "acelerando" ou "desacelerando". A palavra descreve e não é sinal: o crescimento do Brasil varia muito de um ano para o outro, e a direção não usa esta conta.
+- **O normal** são os percentis 25 e 75 do crescimento em 12 meses desde 2004, hoje de 0,8% a 3,9% ao ano (`config/calibracao.json`, `ritmo.faixa`).
+- **A previsão só aparece na tela.** O PIB esperado pelo Focus não entra em conta nenhuma do site: nem na direção, nem no "encolhendo", nem na palavra do bloco. A página diz quanto os bancos erram. O erro médio absoluto da previsão de 12 meses do Focus contra o PIB que o IBGE divulgou depois, com a mesma ponderação dos anos (o PIB anual é a média do ano contra a do ano anterior), foi de 1,46 ponto em 252 meses, de janeiro de 2004 a dezembro de 2024. Só em 40% desses meses o erro ficou dentro de 1 ponto.
+- **Quando a economia está encolhendo** (passo 7), o bloco ganha uma linha com a queda da prévia do PIB nos 3 últimos meses contra os 3 anteriores, que é a conta que decide o "encolhendo".
+
+**Também acompanhamos.** Abaixo das cinco pressões, no mesmo desenho, ficam as três linhas da tabela do passo 1 que não mudam a placa. Aberta, cada uma diz numa frase por que não muda (`direcao.nao_muda_a_placa` em `config/modelo.json`). O emprego e as reservas em dólar dizem Piorou, Igual ou Melhorou, pela mesma regra de corte das pressões (passo 4); só o emprego tem folga. A dívida em reais mostra a parte da dívida pública federal em reais (96%, Tesouro, agosto de 2026), posta à mão todo mês, e ainda não diz o que ela fez em 3 meses. A autonomia do Banco Central (Lei Complementar 179, de 2021) fica no texto de quem decide, na linha do Juro.
 
 ## Por que esta regra
 
@@ -227,7 +255,8 @@ Cada atualização guarda o prompt (hash), o modelo usado, a resposta bruta e a 
 - Refazer o teste com os dados como eram divulgados na época (com revisões).
 - Testar a direção em outros países com as mesmas cinco pressões, para ver se a ordem do PIB seguinte se repete fora do Brasil.
 - Teste de troca de nomes: reprocessar uma amostra de notícias trocando os atores e publicar se a classificação mudou.
-- Pôr o valor das reservas em dólar em "O que segura", com a série do Banco Central.
+- Conferir a linha Reservas em dólar na primeira atualização do Mac com a série do Banco Central (BCB 3546) e, depois que `src/historico.py` guardar a série, gravar o corte dela com `python src/direcao.py --calibrar`.
+- Dar à linha Dívida em reais uma palavra de 3 meses, com a série mensal do Tesouro no lugar do número posto à mão.
 
 ## Apêndice: o PIB num ano ruim, pela conta de 44 países
 
@@ -237,7 +266,7 @@ A aba Como funciona mostra, no fim, um segundo número que não entra na direç�
 
 | Entrada | Definição |
 | --- | --- |
-| Crescimento em 12 meses | IBC-Br dessazonalizado (BCB 24364): média dos 3 últimos meses contra os mesmos 3 meses um ano antes |
+| Crescimento contra um ano antes (3 meses) | IBC-Br dessazonalizado (BCB 24364): média dos 3 últimos meses contra os mesmos 3 meses um ano antes |
 | Crescimento médio em 10 anos | Média do crescimento em 12 meses do PIB do IBGE nos 40 últimos trimestres divulgados |
 | Selic: variação em 12 meses | Selic meta (BCB 432) de hoje menos a de um ano antes, em pontos |
 | Inflação: variação em 12 meses | IPCA em 12 meses (BCB 13522) do último mês menos o de um ano antes, em pontos |
@@ -296,7 +325,8 @@ O ganho é modesto e, como a direção, a conta não acerta a data em que cada r
 - [FMI, índice de preços de commodities, via FRED](https://fred.stlouisfed.org/series/PALLFNFINDEXM)
 - Rousseeuw e Croux (1993), *Alternatives to the median absolute deviation*, Journal of the American Statistical Association, sobre a escala robusta
 - Tesouro Nacional, Relatório Mensal da Dívida Pública Federal (agosto de 2026), para a parte da dívida federal em reais
-- [Lei Complementar 179, de 2021](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp179.htm), autonomia do Banco Central
+- [Lei Complementar 179, de 2021](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp179.htm), autonomia do Banco Central, citada na linha do Juro
+- Nielsen Norman Group, testes de uso de ícones, e GOV.UK Design System, o componente de acordeão, para a pergunta com seta que abre cada linha do topo
 - [FMI, World Economic Outlook](https://www.imf.org/en/Publications/WEO), dívida bruta do governo da Argentina em 2001 e do Japão, citadas em Como funciona
 - Mian, Sufi e Verner (2017), *Household debt and business cycles worldwide*, Quarterly Journal of Economics
 - An, Jalles e Loungani (2018), *How well do economists forecast recessions?*, FMI

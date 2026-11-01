@@ -39,6 +39,7 @@ src/calibra.py     regressão de quantil no painel de 44 países (data/historico
                    e, no fim, os cortes e o teste da direção → config/calibracao.json, data/historico/mensal.json
                    (precisa de pandas e statsmodels)
 src/direcao.py --calibrar AAAA-MM   só os cortes e o teste da direção, sem refazer a conta dos 44 países
+src/ritmo.py --calibrar             a faixa normal do crescimento em 12 meses e o erro do Focus (bloco abaixo da placa)
 ```
 
 ## Rodar

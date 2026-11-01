@@ -11,7 +11,7 @@
  "amostra_inicio": "2002-01",
  "direcao": {
   "o_que_e": "A direção do risco: as cinco pressões que costumam vir antes de uma recessão, cada uma comparada com 3 meses antes (src/direcao.py). Não é previsão: diz para que lado o risco andou.",
-  "partes": "Contas do governo (dívida bruta do governo geral, BCB 13762; antes de 2007, o resultado sem juros, BCB 5793), dívidas das famílias (comprometimento de renda, BCB 29034), dólar e juro longo (dólar PTAX, BCB 1, em %; Tesouro IPCA+ de cerca de 10 anos; contam como uma só: se um aperta e o outro folga, fica igual), inflação esperada (Focus, IPCA 12 meses, suavizada) e juro (Selic meta, BCB 432). Fora da soma: ritmo da economia (IBC-Br, média de 3 meses contra os 3 anteriores) e emprego (desocupação da PNAD, BCB 24369).",
+  "partes": "Contas do governo (dívida bruta do governo geral, BCB 13762; antes de 2007, o resultado sem juros, BCB 5793), dívidas das famílias (comprometimento de renda, BCB 29034), dólar e juro longo (dólar PTAX, BCB 1, em %; Tesouro IPCA+ de cerca de 10 anos; contam como uma só: se um aperta e o outro folga, fica igual), inflação esperada (Focus, IPCA 12 meses, suavizada) e juro (Selic meta, BCB 432). Fora da soma: ritmo da economia (IBC-Br, média de 3 meses contra os 3 anteriores; só decide o \"encolhendo\" e não aparece como linha), emprego (desocupação da PNAD, BCB 24369), reservas internacionais (BCB 3546) e a parte da dívida federal em reais (Tesouro, à mão).",
   "amostra_inicio": "2002-01",
   "teste_inicio": "2004-01",
   "janela_meses": 3,
@@ -20,7 +20,7 @@
   "confirma_meses": 2,
   "encolhe_pct": 1.5,
   "teto_meta_inflacao": 4.5,
-  "atraso": "Nos meses passados e no teste, cada série entra com o atraso típico de divulgação: dívida e resultado sem juros 2 meses, comprometimento de renda 3, IBC-Br 2, desocupação 1, os outros 0. No mês corrente, entra o último dado que saiu, comparado com o de 3 meses antes dele.",
+  "atraso": "Nos meses passados e no teste, cada série entra com o atraso típico de divulgação: dívida e resultado sem juros 2 meses, comprometimento de renda 3, IBC-Br 2, desocupação 1, reservas 1, os outros 0. No mês corrente, entra o último dado que saiu, comparado com o de 3 meses antes dele.",
   "nomes": {
    "contas": "Contas do governo",
    "parcelas": "Dívidas das famílias",
@@ -28,16 +28,20 @@
    "inflacao": "Inflação esperada",
    "juro": "Juro",
    "ritmo": "Ritmo da economia",
-   "emprego": "Emprego"
+   "emprego": "Emprego",
+   "reservas": "Reservas em dólar",
+   "divida_reais": "Dívida em reais"
   },
   "quem_mexe": {
    "contas": "Quem mexe: o governo e o Congresso, nos gastos e nos impostos, e o juro do Banco Central, que muda a conta dos juros da dívida.",
    "parcelas": "Quem mexe: as famílias e os bancos, quando pegam e dão empréstimo, e o juro do Banco Central, que muda o preço da parcela.",
    "mercado": "Quem mexe: quem compra e vende dólar e títulos do governo, aqui e lá fora. As contas do governo e o juro dos Estados Unidos pesam nessa escolha.",
    "inflacao": "Quem mexe: o Banco Central, com o juro, e preços que vêm de fora, como o petróleo e o dólar.",
-   "juro": "Quem decide: o Banco Central, oito vezes por ano.",
+   "juro": "Quem decide: o Banco Central, oito vezes por ano. Desde 2021, a lei dá mandato fixo ao presidente e aos diretores do Banco Central. O governo não pode trocá-los por não gostar de uma decisão.",
    "ritmo": "Mostra como a economia está agora. Se a prévia do PIB cair mais de 1,5% em 3 meses, o topo passa a dizer que a economia está encolhendo.",
-   "emprego": "O emprego costuma ser o último a piorar numa recessão: as empresas primeiro vendem menos e só depois demitem."
+   "emprego": "Quem perde o emprego corta gastos e atrasa parcelas, e é aí que a recessão chega ao bolso.",
+   "reservas": "Num susto, quando muita gente quer dólar ao mesmo tempo, o Banco Central vende parte dessas reservas e o dólar sobe menos.",
+   "divida_reais": "Quando o dólar sobe, a dívida em reais não cresce junto. Em 2002, boa parte da dívida era corrigida pelo dólar. Quando o dólar subiu, a dívida cresceu de uma vez."
   },
   "causas": {
    "contas": "/causas/#t-divida",
@@ -46,22 +50,28 @@
    "inflacao": "/causas/#t-precos",
    "juro": "/causas/#t-freio",
    "ritmo": "/causas/#t-freio",
-   "emprego": "/causas/#t-doem"
+   "emprego": "/causas/#t-doem",
+   "reservas": "/causas/#t-outros",
+   "divida_reais": "/causas/#t-divida"
   },
-  "o_que_segura": [
-   {
-    "texto": "Quase toda a dívida do governo é em reais: 96% da dívida federal, pelo Tesouro, em agosto de 2026. Quando o dólar sobe, a dívida não cresce junto, como cresceu em 2002.",
-    "fonte": "Tesouro Nacional, Relatório Mensal da Dívida"
-   },
-   {
-    "texto": "O Banco Central guarda reservas em dólar{reservas}. Num susto, ele vende parte delas e o dólar sobe menos.",
-    "fonte": "Banco Central"
-   },
-   {
-    "texto": "O Banco Central decide o juro com autonomia garantida por lei desde 2021. O diretor não pode ser trocado no meio do mandato por causa de uma decisão.",
-    "fonte": "Lei Complementar 179, de 2021"
-   }
-  ]
+  "perguntas": {
+   "padrao": "Isso é muito? Quem mexe?",
+   "juro": "Isso é muito? Quem decide?",
+   "emprego": "Isso é muito? Por que importa?",
+   "reservas": "Para que servem?",
+   "divida_reais": "Por que isso protege?"
+  },
+  "nao_muda_a_placa": {
+   "emprego": "Esta linha não muda a placa, porque o desemprego costuma subir depois que a recessão já começou.",
+   "reservas": "Esta linha não muda a placa, porque as reservas não avisam que uma recessão vem. Elas protegem num susto.",
+   "divida_reais": "Esta linha não muda a placa, porque a dívida em reais não avisa que uma recessão vem. Ela protege num susto do dólar."
+  },
+  "divida_reais": {
+   "valor": 96,
+   "ref": "2026-08",
+   "fonte": "Tesouro Nacional, Relatório Mensal da Dívida (participação da dívida pública federal em reais). Atualizar à mão todo mês, com a data do relatório.",
+   "texto_fonte": "O número sai uma vez por mês no Relatório Mensal da Dívida, do Tesouro."
+  }
  },
  "gar": {
   "metodo": "Crescimento em risco (growth-at-risk), como no FMI (Adrian, Boyarchenko e Giannone, 2019; FMI, Global Financial Stability Report, out/2017): regressão de quantil do crescimento do PIB nos 4 trimestres seguintes.",

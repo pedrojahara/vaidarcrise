@@ -71,7 +71,7 @@ CONTA_FUNCIONA = re.compile(r"\b((não|nem) (entra|entram|mexe|mexem|move|movem|
                             r"(n[oa] |o |a )?(número|conta|soma|direção)|entram? n[oa] (número|conta|soma|direção)|"
                             r"só se (mexe|move)|(fora|dentro) d[oa] (número|conta|soma|direção))\b", re.I)
 
-# Fato do dia com a direção parada: o topo da página já mostra a direção, desde quando e as cinco pressões.
+# Fato do dia com a direção parada: o topo da página já mostra a direção e o que cada pressão fez em 3 meses.
 DIRECAO_REPETIDA = re.compile(r"\b(risco( de recessão)?[^.]{0,30}\b(segue|seguiu|continua|continuou|está|fica|ficou|"
                               r"permanece|permaneceu)\b[^.]{0,12}\b(subindo|igual|caindo|em alta|em queda)|"
                               r"direção (do risco )?(segue|continua|está|fica|permanece|é|de)\b|"

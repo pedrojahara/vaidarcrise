@@ -264,13 +264,14 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 | Coisa | Nome no site |
 | --- | --- |
 | Abas | Hoje, O que causa recessão, Como funciona |
-| A direção | "O risco de recessão está subindo", "está igual" ou "está caindo", desde (mês); "A economia está encolhendo" quando a prévia do PIB cai mais de 1,5% em 3 meses. Na placa: Subindo, Igual, Caindo, Encolhendo |
+| A direção | "O risco de recessão está subindo", "está igual" ou "está caindo"; nos resumos, com desde quando ("desde junho de 2026"); "A economia está encolhendo" quando a prévia do PIB cai mais de 1,5% em 3 meses. Na placa: Subindo, Igual, Caindo, Encolhendo |
+| O crescimento, logo abaixo da placa | Quanto a economia cresceu em 12 meses: Antes, Agora, Previsão; Acelerando, Desacelerando ou No mesmo ritmo; "O normal desde 2004 vai de (x)% a (y)% ao ano"; a previsão é "dos bancos (Focus)" |
 | As cinco pressões | Contas do governo, Dívidas das famílias, Dólar e juro longo, Inflação esperada, Juro |
-| Fora da soma | Ritmo da economia, Emprego |
-| O que cada pressão fez em 3 meses | Apertou, Igual, Folgou; no ritmo, Esfriou, Igual, Acelerou; no emprego, Piorou, Igual, Melhorou |
+| As linhas que não mudam a placa | Também acompanhamos: Emprego, Reservas em dólar, Dívida em reais. Aberta, cada uma diz "Esta linha não muda a placa, porque..." |
+| O que cada linha fez em 3 meses | Apertou, Igual, Folgou; no emprego e nas reservas, Piorou, Igual, Melhorou |
+| A pergunta que abre cada linha | Isso é muito? Quem mexe? (no juro, Quem decide?; no emprego, Por que importa?); nas reservas, Para que servem?; na dívida em reais, Por que isso protege?; aberta, Fechar |
 | A régua de cada pressão | o vaivém normal de 3 meses (só no topo aberto e em Como funciona) |
 | Quanto falta para o pior já visto | Folga: Nenhuma, Quase nenhuma, Pouca, Média, Muita |
-| O que amortece um susto | O que segura |
 | Os assuntos das notícias | Ritmo da economia, Juro e inflação, Dívidas das famílias, Dólar e juro longo, Contas do governo, Emprego, Economia lá fora |
 | A conta dos 44 países (só em Como funciona) | o PIB num ano ruim (1 chance em 10); "num ano ruim, em tempos normais" para a comparação |
 | Boletim Focus | os bancos (Focus) |
@@ -333,8 +334,8 @@ Um fato, contado até o bolso. O que o dólar fez em 3 meses fica no topo, em "D
 - `src/classify_news.py`, regras 12 a 16: títulos de evento e "por quê" com a mesma linguagem.
 - `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, direção repetida sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados, previsão de recessão e risco em porcentagem que sobram depois da reescrita barram o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
 - `src/dossie.py`: as frases de dados de cada assunto, que o post usa como contexto (queda no verbo, mês por extenso, sem sigla solta).
-- `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas; no topo, as frases de cada pressão, do vaivém normal e da folga saem de `src/build_site.py`.
-- `config/modelo.json`, seção `direcao`: os nomes das pressões, quem mexe em cada uma e o que segura.
+- `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas; no topo, as frases do crescimento em 12 meses, de cada pressão, do vaivém normal e da folga saem de `src/build_site.py`.
+- `config/modelo.json`, seção `direcao`: os nomes das pressões e das linhas de Também acompanhamos, quem mexe em cada uma, a pergunta que abre cada linha, a frase de por que a linha não muda a placa e a parte da dívida em reais, posta à mão todo mês.
 - Textos escritos à mão (`editor/`, `templates/`) seguem a lista acima na leitura. `METODOLOGIA.md` é técnica de propósito, para quem quer refazer a conta, mas usa os mesmos nomes do site.
 - `CLAUDE.md` manda qualquer sessão do Claude que escreva no repositório passar o texto por este guia.
 

@@ -13,8 +13,12 @@ A regra (config/modelo.json, seção "direcao"; os cortes de cada pressão em co
 5. Se a prévia do PIB (IBC-Br, média de 3 meses contra os 3 anteriores) cair mais de 1,5%, o topo diz
    que a economia está encolhendo.
 
-O ritmo da economia e o emprego aparecem, mas não entram na soma. Cada parte mostra também a folga: o
-nível de hoje contra todos os meses desde o começo da série.
+O ritmo da economia, o emprego e as reservas internacionais do Banco Central aparecem, mas não entram
+na soma. Cada parte mostra também a folga: o nível de hoje contra todos os meses desde o começo da série.
+
+Uma medida sem corte em config/calibracao.json (uma série nova, como as reservas, antes do próximo
+--calibrar) tem o corte tirado na hora, com a mesma conta, das mudanças de 3 meses que já existem desde
+o começo da amostra. Com menos de MIN_MUDANCAS mudanças, ela fica sem lado (nem apertou, nem igual).
 
 Nos meses passados, cada série entra com o atraso típico de divulgação (o mesmo do teste desde 2004).
 No mês corrente, entra o último dado que já saiu, comparado com o de 3 meses antes dele.
@@ -55,15 +59,21 @@ MEDIDAS = {
     "juro": {"serie": "selic_meta", "como": "pontos", "ruim": 1, "atraso": 0},
     "ritmo": {"serie": "ibcbr", "como": "media", "ruim": -1, "atraso": 2},
     "emprego": {"serie": "desocupacao", "como": "pontos", "ruim": 1, "atraso": 1},
+    # Reservas internacionais (BCB 3546, US$ milhões, fim do mês): cair é o lado ruim.
+    "reservas": {"serie": "reservas", "como": "pct", "ruim": -1, "atraso": 1},
 }
 # As partes da página, na ordem do topo. As cinco primeiras entram na soma.
-PARTES = ["contas", "parcelas", "mercado", "inflacao", "juro", "ritmo", "emprego"]
+PARTES = ["contas", "parcelas", "mercado", "inflacao", "juro", "ritmo", "emprego", "reservas"]
 # As medidas de cada parte.
 QUAIS = {"contas": ["divida", "primario"], "parcelas": ["parcelas"], "mercado": ["dolar", "juro_longo"],
-         "inflacao": ["inflacao"], "juro": ["juro"], "ritmo": ["ritmo"], "emprego": ["emprego"]}
+         "inflacao": ["inflacao"], "juro": ["juro"], "ritmo": ["ritmo"], "emprego": ["emprego"],
+         "reservas": ["reservas"]}
 NA_SOMA = ["contas", "parcelas", "mercado", "inflacao", "juro"]
+# Uma medida sem corte na calibração só ganha corte na hora se tiver pelo menos isto de mudanças de 3 meses.
+MIN_MUDANCAS = 36
 # A folga: a série cujo nível se compara com a história e o lado ruim. O juro usa o juro descontado da
-# inflação esperada; o dólar não tem folga (o nível em reais não se compara entre décadas).
+# inflação esperada; o dólar não tem folga (o nível em reais não se compara entre décadas), nem as reservas
+# (o nível em dólares de hoje não se compara com o de 2002).
 FOLGA = {"contas": ("divida_bruta", 1), "parcelas": ("comprometimento_renda", 1), "mercado": ("juro_real_longo", 1),
          "inflacao": ("focus_ipca_12m", 1), "juro": ("juro_real", 1), "emprego": ("desocupacao", 1)}
 
@@ -150,9 +160,9 @@ def escala_robusta(xs: list[float]) -> float:
     return 1.4826 * mediana([abs(x - med) for x in xs])
 
 
-def lado(x: float | None, corte: float, ruim: int) -> int | None:
-    """+1 apertou, −1 folgou, 0 igual (no lado ruim da medida)."""
-    if x is None:
+def lado(x: float | None, corte: float | None, ruim: int) -> int | None:
+    """+1 apertou, −1 folgou, 0 igual (no lado ruim da medida). Sem dado ou sem corte, None."""
+    if x is None or corte is None:
         return None
     x *= ruim
     return 1 if x > corte else -1 if x < -corte else 0
@@ -164,7 +174,7 @@ def referencias(series: dict, mes: str, ao_vivo: bool) -> dict[str, str | None]:
     saiu (mês corrente, ao vivo)."""
     out = {}
     for k, med in MEDIDAS.items():
-        s = series[med["serie"]]
+        s = series.get(med["serie"], {})
         if ao_vivo:
             ms = [m for m in s if m <= mes]
             out[k] = max(ms) if ms else None
@@ -177,16 +187,18 @@ def mes_da_regra(series: dict, mes: str, cortes: dict, p: dict, ao_vivo: bool = 
     """As medidas, os lados de cada parte e a soma num mês."""
     j = p["janela_meses"]
     refs = referencias(series, mes, ao_vivo)
-    mud = {k: mudanca(MEDIDAS[k], series[MEDIDAS[k]["serie"]], refs[k], j) if refs[k] else None for k in MEDIDAS}
-    lados = {k: lado(mud[k], p["corte_vaivem"] * cortes[k], MEDIDAS[k]["ruim"]) for k in MEDIDAS}
+    mud = {k: mudanca(MEDIDAS[k], series.get(MEDIDAS[k]["serie"], {}), refs[k], j) if refs[k] else None for k in MEDIDAS}
+    corte = {k: p["corte_vaivem"] * cortes[k] if cortes.get(k) is not None else None for k in MEDIDAS}
+    lados = {k: lado(mud[k], corte[k], MEDIDAS[k]["ruim"]) for k in MEDIDAS}
     partes = {
         # Antes de 2007 não há série da dívida: vale o resultado sem juros.
-        "contas": lados["divida"] if lados["divida"] is not None else lado(mud["primario"], p["corte_vaivem"] * cortes["divida"], 1),
+        "contas": lados["divida"] if lados["divida"] is not None else lado(mud["primario"], corte["divida"], 1),
         "parcelas": lados["parcelas"],
         "mercado": (None if lados["dolar"] is None else
                     lados["dolar"] if lados["juro_longo"] is None else
                     (lados["dolar"] + lados["juro_longo"] > 0) - (lados["dolar"] + lados["juro_longo"] < 0)),
         "inflacao": lados["inflacao"], "juro": lados["juro"], "ritmo": lados["ritmo"], "emprego": lados["emprego"],
+        "reservas": lados["reservas"],
     }
     soma_vals = [partes[k] for k in NA_SOMA if partes[k] is not None]
     soma = sum(soma_vals) if soma_vals else None
@@ -195,8 +207,30 @@ def mes_da_regra(series: dict, mes: str, cortes: dict, p: dict, ao_vivo: bool = 
             "encolhe": mud["ritmo"] is not None and mud["ritmo"] < -p["encolhe_pct"]}
 
 
+def mudancas_da_amostra(series: dict, k: str, ate: str, p: dict) -> list[float]:
+    """As mudanças de 3 meses de uma medida em cada mês desde o começo da amostra até `ate`, com o atraso
+    de divulgação da série (a base do corte, na calibração e na hora)."""
+    med = MEDIDAS[k]
+    s = series.get(med["serie"], {})
+    xs = [mudanca(med, s, mais(mstr(n), -med["atraso"]), p["janela_meses"])
+          for n in range(mnum(p["amostra_inicio"]), mnum(ate) + 1)]
+    return [x for x in xs if x is not None]
+
+
+def completar_cortes(series: dict, cortes: dict, p: dict, ate: str) -> dict[str, float | None]:
+    """Os cortes da calibração e, para a medida que não tem corte lá (uma série nova), o corte tirado na hora
+    com a mesma conta de calibrar(). Com menos de MIN_MUDANCAS mudanças, a medida fica sem corte (None)."""
+    out = dict(cortes)
+    for k in MEDIDAS:
+        if out.get(k) is None:
+            xs = mudancas_da_amostra(series, k, ate, p)
+            out[k] = round(escala_robusta(xs), 4) if len(xs) >= MIN_MUDANCAS else None
+    return out
+
+
 def linha_do_tempo(series: dict, ate: str, cortes: dict, p: dict, ao_vivo_no_fim: bool = True) -> list[dict]:
     """O estado mês a mês desde o começo da amostra, com a confirmação de um mês e o 'encolhendo' por cima."""
+    cortes = completar_cortes(series, cortes, p, ate)
     meses = [mstr(n) for n in range(mnum(p["amostra_inicio"]), mnum(ate) + 1)]
     out = []
     atual = cand = None
@@ -242,9 +276,10 @@ def _folga(series: dict, k: str, ref_mes: str | None) -> dict | None:
 def calcular(snap: dict, cfg: dict, cal: dict, rodadas: list[dict] | None = None, hoje: dt.date | None = None) -> dict:
     """A direção de hoje, cada parte com o dado de agora e o de 3 meses antes, a folga e a linha do tempo."""
     hoje = hoje or dt.date.today()
-    p, cortes = cfg["direcao"], cal["direcao"]["cortes"]
+    p = cfg["direcao"]
     series = mensais(snap, rodadas)
     mes = hoje.isoformat()[:7]
+    cortes = completar_cortes(series, cal["direcao"]["cortes"], p, mes)
     linha = linha_do_tempo(series, mes, cortes, p)
     agora = linha[-1]
     j = p["janela_meses"]
@@ -254,14 +289,15 @@ def calcular(snap: dict, cfg: dict, cal: dict, rodadas: list[dict] | None = None
         k -= 1
     medidas = {}
     for m, med in MEDIDAS.items():
-        s = series[med["serie"]]
+        s = series.get(med["serie"], {})
         ref = agora["refs"][m]
         if not ref:
             continue
         a, b = s.get(ref), s.get(mais(ref, -j))
         medidas[m] = {"agora": a[1] if a else None, "dia": a[0] if a else None, "ref": ref,
                       "antes": b[1] if b else None, "dia_antes": b[0] if b else None, "ref_antes": mais(ref, -j),
-                      "mudanca": agora["mudancas"][m], "corte": p["corte_vaivem"] * cortes[m],
+                      "mudanca": agora["mudancas"][m],
+                      "corte": p["corte_vaivem"] * cortes[m] if cortes.get(m) is not None else None,
                       "lado": agora["lados"][m], "como": med["como"]}
     partes = []
     for nome in PARTES:
@@ -310,11 +346,9 @@ def calibrar(ate: str) -> dict:
     series = mensais()
     j = p["janela_meses"]
     meses = [mstr(n) for n in range(mnum(p["amostra_inicio"]), mnum(ate) + 1)]
-    cortes = {}
-    for k, med in MEDIDAS.items():
-        s = series[med["serie"]]
-        xs = [mudanca(med, s, mais(m, -med["atraso"]), j) for m in meses]
-        cortes[k] = [x for x in xs if x is not None]
+    # Uma série sem história bastante (MIN_MUDANCAS) fica sem corte aqui e sem lado na página.
+    cortes = {k: mudancas_da_amostra(series, k, ate, p) for k in MEDIDAS}
+    cortes = {k: v for k, v in cortes.items() if len(v) >= MIN_MUDANCAS}
     # Contas: dívida onde há, resultado sem juros antes (como no teste).
     div = {m: mudanca(MEDIDAS["divida"], series["divida_bruta"], mais(m, -2), j) for m in meses}
     pri = {m: mudanca(MEDIDAS["primario"], series["primario_12m"], mais(m, -2), j) for m in meses}
@@ -377,7 +411,8 @@ def main() -> None:
     print(d["estado"], "desde", d["desde"], "| soma", d["soma"], "| pendente", d["pendente"])
     for x in d["partes"]:
         print(f"  {x['id']:9s} lado {x['lado']}  " + "; ".join(
-            f"{k}: {m['antes']} ({m['ref_antes']}) -> {m['agora']} ({m['ref']}) mud {m['mudanca']:+.2f} corte {m['corte']:.2f}"
+            f"{k}: {m['antes']} ({m['ref_antes']}) -> {m['agora']} ({m['ref']}) mud {m['mudanca']:+.2f} "
+            + (f"corte {m['corte']:.2f}" if m["corte"] is not None else "sem corte")
             for k, m in x["medidas"].items() if m["mudanca"] is not None) + (f" | folga {x['folga']['pior_que_pct']}%" if x["folga"] else ""))
 
 

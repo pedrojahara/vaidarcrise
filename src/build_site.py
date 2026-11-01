@@ -18,6 +18,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import calendario  # noqa: E402
+import ritmo  # noqa: E402
 import model  # noqa: E402
 import og_image  # noqa: E402
 
@@ -115,6 +116,16 @@ def _quando(m: dict) -> str:
     return f"de {mes_nome(a)} a {mes_nome(b)}"
 
 
+def _casas(m: dict) -> int:
+    """Uma casa, ou duas quando, com uma, a mudança mostrada contradiria o vaivém (82,0% para 82,9% parece 0,9 ponto,
+    menos que o corte de 0,95, mas a mudança de verdade foi 0,98)."""
+    if m.get("corte") is None or m.get("agora") is None or m.get("antes") is None:
+        return 1
+    vista = abs(round(m["agora"], 1) - round(m["antes"], 1))
+    passou = m.get("lado") not in (None, 0)
+    return 2 if (passou and vista <= m["corte"]) or (not passou and vista > m["corte"]) else 1
+
+
 def _quanto_normal(m: dict, unidade: str) -> str:
     """Quanto a medida andou contra o vaivém normal dela: 'passou raspando', 'dentro do normal'."""
     mud, corte = abs(m["mudanca"]), m["corte"]
@@ -164,13 +175,14 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
     """Uma linha do topo: o nome, o que aconteceu em 3 meses, o vaivém normal, a folga e quem mexe."""
     p = cfg["direcao"]
     pid, ms = x["id"], x["medidas"]
-    tabela = LADO_RITMO if pid == "ritmo" else LADO_EMPREGO if pid == "emprego" else LADO_PRESSAO
+    tabela = LADO_RITMO if pid == "ritmo" else LADO_EMPREGO if pid in ("emprego", "reservas") else LADO_PRESSAO
     palavra, cls = tabela[x["lado"]]
     frases, normal = [], ""
     m = next(iter(ms.values()), None)
     if pid == "contas" and "divida" in ms and ms["divida"]["agora"] is not None:
         d = ms["divida"]
-        frases.append(f"A dívida do governo foi de {num(d['antes'])}% para {num(d['agora'])}% do PIB, {_quando(d)}.")
+        cd = _casas(d)
+        frases.append(f"A dívida do governo foi de {num(d['antes'], cd)}% para {num(d['agora'], cd)}% do PIB, {_quando(d)}.")
         normal = _quanto_normal(d, " ponto")
         pr = ms.get("primario")
         if pr and pr.get("agora") is not None and pr.get("antes") is not None and abs(pr["agora"] - pr["antes"]) >= 0.05:
@@ -186,8 +198,9 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
             if pr["agora"] < pr["antes"] and d["agora"] > d["antes"]:
                 frases.append("A dívida sobe mesmo assim, porque os juros sobre ela pesam mais que essa melhora.")
     elif pid == "parcelas" and m and m["agora"] is not None:
-        frases.append(f"A parte da renda das famílias que vai para parcelas e juros foi de {num(m['antes'])}% para "
-                      f"{num(m['agora'])}%, {_quando(m)}.")
+        cd = _casas(m)
+        frases.append(f"A parte da renda das famílias que vai para parcelas e juros foi de {num(m['antes'], cd)}% para "
+                      f"{num(m['agora'], cd)}%, {_quando(m)}.")
         normal = _quanto_normal(m, " ponto")
     elif pid == "mercado" and "dolar" in ms and ms["dolar"]["agora"] is not None:
         d = {**ms["dolar"], "diario": True}
@@ -201,7 +214,7 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
             normal += " Juro de 10 anos: " + _quanto_normal(j, " ponto")[0].lower() + _quanto_normal(j, " ponto")[1:]
             normal += " Os dois contam como um só: se um aperta e o outro folga, fica igual."
     elif pid == "inflacao" and m and m["agora"] is not None:
-        cd = 2 if abs(m["agora"] - p["teto_meta_inflacao"]) < 0.05 else 1  # perto do teto da meta, a segunda casa decide
+        cd = 2 if abs(m["agora"] - p["teto_meta_inflacao"]) < 0.05 else _casas(m)  # perto do teto da meta, a segunda casa decide
         frases.append(f"Os bancos (Focus) esperam que os preços subam {num(m['agora'], cd)}% "
                       f"nos próximos 12 meses. Em {mes_nome(m['ref_antes'])}, esperavam {num(m['antes'], cd)}%.")
         normal = _quanto_normal(m, " ponto")
@@ -218,19 +231,53 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
                       f"nos 3 meses até {mes_nome(m['ref'])}, contra os 3 meses anteriores.")
         normal = _quanto_normal(m, "%")
     elif pid == "emprego" and m and m["agora"] is not None:
-        frases.append(f"O desemprego foi de {num(m['antes'])}% para {num(m['agora'])}%, no trimestre até "
-                      f"{mes_nome(m['ref'])}, contra o trimestre até {mes_nome(m['ref_antes'])}.")
+        cd = _casas(m)
+        frases.append(f"O desemprego foi de {num(m['antes'], cd)}% no trimestre até {mes_nome(m['ref_antes'])} para "
+                      f"{num(m['agora'], cd)}% no trimestre até {mes_nome(m['ref'])}.")
         normal = _quanto_normal(m, " ponto")
+    elif pid == "reservas" and m and m["agora"] is not None and m["antes"] is not None:
+        frases.append(f"O Banco Central tinha US$ {num(m['agora'] / 1000)} bilhões guardados em dólar em {mes_nome(m['ref'])}. "
+                      f"Em {mes_nome(m['ref_antes'])}, tinha US$ {num(m['antes'] / 1000)} bilhões.")
+        if m.get("corte") is not None and m.get("mudanca") is not None:
+            normal = _quanto_normal(m, "%")
     if not frases:
         frases.append("Sem dado nesta atualização.")
     return {"id": pid, "nome": p["nomes"][pid], "palavra": palavra, "cls": cls, "na_soma": x["na_soma"],
             "frase": frases[0], "mais": frases[1:], "normal": normal,
             "folga": folga_ctx(pid, x.get("folga"), p.get("teto_meta_inflacao")),
-            "quem": p["quem_mexe"].get(pid, ""), "causas": p["causas"].get(pid)}
+            "quem": p["quem_mexe"].get(pid, ""), "causas": p["causas"].get(pid),
+            "pergunta": p["perguntas"].get(pid, p["perguntas"]["padrao"]), "fora": p["nao_muda_a_placa"].get(pid)}
+
+
+def _divida_reais_ctx(cfg: dict, hoje: str) -> dict:
+    """A parte da dívida federal em reais: um número do Tesouro por mês, posto à mão em config/modelo.json."""
+    p = cfg["direcao"]
+    d = p["divida_reais"]
+    return {"id": "divida_reais", "nome": p["nomes"]["divida_reais"], "palavra": None, "cls": "igual", "na_soma": False,
+            "frase": f"Em {mes_ano(d['ref'], com_ano=True)}, {num(d['valor'], 0)}% da dívida do governo federal era em reais.",
+            "mais": [], "normal": "", "folga": None, "quem": p["quem_mexe"]["divida_reais"] + " " + d["texto_fonte"],
+            "causas": p["causas"].get("divida_reais"), "pergunta": p["perguntas"]["divida_reais"],
+            "fora": p["nao_muda_a_placa"]["divida_reais"]}
+
+
+def ritmo_ctx(dia: str, rodada: dict, cal: dict, enc: str | None) -> dict | None:
+    """O bloco do crescimento logo abaixo da placa: agora, um ano antes e a previsão dos bancos."""
+    b = ritmo.bloco(dia, rodada, cal)
+    if not b:
+        return None
+    def ate(ref: str) -> str:
+        return f"até {MESES[int(ref[5:7]) - 1][:3]}/{ref[:4]}"
+    seta, cls = {"acelerando": ("↑", "menos"), "desacelerando": ("↓", "mais"), "no mesmo ritmo": ("→", "igual")}[b["muda"]]
+    return {"agora": num(b["agora"]) + "%", "ate_agora": ate(b["ref"]), "antes": num(b["antes"]) + "%", "ate_antes": ate(b["ref_antes"]),
+            "previsao": num(b["previsao"]) + "%" if b["previsao"] is not None else None,
+            "muda": b["muda"][0].upper() + b["muda"][1:], "seta": seta, "cls": cls,
+            "faixa": f"O normal desde 2004 vai de {num(b['faixa'][0])}% a {num(b['faixa'][1])}% ao ano.",
+            "erro": f"A previsão é dos bancos (Focus), que erram, em média, {num(b['erro'])} ponto." if b["previsao"] is not None else "",
+            "encolhe": enc}
 
 
 def direcao_ctx(rodada: dict, cfg: dict, cal: dict) -> dict:
-    """O topo da página: para que lado anda o risco, desde quando, as cinco pressões, o ritmo, o emprego e o que segura."""
+    """O topo da página: para que lado anda o risco, o crescimento da economia, as cinco pressões e o que mais acompanhamos."""
     d = rodada["resultado"]["direcao"]
     hoje = rodada["gerado_em"][:10]
     seta, cls, nome = ESTADO[d["estado"]]
@@ -248,32 +295,27 @@ def direcao_ctx(rodada: dict, cfg: dict, cal: dict) -> dict:
                  "nos últimos 3 meses. Nenhuma apertou.")
     else:
         conta = "Nenhuma das cinco pressões que costumam vir antes de uma recessão andou mais que o normal nos últimos 3 meses."
+    enc = None
     if d["estado"] == "encolhendo":
         rit = next((x for x in d["partes"] if x["id"] == "ritmo"), {})
-        mud = ((rit.get("medidas") or {}).get("ritmo") or {}).get("mudanca")
-        conta = (f"A prévia do PIB do Banco Central caiu {num(abs(mud))}% em 3 meses, contra os 3 anteriores. " if mud is not None else "") + conta
-    t = (cal.get("direcao") or {}).get("teste") or {}
-    pib = (t.get("pib_12m_depois") or {}).get(d["estado"])
-    historia = None
-    if pib is not None and d["estado"] != "encolhendo":
-        historia = (f"Desde 2004, depois dos meses em que o risco esteve {d['estado']}, o PIB "
-                    f"{'cresceu em média ' + num(pib) + '%' if pib > 0.05 else 'ficou parado, em média,' if pib >= -0.05 else 'caiu em média ' + num(abs(pib)) + '%'}"
-                    " nos 12 meses seguintes.")
+        r = (rit.get("medidas") or {}).get("ritmo") or {}
+        if r.get("mudanca") is not None:
+            enc = (f"A prévia do PIB do Banco Central caiu {num(abs(r['mudanca']))}% nos 3 meses até {mes_nome(r['ref'])}, "
+                   "contra os 3 meses anteriores.")
+            conta = enc + " " + conta
     desde = d["desde"]
     pend = None
     if d.get("pendente") and d["pendente"] != d["estado"]:
         pend = f"Pelos dados de hoje, a direção seria {d['pendente']}. Ela só muda se o mês que vem repetir."
-    res = rodada["resultado"]
-    reservas = next((x for x in res.get("indicadores", []) if x["id"] == "reservas" and x.get("valor")), None)
-    segura = []
-    for s in cfg["direcao"]["o_que_segura"]:
-        r = f", que somavam US$ {num(reservas['valor'] / 1000, 0)} bilhões em {mes_ano(reservas['ref'], hoje=hoje)}" if reservas else ""
-        segura.append({"texto": s["texto"].replace("{reservas}", r), "fonte": s["fonte"]})
+    # Abaixo das cinco pressões, no mesmo desenho: o que não muda a placa (o ritmo vira o bloco do crescimento).
+    tambem = [x for x in partes if not x["na_soma"] and x["id"] != "ritmo"
+              and not (x["id"] == "reservas" and x["frase"] == "Sem dado nesta atualização.")]
+    tambem.append(_divida_reais_ctx(cfg, hoje))
     return {"estado": d["estado"], "seta": seta, "cls": cls, "nome": nome, "palavra": d["estado"],
             "titulo": "A economia está encolhendo" if d["estado"] == "encolhendo" else f"O risco de recessão está {d['estado']}",
             "desde": f"desde {mes_ano(desde, hoje=hoje)}" if desde[:7] < hoje[:7] else "neste mês",
-            "conta": conta, "historia": historia, "pendente": pend,
-            "pressoes": pressoes, "fora": [x for x in partes if not x["na_soma"]], "segura": segura,
+            "conta": conta, "pendente": pend, "pressoes": pressoes, "tambem": tambem,
+            "ritmo": ritmo_ctx(hoje, rodada, cal, enc), "ritmo_parte": next((x for x in partes if x["id"] == "ritmo"), None),
             "placa": nome, "longa": len(nome) > 8}
 
 
