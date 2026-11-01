@@ -38,4 +38,4 @@ else
     echo "push falhou (tentativa $i)"; sleep $((2 ** i))
   done
 fi
-echo "=== $(date '+%Y-%m-%dT%H:%M:%S%z') fim (nível ${nivel})"
+echo "=== $(date '+%Y-%m-%dT%H:%M:%S%z') fim (direção ${direcao})"
