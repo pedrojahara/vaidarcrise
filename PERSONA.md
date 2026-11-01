@@ -178,24 +178,24 @@ Cada post responde a uma pergunta só e compara com o próprio período. Ela qua
 | --- | --- | --- | --- | --- |
 | Retrato do Brasil | Por que o site existe, e como usá-lo? | No cartão do topo e na rolagem, como o post de 28/10; refeito quando o editor decidir | Até 800 palavras | O que o site faz e para quem |
 | Fato do dia | O que mudou ontem, e o que isso muda para mim? | De segunda a sábado | Até 100 palavras | O fato, com número e régua |
-| A semana | O que a semana mudou, e o que vem na próxima? | Domingo | Até 250 palavras | O que se moveu na semana |
-| O mês | Estamos melhor ou pior que há um mês? E no bolso? | Primeiro domingo do mês, no lugar da semana | Até 450 palavras, com as tabelas (300 de texto) | O que mudou no mês |
+| Resumo da semana | O que a semana mudou, e o que vem na próxima? | Domingo | Até 250 palavras | O que se moveu na semana |
+| Resumo do mês | Estamos melhor ou pior que há um mês? E no bolso? | Primeiro domingo do mês, no lugar do resumo da semana | Até 450 palavras, com as tabelas (300 de texto) | O que mudou no mês |
 
 **Cada informação tem um dono.** O post não repete o que a página já mostra ao lado dele. Ele diz o que só ele pode dizer: a ligação entre os fatos, a comparação e o efeito no bolso.
 
 | Informação | Dono | O que o post faz com ela |
 | --- | --- | --- |
-| A direção do risco e desde quando | A placa do topo | O fato do dia só fala da direção se ela mudou. A semana e o mês dizem desde quando ela está assim. |
+| A direção do risco e desde quando | A placa do topo | O fato do dia só fala da direção se ela mudou. Os resumos da semana e do mês dizem desde quando ela está assim. |
 | Notícias de ontem, por assunto | A caixa "Para onde as notícias empurram" | O fato do dia conta uma, a mais importante, até o bolso. |
-| Próximas datas | A lateral "Datas importantes" | O fato do dia só cita o dado que sai hoje. A semana diz o que olhar na semana seguinte. |
-| O que cada pressão fez em 3 meses, e a folga | O topo, abaixo da placa | O mês conta só o que mudou de lado. |
+| Próximas datas | A lateral "Datas importantes" | O fato do dia só cita o dado que sai hoje. O resumo da semana diz o que olhar na semana seguinte. |
+| O que cada pressão fez em 3 meses, e a folga | O topo, abaixo da placa | O resumo do mês conta só o que mudou de lado. |
 | Como a recessão acontece | O que causa recessão | Uma frase de mecanismo, quando o fato pede. |
 | Como a direção é calculada | Como funciona | Uma frase, quando a notícia parece contradizer a direção: "Isso não muda a direção do risco, porque a Bolsa fica fora da conta." |
 
-- **Compare com o próprio período.** O fato do dia, com ontem; a semana, com a semana anterior; o mês, com o mês anterior. Comparação mais longa só como régua de um número (contra um ano antes, contra o normal).
+- **Compare com o próprio período.** O fato do dia, com ontem; o resumo da semana, com a semana anterior; o resumo do mês, com o mês anterior. Comparação mais longa só como régua de um número (contra um ano antes, contra o normal).
 - **Dia sem novidade** ganha um fato do dia de uma frase, que diz isso. É informação.
-- **Nada de frase do post anterior.** O fato de hoje não copia o de ontem; a semana não copia o fato do dia.
-- **A semana e o mês saem do registro, não dos posts.** O código junta os fatos das rodadas da semana ou do mês, e a inteligência artificial só escreve.
+- **Nada de frase do post anterior.** O fato de hoje não copia o de ontem; o resumo da semana não copia o fato do dia.
+- **Os resumos saem do registro, não dos posts.** O código junta os fatos das rodadas da semana ou do mês, e a inteligência artificial só escreve.
 
 ## Como explicar um mecanismo
 
@@ -275,7 +275,7 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 | Boletim Focus | os bancos (Focus) |
 | Copom | o Banco Central decide o juro (Copom) |
 | Diferença entre taxas | pontos, abreviado "pt" em tabela |
-| Tipos de post | Retrato do Brasil, Fato do dia, A semana, O mês |
+| Tipos de post | Retrato do Brasil, Fato do dia, Resumo da semana, Resumo do mês |
 | Quem escreve o post | inteligência artificial (Claude) |
 
 **Palavras com lado.** Fora do texto: "gastança", "rombo", "herança maldita", "austericídio", "desgoverno", "farra". No lugar, o número e o que ele mede.
@@ -327,8 +327,8 @@ Um fato, contado até o bolso. O que o dólar fez em 3 meses fica no topo, em "D
 
 ## Onde o guia vale no código
 
-- `src/escreve_post.py`: um prompt por tipo de post (fato do dia, a semana, o mês), com as regras comuns de leitor, frase, números, palavras proibidas, mecanismo e causa e efeito por extenso. O código monta os fatos de cada tipo; a semana e o mês saem das rodadas guardadas em `runs/`.
-- `src/run.py`: escolhe o tipo pela data (domingo, a semana; primeiro domingo do mês, o mês), com volta ao fato do dia quando faltam rodadas.
+- `src/escreve_post.py`: um prompt por tipo de post (fato do dia, resumo da semana, resumo do mês), com as regras comuns de leitor, frase, números, palavras proibidas, mecanismo e causa e efeito por extenso. O código monta os fatos de cada tipo; a semana e o mês saem das rodadas guardadas em `runs/`.
+- `src/run.py`: escolhe o tipo pela data (domingo, o resumo da semana; primeiro domingo do mês, o resumo do mês), com volta ao fato do dia quando faltam rodadas.
 - `src/classify_news.py`, regras 12 a 16: títulos de evento e "por quê" com a mesma linguagem.
 - `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, direção repetida sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados, previsão de recessão e risco em porcentagem que sobram depois da reescrita barram o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
 - `src/dossie.py`: as frases de dados de cada assunto, que o post usa como contexto (queda no verbo, mês por extenso, sem sigla solta).
