@@ -165,7 +165,7 @@ def _topo(rodada: dict, cfg: dict) -> dict:
 
 def _linhas_partes(rodada: dict, cfg: dict) -> list[str]:
     """Cada pressão e, fora da soma, as outras partes do topo (o emprego, as reservas), com o lado, as frases do
-    topo e a folga. Uma parte sem lado (um fato fixo, como a dívida em reais) entra só com a frase."""
+    topo e a comparação com a história. Uma parte sem lado (um fato fixo, como a dívida em reais) entra só com a frase."""
     t = _topo(rodada, cfg)
     out = [t["conta"]]
     r = t.get("ritmo")
@@ -180,7 +180,7 @@ def _linhas_partes(rodada: dict, cfg: dict) -> list[str]:
                    f"{rp['palavra'].lower()}. {rp['frase']}")
     for x in [*t["pressoes"], *(t.get("tambem") or t.get("fora") or [])]:
         fora = "" if x["na_soma"] else " (fora da soma)"
-        folga = f" Folga: {x['folga']['rot'].lower()}. {x['folga']['texto']}" if x.get("folga") else ""
+        folga = f" {x['folga']['texto']}" if x.get("folga") else ""
         palavra = f" {x['palavra'].lower()}." if x.get("palavra") else ""
         out.append(f"- {x['nome']}{fora}:{palavra} {' '.join([x['frase'], *x['mais']])}{folga}")
     return out

@@ -1,10 +1,10 @@
-{# Uma linha do topo. Fechada: o nome, o que aconteceu em 3 meses, a folga e a pergunta que abre o resto. #}
+{# Uma linha do topo. Fechada: o nome, a palavra do que aconteceu em 3 meses, a seta que abre e a frase com os números. #}
 <li id="parte-{{ x.id }}"><details>
-  <summary><span class="p-cab"><b>{{ x.nome }}</b>{% if x.palavra %}<span class="p-lado {{ x.cls }}">{{ x.palavra }}</span>{% endif %}</span><span class="p-frase">{{ x.frase }}</span>{% if x.folga %}<span class="p-folga">Folga: {{ x.folga.rot|lower }}</span>{% endif %}<span class="perg"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ab">{{ x.pergunta }}</span><span class="fe">Fechar</span></span></summary>
+  <summary><span class="p-cab"><b>{{ x.nome }}</b><span class="p-dir">{% if x.palavra %}<span class="p-lado {{ x.cls }}">{{ x.palavra }}</span>{% endif %}<svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="p-frase">{{ x.frase }}</span></summary>
   <div class="p-mais">
     {% for f in x.mais %}<p>{{ f }}</p>{% endfor %}
     {% if x.normal %}<p>{{ x.normal }}</p>{% endif %}
-    {% if x.folga %}<p><b>Folga: {{ x.folga.rot|lower }}.</b> {{ x.folga.texto }}</p>{% endif %}
+    {% if x.folga %}<p>{{ x.folga.texto }}</p>{% endif %}
     {% if x.quem %}<p>{{ x.quem }}</p>{% endif %}
     {% if x.fora %}<p class="p-fora">{{ x.fora }}</p>{% endif %}
     {% if x.causas %}<p><a href="{{ x.causas }}">Como isso funciona</a></p>{% endif %}

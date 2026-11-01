@@ -67,9 +67,9 @@ Dólar e juro longo contam como uma pressão só: o sinal da soma dos dois lados
 
 **Meses passados e mês corrente.** Na linha do tempo e no teste, cada mês usa o dado com o atraso típico de divulgação da série. No mês corrente, entra o último dado que já saiu, comparado com o de 3 meses antes dele: o dólar de ontem, a dívida de dois meses atrás. O Focus mensal vem da série guardada e, nos meses do site, da coleta de cada atualização.
 
-**A folga.** Cada pressão (menos o dólar, cujo valor em reais não se compara entre décadas) e o emprego mostram o nível de hoje contra todos os meses desde o começo da série: a dívida desde 2006, as parcelas desde 2005, o juro de 10 anos desde 2005, a inflação esperada desde 2001, o juro descontado da inflação esperada (Selic e Focus, pela fórmula de Fisher) desde 2002 e o desemprego desde 2012. As reservas em dólar também ficam sem folga, porque o valor em dólares de hoje não se compara com o de 2002.
+**A folga.** Cada pressão (menos o dólar, cujo valor em reais não se compara entre décadas) e o emprego comparam o nível de hoje com todos os meses desde o começo da série: a dívida desde 2006, as parcelas desde 2005, o juro de 10 anos desde 2005, a inflação esperada desde 2001, o juro descontado da inflação esperada (Selic e Focus, pela fórmula de Fisher) desde 2002 e o desemprego desde 2012. As reservas em dólar também ficam sem folga, porque o valor em dólares de hoje não se compara com o de 2002.
 
-| Onde está hoje | Folga |
+| Onde está hoje | Palavra da folga (só no `data.json`) |
 | --- | --- |
 | O pior valor da série | Nenhuma |
 | Pior que 90% dos meses ou mais | Quase nenhuma |
@@ -77,13 +77,15 @@ Dólar e juro longo contam como uma pressão só: o sinal da soma dos dois lados
 | No meio | Média |
 | Melhor que 70% dos meses ou mais, ou o melhor da série | Muita |
 
+A palavra fica só no `data.json`; a página não a mostra, nem na linha fechada nem na aberta. Aberta, a linha diz só a frase da comparação, com os mesmos cortes: "A dívida está mais alta que em 96% dos meses desde 2006." No pior ou no melhor valor da série, a frase leva o sujeito da medida: "A parte da renda que vai para dívidas é a maior desde 2005, quando começa a série." Em Como funciona, a seção que explica a conta se chama "Quanto espaço ainda sobra?" (âncora `t-folga`).
+
 A folga não entra na soma. Nível alto e parado não marca a data de recessão nenhuma (veja a pesquisa de 166 países, abaixo); a folga diz quanto espaço sobra se a pressão continuar apertando. Na inflação esperada, a página diz também se ela está acima do teto da meta (4,5%).
 
 ### O topo da página
 
-Abaixo da placa vêm, nesta ordem, o crescimento da economia, as cinco pressões e Também acompanhamos. Cada linha das pressões e de Também acompanhamos termina numa pergunta azul com uma seta para baixo ("Isso é muito? Quem mexe?", "Isso é muito? Quem decide?", "Isso é muito? Por que importa?", "Para que servem?", "Por que isso protege?"). Aberta, a linha mostra o que vale para ela entre o vaivém normal, a folga e quem mexe, e a pergunta vira "Fechar". A seta com texto segue testes de uso do Nielsen Norman Group, em que a seta para baixo foi o único ícone que se saiu melhor que nenhum ícone, e a troca do "+" por seta e texto no GOV.UK.
+Abaixo da placa vêm, nesta ordem, o crescimento em 12 meses, as cinco pressões e Também acompanhamos. A primeira linha de cada pressão e de Também acompanhamos tem o nome à esquerda e, à direita, a palavra do que a medida fez em 3 meses (Apertou, Igual, Folgou; no emprego e nas reservas, Piorou, Igual, Melhorou; a dívida em reais ainda não tem palavra), seguida de uma seta para baixo, sem texto. A linha inteira abre com um toque; aberta, a seta vira para cima e a linha mostra o que vale para ela entre o vaivém normal, a frase da folga e quem mexe. A seta fica à direita porque foi o único ícone que se saiu melhor que nenhum ícone nos testes do Nielsen Norman Group, que a puseram à direita; à direita também é o padrão no celular na maioria dos sistemas de design (ao alcance do polegar) e deixa o nome alinhado com o texto de baixo. Mais que o lado, conta usar o mesmo em todas as linhas.
 
-**Quanto a economia cresceu em 12 meses.** É o bloco logo abaixo da placa, com três números ([`src/ritmo.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/ritmo.py)):
+**Crescimento em 12 meses.** É o bloco logo abaixo da placa. O título tem à direita a palavra do bloco, no mesmo lugar e no mesmo estilo do Apertou de cada pressão. O bloco não tem frase de rodapé: a faixa normal e o erro do Focus continuam calculados (seção `ritmo` de `config/calibracao.json`) e ficam explicados em Como funciona. Os três números saem de [`src/ritmo.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/ritmo.py):
 
 | Número | Conta | Hoje |
 | --- | --- | --- |
@@ -91,9 +93,9 @@ Abaixo da placa vêm, nesta ordem, o crescimento da economia, as cinco pressões
 | Antes | A mesma conta, 12 meses antes | 3,5%, até agosto de 2025 |
 | Previsão | Mediana do Focus para o PIB do ano corrente e do seguinte, com peso pelos meses que faltam: ((12 − m) × ano corrente + m × ano seguinte) / 12, com m o mês do Focus (`indicadores.focus_pib`) | 1,4%, para os próximos 12 meses |
 
-- **A palavra do bloco** compara agora e antes, os dois com uma casa, como a página mostra. Diferença de até 0,1 ponto é "no mesmo ritmo"; acima disso, "acelerando" ou "desacelerando". A palavra descreve e não é sinal: o crescimento do Brasil varia muito de um ano para o outro, e a direção não usa esta conta.
-- **O normal** são os percentis 25 e 75 do crescimento em 12 meses desde 2004, hoje de 0,8% a 3,9% ao ano (`config/calibracao.json`, `ritmo.faixa`).
-- **A previsão só aparece na tela.** O PIB esperado pelo Focus não entra em conta nenhuma do site: nem na direção, nem no "encolhendo", nem na palavra do bloco. A página diz quanto os bancos erram. O erro médio absoluto da previsão de 12 meses do Focus contra o PIB que o IBGE divulgou depois, com a mesma ponderação dos anos (o PIB anual é a média do ano contra a do ano anterior), foi de 1,46 ponto em 252 meses, de janeiro de 2004 a dezembro de 2024. Só em 40% desses meses o erro ficou dentro de 1 ponto.
+- **A palavra do bloco** (Acelerando, Desacelerando ou No mesmo ritmo, à direita do título) compara agora e antes, os dois com uma casa, como a página mostra. Diferença de até 0,1 ponto é "no mesmo ritmo"; acima disso, "acelerando" ou "desacelerando". A palavra descreve e não é sinal: o crescimento do Brasil varia muito de um ano para o outro, e a direção não usa esta conta.
+- **O normal** são os percentis 25 e 75 do crescimento em 12 meses desde 2004, hoje de 0,8% a 3,9% ao ano (`config/calibracao.json`, `ritmo.faixa`). Não aparece no bloco; Como funciona o explica.
+- **A previsão só aparece na tela.** O PIB esperado pelo Focus não entra em conta nenhuma do site: nem na direção, nem no "encolhendo", nem na palavra do bloco. Como funciona diz quanto os bancos erram; o bloco, não. O erro médio absoluto da previsão de 12 meses do Focus contra o PIB que o IBGE divulgou depois, com a mesma ponderação dos anos (o PIB anual é a média do ano contra a do ano anterior), foi de 1,46 ponto em 252 meses, de janeiro de 2004 a dezembro de 2024. Só em 40% desses meses o erro ficou dentro de 1 ponto.
 - **Quando a economia está encolhendo** (passo 7), o bloco ganha uma linha com a queda da prévia do PIB nos 3 últimos meses contra os 3 anteriores, que é a conta que decide o "encolhendo".
 
 **Também acompanhamos.** Abaixo das cinco pressões, no mesmo desenho, ficam as três linhas da tabela do passo 1 que não mudam a placa. Aberta, cada uma diz numa frase por que não muda (`direcao.nao_muda_a_placa` em `config/modelo.json`). O emprego e as reservas em dólar dizem Piorou, Igual ou Melhorou, pela mesma regra de corte das pressões (passo 4); só o emprego tem folga. A dívida em reais mostra a parte da dívida pública federal em reais (96%, Tesouro, agosto de 2026), posta à mão todo mês, e ainda não diz o que ela fez em 3 meses. A autonomia do Banco Central (Lei Complementar 179, de 2021) fica no texto de quem decide, na linha do Juro.
@@ -326,7 +328,7 @@ O ganho é modesto e, como a direção, a conta não acerta a data em que cada r
 - Rousseeuw e Croux (1993), *Alternatives to the median absolute deviation*, Journal of the American Statistical Association, sobre a escala robusta
 - Tesouro Nacional, Relatório Mensal da Dívida Pública Federal (agosto de 2026), para a parte da dívida federal em reais
 - [Lei Complementar 179, de 2021](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp179.htm), autonomia do Banco Central, citada na linha do Juro
-- Nielsen Norman Group, testes de uso de ícones, e GOV.UK Design System, o componente de acordeão, para a pergunta com seta que abre cada linha do topo
+- Nielsen Norman Group, testes de uso de ícones, para a seta à direita que abre cada linha do topo
 - [FMI, World Economic Outlook](https://www.imf.org/en/Publications/WEO), dívida bruta do governo da Argentina em 2001 e do Japão, citadas em Como funciona
 - Mian, Sufi e Verner (2017), *Household debt and business cycles worldwide*, Quarterly Journal of Economics
 - An, Jalles e Loungani (2018), *How well do economists forecast recessions?*, FMI
