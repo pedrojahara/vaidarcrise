@@ -100,7 +100,7 @@ Regras:
 TAREFA = {
     "dia": "Você escreve o fato do dia. Ele responde: o que mudou ontem, e o que isso muda para o leitor?",
     "semana": "Você escreve o resumo da semana. Ele responde: o que a semana mudou, e o que vem na próxima? É o post que o leitor lê com calma no domingo e encaminha no WhatsApp.",
-    "mes": "Você escreve o resumo do mês. Ele responde: estamos melhor ou pior que há um mês, e o que isso muda para quem lê? O site põe ao lado do seu texto uma tabela feita por código, com os nomes e as palavras do topo: o que cada uma das cinco pressões fez no começo e no fim do mês. O emprego, as reservas em dólar e o crescimento em 12 meses não têm tabela: cite no texto só o que ajudar a explicar o mês.",
+    "mes": "Você escreve o resumo do mês. Ele responde: estamos melhor ou pior que há um mês, e o que isso muda para quem lê? O site põe ao lado do seu texto uma tabela feita por código, com os nomes do topo: como cada uma das cinco pressões estava no começo e no fim do mês (Pior, Igual ou Melhor). No texto, continue com o verbo: piorou, ficou igual, melhorou. O emprego, as reservas em dólar e o crescimento em 12 meses não têm tabela: cite no texto só o que ajudar a explicar o mês.",
 }
 
 REGRAS_TIPO = {
@@ -216,6 +216,9 @@ _PARTICIPIO = {"piorou": "piorado", "melhorou": "melhorado", "igual": "ficado ig
                "desacelerou": "desacelerado", "sem dado": "ficado sem dado"}
 _INFINITIVO = {"piorou": "piorar", "melhorou": "melhorar", "igual": "ficar igual", "acelerou": "acelerar",
                "desacelerou": "desacelerar", "sem dado": "ficar sem dado"}
+
+
+_ESTADO_TABELA = {"piorou": "Pior", "melhorou": "Melhor", "igual": "Igual", "sem dado": "Sem dado"}
 
 
 def _mudou(x: dict) -> str:
@@ -560,7 +563,9 @@ def tabelas_mes(rodada: dict, cfg: dict, inicio: dict) -> list[dict]:
     a, b = _lados(inicio), _lados(rodada)
     nomes = cfg["direcao"]["nomes"]
     na_soma = {x["id"]: x["na_soma"] for x in (_dir(rodada) or {}).get("partes", [])}
-    linhas = [[nomes[k], _palavra(k, a.get(k)).capitalize(), _palavra(k, v).capitalize()]
+    # Numa tabela que compara dois momentos, a palavra diz o estado (Pior, Igual, Melhor), não o verbo no passado.
+    linhas = [[nomes[k], _ESTADO_TABELA.get(_palavra(k, a.get(k)), _palavra(k, a.get(k)).capitalize()),
+               _ESTADO_TABELA.get(_palavra(k, v), _palavra(k, v).capitalize())]
               for k, v in b.items() if k in nomes and na_soma.get(k)]
     r0 = rotulo_inicio(inicio)
     quando = f"no {r0[0].lower()}{r0[1:]}" if r0.startswith("Fim") else f"{r0[0].lower()}{r0[1:]}"
