@@ -138,21 +138,22 @@ def _quanto_normal(m: dict, unidade: str) -> str:
 
 
 def folga_ctx(pid: str, f: dict | None, teto: float | None = None) -> dict | None:
-    """A folga de uma parte: o nível de hoje contra todos os meses desde o começo da série."""
+    """A folga de uma parte: o nível de hoje contra todos os meses desde o começo da série. A página mostra só a
+    frase; o rótulo (Nenhuma a Muita) fica no data.json."""
     if not f:
         return None
     p, desde = f["pior_que_pct"], f["desde"]
     frases = {
-        "contas": ("A dívida", "mais alta", "mais baixa", "Está no maior valor desde"),
-        "parcelas": ("A parte da renda que vai para dívidas", "mais alta", "mais baixa", "É a maior desde"),
-        "mercado": ("O juro de 10 anos", "mais alto", "mais baixo", "É o maior desde"),
-        "inflacao": ("A inflação esperada", "mais alta", "mais baixa", "É a maior desde"),
-        "juro": ("Descontada a inflação esperada, a Selic", "mais alta", "mais baixa", "É a maior desde"),
-        "emprego": ("O desemprego", "mais alto", "mais baixo", "É o maior desde"),
+        "contas": ("A dívida", "mais alta", "mais baixa", "está no maior valor desde"),
+        "parcelas": ("A parte da renda que vai para dívidas", "mais alta", "mais baixa", "é a maior desde"),
+        "mercado": ("O juro de 10 anos", "mais alto", "mais baixo", "é o maior desde"),
+        "inflacao": ("A inflação esperada", "mais alta", "mais baixa", "é a maior desde"),
+        "juro": ("Descontada a inflação esperada, a Selic", "mais alta", "mais baixa", "é a maior desde"),
+        "emprego": ("O desemprego", "mais alto", "mais baixo", "é o maior desde"),
     }[pid]
     sujeito, alto, baixo, recorde = frases
     if f["recorde_ruim"]:
-        rot, txt = "Nenhuma", f"{recorde} {desde}, quando começa a série."
+        rot, txt = "Nenhuma", f"{sujeito} {recorde} {desde}, quando começa a série."
     elif f["recorde_bom"]:
         rot, txt = "Muita", f"{sujeito} está no menor valor desde {desde}, quando começa a série."
     elif p >= 90:
@@ -246,7 +247,7 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
             "frase": frases[0], "mais": frases[1:], "normal": normal,
             "folga": folga_ctx(pid, x.get("folga"), p.get("teto_meta_inflacao")),
             "quem": p["quem_mexe"].get(pid, ""), "causas": p["causas"].get(pid),
-            "pergunta": p["perguntas"].get(pid, p["perguntas"]["padrao"]), "fora": p["nao_muda_a_placa"].get(pid)}
+            "fora": p["nao_muda_a_placa"].get(pid)}
 
 
 def _divida_reais_ctx(cfg: dict, hoje: str) -> dict:
@@ -256,8 +257,7 @@ def _divida_reais_ctx(cfg: dict, hoje: str) -> dict:
     return {"id": "divida_reais", "nome": p["nomes"]["divida_reais"], "palavra": None, "cls": "igual", "na_soma": False,
             "frase": f"Em {mes_ano(d['ref'], com_ano=True)}, {num(d['valor'], 0)}% da dívida do governo federal era em reais.",
             "mais": [], "normal": "", "folga": None, "quem": p["quem_mexe"]["divida_reais"] + " " + d["texto_fonte"],
-            "causas": p["causas"].get("divida_reais"), "pergunta": p["perguntas"]["divida_reais"],
-            "fora": p["nao_muda_a_placa"]["divida_reais"]}
+            "causas": p["causas"].get("divida_reais"), "fora": p["nao_muda_a_placa"]["divida_reais"]}
 
 
 def ritmo_ctx(dia: str, rodada: dict, cal: dict, enc: str | None) -> dict | None:

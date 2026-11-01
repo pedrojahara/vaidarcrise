@@ -1,5 +1,5 @@
-{# O topo da página: para que lado anda o risco de recessão, quanto a economia cresceu, as cinco pressões com a
-   folga de cada uma e, no mesmo desenho, o que acompanhamos sem mudar a placa. Fica num arquivo só para a página
+{# O topo da página: para que lado anda o risco de recessão, quanto a economia cresceu, as cinco pressões e, no
+   mesmo desenho, o que acompanhamos sem mudar a placa. Fica num arquivo só para a página
    principal e para a página de cada dia. #}
 <section class="nota" aria-label="Para onde vai o risco de recessão">
   <div class="topo">
@@ -9,16 +9,15 @@
   {% if dir.pendente %}<p class="atual">{{ dir.pendente }}</p>{% endif %}
   {% set r = dir.ritmo %}{% if r %}
   <div class="ritmo">
-    <p class="r-tit">Quanto a economia cresceu em 12 meses</p>
+    <p class="r-tit"><span>Crescimento em 12 meses</span><b class="r-muda {{ r.cls }}"><span aria-hidden="true">{{ r.seta }}</span> {{ r.muda }}</b></p>
     <div class="r-nums">
       <p class="r-c antes"><span class="r-k">Antes</span><span class="r-v">{{ r.antes }}</span><span class="r-l">{{ r.ate_antes }}</span></p>
       <span class="r-seta s1" aria-hidden="true">→</span>
       <p class="r-c agora"><span class="r-k">Agora</span><span class="r-v">{{ r.agora }}</span><span class="r-l">{{ r.ate_agora }}</span></p>
       {% if r.previsao %}<span class="r-seta s2" aria-hidden="true">→</span>
-      <p class="r-c prev"><span class="r-k">Previsão</span><span class="r-v">{{ r.previsao }}</span><span class="r-l">próximos 12 meses</span></p>{% endif %}
+      <p class="r-c prev"><span class="r-k">Previsão</span><span class="r-v">{{ r.previsao }}</span><span class="r-l">dos bancos</span></p>{% endif %}
     </div>
     {% if r.encolhe %}<p class="r-enc">{{ r.encolhe }}</p>{% endif %}
-    <p class="r-pe"><b class="{{ r.cls }}"><span aria-hidden="true">{{ r.seta }}</span> {{ r.muda }}.</b> {{ r.faixa }} {{ r.erro }}</p>
   </div>{% endif %}
   <p class="cab-p" id="cab-pressoes">As cinco pressões, nos últimos 3 meses</p>
   <ul class="partes" aria-labelledby="cab-pressoes">
