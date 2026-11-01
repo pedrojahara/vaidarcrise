@@ -41,7 +41,7 @@ Há quem diga que o mercado exagerou, e há quem diga que o medo fez o governo m
 
 ### Como usar o site
 
-No alto da página, a placa diz se o risco de recessão está subindo, igual ou caindo, e desde quando. Recessão é o PIB, tudo o que o país produz, cair dois trimestres seguidos.
+No alto da página, a placa diz se o risco de recessão está subindo, igual ou caindo. Recessão é o PIB, tudo o que o país produz, cair dois trimestres seguidos.
 
 A placa não diz quando a recessão vem, porque ninguém acerta essa data com segurança. Ela diz se as cinco pressões que costumam vir antes dela estão apertando ou folgando. Cada pressão mostra também quanta folga ainda tem e quem mexe nela.
 

@@ -140,7 +140,7 @@ Fale como alguém que entende de economia explicando no almoço de domingo: calm
 
 - Celular primeiro: letra de 16 px ou mais, uma coluna.
 - Cor nunca sozinha: sempre com palavra ("Subindo", "Apertou") e seta, por causa do daltonismo e do print em preto e branco.
-- A direção mostra sempre desde quando está assim e o que cada pressão fez em 3 meses.
+- A direção mostra sempre o que cada pressão fez em 3 meses.
 - Um gráfico por ideia, com título que conclui ("Juro caiu 1,25 ponto em um ano"). Linha com rótulo na ponta, sem legenda. Nada de dois eixos.
 - Seta sempre com a palavra ao lado ("Subindo", "Apertou").
 
@@ -185,7 +185,7 @@ Cada post responde a uma pergunta só e compara com o próprio período. Ela qua
 
 | Informação | Dono | O que o post faz com ela |
 | --- | --- | --- |
-| A direção do risco e desde quando | A placa do topo | O fato do dia só fala da direção se ela mudou. Os resumos da semana e do mês dizem desde quando ela está assim. |
+| A direção do risco | A placa do topo | O fato do dia só fala da direção se ela mudou. Os resumos da semana e do mês dizem desde quando ela está assim. |
 | Notícias de ontem, por assunto | A caixa "Para onde as notícias empurram" | O fato do dia conta uma, a mais importante, até o bolso. |
 | Próximas datas | A lateral "Datas importantes" | O fato do dia só cita o dado que sai hoje. O resumo da semana diz o que olhar na semana seguinte. |
 | O que cada pressão fez em 3 meses, e a folga | O topo, abaixo da placa | O resumo do mês conta só o que mudou de lado. |
