@@ -43,13 +43,13 @@ Há quem diga que o mercado exagerou, e há quem diga que o medo fez o governo m
 
 No alto da página, a placa diz se o risco de recessão está subindo, igual ou caindo. Recessão é o PIB, tudo o que o país produz, cair dois trimestres seguidos.
 
-A placa não diz quando a recessão vem, porque ninguém acerta essa data com segurança. Ela diz se as cinco pressões que costumam vir antes dela estão apertando ou folgando. Cada pressão mostra também quanta folga ainda tem e quem mexe nela.
+A placa não diz quando a recessão vem, porque ninguém acerta essa data com segurança. Ela diz se as cinco pressões que costumam vir antes dela estão piorando ou melhorando. Cada pressão mostra também o número de agora, o de 3 meses antes e como ele se compara com o passado.
 
 Todo dia, às 06h30, sai um post:
 
 - **O fato do dia**, de segunda a sábado, conta uma notícia de ontem e o efeito dela no seu bolso.
 - **O resumo da semana**, no domingo, junta o que mudou e diz o que olhar nos dias seguintes.
-- **O resumo do mês**, no primeiro domingo, compara com o mês anterior, inclusive no bolso.
+- **O resumo do mês**, no primeiro domingo, diz o que piorou e o que melhorou desde o mês anterior.
 
 Abaixo do post, a caixa "Para onde as notícias empurram" mostra para que lado cada notícia da véspera empurra. A aba [O que causa recessão](/causas/) explica como preço, juro e dívida levam a uma recessão. A aba [Como funciona](/nota/) mostra a regra inteira, para quem quer conferir.
 

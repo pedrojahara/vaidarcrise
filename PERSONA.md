@@ -139,10 +139,10 @@ Fale como alguém que entende de economia explicando no almoço de domingo: calm
 **Visual**
 
 - Celular primeiro: letra de 16 px ou mais, uma coluna.
-- Cor nunca sozinha: sempre com palavra ("Subindo", "Apertou") e seta, por causa do daltonismo e do print em preto e branco.
+- Cor nunca sozinha: sempre com palavra ("Subindo", "Piorou") e seta, por causa do daltonismo e do print em preto e branco.
 - A direção mostra sempre o que cada pressão fez em 3 meses.
 - Um gráfico por ideia, com título que conclui ("Juro caiu 1,25 ponto em um ano"). Linha com rótulo na ponta, sem legenda. Nada de dois eixos.
-- Seta de direção sempre com a palavra ao lado ("Subindo", "Apertou"). A seta para baixo que abre cada linha do topo não mostra direção e vai sem texto.
+- Seta de direção sempre com a palavra ao lado ("Subindo", "Piorou"). A seta para baixo que abre cada linha do topo não mostra direção e vai sem texto.
 
 ## O jeito de escrever do site
 
@@ -179,9 +179,9 @@ Cada post responde a uma pergunta só e compara com o próprio período. Ela qua
 | Retrato do Brasil | Por que o site existe, e como usá-lo? | No cartão do topo e na rolagem, como o post de 28/10; refeito quando o editor decidir | Até 800 palavras | O que o site faz e para quem |
 | Fato do dia | O que mudou ontem, e o que isso muda para mim? | De segunda a sábado | Até 100 palavras | O fato, com número e régua |
 | Resumo da semana | O que a semana mudou, e o que vem na próxima? | Domingo | Até 250 palavras | O que se moveu na semana |
-| Resumo do mês | Estamos melhor ou pior que há um mês? E no bolso? | Primeiro domingo do mês, no lugar do resumo da semana | Até 450 palavras, com as tabelas (300 de texto) | O que mudou no mês |
+| Resumo do mês | Estamos melhor ou pior que há um mês, e o que isso muda para mim? | Primeiro domingo do mês, no lugar do resumo da semana | Até 450 palavras, com as tabelas (300 de texto) | O que mudou no mês |
 
-**Cada informação tem um dono.** O post não repete o que a página já mostra ao lado dele. Ele diz o que só ele pode dizer: a ligação entre os fatos, a comparação e o efeito no bolso.
+**Cada informação tem um dono.** O post não repete o que a página já mostra ao lado dele. Ele diz o que só ele pode dizer: a ligação entre os fatos, a comparação e o que muda para quem lê, no emprego, no preço, na parcela ou no dólar.
 
 | Informação | Dono | O que o post faz com ela |
 | --- | --- | --- |
@@ -265,13 +265,16 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 | --- | --- |
 | Abas | Hoje, O que causa recessão, Como funciona |
 | A direção | "O risco de recessão está subindo", "está igual" ou "está caindo"; nos resumos, com desde quando ("desde junho de 2026"); "A economia está encolhendo" quando a prévia do PIB cai mais de 1,5% em 3 meses. Na placa: Subindo, Igual, Caindo, Encolhendo |
-| O crescimento, logo abaixo da placa | Crescimento em 12 meses: Antes, Agora, Previsão. À direita do título, como o Apertou de cada pressão: Acelerando, Desacelerando ou No mesmo ritmo. O bloco não tem rodapé; o normal desde 2004 e o erro da previsão "dos bancos (Focus)" ficam em Como funciona |
+| O crescimento, logo abaixo da placa | Crescimento em 12 meses: Antes, Agora, Previsão. À direita do título, como o Piorou de cada pressão: Acelerando, Desacelerando ou No mesmo ritmo. O bloco não tem rodapé; o normal desde 2004 e o erro da previsão "dos bancos (Focus)" ficam em Como funciona |
 | As cinco pressões | Contas do governo, Dívidas das famílias, Desconfiança de quem investe, Inflação esperada, Juro |
 | Os dois números da Desconfiança de quem investe | o dólar e o juro de 10 anos, os dois na linha fechada; na primeira vez, "o juro de 10 anos é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos". Nunca "juro longo", "juros futuros" ou "prêmio de risco" |
 | O botão que abre as pressões no celular | "Por que está subindo? Veja as cinco pressões" (ou caindo, ou igual); quando a economia encolhe, "Como estão as cinco pressões?". Só aparece quando a página tem uma coluna; no computador, a lista fica aberta |
 | As linhas que não mudam a placa | Também acompanhamos: Emprego, Reservas em dólar, Dívida em reais. Aberta, cada uma diz "Esta linha não muda a placa, porque..." |
-| O que cada linha fez em 3 meses | Apertou, Igual, Folgou; no emprego e nas reservas, Piorou, Igual, Melhorou |
-| O que abre cada linha | Uma seta para baixo, sem texto, à direita da primeira linha, logo depois da palavra (Apertou, Igual...); aberta, a seta vira para cima. A linha inteira abre com um toque |
+| O que cada linha fez em 3 meses | Piorou, Igual, Melhorou, em todas as linhas do topo: as cinco pressões, o emprego e as reservas. No texto, "a pressão piorou" ou "pioraram as contas do governo". Nunca Apertou e Folgou, nem "apertando ou folgando" |
+| Quais pressões mudaram, no texto | Cada uma pelo nome: "Nos últimos 3 meses, pioraram as contas do governo, as dívidas das famílias, a desconfiança de quem investe e a inflação esperada. O juro ficou igual." No meio da frase, o nome vai em minúscula e com artigo, como qualquer palavra. Nunca a contagem ("quatro das cinco pressões"), porque a leitora não sabe de cor quais são as cinco |
+| Categorias, rótulos e tabelas do post | Só as duas listas do topo, com os mesmos nomes: as cinco pressões e Também acompanhamos. As tabelas do resumo do mês são "As cinco pressões, contra 3 meses antes" e "Também acompanhamos". Os rótulos do resumo da semana são nomes de pressão ou de assunto das notícias. Nunca "No bolso", "Parcelas", "Preços" ou "Mercado" como categoria |
+| A medida das Dívidas das famílias | a parte da renda das famílias que vai para parcelas e juros |
+| O que abre cada linha | Uma seta para baixo, sem texto, à direita da primeira linha, logo depois da palavra (Piorou, Igual...); aberta, a seta vira para cima. A linha inteira abre com um toque |
 | A régua de cada pressão | o vaivém normal de 3 meses (só no topo aberto e em Como funciona) |
 | Quanto falta para o pior já visto | Na página, só a frase que compara com o passado, na linha aberta: "A dívida está mais alta que em 96% dos meses desde 2006." No recorde, com sujeito: "A parte da renda que vai para dívidas é a maior desde 2005, quando começa a série." Nunca "Folga: x" na página; as palavras Nenhuma, Quase nenhuma, Pouca, Média e Muita ficam só no `data.json`. Em Como funciona, a seção "Quanto espaço ainda sobra?" |
 | Os assuntos das notícias | Ritmo da economia, Juro e inflação, Dívidas das famílias, Desconfiança de quem investe, Contas do governo, Emprego, Economia lá fora |
@@ -334,9 +337,9 @@ Um fato, contado até o bolso. O que o dólar fez em 3 meses fica no topo, em "D
 - `src/escreve_post.py`: um prompt por tipo de post (fato do dia, resumo da semana, resumo do mês), com as regras comuns de leitor, frase, números, palavras proibidas, mecanismo e causa e efeito por extenso. O código monta os fatos de cada tipo; o mês sai dos dados oficiais do mês e a semana, das rodadas guardadas em `runs/`.
 - `src/run.py` e `src/escreve_post.py`: o tipo sai só da data (domingo, o resumo da semana; primeiro domingo do mês, o resumo do mês); a assinatura de todo post, em `src/build_site.py` (`ASSINATURA`), é só "Escrito pelo Claude com a ajuda do Pedro."
 - `src/classify_news.py`, regras 12 a 16: títulos de evento e "por quê" com a mesma linguagem.
-- `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, direção repetida sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados, previsão de recessão e risco em porcentagem que sobram depois da reescrita barram o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
+- `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal, inflação que "cai" ou "recua", palavra que o site trocou (Apertou, Folgou, juro longo), pressões contadas em vez de citadas pelo nome, "No bolso" como categoria e rótulo do resumo da semana que não é nome do site. Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, direção repetida sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados, previsão de recessão e risco em porcentagem que sobram depois da reescrita barram o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
 - `src/dossie.py`: as frases de dados de cada assunto, que o post usa como contexto (queda no verbo, mês por extenso, sem sigla solta).
-- `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas; no topo, as frases do crescimento em 12 meses, de cada pressão, do vaivém normal e da folga saem de `src/build_site.py`.
+- `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas; no topo, as frases do crescimento em 12 meses, de cada pressão, do vaivém normal e de quanto espaço ainda sobra saem de `src/build_site.py`.
 - `config/modelo.json`, seção `direcao`: os nomes das pressões e das linhas de Também acompanhamos, por que cada linha de Também acompanhamos importa, a frase de por que a linha não muda a placa e a parte da dívida em reais, posta à mão todo mês.
 - Textos escritos à mão (`editor/`, `templates/`) seguem a lista acima na leitura. `METODOLOGIA.md` é técnica de propósito, para quem quer refazer a conta, mas usa os mesmos nomes do site.
 - `CLAUDE.md` manda qualquer sessão do Claude que escreva no repositório passar o texto por este guia.

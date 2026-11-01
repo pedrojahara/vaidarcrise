@@ -160,7 +160,7 @@ a:hover{text-decoration-thickness:2px}
 <p>A regra da direção está em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/direcao.py"><code>src/direcao.py</code></a>, com as escolhas fixas em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json"><code>config/modelo.json</code></a> (seção <code>direcao</code>) e o que sai dos dados (o vaivém normal de cada medida e o teste desde 2004) em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/calibracao.json"><code>config/calibracao.json</code></a> (seção <code>direcao</code>). As séries mensais do Brasil ficam em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/series.json"><code>data/historico/series.json</code></a>. <code>python src/direcao.py --calibrar AAAA-MM</code> refaz os cortes e o teste. O crescimento em 12 meses que fica logo abaixo da placa sai de <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/ritmo.py"><code>src/ritmo.py</code></a>, e <code>python src/ritmo.py --calibrar</code> refaz a faixa normal dele e o erro do Focus (seção <code>ritmo</code> de <code>config/calibracao.json</code>). Cada atualização grava o hash dos dois arquivos de regra.</p>
 <h2 id="a-pergunta">A pergunta</h2>
 <blockquote>
-<p>Para que lado anda o risco de recessão no Brasil: as pressões que costumam vir antes de uma recessão estão apertando ou folgando?</p>
+<p>Para que lado anda o risco de recessão no Brasil: as pressões que costumam vir antes de uma recessão estão piorando ou melhorando?</p>
 </blockquote>
 <ul>
 <li><strong>Recessão técnica:</strong> dois trimestres seguidos de queda do PIB dessazonalizado do IBGE (<a href="https://sidra.ibge.gov.br/tabela/5932">tabela 5932</a>, taxa contra o trimestre anterior, com uma casa decimal; 0,0% não é queda).</li>
@@ -271,7 +271,7 @@ a:hover{text-decoration-thickness:2px}
 <p>O emprego é o último a piorar numa recessão, porque as empresas primeiro vendem menos e só depois demitem. As reservas e a dívida em reais amortecem um susto do dólar, mas não avisam que uma recessão vem. Por isso nenhuma das três entra na soma.</p>
 <p><strong>2. Cada medida contra 3 meses antes.</strong> A mudança é a diferença em pontos (em % no dólar e na média do IBC-Br) entre o dado de referência e o de 3 meses antes dele.</p>
 <p><strong>3. A escala de cada medida</strong> é 1,4826 vezes o desvio absoluto mediano das mudanças de 3 meses desde janeiro de 2002, com o atraso de divulgação de cada série (em <code>config/calibracao.json</code>, <code>direcao.cortes</code>). É uma régua robusta: uma crise grande, como 2008 ou 2020, não a alarga. Nas contas do governo, a escala junta as mudanças da dívida (desde 2007) e as do resultado sem juros (antes), e o mesmo corte vale para as duas.</p>
-<p><strong>4. Apertou, igual ou folgou.</strong> O corte é três quartos da escala (<code>corte_vaivem</code> = 0,75); é o que a página chama de vaivém normal de 3 meses. A medida apertou se andou para o lado ruim mais que o corte; folgou se andou isso para o lado bom; no resto, ficou igual. A página diz "passou raspando" quando a mudança fica abaixo de 1,25 vez o corte. Os cortes de hoje:</p>
+<p><strong>4. Piorou, igual ou melhorou.</strong> O corte é três quartos da escala (<code>corte_vaivem</code> = 0,75); é o que a página chama de vaivém normal de 3 meses. A medida piorou se andou para o lado ruim mais que o corte; melhorou se andou isso para o lado bom; no resto, ficou igual. A página diz "passou raspando" quando a mudança fica abaixo de 1,25 vez o corte. Os cortes de hoje:</p>
 <table>
 <thead>
 <tr>
@@ -287,7 +287,7 @@ a:hover{text-decoration-thickness:2px}
 <td>0,95 ponto</td>
 </tr>
 <tr>
-<td>Parcelas das famílias</td>
+<td>Dívidas das famílias (parte da renda que vai para parcelas e juros)</td>
 <td>0,50 ponto da renda</td>
 <td>0,38 ponto</td>
 </tr>
@@ -329,12 +329,12 @@ a:hover{text-decoration-thickness:2px}
 </tbody>
 </table>
 <p>As reservas ainda não têm corte em <code>config/calibracao.json</code>. Enquanto não têm, o corte sai na hora, com a mesma conta, das variações de 3 meses que a coleta do dia traz desde janeiro de 2002 (<code>src/fetch_data.py</code> busca essa série inteira); com menos de 36 variações, a linha fica sem lado. Só a atualização do Mac coleta a série, e a página esconde a linha enquanto ela não tem dado. Depois que <code>src/historico.py</code> guardar a série, <code>python src/direcao.py --calibrar</code> grava o corte das reservas junto com os outros.</p>
-<p>O dólar e o juro de 10 anos contam como uma pressão só, a Desconfiança de quem investe: o sinal da soma dos dois lados (se um aperta e o outro folga, fica igual; se um aperta e o outro fica igual, apertou).</p>
-<p><strong>5. A soma decide.</strong> Pressões que apertaram menos as que folgaram: 2 ou mais, <strong>subindo</strong>; −2 ou menos, <strong>caindo</strong>; no meio, <strong>igual</strong>. Pressão sem dado fica fora da soma naquele dia.</p>
+<p>O dólar e o juro de 10 anos contam como uma pressão só, a Desconfiança de quem investe: o sinal da soma dos dois lados (se um piora e o outro melhora, fica igual; se um piora e o outro fica igual, piorou).</p>
+<p><strong>5. A soma decide.</strong> Pressões que pioraram menos as que melhoraram: 2 ou mais, <strong>subindo</strong>; −2 ou menos, <strong>caindo</strong>; no meio, <strong>igual</strong>. Pressão sem dado fica fora da soma naquele dia.</p>
 <p><strong>6. Confirmação.</strong> A direção só muda quando o resultado novo se repete no mês seguinte. No mês da primeira vez, a página avisa: "Pelos dados de hoje, a direção seria (...)".</p>
 <p><strong>7. Encolhendo.</strong> Se o IBC-Br (média de 3 meses contra os 3 anteriores) cair mais de 1,5%, o topo diz "A economia está encolhendo", no lugar da direção. A essa altura, a pergunta de para que lado anda o risco já perdeu o sentido.</p>
 <p><strong>Meses passados e mês corrente.</strong> Na linha do tempo e no teste, cada mês usa o dado com o atraso típico de divulgação da série. No mês corrente, entra o último dado que já saiu, comparado com o de 3 meses antes dele: o dólar de ontem, a dívida de dois meses atrás. O Focus mensal vem da série guardada e, nos meses do site, da coleta de cada atualização.</p>
-<p><strong>A folga.</strong> Cada pressão (menos o dólar, cujo valor em reais não se compara entre décadas) e o emprego comparam o nível de hoje com todos os meses desde o começo da série: a dívida desde 2006, as parcelas desde 2005, o juro de 10 anos desde 2005, a inflação esperada desde 2001, o juro descontado da inflação esperada (Selic e Focus, pela fórmula de Fisher) desde 2002 e o desemprego desde 2012. As reservas em dólar também ficam sem folga, porque o valor em dólares de hoje não se compara com o de 2002.</p>
+<p><strong>Quanto espaço ainda sobra (a <code>folga</code> do <code>data.json</code>).</strong> Cada pressão (menos o dólar, cujo valor em reais não se compara entre décadas) e o emprego comparam o nível de hoje com todos os meses desde o começo da série: a dívida desde 2006, as dívidas das famílias desde 2005, o juro de 10 anos desde 2005, a inflação esperada desde 2001, o juro descontado da inflação esperada (Selic e Focus, pela fórmula de Fisher) desde 2002 e o desemprego desde 2012. As reservas em dólar também ficam sem folga, porque o valor em dólares de hoje não se compara com o de 2002.</p>
 <table>
 <thead>
 <tr>
@@ -366,10 +366,10 @@ a:hover{text-decoration-thickness:2px}
 </tbody>
 </table>
 <p>A palavra fica só no <code>data.json</code>; a página não a mostra, nem na linha fechada nem na aberta. Aberta, a linha diz só a frase da comparação, com os mesmos cortes: "A dívida está mais alta que em 96% dos meses desde 2006." No pior ou no melhor valor da série, a frase leva o sujeito da medida: "A parte da renda que vai para dívidas é a maior desde 2005, quando começa a série." Em Como funciona, a seção que explica a conta se chama "Quanto espaço ainda sobra?" (âncora <code>t-folga</code>).</p>
-<p>A folga não entra na soma. Nível alto e parado não marca a data de recessão nenhuma (veja a pesquisa de 166 países, abaixo); a folga diz quanto espaço sobra se a pressão continuar apertando. Na inflação esperada, a página diz também se ela está acima do teto da meta (4,5%).</p>
+<p>A folga não entra na soma. Nível alto e parado não marca a data de recessão nenhuma (veja a pesquisa de 166 países, abaixo); a folga diz quanto espaço sobra se a pressão continuar piorando. Na inflação esperada, a página diz também se ela está acima do teto da meta (4,5%).</p>
 <h3 id="o-topo-da-pagina">O topo da página</h3>
-<p>Abaixo da placa vêm, nesta ordem, o crescimento em 12 meses, as cinco pressões e Também acompanhamos. Quando a página tem uma coluna só (celular e tablet em pé, até 820 px), as duas listas ficam atrás de um botão com a pergunta da leitora ("Por que está subindo? Veja as cinco pressões") e o blog vem logo depois, porque a placa muda umas duas vezes por ano e o post muda todo dia; um link para uma linha (<code>/#parte-...</code>) abre a lista e a linha. Sem JavaScript, a lista fica aberta. A primeira linha de cada pressão e de Também acompanhamos tem o nome à esquerda e, à direita, a palavra do que a medida fez em 3 meses (Apertou, Igual, Folgou; no emprego e nas reservas, Piorou, Igual, Melhorou; a dívida em reais ainda não tem palavra), seguida de uma seta para baixo, sem texto. A linha inteira abre com um toque; aberta, a seta vira para cima e a linha mostra o que vale para ela entre o vaivém normal e a frase da folga; nas linhas de Também acompanhamos, também por que ela importa (<code>direcao.por_que_importa</code> em <code>config/modelo.json</code>). A seta fica à direita porque foi o único ícone que se saiu melhor que nenhum ícone nos testes do Nielsen Norman Group, que a puseram à direita; à direita também é o padrão no celular na maioria dos sistemas de design (ao alcance do polegar) e deixa o nome alinhado com o texto de baixo. Mais que o lado, conta usar o mesmo em todas as linhas.</p>
-<p><strong>Crescimento em 12 meses.</strong> É o bloco logo abaixo da placa. O título tem à direita a palavra do bloco, no mesmo lugar e no mesmo estilo do Apertou de cada pressão. O bloco não tem frase de rodapé: a faixa normal e o erro do Focus continuam calculados (seção <code>ritmo</code> de <code>config/calibracao.json</code>) e ficam explicados em Como funciona. Os três números saem de <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/ritmo.py"><code>src/ritmo.py</code></a>:</p>
+<p>Abaixo da placa vêm, nesta ordem, o crescimento em 12 meses, as cinco pressões e Também acompanhamos. Quando a página tem uma coluna só (celular e tablet em pé, até 820 px), as duas listas ficam atrás de um botão com a pergunta da leitora ("Por que está subindo? Veja as cinco pressões") e o blog vem logo depois, porque a placa muda umas duas vezes por ano e o post muda todo dia; um link para uma linha (<code>/#parte-...</code>) abre a lista e a linha. Sem JavaScript, a lista fica aberta. A primeira linha de cada pressão e de Também acompanhamos tem o nome à esquerda e, à direita, a palavra do que a medida fez em 3 meses (Piorou, Igual ou Melhorou, nas pressões, no emprego e nas reservas; a dívida em reais ainda não tem palavra), seguida de uma seta para baixo, sem texto. A linha inteira abre com um toque; aberta, a seta vira para cima e a linha mostra o que vale para ela entre o vaivém normal e a frase da folga; nas linhas de Também acompanhamos, também por que ela importa (<code>direcao.por_que_importa</code> em <code>config/modelo.json</code>). A seta fica à direita porque foi o único ícone que se saiu melhor que nenhum ícone nos testes do Nielsen Norman Group, que a puseram à direita; à direita também é o padrão no celular na maioria dos sistemas de design (ao alcance do polegar) e deixa o nome alinhado com o texto de baixo. Mais que o lado, conta usar o mesmo em todas as linhas.</p>
+<p><strong>Crescimento em 12 meses.</strong> É o bloco logo abaixo da placa. O título tem à direita a palavra do bloco, no mesmo lugar e no mesmo estilo do Piorou de cada pressão. O bloco não tem frase de rodapé: a faixa normal e o erro do Focus continuam calculados (seção <code>ritmo</code> de <code>config/calibracao.json</code>) e ficam explicados em Como funciona. Os três números saem de <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/ritmo.py"><code>src/ritmo.py</code></a>:</p>
 <table>
 <thead>
 <tr>
@@ -402,7 +402,7 @@ a:hover{text-decoration-thickness:2px}
 <li><strong>A previsão só aparece na tela.</strong> O PIB esperado pelo Focus não entra em conta nenhuma do site: nem na direção, nem no "encolhendo", nem na palavra do bloco. Como funciona diz quanto os bancos erram; o bloco, não. O erro médio absoluto da previsão de 12 meses do Focus contra o PIB que o IBGE divulgou depois, com a mesma ponderação dos anos (o PIB anual é a média do ano contra a do ano anterior), foi de 1,46 ponto em 252 meses, de janeiro de 2004 a dezembro de 2024. Só em 40% desses meses o erro ficou dentro de 1 ponto.</li>
 <li><strong>Quando a economia está encolhendo</strong> (passo 7), o bloco ganha uma linha com a queda da prévia do PIB nos 3 últimos meses contra os 3 anteriores, que é a conta que decide o "encolhendo".</li>
 </ul>
-<p><strong>Também acompanhamos.</strong> Abaixo das cinco pressões, no mesmo desenho, ficam as três linhas da tabela do passo 1 que não mudam a placa. Aberta, cada uma diz numa frase por que não muda (<code>direcao.nao_muda_a_placa</code> em <code>config/modelo.json</code>). O emprego e as reservas em dólar dizem Piorou, Igual ou Melhorou, pela mesma regra de corte das pressões (passo 4); só o emprego tem folga. A dívida em reais mostra a parte da dívida pública federal em reais (96%, Tesouro, agosto de 2026), posta à mão todo mês, e ainda não diz o que ela fez em 3 meses.</p>
+<p><strong>Também acompanhamos.</strong> Abaixo das cinco pressões, no mesmo desenho, ficam as três linhas da tabela do passo 1 que não mudam a placa. Aberta, cada uma diz numa frase por que não muda (<code>direcao.nao_muda_a_placa</code> em <code>config/modelo.json</code>). O emprego e as reservas em dólar dizem Piorou, Igual ou Melhorou, como as pressões, pela mesma regra de corte (passo 4); só o emprego tem folga. A dívida em reais mostra a parte da dívida pública federal em reais (96%, Tesouro, agosto de 2026), posta à mão todo mês, e ainda não diz o que ela fez em 3 meses.</p>
 <h2 id="por-que-esta-regra">Por que esta regra</h2>
 <p>A regra foi escolhida por quatro critérios fixados antes de olhar o resultado por governo:</p>
 <ol>
@@ -586,8 +586,8 @@ a:hover{text-decoration-thickness:2px}
 <td>2008: 0; 2014: 6; 2020: 0</td>
 </tr>
 <tr>
-<td>Parte dos meses em que cada pressão apertou / folgou</td>
-<td>contas 31% / 16%; parcelas 32% / 17%; desconfiança de quem investe 30% / 34%; inflação esperada 18% / 23%; juro 19% / 24%</td>
+<td>Parte dos meses em que cada pressão piorou / melhorou</td>
+<td>contas 31% / 16%; dívidas das famílias 32% / 17%; desconfiança de quem investe 30% / 34%; inflação esperada 18% / 23%; juro 19% / 24%</td>
 </tr>
 </tbody>
 </table>
@@ -795,7 +795,7 @@ a:hover{text-decoration-thickness:2px}
 <tr>
 <td>Resumo do mês</td>
 <td>Primeiro domingo do mês, no lugar do resumo da semana</td>
-<td>Os dados oficiais do mês anterior, do começo do mês até hoje: cada dado, as pressões que mudaram de lado e a direção; as notícias que o site leu no mês; e duas tabelas feitas por código: cada pressão no começo e no fim do mês, e o bolso (emprego, preços, parcelas e dólar)</td>
+<td>Os dados oficiais do mês anterior, do começo do mês até hoje: cada dado, as pressões que mudaram de lado e a direção; as notícias que o site leu no mês; e duas tabelas feitas por código, com os nomes e as palavras do topo: as cinco pressões e as linhas de Também acompanhamos, cada uma no começo e no fim do mês</td>
 <td>Até 300 palavras de texto; com as tabelas, cerca de 450</td>
 </tr>
 <tr>
@@ -969,7 +969,7 @@ a:hover{text-decoration-thickness:2px}
 </main>
 
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão apertando ou folgando, contra 3 meses antes. Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias mostram para onde cada parte da economia é empurrada, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
+  <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando, contra 3 meses antes. Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias mostram para onde cada parte da economia é empurrada, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
   <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
 </body>
