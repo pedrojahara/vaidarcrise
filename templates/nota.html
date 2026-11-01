@@ -30,7 +30,7 @@ svg text{font-family:var(--sistema)}
 <main class="in detalhe">
   <h1>Como funciona</h1>
   <p class="abre">O site responde a uma pergunta: o risco de recessão no Brasil está subindo, igual ou caindo? Ele não tenta acertar quando vem a próxima recessão. Mostra para que lado o risco andou nos últimos 3 meses, com uma regra fixa, a mesma para qualquer governo.</p>
-  <p class="abre">Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos, segundo o IBGE.</p>
+  <p class="abre">Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos, segundo o IBGE.</p>
 
   <section aria-labelledby="t-direcao">
     <h2 id="t-direcao">O que quer dizer subindo, igual e caindo?</h2>
@@ -42,7 +42,7 @@ svg text{font-family:var(--sistema)}
       <li><b>Encolhendo:</b> aparece no lugar da direção quando a prévia do PIB do Banco Central cai mais de {{ p.encolhe_pct|num }}% em 3 meses. Aí a economia já está encolhendo.</li>
     </ul>
     <p>A direção só muda quando o resultado novo se repete no mês seguinte. Assim, um mês fora da curva não muda o topo da página.</p>
-    <p>Subindo não quer dizer que a recessão vem. Desde 2004, depois dos meses em subindo, o PIB cresceu em média {{ t.pib_12m_depois.subindo|num }}% nos 12 meses seguintes. Depois dos meses em igual, {{ t.pib_12m_depois.igual|num }}%. Depois dos meses em caindo, {{ t.pib_12m_depois.caindo|num }}%. Uma recessão começou no ano seguinte em {{ (100 * t.recessao_a_frente.subindo)|round|int }} de cada 100 meses em subindo, {{ (100 * t.recessao_a_frente.igual)|round|int }} em igual e {{ (100 * t.recessao_a_frente.caindo)|round|int }} em caindo.</p>
+    <p>Subindo não quer dizer que a recessão vem. Desde 2004, o PIB cresceu em média {{ t.pib_12m_depois.subindo|num }}% nos 12 meses seguintes aos meses em subindo, contra {{ t.pib_12m_depois.igual|num }}% depois dos meses em igual e {{ t.pib_12m_depois.caindo|num }}% depois dos meses em caindo. Uma recessão começou no ano seguinte em {{ (100 * t.recessao_a_frente.subindo)|round|int }} de cada 100 meses em subindo, {{ (100 * t.recessao_a_frente.igual)|round|int }} em igual e {{ (100 * t.recessao_a_frente.caindo)|round|int }} em caindo.</p>
   </section>
 
   <section aria-labelledby="t-pressoes">
@@ -50,20 +50,20 @@ svg text{font-family:var(--sistema)}
     <ul class="topicos">
       <li><b>Contas do governo.</b> A dívida do governo, em % do PIB. Quando ela sobe rápido, quem empresta ao governo passa a cobrar mais caro, e o juro e o dólar sobem junto. É a <a href="/causas/#t-divida">bola de neve</a> da aba O que causa recessão.</li>
       <li><b>Dívidas das famílias.</b> A parte da renda que vai para parcelas e juros. Quem já paga muita parcela corta o resto primeiro quando a renda cai, e as lojas vendem menos. <a href="/causas/#t-doem">Por que essa queda dói mais</a>.</li>
-      <li><b>Desconfiança de quem investe.</b> O site mede essa desconfiança por dois números: o dólar e o juro de 10 anos, que é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos (Tesouro IPCA+). Quando quem investe desconfia do Brasil, cobra mais para emprestar ao governo e troca reais por dólar, e os dois sobem juntos. Por isso contam como uma pressão só. Se um piora e o outro fica dentro do normal, a pressão piora; se um piora e o outro melhora, ela fica igual.</li>
-      <li><b>Inflação esperada.</b> Quanto os bancos esperam que os preços subam nos próximos 12 meses (Focus). Se esperam mais, o Banco Central tende a subir o juro para segurar os preços. <a href="/causas/#t-precos">Por que os preços sobem</a>.</li>
-      <li><b>Juro.</b> A Selic, o juro que o Banco Central decide e que serve de base para os juros dos bancos. Com a Selic subindo, a compra a prazo fica cara, as pessoas compram menos e as lojas vendem menos. <a href="/causas/#t-freio">O remédio que esfria a economia</a>.</li>
+      <li><b>Desconfiança de quem investe.</b> O site mede essa desconfiança por dois números: o dólar e o juro de 10 anos, que é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos (<a class="termo" href="https://pt.wikipedia.org/wiki/Tesouro_Direto" target="_blank" rel="noopener">Tesouro IPCA+</a>). Quando quem investe desconfia do Brasil, cobra mais para emprestar ao governo e troca reais por dólar, e os dois sobem juntos. Por isso eles contam como uma pressão só, que piora quando um deles piora e o outro não melhora, e fica igual quando um piora e o outro melhora.</li>
+      <li><b>Inflação esperada.</b> Quanto os bancos esperam que os preços subam nos próximos 12 meses, segundo o <a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>. Se esperam mais, o Banco Central tende a subir o juro para segurar os preços. <a href="/causas/#t-precos">Por que os preços sobem</a>.</li>
+      <li><b>Juro.</b> A <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a>, o juro do Banco Central que serve de base para os juros dos bancos. Com a Selic subindo, a compra a prazo fica cara, e as pessoas e as lojas passam a comprar e vender menos. <a href="/causas/#t-freio">O remédio que esfria a economia</a>.</li>
     </ul>
   </section>
 
   <section aria-labelledby="t-tambem">
     <h2 id="t-tambem">E o crescimento, o emprego e a dívida em reais?</h2>
-    <p>Logo abaixo da placa ficam três números de crescimento. O primeiro diz quanto a economia cresceu nos últimos 12 meses. O segundo diz quanto ela crescia um ano antes. O terceiro é quanto os bancos esperam para os próximos 12 meses.</p>
+    <p>Logo abaixo da placa ficam três números de crescimento: quanto a economia cresceu nos últimos 12 meses, quanto ela crescia um ano antes e quanto os bancos esperam para os próximos 12 meses.</p>
     <p>O número de agora vem da prévia do PIB do Banco Central, que sai todo mês, com dois meses de atraso.{% if cal.ritmo %} Em metade dos meses desde 2004, o crescimento em 12 meses ficou entre {{ cal.ritmo.faixa[0]|num }}% e {{ cal.ritmo.faixa[1]|num }}%, e é isso que a página chama de normal.{% endif %}</p>
     {% if cal.ritmo %}<p>A previsão é a dos bancos (Focus), e o site só a mostra. Desde 2004, ela errou o crescimento dos 12 meses seguintes em {{ cal.ritmo.erro_focus|num }} ponto, em média, para mais ou para menos.</p>{% endif %}
-    <p>Nenhum desses números muda a placa. A placa olha as pressões, porque elas costumam piorar antes de o crescimento cair.</p>
+    <p>Nenhum desses números muda a placa, que olha só as pressões, porque elas costumam piorar antes de o crescimento cair.</p>
     <p>Abaixo das cinco pressões, em Também acompanhamos, ficam {% set ns = namespace(n=[]) %}{% for x in dir.tambem %}{% set ns.n = ns.n + [{'emprego': 'o emprego', 'reservas': 'as reservas em dólar do Banco Central', 'divida_reais': 'a parte da dívida do governo que é em reais'}.get(x.id, x.nome)] %}{% endfor %}{% if ns.n|length > 1 %}{{ ns.n[:-1]|join(', ') }} e {{ ns.n[-1] }}{% else %}{{ ns.n|join('') }}{% endif %}. Essas linhas também não mudam a placa.</p>
-    <p>O emprego costuma ser o último a piorar. As empresas primeiro vendem menos e só depois demitem.{% if dir.tambem|selectattr('id', 'equalto', 'reservas')|list %} As reservas e a dívida em reais protegem o país num susto do dólar, mas não avisam que uma recessão vem.{% else %} A dívida em reais protege o país num susto do dólar, mas não avisa que uma recessão vem.{% endif %}</p>
+    <p>O emprego costuma ser o último a piorar, porque as empresas primeiro vendem menos e só depois demitem.{% if dir.tambem|selectattr('id', 'equalto', 'reservas')|list %} As reservas e a dívida em reais protegem o país num susto do dólar, mas não avisam que uma recessão vem.{% else %} A dívida em reais protege o país num susto do dólar, mas não avisa que uma recessão vem.{% endif %}</p>
   </section>
 
   <section aria-labelledby="t-normal">

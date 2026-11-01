@@ -2402,35 +2402,38 @@
  "post": {
   "tipo": "dia",
   "ok": true,
-  "titulo": "Bolsa cai 18,1% na semana depois da eleição, e dólar sobe 9%",
+  "titulo": "Dólar tem a maior alta semanal desde 2008, e a Bolsa cai 18,1%",
   "paragrafos": [
-   "A Bolsa caiu 18,1% na semana depois da eleição, a mesma queda de uma semana de 2001. O dólar subiu 9%, a maior alta em uma semana desde 2008.",
-   "Com o dólar mais caro, fica mais caro o que vem de fora, como celular, peça de carro e passagem de avião."
+   "O dólar subiu 9% na semana da reeleição do presidente, a maior alta semanal desde 2008, e a Bolsa caiu 18,1%. Ontem o dólar fechou a R$ 5,42, ou 6,8% mais caro que há 3 meses.",
+   "A alta tem duas leituras: quem investe pode ter exagerado no susto da eleição, ou passou a desconfiar das contas do governo. Aliados do governo falam contra cortes de gastos, o que pesa a favor da segunda leitura, mas por enquanto é conversa, sem decisão tomada.",
+   "Com o dólar mais caro, o que vem de fora encarece, e o combustível sofre em dobro, porque o petróleo subiu mais de 14% em outubro com o conflito no Irã."
+  ],
+  "secoes": [
+   {
+    "paragrafos": [
+     "O dólar subiu 9% na semana da reeleição do presidente, a maior alta semanal desde 2008, e a Bolsa caiu 18,1%. Ontem o dólar fechou a R$ 5,42, ou 6,8% mais caro que há 3 meses.",
+     "A alta tem duas leituras: quem investe pode ter exagerado no susto da eleição, ou passou a desconfiar das contas do governo. Aliados do governo falam contra cortes de gastos, o que pesa a favor da segunda leitura, mas por enquanto é conversa, sem decisão tomada.",
+     "Com o dólar mais caro, o que vem de fora encarece, e o combustível sofre em dobro, porque o petróleo subiu mais de 14% em outubro com o conflito no Irã."
+    ]
+   }
   ],
   "problemas": [],
   "meta": [
    {
     "modelo_pedido": "opus",
-    "prompt_sha256": "869d35573848894697d774c093e884c03f1cb0182761bb161c61e9878b7ff4ca",
-    "system_sha256": "b997fc5103c72f1c7cb3328a3b5080c7c6ce554660183aa3e2faf214aa277f63",
+    "prompt_sha256": "7fd0861b1dcff67fbd73a13e3c4a6e58f89436618a5a663aad7c0b618c92d0a1",
+    "system_sha256": "792d3374eeaab52187b59cab85681cb17ea0461bbe0fd6572c1bc17a8716fedf",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.14956399999999997,
+    "custo_usd": 0.07850120000000001,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "19591842-6ca8-4144-b2fc-d1595e0d8487"
+    "session_id": "69cf6156-a5cf-40b6-a533-dbe4d11770fa"
    }
   ],
-  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-10-31: tirada a frase sobre o dólar ficar fora da conta, porque o dólar passou a contar na direção do risco.",
-  "secoes": [
-   {
-    "paragrafos": [
-     "A Bolsa caiu 18,1% na semana depois da eleição, a mesma queda de uma semana de 2001. O dólar subiu 9%, a maior alta em uma semana desde 2008.",
-     "Com o dólar mais caro, fica mais caro o que vem de fora, como celular, peça de carro e passagem de avião."
-    ]
-   }
-  ]
+  "escrito_em": "2026-11-01T17:20:00-03:00",
+  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-10-31: tirada a frase sobre o dólar ficar fora da conta, porque o dólar passou a contar na direção do risco. 2026-11-01, à noite: refeito pelo mesmo programa no jeito de escrever novo, a pedido do Pedro: frases ligadas em vez de empilhadas, sem definir PIB, IPCA, Selic e Focus (o site liga esses termos à Wikipédia) e com o \"e daí\" de cada fato. Mesmos números e datas."
  }
 }

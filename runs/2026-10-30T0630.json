@@ -2462,37 +2462,49 @@
  "post": {
   "tipo": "dia",
   "ok": true,
-  "titulo": "Atraso nas dívidas das pessoas sobe a 8,1%, o maior já registrado",
+  "titulo": "Atraso de mais de 90 dias em empréstimos chega a 8,1%, recorde",
   "paragrafos": [
-   "O atraso de mais de 90 dias nos empréstimos às pessoas subiu a 8,1% em setembro, recorde, segundo o Banco Central. E 29% da renda das famílias já vai para parcelas e juros, o maior desde o início da série, em 2005.",
-   "Com mais gente atrasando, os bancos emprestam menos e cobram mais caro. No mesmo dia, Itaú e Santander seguiram o Bradesco e subiram o juro da casa própria.",
-   "Do outro lado, a Fazenda liberou até R$ 30 bilhões do BNDES para financiar carro de aplicativo e táxi."
+   "O Banco Central divulgou ontem que o atraso de mais de 90 dias nos empréstimos às pessoas subiu para 8,1%, o maior já registrado. Ele vem junto com outro recorde, o de 29% da renda das famílias indo para parcelas e juros, contra 27,6% um ano antes.",
+   "Com mais renda presa em parcelas e mais gente atrasando, as famílias costumam cortar compras e os bancos emprestam menos, o que faz as lojas venderem menos. Isso já aparece nos dados: o total emprestado subiu só 0,4% em setembro, e Itaú e Santander seguiram o Bradesco e subiram o juro da casa própria."
+  ],
+  "secoes": [
+   {
+    "paragrafos": [
+     "O Banco Central divulgou ontem que o atraso de mais de 90 dias nos empréstimos às pessoas subiu para 8,1%, o maior já registrado. Ele vem junto com outro recorde, o de 29% da renda das famílias indo para parcelas e juros, contra 27,6% um ano antes.",
+     "Com mais renda presa em parcelas e mais gente atrasando, as famílias costumam cortar compras e os bancos emprestam menos, o que faz as lojas venderem menos. Isso já aparece nos dados: o total emprestado subiu só 0,4% em setembro, e Itaú e Santander seguiram o Bradesco e subiram o juro da casa própria."
+    ]
+   }
   ],
   "problemas": [],
   "meta": [
    {
     "modelo_pedido": "opus",
-    "prompt_sha256": "4dc65bbc77ef05496983630f309ac2dfe910c2ab73c683f52aaa29be6628623f",
-    "system_sha256": "b997fc5103c72f1c7cb3328a3b5080c7c6ce554660183aa3e2faf214aa277f63",
+    "prompt_sha256": "807b84c752d351868adc6ad227f6b1571acf8dc55a5e41d6b313a48bb9b355ee",
+    "system_sha256": "792d3374eeaab52187b59cab85681cb17ea0461bbe0fd6572c1bc17a8716fedf",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.09742400000000001,
+    "custo_usd": 0.08255320000000001,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "67eb6caf-c765-421e-8401-825373b36a40"
+    "session_id": "e63a6b70-1015-4f22-8034-a4f009a91e9b"
+   },
+   {
+    "modelo_pedido": "opus",
+    "prompt_sha256": "89680c9f53f973b10eb5346455163913af09fd36327246c84f4d517ef96faf4b",
+    "system_sha256": "792d3374eeaab52187b59cab85681cb17ea0461bbe0fd6572c1bc17a8716fedf",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.072435,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "a7a8c04d-91a7-47c1-95c9-88d53749416d"
    }
   ],
-  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas.",
-  "secoes": [
-   {
-    "paragrafos": [
-     "O atraso de mais de 90 dias nos empréstimos às pessoas subiu a 8,1% em setembro, recorde, segundo o Banco Central. E 29% da renda das famílias já vai para parcelas e juros, o maior desde o início da série, em 2005.",
-     "Com mais gente atrasando, os bancos emprestam menos e cobram mais caro. No mesmo dia, Itaú e Santander seguiram o Bradesco e subiram o juro da casa própria.",
-     "Do outro lado, a Fazenda liberou até R$ 30 bilhões do BNDES para financiar carro de aplicativo e táxi."
-    ]
-   }
-  ]
+  "escrito_em": "2026-11-01T17:20:00-03:00",
+  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-11-01, à noite: refeito pelo mesmo programa no jeito de escrever novo, a pedido do Pedro: frases ligadas em vez de empilhadas, sem definir PIB, IPCA, Selic e Focus (o site liga esses termos à Wikipédia) e com o \"e daí\" de cada fato. Mesmos números e datas."
  }
 }

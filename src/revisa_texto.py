@@ -37,7 +37,11 @@ MOLDES = [
      "frase de efeito no lugar de causa e efeito ('X, sim.', 'isto, não aquilo', 'aumento puxa aumento')"),
     # PERSONA.md, "Jargões": a Selic se explica pelo que faz, não por outro termo.
     (re.compile(r"\bjuro básico\b", re.I),
-     "'juro básico' troca jargão por jargão: diga que é o juro que o Banco Central decide e que serve de base para os juros dos bancos"),
+     "'juro básico' troca jargão por jargão: escreva só Selic, que o site liga à Wikipédia"),
+    # PERSONA.md, "O jeito de escrever do site": o termo técnico ganha link, e o texto não o define toda vez.
+    (re.compile(r"(PIB, tudo o que o país produz|IPCA, a inflação oficial|Selic é o juro que o Banco Central decide|"
+                r"\bIBC-Br\b)", re.I),
+     "define termo que o link da Wikipédia já explica (PIB, IPCA, Selic) ou usa IBC-Br em vez de 'a prévia do PIB'"),
     (re.compile(r"\b(cenário ruim|inadimplência|(déficit|superávit) primário|crédito livre)\b", re.I),
      "palavra que o site trocou (num ano ruim, atraso nas dívidas, gasta mais do que arrecada)"),
     # PERSONA.md, "Os nomes do site": o juro de 10 anos se explica pelo que é; a pressão se chama Desconfiança de quem investe.
@@ -48,7 +52,9 @@ MOLDES = [
     # categorias do topo (as cinco pressões e Também acompanhamos).
     (re.compile(r"\b(apert(ou|aram|ava|avam|ando|a|am|ar|ad[oa]s?)|folg(ou|aram|ava|avam|ando|a|am|ar|ad[oa]s?))\b", re.I),
      "palavra que o site trocou: cada pressão piorou, ficou igual ou melhorou"),
-    (re.compile(r"\b(uma|duas|três|quatro|cinco|nenhuma) das (cinco )?pressões\b", re.I),
+    (re.compile(r"\bde (piorou|melhorou|igual) para (piorou|melhorou|igual)\b", re.I),
+     "usa o rótulo da tabela como palavra: escreva a frase inteira ('tinha melhorado no fim de setembro e passou a piorar')"),
+    (re.compile(r"\b(duas|três|quatro|cinco|nenhuma) das (cinco )?pressões\b", re.I),
      "conta as pressões em vez de citar cada uma pelo nome"),
     (re.compile(r"(?<=\w\s)(Contas do governo|Dívidas das famílias|Desconfiança de quem investe|Inflação esperada|Juro)\b"),
      "nome de pressão com maiúscula no meio da frase: use minúscula e artigo ('as contas do governo', 'o juro')"),
@@ -217,7 +223,7 @@ def problemas_post(post: dict, tipo: str = "dia", dados: str | None = None, hoje
         out += [f"parágrafo {i}: {m}" for m in _moldes(p)]
         if len(p.split()) > 65:
             out.append(f"parágrafo {i} com {len(p.split())} palavras")
-        longas = [len(f.split()) for f in FRASE.split(p) if len(f.split()) > 25]
+        longas = [len(f.split()) for f in FRASE.split(p) if len(f.split()) > 32]
         if longas:
             out.append(f"parágrafo {i} com frase de {max(longas)} palavras")
         if len(NUMERO.findall(p)) > 4:

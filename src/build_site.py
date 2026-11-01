@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -15,6 +16,7 @@ from urllib.parse import quote
 
 import markdown
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from markupsafe import Markup, escape
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import calendario  # noqa: E402
@@ -128,15 +130,28 @@ def _casas(m: dict) -> int:
     return 2 if (passou and vista <= m["corte"]) or (not passou and vista > m["corte"]) else 1
 
 
-def _quanto_normal(m: dict, unidade: str) -> str:
-    """Quanto a medida andou contra o vaivém normal dela: 'passou raspando', 'dentro do normal'."""
+def _quanto_normal(m: dict, unidade: str, casas: int = 1, de: str = "") -> str:
+    """A mudança de 3 meses contra o vaivém normal dela, numa frase que se explica sozinha:
+    'A alta de 0,98 ponto passou raspando do vaivém normal de 3 meses, que vai até 0,95 ponto.'"""
     mud, corte = abs(m["mudanca"]), m["corte"]
-    c = f"{num(corte, 2 if corte < 1 else 1)}{unidade}"
+    # Em pontos, a frase usa a diferença dos dois números que a linha mostra, para a conta bater com o que se lê.
+    vista = (abs(round(m["agora"], casas) - round(m["antes"], casas))
+             if unidade == " ponto" and m.get("agora") is not None and m.get("antes") is not None else mud)
+
+    def med(v: float, d: int) -> str:
+        return f"{num(v, d)}{unidade}" + ("s" if unidade == " ponto" and round(v, d) >= 2 else "")
+    c = med(corte, 2 if corte < 1 else 1)
+    if round(vista, casas) == 0:
+        inicio = f"A mudança{de}"
+    else:
+        inicio = f"A {'alta' if m['mudanca'] > 0 else 'queda'} de {med(vista, casas)}{de}"
     if m["lado"] in (None, 0):
-        return f"Ficou dentro do vaivém normal de 3 meses, que vai até {c}."
-    if mud < 1.25 * corte:
-        return f"Passou raspando do vaivém normal de 3 meses, que vai até {c}."
-    return f"Passou do vaivém normal de 3 meses, que vai até {c}."
+        verbo = "ficou dentro do"
+    elif mud < 1.25 * corte:
+        verbo = "passou raspando do"
+    else:
+        verbo = "passou do"
+    return f"{inicio} {verbo} vaivém normal de 3 meses, que vai até {c}."
 
 
 def folga_ctx(pid: str, f: dict | None, teto: float | None = None) -> dict | None:
@@ -170,7 +185,8 @@ def folga_ctx(pid: str, f: dict | None, teto: float | None = None) -> dict | Non
         txt = txt.replace("a Selic está", f"a Selic dá {num(f['valor'])}% ao ano e está").replace(
             "a Selic está no meio", f"a Selic dá {num(f['valor'])}% ao ano, no meio")
     if pid == "inflacao" and teto is not None and f["valor"] > teto:
-        txt += f" Mas está acima do teto da meta do Banco Central, de {num(teto)}%."
+        conj = "e" if rot in ("Nenhuma", "Quase nenhuma", "Pouca") else "mas"
+        txt = txt[:-1] + f", {conj} está acima do teto da meta do Banco Central, de {num(teto)}%."
     return {"rot": rot, "texto": txt}
 
 
@@ -187,7 +203,7 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
         d = ms["divida"]
         cd = _casas(d)
         frases.append(f"A dívida do governo foi de {num(d['antes'], cd)}% para {num(d['agora'], cd)}% do PIB, {_quando(d)}.")
-        normal = _quanto_normal(d, " ponto")
+        normal = _quanto_normal(d, " ponto", cd)
         pr = ms.get("primario")
         if pr and pr.get("agora") is not None and pr.get("antes") is not None and abs(pr["agora"] - pr["antes"]) >= 0.05:
             def gasto(v: float) -> str:
@@ -205,7 +221,7 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
         cd = _casas(m)
         frases.append(f"A parte da renda das famílias que vai para parcelas e juros foi de {num(m['antes'], cd)}% para "
                       f"{num(m['agora'], cd)}%, {_quando(m)}.")
-        normal = _quanto_normal(m, " ponto")
+        normal = _quanto_normal(m, " ponto", cd)
     elif pid == "mercado" and "dolar" in ms and ms["dolar"]["agora"] is not None:
         # Fechada, a linha mostra os dois números que entram na conta; aberta, explica o juro de 10 anos e o vaivém de cada um.
         d = {**ms["dolar"], "diario": True}
@@ -224,25 +240,24 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
                           "por dólar, e os dois números sobem.")
         else:
             frases.append(f"{dolar}, {_quando(d)}.")
-        alta = f"A {'alta' if d['mudanca'] > 0 else 'queda'} de {num(abs(d['mudanca']))}% do dólar"
-        normal = alta + " " + _quanto_normal(d, "%")[0].lower() + _quanto_normal(d, "%")[1:]
+        normal = _quanto_normal(d, "%", 1, " do dólar")
         if j:
-            normal += " O juro de 10 anos " + _quanto_normal(j, " ponto")[0].lower() + _quanto_normal(j, " ponto")[1:]
-            normal += (" Os dois contam como um só. Se um piora e o outro fica dentro do normal, a pressão piora; "
-                       "se um piora e o outro melhora, ela fica igual.")
+            qj = _quanto_normal(j, " ponto", _casas(j), " do juro de 10 anos").replace("do vaivém normal de 3 meses", "do vaivém dele")
+            normal = normal[:-1] + ", e " + qj[0].lower() + qj[1:]
+            normal += (" Como os dois contam como uma pressão só, ela piora quando um deles piora e o outro não melhora, "
+                       "e fica igual quando um piora e o outro melhora.")
     elif pid == "inflacao" and m and m["agora"] is not None:
         cd = 2 if abs(m["agora"] - p["teto_meta_inflacao"]) < 0.05 else _casas(m)  # perto do teto da meta, a segunda casa decide
         frases.append(f"Os bancos (Focus) esperam que os preços subam {num(m['agora'], cd)}% "
-                      f"nos próximos 12 meses. Em {mes_nome(m['ref_antes'])}, esperavam {num(m['antes'], cd)}%.")
-        normal = _quanto_normal(m, " ponto")
+                      f"nos próximos 12 meses, contra {num(m['antes'], cd)}% em {mes_nome(m['ref_antes'])}.")
+        normal = _quanto_normal(m, " ponto", cd)
     elif pid == "juro" and m and m["agora"] is not None:
         verbo = "subiu" if m["agora"] > m["antes"] else "caiu" if m["agora"] < m["antes"] else "ficou"
         if verbo == "ficou":
             frases.append(f"A Selic ficou em {num(m['agora'], 2)}%, {_quando(m)}.")
         else:
             frases.append(f"A Selic {verbo} de {num(m['antes'], 2)}% para {num(m['agora'], 2)}%, {_quando(m)}.")
-        frases.append("A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos.")
-        normal = _quanto_normal(m, " ponto")
+        normal = _quanto_normal(m, " ponto", 2)
     elif pid == "ritmo" and m and m["mudanca"] is not None:
         frases.append(f"A prévia do PIB do Banco Central {'cresceu' if m['mudanca'] >= 0 else 'caiu'} {num(abs(m['mudanca']))}% "
                       f"nos 3 meses até {mes_nome(m['ref'])}, contra os 3 meses anteriores.")
@@ -251,7 +266,7 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
         cd = _casas(m)
         frases.append(f"O desemprego foi de {num(m['antes'], cd)}% no trimestre até {mes_nome(m['ref_antes'])} para "
                       f"{num(m['agora'], cd)}% no trimestre até {mes_nome(m['ref'])}.")
-        normal = _quanto_normal(m, " ponto")
+        normal = _quanto_normal(m, " ponto", cd)
     elif pid == "reservas" and m and m["agora"] is not None and m["antes"] is not None:
         frases.append(f"O Banco Central tinha US$ {num(m['agora'] / 1000)} bilhões guardados em dólar em {mes_nome(m['ref'])}. "
                       f"Em {mes_nome(m['ref_antes'])}, tinha US$ {num(m['antes'] / 1000)} bilhões.")
@@ -449,6 +464,45 @@ def pressao_ctx(rodada: dict, eventos: dict, cfg: dict, por_fator: int = 3) -> d
 ASSINATURA = "Escrito pelo Claude com a ajuda do Pedro."
 
 
+def com_links(textos: list[str], cfg: dict) -> list[Markup]:
+    """Liga à Wikipédia a primeira vez de cada termo técnico (config/modelo.json, glossario) num conjunto de textos,
+    para que o post não precise definir PIB, IPCA ou Selic toda vez. O resto do texto sai escapado."""
+    termos = (cfg.get("glossario") or {}).get("termos", [])
+    vistos: set[str] = set()
+    out = []
+    for t in textos:
+        achados: list[tuple[int, int, str]] = []
+        for g in termos:
+            if g["url"] in vistos:
+                continue
+            m = re.search(g["rx"], t)
+            if m and not any(a < m.end() and m.start() < b for a, b, _ in achados):
+                achados.append((m.start(), m.end(), g["url"]))
+                vistos.add(g["url"])
+        partes, i = [], 0
+        for a, b, u in sorted(achados):
+            partes += [escape(t[i:a]), Markup('<a class="termo" href="{}" target="_blank" rel="noopener">{}</a>').format(u, t[a:b])]
+            i = b
+        partes.append(escape(t[i:]))
+        out.append(Markup("").join(partes))
+    return out
+
+
+def _secoes_com_links(secoes: list[dict], cfg: dict) -> list[dict]:
+    """As seções do post para a página, com os links dos termos técnicos nos parágrafos e nos itens."""
+    textos = [x for s in secoes for x in [*(s.get("paragrafos") or []), *[i["texto"] for i in s.get("itens") or []]]]
+    ligados = iter(com_links(textos, cfg))
+    out = []
+    for s in secoes:
+        n = dict(s)
+        if s.get("paragrafos"):
+            n["paragrafos"] = [next(ligados) for _ in s["paragrafos"]]
+        if s.get("itens"):
+            n["itens"] = [{**i, "texto": next(ligados)} for i in s["itens"]]
+        out.append(n)
+    return out
+
+
 def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
     """O post de um dia. Sem texto do LLM, sai um título feito por código e a caixa das notícias."""
     dia = rodada["gerado_em"][:10]
@@ -458,7 +512,7 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
     secoes = []
     if p.get("ok"):
         titulo, paragrafos = p["titulo"], p["paragrafos"]
-        secoes = p.get("secoes") or [{"paragrafos": paragrafos}]
+        secoes = _secoes_com_links(p.get("secoes") or [{"paragrafos": paragrafos}], cfg)
         autoria = ASSINATURA
     else:
         tipo = "dia"

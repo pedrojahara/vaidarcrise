@@ -2161,36 +2161,36 @@
  "post": {
   "tipo": "dia",
   "ok": true,
-  "titulo": "Bolsa cai 13,9% e dólar sobe 8,2% no dia seguinte à eleição",
+  "titulo": "Dólar sobe 8,2% e Bolsa cai 13,9% no dia seguinte à eleição",
   "paragrafos": [
-   "A Bolsa caiu 13,9% e o dólar subiu 8,2% no dia seguinte à eleição. A queda foi tão forte que os negócios na Bolsa chegaram a parar, o que não acontecia desde 2020.",
-   "Dois dias depois, subiu o juro de 10 anos, o que o governo paga para pegar dinheiro emprestado por uns 10 anos. Quando esse juro sobe, os bancos cobram mais nos empréstimos longos. O Bradesco levou o juro mínimo da casa própria de 11,7% para 15% ao ano."
+   "O dólar subiu 8,2% e a Bolsa caiu 13,9% no dia seguinte à reeleição do presidente, e o pregão parou pela primeira vez desde a pandemia. Com o dólar a R$ 5,34, 4,4% mais caro que 3 meses antes, fica mais caro tudo o que vem de fora.",
+   "O juro que o governo paga, acima da inflação, para pegar dinheiro emprestado até 2035 subiu para 7,9% ao ano, o que encarece parcelas longas, como a da casa própria. Há duas leituras para a alta: o mercado pode ter exagerado no susto da eleição, ou quem investe passou a desconfiar das contas do governo."
+  ],
+  "secoes": [
+   {
+    "paragrafos": [
+     "O dólar subiu 8,2% e a Bolsa caiu 13,9% no dia seguinte à reeleição do presidente, e o pregão parou pela primeira vez desde a pandemia. Com o dólar a R$ 5,34, 4,4% mais caro que 3 meses antes, fica mais caro tudo o que vem de fora.",
+     "O juro que o governo paga, acima da inflação, para pegar dinheiro emprestado até 2035 subiu para 7,9% ao ano, o que encarece parcelas longas, como a da casa própria. Há duas leituras para a alta: o mercado pode ter exagerado no susto da eleição, ou quem investe passou a desconfiar das contas do governo."
+    ]
+   }
   ],
   "problemas": [],
   "meta": [
    {
     "modelo_pedido": "opus",
-    "prompt_sha256": "b794bfb9c52f7d3b434210c968d982485676c2d61f549174196b4236810f6212",
-    "system_sha256": "b997fc5103c72f1c7cb3328a3b5080c7c6ce554660183aa3e2faf214aa277f63",
+    "prompt_sha256": "86c0ece61bd4c2003145e6e8a7756403c5025111765888f1b784f1dcdf35fff8",
+    "system_sha256": "792d3374eeaab52187b59cab85681cb17ea0461bbe0fd6572c1bc17a8716fedf",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.179,
+    "custo_usd": 0.1459,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "dffd9657-59f0-4328-8964-41cb76f55e76"
+    "session_id": "558a7c48-30cb-40df-8d73-5c1101a84461"
    }
   ],
-  "escrito_em": "2026-10-29T23:11:34-03:00",
-  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-10-31: tirada a frase sobre o dólar ficar fora da conta, porque o dólar passou a contar na direção do risco.",
-  "secoes": [
-   {
-    "paragrafos": [
-     "A Bolsa caiu 13,9% e o dólar subiu 8,2% no dia seguinte à eleição. A queda foi tão forte que os negócios na Bolsa chegaram a parar, o que não acontecia desde 2020.",
-     "Dois dias depois, subiu o juro de 10 anos, o que o governo paga para pegar dinheiro emprestado por uns 10 anos. Quando esse juro sobe, os bancos cobram mais nos empréstimos longos. O Bradesco levou o juro mínimo da casa própria de 11,7% para 15% ao ano."
-    ]
-   }
-  ]
+  "escrito_em": "2026-11-01T17:20:00-03:00",
+  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-10-31: tirada a frase sobre o dólar ficar fora da conta, porque o dólar passou a contar na direção do risco. 2026-11-01, à noite: refeito pelo mesmo programa no jeito de escrever novo, a pedido do Pedro: frases ligadas em vez de empilhadas, sem definir PIB, IPCA, Selic e Focus (o site liga esses termos à Wikipédia) e com o \"e daí\" de cada fato. Mesmos números e datas."
  }
 }
