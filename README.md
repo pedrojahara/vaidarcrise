@@ -1,6 +1,6 @@
 # Vai dar crise?
 
-Para que lado anda o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB): subindo, igual ou caindo, conforme cinco pressões que costumam vir antes de uma recessão (contas do governo, dívidas das famílias, dólar e juro longo, inflação esperada e juro) apertam ou folgam contra 3 meses antes. Com um post por dia: o fato do dia de segunda a sábado, a semana aos domingos e o mês no primeiro domingo do mês, num blog de rolagem só, do post mais novo ao mais antigo, com o Retrato do Brasil também no topo. No ar em **[vaidarcrise.com.br](https://vaidarcrise.com.br)**.
+Para que lado anda o risco de o Brasil entrar em recessão técnica (dois trimestres seguidos de queda do PIB): subindo, igual ou caindo, conforme cinco pressões que costumam vir antes de uma recessão (contas do governo, dívidas das famílias, dólar e juro longo, inflação esperada e juro) apertam ou folgam contra 3 meses antes. Com um post por dia: o fato do dia de segunda a sábado, o resumo da semana aos domingos e o resumo do mês no primeiro domingo do mês, num blog de rolagem só, do post mais novo ao mais antigo, com o Retrato do Brasil também no topo. No ar em **[vaidarcrise.com.br](https://vaidarcrise.com.br)**.
 
 A metodologia está em [METODOLOGIA.md](METODOLOGIA.md), a regra da direção em [src/direcao.py](src/direcao.py), as escolhas fixas em [config/modelo.json](config/modelo.json) e o que sai dos dados (o vaivém normal de cada pressão e o teste desde 2004) em [config/calibracao.json](config/calibracao.json). Cada atualização grava um registro em [`runs/`](runs/), imutável depois do lançamento oficial, com insumos, hash das regras e do prompt e a resposta do modelo de linguagem. Para quem os textos são escritos (leitor, tom, palavras, números e a lista que todo texto passa) está em [PERSONA.md](PERSONA.md); [CLAUDE.md](CLAUDE.md) manda todo texto novo passar por ele.
 
@@ -19,8 +19,8 @@ launchd, todo dia às 06h30 → run.sh   (uma publicação por dia; se o Mac dor
   │                         só no fim de Como funciona
   ├─ src/classify_news.py   claude -p, sem ferramentas, saída em esquema JSON: manchetes do dia anterior → eventos
   ├─ src/dossie.py          fatos de dados de cada assunto, contexto para o post
-  ├─ src/escreve_post.py    claude -p escreve o post do tipo do dia (fato do dia, semana ou mês) a partir da conta pronta
-  │                         e dos registros em runs/; src/revisa_texto.py confere o texto e os números
+  ├─ src/escreve_post.py    claude -p escreve o post do tipo do dia (fato do dia, semana ou mês) a partir da conta pronta,
+  │                         dos dados oficiais (o mês) e dos registros em runs/ (a semana); src/revisa_texto.py confere
   ├─ src/run.py             grava runs/<id>.json e data/eventos.json
   ├─ src/build_site.py      gera docs/ (HTML estático, og.png, data.json) com editor/*.md;
   │                         a aba O que causa recessão é texto fixo em templates/causas.html

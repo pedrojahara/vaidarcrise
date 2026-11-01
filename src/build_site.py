@@ -30,7 +30,7 @@ MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "a
 DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
 JORNAIS = "Folha, Valor, Estadão, g1, InfoMoney, Poder360, Agência Brasil e Gazeta do Povo"
 # Os tipos de post (PERSONA.md): o retrato, escrito à mão, fica fixo no topo; os outros saem da atualização das 06h30.
-TIPOS_POST = {"dia": "Fato do dia", "semana": "A semana", "mes": "O mês", "retrato": "Retrato do Brasil"}
+TIPOS_POST = {"dia": "Fato do dia", "semana": "Resumo da semana", "mes": "Resumo do mês", "retrato": "Retrato do Brasil"}
 # O blog é uma rolagem só, do post mais novo ao mais antigo: a página principal traz os primeiros, e o resto
 # chega aos poucos, de docs/posts/, enquanto a leitora rola.
 POSTS_NA_PAGINA = 5
@@ -378,6 +378,33 @@ def pressao_ctx(rodada: dict, eventos: dict, cfg: dict, por_fator: int = 3) -> d
 
 
 # --------------------------------------------------------------------- posts
+def autoria_resumo(tipo: str, per: dict, hr: str) -> str:
+    """A assinatura do resumo da semana ou do mês: com o que foi escrito e as notícias que o site não leu."""
+    cob = per.get("noticias") or {}
+    ia = f"Escrito por inteligência artificial (Claude) às {hr}"
+    if tipo == "mes" and per.get("mes"):
+        nome = mes_nome(per["mes"])
+        if not cob.get("dias"):
+            txt = f"{ia}, com os dados oficiais de {nome}. O site não leu notícias nesse mês."
+        elif cob.get("comeco"):
+            txt = (f"{ia}, com os dados oficiais de {nome}. As notícias são só de {dia_mes(cob['de'])} a "
+                   f"{dia_mes(cob['ate'])}, porque o site começou a ler notícias em {dia_mes(cob['comeco'])}.")
+        else:
+            txt = f"{ia}, com os dados oficiais e as notícias de {nome}."
+    else:
+        txt = f"{ia}, com as {per['rodadas']} atualizações do site de {dia_mes(per['de'])} a {dia_mes(per['ate'])}."
+        if cob.get("comeco"):
+            txt += f" O site começou a ler notícias em {dia_mes(cob['comeco'])}."
+    falta = cob.get("faltam") or []
+    if falta and cob.get("dias"):
+        if len(falta) <= 4:
+            dias = " e ".join(filter(None, [", ".join(dia_mes(d) for d in falta[:-1]), dia_mes(falta[-1])]))
+            txt += f" O site não leu as notícias de {dias}."
+        else:
+            txt += f" O site não leu as notícias de {len(falta)} dias."
+    return txt
+
+
 def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
     """O post de um dia. Sem texto do LLM, sai um título feito por código e a caixa das notícias."""
     dia = rodada["gerado_em"][:10]
@@ -399,8 +426,7 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
         hr = hora(p.get("escrito_em") or rodada["gerado_em"])
         per = p.get("periodo") or {}
         if tipo in ("semana", "mes") and per:
-            autoria = (f"Escrito por inteligência artificial (Claude) às {hr}, com as {per['rodadas']} atualizações do site "
-                       f"de {dia_mes(per['de'])} a {dia_mes(per['ate'])}.")
+            autoria = autoria_resumo(tipo, per, hr)
         else:
             autoria = f"Escrito por inteligência artificial (Claude) às {hr}, depois de ler {lidas}."
         rodape = "Ninguém revisa o texto antes de ele sair."
