@@ -7,7 +7,7 @@ O site escreve para o brasileiro médio que gosta de política, não estudou eco
 Vale para tudo o que chega ao leitor:
 
 - páginas: `templates/`, rótulos e legendas em `src/build_site.py`, `src/causas.py`, `config/causas.json`, `src/calendario.py`, `src/og_image.py`;
-- frases geradas por código: o topo da página em `src/build_site.py` (o crescimento em 12 meses, cada pressão, o vaivém normal e a folga), os textos da seção `direcao` de `config/modelo.json` (quem mexe, por que a linha não muda a placa, a dívida em reais) e `src/dossie.py` (fatos de dados que o post recebe);
+- frases geradas por código: o topo da página em `src/build_site.py` (o crescimento em 12 meses, cada pressão, o vaivém normal e a folga), os textos da seção `direcao` de `config/modelo.json` (por que cada linha de Também acompanhamos importa e não muda a placa, a dívida em reais) e `src/dossie.py` (fatos de dados que o post recebe);
 - prompts da IA: `src/escreve_post.py` (post) e `src/classify_news.py` (títulos de notícia e leituras). Mudou o guia, mude as regras dos prompts e os moldes de `src/revisa_texto.py`;
 - textos à mão em `editor/`.
 
