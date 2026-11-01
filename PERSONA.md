@@ -120,8 +120,8 @@ Fale como alguém que entende de economia explicando no almoço de domingo: calm
 
 **Frase e parágrafo**
 
-- Ordem direta, voz ativa, uma ideia por frase. São as técnicas da Lei 15.263/2025, de linguagem simples.
-- Até 20 palavras por frase; média perto de 12.
+- Ordem direta e voz ativa, como pede a Lei 15.263/2025, de linguagem simples. Uma ideia por frase, e a ideia inclui o porquê: o fato e a razão de ele importar cabem juntos.
+- Até 30 palavras por frase. Frases curtas soltas, uma atrás da outra, deixam o texto truncado.
 - Até 3 frases ou 50 palavras por parágrafo.
 - Título afirma o fato principal, com verbo, em até 70 caracteres. Sem pergunta e sem trocadilho.
 - "Você" pode aparecer quando liga o dado à vida do leitor. "Eu" e "nós" não: o site não tem rosto.
@@ -155,6 +155,18 @@ Este é o padrão de todo texto do site, do post diário às abas, aprovado em 3
 5. **Diga de onde vem a causa.** Causa de fora é chamada de causa de fora, e o texto diz o que o governo influencia e como: "Das três causas externas, o governo influencia uma com as próprias contas: o dólar."
 6. **Compare com as mesmas linhas.** Dois casos lado a lado respondem às mesmas perguntas (juro, folga da economia, preços lá fora, contas do governo, como terminou), e o texto diz qual diferença mudou o final.
 7. **Amarre ao que a leitora já viu.** "É a padaria do começo da página." Cada parte usa a imagem da anterior em vez de inventar outra.
+8. **O texto se explica sozinho.** Quem lê só aquele texto entende cada frase, sem o topo do site nem o post anterior. Diga o nome das coisas: "pioraram as contas do governo, as dívidas das famílias, a desconfiança de quem investe e a inflação esperada", não "quatro das cinco pressões pioraram".
+9. **Frases ligadas, não empilhadas.** Quando duas informações formam uma ideia (o fato e por que ele importa, a causa e o efeito), elas vão na mesma frase, ligadas por "porque", "já que", "dado que", "o que" ou "por isso". Três frases curtas soltas, uma atrás da outra, deixam o texto truncado.
+10. **Termo técnico com link, sem aula.** Os termos que não dá para evitar (PIB, IPCA, Selic, Focus, Copom, risco-país, meta de inflação) não são definidos a cada texto: o site liga a primeira vez de cada um à página dele na Wikipédia (`glossario` em `config/modelo.json`). Explicação dentro do texto fica para o que a Wikipédia não cobre, como o juro de 10 anos, e cabe dentro da frase. A aba O que causa recessão continua explicando, porque ensinar é o papel dela.
+11. **Todo fato com o "e daí".** Depois do fato, uma frase curta diz o que ele quer dizer para o risco ou para quem lê: por que o dado importa, o que costuma vir depois, se confirma ou contraria o mês. É interpretação presa aos dados, sem adjetivo de juízo e sem culpado; quando o fato admite duas leituras, as duas entram, com o mesmo peso.
+
+**Antes e depois, no resumo do mês de 1/11/2026 (reescrita do Pedro)**
+
+> **Antes.** No dia 2/12, o IBGE divulga o PIB do terceiro trimestre, tudo o que o país produziu no período. A prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto, contra os 3 meses anteriores. Uma recessão é o PIB cair dois trimestres seguidos.
+>
+> **Depois.** No dia 2/12, o IBGE vai divulgar o PIB do terceiro trimestre, e é uma divulgação importante, dado que a prévia do PIB caiu 0,6% nos 3 meses até agosto contra os 3 meses anteriores.
+
+O depois tira a definição do PIB (o link resolve), junta o dado futuro ao motivo de ele importar numa frase só e deixa o "e daí" claro: o PIB oficial vai mostrar se a queda da prévia se confirma.
 
 **Antes e depois, na aba O que causa recessão**
 
@@ -220,17 +232,17 @@ O resto do guia cuida da palavra. Esta parte cuida de como ensinar: por que os p
 
 ## Jargões e o que escrever no lugar
 
-O termo técnico pode aparecer só se o leitor vai encontrá-lo em outro lugar (Selic, PIB, IPCA), e sempre traduzido na primeira vez. O resto sai do texto.
+O termo técnico pode aparecer só se o leitor vai encontrá-lo em outro lugar (PIB, IPCA, Selic, Focus, Copom, risco-país, meta de inflação). Nos posts e nas páginas, ele vai sem definição: o site liga a primeira vez de cada um, em cada post, à página dele na Wikipédia (decisão do Pedro em 1/11/2026, porque definir o PIB em todo texto deixava a leitura truncada). O resto sai do texto.
 
-Traduzir é dizer o que o termo faz na vida de quem lê. Trocar por outro termo não basta: no teste com a primeira leitora, "Selic, o juro básico" não explicou a Selic.
+Quando for preciso traduzir (na aba O que causa recessão, ou num termo sem página na Wikipédia), traduzir é dizer o que o termo faz na vida de quem lê. Trocar por outro termo não basta: no teste com a primeira leitora, "Selic, o juro básico" não explicou a Selic.
 
 | Em vez de | Escreva |
 | --- | --- |
 | Recessão técnica | PIB caindo dois trimestres seguidos |
-| PIB | PIB, tudo o que o país produz |
-| Selic | na primeira vez, numa frase própria: "A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos." Nunca só "juro básico". |
+| PIB | PIB, com o link; na aba O que causa recessão, "tudo o que o país produz" |
+| Selic | Selic, com o link. Nunca "juro básico". Na aba O que causa recessão, numa frase própria: "A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos." |
 | Copom | o Banco Central (ou "o comitê do BC que decide o juro") |
-| IPCA, IPCA em 12 meses | inflação oficial; quanto os preços subiram em um ano |
+| IPCA, IPCA em 12 meses | o IPCA, com o link; quanto os preços subiram em um ano |
 | Inflação desacelera, recua | os preços sobem mais devagar |
 | Deflação | os preços caem |
 | Desaceleração | a economia cresce mais devagar |
@@ -242,7 +254,7 @@ Traduzir é dizer o que o termo faz na vida de quem lê. Trocar por outro termo 
 | Política monetária, aperto monetário | juro; juro alto para segurar os preços |
 | Política fiscal, quadro fiscal | as contas do governo |
 | Déficit primário | o governo gastou mais do que arrecadou, sem contar os juros da dívida |
-| Dívida bruta/PIB | dívida do governo em X% do PIB (na primeira vez, "de tudo o que o país produz em um ano") |
+| Dívida bruta/PIB | dívida do governo em X% do PIB |
 | Arcabouço fiscal | a regra de gastos do governo |
 | Câmbio, depreciação do real | dólar mais caro |
 | Commodities | produtos como soja, minério e petróleo |
@@ -294,17 +306,18 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 Os itens 3, 5, 9 e 12, e parte do 11, o código confere nos posts (`src/revisa_texto.py`); os outros pedem leitura.
 
 1. **Resposta primeiro.** O título e a primeira frase respondem à pergunta do texto: no fato do dia, o fato principal; a direção do risco, só quando mudou.
-2. **Sozinho no print.** Só o título e a primeira frase já se entendem, sem o resto da página.
-3. **Frase curta.** Nenhuma frase passa de 20 palavras; nenhum parágrafo, de 50.
-4. **Zero jargão solto.** Todo termo da tabela acima está traduzido ou fora.
+2. **Sozinho no print.** Só o título e a primeira frase já se entendem, sem o resto da página, e o texto inteiro se entende sem o topo do site nem o post anterior.
+3. **Frase ligada e enxuta.** Nenhuma frase passa de 30 palavras nem fica solta quando completa a anterior; nenhum parágrafo passa de 50 palavras.
+4. **Zero jargão solto.** Todo termo da tabela acima está traduzido ou fora. Os termos técnicos inevitáveis (PIB, IPCA, Selic, Focus, Copom, risco-país, meta de inflação) vão sem definição, porque o site liga a primeira vez de cada um à Wikipédia.
 5. **Número com régua.** Cada número tem comparação e unidade; no máximo quatro por parágrafo; arredondado.
 6. **Ponte para o bolso.** Quando a ligação é clara, o texto diz o que muda no emprego, no preço ou na parcela.
 7. **Teste da troca.** Com outro governo no poder, a frase sairia igual.
 8. **Estágio claro.** Diz se é dado divulgado, decisão tomada, proposta, anúncio ou rumor.
 9. **Sem alarme, sem consolo, sem molde.** Nenhuma palavra de alarme ou com lado; nenhuma expressão de piloto automático.
 10. **Em voz alta.** Lido em voz alta, soa como gente explicando para gente.
-11. **Explicação por inteiro.** Passa nas sete regras de "O jeito de escrever do site": frase completa, causa e efeito em ordem com exemplo, condição por inteiro, nenhuma fórmula de efeito, causa de fora dita, casos com as mesmas linhas e amarração ao que veio antes.
+11. **Explicação por inteiro.** Passa nas onze regras de "O jeito de escrever do site": frase completa, causa e efeito em ordem com exemplo, condição por inteiro, nenhuma fórmula de efeito, causa de fora dita, casos com as mesmas linhas e amarração ao que veio antes.
 12. **Nada repetido.** O texto não repete o que o topo, a caixa de notícias ou a lateral já mostram, nem frase do post anterior do mesmo tipo. Todo número está nos dados.
+13. **E daí.** Cada fato diz o que quer dizer para o risco ou para quem lê, sem lado, com as duas leituras quando houver duas.
 
 ### Antes e depois: a frase, com o post de 30/10/2026
 
@@ -312,11 +325,11 @@ Este exemplo mostra a frase e o número; a estrutura está no exemplo seguinte. 
 
 > **Antes.** O risco de recessão técnica, que são dois trimestres seguidos de queda do PIB, segue normal, o mesmo nível da atualização anterior. No cenário ruim, com só 1 chance em 10 de ser pior, o PIB cai 1,8% em 12 meses, contra −1,9% em tempos normais. A Selic, juro básico, caiu de 15,00% para 13,75% em um ano, e o IPCA recuou de 5,17% para 4,58%. Os dois aliviam esse cenário. O crescimento de 1,38% em 12 meses pesa, e o IBC-Br, prévia do PIB, caiu 0,6% no trimestre até agosto.
 
-> **Depois.** A Selic caiu de 15% para 13,75% em um ano. A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos.
+> **Depois.** A Selic caiu de 15% para 13,75% em um ano, o que deixa o crédito um pouco mais barato para quem compra a prazo.
 >
-> Os preços sobem mais devagar: 4,6% em um ano, contra 5,2% antes. A economia cresce menos que o normal, 1,4% em um ano, e a prévia do PIB do Banco Central caiu no trimestre até agosto.
+> Os preços sobem mais devagar, 4,6% em um ano contra 5,2% antes, mas a economia cresce menos que o normal: 1,4% em um ano, com a prévia do PIB do Banco Central caindo no trimestre até agosto.
 
-Mesmos fatos, mesma ordem de importância. A diferença está no verbo que não engana ("sobem mais devagar", e não "recuou"), na Selic explicada pelo que ela faz e em metade dos números.
+Mesmos fatos, mesma ordem de importância. A diferença está no verbo que não engana ("sobem mais devagar", e não "recuou"), na Selic sem definição, porque o link explica, mas com o que ela muda para quem lê, e em metade dos números.
 
 ### Antes e depois: a estrutura, com o post de 31/10/2026
 
@@ -337,7 +350,7 @@ Um fato, contado até o bolso. O que o dólar fez em 3 meses fica no topo, em "D
 - `src/escreve_post.py`: um prompt por tipo de post (fato do dia, resumo da semana, resumo do mês), com as regras comuns de leitor, frase, números, palavras proibidas, mecanismo e causa e efeito por extenso. O código monta os fatos de cada tipo; o mês sai dos dados oficiais do mês e a semana, das rodadas guardadas em `runs/`.
 - `src/run.py` e `src/escreve_post.py`: o tipo sai só da data (domingo, o resumo da semana; primeiro domingo do mês, o resumo do mês); a assinatura de todo post, em `src/build_site.py` (`ASSINATURA`), é só "Escrito pelo Claude com a ajuda do Pedro."
 - `src/classify_news.py`, regras 12 a 16: títulos de evento e "por quê" com a mesma linguagem.
-- `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal, inflação que "cai" ou "recua", palavra que o site trocou (Apertou, Folgou, juro longo), pressões contadas em vez de citadas pelo nome, "No bolso" como categoria e rótulo do resumo da semana que não é nome do site. Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, direção repetida sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados, previsão de recessão e risco em porcentagem que sobram depois da reescrita barram o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
+- `src/revisa_texto.py`: pede reescrita do post com frase acima de 32 palavras, definição de termo que o link já explica ("o PIB, tudo o que o país produz"), "IBC-Br", parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal, inflação que "cai" ou "recua", palavra que o site trocou (Apertou, Folgou, juro longo), pressões contadas em vez de citadas pelo nome, "No bolso" como categoria e rótulo do resumo da semana que não é nome do site. Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, direção repetida sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados, previsão de recessão e risco em porcentagem que sobram depois da reescrita barram o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
 - `src/dossie.py`: as frases de dados de cada assunto, que o post usa como contexto (queda no verbo, mês por extenso, sem sigla solta).
 - `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas; no topo, as frases do crescimento em 12 meses, de cada pressão, do vaivém normal e de quanto espaço ainda sobra saem de `src/build_site.py`.
 - `config/modelo.json`, seção `direcao`: os nomes das pressões e das linhas de Também acompanhamos, por que cada linha de Também acompanhamos importa, a frase de por que a linha não muda a placa e a parte da dívida em reais, posta à mão todo mês.

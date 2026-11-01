@@ -38,6 +38,8 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--papel);color:var(--tinta);font:19px/1.62 var(--serifa)}
 a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:3px}
 a:hover{text-decoration-thickness:2px}
+/* Termo técnico ligado à Wikipédia: a cor do texto, com sublinhado pontilhado, para não parecer chamada. */
+a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px}
 :focus-visible{outline:3px solid var(--link);outline-offset:2px}
 .in{max-width:1000px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .peq{font:14px/1.5 var(--sistema);color:var(--meta)}
@@ -230,7 +232,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   <summary><span class="p-cab"><b>Contas do governo</b><span class="p-dir"><span class="p-lado mais">Piorou</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="p-frase">A dívida do governo foi de 81,95% para 82,93% do PIB, de junho a setembro.</span></summary>
   <div class="p-mais">
     <p>Sem contar os juros, o governo gastou 0,5% do PIB a mais do que arrecadou nos 12 meses até setembro, contra 1,2% nos 12 meses até junho.</p><p>A dívida sobe mesmo assim, porque os juros sobre ela pesam mais que essa melhora.</p>
-    <p>Passou raspando do vaivém normal de 3 meses, que vai até 0,95 ponto.</p>
+    <p>A alta de 0,98 ponto passou raspando do vaivém normal de 3 meses, que vai até 0,95 ponto.</p>
     <p>A dívida está mais alta que em 96% dos meses desde 2006.</p>
     
     
@@ -241,7 +243,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   <summary><span class="p-cab"><b>Dívidas das famílias</b><span class="p-dir"><span class="p-lado mais">Piorou</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="p-frase">A parte da renda das famílias que vai para parcelas e juros foi de 28,5% para 29,0%, de maio a agosto.</span></summary>
   <div class="p-mais">
     
-    <p>Passou do vaivém normal de 3 meses, que vai até 0,38 ponto.</p>
+    <p>A alta de 0,5 ponto passou do vaivém normal de 3 meses, que vai até 0,38 ponto.</p>
     <p>A parte da renda que vai para dívidas é a maior desde 2005, quando começa a série.</p>
     
     
@@ -252,7 +254,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   <summary><span class="p-cab"><b>Desconfiança de quem investe</b><span class="p-dir"><span class="p-lado mais">Piorou</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="p-frase">O dólar foi de R$ 5,08 para R$ 5,42, e o juro de 10 anos foi de 8,3% para 8,0% ao ano, do fim de julho a 30/10.</span></summary>
   <div class="p-mais">
     <p>O juro de 10 anos é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos. Quando quem investe desconfia do Brasil, cobra mais para emprestar ao governo e troca reais por dólar, e os dois números sobem.</p>
-    <p>A alta de 6,8% do dólar passou do vaivém normal de 3 meses, que vai até 4,8%. O juro de 10 anos ficou dentro do vaivém normal de 3 meses, que vai até 0,43 ponto. Os dois contam como um só. Se um piora e o outro fica dentro do normal, a pressão piora; se um piora e o outro melhora, ela fica igual.</p>
+    <p>A alta de 6,8% do dólar passou do vaivém normal de 3 meses, que vai até 4,8%, e a queda de 0,3 ponto do juro de 10 anos ficou dentro do vaivém dele, que vai até 0,43 ponto. Como os dois contam como uma pressão só, ela piora quando um deles piora e o outro não melhora, e fica igual quando um piora e o outro melhora.</p>
     <p>O juro de 10 anos está mais alto que em 91% dos meses desde 2005.</p>
     
     
@@ -260,11 +262,11 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   </div>
 </details></li>
 <li id="parte-inflacao"><details>
-  <summary><span class="p-cab"><b>Inflação esperada</b><span class="p-dir"><span class="p-lado mais">Piorou</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="p-frase">Os bancos (Focus) esperam que os preços subam 4,53% nos próximos 12 meses. Em julho, esperavam 4,19%.</span></summary>
+  <summary><span class="p-cab"><b>Inflação esperada</b><span class="p-dir"><span class="p-lado mais">Piorou</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="p-frase">Os bancos (Focus) esperam que os preços subam 4,53% nos próximos 12 meses, contra 4,19% em julho.</span></summary>
   <div class="p-mais">
     
-    <p>Passou raspando do vaivém normal de 3 meses, que vai até 0,32 ponto.</p>
-    <p>A inflação esperada está no meio do que o Brasil viu desde 2001. Mas está acima do teto da meta do Banco Central, de 4,5%.</p>
+    <p>A alta de 0,34 ponto passou raspando do vaivém normal de 3 meses, que vai até 0,32 ponto.</p>
+    <p>A inflação esperada está no meio do que o Brasil viu desde 2001, mas está acima do teto da meta do Banco Central, de 4,5%.</p>
     
     
     <p><a href="/causas/#t-precos">Como isso funciona</a></p>
@@ -273,8 +275,8 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
 <li id="parte-juro"><details>
   <summary><span class="p-cab"><b>Juro</b><span class="p-dir"><span class="p-lado igual">Igual</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="p-frase">A Selic caiu de 14,00% para 13,75%, de agosto a novembro.</span></summary>
   <div class="p-mais">
-    <p>A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos.</p>
-    <p>Ficou dentro do vaivém normal de 3 meses, que vai até 0,83 ponto.</p>
+    
+    <p>A queda de 0,25 ponto ficou dentro do vaivém normal de 3 meses, que vai até 0,83 ponto.</p>
     <p>Descontada a inflação esperada, a Selic dá 8,8% ao ano e está mais alta que em 73% dos meses desde 2002.</p>
     
     
@@ -289,7 +291,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   <summary><span class="p-cab"><b>Emprego</b><span class="p-dir"><span class="p-lado igual">Igual</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="p-frase">O desemprego foi de 5,4% no trimestre até junho para 5,2% no trimestre até setembro.</span></summary>
   <div class="p-mais">
     
-    <p>Ficou dentro do vaivém normal de 3 meses, que vai até 0,56 ponto.</p>
+    <p>A queda de 0,2 ponto ficou dentro do vaivém normal de 3 meses, que vai até 0,56 ponto.</p>
     <p>O desemprego está mais baixo que em 99% dos meses desde 2012.</p>
     <p>Quem perde o emprego corta gastos e atrasa parcelas, e é aí que a recessão chega ao bolso.</p>
     <p class="p-fora">Esta linha não muda a placa, porque o desemprego costuma subir depois que a recessão já começou.</p>
@@ -302,8 +304,8 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     
     
     
-    <p>Quando o dólar sobe, a dívida em reais não cresce junto. Em 2002, boa parte da dívida era corrigida pelo dólar. Quando o dólar subiu, a dívida cresceu de uma vez. O número sai uma vez por mês no Relatório Mensal da Dívida, do Tesouro.</p>
-    <p class="p-fora">Esta linha não muda a placa, porque a dívida em reais não avisa que uma recessão vem. Ela protege num susto do dólar.</p>
+    <p>Quando o dólar sobe, a dívida em reais não cresce junto. Em 2002 era diferente: boa parte da dívida era corrigida pelo dólar, e por isso ela cresceu de uma vez quando o dólar subiu. O número sai uma vez por mês no Relatório Mensal da Dívida, do Tesouro.</p>
+    <p class="p-fora">Esta linha não muda a placa, porque a dívida em reais não avisa que uma recessão vem, mas protege as contas do governo num susto do dólar.</p>
     <p><a href="/causas/#t-divida">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -349,21 +351,13 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <tbody><tr><th scope="row">Contas do governo</th><td>Piorou</td><td>Piorou</td></tr><tr><th scope="row">Dívidas das famílias</th><td>Piorou</td><td>Piorou</td></tr><tr><th scope="row">Desconfiança de quem investe</th><td>Melhorou</td><td>Piorou</td></tr><tr><th scope="row">Inflação esperada</th><td>Piorou</td><td>Piorou</td></tr><tr><th scope="row">Juro</th><td>Igual</td><td>Igual</td></tr></tbody>
   </table></div>
   
-  <h3 class="sec">Também acompanhamos</h3>
   
-  
-  <div class="tab"><table>
-    <thead><tr><th scope="col"></th><th scope="col">Fim de setembro</th><th scope="col">Agora</th></tr></thead>
-    <tbody><tr><th scope="row">Emprego</th><td>Igual</td><td>Igual</td></tr></tbody>
-  </table></div>
-  
-  
-  <p>Depois da eleição, o dólar subiu e terminou outubro a R$ 5,42, contra R$ 5,18 no fim de setembro. O juro de 10 anos subiu de 7,5% para 8,0% ao ano no mesmo período. É o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos.</p><p>Quando quem investe desconfia do Brasil, cobra mais para emprestar ao governo e troca reais por dólar. Com o dólar mais caro, fica mais caro o que vem de fora. De fora do país veio o petróleo, que subiu mais de 14% em outubro com o conflito no Irã.</p><p>Bradesco, Itaú e Santander subiram o juro da casa própria; no Bradesco, o mínimo foi de 11,7% para 15% ao ano. Com isso, a parcela de quem financia um imóvel fica mais cara. Isso chega quando as famílias já põem 29% da renda em parcelas e juros, o maior desde 2005.</p>
+  <p>A mudança veio com a eleição: de 30/9 a 30/10, o dólar foi de R$ 5,18 para R$ 5,42. No mesmo mês, o juro que o governo paga, acima da inflação, para pegar dinheiro emprestado por 10 anos subiu de 7,5% para 8,0%. Com o dólar mais caro, fica mais caro o que vem de fora, como peças e combustível.</p><p>A alta tem duas leituras: o mercado pode ter exagerado no susto da eleição, ou passou a desconfiar das contas do governo. Os fatos da semana dão argumento aos dois lados. A IFI, do Senado, apontou R$ 40 bilhões em medidas novas sem previsão no Orçamento, e a Fazenda anunciou um projeto para cumprir a meta das contas do governo.</p><p>O efeito já chegou à parcela, porque, quando o governo paga mais para pegar dinheiro por 10 anos, os bancos cobram mais nos empréstimos longos. O Bradesco subiu o juro mínimo da casa própria de 11,7% para 15% ao ano, e Itaú e Santander foram atrás. Isso pesa mais porque as famílias já entregam 29% da renda a parcelas e juros, o maior da série.</p>
   
   
   
   
-  <p>Em 4/11, o Banco Central decide o juro, com a Selic em 13,75%. A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos. Em 12/11, o IPCA de outubro, a inflação oficial, mostra se o dólar mais caro chegou aos preços.</p><p>No dia 2/12, o IBGE divulga o PIB do terceiro trimestre, tudo o que o país produziu no período. A prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto, contra os 3 meses anteriores. Uma recessão é o PIB cair dois trimestres seguidos.</p>
+  <p>Em 4/11, o Banco Central decide a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a>, hoje em 13,75%, com os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) esperando preços acima do <a class="termo" href="https://pt.wikipedia.org/wiki/Metas_de_infla%C3%A7%C3%A3o" target="_blank" rel="noopener">teto da meta de inflação</a>, o que costuma manter o juro alto. Em 12/11, o IBGE divulga o <a class="termo" href="https://pt.wikipedia.org/wiki/%C3%8Dndice_Nacional_de_Pre%C3%A7os_ao_Consumidor_Amplo" target="_blank" rel="noopener">IPCA</a> de outubro, que mostra se o dólar mais caro já começou a chegar aos preços.</p><p>Em 2/12, o IBGE divulga o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> do 3º trimestre, um dado importante porque a prévia do PIB caiu 0,6% nos 3 meses até agosto, contra os 3 meses anteriores.</p>
   
   
   
@@ -445,7 +439,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
 </script>
 
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando, contra 3 meses antes. Recessão, aqui, é o PIB, tudo o que o país produz, cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias mostram para onde cada parte da economia é empurrada, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
+  <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando, contra 3 meses antes. Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias mostram para onde cada parte da economia é empurrada, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
   <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
 </body>
