@@ -2413,7 +2413,7 @@
       "fonte": "Tesouro Direto"
      },
      {
-      "texto": "Dólar a R$ 5,37 em 29/10, 4,9% mais caro que há 3 meses.",
+      "texto": "Dólar a R$ 5,37 em 29/10, 4,9% mais caro que no fim de julho.",
       "fonte": "BC"
      }
     ]
@@ -2462,49 +2462,64 @@
  "post": {
   "tipo": "dia",
   "ok": true,
-  "titulo": "Atraso de mais de 90 dias em empréstimos chega a 8,1%, recorde",
+  "titulo": "Atraso nas dívidas das pessoas sobe a 8,1% e bate recorde",
   "paragrafos": [
-   "O Banco Central divulgou ontem que o atraso de mais de 90 dias nos empréstimos às pessoas subiu para 8,1%, o maior já registrado. Ele vem junto com outro recorde, o de 29% da renda das famílias indo para parcelas e juros, contra 27,6% um ano antes.",
-   "Com mais renda presa em parcelas e mais gente atrasando, as famílias costumam cortar compras e os bancos emprestam menos, o que faz as lojas venderem menos. Isso já aparece nos dados: o total emprestado subiu só 0,4% em setembro, e Itaú e Santander seguiram o Bradesco e subiram o juro da casa própria."
+   "Em setembro, 8,1% dos empréstimos às pessoas estavam com mais de 90 dias de atraso, um recorde, segundo dado divulgado pelo Banco Central. O atraso sobe num momento em que parcelas e juros já levavam 29% da renda das famílias em agosto, contra 27,6% em agosto de 2025.",
+   "Família com conta atrasada e pouca sobra na renda compra menos, e os bancos emprestam com mais cuidado, por isso o total de crédito cresceu só 0,4% em setembro. Itaú e Santander seguiram o Bradesco e subiram o juro da casa própria, o que encarece a parcela de quem vai financiar um imóvel."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "O Banco Central divulgou ontem que o atraso de mais de 90 dias nos empréstimos às pessoas subiu para 8,1%, o maior já registrado. Ele vem junto com outro recorde, o de 29% da renda das famílias indo para parcelas e juros, contra 27,6% um ano antes.",
-     "Com mais renda presa em parcelas e mais gente atrasando, as famílias costumam cortar compras e os bancos emprestam menos, o que faz as lojas venderem menos. Isso já aparece nos dados: o total emprestado subiu só 0,4% em setembro, e Itaú e Santander seguiram o Bradesco e subiram o juro da casa própria."
+     "Em setembro, 8,1% dos empréstimos às pessoas estavam com mais de 90 dias de atraso, um recorde, segundo dado divulgado pelo Banco Central. O atraso sobe num momento em que parcelas e juros já levavam 29% da renda das famílias em agosto, contra 27,6% em agosto de 2025.",
+     "Família com conta atrasada e pouca sobra na renda compra menos, e os bancos emprestam com mais cuidado, por isso o total de crédito cresceu só 0,4% em setembro. Itaú e Santander seguiram o Bradesco e subiram o juro da casa própria, o que encarece a parcela de quem vai financiar um imóvel."
     ]
    }
   ],
   "problemas": [],
+  "edicao": {
+   "sugestoes": [
+    {
+     "trecho": "Família com conta atrasada e renda apertada compra menos",
+     "problema": "O verificador apontou palavra que o site trocou: \"apertada\" lembra o Apertou/Folgou, que o site não usa mais. É melhor dizer o que acontece com a renda.",
+     "como_fica": "Família com conta atrasada e pouca sobra na renda compra menos"
+    },
+    {
+     "trecho": "O atraso sobe quando parcelas e juros já levam 29% da renda das famílias em agosto, contra 27,6% um ano antes.",
+     "problema": "Não se entende sozinha: \"quando\" soa como regra geral, mas é um fato de agosto. A comparação também não diz o mês.",
+     "como_fica": "O atraso sobe num momento em que parcelas e juros já levavam 29% da renda das famílias em agosto, contra 27,6% em agosto de 2025."
+    }
+   ],
+   "aplicada": true
+  },
   "meta": [
    {
     "modelo_pedido": "opus",
-    "prompt_sha256": "807b84c752d351868adc6ad227f6b1571acf8dc55a5e41d6b313a48bb9b355ee",
-    "system_sha256": "792d3374eeaab52187b59cab85681cb17ea0461bbe0fd6572c1bc17a8716fedf",
+    "prompt_sha256": "8d47e55ddef6d6ab5b5ec6ccba5cd9bce820f59b872f9db19cd1103ae7453041",
+    "system_sha256": "fd9a8be54c94ed707c0b33221d75dd0e5cfea05070c681fc31e30145ca999d63",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.08255320000000001,
+    "custo_usd": 0.123504,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "e63a6b70-1015-4f22-8034-a4f009a91e9b"
+    "session_id": "9843f138-ebae-4f9d-a93d-3caf7adbb46c"
    },
    {
     "modelo_pedido": "opus",
-    "prompt_sha256": "89680c9f53f973b10eb5346455163913af09fd36327246c84f4d517ef96faf4b",
-    "system_sha256": "792d3374eeaab52187b59cab85681cb17ea0461bbe0fd6572c1bc17a8716fedf",
+    "prompt_sha256": "9dc22cc5436042d81bd4cae8ec8b74d06f5c7c7f26f765761d4b53d1f7c76832",
+    "system_sha256": "742a9166ecb7708349c5ccb68828d68c7cf9d6db13c33b0eb25536b9574c5d87",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.072435,
+    "custo_usd": 0.22232000000000002,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "a7a8c04d-91a7-47c1-95c9-88d53749416d"
+    "session_id": "830dea27-d08a-4970-9b90-4dc6f6411657"
    }
   ],
-  "escrito_em": "2026-11-01T17:20:00-03:00",
-  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-11-01, à noite: refeito pelo mesmo programa no jeito de escrever novo, a pedido do Pedro: frases ligadas em vez de empilhadas, sem definir PIB, IPCA, Selic e Focus (o site liga esses termos à Wikipédia) e com o \"e daí\" de cada fato. Mesmos números e datas."
+  "escrito_em": "2026-11-01T18:50:00-03:00",
+  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-11-01, à noite: refeito pelo mesmo programa no jeito de escrever novo, a pedido do Pedro: frases ligadas em vez de empilhadas, sem definir PIB, IPCA, Selic e Focus (o site liga esses termos à Wikipédia) e com o \"e daí\" de cada fato. Mesmos números e datas. 2026-11-01, mais tarde: refeito pelo redator e pelo editor novo (src/edita_texto.py), a pedido do Pedro: comparação com o mês (e não \"contra 3 meses antes\"), importados no lugar de \"o que vem de fora\", sigla por extenso ou com link e quem paga o quê. As sugestões do editor estão em edicao. Mesmos números e datas."
  }
 }

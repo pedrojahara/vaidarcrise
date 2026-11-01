@@ -315,15 +315,28 @@ def _e(nomes: list[str]) -> str:
     return nomes[0] if len(nomes) == 1 else ", ".join(nomes[:-1]) + " e " + nomes[-1]
 
 
-def frase_pressoes(pressoes: list[dict]) -> str:
-    """O que cada pressão fez em 3 meses, citada pelo nome, nunca pela contagem ("quatro das cinco")."""
+def mes_comparado(partes: list[dict]) -> str | None:
+    """O mês com que o texto compara as cinco pressões ("se compararmos com julho"). Cada pressão compara o último dado
+    dela com o de 3 meses antes, e os dados saem com atrasos diferentes (a dívida de setembro contra a de junho, a Selic
+    de novembro contra a de agosto); a frase usa o mês do meio dessas comparações, e cada linha do topo diz os meses dela."""
+    refs = sorted(next(iter(x["medidas"].values()))["ref_antes"][:7] for x in partes
+                  if x.get("na_soma") and x.get("medidas") and next(iter(x["medidas"].values())).get("ref_antes"))
+    return mes_nome(refs[len(refs) // 2]) if refs else None
+
+
+def frase_pressoes(pressoes: list[dict], comparado: str | None = None) -> str:
+    """O que cada pressão fez, citada pelo nome, nunca pela contagem ("quatro das cinco"), e com o mês da comparação
+    ("Se compararmos com julho, pioraram as contas do governo..."), nunca "contra 3 meses antes"."""
     frases = []
-    for lado in (1, 0, -1, None):
+    for lado in (1, -1, 0, None):
         nomes = [f"{ARTIGO.get(x['id'], 'a')} {x['nome'][0].lower()}{x['nome'][1:]}" for x in pressoes if x["lado"] == lado]
         if nomes:
             um, varios = VERBO_PRESSAO[lado]
-            frases.append(f"{_e(nomes)} {um if len(nomes) == 1 else varios}.")
-    frases = ["Nos últimos 3 meses, " + frases[0], *[f[0].upper() + f[1:] for f in frases[1:]]]
+            verbo = um if len(nomes) == 1 else varios
+            # Piorou e melhorou vêm antes dos nomes ("pioraram as contas do governo e..."); "ficou igual", depois.
+            frases.append(f"{verbo} {_e(nomes)}." if lado in (1, -1) else f"{_e(nomes)} {verbo}.")
+    inicio = f"Se compararmos com {comparado}, " if comparado else "Desde a última comparação, "
+    frases = [inicio + frases[0], *[f[0].upper() + f[1:] for f in frases[1:]]]
     for lado in (1, -1):
         if not any(x["lado"] == lado for x in pressoes):
             frases.append(f"Nenhuma pressão {VERBO_PRESSAO[lado][0]}.")
@@ -337,7 +350,8 @@ def direcao_ctx(rodada: dict, cfg: dict, cal: dict) -> dict:
     seta, cls, nome = ESTADO[d["estado"]]
     partes = [_parte_ctx(x, cfg, hoje) for x in d["partes"]]
     pressoes = [x for x in partes if x["na_soma"]]
-    conta = frase_pressoes(pressoes)
+    comparado = mes_comparado(d["partes"])
+    conta = frase_pressoes(pressoes, comparado)
     enc = None
     if d["estado"] == "encolhendo":
         rit = next((x for x in d["partes"] if x["id"] == "ritmo"), {})
@@ -357,7 +371,7 @@ def direcao_ctx(rodada: dict, cfg: dict, cal: dict) -> dict:
     return {"estado": d["estado"], "seta": seta, "cls": cls, "nome": nome, "palavra": d["estado"],
             "titulo": "A economia está encolhendo" if d["estado"] == "encolhendo" else f"O risco de recessão está {d['estado']}",
             "desde": f"desde {mes_ano(desde, hoje=hoje)}" if desde[:7] < hoje[:7] else "neste mês",
-            "conta": conta, "pendente": pend, "pressoes": pressoes, "tambem": tambem,
+            "conta": conta, "comparado": comparado, "pendente": pend, "pressoes": pressoes, "tambem": tambem,
             "ritmo": ritmo_ctx(hoje, rodada, cal, enc), "ritmo_parte": next((x for x in partes if x["id"] == "ritmo"), None),
             "placa": nome, "longa": len(nome) > 8,
             # No celular, as pressões ficam atrás de um botão com a pergunta da leitora.

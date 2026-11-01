@@ -52,6 +52,14 @@ def mes_extenso(m: str) -> str:
     return f"{MESES[int(m[5:7]) - 1]} de {m[:4]}"
 
 
+def _tres_meses_antes(iso: str) -> str:
+    """O ponto de 3 meses antes de uma data, dito como se fala: "no fim de julho", "no começo de agosto"."""
+    import datetime as dt
+    d = dt.date.fromisoformat(iso[:10]) - dt.timedelta(days=91)
+    parte = "no começo" if d.day <= 10 else "em meados" if d.day <= 20 else "no fim"
+    return f"{parte} de {MESES[d.month - 1]}"
+
+
 def dia_mes(iso: str) -> str:
     return f"{int(iso[8:10])}/{int(iso[5:7])}"
 
@@ -187,7 +195,9 @@ def fatos_de_dados(res: dict, snap: dict, mensal: dict | None = None, hist: dict
     x = ind.get("dolar")
     if x and x.get("valor") is not None:
         v = x["valor"]
-        quanto = "o mesmo preço de 3 meses atrás" if round(v, 1) == 0 else f"{num(abs(v))}% mais {'caro' if v > 0 else 'barato'} que há 3 meses"
+        quando = _tres_meses_antes(x["ref"])
+        quanto = (f"o mesmo preço {quando}" if round(v, 1) == 0
+                  else f"{num(abs(v))}% mais {'caro' if v > 0 else 'barato'} que {quando}")
         out["mercado"].append({"texto": f"Dólar a R$ {num(x['nivel'], 2)} em {dia_mes(x['ref'])}, {quanto}.",
                                "fonte": "BC"})
 

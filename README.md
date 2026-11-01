@@ -20,7 +20,8 @@ launchd, todo dia às 06h30 → run.sh   (uma publicação por dia; se o Mac dor
   ├─ src/classify_news.py   claude -p, sem ferramentas, saída em esquema JSON: manchetes do dia anterior → eventos
   ├─ src/dossie.py          fatos de dados de cada assunto, contexto para o post
   ├─ src/escreve_post.py    claude -p escreve o post do tipo do dia (fato do dia, semana ou mês) a partir da conta pronta,
-  │                         dos dados oficiais (o mês) e dos registros em runs/ (a semana); src/revisa_texto.py confere
+  │                         dos dados oficiais (o mês) e dos registros em runs/ (a semana); src/edita_texto.py
+  │                         (o editor) revisa e edita o rascunho com o PERSONA.md; src/revisa_texto.py confere
   ├─ src/run.py             grava runs/<id>.json e data/eventos.json
   ├─ src/build_site.py      gera docs/ (HTML estático, og.png, data.json) com editor/*.md;
   │                         a aba O que causa recessão é texto fixo em templates/causas.html
@@ -54,6 +55,8 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python src/escreve_post.py                      # escreve o post da última atualização e imprime, sem gravar
 .venv/bin/python src/escreve_post.py --so-dados            # só os dados que o post recebe, sem chamar o LLM
 .venv/bin/python src/escreve_post.py --tipo semana --so-dados  # força o tipo (dia, semana ou mes)
+.venv/bin/python src/edita_texto.py runs/<id>.json         # o editor num post guardado: sugestões e texto editado (--grava grava)
+.venv/bin/python src/edita_texto.py editor/<texto>.md       # o editor num texto à mão
 ```
 
 Agendamento: copie `launchd/com.pedrojahara.vaidarcrise.plist` (06h30) e `launchd/com.pedrojahara.vaidarcrise.coleta.plist` (de hora em hora) para `~/Library/LaunchAgents` e carregue com `launchctl bootstrap gui/$(id -u) <arquivo>`. Logs em `logs/`.

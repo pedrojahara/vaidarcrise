@@ -7,8 +7,8 @@ Todo texto do site e do blog (posts, abas, títulos de evento, nota, imagem de c
 Escrevemos para um adulto de uns 35 a 45 anos, sem diploma universitário, que acompanha política pelo celular, tem lado (ou desconfia dos dois) e sente a economia no preço do mercado, na fatura do cartão e no emprego. Ele quer saber em 10 segundos: o risco de crise está subindo ou caindo, e o que isso muda para mim?
 
 - **Resposta primeiro.** Para que lado anda o risco (subindo, igual ou caindo), em palavras, na primeira frase.
-- **Palavra de conversa.** Nada de economês. Sigla só com tradução.
-- **Um número por ideia**, arredondado e sempre com comparação: contra 3 meses antes, contra o normal ou contra um ano atrás.
+- **Palavra de conversa.** Nada de economês. Sigla que ela não conhece vai por extenso ou com link.
+- **Um número por ideia**, arredondado e sempre com comparação, dizendo o mês: "se compararmos com julho", contra o normal ou contra um ano atrás.
 - **Risco sem número:** subindo, igual ou caindo, nunca chance em porcentagem. Quando um risco precisa de número, em frequência: "1 chance em 10", nunca "quantil 10%".
 - **Mesma régua para os dois lados.** O texto sairia igual com outro governo no poder.
 - **Calma.** Sem alarme e sem consolo.
@@ -129,7 +129,7 @@ Fale como alguém que entende de economia explicando no almoço de domingo: calm
 **Números**
 
 - Uma comparação por frase (o número de hoje e a régua dele) e no máximo quatro números por parágrafo.
-- Sempre com comparação: contra 3 meses antes, contra o normal ou contra um ano atrás. Número sozinho não diz nada a ela.
+- Sempre com comparação, dizendo com que mês: "se compararmos com julho", "mais caro que no fim de julho", contra o normal ou contra um ano atrás. Número sozinho não diz nada a ela, e "contra 3 meses antes" obriga a fazer a conta.
 - Arredonde: 1,38% vira 1,4%; 5,17% vira 5,2%. Duas casas só na Selic, que é decidida assim.
 - Queda com verbo, não com sinal: "o PIB cai 1,8%", não "−1,8%".
 - Diferença de taxas em pontos, com os dois valores: "subiu 3 pontos, de 10% para 13%".
@@ -140,7 +140,7 @@ Fale como alguém que entende de economia explicando no almoço de domingo: calm
 
 - Celular primeiro: letra de 16 px ou mais, uma coluna.
 - Cor nunca sozinha: sempre com palavra ("Subindo", "Piorou") e seta, por causa do daltonismo e do print em preto e branco.
-- A direção mostra sempre o que cada pressão fez em 3 meses.
+- A direção mostra sempre o que cada pressão fez, com os meses da comparação.
 - Um gráfico por ideia, com título que conclui ("Juro caiu 1,25 ponto em um ano"). Linha com rótulo na ponta, sem legenda. Nada de dois eixos.
 - Seta de direção sempre com a palavra ao lado ("Subindo", "Piorou"). A seta para baixo que abre cada linha do topo não mostra direção e vai sem texto.
 
@@ -157,8 +157,12 @@ Este é o padrão de todo texto do site, do post diário às abas, aprovado em 3
 7. **Amarre ao que a leitora já viu.** "É a padaria do começo da página." Cada parte usa a imagem da anterior em vez de inventar outra.
 8. **O texto se explica sozinho.** Quem lê só aquele texto entende cada frase, sem o topo do site nem o post anterior. Diga o nome das coisas: "pioraram as contas do governo, as dívidas das famílias, a desconfiança de quem investe e a inflação esperada", não "quatro das cinco pressões pioraram".
 9. **Frases ligadas, não empilhadas.** Quando duas informações formam uma ideia (o fato e por que ele importa, a causa e o efeito), elas vão na mesma frase, ligadas por "porque", "já que", "dado que", "o que" ou "por isso". Três frases curtas soltas, uma atrás da outra, deixam o texto truncado.
-10. **Termo técnico com link, sem aula.** Os termos que não dá para evitar (PIB, IPCA, Selic, Focus, Copom, risco-país, meta de inflação) não são definidos a cada texto: o site liga a primeira vez de cada um à página dele na Wikipédia (`glossario` em `config/modelo.json`). Explicação dentro do texto fica para o que a Wikipédia não cobre, como o juro de 10 anos, e cabe dentro da frase. A aba O que causa recessão continua explicando, porque ensinar é o papel dela.
+10. **Termo técnico com link, sem aula.** Os termos que não dá para evitar (PIB, IPCA, Selic, Focus, Copom, risco-país, meta de inflação, IFI, BNDES) não são definidos a cada texto: o site liga a primeira vez de cada um à página dele na Wikipédia (`glossario` em `config/modelo.json`). Explicação dentro do texto fica para o que a Wikipédia não cobre, como o juro de 10 anos, e cabe dentro da frase. A aba O que causa recessão continua explicando, porque ensinar é o papel dela.
 11. **Todo fato com o "e daí".** Depois do fato, uma frase curta diz o que ele quer dizer para o risco ou para quem lê: por que o dado importa, o que costuma vir depois, se confirma ou contraria o mês. É interpretação presa aos dados, sem adjetivo de juízo e sem culpado; quando o fato admite duas leituras, as duas entram, com o mesmo peso.
+12. **Compare com um mês, não com "3 meses antes".** Diga com que mês ou data se compara, como se fala: "se compararmos com julho", "desde junho", "6,8% mais caro que no fim de julho". "Contra 3 meses antes", "há 3 meses" e "nos últimos 3 meses" obrigam a leitora a fazer a conta. "Nos 3 meses até agosto" pode, porque já diz o mês.
+13. **Importado, não "o que vem de fora".** Produto comprado de outro país é importado, e a compra é a importação: "com o dólar mais caro, os importados ficam mais caros, como peças e combustível". Causa de fora (guerra, seca, juro dos Estados Unidos) continua sendo causa de fora.
+14. **Sigla por extenso ou com link.** Sigla que a leitora não conhece vai por extenso quando o nome já diz o que ela é (Confederação Nacional da Indústria, Tribunal de Contas da União, o banco central dos Estados Unidos no lugar de Fed), ou fica como sigla quando o site a liga à Wikipédia (IFI, BNDES). Imposto vai pelo que ele cobra ("o imposto sobre combustíveis", e não ICMS). Siglas que todo mundo conhece ficam: IBGE, PIB, INSS, EUA.
+15. **Exato no que importa, natural no resto, e sempre quem.** Diga o detalhe que muda o entendimento e corte o que só pesa: depois da primeira vez, "quando o governo paga mais para pegar dinheiro emprestado" basta, sem repetir "por 10 anos". E diga quem faz o quê e para quem: de quem o banco cobra, quem paga, quem perde.
 
 **Antes e depois, no resumo do mês de 1/11/2026 (reescrita do Pedro)**
 
@@ -167,6 +171,14 @@ Este é o padrão de todo texto do site, do post diário às abas, aprovado em 3
 > **Depois.** No dia 2/12, o IBGE vai divulgar o PIB do terceiro trimestre, e é uma divulgação importante, dado que a prévia do PIB caiu 0,6% nos 3 meses até agosto contra os 3 meses anteriores.
 
 O depois tira a definição do PIB (o link resolve), junta o dado futuro ao motivo de ele importar numa frase só e deixa o "e daí" claro: o PIB oficial vai mostrar se a queda da prévia se confirma.
+
+**Antes e depois, no mesmo resumo (pedido do Pedro, 1/11/2026, à noite)**
+
+> **Antes.** Contra 3 meses antes, pioraram as contas do governo e a desconfiança de quem investe. Com o dólar mais caro, fica mais caro o que vem de fora. Na mesma semana, a IFI, do Senado, apontou R$ 40 bilhões em medidas novas. O efeito já chegou à parcela, porque, quando o governo paga mais para pegar dinheiro por 10 anos, os bancos cobram mais nos empréstimos longos.
+>
+> **Depois.** Se compararmos com julho, pioraram as contas do governo e a desconfiança de quem investe. Com o dólar mais caro, os importados ficam mais caros. Na mesma semana, a [IFI](https://pt.wikipedia.org/wiki/Institui%C3%A7%C3%A3o_Fiscal_Independente), do Senado, apontou R$ 40 bilhões em medidas novas. O efeito já chegou à parcela, porque, quando o governo paga mais para pegar dinheiro emprestado, os bancos cobram mais das pessoas e das empresas nos empréstimos longos, como o da casa própria.
+
+O depois diz o mês da comparação, troca "o que vem de fora" por importados, liga a sigla à Wikipédia, tira o "por 10 anos" repetido e diz de quem o banco cobra mais: das pessoas e das empresas, e não do governo.
 
 **Antes e depois, na aba O que causa recessão**
 
@@ -232,7 +244,7 @@ O resto do guia cuida da palavra. Esta parte cuida de como ensinar: por que os p
 
 ## Jargões e o que escrever no lugar
 
-O termo técnico pode aparecer só se o leitor vai encontrá-lo em outro lugar (PIB, IPCA, Selic, Focus, Copom, risco-país, meta de inflação). Nos posts e nas páginas, ele vai sem definição: o site liga a primeira vez de cada um, em cada post, à página dele na Wikipédia (decisão do Pedro em 1/11/2026, porque definir o PIB em todo texto deixava a leitura truncada). O resto sai do texto.
+O termo técnico pode aparecer só se o leitor vai encontrá-lo em outro lugar (PIB, IPCA, Selic, Focus, Copom, risco-país, meta de inflação, IFI, BNDES). Nos posts e nas páginas, ele vai sem definição: o site liga a primeira vez de cada um, em cada post, à página dele na Wikipédia (decisão do Pedro em 1/11/2026, porque definir o PIB em todo texto deixava a leitura truncada). O resto sai do texto.
 
 Quando for preciso traduzir (na aba O que causa recessão, ou num termo sem página na Wikipédia), traduzir é dizer o que o termo faz na vida de quem lê. Trocar por outro termo não basta: no teste com a primeira leitora, "Selic, o juro básico" não explicou a Selic.
 
@@ -258,7 +270,12 @@ Quando for preciso traduzir (na aba O que causa recessão, ou num termo sem pág
 | Arcabouço fiscal | a regra de gastos do governo |
 | Câmbio, depreciação do real | dólar mais caro |
 | Commodities | produtos como soja, minério e petróleo |
-| Choque externo | problema que vem de fora (guerra, crise nos EUA, China comprando menos) |
+| Choque externo | problema que vem de fora do país (guerra, crise nos EUA, China comprando menos) |
+| O que vem de fora (produto) | os importados; a importação |
+| CNI, TCU, Fed, CBIE | o nome por extenso: Confederação Nacional da Indústria, Tribunal de Contas da União, o banco central dos Estados Unidos, Centro Brasileiro de Infraestrutura |
+| ICMS, IOF, CBS | o imposto pelo que ele cobra: o imposto sobre combustíveis, o imposto sobre aplicações, o novo imposto federal sobre o consumo |
+| IFI, BNDES | a sigla, com o link; na primeira vez, "a IFI, do Senado" |
+| Contra 3 meses antes, há 3 meses | o mês: "se compararmos com julho", "que no fim de julho" |
 | Curva de juros invertida | juro de curto prazo maior que o de longo prazo: sinal de que o mercado espera economia mais fraca |
 | Expectativas desancoradas | o mercado acha que a inflação vai passar da meta |
 | Boletim Focus | a pesquisa semanal do Banco Central com bancos e consultorias |
@@ -282,9 +299,9 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 | Os dois números da Desconfiança de quem investe | o dólar e o juro de 10 anos, os dois na linha fechada; na primeira vez, "o juro de 10 anos é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos". Nunca "juro longo", "juros futuros" ou "prêmio de risco" |
 | O botão que abre as pressões no celular | "Por que está subindo? Veja as cinco pressões" (ou caindo, ou igual); quando a economia encolhe, "Como estão as cinco pressões?". Só aparece quando a página tem uma coluna; no computador, a lista fica aberta |
 | As linhas que não mudam a placa | Também acompanhamos: Emprego, Reservas em dólar, Dívida em reais. Aberta, cada uma diz "Esta linha não muda a placa, porque..." |
-| O que cada linha fez em 3 meses | Piorou, Igual, Melhorou, em todas as linhas do topo: as cinco pressões, o emprego e as reservas. No texto, "a pressão piorou" ou "pioraram as contas do governo". Nunca Apertou e Folgou, nem "apertando ou folgando" |
-| Quais pressões mudaram, no texto | Cada uma pelo nome: "Nos últimos 3 meses, pioraram as contas do governo, as dívidas das famílias, a desconfiança de quem investe e a inflação esperada. O juro ficou igual." No meio da frase, o nome vai em minúscula e com artigo, como qualquer palavra. Nunca a contagem ("quatro das cinco pressões"), porque a leitora não sabe de cor quais são as cinco |
-| Categorias, rótulos e tabelas do post | Só as duas listas do topo, com os mesmos nomes: as cinco pressões e Também acompanhamos. As tabelas do resumo do mês são "As cinco pressões, contra 3 meses antes" e "Também acompanhamos". Os rótulos do resumo da semana são nomes de pressão ou de assunto das notícias. Nunca "No bolso", "Parcelas", "Preços" ou "Mercado" como categoria |
+| O que cada linha fez | Piorou, Igual, Melhorou, em todas as linhas do topo: as cinco pressões, o emprego e as reservas. No texto, "a pressão piorou" ou "pioraram as contas do governo". Nunca Apertou e Folgou, nem "apertando ou folgando" |
+| Quais pressões mudaram, no texto | Cada uma pelo nome e com o mês da comparação: "Se compararmos com julho, pioraram as contas do governo, as dívidas das famílias, a desconfiança de quem investe e a inflação esperada. O juro ficou igual." O mês é o do meio das comparações (a dívida de setembro contra a de junho, a Selic de novembro contra a de agosto); cada linha do topo diz os meses dela. No topo, o título da lista é "As cinco pressões, comparadas com julho". No meio da frase, o nome vai em minúscula e com artigo, como qualquer palavra. Nunca a contagem ("quatro das cinco pressões"), porque a leitora não sabe de cor quais são as cinco |
+| Categorias, rótulos e tabelas do post | Só as duas listas do topo, com os mesmos nomes: as cinco pressões e Também acompanhamos. O resumo do mês tem uma tabela só, "As cinco pressões no fim de setembro e agora"; Também acompanhamos entra no texto quando ajuda. Os rótulos do resumo da semana são nomes de pressão ou de assunto das notícias. Nunca "No bolso", "Parcelas", "Preços" ou "Mercado" como categoria |
 | A medida das Dívidas das famílias | a parte da renda das famílias que vai para parcelas e juros |
 | O que abre cada linha | Uma seta para baixo, sem texto, à direita da primeira linha, logo depois da palavra (Piorou, Igual...); aberta, a seta vira para cima. A linha inteira abre com um toque |
 | A régua de cada pressão | o vaivém normal de 3 meses (só no topo aberto e em Como funciona) |
@@ -315,9 +332,11 @@ Os itens 3, 5, 9 e 12, e parte do 11, o código confere nos posts (`src/revisa_t
 8. **Estágio claro.** Diz se é dado divulgado, decisão tomada, proposta, anúncio ou rumor.
 9. **Sem alarme, sem consolo, sem molde.** Nenhuma palavra de alarme ou com lado; nenhuma expressão de piloto automático.
 10. **Em voz alta.** Lido em voz alta, soa como gente explicando para gente.
-11. **Explicação por inteiro.** Passa nas onze regras de "O jeito de escrever do site": frase completa, causa e efeito em ordem com exemplo, condição por inteiro, nenhuma fórmula de efeito, causa de fora dita, casos com as mesmas linhas e amarração ao que veio antes.
+11. **Explicação por inteiro.** Passa nas quinze regras de "O jeito de escrever do site": frase completa, causa e efeito em ordem com exemplo, condição por inteiro, nenhuma fórmula de efeito, causa de fora dita, casos com as mesmas linhas e amarração ao que veio antes.
 12. **Nada repetido.** O texto não repete o que o topo, a caixa de notícias ou a lateral já mostram, nem frase do post anterior do mesmo tipo. Todo número está nos dados.
 13. **E daí.** Cada fato diz o que quer dizer para o risco ou para quem lê, sem lado, com as duas leituras quando houver duas.
+14. **Mês, importado, sigla e quem.** Toda comparação diz o mês; produto de fora é importado; sigla que a leitora não conhece vai por extenso ou com link; cada frase diz quem faz o quê e para quem.
+15. **Passou pelo editor.** Todo post passa pelo editor (`src/edita_texto.py`) antes de sair; texto à mão também pode passar, com a leitura em voz alta no fim.
 
 ### Antes e depois: a frase, com o post de 30/10/2026
 
@@ -341,16 +360,17 @@ O post de 31/10 tinha 197 palavras, e 97 delas repetiam o dia anterior e algo qu
 >
 > A Bolsa caiu 18,1% na semana depois da eleição, a mesma queda de uma semana de 2001. O dólar subiu 9%, a maior alta em uma semana desde 2008.
 >
-> Com o dólar mais caro, fica mais caro o que vem de fora, como celular, peça de carro e passagem de avião.
+> Com o dólar mais caro, os importados ficam mais caros, como celular e peça de carro.
 
-Um fato, contado até o bolso. O que o dólar fez em 3 meses fica no topo, em "Desconfiança de quem investe", e para onde a notícia empurra cada assunto fica na caixa logo abaixo do post.
+Um fato, contado até o bolso. O que o dólar fez fica no topo, em "Desconfiança de quem investe", e para onde a notícia empurra cada assunto fica na caixa logo abaixo do post.
 
 ## Onde o guia vale no código
 
 - `src/escreve_post.py`: um prompt por tipo de post (fato do dia, resumo da semana, resumo do mês), com as regras comuns de leitor, frase, números, palavras proibidas, mecanismo e causa e efeito por extenso. O código monta os fatos de cada tipo; o mês sai dos dados oficiais do mês e a semana, das rodadas guardadas em `runs/`.
 - `src/run.py` e `src/escreve_post.py`: o tipo sai só da data (domingo, o resumo da semana; primeiro domingo do mês, o resumo do mês); a assinatura de todo post, em `src/build_site.py` (`ASSINATURA`), é só "Escrito pelo Claude com a ajuda do Pedro."
+- `src/edita_texto.py`: o editor. Lê o rascunho do redator com este guia inteiro e com os problemas do verificador, lista as sugestões (trecho, problema, como fica) e devolve o post editado, sem mudar fato nem número. A versão do editor só fica se não tiver mais problemas que o rascunho; as sugestões ficam em `post.edicao` no registro da rodada. À mão: `python src/edita_texto.py runs/<id>.json` ou `editor/<texto>.md`, com `--grava` para gravar.
 - `src/classify_news.py`, regras 12 a 16: títulos de evento e "por quê" com a mesma linguagem.
-- `src/revisa_texto.py`: pede reescrita do post com frase acima de 32 palavras, definição de termo que o link já explica ("o PIB, tudo o que o país produz"), "IBC-Br", parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal, inflação que "cai" ou "recua", palavra que o site trocou (Apertou, Folgou, juro longo), pressões contadas em vez de citadas pelo nome, "No bolso" como categoria e rótulo do resumo da semana que não é nome do site. Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, direção repetida sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados, previsão de recessão e risco em porcentagem que sobram depois da reescrita barram o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
+- `src/revisa_texto.py`: pede reescrita do post com frase acima de 32 palavras, definição de termo que o link já explica ("o PIB, tudo o que o país produz"), "IBC-Br", parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal, inflação que "cai" ou "recua", palavra que o site trocou (Apertou, Folgou, juro longo), pressões contadas em vez de citadas pelo nome, comparação com "3 meses antes" sem o mês, "o que vem de fora" no lugar de importados, sigla que a leitora não conhece sem link, "por 10 anos" repetido, "No bolso" como categoria e rótulo do resumo da semana que não é nome do site. Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, direção repetida sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados, previsão de recessão e risco em porcentagem que sobram depois da reescrita barram o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
 - `src/dossie.py`: as frases de dados de cada assunto, que o post usa como contexto (queda no verbo, mês por extenso, sem sigla solta).
 - `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas; no topo, as frases do crescimento em 12 meses, de cada pressão, do vaivém normal e de quanto espaço ainda sobra saem de `src/build_site.py`.
 - `config/modelo.json`, seção `direcao`: os nomes das pressões e das linhas de Também acompanhamos, por que cada linha de Também acompanhamos importa, a frase de por que a linha não muda a placa e a parte da dívida em reais, posta à mão todo mês.
