@@ -1,12 +1,11 @@
-{# O topo da página: para que lado anda o risco de recessão, desde quando, as cinco pressões com a folga de
+{# O topo da página: para que lado anda o risco de recessão, as cinco pressões com a folga de
    cada uma, o ritmo e o emprego (fora da soma) e o que segura. Fica num arquivo só para a página principal
    e para a página de cada dia. #}
 <section class="nota" aria-label="Para onde vai o risco de recessão">
   <div class="topo">
     <div class="placa" role="img" aria-label="Risco {{ dir.palavra }}"><span{% if dir.longa %} class="longa"{% endif %}><b aria-hidden="true">{{ dir.seta }}</b>{{ dir.placa }}</span></div>
-    <p class="leitura"><span class="rot">{{ dir.titulo }}</span><span class="sub">{{ dir.desde }}</span></p>
+    <p class="leitura"><span class="rot">{{ dir.titulo }}</span></p>
   </div>
-  <p class="conta-dir">{{ dir.conta }}</p>
   {% if dir.pendente %}<p class="atual">{{ dir.pendente }}</p>{% endif %}
   <ul class="partes" aria-label="As cinco pressões">
     <li class="cab-p">As cinco pressões, nos últimos 3 meses</li>
