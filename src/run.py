@@ -1,7 +1,7 @@
 """A atualização do dia: calcula a direção do risco, lê as manchetes do dia anterior, escreve o post e gera o site.
 
-O post muda de tipo com o dia (src/escreve_post.py): fato do dia de segunda a sábado, a semana aos
-domingos e o mês no primeiro domingo do mês. É sempre um post por dia, nesta mesma atualização.
+O post muda de tipo com o dia (src/escreve_post.py): fato do dia de segunda a sábado, resumo da semana
+aos domingos e resumo do mês no primeiro domingo do mês. É sempre um post por dia, nesta mesma atualização.
 
 Uso: python src/run.py             (atualização do dia; não faz nada se já houver uma hoje)
      python src/run.py --coletar   (só junta manchetes ao acervo, sem LLM e sem publicar)
