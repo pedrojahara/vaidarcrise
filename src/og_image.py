@@ -1,4 +1,4 @@
-"""Imagem de prévia de links 1200×630: repete o topo do site (a plaquinha com a direção do risco e o desde quando)."""
+"""Imagem de prévia de links 1200×630: repete o topo do site (a plaquinha com a direção do risco e quanto a economia cresceu)."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -59,17 +59,11 @@ def gerar(caminho: Path, ctx: dict) -> None:
     for txt, t, peso in linhas:
         d.text((x, y), txt, font=sans(t, peso), fill=TINTA)
         y += t + 14
-    d.text((x, y + 6), dr["desde"].capitalize() + ".", font=sans(32), fill=META)
-    pres = dr["pressoes"]
-    ap = sum(1 for p in pres if p["palavra"] == "Apertou")
-    fo = sum(1 for p in pres if p["palavra"] == "Folgou")
-    nums = ["nenhuma", "uma", "duas", "três", "quatro", "cinco"]
-
-    def conta(n: int, um: str, varios: str) -> str:
-        return f"{nums[n]} {um if n <= 1 else varios}"
-    d.text((x, y + 62), f"{conta(ap, 'apertou', 'apertaram').replace(' ', ' das 5 pressões ', 1).capitalize()}.",
-           font=sans(30), fill=TINTA)
-    d.text((x, y + 102), f"{conta(fo, 'folgou', 'folgaram').capitalize()}.", font=sans(30), fill=TINTA)
+    # Logo abaixo, como no site: quanto a economia cresceu em 12 meses e quanto crescia um ano antes.
+    r = dr.get("ritmo")
+    if r:
+        d.text((x, y + 14), f"A economia cresceu {r['agora']} em 12 meses,", font=sans(32), fill=TINTA)
+        d.text((x, y + 54), f"contra {r['antes']} um ano antes.", font=sans(32), fill=TINTA)
 
     d.line([(64, 548), (W - 64, 548)], fill=FIO, width=2)
     # A semana e o mês vão para o WhatsApp: a prévia diz que tipo de post é.

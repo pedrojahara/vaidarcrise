@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Vai dar crise? O risco de recessão está subindo</title>
-<meta name="description" content="O risco de recessão está subindo, desde junho. Quatro das cinco pressões que costumam vir antes de uma recessão apertaram nos últimos 3 meses. Nenhuma folgou. Resumo do mês: Risco de recessão segue subindo, e o dólar passa a apertar em outubro.">
+<meta name="description" content="O risco de recessão está subindo. A economia cresceu 1,4% em 12 meses, contra 3,5% um ano antes. Resumo do mês: Risco de recessão segue subindo, e o dólar passa a apertar em outubro.">
 <link rel="canonical" href="https://vaidarcrise.com.br/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
 <meta property="og:title" content="Vai dar crise? O risco de recessão está subindo">
-<meta property="og:description" content="O risco de recessão está subindo, desde junho. Quatro das cinco pressões que costumam vir antes de uma recessão apertaram nos últimos 3 meses. Nenhuma folgou. Resumo do mês: Risco de recessão segue subindo, e o dólar passa a apertar em outubro.">
+<meta property="og:description" content="O risco de recessão está subindo. A economia cresceu 1,4% em 12 meses, contra 3,5% um ano antes. Resumo do mês: Risco de recessão segue subindo, e o dólar passa a apertar em outubro.">
 <meta property="og:url" content="https://vaidarcrise.com.br/">
 <meta property="og:image" content="https://vaidarcrise.com.br/og/2026-11-01.png">
 <meta property="og:image:width" content="1200">
@@ -63,26 +63,41 @@ a:hover{text-decoration-thickness:2px}
 .leitura{display:flex;flex-direction:column;gap:2px;min-width:0;margin:0}
 .leitura .rot{font:700 22px/1.15 var(--sistema)}
 .leitura .sub{font:15px/1.4 var(--sistema);color:var(--meta)}
-.conta-dir{font:16px/1.45 var(--sistema);margin:12px 0 0}
-.partes{list-style:none;padding:0;margin:16px 0 0;font:15px/1.4 var(--sistema)}
-.partes .cab-p{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;padding:0 0 6px}
+.partes{list-style:none;padding:0;margin:0;font:15px/1.4 var(--sistema)}
+.nota .cab-p{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:16px 0 0;padding:0 0 6px}
 .partes li[id]{border-top:1px solid var(--fio);scroll-margin-top:12px}
 .partes li[id]:last-child{border-bottom:1px solid var(--fio)}
-.partes summary{display:grid;gap:2px;padding:9px 22px 9px 0;cursor:pointer;list-style:none;position:relative}
+.partes summary{display:grid;gap:2px;padding:10px 0 12px;cursor:pointer;list-style:none}
 .partes summary::-webkit-details-marker{display:none}
-.partes summary::after{content:"+";position:absolute;right:2px;top:8px;font:600 17px/1 var(--sistema);color:var(--meta)}
-.partes details[open] summary::after{content:"−"}
 .p-cab{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
 .p-lado{font-weight:700;white-space:nowrap}
 .p-frase{color:var(--tinta)}
 .p-folga{font-size:13.5px;color:var(--meta)}
-.p-mais{padding:0 0 10px;font-size:14.5px;color:var(--tinta)}
+.perg{display:inline-flex;align-items:center;gap:5px;margin-top:6px;color:var(--link);font-size:14.5px;font-weight:600;min-height:24px}
+.perg span{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.perg svg{width:16px;height:16px;flex:none;transition:transform .15s}
+.partes details[open] .perg svg{transform:rotate(180deg)}
+.partes details[open] .perg .ab,.partes details:not([open]) .perg .fe{display:none}
+.p-mais{padding:0 0 12px;font-size:14.5px;color:var(--tinta)}
 .p-mais p{margin:0 0 6px}
-.partes.fora .p-lado{font-weight:600}
-.historia{font:14.5px/1.45 var(--sistema);color:var(--meta);margin:14px 0 0}
-.segura{margin:18px 0 0;padding:12px 14px;background:var(--maquina);border-radius:6px}
-.segura h3{font:700 15px/1.3 var(--sistema);margin:0 0 6px}
-.segura ul{margin:0;padding-left:1.1em;font:14.5px/1.45 var(--sistema);display:grid;gap:6px}
+.p-mais .p-fora{color:var(--meta);font-size:13.5px}
+.nota .cab-p.tb{margin-top:28px}
+.ritmo{margin:14px 0 0;padding:12px 12px 10px;border:1px solid var(--fio);border-radius:10px}
+.ritmo .r-tit{font:600 13px/1.3 var(--sistema);color:var(--meta);margin:0 0 8px;letter-spacing:.02em}
+.r-nums{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;column-gap:6px;font-variant-numeric:tabular-nums}
+.r-c{display:contents}
+.r-k{grid-row:1;font:600 12.5px/1.25 var(--sistema);color:var(--meta)}
+.r-v{grid-row:2;align-self:end;font:600 22px/1.15 var(--sistema)}
+.r-l{grid-row:3;font:12.5px/1.25 var(--sistema);color:var(--meta)}
+.r-c.antes>*{grid-column:1}.r-c.agora>*{grid-column:3}.r-c.prev>*{grid-column:5}
+.r-seta{grid-row:2;align-self:end;padding-bottom:4px;font:18px/1 var(--sistema);color:var(--meta)}
+.r-seta.s1{grid-column:2}.r-seta.s2{grid-column:4}
+.r-c.agora .r-v{font-size:28px;font-weight:800}
+.r-c.agora .r-k{color:var(--tinta)}
+.r-c.prev .r-v{color:var(--meta)}
+.r-enc{font:14px/1.4 var(--sistema);margin:10px 0 0}
+.r-pe{font:14px/1.4 var(--sistema);margin:10px 0 0;padding-top:8px;border-top:1px solid var(--fio)}
+@media (prefers-reduced-motion: reduce){.perg svg{transition:none}}
 .tend-noticias{font:15px/1.45 var(--sistema);margin:14px 0 0}
 .tend-noticias b{font-size:1.1em;margin-right:3px}
 .nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:10px 0 0}
@@ -186,89 +201,104 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <p class="leitura"><span class="rot">O risco de recessão está subindo</span></p>
   </div>
   
-  <ul class="partes" aria-label="As cinco pressões">
-    <li class="cab-p">As cinco pressões, nos últimos 3 meses</li>
+  
+  <div class="ritmo">
+    <p class="r-tit">Quanto a economia cresceu em 12 meses</p>
+    <div class="r-nums">
+      <p class="r-c antes"><span class="r-k">Antes</span><span class="r-v">3,5%</span><span class="r-l">até ago/2025</span></p>
+      <span class="r-seta s1" aria-hidden="true">→</span>
+      <p class="r-c agora"><span class="r-k">Agora</span><span class="r-v">1,4%</span><span class="r-l">até ago/2026</span></p>
+      <span class="r-seta s2" aria-hidden="true">→</span>
+      <p class="r-c prev"><span class="r-k">Previsão</span><span class="r-v">1,4%</span><span class="r-l">próximos 12 meses</span></p>
+    </div>
+    
+    <p class="r-pe"><b class="mais"><span aria-hidden="true">↓</span> Desacelerando.</b> O normal desde 2004 vai de 0,8% a 3,9% ao ano. A previsão é dos bancos (Focus), que erram, em média, 1,5 ponto.</p>
+  </div>
+  <p class="cab-p" id="cab-pressoes">As cinco pressões, nos últimos 3 meses</p>
+  <ul class="partes" aria-labelledby="cab-pressoes">
     
 <li id="parte-contas"><details>
-  <summary><span class="p-cab"><b>Contas do governo</b><span class="p-lado mais">Apertou</span></span><span class="p-frase">A dívida do governo foi de 82,0% para 82,9% do PIB, de junho a setembro.</span><span class="p-folga">Folga: quase nenhuma</span></summary>
+  <summary><span class="p-cab"><b>Contas do governo</b><span class="p-lado mais">Apertou</span></span><span class="p-frase">A dívida do governo foi de 81,95% para 82,93% do PIB, de junho a setembro.</span><span class="p-folga">Folga: quase nenhuma</span><span class="perg"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ab">Isso é muito? Quem mexe?</span><span class="fe">Fechar</span></span></summary>
   <div class="p-mais">
     <p>Sem contar os juros, o governo gastou 0,5% do PIB a mais do que arrecadou nos 12 meses até setembro, contra 1,2% nos 12 meses até junho.</p><p>A dívida sobe mesmo assim, porque os juros sobre ela pesam mais que essa melhora.</p>
     <p>Passou raspando do vaivém normal de 3 meses, que vai até 0,95 ponto.</p>
     <p><b>Folga: quase nenhuma.</b> A dívida está mais alta que em 96% dos meses desde 2006.</p>
     <p>Quem mexe: o governo e o Congresso, nos gastos e nos impostos, e o juro do Banco Central, que muda a conta dos juros da dívida.</p>
+    
     <p><a href="/causas/#t-divida">Como isso funciona</a></p>
   </div>
 </details></li>
 <li id="parte-parcelas"><details>
-  <summary><span class="p-cab"><b>Dívidas das famílias</b><span class="p-lado mais">Apertou</span></span><span class="p-frase">A parte da renda das famílias que vai para parcelas e juros foi de 28,5% para 29,0%, de maio a agosto.</span><span class="p-folga">Folga: nenhuma</span></summary>
+  <summary><span class="p-cab"><b>Dívidas das famílias</b><span class="p-lado mais">Apertou</span></span><span class="p-frase">A parte da renda das famílias que vai para parcelas e juros foi de 28,5% para 29,0%, de maio a agosto.</span><span class="p-folga">Folga: nenhuma</span><span class="perg"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ab">Isso é muito? Quem mexe?</span><span class="fe">Fechar</span></span></summary>
   <div class="p-mais">
     
     <p>Passou do vaivém normal de 3 meses, que vai até 0,38 ponto.</p>
     <p><b>Folga: nenhuma.</b> É a maior desde 2005, quando começa a série.</p>
     <p>Quem mexe: as famílias e os bancos, quando pegam e dão empréstimo, e o juro do Banco Central, que muda o preço da parcela.</p>
+    
     <p><a href="/causas/#t-doem">Como isso funciona</a></p>
   </div>
 </details></li>
 <li id="parte-mercado"><details>
-  <summary><span class="p-cab"><b>Dólar e juro longo</b><span class="p-lado mais">Apertou</span></span><span class="p-frase">O dólar foi de R$ 5,08 para R$ 5,42, do fim de julho a 30/10 (alta de 6,8%).</span><span class="p-folga">Folga: quase nenhuma</span></summary>
+  <summary><span class="p-cab"><b>Dólar e juro longo</b><span class="p-lado mais">Apertou</span></span><span class="p-frase">O dólar foi de R$ 5,08 para R$ 5,42, do fim de julho a 30/10 (alta de 6,8%).</span><span class="p-folga">Folga: quase nenhuma</span><span class="perg"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ab">Isso é muito? Quem mexe?</span><span class="fe">Fechar</span></span></summary>
   <div class="p-mais">
     <p>O juro que o governo paga, acima da inflação, para pegar dinheiro por uns 10 anos foi de 8,3% para 8,0% ao ano.</p>
     <p>Dólar: passou do vaivém normal de 3 meses, que vai até 4,8%. Juro de 10 anos: ficou dentro do vaivém normal de 3 meses, que vai até 0,43 ponto. Os dois contam como um só: se um aperta e o outro folga, fica igual.</p>
     <p><b>Folga: quase nenhuma.</b> O juro de 10 anos está mais alto que em 91% dos meses desde 2005.</p>
     <p>Quem mexe: quem compra e vende dólar e títulos do governo, aqui e lá fora. As contas do governo e o juro dos Estados Unidos pesam nessa escolha.</p>
+    
     <p><a href="/causas/#t-outros">Como isso funciona</a></p>
   </div>
 </details></li>
 <li id="parte-inflacao"><details>
-  <summary><span class="p-cab"><b>Inflação esperada</b><span class="p-lado mais">Apertou</span></span><span class="p-frase">Os bancos (Focus) esperam que os preços subam 4,53% nos próximos 12 meses. Em julho, esperavam 4,19%.</span><span class="p-folga">Folga: média</span></summary>
+  <summary><span class="p-cab"><b>Inflação esperada</b><span class="p-lado mais">Apertou</span></span><span class="p-frase">Os bancos (Focus) esperam que os preços subam 4,53% nos próximos 12 meses. Em julho, esperavam 4,19%.</span><span class="p-folga">Folga: média</span><span class="perg"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ab">Isso é muito? Quem mexe?</span><span class="fe">Fechar</span></span></summary>
   <div class="p-mais">
     
     <p>Passou raspando do vaivém normal de 3 meses, que vai até 0,32 ponto.</p>
     <p><b>Folga: média.</b> A inflação esperada está no meio do que o Brasil viu desde 2001. Mas está acima do teto da meta do Banco Central, de 4,5%.</p>
     <p>Quem mexe: o Banco Central, com o juro, e preços que vêm de fora, como o petróleo e o dólar.</p>
+    
     <p><a href="/causas/#t-precos">Como isso funciona</a></p>
   </div>
 </details></li>
 <li id="parte-juro"><details>
-  <summary><span class="p-cab"><b>Juro</b><span class="p-lado igual">Igual</span></span><span class="p-frase">A Selic caiu de 14,00% para 13,75%, de agosto a novembro.</span><span class="p-folga">Folga: pouca</span></summary>
+  <summary><span class="p-cab"><b>Juro</b><span class="p-lado igual">Igual</span></span><span class="p-frase">A Selic caiu de 14,00% para 13,75%, de agosto a novembro.</span><span class="p-folga">Folga: pouca</span><span class="perg"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ab">Isso é muito? Quem decide?</span><span class="fe">Fechar</span></span></summary>
   <div class="p-mais">
     <p>A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos.</p>
     <p>Ficou dentro do vaivém normal de 3 meses, que vai até 0,83 ponto.</p>
     <p><b>Folga: pouca.</b> Descontada a inflação esperada, a Selic dá 8,8% ao ano e está mais alta que em 73% dos meses desde 2002.</p>
-    <p>Quem decide: o Banco Central, oito vezes por ano.</p>
+    <p>Quem decide: o Banco Central, oito vezes por ano. Desde 2021, a lei dá mandato fixo ao presidente e aos diretores do Banco Central. O governo não pode trocá-los por não gostar de uma decisão.</p>
+    
     <p><a href="/causas/#t-freio">Como isso funciona</a></p>
   </div>
 </details></li>
   </ul>
-  <ul class="partes fora" aria-label="Ritmo da economia e emprego">
-    <li class="cab-p">Fora da soma: como a economia está agora</li>
+  <p class="cab-p tb" id="cab-tambem">Também acompanhamos</p>
+  <ul class="partes" aria-labelledby="cab-tambem">
     
-<li id="parte-ritmo"><details>
-  <summary><span class="p-cab"><b>Ritmo da economia</b><span class="p-lado igual">Igual</span></span><span class="p-frase">A prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto, contra os 3 meses anteriores.</span></summary>
-  <div class="p-mais">
-    
-    <p>Ficou dentro do vaivém normal de 3 meses, que vai até 0,89%.</p>
-    
-    <p>Mostra como a economia está agora. Se a prévia do PIB cair mais de 1,5% em 3 meses, o topo passa a dizer que a economia está encolhendo.</p>
-    <p><a href="/causas/#t-freio">Como isso funciona</a></p>
-  </div>
-</details></li>
 <li id="parte-emprego"><details>
-  <summary><span class="p-cab"><b>Emprego</b><span class="p-lado igual">Igual</span></span><span class="p-frase">O desemprego foi de 5,4% para 5,2%, no trimestre até setembro, contra o trimestre até junho.</span><span class="p-folga">Folga: muita</span></summary>
+  <summary><span class="p-cab"><b>Emprego</b><span class="p-lado igual">Igual</span></span><span class="p-frase">O desemprego foi de 5,4% no trimestre até junho para 5,2% no trimestre até setembro.</span><span class="p-folga">Folga: muita</span><span class="perg"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ab">Isso é muito? Por que importa?</span><span class="fe">Fechar</span></span></summary>
   <div class="p-mais">
     
     <p>Ficou dentro do vaivém normal de 3 meses, que vai até 0,56 ponto.</p>
     <p><b>Folga: muita.</b> O desemprego está mais baixo que em 99% dos meses desde 2012.</p>
-    <p>O emprego costuma ser o último a piorar numa recessão: as empresas primeiro vendem menos e só depois demitem.</p>
+    <p>Quem perde o emprego corta gastos e atrasa parcelas, e é aí que a recessão chega ao bolso.</p>
+    <p class="p-fora">Esta linha não muda a placa, porque o desemprego costuma subir depois que a recessão já começou.</p>
     <p><a href="/causas/#t-doem">Como isso funciona</a></p>
   </div>
 </details></li>
-  </ul>
-  <p class="historia">Desde 2004, depois dos meses em que o risco esteve subindo, o PIB cresceu em média 0,3% nos 12 meses seguintes. Não é previsão: a direção diz para que lado o risco andou.</p>
-  <div class="segura">
-    <h3>O que segura</h3>
-    <ul><li>Quase toda a dívida do governo é em reais: 96% da dívida federal, pelo Tesouro, em agosto de 2026. Quando o dólar sobe, a dívida não cresce junto, como cresceu em 2002.</li><li>O Banco Central guarda reservas em dólar. Num susto, ele vende parte delas e o dólar sobe menos.</li><li>O Banco Central decide o juro com autonomia garantida por lei desde 2021. O diretor não pode ser trocado no meio do mandato por causa de uma decisão.</li></ul>
+<li id="parte-divida_reais"><details>
+  <summary><span class="p-cab"><b>Dívida em reais</b></span><span class="p-frase">Em agosto de 2026, 96% da dívida do governo federal era em reais.</span><span class="perg"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ab">Por que isso protege?</span><span class="fe">Fechar</span></span></summary>
+  <div class="p-mais">
+    
+    
+    
+    <p>Quando o dólar sobe, a dívida em reais não cresce junto. Em 2002, boa parte da dívida era corrigida pelo dólar. Quando o dólar subiu, a dívida cresceu de uma vez. O número sai uma vez por mês no Relatório Mensal da Dívida, do Tesouro.</p>
+    <p class="p-fora">Esta linha não muda a placa, porque a dívida em reais não avisa que uma recessão vem. Ela protege num susto do dólar.</p>
+    <p><a href="/causas/#t-divida">Como isso funciona</a></p>
   </div>
+</details></li>
+  </ul>
   <p class="tend-noticias"><b class="mais" aria-hidden="true">↑</b> As notícias de ontem puxam para pior.</p>
   <p class="atual"><a href="/nota/">Como funciona</a> | Atualizado em 1/11 | próxima atualização às 06h30</p>
   <p class="aviso" id="defasado" hidden><strong>Atenção: números velhos.</strong> Esta atualização tem mais de 36 horas. A atualização automática pode ter falhado; veja o <a href="https://github.com/pedrojahara/vaidarcrise/commits/main">histórico</a>.</p>
@@ -293,7 +323,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   <div class="tab"><table>
     <thead><tr><th scope="col">Parte</th><th scope="col">Fim de setembro</th><th scope="col">Agora</th></tr></thead>
-    <tbody><tr><th scope="row">Contas do governo</th><td>Apertou</td><td>Apertou</td></tr><tr><th scope="row">Dívidas das famílias</th><td>Apertou</td><td>Apertou</td></tr><tr><th scope="row">Dólar e juro longo</th><td>Folgou</td><td>Apertou</td></tr><tr><th scope="row">Inflação esperada</th><td>Apertou</td><td>Apertou</td></tr><tr><th scope="row">Juro</th><td>Igual</td><td>Igual</td></tr><tr><th scope="row">Ritmo da economia</th><td>Igual</td><td>Igual</td></tr><tr><th scope="row">Emprego</th><td>Igual</td><td>Igual</td></tr></tbody>
+    <tbody><tr><th scope="row">Contas do governo</th><td>Apertou</td><td>Apertou</td></tr><tr><th scope="row">Dívidas das famílias</th><td>Apertou</td><td>Apertou</td></tr><tr><th scope="row">Dólar e juro longo</th><td>Folgou</td><td>Apertou</td></tr><tr><th scope="row">Inflação esperada</th><td>Apertou</td><td>Apertou</td></tr><tr><th scope="row">Juro</th><td>Igual</td><td>Igual</td></tr><tr><th scope="row">Emprego</th><td>Igual</td><td>Igual</td></tr></tbody>
   </table></div>
   
   <h3 class="sec">No bolso</h3>

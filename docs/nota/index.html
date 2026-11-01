@@ -63,26 +63,41 @@ a:hover{text-decoration-thickness:2px}
 .leitura{display:flex;flex-direction:column;gap:2px;min-width:0;margin:0}
 .leitura .rot{font:700 22px/1.15 var(--sistema)}
 .leitura .sub{font:15px/1.4 var(--sistema);color:var(--meta)}
-.conta-dir{font:16px/1.45 var(--sistema);margin:12px 0 0}
-.partes{list-style:none;padding:0;margin:16px 0 0;font:15px/1.4 var(--sistema)}
-.partes .cab-p{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;padding:0 0 6px}
+.partes{list-style:none;padding:0;margin:0;font:15px/1.4 var(--sistema)}
+.nota .cab-p{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:16px 0 0;padding:0 0 6px}
 .partes li[id]{border-top:1px solid var(--fio);scroll-margin-top:12px}
 .partes li[id]:last-child{border-bottom:1px solid var(--fio)}
-.partes summary{display:grid;gap:2px;padding:9px 22px 9px 0;cursor:pointer;list-style:none;position:relative}
+.partes summary{display:grid;gap:2px;padding:10px 0 12px;cursor:pointer;list-style:none}
 .partes summary::-webkit-details-marker{display:none}
-.partes summary::after{content:"+";position:absolute;right:2px;top:8px;font:600 17px/1 var(--sistema);color:var(--meta)}
-.partes details[open] summary::after{content:"−"}
 .p-cab{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
 .p-lado{font-weight:700;white-space:nowrap}
 .p-frase{color:var(--tinta)}
 .p-folga{font-size:13.5px;color:var(--meta)}
-.p-mais{padding:0 0 10px;font-size:14.5px;color:var(--tinta)}
+.perg{display:inline-flex;align-items:center;gap:5px;margin-top:6px;color:var(--link);font-size:14.5px;font-weight:600;min-height:24px}
+.perg span{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.perg svg{width:16px;height:16px;flex:none;transition:transform .15s}
+.partes details[open] .perg svg{transform:rotate(180deg)}
+.partes details[open] .perg .ab,.partes details:not([open]) .perg .fe{display:none}
+.p-mais{padding:0 0 12px;font-size:14.5px;color:var(--tinta)}
 .p-mais p{margin:0 0 6px}
-.partes.fora .p-lado{font-weight:600}
-.historia{font:14.5px/1.45 var(--sistema);color:var(--meta);margin:14px 0 0}
-.segura{margin:18px 0 0;padding:12px 14px;background:var(--maquina);border-radius:6px}
-.segura h3{font:700 15px/1.3 var(--sistema);margin:0 0 6px}
-.segura ul{margin:0;padding-left:1.1em;font:14.5px/1.45 var(--sistema);display:grid;gap:6px}
+.p-mais .p-fora{color:var(--meta);font-size:13.5px}
+.nota .cab-p.tb{margin-top:28px}
+.ritmo{margin:14px 0 0;padding:12px 12px 10px;border:1px solid var(--fio);border-radius:10px}
+.ritmo .r-tit{font:600 13px/1.3 var(--sistema);color:var(--meta);margin:0 0 8px;letter-spacing:.02em}
+.r-nums{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;column-gap:6px;font-variant-numeric:tabular-nums}
+.r-c{display:contents}
+.r-k{grid-row:1;font:600 12.5px/1.25 var(--sistema);color:var(--meta)}
+.r-v{grid-row:2;align-self:end;font:600 22px/1.15 var(--sistema)}
+.r-l{grid-row:3;font:12.5px/1.25 var(--sistema);color:var(--meta)}
+.r-c.antes>*{grid-column:1}.r-c.agora>*{grid-column:3}.r-c.prev>*{grid-column:5}
+.r-seta{grid-row:2;align-self:end;padding-bottom:4px;font:18px/1 var(--sistema);color:var(--meta)}
+.r-seta.s1{grid-column:2}.r-seta.s2{grid-column:4}
+.r-c.agora .r-v{font-size:28px;font-weight:800}
+.r-c.agora .r-k{color:var(--tinta)}
+.r-c.prev .r-v{color:var(--meta)}
+.r-enc{font:14px/1.4 var(--sistema);margin:10px 0 0}
+.r-pe{font:14px/1.4 var(--sistema);margin:10px 0 0;padding-top:8px;border-top:1px solid var(--fio)}
+@media (prefers-reduced-motion: reduce){.perg svg{transition:none}}
 .tend-noticias{font:15px/1.45 var(--sistema);margin:14px 0 0}
 .tend-noticias b{font-size:1.1em;margin-right:3px}
 .nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:10px 0 0}
@@ -165,7 +180,16 @@ svg text{font-family:var(--sistema)}
       <li><b>Inflação esperada.</b> Quanto os bancos esperam que os preços subam nos próximos 12 meses (Focus). Se esperam mais, o Banco Central tende a subir o juro para segurar os preços. <a href="/causas/#t-precos">Por que os preços sobem</a>.</li>
       <li><b>Juro.</b> A Selic, o juro que o Banco Central decide e que serve de base para os juros dos bancos. Com a Selic subindo, a compra a prazo fica cara, as pessoas compram menos e as lojas vendem menos. <a href="/causas/#t-freio">O remédio que esfria a economia</a>.</li>
     </ul>
-    <p>O ritmo da economia e o emprego aparecem no topo, mas não entram na soma. Eles mostram como a economia está agora, e o emprego costuma ser o último a piorar: quando ele piora, a recessão em geral já chegou.</p>
+  </section>
+
+  <section aria-labelledby="t-tambem">
+    <h2 id="t-tambem">E o crescimento, o emprego e a dívida em reais?</h2>
+    <p>Logo abaixo da placa ficam três números de crescimento. O primeiro diz quanto a economia cresceu nos últimos 12 meses. O segundo diz quanto ela crescia um ano antes. O terceiro é quanto os bancos esperam para os próximos 12 meses.</p>
+    <p>O número de agora vem da prévia do PIB do Banco Central, que sai todo mês, com dois meses de atraso. Em metade dos meses desde 2004, o crescimento em 12 meses ficou entre 0,8% e 3,9%, e é isso que a página chama de normal.</p>
+    <p>A previsão é a dos bancos (Focus), e o site só a mostra. Desde 2004, ela errou o crescimento dos 12 meses seguintes em 1,5 ponto, em média, para mais ou para menos.</p>
+    <p>Nenhum desses números muda a placa. A placa olha as pressões, porque elas costumam piorar antes de o crescimento cair.</p>
+    <p>Abaixo das cinco pressões, em Também acompanhamos, ficam o emprego e a parte da dívida do governo que é em reais. Essas linhas também não mudam a placa.</p>
+    <p>O emprego costuma ser o último a piorar. As empresas primeiro vendem menos e só depois demitem. A dívida em reais protege o país num susto do dólar, mas não avisa que uma recessão vem.</p>
   </section>
 
   <section aria-labelledby="t-normal">
@@ -177,15 +201,16 @@ svg text{font-family:var(--sistema)}
       <li>Dólar: até 4,8%. Juro de 10 anos: até 0,43 ponto.</li>
       <li>Inflação esperada: até 0,32 ponto.</li>
       <li>Selic: até 0,83 ponto.</li>
+      <li>Desemprego, em Também acompanhamos: até 0,56 ponto.</li>
     </ul>
-    <p>Na página de hoje, cada pressão mostra o número de agora, o de 3 meses antes e se passou desse vaivém com folga ou raspando.</p>
+    <p>Na página de hoje, cada pressão mostra o número de agora e o de 3 meses antes. Aberta, ela diz se passou do vaivém, se passou raspando ou se ficou dentro dele.</p>
   </section>
 
   <section aria-labelledby="t-folga">
     <h2 id="t-folga">O que é a folga?</h2>
     <p>A direção diz para onde o risco anda. A folga diz quanto espaço ainda sobra. Uma pressão pode ficar igual em 3 meses e mesmo assim estar no limite, como uma conta bancária que parou de cair, mas já está no vermelho.</p>
     <p>A folga compara o valor de hoje com todos os meses desde o começo de cada série. Nenhuma, quando é o pior valor já visto. Quase nenhuma, entre os 10% piores. Pouca, entre os 30% piores. Média, no meio. Muita, entre os 30% melhores.</p>
-    <p>Muita gente acha que existe um limite para a dívida do governo, como 100% do PIB, a partir do qual vem a crise. Esse número não existe. A Argentina deu calote em 2001 devendo cerca de metade do PIB, e o Japão deve mais de duas vezes o PIB sem crise. Pesa mais em que moeda e para quem o governo deve. O Brasil deve quase tudo em reais, a maior parte a brasileiros. É uma das coisas que o bloco "O que segura" mostra.</p>
+    <p>Muita gente acha que existe um limite para a dívida do governo, como 100% do PIB, a partir do qual vem a crise. Esse número não existe. A Argentina deu calote em 2001 devendo cerca de metade do PIB, e o Japão deve mais de duas vezes o PIB sem crise. Pesa mais em que moeda e para quem o governo deve. O Brasil deve quase tudo em reais, a maior parte a brasileiros. Na página Hoje, a linha <a href="/#parte-divida_reais">Dívida em reais</a> mostra quanto da dívida é em reais.</p>
   </section>
 
   <section aria-labelledby="t-teste">
@@ -214,7 +239,7 @@ svg text{font-family:var(--sistema)}
   
   <section aria-labelledby="t-ano-ruim">
     <h2 id="t-ano-ruim">E o PIB num ano ruim?</h2>
-    <p>Há também uma conta que olha só os próximos 12 meses. Com dados de 44 países, ela estima o PIB num ano ruim, daqueles com 1 chance em 10. Hoje, num ano ruim, o PIB cai 1,8% em 12 meses. Em tempos normais, desde 2004, um ano ruim daria cai 1,9%.</p>
+    <p>Há também uma conta que olha só os próximos 12 meses. Com dados de 44 países, ela estima o PIB num ano ruim, daqueles com 1 chance em 10. Hoje, num ano ruim, o PIB cai 1,8% em 12 meses. Em tempos normais, desde 2004, num ano ruim o PIB cai 1,9%.</p>
     <p>Ela fica aqui, e não no topo, porque só vê o crescimento, o juro e a inflação. As contas do governo, as dívidas das famílias e o dólar ficam fora dela.</p>
   </section>
   

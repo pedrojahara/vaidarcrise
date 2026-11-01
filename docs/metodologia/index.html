@@ -63,26 +63,41 @@ a:hover{text-decoration-thickness:2px}
 .leitura{display:flex;flex-direction:column;gap:2px;min-width:0;margin:0}
 .leitura .rot{font:700 22px/1.15 var(--sistema)}
 .leitura .sub{font:15px/1.4 var(--sistema);color:var(--meta)}
-.conta-dir{font:16px/1.45 var(--sistema);margin:12px 0 0}
-.partes{list-style:none;padding:0;margin:16px 0 0;font:15px/1.4 var(--sistema)}
-.partes .cab-p{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;padding:0 0 6px}
+.partes{list-style:none;padding:0;margin:0;font:15px/1.4 var(--sistema)}
+.nota .cab-p{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:16px 0 0;padding:0 0 6px}
 .partes li[id]{border-top:1px solid var(--fio);scroll-margin-top:12px}
 .partes li[id]:last-child{border-bottom:1px solid var(--fio)}
-.partes summary{display:grid;gap:2px;padding:9px 22px 9px 0;cursor:pointer;list-style:none;position:relative}
+.partes summary{display:grid;gap:2px;padding:10px 0 12px;cursor:pointer;list-style:none}
 .partes summary::-webkit-details-marker{display:none}
-.partes summary::after{content:"+";position:absolute;right:2px;top:8px;font:600 17px/1 var(--sistema);color:var(--meta)}
-.partes details[open] summary::after{content:"−"}
 .p-cab{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
 .p-lado{font-weight:700;white-space:nowrap}
 .p-frase{color:var(--tinta)}
 .p-folga{font-size:13.5px;color:var(--meta)}
-.p-mais{padding:0 0 10px;font-size:14.5px;color:var(--tinta)}
+.perg{display:inline-flex;align-items:center;gap:5px;margin-top:6px;color:var(--link);font-size:14.5px;font-weight:600;min-height:24px}
+.perg span{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.perg svg{width:16px;height:16px;flex:none;transition:transform .15s}
+.partes details[open] .perg svg{transform:rotate(180deg)}
+.partes details[open] .perg .ab,.partes details:not([open]) .perg .fe{display:none}
+.p-mais{padding:0 0 12px;font-size:14.5px;color:var(--tinta)}
 .p-mais p{margin:0 0 6px}
-.partes.fora .p-lado{font-weight:600}
-.historia{font:14.5px/1.45 var(--sistema);color:var(--meta);margin:14px 0 0}
-.segura{margin:18px 0 0;padding:12px 14px;background:var(--maquina);border-radius:6px}
-.segura h3{font:700 15px/1.3 var(--sistema);margin:0 0 6px}
-.segura ul{margin:0;padding-left:1.1em;font:14.5px/1.45 var(--sistema);display:grid;gap:6px}
+.p-mais .p-fora{color:var(--meta);font-size:13.5px}
+.nota .cab-p.tb{margin-top:28px}
+.ritmo{margin:14px 0 0;padding:12px 12px 10px;border:1px solid var(--fio);border-radius:10px}
+.ritmo .r-tit{font:600 13px/1.3 var(--sistema);color:var(--meta);margin:0 0 8px;letter-spacing:.02em}
+.r-nums{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;column-gap:6px;font-variant-numeric:tabular-nums}
+.r-c{display:contents}
+.r-k{grid-row:1;font:600 12.5px/1.25 var(--sistema);color:var(--meta)}
+.r-v{grid-row:2;align-self:end;font:600 22px/1.15 var(--sistema)}
+.r-l{grid-row:3;font:12.5px/1.25 var(--sistema);color:var(--meta)}
+.r-c.antes>*{grid-column:1}.r-c.agora>*{grid-column:3}.r-c.prev>*{grid-column:5}
+.r-seta{grid-row:2;align-self:end;padding-bottom:4px;font:18px/1 var(--sistema);color:var(--meta)}
+.r-seta.s1{grid-column:2}.r-seta.s2{grid-column:4}
+.r-c.agora .r-v{font-size:28px;font-weight:800}
+.r-c.agora .r-k{color:var(--tinta)}
+.r-c.prev .r-v{color:var(--meta)}
+.r-enc{font:14px/1.4 var(--sistema);margin:10px 0 0}
+.r-pe{font:14px/1.4 var(--sistema);margin:10px 0 0;padding-top:8px;border-top:1px solid var(--fio)}
+@media (prefers-reduced-motion: reduce){.perg svg{transition:none}}
 .tend-noticias{font:15px/1.45 var(--sistema);margin:14px 0 0}
 .tend-noticias b{font-size:1.1em;margin-right:3px}
 .nota .atual{font:14px/1.45 var(--sistema);color:var(--meta);margin:10px 0 0}
@@ -136,7 +151,7 @@ a:hover{text-decoration-thickness:2px}
 <main class="in texto">
 <p class="intro-met">Esta página é para quem quer conferir ou refazer a conta, com as fórmulas e os testes. A versão curta está em <a href="/nota/">Como funciona</a>.</p>
 <h1 id="metodologia">Metodologia</h1>
-<p>A regra da direção está em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/direcao.py"><code>src/direcao.py</code></a>, com as escolhas fixas em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json"><code>config/modelo.json</code></a> (seção <code>direcao</code>) e o que sai dos dados (o vaivém normal de cada medida e o teste desde 2004) em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/calibracao.json"><code>config/calibracao.json</code></a> (seção <code>direcao</code>). As séries mensais do Brasil ficam em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/series.json"><code>data/historico/series.json</code></a>. <code>python src/direcao.py --calibrar AAAA-MM</code> refaz os cortes e o teste. Cada atualização grava o hash dos dois arquivos de regra.</p>
+<p>A regra da direção está em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/direcao.py"><code>src/direcao.py</code></a>, com as escolhas fixas em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json"><code>config/modelo.json</code></a> (seção <code>direcao</code>) e o que sai dos dados (o vaivém normal de cada medida e o teste desde 2004) em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/calibracao.json"><code>config/calibracao.json</code></a> (seção <code>direcao</code>). As séries mensais do Brasil ficam em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/series.json"><code>data/historico/series.json</code></a>. <code>python src/direcao.py --calibrar AAAA-MM</code> refaz os cortes e o teste. O crescimento em 12 meses que fica logo abaixo da placa sai de <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/ritmo.py"><code>src/ritmo.py</code></a>, e <code>python src/ritmo.py --calibrar</code> refaz a faixa normal dele e o erro do Focus (seção <code>ritmo</code> de <code>config/calibracao.json</code>). Cada atualização grava o hash dos dois arquivos de regra.</p>
 <h2 id="a-pergunta">A pergunta</h2>
 <blockquote>
 <p>Para que lado anda o risco de recessão no Brasil: as pressões que costumam vir antes de uma recessão estão apertando ou folgando?</p>
@@ -212,7 +227,42 @@ a:hover{text-decoration-thickness:2px}
 </tr>
 </tbody>
 </table>
-<p>Fora da soma, a página mostra o <strong>ritmo da economia</strong> (IBC-Br dessazonalizado, BCB 24364: média dos 3 últimos meses contra a dos 3 anteriores; atraso de 2 meses) e o <strong>emprego</strong> (desocupação da PNAD, BCB 24369; atraso de 1 mês). Eles descrevem a economia de agora; o emprego é o último a piorar numa recessão.</p>
+<p>Fora da soma, a conta acompanha o <strong>ritmo da economia</strong> (IBC-Br dessazonalizado, BCB 24364: média dos 3 últimos meses contra a dos 3 anteriores; atraso de 2 meses). Ele só decide o "encolhendo" (passo 7) e não é linha da página. Abaixo das cinco pressões, em <strong>Também acompanhamos</strong>, a página mostra três linhas que não mudam a placa:</p>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th>Medida</th>
+<th>Série</th>
+<th>Lado ruim</th>
+<th>Atraso de divulgação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Emprego</td>
+<td>Desocupação da PNAD</td>
+<td>BCB 24369</td>
+<td>subir</td>
+<td>1 mês</td>
+</tr>
+<tr>
+<td>Reservas em dólar</td>
+<td>Reservas internacionais do Banco Central, conceito liquidez, fim do mês, em US$ milhões; variação % em 3 meses</td>
+<td>BCB 3546</td>
+<td>cair</td>
+<td>1 mês</td>
+</tr>
+<tr>
+<td>Dívida em reais</td>
+<td>Parte da dívida pública federal em reais</td>
+<td>Tesouro, Relatório Mensal da Dívida, posta à mão em <code>config/modelo.json</code> (<code>direcao.divida_reais</code>)</td>
+<td>cair; a linha ainda não diz o que a parte fez em 3 meses</td>
+<td>posta à mão quando sai o relatório do mês</td>
+</tr>
+</tbody>
+</table>
+<p>O emprego é o último a piorar numa recessão, porque as empresas primeiro vendem menos e só depois demitem. As reservas e a dívida em reais amortecem um susto do dólar, mas não avisam que uma recessão vem. Por isso nenhuma das três entra na soma.</p>
 <p><strong>2. Cada medida contra 3 meses antes.</strong> A mudança é a diferença em pontos (em % no dólar e na média do IBC-Br) entre o dado de referência e o de 3 meses antes dele.</p>
 <p><strong>3. A escala de cada medida</strong> é 1,4826 vezes o desvio absoluto mediano das mudanças de 3 meses desde janeiro de 2002, com o atraso de divulgação de cada série (em <code>config/calibracao.json</code>, <code>direcao.cortes</code>). É uma régua robusta: uma crise grande, como 2008 ou 2020, não a alarga. Nas contas do governo, a escala junta as mudanças da dívida (desde 2007) e as do resultado sem juros (antes), e o mesmo corte vale para as duas.</p>
 <p><strong>4. Apertou, igual ou folgou.</strong> O corte é três quartos da escala (<code>corte_vaivem</code> = 0,75); é o que a página chama de vaivém normal de 3 meses. A medida apertou se andou para o lado ruim mais que o corte; folgou se andou isso para o lado bom; no resto, ficou igual. A página diz "passou raspando" quando a mudança fica abaixo de 1,25 vez o corte. Os cortes de hoje:</p>
@@ -256,23 +306,29 @@ a:hover{text-decoration-thickness:2px}
 <td>0,83 ponto</td>
 </tr>
 <tr>
-<td>Ritmo da economia (fora da soma)</td>
+<td>Ritmo da economia (só para o "encolhendo"; não é linha da página)</td>
 <td>1,19%</td>
 <td>0,89%</td>
 </tr>
 <tr>
-<td>Emprego (fora da soma)</td>
+<td>Emprego (Também acompanhamos)</td>
 <td>0,74 ponto</td>
 <td>0,56 ponto</td>
 </tr>
+<tr>
+<td>Reservas em dólar (Também acompanhamos)</td>
+<td>tirada na hora das variações de 3 meses desde 2002</td>
+<td>0,75 × essa escala; o valor aparece depois da primeira coleta do Mac</td>
+</tr>
 </tbody>
 </table>
+<p>As reservas ainda não têm corte em <code>config/calibracao.json</code>. Enquanto não têm, o corte sai na hora, com a mesma conta, das variações de 3 meses que a coleta do dia traz desde janeiro de 2002 (<code>src/fetch_data.py</code> busca essa série inteira); com menos de 36 variações, a linha fica sem lado. Só a atualização do Mac coleta a série, e a página esconde a linha enquanto ela não tem dado. Depois que <code>src/historico.py</code> guardar a série, <code>python src/direcao.py --calibrar</code> grava o corte das reservas junto com os outros.</p>
 <p>Dólar e juro longo contam como uma pressão só: o sinal da soma dos dois lados (se um aperta e o outro folga, fica igual; se um aperta e o outro fica igual, apertou).</p>
 <p><strong>5. A soma decide.</strong> Pressões que apertaram menos as que folgaram: 2 ou mais, <strong>subindo</strong>; −2 ou menos, <strong>caindo</strong>; no meio, <strong>igual</strong>. Pressão sem dado fica fora da soma naquele dia.</p>
 <p><strong>6. Confirmação.</strong> A direção só muda quando o resultado novo se repete no mês seguinte. No mês da primeira vez, a página avisa: "Pelos dados de hoje, a direção seria (...)".</p>
 <p><strong>7. Encolhendo.</strong> Se o IBC-Br (média de 3 meses contra os 3 anteriores) cair mais de 1,5%, o topo diz "A economia está encolhendo", no lugar da direção. A essa altura, a pergunta de para que lado anda o risco já perdeu o sentido.</p>
 <p><strong>Meses passados e mês corrente.</strong> Na linha do tempo e no teste, cada mês usa o dado com o atraso típico de divulgação da série. No mês corrente, entra o último dado que já saiu, comparado com o de 3 meses antes dele: o dólar de ontem, a dívida de dois meses atrás. O Focus mensal vem da série guardada e, nos meses do site, da coleta de cada atualização.</p>
-<p><strong>A folga.</strong> Cada pressão (menos o dólar, cujo valor em reais não se compara entre décadas) e o emprego mostram o nível de hoje contra todos os meses desde o começo da série: a dívida desde 2006, as parcelas desde 2005, o juro de 10 anos desde 2005, a inflação esperada desde 2001, o juro descontado da inflação esperada (Selic e Focus, pela fórmula de Fisher) desde 2002 e o desemprego desde 2012.</p>
+<p><strong>A folga.</strong> Cada pressão (menos o dólar, cujo valor em reais não se compara entre décadas) e o emprego mostram o nível de hoje contra todos os meses desde o começo da série: a dívida desde 2006, as parcelas desde 2005, o juro de 10 anos desde 2005, a inflação esperada desde 2001, o juro descontado da inflação esperada (Selic e Focus, pela fórmula de Fisher) desde 2002 e o desemprego desde 2012. As reservas em dólar também ficam sem folga, porque o valor em dólares de hoje não se compara com o de 2002.</p>
 <table>
 <thead>
 <tr>
@@ -304,7 +360,42 @@ a:hover{text-decoration-thickness:2px}
 </tbody>
 </table>
 <p>A folga não entra na soma. Nível alto e parado não marca a data de recessão nenhuma (veja a pesquisa de 166 países, abaixo); a folga diz quanto espaço sobra se a pressão continuar apertando. Na inflação esperada, a página diz também se ela está acima do teto da meta (4,5%).</p>
-<p><strong>O que segura.</strong> Três fatos fixos, com fonte, que amortecem um susto sem mudar a direção: a dívida federal em reais (96%, Tesouro, agosto de 2026), as reservas em dólar do Banco Central e a autonomia do Banco Central (Lei Complementar 179, de 2021).</p>
+<h3 id="o-topo-da-pagina">O topo da página</h3>
+<p>Abaixo da placa vêm, nesta ordem, o crescimento da economia, as cinco pressões e Também acompanhamos. Cada linha das pressões e de Também acompanhamos termina numa pergunta azul com uma seta para baixo ("Isso é muito? Quem mexe?", "Isso é muito? Quem decide?", "Isso é muito? Por que importa?", "Para que servem?", "Por que isso protege?"). Aberta, a linha mostra o que vale para ela entre o vaivém normal, a folga e quem mexe, e a pergunta vira "Fechar". A seta com texto segue testes de uso do Nielsen Norman Group, em que a seta para baixo foi o único ícone que se saiu melhor que nenhum ícone, e a troca do "+" por seta e texto no GOV.UK.</p>
+<p><strong>Quanto a economia cresceu em 12 meses.</strong> É o bloco logo abaixo da placa, com três números (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/ritmo.py"><code>src/ritmo.py</code></a>):</p>
+<table>
+<thead>
+<tr>
+<th>Número</th>
+<th>Conta</th>
+<th>Hoje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agora</td>
+<td>IBC-Br dessazonalizado (BCB 24364): soma dos 12 meses até o último dado contra a soma dos 12 meses anteriores</td>
+<td>1,4%, até agosto de 2026</td>
+</tr>
+<tr>
+<td>Antes</td>
+<td>A mesma conta, 12 meses antes</td>
+<td>3,5%, até agosto de 2025</td>
+</tr>
+<tr>
+<td>Previsão</td>
+<td>Mediana do Focus para o PIB do ano corrente e do seguinte, com peso pelos meses que faltam: ((12 − m) × ano corrente + m × ano seguinte) / 12, com m o mês do Focus (<code>indicadores.focus_pib</code>)</td>
+<td>1,4%, para os próximos 12 meses</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>A palavra do bloco</strong> compara agora e antes, os dois com uma casa, como a página mostra. Diferença de até 0,1 ponto é "no mesmo ritmo"; acima disso, "acelerando" ou "desacelerando". A palavra descreve e não é sinal: o crescimento do Brasil varia muito de um ano para o outro, e a direção não usa esta conta.</li>
+<li><strong>O normal</strong> são os percentis 25 e 75 do crescimento em 12 meses desde 2004, hoje de 0,8% a 3,9% ao ano (<code>config/calibracao.json</code>, <code>ritmo.faixa</code>).</li>
+<li><strong>A previsão só aparece na tela.</strong> O PIB esperado pelo Focus não entra em conta nenhuma do site: nem na direção, nem no "encolhendo", nem na palavra do bloco. A página diz quanto os bancos erram. O erro médio absoluto da previsão de 12 meses do Focus contra o PIB que o IBGE divulgou depois, com a mesma ponderação dos anos (o PIB anual é a média do ano contra a do ano anterior), foi de 1,46 ponto em 252 meses, de janeiro de 2004 a dezembro de 2024. Só em 40% desses meses o erro ficou dentro de 1 ponto.</li>
+<li><strong>Quando a economia está encolhendo</strong> (passo 7), o bloco ganha uma linha com a queda da prévia do PIB nos 3 últimos meses contra os 3 anteriores, que é a conta que decide o "encolhendo".</li>
+</ul>
+<p><strong>Também acompanhamos.</strong> Abaixo das cinco pressões, no mesmo desenho, ficam as três linhas da tabela do passo 1 que não mudam a placa. Aberta, cada uma diz numa frase por que não muda (<code>direcao.nao_muda_a_placa</code> em <code>config/modelo.json</code>). O emprego e as reservas em dólar dizem Piorou, Igual ou Melhorou, pela mesma regra de corte das pressões (passo 4); só o emprego tem folga. A dívida em reais mostra a parte da dívida pública federal em reais (96%, Tesouro, agosto de 2026), posta à mão todo mês, e ainda não diz o que ela fez em 3 meses. A autonomia do Banco Central (Lei Complementar 179, de 2021) fica no texto de quem decide, na linha do Juro.</p>
 <h2 id="por-que-esta-regra">Por que esta regra</h2>
 <p>A regra foi escolhida por quatro critérios fixados antes de olhar o resultado por governo:</p>
 <ol>
@@ -723,7 +814,8 @@ a:hover{text-decoration-thickness:2px}
 <li>Refazer o teste com os dados como eram divulgados na época (com revisões).</li>
 <li>Testar a direção em outros países com as mesmas cinco pressões, para ver se a ordem do PIB seguinte se repete fora do Brasil.</li>
 <li>Teste de troca de nomes: reprocessar uma amostra de notícias trocando os atores e publicar se a classificação mudou.</li>
-<li>Pôr o valor das reservas em dólar em "O que segura", com a série do Banco Central.</li>
+<li>Conferir a linha Reservas em dólar na primeira atualização do Mac com a série do Banco Central (BCB 3546) e, depois que <code>src/historico.py</code> guardar a série, gravar o corte dela com <code>python src/direcao.py --calibrar</code>.</li>
+<li>Dar à linha Dívida em reais uma palavra de 3 meses, com a série mensal do Tesouro no lugar do número posto à mão.</li>
 </ul>
 <h2 id="apendice-o-pib-num-ano-ruim-pela-conta-de-44-paises">Apêndice: o PIB num ano ruim, pela conta de 44 países</h2>
 <p>A aba Como funciona mostra, no fim, um segundo número que não entra na direção: o <strong>PIB num ano ruim</strong> (no jargão, o cenário ruim, ou quantil 10%), o crescimento nos 12 meses seguintes que tem só 1 chance em 10 de ser pior. É o método do FMI chamado crescimento em risco (<em>growth-at-risk</em>; Adrian, Boyarchenko e Giannone, 2019). A conta fica em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/model.py"><code>src/model.py</code></a> e <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/calibra.py"><code>src/calibra.py</code></a>; o painel, em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/painel_ocde.csv"><code>data/historico/painel_ocde.csv</code></a>; o Brasil mês a mês, em <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/data/historico/mensal.json"><code>data/historico/mensal.json</code></a>.</p>
@@ -737,7 +829,7 @@ a:hover{text-decoration-thickness:2px}
 </thead>
 <tbody>
 <tr>
-<td>Crescimento em 12 meses</td>
+<td>Crescimento contra um ano antes (3 meses)</td>
 <td>IBC-Br dessazonalizado (BCB 24364): média dos 3 últimos meses contra os mesmos 3 meses um ano antes</td>
 </tr>
 <tr>
@@ -857,7 +949,8 @@ a:hover{text-decoration-thickness:2px}
 <li><a href="https://fred.stlouisfed.org/series/PALLFNFINDEXM">FMI, índice de preços de commodities, via FRED</a></li>
 <li>Rousseeuw e Croux (1993), <em>Alternatives to the median absolute deviation</em>, Journal of the American Statistical Association, sobre a escala robusta</li>
 <li>Tesouro Nacional, Relatório Mensal da Dívida Pública Federal (agosto de 2026), para a parte da dívida federal em reais</li>
-<li><a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp179.htm">Lei Complementar 179, de 2021</a>, autonomia do Banco Central</li>
+<li><a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp179.htm">Lei Complementar 179, de 2021</a>, autonomia do Banco Central, citada na linha do Juro</li>
+<li>Nielsen Norman Group, testes de uso de ícones, e GOV.UK Design System, o componente de acordeão, para a pergunta com seta que abre cada linha do topo</li>
 <li><a href="https://www.imf.org/en/Publications/WEO">FMI, World Economic Outlook</a>, dívida bruta do governo da Argentina em 2001 e do Japão, citadas em Como funciona</li>
 <li>Mian, Sufi e Verner (2017), <em>Household debt and business cycles worldwide</em>, Quarterly Journal of Economics</li>
 <li>An, Jalles e Loungani (2018), <em>How well do economists forecast recessions?</em>, FMI</li>

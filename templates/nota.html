@@ -54,7 +54,16 @@ svg text{font-family:var(--sistema)}
       <li><b>Inflação esperada.</b> Quanto os bancos esperam que os preços subam nos próximos 12 meses (Focus). Se esperam mais, o Banco Central tende a subir o juro para segurar os preços. <a href="/causas/#t-precos">Por que os preços sobem</a>.</li>
       <li><b>Juro.</b> A Selic, o juro que o Banco Central decide e que serve de base para os juros dos bancos. Com a Selic subindo, a compra a prazo fica cara, as pessoas compram menos e as lojas vendem menos. <a href="/causas/#t-freio">O remédio que esfria a economia</a>.</li>
     </ul>
-    <p>O ritmo da economia e o emprego aparecem no topo, mas não entram na soma. Eles mostram como a economia está agora, e o emprego costuma ser o último a piorar: quando ele piora, a recessão em geral já chegou.</p>
+  </section>
+
+  <section aria-labelledby="t-tambem">
+    <h2 id="t-tambem">E o crescimento, o emprego e a dívida em reais?</h2>
+    <p>Logo abaixo da placa ficam três números de crescimento. O primeiro diz quanto a economia cresceu nos últimos 12 meses. O segundo diz quanto ela crescia um ano antes. O terceiro é quanto os bancos esperam para os próximos 12 meses.</p>
+    <p>O número de agora vem da prévia do PIB do Banco Central, que sai todo mês, com dois meses de atraso.{% if cal.ritmo %} Em metade dos meses desde 2004, o crescimento em 12 meses ficou entre {{ cal.ritmo.faixa[0]|num }}% e {{ cal.ritmo.faixa[1]|num }}%, e é isso que a página chama de normal.{% endif %}</p>
+    {% if cal.ritmo %}<p>A previsão é a dos bancos (Focus), e o site só a mostra. Desde 2004, ela errou o crescimento dos 12 meses seguintes em {{ cal.ritmo.erro_focus|num }} ponto, em média, para mais ou para menos.</p>{% endif %}
+    <p>Nenhum desses números muda a placa. A placa olha as pressões, porque elas costumam piorar antes de o crescimento cair.</p>
+    <p>Abaixo das cinco pressões, em Também acompanhamos, ficam {% set ns = namespace(n=[]) %}{% for x in dir.tambem %}{% set ns.n = ns.n + [{'emprego': 'o emprego', 'reservas': 'as reservas em dólar do Banco Central', 'divida_reais': 'a parte da dívida do governo que é em reais'}.get(x.id, x.nome)] %}{% endfor %}{% if ns.n|length > 1 %}{{ ns.n[:-1]|join(', ') }} e {{ ns.n[-1] }}{% else %}{{ ns.n|join('') }}{% endif %}. Essas linhas também não mudam a placa.</p>
+    <p>O emprego costuma ser o último a piorar. As empresas primeiro vendem menos e só depois demitem.{% if dir.tambem|selectattr('id', 'equalto', 'reservas')|list %} As reservas e a dívida em reais protegem o país num susto do dólar, mas não avisam que uma recessão vem.{% else %} A dívida em reais protege o país num susto do dólar, mas não avisa que uma recessão vem.{% endif %}</p>
   </section>
 
   <section aria-labelledby="t-normal">
@@ -66,15 +75,16 @@ svg text{font-family:var(--sistema)}
       <li>Dólar: até {{ (k * c.dolar)|num }}%. Juro de 10 anos: até {{ (k * c.juro_longo)|num(2) }} ponto.</li>
       <li>Inflação esperada: até {{ (k * c.inflacao)|num(2) }} ponto.</li>
       <li>Selic: até {{ (k * c.juro)|num(2) }} ponto.</li>
+      <li>Desemprego, em Também acompanhamos: até {{ (k * c.emprego)|num(2) }} ponto.</li>
     </ul>
-    <p>Na página de hoje, cada pressão mostra o número de agora, o de 3 meses antes e se passou desse vaivém com folga ou raspando.</p>
+    <p>Na página de hoje, cada pressão mostra o número de agora e o de 3 meses antes. Aberta, ela diz se passou do vaivém, se passou raspando ou se ficou dentro dele.</p>
   </section>
 
   <section aria-labelledby="t-folga">
     <h2 id="t-folga">O que é a folga?</h2>
     <p>A direção diz para onde o risco anda. A folga diz quanto espaço ainda sobra. Uma pressão pode ficar igual em 3 meses e mesmo assim estar no limite, como uma conta bancária que parou de cair, mas já está no vermelho.</p>
     <p>A folga compara o valor de hoje com todos os meses desde o começo de cada série. Nenhuma, quando é o pior valor já visto. Quase nenhuma, entre os 10% piores. Pouca, entre os 30% piores. Média, no meio. Muita, entre os 30% melhores.</p>
-    <p>Muita gente acha que existe um limite para a dívida do governo, como 100% do PIB, a partir do qual vem a crise. Esse número não existe. A Argentina deu calote em 2001 devendo cerca de metade do PIB, e o Japão deve mais de duas vezes o PIB sem crise. Pesa mais em que moeda e para quem o governo deve. O Brasil deve quase tudo em reais, a maior parte a brasileiros. É uma das coisas que o bloco "O que segura" mostra.</p>
+    <p>Muita gente acha que existe um limite para a dívida do governo, como 100% do PIB, a partir do qual vem a crise. Esse número não existe. A Argentina deu calote em 2001 devendo cerca de metade do PIB, e o Japão deve mais de duas vezes o PIB sem crise. Pesa mais em que moeda e para quem o governo deve. O Brasil deve quase tudo em reais, a maior parte a brasileiros. Na página Hoje, a linha <a href="/#parte-divida_reais">Dívida em reais</a> mostra quanto da dívida é em reais.</p>
   </section>
 
   <section aria-labelledby="t-teste">
@@ -103,7 +113,7 @@ svg text{font-family:var(--sistema)}
   {% if gar %}
   <section aria-labelledby="t-ano-ruim">
     <h2 id="t-ano-ruim">E o PIB num ano ruim?</h2>
-    <p>Há também uma conta que olha só os próximos 12 meses. Com dados de 44 países, ela estima o PIB num ano ruim, daqueles com 1 chance em 10. Hoje, num ano ruim, o PIB {{ gar.ruim }} em 12 meses. Em tempos normais, desde 2004, um ano ruim daria {{ gar.normal }}.</p>
+    <p>Há também uma conta que olha só os próximos 12 meses. Com dados de 44 países, ela estima o PIB num ano ruim, daqueles com 1 chance em 10. Hoje, num ano ruim, o PIB {{ gar.ruim }} em 12 meses. Em tempos normais, desde 2004, num ano ruim o PIB {{ gar.normal }}.</p>
     <p>Ela fica aqui, e não no topo, porque só vê o crescimento, o juro e a inflação. As contas do governo, as dívidas das famílias e o dólar ficam fora dela.</p>
   </section>
   {% endif %}

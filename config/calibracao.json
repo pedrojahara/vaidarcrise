@@ -545,5 +545,22 @@
     }
    ]
   }
+ },
+ "ritmo": {
+  "o_que_e": "Crescimento em 12 meses pela prévia do PIB (IBC-Br): soma de 12 meses contra os 12 anteriores. faixa: percentis 25 e 75 desde 2004. erro_focus: erro médio absoluto da previsão de 12 meses do Focus contra o PIB do IBGE que veio, com a mesma ponderação dos anos, desde 2004 (src/ritmo.py).",
+  "de": "2004-12",
+  "ate": "2026-08",
+  "faixa": [
+   0.846,
+   3.857
+  ],
+  "mediana": 2.396,
+  "erro_focus": 1.461,
+  "erro_focus_ate_1_ponto": 0.397,
+  "erro_focus_meses": [
+   "2004-01",
+   "2024-12",
+   252
+  ]
  }
 }

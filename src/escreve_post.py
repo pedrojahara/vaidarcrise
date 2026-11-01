@@ -81,9 +81,9 @@ Regras:
 2. Use só os fatos e os números que estão nos dados, com os mesmos valores. Não invente número, data, nome, causa ou previsão. Não recalcule nada; arredondar não é recalcular.
 3. O risco de recessão nunca vira chance: nada de porcentagem de chance, probabilidade, "vezes o normal" ou nota. Fale da direção com as palavras do site: o risco está subindo, igual ou caindo; cada pressão apertou, ficou igual ou folgou. Não diga que vai ter recessão nem que não vai: a direção diz para que lado o risco andou e não é previsão.
 4. O leitor é um brasileiro adulto que gosta de política, não estudou economia e lê pelo celular, com pouco tempo. Ele tem lado político e desconfia de jornal. Use palavra de conversa, não de jornal de economia. Traduza na primeira vez o termo que ele vai encontrar em outro lugar (PIB, tudo o que o país produz; Selic, numa frase própria: "A Selic é o juro que o Banco Central decide e que serve de base para os juros dos bancos", nunca só "juro básico"; IPCA, a inflação oficial; IBC-Br, a prévia do PIB do Banco Central). Os outros saem do texto: em vez de política monetária, fiscal, interanual, dessazonalizado, commodities ou pontos-base, diga juro, contas do governo, contra um ano antes, descontada a época do ano, produtos como soja e petróleo, pontos. Use as palavras do site: "os bancos (Focus)"; "o Banco Central decide o juro", e não "o Copom decide a Selic"; atraso nas dívidas, e não inadimplência; quem gasta mais do que arrecada, e não déficit ou superávit; as pressões e os assuntos das notícias pelos nomes dos dados (Contas do governo, Dívidas das famílias, Dólar e juro longo, Inflação esperada, Juro; Ritmo da economia, Juro e inflação, Emprego, Economia lá fora).
-5. A direção sai só das cinco pressões listadas nos dados. O ritmo da economia e o emprego aparecem no topo do site, mas ficam fora da soma; a Bolsa fica fora de tudo. As notícias aparecem como pressão por assunto (para piorar, para melhorar ou sem lado claro) e não mudam a direção. Nunca diga que uma notícia mudou a direção; diga para que lado ela empurra o assunto dela.
+5. A direção sai só das cinco pressões listadas nos dados. O crescimento em 12 meses, o emprego, as reservas em dólar e a dívida em reais aparecem no topo do site, mas não mudam a direção; a Bolsa fica fora de tudo. A previsão de crescimento é dos bancos (Focus): nunca a apresente como previsão do site. As notícias aparecem como pressão por assunto (para piorar, para melhorar ou sem lado claro) e não mudam a direção. Nunca diga que uma notícia mudou a direção; diga para que lado ela empurra o assunto dela.
 6. Não explique ao leitor como a conta é feita: a aba Como funciona faz isso. Nada de falar em vaivém normal, soma, pesos, calibração, metodologia, regra ou versão. Uma exceção só: quando um fato do texto parece contradizer a direção (a Bolsa cai muito e a direção não muda, por exemplo), uma frase pode dizer que aquilo fica fora da conta, sem mais detalhe: "Isso não muda a direção do risco, porque a Bolsa fica fora da conta."
-7. Cada informação tem um dono, e o post não repete o que a página já mostra ao lado dele: a direção e o que cada pressão fez em 3 meses ficam no topo; a lista das notícias de ontem, na caixa logo abaixo do post; as próximas datas, na lateral. O post diz o que só ele pode dizer: a ligação entre os fatos, a comparação e o efeito no bolso. Não copie frases do post anterior do mesmo tipo, que vem nos dados.
+7. Cada informação tem um dono, e o post não repete o que a página já mostra ao lado dele: a direção, o crescimento em 12 meses e o que cada pressão fez em 3 meses ficam no topo; a lista das notícias de ontem, na caixa logo abaixo do post; as próximas datas, na lateral. O post diz o que só ele pode dizer: a ligação entre os fatos, a comparação e o efeito no bolso. Não copie frases do post anterior do mesmo tipo, que vem nos dados.
 {regras_tipo}
 10. Frase em ordem direta, voz ativa, verbo concreto, uma ideia, até 20 palavras. Números: uma comparação por frase (o valor de hoje e a régua dele, contra 3 meses antes, contra o normal ou contra um ano antes), no máximo quatro números por parágrafo, arredondados para uma casa decimal (a Selic mantém duas). Queda vai no verbo, não no sinal: "o PIB cai 1,8%", nunca "−1,8%". Inflação em 12 meses menor quer dizer que os preços sobem mais devagar: diga isso, e não que a inflação "cai" ou "recua", que soa como preço baixando. Diferença entre taxas vai em pontos, e só se o número da diferença estiver nos dados ("0,5 ponto acima do normal"); senão, dê os dois valores. Formato brasileiro (R$ 13 bilhões; 15%; 0,6 ponto).
 11. Instituições e empresas vão pelo nome que aparece no fato ou nas manchetes dele (Banco Central, Fazenda, IBGE, Bradesco, Fed). Sigla pouco conhecida diz quem é na primeira vez: a IFI, do Senado; o Fed, o banco central dos EUA. Se o nome não estiver nos dados, descreva o fato sem nome e sem comentar a falta dele. Pessoas e partidos não: use o cargo ou a instituição. Sem adjetivos de juízo, e o mesmo critério para fatos que agradam a qualquer lado. Fatos e números, nunca intenções atribuídas a alguém, e nunca o que o governo deveria fazer. Deixe claro o estágio de cada fato citado: dado divulgado, decisão tomada, proposta em votação, anúncio ou rumor; rumor e anúncio são possibilidade, não fato consumado.
@@ -164,19 +164,33 @@ def _topo(rodada: dict, cfg: dict) -> dict:
 
 
 def _linhas_partes(rodada: dict, cfg: dict) -> list[str]:
-    """Cada pressão e, fora da soma, o ritmo e o emprego, com o lado, as frases do topo e a folga."""
+    """Cada pressão e, fora da soma, as outras partes do topo (o emprego, as reservas), com o lado, as frases do
+    topo e a folga. Uma parte sem lado (um fato fixo, como a dívida em reais) entra só com a frase."""
     t = _topo(rodada, cfg)
     out = [t["conta"]]
-    for x in [*t["pressoes"], *t["fora"]]:
+    r = t.get("ritmo")
+    if r:
+        prev = (f" Os bancos (Focus) esperam {r['previsao']} nos próximos 12 meses. {r['erro']}"
+                if r.get("previsao") else "")
+        out.append(f"- Crescimento em 12 meses (logo abaixo da placa; não muda a direção): {r['agora']} {r['ate_agora']}, "
+                   f"contra {r['antes']} {r['ate_antes']} ({r['muda'].lower()}). {r['faixa']}{prev}")
+    rp = t.get("ritmo_parte")
+    if rp:
+        out.append(f"- Ritmo da economia (não aparece como linha; só decide se o topo diz que a economia está encolhendo): "
+                   f"{rp['palavra'].lower()}. {rp['frase']}")
+    for x in [*t["pressoes"], *(t.get("tambem") or t.get("fora") or [])]:
         fora = "" if x["na_soma"] else " (fora da soma)"
-        folga = f" Folga: {x['folga']['rot'].lower()}. {x['folga']['texto']}" if x["folga"] else ""
-        out.append(f"- {x['nome']}{fora}: {x['palavra'].lower()}. {' '.join([x['frase'], *x['mais']])}{folga}")
+        folga = f" Folga: {x['folga']['rot'].lower()}. {x['folga']['texto']}" if x.get("folga") else ""
+        palavra = f" {x['palavra'].lower()}." if x.get("palavra") else ""
+        out.append(f"- {x['nome']}{fora}:{palavra} {' '.join([x['frase'], *x['mais']])}{folga}")
     return out
 
 
 def _palavra(pid: str, lado: int | None) -> str:
     import build_site
-    tab = build_site.LADO_RITMO if pid == "ritmo" else build_site.LADO_EMPREGO if pid == "emprego" else build_site.LADO_PRESSAO
+    # A mesma tabela do topo (build_site._parte_ctx): as reservas usam as palavras do emprego.
+    tab = (build_site.LADO_RITMO if pid == "ritmo" else build_site.LADO_EMPREGO if pid in ("emprego", "reservas")
+           else build_site.LADO_PRESSAO)
     return tab.get(lado, tab[None])[0].lower()
 
 
@@ -185,10 +199,12 @@ def _lados(r: dict) -> dict:
 
 
 def _partes_mudaram(r0: dict | None, r1: dict, cfg: dict) -> list[dict]:
-    """As partes que mudaram de lado entre duas rodadas (por exemplo, de igual para apertou)."""
+    """As partes que mudaram de lado entre duas rodadas (por exemplo, de igual para apertou). Uma parte nova
+    sem nome em config/modelo.json (direcao.nomes) fica de fora."""
     a, b = _lados(r0 or {}), _lados(r1)
-    return [{"id": k, "nome": cfg["direcao"]["nomes"][k], "antes": _palavra(k, a[k]), "agora": _palavra(k, v)}
-            for k, v in b.items() if k in a and a[k] != v]
+    nomes = cfg["direcao"]["nomes"]
+    return [{"id": k, "nome": nomes[k], "antes": _palavra(k, a[k]), "agora": _palavra(k, v)}
+            for k, v in b.items() if k in a and k in nomes and a[k] != v]
 
 
 def por_dia(rodadas: list[dict]) -> list[dict]:
@@ -427,10 +443,10 @@ def retrato_dos_dados(series: dict, mes: str, cfg: dict, cal: dict) -> dict:
         medidas = {}
         for m in direcao.QUAIS[pid]:
             ref = x["refs"][m]
-            v = series[direcao.MEDIDAS[m]["serie"]].get(ref) if ref else None
+            v = series.get(direcao.MEDIDAS[m]["serie"], {}).get(ref) if ref else None
             if v:
                 medidas[m] = {"agora": v[1], "dia": v[0], "ref": ref, "mudanca": x["mudancas"][m]}
-        partes.append({"id": pid, "lado": x["partes"][pid], "na_soma": pid in direcao.NA_SOMA, "medidas": medidas})
+        partes.append({"id": pid, "lado": x["partes"].get(pid), "na_soma": pid in direcao.NA_SOMA, "medidas": medidas})
     fim = dt.date.fromisoformat(direcao.mais(mes, 1) + "-01") - dt.timedelta(days=1)
     return {"gerado_em": f"{fim.isoformat()}T23:59:00", "dos_dados": True,
             "resultado": {"direcao": {"estado": direcao.ESTADOS.get(x["estado"]), "partes": partes}}}
@@ -526,7 +542,9 @@ def tabelas_mes(rodada: dict, cfg: dict, inicio: dict) -> list[dict]:
     """As tabelas do mês, feitas por código: cada parte no começo e no fim do mês, e o bolso."""
     a, b = _lados(inicio), _lados(rodada)
     nomes = cfg["direcao"]["nomes"]
-    linhas = [[nomes[k], _palavra(k, a.get(k)).capitalize(), _palavra(k, v).capitalize()] for k, v in b.items()]
+    # O ritmo não é linha do topo (só decide o "encolhendo"); o crescimento fica no bloco logo abaixo da placa.
+    linhas = [[nomes[k], _palavra(k, a.get(k)).capitalize(), _palavra(k, v).capitalize()] for k, v in b.items()
+              if k in nomes and k != "ritmo"]
     secoes = [{"titulo": "Cada parte contra 3 meses antes, no começo e no fim do mês",
                "tabela": {"cab": ["Parte", rotulo_inicio(inicio), "Agora"], "linhas": linhas}}]
     leit = (rodada.get("leituras") or {}).get("fatores", {})

@@ -28,7 +28,14 @@ SGS = {
     "primario_12m": (5793, "Resultado primário do setor público, 12 meses (% do PIB, + = déficit)"),
     "dolar_ptax": (1, "Dólar PTAX venda (R$)"),
     "ipca_12m": (13522, "IPCA acumulado em 12 meses (%)"),
+    "reservas": (3546, "Reservas internacionais, conceito liquidez, total, fim do mês (US$ milhões)"),
 }
+# Séries que a coleta do dia busca inteiras, desde 2002, e não só os 4 anos das outras: a direção do risco
+# tira delas o vaivém normal na hora, enquanto config/calibracao.json não tem o corte (src/direcao.py).
+# São mensais, então a série inteira vem numa consulta só (o limite de 10 anos do SGS é das diárias).
+DESDE_2002 = {"reservas"}
+# Séries que ficam fora da soma da direção: se falharem, a rodada segue com um aviso, sem erro de coleta.
+OPCIONAIS = {"reservas"}
 OLINDA = "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata"
 # Taxas do Tesouro Direto, todos os títulos, desde 2002 (Tesouro Transparente). Sai em D-1.
 TESOURO = ("https://www.tesourotransparente.gov.br/ckan/dataset/df56aa42-484a-4a59-8184-7676580c81e3/"
@@ -187,7 +194,8 @@ def coletar() -> dict:
 
     def serie_sgs(key: str) -> dict:
         code, nome = SGS[key]
-        return {"codigo_sgs": code, "nome": nome, "dados": sgs(code, inicio),
+        desde = dt.date(2002, 1, 1) if key in DESDE_2002 else inicio
+        return {"codigo_sgs": code, "nome": nome, "dados": sgs(code, desde),
                 "fonte": f"https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo={code}"}
 
     falhas: dict[str, Exception] = {}
@@ -232,7 +240,7 @@ def coletar() -> dict:
             snap["series"][key] = serie_sgs(key)
             snap["avisos"].append(f"SGS {code}: veio na segunda rodada; a primeira falhou: {e}")
         except Exception as e2:  # noqa: BLE001
-            snap["erros"].append(f"SGS {code}: {e2}")
+            snap["avisos" if key in OPCIONAIS else "erros"].append(f"SGS {code}: {e2}")
     # O desemprego é do IBGE: se o Banco Central não entregou, busca na fonte.
     if "desocupacao" not in snap["series"]:
         try:

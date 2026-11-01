@@ -34,6 +34,7 @@ MENSAIS = {
     "divida_bruta": 13762,
     "primario_12m": 5793,
     "ipca_12m": 13522,
+    "reservas": 3546,  # reservas internacionais, conceito liquidez, fim do mês (US$ milhões)
 }
 DIARIAS_POR_MES = {"selic_meta": 432, "dolar_ptax": 1}
 # Preço mundial das commodities (FMI, via FRED): o fator Cenário externo.
