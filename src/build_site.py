@@ -173,7 +173,8 @@ def folga_ctx(pid: str, f: dict | None, teto: float | None = None) -> dict | Non
 
 
 def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
-    """Uma linha do topo: o nome, o que aconteceu em 3 meses, o vaivém normal, a folga e quem mexe."""
+    """Uma linha do topo: o nome, o que aconteceu em 3 meses, o vaivém normal, a folga e, nas linhas de Também
+    acompanhamos, por que ela importa."""
     p = cfg["direcao"]
     pid, ms = x["id"], x["medidas"]
     tabela = LADO_RITMO if pid == "ritmo" else LADO_EMPREGO if pid in ("emprego", "reservas") else LADO_PRESSAO
@@ -259,7 +260,7 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
     return {"id": pid, "nome": p["nomes"][pid], "palavra": palavra, "cls": cls, "na_soma": x["na_soma"],
             "frase": frases[0], "mais": frases[1:], "normal": normal,
             "folga": folga_ctx(pid, x.get("folga"), p.get("teto_meta_inflacao")),
-            "quem": p["quem_mexe"].get(pid, ""), "causas": p["causas"].get(pid),
+            "importa": p["por_que_importa"].get(pid, ""), "causas": p["causas"].get(pid),
             "fora": p["nao_muda_a_placa"].get(pid)}
 
 
@@ -269,7 +270,7 @@ def _divida_reais_ctx(cfg: dict, hoje: str) -> dict:
     d = p["divida_reais"]
     return {"id": "divida_reais", "nome": p["nomes"]["divida_reais"], "palavra": None, "cls": "igual", "na_soma": False,
             "frase": f"Em {mes_ano(d['ref'], com_ano=True)}, {num(d['valor'], 0)}% da dívida do governo federal era em reais.",
-            "mais": [], "normal": "", "folga": None, "quem": p["quem_mexe"]["divida_reais"] + " " + d["texto_fonte"],
+            "mais": [], "normal": "", "folga": None, "importa": p["por_que_importa"]["divida_reais"] + " " + d["texto_fonte"],
             "causas": p["causas"].get("divida_reais"), "fora": p["nao_muda_a_placa"]["divida_reais"]}
 
 
