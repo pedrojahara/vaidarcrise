@@ -195,7 +195,8 @@ Cada post responde a uma pergunta só e compara com o próprio período. Ela qua
 - **Compare com o próprio período.** O fato do dia, com ontem; o resumo da semana, com a semana anterior; o resumo do mês, com o mês anterior. Comparação mais longa só como régua de um número (contra um ano antes, contra o normal).
 - **Dia sem novidade** ganha um fato do dia de uma frase, que diz isso. É informação.
 - **Nada de frase do post anterior.** O fato de hoje não copia o de ontem; o resumo da semana não copia o fato do dia.
-- **Os resumos saem do registro, não dos posts.** O código junta os fatos das rodadas da semana ou do mês, e a inteligência artificial só escreve.
+- **Os resumos saem dos dados, não dos posts.** O resumo do mês junta os dados oficiais do mês; o resumo da semana, as atualizações da semana. A inteligência artificial só escreve.
+- **O calendário decide o tipo.** Domingo é sempre o resumo da semana, e o primeiro domingo do mês é sempre o resumo do mês. Se o site não leu as notícias de algum dia, a assinatura do post diz quais, e o texto não fala delas.
 
 ## Como explicar um mecanismo
 
@@ -327,8 +328,8 @@ Um fato, contado até o bolso. O que o dólar fez em 3 meses fica no topo, em "D
 
 ## Onde o guia vale no código
 
-- `src/escreve_post.py`: um prompt por tipo de post (fato do dia, resumo da semana, resumo do mês), com as regras comuns de leitor, frase, números, palavras proibidas, mecanismo e causa e efeito por extenso. O código monta os fatos de cada tipo; a semana e o mês saem das rodadas guardadas em `runs/`.
-- `src/run.py`: escolhe o tipo pela data (domingo, o resumo da semana; primeiro domingo do mês, o resumo do mês), com volta ao fato do dia quando faltam rodadas.
+- `src/escreve_post.py`: um prompt por tipo de post (fato do dia, resumo da semana, resumo do mês), com as regras comuns de leitor, frase, números, palavras proibidas, mecanismo e causa e efeito por extenso. O código monta os fatos de cada tipo; o mês sai dos dados oficiais do mês e a semana, das rodadas guardadas em `runs/`.
+- `src/run.py` e `src/escreve_post.py`: o tipo sai só da data (domingo, o resumo da semana; primeiro domingo do mês, o resumo do mês); a assinatura do resumo, em `src/build_site.py`, diz que notícias faltaram.
 - `src/classify_news.py`, regras 12 a 16: títulos de evento e "por quê" com a mesma linguagem.
 - `src/revisa_texto.py`: pede reescrita do post com frase acima de 25 palavras, parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal e inflação que "cai" ou "recua". Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, direção repetida sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados, previsão de recessão e risco em porcentagem que sobram depois da reescrita barram o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
 - `src/dossie.py`: as frases de dados de cada assunto, que o post usa como contexto (queda no verbo, mês por extenso, sem sigla solta).

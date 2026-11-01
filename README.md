@@ -19,8 +19,8 @@ launchd, todo dia às 06h30 → run.sh   (uma publicação por dia; se o Mac dor
   │                         só no fim de Como funciona
   ├─ src/classify_news.py   claude -p, sem ferramentas, saída em esquema JSON: manchetes do dia anterior → eventos
   ├─ src/dossie.py          fatos de dados de cada assunto, contexto para o post
-  ├─ src/escreve_post.py    claude -p escreve o post do tipo do dia (fato do dia, semana ou mês) a partir da conta pronta
-  │                         e dos registros em runs/; src/revisa_texto.py confere o texto e os números
+  ├─ src/escreve_post.py    claude -p escreve o post do tipo do dia (fato do dia, semana ou mês) a partir da conta pronta,
+  │                         dos dados oficiais (o mês) e dos registros em runs/ (a semana); src/revisa_texto.py confere
   ├─ src/run.py             grava runs/<id>.json e data/eventos.json
   ├─ src/build_site.py      gera docs/ (HTML estático, og.png, data.json) com editor/*.md;
   │                         a aba O que causa recessão é texto fixo em templates/causas.html

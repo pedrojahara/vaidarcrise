@@ -58,6 +58,9 @@ MEDIDAS = {
 }
 # As partes da página, na ordem do topo. As cinco primeiras entram na soma.
 PARTES = ["contas", "parcelas", "mercado", "inflacao", "juro", "ritmo", "emprego"]
+# As medidas de cada parte.
+QUAIS = {"contas": ["divida", "primario"], "parcelas": ["parcelas"], "mercado": ["dolar", "juro_longo"],
+         "inflacao": ["inflacao"], "juro": ["juro"], "ritmo": ["ritmo"], "emprego": ["emprego"]}
 NA_SOMA = ["contas", "parcelas", "mercado", "inflacao", "juro"]
 # A folga: a série cujo nível se compara com a história e o lado ruim. O juro usa o juro descontado da
 # inflação esperada; o dólar não tem folga (o nível em reais não se compara entre décadas).
@@ -262,8 +265,7 @@ def calcular(snap: dict, cfg: dict, cal: dict, rodadas: list[dict] | None = None
                       "lado": agora["lados"][m], "como": med["como"]}
     partes = []
     for nome in PARTES:
-        quais = {"contas": ["divida", "primario"], "parcelas": ["parcelas"], "mercado": ["dolar", "juro_longo"],
-                 "inflacao": ["inflacao"], "juro": ["juro"], "ritmo": ["ritmo"], "emprego": ["emprego"]}[nome]
+        quais = QUAIS[nome]
         ref_folga = medidas.get(quais[0], {}).get("ref")
         if nome == "juro":
             ref_folga = min(medidas.get("juro", {}).get("ref") or "0000", medidas.get("inflacao", {}).get("ref") or "0000")
