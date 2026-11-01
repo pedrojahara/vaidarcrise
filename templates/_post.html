@@ -35,6 +35,6 @@
   {% if post.editor %}
   <p class="rodape">{% if not permalink %}<a href="{{ post.link }}">Link permanente</a>{% else %}Postado em {{ data_curta(post.dia) }}{% endif %}{% if post.tags %} | {{ post.tags }}{% endif %}</p>
   {% else %}
-  <p class="rodape">{% if post.rodape %}{{ post.rodape }} {% endif %}{% if post.zap %}<a href="{{ post.zap }}" rel="noopener">Mandar no WhatsApp</a> | {% endif %}{% if not permalink %}<a href="{{ post.link }}">Link permanente</a> | {% endif %}<a href="{{ post.registro }}">Todos os números do dia</a></p>
+  {% if post.zap or not permalink %}<p class="rodape">{% if post.zap %}<a href="{{ post.zap }}" rel="noopener">Mandar no WhatsApp</a>{% if not permalink %} | {% endif %}{% endif %}{% if not permalink %}<a href="{{ post.link }}">Link permanente</a>{% endif %}</p>{% endif %}
   {% endif %}
 </article>

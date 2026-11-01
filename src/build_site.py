@@ -446,21 +446,19 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
         titulo, paragrafos = p["titulo"], p["paragrafos"]
         secoes = p.get("secoes") or [{"paragrafos": paragrafos}]
         autoria = ASSINATURA
-        rodape = ""
     else:
         tipo = "dia"
         titulo = ("A economia está encolhendo" if d["estado"] == "encolhendo"
                   else f"O risco de recessão está {d['estado']}")
         paragrafos = []
         autoria = "O texto do dia não saiu. Ficam a direção do risco e as notícias, organizadas pelo programa."
-        rodape = ""
     link = f"/{dia}/"
     zap = None
     if tipo in ("semana", "mes"):
         zap = "https://wa.me/?text=" + quote(f"{titulo} {SITE}{link}")
     return {"dia": dia, "data_extenso": data_extenso(dia), "titulo": titulo, "paragrafos": paragrafos, "secoes": secoes,
             "tipo": tipo, "tipo_nome": TIPOS_POST[tipo], "zap": zap,
-            "autoria": autoria, "rodape": rodape, "direcao": d["estado"], "llm": bool(p.get("ok")),
+            "autoria": autoria, "direcao": d["estado"], "llm": bool(p.get("ok")),
             "pressao": pressao_ctx(rodada, eventos, cfg), "link": link,
             "registro": f"{REPO}/blob/main/runs/{rodada['id']}.json", "llm_ok": rodada["llm"]["ok"]}
 
