@@ -40,6 +40,10 @@ MOLDES = [
      "'juro básico' troca jargão por jargão: diga que é o juro que o Banco Central decide e que serve de base para os juros dos bancos"),
     (re.compile(r"\b(cenário ruim|inadimplência|(déficit|superávit) primário|crédito livre)\b", re.I),
      "palavra que o site trocou (num ano ruim, atraso nas dívidas, gasta mais do que arrecada)"),
+    # PERSONA.md, "Os nomes do site": o juro de 10 anos se explica pelo que é; a pressão se chama Desconfiança de quem investe.
+    (re.compile(r"\b(juros? longos?|juros futuros|prêmios? de risco|dólar e juro longo)\b", re.I),
+     "palavra que o site trocou: diga o juro de 10 anos (o que o governo paga, acima da inflação, para pegar dinheiro "
+     "emprestado por uns 10 anos) e, para a pressão, Desconfiança de quem investe"),
 ]
 
 FRASE = re.compile(r"(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9\"“])")

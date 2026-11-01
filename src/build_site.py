@@ -204,16 +204,29 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
                       f"{num(m['agora'], cd)}%, {_quando(m)}.")
         normal = _quanto_normal(m, " ponto")
     elif pid == "mercado" and "dolar" in ms and ms["dolar"]["agora"] is not None:
+        # Fechada, a linha mostra os dois números que entram na conta; aberta, explica o juro de 10 anos e o vaivém de cada um.
         d = {**ms["dolar"], "diario": True}
-        frases.append(f"O dólar foi de R$ {num(d['antes'], 2)} para R$ {num(d['agora'], 2)}, {_quando(d)}"
-                      f" ({'alta' if d['mudanca'] > 0 else 'queda'} de {num(abs(d['mudanca']))}%).")
-        normal = "Dólar: " + _quanto_normal(d, "%")[0].lower() + _quanto_normal(d, "%")[1:]
         j = ms.get("juro_longo")
-        if j and j.get("agora") is not None:
-            frases.append(f"O juro que o governo paga, acima da inflação, para pegar dinheiro por uns 10 anos foi de "
-                          f"{num(j['antes'])}% para {num(j['agora'])}% ao ano.")
-            normal += " Juro de 10 anos: " + _quanto_normal(j, " ponto")[0].lower() + _quanto_normal(j, " ponto")[1:]
-            normal += " Os dois contam como um só: se um aperta e o outro folga, fica igual."
+        j = {**j, "diario": True} if j and j.get("agora") is not None and j.get("antes") is not None else None
+        dolar = f"O dólar foi de R$ {num(d['antes'], 2)} para R$ {num(d['agora'], 2)}"
+        if j:
+            cj = _casas(j)
+            juro = f"o juro de 10 anos foi de {num(j['antes'], cj)}% para {num(j['agora'], cj)}% ao ano"
+            if _quando(d) == _quando(j):
+                frases.append(f"{dolar}, e {juro}, {_quando(d)}.")
+            else:
+                frases.append(f"{dolar}, {_quando(d)}, e {juro}, {_quando(j)}.")
+            frases.append("O juro de 10 anos é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns "
+                          "10 anos. Quando quem investe desconfia do Brasil, cobra mais para emprestar ao governo e troca reais "
+                          "por dólar, e os dois números sobem.")
+        else:
+            frases.append(f"{dolar}, {_quando(d)}.")
+        alta = f"A {'alta' if d['mudanca'] > 0 else 'queda'} de {num(abs(d['mudanca']))}% do dólar"
+        normal = alta + " " + _quanto_normal(d, "%")[0].lower() + _quanto_normal(d, "%")[1:]
+        if j:
+            normal += " O juro de 10 anos " + _quanto_normal(j, " ponto")[0].lower() + _quanto_normal(j, " ponto")[1:]
+            normal += (" Os dois contam como um só. Se um aperta e o outro fica dentro do normal, a pressão aperta; "
+                       "se um aperta e o outro folga, ela fica igual.")
     elif pid == "inflacao" and m and m["agora"] is not None:
         cd = 2 if abs(m["agora"] - p["teto_meta_inflacao"]) < 0.05 else _casas(m)  # perto do teto da meta, a segunda casa decide
         frases.append(f"Os bancos (Focus) esperam que os preços subam {num(m['agora'], cd)}% "

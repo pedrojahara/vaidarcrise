@@ -161,7 +161,7 @@ a:hover{text-decoration-thickness:2px}
 </ul>
 <p>O nome do site fala em crise; a métrica é recessão técnica.</p>
 <h2 id="a-regra-da-direcao">A regra da direção</h2>
-<p><strong>1. Cinco pressões</strong>, escolhidas pelo que a pesquisa da seção O que causa recessão, abaixo, mostra que vem antes de uma recessão: juro subindo, inflação esperada subindo, dívida das famílias subindo, dólar e juro longo subindo com desconfiança das contas do governo, e as contas do governo piorando.</p>
+<p><strong>1. Cinco pressões</strong>, escolhidas pelo que a pesquisa da seção O que causa recessão, abaixo, mostra que vem antes de uma recessão: juro subindo, inflação esperada subindo, dívida das famílias subindo, desconfiança de quem investe (dólar e juro de 10 anos subindo, muitas vezes por medo das contas do governo), e as contas do governo piorando.</p>
 <table>
 <thead>
 <tr>
@@ -195,15 +195,15 @@ a:hover{text-decoration-thickness:2px}
 <td>3 meses</td>
 </tr>
 <tr>
-<td>Dólar e juro longo</td>
+<td>Desconfiança de quem investe</td>
 <td>Dólar PTAX, variação %</td>
 <td>BCB 1</td>
 <td>subir</td>
 <td>0</td>
 </tr>
 <tr>
-<td>Dólar e juro longo</td>
-<td>Taxa real do Tesouro IPCA+ com vencimento mais perto de 10 anos</td>
+<td>Desconfiança de quem investe</td>
+<td>Juro de 10 anos: taxa real do Tesouro IPCA+ com vencimento mais perto de 10 anos</td>
 <td>Tesouro Direto</td>
 <td>subir</td>
 <td>0</td>
@@ -320,7 +320,7 @@ a:hover{text-decoration-thickness:2px}
 </tbody>
 </table>
 <p>As reservas ainda não têm corte em <code>config/calibracao.json</code>. Enquanto não têm, o corte sai na hora, com a mesma conta, das variações de 3 meses que a coleta do dia traz desde janeiro de 2002 (<code>src/fetch_data.py</code> busca essa série inteira); com menos de 36 variações, a linha fica sem lado. Só a atualização do Mac coleta a série, e a página esconde a linha enquanto ela não tem dado. Depois que <code>src/historico.py</code> guardar a série, <code>python src/direcao.py --calibrar</code> grava o corte das reservas junto com os outros.</p>
-<p>Dólar e juro longo contam como uma pressão só: o sinal da soma dos dois lados (se um aperta e o outro folga, fica igual; se um aperta e o outro fica igual, apertou).</p>
+<p>O dólar e o juro de 10 anos contam como uma pressão só, a Desconfiança de quem investe: o sinal da soma dos dois lados (se um aperta e o outro folga, fica igual; se um aperta e o outro fica igual, apertou).</p>
 <p><strong>5. A soma decide.</strong> Pressões que apertaram menos as que folgaram: 2 ou mais, <strong>subindo</strong>; −2 ou menos, <strong>caindo</strong>; no meio, <strong>igual</strong>. Pressão sem dado fica fora da soma naquele dia.</p>
 <p><strong>6. Confirmação.</strong> A direção só muda quando o resultado novo se repete no mês seguinte. No mês da primeira vez, a página avisa: "Pelos dados de hoje, a direção seria (...)".</p>
 <p><strong>7. Encolhendo.</strong> Se o IBC-Br (média de 3 meses contra os 3 anteriores) cair mais de 1,5%, o topo diz "A economia está encolhendo", no lugar da direção. A essa altura, a pergunta de para que lado anda o risco já perdeu o sentido.</p>
@@ -496,7 +496,7 @@ a:hover{text-decoration-thickness:2px}
 <td>Subindo</td>
 </tr>
 <tr>
-<td>Dólar e juro longo só com o dólar</td>
+<td>Desconfiança de quem investe só com o dólar</td>
 <td>17%</td>
 <td>1,9</td>
 <td>−0,1% e +4,3%</td>
@@ -578,7 +578,7 @@ a:hover{text-decoration-thickness:2px}
 </tr>
 <tr>
 <td>Parte dos meses em que cada pressão apertou / folgou</td>
-<td>contas 31% / 16%; parcelas 32% / 17%; dólar e juro longo 30% / 34%; inflação esperada 18% / 23%; juro 19% / 24%</td>
+<td>contas 31% / 16%; parcelas 32% / 17%; desconfiança de quem investe 30% / 34%; inflação esperada 18% / 23%; juro 19% / 24%</td>
 </tr>
 </tbody>
 </table>
@@ -635,7 +635,7 @@ a:hover{text-decoration-thickness:2px}
 <p>O resto de cada linha é encolhendo. No governo atual, a mesma regra disse caindo em meados de 2023 e no começo de 2024, e subindo de agosto de 2024 a março de 2025 (com a Selic subindo e o dólar passando de R$ 6) e na maior parte de 2026.</p>
 <h2 id="as-noticias">As notícias</h2>
 <p>As notícias não mudam a direção. Se cada notícia somasse um pedaço, como os jornais publicam mais notícia ruim que boa, a direção tenderia a ficar sempre em subindo. Elas mostram, na caixa "Para onde as notícias empurram", para que lado cada assunto é empurrado.</p>
-<p><strong>A leitura das manchetes.</strong> As manchetes de oito jornais com linhas editoriais diferentes (Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1) são coletadas de hora em hora. Às 06h30, um modelo de linguagem (Claude, sem ferramentas, com saída em esquema JSON validado por código) lê as do dia anterior e transforma os fatos em eventos: assunto, lado, tamanho (1 a 3) e estágio. Notícia que só repete um dado já medido fica de fora. Os assuntos são sete: Ritmo da economia, Juro e inflação, Dívidas das famílias, Dólar e juro longo, Contas do governo, Emprego e Economia lá fora.</p>
+<p><strong>A leitura das manchetes.</strong> As manchetes de oito jornais com linhas editoriais diferentes (Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1) são coletadas de hora em hora. Às 06h30, um modelo de linguagem (Claude, sem ferramentas, com saída em esquema JSON validado por código) lê as do dia anterior e transforma os fatos em eventos: assunto, lado, tamanho (1 a 3) e estágio. Notícia que só repete um dado já medido fica de fora. Os assuntos são sete: Ritmo da economia, Juro e inflação, Dívidas das famílias, Desconfiança de quem investe, Contas do governo, Emprego e Economia lá fora.</p>
 <p><strong>A pressão do dia, por assunto:</strong></p>
 <table>
 <thead>
@@ -871,7 +871,7 @@ a:hover{text-decoration-thickness:2px}
 <td>0,7% menor</td>
 </tr>
 <tr>
-<td>Juro longo subindo</td>
+<td>Juro de 10 anos subindo</td>
 <td>0,3% menor</td>
 </tr>
 <tr>

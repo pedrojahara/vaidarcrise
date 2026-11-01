@@ -3,7 +3,8 @@
 A regra (config/modelo.json, seção "direcao"; os cortes de cada pressão em config/calibracao.json):
 
 1. Cinco pressões: contas do governo (dívida bruta; antes de 2007, o resultado sem juros), dívidas das
-   famílias (parte da renda que vai para parcelas e juros), dólar e juro longo (contam como uma só),
+   famílias (parte da renda que vai para parcelas e juros), desconfiança de quem investe (dólar e juro de
+   10 anos, que contam como uma só),
    inflação esperada (Focus, 12 meses) e juro (Selic).
 2. Cada uma é comparada com 3 meses antes. Apertou se andou para o lado ruim mais que três quartos do
    vaivém normal dela desde 2002 (1,4826 × desvio absoluto mediano das mudanças de 3 meses); folgou se
