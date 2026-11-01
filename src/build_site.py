@@ -422,18 +422,12 @@ def pressao_ctx(rodada: dict, eventos: dict, cfg: dict, por_fator: int = 3) -> d
         com.append({"id": fid, "nome": nomes.get(fid, fid), "simbolo": simbolo, "cls": cls, "palavra": palavra,
                     "noticias": nots})
     sem = [nomes[f] for f in nomes if f not in {c["id"] for c in com}]
-    simbolo, cls, palavra = SENTIDOS[pr["sentido"]]
+    simbolo, cls, _ = SENTIDOS[pr["sentido"]]
     # "de ontem" quando a leitura cobre só a véspera; senão, as datas lidas.
     dias = (rodada.get("cobertura") or {}).get("dias") or []
     vespera = (dt.date.fromisoformat(rodada["gerado_em"][:10]) - dt.timedelta(days=1)).isoformat()
     quando = "de ontem" if dias in ([], [vespera]) else f"de {dia_mes(dias[0])} a {dia_mes(dias[-1])}"
-    if not pr.get("n"):
-        frase = f"Nenhuma notícia {quando} mexeu nos fatores."
-    elif pr["sentido"] == "igual":
-        frase = f"As notícias {quando} não empurram para um lado claro."
-    else:
-        frase = f"As notícias {quando} puxam {palavra}."
-    return {"com": com, "sem": sem, "simbolo": simbolo, "cls": cls, "frase": frase, "n": pr.get("n", 0), "quando": quando}
+    return {"com": com, "sem": sem, "simbolo": simbolo, "cls": cls, "n": pr.get("n", 0), "quando": quando}
 
 
 # --------------------------------------------------------------------- posts
