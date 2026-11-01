@@ -702,13 +702,13 @@ a:hover{text-decoration-thickness:2px}
 </tr>
 <tr>
 <td>Retrato do Brasil</td>
-<td>Fixo no topo, escrito à mão em <code>editor/</code></td>
+<td>No cartão do topo e na rolagem, como o post de 28/10, escrito à mão em <code>editor/</code></td>
 <td>Por que o site nasceu e como usar, sem números do dia</td>
 <td>Até 800 palavras</td>
 </tr>
 </tbody>
 </table>
-<p>Sem atualizações bastantes, a semana e o mês viram fato do dia. A semana e o mês saem dos registros em <code>runs/</code>, nunca dos posts anteriores. Cada post recebe o anterior do mesmo tipo só para não copiar frases dele.</p>
+<p>Na página principal, todos os posts ficam numa rolagem só, do mais novo ao mais antigo, e cada um tem também o seu link permanente. Sem atualizações bastantes, a semana e o mês viram fato do dia. A semana e o mês saem dos registros em <code>runs/</code>, nunca dos posts anteriores. Cada post recebe o anterior do mesmo tipo só para não copiar frases dele.</p>
 <p>O modelo de linguagem recebe os fatos prontos e só redige. Ele não muda a direção nem a pressão das notícias. Um verificador em código (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/revisa_texto.py"><code>src/revisa_texto.py</code></a>) procura moldes de texto automático, jargão, risco de recessão em porcentagem, previsão de recessão e explicações de método. Nos posts, também confere: número ou data que não está nos dados que o modelo recebeu (com a folga do arredondamento), texto acima do tamanho do tipo, fato do dia que repete a direção sem mudança, data futura no fato do dia (as datas ficam na lateral) e frase copiada do post anterior do mesmo tipo. Qualquer problema pede uma reescrita, no máximo uma. Número fora dos dados, risco em porcentagem, previsão de recessão ou mais de uma frase sobre a conta, se sobrarem, barram o texto, e sai a atualização sem texto corrido.</p>
 <p>Cada atualização guarda o prompt (hash), o modelo usado, a resposta bruta e a direção do dia em <a href="https://github.com/pedrojahara/vaidarcrise/tree/main/runs"><code>runs/</code></a>. Depois do lançamento oficial do site, o que foi publicado fica congelado. Antes dele, os textos e os registros antigos acompanham as mudanças do site, com os mesmos números e datas.</p>
 <h2 id="salvaguardas">Salvaguardas</h2>

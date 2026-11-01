@@ -31,6 +31,9 @@ DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Dom
 JORNAIS = "Folha, Valor, Estadão, g1, InfoMoney, Poder360, Agência Brasil e Gazeta do Povo"
 # Os tipos de post (PERSONA.md): o retrato, escrito à mão, fica fixo no topo; os outros saem da atualização das 06h30.
 TIPOS_POST = {"dia": "Fato do dia", "semana": "A semana", "mes": "O mês", "retrato": "Retrato do Brasil"}
+# O blog é uma rolagem só, do post mais novo ao mais antigo: a página principal traz os primeiros, e o resto
+# chega aos poucos, de docs/posts/, enquanto a leitora rola.
+POSTS_NA_PAGINA = 5
 ESTAGIOS = {"dado": "dado divulgado", "decidido": "decisão tomada", "em_votacao": "em votação",
             "anuncio": "anúncio", "rumor": "rumor"}
 SENTIDOS = {"piora": ("↑", "mais", "para pior"), "melhora": ("↓", "menos", "para melhor"),
@@ -490,16 +493,20 @@ def main() -> None:
             p.unlink()
 
     posts = {d: post_de(por_dia[d], idx, cfg) for d in dias}
-    lista = [{"dia": d, "data": data_curta(d)[:5], "tipo": posts[d]["tipo_nome"], "titulo": posts[d]["titulo"],
-              "link": f"/{d}/"} for d in reversed(dias)]
     textos = textos_do_editor()
-    # O retrato mais novo fica fixo no topo da página principal; o resto dos textos à mão entra no arquivo.
+    # Todos os posts numa fila só, do mais novo ao mais antigo: os do dia e os escritos à mão, cada um na sua data.
+    # No mesmo dia, o post do dia vem antes do texto à mão (a ordenação é estável).
+    fila = sorted([{**posts[d], "id": d} for d in dias] + [{**t, "id": f"textos-{t['slug']}"} for t in textos],
+                  key=lambda x: x["dia"], reverse=True)
+    pos_fila = {x["id"]: i for i, x in enumerate(fila)}
+    # O retrato mais novo também fica no cartão "Comece por aqui", no topo da página principal.
     retrato = next((t for t in textos if t["tipo"] == "retrato"), None)
-    arquivo = sorted(lista[1:] + [{"dia": t["dia"], "data": data_curta(t["dia"])[:5], "tipo": t["tipo_nome"] or "Texto",
-                                   "titulo": t["titulo"], "link": t["link"]} for t in textos if t is not retrato],
-                     key=lambda x: x["dia"], reverse=True)
+
+    def continua(depois: str) -> dict | None:
+        """O que vem depois de um post na rolagem: o id do último já na página e o link do próximo, para quem não tem JavaScript."""
+        i = pos_fila[depois] + 1
+        return {"depois": depois, "link": fila[i]["link"]} if i < len(fila) else None
     def contexto(dia: str, r: dict, permalink: bool) -> dict:
-        pos = dias.index(dia)
         base = f"/{dia}/" if permalink else "/"
         return {"cfg": cfg, "cal": cal, "repo": REPO, "site": SITE, "dia": dia, "permalink": permalink,
                 "dir": direcao_ctx(r, cfg, cal), "gar": gar_ctx(r), "post": posts[dia],
@@ -508,8 +515,7 @@ def main() -> None:
                 "data_titulo": f"{int(dia[8:10])} de {MESES[int(dia[5:7]) - 1]}",
                 "datas": calendario.janela(agenda, dt.date.fromisoformat(dia)), "jornais": JORNAIS,
                 "hora": hora(r["gerado_em"]), "atualizado_iso": r["gerado_em"],
-                "link_inicio": base, "link_nota": "/nota/",
-                "dia_antes": dias[pos - 1] if pos else None, "dia_depois": dias[pos + 1] if pos + 1 < len(dias) else None,
+                "link_inicio": base, "link_nota": "/nota/", "continua": continua(dia),
                 "data_curta": data_curta, "data_extenso": data_extenso, "mes_ano": mes_ano,
                 "og_url": f"{SITE}/og/{dia}.png", "dia_mes": dia_mes}
 
@@ -540,7 +546,20 @@ def main() -> None:
 
     dia = ultima["gerado_em"][:10]
     ctx = contexto(dia, ultima, False)
-    gravar(DOCS, "index.html", {**ctx, "anteriores": arquivo, "retrato": retrato}, f"{SITE}/")
+    primeiros = fila[:POSTS_NA_PAGINA]
+    gravar(DOCS, "index.html", {**ctx, "fila": primeiros, "retrato": retrato, "continua": continua(primeiros[-1]["id"])},
+           f"{SITE}/")
+    # Cada post também vira um pedaço de HTML, que a rolagem busca quando a leitora chega ao fim da página.
+    (DOCS / "posts").mkdir(exist_ok=True)
+    pedaco = env.get_template("_post.html")
+    for x in fila:
+        (DOCS / "posts" / f"{x['id']}.html").write_text(
+            pedaco.render(post=x, permalink=False, caixa_fechada=True, data_curta=data_curta))
+    for p in (DOCS / "posts").glob("*.html"):
+        if p.stem not in pos_fila:
+            p.unlink()
+    (DOCS / "posts" / "indice.json").write_text(json.dumps([{"id": x["id"], "link": x["link"]} for x in fila],
+                                                           ensure_ascii=False))
     desviar(DOCS / "resumo", "/")
     gravar(DOCS / "nota", "nota.html", ctx, f"{SITE}/nota/")
     try:
@@ -552,7 +571,7 @@ def main() -> None:
             shutil.rmtree(p)
     for t in textos:
         gravar(DOCS / "textos" / t["slug"], "index.html",
-               {**ctx, "post": t, "permalink": True, "dia_antes": None, "dia_depois": None}, f"{SITE}{t['link']}")
+               {**ctx, "post": t, "permalink": True, "continua": continua(f"textos-{t['slug']}")}, f"{SITE}{t['link']}")
     # Links fixos para encaminhar: /semana/ e /mes/ mostram o último post de cada tipo, com o link do dia como canônico
     # (por isso ficam fora do sitemap).
     for tipo, pasta in (("semana", "semana"), ("mes", "mes")):
@@ -579,7 +598,7 @@ def main() -> None:
         ensure_ascii=False, indent=1))
     (DOCS / "CNAME").write_text("vaidarcrise.com.br")
     (DOCS / ".nojekyll").touch()
-    (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
+    (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /posts/\nSitemap: {SITE}/sitemap.xml\n")
     urls = [f"{SITE}/", f"{SITE}/causas/", f"{SITE}/nota/", f"{SITE}/metodologia/"] \
         + [f"{SITE}/{d}/" for d in dias] + [f"{SITE}{t['link']}" for t in textos]
     (DOCS / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
