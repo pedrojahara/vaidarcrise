@@ -2,7 +2,7 @@
  "direcao": "subindo",
  "desde": "2026-06",
  "pergunta": "Para que lado anda o risco de recessão no Brasil: as pressões que costumam vir antes de uma recessão estão piorando ou melhorando?",
- "atualizado_em": "2026-11-03T06:30:05-03:00",
+ "atualizado_em": "2026-11-03T13:59:30-03:00",
  "soma": 4,
  "pioraram": 4,
  "melhoraram": 0,
@@ -86,13 +86,13 @@
    "lado": "piorou",
    "medidas": {
     "dolar": {
-     "agora": 5.4212,
-     "dia": "2026-10-30",
-     "ref": "2026-10",
-     "antes": 5.0773,
-     "dia_antes": "2026-07-31",
-     "ref_antes": "2026-07",
-     "mudanca": 6.7733,
+     "agora": 5.4935,
+     "dia": "2026-11-03",
+     "ref": "2026-11",
+     "antes": 5.1816,
+     "dia_antes": "2026-08-31",
+     "ref_antes": "2026-08",
+     "mudanca": 6.0194,
      "corte": 4.7657,
      "lado": 1,
      "como": "pct"
@@ -128,13 +128,13 @@
    "lado": "piorou",
    "medidas": {
     "inflacao": {
-     "agora": 4.5336,
-     "dia": "2026-10-23",
+     "agora": 4.9553,
+     "dia": "2026-10-30",
      "ref": "2026-10",
      "antes": 4.1883,
      "dia_antes": "2026-07-31",
      "ref_antes": "2026-07",
-     "mudanca": 0.3453,
+     "mudanca": 0.767,
      "corte": 0.3169,
      "lado": 1,
      "como": "pontos"
@@ -142,11 +142,11 @@
    },
    "folga": {
     "serie": "focus_ipca_12m",
-    "valor": 4.5336,
+    "valor": 4.9553,
     "ref": "2026-10",
     "desde": "2001",
     "meses": 299,
-    "pior_que_pct": 41,
+    "pior_que_pct": 53,
     "recorde_ruim": false,
     "recorde_bom": false
    }
@@ -172,11 +172,11 @@
    },
    "folga": {
     "serie": "juro_real",
-    "valor": 8.816686692125785,
+    "valor": 8.37947202285163,
     "ref": "2026-10",
     "desde": "2002",
     "meses": 298,
-    "pior_que_pct": 73,
+    "pior_que_pct": 68,
     "recorde_ruim": false,
     "recorde_bom": false
    }
@@ -261,13 +261,19 @@
  },
  "pressao_noticias": {
   "sentido": "igual",
-  "fatores": {}
+  "fatores": {
+   "mercado": "igual",
+   "externo": "melhora",
+   "juro": "igual",
+   "atividade": "igual",
+   "contas": "igual"
+  }
  },
- "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-11-03T0630.json",
+ "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-11-03T1359.json",
  "post_do_dia": {
   "tipo": "Fato do dia",
-  "titulo": "O risco de recessão está subindo",
+  "titulo": "Petróleo cai quase 8% lá fora com sinal de negociação entre EUA e Irã",
   "url": "https://vaidarcrise.com.br/2026-11-03/",
-  "escrito_por_llm": false
+  "escrito_por_llm": true
  }
 }

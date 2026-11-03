@@ -1,0 +1,2455 @@
+{
+ "id": "2026-11-03T1359",
+ "gerado_em": "2026-11-03T13:59:30-03:00",
+ "regras": {
+  "config_sha256": "6e352c76e807f5496c9ff7957be0620d56f9c18573370b3fdd6115f3fcf0f24c",
+  "calibracao_sha256": "ab5bbe84015e98569d4cda4d53ee9fdcb465909d6484cfd9205fa792c2bf98b3"
+ },
+ "insumos": {
+  "indicadores_coletados_em": "2026-11-03T13:59:43-03:00",
+  "erros_coleta": [],
+  "pib": [
+   {
+    "trimestre": "1T23",
+    "periodo": "202301",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T23",
+    "periodo": "202302",
+    "var_qoq": 0.8
+   },
+   {
+    "trimestre": "3T23",
+    "periodo": "202303",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T23",
+    "periodo": "202304",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "1T24",
+    "periodo": "202401",
+    "var_qoq": 0.7
+   },
+   {
+    "trimestre": "2T24",
+    "periodo": "202402",
+    "var_qoq": 1.7
+   },
+   {
+    "trimestre": "3T24",
+    "periodo": "202403",
+    "var_qoq": 0.9
+   },
+   {
+    "trimestre": "4T24",
+    "periodo": "202404",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "1T25",
+    "periodo": "202501",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T25",
+    "periodo": "202502",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "3T25",
+    "periodo": "202503",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T25",
+    "periodo": "202504",
+    "var_qoq": 0.2
+   },
+   {
+    "trimestre": "1T26",
+    "periodo": "202601",
+    "var_qoq": 1.1
+   },
+   {
+    "trimestre": "2T26",
+    "periodo": "202602",
+    "var_qoq": 0.5
+   }
+  ],
+  "focus": {
+   "PIB Total": [
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2026",
+     "Mediana": 1.7607,
+     "numeroRespondentes": 117
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2027",
+     "Mediana": 1.198,
+     "numeroRespondentes": 116
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2028",
+     "Mediana": 1.8,
+     "numeroRespondentes": 87
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2029",
+     "Mediana": 2.0,
+     "numeroRespondentes": 79
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2030",
+     "Mediana": 2.0,
+     "numeroRespondentes": 77
+    }
+   ],
+   "IPCA": [
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2026",
+     "Mediana": 5.2166,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2027",
+     "Mediana": 4.7646,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2028",
+     "Mediana": 4.0,
+     "numeroRespondentes": 131
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2029",
+     "Mediana": 3.98,
+     "numeroRespondentes": 121
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2030",
+     "Mediana": 3.815,
+     "numeroRespondentes": 112
+    }
+   ],
+   "Selic": [
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2026",
+     "Mediana": 13.5,
+     "numeroRespondentes": 143
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2027",
+     "Mediana": 12.5,
+     "numeroRespondentes": 143
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2028",
+     "Mediana": 11.0,
+     "numeroRespondentes": 125
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2029",
+     "Mediana": 10.25,
+     "numeroRespondentes": 114
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2030",
+     "Mediana": 10.0,
+     "numeroRespondentes": 111
+    }
+   ],
+   "Câmbio": [
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2026",
+     "Mediana": 5.3428,
+     "numeroRespondentes": 120
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2027",
+     "Mediana": 5.4,
+     "numeroRespondentes": 119
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2028",
+     "Mediana": 5.4,
+     "numeroRespondentes": 93
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2029",
+     "Mediana": 5.45,
+     "numeroRespondentes": 89
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2030",
+     "Mediana": 5.5,
+     "numeroRespondentes": 86
+    }
+   ],
+   "IPCA 12m": {
+    "Data": "2026-10-30",
+    "Mediana": 4.9553,
+    "numeroRespondentes": 132
+   }
+  },
+  "noticias": {
+   "coletado_em": "2026-11-03T16:59:30+00:00",
+   "janela_horas": 32,
+   "por_veiculo": {
+    "Valor": 40,
+    "Gazeta do Povo": 5,
+    "Folha": 40,
+    "Estadão": 11,
+    "InfoMoney": 35,
+    "Poder360": 30,
+    "g1": 13,
+    "Agência Brasil": 1
+   },
+   "status_fontes": {
+    "Agência Brasil": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 5
+    },
+    "Folha": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 74
+    },
+    "Estadão": {
+     "http": 200,
+     "itens_no_feed": 20,
+     "na_janela": 20
+    },
+    "Valor": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 100
+    },
+    "InfoMoney": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Poder360": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Gazeta do Povo": {
+     "http": 200,
+     "itens_no_feed": 24,
+     "na_janela": 8
+    },
+    "g1": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 26
+    },
+    "GDELT": {
+     "http": 429,
+     "erro": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic us"
+    }
+   },
+   "n_itens": 175
+  }
+ },
+ "cobertura": {
+  "dias": [
+   "2026-10-31",
+   "2026-11-01",
+   "2026-11-02"
+  ],
+  "no_acervo": 221,
+  "na_cesta": 175,
+  "coletas_24h": 26
+ },
+ "llm": {
+  "ok": true,
+  "meta": {
+   "modelo_pedido": "opus",
+   "prompt_sha256": "1b3e58c9eb20c9f1374973c24b8a0ccfce418aaf66d79c53cb692a9eeebc93be",
+   "system_sha256": "823ed7ca0b84fdf5c3f9093d4641d8e305993d545fa65a52cf80e1a0192d94c5",
+   "returncode": 0,
+   "is_error": false,
+   "custo_usd": 0.38338550000000005,
+   "modelos": [
+    "claude-haiku-5-5",
+    "claude-opus-5-5"
+   ],
+   "permission_denials": [],
+   "session_id": "07751153-e40d-473c-95b4-55565027f4df"
+  },
+  "saida": {
+   "eventos": [
+    {
+     "noticia_ids": [
+      "n127",
+      "n045",
+      "n015",
+      "n052",
+      "n122",
+      "n013"
+     ],
+     "titulo_evento": "Proposta de teto para a Selic entra no radar do presidente, e a Fazenda nega",
+     "estagio": "rumor",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "fator": "mercado",
+     "direcao": 1,
+     "magnitude": 2,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Limitar a Selic por decisão política faz o investidor temer que os preços subam mais rápido, e ele cobra mais para emprestar ao governo, o que encarece o crédito para pessoas e empresas."
+    },
+    {
+     "noticia_ids": [
+      "n062",
+      "n037",
+      "n016",
+      "n025",
+      "n109"
+     ],
+     "titulo_evento": "Petróleo cai quase 8% com sinal de negociação de paz entre EUA e Irã",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "fator": "externo",
+     "direcao": -1,
+     "magnitude": 2,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O barril ficou mais barato lá fora com a chance de acordo para acabar a guerra, o que alivia o preço do diesel e da gasolina aqui e abre espaço para o juro cair."
+    },
+    {
+     "noticia_ids": [
+      "n058",
+      "n004"
+     ],
+     "titulo_evento": "Economistas esperam que o Copom pare de cortar e mantenha a Selic em 13,75%",
+     "estagio": "rumor",
+     "chance_aprovacao": null,
+     "origem": "banco_central",
+     "fator": "juro",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Com o dólar mais caro e o investidor mais desconfiado desde a eleição, o juro deve ficar alto por mais tempo, e os bancos seguem cobrando caro das pessoas e das empresas."
+    },
+    {
+     "noticia_ids": [
+      "n006",
+      "n165",
+      "n163"
+     ],
+     "titulo_evento": "Empresas adiam investimentos à espera do plano econômico do novo mandato",
+     "estagio": "rumor",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "fator": "atividade",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Sem saber como ficam as contas do governo, as empresas seguram compras de máquinas e obras e captam menos dinheiro, o que tira força do PIB em 2027."
+    },
+    {
+     "noticia_ids": [
+      "n007"
+     ],
+     "titulo_evento": "Presidente vai indicar seis diretores do Banco Central até o fim de 2027",
+     "estagio": "rumor",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "fator": "mercado",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Investidores temem uma diretoria mais disposta a cortar juro mesmo com preços subindo, e por isso pedem juro maior para comprar títulos do Tesouro."
+    },
+    {
+     "noticia_ids": [
+      "n019",
+      "n024",
+      "n029",
+      "n040",
+      "n137"
+     ],
+     "titulo_evento": "Governador do Piauí, cotado para a Fazenda, defende equilíbrio nas contas",
+     "estagio": "rumor",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "fator": "contas",
+     "direcao": -1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Um ministro que promete controlar gastos tende a acalmar o investidor e baixar o juro que o governo paga, mas o nome ainda não foi escolhido."
+    },
+    {
+     "noticia_ids": [
+      "n113",
+      "n164"
+     ],
+     "titulo_evento": "Presidente diz que pode criar novos programas sociais no quarto mandato",
+     "estagio": "anuncio",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "fator": "contas",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Programas novos sem corte em outro lugar ampliam o gasto do governo, e o mercado cobra juro maior para financiar uma dívida já perto de 83% do PIB."
+    },
+    {
+     "noticia_ids": [
+      "n158"
+     ],
+     "titulo_evento": "Dívida do governo ligada à Selic bate recorde de 52,74% em agosto",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "fator": "contas",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Cada ponto a mais na Selic custa cerca de R$ 48 bilhões por ano ao governo, então juro alto por mais tempo pesa direto nas contas públicas."
+    }
+   ]
+  }
+ },
+ "eventos_novos": [
+  "ev-20261103-01",
+  "ev-20261103-02",
+  "ev-20261103-03",
+  "ev-20261103-04",
+  "ev-20261103-05",
+  "ev-20261103-06",
+  "ev-20261103-07",
+  "ev-20261103-08"
+ ],
+ "eventos_descartados": [],
+ "resultado": {
+  "nivel": {
+   "indice": 2,
+   "nome": "Normal",
+   "anterior": 2,
+   "bruto": 2,
+   "nome_bruto": "Normal"
+  },
+  "gar": {
+   "entradas": [
+    {
+     "id": "tendencia",
+     "fator": "atividade",
+     "nome": "Crescimento médio em 10 anos",
+     "unidade": "%",
+     "valor": 1.7328366710913756,
+     "ref": "2T2026",
+     "referencia": 2.4697807384106563,
+     "coef": -0.20407155569770025,
+     "faixa_normal": [
+      1.2052,
+      3.3021
+     ],
+     "escala": [
+      0.3054,
+      3.9289
+     ],
+     "efeito": 0.15038932228003635
+    },
+    {
+     "id": "crescimento",
+     "fator": "atividade",
+     "nome": "Crescimento em 12 meses",
+     "unidade": "%",
+     "valor": 1.3821346612817385,
+     "ref": "2026-08",
+     "referencia": 2.029441313073013,
+     "coef": 0.2281557601628648,
+     "faixa_normal": [
+      0.4274,
+      4.1388
+     ],
+     "escala": [
+      -6.2893,
+      9.267
+     ],
+     "efeito": -0.14768674119791708
+    },
+    {
+     "id": "juro",
+     "fator": "juro",
+     "nome": "Selic: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -1.25,
+     "ref": "2026-11-03",
+     "nivel": 13.75,
+     "antes": 15.0,
+     "referencia": -0.375,
+     "coef": -0.1473323685958321,
+     "faixa_normal": [
+      -3.0,
+      2.0
+     ],
+     "escala": [
+      -6.31,
+      8.655
+     ],
+     "efeito": 0.12891582252135309
+    },
+    {
+     "id": "inflacao",
+     "fator": "juro",
+     "nome": "Inflação: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -0.5899999999999999,
+     "ref": "2026-09",
+     "nivel": 4.58,
+     "antes": 5.17,
+     "referencia": -0.06499999999999995,
+     "coef": -0.12500236363708112,
+     "faixa_normal": [
+      -1.665,
+      1.3725
+     ],
+     "escala": [
+      -8.2538,
+      6.2048
+     ],
+     "efeito": 0.06562624090946757
+    }
+   ],
+   "ruim": -0.49423883953664693,
+   "cenario_ruim": -1.7876180427753297,
+   "cenario_normal": -1.8914573730774542,
+   "cortes": [
+    -2.253090277294695,
+    -1.094150109523146,
+    -0.07323292299512922,
+    0.7382055828202851
+   ],
+   "ref_pib": "2T2026"
+  },
+  "indicadores": [
+   {
+    "id": "ibcbr",
+    "fator": "atividade",
+    "nome": "IBC-Br",
+    "unidade": "%",
+    "definicao": "IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores.",
+    "direcao": -1,
+    "faixa_normal": [
+     -0.178879,
+     1.409462
+    ],
+    "escala": [
+     -3.422733,
+     3.418644
+    ],
+    "valor": -0.6424554746393363,
+    "ref": "2026-08",
+    "situacao": "pior"
+   },
+   {
+    "id": "focus_pib",
+    "fator": "atividade",
+    "nome": "PIB esperado pelo Focus",
+    "unidade": "%",
+    "definicao": "Crescimento do PIB esperado para os próximos 12 meses: mediana do Focus para o ano corrente e o seguinte, ponderada pelos meses que faltam em cada um.",
+    "direcao": -1,
+    "faixa_normal": [
+     1.617708,
+     3.499375
+    ],
+    "escala": [
+     -2.139717,
+     5.282417
+    ],
+    "valor": 1.2917833333333333,
+    "ref": "2026-10-30",
+    "ano": 1.7607,
+    "ano_seguinte": 1.198,
+    "situacao": "pior"
+   },
+   {
+    "id": "juro_real",
+    "fator": "juro",
+    "nome": "Juro real",
+    "unidade": "% ao ano",
+    "definicao": "Selic meta (BCB 432) descontada da inflação esperada para 12 meses (Focus, suavizada): (1 + Selic) / (1 + inflação esperada) − 1.",
+    "direcao": 1,
+    "faixa_normal": [
+     4.062007,
+     9.133549
+    ],
+    "escala": [
+     -1.195693,
+     14.660898
+    ],
+    "valor": 8.37947202285163,
+    "ref": "2026-11-03",
+    "selic": 13.75,
+    "inflacao_esperada": 4.9553,
+    "focus_data": "2026-10-30",
+    "situacao": "normal"
+   },
+   {
+    "id": "comprometimento",
+    "fator": "credito",
+    "nome": "Renda comprometida com dívidas",
+    "unidade": "p.p.",
+    "definicao": "Comprometimento de renda das famílias com dívidas, dessazonalizado (BCB 29034), menos a média dos 36 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.268333,
+     1.686944
+    ],
+    "escala": [
+     -1.879444,
+     3.762167
+    ],
+    "valor": 1.8797222222222203,
+    "ref": "2026-08",
+    "nivel": 28.99,
+    "situacao": "pior"
+   },
+   {
+    "id": "tesouro",
+    "fator": "mercado",
+    "nome": "Juro do Tesouro IPCA+",
+    "unidade": "p.p.",
+    "definicao": "Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (Tesouro Direto, venda pela manhã) menos a sua mediana nos 3 anos anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.95,
+     0.845
+    ],
+    "escala": [
+     -2.2292,
+     2.1344
+    ],
+    "valor": 0.6100000000000003,
+    "ref": "2026-10-30",
+    "nivel": 8.0,
+    "mediana": 7.39,
+    "vencimento": "2035-05-15",
+    "situacao": "normal"
+   },
+   {
+    "id": "dolar",
+    "fator": "mercado",
+    "nome": "Dólar",
+    "unidade": "%",
+    "definicao": "Variação do dólar PTAX (BCB 1) em 3 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -4.151625,
+     5.11632
+    ],
+    "escala": [
+     -14.383365,
+     27.223675
+    ],
+    "valor": 8.303925241014909,
+    "ref": "2026-11-03",
+    "nivel": 5.4935,
+    "situacao": "pior"
+   },
+   {
+    "id": "divida",
+    "fator": "contas",
+    "nome": "Dívida pública",
+    "unidade": "p.p. do PIB",
+    "definicao": "Variação da dívida bruta do governo geral (BCB 13762) em 12 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -1.74,
+     4.22
+    ],
+    "escala": [
+     -8.4312,
+     10.7912
+    ],
+    "valor": 5.090000000000003,
+    "ref": "2026-09",
+    "nivel": 82.93,
+    "situacao": "pior"
+   },
+   {
+    "id": "sahm",
+    "fator": "emprego",
+    "nome": "Regra de Sahm",
+    "unidade": "p.p.",
+    "definicao": "Média de 3 meses da desocupação da PNAD Contínua (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.066667,
+     1.433333
+    ],
+    "escala": [
+     -0.526667,
+     3.126667
+    ],
+    "valor": 0.033333333333333215,
+    "ref": "2026-09",
+    "nivel": 5.2,
+    "situacao": "normal"
+   },
+   {
+    "id": "commodities",
+    "fator": "externo",
+    "nome": "Preço das commodities",
+    "unidade": "%",
+    "definicao": "Variação em 6 meses do índice de preços de todas as commodities do FMI (FRED PALLFNFINDEXM).",
+    "direcao": -1,
+    "faixa_normal": [
+     -4.196915,
+     13.721388
+    ],
+    "escala": [
+     -28.018093,
+     30.645307
+    ],
+    "valor": 1.6727586354593926,
+    "ref": "2026-09",
+    "nivel": 222.4285486100514,
+    "situacao": "normal"
+   }
+  ],
+  "fatores": [
+   {
+    "id": "atividade",
+    "nome": "Ritmo da economia",
+    "indicadores": [
+     "ibcbr",
+     "focus_pib"
+    ],
+    "entradas": [
+     "tendencia",
+     "crescimento"
+    ],
+    "na_conta": true,
+    "efeito": 0.0027025810821192653,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "juro",
+    "nome": "Juro e inflação",
+    "indicadores": [
+     "juro_real"
+    ],
+    "entradas": [
+     "juro",
+     "inflacao"
+    ],
+    "na_conta": true,
+    "efeito": 0.19454206343082064,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   },
+   {
+    "id": "credito",
+    "nome": "Dívidas das famílias",
+    "indicadores": [
+     "comprometimento"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "mercado",
+    "nome": "Desconfiança de quem investe",
+    "indicadores": [
+     "tesouro",
+     "dolar"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "contas",
+    "nome": "Contas do governo",
+    "indicadores": [
+     "divida"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "emprego",
+    "nome": "Emprego",
+    "indicadores": [
+     "sahm"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   },
+   {
+    "id": "externo",
+    "nome": "Economia lá fora",
+    "indicadores": [
+     "commodities"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   }
+  ],
+  "gatilhos": [
+   {
+    "id": "crescimento",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": -1.2472588265629843,
+    "hoje": 1.3821346612817385
+   },
+   {
+    "id": "juro",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": 2.8218226123968666,
+    "hoje": -1.25
+   },
+   {
+    "id": "inflacao",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": 4.209199411366487,
+    "hoje": -0.5899999999999999
+   },
+   {
+    "id": "crescimento",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": 3.2273912361803534,
+    "hoje": 1.3821346612817385
+   },
+   {
+    "id": "juro",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": -4.107524931920681,
+    "hoje": -1.25
+   },
+   {
+    "id": "inflacao",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": -3.957983646803852,
+    "hoje": -0.5899999999999999
+   }
+  ],
+  "reaproveitados": [],
+  "faltando": [],
+  "direcao": {
+   "estado": "subindo",
+   "desde": "2026-06",
+   "soma": 4,
+   "bruto": "subindo",
+   "pendente": null,
+   "apertaram": 4,
+   "folgaram": 0,
+   "partes": [
+    {
+     "id": "contas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "divida": {
+       "agora": 82.93,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 81.95,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 0.980000000000004,
+       "corte": 0.9451499999999999,
+       "lado": 1,
+       "como": "pontos"
+      },
+      "primario": {
+       "agora": 0.52,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 1.19,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.6699999999999999,
+       "corte": 0.311325,
+       "lado": -1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "divida_bruta",
+      "valor": 82.93,
+      "ref": "2026-09",
+      "desde": "2006",
+      "meses": 238,
+      "pior_que_pct": 96,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "parcelas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "parcelas": {
+       "agora": 28.99,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 28.47,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": 0.5199999999999996,
+       "corte": 0.378075,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "comprometimento_renda",
+      "valor": 28.99,
+      "ref": "2026-08",
+      "desde": "2005",
+      "meses": 258,
+      "pior_que_pct": 100,
+      "recorde_ruim": true,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "mercado",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "dolar": {
+       "agora": 5.4935,
+       "dia": "2026-11-03",
+       "ref": "2026-11",
+       "antes": 5.1816,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 6.01937625443878,
+       "corte": 4.765725,
+       "lado": 1,
+       "como": "pct"
+      },
+      "juro_longo": {
+       "agora": 8.0,
+       "dia": "2026-10-30",
+       "ref": "2026-10",
+       "antes": 8.27,
+       "dia_antes": "2026-07-31",
+       "ref_antes": "2026-07",
+       "mudanca": -0.2699999999999996,
+       "corte": 0.43365000000000004,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "juro_real_longo",
+      "valor": 8.0,
+      "ref": "2026-10",
+      "desde": "2005",
+      "meses": 256,
+      "pior_que_pct": 91,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "inflacao",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "inflacao": {
+       "agora": 4.9553,
+       "dia": "2026-10-30",
+       "ref": "2026-10",
+       "antes": 4.1883,
+       "dia_antes": "2026-07-31",
+       "ref_antes": "2026-07",
+       "mudanca": 0.7670000000000003,
+       "corte": 0.316875,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "focus_ipca_12m",
+      "valor": 4.9553,
+      "ref": "2026-10",
+      "desde": "2001",
+      "meses": 299,
+      "pior_que_pct": 53,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "juro",
+     "lado": 0,
+     "na_soma": true,
+     "medidas": {
+      "juro": {
+       "agora": 13.75,
+       "dia": "2026-11-03",
+       "ref": "2026-11",
+       "antes": 14.0,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": -0.25,
+       "corte": 0.833925,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "juro_real",
+      "valor": 8.37947202285163,
+      "ref": "2026-10",
+      "desde": "2002",
+      "meses": 298,
+      "pior_que_pct": 68,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "ritmo",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "ritmo": {
+       "agora": 110.40624,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 111.25061,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": -0.6424554746393252,
+       "corte": 0.88905,
+       "lado": 0,
+       "como": "media"
+      }
+     },
+     "folga": null
+    },
+    {
+     "id": "emprego",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "emprego": {
+       "agora": 5.2,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 5.4,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.20000000000000018,
+       "corte": 0.555975,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "desocupacao",
+      "valor": 5.2,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "reservas",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "reservas": {
+       "agora": 362821.0,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 367558.0,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -1.2887761931450248,
+       "corte": 2.976525,
+       "lado": 0,
+       "como": "pct"
+      }
+     },
+     "folga": null
+    }
+   ],
+   "mes": "2026-11",
+   "linha": [
+    {
+     "mes": "2004-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2005-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2005-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-01",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-02",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-03",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-04",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-11",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2020-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2021-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-11",
+     "estado": "S"
+    }
+   ]
+  }
+ },
+ "pressao": {
+  "fatores": {
+   "mercado": {
+    "saldo": 0.225,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261103-01",
+     "ev-20261103-05"
+    ]
+   },
+   "externo": {
+    "saldo": -2.0,
+    "sentido": "melhora",
+    "eventos": [
+     "ev-20261103-02"
+    ]
+   },
+   "juro": {
+    "saldo": 0.05,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261103-03"
+    ]
+   },
+   "atividade": {
+    "saldo": 0.1,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261103-04"
+    ]
+   },
+   "contas": {
+    "saldo": 0.55,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261103-08",
+     "ev-20261103-07",
+     "ev-20261103-06"
+    ]
+   }
+  },
+  "saldo": -1.075,
+  "sentido": "igual",
+  "n": 8
+ },
+ "leituras": {
+  "fatores": {
+   "atividade": {
+    "fatos": [
+     {
+      "texto": "A economia cresceu 1,4% em um ano (prévia do PIB, de junho a agosto). O normal desde 2004 vai de 0,4% a 4,1%.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "A prévia do PIB caiu 0,6% no trimestre até agosto, contra os 3 meses anteriores. É a maior queda desde agosto de 2025.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "Os bancos (Focus) esperam alta de 1,8% do PIB em 2026 e alta de 1,2% em 2027.",
+      "fonte": "Focus"
+     }
+    ]
+   },
+   "juro": {
+    "fatos": [
+     {
+      "texto": "Os preços subiram 4,6% em um ano até setembro (IPCA). Um ano antes, a alta era de 5,2%: os preços sobem mais devagar.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "Descontada a inflação esperada (5,0%), a Selic de 13,75% rende 8,4% ao ano.",
+      "fonte": "BC e Focus"
+     },
+     {
+      "texto": "Selic em 13,75% desde 17/9. Antes, era 14%. Nos últimos 12 meses, chegou a 15%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "credito": {
+    "fatos": [
+     {
+      "texto": "29% da renda das famílias vai para parcelas e juros (agosto), o maior desde o início da série, em 2005. Um ano antes, eram 27,6%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "mercado": {
+    "fatos": [
+     {
+      "texto": "O governo paga 8,0% ao ano acima da inflação para pegar dinheiro até 2035 (30/10). É 0,6 ponto acima do normal dos últimos 3 anos.",
+      "fonte": "Tesouro Direto"
+     },
+     {
+      "texto": "Dólar a R$ 5,49 em 3/11, 8,3% mais caro que no começo de agosto.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "contas": {
+    "fatos": [
+     {
+      "texto": "Dívida do governo em 82,9% do PIB (setembro). Subiu 5,1 pontos em um ano.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "União, estados e municípios gastaram 0,5% do PIB a mais do que arrecadaram nos 12 meses até setembro, sem contar juros. Um ano antes, eram 0,3%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "emprego": {
+    "fatos": [
+     {
+      "texto": "Desemprego em 5,2% no trimestre até setembro. O menor desde 2012 foi 5,1%, em dezembro de 2025.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "O desemprego médio de 3 meses está igual ao menor do último ano.",
+      "fonte": "IBGE"
+     }
+    ]
+   },
+   "externo": {
+    "fatos": [
+     {
+      "texto": "Soja, minério, petróleo e outros produtos básicos ficaram 1,7% mais caros em 6 meses até setembro (FMI).",
+      "fonte": "FMI"
+     }
+    ]
+   }
+  }
+ },
+ "anterior": "2026-11-03T0630",
+ "revisao_texto": {
+  "classificacao": []
+ },
+ "post": {
+  "tipo": "dia",
+  "ok": true,
+  "titulo": "Petróleo cai quase 8% lá fora com sinal de negociação entre EUA e Irã",
+  "paragrafos": [
+   "O petróleo ficou quase 8% mais barato lá fora com sinais de que EUA e Irã podem negociar a paz, mas ainda não há acordo.",
+   "Com o barril mais barato, o diesel e a gasolina podem baratear aqui, e o frete e a comida chegariam mais baratos ao mercado nos meses seguintes.",
+   "O alívio vem de fora e chega quando os bancos (Focus) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. Já o dólar a R$ 5,49, 8,3% mais caro que no começo de agosto, encarece o combustível importado e pode reduzir esse alívio."
+  ],
+  "secoes": [
+   {
+    "paragrafos": [
+     "O petróleo ficou quase 8% mais barato lá fora com sinais de que EUA e Irã podem negociar a paz, mas ainda não há acordo.",
+     "Com o barril mais barato, o diesel e a gasolina podem baratear aqui, e o frete e a comida chegariam mais baratos ao mercado nos meses seguintes.",
+     "O alívio vem de fora e chega quando os bancos (Focus) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. Já o dólar a R$ 5,49, 8,3% mais caro que no começo de agosto, encarece o combustível importado e pode reduzir esse alívio."
+    ]
+   }
+  ],
+  "problemas": [],
+  "edicao": {
+   "sugestoes": [
+    {
+     "trecho": "o que ainda é possibilidade, e não acordo fechado.",
+     "problema": "Construção em espelho (\"X, e não Y\") que pesa. O estágio pode ser dito de forma direta e mais curta.",
+     "como_fica": "mas ainda não há acordo."
+    },
+    {
+     "trecho": "e o frete e a comida chegam mais baratos ao mercado nos meses seguintes.",
+     "problema": "A frase começa com \"podem baratear\" e termina como certeza. Fica mais claro que é um efeito possível.",
+     "como_fica": "e o frete e a comida chegariam mais baratos ao mercado nos meses seguintes."
+    },
+    {
+     "trecho": "Esse alívio vem de fora do país e chega quando os bancos (Focus) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. O dólar a R$ 5,49,",
+     "problema": "As duas frases estavam soltas e o texto passava de 100 palavras. \"Já\" liga o dólar ao alívio do petróleo, e \"de fora\" basta para dizer que é causa de fora.",
+     "como_fica": "O alívio vem de fora e chega quando os bancos (Focus) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. Já o dólar a R$ 5,49,"
+    }
+   ],
+   "aplicada": true
+  },
+  "meta": [
+   {
+    "modelo_pedido": "opus",
+    "prompt_sha256": "5e54678718a824170c5de4d9571fe0a570c1c53422039ce8d104faa3af04f7c6",
+    "system_sha256": "fd9a8be54c94ed707c0b33221d75dd0e5cfea05070c681fc31e30145ca999d63",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.1464872,
+    "modelos": [
+     "claude-haiku-5-5",
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "e11c876e-56f5-4a8a-8dab-38ed37d4be3e"
+   },
+   {
+    "modelo_pedido": "opus",
+    "prompt_sha256": "4900892a05cce0bfae6b598157d012be1d81a91213f7eae41e497103bbe805e8",
+    "system_sha256": "742a9166ecb7708349c5ccb68828d68c7cf9d6db13c33b0eb25536b9574c5d87",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.2772114,
+    "modelos": [
+     "claude-haiku-5-5",
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "bbbe5df3-780b-46c3-8d5f-df20f5f0ef29"
+   }
+  ]
+ }
+}
