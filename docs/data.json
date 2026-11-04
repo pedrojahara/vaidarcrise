@@ -2,7 +2,7 @@
  "direcao": "subindo",
  "desde": "2026-06",
  "pergunta": "Para que lado anda o risco de recessão no Brasil: as pressões que costumam vir antes de uma recessão estão piorando ou melhorando?",
- "atualizado_em": "2026-11-03T13:59:30-03:00",
+ "atualizado_em": "2026-11-04T06:30:07-03:00",
  "soma": 4,
  "pioraram": 4,
  "melhoraram": 0,
@@ -159,7 +159,7 @@
    "medidas": {
     "juro": {
      "agora": 13.75,
-     "dia": "2026-11-03",
+     "dia": "2026-11-04",
      "ref": "2026-11",
      "antes": 14.0,
      "dia_antes": "2026-08-31",
@@ -239,14 +239,14 @@
    "lado": "igual",
    "medidas": {
     "reservas": {
-     "agora": 362821.0,
-     "dia": "2026-09-01",
-     "ref": "2026-09",
-     "antes": 367558.0,
-     "dia_antes": "2026-06-01",
-     "ref_antes": "2026-06",
-     "mudanca": -1.2888,
-     "corte": 2.9765,
+     "agora": 365019.0,
+     "dia": "2026-10-01",
+     "ref": "2026-10",
+     "antes": 369742.0,
+     "dia_antes": "2026-07-01",
+     "ref_antes": "2026-07",
+     "mudanca": -1.2774,
+     "corte": 2.9764,
      "lado": 0,
      "como": "pct"
     }
@@ -260,20 +260,20 @@
   "o_que_e": "Crescimento do PIB nos 4 trimestres seguintes ao último divulgado que tem 1 chance em 10 de ser pior (conta dos 44 países)."
  },
  "pressao_noticias": {
-  "sentido": "igual",
+  "sentido": "piora",
   "fatores": {
-   "mercado": "igual",
-   "externo": "melhora",
-   "juro": "igual",
+   "juro": "piora",
+   "mercado": "piora",
+   "contas": "igual",
    "atividade": "igual",
-   "contas": "igual"
+   "credito": "igual"
   }
  },
- "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-11-03T1359.json",
+ "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-11-04T0630.json",
  "post_do_dia": {
   "tipo": "Fato do dia",
-  "titulo": "Petróleo cai quase 8% lá fora com sinal de negociação entre EUA e Irã",
-  "url": "https://vaidarcrise.com.br/2026-11-03/",
+  "titulo": "Bancos (Focus) passam a esperar inflação de 5,2% em 2026",
+  "url": "https://vaidarcrise.com.br/2026-11-04/",
   "escrito_por_llm": true
  }
 }
