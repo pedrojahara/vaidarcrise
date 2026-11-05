@@ -2,7 +2,7 @@
  "direcao": "subindo",
  "desde": "2026-06",
  "pergunta": "Para que lado anda o risco de recessão no Brasil: as pressões que costumam vir antes de uma recessão estão piorando ou melhorando?",
- "atualizado_em": "2026-11-04T06:30:07-03:00",
+ "atualizado_em": "2026-11-05T06:30:04-03:00",
  "soma": 4,
  "pioraram": 4,
  "melhoraram": 0,
@@ -86,13 +86,13 @@
    "lado": "piorou",
    "medidas": {
     "dolar": {
-     "agora": 5.4935,
-     "dia": "2026-11-03",
+     "agora": 5.4778,
+     "dia": "2026-11-04",
      "ref": "2026-11",
      "antes": 5.1816,
      "dia_antes": "2026-08-31",
      "ref_antes": "2026-08",
-     "mudanca": 6.0194,
+     "mudanca": 5.7164,
      "corte": 4.7657,
      "lado": 1,
      "como": "pct"
@@ -159,7 +159,7 @@
    "medidas": {
     "juro": {
      "agora": 13.75,
-     "dia": "2026-11-04",
+     "dia": "2026-11-05",
      "ref": "2026-11",
      "antes": 14.0,
      "dia_antes": "2026-08-31",
@@ -260,20 +260,21 @@
   "o_que_e": "Crescimento do PIB nos 4 trimestres seguintes ao último divulgado que tem 1 chance em 10 de ser pior (conta dos 44 países)."
  },
  "pressao_noticias": {
-  "sentido": "piora",
+  "sentido": "igual",
   "fatores": {
    "juro": "piora",
-   "mercado": "piora",
+   "emprego": "piora",
    "contas": "igual",
-   "atividade": "igual",
-   "credito": "igual"
+   "mercado": "melhora",
+   "externo": "melhora",
+   "atividade": "igual"
   }
  },
- "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-11-04T0630.json",
+ "registro_completo": "https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-11-05T0630.json",
  "post_do_dia": {
   "tipo": "Fato do dia",
-  "titulo": "Bancos (Focus) passam a esperar inflação de 5,2% em 2026",
-  "url": "https://vaidarcrise.com.br/2026-11-04/",
+  "titulo": "Brasil abre 121,3 mil vagas com carteira, o pior setembro da série",
+  "url": "https://vaidarcrise.com.br/2026-11-05/",
   "escrito_por_llm": true
  }
 }
