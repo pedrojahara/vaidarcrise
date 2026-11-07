@@ -175,7 +175,7 @@
   "id": "ev-20261028-04",
   "data": "2026-10-27",
   "titulo_evento": "El Niño forte pode reduzir a safra de soja de 2026/27 em cerca de 10%",
-  "estagio": "dado",
+  "estagio": "previsao",
   "origem": "natureza",
   "fator": "atividade",
   "direcao": 1,
@@ -201,13 +201,14 @@
     "publicado_em": "2026-10-27T13:09+00:00"
    }
   ],
-  "pontos": 1.0
+  "pontos": 1.0,
+  "revisao": "2026-11-07: previsão de banco, consultoria ou governo separada de dado (estágio previsao, CARTA_EDITORIAL.md)"
  },
  {
   "id": "ev-20261028-05",
   "data": "2026-10-27",
   "titulo_evento": "Banco Mundial prevê alta de 23% nas commodities em 2026, puxada pela energia",
-  "estagio": "dado",
+  "estagio": "previsao",
   "origem": "mundo",
   "fator": "externo",
   "direcao": 1,
@@ -270,7 +271,8 @@
     "publicado_em": "2026-10-28T20:40-03:00"
    }
   ],
-  "pontos": 0.5
+  "pontos": 0.5,
+  "revisao": "2026-11-07: previsão de banco, consultoria ou governo separada de dado (estágio previsao, CARTA_EDITORIAL.md)"
  },
  {
   "id": "ev-20261028-06",
@@ -566,7 +568,7 @@
   "id": "ev-20261028-11",
   "data": "2026-10-28",
   "titulo_evento": "Confederação da Indústria reduz a previsão do PIB de 2026 de 2% para 1,6%",
-  "estagio": "dado",
+  "estagio": "previsao",
   "origem": "dados",
   "fator": "atividade",
   "direcao": 1,
@@ -592,7 +594,8 @@
     "publicado_em": "2026-10-28T17:40+00:00"
    }
   ],
-  "pontos": 1.0
+  "pontos": 1.0,
+  "revisao": "2026-11-07: previsão de banco, consultoria ou governo separada de dado (estágio previsao, CARTA_EDITORIAL.md)"
  },
  {
   "id": "ev-20261028-12",
@@ -852,7 +855,7 @@
   "id": "ev-20261030-01",
   "data": "2026-10-29",
   "titulo_evento": "IFI, do Senado, vê R$ 40 bi em medidas novas e gasto acima da arrecadação em 2027",
-  "estagio": "dado",
+  "estagio": "previsao",
   "origem": "dados",
   "fator": "contas",
   "direcao": 1,
@@ -906,7 +909,8 @@
     "publicado_em": "2026-10-29T15:31+00:00"
    }
   ],
-  "pontos": 2.0
+  "pontos": 2.0,
+  "revisao": "2026-11-07: previsão de banco, consultoria ou governo separada de dado (estágio previsao, CARTA_EDITORIAL.md)"
  },
  {
   "id": "ev-20261030-02",
@@ -1260,7 +1264,7 @@
   "id": "ev-20261031-02",
   "data": "2026-10-30",
   "titulo_evento": "Itaú reduz a previsão do PIB de 2027 para 0,5% e vê inflação acima do teto",
-  "estagio": "dado",
+  "estagio": "previsao",
   "origem": "dados",
   "fator": "atividade",
   "direcao": 1,
@@ -1279,7 +1283,8 @@
     "publicado_em": "2026-10-30T22:45-03:00"
    }
   ],
-  "pontos": 1.0
+  "pontos": 1.0,
+  "revisao": "2026-11-07: previsão de banco, consultoria ou governo separada de dado (estágio previsao, CARTA_EDITORIAL.md)"
  },
  {
   "id": "ev-20261031-03",
@@ -1748,7 +1753,19 @@
     "publicado_em": "2026-11-05T21:35-03:00"
    }
   ],
-  "pontos": 0.2
+  "pontos": 0.2,
+  "cobertura": {
+   "manchetes": 15,
+   "jornais": [
+    "Agência Brasil",
+    "Estadão",
+    "Folha",
+    "Gazeta do Povo",
+    "InfoMoney",
+    "Poder360",
+    "Valor"
+   ]
+  }
  },
  {
   "id": "ev-20261103-02",
@@ -1799,7 +1816,15 @@
     "publicado_em": "2026-11-01T23:51+00:00"
    }
   ],
-  "pontos": -2.0
+  "pontos": -2.0,
+  "cobertura": {
+   "manchetes": 5,
+   "jornais": [
+    "Folha",
+    "InfoMoney",
+    "Valor"
+   ]
+  }
  },
  {
   "id": "ev-20261103-03",
@@ -1843,7 +1868,14 @@
     "publicado_em": "2026-11-03T08:00+00:00"
    }
   ],
-  "pontos": 0.05
+  "pontos": 0.05,
+  "cobertura": {
+   "manchetes": 2,
+   "jornais": [
+    "Folha",
+    "InfoMoney"
+   ]
+  }
  },
  {
   "id": "ev-20261103-04",
@@ -1881,7 +1913,14 @@
     "publicado_em": "2026-11-01T08:30+00:00"
    }
   ],
-  "pontos": 0.1
+  "pontos": 0.1,
+  "cobertura": {
+   "manchetes": 3,
+   "jornais": [
+    "Estadão",
+    "Folha"
+   ]
+  }
  },
  {
   "id": "ev-20261103-05",
@@ -1906,7 +1945,13 @@
     "publicado_em": "2026-11-02T23:00-03:00"
    }
   ],
-  "pontos": 0.05
+  "pontos": 0.05,
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "Folha"
+   ]
+  }
  },
  {
   "id": "ev-20261103-06",
@@ -1958,7 +2003,16 @@
     "publicado_em": "2026-11-01T14:35+00:00"
    }
   ],
-  "pontos": -0.1
+  "pontos": -0.1,
+  "cobertura": {
+   "manchetes": 5,
+   "jornais": [
+    "Estadão",
+    "Folha",
+    "InfoMoney",
+    "Valor"
+   ]
+  }
  },
  {
   "id": "ev-20261103-07",
@@ -1990,7 +2044,14 @@
     "publicado_em": "2026-11-01T08:00-03:00"
    }
   ],
-  "pontos": 0.3
+  "pontos": 0.3,
+  "cobertura": {
+   "manchetes": 2,
+   "jornais": [
+    "Folha",
+    "Gazeta do Povo"
+   ]
+  }
  },
  {
   "id": "ev-20261103-08",
@@ -2015,7 +2076,13 @@
     "publicado_em": "2026-11-01T09:00+00:00"
    }
   ],
-  "pontos": 0.5
+  "pontos": 0.5,
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "Poder360"
+   ]
+  }
  },
  {
   "id": "ev-20261104-01",
@@ -2075,7 +2142,18 @@
     "publicado_em": "2026-11-03T09:41-03:00"
    }
   ],
-  "pontos": 2.0
+  "pontos": 2.0,
+  "cobertura": {
+   "manchetes": 6,
+   "jornais": [
+    "Agência Brasil",
+    "Estadão",
+    "Folha",
+    "Gazeta do Povo",
+    "Poder360",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261104-02",
@@ -2133,7 +2211,18 @@
     "publicado_em": "2026-11-03T15:28+00:00"
    }
   ],
-  "pontos": 2.0
+  "pontos": 2.0,
+  "cobertura": {
+   "manchetes": 9,
+   "jornais": [
+    "Agência Brasil",
+    "Folha",
+    "InfoMoney",
+    "Poder360",
+    "Valor",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261104-03",
@@ -2186,13 +2275,23 @@
     "publicado_em": "2026-11-03T19:12+00:00"
    }
   ],
-  "pontos": -0.3
+  "pontos": -0.3,
+  "cobertura": {
+   "manchetes": 5,
+   "jornais": [
+    "Estadão",
+    "Folha",
+    "InfoMoney",
+    "Poder360",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261104-04",
   "data": "2026-11-03",
   "titulo_evento": "Tesouro projeta dívida de 83,7% do PIB em 2026 e de 89,7% em 2030",
-  "estagio": "dado",
+  "estagio": "previsao",
   "origem": "politica",
   "fator": "contas",
   "direcao": 1,
@@ -2218,7 +2317,15 @@
     "publicado_em": "2026-11-04T02:56+00:00"
    }
   ],
-  "pontos": 1.0
+  "pontos": 1.0,
+  "revisao": "2026-11-07: previsão de banco, consultoria ou governo separada de dado (estágio previsao, CARTA_EDITORIAL.md)",
+  "cobertura": {
+   "manchetes": 2,
+   "jornais": [
+    "Gazeta do Povo",
+    "Poder360"
+   ]
+  }
  },
  {
   "id": "ev-20261104-05",
@@ -2249,7 +2356,13 @@
     "publicado_em": "2026-11-03T18:10+00:00"
    }
   ],
-  "pontos": 0.5
+  "pontos": 0.5,
+  "cobertura": {
+   "manchetes": 2,
+   "jornais": [
+    "Valor"
+   ]
+  }
  },
  {
   "id": "ev-20261104-06",
@@ -2274,7 +2387,13 @@
     "publicado_em": "2026-11-03T12:29-03:00"
    }
   ],
-  "pontos": 0.5
+  "pontos": 0.5,
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "Folha"
+   ]
+  }
  },
  {
   "id": "ev-20261105-01",
@@ -2333,7 +2452,18 @@
     "publicado_em": "2026-11-04T18:33-03:00"
    }
   ],
-  "pontos": 1.0
+  "pontos": 1.0,
+  "cobertura": {
+   "manchetes": 8,
+   "jornais": [
+    "Agência Brasil",
+    "Estadão",
+    "Gazeta do Povo",
+    "InfoMoney",
+    "Poder360",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261105-02",
@@ -2393,7 +2523,18 @@
     "publicado_em": "2026-11-04T16:33-03:00"
    }
   ],
-  "pontos": 2.0
+  "pontos": 2.0,
+  "cobertura": {
+   "manchetes": 8,
+   "jornais": [
+    "Agência Brasil",
+    "Estadão",
+    "Folha",
+    "InfoMoney",
+    "Poder360",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261105-03",
@@ -2431,7 +2572,15 @@
     "publicado_em": "2026-11-04T20:27+00:00"
    }
   ],
-  "pontos": -0.3
+  "pontos": -0.3,
+  "cobertura": {
+   "manchetes": 4,
+   "jornais": [
+    "Estadão",
+    "Folha",
+    "Valor"
+   ]
+  }
  },
  {
   "id": "ev-20261105-04",
@@ -2483,7 +2632,18 @@
     "publicado_em": "2026-11-04T12:01+00:00"
    }
   ],
-  "pontos": -1.0
+  "pontos": -1.0,
+  "cobertura": {
+   "manchetes": 7,
+   "jornais": [
+    "Agência Brasil",
+    "Folha",
+    "InfoMoney",
+    "Poder360",
+    "Valor",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261105-05",
@@ -2542,7 +2702,18 @@
     "publicado_em": "2026-11-04T11:25+00:00"
    }
   ],
-  "pontos": -1.0
+  "pontos": -1.0,
+  "cobertura": {
+   "manchetes": 8,
+   "jornais": [
+    "Folha",
+    "Gazeta do Povo",
+    "InfoMoney",
+    "Poder360",
+    "Valor",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261105-06",
@@ -2580,13 +2751,20 @@
     "publicado_em": "2026-11-04T15:46+00:00"
    }
   ],
-  "pontos": -1.0
+  "pontos": -1.0,
+  "cobertura": {
+   "manchetes": 3,
+   "jornais": [
+    "InfoMoney",
+    "Valor"
+   ]
+  }
  },
  {
   "id": "ev-20261105-07",
   "data": "2026-11-04",
   "titulo_evento": "Revendedores de veículos elevam previsão de vendas de 2026 para alta de 12,8%",
-  "estagio": "dado",
+  "estagio": "previsao",
   "origem": "dados",
   "fator": "atividade",
   "direcao": -1,
@@ -2605,7 +2783,14 @@
     "publicado_em": "2026-11-04T19:11-03:00"
    }
   ],
-  "pontos": -0.5
+  "pontos": -0.5,
+  "revisao": "2026-11-07: previsão de banco, consultoria ou governo separada de dado (estágio previsao, CARTA_EDITORIAL.md)",
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "Agência Brasil"
+   ]
+  }
  },
  {
   "id": "ev-20261105-08",
@@ -2630,7 +2815,13 @@
     "publicado_em": "2026-11-04T11:02-03:00"
    }
   ],
-  "pontos": 0.5
+  "pontos": 0.5,
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "Folha"
+   ]
+  }
  },
  {
   "id": "ev-20261106-01",
@@ -2690,7 +2881,19 @@
     "publicado_em": "2026-11-05T10:45-03:00"
    }
   ],
-  "pontos": 2.0
+  "pontos": 2.0,
+  "cobertura": {
+   "manchetes": 7,
+   "jornais": [
+    "Agência Brasil",
+    "Estadão",
+    "Folha",
+    "Gazeta do Povo",
+    "InfoMoney",
+    "Poder360",
+    "Valor"
+   ]
+  }
  },
  {
   "id": "ev-20261106-02",
@@ -2784,7 +2987,16 @@
     "publicado_em": "2026-11-06T08:24-03:00"
    }
   ],
-  "pontos": 2.0
+  "pontos": 2.0,
+  "cobertura": {
+   "manchetes": 6,
+   "jornais": [
+    "Folha",
+    "Poder360",
+    "Valor",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261106-03",
@@ -2837,7 +3049,19 @@
     "publicado_em": "2026-11-05T09:48-03:00"
    }
   ],
-  "pontos": 1.0
+  "pontos": 1.0,
+  "cobertura": {
+   "manchetes": 7,
+   "jornais": [
+    "Agência Brasil",
+    "Folha",
+    "Gazeta do Povo",
+    "InfoMoney",
+    "Poder360",
+    "Valor",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261106-04",
@@ -2932,7 +3156,20 @@
     "publicado_em": "2026-11-06T13:19+00:00"
    }
   ],
-  "pontos": -0.3
+  "pontos": -0.3,
+  "cobertura": {
+   "manchetes": 18,
+   "jornais": [
+    "Agência Brasil",
+    "Estadão",
+    "Folha",
+    "Gazeta do Povo",
+    "InfoMoney",
+    "Poder360",
+    "Valor",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261106-05",
@@ -2964,7 +3201,14 @@
     "publicado_em": "2026-11-05T11:53-03:00"
    }
   ],
-  "pontos": -0.1
+  "pontos": -0.1,
+  "cobertura": {
+   "manchetes": 2,
+   "jornais": [
+    "Folha",
+    "InfoMoney"
+   ]
+  }
  },
  {
   "id": "ev-20261106-06",
@@ -3023,7 +3267,20 @@
     "publicado_em": "2026-11-05T23:00-03:00"
    }
   ],
-  "pontos": 1.0
+  "pontos": 1.0,
+  "cobertura": {
+   "manchetes": 18,
+   "jornais": [
+    "Agência Brasil",
+    "Estadão",
+    "Folha",
+    "Gazeta do Povo",
+    "InfoMoney",
+    "Poder360",
+    "Valor",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261106-07",
@@ -3055,13 +3312,20 @@
     "publicado_em": "2026-11-05T08:00+00:00"
    }
   ],
-  "pontos": 0.3
+  "pontos": 0.3,
+  "cobertura": {
+   "manchetes": 2,
+   "jornais": [
+    "Valor",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261107-01",
   "data": "2026-11-06",
   "titulo_evento": "Bradesco, XP e Genoa pioram as previsões e veem PIB parado ou em queda em 2027",
-  "estagio": "dado",
+  "estagio": "previsao",
   "origem": "dados",
   "fator": "atividade",
   "direcao": 1,
@@ -3087,7 +3351,15 @@
     "publicado_em": "2026-11-06T17:43+00:00"
    }
   ],
-  "pontos": 2.0
+  "pontos": 2.0,
+  "revisao": "2026-11-07: previsão de banco, consultoria ou governo separada de dado (estágio previsao, CARTA_EDITORIAL.md)",
+  "cobertura": {
+   "manchetes": 2,
+   "jornais": [
+    "Folha",
+    "Valor"
+   ]
+  }
  },
  {
   "id": "ev-20261107-02",
@@ -3147,7 +3419,18 @@
     "publicado_em": "2026-11-06T15:51-03:00"
    }
   ],
-  "pontos": -1.0
+  "pontos": -1.0,
+  "cobertura": {
+   "manchetes": 7,
+   "jornais": [
+    "Agência Brasil",
+    "Estadão",
+    "Folha",
+    "InfoMoney",
+    "Poder360",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261107-03",
@@ -3192,7 +3475,15 @@
     "publicado_em": "2026-11-06T15:39+00:00"
    }
   ],
-  "pontos": 1.0
+  "pontos": 1.0,
+  "cobertura": {
+   "manchetes": 4,
+   "jornais": [
+    "Folha",
+    "InfoMoney",
+    "Valor"
+   ]
+  }
  },
  {
   "id": "ev-20261107-04",
@@ -3238,7 +3529,18 @@
     "publicado_em": "2026-11-06T12:29+00:00"
    }
   ],
-  "pontos": -1.0
+  "pontos": -1.0,
+  "cobertura": {
+   "manchetes": 8,
+   "jornais": [
+    "Agência Brasil",
+    "Folha",
+    "InfoMoney",
+    "Poder360",
+    "Valor",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261107-05",
@@ -3291,7 +3593,17 @@
     "publicado_em": "2026-11-06T09:36-03:00"
    }
   ],
-  "pontos": -0.5
+  "pontos": -0.5,
+  "cobertura": {
+   "manchetes": 5,
+   "jornais": [
+    "Estadão",
+    "Folha",
+    "InfoMoney",
+    "Poder360",
+    "g1"
+   ]
+  }
  },
  {
   "id": "ev-20261107-06",
@@ -3316,6 +3628,12 @@
     "publicado_em": "2026-11-06T13:26+00:00"
    }
   ],
-  "pontos": 0.3
+  "pontos": 0.3,
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "Poder360"
+   ]
+  }
  }
 ]
