@@ -1,116 +1,141 @@
 {% extends "base.html" %}
-{% macro fontes(lista) %}{% if lista %}<p class="d-fontes">{{ 'Fonte' if lista|length == 1 else 'Fontes' }}: {% for f in lista %}{% if f.url %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.quem }}</a>{% else %}{{ f.quem }}{% endif %}{% if not f.conferida %} <span class="ac">(a conferir)</span>{% endif %}{{ '; ' if not loop.last }}{% endfor %}</p>{% endif %}{% endmacro %}
+{% macro fontes(lista) %}{% if lista %}<p class="d-fontes">{{ 'Fonte' if lista|length == 1 else 'Fontes' }}: {% for f in lista %}{% if f.url %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.quem }}</a>{% else %}{{ f.quem }}{% endif %}{{ '; ' if not loop.last }}{% endfor %}</p>{% endif %}{% endmacro %}
+{% macro detalhe(x) %}<details class="estudos"><summary>Os estudos e a resposta de quem defende</summary><div class="e-corpo">
+  {% if x.a_favor %}<h4>O que pesa a favor</h4><ul>{% for a in x.a_favor %}<li>{{ a.texto }}{{ fontes(a.fontes) }}</li>{% endfor %}</ul>{% endif %}
+  {% if x.melhor_objecao %}<h4>O que pesa contra</h4><p>{{ x.melhor_objecao.texto }}</p>{{ fontes(x.melhor_objecao.fontes) }}{% endif %}
+  {% if x.resposta %}<h4>O que quem defende responde</h4><p>{{ x.resposta.texto }}</p>{{ fontes(x.resposta.fontes) }}{% if x.resposta.pendente %}<p class="d-fontes">Falta achar um estudo que defenda a primeira frase com estes anos.</p>{% endif %}{% endif %}
+  {% if x.quem_defende %}<h4>Quem defende</h4><p>{{ x.quem_defende|join('; ') }}</p>{% endif %}
+</div></details>{% endmacro %}
 {% block titulo %}{{ q.pergunta }} | Vai dar crise?{% endblock %}
-{% block descricao %}{{ q.resposta|striptags }}{% endblock %}
+{% block descricao %}{{ q.resposta.texto|striptags }}{% endblock %}
 {% block estilo %}
 .perg{padding-top:28px;padding-bottom:40px}
 .perg>*{max-width:700px}
 .perg .sobre-perg{font:600 14px/1.4 var(--sistema);color:var(--meta);margin:0 0 6px}
 .perg h1{font:700 32px/1.15 var(--serifa);margin:0 0 14px;text-wrap:balance}
 .perg .resposta{font-size:19px;margin:0 0 6px}
-.perg h2{font:700 24px/1.2 var(--serifa);margin:38px 0 8px;padding-top:22px;border-top:1px solid var(--fio)}
-.perg .intro{font:15.5px/1.5 var(--sistema);color:var(--meta);margin:0 0 18px}
-.perg .escada{margin-top:6px}
-.perg .degrau{padding-bottom:26px;scroll-margin-top:12px}
-.perg .d-perg{font-size:18px}
-.d-sub{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:12px 0 4px}
-.leituras{display:grid;gap:10px;margin:12px 0 4px}
-.leitura{border:1px solid var(--fio);border-radius:10px;font-family:var(--sistema)}
-.leitura>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:12px 12px 12px 14px;cursor:pointer;list-style:none}
-.leitura>summary::-webkit-details-marker{display:none}
-.leitura .l-nome{font:700 16px/1.35 var(--sistema)}
-.leitura .l-st{grid-column:1;justify-self:start;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;background:var(--maquina)}
-.leitura .l-st.s-maioria{background:var(--normal-fundo)}
-.leitura .l-st.s-testada_e_nao_confirmada,.leitura .l-st.s-minoria{color:var(--meta)}
-.leitura .l-diz{grid-column:1/-1;font:16px/1.5 var(--serifa);margin:6px 0 0}
-.leitura .seta{grid-column:2;grid-row:1;width:18px;height:18px;align-self:center;transition:transform .15s}
-.leitura[open] .seta{transform:rotate(180deg)}
-.l-corpo{padding:0 14px 12px;font:15.5px/1.5 var(--sistema)}
-.l-corpo h4{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:12px 0 4px}
-.l-corpo p{margin:0 0 4px}
-.l-corpo ul{margin:0;padding-left:1.1em}
-.l-corpo li{margin:0 0 8px}
-.teste{background:var(--maquina);border-radius:10px;padding:12px 14px;margin:14px 0 4px;font:15.5px/1.5 var(--sistema);scroll-margin-top:12px}
-.teste h3{font:700 16px/1.35 var(--sistema);margin:0 0 6px}
-.teste p{margin:0 0 8px}
-.teste ul{margin:0 0 8px;padding-left:1.1em}
-.teste .lim{color:var(--meta);font-size:14px}
-.eps{list-style:none;padding:0;margin:0}
-.eps li{border-top:1px solid var(--fio);padding:14px 0 10px}
-.eps .ep-q{font:600 13.5px/1.4 var(--sistema);color:var(--meta);margin:0 0 2px}
-.eps h3{font:700 18px/1.3 var(--serifa);margin:0 0 4px}
-.eps p{margin:0 0 6px}
+.perg h2{font:700 24px/1.2 var(--serifa);margin:34px 0 8px;padding-top:22px;border-top:1px solid var(--fio);text-wrap:balance;scroll-margin-top:12px}
+.perg .intro{font:15.5px/1.5 var(--sistema);color:var(--meta);margin:0 0 14px}
+.perg section{scroll-margin-top:12px}
+.tempo{list-style:none;padding:0;margin:14px 0 0}
+.tempo>li{border-top:1px solid var(--fio)}
+.tempo>li:last-child{border-bottom:1px solid var(--fio)}
+.tempo summary{display:grid;grid-template-columns:72px minmax(0,1fr) auto 18px;gap:10px;align-items:baseline;padding:10px 0;cursor:pointer;list-style:none;font:15.5px/1.35 var(--sistema)}
+.tempo summary::-webkit-details-marker{display:none}
+.tempo .anos{font-weight:700;font-variant-numeric:tabular-nums}
+.tempo .causa{font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;background:var(--maquina);white-space:nowrap}
+.tempo .causa.de-fora{background:var(--normal-fundo)}
+.tempo .seta{width:16px;height:16px;align-self:center;transition:transform .15s}
+.tempo details[open] .seta{transform:rotate(180deg)}
+.tempo .ep-corpo{padding:0 0 12px 82px}
+.tempo .ep-corpo p{margin:0 0 6px}
+.tempo .ep-q{font:13.5px/1.4 var(--sistema);color:var(--meta)}
+.cartao{border:1px solid var(--fio);border-radius:10px;padding:14px;margin:0 0 12px;scroll-margin-top:12px}
+.cartao .peso{font:600 13px/1.3 var(--sistema);color:var(--meta);margin:0 0 4px}
+.cartao h3{font:700 19px/1.3 var(--serifa);margin:0 0 6px}
+.cartao>p{margin:0 0 6px}
+.cartao .contra{border-top:1px dashed var(--fio);margin:10px 0 0;padding-top:10px;font:15.5px/1.5 var(--sistema)}
+.cartao .contra h4{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:0 0 4px}
+.cartao .contra p{margin:0 0 4px}
+.grupo{font:600 13.5px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:20px 0 4px}
+.linhas{list-style:none;padding:0;margin:0}
+.linhas>li{border-top:1px solid var(--fio);padding:10px 0 4px;scroll-margin-top:12px}
+.linhas>li>p{margin:0 0 4px}
+details.estudos{font:15px/1.5 var(--sistema);margin:4px 0 6px}
+details.estudos>summary{cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:2px}
+.e-corpo{padding:6px 0 0}
+.e-corpo h4{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:12px 0 4px}
+.e-corpo p{margin:0 0 4px}
+.e-corpo ul{margin:0;padding-left:1.1em}
+.e-corpo li{margin:0 0 8px}
+.agora{background:var(--nota-fundo);border-radius:10px;padding:12px 14px;font:16px/1.5 var(--sistema)}
+.agora .quando{font:600 13px/1.3 var(--sistema);color:var(--meta);margin:0 0 4px}
+.agora p{margin:0 0 6px}
+.fatos{list-style:none;padding:0;margin:0;font:16px/1.4 var(--sistema)}
+.fatos li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px;border-top:1px solid var(--fio);padding:10px 0}
+.fatos .dia{font-weight:700;color:var(--meta);font-variant-numeric:tabular-nums}
+.outras{list-style:none;padding:0;margin:0;font:16px/1.4 var(--sistema)}
+.outras li{border-top:1px solid var(--fio);padding:10px 0}
+.outras .pn{display:block;font:600 13px/1.3 var(--sistema);color:var(--meta)}
+details.conferimos{border-top:1px solid var(--fio);margin-top:34px;padding-top:12px;font:15px/1.5 var(--sistema)}
+details.conferimos>summary{cursor:pointer;font:700 17px/1.4 var(--sistema)}
+details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
 .lista-fontes{font:14.5px/1.5 var(--sistema);padding-left:1.6em}
 .lista-fontes li{margin:0 0 8px;overflow-wrap:anywhere}
 .lista-fontes .nv{color:var(--meta)}
 .mud{font:14.5px/1.5 var(--sistema);padding-left:1.1em}
-@media (max-width:620px){.perg h1{font-size:27px}.perg h2{font-size:22px}}
-@media (prefers-reduced-motion: reduce){.leitura .seta{transition:none}}
+@media (max-width:620px){.perg h1{font-size:27px}.perg h2{font-size:22px}.tempo summary{grid-template-columns:62px minmax(0,1fr) auto 16px}.tempo .ep-corpo{padding-left:0}}
+@media (prefers-reduced-motion: reduce){.tempo .seta{transition:none}}
 {% endblock %}
 {% block corpo %}
 <main class="in perg">
-<p class="sobre-perg">Uma pergunta que os fatos do dia ajudam a responder. Atualizada em {{ q.atualizado }}.</p>
+<p class="sobre-perg">{% if q.pressao %}{{ q.pressao }}, uma das pressões do topo · {% endif %}leitura de 5 minutos · atualizada em {{ q.atualizado }}</p>
 <h1>{{ q.pergunta }}</h1>
-<p class="resposta">{{ q.resposta }}</p>
-{{ fontes(q.resposta_fontes) }}
+<p class="resposta">{{ q.resposta.texto }}</p>
+{{ fontes(q.resposta.fontes) }}
 
-<h2>Do fato de hoje até a causa de fundo</h2>
-<p class="intro">Cada passo responde ao porquê do passo anterior. A etiqueta de cada um diz se os estudos concordam, se a maioria concorda e há quem discorde, ou se os economistas ainda divergem.</p>
-<ol class="escada">
-{% for d in q.escada %}<li class="degrau r-{{ d.rotulo }}" id="{{ d.id }}">
-  <p class="d-perg">{{ d.pergunta }}</p>
-  <span class="rot r-{{ d.rotulo }}">{{ d.rotulo_nome }}</span>
-  {% if d.texto %}<p class="d-txt">{{ d.texto }}</p>{{ fontes(d.fontes) }}{% endif %}
-  {% if d.consenso %}<p class="d-sub">O que os dados mostram</p><p class="d-txt">{{ d.consenso.texto }}</p>{{ fontes(d.consenso.fontes) }}{% endif %}
-  {% if d.em_disputa %}<p class="d-sub">Onde começa a divergência</p><p class="d-txt">{{ d.em_disputa.texto }}</p>{{ fontes(d.em_disputa.fontes) }}{% endif %}
-  {% if d.peso %}<p class="d-sub">O peso da evidência</p><p class="d-txt">{{ d.peso.texto }}</p>{{ fontes(d.peso.fontes) }}{% endif %}
-  {% if d.leituras %}<div class="leituras">
-    {% for lt in d.leituras %}<details class="leitura" id="{{ lt.id }}">
-      <summary><span class="l-nome">{{ lt.nome }}</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="l-st s-{{ lt.status }}">{{ lt.status_nome }}</span><span class="l-diz">{{ lt.o_que_diz }}</span></summary>
-      <div class="l-corpo">
-        {{ fontes(lt.o_que_diz_fontes) }}
-        {% if lt.a_favor %}<h4>O que pesa a favor</h4><ul>{% for x in lt.a_favor %}<li>{{ x.texto }}{{ fontes(x.fontes) }}</li>{% endfor %}</ul>{% endif %}
-        {% if lt.melhor_objecao %}<h4>A objeção mais forte</h4><p>{{ lt.melhor_objecao.texto }}</p>{{ fontes(lt.melhor_objecao.fontes) }}{% endif %}
-        {% if lt.resposta %}<h4>O que quem defende responde</h4><p>{{ lt.resposta.texto }}</p>{{ fontes(lt.resposta.fontes) }}{% if lt.resposta.pendente %}<p class="d-fontes"><span class="ac">Falta achar um estudo que defenda a primeira frase com estes anos.</span></p>{% endif %}{% endif %}
-        {% if lt.quem_defende %}<h4>Quem defende</h4><p>{{ lt.quem_defende|join('; ') }}</p>{% endif %}
-      </div>
-    </details>{% endfor %}
-  </div>{% endif %}
-  {% if d.teste %}{% set t = d.teste %}<div class="teste" id="teste">
-    <h3>Como saber qual leitura está certa</h3>
-    <p>{{ t.pergunta }} {{ t.como }}</p>
-    <ul>{% for e in t.espera %}<li><b>{{ e.nome }}:</b> {{ e.texto }}</li>{% endfor %}</ul>
-    <p>Se a alta contra o real passar a dos dois pesos em mais de {{ t.regra.favorece_l_daqui_acima_de|num(0) }} pontos, o resultado favorece a leitura daqui. Se a diferença ficar entre {{ t.regra.favorece_l_fora_entre[0]|num(0) }} e {{ t.regra.favorece_l_fora_entre[1]|num(0) }} pontos, favorece a leitura de fora. O site confere em {{ t.quando|join(' e em ') }}{% if not t.resultados %}, e até lá esta parte fica sem resultado{% endif %}.</p>
-    {% for r in t.resultados %}<p><b>{{ r.data }}:</b> {{ r.texto }}</p>{% endfor %}
-    <p class="lim">{{ t.limites }}</p>
-  </div>{% endif %}
-</li>
+{% if q.muda %}<section id="o-que-muda">
+<h2>{{ q.muda.pergunta }}</h2>
+<p>{{ q.muda.texto }}</p>
+{{ fontes(q.muda.fontes) }}
+</section>{% endif %}
+
+{% if q.governo %}<section id="governo">
+<h2>{{ q.governo.pergunta }}</h2>
+<p>{{ q.governo.texto }}</p>
+{{ fontes(q.governo.fontes) }}
+{% if q.episodios %}<ul class="tempo">
+{% for e in q.episodios %}<li><details>
+  <summary><span class="anos">{{ e.anos }}</span><span>{{ e.titulo }}</span><span class="causa {{ e.causa_cls }}">{{ e.causa }}</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <div class="ep-corpo"><p class="ep-q">{{ e.periodo }}</p><p>{{ e.resumo }}</p>{{ fontes(e.fontes) }}</div>
+</details></li>
+{% endfor %}</ul>{% endif %}
+</section>{% endif %}
+
+{% if q.explicacoes %}{% set x = q.explicacoes %}<section id="explicacoes">
+<h2>As explicações, da mais aceita à menos</h2>
+<p class="intro">{{ x.peso }}</p>
+{% for c in x.cartoes %}<div class="cartao" id="{{ c.id }}">
+  <p class="peso">{{ c.peso }}</p>
+  <h3>{{ c.titulo }}</h3>
+  <p>{{ c.texto }}</p>
+  {{ fontes(c.fontes) }}
+  {% if c.contra %}<div class="contra"><h4>O que pesa contra</h4><p>{{ c.contra.texto }}</p>{{ fontes(c.contra.fontes) }}</div>{% endif %}
+  {{ detalhe(c.detalhe) }}
+</div>{% endfor %}
+{% for g in x.grupos %}<p class="grupo">{{ g.titulo }}</p>
+<ul class="linhas">{% for i in g.itens %}<li id="{{ i.id }}"><p>{{ i.texto }}</p>{{ detalhe(i.detalhe) }}</li>{% endfor %}</ul>
 {% endfor %}
-</ol>
+</section>{% endif %}
 
-<h2>O que aconteceu antes</h2>
-<p class="intro">Episódios do Brasil desde 2002, em governos diferentes, com os números de cada um e de onde veio a causa.</p>
-<ol class="eps">
-{% for e in q.episodios %}<li>
-  <p class="ep-q">{{ e.periodo }} · {{ e.causa }}</p>
-  <h3>{{ e.titulo }}</h3>
-  <p>{{ e.resumo }}</p>
-  {{ fontes(e.fontes) }}
-</li>
-{% endfor %}
-</ol>
+{% if q.agora %}<section id="agora">
+<h2>O que está em jogo agora</h2>
+<div class="agora"><p class="quando">Atualizado em {{ q.agora.atualizado }}</p><p>{{ q.agora.texto }}</p>{{ fontes(q.agora.fontes) }}</div>
+</section>{% endif %}
 
-<h2>As fontes</h2>
-<p class="intro">{{ q.conferidas }} das {{ q.total }} fontes desta página já foram conferidas. As outras estão marcadas "a conferir" até que o trecho que sustenta cada frase seja achado no texto original.</p>
+{% if q.fatos %}<section id="fatos">
+<h2>Os fatos do dia sobre isso</h2>
+<ul class="fatos">{% for f in q.fatos %}<li><span class="dia">{{ f.data }}</span><a href="{{ f.url }}">{{ f.titulo }}</a></li>{% endfor %}</ul>
+</section>{% endif %}
+
+{% if q.outras %}<section id="pressoes">
+<h2>As outras pressões</h2>
+<ul class="outras">{% for o in q.outras if not o.aqui %}<li><span class="pn">{{ o.pressao }}</span><a href="{{ o.url }}">{{ o.pergunta }}</a></li>{% endfor %}</ul>
+</section>{% endif %}
+
+<details class="conferimos" id="fontes">
+<summary>Como conferimos esta página</summary>
+<p>Cada frase da página está ligada à fonte e ao trecho que a sustenta. {{ q.conferidas }} das {{ q.total }} fontes já tiveram o trecho achado no texto original. As outras estão marcadas "a conferir".</p>
+<h3>As fontes</h3>
 <ol class="lista-fontes">
 {% for f in q.fontes %}<li>{% if f.url %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.quem }}</a>{% else %}{{ f.quem }}{% endif %}{% if f.titulo and f.titulo != f.quem %}, {{ f.titulo }}{% endif %}. <span class="nv">{{ f.nivel }}; {{ f.como }}.</span></li>
 {% endfor %}
 </ol>
-
-<h2>O que mudou nesta página</h2>
+<h3>O que mudou nesta página</h3>
 <ul class="mud">
 {% for m in q.mudancas %}<li>{{ m.data }}: {{ m.o_que }} {{ m.motivo }}</li>
 {% endfor %}
 </ul>
+</details>
 </main>
 {% endblock %}

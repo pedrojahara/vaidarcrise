@@ -1,12 +1,8 @@
 {
  "id": "juro-alto",
  "pergunta": "Por que o juro do Brasil é tão alto?",
- "pressoes": [
-  "juro",
-  "inflacao",
-  "mercado",
-  "contas"
- ],
+ "pressao": "juro",
+ "publicada": true,
  "atualizado_em": "2026-11-07",
  "resposta_curta": {
   "texto": "Em novembro de 2026, a Selic está em 13,75% ao ano, e os bancos (Focus) esperam que os preços subam 5,0% em 12 meses. Por isso o juro fica cerca de 8,4% acima da inflação esperada, um dos maiores do mundo. Os estudos que compararam o Brasil com outros países dão mais peso a duas causas. O país poupa pouco, sobretudo o governo, e quem empresta ao governo duvida que a dívida dele pare de crescer.",
@@ -19,159 +15,33 @@
    "a-ghs-tradicionais"
   ]
  },
+ "governo": {
+  "pergunta": "Isso é coisa de um governo só?",
+  "texto": "Não. A Selic subiu e caiu em governos de lados diferentes. Ela ficou em 14,25% de 2015 a 2016, chegou a 2% em 2020 e voltou a 13,75% em 2022. Abaixo, cada período diz se a causa veio daqui, de fora ou das duas.",
+  "afirmacoes": [
+   "a-ep2015",
+   "a-ep2020",
+   "a-ep2021"
+  ]
+ },
+ "agora": {
+  "atualizado_em": "2026-11-07",
+  "texto": "Em 4/11, o Banco Central manteve a Selic em 13,75% ao ano e parou os cortes que fazia desde março. Na mesma época, os bancos passaram a esperar inflação de 5,0% em 12 meses, acima do teto da meta, de 4,5%. Em julho, esperavam 4,2%. O Banco Central decide o juro de novo em 9/12.",
+  "afirmacoes": [
+   "a-copom-nov",
+   "a-cortes-2026",
+   "a-focus-jul-out",
+   "a-meta",
+   "a-datas"
+  ]
+ },
  "escada": [
-  {
-   "degrau": "fato",
-   "pergunta": "O que aconteceu?",
-   "rotulo": "consenso",
-   "texto": "Em 4/11/2026, o Banco Central manteve a Selic em 13,75% ao ano e parou os cortes que fazia desde março.",
-   "afirmacoes": [
-    "a-copom-nov",
-    "a-cortes-2026"
-   ]
-  },
-  {
-   "degrau": "causa_imediata",
-   "pergunta": "Por que o Banco Central parou de cortar?",
-   "rotulo": "consenso",
-   "texto": "Porque a inflação esperada voltou a subir. Os bancos (Focus) esperavam 4,2% em julho e passaram a esperar 5,0% no fim de outubro, acima do teto da meta de inflação, de 4,5%.",
-   "afirmacoes": [
-    "a-focus-jul-out",
-    "a-meta",
-    "a-copom-nov"
-   ]
-  },
-  {
-   "degrau": "mecanismo",
-   "pergunta": "Por que a inflação esperada subiu?",
-   "rotulo": "consenso",
-   "texto": "Parte dessa alta veio do dólar, que passou de R$ 5,18 no fim de agosto para R$ 5,50 em 6/11, e parte, do El Niño, que ameaça as safras. Com o dólar mais caro, os importados ficam mais caros, como trigo, açúcar e café.",
-   "afirmacoes": [
-    "a-dolar-ago-nov",
-    "a-elnino",
-    "a-importados"
-   ],
-   "nota": "Que o El Niño ameaça as safras é leitura da notícia; conferir no texto da Folha."
-  },
-  {
-   "degrau": "divisao",
-   "id": "d-dolar",
-   "pergunta": "Por que o dólar subiu?",
-   "rotulo": "em_disputa",
-   "consenso": {
-    "texto": "Quase toda a alta do dólar desde agosto veio num dia só. Em 23/10, último dia útil antes do segundo turno, o dólar tinha caído para R$ 5,04 e o juro de 10 anos, para 6,9%. Esse juro é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos. Em 26/10, o dia seguinte à eleição, os dois saltaram para R$ 5,50 e 8,1%.",
-    "afirmacoes": [
-     "a-antes-da-eleicao",
-     "a-salto-eleicao",
-     "a-bolsa-eleicao"
-    ]
-   },
-   "em_disputa": "Depois do salto, o dólar recuou para R$ 5,33 em 27/10 e voltou a R$ 5,50 em 6/11. Essa segunda alta veio de decisões tomadas no Brasil ou de fora?",
-   "em_disputa_afirmacoes": [
-    "a-depois-do-salto"
-   ],
-   "peso_da_evidencia": "Os fatos da semana apoiam as duas leituras, e os estudos mostram que as duas forças existem. O teste com as moedas do México e do Chile vai mostrar qual pesa mais daqui para a frente.",
-   "leituras": [
-    {
-     "id": "l-daqui",
-     "nome": "A leitura daqui",
-     "o_que_diz": "Quem investe passou a desconfiar das decisões tomadas no Brasil. Espera a dívida do governo crescendo mais rápido e teme um Banco Central mais disposto a cortar o juro com os preços subindo.",
-     "a_favor": [
-      {
-       "texto": "O juro que o governo paga para pegar dinheiro emprestado subiu em 3/11, com o temor sobre a agenda econômica. Ele caiu em 5/11 e 6/11, depois da fala do presidente e dos sinais sobre as contas do governo.",
-       "afirmacoes": [
-        "a-ev-0311-juros",
-        "a-ev-0511-fala",
-        "a-ev-0611-juro-cai"
-       ]
-      },
-      {
-       "texto": "O Tesouro projeta a dívida em 83,7% do PIB no fim de 2026 e em 89,7% em 2030.",
-       "afirmacoes": [
-        "a-ev-tesouro-divida"
-       ]
-      },
-      {
-       "texto": "Desde a reeleição, investidores estrangeiros tiraram R$ 8,4 bilhões da Bolsa brasileira.",
-       "afirmacoes": [
-        "a-ev-0511-estrangeiros"
-       ]
-      },
-      {
-       "texto": "O presidente vai indicar seis diretores do Banco Central até o fim de 2027, e investidores temem uma diretoria mais disposta a cortar o juro com os preços subindo.",
-       "afirmacoes": [
-        "a-ev-diretores-bc"
-       ]
-      }
-     ],
-     "estudos": [
-      {
-       "texto": "Blanchard mostrou que, em 2002 e 2003, com a dívida alta e muito dela em dólar, subir o juro aumentava o medo de calote e podia enfraquecer o real.",
-       "afirmacoes": [
-        "a-blanchard"
-       ]
-      }
-     ],
-     "melhor_objecao": {
-      "texto": "De 26/10 a 5/11, o juro de 10 anos ficou parado perto de 8,1% enquanto o dólar subia. Se a segunda alta viesse da desconfiança nas contas, o juro que o governo paga também deveria subir.",
-      "afirmacoes": [
-       "a-juro10-pos-salto"
-      ]
-     },
-     "resposta": null,
-     "quem_defende": [
-      "investidores ouvidos pelos jornais na semana"
-     ],
-     "status": "em_pe"
-    },
-    {
-     "id": "l-fora",
-     "nome": "A leitura de fora",
-     "o_que_diz": "Investidores do mundo todo ficaram com mais medo e tiraram dinheiro de países emergentes, como o Brasil. Com isso, o dólar subiu contra as moedas desses países ao mesmo tempo.",
-     "a_favor": [
-      {
-       "texto": "O dólar caiu em 4/11, com o alívio depois das eleições nos EUA, e subiu em 5/11, quando a Nasdaq, bolsa dos EUA, chegou a cair 6,4%.",
-       "afirmacoes": [
-        "a-ev-0411-dolar-cai",
-        "a-ev-0511-nasdaq"
-       ]
-      },
-      {
-       "texto": "Em 6/11, o emprego forte nos EUA aumentou a aposta de que o banco central de lá suba o juro, o que costuma tirar dinheiro de países como o Brasil.",
-       "afirmacoes": [
-        "a-ev-0611-eua"
-       ]
-      }
-     ],
-     "estudos": [
-      {
-       "texto": "Hélène Rey mostrou que há um ciclo financeiro mundial: o dinheiro entra e sai dos países ao mesmo tempo, junto com o medo de quem investe nos EUA.",
-       "afirmacoes": [
-        "a-rey"
-       ]
-      }
-     ],
-     "melhor_objecao": {
-      "texto": "Um estudo do Banco de Compensações Internacionais achou que esse ciclo mundial raramente explica mais de um quarto das entradas e saídas de dinheiro dos países.",
-      "afirmacoes": [
-       "a-cerutti"
-      ]
-     },
-     "resposta": null,
-     "quem_defende": [
-      "Hélène Rey (2013), para os países emergentes em geral"
-     ],
-     "status": "em_pe"
-    }
-   ],
-   "teste": "t-real-vizinhos"
-  },
   {
    "degrau": "raiz",
    "id": "d-nivel",
    "pergunta": "Por que o Brasil precisa de um juro tão maior que o de outros países para segurar os preços?",
    "rotulo": "maioria_com_dissenso",
-   "peso_da_evidencia": "Os estudos que compararam o Brasil com outros países dão mais peso à poupança baixa e à desconfiança nas contas do governo. As outras leituras explicam pedaços, foram pouco testadas ou foram testadas e não se confirmaram.",
+   "peso_da_evidencia": "Os estudos que compararam o Brasil com outros países dão mais peso à poupança baixa e à desconfiança nas contas do governo. As outras explicações valem para uma parte do problema, foram pouco testadas ou foram testadas e não se confirmaram.",
    "peso_afirmacoes": [
     "a-fmi-poupanca",
     "a-ghs-tradicionais"
@@ -212,7 +82,8 @@
      },
      "quem_defende": [
       "Fundo Monetário Internacional (Segura-Ubiergo, 2012)"
-     ]
+     ],
+     "titulo": "O país poupa pouco"
     },
     {
      "id": "l-confianca",
@@ -257,7 +128,8 @@
      "quem_defende": [
       "Olivier Blanchard (2004)",
       "Carlo Favero e Francesco Giavazzi (2004)"
-     ]
+     ],
+     "titulo": "Quem empresta ao governo desconfia"
     },
     {
      "id": "l-credito",
@@ -286,7 +158,8 @@
      },
      "quem_defende": [
       "Marco Bonomo e Bruno Martins (Banco Central, 2016)"
-     ]
+     ],
+     "resumo": "Parte do crédito tem juro definido pelo governo, como o do BNDES, o rural e o da casa própria, e esse juro não sobe quando a Selic sobe."
     },
     {
      "id": "l-indexacao",
@@ -310,7 +183,8 @@
      "resposta": null,
      "quem_defende": [
       "Fundo Monetário Internacional (Segura-Ubiergo, 2012), como hipótese"
-     ]
+     ],
+     "resumo": "Aluguel, salário mínimo e outros preços são corrigidos pela inflação do ano anterior, e por isso a inflação de hoje carrega a de ontem."
     },
     {
      "id": "l-circulo",
@@ -350,7 +224,8 @@
      "quem_defende": [
       "André Lara-Resende"
      ],
-     "nota": "A conta (juros pesam muito mais que o gasto acima da arrecadação) é consenso e já está na aba O que causa recessão. A disputa é sobre o remédio."
+     "nota": "A conta (juros pesam muito mais que o gasto acima da arrecadação) é consenso e já está na aba O que causa recessão. A disputa é sobre o remédio.",
+     "resumo": "Cerca de metade da dívida do governo acompanha a Selic, então o juro alto faz a dívida crescer, e a dívida maior pede juro alto."
     },
     {
      "id": "l-juridica",
@@ -375,61 +250,25 @@
      "resposta": null,
      "quem_defende": [
       "Persio Arida, Edmar Bacha e André Lara-Resende (2005)"
-     ]
+     ],
+     "resumo": "Em 2005, três economistas sugeriram que o juro era alto por causa da incerteza sobre contratos e da moeda que não se troca livremente."
     }
    ]
   },
   {
    "degrau": "o_que_vem_depois",
-   "pergunta": "O que costuma vir depois?",
+   "pergunta": "O que isso muda para você?",
    "rotulo": "consenso",
-   "texto": "Com o juro cerca de 8,4% acima da inflação esperada, comprar a prazo e investir continuam caros, o que freia as vendas e as contratações. Em 2025, o Banco Central estimava em cerca de 5% acima da inflação o juro que nem acelera nem freia a economia, bem abaixo dos 8,4% de hoje. Na primeira semana de novembro, a indústria mostrou queda de 4,1% desde maio, e as empresas tiveram o pior setembro de vagas com carteira já registrado. O IBGE divulga o PIB do terceiro trimestre em 2/12, e o Banco Central decide o juro de novo em 9/12.",
+   "texto": "A Selic influencia o juro do cartão, do empréstimo e do financiamento. Com ela alta, quem compra a prazo compra menos, as lojas vendem menos e as empresas contratam menos. Em 2025, o Banco Central estimava em cerca de 5% acima da inflação o juro que nem acelera nem freia a economia. O de hoje está em cerca de 8,4%.",
    "afirmacoes": [
-    "a-juro-real-hoje",
+    "a-bc-selic",
+    "a-freio",
     "a-neutro-bc",
-    "a-industria",
-    "a-caged",
-    "a-datas"
+    "a-juro-real-hoje"
    ]
   }
  ],
- "testes": [
-  {
-   "id": "t-real-vizinhos",
-   "divisao": "d-dolar",
-   "pergunta": "Daqui para a frente, o dólar vai subir mais contra o real do que contra as moedas do México e do Chile?",
-   "como": "O teste compara a alta do dólar contra o real com a alta contra o peso mexicano e o peso chileno, pelas cotações oficiais do Banco Central. A conta vai do fechamento de 6/11/2026, o último antes de a regra ser escrita, até cada data de conferência.",
-   "o_que_cada_leitura_espera": {
-    "l-daqui": "O dólar sobe mais contra o real do que contra os dois pesos.",
-    "l-fora": "O dólar sobe parecido contra as três moedas."
-   },
-   "regra": {
-    "medida": "alta do dólar contra o real menos a média da alta contra os dois pesos, em pontos",
-    "favorece_l_daqui_acima_de": 2.0,
-    "favorece_l_fora_entre": [
-     -2.0,
-     2.0
-    ],
-    "abaixo_de_menos_2": "o real foi melhor que os vizinhos, e nenhuma das duas leituras explica a alta"
-   },
-   "dados": {
-    "fonte": "Ptax do Banco Central (Olinda, CotacaoMoedaPeriodo)",
-    "moedas": [
-     "USD",
-     "MXN",
-     "CLP"
-    ],
-    "inicio": "2026-11-06"
-   },
-   "conferir_em": [
-    "2026-12-07",
-    "2027-02-05"
-   ],
-   "limites": "O México depende muito da economia dos EUA, e o Chile, do preço do cobre, então as duas moedas também têm motivos próprios. Por isso a regra pede uma diferença de mais de 2 pontos. O teste começa em 6/11, e não em 27/10, porque o que aconteceu entre 27/10 e 6/11 já era conhecido quando a regra foi escrita, e medir esse trecho seria como apostar num jogo que já acabou.",
-   "registrado_em": "2026-11-07",
-   "resultados": []
-  }
- ],
+ "testes": [],
  "episodios": [
   "ep-2002",
   "ep-2008",
@@ -450,6 +289,11 @@
    "data": "2026-11-07",
    "o_que": "O teste das moedas passou a começar em 6/11 e a ser conferido em 7/12/2026 e 5/2/2027.",
    "motivo": "A primeira versão começava em 27/10 e tinha uma conferência em 6/11, antes do registro, o que deixava parte do resultado conhecida."
+  },
+  {
+   "data": "2026-11-07",
+   "o_que": "A página passou a responder primeiro à pergunta do título, com o que o juro alto muda para quem compra a prazo e os casos desde 2002. A disputa sobre o dólar e o teste das moedas saíram daqui.",
+   "motivo": "Eles tratam da Desconfiança de quem investe, que terá página própria. O teste segue registrado com as mesmas regras e datas e aparece no fato do dia de 4/11."
   }
  ]
 }

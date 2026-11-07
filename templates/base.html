@@ -131,7 +131,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
-/* a escada de porquês: no "Entenda a fundo" dos fatos do dia e na página de cada pergunta (src/base_site.py) */
+/* a escada de porquês, no "Entenda a fundo" dos fatos do dia (src/base_site.py) */
 .escada{list-style:none;margin:0;padding:0}
 .degrau{position:relative;padding:0 0 18px 22px;border-left:2px solid var(--fio);margin-left:6px}
 .degrau:last-child{border-left-color:transparent;padding-bottom:4px}
@@ -139,6 +139,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .degrau.r-consenso::before{box-shadow:inset 0 0 0 3px var(--desce)}
 .degrau.r-maioria_com_dissenso::before{box-shadow:inset 0 0 0 3px var(--atencao)}
 .degrau.r-em_disputa::before{background:var(--sobe);box-shadow:none}
+.degrau.r-bolso::before{background:var(--placa);box-shadow:none}
 .d-perg{font:700 17px/1.35 var(--sistema);margin:0 0 4px}
 .rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
 .rot.r-consenso{background:var(--normal-fundo)}
@@ -147,8 +148,11 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .d-txt{margin:0 0 6px;font-size:17px;line-height:1.55}
 .d-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 4px;overflow-wrap:anywhere}
 .d-fontes a{color:var(--meta)}
-.d-fontes .ac{font-style:italic}
 .d-mais{font:14.5px/1.45 var(--sistema);margin:4px 0 0}
+.d-teste{font:15px/1.5 var(--sistema);margin:2px 0 4px}
+.d-teste>summary{cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:2px}
+.d-teste p{margin:6px 0 0}
+.d-teste .d-lim{color:var(--meta);font-size:14px}
 {% block estilo %}{% endblock %}
 </style>
 </head>

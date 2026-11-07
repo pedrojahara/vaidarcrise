@@ -21,16 +21,17 @@
   <details class="fundo">
     <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
     <ol class="escada">
-      {% for d in es.degraus %}<li class="degrau r-{{ d.rotulo }}">
+      {% for d in es.degraus %}<li class="degrau r-{{ d.rotulo or 'bolso' }}">
         <p class="d-perg">{{ d.pergunta }}</p>
-        <span class="rot r-{{ d.rotulo }}">{{ d.rotulo_nome }}</span>
-        <p class="d-txt">{{ d.texto }}{% if d.teste_quando %} O site confere em {{ d.teste_quando }}.{% endif %}</p>
-        {% if d.fontes %}<p class="d-fontes">{{ 'Fonte' if d.fontes|length == 1 else 'Fontes' }}: {% for f in d.fontes %}{% if f.url %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.quem }}</a>{% else %}{{ f.quem }}{% endif %}{% if not f.conferida %} <span class="ac">(a conferir)</span>{% endif %}{{ '; ' if not loop.last }}{% endfor %}</p>{% endif %}
-        {% if d.mais %}<p class="d-mais"><a href="{{ d.mais.url }}">{{ d.mais.texto }}</a></p>{% endif %}
+        {% if d.rotulo_nome %}<span class="rot r-{{ d.rotulo }}">{{ d.rotulo_nome }}</span>{% endif %}
+        <p class="d-txt">{{ d.texto }}{% if d.teste %} O site confere em {{ d.teste.quando }}.{% endif %}</p>
+        {% if d.fontes %}<p class="d-fontes">{{ 'Fonte' if d.fontes|length == 1 else 'Fontes' }}: {% for f in d.fontes %}{% if f.url %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.quem }}</a>{% else %}{{ f.quem }}{% endif %}{{ '; ' if not loop.last }}{% endfor %}</p>{% endif %}
+        {% if d.teste %}<details class="d-teste"><summary>Como o teste funciona</summary><p>{{ d.teste.como }}</p><p>{{ d.teste.regra }}</p>{% for r in d.teste.resultados %}<p><b>{{ r.data }}:</b> {{ r.texto }}</p>{% endfor %}<p class="d-lim">{{ d.teste.limites }}</p></details>{% endif %}
         {% if d.link %}<p class="d-mais"><a href="{{ d.link.url }}">{{ d.link.texto }}</a></p>{% endif %}
       </li>{% endfor %}
     </ol>
-    {% if es.url %}<p class="fundo-pe">Esta escada faz parte de uma pergunta maior: <a href="{{ es.url }}">{{ es.pergunta }}</a></p>{% endif %}
+    {% if es.ponte and es.ponte.aba %}<a class="ponte" href="{{ es.ponte.url }}"><b>Como isso funciona</b><span>Na aba O que causa recessão</span></a>
+    {% elif es.ponte %}<a class="ponte" href="{{ es.ponte.url }}"><b>{{ es.ponte.pergunta }}</b><span>A explicação da pressão {{ es.ponte.pressao }}, em 5 minutos</span></a>{% endif %}
   </details>
   {% endif %}
   {% if pr %}

@@ -7,6 +7,7 @@
     {% if x.folga %}<p>{{ x.folga.texto }}</p>{% endif %}
     {% if x.importa %}<p>{{ x.importa }}</p>{% endif %}
     {% if x.fora %}<p class="p-fora">{{ x.fora }}</p>{% endif %}
+    {% if x.pergunta %}<p><a href="{{ x.pergunta.url }}">{{ x.pergunta.texto }}</a></p>{% endif %}
     {% if x.causas %}<p><a href="{{ x.causas }}">Como isso funciona</a></p>{% endif %}
   </div>
 </details></li>
