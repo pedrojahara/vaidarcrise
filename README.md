@@ -19,6 +19,8 @@ launchd, todo dia às 06h30 → run.sh   (uma publicação por dia; se o Mac dor
   │                         só no fim de Como funciona
   ├─ src/classify_news.py   claude -p, sem ferramentas, saída em esquema JSON: manchetes do dia anterior → eventos
   ├─ src/dossie.py          fatos de dados de cada assunto, contexto para o post
+  ├─ src/pauta.py           os degraus da carta editorial (CARTA_EDITORIAL.md) dão o fato do dia padrão;
+  │                         src/editora.py (claude -p) lê a carta e só troca por um motivo da lista, que o código confere
   ├─ src/escreve_post.py    claude -p escreve o post do tipo do dia (fato do dia, semana ou mês) a partir da conta pronta,
   │                         dos dados oficiais (o mês) e dos registros em runs/ (a semana); src/edita_texto.py
   │                         (o editor) revisa e edita o rascunho com o PERSONA.md; src/revisa_texto.py confere
@@ -30,7 +32,7 @@ launchd, todo dia às 06h30 → run.sh   (uma publicação por dia; se o Mac dor
   └─ git push               GitHub Pages publica docs/
 ```
 
-O LLM classifica manchetes e redige o post. A direção, a pressão das notícias por assunto e o HTML saem de código determinístico.
+O LLM classifica manchetes, escolhe o fato do dia dentro da régua da carta editorial e redige o post. A direção, a pressão das notícias por assunto e o HTML saem de código determinístico.
 
 Calibração (rodar só quando mudar uma regra ou o IBGE confirmar uma recessão nova):
 

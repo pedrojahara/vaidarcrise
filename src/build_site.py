@@ -39,7 +39,7 @@ TIPOS_POST = {"dia": "Fato do dia", "semana": "Resumo da semana", "mes": "Resumo
 # chega aos poucos, de docs/posts/, enquanto a leitora rola.
 POSTS_NA_PAGINA = 5
 ESTAGIOS = {"dado": "dado divulgado", "decidido": "decisão tomada", "em_votacao": "em votação",
-            "anuncio": "anúncio", "rumor": "rumor"}
+            "anuncio": "anúncio", "previsao": "previsão", "rumor": "rumor"}
 SENTIDOS = {"piora": ("↑", "mais", "para pior"), "melhora": ("↓", "menos", "para melhor"),
             "igual": ("→", "igual", "sem lado claro")}
 # ------------------------------------------------------------------ formatos

@@ -308,7 +308,7 @@
       "n067"
      ],
      "titulo_evento": "Bradesco, XP e Genoa pioram as previsões e veem PIB parado ou em queda em 2027",
-     "estagio": "dado",
+     "estagio": "previsao",
      "chance_aprovacao": null,
      "origem": "dados",
      "fator": "atividade",
@@ -317,7 +317,8 @@
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "Bancos e gestoras passam a esperar preços subindo mais rápido e economia quase parada em 2027, e a Genoa fala em recessão, o que leva empresas e famílias a adiar compras e investimentos."
+     "porque": "Bancos e gestoras passam a esperar preços subindo mais rápido e economia quase parada em 2027, e a Genoa fala em recessão, o que leva empresas e famílias a adiar compras e investimentos.",
+     "outras_ids": []
     },
     {
      "noticia_ids": [
@@ -338,7 +339,10 @@
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "As exportações subiram 20% em outubro, puxadas por petróleo e minério, e a entrada de dólares ajuda a segurar a moeda americana e a sustentar a produção."
+     "porque": "As exportações subiram 20% em outubro, puxadas por petróleo e minério, e a entrada de dólares ajuda a segurar a moeda americana e a sustentar a produção.",
+     "outras_ids": [
+      "n061"
+     ]
     },
     {
      "noticia_ids": [
@@ -357,7 +361,8 @@
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "Com o emprego forte nos EUA, o mercado vê 80% de chance de o banco central de lá subir os juros, o que tira dinheiro de países como o Brasil e pressiona o dólar aqui."
+     "porque": "Com o emprego forte nos EUA, o mercado vê 80% de chance de o banco central de lá subir os juros, o que tira dinheiro de países como o Brasil e pressiona o dólar aqui.",
+     "outras_ids": []
     },
     {
      "noticia_ids": [
@@ -378,7 +383,8 @@
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": "ev-20261106-02",
-     "porque": "A queda das empresas de inteligência artificial lá fora deixa os investidores mais medrosos, e eles tiram dinheiro de bolsas de países emergentes como o Brasil."
+     "porque": "A queda das empresas de inteligência artificial lá fora deixa os investidores mais medrosos, e eles tiram dinheiro de bolsas de países emergentes como o Brasil.",
+     "outras_ids": []
     },
     {
      "noticia_ids": [
@@ -397,7 +403,13 @@
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "O juro que o governo paga para pegar dinheiro emprestado caiu com os sinais sobre as contas, o que alivia o custo do crédito, mas o dólar subiu 1,54% na semana."
+     "porque": "O juro que o governo paga para pegar dinheiro emprestado caiu com os sinais sobre as contas, o que alivia o custo do crédito, mas o dólar subiu 1,54% na semana.",
+     "outras_ids": [
+      "n143",
+      "n165",
+      "n128",
+      "n159"
+     ]
     },
     {
      "noticia_ids": [
@@ -418,7 +430,10 @@
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": "ev-20261106-04",
-     "porque": "O presidente repete o compromisso com as contas e dá os primeiros sinais de ajuste, mas sem medidas, e diz que investimento pode justificar mais dívida."
+     "porque": "O presidente repete o compromisso com as contas e dá os primeiros sinais de ajuste, mas sem medidas, e diz que investimento pode justificar mais dívida.",
+     "outras_ids": [
+      "n177"
+     ]
     },
     {
      "noticia_ids": [
@@ -438,7 +453,8 @@
      "ja_no_preco": true,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "A cobrança, que venceria em 7 de novembro, segue trazendo dinheiro para o governo enquanto o petróleo está caro por causa do conflito no Oriente Médio."
+     "porque": "A cobrança, que venceria em 7 de novembro, segue trazendo dinheiro para o governo enquanto o petróleo está caro por causa do conflito no Oriente Médio.",
+     "outras_ids": []
     },
     {
      "noticia_ids": [
@@ -454,9 +470,27 @@
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "Governadores e prefeitos poderiam trocar dívidas nos últimos 120 dias de mandato, o que abre espaço para empurrar a conta para o próximo gestor e afrouxa as contas dos estados."
+     "porque": "Governadores e prefeitos poderiam trocar dívidas nos últimos 120 dias de mandato, o que abre espaço para empurrar a conta para o próximo gestor e afrouxa as contas dos estados.",
+     "outras_ids": []
     }
    ]
+  },
+  "refeito": [
+   "2026-11-07: previsão de banco, consultoria ou governo separada de dado (estágio previsao, CARTA_EDITORIAL.md): Bradesco, XP e Genoa pioram as previsões e veem PIB parado ou em queda em 2027",
+   "2026-11-07: outras_ids (todas as manchetes de cada evento, para contar os jornais) contadas depois, numa chamada só para isso, com a cesta desta rodada; custo US$ 0.23502"
+  ],
+  "meta_cobertura": {
+   "modelo_pedido": "opus",
+   "prompt_sha256": "b2a988f0f96ab7d85be034d2b57f79e60ca74478fb9b4e94e1cdef209b9953d3",
+   "system_sha256": "3266fd699949ebcd9919323335963b82baa0f62528b104b320b6da5dddffeb50",
+   "returncode": 0,
+   "is_error": false,
+   "custo_usd": 0.23502,
+   "modelos": [
+    "claude-opus-5-5"
+   ],
+   "permission_denials": [],
+   "session_id": "a9f381a9-438a-4de1-bf95-4b409dd72122"
   }
  },
  "eventos_novos": [
@@ -526,7 +560,8 @@
      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://aovivo.folha.uol.com.br/mercado/2026/10/25/6568-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post468041",
      "publicado_em": "2026-11-06T08:24-03:00"
     }
-   ]
+   ],
+   "outras_ids": []
   },
   {
    "noticia_ids": [
@@ -586,6 +621,9 @@
      "url": "https://g1.globo.com/politica/blog/valdo-cruz/post/2026/11/06/lula-faz-primeiros-acenos-concretos-na-direcao-de-ajuste-fiscal-e-alinha-discurso-com-propostas-de-durigan.ghtml",
      "publicado_em": "2026-11-06T13:19+00:00"
     }
+   ],
+   "outras_ids": [
+    "n177"
    ]
   }
  ],
@@ -2506,18 +2544,18 @@
  "post": {
   "tipo": "dia",
   "ok": true,
-  "titulo": "Bradesco, XP e Genoa veem PIB parado ou em queda em 2027",
+  "titulo": "Brasil vende US$ 9,3 bi a mais do que compra, recorde para outubro",
   "paragrafos": [
-   "O Bradesco, a corretora XP e a gestora Genoa divulgaram ontem previsões piores para 2027, e a Genoa prevê recessão e inflação de 6%.",
-   "A piora acompanha a prévia do PIB feita pelo Banco Central, que caiu 0,6% nos 3 meses até agosto, contra os 3 meses até maio.",
-   "Juro alto nem sempre termina em recessão. De 2014 a 2016, com a Selic chegando a 14,25%, o que o Brasil vende ficou mais barato, e o PIB encolheu. Em 2021 e 2022, com a Selic subindo até 13,75%, o mundo pagava caro por esses produtos, e a economia cresceu."
+   "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou de outros países em outubro, o maior saldo para outubro desde 1989. O saldo cresceu 39% se compararmos com outubro de 2025.",
+   "As exportações subiram 20%, puxadas pelo petróleo e pelo minério a preços altos. Essa entrada de dólares ajuda a segurar a moeda americana, que ficou 7,8% mais cara que no começo de agosto e encarece importados como peças e combustível.",
+   "Esses preços são decididos lá fora, e o petróleo ficou 13% mais barato na semana, por isso o saldo de outubro pode não se repetir."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "O Bradesco, a corretora XP e a gestora Genoa divulgaram ontem previsões piores para 2027, e a Genoa prevê recessão e inflação de 6%.",
-     "A piora acompanha a prévia do PIB feita pelo Banco Central, que caiu 0,6% nos 3 meses até agosto, contra os 3 meses até maio.",
-     "Juro alto nem sempre termina em recessão. De 2014 a 2016, com a Selic chegando a 14,25%, o que o Brasil vende ficou mais barato, e o PIB encolheu. Em 2021 e 2022, com a Selic subindo até 13,75%, o mundo pagava caro por esses produtos, e a economia cresceu."
+     "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou de outros países em outubro, o maior saldo para outubro desde 1989. O saldo cresceu 39% se compararmos com outubro de 2025.",
+     "As exportações subiram 20%, puxadas pelo petróleo e pelo minério a preços altos. Essa entrada de dólares ajuda a segurar a moeda americana, que ficou 7,8% mais cara que no começo de agosto e encarece importados como peças e combustível.",
+     "Esses preços são decididos lá fora, e o petróleo ficou 13% mais barato na semana, por isso o saldo de outubro pode não se repetir."
     ]
    }
   ],
@@ -2525,89 +2563,59 @@
   "edicao": {
    "sugestoes": [
     {
-     "trecho": "Bradesco e duas gestoras veem PIB parado ou em queda em 2027",
-     "problema": "Muda o fato: os dados não falam em \"PIB parado\", e a XP é corretora, não gestora. O título tem de afirmar o fato principal.",
-     "como_fica": "Bradesco, XP e Genoa pioram previsões; Genoa prevê recessão em 2027"
+     "trecho": "As exportações subiram 20%, puxadas pelo petróleo e pelo minério vendidos a preços altos, e essa entrada de dólares ajuda a segurar a moeda americana, que ficou 7,8% mais cara desde o começo de agosto.",
+     "problema": "A frase tem 35 palavras, e o limite é 30. Ela junta duas ideias: por que as exportações subiram e o que isso faz com o dólar.",
+     "como_fica": "As exportações subiram 20%, puxadas pelo petróleo e pelo minério a preços altos. Essa entrada de dólares ajuda a segurar a moeda americana, que ficou 7,8% mais cara que no começo de agosto e encarece importados como peças e combustível."
     },
     {
-     "trecho": "O Bradesco e duas gestoras de investimentos divulgaram ontem previsões piores para 2027, e uma delas, a Genoa, prevê recessão",
-     "problema": "Faltam os nomes e o tipo de empresa está errado, porque a XP é corretora. O estágio também fica vago: a Genoa passou a prever recessão.",
-     "como_fica": "O Bradesco, a corretora XP e a gestora Genoa divulgaram ontem previsões piores para 2027, e a Genoa passou a prever recessão e inflação de 6%."
+     "trecho": "Com o dólar mais caro, os importados ficam mais caros, como peças e combustível.",
+     "problema": "A frase solta repete \"mais caro\" logo depois da anterior. O \"e daí\" para o bolso fica mais claro preso à frase sobre o dólar, e assim o texto também cabe no limite de 100 palavras.",
+     "como_fica": "...que ficou 7,8% mais cara que no começo de agosto e encarece importados como peças e combustível."
     },
     {
-     "trecho": "De 2014 a 2016, com a Selic chegando a 14,25%, o PIB encolheu, mas em 2021 e 2022, com a Selic subindo até 13,75%, a economia cresceu.",
-     "problema": "Os dois casos não são comparados pela mesma linha, e a frase não diz o que mudou o final, por isso \"nem sempre\" fica sem explicação.",
-     "como_fica": "De 2014 a 2016, com a Selic chegando a 14,25%, a economia já estava no limite, e o PIB encolheu. Em 2021 e 2022, com a Selic subindo até 13,75%, havia gente parada para voltar ao trabalho, e a economia cresceu."
+     "trecho": "O saldo depende de preços definidos fora do país, e o petróleo ficou 13% mais barato na semana, por isso o resultado de outubro pode não se repetir nos próximos meses.",
+     "problema": "A frase tem 31 palavras, e o limite é 30. Além disso, o texto passava de 100 palavras.",
+     "como_fica": "Esses preços são decididos lá fora, e o petróleo ficou 13% mais barato na semana, por isso o saldo de outubro pode não se repetir."
+    },
+    {
+     "trecho": "O saldo cresceu 39,4% se compararmos com outubro de 2025.",
+     "problema": "O número precisa ser arredondado.",
+     "como_fica": "O saldo cresceu 39% se compararmos com outubro de 2025."
+    },
+    {
+     "trecho": "O Brasil vendeu a outros países US$ 9,3 bilhões a mais do que comprou deles em outubro, o maior saldo para um mês de outubro desde 1989.",
+     "problema": "Há palavras demais para o tamanho do fato do dia, que é de até 100 palavras. A ordem direta lê melhor.",
+     "como_fica": "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou de outros países em outubro, o maior saldo para outubro desde 1989."
     }
    ],
-   "sugestoes_escada": [
-    {
-     "trecho": "O IBGE divulga o PIB do terceiro trimestre em 2/12, e o número vai mostrar se a queda da prévia se confirma.",
-     "problema": "A frase não se entende sozinha: o texto não tinha falado de prévia nenhuma, e a leitora não sabe que prévia é essa.",
-     "como_fica": "O IBGE divulga o PIB do terceiro trimestre em 2/12, e o número vai mostrar se a queda da prévia do PIB feita pelo Banco Central se confirma."
-    },
-    {
-     "trecho": "Porque o juro está cerca de 8,4% acima da inflação esperada, o que deixa caro comprar a prazo e investir.",
-     "problema": "Falta dizer quem: qual juro, quem espera essa inflação e quem acha caro comprar a prazo e investir.",
-     "como_fica": "Porque a Selic está cerca de 8,4% acima da inflação que os bancos esperam, o que deixa caro para as famílias comprarem a prazo e para as empresas investirem."
-    },
-    {
-     "trecho": "A indústria produz 4,1% menos que em maio, e as empresas tiveram o pior setembro de vagas com carteira já registrado.",
-     "problema": "O fato vem sem o e daí: falta dizer o que esses números querem dizer para a leitora.",
-     "como_fica": "A indústria produz 4,1% menos que em maio, e as empresas tiveram o pior setembro de vagas com carteira já registrado, dois sinais de que a economia já está mais fraca."
-    },
-    {
-     "trecho": "De 2014 a 2016, a economia já estava no limite, a soja, o minério e o petróleo ficaram mais baratos, e as contas do governo pioraram.",
-     "problema": "Os dois casos não respondem às mesmas perguntas: o juro aparece em 2021 e 2022, mas não aqui. A causa de fora também não é chamada de causa de fora.",
-     "como_fica": "De 2013 a 2016, a Selic subiu de 7,25% para 14,25%, numa economia que já estava no limite. Lá fora, a soja, o minério e o petróleo que o Brasil vende ficaram mais baratos, e aqui as contas do governo pioraram."
-    },
-    {
-     "trecho": "O Banco Central decide o juro de novo em 9/12.",
-     "problema": "A data vem sem o e daí: falta dizer o que está em jogo nessa decisão.",
-     "como_fica": "Em 9/12, o Banco Central decide se mantém a Selic em 13,75% ou se muda o juro."
-    }
-   ],
-   "aplicada": "à mão, sugestão por sugestão, sem mudar fato nem número"
+   "aplicada": true
   },
   "meta": [
    {
     "modelo_pedido": "opus",
-    "prompt_sha256": "841bd1c756ec1d9380cbe58f5d3964b5022aada4c96eb19a9efc48378a5d4d8a",
-    "system_sha256": "fd9a8be54c94ed707c0b33221d75dd0e5cfea05070c681fc31e30145ca999d63",
+    "prompt_sha256": "ea3ededb5cda08fcccc49a1c88e001cdc9511a7874fb555e373bd8076473379b",
+    "system_sha256": "db547ec41ae437ed91bb761e46d2a8020b5b034347f3f337694f3b708cc76388",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.134596,
+    "custo_usd": 0.0733634,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "44d880a7-b493-48cf-a0dd-7515a13833b5"
+    "session_id": "f5bd4dfc-350d-4ab6-9944-46febe5b94f6"
    },
    {
     "modelo_pedido": "opus",
-    "prompt_sha256": "3861e83e67f2c32e5743fe0ee70cda7a45cd3630bd8e4f8c6369410ed624bce6",
+    "prompt_sha256": "a77529354a7bec4d2e773c16346d5e3a4fbb8475613459deac199b756137ba21",
     "system_sha256": "742a9166ecb7708349c5ccb68828d68c7cf9d6db13c33b0eb25536b9574c5d87",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.26718,
+    "custo_usd": 0.2668572,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "f725f1fb-092e-4400-b8f0-3cd73ffed8ae"
-   },
-   {
-    "modelo_pedido": "opus",
-    "prompt_sha256": "b779d19c5d69787eed688b6950fce2b15a5ea2df28833b0e9550d9486f45ac99",
-    "system_sha256": "fd9a8be54c94ed707c0b33221d75dd0e5cfea05070c681fc31e30145ca999d63",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.0786888,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "41fbd269-b02f-4cb3-9938-4ba0a11704e5"
+    "session_id": "4ac3b110-5de6-4f3a-be71-5c038b03d509"
    }
   ],
   "versao_anterior": {
@@ -2640,18 +2648,6 @@
    "trocado_em": "2026-11-07",
    "motivo": "Fase 0 da base de conhecimento: o fato do dia ganhou a escada de porquês, a pedido do Pedro em 7/11/2026."
   },
-  "paragrafos_afirmacoes": [
-   [
-    "a-previsoes-2027"
-   ],
-   [
-    "a-previa-pib"
-   ],
-   [
-    "a-caso-2014",
-    "a-caso-2021"
-   ]
-  ],
   "pergunta": "juro-alto",
   "escada": [
    {
@@ -2697,6 +2693,567 @@
      "a-selic-hoje"
     ]
    }
-  ]
+  ],
+  "versao_escada": {
+   "titulo": "Bradesco, XP e Genoa veem PIB parado ou em queda em 2027",
+   "paragrafos": [
+    "O Bradesco, a corretora XP e a gestora Genoa divulgaram ontem previsões piores para 2027, e a Genoa prevê recessão e inflação de 6%.",
+    "A piora acompanha a prévia do PIB feita pelo Banco Central, que caiu 0,6% nos 3 meses até agosto, contra os 3 meses até maio.",
+    "Juro alto nem sempre termina em recessão. De 2014 a 2016, com a Selic chegando a 14,25%, o que o Brasil vende ficou mais barato, e o PIB encolheu. Em 2021 e 2022, com a Selic subindo até 13,75%, o mundo pagava caro por esses produtos, e a economia cresceu."
+   ],
+   "secoes": [
+    {
+     "paragrafos": [
+      "O Bradesco, a corretora XP e a gestora Genoa divulgaram ontem previsões piores para 2027, e a Genoa prevê recessão e inflação de 6%.",
+      "A piora acompanha a prévia do PIB feita pelo Banco Central, que caiu 0,6% nos 3 meses até agosto, contra os 3 meses até maio.",
+      "Juro alto nem sempre termina em recessão. De 2014 a 2016, com a Selic chegando a 14,25%, o que o Brasil vende ficou mais barato, e o PIB encolheu. Em 2021 e 2022, com a Selic subindo até 13,75%, o mundo pagava caro por esses produtos, e a economia cresceu."
+     ]
+    }
+   ],
+   "problemas": [],
+   "edicao": {
+    "sugestoes": [
+     {
+      "trecho": "Bradesco e duas gestoras veem PIB parado ou em queda em 2027",
+      "problema": "Muda o fato: os dados não falam em \"PIB parado\", e a XP é corretora, não gestora. O título tem de afirmar o fato principal.",
+      "como_fica": "Bradesco, XP e Genoa pioram previsões; Genoa prevê recessão em 2027"
+     },
+     {
+      "trecho": "O Bradesco e duas gestoras de investimentos divulgaram ontem previsões piores para 2027, e uma delas, a Genoa, prevê recessão",
+      "problema": "Faltam os nomes e o tipo de empresa está errado, porque a XP é corretora. O estágio também fica vago: a Genoa passou a prever recessão.",
+      "como_fica": "O Bradesco, a corretora XP e a gestora Genoa divulgaram ontem previsões piores para 2027, e a Genoa passou a prever recessão e inflação de 6%."
+     },
+     {
+      "trecho": "De 2014 a 2016, com a Selic chegando a 14,25%, o PIB encolheu, mas em 2021 e 2022, com a Selic subindo até 13,75%, a economia cresceu.",
+      "problema": "Os dois casos não são comparados pela mesma linha, e a frase não diz o que mudou o final, por isso \"nem sempre\" fica sem explicação.",
+      "como_fica": "De 2014 a 2016, com a Selic chegando a 14,25%, a economia já estava no limite, e o PIB encolheu. Em 2021 e 2022, com a Selic subindo até 13,75%, havia gente parada para voltar ao trabalho, e a economia cresceu."
+     }
+    ],
+    "sugestoes_escada": [
+     {
+      "trecho": "O IBGE divulga o PIB do terceiro trimestre em 2/12, e o número vai mostrar se a queda da prévia se confirma.",
+      "problema": "A frase não se entende sozinha: o texto não tinha falado de prévia nenhuma, e a leitora não sabe que prévia é essa.",
+      "como_fica": "O IBGE divulga o PIB do terceiro trimestre em 2/12, e o número vai mostrar se a queda da prévia do PIB feita pelo Banco Central se confirma."
+     },
+     {
+      "trecho": "Porque o juro está cerca de 8,4% acima da inflação esperada, o que deixa caro comprar a prazo e investir.",
+      "problema": "Falta dizer quem: qual juro, quem espera essa inflação e quem acha caro comprar a prazo e investir.",
+      "como_fica": "Porque a Selic está cerca de 8,4% acima da inflação que os bancos esperam, o que deixa caro para as famílias comprarem a prazo e para as empresas investirem."
+     },
+     {
+      "trecho": "A indústria produz 4,1% menos que em maio, e as empresas tiveram o pior setembro de vagas com carteira já registrado.",
+      "problema": "O fato vem sem o e daí: falta dizer o que esses números querem dizer para a leitora.",
+      "como_fica": "A indústria produz 4,1% menos que em maio, e as empresas tiveram o pior setembro de vagas com carteira já registrado, dois sinais de que a economia já está mais fraca."
+     },
+     {
+      "trecho": "De 2014 a 2016, a economia já estava no limite, a soja, o minério e o petróleo ficaram mais baratos, e as contas do governo pioraram.",
+      "problema": "Os dois casos não respondem às mesmas perguntas: o juro aparece em 2021 e 2022, mas não aqui. A causa de fora também não é chamada de causa de fora.",
+      "como_fica": "De 2013 a 2016, a Selic subiu de 7,25% para 14,25%, numa economia que já estava no limite. Lá fora, a soja, o minério e o petróleo que o Brasil vende ficaram mais baratos, e aqui as contas do governo pioraram."
+     },
+     {
+      "trecho": "O Banco Central decide o juro de novo em 9/12.",
+      "problema": "A data vem sem o e daí: falta dizer o que está em jogo nessa decisão.",
+      "como_fica": "Em 9/12, o Banco Central decide se mantém a Selic em 13,75% ou se muda o juro."
+     }
+    ],
+    "aplicada": "à mão, sugestão por sugestão, sem mudar fato nem número"
+   },
+   "meta": [
+    {
+     "modelo_pedido": "opus",
+     "prompt_sha256": "841bd1c756ec1d9380cbe58f5d3964b5022aada4c96eb19a9efc48378a5d4d8a",
+     "system_sha256": "fd9a8be54c94ed707c0b33221d75dd0e5cfea05070c681fc31e30145ca999d63",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.134596,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "44d880a7-b493-48cf-a0dd-7515a13833b5"
+    },
+    {
+     "modelo_pedido": "opus",
+     "prompt_sha256": "3861e83e67f2c32e5743fe0ee70cda7a45cd3630bd8e4f8c6369410ed624bce6",
+     "system_sha256": "742a9166ecb7708349c5ccb68828d68c7cf9d6db13c33b0eb25536b9574c5d87",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.26718,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "f725f1fb-092e-4400-b8f0-3cd73ffed8ae"
+    },
+    {
+     "modelo_pedido": "opus",
+     "prompt_sha256": "b779d19c5d69787eed688b6950fce2b15a5ea2df28833b0e9550d9486f45ac99",
+     "system_sha256": "fd9a8be54c94ed707c0b33221d75dd0e5cfea05070c681fc31e30145ca999d63",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.0786888,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "41fbd269-b02f-4cb3-9938-4ba0a11704e5"
+    }
+   ]
+  },
+  "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior."
+ },
+ "pauta": {
+  "versao": 1,
+  "candidatos": [
+   {
+    "id": "E1",
+    "ordem": 1,
+    "evento": "ev-20261107-01",
+    "titulo": "Bradesco, XP e Genoa pioram as previsões e veem PIB parado ou em queda em 2027",
+    "estagio": "previsao",
+    "tamanho": 2,
+    "fator": "atividade",
+    "origem": "dados",
+    "assunto": "Ritmo da economia",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Bancos e gestoras passam a esperar preços subindo mais rápido e economia quase parada em 2027, e a Genoa fala em recessão, o que leva empresas e famílias a adiar compras e investimentos.",
+    "n_manchetes": 2,
+    "jornais": [
+     "Folha",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "Bradesco e XP pioram significativamente projeções para inflação e atividade econômica em 2027",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/bradesco-e-xp-pioram-significativamente-projecoes-para-inflacao-e-atividade-economica-em-2027.shtml",
+      "publicado_em": "2026-11-06T18:35-03:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Recessão, inflação a 6% e risco monetário mais grave que o fiscal: os alertas da Genoa para 2027",
+      "url": "https://valor.globo.com/financas/intraday/post/2026/11/recessao-inflacao-a-6percent-e-risco-monetario-mais-grave-que-o-fiscal-os-alertas-da-genoa-para-2027.ghtml",
+      "publicado_em": "2026-11-06T17:43+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E2",
+    "ordem": 2,
+    "evento": "ev-20261107-02",
+    "titulo": "Brasil vende US$ 9,3 bi a mais do que compra em outubro, recorde para o mês",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "dados",
+    "assunto": "Economia lá fora",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "As exportações subiram 20% em outubro, puxadas por petróleo e minério, e a entrada de dólares ajuda a segurar a moeda americana e a sustentar a produção.",
+    "n_manchetes": 7,
+    "jornais": [
+     "Agência Brasil",
+     "Estadão",
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Estadão",
+      "titulo": "Balança comercial: Brasil registra superávit de US$ 9,3 bilhões em outubro",
+      "url": "https://www.estadao.com.br/economia/balanca-comercial-brasil-registra-superavit-de-us-93-bilhoes-em-outubro/",
+      "publicado_em": "2026-11-06T20:00+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Brasil tem superávit comercial de US$ 9,3 bi em outubro com alta das exportações",
+      "url": "https://www.infomoney.com.br/economia/brasil-tem-superavit-comercial-de-us-93-bi-em-outubro-com-alta-das-exportacoes/",
+      "publicado_em": "2026-11-06T18:50+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Superavit comercial cresce 39,4% e chega a US$ 9,3 bilhões",
+      "url": "https://www.poder360.com.br/poder-economia/superavit-comercial-cresce-394-e-chega-a-us-93-bilhoes/",
+      "publicado_em": "2026-11-06T18:26+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Balança comercial tem superávit de US$ 9,3 bilhões em outubro, alta de 39,4%",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/06/balanca-comercial-tem-superavit-de-us-93-bilhoes-em-outubro-alta-de-394percent.ghtml",
+      "publicado_em": "2026-11-06T18:26+00:00"
+     },
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Balança comercial tem maior superávit para outubro desde 1989",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/balanca-comercial-tem-maior-superavit-para-outubro-desde-1989",
+      "publicado_em": "2026-11-06T16:43-03:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Brasil tem superávit comercial de US$ 9,3 bilhões em outubro",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/brasil-tem-superavit-comercial-de-us-93-bilhoes-em-outubro.shtml",
+      "publicado_em": "2026-11-06T15:51-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E3",
+    "ordem": 3,
+    "evento": "ev-20261107-03",
+    "titulo": "EUA criam 165 mil vagas em outubro e cresce a aposta de alta de juros por lá",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Com o emprego forte nos EUA, o mercado vê 80% de chance de o banco central de lá subir os juros, o que tira dinheiro de países como o Brasil e pressiona o dólar aqui.",
+    "n_manchetes": 4,
+    "jornais": [
+     "Folha",
+     "InfoMoney",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "EUA criam 165 mil vagas em outubro, acima das projeções",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/eua-criam-165-mil-vagas-em-outubro-acima-das-projecoes.shtml",
+      "publicado_em": "2026-11-06T11:24-03:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Payroll: operadores aumentam apostas em alta de juros pelo Fed após dado",
+      "url": "https://www.infomoney.com.br/mercados/payroll-operadores-aumentam-apostas-em-alta-de-juros-pelo-fed-apos-dado/",
+      "publicado_em": "2026-11-06T15:28+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Novas altas de juros pelo Fed devem ser necessárias para reduzir inflação, diz Mary Daly",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/06/novas-altas-de-juros-pelo-fed-devem-ser-necessarias-para-reduzir-inflacao-diz-mary-daly.ghtml",
+      "publicado_em": "2026-11-06T19:42+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Por que o Ibovespa sobe mais de 1% mesmo com dados fortes do payroll nos EUA?",
+      "url": "https://www.infomoney.com.br/mercados/por-que-o-ibovespa-sobe-mais-de-1-mesmo-com-dados-fortes-do-payroll-nos-eua/",
+      "publicado_em": "2026-11-06T15:39+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E4",
+    "ordem": 4,
+    "evento": null,
+    "titulo": "Ações de tecnologia caem na Ásia, e Bolsa de Tóquio tem a maior queda desde abril de 2025",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "A queda das empresas de inteligência artificial lá fora deixa os investidores mais medrosos, e eles tiram dinheiro de bolsas de países emergentes como o Brasil.",
+    "n_manchetes": 6,
+    "jornais": [
+     "Folha",
+     "g1"
+    ],
+    "descartado": "mesmo fato do evento ev-20261106-02",
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "Ações dos EUA ensaiam recuperação tímida após derrocada de US$ 3,2 tri por temores com a IA",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/11/acoes-dos-eua-ensaiam-recuperacao-timida-apos-derrocada-de-us-32-tri-por-temores-com-a-ia.shtml",
+      "publicado_em": "2026-11-06T19:50-03:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Ações de gigantes da tecnologia derretem com dúvidas sobre o futuro da IA após eleições nos EUA; entenda",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/06/acoes-ia-globais.ghtml",
+      "publicado_em": "2026-11-06T12:43+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Wall Street perde trilhões em um dia: entenda o que derrubou as ações de IA",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/06/wall-street-acoes-inteligencia-artificial.ghtml",
+      "publicado_em": "2026-11-06T12:04+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Big techs perdem mais que uma B3 inteira em um único dia",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/colunas/painelsa/2026/11/big-techs-perdem-mais-que-uma-b3-inteira-em-um-unico-dia.shtml",
+      "publicado_em": "2026-11-06T11:26-03:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Ações ligadas à IA despencam na Ásia; Bolsa de Tóquio tem maior queda desde 'Dia da Libertação'",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://aovivo.folha.uol.com.br/mercado/2026/10/25/6568-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post468040",
+      "publicado_em": "2026-11-06T07:57-03:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Taiwan cobra medidas de regulador para estabilizar Bolsa em dia de forte queda",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://aovivo.folha.uol.com.br/mercado/2026/10/25/6568-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post468041",
+      "publicado_em": "2026-11-06T08:24-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E5",
+    "ordem": 5,
+    "evento": "ev-20261107-04",
+    "titulo": "Bolsa sobe 1,39%, juros futuros recuam e dólar fecha a R$ 5,508",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "mercado",
+    "origem": "dados",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "O juro que o governo paga para pegar dinheiro emprestado caiu com os sinais sobre as contas, o que alivia o custo do crédito, mas o dólar subiu 1,54% na semana.",
+    "n_manchetes": 8,
+    "jornais": [
+     "Agência Brasil",
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "Valor",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Bolsa sobe 1,39%; em alta, dólar fecha a R$ 5,508",
+      "url": "https://www.poder360.com.br/poder-economia/bolsa-sobe-139-em-alta-dolar-fecha-a-r-5508/",
+      "publicado_em": "2026-11-06T22:48+00:00"
+     },
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Dólar sobe para R$ 5,51, com dados de emprego nos EUA",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-sobe-para-r-551-com-dados-de-emprego-nos-eua",
+      "publicado_em": "2026-11-06T19:10-03:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Taxas dos DIs fecham em queda com política econômica no radar",
+      "url": "https://www.infomoney.com.br/mercados/taxas-dos-dis-fecham-em-queda-com-politica-economica-no-radar/",
+      "publicado_em": "2026-11-06T21:02+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Juros futuros têm leve queda de olho em sinais fiscais do governo e à espera de ‘payroll’",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/06/juros-futuros-tem-leve-queda-de-olho-em-sinais-fiscais-do-governo-e-a-espera-de-payroll.ghtml",
+      "publicado_em": "2026-11-06T12:29+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E6",
+    "ordem": 6,
+    "evento": null,
+    "titulo": "Presidente diz que o Brasil tem seriedade fiscal e que pobre não pagará o ajuste",
+    "estagio": "anuncio",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "O presidente repete o compromisso com as contas e dá os primeiros sinais de ajuste, mas sem medidas, e diz que investimento pode justificar mais dívida.",
+    "n_manchetes": 7,
+    "jornais": [
+     "Estadão",
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "Valor",
+     "g1"
+    ],
+    "descartado": "mesmo fato do evento ev-20261106-04",
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Lula diz que Brasil tem seriedade fiscal e que pobre não vai pagar a conta do ajuste",
+      "url": "https://www.infomoney.com.br/politica/lula-diz-que-brasil-tem-seriedade-fiscal-e-que-pobre-nao-vai-pagar-a-conta-do-ajuste/",
+      "publicado_em": "2026-11-06T17:15+00:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Lula rebate críticas sobre falta de responsabilidade fiscal e diz que pobres não pagarão conta",
+      "url": "https://www.estadao.com.br/economia/lula-rebate-criticas-responsabilidade-fiscal-pobres-nao-pagarao-conta/",
+      "publicado_em": "2026-11-06T17:07+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Lula rebate e diz que pobre não pagará “sacrifício” de ajuste fiscal",
+      "url": "https://www.poder360.com.br/poder-governo/lula-rebate-e-diz-que-pobre-nao-pagara-sacrificio-de-ajuste-fiscal/",
+      "publicado_em": "2026-11-06T16:46+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Pressionado a cortar gastos, Lula diz que Brasil tem 'seriedade fiscal' e que 'pobre não pagará a conta'",
+      "url": "https://g1.globo.com/politica/noticia/2026/11/06/pressionado-a-cortar-gastos-lula-diz-que-brasil-tem-responsabilidade-e-seriedade-fiscal-e-que-pobre-nao-vai-pagar-a-conta.ghtml",
+      "publicado_em": "2026-11-06T16:05+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Lula volta a defender responsabilidade nas contas e diz que será 'fiscal' de entregas do governo",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/lula-volta-a-defender-responsabilidade-nas-contas-e-diz-que-sera-fiscal-de-entregas-do-governo.shtml",
+      "publicado_em": "2026-11-06T14:43-03:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Lula faz primeiros acenos concretos na direção de ajuste fiscal e alinha discurso com propostas de Durigan",
+      "url": "https://g1.globo.com/politica/blog/valdo-cruz/post/2026/11/06/lula-faz-primeiros-acenos-concretos-na-direcao-de-ajuste-fiscal-e-alinha-discurso-com-propostas-de-durigan.ghtml",
+      "publicado_em": "2026-11-06T13:19+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E7",
+    "ordem": 7,
+    "evento": "ev-20261107-05",
+    "titulo": "Governo prorroga até 31 de dezembro o imposto de 12% sobre petróleo exportado",
+    "estagio": "decidido",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "alivia",
+    "ja_esperado": true,
+    "porque": "A cobrança, que venceria em 7 de novembro, segue trazendo dinheiro para o governo enquanto o petróleo está caro por causa do conflito no Oriente Médio.",
+    "n_manchetes": 5,
+    "jornais": [
+     "Estadão",
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Gecex prorroga imposto de 12% sobre exportação de petróleo",
+      "url": "https://www.poder360.com.br/poder-economia/gecex-prorroga-imposto-de-12-sobre-exportacao-de-petroleo/",
+      "publicado_em": "2026-11-06T13:50+00:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Governo prorroga imposto sobre exportação de petróleo até 31 de dezembro",
+      "url": "https://www.estadao.com.br/economia/governo-prorroga-imposto-exportacao-petroleo-31-dezembro/",
+      "publicado_em": "2026-11-06T12:50+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Camex prorroga imposto de importação de petróleo até 31 de dezembro",
+      "url": "https://www.infomoney.com.br/mercados/camex-prorroga-imposto-de-importacao-de-petroleo-ate-31-de-dezembro/",
+      "publicado_em": "2026-11-06T12:38+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Governo prorroga até 31 de dezembro cobrança de imposto de 12% sobre exportação de petróleo",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/06/governo-prorroga-ate-31-de-dezembro-cobranca-de-imposto-de-12percent-sobre-exportacao-de-petroleo.ghtml",
+      "publicado_em": "2026-11-06T12:00+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Governo Lula prorroga até dezembro imposto de 12% sobre exportação de petróleo",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/governo-lula-prorroga-ate-dezembro-imposto-de-12-sobre-exportacao-de-petroleo.shtml",
+      "publicado_em": "2026-11-06T09:36-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E8",
+    "ordem": 8,
+    "evento": "ev-20261107-06",
+    "titulo": "Senado libera estados e municípios a renegociar dívidas no fim do mandato",
+    "estagio": "em_votacao",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Governadores e prefeitos poderiam trocar dívidas nos últimos 120 dias de mandato, o que abre espaço para empurrar a conta para o próximo gestor e afrouxa as contas dos estados.",
+    "n_manchetes": 1,
+    "jornais": [
+     "Poder360"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Senado libera Estados e municípios a renegociar dívidas no fim do mandato",
+      "url": "https://www.poder360.com.br/poder-congresso/senado-libera-estados-e-municipios-a-renegociar-dividas-no-fim-do-mandato/",
+      "publicado_em": "2026-11-06T13:26+00:00"
+     }
+    ]
+   }
+  ],
+  "datas": [],
+  "pressoes_mudaram": [],
+  "estado": "subindo",
+  "estado_anterior": "subindo",
+  "degrau": 5,
+  "motivo": "a notícia de estágio mais firme e maior tamanho; no empate, a que não é o vaivém do mercado do dia e a que saiu em mais jornais",
+  "padrao": "E2",
+  "final": "E2",
+  "mesma_historia": [],
+  "cuidados": [
+   "O recorde vale para meses de outubro, e não para todos os meses. Segundo a pauta, é o maior saldo para outubro desde 1989. Não é o maior saldo já registrado.",
+   "A alta de 39,4% compara o saldo de outubro de 2026 com o de outubro de 2025. A alta de 87% nas vendas aos EUA também é do mês, e no ano o comércio com os EUA recua. Não misture o mês com o ano.",
+   "O saldo veio puxado por petróleo e minério com preços altos. O petróleo caiu 13% na semana, então não apresente o saldo como algo que vai durar."
+  ],
+  "editora": {
+   "ok": true,
+   "saida": {
+    "segue_padrao": true,
+    "escolha": "E2",
+    "motivo_desvio": null,
+    "por_que": "A direção do risco não mudou. Nenhuma pressão mudou de lado, e não houve data marcada nem choque grande. Pelo degrau 5, os fatos consumados de tamanho 1 empatam. O fechamento do mercado (E5) fica atrás, e entre os outros a balança comercial saiu em mais jornais. Ela é um dado divulgado, recorde para outubro, e a entrada de dólares mexe no dólar.",
+    "concorrente": "E7",
+    "por_que_perdeu": "A prorrogação do imposto sobre o petróleo exportado é uma decisão tomada e mexe nas Contas do governo. Mas tem o mesmo tamanho, saiu em menos jornais e só mantém uma cobrança que já existia e que o mercado esperava. Não traz informação nova que justifique a troca.",
+    "mesma_historia": [],
+    "cuidados": [
+     "O recorde vale para meses de outubro, e não para todos os meses. Segundo a pauta, é o maior saldo para outubro desde 1989. Não é o maior saldo já registrado.",
+     "A alta de 39,4% compara o saldo de outubro de 2026 com o de outubro de 2025. A alta de 87% nas vendas aos EUA também é do mês, e no ano o comércio com os EUA recua. Não misture o mês com o ano.",
+     "O saldo veio puxado por petróleo e minério com preços altos. O petróleo caiu 13% na semana, então não apresente o saldo como algo que vai durar."
+    ],
+    "testes": {
+     "troca": "Sim. Um saldo recorde da balança é um dado oficial, e qualquer governo o teria como fato do dia num dia sem notícia maior.",
+     "fato": "Aconteceu. É um dado divulgado pelo governo sobre exportações e importações de outubro.",
+     "consequencia": "Mexe no dólar. A entrada de dólares ajuda a segurar a moeda americana, o que pesa na Desconfiança de quem investe e no preço dos importados.",
+     "novidade": "A leitora não sabia que o Brasil vendeu US$ 9,3 bilhões a mais do que comprou em outubro, com exportações 20% maiores. O dado não repete nenhum fato do dia anterior do site.",
+     "mais_dada": "O fechamento do mercado (E5) saiu em 6 jornais e 8 manchetes. Ficou de fora porque é o vaivém do mercado do dia, e o topo do site já mostra o dólar e o juro. A fala do presidente sobre as contas foi descartada e é só um anúncio."
+    }
+   },
+   "meta": [
+    {
+     "modelo_pedido": "opus",
+     "prompt_sha256": "8b3a040729153be73da8d7fcbce7649b382353be20b9037c398d6108eba43e8f",
+     "system_sha256": "fd8e8c93597c03044e3f4cd47585116ebc601be9f1d516a42bd4991e2173473b",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.136874,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "96da3fbd-e505-4170-8e18-262e021a7281"
+    }
+   ],
+   "conferencia": "seguiu a escolha padrão"
+  }
  }
 }
