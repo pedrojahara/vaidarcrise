@@ -111,11 +111,14 @@ def valor_em(serie: str, quando: str, mensal: dict, diario: dict) -> float | Non
 
 def normalizar(t: str) -> str:
     t = html.unescape(t)
-    t = unicodedata.normalize("NFKC", t).replace("­", "")
+    t = unicodedata.normalize("NFKC", t).replace("\u00ad", "")
+    t = re.sub("[\u200b\u200c\u200d\u2060\ufeff]", "", t)  # caracteres invisíveis no meio do texto
+    t = re.sub(r"\\[nrt]", " ", t)  # quebra de linha escrita como texto, como na API do Banco Central
     t = re.sub(r"[‘’´`]", "'", t)
     t = re.sub(r"[“”«»]", '"', t)
     t = re.sub(r"[‐-―−]", "-", t)
     t = re.sub(r"-\s*\n\s*", "", t)  # palavra quebrada no fim da linha do PDF
+    t = re.sub(r"\s+([.,;:!?)])", r"\1", t)  # espaço antes do ponto ("R$ 5,508 .")
     return re.sub(r"\s+", " ", t).strip().lower()
 
 
@@ -134,15 +137,44 @@ def texto_da_pagina(conteudo: bytes, tipo: str) -> str:
                     return subprocess.run(["pdftotext", "-layout", f.name, "-"], capture_output=True, text=True, timeout=120).stdout
                 except Exception:  # noqa: BLE001
                     return ""
-    t = conteudo.decode("utf-8", errors="replace")
+    t = _decodificar(conteudo, tipo)
+    if "json" in tipo or t.lstrip()[:1] in ("{", "["):
+        try:  # API que devolve a página dentro de um JSON (Banco Central): junta os textos
+            t = " ".join(_textos_json(json.loads(t)))
+        except ValueError:
+            pass
     t = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", t)
     return re.sub(r"(?s)<[^>]+>", " ", t)
+
+
+def _decodificar(conteudo: bytes, tipo: str) -> str:
+    """Lê a página na codificação que ela diz ter (cabeçalho ou <meta>); sem isso, UTF-8 e, se falhar, windows-1252,
+    a do site do Planalto."""
+    m = re.search(r"charset=[\"']?([\w-]+)", tipo or "", re.I) or re.search(rb"charset=[\"']?([\w-]+)", conteudo[:4096], re.I)
+    nomes = [m.group(1).decode() if isinstance(m.group(1), bytes) else m.group(1)] if m else []
+    for nome in [*nomes, "utf-8", "cp1252"]:
+        try:
+            return conteudo.decode(nome)
+        except (LookupError, UnicodeDecodeError):
+            continue
+    return conteudo.decode("utf-8", errors="replace")
+
+
+def _textos_json(x) -> list[str]:
+    if isinstance(x, str):
+        return [x]
+    if isinstance(x, dict):
+        return [t for v in x.values() for t in _textos_json(v)]
+    if isinstance(x, list):
+        return [t for v in x for t in _textos_json(v)]
+    return []
 
 
 def abrir(url: str) -> tuple[str | None, str | None]:
     """(texto, erro). Guarda a página em base/cache para não abrir de novo."""
     CACHE.mkdir(parents=True, exist_ok=True)
-    arq = CACHE / (hashlib.sha256(url.encode()).hexdigest()[:24] + ".txt")
+    # ".v2": a cópia guardada antes de 7/11/2026 lia mal acentos (windows-1252) e páginas em JSON; abre de novo
+    arq = CACHE / (hashlib.sha256(url.encode()).hexdigest()[:24] + ".v2.txt")
     if arq.exists():
         return arq.read_text(), None
     try:
@@ -193,7 +225,12 @@ def conferir_trecho(a: dict, offline: bool) -> dict:
 
 def textos_da_pergunta(p: dict) -> list[tuple[str, str, list[str]]]:
     """(onde, texto, afirmações citadas) de cada texto que a leitora lê."""
-    out = [("resposta_curta", p["resposta_curta"]["texto"], p["resposta_curta"]["afirmacoes"])]
+    out = []
+    if p.get("resposta_curta"):
+        out.append(("resposta_curta", p["resposta_curta"]["texto"], p["resposta_curta"]["afirmacoes"]))
+    for parte in ("governo", "agora"):
+        if p.get(parte):
+            out.append((parte, (p[parte].get("pergunta", "") + " " + p[parte]["texto"]).strip(), p[parte]["afirmacoes"]))
     for d in p["escada"]:
         nome = d.get("id") or d["degrau"]
         if d.get("texto"):
@@ -207,6 +244,10 @@ def textos_da_pergunta(p: dict) -> list[tuple[str, str, list[str]]]:
         for lt in d.get("leituras", []):
             base = f"{nome}/{lt['id']}"
             out.append((f"{base}/o_que_diz", lt["o_que_diz"], lt.get("o_que_diz_afirmacoes", [])))
+            if lt.get("resumo"):
+                out.append((f"{base}/o_que_diz_resumo", lt["resumo"], lt.get("o_que_diz_afirmacoes", [])))
+            if lt.get("titulo"):
+                out.append((f"{base}/o_que_diz_titulo", lt["titulo"], []))
             for i, x in enumerate(lt.get("a_favor", []) + lt.get("estudos", [])):
                 out.append((f"{base}/a_favor{i}", x["texto"], x["afirmacoes"]))
             for parte in ("melhor_objecao", "resposta"):
@@ -226,7 +267,7 @@ def _texto_ok(onde: str, texto: str, ids: list[str], A: dict, pe: list[str], pa:
         fora = [n for n in revisa_texto.numeros_fora([texto], fontes) if not re.fullmatch(r"(19|20)\d\d", n)]
         if fora:
             pe.append(f"{onde}: número sem afirmação que o sustente ({', '.join(fora)})")
-    elif re.search(r"\d", revisa_texto._sem_datas(texto)) and not onde.endswith("o_que_diz"):
+    elif re.search(r"\d", revisa_texto._sem_datas(texto)) and not onde.rsplit("/", 1)[-1].startswith("o_que_diz"):
         pa.append(f"{onde}: texto com número e sem afirmação citada")
     for f in revisa_texto.FRASE.split(texto):
         if len(f.split()) > 30:
@@ -245,15 +286,23 @@ def checar_posts(posts: list[dict], perguntas: dict, A: dict) -> tuple[list[str]
     pe: list[str] = []
     pa: list[str] = []
     citadas: set[str] = set()
+    nomes = json.loads((ROOT / "config" / "modelo.json").read_text())["direcao"]["nomes"]
     for x in posts:
         dia = x["dia"]
         p = perguntas.get(x.get("pergunta"))
-        if not p:
+        termina = x.get("termina_em") or (p or {}).get("pressao")
+        # 7: cada fato do dia leva à pressão onde a corrente termina; a pergunta, se houver, é a dessa pressão.
+        if x.get("pergunta") and not p:
             pe.append(f"{dia}: aponta para pergunta que não existe ({x.get('pergunta')})")
             continue
-        alvos = {"teste"} | {d["degrau"] for d in p["escada"]} | {d["id"] for d in p["escada"] if d.get("id")}
-        divisoes = {d["id"] for d in p["escada"] if d.get("leituras")}
-        testes = {t["id"] for t in p.get("testes", [])}
+        if termina not in nomes:
+            pe.append(f"{dia}: não diz em que pressão a corrente termina (termina_em: {termina})")
+        if p and x.get("termina_em") and p.get("pressao") != x["termina_em"]:
+            pe.append(f"{dia}: a pergunta {p['id']} é da pressão {p.get('pressao')}, e a corrente termina em {x['termina_em']}")
+        alvos = ({"teste", "agora", "governo"} | {d["degrau"] for d in p["escada"]} | {d["id"] for d in p["escada"] if d.get("id")}) if p else {"teste"}
+        divisoes = {d["id"] for q in perguntas.values() for d in q["escada"] if d.get("leituras")}
+        # O teste fica na pergunta da pressão dele, que pode ser outra (ou um rascunho).
+        testes = {t["id"] for q in perguntas.values() for t in q.get("testes", [])}
         ids_par = x.get("paragrafos_afirmacoes") or []
         if len(ids_par) != len(x["paragrafos"]):
             pe.append(f"{dia}: paragrafos_afirmacoes não tem uma lista por parágrafo")
@@ -275,7 +324,10 @@ def checar_posts(posts: list[dict], perguntas: dict, A: dict) -> tuple[list[str]
             pe.append(f"{dia}: fato do dia com {len(x['paragrafos'])} parágrafos (até 3)")
         for k, d in enumerate(x["escada"]):
             onde = f"{dia}/degrau{k + 1}"
-            if d["rotulo"] not in ROTULOS | {"fato"}:
+            # Só o último degrau, o do bolso ("E o que isso muda para você?"), pode ficar sem rótulo.
+            if d.get("rotulo") is None and k != len(x["escada"]) - 1:
+                pe.append(f"{onde}: degrau sem rótulo antes do último")
+            elif d.get("rotulo") is not None and d["rotulo"] not in ROTULOS | {"fato"}:
                 pe.append(f"{onde}: rótulo desconhecido {d['rotulo']}")
             if d.get("liga") and d["liga"] not in alvos:
                 pe.append(f"{onde}: liga a degrau que não existe ({d['liga']})")
@@ -283,7 +335,7 @@ def checar_posts(posts: list[dict], perguntas: dict, A: dict) -> tuple[list[str]
                 pe.append(f"{onde}: leituras de divisão que não existe ({d['leituras']})")
             if d.get("teste") and d["teste"] not in testes:
                 pe.append(f"{onde}: teste que não existe ({d['teste']})")
-            if d["rotulo"] == "consenso":
+            if d.get("rotulo") == "consenso":
                 niveis = [A[i]["fonte"]["nivel"] for i in d["afirmacoes"] if i in A]
                 if niveis and min(niveis) >= 5:
                     pa.append(f"{onde}: consenso apoiado só em notícia ou banco (nível {min(niveis)} ou pior)")
@@ -327,10 +379,22 @@ def checar(base: dict, offline: bool) -> dict:
         afirm[a["id"]] = r
 
     perguntas = []
+    nomes = json.loads((ROOT / "config" / "modelo.json").read_text())["direcao"]["nomes"]
+    pressoes: dict[str, str] = {}
     for p in base["perguntas"]:
         pe: list[str] = []
         pa: list[str] = []
         citadas: set[str] = set()
+        publicada = p.get("publicada", True)
+        # 7: uma página por pressão do topo
+        if p.get("pressao") not in nomes:
+            pe.append(f"pressão desconhecida ({p.get('pressao')}); use uma chave de direcao.nomes")
+        elif publicada:
+            if p["pressao"] in pressoes:
+                pe.append(f"a pressão {p['pressao']} já tem página ({pressoes[p['pressao']]})")
+            pressoes[p["pressao"]] = p["id"]
+        if publicada and not p.get("resposta_curta"):
+            pe.append("página publicada sem resposta curta")
         # 1 e 3: ligações e números
         for onde, texto, ids in textos_da_pergunta(p):
             citadas |= set(ids)
@@ -382,9 +446,9 @@ def checar(base: dict, offline: bool) -> dict:
         eps = [E[e] for e in p.get("episodios", []) if e in E]
         governos = {g for e in eps for g in e.get("governo", [])}
         causas = {e.get("causa") for e in eps}
-        if len(governos) < 3:
+        if publicada and len(governos) < 3:
             pa.append(f"episódios de só {len(governos)} governos: o teste da troca pede mais")
-        if not {"daqui", "de fora"} <= causas:
+        if publicada and not {"daqui", "de fora"} <= causas:
             pa.append("episódios sem caso daqui e caso de fora")
         for e in eps:
             fontes = " ".join(A[i]["texto"] for i in e["afirmacoes"] if i in A)

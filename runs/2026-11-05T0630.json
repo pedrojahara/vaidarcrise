@@ -2440,14 +2440,14 @@
   "paragrafos": [
    "O Banco Central parou de cortar o juro e manteve a Selic em 13,75%, como desde setembro. Assim, os bancos seguem cobrando caro de pessoas e empresas.",
    "Ao contrário do que muita gente acha, juro alto faz os preços subirem mais devagar, porque comprar a prazo fica caro e as lojas vendem menos. Mesmo assim, o Banco Central subiu para 5,6% a previsão do IPCA de 2026.",
-   "O freio já chega ao emprego: em setembro, as empresas criaram 121,3 mil vagas com carteira, o pior setembro da série e 43% menos que um ano antes. Isso tira renda das famílias."
+   "O juro alto já chega ao emprego e à renda: em setembro, as empresas criaram 121,3 mil vagas com carteira, o pior setembro desde 2020, quando a série começou."
   ],
   "secoes": [
    {
     "paragrafos": [
      "O Banco Central parou de cortar o juro e manteve a Selic em 13,75%, como desde setembro. Assim, os bancos seguem cobrando caro de pessoas e empresas.",
      "Ao contrário do que muita gente acha, juro alto faz os preços subirem mais devagar, porque comprar a prazo fica caro e as lojas vendem menos. Mesmo assim, o Banco Central subiu para 5,6% a previsão do IPCA de 2026.",
-     "O freio já chega ao emprego: em setembro, as empresas criaram 121,3 mil vagas com carteira, o pior setembro da série e 43% menos que um ano antes. Isso tira renda das famílias."
+     "O juro alto já chega ao emprego e à renda: em setembro, as empresas criaram 121,3 mil vagas com carteira, o pior setembro desde 2020, quando a série começou."
     ]
    }
   ],
@@ -2548,36 +2548,34 @@
   "pergunta": "juro-alto",
   "escada": [
    {
-    "pergunta": "Por que juro alto tira vagas?",
-    "rotulo": "consenso",
-    "texto": "Quando a Selic sobe, os bancos cobram mais das pessoas pelo cartão, pelo empréstimo e pelo financiamento. Por isso quem compra a prazo compra menos, e as lojas, que passam a vender menos, contratam menos.",
-    "afirmacoes": [
-     "a-bc-selic",
-     "a-freio"
-    ],
-    "link": {
-     "texto": "O freio do juro, desenhado, na aba O que causa recessão",
-     "url": "/causas/#t-freio"
-    }
-   },
-   {
-    "pergunta": "Por que o Banco Central parou de cortar?",
-    "rotulo": "consenso",
-    "texto": "Porque a inflação esperada voltou a subir. No fim de julho, os bancos (Focus) esperavam que os preços subissem 4,2% em 12 meses, e no fim de outubro passaram a esperar 5,0%. Isso fica acima do teto da meta de inflação, de 4,5%.",
+    "pergunta": "O que mudou desde os cortes?",
+    "rotulo": "fato",
+    "liga": "agora",
+    "texto": "A inflação esperada voltou a subir. No fim de julho, os bancos (Focus) esperavam que os preços subissem 4,2% em 12 meses. No fim de outubro, passaram a esperar 5,0%, acima do teto da meta, de 4,5%.",
     "afirmacoes": [
      "a-focus-jul-out",
-     "a-meta",
-     "a-copom-nov"
-    ],
-    "liga": "causa_imediata"
+     "a-meta"
+    ]
    },
    {
-    "pergunta": "O desemprego já subiu?",
-    "rotulo": "fato",
-    "texto": "Ainda não. O desemprego ficou em 5,2% no trimestre até setembro, abaixo dos 5,4% do trimestre até junho, porque as empresas seguem contratando mais do que demitem, só que menos que antes.",
+    "pergunta": "Por que a Selic do Brasil fica tão acima da de outros países?",
+    "rotulo": "em_disputa",
+    "liga": "d-nivel",
+    "texto": "A desconfiança de quem empresta ao governo explica os anos em que o juro disparou, como 2002. Para o resto do tempo, a poupança baixa e o crédito com juro do governo explicam só uma parte.",
     "afirmacoes": [
-     "a-desemprego",
-     "a-caged"
+     "a-blanchard",
+     "a-lopes",
+     "a-fmi-poupanca",
+     "a-bonomo-martins"
+    ]
+   },
+   {
+    "pergunta": "E o que isso muda para você?",
+    "texto": "Com a Selic parada em 13,75%, o juro do cartão, do empréstimo e do financiamento tende a parar de cair. O Banco Central decide de novo em 9/12, e a decisão vai mostrar se a pausa continua.",
+    "afirmacoes": [
+     "a-selic-hoje",
+     "a-bc-selic",
+     "a-datas"
     ]
    }
   ],
@@ -2664,7 +2662,22 @@
     }
    ]
   },
-  "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior."
+  "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior. 2026-11-07, depois da conferência das fontes no Mac: os 43% a menos que em setembro de 2025 saíram, porque as notícias dão bases diferentes para setembro de 2025 (43% numa, cerca de 50% noutra), e a série do Novo Caged começa em 2020.",
+  "termina_em": "juro",
+  "paragrafos_afirmacoes": [
+   [
+    "a-copom-nov",
+    "a-selic-hoje"
+   ],
+   [
+    "a-freio",
+    "a-copom-nov",
+    "a-copom-set"
+   ],
+   [
+    "a-caged"
+   ]
+  ]
  },
  "pauta": {
   "versao": 1,

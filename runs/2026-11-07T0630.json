@@ -2548,14 +2548,14 @@
   "paragrafos": [
    "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou de outros países em outubro, o maior saldo para outubro desde 1989. O saldo cresceu 39% se compararmos com outubro de 2025.",
    "As exportações subiram 20%, puxadas pelo petróleo e pelo minério a preços altos. Essa entrada de dólares ajuda a segurar a moeda americana, que ficou 7,8% mais cara que no começo de agosto e encarece importados como peças e combustível.",
-   "Esses preços são decididos lá fora, e o petróleo ficou 13% mais barato na semana, por isso o saldo de outubro pode não se repetir."
+   "Esses preços são decididos lá fora, e o petróleo caiu quase 8% num só dia de novembro, por isso o saldo de outubro pode não se repetir."
   ],
   "secoes": [
    {
     "paragrafos": [
      "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou de outros países em outubro, o maior saldo para outubro desde 1989. O saldo cresceu 39% se compararmos com outubro de 2025.",
      "As exportações subiram 20%, puxadas pelo petróleo e pelo minério a preços altos. Essa entrada de dólares ajuda a segurar a moeda americana, que ficou 7,8% mais cara que no começo de agosto e encarece importados como peças e combustível.",
-     "Esses preços são decididos lá fora, e o petróleo ficou 13% mais barato na semana, por isso o saldo de outubro pode não se repetir."
+     "Esses preços são decididos lá fora, e o petróleo caiu quase 8% num só dia de novembro, por isso o saldo de outubro pode não se repetir."
     ]
    }
   ],
@@ -2648,49 +2648,28 @@
    "trocado_em": "2026-11-07",
    "motivo": "Fase 0 da base de conhecimento: o fato do dia ganhou a escada de porquês, a pedido do Pedro em 7/11/2026."
   },
-  "pergunta": "juro-alto",
   "escada": [
    {
-    "pergunta": "Por que as previsões pioraram?",
-    "rotulo": "consenso",
-    "texto": "Porque o juro está cerca de 8,4% acima da inflação que os bancos esperam, o que deixa caro para as famílias comprar a prazo e para as empresas investir. A indústria produz 4,1% menos que em maio, e as empresas tiveram o pior setembro de vagas com carteira já registrado, dois sinais de que a economia perdeu força.",
-    "afirmacoes": [
-     "a-juro-real-hoje",
-     "a-freio",
-     "a-industria",
-     "a-caged"
-    ],
-    "liga": "o_que_vem_depois"
-   },
-   {
-    "pergunta": "O que mais pesou de 2014 a 2016?",
-    "rotulo": "consenso",
-    "texto": "A Selic começou a subir em 2013, quando o desemprego estava em 6,2%, o menor até então, e chegou a 14,25%. As contas do governo também pioraram, e o PIB encolheu de 2014 a 2016.",
-    "afirmacoes": [
-     "a-caso-2014",
-     "a-caso-2014-emprego"
-    ]
-   },
-   {
-    "pergunta": "E o que foi diferente em 2021 e 2022?",
-    "rotulo": "consenso",
-    "texto": "A Selic subiu de 2% para 13,75%, mas havia gente parada para voltar ao trabalho depois da pandemia, e o governo arrecadou mais do que gastou, sem contar os juros. A economia cresceu nos dois anos.",
-    "afirmacoes": [
-     "a-caso-2021",
-     "a-caso-2021-contas"
-    ],
+    "pergunta": "Por que o preço do que o Brasil vende lá fora importa tanto?",
+    "rotulo": "fato",
     "link": {
      "texto": "Os dois casos lado a lado, na aba O que causa recessão",
      "url": "/causas/#t-casos"
-    }
+    },
+    "texto": "Esses preços andaram junto com a economia em dois momentos recentes. De 2014 a 2016, a soja, o minério e o petróleo ficaram mais baratos, as contas do governo pioraram e o PIB encolheu. Em 2021 e 2022, o mundo pagava caro pelo que o Brasil vende, e a economia cresceu mesmo com a Selic subindo.",
+    "afirmacoes": [
+     "a-caso-2014",
+     "a-caso-2021"
+    ]
    },
    {
-    "pergunta": "O que vem agora?",
-    "rotulo": "fato",
-    "texto": "O IBGE divulga o PIB do terceiro trimestre em 2/12, e o número vai mostrar se a queda da prévia feita pelo Banco Central se confirma. Em 9/12, o Banco Central decide se mantém a Selic em 13,75% ou se muda o juro.",
+    "pergunta": "E o que isso muda para você?",
+    "texto": "Se o dólar subir menos, o diesel, a gasolina e outros importados encarecem menos, e a inflação fica mais perto da meta, de 3% ao ano. É essa conta que o Banco Central olha para decidir a Selic em 9/12.",
     "afirmacoes": [
-     "a-datas",
-     "a-selic-hoje"
+     "a-importa-combustivel",
+     "a-meta",
+     "a-bc-selic",
+     "a-datas"
     ]
    }
   ],
@@ -2800,7 +2779,21 @@
     }
    ]
   },
-  "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior."
+  "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior. 2026-11-07, depois da conferência das fontes no Mac: saiu 'o petróleo ficou 13% mais barato na semana', número que veio da nota da editora e não de uma notícia ou dado; entrou a queda de quase 8% de 2/11, que tem fonte.",
+  "termina_em": "inflacao",
+  "paragrafos_afirmacoes": [
+   [
+    "a-balanca-out",
+    "a-balanca-1989"
+   ],
+   [
+    "a-exportacoes-out",
+    "a-dolar-ago-6nov"
+   ],
+   [
+    "a-ev-petroleo-paz"
+   ]
+  ]
  },
  "pauta": {
   "versao": 1,

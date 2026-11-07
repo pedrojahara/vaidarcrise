@@ -2601,15 +2601,15 @@
    {
     "pergunta": "Por que o juro alto faz a indústria produzir menos?",
     "rotulo": "consenso",
-    "texto": "Quando a Selic sobe, os bancos cobram mais das pessoas e das empresas pelo cartão, pelo empréstimo e pelo financiamento. Quem compra a prazo compra menos, por isso as lojas vendem menos e encomendam menos das fábricas, e as empresas adiam a compra de máquinas.",
-    "afirmacoes": [
-     "a-bc-selic",
-     "a-freio"
-    ],
     "link": {
      "texto": "O freio do juro, desenhado, na aba O que causa recessão",
      "url": "/causas/#t-freio"
-    }
+    },
+    "texto": "Quando a Selic sobe, os bancos cobram mais pelo cartão, pelo empréstimo e pelo financiamento. Quem compra a prazo compra menos, as lojas encomendam menos das fábricas, e as empresas adiam a compra de máquinas.",
+    "afirmacoes": [
+     "a-bc-selic",
+     "a-freio"
+    ]
    },
    {
     "pergunta": "O juro do Brasil é alto mesmo?",
@@ -2622,27 +2622,25 @@
    },
    {
     "pergunta": "Por que o Brasil precisa de um juro tão maior que o de outros países?",
-    "rotulo": "maioria_com_dissenso",
-    "texto": "A maioria dos estudos dá mais peso a duas causas. O Brasil poupa pouco, sobretudo o governo, e por isso sobra pouco dinheiro para emprestar. E quem empresta ao governo duvida que a dívida dele pare de crescer, por isso cobra mais.",
+    "rotulo": "em_disputa",
+    "liga": "d-nivel",
+    "texto": "A explicação com mais estudos a favor é a desconfiança de quem empresta ao governo, que explica os anos em que o juro disparou, como 2002 e 2015. A poupança baixa e o crédito com juro do governo explicam só uma parte.",
     "afirmacoes": [
-     "a-fmi-poupanca",
-     "a-ghs-tradicionais",
      "a-blanchard",
-     "a-usp-neutro"
-    ],
-    "liga": "d-nivel"
+     "a-scaramuzzi",
+     "a-usp-neutro",
+     "a-lopes",
+     "a-fmi-poupanca",
+     "a-bonomo-martins"
+    ]
    },
    {
-    "pergunta": "Quem discorda?",
-    "rotulo": "maioria_com_dissenso",
-    "texto": "Outras leituras apontam o crédito com juro definido pelo governo, a correção dos preços pela inflação passada e o próprio juro alto. Cerca de metade da dívida do governo acompanha a Selic, e por isso o juro alto também aumenta a dívida. Os estudos mostram que essas leituras explicam pedaços, foram pouco testadas ou não se confirmaram.",
+    "pergunta": "E o que isso muda para você?",
+    "texto": "Enquanto o juro ficar tão acima da inflação, o cartão, o crediário e o financiamento continuam caros, e as fábricas tendem a contratar menos. O Banco Central decide a Selic de novo em 9/12.",
     "afirmacoes": [
-     "a-bonomo-martins",
-     "a-fmi-sobra",
-     "a-metade-selic",
-     "a-ghs"
-    ],
-    "liga": "d-nivel"
+     "a-freio",
+     "a-datas"
+    ]
    }
   ],
   "versao_escada": {
@@ -2728,7 +2726,19 @@
     }
    ]
   },
-  "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior."
+  "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior.",
+  "termina_em": "juro",
+  "paragrafos_afirmacoes": [
+   [
+    "a-industria"
+   ],
+   [
+    "a-industria-tri"
+   ],
+   [
+    "a-previa-pib"
+   ]
+  ]
  },
  "pauta": {
   "versao": 1,

@@ -131,7 +131,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
-/* a escada de porquês: no "Entenda a fundo" dos fatos do dia e na página de cada pergunta (src/base_site.py) */
+/* a escada de porquês, no "Entenda a fundo" dos fatos do dia (src/base_site.py) */
 .escada{list-style:none;margin:0;padding:0}
 .degrau{position:relative;padding:0 0 18px 22px;border-left:2px solid var(--fio);margin-left:6px}
 .degrau:last-child{border-left-color:transparent;padding-bottom:4px}
@@ -139,6 +139,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .degrau.r-consenso::before{box-shadow:inset 0 0 0 3px var(--desce)}
 .degrau.r-maioria_com_dissenso::before{box-shadow:inset 0 0 0 3px var(--atencao)}
 .degrau.r-em_disputa::before{background:var(--sobe);box-shadow:none}
+.degrau.r-bolso::before{background:var(--placa);box-shadow:none}
 .d-perg{font:700 17px/1.35 var(--sistema);margin:0 0 4px}
 .rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
 .rot.r-consenso{background:var(--normal-fundo)}
@@ -147,8 +148,11 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .d-txt{margin:0 0 6px;font-size:17px;line-height:1.55}
 .d-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 4px;overflow-wrap:anywhere}
 .d-fontes a{color:var(--meta)}
-.d-fontes .ac{font-style:italic}
 .d-mais{font:14.5px/1.45 var(--sistema);margin:4px 0 0}
+.d-teste{font:15px/1.5 var(--sistema);margin:2px 0 4px}
+.d-teste>summary{cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:2px}
+.d-teste p{margin:6px 0 0}
+.d-teste .d-lim{color:var(--meta);font-size:14px}
 
 .blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado";grid-template-rows:auto 1fr;padding-top:28px;padding-bottom:28px}
 .blog .nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}
@@ -193,7 +197,9 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .fundo .escada{padding:0 14px 0 12px}
 .post .fundo p{margin:0 0 6px}
 .post .fundo p.d-perg{margin-bottom:4px}
-.post .fundo p.fundo-pe{font:15px/1.45 var(--sistema);margin:6px 14px 14px;padding-top:12px;border-top:1px solid var(--fio)}
+.fundo .ponte{display:block;margin:6px 14px 14px;padding:12px 14px;border-radius:10px;background:var(--maquina);text-decoration:none;color:var(--tinta);font:15px/1.4 var(--sistema)}
+.fundo .ponte b{display:block;font:700 17px/1.35 var(--serifa);color:var(--link);margin:0 0 2px}
+.fundo .ponte:hover b,.fundo .ponte:focus-visible b{text-decoration:underline}
 @media (prefers-reduced-motion: reduce){.fundo>summary .seta{transition:none}}
 
 /* pressão das notícias: dado da máquina, na letra do sistema */
@@ -267,6 +273,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <p>A dívida está mais alta que em 96% dos meses desde 2006.</p>
     
     
+    
     <p><a href="/causas/#t-divida">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -276,6 +283,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     
     <p>A alta de 0,5 ponto passou do vaivém normal de 3 meses, que vai até 0,38 ponto.</p>
     <p>A parte da renda que vai para dívidas é a maior desde 2005, quando começa a série.</p>
+    
     
     
     <p><a href="/causas/#t-doem">Como isso funciona</a></p>
@@ -289,6 +297,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <p>O juro de 10 anos está mais alto que em 91% dos meses desde 2005.</p>
     
     
+    
     <p><a href="/causas/#t-outros">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -298,6 +307,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     
     <p>A alta de 0,34 ponto passou raspando do vaivém normal de 3 meses, que vai até 0,32 ponto.</p>
     <p>A inflação esperada está no meio do que o Brasil viu desde 2001, mas está acima do teto da meta do Banco Central, de 4,5%.</p>
+    
     
     
     <p><a href="/causas/#t-precos">Como isso funciona</a></p>
@@ -311,6 +321,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <p>Descontada a inflação esperada, a Selic dá 8,8% ao ano e está mais alta que em 73% dos meses desde 2002.</p>
     
     
+    <p><a href="/perguntas/juro-alto/">Por que o juro do Brasil é tão alto?</a></p>
     <p><a href="/causas/#t-freio">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -326,6 +337,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <p>O desemprego está mais baixo que em 99% dos meses desde 2012.</p>
     <p>Quem perde o emprego corta gastos e atrasa parcelas, e é aí que a recessão chega ao bolso.</p>
     <p class="p-fora">Esta linha não muda a placa, porque o desemprego costuma subir depois que a recessão já começou.</p>
+    
     <p><a href="/causas/#t-doem">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -337,6 +349,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     
     <p>Quando o dólar sobe, a dívida em reais não cresce junto. Em 2002 era diferente: boa parte da dívida era corrigida pelo dólar, e por isso ela cresceu de uma vez quando o dólar subiu. O número sai uma vez por mês no Relatório Mensal da Dívida, do Tesouro.</p>
     <p class="p-fora">Esta linha não muda a placa, porque a dívida em reais não avisa que uma recessão vem, mas protege as contas do governo num susto do dólar.</p>
+    
     <p><a href="/causas/#t-divida">Como isso funciona</a></p>
   </div>
 </details></li>

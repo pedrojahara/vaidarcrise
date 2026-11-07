@@ -152,22 +152,41 @@
    },
    "trecho": null,
    "trecho_candidato": null,
-   "nota": "O site já usa 3% e 1,5 ponto em config/causas.json."
+   "nota": "O site já usa 3% e 1,5 ponto em config/causas.json.",
+   "conferencia": {
+    "status": "derrubado",
+    "em": "2026-11-07",
+    "como": "trecho_nao_esta_na_pagina",
+    "o_que_falta": "Nada de conteúdo: o trecho sustenta a frase inteira (meta de 3%, tolerância de 1,5 ponto, teto de 4,5%). A página indicada (www.bcb.gov.br/controleinflacao/metainflacao) é montada por JavaScript e, quando aberta, só mostrou o título. Por isso usei o endpoint da API do próprio BCB, que devolve o mesmo conteúdo. Ponto de atenção para a busca letra por letra: no HTML bruto há uma quebra de linha com indentação entre \"intervalo de\" e \"tolerância\". No trecho ela aparece como um espaço simples. O comparador precisa normalizar espaços em branco. Se não normalizar, use só a parte \"e mais 1,50 ponto percentual, isto é, de 1,50% a 4,50%.\", que fica antes da quebra, mas ela não cita os 3%. A página também traz o destaque \"Meta para a inflação: 3,00%\". O dado bate com config/causas.json (3% e 1,5 ponto)."
+   }
   },
   {
    "id": "a-copom-nov",
    "tipo": "documento",
-   "texto": "Em 4/11/2026, o Banco Central parou os cortes, manteve a Selic em 13,75% e subiu para 5,6% sua previsão do IPCA de 2026.",
+   "texto": "Em 4/11/2026, o Banco Central interrompeu os cortes, manteve a Selic em 13,75% e projetou o IPCA de 2026 em 5,6%.",
    "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central (comunicado do Copom)",
+    "titulo": "282ª reunião - Copom mantém a taxa Selic em 13,75% a.a. (comunicado oficial do Copom, 04/11/2026)",
+    "url": "https://www.bcb.gov.br/api/servico/sitebcb/copom/comunicados_detalhes?nro_reuniao=282"
+   },
+   "trecho": "O Copom decidiu manter a taxa Selic em 13,75% a.a., e entende que essa decisão é compatível com a estratégia",
+   "trecho_candidato": null,
+   "nota": "Trocar pela nota oficial do Copom (nível 3) quando a pesquisa achar o endereço.",
+   "evento": "ev-20261105-01",
+   "trecho_lingua": "pt-BR",
+   "fonte_original": {
     "nivel": 6,
     "quem": "Gazeta do Povo",
     "titulo": "Copom interrompe ciclo de cortes e mantém Selic em 13,75%",
     "url": "https://www.gazetadopovo.com.br/economia/copom-interrompe-ciclo-de-cortes-e-mantem-selic-em-1375/"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "nota": "Trocar pela nota oficial do Copom (nível 3) quando a pesquisa achar o endereço.",
-   "evento": "ev-20261105-01"
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A nota oficial do Copom (282ª reunião, 04/11/2026) confirma a data e a manutenção da Selic em 13,75% a.a. Na Tabela 1, \"Projeções de inflação no cenário de referência\", o IPCA de 2026 aparece em 5,6. O 5,6% está só na tabela, não em frase corrida, por isso o trecho copiado cobre apenas a decisão.\n\nFaltam duas partes da frase:\n(1) A nota não diz que o ciclo de cortes foi interrompido. Isso está na Gazeta do Povo (nível 6): o Copom \"decidiu nesta quarta-feira (4) interromper o ciclo de cortes e manter a Selic\", depois de cinco cortes seguidos de 0,25 ponto.\n(2) A nota não traz a projeção anterior, então não mostra que ela \"subiu\". O 5,2% de setembro aparece só na Gazeta Mercantil (https://gazetamercantil.com/copom-mantem-selic-1375-novembro-2026): \"No cenário de referência, a projeção para o IPCA de 2026 passou de 5,2%, na reunião de setembro, para 5,6% em novembro.\" A confirmação oficial está no comunicado da reunião de setembro de 2026.\n\nA fonte indicada pelo site, a Gazeta do Povo, não traz o 5,6%. Ela cita só o Focus, que passou de 5,19% para 5,22%. Sugestão: trocar pela nota oficial e citar o comunicado de setembro para o \"subiu\", ou reescrever como \"manteve a Selic em 13,75%, após cinco cortes, e projetou IPCA de 5,6% em 2026\".\n\nO endereço usado é o da API do BCB, que devolve o texto do comunicado. A página pública é renderizada em JavaScript."
+   }
   },
   {
    "id": "a-ranking",
@@ -175,13 +194,26 @@
    "texto": "Em setembro de 2026, com a Selic em 13,75%, o Brasil tinha o maior juro acima da inflação esperada do mundo no ranking da MoneYou e da Lev Intelligence, com 8,45%.",
    "fonte": {
     "nivel": 6,
+    "quem": "InfoMoney",
+    "titulo": "Com Selic em 13,75%, Brasil tem maior juro real do mundo (InfoMoney, 16/09/2026)",
+    "url": "https://www.infomoney.com.br/economia/com-selic-em-1345-brasil-tem-maior-juro-real-do-mundo-set2026/"
+   },
+   "trecho": "O Brasil voltou a liderar o ranking de maior juro real do mundo após o Comitê de Política Monetária (Copom) cortar a Selic a 13,75%",
+   "trecho_candidato": null,
+   "nota": "Ranking de consultoria (nível 5) contado por notícia. A busca achou o texto, mas não confirmou a data.",
+   "trecho_lingua": "pt-BR",
+   "fonte_original": {
+    "nivel": 6,
     "quem": "Poder360",
     "titulo": "Mesmo com corte, Brasil tem o maior juro real do planeta",
     "url": "https://www.poder360.com.br/poder-economia/mesmo-com-corte-brasil-tem-o-maior-juro-real-do-planeta/"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "nota": "Ranking de consultoria (nível 5) contado por notícia. A busca achou o texto, mas não confirmou a data."
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O trecho confirma a liderança do Brasil no ranking de juro real e a Selic a 13,75% (matéria de 16/09/2026), mas não traz o número 8,45% nem os nomes MoneYou e Lev Intelligence. Esses dados estão na mesma página, em outros pontos do texto: \"Pela metodologia, o juro real do Brasil é de 8,45%.\" e \"O ranking dos juros reais foi calculado pela MoneYou e Lev Intelligence\". O link do Poder360 indicado não abriu (domínio bloqueado), e a busca indica que ele trata do ranking de junho de 2026 (9,67%, Selic a 14,25%), não do de setembro. O ranking original em PDF (static.poder360.com.br/uploads/2026/09/rankingdejurosreais160926.pdf, nível 5) também não abriu."
+   }
   },
   {
    "id": "a-dolar-ago-nov",
@@ -292,9 +324,16 @@
     "titulo": "Dólar sobe 8,21%, e bolsa cai 13,88% após reeleição de Lula",
     "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula"
    },
-   "trecho": null,
+   "trecho": "Dólar sobe 8,21%, e bolsa cai 13,88% após reeleição de Lula",
    "trecho_candidato": null,
-   "evento": "ev-20261028-01"
+   "evento": "ev-20261028-01",
+   "trecho_lingua": "pt-BR",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O trecho escolhido é o título da matéria, publicada em 26/10/2026. Ele foi o único trecho literal que achei com os dois números juntos. Os valores da frase do site, 13,9% e 8,2%, são arredondamentos de 13,88% e 8,21%. O corpo da matéria confirma que são números de fechamento, mas em frases separadas que não podem ser juntadas: \"O Ibovespa fechou em baixa de 13,88%, aos 176.608,23 pontos\" e \"O dólar comercial encerrou a sessão em alta de 8,21%, cotado a R$ 5,403\". A matéria diz que a reeleição foi \"no segundo turno das eleições presidenciais\" e que a reação do mercado foi na \"segunda-feira (26)\". Ela não diz a data da votação. Que o segundo turno foi em 25/10 vem só de uma legenda de foto da página, e por isso \"dia seguinte\" é uma dedução. A ferramenta de leitura devolveu versões um pouco diferentes das frases do corpo, então convém conferir as palavras exatas antes de usá-las. É notícia (nível 6). Os números poderiam ser confirmados em fonte primária, como os dados de fechamento da B3 ou a cotação PTAX do Banco Central."
+   }
   },
   {
    "id": "a-depois-do-salto",
@@ -324,30 +363,56 @@
   {
    "id": "a-importados",
    "tipo": "documento",
-   "texto": "Com o real mais fraco desde a eleição, trigo importado, açúcar e café ficaram mais caros no Brasil.",
+   "texto": "Com a alta do dólar depois da eleição, as cotações de açúcar e café subiram no atacado e podem chegar ao consumidor.",
    "fonte": {
+    "nivel": 6,
+    "quem": "Folhapress, no Diário do Comércio",
+    "titulo": "Alta do dólar começa a impactar açúcar, trigo e café, que podem ficar mais caros para o consumidor (Leonardo Vieceli, Folhapress, republicado pelo Diário do Comércio, 04/11/2026)",
+    "url": "https://diariodocomercio.com.br/economia/alta-dolar-impactar-consumidor/"
+   },
+   "trecho": "A alta do dólar após a reeleição do presidente Lula (PT) começa a impactar as cotações de commodities agrícolas",
+   "trecho_candidato": null,
+   "evento": "ev-20261105-08",
+   "trecho_lingua": "pt",
+   "fonte_original": {
     "nivel": 6,
     "quem": "Folha",
     "titulo": "Alta do dólar começa a impactar açúcar, trigo e café, que podem ficar mais caros para o consumidor",
     "url": "https://www1.folha.uol.com.br/mercado/2026/11/alta-do-dolar-comeca-a-impactar-acucar-trigo-e-cafe-que-podem-ficar-mais-caros-para-o-consumidor.shtml"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "evento": "ev-20261105-08"
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "Não consegui abrir a página da Folha (bloqueada). Usei a mesma matéria da Folhapress republicada pelo Diário do Comércio. A matéria diz que a alta do dólar depois da reeleição começou a puxar as cotações no atacado de soja, milho, açúcar, trigo e café. Também diz que, segundo analistas, isso PODE chegar aos preços finais \"caso o câmbio siga pressionando as cotações\". Faltam três pontos: (1) a matéria não diz que os produtos já ficaram mais caros para o consumidor, só que podem ficar; (2) não fala em \"trigo importado\": a alta do trigo vem da pouca oferta de grão de boa qualidade no Rio Grande do Sul, depois das chuvas na colheita, e não do câmbio; (3) não diz \"real mais fraco desde a eleição\". Ela diz que o dólar subiu 9,2% na semana seguinte à eleição e chegou ao maior nível desde dezembro de 2025. Sugestão de frase: \"Com a alta do dólar após a eleição, as cotações de açúcar, trigo e café subiram no atacado e podem chegar ao consumidor.\" O trecho acima saiu de uma citação literal feita pela ferramenta de leitura da página. Vale conferir."
+   }
   },
   {
    "id": "a-ev-0311-juros",
    "tipo": "documento",
-   "texto": "Em 3/11, o juro que o governo paga para pegar dinheiro emprestado subiu com o temor sobre a agenda econômica, e o dólar fechou a R$ 5,487.",
+   "texto": "Em 3/11, o dólar fechou em alta de 0,74%, a R$ 5,486, com preocupações sobre a agenda econômica do governo.",
    "fonte": {
+    "nivel": 6,
+    "quem": "Reuters, no Investing.com",
+    "titulo": "Dólar à vista fecha em alta com preocupações sobre agenda econômica do governo (03/11/2026)",
+    "url": "https://br.investing.com/news/forex-news/dolar-a-vista-fecha-em-alta-com-preocupacoes-sobre-agenda-economica-do-governo-2113704"
+   },
+   "trecho": null,
+   "trecho_candidato": "O dólar à vista encerrou o dia com elevação de 0,74%, a R$5,4863.",
+   "evento": "ev-20261104-02",
+   "conferencia": {
+    "status": "pendente",
+    "em": "2026-11-07",
+    "como": "codigo_nao_abriu",
+    "o_que_falta": "A matéria do Valor indicada não abriu (acesso bloqueado a valor.globo.com) e não achei outra cópia dela. A nota da Reuters de 03/11/2026 confirma o dólar em alta por preocupações com a agenda econômica do novo governo Lula, mas dá o fechamento em R$ 5,4863 (≈ R$ 5,486), não R$ 5,487. Ela não menciona juros futuros nem DI. A Crítica (03/11, 8h51) diz que \"os juros futuros também sobem\", mas é uma leitura do começo do pregão, não do fechamento. Falta uma fonte acessível com a alta dos juros futuros no fechamento ligada à agenda econômica e o dólar a R$ 5,487. Outra opção é corrigir o número da frase para R$ 5,486."
+   },
+   "fonte_original": {
     "nivel": 6,
     "quem": "Valor",
     "titulo": "Juros futuros têm forte alta por temor sobre agenda econômica do governo e piora do Focus",
     "url": "https://valor.globo.com/financas/noticia/2026/11/03/juros-futuros-tem-forte-alta-por-temor-sobre-agenda-economica-do-governo-e-piora-do-focus.ghtml"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "evento": "ev-20261104-02"
+   "nota": "Em 7/11/2026 a conferência no Mac não achou fonte para a alta do juro que o governo paga em 3/11: a frase ficou só com o dólar."
   },
   {
    "id": "a-ev-tesouro-divida",
@@ -355,112 +420,176 @@
    "texto": "O Tesouro projeta a dívida do governo em 83,7% do PIB no fim de 2026 e em 89,7% em 2030.",
    "fonte": {
     "nivel": 6,
+    "quem": "CNN Brasil",
+    "titulo": "Dívida Bruta do Governo alcançará pico de 89,7% do PIB em 2030, diz Tesouro (CNN Brasil, sobre o 8º Relatório de Riscos Fiscais da União)",
+    "url": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/divida-bruta-do-governo-alcancara-pico-de-897-do-pib-em-2030-diz-tesouro/"
+   },
+   "trecho": "Para 2026, a expectativa é de que a Dívida Bruta do Governo Geral encerre o ano em 83,7% do PIB.",
+   "trecho_candidato": null,
+   "nota": "Trocar pelo relatório do Tesouro (nível 3).",
+   "evento": "ev-20261104-04",
+   "trecho_lingua": "pt-BR",
+   "fonte_original": {
+    "nivel": 6,
     "quem": "Poder360",
     "titulo": "Dívida bruta deve chegar a 83,7% do PIB no fim de 2026",
     "url": "https://www.poder360.com.br/poder-economia/divida-bruta-deve-chegar-a-837-do-pib-no-fim-de-2026/"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "nota": "Trocar pelo relatório do Tesouro (nível 3).",
-   "evento": "ev-20261104-04"
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O trecho cobre só os 83,7% de 2026. Os 89,7% em 2030 aparecem no título e na abertura da mesma matéria, mas em outra frase, e o trecho não pode juntar pedaços. A fonte oficial é o 8º Relatório de Riscos Fiscais da União (STN, 3/11/2026). A página dele no Tesouro Transparente (https://www.tesourotransparente.gov.br/publicacoes/relatorio-de-riscos-fiscais-da-uniao/2026/114) mostra o erro \"Falha na integração THOT/3PRO\" e não abriu o documento. A nota do Ministério da Fazenda sobre o relatório não traz os números da dívida. A matéria do Poder360 também não abriu. Para chegar ao nível 3, falta copiar do PDF do RRFU 2026 o trecho com 83,7% (2026) e 89,7% (2030) quando o site do Tesouro voltar a funcionar. A frase do site fala em \"dívida do governo\"; o relatório usa a Dívida Bruta do Governo Geral (DBGG)."
+   }
   },
   {
    "id": "a-ev-0411-dolar-cai",
    "tipo": "documento",
-   "texto": "Em 4/11, o dólar caiu para R$ 5,45 com o alívio depois das eleições nos EUA e a espera pelo anúncio sobre as contas do governo.",
+   "texto": "Em 4/11, o dólar caiu para R$ 5,45, com o dólar mais fraco no mundo depois das eleições nos EUA e a espera pela decisão do Copom.",
    "fonte": {
     "nivel": 6,
     "quem": "Agência Brasil",
     "titulo": "Dólar cai a R$ 5,45 após eleições nos EUA e antes do Copom",
     "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-cai-r-545-apos-eleicoes-nos-eua-e-antes-do-copom"
    },
-   "trecho": null,
+   "trecho": "O dólar fechou em queda nesta quarta-feira (4), acompanhando o enfraquecimento da moeda estadunidense no exterior",
    "trecho_candidato": null,
-   "evento": "ev-20261105-04"
+   "evento": "ev-20261105-04",
+   "trecho_lingua": "pt-BR",
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A matéria (Agência Brasil, 04/11/2026) confirma a queda do dólar em 4/11, com fechamento a R$ 5,451 (-0,64%) na lista \"Principais números\". Também liga a queda ao enfraquecimento global do dólar \"após a vitória dos democratas nas eleições de meio de mandato nos Estados Unidos\". Mas a segunda causa não confere. O texto fala da \"expectativa pela decisão do Comitê de Política Monetária (Copom) sobre a Selic\", e não de espera por um anúncio sobre as contas do governo. O único ponto fiscal é que \"os ganhos do real foram limitados pela cautela dos investidores diante das incertezas fiscais\". Ou seja, o fiscal aparece segurando a queda, não como motivo dela. A frase deveria trocar \"a espera pelo anúncio sobre as contas do governo\" por \"a expectativa pela decisão do Copom sobre a Selic\". Se quiser manter o fiscal, pode citá-lo como fator que limitou a queda. O trecho copiado é só o começo do primeiro parágrafo, porque a ferramenta não devolveu o parágrafo inteiro. Ele foi copiado como veio, sem emendas."
+   }
   },
   {
    "id": "a-ev-0511-nasdaq",
    "tipo": "documento",
-   "texto": "Em 5/11, a Nasdaq, bolsa dos EUA, chegou a cair 6,4%, e a Bolsa do Japão perdeu mais de 6%.",
+   "texto": "Em 5/11, o índice Nasdaq Composite, da bolsa dos EUA, caiu 5,52%.",
    "fonte": {
+    "nivel": 6,
+    "quem": "Prensa Mercosur",
+    "titulo": "Nasdaq cae 5,5% y Nikkei 6% por la burbuja de IA (06/11/2026)",
+    "url": "https://prensamercosur.org/2026/11/06/nasdaq-cae-55-y-nikkei-6-por-la-burbuja-de-ia/"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261106-02",
+   "conferencia": {
+    "status": "derrubado",
+    "em": "2026-11-07",
+    "como": "agente_nao_sustenta",
+    "o_que_falta": "Não consegui abrir a página da Folha: o domínio folha.uol.com.br está bloqueado para fetch, tanto em c-level quanto em www1. Por isso não há trecho literal. Duas outras notícias de 6/11/2026 contradizem parte da frase. (1) Nasdaq: o Nasdaq Composite caiu 5,52% em 5/11 (Prensa Mercosur, https://prensamercosur.org/2026/11/06/nasdaq-cae-55-y-nikkei-6-por-la-burbuja-de-ia/). Os 6,36% (≈6,4%) foram do Nasdaq-100 (SpazioCrypto citando IBTimes, https://en.spaziocrypto.com/markets/nasdaq-crash-november-2026-ai-data-centers/). A frase deveria dizer 'Nasdaq-100' ou usar 5,5%. (2) Japão: o Nikkei 225 caiu 5,96% e isso foi em 6/11 (sexta), não em 5/11. Portanto não foi 'mais de 6%'. Em 4/11 o Nikkei caiu 1,42% (DGABC). Sugestão de redação: 'Em 5/11, o Nasdaq-100 caiu 6,4% e, no dia seguinte, a Bolsa de Tóquio perdeu quase 6%'. Antes de publicar, conferir o texto da Folha num navegador."
+   },
+   "fonte_original": {
     "nivel": 6,
     "quem": "Folha",
     "titulo": "Nasdaq cai até 6,4% com receio de que vitória democrata afete boom da IA",
     "url": "https://c-level.folha.uol.com.br/negocios/2026/11/nasdaq-cai-em-64-com-receio-de-que-vitoria-democrata-afete-boom-da-ia.shtml"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "evento": "ev-20261106-02"
+   "nota": "O 6,4% da primeira versão era do Nasdaq-100 ou da queda máxima no pregão (conferência no Mac, 7/11/2026)."
   },
   {
    "id": "a-ev-0511-estrangeiros",
    "tipo": "documento",
-   "texto": "Desde a reeleição, investidores estrangeiros tiraram R$ 8,4 bilhões da Bolsa brasileira.",
+   "texto": "Entre a reeleição e 3/11, investidores estrangeiros tiraram R$ 8,4 bilhões da Bolsa brasileira.",
    "fonte": {
+    "nivel": 6,
+    "quem": "Tribuna do Paraná, com dados da B3",
+    "titulo": "Investidores estrangeiros retiram R$ 8,4 bilhões da B3 após eleição (Tribuna do Paraná, 05/11/2026, citando Gazeta do Povo e dados da B3)",
+    "url": "https://www.tribunapr.com.br/noticias/economia/investidores-estrangeiros-retiram-r-84-bilhoes-da-b3-apos-eleicao/"
+   },
+   "trecho": "A Bolsa brasileira registrou saída líquida de R$ 8,4 bilhões em capital estrangeiro",
+   "trecho_candidato": null,
+   "evento": "ev-20261106-03",
+   "trecho_lingua": "pt-BR",
+   "fonte_original": {
     "nivel": 6,
     "quem": "Poder360",
     "titulo": "Dólar sobe 0,67% e fecha a R$ 5,489; Ibovespa cai 0,82%",
     "url": "https://www.poder360.com.br/poder-economia/dolar-sobe-067-e-fecha-a-r-5489-ibovespa-cai-082/"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "evento": "ev-20261106-03"
-  },
-  {
-   "id": "a-ev-0511-fala",
-   "tipo": "documento",
-   "texto": "Em 5/11, a fala do presidente em defesa da responsabilidade com as contas fez recuar o juro que o governo paga para pegar dinheiro emprestado.",
-   "fonte": {
-    "nivel": 6,
-    "quem": "Poder360",
-    "titulo": "Lula cobra responsabilidade fiscal para atrair investimentos",
-    "url": "https://www.poder360.com.br/poder-governo/lula-cobra-responsabilidade-fiscal-para-atrair-investimentos/"
-   },
-   "trecho": null,
-   "trecho_candidato": null,
-   "evento": "ev-20261106-04"
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A fonte indicada (Poder360, fechamento de mercado de 05/11/2026) não abriu, porque o domínio bloqueia o WebFetch. As buscas não mostraram que essa matéria cite os R$ 8,4 bi. Usei a Tribuna PR, que credita a Gazeta do Povo e dados da B3. O trecho copiado traz o valor e diz que o capital é estrangeiro. O restante da mesma frase na página diz que a saída foi 'entre a reeleição do presidente Luiz Inácio Lula da Silva e o dia 3 de novembro, segundo dados da B3'. Não juntei os pedaços. Ressalvas: é saldo líquido até 3/11, não um total aberto 'desde a reeleição'. Contando a partir de 22/10, antes do segundo turno, outras matérias dão R$ 12,4 bi. O ideal é trocar a fonte pelo texto original da Gazeta do Povo ou pelos dados da B3, e fixar a data na frase."
+   }
   },
   {
    "id": "a-ev-0611-eua",
    "tipo": "documento",
-   "texto": "Em 6/11, os EUA informaram 165 mil vagas criadas em outubro, e o mercado passou a ver 80% de chance de o banco central de lá subir o juro.",
+   "texto": "Em 6/11, os EUA informaram 165 mil vagas criadas em outubro, e cresceu a pressão para o banco central de lá subir o juro em dezembro.",
    "fonte": {
+    "nivel": 6,
+    "quem": "BM&C News",
+    "titulo": "Payroll dos EUA cria 165 mil vagas em outubro e supera previsão",
+    "url": "https://bmcnews.com.br/economia/payroll-dos-eua-cria-165-mil-vagas-em-outubro-e-supera-previsao/"
+   },
+   "trecho": "O payroll dos Estados Unidos criou 165 mil vagas não agrícolas em outubro de 2026, ante 60 mil em setembro",
+   "trecho_candidato": null,
+   "evento": "ev-20261107-03",
+   "trecho_lingua": "pt",
+   "fonte_original": {
     "nivel": 6,
     "quem": "Folha",
     "titulo": "EUA criam 165 mil vagas em outubro, acima das projeções",
     "url": "https://www1.folha.uol.com.br/mercado/2026/11/eua-criam-165-mil-vagas-em-outubro-acima-das-projecoes.shtml"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "evento": "ev-20261107-03"
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A Folha (fonte indicada) não abriu: a ferramenta não consegue acessar www1.folha.uol.com.br. A BM&C (6/11/2026) confirma as 165 mil vagas em outubro, mas não traz percentual de chance de alta do juro. Só diz que cresceu a pressão para o Fed subir o juro em dezembro. InfoMoney, BPMoney (duas matérias) e Melhor Investimento também não trazem o número; SpaceMoney e Monitor do Mercado recusaram o acesso (403). Falta uma fonte para os \"80% de chance\" (por exemplo, o CME FedWatch); o resumo da busca citou cerca de 76,8%, sem fonte confirmada."
+   }
   },
   {
    "id": "a-ev-0611-juro-cai",
    "tipo": "documento",
-   "texto": "Em 6/11, o juro que o governo paga para pegar dinheiro emprestado caiu com os sinais sobre as contas, e o dólar fechou a R$ 5,508.",
+   "texto": "Em 6/11, o dólar fechou a R$ 5,508, e o juro futuro caiu em todos os prazos.",
    "fonte": {
     "nivel": 6,
-    "quem": "Poder360",
+    "quem": "InfoMoney",
     "titulo": "Bolsa sobe 1,39%; em alta, dólar fecha a R$ 5,508",
     "url": "https://www.poder360.com.br/poder-economia/bolsa-sobe-139-em-alta-dolar-fecha-a-r-5508/"
    },
    "trecho": null,
    "trecho_candidato": null,
-   "evento": "ev-20261107-04"
+   "evento": "ev-20261107-04",
+   "conferencia": {
+    "status": "derrubado",
+    "em": "2026-11-07",
+    "como": "trecho_nao_esta_na_pagina",
+    "o_que_falta": "A fonte indicada (Poder360) não abriu, porque o domínio está bloqueado para a ferramenta, e o web.archive.org também não abriu. Usei a matéria de fechamento do mercado do InfoMoney do mesmo dia, 6/11/2026. Ela confirma o dólar a R$ 5,508 (alta de 0,36%). Também confirma a queda dos juros futuros em outra frase: \"As taxas DIs (juros futuros) acabaram com baixas por toda a curva.\" O que falta é a causa. A matéria não atribui a queda dos juros a \"sinais sobre as contas\". Ela só registra que \"o mercado ainda aguarda informações sobre ajuste fiscais vindo de Brasília\" e diz que o ajuste \"ainda não foi desenhado\", o que vai contra a ideia de que houve sinais fiscais. Além disso, as taxas DI são juros futuros do mercado, não exatamente \"o juro que o governo paga\" nos títulos do Tesouro. Sugestão: tirar a relação de causa ou achar uma fonte que ligue a queda dos DIs a sinais fiscais nesse dia, e tentar abrir o Poder360 por outro caminho."
+   }
   },
   {
    "id": "a-ev-diretores-bc",
    "tipo": "documento",
-   "texto": "O presidente vai indicar seis diretores do Banco Central até o fim de 2027, e investidores temem uma diretoria mais disposta a cortar o juro com os preços subindo.",
+   "texto": "O presidente poderá indicar mais seis diretores do Banco Central até o fim de 2027, e o mercado teme um Banco Central menos firme contra a inflação para acelerar a queda da Selic.",
    "fonte": {
+    "nivel": 6,
+    "quem": "Folhapress, no Diário do Comércio",
+    "titulo": "Lula indicará seis diretores do Banco Central até o fim de 2027, e mercado teme mudança de perfil (Folhapress, reproduzido pelo Diário do Comércio, 3/11/2026)",
+    "url": "https://diariodocomercio.com.br/economia/lula-indicara-seis-diretores-bc/"
+   },
+   "trecho": "o BC passar a ser leniente no combate à inflação para acelerar a queda da taxa básica de juros",
+   "trecho_candidato": null,
+   "evento": "ev-20261103-05",
+   "trecho_lingua": "pt-BR",
+   "fonte_original": {
     "nivel": 6,
     "quem": "Folha",
     "titulo": "Lula indicará seis diretores do Banco Central até o fim de 2027, e mercado teme mudança de perfil",
     "url": "https://www1.folha.uol.com.br/mercado/2026/11/lula-indicara-seis-diretores-do-banco-central-ate-o-fim-de-2027-e-mercado-teme-mudanca-de-perfil.shtml"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "evento": "ev-20261103-05"
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A ferramenta não consegue acessar o endereço da Folha. Usei a mesma reportagem da Folhapress (Adriana Fernandes e Nathalia Garcia) republicada pelo Diário do Comércio. O texto diz que Lula \"poderá indicar mais seis nomes para a diretoria do Banco Central (BC) até o fim de 2027\". Esse trecho fica em outra frase e não pode ser juntado ao trecho escolhido. A reportagem também diz que a principal preocupação do mercado é um BC leniente no combate à inflação para acelerar a queda da Selic. Mas a reportagem não fala em cortar o juro \"com os preços subindo\": ela não descreve a inflação atual como em alta. Sugestão de redação: \"investidores temem uma diretoria mais leniente com a inflação para acelerar a queda dos juros\". Observação: o leitor de páginas limita as citações a 125 caracteres, então o trecho foi conferido só dentro desse limite."
+   }
   },
   {
    "id": "a-divida-hoje",
@@ -516,21 +645,34 @@
   {
    "id": "a-neutro-bc",
    "tipo": "documento",
-   "texto": "Em 2025, o Banco Central estimava em cerca de 5% acima da inflação o juro que nem acelera nem freia a economia.",
+   "texto": "Em dezembro de 2024, o Banco Central passou a usar nos seus modelos 5% acima da inflação como o juro que nem acelera nem freia a economia.",
    "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central (ata do Copom)",
+    "titulo": "Ata da 267ª Reunião do Copom (10-11 de dezembro de 2024) – Banco Central do Brasil",
+    "url": "https://www.bcb.gov.br/api/servico/sitebcb/copom/atas_detalhes?nro_reuniao=267"
+   },
+   "trecho": "Nesse contexto, o Comitê elevou a taxa de juros real neutra em seus modelos de 4,75% para 5,00% a.a.",
+   "trecho_candidato": null,
+   "nota": "Trocar pelo boxe do Relatório de Política Monetária (nível 3). A busca não achou o boxe de 2025 nem uma estimativa de 2026.",
+   "trecho_lingua": "pt-BR",
+   "fonte_original": {
     "nivel": 6,
     "quem": "Acionista",
     "titulo": "Inflação tem 70% de chance de superar meta em 2025, alerta Banco Central",
     "url": "https://acionista.com.br/inflacao-tem-70-de-chance-de-superar-meta-em-2025-alerta-banco-central/"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "nota": "Trocar pelo boxe do Relatório de Política Monetária (nível 3). A busca não achou o boxe de 2025 nem uma estimativa de 2026."
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A ata de dezembro de 2024 diz que o Copom elevou o juro real neutro de seus modelos para 5,00% a.a. Esse é o número que entrou em 2025, mas a ata não diz que ele continuou valendo ao longo de 2025 (o Comitê diz que \"seguirá avaliando essa hipótese\"). A ata de junho de 2025 (271ª) fala do juro neutro sem dar número. A matéria da Acionista não abriu (HTTP 403). Os PDFs dos Relatórios de Política Monetária de 2025 (março, junho e dezembro) existem no site do BC, mas o texto não pôde ser lido, então não foi possível confirmar um boxe de 2025 que repita os 5%. Para confirmar o \"em 2025\", procurar \"neutra\" no RPM de dez/2025 (https://www.bcb.gov.br/content/ri/relatorioinflacao/202512/rpm202512p.pdf)."
+   }
   },
   {
    "id": "a-fmi-poupanca",
    "tipo": "documento",
-   "texto": "Um estudo do Fundo Monetário Internacional de 2012 concluiu que o juro do Brasil pode cair ao nível de outros emergentes se a poupança do país subir ao nível deles, sobretudo a do governo.",
+   "texto": "Um estudo do Fundo Monetário Internacional de 2012 concluiu que o juro do Brasil cairia se a poupança do país subisse ao nível da de outros emergentes, sobretudo a do governo.",
    "fonte": {
     "nivel": 3,
     "quem": "Fundo Monetário Internacional, Alex Segura-Ubiergo",
@@ -538,9 +680,15 @@
     "ano": 2012,
     "url": "https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062"
    },
-   "trecho": null,
+   "trecho": "Brazil can converge towards lower equilibrium real interest rates if domestic savings increase to the level of other emerging market countries. The effect is particularly pronounced if the increase in domestic savings is achieved through higher levels of public savings.",
    "trecho_lingua": "en",
-   "trecho_candidato": "Brazil can converge towards lower equilibrium real interest rates if domestic savings increase to the level of other emerging market countries."
+   "trecho_candidato": "Brazil can converge towards lower equilibrium real interest rates if domestic savings increase to the level of other emerging market countries.",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "Nada essencial. O trecho é o abstract do working paper e cobre a frase inteira, inclusive o peso maior da poupança pública. Há uma nuance: o estudo fala em juro real de equilíbrio. O mesmo abstract também diz que, mesmo controlando por esses fatores, o juro real do Brasil fica cerca de 2 pontos percentuais acima do de outros países da amostra, por fatores específicos do país. Ou seja, a convergência total não é garantida só com o aumento da poupança."
+   }
   },
   {
    "id": "a-fmi-sobra",
@@ -553,10 +701,16 @@
     "ano": 2012,
     "url": "https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062"
    },
-   "trecho": null,
+   "trecho": "controlling for everything else in the model, real interest rates in Brazil are about two full percentage points higher than in other countries in the sample",
    "trecho_lingua": "en",
    "trecho_candidato": null,
-   "nota": "O resumo da busca fala em cerca de dois pontos e em 'credit market segmentation and inflation inertia generated by still pervasive indexation practices'. Conferir o número no texto."
+   "nota": "O resumo da busca fala em cerca de dois pontos e em 'credit market segmentation and inflation inertia generated by still pervasive indexation practices'. Conferir o número no texto.",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O trecho copiado cobre só os cerca de 2 pontos depois dos controles (\"two full percentage points\"). As causas estão na frase seguinte do resumo, que não pode ser juntada ao trecho: \"Some of these factors may include credit market segmentation and inflation inertia generated by still pervasive indexation\" (o fim, \"practices\", vem só da nota da busca e não foi confirmado na página). O resumo diz \"controlling for everything else in the model\" e não cita uma a uma poupança, contas do governo e inflação. A lista dos controles só pode ser conferida no corpo do working paper, que não foi aberto."
+   }
   },
   {
    "id": "a-poupanca-2025",
@@ -568,9 +722,16 @@
     "titulo": "Economia brasileira cresce 2,3% em 2025, revela IBGE",
     "url": "https://agenciabrasil.ebc.com.br/educacao/noticia/2026-03/economia-brasileira-cresce-23-em-2025-revela-ibge"
    },
-   "trecho": null,
+   "trecho": "A taxa de poupança, por sua vez, foi de 14,4% em 2025, ante 14,1% em 2024.",
    "trecho_candidato": "A taxa de poupança, por sua vez, foi de 14,4% em 2025, ante 14,1% em 2024.",
-   "nota": "Outra notícia dá 14,5% para 2024. Trocar pelas Contas Nacionais do IBGE (nível 3)."
+   "nota": "Outra notícia dá 14,5% para 2024. Trocar pelas Contas Nacionais do IBGE (nível 3).",
+   "trecho_lingua": "pt-BR",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "Esta é uma notícia (nível 6) sobre dados do IBGE. A fonte oficial (Agência de Notícias IBGE, https://agenciadenoticias.ibge.gov.br/agencia-noticias/45969-pib-cresce-2-3-em-2025.html) retornou erro 403, e o PDF de divulgação não pôde ser lido. Por isso, a troca para nível 3 não foi verificada. Nesta fonte o valor de 2024 é 14,1%, não 14,5%."
+   }
   },
   {
    "id": "a-blanchard",
@@ -583,9 +744,15 @@
     "ano": 2004,
     "url": "https://www.nber.org/papers/w10389"
    },
-   "trecho": null,
+   "trecho": "If, however, the increase in the real interest rate also increases the probability of default on the debt, the effect may be instead to make domestic government debt less attractive, and to lead to a real depreciation. That outcome is more likely the higher the initial level of debt, the higher the proportion of foreign-currency-denominated debt, and the higher the price of risk.",
    "trecho_lingua": "en",
-   "trecho_candidato": null
+   "trecho_candidato": null,
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O trecho cobre o mecanismo: juro mais alto aumenta o risco de calote e leva à depreciação real. Esse efeito é mais provável quando a dívida é alta e tem grande parcela em moeda estrangeira. A ligação com o Brasil está em outra frase do mesmo resumo, que não vem logo depois desta e por isso não entrou no trecho: \"This paper argues that this is the situation the Brazilian economy found itself in in 2002 and 2003.\" O efeito perverso sobre a inflação também está no resumo, entre as duas frases: a depreciação real faz a inflação subir ainda mais. Atenção: o abstract diz \"may be instead\" e não \"may instead be\". A conferência foi feita pela ferramenta de leitura da página, e o resto do trecho bateu palavra por palavra. O working paper é do NBER. A versão revisada é o capítulo do livro da MIT Press, que justifica o nível 2."
+   }
   },
   {
    "id": "a-favero-giavazzi",
@@ -598,9 +765,15 @@
     "ano": 2004,
     "url": "https://www.nber.org/papers/w10390"
    },
-   "trecho": null,
+   "trecho": "may hinder the effectiveness of monetary policy",
    "trecho_lingua": "en",
-   "trecho_candidato": "Brazil, during 2002, had probably fallen into a bad equilibrium, where fiscal policy was hindering the effectiveness of monetary policy"
+   "trecho_candidato": "Brazil, during 2002, had probably fallen into a bad equilibrium, where fiscal policy was hindering the effectiveness of monetary policy",
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "Não consegui confirmar a frase sugerida (\"Brazil, during 2002, had probably fallen into a bad equilibrium, where fiscal policy was hindering the effectiveness of monetary policy\"). Ela não está na página do NBER (abstract), nem no RePEc/CEPR (DP 4376) nem no causalclaims. Abri o PDF em https://www.nber.org/system/files/working_papers/w10390/w10390.pdf e em https://www.nber.org/papers/w10390.pdf, mas ele veio comprimido e sem texto legível. Por isso não dá para verificar se o trecho está no corpo do paper. Um resumo do buscador atribui a frase a esse PDF, mas esse resumo não serve como verificação. A página do NBER só diz, de modo genérico, que uma política fiscal insustentável \"may hinder the effectiveness of monetary policy\" e que o risco de default pode fazer o país passar de \"monetary dominance\" para \"fiscal dominance\". Ela não fala de 2002 nem de \"bad equilibrium\". O próximo passo é abrir o PDF num leitor (pdftotext) e procurar \"bad equilibrium\". Se a frase estiver lá, use esse PDF como url_usada. Quanto ao nível: é working paper do NBER, sem revisão por pares. Marquei 3 por falta de uma categoria melhor. Uma versão saiu depois como capítulo do livro da MIT Press (Giavazzi, Goldfajn e Herrera, 2005), que seria nível 2."
+   }
   },
   {
    "id": "a-usp-neutro",
@@ -609,14 +782,27 @@
    "fonte": {
     "nivel": 4,
     "quem": "Dissertação de mestrado, Universidade de São Paulo",
+    "titulo": "Two essays on the brazilian neutral rate: international trends, fiscal determinants (Leonardo Dias Proença, dissertação de mestrado, FEA-USP, 2022)",
+    "ano": 2022,
+    "url": "https://bdtd.ibict.br/vufind/Record/USP_1eccf95c8ddb85336a560b770cc9bde6"
+   },
+   "trecho": "we argue that during the domestic crisis of 2014-2016 the fiscal deterioration contributed to an increase of one percentage point in neutral rates.",
+   "trecho_lingua": "en",
+   "trecho_candidato": null,
+   "nota": "Nível 4: entra como argumento de uma leitura, nunca como consenso.",
+   "fonte_original": {
+    "nivel": 4,
+    "quem": "Dissertação de mestrado, Universidade de São Paulo",
     "titulo": "Dissertação depositada em 23/06/2022",
     "ano": 2022,
     "url": "https://www.teses.usp.br/teses/disponiveis/12/12138/tde-23062022-200349/en.php"
    },
-   "trecho": null,
-   "trecho_lingua": "en",
-   "trecho_candidato": null,
-   "nota": "Nível 4: entra como argumento de uma leitura, nunca como consenso."
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A página da USP (teses.usp.br) devolveu erro HTTP 400, então usei o registro da mesma dissertação no BDTD/IBICT, que traz o mesmo resumo. O resumo sustenta a frase inteira: crise de 2014 a 2016, piora fiscal e alta de um ponto percentual no juro neutro. O próprio autor apresenta o resultado como argumento (\"we argue\"), e o número depende das especificações do modelo, que usam expectativas fiscais futuras. Isso combina com a nota de nível 4 (uma leitura, não consenso). Não abri o PDF completo. Também não usei o trecho em português porque não consegui confirmar o fim exato da frase."
+   }
   },
   {
    "id": "a-ec95",
@@ -630,7 +816,13 @@
     "url": "http://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc95.htm"
    },
    "trecho": null,
-   "trecho_candidato": null
+   "trecho_candidato": null,
+   "conferencia": {
+    "status": "derrubado",
+    "em": "2026-11-07",
+    "como": "trecho_nao_esta_na_pagina",
+    "o_que_falta": "O título da página traz \"EMENDA CONSTITUCIONAL Nº 95, DE 15 DE DEZEMBRO DE 2016\". O preâmbulo diz que \"As Mesas da Câmara dos Deputados e do Senado Federal, nos termos do § 3º do art. 60 da Constituição Federal\" promulgam a emenda, assinada em \"Brasília, em 15 de dezembro de 2016.\" O art. 107 fixa \"limites individualizados para as despesas primárias\" da União, ou seja, o teto. A expressão \"teto de gastos\" não aparece no texto, que fala em \"Novo Regime Fiscal\". Atenção à codificação: a página é servida em Windows-1252/ISO-8859-1. Se for lida como UTF-8, os acentos viram \"�\" (ex.: \"Disposi��es\"). Para o trecho bater letra por letra, o código precisa decodificar a página corretamente."
+   }
   },
   {
    "id": "a-ec103",
@@ -644,7 +836,13 @@
     "url": "http://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm"
    },
    "trecho": null,
-   "trecho_candidato": null
+   "trecho_candidato": null,
+   "conferencia": {
+    "status": "derrubado",
+    "em": "2026-11-07",
+    "como": "trecho_nao_esta_na_pagina",
+    "o_que_falta": "Nada de essencial. O trecho mostra que a promulgação foi feita pelas Mesas da Câmara e do Senado. A data (12 de novembro de 2019) aparece no título (\"EMENDA CONSTITUCIONAL Nº 103, DE 12 DE NOVEMBRO DE 2019\") e o tema na ementa (\"Altera o sistema de previdência social e estabelece regras de transição e disposições transitórias.\"). Atenção: a página usa codificação windows-1252, então os acentos (Câmara, §, º, Constituição) podem sair corrompidos se o verificador não decodificar a página corretamente."
+   }
   },
   {
    "id": "a-bonomo-martins",
@@ -653,19 +851,32 @@
    "fonte": {
     "nivel": 3,
     "quem": "Marco Bonomo e Bruno Martins (Banco Central)",
+    "titulo": "The Impact of Government-Driven Loans in the Monetary Transmission Mechanism: what can we learn from firm-level data? (Bonomo e Martins, Banco Central do Brasil, Working Paper nº 419, março de 2016)",
+    "ano": 2016,
+    "url": "https://econpapers.repec.org/RePEc:bcb:wpaper:419"
+   },
+   "trecho": "Our results show that the credit channel of monetary policy is less effective for firms with government-driven loans access.",
+   "trecho_lingua": "inglês",
+   "trecho_candidato": null,
+   "nota": "Sem endereço: a pesquisa precisa achar o texto para discussão do Banco Central. Sem fonte aberta, a afirmação cai.",
+   "fonte_original": {
+    "nivel": 3,
+    "quem": "Marco Bonomo e Bruno Martins (Banco Central)",
     "titulo": "The Impact of Government-Driven Loans in the Monetary Transmission Mechanism: what can we learn from firm-level data?",
     "ano": 2016,
     "url": null
    },
-   "trecho": null,
-   "trecho_lingua": "en",
-   "trecho_candidato": null,
-   "nota": "Sem endereço: a pesquisa precisa achar o texto para discussão do Banco Central. Sem fonte aberta, a afirmação cai."
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O resumo diz que o canal de crédito da política monetária funciona menos nas empresas com acesso a crédito \"government-driven\" (direcionado e de bancos públicos). Nessas empresas, o volume total de empréstimos e os juros cobrados por bancos privados variam menos quando os juros básicos mudam. O emprego também reage menos. Ressalvas: (1) o artigo diz \"government-driven\", não \"subsidiado\"; o site pode trocar o termo por \"crédito direcionado/público\", ou manter \"subsidiado\" sabendo que é uma leitura própria. (2) O trecho copiado fala em ter \"acesso\" a esse crédito. A ideia de \"mais crédito\" (uma fatia maior) aparece em outra frase do resumo, ligada à proteção contra choques externos. (3) O PDF original (https://www.bcb.gov.br/pec/wps/ingl/wps419.pdf) não deixou extrair o texto, então o trecho veio do resumo na EconPapers."
+   }
   },
   {
    "id": "a-rep-potencia",
    "tipo": "documento",
-   "texto": "Um artigo da Revista de Economia Política, com dados de 2000 a 2018, não achou sinal de que o juro freie menos a economia nos períodos de muito crédito dos bancos públicos.",
+   "texto": "Um artigo da Revista de Economia Política, com dados de 2000 a 2018, concluiu que o juro não perde força no conjunto nos períodos de muito crédito dos bancos públicos, embora a queda do PIB seja um pouco menor neles.",
    "fonte": {
     "nivel": 2,
     "quem": "Modenesi e Passos, Revista de Economia Política, v. 42, n. 3 (2022)",
@@ -677,10 +888,16 @@
      "https://www.ie.ufrj.br/images/IE/TDS/2021/TD_IE_008_2021_MODENESI_PASSOS.pdf"
     ]
    },
-   "trecho": null,
+   "trecho": "não são encontradas evidências de que a política monetária é menos potente nos períodos de alto crédito dos bancos públicos",
    "trecho_lingua": "pt",
    "trecho_candidato": "não são encontradas evidências de que a política monetária é menos potente nos períodos de alto crédito dos bancos públicos",
-   "nota": "Na primeira versão da base, o título e o endereço desta fonte estavam errados; o agente de trechos achou o artigo certo em 7/11/2026 (conferido só por busca, a página não abriu na nuvem). Os mesmos autores, no International Review of Applied Economics (2021), relatam efeito menor sobre a produção nos períodos de muito crédito público: o advogado do contra deve pesar isso antes de a frase ficar como está."
+   "nota": "Na primeira versão da base, o título e o endereço desta fonte estavam errados; o agente de trechos achou o artigo certo em 7/11/2026 (conferido só por busca, a página não abriu na nuvem). Os mesmos autores, no International Review of Applied Economics (2021), relatam efeito menor sobre a produção nos períodos de muito crédito público: o advogado do contra deve pesar isso antes de a frase ficar como está.",
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O artigo (dados de jan/2000 a jul/2018) conclui que a política monetária não é menos potente no conjunto. Mas a própria página diz que, nos períodos de alto crédito público, a política monetária tem \"menor efeito sobre a produção\" e que \"a queda acumulada do PIB, resultante da elevação da Selic, é menor quando os bancos públicos emprestam mais\" (multiplicador -0,16 contra -0,21 com alto crédito privado; o artigo não diz se a diferença é significativa). A conclusão de \"não menos potente\" se apoia sobretudo no comportamento da inflação e nos enigmas dos preços, menos persistentes. Por isso \"o juro não freia menos a economia\" contradiz o resultado sobre o PIB. Sugestão: \"não achou sinal de que a política monetária perca potência no conjunto, embora a queda do PIB tenha sido um pouco menor nesses períodos\". O trecho veio da ferramenta em dois fragmentos (\"...menos potente\" / \"nos períodos de alto crédito dos bancos públicos\"); é provável que sejam contíguos no texto, mas não foi confirmado."
+   }
   },
   {
    "id": "a-bcb-ee77",
@@ -693,41 +910,20 @@
     "ano": 2020,
     "url": "https://www.bcb.gov.br/conteudo/relatorioinflacao/EstudosEspeciais/EE077_Potencia_da_politica_monetaria.pdf"
    },
-   "trecho": null,
+   "trecho": "Nos últimos anos, o crédito bancário passou por duas alterações que tendem a aumentar a potência da política monetária: maior participação do crédito com recursos livres no crédito total e mudança na taxa de juros utilizada nas concessões do BNDES.",
    "trecho_lingua": "pt",
-   "trecho_candidato": null
-  },
-  {
-   "id": "a-lara-resende",
-   "tipo": "documento",
-   "texto": "Em novembro de 2026, o economista André Lara-Resende disse que os juros são a maior parte do déficit do governo e que a Selic alta alimenta a dívida.",
-   "fonte": {
-    "nivel": 6,
-    "quem": "Mercado & Consumo",
-    "titulo": "Economista do Plano Real acusa BC de causar rombo fiscal via juros",
-    "url": "https://mercadoeconsumo.com.br/02/11/2026/economia/economista-de-plano-real-acusa-bc-de-causar-rombo-fiscal-via-juros/"
-   },
-   "trecho": null,
    "trecho_candidato": null,
-   "nota": "Notícia sobre um texto do autor: só serve para mapear quem defende a leitura. Achar o texto original."
-  },
-  {
-   "id": "a-lara-proposta",
-   "tipo": "documento",
-   "texto": "Lara-Resende propõe metas de inflação e de juro combinadas para quatro ou cinco anos, em vez de só cortar a Selic.",
-   "fonte": {
-    "nivel": 6,
-    "quem": "Jornal do Brasil",
-    "titulo": "André Lara Resende critica juros altos e o impacto fiscal no Brasil",
-    "url": "https://www.jb.com.br/economia/2026/11/1061430-andre-lara-resende-critica-juros-altos-e-o-impacto-fiscal-no-brasil.html"
-   },
-   "trecho": null,
-   "trecho_candidato": null
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O trecho sustenta a frase inteira. Três ressalvas: (1) O PDF original volta em binário no WebFetch. O texto foi lido pelo proxy r.jina.ai a partir da mesma URL. No PDF o trecho pode ter quebras de linha ou hifenização que atrapalhem a busca letra por letra. (2) A página fala em \"crédito com recursos livres\", e não em \"juro definido pelos bancos\". A equivalência é razoável, mas é uma paráfrase. (3) A frase está na seção de análise do crédito, não no parágrafo de conclusão. A conclusão diz que \"a sensibilidade da inflação a variações da Selic aumentou no período mais recente\". Escrever \"concluiu\" é aceitável, mas o mais exato seria \"o estudo afirma\"."
+   }
   },
   {
    "id": "a-ghs",
    "tipo": "documento",
-   "texto": "Gonçalves, Holland e Spacov testaram com dados de vários países a ideia de que a incerteza jurídica e a moeda que não se troca livremente explicam o juro alto, e os resultados foram em geral contrários a ela.",
+   "texto": "Gonçalves, Holland e Spacov testaram com dados de vários países a ideia de que a incerteza sobre contratos e a moeda que não se troca livremente explicam o juro alto, e os resultados foram em geral contrários a ela.",
    "fonte": {
     "nivel": 2,
     "quem": "Fernando Gonçalves, Márcio Holland e Andrei Spacov",
@@ -735,14 +931,20 @@
     "ano": 2007,
     "url": "https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015"
    },
-   "trecho": null,
+   "trecho": "The results are by and large unfavorable not only to their conjecture, but also to variants of their argument.",
    "trecho_lingua": "en",
-   "trecho_candidato": "results are by and large unfavorable not only to ABL's conjecture"
+   "trecho_candidato": "results are by and large unfavorable not only to ABL's conjecture",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O trecho sugerido estava quase certo, mas no original está \"their conjecture\", e não \"ABL's conjecture\". O resumo diz que o artigo testa a tese de Arida, Bacha e Lara-Resende (2005) de que o risco jurisdicional e a inconversibilidade da moeda determinam o juro real alto no Brasil. Conclui que fatores monetários e fiscais tradicionais explicam melhor. A parte de \"dados de vários países\" vem do título (\"Evidence from Panel Data\"). O trecho copiado não fala em vários países, e a ferramenta não deixou ver o resumo inteiro para confirmar."
+   }
   },
   {
    "id": "a-ghs-tradicionais",
    "tipo": "documento",
-   "texto": "No mesmo teste, os fatores de sempre, ligados à inflação e às contas do governo, explicaram o juro muito melhor que a incerteza jurídica.",
+   "texto": "No mesmo teste, os fatores de sempre, ligados à política do Banco Central e às contas do governo, explicaram o juro muito melhor que a incerteza sobre contratos.",
    "fonte": {
     "nivel": 2,
     "quem": "Fernando Gonçalves, Márcio Holland e Andrei Spacov",
@@ -750,9 +952,15 @@
     "ano": 2007,
     "url": "https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015"
    },
-   "trecho": null,
+   "trecho": "traditional monetary and fiscal factors are far more relevant to explain the level of short-term real interest rates",
    "trecho_lingua": "en",
-   "trecho_candidato": "traditional monetary and fiscal factors are far more relevant"
+   "trecho_candidato": "traditional monetary and fiscal factors are far more relevant",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O resumo fala em fatores \"monetary and fiscal\". Ler isso como \"inflação e contas do governo\" é uma tradução razoável, mas não literal. O resumo compara esses fatores à incerteza jurisdicional somada à inconversibilidade da moeda, e não só à incerteza jurídica."
+   }
   },
   {
    "id": "a-abl",
@@ -761,13 +969,27 @@
    "fonte": {
     "nivel": 2,
     "quem": "Persio Arida, Edmar Bacha e André Lara-Resende",
+    "titulo": "Credit, Interest, and Jurisdictional Uncertainty: Conjectures on the Case of Brazil (Arida, Bacha e Lara-Resende; cap. 8 de Inflation Targeting, Debt, and the Brazilian Experience, MIT Press, 2005; versão IEPE/Casa das Garças TPD 02)",
+    "ano": 2005,
+    "url": "https://iepecdg.com.br/wp-content/uploads/2016/03/TPD2IEPE.pdf"
+   },
+   "trecho": "Finally, if the jurisdiction is weak and the currency is not convertible, domestic short-term interest rates are high and no long-term domestic credit market can exist. This, in our view, is the case of Brazil.",
+   "trecho_candidato": null,
+   "nota": "O endereço é uma revisão em português que resume a tese; achar o capítulo.",
+   "trecho_lingua": "en",
+   "fonte_original": {
+    "nivel": 2,
+    "quem": "Persio Arida, Edmar Bacha e André Lara-Resende",
     "titulo": "Credit, Interest, and Jurisdictional Uncertainty: Conjectures on the Case of Brazil (capítulo do livro Inflation Targeting, Debt, and the Brazilian Experience, MIT Press)",
     "ano": 2005,
     "url": "https://www.researchgate.net/publication/228632946_Por_que_as_taxas_de_juros_reais_de_curto_prazo_sao_tao_elevadas_no_Brasil"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "nota": "O endereço é uma revisão em português que resume a tese; achar o capítulo."
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O texto foi lido por um extrator (r.jina.ai), porque o WebFetch não conseguiu ler o PDF direto. Pelo extrator, as duas frases são seguidas e não têm hífen de quebra de linha nem marca de nota. Como o PDF não foi aberto direto, a conferência letra por letra ainda tem de ser feita nele. O endereço indicado (ResearchGate) deu 403 e foi trocado pelo texto do próprio capítulo. \"Jurisdição fraca\" é o conceito de incerteza jurisdicional, que inclui a incerteza sobre contratos. A frase do site diz \"sugeriram\", e é isso mesmo: os autores apresentam a ideia como conjectura. O site pode avisar que testes depois (Gonçalves, Holland e Spacov, 2007) não acharam base empírica para ela."
+   }
   },
   {
    "id": "a-rey",
@@ -780,9 +1002,15 @@
     "ano": 2013,
     "url": "https://econpapers.repec.org/RePEc:cpr:ceprdp:10591"
    },
-   "trecho": null,
+   "trecho": "There is a global financial cycle in capital flows, asset prices and in credit growth. This cycle co-moves with the VIX, a measure of uncertainty and risk aversion of the markets.",
    "trecho_lingua": "en",
-   "trecho_candidato": "There is a global financial cycle in capital flows, asset prices and in credit growth. This cycle co-moves with the VIX"
+   "trecho_candidato": "There is a global financial cycle in capital flows, asset prices and in credit growth. This cycle co-moves with the VIX",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O resumo sustenta a ideia de um ciclo financeiro mundial dos fluxos de capital que acompanha o VIX, medida de incerteza e aversão ao risco. Mas não diz que o VIX mede o medo de quem investe nos EUA: fala só em \"the markets\". Para essa parte ter apoio literal, seria preciso citar o PDF completo. O EconPapers dá 2015 como ano do DP; a palestra em Jackson Hole foi em 2013."
+   }
   },
   {
    "id": "a-cerutti",
@@ -795,9 +1023,15 @@
     "ano": 2017,
     "url": "https://www.bis.org/publ/work661.htm"
    },
-   "trecho": null,
+   "trecho": "the two methods combined rarely explain more than a quarter of the variation in capital flows",
    "trecho_lingua": "en",
-   "trecho_candidato": null
+   "trecho_candidato": null,
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "Nada essencial. O resumo diz \"um quarto da variação dos fluxos de capital\", medido por dois métodos combinados: variáveis dos países centrais, como o VIX, e fatores comuns. A frase do site fala em \"entradas e saídas de dinheiro\", e isso é uma paráfrase aceitável. É um texto para discussão do BIS (working paper), sem revisão por pares. Por isso entrou como nível 3 (instituição oficial). Se a versão publicada em periódico for usada, o nível sobe para 2."
+   }
   },
   {
    "id": "a-ep2002",
@@ -1104,44 +1338,77 @@
   {
    "id": "a-industria",
    "tipo": "documento",
-   "texto": "A produção da indústria caiu 0,8% em setembro de 2026 e acumula queda de 4,1% desde maio, puxada por máquinas e equipamentos.",
+   "texto": "A produção da indústria caiu 0,8% em setembro de 2026, se compararmos com agosto, e acumula queda de 4,1% desde maio.",
    "fonte": {
     "nivel": 6,
     "quem": "Gazeta do Povo, com dados do IBGE",
     "titulo": "Produção industrial recua 0,8% em setembro e acumula perda de 4,1% desde maio",
     "url": "https://www.gazetadopovo.com.br/economia/producao-industrial-recua-08-em-setembro-e-acumula-perda-de-41-desde-maio/"
    },
-   "trecho": null,
+   "trecho": "A produção industrial brasileira caiu 0,8% em setembro, na comparação com agosto",
    "trecho_candidato": null,
-   "evento": "ev-20261106-01"
+   "evento": "ev-20261106-01",
+   "trecho_lingua": "pt-BR",
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A matéria (05/11/2026) confirma a queda de 0,8% em setembro ante agosto. Também diz que a retração começou em maio e que \"Nos cinco meses, o setor acumulou perda de 4,1%\". Mas ela não diz que a queda foi \"puxada por máquinas e equipamentos\". Segundo o texto, \"as maiores influências negativas vieram da fabricação de coque\", derivados de petróleo e biocombustíveis (-4,2%), e de alimentos (-1,7%). Máquinas e equipamentos (-2,1%) aparecem só como mais um setor em queda. A frase do site precisa ser corrigida: deve citar coque/derivados de petróleo e alimentos como principais influências. Também falta conferir os números na nota oficial do IBGE (PIM-PF de setembro de 2026), que não abri. A ferramenta só devolveu o texto da página em pedaços curtos, então copiei apenas o trecho que pude ver na íntegra."
+   }
   },
   {
    "id": "a-caged",
    "tipo": "documento",
-   "texto": "As empresas abriram 121,3 mil vagas com carteira em setembro de 2026, o pior setembro da série e 43% menos que em setembro de 2025.",
+   "texto": "As empresas abriram 121,3 mil vagas com carteira em setembro de 2026, o pior setembro desde 2020, quando começou a série do Novo Caged.",
    "fonte": {
+    "nivel": 6,
+    "quem": "Jornal do Comércio, com dados do Ministério do Trabalho",
+    "titulo": "Saldo líquido de emprego formal é positivo em 121.305 vagas em setembro no Caged (Jornal do Comércio, com dados do Novo Caged/MTE)",
+    "url": "https://www.jornaldocomercio.com/economia/2026/11/1269282-saldo-liquido-de-emprego-formal-e-positivo-em-121-305-vagas-em-setembro-no-caged.html"
+   },
+   "trecho": "Foi o pior resultado para o mês desde o começo da série do Novo Caged (iniciada em 2020).",
+   "trecho_candidato": null,
+   "evento": "ev-20261105-02",
+   "trecho_lingua": "pt-BR",
+   "fonte_original": {
     "nivel": 6,
     "quem": "Poder360, com dados do Ministério do Trabalho",
     "titulo": "Brasil cria 121.305 empregos formais em setembro de 2026",
     "url": "https://www.poder360.com.br/poder-economia/brasil-cria-121-305-empregos-formais-em-setembro-de-2026/"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "evento": "ev-20261105-02"
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A URL do Poder360 não abriu, nem o PDF dele em static.poder360.com.br. Usei o Jornal do Comércio. Na mesma página também aparece a frase \"O mercado de trabalho brasileiro abriu 121.305 postos de trabalho em setembro\". As duas frases não ficam juntas, por isso copiei só a que diz que foi o pior setembro.\n\nOs 121,3 mil e o \"pior setembro da série\" estão confirmados. A ressalva necessária é que a série é a do Novo Caged, que só começa em 2020.\n\nOs \"43% menos que em setembro de 2025\" não se confirmam nesta página. Ela diz: \"Em setembro de 2025, o saldo foi de 241.609 novos postos de trabalho\". Com essa base, a queda é de cerca de 50%. O Diário de Pernambuco traz o mesmo número.\n\nOs 43% vêm de outra base. O Agora RN (https://agorarn.com.br/?p=2411105) escreve \"queda de 43,5%\" e \"No mesmo mês de 2025, haviam sido abertas 214.609 vagas\". Essa base pode ser um erro de digitação de 241.609 ou o número original antes da revisão.\n\nA Agência Gov (nível 3) confirma os 121.305, mas não dá o saldo de setembro de 2025 nem fala em pior setembro. Antes de publicar os 43%, é preciso conferir o saldo de setembro de 2025 no sumário oficial do Novo Caged no gov.br/trabalho-e-emprego."
+   }
   },
   {
    "id": "a-elnino",
    "tipo": "documento",
-   "texto": "Depois do segundo turno, os economistas subiram as previsões de inflação de 2027 e 2028, por causa do dólar mais alto e do El Niño.",
+   "texto": "Depois do segundo turno, analistas subiram as previsões de inflação de 2027 e 2028, e um economista ouvido atribuiu a alta à falta de uma regra firme para as contas do governo e ao dólar mais alto.",
    "fonte": {
+    "nivel": 6,
+    "quem": "Prensa Mercosur",
+    "titulo": "Expectativas de inflação para 2027 e 2028 aumentam após a vitória de Lula (Prensa Mercosur, reprodução de osul.com.br; a Folha original não abriu)",
+    "url": "https://prensamercosur.org/2026/10/31/expectativas-de-inflacao-para-2027-e-2028-aumentam-apos-a-vitoria-de-lula/"
+   },
+   "trecho": "A reeleição de Luiz Inácio Lula da Silva no segundo turno fez saltar as expectativas de inflação de analistas de mercado",
+   "trecho_candidato": null,
+   "evento": "ev-20261101-01",
+   "trecho_lingua": "pt-BR",
+   "fonte_original": {
     "nivel": 6,
     "quem": "Folha",
     "titulo": "Expectativas de inflação para 2027 e 2028 saltam após segundo turno",
     "url": "https://www1.folha.uol.com.br/mercado/2026/10/expectativas-de-inflacao-para-2027-e-2028-saltam-apos-segundo-turno.shtml"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "evento": "ev-20261101-01"
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A página da Folha não abriu (bloqueada). Na reprodução usada, a pesquisa da BGC Liquidez mostra a mediana do IPCA subindo para 5,3% em 2027 e 4,3% em 2028, contra 4,34% e 3,75% no Focus anterior ao segundo turno. O economista Carlos Thadeu atribui a alta à ausência de âncora fiscal (mais gastos) e à alta do dólar, de R$ 4,99 para R$ 5,44 (\"a valorização do dólar, que subiu de R$ 4,99 no final da semana retrasada para R$ 5,44\"). A página não menciona o El Niño, que só aparece numa consulta do BC a economistas de setembro de 2026, anterior à eleição (0,5 ponto a mais no IPCA de 2027). Falta uma fonte para o El Niño como causa da revisão pós-eleição, e a causa fiscal citada na fonte ficou fora da frase. Os trechos vieram de citações curtas da ferramenta de leitura: conferir na página letra por letra."
+   }
   },
   {
    "id": "a-juro10-pos-salto",
@@ -1198,16 +1465,29 @@
   {
    "id": "a-ev-petroleo-outubro",
    "tipo": "documento",
-   "texto": "Em outubro de 2026, o petróleo subiu mais de 14% com a guerra no Irã.",
+   "texto": "Em outubro de 2026, o barril de petróleo Brent subiu mais de 14%, com o medo de uma nova escalada da guerra no Irã.",
    "fonte": {
+    "nivel": 6,
+    "quem": "Folhapress, no Jornal de Brasília",
+    "titulo": "Petróleo sobe mais de 14% em outubro e encerra mês no maior valor desde maio (Folhapress, republicado pelo Jornal de Brasília, 30/10/2026)",
+    "url": "https://jornaldebrasilia.com.br/noticias/economia/petroleo-sobe-mais-de-14-em-outubro-e-encerra-mes-no-maior-valor-desde-maio/"
+   },
+   "trecho": "A sessão que encerrou as negociações do mês de outubro também marcou uma valorização mensal de 14,32%, a maior desde julho.",
+   "trecho_candidato": null,
+   "evento": "ev-20261031-04",
+   "trecho_lingua": "pt-BR",
+   "fonte_original": {
     "nivel": 6,
     "quem": "Folha de S.Paulo",
     "titulo": "Petróleo sobe mais de 14% em outubro e encerra mês no maior valor desde maio",
     "url": "https://www1.folha.uol.com.br/mercado/2026/10/petroleo-sobe-mais-de-14-em-outubro-e-encerra-mes-no-maior-valor-desde-maio.shtml"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "evento": "ev-20261031-04"
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A Folha bloqueia o acesso automático, então usei a mesma matéria da Folhapress republicada pelo Jornal de Brasília. O trecho confirma a alta de mais de 14% em outubro. Mas esse número é do Brent, contrato de janeiro. O WTI subiu 13,86% no mês, e a Investing/Reuters fala em 13,6% para o Brent. A causa aparece em outra frase, que não pode ser juntada ao trecho: \"A alta é uma resposta do mercado a uma possível nova escalada do conflito no Irã\". Ou seja, a matéria atribui a alta ao medo de uma nova escalada da guerra, não à guerra em si. Sugestão para a frase do site: \"o Brent subiu mais de 14% em outubro, com o temor de nova escalada da guerra no Irã\"."
+   }
   },
   {
    "id": "a-ev-petroleo-paz",
@@ -1215,28 +1495,55 @@
    "texto": "No começo de novembro de 2026, o petróleo caiu quase 8% com sinais de que EUA e Irã podem negociar o fim da guerra, ainda sem acordo.",
    "fonte": {
     "nivel": 6,
+    "quem": "Seu Dinheiro",
+    "titulo": "Petróleo fecha em queda de mais de 7% com expectativa de acordo para encerrar guerra no Oriente Médio (Seu Dinheiro, 02/11/2026)",
+    "url": "https://www.seudinheiro.com/2026/bolsa-dolar/petroleo-cai-mais-de-8-com-expectativa-de-tregua-na-guerra-do-oriente-medio-lils-cbcb/"
+   },
+   "trecho": "Petróleo fecha em queda de mais de 7% com expectativa de acordo para encerrar guerra no Oriente Médio",
+   "trecho_candidato": null,
+   "evento": "ev-20261103-02",
+   "trecho_lingua": "pt-BR",
+   "fonte_original": {
+    "nivel": 6,
     "quem": "Valor Econômico",
     "titulo": "Petróleo despenca com sinais de abertura diplomática pelos EUA e Irã",
     "url": "https://valor.globo.com/financas/noticia/2026/11/02/petroleo-despenca-com-sinais-de-abertura-diplomatica-pelos-eua-e-ira.ghtml"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "evento": "ev-20261103-02"
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A fonte indicada (Valor Econômico) não pôde ser aberta: a ferramenta não consegue acessar valor.globo.com. Usei o Seu Dinheiro, de 02/11/2026. A página confirma que o Brent fechou em queda de 7,63%, a US$ 104,77 (\"quase 8%\"), e diz que o motivo foi a expectativa de acordo para encerrar a guerra, ainda sem acordo. O trecho copiado (o título) não cita EUA e Irã. Isso aparece em outra frase da página (\"diante dos sinais de que Irã e Estados Unidos podem voltar à mesa de negociação\"), que não pode ser juntada ao título. Atenção: o endereço da página diz \"cai mais de 8%\", mas o título atual diz \"mais de 7%\", sinal de que o texto foi alterado. A queda de cerca de 8% em 4/11 tem outra causa (a eleição de meio de mandato nos EUA) e não serve para esta frase. Recomenda-se trocar a fonte no site para esta notícia ou conferir o texto do Valor manualmente."
+   }
   },
   {
    "id": "a-importa-combustivel",
    "tipo": "documento",
    "texto": "O Brasil importa parte do diesel e da gasolina que consome.",
    "fonte": {
+    "nivel": 3,
+    "quem": "ANP",
+    "titulo": "ANP – País teve comercialização de mais de 130 bilhões de litros de combustíveis em 2024",
+    "ano": 2025,
+    "url": "https://www.gov.br/anp/pt-br/canais_atendimento/imprensa/noticias-comunicados/pais-teve-comercializacao-de-mais-de-130-bilhoes-de-litros-de-combustiveis-em-2024"
+   },
+   "trecho": "No ano, a produção nacional de gasolina A (pura, ainda sem a adição de etanol anidro) correspondeu a 90% do total da oferta interna, sendo os 10% restantes supridos por importações. Já no caso do diesel A (ainda sem a mistura de biodiesel), as importações foram responsáveis por cerca de 25% das vendas.",
+   "trecho_candidato": null,
+   "nota": "Trocar por dado da ANP (nível 3) quando a pesquisa achar a série de importação e consumo.",
+   "trecho_lingua": "pt-BR",
+   "fonte_original": {
     "nivel": 5,
     "quem": "Instituto Brasileiro de Petróleo e Gás",
     "titulo": "Boletim de importações de derivados, março de 2025",
     "ano": 2025,
     "url": "https://www.ibp.org.br/personalizado/uploads/2025/04/boletim-importacoes-de-derivados-marco-2025-vf.pdf"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "nota": "Trocar por dado da ANP (nível 3) quando a pesquisa achar a série de importação e consumo."
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O PDF do IBP indicado deu erro 502 nas duas versões (-vf e -1) e não pôde ser conferido. Por isso a fonte foi trocada pela nota oficial da ANP (nível 3), como a nota do site pedia. Os dados são de 2024 e valem para gasolina A e diesel A, ou seja, antes da mistura de etanol e biodiesel. O trecho veio em partes, porque a ferramenta limita o tamanho das citações. Montei as partes, que são vizinhas no texto, e a página confirmou que o texto inteiro aparece exatamente assim. Mesmo assim, vale conferir no código."
+   }
   },
   {
    "id": "a-dolar-0311",
@@ -1266,17 +1573,30 @@
   {
    "id": "a-focus-2026",
    "tipo": "documento",
-   "texto": "Em 3/11/2026, os bancos (Focus) passaram a esperar que os preços subam 5,2% em 2026 e cortaram a previsão para o PIB.",
+   "texto": "No Focus divulgado em 3/11/2026, os bancos passaram a esperar inflação de 5,22% em 2026 e cortaram a previsão de crescimento do PIB.",
    "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central (Focus)",
+    "titulo": "Banco Central do Brasil – Sistema Expectativas de Mercado (Focus), API Olinda: ExpectativasMercadoAnuais, IPCA e PIB Total 2026, coletas de 23/10 e 30/10/2026",
+    "url": "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata/ExpectativasMercadoAnuais?$filter=(Data%20eq%20'2026-10-23'%20or%20Data%20eq%20'2026-10-30')%20and%20DataReferencia%20eq%20'2026'%20and%20baseCalculo%20eq%200%20and%20(Indicador%20eq%20'IPCA'%20or%20Indicador%20eq%20'PIB%20Total')&$select=Indicador,Data,DataReferencia,Mediana&$orderby=Data%20desc&$format=json"
+   },
+   "trecho": "{\"Indicador\":\"IPCA\",\"Data\":\"2026-10-30\",\"DataReferencia\":\"2026\",\"Mediana\":5.2166},{\"Indicador\":\"PIB Total\",\"Data\":\"2026-10-30\",\"DataReferencia\":\"2026\",\"Mediana\":1.7607},{\"Indicador\":\"PIB Total\",\"Data\":\"2026-10-23\",\"DataReferencia\":\"2026\",\"Mediana\":1.8000}",
+   "trecho_candidato": null,
+   "evento": "ev-20261104-01",
+   "nota": "Trocar pelo próprio boletim Focus do Banco Central (nível 3).",
+   "trecho_lingua": "pt",
+   "fonte_original": {
     "nivel": 6,
     "quem": "Poder360",
     "titulo": "Mercado eleva projeção de inflação para 5,22% em 2026",
     "url": "https://www.poder360.com.br/poder-economia/mercado-eleva-projecao-de-inflacao-para-522-em-2026/"
    },
-   "trecho": null,
-   "trecho_candidato": null,
-   "evento": "ev-20261104-01",
-   "nota": "Trocar pelo próprio boletim Focus do Banco Central (nível 3)."
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A edição de 3/11/2026 usa a coleta de 30/10/2026 e saiu na terça porque 2/11 foi feriado de Finados. A mediana do IPCA para 2026 foi de 5,19% para 5,22% e a do PIB caiu de 1,80% para 1,76%. O trecho só vale na URL exata da consulta, com os filtros e o $select. O PDF oficial (R20261030.pdf) não tem texto legível e a página do Poder360 não abriu. Ressalva de redação: o Focus não ouve só bancos, também gestoras e consultorias; \"analistas do mercado\" é mais preciso que \"os bancos\"."
+   }
   },
   {
    "id": "a-bc-selic",
@@ -1285,11 +1605,24 @@
    "fonte": {
     "nivel": 3,
     "quem": "Banco Central",
+    "titulo": "Taxa Selic – Banco Central do Brasil",
+    "url": "https://www.bcb.gov.br/api/paginasite/sitebcb/controleinflacao/taxaselic"
+   },
+   "trecho": "A taxa Selic é a taxa básica de juros da economia, que influencia outras taxas de juros do país, como taxas de empréstimos, financiamentos e aplicações financeiras. A definição da taxa Selic é o principal instrumento de política monetária utilizado pelo Banco Central (BC) para controlar a inflação.",
+   "trecho_candidato": "Ela influencia todas as taxas de juros do país, como as taxas de juros dos empréstimos, dos financiamentos e das aplicações financeiras.",
+   "trecho_lingua": "pt-BR",
+   "fonte_original": {
+    "nivel": 3,
+    "quem": "Banco Central",
     "titulo": "Taxa Selic",
     "url": "https://www.bcb.gov.br/controleinflacao/taxaselic"
    },
-   "trecho": null,
-   "trecho_candidato": "Ela influencia todas as taxas de juros do país, como as taxas de juros dos empréstimos, dos financiamentos e das aplicações financeiras."
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-07",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "Nada de conteúdo. O trecho sugerido pelo resumo de busca (\"influencia todas as taxas de juros do país\") não está na página; o texto real diz \"influencia outras taxas de juros do país\". A página www.bcb.gov.br/controleinflacao/taxaselic é carregada por JavaScript e no WebFetch só traz o título, por isso usei o endpoint da API do próprio BCB, que tem o mesmo conteúdo. O WebFetch me devolveu o trecho em pedaços, e confirmei que entre \"financeiras.\" e \"A definição\" há só um espaço. A junção \"país, como\" não foi conferida diretamente."
+   }
   },
   {
    "id": "a-freio",
@@ -1358,7 +1691,13 @@
    },
    "trecho": null,
    "trecho_candidato": null,
-   "evento": "ev-20261107-01"
+   "evento": "ev-20261107-01",
+   "conferencia": {
+    "status": "derrubado",
+    "em": "2026-11-07",
+    "como": "trecho_nao_esta_na_pagina",
+    "o_que_falta": "Não foi possível abrir o link da Folha. Por isso usei a mesma matéria da Reuters publicada na CNN Brasil, que também consultei na Forbes e no InfoMoney. O texto confirma que, em 6/11/2026, Bradesco e XP pioraram as projeções para 2027, com economia quase parada: PIB de 1,0% para 0,4% no Bradesco e de 1,0% para 0,3% na XP. A inflação subiu de 4,1% para 5,3% no Bradesco e de 4,4% para 5,5% na XP. Nenhuma das versões menciona a Genoa nem usa a palavra recessão; todas falam em estagnação. A inflação de 6% não é da Genoa: a matéria cita 6,1% do Itaú, que revisou na semana anterior. A parte sobre a Genoa (recessão e inflação de 6%) não tem fonte e precisa de outra referência ou deve ser retirada. \"Encolhendo\" também não aparece: o PIB previsto continua positivo."
+   }
   },
   {
    "id": "a-caso-2014",
@@ -1413,6 +1752,218 @@
    },
    "trecho": "O governo arrecadou mais do que gastou, sem contar os juros, com ajuda desses preços altos e da inflação.",
    "arquivo": "templates/causas.html"
+  },
+  {
+   "id": "a-lopes",
+   "tipo": "documento",
+   "texto": "Um artigo de 2014 da Revista de Economia Política revisou as explicações mais comuns para o juro alto, entre elas o déficit do governo e a falta de poupança, e concluiu que a evidência não confirma com força nenhuma delas.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Francisco Lafaiete Lopes",
+    "titulo": "On high interest rates in Brazil, Revista de Economia Política, v. 34, n. 1",
+    "url": "https://www.scielo.br/scielo.php?script=sci_arttext&pid=S0101-31572014000100001&lng=en&tlng=en",
+    "ano": 2014
+   },
+   "trecho": "An informal look at the evidence does not strongly corroborate any of these arguments.",
+   "trecho_candidato": null,
+   "trecho_lingua": "en",
+   "nota": "Achada pelo advogado do contra em 7/11/2026; o código achou o trecho na página. Entra na próxima conferência."
+  },
+  {
+   "id": "a-scaramuzzi",
+   "tipo": "documento",
+   "texto": "Um estudo da Revista Brasileira de Economia de 2024 achou que, de 2003 a 2013, as contas do governo não atrapalhavam o Banco Central, e que passaram a atrapalhar depois de 2013 e de novo depois de 2019.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Ortega Scaramuzzi e Kfoury Muinhos",
+    "titulo": "Fiscal Dominance in Brazil: The Effects on Financial Conditions and Growth, Revista Brasileira de Economia",
+    "url": "https://ideas.repec.org/a/fgv/epgrbe/v78y2024i2a88864.html",
+    "ano": 2024
+   },
+   "trecho": "there was prevalence of monetary dominance",
+   "trecho_candidato": null,
+   "trecho_lingua": "en",
+   "nota": "O trecho confirma só a parte de 2003 a 2013; os anos depois de 2013 e de 2019 vêm do resumo lido pelo advogado do contra em 7/11/2026. Conferir na próxima rodada."
+  },
+  {
+   "id": "a-castro-505",
+   "tipo": "documento",
+   "texto": "Um estudo do Banco Central de 2019 lembra que dados de empresas não mostram o efeito do juro na economia inteira, e que menos efeito na produção não quer dizer menos efeito nos preços.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Pedro Castro (Banco Central)",
+    "titulo": "Earmarked Credit and Monetary Policy Power: micro and macro considerations, Working Paper 505",
+    "url": "https://econpapers.repec.org/paper/bcbwpaper/505.htm",
+    "ano": 2019
+   },
+   "trecho": "Moreover, evidence of decreased power over output does not imply that power over inflation is also decreased.",
+   "trecho_candidato": null,
+   "trecho_lingua": "en",
+   "nota": "Achada pelo advogado do contra em 7/11/2026; o código achou o trecho na página. Entra na próxima conferência."
+  },
+  {
+   "id": "a-bc-wp230",
+   "tipo": "documento",
+   "texto": "Um estudo do Banco Central com 40 países concluiu que a inflação carrega pouco da do passado em todos eles.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Oliveira e Petrassi (Banco Central)",
+    "titulo": "Is Inflation Persistence Over?, Working Paper 230",
+    "url": "https://ideas.repec.org/p/bcb/wpaper/230.html",
+    "ano": 2010
+   },
+   "trecho": "Our results show that inflation persistence is low and stable for all countries in our sample.",
+   "trecho_candidato": null,
+   "trecho_lingua": "en",
+   "nota": "Achada pelo advogado do contra em 7/11/2026; o código achou o trecho na página. Entra na próxima conferência."
+  },
+  {
+   "id": "a-bc-wp331",
+   "tipo": "documento",
+   "texto": "Outro estudo do Banco Central achou que, no Brasil, o que mais faz a inflação durar é a expectativa das pessoas, mais que a correção pela inflação passada.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Machado e Portugal (Banco Central)",
+    "titulo": "Measuring Inflation Persistence in Brazil Using a Multivariate Model, Working Paper 331",
+    "url": "https://ideas.repec.org/p/bcb/wpaper/331.html",
+    "ano": 2013
+   },
+   "trecho": "Our results indicate that expectations-based persistence matters considerably for inflation persistence in Brazil.",
+   "trecho_candidato": null,
+   "trecho_lingua": "en",
+   "nota": "Achada pelo advogado do contra em 7/11/2026; o código achou o trecho na página. Entra na próxima conferência."
+  },
+  {
+   "id": "a-neutro-sobe",
+   "tipo": "documento",
+   "texto": "Em setembro de 2025, o Banco Central disse que as dúvidas sobre a dívida do governo podem elevar o juro que nem acelera nem freia a economia.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Times Brasil, sobre a ata do Copom",
+    "titulo": "Copom alerta que esforço nas reformas estruturais é fundamental para conter juro neutro (23/09/2025)",
+    "url": "https://timesbrasil.com.br/brasil/copom-alerta-que-esforco-nas-reformas-estruturais-e-fundamental-para-conter-juro-neutro/",
+    "ano": 2025
+   },
+   "trecho": "e as incertezas sobre a estabilização da dívida pública têm potencial de elevar a taxa de juros neutra da economia,",
+   "trecho_candidato": null,
+   "trecho_lingua": "pt",
+   "nota": "Achada pelo advogado do contra em 7/11/2026; o código achou o trecho na página. Entra na próxima conferência."
+  },
+  {
+   "id": "a-custo-divida-2025",
+   "tipo": "documento",
+   "texto": "Em 2025, com a Selic média em 14,33%, o custo médio da dívida do governo ficou perto de 12%, segundo o Tesouro.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Agência Gov, com dados do Tesouro Nacional",
+    "titulo": "Dívida pública encerra 2025 em R$ 8,635 trilhões",
+    "url": "https://agenciagov.ebc.com.br/noticias/202601/divida-publica-encerra-2025-em-r-8-635-trilhoes-dentro-dos-limites-projetados-aponta-tesouro",
+    "ano": 2026
+   },
+   "trecho": "Com a Selic média de 14,33%, custo da dívida ficou perto dos 12%",
+   "trecho_candidato": null,
+   "trecho_lingua": "pt",
+   "nota": "Achada pelo advogado do contra em 7/11/2026; o código achou o trecho na página. Entra na próxima conferência."
+  },
+  {
+   "id": "a-copom-set",
+   "tipo": "documento",
+   "texto": "Na reunião de setembro de 2026, o Banco Central projetava o IPCA de 2026 em 5,2%; em novembro, passou a 5,6%.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Gazeta Mercantil",
+    "titulo": "Copom mantém Selic em 13,75% (novembro de 2026)",
+    "url": "https://gazetamercantil.com/copom-mantem-selic-1375-novembro-2026"
+   },
+   "trecho": null,
+   "trecho_candidato": "No cenário de referência, a projeção para o IPCA de 2026 passou de 5,2%, na reunião de setembro, para 5,6% em novembro.",
+   "trecho_lingua": "pt-BR",
+   "nota": "Citação achada pelo agente de trechos em 7/11/2026; trocar pelo comunicado de setembro do Copom (nível 3)."
+  },
+  {
+   "id": "a-industria-tri",
+   "tipo": "documento",
+   "texto": "No terceiro trimestre de 2026, a indústria produziu 2,2% menos que no segundo, depois de dois trimestres de alta.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Valor, com dados do IBGE",
+    "titulo": "Indústria brasileira recua 2,2% no 3º trimestre após dois trimestres de alta, diz IBGE",
+    "url": "https://valor.globo.com/brasil/noticia/2026/11/05/industria-brasileira-recua-22percent-no-3o-trimestre-apos-dois-trimest"
+   },
+   "trecho": null,
+   "trecho_candidato": "Indústria brasileira recua 2,2% no 3º trimestre após dois trimestres de alta, diz IBGE",
+   "trecho_lingua": "pt-BR",
+   "nota": "O trecho é a manchete da notícia, lida pela rodada de 7/11/2026; a conferência no Mac confere se está na página."
+  },
+  {
+   "id": "a-balanca-out",
+   "tipo": "documento",
+   "texto": "Em outubro de 2026, o Brasil vendeu US$ 9,3 bilhões a mais do que comprou de outros países, 39,4% mais que em outubro de 2025.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "g1",
+    "titulo": "Balança comercial tem superávit de US$ 9,3 bilhões em outubro, alta de 39,4%",
+    "url": "https://g1.globo.com/economia/noticia/2026/11/06/balanca-comercial-tem-superavit-de-us-93-bilhoes-em-outubro-alta-de-394"
+   },
+   "trecho": null,
+   "trecho_candidato": "Balança comercial tem superávit de US$ 9,3 bilhões em outubro, alta de 39,4%",
+   "trecho_lingua": "pt-BR",
+   "nota": "O trecho é a manchete da notícia, lida pela rodada de 7/11/2026; a conferência no Mac confere se está na página."
+  },
+  {
+   "id": "a-balanca-1989",
+   "tipo": "documento",
+   "texto": "O saldo de outubro de 2026 foi o maior para o mês desde 1989.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Agência Brasil",
+    "titulo": "Balança comercial tem maior superávit para outubro desde 1989",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/balanca-comercial-tem-maior-superavit-para-outubro-desde-1989"
+   },
+   "trecho": null,
+   "trecho_candidato": "Balança comercial tem maior superávit para outubro desde 1989",
+   "trecho_lingua": "pt-BR",
+   "nota": "O trecho é a manchete da notícia, lida pela rodada de 7/11/2026; a conferência no Mac confere se está na página."
+  },
+  {
+   "id": "a-exportacoes-out",
+   "tipo": "documento",
+   "texto": "As exportações do Brasil subiram 20% em outubro de 2026, puxadas pelo petróleo e pelo minério de ferro.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "InfoMoney",
+    "titulo": "Brasil tem superávit comercial de US$ 9,3 bi em outubro com alta das exportações",
+    "url": "https://www.infomoney.com.br/economia/brasil-tem-superavit-comercial-de-us-93-bi-em-outubro-com-alta-das-exportacoes/"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "trecho_lingua": "pt-BR",
+   "nota": "Os 20% e os produtos vêm do resumo das notícias da rodada de 7/11/2026; falta o trecho."
+  },
+  {
+   "id": "a-dolar-ago-6nov",
+   "tipo": "dado",
+   "texto": "O dólar passou de R$ 5,10 em 6/8/2026 para R$ 5,50 em 6/11, 7,8% mais caro.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Dólar Ptax de venda (série 1)",
+    "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=1"
+   },
+   "dados": [
+    {
+     "serie": "dolar_ptax",
+     "quando": "2026-08-06",
+     "valor": 5.1,
+     "tol": 0.005
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2026-11-06",
+     "valor": 5.5,
+     "tol": 0.005
+    }
+   ]
   }
  ]
 }

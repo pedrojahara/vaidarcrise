@@ -5,12 +5,12 @@
 <script>document.documentElement.className+=" js"</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Por que o juro do Brasil é tão alto? | Vai dar crise?</title>
-<meta name="description" content="Em novembro de 2026, a Selic está em 13,75% ao ano, e os bancos (Focus) esperam que os preços subam 5,0% em 12 meses. Por isso o juro fica cerca de 8,4% acima da inflação esperada, um dos maiores do mundo. Os estudos que compararam o Brasil com outros países dão mais peso a duas causas. O país poupa pouco, sobretudo o governo, e quem empresta ao governo duvida que a dívida dele pare de crescer.">
+<meta name="description" content="Em novembro de 2026, a Selic está em 13,75% ao ano, e os bancos (Focus) esperam que os preços subam 5,0% em 12 meses. Com isso, o juro fica cerca de 8,4% acima da inflação esperada, um dos maiores do mundo. Os economistas ainda discordam sobre a causa. A desconfiança de quem empresta ao governo explica os anos em que o juro disparou, como 2002, mas nenhuma explicação sozinha dá conta do resto.">
 <link rel="canonical" href="https://vaidarcrise.com.br/perguntas/juro-alto/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
 <meta property="og:title" content="Por que o juro do Brasil é tão alto? | Vai dar crise?">
-<meta property="og:description" content="Em novembro de 2026, a Selic está em 13,75% ao ano, e os bancos (Focus) esperam que os preços subam 5,0% em 12 meses. Por isso o juro fica cerca de 8,4% acima da inflação esperada, um dos maiores do mundo. Os estudos que compararam o Brasil com outros países dão mais peso a duas causas. O país poupa pouco, sobretudo o governo, e quem empresta ao governo duvida que a dívida dele pare de crescer.">
+<meta property="og:description" content="Em novembro de 2026, a Selic está em 13,75% ao ano, e os bancos (Focus) esperam que os preços subam 5,0% em 12 meses. Com isso, o juro fica cerca de 8,4% acima da inflação esperada, um dos maiores do mundo. Os economistas ainda discordam sobre a causa. A desconfiança de quem empresta ao governo explica os anos em que o juro disparou, como 2002, mas nenhuma explicação sozinha dá conta do resto.">
 <meta property="og:url" content="https://vaidarcrise.com.br/perguntas/juro-alto/">
 <meta property="og:image" content="https://vaidarcrise.com.br/og.png">
 <meta property="og:image:width" content="1200">
@@ -131,7 +131,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
-/* a escada de porquês: no "Entenda a fundo" dos fatos do dia e na página de cada pergunta (src/base_site.py) */
+/* a escada de porquês, no "Entenda a fundo" dos fatos do dia (src/base_site.py) */
 .escada{list-style:none;margin:0;padding:0}
 .degrau{position:relative;padding:0 0 18px 22px;border-left:2px solid var(--fio);margin-left:6px}
 .degrau:last-child{border-left-color:transparent;padding-bottom:4px}
@@ -139,6 +139,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .degrau.r-consenso::before{box-shadow:inset 0 0 0 3px var(--desce)}
 .degrau.r-maioria_com_dissenso::before{box-shadow:inset 0 0 0 3px var(--atencao)}
 .degrau.r-em_disputa::before{background:var(--sobe);box-shadow:none}
+.degrau.r-bolso::before{background:var(--placa);box-shadow:none}
 .d-perg{font:700 17px/1.35 var(--sistema);margin:0 0 4px}
 .rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
 .rot.r-consenso{background:var(--normal-fundo)}
@@ -147,52 +148,69 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .d-txt{margin:0 0 6px;font-size:17px;line-height:1.55}
 .d-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 4px;overflow-wrap:anywhere}
 .d-fontes a{color:var(--meta)}
-.d-fontes .ac{font-style:italic}
 .d-mais{font:14.5px/1.45 var(--sistema);margin:4px 0 0}
+.d-teste{font:15px/1.5 var(--sistema);margin:2px 0 4px}
+.d-teste>summary{cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:2px}
+.d-teste p{margin:6px 0 0}
+.d-teste .d-lim{color:var(--meta);font-size:14px}
 
 .perg{padding-top:28px;padding-bottom:40px}
 .perg>*{max-width:700px}
 .perg .sobre-perg{font:600 14px/1.4 var(--sistema);color:var(--meta);margin:0 0 6px}
 .perg h1{font:700 32px/1.15 var(--serifa);margin:0 0 14px;text-wrap:balance}
 .perg .resposta{font-size:19px;margin:0 0 6px}
-.perg h2{font:700 24px/1.2 var(--serifa);margin:38px 0 8px;padding-top:22px;border-top:1px solid var(--fio)}
-.perg .intro{font:15.5px/1.5 var(--sistema);color:var(--meta);margin:0 0 18px}
-.perg .escada{margin-top:6px}
-.perg .degrau{padding-bottom:26px;scroll-margin-top:12px}
-.perg .d-perg{font-size:18px}
-.d-sub{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:12px 0 4px}
-.leituras{display:grid;gap:10px;margin:12px 0 4px}
-.leitura{border:1px solid var(--fio);border-radius:10px;font-family:var(--sistema)}
-.leitura>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:12px 12px 12px 14px;cursor:pointer;list-style:none}
-.leitura>summary::-webkit-details-marker{display:none}
-.leitura .l-nome{font:700 16px/1.35 var(--sistema)}
-.leitura .l-st{grid-column:1;justify-self:start;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;background:var(--maquina)}
-.leitura .l-st.s-maioria{background:var(--normal-fundo)}
-.leitura .l-st.s-testada_e_nao_confirmada,.leitura .l-st.s-minoria{color:var(--meta)}
-.leitura .l-diz{grid-column:1/-1;font:16px/1.5 var(--serifa);margin:6px 0 0}
-.leitura .seta{grid-column:2;grid-row:1;width:18px;height:18px;align-self:center;transition:transform .15s}
-.leitura[open] .seta{transform:rotate(180deg)}
-.l-corpo{padding:0 14px 12px;font:15.5px/1.5 var(--sistema)}
-.l-corpo h4{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:12px 0 4px}
-.l-corpo p{margin:0 0 4px}
-.l-corpo ul{margin:0;padding-left:1.1em}
-.l-corpo li{margin:0 0 8px}
-.teste{background:var(--maquina);border-radius:10px;padding:12px 14px;margin:14px 0 4px;font:15.5px/1.5 var(--sistema);scroll-margin-top:12px}
-.teste h3{font:700 16px/1.35 var(--sistema);margin:0 0 6px}
-.teste p{margin:0 0 8px}
-.teste ul{margin:0 0 8px;padding-left:1.1em}
-.teste .lim{color:var(--meta);font-size:14px}
-.eps{list-style:none;padding:0;margin:0}
-.eps li{border-top:1px solid var(--fio);padding:14px 0 10px}
-.eps .ep-q{font:600 13.5px/1.4 var(--sistema);color:var(--meta);margin:0 0 2px}
-.eps h3{font:700 18px/1.3 var(--serifa);margin:0 0 4px}
-.eps p{margin:0 0 6px}
+.perg h2{font:700 24px/1.2 var(--serifa);margin:34px 0 8px;padding-top:22px;border-top:1px solid var(--fio);text-wrap:balance;scroll-margin-top:12px}
+.perg .intro{font:15.5px/1.5 var(--sistema);color:var(--meta);margin:0 0 14px}
+.perg section{scroll-margin-top:12px}
+.tempo{list-style:none;padding:0;margin:14px 0 0}
+.tempo>li{border-top:1px solid var(--fio)}
+.tempo>li:last-child{border-bottom:1px solid var(--fio)}
+.tempo summary{display:grid;grid-template-columns:72px minmax(0,1fr) auto 18px;gap:10px;align-items:baseline;padding:10px 0;cursor:pointer;list-style:none;font:15.5px/1.35 var(--sistema)}
+.tempo summary::-webkit-details-marker{display:none}
+.tempo .anos{font-weight:700;font-variant-numeric:tabular-nums}
+.tempo .causa{font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;background:var(--maquina);white-space:nowrap}
+.tempo .causa.de-fora{background:var(--normal-fundo)}
+.tempo .seta{width:16px;height:16px;align-self:center;transition:transform .15s}
+.tempo details[open] .seta{transform:rotate(180deg)}
+.tempo .ep-corpo{padding:0 0 12px 82px}
+.tempo .ep-corpo p{margin:0 0 6px}
+.tempo .ep-q{font:13.5px/1.4 var(--sistema);color:var(--meta)}
+.cartao{border:1px solid var(--fio);border-radius:10px;padding:14px;margin:0 0 12px;scroll-margin-top:12px}
+.cartao .peso{font:600 13px/1.3 var(--sistema);color:var(--meta);margin:0 0 4px}
+.cartao h3{font:700 19px/1.3 var(--serifa);margin:0 0 6px}
+.cartao>p{margin:0 0 6px}
+.cartao .contra{border-top:1px dashed var(--fio);margin:10px 0 0;padding-top:10px;font:15.5px/1.5 var(--sistema)}
+.cartao .contra h4{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:0 0 4px}
+.cartao .contra p{margin:0 0 4px}
+.grupo{font:600 13.5px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:20px 0 4px}
+.linhas{list-style:none;padding:0;margin:0}
+.linhas>li{border-top:1px solid var(--fio);padding:10px 0 4px;scroll-margin-top:12px}
+.linhas>li>p{margin:0 0 4px}
+details.estudos{font:15px/1.5 var(--sistema);margin:4px 0 6px}
+details.estudos>summary{cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:2px}
+.e-corpo{padding:6px 0 0}
+.e-corpo h4{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:12px 0 4px}
+.e-corpo p{margin:0 0 4px}
+.e-corpo ul{margin:0;padding-left:1.1em}
+.e-corpo li{margin:0 0 8px}
+.agora{background:var(--nota-fundo);border-radius:10px;padding:12px 14px;font:16px/1.5 var(--sistema)}
+.agora .quando{font:600 13px/1.3 var(--sistema);color:var(--meta);margin:0 0 4px}
+.agora p{margin:0 0 6px}
+.fatos{list-style:none;padding:0;margin:0;font:16px/1.4 var(--sistema)}
+.fatos li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px;border-top:1px solid var(--fio);padding:10px 0}
+.fatos .dia{font-weight:700;color:var(--meta);font-variant-numeric:tabular-nums}
+.outras{list-style:none;padding:0;margin:0;font:16px/1.4 var(--sistema)}
+.outras li{border-top:1px solid var(--fio);padding:10px 0}
+.outras .pn{display:block;font:600 13px/1.3 var(--sistema);color:var(--meta)}
+details.conferimos{border-top:1px solid var(--fio);margin-top:34px;padding-top:12px;font:15px/1.5 var(--sistema)}
+details.conferimos>summary{cursor:pointer;font:700 17px/1.4 var(--sistema)}
+details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
 .lista-fontes{font:14.5px/1.5 var(--sistema);padding-left:1.6em}
 .lista-fontes li{margin:0 0 8px;overflow-wrap:anywhere}
 .lista-fontes .nv{color:var(--meta)}
 .mud{font:14.5px/1.5 var(--sistema);padding-left:1.1em}
-@media (max-width:620px){.perg h1{font-size:27px}.perg h2{font-size:22px}}
-@media (prefers-reduced-motion: reduce){.leitura .seta{transition:none}}
+@media (max-width:620px){.perg h1{font-size:27px}.perg h2{font-size:22px}.tempo summary{grid-template-columns:62px minmax(0,1fr) auto 16px}.tempo .ep-corpo{padding-left:0}}
+@media (prefers-reduced-motion: reduce){.tempo .seta{transition:none}}
 
 </style>
 </head>
@@ -204,270 +222,174 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 </div></div></header>
 
 <main class="in perg">
-<p class="sobre-perg">Uma pergunta que os fatos do dia ajudam a responder. Atualizada em 7/11/2026.</p>
+<p class="sobre-perg">Juro, uma das pressões do topo · leitura de 5 minutos · atualizada em 7/11/2026</p>
 <h1>Por que o juro do Brasil é tão alto?</h1>
-<p class="resposta">Em novembro de 2026, a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> está em 13,75% ao ano, e os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) esperam que os preços subam 5,0% em 12 meses. Por isso o juro fica cerca de 8,4% acima da inflação esperada, um dos maiores do mundo. Os estudos que compararam o Brasil com outros países dão mais peso a duas causas. O país poupa pouco, sobretudo o governo, e quem empresta ao governo duvida que a dívida dele pare de crescer.</p>
-<p class="d-fontes">Fontes: <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432" rel="nofollow noopener">Banco Central</a>; <a href="https://www.poder360.com.br/poder-economia/mesmo-com-corte-brasil-tem-o-maior-juro-real-do-planeta/" rel="nofollow noopener">Poder360</a> <span class="ac">(a conferir)</span>; <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a> <span class="ac">(a conferir)</span>; <a href="https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015" rel="nofollow noopener">Fernando Gonçalves, Márcio Holland e Andrei Spacov</a> <span class="ac">(a conferir)</span></p>
+<p class="resposta">Em novembro de 2026, a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> está em 13,75% ao ano, e os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) esperam que os preços subam 5,0% em 12 meses. Com isso, o juro fica cerca de 8,4% acima da inflação esperada, um dos maiores do mundo. Os economistas ainda discordam sobre a causa. A desconfiança de quem empresta ao governo explica os anos em que o juro disparou, como 2002, mas nenhuma explicação sozinha dá conta do resto.</p>
+<p class="d-fontes">Fontes: <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432" rel="nofollow noopener">Banco Central</a>; <a href="https://www.infomoney.com.br/economia/com-selic-em-1345-brasil-tem-maior-juro-real-do-mundo-set2026/" rel="nofollow noopener">InfoMoney</a>; <a href="https://www.nber.org/papers/w10389" rel="nofollow noopener">Olivier Blanchard</a>; <a href="https://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0101-31572014000100001&amp;lng=en&amp;tlng=en" rel="nofollow noopener">Francisco Lafaiete Lopes</a>; <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a></p>
 
-<h2>Do fato de hoje até a causa de fundo</h2>
-<p class="intro">Cada passo responde ao porquê do passo anterior. A etiqueta de cada um diz se os estudos concordam, se a maioria concorda e há quem discorde, ou se os economistas ainda divergem.</p>
-<ol class="escada">
-<li class="degrau r-fato" id="fato">
-  <p class="d-perg">O que aconteceu?</p>
-  <span class="rot r-fato">Fato</span>
-  <p class="d-txt">Em 4/11/2026, o Banco Central manteve a Selic em 13,75% ao ano e parou os cortes que fazia desde março.</p><p class="d-fontes">Fontes: <a href="https://www.gazetadopovo.com.br/economia/copom-interrompe-ciclo-de-cortes-e-mantem-selic-em-1375/" rel="nofollow noopener">Gazeta do Povo</a> <span class="ac">(a conferir)</span>; <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432" rel="nofollow noopener">Banco Central</a></p>
-  
-  
-  
-  
-  
-</li>
-<li class="degrau r-consenso" id="causa_imediata">
-  <p class="d-perg">Por que o Banco Central parou de cortar?</p>
-  <span class="rot r-consenso">Os estudos concordam</span>
-  <p class="d-txt">Porque a inflação esperada voltou a subir. Os bancos (Focus) esperavam 4,2% em julho e passaram a esperar 5,0% no fim de outubro, acima do <a class="termo" href="https://pt.wikipedia.org/wiki/Metas_de_infla%C3%A7%C3%A3o" target="_blank" rel="noopener">teto da meta de inflação</a>, de 4,5%.</p><p class="d-fontes">Fontes: <a href="https://www.bcb.gov.br/publicacoes/focus" rel="nofollow noopener">Banco Central</a> <span class="ac">(a conferir)</span>; <a href="https://www.gazetadopovo.com.br/economia/copom-interrompe-ciclo-de-cortes-e-mantem-selic-em-1375/" rel="nofollow noopener">Gazeta do Povo</a> <span class="ac">(a conferir)</span></p>
-  
-  
-  
-  
-  
-</li>
-<li class="degrau r-consenso" id="mecanismo">
-  <p class="d-perg">Por que a inflação esperada subiu?</p>
-  <span class="rot r-consenso">Os estudos concordam</span>
-  <p class="d-txt">Parte dessa alta veio do dólar, que passou de R$ 5,18 no fim de agosto para R$ 5,50 em 6/11, e parte, do El Niño, que ameaça as safras. Com o dólar mais caro, os importados ficam mais caros, como trigo, açúcar e café.</p><p class="d-fontes">Fontes: <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=1" rel="nofollow noopener">Banco Central</a>; <a href="https://www1.folha.uol.com.br/mercado/2026/10/expectativas-de-inflacao-para-2027-e-2028-saltam-apos-segundo-turno.shtml" rel="nofollow noopener">Folha</a> <span class="ac">(a conferir)</span></p>
-  
-  
-  
-  
-  
-</li>
-<li class="degrau r-em_disputa" id="d-dolar">
-  <p class="d-perg">Por que o dólar subiu?</p>
-  <span class="rot r-em_disputa">Os economistas divergem</span>
-  
-  <p class="d-sub">O que os dados mostram</p><p class="d-txt">Quase toda a alta do dólar desde agosto veio num dia só. Em 23/10, último dia útil antes do segundo turno, o dólar tinha caído para R$ 5,04 e o juro de 10 anos, para 6,9%. Esse juro é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos. Em 26/10, o dia seguinte à eleição, os dois saltaram para R$ 5,50 e 8,1%.</p><p class="d-fontes">Fontes: Banco Central e Tesouro Nacional; <a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula" rel="nofollow noopener">Agência Brasil</a> <span class="ac">(a conferir)</span></p>
-  <p class="d-sub">Onde começa a divergência</p><p class="d-txt">Depois do salto, o dólar recuou para R$ 5,33 em 27/10 e voltou a R$ 5,50 em 6/11. Essa segunda alta veio de decisões tomadas no Brasil ou de fora?</p><p class="d-fontes">Fonte: <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=1" rel="nofollow noopener">Banco Central</a></p>
-  <p class="d-sub">O peso da evidência</p><p class="d-txt">Os fatos da semana apoiam as duas leituras, e os estudos mostram que as duas forças existem. O teste com as moedas do México e do Chile vai mostrar qual pesa mais daqui para a frente.</p>
-  <div class="leituras">
-    <details class="leitura" id="l-daqui">
-      <summary><span class="l-nome">A leitura daqui</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="l-st s-em_pe">Ainda de pé</span><span class="l-diz">Quem investe passou a desconfiar das decisões tomadas no Brasil. Espera a dívida do governo crescendo mais rápido e teme um Banco Central mais disposto a cortar o juro com os preços subindo.</span></summary>
-      <div class="l-corpo">
-        
-        <h4>O que pesa a favor</h4><ul><li>O juro que o governo paga para pegar dinheiro emprestado subiu em 3/11, com o temor sobre a agenda econômica. Ele caiu em 5/11 e 6/11, depois da fala do presidente e dos sinais sobre as contas do governo.<p class="d-fontes">Fontes: <a href="https://valor.globo.com/financas/noticia/2026/11/03/juros-futuros-tem-forte-alta-por-temor-sobre-agenda-economica-do-governo-e-piora-do-focus.ghtml" rel="nofollow noopener">Valor</a> <span class="ac">(a conferir)</span>; <a href="https://www.poder360.com.br/poder-governo/lula-cobra-responsabilidade-fiscal-para-atrair-investimentos/" rel="nofollow noopener">Poder360</a> <span class="ac">(a conferir)</span></p></li><li>O Tesouro projeta a dívida em 83,7% do <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> no fim de 2026 e em 89,7% em 2030.<p class="d-fontes">Fonte: <a href="https://www.poder360.com.br/poder-economia/divida-bruta-deve-chegar-a-837-do-pib-no-fim-de-2026/" rel="nofollow noopener">Poder360</a> <span class="ac">(a conferir)</span></p></li><li>Desde a reeleição, investidores estrangeiros tiraram R$ 8,4 bilhões da Bolsa brasileira.<p class="d-fontes">Fonte: <a href="https://www.poder360.com.br/poder-economia/dolar-sobe-067-e-fecha-a-r-5489-ibovespa-cai-082/" rel="nofollow noopener">Poder360</a> <span class="ac">(a conferir)</span></p></li><li>O presidente vai indicar seis diretores do Banco Central até o fim de 2027, e investidores temem uma diretoria mais disposta a cortar o juro com os preços subindo.<p class="d-fontes">Fonte: <a href="https://www1.folha.uol.com.br/mercado/2026/11/lula-indicara-seis-diretores-do-banco-central-ate-o-fim-de-2027-e-mercado-teme-mudanca-de-perfil.shtml" rel="nofollow noopener">Folha</a> <span class="ac">(a conferir)</span></p></li><li>Blanchard mostrou que, em 2002 e 2003, com a dívida alta e muito dela em dólar, subir o juro aumentava o medo de calote e podia enfraquecer o real.<p class="d-fontes">Fonte: <a href="https://www.nber.org/papers/w10389" rel="nofollow noopener">Olivier Blanchard</a> <span class="ac">(a conferir)</span></p></li></ul>
-        <h4>A objeção mais forte</h4><p>De 26/10 a 5/11, o juro de 10 anos ficou parado perto de 8,1% enquanto o dólar subia. Se a segunda alta viesse da desconfiança nas contas, o juro que o governo paga também deveria subir.</p><p class="d-fontes">Fonte: <a href="https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto" rel="nofollow noopener">Tesouro Nacional</a></p>
-        
-        <h4>Quem defende</h4><p>investidores ouvidos pelos jornais na semana</p>
-      </div>
-    </details><details class="leitura" id="l-fora">
-      <summary><span class="l-nome">A leitura de fora</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="l-st s-em_pe">Ainda de pé</span><span class="l-diz">Investidores do mundo todo ficaram com mais medo e tiraram dinheiro de países emergentes, como o Brasil. Com isso, o dólar subiu contra as moedas desses países ao mesmo tempo.</span></summary>
-      <div class="l-corpo">
-        
-        <h4>O que pesa a favor</h4><ul><li>O dólar caiu em 4/11, com o alívio depois das eleições nos EUA, e subiu em 5/11, quando a Nasdaq, bolsa dos EUA, chegou a cair 6,4%.<p class="d-fontes">Fontes: <a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-cai-r-545-apos-eleicoes-nos-eua-e-antes-do-copom" rel="nofollow noopener">Agência Brasil</a> <span class="ac">(a conferir)</span>; <a href="https://c-level.folha.uol.com.br/negocios/2026/11/nasdaq-cai-em-64-com-receio-de-que-vitoria-democrata-afete-boom-da-ia.shtml" rel="nofollow noopener">Folha</a> <span class="ac">(a conferir)</span></p></li><li>Em 6/11, o emprego forte nos EUA aumentou a aposta de que o banco central de lá suba o juro, o que costuma tirar dinheiro de países como o Brasil.<p class="d-fontes">Fonte: <a href="https://www1.folha.uol.com.br/mercado/2026/11/eua-criam-165-mil-vagas-em-outubro-acima-das-projecoes.shtml" rel="nofollow noopener">Folha</a> <span class="ac">(a conferir)</span></p></li><li>Hélène Rey mostrou que há um ciclo financeiro mundial: o dinheiro entra e sai dos países ao mesmo tempo, junto com o medo de quem investe nos EUA.<p class="d-fontes">Fonte: <a href="https://econpapers.repec.org/RePEc:cpr:ceprdp:10591" rel="nofollow noopener">Hélène Rey</a> <span class="ac">(a conferir)</span></p></li></ul>
-        <h4>A objeção mais forte</h4><p>Um estudo do Banco de Compensações Internacionais achou que esse ciclo mundial raramente explica mais de um quarto das entradas e saídas de dinheiro dos países.</p><p class="d-fontes">Fonte: <a href="https://www.bis.org/publ/work661.htm" rel="nofollow noopener">Cerutti, Claessens e Rose, Banco de Compensações Internacionais</a> <span class="ac">(a conferir)</span></p>
-        
-        <h4>Quem defende</h4><p>Hélène Rey (2013), para os países emergentes em geral</p>
-      </div>
-    </details>
-  </div>
-  <div class="teste" id="teste">
-    <h3>Como saber qual leitura está certa</h3>
-    <p>Daqui para a frente, o dólar vai subir mais contra o real do que contra as moedas do México e do Chile? O teste compara a alta do dólar contra o real com a alta contra o peso mexicano e o peso chileno, pelas cotações oficiais do Banco Central. A conta vai do fechamento de 6/11/2026, o último antes de a regra ser escrita, até cada data de conferência.</p>
-    <ul><li><b>A leitura daqui:</b> O dólar sobe mais contra o real do que contra os dois pesos.</li><li><b>A leitura de fora:</b> O dólar sobe parecido contra as três moedas.</li></ul>
-    <p>Se a alta contra o real passar a dos dois pesos em mais de 2 pontos, o resultado favorece a leitura daqui. Se a diferença ficar entre −2 e 2 pontos, favorece a leitura de fora. O site confere em 7/12/2026 e em 5/2/2027, e até lá esta parte fica sem resultado.</p>
-    
-    <p class="lim">O México depende muito da economia dos EUA, e o Chile, do preço do cobre, então as duas moedas também têm motivos próprios. Por isso a regra pede uma diferença de mais de 2 pontos. O teste começa em 6/11, e não em 27/10, porque o que aconteceu entre 27/10 e 6/11 já era conhecido quando a regra foi escrita, e medir esse trecho seria como apostar num jogo que já acabou.</p>
-  </div>
-</li>
-<li class="degrau r-maioria_com_dissenso" id="d-nivel">
-  <p class="d-perg">Por que o Brasil precisa de um juro tão maior que o de outros países para segurar os preços?</p>
-  <span class="rot r-maioria_com_dissenso">A maioria concorda</span>
-  
-  
-  
-  <p class="d-sub">O peso da evidência</p><p class="d-txt">Os estudos que compararam o Brasil com outros países dão mais peso à poupança baixa e à desconfiança nas contas do governo. As outras leituras explicam pedaços, foram pouco testadas ou foram testadas e não se confirmaram.</p><p class="d-fontes">Fontes: <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a> <span class="ac">(a conferir)</span>; <a href="https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015" rel="nofollow noopener">Fernando Gonçalves, Márcio Holland e Andrei Spacov</a> <span class="ac">(a conferir)</span></p>
-  <div class="leituras">
-    <details class="leitura" id="l-poupanca">
-      <summary><span class="l-nome">A leitura da poupança baixa</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="l-st s-maioria">A maioria defende</span><span class="l-diz">O Brasil poupa pouco, e por isso sobra pouco dinheiro para emprestar a quem quer pegar: famílias, empresas e, principalmente, o governo. Com pouco dinheiro e muita gente querendo, o preço do dinheiro emprestado, que é o juro, fica alto.</span></summary>
-      <div class="l-corpo">
-        
-        <h4>O que pesa a favor</h4><ul><li>Um estudo do Fundo Monetário Internacional de 2012 concluiu que o juro do Brasil pode cair ao nível de outros emergentes. Para isso, a poupança do país teria de subir ao nível deles, sobretudo a do governo.<p class="d-fontes">Fonte: <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a> <span class="ac">(a conferir)</span></p></li><li>Em 2025, o Brasil poupou 14,4% do PIB, segundo o IBGE.<p class="d-fontes">Fonte: <a href="https://agenciabrasil.ebc.com.br/educacao/noticia/2026-03/economia-brasileira-cresce-23-em-2025-revela-ibge" rel="nofollow noopener">Agência Brasil, com dados do IBGE</a> <span class="ac">(a conferir)</span></p></li></ul>
-        <h4>A objeção mais forte</h4><p>A poupança muda devagar, mas o juro brasileiro mudou muito. Em agosto de 2020, ficou cerca de 1% abaixo da inflação esperada; em março de 2026, cerca de 10,2% acima.</p><p class="d-fontes">Fonte: Banco Central</p>
-        <h4>O que quem defende responde</h4><p>Essa leitura explica o juro que nem acelera nem freia a economia, que muda devagar. Em volta dele, o Banco Central sobe e desce a Selic para segurar os preços.</p><p class="d-fontes">Fonte: <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a> <span class="ac">(a conferir)</span></p>
-        <h4>Quem defende</h4><p>Fundo Monetário Internacional (Segura-Ubiergo, 2012)</p>
-      </div>
-    </details><details class="leitura" id="l-confianca">
-      <summary><span class="l-nome">A leitura da desconfiança nas contas</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="l-st s-maioria">A maioria defende</span><span class="l-diz">Quando quem empresta ao governo duvida que a dívida vá parar de crescer, cobra mais para emprestar e passa a esperar mais inflação. Para segurar os preços, o Banco Central precisa então de um juro mais alto.</span></summary>
-      <div class="l-corpo">
-        
-        <h4>O que pesa a favor</h4><ul><li>Blanchard mostrou que, em 2002 e 2003, com a dívida alta e muito dela em dólar, subir o juro aumentava o medo de calote. Favero e Giavazzi também concluíram que, em 2002, as contas do governo atrapalhavam o efeito do juro sobre os preços.<p class="d-fontes">Fontes: <a href="https://www.nber.org/papers/w10389" rel="nofollow noopener">Olivier Blanchard</a> <span class="ac">(a conferir)</span>; <a href="https://www.nber.org/papers/w10390" rel="nofollow noopener">Carlo Favero e Francesco Giavazzi</a> <span class="ac">(a conferir)</span></p></li><li>Uma dissertação da Universidade de São Paulo olhou a crise de 2014 a 2016. Pela estimativa dela, a piora das contas subiu em cerca de 1 ponto o juro que nem acelera nem freia a economia.<p class="d-fontes">Fonte: <a href="https://www.teses.usp.br/teses/disponiveis/12/12138/tde-23062022-200349/en.php" rel="nofollow noopener">Dissertação de mestrado, Universidade de São Paulo</a> <span class="ac">(a conferir)</span></p></li><li>A dívida do governo passou de 51,5% do PIB em dezembro de 2013 para 82,9% em setembro de 2026.<p class="d-fontes">Fonte: <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=13762" rel="nofollow noopener">Banco Central</a></p></li></ul>
-        <h4>A objeção mais forte</h4><p>Do fim de 2016 ao fim de 2019, a dívida do governo subiu de 69,8% para 74,4% do PIB. Mesmo assim, no mesmo período, o juro acima da inflação esperada caiu de cerca de 8,5% para 0,7%.</p><p class="d-fontes">Fonte: Banco Central</p>
-        <h4>O que quem defende responde</h4><p>Por essa leitura, pesa a direção esperada da dívida mais que o tamanho dela. Nesses anos, o Congresso aprovou o teto de gastos, em 2016, e a reforma da Previdência, em 2019.</p><p class="d-fontes">Fonte: <a href="http://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc95.htm" rel="nofollow noopener">Planalto</a> <span class="ac">(a conferir)</span></p><p class="d-fontes"><span class="ac">Falta achar um estudo que defenda a primeira frase com estes anos.</span></p>
-        <h4>Quem defende</h4><p>Olivier Blanchard (2004); Carlo Favero e Francesco Giavazzi (2004)</p>
-      </div>
-    </details><details class="leitura" id="l-credito">
-      <summary><span class="l-nome">A leitura do crédito com juro do governo</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="l-st s-em_disputa">Em disputa</span><span class="l-diz">Parte dos empréstimos tem juro definido pelo governo, e não pelo banco, como os do <a class="termo" href="https://pt.wikipedia.org/wiki/Banco_Nacional_de_Desenvolvimento_Econ%C3%B4mico_e_Social" target="_blank" rel="noopener">BNDES</a>, do crédito rural e da casa própria. Esse juro não sobe quando a Selic sobe, por isso o Banco Central precisaria subir mais a Selic para frear o resto da economia.</span></summary>
-      <div class="l-corpo">
-        
-        <h4>O que pesa a favor</h4><ul><li>Bonomo e Martins, do Banco Central, acharam que empresas com mais crédito subsidiado do governo reagem menos quando a Selic sobe.<p class="d-fontes">Fonte: Marco Bonomo e Bruno Martins (Banco Central) <span class="ac">(a conferir)</span></p></li></ul>
-        <h4>A objeção mais forte</h4><p>Um artigo da Revista de Economia Política, com dados de 2000 a 2018, não achou sinal de que o juro freie menos nos anos de muito crédito dos bancos públicos.</p><p class="d-fontes">Fonte: <a href="https://www.scielo.br/j/rep/a/PYCLBpjXsS3MV4yDPZTdqgM/?lang=pt" rel="nofollow noopener">Modenesi e Passos, Revista de Economia Política, v. 42, n. 3 (2022)</a> <span class="ac">(a conferir)</span></p>
-        <h4>O que quem defende responde</h4><p>Se a leitura está certa, o problema diminuiu. Em 2020, um estudo do Banco Central concluiu que duas mudanças tendem a dar mais força à Selic. Uma é a troca do juro dos empréstimos do BNDES; a outra, o crédito com juro dos bancos crescendo.</p><p class="d-fontes">Fonte: <a href="https://www.bcb.gov.br/conteudo/relatorioinflacao/EstudosEspeciais/EE077_Potencia_da_politica_monetaria.pdf" rel="nofollow noopener">Banco Central, Estudo Especial 77</a> <span class="ac">(a conferir)</span></p>
-        <h4>Quem defende</h4><p>Marco Bonomo e Bruno Martins (Banco Central, 2016)</p>
-      </div>
-    </details><details class="leitura" id="l-indexacao">
-      <summary><span class="l-nome">A leitura dos preços corrigidos pela inflação passada</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="l-st s-pouco_testada">Pouco testada</span><span class="l-diz">Muitos preços são corrigidos pela inflação do ano anterior, como o aluguel e o salário mínimo. Por isso a inflação de hoje carrega a de ontem, e o juro precisa ficar alto por mais tempo para trazê-la para baixo.</span></summary>
-      <div class="l-corpo">
-        
-        <h4>O que pesa a favor</h4><ul><li>Depois de contar poupança, contas do governo e inflação, o estudo do Fundo Monetário Internacional de 2012 ainda achou cerca de 2 pontos de juro sem explicação. O autor aponta essa correção pela inflação passada como uma das causas possíveis.<p class="d-fontes">Fonte: <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a> <span class="ac">(a conferir)</span></p></li></ul>
-        <h4>A objeção mais forte</h4><p>Nenhum dos estudos desta página mediu quanto essa correção pesa no juro. No estudo do Fundo Monetário Internacional, ela aparece como explicação possível de uma sobra.</p><p class="d-fontes">Fonte: <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a> <span class="ac">(a conferir)</span></p>
-        
-        <h4>Quem defende</h4><p>Fundo Monetário Internacional (Segura-Ubiergo, 2012), como hipótese</p>
-      </div>
-    </details><details class="leitura" id="l-circulo">
-      <summary><span class="l-nome">A leitura do juro que alimenta a dívida</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="l-st s-minoria">Minoria</span><span class="l-diz">Cerca de metade da dívida do governo acompanha a Selic. Quando a Selic sobe, a conta de juros sobe, a dívida cresce, e a dívida maior vira motivo para manter o juro alto. Por essa leitura, o próprio juro alto ajuda a manter a dívida crescendo.</span></summary>
-      <div class="l-corpo">
-        <p class="d-fontes">Fonte: <a href="https://vaidarcrise.com.br/causas/" rel="nofollow noopener">Aba O que causa recessão</a></p>
-        <h4>O que pesa a favor</h4><ul><li>Em 12 meses, até agosto de 2026, os juros da dívida custaram R$ 1,2 trilhão, 8,9% do PIB. É bem mais que o 0,6% do PIB que o governo gastou a mais do que arrecadou no mesmo período, sem contar os juros.<p class="d-fontes">Fonte: <a href="https://vaidarcrise.com.br/causas/" rel="nofollow noopener">Banco Central, na aba O que causa recessão</a></p></li><li>Em novembro de 2026, o economista André Lara-Resende disse que os juros são a maior parte do que o governo gasta a mais do que arrecada. Para ele, a Selic alta alimenta a dívida.<p class="d-fontes">Fonte: <a href="https://mercadoeconsumo.com.br/02/11/2026/economia/economista-de-plano-real-acusa-bc-de-causar-rombo-fiscal-via-juros/" rel="nofollow noopener">Mercado &amp; Consumo</a> <span class="ac">(a conferir)</span></p></li></ul>
-        <h4>A objeção mais forte</h4><p>Em outubro de 2012, a Selic chegou a 7,25%, cerca de 1,8% acima da inflação esperada. Em um ano, a inflação esperada subiu de 5,4% para 6,2%, e o Banco Central voltou a subir a Selic em abril de 2013.</p><p class="d-fontes">Fonte: Banco Central</p>
-        <h4>O que quem defende responde</h4><p>Lara-Resende propõe metas de inflação e de juro combinadas para quatro ou cinco anos, em vez de só cortar a Selic.</p><p class="d-fontes">Fonte: <a href="https://www.jb.com.br/economia/2026/11/1061430-andre-lara-resende-critica-juros-altos-e-o-impacto-fiscal-no-brasil.html" rel="nofollow noopener">Jornal do Brasil</a> <span class="ac">(a conferir)</span></p>
-        <h4>Quem defende</h4><p>André Lara-Resende</p>
-      </div>
-    </details><details class="leitura" id="l-juridica">
-      <summary><span class="l-nome">A leitura da incerteza jurídica</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="l-st s-testada_e_nao_confirmada">Testada e não confirmada</span><span class="l-diz">Em 2005, Arida, Bacha e Lara-Resende sugeriram que o juro do Brasil era alto por causa da incerteza sobre contratos e da moeda que não se troca livremente por outras.</span></summary>
-      <div class="l-corpo">
-        
-        <h4>O que pesa a favor</h4><ul><li>É a proposta original dos três economistas.<p class="d-fontes">Fonte: <a href="https://www.researchgate.net/publication/228632946_Por_que_as_taxas_de_juros_reais_de_curto_prazo_sao_tao_elevadas_no_Brasil" rel="nofollow noopener">Persio Arida, Edmar Bacha e André Lara-Resende</a> <span class="ac">(a conferir)</span></p></li></ul>
-        <h4>A objeção mais forte</h4><p>Gonçalves, Holland e Spacov testaram a ideia com dados de vários países, e os resultados foram em geral contrários a ela. Os fatores de sempre, ligados à inflação e às contas do governo, explicaram o juro muito melhor.</p><p class="d-fontes">Fonte: <a href="https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015" rel="nofollow noopener">Fernando Gonçalves, Márcio Holland e Andrei Spacov</a> <span class="ac">(a conferir)</span></p>
-        
-        <h4>Quem defende</h4><p>Persio Arida, Edmar Bacha e André Lara-Resende (2005)</p>
-      </div>
-    </details>
-  </div>
-  
-</li>
-<li class="degrau r-consenso" id="o_que_vem_depois">
-  <p class="d-perg">O que costuma vir depois?</p>
-  <span class="rot r-consenso">Os estudos concordam</span>
-  <p class="d-txt">Com o juro cerca de 8,4% acima da inflação esperada, comprar a prazo e investir continuam caros, o que freia as vendas e as contratações. Em 2025, o Banco Central estimava em cerca de 5% acima da inflação o juro que nem acelera nem freia a economia, bem abaixo dos 8,4% de hoje. Na primeira semana de novembro, a indústria mostrou queda de 4,1% desde maio, e as empresas tiveram o pior setembro de vagas com carteira já registrado. O IBGE divulga o PIB do terceiro trimestre em 2/12, e o Banco Central decide o juro de novo em 9/12.</p><p class="d-fontes">Fontes: Banco Central; <a href="https://acionista.com.br/inflacao-tem-70-de-chance-de-superar-meta-em-2025-alerta-banco-central/" rel="nofollow noopener">Acionista</a> <span class="ac">(a conferir)</span>; <a href="https://www.gazetadopovo.com.br/economia/producao-industrial-recua-08-em-setembro-e-acumula-perda-de-41-desde-maio/" rel="nofollow noopener">Gazeta do Povo, com dados do IBGE</a> <span class="ac">(a conferir)</span>; <a href="https://www.poder360.com.br/poder-economia/brasil-cria-121-305-empregos-formais-em-setembro-de-2026/" rel="nofollow noopener">Poder360, com dados do Ministério do Trabalho</a> <span class="ac">(a conferir)</span>; Calendários do IBGE e do Banco Central</p>
-  
-  
-  
-  
-  
-</li>
+<section id="o-que-muda">
+<h2>O que isso muda para você?</h2>
+<p>A Selic influencia o juro que os bancos cobram de você no cartão, no empréstimo e no financiamento. Com ela alta, quem compra a prazo compra menos, as lojas vendem menos e as empresas contratam menos. Em dezembro de 2024, o Banco Central passou a estimar em 5% acima da inflação o juro que nem acelera nem freia a economia. Em 2025, disse que esse ponto pode subir com as dúvidas sobre a dívida do governo. O de hoje, de cerca de 8,4%, está acima dele e por isso freia a economia.</p>
+<p class="d-fontes">Fontes: <a href="https://www.bcb.gov.br/api/paginasite/sitebcb/controleinflacao/taxaselic" rel="nofollow noopener">Banco Central</a>; <a href="https://vaidarcrise.com.br/causas/#t-freio" rel="nofollow noopener">Aba O que causa recessão</a>; <a href="https://www.bcb.gov.br/api/servico/sitebcb/copom/atas_detalhes?nro_reuniao=267" rel="nofollow noopener">Banco Central (ata do Copom)</a>; <a href="https://timesbrasil.com.br/brasil/copom-alerta-que-esforco-nas-reformas-estruturais-e-fundamental-para-conter-juro-neutro/" rel="nofollow noopener">Times Brasil, sobre a ata do Copom</a></p>
+</section>
 
-</ol>
+<section id="governo">
+<h2>Isso é coisa de um governo só?</h2>
+<p>Não. A Selic subiu e caiu em governos de lados diferentes. Ela ficou em 14,25% de 2015 a 2016, chegou a 2% em 2020 e voltou a 13,75% em 2022. Abaixo, cada período diz se a causa veio daqui, de fora ou das duas.</p>
+<p class="d-fontes">Fontes: Banco Central; IBGE e Banco Central</p>
+<ul class="tempo">
+<li><details>
+  <summary><span class="anos">2002–03</span><span>A desconfiança na eleição de 2002</span><span class="causa as-duas">as duas</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <div class="ep-corpo"><p class="ep-q">junho de 2002 a junho de 2003</p><p>Com a dívida alta e boa parte dela em dólar, quem investe passou a temer um calote. O dólar subiu de R$ 2,42 em janeiro para R$ 3,89 em setembro, e o Banco Central levou a Selic a 26,5%. Em junho de 2003, o dólar tinha voltado a R$ 2,87.</p><p class="d-fontes">Fontes: Banco Central; <a href="https://www.nber.org/papers/w10389" rel="nofollow noopener">Olivier Blanchard</a>; <a href="https://www.nber.org/papers/w10390" rel="nofollow noopener">Carlo Favero e Francesco Giavazzi</a></p></div>
+</details></li>
+<li><details>
+  <summary><span class="anos">2008–09</span><span>A crise mundial de 2008</span><span class="causa de-fora">de fora</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <div class="ep-corpo"><p class="ep-q">setembro de 2008 a julho de 2009</p><p>A crise começou nos bancos dos EUA, uma causa de fora. O Banco Central baixou a Selic de 13,75% em dezembro de 2008 para 8,75% em julho de 2009.</p><p class="d-fontes">Fonte: Banco Central</p></div>
+</details></li>
+<li><details>
+  <summary><span class="anos">2011–13</span><span>O juro mais baixo e a volta da alta</span><span class="causa daqui">daqui</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <div class="ep-corpo"><p class="ep-q">agosto de 2011 a abril de 2013</p><p>A Selic chegou a 7,25% em outubro de 2012, cerca de 1,8% acima da inflação esperada. A inflação esperada subiu de 5,4% para 6,2% em um ano, e o Banco Central voltou a subir a Selic em abril de 2013.</p><p class="d-fontes">Fonte: Banco Central</p></div>
+</details></li>
+<li><details>
+  <summary><span class="anos">2014–16</span><span>Contas piorando e juro em 14,25%</span><span class="causa as-duas">as duas</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <div class="ep-corpo"><p class="ep-q">outubro de 2014 a dezembro de 2016</p><p>A dívida do governo subiu de 51,5% do PIB no fim de 2013 para 69,8% no fim de 2016. De julho de 2015 a setembro de 2016, a Selic ficou em 14,25%, cerca de 8% acima da inflação esperada.</p><p class="d-fontes">Fontes: Banco Central; <a href="https://bdtd.ibict.br/vufind/Record/USP_1eccf95c8ddb85336a560b770cc9bde6" rel="nofollow noopener">Dissertação de mestrado, Universidade de São Paulo</a></p></div>
+</details></li>
+<li><details>
+  <summary><span class="anos">2016–19</span><span>Dívida subindo e juro caindo</span><span class="causa daqui">daqui</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <div class="ep-corpo"><p class="ep-q">dezembro de 2016 a dezembro de 2019</p><p>Do fim de 2016 ao fim de 2019, a dívida do governo subiu de 69,8% para 74,4% do PIB. Mesmo assim, o juro acima da inflação esperada caiu de cerca de 8,5% para 0,7%. No período, o desemprego ficou alto, a inflação caiu e o Congresso aprovou o teto de gastos (2016) e a reforma da Previdência (2019).</p><p class="d-fontes">Fontes: Banco Central; <a href="http://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc95.htm" rel="nofollow noopener">Planalto</a></p></div>
+</details></li>
+<li><details>
+  <summary><span class="anos">2020</span><span>A pandemia</span><span class="causa de-fora">de fora</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <div class="ep-corpo"><p class="ep-q">março a dezembro de 2020</p><p>Com a economia parada por uma causa de fora, a Selic chegou a 2% em agosto de 2020, cerca de 1% abaixo da inflação esperada. A dívida do governo terminou o ano em 86,9% do PIB.</p><p class="d-fontes">Fonte: Banco Central</p></div>
+</details></li>
+<li><details>
+  <summary><span class="anos">2021–22</span><span>Preços subindo 10% e a Selic de 2% para 13,75%</span><span class="causa as-duas">as duas</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <div class="ep-corpo"><p class="ep-q">março de 2021 a agosto de 2022</p><p>Em 2021, os preços subiram 10,1%. A Selic estava em 2% quando o Banco Central começou a subi-la, em março de 2021, e chegou a 13,75% em agosto de 2022.</p><p class="d-fontes">Fonte: IBGE e Banco Central</p></div>
+</details></li>
+<li><details>
+  <summary><span class="anos">2024–26</span><span>A alta de 2024 e 2025 e os cortes de 2026</span><span class="causa as-duas">as duas</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <div class="ep-corpo"><p class="ep-q">setembro de 2024 a novembro de 2026</p><p>A Selic subiu de 10,5% em maio de 2024 para 15% em junho de 2025, com o dólar a R$ 6,19 no fim de 2024. Em março de 2026, o juro estava cerca de 10,2% acima da inflação esperada, e o Banco Central cortou a Selic até 13,75% em setembro.</p><p class="d-fontes">Fonte: Banco Central</p></div>
+</details></li>
+</ul>
+</section>
 
-<h2>O que aconteceu antes</h2>
-<p class="intro">Episódios do Brasil desde 2002, em governos diferentes, com os números de cada um e de onde veio a causa.</p>
-<ol class="eps">
-<li>
-  <p class="ep-q">junho de 2002 a junho de 2003 · Causas daqui e de fora</p>
-  <h3>A desconfiança na eleição de 2002</h3>
-  <p>Com a dívida alta e boa parte dela em dólar, quem investe passou a temer um calote. O dólar subiu de R$ 2,42 em janeiro para R$ 3,89 em setembro, e o Banco Central levou a Selic a 26,5%. Em junho de 2003, o dólar tinha voltado a R$ 2,87.</p>
-  <p class="d-fontes">Fontes: Banco Central; <a href="https://www.nber.org/papers/w10389" rel="nofollow noopener">Olivier Blanchard</a> <span class="ac">(a conferir)</span>; <a href="https://www.nber.org/papers/w10390" rel="nofollow noopener">Carlo Favero e Francesco Giavazzi</a> <span class="ac">(a conferir)</span></p>
-</li>
-<li>
-  <p class="ep-q">setembro de 2008 a julho de 2009 · Causa de fora</p>
-  <h3>A crise mundial de 2008</h3>
-  <p>A crise começou nos bancos dos EUA, uma causa de fora. O Banco Central baixou a Selic de 13,75% em dezembro de 2008 para 8,75% em julho de 2009.</p>
-  <p class="d-fontes">Fonte: Banco Central</p>
-</li>
-<li>
-  <p class="ep-q">agosto de 2011 a abril de 2013 · Causa daqui</p>
-  <h3>O juro mais baixo e a volta da alta</h3>
-  <p>A Selic chegou a 7,25% em outubro de 2012, cerca de 1,8% acima da inflação esperada. A inflação esperada subiu de 5,4% para 6,2% em um ano, e o Banco Central voltou a subir a Selic em abril de 2013.</p>
-  <p class="d-fontes">Fonte: Banco Central</p>
-</li>
-<li>
-  <p class="ep-q">outubro de 2014 a dezembro de 2016 · Causas daqui e de fora</p>
-  <h3>Contas piorando e juro em 14,25%</h3>
-  <p>A dívida do governo subiu de 51,5% do PIB no fim de 2013 para 69,8% no fim de 2016, e a Selic ficou em 14,25% de julho de 2015 a setembro de 2016, cerca de 8% acima da inflação esperada.</p>
-  <p class="d-fontes">Fontes: Banco Central; <a href="https://www.teses.usp.br/teses/disponiveis/12/12138/tde-23062022-200349/en.php" rel="nofollow noopener">Dissertação de mestrado, Universidade de São Paulo</a> <span class="ac">(a conferir)</span></p>
-</li>
-<li>
-  <p class="ep-q">dezembro de 2016 a dezembro de 2019 · Causa daqui</p>
-  <h3>Dívida subindo e juro caindo</h3>
-  <p>Do fim de 2016 ao fim de 2019, a dívida do governo subiu de 69,8% para 74,4% do PIB, e mesmo assim o juro acima da inflação esperada caiu de cerca de 8,5% para 0,7%. No período, o Congresso aprovou o teto de gastos (2016) e a reforma da Previdência (2019).</p>
-  <p class="d-fontes">Fontes: Banco Central; <a href="http://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc95.htm" rel="nofollow noopener">Planalto</a> <span class="ac">(a conferir)</span></p>
-</li>
-<li>
-  <p class="ep-q">março a dezembro de 2020 · Causa de fora</p>
-  <h3>A pandemia</h3>
-  <p>Com a economia parada por uma causa de fora, a Selic chegou a 2% em agosto de 2020, cerca de 1% abaixo da inflação esperada. A dívida do governo terminou o ano em 86,9% do PIB.</p>
-  <p class="d-fontes">Fonte: Banco Central</p>
-</li>
-<li>
-  <p class="ep-q">março de 2021 a agosto de 2022 · Causas daqui e de fora</p>
-  <h3>Preços subindo 10% e a Selic de 2% para 13,75%</h3>
-  <p>Em 2021, os preços subiram 10,06%. O Banco Central levou a Selic de 2,75% em março de 2021 a 13,75% em agosto de 2022.</p>
-  <p class="d-fontes">Fonte: IBGE e Banco Central</p>
-</li>
-<li>
-  <p class="ep-q">setembro de 2024 a novembro de 2026 · Causas daqui e de fora</p>
-  <h3>A alta de 2024 e 2025 e os cortes de 2026</h3>
-  <p>A Selic subiu de 10,5% em maio de 2024 para 15% em junho de 2025, com o dólar a R$ 6,19 no fim de 2024. Em março de 2026, o juro estava cerca de 10,2% acima da inflação esperada, e o Banco Central cortou a Selic até 13,75% em setembro.</p>
-  <p class="d-fontes">Fonte: Banco Central</p>
-</li>
+<section id="explicacoes">
+<h2>As explicações, da mais aceita à menos</h2>
+<p class="intro">Nenhuma explicação é aceita pela maioria dos estudos. Um artigo de 2014 que revisou as mais comuns, entre elas a poupança baixa e as contas do governo, concluiu que a evidência não confirma com força nenhuma delas.</p>
+<div class="cartao" id="l-confianca">
+  <p class="peso">Os economistas ainda discordam</p>
+  <h3>Quem empresta ao governo desconfia</h3>
+  <p>Quando quem empresta ao governo duvida que a dívida vá parar de crescer, cobra mais para emprestar e passa a esperar mais inflação. Para segurar os preços, o Banco Central precisa então de um juro mais alto.</p>
+  
+  <div class="contra"><h4>O que pesa contra</h4><p>De 2003 a 2013, segundo um estudo de 2024, as contas do governo não atrapalhavam o Banco Central. Mesmo descontadas as contas e a poupança, um estudo do Fundo Monetário Internacional de 2012 achou o juro do Brasil cerca de 2 pontos acima do de países parecidos.</p><p class="d-fontes">Fontes: <a href="https://ideas.repec.org/a/fgv/epgrbe/v78y2024i2a88864.html" rel="nofollow noopener">Ortega Scaramuzzi e Kfoury Muinhos</a>; <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a></p></div>
+  <details class="estudos"><summary>Os estudos e a resposta de quem defende</summary><div class="e-corpo">
+  <h4>O que pesa a favor</h4><ul><li>Blanchard mostrou que, em 2002 e 2003, com a dívida alta e muito dela em dólar, subir o juro aumentava o medo de calote. Favero e Giavazzi também concluíram que, em 2002, as contas do governo atrapalhavam o efeito do juro sobre os preços.<p class="d-fontes">Fontes: <a href="https://www.nber.org/papers/w10389" rel="nofollow noopener">Olivier Blanchard</a>; <a href="https://www.nber.org/papers/w10390" rel="nofollow noopener">Carlo Favero e Francesco Giavazzi</a></p></li><li>Uma dissertação da Universidade de São Paulo olhou a crise de 2014 a 2016. Pela estimativa dela, a piora das contas subiu em cerca de 1 ponto o juro que nem acelera nem freia a economia.<p class="d-fontes">Fonte: <a href="https://bdtd.ibict.br/vufind/Record/USP_1eccf95c8ddb85336a560b770cc9bde6" rel="nofollow noopener">Dissertação de mestrado, Universidade de São Paulo</a></p></li><li>A dívida do governo passou de 51,5% do PIB em dezembro de 2013 para 82,9% em setembro de 2026.<p class="d-fontes">Fonte: <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=13762" rel="nofollow noopener">Banco Central</a></p></li></ul>
+  
+  <h4>O que quem defende responde</h4><p>O mesmo estudo de 2024 achou que as contas do governo voltaram a atrapalhar o Banco Central depois de 2013 e de novo depois de 2019. São os anos em que a Selic chegou a 14,25% e a 15%.</p><p class="d-fontes">Fontes: <a href="https://ideas.repec.org/a/fgv/epgrbe/v78y2024i2a88864.html" rel="nofollow noopener">Ortega Scaramuzzi e Kfoury Muinhos</a>; Banco Central</p>
+  <h4>Quem defende</h4><p>Olivier Blanchard (2004); Carlo Favero e Francesco Giavazzi (2004); Ortega Scaramuzzi e Kfoury Muinhos (2024), para os anos depois de 2013</p>
+</div></details>
+</div><div class="cartao" id="l-poupanca">
+  <p class="peso">Os economistas ainda discordam</p>
+  <h3>O país poupa pouco</h3>
+  <p>O Brasil poupa pouco, e por isso sobra pouco dinheiro para emprestar a quem quer pegar: famílias, empresas e, principalmente, o governo. Com pouco dinheiro e muita gente querendo, o preço do dinheiro emprestado, que é o juro, fica alto.</p>
+  
+  <div class="contra"><h4>O que pesa contra</h4><p>Um artigo de 2014 que revisou as explicações mais comuns, entre elas a falta de poupança, não achou evidência forte a favor de nenhuma. E o próprio estudo do Fundo Monetário Internacional deixou cerca de 2 pontos de juro sem explicação.</p><p class="d-fontes">Fontes: <a href="https://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0101-31572014000100001&amp;lng=en&amp;tlng=en" rel="nofollow noopener">Francisco Lafaiete Lopes</a>; <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a></p></div>
+  <details class="estudos"><summary>Os estudos e a resposta de quem defende</summary><div class="e-corpo">
+  <h4>O que pesa a favor</h4><ul><li>Um estudo do Fundo Monetário Internacional de 2012 concluiu que o juro do Brasil cairia se a poupança do país subisse ao nível da de outros emergentes. O efeito seria maior com mais poupança do governo.<p class="d-fontes">Fonte: <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a></p></li><li>Em 2025, o Brasil poupou 14,4% do PIB, segundo o IBGE.<p class="d-fontes">Fonte: <a href="https://agenciabrasil.ebc.com.br/educacao/noticia/2026-03/economia-brasileira-cresce-23-em-2025-revela-ibge" rel="nofollow noopener">Agência Brasil, com dados do IBGE</a></p></li></ul>
+  
+  <h4>O que quem defende responde</h4><p>O estudo do Fundo Monetário Internacional não diz que a poupança explica tudo, e sim que, com mais poupança, sobretudo a do governo, o juro do Brasil cairia.</p><p class="d-fontes">Fonte: <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a></p>
+  <h4>Quem defende</h4><p>Fundo Monetário Internacional (Segura-Ubiergo, 2012)</p>
+</div></details>
+</div>
+<p class="grupo">Explicam uma parte, e os economistas discordam</p>
+<ul class="linhas"><li id="l-credito"><p>Parte do crédito tem juro definido pelo governo, como o do <a class="termo" href="https://pt.wikipedia.org/wiki/Banco_Nacional_de_Desenvolvimento_Econ%C3%B4mico_e_Social" target="_blank" rel="noopener">BNDES</a>, o rural e o da casa própria. Esse juro não sobe quando a Selic sobe, e por isso o Banco Central precisaria de uma Selic mais alta para frear o resto da economia.</p><details class="estudos"><summary>Os estudos e a resposta de quem defende</summary><div class="e-corpo">
+  <h4>O que pesa a favor</h4><ul><li>Bonomo e Martins, do Banco Central, acharam que empresas com mais crédito subsidiado do governo reagem menos quando a Selic sobe.<p class="d-fontes">Fonte: <a href="https://econpapers.repec.org/RePEc:bcb:wpaper:419" rel="nofollow noopener">Marco Bonomo e Bruno Martins (Banco Central)</a></p></li></ul>
+  <h4>O que pesa contra</h4><p>Um estudo do próprio Banco Central, de 2019, lembra que dados de empresas não mostram o efeito do juro na economia inteira. E menos efeito na produção não quer dizer menos efeito nos preços. Um artigo de 2022, com dados de 2000 a 2018, concluiu que o juro não perde força no conjunto.</p><p class="d-fontes">Fontes: <a href="https://econpapers.repec.org/paper/bcbwpaper/505.htm" rel="nofollow noopener">Pedro Castro (Banco Central)</a>; <a href="https://www.scielo.br/j/rep/a/PYCLBpjXsS3MV4yDPZTdqgM/?lang=pt" rel="nofollow noopener">Modenesi e Passos, Revista de Economia Política, v. 42, n. 3 (2022)</a></p>
+  <h4>O que quem defende responde</h4><p>Se a leitura está certa, o problema diminuiu. Em 2020, um estudo do Banco Central concluiu que duas mudanças tendem a dar mais força à Selic. Uma é a troca do juro dos empréstimos do BNDES; a outra, o crédito com juro dos bancos crescendo.</p><p class="d-fontes">Fonte: <a href="https://www.bcb.gov.br/conteudo/relatorioinflacao/EstudosEspeciais/EE077_Potencia_da_politica_monetaria.pdf" rel="nofollow noopener">Banco Central, Estudo Especial 77</a></p>
+  <h4>Quem defende</h4><p>Marco Bonomo e Bruno Martins (Banco Central, 2016)</p>
+</div></details></li><li id="l-circulo"><p>Cerca de metade da dívida do governo acompanha a Selic, então o juro alto faz a dívida crescer, e a dívida maior pede juro alto.</p><details class="estudos"><summary>Os estudos e a resposta de quem defende</summary><div class="e-corpo">
+  <h4>O que pesa a favor</h4><ul><li>Em 12 meses, até agosto de 2026, os juros da dívida custaram R$ 1,2 trilhão, 8,9% do PIB. No mesmo período, o gasto do governo acima da arrecadação, sem contar os juros, foi de 0,6% do PIB.<p class="d-fontes">Fonte: <a href="https://vaidarcrise.com.br/causas/" rel="nofollow noopener">Banco Central, na aba O que causa recessão</a></p></li><li>Um estudo de 2024 achou que as contas do governo atrapalharam o Banco Central depois de 2013 e de novo depois de 2019.<p class="d-fontes">Fonte: <a href="https://ideas.repec.org/a/fgv/epgrbe/v78y2024i2a88864.html" rel="nofollow noopener">Ortega Scaramuzzi e Kfoury Muinhos</a></p></li></ul>
+  <h4>O que pesa contra</h4><p>Os 8,9% do PIB incluem a correção de toda a dívida pela inflação, e o custo médio da dívida fica abaixo da Selic. Em 2025, com a Selic média em 14,33%, ele ficou perto de 12%, segundo o Tesouro.</p><p class="d-fontes">Fontes: <a href="https://vaidarcrise.com.br/causas/" rel="nofollow noopener">Banco Central, na aba O que causa recessão</a>; <a href="https://agenciagov.ebc.com.br/noticias/202601/divida-publica-encerra-2025-em-r-8-635-trilhoes-dentro-dos-limites-projetados-aponta-tesouro" rel="nofollow noopener">Agência Gov, com dados do Tesouro Nacional</a></p>
+  
+  <h4>Quem defende</h4><p>André Lara-Resende (artigo de setembro de 2026)</p>
+</div></details></li></ul>
+<p class="grupo">Ainda pouco testada</p>
+<ul class="linhas"><li id="l-indexacao"><p>Aluguel e muitos contratos são corrigidos pela inflação dos 12 meses anteriores, e por isso a inflação de hoje carrega a de ontem. Para trazê-la para baixo, o juro precisaria ficar alto por mais tempo.</p><details class="estudos"><summary>Os estudos e a resposta de quem defende</summary><div class="e-corpo">
+  <h4>O que pesa a favor</h4><ul><li>Depois de contar poupança, contas do governo e inflação, o estudo do Fundo Monetário Internacional de 2012 ainda achou cerca de 2 pontos de juro sem explicação. O autor sugere, sem medir, essa correção pela inflação passada como uma das causas.<p class="d-fontes">Fonte: <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a></p></li></ul>
+  <h4>O que pesa contra</h4><p>Estudos do Banco Central acham que a inflação brasileira carrega pouco da do passado, como a de outros países, e que pesa mais o que as pessoas esperam. Nenhum dos estudos desta página mediu quanto essa correção pesa no juro.</p><p class="d-fontes">Fontes: <a href="https://ideas.repec.org/p/bcb/wpaper/230.html" rel="nofollow noopener">Oliveira e Petrassi (Banco Central)</a>; <a href="https://ideas.repec.org/p/bcb/wpaper/331.html" rel="nofollow noopener">Machado e Portugal (Banco Central)</a></p>
+  
+  <h4>Quem defende</h4><p>Fundo Monetário Internacional (Segura-Ubiergo, 2012), como hipótese</p>
+</div></details></li></ul>
+<p class="grupo">Os dados não confirmaram</p>
+<ul class="linhas"><li id="l-juridica"><p>Em 2005, três economistas sugeriram que o juro era alto por causa da incerteza sobre contratos e da moeda que não se troca livremente.</p><details class="estudos"><summary>Os estudos e a resposta de quem defende</summary><div class="e-corpo">
+  <h4>O que pesa a favor</h4><ul><li>É a proposta original dos três economistas.<p class="d-fontes">Fonte: <a href="https://iepecdg.com.br/wp-content/uploads/2016/03/TPD2IEPE.pdf" rel="nofollow noopener">Persio Arida, Edmar Bacha e André Lara-Resende</a></p></li></ul>
+  <h4>O que pesa contra</h4><p>Gonçalves, Holland e Spacov testaram a ideia com dados de vários países, e os resultados foram em geral contrários a ela. Os fatores de sempre, ligados à inflação e às contas do governo, explicaram o juro muito melhor.</p><p class="d-fontes">Fonte: <a href="https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015" rel="nofollow noopener">Fernando Gonçalves, Márcio Holland e Andrei Spacov</a></p>
+  
+  <h4>Quem defende</h4><p>Persio Arida, Edmar Bacha e André Lara-Resende (2005)</p>
+</div></details></li></ul>
 
-</ol>
+</section>
 
-<h2>As fontes</h2>
-<p class="intro">10 das 44 fontes desta página já foram conferidas. As outras estão marcadas "a conferir" até que o trecho que sustenta cada frase seja achado no texto original.</p>
+<section id="agora">
+<h2>O que está em jogo agora</h2>
+<div class="agora"><p class="quando">Atualizado em 7/11/2026</p><p>Em 4/11, o Banco Central manteve a Selic em 13,75% ao ano e parou os cortes que fazia desde março. Na mesma época, os bancos passaram a esperar inflação de 5,0% em 12 meses, acima do <a class="termo" href="https://pt.wikipedia.org/wiki/Metas_de_infla%C3%A7%C3%A3o" target="_blank" rel="noopener">teto da meta</a>, de 4,5%, quando em julho esperavam 4,2%. O Banco Central decide o juro de novo em 9/12, e a decisão vai mostrar se a pausa continua.</p><p class="d-fontes">Fontes: <a href="https://www.bcb.gov.br/api/servico/sitebcb/copom/comunicados_detalhes?nro_reuniao=282" rel="nofollow noopener">Banco Central (comunicado do Copom)</a>; <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432" rel="nofollow noopener">Banco Central</a>; Calendários do IBGE e do Banco Central</p></div>
+</section>
+
+<section id="fatos">
+<h2>Os fatos do dia sobre isso</h2>
+<ul class="fatos"><li><span class="dia">6/11</span><a href="/2026-11-06/">Indústria produz 0,8% menos em setembro, quarta queda em cinco meses</a></li><li><span class="dia">5/11</span><a href="/2026-11-05/">Banco Central para de cortar o juro e mantém a Selic em 13,75%</a></li></ul>
+</section>
+
+
+
+<details class="conferimos" id="fontes">
+<summary>Como conferimos esta página</summary>
+<p>Cada frase da página está ligada à fonte e ao trecho que a sustenta. 22 das 32 fontes já tiveram o trecho achado no texto original. As outras estão marcadas "a conferir".</p>
+<h3>As fontes</h3>
 <ol class="lista-fontes">
-<li><a href="https://www.gazetadopovo.com.br/economia/copom-interrompe-ciclo-de-cortes-e-mantem-selic-em-1375/" rel="nofollow noopener">Gazeta do Povo</a>, Copom interrompe ciclo de cortes e mantém Selic em 13,75%. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
 <li><a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432" rel="nofollow noopener">Banco Central</a>. <span class="nv">Órgão oficial; número conferido com os dados do site.</span></li>
 <li><a href="https://www.bcb.gov.br/publicacoes/focus" rel="nofollow noopener">Banco Central</a>. <span class="nv">Órgão oficial; número conferido com os dados do site.</span></li>
-<li><a href="https://www.bcb.gov.br/controleinflacao/metainflacao" rel="nofollow noopener">Banco Central</a>, Metas para a inflação. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
-<li><a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=1" rel="nofollow noopener">Banco Central</a>. <span class="nv">Órgão oficial; número conferido com os dados do site.</span></li>
-<li><a href="https://www1.folha.uol.com.br/mercado/2026/10/expectativas-de-inflacao-para-2027-e-2028-saltam-apos-segundo-turno.shtml" rel="nofollow noopener">Folha</a>, Expectativas de inflação para 2027 e 2028 saltam após segundo turno. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://www1.folha.uol.com.br/mercado/2026/11/alta-do-dolar-comeca-a-impactar-acucar-trigo-e-cafe-que-podem-ficar-mais-caros-para-o-consumidor.shtml" rel="nofollow noopener">Folha</a>, Alta do dólar começa a impactar açúcar, trigo e café, que podem ficar mais caros para o consumidor. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li>Banco Central e Tesouro Nacional. <span class="nv">Órgão oficial; número conferido com os dados do site.</span></li>
-<li><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula" rel="nofollow noopener">Agência Brasil</a>, Dólar sobe 8,21%, e bolsa cai 13,88% após reeleição de Lula. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://valor.globo.com/financas/noticia/2026/11/03/juros-futuros-tem-forte-alta-por-temor-sobre-agenda-economica-do-governo-e-piora-do-focus.ghtml" rel="nofollow noopener">Valor</a>, Juros futuros têm forte alta por temor sobre agenda econômica do governo e piora do Focus. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://www.poder360.com.br/poder-governo/lula-cobra-responsabilidade-fiscal-para-atrair-investimentos/" rel="nofollow noopener">Poder360</a>, Lula cobra responsabilidade fiscal para atrair investimentos. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://www.poder360.com.br/poder-economia/bolsa-sobe-139-em-alta-dolar-fecha-a-r-5508/" rel="nofollow noopener">Poder360</a>, Bolsa sobe 1,39%; em alta, dólar fecha a R$ 5,508. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://www.poder360.com.br/poder-economia/divida-bruta-deve-chegar-a-837-do-pib-no-fim-de-2026/" rel="nofollow noopener">Poder360</a>, Dívida bruta deve chegar a 83,7% do PIB no fim de 2026. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://www.poder360.com.br/poder-economia/dolar-sobe-067-e-fecha-a-r-5489-ibovespa-cai-082/" rel="nofollow noopener">Poder360</a>, Dólar sobe 0,67% e fecha a R$ 5,489; Ibovespa cai 0,82%. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://www1.folha.uol.com.br/mercado/2026/11/lula-indicara-seis-diretores-do-banco-central-ate-o-fim-de-2027-e-mercado-teme-mudanca-de-perfil.shtml" rel="nofollow noopener">Folha</a>, Lula indicará seis diretores do Banco Central até o fim de 2027, e mercado teme mudança de perfil. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://www.nber.org/papers/w10389" rel="nofollow noopener">Olivier Blanchard</a>, Fiscal Dominance and Inflation Targeting: Lessons from Brazil (NBER w10389; capítulo do livro Inflation Targeting, Debt, and the Brazilian Experience, MIT Press, 2005). <span class="nv">Estudo em revista científica; a conferir no texto da fonte.</span></li>
-<li><a href="https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto" rel="nofollow noopener">Tesouro Nacional</a>. <span class="nv">Órgão oficial; número conferido com os dados do site.</span></li>
-<li><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-cai-r-545-apos-eleicoes-nos-eua-e-antes-do-copom" rel="nofollow noopener">Agência Brasil</a>, Dólar cai a R$ 5,45 após eleições nos EUA e antes do Copom. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://c-level.folha.uol.com.br/negocios/2026/11/nasdaq-cai-em-64-com-receio-de-que-vitoria-democrata-afete-boom-da-ia.shtml" rel="nofollow noopener">Folha</a>, Nasdaq cai até 6,4% com receio de que vitória democrata afete boom da IA. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://www1.folha.uol.com.br/mercado/2026/11/eua-criam-165-mil-vagas-em-outubro-acima-das-projecoes.shtml" rel="nofollow noopener">Folha</a>, EUA criam 165 mil vagas em outubro, acima das projeções. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://econpapers.repec.org/RePEc:cpr:ceprdp:10591" rel="nofollow noopener">Hélène Rey</a>, Dilemma not Trilemma: The Global Financial Cycle and Monetary Policy Independence (simpósio de Jackson Hole, 2013; CEPR DP10591). <span class="nv">Estudo em revista científica; a conferir no texto da fonte.</span></li>
-<li><a href="https://www.bis.org/publ/work661.htm" rel="nofollow noopener">Cerutti, Claessens e Rose, Banco de Compensações Internacionais</a>, How important is the Global Financial Cycle? Evidence from capital flows. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
-<li><a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a>, The Puzzle of Brazil&#39;s High Interest Rates (WP/12/62). <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
-<li><a href="https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015" rel="nofollow noopener">Fernando Gonçalves, Márcio Holland e Andrei Spacov</a>, Revista Brasileira de Economia, v. 61, n. 1. <span class="nv">Estudo em revista científica; a conferir no texto da fonte.</span></li>
-<li><a href="https://agenciabrasil.ebc.com.br/educacao/noticia/2026-03/economia-brasileira-cresce-23-em-2025-revela-ibge" rel="nofollow noopener">Agência Brasil, com dados do IBGE</a>, Economia brasileira cresce 2,3% em 2025, revela IBGE. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
 <li>Banco Central. <span class="nv">Órgão oficial; número conferido com os dados do site.</span></li>
-<li><a href="https://www.nber.org/papers/w10390" rel="nofollow noopener">Carlo Favero e Francesco Giavazzi</a>, Inflation Targeting and Debt: Lessons from Brazil (NBER w10390). <span class="nv">Estudo em revista científica; a conferir no texto da fonte.</span></li>
-<li><a href="https://www.teses.usp.br/teses/disponiveis/12/12138/tde-23062022-200349/en.php" rel="nofollow noopener">Dissertação de mestrado, Universidade de São Paulo</a>, Dissertação depositada em 23/06/2022. <span class="nv">Tese ou dissertação; a conferir no texto da fonte.</span></li>
-<li><a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=13762" rel="nofollow noopener">Banco Central</a>. <span class="nv">Órgão oficial; número conferido com os dados do site.</span></li>
+<li><a href="https://www.infomoney.com.br/economia/com-selic-em-1345-brasil-tem-maior-juro-real-do-mundo-set2026/" rel="nofollow noopener">InfoMoney</a>, Com Selic em 13,75%, Brasil tem maior juro real do mundo (InfoMoney, 16/09/2026). <span class="nv">Notícia; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://www.nber.org/papers/w10389" rel="nofollow noopener">Olivier Blanchard</a>, Fiscal Dominance and Inflation Targeting: Lessons from Brazil (NBER w10389; capítulo do livro Inflation Targeting, Debt, and the Brazilian Experience, MIT Press, 2005). <span class="nv">Estudo em revista científica; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0101-31572014000100001&amp;lng=en&amp;tlng=en" rel="nofollow noopener">Francisco Lafaiete Lopes</a>, On high interest rates in Brazil, Revista de Economia Política, v. 34, n. 1. <span class="nv">Estudo em revista científica; a conferir no texto da fonte.</span></li>
+<li><a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a>, The Puzzle of Brazil&#39;s High Interest Rates (WP/12/62). <span class="nv">Órgão oficial; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://www.bcb.gov.br/api/paginasite/sitebcb/controleinflacao/taxaselic" rel="nofollow noopener">Banco Central</a>, Taxa Selic – Banco Central do Brasil. <span class="nv">Órgão oficial; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://vaidarcrise.com.br/causas/#t-freio" rel="nofollow noopener">Aba O que causa recessão</a>. <span class="nv">Órgão oficial; trecho conferido no site.</span></li>
+<li><a href="https://www.bcb.gov.br/api/servico/sitebcb/copom/atas_detalhes?nro_reuniao=267" rel="nofollow noopener">Banco Central (ata do Copom)</a>, Ata da 267ª Reunião do Copom (10-11 de dezembro de 2024) – Banco Central do Brasil. <span class="nv">Órgão oficial; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://timesbrasil.com.br/brasil/copom-alerta-que-esforco-nas-reformas-estruturais-e-fundamental-para-conter-juro-neutro/" rel="nofollow noopener">Times Brasil, sobre a ata do Copom</a>, Copom alerta que esforço nas reformas estruturais é fundamental para conter juro neutro (23/09/2025). <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
+<li>IBGE e Banco Central. <span class="nv">Órgão oficial; número conferido com os dados do site.</span></li>
+<li><a href="https://www.nber.org/papers/w10390" rel="nofollow noopener">Carlo Favero e Francesco Giavazzi</a>, Inflation Targeting and Debt: Lessons from Brazil (NBER w10390). <span class="nv">Estudo em revista científica; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://bdtd.ibict.br/vufind/Record/USP_1eccf95c8ddb85336a560b770cc9bde6" rel="nofollow noopener">Dissertação de mestrado, Universidade de São Paulo</a>, Two essays on the brazilian neutral rate: international trends, fiscal determinants (Leonardo Dias Proença, dissertação de mestrado, FEA-USP, 2022). <span class="nv">Tese ou dissertação; trecho conferido no texto da fonte.</span></li>
 <li><a href="http://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc95.htm" rel="nofollow noopener">Planalto</a>, Emenda Constitucional nº 95, de 15 de dezembro de 2016. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
 <li><a href="http://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm" rel="nofollow noopener">Planalto</a>, Emenda Constitucional nº 103, de 12 de novembro de 2019. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
-<li>Marco Bonomo e Bruno Martins (Banco Central), The Impact of Government-Driven Loans in the Monetary Transmission Mechanism: what can we learn from firm-level data?. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
-<li><a href="https://www.scielo.br/j/rep/a/PYCLBpjXsS3MV4yDPZTdqgM/?lang=pt" rel="nofollow noopener">Modenesi e Passos, Revista de Economia Política, v. 42, n. 3 (2022)</a>, Bancos públicos e política monetária: teoria e alguns resultados com base em projeções locais dependentes de estado. <span class="nv">Estudo em revista científica; a conferir no texto da fonte.</span></li>
-<li><a href="https://www.bcb.gov.br/conteudo/relatorioinflacao/EstudosEspeciais/EE077_Potencia_da_politica_monetaria.pdf" rel="nofollow noopener">Banco Central, Estudo Especial 77</a>, Potência da política monetária. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
-<li><a href="https://vaidarcrise.com.br/causas/" rel="nofollow noopener">Aba O que causa recessão</a>. <span class="nv">Órgão oficial; trecho conferido no site.</span></li>
-<li><a href="https://mercadoeconsumo.com.br/02/11/2026/economia/economista-de-plano-real-acusa-bc-de-causar-rombo-fiscal-via-juros/" rel="nofollow noopener">Mercado &amp; Consumo</a>, Economista do Plano Real acusa BC de causar rombo fiscal via juros. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://www.jb.com.br/economia/2026/11/1061430-andre-lara-resende-critica-juros-altos-e-o-impacto-fiscal-no-brasil.html" rel="nofollow noopener">Jornal do Brasil</a>, André Lara Resende critica juros altos e o impacto fiscal no Brasil. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://www.researchgate.net/publication/228632946_Por_que_as_taxas_de_juros_reais_de_curto_prazo_sao_tao_elevadas_no_Brasil" rel="nofollow noopener">Persio Arida, Edmar Bacha e André Lara-Resende</a>, Credit, Interest, and Jurisdictional Uncertainty: Conjectures on the Case of Brazil (capítulo do livro Inflation Targeting, Debt, and the Brazilian Experience, MIT Press). <span class="nv">Estudo em revista científica; a conferir no texto da fonte.</span></li>
-<li><a href="https://acionista.com.br/inflacao-tem-70-de-chance-de-superar-meta-em-2025-alerta-banco-central/" rel="nofollow noopener">Acionista</a>, Inflação tem 70% de chance de superar meta em 2025, alerta Banco Central. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://www.gazetadopovo.com.br/economia/producao-industrial-recua-08-em-setembro-e-acumula-perda-de-41-desde-maio/" rel="nofollow noopener">Gazeta do Povo, com dados do IBGE</a>, Produção industrial recua 0,8% em setembro e acumula perda de 4,1% desde maio. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
-<li><a href="https://www.poder360.com.br/poder-economia/brasil-cria-121-305-empregos-formais-em-setembro-de-2026/" rel="nofollow noopener">Poder360, com dados do Ministério do Trabalho</a>, Brasil cria 121.305 empregos formais em setembro de 2026. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
+<li><a href="https://ideas.repec.org/a/fgv/epgrbe/v78y2024i2a88864.html" rel="nofollow noopener">Ortega Scaramuzzi e Kfoury Muinhos</a>, Fiscal Dominance in Brazil: The Effects on Financial Conditions and Growth, Revista Brasileira de Economia. <span class="nv">Estudo em revista científica; a conferir no texto da fonte.</span></li>
+<li><a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=13762" rel="nofollow noopener">Banco Central</a>. <span class="nv">Órgão oficial; número conferido com os dados do site.</span></li>
+<li><a href="https://agenciabrasil.ebc.com.br/educacao/noticia/2026-03/economia-brasileira-cresce-23-em-2025-revela-ibge" rel="nofollow noopener">Agência Brasil, com dados do IBGE</a>, Economia brasileira cresce 2,3% em 2025, revela IBGE. <span class="nv">Notícia; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://econpapers.repec.org/RePEc:bcb:wpaper:419" rel="nofollow noopener">Marco Bonomo e Bruno Martins (Banco Central)</a>, The Impact of Government-Driven Loans in the Monetary Transmission Mechanism: what can we learn from firm-level data? (Bonomo e Martins, Banco Central do Brasil, Working Paper nº 419, março de 2016). <span class="nv">Órgão oficial; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://econpapers.repec.org/paper/bcbwpaper/505.htm" rel="nofollow noopener">Pedro Castro (Banco Central)</a>, Earmarked Credit and Monetary Policy Power: micro and macro considerations, Working Paper 505. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
+<li><a href="https://www.scielo.br/j/rep/a/PYCLBpjXsS3MV4yDPZTdqgM/?lang=pt" rel="nofollow noopener">Modenesi e Passos, Revista de Economia Política, v. 42, n. 3 (2022)</a>, Bancos públicos e política monetária: teoria e alguns resultados com base em projeções locais dependentes de estado. <span class="nv">Estudo em revista científica; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://www.bcb.gov.br/conteudo/relatorioinflacao/EstudosEspeciais/EE077_Potencia_da_politica_monetaria.pdf" rel="nofollow noopener">Banco Central, Estudo Especial 77</a>, Potência da política monetária. <span class="nv">Órgão oficial; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://vaidarcrise.com.br/causas/" rel="nofollow noopener">Banco Central, na aba O que causa recessão</a>. <span class="nv">Órgão oficial; trecho conferido no site.</span></li>
+<li><a href="https://agenciagov.ebc.com.br/noticias/202601/divida-publica-encerra-2025-em-r-8-635-trilhoes-dentro-dos-limites-projetados-aponta-tesouro" rel="nofollow noopener">Agência Gov, com dados do Tesouro Nacional</a>, Dívida pública encerra 2025 em R$ 8,635 trilhões. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
+<li><a href="https://ideas.repec.org/p/bcb/wpaper/230.html" rel="nofollow noopener">Oliveira e Petrassi (Banco Central)</a>, Is Inflation Persistence Over?, Working Paper 230. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
+<li><a href="https://ideas.repec.org/p/bcb/wpaper/331.html" rel="nofollow noopener">Machado e Portugal (Banco Central)</a>, Measuring Inflation Persistence in Brazil Using a Multivariate Model, Working Paper 331. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
+<li><a href="https://iepecdg.com.br/wp-content/uploads/2016/03/TPD2IEPE.pdf" rel="nofollow noopener">Persio Arida, Edmar Bacha e André Lara-Resende</a>, Credit, Interest, and Jurisdictional Uncertainty: Conjectures on the Case of Brazil (Arida, Bacha e Lara-Resende; cap. 8 de Inflation Targeting, Debt, and the Brazilian Experience, MIT Press, 2005; versão IEPE/Casa das Garças TPD 02). <span class="nv">Estudo em revista científica; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015" rel="nofollow noopener">Fernando Gonçalves, Márcio Holland e Andrei Spacov</a>, Can jurisdictional uncertainty and capital controls explain the high level of real interest rates in Brazil? Evidence from panel data (Revista Brasileira de Economia, v. 61, n. 1). <span class="nv">Estudo em revista científica; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://www.bcb.gov.br/api/servico/sitebcb/copom/comunicados_detalhes?nro_reuniao=282" rel="nofollow noopener">Banco Central (comunicado do Copom)</a>, 282ª reunião - Copom mantém a taxa Selic em 13,75% a.a. (comunicado oficial do Copom, 04/11/2026). <span class="nv">Órgão oficial; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://www.bcb.gov.br/controleinflacao/metainflacao" rel="nofollow noopener">Banco Central</a>, Metas para a inflação. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
 <li>Calendários do IBGE e do Banco Central. <span class="nv">Órgão oficial; trecho conferido no site.</span></li>
-<li>IBGE e Banco Central. <span class="nv">Órgão oficial; número conferido com os dados do site.</span></li>
-<li><a href="https://www.poder360.com.br/poder-economia/mesmo-com-corte-brasil-tem-o-maior-juro-real-do-planeta/" rel="nofollow noopener">Poder360</a>, Mesmo com corte, Brasil tem o maior juro real do planeta. <span class="nv">Notícia; a conferir no texto da fonte.</span></li>
 
 </ol>
-
-<h2>O que mudou nesta página</h2>
+<h3>O que mudou nesta página</h3>
 <ul class="mud">
 <li>7/11/2026: Primeira versão da pergunta, ligada aos fatos do dia de 3 a 7 de novembro. Pedido do Pedro em 7/11/2026.</li>
 <li>7/11/2026: O teste das moedas passou a começar em 6/11 e a ser conferido em 7/12/2026 e 5/2/2027. A primeira versão começava em 27/10 e tinha uma conferência em 6/11, antes do registro, o que deixava parte do resultado conhecida.</li>
+<li>7/11/2026: A página passou a responder primeiro à pergunta do título, com o que o juro alto muda para quem compra a prazo e os casos desde 2002. A disputa sobre o dólar e o teste das moedas saíram daqui. Eles tratam da Desconfiança de quem investe, que terá página própria. O teste segue registrado com as mesmas regras e datas e aparece no fato do dia de 4/11.</li>
+<li>7/11/2026: A resposta deixou de dizer que os estudos apontam duas causas principais. A conferência das fontes achou um artigo de 2014 que revisou as explicações e não achou evidência forte para nenhuma, e um estudo de 2024 em que as contas do governo não atrapalhavam o Banco Central de 2003 a 2013. A desconfiança e a poupança baixa continuam no alto da lista, como explicações em que os economistas ainda discordam.</li>
 
 </ul>
+</details>
 </main>
 
 <footer class="pe"><div class="in">

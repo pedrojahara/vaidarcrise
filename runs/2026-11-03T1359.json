@@ -2518,36 +2518,32 @@
    "trocado_em": "2026-11-07",
    "motivo": "Fase 0 da base de conhecimento: o fato do dia ganhou a escada de porquês, a pedido do Pedro em 7/11/2026."
   },
-  "pergunta": "juro-alto",
   "escada": [
    {
-    "pergunta": "Por que o petróleo caiu?",
+    "pergunta": "Por que o petróleo tinha subido?",
     "rotulo": "fato",
-    "texto": "O barril tinha subido mais de 14% em outubro com a guerra no Irã. No começo de novembro, caiu quase 8% com sinais de que EUA e Irã podem negociar o fim da guerra, ainda sem acordo. É uma causa de fora do Brasil.",
+    "texto": "Em outubro, o barril do Brent subiu mais de 14% com o medo de uma nova escalada da guerra no Irã. A queda de agora desfaz só parte dessa alta, e a causa vem de fora do Brasil.",
     "afirmacoes": [
      "a-ev-petroleo-outubro",
      "a-ev-petroleo-paz"
     ]
    },
    {
-    "pergunta": "Por que isso mexe com o preço aqui?",
+    "pergunta": "Por que o preço lá fora chega ao posto daqui?",
     "rotulo": "fato",
-    "texto": "O Brasil importa parte do diesel e da gasolina que usa, e as empresas que compram esse combustível de outros países pagam o preço de lá, em dólar. Por isso o petróleo mais barato lá fora pode baratear o combustível aqui, e o dólar mais caro tira parte desse alívio.",
+    "texto": "O Brasil importa parte do diesel e da gasolina que usa, e quem compra esse combustível de outros países paga o preço de lá, em dólar. Por isso o dólar mais caro, que estava em R$ 5,49 em 3/11, tira parte do alívio.",
     "afirmacoes": [
      "a-importa-combustivel",
      "a-dolar-0311"
     ]
    },
    {
-    "pergunta": "E o que isso tem a ver com o juro?",
-    "rotulo": "consenso",
-    "texto": "O Banco Central decide a Selic olhando quanto os preços devem subir. No fim de outubro, os bancos (Focus) esperavam 5,0% em 12 meses, acima do teto da meta de inflação, de 4,5%, e combustível mais barato ajuda a segurar essa conta. E a Selic é a base do juro que os bancos cobram no empréstimo e no financiamento.",
+    "pergunta": "E o que isso muda para você?",
+    "texto": "A Selic é a base do juro que os bancos cobram no cartão e no financiamento. Se a inflação esperada cair para perto da meta, de 3% ao ano, o juro do crédito tende a cair depois.",
     "afirmacoes": [
-     "a-focus-jul-out",
-     "a-meta",
-     "a-bc-selic"
-    ],
-    "liga": "causa_imediata"
+     "a-bc-selic",
+     "a-meta"
+    ]
    }
   ],
   "versao_escada": {
@@ -2650,7 +2646,21 @@
     }
    ]
   },
-  "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior."
+  "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior.",
+  "termina_em": "inflacao",
+  "paragrafos_afirmacoes": [
+   [
+    "a-ev-petroleo-paz"
+   ],
+   [
+    "a-importa-combustivel"
+   ],
+   [
+    "a-focus-jul-out",
+    "a-meta",
+    "a-bc-selic"
+   ]
+  ]
  },
  "pauta": {
   "versao": 1,

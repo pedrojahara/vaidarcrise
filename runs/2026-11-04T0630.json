@@ -2619,47 +2619,45 @@
    "trocado_em": "2026-11-07",
    "motivo": "Fase 0 da base de conhecimento: o fato do dia ganhou a escada de porquês, a pedido do Pedro em 7/11/2026."
   },
-  "pergunta": "juro-alto",
+  "pergunta": "dolar-alto",
   "escada": [
    {
-    "pergunta": "Por que os bancos esperam preços mais altos?",
+    "pergunta": "Por que os bancos passaram a esperar preços mais altos?",
     "rotulo": "fato",
-    "texto": "Os economistas apontaram duas causas. Uma é o dólar, que encarece os importados, como trigo, açúcar e café, e a outra é o El Niño, que ameaça as safras.",
+    "texto": "Depois do segundo turno, analistas subiram as previsões de inflação. Um economista ouvido pelos jornais apontou o dólar mais alto e a falta de uma regra firme para as contas do governo. O dólar também subiu no atacado o preço do açúcar e do café, que o Brasil vende lá fora em dólar.",
     "afirmacoes": [
      "a-elnino",
      "a-importados"
-    ],
-    "liga": "mecanismo"
+    ]
    },
    {
     "pergunta": "Por que o dólar subiu?",
-    "rotulo": "consenso",
-    "texto": "Quase toda a alta veio num dia. O dólar tinha caído de R$ 5,18 no fim de agosto para R$ 5,04 antes do segundo turno, e em 26/10, o dia seguinte à eleição, subiu para R$ 5,50.",
+    "rotulo": "fato",
+    "liga": "d-dolar",
+    "texto": "Quase toda a alta veio num dia só. O dólar tinha caído para R$ 5,04 antes do segundo turno, e em 26/10, o dia seguinte à eleição, saltou para R$ 5,50.",
     "afirmacoes": [
      "a-antes-da-eleicao",
-     "a-salto-eleicao",
-     "a-dolar-ago-nov"
-    ],
-    "liga": "d-dolar"
+     "a-salto-eleicao"
+    ]
    },
    {
-    "pergunta": "E por que seguiu alto depois do salto?",
+    "pergunta": "A alta veio de desconfiança com o Brasil ou de medo no mundo todo?",
     "rotulo": "em_disputa",
-    "texto": "Uns veem desconfiança com o Brasil, porque a dívida do governo cresce e o presidente vai indicar diretores do Banco Central que poderiam cortar o juro com os preços subindo. Outros veem investidores do mundo todo com mais medo, tirando dinheiro de vários países ao mesmo tempo.",
+    "liga": "d-dolar",
+    "teste": "t-real-vizinhos",
+    "texto": "Uns veem desconfiança com a dívida do governo e com a próxima diretoria do Banco Central. Outros veem investidores do mundo todo tirando dinheiro de vários países ao mesmo tempo. Para saber qual pesou mais, o site compara o real com as moedas do México e do Chile.",
     "afirmacoes": [
      "a-ev-tesouro-divida",
      "a-ev-diretores-bc",
      "a-rey"
-    ],
-    "liga": "d-dolar"
+    ]
    },
    {
-    "pergunta": "Como saber qual leitura está certa?",
-    "rotulo": "em_disputa",
-    "texto": "Se a desconfiança for com o Brasil, o dólar tende a subir mais contra o real do que contra o peso do México e o do Chile. Se o medo for do mundo todo, tende a subir parecido contra as três moedas.",
-    "afirmacoes": [],
-    "liga": "teste",
-    "teste": "t-real-vizinhos"
+    "pergunta": "E o que isso muda para você?",
+    "texto": "Se o dólar seguir alto, o que o Brasil compra lá fora fica mais caro em reais, como parte do diesel e da gasolina. Essa alta chega aos preços aos poucos, nos meses seguintes.",
+    "afirmacoes": [
+     "a-importa-combustivel"
+    ]
    }
   ],
   "versao_escada": {
@@ -2760,7 +2758,22 @@
     }
    ]
   },
-  "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior."
+  "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior.",
+  "termina_em": "mercado",
+  "paragrafos_afirmacoes": [
+   [
+    "a-focus-2026",
+    "a-meta"
+   ],
+   [
+    "a-bc-selic",
+    "a-freio"
+   ],
+   [
+    "a-dolar-0311",
+    "a-ev-0311-juros"
+   ]
+  ]
  },
  "pauta": {
   "versao": 1,

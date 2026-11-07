@@ -279,7 +279,16 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
             "frase": frases[0], "mais": frases[1:], "normal": normal,
             "folga": folga_ctx(pid, x.get("folga"), p.get("teto_meta_inflacao")),
             "importa": p["por_que_importa"].get(pid, ""), "causas": p["causas"].get(pid),
-            "fora": p["nao_muda_a_placa"].get(pid)}
+            "fora": p["nao_muda_a_placa"].get(pid), "pergunta": _pergunta_da_pressao(pid)}
+
+
+def _pergunta_da_pressao(pid: str) -> dict | None:
+    """O link para a página da pressão (base/perguntas), quando ela já existe; um erro na base não derruba o topo."""
+    try:
+        return base_site.pergunta_da_pressao(pid)
+    except Exception as e:  # noqa: BLE001
+        print(f"aviso: link da pressão {pid} para a página da pergunta não saiu ({e!r})")
+        return None
 
 
 def _divida_reais_ctx(cfg: dict, hoje: str) -> dict:

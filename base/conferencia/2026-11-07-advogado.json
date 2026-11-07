@@ -1,0 +1,582 @@
+{
+ "em": "2026-11-07",
+ "modelo": "opus",
+ "itens": [
+  {
+   "alvo": "juro-alto/fato",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "O próprio BC não chama a decisão de fim dos cortes. Fala em interromper o 'ciclo de calibração'. O verbo 'parou' pode dar a entender que o ciclo acabou de vez, e o comunicado não diz isso. A Gazeta do Povo também descreve a decisão como interrupção. A decisão foi unânime.",
+      "url": "https://www.oliberal.com/economia/bc-copom-interrompe-ciclo-de-calibracao-e-mantem-taxa-selic-em-13-75-ao-ano-1.1190560",
+      "titulo": "BC: Copom interrompe 'ciclo de calibração' e mantém taxa Selic em 13,75% ao ano",
+      "nivel": 6,
+      "trecho": "A decisão foi unânime.",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "A Gazeta do Povo, citada como fonte, não traz a projeção de IPCA de 5,6% atribuída ao BC. A matéria mostra o IPCA de 2026 do Focus, que é a previsão do mercado e não a do Copom. Se o site usar esse número em outro degrau, a fonte não sustenta o dado.",
+      "url": "https://www.gazetadopovo.com.br/economia/copom-interrompe-ciclo-de-cortes-e-mantem-selic-em-1375/",
+      "titulo": "Copom interrompe ciclo de cortes e mantém Selic em 13,75%",
+      "nivel": 6,
+      "trecho": "havia feito cinco reduções consecutivas de 0,25 ponto percentual em março, abril, junho, agosto e setembro",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "Não recebi nenhuma objeção do site, e nenhuma evidência contesta o fato: Selic mantida em 13,75% em 4/11/2026, depois de cinco cortes de 0,25 ponto desde março. A objeção mais forte é de enquadramento. O BC 'interrompeu o ciclo de calibração', o que é uma pausa e não necessariamente o fim do ciclo. 'Parou os cortes' pode ser lido como fim definitivo. Há também um ruído pequeno nas notícias: algumas dizem que a Selic ficou em 15% 'de junho de 2025 a março de 2026' e outras que os cortes vieram 'a partir de abril'. A sequência março, abril, junho, agosto e setembro aparece na Gazeta e é coerente com 15% − 1,25 = 13,75%. Não encontrei o comunicado oficial do BC para conferir.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "O rótulo de consenso serve para um fato noticiado da mesma forma por vários veículos (O Liberal, Jornal do Comércio, Gazeta do Povo). Há dois problemas nas fontes. A Gazeta do Povo é notícia, de nível 6, e não de nível 3. E o número de 5,6% para o IPCA não aparece na matéria citada: a Gazeta traz o Focus em 5,22%. O ideal é citar o comunicado do Copom no site do BC.",
+    "teste_da_troca": [
+     {
+      "frase": "parou os cortes que fazia desde março",
+      "problema": "Com qualquer governo, o fato seria o mesmo. Mas 'parou' sugere encerramento, e o BC disse 'interrompeu'. Como a reunião foi a primeira depois da reeleição, a escolha do verbo pode ser lida como insinuação de reação política. Mais neutro: 'interrompeu, por ora, os cortes' ou 'manteve a Selic, depois de cinco cortes seguidos'."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "juro-alto/causa_imediata",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "A ata da reunião de setembro mostra que o Copom cortou a Selic para 13,75% quando já via as expectativas do Focus acima da meta e falava em 'desancoragem'. A expectativa acima do teto não bastou para frear o corte de setembro. Então ela, sozinha, também não explica a pausa de novembro. Entre as duas reuniões, o que mudou foi o choque depois da eleição: dólar, fiscal e Oriente Médio.",
+      "url": "https://www.bcb.gov.br/content/copom/atascopom/Copom281-not20260916281.pdf",
+      "titulo": "Ata da 281ª reunião do Copom (15 e 16/9/2026)",
+      "nivel": 3,
+      "trecho": "As expectativas de inflação para 2026 e 2027 apuradas pela pesquisa Focus permanecem em valores acima da meta, situando-se em 4,9% e 4,3%, respectivamente.",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "No Focus de 7/9, a inflação esperada para 12 meses já estava em 4,60%, acima do teto de 4,5%. Nove dias depois, o Copom cortou a Selic. A subida de 4,2% para mais de 4,5% aconteceu quase toda em agosto e conviveu com um corte. Isso enfraquece a ligação direta 'expectativa passou do teto, logo o BC parou'.",
+      "url": "https://paraibabusiness.com.br/focus-reduz-inflacao-de-2026-para-5-mas-projecao-para-12-meses-sobe-pela-quinta-semana-seguida/",
+      "titulo": "Focus reduz inflação de 2026 para 5%, mas projeção para 12 meses sobe pela quinta semana seguida",
+      "nivel": 6,
+      "trecho": "a projeção saiu de 4,24% há quatro semanas, passou por 4,53% na semana anterior e chegou agora a 4,60%",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "Entre setembro e novembro, o mercado elevou bastante a projeção do dólar, e o comunicado de novembro voltou a citar a política fiscal doméstica. O câmbio é um canal direto para a inflação e pode ser a causa, ou parte da causa, tanto da piora das expectativas quanto da pausa. O texto não menciona isso.",
+      "url": "https://forbes.com.br/forbes-money/2026/11/analise-copom-confirma-projecoes-e-divulga-comunicado-cauteloso/",
+      "titulo": "Análise: Copom confirma projeções e divulga comunicado cauteloso",
+      "nivel": 6,
+      "trecho": "No câmbio, a estimativa para o dólar em 2026 subiu de R$ 5,05 para R$ 5,34.",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "O que foi enviado não traz nenhuma objeção, então não há o que comparar. A objeção mais forte é a da sequência dos fatos. As expectativas já estavam acima do teto no começo de setembro (4,60% em 12 meses; 4,9% para 2026), e mesmo assim o Copom cortou em 16/9. A pausa só veio em 4/11, primeira reunião depois da reeleição, com o dólar subindo, incerteza sobre o nome da Fazenda e petróleo acima de US$ 100 por muito tempo. A melhor objeção, portanto, é: a expectativa alta é condição necessária, mas o gatilho da pausa parece ter sido o choque de câmbio e fiscal depois da eleição. O caminho seria câmbio → expectativas → decisão, e não só expectativas → decisão. Há ainda um ponto que pesa contra o próprio texto. O cenário de referência do Copom para o horizonte relevante (2º trimestre de 2028) ficou em 3,5%, perto da meta. Isso sugere que a pausa reflete mais o balanço de riscos do que uma projeção central fora da meta.",
+    "rotulo_se_sustenta": false,
+    "comentario_rotulo": "'Consenso' não se sustenta com as fontes citadas, por quatro motivos. (1) A Gazeta do Povo está marcada como nível 3, mas é jornal, nível 6. (2) A matéria da Gazeta não traz o número de 5,6% para o IPCA de 2026 atribuído ao BC; ela cita o Focus em 5,22%. Na ata de setembro, a projeção do BC para 2026 era 5,2%. O 5,6% precisa de fonte primária, o comunicado do BC. (3) As duas fontes de nível 3 provam só fatos (o número do Focus e a meta), não a causa. O único apoio à causa é o comunicado, que fala em 'desancoragem das expectativas', mas também em política fiscal e cenário desafiador. (4) A imprensa e os analistas apontam câmbio, fiscal e eleição como motores, e antes da reunião o mercado estava dividido: 39 casas esperavam corte e 36, manutenção. Algo como 'maioria' é defensável, desde que com várias causas: expectativas mais altas, junto com câmbio e incerteza fiscal.",
+    "teste_da_troca": [
+     {
+      "frase": "Porque a inflação esperada voltou a subir.",
+      "problema": "Usa uma causa só e deixa de fora o choque depois da eleição (dólar, indefinição na Fazenda), que as fontes apontam como gatilho. Com o governo do lado oposto no poder, a omissão do fiscal e do câmbio seria lida como proteção ao governo. Se o fiscal fosse a única causa citada, seria lida como ataque. Para ficar neutro, as duas causas precisam aparecer."
+     },
+     {
+      "frase": "Os bancos (Focus) esperavam 4,2% em julho e passaram a esperar 5,0% no fim de outubro",
+      "problema": "O Focus inclui bancos, gestoras e consultorias. Chamar tudo de 'os bancos' é impreciso e puxa o enquadramento de 'banqueiros contra o governo', que tem lado. Melhor: 'os analistas consultados pelo BC (Focus)'. A frase também esconde que o número já passava do teto em setembro, quando o BC ainda cortava."
+     },
+     {
+      "frase": "acima do teto da meta de inflação, de 4,5%",
+      "problema": "Não tem lado nem é alarme, é factual. Mas, posta logo depois de 5,0%, sugere que passar do teto foi o fato novo de outubro, e não foi: o teto foi ultrapassado no começo de setembro."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "juro-alto/mecanismo",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "O FMI diz que o que segura as expectativas de inflação no Brasil é a confiança nas regras fiscais e monetárias. Isso aponta para uma causa que o texto não cita: o dólar e as expectativas podem ter subido juntos por um mesmo motivo, a dúvida sobre o rumo das contas públicas depois da eleição. Nesse caso, o dólar não seria a causa primeira, e sim mais um sintoma.",
+      "url": "https://www.imf.org/en/News/Articles/2025/07/16/pr-25252-brazil-imf-executive-board-concludes-2025-article-iv-consultation",
+      "titulo": "FMI – IMF Executive Board Concludes 2025 Article IV Consultation with Brazil",
+      "nivel": 3,
+      "trecho": "Continued credibility of fiscal and monetary policy frameworks important for anchoring inflation expectations.",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "Segundo o próprio Copom, citado pela imprensa, o quanto do dólar chega aos preços depende das expectativas. A relação também corre no sentido contrário do texto: expectativas fora da meta aumentam o repasse do câmbio. Isso enfraquece a frase que põe o dólar como causa da alta das expectativas.",
+      "url": "https://www.infomoney.com.br/?p=2711778",
+      "titulo": "InfoMoney – Repasse do dólar aos preços está maior que o normal (cita ata do Copom de dez/2024)",
+      "nivel": 6,
+      "trecho": "as expectativas estão desancoradas ou o movimento cambial é considerado mais",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "O IBGE disse que ainda não dá para medir quanto o El Niño vai pesar no IPCA. Por isso, apresentar o El Niño como causa já comprovada da alta é mais firme do que a evidência permite.",
+      "url": "https://www.dgabc.com.br/Noticia/4340523/para-ibge-efeito-do-el-ni-o-sobre-inflacao-de-alimentos-e-incerto",
+      "titulo": "Diário do Grande ABC – Para IBGE, efeito do El Niño sobre inflação de alimentos é incerto (11/08/2026)",
+      "nivel": 6,
+      "trecho": "ainda não é possível quantificar o impacto sobre o IPCA",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "O texto não mostra nenhuma objeção. A mais forte seria a de causa comum: o dólar e as expectativas sobem juntos porque cresceu a dúvida sobre as contas públicas e a política depois do segundo turno. O dólar seria então um canal, não a causa. Há também um erro de fato. Açúcar e café não são importados: o Brasil é o maior exportador mundial dos dois. O dólar alto os encarece aqui porque vender lá fora passa a render mais em reais, e não porque comprar de fora ficou mais caro. Só o trigo serve de exemplo de importado.",
+    "rotulo_se_sustenta": false,
+    "comentario_rotulo": "Nenhuma fonte citada mostra consenso sobre a causa. A do Banco Central (nível 3) só registra a cotação do dólar, sem dizer por que as expectativas mudaram. As duas fontes que falam da causa são notícias da Folha (nível 6) e resumem a opinião de economistas. Elas não medem quanto pesa cada fator. O IBGE diz que o efeito do El Niño ainda não pode ser medido, e o FMI dá peso central à confiança fiscal. \"Maioria\" seria possível se houver pesquisa com economistas (Focus ou questionário do BC) apontando dólar e El Niño. \"Consenso\" não se sustenta.",
+    "teste_da_troca": [
+     {
+      "frase": "Parte dessa alta veio do dólar, que passou de R$ 5,18 no fim de agosto para R$ 5,50 em 6/11",
+      "problema": "A frase trata o dólar como causa solta e cala por que ele subiu. As próprias fontes ligam a alta à eleição (\"desde a eleição\", \"depois do segundo turno\"). Com o governo do lado oposto no poder, é provável que o texto citasse o risco fiscal ou político do vencedor. O silêncio sobre a origem acaba favorecendo um dos lados. Para ficar neutro, o texto deveria dizer que a origem da alta do dólar está em disputa."
+     },
+     {
+      "frase": "e parte, do El Niño, que ameaça as safras",
+      "problema": "\"Ameaça\" é palavra de alarme. Também põe uma causa climática, fora do alcance do governo, no mesmo nível do câmbio, embora o IBGE diga que o efeito ainda não pode ser medido. Melhor: \"o El Niño pode reduzir safras; o efeito ainda é incerto\"."
+     },
+     {
+      "frase": "Com o dólar mais caro, os importados ficam mais caros, como trigo, açúcar e café.",
+      "problema": "Erro de fato: açúcar e café são produtos que o Brasil exporta. O mecanismo certo é outro: com o dólar alto, exportar rende mais em reais, e o preço interno sobe junto. O erro não favorece nenhum lado, mas precisa ser corrigido."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-daqui",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "O argumento de Blanchard usado a favor depende de dívida alta, de uma parte grande dela em moeda estrangeira e de aversão global ao risco alta. Em 2002 essa parte era grande. Em 2026 os títulos ligados ao câmbio são cerca de 4% da dívida federal (RMD do Tesouro, faixa de 3% a 7% do PAF). Por isso o canal de 2002–2003 não pode ser transposto direto para hoje sem dizer essa diferença.",
+      "url": "https://www.nber.org/papers/w10389",
+      "titulo": "Blanchard (2004), Fiscal Dominance and Inflation Targeting: Lessons from Brazil, NBER WP 10389",
+      "nivel": 2,
+      "trecho": "the higher the initial level of debt, the higher the proportion of foreign-currency-denominated debt",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "O FMI estimou que choques no juro mundial explicam a maior parte das oscilações de médio prazo do câmbio real brasileiro e dos fluxos de capital. O gasto do governo tem efeito menor. O estudo é antigo (1997), mas aponta uma explicação alternativa que o texto não testa: a saída de estrangeiros e a alta do dólar podem vir de fora. Para separar as duas coisas, falta comparar o real com moedas parecidas no mesmo período.",
+      "url": "https://www.imf.org/en/publications/wp/issues/2016/12/30/cyclical-fluctuations-in-brazil-s-real-exchange-rate-the-role-of-domestic-and-external-factors-2364",
+      "titulo": "FMI, Cyclical Fluctuations in Brazil's Real Exchange Rate: The Role of Domestic and External Factors",
+      "nivel": 3,
+      "trecho": "world interest rate shocks largely explain medium-term fluctuations in capital flows and the TCRER",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "Em 4/11, o índice do dólar caiu 0,6%, para o menor nível em um mês, e o peso mexicano subiu 1,35%. O texto precisa mostrar o real nesse dia. Se ele não acompanhou os vizinhos, isso reforça uma causa brasileira, mas não diz qual. Se acompanhou, a alta da semana fica mais parecida com um movimento global.",
+      "url": "https://www.infobae.com/colombia/2026/11/04/dolar-hoy-4-de-noviembre-de-2026-la-divisa-abrio-a-3235-ocho-pesos-por-debajo-de-la-trm-oficial/",
+      "titulo": "Infobae, Dólar hoy 4 de noviembre de 2026",
+      "nivel": 6,
+      "trecho": "cayó 0,6% hasta 101,27 unidades, su menor nivel en un mes",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção do juro de 10 anos parado é boa, porque usa o próprio mercado contra a leitura. Mas o próprio texto a enfraquece: o juro subiu em 3/11 e caiu em 5/11 e 6/11, enquanto o dólar fechou mais alto em 6/11 (R$ 5,508) do que em 3/11 (R$ 5,487). A objeção mais forte é outra: falta comparar o real com moedas parecidas (peso mexicano, colombiano e chileno) e com o índice global do dólar na mesma janela. Sem isso, nem a leitura fiscal nem a externa ficam testadas. A comparação também decide o resto: se o real caiu sozinho, a causa é brasileira (fiscal, Banco Central ou outra). Se caiu junto com os vizinhos, a leitura cai. Há também um problema no uso de Blanchard: o mecanismo dele exige muita dívida em dólar, e hoje ela é cerca de 4% do total.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "'Em disputa' é o rótulo certo, e nada sustenta um rótulo mais forte. Das sete fontes, seis são notícias (nível 6). A única acadêmica (Blanchard) trata de outro período e de outra composição da dívida. A projeção da dívida é do Tesouro, mas chega via Poder360; vale citar o Tesouro direto (nível 3). O temor sobre a diretoria do Banco Central vem de investidores sem nome ouvidos pela Folha e não é um dado. Nenhuma fonte separa a parte global da parte brasileira da alta do dólar.",
+    "teste_da_troca": [
+     {
+      "frase": "Quem investe passou a desconfiar das decisões tomadas no Brasil.",
+      "problema": "Transforma o mercado num ator só e trata a desconfiança como fato, quando é a hipótese em teste. Com outro governo no poder, a frase tenderia a sair como 'o mercado reagiu a ruídos'. 'Desconfiar' é palavra com lado. Sugestão: 'A leitura é que parte dos investidores passou a cobrar mais para ter ativos brasileiros.'"
+     },
+     {
+      "frase": "teme um Banco Central mais disposto a cortar o juro com os preços subindo",
+      "problema": "Atribui aos futuros diretores uma intenção que ainda não existe e se apoia em fontes sem nome. Com o governo oposto, as mesmas indicações provavelmente não seriam apresentadas como ameaça. 'Teme' é palavra de alarme. Melhor dizer que há incerteza sobre o perfil das indicações e mostrar um dado verificável, como a inflação implícita ou as expectativas do Focus."
+     },
+     {
+      "frase": "Desde a reeleição, investidores estrangeiros tiraram R$ 8,4 bilhões da Bolsa brasileira.",
+      "problema": "Usar a reeleição como marco sugere que ela causou a saída. A mesma soma, contada a partir de outra data ou comparada com a saída de outros emergentes, poderia dizer outra coisa. Falta comparar com outros países no mesmo período."
+     },
+     {
+      "frase": "Ele caiu em 5/11 e 6/11, depois da fala do presidente e dos sinais sobre as contas do governo.",
+      "problema": "A ordem dos fatos sugere que a fala causou a queda. Com o lado oposto no poder, a mesma queda poderia ser creditada ao cenário externo, já que o índice do dólar e os juros americanos caíram em 4/11. Vale dizer o que mais mudou naqueles dias."
+     },
+     {
+      "frase": "O juro que o governo paga para pegar dinheiro emprestado subiu em 3/11, com o temor sobre a agenda econômica.",
+      "problema": "'Temor sobre a agenda' é palavra de alarme e não diz qual medida o mercado precificou. Diga qual anúncio ou fato foi e quantos pontos o juro subiu."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-fora",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "Rival direta: o real responde ao risco fiscal brasileiro, e não só ao humor global. Com dados diários do real em torno de anúncios de política, o BIS achou dois regimes com sinais opostos. Quando cresce a dúvida sobre a dívida, um juro mais alto ou um gasto maior desvaloriza o real. Como a própria fonte de 4/11 cita a 'espera pelo anúncio sobre as contas do governo', a semana tem um fator doméstico que a leitura não separa do externo.",
+      "url": "https://www.bis.org/publ/work950.htm",
+      "titulo": "Fiscal regimes and the exchange rate (Alberola, Cantú, Cavallino e Mirkov, BIS Working Paper 950)",
+      "nivel": 3,
+      "trecho": "A contractionary monetary (expansionary fiscal) shock can lead to a depreciation, rather than an appreciation",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "O ciclo mundial não chega igual a todos os países: o efeito depende do regime de câmbio e das condições de cada um. Isso enfraquece a ideia de um movimento 'ao mesmo tempo' contra todas as moedas emergentes. Para sustentar essa ideia, seria preciso mostrar que o real se mexeu na mesma proporção que moedas parecidas (peso mexicano, rand) entre 4/11 e 6/11, e nenhuma fonte citada faz essa comparação.",
+      "url": "https://www.imf.org/en/publications/wp/issues/2017/06/08/a-tie-that-binds-revisiting-the-trilemma-in-emerging-market-economies-44942",
+      "titulo": "A Tie That Binds: Revisiting the Trilemma in Emerging Market Economies (Obstfeld, Ostry e Qureshi, FMI WP 17/130)",
+      "nivel": 3,
+      "trecho": "Transmission is magnified under fixed exchange rate regimes relative to more flexible",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção de Cerutti, Claessens e Rose (BIS) é boa, mas é genérica: diz que o ciclo mundial explica pouco dos fluxos em média, sem tratar desta semana. A mais forte é outra, e o próprio material do site a contém. A fonte de 4/11 liga a queda do dólar à espera pelo anúncio fiscal do governo, e a literatura (BIS WP 950, Blanchard 2004) mostra que o real reage com força ao risco fiscal doméstico. Além disso, o texto diz 'ao mesmo tempo' sem nenhuma fonte que compare o real com outras moedas emergentes nesses dias. Esse é o teste que decide entre a leitura de fora e a leitura fiscal, e ele não aparece.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "O rótulo 'em disputa' da pergunta se sustenta. As fontes trazem ao mesmo tempo um fator externo (Nasdaq, emprego nos EUA) e um interno (anúncio fiscal), e a literatura dá base às duas leituras. Já o status 'em pé' da leitura se apoia quase todo em notícias (nível 6) de três dias e numa tese geral (Rey). Falta a evidência que a confirmaria: o real andando junto com seus pares. Sem ela, a leitura é plausível, mas não está demonstrada.",
+    "teste_da_troca": [
+     {
+      "frase": "Investidores do mundo todo ficaram com mais medo e tiraram dinheiro de países emergentes, como o Brasil. Com isso, o dólar subiu contra as moedas desses países ao mesmo tempo.",
+      "problema": "A frase põe a causa toda fora do país e, com isso, isenta o governo brasileiro. Com o lado oposto no poder, é provável que o texto desse mais peso ao fator fiscal citado na própria fonte de 4/11. O 'ao mesmo tempo' é afirmado sem comparação com outras moedas, e é justamente essa parte que livra o governo de qualquer responsabilidade."
+     },
+     {
+      "frase": "O dólar caiu em 4/11, com o alívio depois das eleições nos EUA",
+      "problema": "'Alívio' toma lado: supõe que o resultado das eleições americanas foi bom. Além disso, a frase corta a outra metade da fonte ('e a espera pelo anúncio sobre as contas do governo'), que aponta para uma causa doméstica. Sairia diferente se o recorte favorecesse o outro lado."
+     },
+     {
+      "frase": "quando a Nasdaq, bolsa dos EUA, chegou a cair 6,4%",
+      "problema": "'Chegou a cair' dá o pior momento do dia, não o fechamento, e soa como alarme. É melhor informar o fechamento ou deixar claro que foi a queda máxima durante o pregão."
+     },
+     {
+      "frase": "ficaram com mais medo",
+      "problema": "'Medo' é palavra de alarme. Algo como 'ficaram mais avessos a risco' ou 'buscaram ativos mais seguros' é mais neutro."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-poupanca",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "A própria fonte que o site cita a favor tem uma ressalva. Mesmo levando em conta a poupança e os outros fatores do modelo, o juro real do Brasil fica cerca de 2 pontos percentuais acima do de outros emergentes. O autor atribui a diferença a fatores próprios do Brasil que o modelo não captou, como o crédito segmentado e a indexação. Então a frase 'pode cair ao nível de outros emergentes' só com mais poupança exagera o que o estudo conclui.",
+      "url": "https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062",
+      "titulo": "The Puzzle of Brazil's High Interest Rates (FMI, Working Paper 12/62, Alex Segura-Ubiergo, 2012)",
+      "nivel": 3,
+      "trecho": "Still, econometric results suggest that, controlling for everything else in the model, real interest rates in Brazil are about two full percentage points higher than in other countries in the sample, suggesting that there are still Brazil-specific factors that have not been captured by the empirical analysis.",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "Um artigo revisado por pares examinou as explicações mais comuns para o juro alto, entre elas a falta de poupança privada e o déficit do governo. A conclusão foi que a evidência não confirma com força nenhuma delas. O autor também observa que países com culturas muito diferentes têm juros próximos do padrão internacional.",
+      "url": "https://www.scielo.br/scielo.php?script=sci_arttext&pid=S0101-31572014000100001&lng=en&tlng=en",
+      "titulo": "On high interest rates in Brazil (Francisco Lafaiete Lopes, Revista de Economia Política, v. 34, n. 1, 2014)",
+      "nivel": 2,
+      "trecho": "It looks at theoretical arguments based on excessive government deficits, structural lack of private savings, inflation bias, excessive investment demand and fear of floating. An informal look at the evidence does not strongly corroborate any of these arguments.",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "O Brasil é uma economia aberta. Quando falta poupança aqui dentro, o país pode tomar emprestado lá fora, e o juro tende a ser o de fora mais um prêmio de risco. Este estudo mostra que o juro real longo do Brasil acompanha o juro dos títulos americanos de 10 anos e o prêmio de risco medido pelo CDS, e não a poupança doméstica. Ressalva: o autor diz que não testa as teorias concorrentes, só modela o juro longo.",
+      "url": "https://www.scielo.br/j/bbr/a/cr5ZbsffvSB43Rbbmk3Ddwv/?lang=en",
+      "titulo": "What Drives Long Term Real Interest Rates in Brazil? (Adonias Evaristo da Costa Filho, Brazilian Business Review, v. 14, n. 6, 2017)",
+      "nivel": 2,
+      "trecho": "It is shown that long term yield on inflation linked bonds are driven by yields on 10 year interest rates of United States",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção atual é fraca porque o próprio texto já a responde. A leitura trata do juro neutro, que muda devagar, e a Selic sobe e desce em volta dele. Logo, uma Selic que oscila muito não contradiz a leitura. A objeção mais forte vem da fonte que o site usa a favor: no estudo do FMI, mesmo levando em conta a poupança, o juro real do Brasil fica cerca de 2 pontos acima do de outros emergentes, e o autor atribui essa diferença ao crédito segmentado e à indexação. A segunda mais forte é o argumento da economia aberta: com capital entrando e saindo, a falta de poupança aparece como déficit externo, e o juro longo segue o juro de fora mais o risco-país (Costa Filho, 2017). A isso se soma Lopes (2014), em que a evidência não confirma com força a explicação da poupança.",
+    "rotulo_se_sustenta": false,
+    "comentario_rotulo": "'Maioria' não se sustenta com o que está citado. As fontes são um working paper do FMI de 2012, que deixa uma diferença sem explicação e aponta outras causas, e uma notícia de nível 6. Nenhuma das duas mostra que a maioria da literatura apoia essa leitura. O número de 14,4% também aparece sem comparação com outros emergentes, então não prova que o Brasil 'poupa pouco'. Ele deveria vir direto do IBGE (nível 3), não da Agência Brasil. Para manter o rótulo, faltam três coisas: uma revisão de estudos ou uma pesquisa de opinião com economistas, uma comparação internacional da taxa de poupança e menção à literatura contrária (Lopes, 2014; a leitura do crédito direcionado e da indexação). Com as fontes atuais, 'em disputa' ou 'pouco testada' descreve melhor o caso.",
+    "teste_da_troca": [
+     {
+      "frase": "sobra pouco dinheiro para emprestar a quem quer pegar: famílias, empresas e, principalmente, o governo",
+      "problema": "'Principalmente, o governo' põe no governo a maior parte da culpa, e as fontes citadas não dizem isso. O FMI diz só que mais poupança pública teria efeito maior, não que o governo seja o maior tomador. Com um governo de perfil fiscal oposto no poder, essa frase tenderia a sair mais branda, ou a sair mais dura. Sugestão: 'sobretudo se a poupança do governo subir', ligada à fonte."
+     },
+     {
+      "frase": "Em agosto de 2020, ficou cerca de 1% abaixo da inflação esperada; em março de 2026, cerca de 10,2% acima.",
+      "problema": "As duas datas caem em governos opostos (Bolsonaro e Lula), e o contraste pode ser lido como partidário. Melhor mostrar a amplitude do ciclo com datas fora dessa coincidência, ou com várias mínimas e máximas de mandatos diferentes."
+     },
+     {
+      "frase": "Por que o Brasil precisa de um juro tão maior que o de outros países para segurar os preços?",
+      "problema": "'Tão maior' carrega tom de alarme. Uma forma mais neutra: 'mais alto que o de outros países'."
+     },
+     {
+      "frase": "O Brasil poupa pouco",
+      "problema": "'Pouco' é um juízo sem referência. Pede comparação explícita, por exemplo com a média dos emergentes ou da América Latina. Sem ela, o leitor pode tomar a frase como julgamento do país."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-confianca",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "De 2003 a 2013, a dívida caía, o governo fazia superávit primário e, segundo um modelo com troca de regime publicado na Revista Brasileira de Economia, o Banco Central dominava e as contas do governo não atrapalhavam. Mesmo assim, o juro real brasileiro seguiu entre os mais altos do mundo. Aqui a direção da dívida também era boa, então a saída usada para 2016 a 2019 não serve. Cuidado: o mesmo estudo encontra dominância fiscal depois de 2013 e de novo depois de 2019, o que apoia a leitura nesses trechos.",
+      "url": "https://ideas.repec.org/a/fgv/epgrbe/v78y2024i2a88864.html",
+      "titulo": "Fiscal Dominance in Brazil: The Effects on Financial Conditions and Growth (Ortega Scaramuzzi e Kfoury Muinhos, Revista Brasileira de Economia, 2024)",
+      "nivel": 2,
+      "trecho": "there was prevalence of monetary dominance",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "Um estudo do FMI comparou o Brasil com outros emergentes que têm meta de inflação. Mesmo depois de levar em conta poupança, contas do governo e outros fundamentos, sobram cerca de 2 pontos de juro real a mais no Brasil. O autor liga essa diferença à divisão do mercado de crédito e à indexação de preços, não às contas do governo. Em parte o estudo apoia a leitura, porque mais poupança pública baixaria o juro. A diferença que sobra, porém, é justamente o 'tão maior que o de outros países' da pergunta.",
+      "url": "https://www.imf.org/en/Publications/WP/Issues/2016/12/31/The-Puzzle-of-Brazil-s-High-Interest-Rates-25751",
+      "titulo": "The Puzzle of Brazil's High Interest Rates (Alex Segura-Ubiergo, FMI, Working Paper 12/62)",
+      "nivel": 3,
+      "trecho": "real interest rates in Brazil are about two full percentage points higher",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "Esta é uma explicação concorrente, não uma refutação. Com dados de quase 300 mil empresas entre 2006 e 2012, o Banco Central concluiu que o juro faz menos efeito sobre empresas que têm acesso a crédito subsidiado do governo, como o do BNDES. Se uma parte grande do crédito não reage à Selic, o Banco Central precisa de juro mais alto para frear o resto da economia, mesmo que ninguém duvide da dívida.",
+      "url": "https://ideas.repec.org/p/bcb/wpaper/419.html",
+      "titulo": "The Impact of Government-Driven Loans in the Monetary Transmission Mechanism (Bonomo e Martins, Banco Central do Brasil, Working Paper 419)",
+      "nivel": 3,
+      "trecho": "Our results show that the credit channel of monetary policy is less effective for firms with government-driven loans access.",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção de 2016 a 2019 é a que a leitura responde com mais facilidade. A própria resposta do site a desarma dizendo que pesa a direção da dívida, não o tamanho. A objeção mais forte é a de 2003 a 2013. Nesses anos a dívida caía, havia superávit e, segundo Ortega Scaramuzzi e Muinhos (RBE, 2024), o Banco Central dominava. Mesmo assim, o juro real brasileiro seguiu muito acima do de outros emergentes. Aqui não dá para dizer que a direção era ruim. Some a isso o resultado do FMI (Segura-Ubiergo, 2012): mesmo com os fundamentos controlados, sobram cerca de 2 pontos a mais no Brasil, que o autor liga ao crédito dividido e à indexação. Isso mostra que a desconfiança nas contas explica bem os picos (2002, 2015, depois de 2019), mas não explica sozinha por que o juro brasileiro fica acima do de outros países mesmo quando as contas vão bem. O ideal é trocar a objeção atual por esta ou mostrar as duas.",
+    "rotulo_se_sustenta": false,
+    "comentario_rotulo": "A pergunta compara o Brasil com outros países ('tão maior que o de outros países'), mas nenhuma fonte citada faz essa comparação. Blanchard e Favero-Giavazzi (nível 2) tratam de um único episódio, a crise de 2002 e 2003, com dívida em dólar, situação que hoje não se repete. A estimativa de cerca de 1 ponto para 2014 a 2016 vem de uma dissertação (nível 4). O dado da dívida (nível 3) é só uma série, não mostra causa. Para chamar a leitura de 'maioria' faltaria uma revisão de estudos ou um trabalho que compare países e atribua às contas do governo a maior parte da diferença. A busca não achou literatura que contradiga a leitura. Os resultados são mistos: há dominância fiscal em alguns períodos e não em outros, e há explicações concorrentes, como crédito direcionado e indexação. A conclusão não é que a leitura esteja errada, e sim que as fontes citadas não bastam para o rótulo. Com elas, o rótulo honesto seria 'em disputa'. Para manter 'maioria', é preciso citar fontes melhores.",
+    "teste_da_troca": [
+     {
+      "frase": "A dívida do governo passou de 51,5% do PIB em dezembro de 2013 para 82,9% em setembro de 2026.",
+      "problema": "Começar em dezembro de 2013 põe toda a alta da dívida na conta dos governos de 2014 em diante, e o dado de 2026 a junta ao governo atual. Com o lado oposto no poder, seria fácil escolher outro começo, como 2016 ou 2019, ou mostrar os anos intermediários (a dívida passou de 70% a 74% de 2016 a 2019, subiu na pandemia e caiu em 2021 e 2022). Também falta dizer que a série mede a dívida bruta. Sugestão: mostrar a série inteira ou mais de um ponto de partida."
+     },
+     {
+      "frase": "Nesses anos, o Congresso aprovou o teto de gastos, em 2016, e a reforma da Previdência, em 2019.",
+      "problema": "A frase atribui a queda do juro só a medidas de um campo político. Ficam de fora outras causas do mesmo período: recessão e economia com folga, inflação em queda e juro baixo no mundo. Com o governo oposto no poder, o texto tenderia a citar regras fiscais desse outro lado, como o arcabouço fiscal de 2023, ou a dar mais peso a essas causas. Sugestão: dizer que essas medidas são a explicação da leitura e listar as outras causas possíveis."
+     },
+     {
+      "frase": "subir o juro aumentava o medo de calote",
+      "problema": "'Medo de calote' é palavra de alarme leve. Mais neutro: 'aumentava o risco de calote percebido por quem empresta' ou 'aumentava o prêmio de risco'."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-credito",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "Um estudo do próprio Banco Central diz que evidências com dados de empresas, como a de Bonomo e Martins, não mostram necessariamente o efeito do juro sobre a economia inteira, por causa de efeitos de equilíbrio geral. E menos efeito sobre a produção não quer dizer menos efeito sobre a inflação.",
+      "url": "https://econpapers.repec.org/paper/bcbwpaper/505.htm",
+      "titulo": "Earmarked Credit and Monetary Policy Power: micro and macro considerations (Pedro Castro, BCB Working Paper 505, 2019)",
+      "nivel": 3,
+      "trecho": "Moreover, evidence of decreased power over output does not imply that power over inflation is also decreased.",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "Um texto para discussão do BNDES revisou os estudos, refez dois trabalhos muito citados e não achou evidência macroeconômica confiável de que o crédito do banco tire força da Selic, nem antes da TLP. Atenção: o BNDES é parte interessada no tema.",
+      "url": "https://web.bndes.gov.br/bib/jspui/handle/1408/23265?mode=full",
+      "titulo": "Barboza e Furtado, BNDES, Texto para Discussão 154 (2023)",
+      "nivel": 3,
+      "trecho": "não há evidências macroeconômicas confiáveis que amparem a ideia de que o BNDES produza efeitos altistas relevantes",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção da Revista de Economia Política é boa, mas não é a mais forte. A mais forte ataca a única evidência a favor: Castro (BCB WP 505) mostra que estudos com dados de empresas, como o de Bonomo e Martins, não medem necessariamente o efeito sobre a economia inteira, nem sobre a inflação. A crítica vem do próprio Banco Central. Vale juntar Barboza e Furtado (BNDES, 2023), que refizeram estudos citados e não acharam perda de força da Selic.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "\"Em disputa\" é o rótulo certo. Há estudos dos dois lados: Banco Central (WP 636), FMI (2026) e um artigo da USP (2025) apontam que o crédito do governo enfraquece a Selic; a Revista de Economia Política, o BNDES e Castro contestam. Mas a lista de fontes só traz Bonomo e Martins. Falta citar o artigo da objeção e pelo menos um estudo de cada lado.",
+    "teste_da_troca": [
+     {
+      "frase": "Esse juro não sobe quando a Selic sobe",
+      "problema": "Está desatualizada para o BNDES. Desde 2018 a TLP acompanha a NTN-B e reage à política monetária. Escrita no presente e com o BNDES de exemplo, a frase ajuda o lado que critica o banco. Melhor: 'não subia (TJLP) e hoje sobe em parte'."
+     },
+     {
+      "frase": "Se a leitura está certa, o problema diminuiu.",
+      "problema": "Usa um estudo de 2020 sobre a TLP, aprovada no governo Temer. Ignora que o crédito barato do governo voltou a crescer depois de 2023 e que o Banco Central alertou para isso. Um governo que expande o BNDES e um que o encolhe dariam ênfases opostas; melhor dizer que o efeito depende do tamanho atual desse crédito."
+     },
+     {
+      "frase": "empresas com mais crédito subsidiado do governo",
+      "problema": "'Subsidiado' tem leve carga de lado. 'Crédito com juro definido pelo governo' é mais neutro e combina com o resto do texto."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-indexacao",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "Um estudo do Banco Central com 40 países (23 industrializados e 17 emergentes, dados a partir de 1995) concluiu que a persistência da inflação é baixa e estável em todos eles. Se a inflação brasileira não carrega a do passado muito mais do que a de outros países, a correção pela inflação passada perde força como explicação para o juro brasileiro ser maior. O próprio estudo ressalva que países que passaram por hiperinflação, como o Brasil, têm persistência um pouco maior.",
+      "url": "https://ideas.repec.org/p/bcb/wpaper/230.html",
+      "titulo": "Is Inflation Persistence Over? (Oliveira e Petrassi, Banco Central do Brasil, Working Paper 230, 2010)",
+      "nivel": 3,
+      "trecho": "Our results show that inflation persistence is low and stable for all countries in our sample.",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "Um estudo do Banco Central separou três fontes da persistência da inflação no Brasil: a distância entre as expectativas e a meta, a persistência dos fatores que empurram a inflação, e a parte ligada à inflação passada, que é o canal da correção automática. O peso maior ficou com as expectativas. Ou seja, o que faz a inflação durar seria a desconfiança de que ela vai cair, mais do que a correção mecânica de preços e contratos.",
+      "url": "https://ideas.repec.org/p/bcb/wpaper/331.html",
+      "titulo": "Measuring Inflation Persistence in Brazil Using a Multivariate Model (Machado e Portugal, Banco Central do Brasil, Working Paper 331, 2013)",
+      "nivel": 3,
+      "trecho": "Our results indicate that expectations-based persistence matters considerably for inflation persistence in Brazil.",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção atual aponta só uma ausência: ninguém mediu o efeito. Ela é correta, mas existe uma objeção mais forte, com evidência contrária de nível 3. O Banco Central mediu a persistência da inflação e achou que ela é baixa e estável em 40 países (WP 230). No Brasil, o que mais pesa nessa persistência são as expectativas, e não a parte ligada à inflação passada, que é o canal da correção automática (WP 331). Os dois estudos não medem o efeito sobre o juro. Mas, se o canal da correção pesa pouco e o Brasil não foge muito dos outros países, sobra pouco espaço para que ele explique uma diferença de 2 pontos. Sugestão de texto: \"Estudos do Banco Central acham que a inflação brasileira carrega pouco da do passado, perto do que se vê em outros países, e que o peso maior está nas expectativas. Nenhum estudo mediu quanto a correção pela inflação passada pesa no juro.\"",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "\"Pouco testada\" se sustenta. A única fonte citada (FMI, Segura-Ubiergo, 2012) traz a correção pela inflação passada como candidata a explicar uma sobra que o modelo não explica: \"may include... inflation inertia generated by still pervasive indexation practices\". Não há medida do efeito sobre o juro. As evidências novas medem a persistência da inflação, não o juro, então não bastam para mudar o rótulo para \"testada e não confirmada\". Mas o \"a favor\" exagera um pouco: o autor diz \"may include\", e \"uma das causas possíveis\" deveria vir mais explícito como hipótese não medida. Falta também registrar que o próprio estudo põe o crédito dividido em mercados separados ao lado da correção, como outra candidata.",
+    "teste_da_troca": [
+     {
+      "frase": "Muitos preços são corrigidos pela inflação do ano anterior, como o aluguel e o salário mínimo.",
+      "problema": "O salário mínimo é uma política do governo de turno. Escolhê-lo como exemplo principal liga o juro alto a uma bandeira do governo atual. Com o lado oposto no poder, o redator poderia trocar o exemplo por tarifas reguladas ou contratos de concessão. Há também imprecisão: pela Lei 14.663/2023, o reajuste do mínimo soma o INPC ao crescimento do PIB de dois anos antes, com o ganho real limitado desde o fim de 2024. Ou seja, não é só correção pela inflação passada. Sugestão: citar aluguel, contratos de serviços públicos e o piso do salário mínimo, ou dar exemplos sem ligação com o governo."
+     },
+     {
+      "frase": "e o juro precisa ficar alto por mais tempo para trazê-la para baixo.",
+      "problema": "\"Precisa\" afirma como certa uma conclusão que a página mesmo classifica como pouco testada. Isso favorece quem defende juro alto. Sugestão: \"o que, segundo essa leitura, exigiria juro alto por mais tempo\"."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-circulo",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "Um artigo de 2026 testou se o Brasil está em dominância fiscal, isto é, se a dívida alta faz o juro perder efeito ou trabalhar a favor da dívida. Os autores usaram dados de 2014 a 2024 e rejeitaram a hipótese. Mesmo com a dívida acima de 60% do PIB, uma alta da Selic baixou a inflação, valorizou o real e reduziu o risco-país. Isso contraria a metade do ciclo que diz que a dívida maior obriga a manter o juro alto.",
+      "url": "https://econpapers.repec.org/RePEc:ibn:ijefaa:v:18:y:2026:i:6:p:1",
+      "titulo": "A Bayesian Analysis of the Fiscal Dominance Hypothesis in Brazil (Rocha, Pereira e Brilhante, International Journal of Economics and Finance, 2026)",
+      "nivel": 2,
+      "trecho": "The GIRFs reject the FD hypothesis because a positive shock to the Selic rate produced the following responses",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "Ter cerca de metade da dívida atrelada à Selic não quer dizer que a conta de juros acompanhe a Selic na mesma medida. Em 2025, a Selic média foi de 14,33%, e o custo médio da dívida ficou perto de 12%, porque o estoque também tem títulos prefixados e títulos atrelados à inflação. Além disso, os R$ 1,2 trilhão (8,9% do PIB) são juros nominais: incluem a correção pela inflação de toda a dívida. Por isso não se comparam diretamente com o déficit primário de 0,6% do PIB. O que mede a trajetória da dívida é o juro real descontado o crescimento do PIB.",
+      "url": "https://agenciagov.ebc.com.br/noticias/202601/divida-publica-encerra-2025-em-r-8-635-trilhoes-dentro-dos-limites-projetados-aponta-tesouro",
+      "titulo": "Dívida pública encerra 2025 em R$ 8,635 trilhões (Agência Gov, com dados e falas do Tesouro Nacional)",
+      "nivel": 3,
+      "trecho": "Com a Selic média de 14,33%, custo da dívida ficou perto dos 12%",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "O episódio de 2012 e 2013 responde a outra pergunta: se dá para cortar a Selic na marra sem a inflação subir. Ele não testa o que a leitura afirma, que a Selic alta alimenta a dívida e que a dívida maior obriga a manter o juro alto. A resposta de Lara-Resende também não responde a essa objeção. Há duas objeções mais fortes.\n\n1. A conta usa juros nominais. Os 8,9% do PIB incluem a correção pela inflação, e o custo médio da dívida fica abaixo da Selic. Comparar esse número com o déficit primário de 0,6% do PIB aumenta o peso da Selic. O certo seria olhar o juro real menos o crescimento do PIB.\n\n2. Os testes de dominância fiscal publicados em revistas não chegam a um acordo. Rocha e coautores (2026) rejeitam a hipótese para 2014 a 2024. Além disso, a causa pode correr no sentido contrário: o risco fiscal levaria a juros mais altos, e não o juro alto à dívida maior. Essa é a leitura do FMI e do Banco Central.\n\nA objeção exibida deveria ser uma dessas duas. Se o caso de 2012 ficar, ele deve aparecer como argumento contra cortar a Selic por decreto, e não contra o ciclo.",
+    "rotulo_se_sustenta": false,
+    "comentario_rotulo": "As fontes citadas não sustentam o rótulo \"minoria\" nem nenhum outro. Os dados do Banco Central (nível 3) mostram o tamanho da conta de juros, não a relação de causa. A única fonte para a tese é uma declaração de Lara-Resende num veículo de nível 7, e nenhuma fonte mostra como as opiniões dos economistas se dividem. A leitura junta duas afirmações de status diferente.\n\n1. \"Selic maior aumenta a conta de juros\" é contabilidade e fica perto do consenso.\n\n2. \"Dívida maior obriga a manter o juro alto\" é a tese da dominância fiscal, e os artigos revisados por pares se dividem. Scaramuzzi e Kfoury (Revista Brasileira de Economia, 2024) encontram dominância fiscal depois de 2013 e de novo depois de 2019. Rocha e coautores (2026) não encontram para 2014 a 2024. Gadelha e Divino (2008) encontram dominância monetária.\n\nO ciclo completo estaria mais perto de \"em disputa\". Se o site quiser manter \"minoria\", precisa citar uma fonte sobre como as opiniões se distribuem, como uma pesquisa com economistas ou uma revisão da literatura.",
+    "teste_da_troca": [
+     {
+      "frase": "É bem mais que o 0,6% do PIB que o governo gastou a mais do que arrecadou no mesmo período, sem contar os juros.",
+      "problema": "\"Bem mais\" é um juízo de valor. Além disso, pôr lado a lado os juros nominais e o déficit primário é o enquadramento de um dos lados do debate: tira o foco do gasto e põe no Banco Central. Com um governo de orientação oposta e o Banco Central sob crítica do outro lado, a comparação poderia ser apresentada ao contrário, ou junto com o juro real. Sugestão: dizer só os números e avisar que os juros nominais incluem a correção pela inflação."
+     },
+     {
+      "frase": "e a dívida maior vira motivo para manter o juro alto.",
+      "problema": "A frase atribui um motivo ao Banco Central, como se ele mantivesse o juro alto por causa da dívida. É o tipo de frase que muda de tom conforme quem governa. Uma versão neutra seria: \"e, por essa leitura, a dívida maior pressiona o juro para cima\"."
+     },
+     {
+      "frase": "Em outubro de 2012, a Selic chegou a 7,25%... e o Banco Central voltou a subir a Selic em abril de 2013.",
+      "problema": "A única objeção mostrada é um episódio do governo Dilma, sobre cortar o juro por pressão política. Com outro governo no poder, poderia ter sido escolhido outro exemplo, como 2017 a 2020, quando a Selic chegou a 2% sem a inflação disparar até a pandemia. A escolha do exemplo pende para um lado. Uma objeção técnica, como juro nominal contra juro real ou os testes de dominância fiscal, não depende do governo."
+     },
+     {
+      "frase": "o próprio juro alto ajuda a manter a dívida crescendo.",
+      "problema": "O tom é aceitável porque a frase vem com \"por essa leitura\". Ainda assim, \"juro alto\" sem número carrega juízo de valor. Seria melhor dizer \"a Selic de X%\"."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-juridica",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "Bacha, Holland e Gonçalves, num painel de países emergentes publicado no World Bank Economic Review, acham que mais dolarização financeira, ou seja, poder fazer contratos em moeda estrangeira, vem junto com juro real mais baixo. Isso dá apoio parcial ao lado da 'moeda inconversível' da hipótese. A ressalva dos próprios autores é que o efeito fica pequeno depois de controlar os riscos de default e de diluição, e que o motor principal é o risco sistêmico. O achado não salva a tese inteira, mas mostra que nem todas as variantes foram rejeitadas.",
+      "url": "https://ideas.repec.org/a/oup/wbecrv/v23y2008i1p101-117.html",
+      "titulo": "Systemic Risk, Dollarization, and Interest Rates in Emerging Markets: A Panel-Based Approach (Bacha, Holland e Gonçalves, WBER 2008/2009)",
+      "nivel": 2,
+      "trecho": "correctly estimates a negative coefficient for the dollarization ratio in the interest rate equation.",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "O FMI, mesmo controlando inflação, contas públicas e contas externas, ainda encontra juro real brasileiro cerca de 2 pontos acima do de outros países. Isso põe em dúvida a frase de que os fatores tradicionais 'explicaram o juro muito melhor': sobra um resíduo próprio do Brasil que eles não explicam. Cuidado, porém: o autor atribui o resíduo à segmentação do crédito e à indexação, não à incerteza jurisdicional.",
+      "url": "https://econpapers.repec.org/RePEc:imf:imfwpa:12/62",
+      "titulo": "The Puzzle of Brazil's High Interest Rates (Segura-Ubiergo, FMI WP 12/62, 2012)",
+      "nivel": 3,
+      "trecho": "real interest rates in Brazil are about two full percentage points higher than in other countries in the sample",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "Esta não derruba o texto, reforça o rótulo: um dos três autores da proposta reconhece que os testes com vários países não acharam a evidência. Serve para mostrar que o 'não confirmada' é aceito até pelos proponentes. Ele mantém a tese como hipótese, mas registra que o juro seguiu alto mesmo depois dos avanços na conversibilidade.",
+      "url": "https://www2.senado.leg.br/jspui/bitstream/id/465378/1/noticia.htm",
+      "titulo": "Juros: equívoco ou jabuticaba? (André Lara Resende, Valor Econômico, 16/06/2011)",
+      "nivel": 7,
+      "trecho": "algumas tentativas de encontrar evidência da sua presença, em amostras com diferentes países, foram feitas, mas sem sucesso",
+      "conferencia_codigo": "trecho_nao_esta_na_pagina"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": true,
+    "comentario_objecao": "Sim. Gonçalves, Holland e Spacov (Revista Brasileira de Economia, 2007, nível 2) é o teste direto mais forte que existe, e o resumo diz que os resultados são 'by and large unfavorable' à conjectura e às suas variantes. Faltam três ajustes. (1) O artigo não aparece entre as fontes citadas e precisa entrar (scielo.br/j/rbe/a/BjHQX6LtLSdnGtNJQ5MnJ8b). (2) Os autores falam em fatores 'monetários e fiscais'; trocar isso por 'inflação' perde precisão. (3) Vale dizer que a conclusão se apoia praticamente num único teste em painel, e que Bacha, Holland e Gonçalves (2009) acham um efeito pequeno, mas na direção esperada, para o lado da conversibilidade. O item 'a favor' ('é a proposta original') não é evidência, só autoria. Seria mais honesto dizer o argumento: ABL apontam a falta de mercado de crédito de longo prazo em reais como sintoma do problema.",
+    "rotulo_se_sustenta": false,
+    "comentario_rotulo": "Com as fontes citadas hoje, não se sustenta: a única fonte listada é a própria proposta, que não testa nada. O rótulo 'testada e não confirmada' passa a se sustentar se Gonçalves, Holland e Spacov (2007) entrarem como fonte. A confissão de Lara Resende (2011) reforça. Ainda assim, convém dizer que a base é estreita (essencialmente um painel) e que uma variante, a da conversibilidade e dolarização, teve apoio fraco em Bacha, Holland e Gonçalves. Detalhe de nome: ABL falam em 'incerteza jurisdicional', um viés do Judiciário contra credor e poupador, que é mais específico que 'incerteza jurídica'. Por fim, a proposta é de 2004/2005; o texto diz 2005, data do livro, o que é aceitável.",
+    "teste_da_troca": [
+     {
+      "frase": "Os fatores de sempre, ligados à inflação e às contas do governo, explicaram o juro muito melhor.",
+      "problema": "Nenhuma frase mudaria com o governo do lado oposto no poder; o texto não tem viés partidário. 'Fatores de sempre' é coloquial e soa depreciativo; melhor 'fatores tradicionais, monetários e fiscais', como no artigo. 'Muito melhor' é forte para um único estudo; 'bem mais' ou 'explicaram melhor' basta."
+     },
+     {
+      "frase": "A leitura da incerteza jurídica",
+      "problema": "Não tem lado, mas é impreciso: o termo técnico é 'incerteza jurisdicional', ou seja, o risco de o Judiciário decidir contra o credor. 'Jurídica' pode ser lido como insegurança legal em geral, um tema usado politicamente por qualquer oposição."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "juro-alto/o_que_vem_depois",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "A ligação entre 'juro alto' e 'freia vendas e contratações' é mais fraca no Brasil do que o texto dá a entender. Comparando com os EUA pelo mesmo método, os autores acham que o juro básico só passa por inteiro para o crédito livre de empresas. Não encontram transmissão no crédito às famílias nem no crédito direcionado. Pelo canal do crédito, o efeito da política monetária no Brasil sairia cerca de dez vezes menor. Assim, a distância de 8,4% contra 5% não diz, sozinha, quanto a economia vai frear.",
+      "url": "https://economia.lse.ac.uk/articles/391",
+      "titulo": "Elias e Guimaraes, 'This is not America: The Credit Channel of Monetary Policy in Brazil', Economía LACEA Journal, 2024",
+      "nivel": 2,
+      "trecho": "In Brazil, we find a 1:1 pass-through only in the case of non-earmarked credit for corporations",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "O efeito do juro sobre o emprego não é o mesmo para todas as empresas. Ele é menor nas que têm acesso a crédito direcionado e de bancos públicos. Isso pesa contra ler o pior setembro de vagas como efeito direto e geral do juro. Também sugere que a força do freio depende da fatia de crédito direcionado, que o Copom diz estar crescendo.",
+      "url": "https://econpapers.repec.org/RePEc:bcb:wpaper:419",
+      "titulo": "Bonomo e Martins, 'The Impact of Government-Driven Loans in the Monetary Transmission Mechanism', Banco Central do Brasil, Working Paper 419, 2016",
+      "nivel": 3,
+      "trecho": "Our results indicate that changes in policy rate have smaller effect on the level of employment",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "O próprio Copom diz que o juro neutro pode estar subindo, por causa de reformas paradas, mais crédito direcionado e dúvidas sobre a dívida pública. Se o neutro for maior que os 5% de 2025, o aperto real é menor do que a conta '8,4% contra 5%' sugere. Comparar um número de 2026 com uma estimativa de 2025, sem dizer que ela pode ter mudado, exagera a folga.",
+      "url": "https://timesbrasil.com.br/brasil/copom-alerta-que-esforco-nas-reformas-estruturais-e-fundamental-para-conter-juro-neutro/",
+      "titulo": "Times Brasil, 'Copom alerta que esforço nas reformas estruturais é fundamental para conter juro neutro', 23/09/2025 (cita a ata do Copom)",
+      "nivel": 6,
+      "trecho": "e as incertezas sobre a estabilização da dívida pública têm potencial de elevar a taxa de juros neutra da economia,",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "O site não mostra nenhuma objeção. A mais forte seria o juro neutro: a estimativa de cerca de 5% é de 2025, e o próprio Copom (ata de setembro de 2025) diz que ele pode subir com o fiscal e o crédito direcionado. Se subir, o aperto real é menor do que o texto sugere. Logo depois vem a transmissão fraca no Brasil (Elias e Guimaraes, 2024; Bonomo e Martins, BCB WP 419): o canal do crédito quase não chega às famílias nem ao crédito direcionado. Isso enfraquece a ligação direta entre juro alto e a queda de vendas e de vagas.",
+    "rotulo_se_sustenta": false,
+    "comentario_rotulo": "É consenso que juro real acima do neutro freia a atividade com defasagem. O texto, porém, vai além disso e ata a queda recente da indústria e o pior setembro de vagas ao juro. Essa ligação não tem fonte acima do nível 6 (Gazeta do Povo, Poder360) e ignora outras causas. Há ainda erros nos níveis das fontes. A Acionista é um site de notícias (nível 6), não nível 3. A fonte primária seria o Relatório de Política Monetária do BC. O número de 5% é de 2025 e pode estar velho. Proposta: manter 'consenso' só para o mecanismo geral. Os números de agora e a ligação causal com a indústria e as vagas deveriam ser 'maioria', com fontes primárias (IBGE PIM-PF, Caged, RPM).",
+    "teste_da_troca": [
+     {
+      "frase": "Na primeira semana de novembro, a indústria mostrou queda de 4,1% desde maio, e as empresas tiveram o pior setembro de vagas com carteira já registrado.",
+      "problema": "A frase escolhe só os dados ruins e põe a culpa toda no juro, sem citar causas que não dependem do BC, como o fiscal, o câmbio, o cenário externo e o crédito direcionado. Com o governo do outro lado, é provável que entrasse o alerta do Copom sobre fiscal e dívida como causa de juro alto por mais tempo. 'Pior setembro já registrado' soa como alarme. Mais neutro: '121,3 mil vagas, o menor saldo para setembro na série do Novo Caged'."
+     },
+     {
+      "frase": "Em 2025, o Banco Central estimava em cerca de 5% acima da inflação o juro que nem acelera nem freia a economia, bem abaixo dos 8,4% de hoje.",
+      "problema": "'Bem abaixo' é ênfase que puxa para 'o BC está apertando demais'. A frase não diz que o próprio BC vê risco de o neutro subir por causa do fiscal. Com o governo do outro lado, essa ressalva tenderia a aparecer. Mais neutro: tirar o 'bem' e acrescentar 'o BC avalia que essa estimativa pode subir'."
+     },
+     {
+      "frase": "comprar a prazo e investir continuam caros, o que freia as vendas e as contratações.",
+      "problema": "A frase apresenta o mecanismo como certo e uniforme. A literatura mostra que a transmissão é parcial no Brasil, sobretudo no crédito às famílias e no direcionado. Mais neutro: 'tende a frear'."
+     }
+    ]
+   }
+  }
+ ]
+}
