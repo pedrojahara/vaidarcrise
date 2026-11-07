@@ -163,10 +163,10 @@
   {
    "id": "a-copom-nov",
    "tipo": "documento",
-   "texto": "Em 4/11/2026, o Banco Central parou os cortes, manteve a Selic em 13,75% e subiu para 5,6% sua previsão do IPCA de 2026.",
+   "texto": "Em 4/11/2026, o Banco Central interrompeu os cortes, manteve a Selic em 13,75% e projetou o IPCA de 2026 em 5,6%.",
    "fonte": {
     "nivel": 3,
-    "quem": "Gazeta do Povo",
+    "quem": "Banco Central (comunicado do Copom)",
     "titulo": "282ª reunião - Copom mantém a taxa Selic em 13,75% a.a. (comunicado oficial do Copom, 04/11/2026)",
     "url": "https://www.bcb.gov.br/api/servico/sitebcb/copom/comunicados_detalhes?nro_reuniao=282"
    },
@@ -194,7 +194,7 @@
    "texto": "Em setembro de 2026, com a Selic em 13,75%, o Brasil tinha o maior juro acima da inflação esperada do mundo no ranking da MoneYou e da Lev Intelligence, com 8,45%.",
    "fonte": {
     "nivel": 6,
-    "quem": "Poder360",
+    "quem": "InfoMoney",
     "titulo": "Com Selic em 13,75%, Brasil tem maior juro real do mundo (InfoMoney, 16/09/2026)",
     "url": "https://www.infomoney.com.br/economia/com-selic-em-1345-brasil-tem-maior-juro-real-do-mundo-set2026/"
    },
@@ -363,10 +363,10 @@
   {
    "id": "a-importados",
    "tipo": "documento",
-   "texto": "Com o real mais fraco desde a eleição, trigo importado, açúcar e café ficaram mais caros no Brasil.",
+   "texto": "Com a alta do dólar depois da eleição, as cotações de açúcar e café subiram no atacado e podem chegar ao consumidor.",
    "fonte": {
     "nivel": 6,
-    "quem": "Folha",
+    "quem": "Folhapress, no Diário do Comércio",
     "titulo": "Alta do dólar começa a impactar açúcar, trigo e café, que podem ficar mais caros para o consumidor (Leonardo Vieceli, Folhapress, republicado pelo Diário do Comércio, 04/11/2026)",
     "url": "https://diariodocomercio.com.br/economia/alta-dolar-impactar-consumidor/"
    },
@@ -390,22 +390,29 @@
   {
    "id": "a-ev-0311-juros",
    "tipo": "documento",
-   "texto": "Em 3/11, o juro que o governo paga para pegar dinheiro emprestado subiu com o temor sobre a agenda econômica, e o dólar fechou a R$ 5,487.",
+   "texto": "Em 3/11, o dólar fechou em alta de 0,74%, a R$ 5,486, com preocupações sobre a agenda econômica do governo.",
    "fonte": {
     "nivel": 6,
-    "quem": "Valor",
-    "titulo": "Juros futuros têm forte alta por temor sobre agenda econômica do governo e piora do Focus",
-    "url": "https://valor.globo.com/financas/noticia/2026/11/03/juros-futuros-tem-forte-alta-por-temor-sobre-agenda-economica-do-governo-e-piora-do-focus.ghtml"
+    "quem": "Reuters, no Investing.com",
+    "titulo": "Dólar à vista fecha em alta com preocupações sobre agenda econômica do governo (03/11/2026)",
+    "url": "https://br.investing.com/news/forex-news/dolar-a-vista-fecha-em-alta-com-preocupacoes-sobre-agenda-economica-do-governo-2113704"
    },
    "trecho": null,
-   "trecho_candidato": null,
+   "trecho_candidato": "O dólar à vista encerrou o dia com elevação de 0,74%, a R$5,4863.",
    "evento": "ev-20261104-02",
    "conferencia": {
     "status": "pendente",
     "em": "2026-11-07",
     "como": "codigo_nao_abriu",
     "o_que_falta": "A matéria do Valor indicada não abriu (acesso bloqueado a valor.globo.com) e não achei outra cópia dela. A nota da Reuters de 03/11/2026 confirma o dólar em alta por preocupações com a agenda econômica do novo governo Lula, mas dá o fechamento em R$ 5,4863 (≈ R$ 5,486), não R$ 5,487. Ela não menciona juros futuros nem DI. A Crítica (03/11, 8h51) diz que \"os juros futuros também sobem\", mas é uma leitura do começo do pregão, não do fechamento. Falta uma fonte acessível com a alta dos juros futuros no fechamento ligada à agenda econômica e o dólar a R$ 5,487. Outra opção é corrigir o número da frase para R$ 5,486."
-   }
+   },
+   "fonte_original": {
+    "nivel": 6,
+    "quem": "Valor",
+    "titulo": "Juros futuros têm forte alta por temor sobre agenda econômica do governo e piora do Focus",
+    "url": "https://valor.globo.com/financas/noticia/2026/11/03/juros-futuros-tem-forte-alta-por-temor-sobre-agenda-economica-do-governo-e-piora-do-focus.ghtml"
+   },
+   "nota": "Em 7/11/2026 a conferência no Mac não achou fonte para a alta do juro que o governo paga em 3/11: a frase ficou só com o dólar."
   },
   {
    "id": "a-ev-tesouro-divida",
@@ -413,7 +420,7 @@
    "texto": "O Tesouro projeta a dívida do governo em 83,7% do PIB no fim de 2026 e em 89,7% em 2030.",
    "fonte": {
     "nivel": 6,
-    "quem": "Poder360",
+    "quem": "CNN Brasil",
     "titulo": "Dívida Bruta do Governo alcançará pico de 89,7% do PIB em 2030, diz Tesouro (CNN Brasil, sobre o 8º Relatório de Riscos Fiscais da União)",
     "url": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/divida-bruta-do-governo-alcancara-pico-de-897-do-pib-em-2030-diz-tesouro/"
    },
@@ -438,7 +445,7 @@
   {
    "id": "a-ev-0411-dolar-cai",
    "tipo": "documento",
-   "texto": "Em 4/11, o dólar caiu para R$ 5,45 com o alívio depois das eleições nos EUA e a espera pelo anúncio sobre as contas do governo.",
+   "texto": "Em 4/11, o dólar caiu para R$ 5,45, com o dólar mais fraco no mundo depois das eleições nos EUA e a espera pela decisão do Copom.",
    "fonte": {
     "nivel": 6,
     "quem": "Agência Brasil",
@@ -459,12 +466,12 @@
   {
    "id": "a-ev-0511-nasdaq",
    "tipo": "documento",
-   "texto": "Em 5/11, a Nasdaq, bolsa dos EUA, chegou a cair 6,4%, e a Bolsa do Japão perdeu mais de 6%.",
+   "texto": "Em 5/11, o índice Nasdaq Composite, da bolsa dos EUA, caiu 5,52%.",
    "fonte": {
     "nivel": 6,
-    "quem": "Folha",
-    "titulo": "Nasdaq cai até 6,4% com receio de que vitória democrata afete boom da IA",
-    "url": "https://c-level.folha.uol.com.br/negocios/2026/11/nasdaq-cai-em-64-com-receio-de-que-vitoria-democrata-afete-boom-da-ia.shtml"
+    "quem": "Prensa Mercosur",
+    "titulo": "Nasdaq cae 5,5% y Nikkei 6% por la burbuja de IA (06/11/2026)",
+    "url": "https://prensamercosur.org/2026/11/06/nasdaq-cae-55-y-nikkei-6-por-la-burbuja-de-ia/"
    },
    "trecho": null,
    "trecho_candidato": null,
@@ -474,15 +481,22 @@
     "em": "2026-11-07",
     "como": "agente_nao_sustenta",
     "o_que_falta": "Não consegui abrir a página da Folha: o domínio folha.uol.com.br está bloqueado para fetch, tanto em c-level quanto em www1. Por isso não há trecho literal. Duas outras notícias de 6/11/2026 contradizem parte da frase. (1) Nasdaq: o Nasdaq Composite caiu 5,52% em 5/11 (Prensa Mercosur, https://prensamercosur.org/2026/11/06/nasdaq-cae-55-y-nikkei-6-por-la-burbuja-de-ia/). Os 6,36% (≈6,4%) foram do Nasdaq-100 (SpazioCrypto citando IBTimes, https://en.spaziocrypto.com/markets/nasdaq-crash-november-2026-ai-data-centers/). A frase deveria dizer 'Nasdaq-100' ou usar 5,5%. (2) Japão: o Nikkei 225 caiu 5,96% e isso foi em 6/11 (sexta), não em 5/11. Portanto não foi 'mais de 6%'. Em 4/11 o Nikkei caiu 1,42% (DGABC). Sugestão de redação: 'Em 5/11, o Nasdaq-100 caiu 6,4% e, no dia seguinte, a Bolsa de Tóquio perdeu quase 6%'. Antes de publicar, conferir o texto da Folha num navegador."
-   }
+   },
+   "fonte_original": {
+    "nivel": 6,
+    "quem": "Folha",
+    "titulo": "Nasdaq cai até 6,4% com receio de que vitória democrata afete boom da IA",
+    "url": "https://c-level.folha.uol.com.br/negocios/2026/11/nasdaq-cai-em-64-com-receio-de-que-vitoria-democrata-afete-boom-da-ia.shtml"
+   },
+   "nota": "O 6,4% da primeira versão era do Nasdaq-100 ou da queda máxima no pregão (conferência no Mac, 7/11/2026)."
   },
   {
    "id": "a-ev-0511-estrangeiros",
    "tipo": "documento",
-   "texto": "Desde a reeleição, investidores estrangeiros tiraram R$ 8,4 bilhões da Bolsa brasileira.",
+   "texto": "Entre a reeleição e 3/11, investidores estrangeiros tiraram R$ 8,4 bilhões da Bolsa brasileira.",
    "fonte": {
     "nivel": 6,
-    "quem": "Poder360",
+    "quem": "Tribuna do Paraná, com dados da B3",
     "titulo": "Investidores estrangeiros retiram R$ 8,4 bilhões da B3 após eleição (Tribuna do Paraná, 05/11/2026, citando Gazeta do Povo e dados da B3)",
     "url": "https://www.tribunapr.com.br/noticias/economia/investidores-estrangeiros-retiram-r-84-bilhoes-da-b3-apos-eleicao/"
    },
@@ -504,32 +518,12 @@
    }
   },
   {
-   "id": "a-ev-0511-fala",
-   "tipo": "documento",
-   "texto": "Em 5/11, a fala do presidente em defesa da responsabilidade com as contas fez recuar o juro que o governo paga para pegar dinheiro emprestado.",
-   "fonte": {
-    "nivel": 6,
-    "quem": "Poder360",
-    "titulo": "Lula cobra responsabilidade fiscal para atrair investimentos",
-    "url": "https://www.poder360.com.br/poder-governo/lula-cobra-responsabilidade-fiscal-para-atrair-investimentos/"
-   },
-   "trecho": null,
-   "trecho_candidato": null,
-   "evento": "ev-20261106-04",
-   "conferencia": {
-    "status": "derrubado",
-    "em": "2026-11-07",
-    "como": "agente_nao_sustenta",
-    "o_que_falta": "O Poder360 bloqueia o acesso automático e a página não abriu. Pela busca, a matéria é de 5/11/2026 e trata da fala de Lula no Cimce, onde ele cobrou responsabilidade fiscal e segurança jurídica para atrair capital; nada indica que fale de juros. O Metrópoles do mesmo dia também não registra queda de juros: diz que 'O dólar, que estava abaixo de R$ 5, disparou e valia R$ 5,49 na tarde desta quinta.' Só o Bom Dia Mercado fala em queda dos juros futuros, e em 6/11, atribuindo-a às 'primeiras declarações do presidente Lula após a reeleição' e ao Copom, sem citar a fala de 5/11. Falta uma fonte que ligue a fala de 5/11 a uma queda no mesmo dia dos juros futuros (DI) ou das taxas dos títulos do Tesouro."
-   }
-  },
-  {
    "id": "a-ev-0611-eua",
    "tipo": "documento",
-   "texto": "Em 6/11, os EUA informaram 165 mil vagas criadas em outubro, e o mercado passou a ver 80% de chance de o banco central de lá subir o juro.",
+   "texto": "Em 6/11, os EUA informaram 165 mil vagas criadas em outubro, e cresceu a pressão para o banco central de lá subir o juro em dezembro.",
    "fonte": {
     "nivel": 6,
-    "quem": "Folha",
+    "quem": "BM&C News",
     "titulo": "Payroll dos EUA cria 165 mil vagas em outubro e supera previsão",
     "url": "https://bmcnews.com.br/economia/payroll-dos-eua-cria-165-mil-vagas-em-outubro-e-supera-previsao/"
    },
@@ -553,10 +547,10 @@
   {
    "id": "a-ev-0611-juro-cai",
    "tipo": "documento",
-   "texto": "Em 6/11, o juro que o governo paga para pegar dinheiro emprestado caiu com os sinais sobre as contas, e o dólar fechou a R$ 5,508.",
+   "texto": "Em 6/11, o dólar fechou a R$ 5,508, e o juro futuro caiu em todos os prazos.",
    "fonte": {
     "nivel": 6,
-    "quem": "Poder360",
+    "quem": "InfoMoney",
     "titulo": "Bolsa sobe 1,39%; em alta, dólar fecha a R$ 5,508",
     "url": "https://www.poder360.com.br/poder-economia/bolsa-sobe-139-em-alta-dolar-fecha-a-r-5508/"
    },
@@ -573,10 +567,10 @@
   {
    "id": "a-ev-diretores-bc",
    "tipo": "documento",
-   "texto": "O presidente vai indicar seis diretores do Banco Central até o fim de 2027, e investidores temem uma diretoria mais disposta a cortar o juro com os preços subindo.",
+   "texto": "O presidente poderá indicar mais seis diretores do Banco Central até o fim de 2027, e o mercado teme um Banco Central menos firme contra a inflação para acelerar a queda da Selic.",
    "fonte": {
     "nivel": 6,
-    "quem": "Folha",
+    "quem": "Folhapress, no Diário do Comércio",
     "titulo": "Lula indicará seis diretores do Banco Central até o fim de 2027, e mercado teme mudança de perfil (Folhapress, reproduzido pelo Diário do Comércio, 3/11/2026)",
     "url": "https://diariodocomercio.com.br/economia/lula-indicara-seis-diretores-bc/"
    },
@@ -651,10 +645,10 @@
   {
    "id": "a-neutro-bc",
    "tipo": "documento",
-   "texto": "Em 2025, o Banco Central estimava em cerca de 5% acima da inflação o juro que nem acelera nem freia a economia.",
+   "texto": "Em dezembro de 2024, o Banco Central passou a usar nos seus modelos 5% acima da inflação como o juro que nem acelera nem freia a economia.",
    "fonte": {
     "nivel": 3,
-    "quem": "Acionista",
+    "quem": "Banco Central (ata do Copom)",
     "titulo": "Ata da 267ª Reunião do Copom (10-11 de dezembro de 2024) – Banco Central do Brasil",
     "url": "https://www.bcb.gov.br/api/servico/sitebcb/copom/atas_detalhes?nro_reuniao=267"
    },
@@ -678,7 +672,7 @@
   {
    "id": "a-fmi-poupanca",
    "tipo": "documento",
-   "texto": "Um estudo do Fundo Monetário Internacional de 2012 concluiu que o juro do Brasil pode cair ao nível de outros emergentes se a poupança do país subir ao nível deles, sobretudo a do governo.",
+   "texto": "Um estudo do Fundo Monetário Internacional de 2012 concluiu que o juro do Brasil cairia se a poupança do país subisse ao nível da de outros emergentes, sobretudo a do governo.",
    "fonte": {
     "nivel": 3,
     "quem": "Fundo Monetário Internacional, Alex Segura-Ubiergo",
@@ -882,7 +876,7 @@
   {
    "id": "a-rep-potencia",
    "tipo": "documento",
-   "texto": "Um artigo da Revista de Economia Política, com dados de 2000 a 2018, não achou sinal de que o juro freie menos a economia nos períodos de muito crédito dos bancos públicos.",
+   "texto": "Um artigo da Revista de Economia Política, com dados de 2000 a 2018, concluiu que o juro não perde força no conjunto nos períodos de muito crédito dos bancos públicos, embora a queda do PIB seja um pouco menor neles.",
    "fonte": {
     "nivel": 2,
     "quem": "Modenesi e Passos, Revista de Economia Política, v. 42, n. 3 (2022)",
@@ -927,56 +921,9 @@
    }
   },
   {
-   "id": "a-lara-resende",
-   "tipo": "documento",
-   "texto": "Em novembro de 2026, o economista André Lara-Resende disse que os juros são a maior parte do déficit do governo e que a Selic alta alimenta a dívida.",
-   "fonte": {
-    "nivel": 7,
-    "quem": "Mercado & Consumo",
-    "titulo": "Eu Acuso: uma proposta para eliminar os juros absurdos (André Lara Resende, Substack \"Um Cético Esperançoso\")",
-    "url": "https://andrelararesende.substack.com/p/eu-acuso-uma-proposta-para-eliminar"
-   },
-   "trecho": "Quando se exclui o serviço da dívida, as contas estão praticamente equilibradas. A grande despesa do Estado é com os juros sobre a dívida.",
-   "trecho_candidato": null,
-   "nota": "Notícia sobre um texto do autor: só serve para mapear quem defende a leitura. Achar o texto original.",
-   "trecho_lingua": "pt-BR",
-   "fonte_original": {
-    "nivel": 6,
-    "quem": "Mercado & Consumo",
-    "titulo": "Economista do Plano Real acusa BC de causar rombo fiscal via juros",
-    "url": "https://mercadoeconsumo.com.br/02/11/2026/economia/economista-de-plano-real-acusa-bc-de-causar-rombo-fiscal-via-juros/"
-   },
-   "conferencia": {
-    "status": "sustenta_em_parte",
-    "em": "2026-11-07",
-    "como": "trecho achado pelo agente e conferido pelo código na página",
-    "o_que_falta": "1) Data errada: o texto original saiu no Substack do autor em 25/09/2026. Ele não é de novembro. A notícia da Mercado & Consumo, de 02/11/2026 e baseada na Agência Brasil, só repercute o texto. A frase do site deveria dizer \"em setembro de 2026\" ou \"em artigo de setembro de 2026\". 2) O trecho copiado sustenta que os juros são a maior parte do déficit: com o primário quase equilibrado, a grande despesa são os juros. A segunda parte da frase, de que a Selic alta alimenta a dívida, aparece em outra frase do mesmo texto, que não fica ao lado desse trecho: \"O aumento da relação dívida/PIB tem um único motor: a absurda taxa de juros fixada pelo Banco Central.\" Ela pode ser usada como segundo trecho separado. 3) Trata-se de um texto de opinião do economista, por isso o nível é 7. Ele serve para atribuir a leitura ao autor, não como prova do fato."
-   }
-  },
-  {
-   "id": "a-lara-proposta",
-   "tipo": "documento",
-   "texto": "Lara-Resende propõe metas de inflação e de juro combinadas para quatro ou cinco anos, em vez de só cortar a Selic.",
-   "fonte": {
-    "nivel": 6,
-    "quem": "Jornal do Brasil",
-    "titulo": "André Lara Resende critica juros altos e o impacto fiscal no Brasil",
-    "url": "https://www.jb.com.br/economia/2026/11/1061430-andre-lara-resende-critica-juros-altos-e-o-impacto-fiscal-no-brasil.html"
-   },
-   "trecho": "com metas de inflação e juros definidas em conjunto e com prazo de quatro a cinco anos.",
-   "trecho_candidato": null,
-   "trecho_lingua": "pt-BR",
-   "conferencia": {
-    "status": "sustenta_em_parte",
-    "em": "2026-11-07",
-    "como": "trecho achado pelo agente e conferido pelo código na página",
-    "o_que_falta": "A matéria do JB (02/11/2026) sustenta a proposta de metas de inflação e de juros definidas em conjunto, com prazo de quatro a cinco anos, como parte de um \"novo regime fiscal e monetário\". Também diz que a Selic \"deveria permanecer em um intervalo compatível com a inflação e com o crescimento nominal da economia\". A página não diz que a proposta substitui \"só cortar a Selic\", então essa parte da frase é interpretação do site. O título que aparece na página (\"...e propõe novo regime econômico\") é diferente do indicado. É uma notícia (nível 6): a fala original de Lara-Resende (entrevista ou artigo) não foi localizada, e a extração devolveu só um fragmento literal curto."
-   }
-  },
-  {
    "id": "a-ghs",
    "tipo": "documento",
-   "texto": "Gonçalves, Holland e Spacov testaram com dados de vários países a ideia de que a incerteza jurídica e a moeda que não se troca livremente explicam o juro alto, e os resultados foram em geral contrários a ela.",
+   "texto": "Gonçalves, Holland e Spacov testaram com dados de vários países a ideia de que a incerteza sobre contratos e a moeda que não se troca livremente explicam o juro alto, e os resultados foram em geral contrários a ela.",
    "fonte": {
     "nivel": 2,
     "quem": "Fernando Gonçalves, Márcio Holland e Andrei Spacov",
@@ -997,7 +944,7 @@
   {
    "id": "a-ghs-tradicionais",
    "tipo": "documento",
-   "texto": "No mesmo teste, os fatores de sempre, ligados à inflação e às contas do governo, explicaram o juro muito melhor que a incerteza jurídica.",
+   "texto": "No mesmo teste, os fatores de sempre, ligados à política do Banco Central e às contas do governo, explicaram o juro muito melhor que a incerteza sobre contratos.",
    "fonte": {
     "nivel": 2,
     "quem": "Fernando Gonçalves, Márcio Holland e Andrei Spacov",
@@ -1391,7 +1338,7 @@
   {
    "id": "a-industria",
    "tipo": "documento",
-   "texto": "A produção da indústria caiu 0,8% em setembro de 2026 e acumula queda de 4,1% desde maio, puxada por máquinas e equipamentos.",
+   "texto": "A produção da indústria caiu 0,8% em setembro de 2026, se compararmos com agosto, e acumula queda de 4,1% desde maio.",
    "fonte": {
     "nivel": 6,
     "quem": "Gazeta do Povo, com dados do IBGE",
@@ -1412,10 +1359,10 @@
   {
    "id": "a-caged",
    "tipo": "documento",
-   "texto": "As empresas abriram 121,3 mil vagas com carteira em setembro de 2026, o pior setembro da série e 43% menos que em setembro de 2025.",
+   "texto": "As empresas abriram 121,3 mil vagas com carteira em setembro de 2026, o pior setembro desde 2020, quando começou a série do Novo Caged.",
    "fonte": {
     "nivel": 6,
-    "quem": "Poder360, com dados do Ministério do Trabalho",
+    "quem": "Jornal do Comércio, com dados do Ministério do Trabalho",
     "titulo": "Saldo líquido de emprego formal é positivo em 121.305 vagas em setembro no Caged (Jornal do Comércio, com dados do Novo Caged/MTE)",
     "url": "https://www.jornaldocomercio.com/economia/2026/11/1269282-saldo-liquido-de-emprego-formal-e-positivo-em-121-305-vagas-em-setembro-no-caged.html"
    },
@@ -1439,10 +1386,10 @@
   {
    "id": "a-elnino",
    "tipo": "documento",
-   "texto": "Depois do segundo turno, os economistas subiram as previsões de inflação de 2027 e 2028, por causa do dólar mais alto e do El Niño.",
+   "texto": "Depois do segundo turno, analistas subiram as previsões de inflação de 2027 e 2028, e um economista ouvido atribuiu a alta à falta de uma regra firme para as contas do governo e ao dólar mais alto.",
    "fonte": {
     "nivel": 6,
-    "quem": "Folha",
+    "quem": "Prensa Mercosur",
     "titulo": "Expectativas de inflação para 2027 e 2028 aumentam após a vitória de Lula (Prensa Mercosur, reprodução de osul.com.br; a Folha original não abriu)",
     "url": "https://prensamercosur.org/2026/10/31/expectativas-de-inflacao-para-2027-e-2028-aumentam-apos-a-vitoria-de-lula/"
    },
@@ -1518,10 +1465,10 @@
   {
    "id": "a-ev-petroleo-outubro",
    "tipo": "documento",
-   "texto": "Em outubro de 2026, o petróleo subiu mais de 14% com a guerra no Irã.",
+   "texto": "Em outubro de 2026, o barril de petróleo Brent subiu mais de 14%, com o medo de uma nova escalada da guerra no Irã.",
    "fonte": {
     "nivel": 6,
-    "quem": "Folha de S.Paulo",
+    "quem": "Folhapress, no Jornal de Brasília",
     "titulo": "Petróleo sobe mais de 14% em outubro e encerra mês no maior valor desde maio (Folhapress, republicado pelo Jornal de Brasília, 30/10/2026)",
     "url": "https://jornaldebrasilia.com.br/noticias/economia/petroleo-sobe-mais-de-14-em-outubro-e-encerra-mes-no-maior-valor-desde-maio/"
    },
@@ -1548,7 +1495,7 @@
    "texto": "No começo de novembro de 2026, o petróleo caiu quase 8% com sinais de que EUA e Irã podem negociar o fim da guerra, ainda sem acordo.",
    "fonte": {
     "nivel": 6,
-    "quem": "Valor Econômico",
+    "quem": "Seu Dinheiro",
     "titulo": "Petróleo fecha em queda de mais de 7% com expectativa de acordo para encerrar guerra no Oriente Médio (Seu Dinheiro, 02/11/2026)",
     "url": "https://www.seudinheiro.com/2026/bolsa-dolar/petroleo-cai-mais-de-8-com-expectativa-de-tregua-na-guerra-do-oriente-medio-lils-cbcb/"
    },
@@ -1575,7 +1522,7 @@
    "texto": "O Brasil importa parte do diesel e da gasolina que consome.",
    "fonte": {
     "nivel": 3,
-    "quem": "Instituto Brasileiro de Petróleo e Gás",
+    "quem": "ANP",
     "titulo": "ANP – País teve comercialização de mais de 130 bilhões de litros de combustíveis em 2024",
     "ano": 2025,
     "url": "https://www.gov.br/anp/pt-br/canais_atendimento/imprensa/noticias-comunicados/pais-teve-comercializacao-de-mais-de-130-bilhoes-de-litros-de-combustiveis-em-2024"
@@ -1626,10 +1573,10 @@
   {
    "id": "a-focus-2026",
    "tipo": "documento",
-   "texto": "Em 3/11/2026, os bancos (Focus) passaram a esperar que os preços subam 5,2% em 2026 e cortaram a previsão para o PIB.",
+   "texto": "No Focus divulgado em 3/11/2026, os bancos passaram a esperar inflação de 5,22% em 2026 e cortaram a previsão de crescimento do PIB.",
    "fonte": {
     "nivel": 3,
-    "quem": "Poder360",
+    "quem": "Banco Central (Focus)",
     "titulo": "Banco Central do Brasil – Sistema Expectativas de Mercado (Focus), API Olinda: ExpectativasMercadoAnuais, IPCA e PIB Total 2026, coletas de 23/10 e 30/10/2026",
     "url": "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata/ExpectativasMercadoAnuais?$filter=(Data%20eq%20'2026-10-23'%20or%20Data%20eq%20'2026-10-30')%20and%20DataReferencia%20eq%20'2026'%20and%20baseCalculo%20eq%200%20and%20(Indicador%20eq%20'IPCA'%20or%20Indicador%20eq%20'PIB%20Total')&$select=Indicador,Data,DataReferencia,Mediana&$orderby=Data%20desc&$format=json"
    },
@@ -1805,6 +1752,218 @@
    },
    "trecho": "O governo arrecadou mais do que gastou, sem contar os juros, com ajuda desses preços altos e da inflação.",
    "arquivo": "templates/causas.html"
+  },
+  {
+   "id": "a-lopes",
+   "tipo": "documento",
+   "texto": "Um artigo de 2014 da Revista de Economia Política revisou as explicações mais comuns para o juro alto, entre elas o déficit do governo e a falta de poupança, e concluiu que a evidência não confirma com força nenhuma delas.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Francisco Lafaiete Lopes",
+    "titulo": "On high interest rates in Brazil, Revista de Economia Política, v. 34, n. 1",
+    "url": "https://www.scielo.br/scielo.php?script=sci_arttext&pid=S0101-31572014000100001&lng=en&tlng=en",
+    "ano": 2014
+   },
+   "trecho": "An informal look at the evidence does not strongly corroborate any of these arguments.",
+   "trecho_candidato": null,
+   "trecho_lingua": "en",
+   "nota": "Achada pelo advogado do contra em 7/11/2026; o código achou o trecho na página. Entra na próxima conferência."
+  },
+  {
+   "id": "a-scaramuzzi",
+   "tipo": "documento",
+   "texto": "Um estudo da Revista Brasileira de Economia de 2024 achou que, de 2003 a 2013, as contas do governo não atrapalhavam o Banco Central, e que passaram a atrapalhar depois de 2013 e de novo depois de 2019.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Ortega Scaramuzzi e Kfoury Muinhos",
+    "titulo": "Fiscal Dominance in Brazil: The Effects on Financial Conditions and Growth, Revista Brasileira de Economia",
+    "url": "https://ideas.repec.org/a/fgv/epgrbe/v78y2024i2a88864.html",
+    "ano": 2024
+   },
+   "trecho": "there was prevalence of monetary dominance",
+   "trecho_candidato": null,
+   "trecho_lingua": "en",
+   "nota": "O trecho confirma só a parte de 2003 a 2013; os anos depois de 2013 e de 2019 vêm do resumo lido pelo advogado do contra em 7/11/2026. Conferir na próxima rodada."
+  },
+  {
+   "id": "a-castro-505",
+   "tipo": "documento",
+   "texto": "Um estudo do Banco Central de 2019 lembra que dados de empresas não mostram o efeito do juro na economia inteira, e que menos efeito na produção não quer dizer menos efeito nos preços.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Pedro Castro (Banco Central)",
+    "titulo": "Earmarked Credit and Monetary Policy Power: micro and macro considerations, Working Paper 505",
+    "url": "https://econpapers.repec.org/paper/bcbwpaper/505.htm",
+    "ano": 2019
+   },
+   "trecho": "Moreover, evidence of decreased power over output does not imply that power over inflation is also decreased.",
+   "trecho_candidato": null,
+   "trecho_lingua": "en",
+   "nota": "Achada pelo advogado do contra em 7/11/2026; o código achou o trecho na página. Entra na próxima conferência."
+  },
+  {
+   "id": "a-bc-wp230",
+   "tipo": "documento",
+   "texto": "Um estudo do Banco Central com 40 países concluiu que a inflação carrega pouco da do passado em todos eles.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Oliveira e Petrassi (Banco Central)",
+    "titulo": "Is Inflation Persistence Over?, Working Paper 230",
+    "url": "https://ideas.repec.org/p/bcb/wpaper/230.html",
+    "ano": 2010
+   },
+   "trecho": "Our results show that inflation persistence is low and stable for all countries in our sample.",
+   "trecho_candidato": null,
+   "trecho_lingua": "en",
+   "nota": "Achada pelo advogado do contra em 7/11/2026; o código achou o trecho na página. Entra na próxima conferência."
+  },
+  {
+   "id": "a-bc-wp331",
+   "tipo": "documento",
+   "texto": "Outro estudo do Banco Central achou que, no Brasil, o que mais faz a inflação durar é a expectativa das pessoas, mais que a correção pela inflação passada.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Machado e Portugal (Banco Central)",
+    "titulo": "Measuring Inflation Persistence in Brazil Using a Multivariate Model, Working Paper 331",
+    "url": "https://ideas.repec.org/p/bcb/wpaper/331.html",
+    "ano": 2013
+   },
+   "trecho": "Our results indicate that expectations-based persistence matters considerably for inflation persistence in Brazil.",
+   "trecho_candidato": null,
+   "trecho_lingua": "en",
+   "nota": "Achada pelo advogado do contra em 7/11/2026; o código achou o trecho na página. Entra na próxima conferência."
+  },
+  {
+   "id": "a-neutro-sobe",
+   "tipo": "documento",
+   "texto": "Em setembro de 2025, o Banco Central disse que as dúvidas sobre a dívida do governo podem elevar o juro que nem acelera nem freia a economia.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Times Brasil, sobre a ata do Copom",
+    "titulo": "Copom alerta que esforço nas reformas estruturais é fundamental para conter juro neutro (23/09/2025)",
+    "url": "https://timesbrasil.com.br/brasil/copom-alerta-que-esforco-nas-reformas-estruturais-e-fundamental-para-conter-juro-neutro/",
+    "ano": 2025
+   },
+   "trecho": "e as incertezas sobre a estabilização da dívida pública têm potencial de elevar a taxa de juros neutra da economia,",
+   "trecho_candidato": null,
+   "trecho_lingua": "pt",
+   "nota": "Achada pelo advogado do contra em 7/11/2026; o código achou o trecho na página. Entra na próxima conferência."
+  },
+  {
+   "id": "a-custo-divida-2025",
+   "tipo": "documento",
+   "texto": "Em 2025, com a Selic média em 14,33%, o custo médio da dívida do governo ficou perto de 12%, segundo o Tesouro.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Agência Gov, com dados do Tesouro Nacional",
+    "titulo": "Dívida pública encerra 2025 em R$ 8,635 trilhões",
+    "url": "https://agenciagov.ebc.com.br/noticias/202601/divida-publica-encerra-2025-em-r-8-635-trilhoes-dentro-dos-limites-projetados-aponta-tesouro",
+    "ano": 2026
+   },
+   "trecho": "Com a Selic média de 14,33%, custo da dívida ficou perto dos 12%",
+   "trecho_candidato": null,
+   "trecho_lingua": "pt",
+   "nota": "Achada pelo advogado do contra em 7/11/2026; o código achou o trecho na página. Entra na próxima conferência."
+  },
+  {
+   "id": "a-copom-set",
+   "tipo": "documento",
+   "texto": "Na reunião de setembro de 2026, o Banco Central projetava o IPCA de 2026 em 5,2%; em novembro, passou a 5,6%.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Gazeta Mercantil",
+    "titulo": "Copom mantém Selic em 13,75% (novembro de 2026)",
+    "url": "https://gazetamercantil.com/copom-mantem-selic-1375-novembro-2026"
+   },
+   "trecho": null,
+   "trecho_candidato": "No cenário de referência, a projeção para o IPCA de 2026 passou de 5,2%, na reunião de setembro, para 5,6% em novembro.",
+   "trecho_lingua": "pt-BR",
+   "nota": "Citação achada pelo agente de trechos em 7/11/2026; trocar pelo comunicado de setembro do Copom (nível 3)."
+  },
+  {
+   "id": "a-industria-tri",
+   "tipo": "documento",
+   "texto": "No terceiro trimestre de 2026, a indústria produziu 2,2% menos que no segundo, depois de dois trimestres de alta.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Valor, com dados do IBGE",
+    "titulo": "Indústria brasileira recua 2,2% no 3º trimestre após dois trimestres de alta, diz IBGE",
+    "url": "https://valor.globo.com/brasil/noticia/2026/11/05/industria-brasileira-recua-22percent-no-3o-trimestre-apos-dois-trimest"
+   },
+   "trecho": null,
+   "trecho_candidato": "Indústria brasileira recua 2,2% no 3º trimestre após dois trimestres de alta, diz IBGE",
+   "trecho_lingua": "pt-BR",
+   "nota": "O trecho é a manchete da notícia, lida pela rodada de 7/11/2026; a conferência no Mac confere se está na página."
+  },
+  {
+   "id": "a-balanca-out",
+   "tipo": "documento",
+   "texto": "Em outubro de 2026, o Brasil vendeu US$ 9,3 bilhões a mais do que comprou de outros países, 39,4% mais que em outubro de 2025.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "g1",
+    "titulo": "Balança comercial tem superávit de US$ 9,3 bilhões em outubro, alta de 39,4%",
+    "url": "https://g1.globo.com/economia/noticia/2026/11/06/balanca-comercial-tem-superavit-de-us-93-bilhoes-em-outubro-alta-de-394"
+   },
+   "trecho": null,
+   "trecho_candidato": "Balança comercial tem superávit de US$ 9,3 bilhões em outubro, alta de 39,4%",
+   "trecho_lingua": "pt-BR",
+   "nota": "O trecho é a manchete da notícia, lida pela rodada de 7/11/2026; a conferência no Mac confere se está na página."
+  },
+  {
+   "id": "a-balanca-1989",
+   "tipo": "documento",
+   "texto": "O saldo de outubro de 2026 foi o maior para o mês desde 1989.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Agência Brasil",
+    "titulo": "Balança comercial tem maior superávit para outubro desde 1989",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/balanca-comercial-tem-maior-superavit-para-outubro-desde-1989"
+   },
+   "trecho": null,
+   "trecho_candidato": "Balança comercial tem maior superávit para outubro desde 1989",
+   "trecho_lingua": "pt-BR",
+   "nota": "O trecho é a manchete da notícia, lida pela rodada de 7/11/2026; a conferência no Mac confere se está na página."
+  },
+  {
+   "id": "a-exportacoes-out",
+   "tipo": "documento",
+   "texto": "As exportações do Brasil subiram 20% em outubro de 2026, puxadas pelo petróleo e pelo minério de ferro.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "InfoMoney",
+    "titulo": "Brasil tem superávit comercial de US$ 9,3 bi em outubro com alta das exportações",
+    "url": "https://www.infomoney.com.br/economia/brasil-tem-superavit-comercial-de-us-93-bi-em-outubro-com-alta-das-exportacoes/"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "trecho_lingua": "pt-BR",
+   "nota": "Os 20% e os produtos vêm do resumo das notícias da rodada de 7/11/2026; falta o trecho."
+  },
+  {
+   "id": "a-dolar-ago-6nov",
+   "tipo": "dado",
+   "texto": "O dólar passou de R$ 5,10 em 6/8/2026 para R$ 5,50 em 6/11, 7,8% mais caro.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Dólar Ptax de venda (série 1)",
+    "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=1"
+   },
+   "dados": [
+    {
+     "serie": "dolar_ptax",
+     "quando": "2026-08-06",
+     "valor": 5.1,
+     "tol": 0.005
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2026-11-06",
+     "valor": 5.5,
+     "tol": 0.005
+    }
+   ]
   }
  ]
 }

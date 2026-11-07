@@ -131,7 +131,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
-/* a escada de porquês: no "Entenda a fundo" dos fatos do dia e na página de cada pergunta (src/base_site.py) */
+/* a escada de porquês, no "Entenda a fundo" dos fatos do dia (src/base_site.py) */
 .escada{list-style:none;margin:0;padding:0}
 .degrau{position:relative;padding:0 0 18px 22px;border-left:2px solid var(--fio);margin-left:6px}
 .degrau:last-child{border-left-color:transparent;padding-bottom:4px}
@@ -139,6 +139,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .degrau.r-consenso::before{box-shadow:inset 0 0 0 3px var(--desce)}
 .degrau.r-maioria_com_dissenso::before{box-shadow:inset 0 0 0 3px var(--atencao)}
 .degrau.r-em_disputa::before{background:var(--sobe);box-shadow:none}
+.degrau.r-bolso::before{background:var(--placa);box-shadow:none}
 .d-perg{font:700 17px/1.35 var(--sistema);margin:0 0 4px}
 .rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
 .rot.r-consenso{background:var(--normal-fundo)}
@@ -147,8 +148,11 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .d-txt{margin:0 0 6px;font-size:17px;line-height:1.55}
 .d-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 4px;overflow-wrap:anywhere}
 .d-fontes a{color:var(--meta)}
-.d-fontes .ac{font-style:italic}
 .d-mais{font:14.5px/1.45 var(--sistema);margin:4px 0 0}
+.d-teste{font:15px/1.5 var(--sistema);margin:2px 0 4px}
+.d-teste>summary{cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:2px}
+.d-teste p{margin:6px 0 0}
+.d-teste .d-lim{color:var(--meta);font-size:14px}
 
 .blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado";grid-template-rows:auto 1fr;padding-top:28px;padding-bottom:28px}
 .blog .nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}
@@ -193,7 +197,9 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .fundo .escada{padding:0 14px 0 12px}
 .post .fundo p{margin:0 0 6px}
 .post .fundo p.d-perg{margin-bottom:4px}
-.post .fundo p.fundo-pe{font:15px/1.45 var(--sistema);margin:6px 14px 14px;padding-top:12px;border-top:1px solid var(--fio)}
+.fundo .ponte{display:block;margin:6px 14px 14px;padding:12px 14px;border-radius:10px;background:var(--maquina);text-decoration:none;color:var(--tinta);font:15px/1.4 var(--sistema)}
+.fundo .ponte b{display:block;font:700 17px/1.35 var(--serifa);color:var(--link);margin:0 0 2px}
+.fundo .ponte:hover b,.fundo .ponte:focus-visible b{text-decoration:underline}
 @media (prefers-reduced-motion: reduce){.fundo>summary .seta{transition:none}}
 
 /* pressão das notícias: dado da máquina, na letra do sistema */
@@ -267,6 +273,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <p>A dívida está mais alta que em 96% dos meses desde 2006.</p>
     
     
+    
     <p><a href="/causas/#t-divida">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -276,6 +283,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     
     <p>A alta de 0,5 ponto passou do vaivém normal de 3 meses, que vai até 0,38 ponto.</p>
     <p>A parte da renda que vai para dívidas é a maior desde 2005, quando começa a série.</p>
+    
     
     
     <p><a href="/causas/#t-doem">Como isso funciona</a></p>
@@ -289,6 +297,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <p>O juro de 10 anos está mais alto que em 91% dos meses desde 2005.</p>
     
     
+    
     <p><a href="/causas/#t-outros">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -298,6 +307,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     
     <p>A alta de 0,8 ponto passou do vaivém normal de 3 meses, que vai até 0,32 ponto.</p>
     <p>A inflação esperada está no meio do que o Brasil viu desde 2001, mas está acima do teto da meta do Banco Central, de 4,5%.</p>
+    
     
     
     <p><a href="/causas/#t-precos">Como isso funciona</a></p>
@@ -311,6 +321,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <p>Descontada a inflação esperada, a Selic dá 8,4% ao ano e está no meio do que o Brasil viu desde 2002.</p>
     
     
+    <p><a href="/perguntas/juro-alto/">Por que o juro do Brasil é tão alto?</a></p>
     <p><a href="/causas/#t-freio">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -326,6 +337,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <p>O desemprego está mais baixo que em 99% dos meses desde 2012.</p>
     <p>Quem perde o emprego corta gastos e atrasa parcelas, e é aí que a recessão chega ao bolso.</p>
     <p class="p-fora">Esta linha não muda a placa, porque o desemprego costuma subir depois que a recessão já começou.</p>
+    
     <p><a href="/causas/#t-doem">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -337,6 +349,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     
     <p>Num susto, quando muita gente quer dólar ao mesmo tempo, o Banco Central vende parte dessas reservas e o dólar sobe menos.</p>
     <p class="p-fora">Esta linha não muda a placa, porque as reservas não avisam que uma recessão vem, mas protegem o país num susto.</p>
+    
     <p><a href="/causas/#t-outros">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -348,6 +361,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     
     <p>Quando o dólar sobe, a dívida em reais não cresce junto. Em 2002 era diferente: boa parte da dívida era corrigida pelo dólar, e por isso ela cresceu de uma vez quando o dólar subiu. O número sai uma vez por mês no Relatório Mensal da Dívida, do Tesouro.</p>
     <p class="p-fora">Esta linha não muda a placa, porque a dívida em reais não avisa que uma recessão vem, mas protege as contas do governo num susto do dólar.</p>
+    
     <p><a href="/causas/#t-divida">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -381,7 +395,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   
   
-  <p>O Brasil vendeu US$ 9,3 bilhões a mais do que comprou de outros países em outubro, o maior saldo para outubro desde 1989. O saldo cresceu 39% se compararmos com outubro de 2025.</p><p>As exportações subiram 20%, puxadas pelo petróleo e pelo minério a preços altos. Essa entrada de dólares ajuda a segurar a moeda americana, que ficou 7,8% mais cara que no começo de agosto e encarece importados como peças e combustível.</p><p>Esses preços são decididos lá fora, e o petróleo ficou 13% mais barato na semana, por isso o saldo de outubro pode não se repetir.</p>
+  <p>O Brasil vendeu US$ 9,3 bilhões a mais do que comprou de outros países em outubro, o maior saldo para outubro desde 1989. O saldo cresceu 39% se compararmos com outubro de 2025.</p><p>As exportações subiram 20%, puxadas pelo petróleo e pelo minério a preços altos. Essa entrada de dólares ajuda a segurar a moeda americana, que ficou 7,8% mais cara que no começo de agosto e encarece importados como peças e combustível.</p><p>Esses preços são decididos lá fora, e o petróleo caiu quase 8% num só dia de novembro, por isso o saldo de outubro pode não se repetir.</p>
   
   
   
@@ -391,37 +405,24 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   <details class="fundo">
     <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
     <ol class="escada">
-      <li class="degrau r-consenso">
-        <p class="d-perg">Por que as previsões pioraram?</p>
-        <span class="rot r-consenso">Os estudos concordam</span>
-        <p class="d-txt">Porque o juro está cerca de 8,4% acima da inflação que os bancos esperam, o que deixa caro para as famílias comprar a prazo e para as empresas investir. A indústria produz 4,1% menos que em maio, e as empresas tiveram o pior setembro de vagas com carteira já registrado, dois sinais de que a economia perdeu força.</p>
-        <p class="d-fontes">Fontes: Banco Central; <a href="https://vaidarcrise.com.br/causas/#t-freio" rel="nofollow noopener">Aba O que causa recessão</a>; <a href="https://www.gazetadopovo.com.br/economia/producao-industrial-recua-08-em-setembro-e-acumula-perda-de-41-desde-maio/" rel="nofollow noopener">Gazeta do Povo, com dados do IBGE</a> <span class="ac">(a conferir)</span>; <a href="https://www.poder360.com.br/poder-economia/brasil-cria-121-305-empregos-formais-em-setembro-de-2026/" rel="nofollow noopener">Poder360, com dados do Ministério do Trabalho</a> <span class="ac">(a conferir)</span></p>
-        
-        
-      </li><li class="degrau r-consenso">
-        <p class="d-perg">O que mais pesou de 2014 a 2016?</p>
-        <span class="rot r-consenso">Os estudos concordam</span>
-        <p class="d-txt">A <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> começou a subir em 2013, quando o desemprego estava em 6,2%, o menor até então, e chegou a 14,25%. As contas do governo também pioraram, e o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> encolheu de 2014 a 2016.</p>
-        <p class="d-fontes">Fonte: <a href="https://vaidarcrise.com.br/causas/#t-casos" rel="nofollow noopener">Aba O que causa recessão</a></p>
-        
-        
-      </li><li class="degrau r-consenso">
-        <p class="d-perg">E o que foi diferente em 2021 e 2022?</p>
-        <span class="rot r-consenso">Os estudos concordam</span>
-        <p class="d-txt">A Selic subiu de 2% para 13,75%, mas havia gente parada para voltar ao trabalho depois da pandemia, e o governo arrecadou mais do que gastou, sem contar os juros. A economia cresceu nos dois anos.</p>
+      <li class="degrau r-fato">
+        <p class="d-perg">Por que o preço do que o Brasil vende lá fora importa tanto?</p>
+        <span class="rot r-fato">Os dados mostram</span>
+        <p class="d-txt">Esses preços andaram junto com a economia em dois momentos recentes. De 2014 a 2016, a soja, o minério e o petróleo ficaram mais baratos, as contas do governo pioraram e o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> encolheu. Em 2021 e 2022, o mundo pagava caro pelo que o Brasil vende, e a economia cresceu mesmo com a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> subindo.</p>
         <p class="d-fontes">Fonte: <a href="https://vaidarcrise.com.br/causas/#t-casos" rel="nofollow noopener">Aba O que causa recessão</a></p>
         
         <p class="d-mais"><a href="/causas/#t-casos">Os dois casos lado a lado, na aba O que causa recessão</a></p>
-      </li><li class="degrau r-fato">
-        <p class="d-perg">O que vem agora?</p>
-        <span class="rot r-fato">Fato</span>
-        <p class="d-txt">O IBGE divulga o PIB do terceiro trimestre em 2/12, e o número vai mostrar se a queda da prévia feita pelo Banco Central se confirma. Em 9/12, o Banco Central decide se mantém a Selic em 13,75% ou se muda o juro.</p>
-        <p class="d-fontes">Fontes: Calendários do IBGE e do Banco Central; <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432" rel="nofollow noopener">Banco Central</a></p>
+      </li><li class="degrau r-bolso">
+        <p class="d-perg">E o que isso muda para você?</p>
+        
+        <p class="d-txt">Se o dólar subir menos, o diesel, a gasolina e outros importados encarecem menos, e a inflação fica mais perto da meta, de 3% ao ano. É essa conta que o Banco Central olha para decidir a Selic em 9/12.</p>
+        <p class="d-fontes">Fontes: <a href="https://www.gov.br/anp/pt-br/canais_atendimento/imprensa/noticias-comunicados/pais-teve-comercializacao-de-mais-de-130-bilhoes-de-litros-de-combustiveis-em-2024" rel="nofollow noopener">ANP</a>; <a href="https://www.bcb.gov.br/controleinflacao/metainflacao" rel="nofollow noopener">Banco Central</a>; Calendários do IBGE e do Banco Central</p>
         
         
       </li>
     </ol>
-    <p class="fundo-pe">Esta escada faz parte de uma pergunta maior: <a href="/perguntas/juro-alto/">Por que o juro do Brasil é tão alto?</a></p>
+    <a class="ponte" href="/causas/#t-precos"><b>Como isso funciona</b><span>Na aba O que causa recessão</span></a>
+    
   </details>
   
   

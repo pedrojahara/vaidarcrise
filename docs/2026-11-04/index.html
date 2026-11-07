@@ -131,7 +131,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
-/* a escada de porquês: no "Entenda a fundo" dos fatos do dia e na página de cada pergunta (src/base_site.py) */
+/* a escada de porquês, no "Entenda a fundo" dos fatos do dia (src/base_site.py) */
 .escada{list-style:none;margin:0;padding:0}
 .degrau{position:relative;padding:0 0 18px 22px;border-left:2px solid var(--fio);margin-left:6px}
 .degrau:last-child{border-left-color:transparent;padding-bottom:4px}
@@ -139,6 +139,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .degrau.r-consenso::before{box-shadow:inset 0 0 0 3px var(--desce)}
 .degrau.r-maioria_com_dissenso::before{box-shadow:inset 0 0 0 3px var(--atencao)}
 .degrau.r-em_disputa::before{background:var(--sobe);box-shadow:none}
+.degrau.r-bolso::before{background:var(--placa);box-shadow:none}
 .d-perg{font:700 17px/1.35 var(--sistema);margin:0 0 4px}
 .rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
 .rot.r-consenso{background:var(--normal-fundo)}
@@ -147,8 +148,11 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .d-txt{margin:0 0 6px;font-size:17px;line-height:1.55}
 .d-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 4px;overflow-wrap:anywhere}
 .d-fontes a{color:var(--meta)}
-.d-fontes .ac{font-style:italic}
 .d-mais{font:14.5px/1.45 var(--sistema);margin:4px 0 0}
+.d-teste{font:15px/1.5 var(--sistema);margin:2px 0 4px}
+.d-teste>summary{cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:2px}
+.d-teste p{margin:6px 0 0}
+.d-teste .d-lim{color:var(--meta);font-size:14px}
 
 .blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado";grid-template-rows:auto 1fr;padding-top:28px;padding-bottom:28px}
 .blog .nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}
@@ -193,7 +197,9 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .fundo .escada{padding:0 14px 0 12px}
 .post .fundo p{margin:0 0 6px}
 .post .fundo p.d-perg{margin-bottom:4px}
-.post .fundo p.fundo-pe{font:15px/1.45 var(--sistema);margin:6px 14px 14px;padding-top:12px;border-top:1px solid var(--fio)}
+.fundo .ponte{display:block;margin:6px 14px 14px;padding:12px 14px;border-radius:10px;background:var(--maquina);text-decoration:none;color:var(--tinta);font:15px/1.4 var(--sistema)}
+.fundo .ponte b{display:block;font:700 17px/1.35 var(--serifa);color:var(--link);margin:0 0 2px}
+.fundo .ponte:hover b,.fundo .ponte:focus-visible b{text-decoration:underline}
 @media (prefers-reduced-motion: reduce){.fundo>summary .seta{transition:none}}
 
 /* pressão das notícias: dado da máquina, na letra do sistema */
@@ -267,6 +273,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <p>A dívida está mais alta que em 96% dos meses desde 2006.</p>
     
     
+    
     <p><a href="/causas/#t-divida">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -276,6 +283,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     
     <p>A alta de 0,5 ponto passou do vaivém normal de 3 meses, que vai até 0,38 ponto.</p>
     <p>A parte da renda que vai para dívidas é a maior desde 2005, quando começa a série.</p>
+    
     
     
     <p><a href="/causas/#t-doem">Como isso funciona</a></p>
@@ -289,6 +297,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <p>O juro de 10 anos está mais alto que em 91% dos meses desde 2005.</p>
     
     
+    
     <p><a href="/causas/#t-outros">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -298,6 +307,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     
     <p>A alta de 0,8 ponto passou do vaivém normal de 3 meses, que vai até 0,32 ponto.</p>
     <p>A inflação esperada está no meio do que o Brasil viu desde 2001, mas está acima do teto da meta do Banco Central, de 4,5%.</p>
+    
     
     
     <p><a href="/causas/#t-precos">Como isso funciona</a></p>
@@ -311,6 +321,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <p>Descontada a inflação esperada, a Selic dá 8,4% ao ano e está no meio do que o Brasil viu desde 2002.</p>
     
     
+    <p><a href="/perguntas/juro-alto/">Por que o juro do Brasil é tão alto?</a></p>
     <p><a href="/causas/#t-freio">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -326,6 +337,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <p>O desemprego está mais baixo que em 99% dos meses desde 2012.</p>
     <p>Quem perde o emprego corta gastos e atrasa parcelas, e é aí que a recessão chega ao bolso.</p>
     <p class="p-fora">Esta linha não muda a placa, porque o desemprego costuma subir depois que a recessão já começou.</p>
+    
     <p><a href="/causas/#t-doem">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -337,6 +349,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     
     <p>Num susto, quando muita gente quer dólar ao mesmo tempo, o Banco Central vende parte dessas reservas e o dólar sobe menos.</p>
     <p class="p-fora">Esta linha não muda a placa, porque as reservas não avisam que uma recessão vem, mas protegem o país num susto.</p>
+    
     <p><a href="/causas/#t-outros">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -348,6 +361,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     
     <p>Quando o dólar sobe, a dívida em reais não cresce junto. Em 2002 era diferente: boa parte da dívida era corrigida pelo dólar, e por isso ela cresceu de uma vez quando o dólar subiu. O número sai uma vez por mês no Relatório Mensal da Dívida, do Tesouro.</p>
     <p class="p-fora">Esta linha não muda a placa, porque a dívida em reais não avisa que uma recessão vem, mas protege as contas do governo num susto do dólar.</p>
+    
     <p><a href="/causas/#t-divida">Como isso funciona</a></p>
   </div>
 </details></li>
@@ -392,36 +406,37 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
     <ol class="escada">
       <li class="degrau r-fato">
-        <p class="d-perg">Por que os bancos esperam preços mais altos?</p>
-        <span class="rot r-fato">Fato</span>
-        <p class="d-txt">Os economistas apontaram duas causas. Uma é o dólar, que encarece os importados, como trigo, açúcar e café, e a outra é o El Niño, que ameaça as safras.</p>
-        <p class="d-fontes">Fonte: <a href="https://www1.folha.uol.com.br/mercado/2026/10/expectativas-de-inflacao-para-2027-e-2028-saltam-apos-segundo-turno.shtml" rel="nofollow noopener">Folha</a> <span class="ac">(a conferir)</span></p>
+        <p class="d-perg">Por que os bancos passaram a esperar preços mais altos?</p>
+        <span class="rot r-fato">Os dados mostram</span>
+        <p class="d-txt">Depois do segundo turno, analistas subiram as previsões de inflação. Um economista ouvido pelos jornais apontou o dólar mais alto e a falta de uma regra firme para as contas do governo. O dólar também subiu no atacado o preço do açúcar e do café, que o Brasil vende lá fora em dólar.</p>
+        <p class="d-fontes">Fontes: <a href="https://prensamercosur.org/2026/10/31/expectativas-de-inflacao-para-2027-e-2028-aumentam-apos-a-vitoria-de-lula/" rel="nofollow noopener">Prensa Mercosur</a>; <a href="https://diariodocomercio.com.br/economia/alta-dolar-impactar-consumidor/" rel="nofollow noopener">Folhapress, no Diário do Comércio</a></p>
         
         
-      </li><li class="degrau r-consenso">
+      </li><li class="degrau r-fato">
         <p class="d-perg">Por que o dólar subiu?</p>
-        <span class="rot r-consenso">Os estudos concordam</span>
-        <p class="d-txt">Quase toda a alta veio num dia. O dólar tinha caído de R$ 5,18 no fim de agosto para R$ 5,04 antes do segundo turno, e em 26/10, o dia seguinte à eleição, subiu para R$ 5,50.</p>
-        <p class="d-fontes">Fontes: Banco Central e Tesouro Nacional; <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=1" rel="nofollow noopener">Banco Central</a></p>
+        <span class="rot r-fato">Os dados mostram</span>
+        <p class="d-txt">Quase toda a alta veio num dia só. O dólar tinha caído para R$ 5,04 antes do segundo turno, e em 26/10, o dia seguinte à eleição, saltou para R$ 5,50.</p>
+        <p class="d-fontes">Fonte: Banco Central e Tesouro Nacional</p>
         
         
       </li><li class="degrau r-em_disputa">
-        <p class="d-perg">E por que seguiu alto depois do salto?</p>
-        <span class="rot r-em_disputa">Os economistas divergem</span>
-        <p class="d-txt">Uns veem desconfiança com o Brasil, porque a dívida do governo cresce e o presidente vai indicar diretores do Banco Central que poderiam cortar o juro com os preços subindo. Outros veem investidores do mundo todo com mais medo, tirando dinheiro de vários países ao mesmo tempo.</p>
-        <p class="d-fontes">Fontes: <a href="https://www.poder360.com.br/poder-economia/divida-bruta-deve-chegar-a-837-do-pib-no-fim-de-2026/" rel="nofollow noopener">Poder360</a> <span class="ac">(a conferir)</span>; <a href="https://www1.folha.uol.com.br/mercado/2026/11/lula-indicara-seis-diretores-do-banco-central-ate-o-fim-de-2027-e-mercado-teme-mudanca-de-perfil.shtml" rel="nofollow noopener">Folha</a> <span class="ac">(a conferir)</span>; <a href="https://econpapers.repec.org/RePEc:cpr:ceprdp:10591" rel="nofollow noopener">Hélène Rey</a> <span class="ac">(a conferir)</span></p>
-        <p class="d-mais"><a href="/perguntas/juro-alto/#d-dolar">As duas leituras, com o que pesa a favor e contra cada uma</a></p>
+        <p class="d-perg">A alta veio de desconfiança com o Brasil ou de medo no mundo todo?</p>
+        <span class="rot r-em_disputa">Os economistas discordam</span>
+        <p class="d-txt">Uns veem desconfiança com a dívida do governo e com a próxima diretoria do Banco Central. Outros veem investidores do mundo todo tirando dinheiro de vários países ao mesmo tempo. Para saber qual pesou mais, o site compara o real com as moedas do México e do Chile. O site confere em 7/12/2026 e em 5/2/2027.</p>
+        <p class="d-fontes">Fontes: <a href="https://www.cnnbrasil.com.br/economia/money/macroeconomia/divida-bruta-do-governo-alcancara-pico-de-897-do-pib-em-2030-diz-tesouro/" rel="nofollow noopener">CNN Brasil</a>; <a href="https://diariodocomercio.com.br/economia/lula-indicara-seis-diretores-bc/" rel="nofollow noopener">Folhapress, no Diário do Comércio</a>; <a href="https://econpapers.repec.org/RePEc:cpr:ceprdp:10591" rel="nofollow noopener">Hélène Rey</a></p>
+        <details class="d-teste"><summary>Como o teste funciona</summary><p>O teste compara a alta do dólar contra o real com a alta contra o peso mexicano e o peso chileno, pelas cotações oficiais do Banco Central. A conta vai do fechamento de 6/11/2026, o último antes de a regra ser escrita, até cada data de conferência.</p><p>Se a alta contra o real passar a dos dois pesos em mais de 2 pontos, pesa mais a desconfiança com o Brasil. Se a diferença ficar entre −2 e 2 pontos, pesa mais o medo no mundo todo. Fora disso, o teste não decide.</p><p class="d-lim">O México depende muito da economia dos EUA, e o Chile, do preço do cobre, então as duas moedas também têm motivos próprios. Por isso a regra pede uma diferença de mais de 2 pontos. O teste começa em 6/11, e não em 27/10, porque o que aconteceu entre 27/10 e 6/11 já era conhecido quando a regra foi escrita, e medir esse trecho seria como apostar num jogo que já acabou.</p></details>
         
-      </li><li class="degrau r-em_disputa">
-        <p class="d-perg">Como saber qual leitura está certa?</p>
-        <span class="rot r-em_disputa">Os economistas divergem</span>
-        <p class="d-txt">Se a desconfiança for com o Brasil, o dólar tende a subir mais contra o real do que contra o peso do México e o do Chile. Se o medo for do mundo todo, tende a subir parecido contra as três moedas. O site confere em 7/12/2026 e em 5/2/2027.</p>
+      </li><li class="degrau r-bolso">
+        <p class="d-perg">E o que isso muda para você?</p>
         
-        <p class="d-mais"><a href="/perguntas/juro-alto/#teste">Como o teste funciona</a></p>
+        <p class="d-txt">Se o dólar seguir alto, o que o Brasil compra lá fora fica mais caro em reais, como parte do diesel e da gasolina. Essa alta chega aos preços aos poucos, nos meses seguintes.</p>
+        <p class="d-fontes">Fonte: <a href="https://www.gov.br/anp/pt-br/canais_atendimento/imprensa/noticias-comunicados/pais-teve-comercializacao-de-mais-de-130-bilhoes-de-litros-de-combustiveis-em-2024" rel="nofollow noopener">ANP</a></p>
+        
         
       </li>
     </ol>
-    <p class="fundo-pe">Esta escada faz parte de uma pergunta maior: <a href="/perguntas/juro-alto/">Por que o juro do Brasil é tão alto?</a></p>
+    <a class="ponte" href="/causas/#t-outros"><b>Como isso funciona</b><span>Na aba O que causa recessão</span></a>
+    
   </details>
   
   

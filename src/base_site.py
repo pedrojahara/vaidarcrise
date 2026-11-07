@@ -55,9 +55,9 @@ def _data(iso: str) -> str:
 
 
 def _conferencia() -> dict:
-    """O status de cada afirmação no relatório mais novo do verificador; a conferência com a página aberta (no Mac)
-    vale mais que a do modo offline do mesmo dia."""
-    rels = sorted((BASE / "conferencia").glob("*-verifica*.json"), key=lambda p: (p.name[:10], "offline" not in p.name))
+    """O status de cada afirmação no relatório mais novo do verificador que abriu as páginas (no Mac). O modo offline
+    não abre nenhuma e marca toda fonte como "nao_aberta": só vale quando não há outro relatório."""
+    rels = sorted((BASE / "conferencia").glob("*-verifica*.json"), key=lambda p: ("offline" not in p.name, p.name[:10]))
     if not rels:
         return {}
     return json.loads(rels[-1].read_text()).get("afirmacoes", {})

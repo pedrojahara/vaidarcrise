@@ -31,10 +31,9 @@
      "o_que_diz": "Quem investe passou a desconfiar das decisões tomadas no Brasil. Espera a dívida do governo crescendo mais rápido e teme um Banco Central mais disposto a cortar o juro com os preços subindo.",
      "a_favor": [
       {
-       "texto": "O juro que o governo paga para pegar dinheiro emprestado subiu em 3/11, com o temor sobre a agenda econômica. Ele caiu em 5/11 e 6/11, depois da fala do presidente e dos sinais sobre as contas do governo.",
+       "texto": "Em 3/11, o dólar subiu com as preocupações sobre a agenda econômica do governo. Em 6/11, o juro futuro caiu em todos os prazos.",
        "afirmacoes": [
         "a-ev-0311-juros",
-        "a-ev-0511-fala",
         "a-ev-0611-juro-cai"
        ]
       },
@@ -45,13 +44,13 @@
        ]
       },
       {
-       "texto": "Desde a reeleição, investidores estrangeiros tiraram R$ 8,4 bilhões da Bolsa brasileira.",
+       "texto": "Entre a reeleição e 3/11, investidores estrangeiros tiraram R$ 8,4 bilhões da Bolsa brasileira.",
        "afirmacoes": [
         "a-ev-0511-estrangeiros"
        ]
       },
       {
-       "texto": "O presidente vai indicar seis diretores do Banco Central até o fim de 2027, e investidores temem uma diretoria mais disposta a cortar o juro com os preços subindo.",
+       "texto": "O presidente poderá indicar mais seis diretores do Banco Central até o fim de 2027, e o mercado teme um Banco Central menos firme contra a inflação.",
        "afirmacoes": [
         "a-ev-diretores-bc"
        ]
@@ -84,7 +83,7 @@
      "o_que_diz": "Investidores do mundo todo ficaram com mais medo e tiraram dinheiro de países emergentes, como o Brasil. Com isso, o dólar subiu contra as moedas desses países ao mesmo tempo.",
      "a_favor": [
       {
-       "texto": "O dólar caiu em 4/11, com o alívio depois das eleições nos EUA, e subiu em 5/11, quando a Nasdaq, bolsa dos EUA, chegou a cair 6,4%.",
+       "texto": "O dólar caiu em 4/11, com o dólar mais fraco no mundo depois das eleições nos EUA, e subiu em 5/11, quando a Nasdaq, bolsa dos EUA, caiu 5,5%.",
        "afirmacoes": [
         "a-ev-0411-dolar-cai",
         "a-ev-0511-nasdaq"
@@ -174,6 +173,11 @@
    "data": "2026-11-07",
    "o_que": "A disputa sobre o dólar depois da eleição e o teste das moedas vieram da pergunta do juro.",
    "motivo": "Eles tratam da Desconfiança de quem investe, que terá página própria. O teste segue com as mesmas regras e datas."
+  },
+  {
+   "data": "2026-11-07",
+   "o_que": "Saíram a fala do presidente como causa da queda do juro em 5/11 e o 6,4% da Nasdaq.",
+   "motivo": "A conferência no Mac não achou fonte para a primeira, e a Nasdaq Composite caiu 5,52% em 5/11."
   }
  ]
 }

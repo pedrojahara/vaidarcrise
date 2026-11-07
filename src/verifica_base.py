@@ -111,11 +111,14 @@ def valor_em(serie: str, quando: str, mensal: dict, diario: dict) -> float | Non
 
 def normalizar(t: str) -> str:
     t = html.unescape(t)
-    t = unicodedata.normalize("NFKC", t).replace("­", "")
+    t = unicodedata.normalize("NFKC", t).replace("\u00ad", "")
+    t = re.sub("[\u200b\u200c\u200d\u2060\ufeff]", "", t)  # caracteres invisíveis no meio do texto
+    t = re.sub(r"\\[nrt]", " ", t)  # quebra de linha escrita como texto, como na API do Banco Central
     t = re.sub(r"[‘’´`]", "'", t)
     t = re.sub(r"[“”«»]", '"', t)
     t = re.sub(r"[‐-―−]", "-", t)
     t = re.sub(r"-\s*\n\s*", "", t)  # palavra quebrada no fim da linha do PDF
+    t = re.sub(r"\s+([.,;:!?)])", r"\1", t)  # espaço antes do ponto ("R$ 5,508 .")
     return re.sub(r"\s+", " ", t).strip().lower()
 
 
@@ -134,15 +137,44 @@ def texto_da_pagina(conteudo: bytes, tipo: str) -> str:
                     return subprocess.run(["pdftotext", "-layout", f.name, "-"], capture_output=True, text=True, timeout=120).stdout
                 except Exception:  # noqa: BLE001
                     return ""
-    t = conteudo.decode("utf-8", errors="replace")
+    t = _decodificar(conteudo, tipo)
+    if "json" in tipo or t.lstrip()[:1] in ("{", "["):
+        try:  # API que devolve a página dentro de um JSON (Banco Central): junta os textos
+            t = " ".join(_textos_json(json.loads(t)))
+        except ValueError:
+            pass
     t = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", t)
     return re.sub(r"(?s)<[^>]+>", " ", t)
+
+
+def _decodificar(conteudo: bytes, tipo: str) -> str:
+    """Lê a página na codificação que ela diz ter (cabeçalho ou <meta>); sem isso, UTF-8 e, se falhar, windows-1252,
+    a do site do Planalto."""
+    m = re.search(r"charset=[\"']?([\w-]+)", tipo or "", re.I) or re.search(rb"charset=[\"']?([\w-]+)", conteudo[:4096], re.I)
+    nomes = [m.group(1).decode() if isinstance(m.group(1), bytes) else m.group(1)] if m else []
+    for nome in [*nomes, "utf-8", "cp1252"]:
+        try:
+            return conteudo.decode(nome)
+        except (LookupError, UnicodeDecodeError):
+            continue
+    return conteudo.decode("utf-8", errors="replace")
+
+
+def _textos_json(x) -> list[str]:
+    if isinstance(x, str):
+        return [x]
+    if isinstance(x, dict):
+        return [t for v in x.values() for t in _textos_json(v)]
+    if isinstance(x, list):
+        return [t for v in x for t in _textos_json(v)]
+    return []
 
 
 def abrir(url: str) -> tuple[str | None, str | None]:
     """(texto, erro). Guarda a página em base/cache para não abrir de novo."""
     CACHE.mkdir(parents=True, exist_ok=True)
-    arq = CACHE / (hashlib.sha256(url.encode()).hexdigest()[:24] + ".txt")
+    # ".v2": a cópia guardada antes de 7/11/2026 lia mal acentos (windows-1252) e páginas em JSON; abre de novo
+    arq = CACHE / (hashlib.sha256(url.encode()).hexdigest()[:24] + ".v2.txt")
     if arq.exists():
         return arq.read_text(), None
     try:
