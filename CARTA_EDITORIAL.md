@@ -59,7 +59,7 @@ Diga até dois outros fatos da pauta que entram no texto como causa, efeito ou c
 
 ## Cuidados para o redator
 
-Diga até três cuidados que o redator precisa ter para contar o fato sem erro: uma série curta ("o pior setembro da série" quando a série começa em 2020 não é "o pior já registrado"), uma previsão que pode parecer fato, um nome de pessoa ou de partido que deve virar o cargo ou a instituição, uma comparação que engana. Escreva só o que está na pauta ou o que você sabe com segurança. Se não tiver certeza, não escreva o cuidado. Diga o cuidado, e não as palavras: o redator já tem as do site (os bancos (Focus), e não "o mercado"; o Banco Central decide o juro) e não usa nome de pessoa.
+Diga até três cuidados que o redator precisa ter para contar o fato sem erro: uma série curta ("o pior setembro da série" quando a série começa em 2020 não é "o pior já registrado"), uma previsão que pode parecer fato, um nome de pessoa ou de partido que deve virar o cargo ou a instituição, uma comparação que engana. Escreva só o que está nas linhas dos candidatos, com as manchetes do próprio fato. Um número que só aparece em outra manchete da lista não entra no cuidado, porque o redator não recebe essa manchete e o post não teria fonte para ele; o código corta o cuidado que trouxer um número assim. Se não tiver certeza, não escreva o cuidado. Diga o cuidado, e não as palavras: o redator já tem as do site (os bancos (Focus), e não "o mercado"; o Banco Central decide o juro) e não usa nome de pessoa.
 
 ## Os casos julgados
 

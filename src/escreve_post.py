@@ -335,10 +335,11 @@ def pauta_da_rodada(rodada: dict, anterior: dict | None, eventos: dict | None, c
 
 
 def _linha_candidato(c: dict, eventos: dict | None) -> str:
+    # Todas as manchetes guardadas do fato (até 6): os números dos cuidados da editora têm de estar nelas ou nos dados.
     e = (eventos or {}).get(c.get("evento")) or {}
     fontes = e.get("fontes") or c.get("fontes") or []
     return (f"{c['titulo']} | {ESTAGIOS.get(c['estagio'], 'notícia')} | {c['lado']} o risco ({c['assunto']}) | "
-            f"por quê: {c['porque']} | jornais: {len(c['jornais'])} ({', '.join(c['jornais'])}) | manchetes: {_manchetes(fontes)}")
+            f"por quê: {c['porque']} | jornais: {len(c['jornais'])} ({', '.join(c['jornais'])}) | manchetes: {_manchetes(fontes, 6)}")
 
 
 def _fato_do_dia(p: dict | None, rodada: dict, cfg: dict, eventos: dict | None, anterior: dict | None) -> tuple[list[str], set]:
@@ -365,9 +366,18 @@ def _fato_do_dia(p: dict | None, rodada: dict, cfg: dict, eventos: dict | None, 
             if c:
                 l.append(f"- {_linha_candidato(c, eventos)}")
                 usados.add(c.get("evento"))
-    if p.get("cuidados"):
-        l += ["", "Cuidados da editora para este texto:", *[f"- {x}" for x in p["cuidados"]]]
     return [*l, ""], usados
+
+
+def cuidados_com_fonte(cuidados: list[str], dados: str) -> tuple[list[str], list[str]]:
+    """Os cuidados da editora cujos números estão nos dados que o redator recebe, e os que ficam de fora. A editora lê
+    todas as manchetes da cesta e o redator não: um número que só aparece numa manchete solta não tem fonte no post e
+    não pode entrar pelo cuidado, nem passar no verificador por estar escrito nele (7/11/2026: "o petróleo caiu 13% na
+    semana", de uma manchete que não virou evento)."""
+    ok, fora = [], []
+    for c in cuidados:
+        (fora if revisa_texto.numeros_fora([c], dados) else ok).append(c)
+    return ok, fora
 
 
 def _fatos_e_datas(rodadas: list[dict], ini: dt.date, fim: dt.date, quando: str, eventos: dict | None) -> list[str]:
@@ -472,6 +482,13 @@ def dados_texto(rodada: dict, cfg: dict, datas: list[dict] | None = None, evento
     if hoje_sai:
         l += ["", "Sai hoje: " + "; ".join(x["rotulo"] for x in hoje_sai) + "."]
     l += _post_anterior(anterior_post)
+    if p and p.get("cuidados") and bloco:
+        ok, fora = cuidados_com_fonte(p["cuidados"], "\n".join(l))
+        if fora:
+            p["cuidados_cortados"] = fora  # fica na pauta gravada em runs/, para conferir
+        if ok:
+            k = 3 + len(bloco) - 1  # no fim do bloco FATO DO DIA, antes da linha em branco
+            l[k:k] = ["", "Cuidados da editora para este texto:", *[f"- {x}" for x in ok]]
     return "\n".join(l)
 
 

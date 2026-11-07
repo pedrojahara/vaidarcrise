@@ -68,7 +68,10 @@ def _linha(c: dict) -> str:
     return (f"{c['id']} | {c['titulo']} | {pauta_mod.ESTAGIO_TXT.get(c['estagio'], c['estagio'])} | tamanho {c['tamanho']} | "
             f"{c['assunto']} | {c['lado']} o risco | {'o mercado já esperava' if c['ja_esperado'] else 'não era esperado'} | "
             f"{len(c['jornais'])} jornais ({', '.join(c['jornais'])}), {c['n_manchetes']} manchetes"
-            + (f" | DESCARTADO: {c['descartado']}" if c["descartado"] else "") + f" | por quê: {c['porque']}")
+            + (f" | DESCARTADO: {c['descartado']}" if c["descartado"] else "") + f" | por quê: {c['porque']}"
+            # As mesmas manchetes do fato que o redator recebe (src/escreve_post.py): os números dos cuidados vêm daqui.
+            + (" | manchetes do fato: " + "; ".join(f"\"{f['titulo']}\" ({f['veiculo']})" for f in c["fontes"][:6])
+               if c.get("fontes") else ""))
 
 
 def texto_pauta(p: dict, rodada: dict, cfg: dict, anteriores: list[str], cesta: list[dict] | None) -> str:
