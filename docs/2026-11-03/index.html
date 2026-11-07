@@ -131,6 +131,24 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
+/* a escada de porquês: no "Entenda a fundo" dos fatos do dia e na página de cada pergunta (src/base_site.py) */
+.escada{list-style:none;margin:0;padding:0}
+.degrau{position:relative;padding:0 0 18px 22px;border-left:2px solid var(--fio);margin-left:6px}
+.degrau:last-child{border-left-color:transparent;padding-bottom:4px}
+.degrau::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--papel);box-shadow:inset 0 0 0 3px var(--hist)}
+.degrau.r-consenso::before{box-shadow:inset 0 0 0 3px var(--desce)}
+.degrau.r-maioria_com_dissenso::before{box-shadow:inset 0 0 0 3px var(--atencao)}
+.degrau.r-em_disputa::before{background:var(--sobe);box-shadow:none}
+.d-perg{font:700 17px/1.35 var(--sistema);margin:0 0 4px}
+.rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
+.rot.r-consenso{background:var(--normal-fundo)}
+.rot.r-maioria_com_dissenso{background:var(--nota-fundo);box-shadow:inset 0 0 0 1px var(--atencao)}
+.rot.r-em_disputa{background:var(--alerta-fundo)}
+.d-txt{margin:0 0 6px;font-size:17px;line-height:1.55}
+.d-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 4px;overflow-wrap:anywhere}
+.d-fontes a{color:var(--meta)}
+.d-fontes .ac{font-style:italic}
+.d-mais{font:14.5px/1.45 var(--sistema);margin:4px 0 0}
 
 .blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado";grid-template-rows:auto 1fr;padding-top:28px;padding-bottom:28px}
 .blog .nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}
@@ -164,6 +182,19 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .comece:hover{color:var(--tinta)}.comece:hover b{text-decoration:underline}
 .comece .rot{display:block;font-size:13px;font-weight:600;color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
 .comece b{display:block;font:700 20px/1.3 var(--serifa);margin-bottom:4px}
+
+/* o "Entenda a fundo" do fato do dia: a escada de porquês, fechada até o toque */
+.fundo{margin:4px 0 18px;max-width:660px;border:1px solid var(--fio);border-radius:10px}
+.fundo>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 12px 12px 14px;cursor:pointer;list-style:none;font:600 16px/1.35 var(--sistema)}
+.fundo>summary::-webkit-details-marker{display:none}
+.fundo>summary .seta{width:18px;height:18px;flex:none;transition:transform .15s}
+.fundo[open]>summary .seta{transform:rotate(180deg)}
+.fundo[open]>summary{border-bottom:1px solid var(--fio);margin-bottom:16px}
+.fundo .escada{padding:0 14px 0 12px}
+.post .fundo p{margin:0 0 6px}
+.post .fundo p.d-perg{margin-bottom:4px}
+.post .fundo p.fundo-pe{font:15px/1.45 var(--sistema);margin:6px 14px 14px;padding-top:12px;border-top:1px solid var(--fio)}
+@media (prefers-reduced-motion: reduce){.fundo>summary .seta{transition:none}}
 
 /* pressão das notícias: dado da máquina, na letra do sistema */
 .conta{background:var(--maquina);border-radius:6px;padding:16px 20px 6px;font:16px/1.5 var(--sistema);margin:22px 0 4px}
@@ -350,11 +381,41 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   
   
-  <p>O petróleo ficou quase 8% mais barato lá fora com sinais de que EUA e Irã podem negociar a paz, mas ainda não há acordo.</p><p>Com o barril mais barato, o diesel e a gasolina podem baratear aqui, e o frete e a comida chegariam mais baratos ao mercado nos meses seguintes.</p><p>O alívio vem de fora e chega quando os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. Já o dólar a R$ 5,49, 8,3% mais caro que no começo de agosto, encarece o combustível importado e pode reduzir esse alívio.</p>
+  <p>O petróleo ficou quase 8% mais barato lá fora com sinais de que EUA e Irã podem negociar o fim da guerra, mas ainda não há acordo.</p><p>Se o barril seguir mais barato, o diesel e a gasolina importados pelo Brasil ficam mais baratos, e o frete e a comida podem baratear nos meses seguintes. O dólar a R$ 5,49, contra R$ 5,18 no fim de agosto, tira parte desse alívio, porque encarece o combustível importado.</p><p>Esse alívio de fora chega quando os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) esperam que os preços subam 5,0% em 12 meses, contra 4,2% no fim de julho.</p>
   
   
   
   
+  
+  
+  <details class="fundo">
+    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <ol class="escada">
+      <li class="degrau r-fato">
+        <p class="d-perg">Por que o petróleo caiu?</p>
+        <span class="rot r-fato">Fato</span>
+        <p class="d-txt">O barril tinha subido mais de 14% em outubro com a guerra no Irã. No começo de novembro, caiu quase 8% com sinais de que EUA e Irã podem negociar o fim da guerra, ainda sem acordo. É uma causa de fora do Brasil.</p>
+        <p class="d-fontes">Fontes: <a href="https://www1.folha.uol.com.br/mercado/2026/10/petroleo-sobe-mais-de-14-em-outubro-e-encerra-mes-no-maior-valor-desde-maio.shtml" rel="nofollow noopener">Folha de S.Paulo</a> <span class="ac">(a conferir)</span>; <a href="https://valor.globo.com/financas/noticia/2026/11/02/petroleo-despenca-com-sinais-de-abertura-diplomatica-pelos-eua-e-ira.ghtml" rel="nofollow noopener">Valor Econômico</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li><li class="degrau r-fato">
+        <p class="d-perg">Por que isso mexe com o preço aqui?</p>
+        <span class="rot r-fato">Fato</span>
+        <p class="d-txt">O Brasil importa parte do diesel e da gasolina que usa, e as empresas que compram esse combustível de outros países pagam o preço de lá, em dólar. Por isso o petróleo mais barato lá fora pode baratear o combustível aqui, e o dólar mais caro tira parte desse alívio.</p>
+        <p class="d-fontes">Fontes: <a href="https://www.ibp.org.br/personalizado/uploads/2025/04/boletim-importacoes-de-derivados-marco-2025-vf.pdf" rel="nofollow noopener">Instituto Brasileiro de Petróleo e Gás</a> <span class="ac">(a conferir)</span>; <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=1" rel="nofollow noopener">Banco Central</a></p>
+        
+        
+      </li><li class="degrau r-consenso">
+        <p class="d-perg">E o que isso tem a ver com o juro?</p>
+        <span class="rot r-consenso">Os estudos concordam</span>
+        <p class="d-txt">O Banco Central decide a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> olhando quanto os preços devem subir. No fim de outubro, os bancos (Focus) esperavam 5,0% em 12 meses, acima do <a class="termo" href="https://pt.wikipedia.org/wiki/Metas_de_infla%C3%A7%C3%A3o" target="_blank" rel="noopener">teto da meta de inflação</a>, de 4,5%, e combustível mais barato ajuda a segurar essa conta. E a Selic é a base do juro que os bancos cobram no empréstimo e no financiamento.</p>
+        <p class="d-fontes">Fonte: <a href="https://www.bcb.gov.br/publicacoes/focus" rel="nofollow noopener">Banco Central</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li>
+    </ol>
+    <p class="fundo-pe">Esta escada faz parte de uma pergunta maior: <a href="/perguntas/juro-alto/">Por que o juro do Brasil é tão alto?</a></p>
+  </details>
   
   
   

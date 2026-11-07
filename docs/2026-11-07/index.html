@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <script>document.documentElement.className+=" js"</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Bradesco e duas gestoras veem PIB parado ou em queda em 2027 | Vai dar crise?</title>
+<title>Bradesco, XP e Genoa veem PIB parado ou em queda em 2027 | Vai dar crise?</title>
 <meta name="description" content="Fato do dia, sábado, 7 de novembro de 2026. O risco de recessão está subindo.">
 <link rel="canonical" href="https://vaidarcrise.com.br/2026-11-07/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
-<meta property="og:title" content="Bradesco e duas gestoras veem PIB parado ou em queda em 2027 | Vai dar crise?">
+<meta property="og:title" content="Bradesco, XP e Genoa veem PIB parado ou em queda em 2027 | Vai dar crise?">
 <meta property="og:description" content="Fato do dia, sábado, 7 de novembro de 2026. O risco de recessão está subindo.">
 <meta property="og:url" content="https://vaidarcrise.com.br/2026-11-07/">
 <meta property="og:image" content="https://vaidarcrise.com.br/og/2026-11-07.png">
@@ -131,6 +131,24 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
+/* a escada de porquês: no "Entenda a fundo" dos fatos do dia e na página de cada pergunta (src/base_site.py) */
+.escada{list-style:none;margin:0;padding:0}
+.degrau{position:relative;padding:0 0 18px 22px;border-left:2px solid var(--fio);margin-left:6px}
+.degrau:last-child{border-left-color:transparent;padding-bottom:4px}
+.degrau::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--papel);box-shadow:inset 0 0 0 3px var(--hist)}
+.degrau.r-consenso::before{box-shadow:inset 0 0 0 3px var(--desce)}
+.degrau.r-maioria_com_dissenso::before{box-shadow:inset 0 0 0 3px var(--atencao)}
+.degrau.r-em_disputa::before{background:var(--sobe);box-shadow:none}
+.d-perg{font:700 17px/1.35 var(--sistema);margin:0 0 4px}
+.rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
+.rot.r-consenso{background:var(--normal-fundo)}
+.rot.r-maioria_com_dissenso{background:var(--nota-fundo);box-shadow:inset 0 0 0 1px var(--atencao)}
+.rot.r-em_disputa{background:var(--alerta-fundo)}
+.d-txt{margin:0 0 6px;font-size:17px;line-height:1.55}
+.d-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 4px;overflow-wrap:anywhere}
+.d-fontes a{color:var(--meta)}
+.d-fontes .ac{font-style:italic}
+.d-mais{font:14.5px/1.45 var(--sistema);margin:4px 0 0}
 
 .blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado";grid-template-rows:auto 1fr;padding-top:28px;padding-bottom:28px}
 .blog .nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}
@@ -164,6 +182,19 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .comece:hover{color:var(--tinta)}.comece:hover b{text-decoration:underline}
 .comece .rot{display:block;font-size:13px;font-weight:600;color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
 .comece b{display:block;font:700 20px/1.3 var(--serifa);margin-bottom:4px}
+
+/* o "Entenda a fundo" do fato do dia: a escada de porquês, fechada até o toque */
+.fundo{margin:4px 0 18px;max-width:660px;border:1px solid var(--fio);border-radius:10px}
+.fundo>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 12px 12px 14px;cursor:pointer;list-style:none;font:600 16px/1.35 var(--sistema)}
+.fundo>summary::-webkit-details-marker{display:none}
+.fundo>summary .seta{width:18px;height:18px;flex:none;transition:transform .15s}
+.fundo[open]>summary .seta{transform:rotate(180deg)}
+.fundo[open]>summary{border-bottom:1px solid var(--fio);margin-bottom:16px}
+.fundo .escada{padding:0 14px 0 12px}
+.post .fundo p{margin:0 0 6px}
+.post .fundo p.d-perg{margin-bottom:4px}
+.post .fundo p.fundo-pe{font:15px/1.45 var(--sistema);margin:6px 14px 14px;padding-top:12px;border-top:1px solid var(--fio)}
+@media (prefers-reduced-motion: reduce){.fundo>summary .seta{transition:none}}
 
 /* pressão das notícias: dado da máquina, na letra do sistema */
 .conta{background:var(--maquina);border-radius:6px;padding:16px 20px 6px;font:16px/1.5 var(--sistema);margin:22px 0 4px}
@@ -345,16 +376,53 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     
 <article class="post">
   <p class="data"><span class="tipo">Fato do dia</span> | Sábado, 7 de novembro de 2026</p>
-  <h1 class="titulo-post">Bradesco e duas gestoras veem PIB parado ou em queda em 2027</h1>
+  <h1 class="titulo-post">Bradesco, XP e Genoa veem PIB parado ou em queda em 2027</h1>
   <p class="autoria">Escrito pelo Claude com a ajuda do Pedro.</p>
   
   
   
-  <p>O Bradesco e duas gestoras de investimentos divulgaram ontem previsões piores para 2027, com preços subindo mais rápido e a economia quase parada. Uma delas, a Genoa, fala em recessão e inflação de 6%.</p><p>As novas previsões ficam abaixo do que esperam os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>), uma alta de 1,2% do <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> em 2027. A piora acompanha a prévia do PIB do Banco Central, que caiu 0,6% nos 3 meses até agosto, se compararmos com os 3 até maio.</p><p>Previsão assim pesa antes de se confirmar, porque empresas que esperam vender menos adiam investimentos e famílias com medo de perder renda adiam compras, o que costuma frear as contratações.</p>
+  <p>O Bradesco, a corretora XP e a gestora Genoa divulgaram ontem previsões piores para 2027, e a Genoa prevê recessão e inflação de 6%.</p><p>A piora acompanha a prévia do <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> feita pelo Banco Central, que caiu 0,6% nos 3 meses até agosto, contra os 3 meses até maio.</p><p>Juro alto nem sempre termina em recessão. De 2014 a 2016, com a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> chegando a 14,25%, o que o Brasil vende ficou mais barato, e o PIB encolheu. Em 2021 e 2022, com a Selic subindo até 13,75%, o mundo pagava caro por esses produtos, e a economia cresceu.</p>
   
   
   
   
+  
+  
+  <details class="fundo">
+    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <ol class="escada">
+      <li class="degrau r-consenso">
+        <p class="d-perg">Por que as previsões pioraram?</p>
+        <span class="rot r-consenso">Os estudos concordam</span>
+        <p class="d-txt">Porque o juro está cerca de 8,4% acima da inflação que os bancos esperam, o que deixa caro para as famílias comprar a prazo e para as empresas investir. A indústria produz 4,1% menos que em maio, e as empresas tiveram o pior setembro de vagas com carteira já registrado, dois sinais de que a economia perdeu força.</p>
+        <p class="d-fontes">Fontes: Banco Central; <a href="https://vaidarcrise.com.br/causas/#t-freio" rel="nofollow noopener">Aba O que causa recessão</a>; <a href="https://www.gazetadopovo.com.br/economia/producao-industrial-recua-08-em-setembro-e-acumula-perda-de-41-desde-maio/" rel="nofollow noopener">Gazeta do Povo, com dados do IBGE</a> <span class="ac">(a conferir)</span>; <a href="https://www.poder360.com.br/poder-economia/brasil-cria-121-305-empregos-formais-em-setembro-de-2026/" rel="nofollow noopener">Poder360, com dados do Ministério do Trabalho</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li><li class="degrau r-consenso">
+        <p class="d-perg">O que mais pesou de 2014 a 2016?</p>
+        <span class="rot r-consenso">Os estudos concordam</span>
+        <p class="d-txt">A Selic começou a subir em 2013, quando o desemprego estava em 6,2%, o menor até então, e chegou a 14,25%. As contas do governo também pioraram, e o PIB encolheu de 2014 a 2016.</p>
+        <p class="d-fontes">Fonte: <a href="https://vaidarcrise.com.br/causas/#t-casos" rel="nofollow noopener">Aba O que causa recessão</a></p>
+        
+        
+      </li><li class="degrau r-consenso">
+        <p class="d-perg">E o que foi diferente em 2021 e 2022?</p>
+        <span class="rot r-consenso">Os estudos concordam</span>
+        <p class="d-txt">A Selic subiu de 2% para 13,75%, mas havia gente parada para voltar ao trabalho depois da pandemia, e o governo arrecadou mais do que gastou, sem contar os juros. A economia cresceu nos dois anos.</p>
+        <p class="d-fontes">Fonte: <a href="https://vaidarcrise.com.br/causas/#t-casos" rel="nofollow noopener">Aba O que causa recessão</a></p>
+        
+        <p class="d-mais"><a href="/causas/#t-casos">Os dois casos lado a lado, na aba O que causa recessão</a></p>
+      </li><li class="degrau r-fato">
+        <p class="d-perg">O que vem agora?</p>
+        <span class="rot r-fato">Fato</span>
+        <p class="d-txt">O IBGE divulga o PIB do terceiro trimestre em 2/12, e o número vai mostrar se a queda da prévia feita pelo Banco Central se confirma. Em 9/12, o Banco Central decide se mantém a Selic em 13,75% ou se muda o juro.</p>
+        <p class="d-fontes">Fontes: Calendários do IBGE e do Banco Central; <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432" rel="nofollow noopener">Banco Central</a></p>
+        
+        
+      </li>
+    </ol>
+    <p class="fundo-pe">Esta escada faz parte de uma pergunta maior: <a href="/perguntas/juro-alto/">Por que o juro do Brasil é tão alto?</a></p>
+  </details>
   
   
   

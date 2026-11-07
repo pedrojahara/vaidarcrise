@@ -5,12 +5,12 @@
 <script>document.documentElement.className+=" js"</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Vai dar crise? O risco de recessão está subindo</title>
-<meta name="description" content="O risco de recessão está subindo. A economia cresceu 1,4% em 12 meses, contra 3,5% um ano antes. Fato do dia: Bradesco e duas gestoras veem PIB parado ou em queda em 2027.">
+<meta name="description" content="O risco de recessão está subindo. A economia cresceu 1,4% em 12 meses, contra 3,5% um ano antes. Fato do dia: Bradesco, XP e Genoa veem PIB parado ou em queda em 2027.">
 <link rel="canonical" href="https://vaidarcrise.com.br/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
 <meta property="og:title" content="Vai dar crise? O risco de recessão está subindo">
-<meta property="og:description" content="O risco de recessão está subindo. A economia cresceu 1,4% em 12 meses, contra 3,5% um ano antes. Fato do dia: Bradesco e duas gestoras veem PIB parado ou em queda em 2027.">
+<meta property="og:description" content="O risco de recessão está subindo. A economia cresceu 1,4% em 12 meses, contra 3,5% um ano antes. Fato do dia: Bradesco, XP e Genoa veem PIB parado ou em queda em 2027.">
 <meta property="og:url" content="https://vaidarcrise.com.br/">
 <meta property="og:image" content="https://vaidarcrise.com.br/og/2026-11-07.png">
 <meta property="og:image:width" content="1200">
@@ -131,6 +131,24 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
+/* a escada de porquês: no "Entenda a fundo" dos fatos do dia e na página de cada pergunta (src/base_site.py) */
+.escada{list-style:none;margin:0;padding:0}
+.degrau{position:relative;padding:0 0 18px 22px;border-left:2px solid var(--fio);margin-left:6px}
+.degrau:last-child{border-left-color:transparent;padding-bottom:4px}
+.degrau::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--papel);box-shadow:inset 0 0 0 3px var(--hist)}
+.degrau.r-consenso::before{box-shadow:inset 0 0 0 3px var(--desce)}
+.degrau.r-maioria_com_dissenso::before{box-shadow:inset 0 0 0 3px var(--atencao)}
+.degrau.r-em_disputa::before{background:var(--sobe);box-shadow:none}
+.d-perg{font:700 17px/1.35 var(--sistema);margin:0 0 4px}
+.rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
+.rot.r-consenso{background:var(--normal-fundo)}
+.rot.r-maioria_com_dissenso{background:var(--nota-fundo);box-shadow:inset 0 0 0 1px var(--atencao)}
+.rot.r-em_disputa{background:var(--alerta-fundo)}
+.d-txt{margin:0 0 6px;font-size:17px;line-height:1.55}
+.d-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 4px;overflow-wrap:anywhere}
+.d-fontes a{color:var(--meta)}
+.d-fontes .ac{font-style:italic}
+.d-mais{font:14.5px/1.45 var(--sistema);margin:4px 0 0}
 
 .blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado";grid-template-rows:auto 1fr;padding-top:28px;padding-bottom:28px}
 .blog .nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}
@@ -164,6 +182,19 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .comece:hover{color:var(--tinta)}.comece:hover b{text-decoration:underline}
 .comece .rot{display:block;font-size:13px;font-weight:600;color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
 .comece b{display:block;font:700 20px/1.3 var(--serifa);margin-bottom:4px}
+
+/* o "Entenda a fundo" do fato do dia: a escada de porquês, fechada até o toque */
+.fundo{margin:4px 0 18px;max-width:660px;border:1px solid var(--fio);border-radius:10px}
+.fundo>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 12px 12px 14px;cursor:pointer;list-style:none;font:600 16px/1.35 var(--sistema)}
+.fundo>summary::-webkit-details-marker{display:none}
+.fundo>summary .seta{width:18px;height:18px;flex:none;transition:transform .15s}
+.fundo[open]>summary .seta{transform:rotate(180deg)}
+.fundo[open]>summary{border-bottom:1px solid var(--fio);margin-bottom:16px}
+.fundo .escada{padding:0 14px 0 12px}
+.post .fundo p{margin:0 0 6px}
+.post .fundo p.d-perg{margin-bottom:4px}
+.post .fundo p.fundo-pe{font:15px/1.45 var(--sistema);margin:6px 14px 14px;padding-top:12px;border-top:1px solid var(--fio)}
+@media (prefers-reduced-motion: reduce){.fundo>summary .seta{transition:none}}
 
 /* pressão das notícias: dado da máquina, na letra do sistema */
 .conta{background:var(--maquina);border-radius:6px;padding:16px 20px 6px;font:16px/1.5 var(--sistema);margin:22px 0 4px}
@@ -345,16 +376,53 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     
 <article class="post">
   <p class="data"><span class="tipo">Fato do dia</span> | Sábado, 7 de novembro de 2026</p>
-  <h2 class="titulo-post"><a href="/2026-11-07/">Bradesco e duas gestoras veem PIB parado ou em queda em 2027</a></h2>
+  <h2 class="titulo-post"><a href="/2026-11-07/">Bradesco, XP e Genoa veem PIB parado ou em queda em 2027</a></h2>
   <p class="autoria">Escrito pelo Claude com a ajuda do Pedro.</p>
   
   
   
-  <p>O Bradesco e duas gestoras de investimentos divulgaram ontem previsões piores para 2027, com preços subindo mais rápido e a economia quase parada. Uma delas, a Genoa, fala em recessão e inflação de 6%.</p><p>As novas previsões ficam abaixo do que esperam os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>), uma alta de 1,2% do <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> em 2027. A piora acompanha a prévia do PIB do Banco Central, que caiu 0,6% nos 3 meses até agosto, se compararmos com os 3 até maio.</p><p>Previsão assim pesa antes de se confirmar, porque empresas que esperam vender menos adiam investimentos e famílias com medo de perder renda adiam compras, o que costuma frear as contratações.</p>
+  <p>O Bradesco, a corretora XP e a gestora Genoa divulgaram ontem previsões piores para 2027, e a Genoa prevê recessão e inflação de 6%.</p><p>A piora acompanha a prévia do <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> feita pelo Banco Central, que caiu 0,6% nos 3 meses até agosto, contra os 3 meses até maio.</p><p>Juro alto nem sempre termina em recessão. De 2014 a 2016, com a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> chegando a 14,25%, o que o Brasil vende ficou mais barato, e o PIB encolheu. Em 2021 e 2022, com a Selic subindo até 13,75%, o mundo pagava caro por esses produtos, e a economia cresceu.</p>
   
   
   
   
+  
+  
+  <details class="fundo">
+    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <ol class="escada">
+      <li class="degrau r-consenso">
+        <p class="d-perg">Por que as previsões pioraram?</p>
+        <span class="rot r-consenso">Os estudos concordam</span>
+        <p class="d-txt">Porque o juro está cerca de 8,4% acima da inflação que os bancos esperam, o que deixa caro para as famílias comprar a prazo e para as empresas investir. A indústria produz 4,1% menos que em maio, e as empresas tiveram o pior setembro de vagas com carteira já registrado, dois sinais de que a economia perdeu força.</p>
+        <p class="d-fontes">Fontes: Banco Central; <a href="https://vaidarcrise.com.br/causas/#t-freio" rel="nofollow noopener">Aba O que causa recessão</a>; <a href="https://www.gazetadopovo.com.br/economia/producao-industrial-recua-08-em-setembro-e-acumula-perda-de-41-desde-maio/" rel="nofollow noopener">Gazeta do Povo, com dados do IBGE</a> <span class="ac">(a conferir)</span>; <a href="https://www.poder360.com.br/poder-economia/brasil-cria-121-305-empregos-formais-em-setembro-de-2026/" rel="nofollow noopener">Poder360, com dados do Ministério do Trabalho</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li><li class="degrau r-consenso">
+        <p class="d-perg">O que mais pesou de 2014 a 2016?</p>
+        <span class="rot r-consenso">Os estudos concordam</span>
+        <p class="d-txt">A Selic começou a subir em 2013, quando o desemprego estava em 6,2%, o menor até então, e chegou a 14,25%. As contas do governo também pioraram, e o PIB encolheu de 2014 a 2016.</p>
+        <p class="d-fontes">Fonte: <a href="https://vaidarcrise.com.br/causas/#t-casos" rel="nofollow noopener">Aba O que causa recessão</a></p>
+        
+        
+      </li><li class="degrau r-consenso">
+        <p class="d-perg">E o que foi diferente em 2021 e 2022?</p>
+        <span class="rot r-consenso">Os estudos concordam</span>
+        <p class="d-txt">A Selic subiu de 2% para 13,75%, mas havia gente parada para voltar ao trabalho depois da pandemia, e o governo arrecadou mais do que gastou, sem contar os juros. A economia cresceu nos dois anos.</p>
+        <p class="d-fontes">Fonte: <a href="https://vaidarcrise.com.br/causas/#t-casos" rel="nofollow noopener">Aba O que causa recessão</a></p>
+        
+        <p class="d-mais"><a href="/causas/#t-casos">Os dois casos lado a lado, na aba O que causa recessão</a></p>
+      </li><li class="degrau r-fato">
+        <p class="d-perg">O que vem agora?</p>
+        <span class="rot r-fato">Fato</span>
+        <p class="d-txt">O IBGE divulga o PIB do terceiro trimestre em 2/12, e o número vai mostrar se a queda da prévia feita pelo Banco Central se confirma. Em 9/12, o Banco Central decide se mantém a Selic em 13,75% ou se muda o juro.</p>
+        <p class="d-fontes">Fontes: Calendários do IBGE e do Banco Central; <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432" rel="nofollow noopener">Banco Central</a></p>
+        
+        
+      </li>
+    </ol>
+    <p class="fundo-pe">Esta escada faz parte de uma pergunta maior: <a href="/perguntas/juro-alto/">Por que o juro do Brasil é tão alto?</a></p>
+  </details>
   
   
   
@@ -380,11 +448,48 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   
   
-  <p>A produção da indústria caiu 0,8% em setembro e já soma queda de 4,1% desde maio. No terceiro trimestre, as fábricas produziram 2,2% menos que no segundo, e a queda foi puxada por máquinas e equipamentos, o que mostra empresas investindo menos.</p><p>O dado pesa no <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> do trimestre, e a prévia do PIB do Banco Central já tinha caído 0,6% nos 3 meses até agosto, contra os 3 até maio. Quando uma empresa compra menos máquinas, se prepara para produzir menos e, por isso, costuma contratar menos nos meses seguintes.</p>
+  <p>A produção da indústria caiu 0,8% em setembro e soma queda de 4,1% desde maio, puxada por máquinas e equipamentos, o que mostra empresas investindo menos.</p><p>Com o juro cerca de 8,4% acima da inflação esperada pelos bancos, comprar uma máquina com dinheiro emprestado fica caro, e muitas empresas adiam a compra e as contratações.</p><p>Dois estudos que compararam o Brasil com outros países ligam esse juro sobretudo à poupança baixa, principalmente a do governo, e às contas do governo. Pelo estudo do Fundo Monetário Internacional, se o Brasil poupasse como países parecidos, o juro cairia ao nível do deles.</p>
   
   
   
   
+  
+  
+  <details class="fundo">
+    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <ol class="escada">
+      <li class="degrau r-consenso">
+        <p class="d-perg">Por que o juro alto faz a indústria produzir menos?</p>
+        <span class="rot r-consenso">Os estudos concordam</span>
+        <p class="d-txt">Quando a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> sobe, os bancos cobram mais das pessoas e das empresas pelo cartão, pelo empréstimo e pelo financiamento. Quem compra a prazo compra menos, por isso as lojas vendem menos e encomendam menos das fábricas, e as empresas adiam a compra de máquinas.</p>
+        <p class="d-fontes">Fontes: <a href="https://www.bcb.gov.br/controleinflacao/taxaselic" rel="nofollow noopener">Banco Central</a> <span class="ac">(a conferir)</span>; <a href="https://vaidarcrise.com.br/causas/#t-freio" rel="nofollow noopener">Aba O que causa recessão</a></p>
+        
+        <p class="d-mais"><a href="/causas/#t-freio">O freio do juro, desenhado, na aba O que causa recessão</a></p>
+      </li><li class="degrau r-fato">
+        <p class="d-perg">O juro do Brasil é alto mesmo?</p>
+        <span class="rot r-fato">Fato</span>
+        <p class="d-txt">Com a Selic em 13,75% e os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) esperando inflação de 5,0% em 12 meses, o juro fica cerca de 8,4% acima da inflação esperada. Em setembro, por essa conta, o Brasil tinha o maior juro do mundo no ranking das consultorias MoneYou e Lev Intelligence.</p>
+        <p class="d-fontes">Fontes: Banco Central; <a href="https://www.poder360.com.br/poder-economia/mesmo-com-corte-brasil-tem-o-maior-juro-real-do-planeta/" rel="nofollow noopener">Poder360</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li><li class="degrau r-maioria_com_dissenso">
+        <p class="d-perg">Por que o Brasil precisa de um juro tão maior que o de outros países?</p>
+        <span class="rot r-maioria_com_dissenso">A maioria concorda</span>
+        <p class="d-txt">A maioria dos estudos dá mais peso a duas causas. O Brasil poupa pouco, sobretudo o governo, e por isso sobra pouco dinheiro para emprestar. E quem empresta ao governo duvida que a dívida dele pare de crescer, por isso cobra mais.</p>
+        <p class="d-fontes">Fontes: <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a> <span class="ac">(a conferir)</span>; <a href="https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015" rel="nofollow noopener">Fernando Gonçalves, Márcio Holland e Andrei Spacov</a> <span class="ac">(a conferir)</span>; <a href="https://www.nber.org/papers/w10389" rel="nofollow noopener">Olivier Blanchard</a> <span class="ac">(a conferir)</span>; <a href="https://www.teses.usp.br/teses/disponiveis/12/12138/tde-23062022-200349/en.php" rel="nofollow noopener">Dissertação de mestrado, Universidade de São Paulo</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li><li class="degrau r-maioria_com_dissenso">
+        <p class="d-perg">Quem discorda?</p>
+        <span class="rot r-maioria_com_dissenso">A maioria concorda</span>
+        <p class="d-txt">Outras leituras apontam o crédito com juro definido pelo governo, a correção dos preços pela inflação passada e o próprio juro alto. Cerca de metade da dívida do governo acompanha a Selic, e por isso o juro alto também aumenta a dívida. Os estudos mostram que essas leituras explicam pedaços, foram pouco testadas ou não se confirmaram.</p>
+        <p class="d-fontes">Fontes: Marco Bonomo e Bruno Martins (Banco Central) <span class="ac">(a conferir)</span>; <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a> <span class="ac">(a conferir)</span>; <a href="https://vaidarcrise.com.br/causas/" rel="nofollow noopener">Aba O que causa recessão</a>; <a href="https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015" rel="nofollow noopener">Fernando Gonçalves, Márcio Holland e Andrei Spacov</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li>
+    </ol>
+    <p class="fundo-pe">Esta escada faz parte de uma pergunta maior: <a href="/perguntas/juro-alto/">Por que o juro do Brasil é tão alto?</a></p>
+  </details>
   
   
   <details class="conta" aria-label="Pressão das notícias">
@@ -404,16 +509,46 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
 </article>
 <article class="post">
   <p class="data"><span class="tipo">Fato do dia</span> | Quinta, 5 de novembro de 2026</p>
-  <h2 class="titulo-post"><a href="/2026-11-05/">Brasil abre 121,3 mil vagas com carteira, o pior setembro da série</a></h2>
+  <h2 class="titulo-post"><a href="/2026-11-05/">Brasil abre 121,3 mil vagas com carteira, o pior setembro já visto</a></h2>
   <p class="autoria">Escrito pelo Claude com a ajuda do Pedro.</p>
   
   
   
-  <p>As empresas abriram 121,3 mil vagas com carteira em setembro, o pior setembro já registrado. Foram 43% menos vagas que em setembro de 2025, sinal de que o juro alto freia as contratações.</p><p>Com a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> mantida ontem pelo Banco Central em 13,75%, os bancos cobram caro de quem compra a prazo, e as lojas vendem e contratam menos. O desemprego ficou em 5,2% no trimestre até setembro, abaixo dos 5,4% até junho, mas menos vagas freiam a renda e o consumo.</p><p>Hoje o IBGE divulga a produção industrial de setembro, que mostra se as fábricas também perderam ritmo.</p>
+  <p>As empresas abriram 121,3 mil vagas com carteira em setembro, o pior setembro já registrado e 43% menos que em setembro de 2025.</p><p>Isso costuma acontecer com juro alto, porque, quando a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> sobe, os bancos cobram mais de quem compra a prazo, e as lojas vendem e contratam menos.</p><p>Em 4/11, o Banco Central parou os cortes que fazia desde março e manteve a Selic em 13,75%, o que deixa caros o cartão e o financiamento. Os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) passaram a esperar que os preços subam 5,0% em 12 meses, contra 4,2% no fim de julho.</p>
   
   
   
   
+  
+  
+  <details class="fundo">
+    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <ol class="escada">
+      <li class="degrau r-consenso">
+        <p class="d-perg">Por que juro alto tira vagas?</p>
+        <span class="rot r-consenso">Os estudos concordam</span>
+        <p class="d-txt">Quando a Selic sobe, os bancos cobram mais das pessoas pelo cartão, pelo empréstimo e pelo financiamento. Por isso quem compra a prazo compra menos, e as lojas, que passam a vender menos, contratam menos.</p>
+        <p class="d-fontes">Fontes: <a href="https://www.bcb.gov.br/controleinflacao/taxaselic" rel="nofollow noopener">Banco Central</a> <span class="ac">(a conferir)</span>; <a href="https://vaidarcrise.com.br/causas/#t-freio" rel="nofollow noopener">Aba O que causa recessão</a></p>
+        
+        <p class="d-mais"><a href="/causas/#t-freio">O freio do juro, desenhado, na aba O que causa recessão</a></p>
+      </li><li class="degrau r-consenso">
+        <p class="d-perg">Por que o Banco Central parou de cortar?</p>
+        <span class="rot r-consenso">Os estudos concordam</span>
+        <p class="d-txt">Porque a inflação esperada voltou a subir. No fim de julho, os bancos (Focus) esperavam que os preços subissem 4,2% em 12 meses, e no fim de outubro passaram a esperar 5,0%. Isso fica acima do <a class="termo" href="https://pt.wikipedia.org/wiki/Metas_de_infla%C3%A7%C3%A3o" target="_blank" rel="noopener">teto da meta de inflação</a>, de 4,5%.</p>
+        <p class="d-fontes">Fontes: <a href="https://www.bcb.gov.br/publicacoes/focus" rel="nofollow noopener">Banco Central</a> <span class="ac">(a conferir)</span>; <a href="https://www.gazetadopovo.com.br/economia/copom-interrompe-ciclo-de-cortes-e-mantem-selic-em-1375/" rel="nofollow noopener">Gazeta do Povo</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li><li class="degrau r-fato">
+        <p class="d-perg">O desemprego já subiu?</p>
+        <span class="rot r-fato">Fato</span>
+        <p class="d-txt">Ainda não. O desemprego ficou em 5,2% no trimestre até setembro, abaixo dos 5,4% do trimestre até junho, porque as empresas seguem contratando mais do que demitem, só que menos que antes.</p>
+        <p class="d-fontes">Fontes: <a href="https://www.ibge.gov.br/estatisticas/sociais/trabalho/9171-pesquisa-nacional-por-amostra-de-domicilios-continua-mensal.html" rel="nofollow noopener">IBGE</a>; <a href="https://www.poder360.com.br/poder-economia/brasil-cria-121-305-empregos-formais-em-setembro-de-2026/" rel="nofollow noopener">Poder360, com dados do Ministério do Trabalho</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li>
+    </ol>
+    <p class="fundo-pe">Esta escada faz parte de uma pergunta maior: <a href="/perguntas/juro-alto/">Por que o juro do Brasil é tão alto?</a></p>
+  </details>
   
   
   <details class="conta" aria-label="Pressão das notícias">
@@ -438,11 +573,48 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   
   
-  <p>Os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) passaram a esperar que os preços subam 5,2% em 2026, acima do <a class="termo" href="https://pt.wikipedia.org/wiki/Metas_de_infla%C3%A7%C3%A3o" target="_blank" rel="noopener">teto da meta de inflação</a>, de 4,5%, e cortaram a previsão para o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a>.</p><p>Hoje o Banco Central decide o juro, com a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> em 13,75% desde setembro. Com os preços subindo mais rápido, ele tende a manter o juro alto por mais tempo. Com a compra a prazo cara, as lojas vendem menos e os preços sobem mais devagar.</p><p>Para as famílias, que já gastam 29% da renda com parcelas e juros, a maior fatia desde 2005, isso aponta para crédito caro por mais tempo.</p>
+  <p>Os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) passaram a esperar que os preços subam 5,2% em 2026, acima do <a class="termo" href="https://pt.wikipedia.org/wiki/Metas_de_infla%C3%A7%C3%A3o" target="_blank" rel="noopener">teto da meta de inflação</a>, de 4,5%.</p><p>Hoje o Banco Central decide a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> e tende a mantê-la alta, já que os preços devem subir mais rápido, em parte pelo dólar, que encarece os importados.</p><p>O dólar subiu de R$ 5,04 para R$ 5,50 em 26/10, dia seguinte ao segundo turno, e estava em R$ 5,49 em 3/11. Alguns economistas veem nessa alta desconfiança nas contas do governo, e outros, medo de investidores do mundo todo.</p>
   
   
   
   
+  
+  
+  <details class="fundo">
+    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <ol class="escada">
+      <li class="degrau r-fato">
+        <p class="d-perg">Por que os bancos esperam preços mais altos?</p>
+        <span class="rot r-fato">Fato</span>
+        <p class="d-txt">Os economistas apontaram duas causas. Uma é o dólar, que encarece os importados, como trigo, açúcar e café, e a outra é o El Niño, que ameaça as safras.</p>
+        <p class="d-fontes">Fonte: <a href="https://www1.folha.uol.com.br/mercado/2026/10/expectativas-de-inflacao-para-2027-e-2028-saltam-apos-segundo-turno.shtml" rel="nofollow noopener">Folha</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li><li class="degrau r-consenso">
+        <p class="d-perg">Por que o dólar subiu?</p>
+        <span class="rot r-consenso">Os estudos concordam</span>
+        <p class="d-txt">Quase toda a alta veio num dia. O dólar tinha caído de R$ 5,18 no fim de agosto para R$ 5,04 antes do segundo turno, e em 26/10, o dia seguinte à eleição, subiu para R$ 5,50.</p>
+        <p class="d-fontes">Fontes: Banco Central e Tesouro Nacional; <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=1" rel="nofollow noopener">Banco Central</a></p>
+        
+        
+      </li><li class="degrau r-em_disputa">
+        <p class="d-perg">E por que seguiu alto depois do salto?</p>
+        <span class="rot r-em_disputa">Os economistas divergem</span>
+        <p class="d-txt">Uns veem desconfiança com o Brasil, porque a dívida do governo cresce e o presidente vai indicar diretores do Banco Central que poderiam cortar o juro com os preços subindo. Outros veem investidores do mundo todo com mais medo, tirando dinheiro de vários países ao mesmo tempo.</p>
+        <p class="d-fontes">Fontes: <a href="https://www.poder360.com.br/poder-economia/divida-bruta-deve-chegar-a-837-do-pib-no-fim-de-2026/" rel="nofollow noopener">Poder360</a> <span class="ac">(a conferir)</span>; <a href="https://www1.folha.uol.com.br/mercado/2026/11/lula-indicara-seis-diretores-do-banco-central-ate-o-fim-de-2027-e-mercado-teme-mudanca-de-perfil.shtml" rel="nofollow noopener">Folha</a> <span class="ac">(a conferir)</span>; <a href="https://econpapers.repec.org/RePEc:cpr:ceprdp:10591" rel="nofollow noopener">Hélène Rey</a> <span class="ac">(a conferir)</span></p>
+        <p class="d-mais"><a href="/perguntas/juro-alto/#d-dolar">As duas leituras, com o que pesa a favor e contra cada uma</a></p>
+        
+      </li><li class="degrau r-em_disputa">
+        <p class="d-perg">Como saber qual leitura está certa?</p>
+        <span class="rot r-em_disputa">Os economistas divergem</span>
+        <p class="d-txt">Se a desconfiança for com o Brasil, o dólar tende a subir mais contra o real do que contra o peso do México e o do Chile. Se o medo for do mundo todo, tende a subir parecido contra as três moedas. O site confere em 7/12/2026 e em 5/2/2027.</p>
+        
+        <p class="d-mais"><a href="/perguntas/juro-alto/#teste">Como o teste funciona</a></p>
+        
+      </li>
+    </ol>
+    <p class="fundo-pe">Esta escada faz parte de uma pergunta maior: <a href="/perguntas/juro-alto/">Por que o juro do Brasil é tão alto?</a></p>
+  </details>
   
   
   <details class="conta" aria-label="Pressão das notícias">
@@ -467,11 +639,41 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   
   
-  <p>O petróleo ficou quase 8% mais barato lá fora com sinais de que EUA e Irã podem negociar a paz, mas ainda não há acordo.</p><p>Com o barril mais barato, o diesel e a gasolina podem baratear aqui, e o frete e a comida chegariam mais baratos ao mercado nos meses seguintes.</p><p>O alívio vem de fora e chega quando os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. Já o dólar a R$ 5,49, 8,3% mais caro que no começo de agosto, encarece o combustível importado e pode reduzir esse alívio.</p>
+  <p>O petróleo ficou quase 8% mais barato lá fora com sinais de que EUA e Irã podem negociar o fim da guerra, mas ainda não há acordo.</p><p>Se o barril seguir mais barato, o diesel e a gasolina importados pelo Brasil ficam mais baratos, e o frete e a comida podem baratear nos meses seguintes. O dólar a R$ 5,49, contra R$ 5,18 no fim de agosto, tira parte desse alívio, porque encarece o combustível importado.</p><p>Esse alívio de fora chega quando os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) esperam que os preços subam 5,0% em 12 meses, contra 4,2% no fim de julho.</p>
   
   
   
   
+  
+  
+  <details class="fundo">
+    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <ol class="escada">
+      <li class="degrau r-fato">
+        <p class="d-perg">Por que o petróleo caiu?</p>
+        <span class="rot r-fato">Fato</span>
+        <p class="d-txt">O barril tinha subido mais de 14% em outubro com a guerra no Irã. No começo de novembro, caiu quase 8% com sinais de que EUA e Irã podem negociar o fim da guerra, ainda sem acordo. É uma causa de fora do Brasil.</p>
+        <p class="d-fontes">Fontes: <a href="https://www1.folha.uol.com.br/mercado/2026/10/petroleo-sobe-mais-de-14-em-outubro-e-encerra-mes-no-maior-valor-desde-maio.shtml" rel="nofollow noopener">Folha de S.Paulo</a> <span class="ac">(a conferir)</span>; <a href="https://valor.globo.com/financas/noticia/2026/11/02/petroleo-despenca-com-sinais-de-abertura-diplomatica-pelos-eua-e-ira.ghtml" rel="nofollow noopener">Valor Econômico</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li><li class="degrau r-fato">
+        <p class="d-perg">Por que isso mexe com o preço aqui?</p>
+        <span class="rot r-fato">Fato</span>
+        <p class="d-txt">O Brasil importa parte do diesel e da gasolina que usa, e as empresas que compram esse combustível de outros países pagam o preço de lá, em dólar. Por isso o petróleo mais barato lá fora pode baratear o combustível aqui, e o dólar mais caro tira parte desse alívio.</p>
+        <p class="d-fontes">Fontes: <a href="https://www.ibp.org.br/personalizado/uploads/2025/04/boletim-importacoes-de-derivados-marco-2025-vf.pdf" rel="nofollow noopener">Instituto Brasileiro de Petróleo e Gás</a> <span class="ac">(a conferir)</span>; <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=1" rel="nofollow noopener">Banco Central</a></p>
+        
+        
+      </li><li class="degrau r-consenso">
+        <p class="d-perg">E o que isso tem a ver com o juro?</p>
+        <span class="rot r-consenso">Os estudos concordam</span>
+        <p class="d-txt">O Banco Central decide a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> olhando quanto os preços devem subir. No fim de outubro, os bancos (Focus) esperavam 5,0% em 12 meses, acima do <a class="termo" href="https://pt.wikipedia.org/wiki/Metas_de_infla%C3%A7%C3%A3o" target="_blank" rel="noopener">teto da meta de inflação</a>, de 4,5%, e combustível mais barato ajuda a segurar essa conta. E a Selic é a base do juro que os bancos cobram no empréstimo e no financiamento.</p>
+        <p class="d-fontes">Fonte: <a href="https://www.bcb.gov.br/publicacoes/focus" rel="nofollow noopener">Banco Central</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li>
+    </ol>
+    <p class="fundo-pe">Esta escada faz parte de uma pergunta maior: <a href="/perguntas/juro-alto/">Por que o juro do Brasil é tão alto?</a></p>
+  </details>
   
   
   <details class="conta" aria-label="Pressão das notícias">

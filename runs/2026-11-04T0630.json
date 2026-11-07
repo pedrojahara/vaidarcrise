@@ -2481,16 +2481,16 @@
   "ok": true,
   "titulo": "Bancos (Focus) passam a esperar inflação de 5,2% em 2026",
   "paragrafos": [
-   "Os bancos (Focus) passaram a esperar que os preços subam 5,2% em 2026, acima do teto da meta de inflação, de 4,5%, e cortaram a previsão para o PIB.",
-   "Hoje o Banco Central decide o juro, com a Selic em 13,75% desde setembro. Com os preços subindo mais rápido, ele tende a manter o juro alto por mais tempo. Com a compra a prazo cara, as lojas vendem menos e os preços sobem mais devagar.",
-   "Para as famílias, que já gastam 29% da renda com parcelas e juros, a maior fatia desde 2005, isso aponta para crédito caro por mais tempo."
+   "Os bancos (Focus) passaram a esperar que os preços subam 5,2% em 2026, acima do teto da meta de inflação, de 4,5%.",
+   "Hoje o Banco Central decide a Selic e tende a mantê-la alta, já que os preços devem subir mais rápido, em parte pelo dólar, que encarece os importados.",
+   "O dólar subiu de R$ 5,04 para R$ 5,50 em 26/10, dia seguinte ao segundo turno, e estava em R$ 5,49 em 3/11. Alguns economistas veem nessa alta desconfiança nas contas do governo, e outros, medo de investidores do mundo todo."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "Os bancos (Focus) passaram a esperar que os preços subam 5,2% em 2026, acima do teto da meta de inflação, de 4,5%, e cortaram a previsão para o PIB.",
-     "Hoje o Banco Central decide o juro, com a Selic em 13,75% desde setembro. Com os preços subindo mais rápido, ele tende a manter o juro alto por mais tempo. Com a compra a prazo cara, as lojas vendem menos e os preços sobem mais devagar.",
-     "Para as famílias, que já gastam 29% da renda com parcelas e juros, a maior fatia desde 2005, isso aponta para crédito caro por mais tempo."
+     "Os bancos (Focus) passaram a esperar que os preços subam 5,2% em 2026, acima do teto da meta de inflação, de 4,5%.",
+     "Hoje o Banco Central decide a Selic e tende a mantê-la alta, já que os preços devem subir mais rápido, em parte pelo dólar, que encarece os importados.",
+     "O dólar subiu de R$ 5,04 para R$ 5,50 em 26/10, dia seguinte ao segundo turno, e estava em R$ 5,49 em 3/11. Alguns economistas veem nessa alta desconfiança nas contas do governo, e outros, medo de investidores do mundo todo."
     ]
    }
   ],
@@ -2498,32 +2498,54 @@
   "edicao": {
    "sugestoes": [
     {
-     "trecho": "Com os preços subindo mais rápido, o Banco Central tende a manter o juro alto por mais tempo, já que juro alto deixa a compra a prazo cara, as lojas vendem menos e os preços sobem mais devagar.",
-     "problema": "A frase tem 38 palavras, e o guia permite até 30. A corrente de causa e efeito fica difícil de seguir no celular.",
-     "como_fica": "Com os preços subindo mais rápido, ele tende a manter o juro alto por mais tempo. Com a compra a prazo cara, as lojas vendem menos e os preços sobem mais devagar."
+     "trecho": "no dia seguinte à eleição e seguiu alto",
+     "problema": "Não diz a data, e \"seguiu alto\" não tem número nem comparação. A leitora não sabe quando foi a alta nem quanto o dólar vale agora.",
+     "como_fica": "em 26/10, dia seguinte ao segundo turno, e estava em R$ 5,49 em 3/11"
     },
     {
-     "trecho": "acima do teto da meta de inflação do Banco Central, de 4,5%, e cortaram a previsão para o PIB.",
-     "problema": "A frase tem 32 palavras, e o guia permite até 30. Como o link de \"meta de inflação\" já explica o termo, \"do Banco Central\" só deixa a frase mais pesada.",
-     "como_fica": "acima do teto da meta de inflação, de 4,5%, e cortaram a previsão para o PIB."
+     "trecho": "que encarece os importados",
+     "problema": "Falta a ponte para o bolso: quais importados ficam mais caros no mercado. O exemplo está nos dados.",
+     "como_fica": "que encarece importados como trigo, açúcar e café"
     },
     {
-     "trecho": "com a Selic em 13,75%.",
-     "problema": "O número aparece sem comparação nem mês.",
-     "como_fica": "com a Selic em 13,75% desde setembro."
+     "trecho": "O dólar saltou",
+     "problema": "\"Saltou\" é verbo de alarme. O guia pede o verbo neutro com o tamanho da mudança.",
+     "como_fica": "O dólar subiu"
     },
     {
-     "trecho": "29,0% da renda com parcelas e juros, a maior parte desde 2005",
-     "problema": "O número deve ser arredondado. Além disso, \"a maior parte\" dá a entender que é a maior parte da renda.",
-     "como_fica": "29% da renda com parcelas e juros, a maior fatia desde 2005"
-    },
-    {
-     "trecho": "essa previsão aponta para crédito caro por mais tempo.",
-     "problema": "O texto passa de 100 palavras, e o fato do dia tem limite de 100. Esta frase pode ficar mais curta sem perder o sentido.",
-     "como_fica": "isso aponta para crédito caro por mais tempo."
+     "trecho": "Uns economistas veem nisso",
+     "problema": "Depois da troca de frase, \"nisso\" fica vago. Melhor dizer do que se fala, a alta do dólar, com palavra de conversa.",
+     "como_fica": "Alguns economistas veem nessa alta"
     }
    ],
-   "aplicada": true
+   "sugestoes_escada": [
+    {
+     "trecho": "Antes do segundo turno, o dólar tinha caído para R$ 5,04, e em 26/10, o dia seguinte à eleição, saltou para R$ 5,50.",
+     "problema": "A queda não diz desde quando nem de quanto, e \"saltou\" soa como alarme. O guia pede o mês da comparação e um verbo neutro.",
+     "como_fica": "O dólar tinha caído de R$ 5,18 no fim de agosto para R$ 5,04 antes do segundo turno, e em 26/10, o dia seguinte à eleição, subiu para R$ 5,50."
+    },
+    {
+     "trecho": "Uns veem desconfiança nas decisões tomadas no Brasil, com a dívida do governo crescendo mais rápido e um Banco Central que poderia cortar o juro com os preços subindo.",
+     "problema": "Frase com mais de 30 palavras. \"Mais rápido\" não diz em comparação com quê, e a frase não diz quem muda o Banco Central nem por que isso preocupa.",
+     "como_fica": "Uns veem desconfiança com o Brasil, porque a dívida do governo cresce e o presidente vai indicar diretores do Banco Central que poderiam cortar o juro com os preços subindo."
+    },
+    {
+     "trecho": "tirando dinheiro de vários países emergentes ao mesmo tempo",
+     "problema": "\"Países emergentes\" é palavra de jornal de economia, e o parágrafo passava de 50 palavras.",
+     "como_fica": "tirando dinheiro de vários países ao mesmo tempo"
+    },
+    {
+     "trecho": "Aqui os economistas divergem.",
+     "problema": "\"Aqui\" não acrescenta nada e só alonga um parágrafo que já passava do limite.",
+     "como_fica": "Os economistas divergem."
+    },
+    {
+     "trecho": "o dólar vai subir mais contra o real do que contra o peso do México e o do Chile. Se o medo for do mundo todo, vai subir parecido contra as três moedas.",
+     "problema": "Previsão dita com certeza. O guia pede que a previsão não soe como certeza.",
+     "como_fica": "o dólar tende a subir mais contra o real do que contra o peso do México e o do Chile. Se o medo for do mundo todo, tende a subir parecido contra as três moedas."
+    }
+   ],
+   "aplicada": "à mão, sugestão por sugestão, sem mudar fato nem número"
   },
   "meta": [
    {
@@ -2551,6 +2573,104 @@
     ],
     "permission_denials": [],
     "session_id": "4bc81261-775c-4978-af8b-54c6f548ec75"
+   }
+  ],
+  "versao_anterior": {
+   "titulo": "Bancos (Focus) passam a esperar inflação de 5,2% em 2026",
+   "paragrafos": [
+    "Os bancos (Focus) passaram a esperar que os preços subam 5,2% em 2026, acima do teto da meta de inflação, de 4,5%, e cortaram a previsão para o PIB.",
+    "Hoje o Banco Central decide o juro, com a Selic em 13,75% desde setembro. Com os preços subindo mais rápido, ele tende a manter o juro alto por mais tempo. Com a compra a prazo cara, as lojas vendem menos e os preços sobem mais devagar.",
+    "Para as famílias, que já gastam 29% da renda com parcelas e juros, a maior fatia desde 2005, isso aponta para crédito caro por mais tempo."
+   ],
+   "edicao": {
+    "sugestoes": [
+     {
+      "trecho": "Com os preços subindo mais rápido, o Banco Central tende a manter o juro alto por mais tempo, já que juro alto deixa a compra a prazo cara, as lojas vendem menos e os preços sobem mais devagar.",
+      "problema": "A frase tem 38 palavras, e o guia permite até 30. A corrente de causa e efeito fica difícil de seguir no celular.",
+      "como_fica": "Com os preços subindo mais rápido, ele tende a manter o juro alto por mais tempo. Com a compra a prazo cara, as lojas vendem menos e os preços sobem mais devagar."
+     },
+     {
+      "trecho": "acima do teto da meta de inflação do Banco Central, de 4,5%, e cortaram a previsão para o PIB.",
+      "problema": "A frase tem 32 palavras, e o guia permite até 30. Como o link de \"meta de inflação\" já explica o termo, \"do Banco Central\" só deixa a frase mais pesada.",
+      "como_fica": "acima do teto da meta de inflação, de 4,5%, e cortaram a previsão para o PIB."
+     },
+     {
+      "trecho": "com a Selic em 13,75%.",
+      "problema": "O número aparece sem comparação nem mês.",
+      "como_fica": "com a Selic em 13,75% desde setembro."
+     },
+     {
+      "trecho": "29,0% da renda com parcelas e juros, a maior parte desde 2005",
+      "problema": "O número deve ser arredondado. Além disso, \"a maior parte\" dá a entender que é a maior parte da renda.",
+      "como_fica": "29% da renda com parcelas e juros, a maior fatia desde 2005"
+     },
+     {
+      "trecho": "essa previsão aponta para crédito caro por mais tempo.",
+      "problema": "O texto passa de 100 palavras, e o fato do dia tem limite de 100. Esta frase pode ficar mais curta sem perder o sentido.",
+      "como_fica": "isso aponta para crédito caro por mais tempo."
+     }
+    ],
+    "aplicada": true
+   },
+   "trocado_em": "2026-11-07",
+   "motivo": "Fase 0 da base de conhecimento: o fato do dia ganhou a escada de porquês, a pedido do Pedro em 7/11/2026."
+  },
+  "paragrafos_afirmacoes": [
+   [
+    "a-focus-2026",
+    "a-meta"
+   ],
+   [
+    "a-elnino",
+    "a-importados"
+   ],
+   [
+    "a-antes-da-eleicao",
+    "a-salto-eleicao",
+    "a-dolar-0311"
+   ]
+  ],
+  "pergunta": "juro-alto",
+  "escada": [
+   {
+    "pergunta": "Por que os bancos esperam preços mais altos?",
+    "rotulo": "fato",
+    "texto": "Os economistas apontaram duas causas. Uma é o dólar, que encarece os importados, como trigo, açúcar e café, e a outra é o El Niño, que ameaça as safras.",
+    "afirmacoes": [
+     "a-elnino",
+     "a-importados"
+    ],
+    "liga": "mecanismo"
+   },
+   {
+    "pergunta": "Por que o dólar subiu?",
+    "rotulo": "consenso",
+    "texto": "Quase toda a alta veio num dia. O dólar tinha caído de R$ 5,18 no fim de agosto para R$ 5,04 antes do segundo turno, e em 26/10, o dia seguinte à eleição, subiu para R$ 5,50.",
+    "afirmacoes": [
+     "a-antes-da-eleicao",
+     "a-salto-eleicao",
+     "a-dolar-ago-nov"
+    ],
+    "liga": "d-dolar"
+   },
+   {
+    "pergunta": "E por que seguiu alto depois do salto?",
+    "rotulo": "em_disputa",
+    "texto": "Uns veem desconfiança com o Brasil, porque a dívida do governo cresce e o presidente vai indicar diretores do Banco Central que poderiam cortar o juro com os preços subindo. Outros veem investidores do mundo todo com mais medo, tirando dinheiro de vários países ao mesmo tempo.",
+    "afirmacoes": [
+     "a-ev-tesouro-divida",
+     "a-ev-diretores-bc",
+     "a-rey"
+    ],
+    "liga": "d-dolar"
+   },
+   {
+    "pergunta": "Como saber qual leitura está certa?",
+    "rotulo": "em_disputa",
+    "texto": "Se a desconfiança for com o Brasil, o dólar tende a subir mais contra o real do que contra o peso do México e o do Chile. Se o medo for do mundo todo, tende a subir parecido contra as três moedas.",
+    "afirmacoes": [],
+    "liga": "teste",
+    "teste": "t-real-vizinhos"
    }
   ]
  }

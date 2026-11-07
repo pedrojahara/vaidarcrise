@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% macro fontes(lista) %}{% if lista %}<p class="d-fontes">{{ 'Fonte' if lista|length == 1 else 'Fontes' }}: {% for f in lista %}{% if f.url %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.quem }}</a>{% else %}{{ f.quem }}{% endif %}{% if not f.conferida %} <span class="ac">(a conferir)</span>{% endif %}{{ '; ' if not loop.last }}{% endfor %}</p>{% endif %}{% endmacro %}
+{% block titulo %}{{ q.pergunta }} | Vai dar crise?{% endblock %}
+{% block descricao %}{{ q.resposta|striptags }}{% endblock %}
+{% block estilo %}
+.perg{padding-top:28px;padding-bottom:40px}
+.perg>*{max-width:700px}
+.perg .sobre-perg{font:600 14px/1.4 var(--sistema);color:var(--meta);margin:0 0 6px}
+.perg h1{font:700 32px/1.15 var(--serifa);margin:0 0 14px;text-wrap:balance}
+.perg .resposta{font-size:19px;margin:0 0 6px}
+.perg h2{font:700 24px/1.2 var(--serifa);margin:38px 0 8px;padding-top:22px;border-top:1px solid var(--fio)}
+.perg .intro{font:15.5px/1.5 var(--sistema);color:var(--meta);margin:0 0 18px}
+.perg .escada{margin-top:6px}
+.perg .degrau{padding-bottom:26px;scroll-margin-top:12px}
+.perg .d-perg{font-size:18px}
+.d-sub{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:12px 0 4px}
+.leituras{display:grid;gap:10px;margin:12px 0 4px}
+.leitura{border:1px solid var(--fio);border-radius:10px;font-family:var(--sistema)}
+.leitura>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:12px 12px 12px 14px;cursor:pointer;list-style:none}
+.leitura>summary::-webkit-details-marker{display:none}
+.leitura .l-nome{font:700 16px/1.35 var(--sistema)}
+.leitura .l-st{grid-column:1;justify-self:start;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;background:var(--maquina)}
+.leitura .l-st.s-maioria{background:var(--normal-fundo)}
+.leitura .l-st.s-testada_e_nao_confirmada,.leitura .l-st.s-minoria{color:var(--meta)}
+.leitura .l-diz{grid-column:1/-1;font:16px/1.5 var(--serifa);margin:6px 0 0}
+.leitura .seta{grid-column:2;grid-row:1;width:18px;height:18px;align-self:center;transition:transform .15s}
+.leitura[open] .seta{transform:rotate(180deg)}
+.l-corpo{padding:0 14px 12px;font:15.5px/1.5 var(--sistema)}
+.l-corpo h4{font:600 13px/1.3 var(--sistema);color:var(--meta);letter-spacing:.02em;margin:12px 0 4px}
+.l-corpo p{margin:0 0 4px}
+.l-corpo ul{margin:0;padding-left:1.1em}
+.l-corpo li{margin:0 0 8px}
+.teste{background:var(--maquina);border-radius:10px;padding:12px 14px;margin:14px 0 4px;font:15.5px/1.5 var(--sistema);scroll-margin-top:12px}
+.teste h3{font:700 16px/1.35 var(--sistema);margin:0 0 6px}
+.teste p{margin:0 0 8px}
+.teste ul{margin:0 0 8px;padding-left:1.1em}
+.teste .lim{color:var(--meta);font-size:14px}
+.eps{list-style:none;padding:0;margin:0}
+.eps li{border-top:1px solid var(--fio);padding:14px 0 10px}
+.eps .ep-q{font:600 13.5px/1.4 var(--sistema);color:var(--meta);margin:0 0 2px}
+.eps h3{font:700 18px/1.3 var(--serifa);margin:0 0 4px}
+.eps p{margin:0 0 6px}
+.lista-fontes{font:14.5px/1.5 var(--sistema);padding-left:1.6em}
+.lista-fontes li{margin:0 0 8px;overflow-wrap:anywhere}
+.lista-fontes .nv{color:var(--meta)}
+.mud{font:14.5px/1.5 var(--sistema);padding-left:1.1em}
+@media (max-width:620px){.perg h1{font-size:27px}.perg h2{font-size:22px}}
+@media (prefers-reduced-motion: reduce){.leitura .seta{transition:none}}
+{% endblock %}
+{% block corpo %}
+<main class="in perg">
+<p class="sobre-perg">Uma pergunta que os fatos do dia ajudam a responder. Atualizada em {{ q.atualizado }}.</p>
+<h1>{{ q.pergunta }}</h1>
+<p class="resposta">{{ q.resposta }}</p>
+{{ fontes(q.resposta_fontes) }}
+
+<h2>Do fato de hoje até a causa de fundo</h2>
+<p class="intro">Cada passo responde ao porquê do passo anterior. A etiqueta de cada um diz se os estudos concordam, se a maioria concorda e há quem discorde, ou se os economistas ainda divergem.</p>
+<ol class="escada">
+{% for d in q.escada %}<li class="degrau r-{{ d.rotulo }}" id="{{ d.id }}">
+  <p class="d-perg">{{ d.pergunta }}</p>
+  <span class="rot r-{{ d.rotulo }}">{{ d.rotulo_nome }}</span>
+  {% if d.texto %}<p class="d-txt">{{ d.texto }}</p>{{ fontes(d.fontes) }}{% endif %}
+  {% if d.consenso %}<p class="d-sub">O que os dados mostram</p><p class="d-txt">{{ d.consenso.texto }}</p>{{ fontes(d.consenso.fontes) }}{% endif %}
+  {% if d.em_disputa %}<p class="d-sub">Onde começa a divergência</p><p class="d-txt">{{ d.em_disputa.texto }}</p>{{ fontes(d.em_disputa.fontes) }}{% endif %}
+  {% if d.peso %}<p class="d-sub">O peso da evidência</p><p class="d-txt">{{ d.peso.texto }}</p>{{ fontes(d.peso.fontes) }}{% endif %}
+  {% if d.leituras %}<div class="leituras">
+    {% for lt in d.leituras %}<details class="leitura" id="{{ lt.id }}">
+      <summary><span class="l-nome">{{ lt.nome }}</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="l-st s-{{ lt.status }}">{{ lt.status_nome }}</span><span class="l-diz">{{ lt.o_que_diz }}</span></summary>
+      <div class="l-corpo">
+        {{ fontes(lt.o_que_diz_fontes) }}
+        {% if lt.a_favor %}<h4>O que pesa a favor</h4><ul>{% for x in lt.a_favor %}<li>{{ x.texto }}{{ fontes(x.fontes) }}</li>{% endfor %}</ul>{% endif %}
+        {% if lt.melhor_objecao %}<h4>A objeção mais forte</h4><p>{{ lt.melhor_objecao.texto }}</p>{{ fontes(lt.melhor_objecao.fontes) }}{% endif %}
+        {% if lt.resposta %}<h4>O que quem defende responde</h4><p>{{ lt.resposta.texto }}</p>{{ fontes(lt.resposta.fontes) }}{% if lt.resposta.pendente %}<p class="d-fontes"><span class="ac">Falta achar um estudo que defenda a primeira frase com estes anos.</span></p>{% endif %}{% endif %}
+        {% if lt.quem_defende %}<h4>Quem defende</h4><p>{{ lt.quem_defende|join('; ') }}</p>{% endif %}
+      </div>
+    </details>{% endfor %}
+  </div>{% endif %}
+  {% if d.teste %}{% set t = d.teste %}<div class="teste" id="teste">
+    <h3>Como saber qual leitura está certa</h3>
+    <p>{{ t.pergunta }} {{ t.como }}</p>
+    <ul>{% for e in t.espera %}<li><b>{{ e.nome }}:</b> {{ e.texto }}</li>{% endfor %}</ul>
+    <p>Se a alta contra o real passar a dos dois pesos em mais de {{ t.regra.favorece_l_daqui_acima_de|num(0) }} pontos, o resultado favorece a leitura daqui. Se a diferença ficar entre {{ t.regra.favorece_l_fora_entre[0]|num(0) }} e {{ t.regra.favorece_l_fora_entre[1]|num(0) }} pontos, favorece a leitura de fora. O site confere em {{ t.quando|join(' e em ') }}{% if not t.resultados %}, e até lá esta parte fica sem resultado{% endif %}.</p>
+    {% for r in t.resultados %}<p><b>{{ r.data }}:</b> {{ r.texto }}</p>{% endfor %}
+    <p class="lim">{{ t.limites }}</p>
+  </div>{% endif %}
+</li>
+{% endfor %}
+</ol>
+
+<h2>O que aconteceu antes</h2>
+<p class="intro">Episódios do Brasil desde 2002, em governos diferentes, com os números de cada um e de onde veio a causa.</p>
+<ol class="eps">
+{% for e in q.episodios %}<li>
+  <p class="ep-q">{{ e.periodo }} · {{ e.causa }}</p>
+  <h3>{{ e.titulo }}</h3>
+  <p>{{ e.resumo }}</p>
+  {{ fontes(e.fontes) }}
+</li>
+{% endfor %}
+</ol>
+
+<h2>As fontes</h2>
+<p class="intro">{{ q.conferidas }} das {{ q.total }} fontes desta página já foram conferidas. As outras estão marcadas "a conferir" até que o trecho que sustenta cada frase seja achado no texto original.</p>
+<ol class="lista-fontes">
+{% for f in q.fontes %}<li>{% if f.url %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.quem }}</a>{% else %}{{ f.quem }}{% endif %}{% if f.titulo and f.titulo != f.quem %}, {{ f.titulo }}{% endif %}. <span class="nv">{{ f.nivel }}; {{ f.como }}.</span></li>
+{% endfor %}
+</ol>
+
+<h2>O que mudou nesta página</h2>
+<ul class="mud">
+{% for m in q.mudancas %}<li>{{ m.data }}: {{ m.o_que }} {{ m.motivo }}</li>
+{% endfor %}
+</ul>
+</main>
+{% endblock %}

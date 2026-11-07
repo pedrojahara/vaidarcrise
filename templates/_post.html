@@ -17,6 +17,22 @@
   {% for par in post.paragrafos %}<p>{{ par }}</p>{% endfor %}
   {% endif %}
   {% if post.corpo_html %}<div class="corpo">{{ post.corpo_html|safe }}</div>{% endif %}
+  {% if post.escada %}{% set es = post.escada %}
+  <details class="fundo">
+    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <ol class="escada">
+      {% for d in es.degraus %}<li class="degrau r-{{ d.rotulo }}">
+        <p class="d-perg">{{ d.pergunta }}</p>
+        <span class="rot r-{{ d.rotulo }}">{{ d.rotulo_nome }}</span>
+        <p class="d-txt">{{ d.texto }}{% if d.teste_quando %} O site confere em {{ d.teste_quando }}.{% endif %}</p>
+        {% if d.fontes %}<p class="d-fontes">{{ 'Fonte' if d.fontes|length == 1 else 'Fontes' }}: {% for f in d.fontes %}{% if f.url %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.quem }}</a>{% else %}{{ f.quem }}{% endif %}{% if not f.conferida %} <span class="ac">(a conferir)</span>{% endif %}{{ '; ' if not loop.last }}{% endfor %}</p>{% endif %}
+        {% if d.mais %}<p class="d-mais"><a href="{{ d.mais.url }}">{{ d.mais.texto }}</a></p>{% endif %}
+        {% if d.link %}<p class="d-mais"><a href="{{ d.link.url }}">{{ d.link.texto }}</a></p>{% endif %}
+      </li>{% endfor %}
+    </ol>
+    {% if es.url %}<p class="fundo-pe">Esta escada faz parte de uma pergunta maior: <a href="{{ es.url }}">{{ es.pergunta }}</a></p>{% endif %}
+  </details>
+  {% endif %}
   {% if pr %}
   {% if caixa_fechada %}<details class="conta" aria-label="Pressão das notícias">
     <summary class="conta-cab"><h3>Para onde as notícias empurram</h3></summary>{% else %}

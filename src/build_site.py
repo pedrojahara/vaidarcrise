@@ -23,6 +23,7 @@ import calendario  # noqa: E402
 import ritmo  # noqa: E402
 import model  # noqa: E402
 import og_image  # noqa: E402
+import base_site  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -535,13 +536,19 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
         paragrafos = []
         autoria = "O texto do dia não saiu. Ficam a direção do risco e as notícias, organizadas pelo programa."
     link = f"/{dia}/"
+    escada = None
+    if p.get("ok") and p.get("escada"):
+        try:  # o "Entenda a fundo" vem de base/ e não pode derrubar o post
+            escada = base_site.escada_ctx(p, cfg, com_links)
+        except (KeyError, OSError, ValueError, TypeError) as e:
+            print(f"aviso: a escada do post de {dia} não foi montada ({e!r})")
     zap = None
     if tipo in ("semana", "mes"):
         zap = "https://wa.me/?text=" + quote(f"{titulo} {SITE}{link}")
     return {"dia": dia, "data_extenso": data_extenso(dia), "titulo": titulo, "paragrafos": paragrafos, "secoes": secoes,
             "tipo": tipo, "tipo_nome": TIPOS_POST[tipo], "zap": zap,
             "autoria": autoria, "direcao": d["estado"], "llm": bool(p.get("ok")),
-            "pressao": pressao_ctx(rodada, eventos, cfg), "link": link,
+            "pressao": pressao_ctx(rodada, eventos, cfg), "link": link, "escada": escada,
             "registro": f"{REPO}/blob/main/runs/{rodada['id']}.json", "llm_ok": rodada["llm"]["ok"]}
 
 
@@ -704,6 +711,12 @@ def main() -> None:
             shutil.rmtree(DOCS / pasta)
     shutil.copy(DOCS / "og" / f"{dia}.png", DOCS / "og.png")
 
+    try:
+        perguntas = base_site.gravar(gravar, ctx, cfg, DOCS, SITE, com_links)
+    except (KeyError, OSError, ValueError, TypeError) as e:  # a base não pode derrubar a atualização do dia
+        perguntas = []
+        print(f"aviso: as páginas de /perguntas/ não foram refeitas ({e!r})")
+
     met = ('<p class="intro-met">Esta página é para quem quer conferir ou refazer a conta, com as fórmulas e os testes. '
            'A versão curta está em <a href="/nota/">Como funciona</a>.</p>\n'
            + markdown.markdown((ROOT / "METODOLOGIA.md").read_text(), extensions=["tables", "toc"]))
@@ -722,7 +735,7 @@ def main() -> None:
     (DOCS / ".nojekyll").touch()
     (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /posts/\nSitemap: {SITE}/sitemap.xml\n")
     urls = [f"{SITE}/", f"{SITE}/causas/", f"{SITE}/nota/", f"{SITE}/metodologia/"] \
-        + [f"{SITE}/{d}/" for d in dias] + [f"{SITE}{t['link']}" for t in textos]
+        + [f"{SITE}/{d}/" for d in dias] + [f"{SITE}{t['link']}" for t in textos] + [f"{SITE}{u}" for u in perguntas]
     (DOCS / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                       + "\n".join(f"<url><loc>{u}</loc></url>" for u in urls) + "\n</urlset>\n")
     print(f"site gerado em {DOCS} (direção: {ctx['dir']['estado']} {ctx['dir']['desde']})")

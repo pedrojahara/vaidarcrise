@@ -2443,14 +2443,16 @@
   "ok": true,
   "titulo": "Indústria produz 0,8% menos em setembro e cai 4,1% desde maio",
   "paragrafos": [
-   "A produção da indústria caiu 0,8% em setembro e já soma queda de 4,1% desde maio. No terceiro trimestre, as fábricas produziram 2,2% menos que no segundo, e a queda foi puxada por máquinas e equipamentos, o que mostra empresas investindo menos.",
-   "O dado pesa no PIB do trimestre, e a prévia do PIB do Banco Central já tinha caído 0,6% nos 3 meses até agosto, contra os 3 até maio. Quando uma empresa compra menos máquinas, se prepara para produzir menos e, por isso, costuma contratar menos nos meses seguintes."
+   "A produção da indústria caiu 0,8% em setembro e soma queda de 4,1% desde maio, puxada por máquinas e equipamentos, o que mostra empresas investindo menos.",
+   "Com o juro cerca de 8,4% acima da inflação esperada pelos bancos, comprar uma máquina com dinheiro emprestado fica caro, e muitas empresas adiam a compra e as contratações.",
+   "Dois estudos que compararam o Brasil com outros países ligam esse juro sobretudo à poupança baixa, principalmente a do governo, e às contas do governo. Pelo estudo do Fundo Monetário Internacional, se o Brasil poupasse como países parecidos, o juro cairia ao nível do deles."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "A produção da indústria caiu 0,8% em setembro e já soma queda de 4,1% desde maio. No terceiro trimestre, as fábricas produziram 2,2% menos que no segundo, e a queda foi puxada por máquinas e equipamentos, o que mostra empresas investindo menos.",
-     "O dado pesa no PIB do trimestre, e a prévia do PIB do Banco Central já tinha caído 0,6% nos 3 meses até agosto, contra os 3 até maio. Quando uma empresa compra menos máquinas, se prepara para produzir menos e, por isso, costuma contratar menos nos meses seguintes."
+     "A produção da indústria caiu 0,8% em setembro e soma queda de 4,1% desde maio, puxada por máquinas e equipamentos, o que mostra empresas investindo menos.",
+     "Com o juro cerca de 8,4% acima da inflação esperada pelos bancos, comprar uma máquina com dinheiro emprestado fica caro, e muitas empresas adiam a compra e as contratações.",
+     "Dois estudos que compararam o Brasil com outros países ligam esse juro sobretudo à poupança baixa, principalmente a do governo, e às contas do governo. Pelo estudo do Fundo Monetário Internacional, se o Brasil poupasse como países parecidos, o juro cairia ao nível do deles."
     ]
    }
   ],
@@ -2458,22 +2460,39 @@
   "edicao": {
    "sugestoes": [
     {
-     "trecho": "No terceiro trimestre, as fábricas produziram 2,2% menos que no segundo, puxadas por máquinas e equipamentos, o que mostra empresas investindo menos.",
-     "problema": "A frase não deixa claro o que foi puxado por máquinas e equipamentos. Do jeito que está, parece que são as fábricas, quando o que foi puxado é a queda.",
-     "como_fica": "No terceiro trimestre, as fábricas produziram 2,2% menos que no segundo, e a queda foi puxada por máquinas e equipamentos, o que mostra empresas investindo menos."
+     "trecho": "Os estudos que compararam o Brasil com outros países ligam esse juro tão alto sobretudo a duas causas.",
+     "problema": "Fato diferente dos dados e frase que não se entende sozinha. Os dados falam de um estudo só, do Fundo Monetário Internacional, de 2012, e não de vários. As duas causas ficam para a frase seguinte.",
+     "como_fica": "Um estudo do Fundo Monetário Internacional de 2012 ligou esse juro alto principalmente à inflação e às contas do governo."
     },
     {
-     "trecho": "O dado pesa no PIB do terceiro trimestre, já que a prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto, se comparados com os 3 meses até maio.",
-     "problema": "O \"já que\" cria uma relação de causa que não existe, porque o dado da indústria não pesa no PIB por causa da queda da prévia. A frase também passa de 30 palavras, e o parágrafo passa de 50.",
-     "como_fica": "O dado pesa no PIB do trimestre, e a prévia do PIB do Banco Central já tinha caído 0,6% nos 3 meses até agosto, contra os 3 até maio."
+     "trecho": "O país poupa pouco, e quem empresta ao governo duvida que a dívida dele pare de crescer.",
+     "problema": "Os dados não dizem que quem empresta ao governo duvida da dívida. Também falta o \"e daí\": segundo o estudo, o juro pode cair se o país poupar mais.",
+     "como_fica": "Pelo estudo, ele pode cair ao nível de outros emergentes se o país poupar tanto quanto eles, sobretudo o governo."
     },
     {
-     "trecho": "Quando uma empresa compra menos máquinas, ela se prepara para produzir menos, e por isso costuma contratar menos nos meses seguintes.",
-     "problema": "Pequeno corte para o parágrafo caber em 50 palavras, sem perder a ligação com o emprego.",
-     "como_fica": "Quando uma empresa compra menos máquinas, se prepara para produzir menos e, por isso, costuma contratar menos nos meses seguintes."
+     "trecho": "Com o juro cerca de 8,4% acima da inflação esperada, comprar uma máquina com dinheiro emprestado fica caro, e muitas empresas adiam a compra e, com ela, as contratações.",
+     "problema": "Falta dizer quem espera essa inflação. A frase passaria de 30 palavras com o acréscimo, por isso \"e, com ela,\" sai.",
+     "como_fica": "Com o juro cerca de 8,4% acima da inflação esperada pelos bancos, comprar uma máquina com dinheiro emprestado fica caro, e muitas empresas adiam a compra e as contratações."
     }
    ],
-   "aplicada": true
+   "sugestoes_escada": [
+    {
+     "trecho": "Quando a Selic sobe, os bancos cobram mais pelo cartão, pelo empréstimo e pelo financiamento. As lojas vendem menos e encomendam menos das fábricas, e as empresas adiam a compra de máquinas.",
+     "problema": "Falta quem paga e o elo do meio: não diz de quem o banco cobra mais nem por que as lojas vendem menos.",
+     "como_fica": "Quando a Selic sobe, os bancos cobram mais das pessoas e das empresas pelo cartão, pelo empréstimo e pelo financiamento. Quem compra a prazo compra menos, por isso as lojas vendem menos e encomendam menos das fábricas, e as empresas adiam a compra de máquinas."
+    },
+    {
+     "trecho": "Em setembro, era o maior do mundo num ranking de duas consultorias.",
+     "problema": "A frase não se entende sozinha, porque não diz o que era o maior do mundo. Também falta a fonte do número.",
+     "como_fica": "Em setembro, o Brasil tinha o maior juro do mundo por essa conta, no ranking das consultorias MoneYou e Lev Intelligence."
+    },
+    {
+     "trecho": "o próprio juro alto aumentando a dívida",
+     "problema": "Não diz de quem é a dívida nem como o juro faz a dívida crescer.",
+     "como_fica": "o próprio juro alto, que aumenta a dívida do governo, porque cerca de metade dela acompanha a Selic"
+    }
+   ],
+   "aplicada": "à mão, sugestão por sugestão, sem mudar fato nem número"
   },
   "meta": [
    {
@@ -2501,6 +2520,97 @@
     ],
     "permission_denials": [],
     "session_id": "b407d97a-e95b-4335-9c6b-b55ea554f6c4"
+   }
+  ],
+  "versao_anterior": {
+   "titulo": "Indústria produz 0,8% menos em setembro e cai 4,1% desde maio",
+   "paragrafos": [
+    "A produção da indústria caiu 0,8% em setembro e já soma queda de 4,1% desde maio. No terceiro trimestre, as fábricas produziram 2,2% menos que no segundo, e a queda foi puxada por máquinas e equipamentos, o que mostra empresas investindo menos.",
+    "O dado pesa no PIB do trimestre, e a prévia do PIB do Banco Central já tinha caído 0,6% nos 3 meses até agosto, contra os 3 até maio. Quando uma empresa compra menos máquinas, se prepara para produzir menos e, por isso, costuma contratar menos nos meses seguintes."
+   ],
+   "edicao": {
+    "sugestoes": [
+     {
+      "trecho": "No terceiro trimestre, as fábricas produziram 2,2% menos que no segundo, puxadas por máquinas e equipamentos, o que mostra empresas investindo menos.",
+      "problema": "A frase não deixa claro o que foi puxado por máquinas e equipamentos. Do jeito que está, parece que são as fábricas, quando o que foi puxado é a queda.",
+      "como_fica": "No terceiro trimestre, as fábricas produziram 2,2% menos que no segundo, e a queda foi puxada por máquinas e equipamentos, o que mostra empresas investindo menos."
+     },
+     {
+      "trecho": "O dado pesa no PIB do terceiro trimestre, já que a prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto, se comparados com os 3 meses até maio.",
+      "problema": "O \"já que\" cria uma relação de causa que não existe, porque o dado da indústria não pesa no PIB por causa da queda da prévia. A frase também passa de 30 palavras, e o parágrafo passa de 50.",
+      "como_fica": "O dado pesa no PIB do trimestre, e a prévia do PIB do Banco Central já tinha caído 0,6% nos 3 meses até agosto, contra os 3 até maio."
+     },
+     {
+      "trecho": "Quando uma empresa compra menos máquinas, ela se prepara para produzir menos, e por isso costuma contratar menos nos meses seguintes.",
+      "problema": "Pequeno corte para o parágrafo caber em 50 palavras, sem perder a ligação com o emprego.",
+      "como_fica": "Quando uma empresa compra menos máquinas, se prepara para produzir menos e, por isso, costuma contratar menos nos meses seguintes."
+     }
+    ],
+    "aplicada": true
+   },
+   "trocado_em": "2026-11-07",
+   "motivo": "Fase 0 da base de conhecimento: o fato do dia ganhou a escada de porquês, a pedido do Pedro em 7/11/2026."
+  },
+  "paragrafos_afirmacoes": [
+   [
+    "a-industria"
+   ],
+   [
+    "a-juro-real-hoje",
+    "a-freio"
+   ],
+   [
+    "a-fmi-poupanca",
+    "a-ghs-tradicionais"
+   ]
+  ],
+  "pergunta": "juro-alto",
+  "escada": [
+   {
+    "pergunta": "Por que o juro alto faz a indústria produzir menos?",
+    "rotulo": "consenso",
+    "texto": "Quando a Selic sobe, os bancos cobram mais das pessoas e das empresas pelo cartão, pelo empréstimo e pelo financiamento. Quem compra a prazo compra menos, por isso as lojas vendem menos e encomendam menos das fábricas, e as empresas adiam a compra de máquinas.",
+    "afirmacoes": [
+     "a-bc-selic",
+     "a-freio"
+    ],
+    "link": {
+     "texto": "O freio do juro, desenhado, na aba O que causa recessão",
+     "url": "/causas/#t-freio"
+    }
+   },
+   {
+    "pergunta": "O juro do Brasil é alto mesmo?",
+    "rotulo": "fato",
+    "texto": "Com a Selic em 13,75% e os bancos (Focus) esperando inflação de 5,0% em 12 meses, o juro fica cerca de 8,4% acima da inflação esperada. Em setembro, por essa conta, o Brasil tinha o maior juro do mundo no ranking das consultorias MoneYou e Lev Intelligence.",
+    "afirmacoes": [
+     "a-juro-real-hoje",
+     "a-ranking"
+    ]
+   },
+   {
+    "pergunta": "Por que o Brasil precisa de um juro tão maior que o de outros países?",
+    "rotulo": "maioria_com_dissenso",
+    "texto": "A maioria dos estudos dá mais peso a duas causas. O Brasil poupa pouco, sobretudo o governo, e por isso sobra pouco dinheiro para emprestar. E quem empresta ao governo duvida que a dívida dele pare de crescer, por isso cobra mais.",
+    "afirmacoes": [
+     "a-fmi-poupanca",
+     "a-ghs-tradicionais",
+     "a-blanchard",
+     "a-usp-neutro"
+    ],
+    "liga": "d-nivel"
+   },
+   {
+    "pergunta": "Quem discorda?",
+    "rotulo": "maioria_com_dissenso",
+    "texto": "Outras leituras apontam o crédito com juro definido pelo governo, a correção dos preços pela inflação passada e o próprio juro alto. Cerca de metade da dívida do governo acompanha a Selic, e por isso o juro alto também aumenta a dívida. Os estudos mostram que essas leituras explicam pedaços, foram pouco testadas ou não se confirmaram.",
+    "afirmacoes": [
+     "a-bonomo-martins",
+     "a-fmi-sobra",
+     "a-metade-selic",
+     "a-ghs"
+    ],
+    "liga": "d-nivel"
    }
   ]
  }
