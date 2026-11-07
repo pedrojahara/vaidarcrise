@@ -60,11 +60,11 @@ cd ../vaidarcrise-fase0
 python3 -m venv .venv && .venv/bin/pip install -q -r requirements.txt pypdf
 
 .venv/bin/python src/verifica_base.py                    # confere dados, trechos e regras
-.venv/bin/python src/pesquisa_base.py teste --aplicar    # teste das moedas com a Ptax (sem IA)
+.venv/bin/python src/pesquisa_base.py teste --aplicar    # teste das moedas com a Ptax (sem IA; só a partir de 7/12/2026)
 .venv/bin/python src/pesquisa_base.py trechos --aplicar  # agente acha o trecho; código confere
 .venv/bin/python src/verifica_base.py                    # de novo, com os trechos novos
 .venv/bin/python src/pesquisa_base.py advogado           # agente tenta derrubar cada leitura
 .venv/bin/python src/pesquisa_base.py uso                # consumo somado
 ```
 
-`pesquisa_base.py` usa `CLAUDE_BIN` (padrão `claude`) e `VDC_PESQUISA_MODELO` (padrão `opus`). Toda chamada fica em `conferencia/uso.jsonl` com tokens, buscas, segundos e o custo que o `claude -p` informa. Com assinatura, esse custo é uma estimativa do que a chamada gastaria na API, útil para comparar perguntas entre si.
+`pesquisa_base.py` usa `CLAUDE_BIN` (padrão `~/.local/bin/claude`, o do terminal do Mac) e `VDC_PESQUISA_MODELO` (padrão `opus`). Toda chamada fica em `conferencia/uso.jsonl` com tokens, buscas, segundos e o custo que o `claude -p` informa. Com assinatura, esse custo é uma estimativa do que a chamada gastaria na API, útil para comparar perguntas entre si.
