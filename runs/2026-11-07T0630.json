@@ -2506,18 +2506,18 @@
  "post": {
   "tipo": "dia",
   "ok": true,
-  "titulo": "Bradesco e duas gestoras veem PIB parado ou em queda em 2027",
+  "titulo": "Bradesco, XP e Genoa veem PIB parado ou em queda em 2027",
   "paragrafos": [
-   "O Bradesco e duas gestoras de investimentos divulgaram ontem previsões piores para 2027, com preços subindo mais rápido e a economia quase parada. Uma delas, a Genoa, fala em recessão e inflação de 6%.",
-   "As novas previsões ficam abaixo do que esperam os bancos (Focus), uma alta de 1,2% do PIB em 2027. A piora acompanha a prévia do PIB do Banco Central, que caiu 0,6% nos 3 meses até agosto, se compararmos com os 3 até maio.",
-   "Previsão assim pesa antes de se confirmar, porque empresas que esperam vender menos adiam investimentos e famílias com medo de perder renda adiam compras, o que costuma frear as contratações."
+   "O Bradesco, a corretora XP e a gestora Genoa divulgaram ontem previsões piores para 2027, e a Genoa prevê recessão e inflação de 6%.",
+   "A piora acompanha a prévia do PIB feita pelo Banco Central, que caiu 0,6% nos 3 meses até agosto, contra os 3 meses até maio.",
+   "Juro alto nem sempre termina em recessão. De 2014 a 2016, com a Selic chegando a 14,25%, o que o Brasil vende ficou mais barato, e o PIB encolheu. Em 2021 e 2022, com a Selic subindo até 13,75%, o mundo pagava caro por esses produtos, e a economia cresceu."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "O Bradesco e duas gestoras de investimentos divulgaram ontem previsões piores para 2027, com preços subindo mais rápido e a economia quase parada. Uma delas, a Genoa, fala em recessão e inflação de 6%.",
-     "As novas previsões ficam abaixo do que esperam os bancos (Focus), uma alta de 1,2% do PIB em 2027. A piora acompanha a prévia do PIB do Banco Central, que caiu 0,6% nos 3 meses até agosto, se compararmos com os 3 até maio.",
-     "Previsão assim pesa antes de se confirmar, porque empresas que esperam vender menos adiam investimentos e famílias com medo de perder renda adiam compras, o que costuma frear as contratações."
+     "O Bradesco, a corretora XP e a gestora Genoa divulgaram ontem previsões piores para 2027, e a Genoa prevê recessão e inflação de 6%.",
+     "A piora acompanha a prévia do PIB feita pelo Banco Central, que caiu 0,6% nos 3 meses até agosto, contra os 3 meses até maio.",
+     "Juro alto nem sempre termina em recessão. De 2014 a 2016, com a Selic chegando a 14,25%, o que o Brasil vende ficou mais barato, e o PIB encolheu. Em 2021 e 2022, com a Selic subindo até 13,75%, o mundo pagava caro por esses produtos, e a economia cresceu."
     ]
    }
   ],
@@ -2525,22 +2525,49 @@
   "edicao": {
    "sugestoes": [
     {
-     "trecho": "Bradesco, XP e Genoa passam a ver PIB parado ou em queda em 2027",
-     "problema": "Sigla que a leitora não conhece (XP) sem dizer o que é.",
-     "como_fica": "Bradesco, a corretora XP e a Genoa veem PIB parado ou em queda em 2027"
+     "trecho": "Bradesco e duas gestoras veem PIB parado ou em queda em 2027",
+     "problema": "Muda o fato: os dados não falam em \"PIB parado\", e a XP é corretora, não gestora. O título tem de afirmar o fato principal.",
+     "como_fica": "Bradesco, XP e Genoa pioram previsões; Genoa prevê recessão em 2027"
     },
     {
-     "trecho": "Bradesco e XP divulgaram ontem previsões piores para 2027, com preços subindo mais rápido e a economia quase parada, e a gestora Genoa prevê recessão e inflação de 6%.",
-     "problema": "Sigla XP sem dizer o que é. Com o acréscimo, a frase passaria de 30 palavras.",
-     "como_fica": "Bradesco e a corretora XP divulgaram ontem previsões piores para 2027, com preços subindo mais rápido e a economia quase parada. A gestora Genoa prevê recessão e inflação de 6%."
+     "trecho": "O Bradesco e duas gestoras de investimentos divulgaram ontem previsões piores para 2027, e uma delas, a Genoa, prevê recessão",
+     "problema": "Faltam os nomes e o tipo de empresa está errado, porque a XP é corretora. O estágio também fica vago: a Genoa passou a prever recessão.",
+     "como_fica": "O Bradesco, a corretora XP e a gestora Genoa divulgaram ontem previsões piores para 2027, e a Genoa passou a prever recessão e inflação de 6%."
     },
     {
-     "trecho": "As novas contas ficam abaixo da média dos bancos (Focus)",
-     "problema": "\"Contas\" é ambíguo: a leitora pode entender contas do governo. Diga o nome da coisa.",
-     "como_fica": "As novas previsões ficam abaixo da média dos bancos (Focus)"
+     "trecho": "De 2014 a 2016, com a Selic chegando a 14,25%, o PIB encolheu, mas em 2021 e 2022, com a Selic subindo até 13,75%, a economia cresceu.",
+     "problema": "Os dois casos não são comparados pela mesma linha, e a frase não diz o que mudou o final, por isso \"nem sempre\" fica sem explicação.",
+     "como_fica": "De 2014 a 2016, com a Selic chegando a 14,25%, a economia já estava no limite, e o PIB encolheu. Em 2021 e 2022, com a Selic subindo até 13,75%, havia gente parada para voltar ao trabalho, e a economia cresceu."
     }
    ],
-   "aplicada": true
+   "sugestoes_escada": [
+    {
+     "trecho": "O IBGE divulga o PIB do terceiro trimestre em 2/12, e o número vai mostrar se a queda da prévia se confirma.",
+     "problema": "A frase não se entende sozinha: o texto não tinha falado de prévia nenhuma, e a leitora não sabe que prévia é essa.",
+     "como_fica": "O IBGE divulga o PIB do terceiro trimestre em 2/12, e o número vai mostrar se a queda da prévia do PIB feita pelo Banco Central se confirma."
+    },
+    {
+     "trecho": "Porque o juro está cerca de 8,4% acima da inflação esperada, o que deixa caro comprar a prazo e investir.",
+     "problema": "Falta dizer quem: qual juro, quem espera essa inflação e quem acha caro comprar a prazo e investir.",
+     "como_fica": "Porque a Selic está cerca de 8,4% acima da inflação que os bancos esperam, o que deixa caro para as famílias comprarem a prazo e para as empresas investirem."
+    },
+    {
+     "trecho": "A indústria produz 4,1% menos que em maio, e as empresas tiveram o pior setembro de vagas com carteira já registrado.",
+     "problema": "O fato vem sem o e daí: falta dizer o que esses números querem dizer para a leitora.",
+     "como_fica": "A indústria produz 4,1% menos que em maio, e as empresas tiveram o pior setembro de vagas com carteira já registrado, dois sinais de que a economia já está mais fraca."
+    },
+    {
+     "trecho": "De 2014 a 2016, a economia já estava no limite, a soja, o minério e o petróleo ficaram mais baratos, e as contas do governo pioraram.",
+     "problema": "Os dois casos não respondem às mesmas perguntas: o juro aparece em 2021 e 2022, mas não aqui. A causa de fora também não é chamada de causa de fora.",
+     "como_fica": "De 2013 a 2016, a Selic subiu de 7,25% para 14,25%, numa economia que já estava no limite. Lá fora, a soja, o minério e o petróleo que o Brasil vende ficaram mais baratos, e aqui as contas do governo pioraram."
+    },
+    {
+     "trecho": "O Banco Central decide o juro de novo em 9/12.",
+     "problema": "A data vem sem o e daí: falta dizer o que está em jogo nessa decisão.",
+     "como_fica": "Em 9/12, o Banco Central decide se mantém a Selic em 13,75% ou se muda o juro."
+    }
+   ],
+   "aplicada": "à mão, sugestão por sugestão, sem mudar fato nem número"
   },
   "meta": [
    {
@@ -2581,6 +2608,94 @@
     ],
     "permission_denials": [],
     "session_id": "41fbd269-b02f-4cb3-9938-4ba0a11704e5"
+   }
+  ],
+  "versao_anterior": {
+   "titulo": "Bradesco e duas gestoras veem PIB parado ou em queda em 2027",
+   "paragrafos": [
+    "O Bradesco e duas gestoras de investimentos divulgaram ontem previsões piores para 2027, com preços subindo mais rápido e a economia quase parada. Uma delas, a Genoa, fala em recessão e inflação de 6%.",
+    "As novas previsões ficam abaixo do que esperam os bancos (Focus), uma alta de 1,2% do PIB em 2027. A piora acompanha a prévia do PIB do Banco Central, que caiu 0,6% nos 3 meses até agosto, se compararmos com os 3 até maio.",
+    "Previsão assim pesa antes de se confirmar, porque empresas que esperam vender menos adiam investimentos e famílias com medo de perder renda adiam compras, o que costuma frear as contratações."
+   ],
+   "edicao": {
+    "sugestoes": [
+     {
+      "trecho": "Bradesco, XP e Genoa passam a ver PIB parado ou em queda em 2027",
+      "problema": "Sigla que a leitora não conhece (XP) sem dizer o que é.",
+      "como_fica": "Bradesco, a corretora XP e a Genoa veem PIB parado ou em queda em 2027"
+     },
+     {
+      "trecho": "Bradesco e XP divulgaram ontem previsões piores para 2027, com preços subindo mais rápido e a economia quase parada, e a gestora Genoa prevê recessão e inflação de 6%.",
+      "problema": "Sigla XP sem dizer o que é. Com o acréscimo, a frase passaria de 30 palavras.",
+      "como_fica": "Bradesco e a corretora XP divulgaram ontem previsões piores para 2027, com preços subindo mais rápido e a economia quase parada. A gestora Genoa prevê recessão e inflação de 6%."
+     },
+     {
+      "trecho": "As novas contas ficam abaixo da média dos bancos (Focus)",
+      "problema": "\"Contas\" é ambíguo: a leitora pode entender contas do governo. Diga o nome da coisa.",
+      "como_fica": "As novas previsões ficam abaixo da média dos bancos (Focus)"
+     }
+    ],
+    "aplicada": true
+   },
+   "trocado_em": "2026-11-07",
+   "motivo": "Fase 0 da base de conhecimento: o fato do dia ganhou a escada de porquês, a pedido do Pedro em 7/11/2026."
+  },
+  "paragrafos_afirmacoes": [
+   [
+    "a-previsoes-2027"
+   ],
+   [
+    "a-previa-pib"
+   ],
+   [
+    "a-caso-2014",
+    "a-caso-2021"
+   ]
+  ],
+  "pergunta": "juro-alto",
+  "escada": [
+   {
+    "pergunta": "Por que as previsões pioraram?",
+    "rotulo": "consenso",
+    "texto": "Porque o juro está cerca de 8,4% acima da inflação que os bancos esperam, o que deixa caro para as famílias comprar a prazo e para as empresas investir. A indústria produz 4,1% menos que em maio, e as empresas tiveram o pior setembro de vagas com carteira já registrado, dois sinais de que a economia perdeu força.",
+    "afirmacoes": [
+     "a-juro-real-hoje",
+     "a-freio",
+     "a-industria",
+     "a-caged"
+    ],
+    "liga": "o_que_vem_depois"
+   },
+   {
+    "pergunta": "O que mais pesou de 2014 a 2016?",
+    "rotulo": "consenso",
+    "texto": "A Selic começou a subir em 2013, quando o desemprego estava em 6,2%, o menor até então, e chegou a 14,25%. As contas do governo também pioraram, e o PIB encolheu de 2014 a 2016.",
+    "afirmacoes": [
+     "a-caso-2014",
+     "a-caso-2014-emprego"
+    ]
+   },
+   {
+    "pergunta": "E o que foi diferente em 2021 e 2022?",
+    "rotulo": "consenso",
+    "texto": "A Selic subiu de 2% para 13,75%, mas havia gente parada para voltar ao trabalho depois da pandemia, e o governo arrecadou mais do que gastou, sem contar os juros. A economia cresceu nos dois anos.",
+    "afirmacoes": [
+     "a-caso-2021",
+     "a-caso-2021-contas"
+    ],
+    "link": {
+     "texto": "Os dois casos lado a lado, na aba O que causa recessão",
+     "url": "/causas/#t-casos"
+    }
+   },
+   {
+    "pergunta": "O que vem agora?",
+    "rotulo": "fato",
+    "texto": "O IBGE divulga o PIB do terceiro trimestre em 2/12, e o número vai mostrar se a queda da prévia feita pelo Banco Central se confirma. Em 9/12, o Banco Central decide se mantém a Selic em 13,75% ou se muda o juro.",
+    "afirmacoes": [
+     "a-datas",
+     "a-selic-hoje"
+    ]
    }
   ]
  }

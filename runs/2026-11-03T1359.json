@@ -2387,16 +2387,16 @@
   "ok": true,
   "titulo": "Petróleo cai quase 8% lá fora com sinal de negociação entre EUA e Irã",
   "paragrafos": [
-   "O petróleo ficou quase 8% mais barato lá fora com sinais de que EUA e Irã podem negociar a paz, mas ainda não há acordo.",
-   "Com o barril mais barato, o diesel e a gasolina podem baratear aqui, e o frete e a comida chegariam mais baratos ao mercado nos meses seguintes.",
-   "O alívio vem de fora e chega quando os bancos (Focus) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. Já o dólar a R$ 5,49, 8,3% mais caro que no começo de agosto, encarece o combustível importado e pode reduzir esse alívio."
+   "O petróleo ficou quase 8% mais barato lá fora com sinais de que EUA e Irã podem negociar o fim da guerra, mas ainda não há acordo.",
+   "Se o barril seguir mais barato, o diesel e a gasolina importados pelo Brasil ficam mais baratos, e o frete e a comida podem baratear nos meses seguintes. O dólar a R$ 5,49, contra R$ 5,18 no fim de agosto, tira parte desse alívio, porque encarece o combustível importado.",
+   "Esse alívio de fora chega quando os bancos (Focus) esperam que os preços subam 5,0% em 12 meses, contra 4,2% no fim de julho."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "O petróleo ficou quase 8% mais barato lá fora com sinais de que EUA e Irã podem negociar a paz, mas ainda não há acordo.",
-     "Com o barril mais barato, o diesel e a gasolina podem baratear aqui, e o frete e a comida chegariam mais baratos ao mercado nos meses seguintes.",
-     "O alívio vem de fora e chega quando os bancos (Focus) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. Já o dólar a R$ 5,49, 8,3% mais caro que no começo de agosto, encarece o combustível importado e pode reduzir esse alívio."
+     "O petróleo ficou quase 8% mais barato lá fora com sinais de que EUA e Irã podem negociar o fim da guerra, mas ainda não há acordo.",
+     "Se o barril seguir mais barato, o diesel e a gasolina importados pelo Brasil ficam mais baratos, e o frete e a comida podem baratear nos meses seguintes. O dólar a R$ 5,49, contra R$ 5,18 no fim de agosto, tira parte desse alívio, porque encarece o combustível importado.",
+     "Esse alívio de fora chega quando os bancos (Focus) esperam que os preços subam 5,0% em 12 meses, contra 4,2% no fim de julho."
     ]
    }
   ],
@@ -2404,22 +2404,54 @@
   "edicao": {
    "sugestoes": [
     {
-     "trecho": "o que ainda é possibilidade, e não acordo fechado.",
-     "problema": "Construção em espelho (\"X, e não Y\") que pesa. O estágio pode ser dito de forma direta e mais curta.",
-     "como_fica": "mas ainda não há acordo."
+     "trecho": "O dólar a R$ 5,49, contra R$ 5,18 no fim de agosto, tira parte desse alívio.",
+     "problema": "Fato sem o porquê: a frase não diz como o dólar mais caro tira o alívio.",
+     "como_fica": "O dólar a R$ 5,49, contra R$ 5,18 no fim de agosto, tira parte desse alívio, porque encarece o combustível importado."
     },
     {
-     "trecho": "e o frete e a comida chegam mais baratos ao mercado nos meses seguintes.",
-     "problema": "A frase começa com \"podem baratear\" e termina como certeza. Fica mais claro que é um efeito possível.",
-     "como_fica": "e o frete e a comida chegariam mais baratos ao mercado nos meses seguintes."
+     "trecho": "Se o barril seguir mais barato, o diesel e a gasolina que o Brasil importa ficam mais baratos, e o frete e a comida podem baratear nos meses seguintes.",
+     "problema": "Parágrafo passaria de 50 palavras com a explicação do dólar. Dá para enxugar sem perder o sentido.",
+     "como_fica": "Se o barril seguir mais barato, o diesel e a gasolina importados pelo Brasil ficam mais baratos, e o frete e a comida podem baratear nos meses seguintes."
     },
     {
-     "trecho": "Esse alívio vem de fora do país e chega quando os bancos (Focus) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. O dólar a R$ 5,49,",
-     "problema": "As duas frases estavam soltas e o texto passava de 100 palavras. \"Já\" liga o dólar ao alívio do petróleo, e \"de fora\" basta para dizer que é causa de fora.",
-     "como_fica": "O alívio vem de fora e chega quando os bancos (Focus) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. Já o dólar a R$ 5,49,"
+     "trecho": "contra 4,2% em julho",
+     "problema": "Comparação sem dizer o momento exato do mês, como está nos dados (fim de julho).",
+     "como_fica": "contra 4,2% no fim de julho"
+    },
+    {
+     "trecho": "O alívio vem de fora e chega com os bancos (Focus) esperando preços 5,0% mais altos em 12 meses",
+     "problema": "Frase truncada e ambígua: \"preços 5,0% mais altos\" soa como preço que já subiu, não como o que os bancos esperam que suba.",
+     "como_fica": "Esse alívio de fora chega quando os bancos (Focus) esperam que os preços subam 5,0% em 12 meses"
     }
    ],
-   "aplicada": true
+   "sugestoes_escada": [
+    {
+     "trecho": "Por isso o dólar mais caro tira parte do alívio.",
+     "problema": "A frase não se entende sozinha: falta dizer qual alívio, quem paga e que é uma condição. Os dados não dizem que o dólar subiu.",
+     "como_fica": "Por isso, o petróleo mais barato lá fora pode baratear o diesel e a gasolina aqui, mas, se o dólar subir, parte desse alívio se perde."
+    },
+    {
+     "trecho": "quem importa paga o preço de lá fora, em dólar",
+     "problema": "Falta dizer quem é que importa.",
+     "como_fica": "as empresas que compram esse combustível de outros países pagam o preço de lá, em dólar"
+    },
+    {
+     "trecho": "Os bancos (Focus) esperam 5,0% em 12 meses",
+     "problema": "O número vem sem comparação com um mês, não diz o que sobe e não está arredondado.",
+     "como_fica": "No fim de outubro, os bancos (Focus) esperavam que os preços subissem 5% nos 12 meses seguintes, contra 4,2% no fim de julho."
+    },
+    {
+     "trecho": "e combustível mais barato ajuda a segurar essa conta.",
+     "problema": "Falta o 'e daí' para o bolso: a Selic influencia o juro do empréstimo.",
+     "como_fica": "Combustível mais barato ajuda a segurar essa conta, e ela pesa na Selic, que influencia o juro que os bancos cobram de quem pega empréstimo ou financiamento."
+    },
+    {
+     "trecho": "No começo de novembro, caiu quase 8% com sinais de que EUA e Irã podem negociar. É uma causa de fora.",
+     "problema": "Frases curtas empilhadas. Também falta dizer em que pé está a negociação: ainda não há acordo.",
+     "como_fica": "No começo de novembro, caiu quase 8% com sinais de que EUA e Irã podem negociar o fim da guerra, ainda sem acordo, o que é uma causa de fora do Brasil."
+    }
+   ],
+   "aplicada": "à mão, sugestão por sugestão, sem mudar fato nem número"
   },
   "meta": [
    {
@@ -2449,6 +2481,80 @@
     ],
     "permission_denials": [],
     "session_id": "bbbe5df3-780b-46c3-8d5f-df20f5f0ef29"
+   }
+  ],
+  "versao_anterior": {
+   "titulo": "Petróleo cai quase 8% lá fora com sinal de negociação entre EUA e Irã",
+   "paragrafos": [
+    "O petróleo ficou quase 8% mais barato lá fora com sinais de que EUA e Irã podem negociar a paz, mas ainda não há acordo.",
+    "Com o barril mais barato, o diesel e a gasolina podem baratear aqui, e o frete e a comida chegariam mais baratos ao mercado nos meses seguintes.",
+    "O alívio vem de fora e chega quando os bancos (Focus) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. Já o dólar a R$ 5,49, 8,3% mais caro que no começo de agosto, encarece o combustível importado e pode reduzir esse alívio."
+   ],
+   "edicao": {
+    "sugestoes": [
+     {
+      "trecho": "o que ainda é possibilidade, e não acordo fechado.",
+      "problema": "Construção em espelho (\"X, e não Y\") que pesa. O estágio pode ser dito de forma direta e mais curta.",
+      "como_fica": "mas ainda não há acordo."
+     },
+     {
+      "trecho": "e o frete e a comida chegam mais baratos ao mercado nos meses seguintes.",
+      "problema": "A frase começa com \"podem baratear\" e termina como certeza. Fica mais claro que é um efeito possível.",
+      "como_fica": "e o frete e a comida chegariam mais baratos ao mercado nos meses seguintes."
+     },
+     {
+      "trecho": "Esse alívio vem de fora do país e chega quando os bancos (Focus) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. O dólar a R$ 5,49,",
+      "problema": "As duas frases estavam soltas e o texto passava de 100 palavras. \"Já\" liga o dólar ao alívio do petróleo, e \"de fora\" basta para dizer que é causa de fora.",
+      "como_fica": "O alívio vem de fora e chega quando os bancos (Focus) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. Já o dólar a R$ 5,49,"
+     }
+    ],
+    "aplicada": true
+   },
+   "trocado_em": "2026-11-07",
+   "motivo": "Fase 0 da base de conhecimento: o fato do dia ganhou a escada de porquês, a pedido do Pedro em 7/11/2026."
+  },
+  "paragrafos_afirmacoes": [
+   [
+    "a-ev-petroleo-paz"
+   ],
+   [
+    "a-importa-combustivel",
+    "a-dolar-0311"
+   ],
+   [
+    "a-focus-jul-out"
+   ]
+  ],
+  "pergunta": "juro-alto",
+  "escada": [
+   {
+    "pergunta": "Por que o petróleo caiu?",
+    "rotulo": "fato",
+    "texto": "O barril tinha subido mais de 14% em outubro com a guerra no Irã. No começo de novembro, caiu quase 8% com sinais de que EUA e Irã podem negociar o fim da guerra, ainda sem acordo. É uma causa de fora do Brasil.",
+    "afirmacoes": [
+     "a-ev-petroleo-outubro",
+     "a-ev-petroleo-paz"
+    ]
+   },
+   {
+    "pergunta": "Por que isso mexe com o preço aqui?",
+    "rotulo": "fato",
+    "texto": "O Brasil importa parte do diesel e da gasolina que usa, e as empresas que compram esse combustível de outros países pagam o preço de lá, em dólar. Por isso o petróleo mais barato lá fora pode baratear o combustível aqui, e o dólar mais caro tira parte desse alívio.",
+    "afirmacoes": [
+     "a-importa-combustivel",
+     "a-dolar-0311"
+    ]
+   },
+   {
+    "pergunta": "E o que isso tem a ver com o juro?",
+    "rotulo": "consenso",
+    "texto": "O Banco Central decide a Selic olhando quanto os preços devem subir. No fim de outubro, os bancos (Focus) esperavam 5,0% em 12 meses, acima do teto da meta de inflação, de 4,5%, e combustível mais barato ajuda a segurar essa conta. E a Selic é a base do juro que os bancos cobram no empréstimo e no financiamento.",
+    "afirmacoes": [
+     "a-focus-jul-out",
+     "a-meta",
+     "a-bc-selic"
+    ],
+    "liga": "causa_imediata"
    }
   ]
  }

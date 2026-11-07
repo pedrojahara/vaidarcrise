@@ -2397,18 +2397,18 @@
  "post": {
   "tipo": "dia",
   "ok": true,
-  "titulo": "Brasil abre 121,3 mil vagas com carteira, o pior setembro da série",
+  "titulo": "Brasil abre 121,3 mil vagas com carteira, o pior setembro já visto",
   "paragrafos": [
-   "As empresas abriram 121,3 mil vagas com carteira em setembro, o pior setembro já registrado. Foram 43% menos vagas que em setembro de 2025, sinal de que o juro alto freia as contratações.",
-   "Com a Selic mantida ontem pelo Banco Central em 13,75%, os bancos cobram caro de quem compra a prazo, e as lojas vendem e contratam menos. O desemprego ficou em 5,2% no trimestre até setembro, abaixo dos 5,4% até junho, mas menos vagas freiam a renda e o consumo.",
-   "Hoje o IBGE divulga a produção industrial de setembro, que mostra se as fábricas também perderam ritmo."
+   "As empresas abriram 121,3 mil vagas com carteira em setembro, o pior setembro já registrado e 43% menos que em setembro de 2025.",
+   "Isso costuma acontecer com juro alto, porque, quando a Selic sobe, os bancos cobram mais de quem compra a prazo, e as lojas vendem e contratam menos.",
+   "Em 4/11, o Banco Central parou os cortes que fazia desde março e manteve a Selic em 13,75%, o que deixa caros o cartão e o financiamento. Os bancos (Focus) passaram a esperar que os preços subam 5,0% em 12 meses, contra 4,2% no fim de julho."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "As empresas abriram 121,3 mil vagas com carteira em setembro, o pior setembro já registrado. Foram 43% menos vagas que em setembro de 2025, sinal de que o juro alto freia as contratações.",
-     "Com a Selic mantida ontem pelo Banco Central em 13,75%, os bancos cobram caro de quem compra a prazo, e as lojas vendem e contratam menos. O desemprego ficou em 5,2% no trimestre até setembro, abaixo dos 5,4% até junho, mas menos vagas freiam a renda e o consumo.",
-     "Hoje o IBGE divulga a produção industrial de setembro, que mostra se as fábricas também perderam ritmo."
+     "As empresas abriram 121,3 mil vagas com carteira em setembro, o pior setembro já registrado e 43% menos que em setembro de 2025.",
+     "Isso costuma acontecer com juro alto, porque, quando a Selic sobe, os bancos cobram mais de quem compra a prazo, e as lojas vendem e contratam menos.",
+     "Em 4/11, o Banco Central parou os cortes que fazia desde março e manteve a Selic em 13,75%, o que deixa caros o cartão e o financiamento. Os bancos (Focus) passaram a esperar que os preços subam 5,0% em 12 meses, contra 4,2% no fim de julho."
     ]
    }
   ],
@@ -2416,27 +2416,39 @@
   "edicao": {
    "sugestoes": [
     {
-     "trecho": "Com a Selic mantida em 13,75% pelo Banco Central, a compra a prazo segue cara",
-     "problema": "A frase não diz quem cobra de quem nem quando foi a decisão. Falta quem faz o quê e para quem, e falta o estágio do fato (decisão tomada ontem).",
-     "como_fica": "Com a Selic mantida ontem pelo Banco Central em 13,75%, os bancos cobram caro de quem compra a prazo"
+     "trecho": "Ontem o Banco Central manteve a Selic em 13,75%",
+     "problema": "A frase precisa se entender sozinha e com a data certa. A decisão saiu em 4/11, não ontem.",
+     "como_fica": "Em 4/11, o Banco Central parou os cortes que fazia desde março e manteve a Selic em 13,75%"
     },
     {
-     "trecho": "O desemprego segue baixo, em 5,2% no trimestre até setembro",
-     "problema": "O número está sem comparação com um mês. Os dados trazem 5,4% no trimestre até junho.",
-     "como_fica": "O desemprego ficou em 5,2% no trimestre até setembro, abaixo dos 5,4% até junho"
+     "trecho": "já que os bancos (Focus) esperam preços 5,0% mais altos em 12 meses",
+     "problema": "Acrescenta um motivo para a decisão do Banco Central que não está nos dados. O número também vem sem o mês da comparação e sem arredondar.",
+     "como_fica": "Os bancos (Focus) passaram a esperar que os preços subam 5% em 12 meses, contra 4,2% no fim de julho."
     },
     {
-     "trecho": "mas menos vagas abertas freiam a renda que sustenta o consumo das famílias",
-     "problema": "O parágrafo passava de 50 palavras depois de entrar a comparação. Dá para enxugar sem perder o \"e daí\".",
-     "como_fica": "mas menos vagas freiam a renda e o consumo"
-    },
-    {
-     "trecho": "o pior setembro desde o começo da série",
-     "problema": "\"Série\" é palavra de jornal de economia, e cortar aqui ajuda a manter o texto em até 100 palavras.",
-     "como_fica": "o pior setembro já registrado"
+     "trecho": "manteve a Selic em 13,75% e parou os cortes que fazia desde março",
+     "problema": "O fato vem sem o \"e daí\": não diz o que a decisão muda para quem compra a prazo.",
+     "como_fica": "manteve a Selic em 13,75%, o que deixa caros o cartão e o financiamento."
     }
    ],
-   "aplicada": true
+   "sugestoes_escada": [
+    {
+     "trecho": "Os bancos (Focus) esperavam 4,2% em julho e passaram a esperar 5,0% no fim de outubro, acima do teto da meta de inflação, de 4,5%.",
+     "problema": "Não diz o que os 4,2% e os 5,0% medem (quanto os preços vão subir em 12 meses), o mês está vago (os dados dizem fim de julho) e tem números demais numa frase só. O número deve ser arredondado.",
+     "como_fica": "Os bancos (Focus) esperavam, no fim de julho, que os preços subissem 4,2% nos 12 meses seguintes, e no fim de outubro passaram a esperar 5%. Isso fica acima de 4,5%, o teto da meta de inflação."
+    },
+    {
+     "trecho": "Porque a inflação esperada voltou a subir. Os bancos (Focus) esperavam",
+     "problema": "Frases curtas empilhadas. A resposta e o dado que a sustenta formam uma ideia só.",
+     "como_fica": "Porque a inflação esperada voltou a subir: os bancos (Focus) esperavam, no fim de julho, que..."
+    },
+    {
+     "trecho": "Quando a Selic sobe, os bancos cobram mais pelo cartão, pelo empréstimo e pelo financiamento. Quem compra a prazo compra menos",
+     "problema": "Não diz de quem o banco cobra, e a causa e o efeito estão em frases soltas, sem um conector que as ligue.",
+     "como_fica": "Quando a Selic sobe, os bancos cobram mais das pessoas pelo cartão, pelo empréstimo e pelo financiamento. Por isso quem compra a prazo compra menos, e as lojas, que passam a vender menos, contratam menos."
+    }
+   ],
+   "aplicada": "à mão, sugestão por sugestão, sem mudar fato nem número"
   },
   "meta": [
    {
@@ -2464,6 +2476,90 @@
     ],
     "permission_denials": [],
     "session_id": "48ec2b24-e2e7-4e8d-8831-1d0ee3f795ec"
+   }
+  ],
+  "versao_anterior": {
+   "titulo": "Brasil abre 121,3 mil vagas com carteira, o pior setembro da série",
+   "paragrafos": [
+    "As empresas abriram 121,3 mil vagas com carteira em setembro, o pior setembro já registrado. Foram 43% menos vagas que em setembro de 2025, sinal de que o juro alto freia as contratações.",
+    "Com a Selic mantida ontem pelo Banco Central em 13,75%, os bancos cobram caro de quem compra a prazo, e as lojas vendem e contratam menos. O desemprego ficou em 5,2% no trimestre até setembro, abaixo dos 5,4% até junho, mas menos vagas freiam a renda e o consumo.",
+    "Hoje o IBGE divulga a produção industrial de setembro, que mostra se as fábricas também perderam ritmo."
+   ],
+   "edicao": {
+    "sugestoes": [
+     {
+      "trecho": "Com a Selic mantida em 13,75% pelo Banco Central, a compra a prazo segue cara",
+      "problema": "A frase não diz quem cobra de quem nem quando foi a decisão. Falta quem faz o quê e para quem, e falta o estágio do fato (decisão tomada ontem).",
+      "como_fica": "Com a Selic mantida ontem pelo Banco Central em 13,75%, os bancos cobram caro de quem compra a prazo"
+     },
+     {
+      "trecho": "O desemprego segue baixo, em 5,2% no trimestre até setembro",
+      "problema": "O número está sem comparação com um mês. Os dados trazem 5,4% no trimestre até junho.",
+      "como_fica": "O desemprego ficou em 5,2% no trimestre até setembro, abaixo dos 5,4% até junho"
+     },
+     {
+      "trecho": "mas menos vagas abertas freiam a renda que sustenta o consumo das famílias",
+      "problema": "O parágrafo passava de 50 palavras depois de entrar a comparação. Dá para enxugar sem perder o \"e daí\".",
+      "como_fica": "mas menos vagas freiam a renda e o consumo"
+     },
+     {
+      "trecho": "o pior setembro desde o começo da série",
+      "problema": "\"Série\" é palavra de jornal de economia, e cortar aqui ajuda a manter o texto em até 100 palavras.",
+      "como_fica": "o pior setembro já registrado"
+     }
+    ],
+    "aplicada": true
+   },
+   "trocado_em": "2026-11-07",
+   "motivo": "Fase 0 da base de conhecimento: o fato do dia ganhou a escada de porquês, a pedido do Pedro em 7/11/2026."
+  },
+  "paragrafos_afirmacoes": [
+   [
+    "a-caged"
+   ],
+   [
+    "a-freio"
+   ],
+   [
+    "a-copom-nov",
+    "a-cortes-2026",
+    "a-focus-jul-out"
+   ]
+  ],
+  "pergunta": "juro-alto",
+  "escada": [
+   {
+    "pergunta": "Por que juro alto tira vagas?",
+    "rotulo": "consenso",
+    "texto": "Quando a Selic sobe, os bancos cobram mais das pessoas pelo cartão, pelo empréstimo e pelo financiamento. Por isso quem compra a prazo compra menos, e as lojas, que passam a vender menos, contratam menos.",
+    "afirmacoes": [
+     "a-bc-selic",
+     "a-freio"
+    ],
+    "link": {
+     "texto": "O freio do juro, desenhado, na aba O que causa recessão",
+     "url": "/causas/#t-freio"
+    }
+   },
+   {
+    "pergunta": "Por que o Banco Central parou de cortar?",
+    "rotulo": "consenso",
+    "texto": "Porque a inflação esperada voltou a subir. No fim de julho, os bancos (Focus) esperavam que os preços subissem 4,2% em 12 meses, e no fim de outubro passaram a esperar 5,0%. Isso fica acima do teto da meta de inflação, de 4,5%.",
+    "afirmacoes": [
+     "a-focus-jul-out",
+     "a-meta",
+     "a-copom-nov"
+    ],
+    "liga": "causa_imediata"
+   },
+   {
+    "pergunta": "O desemprego já subiu?",
+    "rotulo": "fato",
+    "texto": "Ainda não. O desemprego ficou em 5,2% no trimestre até setembro, abaixo dos 5,4% do trimestre até junho, porque as empresas seguem contratando mais do que demitem, só que menos que antes.",
+    "afirmacoes": [
+     "a-desemprego",
+     "a-caged"
+    ]
    }
   ]
  }

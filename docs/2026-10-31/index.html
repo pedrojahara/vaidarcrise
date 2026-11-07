@@ -131,6 +131,24 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
+/* a escada de porquês: no "Entenda a fundo" dos fatos do dia e na página de cada pergunta (src/base_site.py) */
+.escada{list-style:none;margin:0;padding:0}
+.degrau{position:relative;padding:0 0 18px 22px;border-left:2px solid var(--fio);margin-left:6px}
+.degrau:last-child{border-left-color:transparent;padding-bottom:4px}
+.degrau::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--papel);box-shadow:inset 0 0 0 3px var(--hist)}
+.degrau.r-consenso::before{box-shadow:inset 0 0 0 3px var(--desce)}
+.degrau.r-maioria_com_dissenso::before{box-shadow:inset 0 0 0 3px var(--atencao)}
+.degrau.r-em_disputa::before{background:var(--sobe);box-shadow:none}
+.d-perg{font:700 17px/1.35 var(--sistema);margin:0 0 4px}
+.rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
+.rot.r-consenso{background:var(--normal-fundo)}
+.rot.r-maioria_com_dissenso{background:var(--nota-fundo);box-shadow:inset 0 0 0 1px var(--atencao)}
+.rot.r-em_disputa{background:var(--alerta-fundo)}
+.d-txt{margin:0 0 6px;font-size:17px;line-height:1.55}
+.d-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 4px;overflow-wrap:anywhere}
+.d-fontes a{color:var(--meta)}
+.d-fontes .ac{font-style:italic}
+.d-mais{font:14.5px/1.45 var(--sistema);margin:4px 0 0}
 
 .blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado";grid-template-rows:auto 1fr;padding-top:28px;padding-bottom:28px}
 .blog .nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}
@@ -164,6 +182,19 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .comece:hover{color:var(--tinta)}.comece:hover b{text-decoration:underline}
 .comece .rot{display:block;font-size:13px;font-weight:600;color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
 .comece b{display:block;font:700 20px/1.3 var(--serifa);margin-bottom:4px}
+
+/* o "Entenda a fundo" do fato do dia: a escada de porquês, fechada até o toque */
+.fundo{margin:4px 0 18px;max-width:660px;border:1px solid var(--fio);border-radius:10px}
+.fundo>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 12px 12px 14px;cursor:pointer;list-style:none;font:600 16px/1.35 var(--sistema)}
+.fundo>summary::-webkit-details-marker{display:none}
+.fundo>summary .seta{width:18px;height:18px;flex:none;transition:transform .15s}
+.fundo[open]>summary .seta{transform:rotate(180deg)}
+.fundo[open]>summary{border-bottom:1px solid var(--fio);margin-bottom:16px}
+.fundo .escada{padding:0 14px 0 12px}
+.post .fundo p{margin:0 0 6px}
+.post .fundo p.d-perg{margin-bottom:4px}
+.post .fundo p.fundo-pe{font:15px/1.45 var(--sistema);margin:6px 14px 14px;padding-top:12px;border-top:1px solid var(--fio)}
+@media (prefers-reduced-motion: reduce){.fundo>summary .seta{transition:none}}
 
 /* pressão das notícias: dado da máquina, na letra do sistema */
 .conta{background:var(--maquina);border-radius:6px;padding:16px 20px 6px;font:16px/1.5 var(--sistema);margin:22px 0 4px}
@@ -340,6 +371,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   
   <p>A Bolsa caiu 18,1% na semana da reeleição do presidente, a mesma queda de uma semana de 2001, e o dólar subiu 9%, a maior alta semanal desde 2008. A queda da Bolsa não muda a direção do risco, porque a Bolsa fica fora da conta.</p><p>Com o dólar 6,8% mais caro que no fim de julho, peças, combustível e outros importados ficam mais caros nos meses seguintes.</p><p>A alta tem duas leituras: quem investe reagiu demais à eleição, ou passou a desconfiar das contas do governo.</p>
+  
   
   
   

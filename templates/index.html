@@ -35,6 +35,19 @@
 .comece .rot{display:block;font-size:13px;font-weight:600;color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
 .comece b{display:block;font:700 20px/1.3 var(--serifa);margin-bottom:4px}
 
+/* o "Entenda a fundo" do fato do dia: a escada de porquês, fechada até o toque */
+.fundo{margin:4px 0 18px;max-width:660px;border:1px solid var(--fio);border-radius:10px}
+.fundo>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 12px 12px 14px;cursor:pointer;list-style:none;font:600 16px/1.35 var(--sistema)}
+.fundo>summary::-webkit-details-marker{display:none}
+.fundo>summary .seta{width:18px;height:18px;flex:none;transition:transform .15s}
+.fundo[open]>summary .seta{transform:rotate(180deg)}
+.fundo[open]>summary{border-bottom:1px solid var(--fio);margin-bottom:16px}
+.fundo .escada{padding:0 14px 0 12px}
+.post .fundo p{margin:0 0 6px}
+.post .fundo p.d-perg{margin-bottom:4px}
+.post .fundo p.fundo-pe{font:15px/1.45 var(--sistema);margin:6px 14px 14px;padding-top:12px;border-top:1px solid var(--fio)}
+@media (prefers-reduced-motion: reduce){.fundo>summary .seta{transition:none}}
+
 /* pressão das notícias: dado da máquina, na letra do sistema */
 .conta{background:var(--maquina);border-radius:6px;padding:16px 20px 6px;font:16px/1.5 var(--sistema);margin:22px 0 4px}
 .conta-cab{border-bottom:1px solid var(--fio);padding-bottom:8px;margin-bottom:10px}

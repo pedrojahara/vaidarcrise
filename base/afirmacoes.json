@@ -1,0 +1,1418 @@
+{
+ "_sobre": "Cada frase sobre causa ou passado que o site pode dizer, com a fonte. Tipo 'dado': o número é conferido pelo código contra as séries do próprio site (data/historico e data/raw). Tipo 'documento': o trecho literal tem de ser achado na página da fonte; 'trecho_candidato' veio de um resumo de busca e ainda não foi visto na página. Tipo 'site': o trecho tem de estar no arquivo do repositório. Níveis da fonte: 1 meta-análise; 2 artigo revisado por pares ou capítulo de livro acadêmico; 3 Banco Central, FMI, Tesouro, IBGE, IFI, Ipea, lei; 4 tese ou dissertação; 5 banco, gestora, consultoria; 6 notícia; 7 coluna ou comentarista.",
+ "afirmacoes": [
+  {
+   "id": "a-selic-hoje",
+   "tipo": "dado",
+   "texto": "Em 7/11/2026, a Selic estava em 13,75% ao ano.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Selic meta (série 432)",
+    "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432"
+   },
+   "dados": [
+    {
+     "serie": "selic_meta",
+     "quando": "2026-11-07",
+     "valor": 13.75,
+     "tol": 0.001
+    }
+   ]
+  },
+  {
+   "id": "a-cortes-2026",
+   "tipo": "dado",
+   "texto": "A Selic estava em 15% em fevereiro de 2026 e caiu 0,25 ponto em março, abril, junho, agosto e setembro, até 13,75%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Selic meta (série 432)",
+    "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432"
+   },
+   "dados": [
+    {
+     "serie": "selic_meta",
+     "quando": "2026-02",
+     "valor": 15.0,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2026-03",
+     "valor": 14.75,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2026-04",
+     "valor": 14.5,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2026-05",
+     "valor": 14.5,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2026-06",
+     "valor": 14.25,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2026-07",
+     "valor": 14.25,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2026-08",
+     "valor": 14.0,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2026-09",
+     "valor": 13.75,
+     "tol": 0.001
+    }
+   ],
+   "numeros_derivados": [
+    "0,25"
+   ]
+  },
+  {
+   "id": "a-focus-jul-out",
+   "tipo": "dado",
+   "texto": "No fim de julho de 2026, os bancos (Focus) esperavam que os preços subissem 4,2% nos 12 meses seguintes; no fim de outubro, passaram a esperar 5,0%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Pesquisa Focus, IPCA dos próximos 12 meses",
+    "url": "https://www.bcb.gov.br/publicacoes/focus"
+   },
+   "dados": [
+    {
+     "serie": "focus_ipca_12m",
+     "quando": "2026-07",
+     "valor": 4.2,
+     "tol": 0.05
+    },
+    {
+     "serie": "focus_ipca_12m",
+     "quando": "2026-10",
+     "valor": 5.0,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-juro-real-hoje",
+   "tipo": "dado",
+   "texto": "Com a Selic em 13,75% e os bancos (Focus) esperando inflação de 5,0% em 12 meses, o juro fica cerca de 8,4% acima da inflação esperada.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Selic e Focus, na conta do site (indicadores.juro_real)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "selic_meta",
+     "quando": "2026-10",
+     "valor": 13.75,
+     "tol": 0.001
+    },
+    {
+     "serie": "focus_ipca_12m",
+     "quando": "2026-10",
+     "valor": 5.0,
+     "tol": 0.05
+    },
+    {
+     "serie": "juro_real",
+     "quando": "2026-10",
+     "valor": 8.4,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-meta",
+   "tipo": "documento",
+   "texto": "A meta de inflação é de 3% ao ano, com tolerância de 1,5 ponto, o que põe o teto em 4,5%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Metas para a inflação",
+    "url": "https://www.bcb.gov.br/controleinflacao/metainflacao"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "nota": "O site já usa 3% e 1,5 ponto em config/causas.json."
+  },
+  {
+   "id": "a-copom-nov",
+   "tipo": "documento",
+   "texto": "Em 4/11/2026, o Banco Central parou os cortes, manteve a Selic em 13,75% e subiu para 5,6% sua previsão do IPCA de 2026.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Gazeta do Povo",
+    "titulo": "Copom interrompe ciclo de cortes e mantém Selic em 13,75%",
+    "url": "https://www.gazetadopovo.com.br/economia/copom-interrompe-ciclo-de-cortes-e-mantem-selic-em-1375/"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "nota": "Trocar pela nota oficial do Copom (nível 3) quando a pesquisa achar o endereço.",
+   "evento": "ev-20261105-01"
+  },
+  {
+   "id": "a-ranking",
+   "tipo": "documento",
+   "texto": "Em setembro de 2026, com a Selic em 13,75%, o Brasil tinha o maior juro acima da inflação esperada do mundo no ranking da MoneYou e da Lev Intelligence, com 8,45%.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Poder360",
+    "titulo": "Mesmo com corte, Brasil tem o maior juro real do planeta",
+    "url": "https://www.poder360.com.br/poder-economia/mesmo-com-corte-brasil-tem-o-maior-juro-real-do-planeta/"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "nota": "Ranking de consultoria (nível 5) contado por notícia. A busca achou o texto, mas não confirmou a data."
+  },
+  {
+   "id": "a-dolar-ago-nov",
+   "tipo": "dado",
+   "texto": "O dólar passou de R$ 5,18 no fim de agosto de 2026 para R$ 5,50 em 6/11.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Dólar Ptax de venda (série 1)",
+    "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=1"
+   },
+   "dados": [
+    {
+     "serie": "dolar_ptax",
+     "quando": "2026-08-31",
+     "valor": 5.18,
+     "tol": 0.005
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2026-11-06",
+     "valor": 5.5,
+     "tol": 0.005
+    }
+   ]
+  },
+  {
+   "id": "a-antes-da-eleicao",
+   "tipo": "dado",
+   "texto": "Entre o fim de agosto e 23/10/2026, último dia útil antes do segundo turno, o dólar caiu de R$ 5,18 para R$ 5,04 e o juro de 10 anos, de 7,9% para 6,9%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central e Tesouro Nacional",
+    "titulo": "Dólar Ptax e taxa do Tesouro IPCA+ 2035",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "dolar_ptax",
+     "quando": "2026-08-31",
+     "valor": 5.18,
+     "tol": 0.005
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2026-10-23",
+     "valor": 5.04,
+     "tol": 0.005
+    },
+    {
+     "serie": "juro_real_longo",
+     "quando": "2026-08-31",
+     "valor": 7.9,
+     "tol": 0.05
+    },
+    {
+     "serie": "juro_real_longo",
+     "quando": "2026-10-23",
+     "valor": 6.9,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-salto-eleicao",
+   "tipo": "dado",
+   "texto": "Em 26/10/2026, o dia seguinte ao segundo turno, o dólar subiu de R$ 5,04 para R$ 5,50 e o juro de 10 anos, de 6,9% para 8,1%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central e Tesouro Nacional",
+    "titulo": "Dólar Ptax e taxa do Tesouro IPCA+ 2035",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "dolar_ptax",
+     "quando": "2026-10-23",
+     "valor": 5.04,
+     "tol": 0.005
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2026-10-26",
+     "valor": 5.5,
+     "tol": 0.005
+    },
+    {
+     "serie": "juro_real_longo",
+     "quando": "2026-10-23",
+     "valor": 6.9,
+     "tol": 0.05
+    },
+    {
+     "serie": "juro_real_longo",
+     "quando": "2026-10-26",
+     "valor": 8.1,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-bolsa-eleicao",
+   "tipo": "documento",
+   "texto": "No dia seguinte ao segundo turno, a Bolsa caiu 13,9% e o dólar subiu 8,2%, no fechamento do mercado.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Agência Brasil",
+    "titulo": "Dólar sobe 8,21%, e bolsa cai 13,88% após reeleição de Lula",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261028-01"
+  },
+  {
+   "id": "a-depois-do-salto",
+   "tipo": "dado",
+   "texto": "Depois do salto, o dólar recuou para R$ 5,33 em 27/10 e voltou a R$ 5,50 em 6/11.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Dólar Ptax de venda (série 1)",
+    "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=1"
+   },
+   "dados": [
+    {
+     "serie": "dolar_ptax",
+     "quando": "2026-10-27",
+     "valor": 5.33,
+     "tol": 0.005
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2026-11-06",
+     "valor": 5.5,
+     "tol": 0.005
+    }
+   ]
+  },
+  {
+   "id": "a-importados",
+   "tipo": "documento",
+   "texto": "Com o real mais fraco desde a eleição, trigo importado, açúcar e café ficaram mais caros no Brasil.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Folha",
+    "titulo": "Alta do dólar começa a impactar açúcar, trigo e café, que podem ficar mais caros para o consumidor",
+    "url": "https://www1.folha.uol.com.br/mercado/2026/11/alta-do-dolar-comeca-a-impactar-acucar-trigo-e-cafe-que-podem-ficar-mais-caros-para-o-consumidor.shtml"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261105-08"
+  },
+  {
+   "id": "a-ev-0311-juros",
+   "tipo": "documento",
+   "texto": "Em 3/11, o juro que o governo paga para pegar dinheiro emprestado subiu com o temor sobre a agenda econômica, e o dólar fechou a R$ 5,487.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Valor",
+    "titulo": "Juros futuros têm forte alta por temor sobre agenda econômica do governo e piora do Focus",
+    "url": "https://valor.globo.com/financas/noticia/2026/11/03/juros-futuros-tem-forte-alta-por-temor-sobre-agenda-economica-do-governo-e-piora-do-focus.ghtml"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261104-02"
+  },
+  {
+   "id": "a-ev-tesouro-divida",
+   "tipo": "documento",
+   "texto": "O Tesouro projeta a dívida do governo em 83,7% do PIB no fim de 2026 e em 89,7% em 2030.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Poder360",
+    "titulo": "Dívida bruta deve chegar a 83,7% do PIB no fim de 2026",
+    "url": "https://www.poder360.com.br/poder-economia/divida-bruta-deve-chegar-a-837-do-pib-no-fim-de-2026/"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "nota": "Trocar pelo relatório do Tesouro (nível 3).",
+   "evento": "ev-20261104-04"
+  },
+  {
+   "id": "a-ev-0411-dolar-cai",
+   "tipo": "documento",
+   "texto": "Em 4/11, o dólar caiu para R$ 5,45 com o alívio depois das eleições nos EUA e a espera pelo anúncio sobre as contas do governo.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Agência Brasil",
+    "titulo": "Dólar cai a R$ 5,45 após eleições nos EUA e antes do Copom",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-cai-r-545-apos-eleicoes-nos-eua-e-antes-do-copom"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261105-04"
+  },
+  {
+   "id": "a-ev-0511-nasdaq",
+   "tipo": "documento",
+   "texto": "Em 5/11, a Nasdaq, bolsa dos EUA, chegou a cair 6,4%, e a Bolsa do Japão perdeu mais de 6%.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Folha",
+    "titulo": "Nasdaq cai até 6,4% com receio de que vitória democrata afete boom da IA",
+    "url": "https://c-level.folha.uol.com.br/negocios/2026/11/nasdaq-cai-em-64-com-receio-de-que-vitoria-democrata-afete-boom-da-ia.shtml"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261106-02"
+  },
+  {
+   "id": "a-ev-0511-estrangeiros",
+   "tipo": "documento",
+   "texto": "Desde a reeleição, investidores estrangeiros tiraram R$ 8,4 bilhões da Bolsa brasileira.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Poder360",
+    "titulo": "Dólar sobe 0,67% e fecha a R$ 5,489; Ibovespa cai 0,82%",
+    "url": "https://www.poder360.com.br/poder-economia/dolar-sobe-067-e-fecha-a-r-5489-ibovespa-cai-082/"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261106-03"
+  },
+  {
+   "id": "a-ev-0511-fala",
+   "tipo": "documento",
+   "texto": "Em 5/11, a fala do presidente em defesa da responsabilidade com as contas fez recuar o juro que o governo paga para pegar dinheiro emprestado.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Poder360",
+    "titulo": "Lula cobra responsabilidade fiscal para atrair investimentos",
+    "url": "https://www.poder360.com.br/poder-governo/lula-cobra-responsabilidade-fiscal-para-atrair-investimentos/"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261106-04"
+  },
+  {
+   "id": "a-ev-0611-eua",
+   "tipo": "documento",
+   "texto": "Em 6/11, os EUA informaram 165 mil vagas criadas em outubro, e o mercado passou a ver 80% de chance de o banco central de lá subir o juro.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Folha",
+    "titulo": "EUA criam 165 mil vagas em outubro, acima das projeções",
+    "url": "https://www1.folha.uol.com.br/mercado/2026/11/eua-criam-165-mil-vagas-em-outubro-acima-das-projecoes.shtml"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261107-03"
+  },
+  {
+   "id": "a-ev-0611-juro-cai",
+   "tipo": "documento",
+   "texto": "Em 6/11, o juro que o governo paga para pegar dinheiro emprestado caiu com os sinais sobre as contas, e o dólar fechou a R$ 5,508.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Poder360",
+    "titulo": "Bolsa sobe 1,39%; em alta, dólar fecha a R$ 5,508",
+    "url": "https://www.poder360.com.br/poder-economia/bolsa-sobe-139-em-alta-dolar-fecha-a-r-5508/"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261107-04"
+  },
+  {
+   "id": "a-ev-diretores-bc",
+   "tipo": "documento",
+   "texto": "O presidente vai indicar seis diretores do Banco Central até o fim de 2027, e investidores temem uma diretoria mais disposta a cortar o juro com os preços subindo.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Folha",
+    "titulo": "Lula indicará seis diretores do Banco Central até o fim de 2027, e mercado teme mudança de perfil",
+    "url": "https://www1.folha.uol.com.br/mercado/2026/11/lula-indicara-seis-diretores-do-banco-central-ate-o-fim-de-2027-e-mercado-teme-mudanca-de-perfil.shtml"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261103-05"
+  },
+  {
+   "id": "a-divida-hoje",
+   "tipo": "dado",
+   "texto": "A dívida do governo passou de 51,5% do PIB em dezembro de 2013 para 82,9% em setembro de 2026.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Dívida bruta do governo geral (série 13762)",
+    "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=13762"
+   },
+   "dados": [
+    {
+     "serie": "divida_bruta",
+     "quando": "2013-12",
+     "valor": 51.5,
+     "tol": 0.05
+    },
+    {
+     "serie": "divida_bruta",
+     "quando": "2026-09",
+     "valor": 82.9,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-juros-da-divida",
+   "tipo": "site",
+   "texto": "Em 12 meses, até agosto de 2026, os juros da dívida custaram R$ 1,2 trilhão, 8,9% do PIB.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central, na aba O que causa recessão",
+    "titulo": "templates/causas.html",
+    "url": "https://vaidarcrise.com.br/causas/"
+   },
+   "trecho": "Em 12 meses, até agosto de 2026, os juros da dívida custaram R$ 1,2 trilhão, 8,9% do PIB.",
+   "arquivo": "templates/causas.html"
+  },
+  {
+   "id": "a-metade-selic",
+   "tipo": "site",
+   "texto": "Cerca de metade da dívida do governo acompanha a Selic: se a Selic sobe, a conta de juros sobe junto.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Aba O que causa recessão",
+    "titulo": "templates/causas.html",
+    "url": "https://vaidarcrise.com.br/causas/"
+   },
+   "trecho": "Cerca de metade dela acompanha a Selic: se a Selic sobe, a conta de juros sobe junto.",
+   "arquivo": "templates/causas.html"
+  },
+  {
+   "id": "a-neutro-bc",
+   "tipo": "documento",
+   "texto": "Em 2025, o Banco Central estimava em cerca de 5% acima da inflação o juro que nem acelera nem freia a economia.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Acionista",
+    "titulo": "Inflação tem 70% de chance de superar meta em 2025, alerta Banco Central",
+    "url": "https://acionista.com.br/inflacao-tem-70-de-chance-de-superar-meta-em-2025-alerta-banco-central/"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "nota": "Trocar pelo boxe do Relatório de Política Monetária (nível 3). A busca não achou o boxe de 2025 nem uma estimativa de 2026."
+  },
+  {
+   "id": "a-fmi-poupanca",
+   "tipo": "documento",
+   "texto": "Um estudo do Fundo Monetário Internacional de 2012 concluiu que o juro do Brasil pode cair ao nível de outros emergentes se a poupança do país subir ao nível deles, sobretudo a do governo.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Fundo Monetário Internacional, Alex Segura-Ubiergo",
+    "titulo": "The Puzzle of Brazil's High Interest Rates (WP/12/62)",
+    "ano": 2012,
+    "url": "https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062"
+   },
+   "trecho": null,
+   "trecho_lingua": "en",
+   "trecho_candidato": "Brazil can converge towards lower equilibrium real interest rates if domestic savings increase to the level of other emerging market countries."
+  },
+  {
+   "id": "a-fmi-sobra",
+   "tipo": "documento",
+   "texto": "No mesmo estudo, depois de contar poupança, contas do governo e inflação, o juro do Brasil ainda ficava cerca de 2 pontos acima do de países parecidos, e o autor sugere como causa o crédito dividido em mercados separados e a correção de preços pela inflação passada.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Fundo Monetário Internacional, Alex Segura-Ubiergo",
+    "titulo": "The Puzzle of Brazil's High Interest Rates (WP/12/62)",
+    "ano": 2012,
+    "url": "https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062"
+   },
+   "trecho": null,
+   "trecho_lingua": "en",
+   "trecho_candidato": null,
+   "nota": "O resumo da busca fala em cerca de dois pontos e em 'credit market segmentation and inflation inertia generated by still pervasive indexation practices'. Conferir o número no texto."
+  },
+  {
+   "id": "a-poupanca-2025",
+   "tipo": "documento",
+   "texto": "Em 2025, o Brasil poupou 14,4% do PIB, segundo o IBGE.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Agência Brasil, com dados do IBGE",
+    "titulo": "Economia brasileira cresce 2,3% em 2025, revela IBGE",
+    "url": "https://agenciabrasil.ebc.com.br/educacao/noticia/2026-03/economia-brasileira-cresce-23-em-2025-revela-ibge"
+   },
+   "trecho": null,
+   "trecho_candidato": "A taxa de poupança, por sua vez, foi de 14,4% em 2025, ante 14,1% em 2024.",
+   "nota": "Outra notícia dá 14,5% para 2024. Trocar pelas Contas Nacionais do IBGE (nível 3)."
+  },
+  {
+   "id": "a-blanchard",
+   "tipo": "documento",
+   "texto": "Blanchard mostrou que, no Brasil de 2002 e 2003, com dívida alta e boa parte dela em dólar, subir o juro aumentava o medo de calote e podia enfraquecer o real em vez de segurar os preços.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Olivier Blanchard",
+    "titulo": "Fiscal Dominance and Inflation Targeting: Lessons from Brazil (NBER w10389; capítulo do livro Inflation Targeting, Debt, and the Brazilian Experience, MIT Press, 2005)",
+    "ano": 2004,
+    "url": "https://www.nber.org/papers/w10389"
+   },
+   "trecho": null,
+   "trecho_lingua": "en",
+   "trecho_candidato": null
+  },
+  {
+   "id": "a-favero-giavazzi",
+   "tipo": "documento",
+   "texto": "Favero e Giavazzi concluíram que, em 2002, o Brasil provavelmente caiu num equilíbrio ruim, em que as contas do governo atrapalhavam o efeito do juro sobre os preços.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Carlo Favero e Francesco Giavazzi",
+    "titulo": "Inflation Targeting and Debt: Lessons from Brazil (NBER w10390)",
+    "ano": 2004,
+    "url": "https://www.nber.org/papers/w10390"
+   },
+   "trecho": null,
+   "trecho_lingua": "en",
+   "trecho_candidato": "Brazil, during 2002, had probably fallen into a bad equilibrium, where fiscal policy was hindering the effectiveness of monetary policy"
+  },
+  {
+   "id": "a-usp-neutro",
+   "tipo": "documento",
+   "texto": "Uma dissertação da Universidade de São Paulo estimou que a piora das contas do governo na crise de 2014 a 2016 subiu em cerca de 1 ponto o juro que nem acelera nem freia a economia.",
+   "fonte": {
+    "nivel": 4,
+    "quem": "Dissertação de mestrado, Universidade de São Paulo",
+    "titulo": "Dissertação depositada em 23/06/2022",
+    "ano": 2022,
+    "url": "https://www.teses.usp.br/teses/disponiveis/12/12138/tde-23062022-200349/en.php"
+   },
+   "trecho": null,
+   "trecho_lingua": "en",
+   "trecho_candidato": null,
+   "nota": "Nível 4: entra como argumento de uma leitura, nunca como consenso."
+  },
+  {
+   "id": "a-ec95",
+   "tipo": "documento",
+   "texto": "Em dezembro de 2016, o Congresso aprovou o teto de gastos do governo federal (Emenda Constitucional 95).",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Planalto",
+    "titulo": "Emenda Constitucional nº 95, de 15 de dezembro de 2016",
+    "ano": 2016,
+    "url": "http://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc95.htm"
+   },
+   "trecho": null,
+   "trecho_candidato": null
+  },
+  {
+   "id": "a-ec103",
+   "tipo": "documento",
+   "texto": "Em novembro de 2019, o Congresso promulgou a reforma da Previdência (Emenda Constitucional 103).",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Planalto",
+    "titulo": "Emenda Constitucional nº 103, de 12 de novembro de 2019",
+    "ano": 2019,
+    "url": "http://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm"
+   },
+   "trecho": null,
+   "trecho_candidato": null
+  },
+  {
+   "id": "a-bonomo-martins",
+   "tipo": "documento",
+   "texto": "Bonomo e Martins, do Banco Central, acharam que empresas com mais crédito subsidiado do governo reagem menos quando a Selic sobe.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Marco Bonomo e Bruno Martins (Banco Central)",
+    "titulo": "The Impact of Government-Driven Loans in the Monetary Transmission Mechanism: what can we learn from firm-level data?",
+    "ano": 2016,
+    "url": null
+   },
+   "trecho": null,
+   "trecho_lingua": "en",
+   "trecho_candidato": null,
+   "nota": "Sem endereço: a pesquisa precisa achar o texto para discussão do Banco Central. Sem fonte aberta, a afirmação cai."
+  },
+  {
+   "id": "a-rep-potencia",
+   "tipo": "documento",
+   "texto": "Um artigo da Revista de Economia Política, com dados de 2000 a 2018, não achou sinal de que o juro freie menos a economia nos períodos de muito crédito dos bancos públicos.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Modenesi e Passos, Revista de Economia Política, v. 42, n. 3 (2022)",
+    "titulo": "Bancos públicos e política monetária: teoria e alguns resultados com base em projeções locais dependentes de estado",
+    "ano": 2022,
+    "url": "https://www.scielo.br/j/rep/a/PYCLBpjXsS3MV4yDPZTdqgM/?lang=pt",
+    "urls_alternativas": [
+     "https://web.bndes.gov.br/bib/jspui/bitstream/1408/22745/1/Bancos%20publicos%20e%20politica%20monetaria.pdf",
+     "https://www.ie.ufrj.br/images/IE/TDS/2021/TD_IE_008_2021_MODENESI_PASSOS.pdf"
+    ]
+   },
+   "trecho": null,
+   "trecho_lingua": "pt",
+   "trecho_candidato": "não são encontradas evidências de que a política monetária é menos potente nos períodos de alto crédito dos bancos públicos",
+   "nota": "Na primeira versão da base, o título e o endereço desta fonte estavam errados; o agente de trechos achou o artigo certo em 7/11/2026 (conferido só por busca, a página não abriu na nuvem). Os mesmos autores, no International Review of Applied Economics (2021), relatam efeito menor sobre a produção nos períodos de muito crédito público: o advogado do contra deve pesar isso antes de a frase ficar como está."
+  },
+  {
+   "id": "a-bcb-ee77",
+   "tipo": "documento",
+   "texto": "Em 2020, um estudo do Banco Central concluiu que a troca do juro dos empréstimos do BNDES e o aumento do crédito com juro definido pelos bancos tendem a dar mais força à Selic.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central, Estudo Especial 77",
+    "titulo": "Potência da política monetária",
+    "ano": 2020,
+    "url": "https://www.bcb.gov.br/conteudo/relatorioinflacao/EstudosEspeciais/EE077_Potencia_da_politica_monetaria.pdf"
+   },
+   "trecho": null,
+   "trecho_lingua": "pt",
+   "trecho_candidato": null
+  },
+  {
+   "id": "a-lara-resende",
+   "tipo": "documento",
+   "texto": "Em novembro de 2026, o economista André Lara-Resende disse que os juros são a maior parte do déficit do governo e que a Selic alta alimenta a dívida.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Mercado & Consumo",
+    "titulo": "Economista do Plano Real acusa BC de causar rombo fiscal via juros",
+    "url": "https://mercadoeconsumo.com.br/02/11/2026/economia/economista-de-plano-real-acusa-bc-de-causar-rombo-fiscal-via-juros/"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "nota": "Notícia sobre um texto do autor: só serve para mapear quem defende a leitura. Achar o texto original."
+  },
+  {
+   "id": "a-lara-proposta",
+   "tipo": "documento",
+   "texto": "Lara-Resende propõe metas de inflação e de juro combinadas para quatro ou cinco anos, em vez de só cortar a Selic.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Jornal do Brasil",
+    "titulo": "André Lara Resende critica juros altos e o impacto fiscal no Brasil",
+    "url": "https://www.jb.com.br/economia/2026/11/1061430-andre-lara-resende-critica-juros-altos-e-o-impacto-fiscal-no-brasil.html"
+   },
+   "trecho": null,
+   "trecho_candidato": null
+  },
+  {
+   "id": "a-ghs",
+   "tipo": "documento",
+   "texto": "Gonçalves, Holland e Spacov testaram com dados de vários países a ideia de que a incerteza jurídica e a moeda que não se troca livremente explicam o juro alto, e os resultados foram em geral contrários a ela.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Fernando Gonçalves, Márcio Holland e Andrei Spacov",
+    "titulo": "Can jurisdictional uncertainty and capital controls explain the high level of real interest rates in Brazil? Evidence from panel data (Revista Brasileira de Economia, v. 61, n. 1)",
+    "ano": 2007,
+    "url": "https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015"
+   },
+   "trecho": null,
+   "trecho_lingua": "en",
+   "trecho_candidato": "results are by and large unfavorable not only to ABL's conjecture"
+  },
+  {
+   "id": "a-ghs-tradicionais",
+   "tipo": "documento",
+   "texto": "No mesmo teste, os fatores de sempre, ligados à inflação e às contas do governo, explicaram o juro muito melhor que a incerteza jurídica.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Fernando Gonçalves, Márcio Holland e Andrei Spacov",
+    "titulo": "Revista Brasileira de Economia, v. 61, n. 1",
+    "ano": 2007,
+    "url": "https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015"
+   },
+   "trecho": null,
+   "trecho_lingua": "en",
+   "trecho_candidato": "traditional monetary and fiscal factors are far more relevant"
+  },
+  {
+   "id": "a-abl",
+   "tipo": "documento",
+   "texto": "Em 2005, Arida, Bacha e Lara-Resende sugeriram que o juro do Brasil era alto por causa da incerteza sobre contratos e da moeda que não se troca livremente por outras.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Persio Arida, Edmar Bacha e André Lara-Resende",
+    "titulo": "Credit, Interest, and Jurisdictional Uncertainty: Conjectures on the Case of Brazil (capítulo do livro Inflation Targeting, Debt, and the Brazilian Experience, MIT Press)",
+    "ano": 2005,
+    "url": "https://www.researchgate.net/publication/228632946_Por_que_as_taxas_de_juros_reais_de_curto_prazo_sao_tao_elevadas_no_Brasil"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "nota": "O endereço é uma revisão em português que resume a tese; achar o capítulo."
+  },
+  {
+   "id": "a-rey",
+   "tipo": "documento",
+   "texto": "Hélène Rey mostrou que há um ciclo financeiro mundial: o dinheiro entra e sai dos países ao mesmo tempo, junto com o medo de quem investe nos EUA.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Hélène Rey",
+    "titulo": "Dilemma not Trilemma: The Global Financial Cycle and Monetary Policy Independence (simpósio de Jackson Hole, 2013; CEPR DP10591)",
+    "ano": 2013,
+    "url": "https://econpapers.repec.org/RePEc:cpr:ceprdp:10591"
+   },
+   "trecho": null,
+   "trecho_lingua": "en",
+   "trecho_candidato": "There is a global financial cycle in capital flows, asset prices and in credit growth. This cycle co-moves with the VIX"
+  },
+  {
+   "id": "a-cerutti",
+   "tipo": "documento",
+   "texto": "Um estudo do Banco de Compensações Internacionais achou que esse ciclo mundial raramente explica mais de um quarto das entradas e saídas de dinheiro dos países.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Cerutti, Claessens e Rose, Banco de Compensações Internacionais",
+    "titulo": "How important is the Global Financial Cycle? Evidence from capital flows",
+    "ano": 2017,
+    "url": "https://www.bis.org/publ/work661.htm"
+   },
+   "trecho": null,
+   "trecho_lingua": "en",
+   "trecho_candidato": null
+  },
+  {
+   "id": "a-ep2002",
+   "tipo": "dado",
+   "texto": "Em 2002, o dólar passou de R$ 2,42 em janeiro para R$ 3,89 em setembro, e o Banco Central subiu a Selic de 18% em julho para 26,5% em fevereiro de 2003, cerca de 14,7% acima da inflação esperada. Em junho de 2003, o dólar tinha voltado a R$ 2,87.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Dólar Ptax, Selic meta e Focus",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "dolar_ptax",
+     "quando": "2002-01",
+     "valor": 2.42,
+     "tol": 0.005
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2002-09",
+     "valor": 3.89,
+     "tol": 0.01
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2002-07",
+     "valor": 18.0,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2003-02",
+     "valor": 26.5,
+     "tol": 0.001
+    },
+    {
+     "serie": "juro_real",
+     "quando": "2003-02",
+     "valor": 14.7,
+     "tol": 0.05
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2003-06",
+     "valor": 2.87,
+     "tol": 0.005
+    }
+   ]
+  },
+  {
+   "id": "a-ep2008",
+   "tipo": "dado",
+   "texto": "Na crise mundial de 2008, o Banco Central baixou a Selic de 13,75% em dezembro de 2008 para 8,75% em julho de 2009.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Selic meta (série 432)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "selic_meta",
+     "quando": "2008-12",
+     "valor": 13.75,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2009-07",
+     "valor": 8.75,
+     "tol": 0.001
+    }
+   ]
+  },
+  {
+   "id": "a-ep2012",
+   "tipo": "dado",
+   "texto": "Em outubro de 2012, a Selic chegou a 7,25%, cerca de 1,8% acima da inflação esperada. Em um ano, a inflação esperada subiu de 5,4% para 6,2%, e o Banco Central voltou a subir a Selic em abril de 2013.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Selic meta e Focus",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "selic_meta",
+     "quando": "2012-10",
+     "valor": 7.25,
+     "tol": 0.001
+    },
+    {
+     "serie": "juro_real",
+     "quando": "2012-10",
+     "valor": 1.8,
+     "tol": 0.05
+    },
+    {
+     "serie": "focus_ipca_12m",
+     "quando": "2012-10",
+     "valor": 5.4,
+     "tol": 0.05
+    },
+    {
+     "serie": "focus_ipca_12m",
+     "quando": "2013-10",
+     "valor": 6.2,
+     "tol": 0.05
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2013-03",
+     "valor": 7.25,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2013-04",
+     "valor": 7.5,
+     "tol": 0.001
+    }
+   ]
+  },
+  {
+   "id": "a-ep2015",
+   "tipo": "dado",
+   "texto": "De julho de 2015 a setembro de 2016, a Selic ficou em 14,25%, cerca de 8% acima da inflação esperada, enquanto a dívida do governo subia de 51,5% do PIB no fim de 2013 para 69,8% no fim de 2016.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Selic meta, Focus e dívida bruta",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "selic_meta",
+     "quando": "2015-07",
+     "valor": 14.25,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2016-09",
+     "valor": 14.25,
+     "tol": 0.001
+    },
+    {
+     "serie": "juro_real",
+     "quando": "2015-07",
+     "valor": 8.1,
+     "tol": 0.05
+    },
+    {
+     "serie": "divida_bruta",
+     "quando": "2013-12",
+     "valor": 51.5,
+     "tol": 0.05
+    },
+    {
+     "serie": "divida_bruta",
+     "quando": "2016-12",
+     "valor": 69.8,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-ep2017",
+   "tipo": "dado",
+   "texto": "Do fim de 2016 ao fim de 2019, a dívida do governo subiu de 69,8% para 74,4% do PIB, e o juro acima da inflação esperada caiu de cerca de 8,5% para 0,7%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Dívida bruta, Selic meta e Focus",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "divida_bruta",
+     "quando": "2016-12",
+     "valor": 69.8,
+     "tol": 0.05
+    },
+    {
+     "serie": "divida_bruta",
+     "quando": "2019-12",
+     "valor": 74.4,
+     "tol": 0.05
+    },
+    {
+     "serie": "juro_real",
+     "quando": "2016-12",
+     "valor": 8.5,
+     "tol": 0.05
+    },
+    {
+     "serie": "juro_real",
+     "quando": "2019-12",
+     "valor": 0.7,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-ep2020",
+   "tipo": "dado",
+   "texto": "Na pandemia, em agosto de 2020, a Selic chegou a 2%, cerca de 1% abaixo da inflação esperada, e a dívida do governo terminou o ano em 86,9% do PIB.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Selic meta, Focus e dívida bruta",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "selic_meta",
+     "quando": "2020-08",
+     "valor": 2.0,
+     "tol": 0.001
+    },
+    {
+     "serie": "juro_real",
+     "quando": "2020-08",
+     "valor": -1.0,
+     "tol": 0.05
+    },
+    {
+     "serie": "divida_bruta",
+     "quando": "2020-12",
+     "valor": 86.9,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-ep2021",
+   "tipo": "dado",
+   "texto": "Em 2021, os preços subiram 10,06%, e o Banco Central levou a Selic de 2,75% em março de 2021 a 13,75% em agosto de 2022.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "IBGE e Banco Central",
+    "titulo": "IPCA em 12 meses e Selic meta",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "ipca_12m",
+     "quando": "2021-12",
+     "valor": 10.06,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2021-03",
+     "valor": 2.75,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2022-08",
+     "valor": 13.75,
+     "tol": 0.001
+    }
+   ]
+  },
+  {
+   "id": "a-ep2024",
+   "tipo": "dado",
+   "texto": "A Selic subiu de 10,5% em maio de 2024 para 15% em junho de 2025, com o dólar a R$ 6,19 no fim de 2024, e em março de 2026 o juro estava cerca de 10,2% acima da inflação esperada.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Selic meta, dólar Ptax e Focus",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "selic_meta",
+     "quando": "2024-05",
+     "valor": 10.5,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2025-06",
+     "valor": 15.0,
+     "tol": 0.001
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2024-12",
+     "valor": 6.19,
+     "tol": 0.005
+    },
+    {
+     "serie": "juro_real",
+     "quando": "2026-03",
+     "valor": 10.2,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-industria",
+   "tipo": "documento",
+   "texto": "A produção da indústria caiu 0,8% em setembro de 2026 e acumula queda de 4,1% desde maio, puxada por máquinas e equipamentos.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Gazeta do Povo, com dados do IBGE",
+    "titulo": "Produção industrial recua 0,8% em setembro e acumula perda de 4,1% desde maio",
+    "url": "https://www.gazetadopovo.com.br/economia/producao-industrial-recua-08-em-setembro-e-acumula-perda-de-41-desde-maio/"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261106-01"
+  },
+  {
+   "id": "a-caged",
+   "tipo": "documento",
+   "texto": "As empresas abriram 121,3 mil vagas com carteira em setembro de 2026, o pior setembro da série e 43% menos que em setembro de 2025.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Poder360, com dados do Ministério do Trabalho",
+    "titulo": "Brasil cria 121.305 empregos formais em setembro de 2026",
+    "url": "https://www.poder360.com.br/poder-economia/brasil-cria-121-305-empregos-formais-em-setembro-de-2026/"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261105-02"
+  },
+  {
+   "id": "a-elnino",
+   "tipo": "documento",
+   "texto": "Depois do segundo turno, os economistas subiram as previsões de inflação de 2027 e 2028, por causa do dólar mais alto e do El Niño.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Folha",
+    "titulo": "Expectativas de inflação para 2027 e 2028 saltam após segundo turno",
+    "url": "https://www1.folha.uol.com.br/mercado/2026/10/expectativas-de-inflacao-para-2027-e-2028-saltam-apos-segundo-turno.shtml"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261101-01"
+  },
+  {
+   "id": "a-juro10-pos-salto",
+   "tipo": "dado",
+   "texto": "Depois do salto, o juro de 10 anos ficou perto de 8,1%: era 8,1% em 26/10 e 8,1% em 5/11.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Tesouro Nacional",
+    "titulo": "Taxa do Tesouro IPCA+ 2035",
+    "url": "https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto"
+   },
+   "dados": [
+    {
+     "serie": "juro_real_longo",
+     "quando": "2026-10-26",
+     "valor": 8.1,
+     "tol": 0.05
+    },
+    {
+     "serie": "juro_real_longo",
+     "quando": "2026-11-05",
+     "valor": 8.1,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-primario-agosto",
+   "tipo": "site",
+   "texto": "No mesmo período, sem contar os juros, o governo gastou 0,6% do PIB a mais do que arrecadou.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central, na aba O que causa recessão",
+    "titulo": "templates/causas.html",
+    "url": "https://vaidarcrise.com.br/causas/"
+   },
+   "trecho": "No mesmo período, sem contar os juros, o governo gastou 0,6% do PIB a mais do que arrecadou.",
+   "arquivo": "templates/causas.html"
+  },
+  {
+   "id": "a-datas",
+   "tipo": "site",
+   "texto": "O IBGE divulga o PIB do terceiro trimestre em 2/12/2026, e o Banco Central decide o juro de novo em 9/12/2026.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Calendários do IBGE e do Banco Central",
+    "titulo": "config/datas.json",
+    "url": null
+   },
+   "trecho": "{\"data\": \"2026-12-02\", \"tipo\": \"pib\"}",
+   "trecho_2": "{\"data\": \"2026-12-09\", \"tipo\": \"copom\"}",
+   "arquivo": "config/datas.json"
+  },
+  {
+   "id": "a-ev-petroleo-outubro",
+   "tipo": "documento",
+   "texto": "Em outubro de 2026, o petróleo subiu mais de 14% com a guerra no Irã.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Folha de S.Paulo",
+    "titulo": "Petróleo sobe mais de 14% em outubro e encerra mês no maior valor desde maio",
+    "url": "https://www1.folha.uol.com.br/mercado/2026/10/petroleo-sobe-mais-de-14-em-outubro-e-encerra-mes-no-maior-valor-desde-maio.shtml"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261031-04"
+  },
+  {
+   "id": "a-ev-petroleo-paz",
+   "tipo": "documento",
+   "texto": "No começo de novembro de 2026, o petróleo caiu quase 8% com sinais de que EUA e Irã podem negociar o fim da guerra, ainda sem acordo.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Valor Econômico",
+    "titulo": "Petróleo despenca com sinais de abertura diplomática pelos EUA e Irã",
+    "url": "https://valor.globo.com/financas/noticia/2026/11/02/petroleo-despenca-com-sinais-de-abertura-diplomatica-pelos-eua-e-ira.ghtml"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261103-02"
+  },
+  {
+   "id": "a-importa-combustivel",
+   "tipo": "documento",
+   "texto": "O Brasil importa parte do diesel e da gasolina que consome.",
+   "fonte": {
+    "nivel": 5,
+    "quem": "Instituto Brasileiro de Petróleo e Gás",
+    "titulo": "Boletim de importações de derivados, março de 2025",
+    "ano": 2025,
+    "url": "https://www.ibp.org.br/personalizado/uploads/2025/04/boletim-importacoes-de-derivados-marco-2025-vf.pdf"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "nota": "Trocar por dado da ANP (nível 3) quando a pesquisa achar a série de importação e consumo."
+  },
+  {
+   "id": "a-dolar-0311",
+   "tipo": "dado",
+   "texto": "Em 3/11/2026, o dólar estava em R$ 5,49, contra R$ 5,18 no fim de agosto.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Dólar Ptax (série 1)",
+    "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=1"
+   },
+   "dados": [
+    {
+     "serie": "dolar_ptax",
+     "quando": "2026-11-03",
+     "valor": 5.49,
+     "tol": 0.005
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2026-08-31",
+     "valor": 5.18,
+     "tol": 0.005
+    }
+   ]
+  },
+  {
+   "id": "a-focus-2026",
+   "tipo": "documento",
+   "texto": "Em 3/11/2026, os bancos (Focus) passaram a esperar que os preços subam 5,2% em 2026 e cortaram a previsão para o PIB.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Poder360",
+    "titulo": "Mercado eleva projeção de inflação para 5,22% em 2026",
+    "url": "https://www.poder360.com.br/poder-economia/mercado-eleva-projecao-de-inflacao-para-522-em-2026/"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261104-01",
+   "nota": "Trocar pelo próprio boletim Focus do Banco Central (nível 3)."
+  },
+  {
+   "id": "a-bc-selic",
+   "tipo": "documento",
+   "texto": "A Selic é o principal instrumento do Banco Central para controlar a inflação e influencia os juros dos empréstimos e dos financiamentos.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Taxa Selic",
+    "url": "https://www.bcb.gov.br/controleinflacao/taxaselic"
+   },
+   "trecho": null,
+   "trecho_candidato": "Ela influencia todas as taxas de juros do país, como as taxas de juros dos empréstimos, dos financiamentos e das aplicações financeiras."
+  },
+  {
+   "id": "a-freio",
+   "tipo": "site",
+   "texto": "Quando a Selic sobe, os bancos cobram mais pelo cartão, pelo empréstimo e pelo financiamento; quem compra a prazo compra menos, e quem vende menos contrata menos.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Aba O que causa recessão",
+    "titulo": "templates/causas.html",
+    "url": "https://vaidarcrise.com.br/causas/#t-freio"
+   },
+   "trecho": "Os bancos partem dela para cobrar o juro do cartão, do empréstimo e do financiamento. Quando a Selic sobe, esses juros sobem junto.",
+   "trecho_2": "Vendendo menos, ele dispensa o ajudante.",
+   "arquivo": "templates/causas.html"
+  },
+  {
+   "id": "a-desemprego",
+   "tipo": "dado",
+   "texto": "O desemprego ficou em 5,2% no trimestre até setembro de 2026, contra 5,4% no trimestre até junho.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "IBGE",
+    "titulo": "Taxa de desocupação (PNAD Contínua)",
+    "url": "https://www.ibge.gov.br/estatisticas/sociais/trabalho/9171-pesquisa-nacional-por-amostra-de-domicilios-continua-mensal.html"
+   },
+   "dados": [
+    {
+     "serie": "desocupacao",
+     "quando": "2026-09",
+     "valor": 5.2,
+     "tol": 0.001
+    },
+    {
+     "serie": "desocupacao",
+     "quando": "2026-06",
+     "valor": 5.4,
+     "tol": 0.001
+    }
+   ]
+  },
+  {
+   "id": "a-previa-pib",
+   "tipo": "site",
+   "texto": "A prévia do PIB feita pelo Banco Central caiu 0,6% nos 3 meses até agosto de 2026, se compararmos com os 3 meses até maio.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central, prévia do PIB",
+    "titulo": "runs/2026-11-06T0630.json",
+    "url": "https://vaidarcrise.com.br/2026-11-06/"
+   },
+   "trecho": "a prévia do PIB do Banco Central já tinha caído 0,6% nos 3 meses até agosto",
+   "arquivo": "runs/2026-11-06T0630.json"
+  },
+  {
+   "id": "a-previsoes-2027",
+   "tipo": "documento",
+   "texto": "Em 6/11/2026, o Bradesco, a corretora XP e a gestora Genoa pioraram as previsões para 2027, com a economia quase parada ou encolhendo, e a Genoa passou a prever recessão e inflação de 6%.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Folha de S.Paulo e Valor Econômico",
+    "titulo": "Bradesco e XP pioram significativamente projeções para inflação e atividade econômica em 2027",
+    "url": "https://www1.folha.uol.com.br/mercado/2026/11/bradesco-e-xp-pioram-significativamente-projecoes-para-inflacao-e-atividade-economica-em-2027.shtml",
+    "urls_alternativas": [
+     "https://valor.globo.com/financas/intraday/post/2026/11/recessao-inflacao-a-6percent-e-risco-monetario-mais-grave-que-o-fiscal-os-alertas-da-genoa-para-2027.ghtml"
+    ]
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "evento": "ev-20261107-01"
+  },
+  {
+   "id": "a-caso-2014",
+   "tipo": "site",
+   "texto": "De 2013 a 2016, a Selic subiu de 7,25% para 14,25%, a economia já estava no limite, a soja, o minério e o petróleo ficaram mais baratos, as contas do governo pioraram, e o PIB encolheu de 2014 a 2016.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Aba O que causa recessão",
+    "titulo": "templates/causas.html",
+    "url": "https://vaidarcrise.com.br/causas/#t-casos"
+   },
+   "trecho": "A Selic subiu de 7,25% para 14,25%.",
+   "trecho_2": "O PIB encolheu de 2014 a 2016.",
+   "arquivo": "templates/causas.html"
+  },
+  {
+   "id": "a-caso-2021",
+   "tipo": "site",
+   "texto": "Em 2021 e 2022, a Selic subiu de 2% para 13,75%, havia gente parada para voltar ao trabalho, o mundo pagava caro pelo que o Brasil vende, e a economia cresceu nos dois anos.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Aba O que causa recessão",
+    "titulo": "templates/causas.html",
+    "url": "https://vaidarcrise.com.br/causas/#t-casos"
+   },
+   "trecho": "A Selic subiu de 2% para 13,75%.",
+   "trecho_2": "Mesmo com o juro subindo, havia gente parada para voltar ao trabalho. E o mundo pagava caro pelo que o Brasil vende.",
+   "arquivo": "templates/causas.html"
+  },
+  {
+   "id": "a-caso-2014-emprego",
+   "tipo": "site",
+   "texto": "Quando a Selic começou a subir, em 2013, o desemprego estava em 6,2%, o menor até então.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Aba O que causa recessão",
+    "titulo": "templates/causas.html",
+    "url": "https://vaidarcrise.com.br/causas/#t-casos"
+   },
+   "trecho": "O desemprego estava em 6,2%, o menor até então.",
+   "arquivo": "templates/causas.html"
+  },
+  {
+   "id": "a-caso-2021-contas",
+   "tipo": "site",
+   "texto": "Em 2021 e 2022, o governo arrecadou mais do que gastou, sem contar os juros, com ajuda dos preços altos do que o Brasil vende e da inflação.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Aba O que causa recessão",
+    "titulo": "templates/causas.html",
+    "url": "https://vaidarcrise.com.br/causas/#t-casos"
+   },
+   "trecho": "O governo arrecadou mais do que gastou, sem contar os juros, com ajuda desses preços altos e da inflação.",
+   "arquivo": "templates/causas.html"
+  }
+ ]
+}

@@ -131,6 +131,24 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
+/* a escada de porquês: no "Entenda a fundo" dos fatos do dia e na página de cada pergunta (src/base_site.py) */
+.escada{list-style:none;margin:0;padding:0}
+.degrau{position:relative;padding:0 0 18px 22px;border-left:2px solid var(--fio);margin-left:6px}
+.degrau:last-child{border-left-color:transparent;padding-bottom:4px}
+.degrau::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--papel);box-shadow:inset 0 0 0 3px var(--hist)}
+.degrau.r-consenso::before{box-shadow:inset 0 0 0 3px var(--desce)}
+.degrau.r-maioria_com_dissenso::before{box-shadow:inset 0 0 0 3px var(--atencao)}
+.degrau.r-em_disputa::before{background:var(--sobe);box-shadow:none}
+.d-perg{font:700 17px/1.35 var(--sistema);margin:0 0 4px}
+.rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
+.rot.r-consenso{background:var(--normal-fundo)}
+.rot.r-maioria_com_dissenso{background:var(--nota-fundo);box-shadow:inset 0 0 0 1px var(--atencao)}
+.rot.r-em_disputa{background:var(--alerta-fundo)}
+.d-txt{margin:0 0 6px;font-size:17px;line-height:1.55}
+.d-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 4px;overflow-wrap:anywhere}
+.d-fontes a{color:var(--meta)}
+.d-fontes .ac{font-style:italic}
+.d-mais{font:14.5px/1.45 var(--sistema);margin:4px 0 0}
 
 .blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado";grid-template-rows:auto 1fr;padding-top:28px;padding-bottom:28px}
 .blog .nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}
@@ -164,6 +182,19 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .comece:hover{color:var(--tinta)}.comece:hover b{text-decoration:underline}
 .comece .rot{display:block;font-size:13px;font-weight:600;color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
 .comece b{display:block;font:700 20px/1.3 var(--serifa);margin-bottom:4px}
+
+/* o "Entenda a fundo" do fato do dia: a escada de porquês, fechada até o toque */
+.fundo{margin:4px 0 18px;max-width:660px;border:1px solid var(--fio);border-radius:10px}
+.fundo>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 12px 12px 14px;cursor:pointer;list-style:none;font:600 16px/1.35 var(--sistema)}
+.fundo>summary::-webkit-details-marker{display:none}
+.fundo>summary .seta{width:18px;height:18px;flex:none;transition:transform .15s}
+.fundo[open]>summary .seta{transform:rotate(180deg)}
+.fundo[open]>summary{border-bottom:1px solid var(--fio);margin-bottom:16px}
+.fundo .escada{padding:0 14px 0 12px}
+.post .fundo p{margin:0 0 6px}
+.post .fundo p.d-perg{margin-bottom:4px}
+.post .fundo p.fundo-pe{font:15px/1.45 var(--sistema);margin:6px 14px 14px;padding-top:12px;border-top:1px solid var(--fio)}
+@media (prefers-reduced-motion: reduce){.fundo>summary .seta{transition:none}}
 
 /* pressão das notícias: dado da máquina, na letra do sistema */
 .conta{background:var(--maquina);border-radius:6px;padding:16px 20px 6px;font:16px/1.5 var(--sistema);margin:22px 0 4px}
@@ -350,11 +381,48 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   
   
-  <p>A produção da indústria caiu 0,8% em setembro e já soma queda de 4,1% desde maio. No terceiro trimestre, as fábricas produziram 2,2% menos que no segundo, e a queda foi puxada por máquinas e equipamentos, o que mostra empresas investindo menos.</p><p>O dado pesa no <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> do trimestre, e a prévia do PIB do Banco Central já tinha caído 0,6% nos 3 meses até agosto, contra os 3 até maio. Quando uma empresa compra menos máquinas, se prepara para produzir menos e, por isso, costuma contratar menos nos meses seguintes.</p>
+  <p>A produção da indústria caiu 0,8% em setembro e soma queda de 4,1% desde maio, puxada por máquinas e equipamentos, o que mostra empresas investindo menos.</p><p>Com o juro cerca de 8,4% acima da inflação esperada pelos bancos, comprar uma máquina com dinheiro emprestado fica caro, e muitas empresas adiam a compra e as contratações.</p><p>Dois estudos que compararam o Brasil com outros países ligam esse juro sobretudo à poupança baixa, principalmente a do governo, e às contas do governo. Pelo estudo do Fundo Monetário Internacional, se o Brasil poupasse como países parecidos, o juro cairia ao nível do deles.</p>
   
   
   
   
+  
+  
+  <details class="fundo">
+    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <ol class="escada">
+      <li class="degrau r-consenso">
+        <p class="d-perg">Por que o juro alto faz a indústria produzir menos?</p>
+        <span class="rot r-consenso">Os estudos concordam</span>
+        <p class="d-txt">Quando a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> sobe, os bancos cobram mais das pessoas e das empresas pelo cartão, pelo empréstimo e pelo financiamento. Quem compra a prazo compra menos, por isso as lojas vendem menos e encomendam menos das fábricas, e as empresas adiam a compra de máquinas.</p>
+        <p class="d-fontes">Fontes: <a href="https://www.bcb.gov.br/controleinflacao/taxaselic" rel="nofollow noopener">Banco Central</a> <span class="ac">(a conferir)</span>; <a href="https://vaidarcrise.com.br/causas/#t-freio" rel="nofollow noopener">Aba O que causa recessão</a></p>
+        
+        <p class="d-mais"><a href="/causas/#t-freio">O freio do juro, desenhado, na aba O que causa recessão</a></p>
+      </li><li class="degrau r-fato">
+        <p class="d-perg">O juro do Brasil é alto mesmo?</p>
+        <span class="rot r-fato">Fato</span>
+        <p class="d-txt">Com a Selic em 13,75% e os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) esperando inflação de 5,0% em 12 meses, o juro fica cerca de 8,4% acima da inflação esperada. Em setembro, por essa conta, o Brasil tinha o maior juro do mundo no ranking das consultorias MoneYou e Lev Intelligence.</p>
+        <p class="d-fontes">Fontes: Banco Central; <a href="https://www.poder360.com.br/poder-economia/mesmo-com-corte-brasil-tem-o-maior-juro-real-do-planeta/" rel="nofollow noopener">Poder360</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li><li class="degrau r-maioria_com_dissenso">
+        <p class="d-perg">Por que o Brasil precisa de um juro tão maior que o de outros países?</p>
+        <span class="rot r-maioria_com_dissenso">A maioria concorda</span>
+        <p class="d-txt">A maioria dos estudos dá mais peso a duas causas. O Brasil poupa pouco, sobretudo o governo, e por isso sobra pouco dinheiro para emprestar. E quem empresta ao governo duvida que a dívida dele pare de crescer, por isso cobra mais.</p>
+        <p class="d-fontes">Fontes: <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a> <span class="ac">(a conferir)</span>; <a href="https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015" rel="nofollow noopener">Fernando Gonçalves, Márcio Holland e Andrei Spacov</a> <span class="ac">(a conferir)</span>; <a href="https://www.nber.org/papers/w10389" rel="nofollow noopener">Olivier Blanchard</a> <span class="ac">(a conferir)</span>; <a href="https://www.teses.usp.br/teses/disponiveis/12/12138/tde-23062022-200349/en.php" rel="nofollow noopener">Dissertação de mestrado, Universidade de São Paulo</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li><li class="degrau r-maioria_com_dissenso">
+        <p class="d-perg">Quem discorda?</p>
+        <span class="rot r-maioria_com_dissenso">A maioria concorda</span>
+        <p class="d-txt">Outras leituras apontam o crédito com juro definido pelo governo, a correção dos preços pela inflação passada e o próprio juro alto. Cerca de metade da dívida do governo acompanha a Selic, e por isso o juro alto também aumenta a dívida. Os estudos mostram que essas leituras explicam pedaços, foram pouco testadas ou não se confirmaram.</p>
+        <p class="d-fontes">Fontes: Marco Bonomo e Bruno Martins (Banco Central) <span class="ac">(a conferir)</span>; <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a> <span class="ac">(a conferir)</span>; <a href="https://vaidarcrise.com.br/causas/" rel="nofollow noopener">Aba O que causa recessão</a>; <a href="https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015" rel="nofollow noopener">Fernando Gonçalves, Márcio Holland e Andrei Spacov</a> <span class="ac">(a conferir)</span></p>
+        
+        
+      </li>
+    </ol>
+    <p class="fundo-pe">Esta escada faz parte de uma pergunta maior: <a href="/perguntas/juro-alto/">Por que o juro do Brasil é tão alto?</a></p>
+  </details>
   
   
   

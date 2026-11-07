@@ -1,0 +1,24 @@
+{
+ "em": "2026-11-07",
+ "modelo": "opus",
+ "resumo": {
+  "agente_nao_sustenta": 1
+ },
+ "itens": [
+  {
+   "id": "a-rep-potencia",
+   "antes": "fonte_inacessivel",
+   "agente": {
+    "url_usada": "https://www.scielo.br/j/rep/a/3vqqzfLtzwFhXs7LZndgP5f/?lang=pt",
+    "titulo": "Bancos públicos e política monetária: teoria e alguns resultados com projeções locais dependentes de estado (Modenesi e Passos, Revista de Economia Política, v. 42, n. 3, 2022, p. 697-717). O título que veio com a fonte, \"Taxa de juros e mecanismos de transmissão...\", não foi confirmado.",
+    "nivel": 2,
+    "trecho": null,
+    "lingua": "pt",
+    "sustenta": "nao_achei_a_fonte",
+    "o_que_falta": "Não consegui abrir nenhuma página, então não há trecho literal conferido. Por isso o campo trecho está vazio. Tentei sete endereços e todos deram \"proxy refused the connection\": o SciELO indicado (com e sem www), outro artigo do SciELO achado na busca (scielo.br/j/rep/a/PYCLBpjXsS3MV4yDPZTdqgM), o site da revista (centrodeeconomiapolitica.org), o IDEAS/RePEc, o texto para discussão do IE-UFRJ (TD 008/2021) e o repositório do BNDES (handle 1408/22745).\n\nA busca indica que o artigo certo é o de Modenesi e Passos na REP de 2022. Ele usa dados de 2000 a 2018 e projeções locais dependentes de estado. Segundo o resumo da busca, ele não acha evidência de que a política monetária seja menos potente nos períodos de alto crédito dos bancos públicos. A potência dependeria do crédito total da economia, com price puzzles mais fortes quando o crédito total está alto. Isso bate com a frase do site, mas vem só de um resumo de busca e não pode ser copiado como trecho.\n\nO título e o endereço que vieram com a fonte talvez não sejam desse artigo. A busca mostrou o artigo no SciELO com outro código (PYCLBpjXsS3MV4yDPZTdqgM, não 3vqqzfLtzwFhXs7LZndgP5f) e com outro título. Antes de usar o trecho sugerido (\"não são encontradas evidências de que a política monetária é menos potente nos períodos de alto crédito dos bancos públicos\"), é preciso abrir a página e confirmar qual endereço está certo e se o texto está lá letra por letra."
+   },
+   "erro": null,
+   "resultado": "agente_nao_sustenta"
+  }
+ ]
+}
