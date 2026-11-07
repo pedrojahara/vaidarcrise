@@ -28,10 +28,12 @@ import calendario  # noqa: E402
 import classify_news  # noqa: E402
 import direcao  # noqa: E402
 import dossie as dossie_mod  # noqa: E402
+import editora  # noqa: E402
 import escreve_post  # noqa: E402
 import fetch_data  # noqa: E402
 import fetch_news  # noqa: E402
 import model  # noqa: E402
+import pauta as pauta_mod  # noqa: E402
 import revisa_texto  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -217,6 +219,8 @@ def main() -> dict | None:
                                           "ja_no_preco", "porque")},
                     "chance_aprovacao": ev["chance_aprovacao"] if ev["estagio"] == "em_votacao" else None,
                     "veiculos": veiculos, "fontes": fontes}
+            # Quantas manchetes e jornais deram o fato (todas, não só as 6 citadas): a pauta do fato do dia usa.
+            novo["cobertura"] = pauta_mod.cobertura([*ev["noticia_ids"], *ev.get("outras_ids", [])], por_id, fontes)
             novo["pontos"] = model.efeito(novo, cfg)
             novos.append(novo)
             seq += 1
@@ -245,6 +249,18 @@ def main() -> dict | None:
         "anterior": ant["id"] if ant else None,
         "revisao_texto": {"classificacao": revisa_texto.problemas_classificacao(llm["saida"]) if llm["ok"] else []},
     }
+
+    # 4. A pauta do fato do dia: os degraus dão a escolha padrão (src/pauta.py), e a IA editora (src/editora.py)
+    # só sai dela por um motivo da lista fechada da carta editorial (CARTA_EDITORIAL.md).
+    if llm["ok"]:
+        pt = pauta_mod.montar(rodada, ant, {e["id"]: e for e in todos}, cfg, calendario.carregar(), por_id)
+        if escreve_post.tipo_do_dia(hoje) == "dia":
+            pt = editora.escolher(pt, rodada, cfg, editora.fatos_anteriores(todas_r, hoje), cesta)
+        else:
+            pt = {**pt, "final": pt["padrao"], "mesma_historia": [], "cuidados": []}
+        rodada["pauta"] = pt
+        print(f"pauta: degrau {pt['degrau']} ({pt['motivo']}), padrão {pt['padrao']}, final {pt['final']}: "
+              f"{pauta_mod.titulo_escolha(pt)} | editora: {(pt.get('editora') or {}).get('conferencia', 'não rodou')}")
 
     post = {"ok": False, "meta": [{"erro": "pulado: sem leitura de notícias"}]}
     if llm["ok"]:

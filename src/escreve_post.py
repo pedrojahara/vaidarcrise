@@ -6,7 +6,9 @@ O post muda de tipo com o dia (PERSONA.md, "Os tipos de post"):
 - resumo do mês, no primeiro domingo do mês, no lugar do resumo da semana: o que mudou no mês, com tabelas feitas pelo código.
 
 Só o calendário decide o tipo. O LLM recebe os fatos prontos e só redige, nunca a partir dos
-posts. O mês sai dos dados oficiais (as mesmas séries da direção do risco, refeitas para o fim do
+posts. No fato do dia, o fato já vem escolhido pela pauta: os degraus da carta editorial (src/pauta.py) e a
+IA editora (src/editora.py), com o que é parte da mesma história e os cuidados dela; os resumos escolhem os
+movimentos na mesma ordem. O mês sai dos dados oficiais (as mesmas séries da direção do risco, refeitas para o fim do
 mês anterior quando o site ainda não atualizava) e das notícias que o site leu; a semana, das
 atualizações guardadas em runs/. O que o site não leu fica dito na assinatura do post. O LLM não
 muda a direção nem os dados, e o verificador pede uma reescrita se o texto cair nos moldes de
@@ -29,13 +31,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import classify_news  # noqa: E402
 import dossie as dossie_mod  # noqa: E402
 import model  # noqa: E402
+import pauta as pauta_mod  # noqa: E402
 import revisa_texto  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DIAS_SEMANA = ["segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado", "domingo"]
 MESES = dossie_mod.MESES
-ESTAGIOS = {"dado": "dado divulgado", "decidido": "decisão tomada", "em_votacao": "proposta em votação",
-            "anuncio": "anúncio, sem ato formal", "rumor": "rumor"}
+ESTAGIOS = pauta_mod.ESTAGIO_TXT
 SENTIDO = {"piora": "para piorar", "melhora": "para melhorar", "igual": "sem lado claro"}
 TIPOS = {"dia": "Fato do dia", "semana": "Resumo da semana", "mes": "Resumo do mês"}
 # Uma atualização feita até 3 dias antes do começo do período ainda vale como o retrato do começo.
@@ -104,11 +106,11 @@ TAREFA = {
 }
 
 REGRAS_TIPO = {
-    "dia": """8. Escolha UM fato principal e conte só ele: em geral o primeiro da lista de notícias. Se a direção mudou, a mudança é o fato do dia: diga como estava, como ficou e quais pressões pioraram ou melhoraram, cada uma pelo nome. Se uma pressão mudou de lado desde a atualização anterior, ela pode ser o fato do dia. Conte o fato com número e régua, o estágio e por que importa e, quando a ligação é clara, o que muda no emprego, no preço, na parcela ou no dólar. Outro fato só entra se for parte da mesma história. Se a direção não mudou, não fale dela, a não ser na frase da regra 6. Datas: só a de um dado que sai hoje, se estiver nos dados.
+    "dia": """8. Conte o fato que vem em FATO DO DIA, no começo dos dados, e só ele: a editora do site já o escolheu. Outro fato só entra se estiver em "Parte da mesma história". Siga os cuidados da editora, sempre dentro destas regras: as palavras do site valem mais que as dela. Se a direção mudou, a mudança é o fato do dia: diga como estava, como ficou e quais pressões pioraram ou melhoraram, cada uma pelo nome. Se o fato do dia é uma pressão que mudou de lado, diga de onde para onde, numa frase inteira, e por que ela mudou, se os dados disserem. Conte o fato com número e régua, o estágio e por que importa e, quando a ligação é clara, o que muda no emprego, no preço, na parcela ou no dólar. Outro fato só entra se for parte da mesma história. Se a direção não mudou, não fale dela, a não ser na frase da regra 6. Datas: só a de um dado que sai hoje, se estiver nos dados.
 9. Formato: um título de até 70 caracteres que afirma o fato, sem pergunta nem trocadilho; de 1 a 3 parágrafos curtos, até 100 palavras no total, cada parágrafo com até 3 frases. Título e primeira frase têm de se entender sozinhos, num print. Dia sem notícia que mexa no risco pede um parágrafo de uma ou duas frases que diga isso.""",
-    "semana": """8. abertura: uma ou duas frases com o que mais se moveu na semana; diga em poucas palavras se a direção do risco mudou ou ficou a mesma, e desde quando, conforme os dados. movimentos: de 2 a 3. Cada um tem um rótulo com o nome de uma pressão ou de um assunto das notícias, exatamente como está nos dados ("Desconfiança de quem investe", "Dívidas das famílias", "Contas do governo", "Ritmo da economia"), nunca um nome novo, uma conclusão ou frase de efeito, e um texto que liga os fatos da semana daquele assunto, com número e régua, estágio e, quando clara, a ligação com o emprego, o preço, a parcela ou o dólar. Escolha pelos assuntos com mais pressão na semana, pelas pressões que mudaram de lado e pelos dados novos da semana. Compare com a semana anterior, não com ontem. fecho: um ou dois parágrafos; o último diz o que olhar na próxima semana, com a data, a partir de "Próxima semana" nos dados, e por que aquela data importa. Se nada importante está marcado, diga isso.
+    "semana": """8. abertura: uma ou duas frases com o que mais se moveu na semana; diga em poucas palavras se a direção do risco mudou ou ficou a mesma, e desde quando, conforme os dados. movimentos: de 2 a 3. Cada um tem um rótulo com o nome de uma pressão ou de um assunto das notícias, exatamente como está nos dados ("Desconfiança de quem investe", "Dívidas das famílias", "Contas do governo", "Ritmo da economia"), nunca um nome novo, uma conclusão ou frase de efeito, e um texto que liga os fatos da semana daquele assunto, com número e régua, estágio e, quando clara, a ligação com o emprego, o preço, a parcela ou o dólar. Escolha os movimentos nesta ordem, a mesma do fato do dia: a direção, se mudou; as pressões que mudaram de lado; as datas marcadas que saíram na semana (PIB, decisão do Copom, desemprego da PNAD); os fatos do dia da semana; depois os assuntos com os fatos mais firmes (fato consumado antes de previsão e rumor) e maiores. Compare com a semana anterior, não com ontem. fecho: um ou dois parágrafos; o último diz o que olhar na próxima semana, com a data, a partir de "Próxima semana" nos dados, e por que aquela data importa. Se nada importante está marcado, diga isso.
 9. Formato: um título de até 70 caracteres que afirma o principal da semana, sem pergunta nem trocadilho; cada movimento com até 50 palavras; cada parágrafo com até 3 frases e até 50 palavras; até 250 palavras no total. Título e abertura têm de se entender sozinhos, num print.""",
-    "mes": """8. abertura: duas ou três frases com a resposta: a direção do risco no fim do mês e desde quando ela está assim, e o que cada pressão fez, pelo nome e com o mês da comparação, como na frase dos dados ("Se compararmos com julho, pioraram as contas do governo..."): quais pioraram, quais ficaram iguais e quais melhoraram. Se uma pressão mudou de lado no mês, diga de onde para onde, numa frase própria e inteira, como "A desconfiança de quem investe tinha melhorado no fim de setembro e passou a piorar." (nunca "passou de melhorou para piorou"). Não repita um a um os números das tabelas. historia: de um a três parágrafos com a história do mês, um fato ou uma sequência de fatos ligados, contada do começo ao fim, com estágio e o que muda para quem lê. fecho: um ou dois parágrafos com o que olhar no mês que vem, com as datas dos dados e por que elas importam.
+    "mes": """8. abertura: duas ou três frases com a resposta: a direção do risco no fim do mês e desde quando ela está assim, e o que cada pressão fez, pelo nome e com o mês da comparação, como na frase dos dados ("Se compararmos com julho, pioraram as contas do governo..."): quais pioraram, quais ficaram iguais e quais melhoraram. Se uma pressão mudou de lado no mês, diga de onde para onde, numa frase própria e inteira, como "A desconfiança de quem investe tinha melhorado no fim de setembro e passou a piorar." (nunca "passou de melhorou para piorou"). Não repita um a um os números das tabelas. historia: de um a três parágrafos com a história do mês, um fato ou uma sequência de fatos ligados, contada do começo ao fim, escolhida na mesma ordem do fato do dia (a direção, as pressões que mudaram de lado, as datas marcadas do mês, os fatos do dia do mês, depois os fatos mais firmes e maiores), com estágio e o que muda para quem lê. fecho: um ou dois parágrafos com o que olhar no mês que vem, com as datas dos dados e por que elas importam.
 9. Formato: um título de até 70 caracteres que afirma o principal do mês, sem pergunta nem trocadilho; cada parágrafo com até 3 frases e até 50 palavras; até 300 palavras de texto no total (as tabelas não contam). Título e abertura têm de se entender sozinhos, num print.""",
 }
 
@@ -300,17 +302,99 @@ def _eventos_do_periodo(eventos: dict, ini: dt.date, fim: dt.date) -> list[dict]
     return [e for e in eventos.values() if ini.isoformat() <= e["data"] <= fim.isoformat()]
 
 
+def _jornais(e: dict) -> str:
+    j = (e.get("cobertura") or {}).get("jornais") or sorted({f["veiculo"] for f in e.get("fontes", [])})
+    return f"{len(j)} ({', '.join(j)})"
+
+
 def _eventos_por_fator(evs: list[dict], cfg: dict, por_fator: int, linhas: list[str]) -> None:
-    """Pressão do período por assunto, pela mesma conta da caixa de notícias, com os fatos de mais peso."""
+    """As notícias do período por assunto, na ordem da pauta do fato do dia (src/pauta.py: estágio, tamanho, jornais),
+    com o lado de cada assunto pela mesma conta da caixa de notícias. Os assuntos vêm na ordem do seu fato mais forte,
+    e notícias de sinal oposto do mesmo assunto não se anulam na ordem."""
     pr = model.pressao(evs, cfg)
-    por_id = {e["id"]: e for e in evs}
-    for fid, p in sorted(pr["fatores"].items(), key=lambda kv: -abs(kv[1]["saldo"])):
-        linhas.append(f"- {cfg['fatores'].get(fid, fid)}: {SENTIDO[p['sentido']]}.")
-        for i in p["eventos"][:por_fator]:
-            e = por_id[i]
+    grupos: dict[str, list[dict]] = {}
+    for e in sorted(evs, key=pauta_mod.chave_evento):
+        grupos.setdefault(e["fator"], []).append(e)
+    for fid, lst in grupos.items():
+        linhas.append(f"- {cfg['fatores'].get(fid, fid)}: {SENTIDO[pr['fatores'][fid]['sentido']]}.")
+        for e in lst[:por_fator]:
             linhas.append(f"  - {_dm(e['data'])} | {ESTAGIOS.get(e.get('estagio'), 'notícia')} | "
                           f"{'pesa' if e['direcao'] > 0 else 'alivia'} | {e['titulo_evento']} | por quê: {e['porque']} | "
-                          f"jornais: {_lista(e['fontes'])}")
+                          f"jornais: {_jornais(e)}")
+
+
+def pauta_da_rodada(rodada: dict, anterior: dict | None, eventos: dict | None, cfg: dict) -> dict | None:
+    """A pauta gravada na rodada. Uma rodada de antes da pauta ganha a dos degraus, sem a editora."""
+    if rodada.get("pauta"):
+        return rodada["pauta"]
+    if not ((rodada.get("llm") or {}).get("saida")):
+        return None
+    import calendario
+    p = pauta_mod.montar(rodada, anterior, eventos or {}, cfg, calendario.carregar())
+    return {**p, "final": p["padrao"], "mesma_historia": [], "cuidados": []}
+
+
+def _linha_candidato(c: dict, eventos: dict | None) -> str:
+    e = (eventos or {}).get(c.get("evento")) or {}
+    fontes = e.get("fontes") or c.get("fontes") or []
+    return (f"{c['titulo']} | {ESTAGIOS.get(c['estagio'], 'notícia')} | {c['lado']} o risco ({c['assunto']}) | "
+            f"por quê: {c['porque']} | jornais: {len(c['jornais'])} ({', '.join(c['jornais'])}) | manchetes: {_manchetes(fontes)}")
+
+
+def _fato_do_dia(p: dict | None, rodada: dict, cfg: dict, eventos: dict | None, anterior: dict | None) -> tuple[list[str], set]:
+    """O bloco FATO DO DIA, com o que a editora escolheu, e os eventos que ele já conta."""
+    if not p:
+        return [], set()
+    final = p.get("final", p.get("padrao"))
+    usados = set()
+    if final is None:
+        return ["FATO DO DIA: nenhuma notícia lida mexe no risco de recessão. Escreva o parágrafo de dia sem novidade.", ""], usados
+    l = ["FATO DO DIA, escolhido pela editora do site (conte este fato, e só ele):"]
+    if final == "D":
+        l.append("- A direção do risco mudou (veja A DIREÇÃO MUDOU, abaixo).")
+    elif final == "P":
+        l += [_mudou(x) for x in _partes_mudaram(anterior, rodada, cfg) if x["id"] in {y["id"] for y in p.get("pressoes_mudaram", [])}]
+    else:
+        c = pauta_mod.candidato(p, final)
+        l.append(f"- {_linha_candidato(c, eventos)}")
+        usados.add(c.get("evento"))
+    mesmas = [pauta_mod.candidato(p, i) for i in p.get("mesma_historia", []) if i not in ("D", "P")]
+    if [c for c in mesmas if c]:
+        l += ["", "Parte da mesma história (entra só para explicar o fato do dia):"]
+        for c in mesmas:
+            if c:
+                l.append(f"- {_linha_candidato(c, eventos)}")
+                usados.add(c.get("evento"))
+    if p.get("cuidados"):
+        l += ["", "Cuidados da editora para este texto:", *[f"- {x}" for x in p["cuidados"]]]
+    return [*l, ""], usados
+
+
+def _fatos_e_datas(rodadas: list[dict], ini: dt.date, fim: dt.date, quando: str, eventos: dict | None) -> list[str]:
+    """As datas marcadas que saíram no período e os fatos do dia que a editora escolheu nele (pelo registro das
+    rodadas, nunca pelo texto dos posts). Os resumos escolhem os movimentos nessa ordem."""
+    import calendario
+    marc = [x for x in calendario.carregar() if ini.isoformat() <= x["data"] <= fim.isoformat()]
+    ordem = list(pauta_mod.MARCADAS)
+    marc.sort(key=lambda x: (ordem.index(x["tipo"]) if x["tipo"] in ordem else len(ordem), x["data"]))
+    out = []
+    if marc:
+        out += ["", f"Datas marcadas que saíram {quando} (o PIB, a decisão do Copom e o desemprego da PNAD vêm primeiro):"]
+        out += [f"- {_dm(x['data'])}: {pauta_mod.MARCADAS.get(x['tipo']) or pauta_mod.OUTRAS_DATAS.get(x['tipo'], x['tipo'])}"
+                for x in marc]
+    fatos = []
+    for r in por_dia(rodadas):
+        p = r.get("pauta")
+        if not p or (r.get("post") or {}).get("tipo", "dia") != "dia":
+            continue
+        t = pauta_mod.titulo_escolha(p)
+        c = pauta_mod.candidato(p, p.get("final", p.get("padrao")))
+        quando_fato = ((eventos or {}).get((c or {}).get("evento")) or {}).get("data") or r["gerado_em"][:10]
+        if t:
+            fatos.append(f"- {_dm(quando_fato)}: {t}")
+    if fatos:
+        out += ["", f"Os fatos do dia {quando}, escolhidos pela editora do site (com a data do fato):", *fatos]
+    return out
 
 
 def _post_anterior(anterior_post: dict | None) -> list[str]:
@@ -341,9 +425,11 @@ def dados_texto(rodada: dict, cfg: dict, datas: list[dict] | None = None, evento
     dias = ", ".join(_data(d) for d in cob.get("dias", [])) or "dias anteriores"
     d, da = _dir(rodada), _dir(anterior)
     mudou = da is None or da["estado"] != d["estado"]
+    p = pauta_da_rodada(rodada, anterior, eventos, cfg)
+    bloco, usados = _fato_do_dia(p, rodada, cfg, eventos, anterior)
     l = [f"Hoje: {DIAS_SEMANA[hoje.weekday()]}, {hoje.day} de {MESES[hoje.month - 1]} de {hoje.year}.",
          f"Notícias lidas: {f'{n} manchetes' if n is not None else 'as manchetes'} de economia de {len(veic)} jornais ({', '.join(veic)}), publicadas em {dias}.",
-         ""]
+         "", *bloco]
     if da is None:
         l.append(f"Direção: {_frase_estado(d['estado'])}, {_desde(d, hoje)}. É a primeira medição do site.")
     elif mudou:
@@ -356,7 +442,7 @@ def dados_texto(rodada: dict, cfg: dict, datas: list[dict] | None = None, evento
         l.append(f"Pelos dados de hoje, a direção seria {d['pendente']}; ela só muda se o mês que vem repetir. O topo já mostra isso.")
     mp = _partes_mudaram(anterior, rodada, cfg)
     if mp:
-        l += ["", "Linhas do topo que mudaram de lado desde a atualização anterior (podem ser o fato do dia):"]
+        l += ["", "Linhas do topo que mudaram de lado desde a atualização anterior:"]
         l += [_mudou(x) for x in mp]
     l += ["", "As cinco pressões (o topo do site já mostra cada uma; use só para explicar o fato):",
           *_linhas_partes(rodada, cfg)]
@@ -369,12 +455,12 @@ def dados_texto(rodada: dict, cfg: dict, datas: list[dict] | None = None, evento
         l += ["", "Dados mais recentes dos assuntos com notícia (use só para explicar o fato):"]
         l += [f"- {cfg['fatores'].get(fid, fid)}: {t}" for fid, t in fatos]
     if pr.get("n"):
-        l += ["", f"Notícias de ontem por assunto, da maior pressão para a menor (o primeiro fato é o candidato a fato do dia). "
-                  f"No conjunto: {SENTIDO[pr['sentido']]}."]
+        l += ["", f"Outras notícias de ontem por assunto (contexto: não são o fato do dia e só entram se estiverem em "
+                  f"Parte da mesma história). No conjunto: {SENTIDO[pr['sentido']]}."]
         nomes_f = cfg["fatores"]
-        for fid, p in sorted(pr["fatores"].items(), key=lambda kv: -abs(kv[1]["saldo"])):
-            l.append(f"- {nomes_f.get(fid, fid)}: {SENTIDO[p['sentido']]}.")
-            for i in p["eventos"][:3]:
+        for fid, pf in sorted(pr["fatores"].items(), key=lambda kv: -abs(kv[1]["saldo"])):
+            l.append(f"- {nomes_f.get(fid, fid)}: {SENTIDO[pf['sentido']]}.")
+            for i in [i for i in pf["eventos"] if i not in usados][:3]:
                 e = (eventos or {}).get(i)
                 if e:
                     l.append(f"  - {ESTAGIOS.get(e.get('estagio'), 'notícia')} | "
@@ -426,9 +512,11 @@ def dados_semana(rodada: dict, cfg: dict, datas: list[dict] | None, eventos: dic
     novos = _fatos_novos(r0, r1, cfg)
     if novos:
         l += ["", "Dados que saíram na semana:", *novos]
+    l += _fatos_e_datas(sem, ini, hoje - dt.timedelta(days=1), "na semana", eventos)
     evs = _eventos_do_periodo(eventos or {}, ini, hoje - dt.timedelta(days=1))
     if evs:
-        l += ["", "Notícias da semana, somadas por assunto, da maior pressão para a menor:"]
+        l += ["", "Notícias da semana por assunto, na ordem da pauta (fato consumado antes de previsão e rumor, depois o "
+                  "tamanho e os jornais); o lado de cada assunto é o da caixa de notícias:"]
         _eventos_por_fator(evs, cfg, 4, l)
     else:
         l += ["", "Nenhuma notícia da semana foi relevante para o risco de recessão."]
@@ -615,9 +703,11 @@ def dados_mes(rodada: dict, cfg: dict, datas: list[dict] | None, eventos: dict |
         if s.get("tabela"):
             l += [" | ".join(s["tabela"]["cab"]), *[" | ".join(lin) for lin in s["tabela"]["linhas"]]]
         l += s.get("paragrafos", [])
+    l += _fatos_e_datas(periodo, ini, hoje - dt.timedelta(days=1), "no mês", eventos)
     evs = _eventos_do_periodo(eventos or {}, ini, hoje - dt.timedelta(days=1))
     if evs:
-        l += ["", "Notícias do mês que o site leu, somadas por assunto, da maior pressão para a menor (para escolher a história do mês):"]
+        l += ["", "Notícias do mês que o site leu, por assunto, na ordem da pauta (fato consumado antes de previsão e rumor, "
+                  "depois o tamanho e os jornais), para escolher a história do mês:"]
         _eventos_por_fator(evs, cfg, 5, l)
     prox = [x for x in (datas or []) if hoje.isoformat() < x["data"] <= (hoje + dt.timedelta(days=35)).isoformat()]
     l += ["", "O mês que vem: " + ("; ".join(f"{x['dia']}, {x['rotulo']}" for x in prox) + "." if prox

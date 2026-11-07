@@ -664,7 +664,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 <p>O resto de cada linha é encolhendo. No governo atual, a mesma regra disse caindo em meados de 2023 e no começo de 2024, e subindo de agosto de 2024 a março de 2025 (com a Selic subindo e o dólar passando de R$ 6) e na maior parte de 2026.</p>
 <h2 id="as-noticias">As notícias</h2>
 <p>As notícias não mudam a direção. Se cada notícia somasse um pedaço, como os jornais publicam mais notícia ruim que boa, a direção tenderia a ficar sempre em subindo. Elas mostram, na caixa "Para onde as notícias empurram", para que lado cada assunto é empurrado.</p>
-<p><strong>A leitura das manchetes.</strong> As manchetes de oito jornais com linhas editoriais diferentes (Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1) são coletadas de hora em hora. Às 06h30, um modelo de linguagem (Claude, sem ferramentas, com saída em esquema JSON validado por código) lê as do dia anterior e transforma os fatos em eventos: assunto, lado, tamanho (1 a 3) e estágio. Notícia que só repete um dado já medido fica de fora. Os assuntos são sete: Ritmo da economia, Juro e inflação, Dívidas das famílias, Desconfiança de quem investe, Contas do governo, Emprego e Economia lá fora.</p>
+<p><strong>A leitura das manchetes.</strong> As manchetes de oito jornais com linhas editoriais diferentes (Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1) são coletadas de hora em hora. Às 06h30, um modelo de linguagem (Claude, sem ferramentas, com saída em esquema JSON validado por código) lê as do dia anterior e transforma os fatos em eventos: assunto, lado, tamanho (1 a 3) e estágio (dado divulgado, decisão tomada, proposta em votação, anúncio, previsão ou rumor). Previsão é o que um banco, consultoria, associação, organismo internacional ou o governo espera; o boletim Focus conta como dado, porque é a medida da Inflação esperada. Cada evento cita até 6 manchetes e lista as outras do mesmo fato, para o site contar quantos jornais deram o fato. Notícia que só repete um dado já medido fica de fora. Os assuntos são sete: Ritmo da economia, Juro e inflação, Dívidas das famílias, Desconfiança de quem investe, Contas do governo, Emprego e Economia lá fora.</p>
 <p><strong>A pressão do dia, por assunto:</strong></p>
 <table>
 <thead>
@@ -689,6 +689,10 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 <tr>
 <td>Anúncio sem ato formal</td>
 <td>0,3</td>
+</tr>
+<tr>
+<td>Previsão de banco, consultoria ou governo</td>
+<td>vale inteiro, como dado divulgado (o estágio próprio serve à escolha do fato do dia)</td>
 </tr>
 <tr>
 <td>Rumor, bastidor ou plano em estudo</td>
@@ -716,6 +720,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 </tr>
 </tbody>
 </table>
+<p>Esses pontos medem para que lado cada assunto é empurrado e não decidem qual fato o post conta: a escolha do fato do dia tem régua própria, em <a href="#os-posts">Os posts</a>.</p>
 <p><strong>Fatos de dados.</strong> Saem de código (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/dossie.py"><code>src/dossie.py</code></a>), todo dia, comparando o dado de hoje com a série histórica ("o maior desde…"). O post os recebe como contexto.</p>
 <h2 id="o-que-causa-recessao">O que causa recessão</h2>
 <p>A aba <a href="https://vaidarcrise.com.br/causas/">O que causa recessão</a> explica o caminho mais comum até a recessão para quem não é economista: por que os preços sobem, o juro alto como freio, a bola de neve das famílias endividadas, os casos de 2013 a 2016 e de 2021 e 2022, a bola de neve da dívida do governo e, no fim, um mapa que junta as partes. Ela não mostra dados do dia; os números com data ficam listados abaixo. Segue a seção "Como explicar um mecanismo" do <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md">PERSONA.md</a>. Nada dela entra na direção. As duas pesquisas abaixo sustentam o que a aba diz; os números delas ficam aqui, não na aba.</p>
@@ -803,13 +808,13 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 <tr>
 <td>Fato do dia</td>
 <td>Segunda a sábado</td>
-<td>As notícias da véspera por assunto, os fatos de dados dos assuntos com notícia, as cinco pressões com as frases do topo e, se a direção mudou ou uma pressão mudou de lado, a mudança</td>
+<td>O fato que a pauta escolheu (abaixo), o que é parte da mesma história e os cuidados da editora; as outras notícias da véspera por assunto, só como contexto; os fatos de dados dos assuntos com notícia; as cinco pressões com as frases do topo e, se a direção mudou ou uma pressão mudou de lado, a mudança</td>
 <td>Até 100 palavras</td>
 </tr>
 <tr>
 <td>Resumo da semana</td>
 <td>Domingo</td>
-<td>As atualizações da semana, contra a do domingo anterior: a direção em cada dia, as pressões que mudaram de lado, os dados novos, as notícias somadas por assunto (mesma conta da pressão do dia) e as datas da semana seguinte</td>
+<td>As atualizações da semana, contra a do domingo anterior: a direção em cada dia, as pressões que mudaram de lado, os dados novos, as datas marcadas que saíram, os fatos do dia da semana, as notícias por assunto na ordem da pauta (o lado de cada assunto é o da caixa de notícias) e as datas da semana seguinte</td>
 <td>Até 250 palavras</td>
 </tr>
 <tr>
@@ -827,6 +832,15 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 </tbody>
 </table>
 <p>Na página principal, todos os posts ficam numa rolagem só, do mais novo ao mais antigo, e cada um tem também o seu link permanente. Só o calendário decide o tipo: domingo é sempre o resumo da semana, e o primeiro domingo do mês é sempre o resumo do mês, mesmo que faltem atualizações. Os resumos nunca saem dos posts anteriores. O resumo do mês sai dos dados oficiais, as mesmas séries da direção: o começo do mês é a atualização do dia 1 (ou de até 3 dias antes); sem ela, as pressões são refeitas com os dados do fim do mês anterior, com o atraso típico de cada dado, a mesma conta da linha do tempo do topo. O resumo da semana sai das atualizações em <code>runs/</code>, comparadas com a do domingo anterior (ou, sem ela, com a primeira da semana). As notícias de um resumo são só as que o site leu; os dias sem leitura ficam no registro do post em <code>runs/</code> (<code>post.periodo.noticias</code>), e a página não os lista. Todo post traz a mesma assinatura, "Escrito pelo Claude com a ajuda do Pedro.", sem horário. Cada post recebe o anterior do mesmo tipo só para não copiar frases dele.</p>
+<p><strong>Como o fato do dia é escolhido.</strong> A régua está na carta editorial (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/CARTA_EDITORIAL.md"><code>CARTA_EDITORIAL.md</code></a>), que vale para qualquer governo. O código (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/pauta.py"><code>src/pauta.py</code></a>) monta a pauta e dá a escolha padrão pelo primeiro degrau que acontecer:</p>
+<ol>
+<li>a direção do risco mudou;</li>
+<li>uma das cinco pressões mudou de lado desde a atualização anterior;</li>
+<li>um choque grande e raro: tamanho 3 e já consumado (dado divulgado ou decisão tomada);</li>
+<li>saiu, nos dias de notícia que a atualização leu, uma data marcada que mexe numa linha do topo: o PIB do trimestre, a decisão do Copom e o desemprego da PNAD, nessa ordem, pelo calendário do site;</li>
+<li>fora isso, a notícia de estágio mais firme (fato consumado, proposta em votação, anúncio, previsão, rumor), depois a de maior tamanho; no empate, o vaivém do mercado do dia (o fechamento do dólar, da Bolsa e dos juros) fica atrás, porque sai todo dia em todo jornal e o topo já mostra o dólar e o juro de 10 anos; por último, a que saiu em mais jornais e em mais manchetes.</li>
+</ol>
+<p>Cada notícia conta sozinha: não há desconto por "o mercado já esperava", e notícias de sinal oposto do mesmo assunto não se anulam. Uma notícia descartada pelo classificador (continuação de um fato já contado ou dado já medido) não é escolha padrão. Depois, uma IA editora (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/editora.py"><code>src/editora.py</code></a>), outra chamada ao mesmo modelo, lê a carta inteira, a pauta e todas as manchetes da cesta. Ela fica com a escolha padrão ou troca por um destes motivos: a data marcada saiu sem novidade e há um fato consumado maior; os dois fatos são a mesma história e o outro é a melhor porta de entrada; um fato que a imprensa deu pouco mexe numa das cinco pressões; o fato padrão repete o do dia anterior. O código confere a troca e volta à escolha padrão quando o motivo falta ou não se sustenta: degrau 1 não tem troca, fato consumado não troca por previsão, anúncio ou rumor, e cada motivo tem a sua condição (a carta lista todas). Quando a troca passa, uma segunda chamada defende a escolha padrão numa frase. A editora também diz até dois fatos que entram como parte da mesma história e até três cuidados para o redator, e responde por escrito a cinco testes (troca de governo, se o fato aconteceu, que pressão ele mexe, o que há de novo e se o fato mais dado ficou de fora). Tudo fica no registro da rodada (<code>pauta</code>: candidatos, degrau, escolha padrão, escolha final, conferência e respostas). Se a editora falhar, vale a escolha padrão. A carta tem uma parte de casos julgados pelo Pedro, que cresce com cada dia em que ele discordar da escolha; o primeiro é 5/11/2026, quando o post abriu com as vagas com carteira no dia seguinte à decisão do Copom. Os resumos da semana e do mês escolhem os movimentos na mesma ordem.</p>
 <p>O modelo de linguagem recebe os fatos prontos e só redige. Ele não muda a direção nem a pressão das notícias. Depois do rascunho, um editor (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/edita_texto.py"><code>src/edita_texto.py</code></a>), outra chamada ao mesmo modelo, lê o texto com o guia de escrita do site (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md"><code>PERSONA.md</code></a>) e com os problemas que o verificador achou, lista as sugestões e devolve o texto editado, sem mudar fato nem número; a versão do editor só fica se não tiver mais problemas que o rascunho, e as sugestões ficam no registro da rodada (<code>post.edicao</code>). Um verificador em código (<a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/revisa_texto.py"><code>src/revisa_texto.py</code></a>) procura moldes de texto automático, jargão, risco de recessão em porcentagem, previsão de recessão e explicações de método. Nos posts, também confere: número ou data que não está nos dados que o modelo recebeu (com a folga do arredondamento), texto acima do tamanho do tipo, fato do dia que repete a direção sem mudança, data futura no fato do dia (as datas ficam na lateral) e frase copiada do post anterior do mesmo tipo. Qualquer problema pede uma reescrita, no máximo uma. Número fora dos dados, risco em porcentagem, previsão de recessão ou mais de uma frase sobre a conta, se sobrarem, barram o texto, e sai a atualização sem texto corrido.</p>
 <p>Cada atualização guarda o prompt (hash), o modelo usado, a resposta bruta e a direção do dia em <a href="https://github.com/pedrojahara/vaidarcrise/tree/main/runs"><code>runs/</code></a>. Depois do lançamento oficial do site, o que foi publicado fica congelado. Antes dele, os textos e os registros antigos acompanham as mudanças do site, com os mesmos números e datas.</p>
 <h2 id="salvaguardas">Salvaguardas</h2>

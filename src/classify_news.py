@@ -20,7 +20,7 @@ CLAUDE = os.environ.get("CLAUDE_BIN", "/Users/pedrojahara/.local/bin/claude")
 MODELO_LLM = os.environ.get("VDC_LLM_MODEL", "opus")
 # Os fatores das notícias (config/modelo.json, "fatores").
 FATORES = ["atividade", "juro", "credito", "mercado", "contas", "emprego", "externo"]
-ESTAGIOS = ["dado", "decidido", "em_votacao", "anuncio", "rumor"]
+ESTAGIOS = ["dado", "decidido", "em_votacao", "anuncio", "previsao", "rumor"]
 ORIGENS = ["politica", "banco_central", "dados", "mundo", "natureza"]
 
 SCHEMA = {
@@ -32,10 +32,11 @@ SCHEMA = {
             "type": "array", "maxItems": 12,
             "items": {
                 "type": "object", "additionalProperties": False,
-                "required": ["noticia_ids", "titulo_evento", "estagio", "chance_aprovacao", "origem", "fator",
+                "required": ["noticia_ids", "outras_ids", "titulo_evento", "estagio", "chance_aprovacao", "origem", "fator",
                              "direcao", "magnitude", "ja_no_preco", "ja_nos_indicadores", "duplicata_de", "porque"],
                 "properties": {
                     "noticia_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "maxItems": 6},
+                    "outras_ids": {"type": "array", "items": {"type": "string"}, "maxItems": 80},
                     "titulo_evento": {"type": "string", "maxLength": 90},
                     "estagio": {"type": "string", "enum": ESTAGIOS},
                     "chance_aprovacao": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
@@ -70,15 +71,16 @@ O que conta:
    - "externo": economia mundial, Fed, China, preços de commodities no mundo, guerras, comércio exterior.
    Decisões de tribunais, do Congresso ou de agências entram no fator que elas mais afetam.
 4. estagio diz em que pé o fato está:
-   - "dado": um número foi divulgado (estatística oficial, projeção publicada por uma instituição, resultado de empresa ou de mercado).
+   - "dado": um número foi divulgado (estatística oficial, resultado de empresa ou de mercado). O boletim Focus, a mediana das previsões dos bancos que o Banco Central publica toda segunda, é "dado", porque o site mede a inflação esperada por ele.
    - "decidido": a decisão foi tomada e é oficial (lei sancionada, medida publicada, decisão do Copom, do Fed ou de um tribunal, reajuste em vigor numa empresa).
    - "em_votacao": há proposta formal em andamento (projeto enviado, votação marcada, texto em comissão, consulta pública).
    - "anuncio": uma autoridade ou empresa disse que vai fazer, sem ato formal ainda.
+   - "previsao": a previsão ou projeção de um banco, gestora, consultoria, associação, organismo internacional (FMI, OCDE) ou do governo para o PIB, a inflação, o juro, o dólar, as contas ou as vendas de um setor. É o que alguém espera que aconteça, e não o que aconteceu.
    - "rumor": especulação, informação de bastidor, fonte anônima, plano que um órgão "estuda" ou "avalia".
    Na dúvida entre dois estágios, use o menos avançado.
    chance_aprovacao: só quando estagio = "em_votacao", a chance de a proposta ser aprovada mais ou menos como está, entre 0,2 e 0,8, a partir do que as manchetes dizem sobre apoio, prazos e resistência. Nos outros estágios, null. Direção e magnitude descrevem o efeito se a proposta passar.
 5. origem: "politica" para governos, Congresso, Justiça e agências do Brasil; "banco_central" para o Banco Central do Brasil e o Copom; "dados" para números da economia brasileira, de empresas e de mercados; "mundo" para fatos de fora do Brasil; "natureza" para clima, safra, energia e desastres.
-6. Agrupe manchetes sobre o mesmo fato num único evento (noticia_ids com todas elas). Use só ids que aparecem na lista.
+6. Agrupe manchetes sobre o mesmo fato num único evento. noticia_ids: até 6 manchetes que melhor contam o fato, de jornais diferentes quando der. outras_ids: todas as outras manchetes da lista sobre o mesmo fato, inclusive as repetidas, para o site contar quantos jornais deram o fato (vazio se não houver). Use só ids que aparecem na lista.
 7. direcao = 1 se o fato aumenta o risco de recessão, -1 se reduz. magnitude: 1 = pequeno, 2 = relevante, 3 = grande e raro (algo comparável a uma mudança de regime fiscal, um choque de mercado histórico ou um choque externo grave). Na dúvida, use a menor.
 8. ja_nos_indicadores = true só quando a notícia apenas relata o valor de um dos indicadores que o site já mede, listados em <indicadores_ja_medidos>. Qualquer outro número (bolsa, juros futuros, risco-país, resultado primário, inflação, varejo, indústria, crédito) não está nos indicadores: se for relevante, é evento como os outros, com ja_nos_indicadores = false.
 9. ja_no_preco = true quando a notícia descreve algo que o mercado já esperava ou já precificou.
@@ -158,5 +160,6 @@ def classificar(noticias: dict, recentes: list[dict], contexto: str, budget_usd:
     ids = {it["id"] for it in noticias["itens"]}
     for ev in saida["eventos"]:
         ev["noticia_ids"] = [i for i in ev["noticia_ids"] if i in ids]
+        ev["outras_ids"] = [i for i in dict.fromkeys(ev.get("outras_ids") or []) if i in ids and i not in ev["noticia_ids"]]
     saida["eventos"] = [ev for ev in saida["eventos"] if ev["noticia_ids"]]
     return r

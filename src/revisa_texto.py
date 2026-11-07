@@ -65,6 +65,13 @@ MOLDES = [
      "diga 'os importados' (ou 'a importação') em vez de 'o que vem de fora'"),
     (re.compile(r"(?:^|(?<=[.!?:]\s))No bolso\b"),
      "categoria que o site não usa: use os nomes do topo (as cinco pressões e Também acompanhamos)"),
+    # PERSONA.md, regra 11 do prompt: pessoas e partidos não, só o cargo ou a instituição.
+    (re.compile(r"\b(Lula|Haddad|Bolsonaro|Galípolo|Campos Neto|Tarcísio|Alckmin|Tebet|Durigan|Hugo Motta|Alcolumbre|"
+                r"Alexandre de Moraes|Gleisi|Trump|Powell|Xi Jinping|Milei)\b|\b(PT|PL|MDB|PSDB|PSOL|PSD|União Brasil)\b"),
+     "nome de pessoa ou partido: use o cargo ou a instituição (o presidente, a Fazenda, o partido do governo)"),
+    # CARTA_EDITORIAL.md, "Cuidados para o redator": recorde tem a régua da série.
+    (re.compile(r"\b(já (registrad|vist)[oa]s?|de todos os tempos|da história)\b", re.I),
+     "recorde sem a régua: diga 'da série' ou desde quando a série existe, como a fonte diz"),
 ]
 
 FRASE = re.compile(r"(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9\"“])")
@@ -258,6 +265,10 @@ def problemas_post(post: dict, tipo: str = "dia", dados: str | None = None, hoje
             out.append(f"parágrafo {i}: inflação que 'cai' ou 'recua' sem dizer que os preços sobem mais devagar")
         if re.search(r"\b(eu|nós|nosso|nossa)\b", p, flags=re.IGNORECASE):
             out.append(f"parágrafo {i} em primeira pessoa")
+    # Regra 9 do prompt do fato do dia e src/verifica_base.py: até 100 palavras no total.
+    total = sum(len(p.split()) for p in post["paragrafos"])
+    if tipo == "dia" and total > 100:
+        out.append(f"fato do dia com {total} palavras (até 100): corte o que não é o fato, sem mudar os números")
     sig = siglas_soltas(" ".join(_prosa(post)))
     if sig:
         out.append(f"sigla que a leitora não conhece ({', '.join(sig)}): escreva o nome por extenso quando ele explica "
