@@ -131,28 +131,13 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
-/* a escada de porquês, no "Entenda a fundo" dos fatos do dia (src/base_site.py) */
-.escada{list-style:none;margin:0;padding:0}
-.degrau{position:relative;padding:0 0 18px 22px;border-left:2px solid var(--fio);margin-left:6px}
-.degrau:last-child{border-left-color:transparent;padding-bottom:4px}
-.degrau::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--papel);box-shadow:inset 0 0 0 3px var(--hist)}
-.degrau.r-consenso::before{box-shadow:inset 0 0 0 3px var(--desce)}
-.degrau.r-maioria_com_dissenso::before{box-shadow:inset 0 0 0 3px var(--atencao)}
-.degrau.r-em_disputa::before{background:var(--sobe);box-shadow:none}
-.degrau.r-bolso::before{background:var(--placa);box-shadow:none}
-.d-perg{font:700 17px/1.35 var(--sistema);margin:0 0 4px}
+/* rótulos e fontes que a página de cada pressão usa (src/base_site.py) */
 .rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
 .rot.r-consenso{background:var(--normal-fundo)}
 .rot.r-maioria_com_dissenso{background:var(--nota-fundo);box-shadow:inset 0 0 0 1px var(--atencao)}
 .rot.r-em_disputa{background:var(--alerta-fundo)}
-.d-txt{margin:0 0 6px;font-size:17px;line-height:1.55}
 .d-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 4px;overflow-wrap:anywhere}
 .d-fontes a{color:var(--meta)}
-.d-mais{font:14.5px/1.45 var(--sistema);margin:4px 0 0}
-.d-teste{font:15px/1.5 var(--sistema);margin:2px 0 4px}
-.d-teste>summary{cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:2px}
-.d-teste p{margin:6px 0 0}
-.d-teste .d-lim{color:var(--meta);font-size:14px}
 
 .blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado";grid-template-rows:auto 1fr;padding-top:28px;padding-bottom:28px}
 .blog .nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}
@@ -187,16 +172,27 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .comece .rot{display:block;font-size:13px;font-weight:600;color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
 .comece b{display:block;font:700 20px/1.3 var(--serifa);margin-bottom:4px}
 
-/* o "Entenda a fundo" do fato do dia: a escada de porquês, fechada até o toque */
+/* a leitura a fundo do fato do dia (src/fundo.py): o texto corrido, fechado até o toque */
 .fundo{margin:4px 0 18px;max-width:660px;border:1px solid var(--fio);border-radius:10px}
 .fundo>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 12px 12px 14px;cursor:pointer;list-style:none;font:600 16px/1.35 var(--sistema)}
+.fundo .f-cab{display:block;min-width:0}
+.fundo .f-rot{display:block;font:600 12.5px/1.3 var(--sistema);color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.fundo .f-tit{display:block;font:700 18px/1.35 var(--serifa);color:var(--tinta)}
 .fundo>summary::-webkit-details-marker{display:none}
 .fundo>summary .seta{width:18px;height:18px;flex:none;transition:transform .15s}
 .fundo[open]>summary .seta{transform:rotate(180deg)}
 .fundo[open]>summary{border-bottom:1px solid var(--fio);margin-bottom:16px}
-.fundo .escada{padding:0 14px 0 12px}
-.post .fundo p{margin:0 0 6px}
-.post .fundo p.d-perg{margin-bottom:4px}
+.fundo .f-corpo{padding:0 14px 4px}
+.post .fundo .f-corpo p{margin:0 0 14px;font-size:17px;line-height:1.6}
+.fundo .f-h{font:700 18px/1.35 var(--serifa);margin:22px 0 8px}
+.fundo .f-prev{background:var(--nota-fundo);border-left:4px solid var(--placa);border-radius:4px;padding:10px 12px;margin:18px 0 12px;font:15.5px/1.5 var(--sistema)}
+.fundo .f-prev b{display:block;margin-bottom:2px}
+.post .fundo .f-prev p{margin:0;font-size:15.5px;line-height:1.5}
+.post .fundo p.f-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:10px 0 6px;overflow-wrap:anywhere}
+.fundo .f-fontes a{color:var(--meta)}
+.ponte.so{display:block;margin:4px 0 18px;max-width:660px;padding:12px 14px;border-radius:10px;background:var(--maquina);text-decoration:none;color:var(--tinta);font:15px/1.4 var(--sistema)}
+.ponte.so b{display:block;font:700 17px/1.35 var(--serifa);color:var(--link);margin:0 0 2px}
+.ponte.so:hover b{text-decoration:underline}
 .fundo .ponte{display:block;margin:6px 14px 14px;padding:12px 14px;border-radius:10px;background:var(--maquina);text-decoration:none;color:var(--tinta);font:15px/1.4 var(--sistema)}
 .fundo .ponte b{display:block;font:700 17px/1.35 var(--serifa);color:var(--link);margin:0 0 2px}
 .fundo .ponte:hover b,.fundo .ponte:focus-visible b{text-decoration:underline}

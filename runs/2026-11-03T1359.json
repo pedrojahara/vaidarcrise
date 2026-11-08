@@ -2518,149 +2518,858 @@
    "trocado_em": "2026-11-07",
    "motivo": "Fase 0 da base de conhecimento: o fato do dia ganhou a escada de porquês, a pedido do Pedro em 7/11/2026."
   },
-  "escada": [
-   {
-    "pergunta": "Por que o petróleo tinha subido?",
-    "rotulo": "fato",
-    "texto": "Em outubro, o barril do Brent subiu mais de 14% com o medo de uma nova escalada da guerra no Irã. A queda de agora desfaz só parte dessa alta, e a causa vem de fora do Brasil.",
-    "afirmacoes": [
-     "a-ev-petroleo-outubro",
-     "a-ev-petroleo-paz"
-    ]
-   },
-   {
-    "pergunta": "Por que o preço lá fora chega ao posto daqui?",
-    "rotulo": "fato",
-    "texto": "O Brasil importa parte do diesel e da gasolina que usa, e quem compra esse combustível de outros países paga o preço de lá, em dólar. Por isso o dólar mais caro, que estava em R$ 5,49 em 3/11, tira parte do alívio.",
-    "afirmacoes": [
-     "a-importa-combustivel",
-     "a-dolar-0311"
-    ]
-   },
-   {
-    "pergunta": "E o que isso muda para você?",
-    "texto": "A Selic é a base do juro que os bancos cobram no cartão e no financiamento. Se a inflação esperada cair para perto da meta, de 3% ao ano, o juro do crédito tende a cair depois.",
-    "afirmacoes": [
-     "a-bc-selic",
-     "a-meta"
-    ]
-   }
-  ],
-  "versao_escada": {
-   "titulo": "Petróleo cai quase 8% lá fora com sinal de negociação entre EUA e Irã",
-   "paragrafos": [
-    "O petróleo ficou quase 8% mais barato lá fora com sinais de que EUA e Irã podem negociar o fim da guerra, mas ainda não há acordo.",
-    "Se o barril seguir mais barato, o diesel e a gasolina importados pelo Brasil ficam mais baratos, e o frete e a comida podem baratear nos meses seguintes. O dólar a R$ 5,49, contra R$ 5,18 no fim de agosto, tira parte desse alívio, porque encarece o combustível importado.",
-    "Esse alívio de fora chega quando os bancos (Focus) esperam que os preços subam 5,0% em 12 meses, contra 4,2% no fim de julho."
-   ],
-   "secoes": [
-    {
-     "paragrafos": [
-      "O petróleo ficou quase 8% mais barato lá fora com sinais de que EUA e Irã podem negociar o fim da guerra, mas ainda não há acordo.",
-      "Se o barril seguir mais barato, o diesel e a gasolina importados pelo Brasil ficam mais baratos, e o frete e a comida podem baratear nos meses seguintes. O dólar a R$ 5,49, contra R$ 5,18 no fim de agosto, tira parte desse alívio, porque encarece o combustível importado.",
-      "Esse alívio de fora chega quando os bancos (Focus) esperam que os preços subam 5,0% em 12 meses, contra 4,2% no fim de julho."
-     ]
-    }
-   ],
-   "problemas": [],
-   "edicao": {
-    "sugestoes": [
-     {
-      "trecho": "O dólar a R$ 5,49, contra R$ 5,18 no fim de agosto, tira parte desse alívio.",
-      "problema": "Fato sem o porquê: a frase não diz como o dólar mais caro tira o alívio.",
-      "como_fica": "O dólar a R$ 5,49, contra R$ 5,18 no fim de agosto, tira parte desse alívio, porque encarece o combustível importado."
-     },
-     {
-      "trecho": "Se o barril seguir mais barato, o diesel e a gasolina que o Brasil importa ficam mais baratos, e o frete e a comida podem baratear nos meses seguintes.",
-      "problema": "Parágrafo passaria de 50 palavras com a explicação do dólar. Dá para enxugar sem perder o sentido.",
-      "como_fica": "Se o barril seguir mais barato, o diesel e a gasolina importados pelo Brasil ficam mais baratos, e o frete e a comida podem baratear nos meses seguintes."
-     },
-     {
-      "trecho": "contra 4,2% em julho",
-      "problema": "Comparação sem dizer o momento exato do mês, como está nos dados (fim de julho).",
-      "como_fica": "contra 4,2% no fim de julho"
-     },
-     {
-      "trecho": "O alívio vem de fora e chega com os bancos (Focus) esperando preços 5,0% mais altos em 12 meses",
-      "problema": "Frase truncada e ambígua: \"preços 5,0% mais altos\" soa como preço que já subiu, não como o que os bancos esperam que suba.",
-      "como_fica": "Esse alívio de fora chega quando os bancos (Focus) esperam que os preços subam 5,0% em 12 meses"
-     }
-    ],
-    "sugestoes_escada": [
-     {
-      "trecho": "Por isso o dólar mais caro tira parte do alívio.",
-      "problema": "A frase não se entende sozinha: falta dizer qual alívio, quem paga e que é uma condição. Os dados não dizem que o dólar subiu.",
-      "como_fica": "Por isso, o petróleo mais barato lá fora pode baratear o diesel e a gasolina aqui, mas, se o dólar subir, parte desse alívio se perde."
-     },
-     {
-      "trecho": "quem importa paga o preço de lá fora, em dólar",
-      "problema": "Falta dizer quem é que importa.",
-      "como_fica": "as empresas que compram esse combustível de outros países pagam o preço de lá, em dólar"
-     },
-     {
-      "trecho": "Os bancos (Focus) esperam 5,0% em 12 meses",
-      "problema": "O número vem sem comparação com um mês, não diz o que sobe e não está arredondado.",
-      "como_fica": "No fim de outubro, os bancos (Focus) esperavam que os preços subissem 5% nos 12 meses seguintes, contra 4,2% no fim de julho."
-     },
-     {
-      "trecho": "e combustível mais barato ajuda a segurar essa conta.",
-      "problema": "Falta o 'e daí' para o bolso: a Selic influencia o juro do empréstimo.",
-      "como_fica": "Combustível mais barato ajuda a segurar essa conta, e ela pesa na Selic, que influencia o juro que os bancos cobram de quem pega empréstimo ou financiamento."
-     },
-     {
-      "trecho": "No começo de novembro, caiu quase 8% com sinais de que EUA e Irã podem negociar. É uma causa de fora.",
-      "problema": "Frases curtas empilhadas. Também falta dizer em que pé está a negociação: ainda não há acordo.",
-      "como_fica": "No começo de novembro, caiu quase 8% com sinais de que EUA e Irã podem negociar o fim da guerra, ainda sem acordo, o que é uma causa de fora do Brasil."
-     }
-    ],
-    "aplicada": "à mão, sugestão por sugestão, sem mudar fato nem número"
-   },
-   "meta": [
-    {
-     "modelo_pedido": "opus",
-     "prompt_sha256": "5e54678718a824170c5de4d9571fe0a570c1c53422039ce8d104faa3af04f7c6",
-     "system_sha256": "fd9a8be54c94ed707c0b33221d75dd0e5cfea05070c681fc31e30145ca999d63",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.1464872,
-     "modelos": [
-      "claude-haiku-5-5",
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "e11c876e-56f5-4a8a-8dab-38ed37d4be3e"
-    },
-    {
-     "modelo_pedido": "opus",
-     "prompt_sha256": "4900892a05cce0bfae6b598157d012be1d81a91213f7eae41e497103bbe805e8",
-     "system_sha256": "742a9166ecb7708349c5ccb68828d68c7cf9d6db13c33b0eb25536b9574c5d87",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.2772114,
-     "modelos": [
-      "claude-haiku-5-5",
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "bbbe5df3-780b-46c3-8d5f-df20f5f0ef29"
-    }
-   ]
-  },
   "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior.",
   "termina_em": "inflacao",
-  "paragrafos_afirmacoes": [
-   [
-    "a-ev-petroleo-paz"
+  "fundo": {
+   "versao": 3,
+   "ok": false,
+   "em": "2026-11-08T01:53:56+00:00",
+   "voltas": [
+    {
+     "volta": 1,
+     "teses": [
+      {
+       "tese": "A queda de quase 8% do petróleo não baixa o diesel na bomba: ela alivia primeiro a conta do governo. O diesel da Petrobras está há 145 dias sem reajuste e a defasagem (R$ 3,53 por litro) tinha passado a subvenção (R$ 3,52) em 22/10. Com o Brent ainda em US$ 103,60, o alívio aparece como subvenção menos cara e reajuste adiado, não como preço menor.",
+       "por_que_nao_e_obvia": "A manchete e o fato do dia dizem que combustível pode baixar nas bombas. Quem lê não sabe que o preço do diesel está represado e subsidiado, então o barril mais barato tem de primeiro fechar essa diferença.",
+       "o_que_muda": "A leitora deve esperar menos reajuste de combustível e menos custo fiscal, e não bomba mais barata. Deve olhar a subvenção (renovação em ~12/11) e o fechamento do Brent, não o preço na bomba.",
+       "como_pode_dar_errado": "Se a Petrobras cortar o preço do diesel ou da gasolina, ou se o governo encerrar a subvenção sem reajuste, a tese cai. O Brent voltar a mais de US$ 110 também a desmentiria. O site confere o anúncio da Petrobras, a portaria da subvenção e o Brent. Faltam dados de novembro sobre a defasagem.",
+       "caderno": [
+        "c1",
+        "c2",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c8",
+        "c9",
+        "c10"
+       ]
+      },
+      {
+       "tese": "Esta é a terceira vez em 2026 que um sinal de paz derruba o Brent perto de 8%, e as duas anteriores foram desfeitas: o preço voltou a subir 23,5% em julho e mais de 14% em outubro. Sem acordo assinado, o alívio de hoje é o menos garantido dos três para quem projeta inflação e juro.",
+       "por_que_nao_e_obvia": "O fato do dia trata a queda como espaço para o juro cair, e não lembra que a mesma notícia já derrubou o petróleo duas vezes neste ano sem durar.",
+       "o_que_muda": "A leitora passa a ler a queda como notícia incerta e a esperar que o Banco Central só considere o petróleo mais barato quando ele se sustentar.",
+       "como_pode_dar_errado": "Se um acordo for assinado e o Brent ficar abaixo de US$ 90 por semanas, esta queda será diferente das anteriores. São só 3 casos, e a primeira queda (maio) tem a data confirmada em um só jornal.",
+       "caderno": [
+        "c3",
+        "c12",
+        "c13",
+        "c2"
+       ]
+      }
+     ],
+     "editor_chefe": {
+      "veredito": "devolve",
+      "tese": "Candidata (tese 1, a melhorar): a queda do barril não chega à bomba porque o diesel da Petrobras está represado há 145 dias e segurado por subvenção do governo. O primeiro efeito é diminuir a diferença entre o preço da Petrobras e o preço de importação e o custo da subvenção, não baixar o preço. Por isso a decisão que importa é a do governo, quando a subvenção vencer: renovar, reduzir ou deixar acabar com reajuste. Falta a conta do tamanho do alívio e a vez parecida no passado.",
+      "testes": {
+       "nao_obvia": {
+        "ok": true,
+        "por_que": "O fato do dia promete diesel e gasolina mais baratos na bomba. Que o preço está represado e subsidiado, e que o barril mais barato primeiro fecha essa diferença, a leitora não tira da manchete. Também não repete as leituras de 4/11 a 7/11."
+       },
+       "muda_algo": {
+        "ok": true,
+        "por_que": "Ela para de esperar a bomba mais barata e passa a olhar o vencimento da subvenção e o risco de reajuste. Mas falta o e daí em número: quanto custa a subvenção com o Brent a US$ 104 e o que acontece quando ela vence."
+       },
+       "pode_dar_errado": {
+        "ok": false,
+        "por_que": "A data está errada: a tese fala em renovação por volta de 12/11, mas a prorrogação de 27/10 por 30 dias vence perto de 26/11, e o adicional de R$ 1,40 criado em 9/10 por 30 dias já pode ter vencido em 8/11. Sem saber o que vence e quando, não há previsão que se possa conferir."
+       },
+       "no_caderno": {
+        "ok": false,
+        "por_que": "c5 não confere (o 113,43 não tem fonte) e c12 não confere. Quase todos os documentos são só resultado de busca e não foram abertos, e c9 vem de fonte desconhecida. c6 compara a defasagem média da Petrobras com a subvenção do diesel importado, e é preciso confirmar que as duas medem a mesma coisa."
+       }
+      },
+      "roteiro": [
+       "Começar pela promessa do fato do dia (bomba mais barata) e mostrar por que ela não vale agora: o preço da Petrobras está parado há 145 dias e segurado por subvenção.",
+       "Dizer onde o barril ficou: caiu, mas segue acima de US$ 100, longe de junho.",
+       "Fazer a conta: quanto a diferença do diesel e o custo da subvenção caem com o Brent a US$ 104 e o dólar de hoje.",
+       "Mostrar a vez parecida (2022 ou outra), quando o preço represado e subsidiado chegou ao vencimento ou passou a eleição, e o que veio depois.",
+       "Explicar a decisão do governo no vencimento (renovar, reduzir ou acabar) e o que cada caminho faz com as contas públicas e com a inflação.",
+       "Lembrar que as duas quedas anteriores por sinal de paz não duraram, como risco da tese e não como tese.",
+       "Trazer a melhor objeção: o alívio fiscal e a inflação esperada menor já ajudam o Banco Central.",
+       "Dizer o tamanho da evidência e terminar com a data do vencimento e o sinal que a leitora pode conferir."
+      ],
+      "previsao": {
+       "texto": "Provisória: com o Brent perto de US$ 104, o governo renova ou reduz a subvenção do diesel no vencimento, e a Petrobras não baixa o preço do diesel até lá.",
+       "quando": "2026-11-26",
+       "sinal": "O anúncio ou a portaria sobre a subvenção perto do vencimento, o comunicado de preços da Petrobras e a diferença de preço do diesel publicada pela Abicom."
+      },
+      "pressao": "contas",
+      "devolve": [
+       "Quando vence cada parte da subvenção? A de R$ 2,12 (prorrogada em 27/10 por 30 dias) e a de R$ 1,40 (criada em 9/10 por 30 dias, que pode ter vencido em 8/11): procure o decreto ou a portaria no Diário Oficial ou no Ministério de Minas e Energia, e confira se a de R$ 1,40 foi renovada.",
+       "E daí em número? Faça com conta.py quanto a diferença do diesel cai por litro com o Brent de US$ 113 para US$ 104 e o dólar de hoje, e quanto a subvenção deixaria de custar em 30 dias. Busque a defasagem de novembro na Abicom.",
+       "Já aconteceu antes? Procure uma vez em que o preço do diesel ficou represado com subsídio ou corte de imposto e o prazo venceu, por exemplo a desoneração de 2022/2023 ou a subvenção de 2018 depois da greve dos caminhoneiros. O que o governo fez no vencimento e o que aconteceu com a bomba e com o IPCA?",
+       "Confirme que a defasagem média da Petrobras (R$ 3,53, 108%) e a subvenção do diesel importado (R$ 3,52) podem ser comparadas, ou troque a comparação. Reabra c6 e c7 na página original.",
+       "Corrija o caderno: dê fonte com data para o fechamento de 30/10 (113,43) e de 2/11, ou tire c5. Troque c12 por documento com fonte para os níveis de junho e julho. Abra c3, c9 e c10 ou troque por fonte oficial.",
+       "O que a Petrobras e o governo disseram sobre reajuste depois da eleição, e o que o comunicado do Copom de 4/11 diz sobre petróleo e combustível? Isso sustenta ou derruba a objeção."
+      ]
+     }
+    },
+    {
+     "volta": 2,
+     "teses": [
+      {
+       "tese": "A queda de quase 8% do petróleo ainda não chega à bomba. Em conta de cru, ela tira R$ 0,31 por litro de uma defasagem do diesel de R$ 3,53, ou 8,8%, e custaria uns R$ 1,54 bilhão a menos em 30 dias à subvenção de R$ 10,5 bilhões. O alívio vai primeiro para o caixa do governo e para o adiamento do reajuste da Petrobras, que está há 145 dias sem mexer no preço.",
+       "por_que_nao_e_obvia": "O fato do dia diz que o combustível pode baixar nas bombas. A leitora não sabe que o diesel está represado e subsidiado, e que a queda de hoje é pequena perto da diferença que o governo cobre.",
+       "o_que_muda": "A leitora passa a esperar menos custo fiscal e menos reajuste, e não bomba mais barata. Deve olhar a renovação das duas subvenções (R$ 1,40 perto de 12/11, R$ 2,12 perto de 26/11) e o anúncio da Petrobras, não o preço do posto.",
+       "como_pode_dar_errado": "Se a Petrobras cortar o preço, se o governo deixar a subvenção vencer sem reajuste, ou se o Brent voltar a mais de US$ 110, a tese cai. A conta é só de cru e ignora refino e frete; a defasagem de novembro da Abicom e as datas exatas das portarias não foram achadas.",
+       "caderno": [
+        "c2",
+        "c6",
+        "c7",
+        "c8",
+        "c9",
+        "c10",
+        "c16",
+        "c18",
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+       ]
+      },
+      {
+       "tese": "Em 2026 houve quedas de 4,6% a 7,8% do Brent por sinais de paz EUA-Irã em 14/4, 6/5 e 25/5, e agora em 2/11. O preço depois subiu 23,5% em julho e mais de 14% em outubro. Sem acordo assinado, esta é uma queda a ser lida como incerta por quem projeta inflação e juro.",
+       "por_que_nao_e_obvia": "O fato do dia trata a queda como espaço para o juro cair, mas a mesma notícia já derrubou o preço outras vezes neste ano sem durar.",
+       "o_que_muda": "A leitora passa a esperar que o Banco Central só use o petróleo mais barato quando ele se sustentar, não no primeiro dia.",
+       "como_pode_dar_errado": "Se um acordo for assinado e o Brent ficar abaixo de US$ 90 por semanas, esta queda será diferente. São só 4 episódios, e a recuperação do preço depois de cada um só tem número para julho e outubro, vindo da memória do site.",
+       "caderno": [
+        "c3",
+        "c12",
+        "c13",
+        "c17",
+        "c2"
+       ]
+      }
+     ],
+     "editor_chefe": {
+      "veredito": "sem_fundo",
+      "tese": "Nenhuma das duas teses passa nos quatro testes. A 1 (a queda não chega à bomba e o alívio vai para o caixa do governo) tem dois problemas. Primeiro, os números centrais dependem da linha c21, que não confere: o dólar a R$ 5,49 e o Brent de partida a US$ 113 não têm fonte. Segundo, a subvenção é um valor fixo por litro, então o petróleo mais barato não reduz o custo dela sem uma decisão nova na renovação. A 2 (quedas por sinal de paz que não duram) é fraca: são 4 casos, a alta de 23,5% em julho não tem linha no caderno e o US$ 101,27 de maio não tem fonte aberta.",
+      "testes": {
+       "nao_obvia": {
+        "ok": true,
+        "por_que": "A ideia de que o diesel está represado e subsidiado, e de que o sinal de paz já derrubou o preço outras vezes neste ano sem durar, não está no fato do dia nem nas leituras recentes."
+       },
+       "muda_algo": {
+        "ok": false,
+        "por_que": "Na tese 1, o ganho para o caixa só existe se o governo cortar a subvenção, que é fixa por litro. Isso é especulação e não muda o que a leitora espera. Na tese 2, a mudança é vaga (o Banco Central espera o preço se sustentar), perto do mecanismo de livro."
+       },
+       "pode_dar_errado": {
+        "ok": false,
+        "por_que": "As datas que serviriam de teste (o vencimento do R$ 1,40, perto de 6/11 ou 12/11, e o do R$ 2,12, perto de 26/11) não têm portaria que as confirme. Sem data firme, a previsão não pode ser conferida."
+       },
+       "no_caderno": {
+        "ok": false,
+        "por_que": "A c21, base dos R$ 0,31, dos 8,8% e do R$ 1,54 bilhão, não confere. O Brent de US$ 113, a alta de 23,5% em julho e o US$ 101,27 não têm fonte. A c11 não confere e quase todos os documentos são trechos de busca que não abriram."
+       }
+      },
+      "roteiro": [],
+      "previsao": {
+       "texto": "Sem leitura a fundo hoje: o post leva só o link da página da pressão de inflação esperada.",
+       "quando": "",
+       "sinal": ""
+      },
+      "pressao": "inflacao",
+      "devolve": [
+       "Para um dia futuro, sobre a subvenção ao diesel: achar as portarias com a data exata de vencimento do R$ 1,40 e do R$ 2,12 e saber se o governo renovou, cortou ou deixou vencer. O achado está na decisão do governo, não no preço do barril.",
+       "Já aconteceu antes? Ver o que veio depois do fim do subsídio de 31/12/2018 e da volta dos impostos sobre combustíveis em 2023: o reajuste na bomba e o IPCA dos meses seguintes, com fonte oficial (ANP, IBGE).",
+       "Pegar a defasagem atual da Abicom e o câmbio do dia com fonte, para refazer a conta do cru com números que conferem.",
+       "Para a tese da queda que não dura: pôr fonte em cada fechamento do Brent (de 14/4, 6/5 e 25/5 e um mês depois de cada um) e dizer que 4 casos mostram um padrão, não uma lei."
+      ]
+     }
+    }
    ],
-   [
-    "a-importa-combustivel"
+   "meta": [
+    {
+     "etapa": "pesquisa",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "182dd3a04194e552c05d44ddd5c3e2499a391ab3b3c6403ce17fe75bf5220439",
+     "system_sha256": "b37e2d686d43da3678f9645bbb95500da12c597ec15a49e7a1cc3568c92ab39f",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.5031135,
+     "turnos": 14,
+     "duracao_s": 92,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "0722e2bb-58e7-4f10-a920-4ef67f6971e4"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "e3564f6e8ce162a4c3501dae52ded92f43af82964a8551731ca067a464583f39",
+     "system_sha256": "0c75e99c07f8e990cc110fc872ec429590983369f183af4af9ec75119282db3e",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.1622768,
+     "turnos": 2,
+     "duracao_s": 28,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "ba23360a-cd8c-472f-abb5-a012696a9921"
+    },
+    {
+     "etapa": "pesquisa",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "224ae74bdf156d66c3f5c5cfee8357ae51a7da9a6c90753a089ed645fb7c9f13",
+     "system_sha256": "b37e2d686d43da3678f9645bbb95500da12c597ec15a49e7a1cc3568c92ab39f",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7497098999999999,
+     "turnos": 15,
+     "duracao_s": 160,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "e7787fb6-479e-4423-99cb-fdcc2f913ba3"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "10747e7e7cb076c13d033afd90c84cc21d35d104dbfb0e479c2898899735d9e3",
+     "system_sha256": "0c75e99c07f8e990cc110fc872ec429590983369f183af4af9ec75119282db3e",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.18022880000000002,
+     "turnos": 2,
+     "duracao_s": 23,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "ba2240b3-688b-4488-8442-174491e79022"
+    }
    ],
-   [
-    "a-focus-jul-out",
-    "a-meta",
-    "a-bc-selic"
-   ]
-  ]
+   "offline": true,
+   "evitar": [
+    "Leitura de 4/11: pela regra da meta contínua, a inflação acima do teto de 4,5% vira descumprimento quando passa seis meses seguidos fora da margem, e o IPCA em 12 meses já passou do teto em setembro",
+    "Leitura de 5/11: desde 2002, nas 10 pausas do Banco Central depois de cortes, a inflação esperada subiu nos 3 meses seguintes em 8, e em 7 dessas 8 a Selic voltou a subir; agora subiu 0,36 ponto no primeiro mês, então o próximo passo tende a ser parar ou subir, e não o corte que o Focus prevê",
+    "Leitura de 6/11: a prévia do PIB (IBC-Br) de julho e agosto já deixa o 3º trimestre abaixo do 2º, e nos buracos que não viraram recessão a queda durou um mês só",
+    "Leitura de 7/11: outubro teve a maior entrada de dólares do ano e mesmo assim o dólar subiu 4,6%, porque o dólar anda mais com a desconfiança de quem investe do que com a balança; o petróleo mais barato pode pesar menos no saldo do que parece"
+   ],
+   "contas_ate": "2026-11-02",
+   "pesquisa": {
+    "perguntas": [
+     {
+      "pergunta": "Quando vence cada parte da subvenção do diesel, e a de R$ 1,40 foi renovada?",
+      "resposta": "A de R$ 2,12 foi prorrogada em 27/10 por 30 dias, o que leva o vencimento a perto de 26/11 (conta minha, a portaria com a data exata não foi achada). A de R$ 1,40 foi formalizada pela Portaria MF 3.082, publicada na noite de terça, 13/10, por 30 dias, e não em 9/10, que foi o dia do anúncio. O vencimento cai então perto de 12/11; uma fonte fala em 6/11, e as duas datas não batem. Não achei nenhum documento que diga se o R$ 1,40 foi renovado. Até 3/11 ele ainda estava em vigor. A portaria do Diário Oficial não abriu.",
+      "caderno": [
+       "c9",
+       "c10",
+       "c11",
+       "c16"
+      ]
+     },
+     {
+      "pergunta": "E daí em número: quanto cai a diferença por litro com o Brent de US$ 113 para US$ 104, e quanto a subvenção deixaria de custar em 30 dias?",
+      "resposta": "Só do petróleo cru, a queda de US$ 9 por barril, com o dólar a R$ 5,49, dá R$ 0,31 por litro (159 litros por barril é constante física, fora do caderno). Isso é 8,8% da defasagem de R$ 3,53. Os R$ 10,5 bilhões da prorrogação de R$ 2,12 correspondem a cerca de 4,95 bilhões de litros em 30 dias. Se a subvenção encolhesse R$ 0,31 por litro, ela custaria uns R$ 1,54 bilhão a menos em 30 dias, contra os R$ 10,5 bilhões. A conta é de cru para diesel e ignora a margem de refino e o frete. A defasagem de novembro da Abicom não foi achada: a última é de 27/7 (diesel 58%).",
+      "caderno": [
+       "c2",
+       "c6",
+       "c9",
+       "c18",
+       "c21",
+       "c22",
+       "c23",
+       "c24"
+      ]
+     },
+     {
+      "pergunta": "Já aconteceu antes: subsídio ao diesel que venceu? O que veio depois?",
+      "resposta": "Em 2018, após a greve dos caminhoneiros, o programa de subsídio ao diesel ia até 31/12/2018, e o governo gastou R$ 4,8 bilhões em 2018. Não achei o que o governo fez no vencimento, nem o que aconteceu com a bomba e com o IPCA de 2019. Não achei nada sobre a desoneração de 2022/2023. Esse comparativo fica em aberto.",
+      "caderno": [
+       "c20"
+      ]
+     },
+     {
+      "pergunta": "A defasagem média da Petrobras (R$ 3,53, 108%) pode ser comparada com a subvenção do importado (R$ 3,52)?",
+      "resposta": "Em parte. A Abicom compara o preço de importação com o preço da Petrobras, e o desconto de R$ 3,52 (R$ 2,12 mais R$ 1,40) vale para o diesel importado: quando o desconto iguala a defasagem, o importador vende ao preço da Petrobras. A CNN Brasil faz essa comparação na reportagem. Não consegui reabrir c6 e c7 na página original, só o trecho da busca. A comparação vale para o importador, não para a bomba.",
+      "caderno": [
+       "c6",
+       "c7",
+       "c8"
+      ]
+     },
+     {
+      "pergunta": "O que a Petrobras e o governo disseram sobre reajuste do diesel depois da eleição, e o que diz o Copom de 4/11?",
+      "resposta": "Não achei declaração da Petrobras ou do governo sobre reajuste depois da eleição. A Abicom tem um texto sobre reajuste gradual após a reeleição (Canal Rural), mas a página não abriu e não entra no caderno. Em setembro a Petrobras elevou o diesel e a subvenção deixou o preço inalterado (17/9). O comunicado do Copom é de 4/11, depois de hoje (3/11), e por isso não entra.",
+      "caderno": [
+       "c7",
+       "c19"
+      ]
+     },
+     {
+      "pergunta": "Sinal de paz derrubando o petróleo é novidade em 2026?",
+      "resposta": "Não. Há queda registrada em 14/4 (4,60%, Brent a US$ 94,79), em 6/5 (7,8%) e em 25/5 (6,78%, a US$ 93,42), além da de 2/11. Depois, o Brent subiu cerca de 23,5% em julho e mais de 14% em outubro. O Brent de 3/11 (US$ 103,60) está 2,3% acima do de 6/5 (US$ 101,27, valor do caderno anterior).",
+      "caderno": [
+       "c3",
+       "c4",
+       "c12",
+       "c13",
+       "c17"
+      ]
+     }
+    ],
+    "teses": [
+     {
+      "tese": "A queda de quase 8% do petróleo ainda não chega à bomba. Em conta de cru, ela tira R$ 0,31 por litro de uma defasagem do diesel de R$ 3,53, ou 8,8%, e custaria uns R$ 1,54 bilhão a menos em 30 dias à subvenção de R$ 10,5 bilhões. O alívio vai primeiro para o caixa do governo e para o adiamento do reajuste da Petrobras, que está há 145 dias sem mexer no preço.",
+      "por_que_nao_e_obvia": "O fato do dia diz que o combustível pode baixar nas bombas. A leitora não sabe que o diesel está represado e subsidiado, e que a queda de hoje é pequena perto da diferença que o governo cobre.",
+      "o_que_muda": "A leitora passa a esperar menos custo fiscal e menos reajuste, e não bomba mais barata. Deve olhar a renovação das duas subvenções (R$ 1,40 perto de 12/11, R$ 2,12 perto de 26/11) e o anúncio da Petrobras, não o preço do posto.",
+      "como_pode_dar_errado": "Se a Petrobras cortar o preço, se o governo deixar a subvenção vencer sem reajuste, ou se o Brent voltar a mais de US$ 110, a tese cai. A conta é só de cru e ignora refino e frete; a defasagem de novembro da Abicom e as datas exatas das portarias não foram achadas.",
+      "caderno": [
+       "c2",
+       "c6",
+       "c7",
+       "c8",
+       "c9",
+       "c10",
+       "c16",
+       "c18",
+       "c21",
+       "c22",
+       "c23",
+       "c24"
+      ]
+     },
+     {
+      "tese": "Em 2026 houve quedas de 4,6% a 7,8% do Brent por sinais de paz EUA-Irã em 14/4, 6/5 e 25/5, e agora em 2/11. O preço depois subiu 23,5% em julho e mais de 14% em outubro. Sem acordo assinado, esta é uma queda a ser lida como incerta por quem projeta inflação e juro.",
+      "por_que_nao_e_obvia": "O fato do dia trata a queda como espaço para o juro cair, mas a mesma notícia já derrubou o preço outras vezes neste ano sem durar.",
+      "o_que_muda": "A leitora passa a esperar que o Banco Central só use o petróleo mais barato quando ele se sustentar, não no primeiro dia.",
+      "como_pode_dar_errado": "Se um acordo for assinado e o Brent ficar abaixo de US$ 90 por semanas, esta queda será diferente. São só 4 episódios, e a recuperação do preço depois de cada um só tem número para julho e outubro, vindo da memória do site.",
+      "caderno": [
+       "c3",
+       "c12",
+       "c13",
+       "c17",
+       "c2"
+      ]
+     }
+    ],
+    "objecao": {
+     "texto": "Quem discorda dirá que o petróleo mais barato já ajuda mesmo sem baixar a bomba: reduz a defasagem, afasta o reajuste da Petrobras e pode derrubar a inflação esperada, que o Banco Central olha. A tese concorda, mas diz que o efeito é pequeno em número (8,8% da defasagem, só do cru) e chega pelo caixa do governo. Quem discorda também dirá que a conta de cru subestima o efeito, porque o diesel responde a câmbio e refino. Não pude usar o comunicado do Copom de 4/11, posterior a hoje, nem achei a posição do Banco Central sobre o petróleo.",
+     "caderno": [
+      "c6",
+      "c9",
+      "c14",
+      "c21",
+      "c22",
+      "c24"
+     ]
+    },
+    "o_que_falta": "Quase todas as páginas não abriram (proxy recusa), então os trechos vêm de resumos de busca. Faltam: os textos das portarias de R$ 1,40 e R$ 2,12, com a data exata de vencimento; a defasagem de novembro da Abicom; o fechamento do Brent de 30/10 e 2/11 com fonte (por isso c5 antigo saiu); a data do c20; o que aconteceu com a bomba e o IPCA depois de 2018 e de 2022/2023; a fala da Petrobras sobre reajuste após a eleição. O Copom de 4/11 é posterior a hoje."
+   },
+   "caderno": [
+    {
+     "id": "c1",
+     "tipo": "documento",
+     "afirmacao": "Em 2/11/2026 o petróleo caiu mais de 8% na tarde com as negociações entre Irã e Catar.",
+     "numeros": [
+      "8%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Money Times (resultado de busca)",
+      "url": "https://www.moneytimes.com.br/petroleo-intradia-2-11-26-lils/",
+      "data": "2026-11-02",
+      "trecho": "Os preços do petróleo recuam mais de 8% na tarde desta segunda-feira (2), à medida que as negociações entre autoridades do Irã e do Catar alimentaram esperanças de um fim à guerra no Oriente Médio."
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c2",
+     "tipo": "documento",
+     "afirmacao": "O Brent de janeiro fechou a US$ 103,60 em 3/11, com queda de US$ 1,17 no dia.",
+     "numeros": [
+      "103,60",
+      "1,17"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Eixos (resultado de busca)",
+      "url": "https://eixos.com.br/petroleo-e-gas/petroleo-fecha-em-queda-com-dialogo-ira-catar-e-liberacao-de-estoque-emergencial-do-g7/",
+      "data": "2026-11-03",
+      "trecho": "Brent para janeiro fechou em queda de 1,11% (US$ 1,17), a US$ 103,60 o barril"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c3",
+     "tipo": "documento",
+     "afirmacao": "Em 6/5/2026, outra notícia de acordo EUA-Irã derrubou o Brent 7,8%.",
+     "numeros": [
+      "7,8%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney (Reuters), resultado de busca",
+      "url": "https://www.infomoney.com.br/?p=3319561",
+      "data": "2026-05-06",
+      "trecho": "Petróleo brent cai 7,8% com relatos de possível acordo de paz entre EUA e Irã"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c4",
+     "tipo": "conta",
+     "afirmacao": "O Brent de 3/11 está 2,3% acima do fechamento de 6/5 (US$ 101,27; valor do caderno anterior, sem página aberta).",
+     "numeros": [
+      "2,3"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"103.6/101.27*100-100\"",
+     "saida": "103.6/101.27*100-100 = 2,3008 (com 3 casas: 2,301; com 2 casas: 2,30; com 1 casa: 2,3)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "103.6/101.27*100-100 = 2,3008 (com 3 casas: 2,301; com 2 casas: 2,30; com 1 casa: 2,3)\n"
+     }
+    },
+    {
+     "id": "c5",
+     "tipo": "site",
+     "afirmacao": "A queda do petróleo foi de quase 8%, segundo a manchete da Folha do fato do dia.",
+     "numeros": [
+      "8%"
+     ],
+     "comando": "",
+     "saida": "Manchete (Folha): \"Petróleo despenca quase 8% com expectativa de retomada de negociações entre EUA e Irã\".",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c6",
+     "tipo": "documento",
+     "afirmacao": "Em 22/10 a defasagem média do diesel da Petrobras (R$ 3,53 por litro, 108%) passou a subvenção (R$ 3,52).",
+     "numeros": [
+      "108%",
+      "3,53",
+      "3,52"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "CNN Brasil / Abicom (resultado de busca)",
+      "url": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/abicom-diesel-da-petrobras-se-aproxima-ao-subsidio-com-alta-do-brent/",
+      "data": "2026-10-23",
+      "trecho": "Após o fechamento de quinta-feira (22), a diferença média chegou a 108%, o equivalente a R$ 3,53 por litro. O desconto da subvenção estava em R$ 3,52 por litro."
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c7",
+     "tipo": "documento",
+     "afirmacao": "O preço do diesel da Petrobras estava sem alteração havia 145 dias em 23/10.",
+     "numeros": [
+      "145 dias"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Jornal do Comércio / Abicom (resultado de busca)",
+      "url": "https://www.jornaldocomercio.com/economia/2026/10/1267555-abicom-alta-do-brent-faz-diesel-da-petrobras-se-aproximar-do-valor-do-subsidio.html",
+      "data": "2026-10-23",
+      "trecho": "No caso do diesel, o preço está sem alteração há 145 dias."
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c8",
+     "tipo": "conta",
+     "afirmacao": "A subvenção total ao diesel importado é R$ 2,12 mais R$ 1,40, ou R$ 3,52 por litro.",
+     "numeros": [
+      "3,52"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"(2.12+1.40)\"",
+     "saida": "(2.12+1.40) = 3,5200 (com 3 casas: 3,520; com 2 casas: 3,52; com 1 casa: 3,5)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "(2.12+1.40) = 3,5200 (com 3 casas: 3,520; com 2 casas: 3,52; com 1 casa: 3,5)\n"
+     }
+    },
+    {
+     "id": "c9",
+     "tipo": "documento",
+     "afirmacao": "O governo prorrogou em 27/10 a subvenção de R$ 2,12 por litro por 30 dias, a R$ 10,5 bilhões.",
+     "numeros": [
+      "2,12",
+      "10,5 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Nova Cana (resultado de busca)",
+      "url": "https://www.novacana.com/noticias/prorrogacao-da-subvencao-ao-diesel-em-r-2-12-custara-r-10-5-bilhoes",
+      "data": "2026-10-27",
+      "trecho": "Prorrogação da subvenção ao diesel em R$ 2,12 custará R$ 10,5 bilhões"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c10",
+     "tipo": "documento",
+     "afirmacao": "O adicional de R$ 1,40 para importado foi anunciado em 9/10, com custo estimado de R$ 1,6 bilhão.",
+     "numeros": [
+      "1,40",
+      "1,6 bilhão"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Eixos (resultado de busca)",
+      "url": "https://eixos.com.br/politica/governo-amplia-em-r-16-bilhao-subsidio-ao-diesel-importado/",
+      "data": "2026-10-09",
+      "trecho": "Governo amplia em R$ 1,6 bilhão subsídio ao diesel importado"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c11",
+     "tipo": "site",
+     "afirmacao": "O governo prorrogou por 30 dias a subvenção de R$ 2,12 por litro ao diesel.",
+     "numeros": [
+      "2,12"
+     ],
+     "comando": "",
+     "saida": "Memória do momento, 2026-10-27: Governo prorroga por 30 dias a subvenção de R$ 2,12 por litro ao diesel.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "nao_confere",
+      "por_que": "número que não está nos dados do site nem num fato da memória com fonte"
+     }
+    },
+    {
+     "id": "c12",
+     "tipo": "documento",
+     "afirmacao": "Em 25/5/2026, o Brent caiu 6,78% (US$ 6,79), a US$ 93,42, com otimismo sobre negociações EUA-Irã.",
+     "numeros": [
+      "6,78%",
+      "93,42"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney (resultado de busca)",
+      "url": "https://www.infomoney.com.br/mercados/petroleo-abertura-fechamento-ira-eua-25052026/",
+      "data": "2026-05-25",
+      "trecho": "encerrou em queda de 6,78% (US$ 6,79) a US$ 93,42 o barril"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c13",
+     "tipo": "site",
+     "afirmacao": "O petróleo subiu mais de 14% em outubro.",
+     "numeros": [
+      "14%"
+     ],
+     "comando": "",
+     "saida": "Memória do momento, 2026-10-30: Petróleo sobe mais de 14% em outubro com o conflito no Irã.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "fontes_memoria": [
+      {
+       "quem": "Folha",
+       "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/petroleo-sobe-mais-de-14-em-outubro-e-encerra-mes-no-maior-valor-desde-maio.shtml",
+       "data": "2026-10-30",
+       "trecho": "Petróleo sobe mais de 14% em outubro e encerra mês no maior valor desde maio"
+      }
+     ],
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true,
+      "via": "memória do momento"
+     }
+    },
+    {
+     "id": "c14",
+     "tipo": "conta",
+     "afirmacao": "A inflação esperada (Focus, 12 meses) subiu de 4,19% em julho para 4,96% em outubro.",
+     "numeros": [
+      "4,19",
+      "4,96",
+      "0,77"
+     ],
+     "comando": ".venv/bin/python src/conta.py variacao focus_ipca_12m 2026-07 2026-10",
+     "saida": "focus_ipca_12m: 4,19 em 2026-07 e 4,96 em 2026-10; diferença de 0,77 (em pontos) e de 18,3% (em %).",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "focus_ipca_12m: 4,19 em 2026-07 e 4,96 em 2026-10; diferença de 0,77 (em pontos) e de 18,3% (em %).\n"
+     }
+    },
+    {
+     "id": "c15",
+     "tipo": "conta",
+     "afirmacao": "O índice de commodities do BC em setembro (222,4) é o maior desde agosto de 2022.",
+     "numeros": [
+      "222,4",
+      "241,9"
+     ],
+     "comando": ".venv/bin/python src/conta.py recorde commodities 2026-09",
+     "saida": "É o maior valor desde 2022-08, quando foi 241,9.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "commodities em 2026-09: 222,4. A série começa em 1992-01.\nÉ o maior valor desde 2022-08, quando foi 241,9.\nDos 416 meses antes de 2026-09, 410 tiveram valor menor (99%).\n"
+     }
+    },
+    {
+     "id": "c16",
+     "tipo": "documento",
+     "afirmacao": "A Portaria MF 3.082 acrescentou R$ 1,40 por litro à subvenção ao diesel A rodoviário importado, publicada na noite de terça (13/10), por 30 dias.",
+     "numeros": [
+      "3.082",
+      "1,40",
+      "30 dias"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Atlas Público (resultado de busca)",
+      "url": "https://atlaspublico.com.br/noticias/portaria-da-fazenda-acrescenta-rs-1-40-por-litro-a-91992",
+      "data": "2026-10-14",
+      "trecho": "Portaria da Fazenda acrescenta R$ 1,40 por litro a"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c17",
+     "tipo": "documento",
+     "afirmacao": "Em 14/4/2026 o Brent fechou em queda de 4,60%, a US$ 94,79, por expectativa de nova rodada de negociações.",
+     "numeros": [
+      "4,60%",
+      "94,79"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Money Times (resultado de busca)",
+      "url": "https://www.moneytimes.com.br/petroleo-14-4-26-lils/",
+      "data": "2026-04-14",
+      "trecho": "fecharam com queda de 4,60%, a US$ 94,79 o barril"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c18",
+     "tipo": "documento",
+     "afirmacao": "Em 27/7 a Abicom disse que a queda do petróleo não aliviava o diesel e que a defasagem abria a semana em 58%.",
+     "numeros": [
+      "58%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "O Povo / Abicom (resultado de busca)",
+      "url": "https://www.opovo.com.br/noticias/economia/2026/07/27/abicom-queda-do-petroleo-nao-alivia-diesel-e-defasagem-no-brasil-abre-semana-em-58.html",
+      "data": "2026-07-27",
+      "trecho": "Abicom: queda do petróleo não alivia diesel e defasagem no Brasil abre semana em 58%"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c19",
+     "tipo": "documento",
+     "afirmacao": "Em setembro a Petrobras elevou o diesel às distribuidoras, mas a medida do governo deixou o valor inalterado.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Mercado & Consumo (resultado de busca)",
+      "url": "https://mercadoeconsumo.com.br/17/09/2026/economia/petrobras-eleva-preco-do-diesel-as-distribuidoras-mas-medida-do-governo-deixa-valor-inalterado/",
+      "data": "2026-09-17",
+      "trecho": "Petrobras eleva preço do diesel às distribuidoras, mas medida do governo deixa valor inalterado"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c20",
+     "tipo": "documento",
+     "afirmacao": "Em 2018 o governo desembolsou R$ 4,8 bilhões com o programa de subsídio ao diesel, que ia até 31/12/2018.",
+     "numeros": [
+      "4,8 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "SETCESP (resultado de busca)",
+      "url": "https://setcesp.org.br/noticias/governo-desembolsa-r-4-8-bilhoes-com-programa-de-subsidio-ao-oleo-diesel-em-2018/",
+      "data": "",
+      "trecho": "Governo desembolsa R$ 4,8 bilhões com programa de subsídio ao óleo diesel em 2018"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c21",
+     "tipo": "conta",
+     "afirmacao": "Cenário: Brent de US$ 113 para US$ 104, com 159 litros por barril e dólar a R$ 5,49, tira R$ 0,31 por litro do custo do cru.",
+     "numeros": [
+      "0,31",
+      "5,49"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"(113-104)/159*5.49\"",
+     "saida": "(113-104)/159*5.49 = 0,3108 (com 3 casas: 0,311; com 2 casas: 0,31; com 1 casa: 0,3)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "nao_confere",
+      "por_que": "números que a conta não dá: 5,49"
+     }
+    },
+    {
+     "id": "c22",
+     "tipo": "conta",
+     "afirmacao": "Os R$ 0,311 por litro são 8,8% da defasagem de R$ 3,53.",
+     "numeros": [
+      "8,8"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"0.311/3.53*100\"",
+     "saida": "0.311/3.53*100 = 8,8102 (com 3 casas: 8,810; com 2 casas: 8,81; com 1 casa: 8,8)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "0.311/3.53*100 = 8,8102 (com 3 casas: 8,810; com 2 casas: 8,81; com 1 casa: 8,8)\n"
+     }
+    },
+    {
+     "id": "c23",
+     "tipo": "conta",
+     "afirmacao": "Os R$ 10,5 bilhões de 30 dias a R$ 2,12 por litro equivalem a cerca de 4,95 bilhões de litros.",
+     "numeros": [
+      "4,95"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"10500000000/2.12/1000000000\"",
+     "saida": "10500000000/2.12/1000000000 = 4,9528 (com 3 casas: 4,953; com 2 casas: 4,95; com 1 casa: 4,9)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "10500000000/2.12/1000000000 = 4,9528 (com 3 casas: 4,953; com 2 casas: 4,95; com 1 casa: 5,0)\n"
+     }
+    },
+    {
+     "id": "c24",
+     "tipo": "conta",
+     "afirmacao": "Se a subvenção caísse R$ 0,311 por litro, custaria cerca de R$ 1,54 bilhão a menos em 30 dias.",
+     "numeros": [
+      "1,54"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"10500000000/2.12*0.311/1000000000\"",
+     "saida": "10500000000/2.12*0.311/1000000000 = 1,5403 (com 3 casas: 1,540; com 2 casas: 1,54; com 1 casa: 1,5)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "10500000000/2.12*0.311/1000000000 = 1,5403 (com 3 casas: 1,540; com 2 casas: 1,54; com 1 casa: 1,5)\n"
+     }
+    }
+   ],
+   "erro": "sem achado: o editor-chefe não aprovou tese",
+   "sem_achado": true,
+   "duracao_s": 307
+  }
  },
  "pauta": {
   "versao": 1,
