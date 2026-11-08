@@ -11,10 +11,11 @@
  "amostra_inicio": "2002-01",
  "direcao": {
   "o_que_e": "A direção do risco: as cinco pressões que costumam vir antes de uma recessão, cada uma comparada com 3 meses antes (src/direcao.py). Não é previsão: diz para que lado o risco andou.",
-  "partes": "Contas do governo (dívida bruta do governo geral, BCB 13762; antes de 2007, o resultado sem juros, BCB 5793), dívidas das famílias (comprometimento de renda, BCB 29034), desconfiança de quem investe (dólar PTAX, BCB 1, em %; juro de 10 anos, Tesouro IPCA+ de cerca de 10 anos; contam como uma só: se um piora e o outro melhora, fica igual), inflação esperada (Focus, IPCA 12 meses, suavizada) e juro (Selic meta, BCB 432). Fora da soma: ritmo da economia (IBC-Br, média de 3 meses contra os 3 anteriores; só decide o \"encolhendo\" e não aparece como linha), emprego (desocupação da PNAD, BCB 24369), reservas internacionais (BCB 3546) e a parte da dívida federal em reais (Tesouro, à mão).",
+  "partes": "Contas do governo (dívida bruta do governo geral, BCB 13762; antes de 2007, o resultado sem juros, BCB 5793), dívidas das famílias (comprometimento de renda, BCB 29034), desconfiança de quem investe (dólar PTAX, BCB 1, em %; juro de 10 anos, Tesouro IPCA+ de cerca de 10 anos; contam como uma só: se um piora e o outro melhora, fica igual; cada um só troca de lado quando o lado novo dura persiste_dias dias úteis seguidos), inflação esperada (Focus, IPCA 12 meses, suavizada) e juro (Selic meta, BCB 432). Fora da soma: ritmo da economia (IBC-Br, média de 3 meses contra os 3 anteriores; só decide o \"encolhendo\" e não aparece como linha), emprego (desocupação da PNAD, BCB 24369), reservas internacionais (BCB 3546) e a parte da dívida federal em reais (Tesouro, à mão).",
   "amostra_inicio": "2002-01",
   "teste_inicio": "2004-01",
   "janela_meses": 3,
+  "persiste_dias": 3,
   "corte_vaivem": 0.75,
   "corte_soma": 2,
   "confirma_meses": 2,

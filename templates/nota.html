@@ -77,6 +77,7 @@ svg text{font-family:var(--sistema)}
       <li>Selic: até {{ (k * c.juro)|num(2) }} ponto.</li>
       <li>Desemprego, em Também acompanhamos: até {{ (k * c.emprego)|num(2) }} ponto.</li>
     </ul>
+    <p>O dólar e o juro de 10 anos mudam todo dia, e um dia de susto no mercado pode levá-los para fora do vaivém e trazê-los de volta na semana seguinte. Por isso, cada um deles só conta como piorou ou melhorou quando fica fora do vaivém por {{ cfg.direcao.persiste_dias }} dias úteis seguidos, e só volta a contar como igual quando fica {{ cfg.direcao.persiste_dias }} dias úteis seguidos dentro dele.</p>
     <p>Na página de hoje, cada pressão mostra o número de agora e o de três meses antes, com os meses de cada um. Aberta, ela diz se passou do vaivém, se passou raspando ou se ficou dentro dele.</p>
   </section>
 

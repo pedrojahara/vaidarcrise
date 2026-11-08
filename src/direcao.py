@@ -10,6 +10,8 @@ A regra (config/modelo.json, seção "direcao"; os cortes de cada pressão em co
    vaivém normal dela desde 2002 (1,4826 × desvio absoluto mediano das mudanças de 3 meses); melhorou se
    andou isso para o lado bom; no resto, ficou igual.
 3. A soma (as que pioraram menos as que melhoraram) decide: 2 ou mais, subindo; −2 ou menos, caindo.
+   O dólar e o juro de 10 anos, que saem todo dia, só trocam de lado quando o lado novo se mantém por 3 dias
+   úteis seguidos (persiste_dias em config/modelo.json).
 4. A direção só muda se o novo resultado se repetir no mês seguinte.
 5. Se a prévia do PIB (IBC-Br, média de 3 meses contra os 3 anteriores) cair mais de 1,5%, o topo diz
    que a economia está encolhendo.
@@ -44,6 +46,14 @@ PIB = ROOT / "data" / "historico" / "pib.json"
 MENSAL = ROOT / "data" / "historico" / "mensal.json"
 CAL = ROOT / "config" / "calibracao.json"
 CFG = ROOT / "config" / "modelo.json"
+# O dólar e o juro de 10 anos saem todo dia. Com o fechamento da véspera, a Desconfiança de quem investe trocava de
+# lado umas 22 vezes por ano, e metade das trocas se desfazia em uma semana; por isso, cada um só troca de lado quando o
+# lado novo se mantém por persiste_dias dias úteis seguidos (config/modelo.json; decisão do Pedro em 8/11/2026).
+# Cada série mensal da regra -> a série diária no histórico (data/historico/series.json); na coleta do dia, a série
+# tem o mesmo nome da mensal e já vem dia a dia. A diária fica em series[<nome> + DIA].
+DIARIAS = {"dolar_ptax": "dolar_ptax_diario", "juro_real_longo": "juro_real_longo"}
+DIA = "/dia"
+PERSISTE = ("dolar", "juro_longo")
 
 ESTADOS = {1: "subindo", 0: "igual", -1: "caindo", 2: "encolhendo"}
 CODIGO = {"subindo": "S", "igual": "I", "caindo": "C", "encolhendo": "E"}
@@ -118,6 +128,12 @@ def mensais(snap: dict | None = None, rodadas: list[dict] | None = None, hist: d
         if snap and k in snap.get("series", {}):
             _junta(d, snap["series"][k]["dados"])
         out[k] = d
+    for k, no_hist in DIARIAS.items():  # dia a dia, para a persistência do lado (lados_persistentes)
+        dias: dict[str, tuple[str, float]] = {}
+        for x in [*hist.get(no_hist, []), *((snap or {}).get("series", {}).get(k, {}).get("dados") or [])]:
+            if x.get("valor") is not None:
+                dias[x["data"][:10]] = (x["data"][:10], float(x["valor"]))
+        out[k + DIA] = dias
     foc = out["focus_ipca_12m"]
     for r in rodadas or []:
         f = ((r.get("insumos") or {}).get("focus") or {}).get("IPCA 12m")
@@ -184,13 +200,61 @@ def referencias(series: dict, mes: str, ao_vivo: bool) -> dict[str, str | None]:
     return out
 
 
-def mes_da_regra(series: dict, mes: str, cortes: dict, p: dict, ao_vivo: bool = False) -> dict:
-    """As medidas, os lados de cada parte e a soma num mês."""
+def lados_persistentes(series: dict, cortes: dict, p: dict) -> dict[str, dict[str, tuple[str, int | None, int]]]:
+    """O lado do dólar e do juro de 10 anos dia a dia, com a persistência: cada dia compara o fechamento com o fim do
+    mês de 3 meses antes, como o resto da regra, e o lado só troca quando o lado novo se mantém por persiste_dias dias
+    úteis seguidos. Devolve, por medida e por mês, o último dia com dado no mês, o lado que vale nele e há quantos dias
+    seguidos o lado do dia é diferente do que vale (0 quando é o mesmo)."""
+    n = p.get("persiste_dias") or 0
+    out: dict[str, dict[str, tuple[str, int | None, int]]] = {}
+    if n <= 1:
+        return out
+    j = p["janela_meses"]
+    for k in PERSISTE:
+        med = MEDIDAS[k]
+        diaria, mensal = series.get(med["serie"] + DIA), series.get(med["serie"], {})
+        if not diaria or cortes.get(k) is None:
+            continue
+        corte = p["corte_vaivem"] * cortes[k]
+        atual, cand, cont = None, None, 0
+        por_mes: dict[str, tuple[str, int | None, int]] = {}
+        for d in sorted(diaria):
+            base = _valor(mensal, mais(d[:7], -j))
+            if base is None:
+                continue
+            v = diaria[d][1]
+            do_dia = lado(100 * (v / base - 1) if med["como"] == "pct" else v - base, corte, med["ruim"])
+            if atual is None or do_dia == atual:
+                atual, cand, cont = do_dia, None, 0
+            elif do_dia == cand:
+                cont += 1
+            else:
+                cand, cont = do_dia, 1
+            if cand is not None and cont >= n:
+                atual, cand, cont = cand, None, 0
+            por_mes[d[:7]] = (d, atual, cont)
+        out[k] = por_mes
+    return out
+
+
+def mes_da_regra(series: dict, mes: str, cortes: dict, p: dict, ao_vivo: bool = False,
+                 persistentes: dict | None = None) -> dict:
+    """As medidas, os lados de cada parte e a soma num mês. Com `persistentes` (lados_persistentes), o dólar e o
+    juro de 10 anos ficam com o lado que já durou os dias pedidos; o lado só do dia fica em `lados_do_dia`."""
     j = p["janela_meses"]
     refs = referencias(series, mes, ao_vivo)
     mud = {k: mudanca(MEDIDAS[k], series.get(MEDIDAS[k]["serie"], {}), refs[k], j) if refs[k] else None for k in MEDIDAS}
     corte = {k: p["corte_vaivem"] * cortes[k] if cortes.get(k) is not None else None for k in MEDIDAS}
     lados = {k: lado(mud[k], corte[k], MEDIDAS[k]["ruim"]) for k in MEDIDAS}
+    do_dia = dict(lados)
+    dias_seguidos = {}
+    for k, pm in (persistentes or {}).items():
+        x = pm.get(refs[k]) if refs[k] else None
+        # O último dia da série diária no mês tem de ser o dia do valor mensal; se não for, vale o lado do mês.
+        s = series.get(MEDIDAS[k]["serie"], {}).get(refs[k]) if refs[k] else None
+        if x and s and x[0] == s[0][:10]:
+            lados[k] = x[1]
+            dias_seguidos[k] = x[2]
     partes = {
         # Antes de 2007 não há série da dívida: vale o resultado sem juros.
         "contas": lados["divida"] if lados["divida"] is not None else lado(mud["primario"], corte["divida"], 1),
@@ -204,7 +268,8 @@ def mes_da_regra(series: dict, mes: str, cortes: dict, p: dict, ao_vivo: bool = 
     soma_vals = [partes[k] for k in NA_SOMA if partes[k] is not None]
     soma = sum(soma_vals) if soma_vals else None
     bruto = 0 if soma is None else 1 if soma >= p["corte_soma"] else -1 if soma <= -p["corte_soma"] else 0
-    return {"mes": mes, "refs": refs, "mudancas": mud, "lados": lados, "partes": partes, "soma": soma, "bruto": bruto,
+    return {"mes": mes, "refs": refs, "mudancas": mud, "lados": lados, "lados_do_dia": do_dia,
+            "dias_seguidos": dias_seguidos, "partes": partes, "soma": soma, "bruto": bruto,
             "encolhe": mud["ritmo"] is not None and mud["ritmo"] < -p["encolhe_pct"]}
 
 
@@ -232,12 +297,13 @@ def completar_cortes(series: dict, cortes: dict, p: dict, ate: str) -> dict[str,
 def linha_do_tempo(series: dict, ate: str, cortes: dict, p: dict, ao_vivo_no_fim: bool = True) -> list[dict]:
     """O estado mês a mês desde o começo da amostra, com a confirmação de um mês e o 'encolhendo' por cima."""
     cortes = completar_cortes(series, cortes, p, ate)
+    persistentes = lados_persistentes(series, cortes, p)
     meses = [mstr(n) for n in range(mnum(p["amostra_inicio"]), mnum(ate) + 1)]
     out = []
     atual = cand = None
     n = 0
     for m in meses:
-        x = mes_da_regra(series, m, cortes, p, ao_vivo=ao_vivo_no_fim and m == ate)
+        x = mes_da_regra(series, m, cortes, p, ao_vivo=ao_vivo_no_fim and m == ate, persistentes=persistentes)
         c = x["bruto"]
         if atual is None:
             atual = c
@@ -300,6 +366,10 @@ def calcular(snap: dict, cfg: dict, cal: dict, rodadas: list[dict] | None = None
                       "mudanca": agora["mudancas"][m],
                       "corte": p["corte_vaivem"] * cortes[m] if cortes.get(m) is not None else None,
                       "lado": agora["lados"][m], "como": med["como"]}
+        if m in agora["dias_seguidos"]:  # dólar e juro de 10 anos: o lado só do dia e há quantos dias ele é outro
+            medidas[m]["lado_do_dia"] = agora["lados_do_dia"][m]
+            medidas[m]["dias_seguidos"] = agora["dias_seguidos"][m]
+            medidas[m]["persiste_dias"] = p["persiste_dias"]
     partes = []
     for nome in PARTES:
         quais = QUAIS[nome]

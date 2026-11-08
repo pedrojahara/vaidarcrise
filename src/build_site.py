@@ -141,6 +141,15 @@ def _quanto_normal(m: dict, unidade: str, casas: int = 1, de: str = "") -> str:
         inicio = f"A mudança{de}"
     else:
         inicio = f"A {'alta' if m['mudanca'] > 0 else 'queda'} de {med(vista, casas)}{de}"
+    do_dia = m.get("lado_do_dia")
+    if do_dia is not None and do_dia != m["lado"] and m.get("dias_seguidos"):
+        # Dólar e juro de 10 anos (src/direcao.py, persiste_dias): o número de hoje já está do outro lado do vaivém,
+        # mas a pressão só troca de lado quando isso dura os dias pedidos.
+        k = m["dias_seguidos"]
+        ha = "só no último dia útil" if k == 1 else f"só nos últimos {k} dias úteis"
+        if do_dia == 0:
+            return f"{inicio} voltou para dentro do vaivém normal de 3 meses, que vai até {c}, {ha}."
+        return f"{inicio} passou do vaivém normal de 3 meses, que vai até {c}, {ha}."
     if m["lado"] in (None, 0):
         verbo = "ficou dentro do"
     elif mud < 1.25 * corte:
@@ -242,6 +251,10 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
             normal = normal[:-1] + ", e " + qj[0].lower() + qj[1:]
             normal += (" Como os dois contam como uma pressão só, ela piora quando um deles piora e o outro não melhora, "
                        "e fica igual quando um piora e o outro melhora.")
+        espera = [x for x in (d, j) if x and x.get("dias_seguidos") and x.get("lado_do_dia") != x.get("lado")]
+        if espera:
+            normal += (f" Cada um só conta quando fica {espera[0]['persiste_dias']} dias úteis seguidos do mesmo lado do vaivém, "
+                       "porque um dia de susto no mercado não basta.")
     elif pid == "inflacao" and m and m["agora"] is not None:
         cd = 2 if abs(m["agora"] - p["teto_meta_inflacao"]) < 0.05 else _casas(m)  # perto do teto da meta, a segunda casa decide
         frases.append(f"Os bancos (Focus) esperam que os preços subam {num(m['agora'], cd)}% "

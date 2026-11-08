@@ -360,10 +360,11 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 </table>
 <p>As reservas ainda não têm corte em <code>config/calibracao.json</code>. Enquanto não têm, o corte sai na hora, com a mesma conta, das variações de 3 meses que a coleta do dia traz desde janeiro de 2002 (<code>src/fetch_data.py</code> busca essa série inteira); com menos de 36 variações, a linha fica sem lado. Só a atualização do Mac coleta a série, e a página esconde a linha enquanto ela não tem dado. Depois que <code>src/historico.py</code> guardar a série, <code>python src/direcao.py --calibrar</code> grava o corte das reservas junto com os outros.</p>
 <p>O dólar e o juro de 10 anos contam como uma pressão só, a Desconfiança de quem investe: o sinal da soma dos dois lados (se um piora e o outro melhora, fica igual; se um piora e o outro fica igual, piorou).</p>
+<p><strong>Três dias úteis seguidos no dólar e no juro de 10 anos.</strong> Os dois saem todo dia. A mudança de cada dia continua sendo o fechamento contra o fim do mês de 3 meses antes, mas cada um só troca de lado (piorou, igual, melhorou) quando o lado novo se mantém por 3 dias úteis seguidos (<code>persiste_dias</code> em <code>config/modelo.json</code>). Com o fechamento de um dia só, a Desconfiança de quem investe trocava de lado umas 22 vezes por ano desde 2006 (46 de novembro de 2025 a outubro de 2026), e metade das trocas se desfazia em até 7 dias; com os 3 dias, são umas 11 por ano, e 17% se desfazem em até 7 dias. Na linha do tempo e no teste, cada mês usa o lado que vale no último dia útil dele, com a mesma persistência, calculada dia a dia desde 2002 (dólar) e 2005 (juro de 10 anos). Quando o número do dia já está do outro lado do vaivém e a linha ainda espera os 3 dias, a linha aberta diz isso.</p>
 <p><strong>5. A soma decide.</strong> Pressões que pioraram menos as que melhoraram: 2 ou mais, <strong>subindo</strong>; −2 ou menos, <strong>caindo</strong>; no meio, <strong>igual</strong>. Pressão sem dado fica fora da soma naquele dia.</p>
 <p><strong>6. Confirmação.</strong> A direção só muda quando o resultado novo se repete no mês seguinte. No mês da primeira vez, a página avisa: "Pelos dados de hoje, a direção seria (...)".</p>
 <p><strong>7. Encolhendo.</strong> Se o IBC-Br (média de 3 meses contra os 3 anteriores) cair mais de 1,5%, o topo diz "A economia está encolhendo", no lugar da direção. A essa altura, a pergunta de para que lado anda o risco já perdeu o sentido.</p>
-<p><strong>Meses passados e mês corrente.</strong> Na linha do tempo e no teste, cada mês usa o dado com o atraso típico de divulgação da série. No mês corrente, entra o último dado que já saiu, comparado com o de 3 meses antes dele: o dólar de ontem, a dívida de dois meses atrás. O Focus mensal vem da série guardada e, nos meses do site, da coleta de cada atualização.</p>
+<p><strong>Meses passados e mês corrente.</strong> Na linha do tempo e no teste, cada mês usa o dado com o atraso típico de divulgação da série. No mês corrente, entra o último dado que já saiu, comparado com o de 3 meses antes dele: o dólar de ontem (com os 3 dias de persistência acima), a dívida de dois meses atrás. O Focus mensal vem da série guardada e, nos meses do site, da coleta de cada atualização.</p>
 <p><strong>Quanto espaço ainda sobra (a <code>folga</code> do <code>data.json</code>).</strong> Cada pressão (menos o dólar, cujo valor em reais não se compara entre décadas) e o emprego comparam o nível de hoje com todos os meses desde o começo da série: a dívida desde 2006, as dívidas das famílias desde 2005, o juro de 10 anos desde 2005, a inflação esperada desde 2001, o juro descontado da inflação esperada (Selic e Focus, pela fórmula de Fisher) desde 2002 e o desemprego desde 2012. As reservas em dólar também ficam sem folga, porque o valor em dólares de hoje não se compara com o de 2002.</p>
 <table>
 <thead>
@@ -456,10 +457,34 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 <tbody>
 <tr>
 <td><strong>A escolhida</strong></td>
+<td>18%</td>
+<td>1,9</td>
+<td>+0,4% e +4,3%</td>
+<td>6</td>
+<td>Subindo</td>
+</tr>
+<tr>
+<td>Sem os 3 dias de persistência no dólar e no juro de 10 anos</td>
 <td>17%</td>
 <td>2,0</td>
 <td>+0,3% e +4,3%</td>
 <td>6</td>
+<td>Subindo</td>
+</tr>
+<tr>
+<td>Persistência de 5 dias</td>
+<td>16%</td>
+<td>2,0</td>
+<td>+0,4% e +4,2%</td>
+<td>3</td>
+<td>Subindo</td>
+</tr>
+<tr>
+<td>Média de 10 dias úteis no dólar e no juro de 10 anos</td>
+<td>19%</td>
+<td>2,0</td>
+<td>+0,4% e +4,2%</td>
+<td>3</td>
 <td>Subindo</td>
 </tr>
 <tr>
@@ -556,7 +581,8 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 <li><strong>Basta uma pressão</strong> vira papel de parede. <strong>Sem esperar o mês seguinte</strong>, a direção muda 4 vezes por ano.</li>
 <li><strong>Corte de uma escala inteira</strong> e <strong>desvio padrão comum</strong> ficam em igual em três de cada quatro meses e não viram nada antes de 2014.</li>
 <li><strong>Sete partes</strong> parece melhor no PIB seguinte, mas porque o ritmo e o emprego descrevem a recessão que já chegou. Antes de 2014, ficou em igual o ano todo.</li>
-<li><strong>Comparar com 6 meses antes</strong>, <strong>contas juntas</strong> e <strong>inflação juntas</strong> quase empatam com a escolhida; ficou a mais simples de explicar.</li>
+<li><strong>Comparar com 6 meses antes</strong>, <strong>contas juntas</strong> e <strong>inflação juntas</strong> quase empatam com a escolhida; ficou a mais simples de explicar. Essas versões foram testadas sem os 3 dias de persistência.</li>
+<li><strong>Os 3 dias de persistência</strong> cortam pela metade o vaivém diário da Desconfiança de quem investe (veja o passo 4) e mudam 6 dos 274 meses do teste. A <strong>média de 10 dias úteis</strong> cortava um pouco mais o vaivém (umas 9,5 trocas por ano), e a <strong>persistência de 5 dias</strong> também, mas as duas tiram 3 dos 6 meses em subindo antes de 2014. Em setembro de 2013, o juro de 10 anos fechou o mês 0,52 ponto acima de junho, logo acima do corte de 0,43; na média dos 10 últimos dias úteis, a alta era de 0,16. O aviso de 2014 depende de poucos dias, e isso vale para qualquer versão.</li>
 <li><strong>Por que a dívida, e não o resultado sem juros, nas contas do governo.</strong> É a dívida que quem empresta ao governo olha, e ela inclui o custo dos juros. Hoje as duas andam em lados opostos: o resultado sem juros melhorou, e a dívida subiu porque os juros pesam mais que essa melhora. A página mostra as duas.</li>
 </ul>
 <h2 id="o-teste-desde-2004">O teste desde 2004</h2>
@@ -574,21 +600,21 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 <tbody>
 <tr>
 <td>Parte dos meses</td>
-<td>17%</td>
-<td>63%</td>
+<td>18%</td>
+<td>62%</td>
 <td>13%</td>
 <td>7%</td>
 </tr>
 <tr>
 <td>PIB médio nos 12 meses seguintes</td>
-<td>+0,3%</td>
-<td>+2,1%</td>
+<td>+0,4%</td>
+<td>+2,2%</td>
 <td>+4,3%</td>
 <td>—</td>
 </tr>
 <tr>
 <td>Meses com recessão começando no ano seguinte</td>
-<td>21%</td>
+<td>19%</td>
 <td>16%</td>
 <td>3%</td>
 <td>—</td>
@@ -605,11 +631,11 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 <tbody>
 <tr>
 <td>Mudanças de direção por ano</td>
-<td>2,0</td>
+<td>1,9</td>
 </tr>
 <tr>
 <td>Chance de um mês com recessão à frente ter soma maior que um mês sem (0,5 é cara ou coroa)</td>
-<td>0,55</td>
+<td>0,53</td>
 </tr>
 <tr>
 <td>Meses em subindo nos 12 antes de cada recessão</td>
@@ -617,13 +643,13 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 </tr>
 <tr>
 <td>Parte dos meses em que cada pressão piorou / melhorou</td>
-<td>contas 31% / 16%; dívidas das famílias 32% / 17%; desconfiança de quem investe 30% / 34%; inflação esperada 18% / 23%; juro 19% / 24%</td>
+<td>contas 31% / 16%; dívidas das famílias 32% / 17%; desconfiança de quem investe 31% / 32%; inflação esperada 19% / 24%; juro 19% / 24%</td>
 </tr>
 </tbody>
 </table>
 <p>O que isso quer dizer, sem enfeite:</p>
 <ul>
-<li><strong>A regra separa anos fracos de anos fortes, mas não marca a data da recessão.</strong> A soma quase não distingue um mês com recessão à frente de um sem (0,55). Com três recessões desde 2004, nenhuma regra simples passa disso.</li>
+<li><strong>A regra separa anos fracos de anos fortes, mas não marca a data da recessão.</strong> A soma quase não distingue um mês com recessão à frente de um sem (0,53). Com três recessões desde 2004, nenhuma regra simples passa disso.</li>
 <li><strong>Choques de fora passam batido no começo.</strong> Em 2008, a regra ficou em igual até dezembro. Em abril de 2020, disse caindo, porque o juro e a inflação esperada caíram rápido; só em maio a prévia do PIB mostrou a queda e o topo passou a dizer "encolhendo".</li>
 <li><strong>A recessão de 2014, feita em casa, apareceu:</strong> subindo de setembro de 2013 a fevereiro de 2014.</li>
 <li><strong>Os dados são os revisados de hoje</strong>, e não os que saíram na época. A dívida é a série que menos muda; o PIB e o IBC-Br mudam mais.</li>
@@ -642,8 +668,8 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 <tr>
 <td>Lula 1 e 2 (2004 a 2010)</td>
 <td>2%</td>
-<td>73%</td>
-<td>19%</td>
+<td>74%</td>
+<td>18%</td>
 </tr>
 <tr>
 <td>Dilma (2011 a abril de 2016)</td>
@@ -659,8 +685,8 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 </tr>
 <tr>
 <td>Bolsonaro (2019 a 2022)</td>
-<td>19%</td>
-<td>65%</td>
+<td>25%</td>
+<td>58%</td>
 <td>4%</td>
 </tr>
 <tr>
