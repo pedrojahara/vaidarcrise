@@ -2418,19 +2418,27 @@
  },
  "post": {
   "tipo": "dia",
+  "porque": {
+   "caderno": [
+    "c1",
+    "c5",
+    "c3",
+    "c13"
+   ]
+  },
   "ok": true,
   "titulo": "Petróleo cai quase 8% com sinal de negociação de paz entre EUA e Irã",
   "paragrafos": [
-   "O barril de petróleo caiu quase 8% lá fora porque EUA e Irã sinalizaram que podem negociar a paz, mas ainda não existe acordo para acabar a guerra.",
-   "Se o barril continuar mais barato, o diesel e a gasolina podem baixar nas bombas daqui, e a comida pode chegar ao mercado com frete menor nos meses seguintes.",
-   "Esse alívio importa porque os bancos (Focus) esperam que os preços subam 5% nos próximos 12 meses, acima do teto da meta de inflação, de 4,5%. Se o combustível ficar mais barato, o Banco Central ganha espaço para cortar o juro."
+   "O petróleo caiu quase 8% ontem porque autoridades do Irã e mediadores do Catar negociam o fim da guerra no Oriente Médio, segundo os jornais. O presidente dos Estados Unidos disse que um acordo com o Irã \"pode acontecer\", mas nenhum acordo foi assinado.",
+   "Se o barril seguir mais barato lá fora, o diesel e a gasolina podem ficar mais baratos aqui, o que abriria espaço para o juro cair.",
+   "Em maio, um sinal parecido derrubou o barril 7,8%, mas o preço voltou a subir, com alta de mais de 14% em outubro. Por isso, o alívio depende do acordo."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "O barril de petróleo caiu quase 8% lá fora porque EUA e Irã sinalizaram que podem negociar a paz, mas ainda não existe acordo para acabar a guerra.",
-     "Se o barril continuar mais barato, o diesel e a gasolina podem baixar nas bombas daqui, e a comida pode chegar ao mercado com frete menor nos meses seguintes.",
-     "Esse alívio importa porque os bancos (Focus) esperam que os preços subam 5% nos próximos 12 meses, acima do teto da meta de inflação, de 4,5%. Se o combustível ficar mais barato, o Banco Central ganha espaço para cortar o juro."
+     "O petróleo caiu quase 8% ontem porque autoridades do Irã e mediadores do Catar negociam o fim da guerra no Oriente Médio, segundo os jornais. O presidente dos Estados Unidos disse que um acordo com o Irã \"pode acontecer\", mas nenhum acordo foi assinado.",
+     "Se o barril seguir mais barato lá fora, o diesel e a gasolina podem ficar mais baratos aqui, o que abriria espaço para o juro cair.",
+     "Em maio, um sinal parecido derrubou o barril 7,8%, mas o preço voltou a subir, com alta de mais de 14% em outubro. Por isso, o alívio depende do acordo."
     ]
    }
   ],
@@ -2438,88 +2446,95 @@
   "edicao": {
    "sugestoes": [
     {
-     "trecho": "Com o combustível mais barato, o Banco Central ganha espaço para baixar o juro.",
-     "problema": "Estágio do fato: o combustível ainda não ficou mais barato aqui, e a frase conta o alívio como se já tivesse acontecido. Vira condição dita por inteiro.",
-     "como_fica": "Se o combustível ficar mais barato, o Banco Central ganha espaço para cortar o juro."
+     "trecho": "O petróleo caiu quase 8% porque",
+     "problema": "Número sem régua de tempo: a leitora não sabe quando foi a queda. No fato do dia, a comparação é com ontem.",
+     "como_fica": "O petróleo caiu quase 8% ontem porque"
     },
     {
-     "trecho": "e a comida chega ao mercado com frete menor nos meses seguintes.",
-     "problema": "Estágio do fato: \"chega\" afirma um efeito que ainda é só possível.",
-     "como_fica": "e a comida pode chegar ao mercado com frete menor nos meses seguintes."
+     "trecho": "Se o barril seguir mais barato lá fora, [...] por isso o alívio depende do acordo.",
+     "problema": "O parágrafo tem 56 palavras, e o limite é 50. Junta duas ideias: o que a queda pode mudar aqui e por que ainda é cedo para contar com isso.",
+     "como_fica": "Dividir em dois parágrafos: um com o possível alívio no diesel, na gasolina e no juro, e outro com o caso de maio."
     },
     {
-     "trecho": "Por ora, o corte nas bombas daqui é só uma possibilidade.",
-     "problema": "Repete o \"podem baixar\" da frase anterior e leva o texto a 106 palavras, acima do limite de 100 do fato do dia. A frase anterior já diz que o corte é possível e onde ele aconteceria.",
-     "como_fica": "Sai do texto, e a frase anterior ganha o lugar: \"o diesel e a gasolina podem baixar nas bombas daqui\"."
-    },
-    {
-     "trecho": "subam 5,0% nos próximos 12 meses",
-     "problema": "Número arredondado: a casa decimal com zero só pesa.",
-     "como_fica": "subam 5% nos próximos 12 meses"
+     "trecho": "e o preço voltou a subir, com alta de mais de 14% em outubro, por isso o alívio depende do acordo.",
+     "problema": "A frase está no limite de 30 palavras e põe a conclusão (o e daí) no fim de uma corrente longa. Com a frase separada, a conclusão fica mais fácil de ver.",
+     "como_fica": "Em maio, um sinal parecido derrubou o barril 7,8%, mas o preço voltou a subir, com alta de mais de 14% em outubro. Por isso, o alívio depende do acordo."
     }
    ],
    "aplicada": true
   },
+  "teste": {
+   "ok": true,
+   "testes": {
+    "porque": {
+     "ok": true,
+     "por_que": "Dá a razão como os jornais a contam: Irã e mediadores do Catar negociam o fim da guerra, e o presidente dos EUA disse que o acordo 'pode acontecer'. Diz também que não há acordo assinado, e todos os números (8%, 7,8%, 14%) estão nas fontes."
+    },
+    "quem": {
+     "ok": true,
+     "por_que": "Só aparecem como autores os negociadores e o presidente dos EUA. Não diz quem cortaria o juro, então não põe ninguém no lugar do Banco Central. Nenhuma frase muda de sentido com outro governo."
+    },
+    "e_dai": {
+     "ok": true,
+     "por_que": "Diz o que muda para a leitora: diesel e gasolina podem baratear e o juro pode ter espaço para cair. Lembra que em maio a queda não durou e conclui que o alívio depende do acordo, tudo preso aos dados."
+    },
+    "livro": {
+     "ok": true,
+     "por_que": "O mecanismo cabe numa oração só (barril mais barato, combustível mais barato, espaço para o juro cair) e serve ao e daí do dia, sem virar explicação geral."
+    }
+   },
+   "problemas": []
+  },
   "meta": [
    {
+    "etapa": "post",
     "modelo_pedido": "opus",
-    "prompt_sha256": "e611260f85ede4e7eff4461099bfd434ab5e36fc8a42b2f8adba2d710d519d0f",
-    "system_sha256": "db547ec41ae437ed91bb761e46d2a8020b5b034347f3f337694f3b708cc76388",
+    "prompt_sha256": "0072a9390105a6d43a414367b40b65548c4216aa1d51c0191012f046d2e56dc5",
+    "system_sha256": "dbe36a227238045327ee8a85dab6a9140e43b66582cd3e8fc233a1ceda391167",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.1222984,
+    "custo_usd": 0.146664,
+    "turnos": 2,
+    "duracao_s": 21,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "d0136ce5-f750-4d7d-8ecc-0de14d51681d"
+    "session_id": "d414fe59-1508-4d1e-8360-912dc853a441"
    },
    {
+    "etapa": "editor",
     "modelo_pedido": "opus",
-    "prompt_sha256": "8e8c1c95f7d3fc2b948afc0c5adfec308433855e714cd07deaa0afb36d5efcf6",
-    "system_sha256": "742a9166ecb7708349c5ccb68828d68c7cf9d6db13c33b0eb25536b9574c5d87",
+    "prompt_sha256": "31ed79c2f46e54b0b2a980c00e905270678e182997c8ecf1552307d683a5d558",
+    "system_sha256": "4c7e8c0f33317bc6d454b5ff1a997da9df57cacbbd46c9781db8192f030feaf7",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.2341012,
+    "custo_usd": 0.283172,
+    "turnos": 2,
+    "duracao_s": 29,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "540ce737-93af-4731-81c0-88f235cfbb14"
+    "session_id": "464e8143-e6f2-4459-8504-5cb779600be6"
+   },
+   {
+    "etapa": "teste",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "90484598047dfc6e942d43e4a0d34aa361278c194b04aa79fb4079b3bf8ac13e",
+    "system_sha256": "8ac0ad691c3d8317f7a01b7710ff315fcc059d9ac6cc9d2a8eaf9955ee37b79d",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.07922,
+    "turnos": 2,
+    "duracao_s": 8,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "31316b24-bf7f-4159-b7d8-bfb5290ba8ca"
    }
   ],
-  "versao_anterior": {
-   "titulo": "Petróleo cai quase 8% lá fora com sinal de negociação entre EUA e Irã",
-   "paragrafos": [
-    "O petróleo ficou quase 8% mais barato lá fora com sinais de que EUA e Irã podem negociar a paz, mas ainda não há acordo.",
-    "Com o barril mais barato, o diesel e a gasolina podem baratear aqui, e o frete e a comida chegariam mais baratos ao mercado nos meses seguintes.",
-    "O alívio vem de fora e chega quando os bancos (Focus) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. Já o dólar a R$ 5,49, 8,3% mais caro que no começo de agosto, encarece o combustível importado e pode reduzir esse alívio."
-   ],
-   "edicao": {
-    "sugestoes": [
-     {
-      "trecho": "o que ainda é possibilidade, e não acordo fechado.",
-      "problema": "Construção em espelho (\"X, e não Y\") que pesa. O estágio pode ser dito de forma direta e mais curta.",
-      "como_fica": "mas ainda não há acordo."
-     },
-     {
-      "trecho": "e o frete e a comida chegam mais baratos ao mercado nos meses seguintes.",
-      "problema": "A frase começa com \"podem baratear\" e termina como certeza. Fica mais claro que é um efeito possível.",
-      "como_fica": "e o frete e a comida chegariam mais baratos ao mercado nos meses seguintes."
-     },
-     {
-      "trecho": "Esse alívio vem de fora do país e chega quando os bancos (Focus) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. O dólar a R$ 5,49,",
-      "problema": "As duas frases estavam soltas e o texto passava de 100 palavras. \"Já\" liga o dólar ao alívio do petróleo, e \"de fora\" basta para dizer que é causa de fora.",
-      "como_fica": "O alívio vem de fora e chega quando os bancos (Focus) esperam preços 5,0% mais altos nos próximos 12 meses, contra 4,2% em julho. Já o dólar a R$ 5,49,"
-     }
-    ],
-    "aplicada": true
-   },
-   "trocado_em": "2026-11-07",
-   "motivo": "Fase 0 da base de conhecimento: o fato do dia ganhou a escada de porquês, a pedido do Pedro em 7/11/2026."
-  },
-  "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior.",
-  "termina_em": "inflacao",
   "fundo": {
    "versao": 3,
    "ok": false,
@@ -2745,6 +2760,38 @@
      ],
      "permission_denials": [],
      "session_id": "ba2240b3-688b-4488-8442-174491e79022"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "ed6ba8d8bc07239d0f7daa28bce8433b5ac76b93ca153db72fc973a2cfade303",
+     "system_sha256": "c67e5f42e90ffcf87745cda9a56c4872511340d3e26a0d63847171ed792845ff",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.236627,
+     "turnos": 3,
+     "duracao_s": 21,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "bb0eb20f-af66-4097-a432-5aaff558ce47"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "f4639c212eafd54fc0b117b8f234186f47b564c672248f14f66fc3914fd4c444",
+     "system_sha256": "71dc0f4d088eada8b40ba4bb2b49edc6987d726eb81c818f32a35e02eaaa6fbf",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.198992,
+     "turnos": 2,
+     "duracao_s": 13,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "f8a300c1-dcf4-4bcb-9bd4-041c2239193c"
     }
    ],
    "offline": true,
@@ -3368,8 +3415,29 @@
    ],
    "erro": "sem achado: o editor-chefe não aprovou tese",
    "sem_achado": true,
-   "duracao_s": 307
-  }
+   "duracao_s": 307,
+   "curto": {
+    "porque": "O barril caiu porque autoridades do Irã e mediadores do Catar estão negociando o fim da guerra no Oriente Médio, o que fez crescer a esperança de paz, segundo os jornais. O presidente dos Estados Unidos disse que um acordo com o Irã \"pode acontecer\". Ainda não há acordo assinado.",
+    "e_dai": "Em maio, um sinal parecido derrubou o barril 7,8%, e o preço voltou a subir, com alta de mais de 14% só em outubro. Sem acordo, o alívio ainda é incerto.",
+    "caderno": [
+     "c1",
+     "c5",
+     "c3",
+     "c13"
+    ]
+   }
+  },
+  "termina_em": "inflacao",
+  "versao_anterior": {
+   "titulo": "Petróleo cai quase 8% com sinal de negociação de paz entre EUA e Irã",
+   "paragrafos": [
+    "O barril de petróleo caiu quase 8% lá fora porque EUA e Irã sinalizaram que podem negociar a paz, mas ainda não existe acordo para acabar a guerra.",
+    "Se o barril continuar mais barato, o diesel e a gasolina podem baixar nas bombas daqui, e a comida pode chegar ao mercado com frete menor nos meses seguintes.",
+    "Esse alívio importa porque os bancos (Focus) esperam que os preços subam 5% nos próximos 12 meses, acima do teto da meta de inflação, de 4,5%. Se o combustível ficar mais barato, o Banco Central ganha espaço para cortar o juro."
+   ],
+   "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior."
+  },
+  "revisao_manual": "2026-11-08: refeito a pedido do Pedro (fato do dia com o porquê): a pesquisa do dia, a mesma da leitura a fundo, passa ao redator o porquê e o e daí (curto do editor-chefe, refeito da pesquisa gravada com fundo.py --curto); regra do \"quem decidiu\"; teste do porquê; Opus no post, no editor e no teste. Mesmo programa da atualização (src/escreve_post.py), com os dados desta rodada. O texto anterior ficou em versao_anterior."
  },
  "pauta": {
   "versao": 1,

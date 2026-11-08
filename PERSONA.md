@@ -162,7 +162,7 @@ Este é o padrão de todo texto do site, do post diário às abas, aprovado em 3
 12. **Compare com um mês, não com "3 meses antes".** Diga com que mês ou data se compara, como se fala: "se compararmos com julho", "desde junho", "6,8% mais caro que no fim de julho". "Contra 3 meses antes", "há 3 meses" e "nos últimos 3 meses" obrigam a leitora a fazer a conta. "Nos 3 meses até agosto" pode, porque já diz o mês.
 13. **Importado, não "o que vem de fora".** Produto comprado de outro país é importado, e a compra é a importação: "com o dólar mais caro, os importados ficam mais caros, como peças e combustível". Causa de fora (guerra, seca, juro dos Estados Unidos) continua sendo causa de fora.
 14. **Sigla por extenso ou com link.** Sigla que a leitora não conhece vai por extenso quando o nome já diz o que ela é (Confederação Nacional da Indústria, Tribunal de Contas da União, o banco central dos Estados Unidos no lugar de Fed), ou fica como sigla quando o site a liga à Wikipédia (IFI, BNDES). Imposto vai pelo que ele cobra ("o imposto sobre combustíveis", e não ICMS). Siglas que todo mundo conhece ficam: IBGE, PIB, INSS, EUA.
-15. **Exato no que importa, natural no resto, e sempre quem.** Diga o detalhe que muda o entendimento e corte o que só pesa: depois da primeira vez, "quando o governo paga mais para pegar dinheiro emprestado" basta, sem repetir "por 10 anos". E diga quem faz o quê e para quem: de quem o banco cobra, quem paga, quem perde.
+15. **Exato no que importa, natural no resto, e sempre quem decidiu.** Diga o detalhe que muda o entendimento e corte o que só pesa: depois da primeira vez, "quando o governo paga mais para pegar dinheiro emprestado" basta, sem repetir "por 10 anos". E diga quem decidiu, por quê e para quem: o sujeito da frase é quem tomou a decisão, com o motivo que a fonte dá ("o Banco Central disse que as incertezas aumentaram"), e a consequência vem depois, com quem a sente ("o crédito segue caro para pessoas e empresas"). Quem só repassa a decisão de outro não vira o autor dela: "os bancos seguem cobrando caro", logo depois de uma decisão do Banco Central, faz a leitora achar que a escolha foi do banco.
 
 **Antes e depois, no resumo do mês de 1/11/2026 (reescrita do Pedro)**
 
@@ -178,7 +178,15 @@ O depois tira a definição do PIB (o link resolve), junta o dado futuro ao moti
 >
 > **Depois.** Se compararmos com julho, pioraram as contas do governo e a desconfiança de quem investe. Com o dólar mais caro, os importados ficam mais caros. Na mesma semana, a [IFI](https://pt.wikipedia.org/wiki/Institui%C3%A7%C3%A3o_Fiscal_Independente), do Senado, apontou R$ 40 bilhões em medidas novas. O efeito já chegou à parcela, porque, quando o governo paga mais para pegar dinheiro emprestado, os bancos cobram mais das pessoas e das empresas nos empréstimos longos, como o da casa própria.
 
-O depois diz o mês da comparação, troca "o que vem de fora" por importados, liga a sigla à Wikipédia, tira o "por 10 anos" repetido e diz de quem o banco cobra mais: das pessoas e das empresas, e não do governo.
+O depois diz o mês da comparação, troca "o que vem de fora" por importados, liga a sigla à Wikipédia, tira o "por 10 anos" repetido e diz a corrente inteira, na ordem: o governo paga mais para pegar dinheiro, e por isso as pessoas e as empresas pagam mais nos empréstimos longos, e não o governo.
+
+**Antes e depois, no fato do dia de 5/11/2026 (crítica do Pedro, 8/11)**
+
+> **Antes.** O Banco Central parou de cortar o juro e manteve a Selic em 13,75%, como desde setembro. Assim, os bancos seguem cobrando caro de pessoas e empresas. Ao contrário do que muita gente acha, juro alto faz os preços subirem mais devagar, porque comprar a prazo fica caro e as lojas vendem menos. Mesmo assim, o Banco Central subiu para 5,6% a previsão do IPCA de 2026.
+>
+> **Depois.** O Banco Central parou de cortar e manteve a Selic em 13,75%, porque, segundo ele, as incertezas e a inflação esperada subiram. O crédito segue caro para pessoas e empresas, o que segura consumo e investimento. Desde 2002, em 7 de 8 pausas com inflação esperada subindo, a Selic voltou a subir. Os bancos (Focus) preveem corte, mas o passado indica alta, o que deixaria o crédito caro por mais tempo.
+
+O antes deixa um "mesmo assim" sem resposta, gasta um terço do texto com o mecanismo de livro, que a aba e a página do juro já explicam, e põe o banco como quem escolheu cobrar caro. O depois diz por que o fato aconteceu, nas palavras de quem decidiu, a consequência com quem a sente e o e daí, que é a tese da leitura a fundo numa frase. O porquê e o e daí vêm da pesquisa do dia, a mesma da leitura a fundo, que roda antes do post.
 
 **Antes e depois, na aba O que causa recessão**
 
@@ -196,7 +204,7 @@ O depois diz o mês da comparação, troca "o que vem de fora" por importados, l
 
 ## Os tipos de post
 
-Cada post responde a uma pergunta só e compara com o próprio período. Ela quase nunca volta todo dia: o fato do dia serve a quem volta em 10 segundos, e o domingo é o post que ela lê com calma e encaminha no WhatsApp. É um post por dia, às 06h30; o tipo muda com o dia.
+Cada post responde a uma pergunta só e compara com o próprio período. Ela quase nunca volta todo dia: o fato do dia serve a quem volta em 10 segundos, e o domingo é o post que ela lê com calma e encaminha no WhatsApp. É um post por dia, por volta das 06h30; o tipo muda com o dia. No fato do dia, a pesquisa vem antes do texto: ela começa às 05h45, e a mesma pesquisa serve às 100 palavras e à leitura a fundo.
 
 | Tipo | Pergunta que responde | Quando | Tamanho | Abre com |
 | --- | --- | --- | --- | --- |
@@ -213,7 +221,8 @@ Cada post responde a uma pergunta só e compara com o próprio período. Ela qua
 | Notícias de ontem, por assunto | A caixa "Para onde as notícias empurram" | O fato do dia conta uma, a que a pauta escolheu ([CARTA_EDITORIAL.md](CARTA_EDITORIAL.md)), até o bolso. |
 | Próximas datas | A lateral "Datas importantes" | O fato do dia só cita o dado que sai hoje. O resumo da semana diz o que olhar na semana seguinte. |
 | O que cada pressão fez em 3 meses, e quanto espaço ainda sobra | O topo, abaixo da placa | O resumo do mês conta só o que mudou de lado. |
-| Como a recessão acontece | O que causa recessão | Uma frase de mecanismo, quando o fato pede. |
+| Por que o fato aconteceu e o que ele quer dizer | A pesquisa do dia, a mesma da leitura a fundo ([FUNDO.md](FUNDO.md)) | O fato do dia diz o porquê, nas palavras de quem decidiu, e o e daí, em uma ou duas frases; a leitura a fundo mostra o que os sustenta, sem repeti-los. |
+| Como a recessão acontece | O que causa recessão e a página de cada pressão | Uma oração de mecanismo, só quando o porquê do dia precisa dela. |
 | Como a direção é calculada | Como funciona | Uma frase, quando a notícia parece contradizer a direção: "Isso não muda a direção do risco, porque a Bolsa fica fora da conta." |
 
 - **Compare com o próprio período.** O fato do dia, com ontem; o resumo da semana, com a semana anterior; o resumo do mês, com o mês anterior. Comparação mais longa só como régua de um número (contra um ano antes, contra o normal).
@@ -236,10 +245,10 @@ O resto do guia cuida da palavra. Esta parte cuida de como ensinar: por que os p
 7. **Partes curtas que se leem sozinhas.** Até 70 palavras e um desenho por parte. As duas primeiras já dão a resposta (segmentação, Mayer).
 8. **Corte o que não ensina.** Barra de acerto, número de países, teste estatístico e tabela de sinais vão para a metodologia. Detalhe curioso que não serve à ideia atrapalha (coerência, Mayer).
 9. **Desenho que mostra a ideia, com legenda que conclui.** Imagem decorativa não ajuda; imagem ligada ao texto ajuda mais quem lê pouco (Houts e outros, 2006). Desenho sem letra dentro: o texto fica na legenda.
-10. **Causa sem culpado.** Com mais de uma causa, mostre todas. Diga com todas as letras quais vêm de fora (seca, petróleo, guerra, juro dos Estados Unidos) e qual o governo influencia, e como: "Das três causas, o governo influencia uma com as próprias contas: o dólar." Quando os dados não separam duas leituras, mostre as duas.
+10. **Causa sem culpado, mas com quem decidiu.** Sem culpado não quer dizer sem quem: diga quem decidiu e o motivo que deu, com a fonte, e não troque quem decidiu por quem só repassa a decisão. Com mais de uma causa, mostre todas. Diga com todas as letras quais vêm de fora (seca, petróleo, guerra, juro dos Estados Unidos) e qual o governo influencia, e como: "Das três causas, o governo influencia uma com as próprias contas: o dólar." Quando os dados não separam duas leituras, mostre as duas.
 11. **Causa e efeito por extenso, com exemplo e tempo.** Diga o que acontece, em ordem, com um caso concreto, e chame causa de fora de causa de fora. As regras e os exemplos estão em [O jeito de escrever do site](#o-jeito-de-escrever-do-site).
 
-**Nos posts** valem 3, 4, 10 e 11, em uma frase cada: o mecanismo com imagem do dia a dia quando ele muda a leitura do dia, a crença errada corrigida de frente, a causa sem culpado e a corrente de causa e efeito por extenso. Regras do prompt em `src/escreve_post.py`.
+**Nos posts**, o porquê do dia vem antes do mecanismo: primeiro por que este fato aconteceu, dito por quem decidiu ou pela fonte, e só depois, se ele precisar, como esse tipo de coisa funciona, numa oração com palavras próprias, sem copiar a aba. Valem 4, 10 e 11, em uma frase cada: a crença errada corrigida de frente quando o fato depende dela, a causa sem culpado e com quem decidiu, e a corrente de causa e efeito por extenso. Regras do prompt em `src/escreve_post.py`.
 
 **Formato.** Texto simples primeiro: linguagem clara rendeu mais que recurso visual (Bholat e outros, 2019). Depois desenho com legenda. Vídeo narrado ajuda mais quem lê pouco (Meppelink e outros, 2015), com até 2 minutos por ideia. Rolagem animada não ensina mais que texto.
 
@@ -322,7 +331,7 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 
 ## O que todo texto passa antes de sair
 
-Os itens 3, 5, 9 e 12, e parte do 11, o código confere nos posts (`src/revisa_texto.py`); os outros pedem leitura.
+Os itens 3, 5, 9 e 12, e parte do 11, o código confere nos posts (`src/revisa_texto.py`); o 13 e o "quem" do 14 passam, no fato do dia, pelo teste do porquê (`src/escreve_post.py`); os outros pedem leitura.
 
 1. **Resposta primeiro.** O título e a primeira frase respondem à pergunta do texto: no fato do dia, o fato principal; a direção do risco, só quando mudou.
 2. **Sozinho no print.** Só o título e a primeira frase já se entendem, sem o resto da página, e o texto inteiro se entende sem o topo do site nem o post anterior.
@@ -336,8 +345,8 @@ Os itens 3, 5, 9 e 12, e parte do 11, o código confere nos posts (`src/revisa_t
 10. **Em voz alta.** Lido em voz alta, soa como gente explicando para gente.
 11. **Explicação por inteiro.** Passa nas quinze regras de "O jeito de escrever do site": frase completa, causa e efeito em ordem com exemplo, condição por inteiro, nenhuma fórmula de efeito, causa de fora dita, casos com as mesmas linhas e amarração ao que veio antes.
 12. **Nada repetido.** O texto não repete o que o topo, a caixa de notícias ou a lateral já mostram, nem frase do post anterior do mesmo tipo. Todo número está nos dados.
-13. **E daí.** Cada fato diz o que quer dizer para o risco ou para quem lê, sem lado, com as duas leituras quando houver duas.
-14. **Mês, importado, sigla e quem.** Toda comparação diz o mês; produto de fora é importado; sigla que a leitora não conhece vai por extenso ou com link; cada frase diz quem faz o quê e para quem.
+13. **Porquê e e daí.** Cada fato diz por que aconteceu, nas palavras de quem decidiu ou da fonte, e o que quer dizer para o risco ou para quem lê, sem lado, com as duas leituras quando houver duas. Nenhum "mesmo assim" fica sem resposta.
+14. **Mês, importado, sigla e quem.** Toda comparação diz o mês; produto de fora é importado; sigla que a leitora não conhece vai por extenso ou com link; cada frase diz quem decidiu, por quê e para quem, e quem só repassa a decisão não aparece como autor dela.
 15. **Passou pelo editor.** Todo post passa pelo editor (`src/edita_texto.py`) antes de sair; texto à mão também pode passar, com a leitura em voz alta no fim.
 
 ### Antes e depois: a frase, com o post de 30/10/2026
