@@ -125,11 +125,13 @@ def pergunta_da_pressao(pid: str) -> dict | None:
 
 
 def menu(cfg: dict) -> list[dict]:
-    """As páginas publicadas, na ordem das pressões do topo, para o menu Grandes perguntas do cabeçalho."""
+    """O menu Grandes perguntas do cabeçalho: primeiro a aba O que causa recessão, que explica como as pressões levam à
+    recessão, e depois as páginas publicadas, na ordem das pressões do topo."""
     ordem = list(cfg["direcao"]["nomes"])
     lista = sorted(publicadas().values(), key=lambda q: ordem.index(q["pressao"]) if q.get("pressao") in ordem else 99)
-    return [{"url": f"/perguntas/{q['id']}/", "pergunta": q["pergunta"],
-             "pressao": cfg["direcao"]["nomes"].get(q.get("pressao"), "")} for q in lista]
+    return [{"url": "/causas/", "pergunta": "O que causa recessão?", "rotulo": "Para começar"}] + [
+        {"url": f"/perguntas/{q['id']}/", "pergunta": q["pergunta"],
+         "rotulo": cfg["direcao"]["nomes"].get(q.get("pressao"), "")} for q in lista]
 
 
 # O assunto das notícias (fator, em config/modelo.json "fatores") e as pressões do topo que ele cobre. "Juro e
@@ -224,7 +226,7 @@ def ponte(post: dict, cfg: dict, assunto: str | None) -> dict | None:
             "aba": True}
 
 
-def fundo_ctx(post: dict, cfg: dict, ligar, registro: str | None = None) -> dict | None:
+def fundo_ctx(post: dict, cfg: dict, ligar) -> dict | None:
     """A leitura a fundo de um fato do dia (post.fundo em runs/, feita por src/fundo.py), para o post: a tese no botão,
     o texto corrido com os termos ligados à Wikipédia, a previsão com a data, as fontes e o link da página da pressão.
     As marcas do caderno ([c3]) saem do texto e viram a lista de fontes."""
@@ -265,9 +267,9 @@ def fundo_ctx(post: dict, cfg: dict, ligar, registro: str | None = None) -> dict
                 vistas |= {chave, nome}
                 fontes.append({"quem": nome, "url": fo.get("url")})
     if any(c["tipo"] == "conta" for c in usadas):
-        fontes.append({"quem": "contas do site com as séries do Banco Central e do IBGE", "url": registro})
+        fontes.append({"quem": "contas do site com as séries do Banco Central e do IBGE", "url": None})
     if so_site:
-        fontes.append({"quem": "os dados e as notícias do dia, no registro do site", "url": registro})
+        fontes.append({"quem": "os dados e as notícias do dia, no registro do site", "url": None})
     pv = f.get("previsao") or {}
     previsao = None
     if pv.get("texto") and len(pv.get("quando") or "") == 10:

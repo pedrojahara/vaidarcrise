@@ -302,7 +302,8 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 
 | Coisa | Nome no site |
 | --- | --- |
-| Abas | Hoje, O que causa recessão, Grandes perguntas (menu que abre e lista as páginas das pressões), Como funciona |
+| Cabeçalho | Hoje e Grandes perguntas, só. Grandes perguntas é um menu que abre com "O que causa recessão?" (rótulo "Para começar") e a página de cada pressão (rótulo com o nome da pressão). Como funciona fica fora do cabeçalho: no topo, ao lado da data da atualização, e no rodapé. O site não liga para o código em nenhuma página |
+| Abas, no texto | O que causa recessão, Como funciona |
 | O link do fato do dia para o básico | Logo abaixo do texto: "O básico sobre o juro" e a pergunta da página; sem página, "O básico, na aba O que causa recessão" e o título da parte |
 | A direção | "O risco de recessão está subindo", "está igual" ou "está caindo"; nos resumos, com desde quando ("desde junho de 2026"); "A economia está encolhendo" quando a prévia do PIB cai mais de 1,5% em 3 meses. Na placa: Subindo, Igual, Caindo, Encolhendo |
 | O crescimento, logo abaixo da placa | Crescimento em 12 meses: Antes, Agora, Previsão. À direita do título, como o Piorou de cada pressão: Acelerando, Desacelerando ou No mesmo ritmo. O bloco não tem rodapé; o normal desde 2004 e o erro da previsão "dos bancos (Focus)" ficam em Como funciona |
