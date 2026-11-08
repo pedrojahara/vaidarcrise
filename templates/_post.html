@@ -17,22 +17,19 @@
   {% for par in post.paragrafos %}<p>{{ par }}</p>{% endfor %}
   {% endif %}
   {% if post.corpo_html %}<div class="corpo">{{ post.corpo_html|safe }}</div>{% endif %}
-  {% if post.escada %}{% set es = post.escada %}
+  {% if post.fundo %}{% set f = post.fundo %}
   <details class="fundo">
-    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-    <ol class="escada">
-      {% for d in es.degraus %}<li class="degrau r-{{ d.rotulo or 'bolso' }}">
-        <p class="d-perg">{{ d.pergunta }}</p>
-        {% if d.rotulo_nome %}<span class="rot r-{{ d.rotulo }}">{{ d.rotulo_nome }}</span>{% endif %}
-        <p class="d-txt">{{ d.texto }}{% if d.teste %} O site confere em {{ d.teste.quando }}.{% endif %}</p>
-        {% if d.fontes %}<p class="d-fontes">{{ 'Fonte' if d.fontes|length == 1 else 'Fontes' }}: {% for f in d.fontes %}{% if f.url %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.quem }}</a>{% else %}{{ f.quem }}{% endif %}{{ '; ' if not loop.last }}{% endfor %}</p>{% endif %}
-        {% if d.teste %}<details class="d-teste"><summary>Como o teste funciona</summary><p>{{ d.teste.como }}</p><p>{{ d.teste.regra }}</p>{% for r in d.teste.resultados %}<p><b>{{ r.data }}:</b> {{ r.texto }}</p>{% endfor %}<p class="d-lim">{{ d.teste.limites }}</p></details>{% endif %}
-        {% if d.link %}<p class="d-mais"><a href="{{ d.link.url }}">{{ d.link.texto }}</a></p>{% endif %}
-      </li>{% endfor %}
-    </ol>
-    {% if es.ponte and es.ponte.aba %}<a class="ponte" href="{{ es.ponte.url }}"><b>Como isso funciona</b><span>Na aba O que causa recessão</span></a>
-    {% elif es.ponte %}<a class="ponte" href="{{ es.ponte.url }}"><b>{{ es.ponte.pergunta }}</b><span>A explicação da pressão {{ es.ponte.pressao }}, em 5 minutos</span></a>{% endif %}
+    <summary><span class="f-cab"><span class="f-rot">Leitura de {{ f.minutos }} minutos</span><span class="f-tit">{{ f.titulo }}</span></span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <div class="f-corpo">
+      {% for b in f.blocos %}{% if b.h %}<h4 class="f-h">{{ b.h }}</h4>{% else %}<p>{{ b.p }}</p>{% endif %}
+      {% endfor %}
+      {% if f.previsao %}<div class="f-prev"><b>O que o site vai conferir em {{ f.previsao.data }}</b><p>{{ f.previsao.texto }}</p></div>{% endif %}
+      {% if f.fontes %}<p class="f-fontes">De onde vêm os números: {% for x in f.fontes %}{% if x.url %}<a href="{{ x.url }}" rel="nofollow noopener">{{ x.quem }}</a>{% else %}{{ x.quem }}{% endif %}{{ '; ' if not loop.last else '.' }}{% endfor %}</p>{% endif %}
+    </div>
+    {% if f.ponte and f.ponte.aba %}<a class="ponte" href="{{ f.ponte.url }}"><b>Como isso funciona</b><span>Na aba O que causa recessão</span></a>
+    {% elif f.ponte %}<a class="ponte" href="{{ f.ponte.url }}"><b>{{ f.ponte.pergunta }}</b><span>A explicação da pressão {{ f.ponte.pressao }}, em 5 minutos</span></a>{% endif %}
   </details>
+  {% elif post.ponte and not post.ponte.aba %}<a class="ponte so" href="{{ post.ponte.url }}"><b>{{ post.ponte.pergunta }}</b><span>A explicação da pressão {{ post.ponte.pressao }}, em 5 minutos</span></a>
   {% endif %}
   {% if pr %}
   {% if caixa_fechada %}<details class="conta" aria-label="Pressão das notícias">

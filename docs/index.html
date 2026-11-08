@@ -131,28 +131,13 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
-/* a escada de porquês, no "Entenda a fundo" dos fatos do dia (src/base_site.py) */
-.escada{list-style:none;margin:0;padding:0}
-.degrau{position:relative;padding:0 0 18px 22px;border-left:2px solid var(--fio);margin-left:6px}
-.degrau:last-child{border-left-color:transparent;padding-bottom:4px}
-.degrau::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--papel);box-shadow:inset 0 0 0 3px var(--hist)}
-.degrau.r-consenso::before{box-shadow:inset 0 0 0 3px var(--desce)}
-.degrau.r-maioria_com_dissenso::before{box-shadow:inset 0 0 0 3px var(--atencao)}
-.degrau.r-em_disputa::before{background:var(--sobe);box-shadow:none}
-.degrau.r-bolso::before{background:var(--placa);box-shadow:none}
-.d-perg{font:700 17px/1.35 var(--sistema);margin:0 0 4px}
+/* rótulos e fontes que a página de cada pressão usa (src/base_site.py) */
 .rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
 .rot.r-consenso{background:var(--normal-fundo)}
 .rot.r-maioria_com_dissenso{background:var(--nota-fundo);box-shadow:inset 0 0 0 1px var(--atencao)}
 .rot.r-em_disputa{background:var(--alerta-fundo)}
-.d-txt{margin:0 0 6px;font-size:17px;line-height:1.55}
 .d-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 4px;overflow-wrap:anywhere}
 .d-fontes a{color:var(--meta)}
-.d-mais{font:14.5px/1.45 var(--sistema);margin:4px 0 0}
-.d-teste{font:15px/1.5 var(--sistema);margin:2px 0 4px}
-.d-teste>summary{cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:2px}
-.d-teste p{margin:6px 0 0}
-.d-teste .d-lim{color:var(--meta);font-size:14px}
 
 .blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado";grid-template-rows:auto 1fr;padding-top:28px;padding-bottom:28px}
 .blog .nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}
@@ -187,16 +172,27 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .comece .rot{display:block;font-size:13px;font-weight:600;color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
 .comece b{display:block;font:700 20px/1.3 var(--serifa);margin-bottom:4px}
 
-/* o "Entenda a fundo" do fato do dia: a escada de porquês, fechada até o toque */
+/* a leitura a fundo do fato do dia (src/fundo.py): o texto corrido, fechado até o toque */
 .fundo{margin:4px 0 18px;max-width:660px;border:1px solid var(--fio);border-radius:10px}
 .fundo>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 12px 12px 14px;cursor:pointer;list-style:none;font:600 16px/1.35 var(--sistema)}
+.fundo .f-cab{display:block;min-width:0}
+.fundo .f-rot{display:block;font:600 12.5px/1.3 var(--sistema);color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.fundo .f-tit{display:block;font:700 18px/1.35 var(--serifa);color:var(--tinta)}
 .fundo>summary::-webkit-details-marker{display:none}
 .fundo>summary .seta{width:18px;height:18px;flex:none;transition:transform .15s}
 .fundo[open]>summary .seta{transform:rotate(180deg)}
 .fundo[open]>summary{border-bottom:1px solid var(--fio);margin-bottom:16px}
-.fundo .escada{padding:0 14px 0 12px}
-.post .fundo p{margin:0 0 6px}
-.post .fundo p.d-perg{margin-bottom:4px}
+.fundo .f-corpo{padding:0 14px 4px}
+.post .fundo .f-corpo p{margin:0 0 14px;font-size:17px;line-height:1.6}
+.fundo .f-h{font:700 18px/1.35 var(--serifa);margin:22px 0 8px}
+.fundo .f-prev{background:var(--nota-fundo);border-left:4px solid var(--placa);border-radius:4px;padding:10px 12px;margin:18px 0 12px;font:15.5px/1.5 var(--sistema)}
+.fundo .f-prev b{display:block;margin-bottom:2px}
+.post .fundo .f-prev p{margin:0;font-size:15.5px;line-height:1.5}
+.post .fundo p.f-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:10px 0 6px;overflow-wrap:anywhere}
+.fundo .f-fontes a{color:var(--meta)}
+.ponte.so{display:block;margin:4px 0 18px;max-width:660px;padding:12px 14px;border-radius:10px;background:var(--maquina);text-decoration:none;color:var(--tinta);font:15px/1.4 var(--sistema)}
+.ponte.so b{display:block;font:700 17px/1.35 var(--serifa);color:var(--link);margin:0 0 2px}
+.ponte.so:hover b{text-decoration:underline}
 .fundo .ponte{display:block;margin:6px 14px 14px;padding:12px 14px;border-radius:10px;background:var(--maquina);text-decoration:none;color:var(--tinta);font:15px/1.4 var(--sistema)}
 .fundo .ponte b{display:block;font:700 17px/1.35 var(--serifa);color:var(--link);margin:0 0 2px}
 .fundo .ponte:hover b,.fundo .ponte:focus-visible b{text-decoration:underline}
@@ -403,25 +399,39 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   
   <details class="fundo">
-    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-    <ol class="escada">
-      <li class="degrau r-fato">
-        <p class="d-perg">Por que o preço do que o Brasil vende lá fora importa tanto?</p>
-        <span class="rot r-fato">Os dados mostram</span>
-        <p class="d-txt">Esses preços andaram junto com a economia em dois momentos recentes. De 2014 a 2016, a soja, o minério e o petróleo ficaram mais baratos, as contas do governo pioraram e o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> encolheu. Em 2021 e 2022, o mundo pagava caro pelo que o Brasil vende, e a economia cresceu mesmo com a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> subindo.</p>
-        <p class="d-fontes">Fonte: <a href="https://vaidarcrise.com.br/causas/#t-casos" rel="nofollow noopener">Aba O que causa recessão</a></p>
-        
-        <p class="d-mais"><a href="/causas/#t-casos">Os dois casos lado a lado, na aba O que causa recessão</a></p>
-      </li><li class="degrau r-bolso">
-        <p class="d-perg">E o que isso muda para você?</p>
-        
-        <p class="d-txt">Se o dólar subir menos, o diesel, a gasolina e outros importados encarecem menos, e a inflação fica mais perto da meta, de 3% ao ano. É essa conta que o Banco Central olha para decidir a Selic em 9/12.</p>
-        <p class="d-fontes">Fontes: <a href="https://www.gov.br/anp/pt-br/canais_atendimento/imprensa/noticias-comunicados/pais-teve-comercializacao-de-mais-de-130-bilhoes-de-litros-de-combustiveis-em-2024" rel="nofollow noopener">ANP</a>; <a href="https://www.bcb.gov.br/controleinflacao/metainflacao" rel="nofollow noopener">Banco Central</a>; Calendários do IBGE e do Banco Central</p>
-        
-        
-      </li>
-    </ol>
-    <a class="ponte" href="/causas/#t-precos"><b>Como isso funciona</b><span>Na aba O que causa recessão</span></a>
+    <summary><span class="f-cab"><span class="f-rot">Leitura de 6 minutos</span><span class="f-tit">O dólar subiu mesmo com a maior entrada de dólares do ano, e o petróleo mais barato pode pesar menos do que parece</span></span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <div class="f-corpo">
+      <p>Em outubro, entraram no Brasil US$ 18,151 bilhões a mais do que saíram, a maior entrada do ano, pelos números do Banco Central. Mesmo assim, o dólar ficou mais caro: do fim de setembro ao fim de outubro, a moeda americana subiu 4,6%, de R$ 5,1809 para R$ 5,4212.</p>
+      <p>A leitura mais provável é que, neste momento, o dólar reage mais à desconfiança de quem investe do que à venda de petróleo e minério. Se for assim, um saldo comercial menor com o petróleo mais barato não basta, sozinho, para esperar um dólar bem mais caro até 9/12. A evidência é curta, e o texto mostra onde ela falha.</p>
+      <h4 class="f-h">O dinheiro entrou em outubro, e o dólar subiu mesmo assim</h4>
+      <p>A entrada de outubro veio por dois caminhos. O comércio, que é o dinheiro de quem vende para outros países e compra deles, trouxe US$ 9,339 bilhões. O canal financeiro, que junta investimento, empréstimo e remessa de lucro, trouxe US$ 8,812 bilhões.</p>
+      <p>Com tanto dólar chegando, o esperado seria a moeda ficar mais barata, porque mais gente quer trocar dólar por real. A semana da eleição mostra que não foi assim. De 26 a 30 de outubro entraram US$ 9,498 bilhões, dos quais US$ 3,070 bilhões vieram do canal financeiro.</p>
+      <p>No primeiro dia de negociação depois do segundo turno de 25/10, o dólar subiu 8,21%, a R$ 5,403, e a Bolsa caiu 13,88%. Na mesma semana em que o dinheiro entrou, o preço do dólar subiu.</p>
+      <p>O preço do dólar não depende só de quanto dinheiro entra. Depende também de quanto quem investe cobra para continuar com reais na mão. Quando essa pessoa teme o futuro do país, ela cobra mais, e isso empurra o dólar para cima mesmo com tanto dinheiro entrando.</p>
+      <h4 class="f-h">A desconfiança aparece no juro de 10 anos, mas nenhum dado separa as causas</h4>
+      <p>Uma parte da dúvida de quem investe passa pelo Banco Central, porque o presidente da República vai indicar seis diretores até o fim de 2027, e o mercado teme uma mudança no perfil da diretoria. Quem espera um Banco Central mais disposto a cortar o juro com os preços subindo pede juro maior para comprar títulos do Tesouro.</p>
+      <p>Depois da eleição, os juros negociados no mercado também deixaram de apostar em cortes da <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a>. Outro sinal é o juro de 10 anos, que foi de 7,9% para 8,1% ao ano entre o fim de agosto e 5/11. Ele é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos.</p>
+      <p>Essa leitura não está provada. Nenhum dado separa quanto da alta do dólar veio da desconfiança e quanto veio de outras causas, como o juro mais alto nos Estados Unidos. E os números de fluxo são de um mês só.</p>
+      <p>Mesmo com esse limite, é a leitura que explica melhor por que o dinheiro entrou e o preço subiu ao mesmo tempo. E ela muda o jeito de ler a próxima notícia sobre petróleo.</p>
+      <p>O saldo de outubro pode não se repetir. O petróleo caiu quase 8% no começo de novembro e continuou em queda nos dias seguintes, com a expectativa de negociação de paz entre Estados Unidos e Irã. O governo já tinha cortado a previsão de saldo comercial de 2026 de US$ 90 bilhões para US$ 84,4 bilhões, por causa do petróleo.</p>
+      <p>O peso do petróleo nessa conta é grande. Pelas contas da Fundação Getulio Vargas, petróleo e derivados chegaram a responder por 49,4% do saldo comercial, quase metade dos dólares que o comércio deixava no país. Com o barril mais barato, cada navio que sai traz menos dólares.</p>
+      <p>Um dado de outubro, publicado por uma só fonte, indica que o efeito pode ser menor do que parece. Se compararmos com outubro do ano passado, as exportações de petróleo bruto cresceram mais pela quantidade, com 62,9% a mais de barris, do que pelo preço, que ficou 36,7% maior. Se o Brasil continuar embarcando mais barris, parte do saldo se mantém mesmo com o preço em queda.</p>
+      <p>Isso importa para o seu bolso porque o Brasil também importa combustíveis, e o preço deles acompanha o dólar. Se o dólar sobe, a gasolina e o diesel importados chegam mais caros, e o frete leva esse aumento para outros preços nos meses seguintes.</p>
+      <h4 class="f-h">Nas quedas fortes do passado, o dólar quase sempre não subiu depois, mas os casos são poucos</h4>
+      <p>Os preços de produtos como soja, minério e petróleo já caíram forte outras vezes, e o índice desses preços feito pelo Banco Central permite olhar o que o dólar fez nos três meses seguintes. Os casos abaixo não formam uma conta completa, e dois deles são do mesmo ciclo.</p>
+      <p>Em 2022, o índice caiu 20,9% de agosto a outubro, e o dólar caiu 3,0% de outubro de 2022 a janeiro de 2023. De outubro de 2015 a janeiro de 2016, o índice caiu 16,4%, e o dólar caiu 14,6% de janeiro a abril de 2016.</p>
+      <p>Em 2020, a queda do índice foi de 28,4% de janeiro a abril, e o dólar caiu 4,1% de abril a julho. Em 2008, o índice caiu 38,2% de setembro a dezembro, e o dólar ficou quase parado depois, com queda de 0,9% de dezembro a março de 2009.</p>
+      <p>Os casos de 2008 e 2020 pedem cuidado, porque foram crises do mundo inteiro e o dólar já tinha subido muito durante a própria queda. Em 2008, ele foi de R$ 1,6344 em agosto para R$ 2,3370 em dezembro, e em 2020, de R$ 4,2695 em janeiro para R$ 5,4270 em abril.</p>
+      <p>A melhor objeção vem do caso em que o dólar subiu. O índice caiu 21,8% de outubro de 2014 a janeiro de 2015, e o dólar subiu 12,4% de janeiro a abril de 2015. Naqueles meses, a dívida do governo foi de 57,16% para 59,11% do <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a>, e a Selic, de 12,25% para 13,25%.</p>
+      <p>Quem discorda diz que hoje o Brasil pode estar mais perto de 2015 que de 2022. Em 2022, a Selic estava em 13,75% e a dívida caiu de 73,70% para 71,38% do PIB. Diz também que os dados de fluxo não captam as apostas no dólar feitas na Bolsa e que, sem o dinheiro do comércio, o dólar teria subido ainda mais em outubro.</p>
+      <p>As duas críticas são razoáveis, e os dados não as descartam. Um punhado de casos, com 2014 e 2015 no mesmo ciclo e 2008 quase parado, mostra uma tendência, e não uma lei. A tese pode acertar o rumo e errar o tamanho.</p>
+      <p>O site vai acompanhar toda semana o dólar pela cotação oficial do Banco Central (Ptax) e o juro de 10 anos, e você pode olhar os dois juntos. Às quartas, o Banco Central divulga o fluxo cambial, a entrada e a saída de dólares do país, e o número a olhar é o do canal financeiro. Em 9/12, o Banco Central decide o juro (<a class="termo" href="https://pt.wikipedia.org/wiki/Comit%C3%AA_de_Pol%C3%ADtica_Monet%C3%A1ria" target="_blank" rel="noopener">Copom</a>).</p>
+      <p>Para conferir a tese, o dólar estava em R$ 5,50 em 6/11 e o juro de 10 anos, em 8,1% ao ano em 5/11. Se o dólar repetir até 9/12 a alta de 4,6% de outubro sem que o juro de 10 anos passe dos 8,1%, a tese erra. Nesse caso, a moeda teria subido sem o sinal de desconfiança.</p>
+      
+      <div class="f-prev"><b>O que o site vai conferir em 9/12/2026</b><p>Até 9/12, o dólar não deve subir mais 4,6% sobre os R$ 5,50 de 6/11, mesmo com o petróleo mais barato, a não ser que o juro de 10 anos passe de 8,1%.</p></div>
+      <p class="f-fontes">De onde vêm os números: <a href="https://bpmoney.com.br/?p=433781" rel="nofollow noopener">BPMoney, a partir de dados do Banco Central</a>; <a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula" rel="nofollow noopener">Agência Brasil</a>; <a href="https://www1.folha.uol.com.br/mercado/2026/11/lula-indicara-seis-diretores-do-banco-central-ate-o-fim-de-2027-e-mercado-teme-mudanca-de-perfil.shtml" rel="nofollow noopener">Folha</a>; <a href="https://www.poder360.com.br/poder-economia/bolsa-sobe-139-em-alta-dolar-fecha-a-r-5508/" rel="nofollow noopener">poder360.com.br</a>; <a href="https://valor.globo.com/financas/noticia/2026/11/04/petrleo-continua-em-queda-com-o-aumento-das-expectativas-de-fim-do-conflito-envolvendo-o-ir.ghtml" rel="nofollow noopener">Valor</a>; <a href="https://www.correiodamanha.com.br/economia/2026/10/325298-previsao-de-superavit-comercial-cai-para-uss-844-bi.html" rel="nofollow noopener">Correio da Manhã / MDIC</a>; <a href="https://www.dgabc.com.br/Noticia/4352825/ue-lidera-alta-do-superavit-brasileiro-com-salto-do-petroleo-mostra-icomex-da-fgv" rel="nofollow noopener">FGV Icomex, via DGABC</a>; <a href="https://timesbrasil.com.br/brasil/balanca-comercial-tem-superavit-de-us-93-bilhoes-em-outubro-alta-de-39-em-um-ano-e-exportacoes-sobem-20/" rel="nofollow noopener">Times Brasil</a>; <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-11-07T0630.json" rel="nofollow noopener">contas do site com as séries do Banco Central e do IBGE</a>.</p>
+    </div>
+    <a class="ponte" href="/causas/#t-outros"><b>Como isso funciona</b><span>Na aba O que causa recessão</span></a>
     
   </details>
   
@@ -457,39 +467,37 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   
   <details class="fundo">
-    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-    <ol class="escada">
-      <li class="degrau r-consenso">
-        <p class="d-perg">Por que o juro alto faz a indústria produzir menos?</p>
-        <span class="rot r-consenso">Os estudos concordam</span>
-        <p class="d-txt">Quando a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> sobe, os bancos cobram mais pelo cartão, pelo empréstimo e pelo financiamento. Quem compra a prazo compra menos, as lojas encomendam menos das fábricas, e as empresas adiam a compra de máquinas.</p>
-        <p class="d-fontes">Fontes: <a href="https://www.bcb.gov.br/api/paginasite/sitebcb/controleinflacao/taxaselic" rel="nofollow noopener">Banco Central</a>; <a href="https://vaidarcrise.com.br/causas/#t-freio" rel="nofollow noopener">Aba O que causa recessão</a></p>
-        
-        <p class="d-mais"><a href="/causas/#t-freio">O freio do juro, desenhado, na aba O que causa recessão</a></p>
-      </li><li class="degrau r-fato">
-        <p class="d-perg">O juro do Brasil é alto mesmo?</p>
-        <span class="rot r-fato">Os dados mostram</span>
-        <p class="d-txt">Com a Selic em 13,75% e os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) esperando inflação de 5,0% em 12 meses, o juro fica cerca de 8,4% acima da inflação esperada. Em setembro, por essa conta, o Brasil tinha o maior juro do mundo no ranking das consultorias MoneYou e Lev Intelligence.</p>
-        <p class="d-fontes">Fontes: Banco Central; <a href="https://www.infomoney.com.br/economia/com-selic-em-1345-brasil-tem-maior-juro-real-do-mundo-set2026/" rel="nofollow noopener">InfoMoney</a></p>
-        
-        
-      </li><li class="degrau r-em_disputa">
-        <p class="d-perg">Por que o Brasil precisa de um juro tão maior que o de outros países?</p>
-        <span class="rot r-em_disputa">Os economistas discordam</span>
-        <p class="d-txt">A explicação com mais estudos a favor é a desconfiança de quem empresta ao governo, que explica os anos em que o juro disparou, como 2002 e 2015. A poupança baixa e o crédito com juro do governo explicam só uma parte.</p>
-        <p class="d-fontes">Fontes: <a href="https://www.nber.org/papers/w10389" rel="nofollow noopener">Olivier Blanchard</a>; <a href="https://ideas.repec.org/a/fgv/epgrbe/v78y2024i2a88864.html" rel="nofollow noopener">Ortega Scaramuzzi e Kfoury Muinhos</a>; <a href="https://bdtd.ibict.br/vufind/Record/USP_1eccf95c8ddb85336a560b770cc9bde6" rel="nofollow noopener">Dissertação de mestrado, Universidade de São Paulo</a>; <a href="https://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0101-31572014000100001&amp;lng=en&amp;tlng=en" rel="nofollow noopener">Francisco Lafaiete Lopes</a>; <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a>; <a href="https://econpapers.repec.org/RePEc:bcb:wpaper:419" rel="nofollow noopener">Marco Bonomo e Bruno Martins (Banco Central)</a></p>
-        
-        
-      </li><li class="degrau r-bolso">
-        <p class="d-perg">E o que isso muda para você?</p>
-        
-        <p class="d-txt">Enquanto o juro ficar tão acima da inflação, o cartão, o crediário e o financiamento continuam caros, e as fábricas tendem a contratar menos. O Banco Central decide a Selic de novo em 9/12.</p>
-        <p class="d-fontes">Fontes: <a href="https://vaidarcrise.com.br/causas/#t-freio" rel="nofollow noopener">Aba O que causa recessão</a>; Calendários do IBGE e do Banco Central</p>
-        
-        
-      </li>
-    </ol>
-    <a class="ponte" href="/perguntas/juro-alto/"><b>Por que o juro do Brasil é tão alto?</b><span>A explicação da pressão Juro, em 5 minutos</span></a>
+    <summary><span class="f-cab"><span class="f-rot">Leitura de 5 minutos</span><span class="f-tit">A prévia do PIB indica que o 3º trimestre deve fechar abaixo do 2º, mas isso ainda não é recessão</span></span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <div class="f-corpo">
+      <p>Se o PIB do 3º trimestre saísse hoje, o resultado mais provável seria uma queda. A prévia do PIB que o Banco Central faz todo mês, que não é o número oficial do IBGE, ficou em 110,03 em julho e em 110,41 em agosto. Juntos, os dois meses ficaram 0,60% abaixo da média de abril a junho, que foi de 110,887.</p>
+      <p>Para o trimestre empatar com o anterior, setembro teria de chegar a 112,22, cerca de 1,6% acima de agosto. Por isso, o cenário mais provável para o PIB que o IBGE divulga em 2/12 é um 3º trimestre menor que o 2º. Mas um trimestre de queda não é recessão, e o 2º trimestre ainda cresceu 0,5%.</p>
+      <p>A conta mostra quanto falta. Se setembro só repetir agosto, o trimestre fecha 0,54% abaixo do anterior. A indústria, que produziu 2,2% menos no trimestre, puxada por máquinas e equipamentos, deixa ainda mais longe o salto de que setembro precisaria.</p>
+      <h4 class="f-h">Nos buracos que não viraram recessão, a queda durou um mês e a volta veio logo depois</h4>
+      <p>O passado ajuda a ler esse buraco, desde que se compare o tamanho certo. Na crise mundial de 2008, os dois primeiros meses do trimestre chegaram a ficar 3,15% abaixo do trimestre anterior, no fim de 2008, e 2,48% abaixo no começo de 2009. O buraco de agora é bem menor, e os casos parecidos com ele são outros.</p>
+      <p>Há quatro casos de buraco moderado que não terminaram em recessão: o começo de 2012, o 2º trimestre de 2018, o de 2021 e o começo de 2022. Em todos, os dois primeiros meses ficaram de 0,62% a 1,22% abaixo do trimestre anterior, perto do tamanho de agora.</p>
+      <p>O que esses quatro têm em comum é o desenho dos meses, porque um mês afundou e o seguinte voltou forte. Em 2018, com a greve dos caminhoneiros, a prévia foi de 96,01 em abril para 93,06 em maio e voltou a 95,75 em junho. Em março de 2021, caiu de 98,72 para 95,31 e subiu a 96,33 no mês seguinte.</p>
+      <p>Os casos que terminaram em recessão tiveram outro desenho, com a queda espalhada por vários meses seguidos. Em 2015, a prévia começou o 1º trimestre 0,86% abaixo do anterior, o 2º trimestre 2,0% abaixo e o 3º 1,79% abaixo. Pela conta do site, de dois trimestres seguidos de queda do PIB, aquela recessão começou no 1º trimestre de 2015, depois de outra, mais curta, em 2014.</p>
+      <p>Em 2003 foi parecido. O 2º trimestre começou com a prévia 0,97% abaixo do 1º, e a recessão tinha começado no 1º trimestre daquele ano, depois da desconfiança da eleição de 2002.</p>
+      <h4 class="f-h">Em 2026, a queda durou dois meses e agosto devolveu pouco</h4>
+      <p>Pelo desenho, 2026 se parece mais com 2015 do que com 2018. A prévia caiu de 111,25 em maio para 110,37 em junho e para 110,03 em julho, e agosto subiu só até 110,41. De maio a agosto, a perda foi de 0,8%, e a volta de agosto ficou longe de repor o que se perdeu.</p>
+      <p>Há um caso que pede cuidado. Em 2016, no meio de uma queda longa, o 2º trimestre começou 0,69% abaixo do anterior, e mesmo assim o PIB do IBGE não caiu naquele trimestre. Ou seja, a prévia e o PIB oficial podem apontar para lados diferentes.</p>
+      <p>São poucos casos em pouco mais de 20 anos, e cada um teve causas próprias. Eles mostram um padrão no desenho dos meses, e não uma lei, e não dá para tirar deles uma chance em número.</p>
+      <h4 class="f-h">A objeção mais forte vem do emprego, e ela tem peso</h4>
+      <p>Quem discorda da tese tem argumentos sérios. A indústria é só uma parte da economia, e o desemprego ficou em 5,2% no trimestre até setembro, um número baixo para quem fala em economia encolhendo.</p>
+      <p>O Banco Central também ainda via crescimento. Em setembro, ele baixou a previsão do PIB de 2026 de 2,0% para 1,8%. No fim de outubro, os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) esperavam 1,76% para o ano. Com esse ritmo no ano, um trimestre negativo seria uma pausa, e não o começo de uma recessão.</p>
+      <p>Essa objeção, porém, tem limites. O mesmo relatório do Banco Central disse que os primeiros indicadores do 3º trimestre sugeriam atividade mais fraca do que se previa. E o desemprego baixo convive com vagas formais esfriando, já que o Cadastro Geral de Empregados e Desempregados de setembro teve 121,3 mil vagas, o pior setembro da série.</p>
+      <p>O consumo das famílias também já caía antes. Ele caiu 0,4% no 2º trimestre, mesmo com o PIB crescendo 0,5%. Do lado das empresas, as vendas de máquinas e equipamentos acumularam queda de 13,4% no ano até setembro, com as empresas segurando o investimento à espera do plano econômico do novo mandato.</p>
+      <p>Quando a empresa adia a compra de uma máquina, ela também adia a vaga que viria junto, e quem procura emprego sente isso meses depois.</p>
+      <p>O ponto decisivo é o 4º trimestre, porque recessão pede duas quedas seguidas, e os sinais de outubro são mistos. O índice dos gerentes de compras da indústria subiu de 44,8 em setembro para 46,1 em outubro, mas ficou abaixo de 50, a linha que separa crescer de encolher.</p>
+      <p>A confiança das empresas caiu 0,3 ponto em outubro, a quarta queda seguida. A do comércio subiu 1,8 ponto, para 83,1, e a do consumidor subiu 0,5 ponto, para 84,7. Com esses dados, ainda não dá para dizer se haverá um segundo trimestre de queda.</p>
+      <p>O site vai conferir três coisas, na ordem em que saem. Primeiro, a prévia do PIB de setembro, porque, abaixo de 112,22, o trimestre fica abaixo do anterior. Depois, em 2/12, o PIB do 3º trimestre do IBGE, que mostra se a prévia acertou. Em 3/12, a produção industrial de outubro dá o primeiro sinal do 4º trimestre.</p>
+      <p>Você também pode olhar esses números no dia em que saírem. Se o 3º trimestre cair e outubro vier fraco, a chance de duas quedas seguidas aumenta. Se outubro voltar forte, o buraco de 2026 pode ter sido uma pausa, como nos casos em que a queda durou um mês só.</p>
+      
+      <div class="f-prev"><b>O que o site vai conferir em 2/12/2026</b><p>O PIB do 3º trimestre, que o IBGE divulga em 2/12, deve vir menor que o do 2º trimestre. Só haverá recessão se o 4º trimestre também cair.</p></div>
+      <p class="f-fontes">De onde vêm os números: <a href="https://www.gazetadopovo.com.br/economia/producao-industrial-recua-08-em-setembro-e-acumula-perda-de-41-desde-maio/" rel="nofollow noopener">Gazeta do Povo</a>; <a href="https://www.poder360.com.br/poder-economia/brasil-cria-121-305-empregos-formais-em-setembro-de-2026/" rel="nofollow noopener">Poder360</a>; <a href="https://www.bcb.gov.br/content/ri/relatorioinflacao/202609/rpm202609b2p.pdf" rel="nofollow noopener">Banco Central, Relatório de Política Monetária (via Jornal do Comércio)</a>; <a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://aovivo.folha.uol.com.br/mercado/2026/10/25/6568-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post467994" rel="nofollow noopener">Folha</a>; <a href="https://valor.globo.com/empresas/noticia/2026/10/28/vendas-de-maquinas-acumulam-queda-de-134percent-no-ano-ate-setembro.ghtml" rel="nofollow noopener">Valor</a>; <a href="https://www.jornaldocomercio.com/economia/2026/11/1269088-pmi-industrial-do-brasil-sobe-a-461-pontos-em-outubro-apos-448-em-setembro-mostra-s-p-global.html" rel="nofollow noopener">Jornal do Comércio, com dados da S&amp;P Global</a>; <a href="https://www.jornaldocomercio.com/economia/2026/11/1269014-confianca-empresarial-cai-03-ponto-em-outubro-a-quarta-queda-seguida-diz-fgv.html" rel="nofollow noopener">FGV Ibre, via Jornal do Comércio</a>; <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-11-06T0630.json" rel="nofollow noopener">contas do site com as séries do Banco Central e do IBGE</a>; <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-11-06T0630.json" rel="nofollow noopener">os dados e as notícias do dia, no registro do site</a>.</p>
+    </div>
+    <a class="ponte" href="/causas/#t-freio"><b>Como isso funciona</b><span>Na aba O que causa recessão</span></a>
+    
   </details>
   
   
@@ -523,32 +531,36 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   
   <details class="fundo">
-    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-    <ol class="escada">
-      <li class="degrau r-fato">
-        <p class="d-perg">O que mudou desde os cortes?</p>
-        <span class="rot r-fato">Os dados mostram</span>
-        <p class="d-txt">A inflação esperada voltou a subir. No fim de julho, os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) esperavam que os preços subissem 4,2% em 12 meses. No fim de outubro, passaram a esperar 5,0%, acima do <a class="termo" href="https://pt.wikipedia.org/wiki/Metas_de_infla%C3%A7%C3%A3o" target="_blank" rel="noopener">teto da meta</a>, de 4,5%.</p>
-        <p class="d-fontes">Fonte: <a href="https://www.bcb.gov.br/publicacoes/focus" rel="nofollow noopener">Banco Central</a></p>
-        
-        
-      </li><li class="degrau r-em_disputa">
-        <p class="d-perg">Por que a Selic do Brasil fica tão acima da de outros países?</p>
-        <span class="rot r-em_disputa">Os economistas discordam</span>
-        <p class="d-txt">A desconfiança de quem empresta ao governo explica os anos em que o juro disparou, como 2002. Para o resto do tempo, a poupança baixa e o crédito com juro do governo explicam só uma parte.</p>
-        <p class="d-fontes">Fontes: <a href="https://www.nber.org/papers/w10389" rel="nofollow noopener">Olivier Blanchard</a>; <a href="https://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0101-31572014000100001&amp;lng=en&amp;tlng=en" rel="nofollow noopener">Francisco Lafaiete Lopes</a>; <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a>; <a href="https://econpapers.repec.org/RePEc:bcb:wpaper:419" rel="nofollow noopener">Marco Bonomo e Bruno Martins (Banco Central)</a></p>
-        
-        
-      </li><li class="degrau r-bolso">
-        <p class="d-perg">E o que isso muda para você?</p>
-        
-        <p class="d-txt">Com a Selic parada em 13,75%, o juro do cartão, do empréstimo e do financiamento tende a parar de cair. O Banco Central decide de novo em 9/12, e a decisão vai mostrar se a pausa continua.</p>
-        <p class="d-fontes">Fontes: <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432" rel="nofollow noopener">Banco Central</a>; Calendários do IBGE e do Banco Central</p>
-        
-        
-      </li>
-    </ol>
-    <a class="ponte" href="/perguntas/juro-alto/"><b>Por que o juro do Brasil é tão alto?</b><span>A explicação da pressão Juro, em 5 minutos</span></a>
+    <summary><span class="f-cab"><span class="f-rot">Leitura de 5 minutos</span><span class="f-tit">O passado aponta para a Selic parada ou em alta, ao contrário do corte que os bancos preveem</span></span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <div class="f-corpo">
+      <p>Os bancos ainda apostam que o Banco Central volta a cortar a Selic na reunião de 9 de dezembro. Na pesquisa do dia 30 de outubro, eles previam a Selic em 13,50% no fim de 2026. Como hoje ela está em 13,75%, essa previsão é a aposta num corte até o fim do ano.</p>
+      <p>O passado aponta para o outro lado. Desde 2002, o Banco Central parou de cortar a Selic 10 vezes, e o que separou os dois caminhos, alta ou novo corte, foi a [inflação esperada](https://pt.wikipedia.org/wiki/Boletim_Focus) nos 3 meses depois do último corte. A inflação esperada subiu em 8 dessas pausas, e em 7 delas a Selic voltou a subir. Desta vez, ela já subiu 0,36 ponto no primeiro mês.</p>
+      <h4 class="f-h">Em 7 das 8 pausas com a inflação esperada subindo, a Selic voltou a subir</h4>
+      <p>Duas dessas vezes você provavelmente lembra. Em agosto de 2020, no meio da pandemia, o Banco Central parou de cortar com a Selic em 2%. Nos 3 meses seguintes, a inflação esperada subiu 0,81 ponto, e a alta do juro veio 7 meses depois do último corte.</p>
+      <p>A outra é mais recente. Em maio de 2024, o corte parou com a Selic em 10,50%, e a inflação esperada subiu 0,23 ponto nos 3 meses seguintes. A alta começou 4 meses depois do último corte, e o ciclo levou a Selic até 15% em junho de 2025.</p>
+      <p>O mesmo desenho apareceu em 2002, 2004 e 2007, quando a alta veio 3, 5 e 7 meses depois do último corte. Em 2009 e em 2012, ela demorou 9 e 6 meses. Mesmo com uma subida pequena da inflação esperada, como os 0,10 ponto de 2012, o juro voltou a subir.</p>
+      <p>Os dois casos do outro lado ajudam a ver a regra. Em março de 2002 e em dezembro de 2003, a inflação esperada caiu nos 3 meses seguintes, 0,28 e 0,47 ponto, e o Banco Central voltou a cortar 4 e 3 meses depois. Quando os bancos do <a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a> passam a esperar menos inflação, o Banco Central pode ganhar espaço para baratear o crédito, como nesses 2 casos.</p>
+      <p>Nas 7 vezes em que a Selic voltou a subir, a alta veio entre 3 e 9 meses depois do último corte, e o caso do meio ficou em 6 meses. Contando a partir do corte de setembro de 2026, isso daria por volta de março de 2027. A reunião de dezembro cai no começo dessa janela, por isso o padrão sugere juro parado nela, e não corte.</p>
+      <h4 class="f-h">A alta de outubro foi grande, mas é de um mês só</h4>
+      <p>Em setembro, os bancos esperavam que os preços subissem 4,60% nos 12 meses seguintes, e em outubro passaram a esperar 4,96%. É uma subida maior, em um mês, do que as de 2012 e 2024 em três meses, e as duas terminaram em alta do juro. A <a class="termo" href="https://pt.wikipedia.org/wiki/Metas_de_infla%C3%A7%C3%A3o" target="_blank" rel="noopener">meta de inflação</a> é de 3%, e em setembro a inflação esperada já estava 1,60 ponto acima dela.</p>
+      <p>O próprio Banco Central mostrou preocupação parecida. A projeção dele para os preços em 12 meses até o segundo trimestre de 2028, o prazo que ele mira, subiu de 3,1% para 3,5%. O comunicado citou a piora das expectativas de inflação.</p>
+      <p>Os bancos também já começaram a mudar de ideia. Entre a pesquisa de 23 e a de 30 de outubro, a Selic prevista para o fim de 2026 subiu de 13,25% para 13,50%. A prevista para o fim de 2027 subiu de 11,75% para 12,50%. A aposta é ainda de corte, só que de cortes menores.</p>
+      <p>Falta uma peça, e ela pesa. O padrão olha para 3 meses depois do último corte, e por enquanto só existe o dado de 1 mês. Em 2018, a inflação esperada subiu 0,16 ponto no primeiro mês e terminou os 3 meses com só 0,07 ponto a mais. Naquela vez, o Banco Central não subiu o juro: voltou a cortar 17 meses depois.</p>
+      <h4 class="f-h">A melhor objeção vem do emprego, e ela não é fraca</h4>
+      <p>Quem acha que o Banco Central volta a cortar tem argumentos sérios. Em setembro, as empresas criaram 121,3 mil vagas com carteira. E o juro acima da inflação esperada chegou a 8,38% em outubro, mais alto que em 68% dos meses desde 2002. Com o crédito tão caro, as empresas contratam menos, e isso tende a segurar os preços sozinho.</p>
+      <p>Há também um caso no passado que contraria a tese. O mês mais parecido com outubro de 2026, olhando a inflação esperada, o juro acima dela e o dólar, é setembro de 2022, também com a Selic em 13,75%. Naquela vez, o juro não subiu: ficou parado e, 12 meses depois, estava em 12,75%. O corte só começou em agosto de 2023.</p>
+      <p>A diferença é que, em 2022, o Banco Central tinha acabado de parar de subir o juro, e não de cortar. Mesmo assim, o caso sugere que juro já alto pode bastar sem alta nova. Ele também lembra que a espera pode ser longa para os dois lados.</p>
+      <p>Duas coisas de fora do Banco Central podem derrubar a inflação esperada. A primeira é o petróleo mais barato, porque combustível mais barato pesa menos no frete e no mercado. A segunda é um plano para as contas do governo em que quem investe acredite, o que tende a baratear o dólar e os importados.</p>
+      <p>A política pode empurrar para o outro lado. A ideia de limitar a Selic entrou no radar do presidente, e a Fazenda nega que haja proposta. Se quem investe passa a duvidar de que o Banco Central poderá subir o juro quando precisar, essa pessoa espera mais inflação e cobra mais para emprestar ao governo. Isso valeria com qualquer governo no poder.</p>
+      <p>Sobre o tamanho da evidência, são 10 casos desde 2002. Isso mostra um padrão, não uma lei. Inflação esperada e juro andarem juntos não prova que um causa o outro, porque o Banco Central também olha o emprego, o dólar e o petróleo ao decidir.</p>
+      <p>A tese erra se o Banco Central cortar a Selic em 9 de dezembro. Ela acerta se o juro ficar em 13,75% ou subir, com a inflação esperada acima dos 4,60% de setembro. O site vai conferir isso em três momentos, e você pode olhar os mesmos sinais.</p>
+      <p>O primeiro é a pesquisa dos bancos (Focus), que o Banco Central divulga toda segunda-feira. O número a olhar é a inflação esperada para 12 meses, comparada com os 4,60% de setembro. O segundo é o [IPCA](https://pt.wikipedia.org/wiki/%C3%8Dndice_Nacional_de_Pre%C3%A7os_ao_Consumidor_Amplo) de outubro e a prévia de novembro, que o IBGE divulga nas próximas semanas. O terceiro é a própria decisão do Banco Central, em 9 de dezembro.</p>
+      
+      <div class="f-prev"><b>O que o site vai conferir em 9/12/2026</b><p>Em 9/12, o Banco Central não corta a Selic, que fica em 13,75% ou sobe, e a inflação esperada para 12 meses segue acima dos 4,60% de setembro.</p></div>
+      <p class="f-fontes">De onde vêm os números: <a href="https://www.cnnbrasil.com.br/economia/money/macroeconomia/bc-ve-inflacao-mais-elevada-em-todo-horizonte-ate-2028/" rel="nofollow noopener">CNN Brasil (sobre o comunicado do Copom)</a>; <a href="https://investnews.com.br/investimentos/copom-mantem-selic-em-1375-ano/" rel="nofollow noopener">Investnews (sobre o comunicado do Copom)</a>; <a href="https://agenciagov.ebc.com.br/noticias/202611/brasil-gera-121-3-mil-empregos-formais-em-setembro-e-saldo-no-ano-chega-a-1-24-milhao-de-novos-postos-com-carteira-assinada" rel="nofollow noopener">Agência Gov (dados do Ministério do Trabalho e Emprego)</a>; <a href="https://www1.folha.uol.com.br/mercado/2026/11/proposta-de-lara-resende-para-limitar-selic-entra-no-radar-de-lula-e-assusta-mercado.shtml" rel="nofollow noopener">Folha</a>; <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-11-05T0630.json" rel="nofollow noopener">contas do site com as séries do Banco Central e do IBGE</a>.</p>
+    </div>
+    <a class="ponte" href="/causas/#t-precos"><b>Como isso funciona</b><span>Na aba O que causa recessão</span></a>
+    
   </details>
   
   
@@ -582,39 +594,40 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   
   <details class="fundo">
-    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-    <ol class="escada">
-      <li class="degrau r-fato">
-        <p class="d-perg">Por que os bancos passaram a esperar preços mais altos?</p>
-        <span class="rot r-fato">Os dados mostram</span>
-        <p class="d-txt">Depois do segundo turno, analistas subiram as previsões de inflação. Um economista ouvido pelos jornais apontou o dólar mais alto e a falta de uma regra firme para as contas do governo. O dólar também subiu no atacado o preço do açúcar e do café, que o Brasil vende lá fora em dólar.</p>
-        <p class="d-fontes">Fontes: <a href="https://prensamercosur.org/2026/10/31/expectativas-de-inflacao-para-2027-e-2028-aumentam-apos-a-vitoria-de-lula/" rel="nofollow noopener">Prensa Mercosur</a>; <a href="https://diariodocomercio.com.br/economia/alta-dolar-impactar-consumidor/" rel="nofollow noopener">Folhapress, no Diário do Comércio</a></p>
-        
-        
-      </li><li class="degrau r-fato">
-        <p class="d-perg">Por que o dólar subiu?</p>
-        <span class="rot r-fato">Os dados mostram</span>
-        <p class="d-txt">Quase toda a alta veio num dia só. O dólar tinha caído para R$ 5,04 antes do segundo turno, e em 26/10, o dia seguinte à eleição, saltou para R$ 5,50.</p>
-        <p class="d-fontes">Fonte: Banco Central e Tesouro Nacional</p>
-        
-        
-      </li><li class="degrau r-em_disputa">
-        <p class="d-perg">A alta veio de desconfiança com o Brasil ou de medo no mundo todo?</p>
-        <span class="rot r-em_disputa">Os economistas discordam</span>
-        <p class="d-txt">Uns veem desconfiança com a dívida do governo e com a próxima diretoria do Banco Central. Outros veem investidores do mundo todo tirando dinheiro de vários países ao mesmo tempo. Para saber qual pesou mais, o site compara o real com as moedas do México e do Chile. O site confere em 7/12/2026 e em 5/2/2027.</p>
-        <p class="d-fontes">Fontes: <a href="https://www.cnnbrasil.com.br/economia/money/macroeconomia/divida-bruta-do-governo-alcancara-pico-de-897-do-pib-em-2030-diz-tesouro/" rel="nofollow noopener">CNN Brasil</a>; <a href="https://diariodocomercio.com.br/economia/lula-indicara-seis-diretores-bc/" rel="nofollow noopener">Folhapress, no Diário do Comércio</a>; <a href="https://econpapers.repec.org/RePEc:cpr:ceprdp:10591" rel="nofollow noopener">Hélène Rey</a></p>
-        <details class="d-teste"><summary>Como o teste funciona</summary><p>O teste compara a alta do dólar contra o real com a alta contra o peso mexicano e o peso chileno, pelas cotações oficiais do Banco Central. A conta vai do fechamento de 6/11/2026, o último antes de a regra ser escrita, até cada data de conferência.</p><p>Se a alta contra o real passar a dos dois pesos em mais de 2 pontos, pesa mais a desconfiança com o Brasil. Se a diferença ficar entre −2 e 2 pontos, pesa mais o medo no mundo todo. Fora disso, o teste não decide.</p><p class="d-lim">O México depende muito da economia dos EUA, e o Chile, do preço do cobre, então as duas moedas também têm motivos próprios. Por isso a regra pede uma diferença de mais de 2 pontos. O teste começa em 6/11, e não em 27/10, porque o que aconteceu entre 27/10 e 6/11 já era conhecido quando a regra foi escrita, e medir esse trecho seria como apostar num jogo que já acabou.</p></details>
-        
-      </li><li class="degrau r-bolso">
-        <p class="d-perg">E o que isso muda para você?</p>
-        
-        <p class="d-txt">Se o dólar seguir alto, o que o Brasil compra lá fora fica mais caro em reais, como parte do diesel e da gasolina. Essa alta chega aos preços aos poucos, nos meses seguintes.</p>
-        <p class="d-fontes">Fonte: <a href="https://www.gov.br/anp/pt-br/canais_atendimento/imprensa/noticias-comunicados/pais-teve-comercializacao-de-mais-de-130-bilhoes-de-litros-de-combustiveis-em-2024" rel="nofollow noopener">ANP</a></p>
-        
-        
-      </li>
-    </ol>
-    <a class="ponte" href="/causas/#t-outros"><b>Como isso funciona</b><span>Na aba O que causa recessão</span></a>
+    <summary><span class="f-cab"><span class="f-rot">Leitura de 6 minutos</span><span class="f-tit">A inflação acima do teto deve levar a uma carta do Banco Central em março, mas a carta não decide o juro</span></span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <div class="f-corpo">
+      <p>Os bancos (Focus) agora esperam que os preços subam 5,22% em 2026, contra 5,19% uma semana antes. A previsão mantém viva uma contagem: pela regra da meta, o Banco Central a descumpre quando a inflação de 12 meses fica seis meses seguidos fora da margem de tolerância.</p>
+      <p>A contagem começou em setembro. Se nada a interromper, o sexto mês será fevereiro, cujo <a class="termo" href="https://pt.wikipedia.org/wiki/%C3%8Dndice_Nacional_de_Pre%C3%A7os_ao_Consumidor_Amplo" target="_blank" rel="noopener">IPCA</a> sai em março de 2027, e o Banco Central terá de mandar uma carta aberta ao ministro da Fazenda. Será a segunda carta em menos de dois anos. Só que a carta marca um prazo e não obriga ninguém a subir o juro. Seis meses depois de cada uma das 9 cartas desde 2002, a <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> subiu em 2 delas, ficou parada em 3 e caiu em 4.</p>
+      <h4 class="f-h">A contagem começou em setembro, e os meses que saem da conta são baixos</h4>
+      <p>A meta é de 3%, com 1,5 ponto de tolerância, por isso o teto fica em 4,5%. Em julho, os preços tinham subido 4,44% em 12 meses, e em agosto, 4,22%, os dois abaixo do teto. Setembro passou dele, com 4,58%.</p>
+      <p>A contagem já voltou ao zero uma vez neste ano. Maio, com 4,72%, e junho, com 4,64%, ficaram acima do teto, mas julho voltou para baixo, e a sequência parou no segundo mês. Desta vez, os sinais de outubro apontam para cima.</p>
+      <p>A prévia da inflação de outubro, o IPCA-15, ficou em 4,62% em 12 meses, contra 4,47% em setembro. Os bancos esperam 5,22% em dezembro, e o relatório do próprio Banco Central, de setembro, projetava 5,2% no fim de 2026. Os dois apontam inflação de 12 meses acima do teto no fim do ano.</p>
+      <p>Os meses que saem da conta de 12 meses agora são baixos: em outubro de 2025, os preços subiram só 0,09%, e em novembro, 0,18%.</p>
+      <p>Os bancos esperam 0,27% para outubro de 2026 e 0,35% para novembro. Como cada mês novo deve vir mais alto que o mês que sai da conta, a taxa de 12 meses tende a subir até o fim do ano, e não a cair.</p>
+      <p>Para a contagem zerar em fevereiro, a inflação de 12 meses teria de descer do nível esperado para dezembro até 4,5% em só dois meses. No começo de 2026, janeiro teve 0,33% e fevereiro, 0,70%, somando 1,03% no ano. Janeiro e fevereiro de 2027 teriam de vir bem abaixo disso, já que esses são os meses que saem da conta, e os bancos projetam 4,76% para 2027 inteiro, acima do teto.</p>
+      <h4 class="f-h">Das 9 cartas desde 2002, só 2 vieram antes de uma alta, e nas duas o juro já subia</h4>
+      <p>Cartas em anos seguidos não são novidade, já que a inflação ficou fora da meta em 2001, 2002, 2003, 2015, 2017, 2021, 2022 e 2024. Em julho de 2025, veio a primeira carta pela regra atual da meta. Em 2017, o único estouro para baixo, os preços subiram menos que o piso.</p>
+      <p>Nas quatro cartas depois das quais a Selic caiu, ela foi de 19% para 18% em 2002, de 16,50% para 16% em 2004 e de 7% para 6,50% em 2018. Em 2003, o caminho teve volta: a Selic subiu de 25,50% para 26,50% em abril e só depois caiu, a 24,50% em julho.</p>
+      <p>Nas três cartas depois das quais o juro ficou parado, a Selic já estava alta. Ficou em 14,25% em 2016, em 13,75% em 2023 e em 15% depois de julho de 2025. O Banco Central explicou o estouro e manteve o juro onde estava.</p>
+      <p>As duas altas foram em 2022, quando a Selic foi de 9,25% para 13,25%, e em 2025, quando foi de 13,25% para 15%. Nos dois casos, o Banco Central já subia o juro havia meses: a alta de 2021 e 2022 começou em março de 2021, e a de 2024 e 2025, em setembro de 2024. A carta chegou no meio de uma alta que já estava em andamento.</p>
+      <p>Isso muda o jeito de ler a próxima notícia sobre o estouro, porque a carta de março diz que a meta foi descumprida e explica por quê. Quem decide se a parcela fica mais cara é o comitê do Banco Central que decide o juro, a cada reunião, olhando principalmente a inflação esperada.</p>
+      <h4 class="f-h">Desta vez, a carta viria com o juro em corte e a inflação esperada subindo</h4>
+      <p>O momento de agora não se parece com as duas cartas que vieram antes de altas. O Banco Central cortou a Selic de 15% para 13,75% entre março e setembro de 2026. No mesmo período, a inflação que os bancos esperam para os 12 meses seguintes subiu 0,77 ponto, de 4,19% em julho para 4,96% em outubro.</p>
+      <p>Essa subida é a melhor objeção à leitura de que a carta pesa pouco. Nas 7 cartas depois das quais o juro ficou parado ou caiu, a inflação esperada caiu ou ficou quase igual em 6. Em 2003, por exemplo, ela foi de 10,85% para 6,67%, e em 2002, de 4,71% para 4,73%.</p>
+      <p>A exceção foi 2004, quando a inflação esperada subiu de 5,85% para 6,10% em seis meses e o juro caiu mesmo assim. A subida de agora é bem mais rápida, 0,77 ponto entre julho e outubro. A combinação de juro parado ou em queda com inflação esperada subindo depressa não tem par claro entre as 9 cartas.</p>
+      <p>Quem discorda da tese pode lembrar também que uma segunda carta em menos de dois anos pode fazer os bancos esperarem ainda mais inflação. Se isso acontecer, essa expectativa empurraria o juro para cima. Os 9 casos não medem esse efeito, porque nenhuma carta anterior veio tão perto da anterior dentro da regra atual da meta.</p>
+      <p>São poucos casos, e o fato de carta e juro aparecerem juntos não prova que um causa o outro. Os 9 casos mostram um padrão, e não uma regra que vale sempre.</p>
+      <p>A contagem também pode falhar, porque a previsão dos bancos pode errar. Se a inflação de outubro a fevereiro vier bem abaixo do previsto, a sequência zera antes do sexto mês, e não haverá carta em março.</p>
+      <p>Duas coisas poderiam baixar a inflação nesses meses: o petróleo e o dólar mais baratos. O petróleo é uma causa de fora do Brasil, que depende da guerra no Oriente Médio. Já os bancos esperam o dólar a R$ 5,34 no fim do ano, e não mais a R$ 5,05, ou seja, um dólar mais caro que antes. Com o dólar mais barato, os importados, como peças e combustível, ficariam mais baratos.</p>
+      <p>O governo influencia o dólar com as próprias contas. Se o ministro da Fazenda apresentar um plano que convença quem investe, o dinheiro tende a voltar ao Brasil e o dólar tende a cair. Se as contas assustarem, o dólar tende a subir, e os preços sobem junto.</p>
+      <p>O que chega à sua parcela é a Selic, e não a carta. Os bancos passaram a esperar que a Selic termine 2026 em 13,50%, e não mais em 13,25%, o que indica menos cortes até o fim do ano do que se esperava uma semana antes.</p>
+      <p>No dia 12/11, o IBGE divulga o IPCA de outubro, que deve ser o segundo mês acima do teto, se a prévia de 4,62% se confirmar. Depois vêm o IPCA de novembro, em 11/12, e o de dezembro, em 12/1, que podem marcar o terceiro e o quarto meses da contagem.</p>
+      <p>Para saber o que acontece com o juro, os sinais são outros. Um é a decisão do Banco Central sobre a Selic, nesta quarta-feira e de novo em 9/12. O outro é a inflação esperada na pesquisa dos bancos (Focus), divulgada toda segunda-feira, e você pode acompanhar os dois. A carta de março, se vier, vai registrar o estouro, mas o caminho do juro deve ter sido decidido antes dela.</p>
+      
+      <div class="f-prev"><b>O que o site vai conferir em 12/11/2026</b><p>A inflação de outubro deve passar de 4,5% em 12 meses, o segundo mês seguido acima do teto, a caminho da carta do Banco Central em março de 2027.</p></div>
+      <p class="f-fontes">De onde vêm os números: <a href="http://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/decreto/d12079.htm" rel="nofollow noopener">Presidência da República, Decreto 12.079/2024</a>; <a href="https://www.legjur.com/legislacao/htm/dec_00120792024" rel="nofollow noopener">Presidência da República, Decreto 12.079/2024 (texto em site de legislação, LegJur)</a>; <a href="https://www.bcb.gov.br/content/controleinflacao/controleinflacao_docs/carta_aberta/OF_CIO_17431_2025_BCB_SECRE_01.pdf" rel="nofollow noopener">Banco Central do Brasil, Carta Aberta (Ofício 17431/2025)</a>; <a href="https://www.nordinvestimentos.com.br/blog/amp/inflacao-cima-da-meta/" rel="nofollow noopener">Nord Investimentos</a>; <a href="https://static.poder360.com.br/uploads/2026/10/ipca_15_2026_out.pdf" rel="nofollow noopener">IBGE, relatório do IPCA-15 de outubro de 2026 (hospedado pelo Poder360)</a>; <a href="https://dcomercio.com.br/publicacao/s/banco-central-reduz-projecao-do-pib-em-2026-para-1-8-e-mantem-inflacao-em-5-2" rel="nofollow noopener">Agência Brasil, via dcomercio, sobre o Relatório de Política Monetária do Banco Central</a>; <a href="https://static.poder360.com.br/2025/11/apresentacao-inflacao-ibge-11nov2025.pdf" rel="nofollow noopener">IBGE (apresentação da divulgação do IPCA, hospedada pelo Poder360)</a>; <a href="https://exame.com/economia/ipca-de-novembro-acelera-e-fecha-em-018-apos-queda-em-outubro/" rel="nofollow noopener">Exame, com dados do IBGE</a>; <a href="https://paraibabusiness.com.br/focus-eleva-ipca-de-2027-a-476-acima-do-teto-da-meta-diz-bc/" rel="nofollow noopener">Paraíba Business, sobre o Boletim Focus</a>; <a href="https://www.gov.br/planejamento/pt-br/centrais-de-conteudo/publicacoes/indicadores-economicos/2026-02-informe-ipca.pdf" rel="nofollow noopener">Ministério do Planejamento, Informe IPCA</a>; <a href="https://www.idinheiro.com.br/tabelas/tabela-ipca/" rel="nofollow noopener">iDinheiro, tabela do IPCA (dados do IBGE)</a>; <a href="https://istoedinheiro.com.br/boletim-focus-selic-dolar-inflacao-pib-3-novembro-2026" rel="nofollow noopener">Istoé Dinheiro / AdvFN</a>; <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-11-04T0630.json" rel="nofollow noopener">contas do site com as séries do Banco Central e do IBGE</a>.</p>
+    </div>
+    <a class="ponte" href="/causas/#t-precos"><b>Como isso funciona</b><span>Na aba O que causa recessão</span></a>
     
   </details>
   
@@ -647,36 +660,6 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   
   
-  
-  <details class="fundo">
-    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-    <ol class="escada">
-      <li class="degrau r-fato">
-        <p class="d-perg">Por que o petróleo tinha subido?</p>
-        <span class="rot r-fato">Os dados mostram</span>
-        <p class="d-txt">Em outubro, o barril do Brent subiu mais de 14% com o medo de uma nova escalada da guerra no Irã. A queda de agora desfaz só parte dessa alta, e a causa vem de fora do Brasil.</p>
-        <p class="d-fontes">Fontes: <a href="https://jornaldebrasilia.com.br/noticias/economia/petroleo-sobe-mais-de-14-em-outubro-e-encerra-mes-no-maior-valor-desde-maio/" rel="nofollow noopener">Folhapress, no Jornal de Brasília</a>; <a href="https://www.seudinheiro.com/2026/bolsa-dolar/petroleo-cai-mais-de-8-com-expectativa-de-tregua-na-guerra-do-oriente-medio-lils-cbcb/" rel="nofollow noopener">Seu Dinheiro</a></p>
-        
-        
-      </li><li class="degrau r-fato">
-        <p class="d-perg">Por que o preço lá fora chega ao posto daqui?</p>
-        <span class="rot r-fato">Os dados mostram</span>
-        <p class="d-txt">O Brasil importa parte do diesel e da gasolina que usa, e quem compra esse combustível de outros países paga o preço de lá, em dólar. Por isso o dólar mais caro, que estava em R$ 5,49 em 3/11, tira parte do alívio.</p>
-        <p class="d-fontes">Fontes: <a href="https://www.gov.br/anp/pt-br/canais_atendimento/imprensa/noticias-comunicados/pais-teve-comercializacao-de-mais-de-130-bilhoes-de-litros-de-combustiveis-em-2024" rel="nofollow noopener">ANP</a>; <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=1" rel="nofollow noopener">Banco Central</a></p>
-        
-        
-      </li><li class="degrau r-bolso">
-        <p class="d-perg">E o que isso muda para você?</p>
-        
-        <p class="d-txt">A <a class="termo" href="https://pt.wikipedia.org/wiki/Taxa_Selic" target="_blank" rel="noopener">Selic</a> é a base do juro que os bancos cobram no cartão e no financiamento. Se a inflação esperada cair para perto da meta, de 3% ao ano, o juro do crédito tende a cair depois.</p>
-        <p class="d-fontes">Fonte: <a href="https://www.bcb.gov.br/api/paginasite/sitebcb/controleinflacao/taxaselic" rel="nofollow noopener">Banco Central</a></p>
-        
-        
-      </li>
-    </ol>
-    <a class="ponte" href="/causas/#t-precos"><b>Como isso funciona</b><span>Na aba O que causa recessão</span></a>
-    
-  </details>
   
   
   <details class="conta" aria-label="Pressão das notícias">

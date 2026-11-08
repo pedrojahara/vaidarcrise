@@ -33,7 +33,7 @@ sys.path.insert(0, str(ROOT / "src"))
 import verifica_base as vb  # noqa: E402
 
 CLAUDE = os.environ.get("CLAUDE_BIN", "/Users/pedrojahara/.local/bin/claude")
-MODELO = os.environ.get("VDC_PESQUISA_MODELO", "opus")
+MODELO = os.environ.get("VDC_PESQUISA_MODELO", "sonnet")
 USO = vb.CONF / "uso.jsonl"
 HOJE = dt.date.today().isoformat()
 

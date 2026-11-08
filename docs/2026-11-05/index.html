@@ -131,28 +131,13 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
-/* a escada de porquês, no "Entenda a fundo" dos fatos do dia (src/base_site.py) */
-.escada{list-style:none;margin:0;padding:0}
-.degrau{position:relative;padding:0 0 18px 22px;border-left:2px solid var(--fio);margin-left:6px}
-.degrau:last-child{border-left-color:transparent;padding-bottom:4px}
-.degrau::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--papel);box-shadow:inset 0 0 0 3px var(--hist)}
-.degrau.r-consenso::before{box-shadow:inset 0 0 0 3px var(--desce)}
-.degrau.r-maioria_com_dissenso::before{box-shadow:inset 0 0 0 3px var(--atencao)}
-.degrau.r-em_disputa::before{background:var(--sobe);box-shadow:none}
-.degrau.r-bolso::before{background:var(--placa);box-shadow:none}
-.d-perg{font:700 17px/1.35 var(--sistema);margin:0 0 4px}
+/* rótulos e fontes que a página de cada pressão usa (src/base_site.py) */
 .rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
 .rot.r-consenso{background:var(--normal-fundo)}
 .rot.r-maioria_com_dissenso{background:var(--nota-fundo);box-shadow:inset 0 0 0 1px var(--atencao)}
 .rot.r-em_disputa{background:var(--alerta-fundo)}
-.d-txt{margin:0 0 6px;font-size:17px;line-height:1.55}
 .d-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 4px;overflow-wrap:anywhere}
 .d-fontes a{color:var(--meta)}
-.d-mais{font:14.5px/1.45 var(--sistema);margin:4px 0 0}
-.d-teste{font:15px/1.5 var(--sistema);margin:2px 0 4px}
-.d-teste>summary{cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:2px}
-.d-teste p{margin:6px 0 0}
-.d-teste .d-lim{color:var(--meta);font-size:14px}
 
 .blog{display:grid;gap:0 48px;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"feed nota" "feed lado";grid-template-rows:auto 1fr;padding-top:28px;padding-bottom:28px}
 .blog .nota{grid-area:nota}.feed{grid-area:feed;min-width:0}.lado{grid-area:lado;min-width:0}
@@ -187,16 +172,27 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .comece .rot{display:block;font-size:13px;font-weight:600;color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
 .comece b{display:block;font:700 20px/1.3 var(--serifa);margin-bottom:4px}
 
-/* o "Entenda a fundo" do fato do dia: a escada de porquês, fechada até o toque */
+/* a leitura a fundo do fato do dia (src/fundo.py): o texto corrido, fechado até o toque */
 .fundo{margin:4px 0 18px;max-width:660px;border:1px solid var(--fio);border-radius:10px}
 .fundo>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 12px 12px 14px;cursor:pointer;list-style:none;font:600 16px/1.35 var(--sistema)}
+.fundo .f-cab{display:block;min-width:0}
+.fundo .f-rot{display:block;font:600 12.5px/1.3 var(--sistema);color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.fundo .f-tit{display:block;font:700 18px/1.35 var(--serifa);color:var(--tinta)}
 .fundo>summary::-webkit-details-marker{display:none}
 .fundo>summary .seta{width:18px;height:18px;flex:none;transition:transform .15s}
 .fundo[open]>summary .seta{transform:rotate(180deg)}
 .fundo[open]>summary{border-bottom:1px solid var(--fio);margin-bottom:16px}
-.fundo .escada{padding:0 14px 0 12px}
-.post .fundo p{margin:0 0 6px}
-.post .fundo p.d-perg{margin-bottom:4px}
+.fundo .f-corpo{padding:0 14px 4px}
+.post .fundo .f-corpo p{margin:0 0 14px;font-size:17px;line-height:1.6}
+.fundo .f-h{font:700 18px/1.35 var(--serifa);margin:22px 0 8px}
+.fundo .f-prev{background:var(--nota-fundo);border-left:4px solid var(--placa);border-radius:4px;padding:10px 12px;margin:18px 0 12px;font:15.5px/1.5 var(--sistema)}
+.fundo .f-prev b{display:block;margin-bottom:2px}
+.post .fundo .f-prev p{margin:0;font-size:15.5px;line-height:1.5}
+.post .fundo p.f-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:10px 0 6px;overflow-wrap:anywhere}
+.fundo .f-fontes a{color:var(--meta)}
+.ponte.so{display:block;margin:4px 0 18px;max-width:660px;padding:12px 14px;border-radius:10px;background:var(--maquina);text-decoration:none;color:var(--tinta);font:15px/1.4 var(--sistema)}
+.ponte.so b{display:block;font:700 17px/1.35 var(--serifa);color:var(--link);margin:0 0 2px}
+.ponte.so:hover b{text-decoration:underline}
 .fundo .ponte{display:block;margin:6px 14px 14px;padding:12px 14px;border-radius:10px;background:var(--maquina);text-decoration:none;color:var(--tinta);font:15px/1.4 var(--sistema)}
 .fundo .ponte b{display:block;font:700 17px/1.35 var(--serifa);color:var(--link);margin:0 0 2px}
 .fundo .ponte:hover b,.fundo .ponte:focus-visible b{text-decoration:underline}
@@ -403,32 +399,36 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   
   <details class="fundo">
-    <summary><span>Entenda a fundo: por que isso aconteceu?</span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-    <ol class="escada">
-      <li class="degrau r-fato">
-        <p class="d-perg">O que mudou desde os cortes?</p>
-        <span class="rot r-fato">Os dados mostram</span>
-        <p class="d-txt">A inflação esperada voltou a subir. No fim de julho, os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>) esperavam que os preços subissem 4,2% em 12 meses. No fim de outubro, passaram a esperar 5,0%, acima do <a class="termo" href="https://pt.wikipedia.org/wiki/Metas_de_infla%C3%A7%C3%A3o" target="_blank" rel="noopener">teto da meta</a>, de 4,5%.</p>
-        <p class="d-fontes">Fonte: <a href="https://www.bcb.gov.br/publicacoes/focus" rel="nofollow noopener">Banco Central</a></p>
-        
-        
-      </li><li class="degrau r-em_disputa">
-        <p class="d-perg">Por que a Selic do Brasil fica tão acima da de outros países?</p>
-        <span class="rot r-em_disputa">Os economistas discordam</span>
-        <p class="d-txt">A desconfiança de quem empresta ao governo explica os anos em que o juro disparou, como 2002. Para o resto do tempo, a poupança baixa e o crédito com juro do governo explicam só uma parte.</p>
-        <p class="d-fontes">Fontes: <a href="https://www.nber.org/papers/w10389" rel="nofollow noopener">Olivier Blanchard</a>; <a href="https://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0101-31572014000100001&amp;lng=en&amp;tlng=en" rel="nofollow noopener">Francisco Lafaiete Lopes</a>; <a href="https://econpapers.repec.org/RePEc:imf:imfwpa:2012/062" rel="nofollow noopener">Fundo Monetário Internacional, Alex Segura-Ubiergo</a>; <a href="https://econpapers.repec.org/RePEc:bcb:wpaper:419" rel="nofollow noopener">Marco Bonomo e Bruno Martins (Banco Central)</a></p>
-        
-        
-      </li><li class="degrau r-bolso">
-        <p class="d-perg">E o que isso muda para você?</p>
-        
-        <p class="d-txt">Com a Selic parada em 13,75%, o juro do cartão, do empréstimo e do financiamento tende a parar de cair. O Banco Central decide de novo em 9/12, e a decisão vai mostrar se a pausa continua.</p>
-        <p class="d-fontes">Fontes: <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432" rel="nofollow noopener">Banco Central</a>; Calendários do IBGE e do Banco Central</p>
-        
-        
-      </li>
-    </ol>
-    <a class="ponte" href="/perguntas/juro-alto/"><b>Por que o juro do Brasil é tão alto?</b><span>A explicação da pressão Juro, em 5 minutos</span></a>
+    <summary><span class="f-cab"><span class="f-rot">Leitura de 5 minutos</span><span class="f-tit">O passado aponta para a Selic parada ou em alta, ao contrário do corte que os bancos preveem</span></span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <div class="f-corpo">
+      <p>Os bancos ainda apostam que o Banco Central volta a cortar a Selic na reunião de 9 de dezembro. Na pesquisa do dia 30 de outubro, eles previam a Selic em 13,50% no fim de 2026. Como hoje ela está em 13,75%, essa previsão é a aposta num corte até o fim do ano.</p>
+      <p>O passado aponta para o outro lado. Desde 2002, o Banco Central parou de cortar a Selic 10 vezes, e o que separou os dois caminhos, alta ou novo corte, foi a [inflação esperada](https://pt.wikipedia.org/wiki/Boletim_Focus) nos 3 meses depois do último corte. A inflação esperada subiu em 8 dessas pausas, e em 7 delas a Selic voltou a subir. Desta vez, ela já subiu 0,36 ponto no primeiro mês.</p>
+      <h4 class="f-h">Em 7 das 8 pausas com a inflação esperada subindo, a Selic voltou a subir</h4>
+      <p>Duas dessas vezes você provavelmente lembra. Em agosto de 2020, no meio da pandemia, o Banco Central parou de cortar com a Selic em 2%. Nos 3 meses seguintes, a inflação esperada subiu 0,81 ponto, e a alta do juro veio 7 meses depois do último corte.</p>
+      <p>A outra é mais recente. Em maio de 2024, o corte parou com a Selic em 10,50%, e a inflação esperada subiu 0,23 ponto nos 3 meses seguintes. A alta começou 4 meses depois do último corte, e o ciclo levou a Selic até 15% em junho de 2025.</p>
+      <p>O mesmo desenho apareceu em 2002, 2004 e 2007, quando a alta veio 3, 5 e 7 meses depois do último corte. Em 2009 e em 2012, ela demorou 9 e 6 meses. Mesmo com uma subida pequena da inflação esperada, como os 0,10 ponto de 2012, o juro voltou a subir.</p>
+      <p>Os dois casos do outro lado ajudam a ver a regra. Em março de 2002 e em dezembro de 2003, a inflação esperada caiu nos 3 meses seguintes, 0,28 e 0,47 ponto, e o Banco Central voltou a cortar 4 e 3 meses depois. Quando os bancos do <a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a> passam a esperar menos inflação, o Banco Central pode ganhar espaço para baratear o crédito, como nesses 2 casos.</p>
+      <p>Nas 7 vezes em que a Selic voltou a subir, a alta veio entre 3 e 9 meses depois do último corte, e o caso do meio ficou em 6 meses. Contando a partir do corte de setembro de 2026, isso daria por volta de março de 2027. A reunião de dezembro cai no começo dessa janela, por isso o padrão sugere juro parado nela, e não corte.</p>
+      <h4 class="f-h">A alta de outubro foi grande, mas é de um mês só</h4>
+      <p>Em setembro, os bancos esperavam que os preços subissem 4,60% nos 12 meses seguintes, e em outubro passaram a esperar 4,96%. É uma subida maior, em um mês, do que as de 2012 e 2024 em três meses, e as duas terminaram em alta do juro. A <a class="termo" href="https://pt.wikipedia.org/wiki/Metas_de_infla%C3%A7%C3%A3o" target="_blank" rel="noopener">meta de inflação</a> é de 3%, e em setembro a inflação esperada já estava 1,60 ponto acima dela.</p>
+      <p>O próprio Banco Central mostrou preocupação parecida. A projeção dele para os preços em 12 meses até o segundo trimestre de 2028, o prazo que ele mira, subiu de 3,1% para 3,5%. O comunicado citou a piora das expectativas de inflação.</p>
+      <p>Os bancos também já começaram a mudar de ideia. Entre a pesquisa de 23 e a de 30 de outubro, a Selic prevista para o fim de 2026 subiu de 13,25% para 13,50%. A prevista para o fim de 2027 subiu de 11,75% para 12,50%. A aposta é ainda de corte, só que de cortes menores.</p>
+      <p>Falta uma peça, e ela pesa. O padrão olha para 3 meses depois do último corte, e por enquanto só existe o dado de 1 mês. Em 2018, a inflação esperada subiu 0,16 ponto no primeiro mês e terminou os 3 meses com só 0,07 ponto a mais. Naquela vez, o Banco Central não subiu o juro: voltou a cortar 17 meses depois.</p>
+      <h4 class="f-h">A melhor objeção vem do emprego, e ela não é fraca</h4>
+      <p>Quem acha que o Banco Central volta a cortar tem argumentos sérios. Em setembro, as empresas criaram 121,3 mil vagas com carteira. E o juro acima da inflação esperada chegou a 8,38% em outubro, mais alto que em 68% dos meses desde 2002. Com o crédito tão caro, as empresas contratam menos, e isso tende a segurar os preços sozinho.</p>
+      <p>Há também um caso no passado que contraria a tese. O mês mais parecido com outubro de 2026, olhando a inflação esperada, o juro acima dela e o dólar, é setembro de 2022, também com a Selic em 13,75%. Naquela vez, o juro não subiu: ficou parado e, 12 meses depois, estava em 12,75%. O corte só começou em agosto de 2023.</p>
+      <p>A diferença é que, em 2022, o Banco Central tinha acabado de parar de subir o juro, e não de cortar. Mesmo assim, o caso sugere que juro já alto pode bastar sem alta nova. Ele também lembra que a espera pode ser longa para os dois lados.</p>
+      <p>Duas coisas de fora do Banco Central podem derrubar a inflação esperada. A primeira é o petróleo mais barato, porque combustível mais barato pesa menos no frete e no mercado. A segunda é um plano para as contas do governo em que quem investe acredite, o que tende a baratear o dólar e os importados.</p>
+      <p>A política pode empurrar para o outro lado. A ideia de limitar a Selic entrou no radar do presidente, e a Fazenda nega que haja proposta. Se quem investe passa a duvidar de que o Banco Central poderá subir o juro quando precisar, essa pessoa espera mais inflação e cobra mais para emprestar ao governo. Isso valeria com qualquer governo no poder.</p>
+      <p>Sobre o tamanho da evidência, são 10 casos desde 2002. Isso mostra um padrão, não uma lei. Inflação esperada e juro andarem juntos não prova que um causa o outro, porque o Banco Central também olha o emprego, o dólar e o petróleo ao decidir.</p>
+      <p>A tese erra se o Banco Central cortar a Selic em 9 de dezembro. Ela acerta se o juro ficar em 13,75% ou subir, com a inflação esperada acima dos 4,60% de setembro. O site vai conferir isso em três momentos, e você pode olhar os mesmos sinais.</p>
+      <p>O primeiro é a pesquisa dos bancos (Focus), que o Banco Central divulga toda segunda-feira. O número a olhar é a inflação esperada para 12 meses, comparada com os 4,60% de setembro. O segundo é o [IPCA](https://pt.wikipedia.org/wiki/%C3%8Dndice_Nacional_de_Pre%C3%A7os_ao_Consumidor_Amplo) de outubro e a prévia de novembro, que o IBGE divulga nas próximas semanas. O terceiro é a própria decisão do Banco Central, em 9 de dezembro.</p>
+      
+      <div class="f-prev"><b>O que o site vai conferir em 9/12/2026</b><p>Em 9/12, o Banco Central não corta a Selic, que fica em 13,75% ou sobe, e a inflação esperada para 12 meses segue acima dos 4,60% de setembro.</p></div>
+      <p class="f-fontes">De onde vêm os números: <a href="https://www.cnnbrasil.com.br/economia/money/macroeconomia/bc-ve-inflacao-mais-elevada-em-todo-horizonte-ate-2028/" rel="nofollow noopener">CNN Brasil (sobre o comunicado do Copom)</a>; <a href="https://investnews.com.br/investimentos/copom-mantem-selic-em-1375-ano/" rel="nofollow noopener">Investnews (sobre o comunicado do Copom)</a>; <a href="https://agenciagov.ebc.com.br/noticias/202611/brasil-gera-121-3-mil-empregos-formais-em-setembro-e-saldo-no-ano-chega-a-1-24-milhao-de-novos-postos-com-carteira-assinada" rel="nofollow noopener">Agência Gov (dados do Ministério do Trabalho e Emprego)</a>; <a href="https://www1.folha.uol.com.br/mercado/2026/11/proposta-de-lara-resende-para-limitar-selic-entra-no-radar-de-lula-e-assusta-mercado.shtml" rel="nofollow noopener">Folha</a>; <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-11-05T0630.json" rel="nofollow noopener">contas do site com as séries do Banco Central e do IBGE</a>.</p>
+    </div>
+    <a class="ponte" href="/causas/#t-precos"><b>Como isso funciona</b><span>Na aba O que causa recessão</span></a>
+    
   </details>
   
   

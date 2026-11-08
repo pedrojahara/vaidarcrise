@@ -17,7 +17,30 @@ import jsonschema
 
 ROOT = Path(__file__).resolve().parent.parent
 CLAUDE = os.environ.get("CLAUDE_BIN", "/Users/pedrojahara/.local/bin/claude")
-MODELO_LLM = os.environ.get("VDC_LLM_MODEL", "opus")
+# O modelo de cada etapa. Opus só onde a qualidade do pensamento decide o texto: o editor-chefe que testa o achado da
+# leitura a fundo e a redação dela (src/fundo.py). O resto vai de Sonnet. Cada etapa troca de modelo pelo ambiente
+# (VDC_MODELO_<ETAPA>, por exemplo VDC_MODELO_POST=opus); VDC_LLM_MODEL troca todas de uma vez.
+MODELOS = {"classificar": "sonnet", "editora": "sonnet", "post": "sonnet", "editor": "sonnet", "pesquisa": "sonnet",
+           "memoria": "sonnet", "conferencia": "sonnet", "editor_chefe": "opus", "redacao": "opus"}
+
+
+def modelo(etapa: str) -> str:
+    return (os.environ.get(f"VDC_MODELO_{etapa.upper()}") or os.environ.get("VDC_LLM_MODEL")
+            or MODELOS.get(etapa, "sonnet"))
+
+
+MODELO_LLM = modelo("classificar")
+_AJUDA: dict[str, str] = {}
+
+
+def _suporta(flag: str) -> bool:
+    """Se o `claude` desta máquina conhece a opção (o do Mac e o da nuvem podem estar em versões diferentes)."""
+    if CLAUDE not in _AJUDA:
+        try:
+            _AJUDA[CLAUDE] = subprocess.run([CLAUDE, "--help"], capture_output=True, text=True, timeout=60).stdout
+        except Exception:  # noqa: BLE001
+            _AJUDA[CLAUDE] = ""
+    return flag in _AJUDA[CLAUDE]
 # Os fatores das notícias (config/modelo.json, "fatores").
 FATORES = ["atividade", "juro", "credito", "mercado", "contas", "emprego", "externo"]
 ESTAGIOS = ["dado", "decidido", "em_votacao", "anuncio", "previsao", "rumor"]
@@ -109,19 +132,29 @@ def _prompt(noticias: dict, recentes: list[dict], contexto: str) -> str:
             "Classifique conforme as regras e devolva o JSON do esquema.")
 
 
-def chamar_claude(system: str, prompt: str, schema: dict, budget_usd: float) -> dict:
-    """Chama `claude -p` sem ferramentas e com saída em esquema. Nunca levanta exceção.
+def chamar_claude(system: str, prompt: str, schema: dict, budget_usd: float, etapa: str = "classificar",
+                  ferramentas: list[str] | None = None, permitidas: list[str] | None = None, timeout: int = 900) -> dict:
+    """Chama `claude -p` com saída em esquema. Nunca levanta exceção.
+
+    Sem `ferramentas`, a chamada não tem ferramenta nenhuma. Com elas (a pesquisa da leitura a fundo e a carga das
+    memórias), só as de `permitidas` rodam sem pedir permissão, e o que pediria permissão é negado, porque ninguém
+    responde no modo -p; por isso a pesquisa não lê nem escreve arquivo e só roda o comando de src/conta.py.
 
     Devolve {"ok": bool, "saida": dict|None, "meta": {...}}.
     """
-    meta = {"modelo_pedido": MODELO_LLM, "prompt_sha256": hashlib.sha256((system + prompt).encode()).hexdigest(),
+    mod = modelo(etapa)
+    meta = {"etapa": etapa, "modelo_pedido": mod, "prompt_sha256": hashlib.sha256((system + prompt).encode()).hexdigest(),
             "system_sha256": hashlib.sha256(system.encode()).hexdigest()}
     env = {k: v for k, v in os.environ.items() if not k.startswith(("CLAUDECODE", "CLAUDE_CODE_", "ANTHROPIC_"))}
-    cmd = [CLAUDE, "-p", "--safe-mode", "--tools", "", "--output-format", "json", "--no-session-persistence",
-           "--model", MODELO_LLM, "--max-budget-usd", str(budget_usd), "--system-prompt", system,
+    cmd = [CLAUDE, "-p", "--safe-mode", "--tools", ",".join(ferramentas or []), "--output-format", "json",
+           "--no-session-persistence", "--model", mod, "--max-budget-usd", str(budget_usd), "--system-prompt", system,
            "--json-schema", json.dumps(schema)]
+    if ferramentas:
+        cmd += ["--allowedTools", ",".join(permitidas or ferramentas)]
+        if _suporta("dontAsk"):
+            cmd += ["--permission-mode", "dontAsk"]
     try:
-        p = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=900, env=env, cwd=str(ROOT))
+        p = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=timeout, env=env, cwd=str(ROOT))
     except Exception as e:  # noqa: BLE001
         meta["erro"] = f"falha ao executar claude: {e}"
         return {"ok": False, "saida": None, "meta": meta}
@@ -131,7 +164,8 @@ def chamar_claude(system: str, prompt: str, schema: dict, budget_usd: float) -> 
     except json.JSONDecodeError:
         meta["erro"] = f"saída não é JSON: {p.stdout[:300]} {p.stderr[:300]}"
         return {"ok": False, "saida": None, "meta": meta}
-    meta.update({"is_error": res.get("is_error"), "custo_usd": res.get("total_cost_usd"),
+    meta.update({"is_error": res.get("is_error"), "custo_usd": res.get("total_cost_usd"), "turnos": res.get("num_turns"),
+                 "duracao_s": round((res.get("duration_ms") or 0) / 1000),
                  "modelos": list((res.get("modelUsage") or {}).keys()),
                  "permission_denials": res.get("permission_denials"), "session_id": res.get("session_id")})
     saida = res.get("structured_output")
@@ -151,7 +185,7 @@ def classificar(noticias: dict, recentes: list[dict], contexto: str, budget_usd:
     prompt = _prompt(noticias, recentes, contexto)
     if not noticias["itens"]:
         return {"ok": True, "saida": {"eventos": []},
-                "meta": {"modelo_pedido": MODELO_LLM, "system_sha256": hashlib.sha256(SYSTEM.encode()).hexdigest(),
+                "meta": {"modelo_pedido": modelo("classificar"), "system_sha256": hashlib.sha256(SYSTEM.encode()).hexdigest(),
                          "prompt_sha256": hashlib.sha256((SYSTEM + prompt).encode()).hexdigest()}}
     r = chamar_claude(SYSTEM, prompt, SCHEMA, budget_usd)
     if not r["ok"]:

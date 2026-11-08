@@ -545,20 +545,22 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
         paragrafos = []
         autoria = "O texto do dia não saiu. Ficam a direção do risco e as notícias, organizadas pelo programa."
     link = f"/{dia}/"
-    escada = None
-    if p.get("ok") and p.get("escada"):
-        try:  # o "Entenda a fundo" vem de base/ e não pode derrubar o post
-            escada = base_site.escada_ctx(p, cfg, com_links)
-        except (KeyError, OSError, ValueError, TypeError) as e:
-            print(f"aviso: a escada do post de {dia} não foi montada ({e!r})")
+    fundo, ponte = None, None
+    registro = f"{REPO}/blob/main/runs/{rodada['id']}.json"
+    if p.get("ok") and tipo == "dia":
+        try:  # a leitura a fundo (src/fundo.py) não pode derrubar o post
+            fundo = base_site.fundo_ctx(p, cfg, com_links, registro)
+            ponte = None if fundo else base_site.ponte_ctx(p, cfg)
+        except (KeyError, OSError, ValueError, TypeError, StopIteration) as e:
+            print(f"aviso: a leitura a fundo do post de {dia} não foi montada ({e!r})")
     zap = None
     if tipo in ("semana", "mes"):
         zap = "https://wa.me/?text=" + quote(f"{titulo} {SITE}{link}")
     return {"dia": dia, "data_extenso": data_extenso(dia), "titulo": titulo, "paragrafos": paragrafos, "secoes": secoes,
             "tipo": tipo, "tipo_nome": TIPOS_POST[tipo], "zap": zap,
             "autoria": autoria, "direcao": d["estado"], "llm": bool(p.get("ok")),
-            "pressao": pressao_ctx(rodada, eventos, cfg), "link": link, "escada": escada,
-            "registro": f"{REPO}/blob/main/runs/{rodada['id']}.json", "llm_ok": rodada["llm"]["ok"]}
+            "pressao": pressao_ctx(rodada, eventos, cfg), "link": link, "fundo": fundo, "ponte": ponte,
+            "registro": registro, "llm_ok": rodada["llm"]["ok"]}
 
 
 def textos_do_editor() -> list[dict]:

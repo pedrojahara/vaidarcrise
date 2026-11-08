@@ -1,5 +1,5 @@
-"""O que o site mostra da base de conhecimento (base/): o "Entenda a fundo" dos fatos do dia que têm escada de porquês
-(post.escada em runs/) e a página de cada pressão do topo que já tem pergunta publicada, em /perguntas/<id>/.
+"""O que o site mostra da base de conhecimento (base/): a leitura a fundo dos fatos do dia (post.fundo em runs/, feita
+por src/fundo.py) e a página de cada pressão do topo que já tem pergunta publicada, em /perguntas/<id>/.
 
 Uma página por pressão: cada pergunta de base/perguntas diz a pressão dela (pressao, uma das chaves de
 direcao.nomes em config/modelo.json). Cada fato do dia leva à página da pressão onde a corrente de porquês termina
@@ -7,12 +7,13 @@ direcao.nomes em config/modelo.json). Cada fato do dia leva à página da press�
 
 Tudo vem de base/: as afirmações que sustentam cada frase, as perguntas, os episódios e o último relatório do
 verificador (base/conferencia/), que diz se a fonte de cada afirmação já foi conferida. build_site.py chama
-escada_ctx() em cada post e gravar() no fim; um erro aqui não derruba a atualização do dia.
+fundo_ctx() em cada post e gravar() no fim; um erro aqui não derruba a atualização do dia.
 """
 from __future__ import annotations
 
 import datetime as dt
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -122,11 +123,11 @@ def pergunta_da_pressao(pid: str) -> dict | None:
 
 
 def _posts_ligados() -> dict[str, list[dict]]:
-    """Os fatos do dia com escada (runs/), por pergunta: o mais novo primeiro, um por dia."""
+    """Os fatos do dia com leitura a fundo (runs/), por pergunta: o mais novo primeiro, um por dia."""
     por_dia: dict[str, dict] = {}
     for arq in sorted((ROOT / "runs").glob("*.json")):
         post = json.loads(arq.read_text()).get("post") or {}
-        if post.get("escada") and post.get("pergunta"):
+        if (post.get("fundo") or {}).get("ok") and post.get("pergunta"):
             por_dia[arq.stem[:10]] = post
     out: dict[str, list[dict]] = {}
     for dia in sorted(por_dia, reverse=True):
@@ -146,41 +147,76 @@ def _regra_do_teste(t: dict) -> str:
             f"pesa mais {g.get('l-fora', 'a segunda')}. Fora disso, o teste não decide.")
 
 
-def escada_ctx(post: dict, cfg: dict, ligar) -> dict | None:
-    """A escada de porquês de um fato do dia (post.escada em runs/), para o "Entenda a fundo" do post: cada degrau com
-    o rótulo, o texto com os termos ligados e as fontes; o degrau do teste traz a regra; no fim, o link para a página
-    da pressão onde a corrente termina, se ela já existe."""
-    if not post.get("escada"):
-        return None
-    A = {a["id"]: a for a in json.loads((BASE / "afirmacoes.json").read_text())["afirmacoes"]}
+def _ponte(post: dict, cfg: dict) -> dict | None:
+    """O link do fim da leitura a fundo: a página da pressão onde a corrente de porquês termina. Se essa pressão ainda
+    não tem página, a parte da aba O que causa recessão que explica a pressão, como o "Como isso funciona" do topo."""
     todas = _perguntas()
     p = todas.get(post.get("pergunta"))
-    fontes = _Fontes(A, _conferencia())
-    # O teste fica na pergunta da pressão dele, mesmo quando a página ainda é rascunho.
-    testes = {t["id"]: t for q in todas.values() for t in q.get("testes", [])}
-    # Os termos já ligados no post não são ligados de novo no "Entenda a fundo".
-    textos = list(post.get("paragrafos", [])) + [d["texto"] for d in post["escada"]]
-    lig = ligar(textos, cfg)[len(post.get("paragrafos", [])):]
-    degraus = []
-    for d, txt in zip(post["escada"], lig):
-        g = {"pergunta": d["pergunta"], "rotulo": d.get("rotulo"), "rotulo_nome": ROTULOS.get(d.get("rotulo")),
-             "texto": txt, "fontes": fontes.de(d["afirmacoes"]), "link": d.get("link")}
-        if d.get("teste") and d["teste"] in testes:
-            t = testes[d["teste"]]
-            g["teste"] = {"quando": " e em ".join(_data(c) for c in t["conferir_em"]), "como": t["como"],
-                          "regra": _regra_do_teste(t), "limites": t["limites"],
-                          "resultados": [{"data": _data(r["conferido_em"]), "texto": r.get("texto", "")} for r in t.get("resultados", [])]}
-        degraus.append(g)
-    # O link do fim vai para a página da pressão onde a corrente termina. Se essa pressão ainda não tem página, vai
-    # para a parte da aba O que causa recessão que explica a pressão, como o "Como isso funciona" do topo.
-    ponte = None
     termina = post.get("termina_em") or (p or {}).get("pressao")
     if p and p.get("publicada", True):
-        ponte = {"url": f"/perguntas/{p['id']}/", "pergunta": p["pergunta"],
-                 "pressao": cfg["direcao"]["nomes"].get(p.get("pressao"), "")}
-    elif termina and cfg["direcao"].get("causas", {}).get(termina):
-        ponte = {"url": cfg["direcao"]["causas"][termina], "aba": True}
-    return {"degraus": degraus, "ponte": ponte}
+        return {"url": f"/perguntas/{p['id']}/", "pergunta": p["pergunta"],
+                "pressao": cfg["direcao"]["nomes"].get(p.get("pressao"), "")}
+    if termina and cfg["direcao"].get("causas", {}).get(termina):
+        return {"url": cfg["direcao"]["causas"][termina], "aba": True}
+    return None
+
+
+def fundo_ctx(post: dict, cfg: dict, ligar, registro: str | None = None) -> dict | None:
+    """A leitura a fundo de um fato do dia (post.fundo em runs/, feita por src/fundo.py), para o post: a tese no botão,
+    o texto corrido com os termos ligados à Wikipédia, a previsão com a data, as fontes e o link da página da pressão.
+    As marcas do caderno ([c3]) saem do texto e viram a lista de fontes."""
+    import fundo as fundo_mod
+    f = post.get("fundo") or {}
+    if not f.get("ok") or not f.get("texto"):
+        return None
+    bl = fundo_mod.blocos(f["texto"])
+    pars = [fundo_mod.sem_marcas(b["p"]).strip() for b in bl if "p" in b]
+    # Os termos já ligados no post não são ligados de novo na leitura a fundo.
+    n = len(post.get("paragrafos", []))
+    lig = iter(ligar([*post.get("paragrafos", []), *pars], cfg)[n:])
+    blocos = [{"h": b["h"]} if "h" in b else {"p": next(lig)} for b in bl]
+    cad = {c["id"]: c for c in f.get("caderno", [])}
+    usadas = [cad[i] for i in dict.fromkeys(fundo_mod.marcas(f["texto"])) if i in cad]
+    fontes, vistas = [], set()
+
+    def quem(q: str, url: str | None) -> str:
+        # O bastidor da pesquisa ("resumo da busca", "página não aberta") fica no registro, não na página.
+        q = re.sub(r"\s*\([^)]*(busca|abert|página|resultado|memória)[^)]*\)", "", q or "", flags=re.I)
+        q = re.sub(r"^(memória do (momento|site)|dados do site)\b[^(]*", "", q, flags=re.I).strip(" ,;")
+        q = re.sub(r"^\((.*)\)$", r"\1", q).strip()
+        if not q and url:
+            q = re.sub(r"^www\d?\.", "", url.split("/")[2]) if "://" in url else ""
+        return q or "fonte"
+
+    so_site = False
+    for c in usadas:
+        if c["tipo"] == "conta":
+            continue
+        fos = [c.get("fonte") or {}] if (c.get("fonte") or {}).get("url") else c.get("fontes_memoria") or []
+        if c["tipo"] == "site" and not fos:
+            so_site = True
+        for fo in fos if c["tipo"] != "documento" else [c.get("fonte") or {}]:
+            nome = quem(fo.get("quem"), fo.get("url"))
+            chave = fo.get("url") or fo.get("quem")
+            if chave and chave not in vistas and nome not in vistas:
+                vistas |= {chave, nome}
+                fontes.append({"quem": nome, "url": fo.get("url")})
+    if any(c["tipo"] == "conta" for c in usadas):
+        fontes.append({"quem": "contas do site com as séries do Banco Central e do IBGE", "url": registro})
+    if so_site:
+        fontes.append({"quem": "os dados e as notícias do dia, no registro do site", "url": registro})
+    pv = f.get("previsao") or {}
+    previsao = None
+    if pv.get("texto") and len(pv.get("quando") or "") == 10:
+        previsao = {"data": _data(pv["quando"]), "texto": pv["texto"].strip(), "como": (pv.get("como_conferir") or "").strip()}
+    palavras = sum(len(p.split()) for p in pars)
+    return {"titulo": f["titulo"], "minutos": max(3, round(palavras / 200)), "blocos": blocos, "previsao": previsao,
+            "fontes": fontes, "ponte": _ponte(post, cfg)}
+
+
+def ponte_ctx(post: dict, cfg: dict) -> dict | None:
+    """Fato do dia sem leitura a fundo: só o link da página da pressão, se o post diz qual é."""
+    return _ponte(post, cfg) if post.get("termina_em") or post.get("pergunta") else None
 
 
 def pergunta_ctx(p: dict, A: dict, E: dict, conf: dict, cfg: dict, ligar, posts: list[dict], outras: list[dict],

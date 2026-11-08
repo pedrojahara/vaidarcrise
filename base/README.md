@@ -1,8 +1,10 @@
 # Base de conhecimento (fase 0)
 
-Esta pasta é a fase 0 da ideia que veio do leitor Bruno: ligar cada notícia à causa de fundo dela, com fontes que alguém pode conferir. A fase 0 publica uma pergunta-mãe, "Por que o juro do Brasil é tão alto?", guarda como rascunho a do dólar, "Por que o dólar sobe tanto no Brasil?", e reescreve com a escada de porquês os fatos do dia de 3 a 7 de novembro de 2026.
+Esta pasta é a fase 0 da ideia que veio do leitor Bruno: ligar cada notícia à causa de fundo dela, com fontes que alguém pode conferir. A fase 0 publica uma pergunta-mãe, "Por que o juro do Brasil é tão alto?", guarda como rascunho a do dólar, "Por que o dólar sobe tanto no Brasil?". Os fatos do dia de 3 a 7 de novembro de 2026 tiveram uma escada de porquês, trocada em 8/11 pela leitura a fundo (abaixo).
 
-**O que o site mostra daqui** (desde 7/11/2026, a pedido do Pedro): o "Entenda a fundo" dos fatos do dia que têm `post.escada` em `runs/`, a página de cada pergunta publicada em `/perguntas/<id>/` e, no topo, o link de cada pressão para a sua página. Quem monta é `src/base_site.py`, chamado por `src/build_site.py`; um erro na base não derruba a atualização do dia. A rodada diária (`run.sh`) ainda não escreve escadas: os posts novos saem como antes até o Pedro decidir a fase 1.
+**O que o site mostra daqui**: a página de cada pergunta publicada em `/perguntas/<id>/` e, no topo, o link de cada pressão para a sua página. Desde 8/11/2026, a escada de porquês dos fatos do dia saiu: no lugar dela, cada fato do dia tem a leitura a fundo (`post.fundo` em `runs/`), um texto corrido com tese, feito por `src/fundo.py` com o guia [FUNDO.md](../FUNDO.md), e a rodada das 06h30 a faz sozinha depois do post. A leitura a fundo leva à página da pressão onde a corrente termina (`post.termina_em`, `post.pergunta`). Quem monta a página é `src/base_site.py`, chamado por `src/build_site.py`; um erro aqui não derruba a atualização do dia.
+
+**As memórias da leitura a fundo** ficam em `memoria/` (`src/memoria.py`): `longa.json` (episódios do passado, além dos 8 de `episodios.json`), `momento/AAAA-MM.json` (o que aconteceu mês a mês desde maio de 2025, com fonte; a rodada junta os fatos do dia) e `historias.json` (as histórias abertas, revistas no domingo). A memória do site sai de `runs/`.
 
 ## Uma página por pressão (decisão do Pedro, 7/11/2026)
 
@@ -29,7 +31,7 @@ A fase 0 mede três coisas:
 | `perguntas/<id>.json` | Uma pergunta-mãe: `pressao`, `publicada`, resposta curta, `governo` (se a causa é de um governo só, com a linha do tempo dos episódios), `agora` (o que está em jogo), escada de porquês com as leituras, testes registrados antes do resultado, episódios e registro de mudanças. |
 | `conferencia/` | Relatórios do verificador e dos agentes, e o registro de consumo. Ficam no git porque são a medição da fase 0. |
 | `cache/` | Cópia das páginas que o código abriu. Fora do git. |
-| `runs/<dia>.json`, `post.escada` | A escada de um fato do dia: `pergunta` (a pergunta-mãe, ou `null`), `termina_em` (a pressão onde a corrente termina) e `degraus`, cada um com pergunta, rótulo (`fato`, `consenso`, `maioria_com_dissenso`, `em_disputa`), texto, afirmações e, se houver, `liga` (degrau da pergunta-mãe), `link` e `teste`. O último degrau, "E o que isso muda para você?", pode vir sem rótulo. `post.paragrafos_afirmacoes` diz que afirmações sustentam cada parágrafo (uma lista por parágrafo), e `post.versao_anterior` guarda o texto que saiu no dia. |
+| `runs/<dia>.json`, `post.fundo` | A leitura a fundo de um fato do dia (`src/fundo.py`): `titulo` (a tese, no botão), `texto` (Markdown com até 3 intertítulos `###` e as marcas `[c3]` do caderno), `previsao`, `caderno` (cada linha com a conferência do código), `voltas` (as teses e o veredito do editor-chefe), `conferencia` e `meta` (modelo, custo e tempo de cada etapa). `post.termina_em` e `post.pergunta` dizem a página da pressão do fim. |
 
 ## A escada
 

@@ -131,28 +131,13 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
-/* a escada de porquês, no "Entenda a fundo" dos fatos do dia (src/base_site.py) */
-.escada{list-style:none;margin:0;padding:0}
-.degrau{position:relative;padding:0 0 18px 22px;border-left:2px solid var(--fio);margin-left:6px}
-.degrau:last-child{border-left-color:transparent;padding-bottom:4px}
-.degrau::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--papel);box-shadow:inset 0 0 0 3px var(--hist)}
-.degrau.r-consenso::before{box-shadow:inset 0 0 0 3px var(--desce)}
-.degrau.r-maioria_com_dissenso::before{box-shadow:inset 0 0 0 3px var(--atencao)}
-.degrau.r-em_disputa::before{background:var(--sobe);box-shadow:none}
-.degrau.r-bolso::before{background:var(--placa);box-shadow:none}
-.d-perg{font:700 17px/1.35 var(--sistema);margin:0 0 4px}
+/* rótulos e fontes que a página de cada pressão usa (src/base_site.py) */
 .rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
 .rot.r-consenso{background:var(--normal-fundo)}
 .rot.r-maioria_com_dissenso{background:var(--nota-fundo);box-shadow:inset 0 0 0 1px var(--atencao)}
 .rot.r-em_disputa{background:var(--alerta-fundo)}
-.d-txt{margin:0 0 6px;font-size:17px;line-height:1.55}
 .d-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:0 0 4px;overflow-wrap:anywhere}
 .d-fontes a{color:var(--meta)}
-.d-mais{font:14.5px/1.45 var(--sistema);margin:4px 0 0}
-.d-teste{font:15px/1.5 var(--sistema);margin:2px 0 4px}
-.d-teste>summary{cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:2px}
-.d-teste p{margin:6px 0 0}
-.d-teste .d-lim{color:var(--meta);font-size:14px}
 
 .perg{padding-top:28px;padding-bottom:40px}
 .perg>*{max-width:700px}
@@ -330,21 +315,15 @@ details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
 
 </section>
 
-<section id="agora">
-<h2>O que está em jogo agora</h2>
-<div class="agora"><p class="quando">Atualizado em 7/11/2026</p><p>Em 4/11, o Banco Central manteve a Selic em 13,75% ao ano e parou os cortes que fazia desde março. Na mesma época, os bancos passaram a esperar inflação de 5,0% em 12 meses, acima do <a class="termo" href="https://pt.wikipedia.org/wiki/Metas_de_infla%C3%A7%C3%A3o" target="_blank" rel="noopener">teto da meta</a>, de 4,5%, quando em julho esperavam 4,2%. O Banco Central decide o juro de novo em 9/12, e a decisão vai mostrar se a pausa continua.</p><p class="d-fontes">Fontes: <a href="https://www.bcb.gov.br/api/servico/sitebcb/copom/comunicados_detalhes?nro_reuniao=282" rel="nofollow noopener">Banco Central (comunicado do Copom)</a>; <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432" rel="nofollow noopener">Banco Central</a>; Calendários do IBGE e do Banco Central</p></div>
-</section>
 
-<section id="fatos">
-<h2>Os fatos do dia sobre isso</h2>
-<ul class="fatos"><li><span class="dia">6/11</span><a href="/2026-11-06/">Indústria produz 0,8% menos em setembro, quarta queda em cinco meses</a></li><li><span class="dia">5/11</span><a href="/2026-11-05/">Banco Central para de cortar o juro e mantém a Selic em 13,75%</a></li></ul>
-</section>
+
+
 
 
 
 <details class="conferimos" id="fontes">
 <summary>Como conferimos esta página</summary>
-<p>Cada frase da página está ligada à fonte e ao trecho que a sustenta. 22 das 32 fontes já tiveram o trecho achado no texto original. As outras estão marcadas "a conferir".</p>
+<p>Cada frase da página está ligada à fonte e ao trecho que a sustenta. 20 das 29 fontes já tiveram o trecho achado no texto original. As outras estão marcadas "a conferir".</p>
 <h3>As fontes</h3>
 <ol class="lista-fontes">
 <li><a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432" rel="nofollow noopener">Banco Central</a>. <span class="nv">Órgão oficial; número conferido com os dados do site.</span></li>
@@ -376,9 +355,6 @@ details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
 <li><a href="https://ideas.repec.org/p/bcb/wpaper/331.html" rel="nofollow noopener">Machado e Portugal (Banco Central)</a>, Measuring Inflation Persistence in Brazil Using a Multivariate Model, Working Paper 331. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
 <li><a href="https://iepecdg.com.br/wp-content/uploads/2016/03/TPD2IEPE.pdf" rel="nofollow noopener">Persio Arida, Edmar Bacha e André Lara-Resende</a>, Credit, Interest, and Jurisdictional Uncertainty: Conjectures on the Case of Brazil (Arida, Bacha e Lara-Resende; cap. 8 de Inflation Targeting, Debt, and the Brazilian Experience, MIT Press, 2005; versão IEPE/Casa das Garças TPD 02). <span class="nv">Estudo em revista científica; trecho conferido no texto da fonte.</span></li>
 <li><a href="https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015" rel="nofollow noopener">Fernando Gonçalves, Márcio Holland e Andrei Spacov</a>, Can jurisdictional uncertainty and capital controls explain the high level of real interest rates in Brazil? Evidence from panel data (Revista Brasileira de Economia, v. 61, n. 1). <span class="nv">Estudo em revista científica; trecho conferido no texto da fonte.</span></li>
-<li><a href="https://www.bcb.gov.br/api/servico/sitebcb/copom/comunicados_detalhes?nro_reuniao=282" rel="nofollow noopener">Banco Central (comunicado do Copom)</a>, 282ª reunião - Copom mantém a taxa Selic em 13,75% a.a. (comunicado oficial do Copom, 04/11/2026). <span class="nv">Órgão oficial; trecho conferido no texto da fonte.</span></li>
-<li><a href="https://www.bcb.gov.br/controleinflacao/metainflacao" rel="nofollow noopener">Banco Central</a>, Metas para a inflação. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
-<li>Calendários do IBGE e do Banco Central. <span class="nv">Órgão oficial; trecho conferido no site.</span></li>
 
 </ol>
 <h3>O que mudou nesta página</h3>

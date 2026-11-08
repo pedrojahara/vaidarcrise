@@ -40,6 +40,10 @@ LIMITES = {
     "mes": "resumo do mês: título de até 70 caracteres; abertura, de 1 a 3 parágrafos de história e 1 a 2 de fecho; "
            "até 300 palavras (a tabela das cinco pressões é feita por código e não entra no texto)",
     "texto": "texto à mão: mesmo tamanho ou menor, com os mesmos títulos de seção, links e lista",
+    "fundo": "leitura a fundo do fato do dia (src/fundo.py e FUNDO.md): título de até 110 caracteres, afirmativo e sem "
+             "dois-pontos; texto corrido de 800 a 1.500 palavras, com até 3 intertítulos em linhas que começam com '### ', "
+             "cada um uma frase; parágrafos separados por linha em branco. Mantenha cada marca [c3] logo depois da frase "
+             "que usa a linha do caderno, sem criar marca nova. Não junte nem separe partes: mexa nas frases",
 }
 
 SISTEMA = """Você é o editor do blog vaidarcrise.com.br. Um redator escreveu o rascunho abaixo, e o seu trabalho é deixá-lo pronto para publicar no estilo do site, que está no guia entre <guia> e </guia>. Leia o rascunho como a leitora do guia: no celular, com pouco tempo, gostando de política e sem ter estudado economia.
@@ -73,6 +77,9 @@ def esquema(tipo: str) -> dict:
     if tipo == "texto":
         base = {"type": "object", "additionalProperties": False, "required": ["texto"],
                 "properties": {"texto": {"type": "string", "maxLength": 20000}}}
+    elif tipo == "fundo":
+        base = {"type": "object", "additionalProperties": False, "required": ["titulo", "texto"],
+                "properties": {"titulo": {"type": "string", "maxLength": 140}, "texto": {"type": "string", "maxLength": 16000}}}
     else:
         import escreve_post
         base = copy.deepcopy(escreve_post.SCHEMAS[tipo])
@@ -93,7 +100,8 @@ def editar(rascunho: dict, tipo: str, dados: str | None = None, problemas: list[
     if problemas:
         partes.append("Problemas que o verificador achou no rascunho:\n- " + "\n- ".join(problemas))
     partes.append("Edite o rascunho conforme o guia e devolva o JSON do esquema: as sugestões e o texto editado.")
-    r = classify_news.chamar_claude(SISTEMA.format(limites=LIMITES[tipo]), "\n\n".join(partes), esquema(tipo), budget_usd)
+    r = classify_news.chamar_claude(SISTEMA.format(limites=LIMITES[tipo]), "\n\n".join(partes), esquema(tipo), budget_usd,
+                                   etapa="editor")
     if not r["ok"]:
         return {"ok": False, "saida": None, "sugestoes": [], "meta": r["meta"]}
     saida = dict(r["saida"])
