@@ -1,0 +1,2654 @@
+{
+ "id": "2026-11-08T0630",
+ "gerado_em": "2026-11-08T06:30:09-03:00",
+ "regras": {
+  "config_sha256": "3961257b23651f9216b3eaa580f10506b58a3769562f82dc5b8560beee9c6391",
+  "calibracao_sha256": "ab5bbe84015e98569d4cda4d53ee9fdcb465909d6484cfd9205fa792c2bf98b3"
+ },
+ "insumos": {
+  "indicadores_coletados_em": "2026-11-08T06:30:32-03:00",
+  "erros_coleta": [],
+  "pib": [
+   {
+    "trimestre": "1T23",
+    "periodo": "202301",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T23",
+    "periodo": "202302",
+    "var_qoq": 0.8
+   },
+   {
+    "trimestre": "3T23",
+    "periodo": "202303",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T23",
+    "periodo": "202304",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "1T24",
+    "periodo": "202401",
+    "var_qoq": 0.7
+   },
+   {
+    "trimestre": "2T24",
+    "periodo": "202402",
+    "var_qoq": 1.7
+   },
+   {
+    "trimestre": "3T24",
+    "periodo": "202403",
+    "var_qoq": 0.9
+   },
+   {
+    "trimestre": "4T24",
+    "periodo": "202404",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "1T25",
+    "periodo": "202501",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T25",
+    "periodo": "202502",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "3T25",
+    "periodo": "202503",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T25",
+    "periodo": "202504",
+    "var_qoq": 0.2
+   },
+   {
+    "trimestre": "1T26",
+    "periodo": "202601",
+    "var_qoq": 1.1
+   },
+   {
+    "trimestre": "2T26",
+    "periodo": "202602",
+    "var_qoq": 0.5
+   }
+  ],
+  "focus": {
+   "PIB Total": [
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2026",
+     "Mediana": 1.7607,
+     "numeroRespondentes": 117
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2027",
+     "Mediana": 1.198,
+     "numeroRespondentes": 116
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2028",
+     "Mediana": 1.8,
+     "numeroRespondentes": 87
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2029",
+     "Mediana": 2.0,
+     "numeroRespondentes": 79
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2030",
+     "Mediana": 2.0,
+     "numeroRespondentes": 77
+    }
+   ],
+   "IPCA": [
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2026",
+     "Mediana": 5.2166,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2027",
+     "Mediana": 4.7646,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2028",
+     "Mediana": 4.0,
+     "numeroRespondentes": 131
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2029",
+     "Mediana": 3.98,
+     "numeroRespondentes": 121
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2030",
+     "Mediana": 3.815,
+     "numeroRespondentes": 112
+    }
+   ],
+   "Selic": [
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2026",
+     "Mediana": 13.5,
+     "numeroRespondentes": 143
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2027",
+     "Mediana": 12.5,
+     "numeroRespondentes": 143
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2028",
+     "Mediana": 11.0,
+     "numeroRespondentes": 125
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2029",
+     "Mediana": 10.25,
+     "numeroRespondentes": 114
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2030",
+     "Mediana": 10.0,
+     "numeroRespondentes": 111
+    }
+   ],
+   "Câmbio": [
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2026",
+     "Mediana": 5.3428,
+     "numeroRespondentes": 120
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2027",
+     "Mediana": 5.4,
+     "numeroRespondentes": 119
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2028",
+     "Mediana": 5.4,
+     "numeroRespondentes": 93
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2029",
+     "Mediana": 5.45,
+     "numeroRespondentes": 89
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2030",
+     "Mediana": 5.5,
+     "numeroRespondentes": 86
+    }
+   ],
+   "IPCA 12m": {
+    "Data": "2026-10-30",
+    "Mediana": 4.9553,
+    "numeroRespondentes": 132
+   }
+  },
+  "noticias": {
+   "coletado_em": "2026-11-08T09:30:09+00:00",
+   "janela_horas": 32,
+   "por_veiculo": {
+    "Poder360": 23,
+    "Valor": 25,
+    "Gazeta do Povo": 3,
+    "Folha": 16,
+    "InfoMoney": 24,
+    "Estadão": 3,
+    "g1": 9
+   },
+   "status_fontes": {
+    "Agência Brasil": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 2
+    },
+    "Folha": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 35
+    },
+    "Estadão": {
+     "http": 200,
+     "itens_no_feed": 20,
+     "na_janela": 20
+    },
+    "Valor": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 50
+    },
+    "InfoMoney": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Poder360": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Gazeta do Povo": {
+     "http": 200,
+     "itens_no_feed": 24,
+     "na_janela": 6
+    },
+    "g1": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 20
+    },
+    "GDELT": {
+     "http": 200,
+     "erro": "The specified phrase is too short.\n"
+    }
+   },
+   "n_itens": 103
+  }
+ },
+ "cobertura": {
+  "dias": [
+   "2026-11-06",
+   "2026-11-07"
+  ],
+  "no_acervo": 103,
+  "na_cesta": 103,
+  "coletas_24h": 25
+ },
+ "llm": {
+  "ok": true,
+  "meta": {
+   "etapa": "classificar",
+   "modelo_pedido": "sonnet",
+   "prompt_sha256": "512e67859bfafdf8eda82252bfd994b9f58aa476c39f44974dc70d210c4f12b9",
+   "system_sha256": "c3b6409155899fd6f96db43598edea16fe596ff3f384ed8679337fc7566b3e23",
+   "returncode": 0,
+   "is_error": false,
+   "custo_usd": 0.11788399999999999,
+   "turnos": 2,
+   "duracao_s": 18,
+   "modelos": [
+    "claude-sonnet-5-5"
+   ],
+   "permission_denials": [],
+   "session_id": "5140c2ab-24dd-4b8d-ab67-e7e490134ed4"
+  },
+  "saida": {
+   "eventos": [
+    {
+     "noticia_ids": [
+      "n060",
+      "n061"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Governo planeja 113 leilões e R$ 470 bi em investimentos até 2030",
+     "estagio": "anuncio",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "fator": "atividade",
+     "direcao": -1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Rodovias, ferrovias, portos e linhas de energia leiloados para empresas privadas geram obras e empregos nos próximos anos, o que sustenta a atividade. O efeito depende de os leilões saírem no prazo."
+    },
+    {
+     "noticia_ids": [
+      "n004",
+      "n009"
+     ],
+     "outras_ids": [
+      "n005"
+     ],
+     "titulo_evento": "Mercado prevê PIB de 0,5% e IPCA de 6,1% em 2027, e vê risco de recessão",
+     "estagio": "previsao",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "fator": "atividade",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261107-01",
+     "porque": "Bancos e consultorias esperam economia parada e preços subindo mais rápido, porque o dólar mais caro e o juro alto pesam sobre empresas e famílias. A previsão repete o que outros bancos já tinham divulgado."
+    },
+    {
+     "noticia_ids": [
+      "n093",
+      "n091",
+      "n047"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Medida provisória fixa imposto seletivo sobre carro, bebida e cigarro em fevereiro",
+     "estagio": "decidido",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "fator": "juro",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261106-06",
+     "porque": "O governo publicou as regras do imposto que encarece carros a diesel, bebidas e cigarros a partir de fevereiro de 2027, e os preços desses produtos sobem para o consumidor."
+    },
+    {
+     "noticia_ids": [
+      "n042"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Exportações crescem 20% em outubro, puxadas pelo petróleo",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "fator": "externo",
+     "direcao": -1,
+     "magnitude": 1,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261107-02",
+     "porque": "O Brasil vendeu mais petróleo para outros países e o saldo com o exterior ficou maior, o que traz dólares e ajuda a sustentar a atividade."
+    }
+   ]
+  }
+ },
+ "eventos_novos": [
+  "ev-20261108-01"
+ ],
+ "eventos_descartados": [
+  {
+   "noticia_ids": [
+    "n004",
+    "n009"
+   ],
+   "outras_ids": [
+    "n005"
+   ],
+   "titulo_evento": "Mercado prevê PIB de 0,5% e IPCA de 6,1% em 2027, e vê risco de recessão",
+   "estagio": "previsao",
+   "chance_aprovacao": null,
+   "origem": "dados",
+   "fator": "atividade",
+   "direcao": 1,
+   "magnitude": 1,
+   "ja_no_preco": true,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261107-01",
+   "porque": "Bancos e consultorias esperam economia parada e preços subindo mais rápido, porque o dólar mais caro e o juro alto pesam sobre empresas e famílias. A previsão repete o que outros bancos já tinham divulgado.",
+   "motivo": "mesmo fato do evento ev-20261107-01",
+   "fontes": [
+    {
+     "veiculo": "Gazeta do Povo",
+     "titulo": "Mercado prevê estagflação em 2027 e cenário parecido com o da era Dilma",
+     "url": "https://www.gazetadopovo.com.br/economia/mercado-preve-estagflacao-em-2027-e-cenario-parecido-com-o-da-era-dilma/",
+     "publicado_em": "2026-11-08T00:32+00:00"
+    },
+    {
+     "veiculo": "Folha",
+     "titulo": "Risco de recessão no Brasil ganha força para 2027",
+     "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/risco-de-recessao-no-brasil-ganha-forca-para-2027.shtml",
+     "publicado_em": "2026-11-07T23:00-03:00"
+    }
+   ]
+  },
+  {
+   "noticia_ids": [
+    "n093",
+    "n091",
+    "n047"
+   ],
+   "outras_ids": [],
+   "titulo_evento": "Medida provisória fixa imposto seletivo sobre carro, bebida e cigarro em fevereiro",
+   "estagio": "decidido",
+   "chance_aprovacao": null,
+   "origem": "politica",
+   "fator": "juro",
+   "direcao": 1,
+   "magnitude": 1,
+   "ja_no_preco": true,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261106-06",
+   "porque": "O governo publicou as regras do imposto que encarece carros a diesel, bebidas e cigarros a partir de fevereiro de 2027, e os preços desses produtos sobem para o consumidor.",
+   "motivo": "mesmo fato do evento ev-20261106-06",
+   "fontes": [
+    {
+     "veiculo": "g1",
+     "titulo": "‘Imposto do pecado’: veículos a diesel são os mais prejudicados; veja o que pesa em cada tipo de carro",
+     "url": "https://g1.globo.com/carros/noticia/2026/11/07/imposto-do-pecado-carro-diesel.ghtml",
+     "publicado_em": "2026-11-07T08:00+00:00"
+    },
+    {
+     "veiculo": "InfoMoney",
+     "titulo": "Do diesel ao elétrico: quem vai pagar mais Imposto Seletivo em 2027",
+     "url": "https://www.infomoney.com.br/minhas-financas/do-diesel-ao-eletrico-quem-vai-pagar-mais-imposto-seletivo-em-2027/",
+     "publicado_em": "2026-11-07T08:00+00:00"
+    },
+    {
+     "veiculo": "g1",
+     "titulo": "'Imposto do pecado' não é invenção brasileira: álcool e tabaco são taxados nos 38 países da OCDE, grupo de nações ricas",
+     "url": "https://g1.globo.com/economia/noticia/2026/11/07/imposto-do-pecado-nao-e-invencao-brasileira-alcool-e-tabaco-sao-taxados-nos-38-paises-da-ocde-grupo-de-nacoes-ricas.ghtml",
+     "publicado_em": "2026-11-07T15:13+00:00"
+    }
+   ]
+  },
+  {
+   "noticia_ids": [
+    "n042"
+   ],
+   "outras_ids": [],
+   "titulo_evento": "Exportações crescem 20% em outubro, puxadas pelo petróleo",
+   "estagio": "dado",
+   "chance_aprovacao": null,
+   "origem": "dados",
+   "fator": "externo",
+   "direcao": -1,
+   "magnitude": 1,
+   "ja_no_preco": true,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261107-02",
+   "porque": "O Brasil vendeu mais petróleo para outros países e o saldo com o exterior ficou maior, o que traz dólares e ajuda a sustentar a atividade.",
+   "motivo": "mesmo fato do evento ev-20261107-02",
+   "fontes": [
+    {
+     "veiculo": "Valor",
+     "titulo": "Exportações crescem 20% em outubro, puxadas pelo petróleo",
+     "url": "https://valor.globo.com/brasil/noticia/2026/11/07/exportaes-crescem-20-pontos-percentuais-em-outubro-puxadas-pelo-petrleo.ghtml",
+     "publicado_em": "2026-11-07T15:56+00:00"
+    }
+   ]
+  }
+ ],
+ "resultado": {
+  "nivel": {
+   "indice": 2,
+   "nome": "Normal",
+   "anterior": 2,
+   "bruto": 2,
+   "nome_bruto": "Normal"
+  },
+  "gar": {
+   "entradas": [
+    {
+     "id": "tendencia",
+     "fator": "atividade",
+     "nome": "Crescimento médio em 10 anos",
+     "unidade": "%",
+     "valor": 1.7328366710913756,
+     "ref": "2T2026",
+     "referencia": 2.4697807384106563,
+     "coef": -0.20407155569770025,
+     "faixa_normal": [
+      1.2052,
+      3.3021
+     ],
+     "escala": [
+      0.3054,
+      3.9289
+     ],
+     "efeito": 0.15038932228003635
+    },
+    {
+     "id": "crescimento",
+     "fator": "atividade",
+     "nome": "Crescimento em 12 meses",
+     "unidade": "%",
+     "valor": 1.3821346612817385,
+     "ref": "2026-08",
+     "referencia": 2.029441313073013,
+     "coef": 0.2281557601628648,
+     "faixa_normal": [
+      0.4274,
+      4.1388
+     ],
+     "escala": [
+      -6.2893,
+      9.267
+     ],
+     "efeito": -0.14768674119791708
+    },
+    {
+     "id": "juro",
+     "fator": "juro",
+     "nome": "Selic: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -1.25,
+     "ref": "2026-11-08",
+     "nivel": 13.75,
+     "antes": 15.0,
+     "referencia": -0.375,
+     "coef": -0.1473323685958321,
+     "faixa_normal": [
+      -3.0,
+      2.0
+     ],
+     "escala": [
+      -6.31,
+      8.655
+     ],
+     "efeito": 0.12891582252135309
+    },
+    {
+     "id": "inflacao",
+     "fator": "juro",
+     "nome": "Inflação: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -0.5899999999999999,
+     "ref": "2026-09",
+     "nivel": 4.58,
+     "antes": 5.17,
+     "referencia": -0.06499999999999995,
+     "coef": -0.12500236363708112,
+     "faixa_normal": [
+      -1.665,
+      1.3725
+     ],
+     "escala": [
+      -8.2538,
+      6.2048
+     ],
+     "efeito": 0.06562624090946757
+    }
+   ],
+   "ruim": -0.49423883953664693,
+   "cenario_ruim": -1.7876180427753297,
+   "cenario_normal": -1.8914573730774542,
+   "cortes": [
+    -2.253090277294695,
+    -1.094150109523146,
+    -0.07323292299512922,
+    0.7382055828202851
+   ],
+   "ref_pib": "2T2026"
+  },
+  "indicadores": [
+   {
+    "id": "ibcbr",
+    "fator": "atividade",
+    "nome": "IBC-Br",
+    "unidade": "%",
+    "definicao": "IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores.",
+    "direcao": -1,
+    "faixa_normal": [
+     -0.178879,
+     1.409462
+    ],
+    "escala": [
+     -3.422733,
+     3.418644
+    ],
+    "valor": -0.6424554746393363,
+    "ref": "2026-08",
+    "situacao": "pior"
+   },
+   {
+    "id": "focus_pib",
+    "fator": "atividade",
+    "nome": "PIB esperado pelo Focus",
+    "unidade": "%",
+    "definicao": "Crescimento do PIB esperado para os próximos 12 meses: mediana do Focus para o ano corrente e o seguinte, ponderada pelos meses que faltam em cada um.",
+    "direcao": -1,
+    "faixa_normal": [
+     1.617708,
+     3.499375
+    ],
+    "escala": [
+     -2.139717,
+     5.282417
+    ],
+    "valor": 1.2917833333333333,
+    "ref": "2026-10-30",
+    "ano": 1.7607,
+    "ano_seguinte": 1.198,
+    "situacao": "pior"
+   },
+   {
+    "id": "juro_real",
+    "fator": "juro",
+    "nome": "Juro real",
+    "unidade": "% ao ano",
+    "definicao": "Selic meta (BCB 432) descontada da inflação esperada para 12 meses (Focus, suavizada): (1 + Selic) / (1 + inflação esperada) − 1.",
+    "direcao": 1,
+    "faixa_normal": [
+     4.062007,
+     9.133549
+    ],
+    "escala": [
+     -1.195693,
+     14.660898
+    ],
+    "valor": 8.37947202285163,
+    "ref": "2026-11-08",
+    "selic": 13.75,
+    "inflacao_esperada": 4.9553,
+    "focus_data": "2026-10-30",
+    "situacao": "normal"
+   },
+   {
+    "id": "comprometimento",
+    "fator": "credito",
+    "nome": "Renda comprometida com dívidas",
+    "unidade": "p.p.",
+    "definicao": "Comprometimento de renda das famílias com dívidas, dessazonalizado (BCB 29034), menos a média dos 36 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.268333,
+     1.686944
+    ],
+    "escala": [
+     -1.879444,
+     3.762167
+    ],
+    "valor": 1.8797222222222203,
+    "ref": "2026-08",
+    "nivel": 28.99,
+    "situacao": "pior"
+   },
+   {
+    "id": "tesouro",
+    "fator": "mercado",
+    "nome": "Juro do Tesouro IPCA+",
+    "unidade": "p.p.",
+    "definicao": "Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (Tesouro Direto, venda pela manhã) menos a sua mediana nos 3 anos anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.95,
+     0.845
+    ],
+    "escala": [
+     -2.2292,
+     2.1344
+    ],
+    "valor": 0.5899999999999999,
+    "ref": "2026-11-06",
+    "nivel": 7.99,
+    "mediana": 7.4,
+    "vencimento": "2035-05-15",
+    "situacao": "normal"
+   },
+   {
+    "id": "dolar",
+    "fator": "mercado",
+    "nome": "Dólar",
+    "unidade": "%",
+    "definicao": "Variação do dólar PTAX (BCB 1) em 3 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -4.151625,
+     5.11632
+    ],
+    "escala": [
+     -14.383365,
+     27.223675
+    ],
+    "valor": 7.832683223239312,
+    "ref": "2026-11-06",
+    "nivel": 5.5013,
+    "situacao": "pior"
+   },
+   {
+    "id": "divida",
+    "fator": "contas",
+    "nome": "Dívida pública",
+    "unidade": "p.p. do PIB",
+    "definicao": "Variação da dívida bruta do governo geral (BCB 13762) em 12 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -1.74,
+     4.22
+    ],
+    "escala": [
+     -8.4312,
+     10.7912
+    ],
+    "valor": 5.090000000000003,
+    "ref": "2026-09",
+    "nivel": 82.93,
+    "situacao": "pior"
+   },
+   {
+    "id": "sahm",
+    "fator": "emprego",
+    "nome": "Regra de Sahm",
+    "unidade": "p.p.",
+    "definicao": "Média de 3 meses da desocupação da PNAD Contínua (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.066667,
+     1.433333
+    ],
+    "escala": [
+     -0.526667,
+     3.126667
+    ],
+    "valor": 0.033333333333333215,
+    "ref": "2026-09",
+    "nivel": 5.2,
+    "situacao": "normal"
+   },
+   {
+    "id": "commodities",
+    "fator": "externo",
+    "nome": "Preço das commodities",
+    "unidade": "%",
+    "definicao": "Variação em 6 meses do índice de preços de todas as commodities do FMI (FRED PALLFNFINDEXM).",
+    "direcao": -1,
+    "faixa_normal": [
+     -4.196915,
+     13.721388
+    ],
+    "escala": [
+     -28.018093,
+     30.645307
+    ],
+    "valor": 1.6727586354593926,
+    "ref": "2026-09",
+    "nivel": 222.4285486100514,
+    "situacao": "normal"
+   }
+  ],
+  "fatores": [
+   {
+    "id": "atividade",
+    "nome": "Ritmo da economia",
+    "indicadores": [
+     "ibcbr",
+     "focus_pib"
+    ],
+    "entradas": [
+     "tendencia",
+     "crescimento"
+    ],
+    "na_conta": true,
+    "efeito": 0.0027025810821192653,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "juro",
+    "nome": "Juro e inflação",
+    "indicadores": [
+     "juro_real"
+    ],
+    "entradas": [
+     "juro",
+     "inflacao"
+    ],
+    "na_conta": true,
+    "efeito": 0.19454206343082064,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   },
+   {
+    "id": "credito",
+    "nome": "Dívidas das famílias",
+    "indicadores": [
+     "comprometimento"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "mercado",
+    "nome": "Desconfiança de quem investe",
+    "indicadores": [
+     "tesouro",
+     "dolar"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "contas",
+    "nome": "Contas do governo",
+    "indicadores": [
+     "divida"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "emprego",
+    "nome": "Emprego",
+    "indicadores": [
+     "sahm"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   },
+   {
+    "id": "externo",
+    "nome": "Economia lá fora",
+    "indicadores": [
+     "commodities"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   }
+  ],
+  "gatilhos": [
+   {
+    "id": "crescimento",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": -1.2472588265629843,
+    "hoje": 1.3821346612817385
+   },
+   {
+    "id": "juro",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": 2.8218226123968666,
+    "hoje": -1.25
+   },
+   {
+    "id": "inflacao",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": 4.209199411366487,
+    "hoje": -0.5899999999999999
+   },
+   {
+    "id": "crescimento",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": 3.2273912361803534,
+    "hoje": 1.3821346612817385
+   },
+   {
+    "id": "juro",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": -4.107524931920681,
+    "hoje": -1.25
+   },
+   {
+    "id": "inflacao",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": -3.957983646803852,
+    "hoje": -0.5899999999999999
+   }
+  ],
+  "reaproveitados": [],
+  "faltando": [],
+  "direcao": {
+   "estado": "subindo",
+   "desde": "2026-06",
+   "soma": 4,
+   "bruto": "subindo",
+   "pendente": null,
+   "apertaram": 4,
+   "folgaram": 0,
+   "partes": [
+    {
+     "id": "contas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "divida": {
+       "agora": 82.93,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 81.95,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 0.980000000000004,
+       "corte": 0.9451499999999999,
+       "lado": 1,
+       "como": "pontos"
+      },
+      "primario": {
+       "agora": 0.52,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 1.19,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.6699999999999999,
+       "corte": 0.311325,
+       "lado": -1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "divida_bruta",
+      "valor": 82.93,
+      "ref": "2026-09",
+      "desde": "2006",
+      "meses": 238,
+      "pior_que_pct": 96,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "parcelas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "parcelas": {
+       "agora": 28.99,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 28.47,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": 0.5199999999999996,
+       "corte": 0.378075,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "comprometimento_renda",
+      "valor": 28.99,
+      "ref": "2026-08",
+      "desde": "2005",
+      "meses": 258,
+      "pior_que_pct": 100,
+      "recorde_ruim": true,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "mercado",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "dolar": {
+       "agora": 5.5013,
+       "dia": "2026-11-06",
+       "ref": "2026-11",
+       "antes": 5.1816,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 6.169908908445243,
+       "corte": 4.765725,
+       "lado": 1,
+       "como": "pct"
+      },
+      "juro_longo": {
+       "agora": 7.99,
+       "dia": "2026-11-06",
+       "ref": "2026-11",
+       "antes": 7.92,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 0.07000000000000028,
+       "corte": 0.43365000000000004,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "juro_real_longo",
+      "valor": 7.99,
+      "ref": "2026-11",
+      "desde": "2005",
+      "meses": 257,
+      "pior_que_pct": 91,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "inflacao",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "inflacao": {
+       "agora": 4.9553,
+       "dia": "2026-10-30",
+       "ref": "2026-10",
+       "antes": 4.1883,
+       "dia_antes": "2026-07-31",
+       "ref_antes": "2026-07",
+       "mudanca": 0.7670000000000003,
+       "corte": 0.316875,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "focus_ipca_12m",
+      "valor": 4.9553,
+      "ref": "2026-10",
+      "desde": "2001",
+      "meses": 299,
+      "pior_que_pct": 53,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "juro",
+     "lado": 0,
+     "na_soma": true,
+     "medidas": {
+      "juro": {
+       "agora": 13.75,
+       "dia": "2026-11-08",
+       "ref": "2026-11",
+       "antes": 14.0,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": -0.25,
+       "corte": 0.833925,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "juro_real",
+      "valor": 8.37947202285163,
+      "ref": "2026-10",
+      "desde": "2002",
+      "meses": 298,
+      "pior_que_pct": 68,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "ritmo",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "ritmo": {
+       "agora": 110.40624,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 111.25061,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": -0.6424554746393252,
+       "corte": 0.88905,
+       "lado": 0,
+       "como": "media"
+      }
+     },
+     "folga": null
+    },
+    {
+     "id": "emprego",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "emprego": {
+       "agora": 5.2,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 5.4,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.20000000000000018,
+       "corte": 0.555975,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "desocupacao",
+      "valor": 5.2,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "reservas",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "reservas": {
+       "agora": 365019.0,
+       "dia": "2026-10-01",
+       "ref": "2026-10",
+       "antes": 369742.0,
+       "dia_antes": "2026-07-01",
+       "ref_antes": "2026-07",
+       "mudanca": -1.2773771981543836,
+       "corte": 2.97645,
+       "lado": 0,
+       "como": "pct"
+      }
+     },
+     "folga": null
+    }
+   ],
+   "mes": "2026-11",
+   "linha": [
+    {
+     "mes": "2004-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2005-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2005-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-01",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-02",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-03",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-04",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-11",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2020-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2021-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-11",
+     "estado": "S"
+    }
+   ]
+  }
+ },
+ "pressao": {
+  "fatores": {
+   "atividade": {
+    "saldo": -0.15,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261108-01"
+    ]
+   }
+  },
+  "saldo": -0.15,
+  "sentido": "igual",
+  "n": 1
+ },
+ "leituras": {
+  "fatores": {
+   "atividade": {
+    "fatos": [
+     {
+      "texto": "A economia cresceu 1,4% em um ano (prévia do PIB, de junho a agosto). O normal desde 2004 vai de 0,4% a 4,1%.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "A prévia do PIB caiu 0,6% no trimestre até agosto, contra os 3 meses anteriores. É a maior queda desde agosto de 2025.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "Os bancos (Focus) esperam alta de 1,8% do PIB em 2026 e alta de 1,2% em 2027.",
+      "fonte": "Focus"
+     }
+    ]
+   },
+   "juro": {
+    "fatos": [
+     {
+      "texto": "Os preços subiram 4,6% em um ano até setembro (IPCA). Um ano antes, a alta era de 5,2%: os preços sobem mais devagar.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "Descontada a inflação esperada (5,0%), a Selic de 13,75% rende 8,4% ao ano.",
+      "fonte": "BC e Focus"
+     },
+     {
+      "texto": "Selic em 13,75% desde 17/9. Antes, era 14%. Nos últimos 12 meses, chegou a 15%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "credito": {
+    "fatos": [
+     {
+      "texto": "29% da renda das famílias vai para parcelas e juros (agosto), o maior desde o início da série, em 2005. Um ano antes, eram 27,6%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "mercado": {
+    "fatos": [
+     {
+      "texto": "O governo paga 8,0% ao ano acima da inflação para pegar dinheiro até 2035 (6/11). É 0,6 ponto acima do normal dos últimos 3 anos.",
+      "fonte": "Tesouro Direto"
+     },
+     {
+      "texto": "Dólar a R$ 5,50 em 6/11, 7,8% mais caro que no começo de agosto.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "contas": {
+    "fatos": [
+     {
+      "texto": "Dívida do governo em 82,9% do PIB (setembro). Subiu 5,1 pontos em um ano.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "União, estados e municípios gastaram 0,5% do PIB a mais do que arrecadaram nos 12 meses até setembro, sem contar juros. Um ano antes, eram 0,3%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "emprego": {
+    "fatos": [
+     {
+      "texto": "Desemprego em 5,2% no trimestre até setembro. O menor desde 2012 foi 5,1%, em dezembro de 2025.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "O desemprego médio de 3 meses está igual ao menor do último ano.",
+      "fonte": "IBGE"
+     }
+    ]
+   },
+   "externo": {
+    "fatos": [
+     {
+      "texto": "Soja, minério, petróleo e outros produtos básicos ficaram 1,7% mais caros em 6 meses até setembro (FMI).",
+      "fonte": "FMI"
+     }
+    ]
+   }
+  }
+ },
+ "anterior": "2026-11-07T0630",
+ "revisao_texto": {
+  "classificacao": [
+   "título com 82 caracteres: Medida provisória fixa imposto seletivo sobre carro, bebida "
+  ]
+ },
+ "pauta": {
+  "versao": 1,
+  "candidatos": [
+   {
+    "id": "E1",
+    "ordem": 1,
+    "evento": "ev-20261108-01",
+    "titulo": "Governo planeja 113 leilões e R$ 470 bi em investimentos até 2030",
+    "estagio": "anuncio",
+    "tamanho": 1,
+    "fator": "atividade",
+    "origem": "politica",
+    "assunto": "Ritmo da economia",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "Rodovias, ferrovias, portos e linhas de energia leiloados para empresas privadas geram obras e empregos nos próximos anos, o que sustenta a atividade. O efeito depende de os leilões saírem no prazo.",
+    "n_manchetes": 2,
+    "jornais": [
+     "Poder360"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Governo projeta 113 leilões e ao menos R$ 470 bi em investimentos até 2030",
+      "url": "https://www.poder360.com.br/poder-energia/governo-projeta-113-leiloes-e-ao-menos-r-470-bi-em-investimentos-ate-2030/",
+      "publicado_em": "2026-11-07T13:00+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Governo planeja 113 leilões e R$ 470 bi em investimentos até 2030",
+      "url": "https://www.poder360.com.br/poder-infra/governo-projeta-113-leiloes-e-ao-menos-r-470-bi-em-investimentos-ate-2030/",
+      "publicado_em": "2026-11-07T13:00+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E2",
+    "ordem": 2,
+    "evento": null,
+    "titulo": "Mercado prevê PIB de 0,5% e IPCA de 6,1% em 2027, e vê risco de recessão",
+    "estagio": "previsao",
+    "tamanho": 1,
+    "fator": "atividade",
+    "origem": "dados",
+    "assunto": "Ritmo da economia",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "Bancos e consultorias esperam economia parada e preços subindo mais rápido, porque o dólar mais caro e o juro alto pesam sobre empresas e famílias. A previsão repete o que outros bancos já tinham divulgado.",
+    "n_manchetes": 3,
+    "jornais": [
+     "Folha",
+     "Gazeta do Povo"
+    ],
+    "descartado": "mesmo fato do evento ev-20261107-01",
+    "fontes": [
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Mercado prevê estagflação em 2027 e cenário parecido com o da era Dilma",
+      "url": "https://www.gazetadopovo.com.br/economia/mercado-preve-estagflacao-em-2027-e-cenario-parecido-com-o-da-era-dilma/",
+      "publicado_em": "2026-11-08T00:32+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Risco de recessão no Brasil ganha força para 2027",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/risco-de-recessao-no-brasil-ganha-forca-para-2027.shtml",
+      "publicado_em": "2026-11-07T23:00-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E3",
+    "ordem": 3,
+    "evento": null,
+    "titulo": "Medida provisória fixa imposto seletivo sobre carro, bebida e cigarro em fevereiro",
+    "estagio": "decidido",
+    "tamanho": 1,
+    "fator": "juro",
+    "origem": "politica",
+    "assunto": "Juro e inflação",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "O governo publicou as regras do imposto que encarece carros a diesel, bebidas e cigarros a partir de fevereiro de 2027, e os preços desses produtos sobem para o consumidor.",
+    "n_manchetes": 3,
+    "jornais": [
+     "InfoMoney",
+     "g1"
+    ],
+    "descartado": "mesmo fato do evento ev-20261106-06",
+    "fontes": [
+     {
+      "veiculo": "g1",
+      "titulo": "‘Imposto do pecado’: veículos a diesel são os mais prejudicados; veja o que pesa em cada tipo de carro",
+      "url": "https://g1.globo.com/carros/noticia/2026/11/07/imposto-do-pecado-carro-diesel.ghtml",
+      "publicado_em": "2026-11-07T08:00+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Do diesel ao elétrico: quem vai pagar mais Imposto Seletivo em 2027",
+      "url": "https://www.infomoney.com.br/minhas-financas/do-diesel-ao-eletrico-quem-vai-pagar-mais-imposto-seletivo-em-2027/",
+      "publicado_em": "2026-11-07T08:00+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "'Imposto do pecado' não é invenção brasileira: álcool e tabaco são taxados nos 38 países da OCDE, grupo de nações ricas",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/07/imposto-do-pecado-nao-e-invencao-brasileira-alcool-e-tabaco-sao-taxados-nos-38-paises-da-ocde-grupo-de-nacoes-ricas.ghtml",
+      "publicado_em": "2026-11-07T15:13+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E4",
+    "ordem": 4,
+    "evento": null,
+    "titulo": "Exportações crescem 20% em outubro, puxadas pelo petróleo",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "dados",
+    "assunto": "Economia lá fora",
+    "lado": "alivia",
+    "ja_esperado": true,
+    "porque": "O Brasil vendeu mais petróleo para outros países e o saldo com o exterior ficou maior, o que traz dólares e ajuda a sustentar a atividade.",
+    "n_manchetes": 1,
+    "jornais": [
+     "Valor"
+    ],
+    "descartado": "mesmo fato do evento ev-20261107-02",
+    "fontes": [
+     {
+      "veiculo": "Valor",
+      "titulo": "Exportações crescem 20% em outubro, puxadas pelo petróleo",
+      "url": "https://valor.globo.com/brasil/noticia/2026/11/07/exportaes-crescem-20-pontos-percentuais-em-outubro-puxadas-pelo-petrleo.ghtml",
+      "publicado_em": "2026-11-07T15:56+00:00"
+     }
+    ]
+   }
+  ],
+  "datas": [],
+  "pressoes_mudaram": [],
+  "estado": "subindo",
+  "estado_anterior": "subindo",
+  "degrau": 5,
+  "motivo": "a notícia de estágio mais firme e maior tamanho; no empate, a que não é o vaivém do mercado do dia e a que saiu em mais jornais",
+  "padrao": "E1",
+  "final": "E1",
+  "mesma_historia": [],
+  "cuidados": []
+ },
+ "post": {
+  "tipo": "semana",
+  "periodo": {
+   "de": "2026-11-02",
+   "ate": "2026-11-08",
+   "rodadas": 7,
+   "noticias": {
+    "de": "2026-11-01",
+    "ate": "2026-11-07",
+    "dias": 7,
+    "comeco": null,
+    "faltam": []
+   }
+  },
+  "ok": true,
+  "titulo": "Risco de recessão segue subindo, com juro parado e indústria em queda",
+  "paragrafos": [
+   "O risco de recessão segue subindo, como desde junho, e a semana mostrou o Banco Central parando de cortar o juro, a indústria em queda e o dólar a R$ 5,50.",
+   "Em 4/11, o Banco Central decidiu parar de cortar e manteve a Selic em 13,75% ao ano, já que os bancos (Focus) agora esperam preços subindo 5,22% em 2026. Com o juro parado, o crédito segue caro para pessoas e empresas, e a economia anda mais devagar.",
+   "A produção da indústria caiu 0,8% em setembro, segundo o IBGE em 5/11, e acumula queda de 4,1% desde maio. A queda veio de máquinas e equipamentos, o que mostra empresas investindo menos e pesa no PIB do terceiro trimestre.",
+   "O dólar está a R$ 5,50, 7,8% mais caro que no começo de agosto, o que encarece importados como trigo e café. O juro que o governo paga para pegar dinheiro emprestado por 10 anos está em 8,0%, 0,6 ponto acima do normal dos últimos 3 anos.",
+   "Os dados da semana confirmam o que vinha aparecendo desde julho: mais preços esperados, juro parado e dívida em alta, sem pressão que tenha melhorado.",
+   "Próxima semana, em 12/11, o IBGE divulga o IPCA de outubro, e esse dado importa porque mostra se os preços seguem subindo mais rápido, o que mantém o juro alto. Em 13/11 saem as vendas do varejo de setembro."
+  ],
+  "secoes": [
+   {
+    "paragrafos": [
+     "O risco de recessão segue subindo, como desde junho, e a semana mostrou o Banco Central parando de cortar o juro, a indústria em queda e o dólar a R$ 5,50."
+    ]
+   },
+   {
+    "itens": [
+     {
+      "rotulo": "Juro e inflação",
+      "texto": "Em 4/11, o Banco Central decidiu parar de cortar e manteve a Selic em 13,75% ao ano, já que os bancos (Focus) agora esperam preços subindo 5,22% em 2026. Com o juro parado, o crédito segue caro para pessoas e empresas, e a economia anda mais devagar."
+     },
+     {
+      "rotulo": "Ritmo da economia",
+      "texto": "A produção da indústria caiu 0,8% em setembro, segundo o IBGE em 5/11, e acumula queda de 4,1% desde maio. A queda veio de máquinas e equipamentos, o que mostra empresas investindo menos e pesa no PIB do terceiro trimestre."
+     },
+     {
+      "rotulo": "Desconfiança de quem investe",
+      "texto": "O dólar está a R$ 5,50, 7,8% mais caro que no começo de agosto, o que encarece importados como trigo e café. O juro que o governo paga para pegar dinheiro emprestado por 10 anos está em 8,0%, 0,6 ponto acima do normal dos últimos 3 anos."
+     }
+    ]
+   },
+   {
+    "paragrafos": [
+     "Os dados da semana confirmam o que vinha aparecendo desde julho: mais preços esperados, juro parado e dívida em alta, sem pressão que tenha melhorado.",
+     "Próxima semana, em 12/11, o IBGE divulga o IPCA de outubro, e esse dado importa porque mostra se os preços seguem subindo mais rápido, o que mantém o juro alto. Em 13/11 saem as vendas do varejo de setembro."
+    ]
+   }
+  ],
+  "problemas": [],
+  "edicao": {
+   "sugestoes": [
+    {
+     "trecho": "o juro que o governo paga para pegar dinheiro emprestado por 10 anos está em 8,0%, 0,6 ponto acima do normal dos últimos 3 anos.",
+     "problema": "Na primeira vez, o juro de 10 anos precisa dizer que é acima da inflação, senão 8,0% parece juro comum. Cabe dentro da frase, porque a Wikipédia não cobre.",
+     "como_fica": "O juro de 10 anos, que é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos, está em 8,0% ao ano, 0,6 ponto acima do normal dos últimos 3 anos."
+    },
+    {
+     "trecho": "Os dados da semana confirmam o que vinha aparecendo desde julho: mais preços esperados, juro parado e dívida em alta, sem pressão que tenha melhorado.",
+     "problema": "A frase não se entende sozinha: \"mais preços esperados\" e \"dívida em alta\" não dizem qual pressão piorou, e falta o mês da comparação. Guia: dizer o nome das coisas.",
+     "como_fica": "Se compararmos com julho, pioraram as contas do governo, as dívidas das famílias, a desconfiança de quem investe e a inflação esperada, e nenhuma pressão melhorou."
+    },
+    {
+     "trecho": "o Banco Central decidiu parar de cortar e manteve a Selic em 13,75% ao ano, já que os bancos (Focus) agora esperam preços subindo 5,22% em 2026.",
+     "problema": "O \"já que\" atribui ao Banco Central um motivo que os dados não trazem. O número também fica sem régua e a frase mistura duas ideias.",
+     "como_fica": "Em 4/11, o Banco Central parou de cortar e manteve a Selic em 13,75% ao ano. Um dia antes, os bancos (Focus) tinham subido para 5,22% a previsão de inflação de 2026, o que tende a manter o juro alto por mais tempo."
+    },
+    {
+     "trecho": "e o dólar a R$ 5,50.",
+     "problema": "Número sem comparação e sem o mês. A comparação está nos dados: começo de agosto.",
+     "como_fica": "e o dólar a R$ 5,50, mais caro que no começo de agosto."
+    },
+    {
+     "trecho": "Com o juro parado, o crédito segue caro para pessoas e empresas, e a economia anda mais devagar.",
+     "problema": "Falta dizer quem cobra caro. O guia pede quem faz o quê e para quem.",
+     "como_fica": "Com o juro parado, os bancos seguem cobrando caro das pessoas e das empresas, e a economia anda mais devagar."
+    },
+    {
+     "trecho": "Próxima semana, em 12/11, o IBGE divulga o IPCA de outubro, e esse dado importa porque mostra se os preços seguem subindo mais rápido, o que mantém o juro alto.",
+     "problema": "\"Subindo mais rápido\" não diz em relação a quê, e a frase fica comprida. O guia pede verbo que não engane.",
+     "como_fica": "Na próxima semana, em 12/11, o IBGE divulga o IPCA de outubro, que mostra se os preços seguem subindo. Se subirem mais rápido, o Banco Central tende a manter o juro alto."
+    }
+   ],
+   "aplicada": false,
+   "motivo": "o texto editado tinha mais problemas que o rascunho: parágrafo 1 com frase de 38 palavras; parágrafo 4 com frase de 37 palavras"
+  },
+  "meta": [
+   {
+    "etapa": "post",
+    "modelo_pedido": "sonnet",
+    "prompt_sha256": "fd2d573f0be2d160080d10b360d2c2a3a757fdfa9fed073389bcbf40a13ea673",
+    "system_sha256": "b9136aff0acf80abd7166f512043b483d0a312e256d917d33a453d507fb80063",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.096844,
+    "turnos": 2,
+    "duracao_s": 27,
+    "modelos": [
+     "claude-sonnet-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "67efe02d-7abf-436f-945e-4782bdbc7c0b"
+   },
+   {
+    "etapa": "editor",
+    "modelo_pedido": "sonnet",
+    "prompt_sha256": "7ab0817cd46398e25d3dda7cc239c1bb2615105e94e3014acf3b591516d8b384",
+    "system_sha256": "e49415babc2893a843d051746d8fa199d2b6f572205fd4fda711e60dca3d63ff",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.159188,
+    "turnos": 2,
+    "duracao_s": 29,
+    "modelos": [
+     "claude-sonnet-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "99c86966-63c6-4cf6-ab37-78e25ac8aba3"
+   }
+  ]
+ }
+}
