@@ -222,7 +222,7 @@ def ponte(post: dict, cfg: dict, assunto: str | None) -> dict | None:
     if not url:
         return None
     titulo = _partes_da_aba().get(url.split("#", 1)[-1]) if "#" in url else None
-    return {"url": url, "texto": titulo or "O que causa recessão", "rotulo": "O básico, na aba O que causa recessão",
+    return {"url": url, "texto": titulo or "O que causa recessão", "rotulo": "O básico, na página O que causa recessão",
             "aba": True}
 
 
