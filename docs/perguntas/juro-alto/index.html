@@ -130,6 +130,26 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe p{margin:0 0 8px;max-width:640px}
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
+/* Menu Grandes perguntas: uma página por pressão do topo (base/perguntas), aberto por toque, sem JavaScript. A lista
+   abre embaixo do menu inteiro, alinhada à esquerda, para caber no celular em qualquer linha em que o item caia. */
+.cab nav{position:relative}
+.menu-p{position:static}
+.menu-p summary{display:inline-flex;align-items:center;gap:3px;cursor:pointer;list-style:none;color:var(--link)}
+.menu-p summary::-webkit-details-marker{display:none}
+.menu-p summary span{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.menu-p summary:hover span{text-decoration-thickness:2px}
+.menu-p summary.atual{color:var(--tinta);font-weight:700}
+.menu-p summary.atual span{text-decoration:none}
+.menu-p .seta{width:14px;height:14px;flex:none;transition:transform .15s}
+.menu-p[open] .seta{transform:rotate(180deg)}
+.menu-p ul{position:absolute;left:0;top:calc(100% + 8px);z-index:20;width:min(380px,100%);margin:0;padding:4px 0;list-style:none;background:var(--papel);border:1px solid var(--fio);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.menu-p li+li{border-top:1px solid var(--fio)}
+.menu-p li a{display:block;padding:10px 14px;text-decoration:none;font:700 17px/1.35 var(--serifa);color:var(--link)}
+.menu-p li a:hover,.menu-p li a:focus-visible{text-decoration:underline}
+.menu-p li a[aria-current="page"]{color:var(--tinta)}
+.menu-p .pn{display:block;font:600 13px/1.3 var(--sistema);color:var(--meta);margin:0 0 2px}
+@media (min-width:900px){.menu-p{position:relative}.menu-p ul{width:380px}}
+@media (prefers-reduced-motion: reduce){.menu-p .seta{transition:none}}
 @media (max-width:620px){body{font-size:18px}.placa{width:72px;height:72px;margin:11px}.placa span{font-size:12.5px}.placa span b{font-size:22px}.placa span.longa{font-size:9.5px}.marca b{font-size:26px}.leitura .rot{font-size:20px}}
 /* rótulos e fontes que a página de cada pressão usa (src/base_site.py) */
 .rot{display:inline-block;font:600 12.5px/1.3 var(--sistema);padding:2px 8px;border-radius:999px;margin:0 0 6px;background:var(--maquina);color:var(--tinta)}
@@ -203,7 +223,7 @@ details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
 <header class="cab"><div class="in"><div class="faixa">
   <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
   <p class="linha-fina">Para onde vai o risco de recessão no Brasil, com dados todo dia.</p>
-  <nav aria-label="Seções"><a href="/">Hoje</a><a href="/causas/">O que causa recessão</a><a href="/nota/">Como funciona</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
+  <nav aria-label="Seções"><a href="/">Hoje</a><a href="/causas/">O que causa recessão</a><details class="menu-p"><summary class="atual"><span>Grandes perguntas</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul><li><a href="/perguntas/juro-alto/" aria-current="page"><span class="pn">Juro</span>Por que o juro do Brasil é tão alto?</a></li></ul></details><a href="/nota/">Como funciona</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
 </div></div></header>
 
 <main class="in perg">
@@ -315,15 +335,21 @@ details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
 
 </section>
 
+<section id="agora">
+<h2>O que está em jogo agora</h2>
+<div class="agora"><p class="quando">Atualizado em 7/11/2026</p><p>Em 4/11, o Banco Central manteve a Selic em 13,75% ao ano e parou os cortes que fazia desde março. Na mesma época, os bancos passaram a esperar inflação de 5,0% em 12 meses, acima do <a class="termo" href="https://pt.wikipedia.org/wiki/Metas_de_infla%C3%A7%C3%A3o" target="_blank" rel="noopener">teto da meta</a>, de 4,5%, quando em julho esperavam 4,2%. O Banco Central decide o juro de novo em 9/12, e a decisão vai mostrar se a pausa continua.</p><p class="d-fontes">Fontes: <a href="https://www.bcb.gov.br/api/servico/sitebcb/copom/comunicados_detalhes?nro_reuniao=282" rel="nofollow noopener">Banco Central (comunicado do Copom)</a>; <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432" rel="nofollow noopener">Banco Central</a>; Calendários do IBGE e do Banco Central</p></div>
+</section>
 
-
-
+<section id="fatos">
+<h2>Os fatos do dia sobre isso</h2>
+<ul class="fatos"><li><span class="dia">5/11</span><a href="/2026-11-05/">Banco Central para de cortar o juro e mantém a Selic em 13,75%</a></li><li><span class="dia">4/11</span><a href="/2026-11-04/">Bancos sobem previsão de inflação de 2026 para 5,22% e cortam a do PIB</a></li></ul>
+</section>
 
 
 
 <details class="conferimos" id="fontes">
 <summary>Como conferimos esta página</summary>
-<p>Cada frase da página está ligada à fonte e ao trecho que a sustenta. 20 das 29 fontes já tiveram o trecho achado no texto original. As outras estão marcadas "a conferir".</p>
+<p>Cada frase da página está ligada à fonte e ao trecho que a sustenta. 22 das 32 fontes já tiveram o trecho achado no texto original. As outras estão marcadas "a conferir".</p>
 <h3>As fontes</h3>
 <ol class="lista-fontes">
 <li><a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=432" rel="nofollow noopener">Banco Central</a>. <span class="nv">Órgão oficial; número conferido com os dados do site.</span></li>
@@ -355,6 +381,9 @@ details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
 <li><a href="https://ideas.repec.org/p/bcb/wpaper/331.html" rel="nofollow noopener">Machado e Portugal (Banco Central)</a>, Measuring Inflation Persistence in Brazil Using a Multivariate Model, Working Paper 331. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
 <li><a href="https://iepecdg.com.br/wp-content/uploads/2016/03/TPD2IEPE.pdf" rel="nofollow noopener">Persio Arida, Edmar Bacha e André Lara-Resende</a>, Credit, Interest, and Jurisdictional Uncertainty: Conjectures on the Case of Brazil (Arida, Bacha e Lara-Resende; cap. 8 de Inflation Targeting, Debt, and the Brazilian Experience, MIT Press, 2005; versão IEPE/Casa das Garças TPD 02). <span class="nv">Estudo em revista científica; trecho conferido no texto da fonte.</span></li>
 <li><a href="https://econpapers.repec.org/RePEc:fgv:epgrbe:v:61:y:2007:i:1:a:1015" rel="nofollow noopener">Fernando Gonçalves, Márcio Holland e Andrei Spacov</a>, Can jurisdictional uncertainty and capital controls explain the high level of real interest rates in Brazil? Evidence from panel data (Revista Brasileira de Economia, v. 61, n. 1). <span class="nv">Estudo em revista científica; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://www.bcb.gov.br/api/servico/sitebcb/copom/comunicados_detalhes?nro_reuniao=282" rel="nofollow noopener">Banco Central (comunicado do Copom)</a>, 282ª reunião - Copom mantém a taxa Selic em 13,75% a.a. (comunicado oficial do Copom, 04/11/2026). <span class="nv">Órgão oficial; trecho conferido no texto da fonte.</span></li>
+<li><a href="https://www.bcb.gov.br/controleinflacao/metainflacao" rel="nofollow noopener">Banco Central</a>, Metas para a inflação. <span class="nv">Órgão oficial; a conferir no texto da fonte.</span></li>
+<li>Calendários do IBGE e do Banco Central. <span class="nv">Órgão oficial; trecho conferido no site.</span></li>
 
 </ol>
 <h3>O que mudou nesta página</h3>
@@ -372,5 +401,15 @@ details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
   <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando. Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias mostram para onde cada parte da economia é empurrada, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
   <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
+<script>
+// O menu Grandes perguntas fecha com um toque fora dele ou com Esc.
+document.addEventListener("click", function (e) {
+  document.querySelectorAll("details.menu-p[open]").forEach(function (d) { if (!d.contains(e.target)) d.open = false; });
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key !== "Escape") return;
+  document.querySelectorAll("details.menu-p[open]").forEach(function (d) { d.open = false; d.querySelector("summary").focus(); });
+});
+</script>
 </body>
 </html>

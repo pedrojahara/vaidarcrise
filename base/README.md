@@ -10,7 +10,7 @@ Esta pasta é a fase 0 da ideia que veio do leitor Bruno: ligar cada notícia à
 
 Cada pergunta-mãe pertence a uma das pressões do topo (`pressao`, uma chave de `direcao.nomes` em `config/modelo.json`), e cada pressão tem no máximo uma página. As regras:
 
-- **Um fato liga a uma página só**: a da pressão onde a corrente de porquês termina (`post.termina_em`). Se essa pressão ainda não tem página publicada, o "Entenda a fundo" leva ao passo da aba O que causa recessão (`direcao.causas` em `config/modelo.json`). O fato do petróleo de 3/11 termina na inflação e vai para a aba; o do dólar de 4/11 termina na desconfiança de quem investe e usa o teste guardado no rascunho do dólar.
+- **Um fato liga a uma página só**, numa linha logo abaixo do texto do dia ("O básico sobre o juro"), antes da leitura a fundo. A página segue o que a leitora acabou de ler (`ponte()` em `src/base_site.py`, decisão do Pedro em 8/11/2026): primeiro a de uma pressão do assunto do fato do dia (o `fator` do candidato que a pauta escolheu; "Juro e inflação" cobre o juro e a inflação esperada, e a tese desempata); se o assunto não tem página, a da pressão da tese da leitura a fundo (`post.termina_em`); se nenhuma tem, a parte da aba O que causa recessão que explica o assunto (`direcao.causas` em `config/modelo.json`), com o título da parte no link. O Copom de 5/11 e o Focus de 4/11 levam à página do juro; a indústria de 6/11 vai para "O remédio: juro alto", e a balança de 7/11, para "Os preços também sobem por causas de fora". A página lista os fatos do dia que levam a ela pela mesma regra. Todas as páginas publicadas aparecem no menu Grandes perguntas do cabeçalho.
 - **Ordem das páginas novas**: a pressão com mais fatos do dia ligados nos últimos 30 dias. O Pedro decide no resumo do mês, e sai no máximo uma página nova por mês.
 - **Rascunho** (`publicada: false`): não vira página nem aparece no topo, mas guarda a disputa e o teste, que o post que os cita mostra.
 - **Disputa só se existe**: a página mostra leituras em disputa apenas quando os estudos de fato divergem.
@@ -31,7 +31,7 @@ A fase 0 mede três coisas:
 | `perguntas/<id>.json` | Uma pergunta-mãe: `pressao`, `publicada`, resposta curta, `governo` (se a causa é de um governo só, com a linha do tempo dos episódios), `agora` (o que está em jogo), escada de porquês com as leituras, testes registrados antes do resultado, episódios e registro de mudanças. |
 | `conferencia/` | Relatórios do verificador e dos agentes, e o registro de consumo. Ficam no git porque são a medição da fase 0. |
 | `cache/` | Cópia das páginas que o código abriu. Fora do git. |
-| `runs/<dia>.json`, `post.fundo` | A leitura a fundo de um fato do dia (`src/fundo.py`): `titulo` (a tese, no botão), `texto` (Markdown com até 3 intertítulos `###` e as marcas `[c3]` do caderno), `previsao`, `caderno` (cada linha com a conferência do código), `voltas` (as teses e o veredito do editor-chefe), `conferencia` e `meta` (modelo, custo e tempo de cada etapa). `post.termina_em` e `post.pergunta` dizem a página da pressão do fim. |
+| `runs/<dia>.json`, `post.fundo` | A leitura a fundo de um fato do dia (`src/fundo.py`): `titulo` (a tese, no botão), `texto` (Markdown com até 3 intertítulos `###` e as marcas `[c3]` do caderno), `previsao`, `caderno` (cada linha com a conferência do código), `voltas` (as teses e o veredito do editor-chefe), `conferencia` e `meta` (modelo, custo e tempo de cada etapa). `post.termina_em` diz a pressão da tese, que só decide a página quando o assunto do fato não tem uma. |
 
 ## A escada
 

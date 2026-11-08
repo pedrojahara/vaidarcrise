@@ -17,6 +17,7 @@
   {% for par in post.paragrafos %}<p>{{ par }}</p>{% endfor %}
   {% endif %}
   {% if post.corpo_html %}<div class="corpo">{{ post.corpo_html|safe }}</div>{% endif %}
+  {% if post.ponte %}<p class="basico"><span>{{ post.ponte.rotulo }}</span> <a href="{{ post.ponte.url }}">{{ post.ponte.texto }}</a></p>{% endif %}
   {% if post.fundo %}{% set f = post.fundo %}
   <details class="fundo">
     <summary><span class="f-cab"><span class="f-rot">Leitura de {{ f.minutos }} minutos</span><span class="f-tit">{{ f.titulo }}</span></span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
@@ -26,10 +27,7 @@
       {% if f.previsao %}<div class="f-prev"><b>O que o site vai conferir em {{ f.previsao.data }}</b><p>{{ f.previsao.texto }}</p></div>{% endif %}
       {% if f.fontes %}<p class="f-fontes">De onde vêm os números: {% for x in f.fontes %}{% if x.url %}<a href="{{ x.url }}" rel="nofollow noopener">{{ x.quem }}</a>{% else %}{{ x.quem }}{% endif %}{{ '; ' if not loop.last else '.' }}{% endfor %}</p>{% endif %}
     </div>
-    {% if f.ponte and f.ponte.aba %}<a class="ponte" href="{{ f.ponte.url }}"><b>Como isso funciona</b><span>Na aba O que causa recessão</span></a>
-    {% elif f.ponte %}<a class="ponte" href="{{ f.ponte.url }}"><b>{{ f.ponte.pergunta }}</b><span>A explicação da pressão {{ f.ponte.pressao }}, em 5 minutos</span></a>{% endif %}
   </details>
-  {% elif post.ponte and not post.ponte.aba %}<a class="ponte so" href="{{ post.ponte.url }}"><b>{{ post.ponte.pergunta }}</b><span>A explicação da pressão {{ post.ponte.pressao }}, em 5 minutos</span></a>
   {% endif %}
   {% if pr %}
   {% if caixa_fechada %}<details class="conta" aria-label="Pressão das notícias">

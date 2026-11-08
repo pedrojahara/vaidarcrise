@@ -2,8 +2,10 @@
 por src/fundo.py) e a página de cada pressão do topo que já tem pergunta publicada, em /perguntas/<id>/.
 
 Uma página por pressão: cada pergunta de base/perguntas diz a pressão dela (pressao, uma das chaves de
-direcao.nomes em config/modelo.json). Cada fato do dia leva à página da pressão onde a corrente de porquês termina
-(post.pergunta). Rascunho (publicada: false) não vira página, mas o teste dele aparece no post que o cita.
+direcao.nomes em config/modelo.json). Cada fato do dia leva, numa linha logo abaixo do texto, à página do assunto do
+fato; se o assunto não tem página, à da pressão da tese da leitura a fundo; se nenhuma tem, à parte da aba O que causa
+recessão que explica a pressão (ponte()). Rascunho (publicada: false) não vira página, mas o teste dele aparece no
+post que o cita.
 
 Tudo vem de base/: as afirmações que sustentam cada frase, as perguntas, os episódios e o último relatório do
 verificador (base/conferencia/), que diz se a fonte de cada afirmação já foi conferida. build_site.py chama
@@ -122,18 +124,58 @@ def pergunta_da_pressao(pid: str) -> dict | None:
     return None
 
 
-def _posts_ligados() -> dict[str, list[dict]]:
-    """Os fatos do dia com leitura a fundo (runs/), por pergunta: o mais novo primeiro, um por dia."""
+def menu(cfg: dict) -> list[dict]:
+    """As páginas publicadas, na ordem das pressões do topo, para o menu Grandes perguntas do cabeçalho."""
+    ordem = list(cfg["direcao"]["nomes"])
+    lista = sorted(publicadas().values(), key=lambda q: ordem.index(q["pressao"]) if q.get("pressao") in ordem else 99)
+    return [{"url": f"/perguntas/{q['id']}/", "pergunta": q["pergunta"],
+             "pressao": cfg["direcao"]["nomes"].get(q.get("pressao"), "")} for q in lista]
+
+
+# O assunto das notícias (fator, em config/modelo.json "fatores") e as pressões do topo que ele cobre. "Juro e
+# inflação" cobre duas; Ritmo da economia, Emprego e Economia lá fora não são pressões que mudam a placa e não têm
+# página própria pela regra de uma página por pressão.
+PRESSOES_DO_ASSUNTO = {"juro": ["juro", "inflacao"], "credito": ["parcelas"], "mercado": ["mercado"],
+                       "contas": ["contas"], "atividade": ["ritmo"], "emprego": ["emprego"], "externo": []}
+# Economia lá fora não é pressão do topo; na aba, a parte dela é a das causas de fora.
+ABA_DO_ASSUNTO = {"externo": "/causas/#t-outros"}
+# Como a linha do post chama cada pressão: "O básico sobre o juro".
+SOBRE = {"juro": "o juro", "inflacao": "a inflação esperada", "contas": "as contas do governo",
+         "parcelas": "as dívidas das famílias", "mercado": "a desconfiança de quem investe"}
+
+
+def assunto_do_fato(rodada: dict) -> str | None:
+    """O assunto do fato do dia que a pauta escolheu (src/pauta.py), como o classificador de notícias marcou."""
+    pauta = rodada.get("pauta") or {}
+    final = pauta.get("final")
+    for c in pauta.get("candidatos") or []:
+        if c.get("id") == final:
+            return c.get("fator")
+    return None
+
+
+def _partes_da_aba() -> dict[str, str]:
+    """O título de cada parte da aba O que causa recessão, pelo id da âncora (templates/causas.html)."""
+    html = (ROOT / "templates" / "causas.html").read_text()
+    return {m[0]: re.sub(r"\s+", " ", m[1]).strip() for m in re.findall(r'<h2 id="(t-[a-z]+)">([^<]+)</h2>', html)}
+
+
+def _posts_ligados(cfg: dict) -> dict[str, list[dict]]:
+    """Os fatos do dia (runs/) que levam a cada página, pela mesma regra da linha do post: o mais novo primeiro, um
+    por dia (a última rodada do dia, como no site)."""
     por_dia: dict[str, dict] = {}
     for arq in sorted((ROOT / "runs").glob("*.json")):
-        post = json.loads(arq.read_text()).get("post") or {}
-        if (post.get("fundo") or {}).get("ok") and post.get("pergunta"):
-            por_dia[arq.stem[:10]] = post
+        por_dia[arq.stem[:10]] = json.loads(arq.read_text())
     out: dict[str, list[dict]] = {}
     for dia in sorted(por_dia, reverse=True):
-        post = por_dia[dia]
-        out.setdefault(post["pergunta"], []).append({"dia": dia, "data": f"{int(dia[8:10])}/{int(dia[5:7])}",
-                                                     "titulo": post.get("titulo"), "url": f"/{dia}/"})
+        r = por_dia[dia]
+        post = r.get("post") or {}
+        if not post.get("ok") or (post.get("tipo") or "dia") != "dia":
+            continue
+        pt = ponte(post, cfg, assunto_do_fato(r))
+        if pt and not pt.get("aba"):
+            out.setdefault(pt["id"], []).append({"dia": dia, "data": f"{int(dia[8:10])}/{int(dia[5:7])}",
+                                                 "titulo": post.get("titulo"), "url": f"/{dia}/"})
     return out
 
 
@@ -147,18 +189,39 @@ def _regra_do_teste(t: dict) -> str:
             f"pesa mais {g.get('l-fora', 'a segunda')}. Fora disso, o teste não decide.")
 
 
-def _ponte(post: dict, cfg: dict) -> dict | None:
-    """O link do fim da leitura a fundo: a página da pressão onde a corrente de porquês termina. Se essa pressão ainda
-    não tem página, a parte da aba O que causa recessão que explica a pressão, como o "Como isso funciona" do topo."""
-    todas = _perguntas()
-    p = todas.get(post.get("pergunta"))
-    termina = post.get("termina_em") or (p or {}).get("pressao")
-    if p and p.get("publicada", True):
-        return {"url": f"/perguntas/{p['id']}/", "pergunta": p["pergunta"],
-                "pressao": cfg["direcao"]["nomes"].get(p.get("pressao"), "")}
-    if termina and cfg["direcao"].get("causas", {}).get(termina):
-        return {"url": cfg["direcao"]["causas"][termina], "aba": True}
-    return None
+def ponte(post: dict, cfg: dict, assunto: str | None) -> dict | None:
+    """A linha logo abaixo do fato do dia, que leva ao básico do assunto. A ordem segue o que a leitora acabou de ler:
+    1. a página de uma pressão do assunto do fato (no Copom, "Juro e inflação"; se as duas pressões tiverem página,
+       vale a da tese da leitura a fundo);
+    2. a página da pressão da tese da leitura a fundo (post.termina_em, gravado por src/fundo.py);
+    3. a parte da aba O que causa recessão que explica o assunto (ou, sem ele, a pressão da tese), com o título da
+       parte no link.
+    Sem assunto nem tese (posts antigos, dias sem pauta), não há linha."""
+    pags = {q["pressao"]: q for q in publicadas().values() if q.get("pressao")}
+    tese = post.get("termina_em")
+    do_assunto = PRESSOES_DO_ASSUNTO.get(assunto or "", [])
+    com_pagina = [pid for pid in do_assunto if pid in pags]
+    if tese in com_pagina:
+        escolha = tese
+    elif com_pagina:
+        escolha = com_pagina[0]
+    elif tese in pags:
+        escolha = tese
+    else:
+        escolha = None
+    if escolha:
+        q = pags[escolha]
+        sobre = SOBRE.get(escolha)
+        return {"id": q["id"], "url": f"/perguntas/{q['id']}/", "texto": q["pergunta"],
+                "rotulo": f"O básico sobre {sobre}" if sobre else "O básico, em 5 minutos"}
+    causas = cfg["direcao"].get("causas", {})
+    urls = [causas.get(pid) for pid in do_assunto] + [ABA_DO_ASSUNTO.get(assunto or ""), causas.get(tese or "")]
+    url = next((u for u in urls if u), None)
+    if not url:
+        return None
+    titulo = _partes_da_aba().get(url.split("#", 1)[-1]) if "#" in url else None
+    return {"url": url, "texto": titulo or "O que causa recessão", "rotulo": "O básico, na aba O que causa recessão",
+            "aba": True}
 
 
 def fundo_ctx(post: dict, cfg: dict, ligar, registro: str | None = None) -> dict | None:
@@ -211,12 +274,7 @@ def fundo_ctx(post: dict, cfg: dict, ligar, registro: str | None = None) -> dict
         previsao = {"data": _data(pv["quando"]), "texto": pv["texto"].strip(), "como": (pv.get("como_conferir") or "").strip()}
     palavras = sum(len(p.split()) for p in pars)
     return {"titulo": f["titulo"], "minutos": max(3, round(palavras / 200)), "blocos": blocos, "previsao": previsao,
-            "fontes": fontes, "ponte": _ponte(post, cfg)}
-
-
-def ponte_ctx(post: dict, cfg: dict) -> dict | None:
-    """Fato do dia sem leitura a fundo: só o link da página da pressão, se o post diz qual é."""
-    return _ponte(post, cfg) if post.get("termina_em") or post.get("pergunta") else None
+            "fontes": fontes}
 
 
 def pergunta_ctx(p: dict, A: dict, E: dict, conf: dict, cfg: dict, ligar, posts: list[dict], outras: list[dict],
@@ -311,7 +369,7 @@ def gravar(gravar_pagina, ctx: dict, cfg: dict, docs: Path, site: str, ligar) ->
     A = {a["id"]: a for a in json.loads((BASE / "afirmacoes.json").read_text())["afirmacoes"]}
     E = {e["id"]: e for e in json.loads((BASE / "episodios.json").read_text())["episodios"]}
     conf = _conferencia()
-    ligados = _posts_ligados()
+    ligados = _posts_ligados(cfg)
     nomes = cfg["direcao"]["nomes"]
     ordem = list(nomes)
     lista = sorted(perguntas.values(), key=lambda q: ordem.index(q["pressao"]) if q.get("pressao") in ordem else 99)
