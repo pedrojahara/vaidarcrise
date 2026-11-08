@@ -53,7 +53,7 @@ Todo dia, às 06h30, sai um post:
 - **O resumo da semana**, no domingo, junta o que mudou e diz o que olhar nos dias seguintes.
 - **O resumo do mês**, no primeiro domingo, diz o que piorou e o que melhorou desde o mês anterior.
 
-Abaixo do post, a caixa "Para onde as notícias empurram" mostra para que lado cada notícia da véspera empurra. A aba [O que causa recessão](/causas/) explica como preço, juro e dívida levam a uma recessão. A aba [Como funciona](/nota/) mostra a regra inteira, para quem quer conferir.
+A aba [O que causa recessão](/causas/) explica como preço, juro e dívida levam a uma recessão. A aba [Como funciona](/nota/) mostra a regra inteira, para quem quer conferir.
 
 ### Como o site evita tomar lado
 

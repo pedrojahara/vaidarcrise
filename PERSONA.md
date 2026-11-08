@@ -218,7 +218,7 @@ Cada post responde a uma pergunta só e compara com o próprio período. Ela qua
 | Informação | Dono | O que o post faz com ela |
 | --- | --- | --- |
 | A direção do risco | A placa do topo | O fato do dia só fala da direção se ela mudou. Os resumos da semana e do mês dizem desde quando ela está assim. |
-| Notícias de ontem, por assunto | A caixa "Para onde as notícias empurram" | O fato do dia conta uma, a que a pauta escolheu ([CARTA_EDITORIAL.md](CARTA_EDITORIAL.md)), até o bolso. |
+| Notícias de ontem | O fato do dia, que conta uma só | Conta a que a pauta escolheu ([CARTA_EDITORIAL.md](CARTA_EDITORIAL.md)), até o bolso; as outras só entram quando são parte da mesma história. O site não lista as notícias. |
 | Próximas datas | A lateral "Datas importantes" | O fato do dia só cita o dado que sai hoje. O resumo da semana diz o que olhar na semana seguinte. |
 | O que cada pressão fez em 3 meses, e quanto espaço ainda sobra | O topo, abaixo da placa | O resumo do mês conta só o que mudou de lado. |
 | Por que o fato aconteceu e o que ele quer dizer | A pesquisa do dia, a mesma da leitura a fundo ([FUNDO.md](FUNDO.md)) | O fato do dia diz o porquê, nas palavras de quem decidiu, e o e daí, em uma ou duas frases; a leitura a fundo mostra o que os sustenta, sem repeti-los. |
@@ -345,7 +345,7 @@ Os itens 3, 5, 9 e 12, e parte do 11, o código confere nos posts (`src/revisa_t
 9. **Sem alarme, sem consolo, sem molde.** Nenhuma palavra de alarme ou com lado; nenhuma expressão de piloto automático.
 10. **Em voz alta.** Lido em voz alta, soa como gente explicando para gente.
 11. **Explicação por inteiro.** Passa nas quinze regras de "O jeito de escrever do site": frase completa, causa e efeito em ordem com exemplo, condição por inteiro, nenhuma fórmula de efeito, causa de fora dita, casos com as mesmas linhas e amarração ao que veio antes.
-12. **Nada repetido.** O texto não repete o que o topo, a caixa de notícias ou a lateral já mostram, nem frase do post anterior do mesmo tipo. Todo número está nos dados.
+12. **Nada repetido.** O texto não repete o que o topo ou a lateral já mostram, nem frase do post anterior do mesmo tipo. Todo número está nos dados.
 13. **Porquê e e daí.** Cada fato diz por que aconteceu, nas palavras de quem decidiu ou da fonte, e o que quer dizer para o risco ou para quem lê, sem lado, com as duas leituras quando houver duas. Nenhum "mesmo assim" fica sem resposta.
 14. **Mês, importado, sigla e quem.** Toda comparação diz o mês; produto de fora é importado; sigla que a leitora não conhece vai por extenso ou com link; cada frase diz quem decidiu, por quê e para quem, e quem só repassa a decisão não aparece como autor dela.
 15. **Passou pelo editor.** Todo post passa pelo editor (`src/edita_texto.py`) antes de sair; texto à mão também pode passar, com a leitura em voz alta no fim.
@@ -374,7 +374,7 @@ O post de 31/10 tinha 197 palavras, e 97 delas repetiam o dia anterior e algo qu
 >
 > Com o dólar mais caro, os importados ficam mais caros, como celular e peça de carro.
 
-Um fato, contado até o bolso. O que o dólar fez fica no topo, em "Desconfiança de quem investe", e para onde a notícia empurra cada assunto fica na caixa logo abaixo do post.
+Um fato, contado até o bolso. O que o dólar fez em três meses fica no topo, em "Desconfiança de quem investe".
 
 ## Onde o guia vale no código
 

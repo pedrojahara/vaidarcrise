@@ -218,33 +218,12 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .basico a:hover,.basico a:focus-visible{text-decoration:underline}
 @media (prefers-reduced-motion: reduce){.fundo>summary .seta{transition:none}}
 
-/* pressão das notícias: dado da máquina, na letra do sistema */
-.conta{background:var(--maquina);border-radius:6px;padding:16px 20px 6px;font:16px/1.5 var(--sistema);margin:22px 0 4px}
-.conta-cab{border-bottom:1px solid var(--fio);padding-bottom:8px;margin-bottom:10px}
-.conta-cab h3{font:700 19px/1.3 var(--sistema);margin:0}
-.itens{list-style:none;padding:0;margin:0 0 6px;display:grid;gap:12px}
-.itens li{display:grid;grid-template-columns:2.2em minmax(0,1fr);gap:8px;overflow-wrap:anywhere}
-.itens .pts{font-weight:700;text-align:right;font-size:18px;line-height:1.3}
-.itens b{display:block}
-.itens .ver{font:400 13.5px/1 var(--sistema);margin-left:6px}
-.itens .nt{display:block;margin-top:2px}
-.itens .f{font-size:13.5px;color:var(--meta)}
-.itens .f a{color:var(--meta)}
-.fora-conta{font-size:14.5px;color:var(--meta);border-top:1px solid var(--fio);padding-top:10px;margin:14px 0 10px}
-
 /* a rolagem: um post embaixo do outro, do mais novo ao mais antigo */
 .post+.post{border-top:1px solid var(--fio);padding-top:30px}
 .continua{border-top:1px solid var(--fio);padding-top:22px}
 .continua>h2{font:600 14px/1.3 var(--sistema);color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin:0 0 22px}
 p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* só o "Carregar posts anteriores": .mais (sem p) é a cor de "piorou" em base.html */
-details.conta>summary{cursor:pointer;list-style:none}
-details.conta>summary::-webkit-details-marker{display:none}
-details.conta>summary h3{display:inline}
-details.conta>summary::after{content:" ▾";color:var(--meta)}
-details.conta[open]>summary::after{content:" ▴"}
-details.conta:not([open]){padding-bottom:12px}
-details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bottom:0}
-@media (max-width:620px){.titulo-post{font-size:26px}.conta{padding:14px 14px 4px;margin-left:-4px;margin-right:-4px}}
+@media (max-width:620px){.titulo-post{font-size:26px}}
 
 </style>
 </head>
@@ -403,8 +382,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   <main class="feed">
     
     
-    
-<article class="post">
+    <article class="post">
   <p class="data"><span class="tipo">Fato do dia</span> | Sábado, 7 de novembro de 2026</p>
   <h1 class="titulo-post">Brasil vende US$ 9,3 bi a mais do que compra, maior outubro desde 1989</h1>
   <p class="autoria">Escrito pelo Claude com a ajuda do Pedro.</p>
@@ -450,21 +428,6 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
       <p class="f-fontes">De onde vêm os números: <a href="https://bpmoney.com.br/?p=433781" rel="nofollow noopener">BPMoney, a partir de dados do Banco Central</a>; <a href="https://www.correiodamanha.com.br/economia/2026/10/325298-previsao-de-superavit-comercial-cai-para-uss-844-bi.html" rel="nofollow noopener">Correio da Manhã / MDIC</a>; <a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula" rel="nofollow noopener">Agência Brasil</a>; <a href="https://www.dgabc.com.br/Noticia/4366827/fluxo-cambial-total-em-2026-ate-30-de-outubro-e-positivo-em-us-28-743-bi-revela-bc" rel="nofollow noopener">Banco Central, via DGABC e Times Brasil</a>; <a href="https://www1.folha.uol.com.br/mercado/2026/11/lula-indicara-seis-diretores-do-banco-central-ate-o-fim-de-2027-e-mercado-teme-mudanca-de-perfil.shtml" rel="nofollow noopener">Folha</a>; <a href="https://www.poder360.com.br/poder-economia/bolsa-sobe-139-em-alta-dolar-fecha-a-r-5508/" rel="nofollow noopener">poder360.com.br</a>; <a href="https://www.dgabc.com.br/Noticia/4352825/ue-lidera-alta-do-superavit-brasileiro-com-salto-do-petroleo-mostra-icomex-da-fgv" rel="nofollow noopener">FGV Icomex, via DGABC</a>; <a href="https://timesbrasil.com.br/brasil/balanca-comercial-tem-superavit-de-us-93-bilhoes-em-outubro-alta-de-39-em-um-ano-e-exportacoes-sobem-20/" rel="nofollow noopener">Times Brasil</a>; <a href="https://valor.globo.com/financas/noticia/2026/11/04/petrleo-continua-em-queda-com-o-aumento-das-expectativas-de-fim-do-conflito-envolvendo-o-ir.ghtml" rel="nofollow noopener">Valor</a>; <a href="https://www.gazetadopovo.com.br/economia/queda-do-minerio-de-ferro-afeta-balanca-comercial-brasileira-egxk6tdcarsc7ggrk89xchu8e" rel="nofollow noopener">Gazeta do Povo</a>; contas do site com as séries do Banco Central e do IBGE.</p>
     </div>
   </details>
-  
-  
-  
-  <section class="conta" aria-label="Pressão das notícias">
-    <div class="conta-cab"><h3>Para onde as notícias empurram</h3></div>
-    
-    <ul class="itens">
-      <li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Ritmo da economia</b><span class="nt">Bradesco, XP e Genoa pioram as previsões e veem PIB parado ou em queda em 2027 <span class="f">previsão, <a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/bradesco-e-xp-pioram-significativamente-projecoes-para-inflacao-e-atividade-economica-em-2027.shtml" rel="nofollow noopener">Folha</a></span></span></div></li><li><span class="pts seta menos" aria-label="para melhor">↓</span><div><b>Desconfiança de quem investe</b><span class="nt">Bolsa sobe 1,39%, juros futuros recuam e dólar fecha a R$ 5,508 <span class="f"><a href="https://www.poder360.com.br/poder-economia/bolsa-sobe-139-em-alta-dolar-fecha-a-r-5508/" rel="nofollow noopener">Poder360</a></span></span></div></li>
-    </ul>
-    
-    <p class="fora-conta">Sem lado claro: Juro e inflação, dívidas das famílias, contas do governo, emprego, economia lá fora.</p>
-    
-  </section>
-  
-  
   
   
 </article>
@@ -527,7 +490,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
 </script>
 
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando. Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias mostram para onde cada parte da economia é empurrada, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
+  <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando. Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias da véspera dão o fato do dia, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
   <p><a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
 <script>

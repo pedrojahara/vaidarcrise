@@ -218,33 +218,12 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .basico a:hover,.basico a:focus-visible{text-decoration:underline}
 @media (prefers-reduced-motion: reduce){.fundo>summary .seta{transition:none}}
 
-/* pressão das notícias: dado da máquina, na letra do sistema */
-.conta{background:var(--maquina);border-radius:6px;padding:16px 20px 6px;font:16px/1.5 var(--sistema);margin:22px 0 4px}
-.conta-cab{border-bottom:1px solid var(--fio);padding-bottom:8px;margin-bottom:10px}
-.conta-cab h3{font:700 19px/1.3 var(--sistema);margin:0}
-.itens{list-style:none;padding:0;margin:0 0 6px;display:grid;gap:12px}
-.itens li{display:grid;grid-template-columns:2.2em minmax(0,1fr);gap:8px;overflow-wrap:anywhere}
-.itens .pts{font-weight:700;text-align:right;font-size:18px;line-height:1.3}
-.itens b{display:block}
-.itens .ver{font:400 13.5px/1 var(--sistema);margin-left:6px}
-.itens .nt{display:block;margin-top:2px}
-.itens .f{font-size:13.5px;color:var(--meta)}
-.itens .f a{color:var(--meta)}
-.fora-conta{font-size:14.5px;color:var(--meta);border-top:1px solid var(--fio);padding-top:10px;margin:14px 0 10px}
-
 /* a rolagem: um post embaixo do outro, do mais novo ao mais antigo */
 .post+.post{border-top:1px solid var(--fio);padding-top:30px}
 .continua{border-top:1px solid var(--fio);padding-top:22px}
 .continua>h2{font:600 14px/1.3 var(--sistema);color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin:0 0 22px}
 p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* só o "Carregar posts anteriores": .mais (sem p) é a cor de "piorou" em base.html */
-details.conta>summary{cursor:pointer;list-style:none}
-details.conta>summary::-webkit-details-marker{display:none}
-details.conta>summary h3{display:inline}
-details.conta>summary::after{content:" ▾";color:var(--meta)}
-details.conta[open]>summary::after{content:" ▴"}
-details.conta:not([open]){padding-bottom:12px}
-details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bottom:0}
-@media (max-width:620px){.titulo-post{font-size:26px}.conta{padding:14px 14px 4px;margin-left:-4px;margin-right:-4px}}
+@media (max-width:620px){.titulo-post{font-size:26px}}
 
 </style>
 </head>
@@ -403,8 +382,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   <main class="feed">
     <a class="comece" href="/textos/retrato-do-brasil/"><span class="rot">Comece por aqui</span><b>Retrato do Brasil</b>Por que o site nasceu, o que ele mostra e como usar, em 4 minutos de leitura.</a>
     
-    
-<article class="post">
+    <article class="post">
   <p class="data"><span class="tipo">Resumo da semana</span> | Domingo, 8 de novembro de 2026</p>
   <h2 class="titulo-post"><a href="/2026-11-08/">Banco Central para de cortar o juro, e a indústria produz menos</a></h2>
   <p class="autoria">Escrito pelo Claude com a ajuda do Pedro.</p>
@@ -429,21 +407,8 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   
   
   
-  
-  
-  <section class="conta" aria-label="Pressão das notícias">
-    <div class="conta-cab"><h3>Para onde as notícias empurram</h3></div>
-    <p class="fora-conta">As notícias de 6/11 a 7/11 não empurraram nenhuma parte da economia para um lado claro.</p>
-    
-    
-    
-  </section>
-  
-  
-  <p class="rodape"><a href="https://wa.me/?text=Banco%20Central%20para%20de%20cortar%20o%20juro%2C%20e%20a%20ind%C3%BAstria%20produz%20menos%20https%3A//vaidarcrise.com.br/2026-11-08/" rel="noopener">Mandar no WhatsApp</a> | <a href="/2026-11-08/">Link permanente</a></p>
-  
-</article>
-<article class="post">
+  <p class="rodape"><a href="https://wa.me/?text=Banco%20Central%20para%20de%20cortar%20o%20juro%2C%20e%20a%20ind%C3%BAstria%20produz%20menos%20https%3A//vaidarcrise.com.br/2026-11-08/" rel="noopener">Mandar no WhatsApp</a></p>
+</article><article class="post">
   <p class="data"><span class="tipo">Fato do dia</span> | Sábado, 7 de novembro de 2026</p>
   <h2 class="titulo-post"><a href="/2026-11-07/">Brasil vende US$ 9,3 bi a mais do que compra, maior outubro desde 1989</a></h2>
   <p class="autoria">Escrito pelo Claude com a ajuda do Pedro.</p>
@@ -491,22 +456,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   </details>
   
   
-  <details class="conta" aria-label="Pressão das notícias">
-    <summary class="conta-cab"><h3>Para onde as notícias empurram</h3></summary>
-    
-    <ul class="itens">
-      <li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Ritmo da economia</b><span class="nt">Bradesco, XP e Genoa pioram as previsões e veem PIB parado ou em queda em 2027 <span class="f">previsão, <a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/bradesco-e-xp-pioram-significativamente-projecoes-para-inflacao-e-atividade-economica-em-2027.shtml" rel="nofollow noopener">Folha</a></span></span></div></li><li><span class="pts seta menos" aria-label="para melhor">↓</span><div><b>Desconfiança de quem investe</b><span class="nt">Bolsa sobe 1,39%, juros futuros recuam e dólar fecha a R$ 5,508 <span class="f"><a href="https://www.poder360.com.br/poder-economia/bolsa-sobe-139-em-alta-dolar-fecha-a-r-5508/" rel="nofollow noopener">Poder360</a></span></span></div></li>
-    </ul>
-    
-    <p class="fora-conta">Sem lado claro: Juro e inflação, dívidas das famílias, contas do governo, emprego, economia lá fora.</p>
-    
-  </details>
-  
-  
-  <p class="rodape"><a href="/2026-11-07/">Link permanente</a></p>
-  
-</article>
-<article class="post">
+</article><article class="post">
   <p class="data"><span class="tipo">Fato do dia</span> | Sexta, 6 de novembro de 2026</p>
   <h2 class="titulo-post"><a href="/2026-11-06/">Indústria produz 0,8% menos em setembro, quarta queda em cinco meses</a></h2>
   <p class="autoria">Escrito pelo Claude com a ajuda do Pedro.</p>
@@ -554,22 +504,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   </details>
   
   
-  <details class="conta" aria-label="Pressão das notícias">
-    <summary class="conta-cab"><h3>Para onde as notícias empurram</h3></summary>
-    
-    <ul class="itens">
-      <li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Ritmo da economia</b><span class="nt">Produção da indústria cai 0,8% em setembro e acumula queda de 4,1% desde maio <span class="f"><a href="https://www.gazetadopovo.com.br/economia/producao-industrial-recua-08-em-setembro-e-acumula-perda-de-41-desde-maio/" rel="nofollow noopener">Gazeta do Povo</a></span></span></div></li><li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Economia lá fora</b><span class="nt">Nasdaq, bolsa dos EUA, cai até 6,4% e Bolsa do Japão perde mais de 6% <span class="f"><a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/11/nasdaq-cai-em-64-com-receio-de-que-vitoria-democrata-afete-boom-da-ia.shtml" rel="nofollow noopener">Folha</a></span></span></div></li><li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Desconfiança de quem investe</b><span class="nt">Dólar sobe a R$ 5,489 e Bolsa cai 0,82%, com saída de R$ 8,4 bi de estrangeiros <span class="f"><a href="https://www.poder360.com.br/poder-economia/dolar-sobe-067-e-fecha-a-r-5489-ibovespa-cai-082/" rel="nofollow noopener">Poder360</a></span></span><span class="nt">Partido do governo critica Banco Central por parar de cortar a Selic <span class="f">anúncio, <a href="https://g1.globo.com/politica/blog/valdo-cruz/post/2026/11/05/pt-e-parte-da-equipe-de-lula-atacam-bc-apos-copom-interromper-ciclo-de-corte-de-juros-por-duvidas-sobre-ajuste-fiscal.ghtml" rel="nofollow noopener">g1</a></span></span></div></li><li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Juro e inflação</b><span class="nt">Governo fixa imposto sobre cigarro, bebida e carro a partir de fevereiro <span class="f">decisão tomada, <a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/imposto-do-pecado-entenda-cobranca-sobre-cigarros-bebidas-e-veiculos" rel="nofollow noopener">Agência Brasil</a></span></span></div></li>
-    </ul>
-    
-    <p class="fora-conta">Sem lado claro: Dívidas das famílias, contas do governo, emprego.</p>
-    
-  </details>
-  
-  
-  <p class="rodape"><a href="/2026-11-06/">Link permanente</a></p>
-  
-</article>
-<article class="post">
+</article><article class="post">
   <p class="data"><span class="tipo">Fato do dia</span> | Quinta, 5 de novembro de 2026</p>
   <h2 class="titulo-post"><a href="/2026-11-05/">Banco Central para de cortar e mantém a Selic em 13,75% ao ano</a></h2>
   <p class="autoria">Escrito pelo Claude com a ajuda do Pedro.</p>
@@ -619,22 +554,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
   </details>
   
   
-  <details class="conta" aria-label="Pressão das notícias">
-    <summary class="conta-cab"><h3>Para onde as notícias empurram</h3></summary>
-    
-    <ul class="itens">
-      <li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Emprego</b><span class="nt">Brasil cria 121,3 mil vagas com carteira, o pior setembro da série <span class="f"><a href="https://www.poder360.com.br/poder-economia/brasil-cria-121-305-empregos-formais-em-setembro-de-2026/" rel="nofollow noopener">Poder360</a></span></span></div></li><li><span class="pts seta menos" aria-label="para melhor">↓</span><div><b>Economia lá fora</b><span class="nt">Democratas ganham o Congresso dos EUA, o que pesa contra as tarifas ao Brasil <span class="f"><a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/vitoria-democrata-no-senado-amplia-pressao-sobre-tarifas-de-trump-ao-brasil.shtml" rel="nofollow noopener">Folha</a></span></span><span class="nt">Petróleo cai mais de 8% com expectativa de fim do conflito no Irã <span class="f"><a href="https://valor.globo.com/financas/noticia/2026/11/04/petrleo-continua-em-queda-com-o-aumento-das-expectativas-de-fim-do-conflito-envolvendo-o-ir.ghtml" rel="nofollow noopener">Valor</a></span></span></div></li><li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Juro e inflação</b><span class="nt">Copom para de cortar e mantém a Selic em 13,75% ao ano <span class="f">decisão tomada, <a href="https://www.gazetadopovo.com.br/economia/copom-interrompe-ciclo-de-cortes-e-mantem-selic-em-1375/" rel="nofollow noopener">Gazeta do Povo</a></span></span><span class="nt">Dólar alto começa a encarecer açúcar, trigo e café no Brasil <span class="f"><a href="https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/alta-do-dolar-comeca-a-impactar-acucar-trigo-e-cafe-que-podem-ficar-mais-caros-para-o-consumidor.shtml" rel="nofollow noopener">Folha</a></span></span></div></li><li><span class="pts seta menos" aria-label="para melhor">↓</span><div><b>Desconfiança de quem investe</b><span class="nt">Dólar cai a R$ 5,45, Bolsa sobe mais de 1% e juros futuros recuam <span class="f"><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-cai-r-545-apos-eleicoes-nos-eua-e-antes-do-copom" rel="nofollow noopener">Agência Brasil</a></span></span></div></li>
-    </ul>
-    
-    <p class="fora-conta">Sem lado claro: Ritmo da economia, dívidas das famílias, contas do governo.</p>
-    
-  </details>
-  
-  
-  <p class="rodape"><a href="/2026-11-05/">Link permanente</a></p>
-  
-</article>
-<article class="post">
+</article><article class="post">
   <p class="data"><span class="tipo">Fato do dia</span> | Quarta, 4 de novembro de 2026</p>
   <h2 class="titulo-post"><a href="/2026-11-04/">Bancos sobem previsão de inflação de 2026 para 5,22% e cortam a do PIB</a></h2>
   <p class="autoria">Escrito pelo Claude com a ajuda do Pedro.</p>
@@ -684,20 +604,6 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
     </div>
   </details>
   
-  
-  <details class="conta" aria-label="Pressão das notícias">
-    <summary class="conta-cab"><h3>Para onde as notícias empurram</h3></summary>
-    
-    <ul class="itens">
-      <li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Juro e inflação</b><span class="nt">Focus sobe a previsão de inflação de 2026 para 5,22% e corta a do PIB <span class="f"><a href="https://www.poder360.com.br/poder-economia/mercado-eleva-projecao-de-inflacao-para-522-em-2026/" rel="nofollow noopener">Poder360</a></span></span></div></li><li><span class="pts seta mais" aria-label="para pior">↑</span><div><b>Desconfiança de quem investe</b><span class="nt">Juros futuros e taxas do Tesouro sobem, e dólar fecha a R$ 5,487 <span class="f"><a href="https://valor.globo.com/financas/noticia/2026/11/03/juros-futuros-tem-forte-alta-por-temor-sobre-agenda-economica-do-governo-e-piora-do-focus.ghtml" rel="nofollow noopener">Valor</a></span></span></div></li>
-    </ul>
-    
-    <p class="fora-conta">Sem lado claro: Ritmo da economia, dívidas das famílias, contas do governo, emprego, economia lá fora.</p>
-    
-  </details>
-  
-  
-  <p class="rodape"><a href="/2026-11-04/">Link permanente</a></p>
   
 </article>
     <p class="mais" id="mais" data-depois="2026-11-04"><a href="/2026-11-03/">Carregar posts anteriores</a></p>
@@ -758,7 +664,7 @@ details.conta:not([open])>.conta-cab{border-bottom:0;padding-bottom:0;margin-bot
 </script>
 
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando. Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias mostram para onde cada parte da economia é empurrada, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
+  <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando. Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias da véspera dão o fato do dia, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
   <p><a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
 <script>

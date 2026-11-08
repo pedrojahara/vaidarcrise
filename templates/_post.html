@@ -1,4 +1,3 @@
-{% set pr = post.pressao %}
 <article class="post">
   <p class="data">{% if post.tipo_nome %}<span class="tipo">{{ post.tipo_nome }}</span> | {% endif %}{{ post.data_extenso }}</p>
   {% if permalink %}<h1 class="titulo-post">{{ post.titulo }}</h1>{% else %}<h2 class="titulo-post"><a href="{{ post.link }}">{{ post.titulo }}</a></h2>{% endif %}
@@ -29,24 +28,5 @@
     </div>
   </details>
   {% endif %}
-  {% if pr %}
-  {% if caixa_fechada %}<details class="conta" aria-label="Pressão das notícias">
-    <summary class="conta-cab"><h3>Para onde as notícias empurram</h3></summary>{% else %}
-  <section class="conta" aria-label="Pressão das notícias">
-    <div class="conta-cab"><h3>Para onde as notícias empurram</h3></div>{% endif %}
-    {% if pr.com %}
-    <ul class="itens">
-      {% for t in pr.com %}<li><span class="pts seta {{ t.cls }}" aria-label="{{ t.palavra }}">{{ t.simbolo }}</span><div><b>{{ t.nome }}</b>{% for n in t.noticias %}<span class="nt">{{ n.titulo }} <span class="f">{% if n.meta %}{{ n.meta }}{% if n.fonte %}, {% endif %}{% endif %}{% if n.fonte %}<a href="{{ n.fonte.url }}" rel="nofollow noopener">{{ n.fonte.veiculo }}</a>{% endif %}</span></span>{% endfor %}</div></li>{% endfor %}
-    </ul>
-    {% elif pr.n %}<p class="fora-conta">As notícias {{ pr.quando }} não empurraram nenhuma parte da economia para um lado claro.</p>
-    {% else %}<p class="fora-conta">Nenhuma notícia {{ pr.quando }} mexeu com o risco.</p>{% endif %}
-    {% if pr.com and pr.sem %}<p class="fora-conta">Sem lado claro: {% for n in pr.sem %}{{ n if loop.first else n[0]|lower ~ n[1:] }}{{ ', ' if not loop.last else '.' }}{% endfor %}</p>{% endif %}
-    {% if not post.llm_ok %}<p class="fora-conta">A leitura das notícias falhou neste dia.</p>{% endif %}
-  {% if caixa_fechada %}</details>{% else %}</section>{% endif %}
-  {% endif %}
-  {% if post.editor %}
-  <p class="rodape">{% if not permalink %}<a href="{{ post.link }}">Link permanente</a>{% else %}Postado em {{ data_curta(post.dia) }}{% endif %}{% if post.tags %} | {{ post.tags }}{% endif %}</p>
-  {% else %}
-  {% if post.zap or not permalink %}<p class="rodape">{% if post.zap %}<a href="{{ post.zap }}" rel="noopener">Mandar no WhatsApp</a>{% if not permalink %} | {% endif %}{% endif %}{% if not permalink %}<a href="{{ post.link }}">Link permanente</a>{% endif %}</p>{% endif %}
-  {% endif %}
+  {% if post.zap %}<p class="rodape"><a href="{{ post.zap }}" rel="noopener">Mandar no WhatsApp</a></p>{% endif %}
 </article>

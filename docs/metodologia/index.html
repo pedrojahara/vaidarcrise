@@ -673,7 +673,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 </table>
 <p>O resto de cada linha é encolhendo. No governo atual, a mesma regra disse caindo em meados de 2023 e no começo de 2024, e subindo de agosto de 2024 a março de 2025 (com a Selic subindo e o dólar passando de R$ 6) e na maior parte de 2026.</p>
 <h2 id="as-noticias">As notícias</h2>
-<p>As notícias não mudam a direção. Se cada notícia somasse um pedaço, como os jornais publicam mais notícia ruim que boa, a direção tenderia a ficar sempre em subindo. Elas mostram, na caixa "Para onde as notícias empurram", para que lado cada assunto é empurrado.</p>
+<p>As notícias não mudam a direção. Se cada notícia somasse um pedaço, como os jornais publicam mais notícia ruim que boa, a direção tenderia a ficar sempre em subindo. Elas dão o fato do dia, escolhido pela régua de <a href="#os-posts">Os posts</a>, e o contexto dos posts.</p>
 <p><strong>A leitura das manchetes.</strong> As manchetes de oito jornais com linhas editoriais diferentes (Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1) são coletadas de hora em hora. Às 05h45, um modelo de linguagem (Claude, sem ferramentas, com saída em esquema JSON validado por código) lê as do dia anterior e transforma os fatos em eventos: assunto, lado, tamanho (1 a 3) e estágio (dado divulgado, decisão tomada, proposta em votação, anúncio, previsão ou rumor). Previsão é o que um banco, consultoria, associação, organismo internacional ou o governo espera; o boletim Focus conta como dado, porque é a medida da Inflação esperada. Cada evento cita até 6 manchetes e lista as outras do mesmo fato, para o site contar quantos jornais deram o fato. Notícia que só repete um dado já medido fica de fora. Os assuntos são sete: Ritmo da economia, Juro e inflação, Dívidas das famílias, Desconfiança de quem investe, Contas do governo, Emprego e Economia lá fora.</p>
 <p><strong>A pressão do dia, por assunto:</strong></p>
 <table>
@@ -730,7 +730,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 </tr>
 </tbody>
 </table>
-<p>Esses pontos medem para que lado cada assunto é empurrado e não decidem qual fato o post conta: a escolha do fato do dia tem régua própria, em <a href="#os-posts">Os posts</a>.</p>
+<p>Esses pontos medem para que lado cada assunto é empurrado. O site não os mostra: eles vão para o redator dos posts como contexto (as outras notícias do dia, no fato do dia, e o lado de cada assunto, nos resumos) e não decidem qual fato o post conta, que tem régua própria, em <a href="#os-posts">Os posts</a>.</p>
 <p><strong>Fatos de dados.</strong> Saem de código (<code>src/dossie.py</code>), todo dia, comparando o dado de hoje com a série histórica ("o maior desde…"). O post os recebe como contexto.</p>
 <h2 id="o-que-causa-recessao">O que causa recessão</h2>
 <p>A aba <a href="https://vaidarcrise.com.br/causas/">O que causa recessão</a> explica o caminho mais comum até a recessão para quem não é economista: por que os preços sobem, o juro alto como freio, a bola de neve das famílias endividadas, os casos de 2013 a 2016 e de 2021 e 2022, a bola de neve da dívida do governo e, no fim, um mapa que junta as partes. Ela não mostra dados do dia; os números com data ficam listados abaixo. Segue a seção "Como explicar um mecanismo" do PERSONA.md. Nada dela entra na direção. As duas pesquisas abaixo sustentam o que a aba diz; os números delas ficam aqui, não na aba.</p>
@@ -824,7 +824,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 <tr>
 <td>Resumo da semana</td>
 <td>Domingo</td>
-<td>As atualizações da semana, contra a do domingo anterior: a direção em cada dia, as pressões que mudaram de lado, os dados novos, as datas marcadas que saíram, os fatos do dia da semana, as notícias por assunto na ordem da pauta (o lado de cada assunto é o da caixa de notícias) e as datas da semana seguinte</td>
+<td>As atualizações da semana, contra a do domingo anterior: a direção em cada dia, as pressões que mudaram de lado, os dados novos, as datas marcadas que saíram, os fatos do dia da semana, as notícias por assunto na ordem da pauta (o lado de cada assunto sai da mesma conta da pressão do dia, feita com as notícias da semana inteira) e as datas da semana seguinte</td>
 <td>Até 250 palavras</td>
 </tr>
 <tr>
@@ -1014,7 +1014,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 </main>
 
 <footer class="pe"><div class="in">
-  <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando. Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias mostram para onde cada parte da economia é empurrada, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
+  <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando. Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias da véspera dão o fato do dia, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
   <p><a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
 <script>
