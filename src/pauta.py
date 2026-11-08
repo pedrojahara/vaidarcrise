@@ -16,7 +16,7 @@ fica atrás dos outros fatos do mesmo estágio e tamanho, porque sai todo dia em
 jornais o favoreceria sempre) e o topo já mostra o dólar e o juro de 10 anos. Um movimento grande do mercado
 ganha pelo tamanho que o classificador lhe der.
 
-Os pontos da caixa "Para onde as notícias empurram" (src/model.py) medem para que lado cada assunto é
+Os pontos da pressão das notícias (src/model.py), que o site não mostra, medem para que lado cada assunto é
 empurrado e não decidem a manchete: aqui não há desconto por "o mercado já esperava", cada notícia conta
 sozinha (notícias de sinal oposto do mesmo assunto não se anulam) e a cobertura conta jornais de verdade.
 A IA editora (src/editora.py) lê esta pauta e só sai da escolha padrão por um motivo da lista fechada.

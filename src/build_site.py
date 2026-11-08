@@ -37,10 +37,6 @@ TIPOS_POST = {"dia": "Fato do dia", "semana": "Resumo da semana", "mes": "Resumo
 # O blog é uma rolagem só, do post mais novo ao mais antigo: a página principal traz os primeiros, e o resto
 # chega aos poucos, de docs/posts/, enquanto a leitora rola.
 POSTS_NA_PAGINA = 5
-ESTAGIOS = {"dado": "dado divulgado", "decidido": "decisão tomada", "em_votacao": "em votação",
-            "anuncio": "anúncio", "previsao": "previsão", "rumor": "rumor"}
-SENTIDOS = {"piora": ("↑", "mais", "para pior"), "melhora": ("↓", "menos", "para melhor"),
-            "igual": ("→", "igual", "sem lado claro")}
 # ------------------------------------------------------------------ formatos
 def num(x: float, d: int = 1) -> str:
     s = f"{abs(x):,.{d}f}".replace(",", "X").replace(".", ",").replace("X", ".")
@@ -451,37 +447,6 @@ def svg_direcao(linha: list[dict], recessoes: list[dict]) -> str:
     return "".join(out)
 
 
-# --------------------------------------------------------------------- notícias
-def pressao_ctx(rodada: dict, eventos: dict, cfg: dict, por_fator: int = 3) -> dict:
-    """A caixa da página principal: para que lado as notícias de ontem empurram cada fator."""
-    pr = rodada.get("pressao") or {"fatores": {}, "sentido": "igual", "n": 0}
-    nomes = cfg["fatores"]
-    com = []
-    for fid, p in sorted(pr["fatores"].items(), key=lambda kv: -abs(kv[1]["saldo"])):
-        if p["sentido"] == "igual":
-            continue
-        simbolo, cls, palavra = SENTIDOS[p["sentido"]]
-        nots = []
-        for i in p["eventos"][:por_fator]:
-            e = eventos.get(i)
-            if not e:
-                continue
-            contra = (e["direcao"] > 0) != (p["sentido"] == "piora")
-            meta = [ESTAGIOS.get(e.get("estagio")) if e.get("estagio") != "dado" else None,
-                    ("alivia" if e["direcao"] < 0 else "pesa") if contra else None]
-            nots.append({"titulo": e["titulo_evento"], "meta": ", ".join(x for x in meta if x),
-                         "fonte": e["fontes"][0] if e.get("fontes") else None})
-        com.append({"id": fid, "nome": nomes.get(fid, fid), "simbolo": simbolo, "cls": cls, "palavra": palavra,
-                    "noticias": nots})
-    sem = [nomes[f] for f in nomes if f not in {c["id"] for c in com}]
-    simbolo, cls, _ = SENTIDOS[pr["sentido"]]
-    # "de ontem" quando a leitura cobre só a véspera; senão, as datas lidas.
-    dias = (rodada.get("cobertura") or {}).get("dias") or []
-    vespera = (dt.date.fromisoformat(rodada["gerado_em"][:10]) - dt.timedelta(days=1)).isoformat()
-    quando = "de ontem" if dias in ([], [vespera]) else f"de {dia_mes(dias[0])} a {dia_mes(dias[-1])}"
-    return {"com": com, "sem": sem, "simbolo": simbolo, "cls": cls, "n": pr.get("n", 0), "quando": quando}
-
-
 # --------------------------------------------------------------------- posts
 # A assinatura de todo post escrito pelo modelo (Pedro, 1/11): sem horário, sem contagem de notícias.
 ASSINATURA = "Escrito pelo Claude com a ajuda do Pedro."
@@ -526,8 +491,8 @@ def _secoes_com_links(secoes: list[dict], cfg: dict) -> list[dict]:
     return out
 
 
-def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
-    """O post de um dia. Sem texto do LLM, sai um título feito por código e a caixa das notícias."""
+def post_de(rodada: dict, cfg: dict) -> dict:
+    """O post de um dia. Sem texto do LLM, sai só um título feito por código e a linha que diz que o texto não saiu."""
     dia = rodada["gerado_em"][:10]
     p = rodada.get("post") or {}
     tipo = p.get("tipo") or "dia"
@@ -542,7 +507,7 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
         titulo = ("A economia está encolhendo" if d["estado"] == "encolhendo"
                   else f"O risco de recessão está {d['estado']}")
         paragrafos = []
-        autoria = "O texto do dia não saiu. Ficam a direção do risco e as notícias, organizadas pelo programa."
+        autoria = "O texto deste dia não saiu, por uma falha no programa que escreve os posts."
     link = f"/{dia}/"
     fundo, ponte = None, None
     if p.get("ok") and tipo == "dia":
@@ -560,8 +525,7 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
     return {"dia": dia, "data_extenso": data_extenso(dia), "titulo": titulo, "paragrafos": paragrafos, "secoes": secoes,
             "tipo": tipo, "tipo_nome": TIPOS_POST[tipo], "zap": zap,
             "autoria": autoria, "direcao": d["estado"], "llm": bool(p.get("ok")),
-            "pressao": pressao_ctx(rodada, eventos, cfg), "link": link, "fundo": fundo, "ponte": ponte,
-            "llm_ok": rodada["llm"]["ok"]}
+            "link": link, "fundo": fundo, "ponte": ponte}
 
 
 def textos_do_editor() -> list[dict]:
@@ -574,9 +538,8 @@ def textos_do_editor() -> list[dict]:
         tipo = meta.get("tipo", "")
         out.append({"dia": meta["data"], "data_extenso": data_extenso(meta["data"]), "titulo": meta["titulo"],
                     "corpo_html": markdown.markdown(corpo, extensions=["tables"]), "paragrafos": [], "secoes": [],
-                    "pressao": None, "tipo": tipo, "tipo_nome": TIPOS_POST.get(tipo, ""), "autoria": meta.get("autoria"),
-                    "tags": meta.get("tags", ""), "editor": True, "link": f"/textos/{slug}/", "slug": slug,
-                    "llm_ok": True, "palavras": len(corpo.split())})
+                    "tipo": tipo, "tipo_nome": TIPOS_POST.get(tipo, ""), "autoria": meta.get("autoria"),
+                    "link": f"/textos/{slug}/", "slug": slug, "palavras": len(corpo.split())})
     return sorted(out, key=lambda t: t["dia"], reverse=True)
 
 
@@ -608,8 +571,6 @@ def main() -> None:
     if not todas:
         print("nenhuma rodada em runs/")
         return
-    eventos = json.loads((ROOT / "data" / "eventos.json").read_text()) if (ROOT / "data" / "eventos.json").exists() else []
-    idx = {e["id"]: e for e in eventos}
     agenda = calendario.carregar()
 
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]))
@@ -632,7 +593,7 @@ def main() -> None:
         if p.stem not in por_dia:
             p.unlink()
 
-    posts = {d: post_de(por_dia[d], idx, cfg) for d in dias}
+    posts = {d: post_de(por_dia[d], cfg) for d in dias}
     textos = textos_do_editor()
     # Todos os posts numa fila só, do mais novo ao mais antigo: os do dia e os escritos à mão, cada um na sua data.
     # No mesmo dia, o post do dia vem antes do texto à mão (a ordenação é estável).
@@ -700,7 +661,7 @@ def main() -> None:
     pedaco = env.get_template("_post.html")
     for x in fila:
         (DOCS / "posts" / f"{x['id']}.html").write_text(
-            pedaco.render(post=x, permalink=False, caixa_fechada=True, data_curta=data_curta))
+            pedaco.render(post=x, permalink=False))
     for p in (DOCS / "posts").glob("*.html"):
         if p.stem not in pos_fila:
             p.unlink()

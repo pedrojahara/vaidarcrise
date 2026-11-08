@@ -170,7 +170,7 @@ O resto de cada linha é encolhendo. No governo atual, a mesma regra disse caind
 
 ## As notícias
 
-As notícias não mudam a direção. Se cada notícia somasse um pedaço, como os jornais publicam mais notícia ruim que boa, a direção tenderia a ficar sempre em subindo. Elas mostram, na caixa "Para onde as notícias empurram", para que lado cada assunto é empurrado.
+As notícias não mudam a direção. Se cada notícia somasse um pedaço, como os jornais publicam mais notícia ruim que boa, a direção tenderia a ficar sempre em subindo. Elas dão o fato do dia, escolhido pela régua de [Os posts](#os-posts), e o contexto dos posts.
 
 **A leitura das manchetes.** As manchetes de oito jornais com linhas editoriais diferentes (Agência Brasil, Folha, Estadão, Valor, InfoMoney, Poder360, Gazeta do Povo e g1) são coletadas de hora em hora. Às 05h45, um modelo de linguagem (Claude, sem ferramentas, com saída em esquema JSON validado por código) lê as do dia anterior e transforma os fatos em eventos: assunto, lado, tamanho (1 a 3) e estágio (dado divulgado, decisão tomada, proposta em votação, anúncio, previsão ou rumor). Previsão é o que um banco, consultoria, associação, organismo internacional ou o governo espera; o boletim Focus conta como dado, porque é a medida da Inflação esperada. Cada evento cita até 6 manchetes e lista as outras do mesmo fato, para o site contar quantos jornais deram o fato. Notícia que só repete um dado já medido fica de fora. Os assuntos são sete: Ritmo da economia, Juro e inflação, Dívidas das famílias, Desconfiança de quem investe, Contas do governo, Emprego e Economia lá fora.
 
@@ -190,7 +190,7 @@ As notícias não mudam a direção. Se cada notícia somasse um pedaço, como o
 | Seta do assunto | saldo de 1 ou mais (pesa) ou de −1 ou menos (alivia) |
 | Seta geral | soma dos assuntos, com corte de 2 |
 
-Esses pontos medem para que lado cada assunto é empurrado e não decidem qual fato o post conta: a escolha do fato do dia tem régua própria, em [Os posts](#os-posts).
+Esses pontos medem para que lado cada assunto é empurrado. O site não os mostra: eles vão para o redator dos posts como contexto (as outras notícias do dia, no fato do dia, e o lado de cada assunto, nos resumos) e não decidem qual fato o post conta, que tem régua própria, em [Os posts](#os-posts).
 
 **Fatos de dados.** Saem de código ([`src/dossie.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/dossie.py)), todo dia, comparando o dado de hoje com a série histórica ("o maior desde…"). O post os recebe como contexto.
 
@@ -238,7 +238,7 @@ A prévia de link (`docs/causas/og.png`) e as versões dos desenhos para a pági
 | Tipo | Quando | O que recebe | Tamanho |
 | --- | --- | --- | --- |
 | Fato do dia | Segunda a sábado | O fato que a pauta escolheu (abaixo), o que é parte da mesma história e os cuidados da editora; o porquê e o e daí da pesquisa do dia, com as fontes (abaixo); as outras notícias da véspera por assunto, só como contexto; os fatos de dados dos assuntos com notícia; as cinco pressões com as frases do topo e, se a direção mudou ou uma pressão mudou de lado, a mudança | Até 100 palavras |
-| Resumo da semana | Domingo | As atualizações da semana, contra a do domingo anterior: a direção em cada dia, as pressões que mudaram de lado, os dados novos, as datas marcadas que saíram, os fatos do dia da semana, as notícias por assunto na ordem da pauta (o lado de cada assunto é o da caixa de notícias) e as datas da semana seguinte | Até 250 palavras |
+| Resumo da semana | Domingo | As atualizações da semana, contra a do domingo anterior: a direção em cada dia, as pressões que mudaram de lado, os dados novos, as datas marcadas que saíram, os fatos do dia da semana, as notícias por assunto na ordem da pauta (o lado de cada assunto sai da mesma conta da pressão do dia, feita com as notícias da semana inteira) e as datas da semana seguinte | Até 250 palavras |
 | Resumo do mês | Primeiro domingo do mês, no lugar do resumo da semana | Os dados oficiais do mês anterior, do começo do mês até hoje: cada dado, as pressões que mudaram de lado e a direção; as notícias que o site leu no mês; e duas tabelas feitas por código, com os nomes e as palavras do topo: as cinco pressões e as linhas de Também acompanhamos, cada uma no começo e no fim do mês | Até 300 palavras de texto; com as tabelas, cerca de 450 |
 | Retrato do Brasil | No cartão do topo e na rolagem, como o post de 28/10, escrito à mão em `editor/` | Por que o site nasceu e como usar, sem números do dia | Até 800 palavras |
 
