@@ -80,6 +80,13 @@ details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
 {{ fontes(q.muda.fontes) }}
 </section>{% endif %}
 
+{% if q.medida %}<section id="como-mede">
+<h2>{{ q.medida.pergunta }}</h2>
+<p>{{ q.medida.texto }}</p>
+{{ fontes(q.medida.fontes) }}
+<p class="d-fontes"><a href="/nota/#t-pressoes">Como funciona</a> explica a conta das cinco pressões.</p>
+</section>{% endif %}
+
 {% if q.governo %}<section id="governo">
 <h2>{{ q.governo.pergunta }}</h2>
 <p>{{ q.governo.texto }}</p>
@@ -125,7 +132,7 @@ details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
 
 <details class="conferimos" id="fontes">
 <summary>Como conferimos esta página</summary>
-<p>Cada frase da página está ligada à fonte e ao trecho que a sustenta. {{ q.conferidas }} das {{ q.total }} fontes já tiveram o trecho achado no texto original. As outras estão marcadas "a conferir".</p>
+<p>Cada frase da página está ligada à fonte e ao trecho que a sustenta. {% if q.conferidas == q.total %}Todas as {{ q.total }} fontes já tiveram o trecho achado no texto original.{% else %}{{ q.conferidas }} das {{ q.total }} fontes já tiveram o trecho achado no texto original. As outras estão marcadas "a conferir".{% endif %}</p>
 <h3>As fontes</h3>
 <ol class="lista-fontes">
 {% for f in q.fontes %}<li>{% if f.url %}<a href="{{ f.url }}" rel="nofollow noopener">{{ f.quem }}</a>{% else %}{{ f.quem }}{% endif %}{% if f.titulo and f.titulo != f.quem %}, {{ f.titulo }}{% endif %}. <span class="nv">{{ f.nivel }}; {{ f.como }}.</span></li>

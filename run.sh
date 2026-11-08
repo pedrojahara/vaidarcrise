@@ -40,6 +40,16 @@ else
 fi
 echo "=== $(date '+%Y-%m-%dT%H:%M:%S%z') post publicado (direção ${direcao})"
 
+# O site não cria página de pergunta sozinho: quando a rodada sente falta de uma (src/base_site.py, falta_pagina()),
+# o aviso fica no registro do dia e aparece como notificação no Mac, para o Pedro decidir.
+ultimo=$(ls runs/*.json 2>/dev/null | tail -1)
+if [[ -n "$ultimo" ]]; then
+  jq -r '.avisos_ao_pedro[]?' "$ultimo" | while IFS= read -r aviso; do
+    echo "aviso ao Pedro: $aviso"
+    /usr/bin/osascript -e "display notification \"${aviso//\"/}\" with title \"Vai dar crise?\" subtitle \"Falta uma página?\"" || true
+  done
+fi
+
 # A leitura a fundo do fato do dia (src/fundo.py, guia em FUNDO.md) sai depois do post, num segundo push: a pesquisa
 # rodou antes do post (src/run.py), e aqui fica a redação, da mesma pesquisa (se a pesquisa falhou, faz tudo de novo).
 # Antes, a memória do momento junta os fatos do dia; no domingo, revê as histórias.

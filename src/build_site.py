@@ -529,7 +529,7 @@ def post_de(rodada: dict, cfg: dict) -> dict:
         except (KeyError, OSError, ValueError, TypeError, StopIteration) as e:
             print(f"aviso: a leitura a fundo do post de {dia} não foi montada ({e!r})")
         try:  # a linha que leva ao básico do assunto, logo abaixo do texto
-            ponte = base_site.ponte(p, cfg, base_site.assunto_do_fato(rodada))
+            ponte = base_site.ponte(p, cfg, base_site.assunto_do_fato(rodada), base_site.titulo_do_fato(rodada))
         except (KeyError, OSError, ValueError, TypeError) as e:
             print(f"aviso: o link do post de {dia} para o básico não saiu ({e!r})")
     zap = None

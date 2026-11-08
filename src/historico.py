@@ -40,6 +40,14 @@ MENSAIS = {
     "primario_12m": 5793,
     "ipca_12m": 13522,
     "reservas": 3546,  # reservas internacionais, conceito liquidez, fim do mês (US$ milhões)
+    # Só para as páginas das pressões (base/perguntas), conferidas pelo verificador da base (src/verifica_base.py).
+    "endividamento_familias": 29037,  # dívida das famílias com os bancos, % da renda de 12 meses
+    "endividamento_sem_casa": 29038,  # a mesma, sem o financiamento da casa própria
+    "juros_familias": 29033,  # parte da renda que vai para os juros das dívidas (com ajuste sazonal)
+    "amortizacao_familias": 29036,  # parte da renda que vai para devolver o que foi emprestado
+    "juro_pf": 20740,  # juro médio do crédito livre às pessoas físicas, % ao ano
+    "inadimplencia_pf": 21112,  # atrasos de mais de 90 dias no crédito livre às pessoas físicas, %
+    "juros_divida_12m": 5760,  # juros nominais do setor público consolidado em 12 meses, % do PIB
 }
 DIARIAS_POR_MES = {"selic_meta": 432, "dolar_ptax": 1}
 # Preço mundial das commodities (FMI, via FRED): o fator Cenário externo.

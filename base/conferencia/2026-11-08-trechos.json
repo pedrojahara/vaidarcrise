@@ -1,0 +1,311 @@
+{
+ "em": "2026-11-08",
+ "modelo": "sonnet",
+ "resumo": {
+  "confirmado_em_parte": 6,
+  "agente_nao_sustenta": 6,
+  "confirmado": 8
+ },
+ "itens": [
+  {
+   "id": "a-bc-fatores-2025",
+   "antes": "conferido",
+   "agente": {
+    "url_usada": "https://www.sindifisco-ms.org.br/bc-divida-bruta-do-governo-geral-sobe-e-fecha-2025-em-787-do-pib/",
+    "titulo": "BC: Dívida bruta do governo geral sobe e fecha 2025 em 78,7% do PIB",
+    "nivel": 6,
+    "trecho": "O BC informou que a evolução refletiu, principalmente, os impactos da incorporação de juros nominais (+8,9 p.p.), do reconhecimento de dívidas (+0,2 p.p.), do crescimento do PIB nominal (-5,7 p.p.), do efeito da valorização cambial (-0,5 p.p.), das emissões líquidas de dívida (-0,3 p.p.), e dos demais ajustes da dívida externa (-0,2 p.p.).",
+    "lingua": "pt",
+    "sustenta": "em_parte",
+    "o_que_falta": "Não consegui ler o PDF oficial do BCB (texto comprimido, WebFetch não extraiu). O trecho vem de uma notícia que reproduz o comunicado do BC, não da página 4 do PDF. Os números batem com a frase (+8,9 p.p. de juros nominais, −5,7 p.p. de PIB nominal), mas isso não foi confirmado no original. O resumo de busca do próprio BCB trouxe números inconsistentes e não serve de prova. Se o código exigir a fonte indicada, o trecho deve ser conferido no PDF com pdftotext. A nota sobre a revisão (+8,85 e −5,74 na planilha de outubro de 2026) não altera a frase, que cita a nota de dezembro de 2025."
+   },
+   "erro": null,
+   "resultado": "confirmado_em_parte"
+  },
+  {
+   "id": "a-bc-fatores-2026",
+   "antes": "conferido",
+   "agente": {
+    "url_usada": "https://www.bcb.gov.br/content/estatisticas/hist_estatisticasfiscais/202610_Texto_de_estatisticas_fiscais.pdf",
+    "titulo": "Banco Central, Estatísticas fiscais, nota de setembro de 2026 (29/10/2026)",
+    "nivel": 3,
+    "trecho": null,
+    "lingua": "pt",
+    "sustenta": "nao_achei_a_fonte",
+    "o_que_falta": "Não consegui ler o texto do PDF do Banco Central. O WebFetch devolveu só binário comprimido (FlateDecode), e o espelho do Poder360 está bloqueado. Por isso não tenho trecho literal confirmado e não vou reconstruir um de memória. O trecho sugerido pelo resumo de busca (\"No ano, o aumento de 4,3 p.p. do PIB resultou, em especial, da incorporação de juros nominais (7,2 p.p.), ... do crescimento do PIB nominal (-3,9 p.p.) ...\") não apareceu em nenhuma página que consegui abrir. A notícia da CNN Brasil confirma só duas partes: a alta de 4,3 p.p. no ano e que o PIB nominal reduziu a relação em 3,9 p.p. Ela não traz o 7,2 p.p. de juros. Por ser notícia, não serve como fonte final. Será preciso conferir o trecho com a extração do PDF com layout, como você descreveu."
+   },
+   "erro": null,
+   "resultado": "agente_nao_sustenta"
+  },
+  {
+   "id": "a-ifi-2026",
+   "antes": "sem_trecho",
+   "agente": {
+    "url_usada": "https://www.jornaldocomercio.com/economia/2026/08/1260423-ifi-cumprimento-formal-da-meta-fiscal-convive-com-realizacao-de-deficits-primarios-efetivos.html",
+    "titulo": "IFI: cumprimento formal da meta fiscal convive com realização de déficits primários efetivos (Jornal do Comércio)",
+    "nivel": 6,
+    "trecho": "para a estabilização da dívida bruta em proporção do PIB, seria necessário um superávit de 2,1% do PIB",
+    "lingua": "pt",
+    "sustenta": "em_parte",
+    "o_que_falta": "O PDF oficial da IFI (RAF 115) não pôde ser lido: o WebFetch devolveu só metadados e binário, e o mesmo ocorreu com a versão em inglês. O trecho vem de uma notícia, que atribui o cálculo de 2,1% do PIB à IFI para estabilizar a dívida bruta. O trecho não traz a palavra \"primário\" nem \"sem contar os juros\", embora o contexto seja de resultado primário. Também não diz \"além do que gasta\". A fonte oficial precisa ser conferida em texto extraível. O RAF nº 113, de junho de 2026, já trazia o mesmo número, então os 2,1% não são novidade de agosto."
+   },
+   "erro": null,
+   "resultado": "confirmado_em_parte"
+  },
+  {
+   "id": "a-obrigatorias",
+   "antes": "trecho_nao_achado",
+   "agente": {
+    "url_usada": "https://www2.camara.leg.br/orcamento-da-uniao/estudos/2024/informativo_conjunto_ploa2025/view",
+    "titulo": "Informativo conjunto sobre o projeto de lei do orçamento de 2025",
+    "nivel": 3,
+    "trecho": null,
+    "lingua": "pt",
+    "sustenta": "nao_achei_a_fonte",
+    "o_que_falta": "Não consegui ler o texto do PDF. O WebFetch devolveu só dados binários comprimidos, sem texto legível, na página da Câmara e também nas cópias do Senado. Por isso não tenho trecho literal para copiar. Um resumo de busca diz que o informativo (setembro de 2024) afirma que, entre as despesas primárias do PLOA 2025, as obrigatórias são 92% e as discricionárias 8%. Isso não foi conferido letra por letra. É preciso abrir o PDF com um leitor de texto e copiar a frase."
+   },
+   "erro": null,
+   "resultado": "agente_nao_sustenta"
+  },
+  {
+   "id": "a-chudik",
+   "antes": "conferido",
+   "agente": {
+    "url_usada": "https://econpapers.repec.org/RePEc:imf:imfwpa:15/197",
+    "titulo": "Is There a Debt-threshold Effect on Output Growth? (IMF Working Paper WP/15/197)",
+    "nivel": 3,
+    "trecho": "we find no evidence for a universally applicable threshold effect in the relationship between public debt and economic growth, once we account for the impact of global factors and their spillover effects. Regardless of the threshold, however, we find significant negative long-run effects of public debt build-up on output growth.",
+    "lingua": "en",
+    "sustenta": "sim",
+    "o_que_falta": "O PDF do IMF não pôde ser lido (binário comprimido). O trecho é do resumo do mesmo working paper, na página do EconPapers/RePEc. O \"40 países\" aparece na frase anterior do resumo. \"Por muitos anos\" corresponde a \"long-run\". O trecho foi obtido via leitor que pode ter alterado espaços, então convém verificar a correspondência exata."
+   },
+   "erro": null,
+   "resultado": "confirmado"
+  },
+  {
+   "id": "a-copom-dez2024",
+   "antes": "conferido",
+   "agente": {
+    "url_usada": "https://www.bcb.gov.br/content/copom/atascopom/Copom267-not20241211267.pdf",
+    "titulo": "Ata da 267ª reunião do Copom, 10 e 11/12/2024",
+    "nivel": 3,
+    "trecho": "A percepção dos agentes econômicos sobre o recente anúncio fiscal afetou, de forma relevante, os preços de ativos e as expectativas dos agentes",
+    "lingua": "pt",
+    "sustenta": "sim",
+    "o_que_falta": "Não consegui ler o PDF: o WebFetch devolveu só dados binários comprimidos. O trecho veio de duas consultas independentes, uma busca e a página do Metrópoles, que cita a ata (parágrafo 11). Eu não o vi dentro do PDF. A frase da ata continua depois de \"expectativas dos agentes\", com \"especialmente o prêmio de risco, as expectativas de inflação e a taxa de câmbio\". Se o código não achar o trecho no PDF, a causa provável é a extração do texto, como quebras de linha ou hifenização."
+   },
+   "erro": null,
+   "resultado": "confirmado"
+  },
+  {
+   "id": "a-copom-dez2024-fora",
+   "antes": "conferido",
+   "agente": {
+    "url_usada": "https://www.bcb.gov.br/content/copom/atascopom/Copom267-not20241211267.pdf",
+    "titulo": "Ata da 267ª reunião do Copom, 10 e 11/12/2024",
+    "nivel": 3,
+    "trecho": null,
+    "lingua": "pt",
+    "sustenta": "nao_achei_a_fonte",
+    "o_que_falta": "Não consegui ler o texto da ata. O PDF do Banco Central chegou comprimido e a ferramenta não o decodificou, então não confirmei nenhuma frase na página. A frase sugerida (\"O ambiente externo permanece desafiador, em função, principalmente, da conjuntura econômica nos Estados Unidos\") aparece, segundo a Gazeta do Povo, como citação do comunicado do Copom de 11/12/2024, não da ata. As reportagens sobre a ata citam outra redação: a Agência Brasil fala em \"conjuntura econômica incerta nos Estados Unidos\", e uma busca resumiu a ata como \"conjuntura e política econômica nos EUA\". O sentido sustenta a frase do site, mas o trecho literal da ata não foi verificado. Também não consegui abrir o comunicado oficial: a URL que tentei deu 404 e as páginas HTML do bcb.gov.br vieram vazias. Para fechar, falta o texto legível da ata (parágrafo sobre o ambiente externo) ou o comunicado oficial."
+   },
+   "erro": null,
+   "resultado": "agente_nao_sustenta"
+  },
+  {
+   "id": "a-sp-2015",
+   "antes": "sem_trecho",
+   "agente": {
+    "url_usada": "https://agenciabrasil.ebc.com.br/economia/noticia/2015-09/standardpoors-rebaixa-brasil-e-pais-perde-grau-de-investimento",
+    "titulo": "Standard&Poor's rebaixa Brasil e país perde grau de investimento",
+    "nivel": 6,
+    "trecho": "informou hoje (9) que reduziu a nota de crédito do Brasil de BBB- para BB+, com perspectiva negativa",
+    "lingua": "pt",
+    "sustenta": "sim",
+    "o_que_falta": "Nada de essencial. O trecho cobre o rebaixamento no dia 9, e a página, publicada em 09/09/2015, também diz que \"o Brasil perde o grau de investimento\". O título cita a S&P, e o texto descreve grau de investimento como o indicador de países bons pagadores. Esse último ponto vem de resumo da página, não de trecho copiado."
+   },
+   "erro": null,
+   "resultado": "confirmado"
+  },
+  {
+   "id": "a-repasse-bc",
+   "antes": "conferido",
+   "agente": {
+    "url_usada": "https://www.bcb.gov.br/content/ri/relatorioinflacao/202603/rpm202603b8p.pdf",
+    "titulo": "Repasse cambial: estimativas por projeções locais (boxe do RPM, março de 2026)",
+    "nivel": 3,
+    "trecho": null,
+    "lingua": "pt",
+    "sustenta": "em_parte",
+    "o_que_falta": "Não consegui ler o PDF: o WebFetch devolveu só fluxos binários comprimidos, nas duas versões (o boxe e o RPM completo). Por isso não tenho trecho literal verificado. Resumos de busca indicam um coeficiente de repasse de 0,10 para o IPCA cheio em quatro trimestres. Se for isso, 10% de alta do dólar daria cerca de 1 ponto no IPCA, o que bate com a frase. Mas esse número não foi confirmado no texto. Também não ficou claro se o 0,10 vale para depreciação de 10% ou se é o coeficiente do Gráfico 1. Um resumo menciona um coeficiente mais alto na análise desagregada. Falta extrair o texto do PDF (pdftotext ou OCR) e localizar a frase com o coeficiente de 0,10."
+   },
+   "erro": null,
+   "resultado": "agente_nao_sustenta"
+  },
+  {
+   "id": "a-kohlscheen",
+   "antes": "conferido",
+   "agente": {
+    "url_usada": "https://www.ijcb.org/journal/ijcb17q2a4.htm",
+    "titulo": "When the Walk Is Not Random: Commodity Prices and Exchange Rates",
+    "nivel": 2,
+    "trecho": "Commodity prices predict exchange rate movements of eleven commodity-exporting countries",
+    "lingua": "en",
+    "sustenta": "sim",
+    "o_que_falta": "O trecho sustenta a parte central: preços de commodities preveem o câmbio de onze países exportadores. A página também limita o resultado a um painel dentro da amostra, para horizontes de até dois meses. Não confirmei na página que o estudo seja \"do Banco de Compensações Internacionais\". Os autores trabalham no BIS, mas a página pode não dizer isso."
+   },
+   "erro": null,
+   "resultado": "confirmado"
+  },
+  {
+   "id": "a-metas-historico",
+   "antes": "sem_trecho",
+   "agente": {
+    "url_usada": "https://www.bcb.gov.br/controleinflacao/historicometas",
+    "titulo": "Histórico das metas para a inflação",
+    "nivel": 3,
+    "trecho": null,
+    "lingua": "pt",
+    "sustenta": "nao_achei_a_fonte",
+    "o_que_falta": "A página do BC e suas versões em inglês abrem só com o título \"Banco Central do Brasil\", porque a tabela é carregada por JavaScript. Não consegui copiar nenhum trecho literal. Buscas secundárias indicam que a frase tem um problema: em 2005 a tolerância foi de 2,5 pontos, não de 2. A tolerância de 2 pontos vale de 2006 a 2016. Também houve centro de 4,5% em 2005–2018 e 1,5 ponto desde 2017. O centro caiu 0,25 ponto ao ano de 2019 (4,25%) até 2024 (3%). A frase precisa ser ajustada e a tabela oficial conferida em uma versão que abra, como a resolução do CMN ou um relatório do BC em PDF com texto."
+   },
+   "erro": null,
+   "resultado": "agente_nao_sustenta"
+  },
+  {
+   "id": "a-cerisola-gelos",
+   "antes": "sem_trecho",
+   "agente": {
+    "url_usada": "https://econpapers.repec.org/RePEc:imf:imfwpa:05/109",
+    "titulo": "What Drives Inflation Expectations in Brazil? An Empirical Analysis (IMF Working Paper WP/05/109, resumo no RePEc/EconPapers)",
+    "nivel": 3,
+    "trecho": "We also find that apart from the inflation target, the stance of fiscal policy, as proxied by the ratio of the consolidated primary surplus to GDP, has been instrumental in shaping expectations.",
+    "lingua": "en",
+    "sustenta": "sim",
+    "o_que_falta": "Nada de essencial. O PDF do FMI não pôde ser lido (binário comprimido), então o trecho vem do resumo reproduzido no EconPapers. O resumo diz que o estudo cobre o período desde 1999, quando o regime de metas foi adotado. A frase do site diz \"contas do governo\". O estudo mede isso pelo superávit primário consolidado em relação ao PIB."
+   },
+   "erro": null,
+   "resultado": "confirmado"
+  },
+  {
+   "id": "a-carta-2015",
+   "antes": "sem_trecho",
+   "agente": {
+    "url_usada": "https://istoedinheiro.com.br/bc-diz-que-ultimo-semestre-de-2015-foi-comprometido-por-ajustes-em-administrados",
+    "titulo": "BC diz que último semestre de 2015 foi comprometido por ajustes em administrados",
+    "nivel": 6,
+    "trecho": "novos ajustes nos preços administrados, advindos, principalmente, da variação nos preços dos combustíveis",
+    "lingua": "pt",
+    "sustenta": "em_parte",
+    "o_que_falta": "O PDF oficial da carta não pôde ser lido (fluxo binário comprimido), então não há trecho literal da fonte indicada. A notícia da IstoÉ Dinheiro cobre combustíveis e repasse da desvalorização cambial, mas não menciona energia elétrica. O JB (jb.com.br, 9/1/2016) cita \"o reajuste dos preços administrados por contrato, como o da energia\" e \"o repasse da valorização do dólar\", mas a frase está em notícia, não na carta. Recomendo trocar a fonte pela carta em texto, se houver versão HTML, ou citar a notícia como apoio (nível 6)."
+   },
+   "erro": null,
+   "resultado": "confirmado_em_parte"
+  },
+  {
+   "id": "a-carta-2017",
+   "antes": "fonte_inacessivel",
+   "agente": {
+    "url_usada": "https://www.moneytimes.com.br/ao-vivo-ilan-explica-inflacao-abaixo-da-meta-em-2017",
+    "titulo": "Money Times: Ilan explica inflação abaixo da meta em 2017 (cita a carta aberta do Banco Central)",
+    "nivel": 6,
+    "trecho": "Em 2017, a reversão da inflação nos preços dos alimentos no domicílio foi maior do que o previsto",
+    "lingua": "pt",
+    "sustenta": "em_parte",
+    "o_que_falta": "O PDF oficial do BCB (carta2017.pdf) é uma imagem escaneada, sem texto extraível, então o trecho não pôde ser conferido nele. O trecho vem de uma notícia (Money Times) que cita a carta. Ele mostra que a reversão da inflação dos alimentos foi maior do que o previsto, e a notícia completa a frase com \"tanto pelo Copom quanto pelos analistas do mercado\". O trecho não diz de forma explícita que isso explica a inflação abaixo do piso. Essa ligação vem do contexto da carta e de outras reportagens, que citam o IPCA de 2,95% e a inflação sem alimentos de 4,54%. Para um nível 3, falta uma versão em texto da carta no site do BCB."
+   },
+   "erro": null,
+   "resultado": "confirmado_em_parte"
+  },
+  {
+   "id": "a-carta-2024",
+   "antes": "sem_trecho",
+   "agente": {
+    "url_usada": "https://www.bcb.gov.br/content/controleinflacao/controleinflacao_docs/carta_aberta/carta2024.pdf",
+    "titulo": "Carta aberta ao ministro da Fazenda sobre o IPCA de 2024 (10/1/2025)",
+    "nivel": 3,
+    "trecho": null,
+    "lingua": "pt",
+    "sustenta": "nao_achei_a_fonte",
+    "o_que_falta": "O PDF do BC abre, mas o WebFetch só devolveu binário comprimido, sem texto legível. Por isso não consegui copiar nenhum trecho literal, e não vou reconstruir um de memória. O arquivo OF_CIO_17431_2025_BCB_SECRE_01.pdf, do mesmo site, deu o mesmo problema. Reportagens (Folha PE, Gazeta do Povo, Itatiaia) indicam que a carta cita depreciação cambial, \"ritmo forte de crescimento da atividade econômica\" e \"fatores climáticos\". Elas também citam alimentos (seca, ciclo do boi), mas não deram a citação literal da carta sobre alimentos. A frase parece correta, mas a conferência literal precisa de uma versão do PDF com texto extraível."
+   },
+   "erro": null,
+   "resultado": "agente_nao_sustenta"
+  },
+  {
+   "id": "a-lc179",
+   "antes": "sem_trecho",
+   "agente": {
+    "url_usada": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp179.htm",
+    "titulo": "Lei Complementar nº 179, de 24 de fevereiro de 2021",
+    "nivel": 3,
+    "trecho": "O mandato do Presidente do Banco Central do Brasil terá duração de 4 (quatro) anos, com início no dia 1º de janeiro do terceiro ano de mandato do Presidente da República",
+    "lingua": "pt",
+    "sustenta": "sim",
+    "o_que_falta": "A lei é de 24/02/2021. Ela fixa mandato de 4 anos para o presidente do BC, começando em 1º de janeiro do 3º ano do mandato presidencial. Para os diretores, a escala de 4 anos está no § 2º. Isso sustenta \"mandatos fixos que não coincidem com o do presidente da República\". O trecho é do presidente do BC. A parte dos diretores é a escala do § 2º, que não cabe num único trecho curto. A página tem erros de codificação de caracteres (como \"º\"), então a busca letra por letra pode falhar nesses pontos. Confira o trecho no texto bruto."
+   },
+   "erro": null,
+   "resultado": "confirmado"
+  },
+  {
+   "id": "a-lei-salario-minimo",
+   "antes": "sem_trecho",
+   "agente": {
+    "url_usada": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm",
+    "titulo": "Lei nº 14.663, de 28 de agosto de 2023",
+    "nivel": 3,
+    "trecho": "a vigorar a partir de 2024, inclusive, a serem aplicadas em 1º de janeiro do respectivo ano, considerado que o valor decorrerá da soma do índice de medida da inflação do ano anterior, para a preservação do poder aquisitivo, com o índice correspondente ao crescimento real do Produto Interno Bruto (PIB) de 2 (dois) anos anteriores, para fins de aumento real",
+    "lingua": "pt",
+    "sustenta": "em_parte",
+    "o_que_falta": "A regra (art. 3º) é inflação (INPC acumulado em 12 meses até novembro) mais o crescimento real do PIB de dois anos antes. Mas ela vale a partir de 2024, não de 2023. A lei é de 2023, e o reajuste de 2023 foi fixado à parte, no art. 1º. Convém trocar \"Desde 2023\" por \"Desde 2024\" ou \"A lei de 2023 fixou que, a partir de 2024\". Convém também dizer \"PIB de dois anos antes\", e não \"crescimento do PIB\" em geral. O §5º ainda prevê só a inflação se o PIB for negativo. O trecho vem da página oficial, que abre com acentos corrompidos (\"�\"). Os acentos foram restaurados na cópia."
+   },
+   "erro": null,
+   "resultado": "confirmado_em_parte"
+  },
+  {
+   "id": "a-mian-sufi",
+   "antes": "conferido",
+   "agente": {
+    "url_usada": "https://www.nber.org/papers/w21581",
+    "titulo": "Household Debt and Business Cycles Worldwide",
+    "nivel": 2,
+    "trecho": "An increase in the household debt to GDP ratio in the medium run predicts lower subsequent GDP growth, higher unemployment, and negative growth forecasting errors in a panel of 30 countries from 1960 to 2012.",
+    "lingua": "en",
+    "sustenta": "sim",
+    "o_que_falta": "Nada de essencial. O trecho é da página do NBER (working paper de 2015) e não do artigo publicado no QJE em 2017. O resumo sugerido (\"unbalanced panel\") não bate com a página do NBER. A ferramenta de leitura só devolveu a frase em dois pedaços, que juntei. Se o código não achar o trecho, confira a pontuação entre \"growth,\" e \"higher\". A frase do site diz \"costuma vir antes\", e o estudo diz \"prevê\" (associação preditiva), sem afirmar causa."
+   },
+   "erro": null,
+   "resultado": "confirmado"
+  },
+  {
+   "id": "a-lei-consignado",
+   "antes": "conferido",
+   "agente": {
+    "url_usada": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.820.htm",
+    "titulo": "Lei nº 10.820, de 17 de dezembro de 2003",
+    "nivel": 3,
+    "trecho": "Dispõe sobre a autorização para desconto de prestações em folha de pagamento, e dá outras providências.",
+    "lingua": "pt",
+    "sustenta": "sim",
+    "o_que_falta": "A ementa fala em \"prestações\", sem usar a palavra \"empréstimos\" nem \"consignado\". O art. 1º cita empréstimos, financiamentos, cartões de crédito e arrendamento mercantil, com desconto em folha. A data (17/12/2003) está no título da lei."
+   },
+   "erro": null,
+   "resultado": "confirmado"
+  },
+  {
+   "id": "a-apostas-bc",
+   "antes": "sem_trecho",
+   "agente": {
+    "url_usada": "https://paraibabusiness.com.br/transferencias-para-casa-de-apostas-por-pix-e-de-cerca-de-r-20-bi-por-mes-estima-bc/",
+    "titulo": "Transferências para casa de apostas por Pix é de cerca de R$ 20 bi por mês, estima BC",
+    "nivel": 6,
+    "trecho": "Transferências para casa de apostas por Pix é de cerca de R$ 20 bi por mês, estima BC",
+    "lingua": "pt",
+    "sustenta": "em_parte",
+    "o_que_falta": "O PDF oficial do Banco Central (EE119) abriu só como binário comprimido, sem texto legível, então não consegui copiar o trecho da fonte original. Nas buscas, o documento aparece como a Nota Técnica 513/2024-BCB/SECRE. A cópia do poder360 não pôde ser aberta. A manchete da notícia sustenta o valor (cerca de R$ 20 bi por mês), o Pix e a estimativa do BC. O corpo da notícia, que não consegui citar literalmente, traz o mês de agosto e o valor de R$ 20,8 bilhões. A manchete sozinha não cita agosto. Para a checagem final, convém ler o texto do PDF do BC."
+   },
+   "erro": null,
+   "resultado": "confirmado_em_parte"
+  }
+ ]
+}

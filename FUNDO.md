@@ -63,7 +63,7 @@ Copie o número como a fonte escreve, sem arredondar diferente. Fato sem linha n
 
 ## Até onde ir
 
-O tamanho do texto é o tamanho do achado. Se depois de duas voltas de pesquisa o editor-chefe não achar tese que passe nos quatro testes, o dia fica sem leitura a fundo, e o fato do dia sai com o porquê que a pesquisa achou e o link do básico. Um texto longo sem achado gasta o tempo de quem lê. O trabalho de cada dia tem limite de uns 30 minutos para a pesquisa, antes do post, e outros 35 para a redação e a conferência, depois dele.
+O tamanho do texto é o tamanho do achado. Se depois de duas voltas de pesquisa o editor-chefe não achar tese que passe nos quatro testes, o dia fica sem leitura a fundo, e o fato do dia sai com o porquê que a pesquisa achou e o link do básico. Um texto longo sem achado gasta o tempo de quem lê. O editor-chefe também diz se a leitora precisaria de uma página do básico que o site ainda não tem; a rodada só avisa o editor do site, que decide se a página sai. O trabalho de cada dia tem limite de uns 30 minutos para a pesquisa, antes do post, e outros 35 para a redação e a conferência, depois dele.
 
 ## A conferência
 

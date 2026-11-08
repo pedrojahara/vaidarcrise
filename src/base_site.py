@@ -146,14 +146,30 @@ SOBRE = {"juro": "o juro", "inflacao": "a inflação esperada", "contas": "as co
          "parcelas": "as dívidas das famílias", "mercado": "a desconfiança de quem investe"}
 
 
-def assunto_do_fato(rodada: dict) -> str | None:
-    """O assunto do fato do dia que a pauta escolheu (src/pauta.py), como o classificador de notícias marcou."""
+# No assunto "Juro e inflação", o título do fato diz qual das duas páginas ele pede: o Copom e a Selic levam à do juro;
+# o Focus, o IPCA e os preços, à da inflação esperada. Sem pista no título, vale a tese da leitura a fundo.
+PISTAS_DO_TITULO = [("juro", re.compile(r"\b(Copom|Selic)\b", re.I)),
+                    ("inflacao", re.compile(r"\b(Focus|IPCA|IPCA-15|infla[çc][ãa]o|pre[çc]os?)\b", re.I))]
+# A rodada avisa o Pedro quando um assunto sem página aparece neste tanto de fatos do dia nestes dias (decisão do Pedro
+# em 8/11/2026: o site não cria página sozinho; ele avalia cada caso).
+VEZES_DO_AVISO = 3
+DIAS_DO_AVISO = 30
+
+
+def _fato_escolhido(rodada: dict) -> dict:
     pauta = rodada.get("pauta") or {}
     final = pauta.get("final")
-    for c in pauta.get("candidatos") or []:
-        if c.get("id") == final:
-            return c.get("fator")
-    return None
+    return next((c for c in pauta.get("candidatos") or [] if c.get("id") == final), {})
+
+
+def assunto_do_fato(rodada: dict) -> str | None:
+    """O assunto do fato do dia que a pauta escolheu (src/pauta.py), como o classificador de notícias marcou."""
+    return _fato_escolhido(rodada).get("fator")
+
+
+def titulo_do_fato(rodada: dict) -> str | None:
+    """O título do fato do dia que a pauta escolheu, que desempata o assunto "Juro e inflação"."""
+    return _fato_escolhido(rodada).get("titulo")
 
 
 def _partes_da_aba() -> dict[str, str]:
@@ -174,7 +190,7 @@ def _posts_ligados(cfg: dict) -> dict[str, list[dict]]:
         post = r.get("post") or {}
         if not post.get("ok") or (post.get("tipo") or "dia") != "dia":
             continue
-        pt = ponte(post, cfg, assunto_do_fato(r))
+        pt = ponte(post, cfg, assunto_do_fato(r), titulo_do_fato(r))
         if pt and not pt.get("aba"):
             out.setdefault(pt["id"], []).append({"dia": dia, "data": f"{int(dia[8:10])}/{int(dia[5:7])}",
                                                  "titulo": post.get("titulo"), "url": f"/{dia}/"})
@@ -191,10 +207,10 @@ def _regra_do_teste(t: dict) -> str:
             f"pesa mais {g.get('l-fora', 'a segunda')}. Fora disso, o teste não decide.")
 
 
-def ponte(post: dict, cfg: dict, assunto: str | None) -> dict | None:
+def ponte(post: dict, cfg: dict, assunto: str | None, titulo: str | None = None) -> dict | None:
     """A linha logo abaixo do fato do dia, que leva ao básico do assunto. A ordem segue o que a leitora acabou de ler:
-    1. a página de uma pressão do assunto do fato (no Copom, "Juro e inflação"; se as duas pressões tiverem página,
-       vale a da tese da leitura a fundo);
+    1. a página de uma pressão do assunto do fato (em "Juro e inflação", que tem duas, o título do fato decide: Copom
+       ou Selic, a do juro; Focus, IPCA ou preços, a da inflação esperada; sem pista, a da tese da leitura a fundo);
     2. a página da pressão da tese da leitura a fundo (post.termina_em, gravado por src/fundo.py);
     3. a parte da aba O que causa recessão que explica o assunto (ou, sem ele, a pressão da tese), com o título da
        parte no link.
@@ -203,7 +219,10 @@ def ponte(post: dict, cfg: dict, assunto: str | None) -> dict | None:
     tese = post.get("termina_em")
     do_assunto = PRESSOES_DO_ASSUNTO.get(assunto or "", [])
     com_pagina = [pid for pid in do_assunto if pid in pags]
-    if tese in com_pagina:
+    pelo_titulo = next((pid for pid, rx in PISTAS_DO_TITULO if pid in com_pagina and rx.search(titulo or "")), None)
+    if len(com_pagina) > 1 and pelo_titulo:
+        escolha = pelo_titulo
+    elif tese in com_pagina:
         escolha = tese
     elif com_pagina:
         escolha = com_pagina[0]
@@ -224,6 +243,37 @@ def ponte(post: dict, cfg: dict, assunto: str | None) -> dict | None:
     titulo = _partes_da_aba().get(url.split("#", 1)[-1]) if "#" in url else None
     return {"url": url, "texto": titulo or "O que causa recessão", "rotulo": "O básico, na página O que causa recessão",
             "aba": True}
+
+
+def falta_pagina(rodadas: list[dict], cfg: dict, hoje: str) -> list[str]:
+    """Os avisos ao Pedro de que talvez falte uma página (decisão dele em 8/11/2026: o site não cria pergunta sozinho).
+    Dois sinais: um assunto sem página de pressão em VEZES_DO_AVISO fatos do dia ou mais nos últimos DIAS_DO_AVISO
+    dias (o link do fato caiu na página O que causa recessão), e o editor-chefe da pesquisa do dia dizendo que sentiu
+    falta de uma página (post.fundo.pagina_que_falta). Uma rodada por dia, a última."""
+    por_dia: dict[str, dict] = {}
+    for r in rodadas:
+        por_dia[(r.get("gerado_em") or r.get("id") or "")[:10]] = r
+    inicio = (dt.date.fromisoformat(hoje) - dt.timedelta(days=DIAS_DO_AVISO)).isoformat()
+    sem_pagina: dict[str, list[str]] = {}
+    avisos = []
+    for dia in sorted(d for d in por_dia if inicio < d <= hoje):
+        r = por_dia[dia]
+        post = r.get("post") or {}
+        if not post.get("ok") or (post.get("tipo") or "dia") != "dia":
+            continue
+        assunto = assunto_do_fato(r)
+        pt = ponte(post, cfg, assunto, titulo_do_fato(r))
+        if assunto and (pt is None or pt.get("aba")):
+            sem_pagina.setdefault(assunto, []).append(dia)
+        falta = ((post.get("fundo") or {}).get("pagina_que_falta") or "").strip()
+        if dia == hoje and falta:
+            avisos.append(f"O editor-chefe sentiu falta de uma página no fato do dia de {_data(dia)}: {falta}")
+    nomes = cfg.get("fatores", {})
+    for assunto, dias in sem_pagina.items():
+        if len(dias) >= VEZES_DO_AVISO and hoje in dias:
+            avisos.append(f"{len(dias)} fatos do dia nos últimos {DIAS_DO_AVISO} dias foram sobre {nomes.get(assunto, assunto)}, "
+                          f"que não tem página própria ({', '.join(_data(d)[:-5] for d in dias)}). Vale uma página?")
+    return avisos
 
 
 def fundo_ctx(post: dict, cfg: dict, ligar) -> dict | None:
@@ -287,10 +337,10 @@ def pergunta_ctx(p: dict, A: dict, E: dict, conf: dict, cfg: dict, ligar, posts:
     fontes = _Fontes(A, conf)
     esc = {d["degrau"]: d for d in p["escada"]}
     raiz, depois = esc.get("raiz"), esc.get("o_que_vem_depois")
-    gov, agora = p.get("governo"), p.get("agora")
+    gov, agora, medida = p.get("governo"), p.get("agora"), p.get("medida")
     # Liga os termos técnicos uma vez na página toda: junta os textos na ordem em que aparecem.
     ordem: list[str] = [p["resposta_curta"]["texto"]]
-    ordem += [x["texto"] for x in (depois, gov) if x]
+    ordem += [x["texto"] for x in (depois, medida, gov) if x]
     if raiz:
         ordem.append(raiz.get("peso_da_evidencia") or "")
         for lt in raiz.get("leituras", []):
@@ -309,6 +359,8 @@ def pergunta_ctx(p: dict, A: dict, E: dict, conf: dict, cfg: dict, ligar, posts:
 
     resposta = {"texto": L(p["resposta_curta"]["texto"]), "fontes": fontes.de(p["resposta_curta"]["afirmacoes"])}
     muda = bloco(depois)
+    # Como o topo mede a pressão desta página, em duas ou três frases, com o link para Como funciona.
+    como_mede = bloco(medida)
     governo = bloco(gov)
     eps = []
     for e in sorted((E[i] for i in p.get("episodios", []) if i in E), key=lambda e: e["periodo"]["de"]):
@@ -353,7 +405,7 @@ def pergunta_ctx(p: dict, A: dict, E: dict, conf: dict, cfg: dict, ligar, posts:
         em_jogo = {**bloco(agora), "atualizado": _data(agora["atualizado_em"])}
 
     return {"pergunta": p["pergunta"], "id": p["id"], "pressao": cfg["direcao"]["nomes"].get(p.get("pressao"), ""),
-            "atualizado": _data(p["atualizado_em"]), "resposta": resposta, "muda": muda, "governo": governo,
+            "atualizado": _data(p["atualizado_em"]), "resposta": resposta, "muda": muda, "medida": como_mede, "governo": governo,
             "episodios": eps, "explicacoes": explic, "agora": em_jogo, "fatos": posts, "outras": outras,
             "fontes": fontes.ordem, "conferidas": sum(1 for f in fontes.ordem if f["conferida"]), "total": len(fontes.ordem),
             "mudancas": [{"data": _data(x["data"]), "o_que": x["o_que"], "motivo": x["motivo"]} for x in p.get("mudancas", [])]}

@@ -1673,7 +1673,7 @@
     "titulo": "runs/2026-11-06T0630.json",
     "url": "https://vaidarcrise.com.br/2026-11-06/"
    },
-   "trecho": "a prévia do PIB do Banco Central já tinha caído 0,6% nos 3 meses até agosto",
+   "trecho": "prévia do PIB caiu 0,6% no trimestre até agosto",
    "arquivo": "runs/2026-11-06T0630.json"
   },
   {
@@ -1964,6 +1964,1746 @@
      "tol": 0.005
     }
    ]
+  },
+  {
+   "id": "a-div-trajetoria",
+   "tipo": "dado",
+   "texto": "A dívida do governo caiu de 55,5% do PIB no fim de 2006 para 51,5% no fim de 2013, subiu até 86,9% no fim de 2020, caiu para 71,7% no fim de 2022 e chegou a 82,9% em setembro de 2026.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Dívida bruta do governo geral (série 13762)",
+    "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=13762"
+   },
+   "dados": [
+    {
+     "serie": "divida_bruta",
+     "quando": "2006-12",
+     "valor": 55.5,
+     "tol": 0.05
+    },
+    {
+     "serie": "divida_bruta",
+     "quando": "2013-12",
+     "valor": 51.5,
+     "tol": 0.05
+    },
+    {
+     "serie": "divida_bruta",
+     "quando": "2020-12",
+     "valor": 86.9,
+     "tol": 0.05
+    },
+    {
+     "serie": "divida_bruta",
+     "quando": "2022-12",
+     "valor": 71.7,
+     "tol": 0.05
+    },
+    {
+     "serie": "divida_bruta",
+     "quando": "2026-09",
+     "valor": 82.9,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-div-jun-set",
+   "tipo": "dado",
+   "texto": "A dívida do governo era de cerca de 82% do PIB em junho de 2026 e de 82,9% em setembro.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Dívida bruta do governo geral (série 13762)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "divida_bruta",
+     "quando": "2026-06",
+     "valor": 82.0,
+     "tol": 0.1
+    },
+    {
+     "serie": "divida_bruta",
+     "quando": "2026-09",
+     "valor": 82.9,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-div-2006",
+   "tipo": "dado",
+   "texto": "De 2006 a 2013, o governo arrecadou mais do que gastou, sem contar os juros, em todos os anos, entre 1,7% e 3,3% do PIB, e a dívida caiu de 55,5% para 51,5% do PIB.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Resultado primário do setor público em 12 meses (série 5793) e dívida bruta (série 13762)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "primario_12m",
+     "quando": "2006-12",
+     "valor": -3.15,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2007-12",
+     "valor": -3.24,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2008-12",
+     "valor": -3.33,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2009-12",
+     "valor": -1.94,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2010-12",
+     "valor": -2.62,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2011-12",
+     "valor": -2.94,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2012-12",
+     "valor": -2.18,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2013-12",
+     "valor": -1.71,
+     "tol": 0.05
+    },
+    {
+     "serie": "divida_bruta",
+     "quando": "2006-12",
+     "valor": 55.5,
+     "tol": 0.05
+    },
+    {
+     "serie": "divida_bruta",
+     "quando": "2013-12",
+     "valor": 51.5,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-div-deficits",
+   "tipo": "dado",
+   "texto": "O governo gastou mais do que arrecadou, sem contar os juros, em todos os anos de 2014 a 2020 e de 2023 a 2025.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Resultado primário do setor público em 12 meses (série 5793)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "primario_12m",
+     "quando": "2014-12",
+     "valor": 0.56,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2015-12",
+     "valor": 1.86,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2016-12",
+     "valor": 2.48,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2017-12",
+     "valor": 1.68,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2018-12",
+     "valor": 1.55,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2019-12",
+     "valor": 0.84,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2020-12",
+     "valor": 9.24,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2023-12",
+     "valor": 2.28,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2024-12",
+     "valor": 0.4,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2025-12",
+     "valor": 0.43,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-primario-2025",
+   "tipo": "dado",
+   "texto": "Em 2025, o governo gastou 0,4% do PIB a mais do que arrecadou, sem contar os juros.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Resultado primário do setor público em 12 meses (série 5793)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "primario_12m",
+     "quando": "2025-12",
+     "valor": 0.4,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-juros-set2026",
+   "tipo": "dado",
+   "texto": "Em 12 meses, até setembro de 2026, os juros da dívida custaram 9,0% do PIB, e o governo gastou 0,5% do PIB a mais do que arrecadou, sem contar os juros.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Juros nominais (série 5760) e resultado primário (série 5793) do setor público em 12 meses",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "juros_divida_12m",
+     "quando": "2026-09",
+     "valor": 9.0,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2026-09",
+     "valor": 0.5,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-juros-2013-2026",
+   "tipo": "dado",
+   "texto": "Os juros da dívida passaram de 4,7% do PIB em 12 meses até dezembro de 2013 para 9,0% em 12 meses até setembro de 2026.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Juros nominais do setor público em 12 meses (série 5760)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "juros_divida_12m",
+     "quando": "2013-12",
+     "valor": 4.7,
+     "tol": 0.05
+    },
+    {
+     "serie": "juros_divida_12m",
+     "quando": "2026-09",
+     "valor": 9.0,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-div-2021",
+   "tipo": "dado",
+   "texto": "De dezembro de 2020 a dezembro de 2022, a dívida do governo caiu de 86,9% para 71,7% do PIB, e o governo arrecadou mais do que gastou, sem contar os juros, em 2021 e em 2022.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Dívida bruta (série 13762) e resultado primário (série 5793)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "divida_bruta",
+     "quando": "2020-12",
+     "valor": 86.9,
+     "tol": 0.05
+    },
+    {
+     "serie": "divida_bruta",
+     "quando": "2022-12",
+     "valor": 71.7,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2021-12",
+     "valor": -0.72,
+     "tol": 0.01
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2022-12",
+     "valor": -1.25,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "id": "a-div-2023",
+   "tipo": "dado",
+   "texto": "De dezembro de 2022 a setembro de 2026, a dívida do governo subiu de 71,7% para 82,9% do PIB. Em 2023, o governo gastou 2,3% do PIB a mais do que arrecadou, sem contar os juros.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Dívida bruta (série 13762) e resultado primário (série 5793)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "divida_bruta",
+     "quando": "2022-12",
+     "valor": 71.7,
+     "tol": 0.05
+    },
+    {
+     "serie": "divida_bruta",
+     "quando": "2026-09",
+     "valor": 82.9,
+     "tol": 0.05
+    },
+    {
+     "serie": "primario_12m",
+     "quando": "2023-12",
+     "valor": 2.3,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-selic-2007-2013",
+   "tipo": "dado",
+   "texto": "De 2007 a 2013, a Selic ficou entre 7,25% e 13,75%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Selic meta (série 432)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "selic_meta",
+     "quando": "2012-10",
+     "valor": 7.25,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2008-09",
+     "valor": 13.75,
+     "tol": 0.001
+    }
+   ]
+  },
+  {
+   "id": "a-juro-real-2010-2013",
+   "tipo": "dado",
+   "texto": "O juro acima da inflação esperada estava perto de 5,1% no fim de 2010 e de 3,8% no fim de 2013.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Selic meta e Focus",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "juro_real",
+     "quando": "2010-12",
+     "valor": 5.1,
+     "tol": 0.05
+    },
+    {
+     "serie": "juro_real",
+     "quando": "2013-12",
+     "valor": 3.8,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-commodities-2008",
+   "tipo": "dado",
+   "texto": "O preço mundial de produtos como soja, minério e petróleo quase triplicou do fim de 2003 a julho de 2008.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Fundo Monetário Internacional",
+    "titulo": "Índice de preços de commodities do FMI (FRED, PALLFNFINDEXM)",
+    "url": "https://fred.stlouisfed.org/series/PALLFNFINDEXM"
+   },
+   "dados": [
+    {
+     "serie": "commodities",
+     "quando": "2003-12",
+     "valor": 70.5,
+     "tol": 0.1
+    },
+    {
+     "serie": "commodities",
+     "quando": "2008-07",
+     "valor": 200.8,
+     "tol": 0.1
+    }
+   ]
+  },
+  {
+   "id": "a-commodities-2015",
+   "tipo": "dado",
+   "texto": "O preço mundial de produtos como soja, minério e petróleo caiu quase pela metade de junho de 2014 a dezembro de 2015.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Fundo Monetário Internacional",
+    "titulo": "Índice de preços de commodities do FMI (FRED, PALLFNFINDEXM)",
+    "url": "https://fred.stlouisfed.org/series/PALLFNFINDEXM"
+   },
+   "dados": [
+    {
+     "serie": "commodities",
+     "quando": "2014-06",
+     "valor": 168.4,
+     "tol": 0.1
+    },
+    {
+     "serie": "commodities",
+     "quando": "2015-12",
+     "valor": 90.5,
+     "tol": 0.1
+    }
+   ]
+  },
+  {
+   "id": "a-bc-fatores-2025",
+   "tipo": "documento",
+   "texto": "Em 2025, pela conta do Banco Central, os juros somaram 8,9 pontos do PIB à dívida do governo, e o crescimento do PIB em reais tirou 5,7 pontos.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Estatísticas fiscais, nota de dezembro de 2025 (divulgada em 30/1/2026), página 4",
+    "url": "https://www.bcb.gov.br/content/estatisticas/hist_estatisticasfiscais/202601_Texto_de_estatisticas_fiscais.pdf"
+   },
+   "trecho": "Essa evolução refletiu, principalmente, os impactos da incorporação de juros nominais (+8,9 p.p.), do reconhecimento de dívidas (+0,2 p.p.), do crescimento do PIB nominal (-5,7 p.p.), do efeito da valorização cambial (-0,5 p.p.), das emissões líquidas de dívida (-0,3 p.p.), e dos demais ajustes da dívida externa (-0,2 p.p.).",
+   "trecho_candidato": null,
+   "trecho_lingua": "pt-BR",
+   "nota": "Frase copiada letra por letra do PDF no Mac em 8/11/2026. Na tabela 19 da planilha de outubro de 2026, o número revisado de 2025 é +8,85 (juros) e −5,74 (PIB nominal)."
+  },
+  {
+   "id": "a-bc-fatores-2026",
+   "tipo": "documento",
+   "texto": "De janeiro a setembro de 2026, pela conta do Banco Central, os juros somaram 7,2 pontos do PIB à dívida do governo, e o crescimento do PIB em reais tirou 3,9 pontos.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Estatísticas fiscais, nota de setembro de 2026 (divulgada em 29/10/2026), página 3",
+    "url": "https://www.bcb.gov.br/content/estatisticas/hist_estatisticasfiscais/202610_Texto_de_estatisticas_fiscais.pdf"
+   },
+   "trecho": "No ano, o aumento de 4,3 p.p. do PIB resultou, em especial, da incorporação de juros nominais (7,2 p.p.), das emissões líquidas de dívida (1,1 p.p.), do crescimento do PIB nominal (-3,9 p.p.) e do efeito da valorização cambial (-0,2 p.p.).",
+   "trecho_candidato": null,
+   "trecho_lingua": "pt-BR",
+   "nota": "Frase copiada letra por letra no Mac em 8/11/2026. Na extração simples do PDF as palavras saem grudadas; na extração com layout e no texto da página do Banco Central ela bate."
+  },
+  {
+   "id": "a-ifi-2026",
+   "tipo": "documento",
+   "texto": "Em agosto de 2026, a IFI, do Senado, calculou que a dívida só para de subir se o governo arrecadar 2,1% do PIB além do que gasta, sem contar os juros.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Instituição Fiscal Independente (Senado)",
+    "titulo": "Relatório de Acompanhamento Fiscal nº 115, agosto de 2026",
+    "url": "https://www12.senado.leg.br/ifi/pdf/raf115_ago2026.pdf"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "trecho_lingua": "pt-BR"
+  },
+  {
+   "id": "a-obrigatorias",
+   "tipo": "documento",
+   "texto": "No projeto de orçamento de 2025, 92% do gasto do governo federal, sem contar os juros, era obrigatório.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Consultoria de Orçamento da Câmara dos Deputados",
+    "titulo": "Informativo conjunto sobre o projeto de lei do orçamento de 2025",
+    "url": "https://www2.camara.leg.br/orcamento-da-uniao/estudos/2024/informativo_conjunto_ploa2025/view"
+   },
+   "trecho": null,
+   "trecho_candidato": "as obrigatórias representam 92%",
+   "trecho_lingua": "pt-BR"
+  },
+  {
+   "id": "a-chudik",
+   "tipo": "documento",
+   "texto": "Um estudo com 40 países não achou um limite de dívida que valha para todos a partir do qual o crescimento cai, mas achou que a dívida subindo por muitos anos faz a economia crescer menos.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Alexander Chudik, Kamiar Mohaddes, M. Hashem Pesaran e Mehdi Raissi",
+    "titulo": "Is There a Debt-Threshold Effect on Output Growth? (Review of Economics and Statistics, 2017; Fundo Monetário Internacional, WP/15/197)",
+    "url": "https://www.imf.org/external/pubs/ft/wp/2015/wp15197.pdf",
+    "ano": 2017,
+    "urls_alternativas": [
+     "https://econpapers.repec.org/RePEc:tpr:restat:v:99:y:2017:i:1:p:135-150",
+     "https://www.econ.cam.ac.uk/research/cwpe-abstracts?cwpe=1520"
+    ]
+   },
+   "trecho": "no evidence for a universally applicable threshold effect in the relationship between public debt and economic growth",
+   "trecho_candidato": null,
+   "trecho_lingua": "en"
+  },
+  {
+   "id": "a-site-contas",
+   "tipo": "site",
+   "texto": "Quando a dívida do governo sobe rápido, quem empresta ao governo passa a cobrar mais caro, e o juro e o dólar sobem junto.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Como funciona, no próprio site",
+    "titulo": "templates/nota.html",
+    "url": "https://vaidarcrise.com.br/nota/"
+   },
+   "trecho": "Quando ela sobe rápido, quem empresta ao governo passa a cobrar mais caro, e o juro e o dólar sobem junto.",
+   "arquivo": "templates/nota.html"
+  },
+  {
+   "id": "a-site-limite",
+   "tipo": "site",
+   "texto": "Muita gente acha que existe um limite para a dívida do governo, como 100% do PIB, a partir do qual vem a crise. Esse número não existe, e o Brasil deve quase tudo em reais, a maior parte a brasileiros.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Como funciona, no próprio site",
+    "titulo": "templates/nota.html",
+    "url": "https://vaidarcrise.com.br/nota/"
+   },
+   "trecho": "Muita gente acha que existe um limite para a dívida do governo, como 100% do PIB, a partir do qual vem a crise. Esse número não existe.",
+   "arquivo": "templates/nota.html",
+   "trecho_2": "O Brasil deve quase tudo em reais, a maior parte a brasileiros."
+  },
+  {
+   "id": "a-site-vaivem",
+   "tipo": "site",
+   "texto": "O site mede o vaivém normal de cada pressão com os dados do Brasil e só conta o que passa dele.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Como funciona, no próprio site",
+    "titulo": "templates/nota.html",
+    "url": "https://vaidarcrise.com.br/nota/"
+   },
+   "trecho": "O site mede esse vaivém normal de cada pressão com os dados do Brasil desde 2002 e só conta o que passa dele.",
+   "arquivo": "templates/nota.html"
+  },
+  {
+   "id": "a-dolar-2008",
+   "tipo": "dado",
+   "texto": "Na crise de 2008, o dólar subiu de R$ 1,56 em 1/8 para R$ 2,50 em 5/12, e o juro de 10 anos, de 7,9% para 11,1% em 24/10.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central e Tesouro Nacional",
+    "titulo": "Dólar Ptax (série 1) e taxa do Tesouro IPCA+ de cerca de 10 anos",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "dolar_ptax",
+     "quando": "2008-08-01",
+     "valor": 1.56,
+     "tol": 0.005
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2008-12-05",
+     "valor": 2.5,
+     "tol": 0.005
+    },
+    {
+     "serie": "juro_real_longo",
+     "quando": "2008-08-01",
+     "valor": 7.9,
+     "tol": 0.05
+    },
+    {
+     "serie": "juro_real_longo",
+     "quando": "2008-10-24",
+     "valor": 11.1,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-dolar-2015",
+   "tipo": "dado",
+   "texto": "Em 2015, o dólar subiu de R$ 2,69 em 2/1 para R$ 4,19 em 24/9, e o juro de 10 anos, de 6,2% no fim de 2014 para 8,0% em 24/9.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central e Tesouro Nacional",
+    "titulo": "Dólar Ptax (série 1) e taxa do Tesouro IPCA+ de cerca de 10 anos",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "dolar_ptax",
+     "quando": "2015-01-02",
+     "valor": 2.69,
+     "tol": 0.005
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2015-09-24",
+     "valor": 4.19,
+     "tol": 0.005
+    },
+    {
+     "serie": "juro_real_longo",
+     "quando": "2014-12",
+     "valor": 6.2,
+     "tol": 0.05
+    },
+    {
+     "serie": "juro_real_longo",
+     "quando": "2015-09-24",
+     "valor": 8.0,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-dolar-2020",
+   "tipo": "dado",
+   "texto": "Na pandemia, o dólar subiu de R$ 4,02 em 2/1/2020 para R$ 5,94 em 14/5 e terminou o ano em R$ 5,20.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Dólar Ptax (série 1)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "dolar_ptax",
+     "quando": "2020-01-02",
+     "valor": 4.02,
+     "tol": 0.005
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2020-05-14",
+     "valor": 5.94,
+     "tol": 0.005
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2020-12-31",
+     "valor": 5.2,
+     "tol": 0.005
+    }
+   ]
+  },
+  {
+   "id": "a-dolar-2024",
+   "tipo": "dado",
+   "texto": "O dólar subiu de R$ 4,89 em 2/1/2024 para R$ 6,19 em 31/12, e o juro de 10 anos, de 5,5% para 7,6% no fim do ano.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central e Tesouro Nacional",
+    "titulo": "Dólar Ptax (série 1) e taxa do Tesouro IPCA+ de cerca de 10 anos",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "dolar_ptax",
+     "quando": "2024-01-02",
+     "valor": 4.89,
+     "tol": 0.005
+    },
+    {
+     "serie": "dolar_ptax",
+     "quando": "2024-12-31",
+     "valor": 6.19,
+     "tol": 0.005
+    },
+    {
+     "serie": "juro_real_longo",
+     "quando": "2024-01-02",
+     "valor": 5.5,
+     "tol": 0.05
+    },
+    {
+     "serie": "juro_real_longo",
+     "quando": "2024-12-30",
+     "valor": 7.6,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-copom-dez2024",
+   "tipo": "documento",
+   "texto": "Em dezembro de 2024, o Banco Central disse que a reação de quem investe ao anúncio de medidas para as contas do governo mexeu de forma relevante com os preços do mercado e com as expectativas.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central (Copom)",
+    "titulo": "Ata da 267ª reunião do Copom, 10 e 11/12/2024",
+    "url": "https://www.bcb.gov.br/content/copom/atascopom/Copom267-not20241211267.pdf"
+   },
+   "trecho": "A percepção dos agentes econômicos sobre o recente anúncio fiscal afetou, de forma relevante, os preços de ativos e as expectativas dos agentes",
+   "trecho_candidato": "A percepção dos agentes econômicos sobre o recente anúncio fiscal afetou, de forma relevante, os preços de ativos e as expectativas dos agentes",
+   "trecho_lingua": "pt",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-08",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "Não consegui ler o PDF: o WebFetch devolveu só dados binários comprimidos. O trecho veio de duas consultas independentes, uma busca e a página do Metrópoles, que cita a ata (parágrafo 11). Eu não o vi dentro do PDF. A frase da ata continua depois de \"expectativas dos agentes\", com \"especialmente o prêmio de risco, as expectativas de inflação e a taxa de câmbio\". Se o código não achar o trecho no PDF, a causa provável é a extração do texto, como quebras de linha ou hifenização."
+   }
+  },
+  {
+   "id": "a-copom-dez2024-fora",
+   "tipo": "documento",
+   "texto": "Na mesma reunião, o Banco Central disse que o cenário lá fora seguia difícil, principalmente por causa da economia dos EUA.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central (Copom)",
+    "titulo": "Ata da 267ª reunião do Copom, 10 e 11/12/2024",
+    "url": "https://www.bcb.gov.br/content/copom/atascopom/Copom267-not20241211267.pdf"
+   },
+   "trecho": "O ambiente externo permanece desafiador, em função, principalmente, da conjuntura econômica nos Estados Unidos",
+   "trecho_candidato": null,
+   "trecho_lingua": "pt-BR"
+  },
+  {
+   "id": "a-sp-2015",
+   "tipo": "documento",
+   "texto": "Em 9/9/2015, a agência Standard & Poor's tirou do Brasil a nota de bom pagador.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Agência Brasil",
+    "titulo": "Standard&Poor's rebaixa Brasil e país perde grau de investimento",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2015-09/standardpoors-rebaixa-brasil-e-pais-perde-grau-de-investimento"
+   },
+   "trecho": "informou hoje (9) que reduziu a nota de crédito do Brasil de BBB- para BB+, com perspectiva negativa",
+   "trecho_candidato": null,
+   "trecho_lingua": "pt",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-08",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "Nada de essencial. O trecho cobre o rebaixamento no dia 9, e a página, publicada em 09/09/2015, também diz que \"o Brasil perde o grau de investimento\". O título cita a S&P, e o texto descreve grau de investimento como o indicador de países bons pagadores. Esse último ponto vem de resumo da página, não de trecho copiado."
+   }
+  },
+  {
+   "id": "a-repasse-bc",
+   "tipo": "documento",
+   "texto": "Pelas contas do Banco Central, de março de 2026, cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Repasse cambial: estimativas por projeções locais (boxe do Relatório de Política Monetária, março de 2026)",
+    "url": "https://www.bcb.gov.br/content/ri/relatorioinflacao/202603/rpm202603b8p.pdf"
+   },
+   "trecho": "coeficiente de repasse cambial de 0,10 para o IPCA cheio no horizonte de quatro trimestres",
+   "trecho_candidato": null,
+   "trecho_lingua": "pt-BR"
+  },
+  {
+   "id": "a-kohlscheen",
+   "tipo": "documento",
+   "texto": "Um estudo do Banco de Compensações Internacionais com onze países que vendem commodities achou que o preço delas ajuda a prever para onde vai a moeda desses países.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Emanuel Kohlscheen, Fernando Avalos e Andreas Schrimpf",
+    "titulo": "When the Walk Is Not Random: Commodity Prices and Exchange Rates (International Journal of Central Banking, 2017)",
+    "url": "https://www.ijcb.org/journal/ijcb17q2a4.htm",
+    "ano": 2017,
+    "urls_alternativas": [
+     "https://econpapers.repec.org/RePEc:ijc:ijcjou:y:2017:q:2:a:4"
+    ]
+   },
+   "trecho": "Commodity prices predict exchange rate movements of eleven commodity-exporting countries",
+   "trecho_candidato": "commodity prices predict exchange rate movements of eleven commodity-exporting countries",
+   "trecho_lingua": "en",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-08",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O trecho sustenta a parte central: preços de commodities preveem o câmbio de onze países exportadores. A página também limita o resultado a um painel dentro da amostra, para horizontes de até dois meses. Não confirmei na página que o estudo seja \"do Banco de Compensações Internacionais\". Os autores trabalham no BIS, mas a página pode não dizer isso."
+   }
+  },
+  {
+   "id": "a-site-mercado",
+   "tipo": "site",
+   "texto": "Quando quem investe desconfia do Brasil, cobra mais para emprestar ao governo e troca reais por dólar, e os dois sobem juntos. A pressão piora quando um deles piora e o outro não melhora.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Como funciona, no próprio site",
+    "titulo": "templates/nota.html",
+    "url": "https://vaidarcrise.com.br/nota/"
+   },
+   "trecho": "Quando quem investe desconfia do Brasil, cobra mais para emprestar ao governo e troca reais por dólar, e os dois sobem juntos.",
+   "arquivo": "templates/nota.html",
+   "trecho_2": "que piora quando um deles piora e o outro não melhora, e fica igual quando um piora e o outro melhora."
+  },
+  {
+   "id": "a-site-persiste",
+   "tipo": "site",
+   "texto": "Como o dólar e o juro de 10 anos mudam todo dia, cada um só conta como piorou ou melhorou quando fica fora do vaivém normal por alguns dias úteis seguidos.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Como funciona, no próprio site",
+    "titulo": "templates/nota.html",
+    "url": "https://vaidarcrise.com.br/nota/"
+   },
+   "trecho": "cada um deles só conta como piorou ou melhorou quando fica fora do vaivém por",
+   "arquivo": "templates/nota.html"
+  },
+  {
+   "id": "a-site-persiste-3",
+   "tipo": "site",
+   "texto": "São 3 dias úteis seguidos.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Como funciona, no próprio site",
+    "titulo": "config/modelo.json",
+    "url": "https://vaidarcrise.com.br/nota/"
+   },
+   "trecho": "\"persiste_dias\": 3,",
+   "arquivo": "config/modelo.json"
+  },
+  {
+   "id": "a-site-mesmo-titulo",
+   "tipo": "site",
+   "texto": "Como cada título do Tesouro paga uma taxa diferente, o site compara a taxa de hoje com a do mesmo título.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Como funciona, no próprio site",
+    "titulo": "templates/nota.html",
+    "url": "https://vaidarcrise.com.br/nota/"
+   },
+   "trecho": "Como cada título paga uma taxa diferente, o site compara a taxa de hoje com a do mesmo título 3 meses antes.",
+   "arquivo": "templates/nota.html"
+  },
+  {
+   "id": "a-ipca-anos",
+   "tipo": "dado",
+   "texto": "De 2010 a 2025, os preços subiram mais que o centro da meta de inflação em 14 dos 16 anos; ficaram abaixo dele só em 2017 e 2018.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "IBGE",
+    "titulo": "IPCA em 12 meses (IBGE, série 13522 do Banco Central)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "ipca_12m",
+     "quando": "2010-12",
+     "valor": 5.91,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2011-12",
+     "valor": 6.5,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2012-12",
+     "valor": 5.84,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2013-12",
+     "valor": 5.91,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2014-12",
+     "valor": 6.41,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2015-12",
+     "valor": 10.67,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2016-12",
+     "valor": 6.29,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2017-12",
+     "valor": 2.95,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2018-12",
+     "valor": 3.75,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2019-12",
+     "valor": 4.31,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2020-12",
+     "valor": 4.52,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2021-12",
+     "valor": 10.06,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2022-12",
+     "valor": 5.79,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2023-12",
+     "valor": 4.62,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2024-12",
+     "valor": 4.83,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2025-12",
+     "valor": 4.26,
+     "tol": 0.01
+    }
+   ],
+   "numeros_derivados": [
+    "14",
+    "16"
+   ]
+  },
+  {
+   "id": "a-ipca-teto",
+   "tipo": "dado",
+   "texto": "Os preços subiram mais que o teto da meta em 2015, 2021, 2022 e 2024, e menos que o piso em 2017.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "IBGE",
+    "titulo": "IPCA em 12 meses (IBGE, série 13522 do Banco Central)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "ipca_12m",
+     "quando": "2015-12",
+     "valor": 10.67,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2021-12",
+     "valor": 10.06,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2022-12",
+     "valor": 5.79,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2024-12",
+     "valor": 4.83,
+     "tol": 0.01
+    },
+    {
+     "serie": "ipca_12m",
+     "quando": "2017-12",
+     "valor": 2.95,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "id": "a-ipca-2008",
+   "tipo": "dado",
+   "texto": "Em 2008, os preços subiram 5,9%, acima do centro da meta, de 4,5%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "IBGE",
+    "titulo": "IPCA em 12 meses (IBGE)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "ipca_12m",
+     "quando": "2008-12",
+     "valor": 5.9,
+     "tol": 0.05
+    }
+   ],
+   "numeros_derivados": [
+    "4,5"
+   ]
+  },
+  {
+   "id": "a-ipca-2015",
+   "tipo": "dado",
+   "texto": "Em 2015, os preços subiram 10,7%, acima do teto da meta, de 6,5%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "IBGE",
+    "titulo": "IPCA em 12 meses (IBGE)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "ipca_12m",
+     "quando": "2015-12",
+     "valor": 10.7,
+     "tol": 0.05
+    }
+   ],
+   "numeros_derivados": [
+    "6,5"
+   ]
+  },
+  {
+   "id": "a-ipca-2017",
+   "tipo": "dado",
+   "texto": "Em 2017, os preços subiram 2,95%, abaixo do piso da meta, de 3%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "IBGE",
+    "titulo": "IPCA em 12 meses (IBGE)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "ipca_12m",
+     "quando": "2017-12",
+     "valor": 2.95,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "id": "a-ipca-2024",
+   "tipo": "dado",
+   "texto": "Em 2024, os preços subiram 4,8%, acima do teto da meta, de 4,5%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "IBGE",
+    "titulo": "IPCA em 12 meses (IBGE)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "ipca_12m",
+     "quando": "2024-12",
+     "valor": 4.8,
+     "tol": 0.05
+    }
+   ],
+   "numeros_derivados": [
+    "4,5"
+   ]
+  },
+  {
+   "id": "a-metas-historico",
+   "tipo": "documento",
+   "texto": "O centro da meta de inflação foi de 4,5% de 2005 a 2018 e caiu aos poucos até 3% em 2024, com tolerância de 2,5 pontos em 2005, de 2 pontos de 2006 a 2016 e de 1,5 ponto desde 2017.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Histórico das metas para a inflação",
+    "url": "https://www.bcb.gov.br/controleinflacao/historicometas"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "trecho_lingua": "pt-BR"
+  },
+  {
+   "id": "a-cerisola-gelos",
+   "tipo": "documento",
+   "texto": "Um estudo do Fundo Monetário Internacional sobre o Brasil depois de 1999 achou que, além da meta de inflação, as contas do governo pesaram na inflação esperada.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Martin Cerisola e Gaston Gelos",
+    "titulo": "What Drives Inflation Expectations in Brazil? An Empirical Analysis (Applied Economics, 2009; Fundo Monetário Internacional, WP/05/109)",
+    "url": "https://www.imf.org/external/pubs/ft/wp/2005/wp05109.pdf",
+    "ano": 2009,
+    "urls_alternativas": [
+     "https://econpapers.repec.org/RePEc:imf:imfwpa:05/109"
+    ]
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "trecho_lingua": "en"
+  },
+  {
+   "id": "a-carta-2015",
+   "tipo": "documento",
+   "texto": "Na carta sobre 2015, o Banco Central atribuiu o estouro da meta à correção dos preços controlados pelo governo, como energia e combustível, e à alta do dólar.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Carta aberta ao ministro da Fazenda sobre o IPCA de 2015 (8/1/2016)",
+    "url": "https://www.bcb.gov.br/content/controleinflacao/controleinflacao_docs/carta_aberta/carta2015.pdf"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "trecho_lingua": "pt-BR"
+  },
+  {
+   "id": "a-carta-2017",
+   "tipo": "documento",
+   "texto": "Na carta sobre 2017, o Banco Central atribuiu a inflação abaixo do piso à queda dos preços dos alimentos, maior do que se previa.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Carta aberta ao ministro da Fazenda sobre o IPCA de 2017 (janeiro de 2018)",
+    "url": "https://www.bcb.gov.br/content/controleinflacao/controleinflacao_docs/carta_aberta/carta2017.pdf"
+   },
+   "trecho": null,
+   "trecho_candidato": "Em 2017, a reversão da inflação nos preços dos alimentos no domicílio foi maior do que o previsto",
+   "trecho_lingua": "pt-BR"
+  },
+  {
+   "id": "a-carta-2024",
+   "tipo": "documento",
+   "texto": "Na carta sobre 2024, o Banco Central atribuiu o estouro da meta ao dólar mais caro, à economia mais forte do que se esperava e ao clima, que encareceu os alimentos.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Carta aberta ao ministro da Fazenda sobre o IPCA de 2024 (10/1/2025)",
+    "url": "https://www.bcb.gov.br/content/controleinflacao/controleinflacao_docs/carta_aberta/carta2024.pdf"
+   },
+   "trecho": null,
+   "trecho_candidato": null,
+   "trecho_lingua": "pt-BR"
+  },
+  {
+   "id": "a-lc179",
+   "tipo": "documento",
+   "texto": "Em fevereiro de 2021, a Lei Complementar 179 deu ao presidente e aos diretores do Banco Central mandatos fixos, que não coincidem com o do presidente da República.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Presidência da República",
+    "titulo": "Lei Complementar nº 179, de 24 de fevereiro de 2021",
+    "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp179.htm"
+   },
+   "trecho": "O mandato do Presidente do Banco Central do Brasil terá duração de 4 (quatro) anos, com início no dia 1º de janeiro do terceiro ano de mandato do Presidente da República",
+   "trecho_candidato": null,
+   "trecho_lingua": "pt",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-08",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A lei é de 24/02/2021. Ela fixa mandato de 4 anos para o presidente do BC, começando em 1º de janeiro do 3º ano do mandato presidencial. Para os diretores, a escala de 4 anos está no § 2º. Isso sustenta \"mandatos fixos que não coincidem com o do presidente da República\". O trecho é do presidente do BC. A parte dos diretores é a escala do § 2º, que não cabe num único trecho curto. A página tem erros de codificação de caracteres (como \"º\"), então a busca letra por letra pode falhar nesses pontos. Confira o trecho no texto bruto."
+   }
+  },
+  {
+   "id": "a-lei-salario-minimo",
+   "tipo": "documento",
+   "texto": "Desde 2024, a lei corrige o salário mínimo todo ano pela inflação dos 12 meses anteriores, mais um ganho ligado ao crescimento do PIB de dois anos antes.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Presidência da República",
+    "titulo": "Lei nº 14.663, de 28 de agosto de 2023",
+    "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm"
+   },
+   "trecho": "a vigorar a partir de 2024, inclusive, a serem aplicadas em 1º de janeiro do respectivo ano, considerado que o valor decorrerá da soma do índice de medida da inflação do ano anterior, para a preservação do poder aquisitivo, com o índice correspondente ao crescimento real do Produto Interno Bruto (PIB) de 2 (dois) anos anteriores, para fins de aumento real",
+   "trecho_candidato": null,
+   "trecho_lingua": "pt",
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-08",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A regra (art. 3º) é inflação (INPC acumulado em 12 meses até novembro) mais o crescimento real do PIB de dois anos antes. Mas ela vale a partir de 2024, não de 2023. A lei é de 2023, e o reajuste de 2023 foi fixado à parte, no art. 1º. Convém trocar \"Desde 2023\" por \"Desde 2024\" ou \"A lei de 2023 fixou que, a partir de 2024\". Convém também dizer \"PIB de dois anos antes\", e não \"crescimento do PIB\" em geral. O §5º ainda prevê só a inflação se o PIB for negativo. O trecho vem da página oficial, que abre com acentos corrompidos (\"�\"). Os acentos foram restaurados na cópia."
+   }
+  },
+  {
+   "id": "a-site-inflacao",
+   "tipo": "site",
+   "texto": "Se os bancos esperam mais inflação, o Banco Central tende a subir o juro para segurar os preços.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Como funciona, no próprio site",
+    "titulo": "templates/nota.html",
+    "url": "https://vaidarcrise.com.br/nota/"
+   },
+   "trecho": "Se esperam mais, o Banco Central tende a subir o juro para segurar os preços.",
+   "arquivo": "templates/nota.html"
+  },
+  {
+   "id": "a-fam-hoje",
+   "tipo": "dado",
+   "texto": "Em agosto de 2026, as famílias usavam 29,0% da renda para pagar parcelas e juros de dívidas com os bancos, o maior peso desde março de 2005, quando a série começa, com 17,0%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Comprometimento de renda das famílias com o serviço da dívida, com ajuste sazonal (série 29034)",
+    "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=29034"
+   },
+   "dados": [
+    {
+     "serie": "comprometimento_renda",
+     "quando": "2026-08",
+     "valor": 29.0,
+     "tol": 0.05
+    },
+    {
+     "serie": "comprometimento_renda",
+     "quando": "2005-03",
+     "valor": 17.0,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-fam-divida",
+   "tipo": "dado",
+   "texto": "A dívida das famílias com os bancos passou de 16,5% da renda de um ano, em janeiro de 2005, para 50,1% em agosto de 2026.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Endividamento das famílias em relação à renda de 12 meses (série 29037)",
+    "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=29037"
+   },
+   "dados": [
+    {
+     "serie": "endividamento_familias",
+     "quando": "2005-01",
+     "valor": 16.5,
+     "tol": 0.05
+    },
+    {
+     "serie": "endividamento_familias",
+     "quando": "2026-08",
+     "valor": 50.1,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-fam-juros",
+   "tipo": "dado",
+   "texto": "Em agosto de 2026, 10,9% da renda das famílias ia só para os juros das dívidas, o maior desde 2005, e 18,1% para devolver o que foi emprestado.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Comprometimento de renda com juros (série 29033) e com amortização (série 29036)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "juros_familias",
+     "quando": "2026-08",
+     "valor": 10.9,
+     "tol": 0.05
+    },
+    {
+     "serie": "amortizacao_familias",
+     "quando": "2026-08",
+     "valor": 18.1,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-fam-mai-ago",
+   "tipo": "dado",
+   "texto": "Em agosto de 2026, a parte da renda com parcelas e juros era de 29,0%, contra 28,5% em maio.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Comprometimento de renda das famílias (série 29034)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "comprometimento_renda",
+     "quando": "2026-08",
+     "valor": 29.0,
+     "tol": 0.05
+    },
+    {
+     "serie": "comprometimento_renda",
+     "quando": "2026-05",
+     "valor": 28.5,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-fam-2005",
+   "tipo": "dado",
+   "texto": "De 2005 ao fim de 2011, a dívida das famílias passou de 16,5% para 36,6% da renda de um ano, e a parte da renda com parcelas e juros subiu de 17,0% para 24,6%, com a Selic caindo de 19,25% para 11%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Endividamento (série 29037), comprometimento de renda (série 29034) e Selic meta (série 432)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "endividamento_familias",
+     "quando": "2005-01",
+     "valor": 16.5,
+     "tol": 0.05
+    },
+    {
+     "serie": "endividamento_familias",
+     "quando": "2011-12",
+     "valor": 36.6,
+     "tol": 0.05
+    },
+    {
+     "serie": "comprometimento_renda",
+     "quando": "2005-03",
+     "valor": 17.0,
+     "tol": 0.05
+    },
+    {
+     "serie": "comprometimento_renda",
+     "quando": "2011-12",
+     "valor": 24.6,
+     "tol": 0.05
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2005-03",
+     "valor": 19.25,
+     "tol": 0.001
+    },
+    {
+     "serie": "selic_meta",
+     "quando": "2011-12",
+     "valor": 11.0,
+     "tol": 0.001
+    }
+   ]
+  },
+  {
+   "id": "a-fam-2015",
+   "tipo": "dado",
+   "texto": "Do fim de 2014 ao fim de 2016, o desemprego subiu de 6,6% para 12,1%, e a dívida das famílias caiu de 40,8% da renda de um ano, em setembro de 2015, para 38,1%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "IBGE e Banco Central",
+    "titulo": "Desocupação (IBGE, série 24369) e endividamento das famílias (série 29037)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "desocupacao",
+     "quando": "2014-12",
+     "valor": 6.6,
+     "tol": 0.05
+    },
+    {
+     "serie": "desocupacao",
+     "quando": "2016-12",
+     "valor": 12.1,
+     "tol": 0.05
+    },
+    {
+     "serie": "endividamento_familias",
+     "quando": "2015-09",
+     "valor": 40.8,
+     "tol": 0.05
+    },
+    {
+     "serie": "endividamento_familias",
+     "quando": "2016-12",
+     "valor": 38.1,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-fam-2020",
+   "tipo": "dado",
+   "texto": "Na pandemia, a parte da renda com parcelas e juros caiu de 22,7% no fim de 2019 para 19,8% em agosto de 2020.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Comprometimento de renda das famílias (série 29034)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "comprometimento_renda",
+     "quando": "2019-12",
+     "valor": 22.65,
+     "tol": 0.01
+    },
+    {
+     "serie": "comprometimento_renda",
+     "quando": "2020-08",
+     "valor": 19.8,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-fam-2021",
+   "tipo": "dado",
+   "texto": "A parte da renda com parcelas e juros subiu de 22,3% em março de 2021 para 28,0% em maio de 2023, e a dívida das famílias, de 42,5% para 48,9% da renda de um ano.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Comprometimento de renda (série 29034) e endividamento (série 29037)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "comprometimento_renda",
+     "quando": "2021-03",
+     "valor": 22.3,
+     "tol": 0.05
+    },
+    {
+     "serie": "comprometimento_renda",
+     "quando": "2023-05",
+     "valor": 28.0,
+     "tol": 0.05
+    },
+    {
+     "serie": "endividamento_familias",
+     "quando": "2021-03",
+     "valor": 42.5,
+     "tol": 0.05
+    },
+    {
+     "serie": "endividamento_familias",
+     "quando": "2023-05",
+     "valor": 48.9,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-fam-2024",
+   "tipo": "dado",
+   "texto": "De janeiro de 2024 a agosto de 2026, a parte da renda com parcelas e juros subiu de 25,7% para 29,0%. A parte que vai só para os juros subiu de 9,0% para 10,9%, e a dívida das famílias, de 48,0% para 50,1% da renda de um ano.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Comprometimento de renda (séries 29034 e 29033) e endividamento (série 29037)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "comprometimento_renda",
+     "quando": "2024-01",
+     "valor": 25.7,
+     "tol": 0.05
+    },
+    {
+     "serie": "comprometimento_renda",
+     "quando": "2026-08",
+     "valor": 29.0,
+     "tol": 0.05
+    },
+    {
+     "serie": "juros_familias",
+     "quando": "2024-01",
+     "valor": 9.0,
+     "tol": 0.05
+    },
+    {
+     "serie": "juros_familias",
+     "quando": "2026-08",
+     "valor": 10.9,
+     "tol": 0.05
+    },
+    {
+     "serie": "endividamento_familias",
+     "quando": "2024-01",
+     "valor": 48.0,
+     "tol": 0.05
+    },
+    {
+     "serie": "endividamento_familias",
+     "quando": "2026-08",
+     "valor": 50.1,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-fam-2022-2026",
+   "tipo": "dado",
+   "texto": "De 2022 a 2026, a dívida das famílias ficou entre 47,6% e 50,1% da renda de um ano.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Endividamento das famílias (série 29037)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "endividamento_familias",
+     "quando": "2024-05",
+     "valor": 47.6,
+     "tol": 0.05
+    },
+    {
+     "serie": "endividamento_familias",
+     "quando": "2026-08",
+     "valor": 50.1,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-juro-pf",
+   "tipo": "dado",
+   "texto": "O juro médio dos empréstimos às pessoas com juro definido pelos bancos subiu de 52,3% ao ano em janeiro de 2024 para 62,4% em setembro de 2026.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Taxa média de juros das operações de crédito com recursos livres, pessoas físicas (série 20740)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "juro_pf",
+     "quando": "2024-01",
+     "valor": 52.25,
+     "tol": 0.05
+    },
+    {
+     "serie": "juro_pf",
+     "quando": "2026-09",
+     "valor": 62.35,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-inad-2026",
+   "tipo": "dado",
+   "texto": "Em setembro de 2026, 8,1% do que as pessoas deviam no crédito com juro definido pelos bancos tinha mais de 90 dias de atraso, contra 6,9% em setembro de 2025, o maior desde 2011, quando a série começa.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Inadimplência da carteira de crédito com recursos livres, pessoas físicas (série 21112)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "inadimplencia_pf",
+     "quando": "2026-09",
+     "valor": 8.1,
+     "tol": 0.05
+    },
+    {
+     "serie": "inadimplencia_pf",
+     "quando": "2025-09",
+     "valor": 6.9,
+     "tol": 0.05
+    }
+   ],
+   "numeros_derivados": [
+    "90"
+   ]
+  },
+  {
+   "id": "a-mian-sufi",
+   "tipo": "documento",
+   "texto": "Um estudo com 30 países, de 1960 a 2012, achou que a dívida das famílias subindo em relação ao PIB costuma vir antes de crescimento menor e desemprego maior.",
+   "fonte": {
+    "nivel": 2,
+    "quem": "Atif Mian, Amir Sufi e Emil Verner",
+    "titulo": "Household Debt and Business Cycles Worldwide (Quarterly Journal of Economics, 2017)",
+    "url": "https://www.nber.org/papers/w21581",
+    "ano": 2017,
+    "urls_alternativas": [
+     "https://econpapers.repec.org/RePEc:oup:qjecon:v:132:y:2017:i:4:p:1755-1817."
+    ]
+   },
+   "trecho": "An increase in the household debt to GDP ratio in the medium run predicts lower subsequent GDP growth, higher unemployment, and negative growth forecasting errors in a panel of 30 countries from 1960 to 2012.",
+   "trecho_candidato": "An increase in the household debt to GDP ratio predicts lower GDP growth and higher unemployment in the medium run for an unbalanced panel of 30 countries from 1960 to 2012.",
+   "trecho_lingua": "en",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-08",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "Nada de essencial. O trecho é da página do NBER (working paper de 2015) e não do artigo publicado no QJE em 2017. O resumo sugerido (\"unbalanced panel\") não bate com a página do NBER. A ferramenta de leitura só devolveu a frase em dois pedaços, que juntei. Se o código não achar o trecho, confira a pontuação entre \"growth,\" e \"higher\". A frase do site diz \"costuma vir antes\", e o estudo diz \"prevê\" (associação preditiva), sem afirmar causa."
+   }
+  },
+  {
+   "id": "a-lei-consignado",
+   "tipo": "documento",
+   "texto": "Em dezembro de 2003, uma lei permitiu descontar a parcela de empréstimos direto do salário, o crédito consignado.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Presidência da República",
+    "titulo": "Lei nº 10.820, de 17 de dezembro de 2003",
+    "url": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.820.htm"
+   },
+   "trecho": "Dispõe sobre a autorização para desconto de prestações em folha de pagamento, e dá outras providências.",
+   "trecho_candidato": "Dispõe sobre a autorização para desconto de prestações em folha de pagamento",
+   "trecho_lingua": "pt",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-08",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A ementa fala em \"prestações\", sem usar a palavra \"empréstimos\" nem \"consignado\". O art. 1º cita empréstimos, financiamentos, cartões de crédito e arrendamento mercantil, com desconto em folha. A data (17/12/2003) está no título da lei."
+   }
+  },
+  {
+   "id": "a-apostas-bc",
+   "tipo": "documento",
+   "texto": "Em agosto de 2024, o Banco Central contou R$ 20,8 bilhões mandados por Pix a empresas de apostas, em transferências brutas, e de R$ 18 bilhões a R$ 21 bilhões por mês em 2024.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Análise técnica sobre o mercado de apostas online no Brasil e o perfil dos apostadores (Estudo Especial nº 119/2024)",
+    "url": "https://www.bcb.gov.br/conteudo/relatorioinflacao/EstudosEspeciais/EE119_Analise_tecnica_sobre_o_mercado_de_apostas_online_no_Brasil_e_o_perfil_dos_apostadores.pdf"
+   },
+   "trecho": "foram identificadas 56 empresas que somaram, em agosto, R$ 20,8 bilhões de transferências recebidas",
+   "trecho_candidato": null,
+   "trecho_lingua": "pt-BR"
+  },
+  {
+   "id": "a-site-familias",
+   "tipo": "site",
+   "texto": "Quem já paga muita parcela corta o resto primeiro quando a renda cai, e as lojas vendem menos.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Como funciona, no próprio site",
+    "titulo": "templates/nota.html",
+    "url": "https://vaidarcrise.com.br/nota/"
+   },
+   "trecho": "Quem já paga muita parcela corta o resto primeiro quando a renda cai, e as lojas vendem menos.",
+   "arquivo": "templates/nota.html"
+  },
+  {
+   "id": "a-selic-agosto-2026",
+   "tipo": "dado",
+   "texto": "No fim de agosto de 2026, a Selic estava em 14%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Selic meta (série 432)",
+    "url": null
+   },
+   "dados": [
+    {
+     "serie": "selic_meta",
+     "quando": "2026-08",
+     "valor": 14.0,
+     "tol": 0.001
+    }
+   ]
+  },
+  {
+   "id": "a-fmi-familias-emergentes",
+   "tipo": "documento",
+   "texto": "Um estudo do Fundo Monetário Internacional de 2018 achou que o efeito da dívida das famílias sobre o crescimento é mais forte nos países ricos do que nos emergentes, e mais forte quando essa dívida passa de 65% do PIB.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Fundo Monetário Internacional",
+    "titulo": "Working Paper 18/76 (2018), sobre a dívida das famílias e o crescimento no mundo",
+    "url": "https://www.imf.org/-/media/files/publications/wp/2018/wp1876.pdf.md"
+   },
+   "trecho": "the negative effect appears stronger for advanced economies than for emerging markets",
+   "trecho_lingua": "en"
+  },
+  {
+   "id": "a-carta-2024-partes",
+   "tipo": "documento",
+   "texto": "Na carta sobre 2024, o Banco Central dividiu o estouro da meta, de 1,83 ponto: os importados somaram 0,72 ponto, a inflação do ano anterior, 0,52, a economia aquecida, 0,49, e a inflação esperada, 0,3.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "IstoÉ Dinheiro",
+    "titulo": "BC: dólar e economia aquecida explicam maior parte da alta da inflação",
+    "url": "https://istoedinheiro.com.br/bc-dolar-e-economia-aquecida-explicam-maior-parte-da-alta-da-inflacao/"
+   },
+   "trecho": "a inflação importada (contribuição de 0,72 p.p.); a inércia do ano anterior (0,52 p.p.); o hiato do produto (0,49 p.p.)",
+   "trecho_lingua": "pt-BR"
+  },
+  {
+   "id": "a-defasagem-petrobras",
+   "tipo": "documento",
+   "texto": "Em agosto de 2026, a Petrobras vendia o diesel 19% e a gasolina 12% abaixo do preço de importação, mesmo contando o dinheiro repassado pelo governo.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "NovaCana, com a CNN Brasil",
+    "titulo": "Mesmo com subsídio, Petrobras mantém defasagem na venda de combustíveis (10/8/2026)",
+    "url": "https://www.novacana.com/noticias/mesmo-subsidio-petrobras-mantem-defasagem-venda-combustiveis-100826"
+   },
+   "trecho": "A diferença é de 19% no diesel e de 12% na gasolina, já considerando os recursos repassados pelo governo.",
+   "trecho_lingua": "pt-BR"
+  },
+  {
+   "id": "a-apostas-fia",
+   "tipo": "documento",
+   "texto": "Um estudo do Ibevar e da Fundação Instituto de Administração, com dados de 2011 a 2025, achou que as apostas pesaram mais que o juro e o crédito na dívida das famílias, medindo o interesse pelas apostas, e não o gasto.",
+   "fonte": {
+    "nivel": 6,
+    "quem": "Times Brasil",
+    "titulo": "Bets superam juros e crédito e viram principal motor do endividamento das famílias",
+    "url": "https://timesbrasil.com.br/empresas-e-negocios/bets-superam-juros-e-credito-e-viram-principal-motor-do-endividamento-das-familias/"
+   },
+   "trecho": "o efeito das apostas foi mais forte do que o dos juros e do crédito",
+   "trecho_lingua": "pt-BR"
   }
  ]
 }

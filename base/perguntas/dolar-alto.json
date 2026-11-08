@@ -2,10 +2,187 @@
  "id": "dolar-alto",
  "pergunta": "Por que o dólar sobe tanto no Brasil?",
  "pressao": "mercado",
- "publicada": false,
- "atualizado_em": "2026-11-07",
- "nota": "Rascunho: a página sai quando o Pedro escolher esta pressão no resumo do mês. Até lá, a disputa e o teste aparecem só no fato do dia de 4/11.",
+ "publicada": true,
+ "atualizado_em": "2026-11-08",
+ "resposta_curta": {
+  "texto": "No Brasil, o dólar sobe por dois motivos, que muitas vezes vêm juntos. Quem investe desconfia das decisões tomadas aqui, ou os investidores do mundo todo ficam com medo e tiram dinheiro dos países emergentes, como o Brasil. Em 2026, o dólar caiu de R$ 5,18 no fim de agosto para R$ 5,04 antes do segundo turno. No dia seguinte à votação, subiu para R$ 5,50, e em 6/11 estava no mesmo valor. Os estudos mostram que as duas forças existem, e os economistas discordam sobre qual pesa mais em cada alta.",
+  "afirmacoes": [
+   "a-antes-da-eleicao",
+   "a-salto-eleicao",
+   "a-depois-do-salto",
+   "a-blanchard",
+   "a-rey",
+   "a-cerutti"
+  ]
+ },
+ "medida": {
+  "pergunta": "Como o topo mede esta pressão?",
+  "texto": "O topo mede essa desconfiança pelo dólar e pelo juro de 10 anos, que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos. Em 6/11, por exemplo, o topo comparou o dólar de R$ 5,50 com o de R$ 5,18 do fim de agosto. O juro de 10 anos é comparado sempre no mesmo título do Tesouro, porque cada título paga uma taxa diferente. Como os dois mudam todo dia, cada um só conta como piorou ou melhorou depois de 3 dias úteis seguidos fora do vaivém normal. A pressão piora quando um deles piora e o outro não melhora.",
+  "afirmacoes": [
+   "a-dolar-ago-nov",
+   "a-site-mesmo-titulo",
+   "a-site-persiste",
+   "a-site-persiste-3",
+   "a-site-mercado"
+  ]
+ },
+ "governo": {
+  "pergunta": "Isso é coisa de um governo só?",
+  "texto": "Não. O dólar subiu forte em 2002, 2008, 2015, 2020 e 2024, em governos de lados diferentes, e em 2008 o susto veio todo de fora. Abaixo, cada período diz se a causa veio daqui, de fora ou das duas.",
+  "afirmacoes": [
+   "a-ep2002",
+   "a-dolar-2008",
+   "a-dolar-2015",
+   "a-dolar-2020",
+   "a-dolar-2024"
+  ]
+ },
+ "agora": {
+  "atualizado_em": "2026-11-08",
+  "texto": "Depois do salto do dia seguinte ao segundo turno, o dólar caiu para R$ 5,33 em 27/10 e voltou a R$ 5,50 em 6/11. Nesse tempo, o juro de 10 anos ficou perto de 8,1%. Em dezembro, o site confere se, desde 6/11, o dólar subiu mais contra o real que contra as moedas do México e do Chile, sinal de uma causa daqui.",
+  "afirmacoes": [
+   "a-depois-do-salto",
+   "a-juro10-pos-salto"
+  ]
+ },
  "escada": [
+  {
+   "degrau": "raiz",
+   "id": "d-desconfianca",
+   "pergunta": "O que faz o dólar subir no Brasil?",
+   "rotulo": "em_disputa",
+   "peso_da_evidencia": "Os estudos mostram que as duas forças existem, mas não dizem qual pesa mais em cada alta. Para saber de onde vem a pressão depois da eleição, o site compara desde 6/11 o real com as moedas do México e do Chile, e confere em dezembro.",
+   "leituras": [
+    {
+     "id": "l-desconfianca",
+     "nome": "A leitura da desconfiança com o Brasil",
+     "titulo": "A desconfiança com o Brasil",
+     "status": "em_pe",
+     "o_que_diz": "Quem investe passa a desconfiar das decisões tomadas no Brasil, como as contas do governo ou a firmeza do Banco Central contra a inflação. Então cobra mais para emprestar ao governo e troca reais por dólar, e o dólar e o juro de 10 anos sobem juntos.",
+     "a_favor": [
+      {
+       "texto": "Em 26/10/2026, o dia seguinte ao segundo turno, o dólar subiu de R$ 5,04 para R$ 5,50 e o juro de 10 anos, de 6,9% para 8,1%.",
+       "afirmacoes": [
+        "a-salto-eleicao"
+       ]
+      },
+      {
+       "texto": "Em dezembro de 2024, o Banco Central disse que a reação de quem investe às medidas anunciadas para as contas do governo mexeu muito com os preços do mercado.",
+       "afirmacoes": [
+        "a-copom-dez2024"
+       ]
+      },
+      {
+       "texto": "Em 2015, com as contas piorando, o dólar subiu de R$ 2,69 em 2/1 para R$ 4,19 em 24/9.",
+       "afirmacoes": [
+        "a-dolar-2015",
+        "a-ep2015"
+       ]
+      }
+     ],
+     "melhor_objecao": {
+      "texto": "Em 2008, o dólar subiu de R$ 1,56 em 1/8 para R$ 2,50 em 5/12 sem nada novo nas contas do governo, porque o medo veio de fora.",
+      "afirmacoes": [
+       "a-dolar-2008",
+       "a-div-2006"
+      ]
+     },
+     "resposta": null,
+     "estudos": [
+      {
+       "texto": "O economista Olivier Blanchard mostrou que, em 2002, com a dívida alta e muito dela em dólar, subir o juro aumentava o medo de calote e podia enfraquecer o real.",
+       "afirmacoes": [
+        "a-blanchard"
+       ]
+      }
+     ],
+     "quem_defende": [
+      "Olivier Blanchard (2004), para 2002 e 2003",
+      "o Banco Central, em dezembro de 2024"
+     ]
+    },
+    {
+     "id": "l-medo-mundo",
+     "nome": "A leitura do medo no mundo todo",
+     "titulo": "O medo no mundo todo",
+     "status": "em_pe",
+     "o_que_diz": "Quando investidores do mundo todo ficam com medo, tiram dinheiro dos países emergentes ao mesmo tempo. O dólar então sobe contra as moedas de todos eles, e não só contra o real.",
+     "a_favor": [
+      {
+       "texto": "Na crise de 2008, o dólar subiu de R$ 1,56 em 1/8 para R$ 2,50 em 5/12, e na pandemia, de R$ 4,02 em 2/1/2020 para R$ 5,94 em 14/5.",
+       "afirmacoes": [
+        "a-dolar-2008",
+        "a-dolar-2020"
+       ]
+      }
+     ],
+     "melhor_objecao": {
+      "texto": "Um estudo do Banco de Compensações Internacionais achou que esse ciclo mundial raramente explica mais de um quarto das entradas e saídas de dinheiro dos países.",
+      "afirmacoes": [
+       "a-cerutti"
+      ]
+     },
+     "resposta": null,
+     "estudos": [
+      {
+       "texto": "A economista Hélène Rey achou que o dinheiro entra e sai dos países emergentes ao mesmo tempo, junto com o medo de quem investe nos EUA.",
+       "afirmacoes": [
+        "a-rey"
+       ]
+      }
+     ],
+     "quem_defende": [
+      "Hélène Rey (2013), para os países emergentes em geral"
+     ]
+    },
+    {
+     "id": "l-commodities",
+     "nome": "A leitura do preço do que o Brasil vende",
+     "titulo": "O preço do que o Brasil vende",
+     "status": "em_disputa",
+     "o_que_diz": "O Brasil vende ao mundo muita soja, minério e petróleo. Quando esses preços caem, entra menos dólar no país, e o dólar fica mais caro.",
+     "a_favor": [
+      {
+       "texto": "Um estudo do Banco de Compensações Internacionais com onze países que vendem esses produtos achou que o preço deles ajuda a prever para onde vai a moeda desses países.",
+       "afirmacoes": [
+        "a-kohlscheen"
+       ]
+      },
+      {
+       "texto": "Em 2015, o preço mundial de produtos como soja, minério e petróleo caiu quase pela metade em relação a junho de 2014, e o dólar passou de R$ 4.",
+       "afirmacoes": [
+        "a-commodities-2015",
+        "a-dolar-2015"
+       ]
+      }
+     ],
+     "melhor_objecao": {
+      "texto": "Em outubro de 2026, o Brasil vendeu a outros países mais do que comprou, com o maior saldo para outubro desde 1989. Mesmo assim, o dólar subiu, o que indica que essa alta teve outra causa.",
+      "afirmacoes": [
+       "a-balanca-1989",
+       "a-dolar-ago-nov"
+      ]
+     },
+     "resposta": null,
+     "quem_defende": [
+      "Emanuel Kohlscheen, Fernando Avalos e Andreas Schrimpf (2017)"
+     ],
+     "resumo": "O Brasil vende ao mundo muita soja, minério e petróleo. Quando esses preços caem, entra menos dólar no país, e o dólar fica mais caro."
+    }
+   ]
+  },
+  {
+   "degrau": "o_que_vem_depois",
+   "pergunta": "O que isso muda para você?",
+   "rotulo": "consenso",
+   "texto": "Com o dólar mais caro, os importados ficam mais caros, como peças e combustível, já que o Brasil importa parte do diesel e da gasolina que consome. Na bomba, a alta pode demorar, porque a Petrobras nem sempre segue o preço de fora. Pelas contas do Banco Central, em média, cada 10% de alta do dólar faz o IPCA subir cerca de 1 ponto em um ano. Quando quem investe desconfia do Brasil, cobra mais para emprestar ao governo, e por isso os empréstimos longos, como o da casa própria, também ficam mais caros.",
+   "afirmacoes": [
+    "a-importa-combustivel",
+    "a-defasagem-petrobras",
+    "a-repasse-bc",
+    "a-site-mercado"
+   ]
+  },
   {
    "degrau": "divisao",
    "id": "d-dolar",
@@ -162,7 +339,14 @@
    }
   }
  ],
- "episodios": [],
+ "episodios": [
+  "ep-2002",
+  "ep-dolar-2008",
+  "ep-dolar-2015",
+  "ep-dolar-2020",
+  "ep-dolar-2024",
+  "ep-eleicao-2026"
+ ],
  "mudancas": [
   {
    "data": "2026-11-07",
@@ -178,6 +362,11 @@
    "data": "2026-11-07",
    "o_que": "Saíram a fala do presidente como causa da queda do juro em 5/11 e o 6,4% da Nasdaq.",
    "motivo": "A conferência no Mac não achou fonte para a primeira, e a Nasdaq Composite caiu 5,52% em 5/11."
+  },
+  {
+   "data": "2026-11-08",
+   "o_que": "A pergunta virou página, com a resposta, o que o dólar muda para você, como o topo mede a pressão, os casos desde 2002 e as explicações.",
+   "motivo": "Pedido do Pedro em 8/11/2026: uma página para cada pressão do topo."
   }
  ]
 }
