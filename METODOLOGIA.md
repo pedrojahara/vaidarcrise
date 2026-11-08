@@ -23,7 +23,7 @@ O nome do site fala em crise; a métrica é recessão técnica.
 | Contas do governo, antes de 2007 | Resultado sem juros do setor público em 12 meses, % do PIB | BCB 5793 | gastar mais do que arrecada | 2 meses |
 | Dívidas das famílias | Parte da renda das famílias que vai para parcelas e juros, com ajuste sazonal | BCB 29034 | subir | 3 meses |
 | Desconfiança de quem investe | Dólar PTAX, variação % | BCB 1 | subir | 0 |
-| Desconfiança de quem investe | Juro de 10 anos: taxa real do Tesouro IPCA+ com vencimento mais perto de 10 anos | Tesouro Direto | subir | 0 |
+| Desconfiança de quem investe | Juro de 10 anos: taxa real do Tesouro IPCA+ com vencimento mais perto de 10 anos, comparada sempre no mesmo título | Tesouro Direto | subir | 0 |
 | Inflação esperada | Mediana do Focus para o IPCA dos 12 meses seguintes | Focus | subir | 0 |
 | Juro | Selic meta | BCB 432 | subir | 0 |
 
@@ -48,7 +48,7 @@ O emprego é o último a piorar numa recessão, porque as empresas primeiro vend
 | Dívida do governo (régua das contas) | 1,26 ponto do PIB | 0,95 ponto |
 | Dívidas das famílias (parte da renda que vai para parcelas e juros) | 0,50 ponto da renda | 0,38 ponto |
 | Dólar | 6,4% | 4,8% |
-| Juro de 10 anos | 0,58 ponto | 0,43 ponto |
+| Juro de 10 anos | 0,55 ponto | 0,41 ponto |
 | Inflação esperada | 0,42 ponto | 0,32 ponto |
 | Selic | 1,11 ponto | 0,83 ponto |
 | Ritmo da economia (só para o "encolhendo"; não é linha da página) | 1,19% | 0,89% |
@@ -59,7 +59,9 @@ As reservas ainda não têm corte em `config/calibracao.json`. Enquanto não tê
 
 O dólar e o juro de 10 anos contam como uma pressão só, a Desconfiança de quem investe: o sinal da soma dos dois lados (se um piora e o outro melhora, fica igual; se um piora e o outro fica igual, piorou).
 
-**Três dias úteis seguidos no dólar e no juro de 10 anos.** Os dois saem todo dia. A mudança de cada dia continua sendo o fechamento contra o fim do mês de 3 meses antes, mas cada um só troca de lado (piorou, igual, melhorou) quando o lado novo se mantém por 3 dias úteis seguidos (`persiste_dias` em `config/modelo.json`). Com o fechamento de um dia só, a Desconfiança de quem investe trocava de lado umas 22 vezes por ano desde 2006 (46 de novembro de 2025 a outubro de 2026), e metade das trocas se desfazia em até 7 dias; com os 3 dias, são umas 11 por ano, e 17% se desfazem em até 7 dias. Na linha do tempo e no teste, cada mês usa o lado que vale no último dia útil dele, com a mesma persistência, calculada dia a dia desde 2002 (dólar) e 2005 (juro de 10 anos). Quando o número do dia já está do outro lado do vaivém e a linha ainda espera os 3 dias, a linha aberta diz isso.
+**Três dias úteis seguidos no dólar e no juro de 10 anos.** Os dois saem todo dia. A mudança de cada dia continua sendo o fechamento contra o fim do mês de 3 meses antes, mas cada um só troca de lado (piorou, igual, melhorou) quando o lado novo se mantém por 3 dias úteis seguidos (`persiste_dias` em `config/modelo.json`). Com o fechamento de um dia só, a Desconfiança de quem investe trocava de lado umas 22 vezes por ano desde 2006 (44 de novembro de 2025 a outubro de 2026), e metade das trocas se desfazia em até 7 dias; com os 3 dias, são umas 11 por ano, e 18% se desfazem em até 7 dias. Na linha do tempo e no teste, cada mês usa o lado que vale no último dia útil dele, com a mesma persistência, calculada dia a dia desde 2002 (dólar) e 2005 (juro de 10 anos). Quando o número do dia já está do outro lado do vaivém e a linha ainda espera os 3 dias, a linha aberta diz isso.
+
+**O juro de 10 anos sempre no mesmo título.** O título do Tesouro IPCA+ que vence mais perto de 10 anos muda de tempos em tempos: em 31/12/2009 (do que vence em 2015 para o de 2024), em 2/1/2020 (do de 2024 para o de 2035), em 10/2/2020 (do de 2035 para o de 2026, que aparece nas taxas do Tesouro Direto a partir desse dia) e em 30/12/2020 (do de 2026 de volta para o de 2035). Cada título paga uma taxa diferente, e a série pula no dia da troca sem que o mercado tenha mexido: −0,41, +0,99, −0,66 e +1,02 ponto, quando o corte é de 0,41. Por isso a mudança de 3 meses compara sempre o título de agora: a taxa dele no dia contra a taxa do mesmo título no fim do mês de 3 meses antes. A taxa de cada título no fim de cada mês, desde julho de 2005, está em `data/historico/titulos_ipca.json` (`python src/historico.py --titulos`, com o arquivo de preços e taxas do Tesouro Transparente) e, nos meses recentes, no `fim_de_mes` da coleta do dia. Quando o título de agora ainda não existia naquele fim de mês (de fevereiro a abril de 2020, com o título de 2026), desconta-se o pulo do dia de cada troca. A comparação no mesmo título muda 4 dos 274 meses do teste: janeiro a março de 2021 deixam de ser subindo, porque eram subindo por causa do pulo de 30/12/2020, e junho de 2021 passa a subindo. A folga (abaixo) compara o nível do juro de 10 anos de hoje com o de todos os meses desde 2005, e esse nível é o do título de cada época, que de 2010 a 2019 foi o de 2024, cada vez mais perto de vencer.
 
 **5. A soma decide.** Pressões que pioraram menos as que melhoraram: 2 ou mais, **subindo**; −2 ou menos, **caindo**; no meio, **igual**. Pressão sem dado fica fora da soma naquele dia.
 
@@ -115,8 +117,9 @@ Foram umas 25 versões. As mais próximas:
 
 | Versão | Meses em subindo | Mudanças por ano | PIB em 12 meses, depois de subindo e de caindo | Meses em subindo nos 12 antes de 2014 | Outubro de 2026 |
 | --- | --- | --- | --- | --- | --- |
-| **A escolhida** | 18% | 1,9 | +0,4% e +4,3% | 6 | Subindo |
-| Sem os 3 dias de persistência no dólar e no juro de 10 anos | 17% | 2,0 | +0,3% e +4,3% | 6 | Subindo |
+| **A escolhida** | 17% | 1,9 | +0,4% e +4,3% | 6 | Subindo |
+| Juro de 10 anos sem comparar no mesmo título | 18% | 1,9 | +0,4% e +4,3% | 6 | Subindo |
+| Sem os 3 dias de persistência no dólar e no juro de 10 anos | 17% | 2,1 | +0,3% e +4,3% | 6 | Subindo |
 | Persistência de 5 dias | 16% | 2,0 | +0,4% e +4,2% | 3 | Subindo |
 | Média de 10 dias úteis no dólar e no juro de 10 anos | 19% | 2,0 | +0,4% e +4,2% | 3 | Subindo |
 | Corte de meia escala | 22% | 2,4 | +1,1% e +4,2% | 4 | Subindo |
@@ -134,8 +137,8 @@ Foram umas 25 versões. As mais próximas:
 - **Basta uma pressão** vira papel de parede. **Sem esperar o mês seguinte**, a direção muda 4 vezes por ano.
 - **Corte de uma escala inteira** e **desvio padrão comum** ficam em igual em três de cada quatro meses e não viram nada antes de 2014.
 - **Sete partes** parece melhor no PIB seguinte, mas porque o ritmo e o emprego descrevem a recessão que já chegou. Antes de 2014, ficou em igual o ano todo.
-- **Comparar com 6 meses antes**, **contas juntas** e **inflação juntas** quase empatam com a escolhida; ficou a mais simples de explicar. Essas versões foram testadas sem os 3 dias de persistência.
-- **Os 3 dias de persistência** cortam pela metade o vaivém diário da Desconfiança de quem investe (veja o passo 4) e mudam 6 dos 274 meses do teste. A **média de 10 dias úteis** cortava um pouco mais o vaivém (umas 9,5 trocas por ano), e a **persistência de 5 dias** também, mas as duas tiram 3 dos 6 meses em subindo antes de 2014. Em setembro de 2013, o juro de 10 anos fechou o mês 0,52 ponto acima de junho, logo acima do corte de 0,43; na média dos 10 últimos dias úteis, a alta era de 0,16. O aviso de 2014 depende de poucos dias, e isso vale para qualquer versão.
+- **Comparar com 6 meses antes**, **contas juntas** e **inflação juntas** quase empatam com a escolhida; ficou a mais simples de explicar. Essas versões foram testadas sem os 3 dias de persistência e sem comparar o juro de 10 anos no mesmo título.
+- **Os 3 dias de persistência** cortam pela metade o vaivém diário da Desconfiança de quem investe (veja o passo 4) e mudam 4 dos 274 meses do teste. A **média de 10 dias úteis** cortava um pouco mais o vaivém (umas 9,5 trocas por ano), e a **persistência de 5 dias** também, mas as duas (testadas sem comparar o juro de 10 anos no mesmo título) tiram 3 dos 6 meses em subindo antes de 2014. Em setembro de 2013, o juro de 10 anos fechou o mês 0,52 ponto acima de junho, logo acima do corte, que era de 0,43; na média dos 10 últimos dias úteis, a alta era de 0,16. O aviso de 2014 depende de poucos dias, e isso vale para qualquer versão.
 - **Por que a dívida, e não o resultado sem juros, nas contas do governo.** É a dívida que quem empresta ao governo olha, e ela inclui o custo dos juros. Hoje as duas andam em lados opostos: o resultado sem juros melhorou, e a dívida subiu porque os juros pesam mais que essa melhora. A página mostra as duas.
 
 ## O teste desde 2004
@@ -144,16 +147,16 @@ De janeiro de 2004 a outubro de 2026 (274 meses), com os atrasos de divulgação
 
 | Medida | Subindo | Igual | Caindo | Encolhendo |
 | --- | --- | --- | --- | --- |
-| Parte dos meses | 18% | 62% | 13% | 7% |
-| PIB médio nos 12 meses seguintes | +0,4% | +2,2% | +4,3% | — |
-| Meses com recessão começando no ano seguinte | 19% | 16% | 3% | — |
+| Parte dos meses | 17% | 63% | 13% | 7% |
+| PIB médio nos 12 meses seguintes | +0,4% | +2,1% | +4,3% | — |
+| Meses com recessão começando no ano seguinte | 21% | 16% | 3% | — |
 
 | Medida | Resultado |
 | --- | --- |
 | Mudanças de direção por ano | 1,9 |
 | Chance de um mês com recessão à frente ter soma maior que um mês sem (0,5 é cara ou coroa) | 0,53 |
 | Meses em subindo nos 12 antes de cada recessão | 2008: 0; 2014: 6; 2020: 0 |
-| Parte dos meses em que cada pressão piorou / melhorou | contas 31% / 16%; dívidas das famílias 32% / 17%; desconfiança de quem investe 31% / 32%; inflação esperada 19% / 24%; juro 19% / 24% |
+| Parte dos meses em que cada pressão piorou / melhorou | contas 31% / 16%; dívidas das famílias 32% / 17%; desconfiança de quem investe 32% / 32%; inflação esperada 19% / 24%; juro 19% / 24% |
 
 O que isso quer dizer, sem enfeite:
 
@@ -169,7 +172,7 @@ O que isso quer dizer, sem enfeite:
 | Lula 1 e 2 (2004 a 2010) | 2% | 74% | 18% |
 | Dilma (2011 a abril de 2016) | 27% | 55% | 5% |
 | Temer (maio de 2016 a 2018) | 9% | 66% | 25% |
-| Bolsonaro (2019 a 2022) | 25% | 58% | 4% |
+| Bolsonaro (2019 a 2022) | 21% | 62% | 4% |
 | Lula 3 (2023 a outubro de 2026) | 33% | 52% | 15% |
 
 O resto de cada linha é encolhendo. No governo atual, a mesma regra disse caindo em meados de 2023 e no começo de 2024, e subindo de agosto de 2024 a março de 2025 (com a Selic subindo e o dólar passando de R$ 6) e na maior parte de 2026.
