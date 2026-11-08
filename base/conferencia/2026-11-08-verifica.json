@@ -1,16 +1,16 @@
 {
- "em": "2026-11-08T14:08:39+00:00",
+ "em": "2026-11-08T14:15:07+00:00",
  "offline": false,
  "resumo": {
-  "conferido": 127,
-  "sem_trecho": 13,
+  "conferido": 132,
+  "sem_trecho": 12,
   "fonte_inacessivel": 4,
   "trecho_nao_achado": 3
  },
  "erros": [],
  "avisos": [
   "a-dolar-ago-6nov: número do texto sem conferência no campo dados (7,8)",
-  "afirmações que nenhum texto cita: a-caged, a-caso-2014, a-caso-2014-emprego, a-caso-2021, a-copom-set, a-desemprego, a-dolar-0311, a-dolar-ago-6nov, a-elnino, a-ev-petroleo-outubro, a-ev-petroleo-paz, a-exportacoes-out, a-focus-2026, a-importados, a-industria, a-industria-tri, a-previa-pib, a-previsoes-2027"
+  "afirmações que nenhum texto cita: a-balanca-out, a-caged, a-caso-2014, a-caso-2014-emprego, a-caso-2021, a-copom-set, a-desemprego, a-dolar-0311, a-dolar-ago-6nov, a-elnino, a-ev-petroleo-outubro, a-ev-petroleo-paz, a-exportacoes-out, a-focus-2026, a-importados, a-industria, a-industria-tri, a-lc179, a-previa-pib, a-previsoes-2027"
  ],
  "perguntas": [
   {
@@ -28,10 +28,9 @@
    "id": "dividas-das-familias",
    "erros": [],
    "avisos": [],
-   "afirmacoes_citadas": 22,
+   "afirmacoes_citadas": 24,
    "status": {
-    "sem_trecho": 1,
-    "conferido": 21
+    "conferido": 24
    }
   },
   {
@@ -40,8 +39,8 @@
    "avisos": [],
    "afirmacoes_citadas": 39,
    "status": {
-    "conferido": 35,
-    "fonte_inacessivel": 2,
+    "conferido": 36,
+    "fonte_inacessivel": 1,
     "sem_trecho": 2
    }
   },
@@ -677,14 +676,14 @@
    "nivel": 3,
    "status": "conferido",
    "url": "https://www.bcb.gov.br/content/estatisticas/hist_estatisticasfiscais/202601_Texto_de_estatisticas_fiscais.pdf",
-   "era_candidato": true
+   "era_candidato": false
   },
   "a-bc-fatores-2026": {
    "tipo": "documento",
    "nivel": 3,
    "status": "conferido",
    "url": "https://www.bcb.gov.br/content/estatisticas/hist_estatisticasfiscais/202610_Texto_de_estatisticas_fiscais.pdf",
-   "era_candidato": true
+   "era_candidato": false
   },
   "a-ifi-2026": {
    "tipo": "documento",
@@ -708,7 +707,7 @@
    "nivel": 2,
    "status": "conferido",
    "url": "https://www.imf.org/external/pubs/ft/wp/2015/wp15197.pdf",
-   "era_candidato": true
+   "era_candidato": false
   },
   "a-site-contas": {
    "tipo": "site",
@@ -760,7 +759,7 @@
    "nivel": 3,
    "status": "conferido",
    "url": "https://www.bcb.gov.br/content/copom/atascopom/Copom267-not20241211267.pdf",
-   "era_candidato": true
+   "era_candidato": false
   },
   "a-sp-2015": {
    "tipo": "documento",
@@ -774,7 +773,7 @@
    "nivel": 3,
    "status": "conferido",
    "url": "https://www.bcb.gov.br/content/ri/relatorioinflacao/202603/rpm202603b8p.pdf",
-   "era_candidato": true
+   "era_candidato": false
   },
   "a-kohlscheen": {
    "tipo": "documento",
@@ -966,7 +965,9 @@
   "a-apostas-bc": {
    "tipo": "documento",
    "nivel": 3,
-   "status": "sem_trecho"
+   "status": "conferido",
+   "url": "https://www.bcb.gov.br/conteudo/relatorioinflacao/EstudosEspeciais/EE119_Analise_tecnica_sobre_o_mercado_de_apostas_online_no_Brasil_e_o_perfil_dos_apostadores.pdf",
+   "era_candidato": false
   },
   "a-site-familias": {
    "tipo": "site",
@@ -978,6 +979,34 @@
    "tipo": "dado",
    "nivel": 3,
    "status": "conferido"
+  },
+  "a-fmi-familias-emergentes": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "conferido",
+   "url": "https://www.imf.org/-/media/files/publications/wp/2018/wp1876.pdf.md",
+   "era_candidato": false
+  },
+  "a-carta-2024-partes": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "conferido",
+   "url": "https://istoedinheiro.com.br/bc-dolar-e-economia-aquecida-explicam-maior-parte-da-alta-da-inflacao/",
+   "era_candidato": false
+  },
+  "a-defasagem-petrobras": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "conferido",
+   "url": "https://www.novacana.com/noticias/mesmo-subsidio-petrobras-mantem-defasagem-venda-combustiveis-100826",
+   "era_candidato": false
+  },
+  "a-apostas-fia": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "conferido",
+   "url": "https://timesbrasil.com.br/empresas-e-negocios/bets-superam-juros-e-credito-e-viram-principal-motor-do-endividamento-das-familias/",
+   "era_candidato": false
   }
  }
 }
