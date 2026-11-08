@@ -148,7 +148,7 @@ def entrada(rodada: dict) -> dict:
                     + (calendario.JUROS.get(x["tipo"]) or calendario.rotulo(x["tipo"], dt.date.fromisoformat(x["data"])))
                     for x in futuras)
     return {"dia": dia, "post": post, "dados": cx["dados"], "datas": datas, "calendario": cal or "(nenhuma)",
-            "memoria": memoria.contexto(dia), "cfg": cx["cfg"]}
+            "memoria": memoria.contexto(dia), "memoria_curta": memoria.contexto(dia, fatos=False), "cfg": cx["cfg"]}
 
 
 def _bloco_post(e: dict) -> str:
@@ -274,7 +274,7 @@ def _persona() -> str:
 def redigir(e: dict, ed: dict, cad: list[dict], problemas: list[str] | None = None, rascunho: dict | None = None) -> dict:
     partes = [f"<persona>\n{_persona()}\n</persona>", f"<guia>\n{guia()}\n</guia>", _bloco_post(e),
               f"<proximas_datas>\n{e['calendario']}\n</proximas_datas>",
-              f"<memorias>\n{e['memoria']}\n</memorias>",
+              f"<memorias>\n{e['memoria_curta']}\n</memorias>",
               f"Tese aprovada: {ed['tese']}\nRoteiro:\n- " + "\n- ".join(ed["roteiro"])
               + f"\nPrevisão: {ed['previsao']['texto']} (até {ed['previsao']['quando']}; sinal: {ed['previsao']['sinal']})",
               f"<caderno>\n{_caderno_txt(cad)}\n</caderno>"]

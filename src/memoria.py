@@ -400,10 +400,15 @@ def episodios(jobs: int) -> None:
 
 
 # ------------------------------------------------------------------ o que a leitura a fundo recebe
-def _memoria_longa() -> str:
+def _memoria_longa(compacta: bool = False) -> str:
+    """Os episódios do passado; compacta (a redação), só o título e o que cada um ensina."""
     linhas = []
     for e in sorted(_episodios_existentes(), key=lambda e: e["periodo"]["de"]):
         if e.get("fontes_conhecidas") is False:
+            continue
+        if compacta:
+            linhas.append(f"- {e['id']} ({e['periodo']['de'][:4]}, {e.get('onde', 'Brasil')}): {e['titulo']}. "
+                          + (e.get("o_que_ensina") or e.get("resumo") or ""))
             continue
         txt = e.get("resumo") or e.get("o_que_aconteceu", "")
         extra = f" Por quê: {e['por_que']} Como terminou: {e['como_terminou']} O que ensina: {e['o_que_ensina']}" \
@@ -415,6 +420,7 @@ def _memoria_longa() -> str:
 
 
 def _memoria_momento(dia: dt.date, meses_inteiros: int = 3) -> str:
+    """Os resumos de cada mês e, nos `meses_inteiros` últimos, os fatos (0: só os resumos), mais as histórias."""
     corte = _mais(dia.isoformat()[:7], -(meses_inteiros - 1))
     partes = []
     for arq in sorted(MOMENTO.glob("*.json")):
@@ -423,7 +429,7 @@ def _memoria_momento(dia: dt.date, meses_inteiros: int = 3) -> str:
         if mes > dia.isoformat()[:7]:
             continue
         partes.append(f"\n### {_nome_mes(mes)}\n{doc.get('resumo') or '(sem resumo)'}\nNúmeros do site: {doc.get('numeros') or numeros_do_mes(mes)}")
-        if mes >= corte:
+        if meses_inteiros and mes >= corte:
             for f in doc.get("fatos", []):
                 if f["data"] > dia.isoformat() or (f.get("origem") == "carga" and not f.get("fonte_conhecida")):
                     continue
@@ -463,11 +469,13 @@ def _memoria_site(dia: dt.date, n: int = 14) -> str:
     return "\n".join(reversed(linhas))
 
 
-def contexto(dia: dt.date) -> str:
+def contexto(dia: dt.date, fatos: bool = True) -> str:
+    """As três memórias para o prompt. Sem `fatos` (a redação), o momento vai só com os resumos e as histórias."""
+    quais = "os 3 últimos meses com os fatos; os anteriores só com o resumo" if fatos else "só os resumos"
     return ("<memoria_longa>\nEpisódios do passado (para lembrar quando algo parecido já aconteceu):\n"
-            f"{_memoria_longa()}\n</memoria_longa>\n\n"
-            "<memoria_do_momento>\nO que aconteceu mês a mês desde maio de 2025 (os 3 últimos meses com os fatos; os "
-            f"anteriores só com o resumo) e as histórias abertas:\n{_memoria_momento(dia)}\n</memoria_do_momento>\n\n"
+            f"{_memoria_longa(compacta=not fatos)}\n</memoria_longa>\n\n"
+            f"<memoria_do_momento>\nO que aconteceu mês a mês desde maio de 2025 ({quais}) e as histórias abertas:\n"
+            f"{_memoria_momento(dia, 3 if fatos else 0)}\n</memoria_do_momento>\n\n"
             f"<memoria_do_site>\nO que o site já publicou nos últimos dias:\n{_memoria_site(dia)}\n</memoria_do_site>")
 
 
