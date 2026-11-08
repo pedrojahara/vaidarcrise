@@ -80,6 +80,13 @@ details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
 {{ fontes(q.muda.fontes) }}
 </section>{% endif %}
 
+{% if q.medida %}<section id="como-mede">
+<h2>{{ q.medida.pergunta }}</h2>
+<p>{{ q.medida.texto }}</p>
+{{ fontes(q.medida.fontes) }}
+<p class="d-fontes"><a href="/nota/#t-pressoes">Como funciona</a> explica a conta das cinco pressões.</p>
+</section>{% endif %}
+
 {% if q.governo %}<section id="governo">
 <h2>{{ q.governo.pergunta }}</h2>
 <p>{{ q.governo.texto }}</p>

@@ -228,7 +228,7 @@ def textos_da_pergunta(p: dict) -> list[tuple[str, str, list[str]]]:
     out = []
     if p.get("resposta_curta"):
         out.append(("resposta_curta", p["resposta_curta"]["texto"], p["resposta_curta"]["afirmacoes"]))
-    for parte in ("governo", "agora"):
+    for parte in ("medida", "governo", "agora"):
         if p.get(parte):
             out.append((parte, (p[parte].get("pergunta", "") + " " + p[parte]["texto"]).strip(), p[parte]["afirmacoes"]))
     for d in p["escada"]:

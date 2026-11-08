@@ -301,6 +301,18 @@ def main() -> dict | None:
         print(f"post ({post.get('tipo', 'dia')}):", post.get("titulo") if post["ok"] else f"falhou: {post.get('erro') or post['meta'][-1].get('erro')}",
               "| problemas:", post.get("problemas"), "| teste do porquê:", (post.get("teste") or {}).get("ok"))
     rodada["post"] = post
+    # O site não cria página de pergunta sozinho (decisão do Pedro em 8/11/2026): quando sente falta de uma, a rodada
+    # grava o aviso no registro do dia e o run.sh mostra no Mac. O Pedro decide.
+    try:
+        import base_site
+        avisos = base_site.falta_pagina([*todas_r, rodada], cfg, hoje.isoformat())
+    except Exception as ex:  # noqa: BLE001
+        avisos = []
+        print(f"aviso: a conta da página que falta não rodou ({ex!r})")
+    if avisos:
+        rodada["avisos_ao_pedro"] = avisos
+        for a in avisos:
+            print(f"AVISO AO PEDRO: {a}")
 
     RUNS.mkdir(exist_ok=True)
     (RUNS / f"{rodada['id']}.json").write_text(json.dumps(rodada, ensure_ascii=False, indent=1))
