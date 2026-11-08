@@ -550,9 +550,12 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
     if p.get("ok") and tipo == "dia":
         try:  # a leitura a fundo (src/fundo.py) não pode derrubar o post
             fundo = base_site.fundo_ctx(p, cfg, com_links, registro)
-            ponte = None if fundo else base_site.ponte_ctx(p, cfg)
         except (KeyError, OSError, ValueError, TypeError, StopIteration) as e:
             print(f"aviso: a leitura a fundo do post de {dia} não foi montada ({e!r})")
+        try:  # a linha que leva ao básico do assunto, logo abaixo do texto
+            ponte = base_site.ponte(p, cfg, base_site.assunto_do_fato(rodada))
+        except (KeyError, OSError, ValueError, TypeError) as e:
+            print(f"aviso: o link do post de {dia} para o básico não saiu ({e!r})")
     zap = None
     if tipo in ("semana", "mes"):
         zap = "https://wa.me/?text=" + quote(f"{titulo} {SITE}{link}")
@@ -642,6 +645,12 @@ def main() -> None:
     # O retrato mais novo também fica no cartão "Comece por aqui", no topo da página principal.
     retrato = next((t for t in textos if t["tipo"] == "retrato"), None)
 
+    try:  # o menu Grandes perguntas do cabeçalho; um erro na base não derruba a atualização do dia
+        menu_perguntas = base_site.menu(cfg)
+    except (KeyError, OSError, ValueError, TypeError) as e:
+        menu_perguntas = []
+        print(f"aviso: o menu Grandes perguntas não saiu ({e!r})")
+
     def continua(depois: str) -> dict | None:
         """O que vem depois de um post na rolagem: o id do último já na página e o link do próximo, para quem não tem JavaScript."""
         i = pos_fila[depois] + 1
@@ -657,9 +666,9 @@ def main() -> None:
                 "hora": hora(r["gerado_em"]), "atualizado_iso": r["gerado_em"],
                 "link_inicio": base, "link_nota": "/nota/", "continua": continua(dia),
                 "data_curta": data_curta, "data_extenso": data_extenso, "mes_ano": mes_ano,
-                "og_url": f"{SITE}/og/{dia}.png", "dia_mes": dia_mes}
+                "og_url": f"{SITE}/og/{dia}.png", "dia_mes": dia_mes, "menu_perguntas": menu_perguntas}
 
-    abas = {"index.html": "inicio", "causas.html": "causas", "nota.html": "nota"}
+    abas = {"index.html": "inicio", "causas.html": "causas", "nota.html": "nota", "pergunta.html": "perguntas"}
 
     def gravar(caminho: Path, tpl: str, ctx: dict, canonical: str) -> None:
         caminho.mkdir(parents=True, exist_ok=True)

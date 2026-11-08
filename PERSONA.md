@@ -293,7 +293,8 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 
 | Coisa | Nome no site |
 | --- | --- |
-| Abas | Hoje, O que causa recessão, Como funciona |
+| Abas | Hoje, O que causa recessão, Grandes perguntas (menu que abre e lista as páginas das pressões), Como funciona |
+| O link do fato do dia para o básico | Logo abaixo do texto: "O básico sobre o juro" e a pergunta da página; sem página, "O básico, na aba O que causa recessão" e o título da parte |
 | A direção | "O risco de recessão está subindo", "está igual" ou "está caindo"; nos resumos, com desde quando ("desde junho de 2026"); "A economia está encolhendo" quando a prévia do PIB cai mais de 1,5% em 3 meses. Na placa: Subindo, Igual, Caindo, Encolhendo |
 | O crescimento, logo abaixo da placa | Crescimento em 12 meses: Antes, Agora, Previsão. À direita do título, como o Piorou de cada pressão: Acelerando, Desacelerando ou No mesmo ritmo. O bloco não tem rodapé; o normal desde 2004 e o erro da previsão "dos bancos (Focus)" ficam em Como funciona |
 | As cinco pressões | Contas do governo, Dívidas das famílias, Desconfiança de quem investe, Inflação esperada, Juro |

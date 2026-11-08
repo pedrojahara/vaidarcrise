@@ -53,12 +53,11 @@
 .post .fundo .f-prev p{margin:0;font-size:15.5px;line-height:1.5}
 .post .fundo p.f-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:10px 0 6px;overflow-wrap:anywhere}
 .fundo .f-fontes a{color:var(--meta)}
-.ponte.so{display:block;margin:4px 0 18px;max-width:660px;padding:12px 14px;border-radius:10px;background:var(--maquina);text-decoration:none;color:var(--tinta);font:15px/1.4 var(--sistema)}
-.ponte.so b{display:block;font:700 17px/1.35 var(--serifa);color:var(--link);margin:0 0 2px}
-.ponte.so:hover b{text-decoration:underline}
-.fundo .ponte{display:block;margin:6px 14px 14px;padding:12px 14px;border-radius:10px;background:var(--maquina);text-decoration:none;color:var(--tinta);font:15px/1.4 var(--sistema)}
-.fundo .ponte b{display:block;font:700 17px/1.35 var(--serifa);color:var(--link);margin:0 0 2px}
-.fundo .ponte:hover b,.fundo .ponte:focus-visible b{text-decoration:underline}
+/* A linha logo abaixo do fato do dia, que leva ao básico do assunto (src/base_site.py, ponte). */
+.basico{margin:2px 0 18px;max-width:660px;font:14px/1.4 var(--sistema);color:var(--meta)}
+.basico span{display:block}
+.basico a{display:inline-block;margin-top:2px;font:700 17px/1.35 var(--serifa);color:var(--link);text-decoration:none}
+.basico a:hover,.basico a:focus-visible{text-decoration:underline}
 @media (prefers-reduced-motion: reduce){.fundo>summary .seta{transition:none}}
 
 /* pressão das notícias: dado da máquina, na letra do sistema */

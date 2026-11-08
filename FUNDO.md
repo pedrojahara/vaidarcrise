@@ -6,7 +6,7 @@ Este guia vale para as quatro etapas da leitura a fundo (`src/fundo.py`): a pesq
 
 O fato do dia, com até 100 palavras, conta o que aconteceu e por que isso importa para a leitora. A leitura a fundo é para quem tem uns 10 minutos e quer entender mais. Ela precisa trazer o que a leitora não acharia sozinha no jornal do dia: a vez parecida no passado e o que veio depois dela, a tendência que o número do mês esconde, a conta que ninguém fez com as séries do site, o que o mundo está fazendo ao mesmo tempo e o que pode acontecer nos próximos meses.
 
-O básico de cada pressão fica na página da pressão (`/perguntas/`), e a leitura a fundo leva para lá no fim. Por isso a leitura a fundo não explica de novo o que é a Selic nem por que juro alto freia a economia. Ela parte daí.
+O básico de cada pressão fica na página da pressão (`/perguntas/`), e o post leva para lá numa linha logo abaixo do fato do dia, antes da leitura a fundo. Por isso a leitura a fundo não explica de novo o que é a Selic nem por que juro alto freia a economia. Ela parte daí.
 
 ## O que é um achado
 
