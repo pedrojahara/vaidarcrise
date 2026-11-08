@@ -278,7 +278,8 @@ def falta_pagina(rodadas: list[dict], cfg: dict, hoje: str) -> list[str]:
 
 def fundo_ctx(post: dict, cfg: dict, ligar) -> dict | None:
     """A leitura a fundo de um fato do dia (post.fundo em runs/, feita por src/fundo.py), para o post: a tese no botão,
-    o texto corrido com os termos ligados à Wikipédia, a previsão com a data, as fontes e o link da página da pressão.
+    o texto corrido com os termos ligados à Wikipédia, as fontes e o link da página da pressão. O site não promete
+    conferir nada depois (decisão do Pedro em 8/11/2026): a previsão com data que as leituras antigas tinham não aparece.
     As marcas do caderno ([c3]) saem do texto e viram a lista de fontes."""
     import fundo as fundo_mod
     f = post.get("fundo") or {}
@@ -320,13 +321,8 @@ def fundo_ctx(post: dict, cfg: dict, ligar) -> dict | None:
         fontes.append({"quem": "contas do site com as séries do Banco Central e do IBGE", "url": None})
     if so_site:
         fontes.append({"quem": "os dados e as notícias do dia, no registro do site", "url": None})
-    pv = f.get("previsao") or {}
-    previsao = None
-    if pv.get("texto") and len(pv.get("quando") or "") == 10:
-        previsao = {"data": _data(pv["quando"]), "texto": pv["texto"].strip(), "como": (pv.get("como_conferir") or "").strip()}
     palavras = sum(len(p.split()) for p in pars)
-    return {"titulo": f["titulo"], "minutos": max(3, round(palavras / 200)), "blocos": blocos, "previsao": previsao,
-            "fontes": fontes}
+    return {"titulo": f["titulo"], "minutos": max(3, round(palavras / 200)), "blocos": blocos, "fontes": fontes}
 
 
 def pergunta_ctx(p: dict, A: dict, E: dict, conf: dict, cfg: dict, ligar, posts: list[dict], outras: list[dict],

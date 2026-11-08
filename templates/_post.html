@@ -23,7 +23,6 @@
     <div class="f-corpo">
       {% for b in f.blocos %}{% if b.h %}<h4 class="f-h">{{ b.h }}</h4>{% else %}<p>{{ b.p }}</p>{% endif %}
       {% endfor %}
-      {% if f.previsao %}<div class="f-prev"><b>O que o site vai conferir em {{ f.previsao.data }}</b><p>{{ f.previsao.texto }}</p></div>{% endif %}
       {% if f.fontes %}<p class="f-fontes">De onde vêm os números: {% for x in f.fontes %}{% if x.url %}<a href="{{ x.url }}" rel="nofollow noopener">{{ x.quem }}</a>{% else %}{{ x.quem }}{% endif %}{{ '; ' if not loop.last else '.' }}{% endfor %}</p>{% endif %}
     </div>
   </details>

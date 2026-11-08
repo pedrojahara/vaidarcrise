@@ -14,14 +14,15 @@ O básico de cada pressão fica na página da pressão (`/perguntas/`), e o post
 
 ## O que é um achado
 
-O editor-chefe aprova a tese da leitura a fundo só se ela passar nos quatro testes:
+O editor-chefe aprova a tese da leitura a fundo só se ela passar nos quatro testes, e no quinto quando o fato é uma decisão pública:
 
 1. **Não é óbvia.** A leitora não chega nela lendo o fato do dia ou a manchete. Definição, mecanismo de livro ("juro alto freia a economia") e resumo das notícias não são achados. A tese de uma leitura a fundo dos últimos dias também não é: a leitora já leu, e o texto novo parte dela e dá o passo seguinte.
 2. **Muda alguma coisa para a leitora.** Ela passa a esperar outra coisa dos próximos meses, a ler a próxima notícia de outro jeito ou a ver o problema maior ou menor do que parecia.
-3. **Pode dar errado.** A tese diz o que deve acontecer, até quando e como o site vai saber. Se nada pode desmentir a tese, ela é opinião, e opinião não é achado.
+3. **Pode estar errada.** A tese diz o que a desmentiria. Se nada pode desmentir a tese, ela é opinião, e opinião não é achado. O site não promete voltar para conferir: o que desmentiria a tese entra no texto como parte da análise, quando ajuda a leitora a ler as próximas notícias.
 4. **Está no caderno.** Cada número e cada fato da tese tem uma linha no caderno, com a conta ou o documento.
+5. **Mede a decisão pelo objetivo de quem decidiu.** Só quando o fato do dia é uma decisão pública: a tese responde às perguntas da parte "Quando o fato é uma decisão", com a régua que o próprio decisor escreveu, e não diz que a decisão acertou, que errou ou o que o decisor deveria fazer.
 
-Um exemplo, com os números de novembro de 2026, que servem só para mostrar o raciocínio. Em 4/11, o Banco Central parou de cortar a Selic. Uma tese fraca seria "o Banco Central nunca parou de cortar com a inflação esperada tão longe da meta", porque ela é verdadeira e curiosa, mas não diz o que muda. A tese forte segue a pergunta até o e daí: desde 2002, nas 7 vezes em que a inflação esperada subiu nos 3 meses depois de o Banco Central parar de cortar, ele voltou a subir o juro nos meses seguintes; nas 3 vezes em que ela não subiu, ele voltou a cortar. Desta vez, ela já subiu 0,36 ponto em um mês. Então a próxima alta voltou a ser possível, ao contrário do que os bancos (Focus) previam, e a leitora pode conferir isso no Focus de cada segunda-feira e na reunião de 9/12. A tese também diz o tamanho da evidência: são 10 casos, e 10 casos mostram um padrão, não uma lei. O exemplo mostra o caminho, e não o achado a usar: cada fato tem o seu, e o achado de um dia não volta como tese em outro.
+Um exemplo, com os números de novembro de 2026, que servem só para mostrar o raciocínio. Em 4/11, o Banco Central parou de cortar a Selic. Uma tese fraca seria "o Banco Central nunca parou de cortar com a inflação esperada tão longe da meta", porque ela é verdadeira e curiosa, mas não diz o que muda. A tese forte segue a pergunta até o e daí: desde 2002, nas 7 vezes em que a inflação esperada subiu nos 3 meses depois de o Banco Central parar de cortar, ele voltou a subir o juro nos meses seguintes; nas 3 vezes em que ela não subiu, ele voltou a cortar. Desta vez, ela já subiu 0,36 ponto em um mês. Então a próxima alta voltou a ser possível, ao contrário do que os bancos (Focus) previam. A tese também diz o tamanho da evidência: são 10 casos, e 10 casos mostram um padrão, não uma lei. O exemplo mostra o caminho, e não o achado a usar: cada fato tem o seu, e o achado de um dia não volta como tese em outro.
 
 ## Como pensar
 
@@ -39,13 +40,40 @@ Pense por perguntas, e desça quantas camadas forem precisas. Às vezes o e daí
 
 O contexto do momento entra sempre. Se o assunto é o dólar, lembre que houve eleição em outubro de 2026. Se é o petróleo, lembre da guerra e das negociações. As memórias trazem esse contexto: a memória longa (os episódios do passado), a memória do momento (o que aconteceu desde maio de 2025 e as histórias que ainda estão abertas) e a memória do site (o que o site já escreveu, para não repetir e para ligar um dia ao outro). O que a memória diz serve para saber onde procurar. O número que vai para o texto vem do caderno.
 
+## Quando o fato é uma decisão
+
+Quando o fato do dia é uma decisão de um órgão público do Brasil (o Banco Central, o governo federal, o Congresso, os estados e os municípios, as agências), a leitura a fundo a analisa. A régua é o objetivo que o próprio decisor escreveu: o site julga o meio e nunca o fim, ou seja, se a decisão vai na direção do objetivo declarado, e não se o objetivo é bom. Assim a mesma régua vale para qualquer governo, e a leitora fica com o julgamento do objetivo.
+
+Quanto aprofundar é o código que decide (`src/decisoes.py`), com o que o classificador de notícias marca, e não a IA do dia, para que o site não aprofunde mais as decisões de um lado do que as do outro:
+
+- **Análise**: decisão tomada ou em votação, de tamanho 2 ou 3, de um tipo que tem entrada na biblioteca de evidência ([EVIDENCIA.md](EVIDENCIA.md)). Responde às oito perguntas.
+- **Básico**: as outras decisões públicas, inclusive as de tribunal e de órgão de controle, que não fixam a regra. Responde às quatro primeiras.
+- **Anúncio**: o básico e o que falta para virar ato (o documento, o tamanho e a data), sem analisar o mérito.
+- Rumor, previsão, decisão de empresa e decisão de fora do país (o Fed, a Opep) não são analisados: o site conta o efeito no Brasil.
+
+As oito perguntas, nesta ordem na pesquisa, e na ordem que o raciocínio pedir no texto, sem formulário:
+
+1. Quem decidiu, com que poder e quem pode desfazer? O Senado aprovar não é lei, o Tribunal de Contas da União propor uma alíquota não é o Congresso fixá-la, e anunciar não é fazer.
+2. Qual objetivo o decisor escreveu, e onde? O objetivo está num documento que a lei obriga: o comunicado e a ata do Copom, a exposição de motivos da medida provisória, do decreto ou do projeto, a estimativa de impacto que o artigo 113 do ADCT e o artigo 14 da Lei de Responsabilidade Fiscal exigem de quem cria gasto obrigatório ou abre mão de imposto, a análise de impacto regulatório das agências (Decreto 10.411/2020), a nota do Tesouro. Se o objetivo não está escrito, ou é vago, o texto diz isso, e isso já é informação.
+3. Qual é o tamanho? Em reais, em fatia do PIB, em reais por brasileiro e perto do problema que a decisão diz resolver. Quando o decisor estima o próprio impacto e outro órgão também (a IFI, as consultorias da Câmara e do Senado, o TCU), as duas contas entram.
+4. Em que pressão do site e em que porta da leitora ela mexe: o emprego, o preço, a parcela ou o dólar?
+5. Por que caminho a decisão chega ao objetivo, e o que a evidência diz desse caminho? O caminho e a força da evidência vêm só da biblioteca, com a nota de força e o estudo que discorda. Escolher o estudo depois de saber a decisão é o caminho mais curto para o viés, porque quase sempre existe um estudo para cada lado.
+6. O que aconteceu das outras vezes? Decisões do mesmo tipo no Brasil desde 2002, em todos os governos, contadas por episódio e não por mês (`src/conta.py episodios`, `pausas` e `ciclos`), porque um episódio longo não vale mais que um curto. Sem casos parecidos, o texto diz isso e não dá chance.
+7. Dá certo se, dá errado se: até duas condições de cada lado, cada uma com o sinal que a mostra e o corte, e o lado que os casos parecidos e a evidência deixam mais provável. Quando a evidência não deixa dizer, o texto diz que ainda não dá para dizer.
+8. Quem ganha, quem paga e quando; a melhor objeção de cada lado, com o número dela; e o espelho, a mesma régua numa decisão parecida de outro governo, para mostrar que o critério não muda com quem decide.
+
+Duas regras valem para todas. A decisão é julgada só com o que se sabia no dia, porque o dado revisado depois muda o julgamento (as contas do site com as séries já cortam no dia). E o site faz a análise do fato e para aí: não guarda placar de acertos, não volta depois para conferir e nunca diz que a decisão acertou, que errou ou o que o decisor deveria fazer.
+
+No fato do dia de 100 palavras, a decisão leva o objetivo que quem decidiu escreveu e a condição principal, que o editor-chefe passa no curto. Nos resumos da semana e do mês, a decisão citada leva quem decidiu, com que poder e o objetivo declarado.
+
 ## O caderno
 
-Cada número e cada fato que vai para o texto tem uma linha no caderno, de um destes três tipos:
+Cada número e cada fato que vai para o texto tem uma linha no caderno, de um destes quatro tipos:
 
 - **conta**: o comando de `src/conta.py` e a linha da resposta, copiada como saiu. A conferência roda o mesmo comando de novo. A conta feita à mão (média, diferença, percentual) também sai do programa, com `src/conta.py calc`, porque número calculado de cabeça não vale.
 - **documento**: quem publicou, o link, a data e o trecho literal da página que diz o número ou o fato. A conferência abre o link e procura o trecho.
 - **site**: um dado que o site já mostra, dos dados do dia que a pesquisa recebe. Um fato da memória do momento não é dado do site: a conferência o procura no jornal que a memória guardou.
+- **biblioteca**: uma afirmação da biblioteca de evidência, com o estudo, o link dele e o trecho copiado da entrada. A conferência procura o trecho na biblioteca, que foi escrita e conferida antes; a pesquisa do dia não acrescenta estudo a ela.
 
 Copie o número como a fonte escreve, sem arredondar diferente. Fato sem linha no caderno não vai para o texto. Prefira o documento oficial (Banco Central, IBGE, Tesouro, Congresso) à notícia sobre ele, e notícia de jornal a texto de opinião.
 
@@ -53,9 +81,9 @@ Copie o número como a fonte escreve, sem arredondar diferente. Fato sem linha n
 
 - Um texto corrido, de 800 a 1.500 palavras, que segue a ordem do pensamento. Nada de formulário com as mesmas partes todo dia.
 - Até 3 intertítulos, e cada um é uma frase que diz a ideia da parte ("Das 10 vezes em que o Banco Central parou de cortar, 7 terminaram em alta"), nunca um rótulo ("Contexto", "O que está em jogo").
-- A tese aparece nos dois primeiros parágrafos, com o que a sustenta e sem copiar as frases do fato do dia, que já a disse numa frase, e o resto do texto a sustenta: a vez parecida no passado, a conta, o mundo e a política em volta, a melhor objeção e o que pode dar errado.
+- A tese aparece nos dois primeiros parágrafos, com o que a sustenta e sem copiar as frases do fato do dia, que já a disse numa frase, e o resto do texto a sustenta: a vez parecida no passado, a conta, o mundo e a política em volta, a melhor objeção e o que desmentiria a tese.
 - A melhor objeção entra com honestidade, com quem discorda e por quê. Diga também quão forte é a evidência: poucos casos são poucos casos, e uma correlação não prova a causa.
-- O texto termina com o que o site vai conferir e quando: um sinal que a leitora também pode olhar e uma data.
+- O texto termina no e daí para a leitora. Ele não promete conferir, acompanhar nem testar nada depois: o site faz a análise do dia e para aí. Pode dizer, como fato, quando sai o próximo dado do assunto.
 - Siga o jeito de escrever do PERSONA.md: frase completa, causa e efeito em ordem, quem faz o quê e para quem, comparação que diz o mês, termo técnico sem definição (o site liga à Wikipédia), sigla por extenso ou com link e nada de fórmula de efeito.
 - Faça o teste da troca: com outro governo no poder, a frase sairia igual? Diga o mecanismo e de quem é a decisão, nunca o lado. Use o cargo (o presidente, o ministro da Fazenda, o presidente do Banco Central), nunca o nome de pessoa ou de partido.
 - Não diga à leitora o que fazer com o dinheiro dela.
@@ -69,5 +97,6 @@ O tamanho do texto é o tamanho do achado. Se depois de duas voltas de pesquisa 
 
 - O código confere cada número do texto contra o caderno, roda de novo cada conta e abre cada documento para achar o trecho (no Mac, que tem a internet livre). A leitura a fundo feita na nuvem, que não abre as fontes, é conferida de novo na rodada seguinte do Mac, e a frase que se apoia numa fonte que não confere sai do texto.
 - A conferência da IA lê cada frase contra as linhas que ela marca e confere a força das conclusões. "Sempre", "nunca" e "vai" só com evidência que aguenta: com 7 casos, o texto diz "nas 7 vezes desde 2002", e não "sempre".
-- A conferência também refaz o teste da troca e procura conselho sobre dinheiro.
+- A conferência também refaz o teste da troca e procura conselho sobre dinheiro, juízo sobre quem decidiu ("acertou", "errou", "deveria") e promessa de conferir depois.
+- A linha da biblioteca só vale se o trecho estiver na biblioteca de evidência, com os mesmos números.
 - Depois, o editor de estilo (`src/edita_texto.py`) passa o texto pelo PERSONA.md, sem mudar fato nem número.

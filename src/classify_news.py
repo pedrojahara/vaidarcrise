@@ -48,6 +48,11 @@ def _suporta(flag: str) -> bool:
 FATORES = ["atividade", "juro", "credito", "mercado", "contas", "emprego", "externo"]
 ESTAGIOS = ["dado", "decidido", "em_votacao", "anuncio", "previsao", "rumor"]
 ORIGENS = ["politica", "banco_central", "dados", "mundo", "natureza"]
+# Quem decidiu e o tipo de decisão: o código decide com eles quanto o site analisa cada decisão (src/decisoes.py).
+DECISORES = ["banco_central", "governo_federal", "congresso", "estados_municipios", "agencia", "orgao_de_controle",
+             "tribunal", "empresa", "fora", "nenhum"]
+INSTRUMENTOS = ["juros_cambio", "gasto", "imposto", "credito_publico", "preco_regulacao", "regra_fiscal",
+                "divida_publica", "outro", "nenhum"]
 
 SCHEMA = {
     "type": "object",
@@ -58,8 +63,9 @@ SCHEMA = {
             "type": "array", "maxItems": 12,
             "items": {
                 "type": "object", "additionalProperties": False,
-                "required": ["noticia_ids", "outras_ids", "titulo_evento", "estagio", "chance_aprovacao", "origem", "fator",
-                             "direcao", "magnitude", "ja_no_preco", "ja_nos_indicadores", "duplicata_de", "porque"],
+                "required": ["noticia_ids", "outras_ids", "titulo_evento", "estagio", "chance_aprovacao", "origem", "decisor",
+                             "instrumento", "objetivo", "fator", "direcao", "magnitude", "ja_no_preco",
+                             "ja_nos_indicadores", "duplicata_de", "porque"],
                 "properties": {
                     "noticia_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "maxItems": 6},
                     "outras_ids": {"type": "array", "items": {"type": "string"}, "maxItems": 80},
@@ -67,6 +73,9 @@ SCHEMA = {
                     "estagio": {"type": "string", "enum": ESTAGIOS},
                     "chance_aprovacao": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
                     "origem": {"type": "string", "enum": ORIGENS},
+                    "decisor": {"type": "string", "enum": DECISORES},
+                    "instrumento": {"type": "string", "enum": INSTRUMENTOS},
+                    "objetivo": {"type": "string", "maxLength": 180},
                     "fator": {"type": "string", "enum": FATORES},
                     "direcao": {"type": "integer", "enum": [-1, 1]},
                     "magnitude": {"type": "integer", "minimum": 1, "maximum": 3},
@@ -106,6 +115,9 @@ O que conta:
    Na dúvida entre dois estágios, use o menos avançado.
    chance_aprovacao: só quando estagio = "em_votacao", a chance de a proposta ser aprovada mais ou menos como está, entre 0,2 e 0,8, a partir do que as manchetes dizem sobre apoio, prazos e resistência. Nos outros estágios, null. Direção e magnitude descrevem o efeito se a proposta passar.
 5. origem: "politica" para governos, Congresso, Justiça e agências do Brasil; "banco_central" para o Banco Central do Brasil e o Copom; "dados" para números da economia brasileira, de empresas e de mercados; "mundo" para fatos de fora do Brasil; "natureza" para clima, safra, energia e desastres.
+   decisor: quem tomou a decisão ou fez o anúncio, para o site saber se é decisão pública do Brasil. "banco_central" para o Banco Central e o Copom; "governo_federal" para a Presidência, os ministérios, o Tesouro, a Receita, a Camex e o Gecex, e para o BNDES, a Caixa e o Banco do Brasil quando executam programa do governo; "congresso" para a Câmara, o Senado e as comissões; "estados_municipios" para governos, assembleias e o comitê dos secretários de Fazenda dos estados; "agencia" para Aneel, ANP, Anatel, ANS e CVM; "orgao_de_controle" para o Tribunal de Contas da União e a CGU, que propõem ou fiscalizam, mas não fixam a regra; "tribunal" para o STF e a Justiça; "empresa" para bancos, lojas, indústrias e a Petrobras no preço do dia; "fora" para o Fed, governos de outros países e a Opep; "nenhum" quando não há decisão (um dado divulgado, uma previsão, um movimento de mercado, a crítica de um partido). Rumor e anúncio levam o decisor de quem faria a decisão.
+   instrumento: o tipo de decisão. "juros_cambio" (Selic, venda de dólares pelo Banco Central), "gasto" (orçamento, programas, benefícios, investimento público), "imposto" (alta ou corte de imposto, isenção, desconto para um setor), "credito_publico" (crédito com dinheiro ou garantia do governo: BNDES, Caixa, Banco do Brasil), "preco_regulacao" (preço de combustível da Petrobras, conta de luz, salário mínimo, regra de agência), "regra_fiscal" (arcabouço, meta das contas, Lei de Responsabilidade Fiscal, dívida de estados com a União), "divida_publica" (leilões, recompras e prazos dos títulos do Tesouro), "outro" (decisão pública de outro tipo) e "nenhum" (não é decisão, ou é decisão de empresa ou de fora).
+   objetivo: o objetivo que quem decidiu declarou, como as manchetes o dizem ("conter as oscilações das taxas dos títulos", "cumprir a meta das contas"), em até 160 caracteres e sem juízo. Vazio ("") quando as manchetes não dizem, quando não é decisão pública ou quando é rumor. Nunca deduza o objetivo nem o atribua a quem não decidiu.
 6. Agrupe manchetes sobre o mesmo fato num único evento. noticia_ids: até 6 manchetes que melhor contam o fato, de jornais diferentes quando der. outras_ids: todas as outras manchetes da lista sobre o mesmo fato, inclusive as repetidas, para o site contar quantos jornais deram o fato (vazio se não houver). Use só ids que aparecem na lista.
 7. direcao = 1 se o fato aumenta o risco de recessão, -1 se reduz. magnitude: 1 = pequeno, 2 = relevante, 3 = grande e raro (algo comparável a uma mudança de regime fiscal, um choque de mercado histórico ou um choque externo grave). Na dúvida, use a menor.
 8. ja_nos_indicadores = true só quando a notícia apenas relata o valor de um dos indicadores que o site já mede, listados em <indicadores_ja_medidos>. Qualquer outro número (bolsa, juros futuros, risco-país, resultado primário, inflação, varejo, indústria, crédito) não está nos indicadores: se for relevante, é evento como os outros, com ja_nos_indicadores = false.

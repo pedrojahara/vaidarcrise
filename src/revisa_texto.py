@@ -69,6 +69,13 @@ MOLDES = [
     (re.compile(r"\b(Lula|Haddad|Bolsonaro|Galípolo|Campos Neto|Tarcísio|Alckmin|Tebet|Durigan|Hugo Motta|Alcolumbre|"
                 r"Alexandre de Moraes|Gleisi|Trump|Powell|Xi Jinping|Milei)\b|\b(PT|PL|MDB|PSDB|PSOL|PSD|União Brasil)\b"),
      "nome de pessoa ou partido: use o cargo ou a instituição (o presidente, a Fazenda, o partido do governo)"),
+    # A decisão pública se mede pelo objetivo de quem decidiu, sem juízo sobre o decisor (PERSONA.md, "Sem lado").
+    # Pede a reescrita, mas não barra: a crítica de alguém, citada como fala dele, pode passar.
+    (re.compile(r"\b(Banco Central|Copom|governo|Congresso|Senado|Câmara|Fazenda|Tesouro|ministr[oa]|presidente|"
+                r"estados?|prefeituras?|TCU)\b[^.;]{0,50}\b(acertou|errou|acertaram|erraram|acerta|erra|deveria|"
+                r"deveriam|devia|deviam)\b|\b(decisão|medida) (certa|errada|acertada|equivocada|correta|incorreta)\b",
+                re.I),
+     "julga quem decidiu: meça a decisão pelo objetivo que o decisor escreveu, com 'dá certo se' e 'dá errado se'"),
     # CARTA_EDITORIAL.md, "Cuidados para o redator": recorde tem a régua da série.
     (re.compile(r"\b(já (registrad|vist)[oa]s?|de todos os tempos|da história)\b", re.I),
      "recorde sem a régua: diga 'da série' ou desde quando a série existe, como a fonte diz"),
@@ -90,6 +97,11 @@ GRAVES = [
     # A direção diz para que lado o risco andou; não é previsão de recessão.
     (re.compile(r"\b(vai|deve|irá) (ter|haver|entrar em) (uma )?recessão|recessão (vem|virá|é certa)|"
                 r"(não|nem) (vai|deve) (ter|haver) (uma )?recessão\b", re.I), "prevê recessão"),
+    # O site faz a análise do fato e para aí: não promete conferir, acompanhar nem testar depois (Pedro, 8/11/2026).
+    (re.compile(r"\b(o site|n[óo]s|a gente)\s+(vai|vamos|voltar[áa]|volta|seguir[áa]|segue)\s+(a\s+)?"
+                r"(conferir|acompanhar|olhar|observar|monitorar|testar|checar|verificar|dizer|mostrar se|voltar)\b|"
+                r"\bvamos (conferir|acompanhar|ver se|testar|checar|monitorar)\b|o que o site vai conferir", re.I),
+     "promete conferir ou acompanhar depois: o site faz a análise do fato e para aí"),
     # O risco de recessão é qualitativo: nunca vira número.
     (re.compile(r"(\d+(,\d+)?\s*(%|por cento)\s*de (chance|probabilidade|risco)|(chance|probabilidade|risco) "
                 r"(de recessão )?(é |fica |sobe para |cai para |vai a |de )?(de )?\d+(,\d+)?\s*(%|por cento)|"
