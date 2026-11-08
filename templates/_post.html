@@ -28,5 +28,5 @@
     </div>
   </details>
   {% endif %}
-  {% if post.zap %}<p class="rodape"><a href="{{ post.zap }}" rel="noopener">Mandar no WhatsApp</a></p>{% endif %}
+  {% if post.zap %}<div class="compartilha"><a class="zap" href="{{ post.zap }}" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Mandar no WhatsApp</a><button class="copia" type="button" data-url="{{ post.url }}"><svg aria-hidden="true"><use href="#i-link"/></svg><span class="c-txt" aria-live="polite"><span>Copiar link</span></span></button></div>{% endif %}
 </article>

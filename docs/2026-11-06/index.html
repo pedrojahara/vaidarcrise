@@ -5,12 +5,12 @@
 <script>document.documentElement.className+=" js"</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Indústria produz 0,8% menos em setembro, quarta queda em cinco meses | Vai dar crise?</title>
-<meta name="description" content="Fato do dia, sexta, 6 de novembro de 2026. O risco de recessão está subindo.">
+<meta name="description" content="A produção da indústria caiu 0,8% em setembro, se compararmos com agosto, e soma perda de 4,1% desde maio.">
 <link rel="canonical" href="https://vaidarcrise.com.br/2026-11-06/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
 <meta property="og:title" content="Indústria produz 0,8% menos em setembro, quarta queda em cinco meses | Vai dar crise?">
-<meta property="og:description" content="Fato do dia, sexta, 6 de novembro de 2026. O risco de recessão está subindo.">
+<meta property="og:description" content="A produção da indústria caiu 0,8% em setembro, se compararmos com agosto, e soma perda de 4,1% desde maio.">
 <meta property="og:url" content="https://vaidarcrise.com.br/2026-11-06/">
 <meta property="og:image" content="https://vaidarcrise.com.br/og/2026-11-06.png">
 <meta property="og:image:width" content="1200">
@@ -174,8 +174,19 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .titulo-post a:hover{text-decoration:underline}
 .post .autoria{font:14.5px/1.5 var(--sistema);color:var(--meta);margin:0 0 18px;max-width:640px}
 .post p{margin:0 0 16px;max-width:660px}
-.post .rodape{font:14px/1.55 var(--sistema);color:var(--meta);margin-top:14px}
-.post .rodape a{color:var(--meta)}
+/* O fim de todo post: o botão do WhatsApp e, ao lado, o "Copiar link", que só aparece com JavaScript. */
+.compartilha{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin:2px 0 0;max-width:660px}
+.compartilha .zap{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px 0 12px;border:1px solid var(--fio);border-color:color-mix(in srgb,var(--meta) 45%,transparent);border-radius:10px;color:var(--tinta);text-decoration:none;font:600 15px/1.2 var(--sistema)}
+.compartilha .zap:hover{border-color:var(--tinta)}
+.compartilha svg{width:20px;height:20px;flex:none}
+.compartilha .copia{display:none;align-items:center;gap:6px;min-height:44px;padding:0 4px;background:none;border:0;color:var(--meta);font:15px/1.2 var(--sistema);cursor:pointer}
+.compartilha .copia svg{width:18px;height:18px}
+/* "Copiar link" ocupa a largura de "Link copiado", para o botão não mudar de tamanho nem de linha depois do toque. */
+.compartilha .c-txt{display:inline-grid}
+.compartilha .c-txt>span,.compartilha .c-txt::after{grid-area:1/1}
+.compartilha .c-txt::after{content:"Link copiado";visibility:hidden}
+.compartilha .copia:hover,.compartilha .copia.feito{color:var(--tinta)}
+.js .compartilha .copia{display:inline-flex}
 .post .tipo{color:var(--tinta)}
 .post h3.sec,.post .corpo h3{font:700 21px/1.3 var(--serifa);margin:28px 0 10px}
 .post .corpo ul,.post .movs{margin:0 0 16px;padding-left:1.1em;max-width:660px}
@@ -234,6 +245,8 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
   <nav aria-label="Seções"><a href="/2026-11-06/" aria-current="page">Hoje</a><details class="menu-p"><summary><span>Grandes perguntas</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul><li><a href="/causas/"><span class="pn">Para começar</span>O que causa recessão?</a></li><li><a href="/perguntas/divida-do-governo/"><span class="pn">Contas do governo</span>Por que a dívida do governo cresce tanto?</a></li><li><a href="/perguntas/dividas-das-familias/"><span class="pn">Dívidas das famílias</span>Por que as famílias gastam tanto da renda com dívidas?</a></li><li><a href="/perguntas/dolar-alto/"><span class="pn">Desconfiança de quem investe</span>Por que o dólar sobe tanto no Brasil?</a></li><li><a href="/perguntas/inflacao-acima-da-meta/"><span class="pn">Inflação esperada</span>Por que a inflação do Brasil fica acima da meta?</a></li><li><a href="/perguntas/juro-alto/"><span class="pn">Juro</span>Por que o juro do Brasil é tão alto?</a></li></ul></details></nav>
 </div></div></header>
 
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-zap" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol><symbol id="i-link" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10 14a4.5 4.5 0 0 0 6.4 0l3.2-3.2a4.5 4.5 0 0 0-6.4-6.4l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3.2 3.2a4.5 4.5 0 0 0 6.4 6.4l1-1"/></symbol></svg>
 <div class="in blog">
   
 <section class="nota" aria-label="Para onde vai o risco de recessão">
@@ -429,7 +442,7 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
     </div>
   </details>
   
-  
+  <div class="compartilha"><a class="zap" href="https://wa.me/?text=Ind%C3%BAstria%20produz%200%2C8%25%20menos%20em%20setembro%2C%20quarta%20queda%20em%20cinco%20meses%20https%3A//vaidarcrise.com.br/2026-11-06/" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Mandar no WhatsApp</a><button class="copia" type="button" data-url="https://vaidarcrise.com.br/2026-11-06/"><svg aria-hidden="true"><use href="#i-link"/></svg><span class="c-txt" aria-live="polite"><span>Copiar link</span></span></button></div>
 </article>
     <section class="continua" aria-label="Posts anteriores">
       <h2>Posts anteriores</h2>
@@ -454,6 +467,22 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
   </div>
 </aside>
 </div>
+<script>
+/* Copiar link: copia o endereço do post e diz "Link copiado" por 3 segundos. Vale também para os posts que a rolagem traz. */
+document.addEventListener("click",function(e){
+  var b=e.target.closest&&e.target.closest(".copia");if(!b)return;
+  var u=b.getAttribute("data-url"),s=b.querySelector(".c-txt>span");
+  function feito(){s.textContent="Link copiado";b.classList.add("feito");
+    clearTimeout(b._t);b._t=setTimeout(function(){s.textContent="Copiar link";b.classList.remove("feito")},3000)}
+  function antigo(){
+    var a=document.createElement("textarea"),ok=false;a.value=u;a.setAttribute("readonly","");
+    a.style.cssText="position:fixed;top:0;left:0;opacity:0";document.body.appendChild(a);a.select();
+    try{ok=document.execCommand("copy")}catch(x){}
+    a.remove();if(ok)feito();else window.prompt("Copie o link:",u);
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(feito,antigo);else antigo();
+});
+</script>
 
 <script>
 /* Rolagem sem fim: perto do fim da página, busca os próximos posts em /posts/ e põe embaixo dos que já estão. */
