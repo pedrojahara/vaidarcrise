@@ -109,14 +109,14 @@ Fale como alguém que entende de economia explicando no almoço de domingo: calm
 | Concreto | Abstrato | "Crédito mais caro", não "condições financeiras mais apertadas" |
 | Respeitoso | Condescendente | Explica o termo uma vez, sem "como todo mundo sabe" nem "de forma simples" |
 | Honesto sobre a dúvida | Cheio de ressalva | Uma frase sobre o que não se sabe, não "talvez" em toda frase |
-| Sem lado | Militante | Fato e número, nunca o que o governo deveria fazer |
+| Sem lado | Militante | Fato e número, e a decisão medida pelo objetivo de quem decidiu; nunca o que o governo deveria fazer |
 
 **Estrutura de todo texto**
 
 1. **A resposta.** A resposta à pergunta do texto, na primeira frase. No post, a pergunta muda com o tipo (veja [Os tipos de post](#os-tipos-de-post)).
 2. **O porquê.** Dois ou três fatores, ou a corrente de causa e efeito.
 3. **O que muda na vida.** Quando houver ponte clara: emprego, preço, parcela.
-4. **O que acompanhar.** O próximo dado e a data, quando isso não está já ao lado, na mesma página.
+4. **O que acompanhar.** O próximo dado e a data, quando isso não está já ao lado, na mesma página. É informação para ela, e não promessa do site de voltar ao assunto: o site faz a análise do fato e para aí, sem dizer que vai conferir, acompanhar ou testar nada depois.
 
 **Frase e parágrafo**
 
@@ -221,7 +221,7 @@ Cada post responde a uma pergunta só e compara com o próprio período. Ela qua
 | Notícias de ontem | O fato do dia, que conta uma só | Conta a que a pauta escolheu ([CARTA_EDITORIAL.md](CARTA_EDITORIAL.md)), até o bolso; as outras só entram quando são parte da mesma história. O site não lista as notícias. |
 | Próximas datas | A lateral "Datas importantes" | O fato do dia só cita o dado que sai hoje. O resumo da semana diz o que olhar na semana seguinte. |
 | O que cada pressão fez em 3 meses, e quanto espaço ainda sobra | O topo, abaixo da placa | O resumo do mês conta só o que mudou de lado. |
-| Por que o fato aconteceu e o que ele quer dizer | A pesquisa do dia, a mesma da leitura a fundo ([FUNDO.md](FUNDO.md)) | O fato do dia diz o porquê, nas palavras de quem decidiu, e o e daí, em uma ou duas frases; a leitura a fundo mostra o que os sustenta, sem repeti-los. |
+| Por que o fato aconteceu e o que ele quer dizer | A pesquisa do dia, a mesma da leitura a fundo ([FUNDO.md](FUNDO.md)) | O fato do dia diz o porquê, nas palavras de quem decidiu, e o e daí, em uma ou duas frases; quando o fato é uma decisão pública, diz também o objetivo que quem decidiu escreveu e a condição principal para ela chegar lá. A leitura a fundo mostra o que os sustenta, sem repeti-los. |
 | Como a recessão acontece | O que causa recessão e a página de cada pressão | Uma oração de mecanismo, só quando o porquê do dia precisa dela. |
 | Como a direção é calculada | Como funciona | Uma frase, quando a notícia parece contradizer a direção: "Isso não muda a direção do risco, porque a Bolsa fica fora da conta." |
 
@@ -231,6 +231,21 @@ Cada post responde a uma pergunta só e compara com o próprio período. Ela qua
 - **Nada de frase do post anterior.** O fato de hoje não copia o de ontem; o resumo da semana não copia o fato do dia.
 - **Os resumos saem dos dados, não dos posts.** O resumo do mês junta os dados oficiais do mês; o resumo da semana, as atualizações da semana. A inteligência artificial só escreve.
 - **O calendário decide o tipo.** Domingo é sempre o resumo da semana, e o primeiro domingo do mês é sempre o resumo do mês. Se o site não leu as notícias de algum dia, o texto não fala delas.
+
+## Como analisar uma decisão
+
+Ela quer saber se o Banco Central, o governo ou o Congresso fizeram a coisa certa, e cada lado já chega com a resposta pronta. O site não dá essa resposta. Ele mede a decisão pelo objetivo que o próprio decisor escreveu e diz quando ela chega lá e quando não chega, com a evidência e com o que aconteceu nas outras vezes. Quem julga se o objetivo é bom é ela. A pesquisa segue as perguntas de [FUNDO.md](FUNDO.md), na parte "Quando o fato é uma decisão", e a evidência sai da biblioteca ([EVIDENCIA.md](EVIDENCIA.md)), escrita antes e igual para qualquer governo.
+
+- **A régua é do decisor.** "O Banco Central diz no comunicado que mira a inflação de 3%" vem antes de qualquer conta, e a conta mede a decisão contra esse número. Se o objetivo não está escrito, ou é vago, o texto diz isso.
+- **O meio, nunca o fim.** O texto diz se a decisão vai na direção do objetivo declarado ou contra ele. Se o objetivo vale o custo é uma escolha de valor, e o texto mostra a troca ("quem ganha, quem paga e quando") sem pesá-la.
+- **Dá certo se, dá errado se.** As condições vêm dos dois lados, cada uma com o sinal que a mostra: "a decisão chega à meta se a inflação esperada parar de subir; se continuar subindo, o juro tende a ficar alto por mais tempo". Quando a evidência não deixa dizer, o texto diz que ainda não dá para dizer.
+- **A força da evidência aparece.** Meta-análise e muitos países pesam mais que um estudo só, e o texto diz qual é qual. Os casos parecidos no Brasil contam por episódio ("em 5 das 6 vezes desde 2002"), e não por mês, porque um episódio longo não vale mais que um curto.
+- **A melhor objeção de cada lado entra**, com o número dela, e o espelho mostra a mesma régua numa decisão parecida de outro governo.
+- **Nunca "acertou", "errou" ou "deveria".** Acerto só se sabe depois, e o site não guarda placar nem volta para conferir: ele faz a análise do dia e para aí.
+
+| Antes | Depois |
+| --- | --- |
+| "Os bancos preveem corte, mas o passado indica alta." | "O Banco Central diz no comunicado que mira a inflação de 3%, e a projeção dele para 2028 está em 3,5%. Parar de cortar vai na direção dessa meta; a decisão chega lá se a inflação esperada parar de subir." |
 
 ## Como explicar um mecanismo
 
@@ -333,7 +348,7 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 
 ## O que todo texto passa antes de sair
 
-Os itens 3, 5, 9 e 12, e parte do 11, o código confere nos posts (`src/revisa_texto.py`); o 13 e o "quem" do 14 passam, no fato do dia, pelo teste do porquê (`src/escreve_post.py`); os outros pedem leitura.
+Os itens 3, 5, 9 e 12, e parte do 11 e do 16, o código confere nos posts (`src/revisa_texto.py`); o 13, o "quem" do 14 e o 16 passam, no fato do dia, pelo teste do porquê (`src/escreve_post.py`); os outros pedem leitura.
 
 1. **Resposta primeiro.** O título e a primeira frase respondem à pergunta do texto: no fato do dia, o fato principal; a direção do risco, só quando mudou.
 2. **Sozinho no print.** Só o título e a primeira frase já se entendem, sem o resto da página, e o texto inteiro se entende sem o topo do site nem o post anterior.
@@ -350,6 +365,7 @@ Os itens 3, 5, 9 e 12, e parte do 11, o código confere nos posts (`src/revisa_t
 13. **Porquê e e daí.** Cada fato diz por que aconteceu, nas palavras de quem decidiu ou da fonte, e o que quer dizer para o risco ou para quem lê, sem lado, com as duas leituras quando houver duas. Nenhum "mesmo assim" fica sem resposta.
 14. **Mês, importado, sigla e quem.** Toda comparação diz o mês; produto de fora é importado; sigla que a leitora não conhece vai por extenso ou com link; cada frase diz quem decidiu, por quê e para quem, e quem só repassa a decisão não aparece como autor dela.
 15. **Passou pelo editor.** Todo post passa pelo editor (`src/edita_texto.py`) antes de sair; texto à mão também pode passar, com a leitura em voz alta no fim.
+16. **Decisão pela meta de quem decidiu.** Decisão pública vem com quem decidiu e com que poder e, quando os dados trazem, o objetivo que o decisor escreveu e a condição para chegar lá; nada de "acertou", "errou" ou "deveria", e nenhuma promessa de conferir depois.
 
 ### Antes e depois: a frase, com o post de 30/10/2026
 
@@ -383,8 +399,8 @@ Um fato, contado até o bolso. O que o dólar fez em três meses fica no topo, e
 - `src/escreve_post.py`: um prompt por tipo de post (fato do dia, resumo da semana, resumo do mês), com as regras comuns de leitor, frase, números, palavras proibidas, mecanismo e causa e efeito por extenso. O código monta os fatos de cada tipo; o mês sai dos dados oficiais do mês e a semana, das rodadas guardadas em `runs/`.
 - `src/run.py` e `src/escreve_post.py`: o tipo sai só da data (domingo, o resumo da semana; primeiro domingo do mês, o resumo do mês); a assinatura de todo post, em `src/build_site.py` (`ASSINATURA`), é só "Escrito pelo Claude com a ajuda do Pedro."
 - `src/edita_texto.py`: o editor. Lê o rascunho do redator com este guia inteiro e com os problemas do verificador, lista as sugestões (trecho, problema, como fica) e devolve o post editado, sem mudar fato nem número. A versão do editor só fica se não tiver mais problemas que o rascunho; as sugestões ficam em `post.edicao` no registro da rodada. À mão: `python src/edita_texto.py runs/<id>.json` ou `editor/<texto>.md`, com `--grava` para gravar.
-- `src/classify_news.py`, regras 12 a 16: títulos de evento e "por quê" com a mesma linguagem.
-- `src/revisa_texto.py`: pede reescrita do post com frase acima de 32 palavras, definição de termo que o link já explica ("o PIB, tudo o que o país produz"), "IBC-Br", parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal, inflação que "cai" ou "recua", palavra que o site trocou (Apertou, Folgou, juro longo), pressões contadas em vez de citadas pelo nome, comparação com "3 meses antes" sem o mês, "o que vem de fora" no lugar de importados, sigla que a leitora não conhece sem link, "por 10 anos" repetido, "No bolso" como categoria, rótulo do resumo da semana que não é nome do site, nome de pessoa ou partido no lugar do cargo e recorde sem a régua da série ("já registrado", "da história"). Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, direção repetida sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados, previsão de recessão e risco em porcentagem que sobram depois da reescrita barram o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
+- `src/classify_news.py`, regras 12 a 16: títulos de evento e "por quê" com a mesma linguagem. A regra 5 marca quem decidiu, o tipo de decisão e o objetivo declarado, e `src/decisoes.py` decide em código quanto cada decisão é analisada; a evidência vem de `EVIDENCIA.md`.
+- `src/revisa_texto.py`: pede reescrita do post com frase acima de 32 palavras, definição de termo que o link já explica ("o PIB, tudo o que o país produz"), "IBC-Br", parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal, inflação que "cai" ou "recua", palavra que o site trocou (Apertou, Folgou, juro longo), pressões contadas em vez de citadas pelo nome, comparação com "3 meses antes" sem o mês, "o que vem de fora" no lugar de importados, sigla que a leitora não conhece sem link, "por 10 anos" repetido, "No bolso" como categoria, rótulo do resumo da semana que não é nome do site, nome de pessoa ou partido no lugar do cargo recorde sem a régua da série ("já registrado", "da história") e juízo sobre quem decidiu ("o Banco Central errou", "o governo deveria"). Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, direção repetida sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados, previsão de recessão, risco em porcentagem e promessa de conferir depois ("o site vai acompanhar") que sobram depois da reescrita barram o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
 - `src/dossie.py`: as frases de dados de cada assunto, que o post usa como contexto (queda no verbo, mês por extenso, sem sigla solta).
 - `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas; no topo, as frases do crescimento em 12 meses, de cada pressão, do vaivém normal e de quanto espaço ainda sobra saem de `src/build_site.py`.
 - `config/modelo.json`, seção `direcao`: os nomes das pressões e das linhas de Também acompanhamos, por que cada linha de Também acompanhamos importa, a frase de por que a linha não muda a placa e a parte da dívida em reais, posta à mão todo mês.

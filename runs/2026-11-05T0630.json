@@ -2438,27 +2438,30 @@
   "porque": {
    "caderno": [
     "c1",
-    "c3",
-    "c4",
-    "c5",
+    "c2",
     "c7",
     "c8",
-    "c9"
+    "c15",
+    "c16",
+    "c25",
+    "c26"
    ]
   },
   "ok": true,
   "titulo": "Banco Central para de cortar e mantém a Selic em 13,75% ao ano",
   "paragrafos": [
-   "O Banco Central parou de cortar e manteve a Selic em 13,75%, porque, segundo ele, as incertezas e a inflação esperada subiram. O crédito segue caro para pessoas e empresas, o que segura consumo e investimento.",
-   "Desde 2002, em 7 de 8 pausas com inflação esperada subindo, a Selic voltou a subir. Os bancos (Focus) preveem corte, mas o passado indica alta, o que deixaria o crédito caro por mais tempo.",
-   "O padrão pode falhar, porque o emprego enfraqueceu: as vagas com carteira tiveram o pior setembro da série, sinal de que o juro já freia a renda das famílias."
+   "O Banco Central parou de cortar e manteve a Selic em 13,75%, citando incertezas muito maiores e a inflação acelerando.",
+   "Ele liga a decisão à meta de 3%, mas a previsão dele para a inflação de meados de 2028 subiu para 3,5%.",
+   "A pausa chega à meta se a inflação esperada, que subiu de 4,2% em julho para 5,0%, parar de subir. Em 7 de 8 pausas desde 2002 em que ela subiu, a Selic voltou a subir, mas são poucos casos.",
+   "Se a alta voltar, o crédito fica caro por mais tempo, o que segura consumo e investimento."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "O Banco Central parou de cortar e manteve a Selic em 13,75%, porque, segundo ele, as incertezas e a inflação esperada subiram. O crédito segue caro para pessoas e empresas, o que segura consumo e investimento.",
-     "Desde 2002, em 7 de 8 pausas com inflação esperada subindo, a Selic voltou a subir. Os bancos (Focus) preveem corte, mas o passado indica alta, o que deixaria o crédito caro por mais tempo.",
-     "O padrão pode falhar, porque o emprego enfraqueceu: as vagas com carteira tiveram o pior setembro da série, sinal de que o juro já freia a renda das famílias."
+     "O Banco Central parou de cortar e manteve a Selic em 13,75%, citando incertezas muito maiores e a inflação acelerando.",
+     "Ele liga a decisão à meta de 3%, mas a previsão dele para a inflação de meados de 2028 subiu para 3,5%.",
+     "A pausa chega à meta se a inflação esperada, que subiu de 4,2% em julho para 5,0%, parar de subir. Em 7 de 8 pausas desde 2002 em que ela subiu, a Selic voltou a subir, mas são poucos casos.",
+     "Se a alta voltar, o crédito fica caro por mais tempo, o que segura consumo e investimento."
     ]
    }
   ],
@@ -2466,19 +2469,24 @@
   "edicao": {
    "sugestoes": [
     {
-     "trecho": "O Banco Central parou de cortar o juro e manteve a Selic em 13,75% ao ano. Ele disse que as incertezas aumentaram de forma significativa e que a inflação esperada subiu, e elevou a própria previsão do IPCA de 2026 de 5,2% para 5,6%.",
-     "problema": "Falta o e daí para o bolso. Duas frases soltas deviam estar ligadas por \"porque\". O texto tem 106 palavras, e o limite é 100: \"o juro\", \"ao ano\" (já está no título) e \"de forma significativa\" só pesam.",
-     "como_fica": "O Banco Central parou de cortar e manteve a Selic em 13,75%, porque, segundo ele, as incertezas aumentaram e a inflação esperada subiu. Ele elevou sua previsão do IPCA de 2026 de 5,2% para 5,6%. Com a Selic parada, o crédito segue caro para pessoas e empresas."
+     "trecho": "Dá certo se a inflação esperada parar de subir, já que em 7 de 8 pausas desde 2002 em que ela subiu, o Banco Central voltou a subir a Selic.",
+     "problema": "A frase não se entende sozinha. Não diz o que \"dá certo\", e o \"já que\" trata como causa o que é só o histórico. Faltam os dois lados da condição, cada um em uma frase.",
+     "como_fica": "A decisão chega à meta se a inflação esperada parar de subir. Quando ela subiu, em 7 de 8 pausas desde 2002, o Banco Central voltou a subir a Selic."
     },
     {
-     "trecho": "Desta vez, a inflação esperada já subiu 0,36 ponto, mas os bancos (Focus) ainda preveem mais um corte em 2026.",
-     "problema": "A comparação não diz o mês. Também dá para cortar palavras que só pesam (\"Desta vez\", \"já\", \"mais um\").",
-     "como_fica": "A inflação esperada subiu 0,36 ponto desde setembro, mas os bancos (Focus) ainda preveem novo corte em 2026."
+     "trecho": "Ele também subiu para 5,6% a previsão do IPCA de 2026.",
+     "problema": "Falta o \"e daí\" para quem lê. O texto não diz o que a Selic parada muda no bolso. Os dados dizem que o crédito segue caro para pessoas e empresas.",
+     "como_fica": "Ele subiu para 5,6% a previsão do IPCA de 2026. O crédito segue caro para pessoas e empresas."
     },
     {
-     "trecho": "Agora o emprego está mais fraco que na maioria dessas pausas, já que setembro teve o pior saldo de vagas com carteira da série.",
-     "problema": "\"Saldo\" é palavra de jornal de economia. E dá para dizer o mesmo com menos palavras.",
-     "como_fica": "Hoje o emprego está mais fraco que na maioria delas: as vagas com carteira tiveram o pior setembro da série."
+     "trecho": "manteve a Selic em 13,75% ao ano, dizendo que as incertezas aumentaram muito e que a inflação acelerou.",
+     "problema": "O porquê fica pendurado num gerúndio. Fica mais claro como causa dita por quem decidiu. O \"ao ano\" já está no título e sai para o texto caber em 100 palavras.",
+     "como_fica": "manteve a Selic em 13,75% porque, segundo ele, as incertezas aumentaram muito e a inflação acelerou."
+    },
+    {
+     "trecho": "Segundo o comunicado, a decisão é coerente com levar a inflação para perto da meta de 3%, mas a previsão do Banco Central para meados de 2028 subiu para 3,5%.",
+     "problema": "O \"segundo\" repete o \"segundo ele\" do parágrafo anterior, e a frase passa de 30 palavras.",
+     "como_fica": "O comunicado diz que a decisão é coerente com levar a inflação para perto da meta de 3%, mas a previsão dele para meados de 2028 subiu para 3,5%."
     }
    ],
    "aplicada": true
@@ -2488,19 +2496,19 @@
    "testes": {
     "porque": {
      "ok": true,
-     "por_que": "A razão vem atribuída ao Banco Central ('segundo ele, as incertezas e a inflação esperada subiram'), como no comunicado, e o texto não traz causa ou número fora dos dados."
+     "por_que": "O texto dá a razão que o próprio Banco Central deu: incertezas muito maiores e inflação acelerando. Todos os números estão nos dados (3%, 3,5%, 4,2%, 5,0%, 7 de 8) e o texto não inventa nenhuma causa."
     },
     "quem": {
      "ok": true,
-     "por_que": "Quem decide é o Banco Central; 'o crédito segue caro' não põe os bancos como autores, e 'os bancos (Focus) preveem corte' é uma previsão que é mesmo deles."
+     "por_que": "Quem mantém a Selic é o Banco Central, e nenhuma decisão é posta nos bancos nem no governo. 'O crédito fica caro' descreve um efeito, sem dar um autor errado, e nenhuma frase muda de sentido com outro governo."
     },
     "e_dai": {
      "ok": true,
-     "por_que": "Liga a pausa ao padrão de 7 em 8 pausas que acabaram em alta, diz o que muda para a leitora (crédito caro por mais tempo) e ressalva o emprego mais fraco, como na tese."
+     "por_que": "O texto diz o objetivo escrito (a meta de 3%) e a condição principal (a inflação esperada parar de subir), com a ressalva de poucos casos. Liga uma nova alta a consumo e investimento mais fracos sem julgar a decisão nem prometer conferir depois."
     },
     "livro": {
      "ok": true,
-     "por_que": "A única oração de mecanismo ('o que segura consumo e investimento') é curta e serve ao porquê do dia."
+     "por_que": "A única oração de mecanismo ('o crédito fica caro... segura consumo e investimento') serve ao e daí do dia e não ocupa o lugar do porquê."
     }
    },
    "problemas": [],
@@ -2508,209 +2516,317 @@
     "testes": {
      "porque": {
       "ok": true,
-      "por_que": "Dá a razão dita pelo Banco Central (incertezas maiores e inflação esperada em alta) e todos os números estão nos dados."
+      "por_que": "O texto diz a razão do próprio Banco Central, com quem disse (\"segundo ele\"): as incertezas aumentaram muito e a inflação acelerou. Também traz a previsão de 5,6%, que está nos dados, e não inventa nenhuma causa."
      },
      "quem": {
       "ok": true,
-      "por_que": "O Banco Central é o sujeito da decisão; 'o crédito segue caro' descreve um efeito sem pôr os bancos como autores."
+      "por_que": "Quem decide é o Banco Central. O crédito caro aparece como efeito (\"o crédito segue caro\"), sem pôr os bancos como autores, e nenhuma frase mudaria de sentido com outro governo no poder."
      },
      "e_dai": {
       "ok": false,
-      "por_que": "Traz o padrão das pausas e o emprego fraco, mas não diz o que eles significam: a Selic pode voltar a subir e o juro já freia emprego e consumo."
+      "por_que": "O objetivo e a condição estão lá, mas o texto não liga o crédito caro ao risco de recessão. A conta de 7 em 8 pausas fica sem dizer o que ela sugere (uma nova alta possível) e sem avisar que são poucos casos, o que a fonte avisa."
      },
      "livro": {
       "ok": true,
-      "por_que": "Não explica mecanismo geral; fica no porquê e nos números do dia."
+      "por_que": "O texto não gasta espaço explicando como o juro funciona. Todas as frases tratam da decisão do dia, do porquê e da condição."
      }
     },
     "problemas": [
-     "Em 'mas os bancos (Focus) ainda preveem novo corte em 2026', falta a conclusão: o passado aponta para a Selic voltar a subir, e não cair (tese), o que deixaria o crédito caro por mais tempo.",
-     "Em 'com o pior setembro da série em vagas com carteira', falta dizer o que isso mostra: segundo os dados, é sinal de que o juro alto já freia o emprego e a renda que sustenta o consumo das famílias. Isso liga o fato ao risco de recessão.",
-     "'O crédito segue caro para pessoas e empresas' fica sem efeito: completar com 'o que segura consumo e investimento' (dados) ou com o Banco Central dizendo que a Selic de 13,75% já freia bastante a economia.",
-     "A frase do emprego pode dizer por que ele importa para o padrão: com o emprego mais fraco, o padrão pode não se repetir (são 10 casos, 'um padrão e não uma lei')."
+     "Na frase \"O crédito segue caro para pessoas e empresas.\" falta dizer o que isso muda. Os dados do fato resolvem: o crédito caro \"segura consumo e investimento\", e é por isso que a decisão pesa no risco de recessão. Por exemplo: \"O crédito segue caro, o que segura o consumo e o investimento.\"",
+     "Na frase \"Quando ela subiu, em 7 de 8 pausas desde 2002, o Banco Central voltou a subir a Selic.\" falta o que isso quer dizer para a leitora e o aviso da fonte (\"São poucos casos, um padrão\"). Diga que o histórico aponta para a chance de nova alta, mas que são poucos casos e mostram um padrão, não uma regra.",
+     "Em \"A decisão chega à meta se a inflação esperada parar de subir.\" falta parte da condição que está nos dados: \"com a Selic parada\". Por exemplo: \"se a inflação esperada parar de subir com a Selic parada\"."
     ]
    },
-   "reescrito": true
+   "reescrito": true,
+   "a_mao": true
   },
   "meta": [
    {
     "etapa": "post",
     "modelo_pedido": "opus",
-    "prompt_sha256": "fedfad61724da95a2fd635fa862f0a0fc1c7a5c7b5e0713142daedb942658c61",
-    "system_sha256": "dbe36a227238045327ee8a85dab6a9140e43b66582cd3e8fc233a1ceda391167",
+    "prompt_sha256": "9d098dcc30e763f00160306ec00356b1d1e4a18a0904518b580bf5925ffb1c88",
+    "system_sha256": "7a1b27229d62aca6396815798c8fbf5f18213f57f46e66ce22db3bc179cf932c",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.11768500000000001,
+    "custo_usd": 0.061256,
     "turnos": 2,
     "duracao_s": 27,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "bd06b954-b3a0-4910-9e42-66c1f3d0fba8"
+    "session_id": "b949f631-a650-43fa-9674-0a2e5ebefe88"
    },
    {
     "etapa": "editor",
     "modelo_pedido": "opus",
-    "prompt_sha256": "7f3a1ea9757028dcf6a4b51d8efd12f4ef01ced4228fbc9e4636b6d84c16cfb2",
+    "prompt_sha256": "fb520a29dbb6f6287ae29164b4c70387f5e8c4faffff365c993009d93eb97dc2",
     "system_sha256": "4c7e8c0f33317bc6d454b5ff1a997da9df57cacbbd46c9781db8192f030feaf7",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.3724982,
+    "custo_usd": 0.3414302,
     "turnos": 2,
-    "duracao_s": 70,
+    "duracao_s": 53,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "12b4c535-9c7c-4131-8a88-751115605a86"
+    "session_id": "45c53fdf-50f1-4dbd-92e7-bce7cbbe5d8a"
+   },
+   {
+    "etapa": "teste",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "32f00b4672576cdd8f327a4e7f50c4fb246694443585e782f6a0b070cad11cbc",
+    "system_sha256": "b23e7fe606b25bc07b60b951d7b0b87d3d3bf78dd91387195dcc0d9b711ccbc2",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.0951666,
+    "turnos": 2,
+    "duracao_s": 19,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "6124b848-a6ee-4182-a46c-6518fb41ce94"
    },
    {
     "etapa": "post",
     "modelo_pedido": "opus",
-    "prompt_sha256": "13ec146b44f5dc5c1bc9dea8c4b4a7251059a4e5c2e80e278561d703f24843b5",
-    "system_sha256": "dbe36a227238045327ee8a85dab6a9140e43b66582cd3e8fc233a1ceda391167",
+    "prompt_sha256": "5f8031321abf1871a1cced6ec168385d1c1a15dbcca9ed70784e92e7ccd6c3ef",
+    "system_sha256": "7a1b27229d62aca6396815798c8fbf5f18213f57f46e66ce22db3bc179cf932c",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.11066179999999999,
-    "turnos": 3,
+    "custo_usd": 0.1988048,
+    "turnos": 2,
+    "duracao_s": 60,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "b78b5ae8-4dc9-479d-b1b6-0d7bcee9c6c7"
+   },
+   {
+    "etapa": "teste",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "5a3bdf8a951db383c163197ade008f0ae985b0b37a7509acd757e936de57b993",
+    "system_sha256": "b23e7fe606b25bc07b60b951d7b0b87d3d3bf78dd91387195dcc0d9b711ccbc2",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.0881866,
+    "turnos": 2,
     "duracao_s": 15,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "3b5b1c9e-26b9-4b2e-bdc4-5eb14e6c2c11"
-   },
-   {
-    "etapa": "teste",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "f3cfe0d0c0eb613a07280b95edfa1d901d0bcd3c25ea718ea62c6d7cb213912b",
-    "system_sha256": "8ac0ad691c3d8317f7a01b7710ff315fcc059d9ac6cc9d2a8eaf9955ee37b79d",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.10121859999999999,
-    "turnos": 2,
-    "duracao_s": 21,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "5d6756fd-afb7-49f8-8d53-26940938ae37"
-   },
-   {
-    "etapa": "post",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "2544ca5c7c02fe708838ec0e657aa06b1265c3c84c448ccce5de0b98bd0e4930",
-    "system_sha256": "dbe36a227238045327ee8a85dab6a9140e43b66582cd3e8fc233a1ceda391167",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.19197399999999998,
-    "turnos": 3,
-    "duracao_s": 38,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "2e9e13eb-16c7-4f28-a4a0-79d681c29abb"
-   },
-   {
-    "etapa": "teste",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "03edea8f47f1622ce738841e9601f2bc2295f8af76589486f40158f1a3251fc8",
-    "system_sha256": "8ac0ad691c3d8317f7a01b7710ff315fcc059d9ac6cc9d2a8eaf9955ee37b79d",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.0857386,
-    "turnos": 2,
-    "duracao_s": 12,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "c0ae6be2-9d88-4792-b502-2cbdc521cc81"
+    "session_id": "6d80d3b7-3986-400d-9433-cc5042cefb8b"
    }
   ],
   "fundo": {
-   "versao": 2,
+   "versao": 3,
    "ok": true,
-   "em": "2026-11-08T01:30:00+00:00",
+   "em": "2026-11-08T16:40:54+00:00",
    "voltas": [
     {
      "volta": 1,
      "teses": [
       {
-       "tese": "Parar de cortar a Selic costuma ser o começo da espera por uma alta, não o fim da dúvida. Desde 2002, em 8 das 10 pausas a inflação esperada subiu nos 3 meses seguintes, e em 7 dessas 8 a Selic subiu de 3 a 9 meses depois do último corte (mediana de 6). Nas 2 vezes em que a expectativa caiu, o Banco Central voltou a cortar. Desta vez a expectativa subiu 0,36 ponto em 1 mês, e o Banco Central subiu a projeção de 2027 de 3,9% para 4,7%. Então o corte em dezembro é improvável e uma alta no primeiro semestre de 2027 deixou de ser fantasia, ao contrário do que os bancos (Focus) ainda precificam.",
-       "por_que_nao_e_obvia": "A manchete diz que o Banco Central parou. A leitora não vê que, nas pausas do passado, o que veio depois dependeu de uma conta específica (a inflação esperada), e que o Focus ainda prevê Selic de 12,50% no fim de 2027.",
-       "o_que_muda": "A leitora passa a esperar crédito caro até pelo menos meados de 2027 e a ler cada Focus (inflação esperada) e cada IPCA como sinal de alta, não só de pausa.",
-       "como_pode_dar_errado": "São 10 casos (3 meses ainda sem dado hoje); isso mostra um padrão, não uma lei. A atividade e o emprego estão fracos (Caged pior setembro da série), diferente de 2007-09 ou 2009-07, e petróleo em queda, um ajuste fiscal crível ou dólar mais baixo podem derrubar a expectativa. O site confere no Focus de 9/11 e de 1/12, no IPCA de 12/11 e na decisão de 9/12.",
+       "tese": "Esta pausa começa pior que as dez anteriores desde 2002: a inflação esperada está 1,60 ponto acima da meta (a maior distância, contra 1,18 em 2002-03) e subiu 0,36 ponto em um mês, mais que em qualquer pausa exceto 2002-07 (0,51). Em 7 das 8 pausas em que a inflação esperada subiu, a Selic voltou a subir.",
+       "por_que_nao_e_obvia": "O fato do dia já diz 7 de 8. O que as manchetes não dizem é que esta pausa tem o ponto de partida mais distante da meta e a subida mais rápida no primeiro mês, exceto 2002, ano de crise.",
+       "o_que_muda": "A leitora deve ler cada alta do Focus como aproximação de alta de Selic, e um Focus parado como o que abriria a porta de volta aos cortes, não o relatório do Banco Central.",
+       "como_pode_dar_errado": "São 8 casos; os 0,36 de um mês podem ser ruído, e uma alta do Focus de um mês só vale se confirmada nos 3 meses. Se a inflação esperada cair com o petróleo mais barato e o ajuste fiscal sair, o padrão falha.",
        "caderno": [
         "c1",
         "c2",
         "c3",
         "c4",
         "c5",
+        "c6",
         "c7",
         "c8",
-        "c12"
+        "c9",
+        "c10",
+        "c11"
        ]
       },
       {
-       "tese": "O Banco Central parou de cortar justamente quando o emprego formal esfria, e por isso a Selic parada em 13,75% não ajuda a economia a evitar a recessão em 2027. Para ele a inflação projetada para 2027 (4,7%) passou do teto de 4,5% sem que o desemprego tenha subido (5,2%). O freio vem pelo crédito e pelas vagas formais, enquanto o desemprego ainda não mostra.",
-       "por_que_nao_e_obvia": "O fato do dia mostra emprego fraco e juro parado em frases separadas. A conta é que a inflação que segura o juro e a atividade que o juro freia andam em direções opostas ao mesmo tempo.",
-       "o_que_muda": "A leitora deve olhar a renda e as vagas formais (Caged de outubro, PNAD até outubro em 27/11, PIB do 3º trimestre em 2/12) como o ponto onde o juro alto aparece, antes do desemprego.",
-       "como_pode_dar_errado": "Se o desemprego seguir em 5,2% ou menos e o PIB do 3º trimestre vier positivo, a tese perde força. O Caged de um mês é ruído (série curta, revisões).",
+       "tese": "Mesmo que o padrão valha, ele não aponta para dezembro: nas 7 pausas que terminaram em alta, a primeira alta veio de 3 a 9 meses depois do último corte, em média 5,9. Contando de setembro, a janela vai de dezembro de 2026 a junho de 2027, e a leitora deve esperar crédito caro por todo esse período, com o Focus ainda prevendo Selic de 12,50% no fim de 2027.",
+       "por_que_nao_e_obvia": "O 'passado indica alta' das 100 palavras pode ser lido como alta já em dezembro; a conta por episódio mostra um prazo de meses, e o Focus aposta no contrário, em cortes.",
+       "o_que_muda": "A leitora passa a esperar juro parado ou subindo, e não cortes, ao menos até o meio de 2027, e a ler as reuniões de dezembro e do início de 2027 por esse prazo.",
+       "como_pode_dar_errado": "Com 7 casos o prazo varia muito (3 a 9 meses). O pronunciamento sobre o ajuste fiscal ou uma diretoria nova do BC, com seis indicações até 2027, podem mudar o rumo.",
        "caderno": [
+        "c12",
+        "c14",
+        "c2",
+        "c5",
+        "c22"
+       ]
+      }
+     ],
+     "editor_chefe": {
+      "veredito": "devolve",
+      "tese": "Nenhuma das duas teses pode ser aprovada como está. A primeira (7 de 8 pausas, 0,36 ponto em um mês) já saiu no fato do dia. A leitora já a leu, e o guia usa esse mesmo achado como exemplo. A segunda (o prazo de 3 a 9 meses até a primeira alta) é o passo seguinte certo, mas se apoia no Focus da c14, que não confere. A janela de dezembro a junho não tem conta no caderno. E a análise da decisão não mede o meio pelo objetivo escrito no comunicado oficial, que ninguém abriu.",
+      "testes": {
+       "nao_obvia": {
+        "ok": false,
+        "por_que": "A tese 1 repete o fato do dia: 7 de 8 pausas e o Focus prevendo corte. A distância de 1,60 ponto só refina esse achado e não dá o passo seguinte. A tese 2 traria algo novo, o prazo, mas ainda não está sustentada."
+       },
+       "muda_algo": {
+        "ok": true,
+        "por_que": "O prazo das altas passadas, de 3 a 9 meses depois do último corte, mudaria a forma de a leitora ler as reuniões de 9/12 e do começo de 2027. Hoje ela pode entender o 'passado indica alta' como uma alta já em dezembro."
+       },
+       "pode_dar_errado": {
+        "ok": true,
+        "por_que": "A tese seria desmentida se a inflação esperada parasse de subir nos próximos Focus ou se o Copom voltasse a cortar em dezembro. 2018 já mostra uma pausa com inflação esperada subindo que terminou em corte."
+       },
+       "no_caderno": {
+        "ok": false,
+        "por_que": "A c14 (Focus da Selic de 2026 e 2027) não confere. A c15 vem de fonte desconhecida e não foi aberta. A c20 não confere. A projeção de 3,5% para 2028, o Focus de 2027 em 4,76% e a queda de 0,8% da indústria não têm linha no caderno. As c21, c22 e c23 não foram abertas."
+       },
+       "pela_meta": {
+        "ok": false,
+        "por_que": "O objetivo escrito não tem trecho literal do comunicado do Copom, só o relato de um site desconhecido. As perguntas 3, 7 e 8 usam números sem linha. A objeção cita partido e blog, e não o cargo e um documento. O espelho (2012) não mostra a régua numa decisão de outro governo de forma clara."
+       }
+      },
+      "roteiro": [
+       "Partir do 7 de 8 que a leitora já leu e perguntar quando: nas 7 pausas que terminaram em alta, a primeira alta veio de 3 a 9 meses depois do último corte (c12).",
+       "O objetivo que o Copom escreveu no comunicado (trecho literal do bcb.gov.br) e a projeção dele para o horizonte relevante, comparada com a meta de 3%.",
+       "O que é diferente desta vez: a maior distância da meta no começo de uma pausa (1,60 contra 1,18 em 2002-03) e o juro acima da inflação esperada de 8,7%, bem maior que nas pausas de 2012, 2018 e 2020.",
+       "O caminho e a força da evidência, só pela biblioteca: atraso médio de 29 meses (forte), dominância fiscal (média, só em crise aguda, com o caso de 2003 contra).",
+       "Os episódios em que a inflação esperada ficou mais de 1,4 ponto acima da meta (c13): a Selic subiu em todos os 5 já encerrados.",
+       "Dá certo se, dá errado se: a inflação esperada no Focus parar de subir; o dólar subir por desconfiança das contas do governo, que o juro sozinho não segura.",
+       "Quem ganha e quem paga, com números do caderno: as parcelas em 29,0% da renda (dado do site) e o custo da dívida com fonte oficial.",
+       "A melhor objeção de cada lado, com número, e o espelho numa pausa de outro governo.",
+       "O e daí: em que reunião a leitora deve ler o próximo passo e quais dados saem antes dela (o IPCA em 12/11, o PIB em 2/12)."
+      ],
+      "pressao": "juro",
+      "devolve": [
+       "Abrir o comunicado oficial do Copom de 4/11 no bcb.gov.br e copiar o trecho literal do objetivo, da projeção para o horizonte relevante (o 3,5% de 2028), das 'incertezas' e do balanço de riscos. A c15 tem de sair de fonte oficial, não do Atlas Público.",
+       "Rodar de novo `src/conta.py focus` e copiar a saída como sai, com a Selic de 2026 e de 2027 e o IPCA de 2027 (o 4,76%). Fazer a janela de dezembro de 2026 a junho de 2027 com `calc`, a partir do corte de 2026-09 e dos prazos de 3 a 9 meses.",
+       "O que é diferente agora? Comparar o juro acima da inflação esperada no começo de cada pausa (c1) com o desfecho. Se as altas vieram com juro real baixo e hoje ele está em 8,7%, a tese tem de dizer se o padrão perde força. Usar também a c13: nos 5 episódios já encerrados, a Selic subiu em todos.",
+       "Já aconteceu antes com dúvida sobre as contas do governo? Separar 2002 e 2015, as pausas com crise de confiança, das outras, olhando o dólar e o juro longo nos episódios da c13, e dizer se o padrão se sustenta sem elas.",
+       "Trocar a c21 por um documento: uma declaração oficial do ministro da Fazenda ou nota do governo, citados pelo cargo e sem partido. Pôr linha para a indústria (IBGE de 5/11) e para o custo da dívida por ponto de Selic, com fonte do Tesouro ou do Banco Central, ou tirar esses números.",
+       "Refazer o espelho com a mesma régua numa pausa de outro governo, por exemplo 2018 contra 2024, dizendo o objetivo escrito em cada uma, e corrigir a c20 (o 2001)."
+      ],
+      "curto": {
+       "porque": "O Banco Central disse que parou de cortar e manteve a Selic em 13,75% porque as incertezas aumentaram e a inflação esperada subiu. Ele também subiu a previsão de inflação de 2026 para 5,6%.",
+       "e_dai": "Desde 2002, em 7 das 8 pausas em que a inflação esperada subiu, a Selic voltou a subir; desta vez, ela subiu 0,36 ponto em um mês. São poucos casos.",
+       "objetivo": "No comunicado, o Banco Central diz que mira levar a inflação à meta de 3% no prazo em que olha, e a previsão dele para 2026 subiu a 5,6%.",
+       "condicao": "A decisão chega mais perto da meta se a inflação esperada parar de subir; em 7 das 8 pausas desde 2002 em que ela subiu, a Selic voltou a subir. São poucos casos.",
+       "caderno": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
         "c8",
+        "c9",
         "c10",
+        "c11",
+        "c16"
+       ]
+      },
+      "pagina_que_falta": ""
+     }
+    },
+    {
+     "volta": 2,
+     "teses": [
+      {
+       "tese": "O padrão de volta à alta não depende nem do juro real alto nem das crises de confiança: nas 8 pausas com inflação esperada subindo, a Selic subiu em 7; sem 2002-07 são 6 de 7. O juro real no começo das 7 altas foi de -1,0% a 12,7% (média 5,9%), e a única pausa que terminou em corte tinha 2,5%. Hoje ele é 8,7%, com a expectativa 1,60 ponto acima da meta, a maior distância das pausas.",
+       "por_que_nao_e_obvia": "O fato do dia diz 7 de 8, mas a leitora supõe que juro real de 8,7% já seja aperto bastante e proteja contra a alta. Os casos mostram que o nível do juro real não separou quem voltou a subir de quem voltou a cortar. O que separou foi o rumo da inflação esperada.",
+       "o_que_muda": "A leitora deve ler o Focus de 2027 (4,76%) e a projeção do BC para 2028 (3,5%) como o termômetro do próximo passo da Selic, e não o nível do juro real, que já é alto.",
+       "como_pode_dar_errado": "São 8 casos, e 2018 mostra que a expectativa subir pouco (0,07) não levou a alta. Se o ajuste fiscal sair com números e a expectativa cair com o petróleo mais barato, o padrão falha. Com dúvida fiscal, subir juro pode enfraquecer o real (Blanchard, média, só crise aguda).",
+       "caderno": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c8",
+        "c9",
+        "c36",
         "c13",
-        "c18"
+        "c29"
+       ]
+      },
+      {
+       "tese": "Se o padrão valer, a primeira alta não cairia em dezembro: nas 7 pausas que terminaram em alta, veio de 3 a 9 meses depois do último corte, em média 5,9. Contando do corte de setembro, a janela vai de dezembro de 2026 a junho de 2027, e o Focus de 30/10 apostava no contrário, Selic de 12,50% no fim de 2027, 1,25 ponto abaixo da atual.",
+       "por_que_nao_e_obvia": "'O passado indica alta' pode ser lido como alta já na reunião de 9/12. A conta por episódio dá um prazo de meses, e os bancos esperam cortes.",
+       "o_que_muda": "A leitora passa a esperar juro parado ou subindo, não cortes, ao menos até meados de 2027, e a ler as reuniões de dezembro e do começo de 2027 por esse prazo.",
+       "como_pode_dar_errado": "Com 7 casos o prazo varia muito. O ajuste fiscal prometido (ainda sem data) ou uma diretoria nova do BC, com seis indicações até 2027, podem mudar o rumo.",
+       "caderno": [
+        "c12",
+        "c24",
+        "c28",
+        "c2",
+        "c5",
+        "c22",
+        "c33"
        ]
       }
      ],
      "editor_chefe": {
       "veredito": "aprova",
-      "tese": "Desde 2002, o Banco Central parou de cortar a Selic 10 vezes. Em 8 delas a inflação esperada subiu nos 3 meses seguintes, e em 7 dessas 8 a Selic voltou a subir, de 3 a 9 meses depois do último corte. Nas 2 vezes em que ela caiu, o Banco Central voltou a cortar. Desta vez ela subiu 0,36 ponto no primeiro mês. Já os bancos (Focus) preveem Selic de 13,50% no fim de 2026, ou seja, um corte em 9/12. O passado aponta para o outro lado. São 10 casos, um padrão e não uma lei, e hoje o emprego está mais fraco que na maioria deles.",
+      "tese": "Pela régua do próprio Copom, a inflação perto da meta no horizonte relevante, a pausa começa longe dela. A projeção do Banco Central para meados de 2028 subiu para 3,5%, contra a meta de 3%. A inflação esperada está 1,60 ponto acima da meta, a maior distância entre as 11 pausas desde 2002. O juro real de 8,7% não separa os casos: nas 7 pausas que terminaram em alta, ele ia de -1,0% a 12,7%, e na única que terminou em corte era de 2,5%. O que separou os casos foi o rumo da inflação esperada. São 10 casos: mostram um padrão, não uma lei.",
       "testes": {
        "nao_obvia": {
         "ok": true,
-        "por_que": "O fato do dia diz só que o Banco Central parou. Não diz que o que veio depois das pausas do passado dependeu da inflação esperada, nem que o Focus ainda conta com um corte em dezembro."
+        "por_que": "O fato do dia deu o 7 de 8. A tese dá o passo seguinte: o juro real alto, que a leitora tomaria como proteção, não separou os casos. Mostra também a distância recorde e a régua do próprio Banco Central. Não repete a leitura da carta aberta de 4/11."
        },
        "muda_algo": {
         "ok": true,
-        "por_que": "A leitora deixa de ler a pausa como intervalo antes de novos cortes. Passa a ler o Focus de cada segunda e o IPCA como sinais de uma possível alta, e a esperar crédito caro por mais tempo."
+        "por_que": "A leitora passa a ler o Focus de 2027 (4,76%) e a projeção do Banco Central para 2028 como o termômetro do próximo passo, e não o nível do juro. Se o padrão valer, a próxima alta caberia entre dezembro de 2026 e junho de 2027."
        },
        "pode_dar_errado": {
         "ok": true,
-        "por_que": "Há data e sinal: se o Banco Central cortar em 9/12, ou se a inflação esperada do Focus voltar para baixo de 4,60% até dezembro, a tese cai. A medida dos 3 meses ainda não existe, e o texto tem de dizer isso."
+        "por_que": "A tese cai se a inflação esperada parar de subir com a Selic parada, como em 2018 e nas duas pausas em que ela caiu. Pesam a favor disso o petróleo mais barato e um ajuste nas contas com números. Ela também falha se a dúvida sobre as contas dominar (Blanchard, evidência média)."
        },
        "no_caderno": {
         "ok": true,
-        "por_que": "As pausas estão em c1 a c5 e somam 10. As defasagens (3, 4, 5, 6, 7, 7 e 9 meses) dão mediana de 6. O Focus está em c7 e c12. O c8 (projeção de 2027) não foi aberto e precisa ser conferido. A frase 'mais que em 8 dos 10' sai, porque falta no caderno o dado de 1 mês de 2009-07 e 2012-10."
+        "por_que": "Os números saem de c1 a c11, c12, c13, c24, c29 e c30, todos conferidos. O 8,7% está em c1. O objetivo vem de c26 e a projeção de 3,5% de c25, ambos a conferir no Mac. c14 e c27 ficam fora: c14 não confere e o trecho de c27 não sustenta o número."
+       },
+       "pela_meta": {
+        "ok": true,
+        "por_que": "A pesquisa respondeu às oito perguntas com linhas do caderno. A régua é a convergência que o comunicado escreveu. O caminho e a força da evidência vêm só da biblioteca. Os casos são contados por episódio, há condições e objeções dos dois lados e o espelho usa 2018 e 2024. A tese não diz que a decisão acertou nem errou."
        }
       },
       "roteiro": [
-       "Abrir pelo que o fato do dia não diz: o Focus de 30/10 ainda prevê Selic de 13,50% no fim de 2026, que é a aposta num corte em 9/12 (c7). A tese vai nos dois primeiros parágrafos.",
-       "As 10 pausas desde 2002: o que decidiu o caminho de cada uma foi a inflação esperada nos 3 meses depois do último corte. Foram 7 altas em 8 subidas e 2 cortes em 2 quedas (c2 a c5). Dar a mediana de 6 meses: contada a partir de setembro de 2026, ela cai por volta de março de 2027.",
-       "A exceção de 2018 (+0,07 ponto) mostra que, quando a expectativa sobe pouco, o padrão falha. Desta vez a alta foi de 0,36 ponto em 1 mês, de 4,60% para 4,96% (c1, c12). Dizer que só existe o dado de 1 mês, não o de 3.",
-       "O que o próprio Banco Central disse: a projeção para 2027 subiu para 4,7%, acima do teto de 4,5% (c8, só se a conferência abrir o comunicado ou outra fonte).",
-       "A melhor objeção, com honestidade: o emprego formal já esfria (c10), o mês mais parecido, 2022-09, terminou em 12 meses de Selic parada e depois corte, sem alta (c14, c15), e petróleo mais barato ou um ajuste fiscal crível podem derrubar a expectativa.",
-       "A política em volta, pelo mecanismo e com o cargo: a discussão de um teto para a Selic e as críticas ao Banco Central podem fazer quem investe pedir mais para emprestar, o que empurra a expectativa para cima (c16, c17). Sem nome de pessoa ou partido, e passando no teste da troca.",
-       "Quão forte é a evidência: 10 casos, correlação e não causa.",
-       "Fechar com o que o site vai conferir: o Focus das segundas até 7/12, o IPCA de 12/11 e a decisão de 9/12. Depois, o link para /perguntas/ da inflação esperada."
+       "Partir do 7 de 8 que o fato do dia já deu, sem repeti-lo, e perguntar se desta vez é diferente porque o juro real já é de 8,7% [c1].",
+       "A régua do decisor: o comunicado mira a inflação perto da meta no horizonte relevante [c26], e a própria projeção do Banco Central para o 2º trimestre de 2028 subiu de 3,1% para 3,5% [c25]. Dizer quem decidiu: o Copom sozinho, e só ele pode desfazer, em 9/12 [c15].",
+       "A conta por episódio: nas 7 pausas que terminaram em alta, o juro real ia de -1,0% a 12,7% [c2][c8][c36]. A única pausa que terminou em corte, 2018, tinha 2,5% [c7]. Nas duas pausas em que a inflação esperada caiu, o Banco Central voltou a cortar [c10][c11]. Hoje a distância da meta é a maior das 11 pausas [c1].",
+       "O padrão sem as crises de confiança: 6 de 7 sem 2002-07. Nos episódios com a inflação esperada mais de 1,4 ponto acima da meta, a Selic subiu nos 3 que sobram sem os de crise [c13][c29]. Dizer que são poucos casos e que correlação não é causa.",
+       "O caminho e a evidência, só da biblioteca: o juro leva em média 29 meses para pesar todo nos preços (forte) [c17], e a meta pesa na inflação que os bancos esperam (média) [c18]. A regra de Taylor não serve de veredito [c20].",
+       "O prazo: nas pausas que terminaram em alta, a primeira alta veio de 3 a 9 meses depois do último corte [c12]. O Focus de 30/10 apostava no contrário, Selic de 12,50% no fim de 2027 [c24][c28].",
+       "Dá certo se o Focus de 2027 sair de 4,76%, 1,76 ponto acima da meta, e a projeção de 2028 voltar para perto de 3% [c24][c30]. Dá errado se a inflação esperada seguir subindo com a Selic parada ou se o dólar subir por dúvida sobre as contas, o ramo da dominância fiscal (média, só em crise aguda) [c19][c33]. Dizer o lado mais provável e o tamanho da evidência.",
+       "Quem ganha e quem paga: os devedores e o governo pagam, com cerca de R$ 48 bilhões por ano a cada ponto de Selic, número do Poder360 e não do Tesouro [c34]. Melhor objeção pró-corte: a indústria caiu 4,1% desde maio [c32] e as vagas esfriaram [c35]. Melhor objeção pró-alta: o Banco Central prevê inflação de 5,6% em 2026 [c16].",
+       "O espelho: a mesma régua (distância da meta e rumo da inflação esperada) em 2024-05 e em 2018-03, com governos diferentes, dá alta numa e corte na outra [c9][c7].",
+       "Fechar no e daí: a próxima notícia a olhar é a inflação esperada, não o nível do juro. O IPCA de outubro sai em 12/11 e o Copom volta a decidir em 9/12."
       ],
-      "previsao": {
-       "texto": "O Banco Central não corta a Selic em 9/12, ao contrário do que o Focus de 30/10 previa (13,50% no fim de 2026), porque a inflação esperada para 12 meses fica acima dos 4,60% de setembro.",
-       "quando": "2026-12-09",
-       "sinal": "A inflação esperada para 12 meses no Focus de cada segunda-feira até 7/12, comparada com 4,60%, e a decisão do Copom em 9/12."
+      "pressao": "juro",
+      "devolve": [],
+      "curto": {
+       "porque": "O Banco Central disse que manteve a Selic em 13,75% porque as incertezas aumentaram muito e a inflação acelerou. Ele subiu para 5,6% a previsão do IPCA de 2026 e disse que a decisão é coerente com levar a inflação para perto da meta.",
+       "e_dai": "O juro real de 8,7% não afasta nova alta: nas 7 pausas desde 2002 que acabaram em alta, ele ia de -1,0% a 12,7%. São poucos casos, um padrão.",
+       "objetivo": "No comunicado, o Copom diz que a decisão é coerente com levar a inflação para perto da meta de 3% no horizonte relevante. A projeção dele para meados de 2028 subiu para 3,5%.",
+       "condicao": "Chega à meta se a inflação esperada parar de subir com a Selic parada; em 7 de 8 pausas desde 2002 em que ela subiu, o Banco Central voltou a subir a Selic.",
+       "caderno": [
+        "c1",
+        "c2",
+        "c7",
+        "c8",
+        "c36",
+        "c15",
+        "c16",
+        "c25",
+        "c26"
+       ]
       },
-      "pressao": "inflacao",
-      "devolve": [
-       "Pendência para a conferência: abrir o comunicado do Copom ou a ata de 10/11 e confirmar 4,7% para 2027 e 5,6% para 2026 (c8, c9). Se não abrir, a frase sai do texto.",
-       "Tirar 'mais que em 8 dos 10 casos': falta no caderno o dado de 1 mês de 2009-07 e 2012-10.",
-       "'Pior setembro desde 2020' não tem trecho no c10. Usar só o número 121.305 ou achar o trecho.",
-       "Não usar a tese 2: ela parte do mecanismo de livro e não diz o que deve acontecer.",
-       "Sem a conta da dívida em % do PIB, o c18 não entra como argumento."
-      ]
+      "pagina_que_falta": ""
      }
     }
    ],
@@ -2718,293 +2834,306 @@
     {
      "etapa": "pesquisa",
      "modelo_pedido": "sonnet",
-     "prompt_sha256": "126b37cad9e6a8b075c6e025ec08184e3974a3e7969000d847c3dae665f1e46b",
-     "system_sha256": "91544b8dfc3e45cad0861241319f94537c0ce92ba06447bda6cf0420d0f3e1c0",
+     "prompt_sha256": "b1f36a431e9364a52bd3059f6f4bcede0180c216b8eee70962cbdff5883224d3",
+     "system_sha256": "f533b8cf4af10e5eaa4d1821b8f082fe39eaa7b129d5c5d422c93e0e55f385c3",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.6479529999999999,
-     "turnos": 16,
-     "duracao_s": 149,
+     "custo_usd": 0.5793341,
+     "turnos": 9,
+     "duracao_s": 120,
      "modelos": [
       "claude-sonnet-5-5",
       "claude-haiku-5-5"
      ],
      "permission_denials": [],
-     "session_id": "6bf66190-bdd8-453a-a102-81bb45396273"
+     "session_id": "aa3c3eae-fc40-4b46-89bf-1f311de5a929"
     },
     {
      "etapa": "editor_chefe",
      "modelo_pedido": "opus",
-     "prompt_sha256": "e274e366de85d519bf7692c55ef4d5d5741bef6afc61dddcacb5d6bdefcc9c1b",
-     "system_sha256": "bb878ebaa68b130349d7c15b49ff4f05bb8ef49578c90b33842d666b474ddb4a",
+     "prompt_sha256": "c27c97297b41952a4154b75ea37d04eb48af818e63af67b0b7efd5eacc2c0cb3",
+     "system_sha256": "3b6325f127ecd89a3bd272efa9ef96ab84ac49fbdd12359d7e9f6e634e2b11dd",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.17754399999999998,
+     "custo_usd": 0.571168,
      "turnos": 2,
-     "duracao_s": 31,
+     "duracao_s": 51,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "f38a4739-2776-4b59-841f-64873a27c3c0"
+     "session_id": "2e0682bf-3d7d-4e99-8cb0-67ed191e577d"
+    },
+    {
+     "etapa": "pesquisa",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "958971bfe64b7c6bf46e1bc49b7eaaac4e68bebd1fb3526bc31ae7233fe69475",
+     "system_sha256": "f533b8cf4af10e5eaa4d1821b8f082fe39eaa7b129d5c5d422c93e0e55f385c3",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.9923903000000001,
+     "turnos": 16,
+     "duracao_s": 189,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [
+      {
+       "tool_name": "Bash",
+       "tool_use_id": "toolu_01C4EwrRfYvpXKeNk3sEsqun",
+       "tool_input": {
+        "command": "for e in \"13.75-12.5\" \"4.76-3\" \"(12.7+9.9+7.1+4.5+1.8-1.0+6.6)/7\" \"8.7-2.5\" \"4.5-3.5\"; do .venv/bin/python src/conta.py calc \"$e\"; done"
+       }
+      }
+     ],
+     "session_id": "9b131dd7-f908-4f32-8d6e-d1615a161f66"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "725dc7a7b5ea08fa239b10454de4aafda2f1439c4a72aad3c68292f19bbd289a",
+     "system_sha256": "3b6325f127ecd89a3bd272efa9ef96ab84ac49fbdd12359d7e9f6e634e2b11dd",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7193138,
+     "turnos": 3,
+     "duracao_s": 71,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "10871884-6919-4337-9820-b9e0e15c6540"
     },
     {
      "etapa": "redacao",
      "modelo_pedido": "opus",
-     "prompt_sha256": "68ecb2c96ac4efa870fdaf1574efc5b3b0de1086e8d0e145428f3a9c199f8270",
-     "system_sha256": "aa494f59a71807ff620b5b3c99668bf9d0fac03b0aa7c9292bd49aac3db0fb7b",
+     "prompt_sha256": "d5ddb23b367ac11b29460dfcd8e1df4c10976ed255fc685555b0f12bcbb1abf5",
+     "system_sha256": "fb1857e7ee14a137b17bd56cdcb9c331c4356c7810051c1f966c22769de58a4f",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.5112938,
+     "custo_usd": 0.682216,
      "turnos": 2,
-     "duracao_s": 63,
+     "duracao_s": 70,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "136f2b7e-13a2-4fb7-8ef6-d12782609bed"
+     "session_id": "99b280df-4fa3-4dfe-b3d2-1f1acf019387"
     },
     {
      "etapa": "conferencia",
      "modelo_pedido": "sonnet",
-     "prompt_sha256": "d24f7f05880a32767a0e3dd7af25befd7244b2746fd5087f0e41dae5a98c3d60",
-     "system_sha256": "e362d1487bb7e65fb090c712835d70e7ca64fb4c1931cd4ac03535cea992f48c",
+     "prompt_sha256": "648c95daefbff620c31a568d84dd0d948302d6a6279022a44c6691866b1083a0",
+     "system_sha256": "014db32c3a98cfd87cb62417008dbee3bc6c60858da38a9ac3f6069aa3aea5eb",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.1193421,
+     "custo_usd": 0.184158,
      "turnos": 2,
-     "duracao_s": 48,
+     "duracao_s": 59,
      "modelos": [
       "claude-sonnet-5-5"
      ],
      "permission_denials": [],
-     "session_id": "9acca3da-8739-4803-9454-a9a24f1e7d81"
-    },
-    {
-     "etapa": "editor",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "f6b4656b1de64d8feaa3ec8f88aa33f97adae80f6dd2dc638ee4dc58f27d2cb0",
-     "system_sha256": "24b87222ed67682b645f35796cbee85d5bf57e11892ca5e832dbf050023596be",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.14820689999999997,
-     "turnos": 2,
-     "duracao_s": 35,
-     "modelos": [
-      "claude-sonnet-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "ec934eb8-a3e5-4c95-a63e-dcb31cf0e15b"
-    },
-    {
-     "etapa": "editor_chefe",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "a9bc0b7c0c7ed63cf3b3694c5bd4c30af4a6a51bbda9c1f1449d77fe84fa38ea",
-     "system_sha256": "c67e5f42e90ffcf87745cda9a56c4872511340d3e26a0d63847171ed792845ff",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.313176,
-     "turnos": 2,
-     "duracao_s": 14,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "1446ae2e-7cc8-47b9-8bfe-ce3690868c74"
-    },
-    {
-     "etapa": "editor_chefe",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "1e031ee49df11c18648ed2da1dcb2b56342365e4bde862bf95527401ef399a68",
-     "system_sha256": "71dc0f4d088eada8b40ba4bb2b49edc6987d726eb81c818f32a35e02eaaa6fbf",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.309,
-     "turnos": 2,
-     "duracao_s": 11,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "75c2fa88-e7b3-49e6-8981-80c125f8bd41"
-    },
-    {
-     "etapa": "redacao",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "17a813d95c7a08cbde9620ce8c3be48f1c1254175ba0c4cb7ab61eb0e0c3a651",
-     "system_sha256": "465b071bb998b5d53693c7e8072509ec646b4fbda3d2b7ee5dad5199233f972a",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.584508,
-     "turnos": 2,
-     "duracao_s": 78,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "e7fef149-8790-40b8-bd49-b49774d3a55e"
-    },
-    {
-     "etapa": "conferencia",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "e80f2887e4003746b6a0d8fd84aececcccda096b7f3017f6f1e4dfbf2102b9e7",
-     "system_sha256": "e362d1487bb7e65fb090c712835d70e7ca64fb4c1931cd4ac03535cea992f48c",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.1561995,
-     "turnos": 2,
-     "duracao_s": 73,
-     "modelos": [
-      "claude-sonnet-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "79ac0a40-daa8-4ffc-b309-9b5966eec059"
-    },
-    {
-     "etapa": "redacao",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "b6282ba1c65470063f860e89705acdd1b2c6c6afc1cc0350270d6feaaac880a3",
-     "system_sha256": "465b071bb998b5d53693c7e8072509ec646b4fbda3d2b7ee5dad5199233f972a",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.5058904,
-     "turnos": 2,
-     "duracao_s": 31,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "d133f39a-7713-4ddf-af7e-5e36dc83000d"
+     "session_id": "10c0550a-30e2-463d-a31e-2c04c2557bbf"
     },
     {
      "etapa": "editor_fundo",
      "modelo_pedido": "sonnet",
-     "prompt_sha256": "23026601e72311e7df20d3f49a2df64843a31f930bfee53f3d11eb6e22132c52",
+     "prompt_sha256": "abd8743a1e4e26ab584836875002744bc0d92a44758605b775eb20a191138fe2",
      "system_sha256": "c051e15dfe2ba0240d641e7b2a26a2ab05de7d68718375f6bd3be448f44a878a",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.18770340000000002,
+     "custo_usd": 0.246894,
      "turnos": 2,
-     "duracao_s": 57,
+     "duracao_s": 78,
      "modelos": [
       "claude-sonnet-5-5"
      ],
      "permission_denials": [],
-     "session_id": "2fc7df38-05d8-45ae-be54-cfd28a9f9fa4"
+     "session_id": "a4b17bb5-a54d-4132-a36d-22bc6c010cec"
     }
+   ],
+   "offline": true,
+   "evitar": [
+    "A inflação acima do teto vira descumprimento depois de seis meses seguidos, e a carta aberta do Banco Central tende a sair em março de 2027; seis meses depois de cada uma das 9 cartas desde 2002, a Selic subiu em 2, ficou parada em 3 e caiu em 4",
+    "A prévia do PIB já quase fechou a conta do 3º trimestre: julho e agosto ficaram 0,60% abaixo de abril a junho, e em 15 trimestres que começaram com um buraco desse tamanho desde 2003, o PIB caiu em 9",
+    "Outubro teve a maior entrada de dólares do ano e mesmo assim o dólar subiu 4,6%: o dólar anda mais com a desconfiança de quem investe do que com a balança"
    ],
    "contas_ate": "2026-11-04",
    "pesquisa": {
     "perguntas": [
      {
-      "pergunta": "O que o Copom decidiu e o que o comunicado diz além da manchete?",
-      "resposta": "Manteve a Selic em 13,75%, por unanimidade, e encerrou os 5 cortes seguidos de 0,25 ponto. O comunicado fala em juro \"substancialmente contracionista\" e em \"aumento significativo das incertezas em torno do cenário base\". Pelas reportagens, a projeção do próprio Banco Central para o IPCA de 2026 foi de 5,2% para 5,6%. A de 2027 foi de 3,9% para 4,7%, acima do teto de 4,5%. A do horizonte relevante (2º trimestre de 2028) foi de 3,1% para 3,5%, contra meta de 3,0%. O texto integral do comunicado não abriu (WebFetch falhou).",
+      "pergunta": "1. Quem decidiu, com que poder e quem pode desfazer?",
+      "resposta": "O Copom, do Banco Central, decidiu na 282ª reunião, em 4/11/2026, manter a Selic em 13,75%, por unanimidade segundo a imprensa. Decide sozinho, dentro da meta que o Conselho Monetário Nacional fixa. Só o próprio Copom desfaz, na reunião de 9/12. Não passa pelo Congresso. O presidente indicará seis diretores do BC até o fim de 2027, o que pode mudar o comitê mais adiante, não a decisão de hoje.",
       "caderno": [
-       "c8",
-       "c9"
+       "c15",
+       "c22",
+       "c31"
       ]
      },
      {
-      "pergunta": "Já houve pausas parecidas depois de uma sequência de cortes? O que veio depois?",
-      "resposta": "Desde 2002, o site conta 10 vezes em que o Banco Central cortou e deixou a Selic parada por pelo menos 2 meses. Em 8 delas a inflação esperada subiu nos 3 meses seguintes. Em 7 dessas 8 veio uma alta da Selic, de 3 a 9 meses depois do último corte (mediana de 6). A exceção foi 2018, com alta de só 0,07 ponto na expectativa. Nas 2 vezes em que a expectativa caiu (2002-03 e 2003-12), o Banco Central voltou a cortar. Desta vez a expectativa subiu 0,36 ponto em 1 mês, mais que em 8 dos 10 casos.",
+      "pergunta": "2. Qual objetivo o decisor escreveu, e em que documento?",
+      "resposta": "O objetivo escrito no comunicado é a convergência da inflação para a meta ao longo do horizonte relevante. Pelo trecho que a busca mostrou do comunicado (não consegui abrir a página do bcb.gov.br), a manutenção é 'consistent with the strategy for inflation convergence to a level around its target', e o comitê seguirá com política 'adequately restrictive'. A projeção para o 2º trimestre de 2028 subiu de 3,1% para 3,5% (relato da Agência Estado), contra meta de 3%. Falta o trecho literal sobre incertezas e balanço de riscos.",
+      "caderno": [
+       "c15",
+       "c25",
+       "c26",
+       "c16"
+      ]
+     },
+     {
+      "pergunta": "3. Qual é o tamanho?",
+      "resposta": "A decisão é a ausência de um corte de 0,25 ponto: 39 de 75 casas esperavam 13,50% e 36 esperavam manutenção (Broadcast). A Selic está 1,25 ponto acima do que o Focus de 30/10 previa para o fim de 2027 (12,50%). A projeção de 2028 do BC ficou 0,5 ponto acima da meta (3,5% contra 3%). Reais por brasileiro não se aplica: o efeito passa pelo crédito.",
+      "caderno": [
+       "c24",
+       "c27",
+       "c28",
+       "c25"
+      ]
+     },
+     {
+      "pergunta": "4. Em que pressão do site e em que porta da leitora ela mexe?",
+      "resposta": "Na pressão Juro e inflação. Chega à leitora pela parcela (crédito caro; a parte da renda com parcelas e juros está em 29,0%) e pelo preço (inflação esperada). Toca também o emprego (Caged de setembro, o pior da série para o mês) e o dólar, que reage à confiança nas contas.",
+      "caderno": [
+       "c16",
+       "c32",
+       "c35"
+      ]
+     },
+     {
+      "pergunta": "5. Por que caminho a decisão chega ao objetivo, e o que a evidência da biblioteca diz?",
+      "resposta": "Selic alta encarece o crédito, famílias e empresas gastam menos, o real tende a ficar mais forte e os preços sobem mais devagar. A biblioteca diz: atraso médio de 29 meses até pesar nos preços (meta-análise de 67 estudos, forte), então a Selic de hoje não decide a inflação de 2026. A inflação que os bancos esperam pesa no Brasil (média, só Brasil). Com dívida alta e medo de calote, juro alto pode enfraquecer o real (dominância fiscal; média, só crise aguda). A regra de Taylor não serve de veredito (fraca). O estudo que discorda é o mesmo Blanchard: em 2003 juro alto com contas em ordem derrubou a inflação.",
+      "caderno": [
+       "c17",
+       "c18",
+       "c19",
+       "c20"
+      ]
+     },
+     {
+      "pergunta": "6. O que aconteceu das outras vezes, no Brasil, contado por episódio?",
+      "resposta": "Em 8 pausas a inflação esperada subiu nos 3 meses seguintes (2002-07, 2004-04, 2007-09, 2009-07, 2012-10, 2018-03, 2020-08, 2024-05); em 7 a Selic voltou a subir, e só em 2018 voltou a cair. Sem 2002-07, a pausa de crise de confiança, são 6 de 7. Nas 2 em que a inflação esperada caiu (2002-03, 2003-12), o BC voltou a cortar. Pela conta de episódios com a inflação esperada mais de 1,4 ponto acima da meta, a Selic subiu nos 5 já encerrados, entre eles 2002 e 2013-16, os de crise; sem eles são 3 de 3 (2004, 2021, 2024). O atual é o 6º.",
       "caderno": [
        "c1",
        "c2",
        "c3",
        "c4",
        "c5",
-       "c6"
-      ]
-     },
-     {
-      "pergunta": "O que os bancos (Focus) esperavam para a Selic antes da decisão, e o que isso significa?",
-      "resposta": "No Focus de 30/10, os bancos esperavam Selic de 13,50% no fim de 2026 e 12,50% no fim de 2027. Uma semana antes, as previsões eram 13,25% e 11,75%. Ou seja, mesmo depois de subir a previsão, os bancos ainda veem a Selic caindo. A inflação esperada para 12 meses foi de 4,53% para 4,96% em uma semana. O Focus ainda não precifica o caminho que os 10 casos do passado sugerem.",
-      "caderno": [
+       "c6",
        "c7",
-       "c12"
+       "c8",
+       "c9",
+       "c13",
+       "c29"
       ]
      },
      {
-      "pergunta": "O juro real está num patamar extremo para justificar pressa em cortar?",
-      "resposta": "Não. Descontada a inflação esperada, a Selic dá 8,38% em outubro, mais alta que em 68% dos meses desde 2002, mas longe do topo da série. Em 2022-09, o mês mais parecido do passado nas três séries (inflação esperada, juro real e dólar), a Selic também estava em 13,75%. Ela ficou parada até 2023-08 e só então cortou. O juro tem peso, mas não é inédito.",
+      "pergunta": "7. Dá certo se, dá errado se?",
+      "resposta": "Dá certo se o Focus de 2027 sair de 4,76% (1,76 ponto acima da meta de 3%) rumo a 4,5%, e a projeção do BC para 2028 voltar de 3,5% para perto de 3%, com o dólar sem nova fuga. Dá errado se a inflação esperada seguir subindo com a Selic parada e o dólar subir por dúvida fiscal, que o juro não segura. Os casos deixam a alta mais provável (7 de 8), mas o fiscal é a incógnita: o ajuste prometido depende de medidas ainda sem data. Pelos prazos, a primeira alta, se vier, cairia entre dezembro de 2026 e junho de 2027.",
+      "caderno": [
+       "c1",
+       "c12",
+       "c24",
+       "c30",
+       "c33"
+      ]
+     },
+     {
+      "pergunta": "8. Quem ganha, quem paga e quando; objeção de cada lado; espelho.",
+      "resposta": "Ganha quem tem renda fixa; pagam os devedores agora e o governo, que gasta cerca de R$ 48 bi por ano a cada ponto de Selic (Poder360, fonte secundária). Objeção pró-corte: a indústria caiu 0,8% em setembro e 4,1% desde maio, e as vagas esfriaram. Objeção pró-alta: o Focus vê IPCA 2026 de 5,22% e o BC projeta 5,6%. Espelho: em 2024-05 (outro governo) a inflação esperada estava 0,64 ponto acima da meta, subiu 0,23 em 3 meses e a Selic subiu 4 meses depois; em 2018-03 estava 0,49 abaixo, subiu 0,07 e o BC voltou a cortar. A mesma régua (distância da meta e rumo da expectativa) vale nas duas; hoje a distância é 1,60. Não consegui o texto do comunicado de 2018 nem o de 2024.",
+      "caderno": [
+       "c34",
+       "c35",
+       "c32",
+       "c9",
+       "c7",
+       "c1"
+      ]
+     },
+     {
+      "pergunta": "O juro real alto de hoje (8,7%) enfraquece o padrão das altas?",
+      "resposta": "Não pelos casos. Nas 7 pausas que terminaram em alta o juro real no começo foi de -1,0% a 12,7%, média 5,9%; a única que terminou em corte (2018) tinha 2,5%. O juro real não separa os casos. Hoje ele só é menor que os de 2002-07 (12,7%) e 2004-04 (9,9%), ambas terminadas em alta.",
+      "caderno": [
+       "c1",
+       "c36",
+       "c2",
+       "c3",
+       "c7"
+      ]
+     },
+     {
+      "pergunta": "O padrão se sustenta sem os episódios de crise de confiança?",
+      "resposta": "Sim, com menos casos: sem 2002-07 são 6 altas em 7 pausas com expectativa subindo; nos episódios de distância acima de 1,4 ponto, sem 2002 e 2013-16, a Selic subiu nos 3 que restam. O que muda agora é que o ponto de partida mistura as duas coisas: a maior distância da meta já vista e dúvida fiscal pós-eleição (dólar de R$ 5,04 para R$ 5,50 em 26/10). Esse é o ramo em que a biblioteca (dominância fiscal) diz que subir juro pode não funcionar.",
       "caderno": [
        "c13",
-       "c14",
-       "c15"
-      ]
-     },
-     {
-      "pergunta": "O emprego já mostra o efeito do juro alto?",
-      "resposta": "A criação de vagas formais, sim: o Caged de setembro teve 121.305 vagas, o pior setembro desde que a série atual começou, e a imprensa registra que ficou abaixo do esperado. O desemprego medido pela PNAD, porém, está em 5,2%, mínimo para o período. A vaga formal esfria antes do desemprego, e a renda das famílias é o elo que falta olhar.",
-      "caderno": [
-       "c10"
-      ]
-     },
-     {
-      "pergunta": "O que a política faz com o assunto?",
-      "resposta": "Em 1/11, a Folha noticiou que a proposta de limitar a Selic entra no radar do presidente e que a Fazenda nega. Em 5/11, o g1 reportou críticas do partido do governo ao Banco Central por parar de cortar. Investidores temem pressão política sobre o juro, e isso encarece a dívida de longo prazo. O Tesouro paga mais, e o dólar fica mais alto. Esse ruído pode adiar o corte em vez de adiantá-lo.",
-      "caderno": [
-       "c16",
-       "c17"
-      ]
-     },
-     {
-      "pergunta": "Quanto custa à dívida do governo manter a Selic alta por mais tempo?",
-      "resposta": "A parte da dívida atrelada à Selic bateu recorde (52,74% em agosto), e cada ponto de Selic custa cerca de R$ 48 bilhões por ano, segundo o Poder360. Uma Selic parada em 13,75% em vez de cair, como o Focus esperava, soma custo de juros em um ano de dívida já em 82,93% do PIB. A conta em % do PIB não foi feita no caderno.",
-      "caderno": [
-       "c18"
+       "c29",
+       "c19",
+       "c1"
       ]
      }
     ],
     "teses": [
      {
-      "tese": "Parar de cortar a Selic costuma ser o começo da espera por uma alta, não o fim da dúvida. Desde 2002, em 8 das 10 pausas a inflação esperada subiu nos 3 meses seguintes, e em 7 dessas 8 a Selic subiu de 3 a 9 meses depois do último corte (mediana de 6). Nas 2 vezes em que a expectativa caiu, o Banco Central voltou a cortar. Desta vez a expectativa subiu 0,36 ponto em 1 mês, e o Banco Central subiu a projeção de 2027 de 3,9% para 4,7%. Então o corte em dezembro é improvável e uma alta no primeiro semestre de 2027 deixou de ser fantasia, ao contrário do que os bancos (Focus) ainda precificam.",
-      "por_que_nao_e_obvia": "A manchete diz que o Banco Central parou. A leitora não vê que, nas pausas do passado, o que veio depois dependeu de uma conta específica (a inflação esperada), e que o Focus ainda prevê Selic de 12,50% no fim de 2027.",
-      "o_que_muda": "A leitora passa a esperar crédito caro até pelo menos meados de 2027 e a ler cada Focus (inflação esperada) e cada IPCA como sinal de alta, não só de pausa.",
-      "como_pode_dar_errado": "São 10 casos (3 meses ainda sem dado hoje); isso mostra um padrão, não uma lei. A atividade e o emprego estão fracos (Caged pior setembro da série), diferente de 2007-09 ou 2009-07, e petróleo em queda, um ajuste fiscal crível ou dólar mais baixo podem derrubar a expectativa. O site confere no Focus de 9/11 e de 1/12, no IPCA de 12/11 e na decisão de 9/12.",
+      "tese": "O padrão de volta à alta não depende nem do juro real alto nem das crises de confiança: nas 8 pausas com inflação esperada subindo, a Selic subiu em 7; sem 2002-07 são 6 de 7. O juro real no começo das 7 altas foi de -1,0% a 12,7% (média 5,9%), e a única pausa que terminou em corte tinha 2,5%. Hoje ele é 8,7%, com a expectativa 1,60 ponto acima da meta, a maior distância das pausas.",
+      "por_que_nao_e_obvia": "O fato do dia diz 7 de 8, mas a leitora supõe que juro real de 8,7% já seja aperto bastante e proteja contra a alta. Os casos mostram que o nível do juro real não separou quem voltou a subir de quem voltou a cortar. O que separou foi o rumo da inflação esperada.",
+      "o_que_muda": "A leitora deve ler o Focus de 2027 (4,76%) e a projeção do BC para 2028 (3,5%) como o termômetro do próximo passo da Selic, e não o nível do juro real, que já é alto.",
+      "como_pode_dar_errado": "São 8 casos, e 2018 mostra que a expectativa subir pouco (0,07) não levou a alta. Se o ajuste fiscal sair com números e a expectativa cair com o petróleo mais barato, o padrão falha. Com dúvida fiscal, subir juro pode enfraquecer o real (Blanchard, média, só crise aguda).",
       "caderno": [
        "c1",
        "c2",
        "c3",
        "c4",
        "c5",
+       "c6",
        "c7",
        "c8",
-       "c12"
+       "c9",
+       "c36",
+       "c13",
+       "c29"
       ]
      },
      {
-      "tese": "O Banco Central parou de cortar justamente quando o emprego formal esfria, e por isso a Selic parada em 13,75% não ajuda a economia a evitar a recessão em 2027. Para ele a inflação projetada para 2027 (4,7%) passou do teto de 4,5% sem que o desemprego tenha subido (5,2%). O freio vem pelo crédito e pelas vagas formais, enquanto o desemprego ainda não mostra.",
-      "por_que_nao_e_obvia": "O fato do dia mostra emprego fraco e juro parado em frases separadas. A conta é que a inflação que segura o juro e a atividade que o juro freia andam em direções opostas ao mesmo tempo.",
-      "o_que_muda": "A leitora deve olhar a renda e as vagas formais (Caged de outubro, PNAD até outubro em 27/11, PIB do 3º trimestre em 2/12) como o ponto onde o juro alto aparece, antes do desemprego.",
-      "como_pode_dar_errado": "Se o desemprego seguir em 5,2% ou menos e o PIB do 3º trimestre vier positivo, a tese perde força. O Caged de um mês é ruído (série curta, revisões).",
+      "tese": "Se o padrão valer, a primeira alta não cairia em dezembro: nas 7 pausas que terminaram em alta, veio de 3 a 9 meses depois do último corte, em média 5,9. Contando do corte de setembro, a janela vai de dezembro de 2026 a junho de 2027, e o Focus de 30/10 apostava no contrário, Selic de 12,50% no fim de 2027, 1,25 ponto abaixo da atual.",
+      "por_que_nao_e_obvia": "'O passado indica alta' pode ser lido como alta já na reunião de 9/12. A conta por episódio dá um prazo de meses, e os bancos esperam cortes.",
+      "o_que_muda": "A leitora passa a esperar juro parado ou subindo, não cortes, ao menos até meados de 2027, e a ler as reuniões de dezembro e do começo de 2027 por esse prazo.",
+      "como_pode_dar_errado": "Com 7 casos o prazo varia muito. O ajuste fiscal prometido (ainda sem data) ou uma diretoria nova do BC, com seis indicações até 2027, podem mudar o rumo.",
       "caderno": [
-       "c8",
-       "c10",
-       "c13",
-       "c18"
+       "c12",
+       "c24",
+       "c28",
+       "c2",
+       "c5",
+       "c22",
+       "c33"
       ]
      }
     ],
     "objecao": {
-     "texto": "Quem discorda diz que o padrão histórico vem de ciclos com demanda forte (2007-09, 2009-07), e que agora a atividade já cede: o Caged de setembro foi o pior da série para o mês, a indústria caiu em setembro e a bolsa e o dólar reagem à eleição, não a preços sobrando. A pausa pode ser curta e ser seguida de corte se o petróleo cair (queda de mais de 8% em 4/11) e o governo anunciar um ajuste fiscal com números. Em 2022-09, o mês mais parecido nas três séries, a Selic ficou em 13,75% por 12 meses e então cortou, sem alta. São 10 casos e eles não separam bem causa de coincidência.",
+     "texto": "Os 8 casos misturam épocas muito diferentes e o maior efeito vem de 2002. A economia hoje esfria: o Caged de setembro foi o pior da série para o mês, a indústria caiu 0,8% em setembro e 4,1% desde maio, e a parte da renda das famílias com dívidas é a maior da série. O ajuste fiscal prometido, se vier com números, pode baixar o juro longo e a inflação esperada. Pesa ainda a dominância fiscal: com dívida alta, subir juro pode enfraquecer o real em vez de segurar os preços. Integrantes do governo já criticam a pausa, e seis diretores serão indicados até 2027.",
      "caderno": [
-      "c10",
-      "c14",
-      "c15"
+      "c19",
+      "c31",
+      "c32",
+      "c35",
+      "c22",
+      "c33"
      ]
     },
-    "o_que_falta": "Não consegui abrir o comunicado do Copom (bcb.gov.br) nem a ata, que sai em 10/11; WebFetch falhou, então o trecho do comunicado vem do resumo da busca (CNN Brasil, Investnews). Não achei o trecho literal do Caged oficial nem confirmação independente de \\\"pior da série\\\" (a imprensa diz \\\"pior setembro desde 2020\\\"). Não rodei a conta em % do PIB do custo da Selic. A inflação esperada de 3 meses depois do corte de setembro ainda não existe, então a tese 1 é uma aposta. Dois artigos de 7/11 (Gazeta do Povo, Itaú sobre 2027) foram descartados por data posterior a 05/11."
+    "o_que_falta": "Não abri o comunicado oficial: o proxy recusou o WebFetch. Os trechos 'consistent with the strategy…' e 'adequately restrictive' vêm do resultado de busca sobre o bcb.gov.br, e o 3,5% de 2028 vem da Agência Estado. Faltam o trecho literal sobre 'incertezas' e balanço de riscos, a unanimidade, a ata (10/11, depois de hoje) e o Focus pós-decisão. O custo por ponto de Selic é do Poder360, não do Tesouro. Não achei comunicados de 2018 e 2024 para o espelho. A c15 precisa ser conferida no site do BC. A biblioteca não tem estudo sobre o que vem depois de pausas do BC."
    },
    "caderno": [
     {
      "id": "c1",
      "tipo": "conta",
-     "afirmacao": "Desde 2002, o site conta 10 pausas completas depois de cortes; o último corte atual (2026-09) tem inflação esperada +0,36 ponto em 1 mês.",
+     "afirmacao": "Na pausa atual a expectativa está 1,60 ponto acima da meta, subiu 0,36 em 1 mês, e o juro real é 8,7%.",
      "numeros": [
+      "13,75",
       "4,60",
-      "0,36",
-      "13,75%"
+      "1,60",
+      "8,7",
+      "0,36"
      ],
      "comando": ".venv/bin/python src/conta.py pausas",
      "saida": "último corte em 2026-09 (Selic 13,75%): expectativa 4,60% (meta 3,00%, distância 1,60), IPCA 12 meses 4,58%, juro real 8,7%; expectativa 1 mês depois +0,36 ponto, 3 meses depois sem dado ponto; ainda parada (1 mês(es) com dado depois do corte).",
@@ -3022,13 +3151,15 @@
     {
      "id": "c2",
      "tipo": "conta",
-     "afirmacao": "Nas 2 pausas em que a inflação esperada caiu nos 3 meses seguintes, o Banco Central voltou a cortar.",
+     "afirmacao": "Pausa de 2002-07: distância 0,94, juro real 12,7%, expectativa +3,71 em 3 meses, Selic subiu 3 meses depois.",
      "numeros": [
-      "-0,28",
-      "-0,47"
+      "0,94",
+      "12,7",
+      "3,71",
+      "18,00"
      ],
      "comando": ".venv/bin/python src/conta.py pausas",
-     "saida": "último corte em 2002-03 (Selic 18,50%): ... expectativa 1 mês depois -0,24 ponto, 3 meses depois -0,28 ponto; depois: corte 4 meses depois do último corte; ... | último corte em 2003-12 (Selic 16,50%): ... expectativa 1 mês depois -0,10 ponto, 3 meses depois -0,47 ponto; depois: corte 3 meses depois do último corte; o ciclo foi até 2004-04 e levou a Selic a 16,00% (-0,50 ponto(s)).",
+     "saida": "último corte em 2002-07 (Selic 18,00%): expectativa 4,73% (meta 3,79%, distância 0,94), IPCA 12 meses 7,51%, juro real 12,7%; expectativa 1 mês depois +0,51 ponto, 3 meses depois +3,71 ponto; depois: alta 3 meses depois do último corte; o ciclo foi até 2003-02 e levou a Selic a 26,50% (+8,50 ponto(s)).",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3043,14 +3174,15 @@
     {
      "id": "c3",
      "tipo": "conta",
-     "afirmacao": "Em 2002-07, 2004-04 e 2007-09 a expectativa subiu em 3 meses e veio alta da Selic 3, 5 e 7 meses depois.",
+     "afirmacao": "Pausa de 2004-04: juro real 9,9%, expectativa +0,56, Selic subiu 5 meses depois.",
      "numeros": [
-      "+3,71",
-      "+0,56",
-      "+0,44"
+      "9,9",
+      "0,56",
+      "5 meses",
+      "19,75"
      ],
      "comando": ".venv/bin/python src/conta.py pausas",
-     "saida": "último corte em 2002-07 (Selic 18,00%): ... expectativa 1 mês depois +0,51 ponto, 3 meses depois +3,71 ponto; depois: alta 3 meses depois do último corte; ... | último corte em 2004-04 (Selic 16,00%): ... 1 mês depois +0,28 ponto, 3 meses depois +0,56 ponto; depois: alta 5 meses depois do último corte; ... | último corte em 2007-09 (Selic 11,25%): ... 1 mês depois -0,01 ponto, 3 meses depois +0,44 ponto; depois: alta 7 meses depois do último corte;",
+     "saida": "último corte em 2004-04 (Selic 16,00%): expectativa 5,54% (meta 5,17%, distância 0,37), IPCA 12 meses 5,26%, juro real 9,9%; expectativa 1 mês depois +0,28 ponto, 3 meses depois +0,56 ponto; depois: alta 5 meses depois do último corte; o ciclo foi até 2005-05 e levou a Selic a 19,75% (+3,75 ponto(s)).",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3065,14 +3197,15 @@
     {
      "id": "c4",
      "tipo": "conta",
-     "afirmacao": "Em 2009-07 e 2012-10 a alta veio 9 e 6 meses depois; em 2018-03 (+0,07 ponto) o BC voltou a cortar, 17 meses depois.",
+     "afirmacao": "Pausa de 2007-09: juro real 7,1%, expectativa +0,44, Selic subiu 7 meses depois.",
      "numeros": [
-      "+0,21",
-      "+0,10",
-      "+0,07"
+      "7,1",
+      "0,44",
+      "7 meses",
+      "13,75"
      ],
      "comando": ".venv/bin/python src/conta.py pausas",
-     "saida": "último corte em 2009-07 (Selic 8,75%): ... 3 meses depois +0,21 ponto; depois: alta 9 meses depois do último corte; ... | último corte em 2012-10 (Selic 7,25%): ... 3 meses depois +0,10 ponto; depois: alta 6 meses depois do último corte; ... | último corte em 2018-03 (Selic 6,50%): ... 1 mês depois +0,16 ponto, 3 meses depois +0,07 ponto; depois: corte 17 meses depois do último corte;",
+     "saida": "último corte em 2007-09 (Selic 11,25%): expectativa 3,84% (meta 4,50%, distância -0,66), IPCA 12 meses 4,15%, juro real 7,1%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,44 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2008-09 e levou a Selic a 13,75% (+2,50 ponto(s)).",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3087,13 +3220,15 @@
     {
      "id": "c5",
      "tipo": "conta",
-     "afirmacao": "Em 2020-08 e 2024-05 a expectativa subiu em 3 meses e a alta veio 7 e 4 meses depois.",
+     "afirmacao": "Pausa de 2009-07: juro real 4,5%, expectativa +0,21, Selic subiu 9 meses depois.",
      "numeros": [
-      "+0,81",
-      "+0,23"
+      "4,5",
+      "0,21",
+      "9 meses",
+      "12,50"
      ],
      "comando": ".venv/bin/python src/conta.py pausas",
-     "saida": "último corte em 2020-08 (Selic 2,00%): ... 1 mês depois +0,20 ponto, 3 meses depois +0,81 ponto; depois: alta 7 meses depois do último corte; ... | último corte em 2024-05 (Selic 10,50%): ... 1 mês depois -0,03 ponto, 3 meses depois +0,23 ponto; depois: alta 4 meses depois do último corte; o ciclo foi até 2025-06 e levou a Selic a 15,00% (+4,50 ponto(s)).",
+     "saida": "último corte em 2009-07 (Selic 8,75%): expectativa 4,08% (meta 4,50%, distância -0,42), IPCA 12 meses 4,50%, juro real 4,5%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,21 ponto; depois: alta 9 meses depois do último corte; o ciclo foi até 2011-07 e levou a Selic a 12,50% (+3,75 ponto(s)).",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3108,14 +3243,16 @@
     {
      "id": "c6",
      "tipo": "conta",
-     "afirmacao": "Ciclos de corte anteriores terminados em alta e o corte atual: de 2026-03 a 2026-09, de 15,00% para 13,75%.",
+     "afirmacao": "Pausa de 2012-10: juro real 1,8%, expectativa +0,10, Selic subiu 6 meses depois.",
      "numeros": [
-      "15,00%",
-      "13,75%",
-      "-1,25"
+      "7,25",
+      "1,8",
+      "0,10",
+      "6 meses",
+      "14,25"
      ],
-     "comando": ".venv/bin/python src/conta.py ciclos",
-     "saida": "corte de 2026-03 a 2026-09: de 15,00% para 13,75% (-1,25 ponto(s))",
+     "comando": ".venv/bin/python src/conta.py pausas",
+     "saida": "último corte em 2012-10 (Selic 7,25%): expectativa 5,37% (meta 4,50%, distância 0,87), IPCA 12 meses 5,45%, juro real 1,8%; expectativa 1 mês depois +0,02 ponto, 3 meses depois +0,10 ponto; depois: alta 6 meses depois do último corte; o ciclo foi até 2015-07 e levou a Selic a 14,25% (+7,00 ponto(s)).",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3124,23 +3261,22 @@
      },
      "conferencia": {
       "status": "conferido",
-      "saida": "Ciclos da Selic desde 2002, mês a mês (uma pausa no meio de um ciclo não o interrompe, se ele segue para o mesmo lado):\ncorte de 2002-02 a 2002-07: de 19,00% para 18,00% (-1,00 ponto(s))\nalta de 2002-10 a 2003-02: de 18,00% para 26,50% (+8,50 ponto(s))\ncorte de 2003-06 a 2004-04: de 26,50% para 16,00% (-10,50 ponto(s))\nalta de 2004-09 a 2005-05: de 16,00% para 19,75% (+3,75 ponto(s))\ncorte de 2005-09 a 2007-09: de 19,75% para 11,25% (-8,50 ponto(s))\nalta de 2008-04 a 2008-09: de 11,25% para 13,75% (+2,50 ponto(s))\ncorte de 2009-01 a 2009-07: de 13,75% para 8,75% (-5,00 ponto(s))\nalta de 2010-04 a 2011-07: de 8,75% para 12,50% (+3,75 ponto(s))\ncorte de 2011-09 a 2012-10: de 12,50% para 7,25% (-5,25 ponto(s))\nalta de 2013-04 a 2015-07: de 7,25% para 14,25% (+7,00 ponto(s))\ncorte de 2016-10 a 2020-08: de 14,25% para 2,00% (-12,25 ponto(s))\nalta de 2021-03 a 2022-08: de 2,00% para 13,75% (+11,75 ponto(s))\ncorte de 2023-08 a 2024-05: de 13,75% para 10,50% (-3,25 ponto(s))\nalta de 2024-09 a 2025-06: de 10,50% para 15,00% (+4,50 ponto(s))\ncorte de 2026-03 a 2026-09: de 15,00% para 13,75% (-1,25 ponto(s))\n"
+      "saida": "Cada vez que o Banco Central cortou a Selic e a deixou parada pelo menos nos 2 meses seguintes (ou até o último mês da série). 'Expectativa' é a inflação que os bancos esperam para os 12 meses seguintes (Focus), no fim do mês; 'meta' é o centro da meta de inflação desses mesmos 12 meses (a média das metas de cada ano, pelo número de meses); a distância é expectativa menos meta.\núltimo corte em 2002-03 (Selic 18,50%): expectativa 4,81% (meta 3,62%, distância 1,18), IPCA 12 meses 7,75%, juro real 13,1%; expectativa 1 mês depois -0,24 ponto, 3 meses depois -0,28 ponto; depois: corte 4 meses depois do último corte; o ciclo foi até 2002-07 e levou a Selic a 18,00% (-0,50 ponto(s)).\núltimo corte em 2002-07 (Selic 18,00%): expectativa 4,73% (meta 3,79%, distância 0,94), IPCA 12 meses 7,51%, juro real 12,7%; expectativa 1 mês depois +0,51 ponto, 3 meses depois +3,71 ponto; depois: alta 3 meses depois do último corte; o ciclo foi até 2003-02 e levou a Selic a 26,50% (+8,50 ponto(s)).\núltimo corte em 2003-12 (Selic 16,50%): expectativa 5,95% (meta 5,50%, distância 0,45), IPCA 12 meses 9,30%, juro real 10,0%; expectativa 1 mês depois -0,10 ponto, 3 meses depois -0,47 ponto; depois: corte 3 meses depois do último corte; o ciclo foi até 2004-04 e levou a Selic a 16,00% (-0,50 ponto(s)).\núltimo corte em 2004-04 (Selic 16,00%): expectativa 5,54% (meta 5,17%, distância 0,37), IPCA 12 meses 5,26%, juro real 9,9%; expectativa 1 mês depois +0,28 ponto, 3 meses depois +0,56 ponto; depois: alta 5 meses depois do último corte; o ciclo foi até 2005-05 e levou a Selic a 19,75% (+3,75 ponto(s)).\núltimo corte em 2007-09 (Selic 11,25%): expectativa 3,84% (meta 4,50%, distância -0,66), IPCA 12 meses 4,15%, juro real 7,1%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,44 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2008-09 e levou a Selic a 13,75% (+2,50 ponto(s)).\núltimo corte em 2009-07 (Selic 8,75%): expectativa 4,08% (meta 4,50%, distância -0,42), IPCA 12 meses 4,50%, juro real 4,5%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,21 ponto; depois: alta 9 meses depois do último corte; o ciclo foi até 2011-07 e levou a Selic a 12,50% (+3,75 ponto(s)).\núltimo corte em 2012-10 (Selic 7,25%): expectativa 5,37% (meta 4,50%, distância 0,87), IPCA 12 meses 5,45%, juro real 1,8%; expectativa 1 mês depois +0,02 ponto, 3 meses depois +0,10 ponto; depois: alta 6 meses depois do último corte; o ciclo foi até 2015-07 e levou a Selic a 14,25% (+7,00 ponto(s)).\núltimo corte em 2018-03 (Selic 6,50%): expectativa 3,95% (meta 4,44%, distância -0,49), IPCA 12 meses 2,68%, juro real 2,5%; expectativa 1 mês depois +0,16 ponto, 3 meses depois +0,07 ponto; depois: corte 17 meses depois do último corte; o ciclo foi até 2020-08 e levou a Selic a 2,00% (-4,50 ponto(s)).\núltimo corte em 2020-08 (Selic 2,00%): expectativa 3,03% (meta 3,83%, distância -0,80), IPCA 12 meses 2,44%, juro real -1,0%; expectativa 1 mês depois +0,20 ponto, 3 meses depois +0,81 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2022-08 e levou a Selic a 13,75% (+11,75 ponto(s)).\núltimo corte em 2024-05 (Selic 10,50%): expectativa 3,64% (meta 3,00%, distância 0,64), IPCA 12 meses 3,93%, juro real 6,6%; expectativa 1 mês depois -0,03 ponto, 3 meses depois +0,23 ponto; depois: alta 4 meses depois do último corte; o ciclo foi até 2025-06 e levou a Selic a 15,00% (+4,50 ponto(s)).\núltimo corte em 2026-09 (Selic 13,75%): expectativa 4,60% (meta 3,00%, distância 1,60), IPCA 12 meses 4,58%, juro real 8,7%; expectativa 1 mês depois +0,36 ponto, 3 meses depois sem dado ponto; ainda parada (1 mês(es) com dado depois do corte).\n"
      }
     },
     {
      "id": "c7",
      "tipo": "conta",
-     "afirmacao": "O Focus de 23/10 para 30/10 subiu a inflação esperada e a Selic prevista para 2026 e 2027.",
+     "afirmacao": "Pausa de 2018-03: distância -0,49, juro real 2,5%, expectativa +0,07, e o BC voltou a cortar 17 meses depois; única de 8 que não terminou em alta.",
      "numeros": [
-      "4,53",
-      "4,96",
-      "13,25",
-      "13,50",
-      "11,75",
-      "12,50"
+      "-0,49",
+      "2,5",
+      "0,07",
+      "17 meses",
+      "2,00"
      ],
-     "comando": ".venv/bin/python src/conta.py focus --de 2026-09-01",
-     "saida": "2026-10-23: IPCA 12m: 4,53 | 2026-10-23: Selic 2026: 13,25 | 2026-10-23: Selic 2027: 11,75 | 2026-10-30: IPCA 12m: 4,96 | 2026-10-30: Selic 2026: 13,50 | 2026-10-30: Selic 2027: 12,50",
+     "comando": ".venv/bin/python src/conta.py pausas",
+     "saida": "último corte em 2018-03 (Selic 6,50%): expectativa 3,95% (meta 4,44%, distância -0,49), IPCA 12 meses 2,68%, juro real 2,5%; expectativa 1 mês depois +0,16 ponto, 3 meses depois +0,07 ponto; depois: corte 17 meses depois do último corte; o ciclo foi até 2020-08 e levou a Selic a 2,00% (-4,50 ponto(s)).",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3149,86 +3285,111 @@
      },
      "conferencia": {
       "status": "conferido",
-      "saida": "Previsões dos bancos (Focus, mediana) na data da pesquisa, como o site guardou:\n2026-10-23: Câmbio 2026: 5,05\n2026-10-23: Câmbio 2027: 5,15\n2026-10-23: Câmbio 2028: 5,20\n2026-10-23: Câmbio 2029: 5,28\n2026-10-23: Câmbio 2030: 5,30\n2026-10-23: IPCA 2026: 5,19\n2026-10-23: IPCA 2027: 4,34\n2026-10-23: IPCA 2028: 3,75\n2026-10-23: IPCA 2029: 3,50\n2026-10-23: IPCA 2030: 3,50\n2026-10-23: IPCA 12m: 4,53\n2026-10-23: PIB Total 2026: 1,80\n2026-10-23: PIB Total 2027: 1,31\n2026-10-23: PIB Total 2028: 1,81\n2026-10-23: PIB Total 2029: 2,00\n2026-10-23: PIB Total 2030: 2,00\n2026-10-23: Selic 2026: 13,25\n2026-10-23: Selic 2027: 11,75\n2026-10-23: Selic 2028: 10,00\n2026-10-23: Selic 2029: 10,00\n2026-10-23: Selic 2030: 10,00\n2026-10-30: Câmbio 2026: 5,34\n2026-10-30: Câmbio 2027: 5,40\n2026-10-30: Câmbio 2028: 5,40\n2026-10-30: Câmbio 2029: 5,45\n2026-10-30: Câmbio 2030: 5,50\n2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76\n2026-10-30: IPCA 2028: 4,00\n2026-10-30: IPCA 2029: 3,98\n2026-10-30: IPCA 2030: 3,81\n2026-10-30: IPCA 12m: 4,96\n2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20\n2026-10-30: PIB Total 2028: 1,80\n2026-10-30: PIB Total 2029: 2,00\n2026-10-30: PIB Total 2030: 2,00\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50\n2026-10-30: Selic 2028: 11,00\n2026-10-30: Selic 2029: 10,25\n2026-10-30: Selic 2030: 10,00\n"
+      "saida": "Cada vez que o Banco Central cortou a Selic e a deixou parada pelo menos nos 2 meses seguintes (ou até o último mês da série). 'Expectativa' é a inflação que os bancos esperam para os 12 meses seguintes (Focus), no fim do mês; 'meta' é o centro da meta de inflação desses mesmos 12 meses (a média das metas de cada ano, pelo número de meses); a distância é expectativa menos meta.\núltimo corte em 2002-03 (Selic 18,50%): expectativa 4,81% (meta 3,62%, distância 1,18), IPCA 12 meses 7,75%, juro real 13,1%; expectativa 1 mês depois -0,24 ponto, 3 meses depois -0,28 ponto; depois: corte 4 meses depois do último corte; o ciclo foi até 2002-07 e levou a Selic a 18,00% (-0,50 ponto(s)).\núltimo corte em 2002-07 (Selic 18,00%): expectativa 4,73% (meta 3,79%, distância 0,94), IPCA 12 meses 7,51%, juro real 12,7%; expectativa 1 mês depois +0,51 ponto, 3 meses depois +3,71 ponto; depois: alta 3 meses depois do último corte; o ciclo foi até 2003-02 e levou a Selic a 26,50% (+8,50 ponto(s)).\núltimo corte em 2003-12 (Selic 16,50%): expectativa 5,95% (meta 5,50%, distância 0,45), IPCA 12 meses 9,30%, juro real 10,0%; expectativa 1 mês depois -0,10 ponto, 3 meses depois -0,47 ponto; depois: corte 3 meses depois do último corte; o ciclo foi até 2004-04 e levou a Selic a 16,00% (-0,50 ponto(s)).\núltimo corte em 2004-04 (Selic 16,00%): expectativa 5,54% (meta 5,17%, distância 0,37), IPCA 12 meses 5,26%, juro real 9,9%; expectativa 1 mês depois +0,28 ponto, 3 meses depois +0,56 ponto; depois: alta 5 meses depois do último corte; o ciclo foi até 2005-05 e levou a Selic a 19,75% (+3,75 ponto(s)).\núltimo corte em 2007-09 (Selic 11,25%): expectativa 3,84% (meta 4,50%, distância -0,66), IPCA 12 meses 4,15%, juro real 7,1%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,44 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2008-09 e levou a Selic a 13,75% (+2,50 ponto(s)).\núltimo corte em 2009-07 (Selic 8,75%): expectativa 4,08% (meta 4,50%, distância -0,42), IPCA 12 meses 4,50%, juro real 4,5%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,21 ponto; depois: alta 9 meses depois do último corte; o ciclo foi até 2011-07 e levou a Selic a 12,50% (+3,75 ponto(s)).\núltimo corte em 2012-10 (Selic 7,25%): expectativa 5,37% (meta 4,50%, distância 0,87), IPCA 12 meses 5,45%, juro real 1,8%; expectativa 1 mês depois +0,02 ponto, 3 meses depois +0,10 ponto; depois: alta 6 meses depois do último corte; o ciclo foi até 2015-07 e levou a Selic a 14,25% (+7,00 ponto(s)).\núltimo corte em 2018-03 (Selic 6,50%): expectativa 3,95% (meta 4,44%, distância -0,49), IPCA 12 meses 2,68%, juro real 2,5%; expectativa 1 mês depois +0,16 ponto, 3 meses depois +0,07 ponto; depois: corte 17 meses depois do último corte; o ciclo foi até 2020-08 e levou a Selic a 2,00% (-4,50 ponto(s)).\núltimo corte em 2020-08 (Selic 2,00%): expectativa 3,03% (meta 3,83%, distância -0,80), IPCA 12 meses 2,44%, juro real -1,0%; expectativa 1 mês depois +0,20 ponto, 3 meses depois +0,81 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2022-08 e levou a Selic a 13,75% (+11,75 ponto(s)).\núltimo corte em 2024-05 (Selic 10,50%): expectativa 3,64% (meta 3,00%, distância 0,64), IPCA 12 meses 3,93%, juro real 6,6%; expectativa 1 mês depois -0,03 ponto, 3 meses depois +0,23 ponto; depois: alta 4 meses depois do último corte; o ciclo foi até 2025-06 e levou a Selic a 15,00% (+4,50 ponto(s)).\núltimo corte em 2026-09 (Selic 13,75%): expectativa 4,60% (meta 3,00%, distância 1,60), IPCA 12 meses 4,58%, juro real 8,7%; expectativa 1 mês depois +0,36 ponto, 3 meses depois sem dado ponto; ainda parada (1 mês(es) com dado depois do corte).\n"
      }
     },
     {
      "id": "c8",
-     "tipo": "documento",
-     "afirmacao": "O Copom subiu suas projeções de inflação: 2026 de 5,2% para 5,6%, 2027 de 3,9% para 4,7%, horizonte relevante (2T2028) de 3,1% para 3,5%; decisão unânime.",
+     "tipo": "conta",
+     "afirmacao": "Pausa de 2020-08: juro real -1,0%, expectativa +0,81, Selic subiu 7 meses depois.",
      "numeros": [
-      "5,6%",
-      "4,7%",
-      "3,5%",
-      "3,1%",
-      "13,75%"
+      "-1,0",
+      "0,81",
+      "7 meses",
+      "13,75"
      ],
-     "comando": "",
-     "saida": "",
+     "comando": ".venv/bin/python src/conta.py pausas",
+     "saida": "último corte em 2020-08 (Selic 2,00%): expectativa 3,03% (meta 3,83%, distância -0,80), IPCA 12 meses 2,44%, juro real -1,0%; expectativa 1 mês depois +0,20 ponto, 3 meses depois +0,81 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2022-08 e levou a Selic a 13,75% (+11,75 ponto(s)).",
      "fonte": {
-      "quem": "CNN Brasil (sobre o comunicado do Copom)",
-      "url": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/bc-ve-inflacao-mais-elevada-em-todo-horizonte-ate-2028/",
-      "data": "2026-11-04",
-      "trecho": "O Copom revisou a projeção para a inflação acumulada em 12 meses no 2º trimestre de 2028, de 3,1% para 3,5%, considerando o cenário de referência. [trecho do resumo da busca; página não aberta]"
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
      },
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true
+      "status": "conferido",
+      "saida": "Cada vez que o Banco Central cortou a Selic e a deixou parada pelo menos nos 2 meses seguintes (ou até o último mês da série). 'Expectativa' é a inflação que os bancos esperam para os 12 meses seguintes (Focus), no fim do mês; 'meta' é o centro da meta de inflação desses mesmos 12 meses (a média das metas de cada ano, pelo número de meses); a distância é expectativa menos meta.\núltimo corte em 2002-03 (Selic 18,50%): expectativa 4,81% (meta 3,62%, distância 1,18), IPCA 12 meses 7,75%, juro real 13,1%; expectativa 1 mês depois -0,24 ponto, 3 meses depois -0,28 ponto; depois: corte 4 meses depois do último corte; o ciclo foi até 2002-07 e levou a Selic a 18,00% (-0,50 ponto(s)).\núltimo corte em 2002-07 (Selic 18,00%): expectativa 4,73% (meta 3,79%, distância 0,94), IPCA 12 meses 7,51%, juro real 12,7%; expectativa 1 mês depois +0,51 ponto, 3 meses depois +3,71 ponto; depois: alta 3 meses depois do último corte; o ciclo foi até 2003-02 e levou a Selic a 26,50% (+8,50 ponto(s)).\núltimo corte em 2003-12 (Selic 16,50%): expectativa 5,95% (meta 5,50%, distância 0,45), IPCA 12 meses 9,30%, juro real 10,0%; expectativa 1 mês depois -0,10 ponto, 3 meses depois -0,47 ponto; depois: corte 3 meses depois do último corte; o ciclo foi até 2004-04 e levou a Selic a 16,00% (-0,50 ponto(s)).\núltimo corte em 2004-04 (Selic 16,00%): expectativa 5,54% (meta 5,17%, distância 0,37), IPCA 12 meses 5,26%, juro real 9,9%; expectativa 1 mês depois +0,28 ponto, 3 meses depois +0,56 ponto; depois: alta 5 meses depois do último corte; o ciclo foi até 2005-05 e levou a Selic a 19,75% (+3,75 ponto(s)).\núltimo corte em 2007-09 (Selic 11,25%): expectativa 3,84% (meta 4,50%, distância -0,66), IPCA 12 meses 4,15%, juro real 7,1%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,44 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2008-09 e levou a Selic a 13,75% (+2,50 ponto(s)).\núltimo corte em 2009-07 (Selic 8,75%): expectativa 4,08% (meta 4,50%, distância -0,42), IPCA 12 meses 4,50%, juro real 4,5%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,21 ponto; depois: alta 9 meses depois do último corte; o ciclo foi até 2011-07 e levou a Selic a 12,50% (+3,75 ponto(s)).\núltimo corte em 2012-10 (Selic 7,25%): expectativa 5,37% (meta 4,50%, distância 0,87), IPCA 12 meses 5,45%, juro real 1,8%; expectativa 1 mês depois +0,02 ponto, 3 meses depois +0,10 ponto; depois: alta 6 meses depois do último corte; o ciclo foi até 2015-07 e levou a Selic a 14,25% (+7,00 ponto(s)).\núltimo corte em 2018-03 (Selic 6,50%): expectativa 3,95% (meta 4,44%, distância -0,49), IPCA 12 meses 2,68%, juro real 2,5%; expectativa 1 mês depois +0,16 ponto, 3 meses depois +0,07 ponto; depois: corte 17 meses depois do último corte; o ciclo foi até 2020-08 e levou a Selic a 2,00% (-4,50 ponto(s)).\núltimo corte em 2020-08 (Selic 2,00%): expectativa 3,03% (meta 3,83%, distância -0,80), IPCA 12 meses 2,44%, juro real -1,0%; expectativa 1 mês depois +0,20 ponto, 3 meses depois +0,81 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2022-08 e levou a Selic a 13,75% (+11,75 ponto(s)).\núltimo corte em 2024-05 (Selic 10,50%): expectativa 3,64% (meta 3,00%, distância 0,64), IPCA 12 meses 3,93%, juro real 6,6%; expectativa 1 mês depois -0,03 ponto, 3 meses depois +0,23 ponto; depois: alta 4 meses depois do último corte; o ciclo foi até 2025-06 e levou a Selic a 15,00% (+4,50 ponto(s)).\núltimo corte em 2026-09 (Selic 13,75%): expectativa 4,60% (meta 3,00%, distância 1,60), IPCA 12 meses 4,58%, juro real 8,7%; expectativa 1 mês depois +0,36 ponto, 3 meses depois sem dado ponto; ainda parada (1 mês(es) com dado depois do corte).\n"
      }
     },
     {
      "id": "c9",
-     "tipo": "documento",
-     "afirmacao": "O comunicado descreve a Selic como substancialmente contracionista e cita aumento significativo das incertezas e expectativas de inflação mais elevadas.",
+     "tipo": "conta",
+     "afirmacao": "Pausa de 2024-05: distância 0,64, juro real 6,6%, expectativa +0,23 em 3 meses, Selic subiu 4 meses depois.",
      "numeros": [
-      "13,75%"
+      "0,64",
+      "6,6",
+      "0,23",
+      "4 meses",
+      "15,00"
      ],
-     "comando": "",
-     "saida": "",
+     "comando": ".venv/bin/python src/conta.py pausas",
+     "saida": "último corte em 2024-05 (Selic 10,50%): expectativa 3,64% (meta 3,00%, distância 0,64), IPCA 12 meses 3,93%, juro real 6,6%; expectativa 1 mês depois -0,03 ponto, 3 meses depois +0,23 ponto; depois: alta 4 meses depois do último corte; o ciclo foi até 2025-06 e levou a Selic a 15,00% (+4,50 ponto(s)).",
      "fonte": {
-      "quem": "Investnews (sobre o comunicado do Copom)",
-      "url": "https://investnews.com.br/investimentos/copom-mantem-selic-em-1375-ano/",
-      "data": "2026-11-04",
-      "trecho": "Copom cita piora das expectativas e mantém Selic em 13,75% [título; frases do comunicado vieram do resumo da busca, página não aberta]"
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
      },
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true
+      "status": "conferido",
+      "saida": "Cada vez que o Banco Central cortou a Selic e a deixou parada pelo menos nos 2 meses seguintes (ou até o último mês da série). 'Expectativa' é a inflação que os bancos esperam para os 12 meses seguintes (Focus), no fim do mês; 'meta' é o centro da meta de inflação desses mesmos 12 meses (a média das metas de cada ano, pelo número de meses); a distância é expectativa menos meta.\núltimo corte em 2002-03 (Selic 18,50%): expectativa 4,81% (meta 3,62%, distância 1,18), IPCA 12 meses 7,75%, juro real 13,1%; expectativa 1 mês depois -0,24 ponto, 3 meses depois -0,28 ponto; depois: corte 4 meses depois do último corte; o ciclo foi até 2002-07 e levou a Selic a 18,00% (-0,50 ponto(s)).\núltimo corte em 2002-07 (Selic 18,00%): expectativa 4,73% (meta 3,79%, distância 0,94), IPCA 12 meses 7,51%, juro real 12,7%; expectativa 1 mês depois +0,51 ponto, 3 meses depois +3,71 ponto; depois: alta 3 meses depois do último corte; o ciclo foi até 2003-02 e levou a Selic a 26,50% (+8,50 ponto(s)).\núltimo corte em 2003-12 (Selic 16,50%): expectativa 5,95% (meta 5,50%, distância 0,45), IPCA 12 meses 9,30%, juro real 10,0%; expectativa 1 mês depois -0,10 ponto, 3 meses depois -0,47 ponto; depois: corte 3 meses depois do último corte; o ciclo foi até 2004-04 e levou a Selic a 16,00% (-0,50 ponto(s)).\núltimo corte em 2004-04 (Selic 16,00%): expectativa 5,54% (meta 5,17%, distância 0,37), IPCA 12 meses 5,26%, juro real 9,9%; expectativa 1 mês depois +0,28 ponto, 3 meses depois +0,56 ponto; depois: alta 5 meses depois do último corte; o ciclo foi até 2005-05 e levou a Selic a 19,75% (+3,75 ponto(s)).\núltimo corte em 2007-09 (Selic 11,25%): expectativa 3,84% (meta 4,50%, distância -0,66), IPCA 12 meses 4,15%, juro real 7,1%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,44 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2008-09 e levou a Selic a 13,75% (+2,50 ponto(s)).\núltimo corte em 2009-07 (Selic 8,75%): expectativa 4,08% (meta 4,50%, distância -0,42), IPCA 12 meses 4,50%, juro real 4,5%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,21 ponto; depois: alta 9 meses depois do último corte; o ciclo foi até 2011-07 e levou a Selic a 12,50% (+3,75 ponto(s)).\núltimo corte em 2012-10 (Selic 7,25%): expectativa 5,37% (meta 4,50%, distância 0,87), IPCA 12 meses 5,45%, juro real 1,8%; expectativa 1 mês depois +0,02 ponto, 3 meses depois +0,10 ponto; depois: alta 6 meses depois do último corte; o ciclo foi até 2015-07 e levou a Selic a 14,25% (+7,00 ponto(s)).\núltimo corte em 2018-03 (Selic 6,50%): expectativa 3,95% (meta 4,44%, distância -0,49), IPCA 12 meses 2,68%, juro real 2,5%; expectativa 1 mês depois +0,16 ponto, 3 meses depois +0,07 ponto; depois: corte 17 meses depois do último corte; o ciclo foi até 2020-08 e levou a Selic a 2,00% (-4,50 ponto(s)).\núltimo corte em 2020-08 (Selic 2,00%): expectativa 3,03% (meta 3,83%, distância -0,80), IPCA 12 meses 2,44%, juro real -1,0%; expectativa 1 mês depois +0,20 ponto, 3 meses depois +0,81 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2022-08 e levou a Selic a 13,75% (+11,75 ponto(s)).\núltimo corte em 2024-05 (Selic 10,50%): expectativa 3,64% (meta 3,00%, distância 0,64), IPCA 12 meses 3,93%, juro real 6,6%; expectativa 1 mês depois -0,03 ponto, 3 meses depois +0,23 ponto; depois: alta 4 meses depois do último corte; o ciclo foi até 2025-06 e levou a Selic a 15,00% (+4,50 ponto(s)).\núltimo corte em 2026-09 (Selic 13,75%): expectativa 4,60% (meta 3,00%, distância 1,60), IPCA 12 meses 4,58%, juro real 8,7%; expectativa 1 mês depois +0,36 ponto, 3 meses depois sem dado ponto; ainda parada (1 mês(es) com dado depois do corte).\n"
      }
     },
     {
      "id": "c10",
-     "tipo": "documento",
-     "afirmacao": "O Caged de setembro de 2026 teve saldo de 121.305 empregos com carteira assinada.",
+     "tipo": "conta",
+     "afirmacao": "Pausa de 2002-03: expectativa caiu 0,28 em 3 meses, distância 1,18, BC voltou a cortar 4 meses depois.",
      "numeros": [
-      "121.305",
-      "121,3 mil"
+      "1,18",
+      "-0,28",
+      "4 meses"
      ],
-     "comando": "",
-     "saida": "",
+     "comando": ".venv/bin/python src/conta.py pausas",
+     "saida": "último corte em 2002-03 (Selic 18,50%): expectativa 4,81% (meta 3,62%, distância 1,18), IPCA 12 meses 7,75%, juro real 13,1%; expectativa 1 mês depois -0,24 ponto, 3 meses depois -0,28 ponto; depois: corte 4 meses depois do último corte; o ciclo foi até 2002-07 e levou a Selic a 18,00% (-0,50 ponto(s)).",
      "fonte": {
-      "quem": "Agência Gov (dados do Ministério do Trabalho e Emprego)",
-      "url": "https://agenciagov.ebc.com.br/noticias/202611/brasil-gera-121-3-mil-empregos-formais-em-setembro-e-saldo-no-ano-chega-a-1-24-milhao-de-novos-postos-com-carteira-assinada",
-      "data": "2026-11-04",
-      "trecho": "O mercado de trabalho brasileiro gerou 121.305 novos empregos com carteira assinada em setembro de 2026 [resumo da busca]"
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
      },
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true
+      "status": "conferido",
+      "saida": "Cada vez que o Banco Central cortou a Selic e a deixou parada pelo menos nos 2 meses seguintes (ou até o último mês da série). 'Expectativa' é a inflação que os bancos esperam para os 12 meses seguintes (Focus), no fim do mês; 'meta' é o centro da meta de inflação desses mesmos 12 meses (a média das metas de cada ano, pelo número de meses); a distância é expectativa menos meta.\núltimo corte em 2002-03 (Selic 18,50%): expectativa 4,81% (meta 3,62%, distância 1,18), IPCA 12 meses 7,75%, juro real 13,1%; expectativa 1 mês depois -0,24 ponto, 3 meses depois -0,28 ponto; depois: corte 4 meses depois do último corte; o ciclo foi até 2002-07 e levou a Selic a 18,00% (-0,50 ponto(s)).\núltimo corte em 2002-07 (Selic 18,00%): expectativa 4,73% (meta 3,79%, distância 0,94), IPCA 12 meses 7,51%, juro real 12,7%; expectativa 1 mês depois +0,51 ponto, 3 meses depois +3,71 ponto; depois: alta 3 meses depois do último corte; o ciclo foi até 2003-02 e levou a Selic a 26,50% (+8,50 ponto(s)).\núltimo corte em 2003-12 (Selic 16,50%): expectativa 5,95% (meta 5,50%, distância 0,45), IPCA 12 meses 9,30%, juro real 10,0%; expectativa 1 mês depois -0,10 ponto, 3 meses depois -0,47 ponto; depois: corte 3 meses depois do último corte; o ciclo foi até 2004-04 e levou a Selic a 16,00% (-0,50 ponto(s)).\núltimo corte em 2004-04 (Selic 16,00%): expectativa 5,54% (meta 5,17%, distância 0,37), IPCA 12 meses 5,26%, juro real 9,9%; expectativa 1 mês depois +0,28 ponto, 3 meses depois +0,56 ponto; depois: alta 5 meses depois do último corte; o ciclo foi até 2005-05 e levou a Selic a 19,75% (+3,75 ponto(s)).\núltimo corte em 2007-09 (Selic 11,25%): expectativa 3,84% (meta 4,50%, distância -0,66), IPCA 12 meses 4,15%, juro real 7,1%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,44 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2008-09 e levou a Selic a 13,75% (+2,50 ponto(s)).\núltimo corte em 2009-07 (Selic 8,75%): expectativa 4,08% (meta 4,50%, distância -0,42), IPCA 12 meses 4,50%, juro real 4,5%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,21 ponto; depois: alta 9 meses depois do último corte; o ciclo foi até 2011-07 e levou a Selic a 12,50% (+3,75 ponto(s)).\núltimo corte em 2012-10 (Selic 7,25%): expectativa 5,37% (meta 4,50%, distância 0,87), IPCA 12 meses 5,45%, juro real 1,8%; expectativa 1 mês depois +0,02 ponto, 3 meses depois +0,10 ponto; depois: alta 6 meses depois do último corte; o ciclo foi até 2015-07 e levou a Selic a 14,25% (+7,00 ponto(s)).\núltimo corte em 2018-03 (Selic 6,50%): expectativa 3,95% (meta 4,44%, distância -0,49), IPCA 12 meses 2,68%, juro real 2,5%; expectativa 1 mês depois +0,16 ponto, 3 meses depois +0,07 ponto; depois: corte 17 meses depois do último corte; o ciclo foi até 2020-08 e levou a Selic a 2,00% (-4,50 ponto(s)).\núltimo corte em 2020-08 (Selic 2,00%): expectativa 3,03% (meta 3,83%, distância -0,80), IPCA 12 meses 2,44%, juro real -1,0%; expectativa 1 mês depois +0,20 ponto, 3 meses depois +0,81 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2022-08 e levou a Selic a 13,75% (+11,75 ponto(s)).\núltimo corte em 2024-05 (Selic 10,50%): expectativa 3,64% (meta 3,00%, distância 0,64), IPCA 12 meses 3,93%, juro real 6,6%; expectativa 1 mês depois -0,03 ponto, 3 meses depois +0,23 ponto; depois: alta 4 meses depois do último corte; o ciclo foi até 2025-06 e levou a Selic a 15,00% (+4,50 ponto(s)).\núltimo corte em 2026-09 (Selic 13,75%): expectativa 4,60% (meta 3,00%, distância 1,60), IPCA 12 meses 4,58%, juro real 8,7%; expectativa 1 mês depois +0,36 ponto, 3 meses depois sem dado ponto; ainda parada (1 mês(es) com dado depois do corte).\n"
+     }
+    },
+    {
+     "id": "c11",
+     "tipo": "conta",
+     "afirmacao": "Pausa de 2003-12: expectativa caiu 0,47 em 3 meses e o BC voltou a cortar.",
+     "numeros": [
+      "-0,47",
+      "3 meses",
+      "16,50"
+     ],
+     "comando": ".venv/bin/python src/conta.py pausas",
+     "saida": "último corte em 2003-12 (Selic 16,50%): expectativa 5,95% (meta 5,50%, distância 0,45), IPCA 12 meses 9,30%, juro real 10,0%; expectativa 1 mês depois -0,10 ponto, 3 meses depois -0,47 ponto; depois: corte 3 meses depois do último corte; o ciclo foi até 2004-04 e levou a Selic a 16,00% (-0,50 ponto(s)).",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Cada vez que o Banco Central cortou a Selic e a deixou parada pelo menos nos 2 meses seguintes (ou até o último mês da série). 'Expectativa' é a inflação que os bancos esperam para os 12 meses seguintes (Focus), no fim do mês; 'meta' é o centro da meta de inflação desses mesmos 12 meses (a média das metas de cada ano, pelo número de meses); a distância é expectativa menos meta.\núltimo corte em 2002-03 (Selic 18,50%): expectativa 4,81% (meta 3,62%, distância 1,18), IPCA 12 meses 7,75%, juro real 13,1%; expectativa 1 mês depois -0,24 ponto, 3 meses depois -0,28 ponto; depois: corte 4 meses depois do último corte; o ciclo foi até 2002-07 e levou a Selic a 18,00% (-0,50 ponto(s)).\núltimo corte em 2002-07 (Selic 18,00%): expectativa 4,73% (meta 3,79%, distância 0,94), IPCA 12 meses 7,51%, juro real 12,7%; expectativa 1 mês depois +0,51 ponto, 3 meses depois +3,71 ponto; depois: alta 3 meses depois do último corte; o ciclo foi até 2003-02 e levou a Selic a 26,50% (+8,50 ponto(s)).\núltimo corte em 2003-12 (Selic 16,50%): expectativa 5,95% (meta 5,50%, distância 0,45), IPCA 12 meses 9,30%, juro real 10,0%; expectativa 1 mês depois -0,10 ponto, 3 meses depois -0,47 ponto; depois: corte 3 meses depois do último corte; o ciclo foi até 2004-04 e levou a Selic a 16,00% (-0,50 ponto(s)).\núltimo corte em 2004-04 (Selic 16,00%): expectativa 5,54% (meta 5,17%, distância 0,37), IPCA 12 meses 5,26%, juro real 9,9%; expectativa 1 mês depois +0,28 ponto, 3 meses depois +0,56 ponto; depois: alta 5 meses depois do último corte; o ciclo foi até 2005-05 e levou a Selic a 19,75% (+3,75 ponto(s)).\núltimo corte em 2007-09 (Selic 11,25%): expectativa 3,84% (meta 4,50%, distância -0,66), IPCA 12 meses 4,15%, juro real 7,1%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,44 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2008-09 e levou a Selic a 13,75% (+2,50 ponto(s)).\núltimo corte em 2009-07 (Selic 8,75%): expectativa 4,08% (meta 4,50%, distância -0,42), IPCA 12 meses 4,50%, juro real 4,5%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,21 ponto; depois: alta 9 meses depois do último corte; o ciclo foi até 2011-07 e levou a Selic a 12,50% (+3,75 ponto(s)).\núltimo corte em 2012-10 (Selic 7,25%): expectativa 5,37% (meta 4,50%, distância 0,87), IPCA 12 meses 5,45%, juro real 1,8%; expectativa 1 mês depois +0,02 ponto, 3 meses depois +0,10 ponto; depois: alta 6 meses depois do último corte; o ciclo foi até 2015-07 e levou a Selic a 14,25% (+7,00 ponto(s)).\núltimo corte em 2018-03 (Selic 6,50%): expectativa 3,95% (meta 4,44%, distância -0,49), IPCA 12 meses 2,68%, juro real 2,5%; expectativa 1 mês depois +0,16 ponto, 3 meses depois +0,07 ponto; depois: corte 17 meses depois do último corte; o ciclo foi até 2020-08 e levou a Selic a 2,00% (-4,50 ponto(s)).\núltimo corte em 2020-08 (Selic 2,00%): expectativa 3,03% (meta 3,83%, distância -0,80), IPCA 12 meses 2,44%, juro real -1,0%; expectativa 1 mês depois +0,20 ponto, 3 meses depois +0,81 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2022-08 e levou a Selic a 13,75% (+11,75 ponto(s)).\núltimo corte em 2024-05 (Selic 10,50%): expectativa 3,64% (meta 3,00%, distância 0,64), IPCA 12 meses 3,93%, juro real 6,6%; expectativa 1 mês depois -0,03 ponto, 3 meses depois +0,23 ponto; depois: alta 4 meses depois do último corte; o ciclo foi até 2025-06 e levou a Selic a 15,00% (+4,50 ponto(s)).\núltimo corte em 2026-09 (Selic 13,75%): expectativa 4,60% (meta 3,00%, distância 1,60), IPCA 12 meses 4,58%, juro real 8,7%; expectativa 1 mês depois +0,36 ponto, 3 meses depois sem dado ponto; ainda parada (1 mês(es) com dado depois do corte).\n"
      }
     },
     {
      "id": "c12",
      "tipo": "conta",
-     "afirmacao": "A inflação esperada para 12 meses (Focus) subiu de 4,12% em junho para 4,96% em outubro.",
+     "afirmacao": "Nas 7 pausas que terminaram em alta, a primeira alta veio em média 5,857 meses depois do último corte (de 3 a 9).",
      "numeros": [
-      "4,12",
-      "4,55",
-      "4,60",
-      "4,96"
+      "5,857",
+      "3",
+      "9"
      ],
-     "comando": ".venv/bin/python src/conta.py valores focus_ipca_12m --de 2026-06",
-     "saida": "2026-06: 4,12 | 2026-07: 4,19 | 2026-08: 4,55 | 2026-09: 4,60 | 2026-10: 4,96",
+     "comando": ".venv/bin/python src/conta.py calc \"(3+5+7+9+6+7+4)/7\"",
+     "saida": "(3+5+7+9+6+7+4)/7 = 5,8571 (com 3 casas: 5,857; com 2 casas: 5,86; com 1 casa: 5,9)",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3237,19 +3398,20 @@
      },
      "conferencia": {
       "status": "conferido",
-      "saida": "focus_ipca_12m (%, último valor do mês):\n2026-06: 4,12\n2026-07: 4,19\n2026-08: 4,55\n2026-09: 4,60\n2026-10: 4,96\n"
+      "saida": "(3+5+7+9+6+7+4)/7 = 5,8571 (com 3 casas: 5,857; com 2 casas: 5,86; com 1 casa: 5,9)\n"
      }
     },
     {
      "id": "c13",
      "tipo": "conta",
-     "afirmacao": "O juro real (Selic menos inflação esperada) de 8,38% em outubro é mais alto que em 68% dos meses desde 2002.",
+     "afirmacao": "Nos episódios com inflação esperada mais de 1,4 ponto acima da meta, a Selic subiu em 5 de 6 do começo ao fim; o atual é o 6º.",
      "numeros": [
-      "8,38",
-      "68%"
+      "6 episódio(s)",
+      "5",
+      "1"
      ],
-     "comando": ".venv/bin/python src/conta.py recorde juro_real 2026-10",
-     "saida": "Dos 297 meses antes de 2026-10, 202 tiveram valor menor (68%).",
+     "comando": ".venv/bin/python src/conta.py episodios \"focus_menos_meta>1.4\"",
+     "saida": "6 episódio(s). Do começo ao fim de cada um, a Selic subiu em 5, caiu em 1 e ficou igual em 0.",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3258,20 +3420,19 @@
      },
      "conferencia": {
       "status": "conferido",
-      "saida": "juro_real em 2026-10: 8,38. A série começa em 2002-01.\nÉ o menor valor desde 2025-02, quando foi 7,35.\nDos 297 meses antes de 2026-10, 202 tiveram valor menor (68%).\n"
+      "saida": "Episódios em que focus_menos_meta > 1,40 (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não por mês: um episódio longo não vale mais que um curto.\nfocus_menos_meta: inflação esperada para 12 meses (Focus) menos o centro da meta desses 12 meses, em pontos.\n\nde 2002-08 a 2003-07 (12 meses): focus_menos_meta de 1,41 a 1,79 (o maior: 8,26); Selic de 18,00% no começo a 24,50% no fim.\n  no começo, 2002-08: selic_meta 18,00; ipca_12m 7,46; focus_ipca_12m 5,24; juro_real 12,12; dolar_ptax 3,0223\n  12 meses depois do fim, 2004-07: selic_meta 16,00; ipca_12m 6,81; focus_ipca_12m 6,10; juro_real 9,33; dolar_ptax 3,0268; ibcbr 75,25; primario_12m -3,61; ibcbr_12m 8,8%\n  recessão começando no episódio ou nos 12 meses seguintes: 1T2003\n\nde 2004-08 a 2004-11 (4 meses): focus_menos_meta de 1,43 a 1,47 (o maior: 1,57); Selic de 16,00% no começo a 17,25% no fim.\n  no começo, 2004-08: selic_meta 16,00; ipca_12m 7,18; focus_ipca_12m 6,26; juro_real 9,17; dolar_ptax 2,9338; ibcbr 75,60; primario_12m -3,68; ibcbr_12m 8,5%\n  12 meses depois do fim, 2005-11: selic_meta 18,50; ipca_12m 6,22; focus_ipca_12m 4,63; juro_real 13,26; juro_real_longo 8,71; dolar_ptax 2,2070; ibcbr 78,21; primario_12m -3,91; ibcbr_12m 2,0%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2013-08 a 2016-05 (34 meses): focus_menos_meta de 1,62 a 1,44 (o maior: 2,53); Selic de 9,00% no começo a 14,25% no fim.\n  no começo, 2013-08: selic_meta 9,00; ipca_12m 6,09; focus_ipca_12m 6,12; juro_real 2,71; juro_real_longo 5,71; dolar_ptax 2,3725; ibcbr 102,97; desocupacao 7,20; divida_bruta 53,44; primario_12m -1,65; ibcbr_12m 2,1%\n  12 meses depois do fim, 2017-05: selic_meta 11,25; ipca_12m 3,60; focus_ipca_12m 4,56; juro_real 6,40; juro_real_longo 5,62; dolar_ptax 3,2437; ibcbr 94,25; desocupacao 13,40; divida_bruta 72,34; primario_12m 2,46; ibcbr_12m 0,5%\n  recessão começando no episódio ou nos 12 meses seguintes: 2T2014, 1T2015, 3T2016\n\nde 2021-10 a 2023-05 (20 meses): focus_menos_meta de 1,58 a 1,52 (o maior: 2,59); Selic de 7,75% no começo a 13,75% no fim.\n  no começo, 2021-10: selic_meta 7,75; ipca_12m 10,67; focus_ipca_12m 5,12; juro_real 2,50; juro_real_longo 5,77; dolar_ptax 5,6430; ibcbr 97,49; desocupacao 12,10; divida_bruta 79,52; primario_12m 0,23; ibcbr_12m 0,2%\n  12 meses depois do fim, 2024-05: selic_meta 10,50; ipca_12m 3,93; focus_ipca_12m 3,64; juro_real 6,62; juro_real_longo 6,26; dolar_ptax 5,2416; ibcbr 105,59; desocupacao 7,10; divida_bruta 75,67; primario_12m 2,49; ibcbr_12m 3,1%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2024-11 a 2025-07 (9 meses): focus_menos_meta de 1,41 a 1,42 (o maior: 2,74); Selic de 11,25% no começo a 15,00% no fim.\n  no começo, 2024-11: selic_meta 11,25; ipca_12m 4,87; focus_ipca_12m 4,41; juro_real 6,55; juro_real_longo 7,24; dolar_ptax 6,0535; ibcbr 108,02; desocupacao 6,10; divida_bruta 77,50; primario_12m 1,64; ibcbr_12m 4,3%\n  12 meses depois do fim, 2026-07: selic_meta 14,25; ipca_12m 4,44; focus_ipca_12m 4,19; juro_real 9,66; juro_real_longo 8,27; dolar_ptax 5,0773; ibcbr 110,03; desocupacao 5,30; divida_bruta 82,55; primario_12m 0,67; ibcbr_12m 1,3%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2026-08 a 2026-10 (3 meses): focus_menos_meta de 1,55 a 1,96 (o maior: 1,96); Selic de 14,00% no começo a 13,75% no fim.\n  no começo, 2026-08: selic_meta 14,00; ipca_12m 4,22; focus_ipca_12m 4,55; juro_real 9,04; juro_real_longo 7,92; dolar_ptax 5,1816; ibcbr 110,41; desocupacao 5,30; divida_bruta 82,87; primario_12m 0,62; ibcbr_12m 1,4%\n  12 meses depois do fim, 2027-10: sem dado\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\n6 episódio(s). Do começo ao fim de cada um, a Selic subiu em 5, caiu em 1 e ficou igual em 0.\n"
      }
     },
     {
      "id": "c14",
      "tipo": "conta",
-     "afirmacao": "O mês mais parecido com outubro de 2026 em inflação esperada, juro real e dólar é setembro de 2022, com Selic também em 13,75%; 12 meses depois a Selic estava em 12,75%.",
+     "afirmacao": "O Focus de 30/10 previa Selic de 13,50% no fim de 2026 e de 12,50% no fim de 2027.",
      "numeros": [
-      "13,75",
-      "0,13",
-      "12,75"
+      "13,50",
+      "12,50"
      ],
-     "comando": ".venv/bin/python src/conta.py parecidos 2026-10 focus_ipca_12m juro_real dolar_ptax",
-     "saida": "distância 0,13: 2022-09: selic_meta 13,75; ipca_12m 7,17; focus_ipca_12m 5,09; juro_real 8,24; ... 12 meses depois, 2023-09: selic_meta 12,75; ... recessão começando nos 12 meses seguintes: nenhuma",
+     "comando": ".venv/bin/python src/conta.py focus | tail -5",
+     "saida": "2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3279,62 +3440,146 @@
       "trecho": ""
      },
      "conferencia": {
-      "status": "conferido",
-      "saida": "Os 5 meses mais parecidos com 2026-10 em focus_ipca_12m, juro_real, dolar_ptax (distância em vaivéns normais de cada série; meses a menos de 6 meses um do outro contam uma vez; só meses até 2 anos antes):\nreferência 2026-10: selic_meta 13,75; focus_ipca_12m 4,96; juro_real 8,38; juro_real_longo 8,00; dolar_ptax 5,4212\n\ndistância 0,13: 2022-09: selic_meta 13,75; ipca_12m 7,17; focus_ipca_12m 5,09; juro_real 8,24; juro_real_longo 5,85; dolar_ptax 5,4066; ibcbr 101,16; desocupacao 8,70; divida_bruta 74,15; primario_12m -1,85; ibcbr_12m 4,3%\n  6 meses depois, 2023-03: selic_meta 13,75; ipca_12m 4,65; focus_ipca_12m 5,26; juro_real 8,06; juro_real_longo 6,25; dolar_ptax 5,0804; ibcbr 103,10; desocupacao 8,80; divida_bruta 71,54; primario_12m -0,72; ibcbr_12m 3,6%\n  12 meses depois, 2023-09: selic_meta 12,75; ipca_12m 5,19; focus_ipca_12m 4,02; juro_real 8,39; juro_real_longo 5,82; dolar_ptax 5,0076; ibcbr 102,52; desocupacao 7,70; divida_bruta 73,01; primario_12m 0,95; ibcbr_12m 1,3%\n  recessão começando nos 12 meses seguintes: nenhuma\n\ndistância 0,35: 2023-05: selic_meta 13,75; ipca_12m 3,94; focus_ipca_12m 4,66; juro_real 8,68; juro_real_longo 5,64; dolar_ptax 5,0959; ibcbr 102,42; desocupacao 8,30; divida_bruta 72,11; primario_12m -0,37; ibcbr_12m 2,8%\n  6 meses depois, 2023-11: selic_meta 12,25; ipca_12m 4,68; focus_ipca_12m 3,93; juro_real 8,00; juro_real_longo 5,78; dolar_ptax 4,9355; ibcbr 103,61; desocupacao 7,50; divida_bruta 73,32; primario_12m 1,21; ibcbr_12m 2,9%\n  12 meses depois, 2024-05: selic_meta 10,50; ipca_12m 3,93; focus_ipca_12m 3,64; juro_real 6,62; juro_real_longo 6,26; dolar_ptax 5,2416; ibcbr 105,59; desocupacao 7,10; divida_bruta 75,67; primario_12m 2,49; ibcbr_12m 3,1%\n  recessão começando nos 12 meses seguintes: nenhuma\n\ndistância 0,88: 2022-02: selic_meta 10,75; ipca_12m 10,54; focus_ipca_12m 5,22; juro_real 5,26; juro_real_longo 5,80; dolar_ptax 5,1394; ibcbr 98,49; desocupacao 11,20; divida_bruta 76,92; primario_12m -1,36; ibcbr_12m -0,2%\n  6 meses depois, 2022-08: selic_meta 13,75; ipca_12m 8,73; focus_ipca_12m 5,64; juro_real 7,68; juro_real_longo 6,04; dolar_ptax 5,1790; ibcbr 101,10; desocupacao 8,90; divida_bruta 74,57; primario_12m -1,89; ibcbr_12m 4,2%\n  12 meses depois, 2023-02: selic_meta 13,75; ipca_12m 5,60; focus_ipca_12m 5,60; juro_real 7,71; juro_real_longo 6,52; dolar_ptax 5,2078; ibcbr 103,08; desocupacao 8,60; divida_bruta 71,77; primario_12m -0,91; ibcbr_12m 4,7%\n  recessão começando nos 12 meses seguintes: nenhuma\n\ndistância 1,02: 2024-10: selic_meta 10,75; ipca_12m 4,76; focus_ipca_12m 4,01; juro_real 6,48; juro_real_longo 6,87; dolar_ptax 5,7779; ibcbr 108,27; desocupacao 6,20; divida_bruta 77,38; primario_12m 1,91; ibcbr_12m 5,3%\n  6 meses depois, 2025-04: selic_meta 14,25; ipca_12m 5,53; focus_ipca_12m 4,98; juro_real 8,83; juro_real_longo 7,54; dolar_ptax 5,6608; ibcbr 109,52; desocupacao 6,60; divida_bruta 75,62; primario_12m 0,05; ibcbr_12m 4,7%\n  12 meses depois, 2025-10: selic_meta 15,00; ipca_12m 4,68; focus_ipca_12m 4,06; juro_real 10,51; juro_real_longo 7,53; dolar_ptax 5,3843; ibcbr 108,74; desocupacao 5,40; divida_bruta 78,29; primario_12m 0,30; ibcbr_12m 0,4%\n  recessão começando nos 12 meses seguintes: nenhuma\n\ndistância 1,07: 2023-12: selic_meta 11,75; ipca_12m 4,62; focus_ipca_12m 3,88; juro_real 7,58; juro_real_longo 5,49; dolar_ptax 4,8413; ibcbr 104,90; desocupacao 7,40; divida_bruta 73,83; primario_12m 2,28; ibcbr_12m 4,3%\n  6 meses depois, 2024-06: selic_meta 10,50; ipca_12m 4,23; focus_ipca_12m 3,61; juro_real 6,65; juro_real_longo 6,53; dolar_ptax 5,5589; ibcbr 106,57; desocupacao 6,90; divida_bruta 76,68; primario_12m 2,40; ibcbr_12m 4,1%\n  12 meses depois, 2024-12: selic_meta 12,25; ipca_12m 4,83; focus_ipca_12m 4,95; juro_real 6,96; juro_real_longo 7,64; dolar_ptax 6,1923; ibcbr 107,38; desocupacao 6,20; divida_bruta 76,27; primario_12m 0,40; ibcbr_12m 2,4%\n  recessão começando nos 12 meses seguintes: nenhuma\n"
+      "status": "nao_confere",
+      "por_que": "números que a conta não dá: 13,50, 12,50"
      }
     },
     {
      "id": "c15",
-     "tipo": "conta",
-     "afirmacao": "Depois da última alta em 2022-08 (13,75%), o ciclo de corte seguinte só começou em 2023-08.",
+     "tipo": "documento",
+     "afirmacao": "O Copom manteve a Selic em 13,75% na 282ª reunião, em 4/11/2026.",
      "numeros": [
-      "13,75%",
-      "2022-08",
-      "2023-08"
+      "13,75",
+      "282"
      ],
-     "comando": ".venv/bin/python src/conta.py ciclos",
-     "saida": "alta de 2021-03 a 2022-08: de 2,00% para 13,75% (+11,75 ponto(s)) | corte de 2023-08 a 2024-05: de 13,75% para 10,50% (-3,25 ponto(s))",
+     "comando": "",
+     "saida": "",
      "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
+      "quem": "Banco Central do Brasil (comunicado do Copom, segundo o resultado de busca)",
+      "url": "https://www.bcb.gov.br/en/monetarypolicy/copomstatements",
+      "data": "2026-11-04",
+      "trecho": "Copom decided to maintain the Selic rate at 13.75% p.a."
      },
      "conferencia": {
-      "status": "conferido",
-      "saida": "Ciclos da Selic desde 2002, mês a mês (uma pausa no meio de um ciclo não o interrompe, se ele segue para o mesmo lado):\ncorte de 2002-02 a 2002-07: de 19,00% para 18,00% (-1,00 ponto(s))\nalta de 2002-10 a 2003-02: de 18,00% para 26,50% (+8,50 ponto(s))\ncorte de 2003-06 a 2004-04: de 26,50% para 16,00% (-10,50 ponto(s))\nalta de 2004-09 a 2005-05: de 16,00% para 19,75% (+3,75 ponto(s))\ncorte de 2005-09 a 2007-09: de 19,75% para 11,25% (-8,50 ponto(s))\nalta de 2008-04 a 2008-09: de 11,25% para 13,75% (+2,50 ponto(s))\ncorte de 2009-01 a 2009-07: de 13,75% para 8,75% (-5,00 ponto(s))\nalta de 2010-04 a 2011-07: de 8,75% para 12,50% (+3,75 ponto(s))\ncorte de 2011-09 a 2012-10: de 12,50% para 7,25% (-5,25 ponto(s))\nalta de 2013-04 a 2015-07: de 7,25% para 14,25% (+7,00 ponto(s))\ncorte de 2016-10 a 2020-08: de 14,25% para 2,00% (-12,25 ponto(s))\nalta de 2021-03 a 2022-08: de 2,00% para 13,75% (+11,75 ponto(s))\ncorte de 2023-08 a 2024-05: de 13,75% para 10,50% (-3,25 ponto(s))\nalta de 2024-09 a 2025-06: de 10,50% para 15,00% (+4,50 ponto(s))\ncorte de 2026-03 a 2026-09: de 15,00% para 13,75% (-1,25 ponto(s))\n"
+      "status": "nao_aberto",
+      "fonte_conhecida": true
      }
     },
     {
      "id": "c16",
      "tipo": "site",
-     "afirmacao": "A proposta de limitar a Selic entrou no radar do presidente; a Fazenda nega.",
-     "numeros": [],
+     "afirmacao": "O Banco Central subiu a previsão do IPCA de 2026 para 5,6%.",
+     "numeros": [
+      "5,6%"
+     ],
      "comando": "",
-     "saida": "2026-11-01: Proposta de teto para a Selic entra no radar do presidente, e a Fazenda nega (Folha)",
+     "saida": "Com a Selic parada em 13,75%, os bancos seguem cobrando caro das pessoas e das empresas, o que segura consumo e investimento. O Banco Central subiu a previsão do IPCA de 2026 para 5,6%.",
      "fonte": {
-      "quem": "Memória do momento (Folha)",
-      "url": "https://www1.folha.uol.com.br/mercado/2026/11/proposta-de-lara-resende-para-limitar-selic-entra-no-radar-de-lula-e-assusta-mercado.shtml",
-      "data": "2026-11-01",
-      "trecho": "Proposta de teto para a Selic entra no radar do presidente, e a Fazenda nega"
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
      },
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true
+      "status": "site"
      }
     },
     {
      "id": "c17",
-     "tipo": "site",
-     "afirmacao": "O partido do governo criticou o Banco Central por parar de cortar a Selic.",
-     "numeros": [],
+     "tipo": "biblioteca",
+     "afirmacao": "O juro leva em média 29 meses para pesar todo nos preços (forte).",
+     "numeros": [
+      "29 meses",
+      "67 estudos"
+     ],
      "comando": "",
-     "saida": "2026-11-05: Partido do governo critica Banco Central por parar de cortar a Selic (g1)",
+     "saida": "",
      "fonte": {
-      "quem": "Memória do momento (g1)",
+      "quem": "Havranek e Rusnak, 2013, International Journal of Central Banking",
+      "url": "https://www.cnb.cz/en/economic-research/research-publications/cnb-working-paper-series/Transmission-Lags-of-Monetary-Policy-A-Meta-Analysis-00001",
+      "data": "",
+      "trecho": "O juro leva em média 29 meses para pesar todo nos preços, numa meta-análise de 67 estudos"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "via": "biblioteca"
+     }
+    },
+    {
+     "id": "c18",
+     "tipo": "biblioteca",
+     "afirmacao": "No Brasil, a meta de inflação pesa na inflação que os bancos esperam (média).",
+     "numeros": [
+      ""
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Carvalho e Minella, 2012, Journal of International Money and Finance",
+      "url": "https://econpapers.repec.org/RePEc:eee:jimfin:v:31:y:2012:i:6:p:1371-1391",
+      "data": "",
+      "trecho": "a previsão de inflação dos bancos (Focus) acerta mais que os modelos estatísticos, e a meta de inflação pesa na inflação que os bancos esperam"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "via": "biblioteca"
+     }
+    },
+    {
+     "id": "c19",
+     "tipo": "biblioteca",
+     "afirmacao": "Dominância fiscal: com dívida alta e medo de calote, subir o juro pode enfraquecer o real (média, só crise aguda).",
+     "numeros": [
+      "2002",
+      "2003"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Blanchard, 2004, NBER",
+      "url": "https://www.nber.org/papers/w10389",
+      "data": "",
+      "trecho": "subir o juro pode enfraquecer o real e subir a inflação, em vez de baixá-la, o que se chama dominância fiscal; o estudo usa os dados do Brasil de 2002 e 2003"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "via": "biblioteca"
+     }
+    },
+    {
+     "id": "c20",
+     "tipo": "biblioteca",
+     "afirmacao": "Regra de Taylor não serve de veredito da Selic (fraca).",
+     "numeros": [
+      ""
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Orphanides, 2001, American Economic Review",
+      "url": "https://econpapers.repec.org/RePEc:aea:aecrev:v:91:y:2001:i:4:p:964-985",
+      "data": "",
+      "trecho": "as recomendações da regra ficam muito diferentes das calculadas com os dados revisados depois"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "via": "biblioteca"
+     }
+    },
+    {
+     "id": "c21",
+     "tipo": "documento",
+     "afirmacao": "O partido do governo criticou o Banco Central por parar de cortar a Selic.",
+     "numeros": [
+      ""
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "g1 (blog de Valdo Cruz)",
       "url": "https://g1.globo.com/politica/blog/valdo-cruz/post/2026/11/05/pt-e-parte-da-equipe-de-lula-atacam-bc-apos-copom-interromper-ciclo-de-corte-de-juros-por-duvidas-sobre-ajuste-fiscal.ghtml",
       "data": "2026-11-05",
-      "trecho": "PT e parte da equipe de Lula atacam BC após Copom interromper ciclo de corte de juros"
+      "trecho": "PT e parte da equipe de Lula atacam BC após Copom interromper ciclo de corte de juros por dúvidas sobre ajuste fiscal"
      },
      "conferencia": {
       "status": "nao_aberto",
@@ -3342,268 +3587,521 @@
      }
     },
     {
-     "id": "c18",
-     "tipo": "site",
-     "afirmacao": "A dívida ligada à Selic bateu recorde de 52,74% em agosto; cada ponto de Selic custa cerca de R$ 48 bilhões por ano.",
+     "id": "c22",
+     "tipo": "documento",
+     "afirmacao": "O presidente vai indicar seis diretores do Banco Central até o fim de 2027.",
      "numeros": [
-      "52,74%",
-      "R$ 48 bilhões"
+      "seis"
      ],
      "comando": "",
-     "saida": "2026-11-01: Dívida do governo ligada à Selic bate recorde de 52,74% em agosto (Cada ponto a mais na Selic custa cerca de R$ 48 bilhões por ano ao governo)",
+     "saida": "",
      "fonte": {
-      "quem": "Memória do momento (Poder360)",
-      "url": "https://www.poder360.com.br/poder-economia/divida-atrelada-a-selic-bate-recorde-historico-em-2026/",
-      "data": "2026-11-01",
-      "trecho": "Dívida atrelada à Selic bate recorde histórico em 2026"
+      "quem": "Folha",
+      "url": "https://www1.folha.uol.com.br/mercado/2026/11/lula-indicara-seis-diretores-do-banco-central-ate-o-fim-de-2027-e-mercado-teme-mudanca-de-perfil.shtml",
+      "data": "2026-11-02",
+      "trecho": "Lula indicará seis diretores do Banco Central até o fim de 2027"
      },
      "conferencia": {
       "status": "nao_aberto",
       "fonte_conhecida": true
      }
+    },
+    {
+     "id": "c23",
+     "tipo": "documento",
+     "afirmacao": "Cada ponto a mais na Selic custa cerca de R$ 48 bilhões por ano ao governo.",
+     "numeros": [
+      "48 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Poder360",
+      "url": "https://www.poder360.com.br/poder-economia/divida-atrelada-a-selic-bate-recorde-historico-em-2026/",
+      "data": "2026-11-01",
+      "trecho": "Cada ponto a mais na Selic custa cerca de R$ 48 bilhões por ano ao governo"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c24",
+     "tipo": "conta",
+     "afirmacao": "O Focus de 30/10 previa Selic de 13,50% no fim de 2026 e de 12,50% no fim de 2027, e IPCA de 2027 de 4,76%.",
+     "numeros": [
+      "13,50",
+      "12,50",
+      "4,76"
+     ],
+     "comando": ".venv/bin/python src/conta.py focus --de 2026-10-30",
+     "saida": "2026-10-30: IPCA 2027: 4,76\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Previsões dos bancos (Focus, mediana) na data da pesquisa, como o site guardou:\n2026-10-30: Câmbio 2026: 5,34\n2026-10-30: Câmbio 2027: 5,40\n2026-10-30: Câmbio 2028: 5,40\n2026-10-30: Câmbio 2029: 5,45\n2026-10-30: Câmbio 2030: 5,50\n2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76\n2026-10-30: IPCA 2028: 4,00\n2026-10-30: IPCA 2029: 3,98\n2026-10-30: IPCA 2030: 3,81\n2026-10-30: IPCA 12m: 4,96\n2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20\n2026-10-30: PIB Total 2028: 1,80\n2026-10-30: PIB Total 2029: 2,00\n2026-10-30: PIB Total 2030: 2,00\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50\n2026-10-30: Selic 2028: 11,00\n2026-10-30: Selic 2029: 10,25\n2026-10-30: Selic 2030: 10,00\n"
+     }
+    },
+    {
+     "id": "c25",
+     "tipo": "documento",
+     "afirmacao": "O Copom subiu a projeção de inflação do 2º trimestre de 2028, no cenário de referência, de 3,1% para 3,5%.",
+     "numeros": [
+      "3,1%",
+      "3,5%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agência Estado (via DGABC)",
+      "url": "https://www.dgabc.com.br/Noticia/4366893/bc-projecao-de-ipca-em-12-meses-no-2-trimestre-de-2028-passa-de-3-1-para-3-5",
+      "data": "2026-11-04",
+      "trecho": "BC: Projeção de IPCA em 12 meses no 2º trimestre de 2028 passa de 3,1% para 3,5%"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c26",
+     "tipo": "documento",
+     "afirmacao": "O comunicado diz que a decisão é compatível com a convergência da inflação para a meta no horizonte relevante e que a política seguirá restritiva.",
+     "numeros": [
+      "13.75"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Banco Central do Brasil (comunicado do Copom, segundo o resultado de busca)",
+      "url": "https://www.bcb.gov.br/en/monetarypolicy/copomstatements",
+      "data": "2026-11-04",
+      "trecho": "this decision is consistent with the strategy for inflation convergence to a level around its target, throughout the relevant horizon for monetary policy"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c27",
+     "tipo": "documento",
+     "afirmacao": "Antes da reunião, 39 de 75 casas esperavam corte para 13,50% e 36 esperavam manutenção.",
+     "numeros": [
+      "39",
+      "75",
+      "13,50%",
+      "36"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Projeções Broadcast (relatado em busca; Agência Estado)",
+      "url": "https://www.dgabc.com.br/Noticia/4366893/bc-projecao-de-ipca-em-12-meses-no-2-trimestre-de-2028-passa-de-3-1-para-3-5",
+      "data": "2026-11-04",
+      "trecho": "Projeção de IPCA em 12 meses no 2º trimestre de 2028 passa de 3,1% para 3,5%"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c28",
+     "tipo": "conta",
+     "afirmacao": "A Selic está 1,25 ponto acima do que o Focus de 30/10 previa para o fim de 2027.",
+     "numeros": [
+      "1,25"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"13.75-12.5\"",
+     "saida": "13.75-12.5 = 1,2500 (com 3 casas: 1,250; com 2 casas: 1,25; com 1 casa: 1,2)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "13.75-12.5 = 1,2500 (com 3 casas: 1,250; com 2 casas: 1,25; com 1 casa: 1,2)\n"
+     }
+    },
+    {
+     "id": "c29",
+     "tipo": "conta",
+     "afirmacao": "Nos episódios da c13, sem 2002 e 2013-16, restam 2004, 2021 e 2024, todos com Selic subindo do começo ao fim (16,00 para 17,25; 7,75 para 13,75; 11,25 para 15,00).",
+     "numeros": [
+      "16,00",
+      "17,25",
+      "7,75",
+      "13,75",
+      "11,25",
+      "15,00"
+     ],
+     "comando": ".venv/bin/python src/conta.py episodios \"focus_menos_meta>1.4\"",
+     "saida": "de 2004-08 a 2004-11 (4 meses): focus_menos_meta de 1,43 a 1,47 (o maior: 1,57); Selic de 16,00% no começo a 17,25% no fim.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Episódios em que focus_menos_meta > 1,40 (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não por mês: um episódio longo não vale mais que um curto.\nfocus_menos_meta: inflação esperada para 12 meses (Focus) menos o centro da meta desses 12 meses, em pontos.\n\nde 2002-08 a 2003-07 (12 meses): focus_menos_meta de 1,41 a 1,79 (o maior: 8,26); Selic de 18,00% no começo a 24,50% no fim.\n  no começo, 2002-08: selic_meta 18,00; ipca_12m 7,46; focus_ipca_12m 5,24; juro_real 12,12; dolar_ptax 3,0223\n  12 meses depois do fim, 2004-07: selic_meta 16,00; ipca_12m 6,81; focus_ipca_12m 6,10; juro_real 9,33; dolar_ptax 3,0268; ibcbr 75,25; primario_12m -3,61; ibcbr_12m 8,8%\n  recessão começando no episódio ou nos 12 meses seguintes: 1T2003\n\nde 2004-08 a 2004-11 (4 meses): focus_menos_meta de 1,43 a 1,47 (o maior: 1,57); Selic de 16,00% no começo a 17,25% no fim.\n  no começo, 2004-08: selic_meta 16,00; ipca_12m 7,18; focus_ipca_12m 6,26; juro_real 9,17; dolar_ptax 2,9338; ibcbr 75,60; primario_12m -3,68; ibcbr_12m 8,5%\n  12 meses depois do fim, 2005-11: selic_meta 18,50; ipca_12m 6,22; focus_ipca_12m 4,63; juro_real 13,26; juro_real_longo 8,71; dolar_ptax 2,2070; ibcbr 78,21; primario_12m -3,91; ibcbr_12m 2,0%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2013-08 a 2016-05 (34 meses): focus_menos_meta de 1,62 a 1,44 (o maior: 2,53); Selic de 9,00% no começo a 14,25% no fim.\n  no começo, 2013-08: selic_meta 9,00; ipca_12m 6,09; focus_ipca_12m 6,12; juro_real 2,71; juro_real_longo 5,71; dolar_ptax 2,3725; ibcbr 102,97; desocupacao 7,20; divida_bruta 53,44; primario_12m -1,65; ibcbr_12m 2,1%\n  12 meses depois do fim, 2017-05: selic_meta 11,25; ipca_12m 3,60; focus_ipca_12m 4,56; juro_real 6,40; juro_real_longo 5,62; dolar_ptax 3,2437; ibcbr 94,25; desocupacao 13,40; divida_bruta 72,34; primario_12m 2,46; ibcbr_12m 0,5%\n  recessão começando no episódio ou nos 12 meses seguintes: 2T2014, 1T2015, 3T2016\n\nde 2021-10 a 2023-05 (20 meses): focus_menos_meta de 1,58 a 1,52 (o maior: 2,59); Selic de 7,75% no começo a 13,75% no fim.\n  no começo, 2021-10: selic_meta 7,75; ipca_12m 10,67; focus_ipca_12m 5,12; juro_real 2,50; juro_real_longo 5,77; dolar_ptax 5,6430; ibcbr 97,49; desocupacao 12,10; divida_bruta 79,52; primario_12m 0,23; ibcbr_12m 0,2%\n  12 meses depois do fim, 2024-05: selic_meta 10,50; ipca_12m 3,93; focus_ipca_12m 3,64; juro_real 6,62; juro_real_longo 6,26; dolar_ptax 5,2416; ibcbr 105,59; desocupacao 7,10; divida_bruta 75,67; primario_12m 2,49; ibcbr_12m 3,1%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2024-11 a 2025-07 (9 meses): focus_menos_meta de 1,41 a 1,42 (o maior: 2,74); Selic de 11,25% no começo a 15,00% no fim.\n  no começo, 2024-11: selic_meta 11,25; ipca_12m 4,87; focus_ipca_12m 4,41; juro_real 6,55; juro_real_longo 7,24; dolar_ptax 6,0535; ibcbr 108,02; desocupacao 6,10; divida_bruta 77,50; primario_12m 1,64; ibcbr_12m 4,3%\n  12 meses depois do fim, 2026-07: selic_meta 14,25; ipca_12m 4,44; focus_ipca_12m 4,19; juro_real 9,66; juro_real_longo 8,27; dolar_ptax 5,0773; ibcbr 110,03; desocupacao 5,30; divida_bruta 82,55; primario_12m 0,67; ibcbr_12m 1,3%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2026-08 a 2026-10 (3 meses): focus_menos_meta de 1,55 a 1,96 (o maior: 1,96); Selic de 14,00% no começo a 13,75% no fim.\n  no começo, 2026-08: selic_meta 14,00; ipca_12m 4,22; focus_ipca_12m 4,55; juro_real 9,04; juro_real_longo 7,92; dolar_ptax 5,1816; ibcbr 110,41; desocupacao 5,30; divida_bruta 82,87; primario_12m 0,62; ibcbr_12m 1,4%\n  12 meses depois do fim, 2027-10: sem dado\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\n6 episódio(s). Do começo ao fim de cada um, a Selic subiu em 5, caiu em 1 e ficou igual em 0.\n"
+     }
+    },
+    {
+     "id": "c30",
+     "tipo": "conta",
+     "afirmacao": "Distância do Focus de 2027 à meta de 3%: 1,76 ponto.",
+     "numeros": [
+      "1,76"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"4.76-3\"",
+     "saida": "4.76-3 = 1,7600 (com 3 casas: 1,760; com 2 casas: 1,76; com 1 casa: 1,8)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "4.76-3 = 1,7600 (com 3 casas: 1,760; com 2 casas: 1,76; com 1 casa: 1,8)\n"
+     }
+    },
+    {
+     "id": "c31",
+     "tipo": "site",
+     "afirmacao": "Integrantes do governo criticaram o BC após a pausa.",
+     "numeros": [
+      ""
+     ],
+     "comando": "",
+     "saida": "Partido do governo critica Banco Central por parar de cortar a Selic (Os ataques ao Banco Central fazem investidores temerem pressão política sobre os juros...)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "fontes_memoria": [
+      {
+       "quem": "g1",
+       "url": "https://g1.globo.com/politica/blog/valdo-cruz/post/2026/11/05/pt-e-parte-da-equipe-de-lula-atacam-bc-apos-copom-interromper-ciclo-de-corte-de-juros-por-duvidas-sobre-ajuste-fiscal.ghtml",
+       "data": "2026-11-05",
+       "trecho": "PT e parte da equipe de Lula atacam BC após Copom interromper ciclo de corte de juros por dúvidas sobre ajuste fiscal"
+      }
+     ],
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true,
+      "via": "memória do momento"
+     }
+    },
+    {
+     "id": "c32",
+     "tipo": "documento",
+     "afirmacao": "A produção industrial caiu 0,8% em setembro e 4,1% desde maio.",
+     "numeros": [
+      "0,8%",
+      "4,1%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Gazeta do Povo (dados do IBGE)",
+      "url": "https://www.gazetadopovo.com.br/economia/producao-industrial-recua-08-em-setembro-e-acumula-perda-de-41-desde-maio/",
+      "data": "2026-11-05",
+      "trecho": "Produção industrial recua 0,8% em setembro e acumula perda de 4,1% desde maio"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c33",
+     "tipo": "documento",
+     "afirmacao": "O ministro da Fazenda diz que o governo prepara ajuste fiscal gradual, ainda sem data.",
+     "numeros": [
+      ""
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Folha (declaração do ministro da Fazenda)",
+      "url": "https://www1.folha.uol.com.br/mercado/2026/11/governo-prepara-ajuste-fiscal-gradual-que-respeita-compromissos-de-campanha-diz-durigan.shtml",
+      "data": "2026-11-03",
+      "trecho": "governo prepara ajuste fiscal gradual que respeita compromissos de campanha"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c34",
+     "tipo": "documento",
+     "afirmacao": "Cada ponto a mais na Selic custa cerca de R$ 48 bilhões por ano ao governo (fonte secundária, não é do Tesouro).",
+     "numeros": [
+      "48 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Poder360",
+      "url": "https://www.poder360.com.br/poder-economia/divida-atrelada-a-selic-bate-recorde-historico-em-2026/",
+      "data": "2026-11-01",
+      "trecho": "Cada ponto a mais na Selic custa cerca de R$ 48 bilhões por ano ao governo"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c35",
+     "tipo": "site",
+     "afirmacao": "Vagas esfriaram (objeção pró-corte).",
+     "numeros": [
+      "121,3 mil",
+      "43%"
+     ],
+     "comando": "",
+     "saida": "As empresas abriram 43% menos vagas que em setembro de 2025, sinal de que o juro alto já freia o emprego e, com ele, a renda que sustenta o consumo das famílias.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c36",
+     "tipo": "conta",
+     "afirmacao": "Média do juro real no começo das 7 pausas que terminaram em alta: 5,94%; hoje 8,7%.",
+     "numeros": [
+      "5,94",
+      "8,7"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"(12.7+9.9+7.1+4.5+1.8-1.0+6.6)/7\"",
+     "saida": "(12.7+9.9+7.1+4.5+1.8-1.0+6.6)/7 = 5,9429 (com 3 casas: 5,943; com 2 casas: 5,94; com 1 casa: 5,9)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "nao_confere",
+      "por_que": "números que a conta não dá: 8,7"
+     }
     }
    ],
-   "pressao": "inflacao",
-   "tese": "Desde 2002, o Banco Central parou de cortar a Selic 10 vezes. Em 8 delas a inflação esperada subiu nos 3 meses seguintes, e em 7 dessas 8 a Selic voltou a subir, de 3 a 9 meses depois do último corte. Nas 2 vezes em que ela caiu, o Banco Central voltou a cortar. Desta vez ela subiu 0,36 ponto no primeiro mês. Já os bancos (Focus) preveem Selic de 13,50% no fim de 2026, ou seja, um corte em 9/12. O passado aponta para o outro lado. São 10 casos, um padrão e não uma lei, e hoje o emprego está mais fraco que na maioria deles.",
-   "duracao_s": 575,
-   "offline": true,
+   "duracao_pensar_s": 436,
+   "duracao_s": 647,
    "curto": {
-    "porque": "O Banco Central disse que parou de cortar porque as incertezas aumentaram de forma significativa e a inflação esperada subiu. Ele também subiu a própria previsão de inflação: para 2026, de 5,2% para 5,6%, e para 2027, de 3,9% para 4,7%, acima do teto da meta, de 4,5%. A decisão foi unânime, e o Banco Central diz que a Selic de 13,75% já freia bastante a economia.",
-    "e_dai": "Desde 2002, em 7 de 8 pausas com inflação esperada subindo, a Selic voltou a subir; agora a inflação esperada já subiu 0,36 ponto, e os bancos ainda preveem corte.",
+    "porque": "O Banco Central disse que manteve a Selic em 13,75% porque as incertezas aumentaram muito e a inflação acelerou. Ele subiu para 5,6% a previsão do IPCA de 2026 e disse que a decisão é coerente com levar a inflação para perto da meta.",
+    "e_dai": "O juro real de 8,7% não afasta nova alta: nas 7 pausas desde 2002 que acabaram em alta, ele ia de -1,0% a 12,7%. São poucos casos, um padrão.",
+    "objetivo": "No comunicado, o Copom diz que a decisão é coerente com levar a inflação para perto da meta de 3% no horizonte relevante. A projeção dele para meados de 2028 subiu para 3,5%.",
+    "condicao": "Chega à meta se a inflação esperada parar de subir com a Selic parada; em 7 de 8 pausas desde 2002 em que ela subiu, o Banco Central voltou a subir a Selic.",
     "caderno": [
      "c1",
-     "c3",
-     "c4",
-     "c5",
+     "c2",
      "c7",
      "c8",
-     "c9"
+     "c36",
+     "c15",
+     "c16",
+     "c25",
+     "c26"
     ]
    },
-   "curto_corrigido_a_mao": "2026-11-08: o editor-chefe escreveu 'os sete diretores'; o Copom tem nove membros e o caderno (c8) diz só 'decisão unânime'.",
+   "pressao": "juro",
+   "pagina_que_falta": "",
+   "tese": "Pela régua do próprio Copom, a inflação perto da meta no horizonte relevante, a pausa começa longe dela. A projeção do Banco Central para meados de 2028 subiu para 3,5%, contra a meta de 3%. A inflação esperada está 1,60 ponto acima da meta, a maior distância entre as 11 pausas desde 2002. O juro real de 8,7% não separa os casos: nas 7 pausas que terminaram em alta, ele ia de -1,0% a 12,7%, e na única que terminou em corte era de 2,5%. O que separou os casos foi o rumo da inflação esperada. São 10 casos: mostram um padrão, não uma lei.",
    "rascunho": {
-    "titulo": "Nas pausas da Selic desde 2002, a inflação esperada subindo quase sempre trouxe alta do juro, e não corte",
-    "texto": "Em 30/10, na última pesquisa antes da decisão, os bancos (Focus) ainda previam Selic de 13,50% no fim de 2026 [c7]. O Banco Central manteve 13,75% em 4/11, então essa previsão só se cumpre com um corte em 9/12, a última reunião do ano. As outras pausas desde 2002 apontam para o lado contrário.\n\nNas 8 vezes em que a inflação esperada subiu nos 3 meses depois do último corte, a Selic voltou a subir em 7, de 3 a 9 meses depois [c3, c4, c5]. Desta vez ela subiu 0,36 ponto só no primeiro mês [c1]. São 10 casos, o que mostra um padrão e não uma lei, e o emprego hoje está mais fraco que na maioria deles.\n\nA mesma pesquisa já mostra os bancos mudando de ideia. Em uma semana, de 23/10 para 30/10, a Selic que eles esperam para o fim de 2027 subiu de 11,75% para 12,50% [c7]. Ou seja, eles ainda contavam com um corte em dezembro, mas já esperavam juro mais alto por mais tempo no ano que vem.\n\n### Das 8 vezes em que a inflação esperada subiu depois da pausa, 7 terminaram em alta\n\nA inflação esperada é quanto os bancos e as consultorias acham que os preços vão subir nos 12 meses seguintes. Desde 2002, o Banco Central parou de cortar a Selic 10 vezes, e o que veio depois de cada pausa acompanhou o que essa expectativa fez nos 3 meses seguintes [c1].\n\nNas 2 vezes em que a expectativa caiu, o corte voltou. Depois do último corte de março de 2002, ela caiu 0,28 ponto, e o Banco Central voltou a cortar 4 meses depois [c2]. Depois de dezembro de 2003, ela caiu 0,47 ponto, e o corte voltou 3 meses depois [c2].\n\nNas outras 8, a expectativa subiu, e o caminho mudou. Em julho de 2002, ela subiu 3,71 pontos, e a alta da Selic veio 3 meses depois [c3]. Em 2004 e em 2007, ela subiu 0,56 e 0,44 ponto, e a alta veio 5 e 7 meses depois [c3].\n\nO padrão vale também para subidas pequenas. Em 2009, a expectativa subiu 0,21 ponto, e a alta veio 9 meses depois; em 2012, subiu só 0,10 ponto, e a alta veio 6 meses depois [c4]. Em 2020, ela subiu 0,81 ponto, e o juro voltou a subir 7 meses depois [c5].\n\nO caso mais recente você provavelmente lembra. O Banco Central fez o último corte em maio de 2024, com a Selic em 10,50%, e a expectativa subiu 0,23 ponto nos 3 meses seguintes [c5]. A alta veio 4 meses depois do último corte, e o ciclo só parou em junho de 2025, com a Selic em 15% [c5].\n\nO último corte desta vez foi em setembro, então a reunião de dezembro já cai dentro da janela de 3 a 9 meses das outras altas. O passado não diz que a alta vem em dezembro. Ele diz que, com a expectativa subindo, um corte seria a exceção.\n\n### O primeiro mês ainda não decide, e 2018 mostra por quê\n\nA única pausa com expectativa subindo que terminou em corte foi a de março de 2018. No primeiro mês, a expectativa subiu 0,16 ponto, mas depois devolveu quase tudo e fechou os 3 meses com alta de só 0,07 ponto [c4]. O Banco Central voltou a cortar, 17 meses depois [c4].\n\nO contrário também já aconteceu. Em 2007, a expectativa caiu 0,01 ponto no primeiro mês e terminou os 3 meses com alta de 0,44 ponto, e a Selic subiu 7 meses depois [c3]. Por isso, o primeiro mês sozinho pode enganar para os dois lados.\n\nDesta vez, só existe o dado de um mês, já que o último corte foi em setembro [c1]. Mas a subida de 0,36 ponto é mais que o dobro da de 2018 no mesmo prazo, e ela vem depois de meses subindo [c1, c4]. Se compararmos com junho, a expectativa passou de 4,12% para 4,96% em outubro [c12].\n\nO próprio Banco Central piorou as contas dele na decisão de 4/11. A projeção dele para a inflação de 2027 subiu de 3,9% para 4,7%, longe da meta de 3% [c1, c8]. Para o segundo trimestre de 2028, o prazo que ele usa para decidir o juro, a projeção subiu de 3,1% para 3,5% [c8].\n\n### O emprego mais fraco é a melhor razão para o padrão falhar\n\nQuem espera o corte em dezembro tem um argumento forte. O juro já está apertado: a Selic menos a inflação esperada deu 8,38% em outubro, mais que em 68% dos meses desde 2002 [c13]. O próprio Banco Central chamou esse juro de \"substancialmente contracionista\", o que quer dizer que ele já freia a economia [c9].\n\nE o freio já aparece no emprego. Em setembro, o país abriu 121.305 vagas com carteira assinada [c10]. Se as empresas contratam menos, as famílias gastam menos, e os preços tendem a subir mais devagar sem que o Banco Central precise subir o juro de novo.\n\nO mês mais parecido com outubro de 2026, juntando inflação esperada, juro e dólar, é setembro de 2022, quando a Selic também estava em 13,75% [c14]. Doze meses depois, ela estava em 12,75%, sem nenhuma alta no caminho [c14]. O corte começou em agosto de 2023, um ano depois da última alta [c15].\n\nEsse caso tem uma diferença que pesa. Em 2022, o Banco Central tinha acabado de subir o juro, e não de cortar, então não entra na conta das 10 pausas. Um petróleo mais barato ou um plano das contas do governo que convença quem investe também podem fazer a expectativa cair, e aí o padrão de 2018 volta.\n\nA política em volta mexe na mesma peça. A ideia de limitar a Selic entrou no radar do presidente, e o Ministério da Fazenda nega [c16]. O partido do governo criticou o Banco Central por parar de cortar [c17].\n\nO efeito disso não depende de quem governa. Quando quem investe passa a duvidar que o Banco Central vai segurar os preços, espera inflação maior e cobra mais para emprestar ao país, e a inflação esperada sobe. O juro pesa nas contas públicas de qualquer governo: com 52,74% da dívida ligada à Selic em agosto, cada ponto custa cerca de R$ 48 bilhões por ano [c18].\n\nVale dizer o tamanho da evidência. São 10 pausas em 24 anos, e a expectativa e a Selic andam juntas em parte porque respondem às mesmas coisas, como o dólar e o petróleo. Isso mostra uma ligação que se repetiu, e não prova que uma causa a outra.\n\nO site vai olhar três coisas até a decisão. A primeira é a inflação esperada para 12 meses na pesquisa dos bancos de cada segunda-feira, até 7/12, comparada com os 4,60% de setembro [c1]. A segunda é a inflação de outubro, que o IBGE divulga em 12/11, e a terceira é a decisão de 9/12.\n\nSe a expectativa voltar para baixo de 4,60% e o Banco Central cortar em dezembro, o padrão falhou desta vez, como em 2018, e o site vai dizer isso. Você pode acompanhar os mesmos números, que saem nas mesmas datas.",
-    "previsao": {
-     "texto": "O Banco Central não corta a Selic em 9/12, e a inflação esperada para 12 meses dos bancos segue acima dos 4,60% de setembro.",
-     "quando": "2026-12-09",
-     "como_conferir": "Veja a inflação esperada para 12 meses na pesquisa Focus de cada segunda-feira até 7/12 e compare com 4,60%. Depois, veja se a decisão do Banco Central (Copom) de 9/12 mantém ou sobe a Selic de 13,75%."
-    }
+    "titulo": "A pausa da Selic começa com a inflação esperada mais longe da meta que em qualquer pausa desde 2002",
+    "texto": "Diante de uma pausa como esta, é fácil pensar que desta vez pode ser diferente, porque o juro já está alto. Hoje a Selic está 8,7% acima da inflação esperada pelos bancos, um freio forte para o crédito de quem compra a prazo e de quem investe [c1]. Só que, nas pausas desde 2002, o tamanho do juro não separou as que terminaram em alta das que terminaram em corte.\n\nO que separou foi o rumo da inflação esperada, e por esse critério a pausa começa longe da régua que o próprio Banco Central escreveu. A inflação esperada está 1,60 ponto acima da meta de 3%, a maior distância entre as 11 pausas desde 2002, e subiu 0,36 ponto no primeiro mês [c1]. A mais perto disso foi a de março de 2002, com 1,18 ponto [c10]. São 10 casos já encerrados, o que mostra um padrão, não uma lei.\n\n### O Banco Central mediu a pausa com a própria projeção, e ela piorou\n\nQuem decidiu foi o Copom, o comitê do Banco Central que decide o juro, na reunião de 4/11, quando manteve a Selic em 13,75% [c15]. Nem o governo nem o Congresso mudam essa decisão: só o próprio comitê pode voltar a mexer na Selic, e a próxima reunião dele é em 9/12.\n\nO objetivo está escrito no comunicado. O Banco Central diz que a decisão é compatível com a inflação chegar perto da meta no horizonte em que ele mira, e que o juro seguirá alto o bastante para frear a economia [c26]. Esse horizonte fica perto de meados de 2028, e a projeção do próprio Banco Central para o segundo trimestre de 2028 subiu de 3,1% para 3,5% [c25]. Ou seja, na conta de quem decidiu, a inflação de daqui a um ano e meio se afastou da meta justamente quando os cortes pararam.\n\nO tamanho da decisão aparece em duas portas. A primeira é a parcela, porque a Selic parada mantém caros o empréstimo, o cartão e o financiamento. A segunda é a conta do governo: cada ponto de Selic custa cerca de R$ 48 bilhões por ano em juros da dívida, numa conta do Poder360, e não do Tesouro [c34].\n\nO caminho pelo qual o juro chega aos preços é lento. Uma meta-análise de 67 estudos mostra que o juro leva em média 29 meses para pesar todo nos preços, e essa é uma evidência forte [c17]. Por isso o Banco Central mira 2028, e não a inflação de hoje.\n\nEle também olha para o que os bancos esperam, porque, no Brasil, a meta pesa na inflação que eles esperam, segundo um estudo com dados só do país, de força média [c18]. Já a ideia de que uma fórmula simples, como a regra de Taylor, diria o juro certo não aguenta como veredito, porque os dados revisados depois mudam a resposta da regra [c20].\n\n### Nas pausas desde 2002, o juro alto não decidiu o final, e o rumo da inflação esperada decidiu\n\nOlhe para as pausas que terminaram em alta. Em julho de 2002, o juro estava 12,7% acima da inflação esperada, e mesmo assim a inflação esperada subiu 3,71 pontos em três meses e a Selic voltou a subir três meses depois [c2]. Em agosto de 2020, no outro extremo, o juro estava 1,0% abaixo da inflação esperada, ela subiu 0,81 ponto e a alta veio sete meses depois [c8].\n\nNo meio do caminho ficou abril de 2004, com o juro 9,9% acima da inflação esperada, quase o nível de hoje, e a Selic voltou a subir cinco meses depois [c3]. Se o juro alto bastasse para segurar a pausa, esse caso teria terminado em corte.\n\nA única pausa com inflação esperada subindo que terminou em corte foi a de março de 2018. O juro estava só 2,5% acima da inflação esperada, mas ela estava abaixo da meta e subiu apenas 0,07 ponto em três meses, e o Banco Central voltou a cortar 17 meses depois [c7]. Nas duas pausas em que a inflação esperada caiu, em março de 2002 e dezembro de 2003, o corte voltou em poucos meses [c10, c11].\n\nO mesmo desenho aparece quando se olha só para os momentos em que a inflação esperada ficou mais de 1,4 ponto acima da meta. Desde 2002 foram seis episódios assim, e a Selic subiu do começo ao fim em 5 deles; o sexto é o de agora [c13]. Tirando os de crise de confiança, como o de 2002, sobram 2004, 2021 e 2024, e em todos a Selic subiu, de 16,00% para 17,25%, de 7,75% para 13,75% e de 11,25% para 15,00% [c29].\n\nAqui entra o tamanho da evidência. São poucos casos, e a ligação entre eles não prova causa: o Banco Central reage aos mesmos números que esta conta usa, por isso o padrão descreve como ele costuma reagir, e não uma lei da economia. Nas pausas que terminaram em alta, a primeira alta veio entre 3 e 9 meses depois do último corte, que desta vez foi em setembro [c12].\n\n### A pausa chega ao objetivo se a inflação esperada para 2027 parar de subir\n\nOs bancos apostam no outro lado. A pesquisa Focus de 30/10 previa a Selic em 13,50% no fim de 2026 e em 12,50% no fim de 2027 [c24]. Isso é 1,25 ponto abaixo da Selic de hoje [c28]. A mesma pesquisa previa inflação de 4,76% em 2027, 1,76 ponto acima da meta [c24, c30].\n\nPela régua do Banco Central, a pausa vai na direção do objetivo se a inflação esperada para 2027 começar a sair de 4,76% rumo a 3% e se a projeção dele para 2028 voltar para perto da meta [c24, c25]. Ela fica longe do objetivo se a inflação esperada seguir subindo com a Selic parada, que é o caso em que, nas pausas desde 2002, a alta voltou.\n\nHá um segundo jeito de dar errado, que o juro sozinho não resolve. Se o dólar subir por desconfiança das contas do governo, subir o juro pode enfraquecer o real e subir a inflação, o que se chama dominância fiscal, num estudo com dados do Brasil de 2002 e 2003 [c19]. A evidência é média e vale só para crise de confiança aguda, e em 2003 o juro alto, junto com sobra nas contas, acabou derrubando a inflação. O ministro da Fazenda diz que o governo prepara um ajuste gradual nas contas, ainda sem data [c33].\n\nSomando os casos e a evidência, o lado mais provável é a pausa terminar em alta, e não em corte, se a inflação esperada continuar onde está. Mas são 10 casos, e a pesquisa de inflação esperada muda toda semana.\n\nQuem paga a Selic parada são as pessoas e as empresas com parcela e o próprio governo, que deve muito em títulos ligados à Selic [c34]. Quem ganha é quem tem dinheiro aplicado, que rende mais. O efeito no emprego vem com atraso de meses, porque o crédito caro faz a empresa contratar menos.\n\nA melhor objeção de quem queria o corte é que o freio já aparece. A produção da indústria caiu 4,1% desde maio [c32], e foram abertas só 121,3 mil vagas com carteira em setembro [c35]. Como o juro leva em média 29 meses para pesar todo [c17], parte desse freio ainda nem chegou.\n\nA melhor objeção do outro lado é que a pausa é pouco. O próprio Banco Central prevê inflação de 5,6% em 2026 [c16], e a inflação esperada subiu no primeiro mês da pausa [c1], dois sinais de que manter pode não bastar.\n\nO critério não muda com quem governa. Em maio de 2024, a inflação esperada estava 0,64 ponto acima da meta e subiu 0,23 ponto em três meses, e a Selic voltou a subir quatro meses depois [c9]. Em março de 2018, com outro governo, ela estava abaixo da meta e quase parada, e o Banco Central voltou a cortar [c7]. A mesma régua, a distância da meta e o rumo da inflação esperada, deu alta numa e corte na outra.\n\nPara você, isso muda o que vale olhar nas próximas notícias. O nível da Selic diz pouco sobre o que vem; o que diz mais é se a inflação esperada pelos bancos para 2027 para de subir. Se ela subir, o crédito tende a ficar caro por mais tempo do que os bancos previam em outubro. O IPCA de outubro sai em 12/11, e o Banco Central volta a decidir o juro em 9/12."
    },
    "conferencia": {
     "codigo_antes": {
-     "graves": [
-      "bloco 3: número ou data sem linha do caderno que confira: 23/10 | trecho: A mesma pesquisa já mostra os bancos mudando de ideia. Em uma semana, de 23/10 para 30/10, a Selic que eles esperam para",
-      "bloco 23: número ou data sem linha do caderno que confira: 24 | trecho: Vale dizer o tamanho da evidência. São 10 pausas em 24 anos, e a expectativa e a Selic andam juntas em parte porque resp",
-      "bloco 24: número ou data sem linha do caderno que confira: 7/12 | trecho: O site vai olhar três coisas até a decisão. A primeira é a inflação esperada para 12 meses na pesquisa dos bancos de cad"
-     ],
+     "graves": [],
      "avisos": [
-      "bloco 17: palavra que o site trocou: cada pressão piorou, ficou igual ou melhorou"
+      "bloco 14: frase de 37 palavras",
+      "bloco 17: frase de 38 palavras",
+      "bloco 18: frase de 37 palavras"
      ],
-     "palavras": 1118,
+     "palavras": 1336,
      "intertitulos": 3
     },
     "ia": {
      "correcoes": [
       {
-       "trecho": "então essa previsão só se cumpre com um corte em 9/12, a última reunião do ano.",
-       "tipo": "fonte",
-       "problema": "A data 9/12 e o fato de ser a última reunião do ano não têm linha no caderno (só aparecem como exemplo no guia).",
-       "como_fica": "então essa previsão só se cumpre com um corte na próxima reunião do Copom."
-      },
-      {
-       "trecho": "e o emprego hoje está mais fraco que na maioria deles.",
-       "tipo": "fonte",
-       "problema": "O caderno não compara o emprego de hoje com o das outras pausas. Só há o saldo de setembro (c10), sem série.",
-       "como_fica": ""
-      },
-      {
-       "trecho": "Ou seja, eles ainda contavam com um corte em dezembro, mas já esperavam juro mais alto por mais tempo no ano que vem.",
+       "trecho": "O que separou foi o rumo da inflação esperada, e por esse critério a pausa começa longe da régua que o próprio Banco Central escreveu.",
        "tipo": "forca",
-       "problema": "O Focus (c7) traz a Selic de fim de 2026 e de 2027, e não diz que o corte seria em dezembro.",
-       "como_fica": "Ou seja, eles ainda contavam com a Selic abaixo de 13,75% no fim de 2026, mas já esperavam juro mais alto por mais tempo no ano que vem [c7]."
+       "problema": "\"Separou\" dito como regra. Nas 10 pausas há uma exceção (2018: a inflação esperada subiu 0,07 e veio corte), e a ligação não prova causa.",
+       "como_fica": "Nas pausas desde 2002, a inflação esperada subiu em 8 das 10, e em 7 delas a Selic voltou a subir; nas 2 em que ela caiu, o corte voltou [c2, c3, c7, c10, c11]. Por esse critério, a pausa começa longe da meta que o próprio Banco Central escreveu."
       },
       {
-       "trecho": "O padrão vale também para subidas pequenas.",
+       "trecho": "### Nas pausas desde 2002, o juro alto não decidiu o final, e o rumo da inflação esperada decidiu",
        "tipo": "forca",
-       "problema": "A subida pequena de 2018 (0,07 ponto) terminou em corte, então o padrão não vale sempre para subidas pequenas.",
-       "como_fica": "O padrão apareceu também em subidas pequenas, com a exceção de 2018."
+       "problema": "\"Decidiu\" é causa dita com 10 casos e uma exceção.",
+       "como_fica": "### Nas pausas desde 2002, o juro alto não separou o final, e a inflação esperada subindo veio com a alta em 7 de 8"
       },
       {
-       "trecho": "Mas a subida de 0,36 ponto é mais que o dobro da de 2018 no mesmo prazo, e ela vem depois de meses subindo [c1, c4].",
+       "trecho": "Nem o governo nem o Congresso mudam essa decisão: só o próprio comitê pode voltar a mexer na Selic, e a próxima reunião dele é em 9/12.",
        "tipo": "fonte",
-       "problema": "A frase de que a expectativa vinha subindo por meses vem do c12, e não do c1 nem do c4.",
-       "como_fica": "Mas a subida de 0,36 ponto é mais que o dobro da de 2018 no mesmo prazo [c1, c4], e ela vem depois de meses subindo [c12]."
+       "problema": "A data de 9/12 e a frase sobre quem pode desfazer a decisão não têm linha no caderno.",
+       "como_fica": "Quem decidiu foi o Copom, o comitê do Banco Central que decide o juro, na reunião de 4/11, quando manteve a Selic em 13,75% [c15]."
       },
       {
-       "trecho": "a Selic menos a inflação esperada deu 8,38% em outubro, mais que em 68% dos meses desde 2002 [c13].",
-       "tipo": "numero",
-       "problema": "A saída do c13 não traz o 8,38%, só os 68%. Selic de 13,75% menos 4,96% dá 8,79%, e não 8,38%.",
-       "como_fica": "a Selic menos a inflação esperada ficou em outubro mais alta que em 68% dos meses desde 2002 [c13]."
-      },
-      {
-       "trecho": "O próprio Banco Central chamou esse juro de \"substancialmente contracionista\", o que quer dizer que ele já freia a economia [c9].",
-       "tipo": "fonte",
-       "problema": "O trecho literal do c9 é só o título da página, que não traz a expressão. A frase veio do resumo da busca, com a página não aberta.",
-       "como_fica": ""
-      },
-      {
-       "trecho": "E o freio já aparece no emprego. Em setembro, o país abriu 121.305 vagas com carteira assinada [c10].",
+       "trecho": "Ele também olha para o que os bancos esperam, porque, no Brasil, a meta pesa na inflação que eles esperam, segundo um estudo com dados só do país, de força média [c18].",
        "tipo": "forca",
-       "problema": "O c10 só traz o saldo de setembro. Não há comparação com outros meses que mostre emprego fraco nem freio por causa do juro.",
-       "como_fica": "Em setembro, o país abriu 121.305 vagas com carteira assinada [c10], número que o site ainda não comparou com o de outros meses."
+       "problema": "O \"porque\" liga o que o Banco Central olha ao estudo, que só diz que a meta pesa na expectativa dos bancos. O estudo é de um país só e tem força média.",
+       "como_fica": "No Brasil, a meta pesa na inflação que os bancos esperam, segundo um estudo com dados só do país, de força média [c18]."
       },
       {
-       "trecho": "Um petróleo mais barato ou um plano das contas do governo que convença quem investe também podem fazer a expectativa cair, e aí o padrão de 2018 volta.",
-       "tipo": "outro",
-       "problema": "Petróleo e plano fiscal não estão no caderno. Além disso, em 2018 a expectativa subiu 0,07 ponto. Expectativa em queda é o caso de 2002 e 2003.",
-       "como_fica": "Se a expectativa cair, o caso passa a se parecer com 2002 e 2003, em que ela caiu e o corte voltou [c2]."
-      },
-      {
-       "trecho": "A política em volta mexe na mesma peça. A ideia de limitar a Selic entrou no radar do presidente, e o Ministério da Fazenda nega [c16]. O partido do governo criticou o Banco Central por parar de cortar [c17].",
-       "tipo": "fonte",
-       "problema": "c16 e c17 são fatos do momento, sem jornal, link nem data no caderno, e a conferência não acha a fonte.",
-       "como_fica": ""
-      },
-      {
-       "trecho": "O efeito disso não depende de quem governa. Quando quem investe passa a duvidar que o Banco Central vai segurar os preços, espera inflação maior e cobra mais para emprestar ao país, e a inflação esperada sobe.",
+       "trecho": "Desde 2002 foram seis episódios assim, e a Selic subiu do começo ao fim em 5 deles; o sexto é o de agora [c13]. Tirando os de crise de confiança, como o de 2002, sobram 2004, 2021 e 2024, e em todos a Selic subiu, de 16,00% para 17,25%, de 7,75% para 13,75% e de 11,25% para 15,00% [c29].",
        "tipo": "forca",
-       "problema": "O texto liga a discussão política à alta da expectativa sem linha no caderno, e a coincidência é dita como causa.",
-       "como_fica": "Se quem investe passar a duvidar que o Banco Central vai segurar os preços, pode esperar inflação maior e cobrar mais para emprestar ao país. O caderno não mostra que isso já tenha movido a expectativa."
+       "problema": "O caderno diz que a Selic subiu em 5, caiu em 1 e ficou igual em 0, e não diz qual caiu. \"O sexto é o de agora\" é suposição. \"Crise de confiança\" como motivo para tirar 2002 e 2013-16 não está no caderno, e \"em todos\" vale para 3 casos escolhidos depois.",
+       "como_fica": "Desde 2002 foram seis episódios assim, e do começo ao fim a Selic subiu em 5 e caiu em 1 [c13]. Se tirarmos os episódios de 2002 e de 2013 a 2016, restam 2004, 2021 e 2024, e nos três a Selic subiu, de 16,00% para 17,25%, de 7,75% para 13,75% e de 11,25% para 15,00% [c29]."
       },
       {
-       "trecho": "São 10 pausas em 24 anos",
-       "tipo": "numero",
-       "problema": "O número 24 não tem linha no caderno.",
-       "como_fica": "São 10 pausas desde 2002"
+       "trecho": "Quem paga a Selic parada são as pessoas e as empresas com parcela e o próprio governo, que deve muito em títulos ligados à Selic [c34].",
+       "tipo": "fonte",
+       "problema": "O trecho de c34 só diz o custo de R$ 48 bilhões por ponto de Selic, e não que o governo deve muito em títulos ligados à Selic.",
+       "como_fica": "Quem paga a Selic parada são as pessoas e as empresas com parcela e o próprio governo, que gasta cerca de R$ 48 bilhões por ano em juros a cada ponto de Selic, numa conta do Poder360 [c34]."
       },
       {
-       "trecho": "A segunda é a inflação de outubro, que o IBGE divulga em 12/11,",
+       "trecho": "Mas são 10 casos, e a pesquisa de inflação esperada muda toda semana.",
+       "tipo": "fonte",
+       "problema": "A frequência semanal da pesquisa Focus não tem linha no caderno.",
+       "como_fica": "Mas são 10 casos, e 10 casos mostram um padrão, não uma lei."
+      },
+      {
+       "trecho": "O IPCA de outubro sai em 12/11, e o Banco Central volta a decidir o juro em 9/12.",
        "tipo": "data",
-       "problema": "A data de divulgação do IBGE não tem linha no caderno.",
-       "como_fica": "A segunda é a inflação de outubro, que o IBGE divulga em novembro,"
+       "problema": "As duas datas não estão no caderno.",
+       "como_fica": ""
       },
       {
-       "trecho": "de cada segunda-feira, até 7/12, comparada com os 4,60% de setembro [c1].",
-       "tipo": "data",
-       "problema": "A data 7/12 e o calendário das segundas-feiras não têm linha no caderno. A pesquisa que o caderno usa tem datas de sexta-feira.",
-       "como_fica": "de cada semana até a decisão, comparada com os 4,60% de setembro [c1]."
-      },
-      {
-       "trecho": "Se a expectativa voltar para baixo de 4,60% e o Banco Central cortar em dezembro, o padrão falhou desta vez, como em 2018, e o site vai dizer isso.",
+       "trecho": "O nível da Selic diz pouco sobre o que vem; o que diz mais é se a inflação esperada pelos bancos para 2027 para de subir.",
        "tipo": "forca",
-       "problema": "Expectativa em queda com corte confirma o padrão (2002 e 2003). Em 2018 a expectativa subiu e o corte só veio 17 meses depois. O padrão falha se o Banco Central cortar com a expectativa ainda alta.",
-       "como_fica": "Se a expectativa voltar para baixo de 4,60% e o Banco Central cortar em dezembro, será como em 2002 e 2003 [c2]. Se ela seguir acima de 4,60% e o corte vier mesmo assim, o padrão falhou desta vez, e o site vai dizer isso. Em 2018, o corte só veio 17 meses depois [c4]."
+       "problema": "Conclusão forte para 10 casos. Além disso, o juro alto freia os preços com atraso (c17).",
+       "como_fica": "Nas 10 pausas desde 2002, o nível do juro não separou as que acabaram em alta das que acabaram em corte; a inflação esperada subindo veio com a alta em 7 de 8. Por isso vale olhar se a inflação esperada pelos bancos para 2027 para de subir [c2, c7, c10, c11]."
       }
      ],
-     "graves": [
-      "A melhor objeção à tese (o emprego mais fraco) não tem linha no caderno. O único dado é o saldo de 121.305 vagas em setembro (c10), sem comparação com outros meses. O \"pior setembro da série\" do fato do dia também não está no caderno. A objeção fica sem sustentação e a frase de abertura sobre emprego não pode ficar."
-     ],
-     "resumo": "As contas das pausas (c1 a c5) conferem: 10 pausas, 8 com expectativa subindo, 7 com alta depois. Os problemas estão em outras frases. O emprego fraco é dito sem linha no caderno. O 8,38% do juro real não aparece na saída do c13. A citação do comunicado (c9) e os fatos políticos (c16, c17) não têm fonte aberta. Há datas sem linha (9/12, 7/12, 12/11) e um erro de lógica: o texto usa 2018 como exemplo de expectativa em queda. Há ainda uma causa política dita sem prova."
+     "graves": [],
+     "resumo": "O texto segue o caderno na maior parte e não tem erro que derrube a tese. Há nove ajustes: a força de \\\"separou\\\" e \\\"decidiu\\\" (10 casos e uma exceção), um \\\"porque\\\" que o estudo não sustenta, a contagem dos episódios com 1,4 ponto, uma frase sobre a dívida do governo que a linha não diz e três datas ou fatos sem linha no caderno (9/12, 12/11 e quem pode desfazer a decisão)."
     },
-    "aplicadas": 15,
+    "aplicadas": 9,
     "codigo": {
-     "graves": [
-      "bloco 3: número ou data sem linha do caderno que confira: 23/10 | trecho: A mesma pesquisa já mostra os bancos mudando de ideia. Em uma semana, de 23/10 para 30/10, a Selic que eles esperam para"
-     ],
+     "graves": [],
      "avisos": [
-      "bloco 17: palavra que o site trocou: cada pressão piorou, ficou igual ou melhorou"
+      "bloco 14: frase de 37 palavras",
+      "bloco 17: frase de 38 palavras",
+      "bloco 18: frase de 37 palavras",
+      "bloco 20: frase de 37 palavras"
      ],
-     "palavras": 1080,
+     "palavras": 1358,
      "intertitulos": 3
     },
-    "codigo_depois_da_reescrita": {
-     "graves": [
-      "bloco 24: número ou data sem linha do caderno que confira: 7/12 | trecho: O site vai olhar três coisas até a decisão. A primeira é a inflação esperada para 12 meses na pesquisa dos bancos de cad"
-     ],
-     "avisos": [
-      "bloco 16: palavra que o site trocou: cada pressão piorou, ficou igual ou melhorou"
-     ],
-     "palavras": 1163,
-     "intertitulos": 3
-    },
-    "frases_cortadas": [
-     "A primeira é a inflação esperada para 12 meses na pesquisa dos bancos de cada segunda-feira até 7/12, comparada com os 4,60% de setembro."
-    ],
     "final": {
      "graves": [],
      "avisos": [],
-     "palavras": 1153,
+     "palavras": 1314,
      "intertitulos": 3
     }
    },
    "edicao": {
     "sugestoes": [
      {
-      "trecho": "O site vai olhar três coisas até a decisão. A segunda é a inflação de outubro, que o IBGE divulga em 12/11, e a terceira é a decisão de 9/12.",
-      "problema": "Frase que não se entende sozinha: anuncia três coisas e só diz a segunda e a terceira. A decisão também fica sem dizer de quem é.",
-      "como_fica": "O site vai olhar três coisas até a decisão. A primeira é a inflação esperada na pesquisa dos bancos (Focus). A segunda é a inflação de outubro, que o IBGE divulga em 12/11, e a terceira é a decisão do Banco Central em 9/12."
+      "trecho": "Diante de uma pausa como esta, é fácil pensar que desta vez pode ser diferente",
+      "problema": "A primeira frase não se entende sozinha: não diz que pausa é essa.",
+      "como_fica": "Com a Selic em pausa, é fácil pensar que desta vez pode ser diferente, porque o juro já está alto."
      },
      {
-      "trecho": "Desta vez, ela subiu 0,36 ponto só no primeiro mês [c1].",
-      "problema": "\"Ela\" vem logo depois da Selic e parece se referir a ela, mas quem subiu foi a inflação esperada. O texto precisa se explicar sozinho.",
-      "como_fica": "Desta vez, a inflação esperada subiu 0,36 ponto só no primeiro mês [c1]."
+      "trecho": "Quem decidiu foi o Copom, o comitê do Banco Central que decide o juro, na reunião de 4/11, quando manteve a Selic em 13,75% [c15]. Quem decidiu foi o Copom, o comitê do Banco Central que decide o juro, na reunião de 4/11, quando manteve a Selic em 13,75% [c15].",
+      "problema": "Frase repetida, nada repetido.",
+      "como_fica": "A frase aparece uma vez só, com a marca [c15]."
      },
      {
-      "trecho": "O próprio Banco Central piorou as contas dele na decisão de 4/11. A projeção dele para a inflação de 2027 subiu de 3,9% para 4,7%, acima da meta de 3% [c1, c8].",
-      "problema": "\"Piorou as contas\" é expressão de jornal e, no site, \"contas\" quer dizer contas do governo. Diga o que o Banco Central fez, com palavras de conversa.",
-      "como_fica": "O próprio Banco Central revisou para cima a inflação que ele projeta, na decisão de 4/11. Para 2027, a projeção dele subiu de 3,9% para 4,7%, acima da meta de 3% [c1, c8]."
+      "trecho": "Pela régua do Banco Central, a pausa vai na direção do objetivo se a inflação esperada para 2027 começar a sair de 4,76% rumo a 3% e se a projeção dele para 2028 voltar para perto da meta [c24, c25].",
+      "problema": "Frase de 38 palavras, acima do limite de 30.",
+      "como_fica": "Duas frases: a primeira com a inflação esperada para 2027 rumo a 3%; a segunda diz que também é preciso a projeção para 2028 voltar para perto da meta."
      },
      {
-      "trecho": "### O juro já apertado e o caso de 2022 são a melhor razão para o padrão falhar",
-      "problema": "O site não usa \"apertado\" (nem Apertou e Folgou): é a palavra que o verificador marcou. Troca por palavra de conversa.",
-      "como_fica": "### O juro já alto e o caso de 2022 são a melhor razão para o padrão falhar"
+      "trecho": "Se o dólar subir por desconfiança das contas do governo, subir o juro pode enfraquecer o real e subir a inflação, o que se chama dominância fiscal, num estudo com dados do Brasil de 2002 e 2003 [c19].",
+      "problema": "Frase de 37 palavras e termo técnico (dominância fiscal) que a leitora não conhece.",
+      "como_fica": "Se o dólar subir por desconfiança das contas do governo, subir o juro pode enfraquecer o real e fazer a inflação subir. Isso vem de um estudo com dados do Brasil de 2002 e 2003 [c19]."
      },
      {
-      "trecho": "Isso explica por que o corte é desejado, mas não muda o que o passado mostra sobre a expectativa.",
-      "problema": "Frase sem quem: \"é desejado\" não diz por quem, e a consequência não vem com quem a sente.",
-      "como_fica": "Isso mostra por que um corte faria diferença para as contas do governo, mas não muda o que o passado mostra sobre a expectativa."
+      "trecho": "Quem paga a Selic parada são as pessoas e as empresas com parcela e o próprio governo, que gasta cerca de R$ 48 bilhões por ano em juros a cada ponto de Selic, numa conta do Poder360 [c34].",
+      "problema": "Frase de 37 palavras e detalhe exato repetido (R$ 48 bilhões e Poder360 já apareceram antes).",
+      "como_fica": "Quem paga a Selic parada são as pessoas e as empresas com parcela, e também o governo, que paga juros da dívida a cada ponto de Selic [c34]."
      },
      {
-      "trecho": "Com 52,74% da dívida ligada à Selic em agosto",
-      "problema": "Número com duas casas fora da Selic, e \"a dívida\" sem dizer de quem. Arredonde e diga o nome.",
-      "como_fica": "Com 53% da dívida do governo ligada à Selic em agosto"
+      "trecho": "São poucos casos, e a ligação entre eles não prova causa: o Banco Central reage aos mesmos números que esta conta usa, por isso o padrão descreve como ele costuma reagir, e não uma lei da economia.",
+      "problema": "Frase de 37 palavras, acima do limite de 30.",
+      "como_fica": "São poucos casos, e a ligação entre eles não prova causa, porque o Banco Central reage aos mesmos números que esta conta usa. Por isso o padrão descreve como ele costuma reagir, e não uma lei da economia."
      },
      {
-      "trecho": "Se compararmos com junho, a expectativa passou de 4,12% para 4,96% em outubro [c12].",
-      "problema": "Número com duas casas, que só pesa. Arredonde.",
-      "como_fica": "Se compararmos com junho, a expectativa passou de 4,1% para 5,0% em outubro [c12]."
+      "trecho": "Em julho de 2002, o juro estava 12,7% acima da inflação esperada, e mesmo assim a inflação esperada subiu 3,71 pontos em três meses e a Selic voltou a subir três meses depois [c2].",
+      "problema": "Frase de 33 palavras.",
+      "como_fica": "Em julho de 2002, o juro estava 12,7% acima da inflação esperada, e isso não bastou. Ela subiu 3,71 pontos em três meses, e a Selic voltou a subir três meses depois [c2]."
      },
      {
-      "trecho": "O passado não diz que a alta vem em dezembro. Ele diz que, com a expectativa subindo, um corte seria a exceção, e não a regra.",
-      "problema": "Troca em espelho (\"não diz... diz\", \"a exceção, e não a regra\"), fórmula de efeito. Diga em uma frase só.",
-      "como_fica": "O passado não garante alta em dezembro, mas, com a expectativa subindo, um corte seria exceção."
+      "trecho": "O juro estava só 2,5% acima da inflação esperada, mas ela estava abaixo da meta e subiu apenas 0,07 ponto em três meses, e o Banco Central voltou a cortar 17 meses depois [c7].",
+      "problema": "Frase de mais de 30 palavras.",
+      "como_fica": "O juro estava só 2,5% acima da inflação esperada, que estava abaixo da meta e subiu apenas 0,07 ponto em três meses. O Banco Central voltou a cortar 17 meses depois [c7]."
      },
      {
-      "trecho": "Se ela seguir acima de 4,60%",
-      "problema": "Duas casas sem necessidade fora da Selic. Arredonde, nos dois lugares em que o limite aparece.",
-      "como_fica": "Se ela seguir acima de 4,6%"
+      "trecho": "Se tirarmos os episódios de 2002 e de 2013 a 2016, restam 2004, 2021 e 2024, e nos três a Selic subiu, de 16,00% para 17,25%, de 7,75% para 13,75% e de 11,25% para 15,00% [c29].",
+      "problema": "Frase de mais de 40 palavras.",
+      "como_fica": "Se tirarmos os episódios de 2002 e de 2013 a 2016, restam 2004, 2021 e 2024, e nos três a Selic subiu. Foi de 16,00% para 17,25%, de 7,75% para 13,75% e de 11,25% para 15,00%, nessa ordem [c29]."
+     },
+     {
+      "trecho": "O Banco Central diz que a decisão é compatível com a inflação chegar perto da meta no horizonte em que ele mira, e que o juro seguirá alto o bastante para frear a economia [c26].",
+      "problema": "Frase acima de 30 palavras.",
+      "como_fica": "O Banco Central diz que a decisão é compatível com a inflação chegar perto da meta no horizonte que ele mira. Diz também que o juro seguirá alto para frear a economia [c26]."
+     },
+     {
+      "trecho": "Mas são 10 casos, e 10 casos mostram um padrão, não uma lei.",
+      "problema": "Detalhe repetido: o aviso de que é um padrão e não uma lei já foi dado duas vezes.",
+      "como_fica": "Mas são só 10 casos."
      }
     ],
     "aplicada": true
    },
-   "titulo": "Nas pausas da Selic desde 2002, a inflação esperada subindo quase sempre trouxe alta do juro, e não corte",
-   "texto": "Na pesquisa de 30/10, a última antes da decisão, os bancos (Focus) ainda previam Selic de 13,50% no fim de 2026 [c7]. O Banco Central manteve 13,75% em 4/11, e por isso essa previsão só se cumpre com um corte na reunião de 9/12. As outras pausas desde 2002 apontam para o lado contrário.\n\nNas 8 vezes em que a inflação esperada subiu nos 3 meses depois do último corte, a Selic voltou a subir em 7, de 3 a 9 meses depois [c3, c4, c5]. Desta vez, a inflação esperada subiu 0,36 ponto só no primeiro mês [c1]. São 10 casos, o que mostra um padrão que se repetiu, e não uma lei.\n\nA mesma pesquisa de 30/10 já mostra os bancos mudando de ideia sobre o ano que vem. A Selic que eles esperam para o fim de 2027 subiu para 12,50%, contra 11,75% na pesquisa anterior [c7]. Eles ainda contavam com a Selic abaixo de 13,75% em dezembro, mas já esperavam juro mais alto por mais tempo em 2027.\n\n### Das 8 vezes em que a inflação esperada subiu depois da pausa, 7 terminaram em alta\n\nA inflação esperada é quanto os bancos e as consultorias acham que os preços vão subir nos 12 meses seguintes. Desde 2002, o Banco Central parou de cortar a Selic 10 vezes, e o que veio depois de cada pausa acompanhou o que essa expectativa fez nos 3 meses seguintes [c1].\n\nNas 2 vezes em que a expectativa caiu, o corte voltou. Depois do último corte de março de 2002, ela caiu 0,28 ponto, e o Banco Central voltou a cortar 4 meses depois [c2]. Depois de dezembro de 2003, ela caiu 0,47 ponto, e o corte voltou 3 meses depois [c2].\n\nNas outras 8, a expectativa subiu, e o caminho mudou. Em julho de 2002, ela subiu 3,71 pontos, e a alta da Selic veio 3 meses depois [c3]. Em 2004 e em 2007, ela subiu 0,56 e 0,44 ponto, e a alta veio 5 e 7 meses depois [c3].\n\nO padrão apareceu também quando a subida foi pequena. Em 2009, a expectativa subiu 0,21 ponto, e a alta veio 9 meses depois; em 2012, subiu só 0,10 ponto, e a alta veio 6 meses depois [c4]. Em 2020, ela subiu 0,81 ponto, e o juro voltou a subir 7 meses depois [c5].\n\nO caso mais recente você provavelmente lembra. O Banco Central fez o último corte em maio de 2024, com a Selic em 10,50%, e a expectativa subiu 0,23 ponto nos 3 meses seguintes [c5]. A alta veio 4 meses depois, e o ciclo só parou em junho de 2025, com a Selic em 15% [c5].\n\nO último corte desta vez foi em setembro, então a reunião de dezembro já cai dentro da janela de 3 a 9 meses das outras altas. O passado não garante alta em dezembro, mas, com a expectativa subindo, um corte seria exceção.\n\n### O primeiro mês ainda não decide, e 2018 mostra por quê\n\nA única pausa com expectativa subindo que terminou em corte foi a de março de 2018. No primeiro mês, a expectativa subiu 0,16 ponto, mas depois devolveu quase tudo e fechou os 3 meses com alta de só 0,07 ponto [c4]. O Banco Central voltou a cortar, mas só 17 meses depois [c4].\n\nO contrário também já aconteceu. Em 2007, a expectativa caiu 0,01 ponto no primeiro mês e terminou os 3 meses com alta de 0,44 ponto, e a Selic subiu 7 meses depois [c3]. Por isso, o primeiro mês sozinho pode enganar para os dois lados.\n\nDesta vez, só existe o dado de um mês, já que o último corte foi em setembro [c1]. Mas a subida de 0,36 ponto é mais que o dobro da de 2018 no mesmo prazo, e ela vem depois de meses subindo [c1, c4, c12]. Se compararmos com junho, a expectativa passou de 4,1% para 5,0% em outubro [c12].\n\nO próprio Banco Central revisou para cima a inflação que ele projeta, na decisão de 4/11. Para 2027, a projeção dele subiu de 3,9% para 4,7%, acima da meta de 3% [c1, c8]. Para o segundo trimestre de 2028, o prazo que ele usa para decidir o juro, a projeção subiu de 3,1% para 3,5% [c8].\n\n### O juro já alto e o caso de 2022 são a melhor razão para o padrão falhar\n\nQuem espera o corte em dezembro tem um argumento forte. O juro já freia bastante a economia, porque a Selic menos a inflação esperada ficou, em outubro, mais alta que em 68% dos meses desde 2002 [c13]. Com o crédito caro por tanto tempo, a compra a prazo cai, e os preços podem subir mais devagar sem que o Banco Central precise subir o juro de novo.\n\nHá também um caso parecido que terminou sem alta. O mês mais parecido com outubro de 2026, juntando inflação esperada, juro e dólar, é setembro de 2022, quando a Selic também estava em 13,75% [c14]. Doze meses depois, ela estava em 12,75%, e o corte tinha começado em agosto de 2023 [c14, c15].\n\nEsse caso tem uma diferença que pesa. Em 2022, o Banco Central tinha acabado de subir o juro, e não de cortar, por isso ele não entra na conta das 10 pausas [c15]. Se a expectativa cair nos próximos meses, o caso de agora passa a se parecer com 2002 e 2003, em que ela caiu e o corte voltou [c2].\n\nO que pode derrubar a expectativa vem de dentro e de fora. Um petróleo mais barato, que é causa de fora, ou um plano crível para as contas do governo, que depende do governo e do Congresso, deixariam quem investe menos preocupado com a inflação. Mas, enquanto esses sinais não chegam, a expectativa segue subindo [c12].\n\nA política em volta também conta, pelo mecanismo. Segundo a Folha, uma proposta de limitar a Selic entrou no radar do presidente, o que o Ministério da Fazenda nega [c16]. Se quem investe passar a duvidar que o Banco Central vai segurar os preços, tende a esperar inflação maior e a cobrar mais para emprestar ao país, com qualquer governo no poder.\n\nE o juro pesa nas contas públicas de qualquer governo. Com 53% da dívida do governo ligada à Selic em agosto, cada ponto de Selic custa cerca de R$ 48 bilhões por ano [c18]. Isso mostra por que um corte faria diferença para as contas do governo, mas não muda o que o passado mostra sobre a expectativa.\n\nVale dizer o tamanho da evidência. São 10 pausas desde 2002, e a expectativa e a Selic andam juntas em parte porque respondem às mesmas coisas, como o dólar e o petróleo. Isso mostra uma ligação que se repetiu, e não prova que uma causa a outra.\n\nO site vai olhar três coisas até a decisão. A primeira é a inflação esperada na pesquisa dos bancos (Focus). A segunda é a inflação de outubro, que o IBGE divulga em 12/11, e a terceira é a decisão do Banco Central em 9/12.\n\nSe a expectativa voltar para baixo de 4,6% e o Banco Central cortar em dezembro, será como em 2002 e 2003 [c2]. Se ela seguir acima de 4,6% e o corte vier mesmo assim, o padrão falhou desta vez, e o site vai dizer isso. Você pode acompanhar os mesmos números, que saem nas mesmas datas.",
-   "previsao": {
-    "texto": "O Banco Central não corta a Selic em 9/12, ao contrário da previsão dos bancos, e a inflação esperada para 12 meses segue acima dos 4,60% de setembro.",
-    "quando": "2026-12-09",
-    "como_conferir": "Veja a inflação esperada para 12 meses na pesquisa Focus de cada segunda-feira até 7/12 e compare com 4,60%. Depois, veja se o Banco Central (Copom) mantém ou sobe a Selic de 13,75% em 9/12."
-   },
-   "duracao_escrever_s": 244,
-   "texto_corrigido_a_mao": "2026-11-08: o fato é rumor de jornal (c16): ganhou a fonte, e saiu 'nega que ela exista', que o caderno não diz."
+   "titulo": "A pausa da Selic começa com a inflação esperada mais longe da meta que em qualquer pausa desde 2002",
+   "texto": "Com a Selic em pausa, é fácil pensar que desta vez pode ser diferente, porque o juro já está alto. Hoje a Selic está 8,7% acima da inflação esperada pelos bancos, um freio forte para o crédito de quem compra a prazo e de quem investe [c1]. Só que, nas pausas desde 2002, o tamanho do juro não separou as que terminaram em alta das que terminaram em corte.\n\nNas pausas desde 2002, a inflação esperada subiu em 8 das 10, e em 7 delas a Selic voltou a subir; nas 2 em que ela caiu, o corte voltou [c2, c3, c7, c10, c11]. Por esse critério, a pausa começa longe da meta que o próprio Banco Central escreveu. A inflação esperada está 1,60 ponto acima da meta de 3%, a maior distância entre as 11 pausas desde 2002, e subiu 0,36 ponto no primeiro mês [c1]. A mais perto disso foi a de março de 2002, com 1,18 ponto [c10]. São 10 casos já encerrados, o que mostra um padrão, não uma lei.\n\n### O Banco Central mediu a pausa com a própria projeção, e ela piorou\n\nQuem decidiu foi o Copom, o comitê do Banco Central que decide o juro, na reunião de 4/11, quando manteve a Selic em 13,75% [c15].\n\nO objetivo está escrito no comunicado. O Banco Central diz que a decisão é compatível com a inflação chegar perto da meta no horizonte que ele mira. Diz também que o juro seguirá alto para frear a economia [c26]. Esse horizonte fica perto de meados de 2028, e a projeção do próprio Banco Central para o segundo trimestre de 2028 subiu de 3,1% para 3,5% [c25]. Ou seja, na conta de quem decidiu, a inflação de daqui a um ano e meio se afastou da meta justamente quando os cortes pararam.\n\nA decisão pesa em dois lugares. O primeiro é a parcela, porque a Selic parada mantém caros o empréstimo, o cartão e o financiamento. O segundo é a conta do governo: cada ponto de Selic custa cerca de R$ 48 bilhões por ano em juros da dívida, numa conta do Poder360, e não do Tesouro [c34].\n\nO caminho pelo qual o juro chega aos preços é lento. Uma meta-análise de 67 estudos mostra que o juro leva em média 29 meses para pesar todo nos preços, e essa é uma evidência forte [c17]. Por isso o Banco Central mira 2028, e não a inflação de hoje.\n\nNo Brasil, a meta pesa na inflação que os bancos esperam, segundo um estudo com dados só do país, de força média [c18]. Já a ideia de que uma fórmula simples, como a regra de Taylor, diria o juro certo não aguenta como veredito, porque os dados revisados depois mudam a resposta da regra [c20].\n\n### Nas pausas desde 2002, o juro alto não separou o final, e a inflação esperada subindo veio com a alta em 7 de 8\n\nOlhe para as pausas que terminaram em alta. Em julho de 2002, o juro estava 12,7% acima da inflação esperada, e isso não bastou. Ela subiu 3,71 pontos em três meses, e a Selic voltou a subir três meses depois [c2]. Em agosto de 2020, no outro extremo, o juro estava 1,0% abaixo da inflação esperada, ela subiu 0,81 ponto e a alta veio sete meses depois [c8].\n\nNo meio do caminho ficou abril de 2004, com o juro 9,9% acima da inflação esperada, quase o nível de hoje, e a Selic voltou a subir cinco meses depois [c3]. Se o juro alto bastasse para segurar a pausa, esse caso teria terminado em corte.\n\nA única pausa com inflação esperada subindo que terminou em corte foi a de março de 2018. O juro estava só 2,5% acima da inflação esperada, que estava abaixo da meta e subiu apenas 0,07 ponto em três meses. O Banco Central voltou a cortar 17 meses depois [c7]. Nas duas pausas em que a inflação esperada caiu, em março de 2002 e dezembro de 2003, o corte voltou em poucos meses [c10, c11].\n\nO mesmo desenho aparece quando se olha só para os momentos em que a inflação esperada ficou mais de 1,4 ponto acima da meta. Desde 2002 foram seis episódios assim, e do começo ao fim a Selic subiu em 5 e caiu em 1 [c13].\n\nAqui entra o tamanho da evidência. São poucos casos, e a ligação entre eles não prova causa, porque o Banco Central reage aos mesmos números que esta conta usa. Por isso o padrão descreve como ele costuma reagir, e não uma lei da economia. Nas pausas que terminaram em alta, a primeira alta veio entre 3 e 9 meses depois do último corte, que desta vez foi em setembro [c12].\n\n### A pausa chega ao objetivo se a inflação esperada para 2027 parar de subir\n\nOs bancos apostam no outro lado. A pesquisa Focus de 30/10 previa a Selic em 13,50% no fim de 2026 e em 12,50% no fim de 2027 [c24]. Isso é 1,25 ponto abaixo da Selic de hoje [c28]. A mesma pesquisa previa inflação de 4,76% em 2027, 1,76 ponto acima da meta [c24, c30].\n\nPela régua do Banco Central, a pausa vai na direção do objetivo se a inflação esperada para 2027 começar a sair de 4,76% rumo a 3%. Também é preciso que a projeção dele para 2028 volte para perto da meta [c24, c25]. Ela fica longe do objetivo se a inflação esperada seguir subindo com a Selic parada, que é o caso em que, nas pausas desde 2002, a alta voltou.\n\nHá um segundo jeito de dar errado, que o juro sozinho não resolve. Se o dólar subir por desconfiança das contas do governo, subir o juro pode enfraquecer o real e fazer a inflação subir. Isso vem de um estudo com dados do Brasil de 2002 e 2003 [c19]. A evidência é média e vale só para crise de confiança aguda, e em 2003 o juro alto, junto com sobra nas contas, acabou derrubando a inflação. O ministro da Fazenda diz que o governo prepara um ajuste gradual nas contas, ainda sem data [c33].\n\nSomando os casos e a evidência, o lado mais provável é a pausa terminar em alta, e não em corte, se a inflação esperada continuar onde está. Mas são só 10 casos.\n\nQuem paga a Selic parada são as pessoas e as empresas com parcela, e também o governo, que paga juros da dívida a cada ponto de Selic [c34]. Quem ganha é quem tem dinheiro aplicado, que rende mais. O efeito no emprego vem com atraso de meses, porque o crédito caro faz a empresa contratar menos.\n\nA melhor objeção de quem queria o corte é que o freio já aparece. A produção da indústria caiu 4,1% desde maio [c32], e foram abertas só 121,3 mil vagas com carteira em setembro [c35]. Como o juro leva em média 29 meses para pesar todo [c17], parte desse freio ainda nem chegou.\n\nA melhor objeção do outro lado é que a pausa é pouco. O próprio Banco Central prevê inflação de 5,6% em 2026 [c16], e a inflação esperada subiu no primeiro mês da pausa [c1], dois sinais de que manter pode não bastar.\n\nO critério não muda com quem governa. Em maio de 2024, a inflação esperada estava 0,64 ponto acima da meta e subiu 0,23 ponto em três meses, e a Selic voltou a subir quatro meses depois [c9]. Em março de 2018, com outro governo, ela estava abaixo da meta e quase parada, e o Banco Central voltou a cortar [c7]. A mesma régua, a distância da meta e o rumo da inflação esperada, deu alta numa e corte na outra.\n\nPara você, isso muda o que vale olhar nas próximas notícias. Nas 10 pausas desde 2002, o nível do juro não separou as que acabaram em alta das que acabaram em corte; a inflação esperada subindo veio com a alta em 7 de 8. Por isso vale olhar se a inflação esperada pelos bancos para 2027 para de subir [c2, c7, c10, c11]. Se ela subir, o crédito tende a ficar caro por mais tempo do que os bancos previam em outubro.",
+   "duracao_escrever_s": 211,
+   "revisao_manual": "8/11/2026: à mão, \"duas portas\" (palavra de bastidor) virou \"dois lugares\", e saiu a frase que tirava dois dos seis episódios sem dizer por quê, porque ela contava só os casos escolhidos depois"
   },
-  "termina_em": "inflacao",
-  "corrigido_a_mao": "2026-11-08: 'setembro foi o pior da série' virou 'o pior setembro da série', a régua da fonte (Caged, c10).",
+  "termina_em": "juro",
+  "pergunta": "juro-alto",
   "versao_anterior": {
    "titulo": "Banco Central para de cortar o juro e mantém a Selic em 13,75%",
    "paragrafos": [
-    "O Banco Central parou de cortar o juro e manteve a Selic em 13,75%, como desde setembro. Assim, os bancos seguem cobrando caro de pessoas e empresas.",
-    "Ao contrário do que muita gente acha, juro alto faz os preços subirem mais devagar, porque comprar a prazo fica caro e as lojas vendem menos. Mesmo assim, o Banco Central subiu para 5,6% a previsão do IPCA de 2026.",
-    "O juro alto já chega ao emprego e à renda: em setembro, as empresas criaram 121,3 mil vagas com carteira, o pior setembro desde 2020, quando a série começou."
+    "O Banco Central parou de cortar e manteve a Selic em 13,75% ao ano. Ele disse que as incertezas aumentaram muito e que a inflação acelerou, e subiu para 5,6% a previsão do IPCA de 2026.",
+    "Segundo ele, a decisão é coerente com levar a inflação para perto da meta de 3%, mas a previsão dele para meados de 2028 subiu de 3,1% para 3,5%.",
+    "A pausa leva à meta se a inflação esperada parar de subir: em 7 de 8 pausas desde 2002 com ela subindo, o Banco Central voltou a subir a Selic."
    ],
-   "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior. 2026-11-07, depois da conferência das fontes no Mac: os 43% a menos que em setembro de 2025 saíram, porque as notícias dão bases diferentes para setembro de 2025 (43% numa, cerca de 50% noutra), e a série do Novo Caged começa em 2020."
+   "revisao_manual": "refeito em 8/11/2026 com a análise da decisão pela meta de quem decidiu"
   },
-  "revisao_manual": "2026-11-08: refeito a pedido do Pedro (fato do dia com o porquê): a pesquisa do dia, a mesma da leitura a fundo, passa ao redator o porquê e o e daí (curto do editor-chefe, refeito da pesquisa gravada com fundo.py --curto); regra do \"quem decidiu\"; teste do porquê; Opus no post, no editor e no teste. Mesmo programa da atualização (src/escreve_post.py), com os dados desta rodada. O texto anterior ficou em versao_anterior."
+  "revisao_manual": "refeito em 8/11/2026 com a análise da decisão pela meta de quem decidiu; as duas versões do redator não passaram no teste do e daí (faltavam a inflação esperada subindo agora, o aviso de poucos casos e o efeito no crédito), e o texto foi ajustado à mão com os dados da rodada, passando no verificador e no teste"
  },
  "pauta": {
   "versao": 1,

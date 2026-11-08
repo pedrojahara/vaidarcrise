@@ -14,6 +14,9 @@ Uso (os meses em AAAA-MM):
   python src/conta.py ciclos                              # cada ciclo de alta e de corte da Selic desde 2002
   python src/conta.py pausas                              # cada vez que o BC parou de cortar, e o que veio depois
   python src/conta.py parecidos MES SERIE [SERIE ...]     # os meses do passado mais parecidos e o que veio depois
+  python src/conta.py episodios "SERIE>VALOR" ["SERIE<VALOR" ...]  # as vezes, contadas por episódio, em que as
+                                                          # condições valeram juntas, e o que veio depois de cada uma
+                                                          # (séries a mais: focus_menos_meta e ipca_menos_meta)
   python src/conta.py recessoes                           # o PIB trimestre a trimestre e as recessões desde 1996
   python src/conta.py focus [--de AAAA-MM-DD]             # as previsões dos bancos (Focus) que o site guardou, semana a semana
   python src/conta.py calc "EXPRESSAO"                    # a conta feita à mão: números, + - * / e parênteses,
@@ -46,7 +49,7 @@ SERIES = {
     "desocupacao": ("Desemprego (PNAD Contínua, trimestre móvel que termina no mês)", "% da força de trabalho",
                     "IBGE, pelo Banco Central, série 24369"),
     "divida_bruta": ("Dívida bruta do governo geral", "% do PIB", "Banco Central, série 13762"),
-    "primario_12m": ("Resultado primário do setor público em 12 meses (positivo é sobra, negativo é déficit)", "% do PIB",
+    "primario_12m": ("Resultado sem juros do setor público em 12 meses (positivo é déficit, quando o governo gasta mais do que arrecada sem contar os juros; negativo é sobra)", "% do PIB",
                      "Banco Central, série 5793"),
     "ibovespa": ("Ibovespa, o índice da bolsa", "pontos, média do mês", "B3"),
     "commodities": ("Índice de preços de commodities do Banco Central em dólar (IC-Br)", "índice", "Banco Central, série 29042"),
@@ -342,6 +345,77 @@ def cmd_parecidos(mensal: dict, a) -> None:
         print("  recessão começando nos 12 meses seguintes: " + (", ".join(rec) or "nenhuma"))
 
 
+# Séries que só existem como conta de outras: a distância da inflação (esperada ou passada) até o centro da meta.
+DERIVADAS = {
+    "focus_menos_meta": "inflação esperada para 12 meses (Focus) menos o centro da meta desses 12 meses, em pontos",
+    "ipca_menos_meta": "IPCA em 12 meses menos o centro da meta do ano, em pontos",
+}
+CONDICAO = __import__("re").compile(r"^\s*([a-z_0-9]+)\s*(>=|<=|>|<)\s*(-?\d+(?:[.,]\d+)?)\s*$")
+
+
+def _derivada(mensal: dict, nome: str) -> dict:
+    if nome == "focus_menos_meta":
+        return {m: v - _meta(m) for m, v in mensal.get("focus_ipca_12m", {}).items()}
+    if nome == "ipca_menos_meta":
+        return {m: v - METAS.get(int(m[:4]), 3.0) for m, v in mensal.get("ipca_12m", {}).items()}
+    return _serie(mensal, nome)
+
+
+def _episodios(mensal: dict, conds: list[tuple[str, str, float]], folga: int = 2) -> list[dict]:
+    """Os trechos de meses seguidos em que todas as condições valem. Até `folga` meses fora da condição no meio não
+    quebram o trecho, para que um mês de vaivém não faça um episódio virar dois."""
+    import operator as op
+    ops = {">": op.gt, "<": op.lt, ">=": op.ge, "<=": op.le}
+    series = {k: _derivada(mensal, k) for k, _, _ in conds}
+    meses = sorted(set.intersection(*[set(s) for s in series.values()]))
+    vale = [m for m in meses if all(ops[o](series[k][m], v) for k, o, v in conds)]
+    out = []
+    for m in vale:
+        if out and (int(m[:4]) - int(out[-1]["ate"][:4])) * 12 + int(m[5:]) - int(out[-1]["ate"][5:]) <= folga + 1:
+            out[-1]["ate"] = m
+            out[-1]["meses"].append(m)
+        else:
+            out.append({"de": m, "ate": m, "meses": [m]})
+    return out
+
+
+def cmd_episodios(mensal: dict, a) -> None:
+    conds = []
+    for c in a.condicoes:
+        x = CONDICAO.match(c)
+        if not x:
+            raise SystemExit(f"condição fora do formato SERIE>VALOR (ou <, >=, <=): {c}")
+        nome = x.group(1)
+        if nome not in DERIVADAS:
+            _serie(mensal, nome)
+        conds.append((nome, x.group(2), float(x.group(3).replace(",", "."))))
+    eps = _episodios(mensal, conds)
+    s = mensal["selic_meta"]
+    nomes = [k for k, _, _ in conds]
+    print("Episódios em que " + " e ".join(f"{k} {o} {_br(v)}" for k, o, v in conds)
+          + " (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não "
+          "por mês: um episódio longo não vale mais que um curto.")
+    for k in nomes:
+        if k in DERIVADAS:
+            print(f"{k}: {DERIVADAS[k]}.")
+    subiu = caiu = igual = 0
+    for e in eps:
+        ser = {k: _derivada(mensal, k) for k in nomes}
+        vals = "; ".join(f"{k} de {_br(ser[k][e['de']])} a {_br(ser[k][e['ate']])} (o maior: {_br(max(ser[k][m] for m in e['meses']))})"
+                         for k in nomes)
+        s0, s1 = s.get(e["de"]), s.get(e["ate"])
+        if s0 is not None and s1 is not None:
+            subiu, caiu, igual = subiu + (s1 > s0 + 1e-9), caiu + (s1 < s0 - 1e-9), igual + (abs(s1 - s0) <= 1e-9)
+        n = (int(e["ate"][:4]) - int(e["de"][:4])) * 12 + int(e["ate"][5:]) - int(e["de"][5:]) + 1
+        print(f"\nde {e['de']} a {e['ate']} ({n} meses): {vals}; Selic de {_br(s0)}% no começo a {_br(s1)}% no fim.")
+        print("  no começo, " + _linha_mes(mensal, e["de"]))
+        print("  12 meses depois do fim, " + _linha_mes(mensal, _mais(e["ate"], 12)))
+        rec = [r["de"] for r in _recessoes() if e["de"] <= _tri_mes(r["de"]) <= _mais(e["ate"], 12)]
+        print("  recessão começando no episódio ou nos 12 meses seguintes: " + (", ".join(rec) or "nenhuma"))
+    print(f"\n{len(eps)} episódio(s). Do começo ao fim de cada um, a Selic subiu em {subiu}, caiu em {caiu} e ficou "
+          f"igual em {igual}.")
+
+
 def cmd_focus(_m: dict, a) -> None:
     import os
     ate = os.environ.get("VDC_ATE") or "9999"
@@ -417,6 +491,8 @@ def main(argv: list[str] | None = None) -> None:
     p = sub.add_parser("parecidos")
     p.add_argument("mes")
     p.add_argument("series", nargs="+")
+    p = sub.add_parser("episodios")
+    p.add_argument("condicoes", nargs="+")
     sub.add_parser("recessoes")
     p = sub.add_parser("focus")
     p.add_argument("--de")
@@ -431,7 +507,7 @@ def main(argv: list[str] | None = None) -> None:
     mensal, _ = _carregar()
     {"series": cmd_series, "valores": cmd_valores, "variacao": cmd_variacao, "recorde": cmd_recorde,
      "depois": cmd_depois, "ciclos": cmd_ciclos, "pausas": cmd_pausas, "parecidos": cmd_parecidos,
-     "recessoes": cmd_recessoes, "focus": cmd_focus}[a.cmd](mensal, a)
+     "recessoes": cmd_recessoes, "focus": cmd_focus, "episodios": cmd_episodios}[a.cmd](mensal, a)
 
 
 def rodar(comando: str) -> str:

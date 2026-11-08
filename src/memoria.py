@@ -5,8 +5,8 @@
 2. Memória do momento (base/memoria/momento/AAAA-MM.json e base/memoria/historias.json): o que aconteceu mês a mês
    desde maio de 2025, com fonte, e as histórias que ainda estão abertas (a eleição, a guerra, o orçamento). Todo dia
    a rodada junta os fatos das notícias do dia (sem IA); no domingo, uma IA revê as histórias.
-3. Memória do site (runs/): o que o site já escreveu, as teses das leituras a fundo e as previsões que ainda vai
-   conferir, para não repetir e para ligar um dia ao outro. Sai do registro, sem IA.
+3. Memória do site (runs/): o que o site já escreveu e as teses das leituras a fundo, para não repetir e para ligar
+   um dia ao outro. Sai do registro, sem IA.
 
 A carga inicial das memórias longa e do momento usa a internet (WebSearch e, no Mac, WebFetch), porque o site ainda
 tem poucos dias de notícias. Cada fato precisa de link, e link de site fora da lista de fontes conhecidas fica de fora
@@ -463,8 +463,6 @@ def _memoria_site(dia: dt.date, n: int = 14) -> str:
             l += f" Leitura a fundo: {f['titulo']}."
             if f.get("tese"):
                 l += f" Tese: {f['tese']}"
-        if (f.get("previsao") or {}).get("texto"):
-            l += f" O site disse que vai conferir em {f['previsao'].get('quando')}: {f['previsao']['texto']}"
         linhas.append(l)
         if len(linhas) >= n:
             break

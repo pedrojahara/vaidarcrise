@@ -223,6 +223,8 @@ def main() -> dict | None:
             novo = {"id": f"ev-{hoje:%Y%m%d}-{seq:02d}", "data": data_ev.isoformat(),
                     **{k: ev[k] for k in ("titulo_evento", "estagio", "origem", "fator", "direcao", "magnitude",
                                           "ja_no_preco", "porque")},
+                    # Quem decidiu, o tipo de decisão e o objetivo declarado (src/decisoes.py).
+                    **{k: ev.get(k, d) for k, d in (("decisor", "nenhum"), ("instrumento", "nenhum"), ("objetivo", ""))},
                     "chance_aprovacao": ev["chance_aprovacao"] if ev["estagio"] == "em_votacao" else None,
                     "veiculos": veiculos, "fontes": fontes}
             # Quantas manchetes e jornais deram o fato (todas, não só as 6 citadas): a pauta do fato do dia usa.
