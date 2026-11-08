@@ -1,16 +1,15 @@
 {
- "em": "2026-11-08T13:45:55+00:00",
+ "em": "2026-11-08T14:14:18+00:00",
  "offline": true,
  "resumo": {
   "conferido": 76,
-  "sem_trecho": 15,
-  "nao_aberta": 55,
-  "sem_endereco": 1
+  "sem_trecho": 12,
+  "nao_aberta": 63
  },
  "erros": [],
  "avisos": [
   "a-dolar-ago-6nov: número do texto sem conferência no campo dados (7,8)",
-  "afirmações que nenhum texto cita: a-caged, a-caso-2014, a-caso-2014-emprego, a-caso-2021, a-copom-set, a-desemprego, a-dolar-0311, a-dolar-ago-6nov, a-elnino, a-ev-petroleo-outubro, a-ev-petroleo-paz, a-exportacoes-out, a-focus-2026, a-importados, a-industria, a-industria-tri, a-previa-pib, a-previsoes-2027"
+  "afirmações que nenhum texto cita: a-balanca-out, a-caged, a-caso-2014, a-caso-2014-emprego, a-caso-2021, a-copom-set, a-desemprego, a-dolar-0311, a-dolar-ago-6nov, a-elnino, a-ev-petroleo-outubro, a-ev-petroleo-paz, a-exportacoes-out, a-focus-2026, a-importados, a-industria, a-industria-tri, a-lc179, a-previa-pib, a-previsoes-2027"
  ],
  "perguntas": [
   {
@@ -28,10 +27,9 @@
    "id": "dividas-das-familias",
    "erros": [],
    "avisos": [],
-   "afirmacoes_citadas": 22,
+   "afirmacoes_citadas": 24,
    "status": {
-    "sem_endereco": 1,
-    "nao_aberta": 3,
+    "nao_aberta": 6,
     "conferido": 18
    }
   },
@@ -42,8 +40,8 @@
    "afirmacoes_citadas": 39,
    "status": {
     "conferido": 18,
-    "nao_aberta": 18,
-    "sem_trecho": 3
+    "nao_aberta": 19,
+    "sem_trecho": 2
    }
   },
   {
@@ -52,8 +50,8 @@
    "avisos": [],
    "afirmacoes_citadas": 33,
    "status": {
-    "nao_aberta": 11,
-    "sem_trecho": 7,
+    "nao_aberta": 13,
+    "sem_trecho": 5,
     "conferido": 15
    }
   },
@@ -636,7 +634,7 @@
   "a-sp-2015": {
    "tipo": "documento",
    "nivel": 6,
-   "status": "sem_trecho"
+   "status": "nao_aberta"
   },
   "a-repasse-bc": {
    "tipo": "documento",
@@ -730,12 +728,12 @@
   "a-lc179": {
    "tipo": "documento",
    "nivel": 3,
-   "status": "sem_trecho"
+   "status": "nao_aberta"
   },
   "a-lei-salario-minimo": {
    "tipo": "documento",
    "nivel": 3,
-   "status": "sem_trecho"
+   "status": "nao_aberta"
   },
   "a-site-inflacao": {
    "tipo": "site",
@@ -816,7 +814,7 @@
   "a-apostas-bc": {
    "tipo": "documento",
    "nivel": 3,
-   "status": "sem_endereco"
+   "status": "nao_aberta"
   },
   "a-site-familias": {
    "tipo": "site",
@@ -828,6 +826,26 @@
    "tipo": "dado",
    "nivel": 3,
    "status": "conferido"
+  },
+  "a-fmi-familias-emergentes": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-carta-2024-partes": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-defasagem-petrobras": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-apostas-fia": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
   }
  }
 }

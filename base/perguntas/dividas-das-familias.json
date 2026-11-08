@@ -63,7 +63,7 @@
        ]
       },
       {
-       "texto": "Nos empréstimos às pessoas com juro definido pelo banco, o juro médio subiu de 36% ao ano em dezembro de 2020 para 62% em setembro de 2026.",
+       "texto": "Nos empréstimos às pessoas com juro definido pelo banco, o juro médio subiu de 52% ao ano em janeiro de 2024 para 62% em setembro de 2026.",
        "afirmacoes": [
         "a-juro-pf"
        ]
@@ -82,7 +82,7 @@
      "nome": "A leitura da dívida maior",
      "titulo": "As famílias devem mais",
      "status": "em_pe",
-     "o_que_diz": "Com o cartão, o consignado e o financiamento chegando a mais gente, as famílias passaram a dever uma parte maior da renda. Mesmo com o juro parado, mais dívida quer dizer mais parcela.",
+     "o_que_diz": "Com o cartão, o consignado e o financiamento chegando a mais gente, as famílias passaram a dever uma parte maior da renda. Mesmo que o juro não mude, mais dívida quer dizer mais parcela.",
      "a_favor": [
       {
        "texto": "De janeiro de 2005 a agosto de 2026, a dívida das famílias passou de 16,5% para 50,1% da renda de um ano.",
@@ -114,9 +114,15 @@
      "o_que_diz": "Parte do dinheiro das famílias foi para as apostas pela internet, o que deixaria menos dinheiro para pagar as parcelas em dia.",
      "a_favor": [
       {
-       "texto": "Em agosto de 2024, o Banco Central estimou em cerca de R$ 20 bilhões por mês o dinheiro que as pessoas mandavam por Pix para empresas de apostas.",
+       "texto": "Em agosto de 2024, o Banco Central contou cerca de R$ 21 bilhões mandados por Pix a empresas de apostas, sem descontar os prêmios que voltam a quem apostou.",
        "afirmacoes": [
         "a-apostas-bc"
+       ]
+      },
+      {
+       "texto": "Um estudo do Ibevar e da Fundação Instituto de Administração achou que as apostas pesaram mais que o juro e o crédito na dívida das famílias. Ele mediu o interesse pelas apostas, e não o gasto.",
+       "afirmacoes": [
+        "a-apostas-fia"
        ]
       }
      ],
@@ -136,11 +142,12 @@
   {
    "degrau": "o_que_vem_depois",
    "pergunta": "O que isso muda para você?",
-   "rotulo": "consenso",
-   "texto": "Quem já paga muita parcela corta o resto primeiro quando a renda cai ou o juro sobe, e as lojas vendem menos. Um estudo com dezenas de países, de 1960 a 2012, achou que, quando a dívida das famílias sobe mais rápido que o PIB, a economia costuma crescer menos depois. Em setembro de 2026, 8,1% do que as pessoas deviam no cartão e nos empréstimos com juro definido pelo banco tinha mais de 90 dias de atraso. Em setembro de 2025, eram 6,9%, e o atraso de agora é o maior desde 2011, quando o Banco Central começou essa conta.",
+   "rotulo": "maioria_com_dissenso",
+   "texto": "Quem já paga muita parcela corta o resto primeiro quando a renda cai ou o juro sobe, e as lojas vendem menos. Um estudo com dezenas de países, de 1960 a 2012, achou que, quando a dívida das famílias sobe mais rápido que o PIB, a economia costuma crescer menos depois. Outro, do Fundo Monetário Internacional, achou esse efeito mais fraco em países emergentes, como o Brasil, do que nos ricos. Em setembro de 2026, 8,1% do que as pessoas deviam no cartão e nos empréstimos com juro definido pelo banco tinha mais de 90 dias de atraso. Em setembro de 2025, eram 6,9%, e o atraso de agora é o maior desde 2011, quando o Banco Central começou essa conta.",
    "afirmacoes": [
     "a-site-familias",
     "a-mian-sufi",
+    "a-fmi-familias-emergentes",
     "a-inad-2026"
    ]
   }

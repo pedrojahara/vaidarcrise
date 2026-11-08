@@ -106,7 +106,7 @@
      "nome": "A leitura do medo no mundo todo",
      "titulo": "O medo no mundo todo",
      "status": "em_pe",
-     "o_que_diz": "Quando investidores do mundo todo ficam com medo, tiram dinheiro dos países emergentes ao mesmo tempo. O dólar então sobe contra as moedas de todos eles, mesmo sem nada novo no Brasil.",
+     "o_que_diz": "Quando investidores do mundo todo ficam com medo, tiram dinheiro dos países emergentes ao mesmo tempo. O dólar então sobe contra as moedas de todos eles, e não só contra o real.",
      "a_favor": [
       {
        "texto": "Na crise de 2008, o dólar subiu de R$ 1,56 em 1/8 para R$ 2,50 em 5/12, e na pandemia, de R$ 4,02 em 2/1/2020 para R$ 5,94 em 14/5.",
@@ -125,7 +125,7 @@
      "resposta": null,
      "estudos": [
       {
-       "texto": "A economista Hélène Rey mostrou que o dinheiro entra e sai dos países emergentes ao mesmo tempo, junto com o medo de quem investe nos EUA.",
+       "texto": "A economista Hélène Rey achou que o dinheiro entra e sai dos países emergentes ao mesmo tempo, junto com o medo de quem investe nos EUA.",
        "afirmacoes": [
         "a-rey"
        ]
@@ -157,9 +157,8 @@
       }
      ],
      "melhor_objecao": {
-      "texto": "Em outubro de 2026, o Brasil vendeu US$ 9,3 bilhões a mais do que comprou de outros países, o maior saldo para outubro desde 1989. Mesmo assim, o dólar subiu, o que indica que essa alta teve outra causa.",
+      "texto": "Em outubro de 2026, o Brasil vendeu a outros países mais do que comprou, com o maior saldo para outubro desde 1989. Mesmo assim, o dólar subiu, o que indica que essa alta teve outra causa.",
       "afirmacoes": [
-       "a-balanca-out",
        "a-balanca-1989",
        "a-dolar-ago-nov"
       ]
@@ -176,9 +175,10 @@
    "degrau": "o_que_vem_depois",
    "pergunta": "O que isso muda para você?",
    "rotulo": "consenso",
-   "texto": "Com o dólar mais caro, os importados ficam mais caros, como peças e combustível, já que o Brasil importa parte do diesel e da gasolina que consome. Pelas contas do Banco Central, cada 10% de alta do dólar faz o IPCA subir cerca de 1 ponto em um ano. Quando quem investe desconfia do Brasil, cobra mais para emprestar ao governo, e por isso os empréstimos longos, como o da casa própria, também ficam mais caros.",
+   "texto": "Com o dólar mais caro, os importados ficam mais caros, como peças e combustível, já que o Brasil importa parte do diesel e da gasolina que consome. Na bomba, a alta pode demorar, porque a Petrobras nem sempre segue o preço de fora. Pelas contas do Banco Central, em média, cada 10% de alta do dólar faz o IPCA subir cerca de 1 ponto em um ano. Quando quem investe desconfia do Brasil, cobra mais para emprestar ao governo, e por isso os empréstimos longos, como o da casa própria, também ficam mais caros.",
    "afirmacoes": [
     "a-importa-combustivel",
+    "a-defasagem-petrobras",
     "a-repasse-bc",
     "a-site-mercado"
    ]
