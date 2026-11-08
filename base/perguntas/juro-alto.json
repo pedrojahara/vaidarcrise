@@ -3,7 +3,7 @@
  "pergunta": "Por que o juro do Brasil é tão alto?",
  "pressao": "juro",
  "publicada": true,
- "atualizado_em": "2026-11-07",
+ "atualizado_em": "2026-11-08",
  "resposta_curta": {
   "texto": "Em novembro de 2026, a Selic está em 13,75% ao ano, e os bancos (Focus) esperam que os preços subam 5,0% em 12 meses. Com isso, o juro fica cerca de 8,4% acima da inflação esperada, um dos maiores do mundo. Os economistas ainda discordam sobre a causa. A desconfiança de quem empresta ao governo explica os anos em que o juro disparou, como 2002, mas nenhuma explicação sozinha dá conta do resto.",
   "afirmacoes": [
@@ -14,6 +14,15 @@
    "a-blanchard",
    "a-lopes",
    "a-fmi-sobra"
+  ]
+ },
+ "medida": {
+  "pergunta": "Como o topo mede esta pressão?",
+  "texto": "O topo olha a Selic, que o Banco Central decide em oito reuniões por ano. Em 7/11, por exemplo, o topo comparou os 13,75% do dia com os 14% do fim de agosto. A Selic só conta como piorou ou melhorou quando a mudança passa do vaivém normal, que é o quanto ela costuma mudar em três meses.",
+  "afirmacoes": [
+   "a-selic-hoje",
+   "a-selic-agosto-2026",
+   "a-site-vaivem"
   ]
  },
  "governo": {
@@ -300,6 +309,11 @@
    "data": "2026-11-07",
    "o_que": "A resposta deixou de dizer que os estudos apontam duas causas principais.",
    "motivo": "A conferência das fontes achou um artigo de 2014 que revisou as explicações e não achou evidência forte para nenhuma, e um estudo de 2024 em que as contas do governo não atrapalhavam o Banco Central de 2003 a 2013. A desconfiança e a poupança baixa continuam no alto da lista, como explicações em que os economistas ainda discordam."
+  },
+  {
+   "data": "2026-11-08",
+   "o_que": "A página ganhou a parte que explica como o topo mede o juro.",
+   "motivo": "Pedido do Pedro em 8/11/2026: uma página para cada pressão do topo, todas no mesmo formato."
   }
  ]
 }

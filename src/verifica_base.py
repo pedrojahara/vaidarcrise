@@ -78,7 +78,11 @@ def series_do_site() -> tuple[dict, dict]:
     snaps = [json.loads(b.read_text()) for b in brutos]
     rodadas = [json.loads(x.read_text()) for x in sorted((ROOT / "runs").glob("*.json"))]
     m = direcao.mensais(snaps[-1] if snaps else None, rodadas, hist)
-    mensal = {k: {mes: v for mes, (_, v) in d.items()} for k, d in m.items()}
+    # direcao.mensais também guarda, ao lado de cada série, o título do juro de 10 anos de cada dia e as trocas de
+    # título: aqui ficam só as séries de verdade, mês -> (dia, valor).
+    mensal = {k: {mes: x[1] for mes, x in d.items()} for k, d in m.items()
+              if isinstance(d, dict) and d and all(isinstance(x, tuple) and len(x) == 2 and isinstance(x[1], (int, float))
+                                                   for x in d.values())}
     diario: dict[str, dict[str, float]] = {}
 
     def junta(k: str, pontos: list[dict]) -> None:
@@ -272,7 +276,10 @@ def _texto_ok(onde: str, texto: str, ids: list[str], A: dict, pe: list[str], pa:
     for f in revisa_texto.FRASE.split(texto):
         if len(f.split()) > 30:
             pa.append(f"{onde}: frase com {len(f.split())} palavras: {f[:60]}")
-    pa += [f"{onde}: {m}" for m in revisa_texto._moldes(texto)]
+    # "Como o topo mede esta pressão?" explica a linha do topo com as palavras dela, e o topo diz "vaivém normal"
+    # (src/build_site.py); o resto do molde vale ali também.
+    pa += [f"{onde}: {m}" for m in
+           revisa_texto._moldes(texto.replace("vaivém normal", "vaivém") if onde.endswith("medida") else texto)]
     sig = [x for x in revisa_texto.siglas_soltas(texto) if x not in NOMES_DE_EMPRESA]
     if sig:
         pa.append(f"{onde}: sigla sem link ({', '.join(sig)})")

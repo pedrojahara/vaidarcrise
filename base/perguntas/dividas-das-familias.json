@@ -1,0 +1,163 @@
+{
+ "id": "dividas-das-familias",
+ "pergunta": "Por que as famílias gastam tanto da renda com dívidas?",
+ "pressao": "parcelas",
+ "publicada": true,
+ "atualizado_em": "2026-11-08",
+ "resposta_curta": {
+  "texto": "As famílias gastam muito da renda com dívidas porque devem mais do que antes e porque cada dívida ficou mais cara. Em agosto de 2026, parcelas e juros de dívidas com os bancos levavam 29,0% da renda das famílias, o maior peso desde 2005, quando o Banco Central começou essa conta. A dívida das famílias passou de 16,5% da renda de um ano, em 2005, para 50,1%, e só os juros levam 10,9% da renda, também o maior desde 2005.",
+  "afirmacoes": [
+   "a-fam-hoje",
+   "a-fam-divida",
+   "a-fam-juros"
+  ]
+ },
+ "medida": {
+  "pergunta": "Como o topo mede esta pressão?",
+  "texto": "O topo usa a parte da renda das famílias que vai para parcelas e juros de dívidas com os bancos. O Banco Central calcula esse número todo mês e o divulga uns dois meses depois. Por isso, em novembro, a linha compara os 29,0% de agosto com os 28,5% de maio. A pressão só conta como piorou quando a alta passa do vaivém normal, que é o quanto essa parte costuma mudar em três meses.",
+  "afirmacoes": [
+   "a-fam-mai-ago",
+   "a-site-vaivem"
+  ]
+ },
+ "governo": {
+  "pergunta": "Isso é coisa de um governo só?",
+  "texto": "Não. A parte da renda que vai para parcelas e juros subiu e caiu em governos de lados diferentes. Ela subiu de 17,0% em 2005 para 24,6% no fim de 2011. Depois, caiu para 19,8% em agosto de 2020, na pandemia, e chegou a 29,0% em agosto de 2026. Abaixo, cada período diz se a causa veio daqui, de fora ou das duas.",
+  "afirmacoes": [
+   "a-fam-2005",
+   "a-fam-2020",
+   "a-fam-hoje"
+  ]
+ },
+ "agora": {
+  "atualizado_em": "2026-11-08",
+  "texto": "Em agosto de 2026, a parte da renda com parcelas e juros chegou a 29,0%, quando em maio era de 28,5%. Em 4/11, o Banco Central parou de cortar a Selic, mantida em 13,75%, e projetou o IPCA de 2026 em 5,6%, acima do teto da meta. Com a Selic parada no alto, as parcelas novas continuam caras, e sobra menos da renda para o resto das compras.",
+  "afirmacoes": [
+   "a-fam-mai-ago",
+   "a-copom-nov"
+  ]
+ },
+ "escada": [
+  {
+   "degrau": "raiz",
+   "id": "d-familias",
+   "pergunta": "O que mais pesa: a dívida maior ou o juro mais caro?",
+   "rotulo": "em_disputa",
+   "peso_da_evidencia": "Os dados mostram as duas causas, a dívida maior e o juro mais caro, em momentos diferentes. De 2005 a 2011, pesou mais a dívida maior, e de 2024 a 2026, pesou mais o juro.",
+   "peso_afirmacoes": [
+    "a-fam-2005",
+    "a-fam-2024"
+   ],
+   "leituras": [
+    {
+     "id": "l-juro-familias",
+     "nome": "A leitura do juro mais caro",
+     "titulo": "O juro mais caro",
+     "status": "em_pe",
+     "o_que_diz": "Quando o Banco Central sobe a Selic, o dinheiro fica mais caro também para os bancos, e o juro do cartão, do cheque especial e do empréstimo pessoal sobe junto. Assim, cada parcela nova fica mais cara, e a mesma dívida passa a levar uma parte maior da renda.",
+     "a_favor": [
+      {
+       "texto": "De janeiro de 2024 a agosto de 2026, a parte da renda que vai só para os juros subiu de 9,0% para 10,9%. No mesmo tempo, a dívida das famílias cresceu pouco, de 48,0% para 50,1% da renda de um ano.",
+       "afirmacoes": [
+        "a-fam-2024"
+       ]
+      },
+      {
+       "texto": "Nos empréstimos às pessoas com juro definido pelo banco, o juro médio subiu de 36% ao ano em dezembro de 2020 para 62% em setembro de 2026.",
+       "afirmacoes": [
+        "a-juro-pf"
+       ]
+      }
+     ],
+     "melhor_objecao": {
+      "texto": "De 2005 a 2011, a parte da renda com parcelas e juros subiu de 17,0% para 24,6%, com a Selic caindo de 19,25% para 11%. Nesses anos, pesou mais a dívida maior.",
+      "afirmacoes": [
+       "a-fam-2005"
+      ]
+     },
+     "resposta": null
+    },
+    {
+     "id": "l-mais-credito",
+     "nome": "A leitura da dívida maior",
+     "titulo": "As famílias devem mais",
+     "status": "em_pe",
+     "o_que_diz": "Com o cartão, o consignado e o financiamento chegando a mais gente, as famílias passaram a dever uma parte maior da renda. Mesmo com o juro parado, mais dívida quer dizer mais parcela.",
+     "a_favor": [
+      {
+       "texto": "De janeiro de 2005 a agosto de 2026, a dívida das famílias passou de 16,5% para 50,1% da renda de um ano.",
+       "afirmacoes": [
+        "a-fam-divida"
+       ]
+      },
+      {
+       "texto": "Em dezembro de 2003, uma lei permitiu descontar a parcela de empréstimos direto do salário, o crédito consignado.",
+       "afirmacoes": [
+        "a-lei-consignado"
+       ]
+      }
+     ],
+     "melhor_objecao": {
+      "texto": "De 2022 a 2026, a dívida das famílias ficou entre 47,6% e 50,1% da renda de um ano. Mesmo assim, a parte da renda com parcelas e juros subiu de 25,7% em janeiro de 2024 para 29,0% em agosto de 2026, o que aponta para o juro.",
+      "afirmacoes": [
+       "a-fam-2022-2026",
+       "a-fam-2024"
+      ]
+     },
+     "resposta": null
+    },
+    {
+     "id": "l-apostas",
+     "nome": "A leitura das apostas pela internet",
+     "titulo": "As apostas pela internet",
+     "status": "pouco_testada",
+     "o_que_diz": "Parte do dinheiro das famílias foi para as apostas pela internet, o que deixaria menos dinheiro para pagar as parcelas em dia.",
+     "a_favor": [
+      {
+       "texto": "Em agosto de 2024, o Banco Central estimou em cerca de R$ 20 bilhões por mês o dinheiro que as pessoas mandavam por Pix para empresas de apostas.",
+       "afirmacoes": [
+        "a-apostas-bc"
+       ]
+      }
+     ],
+     "melhor_objecao": {
+      "texto": "A parte da renda com parcelas e juros subiu mais de agosto de 2020 a maio de 2023, de 19,8% para 28,0%. Foi quando a Selic subiu de 2% para 13,75%, o que aponta para o juro.",
+      "afirmacoes": [
+       "a-fam-2020",
+       "a-fam-2021",
+       "a-ep2021"
+      ]
+     },
+     "resposta": null,
+     "resumo": "Parte do dinheiro das famílias foi para as apostas pela internet, o que deixaria menos dinheiro para pagar as parcelas em dia."
+    }
+   ]
+  },
+  {
+   "degrau": "o_que_vem_depois",
+   "pergunta": "O que isso muda para você?",
+   "rotulo": "consenso",
+   "texto": "Quem já paga muita parcela corta o resto primeiro quando a renda cai ou o juro sobe, e as lojas vendem menos. Um estudo com dezenas de países, de 1960 a 2012, achou que, quando a dívida das famílias sobe mais rápido que o PIB, a economia costuma crescer menos depois. Em setembro de 2026, 8,1% do que as pessoas deviam no cartão e nos empréstimos com juro definido pelo banco tinha mais de 90 dias de atraso. Em setembro de 2025, eram 6,9%, e o atraso de agora é o maior desde 2011, quando o Banco Central começou essa conta.",
+   "afirmacoes": [
+    "a-site-familias",
+    "a-mian-sufi",
+    "a-inad-2026"
+   ]
+  }
+ ],
+ "testes": [],
+ "episodios": [
+  "ep-fam-2005",
+  "ep-fam-2015",
+  "ep-fam-2020",
+  "ep-fam-2021",
+  "ep-fam-2024"
+ ],
+ "mudancas": [
+  {
+   "data": "2026-11-08",
+   "o_que": "Primeira versão da pergunta.",
+   "motivo": "Pedido do Pedro em 8/11/2026: uma página para cada pressão do topo."
+  }
+ ]
+}

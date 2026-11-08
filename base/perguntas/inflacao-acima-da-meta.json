@@ -1,0 +1,219 @@
+{
+ "id": "inflacao-acima-da-meta",
+ "pergunta": "Por que a inflação do Brasil fica acima da meta?",
+ "pressao": "inflacao",
+ "publicada": true,
+ "atualizado_em": "2026-11-08",
+ "resposta_curta": {
+  "texto": "A inflação do Brasil fica acima da meta por causas que se somam, como as contas do governo, a dúvida sobre a firmeza do Banco Central e o dólar. Os economistas discordam sobre qual pesa mais. De 2010 a 2025, os preços subiram mais que o centro da meta de inflação em 14 dos 16 anos. No fim de outubro de 2026, os bancos (Focus) esperavam alta de 5,0% nos 12 meses seguintes, acima do teto da meta, de 4,5%.",
+  "afirmacoes": [
+   "a-ipca-anos",
+   "a-metas-historico",
+   "a-focus-jul-out",
+   "a-meta",
+   "a-cerisola-gelos",
+   "a-bc-wp331"
+  ]
+ },
+ "medida": {
+  "pergunta": "Como o topo mede esta pressão?",
+  "texto": "O topo usa quanto os bancos (Focus) esperam que os preços subam nos 12 meses seguintes, numa pesquisa que o Banco Central faz toda semana. No fim de outubro, por exemplo, o topo comparou os 5,0% esperados com os 4,2% do fim de julho. A pressão só conta como piorou quando a alta passa do vaivém normal, que é o quanto essa expectativa costuma mudar em três meses.",
+  "afirmacoes": [
+   "a-focus-jul-out",
+   "a-site-vaivem"
+  ]
+ },
+ "governo": {
+  "pergunta": "Isso é coisa de um governo só?",
+  "texto": "Não. Os preços passaram do teto da meta em 2015, 2021, 2022 e 2024 e ficaram abaixo do piso em 2017, em governos de lados diferentes. Abaixo, cada período diz se a causa veio daqui, de fora ou das duas.",
+  "afirmacoes": [
+   "a-ipca-teto",
+   "a-metas-historico"
+  ]
+ },
+ "agora": {
+  "atualizado_em": "2026-11-08",
+  "texto": "Em 4/11, o Banco Central projetou o IPCA de 2026 em 5,6%, acima do teto da meta, de 4,5%, e parou de cortar a Selic. Os bancos (Focus) passaram a esperar 5,0% nos 12 meses seguintes, quando no fim de julho esperavam 4,2%. Com a inflação esperada subindo, a próxima decisão sobre o juro, em 9/12, vai mostrar se o Banco Central mantém a pausa ou volta a subir a Selic.",
+  "afirmacoes": [
+   "a-copom-nov",
+   "a-meta",
+   "a-focus-jul-out",
+   "a-datas"
+  ]
+ },
+ "escada": [
+  {
+   "degrau": "raiz",
+   "id": "d-inflacao",
+   "pergunta": "Por que a inflação fica acima da meta?",
+   "rotulo": "em_disputa",
+   "peso_da_evidencia": "Os estudos acham que as contas do governo, a confiança no Banco Central e choques como o do dólar pesam todos. Nenhum estudo separa bem quanto cada um explica nos anos acima da meta.",
+   "leituras": [
+    {
+     "id": "l-contas-inflacao",
+     "nome": "A leitura das contas do governo",
+     "titulo": "As contas do governo",
+     "status": "em_pe",
+     "o_que_diz": "Quando as contas do governo pioram, quem investe passa a esperar mais inflação, porque teme que a dívida acabe paga com preços subindo. O dólar também sobe, o que deixa os importados mais caros.",
+     "a_favor": [
+      {
+       "texto": "Um estudo do Fundo Monetário Internacional sobre o Brasil depois de 1999 achou que, além da meta de inflação, as contas do governo pesaram na inflação esperada.",
+       "afirmacoes": [
+        "a-cerisola-gelos"
+       ]
+      },
+      {
+       "texto": "Um estudo de 2024 achou que, de 2003 a 2013, as contas do governo não atrapalhavam o Banco Central. Elas passaram a atrapalhar depois de 2013 e de novo depois de 2019.",
+       "afirmacoes": [
+        "a-scaramuzzi"
+       ]
+      }
+     ],
+     "melhor_objecao": {
+      "texto": "Do fim de 2016 ao fim de 2019, a dívida do governo subiu de 69,8% para 74,4% do PIB. Mesmo assim, os preços subiram menos que o centro da meta em 2017 e 2018.",
+      "afirmacoes": [
+       "a-ep2017",
+       "a-ipca-anos"
+      ]
+     },
+     "resposta": null,
+     "quem_defende": [
+      "Martin Cerisola e Gaston Gelos (Fundo Monetário Internacional, 2009)",
+      "Ortega Scaramuzzi e Kfoury Muinhos (2024), para os anos depois de 2013"
+     ]
+    },
+    {
+     "id": "l-confianca-bc",
+     "nome": "A leitura da firmeza do Banco Central",
+     "titulo": "A firmeza do Banco Central",
+     "status": "em_pe",
+     "o_que_diz": "Se as pessoas acham que o Banco Central vai aceitar mais inflação, por exemplo cortando a Selic cedo demais, passam a esperar preços mais altos. Por isso, reajustam preços e salários pensando nisso, e a inflação sobe.",
+     "a_favor": [
+      {
+       "texto": "Em outubro de 2012, a Selic chegou a 7,25%, cerca de 1,8 ponto acima da inflação esperada, e em um ano a inflação esperada subiu de 5,4% para 6,2%.",
+       "afirmacoes": [
+        "a-ep2012"
+       ]
+      },
+      {
+       "texto": "Um estudo do Banco Central achou que, no Brasil, o que mais faz a inflação durar é a expectativa das pessoas.",
+       "afirmacoes": [
+        "a-bc-wp331"
+       ]
+      },
+      {
+       "texto": "Depois da eleição de 2026, quem investe passou a temer um Banco Central menos firme, já que o presidente da República poderá indicar mais seis diretores até 2027.",
+       "afirmacoes": [
+        "a-ev-diretores-bc"
+       ]
+      }
+     ],
+     "melhor_objecao": {
+      "texto": "Desde 2021, com a lei que deu mandatos fixos ao presidente e aos diretores do Banco Central, os preços passaram do teto da meta em 2021, 2022 e 2024.",
+      "afirmacoes": [
+       "a-lc179",
+       "a-ipca-teto"
+      ]
+     },
+     "resposta": null,
+     "quem_defende": [
+      "Banco Central, em estudos sobre o que faz a inflação durar"
+     ]
+    },
+    {
+     "id": "l-choques",
+     "nome": "A leitura dos choques",
+     "titulo": "Os choques que o Banco Central não controla",
+     "status": "em_disputa",
+     "o_que_diz": "Parte dos estouros da meta veio de choques que o Banco Central não controla, como a alta do dólar, a seca e o petróleo caro, que sobem muitos preços juntos.",
+     "a_favor": [
+      {
+       "texto": "Nas cartas sobre 2015 e 2024, o Banco Central citou a alta do dólar entre as causas do estouro da meta. Na de 2024, citou também o clima, que encareceu os alimentos.",
+       "afirmacoes": [
+        "a-carta-2015",
+        "a-carta-2024"
+       ]
+      },
+      {
+       "texto": "Pelas contas do Banco Central, de março de 2026, cada 10% de alta do dólar faz o IPCA subir cerca de 1 ponto em um ano.",
+       "afirmacoes": [
+        "a-repasse-bc"
+       ]
+      }
+     ],
+     "melhor_objecao": {
+      "texto": "Um choque sobe os preços uma vez só e não explica por que a inflação dura. Um estudo do Banco Central achou que o que mais a faz durar é a expectativa das pessoas.",
+      "afirmacoes": [
+       "a-bc-wp331"
+      ]
+     },
+     "resposta": null,
+     "quem_defende": [
+      "Banco Central, nas cartas sobre 2015 e 2024"
+     ],
+     "resumo": "Parte dos estouros da meta veio de choques que o Banco Central não controla, como a alta do dólar, a seca e o petróleo caro, que sobem muitos preços juntos."
+    },
+    {
+     "id": "l-indexacao-inf",
+     "nome": "A leitura dos preços corrigidos pela inflação passada",
+     "titulo": "Preços corrigidos pela inflação passada",
+     "status": "pouco_testada",
+     "o_que_diz": "Aluguel, tarifas e o salário mínimo são corrigidos pela inflação do ano anterior, e por isso a inflação de um ano empurra a do ano seguinte.",
+     "a_favor": [
+      {
+       "texto": "Desde 2023, a lei corrige o salário mínimo todo ano pela inflação dos 12 meses anteriores, mais um ganho ligado ao crescimento do PIB.",
+       "afirmacoes": [
+        "a-lei-salario-minimo"
+       ]
+      },
+      {
+       "texto": "Um estudo do Fundo Monetário Internacional de 2012 achou o juro do Brasil uns 2 pontos acima do de países parecidos, mesmo contando as contas do governo e a inflação. O autor sugere, sem medir, a correção de preços pela inflação passada como uma das causas.",
+       "afirmacoes": [
+        "a-fmi-sobra"
+       ]
+      }
+     ],
+     "melhor_objecao": {
+      "texto": "Estudos do Banco Central acham que a inflação brasileira, como a de outros países, carrega pouco da inflação do ano anterior, e que pesa mais o que as pessoas esperam.",
+      "afirmacoes": [
+       "a-bc-wp230",
+       "a-bc-wp331"
+      ]
+     },
+     "resposta": null,
+     "quem_defende": [
+      "Fundo Monetário Internacional (Segura-Ubiergo, 2012), como hipótese"
+     ],
+     "resumo": "Aluguel, tarifas e o salário mínimo são corrigidos pela inflação do ano anterior, e por isso a inflação de um ano empurra a do ano seguinte."
+    }
+   ]
+  },
+  {
+   "degrau": "o_que_vem_depois",
+   "pergunta": "O que isso muda para você?",
+   "rotulo": "consenso",
+   "texto": "Quando empresas e trabalhadores esperam preços subindo mais, sobem preços e pedem salários maiores pensando nisso, e a inflação esperada vira inflação de verdade. Por isso, quando a inflação esperada sobe, o Banco Central tende a subir a Selic para segurar os preços, o que encarece o cartão, o empréstimo e o financiamento.",
+   "afirmacoes": [
+    "a-site-inflacao",
+    "a-bc-selic"
+   ]
+  }
+ ],
+ "testes": [],
+ "episodios": [
+  "ep-2002",
+  "ep-inf-2008",
+  "ep-2012",
+  "ep-inf-2015",
+  "ep-inf-2017",
+  "ep-2021",
+  "ep-inf-2024"
+ ],
+ "mudancas": [
+  {
+   "data": "2026-11-08",
+   "o_que": "Primeira versão da pergunta.",
+   "motivo": "Pedido do Pedro em 8/11/2026: uma página para cada pressão do topo."
+  }
+ ]
+}

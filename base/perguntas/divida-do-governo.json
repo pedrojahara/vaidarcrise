@@ -1,0 +1,174 @@
+{
+ "id": "divida-do-governo",
+ "pergunta": "Por que a dívida do governo cresce tanto?",
+ "pressao": "contas",
+ "publicada": true,
+ "atualizado_em": "2026-11-08",
+ "resposta_curta": {
+  "texto": "A dívida do governo cresce por dois caminhos, que se somam. O governo gasta mais do que arrecada, sem contar os juros, e os juros da dívida crescem mais rápido que a economia. Em setembro de 2026, a dívida chegou a 82,9% do PIB, quando no fim de 2013 era de 51,5%. Em 12 meses até setembro, os juros custaram 9% do PIB, e o gasto acima da arrecadação, 0,5%. Os economistas discordam sobre qual vem primeiro, o gasto que assusta quem empresta e encarece o juro, ou o juro alto que faz a dívida crescer.",
+  "afirmacoes": [
+   "a-divida-hoje",
+   "a-bc-fatores-2025",
+   "a-juros-set2026",
+   "a-blanchard",
+   "a-scaramuzzi"
+  ]
+ },
+ "medida": {
+  "pergunta": "Como o topo mede esta pressão?",
+  "texto": "O topo olha a dívida do governo em % do PIB, que o Banco Central divulga todo mês, com uns dois meses de atraso. Em novembro, a linha compara a dívida de setembro, de 82,9% do PIB, com a de junho, de cerca de 82%. A pressão só conta como piorou quando a alta passa do vaivém normal, que é o quanto a dívida costuma mudar em três meses.",
+  "afirmacoes": [
+   "a-div-jun-set",
+   "a-site-vaivem"
+  ]
+ },
+ "governo": {
+  "pergunta": "Isso é coisa de um governo só?",
+  "texto": "Não. A dívida caiu de 55,5% do PIB no fim de 2006 para 51,5% no fim de 2013 e subiu até 86,9% no fim de 2020, na pandemia. Depois, caiu para 71,7% no fim de 2022 e voltou a subir. Abaixo, cada período diz se a causa veio daqui, de fora ou das duas.",
+  "afirmacoes": [
+   "a-div-trajetoria"
+  ]
+ },
+ "agora": {
+  "atualizado_em": "2026-11-08",
+  "texto": "O Tesouro projeta a dívida do governo em 83,7% do PIB no fim de 2026 e em 89,7% em 2030. Em agosto, a Instituição Fiscal Independente, do Senado, calculou que a dívida só para de subir com o governo arrecadando 2,1% do PIB além do que gasta, sem os juros. Em 12 meses até setembro, o governo fez o contrário e gastou 0,5% do PIB além do que arrecadou. A distância entre os dois números é o tamanho da mudança que a conta pede hoje, e ela diminui se o juro cair ou a economia crescer mais.",
+  "afirmacoes": [
+   "a-ev-tesouro-divida",
+   "a-ifi-2026",
+   "a-juros-set2026"
+  ]
+ },
+ "escada": [
+  {
+   "degrau": "raiz",
+   "id": "d-divida",
+   "pergunta": "O que mais faz a dívida do governo crescer: o gasto ou o juro?",
+   "rotulo": "em_disputa",
+   "peso_da_evidencia": "Pela conta do Banco Central, em 2025 os juros somaram 8,9 pontos do PIB à dívida, bem mais que o gasto acima da arrecadação, de 0,4% do PIB. Os economistas discordam sobre qual vem primeiro, se o juro é alto por causa das contas ou se é o juro alto que faz a dívida crescer.",
+   "peso_afirmacoes": [
+    "a-bc-fatores-2025",
+    "a-primario-2025"
+   ],
+   "leituras": [
+    {
+     "id": "l-gasto",
+     "nome": "A leitura do gasto acima da arrecadação",
+     "titulo": "O governo gasta mais do que arrecada",
+     "status": "em_pe",
+     "o_que_diz": "A maior parte do gasto do governo é obrigatória, como aposentadorias e salários, e cresce mesmo quando a arrecadação não cresce. Quando o governo gasta mais do que arrecada, sem contar os juros, quem empresta passa a duvidar que a dívida vá parar de subir. Por isso, quem empresta cobra mais caro do governo, o que faz a conta de juros crescer.",
+     "a_favor": [
+      {
+       "texto": "No projeto de orçamento de 2025, 92% do gasto do governo federal, sem contar os juros, era obrigatório.",
+       "afirmacoes": [
+        "a-obrigatorias"
+       ]
+      },
+      {
+       "texto": "De 2014 a 2020 e de 2023 a 2025, o governo gastou mais do que arrecadou todo ano, sem contar os juros, e a dívida subiu nos dois períodos.",
+       "afirmacoes": [
+        "a-div-deficits",
+        "a-div-trajetoria"
+       ]
+      },
+      {
+       "texto": "Pela conta da Instituição Fiscal Independente, do Senado, a dívida só para de subir se o governo arrecadar 2,1% do PIB além do que gasta, sem os juros.",
+       "afirmacoes": [
+        "a-ifi-2026"
+       ]
+      }
+     ],
+     "melhor_objecao": {
+      "texto": "Em 12 meses até setembro de 2026, o gasto acima da arrecadação foi de 0,5% do PIB, e os juros custaram 9%. Pela conta do Banco Central, só os juros de 2025 somaram 8,9 pontos do PIB à dívida, mais que os 5,7 pontos que o crescimento da economia tirou.",
+      "afirmacoes": [
+       "a-juros-set2026",
+       "a-bc-fatores-2025"
+      ]
+     },
+     "resposta": {
+      "texto": "Quem defende responde que o juro só é tão alto porque quem empresta duvida das contas. De 2007 a 2013, com o governo arrecadando mais do que gastava fora os juros, a dívida caiu de 55,5% para 51,5% do PIB. Isso aconteceu mesmo com a Selic entre 7,25% e 13,75%.",
+      "afirmacoes": [
+       "a-div-2006",
+       "a-selic-2007-2013",
+       "a-scaramuzzi"
+      ]
+     },
+     "quem_defende": [
+      "Marcos Mendes (Por que o Brasil cresce pouco?, 2014)"
+     ],
+     "o_que_diz_afirmacoes": [
+      "a-obrigatorias"
+     ]
+    },
+    {
+     "id": "l-juro-divida",
+     "nome": "A leitura do juro que faz a dívida crescer",
+     "titulo": "O juro alto faz a dívida crescer",
+     "status": "em_pe",
+     "o_que_diz": "Cerca de metade da dívida do governo acompanha a Selic. Com a Selic alta, a conta de juros cresce mais rápido que a economia, e a dívida sobe mesmo quando o governo gasta pouco além do que arrecada.",
+     "a_favor": [
+      {
+       "texto": "Os juros da dívida passaram de 4,7% do PIB em 12 meses até dezembro de 2013 para 9,0% em 12 meses até setembro de 2026.",
+       "afirmacoes": [
+        "a-juros-2013-2026"
+       ]
+      },
+      {
+       "texto": "Pela conta do Banco Central, de janeiro a setembro de 2026, os juros somaram 7,2 pontos do PIB à dívida, e o crescimento da economia tirou 3,9 pontos.",
+       "afirmacoes": [
+        "a-bc-fatores-2026"
+       ]
+      }
+     ],
+     "melhor_objecao": {
+      "texto": "De 2007 a 2013, a Selic ficou entre 7,25% e 13,75%, e a dívida caiu de 55,5% para 51,5% do PIB. Nesses anos, o governo arrecadava mais do que gastava, sem contar os juros.",
+      "afirmacoes": [
+       "a-selic-2007-2013",
+       "a-div-2006"
+      ]
+     },
+     "resposta": {
+      "texto": "Quem defende responde que o juro de hoje é bem mais alto. Em novembro de 2026, ele está cerca de 8,4% acima da inflação esperada, quando no fim de 2010 estava perto de 5,1% e no fim de 2013, de 3,8%.",
+      "afirmacoes": [
+       "a-juro-real-hoje",
+       "a-juro-real-2010-2013"
+      ]
+     },
+     "quem_defende": [
+      "André Lara-Resende (Juros, moeda e ortodoxia, 2017)"
+     ],
+     "o_que_diz_afirmacoes": [
+      "a-metade-selic"
+     ]
+    }
+   ]
+  },
+  {
+   "degrau": "o_que_vem_depois",
+   "pergunta": "O que isso muda para você?",
+   "rotulo": "consenso",
+   "texto": "Quando a dívida do governo sobe rápido, quem empresta ao governo passa a cobrar mais caro, e o juro e o dólar sobem junto. Com isso, ficam mais caros o financiamento da casa, o empréstimo e os importados. Muita gente acha que existe um limite para a dívida, como 100% do PIB, a partir do qual vem a crise. Um estudo com dezenas de países não achou um limite que valha para todos, mas achou que a dívida subindo por muitos anos faz a economia crescer menos. O risco depende também da moeda em que o governo deve e de quem empresta a ele, e o Brasil deve quase tudo em reais, a maior parte a brasileiros.",
+   "afirmacoes": [
+    "a-site-contas",
+    "a-site-limite",
+    "a-chudik"
+   ]
+  }
+ ],
+ "testes": [],
+ "episodios": [
+  "ep-2002",
+  "ep-div-2006",
+  "ep-2015",
+  "ep-2017",
+  "ep-2020",
+  "ep-div-2021",
+  "ep-div-2023"
+ ],
+ "mudancas": [
+  {
+   "data": "2026-11-08",
+   "o_que": "Primeira versão da pergunta.",
+   "motivo": "Pedido do Pedro em 8/11/2026: uma página para cada pressão do topo."
+  }
+ ]
+}
