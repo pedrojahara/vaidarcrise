@@ -47,6 +47,8 @@ if [[ "${1:-}" != "--sem-llm" ]]; then
   if [[ "$(date +%u)" == "7" ]]; then
     .venv/bin/python src/memoria.py historias --semana || echo "aviso: a revisão das histórias falhou"
   fi
+  # Leitura a fundo feita na nuvem (que não abre as fontes): o Mac abre as fontes e tira a frase que não confere.
+  .venv/bin/python src/fundo.py --reconfere --grava || echo "aviso: a reconferência das fontes falhou"
   /usr/bin/caffeinate -i .venv/bin/python src/fundo.py --hoje --grava --limite-min 35 || echo "aviso: a leitura a fundo falhou"
   .venv/bin/python src/build_site.py > /dev/null || echo "aviso: o site não foi gerado de novo"
   git add -A runs base/memoria docs

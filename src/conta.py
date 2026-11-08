@@ -16,6 +16,8 @@ Uso (os meses em AAAA-MM):
   python src/conta.py parecidos MES SERIE [SERIE ...]     # os meses do passado mais parecidos e o que veio depois
   python src/conta.py recessoes                           # o PIB trimestre a trimestre e as recessões desde 1996
   python src/conta.py focus [--de AAAA-MM-DD]             # as previsões dos bancos (Focus) que o site guardou, semana a semana
+  python src/conta.py calc "EXPRESSAO"                    # a conta feita à mão: números, + - * / e parênteses,
+                                                          # com ponto ou vírgula nos decimais e sem separador de milhar
 """
 from __future__ import annotations
 
@@ -364,6 +366,33 @@ def cmd_focus(_m: dict, a) -> None:
         print(f"{data}: {nome}{' ' + ref if ref else ''}: {_br(v, 2)}")
 
 
+def calcular(expr: str) -> float:
+    """A conta de `calc`, sem eval: só números, + - * / e parênteses."""
+    import ast
+    import operator as op
+    ops = {ast.Add: op.add, ast.Sub: op.sub, ast.Mult: op.mul, ast.Div: op.truediv, ast.USub: op.neg, ast.UAdd: op.pos}
+
+    def ev(n):
+        if isinstance(n, ast.Constant) and isinstance(n.value, (int, float)) and not isinstance(n.value, bool):
+            return float(n.value)
+        if isinstance(n, ast.BinOp) and type(n.op) in ops:
+            return ops[type(n.op)](ev(n.left), ev(n.right))
+        if isinstance(n, ast.UnaryOp) and type(n.op) in ops:
+            return ops[type(n.op)](ev(n.operand))
+        raise SystemExit("calc aceita só números, + - * / e parênteses")
+    if len(expr) > 300:
+        raise SystemExit("calc: expressão longa demais")
+    try:
+        return ev(ast.parse(expr.replace(",", "."), mode="eval").body)
+    except (SyntaxError, ZeroDivisionError) as e:
+        raise SystemExit(f"calc: {type(e).__name__}") from None
+
+
+def cmd_calc(_mensal, a) -> None:
+    v = calcular(a.expr)
+    print(f"{a.expr} = {_br(v, 4)} (com 3 casas: {_br(v, 3)}; com 2 casas: {_br(v, 2)}; com 1 casa: {_br(v, 1)})")
+
+
 def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -391,7 +420,12 @@ def main(argv: list[str] | None = None) -> None:
     sub.add_parser("recessoes")
     p = sub.add_parser("focus")
     p.add_argument("--de")
+    p = sub.add_parser("calc")
+    p.add_argument("expr")
     a = ap.parse_args(argv)
+    if a.cmd == "calc":
+        cmd_calc(None, a)
+        return
     if getattr(a, "meses", 1) > 60 or getattr(a, "passo", 1) < 1:
         raise SystemExit("--meses vai até 60 e --passo é de pelo menos 1")
     mensal, _ = _carregar()

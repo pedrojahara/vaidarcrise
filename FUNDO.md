@@ -12,12 +12,12 @@ O básico de cada pressão fica na página da pressão (`/perguntas/`), e a leit
 
 O editor-chefe aprova a tese da leitura a fundo só se ela passar nos quatro testes:
 
-1. **Não é óbvia.** A leitora não chega nela lendo o fato do dia ou a manchete. Definição, mecanismo de livro ("juro alto freia a economia") e resumo das notícias não são achados.
+1. **Não é óbvia.** A leitora não chega nela lendo o fato do dia ou a manchete. Definição, mecanismo de livro ("juro alto freia a economia") e resumo das notícias não são achados. A tese de uma leitura a fundo dos últimos dias também não é: a leitora já leu, e o texto novo parte dela e dá o passo seguinte.
 2. **Muda alguma coisa para a leitora.** Ela passa a esperar outra coisa dos próximos meses, a ler a próxima notícia de outro jeito ou a ver o problema maior ou menor do que parecia.
 3. **Pode dar errado.** A tese diz o que deve acontecer, até quando e como o site vai saber. Se nada pode desmentir a tese, ela é opinião, e opinião não é achado.
 4. **Está no caderno.** Cada número e cada fato da tese tem uma linha no caderno, com a conta ou o documento.
 
-Um exemplo, com os números de novembro de 2026, que servem só para mostrar o raciocínio. Em 4/11, o Banco Central parou de cortar a Selic. Uma tese fraca seria "o Banco Central nunca parou de cortar com a inflação esperada tão longe da meta", porque ela é verdadeira e curiosa, mas não diz o que muda. A tese forte segue a pergunta até o e daí: desde 2002, nas 7 vezes em que a inflação esperada subiu nos 3 meses depois de o Banco Central parar de cortar, ele voltou a subir o juro nos meses seguintes; nas 3 vezes em que ela não subiu, ele voltou a cortar. Desta vez, ela já subiu 0,36 ponto em um mês. Então a próxima alta voltou a ser possível, ao contrário do que os bancos (Focus) previam, e a leitora pode conferir isso no Focus de cada segunda-feira e na reunião de 9/12. A tese também diz o tamanho da evidência: são 10 casos, e 10 casos mostram um padrão, não uma lei.
+Um exemplo, com os números de novembro de 2026, que servem só para mostrar o raciocínio. Em 4/11, o Banco Central parou de cortar a Selic. Uma tese fraca seria "o Banco Central nunca parou de cortar com a inflação esperada tão longe da meta", porque ela é verdadeira e curiosa, mas não diz o que muda. A tese forte segue a pergunta até o e daí: desde 2002, nas 7 vezes em que a inflação esperada subiu nos 3 meses depois de o Banco Central parar de cortar, ele voltou a subir o juro nos meses seguintes; nas 3 vezes em que ela não subiu, ele voltou a cortar. Desta vez, ela já subiu 0,36 ponto em um mês. Então a próxima alta voltou a ser possível, ao contrário do que os bancos (Focus) previam, e a leitora pode conferir isso no Focus de cada segunda-feira e na reunião de 9/12. A tese também diz o tamanho da evidência: são 10 casos, e 10 casos mostram um padrão, não uma lei. O exemplo mostra o caminho, e não o achado a usar: cada fato tem o seu, e o achado de um dia não volta como tese em outro.
 
 ## Como pensar
 
@@ -39,9 +39,9 @@ O contexto do momento entra sempre. Se o assunto é o dólar, lembre que houve e
 
 Cada número e cada fato que vai para o texto tem uma linha no caderno, de um destes três tipos:
 
-- **conta**: o comando de `src/conta.py` e a linha da resposta, copiada como saiu. A conferência roda o mesmo comando de novo.
+- **conta**: o comando de `src/conta.py` e a linha da resposta, copiada como saiu. A conferência roda o mesmo comando de novo. A conta feita à mão (média, diferença, percentual) também sai do programa, com `src/conta.py calc`, porque número calculado de cabeça não vale.
 - **documento**: quem publicou, o link, a data e o trecho literal da página que diz o número ou o fato. A conferência abre o link e procura o trecho.
-- **site**: um dado que o site já mostra, dos dados do dia que a pesquisa recebe.
+- **site**: um dado que o site já mostra, dos dados do dia que a pesquisa recebe. Um fato da memória do momento não é dado do site: a conferência o procura no jornal que a memória guardou.
 
 Copie o número como a fonte escreve, sem arredondar diferente. Fato sem linha no caderno não vai para o texto. Prefira o documento oficial (Banco Central, IBGE, Tesouro, Congresso) à notícia sobre ele, e notícia de jornal a texto de opinião.
 
@@ -63,7 +63,7 @@ O tamanho do texto é o tamanho do achado. Se depois de duas voltas de pesquisa 
 
 ## A conferência
 
-- O código confere cada número do texto contra o caderno, roda de novo cada conta e abre cada documento para achar o trecho (no Mac, que tem a internet livre).
+- O código confere cada número do texto contra o caderno, roda de novo cada conta e abre cada documento para achar o trecho (no Mac, que tem a internet livre). A leitura a fundo feita na nuvem, que não abre as fontes, é conferida de novo na rodada seguinte do Mac, e a frase que se apoia numa fonte que não confere sai do texto.
 - A conferência da IA lê cada frase contra as linhas que ela marca e confere a força das conclusões. "Sempre", "nunca" e "vai" só com evidência que aguenta: com 7 casos, o texto diz "nas 7 vezes desde 2002", e não "sempre".
 - A conferência também refaz o teste da troca e procura conselho sobre dinheiro.
 - Depois, o editor de estilo (`src/edita_texto.py`) passa o texto pelo PERSONA.md, sem mudar fato nem número.

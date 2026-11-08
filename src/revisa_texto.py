@@ -74,7 +74,7 @@ MOLDES = [
      "recorde sem a régua: diga 'da série' ou desde quando a série existe, como a fonte diz"),
 ]
 
-FRASE = re.compile(r"(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9\"“])")
+FRASE = re.compile(r"(?<=[.!?])\s+(?=[A-ZÀÁÉÍÓÚÂÊÔÃÕÇ0-9\"“])")
 NUMERO = re.compile(r"\d+(?:,\d+)?\s*(?:%|pontos?\b)|R\$\s*\d")
 # "A inflação recuou" soa como preço caindo; o leitor precisa ler que os preços sobem mais devagar.
 INFLACAO_CAI = re.compile(r"\b(inflação|IPCA)\b[^.]{0,60}\b(recu\w*|ca(i|iu|ía|indo|em|ir)|diminu\w*)\b", re.I)
@@ -203,6 +203,9 @@ def _glossario() -> list[re.Pattern]:
 def siglas_soltas(texto: str) -> list[str]:
     """Siglas que a leitora não conhece e que o site não liga à Wikipédia (PERSONA.md, "O jeito de escrever do site")."""
     com_link = {m.group(0) for rx in _glossario() for m in rx.finditer(texto)}
+    # A sigla com link no próprio texto ([PMI](https://...)) está explicada; o endereço do link não tem sigla.
+    com_link |= set(re.findall(r"\[([^\]]+)\]\([^)]*\)", texto))
+    texto = re.sub(r"\]\([^)]*\)", "]", texto)
     return sorted({s for s in SIGLA.findall(texto) if s not in SIGLAS_CONHECIDAS and not any(s in c for c in com_link)})
 
 

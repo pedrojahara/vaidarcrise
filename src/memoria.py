@@ -459,8 +459,10 @@ def _memoria_site(dia: dt.date, n: int = 14) -> str:
         tipo = {"dia": "fato do dia", "semana": "resumo da semana", "mes": "resumo do mês"}.get(p.get("tipo") or "dia")
         f = p.get("fundo") or {}
         l = f"- {arq.stem[:10]} ({tipo}): {p['titulo']}."
-        if f.get("titulo"):
+        if f.get("ok") and f.get("titulo"):
             l += f" Leitura a fundo: {f['titulo']}."
+            if f.get("tese"):
+                l += f" Tese: {f['tese']}"
         if (f.get("previsao") or {}).get("texto"):
             l += f" O site disse que vai conferir em {f['previsao'].get('quando')}: {f['previsao']['texto']}"
         linhas.append(l)

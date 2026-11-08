@@ -16,6 +16,6 @@ Vale para tudo o que chega ao leitor:
 ## Antes de entregar
 
 - Gere o site com `.venv/bin/python src/build_site.py` e confira as páginas mudadas a 390 px de largura.
-- A leitura a fundo passa sozinha pelo editor-chefe, pela conferência e pelo editor de estilo (`src/fundo.py`); para refazer uma, `.venv/bin/python src/fundo.py runs/<id>.json --grava`, no Mac (que abre as fontes).
+- A leitura a fundo passa sozinha pelo editor-chefe, pela conferência e pelo editor de estilo (`src/fundo.py`); para refazer uma, `.venv/bin/python src/fundo.py runs/<id>.json --grava`, no Mac (que abre as fontes). Na nuvem, com `--offline` (e `--evitar` para não repetir o achado de outro dia); a rodada seguinte do Mac roda `--reconfere`, abre as fontes e tira a frase que não confere.
 - Os posts (fato do dia, semana e mês) passam pelo editor (`src/edita_texto.py`, que revisa o rascunho com o PERSONA.md, sugere e edita) e por `src/revisa_texto.py`; texto à mão, como o Retrato do Brasil em `editor/`, passe pelo editor (`python src/edita_texto.py editor/<texto>.md`) e leia em voz alta.
 - Até o lançamento oficial (Pedro avisa quando), toda mudança importante vale para o site inteiro, inclusive o passado: reescreva posts antigos, títulos de notícia e leituras em `runs/` e `data/`, com os mesmos números e datas. Depois do lançamento, `runs/` passa a ser registro imutável.
