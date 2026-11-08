@@ -4,8 +4,12 @@ Grava data/historico/series.json com as séries mensais (e as diárias que o mod
 usa dia a dia) desde 2002, mais o PIB trimestral desde 1996. Roda de vez em quando,
 não todo dia: a calibração só muda quando alguém decide recalibrar.
 
+Grava também data/historico/titulos_ipca.json, a taxa de cada Tesouro IPCA+ no fim de cada mês
+desde 2005, com que a direção do risco compara o juro de 10 anos sempre no mesmo título.
+
 Uso: python src/historico.py              (baixa tudo de novo)
      python src/historico.py --faltando    (só as séries que faltam no arquivo)
+     python src/historico.py --titulos     (só a taxa de cada título no fim do mês; series.json fica como está)
 
 O Banco Central às vezes devolve uma página vazia em vez do JSON: cada consulta é
 repetida algumas vezes, e uma série que falha mantém a versão já gravada.
@@ -24,6 +28,7 @@ import fetch_data  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SAIDA = ROOT / "data" / "historico" / "series.json"
+TITULOS = ROOT / "data" / "historico" / "titulos_ipca.json"
 INICIO = dt.date(2002, 1, 1)
 
 # Mesmas séries da coleta diária. A Selic e o dólar são diários e muito longos: ficam por mês.
@@ -157,8 +162,26 @@ def fred(serie: str) -> list[dict]:
     return out
 
 
+def tesouro(res: dict | None) -> None:
+    """A taxa de cada título no fim do mês em TITULOS e, com `res`, o juro de 10 anos dia a dia no histórico."""
+    dados, fim_de_mes = com_paciencia(lambda: fetch_data.tesouro_ipca(INICIO))
+    if res is not None:
+        res["series"]["juro_real_longo"] = dados
+    TITULOS.parent.mkdir(parents=True, exist_ok=True)
+    TITULOS.write_text(json.dumps({
+        "coletado_em": dt.datetime.now().astimezone().isoformat(timespec="seconds"),
+        "o_que_e": "Taxa de venda pela manhã (% ao ano acima do IPCA) de cada Tesouro IPCA+ no último dia do mês com dado,"
+                   " por vencimento. Fonte: Tesouro Transparente, PrecoTaxaTesouroDireto.csv.",
+        "fim_de_mes": fim_de_mes}, ensure_ascii=False, indent=0) + "\n")
+    print(f"juro_real_longo: {len(dados)} pontos; {TITULOS.name}: {len(fim_de_mes)} meses", flush=True)
+
+
 def main() -> None:
     faltando = "--faltando" in sys.argv
+    if "--titulos" in sys.argv:
+        tesouro(None)
+        print(f"-> {TITULOS}")
+        return
     antigo = json.loads(SAIDA.read_text()) if SAIDA.exists() else {"series": {}}
     res: dict = {"coletado_em": dt.datetime.now().astimezone().isoformat(timespec="seconds"),
                  "series": dict(antigo["series"]), "erros": []}
@@ -179,7 +202,12 @@ def main() -> None:
     for nome, code in DIARIAS_POR_MES.items():
         tenta(nome, lambda code=code: por_mes(sgs_longo(code, INICIO)))
     tenta("dolar_ptax_diario", lambda: sgs_longo(1, INICIO))
-    tenta("juro_real_longo", lambda: fetch_data.juro_real_longo(INICIO))
+    if not (faltando and res["series"].get("juro_real_longo") and TITULOS.exists()):
+        try:
+            tesouro(res)
+        except Exception as e:  # noqa: BLE001
+            res["erros"].append(f"juro_real_longo: {e}")
+            print(f"ERRO juro_real_longo: {e} (fica a versão anterior)", flush=True)
     tenta("focus_ipca_12m", focus_ipca_12m_historico)
     tenta("focus_pib", focus_pib_historico)
     tenta("pib", pib_desde_1996)

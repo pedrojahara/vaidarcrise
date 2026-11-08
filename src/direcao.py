@@ -11,7 +11,8 @@ A regra (config/modelo.json, seção "direcao"; os cortes de cada pressão em co
    andou isso para o lado bom; no resto, ficou igual.
 3. A soma (as que pioraram menos as que melhoraram) decide: 2 ou mais, subindo; −2 ou menos, caindo.
    O dólar e o juro de 10 anos, que saem todo dia, só trocam de lado quando o lado novo se mantém por 3 dias
-   úteis seguidos (persiste_dias em config/modelo.json).
+   úteis seguidos (persiste_dias em config/modelo.json). O juro de 10 anos é o do Tesouro IPCA+ que vence
+   mais perto de 10 anos e se compara sempre no mesmo título (base_do_mesmo_titulo).
 4. A direção só muda se o novo resultado se repetir no mês seguinte.
 5. Se a prévia do PIB (IBC-Br, média de 3 meses contra os 3 anteriores) cair mais de 1,5%, o topo diz
    que a economia está encolhendo.
@@ -44,6 +45,7 @@ ROOT = Path(__file__).resolve().parent.parent
 HIST = ROOT / "data" / "historico" / "series.json"
 PIB = ROOT / "data" / "historico" / "pib.json"
 MENSAL = ROOT / "data" / "historico" / "mensal.json"
+TITULOS = ROOT / "data" / "historico" / "titulos_ipca.json"
 CAL = ROOT / "config" / "calibracao.json"
 CFG = ROOT / "config" / "modelo.json"
 # O dólar e o juro de 10 anos saem todo dia. Com o fechamento da véspera, a Desconfiança de quem investe trocava de
@@ -54,6 +56,13 @@ CFG = ROOT / "config" / "modelo.json"
 DIARIAS = {"dolar_ptax": "dolar_ptax_diario", "juro_real_longo": "juro_real_longo"}
 DIA = "/dia"
 PERSISTE = ("dolar", "juro_longo")
+# O juro de 10 anos é a taxa do Tesouro IPCA+ que vence mais perto de 10 anos, e esse título muda de tempos em
+# tempos (31/12/2009, 2/1/2020, 10/2/2020 e 30/12/2020). Cada título paga uma taxa diferente, então a série pula no
+# dia da troca sem o mercado mexer; por isso, a comparação com 3 meses antes usa sempre o título de agora
+# (decisão do Pedro em 8/11/2026). Ficam em series[<nome> + TITULO] o título de cada dia, em + POR_TITULO a taxa
+# de cada título no fim de cada mês (data/historico/titulos_ipca.json e a coleta do dia) e em + TROCAS o pulo
+# de cada troca, para quando o título de agora ainda não existia no fim do mês de 3 meses antes.
+TITULO, POR_TITULO, TROCAS = "/titulo", "/por_titulo", "/trocas"
 
 ESTADOS = {1: "subindo", 0: "igual", -1: "caindo", 2: "encolhendo"}
 CODIGO = {"subindo": "S", "igual": "I", "caindo": "C", "encolhendo": "E"}
@@ -65,7 +74,7 @@ MEDIDAS = {
     "primario": {"serie": "primario_12m", "como": "pontos", "ruim": 1, "atraso": 2},
     "parcelas": {"serie": "comprometimento_renda", "como": "pontos", "ruim": 1, "atraso": 3},
     "dolar": {"serie": "dolar_ptax", "como": "pct", "ruim": 1, "atraso": 0},
-    "juro_longo": {"serie": "juro_real_longo", "como": "pontos", "ruim": 1, "atraso": 0},
+    "juro_longo": {"serie": "juro_real_longo", "como": "pontos", "ruim": 1, "atraso": 0, "titulo": True},
     "inflacao": {"serie": "focus_ipca_12m", "como": "pontos", "ruim": 1, "atraso": 0},
     "juro": {"serie": "selic_meta", "como": "pontos", "ruim": 1, "atraso": 0},
     "ritmo": {"serie": "ibcbr", "como": "media", "ruim": -1, "atraso": 2},
@@ -134,6 +143,9 @@ def mensais(snap: dict | None = None, rodadas: list[dict] | None = None, hist: d
             if x.get("valor") is not None:
                 dias[x["data"][:10]] = (x["data"][:10], float(x["valor"]))
         out[k + DIA] = dias
+    for m in MEDIDAS.values():
+        if m.get("titulo"):
+            _titulos(out, m["serie"], hist, snap)
     foc = out["focus_ipca_12m"]
     for r in rodadas or []:
         f = ((r.get("insumos") or {}).get("focus") or {}).get("IPCA 12m")
@@ -146,6 +158,46 @@ def mensais(snap: dict | None = None, rodadas: list[dict] | None = None, hist: d
     sel = out["selic_meta"]
     out["juro_real"] = {m: (max(sel[m][0], foc[m][0]), indicadores.juro_real(sel[m][1], foc[m][1])) for m in sel if m in foc}
     return out
+
+
+def _titulos(out: dict, k: str, hist: dict, snap: dict | None) -> None:
+    """O título de cada dia, a taxa de cada título no fim de cada mês e o pulo de cada troca de título."""
+    dados = [*hist.get(k, []), *((snap or {}).get("series", {}).get(k, {}).get("dados") or [])]
+    titulo = {x["data"][:10]: x["vencimento"] for x in dados if x.get("valor") is not None and x.get("vencimento")}
+    por_titulo: dict[str, tuple[str, dict[str, float]]] = {}
+    fontes = [json.loads(TITULOS.read_text())["fim_de_mes"]] if TITULOS.exists() else []
+    fontes.append((snap or {}).get("series", {}).get(k, {}).get("fim_de_mes") or {})
+    for fonte in fontes:  # a coleta do dia, por último, vale por cima do histórico
+        for m, x in fonte.items():
+            por_titulo[m] = (x["dia"], x["taxas"])
+    trocas = []
+    dias = out[k + DIA]
+    antes = None
+    for d in sorted(dias):
+        if d in titulo:
+            if antes and titulo[d] != titulo[antes]:
+                trocas.append((d, dias[d][1] - dias[antes][1]))
+            antes = d
+    out[k + TITULO], out[k + POR_TITULO], out[k + TROCAS] = titulo, por_titulo, trocas
+
+
+def base_do_mesmo_titulo(series: dict, med: dict, m_base: str, dia: str | None) -> float | None:
+    """O valor do fim do mês `m_base` com que se compara o dado do dia `dia`. No juro de 10 anos, se o título de
+    `dia` não é o do fim de `m_base`, vale a taxa do título de `dia` no fim de `m_base`; se esse título ainda não
+    existia (ou falta a tabela), desconta-se o pulo de cada troca de título entre as duas datas."""
+    b = series.get(med["serie"], {}).get(m_base)
+    if b is None:
+        return None
+    if not med.get("titulo") or not dia:
+        return b[1]
+    tit = series.get(med["serie"] + TITULO, {})
+    agora, antes = tit.get(dia[:10]), tit.get(b[0][:10])
+    if agora is None or antes is None or agora == antes:
+        return b[1]
+    fim = series.get(med["serie"] + POR_TITULO, {}).get(m_base)
+    if fim and fim[0] == b[0][:10] and agora in fim[1]:
+        return fim[1][agora]
+    return b[1] + sum(pulo for d, pulo in series.get(med["serie"] + TROCAS, []) if b[0][:10] < d <= dia[:10])
 
 
 def _valor(s: dict[str, tuple[str, float]], m: str) -> float | None:
@@ -165,6 +217,17 @@ def mudanca(med: dict, s: dict[str, tuple[str, float]], ref: str, janela: int) -
     if a is None or b is None:
         return None
     return 100 * (a / b - 1) if med["como"] == "pct" else a - b
+
+
+def mudanca_de(series: dict, k: str, ref: str, janela: int) -> float | None:
+    """mudanca() da medida `k`; no juro de 10 anos, comparada no mesmo título (base_do_mesmo_titulo)."""
+    med = MEDIDAS[k]
+    s = series.get(med["serie"], {})
+    if not med.get("titulo"):
+        return mudanca(med, s, ref, janela)
+    a = s.get(ref)
+    b = base_do_mesmo_titulo(series, med, mais(ref, -janela), a[0]) if a else None
+    return None if a is None or b is None else a[1] - b
 
 
 def escala_robusta(xs: list[float]) -> float:
@@ -212,14 +275,14 @@ def lados_persistentes(series: dict, cortes: dict, p: dict) -> dict[str, dict[st
     j = p["janela_meses"]
     for k in PERSISTE:
         med = MEDIDAS[k]
-        diaria, mensal = series.get(med["serie"] + DIA), series.get(med["serie"], {})
+        diaria = series.get(med["serie"] + DIA)
         if not diaria or cortes.get(k) is None:
             continue
         corte = p["corte_vaivem"] * cortes[k]
         atual, cand, cont = None, None, 0
         por_mes: dict[str, tuple[str, int | None, int]] = {}
         for d in sorted(diaria):
-            base = _valor(mensal, mais(d[:7], -j))
+            base = base_do_mesmo_titulo(series, med, mais(d[:7], -j), d)
             if base is None:
                 continue
             v = diaria[d][1]
@@ -243,7 +306,7 @@ def mes_da_regra(series: dict, mes: str, cortes: dict, p: dict, ao_vivo: bool = 
     juro de 10 anos ficam com o lado que já durou os dias pedidos; o lado só do dia fica em `lados_do_dia`."""
     j = p["janela_meses"]
     refs = referencias(series, mes, ao_vivo)
-    mud = {k: mudanca(MEDIDAS[k], series.get(MEDIDAS[k]["serie"], {}), refs[k], j) if refs[k] else None for k in MEDIDAS}
+    mud = {k: mudanca_de(series, k, refs[k], j) if refs[k] else None for k in MEDIDAS}
     corte = {k: p["corte_vaivem"] * cortes[k] if cortes.get(k) is not None else None for k in MEDIDAS}
     lados = {k: lado(mud[k], corte[k], MEDIDAS[k]["ruim"]) for k in MEDIDAS}
     do_dia = dict(lados)
@@ -277,8 +340,7 @@ def mudancas_da_amostra(series: dict, k: str, ate: str, p: dict) -> list[float]:
     """As mudanças de 3 meses de uma medida em cada mês desde o começo da amostra até `ate`, com o atraso
     de divulgação da série (a base do corte, na calibração e na hora)."""
     med = MEDIDAS[k]
-    s = series.get(med["serie"], {})
-    xs = [mudanca(med, s, mais(mstr(n), -med["atraso"]), p["janela_meses"])
+    xs = [mudanca_de(series, k, mais(mstr(n), -med["atraso"]), p["janela_meses"])
           for n in range(mnum(p["amostra_inicio"]), mnum(ate) + 1)]
     return [x for x in xs if x is not None]
 
@@ -361,8 +423,9 @@ def calcular(snap: dict, cfg: dict, cal: dict, rodadas: list[dict] | None = None
         if not ref:
             continue
         a, b = s.get(ref), s.get(mais(ref, -j))
+        antes = base_do_mesmo_titulo(series, med, mais(ref, -j), a[0] if a else None)
         medidas[m] = {"agora": a[1] if a else None, "dia": a[0] if a else None, "ref": ref,
-                      "antes": b[1] if b else None, "dia_antes": b[0] if b else None, "ref_antes": mais(ref, -j),
+                      "antes": antes, "dia_antes": b[0] if b else None, "ref_antes": mais(ref, -j),
                       "mudanca": agora["mudancas"][m],
                       "corte": p["corte_vaivem"] * cortes[m] if cortes.get(m) is not None else None,
                       "lado": agora["lados"][m], "como": med["como"]}
