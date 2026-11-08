@@ -38,4 +38,24 @@ else
     echo "push falhou (tentativa $i)"; sleep $((2 ** i))
   done
 fi
+echo "=== $(date '+%Y-%m-%dT%H:%M:%S%z') post publicado (direção ${direcao})"
+
+# A leitura a fundo do fato do dia (src/fundo.py, guia em FUNDO.md) sai depois do post, num segundo push, porque a
+# pesquisa leva até uns 35 minutos. Antes, a memória do momento junta os fatos do dia; no domingo, revê as histórias.
+if [[ "${1:-}" != "--sem-llm" ]]; then
+  .venv/bin/python src/memoria.py dia || echo "aviso: a memória do dia falhou"
+  if [[ "$(date +%u)" == "7" ]]; then
+    .venv/bin/python src/memoria.py historias --semana || echo "aviso: a revisão das histórias falhou"
+  fi
+  /usr/bin/caffeinate -i .venv/bin/python src/fundo.py --hoje --grava --limite-min 35 || echo "aviso: a leitura a fundo falhou"
+  .venv/bin/python src/build_site.py > /dev/null || echo "aviso: o site não foi gerado de novo"
+  git add -A runs base/memoria docs
+  if ! git diff --cached --quiet; then
+    git commit -q -m "Leitura a fundo de $(date '+%d/%m/%Y')"
+    for i in 1 2 3 4; do
+      git push -q origin main && break
+      echo "push falhou (tentativa $i)"; sleep $((2 ** i))
+    done
+  fi
+fi
 echo "=== $(date '+%Y-%m-%dT%H:%M:%S%z') fim (direção ${direcao})"

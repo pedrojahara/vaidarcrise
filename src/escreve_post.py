@@ -837,7 +837,7 @@ def escrever(rodada: dict, cfg: dict, datas: list[dict] | None = None, budget_us
     tipo, dados, ctx, base = cx["tipo"], cx["dados"], cx["ctx"], cx["base"]
     sistema, schema = system(tipo), SCHEMAS[tipo]
     prompt = f"<dados>\n{dados}\n</dados>\n\nEscreva o post ({TIPOS[tipo].lower()}) conforme as regras e devolva o JSON do esquema."
-    r = classify_news.chamar_claude(sistema, prompt, schema, budget_usd)
+    r = classify_news.chamar_claude(sistema, prompt, schema, budget_usd, etapa="post")
     metas = [r["meta"]]
     if not r["ok"]:
         return {**base, "ok": False, "problemas": [], "meta": metas}
@@ -863,7 +863,7 @@ def escrever(rodada: dict, cfg: dict, datas: list[dict] | None = None, budget_us
         # Uma reescrita só. Se ainda sobrar problema, publica assim e o registro guarda a lista.
         refaz = (f"{prompt}\n\nSua primeira versão foi esta:\n{json.dumps(saida, ensure_ascii=False)}\n\n"
                  "Reescreva corrigindo estes problemas, sem mudar os fatos nem os números:\n- " + "\n- ".join(probs))
-        r2 = classify_news.chamar_claude(sistema, refaz, schema, budget_usd)
+        r2 = classify_news.chamar_claude(sistema, refaz, schema, budget_usd, etapa="post")
         metas.append(r2["meta"])
         if r2["ok"]:
             p2 = _post_de_saida(tipo, r2["saida"])

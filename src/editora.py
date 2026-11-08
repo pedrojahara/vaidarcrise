@@ -147,7 +147,7 @@ def escolher(p: dict, rodada: dict, cfg: dict, anteriores: list[str], cesta: lis
         return p
     prompt = f"<pauta>\n{texto_pauta(p, rodada, cfg, anteriores, cesta)}\n</pauta>\n\nEscolha o fato do dia e devolva o JSON do esquema."
     try:
-        r = classify_news.chamar_claude(system(), prompt, SCHEMA, budget_usd)
+        r = classify_news.chamar_claude(system(), prompt, SCHEMA, budget_usd, etapa="editora")
     except Exception as e:  # noqa: BLE001
         r = {"ok": False, "saida": None, "meta": {"erro": f"falha na editora: {e}"}}
     reg = {"ok": r["ok"], "saida": r.get("saida"), "meta": [r["meta"]]}
@@ -171,7 +171,7 @@ def escolher(p: dict, rodada: dict, cfg: dict, anteriores: list[str], cesta: lis
         txt = (f"{prompt.split('</pauta>')[0]}</pauta>\n\nA editora trocou {p['padrao']} por {final}, pelo motivo "
                f"{s.get('motivo_desvio')}: {s.get('por_que')}\n\nDefenda a escolha padrão e devolva o JSON do esquema.")
         try:
-            d = classify_news.chamar_claude(sis, txt, SCHEMA_DEFESA, budget_usd / 2)
+            d = classify_news.chamar_claude(sis, txt, SCHEMA_DEFESA, budget_usd / 2, etapa="editora")
         except Exception as e:  # noqa: BLE001
             d = {"ok": False, "saida": None, "meta": {"erro": str(e)}}
         reg["meta"].append(d["meta"])
