@@ -762,8 +762,8 @@ def reconferir(rodada: dict, log=print, offline: bool = False) -> dict | None:
     conferir_caderno(cad, e["dia"], offline, _base_site(e))
     usadas = set(marcas(f["texto"]))
     ruins = {c["id"] for c in cad if c["id"] in usadas and c.get("conferencia", {}).get("status") in RUINS}
-    abertos = sum(1 for c in cad if c.get("conferencia", {}).get("status") not in ("nao_aberto", "site", None)
-                  and c["tipo"] != "conta")
+    abertos = sum(1 for c in cad if c["tipo"] != "conta"
+                  and c.get("conferencia", {}).get("status") in ("conferido", "numeros_na_pagina", "trecho_nao_achado"))
     texto, cortadas = cortar_marcas(f["texto"], ruins)
     texto, mais = cortar_frases(texto, _base_ok(cad, e))
     cortadas += mais

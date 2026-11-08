@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -177,17 +178,32 @@ def fundo_ctx(post: dict, cfg: dict, ligar, registro: str | None = None) -> dict
     cad = {c["id"]: c for c in f.get("caderno", [])}
     usadas = [cad[i] for i in dict.fromkeys(fundo_mod.marcas(f["texto"])) if i in cad]
     fontes, vistas = [], set()
+
+    def quem(q: str, url: str | None) -> str:
+        # O bastidor da pesquisa ("resumo da busca", "página não aberta") fica no registro, não na página.
+        q = re.sub(r"\s*\([^)]*(busca|abert|página|resultado|memória)[^)]*\)", "", q or "", flags=re.I)
+        q = re.sub(r"^(memória do (momento|site)|dados do site)\b[^(]*", "", q, flags=re.I).strip(" ,;")
+        q = re.sub(r"^\((.*)\)$", r"\1", q).strip()
+        if not q and url:
+            q = re.sub(r"^www\d?\.", "", url.split("/")[2]) if "://" in url else ""
+        return q or "fonte"
+
+    so_site = False
     for c in usadas:
-        if c["tipo"] != "documento":
+        if c["tipo"] == "conta":
             continue
-        fo = c.get("fonte") or {}
-        chave = fo.get("url") or fo.get("quem")
-        if chave and chave not in vistas:
-            vistas.add(chave)
-            fontes.append({"quem": fo.get("quem") or "fonte", "url": fo.get("url")})
+        fos = [c.get("fonte") or {}] if (c.get("fonte") or {}).get("url") else c.get("fontes_memoria") or []
+        if c["tipo"] == "site" and not fos:
+            so_site = True
+        for fo in fos if c["tipo"] != "documento" else [c.get("fonte") or {}]:
+            nome = quem(fo.get("quem"), fo.get("url"))
+            chave = fo.get("url") or fo.get("quem")
+            if chave and chave not in vistas and nome not in vistas:
+                vistas |= {chave, nome}
+                fontes.append({"quem": nome, "url": fo.get("url")})
     if any(c["tipo"] == "conta" for c in usadas):
         fontes.append({"quem": "contas do site com as séries do Banco Central e do IBGE", "url": registro})
-    if any(c["tipo"] == "site" for c in usadas):
+    if so_site:
         fontes.append({"quem": "os dados e as notícias do dia, no registro do site", "url": registro})
     pv = f.get("previsao") or {}
     previsao = None
