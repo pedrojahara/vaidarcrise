@@ -10,7 +10,7 @@ A metodologia está em [METODOLOGIA.md](METODOLOGIA.md), a regra da direção em
 launchd, de hora em hora (minuto 5) → run.sh --coletar
   └─ src/fetch_news.py      RSS de 8 veículos + GDELT     → data/manchetes.json (acervo local, fora do git)
 
-launchd, todo dia às 06h30 → run.sh   (uma publicação por dia; se o Mac dormir, roda ao acordar)
+launchd, todo dia às 05h45 → run.sh   (uma publicação por dia; se o Mac dormir, roda ao acordar)
   ├─ src/fetch_data.py      BCB SGS, Focus, IBGE, Tesouro Direto e FMI (FRED) → data/raw/<dia>/indicadores.json
   ├─ src/calendario.py      calendário de divulgações do IBGE + config/datas.json → data/calendario.json
   ├─ src/direcao.py         a direção do risco: as cinco pressões contra 3 meses antes, com os cortes de
@@ -21,15 +21,21 @@ launchd, todo dia às 06h30 → run.sh   (uma publicação por dia; se o Mac dor
   ├─ src/dossie.py          fatos de dados de cada assunto, contexto para o post
   ├─ src/pauta.py           os degraus da carta editorial (CARTA_EDITORIAL.md) dão o fato do dia padrão;
   │                         src/editora.py (claude -p) lê a carta e só troca por um motivo da lista, que o código confere
+  ├─ src/fundo.py pensar    no fato do dia, a pesquisa do dia (claude -p com busca na internet e src/conta.py, guia em
+  │                         FUNDO.md) e o editor-chefe: o porquê e o e daí do fato, com o caderno de fontes, e a tese
+  │                         da leitura a fundo (até uns 30 minutos)
   ├─ src/escreve_post.py    claude -p escreve o post do tipo do dia (fato do dia, semana ou mês) a partir da conta pronta,
-  │                         dos dados oficiais (o mês) e dos registros em runs/ (a semana); src/edita_texto.py
-  │                         (o editor) revisa e edita o rascunho com o PERSONA.md; src/revisa_texto.py confere
+  │                         da pesquisa do dia (o fato do dia), dos dados oficiais (o mês) e dos registros em runs/
+  │                         (a semana); src/edita_texto.py (o editor) revisa e edita o rascunho com o PERSONA.md;
+  │                         src/revisa_texto.py confere; o teste do porquê lê o fato do dia pronto
   ├─ src/run.py             grava runs/<id>.json e data/eventos.json
   ├─ src/build_site.py      gera docs/ (HTML estático, og.png, data.json) com editor/*.md;
   │                         a aba O que causa recessão é texto fixo em templates/causas.html
   │                         (a pesquisa por trás dela, na metodologia: src/causas.py e config/causas.json)
   │                         (desenhos e prévia da aba: src/imagens_causas.py, rodado à mão)
-  └─ git push               GitHub Pages publica docs/
+  ├─ git push               GitHub Pages publica docs/
+  └─ src/fundo.py --hoje    a leitura a fundo, escrita da mesma pesquisa e conferida (src/memoria.py dia antes dela),
+                            num segundo push
 ```
 
 O LLM classifica manchetes, escolhe o fato do dia dentro da régua da carta editorial e redige o post. A direção, a pressão das notícias por assunto e o HTML saem de código determinístico.
@@ -57,11 +63,13 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python src/escreve_post.py                      # escreve o post da última atualização e imprime, sem gravar
 .venv/bin/python src/escreve_post.py --so-dados            # só os dados que o post recebe, sem chamar o LLM
 .venv/bin/python src/escreve_post.py --tipo semana --so-dados  # força o tipo (dia, semana ou mes)
+.venv/bin/python src/escreve_post.py runs/<id>.json --grava  # refaz o post guardado, com o porquê da pesquisa gravada
+.venv/bin/python src/fundo.py runs/<id>.json --escreve --grava  # refaz só a leitura a fundo, da pesquisa gravada
 .venv/bin/python src/edita_texto.py runs/<id>.json         # o editor num post guardado: sugestões e texto editado (--grava grava)
 .venv/bin/python src/edita_texto.py editor/<texto>.md       # o editor num texto à mão
 ```
 
-Agendamento: copie `launchd/com.pedrojahara.vaidarcrise.plist` (06h30) e `launchd/com.pedrojahara.vaidarcrise.coleta.plist` (de hora em hora) para `~/Library/LaunchAgents` e carregue com `launchctl bootstrap gui/$(id -u) <arquivo>`. Logs em `logs/`.
+Agendamento: copie `launchd/com.pedrojahara.vaidarcrise.plist` (05h45) e `launchd/com.pedrojahara.vaidarcrise.coleta.plist` (de hora em hora) para `~/Library/LaunchAgents` e carregue com `launchctl bootstrap gui/$(id -u) <arquivo>`. Logs em `logs/`.
 
 Textos escritos à mão ficam em `editor/AAAA-MM-DD-slug.md` (cabeçalho, `---`, Markdown) e entram no blog na próxima geração do site. Todo post, do dia ou escrito à mão, entra na rolagem da página principal na data do cabeçalho, do mais novo ao mais antigo: a página traz os 5 primeiros, e o resto vem de `docs/posts/` (um pedaço de HTML por post e `indice.json`) quando a leitora chega ao fim. Com `tipo: retrato` no cabeçalho, o texto vira o Retrato do Brasil e também fica no cartão "Comece por aqui", no topo da página principal (vale o mais novo).
 

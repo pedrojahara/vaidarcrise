@@ -1,10 +1,14 @@
 # A leitura a fundo do fato do dia
 
-Este guia vale para as quatro etapas da leitura a fundo (`src/fundo.py`): a pesquisa, o editor-chefe, a redação e a conferência. Cada etapa recebe o guia inteiro, para que todas julguem o texto pela mesma régua. Quem escreve segue também o [PERSONA.md](PERSONA.md), que manda em tudo o que a leitora lê.
+Este guia vale para as quatro etapas da leitura a fundo (`src/fundo.py`): a pesquisa e o editor-chefe, que rodam antes do fato do dia e servem aos dois textos, e a redação e a conferência, que vêm depois dele. Cada etapa recebe o guia inteiro, para que todas julguem o texto pela mesma régua. Quem escreve segue também o [PERSONA.md](PERSONA.md), que manda em tudo o que a leitora lê.
 
 ## Para que serve
 
 O fato do dia, com até 100 palavras, conta o que aconteceu e por que isso importa para a leitora. A leitura a fundo é para quem tem uns 10 minutos e quer entender mais. Ela precisa trazer o que a leitora não acharia sozinha no jornal do dia: a vez parecida no passado e o que veio depois dela, a tendência que o número do mês esconde, a conta que ninguém fez com as séries do site, o que o mundo está fazendo ao mesmo tempo e o que pode acontecer nos próximos meses.
+
+## Uma pesquisa, dois textos
+
+A pesquisa e o editor-chefe rodam antes do fato do dia, na rodada que começa às 05h45. Em qualquer veredito, o editor-chefe passa às 100 palavras o "curto": por que o fato aconteceu, dito por quem decidiu ou pela fonte, e o e daí, que é a tese numa frase quando há tese, com as linhas do caderno que sustentam os dois. O fato do dia é escrito com isso, passa pela mesma régua de números (só vale o número da saída da conta, do trecho do documento ou do dado do site) e por um teste do porquê, que o devolve ao redator se a leitora terminaria sem saber por que o fato aconteceu. Depois que ele sai, a redação da leitura a fundo usa o mesmo caderno e a mesma tese e começa onde as 100 palavras pararam: não conta de novo o fato, o porquê nem a frase da tese, e mostra o que os sustenta. Num dia sem tese, não há leitura a fundo, mas o fato do dia leva o porquê que a pesquisa achou.
 
 O básico de cada pressão fica na página da pressão (`/perguntas/`), e o post leva para lá numa linha logo abaixo do fato do dia, antes da leitura a fundo. Por isso a leitura a fundo não explica de novo o que é a Selic nem por que juro alto freia a economia. Ela parte daí.
 
@@ -23,7 +27,7 @@ Um exemplo, com os números de novembro de 2026, que servem só para mostrar o r
 
 Pense por perguntas, e desça quantas camadas forem precisas. Às vezes o e daí está na pergunta seguinte e às vezes está cinco perguntas adiante. As perguntas que mais rendem:
 
-- Por que isso aconteceu agora, e quem decidiu (governo, Congresso, Banco Central, empresas, famílias, ou o mundo lá fora)?
+- Por que isso aconteceu agora, e quem decidiu (governo, Congresso, Banco Central, empresas, famílias, ou o mundo lá fora)? Esta vem primeiro, com o documento de quem decidiu, porque a resposta vai também para o fato do dia.
 - Já aconteceu antes? Quando, e o que veio depois? O que é igual e o que é diferente desta vez?
 - O número do mês confirma ou contraria a tendência dos últimos meses?
 - O que os bancos (Focus), o Banco Central e o governo esperam, e o que mudaria a expectativa deles?
@@ -49,7 +53,7 @@ Copie o número como a fonte escreve, sem arredondar diferente. Fato sem linha n
 
 - Um texto corrido, de 800 a 1.500 palavras, que segue a ordem do pensamento. Nada de formulário com as mesmas partes todo dia.
 - Até 3 intertítulos, e cada um é uma frase que diz a ideia da parte ("Das 10 vezes em que o Banco Central parou de cortar, 7 terminaram em alta"), nunca um rótulo ("Contexto", "O que está em jogo").
-- A tese aparece nos dois primeiros parágrafos, e o resto do texto a sustenta: a vez parecida no passado, a conta, o mundo e a política em volta, a melhor objeção e o que pode dar errado.
+- A tese aparece nos dois primeiros parágrafos, com o que a sustenta e sem copiar as frases do fato do dia, que já a disse numa frase, e o resto do texto a sustenta: a vez parecida no passado, a conta, o mundo e a política em volta, a melhor objeção e o que pode dar errado.
 - A melhor objeção entra com honestidade, com quem discorda e por quê. Diga também quão forte é a evidência: poucos casos são poucos casos, e uma correlação não prova a causa.
 - O texto termina com o que o site vai conferir e quando: um sinal que a leitora também pode olhar e uma data.
 - Siga o jeito de escrever do PERSONA.md: frase completa, causa e efeito em ordem, quem faz o quê e para quem, comparação que diz o mês, termo técnico sem definição (o site liga à Wikipédia), sigla por extenso ou com link e nada de fórmula de efeito.
@@ -59,7 +63,7 @@ Copie o número como a fonte escreve, sem arredondar diferente. Fato sem linha n
 
 ## Até onde ir
 
-O tamanho do texto é o tamanho do achado. Se depois de duas voltas de pesquisa o editor-chefe não achar tese que passe nos quatro testes, o dia fica sem leitura a fundo e o post leva só o link da página da pressão. Um texto longo sem achado gasta o tempo de quem lê. O trabalho de cada dia tem limite de uns 30 minutos.
+O tamanho do texto é o tamanho do achado. Se depois de duas voltas de pesquisa o editor-chefe não achar tese que passe nos quatro testes, o dia fica sem leitura a fundo, e o fato do dia sai com o porquê que a pesquisa achou e o link do básico. Um texto longo sem achado gasta o tempo de quem lê. O trabalho de cada dia tem limite de uns 30 minutos para a pesquisa, antes do post, e outros 35 para a redação e a conferência, depois dele.
 
 ## A conferência
 

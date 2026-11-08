@@ -7,9 +7,13 @@ Uso: python src/run.py             (atualização do dia; não faz nada se já h
      python src/run.py --coletar   (só junta manchetes ao acervo, sem LLM e sem publicar)
      python src/run.py --forcar    (atualiza mesmo que já haja uma hoje)
      python src/run.py --sem-llm   (só dados)
+     python src/run.py --sem-pesquisa (o fato do dia sai sem a pesquisa do dia antes; a leitura a fundo faz tudo depois)
+
+No fato do dia, a pesquisa do dia (src/fundo.py, pensar) roda antes do post, e o mesmo caderno de fontes serve
+às 100 palavras e à leitura a fundo, escrita depois do post (src/fundo.py --hoje, no run.sh).
 
 Os feeds de alguns jornais guardam só as 10 últimas manchetes. A coleta de hora em
-hora junta tudo num acervo local, e a atualização das 06h30 lê o dia anterior inteiro.
+hora junta tudo num acervo local, e a atualização da manhã (05h45) lê o dia anterior inteiro.
 """
 from __future__ import annotations
 
@@ -18,6 +22,7 @@ import datetime as dt
 import fcntl
 import hashlib
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -121,6 +126,7 @@ def main() -> dict | None:
     ap.add_argument("--forcar", action="store_true")
     ap.add_argument("--horas", type=int, default=32)
     ap.add_argument("--sem-llm", action="store_true")
+    ap.add_argument("--sem-pesquisa", action="store_true", help="o fato do dia sai sem a pesquisa antes (mais rápido)")
     args = ap.parse_args()
 
     # Coleta e atualização podem cair na mesma hora: uma espera a outra; a coleta desiste.
@@ -269,10 +275,31 @@ def main() -> dict | None:
         # 45 dias cobrem o mês anterior inteiro e os dias antes dele.
         corte = (hoje - dt.timedelta(days=45)).isoformat()
         anteriores = [r for r in todas_r if r["id"][:10] >= corte]
-        post = escreve_post.escrever(rodada, cfg, datas, eventos={e["id"]: e for e in todos}, anterior=ant,
-                                     rodadas=anteriores, snap=snap)
+        evs = {e["id"]: e for e in todos}
+        # 5. No fato do dia, a pesquisa vem antes do post (src/fundo.py, pensar): a mesma pesquisa e o mesmo
+        # editor-chefe servem às 100 palavras (o porquê e o e daí) e à leitura a fundo, que é escrita depois do post
+        # (fundo.py --hoje, no segundo push do run.sh). Sem a pesquisa, o post sai como antes, só com os dados.
+        pensado, porque = None, None
+        pt = rodada.get("pauta") or {}
+        if (escreve_post.tipo_do_dia(hoje) == "dia" and pt.get("final", pt.get("padrao")) is not None
+                and not args.sem_pesquisa):
+            try:
+                import fundo
+                cx = escreve_post.contexto(rodada, cfg, datas, evs, ant, "dia", anteriores, snap)
+                pensado = fundo.pensar(rodada, cx, limite_min=float(os.environ.get("VDC_PESQUISA_MIN", "30")))
+                porque = fundo.para_o_post(pensado)
+                print(f"pesquisa do dia: {pensado.get('etapa') or ('sem achado' if pensado.get('sem_achado') else 'erro')}"
+                      f" | {pensado.get('erro') or pensado.get('tese', '')[:120]} | porquê: {'sim' if porque else 'não'}")
+            except Exception as ex:  # noqa: BLE001
+                print(f"aviso: a pesquisa do dia falhou ({ex!r}); o post sai só com os dados")
+        post = escreve_post.escrever(rodada, cfg, datas, eventos=evs, anterior=ant, rodadas=anteriores, snap=snap,
+                                     porque=porque)
+        if pensado is not None:
+            post["fundo"] = pensado
+            if pensado.get("etapa") == "pensado":
+                fundo.ligar(post, pensado)
         print(f"post ({post.get('tipo', 'dia')}):", post.get("titulo") if post["ok"] else f"falhou: {post.get('erro') or post['meta'][-1].get('erro')}",
-              "| problemas:", post.get("problemas"))
+              "| problemas:", post.get("problemas"), "| teste do porquê:", (post.get("teste") or {}).get("ok"))
     rodada["post"] = post
 
     RUNS.mkdir(exist_ok=True)

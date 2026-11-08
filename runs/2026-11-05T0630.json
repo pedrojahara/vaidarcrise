@@ -2435,19 +2435,30 @@
  },
  "post": {
   "tipo": "dia",
+  "porque": {
+   "caderno": [
+    "c1",
+    "c3",
+    "c4",
+    "c5",
+    "c7",
+    "c8",
+    "c9"
+   ]
+  },
   "ok": true,
-  "titulo": "Banco Central para de cortar o juro e mantém a Selic em 13,75%",
+  "titulo": "Banco Central para de cortar e mantém a Selic em 13,75% ao ano",
   "paragrafos": [
-   "O Banco Central parou de cortar o juro e manteve a Selic em 13,75%, como desde setembro. Assim, os bancos seguem cobrando caro de pessoas e empresas.",
-   "Ao contrário do que muita gente acha, juro alto faz os preços subirem mais devagar, porque comprar a prazo fica caro e as lojas vendem menos. Mesmo assim, o Banco Central subiu para 5,6% a previsão do IPCA de 2026.",
-   "O juro alto já chega ao emprego e à renda: em setembro, as empresas criaram 121,3 mil vagas com carteira, o pior setembro desde 2020, quando a série começou."
+   "O Banco Central parou de cortar e manteve a Selic em 13,75%, porque, segundo ele, as incertezas e a inflação esperada subiram. O crédito segue caro para pessoas e empresas, o que segura consumo e investimento.",
+   "Desde 2002, em 7 de 8 pausas com inflação esperada subindo, a Selic voltou a subir. Os bancos (Focus) preveem corte, mas o passado indica alta, o que deixaria o crédito caro por mais tempo.",
+   "O padrão pode falhar, porque o emprego enfraqueceu: as vagas com carteira tiveram o pior setembro da série, sinal de que o juro já freia a renda das famílias."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "O Banco Central parou de cortar o juro e manteve a Selic em 13,75%, como desde setembro. Assim, os bancos seguem cobrando caro de pessoas e empresas.",
-     "Ao contrário do que muita gente acha, juro alto faz os preços subirem mais devagar, porque comprar a prazo fica caro e as lojas vendem menos. Mesmo assim, o Banco Central subiu para 5,6% a previsão do IPCA de 2026.",
-     "O juro alto já chega ao emprego e à renda: em setembro, as empresas criaram 121,3 mil vagas com carteira, o pior setembro desde 2020, quando a série começou."
+     "O Banco Central parou de cortar e manteve a Selic em 13,75%, porque, segundo ele, as incertezas e a inflação esperada subiram. O crédito segue caro para pessoas e empresas, o que segura consumo e investimento.",
+     "Desde 2002, em 7 de 8 pausas com inflação esperada subindo, a Selic voltou a subir. Os bancos (Focus) preveem corte, mas o passado indica alta, o que deixaria o crédito caro por mais tempo.",
+     "O padrão pode falhar, porque o emprego enfraqueceu: as vagas com carteira tiveram o pior setembro da série, sinal de que o juro já freia a renda das famílias."
     ]
    }
   ],
@@ -2455,98 +2466,170 @@
   "edicao": {
    "sugestoes": [
     {
-     "trecho": "Banco Central para de cortar e mantém a Selic em 13,75% ao ano",
-     "problema": "No print, o título não diz o que o Banco Central parou de cortar.",
-     "como_fica": "Banco Central para de cortar o juro e mantém a Selic em 13,75%"
+     "trecho": "O Banco Central parou de cortar o juro e manteve a Selic em 13,75% ao ano. Ele disse que as incertezas aumentaram de forma significativa e que a inflação esperada subiu, e elevou a própria previsão do IPCA de 2026 de 5,2% para 5,6%.",
+     "problema": "Falta o e daí para o bolso. Duas frases soltas deviam estar ligadas por \"porque\". O texto tem 106 palavras, e o limite é 100: \"o juro\", \"ao ano\" (já está no título) e \"de forma significativa\" só pesam.",
+     "como_fica": "O Banco Central parou de cortar e manteve a Selic em 13,75%, porque, segundo ele, as incertezas aumentaram e a inflação esperada subiu. Ele elevou sua previsão do IPCA de 2026 de 5,2% para 5,6%. Com a Selic parada, o crédito segue caro para pessoas e empresas."
     },
     {
-     "trecho": "manteve a Selic em 13,75% ao ano, o que deixa caros os empréstimos de pessoas e empresas.",
-     "problema": "O número não tem comparação com um mês. A frase também não diz quem cobra caro e de quem.",
-     "como_fica": "manteve a Selic em 13,75%, como desde setembro. Assim, os bancos seguem cobrando caro de pessoas e empresas."
+     "trecho": "Desta vez, a inflação esperada já subiu 0,36 ponto, mas os bancos (Focus) ainda preveem mais um corte em 2026.",
+     "problema": "A comparação não diz o mês. Também dá para cortar palavras que só pesam (\"Desta vez\", \"já\", \"mais um\").",
+     "como_fica": "A inflação esperada subiu 0,36 ponto desde setembro, mas os bancos (Focus) ainda preveem novo corte em 2026."
     },
     {
-     "trecho": "porque a compra a prazo fica cara e as lojas vendem menos",
-     "problema": "Dá para dizer o mesmo com menos palavras, para o texto caber nas 100 palavras do fato do dia.",
-     "como_fica": "porque comprar a prazo fica caro e as lojas vendem menos"
-    },
-    {
-     "trecho": "Mesmo assim, o Banco Central subiu para 5,6% a previsão dele para o IPCA de 2026.",
-     "problema": "\"Dele\" só pesa na frase. O texto passa das 100 palavras do fato do dia.",
-     "como_fica": "Mesmo assim, o Banco Central subiu para 5,6% a previsão do IPCA de 2026."
-    },
-    {
-     "trecho": "O freio já chega ao emprego, porque as empresas criaram 121,3 mil vagas com carteira em setembro, o pior setembro da série. São 43% menos vagas que em setembro de 2025, o que tira renda das famílias.",
-     "problema": "O \"porque\" está trocado: as vagas são a prova do freio, não a causa dele. O número e a comparação dele estão em frases separadas, e o texto passa das 100 palavras.",
-     "como_fica": "O freio já chega ao emprego: em setembro, as empresas criaram 121,3 mil vagas com carteira, o pior setembro da série e 43% menos que um ano antes. Isso tira renda das famílias."
+     "trecho": "Agora o emprego está mais fraco que na maioria dessas pausas, já que setembro teve o pior saldo de vagas com carteira da série.",
+     "problema": "\"Saldo\" é palavra de jornal de economia. E dá para dizer o mesmo com menos palavras.",
+     "como_fica": "Hoje o emprego está mais fraco que na maioria delas: as vagas com carteira tiveram o pior setembro da série."
     }
    ],
    "aplicada": true
   },
+  "teste": {
+   "ok": true,
+   "testes": {
+    "porque": {
+     "ok": true,
+     "por_que": "A razão vem atribuída ao Banco Central ('segundo ele, as incertezas e a inflação esperada subiram'), como no comunicado, e o texto não traz causa ou número fora dos dados."
+    },
+    "quem": {
+     "ok": true,
+     "por_que": "Quem decide é o Banco Central; 'o crédito segue caro' não põe os bancos como autores, e 'os bancos (Focus) preveem corte' é uma previsão que é mesmo deles."
+    },
+    "e_dai": {
+     "ok": true,
+     "por_que": "Liga a pausa ao padrão de 7 em 8 pausas que acabaram em alta, diz o que muda para a leitora (crédito caro por mais tempo) e ressalva o emprego mais fraco, como na tese."
+    },
+    "livro": {
+     "ok": true,
+     "por_que": "A única oração de mecanismo ('o que segura consumo e investimento') é curta e serve ao porquê do dia."
+    }
+   },
+   "problemas": [],
+   "antes": {
+    "testes": {
+     "porque": {
+      "ok": true,
+      "por_que": "Dá a razão dita pelo Banco Central (incertezas maiores e inflação esperada em alta) e todos os números estão nos dados."
+     },
+     "quem": {
+      "ok": true,
+      "por_que": "O Banco Central é o sujeito da decisão; 'o crédito segue caro' descreve um efeito sem pôr os bancos como autores."
+     },
+     "e_dai": {
+      "ok": false,
+      "por_que": "Traz o padrão das pausas e o emprego fraco, mas não diz o que eles significam: a Selic pode voltar a subir e o juro já freia emprego e consumo."
+     },
+     "livro": {
+      "ok": true,
+      "por_que": "Não explica mecanismo geral; fica no porquê e nos números do dia."
+     }
+    },
+    "problemas": [
+     "Em 'mas os bancos (Focus) ainda preveem novo corte em 2026', falta a conclusão: o passado aponta para a Selic voltar a subir, e não cair (tese), o que deixaria o crédito caro por mais tempo.",
+     "Em 'com o pior setembro da série em vagas com carteira', falta dizer o que isso mostra: segundo os dados, é sinal de que o juro alto já freia o emprego e a renda que sustenta o consumo das famílias. Isso liga o fato ao risco de recessão.",
+     "'O crédito segue caro para pessoas e empresas' fica sem efeito: completar com 'o que segura consumo e investimento' (dados) ou com o Banco Central dizendo que a Selic de 13,75% já freia bastante a economia.",
+     "A frase do emprego pode dizer por que ele importa para o padrão: com o emprego mais fraco, o padrão pode não se repetir (são 10 casos, 'um padrão e não uma lei')."
+    ]
+   },
+   "reescrito": true
+  },
   "meta": [
    {
+    "etapa": "post",
     "modelo_pedido": "opus",
-    "prompt_sha256": "15027d6f39100c0520df54e3017e05f327cdb24863933a2945514d4a2fd5b996",
-    "system_sha256": "db547ec41ae437ed91bb761e46d2a8020b5b034347f3f337694f3b708cc76388",
+    "prompt_sha256": "fedfad61724da95a2fd635fa862f0a0fc1c7a5c7b5e0713142daedb942658c61",
+    "system_sha256": "dbe36a227238045327ee8a85dab6a9140e43b66582cd3e8fc233a1ceda391167",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.0828634,
+    "custo_usd": 0.11768500000000001,
+    "turnos": 2,
+    "duracao_s": 27,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "aad15a33-8e24-45a7-8fc4-ea5d50bc035b"
+    "session_id": "bd06b954-b3a0-4910-9e42-66c1f3d0fba8"
    },
    {
+    "etapa": "editor",
     "modelo_pedido": "opus",
-    "prompt_sha256": "cc3ba9005b06516018aaaeab684932e40f2adca046c5d0c62a54f1a7ed6736ab",
-    "system_sha256": "742a9166ecb7708349c5ccb68828d68c7cf9d6db13c33b0eb25536b9574c5d87",
+    "prompt_sha256": "7f3a1ea9757028dcf6a4b51d8efd12f4ef01ced4228fbc9e4636b6d84c16cfb2",
+    "system_sha256": "4c7e8c0f33317bc6d454b5ff1a997da9df57cacbbd46c9781db8192f030feaf7",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.2821252,
+    "custo_usd": 0.3724982,
+    "turnos": 2,
+    "duracao_s": 70,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "122ae935-80d0-4012-85c0-3a46968c2f6e"
+    "session_id": "12b4c535-9c7c-4131-8a88-751115605a86"
+   },
+   {
+    "etapa": "post",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "13ec146b44f5dc5c1bc9dea8c4b4a7251059a4e5c2e80e278561d703f24843b5",
+    "system_sha256": "dbe36a227238045327ee8a85dab6a9140e43b66582cd3e8fc233a1ceda391167",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.11066179999999999,
+    "turnos": 3,
+    "duracao_s": 15,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "3b5b1c9e-26b9-4b2e-bdc4-5eb14e6c2c11"
+   },
+   {
+    "etapa": "teste",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "f3cfe0d0c0eb613a07280b95edfa1d901d0bcd3c25ea718ea62c6d7cb213912b",
+    "system_sha256": "8ac0ad691c3d8317f7a01b7710ff315fcc059d9ac6cc9d2a8eaf9955ee37b79d",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.10121859999999999,
+    "turnos": 2,
+    "duracao_s": 21,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "5d6756fd-afb7-49f8-8d53-26940938ae37"
+   },
+   {
+    "etapa": "post",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "2544ca5c7c02fe708838ec0e657aa06b1265c3c84c448ccce5de0b98bd0e4930",
+    "system_sha256": "dbe36a227238045327ee8a85dab6a9140e43b66582cd3e8fc233a1ceda391167",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.19197399999999998,
+    "turnos": 3,
+    "duracao_s": 38,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "2e9e13eb-16c7-4f28-a4a0-79d681c29abb"
+   },
+   {
+    "etapa": "teste",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "03edea8f47f1622ce738841e9601f2bc2295f8af76589486f40158f1a3251fc8",
+    "system_sha256": "8ac0ad691c3d8317f7a01b7710ff315fcc059d9ac6cc9d2a8eaf9955ee37b79d",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.0857386,
+    "turnos": 2,
+    "duracao_s": 12,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "c0ae6be2-9d88-4792-b502-2cbdc521cc81"
    }
   ],
-  "versao_anterior": {
-   "titulo": "Brasil abre 121,3 mil vagas com carteira, o pior setembro da série",
-   "paragrafos": [
-    "As empresas abriram 121,3 mil vagas com carteira em setembro, o pior setembro já registrado. Foram 43% menos vagas que em setembro de 2025, sinal de que o juro alto freia as contratações.",
-    "Com a Selic mantida ontem pelo Banco Central em 13,75%, os bancos cobram caro de quem compra a prazo, e as lojas vendem e contratam menos. O desemprego ficou em 5,2% no trimestre até setembro, abaixo dos 5,4% até junho, mas menos vagas freiam a renda e o consumo.",
-    "Hoje o IBGE divulga a produção industrial de setembro, que mostra se as fábricas também perderam ritmo."
-   ],
-   "edicao": {
-    "sugestoes": [
-     {
-      "trecho": "Com a Selic mantida em 13,75% pelo Banco Central, a compra a prazo segue cara",
-      "problema": "A frase não diz quem cobra de quem nem quando foi a decisão. Falta quem faz o quê e para quem, e falta o estágio do fato (decisão tomada ontem).",
-      "como_fica": "Com a Selic mantida ontem pelo Banco Central em 13,75%, os bancos cobram caro de quem compra a prazo"
-     },
-     {
-      "trecho": "O desemprego segue baixo, em 5,2% no trimestre até setembro",
-      "problema": "O número está sem comparação com um mês. Os dados trazem 5,4% no trimestre até junho.",
-      "como_fica": "O desemprego ficou em 5,2% no trimestre até setembro, abaixo dos 5,4% até junho"
-     },
-     {
-      "trecho": "mas menos vagas abertas freiam a renda que sustenta o consumo das famílias",
-      "problema": "O parágrafo passava de 50 palavras depois de entrar a comparação. Dá para enxugar sem perder o \"e daí\".",
-      "como_fica": "mas menos vagas freiam a renda e o consumo"
-     },
-     {
-      "trecho": "o pior setembro desde o começo da série",
-      "problema": "\"Série\" é palavra de jornal de economia, e cortar aqui ajuda a manter o texto em até 100 palavras.",
-      "como_fica": "o pior setembro já registrado"
-     }
-    ],
-    "aplicada": true
-   },
-   "trocado_em": "2026-11-07",
-   "motivo": "Fase 0 da base de conhecimento: o fato do dia ganhou a escada de porquês, a pedido do Pedro em 7/11/2026."
-  },
-  "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior. 2026-11-07, depois da conferência das fontes no Mac: os 43% a menos que em setembro de 2025 saíram, porque as notícias dão bases diferentes para setembro de 2025 (43% numa, cerca de 50% noutra), e a série do Novo Caged começa em 2020.",
-  "termina_em": "inflacao",
   "fundo": {
    "versao": 2,
    "ok": true,
@@ -2712,6 +2795,102 @@
      ],
      "permission_denials": [],
      "session_id": "ec934eb8-a3e5-4c95-a63e-dcb31cf0e15b"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "a9bc0b7c0c7ed63cf3b3694c5bd4c30af4a6a51bbda9c1f1449d77fe84fa38ea",
+     "system_sha256": "c67e5f42e90ffcf87745cda9a56c4872511340d3e26a0d63847171ed792845ff",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.313176,
+     "turnos": 2,
+     "duracao_s": 14,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "1446ae2e-7cc8-47b9-8bfe-ce3690868c74"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "1e031ee49df11c18648ed2da1dcb2b56342365e4bde862bf95527401ef399a68",
+     "system_sha256": "71dc0f4d088eada8b40ba4bb2b49edc6987d726eb81c818f32a35e02eaaa6fbf",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.309,
+     "turnos": 2,
+     "duracao_s": 11,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "75c2fa88-e7b3-49e6-8981-80c125f8bd41"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "17a813d95c7a08cbde9620ce8c3be48f1c1254175ba0c4cb7ab61eb0e0c3a651",
+     "system_sha256": "465b071bb998b5d53693c7e8072509ec646b4fbda3d2b7ee5dad5199233f972a",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.584508,
+     "turnos": 2,
+     "duracao_s": 78,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "e7fef149-8790-40b8-bd49-b49774d3a55e"
+    },
+    {
+     "etapa": "conferencia",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "e80f2887e4003746b6a0d8fd84aececcccda096b7f3017f6f1e4dfbf2102b9e7",
+     "system_sha256": "e362d1487bb7e65fb090c712835d70e7ca64fb4c1931cd4ac03535cea992f48c",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.1561995,
+     "turnos": 2,
+     "duracao_s": 73,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "79ac0a40-daa8-4ffc-b309-9b5966eec059"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "b6282ba1c65470063f860e89705acdd1b2c6c6afc1cc0350270d6feaaac880a3",
+     "system_sha256": "465b071bb998b5d53693c7e8072509ec646b4fbda3d2b7ee5dad5199233f972a",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.5058904,
+     "turnos": 2,
+     "duracao_s": 31,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "d133f39a-7713-4ddf-af7e-5e36dc83000d"
+    },
+    {
+     "etapa": "editor_fundo",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "23026601e72311e7df20d3f49a2df64843a31f930bfee53f3d11eb6e22132c52",
+     "system_sha256": "c051e15dfe2ba0240d641e7b2a26a2ab05de7d68718375f6bd3be448f44a878a",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.18770340000000002,
+     "turnos": 2,
+     "duracao_s": 57,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "2fc7df38-05d8-45ae-be54-cfd28a9f9fa4"
     }
    ],
    "contas_ate": "2026-11-04",
@@ -3184,180 +3363,247 @@
      }
     }
    ],
+   "pressao": "inflacao",
+   "tese": "Desde 2002, o Banco Central parou de cortar a Selic 10 vezes. Em 8 delas a inflação esperada subiu nos 3 meses seguintes, e em 7 dessas 8 a Selic voltou a subir, de 3 a 9 meses depois do último corte. Nas 2 vezes em que ela caiu, o Banco Central voltou a cortar. Desta vez ela subiu 0,36 ponto no primeiro mês. Já os bancos (Focus) preveem Selic de 13,50% no fim de 2026, ou seja, um corte em 9/12. O passado aponta para o outro lado. São 10 casos, um padrão e não uma lei, e hoje o emprego está mais fraco que na maioria deles.",
+   "duracao_s": 575,
+   "offline": true,
+   "curto": {
+    "porque": "O Banco Central disse que parou de cortar porque as incertezas aumentaram de forma significativa e a inflação esperada subiu. Ele também subiu a própria previsão de inflação: para 2026, de 5,2% para 5,6%, e para 2027, de 3,9% para 4,7%, acima do teto da meta, de 4,5%. A decisão foi unânime, e o Banco Central diz que a Selic de 13,75% já freia bastante a economia.",
+    "e_dai": "Desde 2002, em 7 de 8 pausas com inflação esperada subindo, a Selic voltou a subir; agora a inflação esperada já subiu 0,36 ponto, e os bancos ainda preveem corte.",
+    "caderno": [
+     "c1",
+     "c3",
+     "c4",
+     "c5",
+     "c7",
+     "c8",
+     "c9"
+    ]
+   },
+   "curto_corrigido_a_mao": "2026-11-08: o editor-chefe escreveu 'os sete diretores'; o Copom tem nove membros e o caderno (c8) diz só 'decisão unânime'.",
    "rascunho": {
-    "titulo": "O passado indica que o próximo passo da Selic é ficar parada ou subir, e não o corte que os bancos preveem",
-    "texto": "Os bancos ainda apostam que o Banco Central volta a cortar a Selic na reunião de 9 de dezembro. Na pesquisa do dia 30 de outubro, eles previam a Selic em 13,50% no fim de 2026 [c7]. Como hoje ela está em 13,75% e só sobra uma reunião no ano, essa previsão é a aposta num corte em dezembro [c1, c7].\n\nO passado aponta para o outro lado. Desde 2002, o Banco Central parou de cortar a Selic 10 vezes, e o que separou um caminho do outro foi a [inflação esperada](https://pt.wikipedia.org/wiki/Boletim_Focus) nos 3 meses depois do último corte [c1]. Ela subiu em 8 dessas pausas, e em 7 delas a Selic voltou a subir. Desta vez, ela já subiu 0,36 ponto no primeiro mês [c1].\n\n### Em 7 das 8 pausas com a inflação esperada subindo, a Selic voltou a subir\n\nDuas dessas vezes você provavelmente lembra. Em agosto de 2020, no meio da pandemia, o Banco Central parou de cortar com a Selic em 2%. Nos 3 meses seguintes, a inflação esperada subiu 0,81 ponto, e a alta do juro veio 7 meses depois do último corte [c5].\n\nA outra é mais recente. Em maio de 2024, o corte parou com a Selic em 10,50%, e a inflação esperada subiu 0,23 ponto nos 3 meses seguintes [c5]. A alta começou 4 meses depois do último corte, e o ciclo levou a Selic até 15% em junho de 2025 [c5].\n\nO mesmo desenho apareceu em 2002, 2004 e 2007, quando a alta veio 3, 5 e 7 meses depois do último corte [c3]. Em 2009 e em 2012, ela demorou 9 e 6 meses [c4]. Mesmo com uma subida pequena da inflação esperada, como os 0,10 ponto de 2012, o juro voltou a subir [c4].\n\nOs dois casos do outro lado ajudam a ver a regra. Em março de 2002 e em dezembro de 2003, a inflação esperada caiu nos 3 meses seguintes, 0,28 e 0,47 ponto, e o Banco Central voltou a cortar 4 e 3 meses depois [c2]. Quando quem faz preço passa a esperar menos inflação, o Banco Central ganha espaço para baratear o crédito.\n\nNas 7 vezes em que a Selic voltou a subir, a alta veio entre 3 e 9 meses depois do último corte, e o caso do meio ficou em 6 meses [c3, c4, c5]. Contando a partir do corte de setembro de 2026, isso daria por volta de março de 2027. A reunião de dezembro cai no começo dessa janela, por isso o padrão sugere juro parado nela, e não corte.\n\n### A alta de outubro foi grande, mas é de um mês só\n\nEm setembro, os bancos esperavam que os preços subissem 4,60% nos 12 meses seguintes, e em outubro passaram a esperar 4,96% [c12]. É uma subida maior em um mês do que a de 2012 e a de 2024 em três, e as duas terminaram em alta do juro [c4, c5]. A meta é de 3%, e em setembro a distância até ela já era de 1,60 ponto [c1].\n\nO próprio Banco Central mostrou preocupação parecida. A projeção dele para os preços em 12 meses até o segundo trimestre de 2028, o prazo que ele mira, subiu de 3,1% para 3,5% [c8]. O comunicado chamou a Selic de \"substancialmente contracionista\", o que quer dizer que ela já segura bastante a economia, e citou a piora das expectativas de inflação [c9].\n\nOs bancos também já começaram a mudar de ideia. Entre a pesquisa de 23 e a de 30 de outubro, a Selic prevista para o fim de 2026 subiu de 13,25% para 13,50% [c7]. A prevista para o fim de 2027 subiu de 11,75% para 12,50% [c7]. A aposta é ainda de corte, só que de cortes menores.\n\nFalta uma peça, e ela pesa. O padrão olha para 3 meses depois do último corte, e por enquanto só existe o dado de 1 mês [c1]. Em 2018, a inflação esperada subiu 0,16 ponto no primeiro mês e terminou os 3 meses com só 0,07 ponto a mais [c4]. Naquela vez, o Banco Central não subiu o juro: voltou a cortar 17 meses depois [c4].\n\n### A melhor objeção vem do emprego, e ela não é fraca\n\nQuem acha que o Banco Central volta a cortar tem argumentos sérios. O emprego com carteira já esfria, como mostraram as 121,3 mil vagas de setembro [c10]. E o juro acima da inflação esperada chegou a 8,38% em outubro, mais alto que em 68% dos meses desde 2002 [c13]. Com o crédito tão caro, as empresas contratam menos, e isso tende a segurar os preços sozinho.\n\nHá também um caso no passado que contraria a tese. O mês mais parecido com outubro de 2026, olhando a inflação esperada, o juro acima dela e o dólar, é setembro de 2022, também com a Selic em 13,75% [c14]. Naquela vez, o juro não subiu: ficou parado e, 12 meses depois, estava em 12,75% [c14]. O corte só começou em agosto de 2023 [c15].\n\nA diferença é que, em 2022, o Banco Central tinha acabado de parar de subir o juro, e não de cortar [c15]. Mesmo assim, o caso mostra que juro já alto pode bastar sem alta nova. Ele também lembra que a espera pode ser longa para os dois lados.\n\nDuas coisas de fora do Banco Central podem derrubar a inflação esperada. A primeira é o petróleo mais barato, se a negociação de paz entre os Estados Unidos e o Irã se confirmar, porque combustível mais barato pesa menos no frete e no mercado. A segunda é um plano para as contas do governo em que quem investe acredite, o que tende a baratear o dólar e os importados.\n\nA política pode empurrar para o outro lado. A ideia de limitar a Selic entrou no radar do presidente, e a Fazenda nega que haja proposta [c16]. O partido do governo também criticou o Banco Central por parar de cortar [c17]. Quando quem investe passa a duvidar de que o Banco Central poderá subir o juro se precisar, ele espera mais inflação e cobra mais para emprestar. Isso valeria com qualquer governo no poder.\n\nSobre o tamanho da evidência, são 10 casos em 24 anos. Isso mostra um padrão, não uma lei. A inflação esperada andar junto com o juro também não prova que uma coisa causa a outra, porque o Banco Central olha para muito mais coisas ao decidir, como o emprego, o dólar e o petróleo. E o emprego hoje está mais fraco que na maioria daquelas vezes.\n\nA tese erra se o Banco Central cortar a Selic em 9 de dezembro. Ela acerta se o juro ficar em 13,75% ou subir, com a inflação esperada acima dos 4,60% de setembro [c1, c12]. O site vai conferir isso em três momentos, e você pode olhar os mesmos sinais.\n\nO primeiro é a pesquisa dos bancos (Focus), que o Banco Central divulga toda segunda-feira até 7 de dezembro. O número a olhar é a inflação esperada para 12 meses, comparada com os 4,60% de setembro [c12]. O segundo é o [IPCA](https://pt.wikipedia.org/wiki/%C3%8Dndice_Nacional_de_Pre%C3%A7os_ao_Consumidor_Amplo) de outubro, que o IBGE divulga em 12 de novembro, e a prévia de novembro, em 26 de novembro. O terceiro é a própria decisão do Banco Central, em 9 de dezembro.",
+    "titulo": "Nas pausas da Selic desde 2002, a inflação esperada subindo quase sempre trouxe alta do juro, e não corte",
+    "texto": "Em 30/10, na última pesquisa antes da decisão, os bancos (Focus) ainda previam Selic de 13,50% no fim de 2026 [c7]. O Banco Central manteve 13,75% em 4/11, então essa previsão só se cumpre com um corte em 9/12, a última reunião do ano. As outras pausas desde 2002 apontam para o lado contrário.\n\nNas 8 vezes em que a inflação esperada subiu nos 3 meses depois do último corte, a Selic voltou a subir em 7, de 3 a 9 meses depois [c3, c4, c5]. Desta vez ela subiu 0,36 ponto só no primeiro mês [c1]. São 10 casos, o que mostra um padrão e não uma lei, e o emprego hoje está mais fraco que na maioria deles.\n\nA mesma pesquisa já mostra os bancos mudando de ideia. Em uma semana, de 23/10 para 30/10, a Selic que eles esperam para o fim de 2027 subiu de 11,75% para 12,50% [c7]. Ou seja, eles ainda contavam com um corte em dezembro, mas já esperavam juro mais alto por mais tempo no ano que vem.\n\n### Das 8 vezes em que a inflação esperada subiu depois da pausa, 7 terminaram em alta\n\nA inflação esperada é quanto os bancos e as consultorias acham que os preços vão subir nos 12 meses seguintes. Desde 2002, o Banco Central parou de cortar a Selic 10 vezes, e o que veio depois de cada pausa acompanhou o que essa expectativa fez nos 3 meses seguintes [c1].\n\nNas 2 vezes em que a expectativa caiu, o corte voltou. Depois do último corte de março de 2002, ela caiu 0,28 ponto, e o Banco Central voltou a cortar 4 meses depois [c2]. Depois de dezembro de 2003, ela caiu 0,47 ponto, e o corte voltou 3 meses depois [c2].\n\nNas outras 8, a expectativa subiu, e o caminho mudou. Em julho de 2002, ela subiu 3,71 pontos, e a alta da Selic veio 3 meses depois [c3]. Em 2004 e em 2007, ela subiu 0,56 e 0,44 ponto, e a alta veio 5 e 7 meses depois [c3].\n\nO padrão vale também para subidas pequenas. Em 2009, a expectativa subiu 0,21 ponto, e a alta veio 9 meses depois; em 2012, subiu só 0,10 ponto, e a alta veio 6 meses depois [c4]. Em 2020, ela subiu 0,81 ponto, e o juro voltou a subir 7 meses depois [c5].\n\nO caso mais recente você provavelmente lembra. O Banco Central fez o último corte em maio de 2024, com a Selic em 10,50%, e a expectativa subiu 0,23 ponto nos 3 meses seguintes [c5]. A alta veio 4 meses depois do último corte, e o ciclo só parou em junho de 2025, com a Selic em 15% [c5].\n\nO último corte desta vez foi em setembro, então a reunião de dezembro já cai dentro da janela de 3 a 9 meses das outras altas. O passado não diz que a alta vem em dezembro. Ele diz que, com a expectativa subindo, um corte seria a exceção.\n\n### O primeiro mês ainda não decide, e 2018 mostra por quê\n\nA única pausa com expectativa subindo que terminou em corte foi a de março de 2018. No primeiro mês, a expectativa subiu 0,16 ponto, mas depois devolveu quase tudo e fechou os 3 meses com alta de só 0,07 ponto [c4]. O Banco Central voltou a cortar, 17 meses depois [c4].\n\nO contrário também já aconteceu. Em 2007, a expectativa caiu 0,01 ponto no primeiro mês e terminou os 3 meses com alta de 0,44 ponto, e a Selic subiu 7 meses depois [c3]. Por isso, o primeiro mês sozinho pode enganar para os dois lados.\n\nDesta vez, só existe o dado de um mês, já que o último corte foi em setembro [c1]. Mas a subida de 0,36 ponto é mais que o dobro da de 2018 no mesmo prazo, e ela vem depois de meses subindo [c1, c4]. Se compararmos com junho, a expectativa passou de 4,12% para 4,96% em outubro [c12].\n\nO próprio Banco Central piorou as contas dele na decisão de 4/11. A projeção dele para a inflação de 2027 subiu de 3,9% para 4,7%, longe da meta de 3% [c1, c8]. Para o segundo trimestre de 2028, o prazo que ele usa para decidir o juro, a projeção subiu de 3,1% para 3,5% [c8].\n\n### O emprego mais fraco é a melhor razão para o padrão falhar\n\nQuem espera o corte em dezembro tem um argumento forte. O juro já está apertado: a Selic menos a inflação esperada deu 8,38% em outubro, mais que em 68% dos meses desde 2002 [c13]. O próprio Banco Central chamou esse juro de \"substancialmente contracionista\", o que quer dizer que ele já freia a economia [c9].\n\nE o freio já aparece no emprego. Em setembro, o país abriu 121.305 vagas com carteira assinada [c10]. Se as empresas contratam menos, as famílias gastam menos, e os preços tendem a subir mais devagar sem que o Banco Central precise subir o juro de novo.\n\nO mês mais parecido com outubro de 2026, juntando inflação esperada, juro e dólar, é setembro de 2022, quando a Selic também estava em 13,75% [c14]. Doze meses depois, ela estava em 12,75%, sem nenhuma alta no caminho [c14]. O corte começou em agosto de 2023, um ano depois da última alta [c15].\n\nEsse caso tem uma diferença que pesa. Em 2022, o Banco Central tinha acabado de subir o juro, e não de cortar, então não entra na conta das 10 pausas. Um petróleo mais barato ou um plano das contas do governo que convença quem investe também podem fazer a expectativa cair, e aí o padrão de 2018 volta.\n\nA política em volta mexe na mesma peça. A ideia de limitar a Selic entrou no radar do presidente, e o Ministério da Fazenda nega [c16]. O partido do governo criticou o Banco Central por parar de cortar [c17].\n\nO efeito disso não depende de quem governa. Quando quem investe passa a duvidar que o Banco Central vai segurar os preços, espera inflação maior e cobra mais para emprestar ao país, e a inflação esperada sobe. O juro pesa nas contas públicas de qualquer governo: com 52,74% da dívida ligada à Selic em agosto, cada ponto custa cerca de R$ 48 bilhões por ano [c18].\n\nVale dizer o tamanho da evidência. São 10 pausas em 24 anos, e a expectativa e a Selic andam juntas em parte porque respondem às mesmas coisas, como o dólar e o petróleo. Isso mostra uma ligação que se repetiu, e não prova que uma causa a outra.\n\nO site vai olhar três coisas até a decisão. A primeira é a inflação esperada para 12 meses na pesquisa dos bancos de cada segunda-feira, até 7/12, comparada com os 4,60% de setembro [c1]. A segunda é a inflação de outubro, que o IBGE divulga em 12/11, e a terceira é a decisão de 9/12.\n\nSe a expectativa voltar para baixo de 4,60% e o Banco Central cortar em dezembro, o padrão falhou desta vez, como em 2018, e o site vai dizer isso. Você pode acompanhar os mesmos números, que saem nas mesmas datas.",
     "previsao": {
-     "texto": "Em 9/12, o Banco Central não corta a Selic, que fica em 13,75% ou sobe, e a inflação esperada para 12 meses segue acima dos 4,60% de setembro.",
+     "texto": "O Banco Central não corta a Selic em 9/12, e a inflação esperada para 12 meses dos bancos segue acima dos 4,60% de setembro.",
      "quando": "2026-12-09",
-     "como_conferir": "Na pesquisa dos bancos (Focus) de cada segunda-feira até 7/12, comparar a inflação esperada para 12 meses com os 4,60% de setembro. Em 9/12, ver se o Banco Central (Copom) manteve, subiu ou cortou a Selic de 13,75%."
+     "como_conferir": "Veja a inflação esperada para 12 meses na pesquisa Focus de cada segunda-feira até 7/12 e compare com 4,60%. Depois, veja se a decisão do Banco Central (Copom) de 9/12 mantém ou sobe a Selic de 13,75%."
     }
    },
    "conferencia": {
     "codigo_antes": {
      "graves": [
-      "bloco 20: número ou data sem linha do caderno que confira: 24 | trecho: Sobre o tamanho da evidência, são 10 casos em 24 anos. Isso mostra um padrão, não uma lei. A inflação esperada andar jun",
-      "bloco 22: número ou data sem linha do caderno que confira: 7/12 | trecho: O primeiro é a pesquisa dos bancos (Focus), que o Banco Central divulga toda segunda-feira até 7 de dezembro. O número a"
+      "bloco 3: número ou data sem linha do caderno que confira: 23/10 | trecho: A mesma pesquisa já mostra os bancos mudando de ideia. Em uma semana, de 23/10 para 30/10, a Selic que eles esperam para",
+      "bloco 23: número ou data sem linha do caderno que confira: 24 | trecho: Vale dizer o tamanho da evidência. São 10 pausas em 24 anos, e a expectativa e a Selic andam juntas em parte porque resp",
+      "bloco 24: número ou data sem linha do caderno que confira: 7/12 | trecho: O site vai olhar três coisas até a decisão. A primeira é a inflação esperada para 12 meses na pesquisa dos bancos de cad"
      ],
      "avisos": [
-      "bloco 20: frase de 36 palavras",
-      "siglas que a leitora não conhece, sem nome por extenso ou link: C3"
+      "bloco 17: palavra que o site trocou: cada pressão piorou, ficou igual ou melhorou"
      ],
-     "palavras": 1143,
+     "palavras": 1118,
      "intertitulos": 3
     },
     "ia": {
      "correcoes": [
       {
-       "trecho": "Como hoje ela está em 13,75% e só sobra uma reunião no ano, essa previsão é a aposta num corte em dezembro [c1, c7].",
+       "trecho": "então essa previsão só se cumpre com um corte em 9/12, a última reunião do ano.",
        "tipo": "fonte",
-       "problema": "\"Só sobra uma reunião no ano\" e a data de 9 de dezembro não têm linha no caderno. As linhas c1 e c7 não trazem o calendário do Copom.",
-       "como_fica": "Como hoje ela está em 13,75%, essa previsão é a aposta num corte até o fim do ano [c1, c7]."
+       "problema": "A data 9/12 e o fato de ser a última reunião do ano não têm linha no caderno (só aparecem como exemplo no guia).",
+       "como_fica": "então essa previsão só se cumpre com um corte na próxima reunião do Copom."
       },
       {
-       "trecho": "O comunicado chamou a Selic de \"substancialmente contracionista\", o que quer dizer que ela já segura bastante a economia, e citou a piora das expectativas de inflação [c9].",
+       "trecho": "e o emprego hoje está mais fraco que na maioria deles.",
        "tipo": "fonte",
-       "problema": "A c9 só tem o título da página (\"Copom cita piora das expectativas...\"). A expressão entre aspas veio do resumo da busca, com a página não aberta, e não está como trecho literal.",
-       "como_fica": "O comunicado citou a piora das expectativas de inflação [c9]."
-      },
-      {
-       "trecho": "O emprego com carteira já esfria, como mostraram as 121,3 mil vagas de setembro [c10].",
-       "tipo": "fonte",
-       "problema": "A c10 só diz que o saldo de setembro foi de 121.305 vagas. Não diz que o emprego esfria, nem compara com outros meses.",
-       "como_fica": "O emprego com carteira criou 121,3 mil vagas em setembro [c10]."
-      },
-      {
-       "trecho": "E o emprego hoje está mais fraco que na maioria daquelas vezes.",
-       "tipo": "fonte",
-       "problema": "Nenhuma linha do caderno compara o emprego de hoje com o das 10 pausas anteriores.",
+       "problema": "O caderno não compara o emprego de hoje com o das outras pausas. Só há o saldo de setembro (c10), sem série.",
        "como_fica": ""
       },
       {
-       "trecho": "A primeira é o petróleo mais barato, se a negociação de paz entre os Estados Unidos e o Irã se confirmar, porque combustível mais barato pesa menos no frete e no mercado.",
+       "trecho": "Ou seja, eles ainda contavam com um corte em dezembro, mas já esperavam juro mais alto por mais tempo no ano que vem.",
+       "tipo": "forca",
+       "problema": "O Focus (c7) traz a Selic de fim de 2026 e de 2027, e não diz que o corte seria em dezembro.",
+       "como_fica": "Ou seja, eles ainda contavam com a Selic abaixo de 13,75% no fim de 2026, mas já esperavam juro mais alto por mais tempo no ano que vem [c7]."
+      },
+      {
+       "trecho": "O padrão vale também para subidas pequenas.",
+       "tipo": "forca",
+       "problema": "A subida pequena de 2018 (0,07 ponto) terminou em corte, então o padrão não vale sempre para subidas pequenas.",
+       "como_fica": "O padrão apareceu também em subidas pequenas, com a exceção de 2018."
+      },
+      {
+       "trecho": "Mas a subida de 0,36 ponto é mais que o dobro da de 2018 no mesmo prazo, e ela vem depois de meses subindo [c1, c4].",
        "tipo": "fonte",
-       "problema": "A negociação de paz entre os Estados Unidos e o Irã é um fato sem linha no caderno.",
-       "como_fica": "A primeira é o petróleo mais barato, porque combustível mais barato pesa menos no frete e no mercado."
+       "problema": "A frase de que a expectativa vinha subindo por meses vem do c12, e não do c1 nem do c4.",
+       "como_fica": "Mas a subida de 0,36 ponto é mais que o dobro da de 2018 no mesmo prazo [c1, c4], e ela vem depois de meses subindo [c12]."
       },
       {
-       "trecho": "Sobre o tamanho da evidência, são 10 casos em 24 anos.",
+       "trecho": "a Selic menos a inflação esperada deu 8,38% em outubro, mais que em 68% dos meses desde 2002 [c13].",
        "tipo": "numero",
-       "problema": "\"24 anos\" não tem linha no caderno. A c1 diz só \"desde 2002\".",
-       "como_fica": "Sobre o tamanho da evidência, são 10 casos desde 2002."
+       "problema": "A saída do c13 não traz o 8,38%, só os 68%. Selic de 13,75% menos 4,96% dá 8,79%, e não 8,38%.",
+       "como_fica": "a Selic menos a inflação esperada ficou em outubro mais alta que em 68% dos meses desde 2002 [c13]."
       },
       {
-       "trecho": "O segundo é o [IPCA](https://pt.wikipedia.org/wiki/%C3%8Dndice_Nacional_de_Pre%C3%A7os_ao_Consumidor_Amplo) de outubro, que o IBGE divulga em 12 de novembro, e a prévia de novembro, em 26 de novembro.",
-       "tipo": "data",
-       "problema": "As datas de 12 e 26 de novembro não têm linha no caderno.",
-       "como_fica": "O segundo é o [IPCA](https://pt.wikipedia.org/wiki/%C3%8Dndice_Nacional_de_Pre%C3%A7os_ao_Consumidor_Amplo) de outubro e a prévia de novembro, que o IBGE divulga nas próximas semanas."
+       "trecho": "O próprio Banco Central chamou esse juro de \"substancialmente contracionista\", o que quer dizer que ele já freia a economia [c9].",
+       "tipo": "fonte",
+       "problema": "O trecho literal do c9 é só o título da página, que não traz a expressão. A frase veio do resumo da busca, com a página não aberta.",
+       "como_fica": ""
       },
       {
-       "trecho": "que o Banco Central divulga toda segunda-feira até 7 de dezembro.",
-       "tipo": "data",
-       "problema": "A data de 7 de dezembro não tem linha no caderno, e o código também a apontou.",
-       "como_fica": "que o Banco Central divulga toda segunda-feira."
-      },
-      {
-       "trecho": "Mesmo assim, o caso mostra que juro já alto pode bastar sem alta nova.",
+       "trecho": "E o freio já aparece no emprego. Em setembro, o país abriu 121.305 vagas com carteira assinada [c10].",
        "tipo": "forca",
-       "problema": "Um único caso não mostra isso. Ele só sugere, e o próprio texto diz que as situações diferem.",
-       "como_fica": "Mesmo assim, o caso sugere que juro já alto pode bastar sem alta nova."
+       "problema": "O c10 só traz o saldo de setembro. Não há comparação com outros meses que mostre emprego fraco nem freio por causa do juro.",
+       "como_fica": "Em setembro, o país abriu 121.305 vagas com carteira assinada [c10], número que o site ainda não comparou com o de outros meses."
       },
       {
-       "trecho": "Quando quem faz preço passa a esperar menos inflação, o Banco Central ganha espaço para baratear o crédito.",
+       "trecho": "Um petróleo mais barato ou um plano das contas do governo que convença quem investe também podem fazer a expectativa cair, e aí o padrão de 2018 volta.",
+       "tipo": "outro",
+       "problema": "Petróleo e plano fiscal não estão no caderno. Além disso, em 2018 a expectativa subiu 0,07 ponto. Expectativa em queda é o caso de 2002 e 2003.",
+       "como_fica": "Se a expectativa cair, o caso passa a se parecer com 2002 e 2003, em que ela caiu e o corte voltou [c2]."
+      },
+      {
+       "trecho": "A política em volta mexe na mesma peça. A ideia de limitar a Selic entrou no radar do presidente, e o Ministério da Fazenda nega [c16]. O partido do governo criticou o Banco Central por parar de cortar [c17].",
+       "tipo": "fonte",
+       "problema": "c16 e c17 são fatos do momento, sem jornal, link nem data no caderno, e a conferência não acha a fonte.",
+       "como_fica": ""
+      },
+      {
+       "trecho": "O efeito disso não depende de quem governa. Quando quem investe passa a duvidar que o Banco Central vai segurar os preços, espera inflação maior e cobra mais para emprestar ao país, e a inflação esperada sobe.",
        "tipo": "forca",
-       "problema": "A inflação esperada do caderno é a dos bancos (Focus), não a de quem faz preço. A frase também dá como regra um nexo causal que 2 casos só sugerem.",
-       "como_fica": "Quando os bancos do Focus passam a esperar menos inflação, o Banco Central pode ganhar espaço para baratear o crédito, como nesses 2 casos."
+       "problema": "O texto liga a discussão política à alta da expectativa sem linha no caderno, e a coincidência é dita como causa.",
+       "como_fica": "Se quem investe passar a duvidar que o Banco Central vai segurar os preços, pode esperar inflação maior e cobrar mais para emprestar ao país. O caderno não mostra que isso já tenha movido a expectativa."
+      },
+      {
+       "trecho": "São 10 pausas em 24 anos",
+       "tipo": "numero",
+       "problema": "O número 24 não tem linha no caderno.",
+       "como_fica": "São 10 pausas desde 2002"
+      },
+      {
+       "trecho": "A segunda é a inflação de outubro, que o IBGE divulga em 12/11,",
+       "tipo": "data",
+       "problema": "A data de divulgação do IBGE não tem linha no caderno.",
+       "como_fica": "A segunda é a inflação de outubro, que o IBGE divulga em novembro,"
+      },
+      {
+       "trecho": "de cada segunda-feira, até 7/12, comparada com os 4,60% de setembro [c1].",
+       "tipo": "data",
+       "problema": "A data 7/12 e o calendário das segundas-feiras não têm linha no caderno. A pesquisa que o caderno usa tem datas de sexta-feira.",
+       "como_fica": "de cada semana até a decisão, comparada com os 4,60% de setembro [c1]."
+      },
+      {
+       "trecho": "Se a expectativa voltar para baixo de 4,60% e o Banco Central cortar em dezembro, o padrão falhou desta vez, como em 2018, e o site vai dizer isso.",
+       "tipo": "forca",
+       "problema": "Expectativa em queda com corte confirma o padrão (2002 e 2003). Em 2018 a expectativa subiu e o corte só veio 17 meses depois. O padrão falha se o Banco Central cortar com a expectativa ainda alta.",
+       "como_fica": "Se a expectativa voltar para baixo de 4,60% e o Banco Central cortar em dezembro, será como em 2002 e 2003 [c2]. Se ela seguir acima de 4,60% e o corte vier mesmo assim, o padrão falhou desta vez, e o site vai dizer isso. Em 2018, o corte só veio 17 meses depois [c4]."
       }
      ],
-     "graves": [],
-     "resumo": "Os números das contas (c1 a c7, c12 a c15) conferem com o caderno, e a tese está dita com a força certa: 10 casos, padrão e não lei. Os problemas são pontuais: fatos sem linha (calendário do Copom, datas do IPCA, negociação com o Irã, emprego \"mais fraco\"), uma citação do comunicado que veio só do resumo da busca (c9) e dois verbos fortes demais. Não encontrei nome de pessoa, de partido ou conselho sobre dinheiro. Nada derruba a tese."
-    },
-    "aplicadas": 10,
-    "codigo": {
-     "graves": [],
-     "avisos": [
-      "bloco 20: frase de 36 palavras",
-      "siglas que a leitora não conhece, sem nome por extenso ou link: C3"
+     "graves": [
+      "A melhor objeção à tese (o emprego mais fraco) não tem linha no caderno. O único dado é o saldo de 121.305 vagas em setembro (c10), sem comparação com outros meses. O \"pior setembro da série\" do fato do dia também não está no caderno. A objeção fica sem sustentação e a frase de abertura sobre emprego não pode ficar."
      ],
-     "palavras": 1087,
+     "resumo": "As contas das pausas (c1 a c5) conferem: 10 pausas, 8 com expectativa subindo, 7 com alta depois. Os problemas estão em outras frases. O emprego fraco é dito sem linha no caderno. O 8,38% do juro real não aparece na saída do c13. A citação do comunicado (c9) e os fatos políticos (c16, c17) não têm fonte aberta. Há datas sem linha (9/12, 7/12, 12/11) e um erro de lógica: o texto usa 2018 como exemplo de expectativa em queda. Há ainda uma causa política dita sem prova."
+    },
+    "aplicadas": 15,
+    "codigo": {
+     "graves": [
+      "bloco 3: número ou data sem linha do caderno que confira: 23/10 | trecho: A mesma pesquisa já mostra os bancos mudando de ideia. Em uma semana, de 23/10 para 30/10, a Selic que eles esperam para"
+     ],
+     "avisos": [
+      "bloco 17: palavra que o site trocou: cada pressão piorou, ficou igual ou melhorou"
+     ],
+     "palavras": 1080,
      "intertitulos": 3
     },
+    "codigo_depois_da_reescrita": {
+     "graves": [
+      "bloco 24: número ou data sem linha do caderno que confira: 7/12 | trecho: O site vai olhar três coisas até a decisão. A primeira é a inflação esperada para 12 meses na pesquisa dos bancos de cad"
+     ],
+     "avisos": [
+      "bloco 16: palavra que o site trocou: cada pressão piorou, ficou igual ou melhorou"
+     ],
+     "palavras": 1163,
+     "intertitulos": 3
+    },
+    "frases_cortadas": [
+     "A primeira é a inflação esperada para 12 meses na pesquisa dos bancos de cada segunda-feira até 7/12, comparada com os 4,60% de setembro."
+    ],
     "final": {
      "graves": [],
      "avisos": [],
-     "palavras": 1075,
+     "palavras": 1153,
      "intertitulos": 3
-    },
-    "revisao_humana": {
-     "em": "2026-11-08",
-     "trocas": 0,
-     "nota": "conferência de novo"
-    },
-    "reconferencia": {
-     "em": "2026-11-08T01:56:16+00:00",
-     "ruins": [],
-     "frases_cortadas": [],
-     "abertos": 0,
-     "final": {
-      "graves": [],
-      "avisos": [],
-      "palavras": 1075,
-      "intertitulos": 3
-     }
     }
    },
    "edicao": {
     "sugestoes": [
      {
-      "trecho": "A inflação esperada andar junto com o juro também não prova que uma coisa causa a outra, porque o Banco Central olha para muito mais coisas ao decidir, como o emprego, o dólar e o petróleo.",
-      "problema": "Frase de 36 palavras; o limite é 30. Frase ligada e enxuta.",
-      "como_fica": "Inflação esperada e juro andarem juntos não prova que um causa o outro, porque o Banco Central também olha o emprego, o dólar e o petróleo ao decidir."
+      "trecho": "O site vai olhar três coisas até a decisão. A segunda é a inflação de outubro, que o IBGE divulga em 12/11, e a terceira é a decisão de 9/12.",
+      "problema": "Frase que não se entende sozinha: anuncia três coisas e só diz a segunda e a terceira. A decisão também fica sem dizer de quem é.",
+      "como_fica": "O site vai olhar três coisas até a decisão. A primeira é a inflação esperada na pesquisa dos bancos (Focus). A segunda é a inflação de outubro, que o IBGE divulga em 12/11, e a terceira é a decisão do Banco Central em 9/12."
      },
      {
-      "trecho": "e o que separou um caminho do outro foi a [inflação esperada]",
-      "problema": "Frase que não se entende sozinha: 'um caminho do outro' não diz quais caminhos.",
-      "como_fica": "e o que separou os dois caminhos, alta ou novo corte, foi a [inflação esperada]"
+      "trecho": "Desta vez, ela subiu 0,36 ponto só no primeiro mês [c1].",
+      "problema": "\"Ela\" vem logo depois da Selic e parece se referir a ela, mas quem subiu foi a inflação esperada. O texto precisa se explicar sozinho.",
+      "como_fica": "Desta vez, a inflação esperada subiu 0,36 ponto só no primeiro mês [c1]."
      },
      {
-      "trecho": "Ela subiu em 8 dessas pausas",
-      "problema": "Frase sem sujeito claro: 'Ela' pode ser a Selic ou a inflação esperada.",
-      "como_fica": "A inflação esperada subiu em 8 dessas pausas"
+      "trecho": "O próprio Banco Central piorou as contas dele na decisão de 4/11. A projeção dele para a inflação de 2027 subiu de 3,9% para 4,7%, acima da meta de 3% [c1, c8].",
+      "problema": "\"Piorou as contas\" é expressão de jornal e, no site, \"contas\" quer dizer contas do governo. Diga o que o Banco Central fez, com palavras de conversa.",
+      "como_fica": "O próprio Banco Central revisou para cima a inflação que ele projeta, na decisão de 4/11. Para 2027, a projeção dele subiu de 3,9% para 4,7%, acima da meta de 3% [c1, c8]."
      },
      {
-      "trecho": "É uma subida maior em um mês do que a de 2012 e a de 2024 em três",
-      "problema": "Comparação difícil de seguir: falta dizer a unidade do prazo.",
-      "como_fica": "É uma subida maior, em um mês, do que as de 2012 e 2024 em três meses"
+      "trecho": "### O juro já apertado e o caso de 2022 são a melhor razão para o padrão falhar",
+      "problema": "O site não usa \"apertado\" (nem Apertou e Folgou): é a palavra que o verificador marcou. Troca por palavra de conversa.",
+      "como_fica": "### O juro já alto e o caso de 2022 são a melhor razão para o padrão falhar"
      },
      {
-      "trecho": "A meta é de 3%, e em setembro a distância até ela já era de 1,60 ponto",
-      "problema": "Frase que não se entende sozinha: 'a distância' de quê? Diga o nome das coisas.",
-      "como_fica": "A meta de inflação é de 3%, e em setembro a inflação esperada já estava 1,60 ponto acima dela"
+      "trecho": "Isso explica por que o corte é desejado, mas não muda o que o passado mostra sobre a expectativa.",
+      "problema": "Frase sem quem: \"é desejado\" não diz por quem, e a consequência não vem com quem a sente.",
+      "como_fica": "Isso mostra por que um corte faria diferença para as contas do governo, mas não muda o que o passado mostra sobre a expectativa."
      },
      {
-      "trecho": "Quando quem investe passa a duvidar de que o Banco Central poderá subir o juro se precisar, ele espera mais inflação e cobra mais para emprestar.",
-      "problema": "Falta quem faz o quê e para quem: 'ele' é ambíguo e não diz a quem se empresta.",
-      "como_fica": "Se quem investe passa a duvidar de que o Banco Central poderá subir o juro quando precisar, essa pessoa espera mais inflação e cobra mais para emprestar ao governo."
+      "trecho": "Com 52,74% da dívida ligada à Selic em agosto",
+      "problema": "Número com duas casas fora da Selic, e \"a dívida\" sem dizer de quem. Arredonde e diga o nome.",
+      "como_fica": "Com 53% da dívida do governo ligada à Selic em agosto"
      },
      {
-      "trecho": "Isso mostra um padrão, não uma lei.",
-      "problema": "Sem mudança: já está bom; marcas [c3] e outras ficam, pois são marcas do caderno, não siglas.",
-      "como_fica": "Isso mostra um padrão, não uma lei."
+      "trecho": "Se compararmos com junho, a expectativa passou de 4,12% para 4,96% em outubro [c12].",
+      "problema": "Número com duas casas, que só pesa. Arredonde.",
+      "como_fica": "Se compararmos com junho, a expectativa passou de 4,1% para 5,0% em outubro [c12]."
+     },
+     {
+      "trecho": "O passado não diz que a alta vem em dezembro. Ele diz que, com a expectativa subindo, um corte seria a exceção, e não a regra.",
+      "problema": "Troca em espelho (\"não diz... diz\", \"a exceção, e não a regra\"), fórmula de efeito. Diga em uma frase só.",
+      "como_fica": "O passado não garante alta em dezembro, mas, com a expectativa subindo, um corte seria exceção."
+     },
+     {
+      "trecho": "Se ela seguir acima de 4,60%",
+      "problema": "Duas casas sem necessidade fora da Selic. Arredonde, nos dois lugares em que o limite aparece.",
+      "como_fica": "Se ela seguir acima de 4,6%"
      }
     ],
     "aplicada": true
    },
-   "titulo": "O passado aponta para a Selic parada ou em alta, ao contrário do corte que os bancos preveem",
-   "texto": "Os bancos ainda apostam que o Banco Central volta a cortar a Selic na reunião de 9 de dezembro. Na pesquisa do dia 30 de outubro, eles previam a Selic em 13,50% no fim de 2026 [c7]. Como hoje ela está em 13,75%, essa previsão é a aposta num corte até o fim do ano [c1, c7].\n\nO passado aponta para o outro lado. Desde 2002, o Banco Central parou de cortar a Selic 10 vezes, e o que separou os dois caminhos, alta ou novo corte, foi a [inflação esperada](https://pt.wikipedia.org/wiki/Boletim_Focus) nos 3 meses depois do último corte [c1]. A inflação esperada subiu em 8 dessas pausas, e em 7 delas a Selic voltou a subir. Desta vez, ela já subiu 0,36 ponto no primeiro mês [c1].\n\n### Em 7 das 8 pausas com a inflação esperada subindo, a Selic voltou a subir\n\nDuas dessas vezes você provavelmente lembra. Em agosto de 2020, no meio da pandemia, o Banco Central parou de cortar com a Selic em 2%. Nos 3 meses seguintes, a inflação esperada subiu 0,81 ponto, e a alta do juro veio 7 meses depois do último corte [c5].\n\nA outra é mais recente. Em maio de 2024, o corte parou com a Selic em 10,50%, e a inflação esperada subiu 0,23 ponto nos 3 meses seguintes [c5]. A alta começou 4 meses depois do último corte, e o ciclo levou a Selic até 15% em junho de 2025 [c5].\n\nO mesmo desenho apareceu em 2002, 2004 e 2007, quando a alta veio 3, 5 e 7 meses depois do último corte [c3]. Em 2009 e em 2012, ela demorou 9 e 6 meses [c4]. Mesmo com uma subida pequena da inflação esperada, como os 0,10 ponto de 2012, o juro voltou a subir [c4].\n\nOs dois casos do outro lado ajudam a ver a regra. Em março de 2002 e em dezembro de 2003, a inflação esperada caiu nos 3 meses seguintes, 0,28 e 0,47 ponto, e o Banco Central voltou a cortar 4 e 3 meses depois [c2]. Quando os bancos do Focus passam a esperar menos inflação, o Banco Central pode ganhar espaço para baratear o crédito, como nesses 2 casos.\n\nNas 7 vezes em que a Selic voltou a subir, a alta veio entre 3 e 9 meses depois do último corte, e o caso do meio ficou em 6 meses [c3, c4, c5]. Contando a partir do corte de setembro de 2026, isso daria por volta de março de 2027. A reunião de dezembro cai no começo dessa janela, por isso o padrão sugere juro parado nela, e não corte.\n\n### A alta de outubro foi grande, mas é de um mês só\n\nEm setembro, os bancos esperavam que os preços subissem 4,60% nos 12 meses seguintes, e em outubro passaram a esperar 4,96% [c12]. É uma subida maior, em um mês, do que as de 2012 e 2024 em três meses, e as duas terminaram em alta do juro [c4, c5]. A meta de inflação é de 3%, e em setembro a inflação esperada já estava 1,60 ponto acima dela [c1].\n\nO próprio Banco Central mostrou preocupação parecida. A projeção dele para os preços em 12 meses até o segundo trimestre de 2028, o prazo que ele mira, subiu de 3,1% para 3,5% [c8]. O comunicado citou a piora das expectativas de inflação [c9].\n\nOs bancos também já começaram a mudar de ideia. Entre a pesquisa de 23 e a de 30 de outubro, a Selic prevista para o fim de 2026 subiu de 13,25% para 13,50% [c7]. A prevista para o fim de 2027 subiu de 11,75% para 12,50% [c7]. A aposta é ainda de corte, só que de cortes menores.\n\nFalta uma peça, e ela pesa. O padrão olha para 3 meses depois do último corte, e por enquanto só existe o dado de 1 mês [c1]. Em 2018, a inflação esperada subiu 0,16 ponto no primeiro mês e terminou os 3 meses com só 0,07 ponto a mais [c4]. Naquela vez, o Banco Central não subiu o juro: voltou a cortar 17 meses depois [c4].\n\n### A melhor objeção vem do emprego, e ela não é fraca\n\nQuem acha que o Banco Central volta a cortar tem argumentos sérios. Em setembro, as empresas criaram 121,3 mil vagas com carteira [c10]. E o juro acima da inflação esperada chegou a 8,38% em outubro, mais alto que em 68% dos meses desde 2002 [c13]. Com o crédito tão caro, as empresas contratam menos, e isso tende a segurar os preços sozinho.\n\nHá também um caso no passado que contraria a tese. O mês mais parecido com outubro de 2026, olhando a inflação esperada, o juro acima dela e o dólar, é setembro de 2022, também com a Selic em 13,75% [c14]. Naquela vez, o juro não subiu: ficou parado e, 12 meses depois, estava em 12,75% [c14]. O corte só começou em agosto de 2023 [c15].\n\nA diferença é que, em 2022, o Banco Central tinha acabado de parar de subir o juro, e não de cortar [c15]. Mesmo assim, o caso sugere que juro já alto pode bastar sem alta nova. Ele também lembra que a espera pode ser longa para os dois lados.\n\nDuas coisas de fora do Banco Central podem derrubar a inflação esperada. A primeira é o petróleo mais barato, porque combustível mais barato pesa menos no frete e no mercado. A segunda é um plano para as contas do governo em que quem investe acredite, o que tende a baratear o dólar e os importados.\n\nA política pode empurrar para o outro lado. A ideia de limitar a Selic entrou no radar do presidente, e a Fazenda nega que haja proposta [c16]. Se quem investe passa a duvidar de que o Banco Central poderá subir o juro quando precisar, essa pessoa espera mais inflação e cobra mais para emprestar ao governo. Isso valeria com qualquer governo no poder.\n\nSobre o tamanho da evidência, são 10 casos desde 2002. Isso mostra um padrão, não uma lei. Inflação esperada e juro andarem juntos não prova que um causa o outro, porque o Banco Central também olha o emprego, o dólar e o petróleo ao decidir.\n\nA tese erra se o Banco Central cortar a Selic em 9 de dezembro. Ela acerta se o juro ficar em 13,75% ou subir, com a inflação esperada acima dos 4,60% de setembro [c1, c12]. O site vai conferir isso em três momentos, e você pode olhar os mesmos sinais.\n\nO primeiro é a pesquisa dos bancos (Focus), que o Banco Central divulga toda segunda-feira. O número a olhar é a inflação esperada para 12 meses, comparada com os 4,60% de setembro [c12]. O segundo é o [IPCA](https://pt.wikipedia.org/wiki/%C3%8Dndice_Nacional_de_Pre%C3%A7os_ao_Consumidor_Amplo) de outubro e a prévia de novembro, que o IBGE divulga nas próximas semanas. O terceiro é a própria decisão do Banco Central, em 9 de dezembro.",
+   "titulo": "Nas pausas da Selic desde 2002, a inflação esperada subindo quase sempre trouxe alta do juro, e não corte",
+   "texto": "Na pesquisa de 30/10, a última antes da decisão, os bancos (Focus) ainda previam Selic de 13,50% no fim de 2026 [c7]. O Banco Central manteve 13,75% em 4/11, e por isso essa previsão só se cumpre com um corte na reunião de 9/12. As outras pausas desde 2002 apontam para o lado contrário.\n\nNas 8 vezes em que a inflação esperada subiu nos 3 meses depois do último corte, a Selic voltou a subir em 7, de 3 a 9 meses depois [c3, c4, c5]. Desta vez, a inflação esperada subiu 0,36 ponto só no primeiro mês [c1]. São 10 casos, o que mostra um padrão que se repetiu, e não uma lei.\n\nA mesma pesquisa de 30/10 já mostra os bancos mudando de ideia sobre o ano que vem. A Selic que eles esperam para o fim de 2027 subiu para 12,50%, contra 11,75% na pesquisa anterior [c7]. Eles ainda contavam com a Selic abaixo de 13,75% em dezembro, mas já esperavam juro mais alto por mais tempo em 2027.\n\n### Das 8 vezes em que a inflação esperada subiu depois da pausa, 7 terminaram em alta\n\nA inflação esperada é quanto os bancos e as consultorias acham que os preços vão subir nos 12 meses seguintes. Desde 2002, o Banco Central parou de cortar a Selic 10 vezes, e o que veio depois de cada pausa acompanhou o que essa expectativa fez nos 3 meses seguintes [c1].\n\nNas 2 vezes em que a expectativa caiu, o corte voltou. Depois do último corte de março de 2002, ela caiu 0,28 ponto, e o Banco Central voltou a cortar 4 meses depois [c2]. Depois de dezembro de 2003, ela caiu 0,47 ponto, e o corte voltou 3 meses depois [c2].\n\nNas outras 8, a expectativa subiu, e o caminho mudou. Em julho de 2002, ela subiu 3,71 pontos, e a alta da Selic veio 3 meses depois [c3]. Em 2004 e em 2007, ela subiu 0,56 e 0,44 ponto, e a alta veio 5 e 7 meses depois [c3].\n\nO padrão apareceu também quando a subida foi pequena. Em 2009, a expectativa subiu 0,21 ponto, e a alta veio 9 meses depois; em 2012, subiu só 0,10 ponto, e a alta veio 6 meses depois [c4]. Em 2020, ela subiu 0,81 ponto, e o juro voltou a subir 7 meses depois [c5].\n\nO caso mais recente você provavelmente lembra. O Banco Central fez o último corte em maio de 2024, com a Selic em 10,50%, e a expectativa subiu 0,23 ponto nos 3 meses seguintes [c5]. A alta veio 4 meses depois, e o ciclo só parou em junho de 2025, com a Selic em 15% [c5].\n\nO último corte desta vez foi em setembro, então a reunião de dezembro já cai dentro da janela de 3 a 9 meses das outras altas. O passado não garante alta em dezembro, mas, com a expectativa subindo, um corte seria exceção.\n\n### O primeiro mês ainda não decide, e 2018 mostra por quê\n\nA única pausa com expectativa subindo que terminou em corte foi a de março de 2018. No primeiro mês, a expectativa subiu 0,16 ponto, mas depois devolveu quase tudo e fechou os 3 meses com alta de só 0,07 ponto [c4]. O Banco Central voltou a cortar, mas só 17 meses depois [c4].\n\nO contrário também já aconteceu. Em 2007, a expectativa caiu 0,01 ponto no primeiro mês e terminou os 3 meses com alta de 0,44 ponto, e a Selic subiu 7 meses depois [c3]. Por isso, o primeiro mês sozinho pode enganar para os dois lados.\n\nDesta vez, só existe o dado de um mês, já que o último corte foi em setembro [c1]. Mas a subida de 0,36 ponto é mais que o dobro da de 2018 no mesmo prazo, e ela vem depois de meses subindo [c1, c4, c12]. Se compararmos com junho, a expectativa passou de 4,1% para 5,0% em outubro [c12].\n\nO próprio Banco Central revisou para cima a inflação que ele projeta, na decisão de 4/11. Para 2027, a projeção dele subiu de 3,9% para 4,7%, acima da meta de 3% [c1, c8]. Para o segundo trimestre de 2028, o prazo que ele usa para decidir o juro, a projeção subiu de 3,1% para 3,5% [c8].\n\n### O juro já alto e o caso de 2022 são a melhor razão para o padrão falhar\n\nQuem espera o corte em dezembro tem um argumento forte. O juro já freia bastante a economia, porque a Selic menos a inflação esperada ficou, em outubro, mais alta que em 68% dos meses desde 2002 [c13]. Com o crédito caro por tanto tempo, a compra a prazo cai, e os preços podem subir mais devagar sem que o Banco Central precise subir o juro de novo.\n\nHá também um caso parecido que terminou sem alta. O mês mais parecido com outubro de 2026, juntando inflação esperada, juro e dólar, é setembro de 2022, quando a Selic também estava em 13,75% [c14]. Doze meses depois, ela estava em 12,75%, e o corte tinha começado em agosto de 2023 [c14, c15].\n\nEsse caso tem uma diferença que pesa. Em 2022, o Banco Central tinha acabado de subir o juro, e não de cortar, por isso ele não entra na conta das 10 pausas [c15]. Se a expectativa cair nos próximos meses, o caso de agora passa a se parecer com 2002 e 2003, em que ela caiu e o corte voltou [c2].\n\nO que pode derrubar a expectativa vem de dentro e de fora. Um petróleo mais barato, que é causa de fora, ou um plano crível para as contas do governo, que depende do governo e do Congresso, deixariam quem investe menos preocupado com a inflação. Mas, enquanto esses sinais não chegam, a expectativa segue subindo [c12].\n\nA política em volta também conta, pelo mecanismo. Segundo a Folha, uma proposta de limitar a Selic entrou no radar do presidente, o que o Ministério da Fazenda nega [c16]. Se quem investe passar a duvidar que o Banco Central vai segurar os preços, tende a esperar inflação maior e a cobrar mais para emprestar ao país, com qualquer governo no poder.\n\nE o juro pesa nas contas públicas de qualquer governo. Com 53% da dívida do governo ligada à Selic em agosto, cada ponto de Selic custa cerca de R$ 48 bilhões por ano [c18]. Isso mostra por que um corte faria diferença para as contas do governo, mas não muda o que o passado mostra sobre a expectativa.\n\nVale dizer o tamanho da evidência. São 10 pausas desde 2002, e a expectativa e a Selic andam juntas em parte porque respondem às mesmas coisas, como o dólar e o petróleo. Isso mostra uma ligação que se repetiu, e não prova que uma causa a outra.\n\nO site vai olhar três coisas até a decisão. A primeira é a inflação esperada na pesquisa dos bancos (Focus). A segunda é a inflação de outubro, que o IBGE divulga em 12/11, e a terceira é a decisão do Banco Central em 9/12.\n\nSe a expectativa voltar para baixo de 4,6% e o Banco Central cortar em dezembro, será como em 2002 e 2003 [c2]. Se ela seguir acima de 4,6% e o corte vier mesmo assim, o padrão falhou desta vez, e o site vai dizer isso. Você pode acompanhar os mesmos números, que saem nas mesmas datas.",
    "previsao": {
-    "texto": "Em 9/12, o Banco Central não corta a Selic, que fica em 13,75% ou sobe, e a inflação esperada para 12 meses segue acima dos 4,60% de setembro.",
+    "texto": "O Banco Central não corta a Selic em 9/12, ao contrário da previsão dos bancos, e a inflação esperada para 12 meses segue acima dos 4,60% de setembro.",
     "quando": "2026-12-09",
-    "como_conferir": "Na pesquisa dos bancos (Focus) de cada segunda-feira até 7/12, comparar a inflação esperada para 12 meses com os 4,60% de setembro. Em 9/12, ver se o Banco Central (Copom) manteve, subiu ou cortou a Selic de 13,75%."
+    "como_conferir": "Veja a inflação esperada para 12 meses na pesquisa Focus de cada segunda-feira até 7/12 e compare com 4,60%. Depois, veja se o Banco Central (Copom) mantém ou sobe a Selic de 13,75% em 9/12."
    },
-   "pressao": "inflacao",
-   "tese": "Desde 2002, o Banco Central parou de cortar a Selic 10 vezes. Em 8 delas a inflação esperada subiu nos 3 meses seguintes, e em 7 dessas 8 a Selic voltou a subir, de 3 a 9 meses depois do último corte. Nas 2 vezes em que ela caiu, o Banco Central voltou a cortar. Desta vez ela subiu 0,36 ponto no primeiro mês. Já os bancos (Focus) preveem Selic de 13,50% no fim de 2026, ou seja, um corte em 9/12. O passado aponta para o outro lado. São 10 casos, um padrão e não uma lei, e hoje o emprego está mais fraco que na maioria deles.",
-   "duracao_s": 331,
-   "offline": true
-  }
+   "duracao_escrever_s": 244,
+   "texto_corrigido_a_mao": "2026-11-08: o fato é rumor de jornal (c16): ganhou a fonte, e saiu 'nega que ela exista', que o caderno não diz."
+  },
+  "termina_em": "inflacao",
+  "corrigido_a_mao": "2026-11-08: 'setembro foi o pior da série' virou 'o pior setembro da série', a régua da fonte (Caged, c10).",
+  "versao_anterior": {
+   "titulo": "Banco Central para de cortar o juro e mantém a Selic em 13,75%",
+   "paragrafos": [
+    "O Banco Central parou de cortar o juro e manteve a Selic em 13,75%, como desde setembro. Assim, os bancos seguem cobrando caro de pessoas e empresas.",
+    "Ao contrário do que muita gente acha, juro alto faz os preços subirem mais devagar, porque comprar a prazo fica caro e as lojas vendem menos. Mesmo assim, o Banco Central subiu para 5,6% a previsão do IPCA de 2026.",
+    "O juro alto já chega ao emprego e à renda: em setembro, as empresas criaram 121,3 mil vagas com carteira, o pior setembro desde 2020, quando a série começou."
+   ],
+   "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior. 2026-11-07, depois da conferência das fontes no Mac: os 43% a menos que em setembro de 2025 saíram, porque as notícias dão bases diferentes para setembro de 2025 (43% numa, cerca de 50% noutra), e a série do Novo Caged começa em 2020."
+  },
+  "revisao_manual": "2026-11-08: refeito a pedido do Pedro (fato do dia com o porquê): a pesquisa do dia, a mesma da leitura a fundo, passa ao redator o porquê e o e daí (curto do editor-chefe, refeito da pesquisa gravada com fundo.py --curto); regra do \"quem decidiu\"; teste do porquê; Opus no post, no editor e no teste. Mesmo programa da atualização (src/escreve_post.py), com os dados desta rodada. O texto anterior ficou em versao_anterior."
  },
  "pauta": {
   "versao": 1,
