@@ -66,8 +66,8 @@ def gerar(caminho: Path, ctx: dict) -> None:
         d.text((x, y + 54), f"contra {r['antes']} um ano antes.", font=sans(32), fill=TINTA)
 
     d.line([(64, 548), (W - 64, 548)], fill=FIO, width=2)
-    # A semana e o mês vão para o WhatsApp: a prévia diz que tipo de post é.
-    tipo = ctx.get("tipo_nome") if ctx.get("tipo") in ("semana", "mes") else None
+    # Todo post com texto vai para o WhatsApp: a prévia diz que tipo de post é. O dia sem texto leva a frase do site.
+    tipo = ctx.get("tipo_nome")
     d.text((64, 570), f"{tipo}, em poucas linhas." if tipo else "Medido com dados todo dia.", font=sans(26, 600 if tipo else 500),
            fill=TINTA if tipo else META)
     d.text((W - 64, 570), f"vaidarcrise.com.br  |  {ctx['data_curta'](ctx['dia'])}", font=sans(26, 600),

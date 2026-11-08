@@ -76,7 +76,7 @@ Ela se informa pelo celular, em rede social e vídeo, desconfia de notícia e fo
 | Lê jornal impresso | 10% (2025); eram 50% em 2013 | Reuters Institute, 2025 |
 | Lê a página palavra por palavra | 16%; 79% passam o olho (teste de 1997) | Nielsen |
 
-- **O primeiro contato é um print ou um link no WhatsApp.** O título e a imagem de compartilhamento têm de dizer para que lado anda o risco sozinhos, sem o resto da página.
+- **O primeiro contato é um print ou um link no WhatsApp.** O título e a imagem de compartilhamento têm de dizer para que lado anda o risco sozinhos, sem o resto da página. A linha embaixo do título, na prévia do link, é a primeira frase do post, por isso ela tem de dizer o fato e o porquê sem precisar das outras.
 - **A tela tem uns 7 cm de largura.** Um parágrafo de 3 linhas no computador vira 7 ou 8 no celular.
 - **Ela passa o olho.** A primeira palavra de cada parágrafo e de cada item carrega o assunto.
 - **Confiança se mostra, não se pede.** Cada número leva a fonte (IBGE, Banco Central) a um toque. Marca constante ganha mais confiança que "notícia" em geral.
@@ -204,7 +204,7 @@ O antes deixa um "mesmo assim" sem resposta, gasta um terço do texto com o meca
 
 ## Os tipos de post
 
-Cada post responde a uma pergunta só e compara com o próprio período. Ela quase nunca volta todo dia: o fato do dia serve a quem volta em 10 segundos, e o domingo é o post que ela lê com calma e encaminha no WhatsApp. É um post por dia, por volta das 06h30; o tipo muda com o dia. No fato do dia, a pesquisa vem antes do texto: ela começa às 05h45, e a mesma pesquisa serve às 100 palavras e à leitura a fundo.
+Cada post responde a uma pergunta só e compara com o próprio período. Ela quase nunca volta todo dia: o fato do dia serve a quem volta em 10 segundos, e o domingo é o post que ela lê com calma. Todo post termina com "Mandar no WhatsApp" e "Copiar link", porque é pelo WhatsApp que ela recebe notícia e passa adiante o que leu, seja o fato do dia, seja o resumo. É um post por dia, por volta das 06h30; o tipo muda com o dia. No fato do dia, a pesquisa vem antes do texto: ela começa às 05h45, e a mesma pesquisa serve às 100 palavras e à leitura a fundo.
 
 | Tipo | Pergunta que responde | Quando | Tamanho | Abre com |
 | --- | --- | --- | --- | --- |
@@ -325,6 +325,7 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 | Diferença entre taxas | pontos, abreviado "pt" em tabela |
 | Tipos de post | Retrato do Brasil, Fato do dia, Resumo da semana, Resumo do mês |
 | Quem escreve o post | "Escrito pelo Claude com a ajuda do Pedro.", a mesma assinatura em todo post, sem horário e sem contar notícias |
+| O compartilhar | No fim de todo post, depois do "Entenda a fundo": o botão "Mandar no WhatsApp", que abre o WhatsApp com o título e o link, e ao lado "Copiar link", que vira "Link copiado" por 3 segundos. Nada no topo, nada preso à tela, nenhuma outra rede e nenhuma etiqueta de rastreio no link |
 
 **Palavras com lado.** Fora do texto: "gastança", "rombo", "herança maldita", "austericídio", "desgoverno", "farra". No lugar, o número e o que ele mede.
 

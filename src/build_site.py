@@ -465,6 +465,20 @@ def svg_direcao(linha: list[dict], recessoes: list[dict]) -> str:
 ASSINATURA = "Escrito pelo Claude com a ajuda do Pedro."
 
 
+def primeira_frase(texto: str) -> str:
+    """A primeira frase de um parágrafo, sem a marcação do Markdown. Vai na linha de descrição da prévia do link
+    (WhatsApp e busca), para quem recebe saber o fato e o porquê sem abrir a página."""
+    t = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", " ".join(texto.split())).replace("**", "")
+    m = re.search(r"[.!?](?=\s+[\"“(]?[A-ZÀ-Ý])", t)
+    return t[:m.end()] if m else t
+
+
+def compartilhar(titulo: str, link: str) -> dict:
+    """O fim de todo post (Pedro, 8/11): "Mandar no WhatsApp", que abre o WhatsApp com o título e o link, e
+    "Copiar link". O link vai sem etiqueta de rastreio, porque o site não mede visitas."""
+    return {"zap": "https://wa.me/?text=" + quote(f"{titulo} {SITE}{link}"), "url": f"{SITE}{link}"}
+
+
 def com_links(textos: list[str], cfg: dict) -> list[Markup]:
     """Liga à Wikipédia a primeira vez de cada termo técnico (config/modelo.json, glossario) num conjunto de textos,
     para que o post não precise definir PIB, IPCA ou Selic toda vez. O resto do texto sai escapado."""
@@ -532,11 +546,10 @@ def post_de(rodada: dict, cfg: dict) -> dict:
             ponte = base_site.ponte(p, cfg, base_site.assunto_do_fato(rodada), base_site.titulo_do_fato(rodada))
         except (KeyError, OSError, ValueError, TypeError) as e:
             print(f"aviso: o link do post de {dia} para o básico não saiu ({e!r})")
-    zap = None
-    if tipo in ("semana", "mes"):
-        zap = "https://wa.me/?text=" + quote(f"{titulo} {SITE}{link}")
+    # Todo post com texto ganha o compartilhar e a primeira frase na prévia; o dia sem texto, não.
+    extra = {**compartilhar(titulo, link), "resumo": primeira_frase(paragrafos[0])} if p.get("ok") and paragrafos else {}
     return {"dia": dia, "data_extenso": data_extenso(dia), "titulo": titulo, "paragrafos": paragrafos, "secoes": secoes,
-            "tipo": tipo, "tipo_nome": TIPOS_POST[tipo], "zap": zap,
+            "tipo": tipo, "tipo_nome": TIPOS_POST[tipo], **extra,
             "autoria": autoria, "direcao": d["estado"], "llm": bool(p.get("ok")),
             "link": link, "fundo": fundo, "ponte": ponte}
 
@@ -549,10 +562,12 @@ def textos_do_editor() -> list[dict]:
         meta = {k.strip(): v.strip() for k, v in (linha.split(":", 1) for linha in cab.strip().splitlines())}
         slug = arq.stem[11:] if arq.stem[:10] == meta["data"] else arq.stem
         tipo = meta.get("tipo", "")
+        abertura = next((b for b in corpo.strip().split("\n\n") if not b.lstrip().startswith(("#", "|", "-", ">", "!"))), "")
         out.append({"dia": meta["data"], "data_extenso": data_extenso(meta["data"]), "titulo": meta["titulo"],
                     "corpo_html": markdown.markdown(corpo, extensions=["tables"]), "paragrafos": [], "secoes": [],
                     "tipo": tipo, "tipo_nome": TIPOS_POST.get(tipo, ""), "autoria": meta.get("autoria"),
-                    "link": f"/textos/{slug}/", "slug": slug, "palavras": len(corpo.split())})
+                    "link": f"/textos/{slug}/", "slug": slug, "palavras": len(corpo.split()),
+                    **compartilhar(meta["titulo"], f"/textos/{slug}/"), "resumo": primeira_frase(abertura)})
     return sorted(out, key=lambda t: t["dia"], reverse=True)
 
 
@@ -659,7 +674,7 @@ def main() -> None:
         ctx = contexto(dia, r, True)
         og = DOCS / "og" / f"{dia}.png"
         og_image.gerar(og, {"dir": ctx["dir"], "dia": dia, "data_curta": data_curta,
-                            "tipo": posts[dia]["tipo"], "tipo_nome": posts[dia]["tipo_nome"]})
+                            "tipo_nome": posts[dia]["tipo_nome"] if posts[dia]["llm"] else None})
         gravar(DOCS / dia, "index.html", ctx, f"{SITE}/{dia}/")
         desviar(DOCS / dia / "resumo", f"/{dia}/")
         desviar(DOCS / dia / "nota", "/nota/")
