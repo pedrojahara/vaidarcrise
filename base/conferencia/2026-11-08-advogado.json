@@ -1,0 +1,539 @@
+{
+ "em": "2026-11-08",
+ "modelo": "sonnet",
+ "itens": [
+  {
+   "alvo": "l-gasto",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [],
+    "objecao_atual_e_a_mais_forte": true,
+    "comentario_objecao": "A objeção atual (juros de 9% do PIB contra 0,5% de gasto acima da arrecadação; juros de 2025 somando 8,9 pontos à dívida) é a mais forte que achei. A busca trouxe o mesmo padrão no relatório da IFI de junho de 2026: 9,7 pontos de alta, dos quais 9,2 vieram dos juros. Não consegui abrir uma página para copiar um trecho exato, porque o PDF veio ilegível e o Poder360 bloqueou o acesso. Por isso não listo objeção nova. Há duas lacunas que o texto poderia mostrar. (1) O juro nominal inclui a inflação, que também corrói o valor da dívida. Por isso a decomposição em juros reais seria mais justa com a leitura do gasto. (2) O aumento dos juros em parte vem da Selic alta definida pelo Banco Central, e não só da dúvida de quem empresta. A resposta do site, que usa 2007–2013, compara períodos com inflação, crescimento e taxa de juros diferentes.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "\"Em disputa\" se sustenta. O gasto obrigatório e o fato de a dívida só parar de subir com superávit (IFI) apoiam a leitura. A contabilidade da dívida, com os juros como maior fator, apoia a leitura contrária. As fontes são todas de nível 3, sem nenhuma revisão acadêmica (nível 1 ou 2). Isso limita o rótulo. Não sustentaria \"maioria\" nem \"consenso\". Fraqueza: a linha \"a favor\" de 2014–2020 e 2023–2025 mostra só que houve déficit primário e a dívida subiu. Não mostra quanto cada fator pesou, o que a decomposição do BC mostra.",
+    "teste_da_troca": [
+     {
+      "frase": "Quem defende responde que o juro só é tão alto porque quem empresta duvida das contas.",
+      "problema": "Afirma uma causa (a dúvida de quem empresta) sem fonte que a meça. Com outro governo no poder, a Selic alta seria explicada por dúvida fiscal ou por política monetária conforme o lado de quem escreve. Falta fonte de nível 1 ou 2 que isole esse canal."
+     },
+     {
+      "frase": "De 2007 a 2013, com o governo arrecadando mais do que gastava fora os juros, a dívida caiu de 55,5% para 51,5% do PIB.",
+      "problema": "Escolha de período. Esse é o intervalo mais favorável à leitura do gasto, com crescimento alto e inflação ajudando. Um período mais longo ou outro recorte mudaria o peso do exemplo."
+     },
+     {
+      "frase": "A maior parte do gasto do governo é obrigatória, como aposentadorias e salários, e cresce mesmo quando a arrecadação não cresce.",
+      "problema": "O texto afirma que o gasto obrigatório cresce sem arrecadação, mas a fonte só mostra a parcela de 92% em 2025. Não mostra o crescimento. Outro governo poderia ter essa parcela atribuída a escolhas políticas, não a algo dado."
+     },
+     {
+      "frase": "Por isso, quem empresta cobra mais caro do governo, o que faz a conta de juros crescer.",
+      "problema": "\"Por isso\" liga gasto a juros como causa direta. É a tese em disputa, apresentada como fato no resumo."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-juro-divida",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção de 2007–2013 é boa, mas há uma mais forte. De 2014 a 2019 a dívida bruta foi de cerca de 52% para 74% do PIB, e a Selic caiu para 4,5% em 2019. Nesses anos o primário passou de superávit para déficit. Isso sugere que o gasto e a queda da arrecadação puxaram a alta antes de o juro alto voltar. Esses números vêm da memória e precisam de fonte do BC ou da IFI antes de entrar no texto. Há ainda a causalidade reversa. Parte do juro real alto é prêmio de risco pela trajetória fiscal. Assim, o juro seria também consequência do gasto, e não só causa da dívida. A resposta do site compara o juro real (8,4% contra 5,1% e 3,8%) e não trata disso.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "\"Em disputa\" se sustenta. Há dois lados com evidência: a decomposição do BC favorece o juro, e a história 2014–2019 favorece o gasto. Mas as duas fontes citadas são só o BC, nível 3, e mostram a contabilidade da dívida, não a causa. A decomposição não separa o juro que a dívida criou do juro que o governo pagaria de qualquer jeito. Os juros de 7,2 pontos são nominais e incluem a correção pela inflação. O \"crescimento do PIB em reais\" que tirou 3,9 pontos também inclui inflação. Nenhuma das duas fontes mostra o juro real. A afirmação \"cerca de metade da dívida acompanha a Selic\" não tem fonte entre as citadas.",
+    "teste_da_troca": [
+     {
+      "frase": "a dívida sobe mesmo quando o governo gasta pouco além do que arrecada",
+      "problema": "\"Gasta pouco além\" minimiza o déficit primário. Com um governo de outro lado no poder, a mesma situação poderia ser descrita como \"gasta além do que arrecada\". Convém dar o número do primário."
+     },
+     {
+      "frase": "Quem defende responde que o juro de hoje é bem mais alto.",
+      "problema": "A resposta só mostra o juro real e deixa de fora que o juro alto pode ser reação ao risco fiscal. Isso favorece o lado do juro sem dizer que escolheu."
+     },
+     {
+      "frase": "Nesses anos, o governo arrecadava mais do que gastava, sem contar os juros.",
+      "problema": "Está correta, mas é a única parte do histórico mostrada. Com o lado oposto no poder, 2014–2019 provavelmente apareceria também, e o texto ficaria menos favorável ao juro."
+     },
+     {
+      "frase": "os juros somaram 7,2 pontos do PIB à dívida, e o crescimento da economia tirou 3,9 pontos",
+      "problema": "\"Somaram\" e \"tirou\" dão a ideia de causas independentes. É contabilidade, e o juro cobrado depende do tamanho da dívida e do risco. Convém avisar que é decomposição e não causa."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "divida-do-governo/o_que_vem_depois",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "O estudo dos 40 países cobre 1965–2010 e mede dívida e crescimento, não juro nem dólar. Ele não sustenta o primeiro mecanismo do texto (dívida sobe, credor cobra mais, juro e dólar sobem). Esse elo fica apoiado só em página do próprio site. O estudo diz que o efeito negativo da dívida sobre o crescimento aparece 'regardless of the threshold', ou seja, sem depender de um limite. Isso confirma a frase sobre o crescimento, mas não a sobre juro e câmbio.",
+      "url": "https://econpapers.repec.org/RePEc:tpr:restat:v:99:y:2017:i:1:p:135-150",
+      "titulo": "Is There a Debt-Threshold Effect on Output Growth? (Chudik, Mohaddes, Pesaran, Raissi), Review of Economics and Statistics, 2017",
+      "nivel": 2,
+      "trecho": "we find no evidence for a universally applicable threshold effect in the relationship between public debt and economic growth.",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "Não recebi no input a objeção que o site mostra, então não dá para compará-la com precisão. As mais fortes que o texto parece não mostrar são três. (1) A causalidade pode ir nos dois sentidos: juro alto encarece a dívida, que no Brasil é muito indexada à Selic, e isso piora o fiscal. Uma busca achou o IFI (RAF 116) e colunas que descrevem esse ciclo, mas não abri nenhuma, então não as uso como objeção com trecho conferido. (2) O texto passa de 'o Brasil deve em reais, a brasileiros' para um tom tranquilizador, mas dívida em reais não protege contra juro e câmbio altos. Dívida em moeda local com indexação à Selic transmite o choque pelo custo da dívida e pela inflação. Falta dizer isso. (3) O estudo não separa países de renda média e emergentes como o Brasil. Ele mistura avançados e em desenvolvimento, e o achado sobre dívida crescente é médio entre eles.",
+    "rotulo_se_sustenta": false,
+    "comentario_rotulo": "'Consenso' não se sustenta com as fontes citadas. Duas das três são páginas do próprio site (nível 3 só por rótulo, não são documento oficial) e a terceira é um único estudo. Um estudo não faz consenso, e ele trata de crescimento, não de juro e dólar. Para 'consenso' faltam revisão ou meta-análise (nível 1) ou documento do BC, do FMI ou da IFI sobre o elo dívida→juro/câmbio. O mais honesto seria 'maioria' para o mecanismo de juro e câmbio. Dá para manter 'consenso' só para a ideia de que não existe limite único, e mesmo assim com ressalva: uma versão do artigo fala em efeito de limiar perto de 50–60% do PIB para dívida em alta, e a busca não permitiu confirmar isso na versão publicada.",
+    "teste_da_troca": [
+     {
+      "frase": "o Brasil deve quase tudo em reais, a maior parte a brasileiros.",
+      "problema": "Fato verdadeiro, mas usado como atenuante. Com o governo oposto no poder, a frase pode virar alerta (dívida muito indexada à Selic, com custo alto) ou continuar como alívio. A escolha do enquadramento depende de quem governa. Convém pôr o dado do prazo e da indexação ao lado, para não passar só o lado tranquilizador."
+     },
+     {
+      "frase": "Quando a dívida do governo sobe rápido, quem empresta ao governo passa a cobrar mais caro, e o juro e o dólar sobem junto.",
+      "problema": "Está escrita como regra certa, sem 'tende a' nem condição. Com o outro lado no poder, a mesma frase seria lida como crítica ao governo. A dívida subir 'rápido' não tem número, e juro e dólar nem sempre sobem juntos."
+     },
+     {
+      "frase": "Um estudo com dezenas de países não achou um limite que valha para todos, mas achou que a dívida subindo por muitos anos faz a economia crescer menos.",
+      "problema": "Sem lado, mas o 'faz' fala em causa quando o estudo mostra associação em painel. Escolher só este estudo também favorece quem defende ajuste, ou quem defende gasto, conforme o que o leitor guarda dele."
+     },
+     {
+      "frase": "Muita gente acha que existe um limite para a dívida",
+      "problema": "'Muita gente acha' põe a ideia como crença popular e a descarta. Palavra com lado: o limite de 100% é defendido por parte de economistas, e o texto os apresenta como senso comum."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-juro-familias",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção de 2005–2011 é fraca. É outro período, com crédito se expandindo e a Selic caindo, e não responde ao dado de 2024–2026. Há três objeções mais fortes, e todas atacam o \"a favor\". (1) O ponto de partida de 2020 é a Selic mínima (2% ao ano em dez/2020), o que exagera a alta de 36% para 62%. (2) O juro médio sobe também por mudança de composição (mais cartão e rotativo, menos modalidades baratas) e por inadimplência e spread. Isso não vem da Selic, então o texto não mostra que a causa seja o juro de política. (3) A parcela total subiu de 25,7% para 29,0% da renda, mas os juros explicam só 1,9 ponto dos 3,3. Os outros 1,4 ponto vêm da amortização, isto é, do prazo e do perfil da dívida, e o texto não trata disso. Além disso, juros/renda é igual à dívida/renda vezes a taxa efetiva, então \"dívida ou juro\" não é uma escolha excludente. A conta do texto até favorece o juro: a dívida subiu cerca de 4% e a taxa efetiva implícita, cerca de 16%. Falta o texto dizer isso e separar quanto da taxa vem da Selic.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "\"Em disputa\" se sustenta, mas de forma frágil. As duas fontes são séries do Banco Central (nível 3), sem nenhuma revisão ou estudo (níveis 1 e 2) que decomponha o peso do juro e o da dívida. A leitura se apoia em um só período curto e em uma comparação que começa na Selic mínima. A objeção, por sua vez, vem de outro regime. O rótulo cabe porque falta teste direto, não porque haja evidência equilibrada dos dois lados.",
+    "teste_da_troca": [
+     {
+      "frase": "a dívida das famílias cresceu pouco, de 48,0% para 50,1% da renda de um ano",
+      "problema": "\"Pouco\" é um juízo. Com outro governo no poder e a mesma alta de 2,1 pontos, a frase poderia sair como \"avançou\". Melhor dar só os números ou a variação relativa (cerca de 4%)."
+     },
+     {
+      "frase": "o juro médio subiu de 36% ao ano em dezembro de 2020 para 62% em setembro de 2026",
+      "problema": "O ponto inicial é a Selic mínima da série, e o intervalo cobre governos diferentes. A escolha da data pesa na leitura e dá ar de alarme. Sem a Selic ao lado, o leitor pode atribuir a alta a quem está no poder."
+     },
+     {
+      "frase": "Quando o Banco Central sobe a Selic, ... o juro do cartão, do cheque especial e do empréstimo pessoal sobe junto.",
+      "problema": "A frase afirma a transmissão como certa, mas o dado mostrado é só o juro médio. Esse juro também reflete composição, inadimplência e spread. Em um governo que defendesse o aperto monetário, a frase poderia vir com ressalva."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-mais-credito",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "Não achei trecho que eu pudesse copiar palavra por palavra de uma página aberta, então não trago objeção nova com citação. A objeção do site é boa, mas não é a mais forte. A mais forte é que o texto diz \"juro parado\", e isso parece errado. Notícias de 2026 que a busca trouxe, e que eu não abri, falam em juro de 64% ao ano no crédito livre das famílias e em juros altos por período prolongado. Isso derruba a premissa da leitura antes mesmo da objeção do site. Há ainda uma segunda objeção: o comprometimento da renda depende do prazo e da modalidade (rotativo e cartão têm parcela alta), e não só do juro ou do saldo. Por isso a objeção do site, \"aponta para o juro\", é mais forte do que o dado permite. Ela deveria dizer \"aponta para o custo e o perfil da dívida\". A busca também mostra o comprometimento em 28,5% em maio e 29,3% em março, com datas e fontes que divergem. Convém conferir a série oficial do Banco Central antes de citar 29,0% em agosto.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "\"Em disputa\" se sustenta para a pergunta, porque os dois indicadores do Banco Central, a dívida sobre a renda e o comprometimento da renda, apontam em direções diferentes. Mas as duas fontes citadas na leitura não sustentam a leitura da dívida maior. A primeira mostra só que a dívida subiu de 16,5% para 50,1%. A segunda é uma lei de 2003, que explica a oferta de crédito e não o peso da dívida hoje. Nenhuma das duas compara dívida e juro. A leitura precisa de uma fonte que separe os dois efeitos, por exemplo uma decomposição do Banco Central do comprometimento da renda entre saldo, juro e prazo. Sem isso, o \"em pé\" fica frágil.",
+    "teste_da_troca": [
+     {
+      "frase": "Mesmo com o juro parado, mais dívida quer dizer mais parcela.",
+      "problema": "A frase afirma uma coisa sobre o juro sem fonte, e os dados de 2026 sugerem o contrário (juro alto, perto de 64% ao ano no crédito livre). Ela favorece quem culpa a expansão do crédito (consignado, cartão, financiamento) e tira o peso da política de juros. Com o governo oposto no poder, o mesmo dado provavelmente seria escrito como juro alto pesando."
+     },
+     {
+      "frase": "Com o cartão, o consignado e o financiamento chegando a mais gente...",
+      "problema": "O texto cita só o consignado, criado em 2003, e a lei dele, o que dá crédito a uma política de um governo específico. A frase não traz evidência de que essa ampliação explique a dívida atual. Seria preciso o mesmo cuidado se a política fosse de outro governo."
+     },
+     {
+      "frase": "as famílias passaram a dever uma parte maior da renda",
+      "problema": "É neutra em si, mas o texto compara 2005 com 2026 e deixa de fora o intervalo de 2022 a 2026, quando a dívida ficou quase estável. Esse recorte favorece a leitura da dívida maior. Não achei palavra de alarme."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-apostas",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "Estudo do Ibevar/FIA (dez/2011 a dez/2025), cruzando dados do BC e do Ipea com um indicador de interesse por apostas, conclui que as apostas pesaram mais que juros e crédito na dívida das famílias. Isso é evidência contra a leitura de que o juro pesa mais e a favor de dar mais peso às bets. A fonte é uma notícia sobre o estudo, não o estudo. O indicador mede interesse, não gasto, e a série só ganha força depois de 2023.",
+      "url": "https://timesbrasil.com.br/empresas-e-negocios/bets-superam-juros-e-credito-e-viram-principal-motor-do-endividamento-das-familias/",
+      "titulo": "Bets superam juros e crédito e viram principal motor do endividamento das famílias",
+      "nivel": 6,
+      "trecho": "o efeito das apostas foi mais forte do que o dos juros e do crédito",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "A CNC estima que as apostas podem ter levado 270 mil famílias à inadimplência severa (atraso de 90 dias ou mais). É um número pequeno diante da escala da inadimplência das famílias e usa linguagem hipotética. Serve como contrapeso: o efeito existe, mas aparece como parcela limitada do total.",
+      "url": "https://istoedinheiro.com.br/para-cnc-bets-agravam-endividamento-das-familias-brasileiras",
+      "titulo": "Para CNC, bets agravam endividamento das famílias brasileiras",
+      "nivel": 6,
+      "trecho": "podem ter levado 270 mil famílias a situação de ‘inadimplência severa’",
+      "conferencia_codigo": "trecho_nao_esta_na_pagina"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção do juro é forte pelo momento (2020–2023), mas fica incompleta. As bets só cresceram de verdade depois de 2023, então o período usado não testa a leitura das apostas. Mais forte seria dizer que as duas leituras cobrem épocas diferentes e que há estudos recentes em sentidos opostos. O Ibevar/FIA coloca as bets acima de juros e crédito. A LCA, segundo a imprensa, diz que as apostas legais são 0,46% do consumo e que a inadimplência vem do crédito livre. O texto atual não mostra nenhum dos dois. Também falta dizer que a divergência está dentro do BC: um diretor chama as bets de elemento central, e os relatórios oficiais destacam o crédito. Isso veio de reportagens, e não consegui abrir o relatório nem o estudo da LCA.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "\"Pouco testada\" se sustenta, e a evidência nova reforça o rótulo. Existe teste, mas é de qualidade baixa e dá resultados opostos. A fonte citada (R$ 20 bi por mês no Pix, BC, agosto de 2024) mostra o tamanho do fluxo, não o efeito sobre o atraso das parcelas. Falta ligar o gasto ao pagamento das dívidas. Os estudos que tentam isso são da CNC (entidade do varejo), do Ibevar/FIA e da LCA (consultoria), todos de nível 5 ou 6 aqui. Nenhum é revisado por pares. A pergunta é \"o que mais pesa\", e o texto ainda precisa de uma fonte que compare os dois pesos.",
+    "teste_da_troca": [
+     {
+      "frase": "Parte do dinheiro das famílias foi para as apostas pela internet, o que deixaria menos dinheiro para pagar as parcelas em dia.",
+      "problema": "A frase afirma a causa no passado ('foi para') e só depois usa o condicional. O dado citado mostra o fluxo de Pix, não que o dinheiro tenha vindo do orçamento das parcelas. Com outro governo no poder, a frase provavelmente sairia igual. Mas a regulação das bets virou pauta do governo, e isso pode puxar a leitura para o lado da proibição. Convém deixar claro que a ligação não está medida."
+     },
+     {
+      "frase": "Foi quando a Selic subiu de 2% para 13,75%, o que aponta para o juro.",
+      "problema": "'Aponta para o juro' dá peso causal a uma coincidência no tempo. Também ajuda quem culpa o BC e a política monetária, e favorece o lado oposto ao da leitura das bets. Com outro governo no poder, a mesma frase talvez fosse lida de outro jeito. Seria mais neutro dizer 'coincide com' e lembrar que as bets só cresceram depois de 2023."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "dividas-das-familias/o_que_vem_depois",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "O próprio FMI, replicando o tipo de análise de Mian-Sufi-Verner, acha que o efeito negativo da dívida das famílias sobre o crescimento é mais forte nas economias avançadas do que nas emergentes. O Brasil é emergente, e a amostra do estudo citado é dominada por países ricos. O efeito aparece mais forte quando a dívida passa de 65% do PIB.",
+      "url": "https://www.imf.org/-/media/files/publications/wp/2018/wp1876.pdf.md",
+      "titulo": "FMI (2018), Working Paper 18/76: household debt and growth",
+      "nivel": 3,
+      "trecho": "the negative effect appears stronger for advanced economies than for emerging markets",
+      "conferencia_codigo": "confirmado"
+     },
+     {
+      "texto": "O mesmo documento do FMI mostra que o efeito depende do nível da dívida. Ele fica mais forte acima de 65% do PIB. O texto não diz em que nível está a dívida brasileira em relação ao PIB. Cita só o endividamento sobre a renda, 50,1% em agosto.",
+      "url": "https://www.imf.org/-/media/files/publications/wp/2018/wp1876.pdf.md",
+      "titulo": "FMI (2018), Working Paper 18/76: limiar de 65% do PIB",
+      "nivel": 3,
+      "trecho": "The effect is even stronger when the level of household debt is above 65 percent of GDP",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "Não recebi a objeção que o site mostra, então não dá para avaliá-la. A mais forte que achei é a de validade externa: o estudo mede o crescimento da dívida em relação ao PIB, em amostra majoritariamente de países ricos, e o texto o aplica ao Brasil. Para o Brasil, o texto usa um dado diferente, a inadimplência acima de 90 dias no crédito livre. A inadimplência alta mostra aperto no crédito, mas não é a mesma coisa que dívida subindo mais rápido que o PIB. Há também achados em outros estudos de painel, citados em buscas, de que o efeito da dívida sobre a renda é positivo em países de renda e dívida baixas ou de instituições fortes. Não abri esses estudos, então não os listei como fonte.",
+    "rotulo_se_sustenta": false,
+    "comentario_rotulo": "\"Consenso\" não se sustenta com as fontes citadas. O elo causal (endividamento leva a vendas menores) se apoia em um estudo, em uma frase do próprio site que aparece como fonte de nível 3 (autocitação, não é fonte oficial) e em um dado do BC. O BC confirma só o dado de inadimplência (8,1% contra 6,9%, divulgado em 29/10/2026), não o mecanismo. O FMI confirma a direção do efeito, mas com ressalvas para emergentes. \"Maioria\" ou \"pouco testada para o Brasil\" seria mais honesto. Outro ponto: 8,1% é a inadimplência do crédito livre das pessoas físicas, que inclui mais que cartão e empréstimo pessoal. A inadimplência da carteira total das famílias é de cerca de 6,0%, número que o texto não mostra e que muda a leitura do tamanho do problema. O texto também diz \"costuma crescer menos depois\", que é associação estatística, mas parece causa certa.",
+    "teste_da_troca": [
+     {
+      "frase": "Quem já paga muita parcela corta o resto primeiro quando a renda cai ou o juro sobe, e as lojas vendem menos.",
+      "problema": "É dada como regra, sem fonte externa (a fonte é o próprio site). Com o governo oposto no poder, a frase provavelmente continuaria igual, mas segue sem teste. Falta dizer que a renda não está caindo, o que enfraquece a chamada para a crise."
+     },
+     {
+      "frase": "o atraso de agora é o maior desde 2011, quando o Banco Central começou essa conta.",
+      "problema": "O dado é verdadeiro, mas a ênfase no recorde tem tom de alarme. O recorde de uma série que começa em 2011, ano de crédito bem menor, não diz que há crise. Faltam contexto como o juro de 62,4% ao ano e a inadimplência total (cerca de 6,0%), que mostram a origem do atraso."
+     },
+     {
+      "frase": "a economia costuma crescer menos depois.",
+      "problema": "Um estudo de painel que mostra correlação foi transformado em previsão para o Brasil. O próprio FMI diz que o efeito é mais fraco em emergentes. Nenhum lado político mudaria a frase, mas ela cobra mais certeza do que a fonte dá."
+     },
+     {
+      "frase": "O que isso muda para você?",
+      "problema": "A pergunta pressupõe efeito pessoal negativo. Palavra de alarme implícita: \"corta o resto primeiro\" e \"as lojas vendem menos\" descrevem só o lado ruim."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-desconfianca",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "Estudo do FMI sobre o câmbio real brasileiro: choques nos juros mundiais explicam boa parte das oscilações de médio prazo nos fluxos de capital e no câmbio. Ou seja, o juro lá fora move o dólar aqui sem que a confiança no Brasil mude. É uma explicação rival à da desconfiança. O estudo é de 1997, então vale como indício, não como prova para hoje.",
+      "url": "https://www.imf.org/en/publications/wp/issues/2016/12/30/cyclical-fluctuations-in-brazil-s-real-exchange-rate-the-role-of-domestic-and-external-factors-2364",
+      "titulo": "Cyclical Fluctuations in Brazil's Real Exchange Rate: The Role of Domestic and External Factors (FMI)",
+      "nivel": 3,
+      "trecho": "Generalized variance decompositions indicate that world interest rate shocks largely explain medium-term fluctuations in capital flows and the TCRER.",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção de 2008 é boa, mas é um só episódio de crise global. A mais forte seria mais geral: o dólar sobe também por causa de fatores de fora, como o juro nos EUA, o dólar forte no mundo e o apetite por risco. Isso vale em qualquer período, e não só em 2008. Um mercado que reage a notícia do Brasil (26/10/2026) também reage ao Fed. Sugestão: trocar ou somar à objeção de 2008 uma que diga que o juro americano e o dólar global explicam parte grande das oscilações, com a conta em reais. A busca só achou um estudo antigo do FMI e estimativas de analistas, como 70% externo, que não dão para citar como fonte forte. Há ainda uma dúvida de data: o item de 26/10/2026 é muito recente, e vale conferir se o dólar e o juro daquele dia não tiveram ajuda de fatores externos.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "Em disputa se sustenta: há fontes oficiais para o lado da desconfiança (Copom, Blanchard) e um caso forte contra (2008, fatores globais). O rótulo não deveria subir para maioria, porque faltam estudos de nível 1 ou 2 que meçam quanto do câmbio vem de dentro e quanto de fora. Fraqueza das fontes: quase tudo é série do BC e do Tesouro (nível 3), que mostra coincidência no tempo, não causa. Dos casos citados, só Blanchard (nível 2) analisa o mecanismo. A frase de 2015 não separa fiscal de recessão, política e queda das commodities.",
+    "teste_da_troca": [
+     {
+      "frase": "Em 26/10/2026, o dia seguinte ao segundo turno, o dólar subiu de R$ 5,04 para R$ 5,50 e o juro de 10 anos, de 6,9% para 8,1%.",
+      "problema": "Escolher o dia da eleição como exemplo pode dar a impressão de que o resultado da eleição desagradou o mercado. Com o outro lado vencendo, o texto talvez não usasse esse dia, ou mostraria uma queda. Convém dizer o que mexeu no dia (resultado, anúncio, cenário externo) e não deixar a data sugerir culpado. Também falta conferir se houve movimento externo no mesmo dia."
+     },
+     {
+      "frase": "Em 2015, com as contas piorando, o dólar subiu de R$ 2,69 em 2/1 para R$ 4,19 em 24/9.",
+      "problema": "A expressão 'com as contas piorando' dá a causa por pronta. Em 2015 também havia recessão, crise política, perda do grau de investimento e queda das commodities. Com outro governo no poder, a frase poderia ser escrita de outro jeito, apontando outro fator."
+     },
+     {
+      "frase": "Quem investe passa a desconfiar das decisões tomadas no Brasil",
+      "problema": "'Desconfiar' atribui um estado de espírito ao mercado e põe a causa na decisão do governo. A mesma alta do dólar poderia ser descrita como dólar mais forte lá fora. A palavra tem um lado, o de culpar a decisão local."
+     },
+     {
+      "frase": "sem nada novo nas contas do governo, porque o medo veio de fora",
+      "problema": "'Medo' é palavra de alarme. Convém trocar por 'aversão a risco global' ou 'saída de capital de países emergentes'."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-medo-mundo",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção do BIS (Cerutti, Claessens e Rose, WP 661) é real e o trecho \"rarely explain more than a quarter of the variation in capital flows\" confere no resumo. Mas ela mede fluxos de capital em 85 países, não o dólar no Brasil. A objeção mais forte seria a que fala do câmbio brasileiro: parte dos estudos aponta o risco doméstico, fiscal e político, como peso igual ou maior que o global. Na busca, um estudo de prêmio de risco em Brasil, Chile, México e Rússia achou impacto maior do risco político local que do global. Corretoras também atribuem a alta de 2024 sobretudo ao fiscal. Só vi isso em resumos de busca e não consegui abrir as páginas para copiar trechos, então não listei como objeção nova. Vale buscar o estudo de risco político e o box do Banco Central de março de 2021. Nesse box, o VIX entra com sinal positivo e significativo na volatilidade do câmbio, e o risco fiscal também é testado.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "\"Em disputa\" se sustenta. Há evidência dos dois lados: Rey e o VIX de um lado, o BIS e os estudos de risco doméstico do outro. As fontes citadas, porém, só mostram o lado a favor. Os episódios de 2008 e 2020 são choques globais extremos e não separam o fator global do doméstico. Em 2020 também houve choque fiscal e político no Brasil. Rey trata de fluxos de capital, não do dólar brasileiro.",
+    "teste_da_troca": [
+     {
+      "frase": "O dólar então sobe contra as moedas de todos eles, mesmo sem nada novo no Brasil.",
+      "problema": "É a frase mais forte do texto, e as fontes não a sustentam. 2008 e 2020 não isolam o fator global. Em 2020 houve também deterioração fiscal e política no Brasil. Culpar o mundo favorece quem está no poder, seja qual for o governo. Sugestão: trocar \"mesmo sem nada novo\" por \"em parte\"."
+     },
+     {
+      "frase": "Na crise de 2008, o dólar subiu de R$ 1,56 em 1/8 para R$ 2,50 em 5/12, e na pandemia, de R$ 4,02 em 2/1/2020 para R$ 5,94 em 14/5.",
+      "problema": "As datas pegam o pior ponto de cada crise. Em 2008 o início é um pico do real, antes do choque. Em 2020 o dólar fechou o ano em R$ 5,20, o que esta frase omite. \"Subiu\" sem comparar com outras moedas emergentes não mostra que a causa foi global."
+     },
+     {
+      "frase": "A economista Hélène Rey mostrou que o dinheiro entra e sai dos países emergentes ao mesmo tempo",
+      "problema": "\"Mostrou\" é forte demais, porque o BIS contesta o resultado. Rey trata de fluxos de capital em geral, não do dólar no Brasil. O rótulo \"em disputa\" pede um verbo menos categórico, como \"argumentou\"."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-commodities",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "Não consegui trazer objeção nova com trecho conferível: os PDFs do Ipea e do Inter vieram ilegíveis e a nota do BC (RTI de dez/2022, nível 6) só fala em incerteza, não em câmbio. A objeção atual é fraca como refutação. Saldo comercial mede volume vezes preço num mês, e a leitura fala de variação de preço de commodities. Superávit alto convive com saída de capital financeiro. Não confirmei os US$ 9,3 bi: a 4ª semana de outubro/2026 mostrava saldo parcial de US$ 7,449 bi, e o recorde anterior era o de out/2023, de US$ 9,181 bi. Além disso, \"o dólar subiu\" não traz período nem tamanho. A objeção mais forte seria outra: confusão com juros e risco. A própria fonte do site mostra que em 2015 o juro de 10 anos subiu de 6,2% para 8,0% junto com o dólar. Isso foi na crise fiscal e política, então a queda das commodities não é a única explicação. Ipea e análises de mercado citam diferencial de juros, risco-país (CDS) e dólar global como fatores centrais, e o Inter achou repasse baixo das commodities ao câmbio. Esses itens não aparecem como objeção.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "\"Em disputa\" se sustenta. Há evidência acadêmica a favor (BIS, nível 2) e um contraexemplo recente. As duas fontes a favor não isolam o efeito dos juros e do risco no caso brasileiro. O BIS cobre onze países, não só o Brasil. O exemplo de 2015 é confundido pela crise doméstica. \"Maioria\" ou \"consenso\" não caberiam.",
+    "teste_da_troca": [
+     {
+      "frase": "Em 2015, o preço mundial de produtos como soja, minério e petróleo caiu quase pela metade em relação a junho de 2014, e o dólar passou de R$ 4.",
+      "problema": "A frase sugere causa pela simples sequência. 2015 foi ano de crise fiscal, perda do grau de investimento e juros em alta, e o dólar sobe com isso também. Com outro governo no poder, a escolha do exemplo e o peso dado às commodities, em vez da política doméstica, poderiam mudar. Também há alarme em \"quase pela metade\"."
+     },
+     {
+      "frase": "Mesmo assim, o dólar subiu, o que indica que essa alta teve outra causa.",
+      "problema": "Conclusão forte tirada de um mês, sem dizer quanto o dólar subiu nem em que período. Soa como refutação, mas o saldo comercial não testa a tese do preço. \"O maior saldo desde 1989\" é um destaque que impressiona mais do que prova."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "dolar-alto/o_que_vem_depois",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "Mesmo com o dólar mais caro, o combustível no posto nem sempre sobe na mesma medida: a Petrobras vende diesel e gasolina abaixo da paridade de importação, e o governo paga subsídio para segurar a diferença. Isso enfraquece o elo \"dólar sobe → combustível sobe\" do texto, ao menos no curto prazo.",
+      "url": "https://www.novacana.com/noticias/mesmo-subsidio-petrobras-mantem-defasagem-venda-combustiveis-100826",
+      "titulo": "Mesmo com subsídio, Petrobras mantém defasagem na venda de combustíveis (NovaCana/CNN Brasil, 10 ago 2026)",
+      "nivel": 6,
+      "trecho": "A diferença é de 19% no diesel e de 12% na gasolina, já considerando os recursos repassados pelo governo.",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "Não consegui conferir a objeção atual do site, que não veio no pedido. Pela busca, a mais forte parece ser outra: o próprio boxe do BC (RPM março/2026) alerta que os intervalos de confiança são amplos e a incerteza é elevada. O repasse para preços administrados (onde estão os combustíveis) tem coeficiente de 0,18, sem significância estatística na maioria dos horizontes. O repasse para serviços é próximo de zero e varia muito por item. Essa leitura vem de um resumo da busca. Os PDFs do BC não abriram como texto, então não pude copiar o trecho e não o incluí em objecoes_novas. O texto trata \\\"cerca de 1 ponto\\\" como número firme, e a fonte o apresenta como estimativa imprecisa. O repasse também depende do estado das expectativas e do tamanho da desvalorização, que não aparecem no texto.",
+    "rotulo_se_sustenta": false,
+    "comentario_rotulo": "\\\"Consenso\\\" é forte demais para o conjunto. (1) Só o BC sustenta o número de 1 ponto, e o próprio BC o apresenta com incerteza alta. Não há meta-análise nem artigo revisado por pares na lista. (2) A fonte da ANP prova apenas que o Brasil importa parte dos combustíveis. Ela não prova que o dólar chega ao preço final, o que depende da política de preços da Petrobras e dos subsídios. (3) O elo juros longos e financiamento da casa própria se apoia em uma página do próprio site, classificada como nível 3 sem ser fonte oficial. O texto liga \\\"desconfiança\\\" a financiamento imobiliário sem citar fonte externa. Rótulo mais defensável: \\\"maioria\\\" para dólar e inflação. Para o canal dos juros longos e do crédito imobiliário, \\\"pouco testada\\\" ou \\\"em disputa\\\", até haver fonte externa.",
+    "teste_da_troca": [
+     {
+      "frase": "Quando quem investe desconfia do Brasil, cobra mais para emprestar ao governo, e por isso os empréstimos longos, como o da casa própria, também ficam mais caros.",
+      "problema": "Atribui a alta dos juros longos à \"desconfiança\" sem dizer o motivo. Com outro governo, o texto talvez citasse também o juro básico e as expectativas de inflação. A palavra \"desconfia\" tem peso de julgamento e supõe que o investidor reage ao governo, sem separar o que vem de fora (juros nos EUA). O trecho também não tem fonte externa para o crédito imobiliário."
+     },
+     {
+      "frase": "Pelas contas do Banco Central, cada 10% de alta do dólar faz o IPCA subir cerca de 1 ponto em um ano.",
+      "problema": "Soa como regra fixa. O BC dá o número com intervalo de confiança amplo, e o repasse varia com o tamanho da desvalorização e com as expectativas. Esse tom firme seria o mesmo com qualquer governo, mas passa mais certeza do que a fonte dá."
+     },
+     {
+      "frase": "Com o dólar mais caro, os importados ficam mais caros, como peças e combustível",
+      "problema": "Omite que a Petrobras e os subsídios seguram o combustível. Com outro governo e outra política de preços, a frase sobre combustível poderia sair bem diferente. \"Mais caros\" vale como regra geral, mas não como fato certo para o combustível no posto."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-contas-inflacao",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "Um estudo de 2026 com VAR bayesiano de coeficientes variáveis (jan/2014 a set/2024) rejeitou a hipótese de dominância fiscal justamente nos períodos com dívida igual ou acima de 60% do PIB. Nesse estudo, um choque de juros reduz inflação e risco soberano, o que os autores leem como a política monetária ainda mandando. Isso vai contra a ideia de que as contas do governo explicam a inflação acima da meta no período em que a leitura mais precisa disso. Ressalva: só li o resumo, e o trecho completo não foi confirmado.",
+      "url": "https://econpapers.repec.org/RePEc:ibn:ijefaa:v:18:y:2026:i:6:p:1",
+      "titulo": "A Bayesian Analysis of the Fiscal Dominance Hypothesis in Brazil (Rocha, Pereira e Brilhante, 2026)",
+      "nivel": 2,
+      "trecho": "The GIRFs generated for periods in which the debt-to-GDP ratio was greater than or equal to 60%",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção atual (dívida subiu em 2017-2019 e a inflação ficou abaixo do centro da meta) é boa, mas é um par de anos. Ela também tem uma saída fácil: a economia estava saindo da recessão, com muita ociosidade e choque de alimentos favorável. Mais forte seria a objeção de que as expectativas ficaram desancoradas desde 2021 em meio a choques de oferta (alimentos, combustíveis, câmbio), mercado de trabalho aquecido e juros altos. Isso é uma explicação concorrente, não um teste contra a leitura fiscal. O texto não separa o que é fiscal do que é oferta, demanda e inércia. Isso pesa mais do que o contraexemplo de 2017-2018. Também falta o estudo que rejeita dominância fiscal com dívida acima de 60% do PIB (acima).",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "\"Em disputa\" se sustenta: a literatura brasileira se divide por período e método. Há estudos que veem dominância fiscal nos anos 2010 e outros que a rejeitam em 2014-2024. Porém, as duas fontes a favor (Cerisola e Gelos, e o estudo de 2024) são só duas, e a primeira cobre o período pós-1999 até meados dos anos 2000. Nenhuma delas testa o período recente de inflação acima da meta. Quem lê pode achar que a leitura fiscal tem mais apoio do que tem, e o texto deveria dizer que as fontes a favor não cobrem o período pós-2021.",
+    "teste_da_troca": [
+     {
+      "frase": "Elas passaram a atrapalhar depois de 2013 e de novo depois de 2019.",
+      "problema": "A escolha de 2013 e 2019 como marcos pode soar como crítica a governos específicos (Dilma e Bolsonaro/Lula). O texto não diz que governo estava no poder nem o que mudou nas contas. Convém citar o dado (resultado primário, dívida) e não só as datas, para que a frase valha com qualquer governo."
+     },
+     {
+      "frase": "Quando as contas do governo pioram, quem investe passa a esperar mais inflação, porque teme que a dívida acabe paga com preços subindo.",
+      "problema": "Está escrita como regra geral e sem ressalva, apesar de o próprio texto trazer um contraexemplo (2017-2018). Com o governo oposto no poder, quem já defende a leitura fiscal a repetiria igual, e quem a rejeita também. O texto precisa dizer que é um mecanismo possível, não um fato."
+     },
+     {
+      "frase": "quem investe passa a esperar mais inflação / teme que a dívida acabe paga com preços subindo",
+      "problema": "\"Teme\" é palavra de alarme e atribui um estado de ânimo ao mercado. Dá para trocar por \"espera\", ou por um dado da pesquisa Focus."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-confianca-bc",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "Na carta aberta de 2024, o próprio Banco Central decompõe o desvio de 1,83 ponto percentual: inflação importada (câmbio e commodities) 0,72, inércia de 2023 0,52, hiato do produto 0,49 e expectativas só 0,3. Ou seja, a expectativa explica a menor parte do estouro de 2024. A leitura da firmeza apresenta a expectativa como causa central, e a decomposição oficial a coloca em quarto lugar. Parte do câmbio, porém, foi atribuída a causas internas, como a percepção fiscal, o que liga esta objeção à leitura fiscal.",
+      "url": "https://istoedinheiro.com.br/bc-dolar-e-economia-aquecida-explicam-maior-parte-da-alta-da-inflacao/",
+      "titulo": "BC: dólar e economia aquecida explicam maior parte da alta da inflação",
+      "nivel": 6,
+      "trecho": "a inflação importada (contribuição de 0,72 p.p.); a inércia do ano anterior (0,52 p.p.); o hiato do produto (0,49 p.p.)",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção atual (estouros mesmo com mandatos fixos desde 2021) é fraca como contra-argumento direto. A autonomia formal não garante que as pessoas confiem no BC, e 2021 e 2022 vieram logo depois do choque da pandemia, com a lei recém-aprovada. A objeção mais forte é a decomposição do próprio BC para 2024: expectativas pesam 0,3 ponto, contra 0,72 da inflação importada, 0,52 da inércia e 0,49 do hiato. Segue a leitura rival, a de choques de oferta, câmbio e demanda aquecida, com a variante fiscal (Sergio Vale, da MB Associados, e o debate sobre dominância fiscal). O site deveria mostrar essa decomposição. Não consegui copiar o texto da carta em PDF, então o trecho vem de reportagem.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "\"Em disputa\" se sustenta. Há evidência de nível 3 a favor (estudo do BC sobre expectativas) e contra (a decomposição de 2024 do BC e a leitura fiscal). Mas a evidência a favor é fraca: o episódio de 2012-13 é um caso isolado, e a fonte do medo com os diretores é notícia (nível 6) sobre o que o mercado teme, não sobre inflação medida. Não dá para subir para \"maioria\".",
+    "teste_da_troca": [
+     {
+      "frase": "Depois da eleição de 2026, quem investe passou a temer um Banco Central menos firme, já que o presidente da República poderá indicar mais seis diretores até 2027.",
+      "problema": "A frase depende de quem ganhou a eleição e de quem faz as indicações. Com o outro lado no poder, o texto poderia citar outro temor ou nenhum. O medo vem de uma notícia (nível 6) e mostra a opinião do mercado, não um fato sobre a inflação."
+     },
+     {
+      "frase": "Se as pessoas acham que o Banco Central vai aceitar mais inflação, por exemplo cortando a Selic cedo demais...",
+      "problema": "O exemplo \"cortar cedo demais\" só aparece em relação ao governo atual. A leitura também funcionaria com um BC que sobe os juros tarde demais, qualquer que seja o governo."
+     },
+     {
+      "frase": "Em outubro de 2012, a Selic chegou a 7,25%, cerca de 1,8 ponto acima da inflação esperada...",
+      "problema": "O caso é do governo Dilma e serve só de exemplo de uma gestão. Um exemplo equivalente de outro período, como 2021, mostraria se a leitura vale para os dois lados. Faltam casos de outros governos."
+     },
+     {
+      "frase": "\"temer um Banco Central menos firme\"; \"Um estudo do Banco Central achou que ... o que mais faz a inflação durar\"",
+      "problema": "\"Menos firme\" é palavra com lado e de alarme, porque supõe que o BC futuro vai ceder à pressão política. \"O que mais faz\" é forte demais para um estudo só, e a fonte aponta a expectativa como principal força da persistência, não do nível da inflação."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-choques",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "O próprio Banco Central, em 2025, atribuiu a resistência da inflação de serviços à inércia e ao mercado de trabalho apertado, não a choques. Diogo Guillen, diretor do BC, disse que o segmento de serviços segue com mais inércia, em níveis elevados. É uma causa interna, ligada à demanda, que a leitura dos choques não cobre.",
+      "url": "https://istoedinheiro.com.br/inflacao-vem-caindo-mas-segmento-de-servicos-segue-com-mais-inercia-diz-diretor-do-bc",
+      "titulo": "Inflação vem caindo, mas segmento de serviços segue com mais inércia, diz diretor do BC",
+      "nivel": 6,
+      "trecho": "reforçou que o segmento de serviços segue com mais inércia, em níveis elevados",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção atual (choque dá efeito único e a persistência vem da expectativa) é forte, mas está incompleta. Faltam duas causas internas que o BC cita: o hiato do produto positivo, com mercado de trabalho apertado e serviços resilientes, e a desancoragem das expectativas, que o BC liga em parte ao fiscal. Os trechos dos PDFs do BC (RPM de junho de 2025 e TD 562) não puderam ser lidos, então só a nota de notícia foi conferida. A objeção mais forte seria a demanda aquecida: os estouros de 2015 e 2024 também tiveram economia mais forte que o esperado, e a própria carta de 2024 cita isso. Isso enfraquece a frase de que parte do estouro veio de fora, porque o texto não separa o que foi choque do que foi demanda. A objeção também não diz quanto do desvio os choques explicam. Dólar e preços controlados vêm em parte da política interna (fiscal, repasse de preços administrados), então chamá-los de fora do controle do BC é discutível.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "\"Em disputa\" se sustenta: as fontes são só três documentos do BC (nível 3), que é parte interessada ao explicar seus próprios estouros. Não há revisão de estudos nem artigo revisado por pares. O BC cita choques e demanda ao mesmo tempo, e os textos mais recentes de diretores dão peso à inércia e à expectativa. Não dá para chamar de consenso nem de maioria. A fonte de 2015 também mistura choque externo (dólar) com correção de preços controlados pelo governo, que é decisão interna.",
+    "teste_da_troca": [
+     {
+      "frase": "Parte dos estouros da meta veio de choques que o Banco Central não controla, como a alta do dólar, a seca e o petróleo caro.",
+      "problema": "Os choques entram como fora do controle. O dólar depende também de juros, fiscal e humor político, e a correção de preços controlados em 2015 foi decisão do governo. Com outro governo no poder, a mesma carta do BC poderia ter enfatizado política fiscal ou demanda. O texto pode ficar com um lado se não separar choque externo de decisão interna."
+     },
+     {
+      "frase": "Nas cartas sobre 2015 e 2024, o Banco Central citou a alta do dólar entre as causas do estouro da meta.",
+      "problema": "Mostra só o que o BC escolheu destacar. A carta de 2024 também cita economia mais forte que o esperada, e o texto omite isso na parte a favor, ficando só com a causa que alivia o BC. A fonte é parte interessada."
+     },
+     {
+      "frase": "Um choque sobe os preços uma vez só e não explica por que a inflação dura.",
+      "problema": "A frase é categórica. Choques repetidos ou com repasse lento podem durar, e o texto não diz isso."
+     },
+     {
+      "frase": "Um estudo do Banco Central achou que o que mais a faz durar é a expectativa das pessoas.",
+      "problema": "É um estudo citado sem link nem nome na ficha de fontes. 'O que mais' é afirmação forte, e o TD 562 do BC traz a ressalva de que as opiniões são dos autores e não da instituição."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "l-indexacao-inf",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [
+     {
+      "texto": "Um blog do FGV IBRE sustenta o contrário da objeção do site: o peso de componentes inerciais (preços atrelados à inflação passada) na inflação brasileira seria maior que o de países com meta de 3% ou menos. O texto cita um estudo do Banco Central de 2023 sobre expectativas e inércia, mas a comparação com outros países é do próprio autor, não do BC. Vale como contraponto, não como prova.",
+      "url": "https://blogdoibre.fgv.br/posts/30-anos-do-plano-real-desafios-pendentes-para-duradoura-estabilizacao-de-precos",
+      "titulo": "30 anos do Plano Real: desafios pendentes para a duradoura estabilização de preços (FGV IBRE)",
+      "nivel": 7,
+      "trecho": "é significativamente maior que o observado em países que possuem meta de inflação igual ou menor que 3%.",
+      "conferencia_codigo": "confirmado"
+     }
+    ],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "A objeção do BC (pouca persistência, mais peso das expectativas) é forte, mas está incompleta e pode confundir as duas coisas. Expectativas e inflação passada não são rivais: as expectativas também seguem a inflação passada (o mesmo estudo do BC, segundo o blog do FGV IBRE, acha que analistas que projetam mais inflação para um ano projetam mais também para o seguinte). A objeção mais forte é provavelmente outra: o texto mistura indexação formal (contratos, salário mínimo) com persistência estatística da inflação. Reajuste por lei é fato, mas o efeito na inflação geral depende do peso dos itens indexados e da política monetária. O site não mostra esse peso. O salário mínimo, por exemplo, afeta sobretudo serviços e benefícios, e a regra de 2023 repõe a inflação passada com ganho real, o que não é o mesmo que alimentar a inflação. Não consegui abrir o boxe do BC (PDF ilegível), então não confirmei a objeção na fonte primária. Seria bom citar o estudo pelo nome.",
+    "rotulo_se_sustenta": true,
+    "comentario_rotulo": "'Pouco testada' se sustenta, com ressalva. O lado a favor tem uma lei (que é fato, mas não prova efeito) e um estudo do FMI que só sugere a causa, sem medi-la. Isso é pouco para chamar de testada. Mas a objeção do BC é uma medição, o que sugere que a leitura foi testada e não passou, ao menos parcialmente. Se a objeção for confirmada na fonte, o rótulo mais exato pode ser 'testada e não confirmada'. O rótulo também ignora que 'inércia' é um conceito aceito pelo próprio BC, que decompõe a inflação anual em inércia, expectativas e outros fatores. Falta dizer que a leitura é aceita como parte da explicação, e não como a causa principal.",
+    "teste_da_troca": [
+     {
+      "frase": "Desde 2023, a lei corrige o salário mínimo todo ano pela inflação dos 12 meses anteriores, mais um ganho ligado ao crescimento do PIB.",
+      "problema": "A frase em si é neutra. Mas a escolha de destacá-la como prova de causa tem lado: a regra de 2023 foi feita pelo governo atual, e com outro governo a leitura poderia pôr o foco em outras regras (como a do teto de gastos, de 2016) ou nos preços administrados. O texto não diz que o salário mínimo também foi corrigido pela inflação passada, com ganho real, em governos anteriores."
+     },
+     {
+      "frase": "o autor sugere, sem medir, a correção de preços pela inflação passada como uma das causas.",
+      "problema": "É uma sugestão de um autor, num texto de 2012, e já é bem honesta sobre o limite. Mas ela pesa como apoio a uma leitura sobre inflação atual: o estudo trata do juro, não da inflação acima da meta, e é de 2012, antes da meta e dos preços administrados mudarem. Cabe avisar que o estudo é antigo."
+     },
+     {
+      "frase": "a inflação de um ano empurra a do ano seguinte.",
+      "problema": "É afirmação causal em tom firme, sem número. 'Empurra' tem tom de alarme e dá a entender um efeito mecânico e grande, sem dizer o tamanho. Com um governo do outro lado, a mesma frase poderia ser lida como defesa de juro alto, já que a inércia é argumento clássico para ele."
+     }
+    ]
+   }
+  },
+  {
+   "alvo": "inflacao-acima-da-meta/o_que_vem_depois",
+   "ok": true,
+   "erro": null,
+   "saida": {
+    "objecoes_novas": [],
+    "objecao_atual_e_a_mais_forte": false,
+    "comentario_objecao": "Não abri nenhuma página com WebFetch, então não tenho trecho confirmado e não listo objeção nova. O texto não mostra o ponto mais forte contra ele: a ligação entre expectativa e inflação efetiva depende da credibilidade do Banco Central. A busca devolveu estudos brasileiros em que a curva de Phillips híbrida, com expectativas, só é significativa no regime de alta credibilidade (dissertação da UFC, nível 4). Outro estudo aponta achatamento da curva de Phillips no Brasil. A frase \"vira inflação de verdade\" é determinista demais. Há também o câmbio, que tem repasse positivo e significativo para a inflação, e a atividade. O Banco Central ainda pode reagir à inflação corrente e ao hiato do produto, e não só à expectativa. \"Tende a subir\" já suaviza a segunda frase.",
+    "rotulo_se_sustenta": false,
+    "comentario_rotulo": "\"Consenso\" é frágil com estas fontes. As duas descrevem só a segunda metade da frase, que é o Banco Central subir juros e a Selic encarecer o crédito. Uma fonte é o próprio site, o que é circular. A primeira metade (expectativa vira inflação por reajuste de preços e salários) não tem fonte nenhuma. A teoria é amplamente aceita, mas o tamanho do efeito é debatido. Sugestão: manter \"consenso\" só para o papel da Selic, ou citar um estudo ou revisão (níveis 1 a 3) sobre expectativas e inflação efetiva, ou rebaixar para \"maioria\".",
+    "teste_da_troca": [
+     {
+      "frase": "a inflação esperada vira inflação de verdade",
+      "problema": "É afirmação causal sem fonte e sem ressalva. Vale para qualquer governo, então não depende de quem está no poder. Mesmo assim soa mais forte do que a evidência, que depende da credibilidade do Banco Central."
+     },
+     {
+      "frase": "o que encarece o cartão, o empréstimo e o financiamento",
+      "problema": "Dá a impressão de que o juro do consumidor sobe automaticamente com a Selic. Isso omite o spread e a inadimplência. O tom é de alarme, e com outro governo no poder a frase provavelmente seria a mesma."
+     },
+     {
+      "frase": "o Banco Central tende a subir a Selic para segurar os preços",
+      "problema": "A expressão \"segurar os preços\" é coloquial e tem tom de defesa da política monetária. Não mostra o custo em atividade e emprego. Uma versão neutra diria \"reduzir a inflação, com custo possível em atividade\"."
+     }
+    ]
+   }
+  }
+ ]
+}

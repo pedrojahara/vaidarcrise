@@ -2685,9 +2685,15 @@
     "titulo": "Ata da 267ª reunião do Copom, 10 e 11/12/2024",
     "url": "https://www.bcb.gov.br/content/copom/atascopom/Copom267-not20241211267.pdf"
    },
-   "trecho": null,
+   "trecho": "A percepção dos agentes econômicos sobre o recente anúncio fiscal afetou, de forma relevante, os preços de ativos e as expectativas dos agentes",
    "trecho_candidato": "A percepção dos agentes econômicos sobre o recente anúncio fiscal afetou, de forma relevante, os preços de ativos e as expectativas dos agentes",
-   "trecho_lingua": "pt-BR"
+   "trecho_lingua": "pt",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-08",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "Não consegui ler o PDF: o WebFetch devolveu só dados binários comprimidos. O trecho veio de duas consultas independentes, uma busca e a página do Metrópoles, que cita a ata (parágrafo 11). Eu não o vi dentro do PDF. A frase da ata continua depois de \"expectativas dos agentes\", com \"especialmente o prêmio de risco, as expectativas de inflação e a taxa de câmbio\". Se o código não achar o trecho no PDF, a causa provável é a extração do texto, como quebras de linha ou hifenização."
+   }
   },
   {
    "id": "a-copom-dez2024-fora",
@@ -2713,9 +2719,15 @@
     "titulo": "Standard&Poor's rebaixa Brasil e país perde grau de investimento",
     "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2015-09/standardpoors-rebaixa-brasil-e-pais-perde-grau-de-investimento"
    },
-   "trecho": null,
+   "trecho": "informou hoje (9) que reduziu a nota de crédito do Brasil de BBB- para BB+, com perspectiva negativa",
    "trecho_candidato": null,
-   "trecho_lingua": "pt-BR"
+   "trecho_lingua": "pt",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-08",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "Nada de essencial. O trecho cobre o rebaixamento no dia 9, e a página, publicada em 09/09/2015, também diz que \"o Brasil perde o grau de investimento\". O título cita a S&P, e o texto descreve grau de investimento como o indicador de países bons pagadores. Esse último ponto vem de resumo da página, não de trecho copiado."
+   }
   },
   {
    "id": "a-repasse-bc",
@@ -2745,9 +2757,15 @@
      "https://econpapers.repec.org/RePEc:ijc:ijcjou:y:2017:q:2:a:4"
     ]
    },
-   "trecho": null,
+   "trecho": "Commodity prices predict exchange rate movements of eleven commodity-exporting countries",
    "trecho_candidato": "commodity prices predict exchange rate movements of eleven commodity-exporting countries",
-   "trecho_lingua": "en"
+   "trecho_lingua": "en",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-08",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "O trecho sustenta a parte central: preços de commodities preveem o câmbio de onze países exportadores. A página também limita o resultado a um painel dentro da amostra, para horizontes de até dois meses. Não confirmei na página que o estudo seja \"do Banco de Compensações Internacionais\". Os autores trabalham no BIS, mas a página pode não dizer isso."
+   }
   },
   {
    "id": "a-site-mercado",
@@ -3127,9 +3145,15 @@
     "titulo": "Lei Complementar nº 179, de 24 de fevereiro de 2021",
     "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp179.htm"
    },
-   "trecho": null,
+   "trecho": "O mandato do Presidente do Banco Central do Brasil terá duração de 4 (quatro) anos, com início no dia 1º de janeiro do terceiro ano de mandato do Presidente da República",
    "trecho_candidato": null,
-   "trecho_lingua": "pt-BR"
+   "trecho_lingua": "pt",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-08",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A lei é de 24/02/2021. Ela fixa mandato de 4 anos para o presidente do BC, começando em 1º de janeiro do 3º ano do mandato presidencial. Para os diretores, a escala de 4 anos está no § 2º. Isso sustenta \"mandatos fixos que não coincidem com o do presidente da República\". O trecho é do presidente do BC. A parte dos diretores é a escala do § 2º, que não cabe num único trecho curto. A página tem erros de codificação de caracteres (como \"º\"), então a busca letra por letra pode falhar nesses pontos. Confira o trecho no texto bruto."
+   }
   },
   {
    "id": "a-lei-salario-minimo",
@@ -3141,9 +3165,15 @@
     "titulo": "Lei nº 14.663, de 28 de agosto de 2023",
     "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm"
    },
-   "trecho": null,
+   "trecho": "a vigorar a partir de 2024, inclusive, a serem aplicadas em 1º de janeiro do respectivo ano, considerado que o valor decorrerá da soma do índice de medida da inflação do ano anterior, para a preservação do poder aquisitivo, com o índice correspondente ao crescimento real do Produto Interno Bruto (PIB) de 2 (dois) anos anteriores, para fins de aumento real",
    "trecho_candidato": null,
-   "trecho_lingua": "pt-BR"
+   "trecho_lingua": "pt",
+   "conferencia": {
+    "status": "sustenta_em_parte",
+    "em": "2026-11-08",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A regra (art. 3º) é inflação (INPC acumulado em 12 meses até novembro) mais o crescimento real do PIB de dois anos antes. Mas ela vale a partir de 2024, não de 2023. A lei é de 2023, e o reajuste de 2023 foi fixado à parte, no art. 1º. Convém trocar \"Desde 2023\" por \"Desde 2024\" ou \"A lei de 2023 fixou que, a partir de 2024\". Convém também dizer \"PIB de dois anos antes\", e não \"crescimento do PIB\" em geral. O §5º ainda prevê só a inflação se o PIB for negativo. O trecho vem da página oficial, que abre com acentos corrompidos (\"�\"). Os acentos foram restaurados na cópia."
+   }
   },
   {
    "id": "a-site-inflacao",
@@ -3547,9 +3577,15 @@
      "https://econpapers.repec.org/RePEc:oup:qjecon:v:132:y:2017:i:4:p:1755-1817."
     ]
    },
-   "trecho": null,
+   "trecho": "An increase in the household debt to GDP ratio in the medium run predicts lower subsequent GDP growth, higher unemployment, and negative growth forecasting errors in a panel of 30 countries from 1960 to 2012.",
    "trecho_candidato": "An increase in the household debt to GDP ratio predicts lower GDP growth and higher unemployment in the medium run for an unbalanced panel of 30 countries from 1960 to 2012.",
-   "trecho_lingua": "en"
+   "trecho_lingua": "en",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-08",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "Nada de essencial. O trecho é da página do NBER (working paper de 2015) e não do artigo publicado no QJE em 2017. O resumo sugerido (\"unbalanced panel\") não bate com a página do NBER. A ferramenta de leitura só devolveu a frase em dois pedaços, que juntei. Se o código não achar o trecho, confira a pontuação entre \"growth,\" e \"higher\". A frase do site diz \"costuma vir antes\", e o estudo diz \"prevê\" (associação preditiva), sem afirmar causa."
+   }
   },
   {
    "id": "a-lei-consignado",
@@ -3561,9 +3597,15 @@
     "titulo": "Lei nº 10.820, de 17 de dezembro de 2003",
     "url": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.820.htm"
    },
-   "trecho": null,
+   "trecho": "Dispõe sobre a autorização para desconto de prestações em folha de pagamento, e dá outras providências.",
    "trecho_candidato": "Dispõe sobre a autorização para desconto de prestações em folha de pagamento",
-   "trecho_lingua": "pt-BR"
+   "trecho_lingua": "pt",
+   "conferencia": {
+    "status": "conferido",
+    "em": "2026-11-08",
+    "como": "trecho achado pelo agente e conferido pelo código na página",
+    "o_que_falta": "A ementa fala em \"prestações\", sem usar a palavra \"empréstimos\" nem \"consignado\". O art. 1º cita empréstimos, financiamentos, cartões de crédito e arrendamento mercantil, com desconto em folha. A data (17/12/2003) está no título da lei."
+   }
   },
   {
    "id": "a-apostas-bc",
@@ -3572,8 +3614,8 @@
    "fonte": {
     "nivel": 3,
     "quem": "Banco Central",
-    "titulo": "Análise técnica sobre o mercado de apostas online no Brasil e o perfil dos apostadores (setembro de 2024)",
-    "url": null
+    "titulo": "Análise técnica sobre o mercado de apostas online no Brasil e o perfil dos apostadores",
+    "url": "https://www.bcb.gov.br/conteudo/relatorioinflacao/EstudosEspeciais/EE119_Analise_tecnica_sobre_o_mercado_de_apostas_online_no_Brasil_e_o_perfil_dos_apostadores.pdf"
    },
    "trecho": null,
    "trecho_candidato": null,
