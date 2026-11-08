@@ -279,7 +279,7 @@
    "primario": 0.4151,
    "parcelas": 0.5041,
    "dolar": 6.3543,
-   "juro_longo": 0.5782,
+   "juro_longo": 0.5486,
    "inflacao": 0.4225,
    "juro": 1.1119,
    "ritmo": 1.1854,
@@ -291,20 +291,20 @@
    "ate": "2026-10",
    "meses": 274,
    "parte_dos_meses": {
-    "subindo": 0.179,
-    "igual": 0.62,
+    "subindo": 0.172,
+    "igual": 0.628,
     "caindo": 0.128,
     "encolhendo": 0.073
    },
-   "trocas_por_ano": 1.88,
+   "trocas_por_ano": 1.93,
    "pib_12m_depois": {
-    "subindo": 0.402,
-    "igual": 2.15,
+    "subindo": 0.398,
+    "igual": 2.13,
     "caindo": 4.291
    },
    "recessao_a_frente": {
-    "subindo": 0.194,
-    "igual": 0.161,
+    "subindo": 0.207,
+    "igual": 0.159,
     "caindo": 0.031
    },
    "subindo_antes_das_recessoes": {
@@ -460,13 +460,18 @@
     },
     {
      "inicio": "2020-11",
-     "fim": "2021-05",
+     "fim": "2020-12",
      "estado": "S"
     },
     {
-     "inicio": "2021-06",
-     "fim": "2021-06",
+     "inicio": "2021-01",
+     "fim": "2021-03",
      "estado": "I"
+    },
+    {
+     "inicio": "2021-04",
+     "fim": "2021-06",
+     "estado": "S"
     },
     {
      "inicio": "2021-07",

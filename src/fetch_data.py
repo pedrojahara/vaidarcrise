@@ -140,8 +140,8 @@ def desocupacao_ibge(inicio: dt.date) -> list[dict]:
             if val not in ("...", "-", "", None, "X")]
 
 
-def juro_real_longo(inicio: dt.date) -> list[dict]:
-    """Taxa de venda (manhã) do Tesouro IPCA+ com vencimento mais perto de 10 anos, dia a dia.
+def _tesouro_ipca(inicio: dt.date) -> dict[dt.date, list[tuple[dt.date, float]]]:
+    """A taxa de venda (manhã) de cada Tesouro IPCA+ em cada dia desde `inicio`: {dia: [(vencimento, taxa)]}.
 
     O arquivo tem uns 15 MB e fica numa cópia local fora do git: se o download falhar, a
     cópia de até 5 dias vale; mais velha que isso, o indicador sai da conta naquele dia.
@@ -167,12 +167,40 @@ def juro_real_longo(inicio: dt.date) -> list[dict]:
             continue
         if base >= inicio and taxa > 0:
             por_dia.setdefault(base, []).append((venc, taxa))
+    return por_dia
+
+
+def _mais_perto_de_10_anos(por_dia: dict[dt.date, list[tuple[dt.date, float]]]) -> list[dict]:
     out = []
     for base in sorted(por_dia):
         alvo = base + dt.timedelta(days=3652)
         venc, taxa = min(por_dia[base], key=lambda t: abs((t[0] - alvo).days))
         out.append({"data": base.isoformat(), "valor": taxa, "vencimento": venc.isoformat()})
     return out
+
+
+def _fim_de_mes(por_dia: dict[dt.date, list[tuple[dt.date, float]]]) -> dict[str, dict]:
+    """A taxa de cada título no último dia do mês com dado: {AAAA-MM: {"dia": ..., "taxas": {vencimento: taxa}}}.
+    A direção do risco compara o juro de 10 anos sempre no mesmo título (src/direcao.py): quando o título mais
+    perto de 10 anos muda, a taxa do título novo no fim do mês de 3 meses antes sai daqui."""
+    ultimo: dict[str, dt.date] = {}
+    for base in por_dia:
+        m = base.isoformat()[:7]
+        if m not in ultimo or base > ultimo[m]:
+            ultimo[m] = base
+    return {m: {"dia": d.isoformat(), "taxas": {v.isoformat(): t for v, t in sorted(por_dia[d])}}
+            for m, d in sorted(ultimo.items())}
+
+
+def juro_real_longo(inicio: dt.date) -> list[dict]:
+    """Taxa de venda (manhã) do Tesouro IPCA+ com vencimento mais perto de 10 anos, dia a dia."""
+    return _mais_perto_de_10_anos(_tesouro_ipca(inicio))
+
+
+def tesouro_ipca(inicio: dt.date) -> tuple[list[dict], dict[str, dict]]:
+    """O juro de 10 anos dia a dia (juro_real_longo) e a taxa de cada título no fim de cada mês (_fim_de_mes)."""
+    por_dia = _tesouro_ipca(inicio)
+    return _mais_perto_de_10_anos(por_dia), _fim_de_mes(por_dia)
 
 
 def commodities(inicio: dt.date) -> list[dict]:
@@ -207,9 +235,10 @@ def coletar() -> dict:
         time.sleep(0.5)
     # Três anos de mediana para hoje e para a rodada de 30 dias atrás, com folga.
     try:
+        dados, fim_de_mes = tesouro_ipca(hoje - dt.timedelta(days=3 * 365 + 90))
         snap["series"]["juro_real_longo"] = {
             "nome": "Tesouro IPCA+ de cerca de 10 anos, taxa de venda pela manhã (% a.a.)",
-            "dados": juro_real_longo(hoje - dt.timedelta(days=3 * 365 + 90)),
+            "dados": dados, "fim_de_mes": fim_de_mes,
             "fonte": "https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto"}
     except Exception as e:  # noqa: BLE001
         snap["erros"].append(f"Tesouro Direto: {e}")
