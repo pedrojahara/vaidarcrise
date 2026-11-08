@@ -28,7 +28,6 @@ import base_site  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 SITE = "https://vaidarcrise.com.br"
-REPO = "https://github.com/pedrojahara/vaidarcrise"
 MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro",
          "outubro", "novembro", "dezembro"]
 DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
@@ -546,10 +545,9 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
         autoria = "O texto do dia não saiu. Ficam a direção do risco e as notícias, organizadas pelo programa."
     link = f"/{dia}/"
     fundo, ponte = None, None
-    registro = f"{REPO}/blob/main/runs/{rodada['id']}.json"
     if p.get("ok") and tipo == "dia":
         try:  # a leitura a fundo (src/fundo.py) não pode derrubar o post
-            fundo = base_site.fundo_ctx(p, cfg, com_links, registro)
+            fundo = base_site.fundo_ctx(p, cfg, com_links)
         except (KeyError, OSError, ValueError, TypeError, StopIteration) as e:
             print(f"aviso: a leitura a fundo do post de {dia} não foi montada ({e!r})")
         try:  # a linha que leva ao básico do assunto, logo abaixo do texto
@@ -563,7 +561,7 @@ def post_de(rodada: dict, eventos: dict, cfg: dict) -> dict:
             "tipo": tipo, "tipo_nome": TIPOS_POST[tipo], "zap": zap,
             "autoria": autoria, "direcao": d["estado"], "llm": bool(p.get("ok")),
             "pressao": pressao_ctx(rodada, eventos, cfg), "link": link, "fundo": fundo, "ponte": ponte,
-            "registro": registro, "llm_ok": rodada["llm"]["ok"]}
+            "llm_ok": rodada["llm"]["ok"]}
 
 
 def textos_do_editor() -> list[dict]:
@@ -599,7 +597,6 @@ def dados_publicos(rodada: dict, ctx: dict) -> dict:
                                       "o_que_e": "Crescimento do PIB nos 4 trimestres seguintes ao último divulgado que tem 1 chance em 10 de ser pior (conta dos 44 países)."} if g else None,
         "pressao_noticias": {"sentido": rodada["pressao"]["sentido"],
                              "fatores": {k: v["sentido"] for k, v in rodada["pressao"]["fatores"].items()}},
-        "registro_completo": f"{REPO}/blob/main/runs/{rodada['id']}.json",
     }
 
 
@@ -657,7 +654,7 @@ def main() -> None:
         return {"depois": depois, "link": fila[i]["link"]} if i < len(fila) else None
     def contexto(dia: str, r: dict, permalink: bool) -> dict:
         base = f"/{dia}/" if permalink else "/"
-        return {"cfg": cfg, "cal": cal, "repo": REPO, "site": SITE, "dia": dia, "permalink": permalink,
+        return {"cfg": cfg, "cal": cal, "site": SITE, "dia": dia, "permalink": permalink,
                 "dir": direcao_ctx(r, cfg, cal), "gar": gar_ctx(r), "post": posts[dia],
                 "teste": (cal.get("direcao") or {}).get("teste") or {},
                 "linha_svg": svg_direcao(r["resultado"]["direcao"].get("linha", []), cal.get("recessoes", [])),
@@ -737,9 +734,12 @@ def main() -> None:
         perguntas = []
         print(f"aviso: as páginas de /perguntas/ não foram refeitas ({e!r})")
 
+    # O site não liga para o código (decisão do Pedro em 8/11/2026): os links da METODOLOGIA.md para arquivos do
+    # repositório viram só o nome do arquivo.
+    met_md = re.sub(r"\[([^\]]+)\]\(https?://github\.com/[^)]*\)", r"\1", (ROOT / "METODOLOGIA.md").read_text())
     met = ('<p class="intro-met">Esta página é para quem quer conferir ou refazer a conta, com as fórmulas e os testes. '
            'A versão curta está em <a href="/nota/">Como funciona</a>.</p>\n'
-           + markdown.markdown((ROOT / "METODOLOGIA.md").read_text(), extensions=["tables", "toc"]))
+           + markdown.markdown(met_md, extensions=["tables", "toc"]))
     gravar(DOCS / "metodologia", "pagina.html", {**ctx, "titulo": "Metodologia", "corpo": met, "og_url": f"{SITE}/og.png"},
            f"{SITE}/metodologia/")
 

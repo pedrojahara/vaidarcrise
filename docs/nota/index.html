@@ -130,7 +130,8 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe p{margin:0 0 8px;max-width:640px}
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
-/* Menu Grandes perguntas: uma página por pressão do topo (base/perguntas), aberto por toque, sem JavaScript. A lista
+/* Menu Grandes perguntas: a aba O que causa recessão e uma página por pressão do topo (base/perguntas), aberto por
+   toque, sem JavaScript. A lista
    abre embaixo do menu inteiro, alinhada à esquerda, para caber no celular em qualquer linha em que o item caia. */
 .cab nav{position:relative}
 .menu-p{position:static}
@@ -185,7 +186,7 @@ svg text{font-family:var(--sistema)}
 <header class="cab"><div class="in"><div class="faixa">
   <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
   <p class="linha-fina">Para onde vai o risco de recessão no Brasil, com dados todo dia.</p>
-  <nav aria-label="Seções"><a href="/">Hoje</a><a href="/causas/">O que causa recessão</a><details class="menu-p"><summary><span>Grandes perguntas</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul><li><a href="/perguntas/juro-alto/"><span class="pn">Juro</span>Por que o juro do Brasil é tão alto?</a></li></ul></details><a href="/nota/" aria-current="page">Como funciona</a><a href="https://github.com/pedrojahara/vaidarcrise">Código</a></nav>
+  <nav aria-label="Seções"><a href="/">Hoje</a><details class="menu-p"><summary><span>Grandes perguntas</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul><li><a href="/causas/"><span class="pn">Para começar</span>O que causa recessão?</a></li><li><a href="/perguntas/juro-alto/"><span class="pn">Juro</span>Por que o juro do Brasil é tão alto?</a></li></ul></details></nav>
 </div></div></header>
 
 <main class="in detalhe">
@@ -281,17 +282,13 @@ svg text{font-family:var(--sistema)}
 
   <section aria-labelledby="t-mais">
     <h2 id="t-mais">Para conferir</h2>
-    <ul class="topicos">
-      <li><a href="/metodologia/">Metodologia completa</a>, com a regra inteira, as séries, os cortes, as variações testadas e os números por governo.</li>
-      <li><a href="https://github.com/pedrojahara/vaidarcrise/blob/main/src/direcao.py">O código da regra</a>, <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/modelo.json">as regras fixas</a> e <a href="https://github.com/pedrojahara/vaidarcrise/blob/main/config/calibracao.json">os cortes e o teste desde 2004</a>, para refazer a conta.</li>
-      <li><a href="https://github.com/pedrojahara/vaidarcrise/blob/main/runs/2026-11-08T0630.json">Registro desta atualização</a>, com todos os números e notícias usados.</li>
-    </ul>
+    <p>A <a href="/metodologia/">metodologia completa</a> traz a regra inteira, as séries, os cortes, as variações testadas e os números por governo.</p>
   </section>
 </main>
 
 <footer class="pe"><div class="in">
   <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando. Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias mostram para onde cada parte da economia é empurrada, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
-  <p><a href="https://github.com/pedrojahara/vaidarcrise">Código e histórico no GitHub</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
+  <p><a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
 <script>
 // O menu Grandes perguntas fecha com um toque fora dele ou com Esc.
