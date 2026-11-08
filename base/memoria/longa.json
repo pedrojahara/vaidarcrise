@@ -1,0 +1,1166 @@
+{
+ "_sobre": "Memória longa da leitura a fundo (src/memoria.py). Os 8 primeiros episódios ficam em base/episodios.json, com as afirmações da base.",
+ "episodios": [
+  {
+   "id": "ep-1994-mexico",
+   "periodo": {
+    "de": "1994-12",
+    "ate": "1995-12"
+   },
+   "onde": "México",
+   "titulo": "O peso mexicano e a dívida curta em dólar",
+   "o_que_aconteceu": "Em 20 de dezembro de 1994 o banco central mexicano desvalorizou o peso em cerca de 13–15%. Dois dias depois, sem reservas para sustentar a banda, o governo deixou o câmbio flutuar e a moeda caiu mais. A fuga de capital atingiu também outros emergentes.",
+   "por_que": "Decisão do governo e do banco central de México: manter um câmbio quase fixo enquanto as reservas caíam e a dívida de curto prazo atrelada ao dólar (tesobonos) crescia. Com isso, o risco do câmbio ficou com o Estado, e qualquer dúvida do investidor virava corrida para sair. Fatores de fora (juro americano) e de dentro (incerteza política em 1994) contribuíram.",
+   "como_terminou": "O peso perdeu cerca de metade do valor em poucos meses e a economia mexicana entrou em recessão forte em 1995. O país recebeu um pacote de apoio internacional liderado pelos EUA e o FMI. Detalhes do pacote e da recuperação não foram conferidos nesta pesquisa.",
+   "o_que_ensina": "Câmbio administrado com reservas em queda e dívida de curto prazo em dólar é vulnerável: a desvalorização, quando vem, vem de uma vez e pode contagiar outros emergentes.",
+   "pressoes": [
+    "Reservas internacionais em queda ao longo de 1994",
+    "Dívida pública de curto prazo indexada ao dólar",
+    "Contágio sobre outros emergentes"
+   ],
+   "numeros": [
+    {
+     "texto": "Tesobonos foram de cerca de US$ 3 bilhões (jan/1994) para cerca de US$ 29 bilhões (dez/1994).",
+     "de_onde": "https://en.wikipedia.org/wiki/Mexican_peso_crisis (cita Lustig 1998); conferir na fonte primária"
+    },
+    {
+     "texto": "Reservas caíram de US$ 27 bilhões (fev/1994) para US$ 11 bilhões (meados de dez/1994).",
+     "de_onde": "https://en.wikipedia.org/wiki/Mexican_peso_crisis, via resultado de busca; números variam entre fontes"
+    },
+    {
+     "texto": "Peso foi de cerca de 3,4 para 7,2 por dólar (queda de cerca de 50%).",
+     "de_onde": "https://en.wikipedia.org/wiki/Mexican_peso_crisis; estimativas variam"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Wikipedia, Mexican peso crisis",
+     "url": "https://en.wikipedia.org/wiki/Mexican_peso_crisis",
+     "trecho": "a currency crisis sparked by the Mexican government's sudden devaluation of the peso against the U.S. dollar in December 1994 (resumo da busca, não literal da página)"
+    },
+    {
+     "quem": "Brookings Papers (bdp114)",
+     "url": "https://www.brookings.edu/wp-content/uploads/2016/06/bdp114.pdf",
+     "trecho": "Fonte acadêmica apontada pela busca; trecho literal não extraído."
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-1997-asia",
+   "periodo": {
+    "de": "1997-07",
+    "ate": "1998-12"
+   },
+   "onde": "Tailândia e Ásia",
+   "titulo": "A crise asiática: o baht e o contágio",
+   "o_que_aconteceu": "Em 2 de julho de 1997 o banco central da Tailândia deixou o baht flutuar, encerrando o câmbio atrelado ao dólar, e pediu ajuda ao FMI. A desvalorização se espalhou por vários países da região.",
+   "por_que": "Decisão do banco central tailandês, sob ataque especulativo. O baht era visto como valorizado, o déficit externo era grande e os bancos tinham se endividado em moeda estrangeira. Quando o câmbio cedeu, as dívidas em dólar pesaram mais e a desconfiança passou de país a país.",
+   "como_terminou": "O baht chegou a cerca de 56 por dólar no pior momento e se estabilizou perto de 40. Os países afetados recorreram a programas do FMI. Duração e custo em PIB de cada país não foram conferidos aqui.",
+   "o_que_ensina": "Déficit externo financiado por dívida de fora, câmbio fixo e bancos endividados em dólar formam uma combinação frágil, e crise de um emergente pode contagiar outros.",
+   "pressoes": [
+    "Déficit em conta corrente elevado",
+    "Dívida privada em moeda estrangeira",
+    "Ataque especulativo e contágio regional"
+   ],
+   "numeros": [
+    {
+     "texto": "Baht passou de cerca de 25 para até 56 por dólar, depois cerca de 40.",
+     "de_onde": "https://bangkokpost.com/business/general/2740424/the-lowdown-on-the-1997-financial-crisis (via resumo de busca)"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Bangkok Post, The lowdown on the 1997 financial crisis",
+     "url": "https://bangkokpost.com/business/general/2740424/the-lowdown-on-the-1997-financial-crisis",
+     "trecho": "Float em 2 de julho de 1997 e pedido de ajuda ao FMI (resumo da busca, não literal da página)"
+    },
+    {
+     "quem": "ADST, Thai-tanic: responding to the Asian financial crisis 1997",
+     "url": "https://adst.org/2016/12/thai-tanic-responding-asian-financial-crisis-1997/",
+     "trecho": "Relato diplomático apontado pela busca; trecho literal não extraído."
+    }
+   ],
+   "fontes_conhecidas": false
+  },
+  {
+   "id": "ep-2001-argentina",
+   "periodo": {
+    "de": "1998-01",
+    "ate": "2002-12"
+   },
+   "onde": "Argentina",
+   "titulo": "Argentina: o câmbio fixo, a dívida e o calote",
+   "o_que_aconteceu": "Depois de três anos de recessão, a Argentina entrou em calote parcial e congelou parcialmente os depósitos no fim de 2001, e abandonou a paridade de um peso por dólar no início de 2002. A produção desabou.",
+   "por_que": "Decisão do governo argentino, com apoio do FMI, de manter o câmbio fixo enquanto as contas públicas eram incompatíveis com ele. Sem poder desvalorizar nem imprimir moeda, o ajuste recaiu sobre gastos e atividade, e a desconfiança levou à fuga de depósitos. O FMI manteve empréstimos até 2001, e sua própria avaliação criticou isso.",
+   "como_terminou": "O fim da paridade e o calote vieram com forte queda do PIB. O prazo e a intensidade da recuperação não foram conferidos aqui.",
+   "o_que_ensina": "Atrelar a moeda sem disciplina fiscal compatível tira a válvula do câmbio e transforma dúvida sobre a dívida em crise bancária e de produção; apoio externo prolongado não substitui o ajuste.",
+   "pressoes": [
+    "Dívida pública em moeda estrangeira",
+    "Câmbio fixo sem válvula de escape",
+    "Recessão de três anos"
+   ],
+   "numeros": [
+    {
+     "texto": "Compromissos do FMI com a Argentina chegaram a US$ 22 bilhões em 2001.",
+     "de_onde": "https://www.imf.org/en/Publications/Independent-Evaluation-Office-Reports/Issues/2016/12/31/The-IMF-and-Argentina-1991-2001-17590 (via resumo de busca)"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "FMI, Escritório de Avaliação Independente (2004)",
+     "url": "https://www.imf.org/external/np/ieo/2004/arg/eng/index.htm",
+     "trecho": "Fim da paridade e calote descritos como o fim de uma recessão de três anos (resumo da busca, não literal)"
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-1999-cambio",
+   "periodo": {
+    "de": "1999-01",
+    "ate": "1999-12"
+   },
+   "onde": "Brasil",
+   "titulo": "O fim do câmbio quase fixo e a criação das metas de inflação",
+   "o_que_aconteceu": "Em janeiro de 1999, depois de meses de fuga de dólares puxada pelas crises da Ásia e da Rússia, o real deixou de ser mantido dentro de uma banda e passou a flutuar. O dólar saltou: Armínio Fraga, então presidente do Banco Central, escreveu que o real foi a 2,15 por dólar em fevereiro, contra 1,20 no começo do ano. O Banco Central avisou que levaria a inflação a um dígito até o fim do ano e, em 21 de junho de 1999, o decreto 3.088 criou o regime de metas de inflação. A inflação de 1999 ficou perto de 9%, bem abaixo do que se temia.",
+   "por_que": "O câmbio era mantido com reservas e juro alto. Quando o mercado deixou de acreditar que isso se sustentaria, as reservas caíam e o Banco Central, com apoio do FMI, escolheu soltar o dólar em vez de gastar o que restava. A decisão foi do governo e do Banco Central, sob pressão de fora. O dólar mais caro encarece produtos importados e ameaça a inflação, por isso foi preciso uma nova âncora: a meta de inflação, que deu ao Banco Central um objetivo público para o juro.",
+   "como_terminou": "O excesso inicial do dólar foi corrigido em poucos meses. A inflação de 1999 ficou perto de 9% (tabela do CRS), e o regime de metas, formalizado em junho, virou a base da política monetária nas décadas seguintes. O dólar não voltou ao patamar de antes da mudança.",
+   "o_que_ensina": "Quando um câmbio administrado quebra, o dólar sobe de uma vez e o risco passa a ser a inflação, não a falta de dólar. O que segura isso é uma regra clara de metas para o juro. Vale com qualquer governo.",
+   "pressoes": [
+    "Dólar disparou depois de meses de fuga de capitais (decisão do governo e do Banco Central, sob pressão externa)",
+    "Repasse do dólar para os preços e risco de inflação alta",
+    "Necessidade de uma nova âncora de política monetária, que veio com a meta de inflação"
+   ],
+   "numeros": [
+    {
+     "texto": "O real foi de 1,20 para 2,15 por dólar entre o começo de 1999 e fevereiro.",
+     "de_onde": "Armínio Fraga, Finanças & Desenvolvimento do FMI, mar/2000: https://www.imf.org/external/pubs/ft/fandd/2000/03/fraga.htm"
+    },
+    {
+     "texto": "Inflação de 1999 de cerca de 8,9%.",
+     "de_onde": "Tabela do CRS, Brasil e a crise financeira global: https://www.everycrsreport.com/reports/98-987.html"
+    },
+    {
+     "texto": "Decreto 3.088, de 21 de junho de 1999, instituiu as metas de inflação.",
+     "de_onde": "Planalto: https://planalto.gov.br/ccivil_03/decreto/D3088.htm"
+    },
+    {
+     "texto": "O índice de commodities do Banco Central subiu de 43,9 (jan/1999) para 54,1 (dez/1999), o que ajudou a balança.",
+     "de_onde": ".venv/bin/python src/conta.py valores commodities --de 1998-12 --ate 1999-12"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Armínio Fraga, FMI (Finanças & Desenvolvimento)",
+     "url": "https://www.imf.org/external/pubs/ft/fandd/2000/03/fraga.htm",
+     "trecho": "In February, the real plummeted to 2.15 to the dollar, from 1.20 at the beginning of the year."
+    },
+    {
+     "quem": "Planalto, Decreto 3.088/1999",
+     "url": "https://planalto.gov.br/ccivil_03/decreto/D3088.htm",
+     "trecho": "As metas são representadas por variações anuais de índice de preços de ampla divulgação. Ao Banco Central do Brasil compete executar as políticas necessárias para cumprimento das metas fixadas."
+    },
+    {
+     "quem": "CRS (Congresso dos EUA)",
+     "url": "https://www.everycrsreport.com/reports/98-987.html",
+     "trecho": "CPI inflation of 8.9% for 1999 (tabela do relatório)"
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2001-energia",
+   "periodo": {
+    "de": "2001-01",
+    "ate": "2002-02"
+   },
+   "onde": "Brasil",
+   "titulo": "Apagão, crise argentina e meta de inflação estourada",
+   "o_que_aconteceu": "Em 2001 o país levou três choques de uma vez: falta de energia, que levou ao racionamento de 1º de julho de 2001 a 19 de fevereiro de 2002; a crise da Argentina, que declarou calote em dezembro de 2001; e a desconfiança de fora com os emergentes. O dólar subiu e o Banco Central elevou o juro. O PIB desacelerou de 4,4% em 2000 para 1,3% em 2001, e o IBGE conta queda do PIB em três trimestres seguidos de 2001. A inflação ficou em 7,67%, acima do teto da meta de 6%.",
+   "por_que": "A energia vinha em boa parte de hidrelétricas e choveu pouco, com pouca capacidade de reserva; o governo impôs cortes de consumo com multa para quem passasse da cota. A Argentina, vizinha e parceira comercial, quebrou, e o investidor passou a vender ativos do país mais parecido com ela entre os emergentes. O dólar mais caro e a energia mais cara pressionaram os preços, e o Banco Central subiu o juro para segurar o real e a inflação. As causas vieram de dentro (energia, decisão do governo) e de fora (Argentina).",
+   "como_terminou": "O racionamento acabou em fevereiro de 2002 e o consumo de energia caiu mais de 20%. O PIB de 2001 ficou em 1,3%. O Banco Central descumpriu a meta de 2001 e explicou em carta aberta ao Ministro da Fazenda, como o decreto exige. O mercado seguiu nervoso e o ano de 2002 começou com dólar e expectativas pressionados.",
+   "o_que_ensina": "Um choque de oferta (energia) somado a uma crise de um vizinho e a um dólar mais caro faz a economia crescer menos e a inflação subir ao mesmo tempo. O Banco Central fica sem saída fácil e a meta pode ser estourada. Vale com qualquer governo.",
+   "pressoes": [
+    "Falta de energia e racionamento de consumo (decisão do governo)",
+    "Calote e crise da Argentina (de fora)",
+    "Dólar mais caro e juro mais alto",
+    "Inflação acima da meta, com carta aberta do Banco Central"
+   ],
+   "numeros": [
+    {
+     "texto": "Racionamento de 1º de julho de 2001 a 19 de fevereiro de 2002; a queda do consumo superou 20%.",
+     "de_onde": "Tribuna de Minas (coluna Conjuntura e Mercado, 22/06/2021): https://tribunademinas.com.br/colunas/conjuntura-mercado/22-06-2021/economia-no-escuro.html?amp=1"
+    },
+    {
+     "texto": "Segundo o TCU, o apagão causou perdas de R$ 45,2 bilhões, pagas em sua maioria pelo consumidor.",
+     "de_onde": "Resumo de busca com base em notícias sobre a auditoria do TCU; conferir no site do TCU. Link da busca: https://tribunademinas.com.br/colunas/conjuntura-mercado/22-06-2021/economia-no-escuro.html?amp=1"
+    },
+    {
+     "texto": "Inflação de 2001 em 7,67%, para uma meta de 4% com intervalo de 2% a 6%.",
+     "de_onde": "Histórico das metas de inflação (Banco Central, via Poder360): https://static.poder360.com.br/2022/01/historico-metas-inflacao-10jan2022.pdf"
+    },
+    {
+     "texto": "O PIB cresceu 4,4% em 2000 e 1,3% em 2001; o IBGE conta recessão de 2T2001 a 4T2001, com quedas de 0,5%, 0,5% e 0,3%.",
+     "de_onde": ".venv/bin/python src/conta.py recessoes"
+    },
+    {
+     "texto": "Em abril de 2001 o real já tinha caído cerca de 13% frente ao dólar no ano.",
+     "de_onde": "Ámbito, 23/04/2001: https://www.ambito.com/economia/se-acabo-la-calma-economica-cardoso-n3116812"
+    },
+    {
+     "texto": "O índice de commodities do Banco Central caiu de 64,0 (jan/2001) para 48,0 (dez/2001).",
+     "de_onde": ".venv/bin/python src/conta.py valores commodities --de 2001-01 --ate 2001-12"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Banco Central, histórico de metas (via Poder360)",
+     "url": "https://static.poder360.com.br/2022/01/historico-metas-inflacao-10jan2022.pdf",
+     "trecho": "Meta de 4%, intervalo de 2 a 6%, IPCA de 2001 em 7,67% (conteúdo resumido da tabela; conferir o PDF)"
+    },
+    {
+     "quem": "Tribuna de Minas",
+     "url": "https://tribunademinas.com.br/colunas/conjuntura-mercado/22-06-2021/economia-no-escuro.html?amp=1",
+     "trecho": "O racionamento vigorou entre 1.º de julho de 2001 e 19 de fevereiro de 2002."
+    },
+    {
+     "quem": "Ámbito",
+     "url": "https://www.ambito.com/economia/se-acabo-la-calma-economica-cardoso-n3116812",
+     "trecho": "O real caiu cerca de 13% no ano e o Banco Central subiu o juro duas vezes em quatro semanas (resumo da busca)."
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2003-saida",
+   "periodo": {
+    "de": "2003-07",
+    "ate": "2004-12"
+   },
+   "onde": "Brasil",
+   "titulo": "A volta da calma: juro cai de 26,5% para 16% e depois volta a subir",
+   "o_que_aconteceu": "Depois da alta de juro de 2002 e do começo de 2003 (Selic em 26,5% de fevereiro a maio de 2003), o Banco Central começou a cortar em junho de 2003 e chegou a 16% em maio de 2004. A inflação em 12 meses caiu de 17,24% (maio de 2003) para 5,15% (maio de 2004). O dólar recuou de R$ 3,53 (janeiro de 2003) para menos de R$ 3,00. O PIB, que teve dois trimestres de queda no começo de 2003, cresceu 5,7% em 2004. Em setembro de 2004 o Banco Central voltou a subir o juro, até 17,75% em dezembro.",
+   "por_que": "O Banco Central manteve o juro alto até as expectativas de inflação cederem, e só então cortou. A calma do dólar e a inflação em queda abriram espaço para cortes (decisão do Banco Central). Ao mesmo tempo, o mundo ajudou: o índice de commodities em dólar subiu de 61,9 (abril de 2003) para 82,6 (dezembro de 2004), o que impulsionou exportações e crescimento (de fora). Com a economia aquecida e a inflação voltando a subir no segundo semestre de 2004, o juro voltou a subir.",
+   "como_terminou": "O ciclo de queda foi interrompido em setembro de 2004. A inflação em 12 meses fechou 2004 em 7,60%, de novo acima do piso de maio. A Selic fechou o ano em 17,75%. A recessão curta de 2003 (1T e 2T) foi seguida por crescimento forte em 2004.",
+   "o_que_ensina": "Depois de uma desconfiança, o juro alto só pode cair quando as expectativas de inflação e o dólar se acalmam. Um vento a favor de fora (commodities caras) ajuda a saída, mas, se a demanda esquenta e a inflação volta, o juro volta a subir. Vale com qualquer governo.",
+   "pressoes": [
+    "Expectativas de inflação ainda altas no começo de 2003 (Banco Central manteve o juro em 26,5% até junho)",
+    "Commodities em alta puxando exportações (de fora)",
+    "Inflação voltando a subir no segundo semestre de 2004, o que levou a nova alta do juro"
+   ],
+   "numeros": [
+    {
+     "texto": "Selic de 26,5% em fev/2003, caindo para 26,0% em jun/2003, 16,5% em dez/2003, 16,0% em mai/2004 e 17,75% em dez/2004.",
+     "de_onde": ".venv/bin/python src/conta.py valores selic_meta --de 2002-12 --ate 2004-12"
+    },
+    {
+     "texto": "IPCA em 12 meses: 17,24% (mai/2003), 9,30% (dez/2003), 5,15% (mai/2004), 7,60% (dez/2004).",
+     "de_onde": ".venv/bin/python src/conta.py valores ipca_12m --de 2002-12 --ate 2004-12"
+    },
+    {
+     "texto": "Dólar: R$ 3,53 (jan/2003), R$ 2,89 (dez/2003), R$ 2,65 (dez/2004).",
+     "de_onde": ".venv/bin/python src/conta.py valores dolar_ptax --de 2001-12 --ate 2004-12"
+    },
+    {
+     "texto": "Dois trimestres seguidos de queda do PIB no começo de 2003: -0,4% (1T) e -0,8% (2T).",
+     "de_onde": ".venv/bin/python src/conta.py recessoes"
+    },
+    {
+     "texto": "Índice de commodities de 61,9 (abr/2003) para 82,6 (dez/2004).",
+     "de_onde": ".venv/bin/python src/conta.py valores commodities --de 1998-12 --ate 2004-12"
+    },
+    {
+     "texto": "O PIB cresceu 5,7% em 2004 (valor revisado do IBGE).",
+     "de_onde": "JB, sobre a revisão do IBGE em 2007: https://www.jb.com.br/economia/noticias/2007/03/21/amp/novo-calculo-eleva-taxa-de-23-para-29-em-2005.html"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "MercoPress",
+     "url": "https://en.mercopress.com/2003/06/19/brazil-reduces-basic-interest-rate",
+     "trecho": "The Selic was reduced half a point to 26% after two days of deliberations (resumo da busca)."
+    },
+    {
+     "quem": "Agência Brasil",
+     "url": "https://memoria.ebc.com.br/agenciabrasil//noticia/2003-11-19/brazilian-key-interest-rate-drops-19-175",
+     "trecho": "Brazilian key interest rate drops from 19% to 17.5%"
+    },
+    {
+     "quem": "JB (revisão do IBGE)",
+     "url": "https://www.jb.com.br/economia/noticias/2007/03/21/amp/novo-calculo-eleva-taxa-de-23-para-29-em-2005.html",
+     "trecho": "O crescimento do PIB em 2004 passou de 4,9% para 5,7%."
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2005-juroalto",
+   "periodo": {
+    "de": "2004-09",
+    "ate": "2007-09"
+   },
+   "onde": "Brasil",
+   "titulo": "Selic a 19,75%, inflação caindo e dólar barato",
+   "o_que_aconteceu": "De setembro de 2004 a maio de 2005 o Banco Central subiu a Selic de 16,00% para 19,75% ao ano, porque a inflação passava de 7%. Segurou a taxa até agosto de 2005 e começou a cortar em setembro. A inflação em 12 meses foi de 8,07% (abril de 2005) para 2,96% (março de 2007), e a Selic chegou a 11,25% em setembro de 2007. Nesse período o dólar caiu de R$ 2,86 para R$ 1,84 e as reservas passaram de US$ 49 bilhões para US$ 163 bilhões.",
+   "por_que": "A decisão foi do Banco Central, dentro do regime de metas de inflação: juro alto para trazer a inflação de volta à meta. De fora veio um empurrão favorável: muito dinheiro no mundo e commodities em alta traziam dólares para o país. Com o juro alto, o dólar barateou e isso ajudou a segurar os preços de importados, o que deixou o BC cortar a Selic aos poucos.",
+   "como_terminou": "A Selic caiu por 25 meses seguidos de cortes e chegou a 11,25% em setembro de 2007, o menor valor até então na série. A inflação ficou abaixo de 4% de meados de 2006 até meados de 2007. A economia seguiu crescendo, com o BC comprando dólares para formar reservas.",
+   "o_que_ensina": "Um aperto de juro feito cedo e mantido por tempo suficiente pode derrubar a inflação, e o corte vem depois. A queda do dólar ajuda, mas depende de dinheiro de fora que pode mudar de direção.",
+   "pressoes": [
+    "Inflação acima da meta, perto de 8% em 12 meses",
+    "Juro real muito alto, que encarecia o crédito",
+    "Dólar caindo, o que pressionava os exportadores",
+    "Entrada forte de dólares por causa do preço das commodities e da liquidez mundial"
+   ],
+   "numeros": [
+    {
+     "texto": "Selic foi de 16,00% (ago/2004) para 19,75% (mai/2005) e para 11,25% (set/2007)",
+     "de_onde": ".venv/bin/python src/conta.py valores selic_meta --de 2004-08 --ate 2007-09"
+    },
+    {
+     "texto": "IPCA em 12 meses: 8,07% em abril de 2005 e 2,96% em março de 2007",
+     "de_onde": ".venv/bin/python src/conta.py valores ipca_12m --de 2004-08 --ate 2008-12"
+    },
+    {
+     "texto": "Dólar Ptax: R$ 2,86 (set/2004) e R$ 1,84 (set/2007)",
+     "de_onde": ".venv/bin/python src/conta.py valores dolar_ptax --de 2004-08 --ate 2008-08"
+    },
+    {
+     "texto": "Reservas internacionais: US$ 49,5 bilhões (set/2004) e US$ 163 bilhões (set/2007)",
+     "de_onde": ".venv/bin/python src/conta.py valores reservas --de 2004-08 --ate 2008-08"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Banco Central, Relatório Anual 2005 (via busca)",
+     "url": "https://www.bcb.gov.br/pec/boletim/banual2005/rel2005introdp.pdf",
+     "trecho": "Em setembro, teve início o processo de distensão da política monetária."
+    },
+    {
+     "quem": "Agência Brasil (EBC)",
+     "url": "https://memoria.ebc.com.br/agenciabrasil//noticia/2005-08-17/copom-maintains-benchmark-interest-rate-1975",
+     "trecho": "Copóm maintains the benchmark interest rate at 19.75%"
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2005-mensalao",
+   "periodo": {
+    "de": "2005-05",
+    "ate": "2005-12"
+   },
+   "onde": "Brasil",
+   "titulo": "Crise política grave sem fuga de dólares",
+   "o_que_aconteceu": "Em 2005 as denúncias do mensalão e depois contra o ministro da Fazenda abalaram o governo e o Congresso. O mercado reagiu pouco: o dólar ficou em R$ 2,40 em maio e R$ 2,34 em dezembro, e a Selic começou a cair em setembro. Houve um susto pontual quando surgiram as denúncias contra o ministro da Fazenda, com o dólar subindo quase 3% num dia.",
+   "por_que": "Uma crise política só vira crise de câmbio quando o investidor teme que a política econômica mude ou que as contas saiam do controle. Em 2005 a Selic estava em 19,75%, a inflação caía, o BC acumulava reservas e entrava dinheiro de fora. A política econômica, que depende do BC e da Fazenda, seguiu a mesma. A crise ficou na política.",
+   "como_terminou": "O dólar terminou o ano abaixo do início de maio e a inflação em 12 meses caiu de 8,05% (maio) para 5,69% (dezembro). A crise não virou recessão. Em 2008, a imprensa apontou que, sem a liquidez de fora, o efeito teria sido bem pior.",
+   "o_que_ensina": "O que pesa no dólar é a expectativa sobre a política econômica e a folga externa, mais que o tamanho do escândalo. Com reservas, inflação caindo e dinheiro de fora entrando, uma crise política passa quase despercebida. Sem essa folga, o efeito pode ser outro.",
+   "pressoes": [
+    "Denúncias de corrupção no governo e no Congresso",
+    "Risco de a política econômica mudar",
+    "Selic em 19,75%, o que atraía dólares e dava folga"
+   ],
+   "numeros": [
+    {
+     "texto": "Dólar Ptax: R$ 2,40 (mai/2005) e R$ 2,34 (dez/2005)",
+     "de_onde": ".venv/bin/python src/conta.py valores dolar_ptax --de 2004-08 --ate 2008-08"
+    },
+    {
+     "texto": "IPCA em 12 meses: 8,05% (mai/2005) e 5,69% (dez/2005)",
+     "de_onde": ".venv/bin/python src/conta.py valores ipca_12m --de 2004-08 --ate 2008-12"
+    },
+    {
+     "texto": "Selic: 19,75% (mai/2005) e 18,00% (dez/2005)",
+     "de_onde": ".venv/bin/python src/conta.py valores selic_meta --de 2004-08 --ate 2007-09"
+    },
+    {
+     "texto": "Reservas: US$ 60,7 bilhões (mai/2005)",
+     "de_onde": ".venv/bin/python src/conta.py valores reservas --de 2004-08 --ate 2008-08"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Congresso em Foco",
+     "url": "https://www.congressoemfoco.com.br/noticia/2545/rondando-o-perigo",
+     "trecho": "se em 2005 a crise política brasileira passou praticamente despercebida pelo mercado financeiro, em 2006 ela poderá ser decisiva"
+    },
+    {
+     "quem": "Agência Senado",
+     "url": "https://www2.senado.leg.br/jspui/bitstream/id/310700/1/noticia.htm",
+     "trecho": "Apesar da fala de Lula deixar a desejar, mercados ignoram"
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2008-graucinv",
+   "periodo": {
+    "de": "2007-10",
+    "ate": "2008-09"
+   },
+   "onde": "Brasil",
+   "titulo": "Grau de investimento e juro subindo de novo",
+   "o_que_aconteceu": "Em 30 de abril de 2008 a S&P deu ao Brasil o grau de investimento (BBB-) e o Ibovespa subiu 6,33% no dia. O dólar chegou a R$ 1,57 em julho. Ao mesmo tempo a inflação em 12 meses subiu de 4,12% (outubro de 2007) para 6,37% (julho de 2008). O Banco Central voltou a subir a Selic, de 11,25% em março para 13,75% em setembro de 2008.",
+   "por_que": "A demanda forte, o crédito e o preço das commodities no mundo empurraram os preços. A decisão de subir o juro foi do Banco Central, para a inflação não fugir da meta. O dólar barato e a nota de crédito atraíram mais dinheiro de fora. A recuperação da nota veio da combinação de reservas altas, dívida externa baixa e inflação sob controle.",
+   "como_terminou": "A última alta da Selic foi em setembro de 2008, para 13,75%, na mesma semana em que o banco Lehman Brothers quebrou. A crise de fora encerrou o ciclo e o BC manteve a taxa até janeiro de 2009. O episódio de 2008 seguinte está em ep-2008.",
+   "o_que_ensina": "Mesmo com nota de crédito melhor e dólar barato, a inflação sobe quando a demanda e as commodities sobem juntas. O BC aperta o juro no fim do ciclo, e esse aperto pode coincidir com um choque de fora.",
+   "pressoes": [
+    "Demanda interna e crédito crescendo",
+    "Commodities em alta no mundo",
+    "Inflação subindo acima do centro da meta",
+    "Dólar muito barato"
+   ],
+   "numeros": [
+    {
+     "texto": "Selic: 11,25% (mar/2008) e 13,75% (set/2008)",
+     "de_onde": ".venv/bin/python src/conta.py valores selic_meta --de 2008-03 --ate 2011-08"
+    },
+    {
+     "texto": "IPCA em 12 meses: 4,12% (out/2007) e 6,37% (jul/2008)",
+     "de_onde": ".venv/bin/python src/conta.py valores ipca_12m --de 2004-08 --ate 2008-12"
+    },
+    {
+     "texto": "Dólar Ptax: R$ 1,77 (dez/2007) e R$ 1,57 (jul/2008)",
+     "de_onde": ".venv/bin/python src/conta.py valores dolar_ptax --de 2004-08 --ate 2008-08"
+    },
+    {
+     "texto": "Reservas: US$ 168 bilhões (out/2007) e US$ 205 bilhões (ago/2008)",
+     "de_onde": ".venv/bin/python src/conta.py valores reservas --de 2004-08 --ate 2008-08"
+    },
+    {
+     "texto": "Ibovespa subiu 6,33% em 30/04/2008, dia do grau de investimento",
+     "de_onde": "https://en.mercopress.com/2008/04/30/investment-grade-for-brazil-stock-market-balloons-6-3"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "MercoPress",
+     "url": "https://en.mercopress.com/2008/04/30/investment-grade-for-brazil-stock-market-balloons-6-3",
+     "trecho": "Investment grade for Brazil, stock market balloons 6.3%"
+    },
+    {
+     "quem": "Wilson Center",
+     "url": "https://www.wilsoncenter.org/event/brazils-emerging-economic-power-now-investment-grade-and-why-it-matters-0",
+     "trecho": "Brazil's Emerging Economic Power: Now Investment Grade and Why It Matters"
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2010-superaquecimento",
+   "periodo": {
+    "de": "2009-08",
+    "ate": "2011-08"
+   },
+   "onde": "Brasil",
+   "titulo": "A retomada de 7,5%, o IOF sobre o capital de fora e a inflação voltando",
+   "o_que_aconteceu": "Depois da crise, a Selic ficou em 8,75% de julho de 2009 a março de 2010. A economia cresceu 7,5% em 2010, a maior alta desde 1986, depois de cair 0,6% em 2009. O Banco Central voltou a subir o juro em abril de 2010, e a Selic foi de 8,75% para 12,50% em julho de 2011. O dólar caiu de R$ 1,87 para R$ 1,56 e, em outubro de 2010, o Ministro da Fazenda subiu o IOF sobre a entrada de capital externo em renda fixa, de 2% para 4% e depois 6%, para frear a queda do dólar. A inflação em 12 meses foi de 4,17% (outubro de 2009) para 7,31% (setembro de 2011).",
+   "por_que": "A saída da crise de 2008 veio com juro cortado, crédito público e demanda interna forte, e a atividade voltou rápido. Com os juros altos aqui e baixos nos países ricos, entrou muito dólar, o que valorizou o real. A decisão do IOF foi do governo, e a de subir juro foi do Banco Central, a inflação em alta sendo a razão.",
+   "como_terminou": "A inflação ficou acima de 6% em 2011 e a Selic chegou a 12,50% em julho. Em agosto de 2011 o Banco Central cortou o juro de forma inesperada, o que abre o episódio ep-2012.",
+   "o_que_ensina": "Uma saída rápida de recessão, com estímulo e demanda forte, pode esquentar os preços um ou dois anos depois. Controle de entrada de capital segura o dólar só em parte, porque o juro alto continua atraindo dinheiro de fora.",
+   "pressoes": [
+    "Demanda forte depois do estímulo de 2009",
+    "Dólar caindo pela entrada de capital de fora",
+    "Inflação passando de 6% em 12 meses",
+    "Juros baixos nos países ricos empurrando dinheiro para o Brasil"
+   ],
+   "numeros": [
+    {
+     "texto": "PIB de 2010 cresceu 7,5%, a maior alta desde 1986; em 2009 havia caído 0,6%",
+     "de_onde": "https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/13983-asi-em-2010-pib-varia-75-e-fica-em-r-3675-trilhoes"
+    },
+    {
+     "texto": "Selic: 8,75% (mar/2010) e 12,50% (jul/2011)",
+     "de_onde": ".venv/bin/python src/conta.py valores selic_meta --de 2008-03 --ate 2011-08"
+    },
+    {
+     "texto": "IPCA em 12 meses: 4,17% (out/2009) e 7,31% (set/2011)",
+     "de_onde": ".venv/bin/python src/conta.py valores ipca_12m --de 2009-06 --ate 2011-12"
+    },
+    {
+     "texto": "Dólar Ptax: R$ 1,87 (jul/2009) e R$ 1,56 (jul/2011)",
+     "de_onde": ".venv/bin/python src/conta.py valores dolar_ptax --de 2009-06 --ate 2011-08"
+    },
+    {
+     "texto": "IOF sobre capital estrangeiro em renda fixa: de 2% para 4% em 4/10/2010, e 6% em 19/10/2010",
+     "de_onde": "https://www.coad.com.br/home/noticias-detalhe/29400/governo-eleva-iof-para-investimento-estrangeiro-em-renda-fixa"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "IBGE",
+     "url": "https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/13983-asi-em-2010-pib-varia-75-e-fica-em-r-3675-trilhoes",
+     "trecho": "Em 2010, PIB varia 7,5% e fica em R$ 3,675 trilhões"
+    },
+    {
+     "quem": "COAD",
+     "url": "https://www.coad.com.br/home/noticias-detalhe/29400/governo-eleva-iof-para-investimento-estrangeiro-em-renda-fixa",
+     "trecho": "Governo eleva IOF para investimento estrangeiro em renda fixa"
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2012-euro",
+   "periodo": {
+    "de": "2010-05",
+    "ate": "2012-09"
+   },
+   "onde": "Zona do euro",
+   "titulo": "A crise da dívida na zona do euro e o BCE",
+   "o_que_aconteceu": "Países da zona do euro (Grécia, Irlanda, Portugal, depois Espanha e Itália) perderam a confiança dos investidores nos títulos públicos, e os juros dispararam. Em 26 de julho de 2012 o presidente do Banco Central Europeu disse que faria o necessário para preservar o euro, e em setembro foi anunciado o programa de compra de títulos (OMT).",
+   "por_que": "Dívida elevada, bancos expostos ao governo e ausência de um banco central que atuasse como comprador final de títulos em moeda própria dos países. Quem acalmou o mercado foi o BCE, e não os governos nacionais.",
+   "como_terminou": "Os juros de Espanha e Itália recuaram depois do anúncio. Os programas de ajuda a Grécia, Irlanda e Portugal não foram detalhados nesta pesquisa.",
+   "o_que_ensina": "Dívida pública pode virar corrida quando o governo não controla a moeda em que deve; a promessa credível de um banco central pode quebrar o ciclo, mas costuma vir ligada a condições.",
+   "pressoes": [
+    "Dívida pública alta",
+    "Bancos expostos aos títulos do governo",
+    "Recessão na zona do euro"
+   ],
+   "numeros": [
+    {
+     "texto": "Em julho de 2012 o juro de 10 anos da Espanha chegou a 7,75% e o da Itália a 6,6%.",
+     "de_onde": "https://moneyinsideout.substack.com/p/whatever-it-takes-ten-years-on (via resumo de busca)"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Discurso de Draghi, 26/07/2012",
+     "url": "https://qz.com/1038954/whatever-it-takes-five-years-ago-today-mario-draghi-saved-the-euro-with-a-momentous-speech",
+     "trecho": "The ECB is ready to do whatever it takes to preserve the euro. And believe me, it will be enough."
+    }
+   ],
+   "fontes_conhecidas": false
+  },
+  {
+   "id": "ep-2013-taper",
+   "periodo": {
+    "de": "2013-05",
+    "ate": "2014-04"
+   },
+   "onde": "Brasil",
+   "titulo": "A mudança de rumo do Fed em 2013: dólar sobe e a Selic volta a subir",
+   "o_que_aconteceu": "Em 22 de maio de 2013 o presidente do Fed disse que o banco poderia reduzir o ritmo de compra de títulos. Os juros longos dos EUA subiram e o dinheiro saiu de países emergentes. No Brasil, o dólar passou de R$ 2,00 (abril) para R$ 2,43 (janeiro de 2014). Em agosto o Banco Central anunciou um programa de pelo menos US$ 60 bilhões em swaps cambiais e linhas de venda de dólar para segurar o câmbio. A Selic subiu de 7,50% em abril de 2013 para 11,00% em abril de 2014.",
+   "por_que": "A causa veio de fora: o Fed (EUA) sinalizou juros maiores lá e o capital reagiu em todos os emergentes. O Brasil tinha déficit com o exterior e inflação perto de 6,5%. A queda do real encarecia os preços e pressionava o índice. As respostas foram do Banco Central: alta de juros e oferta diária de swaps (que protegem contra a alta do dólar sem gastar reservas).",
+   "como_terminou": "O choque foi gradual. O dólar oscilou entre R$ 2,20 e R$ 2,43 até março de 2014. A inflação em 12 meses ficou entre 5,6% e 6,7%. O programa de swaps foi mantido até 2015, e o Banco Central informou que já tinha ofertado pouco mais de US$ 100 bilhões em dezembro de 2014. A Selic seguiu subindo até 2015.",
+   "o_que_ensina": "Uma mudança de rumo dos juros dos EUA chega ao Brasil pelo dólar e pela inflação, mesmo sem crise aqui dentro. O Banco Central pode reagir com juro e com swaps. Os swaps têm custo para o Tesouro quando o dólar sobe.",
+   "pressoes": [
+    "Juros dos EUA e saída de capital de emergentes",
+    "Inflação perto de 6,5% ao ano",
+    "Déficit nas contas com o exterior"
+   ],
+   "numeros": [
+    {
+     "texto": "Dólar: R$ 2,0017 (abril de 2013) a R$ 2,4263 (janeiro de 2014)",
+     "de_onde": ".venv/bin/python src/conta.py valores dolar_ptax --de 2013-04 --ate 2014-03"
+    },
+    {
+     "texto": "Selic: 7,50% (abril de 2013) a 11,00% (abril de 2014)",
+     "de_onde": ".venv/bin/python src/conta.py valores selic_meta --de 2013-03 --ate 2014-04"
+    },
+    {
+     "texto": "IPCA em 12 meses: 6,70% em junho de 2013, 5,91% em dezembro",
+     "de_onde": ".venv/bin/python src/conta.py valores ipca_12m --de 2012-12 --ate 2016-01"
+    },
+    {
+     "texto": "Programa de swaps: pelo menos US$ 60 bilhões anunciados em agosto de 2013; pouco mais de US$ 100 bilhões ofertados até dezembro de 2014",
+     "de_onde": "https://www.em.com.br/app/noticia/economia/2014/12/16/internas_economia,600006/leiloes-de-swap-terao-entre-us-50-mi-e-us-200-milhoes-ao-dia-diz-to.shtml e https://latinnews.com/component/k2/item/57537.html"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Trading Economics (alta da Selic em abril de 2013)",
+     "url": "https://tradingeconomics.com/articles/04182013004412.htm",
+     "trecho": "ending a cycle of monetary easing that was initiated in August 2011"
+    },
+    {
+     "quem": "MercoPress (programa de intervenção cambial)",
+     "url": "https://en.mercopress.com/2013/08/22/brazil-launches-60bn-dollars-currency-intervention-program-to-boost-the-sliding-real",
+     "trecho": "Brazil launches 60bn dollars currency intervention program to boost the sliding real"
+    },
+    {
+     "quem": "Estado de Minas (balanço dos swaps)",
+     "url": "https://www.em.com.br/app/noticia/economia/2014/12/16/internas_economia,600006/leiloes-de-swap-terao-entre-us-50-mi-e-us-200-milhoes-ao-dia-diz-to.shtml",
+     "trecho": "leilões de swap terão entre US$ 50 mi e US$ 200 milhões ao dia"
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2014-commodities",
+   "periodo": {
+    "de": "2014-07",
+    "ate": "2016-01"
+   },
+   "onde": "Brasil",
+   "titulo": "O tombo das commodities: minério e petróleo caem pela metade",
+   "o_que_aconteceu": "O índice de commodities do Banco Central passou de 168,4 (junho de 2014) para 85,3 (janeiro de 2016), queda de cerca de 49%. O minério de ferro, que vinha caindo desde 2012, foi a metade do preço em pouco tempo, e o petróleo caiu a partir de 2014. A Vale teve prejuízo de R$ 9,5 bilhões no primeiro trimestre de 2015, com o preço médio do minério 51,5% menor em um ano. Houve projeção de primeiro déficit comercial em 14 anos.",
+   "por_que": "A causa foi de fora: a desaceleração da China e a oferta maior de minério e petróleo derrubaram os preços. O Brasil exportava essas matérias-primas e perdeu receita, investimento e arrecadação. O efeito foi menor para o petróleo, porque o Brasil também importava, mas a queda dos preços de exportação pesou no dólar, na renda e nos lucros das empresas do setor.",
+   "como_terminou": "O índice seguiu em queda até o início de 2016 e depois parou. A economia entrou em recessão em 2015 e 2016, junto com outras causas internas (ver ep-2015). A queda das commodities foi um dos fatores, não o único.",
+   "o_que_ensina": "Quando um país vive de exportar matérias-primas, a queda delas reduz renda, investimento e arrecadação, e muda o câmbio. O efeito aparece mesmo com política interna estável, e soma-se a problemas que já existam.",
+   "pressoes": [
+    "Desaceleração da China",
+    "Queda de receita de exportação",
+    "Investimento e lucro de empresas do setor caindo"
+   ],
+   "numeros": [
+    {
+     "texto": "Índice de commodities (IC-Br): 168,4 em junho de 2014; 85,3 em janeiro de 2016",
+     "de_onde": ".venv/bin/python src/conta.py valores commodities --de 2011-04 --ate 2016-01"
+    },
+    {
+     "texto": "Minério de ferro: queda de quase 70% em quatro anos, segundo a Gazeta do Povo",
+     "de_onde": "https://www.gazetadopovo.com.br/economia/vale-teve-prejuizo-de-r-95-bilhoes-no-1-trimestre-7k63v35m10hwkje9i9zik30sc"
+    },
+    {
+     "texto": "Vale: prejuízo de R$ 9,5 bilhões no 1º trimestre de 2015; preço médio do minério US$ 46,01 por tonelada, 51,5% menor que no ano anterior",
+     "de_onde": "https://www.gazetadopovo.com.br/economia/vale-teve-prejuizo-de-r-95-bilhoes-no-1-trimestre-7k63v35m10hwkje9i9zik30sc"
+    },
+    {
+     "texto": "Recessão de 1T2015 a 1T2016 (cinco quedas seguidas do PIB)",
+     "de_onde": ".venv/bin/python src/conta.py recessoes"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Gazeta do Povo (minério e balança comercial)",
+     "url": "https://www.gazetadopovo.com.br/economia/queda-do-minerio-de-ferro-afeta-balanca-comercial-brasileira-egxk6tdcarsc7ggrk89xchu8e",
+     "trecho": "A desvalorização do preço do minério de ferro e de outras commodities (como petróleo e soja) devem levar o Brasil ao primeiro déficit na balança comercial em 14 anos."
+    },
+    {
+     "quem": "Gazeta do Povo (Vale)",
+     "url": "https://www.gazetadopovo.com.br/economia/vale-teve-prejuizo-de-r-95-bilhoes-no-1-trimestre-7k63v35m10hwkje9i9zik30sc",
+     "trecho": "O preço médio do minério de ferro da Vale ao longo do primeiro trimestre do ano foi de US$ 46,01 a tonelada, queda de 51,5% em relação ao valor registrado em mesmo período do ano passado."
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2015-administrados",
+   "periodo": {
+    "de": "2014-12",
+    "ate": "2016-01"
+   },
+   "onde": "Brasil",
+   "titulo": "Preços represados são liberados e a inflação chega a 10,67%",
+   "o_que_aconteceu": "Nos anos anteriores o governo segurou reajustes de energia e combustíveis. Em 2015, esses preços administrados foram reajustados de uma vez, e os impostos sobre combustíveis (Cide) foram recompostos. O IPCA em 12 meses passou de 6,41% (dezembro de 2014) para 10,67% (dezembro de 2015), o maior desde 2002. O Banco Central disse que o segundo semestre foi prejudicado por novos ajustes de administrados.",
+   "por_que": "A decisão de segurar preços foi do governo e a conta chegou depois. Com a alta do dólar e da energia mais cara, os preços foram corrigidos. O Banco Central explicou 2015 por dois ajustes de preços relativos: dos administrados contra os livres, e dos preços internos contra os internacionais. O câmbio também pesou. Ao liberar de uma vez, a inflação saltou, e o juro alto não impediu o salto.",
+   "como_terminou": "Segundo o Banco Central, a trajetória de alta dos administrados foi interrompida no fim de agosto de 2015. A inflação em 12 meses chegou a 10,71% em janeiro de 2016 e depois recuou com a recessão e a queda do dólar.",
+   "o_que_ensina": "Segurar preços não elimina a inflação, só a adia. O reajuste represado costuma vir de uma vez, depois que o dólar, a energia ou o imposto mudam, e a inflação sobe mais do que se fosse gradual.",
+   "pressoes": [
+    "Preços administrados represados",
+    "Dólar mais alto em 2015",
+    "Recomposição de impostos sobre combustíveis"
+   ],
+   "numeros": [
+    {
+     "texto": "IPCA em 12 meses: 6,41% (dezembro de 2014); 10,67% (dezembro de 2015); 10,71% (janeiro de 2016)",
+     "de_onde": ".venv/bin/python src/conta.py valores ipca_12m --de 2012-12 --ate 2016-01"
+    },
+    {
+     "texto": "Energia elétrica residencial: 4,54 pontos percentuais da alta de 8,45% dos administrados no primeiro trimestre de 2015",
+     "de_onde": "https://istoedinheiro.com.br/bc-diz-que-ultimo-semestre-de-2015-foi-comprometido-por-ajustes-em-administrados"
+    },
+    {
+     "texto": "Em agosto de 2015, o Copom projetava alta de 14,8% nos administrados no ano",
+     "de_onde": "https://istoedinheiro.com.br/bc-diz-que-ultimo-semestre-de-2015-foi-comprometido-por-ajustes-em-administrados"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Banco Central (Carta Aberta de 2015)",
+     "url": "https://www.bcb.gov.br/content/controleinflacao/controleinflacao_docs/carta_aberta/carta2015.pdf",
+     "trecho": "realinhamento dos preços administrados em relação aos preços livres e o realinhamento dos preços domésticos em relação aos internacionais"
+    },
+    {
+     "quem": "Istoé Dinheiro",
+     "url": "https://istoedinheiro.com.br/bc-diz-que-ultimo-semestre-de-2015-foi-comprometido-por-ajustes-em-administrados",
+     "trecho": "BC diz que último semestre de 2015 foi comprometido por ajustes em administrados"
+    },
+    {
+     "quem": "Congresso em Foco",
+     "url": "https://congressoemfoco.com.br/noticia/42907/inflacao-chega-a-1067-em-2015-maior-indice-desde-2002",
+     "trecho": "Inflação chega a 10,67% em 2015, maior índice desde 2002"
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2016-teto",
+   "periodo": {
+    "de": "2016-05",
+    "ate": "2016-12"
+   },
+   "onde": "Brasil",
+   "titulo": "A regra do teto de gastos e a volta da confiança no dólar",
+   "o_que_aconteceu": "Com a dívida bruta subindo de 51,5% do PIB (dezembro de 2013) para 67,6% (maio de 2016) e déficit primário perto de 2,5% do PIB, o Executivo enviou ao Congresso a PEC 241, que limita o crescimento da despesa federal à inflação do ano anterior. A Câmara aprovou em primeiro turno em 10 de outubro de 2016 com 366 votos. O Senado aprovou em 13 de dezembro e o Congresso promulgou a Emenda 95 em 15 de dezembro. O dólar caiu de R$ 3,97 (setembro de 2015) para R$ 3,26 (dezembro de 2016).",
+   "por_que": "A regra foi uma resposta à dívida em alta. A ideia era aumentar o resultado primário para pagar a dívida. O Executivo propôs e o Congresso aprovou, por emenda constitucional, para valer por 20 anos, com revisão possível após 10. A confiança no ajuste ajudou o câmbio, mas houve dúvida sobre se a despesa obrigatória caberia no limite.",
+   "como_terminou": "A emenda foi promulgada em dezembro de 2016. A Selic, parada em 14,25% de abril a setembro, caiu para 14,00% em outubro e 13,75% em dezembro, antes de cair para 13,00% em janeiro de 2017. A dívida bruta chegou a 69,8% do PIB em dezembro de 2016. O resultado primário só melhoraria depois.",
+   "o_que_ensina": "Uma regra de gasto fixa em lei tenta recuperar a confiança quando a dívida sobe. Ela ajuda o câmbio e abre espaço para cortar juros, mas depende de a despesa obrigatória caber dentro do limite nos anos seguintes.",
+   "pressoes": [
+    "Dívida bruta subindo",
+    "Déficit primário perto de 2,5% do PIB",
+    "Votação de emenda constitucional no Congresso"
+   ],
+   "numeros": [
+    {
+     "texto": "Dívida bruta: 51,54% do PIB (dezembro de 2013); 67,58% (maio de 2016); 69,84% (dezembro de 2016)",
+     "de_onde": ".venv/bin/python src/conta.py valores divida_bruta --de 2013-12 --ate 2016-12"
+    },
+    {
+     "texto": "Resultado primário em 12 meses de 2,48% do PIB em dezembro de 2016. Na série primario_12m do site o sinal é de déficit positivo, apesar de a descrição dizer 'positivo é sobra': o BC publicou superávit em 2013 e déficit em 2015 e 2016, e a série mostra 2013 negativo e 2016 positivo",
+     "de_onde": ".venv/bin/python src/conta.py valores primario_12m --de 2013-12 --ate 2016-12"
+    },
+    {
+     "texto": "Dólar: R$ 3,9729 (setembro de 2015); R$ 3,2591 (dezembro de 2016)",
+     "de_onde": ".venv/bin/python src/conta.py valores dolar_ptax --de 2015-09 --ate 2016-12"
+    },
+    {
+     "texto": "Selic: 14,25% (abril a setembro de 2016); 13,75% (dezembro); 13,00% (janeiro de 2017)",
+     "de_onde": ".venv/bin/python src/conta.py valores selic_meta --de 2016-04 --ate 2017-03"
+    },
+    {
+     "texto": "Meirelles falou em converter déficit primário de R$ 170,5 bilhões (2,7% do PIB) em superávit compatível com a queda da dívida",
+     "de_onde": "https://istoe.com.br/meirelles-defende-ajuste-fiscal-diante-da-reacao-de-agentes-economicos"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Congresso em Foco (promulgação da EC 95)",
+     "url": "https://congressoemfoco.com.br/noticias/senado-promulga-emenda-constitucional-que-congela-gastos-da-uniao-nos-proximos-anos",
+     "trecho": "Senado promulga emenda constitucional que congela gastos da União nos próximos anos"
+    },
+    {
+     "quem": "Câmara dos Deputados (texto da EC 95/2016)",
+     "url": "https://www2.camara.leg.br/legin/fed/emecon/2016/emendaconstitucional-95-15-dezembro-2016-784029-norma-pl.html",
+     "trecho": "Emenda Constitucional nº 95, de 15 de dezembro de 2016"
+    },
+    {
+     "quem": "Exame",
+     "url": "https://exame.com/brasil/o-primeiro-grande-teste-de-temer/",
+     "trecho": "limita o crescimento dos gastos do governo à inflação do ano anterior"
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2018-emergentes",
+   "periodo": {
+    "de": "2018-04",
+    "ate": "2018-12"
+   },
+   "onde": "Brasil e emergentes",
+   "titulo": "Fuga de emergentes e eleição: o dólar de R$ 3,32 a R$ 4,14",
+   "o_que_aconteceu": "Entre março e agosto de 2018, o dólar passou de R$ 3,32 para R$ 4,14, com pico de fim de mês em agosto. Argentina e Turquia passavam por crises cambiais, e capital saía de emergentes para os EUA. No Brasil, somavam-se a incerteza eleitoral e a dúvida sobre a reforma fiscal. O Banco Central manteve a Selic em 6,50% e vendeu dólar via swaps. Depois da eleição, o dólar voltou a R$ 3,72 em outubro.",
+   "por_que": "Foi um choque de fora (juro americano mais alto e saída de capital de emergentes) somado a uma dúvida interna sobre o ajuste das contas e a eleição. O câmbio mais fraco pressiona a inflação. Nesse caso o repasse foi pequeno, porque a economia tinha capacidade ociosa e a inflação estava baixa.",
+   "como_terminou": "O dólar caiu em outubro, quando a eleição reduziu a incerteza, e fechou o ano perto de R$ 3,87. A Selic ficou em 6,50% até julho de 2019. A Argentina dobrou a taxa para 60% e recorreu ao FMI.",
+   "o_que_ensina": "Quando o capital foge dos emergentes, o país com contas frágeis sente mais, e a eleição amplia o efeito. Com inflação baixa e economia fraca, o Banco Central pode segurar o juro mesmo com o dólar alto. Os estoques de reservas e swaps dão fôlego, mas não resolvem a dúvida fiscal.",
+   "pressoes": [
+    "Crises na Argentina e na Turquia",
+    "Incerteza da eleição presidencial",
+    "Dúvida sobre a reforma da Previdência e o ajuste fiscal"
+   ],
+   "numeros": [
+    {
+     "texto": "Dólar Ptax de fim de mês: R$ 3,32 (mar/2018), R$ 4,14 (ago), R$ 3,72 (out), R$ 3,87 (dez)",
+     "de_onde": ".venv/bin/python src/conta.py valores dolar_ptax --de 2018-03 --ate 2018-12"
+    },
+    {
+     "texto": "Selic em 6,50% de março a dezembro de 2018",
+     "de_onde": ".venv/bin/python src/conta.py valores selic_meta --de 2018-01 --ate 2019-12"
+    },
+    {
+     "texto": "IPCA em 12 meses em 4,19% em agosto de 2018",
+     "de_onde": ".venv/bin/python src/conta.py valores ipca_12m --de 2018-04 --ate 2018-08"
+    },
+    {
+     "texto": "Na Argentina, o banco central elevou a taxa básica de 45% para 60% ao ano em 2018",
+     "de_onde": "https://www.brasildefato.com.br/?p=615578"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Cronista (Argentina)",
+     "url": "https://www.cronista.com/economia-politica/a-un-ano-de-la-corrida-las-variables-financieras-naufragan-en-numeros-rojos",
+     "trecho": "O dólar terminou 2018 com alta de 103,77% na Argentina, de $18,55 para $37,80; entre abril e setembro, o dólar e os seguros contra default argentinos acompanharam países pressionados como Turquia e Brasil (resumo do resultado de busca, não literal)"
+    },
+    {
+     "quem": "Banco Central do Brasil, Relatório de Inflação",
+     "url": "https://www.bcb.gov.br/content/publicacoes/Documents/ra2018-versao-impressao.pdf",
+     "trecho": "Relatório Anual 2018 do Banco Central, que descreve o período; o PDF apareceu na busca mas não foi lido"
+    },
+    {
+     "quem": "Suno Notícias",
+     "url": "https://www.suno.com.br/noticias/?p=51168",
+     "trecho": "Expectativas de inflação não foram contaminadas por depreciação do câmbio, diz BC (título; trecho tirado do resultado de busca)"
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2018-caminhoneiros",
+   "periodo": {
+    "de": "2018-05",
+    "ate": "2018-07"
+   },
+   "onde": "Brasil",
+   "titulo": "A greve dos caminhoneiros e o tombo de um mês",
+   "o_que_aconteceu": "No fim de maio de 2018, caminhoneiros pararam o país contra o preço do diesel. Faltaram combustível e mercadorias, e a produção parou. O IBC-Br, prévia do PIB do Banco Central, caiu 3,34% em maio e subiu 3,29% em junho, recuperando quase tudo. A inflação em 12 meses passou de 2,86% em maio para 4,39% em junho. As projeções de PIB de 2018 caíram de cerca de 2,6% para 1,6%.",
+   "por_que": "Foi um choque de oferta de fora da política econômica: um setor travou a logística e cortou a oferta de bens. O governo cedeu com subsídio ao diesel e tabela de frete, o que tem custo fiscal. O Banco Central manteve a Selic em 6,50%, tratando a alta de preços como temporária.",
+   "como_terminou": "O IBC-Br voltou ao nível anterior em poucos meses (96,01 em abril, 93,06 em maio, 96,06 em julho). A inflação ficou em 4,19% em agosto. A recuperação parcial não impediu uma revisão para baixo do crescimento do ano.",
+   "o_que_ensina": "Um bloqueio de logística derruba a atividade e sobe os preços de uma vez, mas costuma ser temporário. O Banco Central tende a não reagir com juro quando enxerga um choque de oferta passageiro. O custo que sobra é fiscal, pelos subsídios dados para encerrar a crise.",
+   "pressoes": [
+    "Preço do diesel e do frete",
+    "Subsídios e custo fiscal para encerrar a paralisação",
+    "Expectativa de crescimento em queda no meio do ano"
+   ],
+   "numeros": [
+    {
+     "texto": "IBC-Br: 96,01 em abril, 93,06 em maio e 95,75 em junho de 2018",
+     "de_onde": ".venv/bin/python src/conta.py valores ibcbr --de 2018-04 --ate 2018-07"
+    },
+    {
+     "texto": "IPCA em 12 meses: 2,86% em maio e 4,39% em junho de 2018",
+     "de_onde": ".venv/bin/python src/conta.py valores ipca_12m --de 2018-04 --ate 2018-08"
+    },
+    {
+     "texto": "Selic parada em 6,50% de março a dezembro de 2018",
+     "de_onde": ".venv/bin/python src/conta.py valores selic_meta --de 2018-01 --ate 2019-12"
+    },
+    {
+     "texto": "O IBC-Br caiu 3,34% em maio de 2018, a pior leitura mensal da série iniciada em 2003; o IBC-Br subiu 3,29% em junho",
+     "de_onde": "https://forbes.com.br/last/2018/07/economia-brasileira-encolhe-334-em-maio/"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Forbes Brasil",
+     "url": "https://forbes.com.br/last/2018/07/economia-brasileira-encolhe-334-em-maio/",
+     "trecho": "economia brasileira encolhe 3,34% em maio (título da matéria sobre o IBC-Br e a greve dos caminhoneiros; trecho tirado do resultado de busca, não do texto da página)"
+    },
+    {
+     "quem": "Forbes Brasil",
+     "url": "https://forbes.com.br/last/2018/08/brasil-cresce-329-em-junho-e-reverte-perda-com-greve/",
+     "trecho": "Brasil cresce 3,29% em junho e reverte perda com greve (título; trecho tirado do resultado de busca)"
+    },
+    {
+     "quem": "Poder360",
+     "url": "https://www.poder360.com.br/economia/previa-do-pib-tem-queda-de-099-no-2o-trimestre-de-2018/",
+     "trecho": "Prévia do PIB tem queda de 0,99% no 2º trimestre de 2018 (título; trecho tirado do resultado de busca)"
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2019-previdencia",
+   "periodo": {
+    "de": "2019-02",
+    "ate": "2019-12"
+   },
+   "onde": "Brasil",
+   "titulo": "A reforma da Previdência e o juro que cai a 4,50%",
+   "o_que_aconteceu": "O governo enviou a reforma da Previdência em fevereiro de 2019 com economia prevista de cerca de R$ 1,2 trilhão em dez anos. O Congresso a reduziu para cerca de R$ 800 bilhões. O Senado concluiu a votação em 22 de outubro de 2019, por 60 votos a 19 no segundo turno. Nesse período o Banco Central baixou a Selic de 6,50% em julho para 4,50% em dezembro. O juro longo protegido da inflação caiu de 4,23% em janeiro para 2,46% em dezembro.",
+   "por_que": "A decisão de reformar foi do governo, e quem a desidratou e aprovou foi o Congresso. Com a promessa de contas mais controladas no longo prazo, os investidores aceitaram juros longos menores. Ao mesmo tempo a economia crescia pouco e a inflação ficava abaixo da meta, o que deu espaço ao Banco Central para cortar.",
+   "como_terminou": "A reforma foi promulgada em novembro de 2019. A dívida bruta ficou em 74,44% do PIB em dezembro, ante 75,27% um ano antes. A Selic encerrou o ano em 4,50%, o menor nível até então.",
+   "o_que_ensina": "Um ajuste que muda a trajetória de longo prazo das contas pode baixar o juro longo antes de o gasto cair de fato. O corte de juro depende também de inflação baixa e atividade fraca, não só da reforma. O Congresso costuma aprovar menos do que o governo propõe.",
+   "pressoes": [
+    "Déficit da Previdência e dívida bruta alta",
+    "Resistência no Congresso e redução da economia prevista",
+    "Crescimento fraco e inflação baixa"
+   ],
+   "numeros": [
+    {
+     "texto": "Selic: 6,50% em julho de 2019, 5,00% em outubro e 4,50% em dezembro",
+     "de_onde": ".venv/bin/python src/conta.py valores selic_meta --de 2018-01 --ate 2019-12"
+    },
+    {
+     "texto": "Juro longo (NTN-B): 4,23% em janeiro de 2019 e 2,46% em dezembro",
+     "de_onde": ".venv/bin/python src/conta.py valores juro_real_longo --de 2019-01 --ate 2019-12"
+    },
+    {
+     "texto": "Dívida bruta: 75,27% do PIB em dezembro de 2018 e 74,44% em dezembro de 2019",
+     "de_onde": ".venv/bin/python src/conta.py valores divida_bruta --de 2018-12 --ate 2019-12"
+    },
+    {
+     "texto": "Economia de R$ 800,3 bilhões em dez anos no texto aprovado, ante R$ 1,2 trilhão na proposta inicial; segundo turno no Senado por 60 votos a 19",
+     "de_onde": "https://www.poder360.com.br/congresso/congresso-conclui-reforma-da-previdencia/"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Poder360",
+     "url": "https://www.poder360.com.br/congresso/congresso-conclui-reforma-da-previdencia/",
+     "trecho": "O plenário do Senado concluiu em 22.out.2019 a votação da reforma da Previdência; a votação final em segundo turno foi de 60 votos a 19 (resumo do resultado de busca, não literal)"
+    },
+    {
+     "quem": "Suno Notícias",
+     "url": "https://www.suno.com.br/noticias/?p=39582",
+     "trecho": "Mudança no texto da reforma da Previdência reduz economia para R$ 800 bilhões (título; trecho tirado do resultado de busca)"
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2021-teto",
+   "periodo": {
+    "de": "2021-10",
+    "ate": "2021-12"
+   },
+   "onde": "Brasil",
+   "titulo": "A PEC dos Precatórios e a dúvida sobre o teto de gastos",
+   "o_que_aconteceu": "Em outubro de 2021, o governo propôs tirar o Auxílio Brasil do teto de gastos e adiar o pagamento de precatórios por meio da PEC dos Precatórios. O mercado reagiu mal: o dólar chegou perto de R$ 5,70, a bolsa caiu mais de 2% em um dia e os juros futuros subiram. A Câmara aprovou a PEC em segundo turno em novembro, e o dólar caiu ao menor nível desde o início de outubro. O IPCA em 12 meses estava acima de 10%.",
+   "por_que": "A mudança na regra do teto, decidida pelo governo e votada pelo Congresso, passou a impressão de que a âncora fiscal estava sendo flexibilizada. Isso elevou o prêmio de risco e o câmbio, num momento de inflação acima de 10%. O Banco Central subiu a Selic de 6,25% em setembro para 9,25% em dezembro.",
+   "como_terminou": "A PEC foi aprovada com o teto alterado, e o dólar recuou para R$ 5,58 em dezembro. A inflação em 12 meses ficou em 10,06% e a Selic seguiu em alta em 2022.",
+   "o_que_ensina": "Mexer na regra fiscal em ano de inflação alta eleva o dólar e os juros futuros no mesmo dia. O mercado reage ao sinal sobre a regra, mais do que ao tamanho da despesa. Se a dúvida fiscal e a inflação se somam, o Banco Central tende a subir mais o juro.",
+   "pressoes": [
+    "Inflação acima de 10% em 12 meses",
+    "Programa social novo e ano pré-eleitoral",
+    "Regra do teto de gastos sob mudança"
+   ],
+   "numeros": [
+    {
+     "texto": "Dólar Ptax de fim de mês: R$ 5,44 (set/2021), R$ 5,64 (out), R$ 5,58 (dez)",
+     "de_onde": ".venv/bin/python src/conta.py valores dolar_ptax --de 2021-09 --ate 2021-12"
+    },
+    {
+     "texto": "Selic: 6,25% em setembro, 7,75% em outubro e 9,25% em dezembro de 2021",
+     "de_onde": ".venv/bin/python src/conta.py valores selic_meta --de 2021-09 --ate 2021-12"
+    },
+    {
+     "texto": "IPCA em 12 meses: 10,25% em setembro, 10,74% em novembro e 10,06% em dezembro de 2021",
+     "de_onde": ".venv/bin/python src/conta.py valores ipca_12m --de 2021-09 --ate 2021-12"
+    },
+    {
+     "texto": "IPCA de outubro de 2021 foi de 1,25%, o maior para o mês desde 2002",
+     "de_onde": "https://jovempan.com.br/economia/macroeconomia/dolar-cai-com-aprovacao-da-pec-dos-precatorios-e-alta-da-inflacao-bolsa-sobe/"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Jovem Pan",
+     "url": "https://jovempan.com.br/economia/macroeconomia/dolar-vai-a-r-564-com-agravamento-das-contas-publicas-bolsa-renova-a-minima-de-2021/",
+     "trecho": "Dólar vai a R$ 5,64 com agravamento das contas públicas; Bolsa renova a mínima de 2021 (título; trecho tirado do resultado de busca)"
+    },
+    {
+     "quem": "Jovem Pan",
+     "url": "https://jovempan.com.br/economia/macroeconomia/dolar-cai-com-aprovacao-da-pec-dos-precatorios-e-alta-da-inflacao-bolsa-sobe/",
+     "trecho": "Dólar cai com aprovação da PEC dos Precatórios e alta da inflação; Bolsa sobe (título; trecho tirado do resultado de busca)"
+    },
+    {
+     "quem": "Instituição Fiscal Independente (Senado)",
+     "url": "https://www12.senado.leg.br/ifi/pdf/ci-comentario-da-ifi-no-14-as-implicacoes-fiscais-da-pec-dos-precatorios",
+     "trecho": "Comentário da IFI nº 14: as implicações fiscais da PEC dos Precatórios (título; trecho tirado do resultado de busca)"
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2022-icms",
+   "periodo": {
+    "de": "2022-03",
+    "ate": "2022-12"
+   },
+   "onde": "Brasil",
+   "titulo": "Teto do ICMS e PEC dos combustíveis em ano de preços altos",
+   "o_que_aconteceu": "Em 2022 o Congresso aprovou leis complementares (LC 192 e LC 194) que limitaram o ICMS sobre combustíveis, energia, comunicações e transporte coletivo à alíquota geral de cada estado, de 17% a 18%. Ao mesmo tempo, a PEC dos Combustíveis foi anexada à 'PEC Kamikaze', que permitia ao governo federal gastar com programas fora de regras fiscais como o teto de gastos.",
+   "por_que": "Preços de combustíveis e energia pressionavam a inflação. A resposta foi cortar tributo (decisão do Congresso, com perda de receita dos estados) e abrir espaço de gasto federal fora do teto, em vez de esperar o juro agir.",
+   "como_terminou": "A LC 194 foi publicada em junho de 2022. Estados estimaram perdas relevantes de arrecadação, e o regime foi alterado depois por outras leis complementares. O custo fiscal exato da PEC não foi confirmado nesta pesquisa.",
+   "o_que_ensina": "Cortar imposto ou abrir exceção ao limite de gasto alivia o preço agora, mas transfere a conta para a receita dos estados e para a credibilidade da regra fiscal.",
+   "pressoes": [
+    "inflação de combustíveis e energia",
+    "ano eleitoral",
+    "receita dos estados",
+    "regra fiscal (teto de gastos)"
+   ],
+   "numeros": [
+    {
+     "texto": "O Rio de Janeiro estimou perda de até R$ 10 bilhões por ano com o teto de ICMS.",
+     "de_onde": "https://netcpa.com.br/colunas/impacto-do-teto-de-icms-para-o-estado-do-rio-pode-ser-de-r-10-bilhoes-ao-ano/14521"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Mayer Brown (resumo da LC 194/2022)",
+     "url": "https://www.mayerbrown.com/pt/insights/publications/2022/07/complementary-law-no-1942022--limit-icms-on-fuels-natural-gas-electricity-communications-and-public-transportation",
+     "trecho": "[Resumo da busca, não citação literal] a lei limitou o ICMS sobre combustíveis, energia, comunicações e transporte coletivo à alíquota geral do estado."
+    },
+    {
+     "quem": "Congresso em Foco",
+     "url": "https://congressoemfoco.com.br/noticia/20478/relator-da-pec-dos-combustiveis-junta-texto-a-projeto-kamikaze-para-turbinar-beneficios",
+     "trecho": "[Resumo da busca, não citação literal] o relator juntou a PEC dos Combustíveis ao projeto 'Kamikaze'."
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2022-reinounido",
+   "periodo": {
+    "de": "2022-09",
+    "ate": "2022-10"
+   },
+   "onde": "Reino Unido",
+   "titulo": "O pacote fiscal britânico e a corrida aos títulos",
+   "o_que_aconteceu": "Em 23 de setembro de 2022 o governo britânico anunciou um pacote de cortes de impostos sem cobertura clara. Os juros longos dos títulos subiram rápido, fundos de pensão sofreram chamadas de garantia e, em 28 de setembro, o Banco da Inglaterra passou a comprar títulos longos de forma temporária, até 14 de outubro.",
+   "por_que": "Decisão do governo (pacote) e reação do mercado; o Banco da Inglaterra agiu pela estabilidade financeira. Fundos de pensão com estratégia de dívida alavancada (LDI) precisaram vender títulos para pôr garantias, o que empurrou os juros ainda mais para cima.",
+   "como_terminou": "O juro de 30 anos caiu mais de 100 pontos-base no dia da intervenção. A compra foi temporária. O desfecho político e fiscal posterior não foi conferido aqui.",
+   "o_que_ensina": "Anunciar gasto sem plano fiscal crível pode levar a alta de juros longos e a problemas no sistema financeiro; o banco central pode apagar o incêndio, mas não resolve a dúvida fiscal.",
+   "pressoes": [
+    "Dúvida fiscal sobre o pacote",
+    "Fundos de pensão alavancados",
+    "Inflação alta e juro em alta na época"
+   ],
+   "numeros": [
+    {
+     "texto": "Queda de mais de 100 pontos-base no juro de 30 anos em 28/09/2022.",
+     "de_onde": "https://corporate-adviser.com/ldi-funds-would-have-gone-bust-without-action-says-boe (via resumo de busca)"
+    },
+    {
+     "texto": "Chamadas de garantia estimadas em mais de £ 70 bilhões.",
+     "de_onde": "https://corporate-adviser.com/ldi-funds-would-have-gone-bust-without-action-says-boe (via resumo de busca)"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Corporate Adviser, sobre carta do Banco da Inglaterra",
+     "url": "https://corporate-adviser.com/ldi-funds-would-have-gone-bust-without-action-says-boe",
+     "trecho": "Sem a intervenção de 28/09, muitos fundos LDI teriam valor líquido negativo (resumo da busca, não literal)"
+    },
+    {
+     "quem": "CNBC",
+     "url": "https://www.cnbc.com/2022/10/06/bank-of-england-says-pension-funds-were-hours-from-disaster-before-it-intervened.html",
+     "trecho": "Título: Bank of England says pension funds were hours from disaster before it intervened"
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2023-credito",
+   "periodo": {
+    "de": "2023-01",
+    "ate": "2023-06"
+   },
+   "onde": "Brasil",
+   "titulo": "Americanas e o susto no crédito privado",
+   "o_que_aconteceu": "Em 11 de janeiro de 2023 a Americanas comunicou inconsistências contábeis estimadas em R$ 20 bilhões, depois revisadas para R$ 25,3 bilhões. Pouco depois pediu recuperação judicial, com cerca de R$ 43 bilhões em créditos listados. O caso atingiu bancos e fundos de crédito privado.",
+   "por_que": "Uma fraude contábil numa grande empresa derrubou a confiança de quem financia empresas (bancos e fundos). Rebaixamentos de nota e bloqueio de recursos tiraram a capacidade da empresa de operar. A decisão foi da própria empresa e de seus credores, em ambiente de juro alto.",
+   "como_terminou": "Os credores aprovaram o plano de recuperação com mais de 90% de apoio, e as dívidas viraram ações. A Justiça do Rio encerrou a recuperação judicial três anos e nove meses após a fraude. Responsabilização na CVM e na CPI seguiu em andamento.",
+   "o_que_ensina": "Com juro alto, um evento de crédito isolado pode encarecer e restringir o financiamento de outras empresas, mesmo sem recessão em curso.",
+   "pressoes": [
+    "juro alto",
+    "confiança de fundos e bancos",
+    "rebaixamento de notas de crédito"
+   ],
+   "numeros": [
+    {
+     "texto": "Rombo contábil de R$ 20 bi, revisado para R$ 25,3 bi; créditos de cerca de R$ 43 bi na recuperação judicial.",
+     "de_onde": "https://www.bloomberglinea.com.br/2023/01/19/americanas-pede-recuperacao-judicial-com-divida-de-r-40-bilhoes/"
+    },
+    {
+     "texto": "Custo de pelo menos R$ 14,2 bi para os grandes bancos.",
+     "de_onde": "https://www.revistaoeste.com/economia/fraude-contabil-das-americanas-provocou-custos-de-r-14-bilhoes-a-bancos/"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Bloomberg Línea",
+     "url": "https://www.bloomberglinea.com.br/2023/01/19/americanas-pede-recuperacao-judicial-com-divida-de-r-40-bilhoes/",
+     "trecho": "[Resumo da busca, não citação literal] pedido de recuperação judicial com dívida de cerca de R$ 43 bilhões."
+    },
+    {
+     "quem": "Bloomberg Línea",
+     "url": "https://www.bloomberglinea.com.br/negocios/justica-encerra-recuperacao-judicial-da-americanas-tres-anos-e-nove-meses-apos-fraude/",
+     "trecho": "[Resumo da busca, não citação literal] a Justiça encerrou a recuperação judicial três anos e nove meses após a fraude."
+    },
+    {
+     "quem": "Forbes Brasil",
+     "url": "https://forbes.com.br/forbes-money/2024/01/um-ano-do-caso-americanas-do-declinio-bilionario-a-recuperacao-judicial/",
+     "trecho": "[Resumo da busca, não citação literal] retrospectiva de um ano do caso, do declínio à recuperação judicial."
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2023-arcabouco",
+   "periodo": {
+    "de": "2023-03",
+    "ate": "2023-12"
+   },
+   "onde": "Brasil",
+   "titulo": "Do teto de gastos ao arcabouço fiscal",
+   "o_que_aconteceu": "O Executivo propôs em 2023 uma nova regra fiscal para substituir o teto de gastos da EC 95. A Câmara aprovou o texto em agosto e o presidente sancionou a LC 200/2023 com dois vetos. A regra liga o crescimento da despesa à receita e fixa metas de resultado primário para o ano e os três seguintes.",
+   "por_que": "O teto de gastos já tinha sido revogado pela EC 126/2022, e faltava uma âncora fiscal para dar previsibilidade à dívida. A regra nova foi desenhada pelo Executivo e votada pelo Congresso.",
+   "como_terminou": "A LC 200 foi sancionada em 2023. Análises posteriores apontam que a regra acumulou exceções, como a retirada do Pé-de-Meia do limite. O efeito final sobre a dívida não foi verificado nesta pesquisa.",
+   "o_que_ensina": "Quando uma regra fiscal cai, o mercado espera outra no lugar. Sua credibilidade depende de metas realistas e de poucas exceções.",
+   "pressoes": [
+    "credibilidade fiscal",
+    "dívida pública",
+    "exceções ao limite de gasto"
+   ],
+   "numeros": [
+    {
+     "texto": "Na proposta original, a despesa cresceria a 70% da alta da receita; não confirmei se o percentual foi mantido na versão final.",
+     "de_onde": "https://maisretorno.com/portal/arcabouco-fiscal-despesa-tera-limite-de-70-da-variacao-da-receita-dos-ultimos-12-meses"
+    },
+    {
+     "texto": "Gatilho: acima de 95% de despesas obrigatórias sobre as primárias totais, ficam vedadas condutas como criar despesas.",
+     "de_onde": "https://www12.senado.leg.br/transparencia/orcamento-e-financas/limites-lc-200-2023"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Senado Federal",
+     "url": "https://www12.senado.leg.br/transparencia/orcamento-e-financas/limites-lc-200-2023",
+     "trecho": "[Resumo da busca, não citação literal] a LC 200/2023 substituiu o teto da EC 95, revogado pela EC 126/2022."
+    },
+    {
+     "quem": "Migalhas",
+     "url": "https://www.migalhas.com.br/quentes/392935/lula-sanciona-lei-do-arcabouco-fiscal-regime-substitui-teto-de-gastos",
+     "trecho": "[Resumo da busca, não citação literal] sanção da lei do arcabouço fiscal, que substitui o teto de gastos."
+    }
+   ],
+   "fontes_conhecidas": true
+  },
+  {
+   "id": "ep-2025-tarifaco",
+   "periodo": {
+    "de": "2025-07",
+    "ate": "2025-12"
+   },
+   "onde": "Brasil",
+   "titulo": "A tarifa de 50% dos EUA",
+   "o_que_aconteceu": "Em 2025 os EUA anunciaram tarifa de 50% sobre produtos brasileiros. Bancos estimaram impacto de 0,3 a 0,4 ponto percentual no PIB, e o JPMorgan citou até 0,8% a 1,2% ao somar outros efeitos. Uma lista de exceções cobria cerca de 40% das exportações aos EUA, e combustíveis ficaram quase livres.",
+   "por_que": "Foi uma decisão de fora: o governo dos EUA elevou tarifas. O efeito vem por menos exportação e preços, com o dólar como canal. O tamanho do dano depende da exposição, e as exportações aos EUA eram cerca de 2% do PIB.",
+   "como_terminou": "Não verifiquei o desfecho nesta pesquisa. As fontes divergem sobre o início (1º de agosto ou 6 de setembro de 2025), e as isenções reduziram as estimativas iniciais.",
+   "o_que_ensina": "Um choque comercial de fora pesa menos quando a exposição a um único comprador é pequena e há exceções. O risco maior costuma ser setorial.",
+   "pressoes": [
+    "comércio exterior",
+    "dólar",
+    "setores exportadores"
+   ],
+   "numeros": [
+    {
+     "texto": "Goldman Sachs: perda de 0,3 a 0,4 ponto do PIB; exportações aos EUA equivaliam a cerca de 2% do PIB.",
+     "de_onde": "https://www.moneytimes.com.br/tarifas-de-trump-contra-o-brasil-podem-reduzir-pib-em-ate-04-ponto-estima-goldman-sachs-jals/"
+    },
+    {
+     "texto": "XP: crescimento de 2025 cairia de 2,5% para 2,2%; exceções cobriam cerca de 40% das exportações aos EUA.",
+     "de_onde": "https://borainvestir.b3.com.br/noticias/xp-ve-impacto-marginal-em-pib-e-inflacao-com-tarifas-de-trump-mas-retaliacao-preocupa/"
+    }
+   ],
+   "fontes": [
+    {
+     "quem": "Money Times",
+     "url": "https://www.moneytimes.com.br/tarifas-de-trump-contra-o-brasil-podem-reduzir-pib-em-ate-04-ponto-estima-goldman-sachs-jals/",
+     "trecho": "[Resumo da busca, não citação literal] tarifas contra o Brasil podem reduzir o PIB em até 0,4 ponto, estima o Goldman Sachs."
+    },
+    {
+     "quem": "Bora Investir (B3)",
+     "url": "https://borainvestir.b3.com.br/noticias/xp-ve-impacto-marginal-em-pib-e-inflacao-com-tarifas-de-trump-mas-retaliacao-preocupa/",
+     "trecho": "[Resumo da busca, não citação literal] a XP vê impacto marginal em PIB e inflação, mas a retaliação preocupa."
+    }
+   ],
+   "fontes_conhecidas": true
+  }
+ ]
+}

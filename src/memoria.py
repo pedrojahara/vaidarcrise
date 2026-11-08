@@ -232,8 +232,13 @@ def carregar_mes(mes: str, mensal: dict) -> dict:
 
 
 def reclassificar() -> int:
-    """Refaz a marca de fonte conhecida de cada fato da carga, depois de mudar a lista."""
+    """Refaz a marca de fonte conhecida de cada fato da carga e de cada episódio, depois de mudar a lista."""
     n = 0
+    longa = _ler(LONGA, None)
+    if longa:
+        for e in longa["episodios"]:
+            e["fontes_conhecidas"] = any(fonte_conhecida(f["url"]) for f in e["fontes"])
+        _gravar(LONGA, longa)
     for arq in sorted(MOMENTO.glob("*.json")):
         doc = _ler(arq, {})
         for f in doc.get("fatos", []):
@@ -386,7 +391,7 @@ def episodios(jobs: int) -> None:
         for e in (r["saida"] or {}).get("episodios", []):
             if e["id"] in ids:
                 continue
-            e["fontes_conhecidas"] = all(fonte_conhecida(f["url"]) for f in e["fontes"])
+            e["fontes_conhecidas"] = any(fonte_conhecida(f["url"]) for f in e["fontes"])
             doc["episodios"].append(e)
             ids.add(e["id"])
     doc["episodios"].sort(key=lambda e: e["periodo"]["de"])
