@@ -2435,14 +2435,14 @@
   "paragrafos": [
    "O petróleo caiu quase 8% lá fora porque o Irã e mediadores do Catar negociam há três dias o fim da guerra. O presidente dos EUA disse que um acordo \"pode acontecer\".",
    "Em maio, outro sinal de paz derrubou o barril 7,8%, que subiu mais de 14% em outubro. Sem acordo, segue incerto o alívio no preço dos combustíveis e no espaço para o juro cair.",
-   "Na bomba, nada muda agora, porque o diesel da Petrobras está há 145 dias sem reajuste, segurado por subsídio do governo. A queda cobre só 8,8% da diferença para o preço lá fora."
+   "Na bomba, nada muda agora, porque o diesel da Petrobras está há 145 dias sem reajuste, segurado por subsídio do governo."
   ],
   "secoes": [
    {
     "paragrafos": [
      "O petróleo caiu quase 8% lá fora porque o Irã e mediadores do Catar negociam há três dias o fim da guerra. O presidente dos EUA disse que um acordo \"pode acontecer\".",
      "Em maio, outro sinal de paz derrubou o barril 7,8%, que subiu mais de 14% em outubro. Sem acordo, segue incerto o alívio no preço dos combustíveis e no espaço para o juro cair.",
-     "Na bomba, nada muda agora, porque o diesel da Petrobras está há 145 dias sem reajuste, segurado por subsídio do governo. A queda cobre só 8,8% da diferença para o preço lá fora."
+     "Na bomba, nada muda agora, porque o diesel da Petrobras está há 145 dias sem reajuste, segurado por subsídio do governo."
     ]
    }
   ],
@@ -2607,7 +2607,7 @@
   ],
   "fundo": {
    "versao": 3,
-   "ok": false,
+   "ok": true,
    "em": "2026-11-08T01:53:56+00:00",
    "voltas": [
     {
@@ -2762,6 +2762,72 @@
        "Para a tese da queda que não dura: pôr fonte em cada fechamento do Brent (de 14/4, 6/5 e 25/5 e um mês depois de cada um) e dizer que 4 casos mostram um padrão, não uma lei."
       ]
      }
+    },
+    {
+     "volta": 3,
+     "teses": [],
+     "editor_chefe": {
+      "veredito": "aprova",
+      "menor": true,
+      "tese": "É a quarta vez em 2026 que um sinal de negociação entre EUA e Irã derruba o Brent num dia (4,60% em 14/4, 7,8% em 6/5, 6,78% em 25/5, quase 8% em 2/11), e as anteriores não duraram. Depois delas o barril ficou em US$ 94,79 e US$ 93,42, e hoje, mesmo depois da queda, está a US$ 103,60. O alívio no combustível e na inflação esperada depende de um acordo assinado, que não existe. São 4 casos de uma só guerra: um padrão, não uma lei. A tese cai se houver acordo e o barril ficar abaixo dos níveis de abril e maio.",
+      "testes": {
+       "nao_obvia": {
+        "ok": false,
+        "por_que": "O fato do dia já cita a queda de maio e a alta de outubro. A tese menor acrescenta as quatro quedas do ano e o nível em que cada uma deixou o barril: o preço de hoje, mesmo depois da queda, está acima do de abril e do de maio. É um passo além da manchete, mas pequeno."
+       },
+       "muda_algo": {
+        "ok": true,
+        "por_que": "A leitora passa a ler a próxima notícia de queda do petróleo sem um acordo assinado como um movimento que, este ano, não durou. Também passa a ver que o barril de hoje é mais caro que o dos sinais de paz anteriores, o que pesa na inflação esperada (Focus: de 4,19% em julho para 4,96% em outubro)."
+       },
+       "pode_dar_errado": {
+        "ok": true,
+        "por_que": "Fica desmentida se um acordo for assinado e o Brent ficar abaixo de US$ 93,42 a US$ 94,79, os níveis de depois das quedas de abril e maio, ou se a queda de agora se sustentar sem acordo."
+       },
+       "no_caderno": {
+        "ok": true,
+        "por_que": "As quedas e os níveis estão em c1, c2, c3, c12 e c17, a alta de outubro em c13 e a inflação esperada em c14. Ficaram de fora a c21 (que não confere) e as contas que dependem dela, o US$ 101,27 (c4) e a alta de 23,5% em julho, que não tem linha. Os documentos são trechos de busca que não foram abertos, e o texto se apoia só no que eles dizem."
+       },
+       "pela_meta": {
+        "ok": true,
+        "por_que": "não é decisão"
+       }
+      },
+      "roteiro": [
+       "Abrir pelo padrão do ano: esta é a quarta queda por sinal de negociação entre EUA e Irã em 2026 (14/4, 6/5, 25/5 e 2/11), com o tamanho de cada uma [c17, c3, c12, c1]. Não repetir a frase do fato do dia sobre maio e outubro.",
+       "Mostrar o nível, e não só a queda: depois de abril o barril ficou em US$ 94,79 e depois de maio em US$ 93,42. Hoje, já depois da queda e de mais 1,11% em 3/11, está a US$ 103,60 [c17, c12, c2]. Cada sinal de paz derrubou um preço que depois voltou mais alto, e outubro fechou com alta de mais de 14% [c13].",
+       "Dizer o que é diferente agora: há três dias de negociação com mediadores do Catar e a fala do presidente dos EUA de que um acordo 'pode acontecer', mas ainda não há acordo [c1, c5]. Quem decide o próximo passo está lá fora.",
+       "Ligar o barril à inflação esperada: de julho a outubro, enquanto o petróleo subia, a inflação esperada pelos bancos (Focus) foi de 4,19% para 4,96% [c14]. Uma queda que não dura não muda essa conta. Não fazer da decisão do Copom de 4/11 o centro, nem usar a tese da pausa de outra leitura.",
+       "Explicar brevemente por que a bomba não reage no dia: o diesel da Petrobras estava sem reajuste havia 145 dias em 23/10, e o governo dá um desconto de R$ 3,52 por litro no importado [c7, c8, c9]. Sem fazer disso a tese, que já é de outra leitura.",
+       "Trazer a melhor objeção: desta vez a negociação está mais adiantada e um acordo pode mudar o patamar do preço. Além disso, quedas repetidas podem ir tirando aos poucos o prêmio de guerra do barril.",
+       "Dizer a força da evidência: são 4 casos num só ano e numa só guerra, os números vêm de reportagens e mostram um padrão, não uma lei. Dizer também o que desmentiria a tese: acordo assinado e barril abaixo dos níveis de abril e maio por semanas.",
+       "Fechar no e daí para a leitora: na bomba e no bolso nada muda agora. O que mudaria é um acordo que se sustente. O próximo dado do assunto é o IPCA de outubro, que sai em 12/11."
+      ],
+      "pressao": "inflacao",
+      "devolve": [],
+      "curto": {
+       "porque": "O petróleo caiu porque autoridades do Irã e mediadores do Catar negociam há três dias o fim da guerra no Oriente Médio, e o presidente dos EUA disse que um acordo \"pode acontecer\". Ainda não há acordo.",
+       "e_dai": "É a quarta queda do barril em 2026 por sinal de paz. As anteriores não duraram: mesmo depois desta, o barril está a US$ 103,60, acima dos US$ 93,42 de maio.",
+       "vida": "Na bomba, nada muda agora. O diesel da Petrobras estava em 23/10 havia 145 dias sem reajuste, e o governo cobre R$ 3,52 por litro do importado. O preço só muda com reajuste da Petrobras ou com o fim da subvenção.",
+       "familias": [],
+       "objetivo": "",
+       "condicao": "",
+       "caderno": [
+        "c1",
+        "c2",
+        "c3",
+        "c5",
+        "c7",
+        "c8",
+        "c9",
+        "c12",
+        "c13",
+        "c17"
+       ]
+      },
+      "pagina_que_falta": "Por que o preço do petróleo lá fora não chega logo ao posto? Nenhuma página do site explica o caminho do barril até a gasolina e o diesel, com a Petrobras e as subvenções no meio, e esse assunto volta a cada notícia de petróleo."
+     },
+     "so_editor": true,
+     "em": "2026-11-09T17:04:51+00:00"
     }
    ],
    "meta": [
@@ -2878,6 +2944,86 @@
      ],
      "permission_denials": [],
      "session_id": "f0e27894-8374-4247-af57-228dafb7250d"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "5dcfb0ef237c1f35bde8e3fd5fc6913e60d3df082fad5389e1e6229f641ae3e2",
+     "system_sha256": "c5be08712768743659e98821b6e7f488bfa371dda043cb56057e8de2f7121401",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.4549076,
+     "turnos": 3,
+     "duracao_s": 60,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "f431816a-60c9-4c23-8078-8e77962e949b"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "1deb3516b74fd4968488c3a3717a0a57a107887c0a1e2eb4d9e9adff82b0a392",
+     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.6155092,
+     "turnos": 2,
+     "duracao_s": 48,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "0c532e29-002b-4a38-ae2c-24cd71480c5f"
+    },
+    {
+     "etapa": "conferencia",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "59552d483e23ea55a7f7074ff34210673af4afa0abab37d4391ee4d6f5073031",
+     "system_sha256": "014db32c3a98cfd87cb62417008dbee3bc6c60858da38a9ac3f6069aa3aea5eb",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.198025,
+     "turnos": 2,
+     "duracao_s": 78,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "0cb1ad4d-24ec-4dc8-bd4f-64d1f5a9ed43"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "41285061dce5c55d6e5bb4468b1cb1ce47d9e7a58d82168aca196126692bf759",
+     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.6148452,
+     "turnos": 2,
+     "duracao_s": 33,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "965dee33-0ccd-4c09-9ec8-a77a05f81d81"
+    },
+    {
+     "etapa": "editor_fundo",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "95a6c232f2d88180066aa2636e2559b1187a80ffcbc196cc4631495734fa8ee6",
+     "system_sha256": "c051e15dfe2ba0240d641e7b2a26a2ab05de7d68718375f6bd3be448f44a878a",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.1656754,
+     "turnos": 2,
+     "duracao_s": 35,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "60fda89e-2d7b-4111-96af-88e797c7dc13"
     }
    ],
    "offline": true,
@@ -2885,7 +3031,8 @@
     "Leitura de 4/11: pela regra da meta contínua, a inflação acima do teto de 4,5% vira descumprimento quando passa seis meses seguidos fora da margem, e o IPCA em 12 meses já passou do teto em setembro",
     "Leitura de 5/11: desde 2002, nas 10 pausas do Banco Central depois de cortes, a inflação esperada subiu nos 3 meses seguintes em 8, e em 7 dessas 8 a Selic voltou a subir; agora subiu 0,36 ponto no primeiro mês, então o próximo passo tende a ser parar ou subir, e não o corte que o Focus prevê",
     "Leitura de 6/11: a prévia do PIB (IBC-Br) de julho e agosto já deixa o 3º trimestre abaixo do 2º, e nos buracos que não viraram recessão a queda durou um mês só",
-    "Leitura de 7/11: outubro teve a maior entrada de dólares do ano e mesmo assim o dólar subiu 4,6%, porque o dólar anda mais com a desconfiança de quem investe do que com a balança; o petróleo mais barato pode pesar menos no saldo do que parece"
+    "Leitura de 7/11: outubro teve a maior entrada de dólares do ano e mesmo assim o dólar subiu 4,6%, porque o dólar anda mais com a desconfiança de quem investe do que com a balança; o petróleo mais barato pode pesar menos no saldo do que parece",
+    "Leitura de 9/11: o preço do diesel no posto depende hoje de decisões com dono e data (a subvenção de R$ 2,12 por litro renovada por 30 dias em 27/10 e o reajuste da Petrobras), e não do barril do dia"
    ],
    "contas_ate": "2026-11-02",
    "pesquisa": {
@@ -3625,10 +3772,28 @@
      }
     }
    ],
-   "erro": "sem achado: o editor-chefe não aprovou tese",
-   "sem_achado": true,
-   "duracao_s": 307,
+   "duracao_s": 505,
    "curto": {
+    "porque": "O petróleo caiu porque autoridades do Irã e mediadores do Catar negociam há três dias o fim da guerra no Oriente Médio, e o presidente dos EUA disse que um acordo \"pode acontecer\". Ainda não há acordo.",
+    "e_dai": "É a quarta queda do barril em 2026 por sinal de paz. As anteriores não duraram: mesmo depois desta, o barril está a US$ 103,60, acima dos US$ 93,42 de maio.",
+    "vida": "Na bomba, nada muda agora. O diesel da Petrobras estava em 23/10 havia 145 dias sem reajuste, e o governo cobre R$ 3,52 por litro do importado. O preço só muda com reajuste da Petrobras ou com o fim da subvenção.",
+    "familias": [],
+    "objetivo": "",
+    "condicao": "",
+    "caderno": [
+     "c1",
+     "c2",
+     "c3",
+     "c5",
+     "c7",
+     "c8",
+     "c9",
+     "c12",
+     "c13",
+     "c17"
+    ]
+   },
+   "curto_do_post": {
     "porque": "Segundo as reportagens, o barril caiu porque as negociações entre o Irã e mediadores do Catar, já no terceiro dia, alimentaram a esperança de um fim da guerra no Oriente Médio, e o presidente dos Estados Unidos disse que um acordo com o Irã \"pode acontecer\". Ainda não há acordo assinado.",
     "e_dai": "Sinais de paz já derrubaram o petróleo neste ano, como os 7,8% de 6 de maio, e o barril voltou a subir, mais de 14% só em outubro; sem acordo, o alívio segue incerto.",
     "vida": "Por enquanto, nada muda na bomba: o diesel da Petrobras está há 145 dias sem reajuste, segurado por subsídio do governo, e a queda tira só cerca de R$ 0,31 de uma diferença de R$ 3,53 por litro.",
@@ -3659,6 +3824,229 @@
      "c21",
      "c22"
     ]
+   },
+   "pressao": "inflacao",
+   "pagina_que_falta": "Por que o preço do petróleo lá fora não chega logo ao posto? Nenhuma página do site explica o caminho do barril até a gasolina e o diesel, com a Petrobras e as subvenções no meio, e esse assunto volta a cada notícia de petróleo.",
+   "tese": "É a quarta vez em 2026 que um sinal de negociação entre EUA e Irã derruba o Brent num dia (4,60% em 14/4, 7,8% em 6/5, 6,78% em 25/5, quase 8% em 2/11), e as anteriores não duraram. Depois delas o barril ficou em US$ 94,79 e US$ 93,42, e hoje, mesmo depois da queda, está a US$ 103,60. O alívio no combustível e na inflação esperada depende de um acordo assinado, que não existe. São 4 casos de uma só guerra: um padrão, não uma lei. A tese cai se houver acordo e o barril ficar abaixo dos níveis de abril e maio.",
+   "menor": true,
+   "rascunho": {
+    "titulo": "Quarta queda do petróleo por sinal de paz em 2026 só alivia se houver acordo assinado",
+    "texto": "Não é a primeira vez neste ano que uma conversa entre os Estados Unidos e o Irã derruba o petróleo num dia só. Já é a quarta. O barril do tipo Brent caiu 4,60% em 14/4 [c17], 7,8% em 6/5 [c3], 6,78% em 25/5 [c12] e mais de 8% na tarde de 2/11, com as negociações entre o Irã e o Catar [c1].\n\nNas três vezes anteriores, nenhuma conversa virou acordo, e o preço voltou a subir. Por isso, o que pode aliviar o combustível e a inflação esperada é um acordo assinado, que ainda não existe, e não o tamanho da queda do dia. Se o acordo sair e o barril ficar abaixo dos preços de abril e maio, esta leitura deixa de valer.\n\n### Cada sinal de paz derrubou um preço que depois voltou mais alto\n\nA porcentagem da queda diz menos que o preço em que o barril para. Depois da queda de 14/4, o Brent fechou a US$ 94,79 [c17]. Depois da de 25/5, fechou a US$ 93,42 [c12].\n\nAgora, mesmo depois da queda forte de 2/11 e de mais uma baixa de 1,11% no dia seguinte, o Brent fechou a US$ 103,60 em 3/11 [c2]. Assim, o barril de hoje, que já caiu, está mais caro que o de abril e o de maio depois das quedas daquelas semanas, porque entre uma notícia e outra o preço voltou a subir. Só em outubro, ele subiu mais de 14% [c13].\n\nDesta vez, as negociações já duram três dias e têm o Catar como mediador, e o presidente dos Estados Unidos disse que um acordo \"pode acontecer\" [c1, c5]. É mais do que um boato, mas ainda não é um acordo. O próximo passo depende dos governos dos Estados Unidos e do Irã, uma causa de fora, e nenhuma decisão do Brasil muda esse rumo.\n\n### O barril chega à bomba e à inflação esperada por decisões daqui\n\nNo Brasil, o preço do barril chega ao seu bolso por dois caminhos. O primeiro é a bomba, e ali o barril do dia pesa pouco agora. Em 23/10, o diesel da Petrobras estava havia 145 dias sem reajuste [c7].\n\nQuem segura esse preço é o governo, com um desconto de R$ 3,52 por litro no diesel importado [c8]. São R$ 2,12 que o governo renovou em 27/10 por mais 30 dias, a um custo de R$ 10,5 bilhões [c9], e R$ 1,40 que uma portaria do Ministério da Fazenda acrescentou em 13/10, também por 30 dias [c16]. Em 22/10, a diferença entre o diesel da Petrobras e o preço lá fora era de R$ 3,53 por litro, quase do tamanho do desconto [c6].\n\nIsso já aconteceu neste ano. Em 27/7, a associação dos importadores de combustíveis disse que a queda do petróleo não aliviava o diesel, porque a diferença para o preço lá fora estava em 58% [c18]. Enquanto o desconto e o preço da Petrobras ficarem como estão, uma queda do barril muda a conta do governo e da Petrobras antes de mudar o preço no posto.\n\nO segundo caminho é a inflação que os bancos esperam. De julho a outubro, enquanto o petróleo subia, a inflação esperada para os 12 meses seguintes foi de 4,19% para 4,96%, uma alta de 0,77 ponto [c14]. O petróleo não foi o único motivo, mas uma queda que dura poucos dias não muda essa conta, porque quem faz a previsão olha os preços dos meses seguintes, e não o de um dia.\n\n### Quatro quedas numa mesma guerra mostram um padrão, não uma lei\n\nA melhor objeção diz que desta vez é diferente. A conversa parece mais avançada que as de abril e maio, com mediador e com o presidente dos Estados Unidos falando em acordo. Se ele sair, o barril pode mudar de patamar, e não só cair num dia.\n\nHá ainda uma segunda objeção, mais sutil. Mesmo sem acordo, cada rodada de conversa pode ir tirando aos poucos do preço o medo da guerra, e as quedas repetidas seriam esse medo saindo do barril em etapas. Os números do caderno não deixam separar essa leitura da outra, porque o preço também sobe por outros motivos entre uma notícia e outra.\n\nO tamanho da evidência é pequeno, e convém dizê-lo. São quatro casos num só ano e numa só guerra, com os preços tirados de reportagens do dia. Isso mostra um padrão, não uma lei, e quatro casos não provam que a quinta conversa vai terminar como as outras.\n\nO que desmentiria esta leitura é concreto: um acordo assinado e o Brent abaixo de US$ 94,79 e de US$ 93,42 por semanas, e não por um dia [c17, c12]. Se isso acontecer, o espaço para o governo reduzir o desconto no diesel e para a inflação esperada parar de subir fica maior.\n\nPara quem vive do salário mínimo, para quem tem financiamento e cartão e para quem tem dinheiro guardado, nada muda agora. O preço do diesel no posto só muda se a Petrobras reajustar ou se o governo mudar o desconto, e a queda do barril de 2/11 não fez nenhuma das duas coisas. A inflação esperada, que pesa no juro do crédito e no rendimento do dinheiro guardado, também não se move com uma queda de um dia.\n\nPor isso, a próxima manchete sobre o petróleo diz mais pelo que acontece na mesa de negociação do que pelo tamanho da queda. Uma queda de 8% sem acordo já apareceu outras vezes neste ano e foi devolvida. Um acordo assinado nunca apareceu nesta guerra. O IPCA de outubro sai em 12/11, e ele ainda mede um mês de petróleo em alta."
+   },
+   "conferencia": {
+    "codigo_antes": {
+     "graves": [
+      "bloco 1: número ou data sem linha do caderno que confira: 6/5, 14/4, 25/5 | trecho: Não é a primeira vez neste ano que uma conversa entre os Estados Unidos e o Irã derruba o petróleo num dia só. Já é a qu",
+      "bloco 4: número ou data sem linha do caderno que confira: 14/4, 25/5 | trecho: A porcentagem da queda diz menos que o preço em que o barril para. Depois da queda de 14/4, o Brent fechou a US$ 94,79. ",
+      "bloco 8: número ou data sem linha do caderno que confira: 23/10 | trecho: No Brasil, o preço do barril chega ao seu bolso por dois caminhos. O primeiro é a bomba, e ali o barril do dia pesa pouc",
+      "bloco 9: número ou data sem linha do caderno que confira: 13/10, 22/10, 27/10 | trecho: Quem segura esse preço é o governo, com um desconto de R$ 3,52 por litro no diesel importado. São R$ 2,12 que o governo ",
+      "bloco 10: número ou data sem linha do caderno que confira: 27/7 | trecho: Isso já aconteceu neste ano. Em 27/7, a associação dos importadores de combustíveis disse que a queda do petróleo não al"
+     ],
+     "avisos": [
+      "c9 vem de site fora da lista de fontes conhecidas: https://www.novacana.com/noticias/prorrogacao-da-subvencao-ao-diesel-em-r-2-12-custara-r-10-5-bilhoes",
+      "c16 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/noticias/portaria-da-fazenda-acrescenta-rs-1-40-por-litro-a-91992",
+      "bloco 8: explica a conta ao leitor",
+      "bloco 9: frase de 37 palavras"
+     ],
+     "palavras": 886,
+     "intertitulos": 3
+    },
+    "ia": {
+     "correcoes": [
+      {
+       "trecho": "Título: Quarta queda do petróleo por sinal de paz em 2026 só alivia se houver acordo assinado",
+       "tipo": "forca",
+       "problema": "\"só alivia se\" é conclusão mais forte que o caderno: nenhuma linha mostra o que alivia o preço. O texto só mostra que o alívio é incerto sem acordo.",
+       "como_fica": "Título: Quarta queda do petróleo por sinal de paz em 2026: sem acordo assinado, o alívio segue incerto"
+      },
+      {
+       "trecho": "Não é a primeira vez neste ano que uma conversa entre os Estados Unidos e o Irã derruba o petróleo num dia só. Já é a quarta. O barril do tipo Brent caiu 4,60% em 14/4 [c17], 7,8% em 6/5 [c3], 6,78% em 25/5 [c12] e mais de 8% na tarde de 2/11, com as negociações entre o Irã e o Catar [c1].",
+       "tipo": "fonte",
+       "problema": "A linha c1 fala em negociações entre Irã e Catar, não entre EUA e Irã, e diz \"petróleo\", não \"Brent\". O de 2/11 foi uma queda na tarde, não um fechamento, ao contrário das de abril e maio.",
+       "como_fica": "Não é a primeira vez neste ano que uma notícia de negociação de paz derruba o petróleo num dia só. Já é a quarta. O Brent caiu 4,60% em 14/4 [c17], 7,8% em 6/5 [c3] e 6,78% em 25/5 [c12], e o petróleo caiu mais de 8% na tarde de 2/11, com as negociações entre autoridades do Irã e do Catar [c1]."
+      },
+      {
+       "trecho": "Nas três vezes anteriores, nenhuma conversa virou acordo, e o preço voltou a subir. Por isso, o que pode aliviar o combustível e a inflação esperada é um acordo assinado, que ainda não existe, e não o tamanho da queda do dia. Se o acordo sair e o barril ficar abaixo dos preços de abril e maio, esta leitura deixa de valer.",
+       "tipo": "forca",
+       "problema": "Nenhuma linha diz que as três conversas anteriores não viraram acordo nem que o preço subiu depois de cada uma. \"Por isso... é um acordo assinado\" é causa sem linha. O corte do fim também destoa do que o texto diz depois (\"por semanas\").",
+       "como_fica": "O caderno não registra acordo assinado nas três vezes anteriores, e o Brent de 3/11 fecha acima dos fechamentos de 14/4 e de 25/5 [c2, c17, c12]. Por isso, o alívio no combustível e na inflação esperada segue incerto sem um acordo assinado, e o tamanho da queda do dia não basta para dizer. Se o acordo sair e o barril ficar abaixo de US$ 94,79 e de US$ 93,42 por semanas, esta leitura deixa de valer [c17, c12]."
+      },
+      {
+       "trecho": "### Cada sinal de paz derrubou um preço que depois voltou mais alto",
+       "tipo": "forca",
+       "problema": "O caderno só compara o fechamento de 3/11 com o de 14/4 e o de 25/5. Não mostra o preço entre uma notícia e outra, e a queda de 2/11 ainda não tem \"depois\". \"Cada sinal\" é forte demais.",
+       "como_fica": "### Hoje o barril fecha acima dos preços de depois das quedas de abril e maio"
+      },
+      {
+       "trecho": "Assim, o barril de hoje, que já caiu, está mais caro que o de abril e o de maio depois das quedas daquelas semanas, porque entre uma notícia e outra o preço voltou a subir. Só em outubro, ele subiu mais de 14% [c13].",
+       "tipo": "forca",
+       "problema": "\"porque entre uma notícia e outra o preço voltou a subir\" é explicação sem linha no caderno. O caderno só tem os dois fechamentos e a alta de outubro.",
+       "como_fica": "Assim, o barril de hoje, que já caiu, está mais caro que o de 14/4 e o de 25/5 depois das quedas daqueles dias [c2, c17, c12]. Só em outubro, o petróleo subiu mais de 14% [c13]."
+      },
+      {
+       "trecho": "Desta vez, as negociações já duram três dias e têm o Catar como mediador, e o presidente dos Estados Unidos disse que um acordo \"pode acontecer\" [c1, C5]. É mais do que um boato, mas ainda não é um acordo. O próximo passo depende dos governos dos Estados Unidos e do Irã, uma causa de fora, e nenhuma decisão do Brasil muda esse rumo.",
+       "tipo": "fonte",
+       "problema": "c1 e c5 não dizem \"três dias\", \"mediador\" nem a fala do presidente dos EUA (\"pode acontecer\"). \"Nenhuma decisão do Brasil muda esse rumo\" é conclusão forte sem linha.",
+       "como_fica": "Desta vez, há negociações entre autoridades do Irã e do Catar [c1]. Ainda não é um acordo. O próximo passo depende de governos de fora do Brasil."
+      },
+      {
+       "trecho": "### O barril chega à bomba e à inflação esperada por decisões daqui",
+       "tipo": "forca",
+       "problema": "O texto mostra que a inflação esperada é previsão dos bancos, não decisão daqui; o intertítulo diz mais que o corpo.",
+       "como_fica": "### O barril chega à bomba por duas decisões com data, e à inflação esperada pela previsão dos bancos"
+      },
+      {
+       "trecho": "São R$ 2,12 que o governo renovou em 27/10 por mais 30 dias, a um custo de R$ 10,5 bilhões [c9], e R$ 1,40 que uma portaria do Ministério da Fazenda acrescentou em 13/10, também por 30 dias [c16].",
+       "tipo": "fonte",
+       "problema": "c9 e c16 vêm de sites fora da lista de fontes conhecidas, e o trecho de c16 é só um título cortado, que não diz 13/10, 30 dias nem a portaria. \"30 dias\" também não está no trecho de c9. A c10, de fonte conhecida, diz o R$ 1,40, o 9/10 e o R$ 1,6 bilhão.",
+       "como_fica": "São R$ 2,12 por litro, com a prorrogação em 27/10 e custo de R$ 10,5 bilhões [c9], e R$ 1,40 por litro que o governo anunciou em 9/10, com custo estimado de R$ 1,6 bilhão [c10]."
+      },
+      {
+       "trecho": "Em 27/7, a associação dos importadores de combustíveis disse que a queda do petróleo não aliviava o diesel, porque a diferença para o preço lá fora estava em 58% [c18].",
+       "tipo": "forca",
+       "problema": "O \"porque\" liga duas coisas que a linha só põe lado a lado: a Abicom disse que a queda não alivia o diesel e que a defasagem abria a semana em 58%.",
+       "como_fica": "Em 27/7, a Abicom, associação dos importadores de combustíveis, disse que a queda do petróleo não aliviava o diesel e que a defasagem para o preço lá fora abria a semana em 58% [c18]."
+      },
+      {
+       "trecho": "Enquanto o desconto e o preço da Petrobras ficarem como estão, uma queda do barril muda a conta do governo e da Petrobras antes de mudar o preço no posto.",
+       "tipo": "forca",
+       "problema": "Nenhuma linha diz que a queda muda a conta do governo e da Petrobras. O caderno mostra só que o preço da Petrobras estava parado e que o desconto cobria quase toda a defasagem.",
+       "como_fica": "Enquanto o desconto e o preço da Petrobras ficarem como estão, o preço do diesel da Petrobras não depende do barril do dia [c7, c6]."
+      },
+      {
+       "trecho": "De julho a outubro, enquanto o petróleo subia, a inflação esperada para os 12 meses seguintes foi de 4,19% para 4,96%, uma alta de 0,77 ponto [c14]. O petróleo não foi o único motivo, mas uma queda que dura poucos dias não muda essa conta, porque quem faz a previsão olha os preços dos meses seguintes, e não o de um dia.",
+       "tipo": "forca",
+       "problema": "O caderno só diz que o petróleo subiu em outubro, não de julho a outubro. Não há linha que ponha o petróleo como motivo da alta, nem sobre como os bancos fazem a previsão.",
+       "como_fica": "De julho a outubro, a inflação esperada para os 12 meses seguintes foi de 4,19% para 4,96%, uma alta de 0,77 ponto [c14]. O caderno não separa quanto dessa alta veio do petróleo."
+      },
+      {
+       "trecho": "A conversa parece mais avançada que as de abril e maio, com mediador e com o presidente dos Estados Unidos falando em acordo.",
+       "tipo": "fonte",
+       "problema": "Nenhuma linha do caderno diz que há mediador nem registra a fala do presidente dos EUA, e não há linha que compare o ponto das conversas de abril e maio com o de agora.",
+       "como_fica": "A conversa parece mais avançada que as de abril e maio, já que agora há negociações entre autoridades do Irã e do Catar [c1]."
+      },
+      {
+       "trecho": "Para quem vive do salário mínimo, para quem tem financiamento e cartão e para quem tem dinheiro guardado, nada muda agora. O preço do diesel no posto só muda se a Petrobras reajustar ou se o governo mudar o desconto, e a queda do barril de 2/11 não fez nenhuma das duas coisas. A inflação esperada, que pesa no juro do crédito e no rendimento do dinheiro guardado, também não se move com uma queda de um dia.",
+       "tipo": "fonte",
+       "problema": "Sem o número de cada família, que o caderno tem nas linhas c101 a c105. \"Só muda se\" e \"não fez nenhuma das duas coisas\" não têm linha: o último dado do diesel é de 23/10. \"Não se move com uma queda de um dia\" é afirmação sem linha. Quem vive do salário mínimo não é atingido de forma direta pelo fato.",
+       "como_fica": "Nada muda agora no diesel da Petrobras, que estava havia 145 dias sem reajuste em 23/10 [c7], com o desconto do governo de R$ 3,52 por litro [c8]. Para quem tem dinheiro guardado, com a Selic em 13,75% ao ano, R$ 1.000 rendem cerca de R$ 137,50 em um ano, antes do imposto de renda [c104]. Para quem tem financiamento e cartão, o juro médio do crédito livre às pessoas físicas foi de 62,35% ao ano em setembro [c103]. O caderno não mostra que a queda de um dia mude esses números."
+      },
+      {
+       "trecho": "Uma queda de 8% sem acordo já apareceu outras vezes neste ano e foi devolvida. Um acordo assinado nunca apareceu nesta guerra.",
+       "tipo": "forca",
+       "problema": "As quedas anteriores foram de 4,60%, 7,8% e 6,78%, não de 8%. \"Foi devolvida\" e \"nunca apareceu\" não têm linha e usam \"nunca\" com quatro casos.",
+       "como_fica": "Quedas de 4,60%, 7,8% e 6,78% por sinais de paz já apareceram neste ano [c17, c3, c12], e o Brent de 3/11 fecha acima dos fechamentos de 14/4 e de 25/5 [c2, c17, c12]. O caderno não registra acordo assinado nesta guerra."
+      },
+      {
+       "trecho": "O IPCA de outubro sai em 12/11, e ele ainda mede um mês de petróleo em alta.",
+       "tipo": "data",
+       "problema": "A data de 12/11 não está em nenhuma linha do caderno.",
+       "como_fica": "O IPCA de outubro ainda mede um mês de petróleo em alta [c13]."
+      }
+     ],
+     "graves": [
+      "A tese central (\"nas três vezes anteriores nenhuma conversa virou acordo e o preço voltou a subir\", repetida no intertítulo \"Cada sinal... voltou mais alto\") não tem linha no caderno. O caderno só compara o fechamento de 3/11 com dois fechamentos antigos.",
+      "Os detalhes da negociação atual (três dias, Catar como mediador, fala do presidente dos EUA) estão marcados com c1 e c5, que não dizem isso.",
+      "O fecho \"um acordo assinado nunca apareceu nesta guerra\" e \"quedas de 8% foram devolvidas\" usam \"nunca\" e \"devolvida\" sem linha, com só quatro casos e valores diferentes de 8%."
+     ],
+     "resumo": "O texto tem boa estrutura e traz objeção e corte. Mas a premissa central (as três quedas anteriores não viraram acordo e o preço voltou mais alto) não tem linha no caderno. Os detalhes da negociação (três dias, mediador, fala do presidente dos EUA) são atribuídos a linhas que não os dizem. Há ainda causas sem linha, uma data sem fonte, duas fontes fora da lista e uma seção da vida da leitora sem os números das famílias."
+    },
+    "aplicadas": 14,
+    "codigo": {
+     "graves": [
+      "bloco 1: número ou data sem linha do caderno que confira: 6/5, 14/4, 25/5 | trecho: Não é a primeira vez neste ano que uma notícia de negociação de paz derruba o petróleo num dia só. Já é a quarta. O Bren",
+      "bloco 2: número ou data sem linha do caderno que confira: 14/4, 25/5 | trecho: O caderno não registra acordo assinado nas três vezes anteriores, e o Brent de 3/11 fecha acima dos fechamentos de 14/4 ",
+      "bloco 4: número ou data sem linha do caderno que confira: 14/4, 25/5 | trecho: A porcentagem da queda diz menos que o preço em que o barril para. Depois da queda de 14/4, o Brent fechou a US$ 94,79. ",
+      "bloco 5: número ou data sem linha do caderno que confira: 14/4, 25/5 | trecho: Agora, mesmo depois da queda forte de 2/11 e de mais uma baixa de 1,11% no dia seguinte, o Brent fechou a US$ 103,60 em ",
+      "bloco 8: número ou data sem linha do caderno que confira: 23/10 | trecho: No Brasil, o preço do barril chega ao seu bolso por dois caminhos. O primeiro é a bomba, e ali o barril do dia pesa pouc",
+      "bloco 9: número ou data sem linha do caderno que confira: 9/10, 22/10, 27/10 | trecho: Quem segura esse preço é o governo, com um desconto de R$ 3,52 por litro no diesel importado. São R$ 2,12 por litro, com",
+      "bloco 10: número ou data sem linha do caderno que confira: 27/7 | trecho: Isso já aconteceu neste ano. Em 27/7, a Abicom, associação dos importadores de combustíveis, disse que a queda do petról",
+      "bloco 17: número ou data sem linha do caderno que confira: 23/10 | trecho: Nada muda agora no diesel da Petrobras, que estava havia 145 dias sem reajuste em 23/10, com o desconto do governo de R$",
+      "bloco 18: número ou data sem linha do caderno que confira: 14/4, 25/5 | trecho: Por isso, a próxima manchete sobre o petróleo diz mais pelo que acontece na mesa de negociação do que pelo tamanho da qu"
+     ],
+     "avisos": [
+      "c9 vem de site fora da lista de fontes conhecidas: https://www.novacana.com/noticias/prorrogacao-da-subvencao-ao-diesel-em-r-2-12-custara-r-10-5-bilhoes",
+      "bloco 8: explica a conta ao leitor",
+      "bloco 17: palavra que o site trocou (num ano ruim, atraso nas dívidas, gasta mais do que arrecada)",
+      "título da leitura a fundo: até 110 caracteres, afirmativo e sem dois-pontos"
+     ],
+     "palavras": 871,
+     "intertitulos": 3
+    },
+    "codigo_depois_da_reescrita": {
+     "graves": [],
+     "avisos": [
+      "bloco 8: explica a conta ao leitor",
+      "bloco 16: frase de 54 palavras"
+     ],
+     "palavras": 822,
+     "intertitulos": 3
+    },
+    "final": {
+     "graves": [],
+     "avisos": [],
+     "palavras": 801,
+     "intertitulos": 3
+    }
+   },
+   "edicao": {
+    "sugestoes": [
+     {
+      "trecho": "O primeiro caminho é a bomba, e ali o barril do dia pesa pouco agora. No fim de outubro, o diesel da Petrobras estava havia 145 dias sem reajuste [c7], e o governo dava um desconto de R$ 3,52 por litro no diesel importado [c8]. Quem decide se esse preço muda são a Petrobras, com o reajuste, e o governo, com o prazo do desconto.",
+      "problema": "Verificador: explica a conta ao leitor. Quem decidiu vem junto do porquê, numa frase ligada, sem a explicação solta no fim.",
+      "como_fica": "O primeiro caminho é a bomba, e ali o barril do dia pesa pouco agora, porque quem decide o preço é a Petrobras, com o reajuste, e o governo, com o prazo do desconto. No fim de outubro, o diesel da Petrobras estava havia 145 dias sem reajuste [c7], e o governo dava um desconto de R$ 3,52 por litro no diesel importado [c8]."
+     },
+     {
+      "trecho": "Para você, nada muda agora, nem na bomba nem nas contas da casa. Quem vive do salário mínimo ou da aposentadoria, quem paga financiamento e cartão e quem tem dinheiro guardado continuam com o mesmo preço de combustível, porque o diesel da Petrobras segue segurado pelo desconto do governo, e com o mesmo juro, porque uma queda de um dia no barril não mexe na inflação esperada [c7, c8].",
+      "problema": "Verificador: frase de 54 palavras. O limite é 30 por frase.",
+      "como_fica": "Para quem vive do salário mínimo ou da aposentadoria, para quem paga financiamento e cartão e para quem tem dinheiro guardado, nada muda agora. O diesel da Petrobras segue segurado pelo desconto do governo, e o juro fica igual, porque uma queda de um dia não mexe na inflação esperada [c7, c8]."
+     },
+     {
+      "trecho": "Em abril, o Brent caiu 4,60% [c17]. Em maio, isso aconteceu duas vezes, com quedas de 7,8% [c3] e de 6,78% [c12].",
+      "problema": "Arredonde: duas casas só na Selic.",
+      "como_fica": "Em abril, o Brent caiu 4,6% [c17]. Em maio, isso aconteceu duas vezes, com quedas de 7,8% [c3] e de 6,8% [c12]."
+     },
+     {
+      "trecho": "mais uma baixa de 1,11% no dia seguinte",
+      "problema": "Arredonde: duas casas só na Selic.",
+      "como_fica": "mais uma baixa de 1,1% no dia seguinte"
+     },
+     {
+      "trecho": "ela subiu de 4,19% para 4,96% em outubro, uma alta de 0,77 ponto [c14]",
+      "problema": "Arredonde os números para a leitora.",
+      "como_fica": "ela subiu de 4,2% para 5% em outubro, uma alta de 0,8 ponto [c14]"
+     },
+     {
+      "trecho": "mas uma queda que não se sustenta tende a não mudar a conta dos bancos.",
+      "problema": "Frase que não se entende sozinha: 'a conta dos bancos' é vago. Diga o que os bancos fazem.",
+      "como_fica": "mas uma queda que não se sustenta tende a não mudar o que os bancos esperam."
+     },
+     {
+      "trecho": "Quedas de 4,60%, 7,8% e 6,78% já apareceram neste ano",
+      "problema": "Arredonde os números, igual ao começo do texto.",
+      "como_fica": "Quedas de 4,6%, 7,8% e 6,8% já apareceram neste ano"
+     },
+     {
+      "trecho": "mudar de patamar",
+      "problema": "Palavra de jornal de economia; use palavra de conversa.",
+      "como_fica": "mudar de nível"
+     }
+    ],
+    "aplicada": true
+   },
+   "titulo": "Quarta queda do petróleo por sinal de paz em 2026 deixa o barril mais caro que depois das de abril e maio",
+   "texto": "Neste ano, uma notícia de negociação entre os Estados Unidos e o Irã já derrubou o petróleo num dia só outras três vezes. Em abril, o Brent caiu 4,6% [c17]. Em maio, isso aconteceu duas vezes, com quedas de 7,8% [c3] e de 6,8% [c12]. Agora, na tarde de segunda-feira, o petróleo chegou a cair mais de 8%, com as negociações entre autoridades do Irã e do Catar [c1].\n\nO que importa é o preço em que o barril para depois da queda, porque é esse preço que chega ao combustível e à inflação. Mesmo depois de cair, o barril de agora está mais caro do que estava depois das quedas de abril e do fim de maio [c2, c17, c12]. Por isso o alívio no combustível e na inflação esperada depende de um acordo assinado, e esse acordo ainda não existe.\n\n### Depois de cair, o barril de hoje custa mais que o de abril e o de maio\n\nNa queda de abril, o Brent fechou a US$ 94,79 [c17]. Na do fim de maio, fechou a US$ 93,42 [c12]. Os dois preços eram o barril já com o alívio do dia.\n\nAgora, depois da queda forte e de mais uma baixa de 1,1% no dia seguinte, o Brent fechou a US$ 103,60 em 3/11 [c2]. Ou seja, o barril que acabou de cair por um sinal de paz custa uns 10 dólares a mais que os barris dos outros sinais de paz. No meio do caminho, só em outubro, o petróleo subiu mais de 14% [c13].\n\nEntre uma notícia e outra, o barril sobe e desce por muitos motivos, e por isso não dá para dizer que cada queda foi apagada logo em seguida. O que os preços mostram é que nenhuma delas pôs o barril num nível mais baixo que durasse. O próximo passo depende dos governos dos Estados Unidos e do Irã, uma causa de fora, e nenhuma decisão tomada no Brasil muda esse rumo.\n\n### O barril chega ao bolso pela bomba e pela inflação que os bancos esperam\n\nO primeiro caminho é a bomba, e ali o barril do dia muda pouco agora, porque quem decide o preço é a Petrobras, com o reajuste, e o governo, com o prazo do desconto. No fim de outubro, o diesel da Petrobras estava havia 145 dias sem reajuste [c7], e o governo dava um desconto de R$ 3,52 por litro no diesel importado [c8].\n\nEsse descompasso entre o barril e a bomba já apareceu neste ano. Em julho, a associação dos importadores de combustíveis (Abicom) disse que a queda do petróleo não aliviava o diesel e que a diferença para o preço lá fora abria a semana em 58% [c18]. Uma queda de um dia, sozinha, não mexe nessas duas decisões.\n\nO segundo caminho é a inflação que os bancos (Focus) esperam para os 12 meses seguintes. Se compararmos com julho, ela subiu de 4,2% para 5% em outubro, uma alta de 0,8 ponto [c14], no mesmo período em que o petróleo subia. Não dá para dizer quanto dessa alta veio do barril, mas uma queda que não se sustenta tende a não mudar o que os bancos esperam.\n\n### Quatro quedas numa mesma guerra mostram um padrão, não uma lei\n\nA melhor objeção diz que desta vez pode ser diferente. Agora há negociações entre autoridades do Irã e do Catar [c1], e, se elas terminarem num acordo, o barril pode mudar de nível, e não só cair num dia. Quem pensa assim lê a queda de quase 8% [c5] como o começo de uma descida que dura.\n\nHá uma segunda objeção, mais sutil. Mesmo sem acordo, cada rodada de conversa pode ir tirando do preço, em etapas, o medo de a guerra piorar. Os números disponíveis não separam essa leitura da outra, porque o barril também sobe por outros motivos entre uma notícia e a seguinte.\n\nSão só quatro casos, num só ano e numa só guerra, com os preços tirados de reportagens do dia. Eles mostram um padrão, mas não provam que a próxima conversa vai terminar como as outras.\n\nO que desmentiria esta leitura também é concreto: um acordo assinado e o Brent abaixo de US$ 94,79 e de US$ 93,42 por semanas, e não por um dia [c17, c12]. Se isso acontecer, fica mais fácil o governo reduzir o desconto no diesel sem a bomba subir, e a inflação esperada pelos bancos ganha motivo para parar de subir.\n\nPara quem vive do salário mínimo ou da aposentadoria, para quem paga financiamento e cartão e para quem tem dinheiro guardado, nada muda agora. O diesel da Petrobras segue segurado pelo desconto do governo, e o juro não muda por causa de uma queda de um dia [c7, c8].\n\nPor isso, a próxima manchete sobre o petróleo diz mais pelo que acontece na mesa de negociação do que pelo tamanho da queda. Quedas de 4,6%, 7,8% e 6,8% já apareceram neste ano [c17, c3, c12], e o barril de hoje, já com a queda, está acima de onde elas o deixaram [c2]. O IPCA de outubro, que o IBGE divulga em 12 de novembro, mede um mês em que o petróleo subiu mais de 14% [c13].",
+   "duracao_escrever_s": 198,
+   "tentativas": [
+    {
+     "em": "2026-11-09T17:08:09+00:00",
+     "resultado": "ok"
+    }
+   ],
+   "texto_corrigido_a_mao": {
+    "em": "2026-11-09T17:09:25+00:00",
+    "texto_antes": "Neste ano, uma notícia de negociação entre os Estados Unidos e o Irã já derrubou o petróleo num dia só outras três vezes. Em abril, o Brent caiu 4,6% [c17]. Em maio, isso aconteceu duas vezes, com quedas de 7,8% [c3] e de 6,8% [c12]. Agora, o petróleo caiu mais de 8% numa tarde, com as negociações entre autoridades do Irã e do Catar [c1].\n\nO que importa é o preço em que o barril para depois da queda, porque é esse preço que chega ao combustível e à inflação. Mesmo depois de cair, o barril de agora está mais caro do que estava depois das quedas de abril e do fim de maio [c2, c17, c12]. Por isso o alívio no combustível e na inflação esperada depende de um acordo assinado, e esse acordo ainda não existe.\n\n### Depois de cair, o barril de hoje custa mais que o de abril e o de maio\n\nNa queda de abril, o Brent fechou a US$ 94,79 [c17]. Na do fim de maio, fechou a US$ 93,42 [c12]. Os dois preços eram o barril já com o alívio do dia.\n\nAgora, depois da queda forte e de mais uma baixa de 1,1% no dia seguinte, o Brent fechou a US$ 103,60 em 3/11 [c2]. Ou seja, o barril que acabou de cair por um sinal de paz custa uns 10 dólares a mais que os barris dos outros sinais de paz. No meio do caminho, só em outubro, o petróleo subiu mais de 14% [c13].\n\nIsso não quer dizer que cada queda foi apagada logo em seguida, porque entre uma notícia e outra o barril sobe e desce por muitos motivos. Quer dizer que nenhuma delas pôs o preço num nível mais baixo que durasse. O próximo passo depende dos governos dos Estados Unidos e do Irã, uma causa de fora, e nenhuma decisão tomada no Brasil muda esse rumo.\n\n### O barril chega ao bolso pela bomba e pela inflação que os bancos esperam\n\nO primeiro caminho é a bomba, e ali o barril do dia pesa pouco agora, porque quem decide o preço é a Petrobras, com o reajuste, e o governo, com o prazo do desconto. No fim de outubro, o diesel da Petrobras estava havia 145 dias sem reajuste [c7], e o governo dava um desconto de R$ 3,52 por litro no diesel importado [c8].\n\nEsse descompasso entre o barril e a bomba já apareceu neste ano. Em julho, a associação dos importadores de combustíveis (Abicom) disse que a queda do petróleo não aliviava o diesel e que a diferença para o preço lá fora abria a semana em 58% [c18]. Uma queda de um dia, sozinha, não mexe nessas duas decisões.\n\nO segundo caminho é a inflação que os bancos (Focus) esperam para os 12 meses seguintes. Se compararmos com julho, ela subiu de 4,2% para 5% em outubro, uma alta de 0,8 ponto [c14], no mesmo período em que o petróleo subia. Não dá para dizer quanto dessa alta veio do barril, mas uma queda que não se sustenta tende a não mudar o que os bancos esperam.\n\n### Quatro quedas numa mesma guerra mostram um padrão, não uma lei\n\nA melhor objeção diz que desta vez pode ser diferente. Agora há negociações entre autoridades do Irã e do Catar [c1], e, se elas terminarem num acordo, o barril pode mudar de nível, e não só cair num dia. Quem pensa assim lê a queda de quase 8% [c5] como o começo de uma descida, e não como mais um susto ao contrário.\n\nHá uma segunda objeção, mais sutil. Mesmo sem acordo, cada rodada de conversa pode ir tirando do preço, em etapas, o medo de a guerra piorar. Os números disponíveis não separam essa leitura da outra, porque o barril também sobe por outros motivos entre uma notícia e a seguinte.\n\nA evidência é pequena, e convém dizer isso. São quatro casos num só ano e numa só guerra, com os preços tirados de reportagens do dia. Isso mostra um padrão, e não prova que a próxima conversa vai terminar como as outras.\n\nO que desmentiria esta leitura também é concreto: um acordo assinado e o Brent abaixo de US$ 94,79 e de US$ 93,42 por semanas, e não por um dia [c17, c12]. Se isso acontecer, fica mais fácil o governo reduzir o desconto no diesel sem a bomba subir, e a inflação esperada pelos bancos ganha motivo para parar de subir.\n\nPara quem vive do salário mínimo ou da aposentadoria, para quem paga financiamento e cartão e para quem tem dinheiro guardado, nada muda agora. O diesel da Petrobras segue segurado pelo desconto do governo, e o juro fica igual, porque uma queda de um dia não mexe na inflação esperada [c7, c8].\n\nPor isso, a próxima manchete sobre o petróleo diz mais pelo que acontece na mesa de negociação do que pelo tamanho da queda. Quedas de 4,6%, 7,8% e 6,8% já apareceram neste ano [c17, c3, c12], e o barril de hoje, já com a queda, está acima de onde elas o deixaram [c2]. O IPCA de outubro, que o IBGE divulga nesta quinta-feira, mede um mês em que o petróleo subiu mais de 14% [c13].",
+    "por_que": "9/11/2026, na nuvem: 'nesta quinta-feira' estava errado (o IPCA de outubro sai em 12/11, e 3/11 é terça); 'caiu mais de 8%' virou 'chegou a cair mais de 8%' (a fonte fala da tarde; o fechamento foi de quase 8%, como no post); três frases sem 'isto, não aquilo' e sem 'e convém dizer isso'; 'o juro fica igual, porque...' afirmava causa sem linha."
    }
   },
   "termina_em": "inflacao",
@@ -3670,7 +4058,8 @@
     "Em maio, um sinal parecido derrubou o barril 7,8%, mas o preço voltou a subir, com alta de mais de 14% em outubro. Por isso, o alívio depende do acordo."
    ]
   },
-  "revisao_manual": "2026-11-08: refeito a pedido do Pedro (fato do dia com o porquê): a pesquisa do dia, a mesma da leitura a fundo, passa ao redator o porquê e o e daí (curto do editor-chefe, refeito da pesquisa gravada com fundo.py --curto); regra do \"quem decidiu\"; teste do porquê; Opus no post, no editor e no teste. Mesmo programa da atualização (src/escreve_post.py), com os dados desta rodada. O texto anterior ficou em versao_anterior. 2026-11-09: refeito a pedido do Pedro (o fato do dia termina na vida de quem lê, com o tamanho da tabela de tradução, TRADUCAO.md): curto do editor-chefe refeito da pesquisa gravada, com as traduções do dia (src/conta.py traduz), e post pelo mesmo programa da atualização (src/escreve_post.py), com os mesmos dados."
+  "revisao_manual": "2026-11-08: refeito a pedido do Pedro (fato do dia com o porquê): a pesquisa do dia, a mesma da leitura a fundo, passa ao redator o porquê e o e daí (curto do editor-chefe, refeito da pesquisa gravada com fundo.py --curto); regra do \"quem decidiu\"; teste do porquê; Opus no post, no editor e no teste. Mesmo programa da atualização (src/escreve_post.py), com os dados desta rodada. O texto anterior ficou em versao_anterior. 2026-11-09: refeito a pedido do Pedro (o fato do dia termina na vida de quem lê, com o tamanho da tabela de tradução, TRADUCAO.md): curto do editor-chefe refeito da pesquisa gravada, com as traduções do dia (src/conta.py traduz), e post pelo mesmo programa da atualização (src/escreve_post.py), com os mesmos dados. 2026-11-09 (thread da leitura a fundo em todo post): saiu à mão a frase \"A queda cobre só 8,8% da diferença para o preço lá fora\", porque o 8,8% vem de uma conta de cenário (c21/c22) com o dólar e o barril de partida sem fonte (c21 não confere); o resto do post ficou igual.",
+  "pergunta": "inflacao-acima-da-meta"
  },
  "pauta": {
   "versao": 1,
