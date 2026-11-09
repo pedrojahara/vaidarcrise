@@ -3007,7 +3007,7 @@
   ],
   "fundo": {
    "versao": 3,
-   "ok": false,
+   "ok": true,
    "em": "2026-11-09T05:46:53-03:00",
    "voltas": [
     {
@@ -3138,6 +3138,80 @@
       },
       "pagina_que_falta": "Por que o preço da gasolina e do diesel no Brasil não acompanha o petróleo lá fora? Nenhuma página do básico explica a Petrobras, a subvenção e os impostos entre o barril e a bomba, e é isso que a leitora precisa para ler o fato."
      }
+    },
+    {
+     "volta": 3,
+     "teses": [],
+     "editor_chefe": {
+      "veredito": "aprova",
+      "menor": true,
+      "tese": "O preço do diesel no posto depende hoje de decisões com dono e data, e não do barril do dia: a ajuda de R$ 2,12 por litro, que a Fazenda renovou por 30 dias em 27/10 e que vence no fim de novembro, e o reajuste da Petrobras, que a Abicom espera gradual. A última medida da diferença para o preço lá fora (R$ 3,53 por litro, por volta de 23/10) é anterior a duas quedas de cerca de 8% do barril, e por isso ninguém sabe hoje quanto está represado. Na vez parecida, em março de 2023, uma decisão de data certa sobre a gasolina somou 0,39 ponto ao IPCA do mês.",
+      "testes": {
+       "nao_obvia": {
+        "ok": false,
+        "por_que": "O fato do dia já diz que o posto depende da Petrobras e da ajuda ao diesel. A tese menor ainda traz o que ele não diz: quem decide cada parte e quando, que a medida da diferença é anterior às duas quedas de 8% do barril, o imposto de exportação até 31/12 e a vez de 2023 com o tamanho que teve no IPCA."
+       },
+       "muda_algo": {
+        "ok": true,
+        "por_que": "A leitora passa a ler as próximas notícias de combustível pelo fim da ajuda no fim de novembro e pelo reajuste da Petrobras, e não pela cotação do barril. Também fica sabendo que o tamanho do que está represado não é conhecido hoje."
+       },
+       "pode_dar_errado": {
+        "ok": true,
+        "por_que": "Fica desmentida se o preço do diesel nas refinarias ou no posto mudar seguindo o barril sem que a Petrobras anuncie reajuste e sem mudança na ajuda do governo, ou se uma medida nova da Abicom mostrar que a diferença acabou."
+       },
+       "no_caderno": {
+        "ok": true,
+        "por_que": "A ajuda de R$ 2,12 por 30 dias está em c2, o fim no fim de novembro em c18, a diferença de R$ 3,53 e a data em c13, as quedas de 8% em c17, o reajuste gradual e a gasolina desonerada em c15, o imposto de exportação em c4 e o caso de 2023 em c19. Ficam fora o repasse hipotético de 10%, o peso de 2023 usado como peso de hoje e a comparação com os R$ 3,52, que contradiz c2."
+       },
+       "pela_meta": {
+        "ok": true,
+        "por_que": "não é decisão"
+       }
+      },
+      "roteiro": [
+       "Parte do que o fato do dia não diz: o barril caiu quase 8% em 1/11 e mais de 8% em 4/11 (c17) e reabriu quase parado hoje (c1), e mesmo assim o preço na bomba não andou com ele, porque o posto depende de duas decisões com data.",
+       "A primeira decisão é do governo: a Fazenda renovou por 30 dias, em 27/10, a ajuda de R$ 2,12 por litro de diesel (c2). Contados de 27/10, os 30 dias acabam no fim de novembro (c18), e a renovação depende de uma decisão nova. Dizer que a data exata depende da portaria.",
+       "A segunda é da Petrobras: o presidente da Abicom diz que o conselho tratou da diferença em 26/10 e que o ajuste deve ser gradual, e que a gasolina está desonerada (c15).",
+       "Uma terceira peça do governo mostra a mesma preocupação: o Gecex manteve até 31/12 o imposto de 12% sobre a exportação de petróleo, citando o risco de faltar diesel (c4).",
+       "O que ainda não se sabe, e por quê: a última medida da diferença para o preço de fora é de R$ 3,53 por litro, por volta de 23/10 (c13), antes das duas quedas do barril; em 31/3 eram R$ 3,05 no diesel e R$ 1,61 na gasolina (c16). A diferença de hoje provavelmente é menor, mas não há número, e não há medida da gasolina em outubro.",
+       "A vez parecida: em março de 2023, uma decisão de data certa, a volta do imposto federal, subiu a gasolina 8,33% e somou 0,39 ponto ao IPCA do mês (c19). É um caso só, e foi imposto de uma vez, não reajuste feito aos poucos: mostra o tamanho que uma decisão desse tipo já teve, não prevê o próximo.",
+       "A melhor objeção, da própria Abicom: com reajuste gradual e o barril mais barato, o represado pode ser bem menor do que a medida de outubro sugere (c15, c17).",
+       "A vida da leitora: nada muda hoje no posto; quem abastece com diesel, e quem depende de frete, sente se a ajuda não for renovada no fim de novembro ou se a Petrobras reajustar.",
+       "Fecha com o que desmentiria a leitura (preço mudando com o barril sem decisão da Petrobras nem do governo) e com as próximas datas como fato: IPCA de outubro em 12/11 e prévia de novembro em 26/11."
+      ],
+      "pressao": "inflacao",
+      "devolve": [],
+      "curto": {
+       "porque": "Segundo a Folha, a cotação do petróleo reabriu em leve queda mesmo com os ataques a navios perto de Ormuz. O Valor traz a declaração de um ministro do Iraque de que o país se entendeu com os EUA para exportar por Ormuz, o que aliviaria a oferta. As reportagens não dizem quanto da queda vem de cada coisa.",
+       "e_dai": "O diesel no posto depende de duas decisões com data, a ajuda de R$ 2,12 por litro que vence no fim de novembro e o reajuste da Petrobras, e não do barril.",
+       "vida": "Nada muda hoje no posto. O diesel só sobe para quem abastece e paga frete se a ajuda de R$ 2,12 por litro, que vence no fim de novembro, não for renovada ou se a Petrobras reajustar.",
+       "familias": [
+        {
+         "familia": "outra",
+         "quem": "Quem abastece com diesel e quem depende de frete, como transportadores e caminhoneiros",
+         "o_que_muda": "Nada muda agora; a ajuda de R$ 2,12 por litro renovada por 30 dias em 27/10 vence no fim de novembro, e o preço só muda se ela não for renovada ou se a Petrobras reajustar, o que a Abicom espera que seja feito aos poucos.",
+         "caderno": [
+          "c2",
+          "c18",
+          "c15"
+         ]
+        }
+       ],
+       "objetivo": "",
+       "condicao": "",
+       "caderno": [
+        "c1",
+        "c2",
+        "c18",
+        "c15",
+        "c13",
+        "c17"
+       ]
+      },
+      "pagina_que_falta": "Por que o preço da gasolina e do diesel no posto não acompanha o petróleo lá fora? Nenhuma página do site explica a política de preço da Petrobras, a defasagem e a ajuda do governo, e o fato de hoje depende disso."
+     },
+     "so_editor": true,
+     "em": "2026-11-09T17:02:40+00:00"
     }
    ],
    "meta": [
@@ -3222,6 +3296,86 @@
      ],
      "permission_denials": [],
      "session_id": "a800095b-9123-4acf-98db-c04203faea67"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "84b2e14dfec4c017cfd4d2619c91b435a13ecd5138651d033892ea3e68b4c75a",
+     "system_sha256": "c5be08712768743659e98821b6e7f488bfa371dda043cb56057e8de2f7121401",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.39122,
+     "turnos": 2,
+     "duracao_s": 40,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "c2e37a28-1e95-4936-8120-59e249a31c41"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "6f42e0e31282db3056723d5ad8b6c3868e806a7174490f835e748e78b652a886",
+     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.633372,
+     "turnos": 2,
+     "duracao_s": 52,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "98eaa08f-f798-4774-a7d5-aaeeac6ca59c"
+    },
+    {
+     "etapa": "conferencia",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "78afe47faf31825d6d48a9950295f1447345daff5dab1664be2277b7cb232cd8",
+     "system_sha256": "014db32c3a98cfd87cb62417008dbee3bc6c60858da38a9ac3f6069aa3aea5eb",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.152802,
+     "turnos": 2,
+     "duracao_s": 46,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "9416c9fa-8ff7-4309-884b-da3b5b03c40d"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "d9fe0bc7a1598a9d0425d7591b536674b5f094fe923dd8e7ae8301beac43ba89",
+     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.6092371999999999,
+     "turnos": 2,
+     "duracao_s": 27,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "a4f40871-e707-4606-bdc0-6f8475178ec8"
+    },
+    {
+     "etapa": "editor_fundo",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "7e5115c73712b54d219be66e277ac8f48d7cae8bb16e260ce1be8a350a69264c",
+     "system_sha256": "c051e15dfe2ba0240d641e7b2a26a2ab05de7d68718375f6bd3be448f44a878a",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.170414,
+     "turnos": 2,
+     "duracao_s": 34,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "3e351ff2-44ac-4152-9e0b-279eaafd65fd"
     }
    ],
    "offline": false,
@@ -3892,8 +4046,37 @@
     }
    ],
    "duracao_pensar_s": 349,
-   "duracao_s": 349,
+   "duracao_s": 513,
    "curto": {
+    "porque": "Segundo a Folha, a cotação do petróleo reabriu em leve queda mesmo com os ataques a navios perto de Ormuz. O Valor traz a declaração de um ministro do Iraque de que o país se entendeu com os EUA para exportar por Ormuz, o que aliviaria a oferta. As reportagens não dizem quanto da queda vem de cada coisa.",
+    "e_dai": "O diesel no posto depende de duas decisões com data, a ajuda de R$ 2,12 por litro que vence no fim de novembro e o reajuste da Petrobras, e não do barril.",
+    "vida": "Nada muda hoje no posto. O diesel só sobe para quem abastece e paga frete se a ajuda de R$ 2,12 por litro, que vence no fim de novembro, não for renovada ou se a Petrobras reajustar.",
+    "familias": [
+     {
+      "familia": "outra",
+      "quem": "Quem abastece com diesel e quem depende de frete, como transportadores e caminhoneiros",
+      "o_que_muda": "Nada muda agora; a ajuda de R$ 2,12 por litro renovada por 30 dias em 27/10 vence no fim de novembro, e o preço só muda se ela não for renovada ou se a Petrobras reajustar, o que a Abicom espera que seja feito aos poucos.",
+      "caderno": [
+       "c2",
+       "c18",
+       "c15"
+      ]
+     }
+    ],
+    "objetivo": "",
+    "condicao": "",
+    "caderno": [
+     "c1",
+     "c2",
+     "c18",
+     "c15",
+     "c13",
+     "c17"
+    ]
+   },
+   "pressao": "inflacao",
+   "pagina_que_falta": "Por que o preço da gasolina e do diesel no posto não acompanha o petróleo lá fora? Nenhuma página do site explica a política de preço da Petrobras, a defasagem e a ajuda do governo, e o fato de hoje depende disso.",
+   "curto_do_post": {
     "porque": "Segundo a Folha, a cotação do petróleo reabriu em leve queda mesmo com ataques a navios perto de Ormuz. A reportagem não diz o que puxou a queda. Ao Valor, um ministro do Iraque disse que o país chegou a um entendimento com os Estados Unidos para exportar por Ormuz. Na semana passada, o Valor atribuiu uma queda de mais de 8% do barril à expectativa de fim do conflito no Irã.",
     "e_dai": "O barril mais calmo não baixa a bomba sozinho: no fim de outubro, pela Abicom, o diesel da Petrobras estava R$ 3,53 por litro abaixo do preço de importação.",
     "vida": "Nada muda hoje na bomba, porque o preço depende da Petrobras e da subvenção ao diesel, renovada por 30 dias em 27/10; exemplo: gasolina 10% mais cara somaria cerca de 0,47 ponto ao IPCA.",
@@ -3910,10 +4093,208 @@
      "c21"
     ]
    },
-   "pressao": "inflacao",
-   "pagina_que_falta": "Por que o preço da gasolina e do diesel no Brasil não acompanha o petróleo lá fora? Nenhuma página do básico explica a Petrobras, a subvenção e os impostos entre o barril e a bomba, e é isso que a leitora precisa para ler o fato.",
-   "erro": "sem achado: o editor-chefe não aprovou tese",
-   "sem_achado": true
+   "tese": "O preço do diesel no posto depende hoje de decisões com dono e data, e não do barril do dia: a ajuda de R$ 2,12 por litro, que a Fazenda renovou por 30 dias em 27/10 e que vence no fim de novembro, e o reajuste da Petrobras, que a Abicom espera gradual. A última medida da diferença para o preço lá fora (R$ 3,53 por litro, por volta de 23/10) é anterior a duas quedas de cerca de 8% do barril, e por isso ninguém sabe hoje quanto está represado. Na vez parecida, em março de 2023, uma decisão de data certa sobre a gasolina somou 0,39 ponto ao IPCA do mês.",
+   "menor": true,
+   "rascunho": {
+    "titulo": "O diesel no posto depende de duas decisões com data marcada, e não do barril que cai lá fora",
+    "texto": "Em uma semana, o barril de petróleo caiu duas vezes: quase 8% em 1/11 e mais de 8% em 4/11 [c17]. Hoje ele reabriu quase parado, mesmo com navios atacados perto de Ormuz [c1]. O preço do diesel no posto não acompanhou nenhum desses movimentos, porque hoje ele depende de duas decisões que têm dono e data, e não do barril do dia.\n\nA primeira é a ajuda do governo de R$ 2,12 por litro de diesel, que o Ministério da Fazenda renovou por 30 dias em 27/10 e que vence perto do fim de novembro [c2, c18]. A segunda é o reajuste da Petrobras, que a associação dos importadores de combustíveis (Abicom) espera que venha aos poucos [c15]. Falta uma peça: a última medida da diferença entre o diesel daqui e o preço lá fora é de antes das duas quedas do barril, e por isso ninguém sabe hoje quanto preço está represado.\n\n### O governo decide a primeira parte, e o prazo dela acaba no fim de novembro\n\nContados a partir de 27/10, os 30 dias da renovação terminam por volta de 26 de novembro [c18]. A data exata depende do texto da portaria. Depois disso, a ajuda só continua se a Fazenda tomar uma decisão nova, e sem ela o diesel deixa de ter os R$ 2,12 por litro que hoje seguram o preço.\n\nO tamanho da decisão aparece na notícia da renovação: a ajuda custa R$ 10,5 bilhões no período e é paga com receitas extraordinárias do petróleo [c3]. Ou seja, o dinheiro que sustenta o desconto vem do próprio petróleo caro, e a conta muda se o barril seguir caindo.\n\nUma terceira decisão mostra que o governo continua preocupado com o diesel. Em 5/11, a pedido da Fazenda, o comitê do governo que cuida do comércio exterior manteve até 31/12 o imposto de 12% sobre o petróleo exportado [c4]. O motivo que ele deu foi o risco de faltar no país o que se faz com o petróleo, \"principalmente o diesel\" [c4].\n\nA outra metade do preço é da Petrobras. Segundo o presidente da Abicom, o conselho da empresa se reuniu em 26/10 para tratar da diferença para o preço lá fora, e o ajuste deve ser gradual [c15]. Ele lembrou também que a gasolina está desonerada [c15]. Isso quer dizer que o preço da gasolina também depende de uma decisão do governo, a de quando voltar a cobrar o imposto.\n\n### Ninguém sabe hoje quanto preço está represado, porque a última medida é antiga\n\nA Abicom mediu a diferença do diesel em R$ 3,53 por litro, na semana de 23/10 [c13]. Em 31/3, logo depois de começar a guerra contra o Irã, ela era de R$ 3,05 no diesel e de R$ 1,61 na gasolina [c16]. Ou seja, até outubro a diferença do diesel tinha aumentado, apesar da ajuda do governo.\n\nDepois daquela medida, porém, o barril caiu duas vezes perto de 8% [c17]. É provável que a diferença de hoje seja menor que R$ 3,53, mas não há número novo, e para a gasolina não há medida de outubro. Quem diz que um reajuste grande está a caminho e quem diz que não haverá reajuste nenhum está, por enquanto, sem conta atualizada para mostrar.\n\nA melhor objeção vem da própria Abicom. Se a Petrobras ajustar aos poucos e o barril continuar mais barato, o preço represado pode ser bem menor do que a medida de outubro sugere [c15, c17]. Nesse caso, a decisão da empresa pode ser pequena ou até desnecessária, e a única data que pesa de verdade na bomba passa a ser o fim da ajuda.\n\n### Em março de 2023, uma decisão com data certa somou 0,39 ponto à inflação do mês\n\nJá houve uma vez parecida. Em março de 2023, a volta dos impostos federais sobre a gasolina, numa data que se conhecia antes, fez o preço dela subir 8,33% no mês [c19]. Só esse aumento somou 0,39 ponto ao IPCA de março [c19].\n\nO caso mostra o tamanho que uma decisão desse tipo já teve. Ele não prevê a próxima, por três razões. É um caso só, foi um imposto cobrado de uma vez, e não um reajuste feito aos poucos, e foi na gasolina, que tem peso diferente do diesel na inflação. O que ele deixa claro é que, quando o preço do combustível é segurado por decisão, ele costuma mudar de uma vez, no dia da decisão.\n\nPara quem abastece com diesel e para quem depende de frete, como transportadores e caminhoneiros, nada muda agora no posto. A ajuda de R$ 2,12 por litro segue valendo até perto de 26 de novembro [c2, c18]. O preço só sobe se ela não for renovada ou se a Petrobras reajustar, e a Abicom espera que esse reajuste venha aos poucos [c15]. Como o frete entra no preço de quase tudo que chega ao mercado, o efeito, se vier, demora algumas semanas para aparecer nas prateleiras.\n\nEsta leitura estaria errada se o preço na bomba começasse a seguir o barril sem uma decisão nova da Petrobras ou do governo. Até agora isso não aconteceu: o barril caiu duas vezes e o preço no posto ficou onde as decisões o deixaram.\n\nPara você, isso muda o jeito de ler a próxima notícia sobre o petróleo. Um barril mais barato não chega ao posto sozinho. O que mexe no diesel nas próximas semanas é o que a Fazenda decidir sobre a ajuda até o fim de novembro e o que a Petrobras decidir sobre o preço dela. O IBGE divulga a inflação de outubro em 12/11 e a prévia da inflação de novembro em 26/11, perto do dia em que a ajuda vence."
+   },
+   "conferencia": {
+    "codigo_antes": {
+     "graves": [
+      "bloco 1: número ou data sem linha do caderno que confira: 1/11, 4/11 | trecho: Em uma semana, o barril de petróleo caiu duas vezes: quase 8% em 1/11 e mais de 8% em 4/11. Hoje ele reabriu quase parad",
+      "bloco 2: número ou data sem linha do caderno que confira: 27/10 | trecho: A primeira é a ajuda do governo de R$ 2,12 por litro de diesel, que o Ministério da Fazenda renovou por 30 dias em 27/10",
+      "bloco 4: número ou data sem linha do caderno que confira: 27/10 | trecho: Contados a partir de 27/10, os 30 dias da renovação terminam por volta de 26 de novembro. A data exata depende do texto ",
+      "bloco 6: número ou data sem linha do caderno que confira: 5/11 | trecho: Uma terceira decisão mostra que o governo continua preocupado com o diesel. Em 5/11, a pedido da Fazenda, o comitê do go",
+      "bloco 7: número ou data sem linha do caderno que confira: 26/10 | trecho: A outra metade do preço é da Petrobras. Segundo o presidente da Abicom, o conselho da empresa se reuniu em 26/10 para tr",
+      "bloco 9: número ou data sem linha do caderno que confira: 23/10, 31/3 | trecho: A Abicom mediu a diferença do diesel em R$ 3,53 por litro, na semana de 23/10. Em 31/3, logo depois de começar a guerra "
+     ],
+     "avisos": [
+      "c3 vem de site fora da lista de fontes conhecidas: https://brasil.perfil.com/carros/governo-mantem-subsidio-ao-diesel-de-r-212-por-mais-30-dias.phtml",
+      "c13 vem de site fora da lista de fontes conhecidas: https://mercadoeconsumo.com.br/27/10/2026/economia/abicom-reeleicao-de-lula-vai-fazer-petrobras-arrumar-a-casa-com-reajuste-gradual-de-preco/",
+      "c16 vem de site fora da lista de fontes conhecidas: https://www.abegas.org.br/arquivos/99690"
+     ],
+     "palavras": 884,
+     "intertitulos": 3
+    },
+    "ia": {
+     "resumo": "O texto segue o caderno na maior parte, mas tem frases sem linha ou mais fortes que a evidência. Elas são: o preço no posto que \"não acompanhou\" o barril, a Petrobras com \"data marcada\", a causa da guerra, a \"objeção da Abicom\", o frete, o caso de 2023 dito como regra e as datas do IBGE. As fontes c3, c13 e c16 estão fora da lista conhecida, e o código já avisou. O editor do site deve olhar essas três antes de publicar.",
+     "graves": [
+      "A tese diz que o preço do diesel no posto não acompanhou as quedas do barril, mas nenhuma linha do caderno mostra o preço na bomba. Só há a diferença de preço da Abicom, de 23/10, e a renovação da ajuda. A frase aparece no 1º parágrafo e no fecho."
+     ],
+     "correcoes": [
+      {
+       "trecho": "O diesel no posto depende de duas decisões com data marcada, e não do barril que cai lá fora",
+       "tipo": "forca",
+       "problema": "Só a ajuda do governo tem prazo no caderno (c2, c18). O reajuste da Petrobras não tem data.",
+       "como_fica": "O diesel no posto depende de duas decisões, a da ajuda do governo e a da Petrobras, e não do barril que cai lá fora"
+      },
+      {
+       "trecho": "Hoje ele reabriu quase parado, mesmo com navios atacados perto de Ormuz [c1]. O preço do diesel no posto não acompanhou nenhum desses movimentos, porque hoje ele depende de duas decisões que têm dono e data, e não do barril do dia.",
+       "tipo": "fonte",
+       "problema": "c1 diz leve queda. Nenhuma linha mostra o preço do diesel no posto nem que ele não se mexeu. A Petrobras não tem data marcada.",
+       "como_fica": "Hoje ele reabriu em leve queda, mesmo com navios atacados perto de Ormuz [c1]. O preço do diesel no posto depende hoje de duas decisões que têm dono, a da ajuda do governo, com prazo, e a da Petrobras, e não do barril do dia."
+      },
+      {
+       "trecho": "Ou seja, o dinheiro que sustenta o desconto vem do próprio petróleo caro, e a conta muda se o barril seguir caindo.",
+       "tipo": "forca",
+       "problema": "c3 diz só que a ajuda é paga com receitas extraordinárias do petróleo. Que a conta mude com a queda do barril é inferência sem linha.",
+       "como_fica": "A ajuda é paga com receitas extraordinárias do petróleo [c3]."
+      },
+      {
+       "trecho": "A outra metade do preço é da Petrobras.",
+       "tipo": "numero",
+       "problema": "Nenhuma linha dá a fatia do preço que cabe à Petrobras. \"Metade\" é número inventado.",
+       "como_fica": "A outra parte do preço é decisão da Petrobras."
+      },
+      {
+       "trecho": "Isso quer dizer que o preço da gasolina também depende de uma decisão do governo, a de quando voltar a cobrar o imposto.",
+       "tipo": "forca",
+       "problema": "c15 só diz que a gasolina está desonerada. Não diz que o governo vai voltar a cobrar o imposto.",
+       "como_fica": "Isso quer dizer que a gasolina segue sem o imposto, e voltar a cobrá-lo seria uma decisão do governo [c15]."
+      },
+      {
+       "trecho": "Em 31/3, logo depois de começar a guerra contra o Irã, ela era de R$ 3,05 no diesel e de R$ 1,61 na gasolina [c16]. Ou seja, até outubro a diferença do diesel tinha aumentado, apesar da ajuda do governo.",
+       "tipo": "fonte",
+       "problema": "c16 não diz quando a guerra começou, nem que havia ajuda em março. O \"apesar da ajuda\" não tem linha.",
+       "como_fica": "Em 31/3, a diferença era de R$ 3,05 no diesel e de R$ 1,61 na gasolina [c16]. Na semana de 23/10, a do diesel era de R$ 3,53 [c13]."
+      },
+      {
+       "trecho": "É provável que a diferença de hoje seja menor que R$ 3,53, mas não há número novo",
+       "tipo": "forca",
+       "problema": "A probabilidade não tem linha no caderno. O caderno só mostra que o barril caiu depois da medida.",
+       "como_fica": "A diferença de hoje pode ser menor que R$ 3,53, mas não há número novo"
+      },
+      {
+       "trecho": "A melhor objeção vem da própria Abicom. Se a Petrobras ajustar aos poucos e o barril continuar mais barato, o preço represado pode ser bem menor do que a medida de outubro sugere [c15, c17]. Nesse caso, a decisão da empresa pode ser pequena ou até desnecessária, e a única data que pesa de verdade na bomba passa a ser o fim da ajuda.",
+       "tipo": "fonte",
+       "problema": "c15 diz só que a Abicom espera ajuste gradual. A objeção não é dela. A frase \"pode ser desnecessária\" e a \"única data que pesa\" não têm linha.",
+       "como_fica": "Uma objeção possível: se a Petrobras ajustar aos poucos e o barril continuar mais barato, o preço represado pode ser menor do que a medida de outubro sugere [c13, c15, c17]. Ainda não há número novo para dizer quanto."
+      },
+      {
+       "trecho": "a volta dos impostos federais sobre a gasolina, numa data que se conhecia antes, fez o preço dela subir 8,33% no mês [c19].",
+       "tipo": "fonte",
+       "problema": "c19 fala da volta do PIS/Cofins, e não de \"impostos federais\". Não diz que a data era conhecida antes. Dá a alta de 8,33% da gasolina, sem provar que o imposto a causou sozinho.",
+       "como_fica": "a volta do PIS/Cofins sobre a gasolina veio com alta de 8,33% no preço dela no mês [c19]."
+      },
+      {
+       "trecho": "É um caso só, foi um imposto cobrado de uma vez, e não um reajuste feito aos poucos, e foi na gasolina, que tem peso diferente do diesel na inflação. O que ele deixa claro é que, quando o preço do combustível é segurado por decisão, ele costuma mudar de uma vez, no dia da decisão.",
+       "tipo": "forca",
+       "problema": "Um só caso não sustenta \"costuma\", e a frase contradiz a ressalva anterior. O peso do diesel não tem linha no caderno.",
+       "como_fica": "É um caso só, foi um imposto cobrado de uma vez, e não um reajuste feito aos poucos, e foi na gasolina. Ele mostra o tamanho que uma decisão assim já teve uma vez, e não diz que a próxima será igual."
+      },
+      {
+       "trecho": "O preço só sobe se ela não for renovada ou se a Petrobras reajustar, e a Abicom espera que esse reajuste venha aos poucos [c15]. Como o frete entra no preço de quase tudo que chega ao mercado, o efeito, se vier, demora algumas semanas para aparecer nas prateleiras.",
+       "tipo": "forca",
+       "problema": "\"Só\" exclui outras causas sem linha. O repasse do frete e o prazo de \"algumas semanas\" não estão no caderno.",
+       "como_fica": "O preço pode subir se ela não for renovada ou se a Petrobras reajustar, e a Abicom espera que esse reajuste venha aos poucos [c15]."
+      },
+      {
+       "trecho": "Até agora isso não aconteceu: o barril caiu duas vezes e o preço no posto ficou onde as decisões o deixaram.",
+       "tipo": "fonte",
+       "problema": "Nenhuma linha do caderno traz o preço no posto.",
+       "como_fica": "Até agora o caderno não traz preço novo na bomba para dizer se isso aconteceu."
+      },
+      {
+       "trecho": "O IBGE divulga a inflação de outubro em 12/11 e a prévia da inflação de novembro em 26/11, perto do dia em que a ajuda vence.",
+       "tipo": "data",
+       "problema": "As duas datas de divulgação do IBGE não têm linha no caderno.",
+       "como_fica": ""
+      }
+     ]
+    },
+    "aplicadas": 13,
+    "codigo": {
+     "graves": [
+      "bloco 1: número ou data sem linha do caderno que confira: 1/11, 4/11 | trecho: Em uma semana, o barril de petróleo caiu duas vezes: quase 8% em 1/11 e mais de 8% em 4/11. Hoje ele reabriu em leve que",
+      "bloco 2: número ou data sem linha do caderno que confira: 27/10 | trecho: A primeira é a ajuda do governo de R$ 2,12 por litro de diesel, que o Ministério da Fazenda renovou por 30 dias em 27/10",
+      "bloco 4: número ou data sem linha do caderno que confira: 27/10 | trecho: Contados a partir de 27/10, os 30 dias da renovação terminam por volta de 26 de novembro. A data exata depende do texto ",
+      "bloco 6: número ou data sem linha do caderno que confira: 5/11 | trecho: Uma terceira decisão mostra que o governo continua preocupado com o diesel. Em 5/11, a pedido da Fazenda, o comitê do go",
+      "bloco 7: número ou data sem linha do caderno que confira: 26/10 | trecho: A outra parte do preço é decisão da Petrobras. Segundo o presidente da Abicom, o conselho da empresa se reuniu em 26/10 ",
+      "bloco 9: número ou data sem linha do caderno que confira: 23/10, 31/3 | trecho: A Abicom mediu a diferença do diesel em R$ 3,53 por litro, na semana de 23/10. Em 31/3, a diferença era de R$ 3,05 no di"
+     ],
+     "avisos": [
+      "o texto tem 756 palavras (o tamanho é de 800 a 1500)",
+      "c3 vem de site fora da lista de fontes conhecidas: https://brasil.perfil.com/carros/governo-mantem-subsidio-ao-diesel-de-r-212-por-mais-30-dias.phtml",
+      "c13 vem de site fora da lista de fontes conhecidas: https://mercadoeconsumo.com.br/27/10/2026/economia/abicom-reeleicao-de-lula-vai-fazer-petrobras-arrumar-a-casa-com-reajuste-gradual-de-preco/",
+      "c16 vem de site fora da lista de fontes conhecidas: https://www.abegas.org.br/arquivos/99690",
+      "siglas que a leitora não conhece, sem nome por extenso ou link: PIS"
+     ],
+     "palavras": 756,
+     "intertitulos": 3
+    },
+    "codigo_depois_da_reescrita": {
+     "graves": [],
+     "avisos": [
+      "c3 vem de site fora da lista de fontes conhecidas: https://brasil.perfil.com/carros/governo-mantem-subsidio-ao-diesel-de-r-212-por-mais-30-dias.phtml",
+      "c13 vem de site fora da lista de fontes conhecidas: https://mercadoeconsumo.com.br/27/10/2026/economia/abicom-reeleicao-de-lula-vai-fazer-petrobras-arrumar-a-casa-com-reajuste-gradual-de-preco/",
+      "c16 vem de site fora da lista de fontes conhecidas: https://www.abegas.org.br/arquivos/99690",
+      "bloco 2: frase de 36 palavras"
+     ],
+     "palavras": 864,
+     "intertitulos": 3
+    },
+    "final": {
+     "graves": [],
+     "avisos": [
+      "o texto tem 777 palavras (o tamanho é de 800 a 1500)",
+      "c13 vem de site fora da lista de fontes conhecidas: https://mercadoeconsumo.com.br/27/10/2026/economia/abicom-reeleicao-de-lula-vai-fazer-petrobras-arrumar-a-casa-com-reajuste-gradual-de-preco/",
+      "c16 vem de site fora da lista de fontes conhecidas: https://www.abegas.org.br/arquivos/99690"
+     ],
+     "palavras": 777,
+     "intertitulos": 3
+    }
+   },
+   "edicao": {
+    "sugestoes": [
+     {
+      "trecho": "Falta ainda uma peça: a última medida da diferença entre o diesel daqui e o preço lá fora é de antes das duas quedas do barril, e por isso ninguém sabe hoje quanto preço está represado.",
+      "problema": "Frase de 36 palavras; o limite é 30. Dividir, ligando com \"Por isso\".",
+      "como_fica": "Falta ainda uma peça: a última medida da diferença entre o diesel daqui e o preço lá fora é de antes das duas quedas do barril. Por isso ninguém sabe hoje quanto preço está represado."
+     },
+     {
+      "trecho": "Esta leitura estaria errada se o preço do diesel começasse a seguir o barril",
+      "problema": "O guia não usa \"errou/errada\": o acerto só se sabe depois. Dizer o que faria a leitura mudar.",
+      "como_fica": "Esta leitura muda se o preço do diesel começar a seguir o barril sem uma decisão nova da Petrobras ou do governo."
+     },
+     {
+      "trecho": "Uma terceira decisão mostra que o governo continua preocupado com o diesel.",
+      "problema": "Atribui intenção ao governo; o motivo já vem na frase seguinte, dito por quem decidiu.",
+      "como_fica": "Uma terceira decisão também mexe com o diesel."
+     },
+     {
+      "trecho": "É um caso só, foi um imposto cobrado de uma vez, e não um reajuste feito aos poucos, e foi na gasolina, e não no diesel.",
+      "problema": "Troca em espelho (\"X, e não Y\") e frases empilhadas; ligar numa frase com o que muda no caso de hoje.",
+      "como_fica": "É um caso só, de um imposto cobrado de uma vez sobre a gasolina, enquanto o diesel hoje depende de um reajuste que a Abicom espera gradual."
+     },
+     {
+      "trecho": "A objeção é razoável, e ainda não há número novo para dizer de quanto seria a diferença.",
+      "problema": "\"Razoável\" é adjetivo de juízo; o texto pesa a objeção sem dizer qual lado tem razão.",
+      "como_fica": "Ainda não há número novo para dizer de quanto seria a diferença."
+     },
+     {
+      "trecho": "Ou seja, de março a outubro a diferença do diesel cresceu.",
+      "problema": "Número sem os dois valores perto da afirmação; a leitora não precisa voltar à frase anterior.",
+      "como_fica": "Ou seja, de março a outubro a diferença do diesel cresceu, de R$ 3,05 para R$ 3,53."
+     }
+    ],
+    "aplicada": true
+   },
+   "titulo": "O preço do diesel no posto depende de duas decisões com prazo, a ajuda do governo e o reajuste da Petrobras",
+   "texto": "Em poucos dias, o barril de petróleo caiu duas vezes, e nas duas a queda chegou perto de 8% [c17]. Na reabertura do mercado, ele caiu de leve, mesmo com navios atacados perto de Ormuz [c1]. Mas o barril mais barato não chega ao posto sozinho, porque o preço do diesel no Brasil depende hoje de duas decisões que têm dono e prazo.\n\nA primeira é a ajuda do governo de R$ 2,12 por litro de diesel, que o Ministério da Fazenda renovou por 30 dias e que vence perto do fim de novembro [c2, c18]. A segunda é o reajuste da Petrobras, que a associação dos importadores de combustíveis (Abicom) espera que venha aos poucos [c15]. A última medida da diferença entre o diesel daqui e o preço lá fora é de antes das duas quedas do barril, e por isso ninguém sabe hoje quanto preço está represado.\n\n### O governo decide a primeira parte, e o prazo dela acaba no fim de novembro\n\nContados a partir da portaria de renovação, no fim de outubro, os 30 dias terminam por volta de 26 de novembro [c18]. A data exata depende do texto da portaria. Depois disso, a ajuda só continua se a Fazenda tomar uma decisão nova, e sem ela o diesel perde os R$ 2,12 por litro que hoje seguram o preço [c2].\n\nUma terceira decisão também mexe com o diesel. A pedido da Fazenda, o comitê do governo que cuida do comércio exterior manteve até 31 de dezembro o imposto de 12% sobre o petróleo exportado [c4]. O motivo dado foi o risco de faltar no país o que se faz com o petróleo, \"principalmente o diesel\" [c4].\n\nA outra parte do preço é decisão da Petrobras. Segundo o presidente da Abicom, o conselho da empresa se reuniu logo depois da eleição para tratar da diferença para o preço lá fora, e o ajuste deve ser gradual [c15]. Ele lembrou também que a gasolina está desonerada, ou seja, segue sem parte do imposto [c15].\n\n### Ninguém sabe hoje quanto preço está represado, porque a última medida é antiga\n\nNo fim de outubro, a Abicom mediu a diferença do diesel nas refinarias da Petrobras em R$ 3,53 por litro abaixo do preço de importação [c13]. No fim de março, a diferença era de R$ 3,05 no diesel e de R$ 1,61 na gasolina [c16]. Ou seja, de março a outubro a diferença do diesel cresceu, de R$ 3,05 para R$ 3,53.\n\nDepois da medida de outubro, porém, o barril caiu duas vezes perto de 8% [c17]. A diferença de hoje pode ser menor que R$ 3,53, mas não há número novo, e para a gasolina não há medida de outubro.\n\nA melhor objeção a esta leitura parte do que a própria Abicom espera, que é um ajuste feito aos poucos. Se for assim e o barril continuar mais barato, o preço represado pode ser bem menor do que a medida de outubro sugere, e o reajuste pode nem pesar no posto [c13, c15, c17].\n\n### Em março de 2023, uma decisão com data certa somou 0,39 ponto à inflação do mês\n\nJá houve uma vez parecida. Em março de 2023, o imposto federal sobre a gasolina voltou a ser cobrado, e o preço dela subiu 8,33% no mês [c19]. Só esse aumento somou 0,39 ponto ao IPCA de março [c19].\n\nO caso mostra o tamanho que uma decisão desse tipo já teve, mas não prevê a próxima. É um caso só, de um imposto cobrado de uma vez sobre a gasolina, enquanto o diesel hoje depende de um reajuste que a Abicom espera gradual. O que ele ensina é que, quando o preço do combustível depende de uma decisão com data, a mudança chega de uma vez no dia em que a decisão sai.\n\nPara quem abastece com diesel e para quem depende de frete, como transportadores e caminhoneiros, nada muda agora no posto. A ajuda de R$ 2,12 por litro segue valendo até perto de 26 de novembro [c2, c18]. O preço pode subir se ela não for renovada ou se a Petrobras reajustar, e a Abicom espera que esse reajuste venha aos poucos [c15]. Quando o frete sobe, o custo chega depois aos produtos que viajam de caminhão até o mercado.\n\nEsta leitura muda se o preço do diesel começar a seguir o barril sem uma decisão nova da Petrobras ou do governo. Enquanto isso não acontece, as duas decisões continuam sendo o que move o preço.\n\nPara você, isso muda o jeito de ler a próxima notícia sobre o petróleo. Um barril mais barato lá fora não quer dizer diesel mais barato aqui, e um barril mais caro também não quer dizer alta no posto no dia seguinte. O que mexe no diesel nas próximas semanas é o que a Fazenda decidir sobre a ajuda até o fim de novembro e o que a Petrobras decidir sobre o preço dela. Na quinta-feira, o IBGE divulga o IPCA de outubro, e a prévia da inflação de novembro sai no fim do mês.",
+   "duracao_escrever_s": 164,
+   "tentativas": [
+    {
+     "em": "2026-11-09T17:05:24+00:00",
+     "resultado": "ok"
+    }
+   ],
+   "texto_corrigido_a_mao": {
+    "em": "2026-11-09T17:06:44+00:00",
+    "titulo_antes": "O diesel no posto depende da ajuda do governo e do reajuste da Petrobras, e não do barril que cai lá fora",
+    "texto_antes": "Em poucos dias, o barril de petróleo caiu duas vezes, e nas duas a queda chegou perto de 8% [c17]. Hoje ele reabriu em leve queda, mesmo com navios atacados perto de Ormuz [c1]. Mas o barril mais barato não chega ao posto sozinho, porque o preço do diesel no Brasil depende hoje de duas decisões que têm dono e prazo.\n\nA primeira é a ajuda do governo de R$ 2,12 por litro de diesel, que o Ministério da Fazenda renovou por 30 dias e que vence perto do fim de novembro [c2, c18]. A segunda é o reajuste da Petrobras, que a associação dos importadores de combustíveis (Abicom) espera que venha aos poucos [c15]. Falta ainda uma peça: a última medida da diferença entre o diesel daqui e o preço lá fora é de antes das duas quedas do barril. Por isso ninguém sabe hoje quanto preço está represado.\n\n### O governo decide a primeira parte, e o prazo dela acaba no fim de novembro\n\nContados a partir da portaria de renovação, no fim de outubro, os 30 dias terminam por volta de 26 de novembro [c18]. A data exata depende do texto da portaria. Depois disso, a ajuda só continua se a Fazenda tomar uma decisão nova, e sem ela o diesel perde os R$ 2,12 por litro que hoje seguram o preço [c2].\n\nO tamanho da decisão aparece na notícia da renovação: a ajuda custa R$ 10,5 bilhões no período e é paga com receitas extraordinárias do petróleo [c3]. Isso quer dizer que, enquanto o petróleo vendido para fora rende mais, o governo tem de onde tirar o dinheiro da ajuda.\n\nUma terceira decisão também mexe com o diesel. A pedido da Fazenda, o comitê do governo que cuida do comércio exterior manteve até 31 de dezembro o imposto de 12% sobre o petróleo exportado [c4]. O motivo dado foi o risco de faltar no país o que se faz com o petróleo, \"principalmente o diesel\" [c4].\n\nA outra parte do preço é decisão da Petrobras. Segundo o presidente da Abicom, o conselho da empresa se reuniu logo depois da eleição para tratar da diferença para o preço lá fora, e o ajuste deve ser gradual [c15]. Ele lembrou também que a gasolina está desonerada, ou seja, segue sem parte do imposto [c15].\n\n### Ninguém sabe hoje quanto preço está represado, porque a última medida é antiga\n\nNo fim de outubro, a Abicom mediu a diferença do diesel nas refinarias da Petrobras em R$ 3,53 por litro, quase o mesmo valor da ajuda do governo, de R$ 3,52 naquela conta [c13, c14]. No fim de março, a diferença era de R$ 3,05 no diesel e de R$ 1,61 na gasolina [c16]. Ou seja, de março a outubro a diferença do diesel cresceu, de R$ 3,05 para R$ 3,53.\n\nDepois da medida de outubro, porém, o barril caiu duas vezes perto de 8% [c17]. A diferença de hoje pode ser menor que R$ 3,53, mas não há número novo, e para a gasolina não há medida de outubro. Quem diz que um reajuste grande está a caminho e quem diz que não haverá reajuste nenhum está, por enquanto, sem conta atualizada para mostrar.\n\nA melhor objeção vem da própria Abicom. Se a Petrobras ajustar aos poucos e o barril continuar mais barato, o preço represado pode ser bem menor do que a medida de outubro sugere, e o reajuste pode nem pesar no posto [c13, c15, c17]. Ainda não há número novo para dizer de quanto seria a diferença.\n\n### Em março de 2023, uma decisão com data certa somou 0,39 ponto à inflação do mês\n\nJá houve uma vez parecida. Em março de 2023, o imposto federal sobre a gasolina voltou a ser cobrado, e o preço dela subiu 8,33% no mês [c19]. Só esse aumento somou 0,39 ponto ao IPCA de março [c19].\n\nO caso mostra o tamanho que uma decisão desse tipo já teve, mas não prevê a próxima. É um caso só, de um imposto cobrado de uma vez sobre a gasolina, enquanto o diesel hoje depende de um reajuste que a Abicom espera gradual. O que ele ensina é que, quando o preço do combustível depende de uma decisão com data, a mudança chega de uma vez no dia em que a decisão sai.\n\nPara quem abastece com diesel e para quem depende de frete, como transportadores e caminhoneiros, nada muda agora no posto. A ajuda de R$ 2,12 por litro segue valendo até perto de 26 de novembro [c2, c18]. O preço pode subir se ela não for renovada ou se a Petrobras reajustar, e a Abicom espera que esse reajuste venha aos poucos [c15]. Quando o frete sobe, o custo chega depois aos produtos que viajam de caminhão até o mercado.\n\nEsta leitura muda se o preço do diesel começar a seguir o barril sem uma decisão nova da Petrobras ou do governo. Enquanto isso não acontece, as duas decisões continuam sendo o que move o preço.\n\nPara você, isso muda o jeito de ler a próxima notícia sobre o petróleo. Um barril mais barato lá fora não quer dizer diesel mais barato aqui, e um barril mais caro também não quer dizer alta no posto no dia seguinte. O que mexe no diesel nas próximas semanas é o que a Fazenda decidir sobre a ajuda até o fim de novembro e o que a Petrobras decidir sobre o preço dela. Na quinta-feira, o IBGE divulga o IPCA de outubro, e a prévia da inflação de novembro sai no fim do mês.",
+    "por_que": "9/11/2026, na nuvem: saíram o custo de R$ 10,5 bilhões (o trecho da fonte não traz o número e as fontes divergem), a ajuda de R$ 3,52 da conta da Abicom (contradiz os R$ 2,12 da portaria), a frase sobre quem diz o quê sem fonte e uma repetição; 'hoje reabriu' virou 'na reabertura do mercado' (a reabertura foi no domingo); título e duas frases sem rótulo seguido de explicação."
+   }
   },
   "versao_anterior": {
    "titulo": "Petróleo reabre em leve queda mesmo com ataques perto de Ormuz",
@@ -3923,7 +4304,9 @@
     "O diesel no posto não depende só do barril, porque conta também a ajuda de R$ 2,12 por litro que a Fazenda prorrogou por 30 dias no fim de outubro."
    ]
   },
-  "revisao_manual": "2026-11-09: refeito a pedido do Pedro (o fato do dia termina na vida de quem lê, com o tamanho da tabela de tradução, TRADUCAO.md): curto do editor-chefe refeito da pesquisa gravada, com as traduções do dia (src/conta.py traduz), e post pelo mesmo programa da atualização (src/escreve_post.py), com os mesmos dados."
+  "revisao_manual": "2026-11-09: refeito a pedido do Pedro (o fato do dia termina na vida de quem lê, com o tamanho da tabela de tradução, TRADUCAO.md): curto do editor-chefe refeito da pesquisa gravada, com as traduções do dia (src/conta.py traduz), e post pelo mesmo programa da atualização (src/escreve_post.py), com os mesmos dados.",
+  "termina_em": "inflacao",
+  "pergunta": "inflacao-acima-da-meta"
  },
  "avisos_ao_pedro": [
   "O editor-chefe sentiu falta de uma página no fato do dia de 9/11/2026: Por que o preço da gasolina e do diesel no Brasil não acompanha o petróleo lá fora? Nenhuma página do básico explica a Petrobras, a subvenção e os impostos entre o barril e a bomba, e é isso que a leitora precisa para ler o fato."

@@ -880,6 +880,10 @@ def rodar(comando: str) -> str:
     """Roda um comando do caderno ("python src/conta.py pausas" ou só "pausas") e devolve a saída, para a conferência."""
     import shlex
     partes = shlex.split(comando)
+    # A pesquisa às vezes corta a saída no terminal ("... | tail -5"): a conferência roda só a conta, e a saída inteira
+    # contém as linhas que o corte mostrava.
+    if "|" in partes:
+        partes = partes[:partes.index("|")]
     if "conta.py" in " ".join(partes):
         partes = partes[next(i for i, x in enumerate(partes) if x.endswith("conta.py")) + 1:]
     buf = io.StringIO()
