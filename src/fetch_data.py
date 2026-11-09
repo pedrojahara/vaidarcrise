@@ -29,13 +29,28 @@ SGS = {
     "dolar_ptax": (1, "Dólar PTAX venda (R$)"),
     "ipca_12m": (13522, "IPCA acumulado em 12 meses (%)"),
     "reservas": (3546, "Reservas internacionais, conceito liquidez, total, fim do mês (US$ milhões)"),
+    # Para a tradução do fato na vida de quem lê (TRADUCAO.md, `traduz` em src/conta.py): fora da direção do risco.
+    "inpc": (188, "INPC, variação mensal (%)"),
+    "salario_minimo": (1619, "Salário mínimo (R$)"),
+    "tr": (7811, "Taxa referencial (TR) do primeiro dia do mês (% a.m.)"),
+    "forca_trabalho": (24378, "Força de trabalho, PNAD Contínua (mil pessoas)"),
+    "juro_pf": (20740, "Juro médio do crédito livre às pessoas físicas, total (% a.a.)"),
+    "juro_rotativo": (22022, "Juro médio do cartão de crédito rotativo, pessoas físicas (% a.a.)"),
+    "juro_cheque_especial": (20741, "Juro médio do cheque especial, pessoas físicas (% a.a.)"),
+    "juro_pessoal": (20742, "Juro médio do crédito pessoal não consignado, pessoas físicas (% a.a.)"),
+    "juro_consignado_inss": (20746, "Juro médio do consignado para aposentados e pensionistas do INSS (% a.a.)"),
+    "juro_veiculos": (20749, "Juro médio da aquisição de veículos, pessoas físicas (% a.a.)"),
+    "juro_imobiliario": (20772, "Juro médio do financiamento imobiliário com taxas de mercado, pessoas físicas (% a.a.)"),
 }
 # Séries que a coleta do dia busca inteiras, desde 2002, e não só os 4 anos das outras: a direção do risco
 # tira delas o vaivém normal na hora, enquanto config/calibracao.json não tem o corte (src/direcao.py).
 # São mensais, então a série inteira vem numa consulta só (o limite de 10 anos do SGS é das diárias).
 DESDE_2002 = {"reservas"}
 # Séries que ficam fora da soma da direção: se falharem, a rodada segue com um aviso, sem erro de coleta.
-OPCIONAIS = {"reservas"}
+# As da tradução na vida (TRADUCAO.md) também: sem elas, a tradução do dia diz que falta o dado.
+TRADUCAO = {"inpc", "salario_minimo", "tr", "forca_trabalho", "juro_pf", "juro_rotativo", "juro_cheque_especial",
+            "juro_pessoal", "juro_consignado_inss", "juro_veiculos", "juro_imobiliario"}
+OPCIONAIS = {"reservas", "rendimento_real", *TRADUCAO}
 OLINDA = "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata"
 # Taxas do Tesouro Direto, todos os títulos, desde 2002 (Tesouro Transparente). Sai em D-1.
 TESOURO = ("https://www.tesourotransparente.gov.br/ckan/dataset/df56aa42-484a-4a59-8184-7676580c81e3/"
@@ -47,6 +62,12 @@ FRED_COMMODITIES = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PALLFNFIN
 # O período 202608 é o trimestre até agosto, o mesmo mês que o SGS marca como 2026-08-01.
 IBGE_DESOCUPACAO = ("https://servicodados.ibge.gov.br/api/v3/agregados/6381/periodos/{periodos}"
                     "/variaveis/4099?localidades=N1[all]")
+# Renda média do trabalho, descontada a inflação (PNAD Contínua, trimestre móvel; rendimento médio real habitual de
+# todos os trabalhos, em reais do último trimestre). O IBGE refaz a conta da série inteira a cada divulgação, com os
+# preços do trimestre novo: por isso a coleta busca sempre a série inteira, desde 2012, e nunca junta duas versões.
+IBGE_RENDA = ("https://servicodados.ibge.gov.br/api/v3/agregados/6390/periodos/{periodos}"
+              "/variaveis/5933?localidades=N1[all]")
+RENDA_DESDE = dt.date(2012, 3, 1)
 IBGE_PIB = (
     "https://servicodados.ibge.gov.br/api/v3/agregados/5932/periodos/{periodos}"
     "/variaveis/6564?localidades=N1[all]&classificacao=11255[90707]"
@@ -135,6 +156,17 @@ def desocupacao_ibge(inicio: dt.date) -> list[dict]:
     hoje = dt.date.today()
     meses = range(inicio.year * 12 + inicio.month - 1, hoje.year * 12 + hoje.month)
     r = _get(IBGE_DESOCUPACAO.format(periodos="|".join(f"{m // 12}{m % 12 + 1:02d}" for m in meses)), json=True)
+    serie = r.json()[0]["resultados"][0]["series"][0]["serie"]
+    return [{"data": f"{per[:4]}-{per[4:6]}-01", "valor": float(val)} for per, val in sorted(serie.items())
+            if val not in ("...", "-", "", None, "X")]
+
+
+def rendimento_ibge(inicio: dt.date = RENDA_DESDE) -> list[dict]:
+    """A renda média real do trabalho (IBGE, tabela 6390), trimestre móvel: o período 202609 é o trimestre até
+    setembro, gravado como 2026-09-01, como o desemprego."""
+    hoje = dt.date.today()
+    meses = range(inicio.year * 12 + inicio.month - 1, hoje.year * 12 + hoje.month)
+    r = _get(IBGE_RENDA.format(periodos="|".join(f"{m // 12}{m % 12 + 1:02d}" for m in meses)), json=True)
     serie = r.json()[0]["resultados"][0]["series"][0]["serie"]
     return [{"data": f"{per[:4]}-{per[4:6]}-01", "valor": float(val)} for per, val in sorted(serie.items())
             if val not in ("...", "-", "", None, "X")]
@@ -270,6 +302,12 @@ def coletar() -> dict:
             snap["avisos"].append(f"SGS {code}: veio na segunda rodada; a primeira falhou: {e}")
         except Exception as e2:  # noqa: BLE001
             snap["avisos" if key in OPCIONAIS else "erros"].append(f"SGS {code}: {e2}")
+    try:
+        snap["series"]["rendimento_real"] = {
+            "nome": "Rendimento médio real habitual de todos os trabalhos, PNAD Contínua (R$ do último trimestre)",
+            "dados": rendimento_ibge(), "fonte": "https://sidra.ibge.gov.br/tabela/6390"}
+    except Exception as e:  # noqa: BLE001
+        snap["avisos"].append(f"IBGE renda (tabela 6390): {e}")
     # O desemprego é do IBGE: se o Banco Central não entregou, busca na fonte.
     if "desocupacao" not in snap["series"]:
         try:
