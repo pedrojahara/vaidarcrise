@@ -3183,7 +3183,7 @@
       "trecho": "Balança comercial registra superávit de US$ 9,3 bilhões em outubro, recorde para o mês"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -3203,7 +3203,7 @@
       "trecho": "Balança comercial do país tem maior superávit para outubro desde 1989"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -3269,7 +3269,7 @@
       "trecho": "o petróleo Brent para janeiro fechou em queda de 0,84% (US$ 0,78), a US$ 110,80 o barril"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3292,7 +3292,7 @@
       "trecho": "petróleo bruto respondeu por 14,6% das vendas externas, acima da soja, com 13,3%. Considerando petróleo e derivados, o saldo líquido fica em US$ 27,3 bilhões, equivalente a 49,4% do superávit total"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": true
      }
     },
@@ -3313,7 +3313,7 @@
       "trecho": "A queda nas projeções para o preço do petróleo levou o governo a reduzir a estimativa para o superávit da balança comercial brasileira em 2026."
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3335,7 +3335,7 @@
       "trecho": "Fluxo cambial total em 2026 até 30 de outubro é positivo em US$ 28,743 bi, revela BC"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3379,7 +3379,7 @@
       "trecho": "o Ibovespa caiu 13,88%... O dólar subiu 8,21% e fechou a R$ 5,403"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3464,7 +3464,7 @@
       "trecho": "queda do minério de ferro afeta balança comercial brasileira"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3485,7 +3485,7 @@
       "trecho": "O governo estimava arrecadar R$ 30 bilhões cobrando imposto de 12% sobre o petróleo exportado"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": true
      }
     },
@@ -3506,7 +3506,7 @@
       "trecho": "Gecex prorroga imposto de 12% sobre exportação de petróleo"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3529,7 +3529,7 @@
       "trecho": "Copom interrompe ciclo de cortes e mantém Selic em 13,75%"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3555,7 +3555,7 @@
       "trecho": "Balança comercial brasileira tem superávit de US$ 9,318 bilhões em outubro"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3579,7 +3579,7 @@
       "trecho": "o Brasil embarcou 62,9% mais petróleo, e o preço médio subiu 36,7%"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3601,7 +3601,7 @@
       "trecho": "fluxo cambial positivo de US$ 18,151 bilhões em outubro, segundo dados divulgados pelo Banco Central (BC) nesta quarta-feira (4)"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -3622,7 +3622,7 @@
       "trecho": "Entre os dias 26 e 30 de outubro, o canal financeiro apresentou entradas líquidas de US$ 3,070 bilhões"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": false
      }
     },
@@ -3929,7 +3929,7 @@
       "trecho": "Lula indicará seis diretores do Banco Central até o fim de 2027 e mercado teme mudança de perfil"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": true
      }
     },
@@ -3952,7 +3952,7 @@
       "trecho": "Bolsa sobe 1,39%, juros futuros recuam e dólar fecha a R$ 5,508"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": true
      }
     },
@@ -3972,7 +3972,7 @@
       "trecho": "Petróleo continua em queda com o aumento das expectativas de fim do conflito envolvendo o Irã"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -4196,6 +4196,33 @@
      ],
      "palavras": 1126,
      "intertitulos": 3
+    },
+    "reconferencia": {
+     "em": "2026-11-09T05:54:05-03:00",
+     "ruins": [
+      "c21",
+      "c35",
+      "c36",
+      "c6"
+     ],
+     "frases_cortadas": [
+      "Nela entraram US$ 9,498 bilhões, e US$ 3,070 bilhões deles vieram de investimentos e empréstimos.",
+      "Segundo a Folha, o presidente da República vai indicar seis diretores do Banco Central até o fim de 2027, e investidores temem uma diretoria mais disposta a cortar juro mesmo com os preços subindo.",
+      "Ele foi de 7,9% para 8,1% ao ano do fim de agosto até 5/11.",
+      "Em agosto, petróleo e derivados deram um saldo equivalente a 49,4% do superávit do período, segundo a Fundação Getulio Vargas."
+     ],
+     "abertos": 18,
+     "final": {
+      "graves": [],
+      "avisos": [
+       "c20 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781"
+      ],
+      "palavras": 1028,
+      "intertitulos": 3
+     },
+     "ruins_do_fato_do_dia": [
+      "c35"
+     ]
     }
    },
    "edicao": {
@@ -4259,7 +4286,7 @@
     "aplicada": true
    },
    "titulo": "O dólar anda mais com a desconfiança que com o comércio, e o petróleo barato sozinho não deve encarecê-lo",
-   "texto": "Em outubro, as duas portas de entrada de dólares trouxeram dinheiro ao Brasil. Pelo comércio entraram US$ 9,339 bilhões. Pela parte financeira, por onde passam investimentos e empréstimos, entraram US$ 8,812 bilhões [c20]. Se o preço dependesse só do dinheiro que chega, o dólar teria ficado mais barato. Mas a cotação de referência do Banco Central (Ptax) foi de R$ 5,1809 no fim de setembro para R$ 5,4212 no fim de outubro [c22].\n\nEsse descompasso sugere que, hoje, o dólar anda mais com a desconfiança de quem investe do que com o comércio. Por isso, o saldo comercial menor que o governo já espera com o petróleo mais barato [c7] não basta, sozinho, para esperar um dólar bem mais caro nas próximas semanas. A evidência é curta: um mês de entrada de dólares, de uma fonte só, e 5 casos parecidos desde 2002.\n\n### Na semana da eleição, o dinheiro entrou e o dólar subiu mesmo assim\n\nA semana de 26 a 30 de outubro mostra o choque de perto. Nela entraram US$ 9,498 bilhões, e US$ 3,070 bilhões deles vieram de investimentos e empréstimos [c21]. Mesmo assim, no primeiro dia de negociação depois do segundo turno, o dólar subiu 8,21%, a R$ 5,403, e a Bolsa caiu 13,88% [c10].\n\nUma leitura possível é que o preço reflete o que quem negocia espera do futuro, e não só o dinheiro que já entrou. Se um exportador traz dólares hoje, mas quem investe passa a achar que o real vai valer menos daqui a um ano, mais gente quer ficar com dólar. Então o preço sobe antes de qualquer fuga de dinheiro.\n\nO resto do ano mostra o mesmo desenho. Até o fim de outubro, saíram US$ 26,213 bilhões pela parte financeira, e o comércio compensou com entrada de US$ 54,956 bilhões [c8]. Em 2026, quem segurou a entrada de dólares foi o comércio, enquanto o dinheiro de investimento saía [c8].\n\nOs jornais apontam pelo menos um motivo para essa desconfiança. Segundo a Folha, o presidente da República vai indicar seis diretores do Banco Central até o fim de 2027, e investidores temem uma diretoria mais disposta a cortar juro mesmo com os preços subindo [c35]. Também pode haver dúvida sobre as contas do governo, que dependem do Executivo e do Congresso, mas essa parte não tem medida própria nos números de outubro.\n\nO sinal mais próximo dessa dúvida está no juro de 10 anos, que é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos. Ele foi de 7,9% para 8,1% ao ano do fim de agosto até 5/11 [c36]. Quando quem empresta ao governo cobra mais, pode ser porque confia menos, mas nenhum dado separa quanto da alta do dólar veio de cada motivo.\n\n### O petróleo mais barato deve encolher o saldo, talvez menos do que parece\n\nO petróleo foi o produto que mais engordou o saldo comercial neste ano. Em agosto, petróleo e derivados deram um saldo equivalente a 49,4% do superávit do período, segundo a Fundação Getulio Vargas [c6]. Em outubro, o petróleo bruto chegou a 22,6% das exportações, contra 12,2% um ano antes [c19].\n\nAgora o preço do barril caiu, por uma causa de fora. No começo de novembro, o petróleo caiu quase 8% em um dia e mais de 8% em outro, com a expectativa de negociação de paz entre EUA e Irã [c37]. Já em outubro, antes dessas quedas, o governo tinha cortado a previsão do saldo de 2026 de US$ 90 bilhões para US$ 84,4 bilhões, por causa das projeções de petróleo mais barato [c7].\n\nUm detalhe pode suavizar o efeito. Em outubro, o Brasil embarcou 62,9% mais petróleo que um ano antes, a um preço médio 36,7% maior [c19]. Por isso, um barril mais barato reduz o ganho sem apagá-lo, desde que o volume embarcado se mantenha. Esse dado vem de uma reportagem só, a do Times Brasil.\n\nSe o saldo encolher, entram menos dólares pelo comércio, e a lógica diria que o dólar fica mais caro, mas o passado conta uma história diferente.\n\n### Em 4 de 5 quedas fortes das matérias-primas desde 2002, o dólar caiu nos 3 meses seguintes\n\nO Banco Central tem um índice de preços das matérias-primas que o Brasil vende, como soja, minério e petróleo. Desde 2002, esse índice caiu forte em 5 momentos, com quedas entre 16,4% e 38,2% em poucos meses [c27, c31]. Dois desses momentos fazem parte da mesma descida longa, de cerca de 49% entre junho de 2014 e janeiro de 2016 [c14].\n\nEm 2022, o índice caiu 20,9% de agosto a outubro [c23], e o dólar caiu 3,0% de outubro de 2022 a janeiro de 2023 [c24]. Na virada de 2015 para 2016, o índice caiu 16,4% [c27], e o dólar caiu 14,6% de janeiro a abril de 2016 [c28].\n\nEm 2008, o índice caiu 38,2% de setembro a dezembro [c31], e o dólar caiu 0,9% nos 3 meses depois de dezembro [c32]. Em 2020, a queda foi de 28,4% de janeiro a abril [c29], e o dólar caiu 4,1% de abril a julho [c30].\n\nEsses dois casos pedem cuidado, porque foram crises mundiais e o dólar já tinha disparado durante a queda. Em 2008, ele foi de R$ 1,6344 em agosto a R$ 2,3370 em dezembro [c38]. Em 2020, foi de R$ 4,2695 em janeiro a R$ 5,4270 em abril [c39]. A queda seguinte foi, em parte, uma volta.\n\nA exceção é a melhor objeção à tese. De outubro de 2014 a janeiro de 2015, o índice caiu 21,8% [c25], e depois o dólar subiu 12,4% de janeiro a abril de 2015 [c26]. Naqueles meses, a Selic subiu de 12,25% para 13,25%, e a dívida do governo foi de 57,16% para 59,11% do PIB [c33].\n\nEm 2022, a Selic ficou parada em 13,75%, e a dívida do governo caiu de 73,70% para 71,38% do PIB [c34]. Quem discorda da tese diria que a diferença entre 2015 e 2022 foi a confiança nas contas do governo. Pode ser, mas dois casos não provam que foi essa diferença que mudou o final.\n\nHá mais duas objeções sérias. O fluxo cambial mede o dinheiro que passa pelos bancos, mas não capta as apostas no dólar futuro, onde boa parte da desconfiança aparece. E, sem o comércio, o dólar talvez tivesse subido ainda mais em outubro. As duas cabem nos dados, e 5 casos mostram um padrão, não uma lei.\n\nO que sobra é uma condição. Se a desconfiança de quem investe não crescer, um saldo comercial menor tende a pesar pouco no dólar. Se ela crescer, 2015 vira o caso mais parecido, e o dólar pode subir mesmo com o petróleo barato, o que deixaria mais caros importados como combustível e peças.\n\nPor isso, nas próximas semanas, a desconfiança de quem investe diz mais sobre o dólar do que o saldo do comércio. O fluxo cambial que o Banco Central divulga às quartas-feiras mostra se a parte financeira volta a ter saída. Na reunião de 9/12, a decisão do juro mostra como o Banco Central lê o dólar mais caro para a inflação.",
+   "texto": "Em outubro, as duas portas de entrada de dólares trouxeram dinheiro ao Brasil. Pelo comércio entraram US$ 9,339 bilhões. Pela parte financeira, por onde passam investimentos e empréstimos, entraram US$ 8,812 bilhões [c20]. Se o preço dependesse só do dinheiro que chega, o dólar teria ficado mais barato. Mas a cotação de referência do Banco Central (Ptax) foi de R$ 5,1809 no fim de setembro para R$ 5,4212 no fim de outubro [c22].\n\nEsse descompasso sugere que, hoje, o dólar anda mais com a desconfiança de quem investe do que com o comércio. Por isso, o saldo comercial menor que o governo já espera com o petróleo mais barato [c7] não basta, sozinho, para esperar um dólar bem mais caro nas próximas semanas. A evidência é curta: um mês de entrada de dólares, de uma fonte só, e 5 casos parecidos desde 2002.\n\n### Na semana da eleição, o dinheiro entrou e o dólar subiu mesmo assim\n\nA semana de 26 a 30 de outubro mostra o choque de perto. Mesmo assim, no primeiro dia de negociação depois do segundo turno, o dólar subiu 8,21%, a R$ 5,403, e a Bolsa caiu 13,88% [c10].\n\nUma leitura possível é que o preço reflete o que quem negocia espera do futuro, e não só o dinheiro que já entrou. Se um exportador traz dólares hoje, mas quem investe passa a achar que o real vai valer menos daqui a um ano, mais gente quer ficar com dólar. Então o preço sobe antes de qualquer fuga de dinheiro.\n\nO resto do ano mostra o mesmo desenho. Até o fim de outubro, saíram US$ 26,213 bilhões pela parte financeira, e o comércio compensou com entrada de US$ 54,956 bilhões [c8]. Em 2026, quem segurou a entrada de dólares foi o comércio, enquanto o dinheiro de investimento saía [c8].\n\nOs jornais apontam pelo menos um motivo para essa desconfiança. Também pode haver dúvida sobre as contas do governo, que dependem do Executivo e do Congresso, mas essa parte não tem medida própria nos números de outubro.\n\nO sinal mais próximo dessa dúvida está no juro de 10 anos, que é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos. Quando quem empresta ao governo cobra mais, pode ser porque confia menos, mas nenhum dado separa quanto da alta do dólar veio de cada motivo.\n\n### O petróleo mais barato deve encolher o saldo, talvez menos do que parece\n\nO petróleo foi o produto que mais engordou o saldo comercial neste ano. Em outubro, o petróleo bruto chegou a 22,6% das exportações, contra 12,2% um ano antes [c19].\n\nAgora o preço do barril caiu, por uma causa de fora. No começo de novembro, o petróleo caiu quase 8% em um dia e mais de 8% em outro, com a expectativa de negociação de paz entre EUA e Irã [c37]. Já em outubro, antes dessas quedas, o governo tinha cortado a previsão do saldo de 2026 de US$ 90 bilhões para US$ 84,4 bilhões, por causa das projeções de petróleo mais barato [c7].\n\nUm detalhe pode suavizar o efeito. Em outubro, o Brasil embarcou 62,9% mais petróleo que um ano antes, a um preço médio 36,7% maior [c19]. Por isso, um barril mais barato reduz o ganho sem apagá-lo, desde que o volume embarcado se mantenha. Esse dado vem de uma reportagem só, a do Times Brasil.\n\nSe o saldo encolher, entram menos dólares pelo comércio, e a lógica diria que o dólar fica mais caro, mas o passado conta uma história diferente.\n\n### Em 4 de 5 quedas fortes das matérias-primas desde 2002, o dólar caiu nos 3 meses seguintes\n\nO Banco Central tem um índice de preços das matérias-primas que o Brasil vende, como soja, minério e petróleo. Desde 2002, esse índice caiu forte em 5 momentos, com quedas entre 16,4% e 38,2% em poucos meses [c27, c31]. Dois desses momentos fazem parte da mesma descida longa, de cerca de 49% entre junho de 2014 e janeiro de 2016 [c14].\n\nEm 2022, o índice caiu 20,9% de agosto a outubro [c23], e o dólar caiu 3,0% de outubro de 2022 a janeiro de 2023 [c24]. Na virada de 2015 para 2016, o índice caiu 16,4% [c27], e o dólar caiu 14,6% de janeiro a abril de 2016 [c28].\n\nEm 2008, o índice caiu 38,2% de setembro a dezembro [c31], e o dólar caiu 0,9% nos 3 meses depois de dezembro [c32]. Em 2020, a queda foi de 28,4% de janeiro a abril [c29], e o dólar caiu 4,1% de abril a julho [c30].\n\nEsses dois casos pedem cuidado, porque foram crises mundiais e o dólar já tinha disparado durante a queda. Em 2008, ele foi de R$ 1,6344 em agosto a R$ 2,3370 em dezembro [c38]. Em 2020, foi de R$ 4,2695 em janeiro a R$ 5,4270 em abril [c39]. A queda seguinte foi, em parte, uma volta.\n\nA exceção é a melhor objeção à tese. De outubro de 2014 a janeiro de 2015, o índice caiu 21,8% [c25], e depois o dólar subiu 12,4% de janeiro a abril de 2015 [c26]. Naqueles meses, a Selic subiu de 12,25% para 13,25%, e a dívida do governo foi de 57,16% para 59,11% do PIB [c33].\n\nEm 2022, a Selic ficou parada em 13,75%, e a dívida do governo caiu de 73,70% para 71,38% do PIB [c34]. Quem discorda da tese diria que a diferença entre 2015 e 2022 foi a confiança nas contas do governo. Pode ser, mas dois casos não provam que foi essa diferença que mudou o final.\n\nHá mais duas objeções sérias. O fluxo cambial mede o dinheiro que passa pelos bancos, mas não capta as apostas no dólar futuro, onde boa parte da desconfiança aparece. E, sem o comércio, o dólar talvez tivesse subido ainda mais em outubro. As duas cabem nos dados, e 5 casos mostram um padrão, não uma lei.\n\nO que sobra é uma condição. Se a desconfiança de quem investe não crescer, um saldo comercial menor tende a pesar pouco no dólar. Se ela crescer, 2015 vira o caso mais parecido, e o dólar pode subir mesmo com o petróleo barato, o que deixaria mais caros importados como combustível e peças.\n\nPor isso, nas próximas semanas, a desconfiança de quem investe diz mais sobre o dólar do que o saldo do comércio. O fluxo cambial que o Banco Central divulga às quartas-feiras mostra se a parte financeira volta a ter saída. Na reunião de 9/12, a decisão do juro mostra como o Banco Central lê o dólar mais caro para a inflação.",
    "duracao_escrever_s": 253,
    "texto_corrigido_a_mao": "2026-11-08: 'endereço claro' era mais forte que o caderno (c35, uma reportagem): virou motivo apontado pelos jornais, com a fonte; tirado o bastidor da busca ('resumo de jornal').",
    "revisao_manual": [
@@ -4273,7 +4300,8 @@
       }
      ]
     }
-   ]
+   ],
+   "fontes_abertas": true
   },
   "termina_em": "mercado",
   "versao_anterior": {
@@ -4285,7 +4313,8 @@
    ],
    "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior. 2026-11-07, depois da conferência das fontes no Mac: saiu 'o petróleo ficou 13% mais barato na semana', número que veio da nota da editora e não de uma notícia ou dado; entrou a queda de quase 8% de 2/11, que tem fonte."
   },
-  "revisao_manual": "2026-11-08: refeito a pedido do Pedro (fato do dia com o porquê): a pesquisa do dia, a mesma da leitura a fundo, passa ao redator o porquê e o e daí (curto do editor-chefe, refeito da pesquisa gravada com fundo.py --curto); regra do \"quem decidiu\"; teste do porquê; Opus no post, no editor e no teste. Mesmo programa da atualização (src/escreve_post.py), com os dados desta rodada. O texto anterior ficou em versao_anterior."
+  "revisao_manual": "2026-11-08: refeito a pedido do Pedro (fato do dia com o porquê): a pesquisa do dia, a mesma da leitura a fundo, passa ao redator o porquê e o e daí (curto do editor-chefe, refeito da pesquisa gravada com fundo.py --curto); regra do \"quem decidiu\"; teste do porquê; Opus no post, no editor e no teste. Mesmo programa da atualização (src/escreve_post.py), com os dados desta rodada. O texto anterior ficou em versao_anterior.",
+  "pergunta": "dolar-alto"
  },
  "pauta": {
   "versao": 1,

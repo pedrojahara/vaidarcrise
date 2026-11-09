@@ -3251,6 +3251,7 @@
      },
      "conferencia": {
       "status": "nao_aberto",
+      "por_que": "HTTP 403",
       "fonte_conhecida": true
      }
     },
@@ -3271,7 +3272,7 @@
       "trecho": "Resumo da busca (página não aberta): a atividade de coque, derivados do petróleo e biocombustíveis foi a que mais contribuiu para a retração, com -4,2%; mercado previa queda de 0,2%. O dia útil a menos aparece em resumo de outra página (Central do Varejo), não conferido."
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": true
      }
     },
@@ -3336,8 +3337,7 @@
       "trecho": ""
      },
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true,
+      "status": "conferido",
       "via": "memória do momento"
      },
      "fontes_memoria": [
@@ -3405,7 +3405,7 @@
       "trecho": ""
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": true,
       "via": "memória do momento"
      },
@@ -3489,7 +3489,7 @@
       "trecho": "PMI industrial do Brasil sobe a 46,1 pontos em outubro, após 44,8 em setembro, mostra S&P Global (título da matéria no resultado da busca; página não aberta)"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3510,7 +3510,7 @@
       "trecho": "Confiança do comércio sobe 1,8 ponto em outubro ante setembro, mostra FGV (título; o resumo da busca traz 83,1 pontos; página não aberta)"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3531,7 +3531,7 @@
       "trecho": "Confiança do consumidor sobe 0,5 ponto em outubro ante setembro, mostra FGV (título; o resumo da busca traz 84,7 pontos; página não aberta)"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3551,7 +3551,7 @@
       "trecho": "Confiança empresarial cai 0,3 ponto em outubro, a quarta queda seguida, diz FGV (título da matéria; a data é a da memória do site, página não aberta)"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3574,7 +3574,7 @@
       "trecho": "Anfavea eleva de 5,8% para 6,7% a previsão ao crescimento da produção de veículos em 2026 (título; o dado de setembro vem de resumo do site Mecânica Online, não conferido)"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": true
      }
     },
@@ -3595,7 +3595,7 @@
       "trecho": "A revisão incorpora tanto os primeiros indicadores do terceiro trimestre, que sugerem atividade mais fraca do que a anteriormente prevista (trecho do resumo da busca; PDF não aberto; data inferida da nota do Senado de 24/9)"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3617,7 +3617,7 @@
       "trecho": "Itaú atualiza cenário: PIB cresce só 0,5% em 2027, com inflação de 6,1% e parada na Selic em 13,75% (título; data é a da Folha na memória do site)"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": false
      }
     },
@@ -3790,6 +3790,7 @@
      },
      "conferencia": {
       "status": "nao_aberto",
+      "por_que": "HTTP 403",
       "fonte_conhecida": true
      }
     },
@@ -3809,8 +3810,7 @@
       "trecho": ""
      },
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true,
+      "status": "conferido",
       "via": "memória do momento"
      },
      "fontes_memoria": [
@@ -3960,6 +3960,26 @@
      "avisos": [],
      "palavras": 921,
      "intertitulos": 3
+    },
+    "reconferencia": {
+     "em": "2026-11-09T05:54:03-03:00",
+     "ruins": [
+      "c12"
+     ],
+     "frases_cortadas": [
+      "As vendas de máquinas e equipamentos somam queda de 13,4% no ano até setembro, e, segundo a Folha, as empresas seguram investimento à espera do plano econômico do novo mandato."
+     ],
+     "abertos": 11,
+     "final": {
+      "graves": [],
+      "avisos": [],
+      "palavras": 899,
+      "intertitulos": 3
+     },
+     "ruins_do_fato_do_dia": [
+      "c27",
+      "c6"
+     ]
     }
    },
    "edicao": {
@@ -3998,7 +4018,7 @@
     "aplicada": true
    },
    "titulo": "Julho e agosto já deixam o PIB do 3º trimestre a caminho da queda, mas recessão ainda depende do 4º",
-   "texto": "A prévia do PIB feita pelo Banco Central já tem dois dos três meses do 3º trimestre. Esses dois meses ficaram 0,6% abaixo da média de abril a junho [c13]. Para o trimestre empatar com o anterior, setembro teria de subir cerca de 1,6% sobre agosto [c14].\n\nEsse salto é grande para um mês só. Por isso, o mais provável é que o PIB do IBGE mostre o 3º trimestre menor que o 2º. Uma queda só não é recessão, que pede dois trimestres seguidos de queda, e o 2º trimestre cresceu 0,5% [c4].\n\nSe setembro apenas repetir agosto, o trimestre fecha 0,5% abaixo do anterior [c13]. A prévia é uma conta do Banco Central e o PIB é uma conta do IBGE, com métodos diferentes, e o número oficial pode sair diferente. O passado ajuda a medir quanto pesa um começo de trimestre assim.\n\n### O que separou os casos do passado foi a economia voltar ou não no mês seguinte\n\nOutros trimestres já começaram com a prévia abaixo do trimestre anterior, e nem todos terminaram do mesmo jeito. Em 2018, a prévia passou de 96,01 em abril para 93,06 em maio, o mês da greve dos caminhoneiros, e voltou a 95,75 em junho [c26].\n\nEm 2021, o desenho foi parecido: a prévia caiu de 98,72 em fevereiro para 95,31 em março e subiu a 96,33 em abril [c26]. O mesmo aconteceu em janeiro de 2012 e em janeiro de 2022, quando um mês afundou e o seguinte voltou [c26].\n\nNesses quatro casos, o buraco veio de um mês só, e nenhum deles virou uma sequência de quedas do PIB [c26]. A economia levou um susto, e no mês seguinte já estava andando de novo.\n\nEm 2014 e 2015, o desenho foi outro, porque a queda se espalhou por vários meses. No começo de 2015, a prévia passou de 101,30 em janeiro para 100,65 em fevereiro, sem a volta do mês seguinte [c25]. Pelos dados do IBGE, o PIB caiu em todos os trimestres do 1º de 2015 ao 1º de 2016 [c25].\n\nNos meses depois do começo daquela recessão, o desemprego subiu de 6,7% em outubro de 2014 para 8,1% em abril de 2015 [c23]. É por isso que a diferença entre os dois desenhos importa para você: um tropeço passa, e uma queda espalhada costuma chegar ao emprego.\n\n### Em 2026, a queda se espalhou por dois meses e a volta de agosto foi pequena\n\nA prévia caiu de 111,25 em maio para 110,37 em junho e para 110,03 em julho, e agosto subiu só até 110,41 [c1]. De maio a agosto, a queda foi de 0,8% [c2]. Foram dois meses seguidos de queda, e a volta de agosto ficou longe do salto de 2018 ou de 2021.\n\nEsse desenho lembra mais 2014 e 2015 que os tropeços de um mês só. Mas o desenho não é garantia, e 2016 mostra isso. Naquele ano, o 2º trimestre também começou abaixo do 1º, e mesmo assim o PIB não caiu naquele trimestre [c25].\n\nSão poucos casos para cada lado, alguns com causas bem diferentes, como uma greve de caminhoneiros. Poucos casos mostram um padrão, e não uma lei, e a comparação serve para dizer qual cenário é mais provável, não qual é certo.\n\nA indústria de setembro puxa a conta para baixo. Ela produziu 2,2% a menos no 3º trimestre do que no 2º, puxada por máquinas e equipamentos [c29]. As vendas de máquinas e equipamentos somam queda de 13,4% no ano até setembro, e, segundo a Folha, as empresas seguram investimento à espera do plano econômico do novo mandato [c12].\n\n### A objeção mais forte vem do emprego, e o 4º trimestre ainda está em aberto\n\nQuem discorda tem bons argumentos. A indústria é só uma parte do PIB, e serviços e comércio pesam mais. O desemprego estava em 5,2% no trimestre até setembro, um nível baixo [c9], e com tanta gente trabalhando o consumo teria fôlego para segurar a economia.\n\nO próprio Banco Central, em setembro, ainda previa crescimento de 1,8% em 2026 [c20]. Os bancos (Focus), no fim de outubro, esperavam 1,76% para o ano [c7]. As duas previsões são de crescimento no ano, e não de queda, o que pesa contra uma leitura mais pessimista.\n\nHá, porém, sinais na outra direção. Quando baixou a previsão de 2,0% para 1,8%, o Banco Central disse que os primeiros indicadores do 3º trimestre sugeriam atividade mais fraca do que ele previa [c20]. Quem fez a previsão de 1,8% já via o trimestre esfriando.\n\nO emprego também dá sinais de cansaço, mesmo com o desemprego baixo. O Cadastro Geral de Empregados e Desempregados (Caged) de setembro mostrou 121,3 mil vagas abertas, o pior setembro da série [c9]. E o consumo das famílias já tinha caído 0,4% no 2º trimestre, antes da queda de julho [c11].\n\nPara haver recessão, o 4º trimestre também teria de cair, e os sinais de outubro estão divididos. O índice de compras da indústria, da S&P Global, subiu de 44,8 em setembro para 46,1 em outubro, um nível que ainda indica indústria encolhendo [c15].\n\nA confiança das empresas, medida pela Fundação Getulio Vargas, caiu 0,3 ponto em outubro, a quarta queda seguida [c18]. Já a confiança do comércio subiu 1,8 ponto, para 83,1 [c16], e a do consumidor subiu 0,5 ponto, para 84,7 [c17]. Com sinais assim, ainda não dá para dizer se virá um segundo trimestre de queda.\n\nTrês divulgações dizem para que lado o trimestre vai. A primeira é a prévia do PIB de setembro: se ela não subir cerca de 1,6% sobre agosto, o trimestre fica abaixo do anterior [c14]. A segunda é o PIB do 3º trimestre, que o IBGE divulga em 2 de dezembro.\n\nA terceira é a produção industrial de outubro, que o IBGE divulga em 3 de dezembro, e é o primeiro sinal oficial do 4º trimestre. Se outubro voltar com força, 2026 começa a se parecer com os tropeços de um mês só. Se não voltar, a conversa sobre recessão ganha peso.",
+   "texto": "A prévia do PIB feita pelo Banco Central já tem dois dos três meses do 3º trimestre. Esses dois meses ficaram 0,6% abaixo da média de abril a junho [c13]. Para o trimestre empatar com o anterior, setembro teria de subir cerca de 1,6% sobre agosto [c14].\n\nEsse salto é grande para um mês só. Por isso, o mais provável é que o PIB do IBGE mostre o 3º trimestre menor que o 2º. Uma queda só não é recessão, que pede dois trimestres seguidos de queda, e o 2º trimestre cresceu 0,5% [c4].\n\nSe setembro apenas repetir agosto, o trimestre fecha 0,5% abaixo do anterior [c13]. A prévia é uma conta do Banco Central e o PIB é uma conta do IBGE, com métodos diferentes, e o número oficial pode sair diferente. O passado ajuda a medir quanto pesa um começo de trimestre assim.\n\n### O que separou os casos do passado foi a economia voltar ou não no mês seguinte\n\nOutros trimestres já começaram com a prévia abaixo do trimestre anterior, e nem todos terminaram do mesmo jeito. Em 2018, a prévia passou de 96,01 em abril para 93,06 em maio, o mês da greve dos caminhoneiros, e voltou a 95,75 em junho [c26].\n\nEm 2021, o desenho foi parecido: a prévia caiu de 98,72 em fevereiro para 95,31 em março e subiu a 96,33 em abril [c26]. O mesmo aconteceu em janeiro de 2012 e em janeiro de 2022, quando um mês afundou e o seguinte voltou [c26].\n\nNesses quatro casos, o buraco veio de um mês só, e nenhum deles virou uma sequência de quedas do PIB [c26]. A economia levou um susto, e no mês seguinte já estava andando de novo.\n\nEm 2014 e 2015, o desenho foi outro, porque a queda se espalhou por vários meses. No começo de 2015, a prévia passou de 101,30 em janeiro para 100,65 em fevereiro, sem a volta do mês seguinte [c25]. Pelos dados do IBGE, o PIB caiu em todos os trimestres do 1º de 2015 ao 1º de 2016 [c25].\n\nNos meses depois do começo daquela recessão, o desemprego subiu de 6,7% em outubro de 2014 para 8,1% em abril de 2015 [c23]. É por isso que a diferença entre os dois desenhos importa para você: um tropeço passa, e uma queda espalhada costuma chegar ao emprego.\n\n### Em 2026, a queda se espalhou por dois meses e a volta de agosto foi pequena\n\nA prévia caiu de 111,25 em maio para 110,37 em junho e para 110,03 em julho, e agosto subiu só até 110,41 [c1]. De maio a agosto, a queda foi de 0,8% [c2]. Foram dois meses seguidos de queda, e a volta de agosto ficou longe do salto de 2018 ou de 2021.\n\nEsse desenho lembra mais 2014 e 2015 que os tropeços de um mês só. Mas o desenho não é garantia, e 2016 mostra isso. Naquele ano, o 2º trimestre também começou abaixo do 1º, e mesmo assim o PIB não caiu naquele trimestre [c25].\n\nSão poucos casos para cada lado, alguns com causas bem diferentes, como uma greve de caminhoneiros. Poucos casos mostram um padrão, e não uma lei, e a comparação serve para dizer qual cenário é mais provável, não qual é certo.\n\nA indústria de setembro puxa a conta para baixo. Ela produziu 2,2% a menos no 3º trimestre do que no 2º, puxada por máquinas e equipamentos [c29].\n\n### A objeção mais forte vem do emprego, e o 4º trimestre ainda está em aberto\n\nQuem discorda tem bons argumentos. A indústria é só uma parte do PIB, e serviços e comércio pesam mais. O desemprego estava em 5,2% no trimestre até setembro, um nível baixo [c9], e com tanta gente trabalhando o consumo teria fôlego para segurar a economia.\n\nO próprio Banco Central, em setembro, ainda previa crescimento de 1,8% em 2026 [c20]. Os bancos (Focus), no fim de outubro, esperavam 1,76% para o ano [c7]. As duas previsões são de crescimento no ano, e não de queda, o que pesa contra uma leitura mais pessimista.\n\nHá, porém, sinais na outra direção. Quando baixou a previsão de 2,0% para 1,8%, o Banco Central disse que os primeiros indicadores do 3º trimestre sugeriam atividade mais fraca do que ele previa [c20]. Quem fez a previsão de 1,8% já via o trimestre esfriando.\n\nO emprego também dá sinais de cansaço, mesmo com o desemprego baixo. O Cadastro Geral de Empregados e Desempregados (Caged) de setembro mostrou 121,3 mil vagas abertas, o pior setembro da série [c9]. E o consumo das famílias já tinha caído 0,4% no 2º trimestre, antes da queda de julho [c11].\n\nPara haver recessão, o 4º trimestre também teria de cair, e os sinais de outubro estão divididos. O índice de compras da indústria, da S&P Global, subiu de 44,8 em setembro para 46,1 em outubro, um nível que ainda indica indústria encolhendo [c15].\n\nA confiança das empresas, medida pela Fundação Getulio Vargas, caiu 0,3 ponto em outubro, a quarta queda seguida [c18]. Já a confiança do comércio subiu 1,8 ponto, para 83,1 [c16], e a do consumidor subiu 0,5 ponto, para 84,7 [c17]. Com sinais assim, ainda não dá para dizer se virá um segundo trimestre de queda.\n\nTrês divulgações dizem para que lado o trimestre vai. A primeira é a prévia do PIB de setembro: se ela não subir cerca de 1,6% sobre agosto, o trimestre fica abaixo do anterior [c14]. A segunda é o PIB do 3º trimestre, que o IBGE divulga em 2 de dezembro.\n\nA terceira é a produção industrial de outubro, que o IBGE divulga em 3 de dezembro, e é o primeiro sinal oficial do 4º trimestre. Se outubro voltar com força, 2026 começa a se parecer com os tropeços de um mês só. Se não voltar, a conversa sobre recessão ganha peso.",
    "duracao_escrever_s": 200,
    "texto_corrigido_a_mao": "2026-11-08: o motivo das empresas é da Folha (c12) e ganhou a fonte; 'o site conta' virou a fonte do dado (conta.py recessoes).",
    "revisao_manual": [
@@ -4012,7 +4032,8 @@
       }
      ]
     }
-   ]
+   ],
+   "fontes_abertas": true
   },
   "termina_em": "ritmo",
   "versao_anterior": {

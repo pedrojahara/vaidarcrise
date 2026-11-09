@@ -3462,6 +3462,7 @@
      },
      "conferencia": {
       "status": "nao_aberto",
+      "por_que": "página sem texto (talvez só JavaScript ou paywall)",
       "fonte_conhecida": true
      }
     },
@@ -3582,7 +3583,7 @@
       "trecho": "PT e parte da equipe de Lula atacam BC após Copom interromper ciclo de corte de juros por dúvidas sobre ajuste fiscal"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3602,7 +3603,7 @@
       "trecho": "Lula indicará seis diretores do Banco Central até o fim de 2027"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3622,7 +3623,7 @@
       "trecho": "Cada ponto a mais na Selic custa cerca de R$ 48 bilhões por ano ao governo"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3665,7 +3666,7 @@
       "trecho": "BC: Projeção de IPCA em 12 meses no 2º trimestre de 2028 passa de 3,1% para 3,5%"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3686,6 +3687,7 @@
      },
      "conferencia": {
       "status": "nao_aberto",
+      "por_que": "página sem texto (talvez só JavaScript ou paywall)",
       "fonte_conhecida": true
      }
     },
@@ -3708,7 +3710,7 @@
       "trecho": "Projeção de IPCA em 12 meses no 2º trimestre de 2028 passa de 3,1% para 3,5%"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3801,8 +3803,7 @@
       }
      ],
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true,
+      "status": "conferido",
       "via": "memória do momento"
      }
     },
@@ -3823,7 +3824,7 @@
       "trecho": "Produção industrial recua 0,8% em setembro e acumula perda de 4,1% desde maio"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3843,7 +3844,7 @@
       "trecho": "governo prepara ajuste fiscal gradual que respeita compromissos de campanha"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": true
      }
     },
@@ -3863,7 +3864,7 @@
       "trecho": "Cada ponto a mais na Selic custa cerca de R$ 48 bilhões por ano ao governo"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -4023,6 +4024,25 @@
      "avisos": [],
      "palavras": 1314,
      "intertitulos": 3
+    },
+    "reconferencia": {
+     "em": "2026-11-09T05:54:00-03:00",
+     "ruins": [
+      "c33"
+     ],
+     "frases_cortadas": [
+      "O ministro da Fazenda diz que o governo prepara um ajuste gradual nas contas, ainda sem data."
+     ],
+     "abertos": 13,
+     "final": {
+      "graves": [],
+      "avisos": [],
+      "palavras": 1257,
+      "intertitulos": 3
+     },
+     "ruins_do_fato_do_dia": [
+      "c36"
+     ]
     }
    },
    "edicao": {
@@ -4086,9 +4106,10 @@
     "aplicada": true
    },
    "titulo": "A pausa da Selic começa com a inflação esperada mais longe da meta que em qualquer pausa desde 2002",
-   "texto": "Com a Selic em pausa, é fácil pensar que desta vez pode ser diferente, porque o juro já está alto. Hoje a Selic está 8,7% acima da inflação esperada pelos bancos, um freio forte para o crédito de quem compra a prazo e de quem investe [c1]. Só que, nas pausas desde 2002, o tamanho do juro não separou as que terminaram em alta das que terminaram em corte.\n\nNas pausas desde 2002, a inflação esperada subiu em 8 das 10, e em 7 delas a Selic voltou a subir; nas 2 em que ela caiu, o corte voltou [c2, c3, c7, c10, c11]. Por esse critério, a pausa começa longe da meta que o próprio Banco Central escreveu. A inflação esperada está 1,60 ponto acima da meta de 3%, a maior distância entre as 11 pausas desde 2002, e subiu 0,36 ponto no primeiro mês [c1]. A mais perto disso foi a de março de 2002, com 1,18 ponto [c10]. São 10 casos já encerrados, o que mostra um padrão, não uma lei.\n\n### O Banco Central mediu a pausa com a própria projeção, e ela piorou\n\nQuem decidiu foi o Copom, o comitê do Banco Central que decide o juro, na reunião de 4/11, quando manteve a Selic em 13,75% [c15].\n\nO objetivo está escrito no comunicado. O Banco Central diz que a decisão é compatível com a inflação chegar perto da meta no horizonte que ele mira. Diz também que o juro seguirá alto para frear a economia [c26]. Esse horizonte fica perto de meados de 2028, e a projeção do próprio Banco Central para o segundo trimestre de 2028 subiu de 3,1% para 3,5% [c25]. Ou seja, na conta de quem decidiu, a inflação de daqui a um ano e meio se afastou da meta justamente quando os cortes pararam.\n\nA decisão pesa em dois lugares. O primeiro é a parcela, porque a Selic parada mantém caros o empréstimo, o cartão e o financiamento. O segundo é a conta do governo: cada ponto de Selic custa cerca de R$ 48 bilhões por ano em juros da dívida, numa conta do Poder360, e não do Tesouro [c34].\n\nO caminho pelo qual o juro chega aos preços é lento. Uma meta-análise de 67 estudos mostra que o juro leva em média 29 meses para pesar todo nos preços, e essa é uma evidência forte [c17]. Por isso o Banco Central mira 2028, e não a inflação de hoje.\n\nNo Brasil, a meta pesa na inflação que os bancos esperam, segundo um estudo com dados só do país, de força média [c18]. Já a ideia de que uma fórmula simples, como a regra de Taylor, diria o juro certo não aguenta como veredito, porque os dados revisados depois mudam a resposta da regra [c20].\n\n### Nas pausas desde 2002, o juro alto não separou o final, e a inflação esperada subindo veio com a alta em 7 de 8\n\nOlhe para as pausas que terminaram em alta. Em julho de 2002, o juro estava 12,7% acima da inflação esperada, e isso não bastou. Ela subiu 3,71 pontos em três meses, e a Selic voltou a subir três meses depois [c2]. Em agosto de 2020, no outro extremo, o juro estava 1,0% abaixo da inflação esperada, ela subiu 0,81 ponto e a alta veio sete meses depois [c8].\n\nNo meio do caminho ficou abril de 2004, com o juro 9,9% acima da inflação esperada, quase o nível de hoje, e a Selic voltou a subir cinco meses depois [c3]. Se o juro alto bastasse para segurar a pausa, esse caso teria terminado em corte.\n\nA única pausa com inflação esperada subindo que terminou em corte foi a de março de 2018. O juro estava só 2,5% acima da inflação esperada, que estava abaixo da meta e subiu apenas 0,07 ponto em três meses. O Banco Central voltou a cortar 17 meses depois [c7]. Nas duas pausas em que a inflação esperada caiu, em março de 2002 e dezembro de 2003, o corte voltou em poucos meses [c10, c11].\n\nO mesmo desenho aparece quando se olha só para os momentos em que a inflação esperada ficou mais de 1,4 ponto acima da meta. Desde 2002 foram seis episódios assim, e do começo ao fim a Selic subiu em 5 e caiu em 1 [c13].\n\nAqui entra o tamanho da evidência. São poucos casos, e a ligação entre eles não prova causa, porque o Banco Central reage aos mesmos números que esta conta usa. Por isso o padrão descreve como ele costuma reagir, e não uma lei da economia. Nas pausas que terminaram em alta, a primeira alta veio entre 3 e 9 meses depois do último corte, que desta vez foi em setembro [c12].\n\n### A pausa chega ao objetivo se a inflação esperada para 2027 parar de subir\n\nOs bancos apostam no outro lado. A pesquisa Focus de 30/10 previa a Selic em 13,50% no fim de 2026 e em 12,50% no fim de 2027 [c24]. Isso é 1,25 ponto abaixo da Selic de hoje [c28]. A mesma pesquisa previa inflação de 4,76% em 2027, 1,76 ponto acima da meta [c24, c30].\n\nPela régua do Banco Central, a pausa vai na direção do objetivo se a inflação esperada para 2027 começar a sair de 4,76% rumo a 3%. Também é preciso que a projeção dele para 2028 volte para perto da meta [c24, c25]. Ela fica longe do objetivo se a inflação esperada seguir subindo com a Selic parada, que é o caso em que, nas pausas desde 2002, a alta voltou.\n\nHá um segundo jeito de dar errado, que o juro sozinho não resolve. Se o dólar subir por desconfiança das contas do governo, subir o juro pode enfraquecer o real e fazer a inflação subir. Isso vem de um estudo com dados do Brasil de 2002 e 2003 [c19]. A evidência é média e vale só para crise de confiança aguda, e em 2003 o juro alto, junto com sobra nas contas, acabou derrubando a inflação. O ministro da Fazenda diz que o governo prepara um ajuste gradual nas contas, ainda sem data [c33].\n\nSomando os casos e a evidência, o lado mais provável é a pausa terminar em alta, e não em corte, se a inflação esperada continuar onde está. Mas são só 10 casos.\n\nQuem paga a Selic parada são as pessoas e as empresas com parcela, e também o governo, que paga juros da dívida a cada ponto de Selic [c34]. Quem ganha é quem tem dinheiro aplicado, que rende mais. O efeito no emprego vem com atraso de meses, porque o crédito caro faz a empresa contratar menos.\n\nA melhor objeção de quem queria o corte é que o freio já aparece. A produção da indústria caiu 4,1% desde maio [c32], e foram abertas só 121,3 mil vagas com carteira em setembro [c35]. Como o juro leva em média 29 meses para pesar todo [c17], parte desse freio ainda nem chegou.\n\nA melhor objeção do outro lado é que a pausa é pouco. O próprio Banco Central prevê inflação de 5,6% em 2026 [c16], e a inflação esperada subiu no primeiro mês da pausa [c1], dois sinais de que manter pode não bastar.\n\nO critério não muda com quem governa. Em maio de 2024, a inflação esperada estava 0,64 ponto acima da meta e subiu 0,23 ponto em três meses, e a Selic voltou a subir quatro meses depois [c9]. Em março de 2018, com outro governo, ela estava abaixo da meta e quase parada, e o Banco Central voltou a cortar [c7]. A mesma régua, a distância da meta e o rumo da inflação esperada, deu alta numa e corte na outra.\n\nPara você, isso muda o que vale olhar nas próximas notícias. Nas 10 pausas desde 2002, o nível do juro não separou as que acabaram em alta das que acabaram em corte; a inflação esperada subindo veio com a alta em 7 de 8. Por isso vale olhar se a inflação esperada pelos bancos para 2027 para de subir [c2, c7, c10, c11]. Se ela subir, o crédito tende a ficar caro por mais tempo do que os bancos previam em outubro.",
+   "texto": "Com a Selic em pausa, é fácil pensar que desta vez pode ser diferente, porque o juro já está alto. Hoje a Selic está 8,7% acima da inflação esperada pelos bancos, um freio forte para o crédito de quem compra a prazo e de quem investe [c1]. Só que, nas pausas desde 2002, o tamanho do juro não separou as que terminaram em alta das que terminaram em corte.\n\nNas pausas desde 2002, a inflação esperada subiu em 8 das 10, e em 7 delas a Selic voltou a subir; nas 2 em que ela caiu, o corte voltou [c2, c3, c7, c10, c11]. Por esse critério, a pausa começa longe da meta que o próprio Banco Central escreveu. A inflação esperada está 1,60 ponto acima da meta de 3%, a maior distância entre as 11 pausas desde 2002, e subiu 0,36 ponto no primeiro mês [c1]. A mais perto disso foi a de março de 2002, com 1,18 ponto [c10]. São 10 casos já encerrados, o que mostra um padrão, não uma lei.\n\n### O Banco Central mediu a pausa com a própria projeção, e ela piorou\n\nQuem decidiu foi o Copom, o comitê do Banco Central que decide o juro, na reunião de 4/11, quando manteve a Selic em 13,75% [c15].\n\nO objetivo está escrito no comunicado. O Banco Central diz que a decisão é compatível com a inflação chegar perto da meta no horizonte que ele mira. Diz também que o juro seguirá alto para frear a economia [c26]. Esse horizonte fica perto de meados de 2028, e a projeção do próprio Banco Central para o segundo trimestre de 2028 subiu de 3,1% para 3,5% [c25]. Ou seja, na conta de quem decidiu, a inflação de daqui a um ano e meio se afastou da meta justamente quando os cortes pararam.\n\nA decisão pesa em dois lugares. O primeiro é a parcela, porque a Selic parada mantém caros o empréstimo, o cartão e o financiamento. O segundo é a conta do governo: cada ponto de Selic custa cerca de R$ 48 bilhões por ano em juros da dívida, numa conta do Poder360, e não do Tesouro [c34].\n\nO caminho pelo qual o juro chega aos preços é lento. Uma meta-análise de 67 estudos mostra que o juro leva em média 29 meses para pesar todo nos preços, e essa é uma evidência forte [c17]. Por isso o Banco Central mira 2028, e não a inflação de hoje.\n\nNo Brasil, a meta pesa na inflação que os bancos esperam, segundo um estudo com dados só do país, de força média [c18]. Já a ideia de que uma fórmula simples, como a regra de Taylor, diria o juro certo não aguenta como veredito, porque os dados revisados depois mudam a resposta da regra [c20].\n\n### Nas pausas desde 2002, o juro alto não separou o final, e a inflação esperada subindo veio com a alta em 7 de 8\n\nOlhe para as pausas que terminaram em alta. Em julho de 2002, o juro estava 12,7% acima da inflação esperada, e isso não bastou. Ela subiu 3,71 pontos em três meses, e a Selic voltou a subir três meses depois [c2]. Em agosto de 2020, no outro extremo, o juro estava 1,0% abaixo da inflação esperada, ela subiu 0,81 ponto e a alta veio sete meses depois [c8].\n\nNo meio do caminho ficou abril de 2004, com o juro 9,9% acima da inflação esperada, quase o nível de hoje, e a Selic voltou a subir cinco meses depois [c3]. Se o juro alto bastasse para segurar a pausa, esse caso teria terminado em corte.\n\nA única pausa com inflação esperada subindo que terminou em corte foi a de março de 2018. O juro estava só 2,5% acima da inflação esperada, que estava abaixo da meta e subiu apenas 0,07 ponto em três meses. O Banco Central voltou a cortar 17 meses depois [c7]. Nas duas pausas em que a inflação esperada caiu, em março de 2002 e dezembro de 2003, o corte voltou em poucos meses [c10, c11].\n\nO mesmo desenho aparece quando se olha só para os momentos em que a inflação esperada ficou mais de 1,4 ponto acima da meta. Desde 2002 foram seis episódios assim, e do começo ao fim a Selic subiu em 5 e caiu em 1 [c13].\n\nAqui entra o tamanho da evidência. São poucos casos, e a ligação entre eles não prova causa, porque o Banco Central reage aos mesmos números que esta conta usa. Por isso o padrão descreve como ele costuma reagir, e não uma lei da economia. Nas pausas que terminaram em alta, a primeira alta veio entre 3 e 9 meses depois do último corte, que desta vez foi em setembro [c12].\n\n### A pausa chega ao objetivo se a inflação esperada para 2027 parar de subir\n\nOs bancos apostam no outro lado. A pesquisa Focus de 30/10 previa a Selic em 13,50% no fim de 2026 e em 12,50% no fim de 2027 [c24]. Isso é 1,25 ponto abaixo da Selic de hoje [c28]. A mesma pesquisa previa inflação de 4,76% em 2027, 1,76 ponto acima da meta [c24, c30].\n\nPela régua do Banco Central, a pausa vai na direção do objetivo se a inflação esperada para 2027 começar a sair de 4,76% rumo a 3%. Também é preciso que a projeção dele para 2028 volte para perto da meta [c24, c25]. Ela fica longe do objetivo se a inflação esperada seguir subindo com a Selic parada, que é o caso em que, nas pausas desde 2002, a alta voltou.\n\nHá um segundo jeito de dar errado, que o juro sozinho não resolve. Se o dólar subir por desconfiança das contas do governo, subir o juro pode enfraquecer o real e fazer a inflação subir. Isso vem de um estudo com dados do Brasil de 2002 e 2003 [c19]. A evidência é média e vale só para crise de confiança aguda, e em 2003 o juro alto, junto com sobra nas contas, acabou derrubando a inflação.\n\nSomando os casos e a evidência, o lado mais provável é a pausa terminar em alta, e não em corte, se a inflação esperada continuar onde está. Mas são só 10 casos.\n\nQuem paga a Selic parada são as pessoas e as empresas com parcela, e também o governo, que paga juros da dívida a cada ponto de Selic [c34]. Quem ganha é quem tem dinheiro aplicado, que rende mais. O efeito no emprego vem com atraso de meses, porque o crédito caro faz a empresa contratar menos.\n\nA melhor objeção de quem queria o corte é que o freio já aparece. A produção da indústria caiu 4,1% desde maio [c32], e foram abertas só 121,3 mil vagas com carteira em setembro [c35]. Como o juro leva em média 29 meses para pesar todo [c17], parte desse freio ainda nem chegou.\n\nA melhor objeção do outro lado é que a pausa é pouco. O próprio Banco Central prevê inflação de 5,6% em 2026 [c16], e a inflação esperada subiu no primeiro mês da pausa [c1], dois sinais de que manter pode não bastar.\n\nO critério não muda com quem governa. Em maio de 2024, a inflação esperada estava 0,64 ponto acima da meta e subiu 0,23 ponto em três meses, e a Selic voltou a subir quatro meses depois [c9]. Em março de 2018, com outro governo, ela estava abaixo da meta e quase parada, e o Banco Central voltou a cortar [c7]. A mesma régua, a distância da meta e o rumo da inflação esperada, deu alta numa e corte na outra.\n\nPara você, isso muda o que vale olhar nas próximas notícias. Nas 10 pausas desde 2002, o nível do juro não separou as que acabaram em alta das que acabaram em corte; a inflação esperada subindo veio com a alta em 7 de 8. Por isso vale olhar se a inflação esperada pelos bancos para 2027 para de subir [c2, c7, c10, c11]. Se ela subir, o crédito tende a ficar caro por mais tempo do que os bancos previam em outubro.",
    "duracao_escrever_s": 211,
-   "revisao_manual": "8/11/2026: à mão, \"duas portas\" (palavra de bastidor) virou \"dois lugares\", e saiu a frase que tirava dois dos seis episódios sem dizer por quê, porque ela contava só os casos escolhidos depois"
+   "revisao_manual": "8/11/2026: à mão, \"duas portas\" (palavra de bastidor) virou \"dois lugares\", e saiu a frase que tirava dois dos seis episódios sem dizer por quê, porque ela contava só os casos escolhidos depois",
+   "fontes_abertas": true
   },
   "termina_em": "juro",
   "pergunta": "juro-alto",
