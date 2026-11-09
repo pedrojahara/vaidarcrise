@@ -1,0 +1,936 @@
+{
+ "em": "2026-11-09T13:58:45+00:00",
+ "offline": true,
+ "resumo": {
+  "conferido": 88,
+  "sem_trecho": 12,
+  "nao_aberta": 63
+ },
+ "erros": [],
+ "avisos": [
+  "a-dolar-ago-6nov: número do texto sem conferência no campo dados (7,8)",
+  "dolar-alto: d-dolar/l-daqui/melhor_objecao: julga quem decidiu: meça a decisão pelo objetivo que o decisor escreveu, com 'dá certo se' e 'dá errado se'",
+  "afirmações que nenhum texto cita: a-balanca-out, a-caged, a-caso-2014, a-caso-2014-emprego, a-caso-2021, a-chudik, a-copom-set, a-desemprego, a-dolar-0311, a-dolar-ago-6nov, a-elnino, a-ev-petroleo-outubro, a-ev-petroleo-paz, a-exportacoes-out, a-fmi-familias-emergentes, a-focus-2026, a-importados, a-inad-2026, a-industria, a-industria-tri, a-lc179, a-mian-sufi, a-neutro-bc, a-neutro-sobe, a-previa-pib, a-previsoes-2027, a-site-limite"
+ ],
+ "perguntas": [
+  {
+   "id": "divida-do-governo",
+   "erros": [],
+   "avisos": [],
+   "afirmacoes_citadas": 38,
+   "status": {
+    "nao_aberta": 9,
+    "conferido": 26,
+    "sem_trecho": 3
+   }
+  },
+  {
+   "id": "dividas-das-familias",
+   "erros": [],
+   "avisos": [],
+   "afirmacoes_citadas": 25,
+   "status": {
+    "nao_aberta": 4,
+    "conferido": 21
+   }
+  },
+  {
+   "id": "dolar-alto",
+   "erros": [],
+   "avisos": [
+    "d-dolar/l-daqui/melhor_objecao: julga quem decidiu: meça a decisão pelo objetivo que o decisor escreveu, com 'dá certo se' e 'dá errado se'"
+   ],
+   "afirmacoes_citadas": 41,
+   "status": {
+    "conferido": 20,
+    "nao_aberta": 19,
+    "sem_trecho": 2
+   }
+  },
+  {
+   "id": "inflacao-acima-da-meta",
+   "erros": [],
+   "avisos": [],
+   "afirmacoes_citadas": 36,
+   "status": {
+    "nao_aberta": 12,
+    "sem_trecho": 5,
+    "conferido": 19
+   }
+  },
+  {
+   "id": "juro-alto",
+   "erros": [],
+   "avisos": [],
+   "afirmacoes_citadas": 48,
+   "status": {
+    "nao_aberta": 21,
+    "conferido": 24,
+    "sem_trecho": 3
+   }
+  }
+ ],
+ "posts": {
+  "dias": [],
+  "erros": [],
+  "avisos": []
+ },
+ "afirmacoes": {
+  "a-selic-hoje": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-cortes-2026": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-focus-jul-out": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-juro-real-hoje": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-meta": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "sem_trecho"
+  },
+  "a-copom-nov": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-ranking": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-dolar-ago-nov": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-antes-da-eleicao": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-salto-eleicao": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-bolsa-eleicao": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-depois-do-salto": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-importados": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-ev-0311-juros": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-ev-tesouro-divida": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-ev-0411-dolar-cai": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-ev-0511-nasdaq": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "sem_trecho"
+  },
+  "a-ev-0511-estrangeiros": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-ev-0611-eua": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-ev-0611-juro-cai": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "sem_trecho"
+  },
+  "a-ev-diretores-bc": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-divida-hoje": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-juros-da-divida": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/causas.html"
+  },
+  "a-metade-selic": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/causas.html"
+  },
+  "a-neutro-bc": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-fmi-poupanca": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-fmi-sobra": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-poupanca-2025": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-blanchard": {
+   "tipo": "documento",
+   "nivel": 2,
+   "status": "nao_aberta"
+  },
+  "a-favero-giavazzi": {
+   "tipo": "documento",
+   "nivel": 2,
+   "status": "nao_aberta"
+  },
+  "a-usp-neutro": {
+   "tipo": "documento",
+   "nivel": 4,
+   "status": "nao_aberta"
+  },
+  "a-ec95": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "sem_trecho"
+  },
+  "a-ec103": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "sem_trecho"
+  },
+  "a-bonomo-martins": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-rep-potencia": {
+   "tipo": "documento",
+   "nivel": 2,
+   "status": "nao_aberta"
+  },
+  "a-bcb-ee77": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-ghs": {
+   "tipo": "documento",
+   "nivel": 2,
+   "status": "nao_aberta"
+  },
+  "a-ghs-tradicionais": {
+   "tipo": "documento",
+   "nivel": 2,
+   "status": "nao_aberta"
+  },
+  "a-abl": {
+   "tipo": "documento",
+   "nivel": 2,
+   "status": "nao_aberta"
+  },
+  "a-rey": {
+   "tipo": "documento",
+   "nivel": 2,
+   "status": "nao_aberta"
+  },
+  "a-cerutti": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-ep2002": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-ep2008": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-ep2012": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-ep2015": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-ep2017": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-ep2020": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-ep2021": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-ep2024": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-industria": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-caged": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-elnino": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-juro10-pos-salto": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-primario-agosto": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/causas.html"
+  },
+  "a-datas": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "config/datas.json"
+  },
+  "a-ev-petroleo-outubro": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-ev-petroleo-paz": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-importa-combustivel": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-dolar-0311": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-focus-2026": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-bc-selic": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-freio": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/causas.html"
+  },
+  "a-desemprego": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-previa-pib": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "runs/2026-11-06T0630.json"
+  },
+  "a-previsoes-2027": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "sem_trecho"
+  },
+  "a-caso-2014": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/causas.html"
+  },
+  "a-caso-2021": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/causas.html"
+  },
+  "a-caso-2014-emprego": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/causas.html"
+  },
+  "a-caso-2021-contas": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/causas.html"
+  },
+  "a-lopes": {
+   "tipo": "documento",
+   "nivel": 2,
+   "status": "nao_aberta"
+  },
+  "a-scaramuzzi": {
+   "tipo": "documento",
+   "nivel": 2,
+   "status": "nao_aberta"
+  },
+  "a-castro-505": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-bc-wp230": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-bc-wp331": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-neutro-sobe": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-custo-divida-2025": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-copom-set": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-industria-tri": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-balanca-out": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-balanca-1989": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-exportacoes-out": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "sem_trecho"
+  },
+  "a-dolar-ago-6nov": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-div-trajetoria": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-div-jun-set": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-div-2006": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-div-deficits": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-primario-2025": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-juros-set2026": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-juros-2013-2026": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-div-2021": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-div-2023": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-selic-2007-2013": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-juro-real-2010-2013": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-commodities-2008": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-commodities-2015": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-bc-fatores-2025": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-bc-fatores-2026": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-ifi-2026": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "sem_trecho"
+  },
+  "a-obrigatorias": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-chudik": {
+   "tipo": "documento",
+   "nivel": 2,
+   "status": "nao_aberta"
+  },
+  "a-site-contas": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/nota.html"
+  },
+  "a-site-limite": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/nota.html"
+  },
+  "a-site-vaivem": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/nota.html"
+  },
+  "a-dolar-2008": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-dolar-2015": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-dolar-2020": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-dolar-2024": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-copom-dez2024": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-copom-dez2024-fora": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-sp-2015": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-repasse-bc": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-kohlscheen": {
+   "tipo": "documento",
+   "nivel": 2,
+   "status": "nao_aberta"
+  },
+  "a-site-mercado": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/nota.html"
+  },
+  "a-site-persiste": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/nota.html"
+  },
+  "a-site-persiste-3": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "config/modelo.json"
+  },
+  "a-site-mesmo-titulo": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/nota.html"
+  },
+  "a-ipca-anos": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-ipca-teto": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-ipca-2008": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-ipca-2015": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-ipca-2017": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-ipca-2024": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-metas-historico": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "sem_trecho"
+  },
+  "a-cerisola-gelos": {
+   "tipo": "documento",
+   "nivel": 2,
+   "status": "sem_trecho"
+  },
+  "a-carta-2015": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "sem_trecho"
+  },
+  "a-carta-2017": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-carta-2024": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "sem_trecho"
+  },
+  "a-lc179": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-lei-salario-minimo": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-site-inflacao": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/nota.html"
+  },
+  "a-fam-hoje": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-fam-divida": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-fam-juros": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-fam-mai-ago": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-fam-2005": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-fam-2015": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-fam-2020": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-fam-2021": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-fam-2024": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-fam-2022-2026": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-juro-pf": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-inad-2026": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-mian-sufi": {
+   "tipo": "documento",
+   "nivel": 2,
+   "status": "nao_aberta"
+  },
+  "a-lei-consignado": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-apostas-bc": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-site-familias": {
+   "tipo": "site",
+   "nivel": 3,
+   "status": "conferido",
+   "onde": "templates/nota.html"
+  },
+  "a-selic-agosto-2026": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-fmi-familias-emergentes": {
+   "tipo": "documento",
+   "nivel": 3,
+   "status": "nao_aberta"
+  },
+  "a-carta-2024-partes": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-defasagem-petrobras": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-apostas-fia": {
+   "tipo": "documento",
+   "nivel": 6,
+   "status": "nao_aberta"
+  },
+  "a-juro-casa-set": {
+   "tipo": "dado",
+   "nivel": 3,
+   "status": "conferido"
+  },
+  "a-conta-parcela-ano": {
+   "tipo": "conta",
+   "nivel": 3,
+   "comando": "traduz parcela 300000 360 14.88 14.2",
+   "ate": null,
+   "status": "conferido"
+  },
+  "a-conta-parcela-ponto": {
+   "tipo": "conta",
+   "nivel": 3,
+   "comando": "traduz parcela 300000 360 14.2 15.2",
+   "ate": null,
+   "status": "conferido"
+  },
+  "a-conta-cartao": {
+   "tipo": "conta",
+   "nivel": 3,
+   "comando": "traduz credito",
+   "ate": "2026-11-07",
+   "status": "conferido"
+  },
+  "a-conta-credito-pessoal": {
+   "tipo": "conta",
+   "nivel": 3,
+   "comando": "traduz credito",
+   "ate": "2026-11-07",
+   "status": "conferido"
+  },
+  "a-conta-guardado": {
+   "tipo": "conta",
+   "nivel": 3,
+   "comando": "traduz guardado",
+   "ate": "2026-11-07",
+   "status": "conferido"
+  },
+  "a-conta-guardado-ponto": {
+   "tipo": "conta",
+   "nivel": 3,
+   "comando": "calc \"1000 * 1 / 100\"",
+   "ate": null,
+   "status": "conferido"
+  },
+  "a-conta-dolar-12m": {
+   "tipo": "conta",
+   "nivel": 3,
+   "comando": "traduz dolar",
+   "ate": "2026-11-07",
+   "status": "conferido"
+  },
+  "a-conta-emprego": {
+   "tipo": "conta",
+   "nivel": 3,
+   "comando": "traduz emprego",
+   "ate": "2026-11-07",
+   "status": "conferido"
+  },
+  "a-conta-minimo": {
+   "tipo": "conta",
+   "nivel": 3,
+   "comando": "traduz minimo",
+   "ate": "2026-11-07",
+   "status": "conferido"
+  },
+  "a-conta-precos-out": {
+   "tipo": "conta",
+   "nivel": 3,
+   "comando": "traduz precos",
+   "ate": "2026-11-07",
+   "status": "conferido"
+  },
+  "a-conta-precos-jul": {
+   "tipo": "conta",
+   "nivel": 3,
+   "comando": "traduz precos",
+   "ate": "2026-08-01",
+   "status": "conferido"
+  }
+ }
+}

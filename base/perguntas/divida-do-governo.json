@@ -3,7 +3,7 @@
  "pergunta": "Por que a dívida do governo cresce tanto?",
  "pressao": "contas",
  "publicada": true,
- "atualizado_em": "2026-11-08",
+ "atualizado_em": "2026-11-09",
  "resposta_curta": {
   "texto": "A dívida do governo cresce por dois caminhos, que se somam. O governo gasta mais do que arrecada, sem contar os juros, e os juros da dívida crescem mais rápido que a economia. Em setembro de 2026, a dívida chegou a 82,9% do PIB, quando no fim de 2013 era de 51,5%. Em 12 meses até setembro, os juros custaram 9% do PIB, e o gasto acima da arrecadação, 0,5%. Os economistas discordam sobre qual vem primeiro, o gasto que assusta quem empresta e encarece o juro, ou o juro alto que faz a dívida crescer.",
   "afirmacoes": [
@@ -146,15 +146,17 @@
    "degrau": "o_que_vem_depois",
    "pergunta": "O que isso muda para você?",
    "rotulo": "maioria_com_dissenso",
-   "texto": "Quando a dívida do governo sobe rápido, quem empresta ao governo tende a cobrar mais caro, e o juro e o dólar sobem junto. Com isso, ficam mais caros o financiamento da casa, o empréstimo e os importados. Muita gente acha que existe um limite para a dívida, como 100% do PIB, a partir do qual vem a crise. Um estudo com dezenas de países não achou um limite que valha para todos, mas achou que a dívida subindo por muitos anos faz a economia crescer menos. O risco depende também da moeda em que o governo deve e de quem empresta a ele, e o Brasil deve quase tudo em reais, a maior parte a brasileiros.",
+   "texto": "A dívida do governo chega às famílias pelo juro, pelo dólar e pelo que o governo cobra e paga. Quando a dívida sobe rápido, quem empresta ao governo cobra mais caro, e o juro e o dólar sobem junto.\n\nEm setembro de 2026, o juro médio da casa própria com taxas de mercado era de 14,2% ao ano. Para quem pedisse R$ 300 mil em 30 anos, um ponto a mais subiria a primeira parcela em R$ 220.\n\nQuem já tem financiamento com juro fixo continua pagando a mesma parcela. Para quem tem dinheiro guardado, o juro mais alto aumenta o rendimento: cada ponto a mais dá R$ 10 por ano a cada R$ 1.000 numa aplicação atrelada à Selic.\n\nO dólar mais caro sobe os preços de todos: pelas contas do Banco Central, cada 10% de alta sobe o IPCA em cerca de 1 ponto em um ano.\n\nPela conta da Instituição Fiscal Independente, do Senado, a dívida só para de subir se o governo arrecadar 2,1% do PIB além do que gasta, sem os juros. O governo e o Congresso decidem se isso vem de mais imposto, de menos gasto ou dos dois.",
    "afirmacoes": [
     "a-site-contas",
-    "a-site-limite",
-    "a-chudik"
+    "a-juro-casa-set",
+    "a-conta-parcela-ponto",
+    "a-conta-guardado-ponto",
+    "a-repasse-bc",
+    "a-ifi-2026"
    ]
   }
  ],
- "testes": [],
  "episodios": [
   "ep-2002",
   "ep-div-2006",
@@ -169,6 +171,11 @@
    "data": "2026-11-08",
    "o_que": "Primeira versão da pergunta.",
    "motivo": "Pedido do Pedro em 8/11/2026: uma página para cada pressão do topo."
+  },
+  {
+   "data": "2026-11-09",
+   "o_que": "O que isso muda para você? passou a dizer o que muda para cada família que a pressão atinge, com o tamanho, o prazo e os dois lados quando um perde e outro ganha.",
+   "motivo": "Decisão do Pedro em 9/11/2026: todo texto termina no que muda na vida de quem lê, com as contas da tabela de tradução do site."
   }
  ]
 }

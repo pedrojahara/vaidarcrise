@@ -225,6 +225,8 @@ def main() -> dict | None:
                                           "ja_no_preco", "porque")},
                     # Quem decidiu, o tipo de decisão e o objetivo declarado (src/decisoes.py).
                     **{k: ev.get(k, d) for k, d in (("decisor", "nenhum"), ("instrumento", "nenhum"), ("objetivo", ""))},
+                    # O que o fato muda na vida de quem lê (a pauta do fato do dia usa, src/pauta.py).
+                    "vida": ev.get("vida"),
                     "chance_aprovacao": ev["chance_aprovacao"] if ev["estagio"] == "em_votacao" else None,
                     "veiculos": veiculos, "fontes": fontes}
             # Quantas manchetes e jornais deram o fato (todas, não só as 6 citadas): a pauta do fato do dia usa.
@@ -294,6 +296,13 @@ def main() -> dict | None:
                       f" | {pensado.get('erro') or pensado.get('tese', '')[:120]} | porquê: {'sim' if porque else 'não'}")
             except Exception as ex:  # noqa: BLE001
                 print(f"aviso: a pesquisa do dia falhou ({ex!r}); o post sai só com os dados")
+            if porque is None:
+                # Sem a pesquisa, o post ainda termina na vida da leitora, com as contas da tabela de tradução.
+                try:
+                    import fundo
+                    porque = fundo.so_traducoes(hoje)
+                except Exception as ex:  # noqa: BLE001
+                    print(f"aviso: as traduções do dia falharam ({ex!r})")
         post = escreve_post.escrever(rodada, cfg, datas, eventos=evs, anterior=ant, rodadas=anteriores, snap=snap,
                                      porque=porque)
         if pensado is not None:

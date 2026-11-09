@@ -1,5 +1,5 @@
 {
- "_sobre": "Cada frase sobre causa ou passado que o site pode dizer, com a fonte. Tipo 'dado': o número é conferido pelo código contra as séries do próprio site (data/historico e data/raw). Tipo 'documento': o trecho literal tem de ser achado na página da fonte; 'trecho_candidato' veio de um resumo de busca e ainda não foi visto na página. Tipo 'site': o trecho tem de estar no arquivo do repositório. Níveis da fonte: 1 meta-análise; 2 artigo revisado por pares ou capítulo de livro acadêmico; 3 Banco Central, FMI, Tesouro, IBGE, IFI, Ipea, lei; 4 tese ou dissertação; 5 banco, gestora, consultoria; 6 notícia; 7 coluna ou comentarista.",
+ "_sobre": "Cada frase sobre causa ou passado que o site pode dizer, com a fonte. Tipo 'dado': o número é conferido pelo código contra as séries do próprio site (data/historico e data/raw). Tipo 'documento': o trecho literal tem de ser achado na página da fonte; 'trecho_candidato' veio de um resumo de busca e ainda não foi visto na página. Tipo 'site': o trecho tem de estar no arquivo do repositório. Tipo 'conta': a tradução para a vida de quem lê (TRADUCAO.md); o código roda 'comando' em src/conta.py, com os dados como eram no dia 'ate' (VDC_ATE), e todo número do texto tem de estar na saída. Níveis da fonte: 1 meta-análise; 2 artigo revisado por pares ou capítulo de livro acadêmico; 3 Banco Central, FMI, Tesouro, IBGE, IFI, Ipea, lei; 4 tese ou dissertação; 5 banco, gestora, consultoria; 6 notícia; 7 coluna ou comentarista.",
  "afirmacoes": [
   {
    "id": "a-selic-hoje",
@@ -3704,6 +3704,183 @@
    },
    "trecho": "o efeito das apostas foi mais forte do que o dos juros e do crédito",
    "trecho_lingua": "pt-BR"
+  },
+  {
+   "id": "a-juro-casa-set",
+   "tipo": "dado",
+   "texto": "Em setembro de 2025, com a Selic em 15%, o juro médio do financiamento da casa própria com taxas de mercado era de 14,9% ao ano; em setembro de 2026, era de 14,2%.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Banco Central",
+    "titulo": "Taxa média de juros do financiamento imobiliário com taxas de mercado, pessoas físicas (série 20772)",
+    "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint?codigo=20772"
+   },
+   "dados": [
+    {
+     "serie": "selic_meta",
+     "quando": "2025-09",
+     "valor": 15.0,
+     "tol": 0.001
+    },
+    {
+     "serie": "juro_imobiliario",
+     "quando": "2025-09",
+     "valor": 14.88,
+     "tol": 0.05
+    },
+    {
+     "serie": "juro_imobiliario",
+     "quando": "2026-09",
+     "valor": 14.2,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "id": "a-conta-parcela-ano",
+   "tipo": "conta",
+   "comando": "traduz parcela 300000 360 14.88 14.2",
+   "texto": "Um financiamento de R$ 300 mil em 30 anos começa com parcela de R$ 4.321 com juro de 14,9% ao ano e de R$ 4.171 com juro de 14,2%, sem contar seguro e taxas. Quem já tem financiamento com juro fixo continua com a mesma parcela.",
+   "numeros_derivados": [
+    "30"
+   ],
+   "fonte": {
+    "nivel": 3,
+    "quem": "Contas do site, com as séries do Banco Central e do IBGE",
+    "url": null,
+    "titulo": "src/conta.py, traduz parcela (TRADUCAO.md, Crédito: a parcela de um financiamento)"
+   }
+  },
+  {
+   "id": "a-conta-parcela-ponto",
+   "tipo": "conta",
+   "comando": "traduz parcela 300000 360 14.2 15.2",
+   "texto": "Um financiamento de R$ 300 mil em 30 anos começa com parcela de R$ 4.171 com juro de 14,2% ao ano; com 15,2%, um ponto a mais, a primeira parcela sobe R$ 220, para R$ 4.392. Quem já tem financiamento com juro fixo continua com a mesma parcela.",
+   "numeros_derivados": [
+    "30"
+   ],
+   "fonte": {
+    "nivel": 3,
+    "quem": "Contas do site, com as séries do Banco Central e do IBGE",
+    "url": null,
+    "titulo": "src/conta.py, traduz parcela (TRADUCAO.md, Crédito: a parcela de um financiamento)"
+   }
+  },
+  {
+   "id": "a-conta-cartao",
+   "tipo": "conta",
+   "comando": "traduz credito",
+   "ate": "2026-11-07",
+   "texto": "Em setembro de 2026, o juro médio do cartão de crédito rotativo era de 451,7% ao ano, contra 448,1% em setembro de 2025, e R$ 1.000 devidos por um ano, sem pagar nada no meio, viravam cerca de R$ 5.517. A Selic não passa inteira nem logo para esses juros.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Contas do site, com as séries do Banco Central e do IBGE",
+    "url": null,
+    "titulo": "src/conta.py, traduz credito (TRADUCAO.md, Crédito: o juro de cada tipo de empréstimo)"
+   }
+  },
+  {
+   "id": "a-conta-credito-pessoal",
+   "tipo": "conta",
+   "comando": "traduz credito",
+   "ate": "2026-11-07",
+   "texto": "Em setembro de 2026, R$ 1.000 devidos por um ano, sem pagar nada no meio, viravam cerca de R$ 2.109 no crédito pessoal, com juro médio de 110,9% ao ano, contra R$ 2.011 em setembro de 2025, e cerca de R$ 1.232 no consignado de aposentados e pensionistas do INSS.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Contas do site, com as séries do Banco Central e do IBGE",
+    "url": null,
+    "titulo": "src/conta.py, traduz credito (TRADUCAO.md, Crédito: o juro de cada tipo de empréstimo)"
+   }
+  },
+  {
+   "id": "a-conta-guardado",
+   "tipo": "conta",
+   "comando": "traduz guardado",
+   "ate": "2026-11-07",
+   "texto": "Em 7/11/2026, com a Selic em 13,75% ao ano, R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem R$ 137,50 em um ano, antes do imposto de renda. Descontada a inflação que os bancos (Focus) esperam para os 12 meses seguintes, de 4,96%, sobram cerca de R$ 84. O juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Contas do site, com as séries do Banco Central e do IBGE",
+    "url": null,
+    "titulo": "src/conta.py, traduz guardado (TRADUCAO.md, Dinheiro guardado: quanto rendem R$ 1.000)"
+   }
+  },
+  {
+   "id": "a-conta-guardado-ponto",
+   "tipo": "conta",
+   "comando": "calc \"1000 * 1 / 100\"",
+   "texto": "Numa aplicação que rende o mesmo que a Selic, cada ponto a mais de Selic rende R$ 10 a mais por ano a cada R$ 1.000 guardados, antes do imposto de renda.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Contas do site, com as séries do Banco Central e do IBGE",
+    "url": null,
+    "titulo": "src/conta.py, calc, com a regra de TRADUCAO.md (Dinheiro guardado: quanto rendem R$ 1.000)"
+   }
+  },
+  {
+   "id": "a-conta-dolar-12m",
+   "tipo": "conta",
+   "comando": "traduz dolar",
+   "ate": "2026-11-07",
+   "texto": "De 6/11/2025 a 6/11/2026, o dólar subiu 2,9%. Pela conta do Banco Central, essa alta, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses, e R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem ela. O efeito pesa mais nos importados e no combustível.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Contas do site, com as séries do Banco Central e do IBGE",
+    "url": null,
+    "titulo": "src/conta.py, traduz dolar (TRADUCAO.md, Dólar: quanto da alta chega aos preços)"
+   }
+  },
+  {
+   "id": "a-conta-emprego",
+   "tipo": "conta",
+   "comando": "traduz emprego",
+   "ate": "2026-11-07",
+   "texto": "No trimestre até setembro de 2026, o desemprego foi de 5,2%, e cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Contas do site, com as séries do Banco Central e do IBGE",
+    "url": null,
+    "titulo": "src/conta.py, traduz emprego (TRADUCAO.md, Emprego: quantas pessoas cabem em um ponto)"
+   }
+  },
+  {
+   "id": "a-conta-minimo",
+   "tipo": "conta",
+   "comando": "traduz minimo",
+   "ate": "2026-11-07",
+   "texto": "De janeiro a setembro de 2026, a inflação das famílias com renda de 1 a 5 salários mínimos (INPC) somou 4,0% e tirou 3,9% do poder de compra do salário mínimo de R$ 1.621, perda que o reajuste de janeiro repõe. Pela lei, o reajuste soma ao INPC dos 12 meses até novembro o crescimento do PIB de dois anos antes, com ganho de até 2,5%. As aposentadorias do INSS acima do mínimo são corrigidas só pelo INPC: com o dos 12 meses até setembro, uma de R$ 3.000 iria para cerca de R$ 3.129.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Contas do site, com as séries do Banco Central e do IBGE",
+    "url": null,
+    "titulo": "src/conta.py, traduz minimo (TRADUCAO.md, Renda: o salário mínimo e o INSS)"
+   }
+  },
+  {
+   "id": "a-conta-precos-out",
+   "tipo": "conta",
+   "comando": "traduz precos",
+   "ate": "2026-11-07",
+   "texto": "No fim de outubro de 2026, os bancos (Focus) esperavam IPCA de 4,96% para os 12 meses seguintes: o que custava R$ 100 passaria a custar cerca de R$ 104,96 um ano depois. É previsão, e os bancos erram.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Contas do site, com as séries do Banco Central e do IBGE",
+    "url": null,
+    "titulo": "src/conta.py, traduz precos (TRADUCAO.md, Preços: o que custava R$ 100)"
+   }
+  },
+  {
+   "id": "a-conta-precos-jul",
+   "tipo": "conta",
+   "comando": "traduz precos",
+   "ate": "2026-08-01",
+   "texto": "No fim de julho de 2026, os bancos (Focus) esperavam IPCA de 4,19% para os 12 meses seguintes: o que custava R$ 100 passaria a custar cerca de R$ 104,19 um ano depois.",
+   "fonte": {
+    "nivel": 3,
+    "quem": "Contas do site, com as séries do Banco Central e do IBGE",
+    "url": null,
+    "titulo": "src/conta.py, traduz precos (TRADUCAO.md, Preços: o que custava R$ 100)"
+   }
   }
  ]
 }

@@ -21,6 +21,10 @@ empurrado e não decidem a manchete: aqui não há desconto por "o mercado já e
 sozinha (notícias de sinal oposto do mesmo assunto não se anulam) e a cobertura conta jornais de verdade.
 A IA editora (src/editora.py) lê esta pauta e só sai da escolha padrão por um motivo da lista fechada.
 Os resumos da semana e do mês usam a mesma ordem (`chave_evento`).
+
+Cada candidato leva também o que o fato muda na vida das pessoas (`vida`: o tamanho de 0 a 3, a porta e quem sente),
+que o classificador mede à parte do risco. Ele não entra nos degraus: só pesa quando a editora troca a escolha do
+degrau 5 pelo motivo "muda_a_vida", que o código confere.
 """
 from __future__ import annotations
 
@@ -44,6 +48,21 @@ MARCADAS = {
 OUTRAS_DATAS = {"ipca": "a inflação do mês, IPCA (IBGE)", "ipca15": "a prévia da inflação, IPCA-15 (IBGE)",
                 "pim": "a produção industrial (IBGE)", "pmc": "as vendas do varejo (IBGE)",
                 "fed": "a decisão de juros dos Estados Unidos (Fed)"}
+# As seis portas por onde a leitora sente a economia (PERSONA.md), como a editora as lê.
+PORTA_TXT = {"renda": "renda (salário, aposentadoria)", "emprego": "emprego", "precos": "preços",
+             "credito": "crédito (parcela, juro do cartão e do financiamento)", "guardado": "dinheiro guardado",
+             "governo": "o que o governo cobra ou paga (imposto, benefício)"}
+VIDA_NADA = {"tamanho": 0, "porta": "nenhuma", "quem": ""}
+
+
+def vida(x: dict | None) -> dict:
+    """O que o fato muda na vida (classificador, campo "vida"), de um evento ou de um candidato. O que veio antes do
+    campo, ou chegou fora do formato, vale como tamanho 0: nada muda."""
+    v = (x or {}).get("vida")
+    if not isinstance(v, dict) or not isinstance(v.get("tamanho"), int) or not 0 <= v["tamanho"] <= 3:
+        return dict(VIDA_NADA)
+    return {"tamanho": v["tamanho"], "porta": v.get("porta") if v.get("porta") in PORTA_TXT else "nenhuma",
+            "quem": str(v.get("quem") or "")}
 
 
 def _bate_data(tipo: str, c: dict) -> bool:
@@ -107,7 +126,8 @@ def candidatos(llm_eventos: list[dict], novos_ids: list[str], descartados: list[
             ev_id = fila.pop(0) if fila else None
             # O evento guardado é o registro do site (o título pode ter sido reescrito depois): ele vale.
             base = {**ev, **{k: v for k, v in (eventos.get(ev_id) or {}).items()
-                             if k in ("titulo_evento", "estagio", "magnitude", "fator", "direcao", "porque", "origem")}}
+                             if k in ("titulo_evento", "estagio", "magnitude", "fator", "direcao", "porque", "origem",
+                                      "vida")}}
             fontes, motivo = (eventos.get(ev_id) or {}).get("fontes", []), None
         cob = cobertura([*ev.get("noticia_ids", []), *ev.get("outras_ids", [])], cesta_por_id, fontes)
         out.append({
@@ -115,7 +135,7 @@ def candidatos(llm_eventos: list[dict], novos_ids: list[str], descartados: list[
             "tamanho": base["magnitude"], "fator": base["fator"], "origem": base.get("origem"),
             "assunto": (nomes_fatores or {}).get(base["fator"], base["fator"]),
             "lado": "pesa" if base["direcao"] > 0 else "alivia", "ja_esperado": bool(ev.get("ja_no_preco")),
-            "porque": base["porque"], "n_manchetes": cob["manchetes"], "jornais": cob["jornais"],
+            "porque": base["porque"], "vida": vida(base), "n_manchetes": cob["manchetes"], "jornais": cob["jornais"],
             "descartado": motivo, "fontes": fontes[:6],
         })
     return out

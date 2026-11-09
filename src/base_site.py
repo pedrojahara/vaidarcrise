@@ -4,8 +4,10 @@ por src/fundo.py) e a página de cada pressão do topo que já tem pergunta publ
 Uma página por pressão: cada pergunta de base/perguntas diz a pressão dela (pressao, uma das chaves de
 direcao.nomes em config/modelo.json). Cada fato do dia leva, numa linha logo abaixo do texto, à página do assunto do
 fato; se o assunto não tem página, à da pressão da tese da leitura a fundo; se nenhuma tem, à parte da aba O que causa
-recessão que explica a pressão (ponte()). Rascunho (publicada: false) não vira página, mas o teste dele aparece no
-post que o cita.
+recessão que explica a pressão (ponte()). Rascunho (publicada: false) não vira página.
+
+O site não guarda teste nem placar e não promete conferir nada depois (decisão do Pedro em 8/11/2026, repetida em
+9/11): a página mostra a análise e para aí, e src/verifica_base.py barra pergunta com teste ou texto com promessa.
 
 Tudo vem de base/: as afirmações que sustentam cada frase, as perguntas, os episódios e o último relatório do
 verificador (base/conferencia/), que diz se a fonte de cada afirmação já foi conferida. build_site.py chama
@@ -59,11 +61,18 @@ def _data(iso: str) -> str:
 
 def _conferencia() -> dict:
     """O status de cada afirmação no relatório mais novo do verificador que abriu as páginas (no Mac). O modo offline
-    não abre nenhuma e marca toda fonte como "nao_aberta": só vale quando não há outro relatório."""
-    rels = sorted((BASE / "conferencia").glob("*-verifica*.json"), key=lambda p: ("offline" not in p.name, p.name[:10]))
-    if not rels:
-        return {}
-    return json.loads(rels[-1].read_text()).get("afirmacoes", {})
+    não abre nenhuma e marca todo documento como "nao_aberta", mas confere por inteiro os dados, os trechos do site e
+    as contas: o relatório offline mais novo, se não for mais velho que o do Mac, vale para esses três tipos e para as
+    afirmações que o do Mac ainda não tinha."""
+    rels = sorted((BASE / "conferencia").glob("*-verifica*.json"), key=lambda p: p.name)
+    com_rede = [p for p in rels if "offline" not in p.name]
+    sem_rede = [p for p in rels if "offline" in p.name]
+    conf = json.loads(com_rede[-1].read_text()).get("afirmacoes", {}) if com_rede else {}
+    if sem_rede and (not com_rede or sem_rede[-1].name[:10] >= com_rede[-1].name[:10]):
+        for i, r in json.loads(sem_rede[-1].read_text()).get("afirmacoes", {}).items():
+            if r.get("tipo") != "documento" or i not in conf:
+                conf[i] = r
+    return conf
 
 
 class _Fontes:
@@ -97,13 +106,17 @@ class _Fontes:
         f = a["fonte"]
         if a["tipo"] == "dado":
             como = "número conferido com os dados do site" if st == "conferido" else "número a conferir"
+        elif a["tipo"] == "conta":
+            como = "conta refeita com os dados do site" if st == "conferido" else "conta a refazer"
         elif a["tipo"] == "site":
             como = "trecho conferido no site" if st == "conferido" else "trecho a conferir"
         else:
             como = "trecho conferido no texto da fonte" if st == "conferido" else "a conferir no texto da fonte"
         # O título de série ou de arquivo do site é para quem confere a conta, não para a leitora.
         titulo = f.get("titulo") if a["tipo"] == "documento" else None
-        return {"quem": f["quem"], "titulo": titulo, "url": f.get("url"), "nivel": NIVEIS.get(f["nivel"], ""),
+        # A conta é do site, com as séries de órgãos oficiais: não é o órgão falando.
+        nivel = "Conta do site com dados oficiais" if a["tipo"] == "conta" else NIVEIS.get(f["nivel"], "")
+        return {"quem": f["quem"], "titulo": titulo, "url": f.get("url"), "nivel": nivel,
                 "conferida": st == "conferido", "como": como}
 
 
@@ -112,7 +125,7 @@ def _perguntas() -> dict:
 
 
 def publicadas() -> dict:
-    """As perguntas que já têm página. Um rascunho (publicada: false) guarda a disputa e o teste até a página sair."""
+    """As perguntas que já têm página. Um rascunho (publicada: false) guarda a disputa até a página sair."""
     return {k: q for k, q in _perguntas().items() if q.get("publicada", True)}
 
 
@@ -195,16 +208,6 @@ def _posts_ligados(cfg: dict) -> dict[str, list[dict]]:
             out.setdefault(pt["id"], []).append({"dia": dia, "data": f"{int(dia[8:10])}/{int(dia[5:7])}",
                                                  "titulo": post.get("titulo"), "url": f"/{dia}/"})
     return out
-
-
-def _regra_do_teste(t: dict) -> str:
-    """A regra do teste numa frase da leitora, com os números da regra registrada."""
-    g, r = t.get("quem_ganha", {}), t["regra"]
-    lo, hi = r["favorece_l_fora_entre"]
-    fmt = lambda x: f"{x:.0f}".replace("-", "−")
-    return (f"Se a alta contra o real passar a dos dois pesos em mais de {fmt(r['favorece_l_daqui_acima_de'])} pontos, "
-            f"pesa mais {g.get('l-daqui', 'a primeira leitura')}. Se a diferença ficar entre {fmt(lo)} e {fmt(hi)} pontos, "
-            f"pesa mais {g.get('l-fora', 'a segunda')}. Fora disso, o teste não decide.")
 
 
 def ponte(post: dict, cfg: dict, assunto: str | None, titulo: str | None = None) -> dict | None:
@@ -325,6 +328,10 @@ def fundo_ctx(post: dict, cfg: dict, ligar) -> dict | None:
     return {"titulo": f["titulo"], "minutos": max(3, round(palavras / 200)), "blocos": blocos, "fontes": fontes}
 
 
+def _paragrafos(texto: str) -> list[str]:
+    return [t.strip() for t in texto.split("\n\n") if t.strip()]
+
+
 def pergunta_ctx(p: dict, A: dict, E: dict, conf: dict, cfg: dict, ligar, posts: list[dict], outras: list[dict],
                  hoje: str) -> dict:
     """A página de uma pressão: a resposta, o que muda para a leitora, se é coisa de um governo só (com os casos
@@ -334,15 +341,16 @@ def pergunta_ctx(p: dict, A: dict, E: dict, conf: dict, cfg: dict, ligar, posts:
     esc = {d["degrau"]: d for d in p["escada"]}
     raiz, depois = esc.get("raiz"), esc.get("o_que_vem_depois")
     gov, agora, medida = p.get("governo"), p.get("agora"), p.get("medida")
-    # Liga os termos técnicos uma vez na página toda: junta os textos na ordem em que aparecem.
+    # Liga os termos técnicos uma vez na página toda: junta os textos na ordem em que aparecem. Um texto com linha em
+    # branco ("\n\n") vira mais de um parágrafo, como o passo "O que isso muda para você?".
     ordem: list[str] = [p["resposta_curta"]["texto"]]
-    ordem += [x["texto"] for x in (depois, medida, gov) if x]
+    ordem += [t for x in (depois, medida, gov) if x for t in _paragrafos(x["texto"])]
     if raiz:
         ordem.append(raiz.get("peso_da_evidencia") or "")
         for lt in raiz.get("leituras", []):
             ordem += [lt.get("resumo") or lt["o_que_diz"]]
     if agora:
-        ordem.append(agora["texto"])
+        ordem += _paragrafos(agora["texto"])
     lig = dict(zip(ordem, ligar(ordem, cfg)))
 
     def L(t: str | None) -> Markup | None:
@@ -351,7 +359,8 @@ def pergunta_ctx(p: dict, A: dict, E: dict, conf: dict, cfg: dict, ligar, posts:
     def bloco(x: dict | None, pergunta: str | None = None) -> dict | None:
         if not x:
             return None
-        return {"pergunta": pergunta or x.get("pergunta"), "texto": L(x["texto"]), "fontes": fontes.de(x.get("afirmacoes", []))}
+        return {"pergunta": pergunta or x.get("pergunta"), "paragrafos": [L(t) for t in _paragrafos(x["texto"])],
+                "fontes": fontes.de(x.get("afirmacoes", []))}
 
     resposta = {"texto": L(p["resposta_curta"]["texto"]), "fontes": fontes.de(p["resposta_curta"]["afirmacoes"])}
     muda = bloco(depois)

@@ -3,7 +3,7 @@
  "pergunta": "Por que as famílias gastam tanto da renda com dívidas?",
  "pressao": "parcelas",
  "publicada": true,
- "atualizado_em": "2026-11-08",
+ "atualizado_em": "2026-11-09",
  "resposta_curta": {
   "texto": "As famílias gastam muito da renda com dívidas porque devem mais do que antes e porque cada dívida ficou mais cara. Em agosto de 2026, parcelas e juros de dívidas com os bancos levavam 29,0% da renda das famílias, o maior peso desde 2005, quando o Banco Central começou essa conta. A dívida das famílias passou de 16,5% da renda de um ano, em 2005, para 50,1%, e só os juros levam 10,9% da renda, também o maior desde 2005.",
   "afirmacoes": [
@@ -143,16 +143,17 @@
    "degrau": "o_que_vem_depois",
    "pergunta": "O que isso muda para você?",
    "rotulo": "maioria_com_dissenso",
-   "texto": "Quem já paga muita parcela corta o resto primeiro quando a renda cai ou o juro sobe, e as lojas vendem menos. Um estudo com dezenas de países, de 1960 a 2012, achou que, quando a dívida das famílias sobe mais rápido que o PIB, a economia costuma crescer menos depois. Outro, do Fundo Monetário Internacional, achou esse efeito mais fraco em países emergentes, como o Brasil, do que nos ricos. Em setembro de 2026, 8,1% do que as pessoas deviam no cartão e nos empréstimos com juro definido pelo banco tinha mais de 90 dias de atraso. Em setembro de 2025, eram 6,9%, e o atraso de agora é o maior desde 2011, quando o Banco Central começou essa conta.",
+   "texto": "Para quem tem financiamento e cartão, o peso da dívida depende do juro de cada uma. Em setembro de 2026, R$ 1.000 devidos por um ano no crédito pessoal, sem pagar nada no meio, viravam cerca de R$ 2.109, contra R$ 2.011 em setembro de 2025.\n\nNo rotativo do cartão, os mesmos R$ 1.000 viravam cerca de R$ 5.517, quase o mesmo de setembro de 2025. No consignado de aposentados e pensionistas do INSS, com a parcela descontada do benefício, viravam cerca de R$ 1.232.\n\nQuem já paga muita parcela é o primeiro a cortar outras compras quando a renda cai ou o juro sobe, e as lojas vendem menos. Vendendo menos, elas contratam menos, e isso chega também a quem não tem dívida.\n\nNo trimestre até setembro de 2026, o desemprego era de 5,2%, e cada ponto a mais equivale a cerca de 1,1 milhão de pessoas sem trabalho.",
    "afirmacoes": [
+    "a-conta-credito-pessoal",
+    "a-conta-cartao",
+    "a-lei-consignado",
     "a-site-familias",
-    "a-mian-sufi",
-    "a-fmi-familias-emergentes",
-    "a-inad-2026"
+    "a-freio",
+    "a-conta-emprego"
    ]
   }
  ],
- "testes": [],
  "episodios": [
   "ep-fam-2005",
   "ep-fam-2015",
@@ -165,6 +166,11 @@
    "data": "2026-11-08",
    "o_que": "Primeira versão da pergunta.",
    "motivo": "Pedido do Pedro em 8/11/2026: uma página para cada pressão do topo."
+  },
+  {
+   "data": "2026-11-09",
+   "o_que": "O que isso muda para você? passou a dizer o que muda para cada família que a pressão atinge, com o tamanho, o prazo e os dois lados quando um perde e outro ganha.",
+   "motivo": "Decisão do Pedro em 9/11/2026: todo texto termina no que muda na vida de quem lê, com as contas da tabela de tradução do site."
   }
  ]
 }

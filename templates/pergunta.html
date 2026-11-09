@@ -76,20 +76,23 @@ details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
 
 {% if q.muda %}<section id="o-que-muda">
 <h2>{{ q.muda.pergunta }}</h2>
-<p>{{ q.muda.texto }}</p>
+{% for t in q.muda.paragrafos %}<p>{{ t }}</p>
+{% endfor %}
 {{ fontes(q.muda.fontes) }}
 </section>{% endif %}
 
 {% if q.medida %}<section id="como-mede">
 <h2>{{ q.medida.pergunta }}</h2>
-<p>{{ q.medida.texto }}</p>
+{% for t in q.medida.paragrafos %}<p>{{ t }}</p>
+{% endfor %}
 {{ fontes(q.medida.fontes) }}
 <p class="d-fontes"><a href="/nota/#t-pressoes">Como funciona</a> explica a conta das cinco pressões.</p>
 </section>{% endif %}
 
 {% if q.governo %}<section id="governo">
 <h2>{{ q.governo.pergunta }}</h2>
-<p>{{ q.governo.texto }}</p>
+{% for t in q.governo.paragrafos %}<p>{{ t }}</p>
+{% endfor %}
 {{ fontes(q.governo.fontes) }}
 {% if q.episodios %}<ul class="tempo">
 {% for e in q.episodios %}<li><details>
@@ -117,7 +120,7 @@ details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
 
 {% if q.agora %}<section id="agora">
 <h2>O que está em jogo agora</h2>
-<div class="agora"><p class="quando">Atualizado em {{ q.agora.atualizado }}</p><p>{{ q.agora.texto }}</p>{{ fontes(q.agora.fontes) }}</div>
+<div class="agora"><p class="quando">Atualizado em {{ q.agora.atualizado }}</p>{% for t in q.agora.paragrafos %}<p>{{ t }}</p>{% endfor %}{{ fontes(q.agora.fontes) }}</div>
 </section>{% endif %}
 
 {% if q.fatos %}<section id="fatos">

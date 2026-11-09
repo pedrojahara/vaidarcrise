@@ -2511,31 +2511,33 @@
   "tipo": "dia",
   "porque": {
    "caderno": [
+    "c2",
+    "c9",
     "c3",
-    "c20",
+    "c4",
     "c21",
-    "c23",
-    "c24",
-    "c25",
-    "c26",
-    "c27",
     "c28",
-    "c29",
     "c30",
-    "c31"
+    "c31",
+    "c33",
+    "c101",
+    "c104",
+    "c105"
    ]
   },
   "ok": true,
-  "titulo": "Bancos sobem previsão de inflação de 2026 para 5,22% e cortam a do PIB",
+  "titulo": "Focus sobe previsão de inflação de 2026 para 5,22% e corta a do PIB",
   "paragrafos": [
-   "Os bancos (Focus) preveem que os preços subam 5,22% em 2026, acima do teto da meta de inflação, e cortaram a previsão para o PIB. Os jornais ligaram a piora, que inclui previsões maiores de juro e dólar, à reeleição do presidente, porque foi o primeiro boletim depois dela.",
-   "A inflação está acima do teto desde setembro, quando chegou a 4,58%. Se seguir assim, o Banco Central tende a explicar o estouro em carta ao ministro da Fazenda em março de 2027. Nas 9 cartas desde 2002, o juro subiu em 2, por isso a carta não garante juro maior."
+   "Os bancos (Focus) preveem inflação de 5,22% em 2026, contra 5,19% uma semana antes, e PIB de 1,76%, contra 1,80%. Os jornais ligam a piora ao temor, depois da reeleição, com a agenda econômica e as contas do governo.",
+   "Se a inflação seguir acima do teto da meta, o Banco Central explica o estouro em carta em março de 2027. Nas 9 cartas desde 2002, a Selic estava mais alta seis meses depois em só 2.",
+   "É só previsão e nada muda agora, mas o mínimo já compra 3,9% menos que em janeiro, perda que o reajuste repõe."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "Os bancos (Focus) preveem que os preços subam 5,22% em 2026, acima do teto da meta de inflação, e cortaram a previsão para o PIB. Os jornais ligaram a piora, que inclui previsões maiores de juro e dólar, à reeleição do presidente, porque foi o primeiro boletim depois dela.",
-     "A inflação está acima do teto desde setembro, quando chegou a 4,58%. Se seguir assim, o Banco Central tende a explicar o estouro em carta ao ministro da Fazenda em março de 2027. Nas 9 cartas desde 2002, o juro subiu em 2, por isso a carta não garante juro maior."
+     "Os bancos (Focus) preveem inflação de 5,22% em 2026, contra 5,19% uma semana antes, e PIB de 1,76%, contra 1,80%. Os jornais ligam a piora ao temor, depois da reeleição, com a agenda econômica e as contas do governo.",
+     "Se a inflação seguir acima do teto da meta, o Banco Central explica o estouro em carta em março de 2027. Nas 9 cartas desde 2002, a Selic estava mais alta seis meses depois em só 2.",
+     "É só previsão e nada muda agora, mas o mínimo já compra 3,9% menos que em janeiro, perda que o reajuste repõe."
     ]
    }
   ],
@@ -2543,98 +2545,130 @@
   "edicao": {
    "sugestoes": [
     {
-     "trecho": "Os jornais ligaram a mudança à reeleição do presidente, porque foi o primeiro boletim depois dela, que subiu também as previsões de juro e dólar.",
-     "problema": "A frase não se entende sozinha: pela gramática, o \"que subiu\" fica preso à reeleição, e não ao boletim.",
-     "como_fica": "Os jornais ligaram a piora, que inclui previsões maiores de juro e dólar, à reeleição do presidente, porque foi o primeiro boletim depois dela."
+     "trecho": "o reajuste do mínimo e do INSS em janeiro segue o INPC",
+     "problema": "A leitora não conhece a sigla INPC. O guia manda dizer o que ela mede.",
+     "como_fica": "o reajuste do mínimo e do INSS em janeiro segue a inflação dos mais pobres"
     },
     {
-     "trecho": "Focus sobe previsão de inflação de 2026 para 5,22% e corta a do PIB",
-     "problema": "Título com termo opaco como sujeito. Quem prevê são os bancos (Focus), o mesmo nome que o texto usa.",
-     "como_fica": "Bancos sobem previsão de inflação de 2026 para 5,22% e cortam a do PIB"
+     "trecho": "contra 5,19% uma semana antes",
+     "problema": "A comparação não diz a data. Pelos dados, a previsão anterior é a da semana de 23/10.",
+     "como_fica": "contra 5,19% na semana de 23/10"
     },
     {
-     "trecho": "Nas 9 cartas anteriores, o juro subiu em 2, por isso a carta marca um prazo, não uma alta certa.",
-     "problema": "Contraste em espelho (\"um prazo, não uma alta certa\"). Além disso, \"anteriores\" não diz desde quando se conta.",
-     "como_fica": "Nas 9 cartas desde 2002, o juro subiu em 2, por isso a carta não garante juro maior."
+     "trecho": "A previsão do PIB caiu de 1,80% para 1,76%.",
+     "problema": "É uma frase curta solta que completa a anterior. Ligada ao fato, também economiza palavras para caber nas 100.",
+     "como_fica": "…na semana de 23/10, e cortaram a previsão do PIB de 1,80% para 1,76%."
     },
     {
-     "trecho": "(texto inteiro, 103 palavras)",
-     "problema": "Aviso do verificador: o fato do dia passa de 100 palavras.",
-     "como_fica": "Juntei a ligação com a reeleição e as previsões de juro e dólar numa frase só. O texto ficou com 99 palavras, com os mesmos números e o mesmo porquê."
+     "trecho": "no primeiro Focus depois da reeleição do presidente. […] O Focus não diz por que cada economista mudou a sua, mas os jornais ligam a piora ao temor sobre a agenda econômica e as contas do governo.",
+     "problema": "O primeiro parágrafo passava de 50 palavras e o texto, de 100. O porquê dado pelos jornais fica, numa frase só.",
+     "como_fica": "Foi o primeiro Focus depois da reeleição do presidente, e os jornais ligam a piora ao temor sobre a agenda econômica e as contas do governo."
+    },
+    {
+     "trecho": "R$ 100 de compras hoje custariam cerca de R$ 104,96",
+     "problema": "O número não estava arredondado. Com o 'hoje' cortado, o texto cabe nas 100 palavras.",
+     "como_fica": "R$ 100 de compras custariam cerca de R$ 105"
     }
    ],
-   "aplicada": true
-  },
-  "teste": {
-   "ok": true,
-   "testes": {
-    "porque": {
-     "ok": true,
-     "por_que": "O texto dá o porquê como está nos dados: os jornais ligaram a piora à reeleição do presidente porque foi o primeiro boletim depois dela. Diz quem fez essa ligação e não inventa outra causa."
-    },
-    "quem": {
-     "ok": true,
-     "por_que": "Quem fez as previsões são os bancos e economistas do Focus, e quem manda a carta é o Banco Central. O governo aparece só como 'o presidente', no fato da reeleição, sem levar autoria de nenhuma decisão."
-    },
-    "e_dai": {
-     "ok": true,
-     "por_que": "O texto diz o que o fato muda: a inflação acima do teto desde setembro (4,58%) deve levar o Banco Central a mandar uma carta em março de 2027, e o histórico (juro subiu em 2 das 9 cartas) mostra que a carta não garante juro maior."
-    },
-    "livro": {
-     "ok": true,
-     "por_que": "O texto não explica como o juro age nos preços nem nenhum outro mecanismo geral. Todo o espaço vai para o fato, o porquê e o que vem depois."
-    }
-   },
-   "problemas": []
+   "aplicada": false,
+   "motivo": "o texto editado tinha mais problemas que o rascunho: número ou data que não está nos dados: 23/10 (use só os números dos dados, sem recalcular); parágrafo 3 com frase de 33 palavras; número ou data que não está nos dados: 23/10 (use só os números dos dados, sem recalcular)"
   },
   "meta": [
    {
     "etapa": "post",
     "modelo_pedido": "opus",
-    "prompt_sha256": "284e50664af15608946174f00a9c2e99f595607533690ef12a0c786246e6fa01",
-    "system_sha256": "dbe36a227238045327ee8a85dab6a9140e43b66582cd3e8fc233a1ceda391167",
+    "prompt_sha256": "82e82ece1ed050b3285b21b8029bb07fc4284c847aa89f4e177a5a78d8416aaf",
+    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.130069,
+    "custo_usd": 0.12619059999999999,
     "turnos": 2,
     "duracao_s": 30,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "e42322d9-3dad-4b21-8a61-a97d4c312704"
+    "session_id": "c819816f-9478-4963-bccf-5414fc34abac"
    },
    {
     "etapa": "editor",
     "modelo_pedido": "opus",
-    "prompt_sha256": "985a18d981f1ab6c0d8d4c32a5987159a83c7bfc8c47ba3473a243bc2f348aad",
+    "prompt_sha256": "758e830cbe2d9f4e363e5b8fe726a867c0ca017925aa78004d850ea4df89cc4f",
     "system_sha256": "4c7e8c0f33317bc6d454b5ff1a997da9df57cacbbd46c9781db8192f030feaf7",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.2826742,
+    "custo_usd": 0.3189742,
     "turnos": 2,
-    "duracao_s": 31,
+    "duracao_s": 34,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "ce5c7488-4605-4a47-8a0e-8cac19c70de6"
+    "session_id": "13d7b2d9-4bc6-44b9-9ec0-12552ff947ed"
+   },
+   {
+    "etapa": "post",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "f3dfc38ef05341cdcea8a86a0425deea7649f4a7619f455f246b216249d69064",
+    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.12321,
+    "turnos": 3,
+    "duracao_s": 20,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "77aaefe8-1dd1-49b8-961f-4e75bd1b60c5"
    },
    {
     "etapa": "teste",
     "modelo_pedido": "opus",
-    "prompt_sha256": "2bbd541cbc623ca42d50e231389e83c14cdcb83b6cf135f6be44aac8a5fcc880",
-    "system_sha256": "8ac0ad691c3d8317f7a01b7710ff315fcc059d9ac6cc9d2a8eaf9955ee37b79d",
+    "prompt_sha256": "fbfb3a7f1773c0b00940d5a8e647e829309cff61ec3dcce00760de38e552b023",
+    "system_sha256": "ec2846d97f94584650118e7a41a2898f261e7c831f55e498dddb6de838a29151",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.08145859999999999,
+    "custo_usd": 0.0904376,
     "turnos": 2,
-    "duracao_s": 11,
+    "duracao_s": 16,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "d2f8dc3a-9a3a-4e51-aba0-1e9309318b53"
+    "session_id": "5e9f4eaf-1d33-464c-976b-6baff1ac2ed3"
+   },
+   {
+    "etapa": "post",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "b949281b671a6533945213a5b078d4d5f88fbe7a5bceeca49feed7bbe49440f8",
+    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.18517240000000001,
+    "turnos": 3,
+    "duracao_s": 41,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "16e97320-ab6b-4183-b590-1a7089a5f997"
+   },
+   {
+    "etapa": "teste",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "988d6ca72f51accf619c4f889d9be367c1b5f828e093fc8b8f2aa788e06b54eb",
+    "system_sha256": "ec2846d97f94584650118e7a41a2898f261e7c831f55e498dddb6de838a29151",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.09821360000000001,
+    "turnos": 2,
+    "duracao_s": 17,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "c81978f5-6888-4987-8869-7800fc6c43db"
    }
   ],
   "fundo": {
@@ -3015,6 +3049,86 @@
      ],
      "permission_denials": [],
      "session_id": "2c940fb4-7a66-4c35-b403-bd656eb746b3"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "9dee580084c7c9eedce7da3c645eb8f938ae610ef9d2326fd30fc36102ba49ac",
+     "system_sha256": "6a24d631df6696859a9bd2b0011854ba63812942cedacee451450ccd3de9ae4b",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.410892,
+     "turnos": 2,
+     "duracao_s": 29,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "d7da8c3e-8d6a-4ea0-b61a-2bc34f3c7c30"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "ed68942a5e168c23b2cefdd4ef8227fba6cd25e8b04500bd72dd9a200ee491a8",
+     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7411012,
+     "turnos": 2,
+     "duracao_s": 106,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "6fe72c23-c9bb-46d0-b06e-75a3ff34ec45"
+    },
+    {
+     "etapa": "conferencia",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "72488aa2b787d76385e9ac12209a5651a7803cce846b820b3e3b4907f08155a1",
+     "system_sha256": "014db32c3a98cfd87cb62417008dbee3bc6c60858da38a9ac3f6069aa3aea5eb",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.261723,
+     "turnos": 2,
+     "duracao_s": 114,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "0f5fe571-4fdf-469e-a08b-6ec72bad8dc7"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "265a26b9c7058e9c9c574e410d34415cc8b47d54f8ae1c566cdb35495d084056",
+     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7149972,
+     "turnos": 2,
+     "duracao_s": 65,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "9fb790be-1ca3-475f-907d-f5e75c35bb6d"
+    },
+    {
+     "etapa": "editor_fundo",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "69832edd0a41b85918f22cabfa8bcf1ac2099993d2050aeb6c832c481fec3155",
+     "system_sha256": "c051e15dfe2ba0240d641e7b2a26a2ab05de7d68718375f6bd3be448f44a878a",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.1786374,
+     "turnos": 2,
+     "duracao_s": 38,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "d14acea3-c001-4413-bfc0-663ab7faee5c"
     }
    ],
    "evitar": [
@@ -3857,276 +3971,434 @@
       "status": "conferido",
       "saida": "Ciclos da Selic desde 2002, mês a mês (uma pausa no meio de um ciclo não o interrompe, se ele segue para o mesmo lado):\ncorte de 2002-02 a 2002-07: de 19,00% para 18,00% (-1,00 ponto(s))\nalta de 2002-10 a 2003-02: de 18,00% para 26,50% (+8,50 ponto(s))\ncorte de 2003-06 a 2004-04: de 26,50% para 16,00% (-10,50 ponto(s))\nalta de 2004-09 a 2005-05: de 16,00% para 19,75% (+3,75 ponto(s))\ncorte de 2005-09 a 2007-09: de 19,75% para 11,25% (-8,50 ponto(s))\nalta de 2008-04 a 2008-09: de 11,25% para 13,75% (+2,50 ponto(s))\ncorte de 2009-01 a 2009-07: de 13,75% para 8,75% (-5,00 ponto(s))\nalta de 2010-04 a 2011-07: de 8,75% para 12,50% (+3,75 ponto(s))\ncorte de 2011-09 a 2012-10: de 12,50% para 7,25% (-5,25 ponto(s))\nalta de 2013-04 a 2015-07: de 7,25% para 14,25% (+7,00 ponto(s))\ncorte de 2016-10 a 2020-08: de 14,25% para 2,00% (-12,25 ponto(s))\nalta de 2021-03 a 2022-08: de 2,00% para 13,75% (+11,75 ponto(s))\ncorte de 2023-08 a 2024-05: de 13,75% para 10,50% (-3,25 ponto(s))\nalta de 2024-09 a 2025-06: de 10,50% para 15,00% (+4,50 ponto(s))\ncorte de 2026-03 a 2026-09: de 15,00% para 13,75% (-1,25 ponto(s))\n"
      }
+    },
+    {
+     "id": "c101",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (precos), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz precos",
+     "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 4,96% (último dado de outubro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 104,96 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 4,96% (último dado de outubro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 104,96 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.\n"
+     }
+    },
+    {
+     "id": "c102",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (dolar), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz dolar",
+     "saida": "O dólar foi de R$ 5,3505 em 3/11/2025 para R$ 5,4935 em 3/11/2026: alta de 2,7% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 2,7%, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O dólar foi de R$ 5,3505 em 3/11/2025 para R$ 5,4935 em 3/11/2026: alta de 2,7% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 2,7%, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.\n"
+     }
+    },
+    {
+     "id": "c103",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (credito), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz credito",
+     "saida": "Juro médio do crédito livre às pessoas físicas: 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em set",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Juro médio do crédito livre às pessoas físicas: 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.262 (um ano antes, R$ 1.273).\nJuro médio do financiamento imobiliário com taxas de mercado: 14,20% ao ano em setembro de 2026, contra 14,88% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.142 (um ano antes, R$ 1.149).\nFonte: Banco Central, juro médio das operações de crédito para pessoas físicas, com um a dois meses de atraso. A Selic não passa inteira nem logo para esses juros.\n"
+     }
+    },
+    {
+     "id": "c104",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (guardado), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz guardado",
+     "saida": "Com a Selic em 13,75% ao ano (em 3/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 4,96% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,79 em um ano (8,38% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de outubro de 2026 (0,1616% ao mês), R$ 6,62 no mês, ou cerca de R$ 82,45 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Com a Selic em 13,75% ao ano (em 3/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 4,96% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,79 em um ano (8,38% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de outubro de 2026 (0,1616% ao mês), R$ 6,62 no mês, ou cerca de R$ 82,45 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.\n"
+     }
+    },
+    {
+     "id": "c105",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (minimo), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz minimo",
+     "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda falta(m) 2 mês(es) de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda falta(m) 2 mês(es) de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.\n"
+     }
+    },
+    {
+     "id": "c106",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (renda), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz renda",
+     "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.\n"
+     }
+    },
+    {
+     "id": "c107",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (emprego), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz emprego",
+     "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 ponto(s) a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 ponto(s) a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 ponto(s) a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 ponto(s) a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.\n"
+     }
     }
    ],
    "pressao": "inflacao",
    "tese": "Pela regra da meta contínua, a inflação acima do teto vira descumprimento quando passa seis meses seguidos fora da margem. A sequência começou em setembro (4,58%), e o Focus prevê 5,22% em dezembro. Assim, a segunda carta aberta do Banco Central ao ministro da Fazenda em menos de dois anos tende a sair em março de 2027, com o IPCA de fevereiro. Mas a carta é um prazo, não um gatilho de juro. Seis meses depois de cada uma das 9 cartas desde 2002, a Selic subiu em 2, ficou parada em 3 e caiu em 4. As duas altas vieram com o Banco Central já subindo o juro. São 9 casos: um padrão, não uma lei.",
-   "duracao_s": 1011,
+   "duracao_s": 1338,
    "offline": true,
    "curto": {
-    "porque": "O boletim Focus só reúne as previsões dos economistas e não diz por que elas mudaram. Os jornais ligaram a alta da inflação esperada para 2026, a 5,22%, ao fato de ser o primeiro boletim depois da reeleição do presidente. No mesmo boletim, os economistas também subiram as previsões de juro e de dólar.",
-    "e_dai": "Acima do teto desde setembro (4,58%), a inflação tende a forçar carta do Banco Central em março de 2027; depois das 9 cartas desde 2002, o juro subiu em 2.",
+    "porque": "O Focus reúne as previsões de economistas de bancos e consultorias e não diz por que cada um mudou a sua. Segundo os jornais, a previsão da inflação de 2026 subiu de 5,19% para 5,22% e a do PIB caiu de 1,80% para 1,76% no primeiro Focus depois da reeleição do presidente, com temor sobre a agenda econômica e as contas do governo.",
+    "e_dai": "A previsão aponta para a segunda carta do Banco Central por estouro da meta, em março de 2027. Nas 9 cartas desde 2002, a Selic só tinha subido seis meses depois em 2.",
+    "vida": "Por enquanto nada muda, porque é só uma previsão. Até janeiro, os preços mais altos comem o poder de compra de quem vive do mínimo, que já perdeu 3,9% de janeiro a setembro, e o reajuste de janeiro repõe essa perda pelo INPC medido.",
+    "familias": [
+     {
+      "familia": "minimo_inss",
+      "quem": "quem vive do salário mínimo ou da aposentadoria do INSS",
+      "o_que_muda": "Em janeiro, o reajuste segue o INPC até novembro. Pelo INPC de 4,29% em 12 meses até setembro, o mínimo iria a cerca de R$ 1.690,60 e uma aposentadoria de R$ 3.000 a cerca de R$ 3.128,81. Até lá, os preços mais altos comem o poder de compra.",
+      "caderno": [
+       "c105"
+      ]
+     },
+     {
+      "familia": "dinheiro_guardado",
+      "quem": "quem tem dinheiro guardado",
+      "o_que_muda": "Com a Selic em 13,75%, R$ 1.000 rendem R$ 137,50 em um ano antes do imposto. Descontada a inflação esperada de 4,96%, sobram cerca de R$ 83,79. Uma inflação maior reduz essa sobra nos próximos 12 meses.",
+      "caderno": [
+       "c104",
+       "c101"
+      ]
+     }
+    ],
+    "objetivo": "",
+    "condicao": "",
     "caderno": [
+     "c2",
+     "c9",
      "c3",
-     "c20",
+     "c4",
      "c21",
-     "c23",
-     "c24",
-     "c25",
-     "c26",
-     "c27",
      "c28",
-     "c29",
      "c30",
-     "c31"
-    ]
+     "c31",
+     "c33",
+     "c101",
+     "c104",
+     "c105"
+    ],
+    "corrigido_a_mao": "2026-11-09: a frase da vida juntava a previsão do Focus para 2026 (5,22%) à inflação esperada para os 12 meses seguintes (R$ 104,96); virou o nada muda agora, com a perda do mínimo de c105."
    },
    "rascunho": {
-    "titulo": "A inflação deve levar o Banco Central a escrever uma carta em março, e a carta sozinha não costuma mudar o juro",
-    "texto": "No primeiro boletim depois da eleição, os bancos (Focus) passaram a prever que os preços subam 5,22% em 2026, acima do teto de 4,5% da meta de inflação [c1, c2]. Pela regra em vigor desde 2025, a meta só é dada como descumprida quando o IPCA em 12 meses passa seis meses seguidos fora da margem [c6, c20]. Por isso, o que essa previsão põe no calendário é uma contagem de meses.\n\nA contagem começou em setembro, e o sexto mês é fevereiro de 2027, cujo IPCA sai em março, quando o Banco Central teria de escrever ao ministro da Fazenda [c3, c20]. Só que essa carta marca uma data e não decide o juro. Seis meses depois de cada uma das 9 cartas desde 2002, a Selic subiu em 2 casos, ficou igual em 3 e caiu em 4 [c23, c24, c25, c26, c27, c28, c29, c30, c31].\n\n### A contagem começou em setembro e dificilmente zera antes de fevereiro\n\nEm julho, o IPCA em 12 meses estava em 4,44%, e em agosto caiu para 4,22%, os dois abaixo do teto [c3]. Em setembro, ele foi a 4,58%, o primeiro mês da sequência de agora [c3].\n\nMaio e junho também tinham ficado acima do teto, com 4,72% e 4,64% [c12]. Aquela contagem parou em julho, quando a inflação em 12 meses voltou para baixo de 4,5% [c3, c12]. Por isso, a contagem que vale hoje começa do zero em setembro.\n\nO segundo mês já tem uma pista. A prévia da inflação de outubro, o IPCA-15, ficou em 4,62% em 12 meses, contra 4,47% em setembro [c17]. Se o IPCA de outubro vier parecido, ele entra na conta como o segundo mês seguido acima do teto.\n\nA conta de 12 meses funciona como uma fila: a cada mês, sai o mês mais antigo e entra o mais novo. Se o mês que entra tem inflação maior que o que sai, a taxa de 12 meses sobe. Isso explica por que ela tende a subir até dezembro.\n\nEm outubro, novembro e dezembro de 2025, os preços subiram pouco: 0,09%, 0,18% e 0,33% em cada mês [c13, c14, c7]. Para os mesmos meses de 2026, os bancos preveem 0,27%, 0,35% e 0,60% [c18]. Esses meses de 2025 vão saindo da fila, e meses com inflação maior entram no lugar deles.\n\nPara a contagem zerar em janeiro ou fevereiro, esses meses de 2027 teriam de vir bem abaixo dos de 2026, quando os preços subiram 0,33% em janeiro e 0,70% em fevereiro [c15, c16]. Uma conta aproximada, feita à mão com as previsões dos bancos, indica que janeiro e fevereiro de 2027, somados, teriam de ficar abaixo de cerca de 0,33% [c19, c15]. Seria um começo de ano com os preços quase parados, o que não aparece em nenhuma previsão.\n\n### Nas 9 cartas desde 2002, o juro seguiu o caminho que já vinha tomando\n\nCartas em anos seguidos já aconteceram outras vezes. Elas saíram em 2002, 2003 e 2004, depois em 2022 e 2023, e duas vezes em 2025, em janeiro e em julho [c21, c4]. A de julho de 2025 foi a primeira pela regra dos seis meses seguidos, e a de 2027 seria a segunda [c4, c31].\n\nA lista supõe uma carta para cada ano de estouro, e um deles foi para baixo. Em 2017, a inflação ficou abaixo do piso da meta, e a carta saiu em janeiro de 2018 [c21, c27]. Mesmo assim, o caso conta, porque também ali o Banco Central teve de explicar por que errou.\n\nAgora, o que veio depois. A Selic caiu nos seis meses seguintes às cartas de 2002, 2003, 2004 e 2018 [c23, c24, c25, c27]. Ficou igual depois das de 2016, 2023 e julho de 2025 [c26, c29, c31]. Subiu depois das de janeiro de 2022 e de janeiro de 2025 [c28, c30].\n\nAs duas altas têm uma coisa em comum: o Banco Central já estava subindo o juro quando a carta saiu. Em 2022, ele subia desde março de 2021, e em 2025, desde setembro de 2024 [c33]. A carta veio no meio do caminho, e o juro seguiu na direção em que já andava.\n\nNos seis meses depois da carta de 2022, a Selic foi de 9,25% para 13,25% [c28]. Depois da de janeiro de 2025, foi de 13,25% para 15,00% [c30]. Nos dois casos, o aumento continuou o ciclo que já existia.\n\n### Desta vez, a carta chegaria com o juro em 13,75% e a inflação esperada subindo\n\nO ciclo de agora é de corte: o Banco Central levou a Selic de 15,00% para 13,75% entre março e setembro [c33]. Ao mesmo tempo, a inflação que os bancos esperam para os 12 meses seguintes subiu 0,77 ponto, de 4,19% em julho para 4,96% em outubro [c8]. Pelo que as cartas mostram, é esse tipo de sinal que pesa na decisão do juro.\n\nOs bancos ainda preveem a Selic em 13,50% no fim de 2026, contra 13,25% uma semana antes [c9]. Isso quer dizer que eles ainda esperam um corte, só que menor. Para quem tem parcela ou usa o cartão, o que muda o custo do crédito é essa decisão, tomada pelo Banco Central a cada reunião, e não a carta.\n\nA melhor objeção vem de quem acha que a carta pesa sozinha. Uma segunda carta pela regra dos seis meses, menos de dois anos depois da primeira, pode tirar confiança na meta. Se isso fizer a inflação esperada subir mais, o Banco Central teria motivo para subir o juro. Os 9 casos não medem esse efeito.\n\nO caso mais parecido com o de agora também não fecha a questão. Em janeiro de 2004, a Selic vinha caindo: estava em 26,50% em abril de 2003 e em 16,50% na carta [c24, c25]. Nos seis meses seguintes, a inflação esperada subiu de 5,85% para 6,10%, e mesmo assim a Selic caiu para 16,00% [c25].\n\nSó que seis meses é pouco tempo, e um caso só não faz regra. No conjunto, são 9 cartas, o que mostra um padrão e não uma lei. A ligação entre a carta e o juro de depois também não prova causa, porque em cada caso havia petróleo, dólar e contas do governo diferentes.\n\nA previsão dos bancos também erra. Em média, o Focus erra 1,5 ponto para os 12 meses seguintes [c32]. A contagem pode se desmontar se a inflação de outubro a fevereiro vier bem abaixo do previsto.\n\nDuas coisas fariam isso. A primeira é o petróleo mais barato, uma causa de fora, que chega à bomba de gasolina e ao frete. A segunda é o dólar mais barato, que deixa os importados mais baratos e que o governo influencia com as próprias contas, porque quem investe olha para elas.\n\nO site vai conferir a contagem mês a mês. Em 12/11, o IBGE divulga o IPCA de outubro: se ele ficar acima de 4,5% em 12 meses, a contagem chega a dois meses. Os próximos passos são o IPCA de novembro, em 11/12, e o de dezembro, em 12/1.\n\nO que indica o juro é outra coisa: a decisão do Banco Central em 9/12 e a inflação esperada no Focus de cada segunda-feira. Se essa inflação esperada seguir subindo, a carta de março vai chegar num momento em que o juro já tem outros motivos para não cair.",
-    "previsao": {
-     "texto": "A inflação de outubro deve ficar acima de 4,5% em 12 meses. Será o segundo mês seguido acima do teto, a caminho do sexto, que leva à carta em março de 2027.",
-     "quando": "2026-11-12",
-     "como_conferir": "Veja o IPCA em 12 meses de outubro, que o IBGE divulga em 12/11. A prévia de outubro (IPCA-15) veio em 4,62%. Se o IPCA vier em 4,5% ou menos, a contagem volta a zero."
-    }
+    "titulo": "Inflação acima do teto deve levar a nova carta do Banco Central em março, e carta não costuma mudar o juro",
+    "texto": "A previsão dos bancos (Focus) de 5,22% para a inflação de 2026 põe uma data no calendário que quase ninguém está contando [c2]. O teto da meta é 4,5% [c1]. Pela regra da meta contínua, o Banco Central descumpre a meta quando o IPCA em 12 meses fica seis meses seguidos fora da margem, e aí escreve uma carta aberta ao ministro da Fazenda para explicar por quê [c4].\n\nA contagem começou em setembro. Se os preços andarem como os bancos preveem, o sexto mês é fevereiro, e a carta tende a sair em março de 2027, a segunda em menos de dois anos. Só que a carta marca um prazo e não obriga a subir o juro: seis meses depois de cada uma das 9 cartas desde 2002, a Selic subiu em 2 casos, ficou parada em 3 e caiu em 4 [c21, c23, c24, c25, c26, c27, c28, c29, c30, c31].\n\n### A contagem começou em setembro e dificilmente volta a zero antes de fevereiro\n\nEm julho, o IPCA em 12 meses estava em 4,44%, e em agosto caiu para 4,22%, abaixo do teto. Setembro, com 4,58%, é o primeiro mês acima [c3]. Maio e junho também tinham passado do teto, com 4,72% e 4,64%, mas a inflação voltou para baixo em julho, e essa sequência parou em dois meses [c12].\n\nO segundo mês já dá sinal de que vem acima. A prévia da inflação de outubro, o IPCA-15, ficou em 4,62% em 12 meses, contra 4,47% em setembro [c17]. O próprio Banco Central projetou em setembro que a inflação em quatro trimestres chegaria a 5,2% no fim de 2026 [c22], perto dos 5,22% do Focus [c2].\n\nPara a contagem voltar a zero, os 12 meses teriam de cair para 4,5% antes de fevereiro, e uma conta com os números de cada mês mostra que isso é difícil. O que sai da conta no fim de 2025 são meses baratos: outubro, novembro e dezembro tiveram 0,09%, 0,18% e 0,33% [c13, c14, c7]. Se os mesmos meses de 2026 vierem como os bancos preveem, 0,27%, 0,35% e 0,60%, os 12 meses chegam a cerca de 5,23% em dezembro [c18, c19].\n\nDaí até fevereiro, saem janeiro e fevereiro de 2026, que tiveram 0,33% e 0,70% [c15, c16]. Para os 12 meses voltarem a 4,5% em fevereiro de 2027, os dois primeiros meses de 2027 teriam de somar menos de cerca de 0,33%, contra 1,03% no começo de 2026 [c19, c16]. O IPCA de fevereiro, o sexto da contagem, sai em março, e a carta sai com ele.\n\n### Das 9 cartas desde 2002, as 2 que vieram antes de uma alta saíram no meio de altas que já estavam em curso\n\nCartas em anos seguidos já aconteceram. Houve uma por ano de 2002 a 2004, outras em 2022 e 2023 e duas em 2025, em janeiro e em julho [c21, c23, c24, c25, c28, c29, c30, c31]. A de julho de 2025 foi a primeira pela regra da meta contínua, depois de seis meses seguidos fora da margem [c4, c31]. A lista conta uma carta para cada ano que fechou fora da margem, e inclui 2017, quando a inflação ficou abaixo do piso [c27].\n\nSeis meses depois das cartas, a Selic caiu em 4 casos. Em 2002, foi de 19,00% para 18,00% [c23]. Em 2003, subiu para 26,50% em abril antes de cair para 24,50% em julho, um caso que poderia contar como alta no meio do caminho [c24]. Em 2004, foi de 16,50% para 16,00%, e em 2018, de 7,00% para 6,50% [c25, c27].\n\nEm 3 casos, ela ficou parada: em 14,25% em 2016, em 13,75% em 2023 e em 15,00% depois da carta de julho de 2025 [c26, c29, c31]. Em 2 casos, subiu: de 9,25% para 13,25% em 2022 e de 13,25% para 15,00% em 2025 [c28, c30].\n\nAs duas altas vieram no meio de altas que o Banco Central já fazia. Uma subida tinha começado em março de 2021 e levou a Selic de 2,00% a 13,75% até agosto de 2022. A outra começou em setembro de 2024 e foi de 10,50% a 15,00% até junho de 2025 [c33]. Nesses dois casos, a carta veio junto com uma subida que já estava andando e não iniciou nenhuma.\n\nDesta vez, o Banco Central vinha cortando. Ele baixou a Selic de 15,00% para 13,75% de março a setembro de 2026 [c33], e ela seguia em 13,75% em 3/11 [c104]. Enquanto isso, a inflação esperada para 12 meses subiu 0,77 ponto, de 4,19% em julho para 4,96% em outubro [c8]. Com isso, o comitê que decide o juro se guia pela inflação esperada, e a carta só registra o que o IPCA já fez.\n\n### A melhor objeção é que 9 casos não mostram quanto uma segunda carta pesa agora\n\nSão 9 cartas em 24 anos, e isso mostra um padrão, não uma lei. Uma coincidência entre carta e juro também não prova que uma causou a outra, porque em cada caso o Banco Central olhava o dólar, a economia e as contas do governo ao mesmo tempo.\n\nO momento de agora também não tem um par claro na lista. Nos seis meses depois de cada carta, a maior alta da inflação esperada foi de 0,25 ponto, em 2004, de 5,85% para 6,10%, e mesmo assim a Selic caiu um pouco [c25]. Em 2022, a alta foi de 0,24 ponto, com a Selic já subindo [c28]. Agora, a inflação esperada subiu 0,77 ponto em três meses, antes mesmo da carta [c8].\n\nHá ainda um custo que a lista não mede. Uma segunda carta em menos de dois anos pode fazer quem forma preço achar que a meta virou referência fraca, e esse efeito apareceria na inflação esperada, que é justamente o que o Banco Central acompanha para decidir o juro.\n\nA contagem também pode quebrar, porque o Focus erra, em média, 1,5 ponto no horizonte de 12 meses [c32]. Ela quebra se os meses de outubro a fevereiro vierem bem abaixo do previsto. Petróleo mais barato, que é causa de fora, baixaria o combustível. O dólar, que o governo influencia com as próprias contas, também pesa: pelas contas do Banco Central, cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano, e ele subiu 2,7% nos 12 meses até 3/11 [c102].\n\nAté aqui, os bancos não leem a contagem como sinal de juro mais alto. Na mesma semana em que subiram a previsão de inflação, eles passaram a esperar a Selic do fim de 2026 em 13,50%, contra 13,25% uma semana antes [c9]. Ainda é um corte, só que menor.\n\nPara quem vive do salário mínimo ou da aposentadoria do INSS, a carta não muda a regra do reajuste. Em janeiro, o mínimo segue o INPC dos 12 meses até novembro, mais o crescimento do PIB de dois anos antes, com ganho máximo de 2,5% acima da inflação. Pelo INPC de 4,29% até setembro, só a inflação levaria os R$ 1.621,00 a cerca de R$ 1.690,60, e uma aposentadoria de R$ 3.000 a cerca de R$ 3.128,81 [c105]. O que a inflação acima do teto faz é aumentar a perda até janeiro, que já era de 3,9% do poder de compra entre janeiro e setembro [c105].\n\nPara quem tem dinheiro guardado, o efeito vai para o outro lado e depende do juro, não da carta. Com a Selic em 13,75%, R$ 1.000 rendem R$ 137,50 em um ano, antes do imposto, e descontada a inflação esperada de 4,96% sobram cerca de R$ 83,79 [c104]. Uma inflação maior encolhe essa sobra. Ela só cresce se o Banco Central subir o juro, e as 9 cartas mostram que essa decisão não costuma sair da carta.\n\nPor isso, quando a carta sair em março, a manchete vai dizer que o Banco Central descumpriu a meta. A carta vai registrar seis meses de preços subindo acima do teto, coisa que você já terá sentido no mercado. O que muda a parcela e o rendimento é a decisão do juro, em 9/12, e a inflação esperada que os bancos informam toda semana. O IPCA de outubro, segundo mês da contagem, sai em 12/11."
    },
    "conferencia": {
     "codigo_antes": {
      "graves": [
-      "bloco 12: número ou data sem linha do caderno que confira: 2017 | trecho: A lista supõe uma carta para cada ano de estouro, e um deles foi para baixo. Em 2017, a inflação ficou abaixo do piso da"
+      "bloco 16: número ou data sem linha do caderno que confira: 0,25, 0,24 | trecho: O momento de agora também não tem um par claro na lista. Nos seis meses depois de cada carta, a maior alta da inflação e"
      ],
      "avisos": [
       "c16 vem de site fora da lista de fontes conhecidas: https://www.idinheiro.com.br/tabelas/tabela-ipca/",
       "c18 vem de site fora da lista de fontes conhecidas: https://paraibabusiness.com.br/focus-eleva-ipca-de-2027-a-476-acima-do-teto-da-meta-diz-bc/",
-      "c20 vem de site fora da lista de fontes conhecidas: https://www.legjur.com/legislacao/htm/dec_00120792024",
-      "c21 vem de site fora da lista de fontes conhecidas: https://www.nordinvestimentos.com.br/blog/amp/inflacao-cima-da-meta/"
+      "c21 vem de site fora da lista de fontes conhecidas: https://www.nordinvestimentos.com.br/blog/amp/inflacao-cima-da-meta/",
+      "c22 vem de site fora da lista de fontes conhecidas: https://dcomercio.com.br/publicacao/s/banco-central-reduz-projecao-do-pib-em-2026-para-1-8-e-mantem-inflacao-em-5-2",
+      "bloco 1: frase de 38 palavras",
+      "bloco 2: frase de 39 palavras",
+      "bloco 17: frase de 40 palavras",
+      "bloco 18: frase de 43 palavras",
+      "siglas que a leitora não conhece, sem nome por extenso ou link: INPC"
      ],
-     "palavras": 1128,
+     "palavras": 1252,
      "intertitulos": 3
     },
     "ia": {
      "correcoes": [
       {
-       "trecho": "A inflação deve levar o Banco Central a escrever uma carta em março, e a carta sozinha não costuma mudar o juro",
+       "trecho": "Título: Inflação acima do teto deve levar a nova carta do Banco Central em março, e carta não costuma mudar o juro",
        "tipo": "forca",
-       "problema": "\"Deve levar\" afirma a carta como certa, mas o texto diz que a contagem pode se desfazer. \"Não costuma\" é dito de 9 casos.",
-       "como_fica": "A inflação pode levar o Banco Central a escrever uma carta em março, e nas 9 cartas desde 2002 o juro não dependeu só dela"
+       "problema": "\"Deve levar\" e \"não costuma mudar o juro\" são mais fortes que o caderno. A regra das seis meses (c6, c20) não conferiu, c5 diz que as notícias divergem sobre o prazo da nova carta, e a carta de março depende de previsão do Focus. Além disso, 7 de 9 é padrão, não causa.",
+       "como_fica": "Título: Se os preços seguirem o Focus, o Banco Central pode escrever nova carta em março; em 7 das 9 cartas desde 2002, a Selic não subiu nos seis meses seguintes"
       },
       {
-       "trecho": "Pela regra em vigor desde 2025, a meta só é dada como descumprida",
-       "tipo": "data",
-       "problema": "O caderno (c6, c20) data o decreto de 2024. Nenhuma linha diz que a regra vale \"desde 2025\".",
-       "como_fica": "Pela regra do Decreto 12.079/2024, a meta só é dada como descumprida"
-      },
-      {
-       "trecho": "Seria um começo de ano com os preços quase parados, o que não aparece em nenhuma previsão.",
-       "tipo": "forca",
-       "problema": "O caderno não traz previsão mensal de 2027. \"Nenhuma previsão\" não tem linha. A conta de c19 é feita à mão e nenhum comando a reproduz.",
-       "como_fica": "Seria um começo de ano com os preços quase parados, bem abaixo do que os bancos preveem para dezembro de 2026 [c18, c19]."
-      },
-      {
-       "trecho": "Elas saíram em 2002, 2003 e 2004, depois em 2022 e 2023, e duas vezes em 2025, em janeiro e em julho [c21, c4].",
-       "tipo": "numero",
-       "problema": "A lista tem 7 cartas e o texto fala de 9. Faltam as de 2016 e 2018, que aparecem em c26 e c27. Para \"anos seguidos\", c21 só lista os anos de estouro.",
-       "como_fica": "Elas saíram em 2002, 2003 e 2004, em 2016, em 2018, em 2022 e 2023, e duas vezes em 2025, em janeiro e em julho [c21, c26, c27, c4]."
-      },
-      {
-       "trecho": "Mesmo assim, o caso conta, porque também ali o Banco Central teve de explicar por que errou.",
+       "trecho": "põe uma data no calendário que quase ninguém está contando [c2]",
        "tipo": "fonte",
-       "problema": "Nenhuma linha diz por que a carta de 2018 conta. c21 só a soma às 9 cartas. Além disso, c21 é de um blog fora da lista de fontes e fala de estouros \"acima\" da meta.",
-       "como_fica": "Mesmo assim, o caso entra na conta das 9 cartas [c21, c27]."
+       "problema": "c2 só mostra as previsões do Focus. Nenhuma linha diz que \"quase ninguém está contando\", e a data da carta não está em c2.",
+       "como_fica": "deixa aberta a possibilidade de uma nova carta do Banco Central em março de 2027 [c1, c2]"
       },
       {
-       "trecho": "### Nas 9 cartas desde 2002, o juro seguiu o caminho que já vinha tomando",
-       "tipo": "forca",
-       "problema": "Só as 2 altas (2022 e 2025) têm o ciclo de alta em curso (c33). Nas outras 7 cartas o juro caiu ou ficou igual, e o texto mostra 2003, com a Selic subindo até abril e depois caindo.",
-       "como_fica": "### Nas 2 vezes em que o juro subiu depois da carta, o Banco Central já estava subindo"
+       "trecho": "Pela regra da meta contínua, o Banco Central descumpre a meta quando o IPCA em 12 meses fica seis meses seguidos fora da margem, e aí escreve uma carta aberta ao ministro da Fazenda para explicar por quê [c4].",
+       "tipo": "fonte",
+       "problema": "A regra do decreto está em c6 e c20, e nos dois o trecho não foi achado. c4 só diz que a carta de julho de 2025 foi escrita por seis meses consecutivos de descumprimento, e não diz \"para explicar por quê\".",
+       "como_fica": "Em julho de 2025, o Banco Central escreveu uma carta aberta ao ministro da Fazenda por descumprir a meta por seis meses consecutivos [c4]. Se a regra for a mesma agora, seis meses seguidos de IPCA em 12 meses acima do teto levam a nova carta."
       },
       {
-       "trecho": "Pelo que as cartas mostram, é esse tipo de sinal que pesa na decisão do juro.",
+       "trecho": "Se os preços andarem como os bancos preveem, o sexto mês é fevereiro, e a carta tende a sair em março de 2027, a segunda em menos de dois anos.",
        "tipo": "forca",
-       "problema": "Nenhuma linha mostra que a inflação esperada pesa na decisão. Em janeiro de 2025 ela caiu de 5,74% para 4,42% e a Selic subiu (c30). Em 2004 ela subiu e a Selic caiu (c25).",
+       "problema": "Conclusão sobre o mês da carta sem linha: c5 diz que a nova carta depende do horizonte esperado e que as notícias divergem sobre o prazo. \"A segunda\" também confunde com as duas cartas de 2025.",
+       "como_fica": "Se os preços andarem como os bancos preveem, o sexto mês seguido acima do teto é fevereiro de 2027, e uma nova carta poderia sair a partir de março, a segunda pela meta contínua [c4, c5]."
+      },
+      {
+       "trecho": "os 12 meses chegam a cerca de 5,23% em dezembro [c18, c19]",
+       "tipo": "numero",
+       "problema": "O 5,23% de dezembro aparece no texto de c19, mas o comando e a saída de c19 só calculam o valor de fevereiro de 2027 (0,33). Nenhuma saída de conta confere o 5,23%. c18 vem de fonte secundária com data duvidosa.",
+       "como_fica": "os 12 meses ficam perto dos 5,22% que o Focus prevê para o ano [c1, c2]"
+      },
+      {
+       "trecho": "### Das 9 cartas desde 2002, as 2 que vieram antes de uma alta saíram no meio de altas que já estavam em curso",
+       "tipo": "forca",
+       "problema": "Em 2003 a Selic também subiu depois da carta, de 25,50% para 26,50% em abril (c24), antes de cair. O intertítulo faz dos dois casos de 2022 e 2025 o total de altas e aparece como regra.",
+       "como_fica": "### Das 9 cartas desde 2002, a Selic subiu em 2 nos seis meses seguintes, e as 2 altas vieram no meio de altas que já estavam em curso"
+      },
+      {
+       "trecho": "Com isso, o comitê que decide o juro se guia pela inflação esperada, e a carta só registra o que o IPCA já fez.",
+       "tipo": "forca",
+       "problema": "Nenhuma linha diz como o comitê decide. \"Com isso\" liga a frase à alta de 0,77 ponto sem sustentação. Dito como regra, é mais forte que o caderno.",
+       "como_fica": "Enquanto isso, a inflação esperada para 12 meses subiu 0,77 ponto, de 4,19% em julho para 4,96% em outubro [c8], e a carta registraria seis meses de IPCA em 12 meses acima do teto [c3, c4]."
+      },
+      {
+       "trecho": "a maior alta da inflação esperada foi de 0,25 ponto, em 2004, de 5,85% para 6,10%, e mesmo assim a Selic caiu um pouco [c25]. Em 2022, a alta foi de 0,24 ponto, com a Selic já subindo [c28].",
+       "tipo": "numero",
+       "problema": "0,25 e 0,24 são diferenças feitas à mão, sem saída de conta.py calc no caderno.",
+       "como_fica": "a maior alta da inflação esperada foi de 5,85% para 6,10%, em 2004, e mesmo assim a Selic caiu um pouco [c25]. Em 2022, foi de 5,28% para 5,52%, com a Selic já subindo [c28]."
+      },
+      {
+       "trecho": "porque em cada caso o Banco Central olhava o dólar, a economia e as contas do governo ao mesmo tempo",
+       "tipo": "fonte",
+       "problema": "Nenhuma linha do caderno diz o que o Banco Central olhava em cada uma das 9 cartas.",
+       "como_fica": "porque em cada caso havia outras coisas acontecendo ao mesmo tempo"
+      },
+      {
+       "trecho": "Há ainda um custo que a lista não mede. Uma segunda carta em menos de dois anos pode fazer quem forma preço achar que a meta virou referência fraca, e esse efeito apareceria na inflação esperada, que é justamente o que o Banco Central acompanha para decidir o juro.",
+       "tipo": "fonte",
+       "problema": "Mecanismo sem linha no caderno nem evidência da biblioteca, e \"o que o Banco Central acompanha para decidir o juro\" também não tem linha.",
        "como_fica": ""
       },
       {
-       "trecho": "### Desta vez, a carta chegaria com o juro em 13,75% e a inflação esperada subindo",
+       "trecho": "O dólar, que o governo influencia com as próprias contas, também pesa:",
+       "tipo": "troca",
+       "problema": "Atribui o dólar às contas do governo, sem linha, o que dá lado à frase. Só vale a conta de c102.",
+       "como_fica": "O dólar também pesa:"
+      },
+      {
+       "trecho": "Até aqui, os bancos não leem a contagem como sinal de juro mais alto. Na mesma semana em que subiram a previsão de inflação, eles passaram a esperar a Selic do fim de 2026 em 13,50%, contra 13,25% uma semana antes [c9]. Ainda é um corte, só que menor.",
        "tipo": "forca",
-       "problema": "Não há linha com a Selic de março de 2027. c33 só chega a setembro de 2026, e o texto diz depois que os bancos esperam 13,50% no fim do ano.",
-       "como_fica": "### Desta vez, o ciclo é de corte, com a Selic em 13,75% em setembro e a inflação esperada subindo"
+       "problema": "Não há linha sobre o que os bancos leem na contagem. Os números mostram que a Selic esperada subiu 0,25 ponto, o que vai no sentido contrário da primeira frase.",
+       "como_fica": "Na mesma semana em que subiram a previsão de inflação, os bancos passaram a esperar a Selic do fim de 2026 em 13,50%, contra 13,25% uma semana antes [c9]. Ainda é um corte em relação aos 13,75% de hoje [c104], só que menor."
       },
       {
-       "trecho": "Isso quer dizer que eles ainda esperam um corte, só que menor.",
-       "tipo": "fonte",
-       "problema": "O caderno não traz a Selic de hoje. c33 vai só até setembro (13,75%), e o texto não mostra a decisão de outubro/novembro. Dizer \"corte\" é inferência.",
-       "como_fica": "A Selic esperada para o fim de 2026 subiu 0,25 ponto em uma semana, de 13,25% para 13,50% [c9]."
+       "trecho": "O que a inflação acima do teto faz é aumentar a perda até janeiro, que já era de 3,9% do poder de compra entre janeiro e setembro [c105].",
+       "tipo": "numero",
+       "problema": "c105 diz que o reajuste de janeiro repõe essa perda, e que faltam dois meses de INPC. A frase omite os dois pontos, e INPC aparece sem nome por extenso.",
+       "como_fica": "A perda de poder de compra do mínimo foi de 3,9% de janeiro a setembro, e o reajuste de janeiro a repõe, pelo INPC (Índice Nacional de Preços ao Consumidor) dos 12 meses até novembro; faltam dois meses desse índice [c105]."
       },
       {
-       "trecho": "A segunda é o dólar mais barato, que deixa os importados mais baratos e que o governo influencia com as próprias contas, porque quem investe olha para elas.",
+       "trecho": "e as 9 cartas mostram que essa decisão não costuma sair da carta.",
        "tipo": "forca",
-       "problema": "Nenhuma linha do caderno sustenta que o governo influencia o dólar com as próprias contas. É causa sem fonte e troca o mecanismo por um juízo sobre o governo.",
-       "como_fica": "A segunda é o dólar mais barato, que deixa os importados mais baratos."
+       "problema": "Em 2 das 9 cartas a Selic subiu nos seis meses seguintes, e carta e juro são só coincidência no tempo. O guia pede o número de casos.",
+       "como_fica": "e em 7 das 9 cartas desde 2002 a Selic não subiu nos seis meses seguintes [c23, c24, c25, c26, c27, c28, c29, c30, c31]."
       },
       {
-       "trecho": "Em 12/11, o IBGE divulga o IPCA de outubro: se ele ficar acima de 4,5% em 12 meses, a contagem chega a dois meses. Os próximos passos são o IPCA de novembro, em 11/12, e o de dezembro, em 12/1.",
+       "trecho": "Por isso, quando a carta sair em março, a manchete vai dizer que o Banco Central descumpriu a meta. A carta vai registrar seis meses de preços subindo acima do teto, coisa que você já terá sentido no mercado.",
+       "tipo": "forca",
+       "problema": "\"Vai dizer\" e \"vai registrar\" são previsão dita como certeza. \"Preços subindo acima do teto\" confunde preço com o IPCA em 12 meses, e \"você já terá sentido\" não tem linha.",
+       "como_fica": "Por isso, se a carta sair em março, a manchete deve dizer que o Banco Central descumpriu a meta. A carta registraria seis meses de IPCA em 12 meses acima do teto [c3, c4]."
+      },
+      {
+       "trecho": "O que muda a parcela e o rendimento é a decisão do juro, em 9/12, e a inflação esperada que os bancos informam toda semana. O IPCA de outubro, segundo mês da contagem, sai em 12/11.",
        "tipo": "data",
-       "problema": "As datas 12/11, 11/12 e 12/1 não estão em nenhuma linha do caderno.",
-       "como_fica": "Quando o IBGE divulgar o IPCA de outubro, se ele ficar acima de 4,5% em 12 meses, a contagem chega a dois meses. Os próximos passos são o IPCA de novembro e o de dezembro."
-      },
-      {
-       "trecho": "a decisão do Banco Central em 9/12 e a inflação esperada no Focus de cada segunda-feira",
-       "tipo": "data",
-       "problema": "A data da reunião de 9/12 não está no caderno. No guia ela aparece só num exemplo.",
-       "como_fica": "a próxima decisão do Banco Central sobre a Selic e a inflação esperada no Focus de cada segunda-feira"
-      },
-      {
-       "trecho": "a carta de março vai chegar num momento em que o juro já tem outros motivos para não cair.",
-       "tipo": "forca",
-       "problema": "\"Vai\" afirma como certo o que o caderno não mostra. O texto diz que a carta e o juro não têm ligação provada e que 9 casos não são lei.",
-       "como_fica": "a carta de março, se vier, chegaria com a inflação esperada mais alta, o que torna menos provável um corte do juro, e a evidência são só 9 casos."
-      },
-      {
-       "trecho": "A inflação de outubro deve ficar acima de 4,5% em 12 meses. Será o segundo mês seguido acima do teto, a caminho do sexto, que leva à carta em março de 2027.",
-       "tipo": "forca",
-       "problema": "\"Será\" e \"leva à carta\" dão certeza. c19 é conta à mão, e o sexto mês só chega com todos os meses acima do teto.",
-       "como_fica": "A inflação de outubro deve ficar acima de 4,5% em 12 meses. Seria o segundo mês seguido acima do teto, a caminho do sexto, que levaria à carta em março de 2027."
-      },
-      {
-       "trecho": "quando os preços subiram 0,33% em janeiro e 0,70% em fevereiro [c15, c16]",
-       "tipo": "fonte",
-       "problema": "c16 vem do iDinheiro, site fora da lista de fontes conhecidas, e é um resumo de busca com data aproximada. c18 (Paraíba Business) e c21 (blog Nord) têm o mesmo problema.",
-       "como_fica": "quando os preços subiram 0,33% em janeiro e 0,70% em fevereiro [c15, c16] (c16 precisa de fonte oficial do IBGE)"
+       "problema": "As datas de 9/12 e de 12/11 não têm linha no caderno. A data da próxima decisão de juro precisa de documento do calendário do Copom.",
+       "como_fica": "O que muda a parcela e o rendimento é a decisão do juro do Banco Central e a inflação esperada que os bancos informam toda semana."
       }
      ],
      "graves": [
-      "A lista das 9 cartas, de onde vêm os \"2 em 9\", se apoia em c21, um blog fora da lista de fontes. Esse blog fala de estouros \"acima\" da meta e inclui 2017, que foi para baixo. Sem fonte oficial, o conjunto de casos do texto não está confirmado."
+      "A tese de que a carta sai em março de 2027 depende da regra dos seis meses seguidos. Nas linhas que a trazem (c6, c20), o trecho não foi achado. c5 diz que a nova carta depende do horizonte esperado e que as notícias divergem sobre o prazo.",
+      "A conta de dezembro e de fevereiro depende de c18 (Focus mensal, fonte secundária com data incerta) e do 5,23%, que não está na saída de c19. c10 também não conferiu.",
+      "A contagem de 9 cartas vem de c21 (Nord Investimentos, fora da lista de fontes), e c16 e c22 também. As datas de 9/12 e de 12/11 não têm linha no caderno."
      ],
-     "resumo": "O texto tem boa estrutura e quase todos os números batem com o caderno. Os problemas são o título e a previsão, que dão certeza demais, e dois intertítulos que dizem mais do que os casos mostram. O texto também usa datas de divulgação e reunião que não estão no caderno, e a lista das 9 cartas está incompleta. Há ainda alguns trechos sem fonte, como o dólar e as contas do governo, e o motivo de a inflação esperada pesar no juro. Fontes fracas: c16, c18, c20 e c21."
+     "resumo": "O texto é bem montado, com contas corretas nas linhas c19 e c23 a c33. Mas o título e a abertura tratam como certa uma carta em março que depende de regra não conferida (c6, c20). Há ainda fontes fora da lista, números sem saída de conta, datas sem linha, previsões ditas como certeza e uma frase sobre o que os bancos leem na contagem que vai contra c9."
     },
-    "aplicadas": 14,
+    "aplicadas": 16,
     "codigo": {
-     "graves": [
-      "bloco 1: número ou data sem linha do caderno que confira: 12.079 | trecho: No primeiro boletim depois da eleição, os bancos (Focus) passaram a prever que os preços subam 5,22% em 2026, acima do t",
-      "bloco 12: número ou data sem linha do caderno que confira: 2017 | trecho: A lista supõe uma carta para cada ano de estouro, e um deles foi para baixo. Em 2017, a inflação ficou abaixo do piso da",
-      "bloco 18: número ou data sem linha do caderno que confira: 0,25 | trecho: Os bancos ainda preveem a Selic em 13,50% no fim de 2026, contra 13,25% uma semana antes. A Selic esperada para o fim de"
-     ],
+     "graves": [],
      "avisos": [
       "c16 vem de site fora da lista de fontes conhecidas: https://www.idinheiro.com.br/tabelas/tabela-ipca/",
-      "c18 vem de site fora da lista de fontes conhecidas: https://paraibabusiness.com.br/focus-eleva-ipca-de-2027-a-476-acima-do-teto-da-meta-diz-bc/",
-      "c20 vem de site fora da lista de fontes conhecidas: https://www.legjur.com/legislacao/htm/dec_00120792024",
       "c21 vem de site fora da lista de fontes conhecidas: https://www.nordinvestimentos.com.br/blog/amp/inflacao-cima-da-meta/",
-      "bloco 9: frase de 38 palavras",
+      "c22 vem de site fora da lista de fontes conhecidas: https://dcomercio.com.br/publicacao/s/banco-central-reduz-projecao-do-pib-em-2026-para-1-8-e-mantem-inflacao-em-5-2",
+      "bloco 2: frase de 39 palavras",
+      "bloco 19: frase de 40 palavras",
+      "bloco 19: parágrafo de 117 palavras",
+      "siglas que a leitora não conhece, sem nome por extenso ou link: INPC",
       "título da leitura a fundo: até 110 caracteres, afirmativo e sem dois-pontos"
      ],
-     "palavras": 1116,
+     "palavras": 1203,
      "intertitulos": 3
     },
     "codigo_depois_da_reescrita": {
      "graves": [],
      "avisos": [
-      "c16 vem de site fora da lista de fontes conhecidas: https://www.idinheiro.com.br/tabelas/tabela-ipca/",
-      "c18 vem de site fora da lista de fontes conhecidas: https://paraibabusiness.com.br/focus-eleva-ipca-de-2027-a-476-acima-do-teto-da-meta-diz-bc/",
-      "c20 vem de site fora da lista de fontes conhecidas: https://www.legjur.com/legislacao/htm/dec_00120792024",
-      "c21 vem de site fora da lista de fontes conhecidas: https://www.nordinvestimentos.com.br/blog/amp/inflacao-cima-da-meta/"
+      "bloco 6: palavra que o site trocou: cada pressão piorou, ficou igual ou melhorou",
+      "siglas que a leitora não conhece, sem nome por extenso ou link: INPC"
      ],
-     "palavras": 1154,
+     "palavras": 1259,
      "intertitulos": 3
     },
     "final": {
      "graves": [],
      "avisos": [
-      "c16 vem de site fora da lista de fontes conhecidas: https://www.idinheiro.com.br/tabelas/tabela-ipca/",
-      "c18 vem de site fora da lista de fontes conhecidas: https://paraibabusiness.com.br/focus-eleva-ipca-de-2027-a-476-acima-do-teto-da-meta-diz-bc/",
-      "c20 vem de site fora da lista de fontes conhecidas: https://www.legjur.com/legislacao/htm/dec_00120792024",
-      "c21 vem de site fora da lista de fontes conhecidas: https://www.nordinvestimentos.com.br/blog/amp/inflacao-cima-da-meta/"
+      "bloco 20: frase de 42 palavras",
+      "bloco 20: parágrafo de 112 palavras",
+      "siglas que a leitora não conhece, sem nome por extenso ou link: INPC"
      ],
-     "palavras": 1157,
+     "palavras": 1287,
      "intertitulos": 3
-    },
-    "reconferencia": {
-     "em": "2026-11-09T05:53:57-03:00",
-     "ruins": [
-      "c20",
-      "c6"
-     ],
-     "frases_cortadas": [
-      "Pela regra da meta contínua, a meta só é dada como descumprida quando o IPCA em 12 meses passa seis meses seguidos fora da margem.",
-      "A contagem começou em setembro, e o sexto mês é fevereiro de 2027, cujo IPCA sai em março, quando o Banco Central teria de escrever ao ministro da Fazenda."
-     ],
-     "abertos": 12,
-     "final": {
-      "graves": [],
-      "avisos": [
-       "c16 vem de site fora da lista de fontes conhecidas: https://www.idinheiro.com.br/tabelas/tabela-ipca/",
-       "c18 vem de site fora da lista de fontes conhecidas: https://paraibabusiness.com.br/focus-eleva-ipca-de-2027-a-476-acima-do-teto-da-meta-diz-bc/",
-       "c21 vem de site fora da lista de fontes conhecidas: https://www.nordinvestimentos.com.br/blog/amp/inflacao-cima-da-meta/"
-      ],
-      "palavras": 1089,
-      "intertitulos": 3
-     },
-     "ruins_do_fato_do_dia": [
-      "c20"
-     ]
     }
    },
    "edicao": {
     "sugestoes": [
      {
-      "trecho": "A de janeiro de 2018 explicou um estouro para baixo, quando os preços em 12 meses estavam em 2,86%",
-      "problema": "Palavra de jornal de economia: a frase não se entende sozinha para quem não conhece o termo.",
-      "como_fica": "A de janeiro de 2018 explicou uma inflação abaixo da margem da meta, quando os preços em 12 meses estavam em 2,86%"
+      "trecho": "o mínimo é corrigido pelo INPC dos 12 meses até novembro",
+      "problema": "Sigla que a leitora não conhece, sem nome por extenso nem link.",
+      "como_fica": "o mínimo é corrigido pela inflação dos mais pobres dos 12 meses até novembro, medida pelo Índice Nacional de Preços ao Consumidor (INPC)"
      },
      {
-      "trecho": "Nos dois casos, o aumento continuou o ciclo que já existia.",
-      "problema": "\"Ciclo\" é economês; o guia pede palavra de conversa e frase completa.",
-      "como_fica": "Nos dois casos, o aumento seguiu a alta que já estava em andamento."
+      "trecho": "Os bancos não preveem essa folga",
+      "problema": "\"Folga\" é palavra que o site trocou, e aqui nem diz o que folga.",
+      "como_fica": "Os bancos não preveem essa queda"
      },
      {
-      "trecho": "O ciclo de agora é de corte: o Banco Central levou a Selic de 15,00% para 13,75% entre março e setembro",
-      "problema": "\"Ciclo\" é economês; o sujeito da decisão (Banco Central) deve aparecer com o verbo concreto.",
-      "como_fica": "Agora o Banco Central está cortando o juro: levou a Selic de 15,00% para 13,75% entre março e setembro"
+      "trecho": "Com isso, começa uma contagem.",
+      "problema": "Frase que não se entende sozinha: não diz contagem de quê nem para quê.",
+      "como_fica": "Com isso, segue andando a contagem de meses acima do teto, que leva o Banco Central a escrever uma carta."
      },
      {
-      "trecho": "### Desta vez, o ciclo é de corte e a inflação esperada está subindo",
-      "problema": "Intertítulo com economês (\"ciclo\"); deve dizer quem faz o quê.",
-      "como_fica": "### Desta vez, o Banco Central está cortando o juro e a inflação esperada sobe"
+      "trecho": "o Focus erra, em média, 1,5 ponto no horizonte de 12 meses [c32]. Isso acontece se",
+      "problema": "Palavra de jornal de economia (\"horizonte\") e \"Isso\" sem referência clara.",
+      "como_fica": "o Focus erra, em média, 1,5 ponto quando prevê a inflação para 12 meses à frente [c32]. Ela quebra se"
+     },
+     {
+      "trecho": "O IPCA em 12 meses estava em 4,44% em julho e caiu para 4,22% em agosto",
+      "problema": "\"Caiu\" sobre inflação soa como preço caindo; o guia pede \"os preços sobem mais devagar\".",
+      "como_fica": "Em 12 meses, os preços subiam 4,44% em julho e 4,22% em agosto"
+     },
+     {
+      "trecho": "por um caminho que a lista de cartas não capta",
+      "problema": "Palavra de jornal de economia.",
+      "como_fica": "por um caminho que a lista de cartas não mostra"
      }
     ],
     "aplicada": true
    },
-   "titulo": "A inflação deve levar o Banco Central a uma carta em março, e a carta não costuma mudar o juro",
-   "texto": "No primeiro boletim depois da eleição, os bancos (Focus) passaram a prever que os preços subam 5,22% em 2026, acima do teto de 4,5% da meta de inflação [c1, c2]. Por isso, o que essa previsão põe no calendário é uma contagem de meses.\n\nSó que essa carta marca uma data e não decide o juro. Seis meses depois de cada uma das 9 cartas desde 2002, a Selic subiu em 2 casos, ficou igual em 3 e caiu em 4 [c23, c24, c25, c26, c27, c28, c29, c30, c31].\n\n### A contagem começou em setembro e dificilmente zera antes de fevereiro\n\nEm julho, o IPCA em 12 meses estava em 4,44%, e em agosto caiu para 4,22%, os dois abaixo do teto [c3]. Em setembro, ele foi a 4,58%, o primeiro mês da sequência de agora [c3].\n\nMaio e junho também tinham ficado acima do teto, com 4,72% e 4,64% [c12]. Aquela contagem parou em julho, quando a inflação em 12 meses voltou para baixo de 4,5% [c3, c12]. Por isso, a contagem que vale hoje começa do zero em setembro.\n\nO segundo mês já tem uma pista. A prévia da inflação de outubro, o IPCA-15, ficou em 4,62% em 12 meses, contra 4,47% em setembro [c17]. Se o IPCA de outubro vier parecido, ele entra na conta como o segundo mês seguido acima do teto.\n\nA conta de 12 meses funciona como uma fila: a cada mês, sai o mês mais antigo e entra o mais novo. Se o mês que entra tem inflação maior que o que sai, a taxa de 12 meses sobe. Isso explica por que ela tende a subir até dezembro.\n\nEm outubro, novembro e dezembro de 2025, os preços subiram pouco: 0,09%, 0,18% e 0,33% em cada mês [c13, c14, c7]. Para os mesmos meses de 2026, os bancos preveem 0,27%, 0,35% e 0,60% [c18]. Esses meses de 2025 vão saindo da fila, e meses com inflação maior entram no lugar deles.\n\nPara a contagem zerar em janeiro ou fevereiro, esses meses de 2027 teriam de vir bem abaixo dos de 2026, quando os preços subiram 0,33% em janeiro e 0,70% em fevereiro [c15, c16]. Uma conta com as previsões dos bancos indica que janeiro e fevereiro de 2027, somados, teriam de ficar abaixo de cerca de 0,33% [c19, c15]. Seria um começo de ano com os preços quase parados, bem abaixo do que os bancos preveem para dezembro de 2026 [c18, c19].\n\n### Nas 2 vezes em que o juro subiu depois da carta, o Banco Central já estava subindo\n\nCartas em anos seguidos já aconteceram outras vezes. Elas saíram em 2002, 2003 e 2004, em 2016, em 2018, em 2022 e 2023, e duas vezes em 2025, em janeiro e em julho [c21, c26, c27, c4]. A de julho de 2025 foi a primeira pela regra dos seis meses seguidos, e a de 2027 seria a segunda [c4, c31].\n\nUm aviso sobre essa lista: ela não vem de uma contagem oficial do Banco Central. Ela parte dos anos em que a inflação ficou fora da meta, segundo um levantamento de uma empresa de investimentos, e supõe uma carta para cada um deles, mais a de julho de 2025 [c21, c4].\n\nNem todas as cartas foram por inflação alta. A de janeiro de 2018 explicou uma inflação abaixo da margem da meta, quando os preços em 12 meses estavam em 2,86% [c27]. Ela entra na conta das 9 porque também foi uma carta, mas é um caso diferente dos outros.\n\nAgora, o que veio depois. A Selic caiu nos seis meses seguintes às cartas de 2002, 2003, 2004 e 2018 [c23, c24, c25, c27]. Ficou igual depois das de 2016, 2023 e julho de 2025 [c26, c29, c31]. Subiu depois das de janeiro de 2022 e de janeiro de 2025 [c28, c30].\n\nAs duas altas têm uma coisa em comum: o Banco Central já estava subindo o juro quando a carta saiu. Em 2022, ele subia desde março de 2021, e em 2025, desde setembro de 2024 [c33]. A carta veio no meio do caminho, e o juro seguiu na direção em que já andava.\n\nNos seis meses depois da carta de 2022, a Selic foi de 9,25% para 13,25% [c28]. Depois da de janeiro de 2025, foi de 13,25% para 15,00% [c30]. Nos dois casos, o aumento seguiu a alta que já estava em andamento.\n\n### Desta vez, o Banco Central está cortando o juro e a inflação esperada sobe\n\nAgora o Banco Central está cortando o juro: levou a Selic de 15,00% para 13,75% entre março e setembro [c33]. Ao mesmo tempo, a inflação que os bancos esperam para os 12 meses seguintes subiu 0,77 ponto, de 4,19% em julho para 4,96% em outubro [c8].\n\nOs bancos passaram a prever a Selic em 13,50% no fim de 2026, contra 13,25% uma semana antes [c9]. Para quem tem parcela ou usa o cartão, o que muda o custo do crédito é a decisão que o Banco Central toma a cada reunião, e não a carta.\n\nA melhor objeção vem de quem acha que a carta pesa sozinha. Uma segunda carta pela regra dos seis meses, menos de dois anos depois da primeira, pode tirar confiança na meta. Se isso fizer a inflação esperada subir mais, o Banco Central teria motivo para subir o juro, e os 9 casos não medem esse efeito.\n\nO caso mais parecido com o de agora também não fecha a questão. Em janeiro de 2004, a Selic vinha caindo: estava em 26,50% em abril de 2003 e em 16,50% na carta [c24, c25]. Nos seis meses seguintes, a inflação esperada subiu de 5,85% para 6,10%, e mesmo assim a Selic caiu para 16,00% [c25].\n\nSó que um caso não faz regra, e seis meses é pouco tempo. No conjunto, são 9 cartas, numa lista montada sem fonte oficial, o que mostra um padrão e não uma lei. A ligação entre a carta e o juro de depois também não prova causa, porque em cada caso havia petróleo, dólar e contas do governo diferentes.\n\nA previsão dos bancos também erra. Em média, o Focus erra 1,5 ponto para os 12 meses seguintes [c32]. A contagem pode se desmontar se a inflação de outubro a fevereiro vier bem abaixo do previsto.\n\nDuas coisas fariam isso. A primeira é o petróleo mais barato, uma causa de fora, que chega à bomba de gasolina e ao frete. A segunda é o dólar mais barato, que deixa os importados mais baratos e depende, em parte, de como quem investe vê as contas do governo.\n\nA contagem anda um mês por vez. Quando o IBGE divulgar o IPCA de outubro, se ele ficar acima de 4,5% em 12 meses, a contagem chega a dois meses. Depois vêm o IPCA de novembro e o de dezembro.\n\nO que indica o juro é outra coisa: a próxima decisão do Banco Central sobre a Selic e a inflação esperada no Focus de cada segunda-feira. Se essa inflação esperada seguir subindo, a carta de março, se vier, chegaria num cenário sem paralelo claro nas 9 cartas.",
-   "duracao_escrever_s": 211,
-   "texto_corrigido_a_mao": "2026-11-08: tirada a 'conta feita à mão' (bastidor); a conta c19 passou a sair de src/conta.py calc, com o mesmo 0,33%; a fonte (c21, Nord Investimentos) não é corretora.",
-   "revisao_manual": [
-    {
-     "em": "2026-11-08",
-     "o_que": "tirada a previsão com data e as frases em que o site prometia conferir ou acompanhar depois (decisão do Pedro em 8/11/2026: o site faz a análise do fato e para aí)",
-     "trocas": [
-      {
-       "antes": "O site vai conferir a contagem mês a mês. Quando o IBGE divulgar o IPCA de outubro, se ele ficar acima de 4,5% em 12 meses, a contagem chega a dois meses. Os próximos passos são o IPCA de novembro e o de dezembro.",
-       "depois": "A contagem anda um mês por vez. Quando o IBGE divulgar o IPCA de outubro, se ele ficar acima de 4,5% em 12 meses, a contagem chega a dois meses. Depois vêm o IPCA de novembro e o de dezembro."
-      },
-      {
-       "antes": "Se essa inflação esperada seguir subindo, a carta de março, se vier, chegaria num cenário sem paralelo claro nas 9 cartas, e você pode acompanhar esse número toda semana.",
-       "depois": "Se essa inflação esperada seguir subindo, a carta de março, se vier, chegaria num cenário sem paralelo claro nas 9 cartas."
-      }
-     ]
-    }
-   ],
-   "fontes_abertas": true
+   "titulo": "Nova carta do Banco Central pela inflação pode vir em 2027, mas a carta costuma seguir o juro e não mudá-lo",
+   "texto": "Os bancos (Focus) preveem inflação de 5,22% em 2026 e de 4,76% em 2027, as duas acima do teto da meta, de 4,5% [c2, c1]. Com isso, segue andando a contagem de meses acima do teto, que leva o Banco Central a escrever uma carta. Em julho de 2025, o Banco Central escreveu uma carta aberta ao ministro da Fazenda porque a meta tinha sido descumprida por seis meses consecutivos [c4]. Pelo mesmo critério, uma nova sequência começou em setembro, e, se os bancos estiverem certos, o sexto mês seguido acima do teto será fevereiro de 2027.\n\nA carta, porém, marca um prazo e não obriga ninguém a subir o juro. Seis meses depois de cada carta desde 2002, a Selic subiu em 2 casos, ficou parada em 3 e caiu em 4 [c23, c24, c25, c26, c27, c28, c29, c30, c31]. As duas altas aconteceram quando o Banco Central já vinha subindo o juro [c33]. São poucos casos, e eles mostram um padrão, não uma lei.\n\n### A contagem começou em setembro, e os bancos não preveem a volta abaixo do teto\n\nEm 12 meses, os preços subiam 4,44% em julho e 4,22% em agosto, abaixo do teto. Setembro, com 4,58%, foi o primeiro mês acima [c3]. Maio e junho também tinham passado do teto, com 4,72% e 4,64%, mas a inflação voltou para baixo dele em julho, e aquela sequência parou em dois meses [c12].\n\nOutubro deve ser o segundo mês acima do teto, porque a prévia da inflação de outubro, o IPCA-15, ficou em 4,62% em 12 meses, contra 4,47% em setembro [c17]. Para a contagem voltar a zero antes de fevereiro, os 12 meses teriam de cair para 4,5% ou menos. Só que a conta joga contra essa queda, porque os meses que saem dela no fim de 2025 foram baratos: os preços subiram 0,09% em outubro, 0,18% em novembro e 0,33% em dezembro [c13, c14, c7].\n\nO mecanismo funciona assim: o número de 12 meses cai quando o mês novo vem mais baixo que o mesmo mês um ano antes. Se outubro de 2026 subir mais que 0,09%, o acumulado sobe em vez de cair. Em janeiro, sai da conta um mês de 0,33%, igual ao de dezembro [c15]. Os bancos não preveem essa queda: a previsão deles para 2027 inteiro continua acima do teto [c2].\n\nA data exata da carta depende também de como o Banco Central vai contar. A própria carta de julho de 2025 diz que ele escreve outra se a inflação não voltar à margem no prazo esperado [c5]. Como a inflação voltou para baixo do teto de novembro de 2025 a fevereiro de 2026 [c11], a sequência de agora seria uma nova, e não a continuação da antiga.\n\n### Nas cartas desde 2002, a Selic subiu em 2 casos, e nos dois o Banco Central já vinha subindo o juro\n\nJá houve cartas em anos seguidos, de 2002 a 2004, em 2022 e 2023 e duas vezes em 2025, em janeiro e em julho [c23, c24, c25, c28, c29, c30, c31]. A de julho de 2025 foi a primeira pela regra dos seis meses seguidos [c4, c31]. A de janeiro de 2018 veio por um estouro para baixo, porque em 2017 a inflação ficou abaixo do piso [c27].\n\nA Selic caiu nos seis meses seguintes em 4 casos. Em 2002, ela foi de 19,00% para 18,00% [c23]. Em 2003, subiu para 26,50% em abril e depois caiu para 24,50% em julho, o que deixa esse caso perto do limite entre alta e corte [c24]. Em 2004, ela foi de 16,50% para 16,00%, e em 2018, de 7,00% para 6,50% [c25, c27].\n\nEm 3 casos, a Selic ficou parada: em 14,25% em 2016, em 13,75% em 2023 e em 15,00% depois da carta de julho de 2025 [c26, c29, c31]. Em 2 casos ela subiu, de 9,25% para 13,25% depois da carta de 2022 e de 13,25% para 15,00% depois da carta de janeiro de 2025 [c28, c30].\n\nEssas duas altas faziam parte de subidas que já estavam em andamento. A primeira começou em março de 2021 e levou a Selic de 2,00% a 13,75% até agosto de 2022. A segunda começou em setembro de 2024 e foi de 10,50% a 15,00% até junho de 2025 [c33]. Nas duas vezes, a carta chegou com a subida já andando e não deu início a nenhuma.\n\nAgora, o Banco Central vinha cortando. Ele baixou a Selic de 15,00% para 13,75% de março a setembro de 2026 [c33], e ela seguia em 13,75% em 3/11 [c104]. No mesmo período, a inflação esperada para 12 meses subiu 0,77 ponto, de 4,19% em julho para 4,96% em outubro [c8]. Uma carta em 2027 chegaria com o juro em corte ou parado e a inflação esperada subindo.\n\n### A melhor objeção é que poucos casos não medem o peso de uma segunda carta agora\n\nO primeiro limite é o tamanho da amostra: são 9 cartas em 24 anos [c23, c24, c25, c26, c27, c28, c29, c30, c31]. Ver carta e juro acontecendo juntos também não prova que uma coisa causou a outra, porque em cada caso havia outras forças mexendo com a inflação e com o dólar ao mesmo tempo.\n\nO momento de agora também não tem um par claro na lista. Nos seis meses depois das cartas, a maior alta da inflação esperada aconteceu em 2004, de 5,85% para 6,10%, e mesmo assim a Selic caiu um pouco [c25]. Em 2022, ela foi de 5,28% para 5,52%, com a Selic já subindo [c28]. Desta vez, a inflação esperada subiu 0,77 ponto em três meses, antes de qualquer carta [c8].\n\nQuem acha que a carta pesa mais desta vez tem um argumento que os números não medem. Uma segunda carta pela mesma regra, em menos de dois anos, pode fazer bancos e empresas desconfiarem que a meta não será cumprida. Se essa desconfiança aparecer na inflação esperada, ela pode pressionar o juro por um caminho que a lista de cartas não mostra.\n\nA contagem também pode quebrar, porque o Focus erra, em média, 1,5 ponto quando prevê a inflação para 12 meses à frente [c32]. Ela quebra se os preços de outubro a fevereiro vierem bem abaixo do previsto. O petróleo mais barato, uma causa de fora, baixaria o combustível. O dólar também pesa: pelas contas do Banco Central, cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano, e ele subiu 2,7% nos 12 meses até 3/11 [c102].\n\nNa mesma semana em que subiram a previsão de inflação, os bancos passaram a esperar a Selic do fim de 2026 em 13,50%, contra 13,25% uma semana antes [c9]. Isso ainda seria um corte em relação aos 13,75% de hoje [c104], só que menor. Ou seja, nem os bancos tratam a carta como motivo para subir o juro.\n\nPara quem vive do salário mínimo ou da aposentadoria do INSS, nada muda agora, porque a carta não mexe na regra do reajuste. Em janeiro, o mínimo é corrigido pela inflação dos mais pobres dos 12 meses até novembro, medida pelo Índice Nacional de Preços ao Consumidor (INPC), mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5% [c105]. Só pela inflação de 4,29% até setembro, os R$ 1.621,00 iriam a cerca de R$ 1.690,60, e uma aposentadoria de R$ 3.000, a cerca de R$ 3.128,81 [c105]. Até janeiro, os preços mais altos vão comendo o poder de compra, que já caiu 3,9% de janeiro a setembro [c105].\n\nPara quem tem dinheiro guardado, o efeito vai para o outro lado e depende do juro, não da carta. Com a Selic em 13,75%, R$ 1.000 rendem R$ 137,50 em um ano, antes do imposto, e, descontada a inflação esperada de 4,96%, sobram cerca de R$ 83,79 [c104]. Uma inflação maior encolhe essa sobra nos próximos 12 meses, e ela só cresceria se o Banco Central subisse o juro.\n\nPor isso, se a carta sair em 2027, a manchete vai falar em meta descumprida, e isso será verdade pela regra que o Banco Central usou em julho de 2025 [c4]. Para você, o que mexe na parcela e no rendimento é outra coisa: a decisão de juro do Banco Central e a inflação que os bancos esperam. Nas cartas desde 2002, o juro andou na direção em que já vinha, e a carta não mudou esse rumo [c33].",
+   "duracao_escrever_s": 327,
+   "notas_da_versao_anterior": {
+    "texto_corrigido_a_mao": "2026-11-08: tirada a 'conta feita à mão' (bastidor); a conta c19 passou a sair de src/conta.py calc, com o mesmo 0,33%; a fonte (c21, Nord Investimentos) não é corretora.",
+    "revisao_manual": [
+     {
+      "em": "2026-11-08",
+      "o_que": "tirada a previsão com data e as frases em que o site prometia conferir ou acompanhar depois (decisão do Pedro em 8/11/2026: o site faz a análise do fato e para aí)",
+      "trocas": [
+       {
+        "antes": "O site vai conferir a contagem mês a mês. Quando o IBGE divulgar o IPCA de outubro, se ele ficar acima de 4,5% em 12 meses, a contagem chega a dois meses. Os próximos passos são o IPCA de novembro e o de dezembro.",
+        "depois": "A contagem anda um mês por vez. Quando o IBGE divulgar o IPCA de outubro, se ele ficar acima de 4,5% em 12 meses, a contagem chega a dois meses. Depois vêm o IPCA de novembro e o de dezembro."
+       },
+       {
+        "antes": "Se essa inflação esperada seguir subindo, a carta de março, se vier, chegaria num cenário sem paralelo claro nas 9 cartas, e você pode acompanhar esse número toda semana.",
+        "depois": "Se essa inflação esperada seguir subindo, a carta de março, se vier, chegaria num cenário sem paralelo claro nas 9 cartas."
+       }
+      ]
+     }
+    ]
+   }
   },
   "termina_em": "inflacao",
+  "pergunta": "inflacao-acima-da-meta",
+  "teste": {
+   "ok": true,
+   "testes": {
+    "porque": {
+     "ok": true,
+     "por_que": "O texto dá a razão como os jornais a dão, e diz que são os jornais: o temor com a agenda econômica e as contas do governo depois da reeleição. Não inventa causa, e os números (5,19, 5,22, 1,80, 1,76) estão nas fontes."
+    },
+    "quem": {
+     "ok": true,
+     "por_que": "Cada sujeito é quem age de fato: os bancos do Focus preveem, os jornais ligam a piora à reeleição e o Banco Central escreve a carta. A frase não muda de sentido com outro governo e usa 'reeleição' sem citar o nome."
+    },
+    "e_dai": {
+     "ok": true,
+     "por_que": "Fala do risco (a carta de março de 2027 e a Selic mais alta seis meses depois em só 2 das 9 cartas) e termina na vida da leitora com 'nada muda agora', o porquê, o tamanho (3,9%) e para quem (o mínimo). O tom é o de uma adulta e não diz o que fazer com o dinheiro."
+    },
+    "livro": {
+     "ok": true,
+     "por_que": "Não gasta espaço com o mecanismo geral de juro ou de inflação; o texto fica no fato, na causa do dia e na consequência."
+    }
+   },
+   "problemas": []
+  },
   "versao_anterior": {
    "titulo": "Bancos sobem previsão de inflação de 2026 para 5,22% e cortam a do PIB",
    "paragrafos": [
-    "Os bancos (Focus) agora preveem inflação de 5,22% em 2026, acima do teto da meta, de 4,5%, e cortaram a previsão de crescimento do PIB.",
-    "Com preços previstos mais altos, o Banco Central tende a manter o juro alto por mais tempo. Com isso, o crédito fica mais caro para pessoas e empresas, e a economia anda mais devagar.",
-    "No mesmo dia, o dólar fechou a R$ 5,49, e o governo passou a pagar mais para pegar dinheiro emprestado. Por isso, os bancos cobram mais de famílias e empresas nos financiamentos. O Banco Central decide o juro hoje."
-   ],
-   "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior."
+    "Os bancos (Focus) preveem que os preços subam 5,22% em 2026, acima do teto da meta de inflação, e cortaram a previsão para o PIB. Os jornais ligaram a piora, que inclui previsões maiores de juro e dólar, à reeleição do presidente, porque foi o primeiro boletim depois dela.",
+    "A inflação está acima do teto desde setembro, quando chegou a 4,58%. Se seguir assim, o Banco Central tende a explicar o estouro em carta ao ministro da Fazenda em março de 2027. Nas 9 cartas desde 2002, o juro subiu em 2, por isso a carta não garante juro maior."
+   ]
   },
-  "revisao_manual": "2026-11-08: refeito a pedido do Pedro (fato do dia com o porquê): a pesquisa do dia, a mesma da leitura a fundo, passa ao redator o porquê e o e daí (curto do editor-chefe, refeito da pesquisa gravada com fundo.py --curto); regra do \"quem decidiu\"; teste do porquê; Opus no post, no editor e no teste. Mesmo programa da atualização (src/escreve_post.py), com os dados desta rodada. O texto anterior ficou em versao_anterior.",
-  "pergunta": "inflacao-acima-da-meta"
+  "revisao_manual": "2026-11-08: refeito a pedido do Pedro (fato do dia com o porquê): a pesquisa do dia, a mesma da leitura a fundo, passa ao redator o porquê e o e daí (curto do editor-chefe, refeito da pesquisa gravada com fundo.py --curto); regra do \"quem decidiu\"; teste do porquê; Opus no post, no editor e no teste. Mesmo programa da atualização (src/escreve_post.py), com os dados desta rodada. O texto anterior ficou em versao_anterior. 2026-11-09: refeito a pedido do Pedro (o fato do dia termina na vida de quem lê, TRADUCAO.md): curto do editor-chefe refeito com as traduções do dia e post pelo mesmo programa; à mão, a frase da vida, que juntava a previsão de 2026 à inflação esperada para os 12 meses seguintes, virou o \"nada muda agora\" com o porquê, e voltou a carta do Banco Central, com os mesmos números. A leitura a fundo foi escrita de novo da mesma pesquisa (fundo.py --escreve), com as famílias de referência que o fato atinge; as correções à mão de 8/11 (bastidor e promessas de conferir depois) não voltaram, e a conferência das fontes no Mac (--reconfere) roda de novo."
  },
  "pauta": {
   "versao": 1,
@@ -4144,6 +4416,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Os economistas agora esperam preços subindo mais rápido, e o Banco Central tende a manter o juro alto por mais tempo. Com isso, o crédito fica mais caro para pessoas e empresas e a economia anda mais devagar.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "credito",
+     "quem": "quem tem dívida ou quer financiar casa, carro ou compras e depende de o juro cair"
+    },
     "n_manchetes": 6,
     "jornais": [
      "Agência Brasil",
@@ -4206,6 +4483,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "O governo passa a pagar mais caro para pegar dinheiro emprestado por muitos anos, e esse custo chega aos financiamentos de empresas e famílias. A bolsa caiu 1,42% no dia.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "credito",
+     "quem": "quem pede financiamento e quem compra produtos importados, que ficam mais caros com o dólar alto"
+    },
     "n_manchetes": 9,
     "jornais": [
      "Agência Brasil",
@@ -4268,6 +4550,11 @@
     "lado": "pesa",
     "ja_esperado": true,
     "porque": "Investidores temem que a Selic passe a ser definida por decisão política e que os preços subam mais rápido. Por isso cobram mais para emprestar ao governo, o que encarece o crédito no país.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "credito",
+     "quem": "quem tem dívida, cartão ou financiamento e sente o juro do banco"
+    },
     "n_manchetes": 6,
     "jornais": [
      "InfoMoney",
@@ -4327,6 +4614,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "Se o ajuste sair, quem empresta ao governo pode cobrar menos, o que abre espaço para juro menor. A equipe estuda limitar o crescimento do gasto mínimo com saúde e educação.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "governo",
+     "quem": "quem usa a saúde e a educação públicas, se o gasto mínimo nessas áreas passar a crescer menos"
+    },
     "n_manchetes": 5,
     "jornais": [
      "Estadão",
@@ -4382,6 +4674,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Com a dívida crescendo, o governo gasta mais com juros e fica com menos espaço para reagir a uma crise. O Tesouro alerta que vários choques ao mesmo tempo podem levar a dívida acima de 100% do PIB.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
     "n_manchetes": 2,
     "jornais": [
      "Gazeta do Povo",
@@ -4416,6 +4713,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Quando estão menos confiantes, os empresários contratam e investem menos. Segundo a FGV, a avaliação sobre a situação atual está no nível mais baixo desde 2021.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "emprego",
+     "quem": "quem trabalha em empresas que podem contratar menos e frear investimentos"
+    },
     "n_manchetes": 2,
     "jornais": [
      "Valor"
@@ -4449,6 +4751,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Quem tem dívida atrasada compra menos e consegue menos crédito, e isso segura o consumo das famílias. É o maior número desde 2016, quando a série começou.",
+    "vida": {
+     "tamanho": 2,
+     "porta": "credito",
+     "quem": "quem está com conta atrasada e tem o nome sujo, o que dificulta novo crédito e encarece o que consegue"
+    },
     "n_manchetes": 1,
     "jornais": [
      "Folha"
@@ -4476,6 +4783,11 @@
     "lado": "pesa",
     "ja_esperado": true,
     "porque": "Com o juro alto por mais tempo, o crédito continua caro para famílias e empresas. A XP cita o dólar mais alto, o petróleo mais caro e a alta nas previsões de inflação.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "credito",
+     "quem": "quem pede financiamento ou tem dívida com juro alto e esperava a Selic cair"
+    },
     "n_manchetes": 2,
     "jornais": [
      "InfoMoney",

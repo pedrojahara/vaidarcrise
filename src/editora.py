@@ -1,9 +1,9 @@
 """A IA editora: escolhe o fato do dia a partir da pauta dos degraus (src/pauta.py), com a carta editorial.
 
-A editora lê CARTA_EDITORIAL.md inteira, a pauta do dia (os candidatos com estágio, tamanho e jornais, as datas
-marcadas, as pressões, os fatos do dia anteriores, a escolha padrão) e todas as manchetes que o site leu. Ela
-devolve o fato, por que ele, o concorrente mais forte e por que perdeu, o que entra como parte da mesma história,
-até três cuidados para o redator e as respostas aos cinco testes da carta.
+A editora lê CARTA_EDITORIAL.md inteira, a pauta do dia (os candidatos com estágio, tamanho, o que mudam na vida e
+jornais, as datas marcadas, as pressões, os fatos do dia anteriores, a escolha padrão) e todas as manchetes que o site
+leu. Ela devolve o fato, por que ele, o concorrente mais forte e por que perdeu, o que entra como parte da mesma
+história, até três cuidados para o redator e as respostas aos cinco testes da carta.
 
 O código confere: a editora só sai da escolha padrão por um motivo da lista fechada (MOTIVOS), e uma troca que
 não passa na conferência volta para a escolha padrão. Quando a troca passa, uma segunda chamada defende a escolha
@@ -26,7 +26,7 @@ import pauta as pauta_mod  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CARTA = ROOT / "CARTA_EDITORIAL.md"
-MOTIVOS = ["sem_novidade", "mesma_historia_porta", "imprensa_deu_pouco", "repete_ontem"]
+MOTIVOS = ["sem_novidade", "mesma_historia_porta", "imprensa_deu_pouco", "repete_ontem", "muda_a_vida"]
 # Os assuntos das notícias que são medidos por uma das cinco pressões (Contas do governo, Dívidas das famílias,
 # Desconfiança de quem investe, Inflação esperada e Juro).
 FATORES_DAS_PRESSOES = {"contas", "credito", "mercado", "juro"}
@@ -64,8 +64,17 @@ def system() -> str:
             "A carta editorial do site, que vale inteira:\n\n" + CARTA.read_text())
 
 
+def _vida_txt(c: dict) -> str:
+    v = pauta_mod.vida(c)
+    if not v["tamanho"]:
+        return "na vida: tamanho 0, nada muda para as pessoas"
+    return (f"na vida: tamanho {v['tamanho']}, porta {pauta_mod.PORTA_TXT.get(v['porta'], v['porta'])}"
+            + (f", quem sente: {v['quem']}" if v["quem"] else ""))
+
+
 def _linha(c: dict) -> str:
     return (f"{c['id']} | {c['titulo']} | {pauta_mod.ESTAGIO_TXT.get(c['estagio'], c['estagio'])} | tamanho {c['tamanho']} | "
+            f"{_vida_txt(c)} | "
             f"{c['assunto']} | {c['lado']} o risco | {'o mercado já esperava' if c['ja_esperado'] else 'não era esperado'} | "
             f"{len(c['jornais'])} jornais ({', '.join(c['jornais'])}), {c['n_manchetes']} manchetes"
             + (f" | DESCARTADO: {c['descartado']}" if c["descartado"] else "") + f" | por quê: {c['porque']}"
@@ -91,7 +100,8 @@ def texto_pauta(p: dict, rodada: dict, cfg: dict, anteriores: list[str], cesta: 
           if p["pressoes_mudaram"] else "Nenhuma pressão mudou de lado desde a atualização anterior."),
          "Datas marcadas nos dias lidos: " + ("; ".join(f"{x['data'][8:10]}/{x['data'][5:7]}, {x['nome']}" for x in p["datas"]) or "nenhuma") + ".",
          "Fatos do dia que o site publicou nos dias anteriores: " + (" | ".join(anteriores) or "nenhum") + ".",
-         "", "Candidatos (estágio, tamanho de 1 a 3 do efeito no PIB, assunto, se pesa ou alivia o risco, jornais):"]
+         "", "Candidatos (estágio, tamanho de 1 a 3 do efeito no PIB, tamanho de 0 a 3 do que muda na vida das pessoas "
+             "com a porta e quem sente, assunto, se pesa ou alivia o risco, jornais):"]
     if p["padrao"] == "D":
         L.append(f"D | {pauta_mod.titulo_escolha({**p, 'final': 'D'})}")
     if p["padrao"] == "P":
@@ -134,6 +144,12 @@ def conferir(s: dict, p: dict) -> tuple[str | None, str]:
                                       or c["fator"] not in FATORES_DAS_PRESSOES):
         return padrao, ("imprensa_deu_pouco só vale para um fato que saiu em menos jornais que o padrão e mexe numa das "
                         "cinco pressões: vale a escolha padrão")
+    if m == "muda_a_vida":
+        vc, vp = pauta_mod.vida(c)["tamanho"], pauta_mod.vida(pad)["tamanho"]
+        if (p["degrau"] != 5 or pad is None or c["estagio"] not in pauta_mod.CONSUMADO or vc < 2 or vc <= vp
+                or pad["tamanho"] == 3):
+            return padrao, ("muda_a_vida só vale contra a escolha do degrau 5 de tamanho 1 ou 2 no risco, por um fato "
+                            "consumado de tamanho 2 ou 3 na vida e maior na vida que o padrão: vale a escolha padrão")
     return esc, f"trocou a escolha padrão ({padrao}) por {esc}: {m}"
 
 

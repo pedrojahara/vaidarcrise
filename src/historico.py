@@ -48,6 +48,17 @@ MENSAIS = {
     "juro_pf": 20740,  # juro médio do crédito livre às pessoas físicas, % ao ano
     "inadimplencia_pf": 21112,  # atrasos de mais de 90 dias no crédito livre às pessoas físicas, %
     "juros_divida_12m": 5760,  # juros nominais do setor público consolidado em 12 meses, % do PIB
+    # Para a tradução do fato na vida de quem lê (TRADUCAO.md, `traduz` em src/conta.py).
+    "inpc": 188,  # INPC, variação mensal (%)
+    "salario_minimo": 1619,  # salário mínimo (R$); o SGS já traz os meses do ano até dezembro: cortado no dia de hoje
+    "tr": 7811,  # TR do primeiro dia do mês (% a.m.)
+    "forca_trabalho": 24378,  # força de trabalho, PNAD Contínua (mil pessoas)
+    "juro_rotativo": 22022,  # juro médio do cartão rotativo, PF (% a.a.)
+    "juro_cheque_especial": 20741,
+    "juro_pessoal": 20742,  # crédito pessoal não consignado
+    "juro_consignado_inss": 20746,
+    "juro_veiculos": 20749,
+    "juro_imobiliario": 20772,  # financiamento imobiliário com taxas de mercado, PF
 }
 DIARIAS_POR_MES = {"selic_meta": 432, "dolar_ptax": 1}
 # Preço mundial das commodities (FMI, via FRED): o fator Cenário externo.
@@ -222,6 +233,7 @@ def main() -> None:
     for nome, sid in FRED_SERIES.items():
         tenta(nome, lambda sid=sid: fred(sid))
     tenta("ibovespa", ibovespa_b3)
+    tenta("rendimento_real", fetch_data.rendimento_ibge)
 
     SAIDA.parent.mkdir(parents=True, exist_ok=True)
     SAIDA.write_text(json.dumps(res, ensure_ascii=False, separators=(",", ":")))

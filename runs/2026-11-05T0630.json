@@ -2439,29 +2439,31 @@
    "caderno": [
     "c1",
     "c2",
+    "c4",
+    "c5",
     "c7",
     "c8",
-    "c15",
+    "c9",
     "c16",
     "c25",
-    "c26"
+    "c26",
+    "c103",
+    "c104"
    ]
   },
   "ok": true,
   "titulo": "Banco Central para de cortar e mantém a Selic em 13,75% ao ano",
   "paragrafos": [
-   "O Banco Central parou de cortar e manteve a Selic em 13,75%, citando incertezas muito maiores e a inflação acelerando.",
-   "Ele liga a decisão à meta de 3%, mas a previsão dele para a inflação de meados de 2028 subiu para 3,5%.",
-   "A pausa chega à meta se a inflação esperada, que subiu de 4,2% em julho para 5,0%, parar de subir. Em 7 de 8 pausas desde 2002 em que ela subiu, a Selic voltou a subir, mas são poucos casos.",
-   "Se a alta voltar, o crédito fica caro por mais tempo, o que segura consumo e investimento."
+   "O Banco Central parou de cortar o juro e manteve a Selic em 13,75% ao ano. Disse que a decisão é compatível com levar a inflação para perto da meta de 3% e citou incertezas maiores.",
+   "A decisão chega lá se a inflação esperada parar de subir, mas ela subiu 0,36 ponto em um mês. Desde 2002, a Selic voltou a subir em 7 de 8 pausas assim, mas são poucos casos.",
+   "Para quem pede empréstimo, nada fica mais barato: o juro médio às pessoas foi de 62,4% ao ano em setembro, e a parcela com juro fixo não muda."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "O Banco Central parou de cortar e manteve a Selic em 13,75%, citando incertezas muito maiores e a inflação acelerando.",
-     "Ele liga a decisão à meta de 3%, mas a previsão dele para a inflação de meados de 2028 subiu para 3,5%.",
-     "A pausa chega à meta se a inflação esperada, que subiu de 4,2% em julho para 5,0%, parar de subir. Em 7 de 8 pausas desde 2002 em que ela subiu, a Selic voltou a subir, mas são poucos casos.",
-     "Se a alta voltar, o crédito fica caro por mais tempo, o que segura consumo e investimento."
+     "O Banco Central parou de cortar o juro e manteve a Selic em 13,75% ao ano. Disse que a decisão é compatível com levar a inflação para perto da meta de 3% e citou incertezas maiores.",
+     "A decisão chega lá se a inflação esperada parar de subir, mas ela subiu 0,36 ponto em um mês. Desde 2002, a Selic voltou a subir em 7 de 8 pausas assim, mas são poucos casos.",
+     "Para quem pede empréstimo, nada fica mais barato: o juro médio às pessoas foi de 62,4% ao ano em setembro, e a parcela com juro fixo não muda."
     ]
    }
   ],
@@ -2469,157 +2471,109 @@
   "edicao": {
    "sugestoes": [
     {
-     "trecho": "Dá certo se a inflação esperada parar de subir, já que em 7 de 8 pausas desde 2002 em que ela subiu, o Banco Central voltou a subir a Selic.",
-     "problema": "A frase não se entende sozinha. Não diz o que \"dá certo\", e o \"já que\" trata como causa o que é só o histórico. Faltam os dois lados da condição, cada um em uma frase.",
-     "como_fica": "A decisão chega à meta se a inflação esperada parar de subir. Quando ela subiu, em 7 de 8 pausas desde 2002, o Banco Central voltou a subir a Selic."
+     "trecho": "Com a Selic parada, o crédito novo às pessoas segue a 62,4% ao ano.",
+     "problema": "O número não tem comparação nem mês, então a leitora não sabe se 62,4% é muito ou pouco, nem a que mês o dado se refere.",
+     "como_fica": "Com a Selic parada, o crédito novo às pessoas segue caro: 62,4% ao ano em setembro, contra 58,7% um ano antes."
     },
     {
-     "trecho": "Ele também subiu para 5,6% a previsão do IPCA de 2026.",
-     "problema": "Falta o \"e daí\" para quem lê. O texto não diz o que a Selic parada muda no bolso. Os dados dizem que o crédito segue caro para pessoas e empresas.",
-     "como_fica": "Ele subiu para 5,6% a previsão do IPCA de 2026. O crédito segue caro para pessoas e empresas."
+     "trecho": "A previsão do Banco Central para a inflação de meados de 2028 subiu de 3,1% para 3,5%.",
+     "problema": "O fato vem sem o \"e daí\": a frase não diz que a nova previsão fica acima da meta, e isso é o que dá sentido ao número.",
+     "como_fica": "O Banco Central subiu de 3,1% para 3,5% a previsão da inflação de meados de 2028, acima da meta."
     },
     {
-     "trecho": "manteve a Selic em 13,75% ao ano, dizendo que as incertezas aumentaram muito e que a inflação acelerou.",
-     "problema": "O porquê fica pendurado num gerúndio. Fica mais claro como causa dita por quem decidiu. O \"ao ano\" já está no título e sai para o texto caber em 100 palavras.",
-     "como_fica": "manteve a Selic em 13,75% porque, segundo ele, as incertezas aumentaram muito e a inflação acelerou."
+     "trecho": "já que, desde 2002, a Selic voltou a subir em 7 de 8 pausas com ela subindo.",
+     "problema": "Não fica claro a quem o \"ela\" se refere, porque a frase tem \"Selic\" e \"inflação esperada\". Assim a frase não se entende sozinha.",
+     "como_fica": "A pausa chega à meta se a inflação esperada parar de subir: desde 2002, a Selic voltou a subir em 7 de 8 pausas com ela em alta."
     },
     {
-     "trecho": "Segundo o comunicado, a decisão é coerente com levar a inflação para perto da meta de 3%, mas a previsão do Banco Central para meados de 2028 subiu para 3,5%.",
-     "problema": "O \"segundo\" repete o \"segundo ele\" do parágrafo anterior, e a frase passa de 30 palavras.",
-     "como_fica": "O comunicado diz que a decisão é coerente com levar a inflação para perto da meta de 3%, mas a previsão dele para meados de 2028 subiu para 3,5%."
+     "trecho": "O comunicado diz que a decisão é compatível com levar a inflação para perto da meta de 3% e cita aumento significativo das incertezas.",
+     "problema": "O sujeito é \"o comunicado\", e não quem decidiu. O porquê deve vir na voz do Banco Central.",
+     "como_fica": "Segundo ele, isso é compatível com levar a inflação para perto da meta de 3%, e as incertezas aumentaram."
     }
    ],
-   "aplicada": true
-  },
-  "teste": {
-   "ok": true,
-   "testes": {
-    "porque": {
-     "ok": true,
-     "por_que": "O texto dá a razão que o próprio Banco Central deu: incertezas muito maiores e inflação acelerando. Todos os números estão nos dados (3%, 3,5%, 4,2%, 5,0%, 7 de 8) e o texto não inventa nenhuma causa."
-    },
-    "quem": {
-     "ok": true,
-     "por_que": "Quem mantém a Selic é o Banco Central, e nenhuma decisão é posta nos bancos nem no governo. 'O crédito fica caro' descreve um efeito, sem dar um autor errado, e nenhuma frase muda de sentido com outro governo."
-    },
-    "e_dai": {
-     "ok": true,
-     "por_que": "O texto diz o objetivo escrito (a meta de 3%) e a condição principal (a inflação esperada parar de subir), com a ressalva de poucos casos. Liga uma nova alta a consumo e investimento mais fracos sem julgar a decisão nem prometer conferir depois."
-    },
-    "livro": {
-     "ok": true,
-     "por_que": "A única oração de mecanismo ('o crédito fica caro... segura consumo e investimento') serve ao e daí do dia e não ocupa o lugar do porquê."
-    }
-   },
-   "problemas": [],
-   "antes": {
-    "testes": {
-     "porque": {
-      "ok": true,
-      "por_que": "O texto diz a razão do próprio Banco Central, com quem disse (\"segundo ele\"): as incertezas aumentaram muito e a inflação acelerou. Também traz a previsão de 5,6%, que está nos dados, e não inventa nenhuma causa."
-     },
-     "quem": {
-      "ok": true,
-      "por_que": "Quem decide é o Banco Central. O crédito caro aparece como efeito (\"o crédito segue caro\"), sem pôr os bancos como autores, e nenhuma frase mudaria de sentido com outro governo no poder."
-     },
-     "e_dai": {
-      "ok": false,
-      "por_que": "O objetivo e a condição estão lá, mas o texto não liga o crédito caro ao risco de recessão. A conta de 7 em 8 pausas fica sem dizer o que ela sugere (uma nova alta possível) e sem avisar que são poucos casos, o que a fonte avisa."
-     },
-     "livro": {
-      "ok": true,
-      "por_que": "O texto não gasta espaço explicando como o juro funciona. Todas as frases tratam da decisão do dia, do porquê e da condição."
-     }
-    },
-    "problemas": [
-     "Na frase \"O crédito segue caro para pessoas e empresas.\" falta dizer o que isso muda. Os dados do fato resolvem: o crédito caro \"segura consumo e investimento\", e é por isso que a decisão pesa no risco de recessão. Por exemplo: \"O crédito segue caro, o que segura o consumo e o investimento.\"",
-     "Na frase \"Quando ela subiu, em 7 de 8 pausas desde 2002, o Banco Central voltou a subir a Selic.\" falta o que isso quer dizer para a leitora e o aviso da fonte (\"São poucos casos, um padrão\"). Diga que o histórico aponta para a chance de nova alta, mas que são poucos casos e mostram um padrão, não uma regra.",
-     "Em \"A decisão chega à meta se a inflação esperada parar de subir.\" falta parte da condição que está nos dados: \"com a Selic parada\". Por exemplo: \"se a inflação esperada parar de subir com a Selic parada\"."
-    ]
-   },
-   "reescrito": true,
-   "a_mao": true
+   "aplicada": false,
+   "motivo": "o texto editado tinha mais problemas que o rascunho: fato do dia com 101 palavras (até 100): corte o que não é o fato, sem mudar os números; 2 textos abrem com 'o banco'"
   },
   "meta": [
    {
     "etapa": "post",
     "modelo_pedido": "opus",
-    "prompt_sha256": "9d098dcc30e763f00160306ec00356b1d1e4a18a0904518b580bf5925ffb1c88",
-    "system_sha256": "7a1b27229d62aca6396815798c8fbf5f18213f57f46e66ce22db3bc179cf932c",
+    "prompt_sha256": "8c4ba8b57833b5f838fbeaf03a7c73c5a24b81eaa505f3f6816c4d75e87f1f96",
+    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.061256,
+    "custo_usd": 0.1345946,
     "turnos": 2,
-    "duracao_s": 27,
+    "duracao_s": 31,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "b949f631-a650-43fa-9674-0a2e5ebefe88"
+    "session_id": "dfc39273-65c9-4389-8556-981e887f226b"
    },
    {
     "etapa": "editor",
     "modelo_pedido": "opus",
-    "prompt_sha256": "fb520a29dbb6f6287ae29164b4c70387f5e8c4faffff365c993009d93eb97dc2",
+    "prompt_sha256": "fcd921d588952d42b4c108b372988c5f2a54d7f5cc31e158adc50c6e74022ff0",
     "system_sha256": "4c7e8c0f33317bc6d454b5ff1a997da9df57cacbbd46c9781db8192f030feaf7",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.3414302,
+    "custo_usd": 0.3576782,
     "turnos": 2,
-    "duracao_s": 53,
+    "duracao_s": 49,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "45c53fdf-50f1-4dbd-92e7-bce7cbbe5d8a"
+    "session_id": "d4e611cb-5f7c-45ed-89de-e3d2edede777"
    },
    {
     "etapa": "teste",
     "modelo_pedido": "opus",
-    "prompt_sha256": "32f00b4672576cdd8f327a4e7f50c4fb246694443585e782f6a0b070cad11cbc",
-    "system_sha256": "b23e7fe606b25bc07b60b951d7b0b87d3d3bf78dd91387195dcc0d9b711ccbc2",
+    "prompt_sha256": "99c378dc59ee17de93218978d1c3c0361e447b357c8daa8fcca4b01e66209923",
+    "system_sha256": "ec2846d97f94584650118e7a41a2898f261e7c831f55e498dddb6de838a29151",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.0951666,
+    "custo_usd": 0.09418560000000001,
     "turnos": 2,
-    "duracao_s": 19,
+    "duracao_s": 14,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "6124b848-a6ee-4182-a46c-6518fb41ce94"
+    "session_id": "4340225d-f397-455c-82cf-3508fd5a0fc1"
    },
    {
     "etapa": "post",
     "modelo_pedido": "opus",
-    "prompt_sha256": "5f8031321abf1871a1cced6ec168385d1c1a15dbcca9ed70784e92e7ccd6c3ef",
-    "system_sha256": "7a1b27229d62aca6396815798c8fbf5f18213f57f46e66ce22db3bc179cf932c",
+    "prompt_sha256": "7a1ab23caa822b3d63ae0bbcbf651bc45bc6fffc4fea63aa8bb5f9c6c5bf1739",
+    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.1988048,
+    "custo_usd": 0.1386866,
     "turnos": 2,
-    "duracao_s": 60,
+    "duracao_s": 29,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "b78b5ae8-4dc9-479d-b1b6-0d7bcee9c6c7"
+    "session_id": "9390839e-e735-4a1a-a580-afbf4133bc03"
    },
    {
     "etapa": "teste",
     "modelo_pedido": "opus",
-    "prompt_sha256": "5a3bdf8a951db383c163197ade008f0ae985b0b37a7509acd757e936de57b993",
-    "system_sha256": "b23e7fe606b25bc07b60b951d7b0b87d3d3bf78dd91387195dcc0d9b711ccbc2",
+    "prompt_sha256": "310b10e3a60fcd4959484ed00394304f7e2cd05e919406b2b7bf481779f47b5a",
+    "system_sha256": "ec2846d97f94584650118e7a41a2898f261e7c831f55e498dddb6de838a29151",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.0881866,
+    "custo_usd": 0.0955336,
     "turnos": 2,
     "duracao_s": 15,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "6d80d3b7-3986-400d-9433-cc5042cefb8b"
+    "session_id": "729fce43-af4d-4b30-a984-1c93eab94487"
    }
   ],
   "fundo": {
@@ -2952,6 +2906,70 @@
      ],
      "permission_denials": [],
      "session_id": "a4b17bb5-a54d-4132-a36d-22bc6c010cec"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "5c7bf070234475eb4c826be40840fbc8e756730e17178f887a299e0d90589f13",
+     "system_sha256": "6a24d631df6696859a9bd2b0011854ba63812942cedacee451450ccd3de9ae4b",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7153338,
+     "turnos": 3,
+     "duracao_s": 42,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "3f3df0ea-d35f-44c8-80fc-8febb2440c9b"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "e074dc82877b410da26915b215a3648b7d3f41f47733f6c5c6f57f7f62fa1db9",
+     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7362051999999999,
+     "turnos": 2,
+     "duracao_s": 77,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "cbf786da-ca1f-4551-bf36-c1ba70d140e2"
+    },
+    {
+     "etapa": "conferencia",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "65be55d6c0cc3ebc6822b57c62669bd40cab9d635c2b87ecd6181fb20bdcf358",
+     "system_sha256": "014db32c3a98cfd87cb62417008dbee3bc6c60858da38a9ac3f6069aa3aea5eb",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.20931699999999998,
+     "turnos": 2,
+     "duracao_s": 62,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "b5c50bfb-7601-448d-ac7d-daf0264362fd"
+    },
+    {
+     "etapa": "editor_fundo",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "5ac88f9e7776e3fa9f66385897e29b2bd74b0bbeaeaba34685264dc06e359f6c",
+     "system_sha256": "c051e15dfe2ba0240d641e7b2a26a2ab05de7d68718375f6bd3be448f44a878a",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.23353400000000002,
+     "turnos": 2,
+     "duracao_s": 68,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "2a493962-6031-4407-8be2-32a57381b50d"
     }
    ],
    "offline": true,
@@ -3908,221 +3926,382 @@
       "status": "nao_confere",
       "por_que": "números que a conta não dá: 8,7"
      }
+    },
+    {
+     "id": "c101",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (precos), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz precos",
+     "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 4,96% (último dado de outubro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 104,96 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 4,96% (último dado de outubro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 104,96 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.\n"
+     }
+    },
+    {
+     "id": "c102",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (dolar), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz dolar",
+     "saida": "O dólar foi de R$ 5,3846 em 4/11/2025 para R$ 5,4778 em 4/11/2026: alta de 1,7% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 1,7%, se não voltar, sobe o IPCA em cerca de 0,2 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,20 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O dólar foi de R$ 5,3846 em 4/11/2025 para R$ 5,4778 em 4/11/2026: alta de 1,7% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 1,7%, se não voltar, sobe o IPCA em cerca de 0,2 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,20 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.\n"
+     }
+    },
+    {
+     "id": "c103",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (credito), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz credito",
+     "saida": "Juro médio do crédito livre às pessoas físicas: 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em set",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Juro médio do crédito livre às pessoas físicas: 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.262 (um ano antes, R$ 1.273).\nJuro médio do financiamento imobiliário com taxas de mercado: 14,20% ao ano em setembro de 2026, contra 14,88% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.142 (um ano antes, R$ 1.149).\nFonte: Banco Central, juro médio das operações de crédito para pessoas físicas, com um a dois meses de atraso. A Selic não passa inteira nem logo para esses juros.\n"
+     }
+    },
+    {
+     "id": "c104",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (guardado), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz guardado",
+     "saida": "Com a Selic em 13,75% ao ano (em 4/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 4,96% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,79 em um ano (8,38% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de outubro de 2026 (0,1616% ao mês), R$ 6,62 no mês, ou cerca de R$ 82,45 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Com a Selic em 13,75% ao ano (em 4/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 4,96% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,79 em um ano (8,38% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de outubro de 2026 (0,1616% ao mês), R$ 6,62 no mês, ou cerca de R$ 82,45 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.\n"
+     }
+    },
+    {
+     "id": "c105",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (minimo), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz minimo",
+     "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda falta(m) 2 mês(es) de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda falta(m) 2 mês(es) de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.\n"
+     }
+    },
+    {
+     "id": "c106",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (renda), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz renda",
+     "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.\n"
+     }
+    },
+    {
+     "id": "c107",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (emprego), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz emprego",
+     "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 ponto(s) a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 ponto(s) a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 ponto(s) a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 ponto(s) a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.\n"
+     }
     }
    ],
    "duracao_pensar_s": 436,
    "duracao_s": 647,
    "curto": {
-    "porque": "O Banco Central disse que manteve a Selic em 13,75% porque as incertezas aumentaram muito e a inflação acelerou. Ele subiu para 5,6% a previsão do IPCA de 2026 e disse que a decisão é coerente com levar a inflação para perto da meta.",
-    "e_dai": "O juro real de 8,7% não afasta nova alta: nas 7 pausas desde 2002 que acabaram em alta, ele ia de -1,0% a 12,7%. São poucos casos, um padrão.",
-    "objetivo": "No comunicado, o Copom diz que a decisão é coerente com levar a inflação para perto da meta de 3% no horizonte relevante. A projeção dele para meados de 2028 subiu para 3,5%.",
-    "condicao": "Chega à meta se a inflação esperada parar de subir com a Selic parada; em 7 de 8 pausas desde 2002 em que ela subiu, o Banco Central voltou a subir a Selic.",
+    "porque": "O Copom disse que manter a Selic em 13,75% é compatível com levar a inflação para perto da meta e citou um aumento significativo das incertezas. O Banco Central também subiu a previsão do IPCA de 2026 para 5,6% e a de meados de 2028 de 3,1% para 3,5%, acima da meta de 3%.",
+    "e_dai": "Desde 2002, em 7 de 8 pausas com a inflação esperada subindo, a Selic voltou a subir; agora ela subiu 0,36 ponto em um mês. Poucos casos: padrão, não lei.",
+    "vida": "Com a Selic parada, o crédito livre novo segue a 62,35% ao ano (setembro); parcela fixa não muda; R$ 1.000 rendendo a Selic dão cerca de R$ 137,50 em um ano, antes do imposto.",
+    "familias": [
+     {
+      "familia": "financiamento_cartao",
+      "quem": "financiamento_cartao",
+      "o_que_muda": "Quem pede crédito novo não tem alívio: o juro médio do crédito livre às pessoas físicas estava em 62,35% ao ano em setembro, contra 58,66% um ano antes; parcelas já contratadas com juro fixo seguem iguais.",
+      "caderno": [
+       "c103"
+      ]
+     },
+     {
+      "familia": "dinheiro_guardado",
+      "quem": "dinheiro_guardado",
+      "o_que_muda": "Com a Selic em 13,75%, R$ 1.000 numa aplicação que rende a Selic dão cerca de R$ 137,50 em um ano antes do imposto, ou cerca de R$ 83,79 descontada a inflação esperada pelos bancos.",
+      "caderno": [
+       "c104"
+      ]
+     }
+    ],
+    "objetivo": "No comunicado de 4/11, o Copom diz que a decisão é compatível com a estratégia de levar a inflação para perto da meta de 3% ao longo do horizonte relevante; a projeção do próprio Banco Central para meados de 2028 está em 3,5%.",
+    "condicao": "Chega ao objetivo se a inflação esperada parar de subir; nas 8 pausas desde 2002 em que ela subiu nos 3 meses seguintes, a Selic voltou a subir em 7. São poucos casos.",
     "caderno": [
      "c1",
      "c2",
+     "c4",
+     "c5",
      "c7",
      "c8",
-     "c36",
-     "c15",
+     "c9",
      "c16",
      "c25",
-     "c26"
+     "c26",
+     "c103",
+     "c104"
     ]
    },
    "pressao": "juro",
    "pagina_que_falta": "",
    "tese": "Pela régua do próprio Copom, a inflação perto da meta no horizonte relevante, a pausa começa longe dela. A projeção do Banco Central para meados de 2028 subiu para 3,5%, contra a meta de 3%. A inflação esperada está 1,60 ponto acima da meta, a maior distância entre as 11 pausas desde 2002. O juro real de 8,7% não separa os casos: nas 7 pausas que terminaram em alta, ele ia de -1,0% a 12,7%, e na única que terminou em corte era de 2,5%. O que separou os casos foi o rumo da inflação esperada. São 10 casos: mostram um padrão, não uma lei.",
    "rascunho": {
-    "titulo": "A pausa da Selic começa com a inflação esperada mais longe da meta que em qualquer pausa desde 2002",
-    "texto": "Diante de uma pausa como esta, é fácil pensar que desta vez pode ser diferente, porque o juro já está alto. Hoje a Selic está 8,7% acima da inflação esperada pelos bancos, um freio forte para o crédito de quem compra a prazo e de quem investe [c1]. Só que, nas pausas desde 2002, o tamanho do juro não separou as que terminaram em alta das que terminaram em corte.\n\nO que separou foi o rumo da inflação esperada, e por esse critério a pausa começa longe da régua que o próprio Banco Central escreveu. A inflação esperada está 1,60 ponto acima da meta de 3%, a maior distância entre as 11 pausas desde 2002, e subiu 0,36 ponto no primeiro mês [c1]. A mais perto disso foi a de março de 2002, com 1,18 ponto [c10]. São 10 casos já encerrados, o que mostra um padrão, não uma lei.\n\n### O Banco Central mediu a pausa com a própria projeção, e ela piorou\n\nQuem decidiu foi o Copom, o comitê do Banco Central que decide o juro, na reunião de 4/11, quando manteve a Selic em 13,75% [c15]. Nem o governo nem o Congresso mudam essa decisão: só o próprio comitê pode voltar a mexer na Selic, e a próxima reunião dele é em 9/12.\n\nO objetivo está escrito no comunicado. O Banco Central diz que a decisão é compatível com a inflação chegar perto da meta no horizonte em que ele mira, e que o juro seguirá alto o bastante para frear a economia [c26]. Esse horizonte fica perto de meados de 2028, e a projeção do próprio Banco Central para o segundo trimestre de 2028 subiu de 3,1% para 3,5% [c25]. Ou seja, na conta de quem decidiu, a inflação de daqui a um ano e meio se afastou da meta justamente quando os cortes pararam.\n\nO tamanho da decisão aparece em duas portas. A primeira é a parcela, porque a Selic parada mantém caros o empréstimo, o cartão e o financiamento. A segunda é a conta do governo: cada ponto de Selic custa cerca de R$ 48 bilhões por ano em juros da dívida, numa conta do Poder360, e não do Tesouro [c34].\n\nO caminho pelo qual o juro chega aos preços é lento. Uma meta-análise de 67 estudos mostra que o juro leva em média 29 meses para pesar todo nos preços, e essa é uma evidência forte [c17]. Por isso o Banco Central mira 2028, e não a inflação de hoje.\n\nEle também olha para o que os bancos esperam, porque, no Brasil, a meta pesa na inflação que eles esperam, segundo um estudo com dados só do país, de força média [c18]. Já a ideia de que uma fórmula simples, como a regra de Taylor, diria o juro certo não aguenta como veredito, porque os dados revisados depois mudam a resposta da regra [c20].\n\n### Nas pausas desde 2002, o juro alto não decidiu o final, e o rumo da inflação esperada decidiu\n\nOlhe para as pausas que terminaram em alta. Em julho de 2002, o juro estava 12,7% acima da inflação esperada, e mesmo assim a inflação esperada subiu 3,71 pontos em três meses e a Selic voltou a subir três meses depois [c2]. Em agosto de 2020, no outro extremo, o juro estava 1,0% abaixo da inflação esperada, ela subiu 0,81 ponto e a alta veio sete meses depois [c8].\n\nNo meio do caminho ficou abril de 2004, com o juro 9,9% acima da inflação esperada, quase o nível de hoje, e a Selic voltou a subir cinco meses depois [c3]. Se o juro alto bastasse para segurar a pausa, esse caso teria terminado em corte.\n\nA única pausa com inflação esperada subindo que terminou em corte foi a de março de 2018. O juro estava só 2,5% acima da inflação esperada, mas ela estava abaixo da meta e subiu apenas 0,07 ponto em três meses, e o Banco Central voltou a cortar 17 meses depois [c7]. Nas duas pausas em que a inflação esperada caiu, em março de 2002 e dezembro de 2003, o corte voltou em poucos meses [c10, c11].\n\nO mesmo desenho aparece quando se olha só para os momentos em que a inflação esperada ficou mais de 1,4 ponto acima da meta. Desde 2002 foram seis episódios assim, e a Selic subiu do começo ao fim em 5 deles; o sexto é o de agora [c13]. Tirando os de crise de confiança, como o de 2002, sobram 2004, 2021 e 2024, e em todos a Selic subiu, de 16,00% para 17,25%, de 7,75% para 13,75% e de 11,25% para 15,00% [c29].\n\nAqui entra o tamanho da evidência. São poucos casos, e a ligação entre eles não prova causa: o Banco Central reage aos mesmos números que esta conta usa, por isso o padrão descreve como ele costuma reagir, e não uma lei da economia. Nas pausas que terminaram em alta, a primeira alta veio entre 3 e 9 meses depois do último corte, que desta vez foi em setembro [c12].\n\n### A pausa chega ao objetivo se a inflação esperada para 2027 parar de subir\n\nOs bancos apostam no outro lado. A pesquisa Focus de 30/10 previa a Selic em 13,50% no fim de 2026 e em 12,50% no fim de 2027 [c24]. Isso é 1,25 ponto abaixo da Selic de hoje [c28]. A mesma pesquisa previa inflação de 4,76% em 2027, 1,76 ponto acima da meta [c24, c30].\n\nPela régua do Banco Central, a pausa vai na direção do objetivo se a inflação esperada para 2027 começar a sair de 4,76% rumo a 3% e se a projeção dele para 2028 voltar para perto da meta [c24, c25]. Ela fica longe do objetivo se a inflação esperada seguir subindo com a Selic parada, que é o caso em que, nas pausas desde 2002, a alta voltou.\n\nHá um segundo jeito de dar errado, que o juro sozinho não resolve. Se o dólar subir por desconfiança das contas do governo, subir o juro pode enfraquecer o real e subir a inflação, o que se chama dominância fiscal, num estudo com dados do Brasil de 2002 e 2003 [c19]. A evidência é média e vale só para crise de confiança aguda, e em 2003 o juro alto, junto com sobra nas contas, acabou derrubando a inflação. O ministro da Fazenda diz que o governo prepara um ajuste gradual nas contas, ainda sem data [c33].\n\nSomando os casos e a evidência, o lado mais provável é a pausa terminar em alta, e não em corte, se a inflação esperada continuar onde está. Mas são 10 casos, e a pesquisa de inflação esperada muda toda semana.\n\nQuem paga a Selic parada são as pessoas e as empresas com parcela e o próprio governo, que deve muito em títulos ligados à Selic [c34]. Quem ganha é quem tem dinheiro aplicado, que rende mais. O efeito no emprego vem com atraso de meses, porque o crédito caro faz a empresa contratar menos.\n\nA melhor objeção de quem queria o corte é que o freio já aparece. A produção da indústria caiu 4,1% desde maio [c32], e foram abertas só 121,3 mil vagas com carteira em setembro [c35]. Como o juro leva em média 29 meses para pesar todo [c17], parte desse freio ainda nem chegou.\n\nA melhor objeção do outro lado é que a pausa é pouco. O próprio Banco Central prevê inflação de 5,6% em 2026 [c16], e a inflação esperada subiu no primeiro mês da pausa [c1], dois sinais de que manter pode não bastar.\n\nO critério não muda com quem governa. Em maio de 2024, a inflação esperada estava 0,64 ponto acima da meta e subiu 0,23 ponto em três meses, e a Selic voltou a subir quatro meses depois [c9]. Em março de 2018, com outro governo, ela estava abaixo da meta e quase parada, e o Banco Central voltou a cortar [c7]. A mesma régua, a distância da meta e o rumo da inflação esperada, deu alta numa e corte na outra.\n\nPara você, isso muda o que vale olhar nas próximas notícias. O nível da Selic diz pouco sobre o que vem; o que diz mais é se a inflação esperada pelos bancos para 2027 para de subir. Se ela subir, o crédito tende a ficar caro por mais tempo do que os bancos previam em outubro. O IPCA de outubro sai em 12/11, e o Banco Central volta a decidir o juro em 9/12."
+    "titulo": "Nas pausas do juro desde 2002, quem decidiu o passo seguinte foi a inflação esperada, e ela está longe da meta",
+    "texto": "Um juro bem acima da inflação poderia tornar esta pausa diferente das que terminaram em alta. Hoje a Selic está 8,7% acima da inflação que os bancos esperam, mas as pausas desde 2002 mostram que esse nível não separou os casos [c1]. O que separou foi o rumo da inflação esperada, e desta vez ela parte 1,60 ponto acima da meta de 3%, a maior distância entre as 11 pausas desde 2002 [c1, c10].\n\nA régua do próprio Banco Central aponta para o mesmo lado. A projeção dele para a inflação de meados de 2028 subiu de 3,1% para 3,5%, acima da meta que ele mesmo diz perseguir [c25]. Contando as vezes com dado, são 10 casos, e 10 casos mostram um padrão, não uma lei.\n\n### A pausa começa com a projeção do Banco Central acima da meta\n\nQuem decidiu foi o Copom, na 282ª reunião, em 4 de novembro [c15]. Só ele pode desfazer a pausa, e a próxima decisão está marcada para 9 de dezembro. No comunicado, ele diz que manter a Selic em 13,75% é compatível com levar a inflação para perto da meta ao longo do horizonte relevante e que o juro seguirá alto para segurar os preços [c26].\n\nEsse é o objetivo, e é por ele que a decisão se mede. O horizonte que o Banco Central olha é o 2º trimestre de 2028, e a própria conta dele piorou de uma reunião para outra [c25]. Ou seja, ele parou de cortar justamente quando a projeção se afastou da meta, o que vai na direção do objetivo escrito, mas ainda não chega a ele.\n\nA pausa também tem tamanho, medido contra o que os bancos esperavam. Na pesquisa Focus de 30 de outubro, eles previam a Selic em 12,50% no fim de 2027 [c24]. A Selic de hoje está 1,25 ponto acima disso [c28], e quanto mais a pausa durar, maior fica essa distância.\n\n### Nas pausas desde 2002, o tamanho do juro não separou alta de corte\n\nSe o juro alto bastasse, as pausas com juro mais alto acima da inflação esperada teriam terminado em corte. Não foi o que aconteceu. Nas 7 pausas que terminaram em alta, esse juro ia de 12,7% em 2002 [c2] a 1,0% abaixo da inflação esperada em 2020 [c8].\n\nNo meio dessas duas pontas estão as outras altas: 9,9% em 2004 [c3], 7,1% em 2007 [c4], 4,5% em 2009 [c5], 1,8% em 2012 [c6] e 6,6% em 2024 [c9]. Os 8,7% de hoje cabem no meio dessa lista. A única pausa com inflação esperada subindo que terminou em corte, a de 2018, tinha juro de 2,5% acima da inflação esperada [c7].\n\nO rumo da inflação esperada separa os casos melhor. Nas duas pausas em que ela caiu nos 3 meses seguintes, em março de 2002 e em dezembro de 2003, o Banco Central voltou a cortar, mesmo com juro de 13,1% e de 10,0% acima da inflação esperada [c10, c11]. Em 2018, a exceção, a inflação esperada estava abaixo da meta e subiu só 0,07 ponto em 3 meses [c7].\n\nDesta vez, ela subiu 0,36 ponto em um só mês depois do último corte [c1]. É mais do que a alta de 3 meses inteiros em 2012, 2009 e 2024 [c6, c5, c9]. E nos períodos em que a inflação esperada ficou mais de 1,4 ponto acima da meta, sem contar as crises de confiança de 2002 e de 2013 a 2016, a Selic subiu nos três que sobram, em 2004, 2021 e 2024 [c29].\n\nO limite desta conta precisa ficar claro. São poucos casos, e a ligação entre eles não prova a causa, porque o Banco Central reage à inflação esperada e ela também reage a ele. O que a conta mostra é que, nas vezes parecidas, o nível do juro não bastou para fazer o Banco Central voltar a cortar.\n\n### A inflação esperada decide o lado, e o dólar pode mudar a conta\n\nA evidência sobre o caminho ajuda a ler o momento. Numa meta-análise de 67 estudos, o juro leva em média 29 meses para pesar todo nos preços, uma evidência forte [c17]. Por isso, parte do freio dos 15% de 2025 e dos cortes de 2026 ainda não chegou à inflação.\n\nNo Brasil, a meta de inflação pesa na inflação que os bancos esperam, uma evidência média, porque vem só daqui [c18]. É por esse caminho que a pausa pode funcionar: se os bancos acreditarem que o Banco Central não vai cortar com a inflação longe da meta, a previsão deles tende a voltar para baixo. Nenhuma regra simples, como a de Taylor, diz se 8,7% é juro suficiente, porque as recomendações dela mudam muito com os dados revisados depois [c20].\n\nA decisão chega ao objetivo se a previsão dos bancos para a inflação de 2027, hoje em 4,76%, 1,76 ponto acima da meta, começar a cair [c24, c30]. O outro sinal é a projeção do próprio Banco Central para 2028 voltar para perto de 3% [c25].\n\nEla não chega lá se a inflação esperada continuar subindo com a Selic parada, como nas 7 vezes que terminaram em alta. Também não chega se o dólar subir por desconfiança das contas do governo. Nesse caso, com dívida alta e medo de calote, subir o juro pode enfraquecer o real em vez de segurar os preços, o que se chama dominância fiscal [c19]. Essa evidência é média e vale só para crises de confiança agudas, como a de 2002 e 2003 no Brasil [c19].\n\nPelos casos parecidos, o lado mais provável hoje é o segundo, e por enquanto ele aponta para alta, e não para corte. Nas pausas que terminaram em alta, a primeira alta veio de 3 a 9 meses depois do último corte [c12]. Como o último foi em setembro, esse intervalo vai do fim de 2026 a meados de 2027, ao contrário do que o Focus de 30 de outubro previa [c24].\n\nA melhor objeção a quem quer corte é a do próprio Banco Central, que prevê inflação de 5,6% em 2026 [c16]. Com a inflação acima do teto, parar pode ser pouco. A melhor objeção do outro lado vem da economia real. A produção industrial caiu 4,1% desde maio [c32], o emprego com carteira criou 121,3 mil vagas em setembro [c35] e integrantes do governo criticaram a pausa [c31]. Com 29 meses de atraso [c17], quem defende o corte diz que o freio já em curso basta.\n\nO espelho mostra que a régua não muda com o governo. Em maio de 2024, a inflação esperada estava 0,64 ponto acima da meta e subiu 0,23 ponto em 3 meses, e a Selic voltou a subir 4 meses depois [c9]. Em março de 2018, em outro governo, ela estava abaixo da meta e quase parou, e o Banco Central voltou a cortar [c7]. Os critérios foram os mesmos, e os finais foram opostos porque os dados eram diferentes.\n\nO custo também tem dono. Cada ponto de Selic custa ao governo cerca de R$ 48 bilhões por ano com a dívida, pela conta do Poder360, que não é um número do Tesouro [c34]. Para as famílias, a conta chega pelo crédito novo e pelo dinheiro guardado.\n\nPara quem tem financiamento e cartão, a pausa não traz alívio no crédito novo. O juro médio do crédito livre às pessoas estava em 62,35% ao ano em setembro, contra 58,66% um ano antes, e quem pede empréstimo agora começa por essa taxa [c103]. Quem já tem parcela com juro fixo continua pagando o mesmo.\n\nPara quem tem dinheiro guardado, a mesma Selic tem o efeito contrário. Com ela em 13,75%, R$ 1.000 numa aplicação que rende a Selic dão cerca de R$ 137,50 em um ano, antes do imposto, ou cerca de R$ 83,79 descontada a inflação que os bancos esperam [c104]. Se a próxima decisão for de alta, a parcela nova fica mais cara e o rendimento sobe, cada um para um lado.\n\nPara você, o e daí está no número que vale olhar nas próximas notícias. Ele não é o tamanho do juro, que já está alto e não separou os casos, e sim a previsão de inflação dos bancos, que sai toda semana no Focus. O IPCA de outubro sai em 12 de novembro, e o Banco Central volta a decidir a Selic em 9 de dezembro."
    },
    "conferencia": {
     "codigo_antes": {
      "graves": [],
      "avisos": [
-      "bloco 14: frase de 37 palavras",
-      "bloco 17: frase de 38 palavras",
-      "bloco 18: frase de 37 palavras"
+      "bloco 10: frase de 38 palavras",
+      "bloco 11: frase de 41 palavras",
+      "bloco 22: palavra que o site trocou (num ano ruim, atraso nas dívidas, gasta mais do que arrecada)"
      ],
-     "palavras": 1336,
+     "palavras": 1308,
      "intertitulos": 3
     },
     "ia": {
      "correcoes": [
       {
-       "trecho": "O que separou foi o rumo da inflação esperada, e por esse critério a pausa começa longe da régua que o próprio Banco Central escreveu.",
+       "trecho": "Título: Nas pausas do juro desde 2002, quem decidiu o passo seguinte foi a inflação esperada, e ela está longe da meta",
        "tipo": "forca",
-       "problema": "\"Separou\" dito como regra. Nas 10 pausas há uma exceção (2018: a inflação esperada subiu 0,07 e veio corte), e a ligação não prova causa.",
-       "como_fica": "Nas pausas desde 2002, a inflação esperada subiu em 8 das 10, e em 7 delas a Selic voltou a subir; nas 2 em que ela caiu, o corte voltou [c2, c3, c7, c10, c11]. Por esse critério, a pausa começa longe da meta que o próprio Banco Central escreveu."
+       "problema": "\"Quem decidiu\" põe causa onde os casos só mostram que as duas coisas andaram juntas (10 casos, e o texto admite que a ligação não prova a causa).",
+       "como_fica": "Título: Nas pausas do juro desde 2002, o passo seguinte andou junto com a inflação esperada, e ela está longe da meta"
       },
       {
-       "trecho": "### Nas pausas desde 2002, o juro alto não decidiu o final, e o rumo da inflação esperada decidiu",
+       "trecho": "mas as pausas desde 2002 mostram que esse nível não separou os casos [c1]. O que separou foi o rumo da inflação esperada, e desta vez",
        "tipo": "forca",
-       "problema": "\"Decidiu\" é causa dita com 10 casos e uma exceção.",
-       "como_fica": "### Nas pausas desde 2002, o juro alto não separou o final, e a inflação esperada subindo veio com a alta em 7 de 8"
+       "problema": "O c1 só traz a pausa atual; os casos passados estão em c2 a c11. \"O que separou\" é causal e a pausa de 2018 (inflação esperada subiu e houve corte) mostra que a separação não é limpa.",
+       "como_fica": "mas as pausas desde 2002 mostram que esse nível não separou os casos [c2, c3, c4, c5, c6, c7, c8, c9, c10, c11]. O rumo da inflação esperada separou melhor, com uma exceção, a de 2018 [c7], e desta vez"
       },
       {
-       "trecho": "Nem o governo nem o Congresso mudam essa decisão: só o próprio comitê pode voltar a mexer na Selic, e a próxima reunião dele é em 9/12.",
+       "trecho": "Só ele pode desfazer a pausa, e a próxima decisão está marcada para 9 de dezembro.",
        "tipo": "fonte",
-       "problema": "A data de 9/12 e a frase sobre quem pode desfazer a decisão não têm linha no caderno.",
-       "como_fica": "Quem decidiu foi o Copom, o comitê do Banco Central que decide o juro, na reunião de 4/11, quando manteve a Selic em 13,75% [c15]."
-      },
-      {
-       "trecho": "Ele também olha para o que os bancos esperam, porque, no Brasil, a meta pesa na inflação que eles esperam, segundo um estudo com dados só do país, de força média [c18].",
-       "tipo": "forca",
-       "problema": "O \"porque\" liga o que o Banco Central olha ao estudo, que só diz que a meta pesa na expectativa dos bancos. O estudo é de um país só e tem força média.",
-       "como_fica": "No Brasil, a meta pesa na inflação que os bancos esperam, segundo um estudo com dados só do país, de força média [c18]."
-      },
-      {
-       "trecho": "Desde 2002 foram seis episódios assim, e a Selic subiu do começo ao fim em 5 deles; o sexto é o de agora [c13]. Tirando os de crise de confiança, como o de 2002, sobram 2004, 2021 e 2024, e em todos a Selic subiu, de 16,00% para 17,25%, de 7,75% para 13,75% e de 11,25% para 15,00% [c29].",
-       "tipo": "forca",
-       "problema": "O caderno diz que a Selic subiu em 5, caiu em 1 e ficou igual em 0, e não diz qual caiu. \"O sexto é o de agora\" é suposição. \"Crise de confiança\" como motivo para tirar 2002 e 2013-16 não está no caderno, e \"em todos\" vale para 3 casos escolhidos depois.",
-       "como_fica": "Desde 2002 foram seis episódios assim, e do começo ao fim a Selic subiu em 5 e caiu em 1 [c13]. Se tirarmos os episódios de 2002 e de 2013 a 2016, restam 2004, 2021 e 2024, e nos três a Selic subiu, de 16,00% para 17,25%, de 7,75% para 13,75% e de 11,25% para 15,00% [c29]."
-      },
-      {
-       "trecho": "Quem paga a Selic parada são as pessoas e as empresas com parcela e o próprio governo, que deve muito em títulos ligados à Selic [c34].",
-       "tipo": "fonte",
-       "problema": "O trecho de c34 só diz o custo de R$ 48 bilhões por ponto de Selic, e não que o governo deve muito em títulos ligados à Selic.",
-       "como_fica": "Quem paga a Selic parada são as pessoas e as empresas com parcela e o próprio governo, que gasta cerca de R$ 48 bilhões por ano em juros a cada ponto de Selic, numa conta do Poder360 [c34]."
-      },
-      {
-       "trecho": "Mas são 10 casos, e a pesquisa de inflação esperada muda toda semana.",
-       "tipo": "fonte",
-       "problema": "A frequência semanal da pesquisa Focus não tem linha no caderno.",
-       "como_fica": "Mas são 10 casos, e 10 casos mostram um padrão, não uma lei."
-      },
-      {
-       "trecho": "O IPCA de outubro sai em 12/11, e o Banco Central volta a decidir o juro em 9/12.",
-       "tipo": "data",
-       "problema": "As duas datas não estão no caderno.",
+       "problema": "Nenhuma linha do caderno diz que só o Copom pode desfazer a decisão nem que a próxima reunião é em 9 de dezembro.",
        "como_fica": ""
       },
       {
-       "trecho": "O nível da Selic diz pouco sobre o que vem; o que diz mais é se a inflação esperada pelos bancos para 2027 para de subir.",
+       "trecho": "O IPCA de outubro sai em 12 de novembro, e o Banco Central volta a decidir a Selic em 9 de dezembro.",
+       "tipo": "data",
+       "problema": "As duas datas não estão no caderno; sem linha, não podem ir ao texto.",
+       "como_fica": ""
+      },
+      {
+       "trecho": "Ou seja, ele parou de cortar justamente quando a projeção se afastou da meta, o que vai na direção do objetivo escrito, mas ainda não chega a ele.",
        "tipo": "forca",
-       "problema": "Conclusão forte para 10 casos. Além disso, o juro alto freia os preços com atraso (c17).",
-       "como_fica": "Nas 10 pausas desde 2002, o nível do juro não separou as que acabaram em alta das que acabaram em corte; a inflação esperada subindo veio com a alta em 7 de 8. Por isso vale olhar se a inflação esperada pelos bancos para 2027 para de subir [c2, c7, c10, c11]."
+       "problema": "\"Justamente quando\" atribui ao Banco Central um motivo que o caderno não traz; c25 só mostra a projeção subindo na mesma reunião.",
+       "como_fica": "Ele parou de cortar na mesma reunião em que a projeção subiu de 3,1% para 3,5% [c25], o que vai na direção do objetivo escrito, mas ainda não chega a ele."
+      },
+      {
+       "trecho": "e quanto mais a pausa durar, maior fica essa distância.",
+       "tipo": "forca",
+       "problema": "Não tem linha no caderno. A Selic está parada e o Focus de 30/10 é um dado fixo, então a conta de 1,25 ponto não cresce com o tempo.",
+       "como_fica": ""
+      },
+      {
+       "trecho": "E nos períodos em que a inflação esperada ficou mais de 1,4 ponto acima da meta, sem contar as crises de confiança de 2002 e de 2013 a 2016, a Selic subiu nos três que sobram, em 2004, 2021 e 2024 [c29].",
+       "tipo": "forca",
+       "problema": "Tirar os episódios de 2002 e de 2013 a 2016 deixa só os casos que dão o resultado limpo. A conta completa (c13) é 5 altas e 1 queda em 6 episódios, contando o atual.",
+       "como_fica": "Nos episódios em que a inflação esperada ficou mais de 1,4 ponto acima da meta, a Selic subiu do começo ao fim em 5 de 6, contando o atual, que ainda está aberto [c13]. Nos de 2004, 2021 e 2024, a Selic subiu em todos [c29]."
+      },
+      {
+       "trecho": "Por isso, parte do freio dos 15% de 2025 e dos cortes de 2026 ainda não chegou à inflação.",
+       "tipo": "forca",
+       "problema": "O c17 dá o atraso médio de 29 meses entre países, e o texto o aplica ao Brasil de hoje como fato. O prazo varia muito entre países e épocas.",
+       "como_fica": "Se o prazo daqui for parecido com a média, parte do freio dos 15% de 2025 e dos cortes de 2026 ainda não chegou à inflação [c17]."
+      },
+      {
+       "trecho": "É por esse caminho que a pausa pode funcionar: se os bancos acreditarem que o Banco Central não vai cortar com a inflação longe da meta, a previsão deles tende a voltar para baixo.",
+       "tipo": "forca",
+       "problema": "O c18 só diz que a meta pesa na inflação que os bancos esperam. Que a pausa derrube a previsão deles não está na evidência.",
+       "como_fica": "No Brasil, a meta de inflação pesa na inflação que os bancos esperam [c18]. Se a pausa for lida como compromisso com a meta, a previsão deles pode ceder, mas o estudo não mostra esse efeito."
+      },
+      {
+       "trecho": "Com a inflação acima do teto, parar pode ser pouco.",
+       "tipo": "fonte",
+       "problema": "O caderno não traz o teto da meta nem diz que 5,6% está acima dele. O c16 só traz a previsão de 5,6% para 2026.",
+       "como_fica": "Com a inflação prevista para 2026 bem acima da meta de 3% [c16], parar pode ser pouco."
+      },
+      {
+       "trecho": "o emprego com carteira criou 121,3 mil vagas em setembro [c35]",
+       "tipo": "fonte",
+       "problema": "O c35 só diz que as vagas esfriaram e traz 121,3 mil. Não diz que são vagas com carteira nem que o mês é setembro.",
+       "como_fica": "as vagas esfriaram, com 121,3 mil [c35]"
+      },
+      {
+       "trecho": "Com 29 meses de atraso [c17], quem defende o corte diz que o freio já em curso basta.",
+       "tipo": "fonte",
+       "problema": "Atribui um argumento a quem defende o corte, e nenhuma linha traz isso. O c17 só traz o prazo médio.",
+       "como_fica": "O atraso médio de 29 meses [c17] é o que daria força a essa objeção: parte do freio já em curso ainda não chegou aos preços."
+      },
+      {
+       "trecho": "Os critérios foram os mesmos, e os finais foram opostos porque os dados eram diferentes.",
+       "tipo": "forca",
+       "problema": "Afirma a causa da diferença entre 2018 e 2024 com dois casos. Além disso, 2024 é do mesmo governo de hoje, então só 2018 serve de espelho de outro governo.",
+       "como_fica": "Os critérios foram os mesmos, e os finais foram opostos: em 2024 a inflação esperada estava acima da meta e subia, e em 2018 estava abaixo da meta [c9, c7]."
       }
      ],
      "graves": [],
-     "resumo": "O texto segue o caderno na maior parte e não tem erro que derrube a tese. Há nove ajustes: a força de \\\"separou\\\" e \\\"decidiu\\\" (10 casos e uma exceção), um \\\"porque\\\" que o estudo não sustenta, a contagem dos episódios com 1,4 ponto, uma frase sobre a dívida do governo que a linha não diz e três datas ou fatos sem linha no caderno (9/12, 12/11 e quem pode desfazer a decisão)."
+     "resumo": "A tese se sustenta no caderno: 10 casos com dado, 7 de 8 em alta quando a inflação esperada subiu, com o limite dito. Os problemas são pontuais. O título e o primeiro parágrafo põem causa onde só há ligação. Uma conta tira episódios para dar resultado limpo. Alguns trechos não têm linha no caderno: as datas de 9/12 e 12/11, o teto da meta, o emprego com carteira e o argumento atribuído a quem defende o corte. O \\\"porque\\\" do espelho também afirma causa sem prova."
     },
-    "aplicadas": 9,
+    "aplicadas": 13,
     "codigo": {
      "graves": [],
      "avisos": [
-      "bloco 14: frase de 37 palavras",
-      "bloco 17: frase de 38 palavras",
-      "bloco 18: frase de 37 palavras",
-      "bloco 20: frase de 37 palavras"
+      "bloco 10: frase de 38 palavras",
+      "bloco 22: palavra que o site trocou (num ano ruim, atraso nas dívidas, gasta mais do que arrecada)"
      ],
-     "palavras": 1358,
+     "palavras": 1300,
      "intertitulos": 3
     },
     "final": {
      "graves": [],
-     "avisos": [],
-     "palavras": 1314,
+     "avisos": [
+      "bloco 10: frase de 38 palavras",
+      "bloco 22: frase de 37 palavras",
+      "bloco 24: frase de 38 palavras"
+     ],
+     "palavras": 1322,
      "intertitulos": 3
-    },
-    "reconferencia": {
-     "em": "2026-11-09T05:54:00-03:00",
-     "ruins": [
-      "c33"
-     ],
-     "frases_cortadas": [
-      "O ministro da Fazenda diz que o governo prepara um ajuste gradual nas contas, ainda sem data."
-     ],
-     "abertos": 13,
-     "final": {
-      "graves": [],
-      "avisos": [],
-      "palavras": 1257,
-      "intertitulos": 3
-     },
-     "ruins_do_fato_do_dia": [
-      "c36"
-     ]
     }
    },
    "edicao": {
     "sugestoes": [
      {
-      "trecho": "Diante de uma pausa como esta, é fácil pensar que desta vez pode ser diferente",
-      "problema": "A primeira frase não se entende sozinha: não diz que pausa é essa.",
-      "como_fica": "Com a Selic em pausa, é fácil pensar que desta vez pode ser diferente, porque o juro já está alto."
+      "trecho": "Desta vez, ela subiu 0,36 ponto em um só mês depois do último corte [c1]. É mais do que a alta de 3 meses inteiros em 2012, 2009 e 2024 [c6, c5, c9]. Nos episódios em que a inflação esperada ficou mais de 1,4 ponto acima da meta, a Selic subiu do começo ao fim em 5 de 6, contando o atual, que ainda está aberto [c13].",
+      "problema": "Frase de 38 palavras (limite de 30), com 'ela' e 'É' que dependem da frase anterior.",
+      "como_fica": "Desta vez, a inflação esperada subiu 0,36 ponto em um só mês depois do último corte [c1]. Esse aumento é maior que o de 3 meses inteiros em 2012, 2009 e 2024 [c6, c5, c9]. Nos episódios em que ela ficou mais de 1,4 ponto acima da meta, a Selic subiu do começo ao fim em 5 de 6 [c13]. Essa conta inclui o episódio atual, que ainda está aberto."
      },
      {
-      "trecho": "Quem decidiu foi o Copom, o comitê do Banco Central que decide o juro, na reunião de 4/11, quando manteve a Selic em 13,75% [c15]. Quem decidiu foi o Copom, o comitê do Banco Central que decide o juro, na reunião de 4/11, quando manteve a Selic em 13,75% [c15].",
-      "problema": "Frase repetida, nada repetido.",
-      "como_fica": "A frase aparece uma vez só, com a marca [c15]."
+      "trecho": "O juro médio do crédito livre às pessoas estava em 62,35% ao ano em setembro, contra 58,66% um ano antes",
+      "problema": "'Crédito livre' é palavra que o site troca por empréstimo, cartão e financiamento com juro definido pelo banco; a comparação deve dizer o mês.",
+      "como_fica": "O juro médio de empréstimo, cartão e financiamento, com a taxa definida pelo banco, estava em 62,35% ao ano em setembro, contra 58,66% em setembro do ano passado"
      },
      {
-      "trecho": "Pela régua do Banco Central, a pausa vai na direção do objetivo se a inflação esperada para 2027 começar a sair de 4,76% rumo a 3% e se a projeção dele para 2028 voltar para perto da meta [c24, c25].",
-      "problema": "Frase de 38 palavras, acima do limite de 30.",
-      "como_fica": "Duas frases: a primeira com a inflação esperada para 2027 rumo a 3%; a segunda diz que também é preciso a projeção para 2028 voltar para perto da meta."
+      "trecho": "Nos de 2004, 2021 e 2024, a Selic subiu em todos [c29].",
+      "problema": "Frase que não se entende sozinha: 'nos de' não diz de que se fala.",
+      "como_fica": "Nos três episódios de 2004, 2021 e 2024, a Selic subiu [c29]."
      },
      {
-      "trecho": "Se o dólar subir por desconfiança das contas do governo, subir o juro pode enfraquecer o real e subir a inflação, o que se chama dominância fiscal, num estudo com dados do Brasil de 2002 e 2003 [c19].",
-      "problema": "Frase de 37 palavras e termo técnico (dominância fiscal) que a leitora não conhece.",
-      "como_fica": "Se o dólar subir por desconfiança das contas do governo, subir o juro pode enfraquecer o real e fazer a inflação subir. Isso vem de um estudo com dados do Brasil de 2002 e 2003 [c19]."
+      "trecho": "A Selic de hoje está 1,25 ponto acima disso [c28],",
+      "problema": "Frase incompleta (termina em vírgula) e 'disso' sem dizer o quê.",
+      "como_fica": "A Selic de hoje está 1,25 ponto acima do que eles previam para o fim de 2027 [c28]."
      },
      {
-      "trecho": "Quem paga a Selic parada são as pessoas e as empresas com parcela e o próprio governo, que gasta cerca de R$ 48 bilhões por ano em juros a cada ponto de Selic, numa conta do Poder360 [c34].",
-      "problema": "Frase de 37 palavras e detalhe exato repetido (R$ 48 bilhões e Poder360 já apareceram antes).",
-      "como_fica": "Quem paga a Selic parada são as pessoas e as empresas com parcela, e também o governo, que paga juros da dívida a cada ponto de Selic [c34]."
+      "trecho": "No Brasil, a meta de inflação pesa na inflação que os bancos esperam [c18]. (segunda vez)",
+      "problema": "Frase repetida logo depois de dita; só pesa.",
+      "como_fica": "A segunda cópia sai; fica a primeira, com [c18]."
      },
      {
-      "trecho": "São poucos casos, e a ligação entre eles não prova causa: o Banco Central reage aos mesmos números que esta conta usa, por isso o padrão descreve como ele costuma reagir, e não uma lei da economia.",
-      "problema": "Frase de 37 palavras, acima do limite de 30.",
-      "como_fica": "São poucos casos, e a ligação entre eles não prova causa, porque o Banco Central reage aos mesmos números que esta conta usa. Por isso o padrão descreve como ele costuma reagir, e não uma lei da economia."
+      "trecho": "O rumo da inflação esperada separou melhor, com uma exceção, a de 2018 [c7], e desta vez ela parte 1,60 ponto acima da meta de 3%, a maior distância entre as 11 pausas desde 2002 [c1, c10].",
+      "problema": "Frase de uns 35 palavras, acima do limite de 30.",
+      "como_fica": "O rumo da inflação esperada separou melhor, com uma exceção, a de 2018 [c7]. Desta vez ela parte 1,60 ponto acima da meta de 3%, a maior distância entre as 11 pausas desde 2002 [c1, c10]."
      },
      {
-      "trecho": "Em julho de 2002, o juro estava 12,7% acima da inflação esperada, e mesmo assim a inflação esperada subiu 3,71 pontos em três meses e a Selic voltou a subir três meses depois [c2].",
-      "problema": "Frase de 33 palavras.",
-      "como_fica": "Em julho de 2002, o juro estava 12,7% acima da inflação esperada, e isso não bastou. Ela subiu 3,71 pontos em três meses, e a Selic voltou a subir três meses depois [c2]."
+      "trecho": "Quem decidiu foi o Copom, na 282ª reunião, em 4 de novembro [c15]. No comunicado, ele diz que manter a Selic em 13,75% é compatível com levar a inflação para perto da meta ao longo do horizonte relevante e que o juro seguirá alto para segurar os preços [c26].",
+      "problema": "Sigla Copom que a leitora não conhece (vira 'o comitê do Banco Central que decide o juro'); frase longa demais.",
+      "como_fica": "Quem decidiu foi o comitê do Banco Central que decide o juro, na 282ª reunião, em 4 de novembro [c15]. No comunicado, ele diz que manter a Selic em 13,75% é compatível com levar a inflação para perto da meta ao longo do horizonte relevante. Diz também que o juro seguirá alto para segurar os preços [c26]."
      },
      {
-      "trecho": "O juro estava só 2,5% acima da inflação esperada, mas ela estava abaixo da meta e subiu apenas 0,07 ponto em três meses, e o Banco Central voltou a cortar 17 meses depois [c7].",
-      "problema": "Frase de mais de 30 palavras.",
-      "como_fica": "O juro estava só 2,5% acima da inflação esperada, que estava abaixo da meta e subiu apenas 0,07 ponto em três meses. O Banco Central voltou a cortar 17 meses depois [c7]."
+      "trecho": "Pelos casos parecidos, o lado mais provável hoje é o segundo, e por enquanto ele aponta para alta, e não para corte.",
+      "problema": "Frase que não se entende sozinha: 'o segundo' não diz qual.",
+      "como_fica": "Pelos casos parecidos, o caminho em que a decisão não chega ao objetivo é o mais provável hoje, e por enquanto ele aponta para alta da Selic, e não para corte."
      },
      {
-      "trecho": "Se tirarmos os episódios de 2002 e de 2013 a 2016, restam 2004, 2021 e 2024, e nos três a Selic subiu, de 16,00% para 17,25%, de 7,75% para 13,75% e de 11,25% para 15,00% [c29].",
-      "problema": "Frase de mais de 40 palavras.",
-      "como_fica": "Se tirarmos os episódios de 2002 e de 2013 a 2016, restam 2004, 2021 e 2024, e nos três a Selic subiu. Foi de 16,00% para 17,25%, de 7,75% para 13,75% e de 11,25% para 15,00%, nessa ordem [c29]."
+      "trecho": "Contando as vezes com dado, são 10 casos, e 10 casos mostram um padrão, não uma lei.",
+      "problema": "Contraste em espelho ('um padrão, não uma lei') e repetição de '10 casos'.",
+      "como_fica": "Contando as vezes com dado, são 10 casos, o que é pouco para falar em lei, mas basta para ver um padrão."
      },
      {
-      "trecho": "O Banco Central diz que a decisão é compatível com a inflação chegar perto da meta no horizonte em que ele mira, e que o juro seguirá alto o bastante para frear a economia [c26].",
-      "problema": "Frase acima de 30 palavras.",
-      "como_fica": "O Banco Central diz que a decisão é compatível com a inflação chegar perto da meta no horizonte que ele mira. Diz também que o juro seguirá alto para frear a economia [c26]."
+      "trecho": "Para você, o e daí está no número que vale olhar nas próximas notícias. Ele não é o tamanho do juro, [...]",
+      "problema": "'O e daí' é vocabulário interno do site, não palavra de conversa.",
+      "como_fica": "Para você, o que vale olhar nas próximas notícias não é o tamanho do juro, que já está alto e não separou os casos, e sim a previsão de inflação dos bancos, que sai toda semana no Focus."
      },
      {
-      "trecho": "Mas são 10 casos, e 10 casos mostram um padrão, não uma lei.",
-      "problema": "Detalhe repetido: o aviso de que é um padrão e não uma lei já foi dado duas vezes.",
-      "como_fica": "Mas são só 10 casos."
+      "trecho": "as vagas esfriaram, com 121,3 mil [c35] e integrantes do governo criticaram a pausa [c31]",
+      "problema": "Lista mal ligada, com vírgula faltando.",
+      "como_fica": "as vagas esfriaram, com 121,3 mil [c35], e integrantes do governo criticaram a pausa [c31]"
      }
     ],
     "aplicada": true
    },
-   "titulo": "A pausa da Selic começa com a inflação esperada mais longe da meta que em qualquer pausa desde 2002",
-   "texto": "Com a Selic em pausa, é fácil pensar que desta vez pode ser diferente, porque o juro já está alto. Hoje a Selic está 8,7% acima da inflação esperada pelos bancos, um freio forte para o crédito de quem compra a prazo e de quem investe [c1]. Só que, nas pausas desde 2002, o tamanho do juro não separou as que terminaram em alta das que terminaram em corte.\n\nNas pausas desde 2002, a inflação esperada subiu em 8 das 10, e em 7 delas a Selic voltou a subir; nas 2 em que ela caiu, o corte voltou [c2, c3, c7, c10, c11]. Por esse critério, a pausa começa longe da meta que o próprio Banco Central escreveu. A inflação esperada está 1,60 ponto acima da meta de 3%, a maior distância entre as 11 pausas desde 2002, e subiu 0,36 ponto no primeiro mês [c1]. A mais perto disso foi a de março de 2002, com 1,18 ponto [c10]. São 10 casos já encerrados, o que mostra um padrão, não uma lei.\n\n### O Banco Central mediu a pausa com a própria projeção, e ela piorou\n\nQuem decidiu foi o Copom, o comitê do Banco Central que decide o juro, na reunião de 4/11, quando manteve a Selic em 13,75% [c15].\n\nO objetivo está escrito no comunicado. O Banco Central diz que a decisão é compatível com a inflação chegar perto da meta no horizonte que ele mira. Diz também que o juro seguirá alto para frear a economia [c26]. Esse horizonte fica perto de meados de 2028, e a projeção do próprio Banco Central para o segundo trimestre de 2028 subiu de 3,1% para 3,5% [c25]. Ou seja, na conta de quem decidiu, a inflação de daqui a um ano e meio se afastou da meta justamente quando os cortes pararam.\n\nA decisão pesa em dois lugares. O primeiro é a parcela, porque a Selic parada mantém caros o empréstimo, o cartão e o financiamento. O segundo é a conta do governo: cada ponto de Selic custa cerca de R$ 48 bilhões por ano em juros da dívida, numa conta do Poder360, e não do Tesouro [c34].\n\nO caminho pelo qual o juro chega aos preços é lento. Uma meta-análise de 67 estudos mostra que o juro leva em média 29 meses para pesar todo nos preços, e essa é uma evidência forte [c17]. Por isso o Banco Central mira 2028, e não a inflação de hoje.\n\nNo Brasil, a meta pesa na inflação que os bancos esperam, segundo um estudo com dados só do país, de força média [c18]. Já a ideia de que uma fórmula simples, como a regra de Taylor, diria o juro certo não aguenta como veredito, porque os dados revisados depois mudam a resposta da regra [c20].\n\n### Nas pausas desde 2002, o juro alto não separou o final, e a inflação esperada subindo veio com a alta em 7 de 8\n\nOlhe para as pausas que terminaram em alta. Em julho de 2002, o juro estava 12,7% acima da inflação esperada, e isso não bastou. Ela subiu 3,71 pontos em três meses, e a Selic voltou a subir três meses depois [c2]. Em agosto de 2020, no outro extremo, o juro estava 1,0% abaixo da inflação esperada, ela subiu 0,81 ponto e a alta veio sete meses depois [c8].\n\nNo meio do caminho ficou abril de 2004, com o juro 9,9% acima da inflação esperada, quase o nível de hoje, e a Selic voltou a subir cinco meses depois [c3]. Se o juro alto bastasse para segurar a pausa, esse caso teria terminado em corte.\n\nA única pausa com inflação esperada subindo que terminou em corte foi a de março de 2018. O juro estava só 2,5% acima da inflação esperada, que estava abaixo da meta e subiu apenas 0,07 ponto em três meses. O Banco Central voltou a cortar 17 meses depois [c7]. Nas duas pausas em que a inflação esperada caiu, em março de 2002 e dezembro de 2003, o corte voltou em poucos meses [c10, c11].\n\nO mesmo desenho aparece quando se olha só para os momentos em que a inflação esperada ficou mais de 1,4 ponto acima da meta. Desde 2002 foram seis episódios assim, e do começo ao fim a Selic subiu em 5 e caiu em 1 [c13].\n\nAqui entra o tamanho da evidência. São poucos casos, e a ligação entre eles não prova causa, porque o Banco Central reage aos mesmos números que esta conta usa. Por isso o padrão descreve como ele costuma reagir, e não uma lei da economia. Nas pausas que terminaram em alta, a primeira alta veio entre 3 e 9 meses depois do último corte, que desta vez foi em setembro [c12].\n\n### A pausa chega ao objetivo se a inflação esperada para 2027 parar de subir\n\nOs bancos apostam no outro lado. A pesquisa Focus de 30/10 previa a Selic em 13,50% no fim de 2026 e em 12,50% no fim de 2027 [c24]. Isso é 1,25 ponto abaixo da Selic de hoje [c28]. A mesma pesquisa previa inflação de 4,76% em 2027, 1,76 ponto acima da meta [c24, c30].\n\nPela régua do Banco Central, a pausa vai na direção do objetivo se a inflação esperada para 2027 começar a sair de 4,76% rumo a 3%. Também é preciso que a projeção dele para 2028 volte para perto da meta [c24, c25]. Ela fica longe do objetivo se a inflação esperada seguir subindo com a Selic parada, que é o caso em que, nas pausas desde 2002, a alta voltou.\n\nHá um segundo jeito de dar errado, que o juro sozinho não resolve. Se o dólar subir por desconfiança das contas do governo, subir o juro pode enfraquecer o real e fazer a inflação subir. Isso vem de um estudo com dados do Brasil de 2002 e 2003 [c19]. A evidência é média e vale só para crise de confiança aguda, e em 2003 o juro alto, junto com sobra nas contas, acabou derrubando a inflação.\n\nSomando os casos e a evidência, o lado mais provável é a pausa terminar em alta, e não em corte, se a inflação esperada continuar onde está. Mas são só 10 casos.\n\nQuem paga a Selic parada são as pessoas e as empresas com parcela, e também o governo, que paga juros da dívida a cada ponto de Selic [c34]. Quem ganha é quem tem dinheiro aplicado, que rende mais. O efeito no emprego vem com atraso de meses, porque o crédito caro faz a empresa contratar menos.\n\nA melhor objeção de quem queria o corte é que o freio já aparece. A produção da indústria caiu 4,1% desde maio [c32], e foram abertas só 121,3 mil vagas com carteira em setembro [c35]. Como o juro leva em média 29 meses para pesar todo [c17], parte desse freio ainda nem chegou.\n\nA melhor objeção do outro lado é que a pausa é pouco. O próprio Banco Central prevê inflação de 5,6% em 2026 [c16], e a inflação esperada subiu no primeiro mês da pausa [c1], dois sinais de que manter pode não bastar.\n\nO critério não muda com quem governa. Em maio de 2024, a inflação esperada estava 0,64 ponto acima da meta e subiu 0,23 ponto em três meses, e a Selic voltou a subir quatro meses depois [c9]. Em março de 2018, com outro governo, ela estava abaixo da meta e quase parada, e o Banco Central voltou a cortar [c7]. A mesma régua, a distância da meta e o rumo da inflação esperada, deu alta numa e corte na outra.\n\nPara você, isso muda o que vale olhar nas próximas notícias. Nas 10 pausas desde 2002, o nível do juro não separou as que acabaram em alta das que acabaram em corte; a inflação esperada subindo veio com a alta em 7 de 8. Por isso vale olhar se a inflação esperada pelos bancos para 2027 para de subir [c2, c7, c10, c11]. Se ela subir, o crédito tende a ficar caro por mais tempo do que os bancos previam em outubro.",
+   "titulo": "Nas pausas do juro desde 2002, o passo seguinte andou junto com a inflação esperada, e ela está longe da meta",
+   "texto": "Um juro bem acima da inflação poderia tornar esta pausa diferente das que terminaram em alta. Hoje a Selic está 8,7% acima da inflação que os bancos esperam, mas as pausas desde 2002 mostram que esse nível não separou os casos [c2, c3, c4, c5, c6, c7, c8, c9, c10, c11]. O rumo da inflação esperada separou melhor, com uma exceção, a de 2018 [c7]. Desta vez ela parte 1,60 ponto acima da meta de 3%, a maior distância entre as 11 pausas desde 2002 [c1, c10].\n\nA régua do próprio Banco Central aponta para o mesmo lado. A projeção dele para a inflação de meados de 2028 subiu de 3,1% para 3,5%, acima da meta que ele mesmo diz perseguir [c25]. Contando as vezes com dado, são 10 casos, o que é pouco para falar em lei, mas basta para ver um padrão.\n\n### A pausa começa com a projeção do Banco Central acima da meta\n\nQuem decidiu foi o comitê do Banco Central que decide o juro, na 282ª reunião, em 4 de novembro [c15]. No comunicado, ele diz que manter a Selic em 13,75% é compatível com levar a inflação para perto da meta ao longo do horizonte relevante. Diz também que o juro seguirá alto para segurar os preços [c26].\n\nEsse é o objetivo, e é por ele que a decisão se mede. O horizonte que o Banco Central olha é o 2º trimestre de 2028, e a própria conta dele piorou de uma reunião para outra [c25]. O comitê parou de cortar na mesma reunião em que a projeção subiu de 3,1% para 3,5% [c25], o que vai na direção do objetivo escrito, mas ainda não chega a ele.\n\nA pausa também tem tamanho, medido contra o que os bancos esperavam. Na pesquisa Focus de 30 de outubro, eles previam a Selic em 12,50% no fim de 2027 [c24]. A Selic de hoje está 1,25 ponto acima do que eles previam para o fim de 2027 [c28].\n\n### Nas pausas desde 2002, o tamanho do juro não separou alta de corte\n\nSe o juro alto bastasse, as pausas com juro mais alto acima da inflação esperada teriam terminado em corte. Não foi o que aconteceu. Nas 7 pausas que terminaram em alta, esse juro ia de 12,7% em 2002 [c2] a 1,0% abaixo da inflação esperada em 2020 [c8].\n\nNo meio dessas duas pontas estão as outras altas: 9,9% em 2004 [c3], 7,1% em 2007 [c4], 4,5% em 2009 [c5], 1,8% em 2012 [c6] e 6,6% em 2024 [c9]. Os 8,7% de hoje cabem no meio dessa lista. A única pausa com inflação esperada subindo que terminou em corte, a de 2018, tinha juro de 2,5% acima da inflação esperada [c7].\n\nO rumo da inflação esperada separa os casos melhor. Nas duas pausas em que ela caiu nos 3 meses seguintes, em março de 2002 e em dezembro de 2003, o Banco Central voltou a cortar, mesmo com juro de 13,1% e de 10,0% acima da inflação esperada [c10, c11]. Em 2018, a exceção, a inflação esperada estava abaixo da meta e subiu só 0,07 ponto em 3 meses [c7].\n\nDesta vez, a inflação esperada subiu 0,36 ponto em um só mês depois do último corte [c1]. Esse aumento é maior que o de 3 meses inteiros em 2012, 2009 e 2024 [c6, c5, c9]. Nos episódios em que ela ficou mais de 1,4 ponto acima da meta, a Selic subiu do começo ao fim em 5 de 6 [c13]. Essa conta inclui o episódio atual, que ainda está aberto. Nos três episódios de 2004, 2021 e 2024, a Selic subiu [c29].\n\nO limite desta conta precisa ficar claro. São poucos casos, e a ligação entre eles não prova a causa, porque o Banco Central reage à inflação esperada e ela também reage a ele. O que a conta mostra é que, nas vezes parecidas, o nível do juro não bastou para fazer o Banco Central voltar a cortar.\n\n### A inflação esperada decide o lado, e o dólar pode mudar a conta\n\nA evidência sobre o caminho ajuda a ler o momento. Numa meta-análise de 67 estudos, o juro leva em média 29 meses para pesar todo nos preços, uma evidência forte [c17]. Se o prazo daqui for parecido com a média, parte do freio dos 15% de 2025 e dos cortes de 2026 ainda não chegou à inflação [c17].\n\nNo Brasil, a meta de inflação pesa na inflação que os bancos esperam, uma evidência média, porque vem só daqui [c18]. Se a pausa for lida como compromisso com a meta, a previsão deles pode ceder, mas o estudo não mostra esse efeito. Nenhuma regra simples, como a de Taylor, diz se 8,7% é juro suficiente, porque as recomendações dela mudam muito com os dados revisados depois [c20].\n\nA decisão chega ao objetivo se a previsão dos bancos para a inflação de 2027, hoje em 4,76%, 1,76 ponto acima da meta, começar a cair [c24, c30]. O outro sinal é a projeção do próprio Banco Central para 2028 voltar para perto de 3% [c25].\n\nEla não chega lá se a inflação esperada continuar subindo com a Selic parada, como nas 7 vezes que terminaram em alta. Também não chega se o dólar subir por desconfiança das contas do governo. Nesse caso, com dívida alta e medo de calote, subir o juro pode enfraquecer o real em vez de segurar os preços, o que se chama dominância fiscal [c19]. Essa evidência é média e vale só para crises de confiança agudas, como a de 2002 e 2003 no Brasil [c19].\n\nPelos casos parecidos, o caminho em que a decisão não chega ao objetivo é o mais provável hoje, e por enquanto ele aponta para alta da Selic, e não para corte. Nas pausas que terminaram em alta, a primeira alta veio de 3 a 9 meses depois do último corte [c12]. Como o último foi em setembro, esse intervalo vai do fim de 2026 a meados de 2027, ao contrário do que o Focus de 30 de outubro previa [c24].\n\nA melhor objeção a quem quer corte é a do próprio Banco Central, que prevê inflação de 5,6% em 2026 [c16]. Com a inflação prevista para 2026 bem acima da meta de 3% [c16], parar pode ser pouco. A melhor objeção do outro lado vem da economia real. A produção industrial caiu 4,1% desde maio [c32], as vagas esfriaram, com 121,3 mil [c35], e integrantes do governo criticaram a pausa [c31]. O atraso médio de 29 meses [c17] é o que daria força a essa objeção: parte do freio já em curso ainda não chegou aos preços.\n\nO espelho mostra que a régua não muda com o governo. Em maio de 2024, a inflação esperada estava 0,64 ponto acima da meta e subiu 0,23 ponto em 3 meses, e a Selic voltou a subir 4 meses depois [c9]. Em março de 2018, em outro governo, ela estava abaixo da meta e quase parou, e o Banco Central voltou a cortar [c7]. Os critérios foram os mesmos, e os finais foram opostos: em 2024 a inflação esperada estava acima da meta e subia, e em 2018 estava abaixo da meta [c9, c7].\n\nO custo também tem dono. Cada ponto de Selic custa ao governo cerca de R$ 48 bilhões por ano com a dívida, pela conta do Poder360, que não é um número do Tesouro [c34]. Para as famílias, a conta chega pelo crédito novo e pelo dinheiro guardado.\n\nPara quem tem financiamento e cartão, a pausa não traz alívio no crédito novo. O juro médio de empréstimo, cartão e financiamento, com a taxa definida pelo banco, estava em 62,35% ao ano em setembro, contra 58,66% em setembro do ano passado, e quem pede empréstimo agora começa por essa taxa [c103]. Quem já tem parcela com juro fixo continua pagando o mesmo.\n\nPara quem tem dinheiro guardado, a mesma Selic tem o efeito contrário. Com ela em 13,75%, R$ 1.000 numa aplicação que rende a Selic dão cerca de R$ 137,50 em um ano, antes do imposto, ou cerca de R$ 83,79 descontada a inflação que os bancos esperam [c104]. Se a próxima decisão for de alta, a parcela nova fica mais cara e o rendimento sobe, cada um para um lado.\n\nPara você, o que vale olhar nas próximas notícias não é o tamanho do juro, que já está alto e não separou os casos, e sim a previsão de inflação dos bancos, que sai toda semana no Focus.",
    "duracao_escrever_s": 211,
-   "revisao_manual": "8/11/2026: à mão, \"duas portas\" (palavra de bastidor) virou \"dois lugares\", e saiu a frase que tirava dois dos seis episódios sem dizer por quê, porque ela contava só os casos escolhidos depois",
-   "fontes_abertas": true
+   "notas_da_versao_anterior": {
+    "revisao_manual": "8/11/2026: à mão, \"duas portas\" (palavra de bastidor) virou \"dois lugares\", e saiu a frase que tirava dois dos seis episódios sem dizer por quê, porque ela contava só os casos escolhidos depois"
+   }
   },
   "termina_em": "juro",
   "pergunta": "juro-alto",
-  "versao_anterior": {
-   "titulo": "Banco Central para de cortar o juro e mantém a Selic em 13,75%",
-   "paragrafos": [
-    "O Banco Central parou de cortar e manteve a Selic em 13,75% ao ano. Ele disse que as incertezas aumentaram muito e que a inflação acelerou, e subiu para 5,6% a previsão do IPCA de 2026.",
-    "Segundo ele, a decisão é coerente com levar a inflação para perto da meta de 3%, mas a previsão dele para meados de 2028 subiu de 3,1% para 3,5%.",
-    "A pausa leva à meta se a inflação esperada parar de subir: em 7 de 8 pausas desde 2002 com ela subindo, o Banco Central voltou a subir a Selic."
-   ],
-   "revisao_manual": "refeito em 8/11/2026 com a análise da decisão pela meta de quem decidiu"
+  "teste": {
+   "ok": null,
+   "testes": {},
+   "problemas": []
   },
-  "revisao_manual": "refeito em 8/11/2026 com a análise da decisão pela meta de quem decidiu; as duas versões do redator não passaram no teste do e daí (faltavam a inflação esperada subindo agora, o aviso de poucos casos e o efeito no crédito), e o texto foi ajustado à mão com os dados da rodada, passando no verificador e no teste"
+  "versao_anterior": {
+   "titulo": "Banco Central para de cortar e mantém a Selic em 13,75% ao ano",
+   "paragrafos": [
+    "O Banco Central parou de cortar e manteve a Selic em 13,75%, citando incertezas muito maiores e a inflação acelerando.",
+    "Ele liga a decisão à meta de 3%, mas a previsão dele para a inflação de meados de 2028 subiu para 3,5%.",
+    "A pausa chega à meta se a inflação esperada, que subiu de 4,2% em julho para 5,0%, parar de subir. Em 7 de 8 pausas desde 2002 em que ela subiu, a Selic voltou a subir, mas são poucos casos.",
+    "Se a alta voltar, o crédito fica caro por mais tempo, o que segura consumo e investimento."
+   ]
+  },
+  "revisao_manual": "refeito em 8/11/2026 com a análise da decisão pela meta de quem decidiu; as duas versões do redator não passaram no teste do e daí (faltavam a inflação esperada subindo agora, o aviso de poucos casos e o efeito no crédito), e o texto foi ajustado à mão com os dados da rodada, passando no verificador e no teste 2026-11-09: refeito a pedido do Pedro (o fato do dia termina na vida de quem lê, TRADUCAO.md): curto do editor-chefe refeito com as traduções do dia e post pelo mesmo programa; à mão, saiu a fórmula \"poucos casos, padrão, não lei\" e a palavra que o site trocou, e o texto voltou às 100 palavras, com os mesmos números. A leitura a fundo foi escrita de novo da mesma pesquisa (fundo.py --escreve), com as famílias de referência que o fato atinge; as correções à mão de 8/11 (bastidor e promessas de conferir depois) não voltaram, e a conferência das fontes no Mac (--reconfere) roda de novo."
  },
  "pauta": {
   "versao": 1,
@@ -4140,6 +4319,11 @@
     "lado": "pesa",
     "ja_esperado": true,
     "porque": "Com a Selic parada em 13,75%, os bancos seguem cobrando caro das pessoas e das empresas, o que segura consumo e investimento. O Banco Central subiu a previsão do IPCA de 2026 para 5,6%.",
+    "vida": {
+     "tamanho": 2,
+     "porta": "credito",
+     "quem": "quem pede financiamento, usa cartão ou tem dívida com juro variável e quem tem empresa que toma crédito"
+    },
     "n_manchetes": 8,
     "jornais": [
      "Agência Brasil",
@@ -4202,6 +4386,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "As empresas abriram 43% menos vagas que em setembro de 2025, sinal de que o juro alto já freia o emprego e, com ele, a renda que sustenta o consumo das famílias.",
+    "vida": {
+     "tamanho": 2,
+     "porta": "emprego",
+     "quem": "quem procura vaga com carteira assinada e trabalhadores de setores que contratam menos, como o comércio"
+    },
     "n_manchetes": 8,
     "jornais": [
      "Agência Brasil",
@@ -4264,6 +4453,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "Se o corte de gastos vier com números, o governo tende a pagar juro menor para pegar dinheiro emprestado, o que abre espaço para a Selic voltar a cair. As medidas ainda não foram detalhadas.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "governo",
+     "quem": "quem recebe benefícios do governo ou depende de gasto público, se o corte sair do papel"
+    },
     "n_manchetes": 4,
     "jornais": [
      "Estadão",
@@ -4305,6 +4499,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "A melhora veio de fora, com o alívio após as eleições nos EUA, e da espera pelo anúncio sobre as contas. Juro futuro menor barateia o crédito de longo prazo para empresas e famílias.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
     "n_manchetes": 7,
     "jornais": [
      "Agência Brasil",
@@ -4361,6 +4560,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "As tarifas dos EUA sobre produtos brasileiros seguem em vigor, mas o novo Congresso pode limitar o presidente americano. Os EUA devem mandar proposta sobre tarifas até a próxima semana.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "emprego",
+     "quem": "trabalhadores e empresas de setores que exportam para os EUA, se as tarifas forem reduzidas"
+    },
     "n_manchetes": 8,
     "jornais": [
      "Folha",
@@ -4423,6 +4627,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "O petróleo ficou mais barato lá fora, o que alivia o preço do diesel e da gasolina aqui, ajuda os preços a subirem mais devagar e dá margem para a Selic cair.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "precos",
+     "quem": "quem abastece o carro e quem paga frete embutido no preço dos produtos, se a queda do petróleo chegar às bombas"
+    },
     "n_manchetes": 3,
     "jornais": [
      "InfoMoney",
@@ -4463,6 +4672,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "A federação das revendedoras esperava alta de 8,6% e agora vê 12,8%. Mais carros vendidos sustentam a indústria e o comércio mesmo com juro alto.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
     "n_manchetes": 1,
     "jornais": [
      "Agência Brasil"
@@ -4490,6 +4704,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Com o real mais fraco desde a eleição, trigo importado, açúcar e café ficam mais caros aqui, o que faz os preços subirem mais rápido e afasta novos cortes da Selic.",
+    "vida": {
+     "tamanho": 2,
+     "porta": "precos",
+     "quem": "quem compra pão, café e açúcar no mercado, sobretudo famílias de renda mais baixa"
+    },
     "n_manchetes": 1,
     "jornais": [
      "Folha"

@@ -2467,14 +2467,16 @@
   "ok": true,
   "titulo": "Atraso nas dívidas das pessoas sobe a 8,1% e bate recorde",
   "paragrafos": [
-   "Em setembro, 8,1% dos empréstimos às pessoas estavam com mais de 90 dias de atraso, um recorde, segundo dado divulgado pelo Banco Central. O atraso sobe num momento em que parcelas e juros já levavam 29% da renda das famílias em agosto, contra 27,6% em agosto de 2025.",
-   "Família com conta atrasada e pouca sobra na renda compra menos, e os bancos emprestam com mais cuidado, por isso o total de crédito cresceu só 0,4% em setembro. Itaú e Santander seguiram o Bradesco e subiram o juro da casa própria, o que encarece a parcela de quem vai financiar um imóvel."
+   "Em setembro, 8,1% dos empréstimos às pessoas estavam com mais de 90 dias de atraso, um recorde, segundo o Banco Central. Parcelas e juros já levavam 29% da renda das famílias em agosto, contra 27,6% um ano antes, e família com pouca sobra tende a comprar menos.",
+   "Itaú e Santander seguiram o Bradesco, que subiu o juro mínimo da casa própria de 11,7% para 15% ao ano.",
+   "Num financiamento de exemplo, de R$ 300 mil em 30 anos, a primeira parcela iria de cerca de R$ 3.612 para R$ 4.348, para quem financiar agora."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "Em setembro, 8,1% dos empréstimos às pessoas estavam com mais de 90 dias de atraso, um recorde, segundo dado divulgado pelo Banco Central. O atraso sobe num momento em que parcelas e juros já levavam 29% da renda das famílias em agosto, contra 27,6% em agosto de 2025.",
-     "Família com conta atrasada e pouca sobra na renda compra menos, e os bancos emprestam com mais cuidado, por isso o total de crédito cresceu só 0,4% em setembro. Itaú e Santander seguiram o Bradesco e subiram o juro da casa própria, o que encarece a parcela de quem vai financiar um imóvel."
+     "Em setembro, 8,1% dos empréstimos às pessoas estavam com mais de 90 dias de atraso, um recorde, segundo o Banco Central. Parcelas e juros já levavam 29% da renda das famílias em agosto, contra 27,6% um ano antes, e família com pouca sobra tende a comprar menos.",
+     "Itaú e Santander seguiram o Bradesco, que subiu o juro mínimo da casa própria de 11,7% para 15% ao ano.",
+     "Num financiamento de exemplo, de R$ 300 mil em 30 anos, a primeira parcela iria de cerca de R$ 3.612 para R$ 4.348, para quem financiar agora."
     ]
    }
   ],
@@ -2523,6 +2525,13 @@
    }
   ],
   "escrito_em": "2026-11-01T18:50:00-03:00",
-  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-11-01, à noite: refeito pelo mesmo programa no jeito de escrever novo, a pedido do Pedro: frases ligadas em vez de empilhadas, sem definir PIB, IPCA, Selic e Focus (o site liga esses termos à Wikipédia) e com o \"e daí\" de cada fato. Mesmos números e datas. 2026-11-01, mais tarde: refeito pelo redator e pelo editor novo (src/edita_texto.py), a pedido do Pedro: comparação com o mês (e não \"contra 3 meses antes\"), importados no lugar de \"o que vem de fora\", sigla por extenso ou com link e quem paga o quê. As sugestões do editor estão em edicao. Mesmos números e datas."
+  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-11-01, à noite: refeito pelo mesmo programa no jeito de escrever novo, a pedido do Pedro: frases ligadas em vez de empilhadas, sem definir PIB, IPCA, Selic e Focus (o site liga esses termos à Wikipédia) e com o \"e daí\" de cada fato. Mesmos números e datas. 2026-11-01, mais tarde: refeito pelo redator e pelo editor novo (src/edita_texto.py), a pedido do Pedro: comparação com o mês (e não \"contra 3 meses antes\"), importados no lugar de \"o que vem de fora\", sigla por extenso ou com link e quem paga o quê. As sugestões do editor estão em edicao. Mesmos números e datas. 2026-11-09: à mão, a pedido do Pedro (o fato do dia termina na vida de quem lê, com o tamanho da tabela de tradução, TRADUCAO.md): o mesmo fato, com os mesmos números e datas, e a última frase com a conta do site (src/conta.py traduz) no lugar da direção sozinha.",
+  "versao_anterior": {
+   "titulo": "Atraso nas dívidas das pessoas sobe a 8,1% e bate recorde",
+   "paragrafos": [
+    "Em setembro, 8,1% dos empréstimos às pessoas estavam com mais de 90 dias de atraso, um recorde, segundo dado divulgado pelo Banco Central. O atraso sobe num momento em que parcelas e juros já levavam 29% da renda das famílias em agosto, contra 27,6% em agosto de 2025.",
+    "Família com conta atrasada e pouca sobra na renda compra menos, e os bancos emprestam com mais cuidado, por isso o total de crédito cresceu só 0,4% em setembro. Itaú e Santander seguiram o Bradesco e subiram o juro da casa própria, o que encarece a parcela de quem vai financiar um imóvel."
+   ]
+  }
  }
 }
