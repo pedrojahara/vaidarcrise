@@ -1,0 +1,3660 @@
+{
+ "id": "2026-11-09T0545",
+ "gerado_em": "2026-11-09T05:45:05-03:00",
+ "regras": {
+  "config_sha256": "81e04058813d959191e50eb5d3b22bdf80b76704d88a851274a96bee70d896c7",
+  "calibracao_sha256": "df166b078e90c473619e3a0ecc17ceec8fafecf0f6563abd3d35761ee22c3495"
+ },
+ "insumos": {
+  "indicadores_coletados_em": "2026-11-09T05:45:25-03:00",
+  "erros_coleta": [],
+  "pib": [
+   {
+    "trimestre": "1T23",
+    "periodo": "202301",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T23",
+    "periodo": "202302",
+    "var_qoq": 0.8
+   },
+   {
+    "trimestre": "3T23",
+    "periodo": "202303",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T23",
+    "periodo": "202304",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "1T24",
+    "periodo": "202401",
+    "var_qoq": 0.7
+   },
+   {
+    "trimestre": "2T24",
+    "periodo": "202402",
+    "var_qoq": 1.7
+   },
+   {
+    "trimestre": "3T24",
+    "periodo": "202403",
+    "var_qoq": 0.9
+   },
+   {
+    "trimestre": "4T24",
+    "periodo": "202404",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "1T25",
+    "periodo": "202501",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T25",
+    "periodo": "202502",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "3T25",
+    "periodo": "202503",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T25",
+    "periodo": "202504",
+    "var_qoq": 0.2
+   },
+   {
+    "trimestre": "1T26",
+    "periodo": "202601",
+    "var_qoq": 1.1
+   },
+   {
+    "trimestre": "2T26",
+    "periodo": "202602",
+    "var_qoq": 0.5
+   }
+  ],
+  "focus": {
+   "PIB Total": [
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2026",
+     "Mediana": 1.7607,
+     "numeroRespondentes": 117
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2027",
+     "Mediana": 1.198,
+     "numeroRespondentes": 116
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2028",
+     "Mediana": 1.8,
+     "numeroRespondentes": 87
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2029",
+     "Mediana": 2.0,
+     "numeroRespondentes": 79
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2030",
+     "Mediana": 2.0,
+     "numeroRespondentes": 77
+    }
+   ],
+   "IPCA": [
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2026",
+     "Mediana": 5.2166,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2027",
+     "Mediana": 4.7646,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2028",
+     "Mediana": 4.0,
+     "numeroRespondentes": 131
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2029",
+     "Mediana": 3.98,
+     "numeroRespondentes": 121
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2030",
+     "Mediana": 3.815,
+     "numeroRespondentes": 112
+    }
+   ],
+   "Selic": [
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2026",
+     "Mediana": 13.5,
+     "numeroRespondentes": 143
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2027",
+     "Mediana": 12.5,
+     "numeroRespondentes": 143
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2028",
+     "Mediana": 11.0,
+     "numeroRespondentes": 125
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2029",
+     "Mediana": 10.25,
+     "numeroRespondentes": 114
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2030",
+     "Mediana": 10.0,
+     "numeroRespondentes": 111
+    }
+   ],
+   "Câmbio": [
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2026",
+     "Mediana": 5.3428,
+     "numeroRespondentes": 120
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2027",
+     "Mediana": 5.4,
+     "numeroRespondentes": 119
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2028",
+     "Mediana": 5.4,
+     "numeroRespondentes": 93
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2029",
+     "Mediana": 5.45,
+     "numeroRespondentes": 89
+    },
+    {
+     "Data": "2026-10-30",
+     "DataReferencia": "2030",
+     "Mediana": 5.5,
+     "numeroRespondentes": 86
+    }
+   ],
+   "IPCA 12m": {
+    "Data": "2026-10-30",
+    "Mediana": 4.9553,
+    "numeroRespondentes": 132
+   }
+  },
+  "noticias": {
+   "coletado_em": "2026-11-09T08:45:05+00:00",
+   "janela_horas": 32,
+   "por_veiculo": {
+    "Poder360": 22,
+    "Valor": 25,
+    "Gazeta do Povo": 4,
+    "Estadão": 8,
+    "InfoMoney": 28,
+    "Folha": 13,
+    "g1": 4
+   },
+   "status_fontes": {
+    "Agência Brasil": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 0
+    },
+    "Folha": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 31
+    },
+    "Estadão": {
+     "http": 200,
+     "itens_no_feed": 20,
+     "na_janela": 17
+    },
+    "Valor": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 100
+    },
+    "InfoMoney": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Poder360": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Gazeta do Povo": {
+     "http": 200,
+     "itens_no_feed": 24,
+     "na_janela": 5
+    },
+    "g1": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 16
+    },
+    "GDELT": {
+     "http": 429,
+     "erro": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic us"
+    }
+   },
+   "n_itens": 104
+  }
+ },
+ "cobertura": {
+  "dias": [
+   "2026-11-08"
+  ],
+  "no_acervo": 104,
+  "na_cesta": 104,
+  "coletas_24h": 26
+ },
+ "llm": {
+  "ok": true,
+  "meta": {
+   "etapa": "classificar",
+   "modelo_pedido": "sonnet",
+   "prompt_sha256": "b03ddce2a61fb5428cb4ae465c7ae2f8b002236ddec895772b2efa140f2db707",
+   "system_sha256": "3cc17d785a567175f6e88740dd78168f9138ac05230e89a098b69823b809f0e2",
+   "returncode": 0,
+   "is_error": false,
+   "custo_usd": 0.129356,
+   "turnos": 2,
+   "duracao_s": 23,
+   "modelos": [
+    "claude-sonnet-5-5"
+   ],
+   "permission_denials": [],
+   "session_id": "f95fefc4-d69a-4f2f-b667-67224dd9ef40"
+  },
+  "saida": {
+   "eventos": [
+    {
+     "noticia_ids": [
+      "n010",
+      "n008",
+      "n012",
+      "n009",
+      "n007",
+      "n032"
+     ],
+     "outras_ids": [
+      "n004",
+      "n005"
+     ],
+     "titulo_evento": "Presidente reafirma compromisso fiscal em TV, mas não detalha o ajuste",
+     "estagio": "anuncio",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "governo_federal",
+     "instrumento": "regra_fiscal",
+     "objetivo": "Reafirmar responsabilidade fiscal e elevar a taxa de investimento para mais de 20% do PIB",
+     "fator": "contas",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O presidente falou em preocupação com a dívida, mas citou programas sociais que elevam o gasto e não disse como fará o ajuste. Sem medidas concretas, a dúvida sobre as contas e sobre o juro longo continua."
+    },
+    {
+     "noticia_ids": [
+      "n083",
+      "n016",
+      "n031",
+      "n085",
+      "n087"
+     ],
+     "outras_ids": [
+      "n030",
+      "n021",
+      "n024"
+     ],
+     "titulo_evento": "Proposta de Lara Resende para baixar juros preocupa o mercado",
+     "estagio": "rumor",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "governo_federal",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "mercado",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261103-01",
+     "porque": "O mercado teme que o governo tente baixar a Selic sem ajustar as contas e influencie o Banco Central. Se o temor crescer, o juro que o governo paga para se financiar sobe, e o crédito encarece para empresas e famílias."
+    },
+    {
+     "noticia_ids": [
+      "n069",
+      "n075",
+      "n073"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Governo deve publicar decreto que regulamenta o fim da escala 6x1",
+     "estagio": "anuncio",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "governo_federal",
+     "instrumento": "preco_regulacao",
+     "objetivo": "",
+     "fator": "atividade",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Menos dias de trabalho por semana elevam o custo das empresas, sobretudo em comércio e serviços, que podem contratar menos. O Supremo Tribunal Federal faz audiência na terça-feira sobre o calendário da mudança."
+    },
+    {
+     "noticia_ids": [
+      "n027",
+      "n035"
+     ],
+     "outras_ids": [
+      "n002"
+     ],
+     "titulo_evento": "Petróleo Brent fica perto de US$ 97 com ataques a navios perto de Ormuz",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O petróleo segue caro lá fora por causa do conflito na região, e isso pressiona combustíveis e preços no Brasil. O Iraque diz ter chegado a um entendimento com os EUA para exportar por Ormuz, o que alivia um pouco a oferta."
+    },
+    {
+     "noticia_ids": [
+      "n093",
+      "n099"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "China planeja produzir mais soja e ameaça vendas do Brasil",
+     "estagio": "anuncio",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "fora",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A China é a maior compradora de soja do Brasil. Se produzir mais em casa, o país exporta menos para lá, e o agronegócio perde receita nos próximos anos."
+    },
+    {
+     "noticia_ids": [
+      "n103"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Bancos e consultorias veem risco de estagflação no Brasil em 2027",
+     "estagio": "previsao",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "atividade",
+     "direcao": 1,
+     "magnitude": 1,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261107-01",
+     "porque": "Bancos e consultorias projetam crescimento baixo e preços ainda altos em 2027. Com o juro alto e a atividade fraca, a economia fica mais perto de dois trimestres de queda do PIB."
+    }
+   ]
+  }
+ },
+ "eventos_novos": [
+  "ev-20261109-01",
+  "ev-20261109-02",
+  "ev-20261109-03",
+  "ev-20261109-04"
+ ],
+ "eventos_descartados": [
+  {
+   "noticia_ids": [
+    "n083",
+    "n016",
+    "n031",
+    "n085",
+    "n087"
+   ],
+   "outras_ids": [
+    "n030",
+    "n021",
+    "n024"
+   ],
+   "titulo_evento": "Proposta de Lara Resende para baixar juros preocupa o mercado",
+   "estagio": "rumor",
+   "chance_aprovacao": null,
+   "origem": "politica",
+   "decisor": "governo_federal",
+   "instrumento": "nenhum",
+   "objetivo": "",
+   "fator": "mercado",
+   "direcao": 1,
+   "magnitude": 1,
+   "ja_no_preco": false,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261103-01",
+   "porque": "O mercado teme que o governo tente baixar a Selic sem ajustar as contas e influencie o Banco Central. Se o temor crescer, o juro que o governo paga para se financiar sobe, e o crédito encarece para empresas e famílias.",
+   "motivo": "mesmo fato do evento ev-20261103-01",
+   "fontes": [
+    {
+     "veiculo": "Valor",
+     "titulo": "A inquietação na Faria Lima com o risco de um ‘shadow chair’ no BC",
+     "url": "https://valor.globo.com/financas/intraday/post/2026/11/a-inquietacao-na-faria-lima-com-o-risco-de-um-shadow-chair-no-bc.ghtml",
+     "publicado_em": "2026-11-08T11:03+00:00"
+    },
+    {
+     "veiculo": "Folha",
+     "titulo": "Lula, Lara e Lincoln",
+     "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/colunas/marcos-de-vasconcellos/2026/11/lula-lara-e-lincoln.shtml",
+     "publicado_em": "2026-11-08T23:00-03:00"
+    },
+    {
+     "veiculo": "Estadão",
+     "titulo": "O argumento de Lara Resende é incômodo: reduzir juros sem condições macroeconômicas é arriscado",
+     "url": "https://www.estadao.com.br/economia/claudio-adilson-goncalez/o-argumento-de-lara-resende-e-incomodo-reduzir-juros-sem-condicoes-macroeconomicas-e-arriscado/",
+     "publicado_em": "2026-11-08T20:00+00:00"
+    },
+    {
+     "veiculo": "InfoMoney",
+     "titulo": "Modelo de política econômica do PT é muito desequilibrado, avalia Azevedo, da Ibiuna",
+     "url": "https://www.infomoney.com.br/politica/modelo-de-politica-economica-do-pt-e-muito-desequilibrado-avalia-azevedo-da-ibiuna/",
+     "publicado_em": "2026-11-08T11:00+00:00"
+    },
+    {
+     "veiculo": "InfoMoney",
+     "titulo": "A receita da AZ Quest para o País reduzir até R$ 350 bi em gasto com juros todo ano",
+     "url": "https://www.infomoney.com.br/onde-investir/a-receita-da-az-quest-para-o-pais-reduzir-ate-r-350-bi-em-gasto-com-juros-todo-ano/",
+     "publicado_em": "2026-11-08T10:32+00:00"
+    }
+   ]
+  },
+  {
+   "noticia_ids": [
+    "n103"
+   ],
+   "outras_ids": [],
+   "titulo_evento": "Bancos e consultorias veem risco de estagflação no Brasil em 2027",
+   "estagio": "previsao",
+   "chance_aprovacao": null,
+   "origem": "dados",
+   "decisor": "nenhum",
+   "instrumento": "nenhum",
+   "objetivo": "",
+   "fator": "atividade",
+   "direcao": 1,
+   "magnitude": 1,
+   "ja_no_preco": true,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261107-01",
+   "porque": "Bancos e consultorias projetam crescimento baixo e preços ainda altos em 2027. Com o juro alto e a atividade fraca, a economia fica mais perto de dois trimestres de queda do PIB.",
+   "motivo": "mesmo fato do evento ev-20261107-01",
+   "fontes": [
+    {
+     "veiculo": "Gazeta do Povo",
+     "titulo": "Mercado financeiro alerta para risco de estagflação no Brasil em 2027",
+     "url": "https://www.gazetadopovo.com.br/economia/mercado-financeiro-alerta-para-risco-de-estagflacao-no-brasil-em-2027/",
+     "publicado_em": "2026-11-08T04:33+00:00"
+    }
+   ]
+  }
+ ],
+ "resultado": {
+  "nivel": {
+   "indice": 2,
+   "nome": "Normal",
+   "anterior": 2,
+   "bruto": 2,
+   "nome_bruto": "Normal"
+  },
+  "gar": {
+   "entradas": [
+    {
+     "id": "tendencia",
+     "fator": "atividade",
+     "nome": "Crescimento médio em 10 anos",
+     "unidade": "%",
+     "valor": 1.7328366710913756,
+     "ref": "2T2026",
+     "referencia": 2.4697807384106563,
+     "coef": -0.20407155569770025,
+     "faixa_normal": [
+      1.2052,
+      3.3021
+     ],
+     "escala": [
+      0.3054,
+      3.9289
+     ],
+     "efeito": 0.15038932228003635
+    },
+    {
+     "id": "crescimento",
+     "fator": "atividade",
+     "nome": "Crescimento em 12 meses",
+     "unidade": "%",
+     "valor": 1.3821346612817385,
+     "ref": "2026-08",
+     "referencia": 2.029441313073013,
+     "coef": 0.2281557601628648,
+     "faixa_normal": [
+      0.4274,
+      4.1388
+     ],
+     "escala": [
+      -6.2893,
+      9.267
+     ],
+     "efeito": -0.14768674119791708
+    },
+    {
+     "id": "juro",
+     "fator": "juro",
+     "nome": "Selic: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -1.25,
+     "ref": "2026-11-09",
+     "nivel": 13.75,
+     "antes": 15.0,
+     "referencia": -0.375,
+     "coef": -0.1473323685958321,
+     "faixa_normal": [
+      -3.0,
+      2.0
+     ],
+     "escala": [
+      -6.31,
+      8.655
+     ],
+     "efeito": 0.12891582252135309
+    },
+    {
+     "id": "inflacao",
+     "fator": "juro",
+     "nome": "Inflação: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -0.5899999999999999,
+     "ref": "2026-09",
+     "nivel": 4.58,
+     "antes": 5.17,
+     "referencia": -0.06499999999999995,
+     "coef": -0.12500236363708112,
+     "faixa_normal": [
+      -1.665,
+      1.3725
+     ],
+     "escala": [
+      -8.2538,
+      6.2048
+     ],
+     "efeito": 0.06562624090946757
+    }
+   ],
+   "ruim": -0.49423883953664693,
+   "cenario_ruim": -1.7876180427753297,
+   "cenario_normal": -1.8914573730774542,
+   "cortes": [
+    -2.253090277294695,
+    -1.094150109523146,
+    -0.07323292299512922,
+    0.7382055828202851
+   ],
+   "ref_pib": "2T2026"
+  },
+  "indicadores": [
+   {
+    "id": "ibcbr",
+    "fator": "atividade",
+    "nome": "IBC-Br",
+    "unidade": "%",
+    "definicao": "IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores.",
+    "direcao": -1,
+    "faixa_normal": [
+     -0.178879,
+     1.409462
+    ],
+    "escala": [
+     -3.422733,
+     3.418644
+    ],
+    "valor": -0.6424554746393363,
+    "ref": "2026-08",
+    "situacao": "pior"
+   },
+   {
+    "id": "focus_pib",
+    "fator": "atividade",
+    "nome": "PIB esperado pelo Focus",
+    "unidade": "%",
+    "definicao": "Crescimento do PIB esperado para os próximos 12 meses: mediana do Focus para o ano corrente e o seguinte, ponderada pelos meses que faltam em cada um.",
+    "direcao": -1,
+    "faixa_normal": [
+     1.617708,
+     3.499375
+    ],
+    "escala": [
+     -2.139717,
+     5.282417
+    ],
+    "valor": 1.2917833333333333,
+    "ref": "2026-10-30",
+    "ano": 1.7607,
+    "ano_seguinte": 1.198,
+    "situacao": "pior"
+   },
+   {
+    "id": "juro_real",
+    "fator": "juro",
+    "nome": "Juro real",
+    "unidade": "% ao ano",
+    "definicao": "Selic meta (BCB 432) descontada da inflação esperada para 12 meses (Focus, suavizada): (1 + Selic) / (1 + inflação esperada) − 1.",
+    "direcao": 1,
+    "faixa_normal": [
+     4.062007,
+     9.133549
+    ],
+    "escala": [
+     -1.195693,
+     14.660898
+    ],
+    "valor": 8.37947202285163,
+    "ref": "2026-11-09",
+    "selic": 13.75,
+    "inflacao_esperada": 4.9553,
+    "focus_data": "2026-10-30",
+    "situacao": "normal"
+   },
+   {
+    "id": "comprometimento",
+    "fator": "credito",
+    "nome": "Renda comprometida com dívidas",
+    "unidade": "p.p.",
+    "definicao": "Comprometimento de renda das famílias com dívidas, dessazonalizado (BCB 29034), menos a média dos 36 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.268333,
+     1.686944
+    ],
+    "escala": [
+     -1.879444,
+     3.762167
+    ],
+    "valor": 1.8797222222222203,
+    "ref": "2026-08",
+    "nivel": 28.99,
+    "situacao": "pior"
+   },
+   {
+    "id": "tesouro",
+    "fator": "mercado",
+    "nome": "Juro do Tesouro IPCA+",
+    "unidade": "p.p.",
+    "definicao": "Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (Tesouro Direto, venda pela manhã) menos a sua mediana nos 3 anos anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.95,
+     0.845
+    ],
+    "escala": [
+     -2.2292,
+     2.1344
+    ],
+    "valor": 0.5899999999999999,
+    "ref": "2026-11-06",
+    "nivel": 7.99,
+    "mediana": 7.4,
+    "vencimento": "2035-05-15",
+    "situacao": "normal"
+   },
+   {
+    "id": "dolar",
+    "fator": "mercado",
+    "nome": "Dólar",
+    "unidade": "%",
+    "definicao": "Variação do dólar PTAX (BCB 1) em 3 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -4.151625,
+     5.11632
+    ],
+    "escala": [
+     -14.383365,
+     27.223675
+    ],
+    "valor": 7.832683223239312,
+    "ref": "2026-11-06",
+    "nivel": 5.5013,
+    "situacao": "pior"
+   },
+   {
+    "id": "divida",
+    "fator": "contas",
+    "nome": "Dívida pública",
+    "unidade": "p.p. do PIB",
+    "definicao": "Variação da dívida bruta do governo geral (BCB 13762) em 12 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -1.74,
+     4.22
+    ],
+    "escala": [
+     -8.4312,
+     10.7912
+    ],
+    "valor": 5.090000000000003,
+    "ref": "2026-09",
+    "nivel": 82.93,
+    "situacao": "pior"
+   },
+   {
+    "id": "sahm",
+    "fator": "emprego",
+    "nome": "Regra de Sahm",
+    "unidade": "p.p.",
+    "definicao": "Média de 3 meses da desocupação da PNAD Contínua (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.066667,
+     1.433333
+    ],
+    "escala": [
+     -0.526667,
+     3.126667
+    ],
+    "valor": 0.033333333333333215,
+    "ref": "2026-09",
+    "nivel": 5.2,
+    "situacao": "normal"
+   },
+   {
+    "id": "commodities",
+    "fator": "externo",
+    "nome": "Preço das commodities",
+    "unidade": "%",
+    "definicao": "Variação em 6 meses do índice de preços de todas as commodities do FMI (FRED PALLFNFINDEXM).",
+    "direcao": -1,
+    "faixa_normal": [
+     -4.196915,
+     13.721388
+    ],
+    "escala": [
+     -28.018093,
+     30.645307
+    ],
+    "valor": 1.6727586354593926,
+    "ref": "2026-09",
+    "nivel": 222.4285486100514,
+    "situacao": "normal"
+   }
+  ],
+  "fatores": [
+   {
+    "id": "atividade",
+    "nome": "Ritmo da economia",
+    "indicadores": [
+     "ibcbr",
+     "focus_pib"
+    ],
+    "entradas": [
+     "tendencia",
+     "crescimento"
+    ],
+    "na_conta": true,
+    "efeito": 0.0027025810821192653,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "juro",
+    "nome": "Juro e inflação",
+    "indicadores": [
+     "juro_real"
+    ],
+    "entradas": [
+     "juro",
+     "inflacao"
+    ],
+    "na_conta": true,
+    "efeito": 0.19454206343082064,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   },
+   {
+    "id": "credito",
+    "nome": "Dívidas das famílias",
+    "indicadores": [
+     "comprometimento"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "mercado",
+    "nome": "Desconfiança de quem investe",
+    "indicadores": [
+     "tesouro",
+     "dolar"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "contas",
+    "nome": "Contas do governo",
+    "indicadores": [
+     "divida"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "emprego",
+    "nome": "Emprego",
+    "indicadores": [
+     "sahm"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   },
+   {
+    "id": "externo",
+    "nome": "Economia lá fora",
+    "indicadores": [
+     "commodities"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   }
+  ],
+  "gatilhos": [
+   {
+    "id": "crescimento",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": -1.2472588265629843,
+    "hoje": 1.3821346612817385
+   },
+   {
+    "id": "juro",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": 2.8218226123968666,
+    "hoje": -1.25
+   },
+   {
+    "id": "inflacao",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": 4.209199411366487,
+    "hoje": -0.5899999999999999
+   },
+   {
+    "id": "crescimento",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": 3.2273912361803534,
+    "hoje": 1.3821346612817385
+   },
+   {
+    "id": "juro",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": -4.107524931920681,
+    "hoje": -1.25
+   },
+   {
+    "id": "inflacao",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": -3.957983646803852,
+    "hoje": -0.5899999999999999
+   }
+  ],
+  "reaproveitados": [],
+  "faltando": [],
+  "direcao": {
+   "estado": "subindo",
+   "desde": "2026-06",
+   "soma": 4,
+   "bruto": "subindo",
+   "pendente": null,
+   "apertaram": 4,
+   "folgaram": 0,
+   "partes": [
+    {
+     "id": "contas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "divida": {
+       "agora": 82.93,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 81.95,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 0.980000000000004,
+       "corte": 0.9451499999999999,
+       "lado": 1,
+       "como": "pontos"
+      },
+      "primario": {
+       "agora": 0.52,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 1.19,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.6699999999999999,
+       "corte": 0.311325,
+       "lado": -1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "divida_bruta",
+      "valor": 82.93,
+      "ref": "2026-09",
+      "desde": "2006",
+      "meses": 238,
+      "pior_que_pct": 96,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "parcelas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "parcelas": {
+       "agora": 28.99,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 28.47,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": 0.5199999999999996,
+       "corte": 0.378075,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "comprometimento_renda",
+      "valor": 28.99,
+      "ref": "2026-08",
+      "desde": "2005",
+      "meses": 258,
+      "pior_que_pct": 100,
+      "recorde_ruim": true,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "mercado",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "dolar": {
+       "agora": 5.5013,
+       "dia": "2026-11-06",
+       "ref": "2026-11",
+       "antes": 5.1816,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 6.169908908445243,
+       "corte": 4.765725,
+       "lado": 1,
+       "como": "pct",
+       "lado_do_dia": 1,
+       "dias_seguidos": 0,
+       "persiste_dias": 3
+      },
+      "juro_longo": {
+       "agora": 7.99,
+       "dia": "2026-11-06",
+       "ref": "2026-11",
+       "antes": 7.92,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 0.07000000000000028,
+       "corte": 0.41145,
+       "lado": 0,
+       "como": "pontos",
+       "lado_do_dia": 0,
+       "dias_seguidos": 0,
+       "persiste_dias": 3
+      }
+     },
+     "folga": {
+      "serie": "juro_real_longo",
+      "valor": 7.99,
+      "ref": "2026-11",
+      "desde": "2005",
+      "meses": 257,
+      "pior_que_pct": 91,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "inflacao",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "inflacao": {
+       "agora": 4.9553,
+       "dia": "2026-10-30",
+       "ref": "2026-10",
+       "antes": 4.1883,
+       "dia_antes": "2026-07-31",
+       "ref_antes": "2026-07",
+       "mudanca": 0.7670000000000003,
+       "corte": 0.316875,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "focus_ipca_12m",
+      "valor": 4.9553,
+      "ref": "2026-10",
+      "desde": "2001",
+      "meses": 299,
+      "pior_que_pct": 53,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "juro",
+     "lado": 0,
+     "na_soma": true,
+     "medidas": {
+      "juro": {
+       "agora": 13.75,
+       "dia": "2026-11-09",
+       "ref": "2026-11",
+       "antes": 14.0,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": -0.25,
+       "corte": 0.833925,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "juro_real",
+      "valor": 8.37947202285163,
+      "ref": "2026-10",
+      "desde": "2002",
+      "meses": 298,
+      "pior_que_pct": 68,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "ritmo",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "ritmo": {
+       "agora": 110.40624,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 111.25061,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": -0.6424554746393252,
+       "corte": 0.88905,
+       "lado": 0,
+       "como": "media"
+      }
+     },
+     "folga": null
+    },
+    {
+     "id": "emprego",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "emprego": {
+       "agora": 5.2,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 5.4,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.20000000000000018,
+       "corte": 0.555975,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "desocupacao",
+      "valor": 5.2,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "reservas",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "reservas": {
+       "agora": 365019.0,
+       "dia": "2026-10-01",
+       "ref": "2026-10",
+       "antes": 369742.0,
+       "dia_antes": "2026-07-01",
+       "ref_antes": "2026-07",
+       "mudanca": -1.2773771981543836,
+       "corte": 2.97645,
+       "lado": 0,
+       "como": "pct"
+      }
+     },
+     "folga": null
+    }
+   ],
+   "mes": "2026-11",
+   "linha": [
+    {
+     "mes": "2004-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-01",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-02",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-03",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-04",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-11",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2020-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2020-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2021-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-11",
+     "estado": "S"
+    }
+   ]
+  }
+ },
+ "pressao": {
+  "fatores": {
+   "contas": {
+    "saldo": 0.3,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261109-01"
+    ]
+   },
+   "atividade": {
+    "saldo": 0.15,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261109-02"
+    ]
+   },
+   "externo": {
+    "saldo": 0.65,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261109-03",
+     "ev-20261109-04"
+    ]
+   }
+  },
+  "saldo": 1.1,
+  "sentido": "igual",
+  "n": 4
+ },
+ "leituras": {
+  "fatores": {
+   "atividade": {
+    "fatos": [
+     {
+      "texto": "A economia cresceu 1,4% em um ano (prévia do PIB, de junho a agosto). O normal desde 2004 vai de 0,4% a 4,1%.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "A prévia do PIB caiu 0,6% no trimestre até agosto, contra os 3 meses anteriores. É a maior queda desde agosto de 2025.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "Os bancos (Focus) esperam alta de 1,8% do PIB em 2026 e alta de 1,2% em 2027.",
+      "fonte": "Focus"
+     }
+    ]
+   },
+   "juro": {
+    "fatos": [
+     {
+      "texto": "Os preços subiram 4,6% em um ano até setembro (IPCA). Um ano antes, a alta era de 5,2%: os preços sobem mais devagar.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "Descontada a inflação esperada (5,0%), a Selic de 13,75% rende 8,4% ao ano.",
+      "fonte": "BC e Focus"
+     },
+     {
+      "texto": "Selic em 13,75% desde 17/9. Antes, era 14%. Nos últimos 12 meses, chegou a 15%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "credito": {
+    "fatos": [
+     {
+      "texto": "29% da renda das famílias vai para parcelas e juros (agosto), o maior desde o início da série, em 2005. Um ano antes, eram 27,6%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "mercado": {
+    "fatos": [
+     {
+      "texto": "O governo paga 8,0% ao ano acima da inflação para pegar dinheiro até 2035 (6/11). É 0,6 ponto acima do normal dos últimos 3 anos.",
+      "fonte": "Tesouro Direto"
+     },
+     {
+      "texto": "Dólar a R$ 5,50 em 6/11, 7,8% mais caro que no começo de agosto.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "contas": {
+    "fatos": [
+     {
+      "texto": "Dívida do governo em 82,9% do PIB (setembro). Subiu 5,1 pontos em um ano.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "União, estados e municípios gastaram 0,5% do PIB a mais do que arrecadaram nos 12 meses até setembro, sem contar juros. Um ano antes, eram 0,3%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "emprego": {
+    "fatos": [
+     {
+      "texto": "Desemprego em 5,2% no trimestre até setembro. O menor desde 2012 foi 5,1%, em dezembro de 2025.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "O desemprego médio de 3 meses está igual ao menor do último ano.",
+      "fonte": "IBGE"
+     }
+    ]
+   },
+   "externo": {
+    "fatos": [
+     {
+      "texto": "Soja, minério, petróleo e outros produtos básicos ficaram 1,7% mais caros em 6 meses até setembro (FMI).",
+      "fonte": "FMI"
+     }
+    ]
+   }
+  }
+ },
+ "anterior": "2026-11-08T0630",
+ "revisao_texto": {
+  "classificacao": [
+   "palavra que o site trocou: diga o juro de 10 anos (o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos) e, para a pressão, Desconfiança de quem investe: Presidente reafirma compromisso fiscal em TV, mas não detalh",
+   "sigla que a leitora não conhece (TV): escreva o nome por extenso, se ele explica: Presidente reafirma compromisso fiscal em TV, mas não detalh",
+   "jargão que o leitor não conhece: Bancos e consultorias veem risco de estagflação no Brasil em"
+  ]
+ },
+ "pauta": {
+  "versao": 1,
+  "candidatos": [
+   {
+    "id": "E1",
+    "ordem": 1,
+    "evento": "ev-20261109-01",
+    "titulo": "Presidente reafirma compromisso fiscal em TV, mas não detalha o ajuste",
+    "estagio": "anuncio",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O presidente falou em preocupação com a dívida, mas citou programas sociais que elevam o gasto e não disse como fará o ajuste. Sem medidas concretas, a dúvida sobre as contas e sobre o juro longo continua.",
+    "n_manchetes": 8,
+    "jornais": [
+     "Estadão",
+     "InfoMoney",
+     "Poder360",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Valor",
+      "titulo": "Lula fala em preocupação com dívida e juros e reafirma compromisso com responsabilidade fiscal",
+      "url": "https://valor.globo.com/politica/noticia/2026/11/08/lula-fala-em-preocupao-com-dvida-e-juros-e-reafirma-compromisso-com-responsabilidade-fiscal.ghtml",
+      "publicado_em": "2026-11-08T23:58+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Lula reafirma compromisso fiscal, mas evita detalhar medidas para reduzir juros",
+      "url": "https://www.infomoney.com.br/politica/lula-reafirma-compromisso-fiscal-mas-nao-evita-detalhar-medidas-para-reduzir-juros/",
+      "publicado_em": "2026-11-09T00:22+00:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Lula vai à TV, diz que trajetória da dívida preocupa, mas não detalha como pretende controlá-la",
+      "url": "https://www.estadao.com.br/economia/lula-diz-que-trajetoria-da-divida-e-juros-preocupam-e-afirma-compromisso-com-responsabilidade-fiscal-npr/",
+      "publicado_em": "2026-11-08T23:40+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Lula fala 7 minutos, mas não explica como fará ajuste fiscal",
+      "url": "https://www.poder360.com.br/poder-governo/lula-fala-7-minutos-mas-nao-explica-como-fara-ajuste-fiscal/",
+      "publicado_em": "2026-11-08T23:59+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Lula faz pronunciamento em tom eleitoral e enfatiza programas sociais",
+      "url": "https://www.poder360.com.br/poder-governo/lula-faz-pronunciamento-em-tom-eleitoral-e-enfatiza-programas-sociais/",
+      "publicado_em": "2026-11-09T00:31+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Em pronunciamento, “quero falar sobre conquistas, soberania e futuro”, diz Lula",
+      "url": "https://www.infomoney.com.br/politica/em-pronunciamento-quero-falar-sobre-conquistas-soberania-e-futuro-diz-lula/",
+      "publicado_em": "2026-11-08T20:00+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E2",
+    "ordem": 2,
+    "evento": null,
+    "titulo": "Proposta de Lara Resende para baixar juros preocupa o mercado",
+    "estagio": "rumor",
+    "tamanho": 1,
+    "fator": "mercado",
+    "origem": "politica",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O mercado teme que o governo tente baixar a Selic sem ajustar as contas e influencie o Banco Central. Se o temor crescer, o juro que o governo paga para se financiar sobe, e o crédito encarece para empresas e famílias.",
+    "n_manchetes": 8,
+    "jornais": [
+     "Estadão",
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "Valor"
+    ],
+    "descartado": "mesmo fato do evento ev-20261103-01",
+    "fontes": [
+     {
+      "veiculo": "Valor",
+      "titulo": "A inquietação na Faria Lima com o risco de um ‘shadow chair’ no BC",
+      "url": "https://valor.globo.com/financas/intraday/post/2026/11/a-inquietacao-na-faria-lima-com-o-risco-de-um-shadow-chair-no-bc.ghtml",
+      "publicado_em": "2026-11-08T11:03+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Lula, Lara e Lincoln",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/colunas/marcos-de-vasconcellos/2026/11/lula-lara-e-lincoln.shtml",
+      "publicado_em": "2026-11-08T23:00-03:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "O argumento de Lara Resende é incômodo: reduzir juros sem condições macroeconômicas é arriscado",
+      "url": "https://www.estadao.com.br/economia/claudio-adilson-goncalez/o-argumento-de-lara-resende-e-incomodo-reduzir-juros-sem-condicoes-macroeconomicas-e-arriscado/",
+      "publicado_em": "2026-11-08T20:00+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Modelo de política econômica do PT é muito desequilibrado, avalia Azevedo, da Ibiuna",
+      "url": "https://www.infomoney.com.br/politica/modelo-de-politica-economica-do-pt-e-muito-desequilibrado-avalia-azevedo-da-ibiuna/",
+      "publicado_em": "2026-11-08T11:00+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "A receita da AZ Quest para o País reduzir até R$ 350 bi em gasto com juros todo ano",
+      "url": "https://www.infomoney.com.br/onde-investir/a-receita-da-az-quest-para-o-pais-reduzir-ate-r-350-bi-em-gasto-com-juros-todo-ano/",
+      "publicado_em": "2026-11-08T10:32+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E3",
+    "ordem": 3,
+    "evento": "ev-20261109-02",
+    "titulo": "Governo deve publicar decreto que regulamenta o fim da escala 6x1",
+    "estagio": "anuncio",
+    "tamanho": 1,
+    "fator": "atividade",
+    "origem": "politica",
+    "assunto": "Ritmo da economia",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Menos dias de trabalho por semana elevam o custo das empresas, sobretudo em comércio e serviços, que podem contratar menos. O Supremo Tribunal Federal faz audiência na terça-feira sobre o calendário da mudança.",
+    "n_manchetes": 3,
+    "jornais": [
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Valor",
+      "titulo": "Governo deve publicar nesta segunda decreto que regulamenta fim da jornada 6x1",
+      "url": "https://valor.globo.com/brasil/noticia/2026/11/08/governo-deve-publicar-nesta-segunda-decreto-que-regulamenta-fim-da-jornada-6x1.ghtml",
+      "publicado_em": "2026-11-08T12:59+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Agenda do STF: Ministros pautam para esta semana expurgos inflacionários e fim da escala 6 x 1",
+      "url": "https://valor.globo.com/legislacao/noticia/2026/11/08/agenda-do-stf-ministros-pautam-para-esta-semana-expurgos-inflacionarios-e-fim-da-escala-6-x-1.ghtml",
+      "publicado_em": "2026-11-08T12:00+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Eleitores esperam que Lula cumpra promessa de fim da escala 6x1 enquanto temem economia",
+      "url": "https://valor.globo.com/politica/noticia/2026/11/08/eleitores-esperam-que-lula-cumpra-promessa-de-fim-da-escala-6x1-enquanto-temem-economia.ghtml",
+      "publicado_em": "2026-11-08T12:00+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E4",
+    "ordem": 4,
+    "evento": "ev-20261109-03",
+    "titulo": "Petróleo Brent fica perto de US$ 97 com ataques a navios perto de Ormuz",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "O petróleo segue caro lá fora por causa do conflito na região, e isso pressiona combustíveis e preços no Brasil. O Iraque diz ter chegado a um entendimento com os EUA para exportar por Ormuz, o que alivia um pouco a oferta.",
+    "n_manchetes": 3,
+    "jornais": [
+     "Folha",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "Cotação do petróleo reabre em leve queda mesmo com ataques a navios perto de Hormuz",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/cotacao-do-petroleo-reabre-em-leve-queda-mesmo-com-ataques-a-navios-perto-de-hormuz.shtml",
+      "publicado_em": "2026-11-08T20:32-03:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Iraque chega a entendimento com os EUA para permitir exportações de petróleo via Ormuz, diz ministro",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/08/iraque-chega-a-entendimento-com-os-eua-para-permitir-exportacoes-de-petroleo-via-ormuz-diz-ministro.ghtml",
+      "publicado_em": "2026-11-08T19:35+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E5",
+    "ordem": 5,
+    "evento": "ev-20261109-04",
+    "titulo": "China planeja produzir mais soja e ameaça vendas do Brasil",
+    "estagio": "anuncio",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "A China é a maior compradora de soja do Brasil. Se produzir mais em casa, o país exporta menos para lá, e o agronegócio perde receita nos próximos anos.",
+    "n_manchetes": 2,
+    "jornais": [
+     "Estadão",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Estadão",
+      "titulo": "Plano da China de aumentar produção própria de soja põe agronegócio brasileiro em alerta",
+      "url": "https://www.estadao.com.br/economia/como-o-investimento-da-china-em-soja-propria-pode-afetar-o-agronegocio-brasileiro/",
+      "publicado_em": "2026-11-08T08:30+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Brasil pode perder seu maior comprador de soja? Entenda os planos da China e a disputa com os EUA",
+      "url": "https://g1.globo.com/economia/agronegocios/noticia/2026/11/08/brasil-pode-perder-seu-maior-comprador-de-soja-entenda-os-planos-da-china-e-a-disputa-com-os-eua.ghtml",
+      "publicado_em": "2026-11-08T08:00+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E6",
+    "ordem": 6,
+    "evento": null,
+    "titulo": "Bancos e consultorias veem risco de estagflação no Brasil em 2027",
+    "estagio": "previsao",
+    "tamanho": 1,
+    "fator": "atividade",
+    "origem": "dados",
+    "assunto": "Ritmo da economia",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "Bancos e consultorias projetam crescimento baixo e preços ainda altos em 2027. Com o juro alto e a atividade fraca, a economia fica mais perto de dois trimestres de queda do PIB.",
+    "n_manchetes": 1,
+    "jornais": [
+     "Gazeta do Povo"
+    ],
+    "descartado": "mesmo fato do evento ev-20261107-01",
+    "fontes": [
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Mercado financeiro alerta para risco de estagflação no Brasil em 2027",
+      "url": "https://www.gazetadopovo.com.br/economia/mercado-financeiro-alerta-para-risco-de-estagflacao-no-brasil-em-2027/",
+      "publicado_em": "2026-11-08T04:33+00:00"
+     }
+    ]
+   }
+  ],
+  "datas": [],
+  "pressoes_mudaram": [],
+  "estado": "subindo",
+  "estado_anterior": "subindo",
+  "degrau": 5,
+  "motivo": "a notícia de estágio mais firme e maior tamanho; no empate, a que não é o vaivém do mercado do dia e a que saiu em mais jornais",
+  "padrao": "E4",
+  "final": "E4",
+  "mesma_historia": [],
+  "cuidados": [
+   "A cotação reabriu em leve queda. O texto não pode dizer que o petróleo subiu.",
+   "O entendimento do Iraque com os EUA é uma declaração de um ministro. Não é acordo fechado nem exportação já liberada.",
+   "Use só os números das manchetes do próprio fato. Elas não trazem o valor do barril, então não cite preço."
+  ],
+  "editora": {
+   "ok": true,
+   "saida": {
+    "segue_padrao": true,
+    "escolha": "E4",
+    "motivo_desvio": null,
+    "por_que": "Não há mudança de direção, de pressão nem data marcada. No degrau 5, E4 é o único dado divulgado entre os candidatos. Os outros são anúncio, rumor ou previsão. Nenhum motivo de troca se aplica.",
+    "concorrente": "E1",
+    "por_que_perdeu": "E1 saiu em mais jornais, mas é um discurso sem ato formal e sem medida concreta. Trocar um fato consumado por anúncio não é permitido.",
+    "mesma_historia": [],
+    "cuidados": [
+     "A cotação reabriu em leve queda. O texto não pode dizer que o petróleo subiu.",
+     "O entendimento do Iraque com os EUA é uma declaração de um ministro. Não é acordo fechado nem exportação já liberada.",
+     "Use só os números das manchetes do próprio fato. Elas não trazem o valor do barril, então não cite preço."
+    ],
+    "testes": {
+     "troca": "Sim. Com outro governo no poder, o petróleo caro por causa do conflito em Ormuz continuaria sendo o fato consumado mais firme da pauta.",
+     "fato": "É dado divulgado: a cotação do petróleo de 08/11. Não é previsão, opinião nem rumor.",
+     "consequencia": "Petróleo caro pressiona combustíveis e preços no Brasil. Isso afeta a Inflação esperada e o preço que a leitora paga.",
+     "novidade": "A leitora fica sabendo que o petróleo segue caro mesmo com leve queda na abertura e que o Iraque diz ter um entendimento para exportar por Ormuz. Em 03/11 o site contou a queda do petróleo por sinal de paz, e agora os ataques a navios continuam.",
+     "mais_dada": "O discurso de Lula sobre compromisso fiscal (E1) saiu em mais jornais e manchetes. Ficou de fora porque é anúncio sem ato formal, e o código não deixa trocar dado divulgado por anúncio."
+    }
+   },
+   "meta": [
+    {
+     "etapa": "editora",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "0350feca8e06bfd09183f44553d7dafa0ac05b65452f61e8d0d80546a8bef417",
+     "system_sha256": "7666a59ef8e1ef6a4a5af31baeef2101ab04d903c6ab0c074abc79b1ba03b71d",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.075572,
+     "turnos": 2,
+     "duracao_s": 12,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "b9f9af3b-83af-4fcc-9f0c-cab1806e25ed"
+    }
+   ],
+   "conferencia": "seguiu a escolha padrão"
+  }
+ },
+ "post": {
+  "tipo": "dia",
+  "porque": {
+   "caderno": [
+    "c1",
+    "c2"
+   ]
+  },
+  "ok": true,
+  "titulo": "Petróleo reabre em leve queda mesmo com ataques perto de Ormuz",
+  "paragrafos": [
+   "Segundo a Folha, o petróleo reabriu em leve queda, mesmo com ataques a navios perto de Ormuz. Ele segue caro pelo conflito na região, o que pressiona combustíveis e preços no Brasil.",
+   "Segundo o Valor, o ministro do Petróleo iraquiano disse ter chegado a um entendimento com os EUA para exportar por Ormuz. Ainda é só uma declaração e, se virar acordo, põe um pouco mais de petróleo à venda.",
+   "O diesel no posto não depende só do barril, porque conta também a ajuda de R$ 2,12 por litro que a Fazenda prorrogou por 30 dias no fim de outubro."
+  ],
+  "secoes": [
+   {
+    "paragrafos": [
+     "Segundo a Folha, o petróleo reabriu em leve queda, mesmo com ataques a navios perto de Ormuz. Ele segue caro pelo conflito na região, o que pressiona combustíveis e preços no Brasil.",
+     "Segundo o Valor, o ministro do Petróleo iraquiano disse ter chegado a um entendimento com os EUA para exportar por Ormuz. Ainda é só uma declaração e, se virar acordo, põe um pouco mais de petróleo à venda.",
+     "O diesel no posto não depende só do barril, porque conta também a ajuda de R$ 2,12 por litro que a Fazenda prorrogou por 30 dias no fim de outubro."
+    ]
+   }
+  ],
+  "problemas": [],
+  "edicao": {
+   "sugestoes": [
+    {
+     "trecho": "Segundo a Folha, a cotação do petróleo reabriu em leve queda, mesmo com ataques a navios perto de Ormuz, mas segue cara por causa do conflito na região. Com o petróleo caro lá fora, os combustíveis e outros preços no Brasil ficam pressionados.",
+     "problema": "Texto acima de 100 palavras. A segunda frase repete \"petróleo caro\" em vez de se ligar à anterior com \"o que\".",
+     "como_fica": "Segundo a Folha, o petróleo reabriu em leve queda, mesmo com ataques a navios perto de Ormuz. Ele segue caro pelo conflito na região, o que pressiona combustíveis e preços no Brasil."
+    },
+    {
+     "trecho": "Por enquanto é uma declaração, não um acordo fechado, e só aliviaria um pouco a oferta se virasse acordo.",
+     "problema": "\"Oferta\" é palavra de jornal de economia. A frase diz \"acordo\" duas vezes e usa contraste cortado.",
+     "como_fica": "Ainda é só uma declaração e, se virar acordo, põe um pouco mais de petróleo à venda."
+    },
+    {
+     "trecho": "a subvenção de R$ 2,12 por litro",
+     "problema": "\"Subvenção\" é termo técnico que a leitora não conhece.",
+     "como_fica": "a ajuda de R$ 2,12 por litro"
+    },
+    {
+     "trecho": "No posto, o preço do diesel não depende só do barril, porque também conta",
+     "problema": "Palavras que só pesam, num texto que precisa caber em 100 palavras.",
+     "como_fica": "O diesel no posto não depende só do barril, porque conta também"
+    }
+   ],
+   "aplicada": true
+  },
+  "teste": {
+   "ok": true,
+   "testes": {
+    "porque": {
+     "ok": true,
+     "por_que": "Diz que o petróleo segue caro pelo conflito, como está no 'por quê' do fato, e traz o entendimento do Iraque como o ministro o disse, sem dizer que ele causou a queda. Não aparece causa nem número que não esteja nos dados."
+    },
+    "quem": {
+     "ok": true,
+     "por_que": "Cada ato tem o autor certo: o ministro iraquiano é quem declara o entendimento, e a Fazenda é quem prorroga a subvenção, como diz a portaria de 27/10. Ninguém aparece como autor de uma decisão que é de outro."
+    },
+    "e_dai": {
+     "ok": true,
+     "por_que": "Diz o que muda para ela: o barril caro pressiona combustíveis e preços, mas o diesel no posto depende também da subvenção. Isso está preso aos dados, não julga a decisão e trata o entendimento como declaração, não como acordo."
+    },
+    "livro": {
+     "ok": true,
+     "por_que": "Não gasta espaço com mecanismo geral. A única oração desse tipo ('põe um pouco mais de petróleo à venda') explica o efeito do entendimento, que é o porquê do dia."
+    }
+   },
+   "problemas": []
+  },
+  "meta": [
+   {
+    "etapa": "post",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "c8f0bd23af9435a4bfc4885e114f12462e82cc533b59b9ba15d29ee0529d299b",
+    "system_sha256": "7a1b27229d62aca6396815798c8fbf5f18213f57f46e66ce22db3bc179cf932c",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.14879599999999998,
+    "turnos": 2,
+    "duracao_s": 21,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "5f192ad4-99aa-4b13-90b9-8dc8d102e408"
+   },
+   {
+    "etapa": "editor",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "df15f0931ef654d2df2ca257020c54354f61a64a9bd6f0795a5678dc2f0f73e1",
+    "system_sha256": "4c7e8c0f33317bc6d454b5ff1a997da9df57cacbbd46c9781db8192f030feaf7",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.304828,
+    "turnos": 2,
+    "duracao_s": 31,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "c03e4d21-dea8-45a8-a0f1-4d7943e84b39"
+   },
+   {
+    "etapa": "teste",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "b89320c2c18b72e150f232e2358610dd53d0c3168052db86c67be8e36bf10868",
+    "system_sha256": "b23e7fe606b25bc07b60b951d7b0b87d3d3bf78dd91387195dcc0d9b711ccbc2",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.094728,
+    "turnos": 2,
+    "duracao_s": 12,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "9bfb617e-c7b7-4519-a6fc-ceb8c35d25d2"
+   }
+  ],
+  "fundo": {
+   "versao": 3,
+   "ok": false,
+   "em": "2026-11-09T05:46:53-03:00",
+   "voltas": [
+    {
+     "volta": 1,
+     "teses": [
+      {
+       "tese": "Petróleo mais barato alivia menos a inflação de hoje do que o risco de reajuste represado de amanhã. Parte do choque está segurada pela subvenção ao diesel de R$ 2,12 por litro e pelo preço da Petrobras, que em outubro estava R$ 3,50 por litro abaixo do internacional. A queda do barril diminui a chance de um repasse de uma vez, como em 2015, quando o IPCA em 12 meses foi de 6,41% a 10,67%.",
+       "por_que_nao_e_obvia": "A manchete diz que petróleo em queda alivia os preços. A tese diz que o alívio principal é sobre o que ainda não foi repassado, não sobre o IPCA que sai em 12/11.",
+       "o_que_muda": "A leitora passa a olhar a subvenção (vence em cerca de 30 dias de 27/10) e o preço da Petrobras, não só o barril, para saber se o combustível sobe em 2027.",
+       "como_pode_dar_errado": "Se a subvenção for retirada ou a Petrobras reajustar e o IPCA e o Focus quase não reagirem, a tese cai. A Abicom mediu R$ 3,50 numa semana de Brent mais alto. 2015 teve também dólar e energia. Com commodities acima de 200 há só 3 episódios.",
+       "caderno": [
+        "c2",
+        "c3",
+        "c4",
+        "c8",
+        "c9",
+        "c10",
+        "c12"
+       ]
+      }
+     ],
+     "editor_chefe": {
+      "veredito": "devolve",
+      "tese": "A tese proposta: o barril mais barato alivia menos a inflação de agora do que reduz o risco de um reajuste represado depois. Parte do choque está segurada pela subvenção ao diesel de R$ 2,12 por litro e pelo preço da Petrobras, que em outubro estava R$ 3,50 por litro abaixo do internacional, segundo a Abicom. O ângulo é bom, mas falta sustentação: o R$ 3,50 é de uma semana com o barril mais alto, vem de fonte secundária, e 2015 não separa o combustível do dólar e da energia.",
+      "testes": {
+       "nao_obvia": {
+        "ok": true,
+        "por_que": "A manchete diz que o barril em queda alivia os preços. A ideia de que o principal está represado, e não no IPCA de 12/11, não está no jornal nem em leitura a fundo recente. A de 07/11 tratou do petróleo pelo lado do dólar e da balança."
+       },
+       "muda_algo": {
+        "ok": true,
+        "por_que": "A leitora passaria a olhar o vencimento da subvenção e o preço da Petrobras, e não só o barril. Mas o texto não diz quando a subvenção vence nem quanto o diesel e a gasolina pesam no IPCA, e sem isso o efeito no bolso fica vago."
+       },
+       "pode_dar_errado": {
+        "ok": true,
+        "por_que": "A tese diz o que a desmentiria: a subvenção acaba ou a Petrobras reajusta, e o IPCA e o Focus quase não reagem."
+       },
+       "no_caderno": {
+        "ok": false,
+        "por_que": "O R$ 3,50 (c3) vem de um site desconhecido que repassa a Abicom e é de outubro. Nenhuma linha mostra que em 2015 a alta do IPCA veio do repasse dos combustíveis (c8 e c9 dão só o índice cheio). O custo da subvenção diverge entre fontes. O Copom (c7) não confere."
+       },
+       "pela_meta": {
+        "ok": true,
+        "por_que": "Não é decisão."
+       }
+      },
+      "roteiro": [],
+      "pressao": "inflacao",
+      "devolve": [
+       "Quanto está represado hoje? Procurar a defasagem da Abicom de novembro (no site da Abicom, não em repasse de terceiros), com a data, separada entre diesel e gasolina.",
+       "Quando a subvenção vence e o que acontece depois? Procurar o ato oficial: a portaria ou o decreto no Diário Oficial ou a nota da Fazenda ou do MME, com a data de fim e o custo oficial, porque as fontes divergem (R$ 10,5 bi, R$ 1,6 bi, R$ 32 bi).",
+       "E daí no bolso? Procurar o peso do diesel e da gasolina no IPCA (IBGE) e fazer com calc a conta de quanto um repasse de uma vez somaria ao índice.",
+       "Já aconteceu antes? Procurar os episódios em que uma defasagem ou um subsídio a combustível acabou (o fim da desoneração em 2023, a liberação dos preços em 2015, a subvenção ao diesel de 2018) e quanto o IPCA de combustíveis subiu depois. Contar por episódio e separar o combustível do dólar e da energia. Sem isso, 2015 não sustenta a tese.",
+       "O que o Banco Central diz? Confirmar no comunicado ou na ata do Copom de 4/11, no site do BC, se ele cita o petróleo e a projeção de 5,6%. A Nomad não basta.",
+       "Melhor objeção: a defasagem encolheu com o barril em queda desde outubro? Se encolheu, o risco represado é menor do que a tese diz."
+      ],
+      "curto": {
+       "porque": "O petróleo segue caro lá fora por causa do conflito perto de Ormuz, onde navios foram atacados. Mesmo assim, a cotação reabriu em leve queda. Um ministro do Iraque disse ter chegado a um entendimento com os EUA para exportar pela região, mas isso ainda não é acordo fechado nem exportação liberada.",
+       "e_dai": "Parte do petróleo caro ainda não chegou à bomba: o governo paga R$ 2,12 por litro de diesel numa subvenção renovada por 30 dias em 27 de outubro.",
+       "objetivo": "",
+       "condicao": "",
+       "caderno": [
+        "c1",
+        "c2"
+       ]
+      },
+      "pagina_que_falta": "Por que o preço do petróleo lá fora nem sempre muda o preço do combustível aqui? A leitora precisa entender o preço da Petrobras e a subvenção para ler este fato, e nenhuma página do site cobre isso."
+     }
+    },
+    {
+     "volta": 2,
+     "teses": [
+      {
+       "tese": "O barril mais barato não encerra o risco de preço dos combustíveis: o diesel da Petrobras já estava R$ 3,53 por litro abaixo do preço de importação, mais do que os R$ 3,52 da subvenção, e a gasolina segue desonerada. A subvenção, renovada por 30 dias em 27/10, vence por volta de 26/11. Se a gasolina subisse 10% de uma vez, somaria cerca de 0,47 ponto ao IPCA, pelo peso implícito de 2023.",
+       "por_que_nao_e_obvia": "A manchete diz que o petróleo cai e alivia. A tese diz que o preço na bomba depende de decisões do governo e da Petrobras (subvenção, desoneração, reajuste), com datas, e não do barril do dia.",
+       "o_que_muda": "A leitora passa a olhar a decisão sobre a subvenção perto de 26/11 e os IPCA de novembro e dezembro, em vez de esperar alívio automático do petróleo.",
+       "como_pode_dar_errado": "Cai se a Petrobras reajustar aos poucos, como a Abicom espera, ou se subvenção e desoneração forem mantidas. O barril caiu mais de 8% duas vezes em novembro e a defasagem pode ter encolhido; não achei medição depois de 23/10. Só há um episódio limpo (2023) e o peso do diesel não foi achado.",
+       "caderno": [
+        "c2",
+        "c13",
+        "c14",
+        "c15",
+        "c17",
+        "c18",
+        "c19",
+        "c20",
+        "c21"
+       ]
+      }
+     ],
+     "editor_chefe": {
+      "veredito": "sem_fundo",
+      "tese": "Sem tese aprovada. A tese proposta, que o barril mais barato não encerra o risco de preço dos combustíveis, se apoia em três coisas fracas. A primeira é uma defasagem do diesel medida por volta de 23/10, antes de duas quedas de cerca de 8% do barril, e o próprio caderno se contradiz sobre ela: a subvenção aparece como R$ 2,12 em c2 e como R$ 3,52 em c13. A segunda é uma data de fim da subvenção contada pela pesquisa, sem a portaria. A terceira é um repasse hipotético de 10% na gasolina, sem defasagem medida da gasolina e com o peso do IPCA de 2023. Há um só episódio parecido.",
+      "testes": {
+       "nao_obvia": {
+        "ok": true,
+        "por_que": "Ligar o barril do dia às decisões que seguram a bomba (subvenção, desoneração, reajuste da Petrobras) não está na manchete e não repete a leitura do dia 7, que tratava do dólar e da balança."
+       },
+       "muda_algo": {
+        "ok": false,
+        "por_que": "O que mudaria a leitura é o tamanho do repasse represado, e a pesquisa não o mede hoje. Os 10% da gasolina são uma hipótese sem base, porque não há número da defasagem da gasolina."
+       },
+       "pode_dar_errado": {
+        "ok": true,
+        "por_que": "A tese cai se a Petrobras reajustar aos poucos, se a subvenção for renovada ou se a defasagem já tiver encolhido com as quedas do barril."
+       },
+       "no_caderno": {
+        "ok": false,
+        "por_que": "A defasagem de R$ 3,53 é anterior às duas quedas de 8%, vem de um site pouco conhecido e compara com uma subvenção de R$ 3,52 que contradiz os R$ 2,12 de c2. O fim em 26/11 é conta da pesquisa sem a portaria. O peso no IPCA é o de 2023, e há um só episódio."
+       },
+       "pela_meta": {
+        "ok": true,
+        "por_que": "Não é decisão."
+       }
+      },
+      "roteiro": [],
+      "pressao": "inflacao",
+      "devolve": [],
+      "curto": {
+       "porque": "Segundo a Folha, a cotação do petróleo reabriu em leve queda mesmo com os ataques a navios perto de Ormuz. Segundo o Valor, o ministro do Petróleo do Iraque disse ter chegado a um entendimento com os EUA para exportar por Ormuz, o que, se virar acordo, alivia um pouco a oferta.",
+       "e_dai": "No Brasil, o preço do diesel na bomba depende também da subvenção que o governo prorrogou no fim de outubro, e não só do barril lá fora.",
+       "objetivo": "",
+       "condicao": "",
+       "caderno": [
+        "c1",
+        "c2"
+       ]
+      },
+      "pagina_que_falta": "Por que o preço da gasolina e do diesel no Brasil não acompanha o petróleo lá fora? Nenhuma página do básico explica a Petrobras, a subvenção e os impostos entre o barril e a bomba, e é isso que a leitora precisa para ler o fato."
+     }
+    }
+   ],
+   "meta": [
+    {
+     "etapa": "pesquisa",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "6f8919139646b06cd9dc1ee53632059616f0d2f3af661e6e075e288816573398",
+     "system_sha256": "f533b8cf4af10e5eaa4d1821b8f082fe39eaa7b129d5c5d422c93e0e55f385c3",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7786758000000001,
+     "turnos": 17,
+     "duracao_s": 121,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "9bdf115c-94b3-4fb6-b83e-ed02ea8efa01"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "32593bb80b1935ccfc60983cd9e99e85a605e780be284ea6f623b6c81bed61f2",
+     "system_sha256": "3b6325f127ecd89a3bd272efa9ef96ab84ac49fbdd12359d7e9f6e634e2b11dd",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.26313200000000003,
+     "turnos": 2,
+     "duracao_s": 28,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "7efbbd90-8507-4785-aa51-574590b5ee55"
+    },
+    {
+     "etapa": "pesquisa",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "329b2cfc143f68bd63afd89ae3afc75f5b45122a051aa6d9e011d0ceeb68c840",
+     "system_sha256": "f533b8cf4af10e5eaa4d1821b8f082fe39eaa7b129d5c5d422c93e0e55f385c3",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.9716226000000001,
+     "turnos": 21,
+     "duracao_s": 165,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "4b331deb-f609-4864-aceb-7a1037e9125a"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "c1983ffece6d5c37a22f6d32daa4ca4b58986a820e01d31d3f741bcd3e035769",
+     "system_sha256": "3b6325f127ecd89a3bd272efa9ef96ab84ac49fbdd12359d7e9f6e634e2b11dd",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.2603182,
+     "turnos": 2,
+     "duracao_s": 27,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "c9826ec3-64b6-4948-893b-614ef39557d8"
+    }
+   ],
+   "offline": false,
+   "pesquisa": {
+    "perguntas": [
+     {
+      "pergunta": "Quanto está represado hoje (Abicom, diesel e gasolina)?",
+      "resposta": "Não achei a defasagem da Abicom de novembro no site dela. O último número datado é de cerca de 23/10: o diesel da Petrobras estava R$ 3,53 por litro abaixo do preço de importação, contra R$ 3,52 da subvenção, ou seja, a defasagem passou o que a subvenção cobre (c13, c14). A gasolina não tem número de outubro; o presidente da Abicom diz só que ela 'está desonerada' (c15). Em 31/3 eram R$ 3,05 no diesel e R$ 1,61 na gasolina (c16). Depois de 23/10 o barril caiu quase 8% em 1/11 e mais de 8% em 4/11 (c17), então a defasagem de hoje provavelmente é menor, mas não há número.",
+      "caderno": [
+       "c13",
+       "c14",
+       "c15",
+       "c16",
+       "c17"
+      ]
+     },
+     {
+      "pergunta": "Quando a subvenção vence e o que vem depois?",
+      "resposta": "A Fazenda prorrogou em 27/10 a subvenção de R$ 2,12 por litro por 30 dias (c2). Contados de 27/10, o fim cai por volta de 26/11 (c18, conta minha; a data exata da portaria não foi lida). Uma nova renovação depende de decisão do governo, segundo as reportagens. Custo oficial: não achei nota técnica; as fontes divergem (R$ 10,5 bi, R$ 1,6 bi no diesel de um pacote anterior), e o texto não deve citar custo.",
+      "caderno": [
+       "c2",
+       "c18"
+      ]
+     },
+     {
+      "pergunta": "E daí no bolso? Quanto um repasse somaria ao IPCA?",
+      "resposta": "Só consegui a conta da gasolina. Em março de 2023, com o fim da desoneração, a gasolina subiu 8,33% e somou 0,39 ponto ao IPCA do mês (c19), o que dá um peso implícito de 4,68% (c20). Um repasse de 10% somaria cerca de 0,47 ponto (c21). O peso do diesel no IPCA não achei em fonte oficial; o efeito direto é pequeno e o indireto, pelo frete, não foi calculado.",
+      "caderno": [
+       "c19",
+       "c20",
+       "c21"
+      ]
+     },
+     {
+      "pergunta": "Já aconteceu antes?",
+      "resposta": "Só um episódio é limpo para o combustível: o fim da desoneração em março de 2023, com 0,39 ponto no IPCA do mês (c19). Em 2015, o IPCA em 12 meses foi de 6,41% a 10,67% (c8, c9), mas com dólar e energia juntos, então não isola o combustível. A subvenção de 2018 e o IPCA de combustíveis depois dela não consegui contar. Com commodities acima de 200 pontos são só 3 episódios (c10).",
+      "caderno": [
+       "c19",
+       "c8",
+       "c9",
+       "c10"
+      ]
+     },
+     {
+      "pergunta": "O que diz o Banco Central?",
+      "resposta": "Não li o comunicado nem a ata no site do BC. Uma reportagem diz que o Copom de 4/11 manteve a Selic em 13,75% por unanimidade (c22), e a Nomad afirma que a tabela traz 5,6% para o IPCA de 2026 e 4,7% para 2027 (c7). O trecho do petróleo no comunicado não foi confirmado, então o texto não deve atribuir ao BC essa justificativa.",
+      "caderno": [
+       "c22",
+       "c7"
+      ]
+     },
+     {
+      "pergunta": "A defasagem encolheu com o barril em queda?",
+      "resposta": "Provavelmente em parte: o barril caiu quase 8% em 1/11 e mais de 8% em 4/11 (c17). Mas não há medição da Abicom depois de 23/10 para provar. E o fato do dia mostra o barril quase estável em 9/11, com ataques perto de Ormuz (c1). O presidente da Abicom também espera reajuste gradual, e não de uma vez (c15).",
+      "caderno": [
+       "c17",
+       "c1",
+       "c15"
+      ]
+     }
+    ],
+    "teses": [
+     {
+      "tese": "O barril mais barato não encerra o risco de preço dos combustíveis: o diesel da Petrobras já estava R$ 3,53 por litro abaixo do preço de importação, mais do que os R$ 3,52 da subvenção, e a gasolina segue desonerada. A subvenção, renovada por 30 dias em 27/10, vence por volta de 26/11. Se a gasolina subisse 10% de uma vez, somaria cerca de 0,47 ponto ao IPCA, pelo peso implícito de 2023.",
+      "por_que_nao_e_obvia": "A manchete diz que o petróleo cai e alivia. A tese diz que o preço na bomba depende de decisões do governo e da Petrobras (subvenção, desoneração, reajuste), com datas, e não do barril do dia.",
+      "o_que_muda": "A leitora passa a olhar a decisão sobre a subvenção perto de 26/11 e os IPCA de novembro e dezembro, em vez de esperar alívio automático do petróleo.",
+      "como_pode_dar_errado": "Cai se a Petrobras reajustar aos poucos, como a Abicom espera, ou se subvenção e desoneração forem mantidas. O barril caiu mais de 8% duas vezes em novembro e a defasagem pode ter encolhido; não achei medição depois de 23/10. Só há um episódio limpo (2023) e o peso do diesel não foi achado.",
+      "caderno": [
+       "c2",
+       "c13",
+       "c14",
+       "c15",
+       "c17",
+       "c18",
+       "c19",
+       "c20",
+       "c21"
+      ]
+     }
+    ],
+    "objecao": {
+     "texto": "A Abicom, de onde vem o número, espera reajuste lento e gradual da Petrobras, e não de uma vez. O barril caiu quase 8% em 1/11 e mais de 8% em 4/11, então a defasagem de R$ 3,53 já pode ter encolhido muito; sem medição de novembro, o risco represado pode ser menor que a tese diz. O fim da desoneração de 2023 foi um aumento de imposto de data certa, diferente de um reajuste de preço feito aos poucos.",
+     "caderno": [
+      "c13",
+      "c15",
+      "c17",
+      "c19"
+     ]
+    },
+    "o_que_falta": "Não achei: a defasagem da Abicom de novembro (só R$ 3,53 do diesel, de ~23/10, via terceiros; gasolina sem número); a portaria da subvenção com data exata e custo oficial (fim em ~26/11 é conta minha); o comunicado do Copom no site do BC (só Nomad e Atlas); o peso vigente de diesel e gasolina no IPCA (usei o implícito de 2023); o caso de 2018 e o desfecho do conselho da Petrobras de 26/10. Só um episódio limpo (2023): se for pouco, o dia fica sem leitura a fundo."
+   },
+   "caderno": [
+    {
+     "id": "c1",
+     "tipo": "site",
+     "afirmacao": "Fato do dia: cotação do petróleo reabriu em leve queda mesmo com ataques a navios perto de Ormuz; o Iraque, segundo seu ministro, chegou a entendimento com os EUA para exportar por Ormuz.",
+     "numeros": [],
+     "comando": "",
+     "saida": "Manchetes: \"Cotação do petróleo reabre em leve queda mesmo com ataques a navios perto de Hormuz\" (Folha); \"Iraque chega a entendimento com os EUA para permitir exportações de petróleo via Ormuz, diz ministro\" (Valor)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c2",
+     "tipo": "documento",
+     "afirmacao": "A Fazenda prorrogou por 30 dias a subvenção de R$ 2,12 por litro de diesel (portaria de 27/10/2026).",
+     "numeros": [
+      "R$ 2,12",
+      "30 dias"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "DGABC",
+      "url": "https://www.dgabc.com.br/Noticia/4349240/governo-prorroga-subvencao-ao-diesel-em-r-2-12-por-litro-por-30-dias",
+      "data": "2026-10-27",
+      "trecho": "Governo prorroga subvenção ao diesel em R$ 2,12 por litro por 30 dias"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c3",
+     "tipo": "documento",
+     "afirmacao": "A subvenção tem custo de R$ 10,5 bilhões no período, financiada por receitas extraordinárias do petróleo; a Abicom estimava R$ 3,50 por litro entre o preço das refinarias da Petrobras e a paridade internacional.",
+     "numeros": [
+      "R$ 10,5 bilhões",
+      "R$ 3,50 por litro",
+      "R$ 2,12"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Perfil Brasil",
+      "url": "https://brasil.perfil.com/carros/governo-mantem-subsidio-ao-diesel-de-r-212-por-mais-30-dias.phtml",
+      "data": "2026-10-27",
+      "trecho": "uma diferença de R$ 3,50 por litro entre o preço praticado pelas refinarias da Petrobras e a paridade internacional"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c4",
+     "tipo": "documento",
+     "afirmacao": "O Gecex prorrogou em 5/11, a pedido da Fazenda, o imposto de 12% sobre exportação de petróleo até 31/12, citando riscos ao abastecimento de diesel.",
+     "numeros": [
+      "12%",
+      "31 de dezembro"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Jornal do Comércio",
+      "url": "https://www.jornaldocomercio.com/economia/2026/11/1269530-governo-lula-prorroga-ate-dezembro-imposto-de-12-sobre-exportacao-de-petroleo.html",
+      "data": "2026-11-06",
+      "trecho": "riscos ao abastecimento doméstico de derivados de petróleo, principalmente o diesel"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c5",
+     "tipo": "conta",
+     "afirmacao": "Focus de 12 meses em julho e outubro de 2026.",
+     "numeros": [
+      "4,96",
+      "4,19"
+     ],
+     "comando": ".venv/bin/python src/conta.py valores focus_ipca_12m --de 2026-01",
+     "saida": "2026-07: 4,19 ... 2026-10: 4,96",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "focus_ipca_12m (%, último valor do mês):\n2026-01: 3,99\n2026-02: 3,92\n2026-03: 4,09\n2026-04: 4,05\n2026-05: 4,06\n2026-06: 4,12\n2026-07: 4,19\n2026-08: 4,55\n2026-09: 4,60\n2026-10: 4,96\n"
+     }
+    },
+    {
+     "id": "c6",
+     "tipo": "conta",
+     "afirmacao": "Alta do Focus de julho a outubro.",
+     "numeros": [
+      "0,77"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"4.96-4.19\"",
+     "saida": "4.96-4.19 = 0,7700 (com 3 casas: 0,770; com 2 casas: 0,77; com 1 casa: 0,8)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "4.96-4.19 = 0,7700 (com 3 casas: 0,770; com 2 casas: 0,77; com 1 casa: 0,8)\n"
+     }
+    },
+    {
+     "id": "c7",
+     "tipo": "documento",
+     "afirmacao": "Segundo a Nomad, o comunicado do Copom de 4/11 traz IPCA de 5,6% em 2026 e 4,7% em 2027 (não confirmado no site do BC).",
+     "numeros": [
+      "5,6%",
+      "4,7%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Nomad (análise do Copom)",
+      "url": "https://www.nomadglobal.com/portal/analises/analise-do-copom-novembro-de-2026",
+      "data": "2026-11-05",
+      "trecho": "Para o IPCA, a tabela do comunicado traz 5,6% em 2026 e 4,7% em 2027."
+     },
+     "conferencia": {
+      "status": "trecho_nao_achado",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c8",
+     "tipo": "conta",
+     "afirmacao": "IPCA em 12 meses em dez/2014 e dez/2015.",
+     "numeros": [
+      "6,41",
+      "10,67"
+     ],
+     "comando": ".venv/bin/python src/conta.py valores ipca_12m --de 2014-12 --ate 2015-12",
+     "saida": "2014-12: 6,41 ... 2015-12: 10,67",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "ipca_12m (%):\n2014-12: 6,41\n2015-01: 7,14\n2015-02: 7,70\n2015-03: 8,13\n2015-04: 8,17\n2015-05: 8,47\n2015-06: 8,89\n2015-07: 9,56\n2015-08: 9,53\n2015-09: 9,49\n2015-10: 9,93\n2015-11: 10,48\n2015-12: 10,67\n"
+     }
+    },
+    {
+     "id": "c9",
+     "tipo": "conta",
+     "afirmacao": "Alta do IPCA em 12 meses em 2015.",
+     "numeros": [
+      "4,26"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"10.67-6.41\"",
+     "saida": "10.67-6.41 = 4,2600 (com 3 casas: 4,260; com 2 casas: 4,26; com 1 casa: 4,3)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "10.67-6.41 = 4,2600 (com 3 casas: 4,260; com 2 casas: 4,26; com 1 casa: 4,3)\n"
+     }
+    },
+    {
+     "id": "c10",
+     "tipo": "conta",
+     "afirmacao": "Episódios com commodities acima de 200 pontos: 3 desde 1992.",
+     "numeros": [
+      "3",
+      "200"
+     ],
+     "comando": ".venv/bin/python src/conta.py episodios \"commodities>200\"",
+     "saida": "3 episódio(s). Do começo ao fim de cada um, a Selic subiu em 1, caiu em 1 e ficou igual em 1.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Episódios em que commodities > 200,00 (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não por mês: um episódio longo não vale mais que um curto.\n\nde 2008-07 a 2008-07 (1 meses): commodities de 200,81 a 200,81 (o maior: 200,81); Selic de 13,00% no começo a 13,00% no fim.\n  no começo, 2008-07: selic_meta 13,00; ipca_12m 6,37; focus_ipca_12m 5,37; juro_real 7,24; juro_real_longo 7,87; dolar_ptax 1,5666; ibcbr 91,26; divida_bruta 55,53; primario_12m -3,72; ibcbr_12m 5,4%\n  12 meses depois do fim, 2009-07: selic_meta 8,75; ipca_12m 4,50; focus_ipca_12m 4,08; juro_real 4,49; juro_real_longo 6,73; dolar_ptax 1,8726; ibcbr 87,95; divida_bruta 59,68; primario_12m -1,60; ibcbr_12m -3,6%\n  recessão começando no episódio ou nos 12 meses seguintes: 4T2008\n\nde 2022-02 a 2022-09 (8 meses): commodities de 203,49 a 220,02 (o maior: 241,93); Selic de 10,75% no começo a 13,75% no fim.\n  no começo, 2022-02: selic_meta 10,75; ipca_12m 10,54; focus_ipca_12m 5,22; juro_real 5,26; juro_real_longo 5,80; dolar_ptax 5,1394; ibcbr 98,49; desocupacao 11,20; divida_bruta 76,92; primario_12m -1,36; ibcbr_12m -0,2%\n  12 meses depois do fim, 2023-09: selic_meta 12,75; ipca_12m 5,19; focus_ipca_12m 4,02; juro_real 8,39; juro_real_longo 5,82; dolar_ptax 5,0076; ibcbr 102,52; desocupacao 7,70; divida_bruta 73,01; primario_12m 0,95; ibcbr_12m 1,3%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2026-03 a 2026-09 (7 meses): commodities de 218,77 a 222,43 (o maior: 222,43); Selic de 14,75% no começo a 13,75% no fim.\n  no começo, 2026-03: selic_meta 14,75; ipca_12m 4,14; focus_ipca_12m 4,09; juro_real 10,24; juro_real_longo 7,65; dolar_ptax 5,2194; ibcbr 110,66; desocupacao 6,10; divida_bruta 79,88; primario_12m 1,06; ibcbr_12m 0,6%\n  12 meses depois do fim, 2027-09: sem dado\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\n3 episódio(s). Do começo ao fim de cada um, a Selic subiu em 1, caiu em 1 e ficou igual em 1.\n"
+     }
+    },
+    {
+     "id": "c11",
+     "tipo": "documento",
+     "afirmacao": "Em outubro, o petróleo embarcou 62,9% mais barris a preço 36,7% maior e o saldo comercial foi o maior para um outubro desde 1989.",
+     "numeros": [
+      "62,9%",
+      "36,7%",
+      "9,3 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Times Brasil",
+      "url": "https://timesbrasil.com.br/mundo/petroleo/petroleo-dispara-1226-e-impulsiona-exportacoes-recordes/",
+      "data": "2026-11-06",
+      "trecho": "crescimento de 62,9% no volume embarcado com valorização de 36,7% no preço médio"
+     },
+     "conferencia": {
+      "status": "numeros_na_pagina",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c12",
+     "tipo": "conta",
+     "afirmacao": "Índice de commodities do BC em setembro de 2026: maior valor desde ago/2022, acima de 99% dos meses anteriores.",
+     "numeros": [
+      "222,4",
+      "241,9",
+      "99%"
+     ],
+     "comando": ".venv/bin/python src/conta.py recorde commodities 2026-09",
+     "saida": "É o maior valor desde 2022-08, quando foi 241,9. Dos 416 meses antes de 2026-09, 410 tiveram valor menor (99%).",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "commodities em 2026-09: 222,4. A série começa em 1992-01.\nÉ o maior valor desde 2022-08, quando foi 241,9.\nDos 416 meses antes de 2026-09, 410 tiveram valor menor (99%).\n"
+     }
+    },
+    {
+     "id": "c13",
+     "tipo": "documento",
+     "afirmacao": "Abicom: a defasagem do diesel nas refinarias da Petrobras ultrapassou a subvenção e chegou a R$ 3,53 por litro, contra R$ 3,52 da subvenção (semana de ~23/10).",
+     "numeros": [
+      "R$ 3,53",
+      "R$ 3,52"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Mercado & Consumo (Abicom)",
+      "url": "https://mercadoeconsumo.com.br/27/10/2026/economia/abicom-reeleicao-de-lula-vai-fazer-petrobras-arrumar-a-casa-com-reajuste-gradual-de-preco/",
+      "data": "2026-10-27",
+      "trecho": "ultrapassou a subvenção ao combustível ao atingir R$ 3,53 o litro"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c14",
+     "tipo": "conta",
+     "afirmacao": "Diferença entre a defasagem e a subvenção do diesel.",
+     "numeros": [
+      "0,01"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"3.53-3.52\"",
+     "saida": "3.53-3.52 = 0,0100 (com 3 casas: 0,010; com 2 casas: 0,01; com 1 casa: 0,0)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "3.53-3.52 = 0,0100 (com 3 casas: 0,010; com 2 casas: 0,01; com 1 casa: 0,0)\n"
+     }
+    },
+    {
+     "id": "c15",
+     "tipo": "documento",
+     "afirmacao": "O presidente da Abicom diz que a gasolina está desonerada, que o conselho da Petrobras se reuniu em 26/10 sobre a defasagem e que o ajuste deve ser gradual.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "CNN Brasil (Estadão Conteúdo)",
+      "url": "https://www.cnnbrasil.com.br/economia/abicom-reeleicao-de-lula-fara-petrobras-reajustar-gradualmente-os-precos/",
+      "data": "2026-10-26",
+      "trecho": "a gasolina está desonerada"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c16",
+     "tipo": "documento",
+     "afirmacao": "Em 31/3/2026 a Abicom apontava defasagem de R$ 3,05 por litro no diesel e R$ 1,61 na gasolina.",
+     "numeros": [
+      "R$ 3,05",
+      "R$ 1,61"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Abegas (Abicom)",
+      "url": "https://www.abegas.org.br/arquivos/99690",
+      "data": "2026-03-31",
+      "trecho": "atingindo R$ 3,05 por litro no diesel e R$ 1,61 na gasolina"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c17",
+     "tipo": "documento",
+     "afirmacao": "O petróleo caiu mais de 8% em 4/11 com expectativa de fim do conflito no Irã (e quase 8% em 1/11).",
+     "numeros": [
+      "8%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Valor",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/04/petrleo-continua-em-queda-com-o-aumento-das-expectativas-de-fim-do-conflito-envolvendo-o-ir.ghtml",
+      "data": "2026-11-04",
+      "trecho": "Petróleo cai mais de 8% com expectativa de fim do conflito no Irã"
+     },
+     "conferencia": {
+      "status": "numeros_na_pagina",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c18",
+     "tipo": "conta",
+     "afirmacao": "Fim aproximado da subvenção: 30 dias a partir de 27/10 (outubro tem 31 dias).",
+     "numeros": [
+      "26"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"27+30-31\"",
+     "saida": "27+30-31 = 26,0000 (dia 26 de novembro; a data exata da portaria não foi lida)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "27+30-31 = 26,0000 (com 3 casas: 26,000; com 2 casas: 26,00; com 1 casa: 26,0)\n"
+     }
+    },
+    {
+     "id": "c19",
+     "tipo": "documento",
+     "afirmacao": "Em março de 2023, com a volta do PIS/Cofins, a gasolina subiu 8,33% e somou 0,39 ponto ao IPCA do mês.",
+     "numeros": [
+      "8,33%",
+      "0,39"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Bora Investir (B3), com dados do IBGE",
+      "url": "https://borainvestir.b3.com.br/noticias/gasolina-pressiona-inflacao-que-avanca-071-em-marco/",
+      "data": "2023-04-11",
+      "trecho": "gasolina, com alta de 8,33%"
+     },
+     "conferencia": {
+      "status": "numeros_na_pagina",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c20",
+     "tipo": "conta",
+     "afirmacao": "Peso implícito da gasolina no IPCA em 2023 (contribuição / alta).",
+     "numeros": [
+      "4,68"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"0.39/8.33*100\"",
+     "saida": "0.39/8.33*100 = 4,6819 (com 3 casas: 4,682; com 2 casas: 4,68; com 1 casa: 4,7)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "0.39/8.33*100 = 4,6819 (com 3 casas: 4,682; com 2 casas: 4,68; com 1 casa: 4,7)\n"
+     }
+    },
+    {
+     "id": "c21",
+     "tipo": "conta",
+     "afirmacao": "Um repasse de 10% na gasolina somaria cerca de 0,47 ponto ao IPCA (com o peso implícito de 2023, que não é o peso vigente).",
+     "numeros": [
+      "0,47"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"0.39/8.33*10\"",
+     "saida": "0.39/8.33*10 = 0,4682 (com 3 casas: 0,468; com 2 casas: 0,47; com 1 casa: 0,5)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "0.39/8.33*10 = 0,4682 (com 3 casas: 0,468; com 2 casas: 0,47; com 1 casa: 0,5)\n"
+     }
+    },
+    {
+     "id": "c22",
+     "tipo": "documento",
+     "afirmacao": "O Copom de 4/11 manteve a Selic em 13,75% por unanimidade.",
+     "numeros": [
+      "13,75"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Atlas Público (BCB)",
+      "url": "https://atlaspublico.com.br/bcb/noticias/copom-mantem-selic-em-13-75pct-ao-ano-por-unanimidade-e-ve-99107",
+      "data": "2026-11-04",
+      "trecho": "Copom mantém Selic em 13,75% ao ano por unanimidade"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": false
+     }
+    }
+   ],
+   "duracao_pensar_s": 349,
+   "duracao_s": 349,
+   "curto": {
+    "porque": "Segundo a Folha, a cotação do petróleo reabriu em leve queda mesmo com os ataques a navios perto de Ormuz. Segundo o Valor, o ministro do Petróleo do Iraque disse ter chegado a um entendimento com os EUA para exportar por Ormuz, o que, se virar acordo, alivia um pouco a oferta.",
+    "e_dai": "No Brasil, o preço do diesel na bomba depende também da subvenção que o governo prorrogou no fim de outubro, e não só do barril lá fora.",
+    "objetivo": "",
+    "condicao": "",
+    "caderno": [
+     "c1",
+     "c2"
+    ]
+   },
+   "pressao": "inflacao",
+   "pagina_que_falta": "Por que o preço da gasolina e do diesel no Brasil não acompanha o petróleo lá fora? Nenhuma página do básico explica a Petrobras, a subvenção e os impostos entre o barril e a bomba, e é isso que a leitora precisa para ler o fato.",
+   "erro": "sem achado: o editor-chefe não aprovou tese",
+   "sem_achado": true
+  }
+ },
+ "avisos_ao_pedro": [
+  "O editor-chefe sentiu falta de uma página no fato do dia de 9/11/2026: Por que o preço da gasolina e do diesel no Brasil não acompanha o petróleo lá fora? Nenhuma página do básico explica a Petrobras, a subvenção e os impostos entre o barril e a bomba, e é isso que a leitora precisa para ler o fato."
+ ]
+}
