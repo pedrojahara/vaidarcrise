@@ -35,7 +35,8 @@ launchd, todo dia às 05h45 → run.sh   (uma publicação por dia; se o Mac dor
   │                         (desenhos e prévia da aba: src/imagens_causas.py, rodado à mão)
   ├─ git push               GitHub Pages publica docs/
   └─ src/fundo.py --hoje    a leitura a fundo, escrita da mesma pesquisa e conferida (src/memoria.py dia antes dela),
-                            num segundo push
+                            num segundo push; todo fato do dia tem uma: sem tese forte, a tese menor; se falhar, outra
+                            tentativa e, se ainda faltar, aviso ao Pedro no Mac (o guarda, garantir())
 ```
 
 O LLM classifica manchetes, escolhe o fato do dia dentro da régua da carta editorial e redige o post. A direção, a pressão das notícias por assunto e o HTML saem de código determinístico.
@@ -65,6 +66,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python src/escreve_post.py --tipo semana --so-dados  # força o tipo (dia, semana ou mes)
 .venv/bin/python src/escreve_post.py runs/<id>.json --grava  # refaz o post guardado, com o porquê da pesquisa gravada
 .venv/bin/python src/fundo.py runs/<id>.json --escreve --grava  # refaz só a leitura a fundo, da pesquisa gravada
+.venv/bin/python src/fundo.py --confere                       # lista os fatos do dia sem leitura a fundo
 .venv/bin/python src/edita_texto.py runs/<id>.json         # o editor num post guardado: sugestões e texto editado (--grava grava)
 .venv/bin/python src/edita_texto.py editor/<texto>.md       # o editor num texto à mão
 ```
