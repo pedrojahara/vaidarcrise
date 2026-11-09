@@ -917,6 +917,11 @@
   "fator": "contas",
   "direcao": 1,
   "magnitude": 2,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "Medidas sem previsão no Orçamento ampliam o ajuste necessário em 2027. A IFI também elevou o juro neutro e passou a ver dívida de 124% do PIB em 2036, o que pressiona prêmios e juros longos.",
   "chance_aprovacao": null,
@@ -981,6 +986,11 @@
   "fator": "contas",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "O saldo foi o melhor para o mês em três anos, e o déficit acumulado de R$ 90,2 bilhões recua 10,1% ante 2025. O dado alivia pouco a pressão sobre a dívida.",
   "chance_aprovacao": null,
@@ -1043,6 +1053,11 @@
   "fator": "credito",
   "direcao": 1,
   "magnitude": 2,
+  "vida": {
+   "tamanho": 2,
+   "porta": "credito",
+   "quem": "quem tem dívida no cartão, no cheque especial ou em empréstimo pessoal e atrasa parcelas ou quer crédito novo"
+  },
   "ja_no_preco": false,
   "porque": "Famílias com mais atrasos e renda comprometida em 29% tendem a cortar consumo, e bancos restringem a concessão. O estoque de crédito subiu só 0,4% em setembro.",
   "chance_aprovacao": null,
@@ -1099,6 +1114,11 @@
   "fator": "credito",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 2,
+   "porta": "credito",
+   "quem": "quem pede financiamento da casa própria no Bradesco, no Itaú ou no Santander"
+  },
   "ja_no_preco": false,
   "porque": "Com os três maiores bancos privados mais caros, o financiamento da casa própria encarece e a construção civil, que já perdeu ritmo no trimestre, tende a desacelerar mais.",
   "chance_aprovacao": null,
@@ -1146,6 +1166,11 @@
   "fator": "mercado",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "A Bolsa segue em queda após o choque eleitoral, com estrangeiros em quatro sessões de saques. Com a Bolsa em queda e o dólar em alta, as empresas pagam mais caro para levantar dinheiro.",
   "chance_aprovacao": null,
@@ -1207,6 +1232,11 @@
   "fator": "juro",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "precos",
+   "quem": "quem compra comida e outros produtos levados por caminhão e quem abastece veículo a diesel"
+  },
   "ja_no_preco": false,
   "porque": "Diesel mais caro pesa no frete e nos alimentos e dificulta a queda da inflação, o que mantém a Selic alta por mais tempo.",
   "chance_aprovacao": null,
@@ -1235,6 +1265,11 @@
   "fator": "credito",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "credito",
+   "quem": "motoristas de aplicativo e de táxi que querem financiar um carro novo"
+  },
   "ja_no_preco": false,
   "porque": "A linha subsidiada sustenta vendas de veículos novos num momento de crédito caro. A IFI aponta que o crédito fora da meta fiscal cresce e reduz a transparência das contas.",
   "chance_aprovacao": null,
@@ -1277,6 +1312,11 @@
   "fator": "mercado",
   "direcao": 1,
   "magnitude": 2,
+  "vida": {
+   "tamanho": 1,
+   "porta": "guardado",
+   "quem": "quem tem dinheiro em fundos e ações e quem compra produtos importados"
+  },
   "ja_no_preco": false,
   "porque": "A perda semanal iguala a de 2001, e os fundos perderam R$ 157,5 bilhões em patrimônio. Ativos mais baratos e câmbio mais fraco encarecem o capital e pressionam a inflação.",
   "chance_aprovacao": null,
@@ -1350,6 +1390,11 @@
   "fator": "atividade",
   "direcao": 1,
   "magnitude": 2,
+  "vida": {
+   "tamanho": 1,
+   "porta": "precos",
+   "quem": "quem faz compras e paga contas em 2027, se os preços subirem acima do teto da meta"
+  },
   "ja_no_preco": false,
   "porque": "Com crescimento de 0,5% em 2027, a economia fica perto da estagnação. Inflação acima do teto limita o espaço para cortes da Selic.",
   "chance_aprovacao": null,
@@ -1379,6 +1424,11 @@
   "fator": "emprego",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 2,
+   "porta": "emprego",
+   "quem": "quem trabalha ou procura emprego, sobretudo na construção"
+  },
   "ja_no_preco": true,
   "porque": "Com quase todo mundo empregado, as famílias continuam comprando. A renda parou de crescer, o que limita esse apoio nos próximos meses.",
   "chance_aprovacao": null,
@@ -1442,6 +1492,11 @@
   "fator": "externo",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "precos",
+   "quem": "quem abastece o carro e paga frete embutido nos preços"
+  },
   "ja_no_preco": false,
   "porque": "Petróleo mais caro pressiona combustíveis e expectativas de inflação no Brasil. Juros altos por mais tempo tendem a frear a atividade.",
   "chance_aprovacao": null,
@@ -1477,6 +1532,11 @@
   "fator": "externo",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "A venda de ações de tecnologia reduz o apetite global por risco. Emergentes como o Brasil tendem a perder capital estrangeiro nesse ambiente.",
   "chance_aprovacao": null,
@@ -1531,6 +1591,11 @@
   "fator": "contas",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "Sem regra fiscal clara, o prêmio de risco e os juros longos tendem a subir. O Copom fica como única âncora, o que mantém o crédito caro.",
   "chance_aprovacao": null,
@@ -1572,6 +1637,11 @@
   "fator": "atividade",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "emprego",
+   "quem": "quem trabalha em pequenas indústrias e quem as toca"
+  },
   "ja_no_preco": false,
   "porque": "Juros elevados, carga tributária e demanda fraca deixam as pequenas indústrias com menos dinheiro em caixa. Com isso, o investimento e as contratações devem desacelerar.",
   "chance_aprovacao": null,
@@ -1600,6 +1670,11 @@
   "fator": "credito",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "credito",
+   "quem": "quem pede empréstimo ou financiamento novo"
+  },
   "ja_no_preco": false,
   "porque": "O saldo chega a R$ 7,444 trilhões, com alta de 8,6% em 12 meses e ritmo em queda. Menos crédito novo tende a esfriar o consumo e o investimento.",
   "chance_aprovacao": null,
@@ -1760,6 +1835,11 @@
   "fator": "mercado",
   "direcao": 1,
   "magnitude": 2,
+  "vida": {
+   "tamanho": 1,
+   "porta": "credito",
+   "quem": "quem tem financiamento, cartão ou dívida com juro atrelado à Selic, e quem guarda dinheiro em renda fixa"
+  },
   "ja_no_preco": false,
   "porque": "Limitar a Selic por decisão política faz o investidor temer que os preços subam mais rápido, e ele cobra mais para emprestar ao governo, o que encarece o crédito para pessoas e empresas.",
   "chance_aprovacao": null,
@@ -1923,6 +2003,11 @@
   "fator": "externo",
   "direcao": -1,
   "magnitude": 2,
+  "vida": {
+   "tamanho": 1,
+   "porta": "precos",
+   "quem": "quem abastece o carro e quem paga frete embutido no preço dos produtos"
+  },
   "ja_no_preco": false,
   "porque": "O barril ficou mais barato lá fora com a chance de acordo para acabar a guerra, o que alivia o preço do diesel e da gasolina aqui e abre espaço para o juro cair.",
   "chance_aprovacao": null,
@@ -1985,6 +2070,11 @@
   "fator": "juro",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "credito",
+   "quem": "quem tem financiamento ou dívida com juro alto e espera o crédito ficar mais barato"
+  },
   "ja_no_preco": true,
   "porque": "Com o dólar mais caro e o investidor mais desconfiado desde a eleição, o juro deve ficar alto por mais tempo, e os bancos seguem cobrando caro das pessoas e das empresas.",
   "chance_aprovacao": null,
@@ -2039,6 +2129,11 @@
   "fator": "atividade",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "emprego",
+   "quem": "quem trabalha em empresas que seguram obras e compras de máquinas e podem contratar menos"
+  },
   "ja_no_preco": false,
   "porque": "Sem saber como ficam as contas do governo, as empresas seguram compras de máquinas e obras e captam menos dinheiro, o que tira força do PIB em 2027.",
   "chance_aprovacao": null,
@@ -2087,6 +2182,11 @@
   "fator": "mercado",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "Investidores temem uma diretoria mais disposta a cortar juro mesmo com preços subindo, e por isso pedem juro maior para comprar títulos do Tesouro.",
   "chance_aprovacao": null,
@@ -2121,6 +2221,11 @@
   "fator": "contas",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "Um ministro que promete controlar gastos tende a acalmar o investidor e baixar o juro que o governo paga, mas o nome ainda não foi escolhido.",
   "chance_aprovacao": null,
@@ -2185,6 +2290,11 @@
   "fator": "contas",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "governo",
+   "quem": "famílias de baixa renda que poderiam receber benefício novo ou maior"
+  },
   "ja_no_preco": false,
   "porque": "Programas novos sem corte em outro lugar ampliam o gasto do governo, e o mercado cobra juro maior para financiar uma dívida já perto de 83% do PIB.",
   "chance_aprovacao": null,
@@ -2227,6 +2337,11 @@
   "fator": "contas",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "Cada ponto a mais na Selic custa cerca de R$ 48 bilhões por ano ao governo, então juro alto por mais tempo pesa direto nas contas públicas.",
   "chance_aprovacao": null,
@@ -2261,6 +2376,11 @@
   "fator": "juro",
   "direcao": 1,
   "magnitude": 2,
+  "vida": {
+   "tamanho": 1,
+   "porta": "credito",
+   "quem": "quem tem dívida ou quer financiar casa, carro ou compras e depende de o juro cair"
+  },
   "ja_no_preco": false,
   "porque": "Os economistas agora esperam preços subindo mais rápido, e o Banco Central tende a manter o juro alto por mais tempo. Com isso, o crédito fica mais caro para pessoas e empresas e a economia anda mais devagar.",
   "chance_aprovacao": null,
@@ -2335,6 +2455,11 @@
   "fator": "mercado",
   "direcao": 1,
   "magnitude": 2,
+  "vida": {
+   "tamanho": 1,
+   "porta": "credito",
+   "quem": "quem pede financiamento e quem compra produtos importados, que ficam mais caros com o dólar alto"
+  },
   "ja_no_preco": false,
   "porque": "O governo passa a pagar mais caro para pegar dinheiro emprestado por muitos anos, e esse custo chega aos financiamentos de empresas e famílias. A bolsa caiu 1,42% no dia.",
   "chance_aprovacao": null,
@@ -2407,6 +2532,11 @@
   "fator": "contas",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "governo",
+   "quem": "quem usa a saúde e a educação públicas, se o gasto mínimo nessas áreas passar a crescer menos"
+  },
   "ja_no_preco": false,
   "porque": "Se o ajuste sair, quem empresta ao governo pode cobrar menos, o que abre espaço para juro menor. A equipe estuda limitar o crescimento do gasto mínimo com saúde e educação.",
   "chance_aprovacao": null,
@@ -2473,6 +2603,11 @@
   "fator": "contas",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "Com a dívida crescendo, o governo gasta mais com juros e fica com menos espaço para reagir a uma crise. O Tesouro alerta que vários choques ao mesmo tempo podem levar a dívida acima de 100% do PIB.",
   "chance_aprovacao": null,
@@ -2516,6 +2651,11 @@
   "fator": "atividade",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "emprego",
+   "quem": "quem trabalha em empresas que podem contratar menos e frear investimentos"
+  },
   "ja_no_preco": false,
   "porque": "Quando estão menos confiantes, os empresários contratam e investem menos. Segundo a FGV, a avaliação sobre a situação atual está no nível mais baixo desde 2021.",
   "chance_aprovacao": null,
@@ -2556,6 +2696,11 @@
   "fator": "credito",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 2,
+   "porta": "credito",
+   "quem": "quem está com conta atrasada e tem o nome sujo, o que dificulta novo crédito e encarece o que consegue"
+  },
   "ja_no_preco": false,
   "porque": "Quem tem dívida atrasada compra menos e consegue menos crédito, e isso segura o consumo das famílias. É o maior número desde 2016, quando a série começou.",
   "chance_aprovacao": null,
@@ -2590,6 +2735,11 @@
   "fator": "juro",
   "direcao": 1,
   "magnitude": 2,
+  "vida": {
+   "tamanho": 2,
+   "porta": "credito",
+   "quem": "quem pede financiamento, usa cartão ou tem dívida com juro variável e quem tem empresa que toma crédito"
+  },
   "ja_no_preco": true,
   "porque": "Com a Selic parada em 13,75%, os bancos seguem cobrando caro das pessoas e das empresas, o que segura consumo e investimento. O Banco Central subiu a previsão do IPCA de 2026 para 5,6%.",
   "chance_aprovacao": null,
@@ -2663,6 +2813,11 @@
   "fator": "emprego",
   "direcao": 1,
   "magnitude": 2,
+  "vida": {
+   "tamanho": 2,
+   "porta": "emprego",
+   "quem": "quem procura vaga com carteira assinada e trabalhadores de setores que contratam menos, como o comércio"
+  },
   "ja_no_preco": false,
   "porque": "As empresas abriram 43% menos vagas que em setembro de 2025, sinal de que o juro alto já freia o emprego e, com ele, a renda que sustenta o consumo das famílias.",
   "chance_aprovacao": null,
@@ -2737,6 +2892,11 @@
   "fator": "contas",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "governo",
+   "quem": "quem recebe benefícios do governo ou depende de gasto público, se o corte sair do papel"
+  },
   "ja_no_preco": false,
   "porque": "Se o corte de gastos vier com números, o governo tende a pagar juro menor para pegar dinheiro emprestado, o que abre espaço para a Selic voltar a cair. As medidas ainda não foram detalhadas.",
   "chance_aprovacao": null,
@@ -2786,6 +2946,11 @@
   "fator": "mercado",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "A melhora veio de fora, com o alívio após as eleições nos EUA, e da espera pelo anúncio sobre as contas. Juro futuro menor barateia o crédito de longo prazo para empresas e famílias.",
   "chance_aprovacao": null,
@@ -2852,6 +3017,11 @@
   "fator": "externo",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "emprego",
+   "quem": "trabalhadores e empresas de setores que exportam para os EUA, se as tarifas forem reduzidas"
+  },
   "ja_no_preco": false,
   "porque": "As tarifas dos EUA sobre produtos brasileiros seguem em vigor, mas o novo Congresso pode limitar o presidente americano. Os EUA devem mandar proposta sobre tarifas até a próxima semana.",
   "chance_aprovacao": null,
@@ -2925,6 +3095,11 @@
   "fator": "externo",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "precos",
+   "quem": "quem abastece o carro e quem paga frete embutido no preço dos produtos, se a queda do petróleo chegar às bombas"
+  },
   "ja_no_preco": false,
   "porque": "O petróleo ficou mais barato lá fora, o que alivia o preço do diesel e da gasolina aqui, ajuda os preços a subirem mais devagar e dá margem para a Selic cair.",
   "chance_aprovacao": null,
@@ -2973,6 +3148,11 @@
   "fator": "atividade",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "A federação das revendedoras esperava alta de 8,6% e agora vê 12,8%. Mais carros vendidos sustentam a indústria e o comércio mesmo com juro alto.",
   "chance_aprovacao": null,
@@ -3008,6 +3188,11 @@
   "fator": "juro",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 2,
+   "porta": "precos",
+   "quem": "quem compra pão, café e açúcar no mercado, sobretudo famílias de renda mais baixa"
+  },
   "ja_no_preco": false,
   "porque": "Com o real mais fraco desde a eleição, trigo importado, açúcar e café ficam mais caros aqui, o que faz os preços subirem mais rápido e afasta novos cortes da Selic.",
   "chance_aprovacao": null,
@@ -3042,6 +3227,11 @@
   "fator": "atividade",
   "direcao": 1,
   "magnitude": 2,
+  "vida": {
+   "tamanho": 2,
+   "porta": "emprego",
+   "quem": "quem trabalha na indústria e depende de vagas e horas extras no setor"
+  },
   "ja_no_preco": false,
   "porque": "A indústria recuou 2,2% no terceiro trimestre contra o segundo, puxada por máquinas e equipamentos, o que mostra menos investimento das empresas e pesa no PIB do trimestre.",
   "chance_aprovacao": null,
@@ -3117,6 +3307,11 @@
   "fator": "externo",
   "direcao": 1,
   "magnitude": 2,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "Lá fora, o medo de menos investimento em inteligência artificial após a vitória democrata derrubou as bolsas, e investidores assustados tiram dinheiro de países como o Brasil.",
   "chance_aprovacao": null,
@@ -3223,6 +3418,11 @@
   "fator": "mercado",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "precos",
+   "quem": "quem compra produtos importados ou viaja para fora com o dólar mais caro"
+  },
   "ja_no_preco": false,
   "porque": "Desde a reeleição, estrangeiros tiraram R$ 8,4 bilhões da Bolsa brasileira, o que encarece o dólar e os importados e torna mais difícil para as empresas captar dinheiro para investir.",
   "chance_aprovacao": null,
@@ -3291,6 +3491,11 @@
   "fator": "contas",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "A fala do presidente fez as taxas do Tesouro recuarem no dia. Como a Fazenda só discute medidas após a viagem à COP, o juro que o governo paga para se financiar segue alto.",
   "chance_aprovacao": null,
@@ -3402,6 +3607,11 @@
   "fator": "contas",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "governo",
+   "quem": "quem depende de programas e serviços públicos que podem ter menos verba se o limite de gastos cair"
+  },
   "ja_no_preco": false,
   "porque": "Se a regra mudar, cada congelamento no Orçamento baixa o teto de gastos dos anos seguintes, o que ajuda a frear a dívida e pode abrir espaço para juros menores.",
   "chance_aprovacao": null,
@@ -3444,6 +3654,11 @@
   "fator": "juro",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 2,
+   "porta": "precos",
+   "quem": "quem compra cigarro, bebida alcoólica e carro, a partir de fevereiro"
+  },
   "ja_no_preco": false,
   "porque": "Cerveja vai pagar 4,2%, vinho 8% e cigarro 66,7%, o que tende a encarecer esses produtos e os carros em 2027 e a tirar um pouco do consumo das famílias.",
   "chance_aprovacao": null,
@@ -3537,6 +3752,11 @@
   "fator": "mercado",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "Os ataques ao Banco Central fazem investidores temerem pressão política sobre os juros, o que sobe o dólar e o juro que o governo paga para pegar dinheiro por muitos anos.",
   "chance_aprovacao": null,
@@ -3579,6 +3799,11 @@
   "fator": "atividade",
   "direcao": 1,
   "magnitude": 2,
+  "vida": {
+   "tamanho": 1,
+   "porta": "precos",
+   "quem": "quem faz compras do mês e depende do emprego, se os preços subirem mais e a economia parar em 2027"
+  },
   "ja_no_preco": false,
   "porque": "Bancos e gestoras passam a esperar preços subindo mais rápido e economia quase parada em 2027, e a Genoa fala em recessão, o que leva empresas e famílias a adiar compras e investimentos.",
   "chance_aprovacao": null,
@@ -3640,6 +3865,11 @@
   "fator": "externo",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "As exportações subiram 20% em outubro, puxadas por petróleo e minério, e a entrada de dólares ajuda a segurar a moeda americana e a sustentar a produção.",
   "chance_aprovacao": null,
@@ -3720,6 +3950,11 @@
   "fator": "externo",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "Com o emprego forte nos EUA, o mercado vê 80% de chance de o banco central de lá subir os juros, o que tira dinheiro de países como o Brasil e pressiona o dólar aqui.",
   "chance_aprovacao": null,
@@ -3776,6 +4011,11 @@
   "fator": "mercado",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "O juro que o governo paga para pegar dinheiro emprestado caiu com os sinais sobre as contas, o que alivia o custo do crédito, mas o dólar subiu 1,54% na semana.",
   "chance_aprovacao": null,
@@ -3836,6 +4076,11 @@
   "fator": "contas",
   "direcao": -1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": true,
   "porque": "A cobrança, que venceria em 7 de novembro, segue trazendo dinheiro para o governo enquanto o petróleo está caro por causa do conflito no Oriente Médio.",
   "chance_aprovacao": null,
@@ -3902,6 +4147,11 @@
   "fator": "contas",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "Governadores e prefeitos poderiam trocar dívidas nos últimos 120 dias de mandato, o que abre espaço para empurrar a conta para o próximo gestor e afrouxa as contas dos estados.",
   "chance_aprovacao": 0.6,
@@ -3973,6 +4223,11 @@
   "fator": "contas",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
   "ja_no_preco": false,
   "porque": "O presidente falou em preocupação com a dívida, mas citou programas sociais que elevam o gasto e não disse como fará o ajuste. Sem medidas concretas, a dúvida sobre as contas e sobre o juro longo continua.",
   "decisor": "governo_federal",
@@ -4043,6 +4298,11 @@
   "fator": "atividade",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "emprego",
+   "quem": "quem trabalha seis dias por semana no comércio e nos serviços"
+  },
   "ja_no_preco": false,
   "porque": "Menos dias de trabalho por semana elevam o custo das empresas, sobretudo em comércio e serviços, que podem contratar menos. O Supremo Tribunal Federal faz audiência na terça-feira sobre o calendário da mudança.",
   "decisor": "governo_federal",
@@ -4089,6 +4349,11 @@
   "fator": "externo",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "precos",
+   "quem": "quem abastece o carro e paga por frete e transporte"
+  },
   "ja_no_preco": true,
   "porque": "O petróleo segue caro lá fora por causa do conflito na região, e isso pressiona combustíveis e preços no Brasil. O Iraque diz ter chegado a um entendimento com os EUA para exportar por Ormuz, o que alivia um pouco a oferta.",
   "decisor": "nenhum",
@@ -4131,6 +4396,11 @@
   "fator": "externo",
   "direcao": 1,
   "magnitude": 1,
+  "vida": {
+   "tamanho": 1,
+   "porta": "renda",
+   "quem": "produtores de soja e quem trabalha no agronegócio exportador"
+  },
   "ja_no_preco": false,
   "porque": "A China é a maior compradora de soja do Brasil. Se produzir mais em casa, o país exporta menos para lá, e o agronegócio perde receita nos próximos anos.",
   "decisor": "fora",

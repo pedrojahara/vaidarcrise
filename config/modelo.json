@@ -30,12 +30,14 @@
    "juro": "Juro",
    "ritmo": "Ritmo da economia",
    "emprego": "Emprego",
+   "renda": "Renda",
    "reservas": "Reservas em dólar",
    "divida_reais": "Dívida em reais"
   },
   "por_que_importa": {
    "ritmo": "Mostra como a economia está agora. Se a prévia do PIB cair mais de 1,5% em 3 meses, o topo passa a dizer que a economia está encolhendo.",
    "emprego": "Quem perde o emprego corta gastos e atrasa parcelas, e é aí que a recessão chega ao bolso.",
+   "renda": "É o que o trabalho paga, já descontada a inflação. Quando os preços sobem mais rápido que os salários, ela cai mesmo com o emprego firme, e as famílias compram menos.",
    "reservas": "Num susto, quando muita gente quer dólar ao mesmo tempo, o Banco Central vende parte dessas reservas e o dólar sobe menos.",
    "divida_reais": "Quando o dólar sobe, a dívida em reais não cresce junto. Em 2002 era diferente: boa parte da dívida era corrigida pelo dólar, e por isso ela cresceu de uma vez quando o dólar subiu."
   },
@@ -47,11 +49,13 @@
    "juro": "/causas/#t-freio",
    "ritmo": "/causas/#t-freio",
    "emprego": "/causas/#t-doem",
+   "renda": "/causas/#t-doem",
    "reservas": "/causas/#t-outros",
    "divida_reais": "/causas/#t-divida"
   },
   "nao_muda_a_placa": {
    "emprego": "Esta linha não muda a placa, porque o desemprego costuma subir depois que a recessão já começou.",
+   "renda": "Esta linha não muda a placa, porque a renda média não avisa que uma recessão vem: ela costuma cair junto com o emprego, e em 2020 chegou a subir, porque quem ganhava menos perdeu o trabalho primeiro.",
    "reservas": "Esta linha não muda a placa, porque as reservas não avisam que uma recessão vem, mas protegem o país num susto.",
    "divida_reais": "Esta linha não muda a placa, porque a dívida em reais não avisa que uma recessão vem, mas protege as contas do governo num susto do dólar."
   },
@@ -236,6 +240,10 @@
    {
     "rx": "\\bIPCA\\b",
     "url": "https://pt.wikipedia.org/wiki/%C3%8Dndice_Nacional_de_Pre%C3%A7os_ao_Consumidor_Amplo"
+   },
+   {
+    "rx": "\\bINPC\\b",
+    "url": "https://pt.wikipedia.org/wiki/%C3%8Dndice_Nacional_de_Pre%C3%A7os_ao_Consumidor"
    },
    {
     "rx": "\\bSelic\\b",

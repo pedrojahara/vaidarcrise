@@ -3,16 +3,19 @@
 Fase 0: a base fica fora do site; nada aqui é lido por build_site.py nem pela rodada diária.
 
 Confere, sem inteligência artificial:
-  1. ligações: toda afirmação, episódio e teste citado existe;
+  1. ligações: toda afirmação e episódio citado existe;
   2. dados: cada número de uma afirmação do tipo "dado" bate com as séries do próprio site
-     (data/historico e data/raw), com a mesma conta do topo (direcao.mensais);
+     (data/historico e data/raw), com a mesma conta do topo (direcao.mensais), e cada número de uma afirmação do
+     tipo "conta" sai do comando de src/conta.py que ela guarda, rodado com os dados do dia dela (VDC_ATE);
   3. números do texto: todo número de um texto da pergunta-mãe está nas afirmações que ele cita;
   4. trechos: o trecho literal de cada afirmação do tipo "documento" está na página da fonte
      (precisa de rede: no Mac; na nuvem a rede bloqueia esses sites), e o do tipo "site" está no arquivo;
   5. regras de leitura: toda leitura tem a melhor objeção com fonte; nenhuma leitura leva nome de partido
      ou de presidente; consenso não se apoia só em notícia; episódios cobrem governos e causas diferentes;
-     todo teste diz antes o que cada leitura espera e como se decide;
-  6. escrita: frase de até 30 palavras, moldes de piloto automático, sigla sem link (src/revisa_texto.py).
+     nenhuma pergunta guarda teste, e nenhum texto promete conferir, testar ou voltar ao assunto depois (decisão
+     do Pedro em 8/11/2026, repetida em 9/11: o site faz a análise e para aí);
+  6. escrita: frase de até 30 palavras, moldes de piloto automático, sigla sem link (src/revisa_texto.py); no passo
+     "O que isso muda para você?", parágrafos de até 50 palavras e quatro números e o passo com até 200 palavras.
 
 O agente que tenta derrubar cada afirmação (advogado do diabo, teste da troca) fica em src/pesquisa_base.py.
 
@@ -50,7 +53,19 @@ STATUS_LEITURA = {"em_pe", "maioria", "em_disputa", "minoria", "pouco_testada", 
 # O texto para a leitora diz o mecanismo, nunca o lado (PERSONA.md, teste da troca).
 NOMES_COM_LADO = re.compile(r"\b(PT|PL|PSDB|MDB|PSOL|Novo|União Brasil|Lula|Bolsonaro|Dilma|Temer|FHC|Fernando Henrique|"
                             r"Haddad|Tarcísio|esquerda|direita|petista|bolsonarista|oposição|governista)\b")
-UA = "Mozilla/5.0 (compatible; vaidarcrise-verificador/0.1; +https://vaidarcrise.com.br)"
+# O site não guarda teste nem placar e não volta para conferir nada (decisão do Pedro em 8/11/2026, repetida em 9/11):
+# além da promessa que src/revisa_texto.py já barra nos posts ("o site vai acompanhar"), a página não diz que o site
+# confere, testa ou revisita uma explicação, nem marca data para isso.
+MESES_RX = "janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro"
+PROMESSA = re.compile(r"\bo site\s+(confere|conferirá|testa|testará|revisita|revisitará)\b|"
+                      rf"\bconfer(e|em|ido|ida|idos|idas|ir|irá|imos)\s+(se\b|em\s+(\d|{MESES_RX}))|"
+                      r"\btestes?\b[^.]{0,80}\b(vai|vão|irá|irão)\s+(mostrar|dizer|decidir)\b|"
+                      r"\btestes?\b[^.]{0,40}\b(registrad\w*|segue|seguem|continua|continuam)\b|"
+                      r"\bdatas? de conferência\b|\bregistrad\w* antes do resultado|\brevisit\w*", re.I)
+# O passo da vida (PERSONA.md, "O que a notícia muda na vida"): até 50 palavras e quatro números por parágrafo, e o
+# passo inteiro em até 200 palavras.
+PASSO_DA_VIDA = "o_que_vem_depois"
+UA ="Mozilla/5.0 (compatible; vaidarcrise-verificador/0.1; +https://vaidarcrise.com.br)"
 
 
 # ---------- carga ----------
@@ -225,6 +240,44 @@ def conferir_trecho(a: dict, offline: bool) -> dict:
             "era_candidato": not a.get("trecho")}
 
 
+def _sem_mil(t: str) -> str:
+    """"R$ 300 mil" escrito como a saída da conta escreve ("R$ 300.000"), para comparar os números."""
+    return re.sub(r"(?<![\d.,])(\d{1,3})(?:,(\d))?\s+mil\b",
+                  lambda m: f"{int(m[1]) * 1000 + int(m[2] or 0) * 100:,}".replace(",", "."), t)
+
+
+def conferir_conta(a: dict) -> dict:
+    """Status de uma afirmação do tipo "conta" (a tradução de TRADUCAO.md feita por src/conta.py): roda o comando com
+    os dados como eram no dia `ate` (VDC_ATE; sem `ate`, a conta só depende dos números do comando, como a parcela) e
+    confere que todo número e data do texto está na saída, com a folga da casa decimal usada no texto. Números que
+    saem dos do comando sem estar na saída (30 anos para 360 meses) vão em `numeros_derivados`."""
+    import contextlib
+    import os
+    import conta
+    antes = os.environ.get("VDC_ATE")
+    try:
+        if a.get("ate"):
+            os.environ["VDC_ATE"] = a["ate"]
+        else:
+            os.environ.pop("VDC_ATE", None)
+        with contextlib.redirect_stdout(io.StringIO()):
+            saida = conta.rodar(a["comando"])
+    except Exception as e:  # noqa: BLE001
+        return {"status": "conta_falhou", "comando": a["comando"], "erro": f"{type(e).__name__}: {str(e)[:120]}"}
+    finally:
+        if antes is None:
+            os.environ.pop("VDC_ATE", None)
+        else:
+            os.environ["VDC_ATE"] = antes
+    r = {"comando": a["comando"], "ate": a.get("ate")}
+    if not saida.strip() or saida.lstrip().startswith(("Sem dado", "traduz:", "série desconhecida", "usage:")):
+        return {**r, "status": "conta_falhou", "saida": saida.strip()[:200]}
+    extra = " ".join(a.get("numeros_derivados", []))
+    fora = [n for n in revisa_texto.numeros_fora([_sem_mil(a["texto"])], f"{saida} {extra}")
+            if not re.fullmatch(r"(19|20)\d\d", n)]
+    return {**r, "status": "conta_nao_bate" if fora else "conferido", **({"fora": fora} if fora else {})}
+
+
 # ---------- regras ----------
 
 def textos_da_pergunta(p: dict) -> list[tuple[str, str, list[str]]]:
@@ -285,6 +338,39 @@ def _texto_ok(onde: str, texto: str, ids: list[str], A: dict, pe: list[str], pa:
         pa.append(f"{onde}: sigla sem link ({', '.join(sig)})")
     if NOMES_COM_LADO.search(texto):
         pe.append(f"{onde}: nome de partido, presidente ou lado no texto ({NOMES_COM_LADO.search(texto).group(0)})")
+    if onde == PASSO_DA_VIDA:
+        pars = [x for x in texto.split("\n\n") if x.strip()]
+        for k, x in enumerate(pars):
+            if len(x.split()) > 50:
+                pa.append(f"{onde}: parágrafo {k + 1} com {len(x.split())} palavras (até 50)")
+            if len(revisa_texto.NUMERO.findall(x)) > 4:
+                pa.append(f"{onde}: parágrafo {k + 1} com {len(revisa_texto.NUMERO.findall(x))} números (até quatro)")
+        if len(texto.split()) > 200:
+            pa.append(f"{onde}: passo com {len(texto.split())} palavras (até 200)")
+
+
+def promessas(x, onde: str = "") -> list[str]:
+    """Toda promessa de conferir, testar ou voltar ao assunto depois em qualquer texto de uma pergunta (ou de um post),
+    com o caminho dela: as partes que a página mostra, as divisões que ela não mostra e o registro de mudanças. A
+    regra do Pedro vale para o site inteiro, e não só para o que a página mostra hoje."""
+    if isinstance(x, str):
+        m = _promessa(x)
+        return [f"{onde or 'texto'}: promete conferir, testar ou voltar ao assunto depois ({m}): o site faz a análise "
+                "e para aí"] if m else []
+    if isinstance(x, dict):
+        return [e for k, v in x.items() for e in promessas(v, f"{onde}/{k}" if onde else k)]
+    if isinstance(x, list):
+        return [e for i, v in enumerate(x) for e in promessas(v, f"{onde}[{i}]")]
+    return []
+
+
+def _promessa(texto: str) -> str | None:
+    """O trecho que promete conferir, testar ou acompanhar depois, se houver (PROMESSA e a regra dos posts)."""
+    for rx in [PROMESSA, *(rx for rx, nome in revisa_texto.GRAVES if nome.startswith("promete"))]:
+        m = rx.search(texto)
+        if m:
+            return m.group(0)
+    return None
 
 
 def checar_posts(posts: list[dict], perguntas: dict, A: dict) -> tuple[list[str], list[str], set[str]]:
@@ -306,10 +392,8 @@ def checar_posts(posts: list[dict], perguntas: dict, A: dict) -> tuple[list[str]
             pe.append(f"{dia}: não diz em que pressão a corrente termina (termina_em: {termina})")
         if p and x.get("termina_em") and p.get("pressao") != x["termina_em"]:
             pe.append(f"{dia}: a pergunta {p['id']} é da pressão {p.get('pressao')}, e a corrente termina em {x['termina_em']}")
-        alvos = ({"teste", "agora", "governo"} | {d["degrau"] for d in p["escada"]} | {d["id"] for d in p["escada"] if d.get("id")}) if p else {"teste"}
+        alvos = ({"agora", "governo"} | {d["degrau"] for d in p["escada"]} | {d["id"] for d in p["escada"] if d.get("id")}) if p else set()
         divisoes = {d["id"] for q in perguntas.values() for d in q["escada"] if d.get("leituras")}
-        # O teste fica na pergunta da pressão dele, que pode ser outra (ou um rascunho).
-        testes = {t["id"] for q in perguntas.values() for t in q.get("testes", [])}
         ids_par = x.get("paragrafos_afirmacoes") or []
         if len(ids_par) != len(x["paragrafos"]):
             pe.append(f"{dia}: paragrafos_afirmacoes não tem uma lista por parágrafo")
@@ -329,6 +413,7 @@ def checar_posts(posts: list[dict], perguntas: dict, A: dict) -> tuple[list[str]
             pe.append(f"{dia}: fato do dia com {total} palavras (até 100)")
         if len(x["paragrafos"]) > 3:
             pe.append(f"{dia}: fato do dia com {len(x['paragrafos'])} parágrafos (até 3)")
+        pe += promessas({"titulo": x["titulo"], "paragrafos": x["paragrafos"], "escada": x["escada"]}, dia)
         for k, d in enumerate(x["escada"]):
             onde = f"{dia}/degrau{k + 1}"
             # Só o último degrau, o do bolso ("E o que isso muda para você?"), pode ficar sem rótulo.
@@ -340,8 +425,8 @@ def checar_posts(posts: list[dict], perguntas: dict, A: dict) -> tuple[list[str]
                 pe.append(f"{onde}: liga a degrau que não existe ({d['liga']})")
             if d.get("leituras") and d["leituras"] not in divisoes:
                 pe.append(f"{onde}: leituras de divisão que não existe ({d['leituras']})")
-            if d.get("teste") and d["teste"] not in testes:
-                pe.append(f"{onde}: teste que não existe ({d['teste']})")
+            if d.get("teste"):
+                pe.append(f"{onde}: degrau com teste ({d['teste']}): o site não guarda teste nem confere depois")
             if d.get("rotulo") == "consenso":
                 niveis = [A[i]["fonte"]["nivel"] for i in d["afirmacoes"] if i in A]
                 if niveis and min(niveis) >= 5:
@@ -379,6 +464,12 @@ def checar(base: dict, offline: bool) -> dict:
                 erros.append(f"{a['id']}: dado não bate ({'; '.join(ruins)})")
             if fora:
                 avisos.append(f"{a['id']}: número do texto sem conferência no campo dados ({', '.join(fora)})")
+        elif a["tipo"] == "conta":
+            r.update(conferir_conta(a))
+            if r["status"] != "conferido":
+                erros.append(f"{a['id']}: a conta não sustenta o texto ({r['status']}; {a['comando']}"
+                             + (f"; números fora da saída: {', '.join(r['fora'])}" if r.get("fora") else "")
+                             + (f"; {r.get('erro') or r.get('saida')}" if r.get("erro") or r.get("saida") else "") + ")")
         else:
             r.update(conferir_trecho(a, offline))
             if r["status"] in ("trecho_nao_achado",) and a["tipo"] == "site":
@@ -409,8 +500,11 @@ def checar(base: dict, offline: bool) -> dict:
         for e in p.get("episodios", []):
             if e not in E:
                 pe.append(f"episódio que não existe: {e}")
+        # 5: o site não guarda teste nem resultado, e nenhum texto da pergunta, nem o registro de mudanças, promete um.
+        if p.get("testes"):
+            pe.append(f"a pergunta guarda {len(p['testes'])} teste(s): o site não guarda teste nem confere depois")
+        pe += promessas(p)
         # 5: regras de leitura
-        testes = {t["id"]: t for t in p.get("testes", [])}
         for d in p["escada"]:
             if d.get("rotulo") and d["rotulo"] not in ROTULOS:
                 pe.append(f"{d['degrau']}: rótulo desconhecido {d['rotulo']}")
@@ -438,18 +532,8 @@ def checar(base: dict, offline: bool) -> dict:
                         pe.append(f"{lt['id']}: leitura de maioria sem estudo ou fonte oficial (níveis 1 a 3)")
                     if (lt.get("resposta") or {}).get("fonte_pendente"):
                         pa.append(f"{lt['id']}: resposta com fonte pendente: {lt['resposta']['fonte_pendente']}")
-                if d.get("teste"):
-                    t = testes.get(d["teste"])
-                    if not t:
-                        pe.append(f"{d.get('id')}: teste {d['teste']} não existe")
-                    else:
-                        faltam = {lt["id"] for lt in d["leituras"]} - set(t.get("o_que_cada_leitura_espera", {}))
-                        if faltam:
-                            pe.append(f"{t['id']}: não diz o que esperam {', '.join(sorted(faltam))}")
-                        if not t.get("regra") or not t.get("conferir_em"):
-                            pe.append(f"{t['id']}: teste sem regra ou sem data")
-                        if t.get("registrado_em") and max(t["conferir_em"]) < t["registrado_em"]:
-                            pe.append(f"{t['id']}: registrado depois da conferência")
+            if d.get("teste"):
+                pe.append(f"{d.get('id') or d['degrau']}: degrau com teste ({d['teste']}): o site não guarda teste")
         eps = [E[e] for e in p.get("episodios", []) if e in E]
         governos = {g for e in eps for g in e.get("governo", [])}
         causas = {e.get("causa") for e in eps}

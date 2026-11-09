@@ -172,12 +172,15 @@ def folga_ctx(pid: str, f: dict | None, teto: float | None = None) -> dict | Non
         "inflacao": ("A inflação esperada", "mais alta", "mais baixa", "é a maior desde"),
         "juro": ("Descontada a inflação esperada, a Selic", "mais alta", "mais baixa", "é a maior desde"),
         "emprego": ("O desemprego", "mais alto", "mais baixo", "é o maior desde"),
+        # Na renda, o lado ruim é cair: "pior que" quer dizer mais baixa.
+        "renda": ("A renda média do trabalho", "mais baixa", "mais alta", "é a menor desde"),
     }[pid]
     sujeito, alto, baixo, recorde = frases
     if f["recorde_ruim"]:
         rot, txt = "Nenhuma", f"{sujeito} {recorde} {desde}, quando começa a série."
     elif f["recorde_bom"]:
-        rot, txt = "Muita", f"{sujeito} está no menor valor desde {desde}, quando começa a série."
+        rot, txt = "Muita", (f"{sujeito} está no {'maior' if pid == 'renda' else 'menor'} valor desde {desde}, "
+                             "quando começa a série.")
     elif p >= 90:
         rot, txt = "Quase nenhuma", f"{sujeito} está {alto} que em {p}% dos meses desde {desde}."
     elif p >= 70:
@@ -200,7 +203,7 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
     acompanhamos, por que ela importa."""
     p = cfg["direcao"]
     pid, ms = x["id"], x["medidas"]
-    tabela = LADO_RITMO if pid == "ritmo" else LADO_EMPREGO if pid in ("emprego", "reservas") else LADO_PRESSAO
+    tabela = LADO_RITMO if pid == "ritmo" else LADO_EMPREGO if pid in ("emprego", "renda", "reservas") else LADO_PRESSAO
     palavra, cls = tabela[x["lado"]]
     frases, normal = [], ""
     m = next(iter(ms.values()), None)
@@ -276,6 +279,13 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
         frases.append(f"O desemprego foi de {num(m['antes'], cd)}% no trimestre até {mes_nome(m['ref_antes'])} para "
                       f"{num(m['agora'], cd)}% no trimestre até {mes_nome(m['ref'])}.")
         normal = _quanto_normal(m, " ponto", cd)
+    elif pid == "renda" and m and m["agora"] is not None and m["antes"] is not None:
+        # O IBGE refaz a série inteira com os preços do último trimestre: os dois números estão nos mesmos reais.
+        frases.append(f"Descontada a inflação, a renda média do trabalho foi de R$ {num(m['antes'], 0)} no trimestre até "
+                      f"{mes_nome(m['ref_antes'])} para R$ {num(m['agora'], 0)} no trimestre até {mes_nome(m['ref'])}, "
+                      f"nos reais de {mes_nome(m['ref'])}.")
+        if m.get("corte") is not None and m.get("mudanca") is not None:
+            normal = _quanto_normal(m, "%")
     elif pid == "reservas" and m and m["agora"] is not None and m["antes"] is not None:
         frases.append(f"O Banco Central tinha US$ {num(m['agora'] / 1000)} bilhões guardados em dólar em {mes_nome(m['ref'])}. "
                       f"Em {mes_nome(m['ref_antes'])}, tinha US$ {num(m['antes'] / 1000)} bilhões.")
@@ -384,9 +394,11 @@ def direcao_ctx(rodada: dict, cfg: dict, cal: dict) -> dict:
         pend = f"Pelos dados de hoje, a direção seria {d['pendente']}. Ela só muda se o mês que vem repetir."
     # Abaixo das cinco pressões, no mesmo desenho: o que não muda a placa (o ritmo vira o bloco do crescimento).
     tambem = [x for x in partes if not x["na_soma"] and x["id"] != "ritmo"
-              and not (x["id"] == "reservas" and x["frase"] == "Sem dado nesta atualização.")]
+              and not (x["id"] in ("reservas", "renda") and x["frase"] == "Sem dado nesta atualização.")]
     tambem.append(_divida_reais_ctx(cfg, hoje))
-    return {"estado": d["estado"], "seta": seta, "cls": cls, "nome": nome, "palavra": d["estado"],
+    renda = next((x for x in d["partes"] if x["id"] == "renda"), {})
+    renda_corte = ((renda.get("medidas") or {}).get("renda") or {}).get("corte")
+    return {"estado": d["estado"], "renda_corte": renda_corte, "seta": seta, "cls": cls, "nome": nome, "palavra": d["estado"],
             "titulo": "A economia está encolhendo" if d["estado"] == "encolhendo" else f"O risco de recessão está {d['estado']}",
             "desde": f"desde {mes_ano(desde, hoje=hoje)}" if desde[:7] < hoje[:7] else "neste mês",
             "conta": conta, "comparado": comparado, "pendente": pend, "pressoes": pressoes, "tambem": tambem,
@@ -658,8 +670,9 @@ def main() -> None:
 
     def gravar(caminho: Path, tpl: str, ctx: dict, canonical: str) -> None:
         caminho.mkdir(parents=True, exist_ok=True)
-        (caminho / "index.html").write_text(env.get_template(tpl).render(**{"aba": abas.get(tpl), **ctx},
-                                                                          canonical=canonical))
+        html = env.get_template(tpl).render(**{"aba": abas.get(tpl), **ctx}, canonical=canonical)
+        # No celular, o "R$" não fica no fim de uma linha e o número no começo da outra.
+        (caminho / "index.html").write_text(re.sub(r"\b(R|US)\$ (?=\d)", "\\1$\u00a0", html))
 
     def desviar(caminho: Path, destino: str) -> None:
         """Endereço antigo (Fator por fator e a conta de cada dia) que agora leva a outra página."""

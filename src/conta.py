@@ -21,11 +21,29 @@ Uso (os meses em AAAA-MM):
   python src/conta.py focus [--de AAAA-MM-DD]             # as previsões dos bancos (Focus) que o site guardou, semana a semana
   python src/conta.py calc "EXPRESSAO"                    # a conta feita à mão: números, + - * / e parênteses,
                                                           # com ponto ou vírgula nos decimais e sem separador de milhar
+A tradução do fato na vida de quem lê (as regras, as fontes e a força de cada uma estão em TRADUCAO.md):
+  python src/conta.py traduz precos                       # o que custava R$ 100 um ano antes, pelo IPCA e pelo INPC,
+                                                          # e daqui a um ano, pelo Focus
+  python src/conta.py traduz dolar [PCT]                  # quanto uma alta (ou queda) de PCT% do dólar sobe o IPCA em
+                                                          # um ano, pela conta do Banco Central; sem PCT, a dos 12 meses
+  python src/conta.py traduz parcela VALOR MESES JURO [JURO ...]  # a parcela de um financiamento (SAC e Price) com
+                                                          # cada juro ao ano; ex.: traduz parcela 300000 360 11.7 15
+  python src/conta.py traduz credito                      # o juro de cada tipo de empréstimo às pessoas, agora e um
+                                                          # ano antes, e quanto viram R$ 1.000 devidos por um ano
+  python src/conta.py traduz guardado [VALOR]             # quanto rendem R$ 1.000 (ou VALOR) com a Selic e na poupança,
+                                                          # e quanto sobra acima da inflação esperada
+  python src/conta.py traduz minimo                       # o salário mínimo, o poder de compra perdido desde o último
+                                                          # reajuste e o reajuste de janeiro pela lei; e o INSS
+  python src/conta.py traduz renda                        # a renda média do trabalho, descontada a inflação, contra
+                                                          # um ano antes
+  python src/conta.py traduz emprego                      # o desemprego, quantas pessoas são 1 ponto e quanto ele
+                                                          # subiu nas recessões desde 2012
 """
 from __future__ import annotations
 
 import argparse
 import contextlib
+import datetime as dt
 import io
 import json
 import sys
@@ -55,6 +73,23 @@ SERIES = {
     "commodities": ("Índice de preços de commodities do Banco Central em dólar (IC-Br)", "índice", "Banco Central, série 29042"),
     "comprometimento_renda": ("Parte da renda das famílias que vai para pagar dívidas", "% da renda", "Banco Central, série 29034"),
     "reservas": ("Reservas internacionais do Banco Central", "US$ milhões", "Banco Central, série 3546"),
+    "inpc": ("INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, que corrige o mínimo e o INSS",
+             "% no mês", "IBGE, pelo Banco Central, série 188"),
+    "salario_minimo": ("Salário mínimo", "R$ por mês", "Banco Central, série 1619"),
+    "tr": ("Taxa referencial (TR), que corrige a poupança", "% ao mês", "Banco Central, série 7811"),
+    "rendimento_real": ("Renda média do trabalho, descontada a inflação (PNAD Contínua, trimestre móvel que termina no mês)",
+                        "R$ por mês, em reais do último trimestre", "IBGE, tabela 6390"),
+    "forca_trabalho": ("Força de trabalho: quem trabalha ou procura trabalho (PNAD Contínua)", "mil pessoas",
+                       "IBGE, pelo Banco Central, série 24378"),
+    "juro_pf": ("Juro médio dos empréstimos às pessoas com juro definido pelo banco (todos os tipos)", "% ao ano", "Banco Central, série 20740"),
+    "juro_rotativo": ("Juro médio do cartão de crédito rotativo", "% ao ano", "Banco Central, série 22022"),
+    "juro_cheque_especial": ("Juro médio do cheque especial", "% ao ano", "Banco Central, série 20741"),
+    "juro_pessoal": ("Juro médio do crédito pessoal não consignado", "% ao ano", "Banco Central, série 20742"),
+    "juro_consignado_inss": ("Juro médio do consignado para aposentados e pensionistas do INSS", "% ao ano",
+                             "Banco Central, série 20746"),
+    "juro_veiculos": ("Juro médio do financiamento de veículos", "% ao ano", "Banco Central, série 20749"),
+    "juro_imobiliario": ("Juro médio do financiamento imobiliário com taxas de mercado", "% ao ano",
+                         "Banco Central, série 20772"),
 }
 PRINCIPAIS = ["selic_meta", "ipca_12m", "focus_ipca_12m", "juro_real", "juro_real_longo", "dolar_ptax", "ibcbr",
               "desocupacao", "divida_bruta", "primario_12m"]
@@ -440,6 +475,334 @@ def cmd_focus(_m: dict, a) -> None:
         print(f"{data}: {nome}{' ' + ref if ref else ''}: {_br(v, 2)}")
 
 
+# ------------------------------------------------------------------ a tradução na vida (TRADUCAO.md)
+MESES_PT = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro",
+            "novembro", "dezembro"]
+# O repasse do dólar para o IPCA em quatro trimestres, pelas contas do Banco Central (Relatório de Política Monetária
+# de março de 2026; a-repasse-bc em base/afirmacoes.json).
+REPASSE_DOLAR = 0.10
+# Os tipos de crédito de `traduz credito`, na ordem em que saem.
+CREDITOS = ["juro_pf", "juro_rotativo", "juro_cheque_especial", "juro_pessoal", "juro_consignado_inss", "juro_veiculos",
+            "juro_imobiliario"]
+
+
+# Quantos dias depois do fim do mês o dado sai, em média: numa tradução de um dia passado (VDC_ATE), o mês que ainda
+# não tinha saído naquele dia fica de fora. O IPCA e o INPC saem por volta do dia 10 do mês seguinte; a PNAD, uns 30
+# dias depois do fim do trimestre; o juro por tipo de crédito, no fim do mês seguinte.
+DIAS_ATE_SAIR = {"ipca_12m": 12, "inpc": 12, "rendimento_real": 32, "desocupacao": 32, "forca_trabalho": 32,
+                 **{k: 30 for k in CREDITOS}}
+
+
+def _publicada(mensal: dict, serie: str) -> dict:
+    """A série só com os meses que já tinham saído no dia da tradução (VDC_ATE); sem VDC_ATE, inteira."""
+    import os
+    s = mensal.get(serie, {})
+    ate = os.environ.get("VDC_ATE")
+    lag = DIAS_ATE_SAIR.get(serie)
+    if not ate or not lag or not s:
+        return s
+    lim = dt.date.fromisoformat(ate)
+
+    def saiu(m: str) -> bool:
+        a, b = int(m[:4]), int(m[5:7])
+        fim = dt.date(a + b // 12, b % 12 + 1, 1) - dt.timedelta(days=1)
+        return fim + dt.timedelta(days=lag) <= lim
+    return {m: v for m, v in s.items() if saiu(m)}
+
+
+def _mes_pt(m: str) -> str:
+    return f"{MESES_PT[int(m[5:7]) - 1]} de {m[:4]}"
+
+
+def _dia_pt(d: str) -> str:
+    return f"{int(d[8:10])}/{int(d[5:7])}/{d[:4]}"
+
+
+def _ultimo(s: dict) -> str | None:
+    return max(s) if s else None
+
+
+def _reais(x: float, casas: int = 2) -> str:
+    return "R$ " + _br(x, casas)
+
+
+def _num_arg(x: str, nome: str, lo: float, hi: float) -> float:
+    try:
+        v = float(x.replace(",", "."))
+    except ValueError:
+        raise SystemExit(f"traduz: {nome} tem de ser um número (recebi {x!r})") from None
+    if not lo <= v <= hi:
+        raise SystemExit(f"traduz: {nome} fora do intervalo de {_br(lo, 0)} a {_br(hi, 0)}")
+    return v
+
+
+def _falta(serie: str) -> None:
+    print(f"Sem dado de {serie} no site ({SERIES.get(serie, (serie,))[0]}): esta tradução não sai hoje.")
+
+
+def _inpc_acumulado(mensal: dict, de: str, ate: str) -> float | None:
+    """O INPC acumulado do mês `de` ao mês `ate`, inclusive, em %; None se falta algum mês."""
+    s = mensal.get("inpc", {})
+    f, m = 1.0, de
+    while m <= ate:
+        if m not in s:
+            return None
+        f *= 1 + s[m] / 100
+        m = _mais(m, 1)
+    return 100 * (f - 1)
+
+
+def tr_precos(mensal: dict, _d: dict, _a) -> None:
+    s = mensal.get("ipca_12m")
+    if not s:
+        return _falta("ipca_12m")
+    m = _ultimo(s)
+    v = s[m]
+    print(f"IPCA, a inflação oficial, em 12 meses até {_mes_pt(m)}: {_br(v)}%. O que custava R$ 100 em "
+          f"{_mes_pt(_mais(m, -12))} passou a custar cerca de {_reais(100 * (1 + v / 100))} em {_mes_pt(m)}.")
+    mi = _ultimo(mensal.get("inpc", {}))
+    if mi:
+        i12 = _inpc_acumulado(mensal, _mais(mi, -11), mi)
+        if i12 is not None:
+            print(f"INPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, "
+                  f"em 12 meses até {_mes_pt(mi)}: {_br(i12)}%. Por ele, R$ 100 de compras de {_mes_pt(_mais(mi, -12))} "
+                  f"viraram cerca de {_reais(100 * (1 + i12 / 100))}.")
+    f = mensal.get("focus_ipca_12m", {})
+    mf = _ultimo(f)
+    if mf:
+        print(f"Para os 12 meses seguintes, os bancos (Focus) esperam IPCA de {_br(f[mf])}% (último dado de {_mes_pt(mf)}): "
+              f"R$ 100 de compras de hoje custariam cerca de {_reais(100 * (1 + f[mf] / 100))} daqui a um ano. É previsão, "
+              "e os bancos erram.")
+    print("Fonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.")
+
+
+def tr_dolar(_m: dict, diario: dict, a) -> None:
+    d = diario.get("dolar_ptax", {})
+    if a.args:
+        pct = _num_arg(a.args[0], "PCT", -80, 300)
+        print(f"Mudança do dólar dada: {'+' if pct > 0 else ''}{_br(pct, 1)}%.")
+    else:
+        if not d:
+            return _falta("dolar_ptax")
+        fim = max(d)
+        alvo = (dt.date.fromisoformat(fim) - dt.timedelta(days=365)).isoformat()
+        ini = max((x for x in d if x <= alvo), default=None)
+        if not ini:
+            return _falta("dolar_ptax")
+        pct = 100 * (d[fim] / d[ini] - 1)
+        print(f"O dólar foi de {_reais(d[ini], 4)} em {_dia_pt(ini)} para {_reais(d[fim], 4)} em {_dia_pt(fim)}: "
+              f"{'alta' if pct > 0 else 'queda'} de {_br(abs(pct), 1)}% em 12 meses.")
+    efeito = round(REPASSE_DOLAR * pct, 1)
+    sobe = pct > 0
+    print(f"Pelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política "
+          f"Monetária de março de 2026), cada 10% de {'alta' if sobe else 'queda'} do dólar {'sobe' if sobe else 'baixa'} "
+          f"o IPCA em cerca de 1 ponto em um ano. Uma {'alta' if sobe else 'queda'} de {_br(abs(pct), 1)}%, se não voltar, "
+          f"{'sobe' if sobe else 'baixa'} o IPCA em cerca de {_br(abs(efeito), 1)} ponto em 12 meses: R$ 100 de compras "
+          f"ficam cerca de {_reais(abs(efeito), 2)} {'mais caros' if sobe else 'mais baratos'} do que ficariam sem essa "
+          "mudança do dólar.")
+    print("Força: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento "
+          "da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.")
+
+
+def _mensal_de(j: float) -> float:
+    return (1 + j / 100) ** (1 / 12) - 1
+
+
+def tr_parcela(_m: dict, _d: dict, a) -> None:
+    if len(a.args) < 3:
+        raise SystemExit("traduz parcela VALOR MESES JURO [JURO ...] (juro em % ao ano; ex.: 300000 360 11.7 15)")
+    v = _num_arg(a.args[0], "VALOR", 100, 50_000_000)
+    n = int(_num_arg(a.args[1], "MESES", 1, 480))
+    juros = [_num_arg(x, "JURO", 0, 1000) for x in a.args[2:6]]
+    res = []
+    # O exemplo dito como a leitora diz: R$ 300 mil em 30 anos.
+    rotulo = _reais(v, 0) + (f" (R$ {_br(v / 1000, 0)} mil)" if v >= 1000 and v % 1000 == 0 else "")
+    prazo = f"{n} meses" + (f" ({n // 12} anos)" if n % 12 == 0 else "")
+    for j in juros:
+        i = _mensal_de(j)
+        sac = v / n + v * i
+        price = v / n if i == 0 else v * i / (1 - (1 + i) ** -n)
+        res.append((j, i, sac, price))
+        print(f"{rotulo} em {prazo} com juro de {_br(j)}% ao ano ({_br(100 * i)}% ao mês): primeira parcela de "
+              f"{_reais(sac)} na tabela SAC, que começa mais alta e cai todo mês, ou parcela fixa de {_reais(price)} na "
+              f"tabela Price, com {_reais(price * n, 0)} pagos no total.")
+    if len(res) >= 2:
+        (j0, _, s0, p0), (j1, _, s1, p1) = res[0], res[-1]
+        print(f"De {_br(j0)}% para {_br(j1)}% ao ano, a primeira parcela na SAC vai de {_reais(s0)} para {_reais(s1)} "
+              f"({'+' if s1 >= s0 else ''}{_reais(s1 - s0)}, {'+' if s1 >= s0 else ''}{_br(100 * (s1 / s0 - 1), 1)}%), "
+              f"e a parcela fixa na Price vai de {_reais(p0)} para {_reais(p1)} "
+              f"({'+' if p1 >= p0 else ''}{_br(100 * (p1 / p0 - 1), 1)}%).")
+    print("A conta não tem seguro, taxas nem a correção pela TR. Vale para quem pede o crédito com esse juro; quem já "
+          "tem financiamento com juro fixo continua com a mesma parcela.")
+
+
+def tr_credito(mensal: dict, _d: dict, _a) -> None:
+    algum = False
+    for k in CREDITOS:
+        s = mensal.get(k)
+        if not s:
+            continue
+        algum = True
+        m = _ultimo(s)
+        v, antes = s[m], s.get(_mais(m, -12))
+        txt = f"{SERIES[k][0]}: {_br(v)}% ao ano em {_mes_pt(m)}"
+        if antes is not None:
+            txt += f", contra {_br(antes)}% em {_mes_pt(_mais(m, -12))}"
+        txt += f". R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de {_reais(1000 * (1 + v / 100), 0)}"
+        if antes is not None:
+            txt += f" (um ano antes, {_reais(1000 * (1 + antes / 100), 0)})"
+        print(txt + ".")
+    if not algum:
+        return _falta("juro_pf")
+    print("Fonte: Banco Central, juro médio das operações de crédito para pessoas físicas, com um a dois meses de "
+          "atraso. A Selic não passa inteira nem logo para esses juros.")
+
+
+def tr_guardado(mensal: dict, diario: dict, a) -> None:
+    v = _num_arg(a.args[0], "VALOR", 1, 10_000_000) if a.args else 1000.0
+    ds = diario.get("selic_meta", {})
+    if ds:
+        dia = max(ds)
+        selic, quando = ds[dia], f"em {_dia_pt(dia)}"
+    else:
+        s = mensal.get("selic_meta", {})
+        m = _ultimo(s)
+        if not m:
+            return _falta("selic_meta")
+        selic, quando = s[m], f"no fim de {_mes_pt(m)}"
+    i = _mensal_de(selic)
+    print(f"Com a Selic em {_br(selic)}% ao ano ({quando}), {_reais(v, 0)} numa aplicação que rende o mesmo que a Selic "
+          f"rendem cerca de {_reais(v * i)} por mês, ou {_reais(v * selic / 100)} em um ano, antes do imposto de renda.")
+    f = mensal.get("focus_ipca_12m", {})
+    mf = _ultimo(f)
+    if mf:
+        real = (1 + selic / 100) / (1 + f[mf] / 100) - 1
+        print(f"Os bancos (Focus) esperam IPCA de {_br(f[mf])}% para os 12 meses seguintes: descontada essa inflação, "
+              f"sobram cerca de {_reais(v * real)} em um ano ({_br(100 * real)}% acima da inflação), antes do imposto.")
+    tr = mensal.get("tr", {})
+    mt = _ultimo(tr)
+    if selic > 8.5:
+        regra, ao_mes = "0,5% ao mês mais a TR", 0.005
+    else:
+        regra, ao_mes = "70% da Selic mais a TR", _mensal_de(0.7 * selic)
+    txt = (f"Na poupança, pela Lei 12.703, de 2012, com a Selic {'acima de' if selic > 8.5 else 'em ou abaixo de'} 8,5%, "
+           f"o rendimento é de {regra}, sem imposto: {_reais(v * ao_mes)} por mês mais a TR")
+    if mt:
+        tot = (1 + ao_mes) * (1 + tr[mt] / 100) - 1
+        txt += (f"; com a TR de {_mes_pt(mt)} ({_br(tr[mt], 4)}% ao mês), {_reais(v * tot)} no mês, ou cerca de "
+                f"{_reais(v * ((1 + tot) ** 12 - 1))} em um ano se a TR ficar igual")
+    print(txt + ".")
+    print("O juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.")
+
+
+def tr_minimo(mensal: dict, _d: dict, _a) -> None:
+    sm, inpc = mensal.get("salario_minimo", {}), mensal.get("inpc", {})
+    if not sm:
+        return _falta("salario_minimo")
+    m = _ultimo(sm)
+    v = sm[m]
+    m0 = m
+    while _mais(m0, -1) in sm and abs(sm[_mais(m0, -1)] - v) < 1e-9:
+        m0 = _mais(m0, -1)
+    print(f"O salário mínimo é de {_reais(v)} desde {_mes_pt(m0)}.")
+    mi = _ultimo(inpc)
+    if not mi or mi < m0:
+        return _falta("inpc")
+    ac = _inpc_acumulado(mensal, m0, mi)
+    if ac is not None:
+        print(f"De {_mes_pt(m0)} a {_mes_pt(mi)}, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, "
+              f"somou {_br(ac)}%: {_reais(v)} compram hoje o que {_reais(v / (1 + ac / 100))} compravam em {_mes_pt(m0)}, "
+              f"uma perda de {_br(100 * (1 - 1 / (1 + ac / 100)), 1)}% no poder de compra até agora, que o reajuste de "
+              "janeiro repõe.")
+    print("Em janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos "
+          "12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.")
+    i12 = _inpc_acumulado(mensal, _mais(mi, -11), mi)
+    if i12 is not None:
+        nov = f"{mi[:4]}-11"
+        faltam = (int(nov[:4]) - int(mi[:4])) * 12 + int(nov[5:]) - int(mi[5:])
+        print(f"O INPC dos 12 meses até {_mes_pt(mi)} foi de {_br(i12)}%. Só a correção pela inflação levaria o mínimo a "
+              f"cerca de {_reais(v * (1 + i12 / 100))}; com o ganho máximo de 2,5%, a cerca de "
+              f"{_reais(v * (1 + i12 / 100) * 1.025)}."
+              + (f" Ainda {'falta 1 mês' if faltam == 1 else f'faltam {faltam} meses'} de INPC até novembro, e o número muda com eles."
+                 if faltam > 0 else ""))
+        print(f"Os benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos "
+              f"12 meses até {_mes_pt(mi)}, uma aposentadoria de R$ 3.000 iria para cerca de "
+              f"{_reais(3000 * (1 + i12 / 100))}.")
+    print("Fonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só "
+          "muda se o Congresso mudar a lei.")
+
+
+def tr_renda(mensal: dict, _d: dict, _a) -> None:
+    s = mensal.get("rendimento_real")
+    if not s:
+        return _falta("rendimento_real")
+    m = _ultimo(s)
+    v, antes = s[m], s.get(_mais(m, -12))
+    print(f"A renda média do trabalho foi de {_reais(v, 0)} por mês no trimestre até {_mes_pt(m)}, já descontada a "
+          "inflação (PNAD Contínua, do IBGE, em reais do último trimestre).")
+    if antes is not None:
+        pct = 100 * (v / antes - 1)
+        print(f"No trimestre até {_mes_pt(_mais(m, -12))}, ela foi de {_reais(antes, 0)}, nos mesmos reais de hoje: "
+              + (f"alta de {_br(pct, 1)}% em um ano, já descontada a inflação." if pct >= 0 else
+                 f"queda de {_br(-pct, 1)}% em um ano, já descontada a inflação: a renda subiu menos que os preços."))
+    ks = sorted(s)
+    topo = max(ks, key=lambda k: s[k])
+    print(f"A série começa em {_mes_pt(ks[0])}. " + ("É o maior valor da série." if topo == m else
+                                                     f"O maior valor da série é de {_reais(s[topo], 0)}, no trimestre até "
+                                                     f"{_mes_pt(topo)}."))
+    print("É uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.")
+
+
+def tr_emprego(mensal: dict, _d: dict, _a) -> None:
+    s = mensal.get("desocupacao")
+    if not s:
+        return _falta("desocupacao")
+    m = _ultimo(s)
+    print(f"O desemprego foi de {_br(s[m], 1)}% no trimestre até {_mes_pt(m)} (PNAD Contínua, do IBGE).")
+    ft = mensal.get("forca_trabalho", {})
+    mf = _ultimo(ft)
+    if mf:
+        um = ft[mf] / 100  # mil pessoas
+        um_txt = f"{_br(um / 1000, 1)} milhão de pessoas" if um >= 950 else f"{_br(um, 0)} mil pessoas"
+        print(f"A força de trabalho (quem trabalha ou procura trabalho) era de {_br(ft[mf] / 1000, 1)} milhões de pessoas "
+              f"no trimestre até {_mes_pt(mf)}: cada ponto de desemprego são cerca de {um_txt} sem trabalho, e o "
+              f"desemprego de hoje são cerca de {_br(ft[mf] * s[m] / 100 / 1000, 1)} milhões de pessoas.")
+    ks = sorted(s)
+    # As quedas do PIB com até 4 trimestres entre uma e outra contam como uma recessão só, como a de 2014 a 2016,
+    # porque o desemprego de uma ainda está subindo quando a outra começa.
+    juntas: list[dict] = []
+    for r in _recessoes():
+        if juntas and _tri_mes(r["de"]) <= _mais(_tri_mes(juntas[-1]["ate"]), 12):
+            juntas[-1] = {**juntas[-1], "ate": r["ate"]}
+        else:
+            juntas.append(dict(r))
+    for r in juntas:
+        ini = _tri_mes(r["de"])
+        if ini < ks[0]:
+            continue
+        janela = [k for k in ks if ini <= k <= _mais(_tri_mes(r["ate"]), 12)]
+        if not janela or ini not in s:
+            continue
+        pico = max(janela, key=lambda k: s[k])
+        print(f"Nas quedas do PIB de {r['de']} a {r['ate']}, o desemprego foi de {_br(s[ini], 1)}% no trimestre até "
+              f"{_mes_pt(ini)} para {_br(s[pico], 1)}% no trimestre até {_mes_pt(pico)}, o maior até 12 meses depois do "
+              f"fim da recessão: {_br(s[pico] - s[ini], 1)} {'ponto' if abs(s[pico] - s[ini]) < 2 else 'pontos'} a mais.")
+    print(f"A série começa em {_mes_pt(ks[0])}. O desemprego costuma subir depois que a recessão começa e cair devagar "
+          "depois que ela acaba.")
+
+
+TRADUZ = {"precos": tr_precos, "dolar": tr_dolar, "parcela": tr_parcela, "credito": tr_credito,
+          "guardado": tr_guardado, "minimo": tr_minimo, "renda": tr_renda, "emprego": tr_emprego}
+# As traduções que o código faz toda manhã e põe no caderno da pesquisa (src/fundo.py, traducoes_do_dia()).
+TRADUZ_DO_DIA = ["precos", "dolar", "credito", "guardado", "minimo", "renda", "emprego"]
+
+
+def cmd_traduz(mensal: dict, a) -> None:
+    _, diario = _carregar()
+    mensal = {**mensal, **{k: _publicada(mensal, k) for k in DIAS_ATE_SAIR}}
+    TRADUZ[a.qual](mensal, diario, a)
+
+
 def calcular(expr: str) -> float:
     """A conta de `calc`, sem eval: só números, + - * / e parênteses."""
     import ast
@@ -498,6 +861,9 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--de")
     p = sub.add_parser("calc")
     p.add_argument("expr")
+    p = sub.add_parser("traduz")
+    p.add_argument("qual", choices=list(TRADUZ))
+    p.add_argument("args", nargs="*")
     a = ap.parse_args(argv)
     if a.cmd == "calc":
         cmd_calc(None, a)
@@ -507,7 +873,7 @@ def main(argv: list[str] | None = None) -> None:
     mensal, _ = _carregar()
     {"series": cmd_series, "valores": cmd_valores, "variacao": cmd_variacao, "recorde": cmd_recorde,
      "depois": cmd_depois, "ciclos": cmd_ciclos, "pausas": cmd_pausas, "parecidos": cmd_parecidos,
-     "recessoes": cmd_recessoes, "focus": cmd_focus, "episodios": cmd_episodios}[a.cmd](mensal, a)
+     "recessoes": cmd_recessoes, "focus": cmd_focus, "episodios": cmd_episodios, "traduz": cmd_traduz}[a.cmd](mensal, a)
 
 
 def rodar(comando: str) -> str:

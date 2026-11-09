@@ -3,7 +3,7 @@
  "pergunta": "Por que a inflação do Brasil fica acima da meta?",
  "pressao": "inflacao",
  "publicada": true,
- "atualizado_em": "2026-11-08",
+ "atualizado_em": "2026-11-09",
  "resposta_curta": {
   "texto": "A inflação do Brasil fica acima da meta por causas que se somam, como as contas do governo, a dúvida sobre a firmeza do Banco Central e o dólar. Os economistas discordam sobre qual pesa mais. De 2010 a 2025, os preços subiram mais que o centro da meta de inflação em 14 dos 16 anos. No fim de outubro de 2026, os bancos (Focus) esperavam alta de 5,0% nos 12 meses seguintes, acima do teto da meta, de 4,5%.",
   "afirmacoes": [
@@ -33,7 +33,7 @@
  },
  "agora": {
   "atualizado_em": "2026-11-08",
-  "texto": "Em 4/11, o Banco Central projetou o IPCA de 2026 em 5,6%, acima do teto da meta, de 4,5%, e parou de cortar a Selic. Os bancos (Focus) passaram a esperar 5,0% nos 12 meses seguintes, quando no fim de julho esperavam 4,2%. Com a inflação esperada subindo, a próxima decisão sobre o juro, em 9/12, vai mostrar se o Banco Central mantém a pausa ou volta a subir a Selic.",
+  "texto": "Em 4/11, o Banco Central projetou o IPCA de 2026 em 5,6%, acima do teto da meta, de 4,5%, e parou de cortar a Selic. Os bancos (Focus) passaram a esperar 5,0% nos 12 meses seguintes, quando no fim de julho esperavam 4,2%. A próxima decisão do Banco Central sobre o juro é em 9/12.",
   "afirmacoes": [
    "a-copom-nov",
    "a-meta",
@@ -191,15 +191,17 @@
    "degrau": "o_que_vem_depois",
    "pergunta": "O que isso muda para você?",
    "rotulo": "consenso",
-   "texto": "Quando empresas e trabalhadores esperam preços subindo mais, sobem preços e pedem salários maiores pensando nisso, e parte da inflação esperada vira inflação de verdade. Por isso, quando a inflação esperada sobe, o Banco Central tende a subir a Selic para segurar os preços, o que encarece o cartão, o empréstimo e o financiamento.",
+   "texto": "Pela previsão dos bancos (Focus) do fim de outubro de 2026, o que custava R$ 100 naquele mês custaria R$ 104,96 um ano depois. Na previsão do fim de julho, eram R$ 104,19, e toda previsão pode errar.\n\nPara quem vive do salário mínimo ou da aposentadoria do INSS, os preços sobem no ano todo, e o reajuste vem só em janeiro.\n\nDe janeiro a setembro de 2026, a inflação das famílias de renda mais baixa tirou 3,9% do poder de compra do mínimo, de R$ 1.621. Pela lei, o reajuste repõe a inflação dos 12 meses até novembro e soma um ganho ligado ao PIB, de até 2,5%.\n\nA aposentadoria acima do mínimo só repõe a inflação: com a inflação dos 12 meses até setembro, uma aposentadoria de R$ 3.000 iria a cerca de R$ 3.129.\n\nPara quem tem financiamento e cartão, a inflação esperada mais alta tende a encarecer o crédito, porque o Banco Central costuma subir a Selic para segurar os preços. A mesma Selic alta aumenta o rendimento de quem tem dinheiro guardado.",
    "afirmacoes": [
+    "a-conta-precos-out",
+    "a-conta-precos-jul",
+    "a-conta-minimo",
+    "a-lei-salario-minimo",
     "a-site-inflacao",
-    "a-bc-selic",
-    "a-bc-wp331"
+    "a-conta-guardado"
    ]
   }
  ],
- "testes": [],
  "episodios": [
   "ep-2002",
   "ep-inf-2008",
@@ -214,6 +216,11 @@
    "data": "2026-11-08",
    "o_que": "Primeira versão da pergunta.",
    "motivo": "Pedido do Pedro em 8/11/2026: uma página para cada pressão do topo."
+  },
+  {
+   "data": "2026-11-09",
+   "o_que": "O que isso muda para você? passou a dizer o que muda para cada família que a pressão atinge, com o tamanho, o prazo e os dois lados quando um perde e outro ganha.",
+   "motivo": "Decisão do Pedro em 9/11/2026: todo texto termina no que muda na vida de quem lê, com as contas da tabela de tradução do site."
   }
  ]
 }

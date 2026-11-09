@@ -13,6 +13,7 @@ Escrevemos para um adulto de uns 35 a 45 anos, sem diploma universitário, que a
 - **Mesma régua para os dois lados.** O texto sairia igual com outro governo no poder.
 - **Calma.** Sem alarme e sem consolo.
 - **Explicação por inteiro.** Frase completa, causa e efeito em ordem, com exemplo. Veja [O jeito de escrever do site](#o-jeito-de-escrever-do-site).
+- **Até a vida dela.** Todo fato termina no que muda para quem lê: o quê, para que lado, quanto, quando e para quem. Veja [O que a notícia muda na vida](#o-que-a-notícia-muda-na-vida).
 
 **Teste de todo texto:** dá para entender lendo só o título e a primeira frase, no celular, em pé no ônibus?
 
@@ -59,7 +60,7 @@ Confusões que o texto tem de prevenir:
 - **Recessão não é crise nem desemprego.** O site mede uma coisa: o PIB cair dois trimestres seguidos.
 - **"O mercado" não é uma pessoa nem um partido.** São bancos, fundos e empresas que emprestam e investem.
 
-**Ela sente a economia por quatro portas:** o emprego, o preço do mercado, a parcela e o juro do cartão, e o dólar (gasolina, eletrônico, viagem). Todo número grande precisa de uma ponte para uma dessas portas: juro alto deixa o crédito caro, e com crédito caro a empresa contrata menos.
+**Ela sente a economia por seis portas:** a renda (o salário, a aposentadoria e o reajuste deles), o emprego, os preços (o mercado, a conta de luz, a gasolina, o aluguel), o crédito (a parcela, o juro do cartão e do financiamento), o dinheiro guardado (a poupança, o Tesouro) e o que o governo cobra ou paga (o imposto e o benefício). O dólar chega por duas delas, pelo preço dos importados (gasolina, eletrônico, viagem) e pelo juro. Todo número grande precisa de uma ponte para uma dessas portas: juro alto deixa o crédito caro, e com crédito caro a empresa contrata menos.
 
 ## Como ela se informa
 
@@ -115,7 +116,7 @@ Fale como alguém que entende de economia explicando no almoço de domingo: calm
 
 1. **A resposta.** A resposta à pergunta do texto, na primeira frase. No post, a pergunta muda com o tipo (veja [Os tipos de post](#os-tipos-de-post)).
 2. **O porquê.** Dois ou três fatores, ou a corrente de causa e efeito.
-3. **O que muda na vida.** Quando houver ponte clara: emprego, preço, parcela.
+3. **O que muda na vida.** O quê, para que lado, quanto, quando e para quem, por uma das seis portas; ou que nada muda agora, e por quê (veja [O que a notícia muda na vida](#o-que-a-notícia-muda-na-vida)).
 4. **O que acompanhar.** O próximo dado e a data, quando isso não está já ao lado, na mesma página. É informação para ela, e não promessa do site de voltar ao assunto: o site faz a análise do fato e para aí, sem dizer que vai conferir, acompanhar ou testar nada depois.
 
 **Frase e parágrafo**
@@ -158,7 +159,7 @@ Este é o padrão de todo texto do site, do post diário às abas, aprovado em 3
 8. **O texto se explica sozinho.** Quem lê só aquele texto entende cada frase, sem o topo do site nem o post anterior. Diga o nome das coisas: "pioraram as contas do governo, as dívidas das famílias, a desconfiança de quem investe e a inflação esperada", não "quatro das cinco pressões pioraram".
 9. **Frases ligadas, não empilhadas.** Quando duas informações formam uma ideia (o fato e por que ele importa, a causa e o efeito), elas vão na mesma frase, ligadas por "porque", "já que", "dado que", "o que" ou "por isso". Três frases curtas soltas, uma atrás da outra, deixam o texto truncado.
 10. **Termo técnico com link, sem aula.** Os termos que não dá para evitar (PIB, IPCA, Selic, Focus, Copom, risco-país, meta de inflação, IFI, BNDES) não são definidos a cada texto: o site liga a primeira vez de cada um à página dele na Wikipédia (`glossario` em `config/modelo.json`). Explicação dentro do texto fica para o que a Wikipédia não cobre, como o juro de 10 anos, e cabe dentro da frase. A aba O que causa recessão continua explicando, porque ensinar é o papel dela.
-11. **Todo fato com o "e daí".** Depois do fato, uma frase curta diz o que ele quer dizer para o risco ou para quem lê: por que o dado importa, o que costuma vir depois, se confirma ou contraria o mês. É interpretação presa aos dados, sem adjetivo de juízo e sem culpado; quando o fato admite duas leituras, as duas entram, com o mesmo peso.
+11. **Todo fato com o "e daí".** Depois do fato, uma frase curta diz o que ele quer dizer para o risco de recessão e para a vida de quem lê: por que o dado importa, o que costuma vir depois, o que muda no salário, no preço, na parcela, no emprego ou no dinheiro guardado. Quando os dois não cabem, fica o da vida, com o tamanho e o prazo. É interpretação presa aos dados, sem adjetivo de juízo e sem culpado; quando o fato admite duas leituras, as duas entram, com o mesmo peso.
 12. **Compare com um mês, não com "3 meses antes".** Diga com que mês ou data se compara, como se fala: "se compararmos com julho", "desde junho", "6,8% mais caro que no fim de julho". "Contra 3 meses antes", "há 3 meses" e "nos últimos 3 meses" obrigam a leitora a fazer a conta. "Nos 3 meses até agosto" pode, porque já diz o mês.
 13. **Importado, não "o que vem de fora".** Produto comprado de outro país é importado, e a compra é a importação: "com o dólar mais caro, os importados ficam mais caros, como peças e combustível". Causa de fora (guerra, seca, juro dos Estados Unidos) continua sendo causa de fora.
 14. **Sigla por extenso ou com link.** Sigla que a leitora não conhece vai por extenso quando o nome já diz o que ela é (Confederação Nacional da Indústria, Tribunal de Contas da União, o banco central dos Estados Unidos no lugar de Fed), ou fica como sigla quando o site a liga à Wikipédia (IFI, BNDES). Imposto vai pelo que ele cobra ("o imposto sobre combustíveis", e não ICMS). Siglas que todo mundo conhece ficam: IBGE, PIB, INSS, EUA.
@@ -213,12 +214,13 @@ Cada post responde a uma pergunta só e compara com o próprio período. Ela qua
 | Resumo da semana | O que a semana mudou, e o que vem na próxima? | Domingo | Até 250 palavras | O que se moveu na semana |
 | Resumo do mês | Estamos melhor ou pior que há um mês, e o que isso muda para mim? | Primeiro domingo do mês, no lugar do resumo da semana | Até 450 palavras, com as tabelas (300 de texto) | O que mudou no mês |
 
-**Cada informação tem um dono.** O post não repete o que a página já mostra ao lado dele. Ele diz o que só ele pode dizer: a ligação entre os fatos, a comparação e o que muda para quem lê, no emprego, no preço, na parcela ou no dólar.
+**Cada informação tem um dono.** O post não repete o que a página já mostra ao lado dele. Ele diz o que só ele pode dizer: a ligação entre os fatos, a comparação e o que muda na vida de quem lê, na renda, no emprego, nos preços, no crédito, no dinheiro guardado ou no que o governo cobra ou paga.
 
 | Informação | Dono | O que o post faz com ela |
 | --- | --- | --- |
 | A direção do risco | A placa do topo | O fato do dia só fala da direção se ela mudou. Os resumos da semana e do mês dizem desde quando ela está assim. |
-| Notícias de ontem | O fato do dia, que conta uma só | Conta a que a pauta escolheu ([CARTA_EDITORIAL.md](CARTA_EDITORIAL.md)), até o bolso; as outras só entram quando são parte da mesma história. O site não lista as notícias. |
+| Notícias de ontem | O fato do dia, que conta uma só | Conta a que a pauta escolheu ([CARTA_EDITORIAL.md](CARTA_EDITORIAL.md)), até a vida de quem lê; as outras só entram quando são parte da mesma história. O site não lista as notícias. |
+| O que o fato muda na vida | A tabela de tradução ([TRADUCAO.md](TRADUCAO.md)), com a conta feita em código | O fato do dia diz em uma frase o que muda, quanto e para quem, ou que nada muda agora; a leitura a fundo mostra as famílias de referência que o fato atinge, uma ou duas, cada uma com o número dela. |
 | Próximas datas | A lateral "Datas importantes" | O fato do dia só cita o dado que sai hoje. O resumo da semana diz o que olhar na semana seguinte. |
 | O que cada pressão fez em 3 meses, e quanto espaço ainda sobra | O topo, abaixo da placa | O resumo do mês conta só o que mudou de lado. |
 | Por que o fato aconteceu e o que ele quer dizer | A pesquisa do dia, a mesma da leitura a fundo ([FUNDO.md](FUNDO.md)) | O fato do dia diz o porquê, nas palavras de quem decidiu, e o e daí, em uma ou duas frases; quando o fato é uma decisão pública, diz também o objetivo que quem decidiu escreveu e a condição principal para ela chegar lá. A leitura a fundo mostra o que os sustenta, sem repeti-los. |
@@ -246,6 +248,34 @@ Ela quer saber se o Banco Central, o governo ou o Congresso fizeram a coisa cert
 | Antes | Depois |
 | --- | --- |
 | "Os bancos preveem corte, mas o passado indica alta." | "O Banco Central diz no comunicado que mira a inflação de 3%, e a projeção dele para 2028 está em 3,5%. Parar de cortar vai na direção dessa meta; a decisão chega lá se a inflação esperada parar de subir." |
+
+## O que a notícia muda na vida
+
+O site acompanha o risco de recessão e o que ele muda na vida de quem lê (decisão do Pedro em 9/11/2026, depois que um leitor pediu as consequências das notícias no "mundo real", como o poder de compra). Por isso todo fato termina na vida: o e daí diz o que o fato quer dizer para o risco e o que ele muda para ela, e, quando os dois não cabem nas 100 palavras, fica o da vida.
+
+**A tradução tem cinco partes:** o que muda (a parcela, o preço do mercado, o reajuste da aposentadoria), para que lado, quanto, quando e para quem. "Os importados ficam mais caros" para na direção. "Pelas contas do Banco Central, cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano" diz o tamanho e o prazo, e a leitora entende o que isso faz com as compras dela.
+
+**O tamanho vem de uma regra escrita antes.** O número sai da tabela de tradução ([TRADUCAO.md](TRADUCAO.md)), com a conta feita em código (`traduz`, em `src/conta.py`), ou da própria notícia (o juro novo do financiamento, o valor do benefício). Conta de cabeça não vale, e a regra é a mesma para qualquer governo. Quando a tabela não tem regra para o caso, como o preço da gasolina, que depende da Petrobras, o texto diz a direção e quem decide o tamanho.
+
+**"Nada muda agora" também é resposta**, quando é verdade, com o porquê e com o que faria mudar: "quem já tem financiamento com juro fixo continua pagando a mesma parcela; o juro mais alto pesa em quem pede crédito novo". A leitora não é criança: ela sabe o que é salário, parcela e inflação e acompanha política, só não estudou economia. A frase diz o mecanismo com precisão, como para um adulto ocupado, sem explicar o que é um empréstimo, sem diminutivo ("o seu dinheirinho") e sem tom de cartilha.
+
+**As três famílias de referência** aparecem pela situação, sem nome inventado:
+
+| Família | Por onde a notícia chega | O que a tabela traduz |
+| --- | --- | --- |
+| Quem vive do salário mínimo ou da aposentadoria do INSS | O reajuste de janeiro, que segue a inflação dos mais pobres (o INPC), e o preço do mercado | Quanto o mínimo perdeu de poder de compra desde o último reajuste e o reajuste que a lei já garante |
+| Quem tem financiamento e cartão, como a Patrícia | O juro do crédito novo, a parcela e o emprego | A primeira parcela de um financiamento de referência e o juro de R$ 1.000 no cartão ou no crédito pessoal |
+| Quem tem dinheiro guardado | O rendimento acima da inflação | Quanto R$ 1.000 guardados rendem por mês e quanto sobra acima da inflação |
+
+- **Na leitura a fundo, só as famílias que o fato atinge**, quase sempre uma ou duas, cada uma com o número dela. Nas 100 palavras, no máximo uma oração, e só com número.
+- **A mesma notícia pode fazer uma família perder e outra ganhar.** O juro alto encarece a parcela de quem pega empréstimo e aumenta o rendimento de quem tem dinheiro guardado. O texto mostra os dois lados sem dizer qual pesa mais.
+- **Quando quem sente depende do que a pessoa compra ou do trabalho que faz**, como no imposto sobre carro, bebida e cigarro ou no fim da escala 6x1, o texto diz para quem vale, sem passar pelas famílias.
+- **Sem conselho e sem lado.** O texto diz o que muda, nunca o que fazer com o dinheiro ("vale renegociar", "é hora de investir" ficam fora). Uma decisão de governo traduzida para a vida diz quem decidiu, o que muda e para quem, e não vira "o governo tirou do seu bolso"; com outro governo no poder, a frase sairia igual.
+
+| Antes | Depois |
+| --- | --- |
+| "Com o dólar mais caro, os importados ficam mais caros, como celular e peça de carro." | "Pelas contas do Banco Central, cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano; se a alta de 9% da semana não voltar, os preços sobem perto de 1 ponto a mais nos 12 meses seguintes." |
+| "A Selic alta deixa o crédito caro." | "Quem pede hoje um financiamento de R$ 300 mil em 30 anos começa pagando cerca de R$ 4.350 por mês com juro de 15% ao ano, contra uns R$ 3.600 com 11,7%." |
 
 ## Como explicar um mecanismo
 
@@ -325,8 +355,10 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 | As cinco pressões | Contas do governo, Dívidas das famílias, Desconfiança de quem investe, Inflação esperada, Juro |
 | Os dois números da Desconfiança de quem investe | o dólar e o juro de 10 anos, os dois na linha fechada; na primeira vez, "o juro de 10 anos é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos". Nunca "juro longo", "juros futuros" ou "prêmio de risco" |
 | O botão que abre as pressões no celular | "Por que está subindo? Veja as cinco pressões" (ou caindo, ou igual); quando a economia encolhe, "Como estão as cinco pressões?". Só aparece quando a página tem uma coluna; no computador, a lista fica aberta |
-| As linhas que não mudam a placa | Também acompanhamos: Emprego, Reservas em dólar, Dívida em reais. Aberta, cada uma diz "Esta linha não muda a placa, porque..." |
-| O que cada linha fez | Piorou, Igual, Melhorou, em todas as linhas do topo: as cinco pressões, o emprego e as reservas. Em tabela que compara dois períodos, Pior, Igual e Melhor. No texto, "a pressão piorou" ou "pioraram as contas do governo". Nunca Apertou e Folgou, nem "apertando ou folgando" |
+| As linhas que não mudam a placa | Também acompanhamos: Emprego, Renda, Reservas em dólar, Dívida em reais. Aberta, cada uma diz "Esta linha não muda a placa, porque..." |
+| A linha da renda | a renda média do trabalho, descontada a inflação (PNAD Contínua, do IBGE), no trimestre que termina no mês |
+| As famílias de referência | quem vive do salário mínimo ou da aposentadoria do INSS; quem tem financiamento e cartão; quem tem dinheiro guardado. Pela situação, nunca com nome inventado nem como "classe C" |
+| O que cada linha fez | Piorou, Igual, Melhorou, em todas as linhas do topo: as cinco pressões, o emprego, a renda e as reservas. Em tabela que compara dois períodos, Pior, Igual e Melhor. No texto, "a pressão piorou" ou "pioraram as contas do governo". Nunca Apertou e Folgou, nem "apertando ou folgando" |
 | Quais pressões mudaram, no texto | Cada uma pelo nome e com o mês da comparação: "Se compararmos com julho, pioraram as contas do governo, as dívidas das famílias, a desconfiança de quem investe e a inflação esperada. O juro ficou igual." O mês é o do meio das comparações (a dívida de setembro contra a de junho, a Selic de novembro contra a de agosto); cada linha do topo diz os meses dela. No topo, o título da lista é "As cinco pressões, comparadas com julho". No meio da frase, o nome vai em minúscula e com artigo, como qualquer palavra. Nunca a contagem ("quatro das cinco pressões"), porque a leitora não sabe de cor quais são as cinco |
 | Categorias, rótulos e tabelas do post | Só as duas listas do topo, com os mesmos nomes: as cinco pressões e Também acompanhamos. O resumo do mês tem uma tabela só, "As cinco pressões no fim de setembro e agora", com Pior, Igual e Melhor nas células: tabela que compara dois momentos diz o estado de cada um, não o verbo no passado (nada de Piorou e Melhorou nela); Também acompanhamos entra no texto quando ajuda. Os rótulos do resumo da semana são nomes de pressão ou de assunto das notícias. Nunca "No bolso", "Parcelas", "Preços" ou "Mercado" como categoria |
 | A medida das Dívidas das famílias | a parte da renda das famílias que vai para parcelas e juros |
@@ -355,14 +387,14 @@ Os itens 3, 5, 9 e 12, e parte do 11 e do 16, o código confere nos posts (`src/
 3. **Frase ligada e enxuta.** Nenhuma frase passa de 30 palavras nem fica solta quando completa a anterior; nenhum parágrafo passa de 50 palavras.
 4. **Zero jargão solto.** Todo termo da tabela acima está traduzido ou fora. Os termos técnicos inevitáveis (PIB, IPCA, Selic, Focus, Copom, risco-país, meta de inflação) vão sem definição, porque o site liga a primeira vez de cada um à Wikipédia.
 5. **Número com régua.** Cada número tem comparação e unidade; no máximo quatro por parágrafo; arredondado.
-6. **Ponte para o bolso.** Quando a ligação é clara, o texto diz o que muda no emprego, no preço ou na parcela.
+6. **Até a vida.** O texto termina no que muda na vida: o quê, para que lado, quanto, quando e para quem, com o número da tabela de tradução ou da notícia; ou diz que nada muda agora, e por quê. Sem falar com a leitora como se ela fosse criança.
 7. **Teste da troca.** Com outro governo no poder, a frase sairia igual.
 8. **Estágio claro.** Diz se é dado divulgado, decisão tomada, proposta, anúncio, previsão ou rumor. Recorde tem a régua da série, como a fonte diz ("o pior setembro da série", "o maior desde 2005, quando começa a série"), e nunca "o pior já registrado" ou "da história".
 9. **Sem alarme, sem consolo, sem molde.** Nenhuma palavra de alarme ou com lado; nenhuma expressão de piloto automático.
 10. **Em voz alta.** Lido em voz alta, soa como gente explicando para gente.
 11. **Explicação por inteiro.** Passa nas quinze regras de "O jeito de escrever do site": frase completa, causa e efeito em ordem com exemplo, condição por inteiro, nenhuma fórmula de efeito, causa de fora dita, casos com as mesmas linhas e amarração ao que veio antes.
 12. **Nada repetido.** O texto não repete o que o topo ou a lateral já mostram, nem frase do post anterior do mesmo tipo. Todo número está nos dados.
-13. **Porquê e e daí.** Cada fato diz por que aconteceu, nas palavras de quem decidiu ou da fonte, e o que quer dizer para o risco ou para quem lê, sem lado, com as duas leituras quando houver duas. Nenhum "mesmo assim" fica sem resposta.
+13. **Porquê e e daí.** Cada fato diz por que aconteceu, nas palavras de quem decidiu ou da fonte, e o que quer dizer para o risco e para a vida de quem lê (quando não cabem os dois, a vida), sem lado, com as duas leituras quando houver duas. Nenhum "mesmo assim" fica sem resposta.
 14. **Mês, importado, sigla e quem.** Toda comparação diz o mês; produto de fora é importado; sigla que a leitora não conhece vai por extenso ou com link; cada frase diz quem decidiu, por quê e para quem, e quem só repassa a decisão não aparece como autor dela.
 15. **Passou pelo editor.** Todo post passa pelo editor (`src/edita_texto.py`) antes de sair; texto à mão também pode passar, com a leitura em voz alta no fim.
 16. **Decisão pela meta de quem decidiu.** Decisão pública vem com quem decidiu e com que poder e, quando os dados trazem, o objetivo que o decisor escreveu e a condição para chegar lá; nada de "acertou", "errou" ou "deveria", e nenhuma promessa de conferir depois.
@@ -389,17 +421,18 @@ O post de 31/10 tinha 197 palavras, e 97 delas repetiam o dia anterior e algo qu
 >
 > A Bolsa caiu 18,1% na semana depois da eleição, a mesma queda de uma semana de 2001. O dólar subiu 9%, a maior alta em uma semana desde 2008.
 >
-> Com o dólar mais caro, os importados ficam mais caros, como celular e peça de carro.
+> Pelas contas do Banco Central, cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Se a alta da semana não voltar, os importados, como celular e peça de carro, puxam os preços para perto de 1 ponto a mais nos 12 meses seguintes.
 
-Um fato, contado até o bolso. O que o dólar fez em três meses fica no topo, em "Desconfiança de quem investe".
+Um fato, contado até a vida de quem lê, com o tamanho e o prazo. O que o dólar fez em três meses fica no topo, em "Desconfiança de quem investe".
 
 ## Onde o guia vale no código
 
-- `CARTA_EDITORIAL.md`, `src/pauta.py` e `src/editora.py`: qual fato o fato do dia conta. Os degraus dão a escolha padrão em código, a IA editora lê a carta inteira e só sai da escolha padrão por um motivo da lista fechada, que o código confere, e passa ao redator o que é parte da mesma história e até três cuidados. A escolha fica em `pauta` no registro da rodada.
+- `CARTA_EDITORIAL.md`, `src/pauta.py` e `src/editora.py`: qual fato o fato do dia conta. Os degraus dão a escolha padrão em código, a IA editora lê a carta inteira e só sai da escolha padrão por um motivo da lista fechada, que o código confere, e passa ao redator o que é parte da mesma história e até três cuidados. O que o fato muda na vida pesa pelo motivo `muda_a_vida`: um fato consumado que muda mais a vida de muita gente pode tomar o lugar da escolha do degrau 5, e nunca a dos degraus 1 a 4. A escolha fica em `pauta` no registro da rodada.
+- `TRADUCAO.md` e `src/conta.py` (`traduz`): a tabela de tradução, escrita antes e igual para qualquer governo, e as contas que dão o tamanho de cada efeito na vida. A pesquisa do dia recebe as traduções do dia já feitas pelo código, como linhas do caderno, e o editor-chefe passa ao post a frase da vida e à leitura a fundo as famílias que o fato atinge (`src/fundo.py`).
 - `src/escreve_post.py`: um prompt por tipo de post (fato do dia, resumo da semana, resumo do mês), com as regras comuns de leitor, frase, números, palavras proibidas, mecanismo e causa e efeito por extenso. O código monta os fatos de cada tipo; o mês sai dos dados oficiais do mês e a semana, das rodadas guardadas em `runs/`.
 - `src/run.py` e `src/escreve_post.py`: o tipo sai só da data (domingo, o resumo da semana; primeiro domingo do mês, o resumo do mês); a assinatura de todo post, em `src/build_site.py` (`ASSINATURA`), é só "Escrito pelo Claude com a ajuda do Pedro."
 - `src/edita_texto.py`: o editor. Lê o rascunho do redator com este guia inteiro e com os problemas do verificador, lista as sugestões (trecho, problema, como fica) e devolve o post editado, sem mudar fato nem número. A versão do editor só fica se não tiver mais problemas que o rascunho; as sugestões ficam em `post.edicao` no registro da rodada. À mão: `python src/edita_texto.py runs/<id>.json` ou `editor/<texto>.md`, com `--grava` para gravar.
-- `src/classify_news.py`, regras 12 a 16: títulos de evento e "por quê" com a mesma linguagem. A regra 5 marca quem decidiu, o tipo de decisão e o objetivo declarado, e `src/decisoes.py` decide em código quanto cada decisão é analisada; a evidência vem de `EVIDENCIA.md`.
+- `src/classify_news.py`, regras 12 a 16: títulos de evento e "por quê" com a mesma linguagem. A regra 5 marca quem decidiu, o tipo de decisão e o objetivo declarado, e `src/decisoes.py` decide em código quanto cada decisão é analisada; a evidência vem de `EVIDENCIA.md`. A regra 11 dá a cada evento o tamanho do que ele muda na vida das pessoas, de 0 a 3 e à parte do risco, com a porta por onde chega e quem sente; proposta, anúncio, previsão e rumor ficam em no máximo 1, porque nada foi decidido.
 - `src/revisa_texto.py`: pede reescrita do post com frase acima de 32 palavras, definição de termo que o link já explica ("o PIB, tudo o que o país produz"), "IBC-Br", parágrafo acima de 65 palavras ou com mais de quatro números, jargão da lista, termo da nossa pesquisa (gatilho, fragilidade, número de países), frase de efeito ("X, sim.", "isto, não aquilo", "aumento puxa aumento"), palavra de alarme ou com lado, número negativo com sinal, inflação que "cai" ou "recua", palavra que o site trocou (Apertou, Folgou, juro longo), pressões contadas em vez de citadas pelo nome, comparação com "3 meses antes" sem o mês, "o que vem de fora" no lugar de importados, sigla que a leitora não conhece sem link, "por 10 anos" repetido, "No bolso" como categoria, rótulo do resumo da semana que não é nome do site, nome de pessoa ou partido no lugar do cargo recorde sem a régua da série ("já registrado", "da história") e juízo sobre quem decidiu ("o Banco Central errou", "o governo deveria"). Nos posts, também confere número ou data que não está nos dados, texto acima do tamanho do tipo, direção repetida sem mudança e data futura no fato do dia, e frase copiada do post anterior do mesmo tipo; número fora dos dados, previsão de recessão, risco em porcentagem e promessa de conferir depois ("o site vai acompanhar") que sobram depois da reescrita barram o texto. A folga sobre as metas (20 e 50) evita reescrever por uma palavra.
 - `src/dossie.py`: as frases de dados de cada assunto, que o post usa como contexto (queda no verbo, mês por extenso, sem sigla solta).
 - `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas; no topo, as frases do crescimento em 12 meses, de cada pressão, do vaivém normal e de quanto espaço ainda sobra saem de `src/build_site.py`.

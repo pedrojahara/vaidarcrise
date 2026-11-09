@@ -17,8 +17,8 @@ A regra (config/modelo.json, seção "direcao"; os cortes de cada pressão em co
 5. Se a prévia do PIB (IBC-Br, média de 3 meses contra os 3 anteriores) cair mais de 1,5%, o topo diz
    que a economia está encolhendo.
 
-O ritmo da economia, o emprego e as reservas internacionais do Banco Central aparecem, mas não entram
-na soma. Cada parte mostra também a folga: o nível de hoje contra todos os meses desde o começo da série.
+O ritmo da economia, o emprego, a renda do trabalho e as reservas internacionais do Banco Central aparecem,
+mas não entram na soma. Cada parte mostra também a folga: o nível de hoje contra todos os meses desde o começo da série.
 
 Uma medida sem corte em config/calibracao.json (uma série nova, como as reservas, antes do próximo
 --calibrar) tem o corte tirado na hora, com a mesma conta, das mudanças de 3 meses que já existem desde
@@ -81,13 +81,16 @@ MEDIDAS = {
     "emprego": {"serie": "desocupacao", "como": "pontos", "ruim": 1, "atraso": 1},
     # Reservas internacionais (BCB 3546, US$ milhões, fim do mês): cair é o lado ruim.
     "reservas": {"serie": "reservas", "como": "pct", "ruim": -1, "atraso": 1},
+    # Renda média do trabalho, descontada a inflação (IBGE, PNAD Contínua, tabela 6390, trimestre móvel): cair é o
+    # lado ruim. Fica fora da soma, como o emprego (decisão do Pedro em 9/11/2026).
+    "renda": {"serie": "rendimento_real", "como": "pct", "ruim": -1, "atraso": 1},
 }
 # As partes da página, na ordem do topo. As cinco primeiras entram na soma.
-PARTES = ["contas", "parcelas", "mercado", "inflacao", "juro", "ritmo", "emprego", "reservas"]
+PARTES = ["contas", "parcelas", "mercado", "inflacao", "juro", "ritmo", "emprego", "renda", "reservas"]
 # As medidas de cada parte.
 QUAIS = {"contas": ["divida", "primario"], "parcelas": ["parcelas"], "mercado": ["dolar", "juro_longo"],
          "inflacao": ["inflacao"], "juro": ["juro"], "ritmo": ["ritmo"], "emprego": ["emprego"],
-         "reservas": ["reservas"]}
+         "renda": ["renda"], "reservas": ["reservas"]}
 NA_SOMA = ["contas", "parcelas", "mercado", "inflacao", "juro"]
 # Uma medida sem corte na calibração só ganha corte na hora se tiver pelo menos isto de mudanças de 3 meses.
 MIN_MUDANCAS = 36
@@ -95,7 +98,8 @@ MIN_MUDANCAS = 36
 # inflação esperada; o dólar não tem folga (o nível em reais não se compara entre décadas), nem as reservas
 # (o nível em dólares de hoje não se compara com o de 2002).
 FOLGA = {"contas": ("divida_bruta", 1), "parcelas": ("comprometimento_renda", 1), "mercado": ("juro_real_longo", 1),
-         "inflacao": ("focus_ipca_12m", 1), "juro": ("juro_real", 1), "emprego": ("desocupacao", 1)}
+         "inflacao": ("focus_ipca_12m", 1), "juro": ("juro_real", 1), "emprego": ("desocupacao", 1),
+         "renda": ("rendimento_real", -1)}
 
 
 # ------------------------------------------------------------------ meses
@@ -326,7 +330,7 @@ def mes_da_regra(series: dict, mes: str, cortes: dict, p: dict, ao_vivo: bool = 
                     lados["dolar"] if lados["juro_longo"] is None else
                     (lados["dolar"] + lados["juro_longo"] > 0) - (lados["dolar"] + lados["juro_longo"] < 0)),
         "inflacao": lados["inflacao"], "juro": lados["juro"], "ritmo": lados["ritmo"], "emprego": lados["emprego"],
-        "reservas": lados["reservas"],
+        "renda": lados["renda"], "reservas": lados["reservas"],
     }
     soma_vals = [partes[k] for k in NA_SOMA if partes[k] is not None]
     soma = sum(soma_vals) if soma_vals else None

@@ -3,7 +3,7 @@
  "pergunta": "Por que o juro do Brasil é tão alto?",
  "pressao": "juro",
  "publicada": true,
- "atualizado_em": "2026-11-08",
+ "atualizado_em": "2026-11-09",
  "resposta_curta": {
   "texto": "Em novembro de 2026, a Selic está em 13,75% ao ano, e os bancos (Focus) esperam que os preços subam 5,0% em 12 meses. Com isso, o juro fica cerca de 8,4% acima da inflação esperada, um dos maiores do mundo. Os economistas ainda discordam sobre a causa. A desconfiança de quem empresta ao governo explica os anos em que o juro disparou, como 2002, mas nenhuma explicação sozinha dá conta do resto.",
   "afirmacoes": [
@@ -36,7 +36,7 @@
  },
  "agora": {
   "atualizado_em": "2026-11-07",
-  "texto": "Em 4/11, o Banco Central manteve a Selic em 13,75% ao ano e parou os cortes que fazia desde março. Na mesma época, os bancos passaram a esperar inflação de 5,0% em 12 meses, acima do teto da meta, de 4,5%, quando em julho esperavam 4,2%. O Banco Central decide o juro de novo em 9/12, e a decisão vai mostrar se a pausa continua.",
+  "texto": "Em 4/11, o Banco Central manteve a Selic em 13,75% ao ano e parou os cortes que fazia desde março. Na mesma época, os bancos passaram a esperar inflação de 5,0% em 12 meses, acima do teto da meta, de 4,5%, quando em julho esperavam 4,2%. O Banco Central decide o juro de novo em 9/12.",
   "afirmacoes": [
    "a-copom-nov",
    "a-cortes-2026",
@@ -268,17 +268,17 @@
    "degrau": "o_que_vem_depois",
    "pergunta": "O que isso muda para você?",
    "rotulo": "consenso",
-   "texto": "A Selic influencia o juro que os bancos cobram de você no cartão, no empréstimo e no financiamento. Com ela alta, quem compra a prazo compra menos, as lojas vendem menos e as empresas contratam menos. Em dezembro de 2024, o Banco Central passou a estimar em 5% acima da inflação o juro que nem acelera nem freia a economia. Em 2025, disse que esse ponto pode subir com as dúvidas sobre a dívida do governo. O de hoje, de cerca de 8,4%, está acima dele e por isso freia a economia.",
+   "texto": "Para quem tem financiamento e cartão, o juro alto encarece o crédito novo. Em setembro de 2026, o juro médio da casa própria com taxas de mercado era de 14,2% ao ano. Quem pedisse R$ 300 mil em 30 anos começaria pagando R$ 4.171 por mês, fora seguro e taxas.\n\nEm setembro de 2025, com a Selic em 15%, esse juro era de 14,9%, e o mesmo financiamento começava em R$ 4.321. Quem já tem financiamento com juro fixo continua pagando a mesma parcela.\n\nNo cartão, a Selic chega ao juro só em parte e devagar. Em setembro de 2026, o juro médio do rotativo era de 451,7% ao ano, quase o mesmo de setembro de 2025. Com ele, R$ 1.000 devidos por um ano, sem pagar nada, viravam cerca de R$ 5.517.\n\nO crédito caro também chega ao emprego, porque quem compra a prazo compra menos, e quem vende menos contrata menos.\n\nPara quem tem dinheiro guardado, o juro alto aumenta o rendimento. Em novembro de 2026, com a Selic em 13,75%, R$ 1.000 numa aplicação atrelada à Selic renderiam R$ 137,50 em um ano, antes do imposto. Descontada a inflação esperada pelos bancos (Focus), sobrariam uns R$ 84.",
    "afirmacoes": [
     "a-bc-selic",
+    "a-juro-casa-set",
+    "a-conta-parcela-ano",
+    "a-conta-cartao",
     "a-freio",
-    "a-neutro-bc",
-    "a-neutro-sobe",
-    "a-juro-real-hoje"
+    "a-conta-guardado"
    ]
   }
  ],
- "testes": [],
  "episodios": [
   "ep-2002",
   "ep-2008",
@@ -297,13 +297,8 @@
   },
   {
    "data": "2026-11-07",
-   "o_que": "O teste das moedas passou a começar em 6/11 e a ser conferido em 7/12/2026 e 5/2/2027.",
-   "motivo": "A primeira versão começava em 27/10 e tinha uma conferência em 6/11, antes do registro, o que deixava parte do resultado conhecida."
-  },
-  {
-   "data": "2026-11-07",
-   "o_que": "A página passou a responder primeiro à pergunta do título, com o que o juro alto muda para quem compra a prazo e os casos desde 2002. A disputa sobre o dólar e o teste das moedas saíram daqui.",
-   "motivo": "Eles tratam da Desconfiança de quem investe, que terá página própria. O teste segue registrado com as mesmas regras e datas e aparece no fato do dia de 4/11."
+   "o_que": "A página passou a responder primeiro à pergunta do título, com o que o juro alto muda para quem compra a prazo e os casos desde 2002. A disputa sobre o dólar saiu daqui.",
+   "motivo": "Ela trata da Desconfiança de quem investe, que terá página própria."
   },
   {
    "data": "2026-11-07",
@@ -314,6 +309,11 @@
    "data": "2026-11-08",
    "o_que": "A página ganhou a parte que explica como o topo mede o juro.",
    "motivo": "Pedido do Pedro em 8/11/2026: uma página para cada pressão do topo, todas no mesmo formato."
+  },
+  {
+   "data": "2026-11-09",
+   "o_que": "O que isso muda para você? passou a dizer o que muda para cada família que a pressão atinge, com o tamanho, o prazo e os dois lados quando um perde e outro ganha.",
+   "motivo": "Decisão do Pedro em 9/11/2026: todo texto termina no que muda na vida de quem lê, com as contas da tabela de tradução do site."
   }
  ]
 }
