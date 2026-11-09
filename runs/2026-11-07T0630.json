@@ -2545,28 +2545,26 @@
   "tipo": "dia",
   "porque": {
    "caderno": [
-    "c2",
-    "c10",
     "c18",
     "c19",
     "c20",
     "c22",
-    "c35"
+    "c102"
    ]
   },
   "ok": true,
   "titulo": "Brasil vende US$ 9,3 bi a mais do que compra, maior outubro desde 1989",
   "paragrafos": [
-   "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou em outubro, o maior saldo para um outubro desde 1989, segundo o Ministério do Desenvolvimento, Indústria, Comércio e Serviços.",
-   "As exportações subiram 20% sobre outubro de 2025, e as importações, 14,8%. O petróleo puxou a alta, com 62,9% mais barris embarcados a um preço 36,7% maior, segundo o Times Brasil.",
-   "Outubro teve a maior entrada de dólares do ano, US$ 18,2 bilhões, e mesmo assim o dólar subiu 4,6% desde o fim de setembro. A explicação provável é a desconfiança de quem investe, que cresceu depois da eleição."
+   "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou em outubro, o maior saldo para o mês desde 1989.",
+   "Pelo Ministério do Desenvolvimento, Indústria e Comércio, as exportações subiram 20% contra outubro de 2025, puxadas por 63% mais barris de petróleo. Mesmo com a maior entrada de dólares do ano, o dólar subiu 4,6% em outubro, porque parece seguir mais a desconfiança de quem investe que o comércio.",
+   "Se ele seguir 2,9% mais caro que um ano antes, uma compra de R$ 100 sobe cerca de R$ 0,30 em um ano, mais nos importados e no combustível."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou em outubro, o maior saldo para um outubro desde 1989, segundo o Ministério do Desenvolvimento, Indústria, Comércio e Serviços.",
-     "As exportações subiram 20% sobre outubro de 2025, e as importações, 14,8%. O petróleo puxou a alta, com 62,9% mais barris embarcados a um preço 36,7% maior, segundo o Times Brasil.",
-     "Outubro teve a maior entrada de dólares do ano, US$ 18,2 bilhões, e mesmo assim o dólar subiu 4,6% desde o fim de setembro. A explicação provável é a desconfiança de quem investe, que cresceu depois da eleição."
+     "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou em outubro, o maior saldo para o mês desde 1989.",
+     "Pelo Ministério do Desenvolvimento, Indústria e Comércio, as exportações subiram 20% contra outubro de 2025, puxadas por 63% mais barris de petróleo. Mesmo com a maior entrada de dólares do ano, o dólar subiu 4,6% em outubro, porque parece seguir mais a desconfiança de quem investe que o comércio.",
+     "Se ele seguir 2,9% mais caro que um ano antes, uma compra de R$ 100 sobe cerca de R$ 0,30 em um ano, mais nos importados e no combustível."
     ]
    }
   ],
@@ -2574,9 +2572,14 @@
   "edicao": {
    "sugestoes": [
     {
-     "trecho": "Brasil vende US$ 9,3 bi a mais do que compra, recorde para outubro",
-     "problema": "Recorde sem a régua da série. O guia pede o recorde como a fonte diz, e a pauta avisa que é o maior saldo para outubro desde 1989, não o maior já registrado. Recortado num print, \"recorde para outubro\" pode ser lido como o maior outubro da história.",
-     "como_fica": "Brasil vende US$ 9,3 bi a mais do que compra, maior outubro desde 1989"
+     "trecho": "Mesmo com a maior entrada de dólares do ano, o dólar subiu 4,6% em outubro, porque parece seguir mais a desconfiança de quem investe que o comércio. Se ele seguir 2,9% mais caro que um ano antes, uma compra de R$ 100 sobe cerca de R$ 0,30 em um ano, mais nos importados e no combustível.",
+     "problema": "O parágrafo tem 55 palavras, e o limite é 50. Cortar palavras tiraria o mês, o prazo ou o porquê, então a frase do dólar passa para o fim do segundo parágrafo.",
+     "como_fica": "A frase \"Mesmo com a maior entrada de dólares do ano, o dólar subiu 4,6% em outubro, porque parece seguir mais a desconfiança de quem investe que o comércio.\" vai para o fim do segundo parágrafo. O terceiro fica só com a frase sobre a compra de R$ 100."
+    },
+    {
+     "trecho": "puxadas por 62,9% mais barris de petróleo",
+     "problema": "Número sem arredondar.",
+     "como_fica": "puxadas por 63% mais barris de petróleo"
     }
    ],
    "aplicada": true
@@ -2586,19 +2589,19 @@
    "testes": {
     "porque": {
      "ok": true,
-     "por_que": "Diz por que o saldo foi recorde com a razão dos dados e com fonte: exportações +20% contra importações +14,8% (Ministério) e petróleo com 62,9% mais barris e preço 36,7% maior (Times Brasil). Não inventa causa, e todos os números estão nas fontes (18,2 arredonda 18,151)."
+     "por_que": "Atribui ao MDIC a alta de 20% das exportações puxada pelo volume de petróleo (62,9% mais barris, arredondado para 63%), e o dólar em alta mesmo com o recorde vem com 'parece', como a leitura provável da fonte."
     },
     "quem": {
      "ok": true,
-     "por_que": "Não há decisão posta em quem só repassa ou sente: o Ministério divulga o dado e a desconfiança fica com quem investe, como nas fontes. Nada mudaria de sentido com outro governo."
+     "por_que": "Não há decisão de ninguém no fato, e nenhuma frase põe governo, Banco Central ou empresas como autores do saldo ou da alta do dólar; o sentido não muda com outro governo."
     },
     "e_dai": {
      "ok": true,
-     "por_que": "Mostra o que o fato muda: a maior entrada de dólares do ano não segurou o dólar, que subiu 4,6%. Chama a desconfiança pós-eleição de 'explicação provável', como a fonte, e não aponta governo nem Banco Central como causa."
+     "por_que": "Diz que o recorde não segurou o dólar, que segue mais a desconfiança de quem investe, com cautela ('parece'). Fecha na vida da leitora com tamanho (R$ 0,30 em R$ 100), prazo (um ano), condição (se a alta de 2,9% não voltar) e para quem (importados e combustível)."
     },
     "livro": {
      "ok": true,
-     "por_que": "Não gasta espaço com o mecanismo geral de balança e câmbio. Tudo é o porquê e o e daí do dia."
+     "por_que": "Não explica como a balança ou o dólar agem nos preços; o espaço vai todo para o fato, o porquê e o e daí do dia."
     }
    },
    "problemas": []
@@ -2607,50 +2610,50 @@
    {
     "etapa": "post",
     "modelo_pedido": "opus",
-    "prompt_sha256": "c895ea46490ef410367944596a96d9fb2818b48dd9ad930d8983412fb1b8772d",
-    "system_sha256": "dbe36a227238045327ee8a85dab6a9140e43b66582cd3e8fc233a1ceda391167",
+    "prompt_sha256": "0e282cc7fcbfadab95c7d662148d987b0d27e7a397216adbc20ac7c3cf1cdae9",
+    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.13682899999999998,
+    "custo_usd": 0.13507059999999999,
+    "turnos": 2,
+    "duracao_s": 37,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "60dce5d7-c23f-4ca9-b7b5-2c075a2b3d91"
+   },
+   {
+    "etapa": "editor",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "74027bb499987d9b1b6f6fdf099c6feb394bda37e0854f421ab15f0e0e349d2a",
+    "system_sha256": "4c7e8c0f33317bc6d454b5ff1a997da9df57cacbbd46c9781db8192f030feaf7",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.3178062,
     "turnos": 2,
     "duracao_s": 36,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "05f03f97-249d-46df-b18b-bbdeba009f78"
-   },
-   {
-    "etapa": "editor",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "3af750345c2cebdde2a06006233d0d99346fa215f4e19cbc5d911f5d4ad1bea1",
-    "system_sha256": "4c7e8c0f33317bc6d454b5ff1a997da9df57cacbbd46c9781db8192f030feaf7",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.2893702,
-    "turnos": 2,
-    "duracao_s": 38,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "af1bc7bd-12f4-4320-8903-e4778917929c"
+    "session_id": "65454735-7cd3-46d2-ab51-6c01753e8183"
    },
    {
     "etapa": "teste",
     "modelo_pedido": "opus",
-    "prompt_sha256": "dc32d10d7e8aea086f1b0274c7af8fe0766db63b3c086acd8b38fe8a55077c95",
-    "system_sha256": "3a46818b654da69617125b188c44394842d2b66dec3047d2077160eb39c2a407",
+    "prompt_sha256": "18f52406c0a99e58b6f3840b8bb527190752a02778d2d8b4e5c7a75fd926e47c",
+    "system_sha256": "ec2846d97f94584650118e7a41a2898f261e7c831f55e498dddb6de838a29151",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.0907068,
+    "custo_usd": 0.0757176,
     "turnos": 2,
-    "duracao_s": 14,
+    "duracao_s": 13,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "9d4ce010-5fde-498e-afd7-30bf32f54664"
+    "session_id": "9f8b4488-3cb5-44db-86a9-6d9a80e6c4b2"
    }
   ],
   "fundo": {
@@ -3035,6 +3038,86 @@
      ],
      "permission_denials": [],
      "session_id": "b445115b-9a9c-40be-b644-acaed8397acd"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "b2abc04ccb308681483384baa8a6a5d75d926488f3149287e9511b64909d2e54",
+     "system_sha256": "6a24d631df6696859a9bd2b0011854ba63812942cedacee451450ccd3de9ae4b",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.419452,
+     "turnos": 2,
+     "duracao_s": 30,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "4aaffdca-4706-4775-8580-d40c0d10dd5c"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "421499ee226a2716026d6884ada776c4b714cd0671f690fb3ad2be6f8b7e2e07",
+     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.705644,
+     "turnos": 2,
+     "duracao_s": 80,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "218b0d05-4a44-4216-8b92-ec713e983eed"
+    },
+    {
+     "etapa": "conferencia",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "a07bd92efa30a9f95709418547e8865564573ee15f7a18013ec48d51267d8317",
+     "system_sha256": "014db32c3a98cfd87cb62417008dbee3bc6c60858da38a9ac3f6069aa3aea5eb",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.336601,
+     "turnos": 3,
+     "duracao_s": 180,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "59632897-5cb0-458f-82c5-8c8656eb5554"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "814f3560c47d48535eb5b322fc8d4c926a87ffc14f24975523de7de116ffcfaf",
+     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.6832612,
+     "turnos": 2,
+     "duracao_s": 49,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "7767f8cc-2af0-4124-b79b-cc6dec0e11cb"
+    },
+    {
+     "etapa": "editor_fundo",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "987046915e71e86c63787b5c9a24dd4676781a708fac47b8abbbf716d53b335c",
+     "system_sha256": "c051e15dfe2ba0240d641e7b2a26a2ab05de7d68718375f6bd3be448f44a878a",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.2053254,
+     "turnos": 2,
+     "duracao_s": 55,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "50552bb9-fdd8-4a79-8ac6-65de6d089504"
     }
    ],
    "contas_ate": "2026-11-06",
@@ -4017,304 +4100,423 @@
       "status": "conferido",
       "saida": "(são 298 meses; mostrando os 150 últimos do intervalo; use --de e --ate)\ndolar_ptax (R$, último valor do mês):\n2014-05: 2,2390\n2014-06: 2,2025\n2014-07: 2,2674\n2014-08: 2,2396\n2014-09: 2,4510\n2014-10: 2,4442\n2014-11: 2,5601\n2014-12: 2,6562\n2015-01: 2,6623\n2015-02: 2,8782\n2015-03: 3,2080\n2015-04: 2,9936\n2015-05: 3,1788\n2015-06: 3,1026\n2015-07: 3,3940\n2015-08: 3,6467\n2015-09: 3,9729\n2015-10: 3,8589\n2015-11: 3,8506\n2015-12: 3,9048\n2016-01: 4,0428\n2016-02: 3,9796\n2016-03: 3,5589\n2016-04: 3,4508\n2016-05: 3,5951\n2016-06: 3,2098\n2016-07: 3,2390\n2016-08: 3,2403\n2016-09: 3,2462\n2016-10: 3,1811\n2016-11: 3,3967\n2016-12: 3,2591\n2017-01: 3,1270\n2017-02: 3,0993\n2017-03: 3,1684\n2017-04: 3,1984\n2017-05: 3,2437\n2017-06: 3,3082\n2017-07: 3,1307\n2017-08: 3,1471\n2017-09: 3,1680\n2017-10: 3,2769\n2017-11: 3,2616\n2017-12: 3,3080\n2018-01: 3,1624\n2018-02: 3,2449\n2018-03: 3,3238\n2018-04: 3,4811\n2018-05: 3,7370\n2018-06: 3,8558\n2018-07: 3,7549\n2018-08: 4,1353\n2018-09: 4,0039\n2018-10: 3,7177\n2018-11: 3,8633\n2018-12: 3,8748\n2019-01: 3,6519\n2019-02: 3,7385\n2019-03: 3,8967\n2019-04: 3,9453\n2019-05: 3,9407\n2019-06: 3,8322\n2019-07: 3,7649\n2019-08: 4,1385\n2019-09: 4,1644\n2019-10: 4,0041\n2019-11: 4,2240\n2019-12: 4,0307\n2020-01: 4,2695\n2020-02: 4,4987\n2020-03: 5,1987\n2020-04: 5,4270\n2020-05: 5,4263\n2020-06: 5,4760\n2020-07: 5,2033\n2020-08: 5,4713\n2020-09: 5,6407\n2020-10: 5,7718\n2020-11: 5,3317\n2020-12: 5,1967\n2021-01: 5,4759\n2021-02: 5,5302\n2021-03: 5,6973\n2021-04: 5,4036\n2021-05: 5,2322\n2021-06: 5,0022\n2021-07: 5,1216\n2021-08: 5,1433\n2021-09: 5,4394\n2021-10: 5,6430\n2021-11: 5,6199\n2021-12: 5,5805\n2022-01: 5,3574\n2022-02: 5,1394\n2022-03: 4,7378\n2022-04: 4,9191\n2022-05: 4,7289\n2022-06: 5,2380\n2022-07: 5,1884\n2022-08: 5,1790\n2022-09: 5,4066\n2022-10: 5,2570\n2022-11: 5,2941\n2022-12: 5,2177\n2023-01: 5,0993\n2023-02: 5,2078\n2023-03: 5,0804\n2023-04: 5,0007\n2023-05: 5,0959\n2023-06: 4,8192\n2023-07: 4,7415\n2023-08: 4,9219\n2023-09: 5,0076\n2023-10: 5,0575\n2023-11: 4,9355\n2023-12: 4,8413\n2024-01: 4,9535\n2024-02: 4,9833\n2024-03: 4,9962\n2024-04: 5,1718\n2024-05: 5,2416\n2024-06: 5,5589\n2024-07: 5,6621\n2024-08: 5,6562\n2024-09: 5,4481\n2024-10: 5,7779\n2024-11: 6,0535\n2024-12: 6,1923\n2025-01: 5,8301\n2025-02: 5,8488\n2025-03: 5,7422\n2025-04: 5,6608\n2025-05: 5,7087\n2025-06: 5,4571\n2025-07: 5,6021\n2025-08: 5,4264\n2025-09: 5,3186\n2025-10: 5,3843\n2025-11: 5,3338\n2025-12: 5,5024\n2026-01: 5,2301\n2026-02: 5,1495\n2026-03: 5,2194\n2026-04: 4,9886\n2026-05: 5,0569\n2026-06: 5,1766\n2026-07: 5,0773\n2026-08: 5,1816\n2026-09: 5,1809\n2026-10: 5,4212\n"
      }
+    },
+    {
+     "id": "c101",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (precos), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz precos",
+     "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 4,96% (último dado de outubro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 104,96 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 4,96% (último dado de outubro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 104,96 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.\n"
+     }
+    },
+    {
+     "id": "c102",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (dolar), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz dolar",
+     "saida": "O dólar foi de R$ 5,3451 em 6/11/2025 para R$ 5,5013 em 6/11/2026: alta de 2,9% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 2,9%, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O dólar foi de R$ 5,3451 em 6/11/2025 para R$ 5,5013 em 6/11/2026: alta de 2,9% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 2,9%, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.\n"
+     }
+    },
+    {
+     "id": "c103",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (credito), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz credito",
+     "saida": "Juro médio do crédito livre às pessoas físicas: 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em set",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Juro médio do crédito livre às pessoas físicas: 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.262 (um ano antes, R$ 1.273).\nJuro médio do financiamento imobiliário com taxas de mercado: 14,20% ao ano em setembro de 2026, contra 14,88% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.142 (um ano antes, R$ 1.149).\nFonte: Banco Central, juro médio das operações de crédito para pessoas físicas, com um a dois meses de atraso. A Selic não passa inteira nem logo para esses juros.\n"
+     }
+    },
+    {
+     "id": "c104",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (guardado), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz guardado",
+     "saida": "Com a Selic em 13,75% ao ano (em 6/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 4,96% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,79 em um ano (8,38% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de outubro de 2026 (0,1616% ao mês), R$ 6,62 no mês, ou cerca de R$ 82,45 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Com a Selic em 13,75% ao ano (em 6/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 4,96% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,79 em um ano (8,38% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de outubro de 2026 (0,1616% ao mês), R$ 6,62 no mês, ou cerca de R$ 82,45 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.\n"
+     }
+    },
+    {
+     "id": "c105",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (minimo), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz minimo",
+     "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda falta(m) 2 mês(es) de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda falta(m) 2 mês(es) de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.\n"
+     }
+    },
+    {
+     "id": "c106",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (renda), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz renda",
+     "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.\n"
+     }
+    },
+    {
+     "id": "c107",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (emprego), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz emprego",
+     "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 ponto(s) a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 ponto(s) a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 ponto(s) a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 ponto(s) a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.\n"
+     }
     }
    ],
    "pressao": "mercado",
    "tese": "Outubro teve a maior entrada de dólares do ano (US$ 18,151 bi, sendo US$ 9,339 bi pelo comércio e US$ 8,812 bi pelo canal financeiro), e mesmo assim o dólar subiu 4,6%. Na semana da eleição entraram US$ 9,498 bi, e o dólar subiu 8,21% em um dia. Hoje o dólar parece andar mais com a desconfiança de quem investe, que cresceu depois da eleição, do que com a balança, e nenhum dado separa quanto disso vem das contas do governo ou da troca de diretores do Banco Central. Por isso o saldo menor que vem com o petróleo mais barato não basta para esperar um dólar bem mais caro até 9/12. A evidência é curta: um mês de fluxo, de uma só fonte, e 5 casos desde 2002.",
-   "duracao_s": 985,
+   "duracao_s": 1353,
    "offline": true,
    "curto": {
-    "porque": "Segundo os dados do Ministério do Desenvolvimento, Indústria, Comércio e Serviços, as exportações cresceram 20% sobre outubro de 2025, e as importações subiram menos, 14,8%. O petróleo puxou a alta: o valor vendido de petróleo bruto subiu 122,6%. Segundo o Times Brasil, isso veio de 62,9% mais barris embarcados e de um preço médio 36,7% maior.",
-    "e_dai": "Outubro teve a maior entrada de dólares do ano, US$ 18,151 bi, e mesmo assim o dólar subiu 4,6%: a leitura mais provável é que ele responde mais à desconfiança de quem investe, que cresceu depois da eleição, que à balança.",
+    "porque": "Pelos dados do MDIC, as exportações subiram 20% em outubro, para US$ 37,81 bilhões, e as importações subiram 14,8%. O petróleo puxou a alta: o valor exportado cresceu 122,6%, mais pelo volume (62,9% mais barris) que pelo preço (36,7% maior).",
+    "e_dai": "Em outubro, com a maior entrada de dólares do ano (US$ 18,151 bi), o dólar subiu 4,6%: pela leitura mais provável, segue mais a desconfiança dos investidores que a balança.",
+    "vida": "O recorde não barateou o dólar, que está em R$ 5,50. Se a alta de 2,9% em 12 meses não voltar, R$ 100 de compras ficam cerca de R$ 0,30 mais caros em um ano, mais nos importados e no combustível.",
+    "familias": [
+     {
+      "familia": "outra",
+      "quem": "quem compra produtos importados e combustível",
+      "o_que_muda": "Com o dólar 2,9% mais caro que um ano antes, o IPCA sobe cerca de 0,3 ponto em 12 meses se essa alta não voltar, e o repasse pesa mais nos importados e no combustível.",
+      "caderno": [
+       "c102",
+       "c36"
+      ]
+     }
+    ],
+    "objetivo": "",
+    "condicao": "",
     "caderno": [
-     "c2",
-     "c10",
      "c18",
      "c19",
      "c20",
      "c22",
-     "c35"
+     "c36",
+     "c102"
     ]
    },
    "tese_corrigida_a_mao": "2026-11-08: a tese e o curto diziam que o dólar 'anda mais com a desconfiança sobre as contas do governo'; o caderno não separa as causas (c10, c35) e o texto publicado já dizia 'desconfiança de quem investe'. Ficou a leitura provável, com as causas que o caderno cita.",
    "rascunho": {
-    "titulo": "O dólar anda com a desconfiança, e o petróleo mais barato sozinho não deve encarecê-lo até dezembro",
-    "texto": "Em outubro, as duas portas de entrada de dólares trouxeram dinheiro ao Brasil. Pelo comércio entraram US$ 9,339 bilhões, e pelo canal financeiro, por onde passam investimentos e empréstimos, entraram US$ 8,812 bilhões [c20]. Se o preço dependesse só de quanto dinheiro chega, o dólar teria ficado mais barato. Mas a cotação de referência do Banco Central (Ptax) foi de R$ 5,1809 no fim de setembro a R$ 5,4212 no fim de outubro [c22].\n\nEsse descompasso sugere que, hoje, o dólar anda mais com a desconfiança de quem investe do que com a balança. Por isso, o saldo comercial menor que deve vir com o petróleo mais barato não basta, sozinho, para esperar um dólar bem mais caro até 9/12. A evidência é curta: um mês de fluxo, de uma fonte só, e 5 casos parecidos desde 2002.\n\n### Na semana da eleição, o dinheiro entrou e o dólar subiu mesmo assim\n\nA semana de 26 a 30 de outubro mostra o choque de perto. Nela entraram US$ 9,498 bilhões, e US$ 3,070 bilhões deles vieram pelo canal financeiro [c21]. Mesmo assim, no primeiro pregão depois do segundo turno de 25/10, o dólar subiu 8,21%, a R$ 5,403, e a Bolsa caiu 13,88% [c10].\n\nUma leitura possível é que o preço reflete o que quem negocia espera do futuro, e não só o dinheiro que já passou pela porta. Se um exportador traz dólares hoje, mas quem investe passa a achar que o real vai valer menos daqui a um ano, cada dólar fica mais disputado. Então o preço sobe antes de qualquer fuga de dinheiro.\n\nO resto do ano reforça essa leitura. Até 30/10, o canal financeiro teve saída de US$ 26,213 bilhões, e o comércio compensou com entrada de US$ 54,956 bilhões [c8]. Ou seja, em 2026 quem segurou o dólar foi a venda de produtos ao exterior, enquanto o dinheiro de investimento saía.\n\nA desconfiança tem dois endereços. Um é o plano para as contas do governo no próximo mandato, que depende do Executivo e do Congresso. O outro é a diretoria do Banco Central, porque o presidente da República vai indicar seis diretores até o fim de 2027, e investidores temem uma diretoria mais disposta a cortar juro com preços subindo [c35].\n\nO sinal mais claro dessa dúvida está no juro de 10 anos, que é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos. Ele foi de 7,9% para 8,1% ao ano do fim de agosto a 5/11 [c36]. Quando quem empresta ao governo cobra mais, é porque confia menos, mas nenhum dado separa quanto da alta do dólar veio dessa dúvida e quanto veio de outros motivos.\n\n### O petróleo mais barato deve encolher o saldo, talvez menos do que parece\n\nO petróleo foi o produto que mais engordou o saldo comercial neste ano. Até agosto, petróleo e derivados responderam por 49,4% do superávit, segundo a Fundação Getulio Vargas [c6]. Em outubro, o petróleo bruto chegou a 22,6% das exportações, contra 12,2% um ano antes [c19].\n\nAgora o preço do barril caiu, por uma causa de fora. O petróleo caiu quase 8% em 2/11 e mais de 8% em 4/11, com a expectativa de negociação de paz entre EUA e Irã [c37]. Já em 7/10, antes dessas quedas, o governo tinha cortado a previsão do saldo de 2026 de US$ 90 bilhões para US$ 84,4 bilhões por causa do petróleo mais barato nas projeções [c7].\n\nUm detalhe pode suavizar o efeito. Em outubro, o Brasil embarcou 62,9% mais petróleo, a um preço médio 36,7% maior [c19]. Como a alta veio mais da quantidade do que do preço, um barril mais barato reduz o ganho, mas os barris a mais continuam saindo. Esse número vem de uma só fonte, um resumo de jornal, e por isso pesa pouco.\n\nSe o saldo encolher, a pergunta é se isso costuma encarecer o dólar. A lógica diz que sim, porque entram menos dólares pelo comércio. O passado, porém, conta outra história.\n\n### Em 4 de 5 quedas fortes das matérias-primas desde 2002, o dólar caiu nos 3 meses seguintes\n\nO Banco Central tem um índice de preços de matérias-primas que o Brasil vende, como soja, minério e petróleo. Desde 2002, esse índice caiu forte em 5 episódios, com quedas entre 16,4% e 38,2% em poucos meses [c27, c31]. Em 4 deles, o dólar ficou mais barato nos 3 meses seguintes.\n\nEm 2022, o índice caiu 20,9% de agosto a outubro [c23], e o dólar caiu 3,0% de outubro de 2022 a janeiro de 2023 [c24]. Na virada de 2015 para 2016, o índice caiu 16,4% [c27], e o dólar caiu 14,6% de janeiro a abril de 2016 [c28].\n\nEm 2008, o índice caiu 38,2% de setembro a dezembro [c31], e o dólar caiu 0,9% nos 3 meses seguintes [c32]. Em 2020, a queda foi de 28,4% de janeiro a abril [c29], e o dólar caiu 4,1% de abril a julho [c30].\n\nEsses dois casos pedem cuidado, porque foram crises mundiais e o dólar já tinha disparado durante a queda. Em 2008, ele foi de R$ 1,6344 em agosto a R$ 2,3370 em dezembro [c38]. Em 2020, foi de R$ 4,2695 em janeiro a R$ 5,4270 em abril [c39]. A queda posterior foi, em parte, uma volta.\n\nA exceção é a que mais lembra hoje, e é a melhor objeção à tese. De outubro de 2014 a janeiro de 2015, o índice caiu 21,8% [c25], e depois o dólar subiu 12,4% de janeiro a abril de 2015 [c26]. Naquela época, a Selic subia de 12,25% para 13,25%, e a dívida do governo, de 57,16% para 59,11% do PIB, com o país entrando em recessão [c33].\n\nEm 2022, a história foi outra. A Selic ficou parada em 13,75%, e a dívida do governo caiu de 73,70% para 71,38% do PIB [c34]. Quem discorda da tese aponta que, hoje, a dívida do governo está de novo no centro da desconfiança, como em 2015, e que foi essa diferença que mudou o final daquela vez.\n\nHá mais duas objeções sérias. O fluxo cambial mede o dinheiro que passa pelos bancos, mas não capta as apostas no dólar futuro, onde boa parte da desconfiança aparece. E, sem o comércio, o dólar talvez tivesse subido ainda mais em outubro. As duas cabem nos dados, e 5 casos mostram um padrão, não uma lei.\n\nO que a conta sugere, então, é uma condição. Se a desconfiança sobre as contas do governo e sobre o Banco Central não crescer, um saldo comercial menor tende a pesar pouco no dólar. Se ela crescer, o caso de 2015 vira o mais parecido, e o dólar pode subir mesmo com o petróleo barato, o que deixaria importados como combustível e peças mais caros.\n\nO site vai acompanhar toda semana o dólar (Ptax) e o juro de 10 anos, além do fluxo cambial que o Banco Central divulga às quartas-feiras, para ver se o canal financeiro volta a ter saída. Na reunião de 9/12, a decisão do juro vai mostrar como o Banco Central lê o dólar mais caro para a inflação. A tese erra se o dólar passar do limite da previsão abaixo com o juro de 10 anos parado.",
-    "previsao": {
-     "texto": "Mesmo com o petróleo mais barato, o dólar (Ptax) não deve passar de R$ 5,78, 5% acima dos R$ 5,50 de 6/11, a não ser que o juro de 10 anos volte a subir.",
-     "quando": "2026-12-09",
-     "como_conferir": "Olhe o dólar (Ptax) e o juro de 10 anos até 9/12, o fluxo cambial que o Banco Central divulga às quartas (canal financeiro) e a decisão do juro de 9/12. Se o dólar passar de R$ 5,78 com o juro de 10 anos parado, a tese erra."
-    }
+    "titulo": "O dólar segue a desconfiança de quem investe, e o petróleo mais barato não deve encarecê-lo tanto",
+    "texto": "Em outubro, entraram no Brasil US$ 18,151 bilhões a mais do que saíram, o maior saldo do ano, e o dinheiro chegou pelas duas portas: US$ 9,339 bilhões pelo comércio e US$ 8,812 bilhões por investimentos e empréstimos [c20]. Mesmo assim, o dólar foi de R$ 5,1809 no fim de setembro para R$ 5,4212 no fim de outubro, uma alta de 4,6% [c22]. Quando o preço sobe com tanta moeda americana entrando, o que manda nele não é quanto dólar chega, e sim quanto quem investe desconfia do Brasil.\n\nIsso muda a leitura do que vem pela frente. O petróleo, que encheu a balança, começou a cair, e o saldo do comércio tende a encolher. Mas, nas cinco vezes desde 2002 em que produtos como petróleo, soja e minério ficaram mais de 15% mais baratos, o dólar caiu nos três meses seguintes em quatro [c23, c24, c25, c26, c27, c28, c29, c30, c31, c32]. Por isso, a balança menor não basta para esperar um dólar bem mais caro até a decisão do Banco Central de 9/12. A evidência é curta: um mês de fluxo e cinco casos, que mostram um padrão, não uma lei.\n\n### O dinheiro entrou, e o dólar subiu mesmo assim\n\nO mês que trouxe a maior entrada de dólares do ano também trouxe a maior alta do dólar em um dia. No primeiro pregão depois do segundo turno de 25/10, o dólar subiu 8,21%, a R$ 5,403, e a Bolsa caiu 13,88% [c10]. Ou seja, havia moeda americana chegando, mas quem comprava dólar aceitou pagar bem mais caro por ela.\n\nO ano inteiro mostra a mesma coisa de outro ângulo. De janeiro até 30/10, o comércio trouxe US$ 54,956 bilhões, enquanto investimentos e empréstimos tiraram US$ 26,213 bilhões do país [c8]. Durante quase todo o ano, foi a venda de produtos que segurou o real, e em outubro até o dinheiro financeiro entrou, o que torna a alta do preço mais difícil de explicar só pela quantidade.\n\nA leitura mais provável é que o preço passou a refletir o medo. No mesmo pregão de 26/10, os juros negociados no mercado deixaram de prever novos cortes da Selic [c10]. Dias depois, em 4/11, o Banco Central parou de cortar o juro e subiu para 5,6% a previsão do IPCA de 2026 [c17]. Quem investe passou a pedir mais para manter dinheiro em reais, porque não sabe como ficarão as contas do governo nem o rumo dos juros.\n\nEssas duas dúvidas têm donos diferentes. O plano para as contas depende do presidente, do ministro da Fazenda e do Congresso, que aprova o Orçamento. O juro é decidido pelo Banco Central. Nenhum dado separa quanto da alta do dólar vem de uma dúvida e quanto vem da outra, e isso é uma leitura, não uma medida.\n\n### O petróleo, que encheu a balança, começou a ficar mais barato\n\nO recorde de outubro tem um motor claro. O petróleo bruto foi 22,6% de tudo o que o Brasil vendeu ao exterior no mês, contra 12,2% um ano antes [c19]. Em 29/10, o barril do tipo Brent fechou a US$ 110,80 [c5]. O índice de matérias-primas do Banco Central estava, em setembro, 32,8% mais alto que um ano antes [c3], o maior valor desde agosto de 2022 [c4].\n\nEsse vento a favor começou a virar. O petróleo caiu quase 8% em 2/11 e mais de 8% em 4/11, com a expectativa de negociação de paz entre Estados Unidos e Irã [c37]. Antes disso, o governo já tinha reduzido a previsão de saldo comercial de 2026 de US$ 90 bilhões para US$ 84,4 bilhões, por causa das projeções de preço do petróleo [c7].\n\nHá uma ressalva a favor da balança. Em outubro, o Brasil embarcou 62,9% mais barris, e o preço médio subiu 36,7% [c19]. Como a quantidade cresceu mais que o preço, parte das vendas não some quando o barril fica mais barato. Esse número vem de uma só reportagem sobre os dados do governo, e por isso ele indica o rumo, sem fechar a conta.\n\n### Em quatro de cinco quedas das matérias-primas, o dólar caiu depois\n\nSe o dólar dependesse só da balança, uma queda forte das matérias-primas deveria encarecê-lo. O passado mostra outra coisa. Em 2022, o índice caiu 20,9% de agosto a outubro [c23], e o dólar caiu 3,0% de outubro a janeiro de 2023 [c24]. No fim de 2015, o índice caiu 16,4% [c27], e o dólar caiu 14,6% de janeiro a abril de 2016 [c28].\n\nOs outros dois casos de queda do dólar pedem cuidado. Em 2020, o índice caiu 28,4% de janeiro a abril [c29], e o dólar caiu 4,1% nos três meses seguintes [c30]. Em 2008, o índice caiu 38,2% de setembro a dezembro [c31], e o dólar caiu 0,9% até março de 2009 [c32]. Nos dois, o dólar já tinha disparado durante a queda: de R$ 1,6344 em agosto para R$ 2,3370 em dezembro de 2008 [c38], e de R$ 4,2695 em janeiro para R$ 5,4270 em abril de 2020 [c39]. Foram crises no mundo todo, e a queda depois foi em parte a volta de um salto.\n\nA melhor objeção está no quinto caso. De outubro de 2014 a janeiro de 2015, o índice caiu 21,8% [c25], e o dólar subiu 12,4% de janeiro a abril de 2015 [c26]. Naqueles meses, o Banco Central subia a Selic de 12,25% para 13,25%, e a dívida do governo passava de 57,16% para 59,11% do PIB [c33]. Em 2022, ao contrário, a Selic ficou parada em 13,75%, e a dívida caiu de 73,70% para 71,38% do PIB [c34].\n\nQuem discorda da tese diz que hoje se parece mais com 2015 que com 2022, porque a dúvida sobre as contas do governo voltou ao centro e o Banco Central parou de cortar com a inflação esperada subindo [c17]. Esse argumento é forte, e ele não contradiz a tese: em 2015, o dólar subiu porque a desconfiança cresceu, e não porque o petróleo caiu. Quem discorda também lembra que, sem o comércio forte de outubro, o dólar talvez tivesse subido ainda mais, e os dados de um mês não deixam descartar isso.\n\nO que enfraqueceria a tese é o dólar subir com força nas próximas semanas sem nenhum sinal novo de desconfiança, como a Bolsa caindo ou os juros de mercado subindo. Aí o comércio voltaria a explicar o preço, e a balança menor pesaria mais do que os cinco casos sugerem.\n\nPara você, a conta do dólar chega pelos preços, e ela pesa sobretudo em quem compra importados e combustível. O dólar foi de R$ 5,3451 em 6/11/2025 para R$ 5,5013 em 6/11/2026, uma alta de 2,9% [c102]. Pelas contas do Banco Central, se essa alta não voltar, o IPCA sobe cerca de 0,3 ponto em 12 meses, com o repasse maior nos importados e na bomba de gasolina [c102]. É uma média de muitos anos, e o próprio Banco Central diz que o repasse muda com o momento da economia [c102].\n\nO que a tese acrescenta é de onde vem o tamanho dessa conta. Se ela estiver certa, os 0,3 ponto crescem ou encolhem menos pelo preço do barril e mais pela desconfiança de quem investe. Essa desconfiança anda com o plano para as contas do governo e com as decisões de juro do Banco Central. Assim, a próxima notícia sobre a balança tende a dizer pouco sobre o dólar, e a próxima notícia sobre as contas tende a dizer muito.\n\nO IBGE divulga a inflação de outubro em 12/11, e o Banco Central decide o juro de novo em 9/12."
    },
    "conferencia": {
     "codigo_antes": {
      "graves": [
-      "bloco 4: número ou data sem linha do caderno que confira: 25/10 | trecho: A semana de 26 a 30 de outubro mostra o choque de perto. Nela entraram US$ 9,498 bilhões, e US$ 3,070 bilhões deles vier",
-      "bloco 11: número ou data sem linha do caderno que confira: 2/11, 4/11, 7/10 | trecho: Agora o preço do barril caiu, por uma causa de fora. O petróleo caiu quase 8% em 2/11 e mais de 8% em 4/11, com a expect"
+      "bloco 4: número ou data sem linha do caderno que confira: 25/10 | trecho: O mês que trouxe a maior entrada de dólares do ano também trouxe a maior alta do dólar em um dia. No primeiro pregão dep",
+      "bloco 6: número ou data sem linha do caderno que confira: 4/11, 26/10 | trecho: A leitura mais provável é que o preço passou a refletir o medo. No mesmo pregão de 26/10, os juros negociados no mercado",
+      "bloco 9: número ou data sem linha do caderno que confira: 29/10 | trecho: O recorde de outubro tem um motor claro. O petróleo bruto foi 22,6% de tudo o que o Brasil vendeu ao exterior no mês, co",
+      "bloco 10: número ou data sem linha do caderno que confira: 2/11, 4/11 | trecho: Esse vento a favor começou a virar. O petróleo caiu quase 8% em 2/11 e mais de 8% em 4/11, com a expectativa de negociaç"
      ],
      "avisos": [
       "c20 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781",
-      "c21 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781",
-      "bloco 1: usa 'pelo canal'",
-      "bloco 4: usa 'pelo canal'",
-      "bloco 12: explica a conta ao leitor",
-      "bloco 23: frase de 36 palavras"
+      "bloco 1: frase de 38 palavras",
+      "bloco 5: frase de 36 palavras",
+      "bloco 16: frase de 38 palavras"
      ],
-     "palavras": 1134,
+     "palavras": 1192,
      "intertitulos": 3
     },
     "ia": {
      "correcoes": [
       {
-       "trecho": "Pelo comércio entraram US$ 9,339 bilhões, e pelo canal financeiro, por onde passam investimentos e empréstimos, entraram US$ 8,812 bilhões [c20].",
+       "trecho": "O dólar segue a desconfiança de quem investe, e o petróleo mais barato não deve encarecê-lo tanto",
+       "tipo": "forca",
+       "problema": "O título dá como fato que o dólar segue a desconfiança. O próprio texto diz que nenhum dado separa as causas, e o fato do dia diz só 'parece seguir'. A previsão do petróleo também está dita com mais firmeza do que cinco casos permitem.",
+       "como_fica": "O dólar parece seguir a desconfiança de quem investe, e o petróleo mais barato pode não encarecê-lo tanto"
+      },
+      {
+       "trecho": "Em outubro, entraram no Brasil US$ 18,151 bilhões a mais do que saíram, o maior saldo do ano, e o dinheiro chegou pelas duas portas: US$ 9,339 bilhões pelo comércio e US$ 8,812 bilhões por investimentos e empréstimos [c20].",
        "tipo": "fonte",
-       "problema": "c20 e c21 vêm do BPMoney, que não está na lista de fontes conhecidas, e o comunicado do Banco Central não foi aberto. Os números de outubro e os da semana de 26 a 30/10 se apoiam só nele.",
-       "como_fica": "Pelo comércio entraram US$ 9,339 bilhões, e pelo canal financeiro, por onde passam investimentos e empréstimos, entraram US$ 8,812 bilhões, segundo dados do Banco Central divulgados pelo BPMoney [c20]."
+       "problema": "c20 vem do BPMoney, site fora da lista de fontes conhecidas, e é um resumo de busca sem o comunicado aberto. O c8 só cobre o ano até 30/10, não outubro. A premissa de abertura fica sem fonte que confira.",
+       "como_fica": "Em outubro, o fluxo cambial foi positivo em US$ 18,151 bilhões, o maior do ano, segundo reportagem sobre dados do Banco Central, com US$ 9,339 bilhões no comércio e US$ 8,812 bilhões no canal financeiro [c20]."
       },
       {
-       "trecho": "o saldo comercial menor que deve vir com o petróleo mais barato",
+       "trecho": "Quando o preço sobe com tanta moeda americana entrando, o que manda nele não é quanto dólar chega, e sim quanto quem investe desconfia do Brasil.",
        "tipo": "forca",
-       "problema": "A linha c7 só diz que o governo cortou a projeção do saldo de 2026. Ela não garante que o saldo de dezembro ou dos próximos meses será menor.",
-       "como_fica": "o saldo comercial menor que o governo projeta com o petróleo mais barato [c7]"
+       "problema": "Afirma causa como fato. Nenhuma linha do caderno mede a desconfiança, e o texto admite adiante que é uma leitura, não uma medida.",
+       "como_fica": "Quando o preço sobe com tanta moeda americana entrando, a leitura mais provável é que ele siga menos o quanto de dólar chega e mais o quanto quem investe desconfia do Brasil."
       },
       {
-       "trecho": "Ou seja, em 2026 quem segurou o dólar foi a venda de produtos ao exterior, enquanto o dinheiro de investimento saía.",
-       "tipo": "forca",
-       "problema": "Põe uma causa (\"segurou o dólar\") onde a linha c8 mostra só os dois fluxos. Nenhuma linha mostra que o comércio impediu uma alta maior.",
-       "como_fica": "Ou seja, em 2026 o comércio trouxe mais dólares do que o canal financeiro tirou, enquanto o dinheiro de investimento saía [c8]."
+       "trecho": "Mas, nas cinco vezes desde 2002 em que produtos como petróleo, soja e minério ficaram mais de 15% mais baratos, o dólar caiu nos três meses seguintes em quatro [c23, c24, c25, c26, c27, c28, c29, c30, c31, c32]. Por isso, a balança menor não basta para esperar um dólar bem mais caro até a decisão do Banco Central de 9/12.",
+       "tipo": "data",
+       "problema": "A data 9/12 não está em nenhuma linha do caderno. Nenhuma linha mostra que as cinco quedas são todas as de mais de 15% desde 2002, e as janelas diferem: a de 2022 durou dois meses, as outras três. O 'Por isso' é mais forte do que cinco casos sustentam.",
+       "como_fica": "Mas, nas cinco quedas de mais de 15% do índice de commodities do Banco Central que o site comparou desde 2002, o dólar caiu nos três meses seguintes em quatro [c23, c24, c25, c26, c27, c28, c29, c30, c31, c32]. Por isso, a balança menor, sozinha, não basta para esperar um dólar bem mais caro nos próximos meses."
       },
       {
-       "trecho": "A desconfiança tem dois endereços. Um é o plano para as contas do governo no próximo mandato, que depende do Executivo e do Congresso.",
-       "tipo": "fonte",
-       "problema": "Nenhuma linha do caderno diz que a desconfiança de quem investe vem do plano fiscal. Só c35 fala do Banco Central. A frase afirma como fato algo que está sem linha.",
-       "como_fica": "A desconfiança pode ter mais de um endereço. Um deles é a diretoria do Banco Central, porque o presidente da República vai indicar seis diretores até o fim de 2027, e investidores temem uma diretoria mais disposta a cortar juro com preços subindo [c35]."
-      },
-      {
-       "trecho": "O sinal mais claro dessa dúvida está no juro de 10 anos, que é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos.",
-       "tipo": "forca",
-       "problema": "c36 diz só \"juro de 10 anos\" e não diz que é acima da inflação. \"O mais claro\" é mais forte do que a linha, e o texto mesmo admite que nenhum dado separa a causa.",
-       "como_fica": "Um sinal possível dessa dúvida está no juro de 10 anos, que é o que o governo paga para pegar dinheiro emprestado por uns 10 anos."
-      },
-      {
-       "trecho": "Quando quem empresta ao governo cobra mais, é porque confia menos, mas nenhum dado separa",
-       "tipo": "forca",
-       "problema": "Dá uma causa única para a alta do juro longo, que também pode vir da inflação esperada ou da Selic. Não há linha que sustente.",
-       "como_fica": "Quando quem empresta ao governo cobra mais, pode ser porque confia menos, mas nenhum dado separa"
-      },
-      {
-       "trecho": "Até agosto, petróleo e derivados responderam por 49,4% do superávit, segundo a Fundação Getulio Vargas [c6].",
+       "trecho": "O mês que trouxe a maior entrada de dólares do ano também trouxe a maior alta do dólar em um dia.",
        "tipo": "numero",
-       "problema": "c6 diz que o saldo de petróleo e derivados foi 49,4% \"do superávit do período\" em agosto. Não diz que é o acumulado do ano, e o texto usa isso para dizer que o petróleo engordou mais o saldo \"neste ano\".",
-       "como_fica": "Em agosto, petróleo e derivados deram saldo equivalente a 49,4% do superávit do período, segundo a Fundação Getulio Vargas [c6]."
+       "problema": "O c10 diz que o dólar subiu 8,21% no primeiro pregão após a eleição. Nenhuma linha diz que foi a maior alta em um dia.",
+       "como_fica": "O mês que trouxe a maior entrada de dólares do ano também trouxe uma alta de 8,21% do dólar em um dia."
       },
       {
-       "trecho": "O petróleo caiu quase 8% em 2/11 e mais de 8% em 4/11, com a expectativa de negociação de paz entre EUA e Irã [c37].",
+       "trecho": "Durante quase todo o ano, foi a venda de produtos que segurou o real, e em outubro até o dinheiro financeiro entrou, o que torna a alta do preço mais difícil de explicar só pela quantidade.",
+       "tipo": "forca",
+       "problema": "'Segurou o real' é causa que nenhuma linha mostra. O c8 só dá os saldos de comércio e de canal financeiro no ano.",
+       "como_fica": "Durante quase todo o ano, o saldo do comércio foi positivo e o do canal financeiro, negativo, e em outubro até o dinheiro financeiro entrou, o que torna a alta do preço mais difícil de explicar só pela quantidade."
+      },
+      {
+       "trecho": "No mesmo pregão de 26/10, os juros negociados no mercado deixaram de prever novos cortes da Selic [c10].",
+       "tipo": "data",
+       "problema": "A data 26/10 não está em nenhuma linha. O c10 diz só 'primeiro pregão após a eleição de 25/10'.",
+       "como_fica": "No mesmo pregão, os juros negociados no mercado deixaram de prever novos cortes da Selic [c10]."
+      },
+      {
+       "trecho": "Quem investe passou a pedir mais para manter dinheiro em reais, porque não sabe como ficarão as contas do governo nem o rumo dos juros.",
+       "tipo": "forca",
+       "problema": "Atribui um motivo a quem investe sem linha que o mostre. O caderno não tem dado sobre as contas do governo.",
+       "como_fica": "Uma leitura possível é que quem investe passou a pedir mais para manter dinheiro em reais, por dúvida sobre as contas do governo e o rumo dos juros; o caderno não mede esse motivo."
+      },
+      {
+       "trecho": "O petróleo caiu quase 8% em 2/11 e mais de 8% em 4/11, com a expectativa de negociação de paz entre Estados Unidos e Irã [c37].",
        "tipo": "numero",
-       "problema": "c5 diz que em 2/11 o Brent caiu mais de 8% na sessão, e c37 diz quase 8%. As duas linhas não batem para o mesmo dia.",
-       "como_fica": "O petróleo caiu cerca de 8% em 2/11 [c5, c37] e mais de 8% em 4/11 [c37], com a expectativa de negociação de paz entre EUA e Irã."
+       "problema": "O c5 diz que em 2/11 o Brent caiu mais de 8%, e o c37 diz quase 8% no mesmo dia. As duas linhas não batem.",
+       "como_fica": "O petróleo caiu cerca de 8% em 2/11 e mais de 8% em 4/11, com a expectativa de negociação de paz entre Estados Unidos e Irã [c37]."
       },
       {
-       "trecho": "um barril mais barato reduz o ganho, mas os barris a mais continuam saindo.",
+       "trecho": "Em outubro, o Brasil embarcou 62,9% mais barris, e o preço médio subiu 36,7% [c19]. Como a quantidade cresceu mais que o preço, parte das vendas não some quando o barril fica mais barato.",
        "tipo": "forca",
-       "problema": "Nenhuma linha diz que o volume embarcado em outubro vai se manter. c19 mostra só o mês passado.",
-       "como_fica": "um barril mais barato reduz o ganho, e o efeito depende de o volume embarcado se manter, o que o dado de outubro não garante."
+       "problema": "O c19 fala em volume, não em barris. Que o volume tenha crescido mais que o preço não mostra que as vendas se mantêm quando o preço cai, e nenhuma linha diz isso.",
+       "como_fica": "Em outubro, o Brasil embarcou 62,9% mais petróleo em volume, e o preço médio subiu 36,7% [c19]. O volume cresceu mais que o preço, mas nenhuma linha diz se esse volume se mantém quando o barril fica mais barato."
       },
       {
-       "trecho": "Desde 2002, esse índice caiu forte em 5 episódios, com quedas entre 16,4% e 38,2% em poucos meses [c27, c31].",
+       "trecho": "Foram crises no mundo todo, e a queda depois foi em parte a volta de um salto.",
        "tipo": "forca",
-       "problema": "Dois dos 5 episódios (2014-15 e 2015-16) são partes da mesma queda de cerca de 49% de junho de 2014 a janeiro de 2016 (c14). Há então 4 quedas separadas, e nenhuma linha diz como os 5 episódios foram escolhidos. O \"4 de 5\" do intertítulo e os \"5 casos\" do texto pesam mais do que a evidência.",
-       "como_fica": "Desde 2002, esse índice caiu forte em 5 recortes, com quedas entre 16,4% e 38,2% em poucos meses [c25, c27, c31]. Dois deles (2014-15 e 2015-16) fazem parte da mesma queda de cerca de 49% de junho de 2014 a janeiro de 2016 [c14], então são 4 quedas separadas."
+       "problema": "Dá uma causa para a queda do dólar e chama os dois episódios de crises no mundo todo, sem linha no caderno. Em 2008 o dólar de março de 2009 ainda estava bem acima do de agosto de 2008 (R$ 1,6344).",
+       "como_fica": "O caderno não explica por que o dólar caiu depois nesses dois casos, e nos dois ele continuou bem acima do nível de antes da queda das commodities [c38, c39]."
       },
       {
-       "trecho": "Esses dois casos pedem cuidado, porque foram crises mundiais e o dólar já tinha disparado durante a queda.",
-       "tipo": "fonte",
-       "problema": "\"Crises mundiais\" não tem linha no caderno. As linhas c38 e c39 mostram só o dólar subindo durante a queda.",
-       "como_fica": "Esses dois casos pedem cuidado, porque o dólar já tinha disparado durante a queda."
-      },
-      {
-       "trecho": "A exceção é a que mais lembra hoje, e é a melhor objeção à tese.",
-       "tipo": "fonte",
-       "problema": "Nenhuma linha mostra que 2015 é o caso que mais lembra hoje. Isso depende de uma situação fiscal atual que o caderno não traz.",
-       "como_fica": "A exceção é a melhor objeção à tese."
-      },
-      {
-       "trecho": "Quem discorda da tese aponta que, hoje, a dívida do governo está de novo no centro da desconfiança, como em 2015, e que foi essa diferença que mudou o final daquela vez.",
+       "trecho": "Quem discorda da tese diz que hoje se parece mais com 2015 que com 2022, porque a dúvida sobre as contas do governo voltou ao centro e o Banco Central parou de cortar com a inflação esperada subindo [c17]. Esse argumento é forte, e ele não contradiz a tese: em 2015, o dólar subiu porque a desconfiança cresceu, e não porque o petróleo caiu.",
        "tipo": "forca",
-       "problema": "Não há linha dizendo que a dívida está hoje no centro da desconfiança. Dois casos (2015 e 2022) também não provam que a dívida foi o que mudou o final.",
-       "como_fica": "Quem discorda da tese pode apontar que, em 2015, a dívida do governo subia, e em 2022 ela caía [c33, c34]. Mas dois casos não mostram que foi essa diferença que mudou o final."
+       "problema": "A dúvida sobre as contas não tem linha citada. A afirmação de que em 2015 o dólar subiu porque a desconfiança cresceu não está no caderno, que traz só 'recessão e problemas internos' (c14). E se hoje lembra 2015, isso contradiz a previsão da tese, não a deixa de pé.",
+       "como_fica": "A melhor objeção é que hoje lembra mais 2015 que 2022, porque o Banco Central parou de cortar com a inflação esperada subindo [c17]. Esse argumento é forte: se for assim, o dólar pode subir mesmo com o petróleo mais barato, e a tese perde. Em 2015, a alta veio junto de recessão e problemas internos [c14], e o caderno não mede a desconfiança."
       },
       {
-       "trecho": "o dólar (Ptax) não deve passar de R$ 5,78, 5% acima dos R$ 5,50 de 6/11",
+       "trecho": "com o repasse maior nos importados e na bomba de gasolina [c102]",
        "tipo": "numero",
-       "problema": "O R$ 5,78 é conta feita à mão e não tem linha de conta no caderno (precisa de src/conta.py calc). O R$ 5,50 de 6/11 é o dólar da linha c36, que não diz ser a Ptax, e o último Ptax do caderno é R$ 5,4212, do fim de outubro. A régua mistura duas medidas.",
-       "como_fica": "o dólar não deve passar de R$ 5,78, 5% acima dos R$ 5,50 de 6/11 [c36], a não ser que o juro de 10 anos volte a subir. (O R$ 5,78 precisa de uma linha de conta no caderno. A conferência pela Ptax também precisa de uma base em Ptax.)"
+       "problema": "O c102 diz 'importados e combustível', não gasolina.",
+       "como_fica": "com o repasse maior nos importados e no combustível [c102]"
+      },
+      {
+       "trecho": "Essa desconfiança anda com o plano para as contas do governo e com as decisões de juro do Banco Central. Assim, a próxima notícia sobre a balança tende a dizer pouco sobre o dólar, e a próxima notícia sobre as contas tende a dizer muito.",
+       "tipo": "forca",
+       "problema": "Dá como fato a ligação da desconfiança com as contas e o juro, sem linha que a mostre, e o texto já disse que nenhum dado separa as causas. A conclusão sobre as próximas notícias é mais forte do que cinco casos permitem.",
+       "como_fica": "Se a tese estiver certa, essa desconfiança pode andar com o plano para as contas do governo e com as decisões de juro do Banco Central, o que o caderno não mede. Assim, a próxima notícia sobre a balança pode dizer pouco sobre o dólar, e a próxima notícia sobre as contas pode dizer mais."
+      },
+      {
+       "trecho": "O IBGE divulga a inflação de outubro em 12/11, e o Banco Central decide o juro de novo em 9/12.",
+       "tipo": "data",
+       "problema": "As datas 12/11 e 9/12 não estão em nenhuma linha do caderno.",
+       "como_fica": ""
       }
      ],
      "graves": [
-      "A tese diz que o dólar anda com a desconfiança, e o texto admite que nenhum dado separa essa causa das outras. A parte fiscal dessa desconfiança, e a objeção de 2015, não têm linha no caderno. A previsão de R$ 5,78 também mistura o dólar comercial com a Ptax e não tem conta."
+      "A tese central, de que o dólar segue a desconfiança e não a balança, não tem medida direta. O texto admite que nenhum dado separa as causas. O título e a abertura a dão como fato.",
+      "Os 'quatro de cinco' medem o dólar só depois do fim da queda das commodities. Em 2008 e 2020 o dólar disparou durante a queda (c38, c39), e em 2015 subiu. A evidência para dizer que o petróleo barato não encarece o dólar é mais fraca do que o título e o 'Por isso' sugerem.",
+      "A premissa de abertura, a maior entrada de dólares do ano em outubro, vem do c20, de site fora da lista de fontes conhecidas e sem o comunicado aberto."
      ],
-     "resumo": "O texto segue o caderno na maior parte: as contas de 2008, 2015, 2016, 2020 e 2022 conferem. Os problemas são três. A premissa fiscal da desconfiança não tem linha. Dois dos 5 casos são a mesma queda das commodities. A previsão de R$ 5,78 mistura o dólar comercial com a Ptax e não tem conta. Há ainda pontos de força: \\\"segurou o dólar\\\", \\\"o sinal mais claro\\\" e \\\"continuam saindo\\\". Os números de c20 e c21 vêm de fonte não confirmada."
+     "resumo": "O texto usa bem o caderno nas contas de 2008, 2015, 2020 e 2022, e traz a objeção e o que desmentiria a tese. Mas dá como fato uma causa que ele mesmo diz não poder medir, atribui motivos a quem investe e a quem discorda sem linha que os mostre, e põe datas (9/12, 12/11, 26/10) fora do caderno. A fonte do fluxo de outubro (c20) não confere. Há 14 correções e 1 frase que sai."
     },
-    "aplicadas": 13,
+    "aplicadas": 15,
     "codigo": {
      "graves": [
-      "bloco 4: número ou data sem linha do caderno que confira: 25/10 | trecho: A semana de 26 a 30 de outubro mostra o choque de perto. Nela entraram US$ 9,498 bilhões, e US$ 3,070 bilhões deles vier",
-      "bloco 11: número ou data sem linha do caderno que confira: 2/11, 4/11, 7/10 | trecho: Agora o preço do barril caiu, por uma causa de fora. O petróleo caiu cerca de 8% em 2/11 e mais de 8% em 4/11, com a exp"
+      "bloco 4: número ou data sem linha do caderno que confira: 25/10 | trecho: O mês que trouxe a maior entrada de dólares do ano também trouxe uma alta de 8,21% do dólar em um dia. No primeiro pregã",
+      "bloco 6: número ou data sem linha do caderno que confira: 4/11 | trecho: A leitura mais provável é que o preço passou a refletir o medo. No mesmo pregão, os juros negociados no mercado deixaram",
+      "bloco 9: número ou data sem linha do caderno que confira: 29/10 | trecho: O recorde de outubro tem um motor claro. O petróleo bruto foi 22,6% de tudo o que o Brasil vendeu ao exterior no mês, co",
+      "bloco 10: número ou data sem linha do caderno que confira: 2/11, 4/11 | trecho: Esse vento a favor começou a virar. O petróleo caiu cerca de 8% em 2/11 e mais de 8% em 4/11, com a expectativa de negoc"
      ],
      "avisos": [
       "c20 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781",
-      "c21 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781",
-      "bloco 1: usa 'pelo canal'",
-      "bloco 4: usa 'pelo canal'",
-      "bloco 12: explica a conta ao leitor",
-      "bloco 12: frase de 36 palavras",
-      "bloco 23: frase de 36 palavras"
+      "bloco 2: jargão que o leitor não conhece",
+      "bloco 5: frase de 39 palavras",
+      "bloco 14: jargão que o leitor não conhece",
+      "bloco 14: parágrafo de 111 palavras"
      ],
-     "palavras": 1191,
+     "palavras": 1207,
      "intertitulos": 3
     },
     "codigo_depois_da_reescrita": {
      "graves": [],
      "avisos": [
       "c20 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781",
-      "c21 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781",
-      "bloco 1: usa 'pelo canal'",
-      "bloco 4: usa 'pelo canal'",
-      "bloco 6: usa 'pelo canal'",
-      "bloco 12: explica a conta ao leitor",
-      "bloco 23: frase de 36 palavras"
+      "bloco 11: expressão de piloto automático",
+      "bloco 19: frase de 41 palavras",
+      "bloco 20: frase de 46 palavras"
      ],
-     "palavras": 1126,
+     "palavras": 1197,
      "intertitulos": 3
     },
     "final": {
      "graves": [],
      "avisos": [
       "c20 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781",
-      "c21 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781",
-      "bloco 12: explica a conta ao leitor"
+      "bloco 2: frase de 37 palavras",
+      "bloco 11: expressão de piloto automático",
+      "bloco 18: frase de 38 palavras"
      ],
-     "palavras": 1126,
+     "palavras": 1210,
      "intertitulos": 3
-    },
-    "reconferencia": {
-     "em": "2026-11-09T05:54:05-03:00",
-     "ruins": [
-      "c21",
-      "c35",
-      "c36",
-      "c6"
-     ],
-     "frases_cortadas": [
-      "Nela entraram US$ 9,498 bilhões, e US$ 3,070 bilhões deles vieram de investimentos e empréstimos.",
-      "Segundo a Folha, o presidente da República vai indicar seis diretores do Banco Central até o fim de 2027, e investidores temem uma diretoria mais disposta a cortar juro mesmo com os preços subindo.",
-      "Ele foi de 7,9% para 8,1% ao ano do fim de agosto até 5/11.",
-      "Em agosto, petróleo e derivados deram um saldo equivalente a 49,4% do superávit do período, segundo a Fundação Getulio Vargas."
-     ],
-     "abertos": 18,
-     "final": {
-      "graves": [],
-      "avisos": [
-       "c20 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781"
-      ],
-      "palavras": 1028,
-      "intertitulos": 3
-     },
-     "ruins_do_fato_do_dia": [
-      "c35"
-     ]
     }
    },
    "edicao": {
     "sugestoes": [
      {
-      "trecho": "o dólar anda mais com a desconfiança de quem investe do que com a balança",
-      "problema": "Palavra de jornal de economia: a leitora não sabe o que é \"balança\"; palavra de conversa.",
-      "como_fica": "o dólar anda mais com a desconfiança de quem investe do que com o comércio (o mesmo no título)."
+      "trecho": "Para você, o dólar chega pelos preços... Pelas contas do Banco Central, se essa alta não voltar, o IPCA sobe cerca de 0,3 ponto em 12 meses, e R$ 100 de compras ficam cerca de R$ 0,30 mais caros, com o repasse maior nos importados e no combustível [c102].",
+      "problema": "Frase de 41 palavras; passa do limite de 30 e carrega duas ideias. 'Repasse' é palavra de economês.",
+      "como_fica": "Duas frases: 'Pelas contas do Banco Central, se essa alta não voltar, o IPCA sobe cerca de 0,3 ponto em 12 meses. Com isso, R$ 100 de compras ficam cerca de R$ 0,30 mais caros, e o aumento chega mais forte nos importados e no combustível [c102].'"
      },
      {
-      "trecho": "Pelo canal financeiro, por onde passam investimentos e empréstimos, entraram US$ 8,812 bilhões",
-      "problema": "\"Canal\" é jargão e se repete; o verificador marcou o uso. Dizer o nome das coisas.",
-      "como_fica": "Pela parte financeira, por onde passam investimentos e empréstimos, entraram US$ 8,812 bilhões."
+      "trecho": "Se ela estiver certa, os 0,3 ponto devem crescer ou encolher menos com o preço do barril e mais com a desconfiança de quem investe, que parece andar junto com o plano para as contas do governo e com as decisões de juro do Banco Central.",
+      "problema": "Frase de 46 palavras, difícil de seguir no celular.",
+      "como_fica": "Três frases: 'Se a tese estiver certa, esses 0,3 ponto vão mudar menos com o preço do barril e mais com a desconfiança de quem investe. Essa desconfiança parece andar junto com o plano para as contas do governo e com as decisões de juro do Banco Central. Nesse caso, a próxima notícia sobre o comércio deve dizer pouco sobre o dólar...'"
      },
      {
-      "trecho": "e US$ 3,070 bilhões deles vieram pelo canal financeiro",
-      "problema": "\"Canal financeiro\" repetido; frase tem de se entender sozinha.",
-      "como_fica": "e US$ 3,070 bilhões deles vieram de investimentos e empréstimos."
+      "trecho": "Uma ressalva pesa a favor da balança. ... e por isso mostra o rumo sem fechar a conta.",
+      "problema": "Expressões de piloto automático ('pesa a favor', 'fechar a conta') e frase pouco concreta.",
+      "como_fica": "'Um dado ainda sustenta o comércio.' e '... e por isso dá só uma ideia do rumo, sem o tamanho exato.'"
      },
      {
-      "trecho": "saíram US$ 26,213 bilhões pelo canal financeiro",
-      "problema": "\"Canal financeiro\" repetido, apontado pelo verificador.",
-      "como_fica": "saíram US$ 26,213 bilhões pela parte financeira."
+      "trecho": "o fluxo cambial do Brasil foi positivo em US$ 18,151 bilhões",
+      "problema": "Economês ('fluxo cambial'); a leitora não sabe o que significa.",
+      "como_fica": "'entraram no Brasil US$ 18,151 bilhões a mais em dólares do que saíram'"
      },
      {
-      "trecho": "no primeiro pregão depois do segundo turno",
-      "problema": "Palavra de jornal de economia.",
-      "como_fica": "no primeiro dia de negociação depois do segundo turno"
+      "trecho": "os juros negociados no mercado deixaram de prever novos cortes da Selic",
+      "problema": "'O mercado' não é uma pessoa; o guia manda dizer quem: bancos, fundos e empresas.",
+      "como_fica": "'os juros negociados entre bancos e fundos deixaram de indicar novos cortes da Selic' (e igual na objeção final)."
      },
      {
-      "trecho": "um mês de fluxo, de uma fonte só",
-      "problema": "\"Fluxo\" solto não se entende sozinho.",
-      "como_fica": "um mês de entrada de dólares, de uma fonte só"
+      "trecho": "contra 12,2% um ano antes; 32,8% mais alto que um ano antes",
+      "problema": "Comparação sem o mês; a leitora tem de fazer a conta.",
+      "como_fica": "'contra 12,2% em outubro do ano passado'; '32,8% mais alto que em setembro do ano passado'."
      },
      {
-      "trecho": "Em outubro, o Brasil embarcou 62,9% mais petróleo, a um preço médio 36,7% maior que um ano antes [c19]. Como a alta veio mais da quantidade que do preço, um barril mais barato reduz o ganho sem apagá-lo",
-      "problema": "Explica a conta ao leitor e o \"um ano antes\" fica longe do primeiro número; a causa vem em frase ligada, sem aula.",
-      "como_fica": "Em outubro, o Brasil embarcou 62,9% mais petróleo que um ano antes, a um preço médio 36,7% maior. Por isso, um barril mais barato reduz o ganho sem apagá-lo, desde que o volume embarcado se mantenha."
+      "trecho": "No primeiro pregão depois do segundo turno",
+      "problema": "Palavra de jornal de economia ('pregão').",
+      "como_fica": "'No primeiro dia de negociação depois do segundo turno'"
      },
      {
-      "trecho": "Se o saldo encolher, entram menos dólares pelo comércio, e a lógica diria que o dólar fica mais caro. O passado conta uma história diferente.",
-      "problema": "Frases curtas empilhadas; devem ser ligadas.",
-      "como_fica": "Se o saldo encolher, entram menos dólares pelo comércio, e a lógica diria que o dólar fica mais caro, mas o passado conta uma história diferente."
+      "trecho": "Nos dois casos, o dólar disparou durante a queda",
+      "problema": "Palavra de alarme ('disparou').",
+      "como_fica": "'o dólar subiu muito durante a queda'"
      },
      {
-      "trecho": "nos 3 meses seguintes [c32]",
-      "problema": "Comparação sem o mês: \"3 meses seguintes\" obriga a fazer a conta.",
-      "como_fica": "o dólar caiu 0,9% nos 3 meses depois de dezembro"
+      "trecho": "Portanto, os cinco casos não mostram que o petróleo barato deixa o dólar parado. Eles mostram que, em quatro vezes... Cinco casos mostram um padrão, e não uma lei.",
+      "problema": "Contraste cortado e troca em espelho ('não mostram... mostram'; 'um padrão, e não uma lei').",
+      "como_fica": "'Portanto, os cinco casos não provam que o petróleo barato deixa o dólar parado. Em quatro deles, o dólar não continuou subindo depois que as matérias-primas pararam de cair, e em dois ele subiu enquanto elas caíam. Cinco casos são poucos para chamar de regra.'"
      },
      {
-      "trecho": "O site vai acompanhar toda semana o dólar (Ptax) e o juro de 10 anos, além do fluxo cambial que o Banco Central divulga às quartas-feiras, para ver se o canal financeiro volta a ter saída.",
-      "problema": "Frase de 36 palavras (limite 30) e \"canal financeiro\" de novo.",
-      "como_fica": "Duas frases: o site acompanha o dólar (Ptax) e o juro de 10 anos; vai olhar também o fluxo cambial que o Banco Central divulga às quartas-feiras, para ver se a parte financeira volta a ter saída."
+      "trecho": "o petróleo, que encheu a balança; a balança menor; a balança importa sim, só que estava escondida; a balança explica pouco (título)",
+      "problema": "'Balança' solta é economês; o texto deve dizer comércio. No título, 'entrou dólar e o dólar subiu' também não se entende sozinho.",
+      "como_fica": "Título: 'Mesmo com mais dólares entrando em outubro, o dólar subiu, e o comércio explica pouco o preço agora'; no texto, 'comércio' no lugar de 'balança'."
      },
      {
-      "trecho": "A conta do fim de novembro vai mostrar",
-      "problema": "\"Conta\" confunde: o que sai é um dado.",
-      "como_fica": "O dado do fim de novembro vai mostrar"
+      "trecho": "Isso é uma leitura, e não uma medida. Nenhum dado separa as causas da alta, o fluxo é de um mês só...",
+      "problema": "Frases curtas empilhadas e contraste cortado; a razão deve vir ligada.",
+      "como_fica": "'Isso é uma leitura, e não uma medida, porque nenhum dado separa as causas da alta, o fluxo é de um mês só e de uma única fonte...'"
+     },
+     {
+      "trecho": "Esse vento a favor começou a mudar.",
+      "problema": "Imagem vaga de jornal; não diz a favor de quem.",
+      "como_fica": "'Esse movimento a favor do Brasil começou a mudar.'"
      }
     ],
     "aplicada": true
    },
-   "titulo": "O dólar anda mais com a desconfiança que com o comércio, e o petróleo barato sozinho não deve encarecê-lo",
-   "texto": "Em outubro, as duas portas de entrada de dólares trouxeram dinheiro ao Brasil. Pelo comércio entraram US$ 9,339 bilhões. Pela parte financeira, por onde passam investimentos e empréstimos, entraram US$ 8,812 bilhões [c20]. Se o preço dependesse só do dinheiro que chega, o dólar teria ficado mais barato. Mas a cotação de referência do Banco Central (Ptax) foi de R$ 5,1809 no fim de setembro para R$ 5,4212 no fim de outubro [c22].\n\nEsse descompasso sugere que, hoje, o dólar anda mais com a desconfiança de quem investe do que com o comércio. Por isso, o saldo comercial menor que o governo já espera com o petróleo mais barato [c7] não basta, sozinho, para esperar um dólar bem mais caro nas próximas semanas. A evidência é curta: um mês de entrada de dólares, de uma fonte só, e 5 casos parecidos desde 2002.\n\n### Na semana da eleição, o dinheiro entrou e o dólar subiu mesmo assim\n\nA semana de 26 a 30 de outubro mostra o choque de perto. Mesmo assim, no primeiro dia de negociação depois do segundo turno, o dólar subiu 8,21%, a R$ 5,403, e a Bolsa caiu 13,88% [c10].\n\nUma leitura possível é que o preço reflete o que quem negocia espera do futuro, e não só o dinheiro que já entrou. Se um exportador traz dólares hoje, mas quem investe passa a achar que o real vai valer menos daqui a um ano, mais gente quer ficar com dólar. Então o preço sobe antes de qualquer fuga de dinheiro.\n\nO resto do ano mostra o mesmo desenho. Até o fim de outubro, saíram US$ 26,213 bilhões pela parte financeira, e o comércio compensou com entrada de US$ 54,956 bilhões [c8]. Em 2026, quem segurou a entrada de dólares foi o comércio, enquanto o dinheiro de investimento saía [c8].\n\nOs jornais apontam pelo menos um motivo para essa desconfiança. Também pode haver dúvida sobre as contas do governo, que dependem do Executivo e do Congresso, mas essa parte não tem medida própria nos números de outubro.\n\nO sinal mais próximo dessa dúvida está no juro de 10 anos, que é o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos. Quando quem empresta ao governo cobra mais, pode ser porque confia menos, mas nenhum dado separa quanto da alta do dólar veio de cada motivo.\n\n### O petróleo mais barato deve encolher o saldo, talvez menos do que parece\n\nO petróleo foi o produto que mais engordou o saldo comercial neste ano. Em outubro, o petróleo bruto chegou a 22,6% das exportações, contra 12,2% um ano antes [c19].\n\nAgora o preço do barril caiu, por uma causa de fora. No começo de novembro, o petróleo caiu quase 8% em um dia e mais de 8% em outro, com a expectativa de negociação de paz entre EUA e Irã [c37]. Já em outubro, antes dessas quedas, o governo tinha cortado a previsão do saldo de 2026 de US$ 90 bilhões para US$ 84,4 bilhões, por causa das projeções de petróleo mais barato [c7].\n\nUm detalhe pode suavizar o efeito. Em outubro, o Brasil embarcou 62,9% mais petróleo que um ano antes, a um preço médio 36,7% maior [c19]. Por isso, um barril mais barato reduz o ganho sem apagá-lo, desde que o volume embarcado se mantenha. Esse dado vem de uma reportagem só, a do Times Brasil.\n\nSe o saldo encolher, entram menos dólares pelo comércio, e a lógica diria que o dólar fica mais caro, mas o passado conta uma história diferente.\n\n### Em 4 de 5 quedas fortes das matérias-primas desde 2002, o dólar caiu nos 3 meses seguintes\n\nO Banco Central tem um índice de preços das matérias-primas que o Brasil vende, como soja, minério e petróleo. Desde 2002, esse índice caiu forte em 5 momentos, com quedas entre 16,4% e 38,2% em poucos meses [c27, c31]. Dois desses momentos fazem parte da mesma descida longa, de cerca de 49% entre junho de 2014 e janeiro de 2016 [c14].\n\nEm 2022, o índice caiu 20,9% de agosto a outubro [c23], e o dólar caiu 3,0% de outubro de 2022 a janeiro de 2023 [c24]. Na virada de 2015 para 2016, o índice caiu 16,4% [c27], e o dólar caiu 14,6% de janeiro a abril de 2016 [c28].\n\nEm 2008, o índice caiu 38,2% de setembro a dezembro [c31], e o dólar caiu 0,9% nos 3 meses depois de dezembro [c32]. Em 2020, a queda foi de 28,4% de janeiro a abril [c29], e o dólar caiu 4,1% de abril a julho [c30].\n\nEsses dois casos pedem cuidado, porque foram crises mundiais e o dólar já tinha disparado durante a queda. Em 2008, ele foi de R$ 1,6344 em agosto a R$ 2,3370 em dezembro [c38]. Em 2020, foi de R$ 4,2695 em janeiro a R$ 5,4270 em abril [c39]. A queda seguinte foi, em parte, uma volta.\n\nA exceção é a melhor objeção à tese. De outubro de 2014 a janeiro de 2015, o índice caiu 21,8% [c25], e depois o dólar subiu 12,4% de janeiro a abril de 2015 [c26]. Naqueles meses, a Selic subiu de 12,25% para 13,25%, e a dívida do governo foi de 57,16% para 59,11% do PIB [c33].\n\nEm 2022, a Selic ficou parada em 13,75%, e a dívida do governo caiu de 73,70% para 71,38% do PIB [c34]. Quem discorda da tese diria que a diferença entre 2015 e 2022 foi a confiança nas contas do governo. Pode ser, mas dois casos não provam que foi essa diferença que mudou o final.\n\nHá mais duas objeções sérias. O fluxo cambial mede o dinheiro que passa pelos bancos, mas não capta as apostas no dólar futuro, onde boa parte da desconfiança aparece. E, sem o comércio, o dólar talvez tivesse subido ainda mais em outubro. As duas cabem nos dados, e 5 casos mostram um padrão, não uma lei.\n\nO que sobra é uma condição. Se a desconfiança de quem investe não crescer, um saldo comercial menor tende a pesar pouco no dólar. Se ela crescer, 2015 vira o caso mais parecido, e o dólar pode subir mesmo com o petróleo barato, o que deixaria mais caros importados como combustível e peças.\n\nPor isso, nas próximas semanas, a desconfiança de quem investe diz mais sobre o dólar do que o saldo do comércio. O fluxo cambial que o Banco Central divulga às quartas-feiras mostra se a parte financeira volta a ter saída. Na reunião de 9/12, a decisão do juro mostra como o Banco Central lê o dólar mais caro para a inflação.",
-   "duracao_escrever_s": 253,
-   "texto_corrigido_a_mao": "2026-11-08: 'endereço claro' era mais forte que o caderno (c35, uma reportagem): virou motivo apontado pelos jornais, com a fonte; tirado o bastidor da busca ('resumo de jornal').",
-   "revisao_manual": [
-    {
-     "em": "2026-11-08",
-     "o_que": "tirada a previsão com data e as frases em que o site prometia conferir ou acompanhar depois (decisão do Pedro em 8/11/2026: o site faz a análise do fato e para aí)",
-     "trocas": [
-      {
-       "antes": "O site vai acompanhar toda semana o dólar (Ptax) e o juro de 10 anos. Vai olhar também o fluxo cambial que o Banco Central divulga às quartas-feiras, para ver se a parte financeira volta a ter saída. O dado do fim de novembro vai mostrar se o dólar subiu menos que os 4,6% de outubro [c22]. Na reunião de 9/12, a decisão do juro vai mostrar como o Banco Central lê o dólar mais caro para a inflação.",
-       "depois": "Por isso, nas próximas semanas, a desconfiança de quem investe diz mais sobre o dólar do que o saldo do comércio. O fluxo cambial que o Banco Central divulga às quartas-feiras mostra se a parte financeira volta a ter saída. Na reunião de 9/12, a decisão do juro mostra como o Banco Central lê o dólar mais caro para a inflação."
-      }
-     ]
-    }
-   ],
-   "fontes_abertas": true
+   "titulo": "Mesmo com mais dólares entrando em outubro, o dólar subiu, e o comércio explica pouco o preço agora",
+   "texto": "Em outubro, entraram no Brasil US$ 18,151 bilhões a mais em dólares do que saíram, o maior valor do ano. Esse número vem dos dados do Banco Central, publicados numa reportagem, e somou US$ 9,339 bilhões pelo comércio e US$ 8,812 bilhões por investimentos e empréstimos [c20]. No mesmo mês, o dólar foi de R$ 5,1809 no fim de setembro para R$ 5,4212 no fim de outubro, uma alta de 4,6% [c22].\n\nQuando o preço sobe com tanta moeda americana entrando, a explicação provável é que o dólar esteja seguindo menos a quantidade que chega e mais a desconfiança de quem investe. Se for isso, o petróleo mais barato, que deve encolher o saldo do comércio, não basta sozinho para esperar um dólar bem mais caro. Isso é uma leitura, e não uma medida, porque nenhum dado separa as causas da alta, o fluxo é de um mês só e de uma única fonte, e o passado, como se verá adiante, ajuda pouco.\n\n### O dinheiro entrou, e o dólar subiu mesmo assim\n\nO choque mais claro veio logo depois da eleição. No primeiro dia de negociação depois do segundo turno, o dólar subiu 8,21%, a R$ 5,403, e a Bolsa caiu 13,88% [c10]. A moeda americana continuava chegando, mas quem comprava dólar aceitou pagar bem mais caro por ela.\n\nO ano inteiro mostra a mesma coisa por outro ângulo. De janeiro até 30/10, o comércio trouxe US$ 54,956 bilhões, enquanto investimentos e empréstimos tiraram US$ 26,213 bilhões do país [c8]. Em outubro, até o dinheiro dos investimentos entrou, e isso torna a alta do preço ainda mais difícil de explicar só pela quantidade de dólares.\n\nO que mudou foi o que se esperava do Brasil. No mesmo dia do salto, os juros negociados entre bancos e fundos deixaram de indicar novos cortes da Selic [c10]. Dias depois, o Banco Central parou de cortar o juro e subiu para 5,6% a previsão do IPCA de 2026 [c17]. Uma explicação possível é que quem investe passou a pedir mais para manter dinheiro em reais, por dúvida sobre as contas do governo e sobre o rumo dos juros.\n\nEssas duas dúvidas dependem de gente diferente. O plano para as contas depende do presidente, do ministro da Fazenda e do Congresso, que aprova o Orçamento. O juro é decidido pelo Banco Central. Nenhum dado mostra quanto da alta do dólar vem de cada dúvida, nem quanto vem delas e quanto vem de outras causas.\n\n### O petróleo, que encheu os cofres do comércio, começou a ficar mais barato\n\nO recorde do comércio em outubro foi puxado pelo petróleo. O petróleo bruto foi 22,6% de tudo o que o Brasil vendeu ao exterior no mês, contra 12,2% em outubro do ano passado [c19]. No fim de outubro, o barril do tipo Brent chegou a fechar a US$ 110,80 [c5]. O índice de matérias-primas do Banco Central estava, em setembro, 32,8% mais alto que em setembro do ano passado [c3], o maior valor desde agosto de 2022 [c4].\n\nEsse movimento a favor do Brasil começou a mudar. Na primeira semana de novembro, o petróleo caiu quase 8% num dia e mais de 8% em outro, com a expectativa de uma negociação de paz entre Estados Unidos e Irã [c37]. Antes disso, o governo já tinha baixado a previsão do saldo comercial de 2026 de US$ 90 bilhões para US$ 84,4 bilhões, por causa das projeções para o preço do petróleo [c7].\n\nUm dado ainda sustenta o comércio. Em outubro, o Brasil embarcou 62,9% mais petróleo, e o preço médio subiu 36,7% [c19], o que quer dizer que o volume cresceu mais que o preço. Não se sabe se esse volume se mantém com o barril mais barato. Além disso, o número vem de uma só reportagem sobre os dados do governo, e por isso dá só uma ideia do rumo, sem o tamanho exato.\n\n### O passado mostra o dólar caindo depois da queda das matérias-primas, mas nem sempre durante\n\nDesde 2002, o índice de matérias-primas do Banco Central caiu mais de 15% em cinco episódios. Nos três meses depois do fim de cada queda, o dólar caiu em quatro. Em 2022, o índice caiu 20,9% de agosto a outubro [c23], e o dólar caiu 3,0% de outubro a janeiro de 2023 [c24]. No fim de 2015, o índice caiu 16,4% [c27], e o dólar caiu 14,6% de janeiro a abril de 2016 [c28].\n\nEsse placar mede só o que veio depois, e é aí que a evidência fica mais fraca. Em 2020, o índice caiu 28,4% de janeiro a abril [c29], e em 2008 caiu 38,2% de setembro a dezembro [c31]. Nos dois casos, o dólar subiu muito durante a queda, de R$ 1,6344 em agosto para R$ 2,3370 em dezembro de 2008 [c38] e de R$ 4,2695 em janeiro para R$ 5,4270 em abril de 2020 [c39]. Só depois ele caiu um pouco, 0,9% até março de 2009 [c32] e 4,1% até julho de 2020 [c30], e continuou bem acima do nível de antes [c38, c39].\n\nPortanto, os cinco casos não provam que o petróleo barato deixa o dólar parado. Em quatro deles, o dólar não continuou subindo depois que as matérias-primas pararam de cair, e em dois ele subiu enquanto elas caíam. Cinco casos são poucos para chamar de regra.\n\nA melhor objeção está no quinto caso. De outubro de 2014 a janeiro de 2015, o índice caiu 21,8% [c25], e o dólar subiu 12,4% de janeiro a abril de 2015 [c26]. Naqueles meses, o Banco Central subia a Selic de 12,25% para 13,25%, e a dívida do governo passava de 57,16% para 59,11% do PIB [c33]. A alta veio junto com recessão e problemas internos [c14].\n\nEm 2022, a situação era outra. A Selic ficou parada em 13,75%, e a dívida caiu de 73,70% para 71,38% do PIB [c34]. Quem discorda da tese diz que hoje o Brasil lembra mais 2015 que 2022, porque o Banco Central parou de cortar com a inflação esperada subindo [c17]. Se for assim, o petróleo mais barato e a desconfiança podem empurrar o dólar para o mesmo lado, e o saldo menor do comércio passaria a pesar mais.\n\nHá uma segunda objeção, também séria. Sem o comércio forte de outubro, o dólar talvez tivesse subido ainda mais, e um mês de dados não deixa descartar isso. Nesse caso, o comércio pesa, e a desconfiança escondia o efeito dele. A tese perde força se o dólar subir com força sem nenhum sinal novo de desconfiança, como a Bolsa caindo ou os juros negociados entre bancos e fundos subindo, porque aí o comércio voltaria a explicar o preço.\n\nPara você, o dólar chega pelos preços, e pesa mais em quem compra importados e combustível. O dólar foi de R$ 5,3451 em 6/11/2025 para R$ 5,5013 em 6/11/2026, uma alta de 2,9% [c102]. Pelas contas do Banco Central, se essa alta não voltar, o IPCA sobe cerca de 0,3 ponto em 12 meses. Com isso, R$ 100 de compras ficam cerca de R$ 0,30 mais caros, e o aumento chega mais forte nos importados e no combustível [c102]. É uma média de muitos anos, e o próprio Banco Central diz que o efeito muda com o momento da economia [c102].\n\nSe a tese estiver certa, esses 0,3 ponto vão mudar menos com o preço do barril e mais com a desconfiança de quem investe. Essa desconfiança parece andar junto com o plano para as contas do governo e com as decisões de juro do Banco Central. Nesse caso, a próxima notícia sobre o comércio deve dizer pouco sobre o dólar, e a próxima sobre as contas do governo deve dizer mais.",
+   "duracao_escrever_s": 368,
+   "notas_da_versao_anterior": {
+    "texto_corrigido_a_mao": "2026-11-08: 'endereço claro' era mais forte que o caderno (c35, uma reportagem): virou motivo apontado pelos jornais, com a fonte; tirado o bastidor da busca ('resumo de jornal').",
+    "revisao_manual": [
+     {
+      "em": "2026-11-08",
+      "o_que": "tirada a previsão com data e as frases em que o site prometia conferir ou acompanhar depois (decisão do Pedro em 8/11/2026: o site faz a análise do fato e para aí)",
+      "trocas": [
+       {
+        "antes": "O site vai acompanhar toda semana o dólar (Ptax) e o juro de 10 anos. Vai olhar também o fluxo cambial que o Banco Central divulga às quartas-feiras, para ver se a parte financeira volta a ter saída. O dado do fim de novembro vai mostrar se o dólar subiu menos que os 4,6% de outubro [c22]. Na reunião de 9/12, a decisão do juro vai mostrar como o Banco Central lê o dólar mais caro para a inflação.",
+        "depois": "Por isso, nas próximas semanas, a desconfiança de quem investe diz mais sobre o dólar do que o saldo do comércio. O fluxo cambial que o Banco Central divulga às quartas-feiras mostra se a parte financeira volta a ter saída. Na reunião de 9/12, a decisão do juro mostra como o Banco Central lê o dólar mais caro para a inflação."
+       }
+      ]
+     }
+    ]
+   },
+   "texto_corrigido_a_mao": "2026-11-09: saiu a fórmula 'importa sim'."
   },
   "termina_em": "mercado",
+  "pergunta": "dolar-alto",
   "versao_anterior": {
-   "titulo": "Brasil vende US$ 9,3 bi a mais do que compra, recorde para outubro",
+   "titulo": "Brasil vende US$ 9,3 bi a mais do que compra, maior outubro desde 1989",
    "paragrafos": [
-    "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou de outros países em outubro, o maior saldo para outubro desde 1989. O saldo cresceu 39% se compararmos com outubro de 2025.",
-    "As exportações subiram 20%, puxadas pelo petróleo e pelo minério a preços altos. Essa entrada de dólares ajuda a segurar a moeda americana, que ficou 7,8% mais cara que no começo de agosto e encarece importados como peças e combustível.",
-    "Esses preços são decididos lá fora, e o petróleo caiu quase 8% num só dia de novembro, por isso o saldo de outubro pode não se repetir."
-   ],
-   "revisao_manual": "2026-11-07: refeito com a pauta nova do fato do dia, a pedido do Pedro: os degraus escolhem o fato padrão (src/pauta.py) e a IA editora só sai dele por um motivo da carta editorial (CARTA_EDITORIAL.md); a escolha fica em pauta. Mesmo programa da atualização (src/escreve_post.py: redator, editor e verificador), com os dados desta rodada. O texto que tinha a escada de porquês ficou em versao_escada; o do dia, em versao_anterior. 2026-11-07, depois da conferência das fontes no Mac: saiu 'o petróleo ficou 13% mais barato na semana', número que veio da nota da editora e não de uma notícia ou dado; entrou a queda de quase 8% de 2/11, que tem fonte."
+    "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou em outubro, o maior saldo para um outubro desde 1989, segundo o Ministério do Desenvolvimento, Indústria, Comércio e Serviços.",
+    "As exportações subiram 20% sobre outubro de 2025, e as importações, 14,8%. O petróleo puxou a alta, com 62,9% mais barris embarcados a um preço 36,7% maior, segundo o Times Brasil.",
+    "Outubro teve a maior entrada de dólares do ano, US$ 18,2 bilhões, e mesmo assim o dólar subiu 4,6% desde o fim de setembro. A explicação provável é a desconfiança de quem investe, que cresceu depois da eleição."
+   ]
   },
-  "revisao_manual": "2026-11-08: refeito a pedido do Pedro (fato do dia com o porquê): a pesquisa do dia, a mesma da leitura a fundo, passa ao redator o porquê e o e daí (curto do editor-chefe, refeito da pesquisa gravada com fundo.py --curto); regra do \"quem decidiu\"; teste do porquê; Opus no post, no editor e no teste. Mesmo programa da atualização (src/escreve_post.py), com os dados desta rodada. O texto anterior ficou em versao_anterior.",
-  "pergunta": "dolar-alto"
+  "revisao_manual": "2026-11-08: refeito a pedido do Pedro (fato do dia com o porquê): a pesquisa do dia, a mesma da leitura a fundo, passa ao redator o porquê e o e daí (curto do editor-chefe, refeito da pesquisa gravada com fundo.py --curto); regra do \"quem decidiu\"; teste do porquê; Opus no post, no editor e no teste. Mesmo programa da atualização (src/escreve_post.py), com os dados desta rodada. O texto anterior ficou em versao_anterior. 2026-11-09: refeito a pedido do Pedro (o fato do dia termina na vida de quem lê, com o tamanho da tabela de tradução, TRADUCAO.md): curto do editor-chefe refeito da pesquisa gravada, com as traduções do dia (src/conta.py traduz), e post pelo mesmo programa da atualização (src/escreve_post.py), com os mesmos dados. A leitura a fundo foi escrita de novo da mesma pesquisa (fundo.py --escreve), com as famílias de referência que o fato atinge; as correções à mão de 8/11 (bastidor e promessas de conferir depois) não voltaram, e a conferência das fontes no Mac (--reconfere) roda de novo."
  },
  "pauta": {
   "versao": 1,
@@ -4332,6 +4534,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Bancos e gestoras passam a esperar preços subindo mais rápido e economia quase parada em 2027, e a Genoa fala em recessão, o que leva empresas e famílias a adiar compras e investimentos.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "precos",
+     "quem": "quem faz compras do mês e depende do emprego, se os preços subirem mais e a economia parar em 2027"
+    },
     "n_manchetes": 2,
     "jornais": [
      "Folha",
@@ -4366,6 +4573,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "As exportações subiram 20% em outubro, puxadas por petróleo e minério, e a entrada de dólares ajuda a segurar a moeda americana e a sustentar a produção.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
     "n_manchetes": 7,
     "jornais": [
      "Agência Brasil",
@@ -4428,6 +4640,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Com o emprego forte nos EUA, o mercado vê 80% de chance de o banco central de lá subir os juros, o que tira dinheiro de países como o Brasil e pressiona o dólar aqui.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
     "n_manchetes": 4,
     "jornais": [
      "Folha",
@@ -4475,6 +4692,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "A queda das empresas de inteligência artificial lá fora deixa os investidores mais medrosos, e eles tiram dinheiro de bolsas de países emergentes como o Brasil.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
     "n_manchetes": 6,
     "jornais": [
      "Folha",
@@ -4533,6 +4755,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "O juro que o governo paga para pegar dinheiro emprestado caiu com os sinais sobre as contas, o que alivia o custo do crédito, mas o dólar subiu 1,54% na semana.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
     "n_manchetes": 8,
     "jornais": [
      "Agência Brasil",
@@ -4583,6 +4810,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "O presidente repete o compromisso com as contas e dá os primeiros sinais de ajuste, mas sem medidas, e diz que investimento pode justificar mais dívida.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
     "n_manchetes": 7,
     "jornais": [
      "Estadão",
@@ -4645,6 +4877,11 @@
     "lado": "alivia",
     "ja_esperado": true,
     "porque": "A cobrança, que venceria em 7 de novembro, segue trazendo dinheiro para o governo enquanto o petróleo está caro por causa do conflito no Oriente Médio.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
     "n_manchetes": 5,
     "jornais": [
      "Estadão",
@@ -4700,6 +4937,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Governadores e prefeitos poderiam trocar dívidas nos últimos 120 dias de mandato, o que abre espaço para empurrar a conta para o próximo gestor e afrouxa as contas dos estados.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
     "n_manchetes": 1,
     "jornais": [
      "Poder360"

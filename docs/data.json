@@ -239,6 +239,36 @@
    }
   },
   {
+   "id": "renda",
+   "nome": "Renda",
+   "na_soma": false,
+   "lado": "melhorou",
+   "medidas": {
+    "renda": {
+     "agora": 3790.0,
+     "dia": "2026-09-01",
+     "ref": "2026-09",
+     "antes": 3753.0,
+     "dia_antes": "2026-06-01",
+     "ref_antes": "2026-06",
+     "mudanca": 0.9859,
+     "corte": 0.8883,
+     "lado": -1,
+     "como": "pct"
+    }
+   },
+   "folga": {
+    "serie": "rendimento_real",
+    "valor": 3790.0,
+    "ref": "2026-09",
+    "desde": "2012",
+    "meses": 175,
+    "pior_que_pct": 1,
+    "recorde_ruim": false,
+    "recorde_bom": false
+   }
+  },
+  {
    "id": "reservas",
    "nome": "Reservas em dólar",
    "na_soma": false,
@@ -275,7 +305,7 @@
  },
  "post_do_dia": {
   "tipo": "Fato do dia",
-  "titulo": "Petróleo reabre em leve queda mesmo com ataques perto de Ormuz",
+  "titulo": "Petróleo abre em leve queda mesmo com ataques a navios perto de Ormuz",
   "url": "https://vaidarcrise.com.br/2026-11-09/",
   "escrito_por_llm": true
  }

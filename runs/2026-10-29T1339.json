@@ -2163,16 +2163,16 @@
   "ok": true,
   "titulo": "Dólar sobe 8,2% e Bolsa cai 13,9% no dia seguinte à eleição",
   "paragrafos": [
-   "O dólar subiu 8,2% e a Bolsa caiu 13,9% no dia seguinte à reeleição do presidente. Com o dólar a R$ 5,34, 4,4% mais caro que no fim de julho, os importados ficam mais caros, como peças e combustível.",
-   "O governo paga 7,9% ao ano acima da inflação para pegar dinheiro emprestado por 10 anos, 0,6 ponto acima do normal dos últimos 3 anos. Por isso, os bancos cobram mais das pessoas e das empresas nos empréstimos longos, como o da casa própria.",
-   "Há duas leituras para a reação de quem investe: exagerou no susto da eleição, ou desconfia das contas do governo."
+   "O dólar subiu 8,2% e a Bolsa caiu 13,9% no dia seguinte à reeleição do presidente. Há duas leituras: quem investe exagerou no susto da eleição, ou desconfia das contas do governo.",
+   "O governo paga 7,9% ao ano acima da inflação quando pega emprestado por 10 anos, 0,6 ponto acima do normal dos últimos 3 anos. Por isso, os bancos cobram mais no crédito longo, como o da casa própria.",
+   "Se o dólar seguir 4,4% acima do fim de julho, R$ 100 de compras sobem cerca de R$ 0,40 em um ano, pelas contas do Banco Central, mais nos importados."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "O dólar subiu 8,2% e a Bolsa caiu 13,9% no dia seguinte à reeleição do presidente. Com o dólar a R$ 5,34, 4,4% mais caro que no fim de julho, os importados ficam mais caros, como peças e combustível.",
-     "O governo paga 7,9% ao ano acima da inflação para pegar dinheiro emprestado por 10 anos, 0,6 ponto acima do normal dos últimos 3 anos. Por isso, os bancos cobram mais das pessoas e das empresas nos empréstimos longos, como o da casa própria.",
-     "Há duas leituras para a reação de quem investe: exagerou no susto da eleição, ou desconfia das contas do governo."
+     "O dólar subiu 8,2% e a Bolsa caiu 13,9% no dia seguinte à reeleição do presidente. Há duas leituras: quem investe exagerou no susto da eleição, ou desconfia das contas do governo.",
+     "O governo paga 7,9% ao ano acima da inflação quando pega emprestado por 10 anos, 0,6 ponto acima do normal dos últimos 3 anos. Por isso, os bancos cobram mais no crédito longo, como o da casa própria.",
+     "Se o dólar seguir 4,4% acima do fim de julho, R$ 100 de compras sobem cerca de R$ 0,40 em um ano, pelas contas do Banco Central, mais nos importados."
     ]
    }
   ],
@@ -2231,6 +2231,14 @@
    }
   ],
   "escrito_em": "2026-11-01T18:50:00-03:00",
-  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-10-31: tirada a frase sobre o dólar ficar fora da conta, porque o dólar passou a contar na direção do risco. 2026-11-01, à noite: refeito pelo mesmo programa no jeito de escrever novo, a pedido do Pedro: frases ligadas em vez de empilhadas, sem definir PIB, IPCA, Selic e Focus (o site liga esses termos à Wikipédia) e com o \"e daí\" de cada fato. Mesmos números e datas. 2026-11-01, mais tarde: refeito pelo redator e pelo editor novo (src/edita_texto.py), a pedido do Pedro: comparação com o mês (e não \"contra 3 meses antes\"), importados no lugar de \"o que vem de fora\", sigla por extenso ou com link e quem paga o quê. As sugestões do editor estão em edicao. Mesmos números e datas. Correções à mão, sem mudar número: \"Por isso, os bancos cobram mais das pessoas e das \" → \"Por isso, os bancos cobram mais das pessoas e das empresas n\"."
+  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-10-31: tirada a frase sobre o dólar ficar fora da conta, porque o dólar passou a contar na direção do risco. 2026-11-01, à noite: refeito pelo mesmo programa no jeito de escrever novo, a pedido do Pedro: frases ligadas em vez de empilhadas, sem definir PIB, IPCA, Selic e Focus (o site liga esses termos à Wikipédia) e com o \"e daí\" de cada fato. Mesmos números e datas. 2026-11-01, mais tarde: refeito pelo redator e pelo editor novo (src/edita_texto.py), a pedido do Pedro: comparação com o mês (e não \"contra 3 meses antes\"), importados no lugar de \"o que vem de fora\", sigla por extenso ou com link e quem paga o quê. As sugestões do editor estão em edicao. Mesmos números e datas. Correções à mão, sem mudar número: \"Por isso, os bancos cobram mais das pessoas e das \" → \"Por isso, os bancos cobram mais das pessoas e das empresas n\". 2026-11-09: à mão, a pedido do Pedro (o fato do dia termina na vida de quem lê, com o tamanho da tabela de tradução, TRADUCAO.md): o mesmo fato, com os mesmos números e datas, e a última frase com a conta do site (src/conta.py traduz) no lugar da direção sozinha.",
+  "versao_anterior": {
+   "titulo": "Dólar sobe 8,2% e Bolsa cai 13,9% no dia seguinte à eleição",
+   "paragrafos": [
+    "O dólar subiu 8,2% e a Bolsa caiu 13,9% no dia seguinte à reeleição do presidente. Com o dólar a R$ 5,34, 4,4% mais caro que no fim de julho, os importados ficam mais caros, como peças e combustível.",
+    "O governo paga 7,9% ao ano acima da inflação para pegar dinheiro emprestado por 10 anos, 0,6 ponto acima do normal dos últimos 3 anos. Por isso, os bancos cobram mais das pessoas e das empresas nos empréstimos longos, como o da casa própria.",
+    "Há duas leituras para a reação de quem investe: exagerou no susto da eleição, ou desconfia das contas do governo."
+   ]
+  }
  }
 }

@@ -1209,6 +1209,35 @@
      }
     },
     {
+     "id": "renda",
+     "lado": -1,
+     "na_soma": false,
+     "medidas": {
+      "renda": {
+       "agora": 3790.0,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 3753.0,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 0.9858779642952342,
+       "corte": 0.8882999999999999,
+       "lado": -1,
+       "como": "pct"
+      }
+     },
+     "folga": {
+      "serie": "rendimento_real",
+      "valor": 3790.0,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
      "id": "reservas",
      "lado": 0,
      "na_soma": false,
@@ -2475,6 +2504,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "O presidente falou em preocupação com a dívida, mas citou programas sociais que elevam o gasto e não disse como fará o ajuste. Sem medidas concretas, a dúvida sobre as contas e sobre o juro longo continua.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
     "n_manchetes": 8,
     "jornais": [
      "Estadão",
@@ -2535,6 +2569,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "O mercado teme que o governo tente baixar a Selic sem ajustar as contas e influencie o Banco Central. Se o temor crescer, o juro que o governo paga para se financiar sobe, e o crédito encarece para empresas e famílias.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
     "n_manchetes": 8,
     "jornais": [
      "Estadão",
@@ -2590,6 +2629,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Menos dias de trabalho por semana elevam o custo das empresas, sobretudo em comércio e serviços, que podem contratar menos. O Supremo Tribunal Federal faz audiência na terça-feira sobre o calendário da mudança.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "emprego",
+     "quem": "quem trabalha seis dias por semana no comércio e nos serviços"
+    },
     "n_manchetes": 3,
     "jornais": [
      "Valor"
@@ -2629,6 +2673,11 @@
     "lado": "pesa",
     "ja_esperado": true,
     "porque": "O petróleo segue caro lá fora por causa do conflito na região, e isso pressiona combustíveis e preços no Brasil. O Iraque diz ter chegado a um entendimento com os EUA para exportar por Ormuz, o que alivia um pouco a oferta.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "precos",
+     "quem": "quem abastece o carro e paga por frete e transporte"
+    },
     "n_manchetes": 3,
     "jornais": [
      "Folha",
@@ -2663,6 +2712,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "A China é a maior compradora de soja do Brasil. Se produzir mais em casa, o país exporta menos para lá, e o agronegócio perde receita nos próximos anos.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "renda",
+     "quem": "produtores de soja e quem trabalha no agronegócio exportador"
+    },
     "n_manchetes": 2,
     "jornais": [
      "Estadão",
@@ -2697,6 +2751,11 @@
     "lado": "pesa",
     "ja_esperado": true,
     "porque": "Bancos e consultorias projetam crescimento baixo e preços ainda altos em 2027. Com o juro alto e a atividade fraca, a economia fica mais perto de dois trimestres de queda do PIB.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
     "n_manchetes": 1,
     "jornais": [
      "Gazeta do Povo"
@@ -2775,22 +2834,25 @@
   "porque": {
    "caderno": [
     "c1",
-    "c2"
+    "c17",
+    "c13",
+    "c2",
+    "c19",
+    "c20",
+    "c21"
    ]
   },
   "ok": true,
-  "titulo": "Petróleo reabre em leve queda mesmo com ataques perto de Ormuz",
+  "titulo": "Petróleo abre em leve queda mesmo com ataques a navios perto de Ormuz",
   "paragrafos": [
-   "Segundo a Folha, o petróleo reabriu em leve queda, mesmo com ataques a navios perto de Ormuz. Ele segue caro pelo conflito na região, o que pressiona combustíveis e preços no Brasil.",
-   "Segundo o Valor, o ministro do Petróleo iraquiano disse ter chegado a um entendimento com os EUA para exportar por Ormuz. Ainda é só uma declaração e, se virar acordo, põe um pouco mais de petróleo à venda.",
-   "O diesel no posto não depende só do barril, porque conta também a ajuda de R$ 2,12 por litro que a Fazenda prorrogou por 30 dias no fim de outubro."
+   "O petróleo reabriu em leve queda lá fora, mesmo com ataques a navios perto de Ormuz, segundo a Folha. Ao Valor, um ministro do Iraque disse que o país se entendeu com os EUA para exportar por Ormuz, o que ainda é declaração, e não acordo fechado.",
+   "O barril em queda não baixa a bomba sozinho, porque, pela Abicom, no fim de outubro o diesel da Petrobras custava R$ 3,53 por litro menos que o importado. Por isso nada muda hoje no posto, onde o preço depende da Petrobras e da ajuda do governo ao diesel, renovada por 30 dias."
   ],
   "secoes": [
    {
     "paragrafos": [
-     "Segundo a Folha, o petróleo reabriu em leve queda, mesmo com ataques a navios perto de Ormuz. Ele segue caro pelo conflito na região, o que pressiona combustíveis e preços no Brasil.",
-     "Segundo o Valor, o ministro do Petróleo iraquiano disse ter chegado a um entendimento com os EUA para exportar por Ormuz. Ainda é só uma declaração e, se virar acordo, põe um pouco mais de petróleo à venda.",
-     "O diesel no posto não depende só do barril, porque conta também a ajuda de R$ 2,12 por litro que a Fazenda prorrogou por 30 dias no fim de outubro."
+     "O petróleo reabriu em leve queda lá fora, mesmo com ataques a navios perto de Ormuz, segundo a Folha. Ao Valor, um ministro do Iraque disse que o país se entendeu com os EUA para exportar por Ormuz, o que ainda é declaração, e não acordo fechado.",
+     "O barril em queda não baixa a bomba sozinho, porque, pela Abicom, no fim de outubro o diesel da Petrobras custava R$ 3,53 por litro menos que o importado. Por isso nada muda hoje no posto, onde o preço depende da Petrobras e da ajuda do governo ao diesel, renovada por 30 dias."
     ]
    }
   ],
@@ -2798,98 +2860,149 @@
   "edicao": {
    "sugestoes": [
     {
-     "trecho": "Segundo a Folha, a cotação do petróleo reabriu em leve queda, mesmo com ataques a navios perto de Ormuz, mas segue cara por causa do conflito na região. Com o petróleo caro lá fora, os combustíveis e outros preços no Brasil ficam pressionados.",
-     "problema": "Texto acima de 100 palavras. A segunda frase repete \"petróleo caro\" em vez de se ligar à anterior com \"o que\".",
-     "como_fica": "Segundo a Folha, o petróleo reabriu em leve queda, mesmo com ataques a navios perto de Ormuz. Ele segue caro pelo conflito na região, o que pressiona combustíveis e preços no Brasil."
+     "trecho": "pela Abicom",
+     "problema": "Sigla que a leitora não conhece, sem o nome por extenso nem link.",
+     "como_fica": "pela associação dos importadores de combustíveis (Abicom)"
     },
     {
-     "trecho": "Por enquanto é uma declaração, não um acordo fechado, e só aliviaria um pouco a oferta se virasse acordo.",
-     "problema": "\"Oferta\" é palavra de jornal de economia. A frase diz \"acordo\" duas vezes e usa contraste cortado.",
-     "como_fica": "Ainda é só uma declaração e, se virar acordo, põe um pouco mais de petróleo à venda."
-    },
-    {
-     "trecho": "a subvenção de R$ 2,12 por litro",
-     "problema": "\"Subvenção\" é termo técnico que a leitora não conhece.",
-     "como_fica": "a ajuda de R$ 2,12 por litro"
-    },
-    {
-     "trecho": "No posto, o preço do diesel não depende só do barril, porque também conta",
-     "problema": "Palavras que só pesam, num texto que precisa caber em 100 palavras.",
-     "como_fica": "O diesel no posto não depende só do barril, porque conta também"
+     "trecho": "da ajuda do governo ao diesel, renovada por 30 dias",
+     "problema": "A frase não diz quem renovou nem quando. Quem decidiu tem de ser o sujeito, e a data da decisão está nos dados.",
+     "como_fica": "da ajuda ao diesel, que o governo renovou por 30 dias em 27/10"
     }
    ],
-   "aplicada": true
+   "aplicada": false,
+   "motivo": "o texto editado tinha mais problemas que o rascunho: número ou data que não está nos dados: 27/10 (use só os números dos dados, sem recalcular); parágrafo 2 com frase de 34 palavras; fato do dia com 108 palavras (até 100): corte o que não é o fato, sem mudar os números; número ou data que não está nos dados: 27/10 (use só os números dos dados, sem recalcular)"
   },
   "teste": {
-   "ok": true,
+   "ok": false,
    "testes": {
     "porque": {
      "ok": true,
-     "por_que": "Diz que o petróleo segue caro pelo conflito, como está no 'por quê' do fato, e traz o entendimento do Iraque como o ministro o disse, sem dizer que ele causou a queda. Não aparece causa nem número que não esteja nos dados."
+     "por_que": "A Folha não diz o que puxou a queda, e o texto também não inventa uma causa: conta a queda apesar dos ataques e põe a fala do ministro iraquiano no nome dele, como declaração."
     },
     "quem": {
      "ok": true,
-     "por_que": "Cada ato tem o autor certo: o ministro iraquiano é quem declara o entendimento, e a Fazenda é quem prorroga a subvenção, como diz a portaria de 27/10. Ninguém aparece como autor de uma decisão que é de outro."
+     "por_que": "Cada ação tem o autor certo: o ministro do Iraque declarou, a Petrobras define o preço do diesel e o governo renovou a subvenção, e nada disso mudaria de sentido com outro governo."
     },
     "e_dai": {
-     "ok": true,
-     "por_que": "Diz o que muda para ela: o barril caro pressiona combustíveis e preços, mas o diesel no posto depende também da subvenção. Isso está preso aos dados, não julga a decisão e trata o entendimento como declaração, não como acordo."
+     "ok": false,
+     "por_que": "O texto não liga o fato ao risco de recessão (combustível caro empurra a inflação esperada, hoje acima do teto da meta) e deixa de fora o tamanho e o prazo que o bloco traz para a vida da leitora."
     },
     "livro": {
      "ok": true,
-     "por_que": "Não gasta espaço com mecanismo geral. A única oração desse tipo ('põe um pouco mais de petróleo à venda') explica o efeito do entendimento, que é o porquê do dia."
+     "por_que": "A única oração de mecanismo, a do barril que não baixa a bomba sozinho, serve ao e daí do dia e vem presa ao número da Abicom."
     }
    },
-   "problemas": []
+   "problemas": [
+    "Falta dizer o que o fato quer dizer para o risco de recessão. Depois de 'O barril em queda não baixa a bomba sozinho', ponha uma frase dizendo que o petróleo segue caro por causa do conflito e pressiona combustíveis e preços no Brasil, quando os bancos (Focus) já esperam inflação de 5,0% em 12 meses, acima do teto da meta de 4,5%.",
+    "'renovada por 30 dias' não diz o prazo. Diga que a Fazenda renovou a subvenção de R$ 2,12 por litro em 27/10, por 30 dias, para a leitora saber até quando vale o 'nada muda hoje'.",
+    "O texto termina em 'nada muda hoje no posto' e deixa de fora o tamanho que o bloco dá. Acrescente o exemplo: se a gasolina subir 10%, isso soma cerca de 0,47 ponto ao IPCA. Avise que a conta usa o peso da gasolina de 2023."
+   ],
+   "reescrita_recusada": {
+    "testes": {
+     "porque": {
+      "ok": true,
+      "por_que": "O texto conta a leve queda mesmo com os ataques e a fala do ministro iraquiano ao Valor sem dizer o que puxou a queda, e a Folha também não diz."
+     },
+     "quem": {
+      "ok": true,
+      "por_que": "Cada ação está com quem a fez: o ministro do Iraque fala do entendimento, a Fazenda renova a subvenção e os bancos do Focus fazem a previsão."
+     },
+     "e_dai": {
+      "ok": false,
+      "por_que": "O texto troca o porquê da bomba pelo conflito, que não está no bloco, deixa de fora a defasagem de R$ 3,53 e a Petrobras e põe a inflação do Focus solta, sem ligar o petróleo ao risco."
+     },
+     "livro": {
+      "ok": true,
+      "por_que": "Não há explicação geral de como o petróleo age nos preços tomando o espaço do porquê do dia."
+     }
+    },
+    "problemas_verificador": [
+     "número ou data que não está nos dados: 27/10, 2023 (use só os números dos dados, sem recalcular)",
+     "número ou data que não está nos dados: 27/10, 2023 (use só os números dos dados, sem recalcular)"
+    ]
+   }
   },
   "meta": [
    {
     "etapa": "post",
     "modelo_pedido": "opus",
-    "prompt_sha256": "c8f0bd23af9435a4bfc4885e114f12462e82cc533b59b9ba15d29ee0529d299b",
-    "system_sha256": "7a1b27229d62aca6396815798c8fbf5f18213f57f46e66ce22db3bc179cf932c",
+    "prompt_sha256": "53f9a2ee93cfbc528c273b00402cd3a900dab822701225708c662852b9f44cee",
+    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.14879599999999998,
+    "custo_usd": 0.10748260000000001,
     "turnos": 2,
-    "duracao_s": 21,
+    "duracao_s": 28,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "5f192ad4-99aa-4b13-90b9-8dc8d102e408"
+    "session_id": "22e801f4-2436-4ad7-8a68-0b7b20d4f3a4"
    },
    {
     "etapa": "editor",
     "modelo_pedido": "opus",
-    "prompt_sha256": "df15f0931ef654d2df2ca257020c54354f61a64a9bd6f0795a5678dc2f0f73e1",
+    "prompt_sha256": "d8e0a78f6bd4da41354848842de58b54335c9ab170b355626ecfa87a043dc407",
     "system_sha256": "4c7e8c0f33317bc6d454b5ff1a997da9df57cacbbd46c9781db8192f030feaf7",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.304828,
+    "custo_usd": 0.2598822,
     "turnos": 2,
-    "duracao_s": 31,
+    "duracao_s": 18,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "c03e4d21-dea8-45a8-a0f1-4d7943e84b39"
+    "session_id": "2a362456-691a-4609-bb8f-ddd0ef244d6c"
    },
    {
     "etapa": "teste",
     "modelo_pedido": "opus",
-    "prompt_sha256": "b89320c2c18b72e150f232e2358610dd53d0c3168052db86c67be8e36bf10868",
-    "system_sha256": "b23e7fe606b25bc07b60b951d7b0b87d3d3bf78dd91387195dcc0d9b711ccbc2",
+    "prompt_sha256": "e26d506927531f38b048c76dc360fbafad38c937b78f2a6641675a161c0c53d7",
+    "system_sha256": "ec2846d97f94584650118e7a41a2898f261e7c831f55e498dddb6de838a29151",
     "returncode": 0,
     "is_error": false,
-    "custo_usd": 0.094728,
+    "custo_usd": 0.0751136,
     "turnos": 2,
-    "duracao_s": 12,
+    "duracao_s": 16,
     "modelos": [
      "claude-opus-5-5"
     ],
     "permission_denials": [],
-    "session_id": "9bfb617e-c7b7-4519-a6fc-ceb8c35d25d2"
+    "session_id": "44d048a8-43b9-409c-84fe-be2ae77d74b5"
+   },
+   {
+    "etapa": "post",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "ed2163efaea8cb74992ae4017161e7980fd72dfb20627fb3e96e80f80d73034b",
+    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.23934260000000002,
+    "turnos": 2,
+    "duracao_s": 78,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "2590322f-4c9a-4515-8632-ffdab9f3a02e"
+   },
+   {
+    "etapa": "teste",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "ac6712e33ca58c86aa7acc9d958dc12a7b9ab752344dfe4709f05d7eaa00d23c",
+    "system_sha256": "ec2846d97f94584650118e7a41a2898f261e7c831f55e498dddb6de838a29151",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.07928160000000001,
+    "turnos": 2,
+    "duracao_s": 17,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "c87b6ce5-a148-4121-9837-b4d1b673f659"
    }
   ],
   "fundo": {
@@ -3093,6 +3206,22 @@
      ],
      "permission_denials": [],
      "session_id": "c9826ec3-64b6-4948-893b-614ef39557d8"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "18c2b5db562e9c7976192a192b0c2d598cbbb676cbc1dfd4e732aa359962ca26",
+     "system_sha256": "6a24d631df6696859a9bd2b0011854ba63812942cedacee451450ccd3de9ae4b",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.306332,
+     "turnos": 2,
+     "duracao_s": 25,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "a800095b-9123-4acf-98db-c04203faea67"
     }
    ],
    "offline": false,
@@ -3634,25 +3763,167 @@
       "status": "conferido",
       "fonte_conhecida": false
      }
+    },
+    {
+     "id": "c101",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (precos), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz precos",
+     "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 4,96% (último dado de outubro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 104,96 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 4,96% (último dado de outubro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 104,96 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.\n"
+     }
+    },
+    {
+     "id": "c102",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (dolar), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz dolar",
+     "saida": "O dólar foi de R$ 5,3451 em 6/11/2025 para R$ 5,5013 em 6/11/2026: alta de 2,9% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 2,9%, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O dólar foi de R$ 5,3451 em 6/11/2025 para R$ 5,5013 em 6/11/2026: alta de 2,9% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 2,9%, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.\n"
+     }
+    },
+    {
+     "id": "c103",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (credito), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz credito",
+     "saida": "Juro médio do crédito livre às pessoas físicas: 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em set",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Juro médio do crédito livre às pessoas físicas: 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.262 (um ano antes, R$ 1.273).\nJuro médio do financiamento imobiliário com taxas de mercado: 14,20% ao ano em setembro de 2026, contra 14,88% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.142 (um ano antes, R$ 1.149).\nFonte: Banco Central, juro médio das operações de crédito para pessoas físicas, com um a dois meses de atraso. A Selic não passa inteira nem logo para esses juros.\n"
+     }
+    },
+    {
+     "id": "c104",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (guardado), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz guardado",
+     "saida": "Com a Selic em 13,75% ao ano (em 9/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 4,96% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,79 em um ano (8,38% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de novembro de 2026 (0,1196% ao mês), R$ 6,20 no mês, ou cerca de R$ 77,02 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Com a Selic em 13,75% ao ano (em 9/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 4,96% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,79 em um ano (8,38% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de novembro de 2026 (0,1196% ao mês), R$ 6,20 no mês, ou cerca de R$ 77,02 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.\n"
+     }
+    },
+    {
+     "id": "c105",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (minimo), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz minimo",
+     "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda falta(m) 2 mês(es) de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda falta(m) 2 mês(es) de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.\n"
+     }
+    },
+    {
+     "id": "c106",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (renda), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz renda",
+     "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.\n"
+     }
+    },
+    {
+     "id": "c107",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (emprego), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz emprego",
+     "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 ponto(s) a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 ponto(s) a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 ponto(s) a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 ponto(s) a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.\n"
+     }
     }
    ],
    "duracao_pensar_s": 349,
    "duracao_s": 349,
    "curto": {
-    "porque": "Segundo a Folha, a cotação do petróleo reabriu em leve queda mesmo com os ataques a navios perto de Ormuz. Segundo o Valor, o ministro do Petróleo do Iraque disse ter chegado a um entendimento com os EUA para exportar por Ormuz, o que, se virar acordo, alivia um pouco a oferta.",
-    "e_dai": "No Brasil, o preço do diesel na bomba depende também da subvenção que o governo prorrogou no fim de outubro, e não só do barril lá fora.",
+    "porque": "Segundo a Folha, a cotação do petróleo reabriu em leve queda mesmo com ataques a navios perto de Ormuz. A reportagem não diz o que puxou a queda. Ao Valor, um ministro do Iraque disse que o país chegou a um entendimento com os Estados Unidos para exportar por Ormuz. Na semana passada, o Valor atribuiu uma queda de mais de 8% do barril à expectativa de fim do conflito no Irã.",
+    "e_dai": "O barril mais calmo não baixa a bomba sozinho: no fim de outubro, pela Abicom, o diesel da Petrobras estava R$ 3,53 por litro abaixo do preço de importação.",
+    "vida": "Nada muda hoje na bomba, porque o preço depende da Petrobras e da subvenção ao diesel, renovada por 30 dias em 27/10; exemplo: gasolina 10% mais cara somaria cerca de 0,47 ponto ao IPCA.",
+    "familias": [],
     "objetivo": "",
     "condicao": "",
     "caderno": [
      "c1",
-     "c2"
+     "c17",
+     "c13",
+     "c2",
+     "c19",
+     "c20",
+     "c21"
     ]
    },
    "pressao": "inflacao",
    "pagina_que_falta": "Por que o preço da gasolina e do diesel no Brasil não acompanha o petróleo lá fora? Nenhuma página do básico explica a Petrobras, a subvenção e os impostos entre o barril e a bomba, e é isso que a leitora precisa para ler o fato.",
    "erro": "sem achado: o editor-chefe não aprovou tese",
    "sem_achado": true
-  }
+  },
+  "versao_anterior": {
+   "titulo": "Petróleo reabre em leve queda mesmo com ataques perto de Ormuz",
+   "paragrafos": [
+    "Segundo a Folha, o petróleo reabriu em leve queda, mesmo com ataques a navios perto de Ormuz. Ele segue caro pelo conflito na região, o que pressiona combustíveis e preços no Brasil.",
+    "Segundo o Valor, o ministro do Petróleo iraquiano disse ter chegado a um entendimento com os EUA para exportar por Ormuz. Ainda é só uma declaração e, se virar acordo, põe um pouco mais de petróleo à venda.",
+    "O diesel no posto não depende só do barril, porque conta também a ajuda de R$ 2,12 por litro que a Fazenda prorrogou por 30 dias no fim de outubro."
+   ]
+  },
+  "revisao_manual": "2026-11-09: refeito a pedido do Pedro (o fato do dia termina na vida de quem lê, com o tamanho da tabela de tradução, TRADUCAO.md): curto do editor-chefe refeito da pesquisa gravada, com as traduções do dia (src/conta.py traduz), e post pelo mesmo programa da atualização (src/escreve_post.py), com os mesmos dados."
  },
  "avisos_ao_pedro": [
   "O editor-chefe sentiu falta de uma página no fato do dia de 9/11/2026: Por que o preço da gasolina e do diesel no Brasil não acompanha o petróleo lá fora? Nenhuma página do básico explica a Petrobras, a subvenção e os impostos entre o barril e a bomba, e é isso que a leitora precisa para ler o fato."
