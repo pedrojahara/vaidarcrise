@@ -324,7 +324,12 @@
      "porque": "A indústria recuou 2,2% no terceiro trimestre contra o segundo, puxada por máquinas e equipamentos, o que mostra menos investimento das empresas e pesa no PIB do trimestre.",
      "outras_ids": [
       "n133"
-     ]
+     ],
+     "historia": "ritmo_emprego",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -346,7 +351,12 @@
      "ja_nos_indicadores": false,
      "duplicata_de": null,
      "porque": "Lá fora, o medo de menos investimento em inteligência artificial após a vitória democrata derrubou as bolsas, e investidores assustados tiram dinheiro de países como o Brasil.",
-     "outras_ids": []
+     "outras_ids": [],
+     "historia": "nova",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": "queda-das-acoes-de-tecnologia"
     },
     {
      "noticia_ids": [
@@ -370,7 +380,12 @@
      "outras_ids": [
       "n166",
       "n167"
-     ]
+     ],
+     "historia": "desconfianca_eleicao",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -405,7 +420,12 @@
       "n013",
       "n191",
       "n144"
-     ]
+     ],
+     "historia": "contas_governo",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": true,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -423,7 +443,12 @@
      "ja_nos_indicadores": false,
      "duplicata_de": null,
      "porque": "Se a regra mudar, cada congelamento no Orçamento baixa o teto de gastos dos anos seguintes, o que ajuda a frear a dívida e pode abrir espaço para juros menores.",
-     "outras_ids": []
+     "outras_ids": [],
+     "historia": "contas_governo",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -458,7 +483,12 @@
       "n220",
       "n153",
       "n117"
-     ]
+     ],
+     "historia": "contas_governo",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -478,7 +508,12 @@
      "ja_nos_indicadores": false,
      "duplicata_de": "ev-20261103-01",
      "porque": "O economista apontado como autor nega propor tabelamento, mas a discussão faz investidores cobrarem mais para emprestar ao governo brasileiro.",
-     "outras_ids": []
+     "outras_ids": [],
+     "historia": "limitar_juro",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -496,7 +531,12 @@
      "ja_nos_indicadores": false,
      "duplicata_de": null,
      "porque": "Os ataques ao Banco Central fazem investidores temerem pressão política sobre os juros, o que sobe o dólar e o juro que o governo paga para pegar dinheiro por muitos anos.",
-     "outras_ids": []
+     "outras_ids": [],
+     "historia": "limitar_juro",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": true,
+     "tema_novo": ""
     }
    ]
   },
@@ -2495,865 +2535,548 @@
   ]
  },
  "post": {
-  "tipo": "dia",
-  "porque": {
-   "caderno": [
-    "c29",
-    "c1",
-    "c3",
-    "c13",
-    "c14",
-    "c24",
-    "c25",
-    "c26",
-    "c107",
-    "c9"
-   ]
-  },
   "ok": true,
-  "titulo": "Indústria cai 0,8% em setembro, a quarta queda em cinco meses",
+  "tipo": "dia",
+  "formato": "historia",
+  "titulo": "Indústria cai 4,1% desde maio, e o PIB do terceiro trimestre fica em dúvida",
   "paragrafos": [
-   "A produção da indústria caiu 0,8% em setembro, se compararmos com agosto, e soma queda de 4,1% desde maio. Segundo o IBGE, a queda foi puxada por máquinas e equipamentos, que as empresas compram para investir.",
-   "Para a prévia do PIB do Banco Central não fechar o trimestre em queda, setembro teria de subir cerca de 1,6% sobre agosto. Em 9 de 15 casos parecidos desde 2003, o PIB caiu.",
-   "Nada muda agora no salário ou na parcela, mas o risco é para o emprego: o desemprego está em 5,2% e, na recessão de 2014 a 2016, subiu 7 pontos."
+   "O IBGE divulgou ontem que a produção da indústria caiu 0,8% em setembro, contra agosto, a quarta queda em cinco meses, e a perda desde maio chega a 4,1%. No terceiro trimestre, a indústria recuou 2,2% contra o segundo, com máquinas e equipamentos puxando a queda, o que deixa em dúvida se o PIB do trimestre cresce.",
+   "A pergunta aberta é se a perda de ritmo que vem desde 2025 vira recessão, que é o PIB caindo dois trimestres seguidos. O PIB cresceu 1,1% no primeiro trimestre de 2026 e 0,5% no segundo, e nenhum dos últimos oito trimestres foi de queda. O Banco Central mantém a Selic em 13,75% desde 17/9 para segurar os preços, o que encarece o crédito de quem compra e de quem investe. As contas do governo pesam porque, quando quem investe duvida delas, cobra mais para emprestar ao governo, e esse juro chega ao crédito longo das empresas.",
+   "A queda de setembro veio depois de outra. A prévia do PIB feita pelo Banco Central caiu 0,6% nos 3 meses até agosto, contra os 3 meses anteriores. Em setembro, a indústria, que é a única parte do mês já conhecida, não trouxe a recuperação que compensaria essa perda.",
+   "O peso das máquinas na queda admite duas leituras. Numa, as empresas compram menos máquinas porque o crédito está caro e adiam o investimento, o que pesaria também no crescimento dos anos seguintes. Na outra, um trimestre fraco pode ter causas passageiras, que somem no mês seguinte. A indústria de outubro, que o IBGE divulga em 3/12, mostra se a queda continua, e um trimestre só não separa as duas leituras.",
+   "O emprego mostra a contratação mais lenta, ainda sem o desemprego subir. O desemprego ficou em 5,2% no trimestre até setembro, mais baixo que em quase todos os meses desde 2012. As vagas com carteira, segundo o Ministério do Trabalho, somaram 121,3 mil em setembro, o pior setembro da série, que começa em 2020, e 43,5% menos que em setembro de 2025.",
+   "Quem discorda da leitura de que a economia está parando lembra que a indústria é só uma parte do PIB, e que os serviços e o agro podem segurar o resultado. O crescimento em 12 meses, de 1,4% até agosto, ainda está dentro do normal desde 2004, que vai de 0,8% a 3,9% ao ano. As vendas do varejo de setembro saem em 13/11, e até lá a indústria é a parte do trimestre que já se conhece.",
+   "As previsões também se afastam. O Itaú cortou em 30/10 a previsão do PIB de 2027 de 1,2% para 0,5%, e a Confederação Nacional da Indústria cortou a de 2026 de 2% para 1,6%. A média dos bancos (Focus), em 30/10, ainda esperava 1,76% para 2026 e 1,20% para 2027. São previsões de quem empresta dinheiro, e a distância entre elas mostra que nem quem prevê concorda sobre 2027.",
+   "Para o país, o dado que decide é o PIB do terceiro trimestre, em 2/12, porque uma queda ali seria o primeiro dos dois trimestres que a recessão pede. Se a recessão vier, o emprego é por onde o custo chega às casas, e o tamanho varia. Na recessão iniciada em 2014, o desemprego subiu 7,0 pontos, de 6,9% para 13,9%, e na de 2020, 2,5 pontos. Antes do PIB, sai o desemprego até outubro, em 27/11.",
+   "A outra história de ontem veio de fora. A Nasdaq, bolsa de tecnologia dos Estados Unidos, chegou a cair 6,4%, e a Bolsa do Japão perdeu mais de 6%. O motivo foi o medo de que as empresas invistam menos em inteligência artificial depois da vitória democrata no Congresso americano. Quando quem investe lá fora se assusta, costuma tirar dinheiro de países como o Brasil, o que pesa no dólar e na Bolsa daqui."
   ],
   "secoes": [
    {
+    "titulo": null,
     "paragrafos": [
-     "A produção da indústria caiu 0,8% em setembro, se compararmos com agosto, e soma queda de 4,1% desde maio. Segundo o IBGE, a queda foi puxada por máquinas e equipamentos, que as empresas compram para investir.",
-     "Para a prévia do PIB do Banco Central não fechar o trimestre em queda, setembro teria de subir cerca de 1,6% sobre agosto. Em 9 de 15 casos parecidos desde 2003, o PIB caiu.",
-     "Nada muda agora no salário ou na parcela, mas o risco é para o emprego: o desemprego está em 5,2% e, na recessão de 2014 a 2016, subiu 7 pontos."
+     "O IBGE divulgou ontem que a produção da indústria caiu 0,8% em setembro, contra agosto, a quarta queda em cinco meses, e a perda desde maio chega a 4,1%. No terceiro trimestre, a indústria recuou 2,2% contra o segundo, com máquinas e equipamentos puxando a queda, o que deixa em dúvida se o PIB do trimestre cresce.",
+     "A pergunta aberta é se a perda de ritmo que vem desde 2025 vira recessão, que é o PIB caindo dois trimestres seguidos. O PIB cresceu 1,1% no primeiro trimestre de 2026 e 0,5% no segundo, e nenhum dos últimos oito trimestres foi de queda. O Banco Central mantém a Selic em 13,75% desde 17/9 para segurar os preços, o que encarece o crédito de quem compra e de quem investe. As contas do governo pesam porque, quando quem investe duvida delas, cobra mais para emprestar ao governo, e esse juro chega ao crédito longo das empresas.",
+     "A queda de setembro veio depois de outra. A prévia do PIB feita pelo Banco Central caiu 0,6% nos 3 meses até agosto, contra os 3 meses anteriores. Em setembro, a indústria, que é a única parte do mês já conhecida, não trouxe a recuperação que compensaria essa perda.",
+     "O peso das máquinas na queda admite duas leituras. Numa, as empresas compram menos máquinas porque o crédito está caro e adiam o investimento, o que pesaria também no crescimento dos anos seguintes. Na outra, um trimestre fraco pode ter causas passageiras, que somem no mês seguinte. A indústria de outubro, que o IBGE divulga em 3/12, mostra se a queda continua, e um trimestre só não separa as duas leituras.",
+     "O emprego mostra a contratação mais lenta, ainda sem o desemprego subir. O desemprego ficou em 5,2% no trimestre até setembro, mais baixo que em quase todos os meses desde 2012. As vagas com carteira, segundo o Ministério do Trabalho, somaram 121,3 mil em setembro, o pior setembro da série, que começa em 2020, e 43,5% menos que em setembro de 2025.",
+     "Quem discorda da leitura de que a economia está parando lembra que a indústria é só uma parte do PIB, e que os serviços e o agro podem segurar o resultado. O crescimento em 12 meses, de 1,4% até agosto, ainda está dentro do normal desde 2004, que vai de 0,8% a 3,9% ao ano. As vendas do varejo de setembro saem em 13/11, e até lá a indústria é a parte do trimestre que já se conhece.",
+     "As previsões também se afastam. O Itaú cortou em 30/10 a previsão do PIB de 2027 de 1,2% para 0,5%, e a Confederação Nacional da Indústria cortou a de 2026 de 2% para 1,6%. A média dos bancos (Focus), em 30/10, ainda esperava 1,76% para 2026 e 1,20% para 2027. São previsões de quem empresta dinheiro, e a distância entre elas mostra que nem quem prevê concorda sobre 2027.",
+     "Para o país, o dado que decide é o PIB do terceiro trimestre, em 2/12, porque uma queda ali seria o primeiro dos dois trimestres que a recessão pede. Se a recessão vier, o emprego é por onde o custo chega às casas, e o tamanho varia. Na recessão iniciada em 2014, o desemprego subiu 7,0 pontos, de 6,9% para 13,9%, e na de 2020, 2,5 pontos. Antes do PIB, sai o desemprego até outubro, em 27/11.",
+     "A outra história de ontem veio de fora. A Nasdaq, bolsa de tecnologia dos Estados Unidos, chegou a cair 6,4%, e a Bolsa do Japão perdeu mais de 6%. O motivo foi o medo de que as empresas invistam menos em inteligência artificial depois da vitória democrata no Congresso americano. Quando quem investe lá fora se assusta, costuma tirar dinheiro de países como o Brasil, o que pesa no dólar e na Bolsa daqui."
     ]
    }
   ],
-  "problemas": [],
-  "edicao": {
-   "sugestoes": [
-    {
-     "trecho": "A queda veio de máquinas e equipamentos, que as empresas compram para investir, e o IBGE não aponta uma causa única.",
-     "problema": "O texto passava de 100 palavras. Além disso, \"veio de\" dá a entender que só máquinas caíram, mas o IBGE diz que a queda foi \"puxada\" por elas. A ressalva sobre a causa foi o corte que menos tira do porquê.",
-     "como_fica": "A queda foi puxada por máquinas e equipamentos, que as empresas compram para investir."
-    },
-    {
-     "trecho": "Para a prévia do PIB do Banco Central não fechar o terceiro trimestre em queda",
-     "problema": "O texto passava de 100 palavras. \"Terceiro\" só pesa, porque setembro e agosto já dizem de que trimestre se fala.",
-     "como_fica": "Para a prévia do PIB do Banco Central não fechar o trimestre em queda"
-    },
-    {
-     "trecho": "Nada muda agora no salário ou na parcela, mas o emprego corre risco, já que na recessão de 2014 a 2016 o desemprego subiu 7,0 pontos. Hoje ele está em 5,2%.",
-     "problema": "O \"já que\" põe a recessão passada como causa do risco de hoje. A frase sobre os 5,2% fica solta, quando completa a anterior. E 7,0 pode ser arredondado.",
-     "como_fica": "Nada muda agora no salário ou na parcela, mas o risco é para o emprego: o desemprego está em 5,2% e, na recessão de 2014 a 2016, subiu 7 pontos."
-    }
-   ],
-   "aplicada": true
-  },
-  "teste": {
+  "pesquisa": {
+   "versao": 4,
    "ok": true,
-   "testes": {
-    "porque": {
-     "ok": true,
-     "por_que": "O texto dá a razão do IBGE, uma queda puxada por máquinas e equipamentos, sem inventar causa única, o que respeita os dados: o IBGE não aponta uma. A 'quarta queda em cinco meses' também está nos dados."
-    },
-    "quem": {
-     "ok": true,
-     "por_que": "Não há decisão no fato. O dado é atribuído ao IBGE e a prévia do PIB ao Banco Central, sem pôr autoria em quem só sente a queda."
-    },
-    "e_dai": {
-     "ok": true,
-     "por_que": "O texto liga o fato ao risco: setembro teria de subir 1,6% e o PIB caiu em 9 de 15 casos parecidos. Conta isso como frequência, sem dizer que o PIB caiu ou que é certo. Termina no que diz o bloco: nada muda agora, o risco é para o emprego, com 5,2% e 7 pontos."
-    },
-    "livro": {
-     "ok": true,
-     "por_que": "A única explicação de mecanismo diz que máquinas são o que as empresas compram para investir. Ela serve ao porquê do dia e não toma o lugar dele."
-    }
-   },
-   "problemas": [],
-   "antes": {
-    "testes": {
-     "porque": {
-      "ok": false,
-      "por_que": "A razão (puxada por máquinas e equipamentos, bens de investimento) está nos dados e não se inventa causa única, mas o texto não diz quem afirma isso: o IBGE não aparece."
-     },
-     "quem": {
-      "ok": true,
-      "por_que": "É um dado divulgado, não uma decisão; nenhuma frase atribui autoria a quem só repassa ou sente, e o sentido não muda com outro governo."
-     },
-     "e_dai": {
-      "ok": true,
-      "por_que": "Liga a queda ao risco (setembro teria de subir 1,6%; 9 de 15 casos com PIB em queda, como contagem e não certeza) e fecha na vida: nada muda agora, risco para o emprego, 5,2% hoje e +7 pontos em 2014-2016."
-     },
-     "livro": {
-      "ok": true,
-      "por_que": "A única oração de mecanismo (máquinas que as empresas compram para investir) serve ao porquê do dia."
-     }
-    },
-    "problemas": [
-     "Teste porque: em 'A queda foi puxada por máquinas e equipamentos, que as empresas compram para investir.', falta dizer quem afirma a causa. Resolver com 'Segundo o IBGE, a queda foi puxada...', como nos dados: 'O IBGE mostra que a queda foi puxada por máquinas e equipamentos'."
-    ]
-   },
-   "reescrito": true
-  },
-  "meta": [
-   {
-    "etapa": "post",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "4b586383c7f0945b55c20b316b42a25f16be8c02daeef09b762d4c86a3351d86",
-    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.13593059999999998,
-    "turnos": 2,
-    "duracao_s": 32,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "dbbcc88c-3fd0-412a-b24b-364bd2b82e74"
-   },
-   {
-    "etapa": "editor",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "2a1ec4f69712a5aca8ba7995ec0b5665d7981c9f7ac3b71244416a271c07c4bb",
-    "system_sha256": "4c7e8c0f33317bc6d454b5ff1a997da9df57cacbbd46c9781db8192f030feaf7",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.3153422,
-    "turnos": 2,
-    "duracao_s": 34,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "f7b6cea2-2689-4e95-b6d1-7338cc8aa3f2"
-   },
-   {
-    "etapa": "teste",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "d79e3ef4ac1e34eda975ee029651fb154ce746f42d603985ca34326dc1fb1e27",
-    "system_sha256": "ec2846d97f94584650118e7a41a2898f261e7c831f55e498dddb6de838a29151",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.10377760000000001,
-    "turnos": 2,
-    "duracao_s": 19,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "4c705543-ed02-45dd-a429-d610bf5cd17c"
-   },
-   {
-    "etapa": "post",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "4ef65556cbf847ac0c1b2fd93498bb213966b76485b5119edd4c6e5b0a76d2c7",
-    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.09676660000000001,
-    "turnos": 2,
-    "duracao_s": 13,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "ac2553e8-0cdc-4ee3-9e80-377acbd2da70"
-   },
-   {
-    "etapa": "teste",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "cc8812a57b221fd2e6e8c6b81861b30e4b1f7d06303944c90ad13bc3b218c91a",
-    "system_sha256": "ec2846d97f94584650118e7a41a2898f261e7c831f55e498dddb6de838a29151",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.08411760000000001,
-    "turnos": 2,
-    "duracao_s": 13,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "719fb0b1-955b-4649-b8c6-75fe2bef670b"
-   }
-  ],
-  "fundo": {
-   "versao": 2,
-   "ok": true,
-   "em": "2026-11-08T01:30:00+00:00",
-   "voltas": [
-    {
-     "volta": 1,
-     "teses": [
-      {
-       "tese": "O PIB do 3º trimestre (2/12) tem boa chance de sair negativo, e isso importa menos que o 4º trimestre. A prévia do Banco Central já deixa julho a agosto 0,54% abaixo de abril a junho se setembro repetir agosto, e setembro teria de subir cerca de 1,6% para empatar. Recessão, pela conta do site, exige um segundo trimestre de queda, e o 4º recebe o choque pós-eleição.",
-       "por_que_nao_e_obvia": "A manchete fala da indústria e a leitora entende que 'indústria cai' é um problema do setor. A conta da prévia mostra o trimestre inteiro, e a sequência de trimestres decide se há recessão. Poucos textos põem a conta de quanto setembro precisaria subir.",
-       "o_que_muda": "A leitora passa a olhar o PIB de 2/12 como o primeiro de dois testes, e não como o veredito. Um 3T negativo sem 4T negativo é um tropeço. Com os dois seria recessão, e aí o risco do site muda de patamar.",
-       "como_pode_dar_errado": "O IBC-Br pode divergir do PIB do IBGE, e serviços e agro (que subiu 2,8% no 2T) podem sustentar o trimestre. Se o PIB de 2/12 vier positivo, a tese cai. A conta supõe setembro igual a agosto, e o IBC-Br de setembro (meados de novembro) já mostra se é assim.",
-       "caderno": [
-        "c1",
-        "c2",
-        "c3",
-        "c4",
-        "c8"
-       ]
-      },
-      {
-       "tese": "Parte da queda de setembro é ruído (chuva, dia útil a menos), mas a queda de bens de capital (-1,9%) é a que dura. O sinal que importa é se bens de capital continua caindo em outubro (3/12), com empresas adiando compra de máquinas até saber o plano fiscal do novo mandato.",
-       "por_que_nao_e_obvia": "A manchete soma tudo como 'menos investimento'. O número cheio mistura derivados de petróleo (-4,2%, por clima) com o investimento de verdade. Separar os dois muda o tamanho do alarme.",
-       "o_que_muda": "A leitora deixa de ler -0,8% como prova de recessão e passa a esperar a produção de outubro, que é de 3/12, o dia seguinte ao PIB. Se a indústria devolver parte da queda e bens de capital ficar de lado, o alarme diminui. Se não, aumenta.",
-       "como_pode_dar_errado": "Se bens de capital cair de novo em outubro, sem chuva nem calendário para culpar, a tese do ruído cai. Também não consegui o dado trimestral de bens de capital nem a nota do IBGE.",
-       "caderno": [
-        "c5",
-        "c6",
-        "c12"
-       ]
-      }
-     ],
-     "editor_chefe": {
-      "veredito": "devolve",
-      "tese": "Tese candidata, que ainda precisa de sustentação: o IBC-Br de abril a agosto deixa o 3º trimestre abaixo do 2º se setembro repetir agosto, e setembro teria de subir cerca de 1,6% para empatar. Então o PIB de 2/12 deve ser o primeiro de dois testes. Só vira achado se a pesquisa mostrar o que aconteceu nas vezes parecidas desde 2003 e o que os dados de outubro já dizem sobre o 4º trimestre. Poucos casos mostram um padrão, não uma lei.",
-      "testes": {
-       "nao_obvia": {
-        "ok": false,
-        "por_que": "O fato do dia já diz que a prévia do Banco Central caiu 0,6% nos 3 meses até agosto e que isso pesa contra o PIB. A conta de quanto setembro precisaria subir detalha a manchete, mas não chega a um achado. Falta o precedente: quantas vezes um começo de trimestre assim terminou em PIB negativo e em recessão."
-       },
-       "muda_algo": {
-        "ok": true,
-        "por_que": "Ler o PIB de 2/12 como o primeiro de dois testes, e não como o veredito, muda o modo como a leitora lê a notícia. Mas a ideia de que o 4º trimestre sofre o choque depois da eleição ainda não tem nenhum dado de outubro que a sustente."
-       },
-       "pode_dar_errado": {
-        "ok": true,
-        "por_que": "Há sinal e há data. O IBC-Br de setembro sai em meados de novembro e o PIB do 3º trimestre sai em 2/12. Se o PIB vier positivo, a tese cai."
-       },
-       "no_caderno": {
-        "ok": false,
-        "por_que": "A linha c3 não confere: a saída do comando não dá 110,887, 110,283 nem 112,22. As linhas c5 e c6 vêm de resumos de busca, sem a página aberta e sem a nota do IBGE. Nada no caderno sustenta o 4º trimestre negativo. A tese ainda escreve 'julho a agosto' onde deveria estar 'julho a setembro'."
-       }
-      },
-      "roteiro": [
-       "Começar pela conta do trimestre com a prévia: quanto setembro teria de subir para o 3º trimestre empatar com o 2º (a conta tem de estar conferida).",
-       "Mostrar o precedente desde 2003: nas vezes em que os dois primeiros meses da prévia deixaram o trimestre abaixo do anterior, quantas terminaram em PIB negativo no IBGE.",
-       "Explicar que recessão exige dois trimestres seguidos de queda e contar quantas vezes um trimestre negativo foi seguido de outro.",
-       "Separar o que é passageiro em setembro (chuva na moagem de cana, um dia útil a menos) do que dura (bens de capital), com a nota do IBGE.",
-       "Trazer os primeiros dados de outubro para o 4º trimestre: confiança da indústria, PMI, uso da capacidade, venda de veículos, depois do choque na bolsa e no dólar.",
-       "Apresentar a melhor objeção: indústria é uma parte pequena do PIB, serviços e agro podem segurar o trimestre e o desemprego está em 5,2%.",
-       "Dizer o tamanho da evidência e fechar com o que o site vai conferir: IBC-Br de setembro, PIB em 2/12 e produção de outubro em 3/12."
-      ],
-      "previsao": {
-       "texto": "O PIB do 3º trimestre de 2026 deve sair negativo na comparação com o 2º trimestre (proposta, se a pesquisa sustentar).",
-       "quando": "2026-12-02",
-       "sinal": "O IBC-Br de setembro, que o Banco Central publica em meados de novembro: uma alta menor que cerca de 1,6% sobre agosto deixa o trimestre abaixo do anterior. Depois, o PIB do IBGE em 2/12."
-      },
-      "pressao": "ritmo",
-      "devolve": [
-       "A linha c3 não confere. Rode a média trimestral e o valor de empate de setembro com um comando do conta.py que devolva 110,887, 110,283, 112,22 e a variação, ou registre cada passo com comando. Corrija 'julho a agosto' para 'julho a setembro' na tese.",
-       "Já aconteceu antes? Desde 2003, em quantos trimestres os dois primeiros meses do IBC-Br ficaram abaixo da média do trimestre anterior? Em quantos deles o PIB do IBGE saiu negativo? E quantos trimestres negativos foram seguidos de outro (recessão)? Sem esses casos, a tese é palpite.",
-       "E daí para o 4º trimestre? Procure dados de outubro que já saíram: confiança da indústria e do comércio (FGV), PMI industrial, uso da capacidade instalada (CNI), produção e venda de veículos (Anfavea), fluxo pesado nas estradas (ABCR). E o que aconteceu depois de choques de dólar e bolsa, como em 2002 e no fim de 2014.",
-       "Abra a nota do IBGE (Agência IBGE Notícias) e copie o trecho literal para c5 e c6: bens de capital em -1,9%, derivados de petróleo em -4,2%, dia útil a menos. Traga a sequência de bens de capital mês a mês desde maio e o número do trimestre.",
-       "Já houve quatro quedas da indústria em cinco meses, ou uma perda de cerca de 4% desde o pico, desde 2003? Quantas vezes, e o que veio depois para o PIB e para o Caged? Diga se a queda de bens de capital costuma vir antes da queda do emprego.",
-       "Há projeção do PIB do 3º trimestre feita por bancos ou pelo Relatório de Política Monetária do Banco Central? Confirme com documento as revisões de 2027 de Bradesco, XP e Genoa, ou deixe-as fora do texto. Na tese, descreva o choque pela incerteza sobre o plano econômico, não pelo resultado da eleição (teste da troca)."
-      ]
-     }
-    },
-    {
-     "volta": 2,
-     "teses": [
-      {
-       "tese": "O tamanho do buraco da prévia do PIB no 3º trimestre (0,60% nos dois primeiros meses, 0,54% se setembro repetir agosto) não diz se vem recessão: desde 2003, em 7 episódios de buraco moderado, 3 viraram recessão e 4 foram um mês ruim seguido de volta. O que separa os dois é o formato: queda espalhada por vários meses (2014 e 2015) ou um único mês de choque (greve de 2018). Em 2026 a prévia caiu 0,8% em junho, 0,3% em julho e subiu 0,3% em agosto, mais perto do primeiro formato. O teste é o IBC-Br de setembro (precisaria subir cerca de 1,6%), o PIB de 2/12 e o do 4º trimestre.",
-       "por_que_nao_e_obvia": "A manchete trata a queda da indústria como sinal de recessão; a leitora não sabe que, nos casos parecidos, o formato da queda importa mais que o tamanho. Poucos textos contam quantos buracos iguais acabaram em recessão e quantos foram só um mês ruim.",
-       "o_que_muda": "A leitora deixa de ler o PIB de 2/12 como veredito e passa a olhar o formato: se setembro devolver parte da queda, o caso parece tropeço; se repetir agosto, parece 2014. Recessão, pela conta do site, só vem com um segundo trimestre de queda.",
-       "como_pode_dar_errado": "São 7 episódios, 4 deles com queda isolada que o site não lista, e o IBC-Br pode divergir do PIB do IBGE (serviços e agro). Se setembro vier acima de 112 e o PIB de 2/12 for positivo, a tese de 'formato espalhado' cai. Se o 3º e o 4º trimestres forem negativos, ela se confirma.",
-       "caderno": [
-        "c1",
-        "c3",
-        "c13",
-        "c14",
-        "c24",
-        "c25",
-        "c26",
-        "c27",
-        "c4"
-       ]
-      },
-      {
-       "tese": "A queda do investimento já estava em andamento antes da eleição: bens de capital caíram 0,1% em agosto e 1,9% em setembro, acumulam -5,0% no ano, as vendas de máquinas caíram 13,4% até setembro e a confiança da indústria caiu três meses seguidos até outubro. Pelo teste da troca, a causa é a incerteza sobre o plano econômico do novo mandato, que as empresas citam para adiar compras, mais o juro alto. Os dados de outubro são mistos (PMI de 46,1 e confiança empresarial em queda; comércio e consumidor em alta); o sinal a conferir é bens de capital na produção de outubro (3/12).",
-       "por_que_nao_e_obvia": "A leitora tende a ligar a queda da indústria ao susto de bolsa e dólar de 26/10, mas bens de capital já caía em agosto e setembro, antes dele. Isso muda a ordem causa e efeito: o choque pós-eleição se soma a um investimento que já recuava.",
-       "o_que_muda": "A leitora passa a esperar que a produção de outubro (3/12) mostre se bens de capital segue caindo e que a queda não se resolva sozinha com a calma do dólar.",
-       "como_pode_dar_errado": "Parte de setembro é ruído (derivados -4,2%, dia útil a menos). Se bens de capital subir em outubro e o PMI e a confiança empresarial se recuperarem em novembro, a tese cai. Não consegui a série mensal de bens de capital de maio a julho nem abrir a nota do IBGE.",
-       "caderno": [
-        "c5",
-        "c6",
-        "c28",
-        "c12",
-        "c15",
-        "c16",
-        "c17",
-        "c18",
-        "c19"
-       ]
-      }
-     ],
-     "editor_chefe": {
-      "veredito": "aprova",
-      "tese": "A prévia do PIB do Banco Central já quase fechou a conta do 3º trimestre. Julho e agosto ficaram 0,60% abaixo da média de abril a junho, e para empatar, setembro teria de subir cerca de 1,6% sobre agosto. Desde 2003, em 15 trimestres que começaram com um buraco desse tamanho, o IBGE registrou queda do PIB em 9. Nos casos que não viraram recessão, o buraco veio de um mês só e a volta veio no mês seguinte. Em 2026 a queda se espalhou por junho e julho, e agosto devolveu só 0,3%. É um padrão de poucos casos, não uma lei, e a recessão só se confirma se o 4º trimestre também cair.",
-      "testes": {
-       "nao_obvia": {
-        "ok": true,
-        "por_que": "O fato diz que a queda 'pesa' no PIB. Ninguém fez a conta de quanto setembro teria de subir para evitar a queda (1,6%) nem contou quantos buracos parecidos terminaram em queda do PIB."
-       },
-       "muda_algo": {
-        "ok": true,
-        "por_que": "A leitora passa a esperar um PIB negativo em 2/12 como o cenário mais provável, não como surpresa. E passa a ver a pergunta seguinte, a do 4º trimestre, como a que decide se há recessão, já que o 2º trimestre cresceu 0,5%."
-       },
-       "pode_dar_errado": {
-        "ok": true,
-        "por_que": "Se a prévia de setembro subir perto de 1,6% ou se o PIB do IBGE de 2/12 vier positivo (serviços e agro podem divergir da prévia), a tese cai. A data é 2/12."
-       },
-       "no_caderno": {
-        "ok": true,
-        "por_que": "A conta está em c1, c3, c13 e c14 e o histórico em c24, c25 e c26. A lista de recessões está em c4 e na saída de c27, que mostra também a de 3T2016. A contagem resumida de c27 não confere e o texto não deve usá-la ('7 episódios, 3 recessões'): a contagem deve sair de c24 a c26."
-       }
-      },
-      "roteiro": [
-       "Abrir pela conta: a média de abril a junho foi 110,887, a de julho e agosto 110,22 (0,60% abaixo), e setembro precisaria de 112,22, ou cerca de 1,6% acima de agosto, para o trimestre empatar (c1, c3, c13, c14). Dizer logo que isso é a prévia do Banco Central, não o PIB do IBGE.",
-       "Pôr a tese nos dois primeiros parágrafos: o cenário mais provável para 2/12 é um PIB do 3º trimestre menor que o do 2º. Mas um trimestre só não é recessão: o 2º trimestre cresceu 0,5% (c4).",
-       "Já aconteceu antes: dos 15 trimestres desde 2003 em que os dois primeiros meses ficaram 0,5% ou mais abaixo do trimestre anterior, o PIB caiu em 9 e não caiu em 2. Nos outros 4, o site não mostra o resultado do trimestre (c24, c25, c26, c4). Separar os choques grandes (2008-09, 2020) dos buracos moderados, parecidos com o de agora.",
-       "O que separa os casos: em 2012, 2018 (greve dos caminhoneiros), 2021 e 2022, um mês afundou e o seguinte voltou forte (por exemplo, 93,06 e depois 95,75 em 2018; c26). Em 2014 e 2015 a queda se espalhou por vários meses (c25). Em 2026 a queda veio em junho e julho, e agosto devolveu só 0,3% (c1).",
-       "O caso que pede cuidado: em 2016, o 2º trimestre começou com buraco e o PIB não caiu, mas a lista do site mostra recessão de novo a partir do 3T2016 (c25, c27, só a saída). O padrão é sugestivo, e o texto deve dizer quantos casos são.",
-       "A indústria de setembro (-0,8%, 2,2% a menos no trimestre, puxada por máquinas e equipamentos; c29) puxa a conta para baixo. Não usar os números de bens de capital de c5 e c28 como certos, porque a nota do IBGE não foi aberta. Se entrarem, que entrem com a fonte dita.",
-       "A melhor objeção, com honestidade: a indústria é uma parte menor do PIB, o desemprego está em 5,2% (c9), e o Banco Central ainda via crescimento de 1,8% em 2026 (c20). A prévia já divergiu do PIB do IBGE antes. Em resposta, vale citar o Caged de setembro, o pior setembro da série (c9), e o consumo das famílias, que já tinha caído 0,4% no 2º trimestre (c11).",
-       "Olhar para o 4º trimestre: os sinais de outubro são mistos. O índice de compras da indústria (PMI) ficou em 46,1, abaixo de 50, mas acima de setembro (c15). A confiança empresarial caiu (c18), e as do comércio e do consumidor subiram (c16, c17). Ainda não dá para dizer se haverá um segundo trimestre de queda.",
-       "Fechar com o que o site vai conferir: a prévia do PIB de setembro, quando sair, e o PIB do IBGE em 2/12. Depois, a produção industrial de outubro em 3/12, como primeiro sinal do 4º trimestre. Levar à página da pressão Ritmo da economia."
-      ],
-      "previsao": {
-       "texto": "O PIB do 3º trimestre, que o IBGE divulga em 2/12, deve vir menor que o do 2º trimestre, porque a prévia de setembro teria de subir cerca de 1,6% para evitar a queda. Mesmo assim, só haverá recessão se o 4º trimestre também cair.",
-       "quando": "2026-12-02",
-       "sinal": "A variação do PIB do 3º trimestre contra o 2º, na divulgação do IBGE de 2/12. Antes disso, a prévia do PIB (IBC-Br) de setembro: abaixo de 112,22, o trimestre fica abaixo do anterior."
-      },
-      "pressao": "ritmo",
-      "devolve": []
-     }
-    }
-   ],
+   "em": "2026-11-10T20:11:30+00:00",
    "meta": [
     {
      "etapa": "pesquisa",
      "modelo_pedido": "sonnet",
-     "prompt_sha256": "9618c78b3b9eaacd5e4b92778965580944e6bdfd66ff886efe30d1d2cac8b35f",
-     "system_sha256": "91544b8dfc3e45cad0861241319f94537c0ce92ba06447bda6cf0420d0f3e1c0",
+     "prompt_sha256": "e0dde43566446efc47c0f86a1968bee1484a830fced9d0d2b623971b60b4ec0a",
+     "system_sha256": "61b5c38a2d4901b3f840f98a25ae736b411b2051045a97e8fdec79bf58550b85",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.49157909999999994,
-     "turnos": 12,
-     "duracao_s": 83,
+     "custo_usd": 0.48227490000000006,
+     "turnos": 11,
+     "duracao_s": 62,
      "modelos": [
       "claude-sonnet-5-5",
       "claude-haiku-5-5"
      ],
      "permission_denials": [],
-     "session_id": "92b4d75f-2ff3-4c97-bb59-8e75b6cb243c"
+     "session_id": "ed79004a-e4f3-42c6-b56f-54e2d21f71c8"
     },
     {
-     "etapa": "editor_chefe",
+     "etapa": "redacao",
      "modelo_pedido": "opus",
-     "prompt_sha256": "ed2cf9a606335f868fa975f6769b642dbf551d8b565d50b839ca6c56597884c1",
-     "system_sha256": "bb878ebaa68b130349d7c15b49ff4f05bb8ef49578c90b33842d666b474ddb4a",
+     "prompt_sha256": "cb3baf6c7a7b333ef3ad5a45f0a376b9a7c40099afde0f64ee491f094588f11d",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.2257142,
-     "turnos": 3,
-     "duracao_s": 50,
+     "custo_usd": 0.6354936,
+     "turnos": 2,
+     "duracao_s": 49,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "54278fc3-bb42-48bd-a9a3-7dcd401472be"
+     "session_id": "1e707c1f-8627-4e22-a05e-59d155d50174"
     },
     {
-     "etapa": "pesquisa",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "e675d0a9a5abe211373574bf7f47c44a69236b1e91011cc752eb957000ba5311",
-     "system_sha256": "91544b8dfc3e45cad0861241319f94537c0ce92ba06447bda6cf0420d0f3e1c0",
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "c220c6973aaf463fe48eac16f6777f9b614be60b17837ec2d7e258214e4fa683",
+     "system_sha256": "7cb67fdacc15870258c05ca0f7aa1047ab704bf4626c9fcd66e7967939bbff9c",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 1.5152141000000001,
-     "turnos": 25,
-     "duracao_s": 389,
+     "custo_usd": 0.7174277,
+     "turnos": 7,
+     "duracao_s": 101,
      "modelos": [
-      "claude-sonnet-5-5",
+      "claude-opus-5-5",
       "claude-haiku-5-5"
      ],
-     "permission_denials": [
-      {
-       "tool_name": "Bash",
-       "tool_use_id": "toolu_01FosDcJNbDo4hsoB663VegA",
-       "tool_input": {
-        "command": ".venv/bin/python src/conta.py valores ibcbr --de 2003-01 --ate 2026-08 > /tmp/ibc.txt; wc -l /tmp/ibc.txt; ls src; .venv/bin/python src/conta.py parecidos 2026-08 ibcbr | head -30"
-       }
-      }
-     ],
-     "session_id": "0448c9fa-e128-4a58-9557-a04f7f788570"
-    },
-    {
-     "etapa": "editor_chefe",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "7684f337b0eb803b5bf4afcef9de3fb50cd30d1fa30d04e9f2628e95aad600ee",
-     "system_sha256": "bb878ebaa68b130349d7c15b49ff4f05bb8ef49578c90b33842d666b474ddb4a",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.25294799999999995,
-     "turnos": 2,
-     "duracao_s": 43,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
      "permission_denials": [],
-     "session_id": "fdeaf0f6-205c-4bbe-a78a-8bdfcac825d2"
+     "session_id": "a5b481a2-abed-4acd-9fcd-a75e236faf4a"
     },
     {
      "etapa": "redacao",
      "modelo_pedido": "opus",
-     "prompt_sha256": "cae588c09238896e5dc23904dd6f12de380a551b48d41b5b992f8fc3ad1bb759",
-     "system_sha256": "aa494f59a71807ff620b5b3c99668bf9d0fac03b0aa7c9292bd49aac3db0fb7b",
+     "prompt_sha256": "e96eaf10e7ba3287ac4c7ddf9884ab58ec76f8b99b75b06b1297be223af1ea06",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.5292778,
-     "turnos": 2,
-     "duracao_s": 54,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "29309efb-a036-42e1-8cbe-deb043113f54"
-    },
-    {
-     "etapa": "conferencia",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "3ab475ce7b502291e4e8c92b8192eda389f5e68a6f67ff3225c78638f0c396ac",
-     "system_sha256": "e362d1487bb7e65fb090c712835d70e7ca64fb4c1931cd4ac03535cea992f48c",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.1285355,
-     "turnos": 2,
-     "duracao_s": 47,
-     "modelos": [
-      "claude-sonnet-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "92ce2b91-983b-41d1-8478-17bf74ac56a0"
-    },
-    {
-     "etapa": "redacao",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "ff7a01b25f80a7ea57ebb09c55083c55742889325dddc81bd6624459c5b82fd0",
-     "system_sha256": "aa494f59a71807ff620b5b3c99668bf9d0fac03b0aa7c9292bd49aac3db0fb7b",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.5409098,
+     "custo_usd": 0.6862016,
      "turnos": 2,
      "duracao_s": 44,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "035c0a08-28b4-46b0-a582-2b27a7804a63"
+     "session_id": "b1dcc507-d0c6-49f5-b42a-30e898a95537"
     },
     {
-     "etapa": "editor",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "7ef4c9050d0c6397fc0cda752443a85986d68dcbda97b6910852d508af6d0b93",
-     "system_sha256": "24b87222ed67682b645f35796cbee85d5bf57e11892ca5e832dbf050023596be",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.1301049,
-     "turnos": 2,
-     "duracao_s": 24,
-     "modelos": [
-      "claude-sonnet-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "2c81e1b2-4178-4359-986b-4fd86e65b9b4"
-    },
-    {
-     "etapa": "editor_chefe",
+     "etapa": "revisor",
      "modelo_pedido": "opus",
-     "prompt_sha256": "73cd6082de9ba290f9f1a4eb813e16795dc2df2c03bde6c847a4f0b9478d2ebd",
-     "system_sha256": "c67e5f42e90ffcf87745cda9a56c4872511340d3e26a0d63847171ed792845ff",
+     "prompt_sha256": "f9e725715131c5426892d61da0130ce96dc3ba3f57a96343274a578376821597",
+     "system_sha256": "7cb67fdacc15870258c05ca0f7aa1047ab704bf4626c9fcd66e7967939bbff9c",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.34849640000000004,
-     "turnos": 3,
-     "duracao_s": 23,
+     "custo_usd": 0.6249110999999999,
+     "turnos": 6,
+     "duracao_s": 70,
      "modelos": [
-      "claude-opus-5-5"
+      "claude-opus-5-5",
+      "claude-haiku-5-5"
      ],
      "permission_denials": [],
-     "session_id": "48e44a2c-7f3a-437d-a3c3-87ea198610d7"
-    },
-    {
-     "etapa": "editor_chefe",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "03cbed64d09a69de72ee22ee5cf7044fd87b0c47f312f7692af7387e5ac1c51e",
-     "system_sha256": "71dc0f4d088eada8b40ba4bb2b49edc6987d726eb81c818f32a35e02eaaa6fbf",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.298988,
-     "turnos": 2,
-     "duracao_s": 12,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "8f661586-8dbc-4616-8c96-af6bd6437157"
+     "session_id": "383337d9-c609-4293-98f3-def45f25d398"
     },
     {
      "etapa": "redacao",
      "modelo_pedido": "opus",
-     "prompt_sha256": "75eaba5de6551740338cfe32dc3e091103765ed514f960c4fa924ed6448622c6",
-     "system_sha256": "465b071bb998b5d53693c7e8072509ec646b4fbda3d2b7ee5dad5199233f972a",
+     "prompt_sha256": "edca5ade939dd07b6d0bce7172c348732ccb59c02a7fd19c0f339855ce23212e",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.581196,
+     "custo_usd": 0.6616696,
      "turnos": 2,
-     "duracao_s": 63,
+     "duracao_s": 41,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "403bd471-6eb3-4432-8a46-6802ae467652"
+     "session_id": "e9ef9ae7-4109-429e-8fc0-fdac108c7ebe"
     },
     {
-     "etapa": "conferencia",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "d9946e55737fcc92f11553f7b468b5ccbce83b26462987e939cbafe460401346",
-     "system_sha256": "e362d1487bb7e65fb090c712835d70e7ca64fb4c1931cd4ac03535cea992f48c",
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "0ba4eec57eb9f3fe228b3c352d9a042b480b000898eb3d5e1f7e06afb03475ac",
+     "system_sha256": "7cb67fdacc15870258c05ca0f7aa1047ab704bf4626c9fcd66e7967939bbff9c",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.15739999999999998,
+     "custo_usd": 0.4328514,
      "turnos": 2,
-     "duracao_s": 63,
+     "duracao_s": 27,
      "modelos": [
-      "claude-sonnet-5-5"
+      "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "049204c7-af77-4d71-83e9-31bf807bde23"
+     "session_id": "3fcdef4d-0383-491f-8ab8-eca3d281d9e6"
     },
     {
      "etapa": "redacao",
      "modelo_pedido": "opus",
-     "prompt_sha256": "00d38fd7d99dbfc59ad11cbf4a350925cca13beed28e0d4dc9243e6840e99968",
-     "system_sha256": "465b071bb998b5d53693c7e8072509ec646b4fbda3d2b7ee5dad5199233f972a",
+     "prompt_sha256": "1e2ee34ec7710ecff29a73260dd6783fc028c95f1e0d0d512d88e1d911f45ec7",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.5539944,
+     "custo_usd": 0.6073456,
      "turnos": 2,
-     "duracao_s": 40,
+     "duracao_s": 22,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "77f43b57-0111-4e8e-8375-bddbfba81786"
+     "session_id": "e40efc16-cad2-41c5-809a-698640051afd"
+    }
+   ],
+   "offline": true,
+   "voltas": [
+    {
+     "volta": 1,
+     "codigo": {
+      "graves": [
+       "bloco 2: número ou data sem linha do caderno que confira: 4/11 | trecho: A pergunta em aberto é se a perda de ritmo que vem desde 2025 vira recessão, que é o PIB caindo dois trimestres seguidos",
+       "bloco 7: número ou data sem linha do caderno que confira: 2016 | trecho: O que a queda da indústria quer dizer, para o país e para as empresas, é que o investimento está sendo adiado, o que pes"
+      ],
+      "avisos": [
+       "o texto tem 601 palavras (o tamanho de hoje é de 300 a 600)",
+       "c1 vem de site fora da lista de fontes conhecidas: https://mercadoeconsumo.com.br/05/11/2026/economia/producao-da-industria-recua-08-em-setembro-4a-queda-em-cinco-meses/",
+       "c4 vem de site fora da lista de fontes conhecidas: https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
+       "bloco 8: frase de 45 palavras"
+      ],
+      "palavras": 601,
+      "intertitulos": 0
+     },
+     "objecoes": [
+      {
+       "trecho": "Quem puxa a queda são as máquinas e equipamentos, o que mostra empresas investindo menos, e por isso o PIB do terceiro trimestre, que o IBGE divulga em 2/12, pode não crescer",
+       "cabeca": "defensor",
+       "problema": "Falta o porquê dado por quem divulgou. As reproduções do comunicado do IBGE citam chuva atrapalhando a moagem da cana, setembro com um dia útil a menos e uma base de comparação alta. São causas passageiras, que enfraquecem a leitura de que o investimento caiu, e o texto só traz essa leitura. Além disso, c2 fala da queda do trimestre (2,2%), e não da queda de setembro.",
+       "onde_conferir": "O comunicado da produção industrial de setembro, na Agência de Notícias do IBGE (5/11/2026). As reproduções (Jornal do Comércio, A Crítica, de 5/11) não abriram aqui, por isso não há linha nova no caderno. Sem o documento, a frase precisa dizer que a explicação pelo investimento é uma leitura, e de quem.",
+       "grave": true
+      },
+      {
+       "trecho": "Em setembro, ela produziu 2,5% menos que em setembro de 2025, com queda em 17 dos 25 ramos [c3].",
+       "cabeca": "regras",
+       "problema": "O próprio c3 diz que o comunicado do IBGE não foi aberto, e o trecho só traz a manchete, sem o 2,5% nem o 17 de 25. Pelas reproduções, os 17 ramos em queda podem ser contra agosto, e não contra setembro de 2025. Nesse caso, a frase junta duas comparações diferentes.",
+       "onde_conferir": "c3. Conferir no comunicado do IBGE de 5/11/2026 se os 17 de 25 ramos são contra agosto ou contra setembro de 2025.",
+       "grave": true
+      },
+      {
+       "trecho": "Desde 2012, houve dois períodos com desemprego abaixo de 5,5% e a prévia do PIB subindo, e o primeiro não foi seguido de recessão; são dois casos, e o segundo ainda não completou um ano [c13].",
+       "cabeca": "leitora",
+       "problema": "Os dois períodos são de 2025 e 2026, por isso o \"desde 2012\" cria uma régua longa que a conta não mostra. A frase também diz que a prévia está subindo de junho a agosto, quando o parágrafo de cima diz que ela caiu 0,6% nos 3 meses até agosto. A leitora não entende a contradição, e um caso só, de um ano atrás, não sustenta a objeção.",
+       "onde_conferir": "c13 (episódios de 2025-10 a 2026-01 e de 2026-06 a 2026-08) e c7.",
+       "grave": true
+      },
+      {
+       "trecho": "Se a recessão vier, o custo cai sobre o emprego, como em 2014 a 2016, quando o desemprego subiu 7,0 pontos, de 6,9% para 13,9% [c12].",
+       "cabeca": "critico",
+       "problema": "A frase escolhe só o pior caso. A mesma conta traz 2020, em que o desemprego subiu 2,5 pontos. Um caso só vira regra e puxa para o alarme, quando a fonte dá dois casos de tamanhos bem diferentes.",
+       "onde_conferir": "c12 (a saída de traduz emprego também traz a recessão de 2020, com 2,5 pontos).",
+       "grave": true
+      },
+      {
+       "trecho": "o pior setembro desde 2020",
+       "cabeca": "regras",
+       "problema": "A série do Novo Caged começa em 2020, e são só seis setembros. \"Desde 2020\" faz parecer que o resultado é pior que tudo o que veio depois de uma data qualquer. O recorde precisa da régua da série: o pior setembro da série, que começa em 2020.",
+       "onde_conferir": "c9: \"pior setembro da série do Novo Caged (desde 2020)\".",
+       "grave": true
+      },
+      {
+       "trecho": "Quando quem investe lá fora se assusta, costuma tirar dinheiro de países como o Brasil, e o dólar fechou em R$ 5,46 em 5/11, 6,8% mais caro que no começo de agosto",
+       "cabeca": "leitora",
+       "problema": "A frase liga a queda das bolsas de ontem a uma alta do dólar que vem desde agosto e que, como o próprio site já publicou, veio sobretudo depois da eleição. A causa vem depois do efeito. Os jornais de ontem dão R$ 5,489 no fechamento e uma saída de R$ 8,4 bilhões de estrangeiros desde a eleição, e esses números contam o passo de ontem melhor.",
+       "onde_conferir": "Dados do site (dólar a R$ 5,46 em 5/11, contra o começo de agosto) e a memória do site de 29/10 e 31/10. Para o passo de ontem, a notícia da Poder360 e da Agência Brasil de 5/11 (R$ 5,489), que precisa de uma linha no caderno.",
+       "grave": true
+      },
+      {
+       "trecho": "O ritmo não depende de uma decisão só, porque o Banco Central pesa pelo juro, que manteve em 13,75% em 4/11, e o governo pesa pelas próprias contas.",
+       "cabeca": "leitora",
+       "problema": "Esta é a primeira vez que o site trata desta história, e o parágrafo de contexto não diz como as contas do governo pesam no ritmo, nem por que o Banco Central manteve o juro. A leitora não consegue repetir a corrente a um sócio. A data 4/11 não tem linha que confira.",
+       "onde_conferir": "Dados do site (Selic em 13,75% desde 17/9) e o texto do dia de 5/11 na memória do site.",
+       "grave": false
+      },
+      {
+       "trecho": "A empresa que vende menos costuma parar de contratar antes de demitir, e é nessa ordem que o juro alto chega ao emprego.",
+       "cabeca": "regras",
+       "problema": "É uma regra de mecanismo dita como certa, sem linha do caderno nem da biblioteca, e o texto não mostra que é o juro, e não a chuva ou o calendário, que está segurando a indústria agora.",
+       "onde_conferir": "A biblioteca de evidência (EVIDENCIA.md), na entrada sobre o juro e o emprego, se existir. Se não existir, a frase precisa dizer que é uma leitura.",
+       "grave": false
+      },
+      {
+       "trecho": "enquanto a média dos bancos (Focus) ainda esperava 1,20% para 2027 na mesma data [c10]",
+       "cabeca": "critico",
+       "problema": "A frase usa o Focus de 30/10, mas a memória do site registra um Focus mais novo, de 4/11, que cortou o PIB. Comparar o Itaú com uma média velha aumenta a distância entre as previsões. A CNI (c11) também ficou de fora das previsões.",
+       "onde_conferir": "Dados do site (Focus: 1,8% em 2026 e 1,2% em 2027), o Focus mais recente até 5/11 e c11.",
+       "grave": false
+      },
+      {
+       "trecho": "A melhor objeção diz que a indústria é só uma parte da economia e que os serviços e o agro podem segurar o PIB.",
+       "cabeca": "defensor",
+       "problema": "A objeção entra sem nenhum número dos serviços ou do agro, e a resposta usa só o crescimento em 12 meses até agosto, que é um dado antigo. A leitora não vê o tamanho da indústria no PIB, e por isso não sabe quanto a queda pesa.",
+       "onde_conferir": "A participação da indústria no PIB e os serviços nas Contas Nacionais do IBGE (2º trimestre de 2026). As vendas do varejo de setembro saem em 13/11.",
+       "grave": false
+      }
+     ],
+     "resumo": "Seis objeções graves: falta o porquê do IBGE (chuva na cana, um dia útil a menos, base alta); o c3 não sustenta o 2,5% nem os 17 ramos; a conta dos dois períodos contradiz a queda da prévia do PIB; a comparação com 2014 a 2016 deixa 2020 de fora; o recorde do Caged está sem a régua da série; a alta do dólar desde agosto é atribuída às bolsas de ontem. Quatro melhorias: o contexto, o mecanismo sem fonte, o Focus velho e a objeção sem números. O comunicado do IBGE não abriu, e o caderno ficou sem linha nova."
     },
     {
-     "etapa": "editor_fundo",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "8abc851af60593d431f42777fbff489f16e7095324a32e4c4ddb8b22108ee00f",
-     "system_sha256": "c051e15dfe2ba0240d641e7b2a26a2ab05de7d68718375f6bd3be448f44a878a",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.150722,
-     "turnos": 2,
-     "duracao_s": 30,
-     "modelos": [
-      "claude-sonnet-5-5"
+     "volta": 2,
+     "codigo": {
+      "graves": [
+       "bloco 6: número ou data sem linha do caderno que confira: 28/10 | trecho: As previsões também se afastam. O Itaú cortou em 30/10 a previsão do PIB de 2027 de 1,2% para 0,5%, e a Confederação Nac"
+      ],
+      "avisos": [
+       "o texto tem 623 palavras (o tamanho de hoje é de 300 a 600)",
+       "c1 vem de site fora da lista de fontes conhecidas: https://mercadoeconsumo.com.br/05/11/2026/economia/producao-da-industria-recua-08-em-setembro-4a-queda-em-cinco-meses/",
+       "c4 vem de site fora da lista de fontes conhecidas: https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
+       "bloco 7: frase de 38 palavras",
+       "bloco 8: frase de 40 palavras"
+      ],
+      "palavras": 623,
+      "intertitulos": 0
+     },
+     "objecoes": [
+      {
+       "trecho": "No terceiro trimestre, a indústria recuou 2,2% contra o segundo, puxada por máquinas e equipamentos, o que se lê como empresas investindo menos e deixa em dúvida se o PIB do trimestre cresce",
+       "cabeca": "defensor",
+       "problema": "Ainda falta o porquê dado por quem divulgou. As reproduções do comunicado do IBGE de 5/11 citam setembro com um dia útil a menos, uma base alta (a indústria tinha crescido 2% em setembro de 2025) e chuva atrapalhando a moagem da cana. O texto traz uma leitura só, a de investimento menor. 'Um mês sozinho pode ter causa passageira' não diz quais causas são essas, e o guia pede as duas leituras com o mesmo peso.",
+       "onde_conferir": "Release da Pesquisa Industrial Mensal do IBGE de 5/11/2026 (agenciadenoticias.ibge.gov.br). Não consegui abrir as reproduções (istoe.com.br/industria-brasileira-queda-producao-setembro-2026 e forbes.com.br/geral/2026/11/industria-cai-setembro-maior-queda-dois-anos-e-meio/). Por isso não há linha no caderno: a redação precisa trazer o trecho do IBGE ou dizer que o instituto deu essas causas só depois de achar o documento.",
+       "grave": true
+      },
+      {
+       "trecho": "Para o país e para as empresas, a queda puxada por máquinas quer dizer investimento adiado, o que pesa na produção de hoje e na capacidade de crescer depois.",
+       "cabeca": "regras",
+       "problema": "A conclusão é mais forte que a evidência. Ela trata como certo o 'investimento adiado' a partir de um trimestre só, e as causas passageiras que o IBGE cita ficam fora. Pelas reproduções, as máquinas caíram 1,9% em setembro, mas só o 2,2% do trimestre está no caderno (c2).",
+       "onde_conferir": "c2. O release do IBGE de 5/11/2026 traz as causas oficiais.",
+       "grave": false
+      },
+      {
+       "trecho": "A melhor objeção diz que a indústria é só uma parte da economia e que os serviços e o agro podem segurar o PIB.",
+       "cabeca": "defensor",
+       "problema": "Continua sem número. O texto não diz quanto a indústria pesa no PIB nem traz nenhum dado dos serviços ou do agro, e a resposta usa só o crescimento em 12 meses até agosto. A objeção também não diz de quem é. Assim a leitora não sabe o tamanho do contrapeso.",
+       "onde_conferir": "Contas Nacionais do IBGE (peso da indústria no PIB). Pesquisa Mensal de Serviços de setembro, se já saiu até 5/11.",
+       "grave": false
+      },
+      {
+       "trecho": "A média dos bancos (Focus) espera 1,8% para 2026 e 1,2% para 2027. São apostas de quem empresta dinheiro, e o Focus erra, em média, 1,5 ponto.",
+       "cabeca": "regras",
+       "problema": "Nos dados do site, o erro médio de 1,5 ponto é o da previsão de crescimento para os próximos 12 meses, e não o das previsões do PIB de 2026 e de 2027. Posto aqui, ele vira a régua de outra conta. A previsão de 2027, mais longe no tempo, não tem esse erro medido.",
+       "onde_conferir": "Dados do site, no bloco 'Crescimento em 12 meses': 'A previsão é dos bancos (Focus), que erram, em média, 1,5 ponto', dita sobre os 1,3% esperados para os próximos 12 meses.",
+       "grave": false
+      },
+      {
+       "trecho": "Ontem o dólar fechou a R$ 5,489, num dia de instabilidade lá fora, e os estrangeiros já tiraram R$ 8,4 bilhões da Bolsa daqui desde a eleição, o que encarece as máquinas importadas de que a indústria precisa para investir.",
+       "cabeca": "leitora",
+       "problema": "Os dois números vêm só das manchetes, sem linha no caderno, e a saída de R$ 8,4 bilhões não tem régua nenhuma (contra o quê? quanto é isso perto do normal?). A ponte 'encarece as máquinas importadas' é uma corrente nova, sem fonte. A frase tem 40 palavras e junta três ideias.",
+       "onde_conferir": "Pôr no caderno a reportagem de 5/11 (Poder360 ou Agência Brasil) com o fechamento do dólar e a da Gazeta do Povo com os R$ 8,4 bilhões. A régua do dólar já está nos dados do site: R$ 5,18 no fim de agosto.",
+       "grave": true
+      }
      ],
-     "permission_denials": [],
-     "session_id": "4e79bdef-f20d-40f5-982e-72d8ef91a634"
+     "resumo": "A reescrita resolveu seis das dez objeções. Quatro seguem abertas. Faltam as causas que o IBGE deu para a queda (dia útil a menos, base alta, chuva na cana), e sem elas o 'investimento adiado' do fim vale como conclusão mais forte que a evidência. A objeção dos serviços e do agro segue sem número, e o erro de 1,5 ponto do Focus foi posto na previsão errada. A reescrita estragou uma coisa: o dólar e os R$ 8,4 bilhões entraram sem linha no caderno e sem régua."
     },
     {
-     "etapa": "editor_chefe",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "8be67170df517cf9d14055a7e6df2dfe4c0c9bda45783d5e976a8dba93f4d71b",
-     "system_sha256": "6a24d631df6696859a9bd2b0011854ba63812942cedacee451450ccd3de9ae4b",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.432976,
-     "turnos": 2,
-     "duracao_s": 37,
-     "modelos": [
-      "claude-opus-5-5"
+     "volta": 3,
+     "codigo": {
+      "graves": [],
+      "avisos": [
+       "o texto tem 641 palavras (o tamanho de hoje é de 300 a 600)",
+       "c1 vem de site fora da lista de fontes conhecidas: https://mercadoeconsumo.com.br/05/11/2026/economia/producao-da-industria-recua-08-em-setembro-4a-queda-em-cinco-meses/",
+       "c4 vem de site fora da lista de fontes conhecidas: https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html"
+      ],
+      "palavras": 641,
+      "intertitulos": 0
+     },
+     "objecoes": [
+      {
+       "trecho": "Quando quem investe lá fora se assusta, costuma tirar dinheiro de países como o Brasil, e o dólar estava em R$ 5,46 em 5/11, contra R$ 5,18 no fim de agosto.",
+       "cabeca": "leitora",
+       "problema": "Pela ordem da frase, a leitora entende que a queda das bolsas lá fora em 5/11 explica a alta do dólar desde agosto. Mas essa alta é anterior e vem em boa parte da semana da eleição. Por isso a causa fica no lugar errado.",
+       "onde_conferir": "dados_do_site, Desconfiança de quem investe (dólar de R$ 5,18 no fim de agosto para R$ 5,46 em 5/11); memoria_do_site de 2026-10-29 e 2026-10-31 (dólar subiu 8,2% no dia seguinte à eleição e 9% na semana)",
+       "grave": true
+      },
+      {
+       "trecho": "Com a indústria também em queda em setembro, o último mês do trimestre não trouxe a recuperação que compensaria essa perda.",
+       "cabeca": "regras",
+       "problema": "A conclusão é mais forte que a evidência. De setembro só se conhece a indústria, e a frase fala da economia inteira. O próprio texto diz depois que os serviços e o agro podem segurar o resultado e que a indústria é a única parte do trimestre já conhecida.",
+       "onde_conferir": "c1, c2 e c7 (só a indústria de setembro e a prévia do PIB até agosto); o próprio texto: 'até lá a indústria é a parte do trimestre que já se conhece'",
+       "grave": true
+      }
      ],
-     "permission_denials": [],
-     "session_id": "0e17f92c-2da1-4b2a-a105-9089a037a4f1"
-    },
-    {
-     "etapa": "redacao",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "ad2ba2b852dc30db3b9a32b763b174aafc70a78b331ee357276407db8963120a",
-     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.6796092,
-     "turnos": 2,
-     "duracao_s": 67,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "282263db-718d-4cf1-bd6c-65e4f70189ae"
-    },
-    {
-     "etapa": "conferencia",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "039b628f10eccb13410ffd268672f014bff7666e51b13439f8c18d9a1b102a30",
-     "system_sha256": "014db32c3a98cfd87cb62417008dbee3bc6c60858da38a9ac3f6069aa3aea5eb",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.170925,
-     "turnos": 2,
-     "duracao_s": 53,
-     "modelos": [
-      "claude-sonnet-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "e37e3eb0-3285-458c-841e-0927b7ec4635"
-    },
-    {
-     "etapa": "redacao",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "ae53012f02d72cb49f0721631b8ab05d3f8ffb6f99bde3c98ae2774d34451218",
-     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.6972412,
-     "turnos": 2,
-     "duracao_s": 58,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "5fc3dd58-2ca3-4d98-bbfe-4405b5326922"
-    },
-    {
-     "etapa": "editor_fundo",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "66258f83ee2d719e7f53cf93bb1274296855a4dbee2e61cc4724fe6d5f32f75d",
-     "system_sha256": "c051e15dfe2ba0240d641e7b2a26a2ab05de7d68718375f6bd3be448f44a878a",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.1696814,
-     "turnos": 2,
-     "duracao_s": 36,
-     "modelos": [
-      "claude-sonnet-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "4231d6ba-062e-4b7d-8415-1ff765751d93"
+     "resumo": "Conferência final: os números batem com o caderno e com os dados do site, mas duas frases não podem sair. Uma põe a alta do dólar desde agosto como efeito da queda das bolsas lá fora de ontem, embora a alta seja anterior e venha em boa parte da semana da eleição. A outra trata a queda da indústria como se fosse setembro inteiro, quando só a indústria do mês já saiu."
     }
    ],
    "contas_ate": "2026-11-05",
+   "historia": "ritmo_emprego",
+   "segunda": "nova:queda-das-acoes-de-tecnologia",
+   "modo": "normal",
    "pesquisa": {
     "perguntas": [
      {
-      "pergunta": "A conta da média trimestral: o que o IBC-Br já diz sobre o 3º trimestre, passo a passo?",
-      "resposta": "Média de abril a junho: (111,04 + 111,25 + 110,37)/3 = 110,887. Julho e agosto juntos: (110,03 + 110,41)/2 = 110,22, ou 0,60% abaixo. Se setembro repetir agosto (110,41), a média de julho a setembro é 110,283, ou 0,54% abaixo de abril a junho. Para empatar, setembro teria de ser 3 x 110,887 - 110,03 - 110,41 = 112,22, ou cerca de 1,6% acima de agosto. Corrigido: a tese fala em 'julho a setembro'. O conta.py não tem comando de média, então cada passo é aritmética do pesquisador sobre as linhas c1, c3, c13 e c14. É a prévia, não o PIB do IBGE.",
+      "pergunta": "O que mudou na história com os passos de ontem, e por quê?",
+      "resposta": "O IBGE divulgou em 5/11 que a produção industrial caiu 0,8% em setembro (quarta queda em cinco meses) e acumula queda de 4,1% de maio a setembro; a fonte da ficha diz que a indústria recuou 2,2% no 3º trimestre contra o 2º, puxada por máquinas e equipamentos (menos investimento). Soma-se ao Caged de setembro (121,3 mil vagas, o pior setembro desde 2020) e à previsão do Itaú (PIB 2027 de 1,2% para 0,5%). Não achei o release original do IBGE (o proxy recusou); o trecho vem da busca. A previsão de Bradesco, XP e Genoa é de hoje (6/11) e fica fora.",
       "caderno": [
        "c1",
+       "c2",
        "c3",
-       "c13",
-       "c14"
-      ]
-     },
-     {
-      "pergunta": "Já aconteceu antes? Desde 2003, quantas vezes os dois primeiros meses de um trimestre ficaram abaixo da média do trimestre anterior, e o que o PIB fez?",
-      "resposta": "Contei os trimestres em que a média dos dois primeiros meses do IBC-Br ficou 0,5% ou mais abaixo da média do trimestre anterior: foram 15 desde 2003 (2003 T2 e T3, 2008 T4, 2009 T1, 2012 T1, 2014 T2, 2015 T1 a T3, 2016 T1 e T2, 2018 T2, 2020 T2, 2021 T2, 2022 T1). Em 9, a lista de recessões do site confirma queda do PIB do IBGE (2003 T2, 2008 T4, 2009 T1, 2014 T2, 2015 T1 a T3, 2016 T1, 2020 T2). Em 2 (2003 T3 e 2016 T2), o PIB não caiu, porque a queda entraria na sequência da lista. Nos outros 4 (2012 T1, 2018 T2, 2021 T2, 2022 T1) o site só lista sequências de 2 ou mais quedas, então não mostra se houve queda isolada. Em 2026 o buraco é de 0,60%, entre os casos que viraram recessão (2014: 0,78%; 2015: 0,86%) e os que não viraram (2021: 0,62%; 2022: 0,70%). O tamanho do buraco sozinho não separa os casos.",
-      "caderno": [
-       "c24",
-       "c25",
-       "c26",
-       "c27",
        "c4"
       ]
      },
      {
-      "pergunta": "O que separa os tropeços das recessões nesses casos?",
-      "resposta": "Nos 4 casos sem sequência de quedas, o buraco veio de um único mês seguido de volta no mês seguinte: janeiro de 2012 (97,32 e depois 98,27), maio de 2018, com a greve dos caminhoneiros (93,06 e depois 95,75), março de 2021 (95,31 e depois 96,33) e janeiro de 2022 (97,42 e depois 98,49). Em 2014 e 2015 a queda foi espalhada por vários meses. Em 2026 a prévia caiu 0,8% de maio a junho, 0,3% em julho e subiu 0,3% em agosto: três meses, não um único buraco. São 7 episódios de buraco moderado (entre 0,5% e 1,3%), e 3 viraram recessão. É um padrão sugestivo, não uma regra.",
+      "pergunta": "Qual o tamanho do movimento e a régua? A economia está perto de recessão técnica?",
+      "resposta": "Recessão técnica pede dois trimestres seguidos de queda do PIB; o último PIB (2T2026) foi +0,5% e o 3T sai em 2/12. O IBC-Br (prévia do PIB) foi de 111,25 em maio para 110,41 em agosto, e a prévia caiu 0,6% no trimestre até agosto. O crescimento em 12 meses (1,4%) está dentro do normal desde 2004 (0,8% a 3,9%). A indústria é parte menor do PIB: a queda de 4,1% desde maio não é a queda do PIB.",
       "caderno": [
-       "c1",
-       "c25",
-       "c26",
-       "c27"
+       "c5",
+       "c6",
+       "c7"
       ]
      },
      {
-      "pergunta": "E para o 4º trimestre: o que os dados de outubro que já saíram dizem?",
-      "resposta": "Os sinais são mistos. Pesam contra: o PMI industrial ficou em 46,1 em outubro (abaixo de 50 é contração), embora acima dos 44,8 de setembro, e a confiança empresarial da FGV caiu 0,3 ponto, a quarta queda seguida. Pesam a favor: a confiança do comércio subiu 1,8 ponto, a 83,1, e a do consumidor subiu 0,5 ponto, a 84,7 (coletas feitas em boa parte antes ou no mesmo mês da eleição de 25/10). A Anfavea elevou em outubro a previsão de produção de veículos de 2026 para 6,7%, mas a produção de setembro caiu 1,1%. Não achei o número de outubro da Anfavea, da ABCR nem o uso da capacidade da CNI, e a confiança da indústria de outubro só aparece na memória do site, sem documento.",
+      "pergunta": "O emprego já virou?",
+      "resposta": "Ainda não no desemprego: 5,2% no trimestre até setembro, só 1% dos meses da série (desde 2012) tiveram valor menor. Mas a criação de vagas com carteira esfria: 121,3 mil em setembro, contra 214,6 mil um ano antes (queda de 43,5%, segundo a busca) e abaixo da mediana de 163,6 mil esperada.",
       "caderno": [
-       "c15",
-       "c16",
-       "c17",
-       "c18",
-       "c19",
+       "c8",
+       "c9"
+      ]
+     },
+     {
+      "pergunta": "Quem discorda e com quais números?",
+      "resposta": "Itaú (30/10) cortou o PIB de 2027 de 1,2% para 0,5% e subiu o IPCA de 2027 de 4,6% para 6,1%. O Focus de 30/10 ainda esperava 1,20% para 2027 e 1,76% para 2026, ou seja, os bancos em média estão acima do Itaú. A CNI cortou 2026 de 2% para 1,6% (28/10). Previsão é previsão: o Focus erra em média 1,5 ponto.",
+      "caderno": [
+       "c10",
+       "c11",
+       "c4"
+      ]
+     },
+     {
+      "pergunta": "Há vez parecida no passado?",
+      "resposta": "Desde 2002 o site conta 7 recessões (2T2001, 1T2003, 4T2008, 2T2014, 1T2015, 3T2016, 1T2020). A de 2014-15 veio com juro alto, confiança em queda e revisões em série; na recessão de 2014 a 2016 o desemprego subiu 7,0 pontos. Mas o episódio com desemprego abaixo de 5,5% e IBC-Br crescendo, em 2 episódios do site, não teve recessão nos 12 meses seguintes (o último ainda sem 12 meses de dados). Poucos casos; não prova nada.",
+      "caderno": [
+       "c12",
+       "c13"
+      ]
+     }
+    ],
+    "argumentos": [
+     {
+      "argumento": "A indústria caiu 4,1% de maio a setembro, mas o PIB ainda não: o que se vê é investimento menor, e o 3º trimestre (2/12) decide se a desaceleração vira queda, porque recessão técnica pede dois trimestres seguidos.",
+      "para_quem": "O país e as empresas que investem: máquinas e equipamentos puxam a queda.",
+      "o_que_desmente": "Um PIB do 3º trimestre positivo e uma indústria que volte a subir em outubro (3/12) desmentem a leitura de que a queda industrial já chegou ao PIB.",
+      "caderno": [
+       "c1",
+       "c2",
+       "c5",
+       "c6",
+       "c7"
+      ]
+     },
+     {
+      "argumento": "O emprego é o último a ceder: o desemprego está em 5,2%, mas as vagas com carteira em setembro caíram 43,5% ante um ano antes, sinal de que o juro alto já freia a contratação antes do desemprego.",
+      "para_quem": "Quem depende de renda do trabalho formal e de consumo.",
+      "o_que_desmente": "Caged de outubro de volta perto de 160 mil e desemprego em queda até outubro (27/11).",
+      "caderno": [
+       "c8",
+       "c9",
        "c12"
       ]
      },
      {
-      "pergunta": "O que aconteceu depois de choques de dólar e bolsa como os de 2002 e 2014?",
-      "resposta": "Em outubro de 2002 o dólar estava em R$ 3,645, a Selic em 21,00% e a inflação esperada em 8,44%. Em abril de 2003 o dólar caiu a R$ 2,8898, a Selic foi a 26,50% e o site conta recessão a partir do 1T2003. Em outubro de 2014 o dólar estava em R$ 2,4442 e a prévia do PIB em 101,59. Em abril de 2015 estavam em R$ 2,9936 e 99,13, e o desemprego subiu de 6,70% para 8,10%. A recessão contada pelo site começou no 1T2015 (a de 2014 já tinha começado no 2T2014, antes do choque). Em ambos o Banco Central subiu o juro, o que não é o caso hoje: em novembro de 2026 a Selic ficou parada em 13,75%. São dois casos, com inflação muito diferente em 2002; servem para ver que o desemprego demorou cerca de meio ano para reagir, não como previsão.",
+      "argumento": "A previsão de 0,5% do Itaú para 2027 é a mais pessimista das grandes casas até ontem; o Focus de 30/10 ainda estava em 1,20%, então a distância entre bancos é o que a leitora deve ver, não uma recessão dada.",
+      "para_quem": "A empresa que planeja 2027.",
+      "o_que_desmente": "Se o Focus convergir para perto de 0,5%, o Itaú deixa de ser exceção.",
       "caderno": [
-       "c22",
-       "c23"
-      ]
-     },
-     {
-      "pergunta": "O que a nota do IBGE diz sobre bens de capital, derivados e dia útil?",
-      "resposta": "Não consegui abrir a nota (o proxy recusou); as informações vêm dos resumos da busca sobre a página do IBGE de 5/11. Bens de capital caíram 1,9% em setembro contra agosto, depois de -0,1% em agosto; contra setembro de 2025 caíram 4,9% e de janeiro a setembro acumulam -5,0%, o pior entre as quatro grandes categorias. Derivados de petróleo e biocombustíveis (-4,2%) foi a maior queda por atividade. O resumo diz que o IBGE atribui parte do resultado a um dia útil a menos. Não achei bens de capital em maio, junho e julho, nem o número do trimestre para essa categoria.",
-      "caderno": [
-       "c5",
-       "c6",
-       "c28"
-      ]
-     },
-     {
-      "pergunta": "Já houve quatro quedas da indústria em cinco meses desde 2003, e a queda de bens de capital costuma vir antes da do emprego?",
-      "resposta": "Não consegui responder. O site não tem série de produção industrial nem do Caged, e a busca não trouxe a série da pesquisa do IBGE. A única pista é 2014-15: a prévia do PIB caiu de 101,59 (out/2014) para 99,13 (abr/2015) e o desemprego subiu de 6,70% para 8,10% no mesmo período, ou seja, o emprego veio depois da atividade, mas isso não separa bens de capital. O que se sabe de 2026 é que bens de capital já caíam em agosto (-0,1%) e em setembro (-1,9%), antes da eleição de 25/10.",
-      "caderno": [
-       "c23",
-       "c28"
-      ]
-     },
-     {
-      "pergunta": "Há projeção do PIB do 3º trimestre por bancos ou pelo Banco Central? E as revisões de Bradesco, XP e Genoa?",
-      "resposta": "Projeção de 3º trimestre por banco, não achei. O Relatório de Política Monetária de setembro baixou o PIB de 2026 de 2,0% para 1,8% e disse que a revisão incorpora os primeiros indicadores do 3º trimestre, que sugerem atividade mais fraca. O Itaú cortou o PIB de 2027 para 0,5% e subiu o IPCA de 2027 para 6,1%. As revisões de Bradesco, XP e Genoa não foram confirmadas por documento: devem ficar fora do texto.",
-      "caderno": [
-       "c20",
-       "c21"
-      ]
-     }
-    ],
-    "teses": [
-     {
-      "tese": "O tamanho do buraco da prévia do PIB no 3º trimestre (0,60% nos dois primeiros meses, 0,54% se setembro repetir agosto) não diz se vem recessão: desde 2003, em 7 episódios de buraco moderado, 3 viraram recessão e 4 foram um mês ruim seguido de volta. O que separa os dois é o formato: queda espalhada por vários meses (2014 e 2015) ou um único mês de choque (greve de 2018). Em 2026 a prévia caiu 0,8% em junho, 0,3% em julho e subiu 0,3% em agosto, mais perto do primeiro formato. O teste é o IBC-Br de setembro (precisaria subir cerca de 1,6%), o PIB de 2/12 e o do 4º trimestre.",
-      "por_que_nao_e_obvia": "A manchete trata a queda da indústria como sinal de recessão; a leitora não sabe que, nos casos parecidos, o formato da queda importa mais que o tamanho. Poucos textos contam quantos buracos iguais acabaram em recessão e quantos foram só um mês ruim.",
-      "o_que_muda": "A leitora deixa de ler o PIB de 2/12 como veredito e passa a olhar o formato: se setembro devolver parte da queda, o caso parece tropeço; se repetir agosto, parece 2014. Recessão, pela conta do site, só vem com um segundo trimestre de queda.",
-      "como_pode_dar_errado": "São 7 episódios, 4 deles com queda isolada que o site não lista, e o IBC-Br pode divergir do PIB do IBGE (serviços e agro). Se setembro vier acima de 112 e o PIB de 2/12 for positivo, a tese de 'formato espalhado' cai. Se o 3º e o 4º trimestres forem negativos, ela se confirma.",
-      "caderno": [
-       "c1",
-       "c3",
-       "c13",
-       "c14",
-       "c24",
-       "c25",
-       "c26",
-       "c27",
-       "c4"
-      ]
-     },
-     {
-      "tese": "A queda do investimento já estava em andamento antes da eleição: bens de capital caíram 0,1% em agosto e 1,9% em setembro, acumulam -5,0% no ano, as vendas de máquinas caíram 13,4% até setembro e a confiança da indústria caiu três meses seguidos até outubro. Pelo teste da troca, a causa é a incerteza sobre o plano econômico do novo mandato, que as empresas citam para adiar compras, mais o juro alto. Os dados de outubro são mistos (PMI de 46,1 e confiança empresarial em queda; comércio e consumidor em alta); o sinal a conferir é bens de capital na produção de outubro (3/12).",
-      "por_que_nao_e_obvia": "A leitora tende a ligar a queda da indústria ao susto de bolsa e dólar de 26/10, mas bens de capital já caía em agosto e setembro, antes dele. Isso muda a ordem causa e efeito: o choque pós-eleição se soma a um investimento que já recuava.",
-      "o_que_muda": "A leitora passa a esperar que a produção de outubro (3/12) mostre se bens de capital segue caindo e que a queda não se resolva sozinha com a calma do dólar.",
-      "como_pode_dar_errado": "Parte de setembro é ruído (derivados -4,2%, dia útil a menos). Se bens de capital subir em outubro e o PMI e a confiança empresarial se recuperarem em novembro, a tese cai. Não consegui a série mensal de bens de capital de maio a julho nem abrir a nota do IBGE.",
-      "caderno": [
-       "c5",
-       "c6",
-       "c28",
-       "c12",
-       "c15",
-       "c16",
-       "c17",
-       "c18",
-       "c19"
+       "c4",
+       "c10",
+       "c11"
       ]
      }
     ],
     "objecao": {
-     "texto": "Quem discorda diria que a indústria é pouco do PIB e que emprego (5,2%), agro e consumo seguram o trimestre: o PIB do 2T cresceu 0,5% com a indústria fraca, o RPM de setembro ainda via 1,8% em 2026, e a confiança do comércio e do consumidor subiu em outubro. Além disso, a conta da média usa a prévia e supõe setembro igual a agosto; 15 trimestres com buraco são poucos casos, em 4 deles o site não mostra o PIB do trimestre, e 2008 e 2020 foram choques maiores. A objeção é forte. O que a enfraquece é o Caged de setembro (o pior da série para o mês), o consumo das famílias que já recuou 0,4% no 2T e o PMI abaixo de 50.",
+     "texto": "A indústria é pequena parte do PIB e oscila: a prévia do PIB subiu 0,3% em agosto e o desemprego está perto do menor da série; o agro e o consumo ainda seguram o PIB. Quatro casos de queda industrial não fazem recessão, e o Itaú é uma previsão, não um fato. Em 2018 a greve dos caminhoneiros derrubou a atividade e ela voltou em poucos meses.",
      "caderno": [
-      "c4",
-      "c9",
-      "c11",
-      "c20",
-      "c16",
-      "c17",
-      "c15",
-      "c27"
+      "c5",
+      "c6",
+      "c8",
+      "c10"
      ]
     },
-    "o_que_falta": "Não abri a nota do IBGE (proxy recusou): c5, c6 e c28 vêm de resumos da busca; o dia útil a menos aparece só em resumo de outra página. Não achei bens de capital de maio a julho, o dado trimestral por categoria nem série industrial para contar 'quatro quedas em cinco meses'. Faltam Caged e produção industrial como série, CNI, ABCR e Anfavea de outubro. Data do RPM (24/9) inferida. Bradesco, XP e Genoa: sem documento, ficam fora. Sem projeção de banco para o PIB do 3T. Quedas isoladas do PIB (2012 T1, 2018 T2, 2021 T2, 2022 T1) não estão no site. Sem data do IBC-Br de setembro."
+    "o_que_falta": "Não abri o release do IBGE (o proxy recusou o WebFetch); o 2,2% do trimestre vem só da ficha e da manchete do Valor, e a busca não o confirmou. A previsão de Bradesco, XP e Genoa é de 6/11 (hoje), então ficou fora. Não achei o peso da indústria no PIB nem a nota da Fazenda, e não rodei pausas e ciclos, que pouco servem a esta história. A segunda história (Nasdaq) não foi pesquisada a fundo.",
+    "pagina_que_falta": ""
+   },
+   "pagina_que_falta": "",
+   "rascunho": {
+    "titulo": "Indústria cai 4,1% desde maio e põe em dúvida o PIB do terceiro trimestre",
+    "texto": "O IBGE divulgou ontem que a produção da indústria caiu 0,8% em setembro, contra agosto. Foi a quarta queda em cinco meses, e a perda desde maio chega a 4,1% [c1]. Quem puxa a queda são as máquinas e equipamentos, o que mostra empresas investindo menos, e por isso o PIB do terceiro trimestre, que o IBGE divulga em 2/12, pode não crescer [c2].\n\nA pergunta em aberto é se a perda de ritmo que vem desde 2025 vira recessão, que é o PIB caindo dois trimestres seguidos. O PIB cresceu 1,1% no primeiro trimestre de 2026 e 0,5% no segundo, e nenhum dos últimos oito trimestres foi de queda [c5]. O ritmo não depende de uma decisão só, porque o Banco Central pesa pelo juro, que manteve em 13,75% em 4/11, e o governo pesa pelas próprias contas.\n\nA indústria recuou 2,2% no terceiro trimestre, contra o segundo [c2]. Em setembro, ela produziu 2,5% menos que em setembro de 2025, com queda em 17 dos 25 ramos [c3]. A prévia do PIB feita pelo Banco Central já tinha caído 0,6% nos 3 meses até agosto, contra os 3 meses anteriores [c7]. Como a indústria também caiu em setembro, o último mês do trimestre não trouxe a recuperação que compensaria essa queda.\n\nO emprego mostra o mesmo freio, mas ainda na contratação, e não na demissão. O desemprego ficou em 5,2% no trimestre até setembro, mais baixo que em quase todos os meses desde 2012 [c8]. As vagas com carteira, porém, somaram 121,3 mil em setembro, segundo o Ministério do Trabalho, o pior setembro desde 2020 e 43,5% menos que em setembro de 2025 [c9]. A empresa que vende menos costuma parar de contratar antes de demitir, e é nessa ordem que o juro alto chega ao emprego.\n\nA melhor objeção diz que a indústria é só uma parte da economia e que os serviços e o agro podem segurar o PIB. O crescimento em 12 meses, de 1,4% até agosto, ainda está dentro do normal desde 2004, que vai de 0,8% a 3,9% ao ano [c7]. Desde 2012, houve dois períodos com desemprego abaixo de 5,5% e a prévia do PIB subindo, e o primeiro não foi seguido de recessão; são dois casos, e o segundo ainda não completou um ano [c13].\n\nAs previsões se dividem. O Itaú cortou em 30/10 a previsão do PIB de 2027 de 1,2% para 0,5% [c4], enquanto a média dos bancos (Focus) ainda esperava 1,20% para 2027 na mesma data [c10]. São apostas de quem empresta dinheiro, e a distância entre elas mostra quanto ainda não se sabe.\n\nO que a queda da indústria quer dizer, para o país e para as empresas, é que o investimento está sendo adiado, o que pesa na produção de hoje e na capacidade de crescer depois. Se a recessão vier, o custo cai sobre o emprego, como em 2014 a 2016, quando o desemprego subiu 7,0 pontos, de 6,9% para 13,9% [c12]. Os próximos sinais são o desemprego até outubro, em 27/11, o PIB do terceiro trimestre, em 2/12, e a indústria de outubro, em 3/12.\n\nO outro assunto que andou ontem veio de fora. A Nasdaq, bolsa de tecnologia dos Estados Unidos, chegou a cair 6,4%, e a Bolsa do Japão perdeu mais de 6%, com o medo de que as empresas invistam menos em inteligência artificial depois da vitória democrata no Congresso americano. Quando quem investe lá fora se assusta, costuma tirar dinheiro de países como o Brasil, e o dólar fechou em R$ 5,46 em 5/11, 6,8% mais caro que no começo de agosto, o que encarece as máquinas importadas de que a indústria precisa para investir.",
+    "argumento": "A queda de 4,1% da indústria desde maio, puxada por máquinas, mostra empresas investindo menos e põe em dúvida o PIB do terceiro trimestre, enquanto o emprego freia na contratação, ainda sem desemprego subindo.",
+    "porque": "Segundo o IBGE, a produção caiu 0,8% em setembro e 2,2% no trimestre, puxada por máquinas e equipamentos, o que mostra menos investimento das empresas."
    },
    "caderno": [
     {
      "id": "c1",
-     "tipo": "conta",
-     "afirmacao": "A prévia do PIB (IBC-Br) foi de 111,04 em abril, 111,25 em maio, 110,37 em junho, 110,03 em julho e 110,41 em agosto.",
+     "tipo": "documento",
+     "afirmacao": "A produção industrial recuou 0,8% em setembro ante agosto, quarta queda em cinco meses, com acumulado de 4,1% desde maio.",
      "numeros": [
-      "111,04",
-      "111,25",
-      "110,37",
-      "110,03",
-      "110,41"
+      "0,8%",
+      "4,1%",
+      "quarta queda em cinco meses"
      ],
-     "comando": ".venv/bin/python src/conta.py valores ibcbr --de 2026-04 --ate 2026-08",
-     "saida": "2026-04: 111,04 | 2026-05: 111,25 | 2026-06: 110,37 | 2026-07: 110,03 | 2026-08: 110,41",
+     "comando": "",
+     "saida": "",
      "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
+      "quem": "Mercado & Consumo (reprodução da Agência Brasil/IBGE)",
+      "url": "https://mercadoeconsumo.com.br/05/11/2026/economia/producao-da-industria-recua-08-em-setembro-4a-queda-em-cinco-meses/",
+      "data": "2026-11-05",
+      "trecho": "Produção da indústria recua 0,8% em setembro; 4ª queda em cinco meses"
      },
      "conferencia": {
-      "status": "conferido",
-      "saida": "ibcbr (índice):\n2026-04: 111,04\n2026-05: 111,25\n2026-06: 110,37\n2026-07: 110,03\n2026-08: 110,41\n"
+      "status": "nao_aberto",
+      "fonte_conhecida": false
      }
     },
     {
      "id": "c2",
-     "tipo": "conta",
-     "afirmacao": "De maio a agosto a prévia do PIB caiu 0,8%.",
+     "tipo": "site",
+     "afirmacao": "A indústria recuou 2,2% no 3º trimestre contra o 2º, puxada por máquinas e equipamentos, o que mostra menos investimento das empresas.",
      "numeros": [
-      "111,25",
-      "110,41",
-      "-0,8%"
+      "2,2%",
+      "4,1%"
      ],
-     "comando": ".venv/bin/python src/conta.py variacao ibcbr 2026-05 2026-08",
-     "saida": "ibcbr: 111,25 em 2026-05 e 110,41 em 2026-08; diferença de -0,84 (em pontos) e de -0,8% (em %).",
+     "comando": "",
+     "saida": "Ficha da história, passo de 05/11: 'A indústria recuou 2,2% no terceiro trimestre contra o segundo, puxada por máquinas e equipamentos, o que mostra menos investimento das empresas e pesa no PIB do trimestre.' (Valor: 'Indústria brasileira recua 2,2% no 3º trimestre após dois trimestres de alta, diz IBGE')",
      "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
+      "quem": "Valor Econômico (manchete na ficha)",
+      "url": "https://valor.globo.com/",
+      "data": "2026-11-05",
+      "trecho": "Indústria brasileira recua 2,2% no 3º trimestre após dois trimestres de alta, diz IBGE"
      },
      "conferencia": {
-      "status": "conferido",
-      "saida": "ibcbr: 111,25 em 2026-05 e 110,41 em 2026-08; diferença de -0,84 (em pontos) e de -0,8% (em %).\n"
+      "status": "nao_aberto",
+      "fonte_conhecida": true
      }
     },
     {
      "id": "c3",
-     "tipo": "conta",
-     "afirmacao": "Passo 1: a média de abril a junho é (111,04 + 111,25 + 110,37)/3 = 332,66/3 = 110,887. É aritmética do pesquisador sobre a linha de c1.",
+     "tipo": "documento",
+     "afirmacao": "Em setembro a produção industrial caiu 2,5% ante setembro de 2025; três das quatro grandes categorias e 17 de 25 ramos recuaram (resumo da busca, release do IBGE não aberto).",
      "numeros": [
-      "111,04",
-      "111,25",
-      "110,37"
+      "2,5%",
+      "17 dos 25 ramos"
      ],
-     "comando": ".venv/bin/python src/conta.py valores ibcbr --de 2026-04 --ate 2026-06",
-     "saida": "2026-04: 111,04 | 2026-05: 111,25 | 2026-06: 110,37",
+     "comando": "",
+     "saida": "",
      "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
+      "quem": "Jornal do Comércio (IBGE)",
+      "url": "https://www.jornaldocomercio.com/economia/2026/11/1269381-producao-industrial-cai-08-em-setembro-ante-agosto-revela-ibge.html",
+      "data": "2026-11-05",
+      "trecho": "Produção industrial cai 0,8% em setembro ante agosto, revela IBGE"
      },
      "conferencia": {
-      "status": "conferido",
-      "saida": "ibcbr (índice):\n2026-04: 111,04\n2026-05: 111,25\n2026-06: 110,37\n"
+      "status": "nao_aberto",
+      "fonte_conhecida": true
      }
     },
     {
      "id": "c4",
+     "tipo": "documento",
+     "afirmacao": "O Itaú cortou o PIB de 2027 de 1,2% para 0,5% e subiu o IPCA de 2027 de 4,6% para 6,1% (cenário de 30/10).",
+     "numeros": [
+      "0,5%",
+      "1,2%",
+      "6,1%",
+      "4,6%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Jornal do Brasil (cenário do Itaú)",
+      "url": "https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
+      "data": "2026-10-30",
+      "trecho": "Itaú atualiza cenário: PIB cresce só 0,5% em 2027, com inflação de 6,1% e parada na Selic em 13,75%"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c5",
      "tipo": "conta",
-     "afirmacao": "Os últimos trimestres do PIB foram positivos, com 2T2026 em 0,5%. Recessão é 2 ou mais quedas seguidas.",
+     "afirmacao": "O PIB do 2º trimestre de 2026 foi +0,5% e o site não conta recessão técnica desde 2020; as últimas oito leituras são todas positivas.",
      "numeros": [
       "0,5%",
       "1,1%"
@@ -3372,153 +3095,37 @@
      }
     },
     {
-     "id": "c5",
-     "tipo": "documento",
-     "afirmacao": "A produção industrial caiu 0,8% em setembro contra agosto; bens de capital caíram 1,9%, depois de -0,1% em agosto, e bens de consumo duráveis subiram 0,7%.",
-     "numeros": [
-      "0,8%",
-      "1,9%",
-      "0,1%",
-      "0,7%"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "IBGE (Agência de Notícias)",
-      "url": "https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48468-noticia-pim-pf-br-setembro",
-      "data": "2026-11-05",
-      "trecho": "Título da página: 'Indústria nacional recua -0,8% em setembro e acumula 0,4% em 2026'. Página não aberta (proxy recusou); os números de bens de capital (-1,9% em setembro, -0,1% em agosto) vêm do resumo da busca sobre ela."
-     },
-     "conferencia": {
-      "status": "nao_aberto",
-      "por_que": "HTTP 403",
-      "fonte_conhecida": true
-     }
-    },
-    {
      "id": "c6",
-     "tipo": "documento",
-     "afirmacao": "A maior queda do mês por atividade foi em coque, derivados de petróleo e biocombustíveis (-4,2%). O mercado previa queda de 0,2% e setembro teve um dia útil a menos (segundo o resumo da busca).",
+     "tipo": "conta",
+     "afirmacao": "A prévia do PIB (IBC-Br) passou de 111,25 em maio para 110,41 em agosto.",
      "numeros": [
-      "4,2%",
-      "0,2%"
+      "111,25",
+      "110,41"
      ],
-     "comando": "",
-     "saida": "",
+     "comando": ".venv/bin/python src/conta.py valores ibcbr --de 2026-03",
+     "saida": "2026-05: 111,25 ... 2026-08: 110,41",
      "fonte": {
-      "quem": "Metrópoles, com dados do IBGE",
-      "url": "https://www.metropoles.com/brasil/producao-industrial-recua-08-em-setembro-diz-ibge",
-      "data": "2026-11-05",
-      "trecho": "Resumo da busca (página não aberta): a atividade de coque, derivados do petróleo e biocombustíveis foi a que mais contribuiu para a retração, com -4,2%; mercado previa queda de 0,2%. O dia útil a menos aparece em resumo de outra página (Central do Varejo), não conferido."
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
      },
      "conferencia": {
-      "status": "trecho_nao_achado",
-      "fonte_conhecida": true
+      "status": "conferido",
+      "saida": "ibcbr (índice):\n2026-03: 110,66\n2026-04: 111,04\n2026-05: 111,25\n2026-06: 110,37\n2026-07: 110,03\n2026-08: 110,41\n"
      }
     },
     {
      "id": "c7",
-     "tipo": "conta",
-     "afirmacao": "O Focus de 30/10 esperava PIB de 1,76% em 2026 e 1,20% em 2027, e IPCA de 5,22% em 2026.",
-     "numeros": [
-      "1,76",
-      "1,20",
-      "5,22"
-     ],
-     "comando": ".venv/bin/python src/conta.py focus --de 2026-10-25",
-     "saida": "2026-10-30: IPCA 2026: 5,22 | 2026-10-30: PIB Total 2026: 1,76 | 2026-10-30: PIB Total 2027: 1,20",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "Previsões dos bancos (Focus, mediana) na data da pesquisa, como o site guardou:\n2026-10-30: Câmbio 2026: 5,34\n2026-10-30: Câmbio 2027: 5,40\n2026-10-30: Câmbio 2028: 5,40\n2026-10-30: Câmbio 2029: 5,45\n2026-10-30: Câmbio 2030: 5,50\n2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76\n2026-10-30: IPCA 2028: 4,00\n2026-10-30: IPCA 2029: 3,98\n2026-10-30: IPCA 2030: 3,81\n2026-10-30: IPCA 12m: 4,96\n2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20\n2026-10-30: PIB Total 2028: 1,80\n2026-10-30: PIB Total 2029: 2,00\n2026-10-30: PIB Total 2030: 2,00\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50\n2026-10-30: Selic 2028: 11,00\n2026-10-30: Selic 2029: 10,25\n2026-10-30: Selic 2030: 10,00\n"
-     }
-    },
-    {
-     "id": "c8",
      "tipo": "site",
-     "afirmacao": "No primeiro pregão após a reeleição, o Ibovespa caiu 13,88% e o dólar subiu 8,21%, a R$ 5,403.",
+     "afirmacao": "Crescimento de 1,4% em 12 meses até agosto, dentro do normal desde 2004 (0,8% a 3,9%); a prévia caiu 0,6% nos 3 meses até agosto.",
      "numeros": [
-      "13,88%",
-      "8,21%",
-      "5,403"
+      "1,4%",
+      "0,8% a 3,9%",
+      "0,6%"
      ],
      "comando": "",
-     "saida": "2026-10-26: Ibovespa caiu 13,88%, para 176.608 pontos, com circuit breaker. O dólar subiu 8,21% e fechou a R$ 5,403 (Agência Brasil).",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "nao_confere",
-      "por_que": "número que não está nos dados do site nem num fato da memória com fonte"
-     }
-    },
-    {
-     "id": "c9",
-     "tipo": "site",
-     "afirmacao": "O Caged de setembro foi de 121,3 mil vagas, o pior setembro da série. O desemprego foi de 5,2% no trimestre até setembro.",
-     "numeros": [
-      "121,3 mil",
-      "5,2%"
-     ],
-     "comando": "",
-     "saida": "2026-11-04: Brasil cria 121,3 mil vagas com carteira, o pior setembro da série (Poder360). 2026-10-30: Desemprego cai a 5,2% no trimestre até setembro.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "via": "memória do momento"
-     },
-     "fontes_memoria": [
-      {
-       "quem": "Poder360",
-       "url": "https://www.poder360.com.br/poder-economia/brasil-cria-121-305-empregos-formais-em-setembro-de-2026/",
-       "data": "2026-11-04",
-       "trecho": "Brasil cria 121.305 empregos formais em setembro de 2026"
-      }
-     ]
-    },
-    {
-     "id": "c10",
-     "tipo": "conta",
-     "afirmacao": "A parte da renda das famílias que vai para dívidas, 28,99% em agosto, é o maior valor da série (desde 2005).",
-     "numeros": [
-      "28,99"
-     ],
-     "comando": ".venv/bin/python src/conta.py recorde comprometimento_renda 2026-08",
-     "saida": "comprometimento_renda em 2026-08: 28,99. A série começa em 2005-03. É o maior valor da série: nenhum mês antes teve valor igual ou maior.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "comprometimento_renda em 2026-08: 28,99. A série começa em 2005-03.\nÉ o maior valor da série: nenhum mês antes teve valor igual ou maior.\nDos 257 meses antes de 2026-08, 257 tiveram valor menor (100%).\n"
-     }
-    },
-    {
-     "id": "c11",
-     "tipo": "site",
-     "afirmacao": "O PIB do 2T cresceu 0,5%, com o consumo das famílias em -0,4%.",
-     "numeros": [
-      "0,5%",
-      "0,4%"
-     ],
-     "comando": "",
-     "saida": "2026-09-01: O IBGE informou que o PIB do 2º trimestre cresceu 0,5%... a agropecuária subiu 2,8% e o consumo das famílias recuou 0,4% (Agência Gov / IBGE).",
+     "saida": "Crescimento em 12 meses: 1,4% até ago/2026, contra 3,5% até ago/2025 (desacelerando). O normal desde 2004 vai de 0,8% a 3,9% ao ano. A prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto.",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3530,56 +3137,16 @@
      }
     },
     {
-     "id": "c12",
-     "tipo": "site",
-     "afirmacao": "Empresas seguram investimento à espera do plano econômico do novo mandato; as vendas de máquinas e equipamentos acumulam queda de 13,4% no ano até setembro; a confiança da indústria caiu pelo terceiro mês seguido em outubro.",
-     "numeros": [
-      "13,4%"
-     ],
-     "comando": "",
-     "saida": "2026-11-01: Empresas adiam investimentos à espera do plano econômico do novo mandato (Folha). 2026-10-28: Vendas de máquinas e equipamentos acumulam queda de 13,4% no ano até setembro (Valor). 2026-10-28: Confiança da indústria cai pelo terceiro mês seguido em outubro (Folha).",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "trecho_nao_achado",
-      "fonte_conhecida": true,
-      "via": "memória do momento"
-     },
-     "fontes_memoria": [
-      {
-       "quem": "Folha",
-       "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://aovivo.folha.uol.com.br/mercado/2026/10/25/6568-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post467994",
-       "data": "2026-10-28",
-       "trecho": "Confiança da indústria brasileira cai pelo terceiro mês seguido, diz FGV"
-      },
-      {
-       "quem": "Valor",
-       "url": "https://valor.globo.com/empresas/noticia/2026/10/28/vendas-de-maquinas-acumulam-queda-de-134percent-no-ano-ate-setembro.ghtml",
-       "data": "2026-10-28",
-       "trecho": "Vendas de máquinas acumulam queda de 13,4% no ano até setembro"
-      },
-      {
-       "quem": "Folha",
-       "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/11/empresas-seguram-novos-investimentos-a-espera-da-politica-economica-do-lula-4.shtml",
-       "data": "2026-11-01",
-       "trecho": "Empresas seguram novos investimentos à espera da política econômica do Lula 4"
-      }
-     ]
-    },
-    {
-     "id": "c13",
+     "id": "c8",
      "tipo": "conta",
-     "afirmacao": "Passo 2: julho e agosto juntos dão (110,03 + 110,41)/2 = 110,22, ou 0,60% abaixo de 110,887. Passo 3: se setembro repetir agosto, a média de julho a setembro é (110,03 + 110,41 + 110,41)/3 = 110,283, ou 0,54% abaixo de 110,887. Aritmética do pesquisador sobre c1 e c3.",
+     "afirmacao": "O desemprego de 5,2% é o menor da série para setembro: só 1 de 174 meses anteriores teve valor menor.",
      "numeros": [
-      "110,03",
-      "110,41"
+      "5,20",
+      "174",
+      "1%"
      ],
-     "comando": ".venv/bin/python src/conta.py valores ibcbr --de 2026-07 --ate 2026-08",
-     "saida": "2026-07: 110,03 | 2026-08: 110,41",
+     "comando": ".venv/bin/python src/conta.py recorde desocupacao 2026-09",
+     "saida": "Dos 174 meses antes de 2026-09, 1 tiveram valor menor (1%).",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3588,495 +3155,87 @@
      },
      "conferencia": {
       "status": "conferido",
-      "saida": "ibcbr (índice):\n2026-07: 110,03\n2026-08: 110,41\n"
+      "saida": "desocupacao em 2026-09: 5,20. A série começa em 2012-03.\nÉ o menor valor desde 2025-12, quando foi 5,10.\nDos 174 meses antes de 2026-09, 1 tiveram valor menor (1%).\n"
      }
     },
     {
-     "id": "c14",
-     "tipo": "conta",
-     "afirmacao": "Passo 4: para a média de julho a setembro empatar com 110,887, setembro teria de ser 3 x 110,887 - 110,03 - 110,41 = 332,66 - 220,44 = 112,22, ou 1,6% acima de agosto (112,22/110,41 = 1,0164). Aritmética do pesquisador sobre c1, c3 e c13.",
-     "numeros": [
-      "110,03",
-      "110,41"
-     ],
-     "comando": ".venv/bin/python src/conta.py valores ibcbr --de 2026-07 --ate 2026-08",
-     "saida": "2026-07: 110,03 | 2026-08: 110,41",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "ibcbr (índice):\n2026-07: 110,03\n2026-08: 110,41\n"
-     }
-    },
-    {
-     "id": "c15",
+     "id": "c9",
      "tipo": "documento",
-     "afirmacao": "O PMI industrial do Brasil subiu a 46,1 pontos em outubro, de 44,8 em setembro; abaixo de 50 indica contração.",
+     "afirmacao": "Caged de setembro: 121,3 mil vagas, pior setembro da série do Novo Caged (desde 2020), abaixo da mediana de 163,6 mil; queda de 43,5% ante setembro de 2025 e de 27,9% no acumulado do ano.",
      "numeros": [
-      "46,1",
-      "44,8"
+      "121,3 mil",
+      "163,6 mil",
+      "43,5%",
+      "27,9%"
      ],
      "comando": "",
      "saida": "",
      "fonte": {
-      "quem": "Jornal do Comércio, com dados da S&P Global",
-      "url": "https://www.jornaldocomercio.com/economia/2026/11/1269088-pmi-industrial-do-brasil-sobe-a-461-pontos-em-outubro-apos-448-em-setembro-mostra-s-p-global.html",
-      "data": "2026-11-03",
-      "trecho": "PMI industrial do Brasil sobe a 46,1 pontos em outubro, após 44,8 em setembro, mostra S&P Global (título da matéria no resultado da busca; página não aberta)"
-     },
-     "conferencia": {
-      "status": "numeros_na_pagina",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c16",
-     "tipo": "documento",
-     "afirmacao": "A confiança do comércio da FGV subiu 1,8 ponto em outubro, para 83,1 pontos, depois de dois meses de queda.",
-     "numeros": [
-      "1,8",
-      "83,1"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "FGV Ibre, via Jornal do Comércio",
-      "url": "https://www.jornaldocomercio.com/economia/2026/10/1268667-confianca-do-comercio-sobe-18-ponto-em-outubro-ante-setembro-mostra-fgv.html",
-      "data": "2026-10-29",
-      "trecho": "Confiança do comércio sobe 1,8 ponto em outubro ante setembro, mostra FGV (título; o resumo da busca traz 83,1 pontos; página não aberta)"
-     },
-     "conferencia": {
-      "status": "numeros_na_pagina",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c17",
-     "tipo": "documento",
-     "afirmacao": "A confiança do consumidor da FGV subiu 0,5 ponto em outubro, para 84,7 pontos.",
-     "numeros": [
-      "0,5",
-      "84,7"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "FGV Ibre, via Jornal do Comércio",
-      "url": "https://www.jornaldocomercio.com/economia/2026/10/1268211-confianca-do-consumidor-sobe-05-ponto-em-outubro-ante-setembro-mostra-fgv.html",
-      "data": "2026-10-26",
-      "trecho": "Confiança do consumidor sobe 0,5 ponto em outubro ante setembro, mostra FGV (título; o resumo da busca traz 84,7 pontos; página não aberta)"
-     },
-     "conferencia": {
-      "status": "numeros_na_pagina",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c18",
-     "tipo": "documento",
-     "afirmacao": "A confiança empresarial da FGV caiu 0,3 ponto em outubro, a quarta queda seguida.",
-     "numeros": [
-      "0,3"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "FGV Ibre, via Jornal do Comércio",
-      "url": "https://www.jornaldocomercio.com/economia/2026/11/1269014-confianca-empresarial-cai-03-ponto-em-outubro-a-quarta-queda-seguida-diz-fgv.html",
-      "data": "2026-11-03",
-      "trecho": "Confiança empresarial cai 0,3 ponto em outubro, a quarta queda seguida, diz FGV (título da matéria; a data é a da memória do site, página não aberta)"
-     },
-     "conferencia": {
-      "status": "numeros_na_pagina",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c19",
-     "tipo": "documento",
-     "afirmacao": "A Anfavea elevou em outubro a previsão de crescimento da produção de veículos de 2026, de 5,8% para 6,7%. A produção de setembro caiu 1,1% contra agosto, e as vendas subiram 2,3%.",
-     "numeros": [
-      "5,8%",
-      "6,7%",
-      "1,1%",
-      "2,3%"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Jornal do Comércio, com dados da Anfavea",
-      "url": "https://www.jornaldocomercio.com/cadernos/jc-logistica/2026/10/1266229-anfavea-eleva-de-58-para-67-a-previsao-ao-crescimento-da-producao-de-veiculos-em-2026.html",
-      "data": "2026-10-09",
-      "trecho": "Anfavea eleva de 5,8% para 6,7% a previsão ao crescimento da produção de veículos em 2026 (título; o dado de setembro vem de resumo do site Mecânica Online, não conferido)"
-     },
-     "conferencia": {
-      "status": "trecho_nao_achado",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c20",
-     "tipo": "documento",
-     "afirmacao": "O Relatório de Política Monetária de setembro baixou a projeção do PIB de 2026 de 2,0% para 1,8%, e diz que a revisão incorpora os primeiros indicadores do terceiro trimestre, que sugerem atividade mais fraca.",
-     "numeros": [
-      "2,0%",
-      "1,8%"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Banco Central, Relatório de Política Monetária (via Jornal do Comércio)",
-      "url": "https://www.bcb.gov.br/content/ri/relatorioinflacao/202609/rpm202609b2p.pdf",
-      "data": "2026-09-24",
-      "trecho": "A revisão incorpora tanto os primeiros indicadores do terceiro trimestre, que sugerem atividade mais fraca do que a anteriormente prevista (trecho do resumo da busca; PDF não aberto; data inferida da nota do Senado de 24/9)"
-     },
-     "conferencia": {
-      "status": "numeros_na_pagina",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c21",
-     "tipo": "documento",
-     "afirmacao": "O Itaú cortou a projeção do PIB de 2027 para 0,5% e elevou a do IPCA de 2027 para 6,1%, com a Selic parada em 13,75%.",
-     "numeros": [
-      "0,5%",
-      "6,1",
-      "13,75"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Jornal do Brasil, com dados do Itaú",
-      "url": "https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
-      "data": "2026-10-30",
-      "trecho": "Itaú atualiza cenário: PIB cresce só 0,5% em 2027, com inflação de 6,1% e parada na Selic em 13,75% (título; data é a da Folha na memória do site)"
-     },
-     "conferencia": {
-      "status": "numeros_na_pagina",
-      "fonte_conhecida": false
-     }
-    },
-    {
-     "id": "c22",
-     "tipo": "conta",
-     "afirmacao": "Depois do choque de outubro de 2002: o dólar passou de R$ 3,6450 para R$ 2,8898 em abril de 2003, a Selic de 21,00% para 26,50%, e o site conta recessão a partir do 1T2003.",
-     "numeros": [
-      "3,6450",
-      "2,8898",
-      "21,00",
-      "26,50"
-     ],
-     "comando": ".venv/bin/python src/conta.py depois 2002-10 --meses 6",
-     "saida": "2002-10: selic_meta 21,00; ipca_12m 8,45; focus_ipca_12m 8,44; juro_real 11,58; dolar_ptax 3,6450 | 2003-04: selic_meta 26,50; ipca_12m 16,77; focus_ipca_12m 8,52; juro_real 16,57; dolar_ptax 2,8898; ibcbr 70,59 | Recessão (2 trimestres seguidos de queda do PIB) começando nos 12 meses seguintes: 1T2003",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "Valores do mês e de depois (ibcbr_12m é o crescimento da prévia do PIB em 12 meses):\n2002-10: selic_meta 21,00; ipca_12m 8,45; focus_ipca_12m 8,44; juro_real 11,58; dolar_ptax 3,6450\n2003-01: selic_meta 25,50; ipca_12m 14,47; focus_ipca_12m 10,85; juro_real 13,22; dolar_ptax 3,5258; ibcbr 70,25; primario_12m -3,25\n2003-04: selic_meta 26,50; ipca_12m 16,77; focus_ipca_12m 8,52; juro_real 16,57; dolar_ptax 2,8898; ibcbr 70,59; primario_12m -3,57\nRecessão (2 trimestres seguidos de queda do PIB) começando nos 12 meses seguintes: 1T2003\n"
-     }
-    },
-    {
-     "id": "c23",
-     "tipo": "conta",
-     "afirmacao": "Depois do choque de outubro de 2014: o dólar passou de R$ 2,4442 para R$ 2,9936 em abril de 2015, a prévia do PIB de 101,59 para 99,13, o desemprego de 6,70% para 8,10%, a Selic de 11,25% para 13,25%.",
-     "numeros": [
-      "2,4442",
-      "2,9936",
-      "101,59",
-      "99,13",
-      "6,70",
-      "8,10"
-     ],
-     "comando": ".venv/bin/python src/conta.py depois 2014-10 --meses 6",
-     "saida": "2014-10: selic_meta 11,25; dolar_ptax 2,4442; ibcbr 101,59; desocupacao 6,70 | 2015-04: selic_meta 13,25; dolar_ptax 2,9936; ibcbr 99,13; desocupacao 8,10 | Recessão (2 trimestres seguidos de queda do PIB) começando nos 12 meses seguintes: 1T2015",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "Valores do mês e de depois (ibcbr_12m é o crescimento da prévia do PIB em 12 meses):\n2014-10: selic_meta 11,25; ipca_12m 6,59; focus_ipca_12m 6,38; juro_real 4,58; juro_real_longo 6,00; dolar_ptax 2,4442; ibcbr 101,59; desocupacao 6,70; divida_bruta 55,43; primario_12m -0,50; ibcbr_12m -1,8%\n2015-01: selic_meta 12,25; ipca_12m 7,14; focus_ipca_12m 6,61; juro_real 5,29; juro_real_longo 5,87; dolar_ptax 2,6623; ibcbr 101,30; desocupacao 6,90; divida_bruta 57,16; primario_12m 0,54; ibcbr_12m -2,3%\n2015-04: selic_meta 13,25; ipca_12m 8,17; focus_ipca_12m 5,96; juro_real 6,88; juro_real_longo 6,24; dolar_ptax 2,9936; ibcbr 99,13; desocupacao 8,10; divida_bruta 59,11; primario_12m 0,73; ibcbr_12m -3,6%\nRecessão (2 trimestres seguidos de queda do PIB) começando nos 12 meses seguintes: 1T2015\n"
-     }
-    },
-    {
-     "id": "c24",
-     "tipo": "conta",
-     "afirmacao": "Antes de 2014, cinco trimestres tiveram os dois primeiros meses 0,5% ou mais abaixo da média do trimestre anterior (cálculo do pesquisador sobre a prévia): 2003 T2 (70,59 e 69,90 contra média de 70,93 no T1, -0,97%), 2003 T3 (-1,07%), 2008 T4 (89,60 e 87,39 contra 91,377, -3,15%), 2009 T1 (84,84 e 85,50 contra 87,333, -2,48%) e 2012 T1 (97,32 e 98,27 contra 99,003, -1,22%).",
-     "numeros": [
-      "70,59",
-      "69,90",
-      "89,60",
-      "87,39",
-      "84,84",
-      "85,50",
-      "97,32",
-      "98,27"
-     ],
-     "comando": ".venv/bin/python src/conta.py valores ibcbr --de 2003-01 --ate 2014-02",
-     "saida": "2003-04: 70,59 | 2003-05: 69,90 | 2008-10: 89,60 | 2008-11: 87,39 | 2009-01: 84,84 | 2009-02: 85,50 | 2012-01: 97,32 | 2012-02: 98,27",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "ibcbr (índice):\n2003-01: 70,25\n2003-02: 71,47\n2003-03: 71,07\n2003-04: 70,59\n2003-05: 69,90\n2003-06: 70,03\n2003-07: 69,16\n2003-08: 69,69\n2003-09: 71,25\n2003-10: 71,14\n2003-11: 71,33\n2003-12: 71,16\n2004-01: 72,47\n2004-02: 73,24\n2004-03: 74,05\n2004-04: 74,43\n2004-05: 74,35\n2004-06: 74,96\n2004-07: 75,25\n2004-08: 75,60\n2004-09: 76,38\n2004-10: 75,85\n2004-11: 76,69\n2004-12: 76,11\n2005-01: 76,60\n2005-02: 77,07\n2005-03: 77,18\n2005-04: 77,72\n2005-05: 77,64\n2005-06: 77,16\n2005-07: 77,16\n2005-08: 77,75\n2005-09: 77,55\n2005-10: 77,58\n2005-11: 78,21\n2005-12: 78,82\n2006-01: 79,45\n2006-02: 79,49\n2006-03: 79,39\n2006-04: 79,88\n2006-05: 80,89\n2006-06: 79,96\n2006-07: 81,47\n2006-08: 81,46\n2006-09: 81,66\n2006-10: 82,53\n2006-11: 83,13\n2006-12: 84,17\n2007-01: 83,90\n2007-02: 84,10\n2007-03: 83,59\n2007-04: 84,71\n2007-05: 85,44\n2007-06: 85,96\n2007-07: 86,58\n2007-08: 86,74\n2007-09: 87,42\n2007-10: 88,26\n2007-11: 88,24\n2007-12: 89,02\n2008-01: 89,16\n2008-02: 88,99\n2008-03: 88,34\n2008-04: 89,58\n2008-05: 90,42\n2008-06: 91,23\n2008-07: 91,26\n2008-08: 91,45\n2008-09: 91,42\n2008-10: 89,60\n2008-11: 87,39\n2008-12: 85,01\n2009-01: 84,84\n2009-02: 85,50\n2009-03: 86,03\n2009-04: 86,40\n2009-05: 87,20\n2009-06: 87,73\n2009-07: 87,95\n2009-08: 89,37\n2009-09: 90,11\n2009-10: 90,82\n2009-11: 90,92\n2009-12: 92,28\n2010-01: 93,64\n2010-02: 94,53\n2010-03: 95,53\n2010-04: 96,00\n2010-05: 95,22\n2010-06: 94,98\n2010-07: 95,56\n2010-08: 96,16\n2010-09: 97,02\n2010-10: 96,87\n2010-11: 97,96\n2010-12: 96,94\n2011-01: 98,14\n2011-02: 98,54\n2011-03: 98,54\n2011-04: 98,62\n2011-05: 98,78\n2011-06: 99,12\n2011-07: 99,26\n2011-08: 99,19\n2011-09: 99,07\n2011-10: 99,00\n2011-11: 99,48\n2011-12: 98,53\n2012-01: 97,32\n2012-02: 98,27\n2012-03: 98,03\n2012-04: 98,48\n2012-05: 99,62\n2012-06: 100,33\n2012-07: 100,50\n2012-08: 100,84\n2012-09: 100,42\n2012-10: 101,25\n2012-11: 101,11\n2012-12: 100,68\n2013-01: 101,33\n2013-02: 100,36\n2013-03: 101,37\n2013-04: 102,49\n2013-05: 102,65\n2013-06: 102,29\n2013-07: 102,65\n2013-08: 102,97\n2013-09: 103,48\n2013-10: 103,43\n2013-11: 103,71\n2013-12: 103,99\n2014-01: 103,68\n2014-02: 103,38\n"
-     }
-    },
-    {
-     "id": "c25",
-     "tipo": "conta",
-     "afirmacao": "De 2014 a 2016, cálculo do pesquisador: 2014 T2 (102,82 e 102,45 contra 103,437 no T1, -0,78%), 2015 T1 (-0,86%), T2 (-2,0%), T3 (-1,79%), 2016 T1 (-1,03%) e T2 (-0,69%). O site conta quedas do PIB em 2T2014 e 3T2014 e de 1T2015 a 1T2016, mas não em 2T2016.",
-     "numeros": [
-      "102,82",
-      "102,45",
-      "101,30",
-      "100,65",
-      "94,88",
-      "94,75",
-      "94,03",
-      "93,80"
-     ],
-     "comando": ".venv/bin/python src/conta.py valores ibcbr --de 2003-01 --ate 2026-08",
-     "saida": "2014-04: 102,82 | 2014-05: 102,45 | 2015-01: 101,30 | 2015-02: 100,65 | 2016-01: 94,88 | 2016-02: 94,75 | 2016-04: 94,03 | 2016-05: 93,80 (a saída mostra os 150 últimos meses do intervalo)",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "(são 284 meses; mostrando os 150 últimos do intervalo; use --de e --ate)\nibcbr (índice):\n2014-03: 103,25\n2014-04: 102,82\n2014-05: 102,45\n2014-06: 100,26\n2014-07: 101,02\n2014-08: 101,91\n2014-09: 102,46\n2014-10: 101,59\n2014-11: 101,77\n2014-12: 102,19\n2015-01: 101,30\n2015-02: 100,65\n2015-03: 100,47\n2015-04: 99,13\n2015-05: 98,46\n2015-06: 97,51\n2015-07: 96,36\n2015-08: 96,86\n2015-09: 96,17\n2015-10: 96,52\n2015-11: 95,54\n2015-12: 95,34\n2016-01: 94,88\n2016-02: 94,75\n2016-03: 94,08\n2016-04: 94,03\n2016-05: 93,80\n2016-06: 93,96\n2016-07: 93,64\n2016-08: 93,41\n2016-09: 93,56\n2016-10: 93,05\n2016-11: 93,12\n2016-12: 92,87\n2017-01: 93,41\n2017-02: 94,53\n2017-03: 94,61\n2017-04: 94,47\n2017-05: 94,25\n2017-06: 94,86\n2017-07: 94,90\n2017-08: 94,65\n2017-09: 94,64\n2017-10: 94,85\n2017-11: 95,04\n2017-12: 96,31\n2018-01: 95,81\n2018-02: 95,44\n2018-03: 95,46\n2018-04: 96,01\n2018-05: 93,06\n2018-06: 95,75\n2018-07: 96,06\n2018-08: 96,82\n2018-09: 96,28\n2018-10: 96,60\n2018-11: 96,89\n2018-12: 97,17\n2019-01: 96,95\n2019-02: 96,40\n2019-03: 95,80\n2019-04: 95,77\n2019-05: 97,11\n2019-06: 96,59\n2019-07: 96,39\n2019-08: 96,63\n2019-09: 96,95\n2019-10: 98,08\n2019-11: 97,92\n2019-12: 97,60\n2020-01: 97,61\n2020-02: 97,75\n2020-03: 91,27\n2020-04: 82,96\n2020-05: 85,49\n2020-06: 89,36\n2020-07: 91,74\n2020-08: 93,51\n2020-09: 95,36\n2020-10: 97,31\n2020-11: 97,52\n2020-12: 97,68\n2021-01: 97,80\n2021-02: 98,72\n2021-03: 95,31\n2021-04: 96,33\n2021-05: 97,02\n2021-06: 96,75\n2021-07: 96,42\n2021-08: 97,02\n2021-09: 96,96\n2021-10: 97,49\n2021-11: 99,06\n2021-12: 99,38\n2022-01: 97,42\n2022-02: 98,49\n2022-03: 99,56\n2022-04: 99,45\n2022-05: 99,64\n2022-06: 99,50\n2022-07: 101,42\n2022-08: 101,10\n2022-09: 101,16\n2022-10: 101,44\n2022-11: 100,72\n2022-12: 100,59\n2023-01: 100,10\n2023-02: 103,08\n2023-03: 103,10\n2023-04: 103,93\n2023-05: 102,42\n2023-06: 102,39\n2023-07: 102,90\n2023-08: 102,50\n2023-09: 102,52\n2023-10: 102,85\n2023-11: 103,61\n2023-12: 104,90\n2024-01: 104,46\n2024-02: 104,66\n2024-03: 104,68\n2024-04: 104,62\n2024-05: 105,59\n2024-06: 106,57\n2024-07: 107,07\n2024-08: 107,20\n2024-09: 108,05\n2024-10: 108,27\n2024-11: 108,02\n2024-12: 107,38\n2025-01: 108,06\n2025-02: 108,57\n2025-03: 110,03\n2025-04: 109,52\n2025-05: 108,89\n2025-06: 108,83\n2025-07: 108,60\n2025-08: 108,84\n2025-09: 108,72\n2025-10: 108,74\n2025-11: 109,25\n2025-12: 109,48\n2026-01: 110,15\n2026-02: 110,82\n2026-03: 110,66\n2026-04: 111,04\n2026-05: 111,25\n2026-06: 110,37\n2026-07: 110,03\n2026-08: 110,41\n"
-     }
-    },
-    {
-     "id": "c26",
-     "tipo": "conta",
-     "afirmacao": "Quatro buracos de um único mês seguidos de volta, sem sequência de quedas do PIB na lista de recessões (cálculo do pesquisador): maio de 2018 (96,01, 93,06 e 95,75), março de 2021 (98,72, 95,31 e 96,33), janeiro de 2022 (99,38, 97,42 e 98,49) e janeiro de 2012 (98,53, 97,32 e 98,27). Os quatro trimestres (2012 T1, 2018 T2, 2021 T2, 2022 T1) ficaram 0,62% a 1,22% abaixo do trimestre anterior nos dois primeiros meses.",
-     "numeros": [
-      "96,01",
-      "93,06",
-      "95,75",
-      "98,72",
-      "95,31",
-      "96,33",
-      "97,42",
-      "98,49"
-     ],
-     "comando": ".venv/bin/python src/conta.py valores ibcbr --de 2003-01 --ate 2026-08",
-     "saida": "2018-04: 96,01 | 2018-05: 93,06 | 2018-06: 95,75 | 2021-02: 98,72 | 2021-03: 95,31 | 2021-04: 96,33 | 2022-01: 97,42 | 2022-02: 98,49",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "(são 284 meses; mostrando os 150 últimos do intervalo; use --de e --ate)\nibcbr (índice):\n2014-03: 103,25\n2014-04: 102,82\n2014-05: 102,45\n2014-06: 100,26\n2014-07: 101,02\n2014-08: 101,91\n2014-09: 102,46\n2014-10: 101,59\n2014-11: 101,77\n2014-12: 102,19\n2015-01: 101,30\n2015-02: 100,65\n2015-03: 100,47\n2015-04: 99,13\n2015-05: 98,46\n2015-06: 97,51\n2015-07: 96,36\n2015-08: 96,86\n2015-09: 96,17\n2015-10: 96,52\n2015-11: 95,54\n2015-12: 95,34\n2016-01: 94,88\n2016-02: 94,75\n2016-03: 94,08\n2016-04: 94,03\n2016-05: 93,80\n2016-06: 93,96\n2016-07: 93,64\n2016-08: 93,41\n2016-09: 93,56\n2016-10: 93,05\n2016-11: 93,12\n2016-12: 92,87\n2017-01: 93,41\n2017-02: 94,53\n2017-03: 94,61\n2017-04: 94,47\n2017-05: 94,25\n2017-06: 94,86\n2017-07: 94,90\n2017-08: 94,65\n2017-09: 94,64\n2017-10: 94,85\n2017-11: 95,04\n2017-12: 96,31\n2018-01: 95,81\n2018-02: 95,44\n2018-03: 95,46\n2018-04: 96,01\n2018-05: 93,06\n2018-06: 95,75\n2018-07: 96,06\n2018-08: 96,82\n2018-09: 96,28\n2018-10: 96,60\n2018-11: 96,89\n2018-12: 97,17\n2019-01: 96,95\n2019-02: 96,40\n2019-03: 95,80\n2019-04: 95,77\n2019-05: 97,11\n2019-06: 96,59\n2019-07: 96,39\n2019-08: 96,63\n2019-09: 96,95\n2019-10: 98,08\n2019-11: 97,92\n2019-12: 97,60\n2020-01: 97,61\n2020-02: 97,75\n2020-03: 91,27\n2020-04: 82,96\n2020-05: 85,49\n2020-06: 89,36\n2020-07: 91,74\n2020-08: 93,51\n2020-09: 95,36\n2020-10: 97,31\n2020-11: 97,52\n2020-12: 97,68\n2021-01: 97,80\n2021-02: 98,72\n2021-03: 95,31\n2021-04: 96,33\n2021-05: 97,02\n2021-06: 96,75\n2021-07: 96,42\n2021-08: 97,02\n2021-09: 96,96\n2021-10: 97,49\n2021-11: 99,06\n2021-12: 99,38\n2022-01: 97,42\n2022-02: 98,49\n2022-03: 99,56\n2022-04: 99,45\n2022-05: 99,64\n2022-06: 99,50\n2022-07: 101,42\n2022-08: 101,10\n2022-09: 101,16\n2022-10: 101,44\n2022-11: 100,72\n2022-12: 100,59\n2023-01: 100,10\n2023-02: 103,08\n2023-03: 103,10\n2023-04: 103,93\n2023-05: 102,42\n2023-06: 102,39\n2023-07: 102,90\n2023-08: 102,50\n2023-09: 102,52\n2023-10: 102,85\n2023-11: 103,61\n2023-12: 104,90\n2024-01: 104,46\n2024-02: 104,66\n2024-03: 104,68\n2024-04: 104,62\n2024-05: 105,59\n2024-06: 106,57\n2024-07: 107,07\n2024-08: 107,20\n2024-09: 108,05\n2024-10: 108,27\n2024-11: 108,02\n2024-12: 107,38\n2025-01: 108,06\n2025-02: 108,57\n2025-03: 110,03\n2025-04: 109,52\n2025-05: 108,89\n2025-06: 108,83\n2025-07: 108,60\n2025-08: 108,84\n2025-09: 108,72\n2025-10: 108,74\n2025-11: 109,25\n2025-12: 109,48\n2026-01: 110,15\n2026-02: 110,82\n2026-03: 110,66\n2026-04: 111,04\n2026-05: 111,25\n2026-06: 110,37\n2026-07: 110,03\n2026-08: 110,41\n"
-     }
-    },
-    {
-     "id": "c27",
-     "tipo": "conta",
-     "afirmacao": "Resumo da contagem: 15 trimestres com buraco de 0,5% ou mais. Em 9, a lista de recessões do site confirma queda do PIB; 2 (2003 T3 e 2016 T2) não caíram; 4 são quedas isoladas que o site não lista. Com buraco moderado (0,5% a 1,3%), são 7 episódios e 3 viraram recessão (2003, 2014, 2015).",
-     "numeros": [
-      "2003",
-      "2014",
-      "2015"
-     ],
-     "comando": ".venv/bin/python src/conta.py recessoes",
-     "saida": "de 1T2003 a 2T2003: quedas de -0,4%, -0,8% | de 2T2014 a 3T2014: quedas de -1,5%, -0,1% | de 1T2015 a 1T2016: quedas de -0,8%, -2,4%, -1,6%, -0,8%, -1,4% | de 3T2016 a 4T2016: quedas de -0,5%, -0,1%",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "nao_confere",
-      "por_que": "números que a conta não dá: 2003, 2014, 2015"
-     }
-    },
-    {
-     "id": "c28",
-     "tipo": "documento",
-     "afirmacao": "Bens de capital caíram 4,9% contra setembro de 2025 e acumulam queda de 5,0% de janeiro a setembro, o pior entre as quatro grandes categorias.",
-     "numeros": [
-      "4,9%",
-      "5,0%"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "IBGE (Agência de Notícias e SIDRA)",
-      "url": "https://sidra.ibge.gov.br/home/pimpfbr/brasil",
-      "data": "2026-11-05",
-      "trecho": "Resumo da busca (páginas não abertas): na comparação com setembro de 2025, a queda de bens de capital foi de 4,9%; no acumulado de janeiro a setembro, bens de capital cai 5,0%."
+      "quem": "Agência Gov (Ministério do Trabalho)",
+      "url": "https://agenciagov.ebc.com.br/noticias/202611/brasil-gera-121-3-mil-empregos-formais-em-setembro-e-saldo-no-ano-chega-a-1-24-milhao-de-novos-postos-com-carteira-assinada",
+      "data": "2026-11-04",
+      "trecho": "Brasil gera 121,3 mil empregos formais em setembro e saldo no ano chega a 1,24 milhão de novos postos com carteira assinada"
      },
      "conferencia": {
       "status": "nao_aberto",
-      "por_que": "HTTP 403",
       "fonte_conhecida": true
      }
     },
     {
-     "id": "c29",
-     "tipo": "site",
-     "afirmacao": "A indústria recuou 2,2% no terceiro trimestre contra o segundo, puxada por máquinas e equipamentos.",
+     "id": "c10",
+     "tipo": "conta",
+     "afirmacao": "O Focus de 30/10 esperava PIB de 1,76% em 2026 e 1,20% em 2027, acima do 0,5% do Itaú.",
      "numeros": [
-      "2,2%"
+      "1,76",
+      "1,20"
+     ],
+     "comando": ".venv/bin/python src/conta.py focus | grep -E \"PIB Total 202[67]\" | tail -6",
+     "saida": "2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Previsões dos bancos (Focus, mediana) na data da pesquisa, como o site guardou:\n2026-10-23: Câmbio 2026: 5,05\n2026-10-23: Câmbio 2027: 5,15\n2026-10-23: Câmbio 2028: 5,20\n2026-10-23: Câmbio 2029: 5,28\n2026-10-23: Câmbio 2030: 5,30\n2026-10-23: IPCA 2026: 5,19\n2026-10-23: IPCA 2027: 4,34\n2026-10-23: IPCA 2028: 3,75\n2026-10-23: IPCA 2029: 3,50\n2026-10-23: IPCA 2030: 3,50\n2026-10-23: IPCA 12m: 4,53\n2026-10-23: PIB Total 2026: 1,80\n2026-10-23: PIB Total 2027: 1,31\n2026-10-23: PIB Total 2028: 1,81\n2026-10-23: PIB Total 2029: 2,00\n2026-10-23: PIB Total 2030: 2,00\n2026-10-23: Selic 2026: 13,25\n2026-10-23: Selic 2027: 11,75\n2026-10-23: Selic 2028: 10,00\n2026-10-23: Selic 2029: 10,00\n2026-10-23: Selic 2030: 10,00\n2026-10-30: Câmbio 2026: 5,34\n2026-10-30: Câmbio 2027: 5,40\n2026-10-30: Câmbio 2028: 5,40\n2026-10-30: Câmbio 2029: 5,45\n2026-10-30: Câmbio 2030: 5,50\n2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76\n2026-10-30: IPCA 2028: 4,00\n2026-10-30: IPCA 2029: 3,98\n2026-10-30: IPCA 2030: 3,81\n2026-10-30: IPCA 12m: 4,96\n2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20\n2026-10-30: PIB Total 2028: 1,80\n2026-10-30: PIB Total 2029: 2,00\n2026-10-30: PIB Total 2030: 2,00\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50\n2026-10-30: Selic 2028: 11,00\n2026-10-30: Selic 2029: 10,25\n2026-10-30: Selic 2030: 10,00\n"
+     }
+    },
+    {
+     "id": "c11",
+     "tipo": "documento",
+     "afirmacao": "A CNI reduziu a previsão do PIB de 2026 de 2% para 1,6% e elevou inflação (5,15%) e dívida (83,7% do PIB).",
+     "numeros": [
+      "2%",
+      "1,6%",
+      "5,15%",
+      "83,7%"
      ],
      "comando": "",
-     "saida": "2026-11-05: Produção da indústria cai 0,8% em setembro e acumula queda de 4,1% desde maio (A indústria recuou 2,2% no terceiro trimestre contra o segundo, puxada por máquinas e equipamentos, o que mostra menos investimento das empresas e pesa no PIB do trimestre) (Gazeta do Povo).",
+     "saida": "",
      "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
+      "quem": "InfoMoney",
+      "url": "https://www.infomoney.com.br/economia/cni-reduz-projecao-para-o-pib-e-eleva-estimativas-de-inflacao-e-divida-publica/",
+      "data": "2026-10-28",
+      "trecho": "CNI reduz projeção para o PIB e eleva estimativas de inflação e dívida pública"
      },
      "conferencia": {
-      "status": "conferido",
-      "via": "memória do momento"
-     },
-     "fontes_memoria": [
-      {
-       "quem": "Gazeta do Povo",
-       "url": "https://www.gazetadopovo.com.br/economia/producao-industrial-recua-08-em-setembro-e-acumula-perda-de-41-desde-maio/",
-       "data": "2026-11-05",
-       "trecho": "Produção industrial recua 0,8% em setembro e acumula perda de 4,1% desde maio"
-      }
-     ]
-    },
-    {
-     "id": "c101",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (precos), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz precos",
-     "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 4,96% (último dado de outubro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 104,96 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 4,96% (último dado de outubro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 104,96 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.\n"
+      "status": "nao_aberto",
+      "fonte_conhecida": true
      }
     },
     {
-     "id": "c102",
+     "id": "c12",
      "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (dolar), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz dolar",
-     "saida": "O dólar foi de R$ 5,3798 em 5/11/2025 para R$ 5,4621 em 5/11/2026: alta de 1,5% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 1,5%, se não voltar, sobe o IPCA em cerca de 0,2 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,20 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "O dólar foi de R$ 5,3798 em 5/11/2025 para R$ 5,4621 em 5/11/2026: alta de 1,5% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 1,5%, se não voltar, sobe o IPCA em cerca de 0,2 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,20 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.\n"
-     }
-    },
-    {
-     "id": "c103",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (credito), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz credito",
-     "saida": "Juro médio do crédito livre às pessoas físicas: 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em set",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "Juro médio dos empréstimos às pessoas com juro definido pelo banco (todos os tipos): 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.262 (um ano antes, R$ 1.273).\nJuro médio do financiamento imobiliário com taxas de mercado: 14,20% ao ano em setembro de 2026, contra 14,88% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.142 (um ano antes, R$ 1.149).\nFonte: Banco Central, juro médio das operações de crédito para pessoas físicas, com um a dois meses de atraso. A Selic não passa inteira nem logo para esses juros.\n"
-     }
-    },
-    {
-     "id": "c104",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (guardado), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz guardado",
-     "saida": "Com a Selic em 13,75% ao ano (em 5/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 4,96% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,79 em um ano (8,38% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de outubro de 2026 (0,1616% ao mês), R$ 6,62 no mês, ou cerca de R$ 82,45 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "Com a Selic em 13,75% ao ano (em 5/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 4,96% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,79 em um ano (8,38% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de outubro de 2026 (0,1616% ao mês), R$ 6,62 no mês, ou cerca de R$ 82,45 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.\n"
-     }
-    },
-    {
-     "id": "c105",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (minimo), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz minimo",
-     "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda falta(m) 2 mês(es) de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda faltam 2 meses de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.\n"
-     }
-    },
-    {
-     "id": "c106",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (renda), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz renda",
-     "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.\n"
-     }
-    },
-    {
-     "id": "c107",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (emprego), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz emprego",
-     "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 ponto(s) a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 ponto(s) a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.",
+     "afirmacao": "Na recessão de 2T2014 a 4T2016 o desemprego subiu 7,0 pontos (6,9% para 13,9%); na de 2020, 2,5 pontos.",
+     "numeros": [
+      "7,0 pontos",
+      "6,9%",
+      "13,9%"
+     ],
+     "comando": ".venv/bin/python src/conta.py traduz emprego",
+     "saida": "Nas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 pontos a mais.",
      "fonte": {
       "quem": "",
       "url": "",
@@ -4087,268 +3246,62 @@
       "status": "conferido",
       "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 pontos a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 pontos a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.\n"
      }
+    },
+    {
+     "id": "c13",
+     "tipo": "conta",
+     "afirmacao": "Nos episódios com desemprego abaixo de 5,5% e IBC-Br subindo, o site acha 2 (2025-10 a 2026-01 e 2026-06 a 2026-08), sem recessão no primeiro.",
+     "numeros": [
+      "2 episódios",
+      "4 meses",
+      "3 meses"
+     ],
+     "comando": ".venv/bin/python src/conta.py episodios \"desocupacao<5.5\" \"ibcbr>0\"",
+     "saida": "de 2025-10 a 2026-01 (4 meses): ... recessão começando no episódio ou nos 12 meses seguintes: nenhuma",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Episódios em que desocupacao < 5,50 e ibcbr > 0,00 (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não por mês: um episódio longo não vale mais que um curto.\n\nde 2025-10 a 2026-01 (4 meses): desocupacao de 5,40 a 5,40 (o maior: 5,40); ibcbr de 108,74 a 110,15 (o maior: 110,15); Selic de 15,00% no começo a 15,00% no fim.\n  no começo, 2025-10: selic_meta 15,00; ipca_12m 4,68; focus_ipca_12m 4,06; juro_real 10,51; juro_real_longo 7,53; dolar_ptax 5,3843; ibcbr 108,74; desocupacao 5,40; divida_bruta 78,29; primario_12m 0,30; ibcbr_12m 0,4%\n  12 meses depois do fim, 2027-01: sem dado\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2026-06 a 2026-08 (3 meses): desocupacao de 5,40 a 5,30 (o maior: 5,40); ibcbr de 110,37 a 110,41 (o maior: 110,41); Selic de 14,25% no começo a 14,00% no fim.\n  no começo, 2026-06: selic_meta 14,25; ipca_12m 4,64; focus_ipca_12m 4,12; juro_real 9,72; juro_real_longo 8,13; dolar_ptax 5,1766; ibcbr 110,37; desocupacao 5,40; divida_bruta 81,95; primario_12m 1,19; ibcbr_12m 1,4%\n  12 meses depois do fim, 2027-08: sem dado\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\n2 episódio(s). Do começo ao fim de cada um, a Selic subiu em 0, caiu em 1 e ficou igual em 1.\n"
+     }
     }
    ],
-   "pressao": "ritmo",
-   "tese": "A prévia do PIB do Banco Central já quase fechou a conta do 3º trimestre. Julho e agosto ficaram 0,60% abaixo da média de abril a junho, e para empatar, setembro teria de subir cerca de 1,6% sobre agosto. Desde 2003, em 15 trimestres que começaram com um buraco desse tamanho, o IBGE registrou queda do PIB em 9. Nos casos que não viraram recessão, o buraco veio de um mês só e a volta veio no mês seguinte. Em 2026 a queda se espalhou por junho e julho, e agosto devolveu só 0,3%. É um padrão de poucos casos, não uma lei, e a recessão só se confirma se o 4º trimestre também cair.",
-   "duracao_s": 1161,
-   "offline": true,
-   "curto": {
-    "porque": "O IBGE mostra que a queda foi puxada por máquinas e equipamentos, os bens que as empresas compram para investir; no terceiro trimestre, a indústria recuou 2,2% contra o segundo. O IBGE não aponta uma causa única para a queda.",
-    "e_dai": "Para a prévia do PIB não fechar o 3º trimestre em queda, setembro teria de subir cerca de 1,6%; em 9 de 15 casos parecidos desde 2003, o PIB caiu.",
-    "vida": "Nada muda agora no salário ou na parcela; o risco é para quem depende de emprego: na recessão de 2014 a 2016, o desemprego subiu 7,0 pontos, a partir de 6,9%; hoje está em 5,2%.",
-    "familias": [
-     {
-      "familia": "outra",
-      "quem": "quem vive do trabalho, a começar por quem trabalha na indústria",
-      "o_que_muda": "Agora, nada: o desemprego está em 5,2%, mas setembro teve o pior saldo de vagas com carteira para o mês, 121,3 mil; na recessão de 2014 a 2016, o desemprego subiu 7,0 pontos, meses depois de a atividade cair.",
-      "caderno": [
-       "c107",
-       "c9"
-      ]
-     }
-    ],
-    "objetivo": "",
-    "condicao": "",
-    "caderno": [
-     "c29",
-     "c1",
-     "c3",
-     "c13",
-     "c14",
-     "c24",
-     "c25",
-     "c26",
-     "c27",
-     "c107",
-     "c9"
-    ]
-   },
-   "rascunho": {
-    "titulo": "A queda espalhada por vários meses deixa o 3º trimestre mais perto de um PIB menor",
-    "texto": "Mesmo que setembro repita agosto, a prévia do PIB feita pelo Banco Central fecha o 3º trimestre 0,54% abaixo da média de abril a junho [c13]. Ela não é o PIB oficial, que o IBGE divulga em 2 de dezembro, mas é a pista mais próxima dele. Hoje, o resultado mais provável nesse dia é um trimestre menor que o anterior.\n\nO tamanho da queda pesa, mas o que mais diz para onde ela vai é o jeito como ela aconteceu. Nas vezes em que um trimestre começou assim e não virou recessão, a queda veio de um mês só, e o mês seguinte devolveu quase tudo. Em 2026, ela pegou junho e julho, e agosto recuperou pouco. Mesmo assim, um trimestre de queda ainda não é recessão, porque o 2º trimestre cresceu 0,5% [c4] e recessão é o PIB cair dois trimestres seguidos.\n\n### Os tropeços de um mês só voltaram rápido, e a queda espalhada de 2014 não voltou\n\nEm maio de 2018, a greve dos caminhoneiros parou estradas e fábricas. A prévia do PIB caiu de 96,01 em abril para 93,06 em maio e voltou a 95,75 em junho [c26]. O buraco foi fundo, mas durou um mês, porque terminada a greve os caminhões voltaram a rodar.\n\nO mesmo desenho aparece em janeiro de 2012, que foi de 98,53 a 97,32 e depois a 98,27, em março de 2021, que foi de 98,72 a 95,31 e depois a 96,33, e em janeiro de 2022, que caiu a 97,42 e voltou a 98,49 [c26]. Nos quatro casos, os dois primeiros meses do trimestre ficaram entre 0,62% e 1,22% abaixo do trimestre anterior, e o PIB não caiu dois trimestres seguidos [c26].\n\nEm 2014, o desenho foi outro. No 2º trimestre daquele ano, abril e maio ficaram em 102,82 e 102,45, contra uma média de 103,437 no trimestre anterior [c25]. Em 2015, os dois primeiros meses ficaram abaixo do trimestre anterior três vezes seguidas, em 0,86%, 2,0% e 1,79% [c25]. O PIB do IBGE caiu no 2º e no 3º trimestres de 2014 e de novo do 1º trimestre de 2015 ao 1º de 2016 [c25].\n\nEm 2003, também houve queda espalhada: os dois primeiros meses do 2º e do 3º trimestres ficaram 0,97% e 1,07% abaixo dos trimestres anteriores [c24]. O PIB caiu dois trimestres seguidos a partir do começo de 2003 [c22]. Os buracos do fim de 2008 e do começo de 2009, de 3,15% e 2,48% [c24], foram de outro tamanho, porque vieram da crise dos bancos dos Estados Unidos, uma causa de fora, e não servem de régua para agora.\n\nAgora, compare com 2026. A prévia foi de 111,25 em maio para 110,37 em junho e 110,03 em julho, e subiu só a 110,41 em agosto [c1]. De maio a agosto, a queda foi de 0,8% [c2]. Agosto subiu, mas ficou abaixo de junho, e o desenho se parece mais com o de 2014 que com o da greve de 2018.\n\n### O caso de 2016 e os poucos episódios pedem cautela com o padrão\n\nO padrão tem exceção, e ela é importante. No 2º trimestre de 2016, os dois primeiros meses ficaram 0,69% abaixo do trimestre anterior, e mesmo assim o PIB do IBGE não caiu naquele trimestre [c25]. A prévia do Banco Central e o PIB do IBGE medem coisas parecidas, mas não iguais, e às vezes apontam para lados diferentes.\n\nA mesma exceção mostra o outro lado: a economia de 2016 não tinha saído do buraco, e as quedas do PIB seguiram até o fim daquele ano [c107]. Um trimestre que escapa da queda não quer dizer que a recessão acabou. Também são poucos casos, pouco mais de uma dúzia desde 2003, e só alguns com buraco moderado como o de agora. Eles mostram um padrão, não uma lei.\n\nA melhor objeção vem de quem olha o emprego e as previsões. O desemprego está em 5,2% no trimestre até setembro [c9], perto das mínimas, e uma economia que perde ritmo costuma demitir antes de encolher. Em setembro, o Banco Central ainda via o PIB de 2026 crescer 1,8% [c20], e os bancos (Focus) esperavam 1,76% no fim de outubro [c7]. Além disso, a indústria é uma parte do PIB, e não ele inteiro.\n\nHá resposta a cada ponto, embora nenhuma feche a questão. O próprio Banco Central, ao baixar a projeção de 2,0% para 1,8%, escreveu que os primeiros indicadores do 3º trimestre sugeriam atividade mais fraca do que se previa [c20]. As vagas com carteira de setembro somaram 121,3 mil, o pior setembro da série [c9], e o consumo das famílias já tinha caído 0,4% no 2º trimestre [c11]. Na indústria, o trimestre terminou 2,2% abaixo do anterior, puxado por máquinas e equipamentos [c29], que as empresas compram quando pretendem produzir mais.\n\n### O 4º trimestre ainda não mostra para que lado vai, e o emprego sente depois\n\nPara virar recessão, o PIB teria de cair também de outubro a dezembro, e os primeiros sinais de outubro vão para os dois lados. O índice de compras da indústria subiu de 44,8 em setembro para 46,1 em outubro [c15], e abaixo de 50 ele indica que a indústria está encolhendo. A confiança empresarial caiu 0,3 ponto, a quarta queda seguida [c18].\n\nDo outro lado, a confiança do comércio subiu 1,8 ponto, para 83,1 [c16], e a do consumidor subiu 0,5 ponto, para 84,7 [c17]. Olhando mais longe, o Itaú cortou a previsão do PIB de 2027 para 0,5% [c21]. Com sinais assim, ainda não dá para dizer se haverá um segundo trimestre de queda.\n\nSe você vive do trabalho, sobretudo na indústria, nada muda agora no salário. O desemprego de 5,2% são cerca de 5,7 milhões de pessoas, e cada ponto a mais são cerca de 1,1 milhão de pessoas sem trabalho [c107]. O risco está no prazo: nas quedas do PIB de 2014 a 2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, 7,0 pontos a mais [c107], e o pico veio depois de o PIB parar de cair.\n\nPor isso o emprego baixo de hoje não desmente a tese. Ele costuma ser o último a reagir, e o primeiro sinal de que algo mudou é a vaga com carteira que deixa de ser criada, como a de setembro [c9]. Quem procura o primeiro emprego ou quer trocar de vaga tende a sentir antes de quem já está empregado.\n\nPara você, a tese quer dizer que um PIB do 3º trimestre menor que o do 2º, se vier, não será surpresa nem será, sozinho, uma recessão. O que separa os dois caminhos é o formato dos meses seguintes. Se a produção de outubro voltar com força, o desenho fica mais parecido com 2018; se continuar fraca, fica mais parecido com 2014.\n\nO desemprego até outubro sai em 27 de novembro, o PIB do 3º trimestre em 2 de dezembro e a produção industrial de outubro em 3 de dezembro."
-   },
    "conferencia": {
-    "codigo_antes": {
-     "graves": [
-      "bloco 5: número ou data sem linha do caderno que confira: 0,62, 1,22 | trecho: O mesmo desenho aparece em janeiro de 2012, que foi de 98,53 a 97,32 e depois a 98,27, em março de 2021, que foi de 98,7",
-      "bloco 6: número ou data sem linha do caderno que confira: 103,437, 0,86, 1,79 | trecho: Em 2014, o desenho foi outro. No 2º trimestre daquele ano, abril e maio ficaram em 102,82 e 102,45, contra uma média de ",
-      "bloco 7: número ou data sem linha do caderno que confira: 0,97, 1,07, 3,15, 2,48 | trecho: Em 2003, também houve queda espalhada: os dois primeiros meses do 2º e do 3º trimestres ficaram 0,97% e 1,07% abaixo dos",
-      "bloco 10: número ou data sem linha do caderno que confira: 0,69 | trecho: O padrão tem exceção, e ela é importante. No 2º trimestre de 2016, os dois primeiros meses ficaram 0,69% abaixo do trime",
-      "bloco 15: número ou data sem linha do caderno que confira: 50 | trecho: Para virar recessão, o PIB teria de cair também de outubro a dezembro, e os primeiros sinais de outubro vão para os dois"
-     ],
-     "avisos": [
-      "c21 vem de site fora da lista de fontes conhecidas: https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
-      "bloco 5: frase de 45 palavras",
-      "bloco 7: frase de 39 palavras",
-      "bloco 10: expressão de piloto automático",
-      "bloco 12: expressão de piloto automático",
-      "bloco 17: frase de 47 palavras"
-     ],
-     "palavras": 1092,
-     "intertitulos": 3
-    },
-    "ia": {
-     "correcoes": [
-      {
-       "trecho": "Agosto subiu, mas ficou abaixo de junho, e o desenho se parece mais com o de 2014 que com o da greve de 2018.",
-       "tipo": "numero",
-       "problema": "Agosto (110,41) ficou acima de junho (110,37) em c1, não abaixo. A comparação com 2014 também é dita sem corte.",
-       "como_fica": "Agosto subiu, mas ficou abaixo de maio [c1], e o desenho, até agora, se parece mais com o de 2014 que com o da greve de 2018."
-      },
-      {
-       "trecho": "Nas vezes em que um trimestre começou assim e não virou recessão, a queda veio de um mês só, e o mês seguinte devolveu quase tudo.",
-       "tipo": "forca",
-       "problema": "c26 tem quatro casos assim. O próprio texto cita 2016 T2 e c27 cita 2003 T3 como trimestres que não caíram sem serem de um mês só. Não vale para todas as vezes.",
-       "como_fica": "Em quatro casos que não viraram recessão (2012, 2018, 2021 e 2022), a queda veio de um mês só, e o mês seguinte devolveu quase tudo [c26]."
-      },
-      {
-       "trecho": "Hoje, o resultado mais provável nesse dia é um trimestre menor que o anterior.",
-       "tipo": "forca",
-       "problema": "Nenhuma linha confere a probabilidade. c27, que traz a contagem, não confere, e com buraco moderado só 3 de 7 episódios viraram recessão.",
-       "como_fica": "Se setembro repetir agosto, o 3º trimestre fica abaixo do 2º na prévia [c13]; um PIB menor é possível, e os casos parecidos são poucos para dar chance."
-      },
-      {
-       "trecho": "Ela não é o PIB oficial, que o IBGE divulga em 2 de dezembro, mas é a pista mais próxima dele.",
-       "tipo": "data",
-       "problema": "A data de 2 de dezembro não tem linha no caderno.",
-       "como_fica": "Ela não é o PIB oficial, que é o do IBGE, mas é a pista mais próxima dele."
-      },
-      {
-       "trecho": "O desemprego até outubro sai em 27 de novembro, o PIB do 3º trimestre em 2 de dezembro e a produção industrial de outubro em 3 de dezembro.",
-       "tipo": "data",
-       "problema": "Nenhuma das três datas de divulgação está no caderno.",
-       "como_fica": ""
-      },
-      {
-       "trecho": "Em maio de 2018, a greve dos caminhoneiros parou estradas e fábricas.",
-       "tipo": "fonte",
-       "problema": "A causa do buraco de 2018 e o motivo da volta não estão em nenhuma linha. c26 só tem os números da prévia.",
-       "como_fica": "Em maio de 2018, a prévia do PIB caiu de 96,01 em abril para 93,06 em maio e voltou a 95,75 em junho [c26]. O buraco foi fundo, mas durou um mês."
-      },
-      {
-       "trecho": "porque terminada a greve os caminhões voltaram a rodar.",
-       "tipo": "fonte",
-       "problema": "Explicação causal sem linha do caderno.",
-       "como_fica": ""
-      },
-      {
-       "trecho": "Em 2003, também houve queda espalhada: os dois primeiros meses do 2º e do 3º trimestres ficaram 0,97% e 1,07% abaixo dos trimestres anteriores [c24]. O PIB caiu dois trimestres seguidos a partir do começo de 2003 [c22].",
-       "tipo": "fonte",
-       "problema": "A frase liga os buracos do 2º e do 3º trimestres à queda de dois trimestres, mas c22 põe as quedas no 1º e no 2º trimestres de 2003.",
-       "como_fica": "Em 2003, os dois primeiros meses do 2º trimestre ficaram 0,97% abaixo do trimestre anterior [c24], e o PIB caiu no 1º e no 2º trimestres [c22]. No 3º trimestre, o buraco foi de 1,07% [c24]."
-      },
-      {
-       "trecho": "porque vieram da crise dos bancos dos Estados Unidos, uma causa de fora, e não servem de régua para agora.",
-       "tipo": "fonte",
-       "problema": "A causa dos buracos de 2008 e 2009 não está em nenhuma linha do caderno.",
-       "como_fica": "e foram de outro tamanho, bem maiores que o de agora."
-      },
-      {
-       "trecho": "perto das mínimas, e uma economia que perde ritmo costuma demitir antes de encolher.",
-       "tipo": "forca",
-       "problema": "\"Perto das mínimas\" não está em c9 nem em c107. A regra geral não tem linha e contradiz a frase final do texto, que diz que o emprego é o último a reagir.",
-       "como_fica": "e o emprego costuma reagir depois da atividade [c107]."
-      },
-      {
-       "trecho": "Ele costuma ser o último a reagir, e o primeiro sinal de que algo mudou é a vaga com carteira que deixa de ser criada, como a de setembro [c9]. Quem procura o primeiro emprego ou quer trocar de vaga tende a sentir antes de quem já está empregado.",
-       "tipo": "forca",
-       "problema": "Nenhuma linha diz que a vaga com carteira é o primeiro sinal, nem quem sente antes. c107 só diz que o desemprego costuma subir depois que a recessão começa.",
-       "como_fica": "Ele costuma subir depois que a recessão começa [c107]. As vagas com carteira de setembro foram as piores para o mês na série [c9]."
-      },
-      {
-       "trecho": "Olhando mais longe, o Itaú cortou a previsão do PIB de 2027 para 0,5% [c21].",
-       "tipo": "fonte",
-       "problema": "c21 vem de site fora da lista de fontes conhecidas, e a página não foi aberta (só o título).",
-       "como_fica": "Olhando mais longe, os bancos (Focus) esperavam, no fim de outubro, PIB de 1,20% em 2027 [c7]."
-      }
-     ],
-     "graves": [
-      "A tese se apoia num padrão que o texto desmente: diz que as quedas que não viraram recessão foram de um mês só, mas 2016 T2 e 2003 T3 não caíram sem terem sido de um mês só.",
-      "A contagem geral (c27: 15 trimestres, 9 com queda do PIB) não confere no código. Por isso a probabilidade de um PIB menor não tem sustentação.",
-      "O erro sobre agosto e junho enfraquece a comparação com 2014, que é o centro do argumento."
-     ],
-     "resumo": "Texto bem montado, com a maioria dos números conferindo com o caderno. Há um erro de número (agosto não ficou abaixo de junho), uma generalização que o próprio texto desmente e causas, datas e regras sobre emprego sem linha no caderno. A probabilidade do PIB menor se apoia numa contagem que não confere."
-    },
-    "aplicadas": 12,
-    "codigo": {
-     "graves": [
-      "bloco 5: número ou data sem linha do caderno que confira: 0,62, 1,22 | trecho: O mesmo desenho aparece em janeiro de 2012, que foi de 98,53 a 97,32 e depois a 98,27, em março de 2021, que foi de 98,7",
-      "bloco 6: número ou data sem linha do caderno que confira: 103,437, 0,86, 1,79 | trecho: Em 2014, o desenho foi outro. No 2º trimestre daquele ano, abril e maio ficaram em 102,82 e 102,45, contra uma média de ",
-      "bloco 7: número ou data sem linha do caderno que confira: 0,97, 1,07, 3,15, 2,48 | trecho: Em 2003, os dois primeiros meses do 2º trimestre ficaram 0,97% abaixo do trimestre anterior, e o PIB caiu no 1º e no 2º ",
-      "bloco 10: número ou data sem linha do caderno que confira: 0,69 | trecho: O padrão tem exceção, e ela é importante. No 2º trimestre de 2016, os dois primeiros meses ficaram 0,69% abaixo do trime",
-      "bloco 15: número ou data sem linha do caderno que confira: 50 | trecho: Para virar recessão, o PIB teria de cair também de outubro a dezembro, e os primeiros sinais de outubro vão para os dois"
-     ],
-     "avisos": [
-      "bloco 5: frase de 45 palavras",
-      "bloco 10: expressão de piloto automático",
-      "bloco 12: expressão de piloto automático",
-      "bloco 17: frase de 47 palavras"
-     ],
-     "palavras": 1044,
-     "intertitulos": 3
-    },
-    "codigo_depois_da_reescrita": {
-     "graves": [
-      "bloco 1: número ou data sem linha do caderno que confira: 110,887, 110,22, 112,22 | trecho: A prévia do PIB feita pelo Banco Central já deixa pouca saída para o 3º trimestre. A média de abril a junho foi 110,887,"
-     ],
-     "avisos": [
-      "bloco 5: frase de 38 palavras",
-      "bloco 12: expressão de piloto automático"
-     ],
-     "palavras": 1066,
-     "intertitulos": 3
-    },
-    "frases_cortadas": [
-     "A média de abril a junho foi 110,887, e julho e agosto juntos ficaram em 110,22, ou 0,60% abaixo.",
-     "Para o trimestre empatar com o anterior, setembro teria de chegar a 112,22, cerca de 1,6% acima de agosto."
-    ],
     "final": {
      "graves": [],
-     "avisos": [],
-     "palavras": 1028,
-     "intertitulos": 3
-    },
-    "reconferencia": {
-     "em": "2026-11-10T05:57:24-03:00",
-     "ruins": [],
-     "frases_cortadas": [],
-     "abertos": 11,
-     "final": {
-      "graves": [],
-      "avisos": [],
-      "palavras": 1027,
-      "intertitulos": 3
-     },
-     "ruins_do_fato_do_dia": [
-      "c27"
-     ]
+     "avisos": [
+      "o texto tem 634 palavras (o tamanho de hoje é de 300 a 600)",
+      "c1 vem de site fora da lista de fontes conhecidas: https://mercadoeconsumo.com.br/05/11/2026/economia/producao-da-industria-recua-08-em-setembro-4a-queda-em-cinco-meses/",
+      "c4 vem de site fora da lista de fontes conhecidas: https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html"
+     ],
+     "palavras": 634,
+     "intertitulos": 0
     }
    },
-   "edicao": {
-    "sugestoes": [
-     {
-      "trecho": "O mesmo desenho aparece em março de 2021, quando a prévia foi de 98,72 a 95,31 e voltou a 96,33 no mês seguinte, e em janeiro de 2022, quando caiu a 97,42 e subiu a 98,49 em fevereiro [c26].",
-      "problema": "Frase de 38 palavras; o limite é 30. Divida em duas, uma ideia por frase.",
-      "como_fica": "O mesmo desenho aparece em março de 2021, quando a prévia foi de 98,72 a 95,31 e voltou a 96,33 no mês seguinte. Em janeiro de 2022, ela caiu a 97,42 e subiu a 98,49 em fevereiro [c26]."
-     },
-     {
-      "trecho": "Além disso, a indústria é só uma parte do PIB, e serviços e agropecuária podem segurar o trimestre.",
-      "problema": "Conector de piloto automático ('Além disso'), sem ligação de causa com a frase anterior.",
-      "como_fica": "A indústria também é só uma parte do PIB, e serviços e agropecuária podem segurar o trimestre."
-     },
-     {
-      "trecho": "a alta de 1,6% fica difícil",
-      "problema": "A frase não se entende sozinha: não diz de que é a alta de 1,6%.",
-      "como_fica": "a alta de 1,6% que mudaria a conta fica difícil"
-     },
-     {
-      "trecho": "### O caso de 2016 mostra que o formato é uma pista, e não uma regra",
-      "problema": "Troca em espelho ('X, e não Y'): fórmula de efeito.",
-      "como_fica": "### O caso de 2016 mostra que o formato é só uma pista"
-     },
-     {
-      "trecho": "e poucos casos mostram um padrão, não uma lei.",
-      "problema": "Troca em espelho ('um padrão, não uma lei'): fórmula de efeito.",
-      "como_fica": "e poucos casos só sugerem um padrão."
-     }
-    ],
-    "aplicada": true
-   },
-   "titulo": "A prévia do PIB já deixa o 3º trimestre abaixo do 2º, e só uma alta forte em setembro mudaria isso",
-   "texto": "A prévia do PIB feita pelo Banco Central já deixa pouca saída para o 3º trimestre. Mesmo que setembro repita agosto, o trimestre fecha 0,54% abaixo do 2º [c13].\n\nA prévia não é o PIB oficial, que é o do IBGE, e as duas medidas já apontaram para lados diferentes. Mesmo assim, com a indústria caindo em setembro, a alta de 1,6% que mudaria a conta fica difícil, e o 3º trimestre menor que o 2º virou o cenário mais perto da conta. Um trimestre menor ainda não é recessão, porque o 2º trimestre cresceu 0,5% [c4] e recessão é o PIB cair dois trimestres seguidos.\n\n### Os tropeços de um mês só voltaram rápido, e em 2015 a queda se arrastou\n\nNas vezes parecidas desde 2003, quanto o buraco durou disse mais que a profundidade dele. Em 2018, na greve dos caminhoneiros, a prévia caiu de 96,01 em abril para 93,06 em maio e voltou a 95,75 em junho [c26]. O buraco foi fundo, mas durou um mês, e o PIB não entrou numa sequência de quedas [c26].\n\nO mesmo desenho aparece em março de 2021, quando a prévia foi de 98,72 a 95,31 e voltou a 96,33 no mês seguinte. Em janeiro de 2022, ela caiu a 97,42 e subiu a 98,49 em fevereiro [c26]. Em janeiro de 2012 também houve um mês fraco, 97,32, seguido de 98,27 em fevereiro [c26]. Nos quatro casos, um mês afundou e o seguinte devolveu quase tudo.\n\nEm 2015, o desenho foi outro. A prévia ficou em 101,30 em janeiro e 100,65 em fevereiro, e a queda continuou pelos trimestres seguintes, sem um mês que devolvesse o terreno [c25]. O PIB do IBGE caiu do 1º trimestre de 2015 ao 1º de 2016, depois de já ter caído no 2º e no 3º trimestres de 2014 [c25].\n\nAgora, compare com 2026. A prévia foi de 111,25 em maio para 110,37 em junho e 110,03 em julho [c1]. Em agosto, subiu para 110,41, um pouco acima de junho, mas ainda abaixo de maio [c1]. De maio a agosto, a queda soma 0,8% [c2], e ela pegou dois meses seguidos, o que se parece menos com a greve de 2018 e mais com uma queda que se arrasta.\n\n### O caso de 2016 mostra que o formato é só uma pista\n\nO padrão tem uma exceção que pesa. Em 2016, a prévia ficou em 94,88 em janeiro e 94,75 em fevereiro e seguiu fraca em abril e maio, com 94,03 e 93,80 [c25]. Foi uma queda espalhada por vários meses, como a de agora, e mesmo assim o PIB do IBGE não caiu no 2º trimestre daquele ano [c25].\n\nA mesma exceção também mostra o outro lado. O trimestre que escapou da queda não encerrou o período ruim, porque as quedas do PIB medidas pelo IBGE vão de 2014 até o fim de 2016 [c107]. Ou seja, uma queda espalhada não garante um trimestre negativo, e um trimestre que escapa não garante que a economia saiu do buraco.\n\nOs choques muito grandes ficam fora dessa comparação. No fim de 2008, a prévia foi de 89,60 em outubro para 84,84 em janeiro de 2009 [c24], uma queda de outro tamanho, causada pela crise dos bancos dos Estados Unidos, que veio de fora. Sobram poucos casos com um buraco moderado como o de agora, e poucos casos só sugerem um padrão.\n\nA melhor objeção vem de quem olha o emprego e as previsões. O desemprego está em 5,2% no trimestre até setembro [c9], e em setembro o Banco Central ainda via o PIB de 2026 crescer 1,8% [c20]. No fim de outubro, os bancos (Focus) esperavam 1,76% [c7]. A indústria também é só uma parte do PIB, e serviços e agropecuária podem segurar o trimestre.\n\nHá resposta a cada ponto, embora nenhuma feche a questão. Ao baixar a projeção de 2,0% para 1,8%, o próprio Banco Central escreveu que os primeiros indicadores do 3º trimestre sugeriam atividade mais fraca do que se previa [c20]. As vagas com carteira de setembro somaram 121,3 mil, o pior setembro da série [c9], e o consumo das famílias já tinha caído 0,4% no 2º trimestre [c11].\n\nNa indústria, o 3º trimestre terminou 2,2% abaixo do 2º, puxado por máquinas e equipamentos [c29]. Esse detalhe importa porque as empresas compram máquinas quando pretendem produzir mais adiante, e a compra menor indica que elas esperam menos dos próximos meses.\n\n### O 4º trimestre ainda não mostra para que lado vai, e o emprego sente depois\n\nPara virar recessão, o PIB teria de cair também de outubro a dezembro, e os primeiros sinais de outubro vão para os dois lados. O índice de compras da indústria, da S&P Global, subiu de 44,8 em setembro para 46,1 em outubro [c15]. Ele melhorou, mas ainda está num nível que indica indústria encolhendo. A confiança empresarial caiu 0,3 ponto, a quarta queda seguida [c18].\n\nDo outro lado, a confiança do comércio subiu 1,8 ponto, para 83,1 [c16], e a do consumidor subiu 0,5 ponto, para 84,7 [c17]. Olhando mais longe, os bancos (Focus) esperavam, no fim de outubro, crescimento de 1,20% em 2027 [c7]. Com sinais assim, ainda não dá para dizer se haverá um segundo trimestre de queda.\n\nSe você vive do trabalho, sobretudo na indústria, nada muda agora no salário. O desemprego de 5,2% são cerca de 5,7 milhões de pessoas, e cada ponto a mais são cerca de 1,1 milhão sem trabalho [c107]. O risco está no prazo: na recessão de 2014 a 2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, 7,0 pontos a mais [c107].\n\nEsse pico veio meses depois de a atividade cair, porque o desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba [c107]. Por isso o desemprego baixo de hoje não desmente a conta da prévia. O primeiro sinal no emprego costuma aparecer nas vagas com carteira, e setembro foi o pior para o mês na série [c9].\n\nPara você, a conta quer dizer que um PIB do 3º trimestre menor que o do 2º, se vier, não será surpresa e também não será, sozinho, uma recessão. O que separa um tropeço de uma queda mais longa é o formato dos meses seguintes. Se a produção de outubro voltar com força, o desenho fica mais parecido com 2018; se continuar fraca, fica mais parecido com 2015.\n\nO IBGE divulga o PIB do 3º trimestre em 2 de dezembro e, no dia seguinte, a produção industrial de outubro, o primeiro dado oficial do 4º trimestre.",
-   "duracao_escrever_s": 218,
-   "notas_da_versao_anterior": {
-    "texto_corrigido_a_mao": "2026-11-08: o motivo das empresas é da Folha (c12) e ganhou a fonte; 'o site conta' virou a fonte do dado (conta.py recessoes).",
-    "revisao_manual": [
-     {
-      "em": "2026-11-08",
-      "o_que": "tirada a previsão com data e as frases em que o site prometia conferir ou acompanhar depois (decisão do Pedro em 8/11/2026: o site faz a análise do fato e para aí)",
-      "trocas": [
-       {
-        "antes": "O site vai acompanhar três divulgações. A primeira é a prévia do PIB de setembro:",
-        "depois": "Três divulgações dizem para que lado o trimestre vai. A primeira é a prévia do PIB de setembro:"
-       }
-      ]
-     }
-    ]
-   },
-   "texto_corrigido_a_mao": "2026-11-09: 'que o site conta' (o site falando de si) virou a fonte do dado, o PIB do IBGE (c107).",
-   "fontes_abertas": true
+   "titulo": "Indústria cai 4,1% desde maio, e o PIB do terceiro trimestre fica em dúvida",
+   "texto": "O IBGE divulgou ontem que a produção da indústria caiu 0,8% em setembro, contra agosto, a quarta queda em cinco meses, e a perda desde maio chega a 4,1% [c1]. No terceiro trimestre, a indústria recuou 2,2% contra o segundo, com máquinas e equipamentos puxando a queda, o que deixa em dúvida se o PIB do trimestre cresce [c2].\n\nA pergunta aberta é se a perda de ritmo que vem desde 2025 vira recessão, que é o PIB caindo dois trimestres seguidos. O PIB cresceu 1,1% no primeiro trimestre de 2026 e 0,5% no segundo, e nenhum dos últimos oito trimestres foi de queda [c5]. O Banco Central mantém a Selic em 13,75% desde 17/9 para segurar os preços, o que encarece o crédito de quem compra e de quem investe. As contas do governo pesam porque, quando quem investe duvida delas, cobra mais para emprestar ao governo, e esse juro chega ao crédito longo das empresas.\n\nA queda de setembro veio depois de outra. A prévia do PIB feita pelo Banco Central caiu 0,6% nos 3 meses até agosto, contra os 3 meses anteriores [c7]. Em setembro, a indústria, que é a única parte do mês já conhecida, não trouxe a recuperação que compensaria essa perda.\n\nO peso das máquinas na queda admite duas leituras. Numa, as empresas compram menos máquinas porque o crédito está caro e adiam o investimento, o que pesaria também no crescimento dos anos seguintes. Na outra, um trimestre fraco pode ter causas passageiras, que somem no mês seguinte. A indústria de outubro, que o IBGE divulga em 3/12, mostra se a queda continua, e um trimestre só não separa as duas leituras.\n\nO emprego mostra a contratação mais lenta, ainda sem o desemprego subir. O desemprego ficou em 5,2% no trimestre até setembro, mais baixo que em quase todos os meses desde 2012 [c8]. As vagas com carteira, segundo o Ministério do Trabalho, somaram 121,3 mil em setembro, o pior setembro da série, que começa em 2020, e 43,5% menos que em setembro de 2025 [c9].\n\nQuem discorda da leitura de que a economia está parando lembra que a indústria é só uma parte do PIB, e que os serviços e o agro podem segurar o resultado. O crescimento em 12 meses, de 1,4% até agosto, ainda está dentro do normal desde 2004, que vai de 0,8% a 3,9% ao ano [c7]. As vendas do varejo de setembro saem em 13/11, e até lá a indústria é a parte do trimestre que já se conhece.\n\nAs previsões também se afastam. O Itaú cortou em 30/10 a previsão do PIB de 2027 de 1,2% para 0,5% [c4], e a Confederação Nacional da Indústria cortou a de 2026 de 2% para 1,6% [c11]. A média dos bancos (Focus), em 30/10, ainda esperava 1,76% para 2026 e 1,20% para 2027 [c10]. São previsões de quem empresta dinheiro, e a distância entre elas mostra que nem quem prevê concorda sobre 2027.\n\nPara o país, o dado que decide é o PIB do terceiro trimestre, em 2/12, porque uma queda ali seria o primeiro dos dois trimestres que a recessão pede. Se a recessão vier, o emprego é por onde o custo chega às casas, e o tamanho varia. Na recessão iniciada em 2014, o desemprego subiu 7,0 pontos, de 6,9% para 13,9%, e na de 2020, 2,5 pontos [c12]. Antes do PIB, sai o desemprego até outubro, em 27/11.\n\nA outra história de ontem veio de fora. A Nasdaq, bolsa de tecnologia dos Estados Unidos, chegou a cair 6,4%, e a Bolsa do Japão perdeu mais de 6%. O motivo foi o medo de que as empresas invistam menos em inteligência artificial depois da vitória democrata no Congresso americano. Quando quem investe lá fora se assusta, costuma tirar dinheiro de países como o Brasil, o que pesa no dólar e na Bolsa daqui.",
+   "argumento": "A queda de 4,1% da indústria desde maio, puxada por máquinas, põe em dúvida o PIB do terceiro trimestre, enquanto o emprego desacelera na contratação, ainda sem o desemprego subir; o PIB de 2/12 decide.",
+   "porque": "Segundo o IBGE, a produção industrial caiu 0,8% em setembro e 2,2% no terceiro trimestre, com a queda do trimestre puxada por máquinas e equipamentos.",
+   "pressao": "ritmo",
+   "duracao_s": 424
   },
   "termina_em": "ritmo",
   "versao_anterior": {
-   "titulo": "Indústria produz 0,8% menos em setembro, quarta queda em cinco meses",
+   "titulo": "Indústria cai 0,8% em setembro, a quarta queda em cinco meses",
    "paragrafos": [
-    "A produção da indústria caiu 0,8% em setembro, se compararmos com agosto, e soma perda de 4,1% desde maio.",
-    "Pelo IBGE, a queda veio das máquinas e equipamentos, que caíram 1,9% depois de recuar 0,1% em agosto, sinal de empresas investindo menos. Derivados de petróleo e biocombustíveis tiveram a maior queda do mês, de 4,2%.",
-    "O dado pesa no PIB do terceiro trimestre, ainda não divulgado, porque julho e agosto deixaram a prévia do PIB do Banco Central 0,6% abaixo de abril a junho. Desde 2003, em 15 trimestres que começaram assim, o PIB caiu em 9."
+    "A produção da indústria caiu 0,8% em setembro, se compararmos com agosto, e soma queda de 4,1% desde maio. Segundo o IBGE, a queda foi puxada por máquinas e equipamentos, que as empresas compram para investir.",
+    "Para a prévia do PIB do Banco Central não fechar o trimestre em queda, setembro teria de subir cerca de 1,6% sobre agosto. Em 9 de 15 casos parecidos desde 2003, o PIB caiu.",
+    "Nada muda agora no salário ou na parcela, mas o risco é para o emprego: o desemprego está em 5,2% e, na recessão de 2014 a 2016, subiu 7 pontos."
    ]
   },
-  "revisao_manual": "2026-11-08: refeito a pedido do Pedro (fato do dia com o porquê): a pesquisa do dia, a mesma da leitura a fundo, passa ao redator o porquê e o e daí (curto do editor-chefe, refeito da pesquisa gravada com fundo.py --curto); regra do \"quem decidiu\"; teste do porquê; Opus no post, no editor e no teste. Mesmo programa da atualização (src/escreve_post.py), com os dados desta rodada. O texto anterior ficou em versao_anterior. 2026-11-09: refeito a pedido do Pedro (o fato do dia termina na vida de quem lê, com o tamanho da tabela de tradução, TRADUCAO.md): curto do editor-chefe refeito da pesquisa gravada, com as traduções do dia (src/conta.py traduz), e post pelo mesmo programa da atualização (src/escreve_post.py), com os mesmos dados. A leitura a fundo foi escrita de novo da mesma pesquisa (fundo.py --escreve), com as famílias de referência que o fato atinge; as correções à mão de 8/11 (bastidor e promessas de conferir depois) não voltaram, e a conferência das fontes no Mac (--reconfere) roda de novo."
+  "revisao_manual": "Refeito em 10/11/2026 no texto do dia pela história (pedido do Pedro)."
  },
  "pauta": {
-  "versao": 1,
+  "versao": 2,
   "candidatos": [
    {
     "id": "E1",
@@ -4363,11 +3316,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "A indústria recuou 2,2% no terceiro trimestre contra o segundo, puxada por máquinas e equipamentos, o que mostra menos investimento das empresas e pesa no PIB do trimestre.",
-    "vida": {
-     "tamanho": 2,
-     "porta": "emprego",
-     "quem": "quem trabalha na indústria e depende de vagas e horas extras no setor"
-    },
+    "historia": "ritmo_emprego",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 7,
     "jornais": [
      "Agência Brasil",
@@ -4431,11 +3384,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Lá fora, o medo de menos investimento em inteligência artificial após a vitória democrata derrubou as bolsas, e investidores assustados tiram dinheiro de países como o Brasil.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "nova",
+    "tema_novo": "queda-das-acoes-de-tecnologia",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 6,
     "jornais": [
      "Folha",
@@ -4496,11 +3449,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Desde a reeleição, estrangeiros tiraram R$ 8,4 bilhões da Bolsa brasileira, o que encarece o dólar e os importados e torna mais difícil para as empresas captar dinheiro para investir.",
-    "vida": {
-     "tamanho": 1,
-     "porta": "precos",
-     "quem": "quem compra produtos importados ou viaja para fora com o dólar mais caro"
-    },
+    "historia": "desconfianca_eleicao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 7,
     "jornais": [
      "Agência Brasil",
@@ -4558,11 +3511,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "A fala do presidente fez as taxas do Tesouro recuarem no dia. Como a Fazenda só discute medidas após a viagem à COP, o juro que o governo paga para se financiar segue alto.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": true,
     "n_manchetes": 18,
     "jornais": [
      "Agência Brasil",
@@ -4627,11 +3580,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "Se a regra mudar, cada congelamento no Orçamento baixa o teto de gastos dos anos seguintes, o que ajuda a frear a dívida e pode abrir espaço para juros menores.",
-    "vida": {
-     "tamanho": 1,
-     "porta": "governo",
-     "quem": "quem depende de programas e serviços públicos que podem ter menos verba se o limite de gastos cair"
-    },
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 2,
     "jornais": [
      "Folha",
@@ -4666,11 +3619,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Cerveja vai pagar 4,2%, vinho 8% e cigarro 66,7%, o que tende a encarecer esses produtos e os carros em 2027 e a tirar um pouco do consumo das famílias.",
-    "vida": {
-     "tamanho": 2,
-     "porta": "precos",
-     "quem": "quem compra cigarro, bebida alcoólica e carro, a partir de fevereiro"
-    },
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 18,
     "jornais": [
      "Agência Brasil",
@@ -4735,11 +3688,11 @@
     "lado": "pesa",
     "ja_esperado": true,
     "porque": "O economista apontado como autor nega propor tabelamento, mas a discussão faz investidores cobrarem mais para emprestar ao governo brasileiro.",
-    "vida": {
-     "tamanho": 1,
-     "porta": "credito",
-     "quem": "quem paga juro de cartão, cheque especial e financiamento, se o juro passasse a ter limite"
-    },
+    "historia": "limitar_juro",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 4,
     "jornais": [
      "Folha",
@@ -4787,11 +3740,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Os ataques ao Banco Central fazem investidores temerem pressão política sobre os juros, o que sobe o dólar e o juro que o governo paga para pegar dinheiro por muitos anos.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "limitar_juro",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": true,
     "n_manchetes": 2,
     "jornais": [
      "Valor",
@@ -4824,55 +3777,116 @@
   "pressoes_mudaram": [],
   "estado": "subindo",
   "estado_anterior": "subindo",
-  "degrau": 5,
-  "motivo": "a notícia de estágio mais firme e maior tamanho; no empate, a que não é o vaivém do mercado do dia e a que saiu em mais jornais",
-  "padrao": "E1",
+  "direcao_mudou": false,
+  "historias": [
+   {
+    "id": "ritmo_emprego",
+    "titulo": "Ritmo da economia e emprego: a desaceleração e a previsão de 2027",
+    "pressao": "ritmo",
+    "pressoes": [
+     "ritmo",
+     "emprego",
+     "renda",
+     "juro"
+    ],
+    "nova": false,
+    "pontos": 2.0,
+    "candidatos": [
+     "E1"
+    ],
+    "jornais": 7,
+    "fato_grande": true
+   },
+   {
+    "id": "nova:queda-das-acoes-de-tecnologia",
+    "titulo": "Nasdaq, bolsa dos EUA, cai até 6,4% e Bolsa do Japão perde mais de 6%",
+    "pressao": null,
+    "pressoes": [],
+    "nova": true,
+    "pontos": 2.0,
+    "candidatos": [
+     "E2"
+    ],
+    "jornais": 4,
+    "fato_grande": true
+   },
+   {
+    "id": "contas_governo",
+    "titulo": "Contas do governo: a meta, o ajuste prometido e a dívida",
+    "pressao": "contas",
+    "pressoes": [
+     "contas",
+     "divida_reais",
+     "mercado",
+     "juro"
+    ],
+    "nova": false,
+    "pontos": 1.5,
+    "candidatos": [
+     "E6",
+     "E4",
+     "E5"
+    ],
+    "jornais": 8,
+    "fato_grande": false
+   },
+   {
+    "id": "desconfianca_eleicao",
+    "titulo": "Desconfiança de quem investe depois da eleição",
+    "pressao": "mercado",
+    "pressoes": [
+     "mercado",
+     "divida_reais",
+     "juro",
+     "inflacao"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E3"
+    ],
+    "jornais": 7,
+    "fato_grande": false
+   },
+   {
+    "id": "limitar_juro",
+    "titulo": "A ideia de baixar o juro por decisão política",
+    "pressao": "mercado",
+    "pressoes": [
+     "mercado",
+     "juro",
+     "inflacao"
+    ],
+    "nova": false,
+    "pontos": 0.25,
+    "candidatos": [
+     "E8"
+    ],
+    "jornais": 2,
+    "fato_grande": false
+   }
+  ],
+  "temas_esperando": [],
+  "escolha": {
+   "historia": "ritmo_emprego",
+   "titulo": "Ritmo da economia e emprego: a desaceleração e a previsão de 2027",
+   "pontos": 2.0,
+   "motivo": "a história que mais andou (empate decidido pelos jornais)",
+   "calmo": false,
+   "nova": false,
+   "pulada": null,
+   "segunda": "nova:queda-das-acoes-de-tecnologia"
+  },
   "final": "E1",
   "mesma_historia": [],
-  "cuidados": [
-   "Há três números diferentes: 0,8% é a queda de setembro contra agosto, 4,1% é a perda somada desde maio e 2,2% é o terceiro trimestre contra o segundo. Não misturar.",
-   "A queda no trimestre é só da indústria, e não o PIB. O PIB do trimestre ainda não saiu, e o texto não deve sugerir que já saiu ou que já houve recessão.",
-   "\"Apaga ganhos de 2026\" é uma leitura de um jornal. Só afirmar o que o IBGE divulgou: foi a quarta queda em cinco meses, puxada por máquinas e equipamentos."
+  "segunda_historia": [
+   "E2"
   ],
-  "editora": {
-   "ok": true,
-   "saida": {
-    "segue_padrao": true,
-    "escolha": "E1",
-    "motivo_desvio": null,
-    "por_que": "A direção não mudou e nenhuma pressão mudou de lado. A produção industrial não está nas datas do degrau 4. Então vale o degrau 5. E1 é dado divulgado e tem tamanho 2, maior que os fatos consumados de tamanho 1. A queda mostra empresas investindo menos e pesa no PIB do trimestre, que sai depois. Isso mexe no emprego da leitora.",
-    "concorrente": "E6",
-    "por_que_perdeu": "O imposto sobre cigarro, bebida e carro é uma decisão tomada e saiu em mais manchetes (18). Mas tem tamanho 1, e só vale a partir de fevereiro. A queda da indústria tem tamanho 2 e mostra agora o ritmo da economia. E2 também tem tamanho 2, mas acontece lá fora e saiu em menos jornais.",
-    "mesma_historia": [],
-    "cuidados": [
-     "Há três números diferentes: 0,8% é a queda de setembro contra agosto, 4,1% é a perda somada desde maio e 2,2% é o terceiro trimestre contra o segundo. Não misturar.",
-     "A queda no trimestre é só da indústria, e não o PIB. O PIB do trimestre ainda não saiu, e o texto não deve sugerir que já saiu ou que já houve recessão.",
-     "\"Apaga ganhos de 2026\" é uma leitura de um jornal. Só afirmar o que o IBGE divulgou: foi a quarta queda em cinco meses, puxada por máquinas e equipamentos."
-    ],
-    "testes": {
-     "troca": "Sim. Uma queda da indústria maior que a esperada, depois de meses de recuo, seria o fato do dia com qualquer governo.",
-     "fato": "Fato consumado: o IBGE divulgou o dado de setembro.",
-     "consequencia": "Mexe no ritmo da economia e no emprego. Também indica menos investimento das empresas e um PIB do trimestre mais fraco.",
-     "novidade": "Ela fica sabendo que a indústria caiu de novo em setembro, mais que o esperado, e encolheu 2,2% no trimestre. O site não deu esse fato antes.",
-     "mais_dada": "E4 e E6 saíram em 8 jornais e 18 manchetes. E4 é só anúncio, sem ato formal. E6 é decisão tomada, mas tem tamanho 1 e é menor que a queda da indústria."
-    }
-   },
-   "meta": [
-    {
-     "modelo_pedido": "opus",
-     "prompt_sha256": "a134009630aa48bbdd090e30e1d901190a2b2c31b7c144d6e346795f262d7040",
-     "system_sha256": "fd8e8c93597c03044e3f4cd47585116ebc601be9f1d516a42bd4991e2173473b",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.146026,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "43e9b167-6e3f-4980-85cf-b6305ead9b25"
-    }
-   ],
-   "conferencia": "seguiu a escolha padrão"
+  "refeita_em": "2026-11-10",
+  "antes": {
+   "degrau": 5,
+   "final": "E1",
+   "titulo": "Produção da indústria cai 0,8% em setembro e acumula queda de 4,1% desde maio"
   }
  }
 }

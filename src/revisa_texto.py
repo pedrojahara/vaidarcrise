@@ -153,7 +153,8 @@ def comparacoes(texto: str, metas_texto: str = "") -> list[str]:
                 out.append(f"porcentagem de meta que a ficha das metas não tem ({', '.join(fora)}): confira a meta e a margem "
                            f"em config/metas.json: {f.strip()[:80]}")
         if _COMPARA.search(f) and re.search(r"\bmeta\b", f, re.I) and not re.search(
-                r"\b(margem|banda|tolerância|piso|descont\w*|abat\w*|entre|de \d+(,\d+)? a \d|até \d)", perto, re.I):
+                r"\b(margem|banda|tolerância|piso|centro|descont\w*|abat\w*|deixa de fora|entre|a partir de|"
+                r"de \d+(,\d+)? a \d|até \d)", perto, re.I):
             out.append("compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, "
                        f"ou diga na frase seguinte: {f.strip()[:80]}")
     return out

@@ -328,15 +328,15 @@
      "fator": "juro",
      "direcao": 1,
      "magnitude": 1,
-     "vida": {
-      "tamanho": 1,
-      "porta": "precos",
-      "quem": "quem sente os preços e o juro altos por mais tempo, com o corte da Selic só em março"
-     },
      "ja_no_preco": true,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "Bancos e consultorias esperam preços subindo acima do teto da meta em 2027, e por isso a Selic fica em 13,75% por mais tempo. Juro alto por mais tempo segura o crédito e o investimento."
+     "porque": "Bancos e consultorias esperam preços subindo acima do teto da meta em 2027, e por isso a Selic fica em 13,75% por mais tempo. Juro alto por mais tempo segura o crédito e o investimento.",
+     "historia": "juro_inflacao",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -362,15 +362,15 @@
      "fator": "contas",
      "direcao": 1,
      "magnitude": 1,
-     "vida": {
-      "tamanho": 0,
-      "porta": "nenhuma",
-      "quem": ""
-     },
      "ja_no_preco": true,
      "ja_nos_indicadores": false,
      "duplicata_de": "ev-20261109-01",
-     "porque": "O pronunciamento não trouxe cortes de gastos nem datas, e economistas seguem sem ver como a dívida vai parar de subir. A dúvida mantém o juro que o governo paga alto e freia o investimento das empresas."
+     "porque": "O pronunciamento não trouxe cortes de gastos nem datas, e economistas seguem sem ver como a dívida vai parar de subir. A dúvida mantém o juro que o governo paga alto e freia o investimento das empresas.",
+     "historia": "contas_governo",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": true,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -389,15 +389,15 @@
      "fator": "contas",
      "direcao": 1,
      "magnitude": 1,
-     "vida": {
-      "tamanho": 2,
-      "porta": "governo",
-      "quem": "cerca de 15 milhões de famílias que recebem a recarga gratuita do botijão de gás"
-     },
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "O governo baixou medida provisória que mantém a recarga gratuita por mais cinco anos. O benefício sustenta o consumo das famílias de baixa renda, e o gasto fica fixo nas contas do governo por mais tempo."
+     "porque": "O governo baixou medida provisória que mantém a recarga gratuita por mais cinco anos. O benefício sustenta o consumo das famílias de baixa renda, e o gasto fica fixo nas contas do governo por mais tempo.",
+     "historia": "contas_governo",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -414,15 +414,15 @@
      "fator": "contas",
      "direcao": 1,
      "magnitude": 1,
-     "vida": {
-      "tamanho": 0,
-      "porta": "nenhuma",
-      "quem": ""
-     },
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "A parte da dívida que vence em até um ano chegou a 19,95% em setembro, e o Tesouro precisa pegar dinheiro novo logo. Com o juro alto, a conta de juros do governo cresce e pressiona as contas públicas."
+     "porque": "A parte da dívida que vence em até um ano chegou a 19,95% em setembro, e o Tesouro precisa pegar dinheiro novo logo. Com o juro alto, a conta de juros do governo cresce e pressiona as contas públicas.",
+     "historia": "contas_governo",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -444,15 +444,15 @@
      "fator": "mercado",
      "direcao": -1,
      "magnitude": 1,
-     "vida": {
-      "tamanho": 0,
-      "porta": "nenhuma",
-      "quem": ""
-     },
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "A Bolsa acompanhou a recuperação em Nova York e o petróleo mais barato, e o dólar recuou. Dólar menos pressionado alivia o preço dos importados, mas o mercado segue de olho nas contas do governo."
+     "porque": "A Bolsa acompanhou a recuperação em Nova York e o petróleo mais barato, e o dólar recuou. Dólar menos pressionado alivia o preço dos importados, mas o mercado segue de olho nas contas do governo.",
+     "historia": "desconfianca_eleicao",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -474,15 +474,15 @@
      "fator": "externo",
      "direcao": -1,
      "magnitude": 1,
-     "vida": {
-      "tamanho": 1,
-      "porta": "precos",
-      "quem": "quem abastece o carro e paga o frete embutido nos preços"
-     },
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "O presidente dos EUA disse que novos ataques ao Irã são improváveis enquanto houver negociação, e o petróleo caiu lá fora. Combustível e frete tendem a pesar menos nos preços aqui."
+     "porque": "O presidente dos EUA disse que novos ataques ao Irã são improváveis enquanto houver negociação, e o petróleo caiu lá fora. Combustível e frete tendem a pesar menos nos preços aqui.",
+     "historia": "guerra_petroleo",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -504,15 +504,15 @@
      "fator": "externo",
      "direcao": -1,
      "magnitude": 1,
-     "vida": {
-      "tamanho": 0,
-      "porta": "nenhuma",
-      "quem": ""
-     },
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "A China manteve suspensas as medidas comerciais contra os EUA, o que evita nova guerra de tarifas entre as duas maiores economias. Isso protege a demanda mundial por produtos como soja e minério do Brasil."
+     "porque": "A China manteve suspensas as medidas comerciais contra os EUA, o que evita nova guerra de tarifas entre as duas maiores economias. Isso protege a demanda mundial por produtos como soja e minério do Brasil.",
+     "historia": "tarifas_eua",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -530,15 +530,15 @@
      "fator": "credito",
      "direcao": -1,
      "magnitude": 1,
-     "vida": {
-      "tamanho": 1,
-      "porta": "credito",
-      "quem": "produtores rurais endividados que contam com a renegociação"
-     },
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "A bancada ruralista resiste, e só R$ 18,6 bi foram renegociados até agora. Se a medida passasse, produtores teriam alívio nas dívidas e mais fôlego para investir."
+     "porque": "A bancada ruralista resiste, e só R$ 18,6 bi foram renegociados até agora. Se a medida passasse, produtores teriam alívio nas dívidas e mais fôlego para investir.",
+     "historia": "credito_inadimplencia",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     }
    ]
   }
@@ -2572,7 +2572,7 @@
   ]
  },
  "pauta": {
-  "versao": 1,
+  "versao": 2,
   "candidatos": [
    {
     "id": "E1",
@@ -2587,11 +2587,11 @@
     "lado": "pesa",
     "ja_esperado": true,
     "porque": "Bancos e consultorias esperam preços subindo acima do teto da meta em 2027, e por isso a Selic fica em 13,75% por mais tempo. Juro alto por mais tempo segura o crédito e o investimento.",
-    "vida": {
-     "tamanho": 1,
-     "porta": "precos",
-     "quem": "quem sente os preços e o juro altos por mais tempo, com o corte da Selic só em março"
-    },
+    "historia": "juro_inflacao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 8,
     "jornais": [
      "Agência Brasil",
@@ -2642,11 +2642,11 @@
     "lado": "pesa",
     "ja_esperado": true,
     "porque": "O pronunciamento não trouxe cortes de gastos nem datas, e economistas seguem sem ver como a dívida vai parar de subir. A dúvida mantém o juro que o governo paga alto e freia o investimento das empresas.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": true,
     "n_manchetes": 9,
     "jornais": [
      "Estadão",
@@ -2694,11 +2694,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "O governo baixou medida provisória que mantém a recarga gratuita por mais cinco anos. O benefício sustenta o consumo das famílias de baixa renda, e o gasto fica fixo nas contas do governo por mais tempo.",
-    "vida": {
-     "tamanho": 2,
-     "porta": "governo",
-     "quem": "cerca de 15 milhões de famílias que recebem a recarga gratuita do botijão de gás"
-    },
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 3,
     "jornais": [
      "Agência Brasil",
@@ -2740,11 +2740,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "A parte da dívida que vence em até um ano chegou a 19,95% em setembro, e o Tesouro precisa pegar dinheiro novo logo. Com o juro alto, a conta de juros do governo cresce e pressiona as contas públicas.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 1,
     "jornais": [
      "Poder360"
@@ -2772,11 +2772,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "A Bolsa acompanhou a recuperação em Nova York e o petróleo mais barato, e o dólar recuou. Dólar menos pressionado alivia o preço dos importados, mas o mercado segue de olho nas contas do governo.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "desconfianca_eleicao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 5,
     "jornais": [
      "Agência Brasil",
@@ -2819,11 +2819,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "O presidente dos EUA disse que novos ataques ao Irã são improváveis enquanto houver negociação, e o petróleo caiu lá fora. Combustível e frete tendem a pesar menos nos preços aqui.",
-    "vida": {
-     "tamanho": 1,
-     "porta": "precos",
-     "quem": "quem abastece o carro e paga o frete embutido nos preços"
-    },
+    "historia": "guerra_petroleo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 5,
     "jornais": [
      "InfoMoney",
@@ -2865,11 +2865,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "A China manteve suspensas as medidas comerciais contra os EUA, o que evita nova guerra de tarifas entre as duas maiores economias. Isso protege a demanda mundial por produtos como soja e minério do Brasil.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "tarifas_eua",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 5,
     "jornais": [
      "Folha",
@@ -2913,11 +2913,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "A bancada ruralista resiste, e só R$ 18,6 bi foram renegociados até agora. Se a medida passasse, produtores teriam alívio nas dívidas e mais fôlego para investir.",
-    "vida": {
-     "tamanho": 1,
-     "porta": "credito",
-     "quem": "produtores rurais endividados que contam com a renegociação"
-    },
+    "historia": "credito_inadimplencia",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 2,
     "jornais": [
      "Folha",
@@ -2944,431 +2944,189 @@
   "pressoes_mudaram": [],
   "estado": "subindo",
   "estado_anterior": "subindo",
-  "degrau": 5,
-  "motivo": "a notícia de estágio mais firme e maior tamanho; no empate, a que não é o vaivém do mercado do dia e a que saiu em mais jornais",
-  "padrao": "E1",
-  "final": "E3",
-  "mesma_historia": [],
-  "cuidados": [
-   "Diga que o governo baixou uma medida provisória que prorroga o benefício até 2031. Não diga que o Congresso aprovou nem que a lei está definitiva.",
-   "Diga que a recarga gratuita do botijão já existia e foi prorrogada. Não apresente como benefício novo.",
-   "Não invente o custo do programa para as contas do governo. As linhas dos candidatos não trazem esse valor."
-  ],
-  "editora": {
-   "ok": true,
-   "saida": {
-    "segue_padrao": false,
-    "escolha": "E3",
-    "motivo_desvio": "muda_a_vida",
-    "por_que": "A escolha padrão veio do degrau 5 e tem tamanho 1 no risco. O Gás do Povo é decisão tomada e muda a vida de cerca de 15 milhões de famílias, com tamanho 2 na vida contra 1 do Focus. Também mexe no que o governo paga.",
-    "concorrente": "E1",
-    "por_que_perdeu": "O Focus é dado divulgado e saiu em mais jornais, mas o mercado já esperava juro alto, e o tamanho dele na vida é 1. O Focus de 04/11 já foi o fato do dia.",
-    "mesma_historia": [],
-    "cuidados": [
-     "Diga que o governo baixou uma medida provisória que prorroga o benefício até 2031. Não diga que o Congresso aprovou nem que a lei está definitiva.",
-     "Diga que a recarga gratuita do botijão já existia e foi prorrogada. Não apresente como benefício novo.",
-     "Não invente o custo do programa para as contas do governo. As linhas dos candidatos não trazem esse valor."
+  "direcao_mudou": false,
+  "historias": [
+   {
+    "id": "contas_governo",
+    "titulo": "Contas do governo: a meta, o ajuste prometido e a dívida",
+    "pressao": "contas",
+    "pressoes": [
+     "contas",
+     "divida_reais",
+     "mercado",
+     "juro"
     ],
-    "testes": {
-     "troca": "Sim. Com outro governo, a prorrogação de um benefício para 15 milhões de famílias seria o mesmo fato, porque conta o ato e o que ele muda na vida.",
-     "fato": "Fato consumado: decisão tomada por medida provisória, noticiada por três jornais.",
-     "consequencia": "Mexe no que o governo paga (benefício) e nas contas do governo, que carregam o gasto por mais tempo. Muda o gasto das famílias de baixa renda com o botijão de gás.",
-     "novidade": "A leitora sabe hoje que a recarga gratuita do botijão de gás vai até 2031 e não acaba antes. Não repete nenhum fato do dia anterior do site.",
-     "mais_dada": "O Focus (E1) saiu em 6 jornais e 8 manchetes. Ficou de fora porque o tamanho dele na vida é 1, o mercado já esperava o juro alto e a Selic em 13,75% já foi contada em 05/11."
-    }
+    "nova": false,
+    "pontos": 2.0,
+    "candidatos": [
+     "E3",
+     "E4"
+    ],
+    "jornais": 4,
+    "fato_grande": false
    },
-   "meta": [
-    {
-     "etapa": "editora",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "20e2db10b95437f2f832c560158c8787cc8f428314e9d553764a15cf7145f329",
-     "system_sha256": "e271883ec27e7a2a07cd20d3748a8ede68b02a2ea9f968c0cf2e03d876cb5c14",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.10227,
-     "turnos": 2,
-     "duracao_s": 12,
-     "modelos": [
-      "claude-sonnet-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "e75ce48d-f222-48be-9f92-5a8dcd956f04"
-    },
-    {
-     "etapa": "editora",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "765baa614d3c168d2df5597a3ad75be6b53a3beae7dc945c1371d74661ab777a",
-     "system_sha256": "56b0a9136627dad76acab03c59d10ee7f487a96e9c9b9c549ada431237991362",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.090104,
-     "turnos": 2,
-     "duracao_s": 6,
-     "modelos": [
-      "claude-sonnet-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "4ed53192-98bf-434d-91a2-148cee292e00"
-    }
-   ],
-   "conferencia": "trocou a escolha padrão (E1) por E3: muda_a_vida",
-   "defesa": "Trocar é exceção, e o Gás do Povo só prorroga um benefício que as famílias já recebem, então nada muda no mês delas. O Focus mede a Inflação esperada, que piorou, e traz o corte da Selic só em março, o que pesa no crédito e nos preços de todas."
+   {
+    "id": "juro_inflacao",
+    "titulo": "Juro e inflação: a Selic parada e a inflação acima do teto",
+    "pressao": "juro",
+    "pressoes": [
+     "juro",
+     "inflacao",
+     "parcelas",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E1"
+    ],
+    "jornais": 6,
+    "fato_grande": false
+   },
+   {
+    "id": "tarifas_eua",
+    "titulo": "Tarifas dos EUA sobre o Brasil",
+    "pressao": "ritmo",
+    "pressoes": [
+     "mercado",
+     "emprego",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E7"
+    ],
+    "jornais": 5,
+    "fato_grande": false
+   },
+   {
+    "id": "desconfianca_eleicao",
+    "titulo": "Desconfiança de quem investe depois da eleição",
+    "pressao": "mercado",
+    "pressoes": [
+     "mercado",
+     "divida_reais",
+     "juro",
+     "inflacao"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E5"
+    ],
+    "jornais": 4,
+    "fato_grande": false
+   },
+   {
+    "id": "guerra_petroleo",
+    "titulo": "A guerra no Oriente Médio e o petróleo",
+    "pressao": "inflacao",
+    "pressoes": [
+     "inflacao",
+     "juro",
+     "contas",
+     "mercado"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E6"
+    ],
+    "jornais": 3,
+    "fato_grande": false
+   },
+   {
+    "id": "credito_inadimplencia",
+    "titulo": "Crédito caro e inadimplência recorde",
+    "pressao": "parcelas",
+    "pressoes": [
+     "parcelas",
+     "juro",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 0.7,
+    "candidatos": [
+     "E8"
+    ],
+    "jornais": 2,
+    "fato_grande": false
+   }
+  ],
+  "temas_esperando": [],
+  "escolha": {
+   "historia": "contas_governo",
+   "titulo": "Contas do governo: a meta, o ajuste prometido e a dívida",
+   "pontos": 2.0,
+   "motivo": "a história que mais andou",
+   "calmo": false,
+   "nova": false,
+   "pulada": null,
+   "segunda": null
+  },
+  "final": "E3",
+  "mesma_historia": [
+   "E4"
+  ],
+  "segunda_historia": [],
+  "refeita_em": "2026-11-10",
+  "antes": {
+   "degrau": 5,
+   "final": "E3",
+   "titulo": "Governo prorroga até 2031 o Gás do Povo, que dá o botijão a 15 milhões de famílias"
   }
  },
  "post": {
-  "tipo": "dia",
-  "porque": {
-   "caderno": [
-    "c1",
-    "c4",
-    "c6",
-    "c7",
-    "c14",
-    "c17",
-    "c20",
-    "c23",
-    "c24",
-    "c25",
-    "c28"
-   ]
-  },
   "ok": true,
-  "titulo": "Governo prorroga até 2031 o botijão grátis do Gás do Povo",
+  "tipo": "dia",
+  "formato": "historia",
+  "titulo": "Governo prorroga o Gás do Povo até 2031, e a conta da dívida segue presa à Selic",
   "paragrafos": [
-   "O governo baixou medida provisória que prorroga até 2031 o botijão grátis do Gás do Povo, que já existia e acabaria neste mês. Pela lei, o auxílio alivia o peso do gás no orçamento das famílias de baixa renda, e o governo cita o combate à pobreza energética.",
-   "A prorrogação depende de o Congresso aprovar a medida em até 120 dias. O orçamento proposto para 2027 reserva R$ 7,6 bilhões, cerca de R$ 42 por família por mês.",
-   "Para as cerca de 15 milhões de famílias atendidas, nada muda agora: a recarga continua, e 3,1 milhões de vales saem hoje."
+   "A medida provisória que prorroga o Gás do Povo até 19/11/2031 saiu ontem no Diário Oficial e não muda a conta da meta de 2027, porque o projeto de Orçamento já trazia o programa. Segundo a Consultoria de Orçamento da Câmara, são R$ 7,6 bilhões em 2027, o equivalente a 10,4% do centro da meta, de R$ 73,2 bilhões.",
+   "A medida provisória 1.400, de 6/11, muda o artigo 8º da lei de 2021 que criou o auxílio. Ela já vale, mas perde a validade se o Congresso não a aprovar em até 120 dias, depois de uma comissão mista, da Câmara e do Senado. Segundo a Agência Câmara, a medida não amplia o público, não altera os valores nem muda a forma de execução. O relato da agência não cita o objetivo da medida nem o custo de cada ano até 2031.",
+   "Os relatos oficiais deixam uma dúvida em aberto. Em fevereiro, a Agência Senado descreveu a Lei 15.348 como a lei que tornou o programa permanente, e a medida de ontem põe nele uma data final. Na nota sobre a medida que criou o programa, a Consultoria de Orçamento do Senado disse que ele não cria despesa obrigatória por si só e que o ritmo de atendimento fica para cada Orçamento. Por isso a recarga das cerca de 15 milhões de famílias depende do dinheiro que cada Orçamento anual reservar.",
+   "Os R$ 7,6 bilhões de 2027 atendem 15,4 milhões de famílias, cerca de R$ 493,5 por família ao ano. A conta da meta de 2027 dá R$ 83,4 bilhões depois de descontar R$ 64,7 bilhões de precatórios, como a regra permite, acima do centro e do piso de R$ 36,6 bilhões.",
+   "O peso do programa aparece quando se somam os anos, porque cinco anos no nível de 2027, sem reajuste, dariam R$ 38 bilhões, numa conta simples que não é estimativa oficial. Como o dinheiro de cada ano depende do Orçamento anual, a prorrogação não tira o programa do alcance do ajuste gradual que a Fazenda diz preparar, ainda sem data nem medida.",
+   "O Poder360 informou ontem que o Tesouro terá de refinanciar R$ 1,8 trilhão, porque a parte da dívida que vence em até um ano chegou a 19,95% em setembro. Refinanciar não é gastar, porque o Tesouro troca o título que vence por outro novo, e o que pesa nas contas é o juro pago na troca. A dívida, em 82,93% do PIB em setembro, está mais alta que em 96% dos meses desde 2006.",
+   "Mais da metade da dívida está ligada à Selic, com o recorde de 52,74% em agosto, por isso o juro dela sobe e desce com a decisão do Banco Central. Com a Selic em 13,75%, ou 8,3% ao ano acima da inflação esperada, cada mês de juro parado mantém essa conta cara. Os bancos (Focus) passaram a prever, em 9/11, o próximo corte só em março de 2027, uma previsão que muda toda semana.",
+   "Para as empresas, o caminho passa por outro juro. O crédito longo, como o do investimento e o da casa própria, segue o juro de 10 anos, que o governo pagava a 8,0% ao ano acima da inflação em 6/11, e esse juro sobe quando quem investe desconfia do plano para as contas. Assim, o crédito delas depende mais de o ajuste vir com números do que de um programa que já estava no projeto de 2027. A próxima decisão do Banco Central sobre a Selic é em 9/12."
   ],
   "secoes": [
    {
+    "titulo": null,
     "paragrafos": [
-     "O governo baixou medida provisória que prorroga até 2031 o botijão grátis do Gás do Povo, que já existia e acabaria neste mês. Pela lei, o auxílio alivia o peso do gás no orçamento das famílias de baixa renda, e o governo cita o combate à pobreza energética.",
-     "A prorrogação depende de o Congresso aprovar a medida em até 120 dias. O orçamento proposto para 2027 reserva R$ 7,6 bilhões, cerca de R$ 42 por família por mês.",
-     "Para as cerca de 15 milhões de famílias atendidas, nada muda agora: a recarga continua, e 3,1 milhões de vales saem hoje."
+     "A medida provisória que prorroga o Gás do Povo até 19/11/2031 saiu ontem no Diário Oficial e não muda a conta da meta de 2027, porque o projeto de Orçamento já trazia o programa. Segundo a Consultoria de Orçamento da Câmara, são R$ 7,6 bilhões em 2027, o equivalente a 10,4% do centro da meta, de R$ 73,2 bilhões.",
+     "A medida provisória 1.400, de 6/11, muda o artigo 8º da lei de 2021 que criou o auxílio. Ela já vale, mas perde a validade se o Congresso não a aprovar em até 120 dias, depois de uma comissão mista, da Câmara e do Senado. Segundo a Agência Câmara, a medida não amplia o público, não altera os valores nem muda a forma de execução. O relato da agência não cita o objetivo da medida nem o custo de cada ano até 2031.",
+     "Os relatos oficiais deixam uma dúvida em aberto. Em fevereiro, a Agência Senado descreveu a Lei 15.348 como a lei que tornou o programa permanente, e a medida de ontem põe nele uma data final. Na nota sobre a medida que criou o programa, a Consultoria de Orçamento do Senado disse que ele não cria despesa obrigatória por si só e que o ritmo de atendimento fica para cada Orçamento. Por isso a recarga das cerca de 15 milhões de famílias depende do dinheiro que cada Orçamento anual reservar.",
+     "Os R$ 7,6 bilhões de 2027 atendem 15,4 milhões de famílias, cerca de R$ 493,5 por família ao ano. A conta da meta de 2027 dá R$ 83,4 bilhões depois de descontar R$ 64,7 bilhões de precatórios, como a regra permite, acima do centro e do piso de R$ 36,6 bilhões.",
+     "O peso do programa aparece quando se somam os anos, porque cinco anos no nível de 2027, sem reajuste, dariam R$ 38 bilhões, numa conta simples que não é estimativa oficial. Como o dinheiro de cada ano depende do Orçamento anual, a prorrogação não tira o programa do alcance do ajuste gradual que a Fazenda diz preparar, ainda sem data nem medida."
+    ]
+   },
+   {
+    "titulo": "A conta de juros do governo depende de quanto tempo a Selic fica em 13,75%",
+    "paragrafos": [
+     "O Poder360 informou ontem que o Tesouro terá de refinanciar R$ 1,8 trilhão, porque a parte da dívida que vence em até um ano chegou a 19,95% em setembro. Refinanciar não é gastar, porque o Tesouro troca o título que vence por outro novo, e o que pesa nas contas é o juro pago na troca. A dívida, em 82,93% do PIB em setembro, está mais alta que em 96% dos meses desde 2006.",
+     "Mais da metade da dívida está ligada à Selic, com o recorde de 52,74% em agosto, por isso o juro dela sobe e desce com a decisão do Banco Central. Com a Selic em 13,75%, ou 8,3% ao ano acima da inflação esperada, cada mês de juro parado mantém essa conta cara. Os bancos (Focus) passaram a prever, em 9/11, o próximo corte só em março de 2027, uma previsão que muda toda semana.",
+     "Para as empresas, o caminho passa por outro juro. O crédito longo, como o do investimento e o da casa própria, segue o juro de 10 anos, que o governo pagava a 8,0% ao ano acima da inflação em 6/11, e esse juro sobe quando quem investe desconfia do plano para as contas. Assim, o crédito delas depende mais de o ajuste vir com números do que de um programa que já estava no projeto de 2027. A próxima decisão do Banco Central sobre a Selic é em 9/12."
     ]
    }
   ],
-  "problemas": [],
-  "edicao": {
-   "sugestoes": [
-    {
-     "trecho": "que já existia e acabaria em 19/11",
-     "problema": "Data futura no texto: as próximas datas ficam na lateral (verificador).",
-     "como_fica": "que já existia e acabaria neste mês"
-    },
-    {
-     "trecho": "e a Secom fala em combater a pobreza energética",
-     "problema": "Sigla que a leitora não conhece, sem nome por extenso nem link.",
-     "como_fica": "e a Presidência fala em combater a pobreza energética"
-    },
-    {
-     "trecho": "A prorrogação só se firma se o Congresso votar a medida em até 120 dias, e o projeto de orçamento de 2027 reserva R$ 7,6 bilhões.",
-     "problema": "Dois fatos sem relação ligados por \"e\", e um número grande sem régua nem escala.",
-     "como_fica": "A prorrogação depende de o Congresso aprovar a medida em até 120 dias. O projeto de orçamento de 2027 reserva R$ 7,6 bilhões, cerca de R$ 42 por família por mês, em média."
-    }
-   ],
-   "aplicada": true
-  },
-  "teste": {
+  "pesquisa": {
+   "versao": 4,
    "ok": true,
-   "testes": {
-    "porque": {
-     "ok": true,
-     "por_que": "Diz que o auxílio acabaria neste mês e que por isso veio a medida provisória, e traz o objetivo da Lei 14.237 e a justificativa da Secom contra a pobreza energética, sem inventar causa."
-    },
-    "quem": {
-     "ok": true,
-     "por_que": "O governo baixou a medida e o Congresso decide se ela vira lei, como dizem os dados; a frase teria o mesmo sentido com outro governo."
-    },
-    "e_dai": {
-     "ok": true,
-     "por_que": "Fica com o que muda na vida, com tamanho e para quem: nada muda agora para 15 milhões de famílias, 3,1 milhões de vales hoje e R$ 42 por mês em 2027. Diz o objetivo e a condição do Congresso em 120 dias, sem julgar a decisão."
-    },
-    "livro": {
-     "ok": true,
-     "por_que": "Não gasta espaço com o mecanismo geral; todo o texto trata do fato do dia e do seu porquê."
-    }
-   },
-   "problemas": []
-  },
-  "meta": [
-   {
-    "etapa": "post",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "5eec0b7d7a37c0894ff3ad088e9ad9f1d8e99b4f9e84a62f53575a050ab271e6",
-    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.183536,
-    "turnos": 2,
-    "duracao_s": 23,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "e278ddcd-e2f9-4535-b21c-c1c5def92e9f"
-   },
-   {
-    "etapa": "editor",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "24ddfad5e1c82933c9710ef3f70dbf7142afa614691375de9bf979c8e8cb359b",
-    "system_sha256": "4c7e8c0f33317bc6d454b5ff1a997da9df57cacbbd46c9781db8192f030feaf7",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.35221199999999997,
-    "turnos": 2,
-    "duracao_s": 41,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "1cb2ba00-eafb-41a7-ba39-636c46d0d34e"
-   },
-   {
-    "etapa": "post",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "5827bff75ddea40983f8dd729c2c127488472698fcfcb439fa93e7c8df5ae051",
-    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.158351,
-    "turnos": 4,
-    "duracao_s": 28,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "a112b3e3-8f84-4346-b095-8512fe21bd13"
-   },
-   {
-    "etapa": "teste",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "2336a84be02abf62ffd163b9db26e5b4a05fceaece4efde89b1a628385975bd2",
-    "system_sha256": "e52284e644ecc0ad181f32646f7db3098f5f025d253b5b8fbda16812122b6482",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.116936,
-    "turnos": 2,
-    "duracao_s": 14,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "c44298f4-08be-4b55-9b03-74d2b5a0ae73"
-   }
-  ],
-  "fundo": {
-   "versao": 3,
-   "ok": true,
-   "em": "2026-11-10T05:46:49-03:00",
-   "voltas": [
-    {
-     "volta": 1,
-     "teses": [
-      {
-       "tese": "A prorrogação do Gás do Povo é pequena para as contas (cerca de 0,05% do PIB no orçamento de 2027) e vale mais como data do que como dinheiro: o prazo de 5 anos da Lei 14.237 vence em 19/11/2026, e uma MP, que o Congresso tem 120 dias para votar, é o que evita o fim do benefício para 15 milhões de famílias.",
-       "por_que_nao_e_obvia": "A manchete diz 'prorroga até 2031', e a imprensa disse em fevereiro que a Lei 15.348 tornou o programa permanente; a leitora não vê que o prazo de 5 anos continua no texto da Lei 14.237 que li, nem que a MP depende do Congresso.",
-       "o_que_muda": "A leitora de baixa renda deve esperar a recarga continuar, mas dependente de votação em até 120 dias; para as contas, o gasto é ~R$ 507 por família ao ano, 31% de um salário mínimo, e não muda a trajetória da dívida de 82,93%.",
-       "como_pode_dar_errado": "Se a Lei 15.348 já tiver removido o prazo (não li o artigo alterado), a MP é redundante e a parte do vencimento cai; se o Congresso deixar a MP caducar o benefício acaba; ou o custo real pode superar os R$ 7,6 bi do projeto.",
-       "caderno": [
-        "c1",
-        "c2",
-        "c4",
-        "c5",
-        "c9",
-        "c11",
-        "c13",
-        "c15"
-       ]
-      }
-     ],
-     "editor_chefe": {
-      "veredito": "devolve",
-      "menor": false,
-      "tese": "Proposta da pesquisa, ainda sem sustentação suficiente: a prorrogação do Gás do Povo pesa pouco nas contas e vale mais como prazo do que como dinheiro. O prazo de 5 anos da Lei 14.237 venceria em 19/11/2026, e a medida provisória, que ainda depende do Congresso, é o que mantém a recarga gratuita para 15 milhões de famílias. A tese só fica de pé se ficar resolvido se a Lei 15.348 já tinha tornado o programa permanente e se o custo vier de uma fonte aberta.",
-      "testes": {
-       "nao_obvia": {
-        "ok": false,
-        "por_que": "O ângulo do prazo não está na manchete, mas depende de uma contradição que a pesquisa não resolveu: a imprensa chamou a Lei 15.348 de permanente (c5), e o texto lido da Lei 14.237 ainda traz os 5 anos (c4). Se o programa já era permanente, sobra só 'gasto pequeno', que está perto do resumo da notícia."
-       },
-       "muda_algo": {
-        "ok": true,
-        "por_que": "Se a tese se confirmar, a leitora fica sabendo que a recarga continua mas depende de o Congresso votar a medida, e que o gasto não muda o rumo da dívida de 82,93% do PIB (c15)."
-       },
-       "pode_dar_errado": {
-        "ok": true,
-        "por_que": "A pesquisa diz o que a derruba: a Lei 15.348 já ter tirado o prazo, a MP caducar ou o custo passar dos valores do projeto de orçamento."
-       },
-       "no_caderno": {
-        "ok": false,
-        "por_que": "O custo de R$ 7,6 bi e 0,05% do PIB (c9) vem de uma página que não abriu (404). O trecho de c2 não tem os 120 dias, o de c3 não fala dos créditos orçamentários, c8 vem de uma fonte desconhecida, c10 diz R$ 5 bi e não R$ 5,1 bi, e c16 não confere (use c105). A objeção 'repete a pressa de 2025' não tem linha."
-       },
-       "pela_meta": {
-        "ok": false,
-        "por_que": "No nível básico, as perguntas 1, 2 e 4 têm resposta. A 3, do tamanho, se apoia só em c9, que não foi aberto, e a MP não teve o texto, a exposição de motivos nem a estimativa de impacto lidos. A pergunta 1 também fica incerta enquanto não se souber se o prazo ainda valia."
-       }
-      },
-      "roteiro": [
-       "Começar pelo que a MP 1.400 faz de fato, com o texto publicado no Diário Oficial: qual artigo de qual lei ela altera e o que estava para vencer.",
-       "Resolver a dúvida sobre a Lei 15.348: o programa já era permanente ou o prazo de 5 anos de 2021 continuava valendo? A resposta define se a MP evita um fim de benefício ou só ajusta uma data.",
-       "Quem decidiu e quem pode desfazer: o presidente por medida provisória, com o prazo constitucional para o Congresso votar, a data em que ela caduca e o precedente da MP 1.313, aprovada em fevereiro dias antes de caducar.",
-       "O objetivo escrito: a Lei 14.237 e a frase da Secom, que não trazem meta em número, e o que a exposição de motivos acrescenta, se acrescentar.",
-       "O tamanho, com fonte aberta: o valor do projeto de orçamento de 2027 contra o de 2026, a fatia do PIB, o valor por família, e a estimativa de impacto da própria MP ao lado de outra conta, se houver (IFI, consultorias).",
-       "Ligar à pressão das contas do governo: perto da dívida de 82,93% do PIB, o que pesa é o gasto ficar fixo por mais anos, e não o valor de um ano.",
-       "A vida das famílias do CadÚnico: nada muda agora na recarga, o que muda é até quando ela vale e de quem depende.",
-       "A melhor objeção de cada lado, só com números do caderno, e o que desmentiria a tese."
-      ],
-      "pressao": "contas",
-      "devolve": [
-       "Abra o texto da MP 1.400 no Diário Oficial (in.gov.br) e copie o artigo que altera a vigência: qual dispositivo de qual lei muda, de que data para 19/11/2031.",
-       "Abra a Lei 15.348/2026 no Planalto e veja se ela mexeu no artigo da vigência da Lei 14.237. Ela tornou o programa permanente? Se tornou, por que uma MP agora? Isso decide se a tese existe.",
-       "Ache a exposição de motivos e a estimativa de impacto da MP 1.400 (art. 113 do ADCT, art. 14 da LRF). Se não existirem ou não trouxerem custo, registre isso com fonte, porque já é informação.",
-       "Troque c9 por uma fonte que abra: o PLOA 2027 no site do Planejamento, a página do Raio X da Câmara que funcione ou uma nota da IFI. Confirme se o valor é R$ 7,6 bi ou R$ 7,63 bi e se R$ 5,1 bi (c10) é o número do projeto de 2026 ou o da lei aprovada.",
-       "Ponha num trecho literal o prazo de votação da MP e a data em que ela caduca, e também a afirmação de que os efeitos dependem dos créditos orçamentários (c2 e c3 não trazem isso).",
-       "E daí para as contas: o valor por ano muda alguma coisa na meta fiscal de 2027 ou no limite de gastos? Já aconteceu antes? Ache a vez em que um programa parecido foi prorrogado ou caducou (o Auxílio Gás de 2021, a MP 1.313) e o que veio depois."
-      ],
-      "curto": {
-       "porque": "O governo diz, pela Secom, que a prorrogação garante a manutenção de uma política pública de enfrentamento da pobreza energética. A lei que criou o auxílio em 19/11/2021 previa 5 anos de vigência e tem como objetivo diminuir o peso do preço do gás de cozinha no orçamento das famílias de baixa renda.",
-       "e_dai": "A recarga gratuita que já existia continua, mas por medida provisória: ela só se mantém se o Congresso a votar, e o governo não divulgou quanto a prorrogação custa.",
-       "vida": "Para cerca de 15 milhões de famílias do CadÚnico com renda de até meio salário mínimo por pessoa, nada muda agora: a recarga gratuita do botijão de 13 kg continua e só acaba se a medida caducar.",
-       "familias": [
-        {
-         "familia": "outra",
-         "quem": "Famílias do CadÚnico com renda de até meio salário mínimo por pessoa",
-         "o_que_muda": "Nada muda agora: o botijão de 13 kg segue gratuito para cerca de 15 milhões de famílias, e a recarga de 10/11 libera 3,1 milhões de vales, 380,5 mil deles para famílias que entram agora.",
-         "caderno": [
-          "c14",
-          "c17"
-         ]
-        }
-       ],
-       "objetivo": "Na Lei 14.237, o governo diz que o auxílio serve para diminuir o efeito do preço do gás de cozinha no orçamento das famílias de baixa renda; na prorrogação, a Secom fala em enfrentar a pobreza energética. Nenhum dos dois textos traz meta em número.",
-       "condicao": "",
-       "caderno": [
-        "c1",
-        "c4",
-        "c6",
-        "c7",
-        "c14",
-        "c17"
-       ]
-      },
-      "pagina_que_falta": ""
-     }
-    },
-    {
-     "volta": 2,
-     "teses": [
-      {
-       "tese": "A MP 1.400 não cria gasto novo: ela dá base legal ao gasto que o projeto de orçamento de 2027 já traz (R$ 7,6 bi, 0,05% do PIB), porque a Lei 15.348 não tocou o art. 8º da Lei 14.237, que ainda limita o programa a 5 anos, até 19/11/2026. O que está em jogo é o prazo legal e o voto do Congresso em 120 dias.",
-       "por_que_nao_e_obvia": "A manchete diz 'prorroga até 2031' e a Agência Senado disse em fevereiro que a lei tornou o programa 'permanente'. A leitora não vê que o art. 8º, na versão atualizada da Câmara, ainda diz 'vigorará por 5 anos', nem que o gasto de 2027 já estava no projeto.",
-       "o_que_muda": "Para as 15 milhões de famílias do CadÚnico, a recarga continua e nada muda no que recebem hoje (cerca de R$ 42 por mês cada, com o valor do projeto de 2027). Para as contas, a MP não muda a meta nem a dívida de 82,93% do PIB, mas fixa por mais 5 anos um gasto 61,7% maior que o de 2026 (R$ 4,7 bi). O risco é de calendário: sem voto do Congresso em 120 dias, a MP perde a validade.",
-       "como_pode_dar_errado": "Se o texto oficial da MP 1.400 ou da Lei 15.348 mostrar outra coisa (li a MP só por reportagens e a lei por resumo), a tese cai. Também cai se o custo real passar muito de R$ 7,6 bi.",
-       "caderno": [
-        "c1",
-        "c4",
-        "c19",
-        "c20",
-        "c21",
-        "c22",
-        "c23",
-        "c24",
-        "c25",
-        "c26",
-        "c27",
-        "c15"
-       ]
-      }
-     ],
-     "editor_chefe": {
-      "veredito": "aprova",
-      "menor": false,
-      "tese": "A MP 1.400 existe porque a lei de fevereiro, chamada de permanente, não mexeu no artigo que limita o programa a 5 anos: pelo texto da lei, o Gás do Povo acabaria em 19/11/2026. A recarga grátis até 2031 depende de o Congresso converter a MP em até 120 dias, e a MP anterior do programa só foi votada a poucos dias de caducar, em fevereiro (um caso, não um padrão). O dinheiro de cada ano segue no orçamento: R$ 7,6 bi no projeto de 2027, 61,7% acima dos R$ 4,7 bi de 2026, e as reportagens sobre a MP não trazem estimativa de custo própria.",
-      "testes": {
-       "nao_obvia": {
-        "ok": true,
-        "por_que": "A manchete diz \"prorroga até 2031\", e em fevereiro a imprensa chamou o programa de permanente. A leitora não sabe que o prazo legal vencia em 19/11, nem que a prorrogação ainda depende de votação. O site não tratou deste assunto nos últimos dias."
-       },
-       "muda_algo": {
-        "ok": true,
-        "por_que": "A leitora passa a ler o \"até 2031\" como provisório até o Congresso votar, sabe que o valor de 2027 se decide no orçamento, e não na MP, e sabe que, para as famílias, nada muda hoje."
-       },
-       "pode_dar_errado": {
-        "ok": true,
-        "por_que": "A tese cai se o texto oficial da Lei 15.348 ou da MP mostrar que o art. 8º já tinha sido alterado, ou se aparecer uma estimativa de custo da MP diferente do valor do orçamento. A parte sobre o prazo cai se o Congresso votar logo e sem disputa."
-       },
-       "no_caderno": {
-        "ok": true,
-        "por_que": "O prazo está em c4, c20 e c21, o \"permanente\" em c5 e c22, a MP em c1, c19, c23 e c24, a MP anterior em c18 e os valores em c25, c26 e c27. Saem da tese os 0,05% do PIB (c9, página que não abriu) e os R$ 5,1 bi (c10/c12). A leitura da lei por resumo (c21) tem de aparecer como limite."
-       },
-       "pela_meta": {
-        "ok": true,
-        "por_que": "É nível básico, e as quatro perguntas foram respondidas com linhas do caderno: quem decidiu e quem desfaz (c1, c23, c24), o objetivo escrito na lei e pela Secom (c6, c7), o tamanho pelo orçamento (c25, c26, c27) e a pressão e a porta (c14, c15). A tese não julga o objetivo nem diz se a decisão acertou."
-       }
-      },
-      "roteiro": [
-       "Começar pelo que as 100 palavras não dizem: pelo texto atualizado da Lei 14.237 na Câmara, o art. 8º ainda diz \"vigorará por 5 (cinco) anos\", e o prazo vence em 19/11/2026 [c4][c20]. A MP é o que impede o fim do programa daqui a 9 dias [c24].",
-       "Explicar por que a lei de fevereiro não resolveu isso: a Lei 15.348 mudou muitos artigos, mas não o 8º, e a Agência Senado escreveu que o programa ficou permanente [c21][c22][c5]. Dizer o limite: a lista de artigos foi lida num resumo da lei.",
-       "Quem decidiu e quem pode desfazer: a MP foi editada pelo presidente, tem força de lei desde a publicação, em 9/11, e precisa virar lei em até 120 dias, prazo que não corre no recesso. O Congresso pode deixá-la caducar ou rejeitá-la, e o presidente pode revogá-la [c1][c19][c23][c24]. Anunciar até 2031 não é ter lei até 2031.",
-       "A vez parecida: a MP 1.313 foi votada em 2 e 3/2/2026, a poucos dias de caducar em 11/2 [c18]. É um caso só, não um padrão, e não há registro de que o programa tenha caducado.",
-       "O objetivo escrito: na lei, mitigar o efeito do preço do gás de cozinha no orçamento das famílias de baixa renda; para a Secom, manter uma política contra a pobreza energética [c6][c7]. O objetivo é amplo e não diz quanto do botijão cobrir, e as reportagens sobre a MP não trazem estimativa de impacto [c8].",
-       "O tamanho: quem decide o dinheiro de cada ano é o orçamento, e não a MP. São R$ 7,6 bi no projeto de 2027, contra R$ 4,7 bi na lei de 2026, ou 61,7% a mais [c25][c26][c27], e cerca de R$ 42 por família por mês em média [c28]. Perto da dívida de 82,93% do PIB, é um gasto pequeno que fica por mais tempo [c15]. Não usar os 0,05% do PIB.",
-       "A vida: para as cerca de 15 milhões de famílias, nada muda hoje, e a recarga de 10/11 libera 3,1 milhões de vales [c14][c17]. O que muda é que o benefício depois de 19/11 passa a depender da votação.",
-       "A melhor objeção dos dois lados, com os números: quem defende diz que o valor já estava no projeto de 2027 e que a MP só ajusta um prazo esquecido. Quem critica diz que o gasto sobe 61,7% por MP e que em 2024 o projeto de 2025 previa R$ 600 milhões contra R$ 3,5 bi gastos no ano [c29]. Fica em aberto se o gasto entra no limite do arcabouço.",
-       "O que desmentiria a tese (o texto oficial mostrar o art. 8º alterado) e o próximo passo com data: a contagem dos 120 dias no Congresso."
-      ],
-      "pressao": "contas",
-      "devolve": [],
-      "curto": {
-       "porque": "Na Lei 14.237, o auxílio existe para mitigar o efeito do preço do gás de cozinha no orçamento das famílias de baixa renda. A Secom diz que a prorrogação mantém uma política contra a pobreza energética. Pelo texto da lei, o programa vigorava por 5 anos e acabaria em 19/11/2026.",
-       "e_dai": "Pelo texto da lei, o botijão grátis acabaria em 19/11; com a medida provisória, o prazo até 2031 depende de o Congresso votá-la em até 120 dias.",
-       "vida": "Nada muda agora para as cerca de 15 milhões de famílias atendidas: a recarga continua, com 3,1 milhões de vales em 10/11. Em 2027, o projeto de orçamento reserva R$ 7,6 bilhões, cerca de R$ 42 por família por mês, em média.",
-       "familias": [
-        {
-         "familia": "outra",
-         "quem": "Famílias de baixa renda que recebem a recarga grátis do botijão pelo Gás do Povo",
-         "o_que_muda": "Nada muda hoje: a recarga continua, e 3,1 milhões de vales saem em 10/11. Depois de 19/11, o benefício depende de o Congresso votar a MP em até 120 dias. Para 2027, o projeto de orçamento prevê R$ 7,6 bi, cerca de R$ 42 por família por mês, em média.",
-         "caderno": [
-          "c14",
-          "c17",
-          "c24",
-          "c23",
-          "c25",
-          "c28"
-         ]
-        }
-       ],
-       "objetivo": "Na Lei 14.237, o auxílio se destina a mitigar o efeito do preço do gás de cozinha no orçamento das famílias de baixa renda. A Secom diz que a prorrogação mantém uma política contra a pobreza energética. O objetivo é amplo e não diz quanto do preço do botijão deve ser coberto.",
-       "condicao": "",
-       "caderno": [
-        "c1",
-        "c4",
-        "c6",
-        "c7",
-        "c14",
-        "c17",
-        "c20",
-        "c23",
-        "c24",
-        "c25",
-        "c28"
-       ]
-      },
-      "pagina_que_falta": "O que é uma medida provisória e o que acontece quando ela caduca? A leitora precisa saber disso para ler o \\\"até 2031\\\" de hoje e a MP das dívidas rurais, que pode perder a validade na quarta."
-     }
-    }
-   ],
+   "em": "2026-11-10T20:01:52+00:00",
    "meta": [
     {
      "etapa": "pesquisa",
      "modelo_pedido": "sonnet",
-     "prompt_sha256": "7042fa8a5f1469602c710bdff246b5e84db79e189fb724c6f901f31ed8c6ea45",
-     "system_sha256": "01b24f55b9592e5b29112f02dbe08942b7128459f0a1da17ab6531deeea93537",
+     "prompt_sha256": "ce17b8da5b2f1bf341045211f3735e2b6d087a760be0ec155d28045fe1f8bbed",
+     "system_sha256": "129c5fb070f07d20f5f1a43fc0e0102f2c930b1d12f0a4edf66671ff7effa54e",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 1.0370918,
-     "turnos": 24,
-     "duracao_s": 196,
+     "custo_usd": 0.5572353000000001,
+     "turnos": 20,
+     "duracao_s": 80,
      "modelos": [
       "claude-sonnet-5-5",
       "claude-haiku-5-5"
@@ -3376,446 +3134,659 @@
      "permission_denials": [
       {
        "tool_name": "Bash",
-       "tool_use_id": "toolu_01FmHpGevZwTPEk6Cb1CkVPB",
+       "tool_use_id": "toolu_01GsgmZBx9JrixzjQVimsV8S",
        "tool_input": {
-        "command": "for e in \"7.6*1000/15\" \"7.6*1000/15/12\" \"7.6/5.1*100-100\" \"7.6/3.57\" \"7.6*1000/15/1621*100\" \"7.6/48\"; do .venv/bin/python src/conta.py calc \"$e\"; done",
-        "description": "Refaz as contas com R$ 7,6 bi"
+        "command": "C=\".venv/bin/python src/conta.py\"; $C calc \"7.6/73.2*100\"; $C calc \"7600/15.4\"; $C calc \"7.6/(73.2/0.5*100)*100\"; $C calc \"7.6-5.1\"; $C calc \"7.6*5\"; $C calc \"7.6/1800*100\"; $C recorde divida_bruta 2026-09",
+        "description": "Run cost calculations and debt record"
        }
       }
      ],
-     "session_id": "5fe1b4ca-1b23-4eca-bc49-3b18681458ca"
+     "session_id": "16fd13ef-7b01-4cc2-ad16-c3d3ce207916"
     },
     {
-     "etapa": "editor_chefe",
+     "etapa": "redacao",
      "modelo_pedido": "opus",
-     "prompt_sha256": "eaa5b82c4b6fe9bb8f06544accb04ca110da1f075c2b9d55327b2fd8985b8bd6",
-     "system_sha256": "c5be08712768743659e98821b6e7f488bfa371dda043cb56057e8de2f7121401",
+     "prompt_sha256": "2d7fb3a671a4c065d8c0443121c5aafbc1ac034f47e0b834768b29f04c53959b",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.40721999999999997,
+     "custo_usd": 0.6827416,
      "turnos": 2,
-     "duracao_s": 45,
+     "duracao_s": 58,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "cb5d589b-bc43-4998-a077-3c2157a077e6"
+     "session_id": "962422ab-c274-44bc-97b0-e4e82509717b"
     },
     {
-     "etapa": "pesquisa",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "6ac9943168a372cc244b19c9f7495627a7573e296f2c6bccf3cc2bdc6908cd91",
-     "system_sha256": "01b24f55b9592e5b29112f02dbe08942b7128459f0a1da17ab6531deeea93537",
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "71b538babc5175b14c8ee71d0f7effa6b3a615ffc44bab989de45de586c55632",
+     "system_sha256": "6fd63df7fec8e69abcbfdc46037539b46f7da3d5513436b72abe793a28b923b2",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.9876457000000001,
-     "turnos": 19,
-     "duracao_s": 188,
+     "custo_usd": 0.6791377,
+     "turnos": 6,
+     "duracao_s": 80,
      "modelos": [
-      "claude-sonnet-5-5",
+      "claude-opus-5-5",
       "claude-haiku-5-5"
      ],
      "permission_denials": [],
-     "session_id": "e430fac7-802d-4ea3-a573-8e5b1e904613"
-    },
-    {
-     "etapa": "editor_chefe",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "19a7720f48b8014ae0b49b5f8512f38e89f95144b94f035dee2ec140032258be",
-     "system_sha256": "c5be08712768743659e98821b6e7f488bfa371dda043cb56057e8de2f7121401",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.5928452,
-     "turnos": 3,
-     "duracao_s": 77,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "23728192-ab5a-4d6a-8cad-6cfb1ed25540"
+     "session_id": "2afa6f2a-702b-4b23-a1c3-72fe399cebdc"
     },
     {
      "etapa": "redacao",
      "modelo_pedido": "opus",
-     "prompt_sha256": "356678419c21bc11d30be5973e0ec8448e889e0bd299f80e4f5790e40d694c65",
-     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "prompt_sha256": "13b42f6818ee56b9fa38426360ee83c1b1e134dbb9d978106da57caa54fca407",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.712688,
+     "custo_usd": 0.7693456,
      "turnos": 2,
-     "duracao_s": 67,
+     "duracao_s": 79,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "a4140a3f-f7c4-4ff8-ab7f-5d8de781a3ae"
+     "session_id": "1d5cc5ae-aa88-4634-82ab-0e2901c595d0"
     },
     {
-     "etapa": "conferencia",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "21591acc0ee17456c53f4adb5adc0629640e8a5d2771c01d96b0f90f33d78fdb",
-     "system_sha256": "014db32c3a98cfd87cb62417008dbee3bc6c60858da38a9ac3f6069aa3aea5eb",
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "b03802f7d35926562337e78f8b7087938efbc607949110e065647ab663f21f9f",
+     "system_sha256": "6fd63df7fec8e69abcbfdc46037539b46f7da3d5513436b72abe793a28b923b2",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.212366,
-     "turnos": 2,
-     "duracao_s": 77,
+     "custo_usd": 0.5892327,
+     "turnos": 5,
+     "duracao_s": 59,
      "modelos": [
-      "claude-sonnet-5-5"
+      "claude-opus-5-5",
+      "claude-haiku-5-5"
      ],
      "permission_denials": [],
-     "session_id": "111f5ebc-146b-4178-bbae-f6bb7a5218f7"
+     "session_id": "856349b8-79e8-472d-b4cc-1771bc3d17a6"
     },
     {
      "etapa": "redacao",
      "modelo_pedido": "opus",
-     "prompt_sha256": "977ce5401c712ae856148c7df67ba3214beaafcb9115d1f10c148edcde891ca2",
-     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "prompt_sha256": "d5307c6499d1bf7e3054ec95dc661459edef589b1f410eb02ff6f5239d81a4bd",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.7131772000000001,
+     "custo_usd": 0.7312216,
      "turnos": 2,
-     "duracao_s": 51,
+     "duracao_s": 62,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "3e68eaa7-a511-49bb-8f09-7c533ed40543"
+     "session_id": "cd54d700-63df-4e6d-a879-f451c6e1f258"
     },
     {
-     "etapa": "editor_fundo",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "e805a359d546e93f7b960d24f6a01a26a809375d14cfcab1666d68348fc88547",
-     "system_sha256": "c051e15dfe2ba0240d641e7b2a26a2ab05de7d68718375f6bd3be448f44a878a",
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "4c44c934d50bf66eb6e40fb415ef6ea0c598938419c63147ccae7b024d90d6bf",
+     "system_sha256": "6fd63df7fec8e69abcbfdc46037539b46f7da3d5513436b72abe793a28b923b2",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.36730260000000003,
-     "turnos": 3,
-     "duracao_s": 94,
+     "custo_usd": 0.44184,
+     "turnos": 2,
+     "duracao_s": 28,
      "modelos": [
-      "claude-sonnet-5-5"
+      "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "3a186b51-1bd5-4b86-bdfd-3f835755f3a0"
+     "session_id": "a761e8d3-cebd-4a7b-ba43-f4ef35e36954"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "91724b41cb40b9dbe22a8322329f10b65e2f274e392bf7c53468e78e5ccc03a4",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.6527176,
+     "turnos": 2,
+     "duracao_s": 38,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "f4ecdbe5-725f-404d-8b3c-962e975d0d0e"
     }
    ],
-   "offline": false,
+   "offline": true,
+   "voltas": [
+    {
+     "volta": 1,
+     "codigo": {
+      "graves": [],
+      "avisos": [
+       "bloco 1: frase de 40 palavras",
+       "bloco 4: porcentagem de meta que a ficha das metas não tem (10,4): confira a meta e a margem em config/metas.json: Esse valor equivale a 10,4% do centro da meta de 2027, de R$ 73,2 bilhões, ou 0,",
+       "bloco 8: explica a conta ao leitor",
+       "bloco 8: palavra que o site trocou (num ano ruim, atraso nas dívidas, gasta mais do que arrecada)"
+      ],
+      "palavras": 563,
+      "intertitulos": 2
+     },
+     "objecoes": [
+      {
+       "trecho": "Também ontem saiu o número que mais pesa no juro que o governo paga: o Tesouro terá de refinanciar R$ 1,8 trilhão da dívida em 12 meses, e os R$ 7,6 bilhões do gás em 2027 equivalem a 0,42% disso",
+       "cabeca": "leitora",
+       "problema": "Compara um gasto novo de um ano com o estoque de dívida que vence e é trocado por dívida nova. Refinanciar não é gastar, e o que pesa é o juro dessa troca, não o R$ 1,8 trilhão. Os 0,42% fazem o gás parecer irrelevante usando uma régua de outra conta. E nenhuma linha do caderno sustenta \"o número que mais pesa no juro\". O título repete essa comparação.",
+       "onde_conferir": "Guia, 'Números e régua': as duas pontas na mesma conta; PERSONA, 'Déficit não é dívida': um gasto novo se compara com o déficit e com a meta do ano. c9, c10.",
+       "grave": true
+      },
+      {
+       "trecho": "O governo prorrogou o Gás do Povo até 2031 por medida provisória.",
+       "cabeca": "critico",
+       "problema": "A Lei 15.348, de fevereiro de 2026, já tinha tornado o programa permanente, segundo a Agência Senado. O texto não diz o que a MP 1.400 muda, se a lei já não tinha prazo, e a manchete \"prorroga até 2031\" pode até ser um encurtamento. Do jeito que está, a leitora repete a um sócio um fato que pode estar errado. Esse ponto também sustenta a frase \"a decisão não muda a conta\".",
+       "onde_conferir": "c201. O caderno só tem trechos de busca, sem a página aberta (c1, c2, c3). Conferir o art. 8º da Lei 14.237 como a Lei 15.348 o deixou.",
+       "grave": true
+      },
+      {
+       "trecho": "O dinheiro do programa já está no projeto de Orçamento de 2027, por isso a decisão não muda a conta do ano que vem",
+       "cabeca": "regras",
+       "problema": "O argumento principal e o título se apoiam em c4, que é um resumo de busca com o PDF não aberto e a data aproximada. Sem o trecho conferido, o texto não pode afirmar isso. Falta também uma régua do crescimento do gasto: R$ 4,7 bilhões no Orçamento de 2026 contra R$ 7,6 bilhões no projeto de 2027.",
+       "onde_conferir": "c4 (não conferido); c202 (R$ 4,7 bilhões em 2026); Raio-X do projeto de Orçamento de 2027 da Consultoria da Câmara.",
+       "grave": true
+      },
+      {
+       "trecho": "O governo não divulgou junto com a medida o custo ano a ano até 2031, e o objetivo escrito para por aí.",
+       "cabeca": "regras",
+       "problema": "O caderno só diz que a exposição de motivos não foi achada (c2). Isso não prova que o governo não divulgou o custo, e o artigo 113 do ADCT exige essa estimativa de quem cria gasto obrigatório. A segunda metade da frase não se entende: qual objetivo, e para por onde?",
+       "onde_conferir": "c2. Exposição de motivos da MP 1.400 no site do Planalto ou do Congresso. Se não for achada, dizer \"a exposição de motivos não estava publicada\" e nomear o objetivo que falta.",
+       "grave": true
+      },
+      {
+       "trecho": "Se o valor de 2027 se repetir sem reajuste até 2031, os cinco anos somam R$ 38 bilhões [c8], uma despesa que os orçamentos seguintes terão de acomodar dentro das metas de cada ano.",
+       "cabeca": "leitora",
+       "problema": "O parágrafo diz que a novidade está depois de 2027, mas a soma inclui 2027, que o próprio texto diz que já estava na conta. A conta mistura o que é novo com o que já existia. Além disso, o número é conta do site sem o rótulo de estimativa e sem a régua de nenhuma meta.",
+       "onde_conferir": "c8. Refazer com src/conta.py calc só para os anos novos e dizer que a conta é uma estimativa sem reajuste.",
+       "grave": true
+      },
+      {
+       "trecho": "Esse valor equivale a 10,4% do centro da meta de 2027, de R$ 73,2 bilhões, ou 0,50% do PIB [c6].",
+       "cabeca": "defensor",
+       "problema": "Compara o gasto só com o centro da meta e deixa de fora a margem, que vai de R$ 36,6 bilhões a 0,75% do PIB. Também não diz que a conta da meta já passa do centro em cerca de R$ 10 bilhões (R$ 83,4 bilhões contra R$ 73,2 bilhões). Assim a leitora não sabe se esse gasto aperta ou não o cumprimento da meta.",
+       "onde_conferir": "Bloco <metas>, meta de 2027: piso de R$ 36,6 bilhões, margem de 0,25 ponto do PIB, conta da meta de R$ 83,4 bilhões.",
+       "grave": true
+      },
+      {
+       "trecho": "A parte da dívida que vence em até um ano chegou a 19,95% em setembro, e por isso o Tesouro precisa pegar dinheiro novo logo, pagando o juro de agora [c10].",
+       "cabeca": "leitora",
+       "problema": "Os 19,95% não têm régua: contra quanto em agosto, há um ano, ou contra o limite que o Tesouro se dá no Plano Anual de Financiamento? Sem isso, a leitora não sabe se o número é alto.",
+       "onde_conferir": "c10; Relatório Mensal da Dívida do Tesouro (setembro de 2026) e as faixas do Plano Anual de Financiamento de 2026.",
+       "grave": true
+      },
+      {
+       "trecho": "O juro que o Tesouro vai pagar para refinanciar o R$ 1,8 trilhão chega ao crédito longo das empresas.",
+       "cabeca": "leitora",
+       "problema": "A dívida que vence em até um ano é trocada perto da Selic. O crédito longo segue o juro de 10 anos, que é outra ponta. A corrente pula de uma coisa para a outra sem dizer como uma leva à outra, e o fecho retoma o \"ajuste prometido\", tema do texto de ontem.",
+       "onde_conferir": "Dados do site, Desconfiança de quem investe (juro de 10 anos de 8,0% em 6/11); memória do site, 09/11.",
+       "grave": false
+      },
+      {
+       "trecho": "Quem lê pressão nas contas aponta a IFI, do Senado, que vê R$ 40 bilhões em medidas novas e déficit primário que pode chegar a 1% do PIB em 2027, onde o governo projeta sobra [c15].",
+       "cabeca": "leitora",
+       "problema": "Repete o argumento do texto de 09/11 (\"a IFI vê déficit onde o governo vê sobra\") sem ligá-lo ao Gás do Povo. Também não diz se os R$ 40 bilhões da IFI incluem esse programa.",
+       "onde_conferir": "Memória do site, 2026-11-09; c15.",
+       "grave": false
+      },
+      {
+       "trecho": "Quem acha que a prorrogação pesa pouco tem a conta a favor, porque os R$ 7,6 bilhões são 0,19% do projeto de Orçamento [c4]",
+       "cabeca": "critico",
+       "problema": "O total do projeto de Orçamento inclui a rolagem e os juros da dívida, por isso qualquer gasto sai minúsculo. A régua que a regra usa é a despesa primária ou a meta, e \"tem a conta a favor\" toma partido de uma leitura.",
+       "onde_conferir": "c4; Raio-X do projeto de Orçamento de 2027 (despesa primária total).",
+       "grave": false
+      },
+      {
+       "trecho": "Os bancos (Focus) passaram a prever o próximo corte da Selic só em março, o que mantém cara por mais tempo a parte da dívida ligada a ela.",
+       "cabeca": "regras",
+       "problema": "O mês vem sem o ano (março de 2027), e o dado vem de manchete, sem linha no caderno. É previsão e precisa ficar marcada como previsão, com a data do Focus (9/11).",
+       "onde_conferir": "Dados do site, Juro e inflação, manchete do g1 de 09/11; Boletim Focus de 9/11/2026.",
+       "grave": false
+      }
+     ],
+     "resumo": "O texto não pode sair como está. Ele compara o gasto do gás com o estoque de dívida a refinanciar, que é outra conta, e diz que a MP estende o programa até 2031 quando a Lei 15.348 já o tornou permanente. A tese de que a decisão não muda a conta de 2027 se apoia num trecho de busca não conferido. Os R$ 38 bilhões incluem 2027, que o próprio texto diz que já estava na conta. A comparação com a meta de 2027 deixa a margem de fora. A frase \"o governo não divulgou o custo\" não tem sustento. E os 19,95% da dívida que vence em até um ano vêm sem régua."
+    },
+    {
+     "volta": 2,
+     "codigo": {
+      "graves": [
+       "bloco 1: número ou data sem linha do caderno que confira: 2028 | trecho: O governo estendeu o Gás do Povo até novembro de 2031 por medida provisória. Segundo a Consultoria de Orçamento da Câmar"
+      ],
+      "avisos": [
+       "bloco 12: frase de 39 palavras"
+      ],
+      "palavras": 593,
+      "intertitulos": 2
+     },
+     "objecoes": [
+      {
+       "trecho": "Governo estende o Gás do Povo até 2031 sem custo divulgado para os anos depois de 2027",
+       "cabeca": "regras",
+       "problema": "O título afirma, como fato, duas coisas que o próprio texto põe em dúvida. O terceiro parágrafo diz que não se sabe se a MP estende um prazo ou põe data final num programa permanente. E \"sem custo divulgado\" se apoia só em c2, onde a exposição de motivos não foi achada, o que não prova que ela não existe. O ano 2028 também não tem linha no caderno.",
+       "onde_conferir": "c2 (\"Não achei exposição de motivos escrita\"); c201 (Lei 15.348 torna o programa permanente); c203",
+       "grave": true
+      },
+      {
+       "trecho": "Até ontem, o governo também não tinha divulgado um objetivo escrito nem a estimativa de custo ano a ano que a Constituição exige quando uma lei cria despesa obrigatória.",
+       "cabeca": "defensor",
+       "problema": "O caderno não sustenta que o governo não divulgou nada: a exposição de motivos só não foi achada. Além disso, a nota técnica da Consultoria do Senado sobre a MP original diz que o programa é autorizativo e não cria despesa obrigatória, e que o ritmo de atendimento fica para cada Orçamento. Nesse caso, a exigência do artigo 113 do ADCT pode nem se aplicar. A frase sugere uma ilegalidade que a evidência não mostra.",
+       "onde_conferir": "c203; c2",
+       "grave": true
+      },
+      {
+       "trecho": "Para as cerca de 15 milhões de famílias do programa, a recarga do botijão segue garantida até 19/11/2031, desde que o Congresso aprove a medida em até 120 dias [c1, c3].",
+       "cabeca": "critico",
+       "problema": "A frase contradiz o terceiro parágrafo. Se a Lei 15.348 já tornou o programa permanente, ele continua mesmo que a MP perca a validade. E \"garantida\" é forte demais para um programa autorizativo, que depende do dinheiro posto em cada Orçamento anual. A leitora repete uma garantia que nenhum documento do caderno dá.",
+       "onde_conferir": "c201; c203; c4 (o valor vem a cada projeto de Orçamento)",
+       "grave": true
+      },
+      {
+       "trecho": "Para o país, o que move a conta de juros do governo, e por ela o custo do crédito das empresas, é menos um programa que já estava previsto e mais o tempo que a Selic fica em 13,75%.",
+       "cabeca": "regras",
+       "problema": "A conclusão compara duas coisas sem número para nenhuma delas: o caderno não tem o custo dos juros por mês de Selic parada. Ela também pula da conta de juros do governo para o crédito das empresas sem dizer como uma coisa leva à outra, que era a objeção da primeira volta. A dívida que vence em pouco tempo segue a Selic, e o crédito longo segue o juro de 10 anos. As duas partes do texto continuam soltas, ligadas só por essa frase.",
+       "onde_conferir": "dados do site (juro de 10 anos a 8,0% em 6/11); c10",
+       "grave": true
+      },
+      {
+       "trecho": "Segundo a Consultoria de Orçamento da Câmara, o gasto de 2027 já estava no projeto de Orçamento, com R$ 7,6 bilhões [c1, c4].",
+       "cabeca": "regras",
+       "problema": "O argumento do texto, de que 2027 já estava na conta e por isso cabe na meta, continua apoiado em c4, um resumo de busca com o PDF não aberto e a data aproximada. O texto pôs a autoria na Consultoria, mas não resolveu a falta do trecho literal. Depois dele vêm \"Com esse gasto dentro\" e \"não põe a meta em risco\".",
+       "onde_conferir": "c4; https://www2.camara.leg.br/orcamento-da-uniao/raio-x-do-orcamento/2027/RaioX_PLOA_2027.pdf",
+       "grave": true
+      },
+      {
+       "trecho": "No Orçamento de 2026, o programa tem R$ 4,7 bilhões [c202].",
+       "cabeca": "leitora",
+       "problema": "O número fica solto, sem dizer o que ele quer dizer. A leitora não vê que o gasto sobe de R$ 4,7 bilhões para R$ 7,6 bilhões, cerca de 60% a mais, sem que a MP mude público nem valor. Esse é o número que o crítico usaria. A fonte é um título de página não aberta, com a data aproximada, e c5 e c16 falam em R$ 5 bilhões e R$ 5,1 bilhões para 2026.",
+       "onde_conferir": "c202; c5; c16",
+       "grave": false
+      },
+      {
+       "trecho": "A IFI, do Senado, faz a própria conta e vê o governo fechar 2027 gastando mais do que arrecada, sem contar os juros [c15]. Quem defende a medida lembra que ela não cria público nem valor novo [c2]. Quem critica lembra que um gasto fixo por mais tempo deixa menos espaço para o ajuste que a Fazenda diz preparar, ainda sem data nem medida [c14].",
+       "cabeca": "leitora",
+       "problema": "Continua repetindo o argumento do texto de 09/11 (a IFI vê déficit onde o governo vê sobra) sem ligá-lo ao Gás do Povo nem dizer se a conta da IFI inclui o programa. \"Quem defende\" e \"quem critica\" são opiniões sem dono: a leitora não sabe quem disse.",
+       "onde_conferir": "c15; memória do site, 2026-11-09",
+       "grave": false
+      }
+     ],
+     "resumo": "A reescrita resolveu a comparação com o R$ 1,8 trilhão, a régua da meta com o piso e o centro, os 19,95%, a soma de R$ 38 bilhões e a data do Focus. Ainda há problemas graves. O título e a frase das famílias afirmam a prorrogação e uma garantia que o próprio texto põe em dúvida, já que a Lei 15.348 tornou o programa permanente. Falta prova para \\\"sem custo divulgado\\\", e a nota do Senado diz que o programa não cria despesa obrigatória. O fecho chega a uma conclusão sem número e pula para o crédito das empresas. O argumento sobre 2027 segue apoiado em c4, um resumo de busca."
+    },
+    {
+     "volta": 3,
+     "codigo": {
+      "graves": [],
+      "avisos": [
+       "o texto tem 617 palavras (o tamanho de hoje é de 300 a 600)",
+       "bloco 4: porcentagem de meta que a ficha das metas não tem (10,4): confira a meta e a margem em config/metas.json: O valor equivale a 10,4% do centro da meta de 2027, de R$ 73,2 bilhões.",
+       "bloco 9: frase de 44 palavras"
+      ],
+      "palavras": 617,
+      "intertitulos": 1
+     },
+     "objecoes": [
+      {
+       "trecho": "A medida provisória que prorroga o Gás do Povo até 19/11/2031 saiu ontem no Diário Oficial, mas o gasto dela é pequeno perto da dívida que o Tesouro tem de trocar",
+       "cabeca": "leitora",
+       "problema": "O texto compara o gasto anual do programa com o dinheiro que o Tesouro tem de refinanciar, e as duas coisas não entram na mesma conta. Mais abaixo o próprio texto diz que \"refinanciar não é gastar\". Com isso, a primeira frase, que é a que vai para o print, faz o gasto parecer desprezível usando a régua errada. A régua que o texto já usa é a meta e o resultado do ano.",
+       "onde_conferir": "c9, c10; o próprio texto: \"Refinanciar não é gastar, porque o Tesouro troca o título que vence por outro novo\"; metas de 2027",
+       "grave": true
+      },
+      {
+       "trecho": "Isso dá 0,42% do R$ 1,8 trilhão que o Tesouro terá de refinanciar em 12 meses",
+       "cabeca": "regras",
+       "problema": "É a mesma comparação entre contas diferentes. O gasto do programa vem posto como fração do valor a refinanciar, que não é gasto nem o tamanho do problema que a medida diz resolver. A leitora repetiria \"0,42%\" como se esse fosse o peso do programa nas contas.",
+       "onde_conferir": "c9, c10; o guia, em \"Números e régua\" (cada comparação na mesma conta)",
+       "grave": true
+      },
+      {
+       "trecho": "A Fazenda diz preparar um ajuste gradual, ainda sem data nem medida, e um gasto fixado por mais tempo fica fora do que esse ajuste pode cortar",
+       "cabeca": "critico",
+       "problema": "Esta frase contradiz o terceiro parágrafo. Lá, o texto diz, com base em c203, que o programa não cria despesa obrigatória e que o dinheiro dele depende do que cada Orçamento anual reservar. Se é assim, o gasto não fica fora do alcance do ajuste. Nenhuma linha do caderno sustenta que o gasto ficou fixo.",
+       "onde_conferir": "c203, c2; o terceiro parágrafo do texto (\"depende do dinheiro que cada Orçamento anual reservar\")",
+       "grave": true
+      }
+     ],
+     "resumo": "Três erros impedem o texto de sair. 1) Duas vezes, no título do argumento e no primeiro parágrafo, o gasto do Gás do Povo é comparado com os R$ 1,8 trilhão a refinanciar, que não são gasto, como o próprio texto diz. 2) A frase de que o gasto fixado fica fora do que o ajuste pode cortar contradiz o parágrafo que, por c203, diz que o valor depende de cada Orçamento anual."
+    }
+   ],
+   "historia": "contas_governo",
+   "segunda": null,
+   "modo": "normal",
    "pesquisa": {
     "perguntas": [
      {
-      "pergunta": "Quem decidiu, com que poder e quem pode desfazer? (o Senado aprovar não é lei; o Tribunal de Contas da União propor não é o Congresso fixar; anunciar não é fazer)",
-      "resposta": "O presidente editou a MP 1.400 (datada de 6/11, publicada no Diário Oficial em 9/11/2026). Ela muda o art. 8º da Lei 14.237 e põe a vigência até 19/11/2031. MP tem força de lei na hora, mas precisa virar lei em até 120 dias, e o prazo não corre no recesso de fim de ano. Se o Congresso não votar, ela perde a validade. Quem pode desfazer: o Congresso, deixando caducar ou rejeitando, e o próprio presidente, revogando. Não é lei definitiva. Não consegui abrir o texto no in.gov.br: o artigo e a data vêm de reportagens que citam a MP.",
+      "pergunta": "1. Quem decidiu, com que poder e quem pode desfazer?",
+      "resposta": "O governo federal baixou a medida provisória MP 1.400, de 6/11/2026, publicada no Diário Oficial em 9/11. Ela já vale, mas precisa ser aprovada pelo Congresso em até 120 dias, por comissão mista, Câmara e Senado, ou perde a validade. O Congresso pode desfazê-la, e o governo pode revogá-la. Só muda o artigo 8º da Lei 14.237/2021, para estender a vigência até 19/11/2031.",
       "caderno": [
        "c1",
-       "c19",
-       "c23",
-       "c24"
+       "c3"
       ]
      },
      {
-      "pergunta": "Qual objetivo o decisor escreveu, e em que documento? (comunicado, ata, exposição de motivos, estimativa de impacto do art. 113 do ADCT e do art. 14 da LRF, nota do Tesouro). Se o objetivo não está escrito, ou é vago, diga isso: já é informação",
-      "resposta": "O objetivo escrito é o art. 1º da Lei 14.237, na redação da Lei 15.348: mitigar o efeito do preço do GLP sobre o orçamento das famílias de baixa renda. Para a MP, a Secom diz que a prorrogação mantém política contra a pobreza energética. Não achei a exposição de motivos da MP 1.400 nem a estimativa de impacto do art. 113 do ADCT, e nenhuma reportagem aberta traz o custo da MP. O objetivo é escrito, mas amplo: não diz quanto do preço do botijão deve ser coberto. Não achar a estimativa não prova que ela não exista.",
+      "pergunta": "2. Qual objetivo o decisor escreveu, e em que documento?",
+      "resposta": "Não achei a exposição de motivos da MP 1.400, e as páginas oficiais não abriram (o WebFetch falhou). O que está escrito, segundo a Câmara, é só o alcance: a MP não amplia o público, não altera valores nem muda a forma de execução. A razão que as manchetes dão (sustentar o consumo das famílias de baixa renda) vem da notícia, não de documento. O objetivo está implícito, não escrito: garantir o botijão a cerca de 15 milhões de famílias por mais cinco anos.",
       "caderno": [
+       "c2"
+      ]
+     },
+     {
+      "pergunta": "3. Qual é o tamanho?",
+      "resposta": "O governo não publicou, nas fontes que achei, um custo para a prorrogação. O que existe é a dotação do programa: R$ 5,1 bi para 2026 e R$ 7,6 bi no projeto de Orçamento de 2027, segundo a Consultoria de Orçamento da Câmara (0,19% do projeto). A Imprensa fala em R$ 7 bi. R$ 7,6 bi equivalem a 10,4% do centro da meta de 2027 (R$ 73,2 bi), a R$ 493,5 por família e, mantido o nível de 2027 por cinco anos, a R$ 38 bi (conta minha, sem reajuste, não é estimativa oficial). A Consultoria do Senado já disse que o impacto de 2026 e 2027 pode estar subestimado. A MP não cria gasto novo: mantém o que já existe, mas fixa a despesa até 2031.",
+      "caderno": [
+       "c4",
+       "c5",
        "c6",
        "c7",
-       "c8"
+       "c8",
+       "c12",
+       "c16"
       ]
      },
      {
-      "pergunta": "Qual é o tamanho? (em reais, em fatia do PIB, em reais por brasileiro e perto do problema que a decisão diz resolver; quando o decisor estima o próprio impacto e outro órgão também, como a IFI, as consultorias da Câmara e do Senado ou o TCU, as duas contas entram)",
-      "resposta": "A MP não traz custo próprio. A referência é o projeto de orçamento de 2027: R$ 7,6 bi, que a consultoria da Câmara põe em 0,05% do PIB (o Raio X só apareceu no resumo da busca). A lei orçamentária de 2026 previa R$ 4,7 bi, então 2027 é 61,7% maior. R$ 7,6 bi para 15 milhões de famílias dão R$ 507 por família ao ano, ou R$ 42 por mês, 31% de um salário mínimo. O R$ 5,1 bi de 2026, usado antes, não abre em fonte e saiu. Não achei estimativa da IFI nem das consultorias. Multiplicar por cinco anos seria hipótese minha.",
-      "caderno": [
-       "c25",
-       "c26",
-       "c27",
-       "c11",
-       "c28",
-       "c13"
-      ]
-     },
-     {
-      "pergunta": "Em que pressão do site e em que porta da leitora ela mexe: o emprego, o preço, a parcela ou o dólar?",
-      "resposta": "Pressão: contas do governo, com um gasto pequeno (0,05% do PIB) mantido por mais cinco anos, diante de dívida de 82,93% do PIB. Porta da leitora: o preço, para quem está no CadÚnico com renda per capita de até meio salário mínimo, com botijão grátis para cerca de 15 milhões de famílias, 45 milhões de pessoas. Nada muda no que elas recebem hoje: a recarga de 10/11 libera 3,1 milhões de vales. Muda a certeza de que o benefício não acaba em 19/11/2026, se o Congresso votar. Não mexe em parcela, emprego nem dólar. O INPC de 4,29% em 12 meses dá a régua do preço para essa faixa.",
-      "caderno": [
-       "c14",
-       "c15",
-       "c17",
-       "c101"
-      ]
-     },
-     {
-      "pergunta": "A Lei 15.348 tornou o programa permanente? Se sim, por que uma MP agora?",
-      "resposta": "Não no texto. A Agência Senado escreveu que o programa 'passou a ser uma política pública permanente', mas o art. 8º da Lei 14.237, na versão atualizada da Câmara, ainda diz que a lei 'vigorará por 5 (cinco) anos', sem anotação de alteração. A lista de artigos mexidos pela Lei 15.348 que li não inclui o art. 8º. Por isso o prazo vence em 19/11/2026 e a MP existe. 'Permanente' foi leitura da imprensa. Limite: li a Lei 15.348 por resumo de página, não artigo por artigo.",
-      "caderno": [
-       "c4",
-       "c20",
-       "c21",
-       "c22",
-       "c5"
-      ]
-     },
-     {
-      "pergunta": "O que veio das outras vezes em que o programa passou pelo Congresso ou pelo orçamento?",
-      "resposta": "Duas vezes. (1) A MP 1.313, de 4/9/2025, só foi votada em 2 e 3/2/2026, a poucos dias de caducar em 11/2: a MP do programa passou perto do prazo. (2) Em 2024, o projeto de orçamento de 2025 previa R$ 600 milhões para o Auxílio Gás contra R$ 3,5 bilhões do ano; um ex-secretário do Tesouro disse que isso 'tira a credibilidade'. O gasto já foi alvo de disputa sobre onde aparece no orçamento. São dois casos, não padrão. Não achei vez em que o programa tenha caducado.",
-      "caderno": [
-       "c18",
-       "c29"
-      ]
-     },
-     {
-      "pergunta": "O valor muda a meta fiscal de 2027 ou o limite de gastos?",
-      "resposta": "Pelo que achei, não. O R$ 7,6 bi já está no projeto de orçamento de 2027, que o governo mandou com superávit de R$ 18,6 bi. A prorrogação dá base legal ao gasto que o projeto já previa. Não achei fonte que diga se o Gás do Povo fica dentro ou fora do limite do arcabouço em 2027. Fontes de 2024 tratam o Auxílio Gás antigo como dentro do limite, e outra o chama de discricionário. Fica em aberto.",
-      "caderno": [
-       "c25",
-       "c29"
-      ]
-     }
-    ],
-    "teses": [
-     {
-      "tese": "A MP 1.400 não cria gasto novo: ela dá base legal ao gasto que o projeto de orçamento de 2027 já traz (R$ 7,6 bi, 0,05% do PIB), porque a Lei 15.348 não tocou o art. 8º da Lei 14.237, que ainda limita o programa a 5 anos, até 19/11/2026. O que está em jogo é o prazo legal e o voto do Congresso em 120 dias.",
-      "por_que_nao_e_obvia": "A manchete diz 'prorroga até 2031' e a Agência Senado disse em fevereiro que a lei tornou o programa 'permanente'. A leitora não vê que o art. 8º, na versão atualizada da Câmara, ainda diz 'vigorará por 5 anos', nem que o gasto de 2027 já estava no projeto.",
-      "o_que_muda": "Para as 15 milhões de famílias do CadÚnico, a recarga continua e nada muda no que recebem hoje (cerca de R$ 42 por mês cada, com o valor do projeto de 2027). Para as contas, a MP não muda a meta nem a dívida de 82,93% do PIB, mas fixa por mais 5 anos um gasto 61,7% maior que o de 2026 (R$ 4,7 bi). O risco é de calendário: sem voto do Congresso em 120 dias, a MP perde a validade.",
-      "como_pode_dar_errado": "Se o texto oficial da MP 1.400 ou da Lei 15.348 mostrar outra coisa (li a MP só por reportagens e a lei por resumo), a tese cai. Também cai se o custo real passar muito de R$ 7,6 bi.",
+      "pergunta": "4. Em que pressão do site e em que porta da leitora ela mexe?",
+      "resposta": "Pressão: contas do governo (gasto fixo por mais tempo), e só de leve o consumo das famílias de baixa renda. A porta da leitora é o preço, no caso o botijão de gás: para os 15 milhões de famílias do programa a recarga continua gratuita até novembro de 2031 se o Congresso aprovar. Não mexe em emprego, parcela nem dólar.",
       "caderno": [
        "c1",
-       "c4",
-       "c19",
-       "c20",
-       "c21",
-       "c22",
-       "c23",
-       "c24",
-       "c25",
-       "c26",
-       "c27",
+       "c2"
+      ]
+     },
+     {
+      "pergunta": "Qual é a régua do tamanho dessa despesa perto do problema fiscal?",
+      "resposta": "R$ 7,6 bi são 0,42% dos R$ 1,8 trilhão que o Tesouro tem de refinanciar em 12 meses. A despesa é pequena perto da dívida e do ajuste que o mercado cobra, mas entra na conta do resultado com todas as despesas, e a IFI já vê gasto acima da arrecadação em 2027. O sinal que importa é a direção: o governo prorroga gasto no mesmo dia em que o ajuste continua sem medida.",
+      "caderno": [
+       "c9",
+       "c10",
+       "c15",
+       "c11"
+      ]
+     },
+     {
+      "pergunta": "Quem discorda e o que dizem as outras contas?",
+      "resposta": "A IFI, do Senado, vê R$ 40 bi em medidas novas fora do Orçamento e déficit primário perto de 1% do PIB em 2027, onde o governo vê sobra. Bradesco, XP e Genoa veem PIB parado ou em queda em 2027, e o Itaú cortou a previsão para 0,5% (previsões, não fatos). A Fazenda diz preparar ajuste gradual, sem data.",
+      "caderno": [
+       "c13",
+       "c14",
        "c15"
       ]
      }
     ],
+    "argumentos": [
+     {
+      "argumento": "A prorrogação do Gás do Povo até 2031 é pequena perto do problema fiscal (R$ 7,6 bi no Orçamento de 2027, 10,4% do centro da meta), mas trava um gasto por cinco anos no dia em que o ajuste segue sem medida.",
+      "para_quem": "O país, pelo caminho das contas ao juro que o governo paga; e as 15 milhões de famílias, para quem a recarga continua gratuita se o Congresso aprovar.",
+      "o_que_desmente": "Se o ajuste vier com números que cubram esse gasto, a prorrogação deixa de ser sinal. Se o Congresso deixar a MP caducar em 120 dias, o gasto não fica fixo.",
+      "caderno": [
+       "c1",
+       "c2",
+       "c4",
+       "c6",
+       "c3"
+      ]
+     },
+     {
+      "argumento": "O Tesouro precisa refinanciar R$ 1,8 trilhão em 12 meses com a dívida no nível mais alto desde 2021 (82,93% do PIB); o peso está na rolagem, não no Gás do Povo (0,42% desse valor).",
+      "para_quem": "O país e as empresas, porque o juro que o governo paga puxa o crédito longo.",
+      "o_que_desmente": "Se os leilões do Tesouro rolarem a dívida com juro menor depois do anúncio do ajuste, a rolagem deixa de ser o ponto de pressão.",
+      "caderno": [
+       "c9",
+       "c10",
+       "c11"
+      ]
+     }
+    ],
     "objecao": {
-     "texto": "Quem defende o programa dirá que R$ 7,6 bi (0,05% do PIB) é pouco perto de uma dívida de 82,93% do PIB, e que o gasto já estava no projeto de 2027. Quem critica dirá que ele fica 61,7% acima do orçamento de 2026, sobe por MP, e que em 2024 o governo já tinha subestimado o gasto no projeto (R$ 600 milhões contra R$ 3,5 bi). Pode-se dizer ainda que a MP é só o ajuste de um prazo que a lei de fevereiro deixou, e que o Congresso votou a MP anterior por ampla maioria. As duas leituras cabem nos números: o site mede tamanho e prazo, não o mérito.",
+     "texto": "A MP não cria gasto novo, não amplia público nem muda valor: só mantém um programa que já está no Orçamento de 2026 e no projeto de 2027. Os R$ 7,6 bi são 0,19% do projeto. O mercado não olha para isso, e sim para o ajuste. Além disso, o custo só vale se a MP for aprovada, e o gasto continua sujeito à regra fiscal. Tratar a prorrogação como pressão fiscal exagera o tamanho da decisão.",
      "caderno": [
-      "c25",
-      "c26",
-      "c27",
-      "c29",
-      "c15",
-      "c18"
+      "c2",
+      "c4",
+      "c3"
      ]
     },
-    "o_que_falta": "Não abri a MP 1.400 no Diário Oficial: o art. 8º e a data vêm de reportagens. Não achei a exposição de motivos, a estimativa de impacto (art. 113 do ADCT, art. 14 da LRF) nem nota da IFI. A Lei 15.348 foi lida por resumo; falta confirmar que não mexeu no art. 8º. O Raio X da Câmara (0,05% do PIB) não abre. Não sei se o gasto fica dentro do limite do arcabouço, nem o que ocorre com o prazo de 5 anos se a MP caducar. Falta regra da tabela para transferência em espécie e gasto de 5 anos."
+    "o_que_falta": "Não achei o texto da MP 1.400 nem a exposição de motivos (os sites oficiais não abriram), então o objetivo escrito não está confirmado. Também não achei estimativa oficial do custo da prorrogação por ano até 2031, nem a do artigo 113 do ADCT. O relatório do Tesouro de setembro (19,95% e R$ 1,8 trilhão) não abriu, e os números vêm do Poder360. A biblioteca de evidência não foi consultada, e a decisão está no nível básico. A diferença entre R$ 7 bi e R$ 7,6 bi no Orçamento de 2027 não foi resolvida. Os trechos de c1 a c5 vêm de resumos de busca.",
+    "pagina_que_falta": ""
+   },
+   "pagina_que_falta": "",
+   "rascunho": {
+    "titulo": "Gás do Povo até 2031 não muda a conta de 2027, e o peso maior está na dívida a refinanciar",
+    "texto": "O governo prorrogou o Gás do Povo até 2031 por medida provisória. O dinheiro do programa já está no projeto de Orçamento de 2027, por isso a decisão não muda a conta do ano que vem [c1, c4]. Também ontem saiu o número que mais pesa no juro que o governo paga: o Tesouro terá de refinanciar R$ 1,8 trilhão da dívida em 12 meses, e os R$ 7,6 bilhões do gás em 2027 equivalem a 0,42% disso [c10, c4, c9].\n\nA medida provisória 1.400, de 6/11, foi publicada no Diário Oficial ontem e estende o programa até 19/11/2031 [c1]. Ela já vale, mas perde a validade se o Congresso não a aprovar em até 120 dias, depois de passar por uma comissão mista, pela Câmara e pelo Senado [c3]. Segundo a Agência Câmara, a medida só prorroga o programa e não amplia o público, não altera os valores nem muda a forma de execução [c2]. O governo não divulgou junto com a medida o custo ano a ano até 2031, e o objetivo escrito para por aí.\n\n### O gasto de 2027 já estava na conta, e a prorrogação pesa nos anos seguintes\n\nO projeto de Orçamento de 2027 reserva R$ 7,6 bilhões ao programa, para 15,4 milhões de famílias, o que dá cerca de R$ 493,5 por família ao ano [c4, c7]. Esse valor equivale a 10,4% do centro da meta de 2027, de R$ 73,2 bilhões, ou 0,50% do PIB [c6]. Como o gasto já está no projeto, ele já entra nos R$ 83,4 bilhões a que a conta da meta chega depois de descontar R$ 64,7 bilhões de precatórios, como a regra permite.\n\nA novidade da medida está depois de 2027. Se o valor de 2027 se repetir sem reajuste até 2031, os cinco anos somam R$ 38 bilhões [c8], uma despesa que os orçamentos seguintes terão de acomodar dentro das metas de cada ano.\n\n### A rolagem da dívida é o ponto em que o juro alto pesa\n\nA parte da dívida que vence em até um ano chegou a 19,95% em setembro, e por isso o Tesouro precisa pegar dinheiro novo logo, pagando o juro de agora [c10]. Hoje o governo paga 8,0% ao ano acima da inflação para pegar dinheiro emprestado até 2035, 0,6 ponto acima do normal dos últimos 3 anos. A dívida, em 82,93% do PIB em setembro, está mais alta que em 96% dos meses desde 2006 [c11]. Os bancos (Focus) passaram a prever o próximo corte da Selic só em março, o que mantém cara por mais tempo a parte da dívida ligada a ela.\n\nQuem acha que a prorrogação pesa pouco tem a conta a favor, porque os R$ 7,6 bilhões são 0,19% do projeto de Orçamento [c4] e a medida não cria público nem valor novo [c2]. Quem lê pressão nas contas aponta a IFI, do Senado, que vê R$ 40 bilhões em medidas novas e déficit primário que pode chegar a 1% do PIB em 2027, onde o governo projeta sobra [c15]. A Fazenda diz preparar um ajuste gradual, ainda sem data nem medida publicada [c14].\n\nPara as cerca de 15 milhões de famílias do programa, o botijão continua garantido até novembro de 2031, desde que o Congresso aprove a medida em até 120 dias [c1, c3].\n\nO juro que o Tesouro vai pagar para refinanciar o R$ 1,8 trilhão chega ao crédito longo das empresas. Esse juro depende menos do gás e mais de o ajuste prometido trazer números que fechem as contas de 2027 e dos anos seguintes, com gastos como este já dentro delas. A próxima decisão do Banco Central sobre a Selic é em 9/12.",
+    "argumento": "A prorrogação do Gás do Povo não muda a conta de 2027, porque o gasto já está no projeto, mas fixa despesa até 2031; o que pesa no juro é refinanciar R$ 1,8 trilhão em 12 meses.",
+    "porque": "O governo federal editou a medida provisória 1.400 para estender a vigência do Gás do Povo até 19/11/2031, e segundo a Agência Câmara ela só prorroga o programa, sem ampliar o público nem mudar os valores."
    },
    "caderno": [
     {
      "id": "c1",
      "tipo": "documento",
-     "afirmacao": "A MP que prorroga o Gás do Povo até 19/11/2031 foi publicada no Diário Oficial em 9/11/2026 (MP 1.400).",
+     "afirmacao": "A MP 1.400, de 6/11/2026, foi publicada no Diário Oficial de 9/11 e estende o Gás do Povo até 19/11/2031, alterando o art. 8º da Lei 14.237/2021.",
      "numeros": [
       "1.400",
+      "6 de novembro de 2026",
       "19 de novembro de 2031",
-      "9 de novembro"
+      "15 milhões de famílias"
      ],
      "comando": "",
      "saida": "",
      "fonte": {
-      "quem": "Agência Brasil",
-      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/gas-do-povo-governo-prorroga-vigencia-do-programa-ate-2031",
+      "quem": "Câmara dos Deputados (Agência Câmara)",
+      "url": "https://www.camara.leg.br/noticias/1317702-medida-provisoria-prorroga-auxilio-gas-do-povo-ate-2031",
       "data": "2026-11-09",
-      "trecho": "prorroga até 19 de novembro de 2031 a vigência do auxílio Gás do Povo"
+      "trecho": "A MP nº 1.400, de 6 de novembro de 2026, foi publicada no Diário Oficial da União (DOU) desta segunda-feira (9/11). (trecho mostrado pela busca; a página não abriu)"
      },
      "conferencia": {
-      "status": "conferido",
+      "status": "nao_aberto",
       "fonte_conhecida": true
      }
     },
     {
      "id": "c2",
      "tipo": "documento",
-     "afirmacao": "O Congresso tem 120 dias para votar a MP; sem a votação a prorrogação não se mantém.",
-     "numeros": [
-      "120 dias"
-     ],
+     "afirmacao": "A MP só prorroga: não amplia o público, não altera os valores nem a execução. Não achei exposição de motivos escrita.",
+     "numeros": [],
      "comando": "",
      "saida": "",
      "fonte": {
-      "quem": "O Povo",
-      "url": "https://mais.opovo.com.br/jornal/economia/2026/11/09/lula-edita-mp-com-vigencia-do-gas-do-povo-ate-2031.html",
+      "quem": "Câmara dos Deputados (Agência Câmara)",
+      "url": "https://www.camara.leg.br/noticias/1317702-medida-provisoria-prorroga-auxilio-gas-do-povo-ate-2031",
       "data": "2026-11-09",
-      "trecho": "prorrogar a vigência do Auxílio Gás do Povo até 19 de novembro de 2031"
+      "trecho": "A medida não amplia o público beneficiário do programa, não altera os valores nem modifica as formas de execução. (trecho mostrado pela busca)"
      },
      "conferencia": {
-      "status": "conferido",
+      "status": "nao_aberto",
       "fonte_conhecida": true
      }
     },
     {
      "id": "c3",
      "tipo": "documento",
-     "afirmacao": "Segundo uma reportagem, a MP vale desde a publicação e os efeitos da prorrogação dependem da abertura dos créditos orçamentários (não li a MP no original).",
-     "numeros": [],
+     "afirmacao": "A MP está em vigor, mas o Congresso tem até 120 dias para aprová-la; passa por comissão mista, Câmara e Senado.",
+     "numeros": [
+      "120 dias"
+     ],
      "comando": "",
      "saida": "",
      "fonte": {
-      "quem": "Agência Brasil",
-      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/gas-do-povo-governo-prorroga-vigencia-do-programa-ate-2031",
+      "quem": "Câmara dos Deputados (Agência Câmara)",
+      "url": "https://www.camara.leg.br/noticias/1317702-medida-provisoria-prorroga-auxilio-gas-do-povo-ate-2031",
       "data": "2026-11-09",
-      "trecho": "Gás do Povo: governo prorroga vigência do auxílio até 2031"
+      "trecho": "A MP 1400/26 já está em vigor e ainda será analisada por uma comissão mista formada por deputados e senadores. (trecho mostrado pela busca; o prazo de 120 dias vem de outra fonte da mesma busca)"
      },
      "conferencia": {
-      "status": "conferido",
+      "status": "nao_aberto",
       "fonte_conhecida": true
      }
     },
     {
      "id": "c4",
      "tipo": "documento",
-     "afirmacao": "A Lei 14.237 fixa vigência de 5 anos, desde 19/11/2021: o prazo vence em 19/11/2026.",
+     "afirmacao": "O projeto de Orçamento de 2027 prevê R$ 7,6 bi para o Gás do Povo (0,19% do projeto).",
      "numeros": [
-      "5 (cinco) anos"
+      "7,6 bi",
+      "0,19%",
+      "15,4 milhões de famílias"
      ],
      "comando": "",
      "saida": "",
      "fonte": {
-      "quem": "Câmara dos Deputados (Lei 14.237/2021 atualizada)",
-      "url": "https://www2.camara.leg.br/legin/fed/lei/2021/lei-14237-19-novembro-2021-791974-normaatualizada-pl.html",
-      "data": "2021-11-19",
-      "trecho": "Esta Lei entra em vigor na data de sua publicação e vigorará por 5 (cinco) anos,"
+      "quem": "Consultoria de Orçamento da Câmara, Raio-X do PLOA 2027",
+      "url": "https://www2.camara.leg.br/orcamento-da-uniao/raio-x-do-orcamento/2027/RaioX_PLOA_2027.pdf",
+      "data": "2026-09-01",
+      "trecho": "R$ 7,6 bi para o Gás do Povo, equivalente a 0,19% do PLOA (resumo da busca; o PDF não foi aberto, data aproximada)"
      },
      "conferencia": {
-      "status": "conferido",
+      "status": "nao_aberto",
       "fonte_conhecida": true
      }
     },
     {
      "id": "c5",
      "tipo": "documento",
-     "afirmacao": "A Lei 15.348, de 13/2/2026, converteu a MP 1.313; a Agência Senado a chamou de lei que torna o programa permanente.",
+     "afirmacao": "Em fevereiro de 2026, o Senado aprovou a MP original do Gás do Povo com impacto de R$ 5 bi em 2026.",
      "numeros": [
-      "15.348",
-      "13/02/2026"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Agência Senado",
-      "url": "https://www12.senado.leg.br/noticias/materias/2026/02/19/lei-torna-programa-gas-do-povo-permanente",
-      "data": "2026-02-19",
-      "trecho": "Lei torna programa Gás do Povo permanente"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c6",
-     "tipo": "documento",
-     "afirmacao": "O objetivo escrito do auxílio na lei é mitigar o efeito do preço do GLP no orçamento das famílias de baixa renda.",
-     "numeros": [],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Câmara dos Deputados (Lei 14.237/2021 atualizada)",
-      "url": "https://www2.camara.leg.br/legin/fed/lei/2021/lei-14237-19-novembro-2021-791974-normaatualizada-pl.html",
-      "data": "2021-11-19",
-      "trecho": "Fica instituído o Auxílio Gás do Povo, destinado a mitigar o efeito do preço do gás liquefeito de petróleo (GLP)"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c7",
-     "tipo": "documento",
-     "afirmacao": "A Secom justifica a prorrogação como manutenção de política contra a pobreza energética.",
-     "numeros": [],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Agência Brasil (citando a Secom)",
-      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/gas-do-povo-governo-prorroga-vigencia-do-programa-ate-2031",
-      "data": "2026-11-09",
-      "trecho": "A prorrogação garante a manutenção de uma política pública voltada ao enfrentamento da pobreza energética"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c8",
-     "tipo": "documento",
-     "afirmacao": "As reportagens abertas não trazem o custo da MP; só a cifra dos vales de 10/11, acima de R$ 337 milhões.",
-     "numeros": [
-      "R$ 337 milhões",
-      "3,1 milhões"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Hoje Diário",
-      "url": "https://hojediario.com/2026/11/10/governo-prorroga-gas-do-povo-ate-2031-e-libera-31-milhoes-de-vales/",
-      "data": "2026-11-10",
-      "trecho": "3,1 milhões de vales para recarga gratuita do botijão; investimento estimado supera R$ 337 milhões"
-     },
-     "conferencia": {
-      "status": "numeros_na_pagina",
-      "fonte_conhecida": false
-     }
-    },
-    {
-     "id": "c9",
-     "tipo": "documento",
-     "afirmacao": "O projeto de orçamento de 2027 prevê cerca de R$ 7,6 bilhões para o Gás do Povo, 0,05% do PIB (Raio X da Câmara, lido pelo resumo da busca; a página não abriu).",
-     "numeros": [
-      "7,6 bi",
-      "0,05%"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Câmara dos Deputados, Consultoria de Orçamento (Raio X PLOA 2027)",
-      "url": "https://www2.camara.leg.br/orcamento-da-uniao/raio-x-do-orcamento/2027/RaioX_PLOA_2027.pdf",
-      "data": "",
-      "trecho": "Gás do Povo R$ 7,6 bi, 0,19% do PLOA e 0,05% do PIB"
-     },
-     "conferencia": {
-      "status": "nao_aberto",
-      "por_que": "HTTP 404",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c10",
-     "tipo": "documento",
-     "afirmacao": "O projeto de orçamento de 2026 reservava R$ 5,1 bilhões ao novo vale-gás.",
-     "numeros": [
-      "R$ 5,1 bilhões"
+      "R$ 5 bilhões",
+      "2026"
      ],
      "comando": "",
      "saida": "",
      "fonte": {
       "quem": "Diario de Pernambuco",
       "url": "https://www.diariodepernambuco.com.br/economia/2026/02/11706818-senado-aprova-mp-do-gas-do-povo-com-impacto-de-rs-5-bilhoes-em-2026.html",
-      "data": "2026-02-03",
-      "trecho": "Senado aprova MP do Gás do Povo com impacto de R$ 5 bilhões em 2026"
+      "data": "2026-02-04",
+      "trecho": "Senado aprova MP do Gás do Povo com impacto de R$ 5 bilhões em 2026 (título; a página não abriu)"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c6",
+     "tipo": "conta",
+     "afirmacao": "R$ 7,6 bi são 10,4% do centro da meta de 2027 (R$ 73,2 bi).",
+     "numeros": [
+      "10,3825"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"7.6/73.2*100\"",
+     "saida": "7.6/73.2*100 = 10,3825 (com 3 casas: 10,383; com 2 casas: 10,38; com 1 casa: 10,4)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": true
+      "saida": "7.6/73.2*100 = 10,3825 (com 3 casas: 10,383; com 2 casas: 10,38; com 1 casa: 10,4)\n"
+     }
+    },
+    {
+     "id": "c7",
+     "tipo": "conta",
+     "afirmacao": "R$ 7,6 bi para 15,4 milhões de famílias dão cerca de R$ 493,5 por família ao ano.",
+     "numeros": [
+      "493,5065"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"7600/15.4\"",
+     "saida": "7600/15.4 = 493,5065 (com 3 casas: 493,506; com 2 casas: 493,51; com 1 casa: 493,5)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "7600/15.4 = 493,5065 (com 3 casas: 493,506; com 2 casas: 493,51; com 1 casa: 493,5)\n"
+     }
+    },
+    {
+     "id": "c8",
+     "tipo": "conta",
+     "afirmacao": "Cinco anos no nível de 2027, sem reajuste: R$ 38 bi (conta nossa, não oficial).",
+     "numeros": [
+      "38,0000"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"7.6*5\"",
+     "saida": "7.6*5 = 38,0000 (com 3 casas: 38,000; com 2 casas: 38,00; com 1 casa: 38,0)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "7.6*5 = 38,0000 (com 3 casas: 38,000; com 2 casas: 38,00; com 1 casa: 38,0)\n"
+     }
+    },
+    {
+     "id": "c9",
+     "tipo": "conta",
+     "afirmacao": "R$ 7,6 bi são 0,42% dos R$ 1,8 trilhão a refinanciar em 12 meses.",
+     "numeros": [
+      "0,4222"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"7.6/1800*100\"",
+     "saida": "7.6/1800*100 = 0,4222 (com 3 casas: 0,422; com 2 casas: 0,42; com 1 casa: 0,4)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "7.6/1800*100 = 0,4222 (com 3 casas: 0,422; com 2 casas: 0,42; com 1 casa: 0,4)\n"
+     }
+    },
+    {
+     "id": "c10",
+     "tipo": "site",
+     "afirmacao": "O Tesouro terá de refinanciar R$ 1,8 trilhão em 12 meses; a parte que vence em até um ano chegou a 19,95% em setembro.",
+     "numeros": [
+      "R$ 1,8 trilhão",
+      "19,95%"
+     ],
+     "comando": "",
+     "saida": "Tesouro terá de refinanciar R$ 1,8 trilhão da dívida em 12 meses | A parte da dívida que vence em até um ano chegou a 19,95% em setembro (ficha da história, Poder360, 09/11). Não consegui abrir o relatório do Tesouro.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "fontes_memoria": [
+      {
+       "quem": "Poder360",
+       "url": "https://www.poder360.com.br/poder-economia/tesouro-tera-de-refinanciar-r-18-trilhao-em-12-meses/",
+       "data": "2026-11-09",
+       "trecho": "Tesouro terá de refinanciar R$ 1,8 trilhão em 12 meses"
+      }
+     ],
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true,
+      "via": "memória do momento"
      }
     },
     {
      "id": "c11",
      "tipo": "conta",
-     "afirmacao": "R$ 7,6 bi para 15 milhões de famílias dá cerca de R$ 507 por família ao ano.",
+     "afirmacao": "A dívida bruta, 82,93% do PIB em setembro, está mais alta que em 96% dos meses da série, que começa em 2006-12.",
      "numeros": [
-      "506,67"
+      "82,93",
+      "96%",
+      "228",
+      "237"
      ],
-     "comando": ".venv/bin/python src/conta.py calc \"7.6*1000/15\"",
-     "saida": "7.6*1000/15 = 506,6667 (com 3 casas: 506,667; com 2 casas: 506,67; com 1 casa: 506,7)",
+     "comando": ".venv/bin/python src/conta.py recorde divida_bruta 2026-09",
+     "saida": "divida_bruta em 2026-09: 82,93. A série começa em 2006-12. É o maior valor desde 2021-03, quando foi 85,10. Dos 237 meses antes de 2026-09, 228 tiveram valor menor (96%).",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3824,99 +3795,22 @@
      },
      "conferencia": {
       "status": "conferido",
-      "saida": "7.6*1000/15 = 506,6667 (com 3 casas: 506,667; com 2 casas: 506,67; com 1 casa: 506,7)\n"
+      "saida": "divida_bruta em 2026-09: 82,93. A série começa em 2006-12.\nÉ o maior valor desde 2021-03, quando foi 85,10.\nDos 237 meses antes de 2026-09, 228 tiveram valor menor (96%).\n"
      }
     },
     {
      "id": "c12",
-     "tipo": "conta",
-     "afirmacao": "R$ 7,6 bi em 2027 é 49% acima dos R$ 5,1 bi do projeto de 2026.",
-     "numeros": [
-      "49,02"
-     ],
-     "comando": ".venv/bin/python src/conta.py calc \"7.6/5.1*100-100\"",
-     "saida": "7.6/5.1*100-100 = 49,0196 (com 3 casas: 49,020; com 2 casas: 49,02; com 1 casa: 49,0)",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "7.6/5.1*100-100 = 49,0196 (com 3 casas: 49,020; com 2 casas: 49,02; com 1 casa: 49,0)\n"
-     }
-    },
-    {
-     "id": "c13",
-     "tipo": "conta",
-     "afirmacao": "O valor por família ao ano equivale a 31% do salário mínimo de R$ 1.621.",
-     "numeros": [
-      "31,26"
-     ],
-     "comando": ".venv/bin/python src/conta.py calc \"7.6*1000/15/1621*100\"",
-     "saida": "7.6*1000/15/1621*100 = 31,2564 (com 3 casas: 31,256; com 2 casas: 31,26; com 1 casa: 31,3)",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "7.6*1000/15/1621*100 = 31,2564 (com 3 casas: 31,256; com 2 casas: 31,26; com 1 casa: 31,3)\n"
-     }
-    },
-    {
-     "id": "c14",
-     "tipo": "documento",
-     "afirmacao": "O programa atende cerca de 15 milhões de famílias, 45 milhões de pessoas.",
-     "numeros": [
-      "15 milhões",
-      "45 milhões"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Agência Brasil",
-      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/gas-do-povo-governo-prorroga-vigencia-do-programa-ate-2031",
-      "data": "2026-11-09",
-      "trecho": "O programa atende cerca de 15 milhões de famílias, ou 45 milhões de pessoas"
-     },
-     "conferencia": {
-      "status": "numeros_na_pagina",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c15",
      "tipo": "site",
-     "afirmacao": "A dívida do governo subiu de 81,95% para 82,93% do PIB, de junho a setembro.",
+     "afirmacao": "Meta de 2027: centro de R$ 73,2 bi (0,50% do PIB), piso de R$ 36,6 bi; a regra desconta R$ 64,7 bi; o projeto prevê resultado efetivo de R$ 18,6 bi.",
      "numeros": [
-      "81,95%",
-      "82,93%"
+      "73,2",
+      "36,6",
+      "64,7",
+      "18,6",
+      "83,4"
      ],
      "comando": "",
-     "saida": "A dívida do governo foi de 81,95% para 82,93% do PIB, de junho a setembro.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "site"
-     }
-    },
-    {
-     "id": "c16",
-     "tipo": "site",
-     "afirmacao": "O salário mínimo é R$ 1.621,00 desde janeiro de 2026.",
-     "numeros": [
-      "1.621,00"
-     ],
-     "comando": "",
-     "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.",
+     "saida": "Bloco <metas>, Consultoria de Orçamento da Câmara, Raio-X do PLOA 2027.",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3929,678 +3823,188 @@
      }
     },
     {
-     "id": "c17",
-     "tipo": "documento",
-     "afirmacao": "Na recarga de 10/11, 380,5 mil vales vão para famílias novas e 2,7 milhões para as que já participavam.",
+     "id": "c13",
+     "tipo": "site",
+     "afirmacao": "Bradesco, XP e Genoa veem PIB parado ou em queda em 2027 (06/11); o Itaú cortou a previsão de 2027 para 0,5% (30/10).",
      "numeros": [
-      "380,5 mil",
-      "2,7 milhões",
-      "3,1 milhões"
+      "0,5%"
      ],
      "comando": "",
-     "saida": "",
+     "saida": "Memória do momento: Folha, 2026-11-06 e 2026-10-30. Previsões.",
      "fonte": {
-      "quem": "Agência Brasil",
-      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/gas-do-povo-governo-prorroga-vigencia-do-programa-ate-2031",
-      "data": "2026-11-09",
-      "trecho": "380,5 mil vales vão para novas famílias e 2,7 milhões para famílias já participantes"
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
      },
      "conferencia": {
-      "status": "numeros_na_pagina",
-      "fonte_conhecida": true
+      "status": "site"
      }
     },
     {
-     "id": "c18",
-     "tipo": "documento",
-     "afirmacao": "A MP 1.313 foi aprovada pela Câmara em 2/2/2026 e pelo Senado em 3/2/2026, antes de caducar em 11/2.",
-     "numeros": [
-      "11 de fevereiro"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Congresso em Foco",
-      "url": "https://www.congressoemfoco.com.br/noticia/116093/senado-aprova-mp-do-gas-do-povo-texto-vai-a-sancao",
-      "data": "2026-02-03",
-      "trecho": "Senado aprova MP do Gás do Povo; texto vai à sanção"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c19",
-     "tipo": "documento",
-     "afirmacao": "A MP 1.400 altera o art. 8º da Lei 14.237 e põe a vigência até 19/11/2031 (lido em reportagem que cita a MP, não no Diário Oficial).",
-     "numeros": [
-      "8º",
-      "14.237",
-      "19 de novembro de 2031"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Atlas Público (ficha da Câmara dos Deputados)",
-      "url": "https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
-      "data": "2026-11-09",
-      "trecho": "vigorará até 19 de novembro de 2031"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": false
-     }
-    },
-    {
-     "id": "c20",
-     "tipo": "documento",
-     "afirmacao": "Na versão atualizada da Lei 14.237, o art. 8º segue com 'vigorará por 5 anos' e sem anotação de alteração pela Lei 15.348; o art. 1º tem anotação de redação dada pela MP 1.313.",
-     "numeros": [
-      "5 (cinco) anos",
-      "8º"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Câmara dos Deputados (Lei 14.237/2021 atualizada)",
-      "url": "https://www2.camara.leg.br/legin/fed/lei/2021/lei-14237-19-novembro-2021-791974-normaatualizada-pl.html",
-      "data": "2021-11-19",
-      "trecho": "vigorará por 5 (cinco) anos,"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c21",
-     "tipo": "documento",
-     "afirmacao": "A Lei 15.348 alterou os arts. 1º, 1º-A, 2º, 3º, 4º, 4º-A a 4º-K e 7º-A a 7º-H da Lei 14.237 e revogou o § 1º do art. 2º e os arts. 6º e 7º; não alterou o art. 8º (leitura da página, resumida).",
-     "numeros": [
-      "15.348"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Presidência da República (Planalto), Lei 15.348/2026",
-      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/L15348.htm",
-      "data": "2026-02-13",
-      "trecho": "Esta Lei entra em vigor na data de sua publicação."
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c22",
-     "tipo": "documento",
-     "afirmacao": "A Agência Senado escreveu que o programa passou a ser política pública permanente.",
+     "id": "c14",
+     "tipo": "site",
+     "afirmacao": "A Fazenda diz preparar ajuste gradual, sem data (03/11); as medidas ficam para depois da COP (05/11).",
      "numeros": [],
+     "comando": "",
+     "saida": "Memória do momento: Folha 2026-11-03; Poder360 2026-11-05.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c15",
+     "tipo": "site",
+     "afirmacao": "A IFI, do Senado, vê R$ 40 bi em medidas novas e gasto acima da arrecadação em 2027, com déficit primário que pode chegar a 1% do PIB.",
+     "numeros": [
+      "R$ 40 bi",
+      "1%"
+     ],
+     "comando": "",
+     "saida": "Memória do momento: Valor, 2026-10-29, nota da IFI.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "fontes_memoria": [
+      {
+       "quem": "Valor",
+       "url": "https://valor.globo.com/brasil/noticia/2026/10/29/pacote-de-bondades-do-governo-pode-levar-deficit-primario-a-1percent-do-pib-em-2027-nota-ifi.ghtml",
+       "data": "2026-10-29",
+       "trecho": "‘Pacote de bondades’ do governo pode levar déficit primário a 1% do PIB em 2027, nota IFI"
+      }
+     ],
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true,
+      "via": "memória do momento"
+     }
+    },
+    {
+     "id": "c16",
+     "tipo": "documento",
+     "afirmacao": "A projeção do governo para 2026 e 2027 pode estar subestimada, segundo consultor do Senado.",
+     "numeros": [
+      "R$ 5,1 bilhões",
+      "R$ 5,7 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Consultoria do Senado (resumo da busca)",
+      "url": "https://www.diariodepernambuco.com.br/economia/2026/02/11706818-senado-aprova-mp-do-gas-do-povo-com-impacto-de-rs-5-bilhoes-em-2026.html",
+      "data": "2026-02-04",
+      "trecho": "o impacto fiscal projetado para 2026 e 2027 pode estar subestimado (paráfrase do resumo da busca, não literal; conferir antes de usar)"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c201",
+     "tipo": "documento",
+     "afirmacao": "A Lei 15.348, de 13/02/2026, vinda da MP 1.313, tornou o Gás do Povo permanente; antes, o auxílio teria vigência só até o fim de 2026.",
+     "numeros": [
+      "15.348",
+      "13/02/2026"
+     ],
      "comando": "",
      "saida": "",
      "fonte": {
       "quem": "Agência Senado",
       "url": "https://www12.senado.leg.br/noticias/materias/2026/02/19/lei-torna-programa-gas-do-povo-permanente",
       "data": "2026-02-19",
-      "trecho": "O programa Gás do Povo passou a ser uma política pública permanente no Brasil."
+      "trecho": "Lei torna programa Gás do Povo permanente (título; a página não abriu, trecho do resultado da busca)"
      },
+     "do_revisor": true,
      "conferencia": {
-      "status": "conferido",
+      "status": "nao_aberto",
       "fonte_conhecida": true
      }
     },
     {
-     "id": "c23",
+     "id": "c202",
      "tipo": "documento",
-     "afirmacao": "A MP precisa virar lei em até 120 dias. A frase sobre efeitos desde a abertura dos créditos orçamentários é do art. 8º da Lei 14.237, não novidade da MP.",
+     "afirmacao": "O Gás do Povo tem R$ 4,7 bilhões no Orçamento de 2026.",
      "numeros": [
-      "120 dias"
+      "R$ 4,7 bi",
+      "2026"
      ],
      "comando": "",
      "saida": "",
      "fonte": {
-      "quem": "Atlas Público (ficha da Câmara dos Deputados)",
-      "url": "https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
-      "data": "2026-11-09",
-      "trecho": "precisa ser convertido em lei pelo Congresso Nacional em até 120 dias"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": false
-     }
-    },
-    {
-     "id": "c24",
-     "tipo": "documento",
-     "afirmacao": "Sem votação, a MP perde a validade; a contagem do prazo é suspensa no recesso; sem a MP o programa acabaria em 19/11.",
-     "numeros": [
-      "19 de novembro"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Sou Brasília",
-      "url": "https://soubrasilia.com/gas-do-povo-mp-1400-prorroga-programa-ate-2031-congresso-120-dias-vale-10-novembro/",
-      "data": "2026-11-09",
-      "trecho": "perde a validade se o Congresso não votar"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": false
-     }
-    },
-    {
-     "id": "c25",
-     "tipo": "documento",
-     "afirmacao": "O projeto de orçamento de 2027 prevê R$ 7,6 bilhões para o Gás do Povo, para cerca de 15,4 milhões de famílias.",
-     "numeros": [
-      "7,6 bilhões",
-      "15,4 milhões"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Congresso em Foco",
-      "url": "https://www.congressoemfoco.com.br/noticia/121832/confira-a-integra-do-orcamento-de-2027-e-veja-os-principais-numeros",
-      "data": "2026-09-01",
-      "trecho": "Para o Gás do Povo, que garante recarga gratuita do botijão a famílias de baixa renda, estão previstos R$ 7,6 bilhões"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c26",
-     "tipo": "documento",
-     "afirmacao": "A lei orçamentária de 2026 previa R$ 4,7 bilhões para o Gás do Povo.",
-     "numeros": [
-      "R$ 4,7 bi"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Eixos",
+      "quem": "eixos",
       "url": "https://eixos.com.br/politica/sancionado-com-vetos-gas-do-povo-tem-r-47-bi-no-orcamento-de-2026/",
-      "data": "2026-02-19",
-      "trecho": "Sancionado com vetos, Gás do Povo tem R$ 4,7 bi no orçamento de 2026"
+      "data": "2026-02-13",
+      "trecho": "Sancionado com vetos, Gás do Povo tem R$ 4,7 bi no Orçamento de 2026 (título; página não aberta, data aproximada)"
      },
+     "do_revisor": true,
      "conferencia": {
-      "status": "conferido",
+      "status": "nao_aberto",
       "fonte_conhecida": true
      }
     },
     {
-     "id": "c27",
-     "tipo": "conta",
-     "afirmacao": "R$ 7,6 bi em 2027 é 61,7% acima dos R$ 4,7 bi da lei orçamentária de 2026.",
-     "numeros": [
-      "61,70"
-     ],
-     "comando": ".venv/bin/python src/conta.py calc \"7.6/4.7*100-100\"",
-     "saida": "7.6/4.7*100-100 = 61,7021 (com 3 casas: 61,702; com 2 casas: 61,70; com 1 casa: 61,7)",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "7.6/4.7*100-100 = 61,7021 (com 3 casas: 61,702; com 2 casas: 61,70; com 1 casa: 61,7)\n"
-     }
-    },
-    {
-     "id": "c28",
-     "tipo": "conta",
-     "afirmacao": "R$ 7,6 bi para 15 milhões de famílias dá cerca de R$ 42 por família por mês.",
-     "numeros": [
-      "42,22"
-     ],
-     "comando": ".venv/bin/python src/conta.py calc \"7.6*1000/15/12\"",
-     "saida": "7.6*1000/15/12 = 42,2222 (com 3 casas: 42,222; com 2 casas: 42,22; com 1 casa: 42,2)",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "7.6*1000/15/12 = 42,2222 (com 3 casas: 42,222; com 2 casas: 42,22; com 1 casa: 42,2)\n"
-     }
-    },
-    {
-     "id": "c29",
+     "id": "c203",
      "tipo": "documento",
-     "afirmacao": "Em 2024, o projeto de orçamento de 2025 previa R$ 600 milhões para o Auxílio Gás contra R$ 3,5 bilhões do ano, e um ex-secretário do Tesouro criticou o desenho.",
+     "afirmacao": "A Consultoria de Orçamento do Senado, na nota técnica de adequação orçamentária da MP 1.313/2025 (a que criou o Gás do Povo), diz que a MP é autorizativa e não cria, por si só, despesa obrigatória, e que o ritmo e a escala de atendimento ficam para o ciclo orçamentário.",
      "numeros": [
-      "R$ 600 milhões",
-      "R$ 3,5 bilhões"
+      "1.313",
+      "28/2025"
      ],
      "comando": "",
      "saida": "",
      "fonte": {
-      "quem": "ABC do ABC",
-      "url": "https://www.abcdoabc.com.br/auxilio-gas-fora-do-orcamento-de-2025-ataca-coracao-do-arcabouco-fiscal-diz-ex-secretario-do-tesouro/",
-      "data": "2024-09-03",
-      "trecho": "O governo previu apenas R$ 600 milhões para o programa, enquanto a verba deste ano é de R$ 3,5 bilhões."
+      "quem": "Consultoria de Orçamento do Senado, Nota Técnica nº 28/2025",
+      "url": "https://www12.senado.leg.br/orcamento/documentos/estudos/tipos-de-estudos/notas-tecnicas-de-adequacao-orcamentaria-e-financeira/mp-1313_2025-nota-tecnica-no-28_2025-cd-thyairo.pdf",
+      "data": "2025-09-15",
+      "trecho": "A MP tem natureza autorizativa e, por si só, não criaria despesa obrigatória, remetendo o ritmo e a escala de atendimento ao ciclo orçamentário. (resumo da busca, não literal; o PDF não abriu, data aproximada; conferir antes de usar)"
      },
+     "do_revisor": true,
      "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": false
-     }
-    },
-    {
-     "id": "c101",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (precos), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz precos",
-     "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 5,01% (último dado de novembro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 105,01 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 5,01% (último dado de novembro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 105,01 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.\n"
-     }
-    },
-    {
-     "id": "c102",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (dolar), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz dolar",
-     "saida": "O dólar foi de R$ 5,3567 em 7/11/2025 para R$ 5,5146 em 9/11/2026: alta de 2,9% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 2,9%, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "O dólar foi de R$ 5,3567 em 7/11/2025 para R$ 5,5146 em 9/11/2026: alta de 2,9% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 2,9%, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.\n"
-     }
-    },
-    {
-     "id": "c103",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (credito), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz credito",
-     "saida": "Juro médio dos empréstimos às pessoas com juro definido pelo banco (todos os tipos): 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em s",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "Juro médio dos empréstimos às pessoas com juro definido pelo banco (todos os tipos): 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.262 (um ano antes, R$ 1.273).\nJuro médio do financiamento imobiliário com taxas de mercado: 14,20% ao ano em setembro de 2026, contra 14,88% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.142 (um ano antes, R$ 1.149).\nFonte: Banco Central, juro médio das operações de crédito para pessoas físicas, com um a dois meses de atraso. A Selic não passa inteira nem logo para esses juros.\n"
-     }
-    },
-    {
-     "id": "c104",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (guardado), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz guardado",
-     "saida": "Com a Selic em 13,75% ao ano (em 10/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 5,01% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,21 em um ano (8,32% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de novembro de 2026 (0,1196% ao mês), R$ 6,20 no mês, ou cerca de R$ 77,02 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "Com a Selic em 13,75% ao ano (em 10/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 5,01% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,21 em um ano (8,32% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de novembro de 2026 (0,1196% ao mês), R$ 6,20 no mês, ou cerca de R$ 77,02 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.\n"
-     }
-    },
-    {
-     "id": "c105",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (minimo), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz minimo",
-     "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda faltam 2 meses de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda faltam 2 meses de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.\n"
-     }
-    },
-    {
-     "id": "c106",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (renda), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz renda",
-     "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.\n"
-     }
-    },
-    {
-     "id": "c107",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (emprego), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz emprego",
-     "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 pontos a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 pontos a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 pontos a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 pontos a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.\n"
+      "status": "nao_aberto",
+      "fonte_conhecida": true
      }
     }
    ],
-   "duracao_pensar_s": 515,
-   "duracao_s": 808,
-   "curto": {
-    "porque": "Na Lei 14.237, o auxílio existe para mitigar o efeito do preço do gás de cozinha no orçamento das famílias de baixa renda. A Secom diz que a prorrogação mantém uma política contra a pobreza energética. Pelo texto da lei, o programa vigorava por 5 anos e acabaria em 19/11/2026.",
-    "e_dai": "Pelo texto da lei, o botijão grátis acabaria em 19/11; com a medida provisória, o prazo até 2031 depende de o Congresso votá-la em até 120 dias.",
-    "vida": "Nada muda agora para as cerca de 15 milhões de famílias atendidas: a recarga continua, com 3,1 milhões de vales em 10/11. Em 2027, o projeto de orçamento reserva R$ 7,6 bilhões, cerca de R$ 42 por família por mês, em média.",
-    "familias": [
-     {
-      "familia": "outra",
-      "quem": "Famílias de baixa renda que recebem a recarga grátis do botijão pelo Gás do Povo",
-      "o_que_muda": "Nada muda hoje: a recarga continua, e 3,1 milhões de vales saem em 10/11. Depois de 19/11, o benefício depende de o Congresso votar a MP em até 120 dias. Para 2027, o projeto de orçamento prevê R$ 7,6 bi, cerca de R$ 42 por família por mês, em média.",
-      "caderno": [
-       "c14",
-       "c17",
-       "c24",
-       "c23",
-       "c25",
-       "c28"
-      ]
-     }
-    ],
-    "objetivo": "Na Lei 14.237, o auxílio se destina a mitigar o efeito do preço do gás de cozinha no orçamento das famílias de baixa renda. A Secom diz que a prorrogação mantém uma política contra a pobreza energética. O objetivo é amplo e não diz quanto do preço do botijão deve ser coberto.",
-    "condicao": "",
-    "caderno": [
-     "c1",
-     "c4",
-     "c6",
-     "c7",
-     "c14",
-     "c17",
-     "c20",
-     "c23",
-     "c24",
-     "c25",
-     "c28"
-    ]
-   },
-   "pressao": "contas",
-   "pagina_que_falta": "O que é uma medida provisória e o que acontece quando ela caduca? A leitora precisa saber disso para ler o \\\"até 2031\\\" de hoje e a MP das dívidas rurais, que pode perder a validade na quarta.",
-   "tese": "A MP 1.400 existe porque a lei de fevereiro, chamada de permanente, não mexeu no artigo que limita o programa a 5 anos: pelo texto da lei, o Gás do Povo acabaria em 19/11/2026. A recarga grátis até 2031 depende de o Congresso converter a MP em até 120 dias, e a MP anterior do programa só foi votada a poucos dias de caducar, em fevereiro (um caso, não um padrão). O dinheiro de cada ano segue no orçamento: R$ 7,6 bi no projeto de 2027, 61,7% acima dos R$ 4,7 bi de 2026, e as reportagens sobre a MP não trazem estimativa de custo própria.",
-   "menor": false,
-   "rascunho": {
-    "titulo": "A lei chamada de permanente não mexeu no prazo, e sem a MP o Gás do Povo acabaria em 19 de novembro",
-    "texto": "A lei que em fevereiro foi apresentada como a que tornava o Gás do Povo permanente deixou de fora o artigo que dá prazo ao programa. Na versão atualizada da Lei 14.237, publicada pela Câmara, o artigo 8º ainda diz que ela \"vigorará por 5 (cinco) anos\", contados de 19/11/2021 [c4, c20]. Sem a medida provisória, o programa acabaria em 19/11 [c24].\n\nPor isso a MP 1.400 é menos uma ampliação do que um conserto de prazo, e o conserto ainda não está garantido. A recarga grátis até 2031 depende de o Congresso transformar a medida em lei em até 120 dias [c23], e a última MP do programa só foi votada a poucos dias de perder a validade [c18]. O dinheiro de cada ano continua sendo decidido no orçamento.\n\n### A lei de fevereiro mudou quase tudo no programa, menos o prazo\n\nA Lei 15.348, de 13/2/2026, nasceu da MP 1.313 e mudou boa parte da lei original [c5]. Ela reescreveu os artigos do começo da lei, criou dezenas de artigos novos e revogou outros, mas não tocou no artigo 8º, o do prazo [c21]. Na versão atualizada da Câmara, o artigo 1º traz a anotação da mudança, e o 8º não traz nenhuma [c20].\n\nMesmo assim, a Agência Senado escreveu, ao noticiar a lei, que o programa \"passou a ser uma política pública permanente no Brasil\" [c22]. A leitura fazia sentido pelo espírito da lei, que redesenhou o benefício para durar, mas o texto manteve o relógio de 5 anos correndo. É essa distância entre a notícia e o artigo que a MP publicada em 9/11 fecha [c1].\n\nHá um limite nessa conta, porque a lista de artigos alterados vem de uma leitura resumida da página da lei [c21]. Se o texto oficial mostrar o artigo 8º alterado em fevereiro, essa explicação cai, e a MP passa a ser só a extensão de um programa que já não tinha fim marcado.\n\n### Até 2031 está na medida provisória, mas ainda não está na lei\n\nQuem decidiu foi o presidente, que editou a medida provisória. A MP 1.400 muda o artigo 8º e põe o fim do programa em 19/11/2031 [c19]. Ela vale desde a publicação, mas precisa ser convertida em lei pelo Congresso em até 120 dias [c3, c23].\n\nEsse prazo para de contar durante o recesso do Congresso, e, se deputados e senadores não votarem a medida, ela perde a validade [c24]. Por isso anunciar o programa até 2031 ainda não é ter o programa garantido em lei até 2031, já que a palavra final sobre a duração fica com o Congresso.\n\nA vez parecida é recente. A MP 1.313, a que redesenhou o programa, foi aprovada pela Câmara em 2/2/2026 e pelo Senado no dia seguinte, poucos dias antes de caducar, em 11/2 [c18]. O programa não ficou sem lei, mas a votação chegou perto do limite.\n\nÉ um caso só, e um caso não faz padrão: ele não diz que a MP de agora vai demorar, nem que vai cair. O que ele mostra é que a continuidade do Gás do Povo já dependeu uma vez do calendário do Congresso, e volta a depender agora.\n\n### O dinheiro de cada ano continua sendo decidido no orçamento\n\nO objetivo que a lei escreveu é amplo: o auxílio existe \"para mitigar o efeito do preço do gás liquefeito de petróleo (GLP)\" no orçamento das famílias de baixa renda [c6]. Ao justificar a prorrogação, a Secretaria de Comunicação da Presidência falou em manter uma política \"voltada ao enfrentamento da pobreza energética\" [c7]. Nenhum dos dois textos diz quanto do botijão o governo quer cobrir.\n\nTambém não apareceu, nas reportagens sobre a MP, uma estimativa de custo da prorrogação, e a única cifra é a dos vales liberados em 10/11, acima de R$ 337 milhões [c8]. Isso combina com o que a MP faz, já que ela muda o prazo, e não o valor. Quem decide quanto o programa gasta em cada ano é a lei do orçamento.\n\nE o orçamento já mostra a direção. O projeto de 2027, que o governo mandou ao Congresso, reserva R$ 7,6 bilhões ao Gás do Povo, para cerca de 15,4 milhões de famílias [c25]. A lei orçamentária de 2026 previa R$ 4,7 bilhões [c26], o que faz a verba de 2027 ficar 61,7% acima da deste ano [c27].\n\nNas contas do governo, é um gasto pequeno perto do tamanho da dívida, que estava em 82,93% do PIB em setembro, contra 81,95% em junho [c15]. O que a MP muda é a duração, porque um gasto que tinha data para acabar passa a ter, se o Congresso aprovar, mais cinco anos pela frente [c19].\n\nPara as cerca de 15 milhões de famílias atendidas, ou 45 milhões de pessoas, nada muda hoje [c14]. A recarga de 10/11 libera 3,1 milhões de vales, com 380,5 mil para famílias que entram agora e 2,7 milhões para as que já estavam no programa [c17].\n\nEm 2027, se o orçamento for aprovado como está, o dinheiro reservado dá cerca de R$ 42 por família por mês, em média [c28]. O que muda é a garantia: depois de 19/11, o direito ao botijão grátis passa a se apoiar na medida provisória e, em até 120 dias, na votação do Congresso [c24, c23].\n\nQuem defende a MP tem um argumento forte: o valor de 2027 já estava no projeto de orçamento divulgado em 1º de setembro, antes da MP [c25]. Por essa leitura, o governo só corrigiu um prazo que ficou esquecido na lei de fevereiro, sem criar uma despesa que não estivesse prevista.\n\nQuem critica olha para o ritmo e para o histórico. O gasto sobe 61,7% de 2026 para 2027 [c27], e o programa já teve projeto de orçamento bem abaixo do que custava: em 2024, o projeto de 2025 previa R$ 600 milhões para o então Auxílio Gás, contra R$ 3,5 bilhões de verba naquele ano [c29]. Na época, um ex-secretário do Tesouro criticou esse desenho, por deixar a maior parte do gasto fora do orçamento [c29].\n\nAs duas leituras cabem nos números, e os números não escolhem entre elas. A conta de cada ano fica com o orçamento, que o Congresso vota, e a duração fica com a conversão da MP, que o Congresso também vota.\n\nPara você, a notícia quer dizer que o Gás do Povo não era, no papel, tão permanente quanto se disse em fevereiro. Por enquanto, o botijão grátis segue pela força de uma medida provisória, e o quanto o programa paga em 2027 sai de um orçamento que ainda está em votação. Os 120 dias para o Congresso votar a MP começaram a contar com a publicação, em 9/11 [c1, c23]."
-   },
    "conferencia": {
-    "codigo_antes": {
-     "graves": [
-      "bloco 4: número ou data sem linha do caderno que confira: 1.313 | trecho: A Lei 15.348, de 13/2/2026, nasceu da MP 1.313 e mudou boa parte da lei original. Ela reescreveu os artigos do começo da",
-      "bloco 10: número ou data sem linha do caderno que confira: 2/2, 1.313 | trecho: A vez parecida é recente. A MP 1.313, a que redesenhou o programa, foi aprovada pela Câmara em 2/2/2026 e pelo Senado no",
-      "bloco 19: número ou data sem linha do caderno que confira: 1/9 | trecho: Quem defende a MP tem um argumento forte: o valor de 2027 já estava no projeto de orçamento divulgado em 1º de setembro,"
-     ],
-     "avisos": [
-      "c8 vem de site fora da lista de fontes conhecidas: https://hojediario.com/2026/11/10/governo-prorroga-gas-do-povo-ate-2031-e-libera-31-milhoes-de-vales/",
-      "c19 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
-      "c23 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
-      "c24 vem de site fora da lista de fontes conhecidas: https://soubrasilia.com/gas-do-povo-mp-1400-prorroga-programa-ate-2031-congresso-120-dias-vale-10-novembro/",
-      "c29 vem de site fora da lista de fontes conhecidas: https://www.abcdoabc.com.br/auxilio-gas-fora-do-orcamento-de-2025-ataca-coracao-do-arcabouco-fiscal-diz-ex-secretario-do-tesouro/",
-      "bloco 20: frase de 44 palavras",
-      "siglas que a leitora não conhece, sem nome por extenso ou link: GLP, MP"
-     ],
-     "palavras": 1048,
-     "intertitulos": 3
-    },
-    "ia": {
-     "correcoes": [
-      {
-       "trecho": "Título: A lei chamada de permanente não mexeu no prazo, e sem a MP o Gás do Povo acabaria em 19 de novembro",
-       "tipo": "forca",
-       "problema": "O título dá como certo que a lei de fevereiro não mexeu no prazo, mas isso vem de c21, que é leitura resumida da página, e de c20, que é a versão atualizada da Câmara. O próprio texto admite o limite.",
-       "como_fica": "Título: Pela versão atualizada da lei, a lei chamada de permanente não mudou o prazo, e sem a MP o Gás do Povo acabaria em 19 de novembro"
-      },
-      {
-       "trecho": "Por isso a MP 1.400 é menos uma ampliação do que um conserto de prazo, e o conserto ainda não está garantido.",
-       "tipo": "troca",
-       "problema": "\"Conserto\" diz que a lei de fevereiro errou. Nenhuma linha diz que o prazo foi erro ou esquecimento, e isso é juízo sobre quem decidiu.",
-       "como_fica": "Por isso a MP 1.400 muda o prazo que a lei de fevereiro não mudou [c19, c20], e essa mudança ainda não está garantida."
-      },
-      {
-       "trecho": "Ela reescreveu os artigos do começo da lei, criou dezenas de artigos novos e revogou outros, mas não tocou no artigo 8º, o do prazo [c21].",
-       "tipo": "numero",
-       "problema": "c21 diz que a lei alterou os artigos 1º, 1º-A, 2º, 3º, 4º, 4º-A a 4º-K e 7º-A a 7º-H. Não diz que criou \"dezenas\" de artigos. Além disso, \"nasceu da MP 1.313\" e \"mudou boa parte da lei\" estão marcados só com c5, que não traz isso no trecho.",
-       "como_fica": "A Lei 15.348, de 13/2/2026, converteu a MP 1.313 [c5, c18]. Ela alterou ou incluiu os artigos 1º, 1º-A, 2º, 3º, 4º, 4º-A a 4º-K e 7º-A a 7º-H, e revogou o § 1º do artigo 2º e os artigos 6º e 7º, mas não tocou no artigo 8º, o do prazo [c21]."
-      },
-      {
-       "trecho": "A leitura fazia sentido pelo espírito da lei, que redesenhou o benefício para durar, mas o texto manteve o relógio de 5 anos correndo. É essa distância entre a notícia e o artigo que a MP publicada em 9/11 fecha [c1].",
-       "tipo": "forca",
-       "problema": "\"Espírito da lei\" e \"redesenhou para durar\" são interpretação que nenhuma linha sustenta. \"Fecha\" dá a MP como resolvida, e c1 só diz que ela foi publicada. Quem diz que ela altera o artigo 8º é c19.",
-       "como_fica": "Na versão atualizada da lei da Câmara, porém, o artigo 8º manteve o prazo de 5 anos [c20]. É essa distância entre a notícia e o artigo que a MP publicada em 9/11 muda [c1, c19]."
-      },
-      {
-       "trecho": "Nenhum dos dois textos diz quanto do botijão o governo quer cobrir.",
-       "tipo": "forca",
-       "problema": "O caderno traz só um trecho de cada texto (c6 e c7). Dizer que nada nos textos inteiros fala disso é afirmar uma ausência que ninguém conferiu.",
-       "como_fica": "Nos trechos que o caderno guarda, nenhum dos dois diz quanto do botijão o governo quer cobrir [c6, c7]."
-      },
-      {
-       "trecho": "Isso combina com o que a MP faz, já que ela muda o prazo, e não o valor.",
-       "tipo": "forca",
-       "problema": "A MP não foi lida no original (c3, c19 vêm de reportagem). O caderno não mostra que ela não mexe em valor, e c3 diz que os efeitos dependem da abertura de créditos.",
-       "como_fica": "Isso combina com o que as reportagens dizem da MP, que altera o artigo 8º, o do prazo, e deixa os efeitos para a abertura dos créditos orçamentários [c3, c19]."
-      },
-      {
-       "trecho": "Nas contas do governo, é um gasto pequeno perto do tamanho da dívida, que estava em 82,93% do PIB em setembro, contra 81,95% em junho [c15]. O que a MP muda é a duração,",
-       "tipo": "forca",
-       "problema": "c15 só traz a dívida. Nenhuma linha usável diz que o gasto é pequeno (o c9 com 0,05% do PIB não abriu). Comparar um gasto anual com o estoque da dívida também não mede tamanho.",
-       "como_fica": "O que a MP muda é a duração,"
-      },
-      {
-       "trecho": "Em 2027, se o orçamento for aprovado como está, o dinheiro reservado dá cerca de R$ 42 por família por mês, em média [c28].",
-       "tipo": "numero",
-       "problema": "A conta c28 divide por 15 milhões, mas o projeto (c25) fala em 15,4 milhões de famílias. A base da conta precisa aparecer.",
-       "como_fica": "Em 2027, se o orçamento for aprovado como está, o dinheiro reservado dá cerca de R$ 42 por família por mês, em média, dividindo pelos cerca de 15 milhões de famílias atendidas hoje [c28]."
-      },
-      {
-       "trecho": "Quem defende a MP tem um argumento forte: o valor de 2027 já estava no projeto de orçamento divulgado em 1º de setembro, antes da MP [c25]. Por essa leitura, o governo só corrigiu um prazo que ficou esquecido na lei de fevereiro, sem criar uma despesa que não estivesse prevista.",
-       "tipo": "troca",
-       "problema": "Nenhuma linha mostra quem defende a MP, nem que o prazo foi \"esquecido\". \"Forte\" é adjetivo de juízo, e \"sem criar despesa\" é afirmação sobre a MP que as linhas não sustentam.",
-       "como_fica": "Um argumento a favor da MP vem dos números: o valor de 2027 já estava no projeto de orçamento divulgado em 1º de setembro, antes da MP [c25]. Por essa leitura, a prorrogação não traz, até agora, uma despesa fora do que o projeto já previa, e as reportagens abertas não trazem custo novo [c8]."
-      },
-      {
-       "trecho": "Quem critica olha para o ritmo e para o histórico. O gasto sobe 61,7% de 2026 para 2027 [c27], e o programa já teve projeto de orçamento bem abaixo do que custava:",
-       "tipo": "troca",
-       "problema": "Nenhuma linha traz um crítico da MP. O ex-secretário de c29 falou em 2024 do desenho do orçamento do Auxílio Gás, não da MP. O 61,7% compara o projeto de 2027 com a lei de 2026 e não é gasto realizado (\"sobe\"). Contra o projeto de 2026 a alta é de 49% (c12).",
-       "como_fica": "Um argumento contra vem do ritmo e do histórico, e não de um crítico da MP. O projeto de 2027 prevê 61,7% a mais que a lei orçamentária de 2026 [c27], e 49% a mais que o projeto de 2026, que previa R$ 5,1 bilhões [c10, c12]. O programa já teve projeto de orçamento bem abaixo do que custava:"
-      },
-      {
-       "trecho": "Os 120 dias para o Congresso votar a MP começaram a contar com a publicação, em 9/11 [c1, c23].",
-       "tipo": "fonte",
-       "problema": "c23 diz só que a MP precisa virar lei em até 120 dias. Nada nas linhas diz de quando a contagem parte, e c24 diz que ela para no recesso, o que o texto omite aqui.",
-       "como_fica": "A MP vale desde a publicação, em 9/11 [c1, c3], e o Congresso tem até 120 dias para votá-la, sem contar o recesso [c23, c24]."
-      },
-      {
-       "trecho": "Para você, a notícia quer dizer que o Gás do Povo não era, no papel, tão permanente quanto se disse em fevereiro.",
-       "tipo": "forca",
-       "problema": "A conclusão repousa em c21, uma leitura resumida da página. Ela está dita sem o limite que o próprio texto reconhece antes.",
-       "como_fica": "Para você, a notícia quer dizer que, pela versão atualizada da lei na Câmara, o Gás do Povo não era, no papel, tão permanente quanto se disse em fevereiro."
-      },
-      {
-       "trecho": "Quem decidiu foi o presidente, que editou a medida provisória. A MP 1.400 muda o artigo 8º e põe o fim do programa em 19/11/2031 [c19].",
-       "tipo": "fonte",
-       "problema": "c19 e c23 vêm de reportagem em site fora da lista de fontes conhecidas (Atlas Público), e c19 diz que a MP não foi lida no Diário Oficial. O texto trata o conteúdo da MP como lido no original.",
-       "como_fica": "Quem decidiu foi o presidente, que editou a medida provisória. Segundo reportagem que cita a MP, a MP 1.400 muda o artigo 8º e põe o fim do programa em 19/11/2031 [c19, c1]."
-      }
-     ],
-     "graves": [
-      "A tese central (a lei de fevereiro não mexeu no prazo, e a MP corrige isso) apoia-se em c21, uma leitura resumida, e em c19, lido de reportagem. O título e o segundo parágrafo a dão como fato. Se o artigo 8º tiver sido alterado, a tese cai.",
-      "As duas leituras de \"quem defende\" e \"quem critica\" não têm fonte no caderno. São objeções montadas pelo texto e atribuídas a lados que ninguém no caderno ocupa."
-     ],
-     "resumo": "O texto acompanha bem o caderno nos números do orçamento, mas dá como certo o que vem de leitura resumida (c21) e de reportagem (c19). Ele chama a MP de \\\"conserto\\\", o que julga quem decidiu. Atribui argumentos a defensores e críticos que o caderno não traz, e compara o gasto com a dívida sem linha que sustente. Há 13 correções, mais um ajuste na base da conta de R$ 42."
-    },
-    "aplicadas": 13,
-    "codigo": {
-     "graves": [
-      "bloco 4: número ou data sem linha do caderno que confira: 1.313 | trecho: A Lei 15.348, de 13/2/2026, nasceu da MP 1.313 e mudou boa parte da lei original. A Lei 15.348, de 13/2/2026, converteu ",
-      "bloco 10: número ou data sem linha do caderno que confira: 2/2, 1.313 | trecho: A vez parecida é recente. A MP 1.313, a que redesenhou o programa, foi aprovada pela Câmara em 2/2/2026 e pelo Senado no",
-      "bloco 19: número ou data sem linha do caderno que confira: 1/9 | trecho: Um argumento a favor da MP vem dos números: o valor de 2027 já estava no projeto de orçamento divulgado em 1º de setembr"
-     ],
-     "avisos": [
-      "c8 vem de site fora da lista de fontes conhecidas: https://hojediario.com/2026/11/10/governo-prorroga-gas-do-povo-ate-2031-e-libera-31-milhoes-de-vales/",
-      "c19 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
-      "c23 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
-      "c24 vem de site fora da lista de fontes conhecidas: https://soubrasilia.com/gas-do-povo-mp-1400-prorroga-programa-ate-2031-congresso-120-dias-vale-10-novembro/",
-      "c29 vem de site fora da lista de fontes conhecidas: https://www.abcdoabc.com.br/auxilio-gas-fora-do-orcamento-de-2025-ataca-coracao-do-arcabouco-fiscal-diz-ex-secretario-do-tesouro/",
-      "bloco 4: frase de 41 palavras",
-      "siglas que a leitora não conhece, sem nome por extenso ou link: GLP, MP",
-      "título da leitura a fundo: até 110 caracteres, afirmativo e sem dois-pontos"
-     ],
-     "palavras": 1111,
-     "intertitulos": 3
-    },
-    "codigo_depois_da_reescrita": {
-     "graves": [],
-     "avisos": [
-      "c8 vem de site fora da lista de fontes conhecidas: https://hojediario.com/2026/11/10/governo-prorroga-gas-do-povo-ate-2031-e-libera-31-milhoes-de-vales/",
-      "c19 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
-      "c23 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
-      "c24 vem de site fora da lista de fontes conhecidas: https://soubrasilia.com/gas-do-povo-mp-1400-prorroga-programa-ate-2031-congresso-120-dias-vale-10-novembro/",
-      "c29 vem de site fora da lista de fontes conhecidas: https://www.abcdoabc.com.br/auxilio-gas-fora-do-orcamento-de-2025-ataca-coracao-do-arcabouco-fiscal-diz-ex-secretario-do-tesouro/",
-      "bloco 1: frase de 36 palavras",
-      "bloco 5: frase de 38 palavras",
-      "bloco 6: frase de 37 palavras",
-      "bloco 19: frase de 40 palavras",
-      "bloco 20: frase de 45 palavras",
-      "siglas que a leitora não conhece, sem nome por extenso ou link: GLP, MP"
-     ],
-     "palavras": 1050,
-     "intertitulos": 3
-    },
     "final": {
      "graves": [],
      "avisos": [
-      "c8 vem de site fora da lista de fontes conhecidas: https://hojediario.com/2026/11/10/governo-prorroga-gas-do-povo-ate-2031-e-libera-31-milhoes-de-vales/",
-      "c19 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
-      "c23 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
-      "c24 vem de site fora da lista de fontes conhecidas: https://soubrasilia.com/gas-do-povo-mp-1400-prorroga-programa-ate-2031-congresso-120-dias-vale-10-novembro/",
-      "c29 vem de site fora da lista de fontes conhecidas: https://www.abcdoabc.com.br/auxilio-gas-fora-do-orcamento-de-2025-ataca-coracao-do-arcabouco-fiscal-diz-ex-secretario-do-tesouro/",
-      "bloco 20: expressão de piloto automático",
-      "siglas que a leitora não conhece, sem nome por extenso ou link: MP"
+      "bloco 1: porcentagem de meta que a ficha das metas não tem (10,4): confira a meta e a margem em config/metas.json: Segundo a Consultoria de Orçamento da Câmara, são R$ 7,6 bilhões em 2027, o equi",
+      "bloco 9: frase de 44 palavras"
      ],
-     "palavras": 1044,
-     "intertitulos": 3
+     "palavras": 581,
+     "intertitulos": 1
     }
    },
-   "edicao": {
-    "sugestoes": [
-     {
-      "trecho": "e a MP só vale até 2031 se o Congresso votar",
-      "problema": "Sigla que a leitora não conhece, no título, sem nome por extenso.",
-      "como_fica": "Pela lei atualizada, o Gás do Povo venceria em 19/11, e a medida provisória até 2031 depende do Congresso"
-     },
-     {
-      "trecho": "A MP 1.400 estende esse prazo até 19/11/2031",
-      "problema": "MP aparece sem nome por extenso.",
-      "como_fica": "A medida provisória (MP) 1.400 estende esse prazo até 19/11/2031"
-     },
-     {
-      "trecho": "gás liquefeito de petróleo (GLP)",
-      "problema": "Sigla desconhecida, e o nome por extenso já diz o que é.",
-      "como_fica": "\"para mitigar o efeito do preço do gás liquefeito de petróleo\" no orçamento das famílias de baixa renda"
-     },
-     {
-      "trecho": "Pela versão atualizada da Lei 14.237 que a Câmara publica, a lei de fevereiro não mexeu no artigo que dá prazo ao Gás do Povo, embora tenha sido apresentada como a que tornava o programa permanente.",
-      "problema": "Frase de 36 palavras, passa de 30.",
-      "como_fica": "Duas frases: a lei de fevereiro não mexeu no artigo do prazo. Ela foi apresentada como a que tornava o programa permanente."
-     },
-     {
-      "trecho": "a Lei 15.348 alterou os artigos 1º, 1º-A, 2º, 3º, 4º, 4º-A a 4º-K e 7º-A a 7º-H, e revogou o § 1º do artigo 2º e os artigos 6º e 7º",
-      "problema": "Frase de 38 palavras, passa de 30.",
-      "como_fica": "A frase termina em \"7º-A a 7º-H\". Depois vem: \"Também revogou o § 1º do artigo 2º e os artigos 6º e 7º [c21].\""
-     },
-     {
-      "trecho": "A lista de artigos vem de uma leitura resumida da página da lei [c21], e a mudança que a MP 1.400 faz no artigo 8º foi lida numa reportagem que cita a medida, e não no Diário Oficial [c19].",
-      "problema": "Frase de 37 palavras, passa de 30.",
-      "como_fica": "Duas frases, cada uma com a sua fonte: a da lista de artigos e a da mudança no artigo 8º."
-     },
-     {
-      "trecho": "a tese cai, e a MP passa a ser só a extensão de um programa que já não tinha data para acabar.",
-      "problema": "Frase de mais de 30 palavras.",
-      "como_fica": "Se o texto oficial mostrar que o artigo 8º mudou em fevereiro, a tese cai. Nesse caso, a MP seria só a extensão de um programa que já não tinha data para acabar."
-     },
-     {
-      "trecho": "O objetivo que a lei escreveu é amplo, já que o auxílio existe \"para mitigar o efeito do preço do gás liquefeito de petróleo (GLP)\" no orçamento das famílias de baixa renda [c6].",
-      "problema": "Frase de 32 palavras.",
-      "como_fica": "O objetivo escrito na lei é amplo, já que o auxílio existe \"para mitigar o efeito do preço do gás liquefeito de petróleo\" no orçamento das famílias de baixa renda [c6]."
-     },
-     {
-      "trecho": "o que faz a medida parecer o ajuste de um prazo, e não uma despesa nova",
-      "problema": "Frase de 40 palavras, e o contraste em espelho (\"X, e não Y\") é fórmula de efeito.",
-      "como_fica": "Isso faz a medida parecer só o ajuste de um prazo."
-     },
-     {
-      "trecho": "A verba de 2027 é 61,7% maior que a de 2026 [c27], e o programa já teve projeto de orçamento bem abaixo do que custava: em 2024, o projeto de 2025 previa R$ 600 milhões para o então Auxílio Gás, contra R$ 3,5 bilhões naquele ano [c29].",
-      "problema": "Frase de 45 palavras, passa de 30.",
-      "como_fica": "A verba de 2027 é 62% maior que a de 2026 [c27]. Além disso, o programa já teve projeto de orçamento bem abaixo do que custava. Em 2024, o projeto de 2025 previa R$ 600 milhões para o então Auxílio Gás, contra R$ 3,5 bilhões naquele ano [c29]."
-     },
-     {
-      "trecho": "de 81,95% para 82,93% do PIB",
-      "problema": "Duas casas sem necessidade; o guia pede número arredondado (o mesmo vale para 61,7%, que vira 62%).",
-      "como_fica": "de 82% para 83% do PIB"
-     },
-     {
-      "trecho": "O que muda é a garantia. Depois de 19/11, o botijão grátis passa a se apoiar",
-      "problema": "Frases curtas empilhadas que deviam estar ligadas por \"porque\".",
-      "como_fica": "O que muda é a garantia, porque depois de 19/11 o botijão grátis passa a se apoiar na medida provisória e, em até 120 dias, na votação do Congresso [c23, c24]."
-     }
-    ],
-    "aplicada": true
-   },
-   "titulo": "Pela lei atualizada, o Gás do Povo venceria em 19/11, e a medida provisória até 2031 depende do Congresso",
-   "texto": "Pela versão atualizada da Lei 14.237 que a Câmara publica, a lei de fevereiro não mexeu no artigo que dá prazo ao Gás do Povo. Ela foi apresentada como a que tornava o programa permanente. O artigo 8º ainda diz que a lei \"vigorará por 5 (cinco) anos\", contados de 19/11/2021, e por isso o programa acabaria em 19/11 sem a medida provisória [c4, c20, c24].\n\nA medida provisória (MP) 1.400 estende esse prazo até 19/11/2031 [c1, c19], mas a extensão ainda não é lei, porque depende de o Congresso converter a medida em até 120 dias [c23]. A medida provisória anterior do programa só foi votada a poucos dias de perder a validade [c18]. E o dinheiro de cada ano continua sendo decidido no orçamento, que prevê R$ 7,6 bilhões para 2027 [c25].\n\n### A lei de fevereiro mudou quase todo o programa, menos o artigo do prazo\n\nA Lei 15.348, de 13/2/2026, transformou em lei a medida provisória anterior do programa, e a Agência Senado a noticiou como a lei que torna o Gás do Povo permanente [c5]. No texto da notícia, o programa \"passou a ser uma política pública permanente no Brasil\" [c22].\n\nPela página da lei no Planalto, a Lei 15.348 alterou os artigos 1º, 1º-A, 2º, 3º, 4º, 4º-A a 4º-K e 7º-A a 7º-H. Também revogou o § 1º do artigo 2º e os artigos 6º e 7º [c21]. O artigo 8º, que é o do prazo, não aparece nessa lista. Na versão atualizada da Câmara, o artigo 1º traz a anotação da mudança, e o 8º segue sem nenhuma [c20].\n\nA explicação tem um limite, e convém dizê-lo logo. A lista de artigos vem de uma leitura resumida da página da lei [c21]. A mudança que a MP 1.400 faz no artigo 8º foi lida numa reportagem que cita a medida, e não no Diário Oficial [c19]. Se o texto oficial mostrar que o artigo 8º mudou em fevereiro, a tese cai. Nesse caso, a MP seria só a extensão de um programa que já não tinha data para acabar.\n\n### Até 2031 está na medida provisória, mas a duração ainda depende do Congresso\n\nQuem decidiu foi o presidente, que editou a medida provisória, publicada no Diário Oficial em 9/11 [c1]. Ela vale desde a publicação, mas precisa ser convertida em lei pelo Congresso em até 120 dias [c3, c23].\n\nO prazo para de contar durante o recesso do Congresso, e, se deputados e senadores não votarem a medida, ela perde a validade [c24]. Por isso, anunciar o programa até 2031 ainda não é ter o programa em lei até 2031, já que a palavra final sobre a duração fica com o Congresso.\n\nA vez parecida é a da medida provisória anterior, a que redesenhou o programa. Câmara e Senado a aprovaram poucos dias antes de ela caducar, em 11/2 [c18]. O programa não ficou sem lei, mas a votação chegou perto do limite.\n\nÉ um caso só, e um caso não faz padrão, porque ele não diz que a MP de agora vai demorar, nem que vai cair. O que ele mostra é que a continuidade do Gás do Povo já dependeu uma vez do calendário do Congresso, e volta a depender agora.\n\n### O dinheiro de cada ano continua sendo decidido no orçamento\n\nO objetivo escrito na lei é amplo, já que o auxílio existe \"para mitigar o efeito do preço do gás liquefeito de petróleo\" no orçamento das famílias de baixa renda [c6]. Ao justificar a prorrogação, a Secretaria de Comunicação da Presidência falou em manter uma política \"voltada ao enfrentamento da pobreza energética\" [c7]. Nenhum dos dois textos diz quanto do preço do botijão o programa quer cobrir.\n\nAs reportagens sobre a MP também não trazem uma estimativa de custo da prorrogação, e a única cifra é a dos vales liberados em 10/11, acima de R$ 337 milhões [c8]. A própria lei já diz que os efeitos do programa dependem da abertura dos créditos orçamentários [c23]. Por isso, quem decide quanto o programa gasta em cada ano é a lei do orçamento, e não a medida provisória.\n\nO orçamento já mostra a direção. O projeto de 2027, que o governo mandou ao Congresso, reserva R$ 7,6 bilhões ao Gás do Povo, para cerca de 15,4 milhões de famílias [c25]. A lei orçamentária de 2026 previa R$ 4,7 bilhões [c26], o que deixa a verba de 2027 62% acima da deste ano [c27].\n\nPerto da dívida do governo, que subiu de 82% para 83% do PIB de junho a setembro [c15], é um gasto pequeno. O que a MP muda é quanto tempo ele dura, porque uma despesa que tinha data para acabar passa a ter, se o Congresso aprovar, mais cinco anos pela frente [c19].\n\nPara as cerca de 15 milhões de famílias atendidas, ou 45 milhões de pessoas, nada muda hoje [c14]. A recarga de 10/11 libera 3,1 milhões de vales, com 380,5 mil para famílias que entram agora e 2,7 milhões para as que já estavam no programa [c17].\n\nEm 2027, se o orçamento for aprovado como está, o dinheiro reservado dá cerca de R$ 42 por família por mês, em média [c28]. O que muda é a garantia, porque depois de 19/11 o botijão grátis passa a se apoiar na medida provisória e, em até 120 dias, na votação do Congresso [c23, c24].\n\nDois fatos do orçamento puxam para lados diferentes. O primeiro é que o valor de 2027 já estava no projeto de orçamento antes da MP [c25], e as reportagens não trazem custo novo [c8]. Isso faz a medida parecer só o ajuste de um prazo.\n\nO segundo vai na outra direção. A verba de 2027 é 62% maior que a de 2026 [c27]. Além disso, o programa já teve projeto de orçamento bem abaixo do que custava. Em 2024, o projeto de 2025 previa R$ 600 milhões para o então Auxílio Gás, contra R$ 3,5 bilhões naquele ano [c29]. Na época, um ex-secretário do Tesouro criticou esse desenho [c29].\n\nOs números sustentam os dois fatos, e nenhum deles anula o outro. O valor de cada ano fica com o orçamento, que o Congresso vota, e a duração fica com a conversão da MP, que o Congresso também vota.\n\nPara você, a notícia quer dizer que, pela versão atualizada da lei na Câmara, o Gás do Povo não era, no papel, tão permanente quanto se disse em fevereiro. Por enquanto, o botijão grátis segue pela força de uma medida provisória, e o valor que o programa paga em 2027 sai de um orçamento que ainda está em votação. A MP vale desde 9/11, e o Congresso tem até 120 dias para votá-la, sem contar o recesso [c1, c23, c24].",
-   "duracao_escrever_s": 293,
-   "tentativas": [
-    {
-     "em": "2026-11-10T06:02:18-03:00",
-     "resultado": "ok"
-    }
-   ]
+   "titulo": "Governo prorroga o Gás do Povo até 2031, e a conta da dívida segue presa à Selic",
+   "texto": "A medida provisória que prorroga o Gás do Povo até 19/11/2031 saiu ontem no Diário Oficial e não muda a conta da meta de 2027, porque o projeto de Orçamento já trazia o programa [c1, c2]. Segundo a Consultoria de Orçamento da Câmara, são R$ 7,6 bilhões em 2027, o equivalente a 10,4% do centro da meta, de R$ 73,2 bilhões [c4, c6].\n\nA medida provisória 1.400, de 6/11, muda o artigo 8º da lei de 2021 que criou o auxílio [c1]. Ela já vale, mas perde a validade se o Congresso não a aprovar em até 120 dias, depois de uma comissão mista, da Câmara e do Senado [c3]. Segundo a Agência Câmara, a medida não amplia o público, não altera os valores nem muda a forma de execução [c2]. O relato da agência não cita o objetivo da medida nem o custo de cada ano até 2031.\n\nOs relatos oficiais deixam uma dúvida em aberto. Em fevereiro, a Agência Senado descreveu a Lei 15.348 como a lei que tornou o programa permanente, e a medida de ontem põe nele uma data final [c201]. Na nota sobre a medida que criou o programa, a Consultoria de Orçamento do Senado disse que ele não cria despesa obrigatória por si só e que o ritmo de atendimento fica para cada Orçamento [c203]. Por isso a recarga das cerca de 15 milhões de famílias depende do dinheiro que cada Orçamento anual reservar [c1, c203].\n\nOs R$ 7,6 bilhões de 2027 atendem 15,4 milhões de famílias, cerca de R$ 493,5 por família ao ano [c4, c7]. A conta da meta de 2027 dá R$ 83,4 bilhões depois de descontar R$ 64,7 bilhões de precatórios, como a regra permite, acima do centro e do piso de R$ 36,6 bilhões.\n\nO peso do programa aparece quando se somam os anos, porque cinco anos no nível de 2027, sem reajuste, dariam R$ 38 bilhões, numa conta simples que não é estimativa oficial [c8]. Como o dinheiro de cada ano depende do Orçamento anual, a prorrogação não tira o programa do alcance do ajuste gradual que a Fazenda diz preparar, ainda sem data nem medida [c14, c203].\n\n### A conta de juros do governo depende de quanto tempo a Selic fica em 13,75%\n\nO Poder360 informou ontem que o Tesouro terá de refinanciar R$ 1,8 trilhão, porque a parte da dívida que vence em até um ano chegou a 19,95% em setembro [c10]. Refinanciar não é gastar, porque o Tesouro troca o título que vence por outro novo, e o que pesa nas contas é o juro pago na troca. A dívida, em 82,93% do PIB em setembro, está mais alta que em 96% dos meses desde 2006 [c11].\n\nMais da metade da dívida está ligada à Selic, com o recorde de 52,74% em agosto, por isso o juro dela sobe e desce com a decisão do Banco Central. Com a Selic em 13,75%, ou 8,3% ao ano acima da inflação esperada, cada mês de juro parado mantém essa conta cara. Os bancos (Focus) passaram a prever, em 9/11, o próximo corte só em março de 2027, uma previsão que muda toda semana.\n\nPara as empresas, o caminho passa por outro juro. O crédito longo, como o do investimento e o da casa própria, segue o juro de 10 anos, que o governo pagava a 8,0% ao ano acima da inflação em 6/11, e esse juro sobe quando quem investe desconfia do plano para as contas. Assim, o crédito delas depende mais de o ajuste vir com números do que de um programa que já estava no projeto de 2027. A próxima decisão do Banco Central sobre a Selic é em 9/12.",
+   "argumento": "A prorrogação do Gás do Povo não muda a conta da meta de 2027, que já trazia o programa; o custo da dívida a refinanciar segue a Selic, e o crédito longo segue o ajuste.",
+   "porque": "O governo federal editou a medida provisória 1.400 para fixar a vigência do Gás do Povo até 19/11/2031; segundo a Agência Câmara, ela só prorroga o programa, sem ampliar o público nem mudar os valores.",
+   "pressao": "contas",
+   "duracao_s": 492
   },
   "termina_em": "contas",
-  "pergunta": "divida-do-governo"
+  "pergunta": "divida-do-governo",
+  "versao_anterior": {
+   "titulo": "Governo prorroga até 2031 o botijão grátis do Gás do Povo",
+   "paragrafos": [
+    "O governo baixou medida provisória que prorroga até 2031 o botijão grátis do Gás do Povo, que já existia e acabaria neste mês. Pela lei, o auxílio alivia o peso do gás no orçamento das famílias de baixa renda, e o governo cita o combate à pobreza energética.",
+    "A prorrogação depende de o Congresso aprovar a medida em até 120 dias. O orçamento proposto para 2027 reserva R$ 7,6 bilhões, cerca de R$ 42 por família por mês.",
+    "Para as cerca de 15 milhões de famílias atendidas, nada muda agora: a recarga continua, e 3,1 milhões de vales saem hoje."
+   ]
+  },
+  "revisao_manual": "Refeito em 10/11/2026 no texto do dia pela história (pedido do Pedro)."
  },
  "avisos_ao_pedro": [
   "O editor-chefe sentiu falta de uma página no fato do dia de 10/11/2026: O que é uma medida provisória e o que acontece quando ela caduca? A leitora precisa saber disso para ler o \\\"até 2031\\\" de hoje e a MP das dívidas rurais, que pode perder a validade na quarta."

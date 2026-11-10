@@ -24,7 +24,8 @@ launchd, todo dia às 05h45 → run.sh   (uma publicação por dia; se o Mac dor
   │                         (CARTA_EDITORIAL.md)
   ├─ src/fundo.py fazer     no fato do dia, a pesquisa da história (claude -p com busca na internet, src/conta.py e as
   │                         metas de config/metas.json), um texto só e o revisor de três leitores, que devolve
-  │                         objeções em até duas voltas; o código confere cada número (guia em FUNDO.md, uns 25 min)
+  │                         objeções em até duas voltas e uma conferência final só de erros; o código confere
+  │                         cada número (guia em FUNDO.md, uns 25 min)
   ├─ src/escreve_post.py    claude -p escreve o resumo da semana ou do mês a partir da conta pronta, dos dados oficiais
   │                         (o mês) e dos registros em runs/ (a semana); src/edita_texto.py (o editor) revisa e edita o
   │                         rascunho com o PERSONA.md; src/revisa_texto.py confere

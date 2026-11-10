@@ -107,7 +107,7 @@ O revisor lê o rascunho como três leitores e devolve objeções, sem reescreve
 - **Quem defende quem decidiu**: a régua é a da regra, com a margem e os descontos da meta? O motivo oficial está no texto? Algum número foi escolhido para pender para um lado?
 - **Quem critica quem decidiu**: o texto aceitou promessa como fato? Faltou o custo, o prazo ou a conta de quem discorda, como a IFI ou os bancos (Focus)?
 
-As duas últimas cabeças fazem juntas o teste da troca. O revisor também confere as regras do site e pode pesquisar, para trazer o dado e não só apontar a falta: o que ele acha entra no caderno, com o documento. A redação responde às objeções, e a segunda volta só confere se elas foram respondidas e se a reescrita estragou algo. O que sobrar sem resposta sai do texto ou entra como dúvida dita ("o governo não publicou o custo"). São no máximo duas voltas.
+As duas últimas cabeças fazem juntas o teste da troca. O revisor também confere as regras do site e pode pesquisar, para trazer o dado e não só apontar a falta: o que ele acha entra no caderno, com o documento. A redação responde às objeções, e a segunda volta só confere se elas foram respondidas e se a reescrita estragou algo. O que sobrar sem resposta sai do texto ou entra como dúvida dita ("o governo não publicou o custo"). São no máximo duas voltas de objeções. Depois da última reescrita, uma conferência final lê o texto só atrás de erro, sem pesquisar: o número dito dentro da margem quando está fora dela, a causa posta depois do efeito, o fato que o caderno não sustenta. A redação corrige só esses trechos, ou corta a frase, sem acrescentar nada.
 
 ## A conferência
 
@@ -117,4 +117,4 @@ As duas últimas cabeças fazem juntas o teste da troca. O revisor também confe
 
 ## Até onde ir
 
-A rodada das 05h45 tem uns 25 minutos para a pesquisa, o texto e as duas voltas de revisão, para o texto sair no site e no e-mail por volta das 6h. Sem tempo para a pesquisa, o texto sai da ficha da história e dos dados do site. Se o texto falhar, o `src/fundo.py --hoje` tenta de novo no mesmo `run.sh`, e se o dia ainda ficar sem texto, o editor do site recebe um aviso. A pesquisa também diz se a leitora precisaria de uma página do básico que o site ainda não tem; a rodada só avisa o editor do site, que decide se a página sai.
+A rodada das 05h45 tem uns 25 minutos para a pesquisa, o texto, as duas voltas de revisão e a conferência final, para o texto sair no site e no e-mail por volta das 6h. Sem tempo para a pesquisa, o texto sai da ficha da história e dos dados do site. Se o texto falhar, o `src/fundo.py --hoje` tenta de novo no mesmo `run.sh`, e se o dia ainda ficar sem texto, o editor do site recebe um aviso. A pesquisa também diz se a leitora precisaria de uma página do básico que o site ainda não tem; a rodada só avisa o editor do site, que decide se a página sai.
