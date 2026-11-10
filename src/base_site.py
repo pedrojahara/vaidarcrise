@@ -217,13 +217,17 @@ def ponte(post: dict, cfg: dict, assunto: str | None, titulo: str | None = None)
     2. a página da pressão da tese da leitura a fundo (post.termina_em, gravado por src/fundo.py);
     3. a parte da aba O que causa recessão que explica o assunto (ou, sem ele, a pressão da tese), com o título da
        parte no link.
+    No texto do dia pela história (desde 5/11/2026), a página da pressão da história vem primeiro.
     Sem assunto nem tese (posts antigos, dias sem pauta), não há linha."""
     pags = {q["pressao"]: q for q in publicadas().values() if q.get("pressao")}
     tese = post.get("termina_em")
     do_assunto = PRESSOES_DO_ASSUNTO.get(assunto or "", [])
     com_pagina = [pid for pid in do_assunto if pid in pags]
     pelo_titulo = next((pid for pid, rx in PISTAS_DO_TITULO if pid in com_pagina and rx.search(titulo or "")), None)
-    if len(com_pagina) > 1 and pelo_titulo:
+    if post.get("formato") == "historia" and tese in pags:
+        # O texto do dia pela história leva à página da pressão da história.
+        escolha = tese
+    elif len(com_pagina) > 1 and pelo_titulo:
         escolha = pelo_titulo
     elif tese in com_pagina:
         escolha = tese
@@ -251,8 +255,8 @@ def ponte(post: dict, cfg: dict, assunto: str | None, titulo: str | None = None)
 def falta_pagina(rodadas: list[dict], cfg: dict, hoje: str) -> list[str]:
     """Os avisos ao Pedro de que talvez falte uma página (decisão dele em 8/11/2026: o site não cria pergunta sozinho).
     Dois sinais: um assunto sem página de pressão em VEZES_DO_AVISO fatos do dia ou mais nos últimos DIAS_DO_AVISO
-    dias (o link do fato caiu na página O que causa recessão), e o editor-chefe da pesquisa do dia dizendo que sentiu
-    falta de uma página (post.fundo.pagina_que_falta). Uma rodada por dia, a última."""
+    dias (o link do fato caiu na página O que causa recessão), e a pesquisa do texto do dia dizendo que sentiu falta de
+    uma página (post.pesquisa.pagina_que_falta; até 4/11/2026, post.fundo). Uma rodada por dia, a última."""
     por_dia: dict[str, dict] = {}
     for r in rodadas:
         por_dia[(r.get("gerado_em") or r.get("id") or "")[:10]] = r
@@ -268,9 +272,9 @@ def falta_pagina(rodadas: list[dict], cfg: dict, hoje: str) -> list[str]:
         pt = ponte(post, cfg, assunto, titulo_do_fato(r))
         if assunto and (pt is None or pt.get("aba")):
             sem_pagina.setdefault(assunto, []).append(dia)
-        falta = ((post.get("fundo") or {}).get("pagina_que_falta") or "").strip()
+        falta = ((post.get("pesquisa") or post.get("fundo") or {}).get("pagina_que_falta") or "").strip()
         if dia == hoje and falta:
-            avisos.append(f"O editor-chefe sentiu falta de uma página no fato do dia de {_data(dia)}: {falta}")
+            avisos.append(f"A pesquisa do texto do dia de {_data(dia)} sentiu falta de uma página: {falta}")
     nomes = cfg.get("fatores", {})
     for assunto, dias in sem_pagina.items():
         if len(dias) >= VEZES_DO_AVISO and hoje in dias:

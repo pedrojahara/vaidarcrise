@@ -14,7 +14,9 @@ VAI DAR CRISE?
 {% endfor %}{% for i in s.itens or [] %}- {{ i.rotulo }}: {{ i.texto|texto }}
 {% endfor %}{% if s.tabela %}{% for l in s.tabela.linhas %}- {{ l|join(": ") }}
 {% endfor %}{% endif %}{% endfor %}
-{% if post.ponte %}{{ post.ponte.rotulo }}: {{ post.ponte.texto }}
+{% if post.fontes %}De onde vêm os números: {% for x in post.fontes %}{{ x.quem }}{% if x.url %} ({{ x.url }}){% endif %}{{ '; ' if not loop.last else '.' }}{% endfor %}
+
+{% endif %}{% if post.ponte %}{{ post.ponte.rotulo }}: {{ post.ponte.texto }}
 {{ site }}{{ post.ponte.url }}
 
 {% endif %}{% if post.fundo %}Leitura de {{ post.fundo.minutos }} minutos: {{ post.fundo.titulo }}

@@ -8,10 +8,8 @@ A tradução é escolhida antes do fato e é a mesma para qualquer governo, como
 
 ## Como a tradução chega ao texto
 
-- **As traduções do dia** (preços, dinheiro guardado, salário mínimo e INSS, renda, emprego e juro do crédito) são feitas pelo código toda manhã e entram no caderno da pesquisa como linhas de conta, com o comando e a saída, antes de o editor-chefe decidir (`src/fundo.py`). Nos dias passados, a conta só vê o que já se sabia no dia.
-- **Sem a pesquisa do dia** (quando ela falha, e nos dias de antes dela), o fato do dia recebe só as traduções do dia, feitas do mesmo jeito, e termina na vida da leitora com o número delas (`so_traducoes`, em `src/fundo.py`).
-- **As traduções com número da notícia** (a parcela com o juro novo do banco, a alta do dólar do dia) a pesquisa roda com o número que a fonte deu, e cada uma vira uma linha do caderno.
-- **O editor-chefe** escolhe a tradução que vale para o fato e passa ao fato do dia a frase da vida, com o número, e à leitura a fundo as famílias de referência que o fato atinge.
+- **A pesquisa do dia** roda a tradução quando o argumento do texto chega à vida de alguém (`src/conta.py traduz`), com as séries do site ou com o número que a fonte deu (a parcela com o juro novo do banco, a alta do dólar do dia), e cada conta vira uma linha do caderno, com o comando e a saída (`src/fundo.py`). Nos dias passados, a conta só vê o que já se sabia no dia.
+- **O texto do dia** usa a tradução só quando o fato muda algo com número e prazo, ou quando a leitora acharia que muda e não muda ([FUNDO.md](FUNDO.md)). A frase sobre a vida não entra em todo texto: o e daí é a conclusão do argumento.
 - **A conferência** roda o comando de novo e confere cada número, como em qualquer conta do caderno.
 
 ## Regras que valem para toda tradução
@@ -25,7 +23,7 @@ A tradução é escolhida antes do fato e é a mesma para qualquer governo, como
 
 ## As famílias de referência
 
-O texto as chama pela situação, sem nome inventado. Na leitura a fundo entram só as que o fato atinge, cada uma com o número dela; nas 100 palavras, no máximo uma oração.
+O texto as chama pela situação, sem nome inventado. No texto do dia entram só as que o fato atinge, cada uma com o número dela, e só quando o argumento chega à vida delas.
 
 | Família | Portas | Traduções |
 | --- | --- | --- |

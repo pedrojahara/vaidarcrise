@@ -1,10 +1,11 @@
 """O editor do site: lê o rascunho de um texto com o guia de escrita (PERSONA.md), aponta o que foge do estilo,
 diz como fica e devolve o texto editado.
 
-Roda sozinho em todo post, entre o redator e a publicação (src/escreve_post.py), e à mão em qualquer texto:
+Roda sozinho nos resumos da semana e do mês, entre o redator e a publicação (src/escreve_post.py), e à mão em
+qualquer texto. O texto do dia tem o revisor de três leitores dele (src/fundo.py), que também lê o PERSONA.md.
 
-  python src/edita_texto.py runs/2026-11-01T0630.json             # mostra as sugestões e o post editado
-  python src/edita_texto.py runs/2026-11-01T0630.json --grava     # grava o post editado na rodada
+  python src/edita_texto.py runs/2026-11-08T0630.json             # mostra as sugestões e o resumo editado
+  python src/edita_texto.py runs/2026-11-08T0630.json --grava     # grava o resumo editado na rodada
   python src/edita_texto.py editor/2026-10-28-retrato-do-brasil.md [--grava]
 
 O editor não muda fato, número nem data: o post editado passa de novo pelo verificador (src/revisa_texto.py), e a
@@ -34,16 +35,11 @@ _SUGESTOES = {
                        "como_fica": {"type": "string", "maxLength": 600}}}}
 
 LIMITES = {
-    "dia": "fato do dia: título de até 70 caracteres; de 1 a 3 parágrafos, até 100 palavras no total",
     "semana": "resumo da semana: título de até 70 caracteres; abertura, de 2 a 3 movimentos com rótulo (nome de pressão "
               "ou de assunto das notícias, sem mudar) e fecho; até 250 palavras",
     "mes": "resumo do mês: título de até 70 caracteres; abertura, de 1 a 3 parágrafos de história e 1 a 2 de fecho; "
            "até 300 palavras (a tabela das cinco pressões é feita por código e não entra no texto)",
     "texto": "texto à mão: mesmo tamanho ou menor, com os mesmos títulos de seção, links e lista",
-    "fundo": "leitura a fundo do fato do dia (src/fundo.py e FUNDO.md): título de até 110 caracteres, afirmativo e sem "
-             "dois-pontos; texto corrido de 800 a 1.500 palavras, com até 3 intertítulos em linhas que começam com '### ', "
-             "cada um uma frase; parágrafos separados por linha em branco. Mantenha cada marca [c3] logo depois da frase "
-             "que usa a linha do caderno, sem criar marca nova. Não junte nem separe partes: mexa nas frases",
 }
 
 SISTEMA = """Você é o editor do blog vaidarcrise.com.br. Um redator escreveu o rascunho abaixo, e o seu trabalho é deixá-lo pronto para publicar no estilo do site, que está no guia entre <guia> e </guia>. Leia o rascunho como a leitora do guia: com curso superior e sem ter estudado economia, no celular, com pouco tempo e gostando de política.
@@ -78,9 +74,6 @@ def esquema(tipo: str) -> dict:
     if tipo == "texto":
         base = {"type": "object", "additionalProperties": False, "required": ["texto"],
                 "properties": {"texto": {"type": "string", "maxLength": 20000}}}
-    elif tipo == "fundo":
-        base = {"type": "object", "additionalProperties": False, "required": ["titulo", "texto"],
-                "properties": {"titulo": {"type": "string", "maxLength": 140}, "texto": {"type": "string", "maxLength": 16000}}}
     else:
         import escreve_post
         base = copy.deepcopy(escreve_post.SCHEMAS[tipo])
@@ -102,7 +95,7 @@ def editar(rascunho: dict, tipo: str, dados: str | None = None, problemas: list[
         partes.append("Problemas que o verificador achou no rascunho:\n- " + "\n- ".join(problemas))
     partes.append("Edite o rascunho conforme o guia e devolva o JSON do esquema: as sugestões e o texto editado.")
     r = classify_news.chamar_claude(SISTEMA.format(limites=LIMITES[tipo]), "\n\n".join(partes), esquema(tipo), budget_usd,
-                                   etapa="editor_fundo" if tipo == "fundo" else "editor")
+                                   etapa="editor")
     if not r["ok"]:
         return {"ok": False, "saida": None, "sugestoes": [], "meta": r["meta"]}
     saida = dict(r["saida"])
@@ -135,8 +128,11 @@ def _edita_rodada(caminho: Path, grava: bool) -> int:
     if not post.get("ok"):
         print("Esta rodada não tem post publicado.")
         return 1
-    cx = escreve_post.contexto_da_rodada(alvo)
     tipo = post.get("tipo") or "dia"
+    if tipo == "dia":
+        print("O texto do dia passa pelo revisor de src/fundo.py; para refazer: src/fundo.py runs/<id>.json --grava")
+        return 1
+    cx = escreve_post.contexto_da_rodada(alvo)
     rascunho = escreve_post.saida_do_post(tipo, post)
     probs = revisa_texto.problemas_post(post, **cx["ctx"])
     ed = editar(rascunho, tipo, cx["dados"], probs)

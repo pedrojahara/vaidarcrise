@@ -140,8 +140,8 @@ def _quem(ev: dict) -> str:
 
 
 def bloco_pesquisa(ev: dict | None) -> str:
-    """O que a pesquisa e o editor-chefe recebem quando o fato do dia é uma decisão pública: as perguntas do nível e,
-    na análise, a entrada da biblioteca do tipo."""
+    """O que a pesquisa, a redação e o revisor do texto do dia recebem quando o fato do dia é uma decisão pública: as
+    perguntas do nível e, na análise, a entrada da biblioteca do tipo."""
     nv = nivel(ev)
     if not nv:
         return ""

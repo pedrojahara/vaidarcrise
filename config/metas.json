@@ -1,0 +1,40 @@
+{
+ "_leia": "As metas oficiais que o texto do dia usa como régua (src/fundo.py, a ficha da história). Escritas e conferidas à mão, nos documentos oficiais; a IA do dia não muda este arquivo. Cada meta diz o centro, a margem que a regra aceita, o que a regra deixa descontar e a fonte. Mudou a lei ou a resolução, mude aqui.",
+ "conferido_em": "2026-11-10",
+ "metas": [
+  {
+   "id": "fiscal_2026",
+   "historias": ["contas_governo"],
+   "o_que": "Resultado primário do governo central em 2026 (o que o governo arrecada menos o que gasta, sem os juros da dívida)",
+   "centro": "superávit de 0,25% do PIB, cerca de R$ 34,3 bilhões",
+   "margem": "0,25 ponto do PIB para cima ou para baixo: a meta é cumprida com qualquer resultado entre zero e superávit de 0,50% do PIB",
+   "piso": "resultado zero; a LDO deixa o governo mirar o piso da banda ao decidir os bloqueios",
+   "descontos": "a regra deixa de fora da conta da meta parte dos precatórios (dívidas do governo reconhecidas pela Justiça) e outras despesas listadas na lei",
+   "como_se_mede": "a meta vale para o ano fechado; o resultado de 12 meses que o Tesouro divulga todo mês inclui despesas que a regra desconta e não é a conta da meta",
+   "fonte": {"quem": "Consultoria de Orçamento do Senado, informativo do projeto da LDO 2026", "url": "https://www12.senado.leg.br/orcamento/documentos/estudos/tipos-de-estudos/notas-tecnicas-e-informativos/informativo_pldo-2026.pdf"}
+  },
+  {
+   "id": "fiscal_2027",
+   "historias": ["contas_governo"],
+   "o_que": "Resultado primário do governo central em 2027",
+   "centro": "superávit de 0,50% do PIB, R$ 73,2 bilhões no projeto de Orçamento",
+   "margem": "0,25 ponto do PIB para cima ou para baixo: de 0,25% (R$ 36,6 bilhões) a 0,75% do PIB",
+   "piso": "superávit de 0,25% do PIB, R$ 36,6 bilhões",
+   "descontos": "o projeto de Orçamento de 2027 tira da conta da meta R$ 64,7 bilhões, quase tudo precatórios (a Emenda Constitucional 136/2025 só põe na conta 39% deles)",
+   "como_se_mede": "o projeto de Orçamento prevê resultado efetivo de R$ 18,6 bilhões (0,13% do PIB), com todas as despesas; com os descontos, a conta da meta dá R$ 83,4 bilhões, acima do centro. Quem compara os R$ 18,6 bilhões com a meta mistura as duas contas",
+   "fonte": {"quem": "Consultoria de Orçamento da Câmara, Raio-X do projeto de Orçamento de 2027", "url": "https://www2.camara.leg.br/orcamento-da-uniao/raio-x-do-orcamento/2027/RaioX_PLOA_2027.pdf"},
+   "quem_faz_outra_conta": "a IFI, do Senado, faz a própria projeção do resultado no Relatório de Acompanhamento Fiscal"
+  },
+  {
+   "id": "inflacao",
+   "historias": ["juro_inflacao", "guerra_petroleo"],
+   "o_que": "Inflação medida pelo IPCA em 12 meses",
+   "centro": "3%",
+   "margem": "1,5 ponto para cima ou para baixo: de 1,5% a 4,5%",
+   "piso": "1,5%",
+   "descontos": "nenhum",
+   "como_se_mede": "meta contínua desde 2025: a conta é feita todo mês, com o IPCA de 12 meses, e a meta só é descumprida quando a inflação fica fora da faixa por seis meses seguidos; aí o Banco Central explica o motivo em carta aberta ao ministro da Fazenda",
+   "fonte": {"quem": "Decreto 12.079/2024 e Resolução 5.141/2024 do Conselho Monetário Nacional, como o Banco Central os resume na carta aberta de 2024", "url": "https://www.bcb.gov.br/content/controleinflacao/controleinflacao_docs/carta_aberta/carta2024.pdf"}
+  }
+ ]
+}

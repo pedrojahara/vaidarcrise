@@ -96,6 +96,7 @@ a.termo{color:inherit}
     {% for l in s.tabela.linhas %}<tr>{% for c in l %}<td class="e-fio" style="padding:8px 10px 8px 0;border-bottom:1px solid #e4e6e8;vertical-align:top;color:#1e1f21;font:{% if loop.first %}600 {% endif %}15px/1.45 {{ sistema }}">{{ c }}</td>{% endfor %}</tr>{% endfor %}
   </table>{% endif %}
   {% endfor %}
+  {% if post.fontes %}<p class="e-meta" style="margin:0 0 16px;font:13.5px/1.45 {{ sistema }};color:#62666b">De onde vêm os números: {% for x in post.fontes %}{% if x.url %}<a href="{{ x.url }}" class="e-meta" style="color:#62666b">{{ x.quem }}</a>{% else %}{{ x.quem }}{% endif %}{{ '; ' if not loop.last else '.' }}{% endfor %}</p>{% endif %}
   {% if post.ponte %}<p class="e-meta" style="margin:2px 0 18px;font:14px/1.4 {{ sistema }};color:#62666b">{{ post.ponte.rotulo }}<br><a href="{{ site }}{{ post.ponte.url }}" class="e-link" style="display:inline-block;margin-top:2px;font:700 17px/1.35 {{ serifa }};color:#1f4fbf;text-decoration:none">{{ post.ponte.texto }}</a></p>{% endif %}
   {% if post.fundo %}
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="e-fio" style="margin:4px 0 18px;border:1px solid #e4e6e8;border-radius:10px;border-collapse:separate">

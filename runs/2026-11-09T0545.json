@@ -330,7 +330,12 @@
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "O presidente falou em preocupação com a dívida, mas citou programas sociais que elevam o gasto e não disse como fará o ajuste. Sem medidas concretas, a dúvida sobre as contas e sobre o juro longo continua."
+     "porque": "O presidente falou em preocupação com a dívida, mas citou programas sociais que elevam o gasto e não disse como fará o ajuste. Sem medidas concretas, a dúvida sobre as contas e sobre o juro longo continua.",
+     "historia": "contas_governo",
+     "marco": true,
+     "previsao_virou": false,
+     "sem_medida": true,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -358,7 +363,12 @@
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": "ev-20261103-01",
-     "porque": "O mercado teme que o governo tente baixar a Selic sem ajustar as contas e influencie o Banco Central. Se o temor crescer, o juro que o governo paga para se financiar sobe, e o crédito encarece para empresas e famílias."
+     "porque": "O mercado teme que o governo tente baixar a Selic sem ajustar as contas e influencie o Banco Central. Se o temor crescer, o juro que o governo paga para se financiar sobe, e o crédito encarece para empresas e famílias.",
+     "historia": "limitar_juro",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -380,7 +390,12 @@
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "Menos dias de trabalho por semana elevam o custo das empresas, sobretudo em comércio e serviços, que podem contratar menos. O Supremo Tribunal Federal faz audiência na terça-feira sobre o calendário da mudança."
+     "porque": "Menos dias de trabalho por semana elevam o custo das empresas, sobretudo em comércio e serviços, que podem contratar menos. O Supremo Tribunal Federal faz audiência na terça-feira sobre o calendário da mudança.",
+     "historia": "nova",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": "fim-da-escala-6x1"
     },
     {
      "noticia_ids": [
@@ -403,7 +418,12 @@
      "ja_no_preco": true,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "O petróleo segue caro lá fora por causa do conflito na região, e isso pressiona combustíveis e preços no Brasil. O Iraque diz ter chegado a um entendimento com os EUA para exportar por Ormuz, o que alivia um pouco a oferta."
+     "porque": "O petróleo segue caro lá fora por causa do conflito na região, e isso pressiona combustíveis e preços no Brasil. O Iraque diz ter chegado a um entendimento com os EUA para exportar por Ormuz, o que alivia um pouco a oferta.",
+     "historia": "guerra_petroleo",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -424,7 +444,12 @@
      "ja_no_preco": false,
      "ja_nos_indicadores": false,
      "duplicata_de": null,
-     "porque": "A China é a maior compradora de soja do Brasil. Se produzir mais em casa, o país exporta menos para lá, e o agronegócio perde receita nos próximos anos."
+     "porque": "A China é a maior compradora de soja do Brasil. Se produzir mais em casa, o país exporta menos para lá, e o agronegócio perde receita nos próximos anos.",
+     "historia": "nova",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": "china-e-a-soja"
     },
     {
      "noticia_ids": [
@@ -444,7 +469,12 @@
      "ja_no_preco": true,
      "ja_nos_indicadores": false,
      "duplicata_de": "ev-20261107-01",
-     "porque": "Bancos e consultorias projetam crescimento baixo e preços ainda altos em 2027. Com o juro alto e a atividade fraca, a economia fica mais perto de dois trimestres de queda do PIB."
+     "porque": "Bancos e consultorias projetam crescimento baixo e preços ainda altos em 2027. Com o juro alto e a atividade fraca, a economia fica mais perto de dois trimestres de queda do PIB.",
+     "historia": "ritmo_emprego",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     }
    ]
   }
@@ -2489,7 +2519,7 @@
   ]
  },
  "pauta": {
-  "versao": 1,
+  "versao": 2,
   "candidatos": [
    {
     "id": "E1",
@@ -2504,11 +2534,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "O presidente falou em preocupação com a dívida, mas citou programas sociais que elevam o gasto e não disse como fará o ajuste. Sem medidas concretas, a dúvida sobre as contas e sobre o juro longo continua.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": true,
+    "previsao_virou": false,
+    "sem_medida": true,
     "n_manchetes": 8,
     "jornais": [
      "Estadão",
@@ -2569,11 +2599,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "O mercado teme que o governo tente baixar a Selic sem ajustar as contas e influencie o Banco Central. Se o temor crescer, o juro que o governo paga para se financiar sobe, e o crédito encarece para empresas e famílias.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "limitar_juro",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 8,
     "jornais": [
      "Estadão",
@@ -2629,11 +2659,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Menos dias de trabalho por semana elevam o custo das empresas, sobretudo em comércio e serviços, que podem contratar menos. O Supremo Tribunal Federal faz audiência na terça-feira sobre o calendário da mudança.",
-    "vida": {
-     "tamanho": 1,
-     "porta": "emprego",
-     "quem": "quem trabalha seis dias por semana no comércio e nos serviços"
-    },
+    "historia": "nova",
+    "tema_novo": "fim-da-escala-6x1",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 3,
     "jornais": [
      "Valor"
@@ -2673,11 +2703,11 @@
     "lado": "pesa",
     "ja_esperado": true,
     "porque": "O petróleo segue caro lá fora por causa do conflito na região, e isso pressiona combustíveis e preços no Brasil. O Iraque diz ter chegado a um entendimento com os EUA para exportar por Ormuz, o que alivia um pouco a oferta.",
-    "vida": {
-     "tamanho": 1,
-     "porta": "precos",
-     "quem": "quem abastece o carro e paga por frete e transporte"
-    },
+    "historia": "guerra_petroleo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 3,
     "jornais": [
      "Folha",
@@ -2712,11 +2742,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "A China é a maior compradora de soja do Brasil. Se produzir mais em casa, o país exporta menos para lá, e o agronegócio perde receita nos próximos anos.",
-    "vida": {
-     "tamanho": 1,
-     "porta": "renda",
-     "quem": "produtores de soja e quem trabalha no agronegócio exportador"
-    },
+    "historia": "nova",
+    "tema_novo": "china-e-a-soja",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 2,
     "jornais": [
      "Estadão",
@@ -2751,11 +2781,11 @@
     "lado": "pesa",
     "ja_esperado": true,
     "porque": "Bancos e consultorias projetam crescimento baixo e preços ainda altos em 2027. Com o juro alto e a atividade fraca, a economia fica mais perto de dois trimestres de queda do PIB.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "ritmo_emprego",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 1,
     "jornais": [
      "Gazeta do Povo"
@@ -2775,706 +2805,752 @@
   "pressoes_mudaram": [],
   "estado": "subindo",
   "estado_anterior": "subindo",
-  "degrau": 5,
-  "motivo": "a notícia de estágio mais firme e maior tamanho; no empate, a que não é o vaivém do mercado do dia e a que saiu em mais jornais",
-  "padrao": "E4",
-  "final": "E4",
-  "mesma_historia": [],
-  "cuidados": [
-   "A cotação reabriu em leve queda. O texto não pode dizer que o petróleo subiu.",
-   "O entendimento do Iraque com os EUA é uma declaração de um ministro. Não é acordo fechado nem exportação já liberada.",
-   "Use só os números das manchetes do próprio fato. Elas não trazem o valor do barril, então não cite preço."
-  ],
-  "editora": {
-   "ok": true,
-   "saida": {
-    "segue_padrao": true,
-    "escolha": "E4",
-    "motivo_desvio": null,
-    "por_que": "Não há mudança de direção, de pressão nem data marcada. No degrau 5, E4 é o único dado divulgado entre os candidatos. Os outros são anúncio, rumor ou previsão. Nenhum motivo de troca se aplica.",
-    "concorrente": "E1",
-    "por_que_perdeu": "E1 saiu em mais jornais, mas é um discurso sem ato formal e sem medida concreta. Trocar um fato consumado por anúncio não é permitido.",
-    "mesma_historia": [],
-    "cuidados": [
-     "A cotação reabriu em leve queda. O texto não pode dizer que o petróleo subiu.",
-     "O entendimento do Iraque com os EUA é uma declaração de um ministro. Não é acordo fechado nem exportação já liberada.",
-     "Use só os números das manchetes do próprio fato. Elas não trazem o valor do barril, então não cite preço."
+  "direcao_mudou": false,
+  "historias": [
+   {
+    "id": "contas_governo",
+    "titulo": "Contas do governo: a meta, o ajuste prometido e a dívida",
+    "pressao": "contas",
+    "pressoes": [
+     "contas",
+     "divida_reais",
+     "mercado",
+     "juro"
     ],
-    "testes": {
-     "troca": "Sim. Com outro governo no poder, o petróleo caro por causa do conflito em Ormuz continuaria sendo o fato consumado mais firme da pauta.",
-     "fato": "É dado divulgado: a cotação do petróleo de 08/11. Não é previsão, opinião nem rumor.",
-     "consequencia": "Petróleo caro pressiona combustíveis e preços no Brasil. Isso afeta a Inflação esperada e o preço que a leitora paga.",
-     "novidade": "A leitora fica sabendo que o petróleo segue caro mesmo com leve queda na abertura e que o Iraque diz ter um entendimento para exportar por Ormuz. Em 03/11 o site contou a queda do petróleo por sinal de paz, e agora os ataques a navios continuam.",
-     "mais_dada": "O discurso de Lula sobre compromisso fiscal (E1) saiu em mais jornais e manchetes. Ficou de fora porque é anúncio sem ato formal, e o código não deixa trocar dado divulgado por anúncio."
-    }
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E1"
+    ],
+    "jornais": 4,
+    "fato_grande": false
    },
-   "meta": [
-    {
-     "etapa": "editora",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "0350feca8e06bfd09183f44553d7dafa0ac05b65452f61e8d0d80546a8bef417",
-     "system_sha256": "7666a59ef8e1ef6a4a5af31baeef2101ab04d903c6ab0c074abc79b1ba03b71d",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.075572,
-     "turnos": 2,
-     "duracao_s": 12,
-     "modelos": [
-      "claude-sonnet-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "b9f9af3b-83af-4fcc-9f0c-cab1806e25ed"
-    }
-   ],
-   "conferencia": "seguiu a escolha padrão"
+   {
+    "id": "guerra_petroleo",
+    "titulo": "A guerra no Oriente Médio e o petróleo",
+    "pressao": "inflacao",
+    "pressoes": [
+     "inflacao",
+     "juro",
+     "contas",
+     "mercado"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E4"
+    ],
+    "jornais": 2,
+    "fato_grande": false
+   }
+  ],
+  "temas_esperando": [
+   {
+    "tema": "fim-da-escala-6x1",
+    "titulo": "Governo deve publicar decreto que regulamenta o fim da escala 6x1",
+    "candidatos": [
+     "E3"
+    ],
+    "dias": 1
+   },
+   {
+    "tema": "china-e-a-soja",
+    "titulo": "China planeja produzir mais soja e ameaça vendas do Brasil",
+    "candidatos": [
+     "E5"
+    ],
+    "dias": 1
+   }
+  ],
+  "escolha": {
+   "historia": "contas_governo",
+   "titulo": "Contas do governo: a meta, o ajuste prometido e a dívida",
+   "pontos": 1.0,
+   "motivo": "nenhuma história passou de 1.5: dia calmo",
+   "calmo": true,
+   "nova": false,
+   "pulada": null,
+   "segunda": null
+  },
+  "final": "E1",
+  "mesma_historia": [],
+  "segunda_historia": [],
+  "refeita_em": "2026-11-10",
+  "antes": {
+   "degrau": 5,
+   "final": "E4",
+   "titulo": "Petróleo Brent fica perto de US$ 97 com ataques a navios perto de Ormuz"
   }
  },
  "post": {
-  "tipo": "dia",
-  "porque": {
-   "caderno": [
-    "c1",
-    "c17",
-    "c13",
-    "c2",
-    "c19",
-    "c20",
-    "c21"
-   ]
-  },
   "ok": true,
-  "titulo": "Petróleo abre em leve queda mesmo com ataques a navios perto de Ormuz",
+  "tipo": "dia",
+  "formato": "historia",
+  "titulo": "Presidente reafirma o compromisso fiscal sem número, e a conta de 2027 segue em disputa",
   "paragrafos": [
-   "O petróleo reabriu em leve queda lá fora, mesmo com ataques a navios perto de Ormuz, segundo a Folha. Ao Valor, um ministro do Iraque disse que o país se entendeu com os EUA para exportar por Ormuz, o que ainda é declaração, e não acordo fechado.",
-   "O barril em queda não baixa a bomba sozinho, porque, pela Abicom, no fim de outubro o diesel da Petrobras custava R$ 3,53 por litro menos que o importado. Por isso nada muda hoje no posto, onde o preço depende da Petrobras e da ajuda do governo ao diesel, renovada por 30 dias."
+   "O presidente reafirmou na televisão, no domingo, o compromisso com a responsabilidade fiscal, mas não deu medida, tamanho nem data para o ajuste. Nenhum documento oficial traz uma meta para esse ajuste. O ministro da Casa Civil falou só em levar o investimento de cerca de 17% para 20% ou 21% do PIB.",
+   "O que está em jogo é a conta de 2027, cujo Orçamento o Congresso ainda vota. A meta é o governo arrecadar R$ 73,2 bilhões a mais do que gasta, sem contar os juros, e ela já conta como cumprida a partir de R$ 36,6 bilhões. O projeto prevê uma sobra de R$ 18,6 bilhões com todas as despesas. Como a regra deixa de fora R$ 64,7 bilhões, quase tudo precatórios, a conta da meta dá R$ 83,4 bilhões, acima do centro.",
+   "A IFI, do Senado, conta todas as despesas, sem esses descontos. Em setembro, ela previu um déficit de R$ 86,1 bilhões, contra a sobra de R$ 18,6 bilhões do projeto na mesma conta. O governo deixou as medidas para depois da conferência do clima da ONU, sem data para anunciá-las, e o número delas vai pesar no juro de 10 anos, que chega ao crédito longo das empresas. Em 6/11, esse juro estava em 8,0% ao ano acima da inflação, mais alto que em 91% dos meses desde 2005."
   ],
   "secoes": [
    {
+    "titulo": null,
     "paragrafos": [
-     "O petróleo reabriu em leve queda lá fora, mesmo com ataques a navios perto de Ormuz, segundo a Folha. Ao Valor, um ministro do Iraque disse que o país se entendeu com os EUA para exportar por Ormuz, o que ainda é declaração, e não acordo fechado.",
-     "O barril em queda não baixa a bomba sozinho, porque, pela Abicom, no fim de outubro o diesel da Petrobras custava R$ 3,53 por litro menos que o importado. Por isso nada muda hoje no posto, onde o preço depende da Petrobras e da ajuda do governo ao diesel, renovada por 30 dias."
+     "O presidente reafirmou na televisão, no domingo, o compromisso com a responsabilidade fiscal, mas não deu medida, tamanho nem data para o ajuste. Nenhum documento oficial traz uma meta para esse ajuste. O ministro da Casa Civil falou só em levar o investimento de cerca de 17% para 20% ou 21% do PIB.",
+     "O que está em jogo é a conta de 2027, cujo Orçamento o Congresso ainda vota. A meta é o governo arrecadar R$ 73,2 bilhões a mais do que gasta, sem contar os juros, e ela já conta como cumprida a partir de R$ 36,6 bilhões. O projeto prevê uma sobra de R$ 18,6 bilhões com todas as despesas. Como a regra deixa de fora R$ 64,7 bilhões, quase tudo precatórios, a conta da meta dá R$ 83,4 bilhões, acima do centro.",
+     "A IFI, do Senado, conta todas as despesas, sem esses descontos. Em setembro, ela previu um déficit de R$ 86,1 bilhões, contra a sobra de R$ 18,6 bilhões do projeto na mesma conta. O governo deixou as medidas para depois da conferência do clima da ONU, sem data para anunciá-las, e o número delas vai pesar no juro de 10 anos, que chega ao crédito longo das empresas. Em 6/11, esse juro estava em 8,0% ao ano acima da inflação, mais alto que em 91% dos meses desde 2005."
     ]
    }
   ],
-  "problemas": [],
-  "edicao": {
-   "sugestoes": [
-    {
-     "trecho": "pela Abicom",
-     "problema": "Sigla que a leitora não conhece, sem o nome por extenso nem link.",
-     "como_fica": "pela associação dos importadores de combustíveis (Abicom)"
-    },
-    {
-     "trecho": "da ajuda do governo ao diesel, renovada por 30 dias",
-     "problema": "A frase não diz quem renovou nem quando. Quem decidiu tem de ser o sujeito, e a data da decisão está nos dados.",
-     "como_fica": "da ajuda ao diesel, que o governo renovou por 30 dias em 27/10"
-    }
-   ],
-   "aplicada": false,
-   "motivo": "o texto editado tinha mais problemas que o rascunho: número ou data que não está nos dados: 27/10 (use só os números dos dados, sem recalcular); parágrafo 2 com frase de 34 palavras; fato do dia com 108 palavras (até 100): corte o que não é o fato, sem mudar os números; número ou data que não está nos dados: 27/10 (use só os números dos dados, sem recalcular)"
-  },
-  "teste": {
-   "ok": false,
-   "testes": {
-    "porque": {
-     "ok": true,
-     "por_que": "A Folha não diz o que puxou a queda, e o texto também não inventa uma causa: conta a queda apesar dos ataques e põe a fala do ministro iraquiano no nome dele, como declaração."
-    },
-    "quem": {
-     "ok": true,
-     "por_que": "Cada ação tem o autor certo: o ministro do Iraque declarou, a Petrobras define o preço do diesel e o governo renovou a subvenção, e nada disso mudaria de sentido com outro governo."
-    },
-    "e_dai": {
-     "ok": false,
-     "por_que": "O texto não liga o fato ao risco de recessão (combustível caro empurra a inflação esperada, hoje acima do teto da meta) e deixa de fora o tamanho e o prazo que o bloco traz para a vida da leitora."
-    },
-    "livro": {
-     "ok": true,
-     "por_que": "A única oração de mecanismo, a do barril que não baixa a bomba sozinho, serve ao e daí do dia e vem presa ao número da Abicom."
-    }
-   },
-   "problemas": [
-    "Falta dizer o que o fato quer dizer para o risco de recessão. Depois de 'O barril em queda não baixa a bomba sozinho', ponha uma frase dizendo que o petróleo segue caro por causa do conflito e pressiona combustíveis e preços no Brasil, quando os bancos (Focus) já esperam inflação de 5,0% em 12 meses, acima do teto da meta de 4,5%.",
-    "'renovada por 30 dias' não diz o prazo. Diga que a Fazenda renovou a subvenção de R$ 2,12 por litro em 27/10, por 30 dias, para a leitora saber até quando vale o 'nada muda hoje'.",
-    "O texto termina em 'nada muda hoje no posto' e deixa de fora o tamanho que o bloco dá. Acrescente o exemplo: se a gasolina subir 10%, isso soma cerca de 0,47 ponto ao IPCA. Avise que a conta usa o peso da gasolina de 2023."
-   ],
-   "reescrita_recusada": {
-    "testes": {
-     "porque": {
-      "ok": true,
-      "por_que": "O texto conta a leve queda mesmo com os ataques e a fala do ministro iraquiano ao Valor sem dizer o que puxou a queda, e a Folha também não diz."
-     },
-     "quem": {
-      "ok": true,
-      "por_que": "Cada ação está com quem a fez: o ministro do Iraque fala do entendimento, a Fazenda renova a subvenção e os bancos do Focus fazem a previsão."
-     },
-     "e_dai": {
-      "ok": false,
-      "por_que": "O texto troca o porquê da bomba pelo conflito, que não está no bloco, deixa de fora a defasagem de R$ 3,53 e a Petrobras e põe a inflação do Focus solta, sem ligar o petróleo ao risco."
-     },
-     "livro": {
-      "ok": true,
-      "por_que": "Não há explicação geral de como o petróleo age nos preços tomando o espaço do porquê do dia."
-     }
-    },
-    "problemas_verificador": [
-     "número ou data que não está nos dados: 27/10, 2023 (use só os números dos dados, sem recalcular)",
-     "número ou data que não está nos dados: 27/10, 2023 (use só os números dos dados, sem recalcular)"
-    ]
-   }
-  },
-  "meta": [
-   {
-    "etapa": "post",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "53f9a2ee93cfbc528c273b00402cd3a900dab822701225708c662852b9f44cee",
-    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.10748260000000001,
-    "turnos": 2,
-    "duracao_s": 28,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "22e801f4-2436-4ad7-8a68-0b7b20d4f3a4"
-   },
-   {
-    "etapa": "editor",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "d8e0a78f6bd4da41354848842de58b54335c9ab170b355626ecfa87a043dc407",
-    "system_sha256": "4c7e8c0f33317bc6d454b5ff1a997da9df57cacbbd46c9781db8192f030feaf7",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.2598822,
-    "turnos": 2,
-    "duracao_s": 18,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "2a362456-691a-4609-bb8f-ddd0ef244d6c"
-   },
-   {
-    "etapa": "teste",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "e26d506927531f38b048c76dc360fbafad38c937b78f2a6641675a161c0c53d7",
-    "system_sha256": "ec2846d97f94584650118e7a41a2898f261e7c831f55e498dddb6de838a29151",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.0751136,
-    "turnos": 2,
-    "duracao_s": 16,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "44d048a8-43b9-409c-84fe-be2ae77d74b5"
-   },
-   {
-    "etapa": "post",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "ed2163efaea8cb74992ae4017161e7980fd72dfb20627fb3e96e80f80d73034b",
-    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.23934260000000002,
-    "turnos": 2,
-    "duracao_s": 78,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "2590322f-4c9a-4515-8632-ffdab9f3a02e"
-   },
-   {
-    "etapa": "teste",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "ac6712e33ca58c86aa7acc9d958dc12a7b9ab752344dfe4709f05d7eaa00d23c",
-    "system_sha256": "ec2846d97f94584650118e7a41a2898f261e7c831f55e498dddb6de838a29151",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.07928160000000001,
-    "turnos": 2,
-    "duracao_s": 17,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "c87b6ce5-a148-4121-9837-b4d1b673f659"
-   }
-  ],
-  "fundo": {
-   "versao": 3,
+  "pesquisa": {
+   "versao": 4,
    "ok": true,
-   "em": "2026-11-09T05:46:53-03:00",
-   "voltas": [
-    {
-     "volta": 1,
-     "teses": [
-      {
-       "tese": "Petróleo mais barato alivia menos a inflação de hoje do que o risco de reajuste represado de amanhã. Parte do choque está segurada pela subvenção ao diesel de R$ 2,12 por litro e pelo preço da Petrobras, que em outubro estava R$ 3,50 por litro abaixo do internacional. A queda do barril diminui a chance de um repasse de uma vez, como em 2015, quando o IPCA em 12 meses foi de 6,41% a 10,67%.",
-       "por_que_nao_e_obvia": "A manchete diz que petróleo em queda alivia os preços. A tese diz que o alívio principal é sobre o que ainda não foi repassado, não sobre o IPCA que sai em 12/11.",
-       "o_que_muda": "A leitora passa a olhar a subvenção (vence em cerca de 30 dias de 27/10) e o preço da Petrobras, não só o barril, para saber se o combustível sobe em 2027.",
-       "como_pode_dar_errado": "Se a subvenção for retirada ou a Petrobras reajustar e o IPCA e o Focus quase não reagirem, a tese cai. A Abicom mediu R$ 3,50 numa semana de Brent mais alto. 2015 teve também dólar e energia. Com commodities acima de 200 há só 3 episódios.",
-       "caderno": [
-        "c2",
-        "c3",
-        "c4",
-        "c8",
-        "c9",
-        "c10",
-        "c12"
-       ]
-      }
-     ],
-     "editor_chefe": {
-      "veredito": "devolve",
-      "tese": "A tese proposta: o barril mais barato alivia menos a inflação de agora do que reduz o risco de um reajuste represado depois. Parte do choque está segurada pela subvenção ao diesel de R$ 2,12 por litro e pelo preço da Petrobras, que em outubro estava R$ 3,50 por litro abaixo do internacional, segundo a Abicom. O ângulo é bom, mas falta sustentação: o R$ 3,50 é de uma semana com o barril mais alto, vem de fonte secundária, e 2015 não separa o combustível do dólar e da energia.",
-      "testes": {
-       "nao_obvia": {
-        "ok": true,
-        "por_que": "A manchete diz que o barril em queda alivia os preços. A ideia de que o principal está represado, e não no IPCA de 12/11, não está no jornal nem em leitura a fundo recente. A de 07/11 tratou do petróleo pelo lado do dólar e da balança."
-       },
-       "muda_algo": {
-        "ok": true,
-        "por_que": "A leitora passaria a olhar o vencimento da subvenção e o preço da Petrobras, e não só o barril. Mas o texto não diz quando a subvenção vence nem quanto o diesel e a gasolina pesam no IPCA, e sem isso o efeito no bolso fica vago."
-       },
-       "pode_dar_errado": {
-        "ok": true,
-        "por_que": "A tese diz o que a desmentiria: a subvenção acaba ou a Petrobras reajusta, e o IPCA e o Focus quase não reagem."
-       },
-       "no_caderno": {
-        "ok": false,
-        "por_que": "O R$ 3,50 (c3) vem de um site desconhecido que repassa a Abicom e é de outubro. Nenhuma linha mostra que em 2015 a alta do IPCA veio do repasse dos combustíveis (c8 e c9 dão só o índice cheio). O custo da subvenção diverge entre fontes. O Copom (c7) não confere."
-       },
-       "pela_meta": {
-        "ok": true,
-        "por_que": "Não é decisão."
-       }
-      },
-      "roteiro": [],
-      "pressao": "inflacao",
-      "devolve": [
-       "Quanto está represado hoje? Procurar a defasagem da Abicom de novembro (no site da Abicom, não em repasse de terceiros), com a data, separada entre diesel e gasolina.",
-       "Quando a subvenção vence e o que acontece depois? Procurar o ato oficial: a portaria ou o decreto no Diário Oficial ou a nota da Fazenda ou do MME, com a data de fim e o custo oficial, porque as fontes divergem (R$ 10,5 bi, R$ 1,6 bi, R$ 32 bi).",
-       "E daí no bolso? Procurar o peso do diesel e da gasolina no IPCA (IBGE) e fazer com calc a conta de quanto um repasse de uma vez somaria ao índice.",
-       "Já aconteceu antes? Procurar os episódios em que uma defasagem ou um subsídio a combustível acabou (o fim da desoneração em 2023, a liberação dos preços em 2015, a subvenção ao diesel de 2018) e quanto o IPCA de combustíveis subiu depois. Contar por episódio e separar o combustível do dólar e da energia. Sem isso, 2015 não sustenta a tese.",
-       "O que o Banco Central diz? Confirmar no comunicado ou na ata do Copom de 4/11, no site do BC, se ele cita o petróleo e a projeção de 5,6%. A Nomad não basta.",
-       "Melhor objeção: a defasagem encolheu com o barril em queda desde outubro? Se encolheu, o risco represado é menor do que a tese diz."
-      ],
-      "curto": {
-       "porque": "O petróleo segue caro lá fora por causa do conflito perto de Ormuz, onde navios foram atacados. Mesmo assim, a cotação reabriu em leve queda. Um ministro do Iraque disse ter chegado a um entendimento com os EUA para exportar pela região, mas isso ainda não é acordo fechado nem exportação liberada.",
-       "e_dai": "Parte do petróleo caro ainda não chegou à bomba: o governo paga R$ 2,12 por litro de diesel numa subvenção renovada por 30 dias em 27 de outubro.",
-       "objetivo": "",
-       "condicao": "",
-       "caderno": [
-        "c1",
-        "c2"
-       ]
-      },
-      "pagina_que_falta": "Por que o preço do petróleo lá fora nem sempre muda o preço do combustível aqui? A leitora precisa entender o preço da Petrobras e a subvenção para ler este fato, e nenhuma página do site cobre isso."
-     }
-    },
-    {
-     "volta": 2,
-     "teses": [
-      {
-       "tese": "O barril mais barato não encerra o risco de preço dos combustíveis: o diesel da Petrobras já estava R$ 3,53 por litro abaixo do preço de importação, mais do que os R$ 3,52 da subvenção, e a gasolina segue desonerada. A subvenção, renovada por 30 dias em 27/10, vence por volta de 26/11. Se a gasolina subisse 10% de uma vez, somaria cerca de 0,47 ponto ao IPCA, pelo peso implícito de 2023.",
-       "por_que_nao_e_obvia": "A manchete diz que o petróleo cai e alivia. A tese diz que o preço na bomba depende de decisões do governo e da Petrobras (subvenção, desoneração, reajuste), com datas, e não do barril do dia.",
-       "o_que_muda": "A leitora passa a olhar a decisão sobre a subvenção perto de 26/11 e os IPCA de novembro e dezembro, em vez de esperar alívio automático do petróleo.",
-       "como_pode_dar_errado": "Cai se a Petrobras reajustar aos poucos, como a Abicom espera, ou se subvenção e desoneração forem mantidas. O barril caiu mais de 8% duas vezes em novembro e a defasagem pode ter encolhido; não achei medição depois de 23/10. Só há um episódio limpo (2023) e o peso do diesel não foi achado.",
-       "caderno": [
-        "c2",
-        "c13",
-        "c14",
-        "c15",
-        "c17",
-        "c18",
-        "c19",
-        "c20",
-        "c21"
-       ]
-      }
-     ],
-     "editor_chefe": {
-      "veredito": "sem_fundo",
-      "tese": "Sem tese aprovada. A tese proposta, que o barril mais barato não encerra o risco de preço dos combustíveis, se apoia em três coisas fracas. A primeira é uma defasagem do diesel medida por volta de 23/10, antes de duas quedas de cerca de 8% do barril, e o próprio caderno se contradiz sobre ela: a subvenção aparece como R$ 2,12 em c2 e como R$ 3,52 em c13. A segunda é uma data de fim da subvenção contada pela pesquisa, sem a portaria. A terceira é um repasse hipotético de 10% na gasolina, sem defasagem medida da gasolina e com o peso do IPCA de 2023. Há um só episódio parecido.",
-      "testes": {
-       "nao_obvia": {
-        "ok": true,
-        "por_que": "Ligar o barril do dia às decisões que seguram a bomba (subvenção, desoneração, reajuste da Petrobras) não está na manchete e não repete a leitura do dia 7, que tratava do dólar e da balança."
-       },
-       "muda_algo": {
-        "ok": false,
-        "por_que": "O que mudaria a leitura é o tamanho do repasse represado, e a pesquisa não o mede hoje. Os 10% da gasolina são uma hipótese sem base, porque não há número da defasagem da gasolina."
-       },
-       "pode_dar_errado": {
-        "ok": true,
-        "por_que": "A tese cai se a Petrobras reajustar aos poucos, se a subvenção for renovada ou se a defasagem já tiver encolhido com as quedas do barril."
-       },
-       "no_caderno": {
-        "ok": false,
-        "por_que": "A defasagem de R$ 3,53 é anterior às duas quedas de 8%, vem de um site pouco conhecido e compara com uma subvenção de R$ 3,52 que contradiz os R$ 2,12 de c2. O fim em 26/11 é conta da pesquisa sem a portaria. O peso no IPCA é o de 2023, e há um só episódio."
-       },
-       "pela_meta": {
-        "ok": true,
-        "por_que": "Não é decisão."
-       }
-      },
-      "roteiro": [],
-      "pressao": "inflacao",
-      "devolve": [],
-      "curto": {
-       "porque": "Segundo a Folha, a cotação do petróleo reabriu em leve queda mesmo com os ataques a navios perto de Ormuz. Segundo o Valor, o ministro do Petróleo do Iraque disse ter chegado a um entendimento com os EUA para exportar por Ormuz, o que, se virar acordo, alivia um pouco a oferta.",
-       "e_dai": "No Brasil, o preço do diesel na bomba depende também da subvenção que o governo prorrogou no fim de outubro, e não só do barril lá fora.",
-       "objetivo": "",
-       "condicao": "",
-       "caderno": [
-        "c1",
-        "c2"
-       ]
-      },
-      "pagina_que_falta": "Por que o preço da gasolina e do diesel no Brasil não acompanha o petróleo lá fora? Nenhuma página do básico explica a Petrobras, a subvenção e os impostos entre o barril e a bomba, e é isso que a leitora precisa para ler o fato."
-     }
-    },
-    {
-     "volta": 3,
-     "teses": [],
-     "editor_chefe": {
-      "veredito": "aprova",
-      "menor": true,
-      "tese": "O preço do diesel no posto depende hoje de decisões com dono e data, e não do barril do dia: a ajuda de R$ 2,12 por litro, que a Fazenda renovou por 30 dias em 27/10 e que vence no fim de novembro, e o reajuste da Petrobras, que a Abicom espera gradual. A última medida da diferença para o preço lá fora (R$ 3,53 por litro, por volta de 23/10) é anterior a duas quedas de cerca de 8% do barril, e por isso ninguém sabe hoje quanto está represado. Na vez parecida, em março de 2023, uma decisão de data certa sobre a gasolina somou 0,39 ponto ao IPCA do mês.",
-      "testes": {
-       "nao_obvia": {
-        "ok": false,
-        "por_que": "O fato do dia já diz que o posto depende da Petrobras e da ajuda ao diesel. A tese menor ainda traz o que ele não diz: quem decide cada parte e quando, que a medida da diferença é anterior às duas quedas de 8% do barril, o imposto de exportação até 31/12 e a vez de 2023 com o tamanho que teve no IPCA."
-       },
-       "muda_algo": {
-        "ok": true,
-        "por_que": "A leitora passa a ler as próximas notícias de combustível pelo fim da ajuda no fim de novembro e pelo reajuste da Petrobras, e não pela cotação do barril. Também fica sabendo que o tamanho do que está represado não é conhecido hoje."
-       },
-       "pode_dar_errado": {
-        "ok": true,
-        "por_que": "Fica desmentida se o preço do diesel nas refinarias ou no posto mudar seguindo o barril sem que a Petrobras anuncie reajuste e sem mudança na ajuda do governo, ou se uma medida nova da Abicom mostrar que a diferença acabou."
-       },
-       "no_caderno": {
-        "ok": true,
-        "por_que": "A ajuda de R$ 2,12 por 30 dias está em c2, o fim no fim de novembro em c18, a diferença de R$ 3,53 e a data em c13, as quedas de 8% em c17, o reajuste gradual e a gasolina desonerada em c15, o imposto de exportação em c4 e o caso de 2023 em c19. Ficam fora o repasse hipotético de 10%, o peso de 2023 usado como peso de hoje e a comparação com os R$ 3,52, que contradiz c2."
-       },
-       "pela_meta": {
-        "ok": true,
-        "por_que": "não é decisão"
-       }
-      },
-      "roteiro": [
-       "Parte do que o fato do dia não diz: o barril caiu quase 8% em 1/11 e mais de 8% em 4/11 (c17) e reabriu quase parado hoje (c1), e mesmo assim o preço na bomba não andou com ele, porque o posto depende de duas decisões com data.",
-       "A primeira decisão é do governo: a Fazenda renovou por 30 dias, em 27/10, a ajuda de R$ 2,12 por litro de diesel (c2). Contados de 27/10, os 30 dias acabam no fim de novembro (c18), e a renovação depende de uma decisão nova. Dizer que a data exata depende da portaria.",
-       "A segunda é da Petrobras: o presidente da Abicom diz que o conselho tratou da diferença em 26/10 e que o ajuste deve ser gradual, e que a gasolina está desonerada (c15).",
-       "Uma terceira peça do governo mostra a mesma preocupação: o Gecex manteve até 31/12 o imposto de 12% sobre a exportação de petróleo, citando o risco de faltar diesel (c4).",
-       "O que ainda não se sabe, e por quê: a última medida da diferença para o preço de fora é de R$ 3,53 por litro, por volta de 23/10 (c13), antes das duas quedas do barril; em 31/3 eram R$ 3,05 no diesel e R$ 1,61 na gasolina (c16). A diferença de hoje provavelmente é menor, mas não há número, e não há medida da gasolina em outubro.",
-       "A vez parecida: em março de 2023, uma decisão de data certa, a volta do imposto federal, subiu a gasolina 8,33% e somou 0,39 ponto ao IPCA do mês (c19). É um caso só, e foi imposto de uma vez, não reajuste feito aos poucos: mostra o tamanho que uma decisão desse tipo já teve, não prevê o próximo.",
-       "A melhor objeção, da própria Abicom: com reajuste gradual e o barril mais barato, o represado pode ser bem menor do que a medida de outubro sugere (c15, c17).",
-       "A vida da leitora: nada muda hoje no posto; quem abastece com diesel, e quem depende de frete, sente se a ajuda não for renovada no fim de novembro ou se a Petrobras reajustar.",
-       "Fecha com o que desmentiria a leitura (preço mudando com o barril sem decisão da Petrobras nem do governo) e com as próximas datas como fato: IPCA de outubro em 12/11 e prévia de novembro em 26/11."
-      ],
-      "pressao": "inflacao",
-      "devolve": [],
-      "curto": {
-       "porque": "Segundo a Folha, a cotação do petróleo reabriu em leve queda mesmo com os ataques a navios perto de Ormuz. O Valor traz a declaração de um ministro do Iraque de que o país se entendeu com os EUA para exportar por Ormuz, o que aliviaria a oferta. As reportagens não dizem quanto da queda vem de cada coisa.",
-       "e_dai": "O diesel no posto depende de duas decisões com data, a ajuda de R$ 2,12 por litro que vence no fim de novembro e o reajuste da Petrobras, e não do barril.",
-       "vida": "Nada muda hoje no posto. O diesel só sobe para quem abastece e paga frete se a ajuda de R$ 2,12 por litro, que vence no fim de novembro, não for renovada ou se a Petrobras reajustar.",
-       "familias": [
-        {
-         "familia": "outra",
-         "quem": "Quem abastece com diesel e quem depende de frete, como transportadores e caminhoneiros",
-         "o_que_muda": "Nada muda agora; a ajuda de R$ 2,12 por litro renovada por 30 dias em 27/10 vence no fim de novembro, e o preço só muda se ela não for renovada ou se a Petrobras reajustar, o que a Abicom espera que seja feito aos poucos.",
-         "caderno": [
-          "c2",
-          "c18",
-          "c15"
-         ]
-        }
-       ],
-       "objetivo": "",
-       "condicao": "",
-       "caderno": [
-        "c1",
-        "c2",
-        "c18",
-        "c15",
-        "c13",
-        "c17"
-       ]
-      },
-      "pagina_que_falta": "Por que o preço da gasolina e do diesel no posto não acompanha o petróleo lá fora? Nenhuma página do site explica a política de preço da Petrobras, a defasagem e a ajuda do governo, e o fato de hoje depende disso."
-     },
-     "so_editor": true,
-     "em": "2026-11-09T17:02:40+00:00"
-    }
-   ],
+   "em": "2026-11-10T20:10:47+00:00",
    "meta": [
     {
      "etapa": "pesquisa",
      "modelo_pedido": "sonnet",
-     "prompt_sha256": "6f8919139646b06cd9dc1ee53632059616f0d2f3af661e6e075e288816573398",
-     "system_sha256": "f533b8cf4af10e5eaa4d1821b8f082fe39eaa7b129d5c5d422c93e0e55f385c3",
+     "prompt_sha256": "0f4d9dd8dff3709644f3ecc809da0ada6fda0fc7bbbb2b64a80eda3cfbde6713",
+     "system_sha256": "129c5fb070f07d20f5f1a43fc0e0102f2c930b1d12f0a4edf66671ff7effa54e",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.7786758000000001,
-     "turnos": 17,
-     "duracao_s": 121,
+     "custo_usd": 0.5490647000000001,
+     "turnos": 14,
+     "duracao_s": 77,
      "modelos": [
       "claude-sonnet-5-5",
       "claude-haiku-5-5"
      ],
      "permission_denials": [],
-     "session_id": "9bdf115c-94b3-4fb6-b83e-ed02ea8efa01"
-    },
-    {
-     "etapa": "editor_chefe",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "32593bb80b1935ccfc60983cd9e99e85a605e780be284ea6f623b6c81bed61f2",
-     "system_sha256": "3b6325f127ecd89a3bd272efa9ef96ab84ac49fbdd12359d7e9f6e634e2b11dd",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.26313200000000003,
-     "turnos": 2,
-     "duracao_s": 28,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "7efbbd90-8507-4785-aa51-574590b5ee55"
-    },
-    {
-     "etapa": "pesquisa",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "329b2cfc143f68bd63afd89ae3afc75f5b45122a051aa6d9e011d0ceeb68c840",
-     "system_sha256": "f533b8cf4af10e5eaa4d1821b8f082fe39eaa7b129d5c5d422c93e0e55f385c3",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.9716226000000001,
-     "turnos": 21,
-     "duracao_s": 165,
-     "modelos": [
-      "claude-sonnet-5-5",
-      "claude-haiku-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "4b331deb-f609-4864-aceb-7a1037e9125a"
-    },
-    {
-     "etapa": "editor_chefe",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "c1983ffece6d5c37a22f6d32daa4ca4b58986a820e01d31d3f741bcd3e035769",
-     "system_sha256": "3b6325f127ecd89a3bd272efa9ef96ab84ac49fbdd12359d7e9f6e634e2b11dd",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.2603182,
-     "turnos": 2,
-     "duracao_s": 27,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "c9826ec3-64b6-4948-893b-614ef39557d8"
-    },
-    {
-     "etapa": "editor_chefe",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "18c2b5db562e9c7976192a192b0c2d598cbbb676cbc1dfd4e732aa359962ca26",
-     "system_sha256": "6a24d631df6696859a9bd2b0011854ba63812942cedacee451450ccd3de9ae4b",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.306332,
-     "turnos": 2,
-     "duracao_s": 25,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "a800095b-9123-4acf-98db-c04203faea67"
-    },
-    {
-     "etapa": "editor_chefe",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "84b2e14dfec4c017cfd4d2619c91b435a13ecd5138651d033892ea3e68b4c75a",
-     "system_sha256": "c5be08712768743659e98821b6e7f488bfa371dda043cb56057e8de2f7121401",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.39122,
-     "turnos": 2,
-     "duracao_s": 40,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "c2e37a28-1e95-4936-8120-59e249a31c41"
+     "session_id": "de6c421a-6c0a-4e75-b74c-41378d1c0d59"
     },
     {
      "etapa": "redacao",
      "modelo_pedido": "opus",
-     "prompt_sha256": "6f42e0e31282db3056723d5ad8b6c3868e806a7174490f835e748e78b652a886",
-     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "prompt_sha256": "98306e3edec978c809edcf87557217336b17b8e6f6715d565a20c22ef56fef6d",
+     "system_sha256": "1f05753cc230f751ce37675e08161f8a6e106c3f29f578fbc4667b8feefda660",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.633372,
+     "custo_usd": 0.6061690000000001,
      "turnos": 2,
-     "duracao_s": 52,
+     "duracao_s": 26,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "98eaa08f-f798-4774-a7d5-aaeeac6ca59c"
+     "session_id": "3b3f4bd3-b1ec-4b33-b9a9-8e4d18c5c68e"
     },
     {
-     "etapa": "conferencia",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "78afe47faf31825d6d48a9950295f1447345daff5dab1664be2277b7cb232cd8",
-     "system_sha256": "014db32c3a98cfd87cb62417008dbee3bc6c60858da38a9ac3f6069aa3aea5eb",
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "248bc4ec5ee35797769c310b28e5635f35af5a9af53dd76e4956e5506b7812a6",
+     "system_sha256": "6fd63df7fec8e69abcbfdc46037539b46f7da3d5513436b72abe793a28b923b2",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.152802,
-     "turnos": 2,
-     "duracao_s": 46,
+     "custo_usd": 0.5402938,
+     "turnos": 3,
+     "duracao_s": 55,
      "modelos": [
-      "claude-sonnet-5-5"
+      "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "9416c9fa-8ff7-4309-884b-da3b5b03c40d"
+     "session_id": "ea4fc2c1-dbfe-4868-8297-f7f2e9586d63"
     },
     {
      "etapa": "redacao",
      "modelo_pedido": "opus",
-     "prompt_sha256": "d9fe0bc7a1598a9d0425d7591b536674b5f094fe923dd8e7ae8301beac43ba89",
-     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "prompt_sha256": "ff751126cea3f2f038b7d016a2317c3961926bffa804887c8075c72856292079",
+     "system_sha256": "1f05753cc230f751ce37675e08161f8a6e106c3f29f578fbc4667b8feefda660",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.6092371999999999,
+     "custo_usd": 0.690569,
      "turnos": 2,
-     "duracao_s": 27,
+     "duracao_s": 47,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "a4f40871-e707-4606-bdc0-6f8475178ec8"
+     "session_id": "1946d7fc-f39f-4343-ab0b-852e72d84f6e"
     },
     {
-     "etapa": "editor_fundo",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "7e5115c73712b54d219be66e277ac8f48d7cae8bb16e260ce1be8a350a69264c",
-     "system_sha256": "c051e15dfe2ba0240d641e7b2a26a2ab05de7d68718375f6bd3be448f44a878a",
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "c293e6f6b1864757c4ac5da3e3133913e85fbbd26f4998858c73d16ed2c7f1c3",
+     "system_sha256": "6fd63df7fec8e69abcbfdc46037539b46f7da3d5513436b72abe793a28b923b2",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.170414,
+     "custo_usd": 0.5425778,
+     "turnos": 3,
+     "duracao_s": 51,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "dcfc9e9c-435f-4fe2-92cf-656a6b5392e9"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "559e03f2b269bba3cf2ee1c2091da05a600ef95d1e27233652e5dfbd22b70b47",
+     "system_sha256": "1f05753cc230f751ce37675e08161f8a6e106c3f29f578fbc4667b8feefda660",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.646789,
      "turnos": 2,
      "duracao_s": 34,
      "modelos": [
-      "claude-sonnet-5-5"
+      "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "3e351ff2-44ac-4152-9e0b-279eaafd65fd"
+     "session_id": "b4dc68c3-cbe5-47e1-98db-2c3b9599a24e"
+    },
+    {
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "2a146c1746e395ca00e503f9bb2ec68de14ee90eb8b8fe475d97c133a33157e4",
+     "system_sha256": "6fd63df7fec8e69abcbfdc46037539b46f7da3d5513436b72abe793a28b923b2",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.411836,
+     "turnos": 2,
+     "duracao_s": 23,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "1519f764-f620-433e-ad96-344a3a7b3c39"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "6c9ce260e98124f23c42707426f6a9fd013cf7be037d69533d9cc8d49cb65d5b",
+     "system_sha256": "1f05753cc230f751ce37675e08161f8a6e106c3f29f578fbc4667b8feefda660",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.605821,
+     "turnos": 2,
+     "duracao_s": 15,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "a35118ad-fae4-47bd-a028-0e10ae1a657e"
     }
    ],
-   "offline": false,
+   "offline": true,
+   "voltas": [
+    {
+     "volta": 1,
+     "codigo": {
+      "graves": [],
+      "avisos": [
+       "o texto tem 242 palavras (o tamanho de hoje é de 120 a 200)",
+       "bloco 1: frase de 57 palavras",
+       "bloco 2: compara reais com porcentagem do PIB na mesma frase: ponha os dois lados na mesma unidade ('R$ 18,6 bilhões, contra uma meta de R$ 73,2 bilhões'): A meta de 2027, que o Congresso aprova e o governo tem de cumprir, é um superávi",
+       "bloco 2: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: Como a regra deixa de fora R$ 64,7 bilhões, quase tudo precatórios, a conta da m",
+       "siglas que a leitora não conhece, sem nome por extenso ou link: TV"
+      ],
+      "palavras": 242,
+      "intertitulos": 0
+     },
+     "objecoes": [
+      {
+       "trecho": "A Fazenda diz preparar um ajuste gradual, e dois dias sem medida são pouca prova contra ele.",
+       "cabeca": "regras",
+       "problema": "É uma opinião do site, sem ninguém que a diga e sem número que a sustente, e julga o ajuste. A conta dos \"dois dias\" também não fecha: a Fazenda falou do ajuste em 3/11, seis dias antes da fala na TV. A leitora não sabe de onde vêm os dois dias.",
+       "onde_conferir": "Ficha da história, 2026-11-03 e 2026-11-06 (as medidas ficaram para depois da COP)",
+       "grave": true
+      },
+      {
+       "trecho": "Até lá, quem empresta ao governo segue cobrando caro: o juro de 10 anos estava em 8,0% ao ano em 6/11, contra 7,9% no fim de agosto",
+       "cabeca": "leitora",
+       "problema": "O dado é de 6/11, antes da fala de domingo, por isso não mostra nenhuma reação a ela, e \"até lá\" põe no futuro algo que o dado não cobre. Uma alta de 0,1 ponto também não sustenta \"cobrando caro\". O que mostra o \"caro\" é a régua do site: o juro está mais alto que em 91% dos meses desde 2005.",
+       "onde_conferir": "c11 (8,0% contra 7,9%; 91% dos meses desde 2005)",
+       "grave": true
+      },
+      {
+       "trecho": "e o plano só seria detalhado depois da viagem presidencial de 15 a 17/11 [c1]",
+       "cabeca": "regras",
+       "problema": "O trecho da linha c1 é só a manchete do Valor, que não fala de viagem nem de 15 a 17/11, então o número não tem fonte que confira. A ficha da história diz outra coisa: as medidas ficaram para depois da COP. Além disso, \"seria\" não diz quem afirmou.",
+       "onde_conferir": "c1 (o trecho não contém a data); ficha da história, 2026-11-06 e o próximo marco",
+       "grave": true
+      },
+      {
+       "trecho": "e a margem aceita até R$ 36,6 bilhões",
+       "cabeca": "leitora",
+       "problema": "Com \"até\", R$ 36,6 bilhões parece um teto, quando é o piso: a meta é cumprida com um superávit de R$ 36,6 bilhões ou mais, até 0,75% do PIB. Lido assim, o número diz o contrário do que é.",
+       "onde_conferir": "Bloco <metas>, 2027: piso de superávit de 0,25% do PIB, R$ 36,6 bilhões",
+       "grave": true
+      },
+      {
+       "trecho": "a IFI, do Senado, prevê na mesma conta um gasto R$ 86,1 bilhões maior que a arrecadação [c4, c7]",
+       "cabeca": "defensor",
+       "problema": "O texto só aplica o desconto da regra (R$ 64,7 bilhões) à conta do governo. O número da IFI fica na conta com todas as despesas, e a leitora acaba comparando R$ 83,4 bilhões, na conta da meta, com o déficit de R$ 86,1 bilhões, na conta efetiva, que são contas diferentes. Ou as duas projeções aparecem na conta da meta, feita com src/conta.py, ou o texto diz que a IFI não faz a conta da meta.",
+       "onde_conferir": "c7, c4 e o bloco <metas> de 2027 (o desconto de R$ 64,7 bilhões)",
+       "grave": true
+      },
+      {
+       "trecho": "A meta de 2027, que o Congresso aprova e o governo tem de cumprir",
+       "cabeca": "critico",
+       "problema": "Falta o estágio da meta: ela já está na lei de diretrizes de 2027 aprovada, ou ainda é a proposta do projeto? O texto apresenta como certo um passo que não tem linha no caderno.",
+       "onde_conferir": "Bloco <metas> (a fonte de 2027 é o Raio-X do projeto de Orçamento)",
+       "grave": false
+      },
+      {
+       "trecho": "O presidente reafirmou na TV, no domingo, o compromisso com as contas do governo e disse que a dívida preocupa, mas não deu medida, tamanho nem data para o ajuste [c1].",
+       "cabeca": "critico",
+       "problema": "No mesmo dia, o governo prorrogou o Gás do Povo até 2031 por medida provisória, um gasto novo que ainda depende do Congresso, e o texto não diz isso. Também não diz que o governo não publicou o custo até 2031: a linha do custo de 2027 (c10) é posterior ao dia e não pode entrar.",
+       "onde_conferir": "c2; c10 (marcada NÃO CONFERE, depois do dia)",
+       "grave": false
+      },
+      {
+       "trecho": "Por ser um anúncio sem ato, a fala não mexe na conta de 2027",
+       "cabeca": "defensor",
+       "problema": "O texto não diz qual objetivo quem decidiu declarou, nem se ele está escrito em algum documento. As manchetes falam de responsabilidade fiscal e de investimento acima de 20% do PIB, mas sem documento oficial. Dizer que o objetivo não está escrito, ou que é vago, já é informação.",
+       "onde_conferir": "Bloco <decisao>, pergunta 2; c3 (é a fala de um ministro em outra data, não o pronunciamento)",
+       "grave": false
+      },
+      {
+       "trecho": "Como o Tesouro tem R$ 1,8 trilhão a refinanciar em 12 meses",
+       "cabeca": "leitora",
+       "problema": "R$ 1,8 trilhão aparece sem régua, e a leitora não consegue repeti-lo a um sócio. A fonte dá uma comparação: é a parte da dívida que vence em até um ano, 19,95% em setembro.",
+       "onde_conferir": "c13",
+       "grave": false
+      }
+     ],
+     "resumo": "O argumento está certo: a fala não é ato, e a dúvida está na conta de 2027. Cinco problemas graves: a opinião dos \\\"dois dias\\\" sem dono e com conta errada; o juro de 6/11, anterior à fala, usado como reação a ela; a data da viagem, que o caderno não sustenta; o piso de R$ 36,6 bilhões lido como teto; e o número da IFI na conta efetiva, ao lado da conta da meta do governo. Faltam ainda o Gás do Povo do mesmo dia, o objetivo não escrito de quem decidiu e uma régua para o R$ 1,8 trilhão."
+    },
+    {
+     "volta": 2,
+     "codigo": {
+      "graves": [],
+      "avisos": [
+       "o texto tem 223 palavras (o tamanho de hoje é de 120 a 200)",
+       "bloco 2: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: O projeto de Orçamento, que o Congresso ainda vota, mira uma sobra de R$ 73,2 bi",
+       "siglas que a leitora não conhece, sem nome por extenso ou link: COP"
+      ],
+      "palavras": 223,
+      "intertitulos": 0
+     },
+     "objecoes": [
+      {
+       "trecho": "No mesmo dia, uma medida provisória prorrogou o Gás do Povo até 2031, um gasto que já vale e ainda depende do Congresso",
+       "cabeca": "regras",
+       "problema": "A fala na TV foi no domingo, 8/11, e a medida provisória saiu no Diário Oficial na segunda, 9/11, por isso \"no mesmo dia\" está errado. A reescrita criou esse erro.",
+       "onde_conferir": "c2 (publicada no Diário Oficial em 9/11/2026) e c1 (fala em 8/11); ficha da história, passo de 2026-11-09",
+       "grave": true
+      },
+      {
+       "trecho": "um gasto que já vale e ainda depende do Congresso [c2]",
+       "cabeca": "critico",
+       "problema": "A objeção da primeira volta continua sem resposta: o texto não diz que o governo não publicou o custo do programa até 2031. Sem o tamanho, a leitora não sabe quanto esse gasto pesa na conta de 2027. A linha c10 é posterior ao dia e não pode entrar, então o certo é dizer que o custo não foi publicado.",
+       "onde_conferir": "c2; c10 está marcada como NÃO CONFERE (depois_do_dia)",
+       "grave": false
+      },
+      {
+       "trecho": "O presidente reafirmou na televisão, no domingo, o compromisso com a responsabilidade fiscal e disse que a dívida preocupa, mas não deu medida, tamanho nem data para o ajuste [c1].",
+       "cabeca": "defensor",
+       "problema": "Continua faltando o objetivo que quem decidiu declarou e em que documento ele está. Nenhum documento oficial traz meta de ajuste, e o alvo de investimento de 20% a 21% do PIB apareceu numa fala do ministro da Casa Civil, partindo de cerca de 17%. Dizer que o objetivo não está escrito, ou que é vago, já é informação.",
+       "onde_conferir": "c3; bloco <decisao>, pergunta 2",
+       "grave": false
+      },
+      {
+       "trecho": "e por isso a conta da meta feita pelo governo dá R$ 83,4 bilhões [c4]",
+       "cabeca": "leitora",
+       "problema": "O texto não fecha a comparação. A leitora lê \"mira R$ 73,2 bilhões\" e depois \"dá R$ 83,4 bilhões\", mas ninguém diz que 83,4 fica acima do centro, ou seja, que pela conta do próprio governo a meta é cumprida com folga. Também falta dizer que a IFI não faz essa conta com os descontos. Sem isso, ela tende a comparar os R$ 83,4 bilhões com o déficit de R$ 86,1 bilhões da IFI, que está na outra conta.",
+       "onde_conferir": "c4; <metas> 2027 (centro de R$ 73,2 bi; a conta da meta dá R$ 83,4 bi, acima do centro)",
+       "grave": false
+      },
+      {
+       "trecho": "e a IFI, do Senado, prevê déficit de R$ 86,1 bilhões [c4, c7]",
+       "cabeca": "critico",
+       "problema": "A previsão de R$ 86,1 bilhões é de setembro e vai sem data. Em outubro, a IFI já estimava um déficit perto de 1,0% do PIB em 2027 e somava cerca de R$ 40 bilhões em medidas da campanha que não estão no Orçamento. A conta mais recente de quem discorda é pior, e o texto não diz de quando é a que usou.",
+       "onde_conferir": "c7 (de 2026-09-17) e c8 (IFI, relatório de acompanhamento fiscal 117, de 2026-10-29)",
+       "grave": false
+      },
+      {
+       "trecho": "e as medidas ficaram para depois da conferência do clima, a COP, ainda sem data",
+       "cabeca": "leitora",
+       "problema": "Não diz quem adiou as medidas. Além disso, \"ainda sem data\" parece se referir à conferência, que tem data, quando quem não tem data é o anúncio das medidas.",
+       "onde_conferir": "Ficha da história, passo de 2026-11-06 e próximo marco (\"sem data, anúncio das medidas de ajuste... depois da COP\")",
+       "grave": false
+      }
+     ],
+     "resumo": "A reescrita resolveu os dois dias, a viagem, o piso de R$ 36,6 bi, a mesma conta para o governo e a IFI, a régua do juro de 10 anos e o R$ 1,8 trilhão. Ela criou um erro grave: o \"no mesmo dia\" do Gás do Povo, que saiu na segunda. Faltam o custo do programa, o objetivo que não está escrito, dizer que 83,4 fica acima do centro e que a IFI não faz essa conta, a data da IFI (a de outubro é pior) e quem adiou as medidas."
+    },
+    {
+     "volta": 3,
+     "codigo": {
+      "graves": [],
+      "avisos": [
+       "o texto tem 211 palavras (o tamanho de hoje é de 120 a 200)",
+       "bloco 2: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: A meta é o governo arrecadar R$ 73,2 bilhões a mais do que gasta, sem contar os "
+      ],
+      "palavras": 211,
+      "intertitulos": 0
+     },
+     "objecoes": [
+      {
+       "trecho": "A regra deixa de fora R$ 64,7 bilhões, quase tudo precatórios, e por isso a conta do governo dá R$ 83,4 bilhões, acima do centro",
+       "cabeca": "leitora",
+       "problema": "O R$ 83,4 bilhões é a conta da meta, ou seja, os R$ 18,6 bilhões do projeto somados aos R$ 64,7 bilhões que a regra desconta. Só que o texto o chama de \"a conta do governo\" e só cita os R$ 18,6 bilhões no parágrafo seguinte. A leitora fica com dois números diferentes para a mesma previsão do governo (83,4 aqui e 18,6 depois, \"nessa mesma conta\") e não vê de onde sai o 83,4.",
+       "onde_conferir": "c4; metas de 2027 (resultado efetivo de R$ 18,6 bi; com os descontos, a conta da meta dá R$ 83,4 bi)",
+       "grave": true
+      },
+      {
+       "trecho": "Em 6/11, esse juro estava em 8,0% ao ano, mais alto que em 91% dos meses desde 2005",
+       "cabeca": "leitora",
+       "problema": "O juro de 10 anos do site já vem descontado da inflação. Sem o \"acima da inflação\", a leitora lê 8,0% como juro cheio. Ao lado da Selic de 13,75%, ele parece baixo, e ela entende o contrário do que o número mostra.",
+       "onde_conferir": "c11; dados do site, Desconfiança de quem investe (\"o juro de 10 anos é o que o governo paga, acima da inflação\")",
+       "grave": true
+      }
+     ],
+     "resumo": "A conferência final achou dois trechos que a leitora pode entender ao contrário. O primeiro chama de \\\"a conta do governo\\\" os R$ 83,4 bilhões, que são a conta da meta, antes de citar os R$ 18,6 bilhões dos quais eles partem. O segundo dá o juro de 10 anos em 8,0% sem dizer que esse juro já desconta a inflação. Os outros números batem com o caderno e com as metas."
+    }
+   ],
+   "contas_ate": "2026-11-08",
+   "historia": "contas_governo",
+   "segunda": null,
+   "modo": "calmo",
    "pesquisa": {
     "perguntas": [
      {
-      "pergunta": "Quanto está represado hoje (Abicom, diesel e gasolina)?",
-      "resposta": "Não achei a defasagem da Abicom de novembro no site dela. O último número datado é de cerca de 23/10: o diesel da Petrobras estava R$ 3,53 por litro abaixo do preço de importação, contra R$ 3,52 da subvenção, ou seja, a defasagem passou o que a subvenção cobre (c13, c14). A gasolina não tem número de outubro; o presidente da Abicom diz só que ela 'está desonerada' (c15). Em 31/3 eram R$ 3,05 no diesel e R$ 1,61 na gasolina (c16). Depois de 23/10 o barril caiu quase 8% em 1/11 e mais de 8% em 4/11 (c17), então a defasagem de hoje provavelmente é menor, mas não há número.",
+      "pergunta": "1. Quem decidiu, com que poder e quem pode desfazer? (o Senado aprovar não é lei; o Tribunal de Contas da União propor não é o Congresso fixar; anunciar não é fazer)",
+      "resposta": "O presidente da República falou em rede de TV no domingo, 8/11. Fala não é ato: não cria despesa, não corta gasto, não muda a meta. Quem fixa a meta e o Orçamento de 2027 é o Congresso (LDO e lei orçamentária); o Executivo propõe as medidas. O único ato formal do dia ligado à história é a medida provisória que prorroga o Gás do Povo até novembro de 2031, que já vale desde a publicação e pode ser derrubada ou alterada pelo Congresso na comissão mista e nos plenários.",
       "caderno": [
-       "c13",
-       "c14",
-       "c15",
-       "c16",
-       "c17"
-      ]
-     },
-     {
-      "pergunta": "Quando a subvenção vence e o que vem depois?",
-      "resposta": "A Fazenda prorrogou em 27/10 a subvenção de R$ 2,12 por litro por 30 dias (c2). Contados de 27/10, o fim cai por volta de 26/11 (c18, conta minha; a data exata da portaria não foi lida). Uma nova renovação depende de decisão do governo, segundo as reportagens. Custo oficial: não achei nota técnica; as fontes divergem (R$ 10,5 bi, R$ 1,6 bi no diesel de um pacote anterior), e o texto não deve citar custo.",
-      "caderno": [
+       "c1",
        "c2",
-       "c18"
+       "c10"
       ]
      },
      {
-      "pergunta": "E daí no bolso? Quanto um repasse somaria ao IPCA?",
-      "resposta": "Só consegui a conta da gasolina. Em março de 2023, com o fim da desoneração, a gasolina subiu 8,33% e somou 0,39 ponto ao IPCA do mês (c19), o que dá um peso implícito de 4,68% (c20). Um repasse de 10% somaria cerca de 0,47 ponto (c21). O peso do diesel no IPCA não achei em fonte oficial; o efeito direto é pequeno e o indireto, pelo frete, não foi calculado.",
+      "pergunta": "2. Qual objetivo o decisor escreveu, e em que documento? (comunicado, ata, exposição de motivos, estimativa de impacto, nota do Tesouro). Se não está escrito ou é vago, diga isso.",
+      "resposta": "Não achei documento oficial com o texto do pronunciamento nem nota da Fazenda com o ajuste: o objetivo está só na fala (compromisso com a responsabilidade fiscal, preocupação com a dívida) e na fala de um aliado sobre elevar o investimento a 20% ou 21% do PIB, a partir de cerca de 17%. Sem medida, sem tamanho e sem data, o objetivo é vago. A página do Tesouro e do Planalto não abriu para mim; a íntegra do discurso não foi lida.",
       "caderno": [
-       "c19",
-       "c20",
-       "c21"
+       "c1",
+       "c3"
       ]
      },
      {
-      "pergunta": "Já aconteceu antes?",
-      "resposta": "Só um episódio é limpo para o combustível: o fim da desoneração em março de 2023, com 0,39 ponto no IPCA do mês (c19). Em 2015, o IPCA em 12 meses foi de 6,41% a 10,67% (c8, c9), mas com dólar e energia juntos, então não isola o combustível. A subvenção de 2018 e o IPCA de combustíveis depois dela não consegui contar. Com commodities acima de 200 pontos são só 3 episódios (c10).",
+      "pergunta": "3. Qual é o tamanho? (reais, % do PIB, perto do problema; as duas contas quando decisor e outro órgão estimam)",
+      "resposta": "O ajuste não tem tamanho. O problema tem: o Tesouro projeta dívida bruta de 83,7% do PIB em 2026 e 89,7% em 2030, 6 pontos a mais. Na meta de 2027, o projeto de Orçamento dá resultado efetivo de R$ 18,6 bi; com os R$ 64,7 bi que a regra desconta, a conta da meta dá cerca de R$ 83 bi, acima do centro de R$ 73,2 bi. A IFI, do Senado, faz outra conta, do resultado efetivo: déficit de R$ 86,1 bi em 2027 (relatório de setembro), e em outubro vê R$ 40 bi em medidas sem previsão no Orçamento. As duas contas são do resultado com todas as despesas: R$ 18,6 bi de sobra contra R$ 86,1 bi de déficit, diferença de R$ 104,7 bi. Já o Gás do Povo tem previsão de R$ 7,6 bi só em 2027; custo até 2031 não foi consolidado pelo governo.",
       "caderno": [
-       "c19",
+       "c4",
+       "c5",
+       "c6",
+       "c7",
        "c8",
        "c9",
        "c10"
       ]
      },
      {
-      "pergunta": "O que diz o Banco Central?",
-      "resposta": "Não li o comunicado nem a ata no site do BC. Uma reportagem diz que o Copom de 4/11 manteve a Selic em 13,75% por unanimidade (c22), e a Nomad afirma que a tabela traz 5,6% para o IPCA de 2026 e 4,7% para 2027 (c7). O trecho do petróleo no comunicado não foi confirmado, então o texto não deve atribuir ao BC essa justificativa.",
+      "pergunta": "4. Em que pressão do site e em que porta da leitora ela mexe?",
+      "resposta": "Contas do governo e Desconfiança de quem investe: sem ajuste com número, o juro de 10 anos e o dólar seguem altos (dólar R$ 5,50 e juro de 10 anos 8,0% ao ano, do fim de agosto a 6/11). Chega à leitora pelo custo do crédito longo (financiamento imobiliário) e pelo preço de importados, não por efeito direto da fala. Gás do Povo muda algo concreto: 15 milhões de famílias seguem com o botijão até novembro de 2031.",
       "caderno": [
-       "c22",
-       "c7"
+       "c11",
+       "c12",
+       "c10"
       ]
      },
      {
-      "pergunta": "A defasagem encolheu com o barril em queda?",
-      "resposta": "Provavelmente em parte: o barril caiu quase 8% em 1/11 e mais de 8% em 4/11 (c17). Mas não há medição da Abicom depois de 23/10 para provar. E o fato do dia mostra o barril quase estável em 9/11, com ataques perto de Ormuz (c1). O presidente da Abicom também espera reajuste gradual, e não de uma vez (c15).",
+      "pergunta": "Quanto o Tesouro precisa refinanciar e por que isso importa para a pergunta do ajuste?",
+      "resposta": "O Poder360 informa que a parte da dívida que vence em até 12 meses chegou a 19,95% em setembro, ou R$ 1,8 trilhão. Com a Selic em 13,75%, cada rolagem sai a juro alto, e a dívida ligada à Selic bateu 52,74% em agosto, recorde. Por isso a dúvida sobre o ajuste pesa mais do que o déficit de 12 meses de 0,38% do PIB sugere.",
       "caderno": [
-       "c17",
-       "c1",
-       "c15"
+       "c13",
+       "c14",
+       "c6"
+      ]
+     },
+     {
+      "pergunta": "Quem discorda da conta do governo para 2027 e qual a razão oficial?",
+      "resposta": "A IFI projetava déficit de R$ 86,1 bi em 2027 contra a sobra de R$ 18,6 bi do projeto e, em outubro, aponta R$ 40 bi em medidas novas sem previsão no Orçamento e déficit de cerca de 1,0% do PIB. A razão oficial do governo: a meta é medida com os descontos da regra (R$ 64,7 bi, quase tudo precatórios), então a conta da meta fica acima do centro. As contas são diferentes, não necessariamente contraditórias.",
+      "caderno": [
+       "c5",
+       "c7",
+       "c8",
+       "c9"
+      ]
+     },
+     {
+      "pergunta": "Houve vez parecida no passado?",
+      "resposta": "Sim, em direção: em 2016 a PEC do teto veio com texto, votação e prazo, e o dólar caiu de R$ 3,97 para R$ 3,26 até dezembro; em 2019 a reforma da Previdência foi concluída e a Selic caiu de 6,50% para 4,50%. Em 2021, mexer na regra elevou dólar e juros futuros no mesmo dia. O que as vezes anteriores têm em comum é ato com número; a fala de ontem não tem. São 3 casos, com outras causas ao mesmo tempo: padrão, não lei.",
+      "caderno": [
+       "c15",
+       "c16"
       ]
      }
     ],
-    "teses": [
+    "argumentos": [
      {
-      "tese": "O barril mais barato não encerra o risco de preço dos combustíveis: o diesel da Petrobras já estava R$ 3,53 por litro abaixo do preço de importação, mais do que os R$ 3,52 da subvenção, e a gasolina segue desonerada. A subvenção, renovada por 30 dias em 27/10, vence por volta de 26/11. Se a gasolina subisse 10% de uma vez, somaria cerca de 0,47 ponto ao IPCA, pelo peso implícito de 2023.",
-      "por_que_nao_e_obvia": "A manchete diz que o petróleo cai e alivia. A tese diz que o preço na bomba depende de decisões do governo e da Petrobras (subvenção, desoneração, reajuste), com datas, e não do barril do dia.",
-      "o_que_muda": "A leitora passa a olhar a decisão sobre a subvenção perto de 26/11 e os IPCA de novembro e dezembro, em vez de esperar alívio automático do petróleo.",
-      "como_pode_dar_errado": "Cai se a Petrobras reajustar aos poucos, como a Abicom espera, ou se subvenção e desoneração forem mantidas. O barril caiu mais de 8% duas vezes em novembro e a defasagem pode ter encolhido; não achei medição depois de 23/10. Só há um episódio limpo (2023) e o peso do diesel não foi achado.",
+      "argumento": "A fala do presidente reafirma a meta, mas a promessa não tem número, e o que decide o juro que o governo paga é a conta de 2027: a meta (R$ 83 bi contra centro de R$ 73,2 bi, com os descontos) fecha no papel, e a IFI, com a mesma conta de resultado efetivo, vê déficit de R$ 86,1 bi.",
+      "para_quem": "O país: o custo da dívida de R$ 1,8 trilhão a refinanciar e, por ele, o crédito longo das empresas.",
+      "o_que_desmente": "Um pacote publicado com números que cubram os cerca de R$ 40 bi de medidas sem previsão que a IFI aponta, ou um leilão do Tesouro com o juro longo caindo.",
+      "caderno": [
+       "c4",
+       "c6",
+       "c7",
+       "c8",
+       "c13"
+      ]
+     },
+     {
+      "argumento": "O único ato do dia, o Gás do Povo até 2031, é gasto contínuo de R$ 7,6 bi só em 2027, pequeno perto do problema mas na direção oposta ao ajuste; o custo até 2031 o governo não publicou.",
+      "para_quem": "15 milhões de famílias ganham previsibilidade; o país carrega gasto fixo a mais enquanto a dívida sobe de 83,7% para 89,7% do PIB até 2030.",
+      "o_que_desmente": "Se a MP for derrubada ou vier com fonte de custeio, ou se o ajuste incluir corte equivalente.",
       "caderno": [
        "c2",
-       "c13",
-       "c14",
-       "c15",
-       "c17",
-       "c18",
-       "c19",
-       "c20",
-       "c21"
+       "c10",
+       "c14"
       ]
      }
     ],
     "objecao": {
-     "texto": "A Abicom, de onde vem o número, espera reajuste lento e gradual da Petrobras, e não de uma vez. O barril caiu quase 8% em 1/11 e mais de 8% em 4/11, então a defasagem de R$ 3,53 já pode ter encolhido muito; sem medição de novembro, o risco represado pode ser menor que a tese diz. O fim da desoneração de 2023 foi um aumento de imposto de data certa, diferente de um reajuste de preço feito aos poucos.",
+     "texto": "O compromisso foi dito pelo próprio presidente e a Fazenda diz preparar ajuste gradual; as medidas ficaram para depois da COP por calendário, e as taxas do Tesouro recuaram no dia 5/11 com a fala. O déficit de 12 meses é de 0,38% do PIB, e a conta da meta de 2027 já passa do centro. A dúvida pode ser só de prazo, e dois dias sem medida são pouca evidência. A IFI também parte de medidas ainda não aprovadas.",
      "caderno": [
-      "c13",
-      "c15",
-      "c17",
-      "c19"
+      "c1",
+      "c4",
+      "c6",
+      "c8"
      ]
     },
-    "o_que_falta": "Não achei: a defasagem da Abicom de novembro (só R$ 3,53 do diesel, de ~23/10, via terceiros; gasolina sem número); a portaria da subvenção com data exata e custo oficial (fim em ~26/11 é conta minha); o comunicado do Copom no site do BC (só Nomad e Atlas); o peso vigente de diesel e gasolina no IPCA (usei o implícito de 2023); o caso de 2018 e o desfecho do conselho da Petrobras de 26/10. Só um episódio limpo (2023): se for pouco, o dia fica sem leitura a fundo."
+    "o_que_falta": "Não consegui abrir as páginas (Poder360, InfoMoney e Valor foram bloqueadas): os trechos vêm de resultados de busca. Não achei a íntegra do pronunciamento de 8/11 nem a nota oficial do Planalto, a exposição de motivos da MP do Gás do Povo e o custo até 2031. Não conferi o RAF 117 da IFI no original; o número de 1,0% do PIB e os R$ 40 bi vêm de resumos. A conta da ficha dá R$ 83,4 bi, mas 18,6 + 64,7 = 83,3 por arredondamento. Faltam dados da fala sobre 20% do PIB de investimento: só achei a menção de Rui Costa, não do presidente. Não rodei pausas, ciclos nem episódios.",
+    "pagina_que_falta": ""
+   },
+   "pagina_que_falta": "",
+   "rascunho": {
+    "titulo": "Presidente reafirma na TV o compromisso com as contas, mas o ajuste de 2027 segue sem número",
+    "texto": "O presidente reafirmou na TV, no domingo, o compromisso com as contas do governo e disse que a dívida preocupa, mas não deu medida, tamanho nem data para o ajuste [c1]. Por ser um anúncio sem ato, a fala não mexe na conta de 2027, onde está a dúvida: o projeto de Orçamento prevê que o governo arrecade R$ 18,6 bilhões a mais do que gasta, sem contar os juros, e a IFI, do Senado, prevê na mesma conta um gasto R$ 86,1 bilhões maior que a arrecadação [c4, c7].\n\nA meta de 2027, que o Congresso aprova e o governo tem de cumprir, é um superávit de 0,50% do PIB, R$ 73,2 bilhões, e a margem aceita até R$ 36,6 bilhões. Como a regra deixa de fora R$ 64,7 bilhões, quase tudo precatórios, a conta da meta no projeto dá R$ 83,4 bilhões, acima do centro [c4]. A Fazenda diz preparar um ajuste gradual, e dois dias sem medida são pouca prova contra ele.\n\nPara a promessa virar ato, faltam o documento, o tamanho em reais e a data, e o plano só seria detalhado depois da viagem presidencial de 15 a 17/11 [c1]. Até lá, quem empresta ao governo segue cobrando caro: o juro de 10 anos estava em 8,0% ao ano em 6/11, contra 7,9% no fim de agosto [c11]. Como o Tesouro tem R$ 1,8 trilhão a refinanciar em 12 meses, esse juro chega ao custo da dívida e ao crédito longo das empresas [c13].",
+    "argumento": "A fala do presidente reafirma o compromisso fiscal sem número, e por isso não resolve a dúvida de 2027, em que o governo prevê sobra de R$ 18,6 bilhões e a IFI, falta de R$ 86,1 bilhões.",
+    "porque": "O presidente foi à TV dizer que a trajetória da dívida preocupa e reafirmar a responsabilidade fiscal, deixando o detalhe do plano para depois da viagem de 15 a 17 de novembro."
    },
    "caderno": [
     {
      "id": "c1",
-     "tipo": "site",
-     "afirmacao": "Fato do dia: cotação do petróleo reabriu em leve queda mesmo com ataques a navios perto de Ormuz; o Iraque, segundo seu ministro, chegou a entendimento com os EUA para exportar por Ormuz.",
-     "numeros": [],
+     "tipo": "documento",
+     "afirmacao": "O presidente reafirmou compromisso fiscal na TV em 8/11, falou em preocupação com a dívida, citou programas sociais e não detalhou o ajuste; o plano fiscal só seria detalhado após viagem de 15 a 17/11.",
+     "numeros": [
+      "8 de novembro",
+      "15 e 17 de novembro"
+     ],
      "comando": "",
-     "saida": "Manchetes: \"Cotação do petróleo reabre em leve queda mesmo com ataques a navios perto de Hormuz\" (Folha); \"Iraque chega a entendimento com os EUA para permitir exportações de petróleo via Ormuz, diz ministro\" (Valor)",
+     "saida": "",
+     "fonte": {
+      "quem": "Valor Econômico (manchete) e resultados de busca",
+      "url": "https://valor.globo.com/politica/noticia/2026/11/08/lula-fala-em-preocupao-com-dvida-e-juros-e-reafirma-compromisso-com-responsabilidade-fiscal.ghtml",
+      "data": "2026-11-08",
+      "trecho": "Lula fala em preocupação com dívida e juros e reafirma compromisso com responsabilidade fiscal"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c2",
+     "tipo": "documento",
+     "afirmacao": "A MP que prorroga o Gás do Povo foi publicada no Diário Oficial em 9/11/2026, vale desde a publicação e ainda precisa de comissão mista e votação da Câmara e do Senado.",
+     "numeros": [
+      "19 de novembro de 2031",
+      "15 milhões de famílias"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agência Gov",
+      "url": "https://agenciagov.ebc.com.br/noticias/202611/governo-federal-prorroga-vigencia-do-auxilio-gas-do-povo-ate-novembro-de-2031",
+      "data": "2026-11-09",
+      "trecho": "Governo Federal prorroga Auxílio Gás do Povo até novembro de 2031"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c3",
+     "tipo": "documento",
+     "afirmacao": "Rui Costa disse que o governo quer levar a taxa de investimento a 20% ou 21% do PIB no quarto mandato, partindo de cerca de 17%.",
+     "numeros": [
+      "20%",
+      "21%",
+      "17%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Canal Rural / BP Money (busca)",
+      "url": "https://www.canalrural.com.br/economia/rui-costa-projeta-investimento-de-ate-21-do-pib-e-cita-leiloes-ainda-em-2026/",
+      "data": "2026-11-05",
+      "trecho": "Rui Costa projeta investimento de até 21% do PIB e cita leilões ainda em 2026"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c4",
+     "tipo": "site",
+     "afirmacao": "O projeto de Orçamento de 2027 prevê resultado efetivo de R$ 18,6 bi (0,13% do PIB); com os R$ 64,7 bi que a regra desconta, a conta da meta dá R$ 83,4 bi, acima do centro de R$ 73,2 bi.",
+     "numeros": [
+      "18,6",
+      "64,7",
+      "83,4",
+      "73,2",
+      "0,13%"
+     ],
+     "comando": "",
+     "saida": "Ficha da história, 2026-08-31, e bloco de metas (Raio-X da Consultoria de Orçamento da Câmara).",
+     "fonte": {
+      "quem": "Consultoria de Orçamento da Câmara",
+      "url": "https://www2.camara.leg.br/orcamento-da-uniao/raio-x-do-orcamento/2027/RaioX_PLOA_2027.pdf",
+      "data": "2026-08-31",
+      "trecho": "o projeto de Orçamento de 2027 tira da conta da meta R$ 64,7 bilhões, quase tudo precatórios"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c5",
+     "tipo": "conta",
+     "afirmacao": "Resultado efetivo do governo (R$ 18,6 bi de sobra) contra o déficit de R$ 86,1 bi da IFI: diferença de R$ 104,7 bi, as duas na mesma conta.",
+     "numeros": [
+      "104,7"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"18.6+86.1\"",
+     "saida": "18.6+86.1 = 104,7000 (com 3 casas: 104,700; com 2 casas: 104,70; com 1 casa: 104,7)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "18.6+86.1 = 104,7000 (com 3 casas: 104,700; com 2 casas: 104,70; com 1 casa: 104,7)\n"
+     }
+    },
+    {
+     "id": "c6",
+     "tipo": "conta",
+     "afirmacao": "A conta da meta, somando o resultado efetivo e o desconto, dá R$ 83,3 bi pela soma exata das cifras arredondadas (a Consultoria da Câmara publica R$ 83,4 bi); contra o centro de R$ 73,2 bi, passa em R$ 10,2 bi.",
+     "numeros": [
+      "83,3",
+      "10,2"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"83.4-73.2\"",
+     "saida": "83.4-73.2 = 10,2000 (com 3 casas: 10,200; com 2 casas: 10,20; com 1 casa: 10,2)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "nao_confere",
+      "por_que": "números que a conta não dá: 83,3"
+     }
+    },
+    {
+     "id": "c7",
+     "tipo": "documento",
+     "afirmacao": "A IFI projetou déficit primário de R$ 86,1 bi em 2027, contra superávit de R$ 18,6 bi do governo.",
+     "numeros": [
+      "86,1",
+      "18,6"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Jornal do Comércio (sobre o RAF 116 da IFI)",
+      "url": "https://www.jornaldocomercio.com/economia/2026/09/1263697-ifi-preve-deficit-primario-de-rs-861-bi-em-2027-e-alerta-para-necessidade-de-contingenciamento.html",
+      "data": "2026-09-17",
+      "trecho": "IFI prevê déficit primário de R$ 86,1 bi em 2027 e alerta para necessidade de contingenciamento"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c8",
+     "tipo": "documento",
+     "afirmacao": "Em outubro a IFI viu cerca de R$ 40 bi em medidas anunciadas na campanha sem previsão no Orçamento e déficit efetivo de cerca de 1,0% do PIB em 2027.",
+     "numeros": [
+      "R$ 40 bi",
+      "1,0% do PIB"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "IFI, Senado (RAF 117) e Canal Rural",
+      "url": "https://www12.senado.leg.br/ifi/pdf/raf117_out2026.pdf",
+      "data": "2026-10-29",
+      "trecho": "IFI estima R$ 40 bilhões de desequilíbrio fiscal com medidas anunciadas na campanha"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c9",
+     "tipo": "site",
+     "afirmacao": "A IFI, do Senado, vê R$ 40 bi em medidas novas e gasto acima da arrecadação em 2027, e dívida de 124% do PIB em 2036.",
+     "numeros": [
+      "R$ 40 bi",
+      "124%"
+     ],
+     "comando": "",
+     "saida": "Memória do momento, 2026-10-29: IFI, do Senado, vê R$ 40 bi em medidas novas e gasto acima da arrecadação em 2027 (Valor).",
+     "fonte": {
+      "quem": "Valor",
+      "url": "https://valor.globo.com/brasil/noticia/2026/10/29/pacote-de-bondades-do-governo-pode-levar-deficit-primario-a-1percent-do-pib-em-2027-nota-ifi.ghtml",
+      "data": "2026-10-29",
+      "trecho": "Pacote de bondades do governo pode levar déficit primário a 1% do PIB em 2027, nota da IFI"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c10",
+     "tipo": "documento",
+     "afirmacao": "A previsão do governo para o Gás do Povo em 2027 é de R$ 7,6 bi; o governo não apresentou custo consolidado até 2031.",
+     "numeros": [
+      "R$ 7,6 bilhões",
+      "2027"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Portal G37 (reproduz comunicado do governo)",
+      "url": "https://portalg37.com.br/brasil/governo-federal-prorroga-gas-do-povo-ate-2031-programa-tem-previsao-de-r-76-bilhoes-em-gastos-publicos-para-2027/",
+      "data": "2026-11-10",
+      "trecho": "programa tem previsão de R$ 7,6 bilhões em gastos públicos para 2027"
+     },
+     "conferencia": {
+      "status": "depois_do_dia",
+      "por_que": "publicado em 2026-11-10, depois de 2026-11-09"
+     }
+    },
+    {
+     "id": "c11",
+     "tipo": "site",
+     "afirmacao": "O dólar foi de R$ 5,18 para R$ 5,50 e o juro de 10 anos de 7,9% para 8,0% do fim de agosto a 6/11; o juro de 10 anos está mais alto que em 91% dos meses desde 2005.",
+     "numeros": [
+      "5,18",
+      "5,50",
+      "7,9%",
+      "8,0%",
+      "91%"
+     ],
+     "comando": "",
+     "saida": "Dados do site, pressão Desconfiança de quem investe.",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3486,226 +3562,16 @@
      }
     },
     {
-     "id": "c2",
-     "tipo": "documento",
-     "afirmacao": "A Fazenda prorrogou por 30 dias a subvenção de R$ 2,12 por litro de diesel (portaria de 27/10/2026).",
-     "numeros": [
-      "R$ 2,12",
-      "30 dias"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "DGABC",
-      "url": "https://www.dgabc.com.br/Noticia/4349240/governo-prorroga-subvencao-ao-diesel-em-r-2-12-por-litro-por-30-dias",
-      "data": "2026-10-27",
-      "trecho": "Governo prorroga subvenção ao diesel em R$ 2,12 por litro por 30 dias"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c3",
-     "tipo": "documento",
-     "afirmacao": "A subvenção tem custo de R$ 10,5 bilhões no período, financiada por receitas extraordinárias do petróleo; a Abicom estimava R$ 3,50 por litro entre o preço das refinarias da Petrobras e a paridade internacional.",
-     "numeros": [
-      "R$ 10,5 bilhões",
-      "R$ 3,50 por litro",
-      "R$ 2,12"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Perfil Brasil",
-      "url": "https://brasil.perfil.com/carros/governo-mantem-subsidio-ao-diesel-de-r-212-por-mais-30-dias.phtml",
-      "data": "2026-10-27",
-      "trecho": "uma diferença de R$ 3,50 por litro entre o preço praticado pelas refinarias da Petrobras e a paridade internacional"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": false
-     }
-    },
-    {
-     "id": "c4",
-     "tipo": "documento",
-     "afirmacao": "O Gecex prorrogou em 5/11, a pedido da Fazenda, o imposto de 12% sobre exportação de petróleo até 31/12, citando riscos ao abastecimento de diesel.",
-     "numeros": [
-      "12%",
-      "31 de dezembro"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Jornal do Comércio",
-      "url": "https://www.jornaldocomercio.com/economia/2026/11/1269530-governo-lula-prorroga-ate-dezembro-imposto-de-12-sobre-exportacao-de-petroleo.html",
-      "data": "2026-11-06",
-      "trecho": "riscos ao abastecimento doméstico de derivados de petróleo, principalmente o diesel"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c5",
-     "tipo": "conta",
-     "afirmacao": "Focus de 12 meses em julho e outubro de 2026.",
-     "numeros": [
-      "4,96",
-      "4,19"
-     ],
-     "comando": ".venv/bin/python src/conta.py valores focus_ipca_12m --de 2026-01",
-     "saida": "2026-07: 4,19 ... 2026-10: 4,96",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "focus_ipca_12m (%, último valor do mês):\n2026-01: 3,99\n2026-02: 3,92\n2026-03: 4,09\n2026-04: 4,05\n2026-05: 4,06\n2026-06: 4,12\n2026-07: 4,19\n2026-08: 4,55\n2026-09: 4,60\n2026-10: 4,96\n"
-     }
-    },
-    {
-     "id": "c6",
-     "tipo": "conta",
-     "afirmacao": "Alta do Focus de julho a outubro.",
-     "numeros": [
-      "0,77"
-     ],
-     "comando": ".venv/bin/python src/conta.py calc \"4.96-4.19\"",
-     "saida": "4.96-4.19 = 0,7700 (com 3 casas: 0,770; com 2 casas: 0,77; com 1 casa: 0,8)",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "4.96-4.19 = 0,7700 (com 3 casas: 0,770; com 2 casas: 0,77; com 1 casa: 0,8)\n"
-     }
-    },
-    {
-     "id": "c7",
-     "tipo": "documento",
-     "afirmacao": "Segundo a Nomad, o comunicado do Copom de 4/11 traz IPCA de 5,6% em 2026 e 4,7% em 2027 (não confirmado no site do BC).",
-     "numeros": [
-      "5,6%",
-      "4,7%"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Nomad (análise do Copom)",
-      "url": "https://www.nomadglobal.com/portal/analises/analise-do-copom-novembro-de-2026",
-      "data": "2026-11-05",
-      "trecho": "Para o IPCA, a tabela do comunicado traz 5,6% em 2026 e 4,7% em 2027."
-     },
-     "conferencia": {
-      "status": "trecho_nao_achado",
-      "fonte_conhecida": false
-     }
-    },
-    {
-     "id": "c8",
-     "tipo": "conta",
-     "afirmacao": "IPCA em 12 meses em dez/2014 e dez/2015.",
-     "numeros": [
-      "6,41",
-      "10,67"
-     ],
-     "comando": ".venv/bin/python src/conta.py valores ipca_12m --de 2014-12 --ate 2015-12",
-     "saida": "2014-12: 6,41 ... 2015-12: 10,67",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "ipca_12m (%):\n2014-12: 6,41\n2015-01: 7,14\n2015-02: 7,70\n2015-03: 8,13\n2015-04: 8,17\n2015-05: 8,47\n2015-06: 8,89\n2015-07: 9,56\n2015-08: 9,53\n2015-09: 9,49\n2015-10: 9,93\n2015-11: 10,48\n2015-12: 10,67\n"
-     }
-    },
-    {
-     "id": "c9",
-     "tipo": "conta",
-     "afirmacao": "Alta do IPCA em 12 meses em 2015.",
-     "numeros": [
-      "4,26"
-     ],
-     "comando": ".venv/bin/python src/conta.py calc \"10.67-6.41\"",
-     "saida": "10.67-6.41 = 4,2600 (com 3 casas: 4,260; com 2 casas: 4,26; com 1 casa: 4,3)",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "10.67-6.41 = 4,2600 (com 3 casas: 4,260; com 2 casas: 4,26; com 1 casa: 4,3)\n"
-     }
-    },
-    {
-     "id": "c10",
-     "tipo": "conta",
-     "afirmacao": "Episódios com commodities acima de 200 pontos: 3 desde 1992.",
-     "numeros": [
-      "3",
-      "200"
-     ],
-     "comando": ".venv/bin/python src/conta.py episodios \"commodities>200\"",
-     "saida": "3 episódio(s). Do começo ao fim de cada um, a Selic subiu em 1, caiu em 1 e ficou igual em 1.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "Episódios em que commodities > 200,00 (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não por mês: um episódio longo não vale mais que um curto.\n\nde 2008-07 a 2008-07 (1 meses): commodities de 200,81 a 200,81 (o maior: 200,81); Selic de 13,00% no começo a 13,00% no fim.\n  no começo, 2008-07: selic_meta 13,00; ipca_12m 6,37; focus_ipca_12m 5,37; juro_real 7,24; juro_real_longo 7,87; dolar_ptax 1,5666; ibcbr 91,26; divida_bruta 55,53; primario_12m -3,72; ibcbr_12m 5,4%\n  12 meses depois do fim, 2009-07: selic_meta 8,75; ipca_12m 4,50; focus_ipca_12m 4,08; juro_real 4,49; juro_real_longo 6,73; dolar_ptax 1,8726; ibcbr 87,95; divida_bruta 59,68; primario_12m -1,60; ibcbr_12m -3,6%\n  recessão começando no episódio ou nos 12 meses seguintes: 4T2008\n\nde 2022-02 a 2022-09 (8 meses): commodities de 203,49 a 220,02 (o maior: 241,93); Selic de 10,75% no começo a 13,75% no fim.\n  no começo, 2022-02: selic_meta 10,75; ipca_12m 10,54; focus_ipca_12m 5,22; juro_real 5,26; juro_real_longo 5,80; dolar_ptax 5,1394; ibcbr 98,49; desocupacao 11,20; divida_bruta 76,92; primario_12m -1,36; ibcbr_12m -0,2%\n  12 meses depois do fim, 2023-09: selic_meta 12,75; ipca_12m 5,19; focus_ipca_12m 4,02; juro_real 8,39; juro_real_longo 5,82; dolar_ptax 5,0076; ibcbr 102,52; desocupacao 7,70; divida_bruta 73,01; primario_12m 0,95; ibcbr_12m 1,3%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2026-03 a 2026-09 (7 meses): commodities de 218,77 a 222,43 (o maior: 222,43); Selic de 14,75% no começo a 13,75% no fim.\n  no começo, 2026-03: selic_meta 14,75; ipca_12m 4,14; focus_ipca_12m 4,09; juro_real 10,24; juro_real_longo 7,65; dolar_ptax 5,2194; ibcbr 110,66; desocupacao 6,10; divida_bruta 79,88; primario_12m 1,06; ibcbr_12m 0,6%\n  12 meses depois do fim, 2027-09: sem dado\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\n3 episódio(s). Do começo ao fim de cada um, a Selic subiu em 1, caiu em 1 e ficou igual em 1.\n"
-     }
-    },
-    {
-     "id": "c11",
-     "tipo": "documento",
-     "afirmacao": "Em outubro, o petróleo embarcou 62,9% mais barris a preço 36,7% maior e o saldo comercial foi o maior para um outubro desde 1989.",
-     "numeros": [
-      "62,9%",
-      "36,7%",
-      "9,3 bilhões"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Times Brasil",
-      "url": "https://timesbrasil.com.br/mundo/petroleo/petroleo-dispara-1226-e-impulsiona-exportacoes-recordes/",
-      "data": "2026-11-06",
-      "trecho": "crescimento de 62,9% no volume embarcado com valorização de 36,7% no preço médio"
-     },
-     "conferencia": {
-      "status": "numeros_na_pagina",
-      "fonte_conhecida": true
-     }
-    },
-    {
      "id": "c12",
-     "tipo": "conta",
-     "afirmacao": "Índice de commodities do BC em setembro de 2026: maior valor desde ago/2022, acima de 99% dos meses anteriores.",
+     "tipo": "site",
+     "afirmacao": "A dívida do governo foi de 81,95% para 82,93% do PIB de junho a setembro; está mais alta que em 96% dos meses desde 2006.",
      "numeros": [
-      "222,4",
-      "241,9",
-      "99%"
+      "81,95%",
+      "82,93%",
+      "96%"
      ],
-     "comando": ".venv/bin/python src/conta.py recorde commodities 2026-09",
-     "saida": "É o maior valor desde 2022-08, quando foi 241,9. Dos 416 meses antes de 2026-09, 410 tiveram valor menor (99%).",
+     "comando": "",
+     "saida": "Dados do site, pressão Contas do governo.",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3713,119 +3579,87 @@
       "trecho": ""
      },
      "conferencia": {
-      "status": "conferido",
-      "saida": "commodities em 2026-09: 222,4. A série começa em 1992-01.\nÉ o maior valor desde 2022-08, quando foi 241,9.\nDos 416 meses antes de 2026-09, 410 tiveram valor menor (99%).\n"
+      "status": "site"
      }
     },
     {
      "id": "c13",
      "tipo": "documento",
-     "afirmacao": "Abicom: a defasagem do diesel nas refinarias da Petrobras ultrapassou a subvenção e chegou a R$ 3,53 por litro, contra R$ 3,52 da subvenção (semana de ~23/10).",
+     "afirmacao": "O Tesouro terá de refinanciar R$ 1,8 trilhão em 12 meses; a parte que vence em até um ano é de 19,95% da dívida.",
      "numeros": [
-      "R$ 3,53",
-      "R$ 3,52"
+      "R$ 1,8 trilhão",
+      "19,95%"
      ],
      "comando": "",
      "saida": "",
      "fonte": {
-      "quem": "Mercado & Consumo (Abicom)",
-      "url": "https://mercadoeconsumo.com.br/27/10/2026/economia/abicom-reeleicao-de-lula-vai-fazer-petrobras-arrumar-a-casa-com-reajuste-gradual-de-preco/",
-      "data": "2026-10-27",
-      "trecho": "ultrapassou a subvenção ao combustível ao atingir R$ 3,53 o litro"
+      "quem": "Poder360 (dados do Tesouro)",
+      "url": "https://www.poder360.com.br/poder-economia/tesouro-tera-de-refinanciar-r-18-trilhao-em-12-meses/",
+      "data": "2026-11-09",
+      "trecho": "A parte da dívida que vence em até um ano chegou a 19,95% em setembro"
      },
      "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": false
+      "status": "nao_aberto",
+      "fonte_conhecida": true
      }
     },
     {
      "id": "c14",
-     "tipo": "conta",
-     "afirmacao": "Diferença entre a defasagem e a subvenção do diesel.",
+     "tipo": "site",
+     "afirmacao": "A dívida ligada à Selic bateu recorde de 52,74% em agosto; cada ponto da Selic custa cerca de R$ 48 bi por ano; o Tesouro projeta dívida de 83,7% do PIB em 2026 e 89,7% em 2030.",
      "numeros": [
-      "0,01"
+      "52,74%",
+      "R$ 48 bilhões",
+      "83,7%",
+      "89,7%"
      ],
-     "comando": ".venv/bin/python src/conta.py calc \"3.53-3.52\"",
-     "saida": "3.53-3.52 = 0,0100 (com 3 casas: 0,010; com 2 casas: 0,01; com 1 casa: 0,0)",
+     "comando": "",
+     "saida": "Memória do momento, 2026-11-01 e 2026-11-03 (Poder360); ficha da história.",
      "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
+      "quem": "Gazeta do Povo (Relatório de Riscos Fiscais do Tesouro)",
+      "url": "https://www.gazetadopovo.com.br/economia/tesouro-preve-divida-bruta-em-897-do-pib-em-2030-com-pressao-de-juros-elevados/",
+      "data": "2026-11-03",
+      "trecho": "Tesouro prevê dívida bruta em 89,7% do PIB em 2030 com pressão de juros elevados"
      },
      "conferencia": {
-      "status": "conferido",
-      "saida": "3.53-3.52 = 0,0100 (com 3 casas: 0,010; com 2 casas: 0,01; com 1 casa: 0,0)\n"
+      "status": "nao_aberto",
+      "fonte_conhecida": true
      }
     },
     {
      "id": "c15",
-     "tipo": "documento",
-     "afirmacao": "O presidente da Abicom diz que a gasolina está desonerada, que o conselho da Petrobras se reuniu em 26/10 sobre a defasagem e que o ajuste deve ser gradual.",
-     "numeros": [],
+     "tipo": "site",
+     "afirmacao": "Em 2016 a PEC do teto: o dólar caiu de R$ 3,97 (setembro de 2015) para R$ 3,26 (dezembro de 2016); em 2019 a Previdência concluída e a Selic de 6,50% a 4,50%.",
+     "numeros": [
+      "3,97",
+      "3,26",
+      "6,50%",
+      "4,50%"
+     ],
      "comando": "",
-     "saida": "",
+     "saida": "Memória longa: ep-2016-teto e ep-2019-previdencia.",
      "fonte": {
-      "quem": "CNN Brasil (Estadão Conteúdo)",
-      "url": "https://www.cnnbrasil.com.br/economia/abicom-reeleicao-de-lula-fara-petrobras-reajustar-gradualmente-os-precos/",
-      "data": "2026-10-26",
-      "trecho": "a gasolina está desonerada"
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
      },
      "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
+      "status": "nao_confere",
+      "por_que": "número que não está nos dados do site nem num fato da memória com fonte"
      }
     },
     {
      "id": "c16",
-     "tipo": "documento",
-     "afirmacao": "Em 31/3/2026 a Abicom apontava defasagem de R$ 3,05 por litro no diesel e R$ 1,61 na gasolina.",
+     "tipo": "conta",
+     "afirmacao": "A dívida bruta subiu 5,09 pontos do PIB em um ano, de 77,84% para 82,93%.",
      "numeros": [
-      "R$ 3,05",
-      "R$ 1,61"
+      "77,84",
+      "82,93",
+      "5,09"
      ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Abegas (Abicom)",
-      "url": "https://www.abegas.org.br/arquivos/99690",
-      "data": "2026-03-31",
-      "trecho": "atingindo R$ 3,05 por litro no diesel e R$ 1,61 na gasolina"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": false
-     }
-    },
-    {
-     "id": "c17",
-     "tipo": "documento",
-     "afirmacao": "O petróleo caiu mais de 8% em 4/11 com expectativa de fim do conflito no Irã (e quase 8% em 1/11).",
-     "numeros": [
-      "8%"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Valor",
-      "url": "https://valor.globo.com/financas/noticia/2026/11/04/petrleo-continua-em-queda-com-o-aumento-das-expectativas-de-fim-do-conflito-envolvendo-o-ir.ghtml",
-      "data": "2026-11-04",
-      "trecho": "Petróleo cai mais de 8% com expectativa de fim do conflito no Irã"
-     },
-     "conferencia": {
-      "status": "numeros_na_pagina",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c18",
-     "tipo": "conta",
-     "afirmacao": "Fim aproximado da subvenção: 30 dias a partir de 27/10 (outubro tem 31 dias).",
-     "numeros": [
-      "26"
-     ],
-     "comando": ".venv/bin/python src/conta.py calc \"27+30-31\"",
-     "saida": "27+30-31 = 26,0000 (dia 26 de novembro; a data exata da portaria não foi lida)",
+     "comando": ".venv/bin/python src/conta.py variacao divida_bruta 2025-09 2026-09",
+     "saida": "divida_bruta: 77,84 em 2025-09 e 82,93 em 2026-09; diferença de 5,09 (em pontos) e de 6,5% (em %).",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3834,479 +3668,39 @@
      },
      "conferencia": {
       "status": "conferido",
-      "saida": "27+30-31 = 26,0000 (com 3 casas: 26,000; com 2 casas: 26,00; com 1 casa: 26,0)\n"
-     }
-    },
-    {
-     "id": "c19",
-     "tipo": "documento",
-     "afirmacao": "Em março de 2023, com a volta do PIS/Cofins, a gasolina subiu 8,33% e somou 0,39 ponto ao IPCA do mês.",
-     "numeros": [
-      "8,33%",
-      "0,39"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Bora Investir (B3), com dados do IBGE",
-      "url": "https://borainvestir.b3.com.br/noticias/gasolina-pressiona-inflacao-que-avanca-071-em-marco/",
-      "data": "2023-04-11",
-      "trecho": "gasolina, com alta de 8,33%"
-     },
-     "conferencia": {
-      "status": "numeros_na_pagina",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c20",
-     "tipo": "conta",
-     "afirmacao": "Peso implícito da gasolina no IPCA em 2023 (contribuição / alta).",
-     "numeros": [
-      "4,68"
-     ],
-     "comando": ".venv/bin/python src/conta.py calc \"0.39/8.33*100\"",
-     "saida": "0.39/8.33*100 = 4,6819 (com 3 casas: 4,682; com 2 casas: 4,68; com 1 casa: 4,7)",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "0.39/8.33*100 = 4,6819 (com 3 casas: 4,682; com 2 casas: 4,68; com 1 casa: 4,7)\n"
-     }
-    },
-    {
-     "id": "c21",
-     "tipo": "conta",
-     "afirmacao": "Um repasse de 10% na gasolina somaria cerca de 0,47 ponto ao IPCA (com o peso implícito de 2023, que não é o peso vigente).",
-     "numeros": [
-      "0,47"
-     ],
-     "comando": ".venv/bin/python src/conta.py calc \"0.39/8.33*10\"",
-     "saida": "0.39/8.33*10 = 0,4682 (com 3 casas: 0,468; com 2 casas: 0,47; com 1 casa: 0,5)",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "0.39/8.33*10 = 0,4682 (com 3 casas: 0,468; com 2 casas: 0,47; com 1 casa: 0,5)\n"
-     }
-    },
-    {
-     "id": "c22",
-     "tipo": "documento",
-     "afirmacao": "O Copom de 4/11 manteve a Selic em 13,75% por unanimidade.",
-     "numeros": [
-      "13,75"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Atlas Público (BCB)",
-      "url": "https://atlaspublico.com.br/bcb/noticias/copom-mantem-selic-em-13-75pct-ao-ano-por-unanimidade-e-ve-99107",
-      "data": "2026-11-04",
-      "trecho": "Copom mantém Selic em 13,75% ao ano por unanimidade"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": false
-     }
-    },
-    {
-     "id": "c101",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (precos), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz precos",
-     "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 4,96% (último dado de outubro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 104,96 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 4,96% (último dado de outubro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 104,96 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.\n"
-     }
-    },
-    {
-     "id": "c102",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (dolar), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz dolar",
-     "saida": "O dólar foi de R$ 5,3451 em 6/11/2025 para R$ 5,5013 em 6/11/2026: alta de 2,9% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 2,9%, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "O dólar foi de R$ 5,3451 em 6/11/2025 para R$ 5,5013 em 6/11/2026: alta de 2,9% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 2,9%, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.\n"
-     }
-    },
-    {
-     "id": "c103",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (credito), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz credito",
-     "saida": "Juro médio do crédito livre às pessoas físicas: 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em set",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "Juro médio do crédito livre às pessoas físicas: 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.262 (um ano antes, R$ 1.273).\nJuro médio do financiamento imobiliário com taxas de mercado: 14,20% ao ano em setembro de 2026, contra 14,88% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.142 (um ano antes, R$ 1.149).\nFonte: Banco Central, juro médio das operações de crédito para pessoas físicas, com um a dois meses de atraso. A Selic não passa inteira nem logo para esses juros.\n"
-     }
-    },
-    {
-     "id": "c104",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (guardado), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz guardado",
-     "saida": "Com a Selic em 13,75% ao ano (em 9/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 4,96% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,79 em um ano (8,38% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de novembro de 2026 (0,1196% ao mês), R$ 6,20 no mês, ou cerca de R$ 77,02 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "Com a Selic em 13,75% ao ano (em 9/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 4,96% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,79 em um ano (8,38% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de novembro de 2026 (0,1196% ao mês), R$ 6,20 no mês, ou cerca de R$ 77,02 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.\n"
-     }
-    },
-    {
-     "id": "c105",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (minimo), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz minimo",
-     "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda falta(m) 2 mês(es) de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda falta(m) 2 mês(es) de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.\n"
-     }
-    },
-    {
-     "id": "c106",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (renda), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz renda",
-     "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.\n"
-     }
-    },
-    {
-     "id": "c107",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (emprego), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz emprego",
-     "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 ponto(s) a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 ponto(s) a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 ponto(s) a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 ponto(s) a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.\n"
+      "saida": "divida_bruta: 77,84 em 2025-09 e 82,93 em 2026-09; diferença de 5,09 (em pontos) e de 6,5% (em %).\n"
      }
     }
    ],
-   "duracao_pensar_s": 349,
-   "duracao_s": 513,
-   "curto": {
-    "porque": "Segundo a Folha, a cotação do petróleo reabriu em leve queda mesmo com os ataques a navios perto de Ormuz. O Valor traz a declaração de um ministro do Iraque de que o país se entendeu com os EUA para exportar por Ormuz, o que aliviaria a oferta. As reportagens não dizem quanto da queda vem de cada coisa.",
-    "e_dai": "O diesel no posto depende de duas decisões com data, a ajuda de R$ 2,12 por litro que vence no fim de novembro e o reajuste da Petrobras, e não do barril.",
-    "vida": "Nada muda hoje no posto. O diesel só sobe para quem abastece e paga frete se a ajuda de R$ 2,12 por litro, que vence no fim de novembro, não for renovada ou se a Petrobras reajustar.",
-    "familias": [
-     {
-      "familia": "outra",
-      "quem": "Quem abastece com diesel e quem depende de frete, como transportadores e caminhoneiros",
-      "o_que_muda": "Nada muda agora; a ajuda de R$ 2,12 por litro renovada por 30 dias em 27/10 vence no fim de novembro, e o preço só muda se ela não for renovada ou se a Petrobras reajustar, o que a Abicom espera que seja feito aos poucos.",
-      "caderno": [
-       "c2",
-       "c18",
-       "c15"
-      ]
-     }
-    ],
-    "objetivo": "",
-    "condicao": "",
-    "caderno": [
-     "c1",
-     "c2",
-     "c18",
-     "c15",
-     "c13",
-     "c17"
-    ]
-   },
-   "pressao": "inflacao",
-   "pagina_que_falta": "Por que o preço da gasolina e do diesel no posto não acompanha o petróleo lá fora? Nenhuma página do site explica a política de preço da Petrobras, a defasagem e a ajuda do governo, e o fato de hoje depende disso.",
-   "curto_do_post": {
-    "porque": "Segundo a Folha, a cotação do petróleo reabriu em leve queda mesmo com ataques a navios perto de Ormuz. A reportagem não diz o que puxou a queda. Ao Valor, um ministro do Iraque disse que o país chegou a um entendimento com os Estados Unidos para exportar por Ormuz. Na semana passada, o Valor atribuiu uma queda de mais de 8% do barril à expectativa de fim do conflito no Irã.",
-    "e_dai": "O barril mais calmo não baixa a bomba sozinho: no fim de outubro, pela Abicom, o diesel da Petrobras estava R$ 3,53 por litro abaixo do preço de importação.",
-    "vida": "Nada muda hoje na bomba, porque o preço depende da Petrobras e da subvenção ao diesel, renovada por 30 dias em 27/10; exemplo: gasolina 10% mais cara somaria cerca de 0,47 ponto ao IPCA.",
-    "familias": [],
-    "objetivo": "",
-    "condicao": "",
-    "caderno": [
-     "c1",
-     "c17",
-     "c13",
-     "c2",
-     "c19",
-     "c20",
-     "c21"
-    ]
-   },
-   "tese": "O preço do diesel no posto depende hoje de decisões com dono e data, e não do barril do dia: a ajuda de R$ 2,12 por litro, que a Fazenda renovou por 30 dias em 27/10 e que vence no fim de novembro, e o reajuste da Petrobras, que a Abicom espera gradual. A última medida da diferença para o preço lá fora (R$ 3,53 por litro, por volta de 23/10) é anterior a duas quedas de cerca de 8% do barril, e por isso ninguém sabe hoje quanto está represado. Na vez parecida, em março de 2023, uma decisão de data certa sobre a gasolina somou 0,39 ponto ao IPCA do mês.",
-   "menor": true,
-   "rascunho": {
-    "titulo": "O diesel no posto depende de duas decisões com data marcada, e não do barril que cai lá fora",
-    "texto": "Em uma semana, o barril de petróleo caiu duas vezes: quase 8% em 1/11 e mais de 8% em 4/11 [c17]. Hoje ele reabriu quase parado, mesmo com navios atacados perto de Ormuz [c1]. O preço do diesel no posto não acompanhou nenhum desses movimentos, porque hoje ele depende de duas decisões que têm dono e data, e não do barril do dia.\n\nA primeira é a ajuda do governo de R$ 2,12 por litro de diesel, que o Ministério da Fazenda renovou por 30 dias em 27/10 e que vence perto do fim de novembro [c2, c18]. A segunda é o reajuste da Petrobras, que a associação dos importadores de combustíveis (Abicom) espera que venha aos poucos [c15]. Falta uma peça: a última medida da diferença entre o diesel daqui e o preço lá fora é de antes das duas quedas do barril, e por isso ninguém sabe hoje quanto preço está represado.\n\n### O governo decide a primeira parte, e o prazo dela acaba no fim de novembro\n\nContados a partir de 27/10, os 30 dias da renovação terminam por volta de 26 de novembro [c18]. A data exata depende do texto da portaria. Depois disso, a ajuda só continua se a Fazenda tomar uma decisão nova, e sem ela o diesel deixa de ter os R$ 2,12 por litro que hoje seguram o preço.\n\nO tamanho da decisão aparece na notícia da renovação: a ajuda custa R$ 10,5 bilhões no período e é paga com receitas extraordinárias do petróleo [c3]. Ou seja, o dinheiro que sustenta o desconto vem do próprio petróleo caro, e a conta muda se o barril seguir caindo.\n\nUma terceira decisão mostra que o governo continua preocupado com o diesel. Em 5/11, a pedido da Fazenda, o comitê do governo que cuida do comércio exterior manteve até 31/12 o imposto de 12% sobre o petróleo exportado [c4]. O motivo que ele deu foi o risco de faltar no país o que se faz com o petróleo, \"principalmente o diesel\" [c4].\n\nA outra metade do preço é da Petrobras. Segundo o presidente da Abicom, o conselho da empresa se reuniu em 26/10 para tratar da diferença para o preço lá fora, e o ajuste deve ser gradual [c15]. Ele lembrou também que a gasolina está desonerada [c15]. Isso quer dizer que o preço da gasolina também depende de uma decisão do governo, a de quando voltar a cobrar o imposto.\n\n### Ninguém sabe hoje quanto preço está represado, porque a última medida é antiga\n\nA Abicom mediu a diferença do diesel em R$ 3,53 por litro, na semana de 23/10 [c13]. Em 31/3, logo depois de começar a guerra contra o Irã, ela era de R$ 3,05 no diesel e de R$ 1,61 na gasolina [c16]. Ou seja, até outubro a diferença do diesel tinha aumentado, apesar da ajuda do governo.\n\nDepois daquela medida, porém, o barril caiu duas vezes perto de 8% [c17]. É provável que a diferença de hoje seja menor que R$ 3,53, mas não há número novo, e para a gasolina não há medida de outubro. Quem diz que um reajuste grande está a caminho e quem diz que não haverá reajuste nenhum está, por enquanto, sem conta atualizada para mostrar.\n\nA melhor objeção vem da própria Abicom. Se a Petrobras ajustar aos poucos e o barril continuar mais barato, o preço represado pode ser bem menor do que a medida de outubro sugere [c15, c17]. Nesse caso, a decisão da empresa pode ser pequena ou até desnecessária, e a única data que pesa de verdade na bomba passa a ser o fim da ajuda.\n\n### Em março de 2023, uma decisão com data certa somou 0,39 ponto à inflação do mês\n\nJá houve uma vez parecida. Em março de 2023, a volta dos impostos federais sobre a gasolina, numa data que se conhecia antes, fez o preço dela subir 8,33% no mês [c19]. Só esse aumento somou 0,39 ponto ao IPCA de março [c19].\n\nO caso mostra o tamanho que uma decisão desse tipo já teve. Ele não prevê a próxima, por três razões. É um caso só, foi um imposto cobrado de uma vez, e não um reajuste feito aos poucos, e foi na gasolina, que tem peso diferente do diesel na inflação. O que ele deixa claro é que, quando o preço do combustível é segurado por decisão, ele costuma mudar de uma vez, no dia da decisão.\n\nPara quem abastece com diesel e para quem depende de frete, como transportadores e caminhoneiros, nada muda agora no posto. A ajuda de R$ 2,12 por litro segue valendo até perto de 26 de novembro [c2, c18]. O preço só sobe se ela não for renovada ou se a Petrobras reajustar, e a Abicom espera que esse reajuste venha aos poucos [c15]. Como o frete entra no preço de quase tudo que chega ao mercado, o efeito, se vier, demora algumas semanas para aparecer nas prateleiras.\n\nEsta leitura estaria errada se o preço na bomba começasse a seguir o barril sem uma decisão nova da Petrobras ou do governo. Até agora isso não aconteceu: o barril caiu duas vezes e o preço no posto ficou onde as decisões o deixaram.\n\nPara você, isso muda o jeito de ler a próxima notícia sobre o petróleo. Um barril mais barato não chega ao posto sozinho. O que mexe no diesel nas próximas semanas é o que a Fazenda decidir sobre a ajuda até o fim de novembro e o que a Petrobras decidir sobre o preço dela. O IBGE divulga a inflação de outubro em 12/11 e a prévia da inflação de novembro em 26/11, perto do dia em que a ajuda vence."
-   },
    "conferencia": {
-    "codigo_antes": {
-     "graves": [
-      "bloco 1: número ou data sem linha do caderno que confira: 1/11, 4/11 | trecho: Em uma semana, o barril de petróleo caiu duas vezes: quase 8% em 1/11 e mais de 8% em 4/11. Hoje ele reabriu quase parad",
-      "bloco 2: número ou data sem linha do caderno que confira: 27/10 | trecho: A primeira é a ajuda do governo de R$ 2,12 por litro de diesel, que o Ministério da Fazenda renovou por 30 dias em 27/10",
-      "bloco 4: número ou data sem linha do caderno que confira: 27/10 | trecho: Contados a partir de 27/10, os 30 dias da renovação terminam por volta de 26 de novembro. A data exata depende do texto ",
-      "bloco 6: número ou data sem linha do caderno que confira: 5/11 | trecho: Uma terceira decisão mostra que o governo continua preocupado com o diesel. Em 5/11, a pedido da Fazenda, o comitê do go",
-      "bloco 7: número ou data sem linha do caderno que confira: 26/10 | trecho: A outra metade do preço é da Petrobras. Segundo o presidente da Abicom, o conselho da empresa se reuniu em 26/10 para tr",
-      "bloco 9: número ou data sem linha do caderno que confira: 23/10, 31/3 | trecho: A Abicom mediu a diferença do diesel em R$ 3,53 por litro, na semana de 23/10. Em 31/3, logo depois de começar a guerra "
-     ],
-     "avisos": [
-      "c3 vem de site fora da lista de fontes conhecidas: https://brasil.perfil.com/carros/governo-mantem-subsidio-ao-diesel-de-r-212-por-mais-30-dias.phtml",
-      "c13 vem de site fora da lista de fontes conhecidas: https://mercadoeconsumo.com.br/27/10/2026/economia/abicom-reeleicao-de-lula-vai-fazer-petrobras-arrumar-a-casa-com-reajuste-gradual-de-preco/",
-      "c16 vem de site fora da lista de fontes conhecidas: https://www.abegas.org.br/arquivos/99690"
-     ],
-     "palavras": 884,
-     "intertitulos": 3
-    },
-    "ia": {
-     "resumo": "O texto segue o caderno na maior parte, mas tem frases sem linha ou mais fortes que a evidência. Elas são: o preço no posto que \"não acompanhou\" o barril, a Petrobras com \"data marcada\", a causa da guerra, a \"objeção da Abicom\", o frete, o caso de 2023 dito como regra e as datas do IBGE. As fontes c3, c13 e c16 estão fora da lista conhecida, e o código já avisou. O editor do site deve olhar essas três antes de publicar.",
-     "graves": [
-      "A tese diz que o preço do diesel no posto não acompanhou as quedas do barril, mas nenhuma linha do caderno mostra o preço na bomba. Só há a diferença de preço da Abicom, de 23/10, e a renovação da ajuda. A frase aparece no 1º parágrafo e no fecho."
-     ],
-     "correcoes": [
-      {
-       "trecho": "O diesel no posto depende de duas decisões com data marcada, e não do barril que cai lá fora",
-       "tipo": "forca",
-       "problema": "Só a ajuda do governo tem prazo no caderno (c2, c18). O reajuste da Petrobras não tem data.",
-       "como_fica": "O diesel no posto depende de duas decisões, a da ajuda do governo e a da Petrobras, e não do barril que cai lá fora"
-      },
-      {
-       "trecho": "Hoje ele reabriu quase parado, mesmo com navios atacados perto de Ormuz [c1]. O preço do diesel no posto não acompanhou nenhum desses movimentos, porque hoje ele depende de duas decisões que têm dono e data, e não do barril do dia.",
-       "tipo": "fonte",
-       "problema": "c1 diz leve queda. Nenhuma linha mostra o preço do diesel no posto nem que ele não se mexeu. A Petrobras não tem data marcada.",
-       "como_fica": "Hoje ele reabriu em leve queda, mesmo com navios atacados perto de Ormuz [c1]. O preço do diesel no posto depende hoje de duas decisões que têm dono, a da ajuda do governo, com prazo, e a da Petrobras, e não do barril do dia."
-      },
-      {
-       "trecho": "Ou seja, o dinheiro que sustenta o desconto vem do próprio petróleo caro, e a conta muda se o barril seguir caindo.",
-       "tipo": "forca",
-       "problema": "c3 diz só que a ajuda é paga com receitas extraordinárias do petróleo. Que a conta mude com a queda do barril é inferência sem linha.",
-       "como_fica": "A ajuda é paga com receitas extraordinárias do petróleo [c3]."
-      },
-      {
-       "trecho": "A outra metade do preço é da Petrobras.",
-       "tipo": "numero",
-       "problema": "Nenhuma linha dá a fatia do preço que cabe à Petrobras. \"Metade\" é número inventado.",
-       "como_fica": "A outra parte do preço é decisão da Petrobras."
-      },
-      {
-       "trecho": "Isso quer dizer que o preço da gasolina também depende de uma decisão do governo, a de quando voltar a cobrar o imposto.",
-       "tipo": "forca",
-       "problema": "c15 só diz que a gasolina está desonerada. Não diz que o governo vai voltar a cobrar o imposto.",
-       "como_fica": "Isso quer dizer que a gasolina segue sem o imposto, e voltar a cobrá-lo seria uma decisão do governo [c15]."
-      },
-      {
-       "trecho": "Em 31/3, logo depois de começar a guerra contra o Irã, ela era de R$ 3,05 no diesel e de R$ 1,61 na gasolina [c16]. Ou seja, até outubro a diferença do diesel tinha aumentado, apesar da ajuda do governo.",
-       "tipo": "fonte",
-       "problema": "c16 não diz quando a guerra começou, nem que havia ajuda em março. O \"apesar da ajuda\" não tem linha.",
-       "como_fica": "Em 31/3, a diferença era de R$ 3,05 no diesel e de R$ 1,61 na gasolina [c16]. Na semana de 23/10, a do diesel era de R$ 3,53 [c13]."
-      },
-      {
-       "trecho": "É provável que a diferença de hoje seja menor que R$ 3,53, mas não há número novo",
-       "tipo": "forca",
-       "problema": "A probabilidade não tem linha no caderno. O caderno só mostra que o barril caiu depois da medida.",
-       "como_fica": "A diferença de hoje pode ser menor que R$ 3,53, mas não há número novo"
-      },
-      {
-       "trecho": "A melhor objeção vem da própria Abicom. Se a Petrobras ajustar aos poucos e o barril continuar mais barato, o preço represado pode ser bem menor do que a medida de outubro sugere [c15, c17]. Nesse caso, a decisão da empresa pode ser pequena ou até desnecessária, e a única data que pesa de verdade na bomba passa a ser o fim da ajuda.",
-       "tipo": "fonte",
-       "problema": "c15 diz só que a Abicom espera ajuste gradual. A objeção não é dela. A frase \"pode ser desnecessária\" e a \"única data que pesa\" não têm linha.",
-       "como_fica": "Uma objeção possível: se a Petrobras ajustar aos poucos e o barril continuar mais barato, o preço represado pode ser menor do que a medida de outubro sugere [c13, c15, c17]. Ainda não há número novo para dizer quanto."
-      },
-      {
-       "trecho": "a volta dos impostos federais sobre a gasolina, numa data que se conhecia antes, fez o preço dela subir 8,33% no mês [c19].",
-       "tipo": "fonte",
-       "problema": "c19 fala da volta do PIS/Cofins, e não de \"impostos federais\". Não diz que a data era conhecida antes. Dá a alta de 8,33% da gasolina, sem provar que o imposto a causou sozinho.",
-       "como_fica": "a volta do PIS/Cofins sobre a gasolina veio com alta de 8,33% no preço dela no mês [c19]."
-      },
-      {
-       "trecho": "É um caso só, foi um imposto cobrado de uma vez, e não um reajuste feito aos poucos, e foi na gasolina, que tem peso diferente do diesel na inflação. O que ele deixa claro é que, quando o preço do combustível é segurado por decisão, ele costuma mudar de uma vez, no dia da decisão.",
-       "tipo": "forca",
-       "problema": "Um só caso não sustenta \"costuma\", e a frase contradiz a ressalva anterior. O peso do diesel não tem linha no caderno.",
-       "como_fica": "É um caso só, foi um imposto cobrado de uma vez, e não um reajuste feito aos poucos, e foi na gasolina. Ele mostra o tamanho que uma decisão assim já teve uma vez, e não diz que a próxima será igual."
-      },
-      {
-       "trecho": "O preço só sobe se ela não for renovada ou se a Petrobras reajustar, e a Abicom espera que esse reajuste venha aos poucos [c15]. Como o frete entra no preço de quase tudo que chega ao mercado, o efeito, se vier, demora algumas semanas para aparecer nas prateleiras.",
-       "tipo": "forca",
-       "problema": "\"Só\" exclui outras causas sem linha. O repasse do frete e o prazo de \"algumas semanas\" não estão no caderno.",
-       "como_fica": "O preço pode subir se ela não for renovada ou se a Petrobras reajustar, e a Abicom espera que esse reajuste venha aos poucos [c15]."
-      },
-      {
-       "trecho": "Até agora isso não aconteceu: o barril caiu duas vezes e o preço no posto ficou onde as decisões o deixaram.",
-       "tipo": "fonte",
-       "problema": "Nenhuma linha do caderno traz o preço no posto.",
-       "como_fica": "Até agora o caderno não traz preço novo na bomba para dizer se isso aconteceu."
-      },
-      {
-       "trecho": "O IBGE divulga a inflação de outubro em 12/11 e a prévia da inflação de novembro em 26/11, perto do dia em que a ajuda vence.",
-       "tipo": "data",
-       "problema": "As duas datas de divulgação do IBGE não têm linha no caderno.",
-       "como_fica": ""
-      }
-     ]
-    },
-    "aplicadas": 13,
-    "codigo": {
-     "graves": [
-      "bloco 1: número ou data sem linha do caderno que confira: 1/11, 4/11 | trecho: Em uma semana, o barril de petróleo caiu duas vezes: quase 8% em 1/11 e mais de 8% em 4/11. Hoje ele reabriu em leve que",
-      "bloco 2: número ou data sem linha do caderno que confira: 27/10 | trecho: A primeira é a ajuda do governo de R$ 2,12 por litro de diesel, que o Ministério da Fazenda renovou por 30 dias em 27/10",
-      "bloco 4: número ou data sem linha do caderno que confira: 27/10 | trecho: Contados a partir de 27/10, os 30 dias da renovação terminam por volta de 26 de novembro. A data exata depende do texto ",
-      "bloco 6: número ou data sem linha do caderno que confira: 5/11 | trecho: Uma terceira decisão mostra que o governo continua preocupado com o diesel. Em 5/11, a pedido da Fazenda, o comitê do go",
-      "bloco 7: número ou data sem linha do caderno que confira: 26/10 | trecho: A outra parte do preço é decisão da Petrobras. Segundo o presidente da Abicom, o conselho da empresa se reuniu em 26/10 ",
-      "bloco 9: número ou data sem linha do caderno que confira: 23/10, 31/3 | trecho: A Abicom mediu a diferença do diesel em R$ 3,53 por litro, na semana de 23/10. Em 31/3, a diferença era de R$ 3,05 no di"
-     ],
-     "avisos": [
-      "o texto tem 756 palavras (o tamanho é de 800 a 1500)",
-      "c3 vem de site fora da lista de fontes conhecidas: https://brasil.perfil.com/carros/governo-mantem-subsidio-ao-diesel-de-r-212-por-mais-30-dias.phtml",
-      "c13 vem de site fora da lista de fontes conhecidas: https://mercadoeconsumo.com.br/27/10/2026/economia/abicom-reeleicao-de-lula-vai-fazer-petrobras-arrumar-a-casa-com-reajuste-gradual-de-preco/",
-      "c16 vem de site fora da lista de fontes conhecidas: https://www.abegas.org.br/arquivos/99690",
-      "siglas que a leitora não conhece, sem nome por extenso ou link: PIS"
-     ],
-     "palavras": 756,
-     "intertitulos": 3
-    },
-    "codigo_depois_da_reescrita": {
-     "graves": [],
-     "avisos": [
-      "c3 vem de site fora da lista de fontes conhecidas: https://brasil.perfil.com/carros/governo-mantem-subsidio-ao-diesel-de-r-212-por-mais-30-dias.phtml",
-      "c13 vem de site fora da lista de fontes conhecidas: https://mercadoeconsumo.com.br/27/10/2026/economia/abicom-reeleicao-de-lula-vai-fazer-petrobras-arrumar-a-casa-com-reajuste-gradual-de-preco/",
-      "c16 vem de site fora da lista de fontes conhecidas: https://www.abegas.org.br/arquivos/99690",
-      "bloco 2: frase de 36 palavras"
-     ],
-     "palavras": 864,
-     "intertitulos": 3
-    },
     "final": {
      "graves": [],
      "avisos": [
-      "o texto tem 777 palavras (o tamanho é de 800 a 1500)",
-      "c13 vem de site fora da lista de fontes conhecidas: https://mercadoeconsumo.com.br/27/10/2026/economia/abicom-reeleicao-de-lula-vai-fazer-petrobras-arrumar-a-casa-com-reajuste-gradual-de-preco/",
-      "c16 vem de site fora da lista de fontes conhecidas: https://www.abegas.org.br/arquivos/99690"
+      "o texto tem 224 palavras (o tamanho de hoje é de 120 a 200)",
+      "bloco 2: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: A meta é o governo arrecadar R$ 73,2 bilhões a mais do que gasta, sem contar os ",
+      "bloco 2: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: Como a regra deixa de fora R$ 64,7 bilhões, quase tudo precatórios, a conta da m"
      ],
-     "palavras": 777,
-     "intertitulos": 3
+     "palavras": 224,
+     "intertitulos": 0
     }
    },
-   "edicao": {
-    "sugestoes": [
-     {
-      "trecho": "Falta ainda uma peça: a última medida da diferença entre o diesel daqui e o preço lá fora é de antes das duas quedas do barril, e por isso ninguém sabe hoje quanto preço está represado.",
-      "problema": "Frase de 36 palavras; o limite é 30. Dividir, ligando com \"Por isso\".",
-      "como_fica": "Falta ainda uma peça: a última medida da diferença entre o diesel daqui e o preço lá fora é de antes das duas quedas do barril. Por isso ninguém sabe hoje quanto preço está represado."
-     },
-     {
-      "trecho": "Esta leitura estaria errada se o preço do diesel começasse a seguir o barril",
-      "problema": "O guia não usa \"errou/errada\": o acerto só se sabe depois. Dizer o que faria a leitura mudar.",
-      "como_fica": "Esta leitura muda se o preço do diesel começar a seguir o barril sem uma decisão nova da Petrobras ou do governo."
-     },
-     {
-      "trecho": "Uma terceira decisão mostra que o governo continua preocupado com o diesel.",
-      "problema": "Atribui intenção ao governo; o motivo já vem na frase seguinte, dito por quem decidiu.",
-      "como_fica": "Uma terceira decisão também mexe com o diesel."
-     },
-     {
-      "trecho": "É um caso só, foi um imposto cobrado de uma vez, e não um reajuste feito aos poucos, e foi na gasolina, e não no diesel.",
-      "problema": "Troca em espelho (\"X, e não Y\") e frases empilhadas; ligar numa frase com o que muda no caso de hoje.",
-      "como_fica": "É um caso só, de um imposto cobrado de uma vez sobre a gasolina, enquanto o diesel hoje depende de um reajuste que a Abicom espera gradual."
-     },
-     {
-      "trecho": "A objeção é razoável, e ainda não há número novo para dizer de quanto seria a diferença.",
-      "problema": "\"Razoável\" é adjetivo de juízo; o texto pesa a objeção sem dizer qual lado tem razão.",
-      "como_fica": "Ainda não há número novo para dizer de quanto seria a diferença."
-     },
-     {
-      "trecho": "Ou seja, de março a outubro a diferença do diesel cresceu.",
-      "problema": "Número sem os dois valores perto da afirmação; a leitora não precisa voltar à frase anterior.",
-      "como_fica": "Ou seja, de março a outubro a diferença do diesel cresceu, de R$ 3,05 para R$ 3,53."
-     }
-    ],
-    "aplicada": true
-   },
-   "titulo": "O preço do diesel no posto depende de duas decisões com prazo, a ajuda do governo e o reajuste da Petrobras",
-   "texto": "Em poucos dias, o barril de petróleo caiu duas vezes, e nas duas a queda chegou perto de 8% [c17]. Na reabertura do mercado, ele caiu de leve, mesmo com navios atacados perto de Ormuz [c1]. Mas o barril mais barato não chega ao posto sozinho, porque o preço do diesel no Brasil depende hoje de duas decisões que têm dono e prazo.\n\nA primeira é a ajuda do governo de R$ 2,12 por litro de diesel, que o Ministério da Fazenda renovou por 30 dias e que vence perto do fim de novembro [c2, c18]. A segunda é o reajuste da Petrobras, que a associação dos importadores de combustíveis (Abicom) espera que venha aos poucos [c15]. A última medida da diferença entre o diesel daqui e o preço lá fora é de antes das duas quedas do barril, e por isso ninguém sabe hoje quanto preço está represado.\n\n### O governo decide a primeira parte, e o prazo dela acaba no fim de novembro\n\nContados a partir da portaria de renovação, no fim de outubro, os 30 dias terminam por volta de 26 de novembro [c18]. A data exata depende do texto da portaria. Depois disso, a ajuda só continua se a Fazenda tomar uma decisão nova, e sem ela o diesel perde os R$ 2,12 por litro que hoje seguram o preço [c2].\n\nUma terceira decisão também mexe com o diesel. A pedido da Fazenda, o comitê do governo que cuida do comércio exterior manteve até 31 de dezembro o imposto de 12% sobre o petróleo exportado [c4]. O motivo dado foi o risco de faltar no país o que se faz com o petróleo, \"principalmente o diesel\" [c4].\n\nA outra parte do preço é decisão da Petrobras. Segundo o presidente da Abicom, o conselho da empresa se reuniu logo depois da eleição para tratar da diferença para o preço lá fora, e o ajuste deve ser gradual [c15]. Ele lembrou também que a gasolina está desonerada, ou seja, segue sem parte do imposto [c15].\n\n### Ninguém sabe hoje quanto preço está represado, porque a última medida é antiga\n\nNo fim de outubro, a Abicom mediu a diferença do diesel nas refinarias da Petrobras em R$ 3,53 por litro abaixo do preço de importação [c13]. No fim de março, a diferença era de R$ 3,05 no diesel e de R$ 1,61 na gasolina [c16]. Ou seja, de março a outubro a diferença do diesel cresceu, de R$ 3,05 para R$ 3,53.\n\nDepois da medida de outubro, porém, o barril caiu duas vezes perto de 8% [c17]. A diferença de hoje pode ser menor que R$ 3,53, mas não há número novo, e para a gasolina não há medida de outubro.\n\nA melhor objeção a esta leitura parte do que a própria Abicom espera, que é um ajuste feito aos poucos. Se for assim e o barril continuar mais barato, o preço represado pode ser bem menor do que a medida de outubro sugere, e o reajuste pode nem pesar no posto [c13, c15, c17].\n\n### Em março de 2023, uma decisão com data certa somou 0,39 ponto à inflação do mês\n\nJá houve uma vez parecida. Em março de 2023, o imposto federal sobre a gasolina voltou a ser cobrado, e o preço dela subiu 8,33% no mês [c19]. Só esse aumento somou 0,39 ponto ao IPCA de março [c19].\n\nO caso mostra o tamanho que uma decisão desse tipo já teve, mas não prevê a próxima. É um caso só, de um imposto cobrado de uma vez sobre a gasolina, enquanto o diesel hoje depende de um reajuste que a Abicom espera gradual. O que ele ensina é que, quando o preço do combustível depende de uma decisão com data, a mudança chega de uma vez no dia em que a decisão sai.\n\nPara quem abastece com diesel e para quem depende de frete, como transportadores e caminhoneiros, nada muda agora no posto. A ajuda de R$ 2,12 por litro segue valendo até perto de 26 de novembro [c2, c18]. O preço pode subir se ela não for renovada ou se a Petrobras reajustar, e a Abicom espera que esse reajuste venha aos poucos [c15]. Quando o frete sobe, o custo chega depois aos produtos que viajam de caminhão até o mercado.\n\nEsta leitura muda se o preço do diesel começar a seguir o barril sem uma decisão nova da Petrobras ou do governo. Enquanto isso não acontece, as duas decisões continuam sendo o que move o preço.\n\nPara você, isso muda o jeito de ler a próxima notícia sobre o petróleo. Um barril mais barato lá fora não quer dizer diesel mais barato aqui, e um barril mais caro também não quer dizer alta no posto no dia seguinte. O que mexe no diesel nas próximas semanas é o que a Fazenda decidir sobre a ajuda até o fim de novembro e o que a Petrobras decidir sobre o preço dela. Na quinta-feira, o IBGE divulga o IPCA de outubro, e a prévia da inflação de novembro sai no fim do mês.",
-   "duracao_escrever_s": 164,
-   "tentativas": [
-    {
-     "em": "2026-11-09T17:05:24+00:00",
-     "resultado": "ok"
-    }
-   ],
-   "texto_corrigido_a_mao": {
-    "em": "2026-11-09T17:06:44+00:00",
-    "titulo_antes": "O diesel no posto depende da ajuda do governo e do reajuste da Petrobras, e não do barril que cai lá fora",
-    "texto_antes": "Em poucos dias, o barril de petróleo caiu duas vezes, e nas duas a queda chegou perto de 8% [c17]. Hoje ele reabriu em leve queda, mesmo com navios atacados perto de Ormuz [c1]. Mas o barril mais barato não chega ao posto sozinho, porque o preço do diesel no Brasil depende hoje de duas decisões que têm dono e prazo.\n\nA primeira é a ajuda do governo de R$ 2,12 por litro de diesel, que o Ministério da Fazenda renovou por 30 dias e que vence perto do fim de novembro [c2, c18]. A segunda é o reajuste da Petrobras, que a associação dos importadores de combustíveis (Abicom) espera que venha aos poucos [c15]. Falta ainda uma peça: a última medida da diferença entre o diesel daqui e o preço lá fora é de antes das duas quedas do barril. Por isso ninguém sabe hoje quanto preço está represado.\n\n### O governo decide a primeira parte, e o prazo dela acaba no fim de novembro\n\nContados a partir da portaria de renovação, no fim de outubro, os 30 dias terminam por volta de 26 de novembro [c18]. A data exata depende do texto da portaria. Depois disso, a ajuda só continua se a Fazenda tomar uma decisão nova, e sem ela o diesel perde os R$ 2,12 por litro que hoje seguram o preço [c2].\n\nO tamanho da decisão aparece na notícia da renovação: a ajuda custa R$ 10,5 bilhões no período e é paga com receitas extraordinárias do petróleo [c3]. Isso quer dizer que, enquanto o petróleo vendido para fora rende mais, o governo tem de onde tirar o dinheiro da ajuda.\n\nUma terceira decisão também mexe com o diesel. A pedido da Fazenda, o comitê do governo que cuida do comércio exterior manteve até 31 de dezembro o imposto de 12% sobre o petróleo exportado [c4]. O motivo dado foi o risco de faltar no país o que se faz com o petróleo, \"principalmente o diesel\" [c4].\n\nA outra parte do preço é decisão da Petrobras. Segundo o presidente da Abicom, o conselho da empresa se reuniu logo depois da eleição para tratar da diferença para o preço lá fora, e o ajuste deve ser gradual [c15]. Ele lembrou também que a gasolina está desonerada, ou seja, segue sem parte do imposto [c15].\n\n### Ninguém sabe hoje quanto preço está represado, porque a última medida é antiga\n\nNo fim de outubro, a Abicom mediu a diferença do diesel nas refinarias da Petrobras em R$ 3,53 por litro, quase o mesmo valor da ajuda do governo, de R$ 3,52 naquela conta [c13, c14]. No fim de março, a diferença era de R$ 3,05 no diesel e de R$ 1,61 na gasolina [c16]. Ou seja, de março a outubro a diferença do diesel cresceu, de R$ 3,05 para R$ 3,53.\n\nDepois da medida de outubro, porém, o barril caiu duas vezes perto de 8% [c17]. A diferença de hoje pode ser menor que R$ 3,53, mas não há número novo, e para a gasolina não há medida de outubro. Quem diz que um reajuste grande está a caminho e quem diz que não haverá reajuste nenhum está, por enquanto, sem conta atualizada para mostrar.\n\nA melhor objeção vem da própria Abicom. Se a Petrobras ajustar aos poucos e o barril continuar mais barato, o preço represado pode ser bem menor do que a medida de outubro sugere, e o reajuste pode nem pesar no posto [c13, c15, c17]. Ainda não há número novo para dizer de quanto seria a diferença.\n\n### Em março de 2023, uma decisão com data certa somou 0,39 ponto à inflação do mês\n\nJá houve uma vez parecida. Em março de 2023, o imposto federal sobre a gasolina voltou a ser cobrado, e o preço dela subiu 8,33% no mês [c19]. Só esse aumento somou 0,39 ponto ao IPCA de março [c19].\n\nO caso mostra o tamanho que uma decisão desse tipo já teve, mas não prevê a próxima. É um caso só, de um imposto cobrado de uma vez sobre a gasolina, enquanto o diesel hoje depende de um reajuste que a Abicom espera gradual. O que ele ensina é que, quando o preço do combustível depende de uma decisão com data, a mudança chega de uma vez no dia em que a decisão sai.\n\nPara quem abastece com diesel e para quem depende de frete, como transportadores e caminhoneiros, nada muda agora no posto. A ajuda de R$ 2,12 por litro segue valendo até perto de 26 de novembro [c2, c18]. O preço pode subir se ela não for renovada ou se a Petrobras reajustar, e a Abicom espera que esse reajuste venha aos poucos [c15]. Quando o frete sobe, o custo chega depois aos produtos que viajam de caminhão até o mercado.\n\nEsta leitura muda se o preço do diesel começar a seguir o barril sem uma decisão nova da Petrobras ou do governo. Enquanto isso não acontece, as duas decisões continuam sendo o que move o preço.\n\nPara você, isso muda o jeito de ler a próxima notícia sobre o petróleo. Um barril mais barato lá fora não quer dizer diesel mais barato aqui, e um barril mais caro também não quer dizer alta no posto no dia seguinte. O que mexe no diesel nas próximas semanas é o que a Fazenda decidir sobre a ajuda até o fim de novembro e o que a Petrobras decidir sobre o preço dela. Na quinta-feira, o IBGE divulga o IPCA de outubro, e a prévia da inflação de novembro sai no fim do mês.",
-    "por_que": "9/11/2026, na nuvem: saíram o custo de R$ 10,5 bilhões (o trecho da fonte não traz o número e as fontes divergem), a ajuda de R$ 3,52 da conta da Abicom (contradiz os R$ 2,12 da portaria), a frase sobre quem diz o quê sem fonte e uma repetição; 'hoje reabriu' virou 'na reabertura do mercado' (a reabertura foi no domingo); título e duas frases sem rótulo seguido de explicação."
-   }
+   "titulo": "Presidente reafirma o compromisso fiscal sem número, e a conta de 2027 segue em disputa",
+   "texto": "O presidente reafirmou na televisão, no domingo, o compromisso com a responsabilidade fiscal, mas não deu medida, tamanho nem data para o ajuste [c1]. Nenhum documento oficial traz uma meta para esse ajuste. O ministro da Casa Civil falou só em levar o investimento de cerca de 17% para 20% ou 21% do PIB [c3].\n\nO que está em jogo é a conta de 2027, cujo Orçamento o Congresso ainda vota. A meta é o governo arrecadar R$ 73,2 bilhões a mais do que gasta, sem contar os juros, e ela já conta como cumprida a partir de R$ 36,6 bilhões. O projeto prevê uma sobra de R$ 18,6 bilhões com todas as despesas [c4]. Como a regra deixa de fora R$ 64,7 bilhões, quase tudo precatórios, a conta da meta dá R$ 83,4 bilhões, acima do centro [c4].\n\nA IFI, do Senado, conta todas as despesas, sem esses descontos. Em setembro, ela previu um déficit de R$ 86,1 bilhões, contra a sobra de R$ 18,6 bilhões do projeto na mesma conta [c7, c4]. O governo deixou as medidas para depois da conferência do clima da ONU, sem data para anunciá-las, e o número delas vai pesar no juro de 10 anos, que chega ao crédito longo das empresas. Em 6/11, esse juro estava em 8,0% ao ano acima da inflação, mais alto que em 91% dos meses desde 2005 [c11].",
+   "argumento": "A fala do presidente reafirma o compromisso fiscal sem número e não resolve a conta de 2027, que cumpre a meta pela regra do governo, mas que a IFI vê em déficit de R$ 86,1 bilhões.",
+   "porque": "O presidente foi à televisão dizer que a dívida e os juros preocupam e reafirmar o compromisso com a responsabilidade fiscal, sem detalhar como fará o ajuste.",
+   "pressao": "contas",
+   "duracao_s": 335
   },
+  "termina_em": "contas",
+  "pergunta": "divida-do-governo",
   "versao_anterior": {
-   "titulo": "Petróleo reabre em leve queda mesmo com ataques perto de Ormuz",
+   "titulo": "Petróleo abre em leve queda mesmo com ataques a navios perto de Ormuz",
    "paragrafos": [
-    "Segundo a Folha, o petróleo reabriu em leve queda, mesmo com ataques a navios perto de Ormuz. Ele segue caro pelo conflito na região, o que pressiona combustíveis e preços no Brasil.",
-    "Segundo o Valor, o ministro do Petróleo iraquiano disse ter chegado a um entendimento com os EUA para exportar por Ormuz. Ainda é só uma declaração e, se virar acordo, põe um pouco mais de petróleo à venda.",
-    "O diesel no posto não depende só do barril, porque conta também a ajuda de R$ 2,12 por litro que a Fazenda prorrogou por 30 dias no fim de outubro."
+    "O petróleo reabriu em leve queda lá fora, mesmo com ataques a navios perto de Ormuz, segundo a Folha. Ao Valor, um ministro do Iraque disse que o país se entendeu com os EUA para exportar por Ormuz, o que ainda é declaração, e não acordo fechado.",
+    "O barril em queda não baixa a bomba sozinho, porque, pela Abicom, no fim de outubro o diesel da Petrobras custava R$ 3,53 por litro menos que o importado. Por isso nada muda hoje no posto, onde o preço depende da Petrobras e da ajuda do governo ao diesel, renovada por 30 dias."
    ]
   },
-  "revisao_manual": "2026-11-09: refeito a pedido do Pedro (o fato do dia termina na vida de quem lê, com o tamanho da tabela de tradução, TRADUCAO.md): curto do editor-chefe refeito da pesquisa gravada, com as traduções do dia (src/conta.py traduz), e post pelo mesmo programa da atualização (src/escreve_post.py), com os mesmos dados.",
-  "termina_em": "inflacao",
-  "pergunta": "inflacao-acima-da-meta"
+  "revisao_manual": "Refeito em 10/11/2026 no texto do dia pela história (pedido do Pedro)."
  },
  "avisos_ao_pedro": [
   "O editor-chefe sentiu falta de uma página no fato do dia de 9/11/2026: Por que o preço da gasolina e do diesel no Brasil não acompanha o petróleo lá fora? Nenhuma página do básico explica a Petrobras, a subvenção e os impostos entre o barril e a bomba, e é isso que a leitora precisa para ler o fato."

@@ -318,7 +318,12 @@
      "ja_nos_indicadores": false,
      "duplicata_de": null,
      "porque": "Bancos e gestoras passam a esperar preços subindo mais rápido e economia quase parada em 2027, e a Genoa fala em recessão, o que leva empresas e famílias a adiar compras e investimentos.",
-     "outras_ids": []
+     "outras_ids": [],
+     "historia": "ritmo_emprego",
+     "marco": false,
+     "previsao_virou": true,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -342,7 +347,12 @@
      "porque": "As exportações subiram 20% em outubro, puxadas por petróleo e minério, e a entrada de dólares ajuda a segurar a moeda americana e a sustentar a produção.",
      "outras_ids": [
       "n061"
-     ]
+     ],
+     "historia": "tarifas_eua",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -362,7 +372,12 @@
      "ja_nos_indicadores": false,
      "duplicata_de": null,
      "porque": "Com o emprego forte nos EUA, o mercado vê 80% de chance de o banco central de lá subir os juros, o que tira dinheiro de países como o Brasil e pressiona o dólar aqui.",
-     "outras_ids": []
+     "outras_ids": [],
+     "historia": "fed_juros_eua",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -384,7 +399,12 @@
      "ja_nos_indicadores": false,
      "duplicata_de": "ev-20261106-02",
      "porque": "A queda das empresas de inteligência artificial lá fora deixa os investidores mais medrosos, e eles tiram dinheiro de bolsas de países emergentes como o Brasil.",
-     "outras_ids": []
+     "outras_ids": [],
+     "historia": "queda_das_acoes_de_tecnologia",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -409,7 +429,12 @@
       "n165",
       "n128",
       "n159"
-     ]
+     ],
+     "historia": "desconfianca_eleicao",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -433,7 +458,12 @@
      "porque": "O presidente repete o compromisso com as contas e dá os primeiros sinais de ajuste, mas sem medidas, e diz que investimento pode justificar mais dívida.",
      "outras_ids": [
       "n177"
-     ]
+     ],
+     "historia": "contas_governo",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": true,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -454,7 +484,12 @@
      "ja_nos_indicadores": false,
      "duplicata_de": null,
      "porque": "A cobrança, que venceria em 7 de novembro, segue trazendo dinheiro para o governo enquanto o petróleo está caro por causa do conflito no Oriente Médio.",
-     "outras_ids": []
+     "outras_ids": [],
+     "historia": "contas_governo",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     },
     {
      "noticia_ids": [
@@ -471,7 +506,12 @@
      "ja_nos_indicadores": false,
      "duplicata_de": null,
      "porque": "Governadores e prefeitos poderiam trocar dívidas nos últimos 120 dias de mandato, o que abre espaço para empurrar a conta para o próximo gestor e afrouxa as contas dos estados.",
-     "outras_ids": []
+     "outras_ids": [],
+     "historia": "contas_governo",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "tema_novo": ""
     }
    ]
   },
@@ -2542,765 +2582,537 @@
   ]
  },
  "post": {
-  "tipo": "dia",
-  "porque": {
-   "caderno": [
-    "c18",
-    "c19",
-    "c20",
-    "c22",
-    "c102"
-   ]
-  },
   "ok": true,
-  "titulo": "Brasil vende US$ 9,3 bi a mais do que compra, maior outubro desde 1989",
+  "tipo": "dia",
+  "formato": "historia",
+  "titulo": "Bradesco e XP Investimentos preveem PIB quase parado em 2027, e o emprego ainda não virou",
   "paragrafos": [
-   "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou em outubro, o maior saldo para o mês desde 1989.",
-   "Pelo Ministério do Desenvolvimento, Indústria e Comércio, as exportações subiram 20% contra outubro de 2025, puxadas por 63% mais barris de petróleo. Mesmo com a maior entrada de dólares do ano, o dólar subiu 4,6% em outubro, porque parece seguir mais a desconfiança de quem investe que o comércio.",
-   "Se ele seguir 2,9% mais caro que um ano antes, uma compra de R$ 100 sobe cerca de R$ 0,30 em um ano, mais nos importados e no combustível."
+   "Bradesco e XP Investimentos cortaram ontem a previsão de crescimento do PIB de 2027 de 1,0% para perto de zero, entre 0,3% e 0,4%. Com o Itaú, que já tinha ido a 0,5% no fim de outubro, são três casas grandes prevendo uma economia quase parada no ano que vem. O último PIB oficial, do segundo trimestre, ainda subiu 0,5%, mas a prévia do Banco Central, que é mais nova, já aponta queda.",
+   "Segundo a imprensa, as duas casas citam a incerteza sobre as contas do governo depois da reeleição, o juro alto e o real mais fraco, e também subiram a previsão de inflação de 2027. A XP Investimentos espera a Selic em 13,75% no fim de 2027, o mesmo nível de hoje, o que deixaria o crédito caro para pessoas e empresas por mais um ano.",
+   "A gestora Genoa, em carta a clientes relatada pelo Valor, foi mais longe e fala em recessão em 2027. Ela também lê a causa de outro jeito, porque, para a Genoa, o risco do juro e da inflação pesa hoje mais que o das contas do governo. Por isso o mesmo corte de previsão chega com duas explicações, e cada uma aponta uma saída diferente.",
+   "O PIB cresceu nos últimos oito trimestres, e uma recessão é o PIB cair dois trimestres seguidos. Os dados mais recentes, porém, vão na direção das casas, já que a prévia do PIB do Banco Central caiu 0,6% nos três meses até agosto, contra os três meses anteriores. O consumo das famílias já tinha caído 0,4% no segundo trimestre.",
+   "O emprego é a parte que ainda não virou. O desemprego caiu de 5,4% no trimestre até junho para 5,2% no trimestre até setembro, mais baixo que em 99% dos meses desde 2012. Uma economia parada chegaria às casas e às empresas pelo emprego, e esse dado ainda não mostra a mudança que as previsões descrevem.",
+   "A melhor objeção ao corte vem da mediana do Focus, que reúne bem mais bancos e consultorias e ainda vê 1,15% para 2027, 0,65 ponto acima do Itaú. Essa mediana caiu nas duas últimas pesquisas, de 1,31% para 1,20% e depois 1,15%. A queda admite duas leituras: as casas grandes se adiantaram e as outras vão segui-las, ou as grandes exageraram e a mediana para perto de onde está.",
+   "Também ontem, o comitê executivo da Câmara de Comércio Exterior, do governo, prorrogou até 31/12 o imposto de 12% sobre o petróleo exportado, que venceria em 7 de novembro. O motivo dado é manter a entrada de dinheiro enquanto o petróleo segue caro por causa do conflito no Oriente Médio. As medidas de ajuste que a Fazenda diz preparar ficaram para depois da conferência do clima da ONU, ainda sem data e sem números.",
+   "Para as empresas que decidem agora se investem e contratam em 2027, as casas grandes indicam crédito caro e economia fraca por mais tempo. Se o corte vier da dúvida sobre as contas, um ajuste com números pode desfazer parte dele; se vier da inflação, como diz a Genoa, a saída depende mais do Banco Central. O desemprego até outubro sai em 27/11, e o PIB do terceiro trimestre, em 2/12."
   ],
   "secoes": [
    {
+    "titulo": null,
     "paragrafos": [
-     "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou em outubro, o maior saldo para o mês desde 1989.",
-     "Pelo Ministério do Desenvolvimento, Indústria e Comércio, as exportações subiram 20% contra outubro de 2025, puxadas por 63% mais barris de petróleo. Mesmo com a maior entrada de dólares do ano, o dólar subiu 4,6% em outubro, porque parece seguir mais a desconfiança de quem investe que o comércio.",
-     "Se ele seguir 2,9% mais caro que um ano antes, uma compra de R$ 100 sobe cerca de R$ 0,30 em um ano, mais nos importados e no combustível."
+     "Bradesco e XP Investimentos cortaram ontem a previsão de crescimento do PIB de 2027 de 1,0% para perto de zero, entre 0,3% e 0,4%. Com o Itaú, que já tinha ido a 0,5% no fim de outubro, são três casas grandes prevendo uma economia quase parada no ano que vem. O último PIB oficial, do segundo trimestre, ainda subiu 0,5%, mas a prévia do Banco Central, que é mais nova, já aponta queda.",
+     "Segundo a imprensa, as duas casas citam a incerteza sobre as contas do governo depois da reeleição, o juro alto e o real mais fraco, e também subiram a previsão de inflação de 2027. A XP Investimentos espera a Selic em 13,75% no fim de 2027, o mesmo nível de hoje, o que deixaria o crédito caro para pessoas e empresas por mais um ano.",
+     "A gestora Genoa, em carta a clientes relatada pelo Valor, foi mais longe e fala em recessão em 2027. Ela também lê a causa de outro jeito, porque, para a Genoa, o risco do juro e da inflação pesa hoje mais que o das contas do governo. Por isso o mesmo corte de previsão chega com duas explicações, e cada uma aponta uma saída diferente."
+    ]
+   },
+   {
+    "titulo": "Os dados mais recentes perdem força, mas o emprego ainda não virou",
+    "paragrafos": [
+     "O PIB cresceu nos últimos oito trimestres, e uma recessão é o PIB cair dois trimestres seguidos. Os dados mais recentes, porém, vão na direção das casas, já que a prévia do PIB do Banco Central caiu 0,6% nos três meses até agosto, contra os três meses anteriores. O consumo das famílias já tinha caído 0,4% no segundo trimestre.",
+     "O emprego é a parte que ainda não virou. O desemprego caiu de 5,4% no trimestre até junho para 5,2% no trimestre até setembro, mais baixo que em 99% dos meses desde 2012. Uma economia parada chegaria às casas e às empresas pelo emprego, e esse dado ainda não mostra a mudança que as previsões descrevem.",
+     "A melhor objeção ao corte vem da mediana do Focus, que reúne bem mais bancos e consultorias e ainda vê 1,15% para 2027, 0,65 ponto acima do Itaú. Essa mediana caiu nas duas últimas pesquisas, de 1,31% para 1,20% e depois 1,15%. A queda admite duas leituras: as casas grandes se adiantaram e as outras vão segui-las, ou as grandes exageraram e a mediana para perto de onde está."
+    ]
+   },
+   {
+    "titulo": "O ajuste das contas, que pesa na previsão, segue sem data",
+    "paragrafos": [
+     "Também ontem, o comitê executivo da Câmara de Comércio Exterior, do governo, prorrogou até 31/12 o imposto de 12% sobre o petróleo exportado, que venceria em 7 de novembro. O motivo dado é manter a entrada de dinheiro enquanto o petróleo segue caro por causa do conflito no Oriente Médio. As medidas de ajuste que a Fazenda diz preparar ficaram para depois da conferência do clima da ONU, ainda sem data e sem números.",
+     "Para as empresas que decidem agora se investem e contratam em 2027, as casas grandes indicam crédito caro e economia fraca por mais tempo. Se o corte vier da dúvida sobre as contas, um ajuste com números pode desfazer parte dele; se vier da inflação, como diz a Genoa, a saída depende mais do Banco Central. O desemprego até outubro sai em 27/11, e o PIB do terceiro trimestre, em 2/12."
     ]
    }
   ],
-  "problemas": [],
-  "edicao": {
-   "sugestoes": [
-    {
-     "trecho": "Mesmo com a maior entrada de dólares do ano, o dólar subiu 4,6% em outubro, porque parece seguir mais a desconfiança de quem investe que o comércio. Se ele seguir 2,9% mais caro que um ano antes, uma compra de R$ 100 sobe cerca de R$ 0,30 em um ano, mais nos importados e no combustível.",
-     "problema": "O parágrafo tem 55 palavras, e o limite é 50. Cortar palavras tiraria o mês, o prazo ou o porquê, então a frase do dólar passa para o fim do segundo parágrafo.",
-     "como_fica": "A frase \"Mesmo com a maior entrada de dólares do ano, o dólar subiu 4,6% em outubro, porque parece seguir mais a desconfiança de quem investe que o comércio.\" vai para o fim do segundo parágrafo. O terceiro fica só com a frase sobre a compra de R$ 100."
-    },
-    {
-     "trecho": "puxadas por 62,9% mais barris de petróleo",
-     "problema": "Número sem arredondar.",
-     "como_fica": "puxadas por 63% mais barris de petróleo"
-    }
-   ],
-   "aplicada": true
-  },
-  "teste": {
+  "pesquisa": {
+   "versao": 4,
    "ok": true,
-   "testes": {
-    "porque": {
-     "ok": true,
-     "por_que": "Atribui ao MDIC a alta de 20% das exportações puxada pelo volume de petróleo (62,9% mais barris, arredondado para 63%), e o dólar em alta mesmo com o recorde vem com 'parece', como a leitura provável da fonte."
-    },
-    "quem": {
-     "ok": true,
-     "por_que": "Não há decisão de ninguém no fato, e nenhuma frase põe governo, Banco Central ou empresas como autores do saldo ou da alta do dólar; o sentido não muda com outro governo."
-    },
-    "e_dai": {
-     "ok": true,
-     "por_que": "Diz que o recorde não segurou o dólar, que segue mais a desconfiança de quem investe, com cautela ('parece'). Fecha na vida da leitora com tamanho (R$ 0,30 em R$ 100), prazo (um ano), condição (se a alta de 2,9% não voltar) e para quem (importados e combustível)."
-    },
-    "livro": {
-     "ok": true,
-     "por_que": "Não explica como a balança ou o dólar agem nos preços; o espaço vai todo para o fato, o porquê e o e daí do dia."
-    }
-   },
-   "problemas": []
-  },
-  "meta": [
-   {
-    "etapa": "post",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "0e282cc7fcbfadab95c7d662148d987b0d27e7a397216adbc20ac7c3cf1cdae9",
-    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.13507059999999999,
-    "turnos": 2,
-    "duracao_s": 37,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "60dce5d7-c23f-4ca9-b7b5-2c075a2b3d91"
-   },
-   {
-    "etapa": "editor",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "74027bb499987d9b1b6f6fdf099c6feb394bda37e0854f421ab15f0e0e349d2a",
-    "system_sha256": "4c7e8c0f33317bc6d454b5ff1a997da9df57cacbbd46c9781db8192f030feaf7",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.3178062,
-    "turnos": 2,
-    "duracao_s": 36,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "65454735-7cd3-46d2-ab51-6c01753e8183"
-   },
-   {
-    "etapa": "teste",
-    "modelo_pedido": "opus",
-    "prompt_sha256": "18f52406c0a99e58b6f3840b8bb527190752a02778d2d8b4e5c7a75fd926e47c",
-    "system_sha256": "ec2846d97f94584650118e7a41a2898f261e7c831f55e498dddb6de838a29151",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.0757176,
-    "turnos": 2,
-    "duracao_s": 13,
-    "modelos": [
-     "claude-opus-5-5"
-    ],
-    "permission_denials": [],
-    "session_id": "9f8b4488-3cb5-44db-86a9-6d9a80e6c4b2"
-   }
-  ],
-  "fundo": {
-   "versao": 2,
-   "ok": true,
-   "em": "2026-11-08T01:30:00+00:00",
-   "voltas": [
-    {
-     "volta": 1,
-     "teses": [
-      {
-       "tese": "O recorde de outubro é um superávit de preço do petróleo, e ele não segurou o dólar: de janeiro a 30/10 entraram US$ 54,956 bi pelo comércio, mas saíram US$ 26,213 bi líquidos pelo canal financeiro, e o dólar subiu. Por isso uma queda do superávit por petróleo mais barato (o MDIC já cortou a previsão de US$ 90 bi para US$ 84,4 bi) não deve, por si só, pressionar o dólar. O que decide é o plano fiscal e o Fed.",
-       "por_que_nao_e_obvia": "A manchete diz que a entrada de dólares segura a moeda. Os números mostram que o fluxo comercial recorde convive com dólar mais caro, porque o canal financeiro é maior e responde à política. E a paz, que corta o superávit, é boa notícia para a inflação.",
-       "o_que_muda": "A leitora passa a ler um superávit menor em novembro e dezembro como efeito do petróleo mais barato, e não como sinal de crise cambial. Passa também a olhar o anúncio fiscal e o Focus para o câmbio, e não a balança.",
-       "como_pode_dar_errado": "Se o petróleo cair forte e o capital continuar saindo, o dólar pode subir ainda mais, e a tese de que o comércio é colchão e não âncora fica pela metade. O site confere o dólar e o Focus de cada segunda-feira, o IPCA de 12/11 e o Copom de 9/12. Só há um episódio parecido (2022) e dois contrários (2014-15).",
-       "caderno": [
-        "c1",
-        "c2",
-        "c6",
-        "c7",
-        "c8",
-        "c9",
-        "c10",
-        "c12",
-        "c13",
-        "c14"
-       ]
-      }
-     ],
-     "editor_chefe": {
-      "veredito": "devolve",
-      "tese": "Rascunho, ainda sem aprovação: o recorde de outubro conviveu com um dólar mais caro, porque o dinheiro que saiu pelo canal financeiro pesou mais que o que entrou pelo comércio. Se for isso, um saldo menor com o petróleo mais barato não basta para fazer o dólar subir. O que pesa é o humor de quem investe. Há 1 caso parecido (2022) e 1 contrário (2014-15), o que é pouco para chamar de padrão.",
-      "testes": {
-       "nao_obvia": {
-        "ok": true,
-        "por_que": "O fato do dia diz que a entrada de dólares ajuda a segurar a moeda. A tese diz que, desta vez, quem decidiu o câmbio foi o canal financeiro, e a leitora não chega nisso pela manchete."
-       },
-       "muda_algo": {
-        "ok": true,
-        "por_que": "A leitora passaria a ler um saldo menor nos próximos meses sem tomar isso como alarme de câmbio e a olhar o fluxo financeiro e o Focus. Isso só vale se a conta do período certo sustentar a tese."
-       },
-       "pode_dar_errado": {
-        "ok": false,
-        "por_que": "'Não deve, por si só, pressionar o dólar' não tem número nem data, e nada pode desmenti-la, porque qualquer alta do dólar se explica pelo 'resto'. Falta dizer o que se espera do dólar e do fluxo até uma data da lista, com um limite claro."
-       },
-       "no_caderno": {
-        "ok": false,
-        "por_que": "c1 e c2, a base do fato, não foram abertos, e as fontes divergem (exportações de US$ 31,51 bi ou de US$ 37,81 bi). O fluxo de c8 vai de janeiro a outubro, mas o dólar subiu de agosto a outubro. Nada no caderno separa preço de volume, e 'superávit de preço' fica sem apoio."
-       }
-      },
-      "roteiro": [
-       "Provisório: o recorde de outubro e o dólar mais caro no mesmo período, com os números conferidos na nota do MDIC.",
-       "Quanto do saldo é preço e quanto é volume (índices de preço e de quantidade do Icomex/FGV ou da Secex) e o peso do petróleo.",
-       "O fluxo cambial de agosto a outubro, dividido entre comércio e finanças: o financeiro foi maior?",
-       "Os episódios desde 2000 em que as commodities caíram forte, o que o dólar fez e o que separou um caso do outro.",
-       "A melhor objeção: sem o comércio, o dólar estaria bem mais alto, e as reservas só ficaram paradas por causa dele.",
-       "O que o site vai conferir e quando."
-      ],
-      "previsao": {
-       "texto": "Ainda indefinida: a pesquisa precisa propor o que o dólar e o fluxo financeiro devem fazer se o Brent ficar abaixo de US$ 100, com um limite claro.",
-       "quando": "2026-12-09",
-       "sinal": "O dólar Ptax e o fluxo cambial semanal do Banco Central (canal financeiro contra canal comercial) até a reunião do Copom."
-      },
-      "pressao": "mercado",
-      "devolve": [
-       "Abra a nota oficial do MDIC/Secex de 6/11 e acerte exportações, importações e saldo de outubro. Hoje as fontes divergem (US$ 31,51 bi ou US$ 37,81 bi), e fato que não foi aberto não vai para o texto.",
-       "De onde veio o recorde: preço ou volume? Procure os índices de preço e de quantidade de outubro (Icomex/FGV ou Secex). Sem isso, a tese não pode dizer 'superávit de preço'.",
-       "O período tem de casar: qual foi o fluxo cambial de agosto a outubro, ou só de outubro, dividido entre comercial e financeiro? Confirme os US$ 18,151 bi de outubro na nota do Banco Central. Comparar o fluxo de janeiro a outubro com o dólar de agosto a outubro não prova nada.",
-       "Já aconteceu antes? Com src/conta.py, liste todas as quedas de mais de 15% do índice de commodities em até 3 meses desde 2000 e diga o que o dólar fez nos 3 meses seguintes. Dois casos (2022 e 2014-15) não sustentam 'o que decide é o resto'. Diga o que separou os casos, por exemplo a Selic, o risco fiscal ou o Fed.",
-       "E daí? Transforme a tese em previsão: se o Brent ficar abaixo de US$ 100, o que se espera do dólar e do canal financeiro até 9/12, e com que limite a tese cai?",
-       "Teste da troca: troque 'plano fiscal' pelo mecanismo, isto é, o prêmio de risco que quem investe cobra, e cite cargos, nunca o nome do presidente reeleito, que aparece no trecho de c10."
-      ]
-     }
-    },
-    {
-     "volta": 2,
-     "teses": [
-      {
-       "tese": "O recorde de outubro não segurou o dólar, e o fluxo cambial não explica o câmbio: em outubro entraram US$ 18,151 bi (US$ 9,339 bi pelo comércio e US$ 8,812 bi pelo canal financeiro) e o dólar subiu 4,6%. O que mexeu com ele foi o prêmio de risco que quem investe cobra depois da eleição. Por isso, se o Brent ficar abaixo de US$ 100 e o saldo comercial encolher, o dólar não deve passar de R$ 5,78 (5% sobre os R$ 5,50 de 6/11) até o fim de novembro, desde que o canal financeiro siga positivo.",
-       "por_que_nao_e_obvia": "A manchete e o fato do dia dizem que a entrada de dólares segura a moeda. Os números de outubro mostram o contrário: o mês teve a maior entrada do ano e o dólar subiu mesmo assim. A pesquisa anterior errou ao usar a saída financeira de janeiro a outubro; só o mês de outubro casa com o dólar.",
-       "o_que_muda": "A leitora passa a ler um superávit menor em novembro e dezembro como efeito do petróleo mais barato, e não como sinal de pressão sobre o dólar. Passa a olhar o fluxo financeiro semanal do Banco Central, o Brent e o anúncio das contas do governo.",
-       "como_pode_dar_errado": "Cai se o dólar passar de R$ 5,78 com o Brent abaixo de US$ 100 e o canal financeiro negativo. Pode cair também se o histórico pesar: em 5 quedas de commodities desde 2002, o dólar caiu depois em 4, mas subiu 12,4% em 2015, quando a dívida e a Selic subiam, e hoje a dívida também sobe. São 5 casos e o fluxo de outubro vem de uma só fonte. O site confere o dólar toda semana e o Copom de 9/12.",
-       "caderno": [
-        "c18",
-        "c20",
-        "c21",
-        "c22",
-        "c36",
-        "c7",
-        "c24",
-        "c26",
-        "c28",
-        "c30",
-        "c32",
-        "c33"
-       ]
-      },
-      {
-       "tese": "O saldo recorde é mais resistente à queda do preço do petróleo do que a manchete sugere, porque em outubro o petróleo cresceu mais por volume (+62,9%) do que por preço (+36,7%). Se o volume se mantiver, um barril 8% mais barato corta só a parte do preço do saldo. O superávit de 2026 deve ficar perto da nova previsão de US$ 84,4 bi, e não despencar.",
-       "por_que_nao_e_obvia": "Todo mundo trata o recorde como efeito de preço alto. A divisão do petróleo mostra que o volume pesou mais, e o petróleo foi a 22,6% das exportações.",
-       "o_que_muda": "A leitora deixa de esperar que a paz com o Irã apague o superávit, e passa a ver o saldo como menos refém do barril. O imposto de 12% sobre o petróleo exportado (prorrogado até 31/12) segue rendendo à União.",
-       "como_pode_dar_errado": "Só uma fonte, vista pelo resumo da busca, traz a divisão de preço e volume, e não há divisão para o minério nem para o total. Se a balança de novembro (início de dezembro) mostrar saldo muito abaixo do de outubro com volume estável, a tese cai. Se o MDIC cortar de novo a previsão de US$ 84,4 bi, também.",
-       "caderno": [
-        "c19",
-        "c18",
-        "c7",
-        "c6"
-       ]
-      }
-     ],
-     "editor_chefe": {
-      "veredito": "aprova",
-      "tese": "Outubro teve a maior entrada de dólares do ano (US$ 18,151 bi, sendo US$ 9,339 bi pelo comércio e US$ 8,812 bi pelo canal financeiro), e mesmo assim o dólar subiu 4,6%. Na semana da eleição entraram US$ 9,498 bi, e o dólar subiu 8,21% em um dia. Hoje o dólar parece andar mais com a desconfiança de quem investe, que cresceu depois da eleição, do que com a balança, e nenhum dado separa quanto disso vem das contas do governo ou da troca de diretores do Banco Central. Por isso o saldo menor que vem com o petróleo mais barato não basta para esperar um dólar bem mais caro até 9/12. A evidência é curta: um mês de fluxo, de uma só fonte, e 5 casos desde 2002.",
-      "testes": {
-       "nao_obvia": {
-        "ok": true,
-        "por_que": "O fato do dia e a manchete dizem que o superávit segura o dólar. A tese mostra que, na semana e no mês da maior entrada do ano, o dólar subiu, e a leitora não tira isso do jornal."
-       },
-       "muda_algo": {
-        "ok": true,
-        "por_que": "A leitora passa a ler um saldo comercial menor em novembro e dezembro sem concluir logo que o dólar vai disparar. O sinal que importa para o dólar passa a ser o juro de 10 anos e o plano das contas do governo."
-       },
-       "pode_dar_errado": {
-        "ok": true,
-        "por_que": "A tese cai se o dólar (Ptax) passar de R$ 5,78, que é 5% acima dos R$ 5,50 de 6/11, até 9/12 sem que o juro de 10 anos suba. Ela cai também se o dólar passar disso com o canal financeiro em saída. O caso de 2015, quando o dólar subiu 12,4%, mostra que o risco é real."
-       },
-       "no_caderno": {
-        "ok": true,
-        "por_que": "Os números têm linha no caderno (c18, c20, c21, c22, c10, c36, c23 a c34). O fluxo de outubro (c20 e c21) e o saldo (c18) vêm de reportagens que a pesquisa não abriu. A conferência tem de abrir esses links. Se o trecho de c20 não aparecer, a tese cai, e o texto não vai ao ar."
-       }
-      },
-      "roteiro": [
-       "Começar pelo choque entre o fato do dia e o número: outubro teve a maior entrada de dólares do ano (c20), com o comércio e o canal financeiro positivos, e o dólar subiu 4,6% no mês (c22). Dizer a tese nos dois primeiros parágrafos.",
-       "Mostrar a semana da eleição: entraram US$ 9,498 bi, US$ 3,070 bi deles pelo canal financeiro (c21), e no primeiro pregão depois de 25/10 o dólar subiu 8,21% e a bolsa caiu 13,88% (c10). O dinheiro entrou e o preço subiu mesmo assim.",
-       "Explicar o mecanismo e de quem é a decisão. A dúvida é sobre o plano das contas, do Executivo e do Congresso, e sobre a diretoria do Banco Central, já que o presidente indica seis diretores até 2027 (c35). O sinal: o juro de 10 anos subiu de 7,9% para 8,1% (c36). Dizer que é uma leitura, sem dado que separe o risco do fluxo. Usar o cargo, nunca o nome.",
-       "Mostrar por que o saldo deve encolher: o petróleo caiu quase 8% em 2/11 e mais de 8% em 4/11 (c37), a previsão do governo caiu de US$ 90 bi para US$ 84,4 bi (c7) e o petróleo dava 49,4% do superávit (c6). Com a ressalva de que vem de uma só fonte: em outubro, o petróleo cresceu mais por volume (+62,9%) do que por preço (+36,7%) (c19).",
-       "Trazer as vezes parecidas: em 5 quedas de commodities de mais de 15% desde 2002, o dólar caiu nos 3 meses seguintes em 4 (c23 a c32). Avisar que em 2008 e 2020 o dólar já tinha disparado durante a queda (c38, c39), e que essas foram crises mundiais.",
-       "Apresentar a melhor objeção: o único caso de alta foi 2015 (+12,4%, c26), quando a dívida e a Selic subiam (c33), e hoje a dívida também sobe. Quem discorda diz ainda que o fluxo não capta derivativos e que, sem o comércio, o dólar teria subido mais. Dizer que 5 casos mostram um padrão, não uma lei.",
-       "Fechar com o que o site vai conferir: o dólar (Ptax) e o juro de 10 anos toda semana, o fluxo cambial que o Banco Central divulga às quartas e o Copom de 9/12. A tese cai se o dólar passar de R$ 5,78 sem que o juro de 10 anos suba. Terminar com o link para a página da pressão mercado, sem conselho sobre dinheiro."
-      ],
-      "previsao": {
-       "texto": "Mesmo com o petróleo mais barato e o saldo comercial menor, o dólar (Ptax) não deve passar de R$ 5,78, que é 5% acima dos R$ 5,50 de 6/11, a não ser que o juro de 10 anos volte a subir, sinal de mais desconfiança sobre as contas do governo.",
-       "quando": "2026-12-09",
-       "sinal": "O dólar e o juro de 10 anos no site, o fluxo cambial semanal do Banco Central (o canal financeiro) e o Copom de 9/12. Se o dólar passar de R$ 5,78 com o juro de 10 anos parado, a tese erra."
-      },
-      "pressao": "mercado",
-      "devolve": []
-     }
-    }
-   ],
+   "em": "2026-11-10T20:18:34+00:00",
    "meta": [
     {
      "etapa": "pesquisa",
      "modelo_pedido": "sonnet",
-     "prompt_sha256": "ffb839df5516731b4597669c4b4a0385161e34baf41c32530b7c8119ea7f6776",
-     "system_sha256": "91544b8dfc3e45cad0861241319f94537c0ce92ba06447bda6cf0420d0f3e1c0",
+     "prompt_sha256": "124df5d633a37d650fef5f3071cc4506d0749b069f34bbe461f0fb3fda52b9a9",
+     "system_sha256": "61b5c38a2d4901b3f840f98a25ae736b411b2051045a97e8fdec79bf58550b85",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.5793221,
-     "turnos": 16,
-     "duracao_s": 116,
+     "custo_usd": 0.5928379,
+     "turnos": 14,
+     "duracao_s": 105,
      "modelos": [
       "claude-sonnet-5-5",
       "claude-haiku-5-5"
      ],
      "permission_denials": [],
-     "session_id": "928362d5-fe71-4924-82cb-d438f9ba7acc"
-    },
-    {
-     "etapa": "editor_chefe",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "5860c12e2a606231b2266c6271af68b640f84e277719da62a072fb06bec11e90",
-     "system_sha256": "bb878ebaa68b130349d7c15b49ff4f05bb8ef49578c90b33842d666b474ddb4a",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.2179718,
-     "turnos": 3,
-     "duracao_s": 45,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "8c4ce423-f572-429e-8eff-8254a20b9366"
-    },
-    {
-     "etapa": "pesquisa",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "af1033b41f9f65a1ea429644c02d54c19adaaf02926d26b99a79a8a3343fe4b0",
-     "system_sha256": "91544b8dfc3e45cad0861241319f94537c0ce92ba06447bda6cf0420d0f3e1c0",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.9666657999999998,
-     "turnos": 33,
-     "duracao_s": 241,
-     "modelos": [
-      "claude-sonnet-5-5",
-      "claude-haiku-5-5"
-     ],
-     "permission_denials": [
-      {
-       "tool_name": "Bash",
-       "tool_use_id": "toolu_01NcoLzip5Uwf3ztRDxuBA43",
-       "tool_input": {
-        "command": "cd /home/user/vaidarcrise; for s in commodities dolar_ptax; do .venv/bin/python src/conta.py valores $s --de 2000-01 --ate 2014-03 | tr '\\n' ' '; echo; done; .venv/bin/python src/conta.py valores selic_meta --de 2008-06 --ate 2009-06 | tr '\\n' ' '"
-       }
-      }
-     ],
-     "session_id": "124c514c-193a-4170-b612-2b72aae77679"
-    },
-    {
-     "etapa": "editor_chefe",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "41a901e282493abf26456dc580e128a97cc9ec1a7f6562993d36510239fa12a7",
-     "system_sha256": "bb878ebaa68b130349d7c15b49ff4f05bb8ef49578c90b33842d666b474ddb4a",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.34772620000000004,
-     "turnos": 3,
-     "duracao_s": 58,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "13ba722f-c613-4fb6-946e-412ed92aeeb2"
+     "session_id": "910f12e3-36a2-4b8a-bf94-ec0c538b45c8"
     },
     {
      "etapa": "redacao",
      "modelo_pedido": "opus",
-     "prompt_sha256": "fe17cb152cebb5fdc1e46f7869a1e5ec332aaab425a19f5ed04bd2e1cea27ec0",
-     "system_sha256": "aa494f59a71807ff620b5b3c99668bf9d0fac03b0aa7c9292bd49aac3db0fb7b",
+     "prompt_sha256": "6b8483da5baa3e5609afc68c1c78abd0f38ef4f8533711ee672e688fc379f47c",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.5773818,
+     "custo_usd": 0.6762176000000001,
+     "turnos": 2,
+     "duracao_s": 57,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "aadb293b-cc26-4ff4-b9cf-895966674005"
+    },
+    {
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "03c1710207aada7e284e6cd8c04f43a03e7f79b898313d0239fbd4f8ebf068db",
+     "system_sha256": "7cb67fdacc15870258c05ca0f7aa1047ab704bf4626c9fcd66e7967939bbff9c",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.5927583,
+     "turnos": 5,
+     "duracao_s": 71,
+     "modelos": [
+      "claude-opus-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "773ae559-594a-4329-ad7e-745a327e2e23"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "0e2d2d9c79d179231425cdc04e1e4062020866b2eceb135173f9cac579b58037",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7516656,
      "turnos": 2,
      "duracao_s": 73,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "eb7d8004-6ca9-4d48-8a9f-950ecd239eac"
+     "session_id": "76fe2f0e-3f36-4f67-8338-c62a403a87fc"
     },
     {
-     "etapa": "conferencia",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "8b1fd23081e1d0ff491a90bea74022ed5edc30f56266119242f2f978cdb52673",
-     "system_sha256": "e362d1487bb7e65fb090c712835d70e7ca64fb4c1931cd4ac03535cea992f48c",
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "8e70689296995e2ef822fbc1fdc7c275a8261d27d30ae9ad71cd7207c639e69b",
+     "system_sha256": "7cb67fdacc15870258c05ca0f7aa1047ab704bf4626c9fcd66e7967939bbff9c",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.20174750000000002,
-     "turnos": 2,
-     "duracao_s": 93,
+     "custo_usd": 0.6535228,
+     "turnos": 6,
+     "duracao_s": 75,
      "modelos": [
-      "claude-sonnet-5-5"
+      "claude-opus-5-5",
+      "claude-haiku-5-5"
      ],
      "permission_denials": [],
-     "session_id": "5d6b4249-0679-4606-82dd-c1e80872a5fa"
+     "session_id": "606d0b7f-c737-48c0-949d-bafd2c19b4a6"
     },
     {
      "etapa": "redacao",
      "modelo_pedido": "opus",
-     "prompt_sha256": "5661feb27c05bae07ef796d193fc449d2a6e9484becafd1ad9b90f928e5840ba",
-     "system_sha256": "aa494f59a71807ff620b5b3c99668bf9d0fac03b0aa7c9292bd49aac3db0fb7b",
+     "prompt_sha256": "2233427963ce280023918e19e9d0c00c3dc01c1bba0799eccad34feb39bde7de",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.5326658,
+     "custo_usd": 0.6619456,
      "turnos": 2,
      "duracao_s": 38,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "f2896da6-e6af-40c1-b1dc-aff9fd73d5be"
+     "session_id": "07d5053e-6b44-4de5-86c5-801357da40ef"
     },
     {
-     "etapa": "editor",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "d68e5a259ff351da9a78df0511ab560c18efa0ea2dbe8cb3b6a9e4aa9bdd29e1",
-     "system_sha256": "24b87222ed67682b645f35796cbee85d5bf57e11892ca5e832dbf050023596be",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.1932349,
-     "turnos": 2,
-     "duracao_s": 58,
-     "modelos": [
-      "claude-sonnet-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "027d3f1d-915f-44fb-b4d0-f231dd79a0ad"
-    },
-    {
-     "etapa": "editor_chefe",
+     "etapa": "revisor",
      "modelo_pedido": "opus",
-     "prompt_sha256": "5ea23ca425963b74c572415a80289a5c80f600587b59b3993bcf1a13e6681939",
-     "system_sha256": "c67e5f42e90ffcf87745cda9a56c4872511340d3e26a0d63847171ed792845ff",
+     "prompt_sha256": "c92dbda26c309eefb80e2305657b72868002d6f0f8b478ef4defc7d5ff8dc135",
+     "system_sha256": "7cb67fdacc15870258c05ca0f7aa1047ab704bf4626c9fcd66e7967939bbff9c",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.292172,
+     "custo_usd": 0.4168168,
      "turnos": 2,
-     "duracao_s": 14,
+     "duracao_s": 20,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "4876feba-f535-4f99-ab8d-62d7d0ffc07c"
-    },
-    {
-     "etapa": "editor_chefe",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "24d20d6477ece9ea13c098ab4353e0c361a07f09408c0e33d50ae71c2471439f",
-     "system_sha256": "71dc0f4d088eada8b40ba4bb2b49edc6987d726eb81c818f32a35e02eaaa6fbf",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.301636,
-     "turnos": 2,
-     "duracao_s": 15,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "d937ab35-affc-4fe7-92f5-071063f8695b"
+     "session_id": "08da77a7-7438-4ad7-bc57-97b9a58e742b"
     },
     {
      "etapa": "redacao",
      "modelo_pedido": "opus",
-     "prompt_sha256": "af3ce7115f8ea0e23a2f073c35ff5c8c3591583e71d90dd12b9f0a77236f176f",
-     "system_sha256": "465b071bb998b5d53693c7e8072509ec646b4fbda3d2b7ee5dad5199233f972a",
+     "prompt_sha256": "41649fe756e83df4cd2d8ecadaee4048bf2e1061df31d70dfc23b078a3181d71",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
      "returncode": 0,
      "is_error": false,
-     "custo_usd": 0.6277200000000001,
+     "custo_usd": 0.6246655999999999,
      "turnos": 2,
-     "duracao_s": 76,
+     "duracao_s": 24,
      "modelos": [
       "claude-opus-5-5"
      ],
      "permission_denials": [],
-     "session_id": "69dc25f8-a0f4-4a07-a8b8-6b2a01ec2d37"
+     "session_id": "8c3dce4c-87a8-4772-aee9-a50c90cae3f6"
+    }
+   ],
+   "offline": true,
+   "voltas": [
+    {
+     "volta": 1,
+     "codigo": {
+      "graves": [
+       "bloco 1: número ou data sem linha do caderno que confira: 30/10 | trecho: Bradesco e XP cortaram ontem a previsão de crescimento do PIB de 2027, de 1,0% para perto de zero, entre 0,3% e 0,4%, e ",
+       "bloco 5: número ou data sem linha do caderno que confira: 23/10 | trecho: A mediana do Focus também caiu, de 1,31% em 23/10 para 1,15% em 6/11, mas ficou 0,65 ponto acima do Itaú. Essa distância"
+      ],
+      "avisos": [
+       "c4 vem de site fora da lista de fontes conhecidas: https://gazetadoestado.com.br/geral/brasil-chega-a-2027-sob-risco-de-estagflacao-recessao-e-juros-ainda-em-1375",
+       "c5 vem de site fora da lista de fontes conhecidas: https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
+       "bloco 1: frase de 36 palavras",
+       "bloco 2: porcentagem de meta que a ficha das metas não tem (13,75): confira a meta e a margem em config/metas.json: A XP espera a Selic em 13,75% no fim de 2027, o mesmo nível de hoje, e o Bradesc",
+       "bloco 3: porcentagem de meta que a ficha das metas não tem (5,3, 5,5, 6,1, 4,90, 4,5): confira a meta e a margem em config/metas.json: Bradesco e XP também subiram a previsão de inflação de 2027 para entre 5,3% e 5,",
+       "bloco 5: expressão de piloto automático",
+       "bloco 9: frase de 39 palavras",
+       "siglas que a leitora não conhece, sem nome por extenso ou link: COP, XP"
+      ],
+      "palavras": 598,
+      "intertitulos": 2
+     },
+     "objecoes": [
+      {
+       "trecho": "Os dados de hoje também não mostram queda. O PIB cresceu nos últimos oito trimestres, e uma recessão pede dois trimestres seguidos de queda",
+       "cabeca": "critico",
+       "problema": "A frase escolhe o dado que puxa para um lado. O dado mais recente da mesma série mostra queda: a prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto, e a indústria caiu 4,1% desde maio, o que o próprio texto diz dois parágrafos abaixo. O título ('os dados ainda mostram crescimento') faz o mesmo. Do jeito que está, um print dessas frases diz mais do que o dado diz.",
+       "onde_conferir": "c12; dados do site (Ritmo da economia: queda de 0,6% no trimestre até agosto, a maior desde agosto de 2025); texto de 06/11 sobre a indústria",
+       "grave": true
+      },
+      {
+       "trecho": "Além disso, as previsões de crescimento dos bancos no Focus erram, em média, 1,5 ponto, mais que a distância entre a mediana e as casas grandes.",
+       "cabeca": "regras",
+       "problema": "O erro médio de 1,5 ponto que o site publica vale para a previsão de crescimento nos 12 meses seguintes, e não para a previsão do PIB de 2027. Esse erro também vale para a mediana, então ele não serve de objeção só contra as casas: pode errar para cima ou para baixo. A conclusão é mais forte que a evidência e só olha para um lado.",
+       "onde_conferir": "dados do site, 'Crescimento em 12 meses': 'A previsão é dos bancos (Focus), que erram, em média, 1,5 ponto' (para os próximos 12 meses)",
+       "grave": true
+      },
+      {
+       "trecho": "Essa distância é a melhor objeção ao alarme, já que o Focus reúne muito mais casas.",
+       "cabeca": "defensor",
+       "problema": "'Alarme' julga as casas que previram. Falta também a outra leitura da mesma régua: a mediana do Focus mudou de direção e cai toda semana (1,31%, depois 1,20%, depois 1,15%), e a mediana costuma demorar para absorver quem revisou primeiro. Hoje o texto só dá a leitura que acalma.",
+       "onde_conferir": "c6",
+       "grave": false
+      },
+      {
+       "trecho": "Em setembro de 2014, pouco antes da recessão que começou no primeiro trimestre de 2015, essa prévia já caía 1,0% em 12 meses, e hoje ela cresce 1,4%",
+       "cabeca": "regras",
+       "problema": "A saída de c14 só mostra o início da recessão (1T2015). Os números -1,0% e 6,80 não aparecem na saída copiada, então o caderno não sustenta o -1,0%. As duas pontas também estão em meses diferentes: setembro de 2014 contra agosto de 2026.",
+       "onde_conferir": "c14 (rodar src/conta.py com a prévia do PIB de 2014-09 em 12 meses e copiar a linha); c15",
+       "grave": true
+      },
+      {
+       "trecho": "Bradesco e XP esperam que ele suba para 6,4% e 6,8%, e é por esse caminho que uma economia parada chegaria às empresas e às casas",
+       "cabeca": "leitora",
+       "problema": "Não se sabe quem prevê qual número nem para quando (fim de 2027? média do ano?), então a leitora não consegue repetir a frase a um sócio. A fonte também é só um resumo de busca da CNN.",
+       "onde_conferir": "c2: abrir a matéria da CNN Brasil ou a da Folha (c1) e copiar o trecho com a casa e o prazo de cada número",
+       "grave": true
+      },
+      {
+       "trecho": "A XP espera a Selic em 13,75% no fim de 2027, o mesmo nível de hoje, e o Bradesco vê o governo cumprindo só o piso da meta das contas de 2027",
+       "cabeca": "defensor",
+       "problema": "O texto põe a previsão do Bradesco ao lado do piso, mas não põe a conta oficial: o projeto de Orçamento de 2027 prevê R$ 83,4 bilhões na conta da meta, acima do centro de R$ 73,2 bilhões. Sem esse número, a leitora não vê a distância entre o que o governo prevê e o que o banco espera. Faltam também a régua da IFI e o motivo de o Bradesco ver só o piso.",
+       "onde_conferir": "metas (2027: projeto prevê R$ 83,4 bi na conta da meta; centro R$ 73,2 bi; piso R$ 36,6 bi); c2",
+       "grave": false
+      },
+      {
+       "trecho": "É desse ajuste que depende parte da previsão de 2027, já que os bancos citam a incerteza sobre as contas como causa do corte.",
+       "cabeca": "critico",
+       "problema": "A Genoa, citada no próprio texto, diz que hoje o risco do juro e da inflação pesa mais que o das contas. Com isso há duas leituras da causa do corte, e o texto só dá uma. O fecho ('Se o ajuste vier com números que derrubem o juro que o governo paga, parte desse corte pode voltar') repete quase palavra por palavra o exemplo de e daí do guia e soa como molde.",
+       "onde_conferir": "c4 ('o risco monetário é hoje mais grave que o fiscal')",
+       "grave": false
+      },
+      {
+       "trecho": "Também ontem, o comitê de comércio exterior do governo prorrogou até 31/12 o imposto de 12% sobre o petróleo exportado, que venceria em 7/11, para manter a receita enquanto o barril segue caro com a guerra no Oriente Médio.",
+       "cabeca": "critico",
+       "problema": "A frase não tem linha no caderno e não diz o tamanho da receita, que é o que liga a prorrogação às contas do governo. O motivo também não vem do ato oficial, a Resolução Gecex 977, publicada em 6/11. Pelas notícias, a cobrança rendeu cerca de R$ 12,9 bilhões de janeiro a setembro e já foi suspensa duas vezes pela Justiça.",
+       "onde_conferir": "c201; Resolução Gecex 977 no Diário Oficial de 06/11/2026",
+       "grave": true
+      },
+      {
+       "trecho": "As medidas do ajuste das contas ficaram para depois da COP, sem data.",
+       "cabeca": "regras",
+       "problema": "A frase não tem linha no caderno nem diz quem adiou o ajuste e por quê, já que a ficha só registra o fato. 'COP' é sigla que a leitora não conhece: vai por extenso (a conferência do clima da ONU, em Belém) ou com link.",
+       "onde_conferir": "ficha da segunda história (2026-11-03 e 2026-11-06)",
+       "grave": false
+      },
+      {
+       "trecho": "Bradesco e XP também subiram a previsão de inflação de 2027 para entre 5,3% e 5,5%, e o Itaú está em 6,1%, contra 4,90% na mediana do Focus e o teto da meta, de 4,5%",
+       "cabeca": "leitora",
+       "problema": "O parágrafo tem sete números (0,2%, 6%, 5,3%, 5,5%, 6,1%, 4,90%, 4,5%) e quatro réguas, o que a leitora não consegue repetir. Além disso, não diz qual casa espera 5,3% e qual espera 5,5%.",
+       "onde_conferir": "c1, c5, c7",
+       "grave": false
+      }
+     ],
+     "resumo": "O texto separa bem a previsão do fato, mas puxa para o lado que acalma em três lugares: diz que 'os dados não mostram queda' quando a prévia do PIB caiu 0,6%, usa o erro médio do Focus em 12 meses como se fosse o erro da previsão de 2027 e não dá a leitura da Genoa, para quem o problema maior é o juro e não as contas. O -1,0% de 2014 não está na saída da conta. O desemprego de 6,4% e 6,8% não diz qual casa nem quando. A prorrogação do imposto sobre o petróleo não tem fonte nem tamanho: nas notícias, rendeu cerca de R$ 12,9 bi até setembro (c201, só de resumo de busca)."
     },
     {
-     "etapa": "conferencia",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "0911b98c1ca7443471c9b9f7f1571d5755daece03245efd4020adcde26073a43",
-     "system_sha256": "e362d1487bb7e65fb090c712835d70e7ca64fb4c1931cd4ac03535cea992f48c",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.1843555,
-     "turnos": 2,
-     "duracao_s": 78,
-     "modelos": [
-      "claude-sonnet-5-5"
+     "volta": 2,
+     "codigo": {
+      "graves": [],
+      "avisos": [
+       "c4 vem de site fora da lista de fontes conhecidas: https://gazetadoestado.com.br/geral/brasil-chega-a-2027-sob-risco-de-estagflacao-recessao-e-juros-ainda-em-1375",
+       "c201 vem de site fora da lista de fontes conhecidas: https://soubrasilia.com/gecex-prorroga-imposto-12-exportacao-petroleo-31-dezembro-resolucao-977-6-novembro-2026/",
+       "siglas que a leitora não conhece, sem nome por extenso ou link: XP"
+      ],
+      "palavras": 595,
+      "intertitulos": 2
+     },
+     "objecoes": [
+      {
+       "trecho": "A imprensa não diz por que o banco espera menos, e a IFI, do Senado, faz uma conta própria.",
+       "cabeca": "critico",
+       "problema": "O texto cita a conta de quem discorda e não diz qual é. A IFI projeta para 2027 um déficit de R$ 86,1 bilhões, com todas as despesas, e um resultado perto de zero na conta da meta, abaixo até do piso que o Bradesco espera. Com esse número, a leitora veria que a conta do governo é a mais otimista das três. 'A imprensa não diz' também fala da fonte, e não do fato.",
+       "onde_conferir": "c201 (resumo de busca; o número precisa ser conferido no RAF 116 em www12.senado.leg.br/ifi antes de entrar); metas de 2027",
+       "grave": true
+      },
+      {
+       "trecho": "O Bradesco espera que o governo cumpra só o piso da meta das contas de 2027, uma sobra de R$ 36,6 bilhões, sem contar os juros [c2].",
+       "cabeca": "regras",
+       "problema": "O trecho de c2 só fala da Selic: o caderno não traz em lugar nenhum a frase sobre o piso. Os R$ 36,6 bilhões são o piso das metas, e não um número do Bradesco. Do jeito que está, a atribuição ao banco não se confere.",
+       "onde_conferir": "c2 (trecho literal só fala da Selic); metas de 2027",
+       "grave": true
+      },
+      {
+       "trecho": "Como ela junta quem já revisou com quem ainda não revisou, a queda admite duas leituras: as outras casas vão seguir as grandes, ou as grandes se adiantaram.",
+       "cabeca": "leitora",
+       "problema": "As duas leituras dizem a mesma coisa: se as grandes se adiantaram, as outras vão segui-las. A leitura oposta, a de que as grandes exageraram e a mediana fica onde está, não aparece. A leitora não consegue repetir a diferença entre as duas.",
+       "onde_conferir": "c6, c3",
+       "grave": true
+      },
+      {
+       "trecho": "Só que essa mediana cai toda semana, porque estava em 1,31% e depois em 1,20% nas duas últimas pesquisas de outubro [c6].",
+       "cabeca": "regras",
+       "problema": "c6 tem três pontos, de 23/10 a 6/11, ou seja, duas quedas seguidas. 'Toda semana' diz mais do que o caderno mostra.",
+       "onde_conferir": "c6",
+       "grave": false
+      },
+      {
+       "trecho": "Pelos dados da Receita citados na imprensa, a cobrança, que venceria em 7 de novembro, rendeu R$ 12,869 bilhões de janeiro a setembro [c201].",
+       "cabeca": "leitora",
+       "problema": "O número não tem régua e não diz quanto a prorrogação traz: a leitora não sabe se R$ 12,9 bilhões é muito perto da meta de 2026 (centro de R$ 34,3 bilhões, piso zero) nem quanto rendem os dois meses a mais (setembro sozinho rendeu R$ 2,94 bilhões). Qualquer conta que estime novembro e dezembro tem de sair de src/conta.py calc. A fonte de c201 é um resumo de busca de um site fora da lista, e a busca não achou o valor em outra fonte.",
+       "onde_conferir": "c201 do caderno da redação (R$ 2,94 bi em setembro); metas de 2026",
+       "grave": true
+      },
+      {
+       "trecho": "Segundo a imprensa, o objetivo é manter a receita enquanto o petróleo segue caro, e o anúncio do ajuste, que a Fazenda diz preparar, ficou para depois da conferência do clima da ONU.",
+       "cabeca": "regras",
+       "problema": "A frase não tem linha no caderno, e o motivo continua sem vir do ato oficial nem de quem decidiu. Também não diz quem adiou o anúncio do ajuste nem por quê. A frase junta duas decisões de órgãos diferentes, o que esconde quem decidiu cada uma.",
+       "onde_conferir": "Ficha da segunda história (06/11); Resolução Gecex 977 no Diário Oficial de 6/11",
+       "grave": false
+      },
+      {
+       "trecho": "Por enquanto isso é previsão, porque o último PIB, o do segundo trimestre, cresceu 0,5% [c8].",
+       "cabeca": "leitora",
+       "problema": "O 'porque' não liga uma coisa à outra: é previsão porque fala de 2027, e não porque o último PIB cresceu. Os 0,5% também saem sem dizer contra o quê (contra o primeiro trimestre).",
+       "onde_conferir": "c8",
+       "grave": false
+      }
      ],
-     "permission_denials": [],
-     "session_id": "978d80e8-55f9-4cb4-abe0-a2df9bc31805"
+     "resumo": "A reescrita resolveu a maior parte da primeira volta: tirou o erro médio do Focus e o caso de 2014, separou as duas leituras da causa (contas ou juro e inflação), tirou o excesso de números da inflação e pôs a conta da meta de 2027. Ainda faltam quatro coisas: a conta da IFI, citada sem número (pelo resumo de busca, déficit de R$ 86,1 bilhões em 2027); a atribuição do piso ao Bradesco, que o trecho de c2 não sustenta; as 'duas leituras' do Focus, que são uma só; e a receita do petróleo, que não tem régua."
     },
     {
-     "etapa": "redacao",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "770c4cf7bd00abfac86994d78dc6ad4d8f1d2394ae287352a2fc58c7383d75ca",
-     "system_sha256": "465b071bb998b5d53693c7e8072509ec646b4fbda3d2b7ee5dad5199233f972a",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.5798664,
-     "turnos": 2,
-     "duracao_s": 46,
-     "modelos": [
-      "claude-opus-5-5"
+     "volta": 3,
+     "codigo": {
+      "graves": [
+       "bloco 7: número ou data sem linha do caderno que confira: 23/10 | trecho: A melhor objeção ao corte vem da mediana do Focus, que reúne bem mais bancos e consultorias e ainda vê 1,15% para 2027, "
+      ],
+      "avisos": [
+       "c5 vem de site fora da lista de fontes conhecidas: https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
+       "siglas que a leitora não conhece, sem nome por extenso ou link: XP"
+      ],
+      "palavras": 540,
+      "intertitulos": 2
+     },
+     "objecoes": [
+      {
+       "trecho": "É uma previsão sobre o ano que vem, e o dado mais recente ainda é de crescimento, já que o PIB do segundo trimestre subiu 0,5% sobre o primeiro",
+       "cabeca": "leitora",
+       "problema": "A frase chama de dado mais recente o PIB do segundo trimestre. Mas o próprio texto diz depois que a prévia do PIB do Banco Central caiu 0,6% nos três meses até agosto, e esse dado é mais novo. Quem lê só o início fica com a ideia contrária: que o último dado ainda é de crescimento, quando o mais recente é de queda.",
+       "onde_conferir": "c8 (o PIB do segundo trimestre vai só até junho) e c12, ou os dados do site, Ritmo da economia (a prévia caiu 0,6% no trimestre até agosto, a maior queda desde agosto de 2025)",
+       "grave": true
+      }
      ],
-     "permission_denials": [],
-     "session_id": "c72b5728-dcfd-4fae-b2df-9f9ac3cbb34c"
-    },
-    {
-     "etapa": "editor_fundo",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "dbe0ec0db871c14e84c5f08cf38987e467004d726dfab2eb744344114221679b",
-     "system_sha256": "c051e15dfe2ba0240d641e7b2a26a2ab05de7d68718375f6bd3be448f44a878a",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.1789874,
-     "turnos": 2,
-     "duracao_s": 49,
-     "modelos": [
-      "claude-sonnet-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "b445115b-9a9c-40be-b644-acaed8397acd"
-    },
-    {
-     "etapa": "editor_chefe",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "b2abc04ccb308681483384baa8a6a5d75d926488f3149287e9511b64909d2e54",
-     "system_sha256": "6a24d631df6696859a9bd2b0011854ba63812942cedacee451450ccd3de9ae4b",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.419452,
-     "turnos": 2,
-     "duracao_s": 30,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "4aaffdca-4706-4775-8580-d40c0d10dd5c"
-    },
-    {
-     "etapa": "redacao",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "421499ee226a2716026d6884ada776c4b714cd0671f690fb3ad2be6f8b7e2e07",
-     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.705644,
-     "turnos": 2,
-     "duracao_s": 80,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "218b0d05-4a44-4216-8b92-ec713e983eed"
-    },
-    {
-     "etapa": "conferencia",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "a07bd92efa30a9f95709418547e8865564573ee15f7a18013ec48d51267d8317",
-     "system_sha256": "014db32c3a98cfd87cb62417008dbee3bc6c60858da38a9ac3f6069aa3aea5eb",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.336601,
-     "turnos": 3,
-     "duracao_s": 180,
-     "modelos": [
-      "claude-sonnet-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "59632897-5cb0-458f-82c5-8c8656eb5554"
-    },
-    {
-     "etapa": "redacao",
-     "modelo_pedido": "opus",
-     "prompt_sha256": "814f3560c47d48535eb5b322fc8d4c926a87ffc14f24975523de7de116ffcfaf",
-     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.6832612,
-     "turnos": 2,
-     "duracao_s": 49,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "7767f8cc-2af0-4124-b79b-cc6dec0e11cb"
-    },
-    {
-     "etapa": "editor_fundo",
-     "modelo_pedido": "sonnet",
-     "prompt_sha256": "987046915e71e86c63787b5c9a24dd4676781a708fac47b8abbbf716d53b335c",
-     "system_sha256": "c051e15dfe2ba0240d641e7b2a26a2ab05de7d68718375f6bd3be448f44a878a",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.2053254,
-     "turnos": 2,
-     "duracao_s": 55,
-     "modelos": [
-      "claude-sonnet-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "50552bb9-fdd8-4a79-8ac6-65de6d089504"
+     "resumo": "Há um erro só. O primeiro parágrafo chama de \"dado mais recente\" o PIB do segundo trimestre (alta de 0,5%), mas a prévia do PIB até agosto, que é mais nova e que o próprio texto cita depois, caiu 0,6%. O resto confere com o caderno e com a ficha: os cortes de Bradesco e XP, o Itaú, o Focus, o desemprego, a prorrogação do imposto sobre o petróleo e o ajuste sem data."
     }
    ],
    "contas_ate": "2026-11-06",
+   "historia": "ritmo_emprego",
+   "segunda": "contas_governo",
+   "modo": "normal",
    "pesquisa": {
     "perguntas": [
      {
-      "pergunta": "Quais são os números certos de outubro (exportações, importações, saldo)?",
-      "resposta": "Exportações US$ 37,81 bi (+20%), importações US$ 28,49 bi (+14,8%), saldo US$ 9,318 bi. A conta fecha: 37,81 − 28,49 = 9,32. Os US$ 31,51 bi e US$ 24,82 bi da pesquisa anterior eram os números de outubro de 2025 (37,81 ÷ 1,20 ≈ 31,5; 31,51 − 24,82 = 6,69, o saldo de 2025). Erro meu, corrigido. Não abri a nota do MDIC (o WebFetch falhou); os números vêm de reportagens que a busca devolveu, e 6 jornais do site publicaram o saldo de 9,3 bi e a alta de 39,4%.",
+      "pergunta": "O que mudou na história com os passos de ontem, e por quê?",
+      "resposta": "Em 6/11 Bradesco e XP cortaram a previsão do PIB de 2027 para perto de zero (XP de 1,0% para 0,3%; Bradesco de 1,0% para 0,4%, segundo a cobertura; uma fonte troca os dois números) e subiram a inflação de 2027 (Bradesco 5,3%, XP 5,5%). A Genoa vê queda de 0,2% em 2027, inflação perto de 6% e Selic parada em 13,75%. Os motivos citados: incerteza fiscal depois da eleição, juro alto, real mais fraco, endividamento de empresas e famílias. O Itaú já tinha ido a 0,5% e IPCA de 6,1% em 30/10. Isso é previsão, não fato. Não achei o relatório original dos bancos nem a carta da Genoa: só cobertura de imprensa.",
       "caderno": [
-       "c18"
+       "c1",
+       "c2",
+       "c4",
+       "c5"
       ]
      },
      {
-      "pergunta": "De onde veio o recorde: preço ou volume?",
-      "resposta": "Só achei a divisão para o petróleo, e numa fonte só (Times Brasil, pelo resumo da busca): o valor exportado subiu 122,6%, com 62,9% mais barris e preço médio 36,7% maior (1,629 × 1,367 ≈ 2,23, o que bate com +122,6%). O petróleo foi a 22,6% das exportações, de 12,2% um ano antes. Então a parte do volume é maior que a do preço, e 'superávit de preço' não vale para o petróleo. Para o minério e para o total não achei índice de preço e de quantidade. O índice de commodities do Banco Central em setembro estava 32,8% acima de um ano antes.",
+      "pergunta": "Qual é o tamanho da mudança e contra que régua?",
+      "resposta": "O Focus de 6/11 ainda mostra PIB de 2027 de 1,15% e IPCA de 4,90%. Itaú (0,5%), XP (0,3%), Bradesco (0,4%) e Genoa (-0,2%) ficam abaixo da mediana dos bancos. A diferença do Focus para o Itaú é de 0,65 ponto. A mediana do Focus já caiu de 1,31% (23/10) para 1,15% (6/11). Recessão técnica é dois trimestres seguidos de queda do PIB: o último trimestre foi +0,5%, e só a Genoa prevê queda no ano.",
       "caderno": [
-       "c19",
-       "c3"
-      ]
-     },
-     {
-      "pergunta": "Qual foi o fluxo cambial só de outubro, comercial e financeiro?",
-      "resposta": "Segundo o BPMoney (resumo da busca, a partir de dados do Banco Central divulgados em 4/11): total de US$ 18,151 bi, com US$ 9,339 bi no canal comercial e US$ 8,812 bi de entrada líquida no financeiro. Isso derruba o que eu disse antes: a saída financeira de US$ 26,213 bi vale para janeiro a 30/10, e em outubro o canal financeiro recebeu dinheiro. Na semana de 26 a 30/10, a da queda da bolsa, a entrada total foi de US$ 9,498 bi e o financeiro teve entrada de US$ 3,070 bi. Mesmo assim, o dólar (Ptax) foi de R$ 5,1809 para R$ 5,4212 em outubro (+4,6%). O fluxo contratado não explica o dólar do mês. Só uma fonte traz a divisão de outubro, e não abri o comunicado do Banco Central.",
-      "caderno": [
-       "c20",
-       "c21",
-       "c8",
-       "c22"
-      ]
-     },
-     {
-      "pergunta": "Já aconteceu antes: commodities caindo mais de 15% em até 3 meses, e o dólar depois?",
-      "resposta": "Desde 2002 (a série do dólar começa aí; a de commodities, só olhei de 2001-10 em diante) achei 5 episódios. Dólar nos 3 meses seguintes ao fim da queda: 2008 (−38,2%, set–dez): −0,9%; 2014-15 (−21,8%, out–jan): +12,4%; 2015-16 (−16,4%, out–jan): −14,6%; 2020 (−28,4%, jan–abr): −4,1%; 2022 (−20,9%, ago–out): −3,0%. O dólar caiu em 4 de 5 e subiu só em 2014-15.",
-      "caderno": [
-       "c23",
-       "c24",
-       "c25",
-       "c26",
-       "c27",
-       "c28",
-       "c29",
-       "c30",
-       "c31",
-       "c32"
-      ]
-     },
-     {
-      "pergunta": "O que separou os casos?",
-      "resposta": "Em 2008 e 2020 o dólar já tinha disparado durante a queda (1,6344 para 2,3370; 4,2695 para 5,4270), então o recuo depois foi devolução, de crises mundiais. O único em que ele subiu depois foi 2014-15, com a dívida bruta subindo (57,16% para 59,11% do PIB em 3 meses) e a Selic subindo (12,25% para 13,25%); em 2022 a dívida caía (73,70% para 71,38%) e a Selic ficou em 13,75%. Hoje a dívida sobe (81,95% para 82,93% do PIB, junho a setembro) e a Selic parou. São 5 casos e dois deles eram crises globais: não prova nada, só diz onde olhar.",
-      "caderno": [
-       "c33",
-       "c34",
-       "c38",
-       "c39",
-       "c26",
-       "c24"
-      ]
-     },
-     {
-      "pergunta": "E daí: se o Brent ficar abaixo de US$ 100, o que esperar até 9/12?",
-      "resposta": "O saldo comercial cai: o MDIC já cortou a previsão de 2026 de US$ 90 bi para US$ 84,4 bi, e o petróleo e derivados davam 49,4% do superávit em agosto. A previsão testável: com o Brent abaixo de US$ 100, o dólar (Ptax) não deve fechar novembro acima de R$ 5,78 (5% sobre os R$ 5,50 de 6/11) enquanto o canal financeiro do Banco Central seguir positivo. A tese cai se o dólar passar disso com o canal financeiro saindo. O Brent de 6/11 não achei; só sei que caiu quase 8% em 2/11 e mais de 8% em 4/11 (resumos da Folha e do Valor). Confira o fluxo cambial do Banco Central toda semana, o IPCA de 12/11 e o Copom de 9/12.",
-      "caderno": [
-       "c7",
+       "c3",
        "c6",
-       "c36",
-       "c37"
+       "c7",
+       "c8"
       ]
      },
      {
-      "pergunta": "Que mecanismo explica o dólar, se não é o fluxo?",
-      "resposta": "O prêmio de risco: quem investe em reais passou a cobrar mais para ficar com ativos do país depois da eleição, e isso aparece nos juros de 10 anos e no dólar mais do que no fluxo contratado. No primeiro pregão após a eleição de 25/10, o dólar subiu 8,21% e a bolsa caiu 13,88%. A dúvida é sobre as contas do governo e sobre a diretoria do Banco Central, decisões do Executivo e do Congresso; o presidente da República indica seis diretores até o fim de 2027. Com outro governo no poder, a leitura seria a mesma: o mercado cobra prêmio quando duvida do plano das contas. A explicação é minha leitura; o site não tem dado que separe o prêmio de risco do fluxo.",
+      "pergunta": "Quem discorda, e o que dizem os dados?",
+      "resposta": "O Focus (1,15%) é o lado mais otimista; o desemprego em 5,2% (quase o menor da série) e o PIB de 0,5% no 2º tri sustentam a leitura de ritmo menor, não de recessão. Bradesco e XP preveem desemprego subindo a 6,4% e 6,8% (cobertura de imprensa). O consumo das famílias caiu 0,4% no 2º tri e a prévia do PIB caiu 0,6% no trimestre até agosto.",
       "caderno": [
-       "c35",
+       "c2",
+       "c9",
        "c10",
-       "c36"
+       "c11",
+       "c12"
+      ]
+     },
+     {
+      "pergunta": "Há vez parecida no passado?",
+      "resposta": "2014: em set/2014 a prévia do PIB estava em -1,0% em 12 meses, o desemprego em 6,8%, e a recessão veio no 1T2015. A comparação é frágil: em 2026 o desemprego está perto do mínimo e a prévia do PIB em 12 meses é positiva (1,4%). É 1 caso, não uma regra.",
+      "caderno": [
+       "c14",
+       "c15",
+       "c8"
+      ]
+     },
+     {
+      "pergunta": "O que desmentiria o argumento?",
+      "resposta": "Se o PIB do 3º tri (2/12) vier positivo e a PNAD de outubro (27/11) não mostrar desemprego subindo, as casas tendem a voltar para perto do Focus. Se a Fazenda anunciar o ajuste com números e o juro longo cair, parte do corte de 2027 pode se reverter, porque os bancos citam a incerteza fiscal como causa.",
+      "caderno": [
+       "c6",
+       "c9",
+       "c1"
       ]
      }
     ],
-    "teses": [
+    "argumentos": [
      {
-      "tese": "O recorde de outubro não segurou o dólar, e o fluxo cambial não explica o câmbio: em outubro entraram US$ 18,151 bi (US$ 9,339 bi pelo comércio e US$ 8,812 bi pelo canal financeiro) e o dólar subiu 4,6%. O que mexeu com ele foi o prêmio de risco que quem investe cobra depois da eleição. Por isso, se o Brent ficar abaixo de US$ 100 e o saldo comercial encolher, o dólar não deve passar de R$ 5,78 (5% sobre os R$ 5,50 de 6/11) até o fim de novembro, desde que o canal financeiro siga positivo.",
-      "por_que_nao_e_obvia": "A manchete e o fato do dia dizem que a entrada de dólares segura a moeda. Os números de outubro mostram o contrário: o mês teve a maior entrada do ano e o dólar subiu mesmo assim. A pesquisa anterior errou ao usar a saída financeira de janeiro a outubro; só o mês de outubro casa com o dólar.",
-      "o_que_muda": "A leitora passa a ler um superávit menor em novembro e dezembro como efeito do petróleo mais barato, e não como sinal de pressão sobre o dólar. Passa a olhar o fluxo financeiro semanal do Banco Central, o Brent e o anúncio das contas do governo.",
-      "como_pode_dar_errado": "Cai se o dólar passar de R$ 5,78 com o Brent abaixo de US$ 100 e o canal financeiro negativo. Pode cair também se o histórico pesar: em 5 quedas de commodities desde 2002, o dólar caiu depois em 4, mas subiu 12,4% em 2015, quando a dívida e a Selic subiam, e hoje a dívida também sobe. São 5 casos e o fluxo de outubro vem de uma só fonte. O site confere o dólar toda semana e o Copom de 9/12.",
+      "argumento": "As casas que mais pesam no mercado passaram de uma previsão de crescimento de 2027 de 1,0% para quase zero (XP 0,3%, Bradesco 0,4%, Itaú 0,5%), enquanto o Focus ainda diz 1,15%: a distância entre a mediana e as casas grandes mostra a desaceleração chegando aos modelos, mas ainda como previsão.",
+      "para_quem": "Para empresas que decidem investir e contratar em 2027, e para o país: os bancos citam a incerteza fiscal como causa, então parte da revisão depende do ajuste que a Fazenda anunciar.",
+      "o_que_desmente": "PIB do 3º trimestre (2/12) positivo, desemprego estável na PNAD de 27/11 e um ajuste fiscal com números que derrube o juro longo.",
       "caderno": [
-       "c18",
-       "c20",
-       "c21",
-       "c22",
-       "c36",
-       "c7",
-       "c24",
-       "c26",
-       "c28",
-       "c30",
-       "c32",
-       "c33"
+       "c1",
+       "c3",
+       "c5",
+       "c6",
+       "c8",
+       "c9"
       ]
      },
      {
-      "tese": "O saldo recorde é mais resistente à queda do preço do petróleo do que a manchete sugere, porque em outubro o petróleo cresceu mais por volume (+62,9%) do que por preço (+36,7%). Se o volume se mantiver, um barril 8% mais barato corta só a parte do preço do saldo. O superávit de 2026 deve ficar perto da nova previsão de US$ 84,4 bi, e não despencar.",
-      "por_que_nao_e_obvia": "Todo mundo trata o recorde como efeito de preço alto. A divisão do petróleo mostra que o volume pesou mais, e o petróleo foi a 22,6% das exportações.",
-      "o_que_muda": "A leitora deixa de esperar que a paz com o Irã apague o superávit, e passa a ver o saldo como menos refém do barril. O imposto de 12% sobre o petróleo exportado (prorrogado até 31/12) segue rendendo à União.",
-      "como_pode_dar_errado": "Só uma fonte, vista pelo resumo da busca, traz a divisão de preço e volume, e não há divisão para o minério nem para o total. Se a balança de novembro (início de dezembro) mostrar saldo muito abaixo do de outubro com volume estável, a tese cai. Se o MDIC cortar de novo a previsão de US$ 84,4 bi, também.",
+      "argumento": "Previsão não é recessão: a regra pede dois trimestres seguidos de queda, e o último PIB foi +0,5% com desemprego perto do menor da série; só a Genoa prevê queda no ano, as outras preveem estagnação.",
+      "para_quem": "Para a leitora que viu a manchete de estagflação: a diferença entre PIB parado e queda do PIB muda o emprego, e hoje o emprego ainda não mostra a virada.",
+      "o_que_desmente": "Dois trimestres seguidos de PIB negativo ou desemprego subindo rumo aos 6,4% e 6,8% que Bradesco e XP preveem.",
       "caderno": [
-       "c19",
-       "c18",
-       "c7",
-       "c6"
+       "c2",
+       "c4",
+       "c8",
+       "c9",
+       "c10",
+       "c11"
+      ]
+     },
+     {
+      "argumento": "A vez parecida é 2014: queda da indústria e revisões em série antecederam a recessão de 2015, mas hoje o desemprego está perto do mínimo, o que enfraquece a comparação; é um só caso.",
+      "para_quem": "Para quem lê a economia pelos dados de ontem: o sinal de alerta está na indústria, no consumo e no investimento, não no emprego.",
+      "o_que_desmente": "A prévia do PIB e o PIB do 3º tri voltando a crescer, sem nova queda da indústria em outubro (3/12).",
+      "caderno": [
+       "c12",
+       "c14",
+       "c15"
       ]
      }
     ],
     "objecao": {
-     "texto": "Quem discorda diria que o fluxo de câmbio contratado não pega o que move o dólar: derivativos, posições vendidas e investidores que compram dólar sem remessa ficam fora do número do Banco Central. Diria também que comércio e canal financeiro não são independentes: o saldo comercial de US$ 9,339 bi em outubro pode ter evitado um dólar bem acima de R$ 5,42. Com o petróleo mais barato, esse apoio some, e a tese de um dólar abaixo de R$ 5,78 ficaria fraca. A evidência é curta: um mês de fluxo, de uma só fonte, e 5 episódios de commodities em que dois (2008 e 2020) foram crises mundiais.",
+     "texto": "Previsão é previsão: a mediana do Focus, que reúne muito mais bancos, ainda vê 1,15% para 2027, e o Focus erra em média 1,5 ponto. O emprego está perto do mínimo da série e o PIB do 2º tri cresceu 0,5%. Além disso, os números de XP e Bradesco aparecem trocados entre as fontes, e não li o relatório original.",
      "caderno": [
-      "c20",
-      "c22",
-      "c8",
-      "c29",
-      "c31",
-      "c38",
-      "c39"
+      "c3",
+      "c6",
+      "c9",
+      "c11"
      ]
     },
-    "o_que_falta": "Não consegui abrir nenhuma página (o WebFetch falhou por proxy), então a nota do MDIC/Secex e o comunicado do Banco Central não foram lidos no original: os números de outubro (37,81; 28,49; 9,318), a divisão preço/volume do petróleo e o fluxo de outubro (18,151, com 8,812 financeiro) vêm de resumos de busca, cada divisão de uma fonte só. Não achei índice de preço e de quantidade para o total nem para o minério, nem o Brent de 6/11. A série de commodities foi lida só de 2001-10 em diante."
+    "o_que_falta": "Não consegui abrir os documentos originais (nota da Folha, relatórios de Bradesco e XP, carta da Genoa): as ferramentas de leitura falharam e só tenho trechos de resumo de busca. Os números de XP (0,3%) e Bradesco (0,4%) aparecem trocados em uma fonte, e a data da matéria da Genoa não está confirmada. A segunda história (imposto sobre petróleo, dívida dos estados) não foi pesquisada: sem custo oficial da prorrogação.",
+    "pagina_que_falta": ""
+   },
+   "pagina_que_falta": "",
+   "rascunho": {
+    "titulo": "Bradesco e XP preveem PIB quase parado em 2027, mas os dados ainda mostram crescimento",
+    "texto": "Bradesco e XP cortaram ontem a previsão de crescimento do PIB de 2027, de 1,0% para perto de zero, entre 0,3% e 0,4%, e se juntaram ao Itaú, que já tinha ido a 0,5% em 30/10 [c1, c5]. Quando três casas grandes trocam crescimento por economia quase parada, o sinal pesa, mas ele continua sendo previsão, porque o último PIB, do segundo trimestre, cresceu 0,5% [c8].\n\nSegundo a cobertura da imprensa, as duas casas citam três motivos: a incerteza sobre as contas do governo depois da reeleição, o juro alto e o real mais fraco [c1]. A XP espera a Selic em 13,75% no fim de 2027, o mesmo nível de hoje, e o Bradesco vê o governo cumprindo só o piso da meta das contas de 2027 [c2]. Esse piso é um superávit de 0,25% do PIB, cerca de R$ 36,6 bilhões sem contar os juros e com os descontos de precatórios que a regra aceita, contra um centro de 0,50% do PIB.\n\nA gestora Genoa foi mais longe e, em carta a clientes relatada pela imprensa, prevê queda de 0,2% do PIB em 2027, inflação perto de 6% e risco de recessão [c4]. Das quatro casas, é a única que prevê queda no ano. Bradesco e XP também subiram a previsão de inflação de 2027 para entre 5,3% e 5,5%, e o Itaú está em 6,1%, contra 4,90% na mediana do Focus e o teto da meta, de 4,5% [c1, c5, c7].\n\n### A mediana dos bancos ainda vê crescimento, e o emprego segue firme\n\nA mediana do Focus também caiu, de 1,31% em 23/10 para 1,15% em 6/11, mas ficou 0,65 ponto acima do Itaú [c6, c3]. Essa distância é a melhor objeção ao alarme, já que o Focus reúne muito mais casas. Além disso, as previsões de crescimento dos bancos no Focus erram, em média, 1,5 ponto, mais que a distância entre a mediana e as casas grandes.\n\nOs dados de hoje também não mostram queda. O PIB cresceu nos últimos oito trimestres, e uma recessão pede dois trimestres seguidos de queda [c8]. O desemprego caiu de 5,4% para 5,2% de junho a setembro, mais baixo que em 99% dos meses desde 2012 [c9, c10]. Bradesco e XP esperam que ele suba para 6,4% e 6,8%, e é por esse caminho que uma economia parada chegaria às empresas e às casas [c2].\n\nO que sustenta as casas é a parte da economia que já perde força. O consumo das famílias caiu 0,4% no segundo trimestre, e a prévia do PIB do Banco Central caiu 0,6% nos três meses até agosto [c11, c12]. Em setembro de 2014, pouco antes da recessão que começou no primeiro trimestre de 2015, essa prévia já caía 1,0% em 12 meses, e hoje ela cresce 1,4% [c14, c15]. É um caso só, e ele mostra que o ponto de partida agora é outro.\n\n### Parte da revisão depende do ajuste das contas, que ainda não tem data\n\nTambém ontem, o comitê de comércio exterior do governo prorrogou até 31/12 o imposto de 12% sobre o petróleo exportado, que venceria em 7/11, para manter a receita enquanto o barril segue caro com a guerra no Oriente Médio. As medidas do ajuste das contas ficaram para depois da COP, sem data. É desse ajuste que depende parte da previsão de 2027, já que os bancos citam a incerteza sobre as contas como causa do corte.\n\nPara as empresas que decidem agora se investem e contratam em 2027, a revisão das casas grandes diz que o crédito tende a seguir caro por mais tempo, com a Selic parada. Se o ajuste vier com números que derrubem o juro que o governo paga, parte desse corte pode voltar. Os próximos dados que testam a previsão são o desemprego até outubro, em 27/11, e o PIB do terceiro trimestre, em 2/12.",
+    "argumento": "Bradesco, XP e Itaú passaram a prever PIB quase parado em 2027, mas é previsão: o Focus ainda vê 1,15%, e o PIB cresce há oito trimestres com desemprego perto do mínimo.",
+    "porque": "Segundo a cobertura da imprensa, Bradesco e XP cortaram a previsão por causa da incerteza sobre as contas do governo depois da reeleição, do juro alto e do real mais fraco."
    },
    "caderno": [
     {
      "id": "c1",
      "tipo": "documento",
-     "afirmacao": "Saldo de outubro de US$ 9,32 bi, 39,4% acima de outubro de 2025 (US$ 6,69 bi), recorde para outubro desde 1989; exportações US$ 31,51 bi (+20%) e importações US$ 24,82 bi (+14,8%).",
+     "afirmacao": "Em 6/11/2026 XP e Bradesco cortaram a previsão do PIB de 2027 para perto de estagnação e subiram a do IPCA; as causas citadas são incerteza fiscal depois da reeleição, juro alto e real mais fraco.",
      "numeros": [
-      "9,32",
-      "39,4%",
-      "6,69",
-      "31,51",
-      "24,82",
-      "14,8%"
+      "1,0%",
+      "0,3%",
+      "0,4%",
+      "5,3%",
+      "5,5%"
      ],
      "comando": "",
      "saida": "",
      "fonte": {
-      "quem": "MDIC, via Tribuna do Sertão e agregadores (resultado de busca)",
-      "url": "https://www.tribunadosertao.com.br/financas/2026/11/06/1015379-balanca-comercial-registra-superavit-de-us-93-bilhoes-em-outubro-recorde-para-o-mes",
+      "quem": "Forbes Brasil (reprodução da Folha)",
+      "url": "https://forbes.com.br/forbes-money/2026/11/bradesco-e-xp-pioram-significativamente-projecoes-para-inflacao-e-atividade-economica-em-2027/",
       "data": "2026-11-06",
-      "trecho": "Balança comercial registra superávit de US$ 9,3 bilhões em outubro, recorde para o mês"
+      "trecho": "A XP reduziu a projeção do PIB para 2027 de 1,0% para 0,3%, enquanto o Bradesco cortou a estimativa de 1,0% para 0,4%."
      },
      "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": false
+      "status": "nao_aberto",
+      "fonte_conhecida": true
      }
     },
     {
      "id": "c2",
      "tipo": "documento",
-     "afirmacao": "O petróleo bruto teve alta de 122,6% nas exportações de outubro, e as importações foram lideradas por combustíveis.",
+     "afirmacao": "XP projeta a Selic em 13,75% ao fim de 2027; o Bradesco vê o governo cumprindo só o piso da meta primária de 2027; os dois esperam desemprego subindo (6,4% e 6,8%). Dados só de resumo de busca.",
      "numeros": [
-      "122,6%"
+      "13,75%",
+      "6,4%",
+      "6,8%"
      ],
      "comando": "",
      "saida": "",
      "fonte": {
-      "quem": "Portal O Dia / Agência Brasil (resultado de busca; MDIC)",
-      "url": "https://portalodia.com/noticias/nacional/balanca-comercial-do-pais-tem-maior-superavit-para-outubro-desde-1989-600000351.html",
+      "quem": "CNN Brasil (resumo de busca)",
+      "url": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/bradesco-e-xp-pioram-projecoes-para-inflacao-e-atividade-economica-em-2027/",
       "data": "2026-11-06",
-      "trecho": "Balança comercial do país tem maior superávit para outubro desde 1989"
+      "trecho": "O Bradesco vê a Selic em 13,75% durante o primeiro semestre de 2027, e a XP projeta a taxa em 13,75% ao fim de 2027."
      },
      "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": false
+      "status": "nao_aberto",
+      "fonte_conhecida": true
      }
     },
     {
      "id": "c3",
      "tipo": "conta",
-     "afirmacao": "O índice de commodities do Banco Central estava 32,8% mais alto em setembro de 2026 que um ano antes.",
+     "afirmacao": "A mediana do Focus de 6/11 para o PIB de 2027 (1,15%) está 0,65 ponto acima da previsão do Itaú (0,5%).",
      "numeros": [
-      "167,5",
-      "222,4",
-      "32,8"
+      "0,65"
      ],
-     "comando": ".venv/bin/python src/conta.py variacao commodities 2025-09 2026-09",
-     "saida": "commodities: 167,5 em 2025-09 e 222,4 em 2026-09; diferença de 55,0 (em pontos) e de 32,8% (em %).",
+     "comando": ".venv/bin/python src/conta.py calc \"1.15-0.5\"",
+     "saida": "1.15-0.5 = 0,6500 (com 3 casas: 0,650; com 2 casas: 0,65; com 1 casa: 0,6)",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3309,130 +3121,124 @@
      },
      "conferencia": {
       "status": "conferido",
-      "saida": "commodities: 167,5 em 2025-09 e 222,4 em 2026-09; diferença de 55,0 (em pontos) e de 32,8% (em %).\n"
+      "saida": "1.15-0.5 = 0,6500 (com 3 casas: 0,650; com 2 casas: 0,65; com 1 casa: 0,6)\n"
      }
     },
     {
      "id": "c4",
-     "tipo": "conta",
-     "afirmacao": "O índice de commodities de setembro de 2026 é o maior desde agosto de 2022 e maior que 99% dos meses desde 1992.",
+     "tipo": "documento",
+     "afirmacao": "A Genoa vê possível recessão técnica, inflação perto de 6%, queda de 0,2% do PIB em 2027 e diz que o risco monetário é hoje mais grave que o fiscal (só cobertura de imprensa, não a carta).",
      "numeros": [
-      "222,4",
-      "241,9",
-      "99%"
+      "0,2%",
+      "6%"
      ],
-     "comando": ".venv/bin/python src/conta.py recorde commodities 2026-09",
-     "saida": "É o maior valor desde 2022-08, quando foi 241,9.\nDos 416 meses antes de 2026-09, 410 tiveram valor menor (99%).",
+     "comando": "",
+     "saida": "",
      "fonte": {
-      "quem": "",
-      "url": "",
+      "quem": "Gazeta do Estado (resumo de busca)",
+      "url": "https://gazetadoestado.com.br/geral/brasil-chega-a-2027-sob-risco-de-estagflacao-recessao-e-juros-ainda-em-1375",
       "data": "",
-      "trecho": ""
+      "trecho": "em carta a clientes, ela afirma que o risco monetário é hoje mais grave que o fiscal. Prevê queda de 0,2% do PIB no próximo ano."
      },
      "conferencia": {
-      "status": "conferido",
-      "saida": "commodities em 2026-09: 222,4. A série começa em 1992-01.\nÉ o maior valor desde 2022-08, quando foi 241,9.\nDos 416 meses antes de 2026-09, 410 tiveram valor menor (99%).\n"
+      "status": "nao_aberto",
+      "fonte_conhecida": false
      }
     },
     {
      "id": "c5",
      "tipo": "documento",
-     "afirmacao": "O Brent para janeiro fechou a US$ 110,80 em 29/10, e em 2/11 caiu mais de 8% na sessão, ameaçando perder US$ 100, com sinais de acordo de paz entre EUA e Irã.",
+     "afirmacao": "O Itaú reduziu o PIB de 2027 a 0,5% e subiu o IPCA de 2027 a 6,1%, com Selic parada em 13,75% (30/10).",
      "numeros": [
-      "110,80",
-      "8%",
-      "100"
+      "0,5%",
+      "6,1%",
+      "13,75%"
      ],
      "comando": "",
      "saida": "",
      "fonte": {
-      "quem": "Jornal do Comércio (Estadão Conteúdo) e Money Times (resultado de busca)",
-      "url": "https://www.jornaldocomercio.com/economia/2026/10/1268755-petroleo-fecha-em-queda-conforme-negociacoes-eua-ira-ofuscam-possiveis-futuros-ataques.html",
-      "data": "2026-10-29",
-      "trecho": "o petróleo Brent para janeiro fechou em queda de 0,84% (US$ 0,78), a US$ 110,80 o barril"
+      "quem": "Jornal do Brasil (resumo de busca)",
+      "url": "https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
+      "data": "2026-10-30",
+      "trecho": "Itaú atualiza cenário: PIB cresce só 0,5% em 2027, com inflação de 6,1% e parada na Selic em 13,75%"
      },
      "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
+      "status": "nao_aberto",
+      "fonte_conhecida": false
      }
     },
     {
      "id": "c6",
-     "tipo": "documento",
-     "afirmacao": "Em agosto o petróleo bruto era 14,6% das vendas externas, acima da soja (13,3%); petróleo e derivados davam saldo líquido de US$ 27,3 bi, 49,4% do superávit do período.",
+     "tipo": "conta",
+     "afirmacao": "A mediana do Focus para o PIB de 2027 caiu de 1,31% (23/10) para 1,20% (30/10) e 1,15% (6/11).",
      "numeros": [
-      "14,6%",
-      "13,3%",
-      "27,3",
-      "49,4%"
+      "1,31",
+      "1,20",
+      "1,15"
      ],
-     "comando": "",
-     "saida": "",
+     "comando": ".venv/bin/python src/conta.py focus --de 2026-10-01 | grep \"PIB Total 2027\"",
+     "saida": "2026-10-23: PIB Total 2027: 1,31\n2026-10-30: PIB Total 2027: 1,20\n2026-11-06: PIB Total 2027: 1,15",
      "fonte": {
-      "quem": "FGV Icomex, via DGABC (resultado de busca)",
-      "url": "https://www.dgabc.com.br/Noticia/4352825/ue-lidera-alta-do-superavit-brasileiro-com-salto-do-petroleo-mostra-icomex-da-fgv",
-      "data": "2026-10-01",
-      "trecho": "petróleo bruto respondeu por 14,6% das vendas externas, acima da soja, com 13,3%. Considerando petróleo e derivados, o saldo líquido fica em US$ 27,3 bilhões, equivalente a 49,4% do superávit total"
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
      },
      "conferencia": {
-      "status": "trecho_nao_achado",
-      "fonte_conhecida": true
+      "status": "conferido",
+      "saida": "Previsões dos bancos (Focus, mediana) na data da pesquisa, como o site guardou:\n2026-10-23: Câmbio 2026: 5,05\n2026-10-23: Câmbio 2027: 5,15\n2026-10-23: Câmbio 2028: 5,20\n2026-10-23: Câmbio 2029: 5,28\n2026-10-23: Câmbio 2030: 5,30\n2026-10-23: IPCA 2026: 5,19\n2026-10-23: IPCA 2027: 4,34\n2026-10-23: IPCA 2028: 3,75\n2026-10-23: IPCA 2029: 3,50\n2026-10-23: IPCA 2030: 3,50\n2026-10-23: IPCA 12m: 4,53\n2026-10-23: PIB Total 2026: 1,80\n2026-10-23: PIB Total 2027: 1,31\n2026-10-23: PIB Total 2028: 1,81\n2026-10-23: PIB Total 2029: 2,00\n2026-10-23: PIB Total 2030: 2,00\n2026-10-23: Selic 2026: 13,25\n2026-10-23: Selic 2027: 11,75\n2026-10-23: Selic 2028: 10,00\n2026-10-23: Selic 2029: 10,00\n2026-10-23: Selic 2030: 10,00\n2026-10-30: Câmbio 2026: 5,34\n2026-10-30: Câmbio 2027: 5,40\n2026-10-30: Câmbio 2028: 5,40\n2026-10-30: Câmbio 2029: 5,45\n2026-10-30: Câmbio 2030: 5,50\n2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76\n2026-10-30: IPCA 2028: 4,00\n2026-10-30: IPCA 2029: 3,98\n2026-10-30: IPCA 2030: 3,81\n2026-10-30: IPCA 12m: 4,96\n2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20\n2026-10-30: PIB Total 2028: 1,80\n2026-10-30: PIB Total 2029: 2,00\n2026-10-30: PIB Total 2030: 2,00\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50\n2026-10-30: Selic 2028: 11,00\n2026-10-30: Selic 2029: 10,25\n2026-10-30: Selic 2030: 10,00\n2026-11-06: Câmbio 2026: 5,35\n2026-11-06: Câmbio 2027: 5,40\n2026-11-06: Câmbio 2028: 5,45\n2026-11-06: Câmbio 2029: 5,50\n2026-11-06: Câmbio 2030: 5,51\n2026-11-06: IPCA 2026: 5,22\n2026-11-06: IPCA 2027: 4,90\n2026-11-06: IPCA 2028: 4,00\n2026-11-06: IPCA 2029: 4,00\n2026-11-06: IPCA 2030: 3,94\n2026-11-06: IPCA 12m: 5,01\n2026-11-06: PIB Total 2026: 1,75\n2026-11-06: PIB Total 2027: 1,15\n2026-11-06: PIB Total 2028: 1,80\n2026-11-06: PIB Total 2029: 2,00\n2026-11-06: PIB Total 2030: 2,00\n2026-11-06: Selic 2026: 13,75\n2026-11-06: Selic 2027: 12,50\n2026-11-06: Selic 2028: 11,00\n2026-11-06: Selic 2029: 10,25\n2026-11-06: Selic 2030: 10,00\n"
      }
     },
     {
      "id": "c7",
-     "tipo": "documento",
-     "afirmacao": "O governo reduziu a projeção de superávit comercial de 2026 de US$ 90 bi para US$ 84,4 bi por causa da queda nas projeções de preço do petróleo.",
+     "tipo": "conta",
+     "afirmacao": "O Focus de 6/11 espera IPCA de 2027 em 4,90%.",
      "numeros": [
-      "90",
-      "84,4"
+      "4,90"
      ],
-     "comando": "",
-     "saida": "",
+     "comando": ".venv/bin/python src/conta.py focus --de 2026-09-01",
+     "saida": "2026-11-06: IPCA 2027: 4,90",
      "fonte": {
-      "quem": "Correio da Manhã / MDIC (resultado de busca)",
-      "url": "https://www.correiodamanha.com.br/economia/2026/10/325298-previsao-de-superavit-comercial-cai-para-uss-844-bi.html",
-      "data": "2026-10-07",
-      "trecho": "A queda nas projeções para o preço do petróleo levou o governo a reduzir a estimativa para o superávit da balança comercial brasileira em 2026."
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
      },
      "conferencia": {
-      "status": "numeros_na_pagina",
-      "fonte_conhecida": true
+      "status": "conferido",
+      "saida": "Previsões dos bancos (Focus, mediana) na data da pesquisa, como o site guardou:\n2026-10-23: Câmbio 2026: 5,05\n2026-10-23: Câmbio 2027: 5,15\n2026-10-23: Câmbio 2028: 5,20\n2026-10-23: Câmbio 2029: 5,28\n2026-10-23: Câmbio 2030: 5,30\n2026-10-23: IPCA 2026: 5,19\n2026-10-23: IPCA 2027: 4,34\n2026-10-23: IPCA 2028: 3,75\n2026-10-23: IPCA 2029: 3,50\n2026-10-23: IPCA 2030: 3,50\n2026-10-23: IPCA 12m: 4,53\n2026-10-23: PIB Total 2026: 1,80\n2026-10-23: PIB Total 2027: 1,31\n2026-10-23: PIB Total 2028: 1,81\n2026-10-23: PIB Total 2029: 2,00\n2026-10-23: PIB Total 2030: 2,00\n2026-10-23: Selic 2026: 13,25\n2026-10-23: Selic 2027: 11,75\n2026-10-23: Selic 2028: 10,00\n2026-10-23: Selic 2029: 10,00\n2026-10-23: Selic 2030: 10,00\n2026-10-30: Câmbio 2026: 5,34\n2026-10-30: Câmbio 2027: 5,40\n2026-10-30: Câmbio 2028: 5,40\n2026-10-30: Câmbio 2029: 5,45\n2026-10-30: Câmbio 2030: 5,50\n2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76\n2026-10-30: IPCA 2028: 4,00\n2026-10-30: IPCA 2029: 3,98\n2026-10-30: IPCA 2030: 3,81\n2026-10-30: IPCA 12m: 4,96\n2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20\n2026-10-30: PIB Total 2028: 1,80\n2026-10-30: PIB Total 2029: 2,00\n2026-10-30: PIB Total 2030: 2,00\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50\n2026-10-30: Selic 2028: 11,00\n2026-10-30: Selic 2029: 10,25\n2026-10-30: Selic 2030: 10,00\n2026-11-06: Câmbio 2026: 5,35\n2026-11-06: Câmbio 2027: 5,40\n2026-11-06: Câmbio 2028: 5,45\n2026-11-06: Câmbio 2029: 5,50\n2026-11-06: Câmbio 2030: 5,51\n2026-11-06: IPCA 2026: 5,22\n2026-11-06: IPCA 2027: 4,90\n2026-11-06: IPCA 2028: 4,00\n2026-11-06: IPCA 2029: 4,00\n2026-11-06: IPCA 2030: 3,94\n2026-11-06: IPCA 12m: 5,01\n2026-11-06: PIB Total 2026: 1,75\n2026-11-06: PIB Total 2027: 1,15\n2026-11-06: PIB Total 2028: 1,80\n2026-11-06: PIB Total 2029: 2,00\n2026-11-06: PIB Total 2030: 2,00\n2026-11-06: Selic 2026: 13,75\n2026-11-06: Selic 2027: 12,50\n2026-11-06: Selic 2028: 11,00\n2026-11-06: Selic 2029: 10,25\n2026-11-06: Selic 2030: 10,00\n"
      }
     },
     {
      "id": "c8",
-     "tipo": "documento",
-     "afirmacao": "Fluxo cambial de 2026 até 30/10: positivo em US$ 28,743 bi, com saída líquida de US$ 26,213 bi no canal financeiro e saldo positivo de US$ 54,956 bi no comercial.",
+     "tipo": "conta",
+     "afirmacao": "O PIB do 2T2026 foi +0,5% e os últimos 8 trimestres foram todos positivos; recessão é 2 ou mais trimestres seguidos de queda.",
      "numeros": [
-      "28,743",
-      "26,213",
-      "54,956"
+      "0,5%"
      ],
-     "comando": "",
-     "saida": "",
+     "comando": ".venv/bin/python src/conta.py recessoes",
+     "saida": "Últimos 8 trimestres: 3T2024 0,9%, 4T2024 0,1%, 1T2025 1,3%, 2T2025 0,4%, 3T2025 0,1%, 4T2025 0,2%, 1T2026 1,1%, 2T2026 0,5%",
      "fonte": {
-      "quem": "Banco Central, via DGABC e Times Brasil",
-      "url": "https://www.dgabc.com.br/Noticia/4366827/fluxo-cambial-total-em-2026-ate-30-de-outubro-e-positivo-em-us-28-743-bi-revela-bc",
-      "data": "2026-11-04",
-      "trecho": "Fluxo cambial total em 2026 até 30 de outubro é positivo em US$ 28,743 bi, revela BC"
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": true
+      "saida": "PIB contra o trimestre anterior, com ajuste sazonal (IBGE, tabela 5932, variável 6564: PIB dessazonalizado contra o trimestre imediatamente anterior, uma casa decimal.). Último: 2T2026 (0,5%).\nRecessões, contadas como 2 ou mais trimestres seguidos de queda:\nde 2T2001 a 4T2001: quedas de -0,5%, -0,5%, -0,3%\nde 1T2003 a 2T2003: quedas de -0,4%, -0,8%\nde 4T2008 a 1T2009: quedas de -3,8%, -1,4%\nde 2T2014 a 3T2014: quedas de -1,5%, -0,1%\nde 1T2015 a 1T2016: quedas de -0,8%, -2,4%, -1,6%, -0,8%, -1,4%\nde 3T2016 a 4T2016: quedas de -0,5%, -0,1%\nde 1T2020 a 2T2020: quedas de -2,3%, -8,9%\nÚltimos 8 trimestres: 3T2024 0,9%, 4T2024 0,1%, 1T2025 1,3%, 2T2025 0,4%, 3T2025 0,1%, 4T2025 0,2%, 1T2026 1,1%, 2T2026 0,5%\n"
      }
     },
     {
      "id": "c9",
      "tipo": "conta",
-     "afirmacao": "O dólar Ptax foi de R$ 5,1816 no fim de agosto a R$ 5,4212 no fim de outubro (+4,6%).",
+     "afirmacao": "O desemprego caiu de 5,4% para 5,2% de junho a setembro.",
      "numeros": [
-      "5,1816",
-      "5,4212",
-      "4,6%"
+      "5,40",
+      "5,20"
      ],
-     "comando": ".venv/bin/python src/conta.py variacao dolar_ptax 2026-08 2026-10",
-     "saida": "dolar_ptax: 5,1816 em 2026-08 e 5,4212 em 2026-10; diferença de 0,2396 (em pontos) e de 4,6% (em %).",
+     "comando": ".venv/bin/python src/conta.py variacao desocupacao 2026-06 2026-09",
+     "saida": "desocupacao: 5,40 em 2026-06 e 5,20 em 2026-09; diferença de -0,20 (em pontos) e de -3,7% (em %).",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3441,41 +3247,40 @@
      },
      "conferencia": {
       "status": "conferido",
-      "saida": "dolar_ptax: 5,1816 em 2026-08 e 5,4212 em 2026-10; diferença de 0,2396 (em pontos) e de 4,6% (em %).\n"
+      "saida": "desocupacao: 5,40 em 2026-06 e 5,20 em 2026-09; diferença de -0,20 (em pontos) e de -3,7% (em %).\n"
      }
     },
     {
      "id": "c10",
-     "tipo": "site",
-     "afirmacao": "No primeiro pregão após a eleição de 25/10, o Ibovespa caiu 13,88% e o dólar subiu 8,21%, a R$ 5,403; a curva de juros deixou de precificar cortes da Selic.",
+     "tipo": "conta",
+     "afirmacao": "Dos 174 meses antes de setembro de 2026, 1 teve desemprego menor (1%); a série começa em 2012.",
      "numeros": [
-      "13,88%",
-      "8,21%",
-      "5,403"
+      "174",
+      "5,20"
      ],
-     "comando": "",
-     "saida": "2026-10-26: No primeiro pregão após a eleição, o Ibovespa caiu 13,88%, para 176.608 pontos... O dólar subiu 8,21% e fechou a R$ 5,403. Os juros futuros (DIs) saltaram, e a curva deixou de precificar os cortes da Selic.",
+     "comando": ".venv/bin/python src/conta.py recorde desocupacao 2026-09",
+     "saida": "Dos 174 meses antes de 2026-09, 1 tiveram valor menor (1%).",
      "fonte": {
-      "quem": "Agência Brasil",
-      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-sobe-821-e-bolsa-cai-1388-apos-reeleicao-de-lula",
-      "data": "2026-10-26",
-      "trecho": "o Ibovespa caiu 13,88%... O dólar subiu 8,21% e fechou a R$ 5,403"
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
      },
      "conferencia": {
-      "status": "numeros_na_pagina",
-      "fonte_conhecida": true
+      "status": "conferido",
+      "saida": "desocupacao em 2026-09: 5,20. A série começa em 2012-03.\nÉ o menor valor desde 2025-12, quando foi 5,10.\nDos 174 meses antes de 2026-09, 1 tiveram valor menor (1%).\n"
      }
     },
     {
      "id": "c11",
-     "tipo": "conta",
-     "afirmacao": "As reservas ficaram em US$ 365.019 milhões em outubro, contra US$ 369.742 milhões em julho.",
+     "tipo": "site",
+     "afirmacao": "O consumo das famílias caiu 0,4% no 2º tri de 2026 e o PIB cresceu 0,5%.",
      "numeros": [
-      "365.019",
-      "369.742"
+      "0,4%",
+      "0,5%"
      ],
-     "comando": ".venv/bin/python src/conta.py valores reservas --de 2026-04",
-     "saida": "2026-07: 369.742\n2026-10: 365.019",
+     "comando": "",
+     "saida": "Linha do tempo da história: 2026-09-01: PIB do 2º tri de 2026 cresce 0,5%; consumo das famílias cai 0,4%.",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3483,20 +3288,18 @@
       "trecho": ""
      },
      "conferencia": {
-      "status": "conferido",
-      "saida": "reservas (US$ milhões):\n2026-04: 366.913\n2026-05: 371.137\n2026-06: 367.558\n2026-07: 369.742\n2026-08: 372.616\n2026-09: 362.821\n2026-10: 365.019\n"
+      "status": "site"
      }
     },
     {
      "id": "c12",
-     "tipo": "conta",
-     "afirmacao": "Em 2022 o índice de commodities foi de 241,9 em agosto a 191,4 em outubro.",
+     "tipo": "site",
+     "afirmacao": "A prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto.",
      "numeros": [
-      "241,9",
-      "191,4"
+      "0,6%"
      ],
-     "comando": ".venv/bin/python src/conta.py valores commodities --de 2021-06 --ate 2022-12",
-     "saida": "2022-08: 241,9\n2022-10: 191,4",
+     "comando": "",
+     "saida": "Dados do site: A prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto, contra os 3 meses anteriores.",
      "fonte": {
       "quem": "",
       "url": "",
@@ -3504,1043 +3307,129 @@
       "trecho": ""
      },
      "conferencia": {
-      "status": "conferido",
-      "saida": "commodities (índice):\n2021-06: 160,8\n2021-07: 164,8\n2021-08: 163,2\n2021-09: 171,6\n2021-10: 191,5\n2021-11: 183,1\n2021-12: 186,7\n2022-01: 192,2\n2022-02: 203,5\n2022-03: 239,9\n2022-04: 228,3\n2022-05: 226,3\n2022-06: 231,6\n2022-07: 229,5\n2022-08: 241,9\n2022-09: 220,0\n2022-10: 191,4\n2022-11: 192,0\n2022-12: 194,3\n"
-     }
-    },
-    {
-     "id": "c13",
-     "tipo": "conta",
-     "afirmacao": "No mesmo período de 2022 o dólar foi de R$ 5,1790 (agosto) a R$ 5,2570 (outubro).",
-     "numeros": [
-      "5,1790",
-      "5,2570"
-     ],
-     "comando": ".venv/bin/python src/conta.py valores dolar_ptax --de 2021-06 --ate 2022-12",
-     "saida": "2022-08: 5,1790 2022-10: 5,2570",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "dolar_ptax (R$, último valor do mês):\n2021-06: 5,0022\n2021-07: 5,1216\n2021-08: 5,1433\n2021-09: 5,4394\n2021-10: 5,6430\n2021-11: 5,6199\n2021-12: 5,5805\n2022-01: 5,3574\n2022-02: 5,1394\n2022-03: 4,7378\n2022-04: 4,9191\n2022-05: 4,7289\n2022-06: 5,2380\n2022-07: 5,1884\n2022-08: 5,1790\n2022-09: 5,4066\n2022-10: 5,2570\n2022-11: 5,2941\n2022-12: 5,2177\n"
+      "status": "site"
      }
     },
     {
      "id": "c14",
-     "tipo": "site",
-     "afirmacao": "Em 2014-15 o índice de commodities caiu cerca de 49%, de 168,4 (junho de 2014) para 85,3 (janeiro de 2016), junto com recessão e problemas internos.",
+     "tipo": "conta",
+     "afirmacao": "Em set/2014 a prévia do PIB estava em -1,0% em 12 meses e o desemprego em 6,80%; a recessão veio no 1T2015.",
      "numeros": [
-      "168,4",
-      "85,3",
-      "49%"
+      "-1,0%",
+      "6,80",
+      "1T2015"
      ],
-     "comando": "",
-     "saida": "ep-2014-commodities: O índice de commodities do Banco Central passou de 168,4 (junho de 2014) para 85,3 (janeiro de 2016), queda de cerca de 49%.",
+     "comando": ".venv/bin/python src/conta.py depois 2014-09 --meses 12",
+     "saida": "Recessão (2 trimestres seguidos de queda do PIB) começando nos 12 meses seguintes: 1T2015",
      "fonte": {
-      "quem": "Gazeta do Povo (via memória longa do site)",
-      "url": "https://www.gazetadopovo.com.br/economia/queda-do-minerio-de-ferro-afeta-balanca-comercial-brasileira-egxk6tdcarsc7ggrk89xchu8e",
-      "data": "2015-01-01",
-      "trecho": "queda do minério de ferro afeta balança comercial brasileira"
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": true
+      "saida": "Valores do mês e de depois (ibcbr_12m é o crescimento da prévia do PIB em 12 meses):\n2014-09: selic_meta 11,00; ipca_12m 6,75; focus_ipca_12m 6,33; juro_real 4,39; juro_real_longo 6,13; dolar_ptax 2,4510; ibcbr 102,46; desocupacao 6,80; divida_bruta 55,11; primario_12m -0,55; ibcbr_12m -1,0%\n2014-12: selic_meta 11,75; ipca_12m 6,41; focus_ipca_12m 6,61; juro_real 4,82; juro_real_longo 6,19; dolar_ptax 2,6562; ibcbr 102,19; desocupacao 6,60; divida_bruta 56,28; primario_12m 0,56; ibcbr_12m -1,7%\n2015-03: selic_meta 12,75; ipca_12m 8,13; focus_ipca_12m 6,17; juro_real 6,20; juro_real_longo 6,51; dolar_ptax 3,2080; ibcbr 100,47; desocupacao 8,00; divida_bruta 59,49; primario_12m 0,67; ibcbr_12m -2,7%\n2015-06: selic_meta 13,75; ipca_12m 8,89; focus_ipca_12m 5,92; juro_real 7,39; juro_real_longo 6,32; dolar_ptax 3,1026; ibcbr 97,51; desocupacao 8,40; divida_bruta 60,75; primario_12m 0,77; ibcbr_12m -2,7%\n2015-09: selic_meta 14,25; ipca_12m 9,49; focus_ipca_12m 6,05; juro_real 7,73; juro_real_longo 7,47; dolar_ptax 3,9729; ibcbr 96,17; desocupacao 9,00; divida_bruta 63,65; primario_12m 0,43; ibcbr_12m -6,1%\nRecessão (2 trimestres seguidos de queda do PIB) começando nos 12 meses seguintes: 1T2015\n"
      }
     },
     {
      "id": "c15",
-     "tipo": "documento",
-     "afirmacao": "O governo estimou arrecadar R$ 30 bi com o imposto de 12% sobre o petróleo exportado, e a subvenção ao diesel deve gerar gasto de R$ 10 bi.",
+     "tipo": "site",
+     "afirmacao": "O crescimento em 12 meses estava em 1,4% até agosto de 2026, desacelerando.",
      "numeros": [
-      "30",
-      "10"
+      "1,4%",
+      "3,5%"
      ],
      "comando": "",
-     "saida": "",
+     "saida": "Dados do site: 1,4% até ago/2026, contra 3,5% até ago/2025 (desacelerando).",
      "fonte": {
-      "quem": "Poder360 / agências (resultado de busca, MP 1.340)",
-      "url": "https://www.poder360.com.br/poder-governo/governo-renova-imposto-de-exportacao-do-petroleo-e-mantem-em-12/",
-      "data": "2026-03-13",
-      "trecho": "O governo estimava arrecadar R$ 30 bilhões cobrando imposto de 12% sobre o petróleo exportado"
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
      },
      "conferencia": {
-      "status": "trecho_nao_achado",
-      "fonte_conhecida": true
+      "status": "site"
      }
     },
     {
-     "id": "c16",
-     "tipo": "site",
-     "afirmacao": "O governo prorrogou até 31/12 o imposto de 12% sobre o petróleo exportado; venceria em 7/11.",
+     "id": "c201",
+     "tipo": "documento",
+     "afirmacao": "A Resolução Gecex 977, publicada em 6/11/2026, prorroga o imposto de 12% sobre o petróleo exportado até 31/12. Pelos dados da Receita citados na imprensa, a cobrança rendeu R$ 12,869 bilhões de janeiro a setembro de 2026, sendo R$ 2,94 bilhões em setembro. Dado só de resumo de busca, a página não abriu.",
      "numeros": [
       "12%",
-      "31 de dezembro"
-     ],
-     "comando": "",
-     "saida": "Governo prorroga até 31 de dezembro o imposto de 12% sobre petróleo exportado (Poder360, 6/11)",
-     "fonte": {
-      "quem": "Poder360",
-      "url": "https://www.poder360.com.br/poder-economia/gecex-prorroga-imposto-de-12-sobre-exportacao-de-petroleo/",
-      "data": "2026-11-06",
-      "trecho": "Gecex prorroga imposto de 12% sobre exportação de petróleo"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c17",
-     "tipo": "site",
-     "afirmacao": "Os bancos (Focus) esperam inflação de 5,0% em 12 meses, contra 4,2% em julho; o Copom parou de cortar a Selic em 4/11 e subiu a previsão do IPCA de 2026 para 5,6%.",
-     "numeros": [
-      "5,0%",
-      "4,2%",
-      "13,75",
-      "5,6%"
-     ],
-     "comando": "",
-     "saida": "Inflação esperada: Os bancos (Focus) esperam que os preços subam 5,0% nos próximos 12 meses, contra 4,2% em julho. / Copom para de cortar e mantém a Selic em 13,75% ao ano... O Banco Central subiu a previsão do IPCA de 2026 para 5,6%.",
-     "fonte": {
-      "quem": "Gazeta do Povo",
-      "url": "https://www.gazetadopovo.com.br/economia/copom-interrompe-ciclo-de-cortes-e-mantem-selic-em-1375/",
-      "data": "2026-11-04",
-      "trecho": "Copom interrompe ciclo de cortes e mantém Selic em 13,75%"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c18",
-     "tipo": "documento",
-     "afirmacao": "Outubro de 2026: exportações US$ 37,81 bi (+20%), importações US$ 28,49 bi (+14,8%), saldo US$ 9,318 bi, maior para outubro desde 1989. Os US$ 31,51 bi e US$ 24,82 bi são de outubro de 2025 (saldo 6,69).",
-     "numeros": [
-      "37,81",
-      "28,49",
-      "9,318",
-      "20%",
-      "14,8%",
-      "31,51",
-      "24,82"
+      "R$ 12,869 bilhões",
+      "R$ 2,94 bilhões"
      ],
      "comando": "",
      "saida": "",
      "fonte": {
-      "quem": "O Povo e DOL, a partir do MDIC (resultado de busca; nota oficial não aberta)",
-      "url": "https://www.opovo.com.br/noticias/economia/2026/11/06/balanca-comercial-brasileira-tem-superavit-de-uss-9318-bilhoes-em-outubro.html",
+      "quem": "Sou Brasília (reprodução de notícia; resumo de busca)",
+      "url": "https://soubrasilia.com/gecex-prorroga-imposto-12-exportacao-petroleo-31-dezembro-resolucao-977-6-novembro-2026/",
       "data": "2026-11-06",
-      "trecho": "Balança comercial brasileira tem superávit de US$ 9,318 bilhões em outubro"
+      "trecho": "Gecex prorroga até 31 de dezembro o imposto de 12% sobre exportação de petróleo; Resolução 977, 6 de novembro de 2026"
      },
+     "do_revisor": true,
      "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c19",
-     "tipo": "documento",
-     "afirmacao": "As exportações de petróleo bruto subiram 122,6% em valor em outubro, com 62,9% mais volume e preço médio 36,7% maior; o petróleo foi a 22,6% das exportações, contra 12,2% um ano antes.",
-     "numeros": [
-      "122,6%",
-      "62,9%",
-      "36,7%",
-      "22,6%",
-      "12,2%"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "Times Brasil (resumo da busca; página não aberta)",
-      "url": "https://timesbrasil.com.br/brasil/balanca-comercial-tem-superavit-de-us-93-bilhoes-em-outubro-alta-de-39-em-um-ano-e-exportacoes-sobem-20/",
-      "data": "2026-11-06",
-      "trecho": "o Brasil embarcou 62,9% mais petróleo, e o preço médio subiu 36,7%"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c20",
-     "tipo": "documento",
-     "afirmacao": "Fluxo cambial de outubro de 2026: positivo em US$ 18,151 bi, o maior do ano, com US$ 8,812 bi de entrada líquida no canal financeiro e US$ 9,339 bi no comercial.",
-     "numeros": [
-      "18,151",
-      "8,812",
-      "9,339"
-     ],
-     "comando": "",
-     "saida": "",
-     "fonte": {
-      "quem": "BPMoney, a partir de dados do Banco Central (resumo da busca; comunicado não aberto)",
-      "url": "https://bpmoney.com.br/?p=433781",
-      "data": "2026-11-04",
-      "trecho": "fluxo cambial positivo de US$ 18,151 bilhões em outubro, segundo dados divulgados pelo Banco Central (BC) nesta quarta-feira (4)"
-     },
-     "conferencia": {
-      "status": "conferido",
+      "status": "nao_aberto",
       "fonte_conhecida": false
      }
     },
     {
-     "id": "c21",
+     "id": "c202",
      "tipo": "documento",
-     "afirmacao": "Na semana de 26 a 30/10, o fluxo total foi de entrada de US$ 9,498 bi e o canal financeiro teve entrada líquida de US$ 3,070 bi.",
+     "afirmacao": "Pelo Relatório de Acompanhamento Fiscal de setembro de 2026, a IFI projeta para 2027 um déficit primário de R$ 86,1 bilhões, com todas as despesas, contra a sobra de R$ 18,6 bilhões do projeto de Orçamento. Pelo resumo de busca, mesmo com os descontos da regra, o resultado ficaria perto de zero, abaixo do piso da meta, e seria preciso bloquear R$ 35,7 bilhões. A página não abriu: só o título foi visto.",
      "numeros": [
-      "9,498",
-      "3,070"
+      "R$ 86,1 bi",
+      "R$ 18,6 bi",
+      "R$ 35,7 bi"
      ],
      "comando": "",
      "saida": "",
      "fonte": {
-      "quem": "BPMoney, a partir de dados do Banco Central (resumo da busca)",
-      "url": "https://bpmoney.com.br/?p=433781",
-      "data": "2026-11-04",
-      "trecho": "Entre os dias 26 e 30 de outubro, o canal financeiro apresentou entradas líquidas de US$ 3,070 bilhões"
+      "quem": "IFI, do Senado (RAF 116), segundo a imprensa (brapi/Jornal do Comércio; resumo de busca)",
+      "url": "https://brapi.dev/news/ifi-projeta-deficit-primario-de-r-86-1-bi-em-2027-contra-c03c8335",
+      "data": "2026-09-17",
+      "trecho": "IFI prevê déficit primário de R$ 86,1 bi em 2027, contra superávit do governo"
      },
+     "do_revisor": true,
      "conferencia": {
-      "status": "trecho_nao_achado",
+      "status": "nao_aberto",
       "fonte_conhecida": false
-     }
-    },
-    {
-     "id": "c22",
-     "tipo": "conta",
-     "afirmacao": "O dólar (Ptax) foi de R$ 5,1809 no fim de setembro a R$ 5,4212 no fim de outubro, +4,6%.",
-     "numeros": [
-      "5,1809",
-      "5,4212",
-      "4,6%"
-     ],
-     "comando": ".venv/bin/python src/conta.py variacao dolar_ptax 2026-09 2026-10",
-     "saida": "dolar_ptax: 5,1809 em 2026-09 e 5,4212 em 2026-10; diferença de 0,2403 (em pontos) e de 4,6% (em %).",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "dolar_ptax: 5,1809 em 2026-09 e 5,4212 em 2026-10; diferença de 0,2403 (em pontos) e de 4,6% (em %).\n"
-     }
-    },
-    {
-     "id": "c23",
-     "tipo": "conta",
-     "afirmacao": "2022: commodities caíram 20,9% de agosto a outubro.",
-     "numeros": [
-      "241,9",
-      "191,4",
-      "20,9"
-     ],
-     "comando": ".venv/bin/python src/conta.py variacao commodities 2022-08 2022-10",
-     "saida": "commodities: 241,9 em 2022-08 e 191,4 em 2022-10; diferença de -50,6 (em pontos) e de -20,9% (em %).",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "commodities: 241,9 em 2022-08 e 191,4 em 2022-10; diferença de -50,6 (em pontos) e de -20,9% (em %).\n"
-     }
-    },
-    {
-     "id": "c24",
-     "tipo": "conta",
-     "afirmacao": "2022: o dólar caiu 3,0% de outubro de 2022 a janeiro de 2023.",
-     "numeros": [
-      "5,2570",
-      "5,0993",
-      "3,0%"
-     ],
-     "comando": ".venv/bin/python src/conta.py variacao dolar_ptax 2022-10 2023-01",
-     "saida": "dolar_ptax: 5,2570 em 2022-10 e 5,0993 em 2023-01; diferença de -0,1577 (em pontos) e de -3,0% (em %).",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "dolar_ptax: 5,2570 em 2022-10 e 5,0993 em 2023-01; diferença de -0,1577 (em pontos) e de -3,0% (em %).\n"
-     }
-    },
-    {
-     "id": "c25",
-     "tipo": "conta",
-     "afirmacao": "2014-15: commodities caíram 21,8% de outubro de 2014 a janeiro de 2015.",
-     "numeros": [
-      "145,8",
-      "114,0",
-      "21,8"
-     ],
-     "comando": ".venv/bin/python src/conta.py variacao commodities 2014-10 2015-01",
-     "saida": "commodities: 145,8 em 2014-10 e 114,0 em 2015-01; diferença de -31,7 (em pontos) e de -21,8% (em %).",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "commodities: 145,8 em 2014-10 e 114,0 em 2015-01; diferença de -31,7 (em pontos) e de -21,8% (em %).\n"
-     }
-    },
-    {
-     "id": "c26",
-     "tipo": "conta",
-     "afirmacao": "2015: o dólar subiu 12,4% de janeiro a abril de 2015.",
-     "numeros": [
-      "2,6623",
-      "2,9936",
-      "12,4%"
-     ],
-     "comando": ".venv/bin/python src/conta.py variacao dolar_ptax 2015-01 2015-04",
-     "saida": "dolar_ptax: 2,6623 em 2015-01 e 2,9936 em 2015-04; diferença de 0,3313 (em pontos) e de 12,4% (em %).",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "dolar_ptax: 2,6623 em 2015-01 e 2,9936 em 2015-04; diferença de 0,3313 (em pontos) e de 12,4% (em %).\n"
-     }
-    },
-    {
-     "id": "c27",
-     "tipo": "conta",
-     "afirmacao": "2015-16: commodities caíram 16,4% de outubro de 2015 a janeiro de 2016.",
-     "numeros": [
-      "102,0",
-      "85,3",
-      "16,4"
-     ],
-     "comando": ".venv/bin/python src/conta.py variacao commodities 2015-10 2016-01",
-     "saida": "commodities: 102,0 em 2015-10 e 85,3 em 2016-01; diferença de -16,8 (em pontos) e de -16,4% (em %).",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "commodities: 102,0 em 2015-10 e 85,3 em 2016-01; diferença de -16,8 (em pontos) e de -16,4% (em %).\n"
-     }
-    },
-    {
-     "id": "c28",
-     "tipo": "conta",
-     "afirmacao": "2016: o dólar caiu 14,6% de janeiro a abril de 2016.",
-     "numeros": [
-      "4,0428",
-      "3,4508",
-      "14,6%"
-     ],
-     "comando": ".venv/bin/python src/conta.py variacao dolar_ptax 2016-01 2016-04",
-     "saida": "dolar_ptax: 4,0428 em 2016-01 e 3,4508 em 2016-04; diferença de -0,5920 (em pontos) e de -14,6% (em %).",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "dolar_ptax: 4,0428 em 2016-01 e 3,4508 em 2016-04; diferença de -0,5920 (em pontos) e de -14,6% (em %).\n"
-     }
-    },
-    {
-     "id": "c29",
-     "tipo": "conta",
-     "afirmacao": "2020: commodities caíram 28,4% de janeiro a abril.",
-     "numeros": [
-      "118,8",
-      "85,1",
-      "28,4"
-     ],
-     "comando": ".venv/bin/python src/conta.py variacao commodities 2020-01 2020-04",
-     "saida": "commodities: 118,8 em 2020-01 e 85,1 em 2020-04; diferença de -33,8 (em pontos) e de -28,4% (em %).",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "commodities: 118,8 em 2020-01 e 85,1 em 2020-04; diferença de -33,8 (em pontos) e de -28,4% (em %).\n"
-     }
-    },
-    {
-     "id": "c30",
-     "tipo": "conta",
-     "afirmacao": "2020: o dólar caiu 4,1% de abril a julho de 2020.",
-     "numeros": [
-      "5,4270",
-      "5,2033",
-      "4,1%"
-     ],
-     "comando": ".venv/bin/python src/conta.py variacao dolar_ptax 2020-04 2020-07",
-     "saida": "dolar_ptax: 5,4270 em 2020-04 e 5,2033 em 2020-07; diferença de -0,2237 (em pontos) e de -4,1% (em %).",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "dolar_ptax: 5,4270 em 2020-04 e 5,2033 em 2020-07; diferença de -0,2237 (em pontos) e de -4,1% (em %).\n"
-     }
-    },
-    {
-     "id": "c31",
-     "tipo": "conta",
-     "afirmacao": "2008: commodities caíram 38,2% de setembro a dezembro.",
-     "numeros": [
-      "164,9",
-      "101,8",
-      "38,2"
-     ],
-     "comando": ".venv/bin/python src/conta.py variacao commodities 2008-09 2008-12",
-     "saida": "commodities: 164,9 em 2008-09 e 101,8 em 2008-12; diferença de -63,0 (em pontos) e de -38,2% (em %).",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "commodities: 164,9 em 2008-09 e 101,8 em 2008-12; diferença de -63,0 (em pontos) e de -38,2% (em %).\n"
-     }
-    },
-    {
-     "id": "c32",
-     "tipo": "conta",
-     "afirmacao": "2009: o dólar caiu 0,9% de dezembro de 2008 a março de 2009.",
-     "numeros": [
-      "2,3370",
-      "2,3152",
-      "0,9%"
-     ],
-     "comando": ".venv/bin/python src/conta.py variacao dolar_ptax 2008-12 2009-03",
-     "saida": "dolar_ptax: 2,3370 em 2008-12 e 2,3152 em 2009-03; diferença de -0,0218 (em pontos) e de -0,9% (em %).",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "dolar_ptax: 2,3370 em 2008-12 e 2,3152 em 2009-03; diferença de -0,0218 (em pontos) e de -0,9% (em %).\n"
-     }
-    },
-    {
-     "id": "c33",
-     "tipo": "conta",
-     "afirmacao": "Janeiro de 2015: Selic 12,25%, dívida bruta 57,16% do PIB; em abril, Selic 13,25% e dívida 59,11%; recessão a partir do 1T2015.",
-     "numeros": [
-      "12,25",
-      "13,25",
-      "57,16",
-      "59,11"
-     ],
-     "comando": ".venv/bin/python src/conta.py depois 2015-01 --meses 3",
-     "saida": "2015-01: selic_meta 12,25; ipca_12m 7,14; focus_ipca_12m 6,61; juro_real 5,29; juro_real_longo 5,87; dolar_ptax 2,6623; ibcbr 101,30; desocupacao 6,90; divida_bruta 57,16; primario_12m 0,54; ibcbr_12m -2,3%\n2015-04: selic_meta 13,25; ipca_12m 8,17; focus_ipca_12m 5,96; juro_real 6,88; juro_real_longo 6,24; dolar_ptax 2,9936; ibcbr 99,13; desocupacao 8,10; divida_bruta 59,11; primario_12m 0,73; ibcbr_12m -3,6%",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "Valores do mês e de depois (ibcbr_12m é o crescimento da prévia do PIB em 12 meses):\n2015-01: selic_meta 12,25; ipca_12m 7,14; focus_ipca_12m 6,61; juro_real 5,29; juro_real_longo 5,87; dolar_ptax 2,6623; ibcbr 101,30; desocupacao 6,90; divida_bruta 57,16; primario_12m 0,54; ibcbr_12m -2,3%\n2015-04: selic_meta 13,25; ipca_12m 8,17; focus_ipca_12m 5,96; juro_real 6,88; juro_real_longo 6,24; dolar_ptax 2,9936; ibcbr 99,13; desocupacao 8,10; divida_bruta 59,11; primario_12m 0,73; ibcbr_12m -3,6%\nRecessão (2 trimestres seguidos de queda do PIB) começando nos 12 meses seguintes: 1T2015\n"
-     }
-    },
-    {
-     "id": "c34",
-     "tipo": "conta",
-     "afirmacao": "Outubro de 2022: Selic 13,75%, dívida bruta 73,70% do PIB; em janeiro de 2023, Selic 13,75% e dívida 71,38%; nenhuma recessão nos 12 meses seguintes.",
-     "numeros": [
-      "13,75",
-      "73,70",
-      "71,38"
-     ],
-     "comando": ".venv/bin/python src/conta.py depois 2022-10 --meses 3",
-     "saida": "2022-10: selic_meta 13,75; ipca_12m 6,47; focus_ipca_12m 5,11; juro_real 8,22; juro_real_longo 5,97; dolar_ptax 5,2570; ibcbr 101,44; desocupacao 8,30; divida_bruta 73,70; primario_12m -1,75; ibcbr_12m 4,1%\n2023-01: selic_meta 13,75; ipca_12m 5,77; focus_ipca_12m 5,66; juro_real 7,65; juro_real_longo 6,54; dolar_ptax 5,0993; ibcbr 100,10; desocupacao 8,40; divida_bruta 71,38; primario_12m -1,21; ibcbr_12m 2,8%",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "Valores do mês e de depois (ibcbr_12m é o crescimento da prévia do PIB em 12 meses):\n2022-10: selic_meta 13,75; ipca_12m 6,47; focus_ipca_12m 5,11; juro_real 8,22; juro_real_longo 5,97; dolar_ptax 5,2570; ibcbr 101,44; desocupacao 8,30; divida_bruta 73,70; primario_12m -1,75; ibcbr_12m 4,1%\n2023-01: selic_meta 13,75; ipca_12m 5,77; focus_ipca_12m 5,66; juro_real 7,65; juro_real_longo 6,54; dolar_ptax 5,0993; ibcbr 100,10; desocupacao 8,40; divida_bruta 71,38; primario_12m -1,21; ibcbr_12m 2,8%\nRecessão (2 trimestres seguidos de queda do PIB) começando nos 12 meses seguintes: nenhuma\n"
-     }
-    },
-    {
-     "id": "c35",
-     "tipo": "site",
-     "afirmacao": "O presidente da República vai indicar seis diretores do Banco Central até o fim de 2027, e investidores temem uma diretoria mais disposta a cortar juro mesmo com preços subindo.",
-     "numeros": [
-      "seis"
-     ],
-     "comando": "",
-     "saida": "2026-11-02: Presidente vai indicar seis diretores do Banco Central até o fim de 2027 (Investidores temem uma diretoria mais disposta a cortar juro mesmo com preços subindo, e por isso pedem juro maior para comprar títulos do Tesouro.)",
-     "fonte": {
-      "quem": "Folha",
-      "url": "https://www1.folha.uol.com.br/mercado/2026/11/lula-indicara-seis-diretores-do-banco-central-ate-o-fim-de-2027-e-mercado-teme-mudanca-de-perfil.shtml",
-      "data": "2026-11-02",
-      "trecho": "Lula indicará seis diretores do Banco Central até o fim de 2027 e mercado teme mudança de perfil"
-     },
-     "conferencia": {
-      "status": "trecho_nao_achado",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c36",
-     "tipo": "site",
-     "afirmacao": "O dólar foi a R$ 5,50 em 6/11, 7,8% mais caro que no começo de agosto; o juro de 10 anos foi de 7,9% para 8,1% ao ano do fim de agosto a 5/11.",
-     "numeros": [
-      "5,50",
-      "7,8%",
-      "7,9%",
-      "8,1%"
-     ],
-     "comando": "",
-     "saida": "Dólar a R$ 5,50 em 6/11, 7,8% mais caro que no começo de agosto. / o juro de 10 anos foi de 7,9% para 8,1% ao ano, do fim de agosto a 5/11.",
-     "fonte": {
-      "quem": "Dados do site",
-      "url": "https://www.poder360.com.br/poder-economia/bolsa-sobe-139-em-alta-dolar-fecha-a-r-5508/",
-      "data": "2026-11-06",
-      "trecho": "Bolsa sobe 1,39%, juros futuros recuam e dólar fecha a R$ 5,508"
-     },
-     "conferencia": {
-      "status": "trecho_nao_achado",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c37",
-     "tipo": "site",
-     "afirmacao": "O petróleo caiu quase 8% em 2/11 e mais de 8% em 4/11 com a expectativa de negociação de paz entre EUA e Irã.",
-     "numeros": [
-      "8%"
-     ],
-     "comando": "",
-     "saida": "2026-11-01 (Folha): Petróleo cai quase 8% com sinal de negociação de paz entre EUA e Irã. 2026-11-04 (Valor): Petróleo cai mais de 8% com expectativa de fim do conflito no Irã.",
-     "fonte": {
-      "quem": "Valor",
-      "url": "https://valor.globo.com/financas/noticia/2026/11/04/petrleo-continua-em-queda-com-o-aumento-das-expectativas-de-fim-do-conflito-envolvendo-o-ir.ghtml",
-      "data": "2026-11-04",
-      "trecho": "Petróleo continua em queda com o aumento das expectativas de fim do conflito envolvendo o Irã"
-     },
-     "conferencia": {
-      "status": "conferido",
-      "fonte_conhecida": true
-     }
-    },
-    {
-     "id": "c38",
-     "tipo": "conta",
-     "afirmacao": "Em 2008 o dólar já tinha disparado durante a queda das commodities: R$ 1,6344 em agosto, R$ 2,3370 em dezembro.",
-     "numeros": [
-      "1,6344",
-      "2,3370"
-     ],
-     "comando": ".venv/bin/python src/conta.py valores dolar_ptax --de 2002-01 --ate 2014-03",
-     "saida": "2008-08: 1,6344\n2008-12: 2,3370",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "dolar_ptax (R$, último valor do mês):\n2002-01: 2,4183\n2002-02: 2,3482\n2002-03: 2,3236\n2002-04: 2,3625\n2002-05: 2,5220\n2002-06: 2,8444\n2002-07: 3,4285\n2002-08: 3,0223\n2002-09: 3,8949\n2002-10: 3,6450\n2002-11: 3,6365\n2002-12: 3,5333\n2003-01: 3,5258\n2003-02: 3,5632\n2003-03: 3,3531\n2003-04: 2,8898\n2003-05: 2,9656\n2003-06: 2,8720\n2003-07: 2,9655\n2003-08: 2,9665\n2003-09: 2,9234\n2003-10: 2,8562\n2003-11: 2,9494\n2003-12: 2,8892\n2004-01: 2,9409\n2004-02: 2,9138\n2004-03: 2,9086\n2004-04: 2,9447\n2004-05: 3,1291\n2004-06: 3,1075\n2004-07: 3,0268\n2004-08: 2,9338\n2004-09: 2,8586\n2004-10: 2,8565\n2004-11: 2,7307\n2004-12: 2,6544\n2005-01: 2,6248\n2005-02: 2,5950\n2005-03: 2,6662\n2005-04: 2,5313\n2005-05: 2,4038\n2005-06: 2,3504\n2005-07: 2,3905\n2005-08: 2,3637\n2005-09: 2,2222\n2005-10: 2,2543\n2005-11: 2,2070\n2005-12: 2,3407\n2006-01: 2,2160\n2006-02: 2,1355\n2006-03: 2,1724\n2006-04: 2,0892\n2006-05: 2,3005\n2006-06: 2,1643\n2006-07: 2,1762\n2006-08: 2,1388\n2006-09: 2,1742\n2006-10: 2,1430\n2006-11: 2,1668\n2006-12: 2,1380\n2007-01: 2,1247\n2007-02: 2,1182\n2007-03: 2,0504\n2007-04: 2,0339\n2007-05: 1,9289\n2007-06: 1,9262\n2007-07: 1,8776\n2007-08: 1,9620\n2007-09: 1,8389\n2007-10: 1,7440\n2007-11: 1,7837\n2007-12: 1,7713\n2008-01: 1,7603\n2008-02: 1,6833\n2008-03: 1,7491\n2008-04: 1,6872\n2008-05: 1,6294\n2008-06: 1,5919\n2008-07: 1,5666\n2008-08: 1,6344\n2008-09: 1,9143\n2008-10: 2,1153\n2008-11: 2,3331\n2008-12: 2,3370\n2009-01: 2,3162\n2009-02: 2,3784\n2009-03: 2,3152\n2009-04: 2,1783\n2009-05: 1,9730\n2009-06: 1,9516\n2009-07: 1,8726\n2009-08: 1,8864\n2009-09: 1,7781\n2009-10: 1,7440\n2009-11: 1,7505\n2009-12: 1,7412\n2010-01: 1,8748\n2010-02: 1,8110\n2010-03: 1,7810\n2010-04: 1,7306\n2010-05: 1,8167\n2010-06: 1,8015\n2010-07: 1,7572\n2010-08: 1,7560\n2010-09: 1,6942\n2010-10: 1,7014\n2010-11: 1,7161\n2010-12: 1,6662\n2011-01: 1,6734\n2011-02: 1,6612\n2011-03: 1,6287\n2011-04: 1,5733\n2011-05: 1,5799\n2011-06: 1,5611\n2011-07: 1,5563\n2011-08: 1,5872\n2011-09: 1,8544\n2011-10: 1,6885\n2011-11: 1,8109\n2011-12: 1,8758\n2012-01: 1,7391\n2012-02: 1,7092\n2012-03: 1,8221\n2012-04: 1,8918\n2012-05: 2,0223\n2012-06: 2,0213\n2012-07: 2,0499\n2012-08: 2,0372\n2012-09: 2,0306\n2012-10: 2,0313\n2012-11: 2,1074\n2012-12: 2,0435\n2013-01: 1,9883\n2013-02: 1,9754\n2013-03: 2,0138\n2013-04: 2,0017\n2013-05: 2,1319\n2013-06: 2,2156\n2013-07: 2,2903\n2013-08: 2,3725\n2013-09: 2,2300\n2013-10: 2,2026\n2013-11: 2,3249\n2013-12: 2,3426\n2014-01: 2,4263\n2014-02: 2,3334\n2014-03: 2,2630\n"
-     }
-    },
-    {
-     "id": "c39",
-     "tipo": "conta",
-     "afirmacao": "Em 2020 o dólar já tinha subido durante a queda das commodities: R$ 4,2695 em janeiro, R$ 5,4270 em abril.",
-     "numeros": [
-      "4,2695",
-      "5,4270"
-     ],
-     "comando": ".venv/bin/python src/conta.py valores dolar_ptax --de 1999-12",
-     "saida": "2020-01: 4,2695\n2020-04: 5,4270",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "(são 298 meses; mostrando os 150 últimos do intervalo; use --de e --ate)\ndolar_ptax (R$, último valor do mês):\n2014-05: 2,2390\n2014-06: 2,2025\n2014-07: 2,2674\n2014-08: 2,2396\n2014-09: 2,4510\n2014-10: 2,4442\n2014-11: 2,5601\n2014-12: 2,6562\n2015-01: 2,6623\n2015-02: 2,8782\n2015-03: 3,2080\n2015-04: 2,9936\n2015-05: 3,1788\n2015-06: 3,1026\n2015-07: 3,3940\n2015-08: 3,6467\n2015-09: 3,9729\n2015-10: 3,8589\n2015-11: 3,8506\n2015-12: 3,9048\n2016-01: 4,0428\n2016-02: 3,9796\n2016-03: 3,5589\n2016-04: 3,4508\n2016-05: 3,5951\n2016-06: 3,2098\n2016-07: 3,2390\n2016-08: 3,2403\n2016-09: 3,2462\n2016-10: 3,1811\n2016-11: 3,3967\n2016-12: 3,2591\n2017-01: 3,1270\n2017-02: 3,0993\n2017-03: 3,1684\n2017-04: 3,1984\n2017-05: 3,2437\n2017-06: 3,3082\n2017-07: 3,1307\n2017-08: 3,1471\n2017-09: 3,1680\n2017-10: 3,2769\n2017-11: 3,2616\n2017-12: 3,3080\n2018-01: 3,1624\n2018-02: 3,2449\n2018-03: 3,3238\n2018-04: 3,4811\n2018-05: 3,7370\n2018-06: 3,8558\n2018-07: 3,7549\n2018-08: 4,1353\n2018-09: 4,0039\n2018-10: 3,7177\n2018-11: 3,8633\n2018-12: 3,8748\n2019-01: 3,6519\n2019-02: 3,7385\n2019-03: 3,8967\n2019-04: 3,9453\n2019-05: 3,9407\n2019-06: 3,8322\n2019-07: 3,7649\n2019-08: 4,1385\n2019-09: 4,1644\n2019-10: 4,0041\n2019-11: 4,2240\n2019-12: 4,0307\n2020-01: 4,2695\n2020-02: 4,4987\n2020-03: 5,1987\n2020-04: 5,4270\n2020-05: 5,4263\n2020-06: 5,4760\n2020-07: 5,2033\n2020-08: 5,4713\n2020-09: 5,6407\n2020-10: 5,7718\n2020-11: 5,3317\n2020-12: 5,1967\n2021-01: 5,4759\n2021-02: 5,5302\n2021-03: 5,6973\n2021-04: 5,4036\n2021-05: 5,2322\n2021-06: 5,0022\n2021-07: 5,1216\n2021-08: 5,1433\n2021-09: 5,4394\n2021-10: 5,6430\n2021-11: 5,6199\n2021-12: 5,5805\n2022-01: 5,3574\n2022-02: 5,1394\n2022-03: 4,7378\n2022-04: 4,9191\n2022-05: 4,7289\n2022-06: 5,2380\n2022-07: 5,1884\n2022-08: 5,1790\n2022-09: 5,4066\n2022-10: 5,2570\n2022-11: 5,2941\n2022-12: 5,2177\n2023-01: 5,0993\n2023-02: 5,2078\n2023-03: 5,0804\n2023-04: 5,0007\n2023-05: 5,0959\n2023-06: 4,8192\n2023-07: 4,7415\n2023-08: 4,9219\n2023-09: 5,0076\n2023-10: 5,0575\n2023-11: 4,9355\n2023-12: 4,8413\n2024-01: 4,9535\n2024-02: 4,9833\n2024-03: 4,9962\n2024-04: 5,1718\n2024-05: 5,2416\n2024-06: 5,5589\n2024-07: 5,6621\n2024-08: 5,6562\n2024-09: 5,4481\n2024-10: 5,7779\n2024-11: 6,0535\n2024-12: 6,1923\n2025-01: 5,8301\n2025-02: 5,8488\n2025-03: 5,7422\n2025-04: 5,6608\n2025-05: 5,7087\n2025-06: 5,4571\n2025-07: 5,6021\n2025-08: 5,4264\n2025-09: 5,3186\n2025-10: 5,3843\n2025-11: 5,3338\n2025-12: 5,5024\n2026-01: 5,2301\n2026-02: 5,1495\n2026-03: 5,2194\n2026-04: 4,9886\n2026-05: 5,0569\n2026-06: 5,1766\n2026-07: 5,0773\n2026-08: 5,1816\n2026-09: 5,1809\n2026-10: 5,4212\n"
-     }
-    },
-    {
-     "id": "c101",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (precos), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz precos",
-     "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 4,96% (último dado de outubro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 104,96 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 4,96% (último dado de outubro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 104,96 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.\n"
-     }
-    },
-    {
-     "id": "c102",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (dolar), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz dolar",
-     "saida": "O dólar foi de R$ 5,3451 em 6/11/2025 para R$ 5,5013 em 6/11/2026: alta de 2,9% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 2,9%, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "O dólar foi de R$ 5,3451 em 6/11/2025 para R$ 5,5013 em 6/11/2026: alta de 2,9% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 2,9%, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.\n"
-     }
-    },
-    {
-     "id": "c103",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (credito), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz credito",
-     "saida": "Juro médio do crédito livre às pessoas físicas: 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em set",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "Juro médio dos empréstimos às pessoas com juro definido pelo banco (todos os tipos): 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.262 (um ano antes, R$ 1.273).\nJuro médio do financiamento imobiliário com taxas de mercado: 14,20% ao ano em setembro de 2026, contra 14,88% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.142 (um ano antes, R$ 1.149).\nFonte: Banco Central, juro médio das operações de crédito para pessoas físicas, com um a dois meses de atraso. A Selic não passa inteira nem logo para esses juros.\n"
-     }
-    },
-    {
-     "id": "c104",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (guardado), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz guardado",
-     "saida": "Com a Selic em 13,75% ao ano (em 6/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 4,96% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,79 em um ano (8,38% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de outubro de 2026 (0,1616% ao mês), R$ 6,62 no mês, ou cerca de R$ 82,45 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "Com a Selic em 13,75% ao ano (em 6/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 4,96% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,79 em um ano (8,38% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de outubro de 2026 (0,1616% ao mês), R$ 6,62 no mês, ou cerca de R$ 82,45 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.\n"
-     }
-    },
-    {
-     "id": "c105",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (minimo), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz minimo",
-     "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda falta(m) 2 mês(es) de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda faltam 2 meses de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.\n"
-     }
-    },
-    {
-     "id": "c106",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (renda), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz renda",
-     "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.\n"
-     }
-    },
-    {
-     "id": "c107",
-     "tipo": "conta",
-     "afirmacao": "Tradução do site para a vida de quem lê (emprego), pela tabela de tradução (TRADUCAO.md).",
-     "numeros": [],
-     "comando": "traduz emprego",
-     "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 ponto(s) a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 ponto(s) a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.",
-     "fonte": {
-      "quem": "",
-      "url": "",
-      "data": "",
-      "trecho": ""
-     },
-     "conferencia": {
-      "status": "conferido",
-      "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 pontos a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 pontos a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.\n"
      }
     }
    ],
-   "pressao": "mercado",
-   "tese": "Outubro teve a maior entrada de dólares do ano (US$ 18,151 bi, sendo US$ 9,339 bi pelo comércio e US$ 8,812 bi pelo canal financeiro), e mesmo assim o dólar subiu 4,6%. Na semana da eleição entraram US$ 9,498 bi, e o dólar subiu 8,21% em um dia. Hoje o dólar parece andar mais com a desconfiança de quem investe, que cresceu depois da eleição, do que com a balança, e nenhum dado separa quanto disso vem das contas do governo ou da troca de diretores do Banco Central. Por isso o saldo menor que vem com o petróleo mais barato não basta para esperar um dólar bem mais caro até 9/12. A evidência é curta: um mês de fluxo, de uma só fonte, e 5 casos desde 2002.",
-   "duracao_s": 1353,
-   "offline": true,
-   "curto": {
-    "porque": "Pelos dados do MDIC, as exportações subiram 20% em outubro, para US$ 37,81 bilhões, e as importações subiram 14,8%. O petróleo puxou a alta: o valor exportado cresceu 122,6%, mais pelo volume (62,9% mais barris) que pelo preço (36,7% maior).",
-    "e_dai": "Em outubro, com a maior entrada de dólares do ano (US$ 18,151 bi), o dólar subiu 4,6%: pela leitura mais provável, segue mais a desconfiança dos investidores que a balança.",
-    "vida": "O recorde não barateou o dólar, que está em R$ 5,50. Se a alta de 2,9% em 12 meses não voltar, R$ 100 de compras ficam cerca de R$ 0,30 mais caros em um ano, mais nos importados e no combustível.",
-    "familias": [
-     {
-      "familia": "outra",
-      "quem": "quem compra produtos importados e combustível",
-      "o_que_muda": "Com o dólar 2,9% mais caro que um ano antes, o IPCA sobe cerca de 0,3 ponto em 12 meses se essa alta não voltar, e o repasse pesa mais nos importados e no combustível.",
-      "caderno": [
-       "c102",
-       "c36"
-      ]
-     }
-    ],
-    "objetivo": "",
-    "condicao": "",
-    "caderno": [
-     "c18",
-     "c19",
-     "c20",
-     "c22",
-     "c36",
-     "c102"
-    ]
-   },
-   "tese_corrigida_a_mao": "2026-11-08: a tese e o curto diziam que o dólar 'anda mais com a desconfiança sobre as contas do governo'; o caderno não separa as causas (c10, c35) e o texto publicado já dizia 'desconfiança de quem investe'. Ficou a leitura provável, com as causas que o caderno cita.",
-   "rascunho": {
-    "titulo": "O dólar segue a desconfiança de quem investe, e o petróleo mais barato não deve encarecê-lo tanto",
-    "texto": "Em outubro, entraram no Brasil US$ 18,151 bilhões a mais do que saíram, o maior saldo do ano, e o dinheiro chegou pelas duas portas: US$ 9,339 bilhões pelo comércio e US$ 8,812 bilhões por investimentos e empréstimos [c20]. Mesmo assim, o dólar foi de R$ 5,1809 no fim de setembro para R$ 5,4212 no fim de outubro, uma alta de 4,6% [c22]. Quando o preço sobe com tanta moeda americana entrando, o que manda nele não é quanto dólar chega, e sim quanto quem investe desconfia do Brasil.\n\nIsso muda a leitura do que vem pela frente. O petróleo, que encheu a balança, começou a cair, e o saldo do comércio tende a encolher. Mas, nas cinco vezes desde 2002 em que produtos como petróleo, soja e minério ficaram mais de 15% mais baratos, o dólar caiu nos três meses seguintes em quatro [c23, c24, c25, c26, c27, c28, c29, c30, c31, c32]. Por isso, a balança menor não basta para esperar um dólar bem mais caro até a decisão do Banco Central de 9/12. A evidência é curta: um mês de fluxo e cinco casos, que mostram um padrão, não uma lei.\n\n### O dinheiro entrou, e o dólar subiu mesmo assim\n\nO mês que trouxe a maior entrada de dólares do ano também trouxe a maior alta do dólar em um dia. No primeiro pregão depois do segundo turno de 25/10, o dólar subiu 8,21%, a R$ 5,403, e a Bolsa caiu 13,88% [c10]. Ou seja, havia moeda americana chegando, mas quem comprava dólar aceitou pagar bem mais caro por ela.\n\nO ano inteiro mostra a mesma coisa de outro ângulo. De janeiro até 30/10, o comércio trouxe US$ 54,956 bilhões, enquanto investimentos e empréstimos tiraram US$ 26,213 bilhões do país [c8]. Durante quase todo o ano, foi a venda de produtos que segurou o real, e em outubro até o dinheiro financeiro entrou, o que torna a alta do preço mais difícil de explicar só pela quantidade.\n\nA leitura mais provável é que o preço passou a refletir o medo. No mesmo pregão de 26/10, os juros negociados no mercado deixaram de prever novos cortes da Selic [c10]. Dias depois, em 4/11, o Banco Central parou de cortar o juro e subiu para 5,6% a previsão do IPCA de 2026 [c17]. Quem investe passou a pedir mais para manter dinheiro em reais, porque não sabe como ficarão as contas do governo nem o rumo dos juros.\n\nEssas duas dúvidas têm donos diferentes. O plano para as contas depende do presidente, do ministro da Fazenda e do Congresso, que aprova o Orçamento. O juro é decidido pelo Banco Central. Nenhum dado separa quanto da alta do dólar vem de uma dúvida e quanto vem da outra, e isso é uma leitura, não uma medida.\n\n### O petróleo, que encheu a balança, começou a ficar mais barato\n\nO recorde de outubro tem um motor claro. O petróleo bruto foi 22,6% de tudo o que o Brasil vendeu ao exterior no mês, contra 12,2% um ano antes [c19]. Em 29/10, o barril do tipo Brent fechou a US$ 110,80 [c5]. O índice de matérias-primas do Banco Central estava, em setembro, 32,8% mais alto que um ano antes [c3], o maior valor desde agosto de 2022 [c4].\n\nEsse vento a favor começou a virar. O petróleo caiu quase 8% em 2/11 e mais de 8% em 4/11, com a expectativa de negociação de paz entre Estados Unidos e Irã [c37]. Antes disso, o governo já tinha reduzido a previsão de saldo comercial de 2026 de US$ 90 bilhões para US$ 84,4 bilhões, por causa das projeções de preço do petróleo [c7].\n\nHá uma ressalva a favor da balança. Em outubro, o Brasil embarcou 62,9% mais barris, e o preço médio subiu 36,7% [c19]. Como a quantidade cresceu mais que o preço, parte das vendas não some quando o barril fica mais barato. Esse número vem de uma só reportagem sobre os dados do governo, e por isso ele indica o rumo, sem fechar a conta.\n\n### Em quatro de cinco quedas das matérias-primas, o dólar caiu depois\n\nSe o dólar dependesse só da balança, uma queda forte das matérias-primas deveria encarecê-lo. O passado mostra outra coisa. Em 2022, o índice caiu 20,9% de agosto a outubro [c23], e o dólar caiu 3,0% de outubro a janeiro de 2023 [c24]. No fim de 2015, o índice caiu 16,4% [c27], e o dólar caiu 14,6% de janeiro a abril de 2016 [c28].\n\nOs outros dois casos de queda do dólar pedem cuidado. Em 2020, o índice caiu 28,4% de janeiro a abril [c29], e o dólar caiu 4,1% nos três meses seguintes [c30]. Em 2008, o índice caiu 38,2% de setembro a dezembro [c31], e o dólar caiu 0,9% até março de 2009 [c32]. Nos dois, o dólar já tinha disparado durante a queda: de R$ 1,6344 em agosto para R$ 2,3370 em dezembro de 2008 [c38], e de R$ 4,2695 em janeiro para R$ 5,4270 em abril de 2020 [c39]. Foram crises no mundo todo, e a queda depois foi em parte a volta de um salto.\n\nA melhor objeção está no quinto caso. De outubro de 2014 a janeiro de 2015, o índice caiu 21,8% [c25], e o dólar subiu 12,4% de janeiro a abril de 2015 [c26]. Naqueles meses, o Banco Central subia a Selic de 12,25% para 13,25%, e a dívida do governo passava de 57,16% para 59,11% do PIB [c33]. Em 2022, ao contrário, a Selic ficou parada em 13,75%, e a dívida caiu de 73,70% para 71,38% do PIB [c34].\n\nQuem discorda da tese diz que hoje se parece mais com 2015 que com 2022, porque a dúvida sobre as contas do governo voltou ao centro e o Banco Central parou de cortar com a inflação esperada subindo [c17]. Esse argumento é forte, e ele não contradiz a tese: em 2015, o dólar subiu porque a desconfiança cresceu, e não porque o petróleo caiu. Quem discorda também lembra que, sem o comércio forte de outubro, o dólar talvez tivesse subido ainda mais, e os dados de um mês não deixam descartar isso.\n\nO que enfraqueceria a tese é o dólar subir com força nas próximas semanas sem nenhum sinal novo de desconfiança, como a Bolsa caindo ou os juros de mercado subindo. Aí o comércio voltaria a explicar o preço, e a balança menor pesaria mais do que os cinco casos sugerem.\n\nPara você, a conta do dólar chega pelos preços, e ela pesa sobretudo em quem compra importados e combustível. O dólar foi de R$ 5,3451 em 6/11/2025 para R$ 5,5013 em 6/11/2026, uma alta de 2,9% [c102]. Pelas contas do Banco Central, se essa alta não voltar, o IPCA sobe cerca de 0,3 ponto em 12 meses, com o repasse maior nos importados e na bomba de gasolina [c102]. É uma média de muitos anos, e o próprio Banco Central diz que o repasse muda com o momento da economia [c102].\n\nO que a tese acrescenta é de onde vem o tamanho dessa conta. Se ela estiver certa, os 0,3 ponto crescem ou encolhem menos pelo preço do barril e mais pela desconfiança de quem investe. Essa desconfiança anda com o plano para as contas do governo e com as decisões de juro do Banco Central. Assim, a próxima notícia sobre a balança tende a dizer pouco sobre o dólar, e a próxima notícia sobre as contas tende a dizer muito.\n\nO IBGE divulga a inflação de outubro em 12/11, e o Banco Central decide o juro de novo em 9/12."
-   },
    "conferencia": {
-    "codigo_antes": {
-     "graves": [
-      "bloco 4: número ou data sem linha do caderno que confira: 25/10 | trecho: O mês que trouxe a maior entrada de dólares do ano também trouxe a maior alta do dólar em um dia. No primeiro pregão dep",
-      "bloco 6: número ou data sem linha do caderno que confira: 4/11, 26/10 | trecho: A leitura mais provável é que o preço passou a refletir o medo. No mesmo pregão de 26/10, os juros negociados no mercado",
-      "bloco 9: número ou data sem linha do caderno que confira: 29/10 | trecho: O recorde de outubro tem um motor claro. O petróleo bruto foi 22,6% de tudo o que o Brasil vendeu ao exterior no mês, co",
-      "bloco 10: número ou data sem linha do caderno que confira: 2/11, 4/11 | trecho: Esse vento a favor começou a virar. O petróleo caiu quase 8% em 2/11 e mais de 8% em 4/11, com a expectativa de negociaç"
-     ],
-     "avisos": [
-      "c20 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781",
-      "bloco 1: frase de 38 palavras",
-      "bloco 5: frase de 36 palavras",
-      "bloco 16: frase de 38 palavras"
-     ],
-     "palavras": 1192,
-     "intertitulos": 3
-    },
-    "ia": {
-     "correcoes": [
-      {
-       "trecho": "O dólar segue a desconfiança de quem investe, e o petróleo mais barato não deve encarecê-lo tanto",
-       "tipo": "forca",
-       "problema": "O título dá como fato que o dólar segue a desconfiança. O próprio texto diz que nenhum dado separa as causas, e o fato do dia diz só 'parece seguir'. A previsão do petróleo também está dita com mais firmeza do que cinco casos permitem.",
-       "como_fica": "O dólar parece seguir a desconfiança de quem investe, e o petróleo mais barato pode não encarecê-lo tanto"
-      },
-      {
-       "trecho": "Em outubro, entraram no Brasil US$ 18,151 bilhões a mais do que saíram, o maior saldo do ano, e o dinheiro chegou pelas duas portas: US$ 9,339 bilhões pelo comércio e US$ 8,812 bilhões por investimentos e empréstimos [c20].",
-       "tipo": "fonte",
-       "problema": "c20 vem do BPMoney, site fora da lista de fontes conhecidas, e é um resumo de busca sem o comunicado aberto. O c8 só cobre o ano até 30/10, não outubro. A premissa de abertura fica sem fonte que confira.",
-       "como_fica": "Em outubro, o fluxo cambial foi positivo em US$ 18,151 bilhões, o maior do ano, segundo reportagem sobre dados do Banco Central, com US$ 9,339 bilhões no comércio e US$ 8,812 bilhões no canal financeiro [c20]."
-      },
-      {
-       "trecho": "Quando o preço sobe com tanta moeda americana entrando, o que manda nele não é quanto dólar chega, e sim quanto quem investe desconfia do Brasil.",
-       "tipo": "forca",
-       "problema": "Afirma causa como fato. Nenhuma linha do caderno mede a desconfiança, e o texto admite adiante que é uma leitura, não uma medida.",
-       "como_fica": "Quando o preço sobe com tanta moeda americana entrando, a leitura mais provável é que ele siga menos o quanto de dólar chega e mais o quanto quem investe desconfia do Brasil."
-      },
-      {
-       "trecho": "Mas, nas cinco vezes desde 2002 em que produtos como petróleo, soja e minério ficaram mais de 15% mais baratos, o dólar caiu nos três meses seguintes em quatro [c23, c24, c25, c26, c27, c28, c29, c30, c31, c32]. Por isso, a balança menor não basta para esperar um dólar bem mais caro até a decisão do Banco Central de 9/12.",
-       "tipo": "data",
-       "problema": "A data 9/12 não está em nenhuma linha do caderno. Nenhuma linha mostra que as cinco quedas são todas as de mais de 15% desde 2002, e as janelas diferem: a de 2022 durou dois meses, as outras três. O 'Por isso' é mais forte do que cinco casos sustentam.",
-       "como_fica": "Mas, nas cinco quedas de mais de 15% do índice de commodities do Banco Central que o site comparou desde 2002, o dólar caiu nos três meses seguintes em quatro [c23, c24, c25, c26, c27, c28, c29, c30, c31, c32]. Por isso, a balança menor, sozinha, não basta para esperar um dólar bem mais caro nos próximos meses."
-      },
-      {
-       "trecho": "O mês que trouxe a maior entrada de dólares do ano também trouxe a maior alta do dólar em um dia.",
-       "tipo": "numero",
-       "problema": "O c10 diz que o dólar subiu 8,21% no primeiro pregão após a eleição. Nenhuma linha diz que foi a maior alta em um dia.",
-       "como_fica": "O mês que trouxe a maior entrada de dólares do ano também trouxe uma alta de 8,21% do dólar em um dia."
-      },
-      {
-       "trecho": "Durante quase todo o ano, foi a venda de produtos que segurou o real, e em outubro até o dinheiro financeiro entrou, o que torna a alta do preço mais difícil de explicar só pela quantidade.",
-       "tipo": "forca",
-       "problema": "'Segurou o real' é causa que nenhuma linha mostra. O c8 só dá os saldos de comércio e de canal financeiro no ano.",
-       "como_fica": "Durante quase todo o ano, o saldo do comércio foi positivo e o do canal financeiro, negativo, e em outubro até o dinheiro financeiro entrou, o que torna a alta do preço mais difícil de explicar só pela quantidade."
-      },
-      {
-       "trecho": "No mesmo pregão de 26/10, os juros negociados no mercado deixaram de prever novos cortes da Selic [c10].",
-       "tipo": "data",
-       "problema": "A data 26/10 não está em nenhuma linha. O c10 diz só 'primeiro pregão após a eleição de 25/10'.",
-       "como_fica": "No mesmo pregão, os juros negociados no mercado deixaram de prever novos cortes da Selic [c10]."
-      },
-      {
-       "trecho": "Quem investe passou a pedir mais para manter dinheiro em reais, porque não sabe como ficarão as contas do governo nem o rumo dos juros.",
-       "tipo": "forca",
-       "problema": "Atribui um motivo a quem investe sem linha que o mostre. O caderno não tem dado sobre as contas do governo.",
-       "como_fica": "Uma leitura possível é que quem investe passou a pedir mais para manter dinheiro em reais, por dúvida sobre as contas do governo e o rumo dos juros; o caderno não mede esse motivo."
-      },
-      {
-       "trecho": "O petróleo caiu quase 8% em 2/11 e mais de 8% em 4/11, com a expectativa de negociação de paz entre Estados Unidos e Irã [c37].",
-       "tipo": "numero",
-       "problema": "O c5 diz que em 2/11 o Brent caiu mais de 8%, e o c37 diz quase 8% no mesmo dia. As duas linhas não batem.",
-       "como_fica": "O petróleo caiu cerca de 8% em 2/11 e mais de 8% em 4/11, com a expectativa de negociação de paz entre Estados Unidos e Irã [c37]."
-      },
-      {
-       "trecho": "Em outubro, o Brasil embarcou 62,9% mais barris, e o preço médio subiu 36,7% [c19]. Como a quantidade cresceu mais que o preço, parte das vendas não some quando o barril fica mais barato.",
-       "tipo": "forca",
-       "problema": "O c19 fala em volume, não em barris. Que o volume tenha crescido mais que o preço não mostra que as vendas se mantêm quando o preço cai, e nenhuma linha diz isso.",
-       "como_fica": "Em outubro, o Brasil embarcou 62,9% mais petróleo em volume, e o preço médio subiu 36,7% [c19]. O volume cresceu mais que o preço, mas nenhuma linha diz se esse volume se mantém quando o barril fica mais barato."
-      },
-      {
-       "trecho": "Foram crises no mundo todo, e a queda depois foi em parte a volta de um salto.",
-       "tipo": "forca",
-       "problema": "Dá uma causa para a queda do dólar e chama os dois episódios de crises no mundo todo, sem linha no caderno. Em 2008 o dólar de março de 2009 ainda estava bem acima do de agosto de 2008 (R$ 1,6344).",
-       "como_fica": "O caderno não explica por que o dólar caiu depois nesses dois casos, e nos dois ele continuou bem acima do nível de antes da queda das commodities [c38, c39]."
-      },
-      {
-       "trecho": "Quem discorda da tese diz que hoje se parece mais com 2015 que com 2022, porque a dúvida sobre as contas do governo voltou ao centro e o Banco Central parou de cortar com a inflação esperada subindo [c17]. Esse argumento é forte, e ele não contradiz a tese: em 2015, o dólar subiu porque a desconfiança cresceu, e não porque o petróleo caiu.",
-       "tipo": "forca",
-       "problema": "A dúvida sobre as contas não tem linha citada. A afirmação de que em 2015 o dólar subiu porque a desconfiança cresceu não está no caderno, que traz só 'recessão e problemas internos' (c14). E se hoje lembra 2015, isso contradiz a previsão da tese, não a deixa de pé.",
-       "como_fica": "A melhor objeção é que hoje lembra mais 2015 que 2022, porque o Banco Central parou de cortar com a inflação esperada subindo [c17]. Esse argumento é forte: se for assim, o dólar pode subir mesmo com o petróleo mais barato, e a tese perde. Em 2015, a alta veio junto de recessão e problemas internos [c14], e o caderno não mede a desconfiança."
-      },
-      {
-       "trecho": "com o repasse maior nos importados e na bomba de gasolina [c102]",
-       "tipo": "numero",
-       "problema": "O c102 diz 'importados e combustível', não gasolina.",
-       "como_fica": "com o repasse maior nos importados e no combustível [c102]"
-      },
-      {
-       "trecho": "Essa desconfiança anda com o plano para as contas do governo e com as decisões de juro do Banco Central. Assim, a próxima notícia sobre a balança tende a dizer pouco sobre o dólar, e a próxima notícia sobre as contas tende a dizer muito.",
-       "tipo": "forca",
-       "problema": "Dá como fato a ligação da desconfiança com as contas e o juro, sem linha que a mostre, e o texto já disse que nenhum dado separa as causas. A conclusão sobre as próximas notícias é mais forte do que cinco casos permitem.",
-       "como_fica": "Se a tese estiver certa, essa desconfiança pode andar com o plano para as contas do governo e com as decisões de juro do Banco Central, o que o caderno não mede. Assim, a próxima notícia sobre a balança pode dizer pouco sobre o dólar, e a próxima notícia sobre as contas pode dizer mais."
-      },
-      {
-       "trecho": "O IBGE divulga a inflação de outubro em 12/11, e o Banco Central decide o juro de novo em 9/12.",
-       "tipo": "data",
-       "problema": "As datas 12/11 e 9/12 não estão em nenhuma linha do caderno.",
-       "como_fica": ""
-      }
-     ],
-     "graves": [
-      "A tese central, de que o dólar segue a desconfiança e não a balança, não tem medida direta. O texto admite que nenhum dado separa as causas. O título e a abertura a dão como fato.",
-      "Os 'quatro de cinco' medem o dólar só depois do fim da queda das commodities. Em 2008 e 2020 o dólar disparou durante a queda (c38, c39), e em 2015 subiu. A evidência para dizer que o petróleo barato não encarece o dólar é mais fraca do que o título e o 'Por isso' sugerem.",
-      "A premissa de abertura, a maior entrada de dólares do ano em outubro, vem do c20, de site fora da lista de fontes conhecidas e sem o comunicado aberto."
-     ],
-     "resumo": "O texto usa bem o caderno nas contas de 2008, 2015, 2020 e 2022, e traz a objeção e o que desmentiria a tese. Mas dá como fato uma causa que ele mesmo diz não poder medir, atribui motivos a quem investe e a quem discorda sem linha que os mostre, e põe datas (9/12, 12/11, 26/10) fora do caderno. A fonte do fluxo de outubro (c20) não confere. Há 14 correções e 1 frase que sai."
-    },
-    "aplicadas": 15,
-    "codigo": {
-     "graves": [
-      "bloco 4: número ou data sem linha do caderno que confira: 25/10 | trecho: O mês que trouxe a maior entrada de dólares do ano também trouxe uma alta de 8,21% do dólar em um dia. No primeiro pregã",
-      "bloco 6: número ou data sem linha do caderno que confira: 4/11 | trecho: A leitura mais provável é que o preço passou a refletir o medo. No mesmo pregão, os juros negociados no mercado deixaram",
-      "bloco 9: número ou data sem linha do caderno que confira: 29/10 | trecho: O recorde de outubro tem um motor claro. O petróleo bruto foi 22,6% de tudo o que o Brasil vendeu ao exterior no mês, co",
-      "bloco 10: número ou data sem linha do caderno que confira: 2/11, 4/11 | trecho: Esse vento a favor começou a virar. O petróleo caiu cerca de 8% em 2/11 e mais de 8% em 4/11, com a expectativa de negoc"
-     ],
-     "avisos": [
-      "c20 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781",
-      "bloco 2: jargão que o leitor não conhece",
-      "bloco 5: frase de 39 palavras",
-      "bloco 14: jargão que o leitor não conhece",
-      "bloco 14: parágrafo de 111 palavras"
-     ],
-     "palavras": 1207,
-     "intertitulos": 3
-    },
-    "codigo_depois_da_reescrita": {
-     "graves": [],
-     "avisos": [
-      "c20 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781",
-      "bloco 11: expressão de piloto automático",
-      "bloco 19: frase de 41 palavras",
-      "bloco 20: frase de 46 palavras"
-     ],
-     "palavras": 1197,
-     "intertitulos": 3
-    },
     "final": {
      "graves": [],
      "avisos": [
-      "c20 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781",
-      "bloco 2: frase de 37 palavras",
-      "bloco 11: expressão de piloto automático",
-      "bloco 18: frase de 38 palavras"
+      "c5 vem de site fora da lista de fontes conhecidas: https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
+      "siglas que a leitora não conhece, sem nome por extenso ou link: XP"
      ],
-     "palavras": 1210,
-     "intertitulos": 3
-    },
-    "reconferencia": {
-     "em": "2026-11-10T05:57:24-03:00",
-     "ruins": [],
-     "frases_cortadas": [],
-     "abertos": 18,
-     "final": {
-      "graves": [],
-      "avisos": [
-       "c20 vem de site fora da lista de fontes conhecidas: https://bpmoney.com.br/?p=433781",
-       "bloco 2: frase de 37 palavras",
-       "bloco 11: expressão de piloto automático",
-       "bloco 18: frase de 38 palavras"
-      ],
-      "palavras": 1209,
-      "intertitulos": 3
-     },
-     "ruins_do_fato_do_dia": [
-      "c36"
-     ]
+     "palavras": 532,
+     "intertitulos": 2
     }
    },
-   "edicao": {
-    "sugestoes": [
-     {
-      "trecho": "Para você, o dólar chega pelos preços... Pelas contas do Banco Central, se essa alta não voltar, o IPCA sobe cerca de 0,3 ponto em 12 meses, e R$ 100 de compras ficam cerca de R$ 0,30 mais caros, com o repasse maior nos importados e no combustível [c102].",
-      "problema": "Frase de 41 palavras; passa do limite de 30 e carrega duas ideias. 'Repasse' é palavra de economês.",
-      "como_fica": "Duas frases: 'Pelas contas do Banco Central, se essa alta não voltar, o IPCA sobe cerca de 0,3 ponto em 12 meses. Com isso, R$ 100 de compras ficam cerca de R$ 0,30 mais caros, e o aumento chega mais forte nos importados e no combustível [c102].'"
-     },
-     {
-      "trecho": "Se ela estiver certa, os 0,3 ponto devem crescer ou encolher menos com o preço do barril e mais com a desconfiança de quem investe, que parece andar junto com o plano para as contas do governo e com as decisões de juro do Banco Central.",
-      "problema": "Frase de 46 palavras, difícil de seguir no celular.",
-      "como_fica": "Três frases: 'Se a tese estiver certa, esses 0,3 ponto vão mudar menos com o preço do barril e mais com a desconfiança de quem investe. Essa desconfiança parece andar junto com o plano para as contas do governo e com as decisões de juro do Banco Central. Nesse caso, a próxima notícia sobre o comércio deve dizer pouco sobre o dólar...'"
-     },
-     {
-      "trecho": "Uma ressalva pesa a favor da balança. ... e por isso mostra o rumo sem fechar a conta.",
-      "problema": "Expressões de piloto automático ('pesa a favor', 'fechar a conta') e frase pouco concreta.",
-      "como_fica": "'Um dado ainda sustenta o comércio.' e '... e por isso dá só uma ideia do rumo, sem o tamanho exato.'"
-     },
-     {
-      "trecho": "o fluxo cambial do Brasil foi positivo em US$ 18,151 bilhões",
-      "problema": "Economês ('fluxo cambial'); a leitora não sabe o que significa.",
-      "como_fica": "'entraram no Brasil US$ 18,151 bilhões a mais em dólares do que saíram'"
-     },
-     {
-      "trecho": "os juros negociados no mercado deixaram de prever novos cortes da Selic",
-      "problema": "'O mercado' não é uma pessoa; o guia manda dizer quem: bancos, fundos e empresas.",
-      "como_fica": "'os juros negociados entre bancos e fundos deixaram de indicar novos cortes da Selic' (e igual na objeção final)."
-     },
-     {
-      "trecho": "contra 12,2% um ano antes; 32,8% mais alto que um ano antes",
-      "problema": "Comparação sem o mês; a leitora tem de fazer a conta.",
-      "como_fica": "'contra 12,2% em outubro do ano passado'; '32,8% mais alto que em setembro do ano passado'."
-     },
-     {
-      "trecho": "No primeiro pregão depois do segundo turno",
-      "problema": "Palavra de jornal de economia ('pregão').",
-      "como_fica": "'No primeiro dia de negociação depois do segundo turno'"
-     },
-     {
-      "trecho": "Nos dois casos, o dólar disparou durante a queda",
-      "problema": "Palavra de alarme ('disparou').",
-      "como_fica": "'o dólar subiu muito durante a queda'"
-     },
-     {
-      "trecho": "Portanto, os cinco casos não mostram que o petróleo barato deixa o dólar parado. Eles mostram que, em quatro vezes... Cinco casos mostram um padrão, e não uma lei.",
-      "problema": "Contraste cortado e troca em espelho ('não mostram... mostram'; 'um padrão, e não uma lei').",
-      "como_fica": "'Portanto, os cinco casos não provam que o petróleo barato deixa o dólar parado. Em quatro deles, o dólar não continuou subindo depois que as matérias-primas pararam de cair, e em dois ele subiu enquanto elas caíam. Cinco casos são poucos para chamar de regra.'"
-     },
-     {
-      "trecho": "o petróleo, que encheu a balança; a balança menor; a balança importa sim, só que estava escondida; a balança explica pouco (título)",
-      "problema": "'Balança' solta é economês; o texto deve dizer comércio. No título, 'entrou dólar e o dólar subiu' também não se entende sozinho.",
-      "como_fica": "Título: 'Mesmo com mais dólares entrando em outubro, o dólar subiu, e o comércio explica pouco o preço agora'; no texto, 'comércio' no lugar de 'balança'."
-     },
-     {
-      "trecho": "Isso é uma leitura, e não uma medida. Nenhum dado separa as causas da alta, o fluxo é de um mês só...",
-      "problema": "Frases curtas empilhadas e contraste cortado; a razão deve vir ligada.",
-      "como_fica": "'Isso é uma leitura, e não uma medida, porque nenhum dado separa as causas da alta, o fluxo é de um mês só e de uma única fonte...'"
-     },
-     {
-      "trecho": "Esse vento a favor começou a mudar.",
-      "problema": "Imagem vaga de jornal; não diz a favor de quem.",
-      "como_fica": "'Esse movimento a favor do Brasil começou a mudar.'"
-     }
-    ],
-    "aplicada": true
-   },
-   "titulo": "Mesmo com mais dólares entrando em outubro, o dólar subiu, e o comércio explica pouco o preço agora",
-   "texto": "Em outubro, entraram no Brasil US$ 18,151 bilhões a mais em dólares do que saíram, o maior valor do ano. Esse número vem dos dados do Banco Central, publicados numa reportagem, e somou US$ 9,339 bilhões pelo comércio e US$ 8,812 bilhões por investimentos e empréstimos [c20]. No mesmo mês, o dólar foi de R$ 5,1809 no fim de setembro para R$ 5,4212 no fim de outubro, uma alta de 4,6% [c22].\n\nQuando o preço sobe com tanta moeda americana entrando, a explicação provável é que o dólar esteja seguindo menos a quantidade que chega e mais a desconfiança de quem investe. Se for isso, o petróleo mais barato, que deve encolher o saldo do comércio, não basta sozinho para esperar um dólar bem mais caro. Isso é uma leitura, e não uma medida, porque nenhum dado separa as causas da alta, o fluxo é de um mês só e de uma única fonte, e o passado, como se verá adiante, ajuda pouco.\n\n### O dinheiro entrou, e o dólar subiu mesmo assim\n\nO choque mais claro veio logo depois da eleição. No primeiro dia de negociação depois do segundo turno, o dólar subiu 8,21%, a R$ 5,403, e a Bolsa caiu 13,88% [c10]. A moeda americana continuava chegando, mas quem comprava dólar aceitou pagar bem mais caro por ela.\n\nO ano inteiro mostra a mesma coisa por outro ângulo. De janeiro até 30/10, o comércio trouxe US$ 54,956 bilhões, enquanto investimentos e empréstimos tiraram US$ 26,213 bilhões do país [c8]. Em outubro, até o dinheiro dos investimentos entrou, e isso torna a alta do preço ainda mais difícil de explicar só pela quantidade de dólares.\n\nO que mudou foi o que se esperava do Brasil. No mesmo dia do salto, os juros negociados entre bancos e fundos deixaram de indicar novos cortes da Selic [c10]. Dias depois, o Banco Central parou de cortar o juro e subiu para 5,6% a previsão do IPCA de 2026 [c17]. Uma explicação possível é que quem investe passou a pedir mais para manter dinheiro em reais, por dúvida sobre as contas do governo e sobre o rumo dos juros.\n\nEssas duas dúvidas dependem de gente diferente. O plano para as contas depende do presidente, do ministro da Fazenda e do Congresso, que aprova o Orçamento. O juro é decidido pelo Banco Central. Nenhum dado mostra quanto da alta do dólar vem de cada dúvida, nem quanto vem delas e quanto vem de outras causas.\n\n### O petróleo, que encheu os cofres do comércio, começou a ficar mais barato\n\nO recorde do comércio em outubro foi puxado pelo petróleo. O petróleo bruto foi 22,6% de tudo o que o Brasil vendeu ao exterior no mês, contra 12,2% em outubro do ano passado [c19]. No fim de outubro, o barril do tipo Brent chegou a fechar a US$ 110,80 [c5]. O índice de matérias-primas do Banco Central estava, em setembro, 32,8% mais alto que em setembro do ano passado [c3], o maior valor desde agosto de 2022 [c4].\n\nEsse movimento a favor do Brasil começou a mudar. Na primeira semana de novembro, o petróleo caiu quase 8% num dia e mais de 8% em outro, com a expectativa de uma negociação de paz entre Estados Unidos e Irã [c37]. Antes disso, o governo já tinha baixado a previsão do saldo comercial de 2026 de US$ 90 bilhões para US$ 84,4 bilhões, por causa das projeções para o preço do petróleo [c7].\n\nUm dado ainda sustenta o comércio. Em outubro, o Brasil embarcou 62,9% mais petróleo, e o preço médio subiu 36,7% [c19], o que quer dizer que o volume cresceu mais que o preço. Não se sabe se esse volume se mantém com o barril mais barato. Além disso, o número vem de uma só reportagem sobre os dados do governo, e por isso dá só uma ideia do rumo, sem o tamanho exato.\n\n### O passado mostra o dólar caindo depois da queda das matérias-primas, mas nem sempre durante\n\nDesde 2002, o índice de matérias-primas do Banco Central caiu mais de 15% em cinco episódios. Nos três meses depois do fim de cada queda, o dólar caiu em quatro. Em 2022, o índice caiu 20,9% de agosto a outubro [c23], e o dólar caiu 3,0% de outubro a janeiro de 2023 [c24]. No fim de 2015, o índice caiu 16,4% [c27], e o dólar caiu 14,6% de janeiro a abril de 2016 [c28].\n\nEsse placar mede só o que veio depois, e é aí que a evidência fica mais fraca. Em 2020, o índice caiu 28,4% de janeiro a abril [c29], e em 2008 caiu 38,2% de setembro a dezembro [c31]. Nos dois casos, o dólar subiu muito durante a queda, de R$ 1,6344 em agosto para R$ 2,3370 em dezembro de 2008 [c38] e de R$ 4,2695 em janeiro para R$ 5,4270 em abril de 2020 [c39]. Só depois ele caiu um pouco, 0,9% até março de 2009 [c32] e 4,1% até julho de 2020 [c30], e continuou bem acima do nível de antes [c38, c39].\n\nPortanto, os cinco casos não provam que o petróleo barato deixa o dólar parado. Em quatro deles, o dólar não continuou subindo depois que as matérias-primas pararam de cair, e em dois ele subiu enquanto elas caíam. Cinco casos são poucos para chamar de regra.\n\nA melhor objeção está no quinto caso. De outubro de 2014 a janeiro de 2015, o índice caiu 21,8% [c25], e o dólar subiu 12,4% de janeiro a abril de 2015 [c26]. Naqueles meses, o Banco Central subia a Selic de 12,25% para 13,25%, e a dívida do governo passava de 57,16% para 59,11% do PIB [c33]. A alta veio junto com recessão e problemas internos [c14].\n\nEm 2022, a situação era outra. A Selic ficou parada em 13,75%, e a dívida caiu de 73,70% para 71,38% do PIB [c34]. Quem discorda da tese diz que hoje o Brasil lembra mais 2015 que 2022, porque o Banco Central parou de cortar com a inflação esperada subindo [c17]. Se for assim, o petróleo mais barato e a desconfiança podem empurrar o dólar para o mesmo lado, e o saldo menor do comércio passaria a pesar mais.\n\nHá uma segunda objeção, também séria. Sem o comércio forte de outubro, o dólar talvez tivesse subido ainda mais, e um mês de dados não deixa descartar isso. Nesse caso, o comércio pesa, e a desconfiança escondia o efeito dele. A tese perde força se o dólar subir com força sem nenhum sinal novo de desconfiança, como a Bolsa caindo ou os juros negociados entre bancos e fundos subindo, porque aí o comércio voltaria a explicar o preço.\n\nPara você, o dólar chega pelos preços, e pesa mais em quem compra importados e combustível. O dólar foi de R$ 5,3451 em 6/11/2025 para R$ 5,5013 em 6/11/2026, uma alta de 2,9% [c102]. Pelas contas do Banco Central, se essa alta não voltar, o IPCA sobe cerca de 0,3 ponto em 12 meses. Com isso, R$ 100 de compras ficam cerca de R$ 0,30 mais caros, e o aumento chega mais forte nos importados e no combustível [c102]. É uma média de muitos anos, e o próprio Banco Central diz que o efeito muda com o momento da economia [c102].\n\nSe a tese estiver certa, esses 0,3 ponto vão mudar menos com o preço do barril e mais com a desconfiança de quem investe. Essa desconfiança parece andar junto com o plano para as contas do governo e com as decisões de juro do Banco Central. Nesse caso, a próxima notícia sobre o comércio deve dizer pouco sobre o dólar, e a próxima sobre as contas do governo deve dizer mais.",
-   "duracao_escrever_s": 368,
-   "notas_da_versao_anterior": {
-    "texto_corrigido_a_mao": "2026-11-08: 'endereço claro' era mais forte que o caderno (c35, uma reportagem): virou motivo apontado pelos jornais, com a fonte; tirado o bastidor da busca ('resumo de jornal').",
-    "revisao_manual": [
-     {
-      "em": "2026-11-08",
-      "o_que": "tirada a previsão com data e as frases em que o site prometia conferir ou acompanhar depois (decisão do Pedro em 8/11/2026: o site faz a análise do fato e para aí)",
-      "trocas": [
-       {
-        "antes": "O site vai acompanhar toda semana o dólar (Ptax) e o juro de 10 anos. Vai olhar também o fluxo cambial que o Banco Central divulga às quartas-feiras, para ver se a parte financeira volta a ter saída. O dado do fim de novembro vai mostrar se o dólar subiu menos que os 4,6% de outubro [c22]. Na reunião de 9/12, a decisão do juro vai mostrar como o Banco Central lê o dólar mais caro para a inflação.",
-        "depois": "Por isso, nas próximas semanas, a desconfiança de quem investe diz mais sobre o dólar do que o saldo do comércio. O fluxo cambial que o Banco Central divulga às quartas-feiras mostra se a parte financeira volta a ter saída. Na reunião de 9/12, a decisão do juro mostra como o Banco Central lê o dólar mais caro para a inflação."
-       }
-      ]
-     }
-    ]
-   },
-   "texto_corrigido_a_mao": "2026-11-09: saiu a fórmula 'importa sim'.",
-   "fontes_abertas": true
+   "titulo": "Bradesco e XP Investimentos preveem PIB quase parado em 2027, e o emprego ainda não virou",
+   "texto": "Bradesco e XP Investimentos cortaram ontem a previsão de crescimento do PIB de 2027 de 1,0% para perto de zero, entre 0,3% e 0,4% [c1]. Com o Itaú, que já tinha ido a 0,5% no fim de outubro, são três casas grandes prevendo uma economia quase parada no ano que vem [c5]. O último PIB oficial, do segundo trimestre, ainda subiu 0,5%, mas a prévia do Banco Central, que é mais nova, já aponta queda [c8, c12].\n\nSegundo a imprensa, as duas casas citam a incerteza sobre as contas do governo depois da reeleição, o juro alto e o real mais fraco, e também subiram a previsão de inflação de 2027 [c1]. A XP Investimentos espera a Selic em 13,75% no fim de 2027, o mesmo nível de hoje, o que deixaria o crédito caro para pessoas e empresas por mais um ano [c2].\n\nA gestora Genoa, em carta a clientes relatada pelo Valor, foi mais longe e fala em recessão em 2027. Ela também lê a causa de outro jeito, porque, para a Genoa, o risco do juro e da inflação pesa hoje mais que o das contas do governo. Por isso o mesmo corte de previsão chega com duas explicações, e cada uma aponta uma saída diferente.\n\n### Os dados mais recentes perdem força, mas o emprego ainda não virou\n\nO PIB cresceu nos últimos oito trimestres, e uma recessão é o PIB cair dois trimestres seguidos [c8]. Os dados mais recentes, porém, vão na direção das casas, já que a prévia do PIB do Banco Central caiu 0,6% nos três meses até agosto, contra os três meses anteriores [c12]. O consumo das famílias já tinha caído 0,4% no segundo trimestre [c11].\n\nO emprego é a parte que ainda não virou. O desemprego caiu de 5,4% no trimestre até junho para 5,2% no trimestre até setembro, mais baixo que em 99% dos meses desde 2012 [c9, c10]. Uma economia parada chegaria às casas e às empresas pelo emprego, e esse dado ainda não mostra a mudança que as previsões descrevem.\n\nA melhor objeção ao corte vem da mediana do Focus, que reúne bem mais bancos e consultorias e ainda vê 1,15% para 2027, 0,65 ponto acima do Itaú [c6, c3]. Essa mediana caiu nas duas últimas pesquisas, de 1,31% para 1,20% e depois 1,15% [c6]. A queda admite duas leituras: as casas grandes se adiantaram e as outras vão segui-las, ou as grandes exageraram e a mediana para perto de onde está.\n\n### O ajuste das contas, que pesa na previsão, segue sem data\n\nTambém ontem, o comitê executivo da Câmara de Comércio Exterior, do governo, prorrogou até 31/12 o imposto de 12% sobre o petróleo exportado, que venceria em 7 de novembro. O motivo dado é manter a entrada de dinheiro enquanto o petróleo segue caro por causa do conflito no Oriente Médio. As medidas de ajuste que a Fazenda diz preparar ficaram para depois da conferência do clima da ONU, ainda sem data e sem números.\n\nPara as empresas que decidem agora se investem e contratam em 2027, as casas grandes indicam crédito caro e economia fraca por mais tempo. Se o corte vier da dúvida sobre as contas, um ajuste com números pode desfazer parte dele; se vier da inflação, como diz a Genoa, a saída depende mais do Banco Central. O desemprego até outubro sai em 27/11, e o PIB do terceiro trimestre, em 2/12.",
+   "argumento": "Bradesco, XP Investimentos e Itaú passaram a prever PIB quase parado em 2027; os dados recentes perdem força, mas o emprego ainda não virou, e a mediana do Focus, mais alta, caiu nas duas últimas pesquisas.",
+   "porque": "Segundo a imprensa, Bradesco e XP Investimentos cortaram a previsão por causa da incerteza sobre as contas do governo depois da reeleição, do juro alto e do real mais fraco.",
+   "pressao": "ritmo",
+   "duracao_s": 470
   },
-  "termina_em": "mercado",
-  "pergunta": "dolar-alto",
+  "termina_em": "ritmo",
   "versao_anterior": {
    "titulo": "Brasil vende US$ 9,3 bi a mais do que compra, maior outubro desde 1989",
    "paragrafos": [
-    "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou em outubro, o maior saldo para um outubro desde 1989, segundo o Ministério do Desenvolvimento, Indústria, Comércio e Serviços.",
-    "As exportações subiram 20% sobre outubro de 2025, e as importações, 14,8%. O petróleo puxou a alta, com 62,9% mais barris embarcados a um preço 36,7% maior, segundo o Times Brasil.",
-    "Outubro teve a maior entrada de dólares do ano, US$ 18,2 bilhões, e mesmo assim o dólar subiu 4,6% desde o fim de setembro. A explicação provável é a desconfiança de quem investe, que cresceu depois da eleição."
+    "O Brasil vendeu US$ 9,3 bilhões a mais do que comprou em outubro, o maior saldo para o mês desde 1989.",
+    "Pelo Ministério do Desenvolvimento, Indústria e Comércio, as exportações subiram 20% contra outubro de 2025, puxadas por 63% mais barris de petróleo. Mesmo com a maior entrada de dólares do ano, o dólar subiu 4,6% em outubro, porque parece seguir mais a desconfiança de quem investe que o comércio.",
+    "Se ele seguir 2,9% mais caro que um ano antes, uma compra de R$ 100 sobe cerca de R$ 0,30 em um ano, mais nos importados e no combustível."
    ]
   },
-  "revisao_manual": "2026-11-08: refeito a pedido do Pedro (fato do dia com o porquê): a pesquisa do dia, a mesma da leitura a fundo, passa ao redator o porquê e o e daí (curto do editor-chefe, refeito da pesquisa gravada com fundo.py --curto); regra do \"quem decidiu\"; teste do porquê; Opus no post, no editor e no teste. Mesmo programa da atualização (src/escreve_post.py), com os dados desta rodada. O texto anterior ficou em versao_anterior. 2026-11-09: refeito a pedido do Pedro (o fato do dia termina na vida de quem lê, com o tamanho da tabela de tradução, TRADUCAO.md): curto do editor-chefe refeito da pesquisa gravada, com as traduções do dia (src/conta.py traduz), e post pelo mesmo programa da atualização (src/escreve_post.py), com os mesmos dados. A leitura a fundo foi escrita de novo da mesma pesquisa (fundo.py --escreve), com as famílias de referência que o fato atinge; as correções à mão de 8/11 (bastidor e promessas de conferir depois) não voltaram, e a conferência das fontes no Mac (--reconfere) roda de novo."
+  "revisao_manual": "Refeito em 10/11/2026 no texto do dia pela história (pedido do Pedro)."
  },
  "pauta": {
-  "versao": 1,
+  "versao": 2,
   "candidatos": [
    {
     "id": "E1",
@@ -4555,11 +3444,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Bancos e gestoras passam a esperar preços subindo mais rápido e economia quase parada em 2027, e a Genoa fala em recessão, o que leva empresas e famílias a adiar compras e investimentos.",
-    "vida": {
-     "tamanho": 1,
-     "porta": "precos",
-     "quem": "quem faz compras do mês e depende do emprego, se os preços subirem mais e a economia parar em 2027"
-    },
+    "historia": "ritmo_emprego",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": true,
+    "sem_medida": false,
     "n_manchetes": 2,
     "jornais": [
      "Folha",
@@ -4578,6 +3467,24 @@
       "titulo": "Recessão, inflação a 6% e risco monetário mais grave que o fiscal: os alertas da Genoa para 2027",
       "url": "https://valor.globo.com/financas/intraday/post/2026/11/recessao-inflacao-a-6percent-e-risco-monetario-mais-grave-que-o-fiscal-os-alertas-da-genoa-para-2027.ghtml",
       "publicado_em": "2026-11-06T17:43+00:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Mercado prevê estagflação em 2027 e cenário parecido com o da era Dilma",
+      "url": "https://www.gazetadopovo.com.br/economia/mercado-preve-estagflacao-em-2027-e-cenario-parecido-com-o-da-era-dilma/",
+      "publicado_em": "2026-11-08T00:32+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Risco de recessão no Brasil ganha força para 2027",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/risco-de-recessao-no-brasil-ganha-forca-para-2027.shtml",
+      "publicado_em": "2026-11-07T23:00-03:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Mercado financeiro alerta para risco de estagflação no Brasil em 2027",
+      "url": "https://www.gazetadopovo.com.br/economia/mercado-financeiro-alerta-para-risco-de-estagflacao-no-brasil-em-2027/",
+      "publicado_em": "2026-11-08T04:33+00:00"
      }
     ]
    },
@@ -4594,11 +3501,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "As exportações subiram 20% em outubro, puxadas por petróleo e minério, e a entrada de dólares ajuda a segurar a moeda americana e a sustentar a produção.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "tarifas_eua",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 7,
     "jornais": [
      "Agência Brasil",
@@ -4661,11 +3568,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Com o emprego forte nos EUA, o mercado vê 80% de chance de o banco central de lá subir os juros, o que tira dinheiro de países como o Brasil e pressiona o dólar aqui.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "fed_juros_eua",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 4,
     "jornais": [
      "Folha",
@@ -4713,11 +3620,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "A queda das empresas de inteligência artificial lá fora deixa os investidores mais medrosos, e eles tiram dinheiro de bolsas de países emergentes como o Brasil.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "queda_das_acoes_de_tecnologia",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 6,
     "jornais": [
      "Folha",
@@ -4776,11 +3683,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "O juro que o governo paga para pegar dinheiro emprestado caiu com os sinais sobre as contas, o que alivia o custo do crédito, mas o dólar subiu 1,54% na semana.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "desconfianca_eleicao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 8,
     "jornais": [
      "Agência Brasil",
@@ -4831,11 +3738,11 @@
     "lado": "alivia",
     "ja_esperado": false,
     "porque": "O presidente repete o compromisso com as contas e dá os primeiros sinais de ajuste, mas sem medidas, e diz que investimento pode justificar mais dívida.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": true,
     "n_manchetes": 7,
     "jornais": [
      "Estadão",
@@ -4898,11 +3805,11 @@
     "lado": "alivia",
     "ja_esperado": true,
     "porque": "A cobrança, que venceria em 7 de novembro, segue trazendo dinheiro para o governo enquanto o petróleo está caro por causa do conflito no Oriente Médio.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 5,
     "jornais": [
      "Estadão",
@@ -4958,11 +3865,11 @@
     "lado": "pesa",
     "ja_esperado": false,
     "porque": "Governadores e prefeitos poderiam trocar dívidas nos últimos 120 dias de mandato, o que abre espaço para empurrar a conta para o próximo gestor e afrouxa as contas dos estados.",
-    "vida": {
-     "tamanho": 0,
-     "porta": "nenhuma",
-     "quem": ""
-    },
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
     "n_manchetes": 1,
     "jornais": [
      "Poder360"
@@ -4982,59 +3889,119 @@
   "pressoes_mudaram": [],
   "estado": "subindo",
   "estado_anterior": "subindo",
-  "degrau": 5,
-  "motivo": "a notícia de estágio mais firme e maior tamanho; no empate, a que não é o vaivém do mercado do dia e a que saiu em mais jornais",
-  "padrao": "E2",
-  "final": "E2",
-  "mesma_historia": [],
-  "cuidados": [
-   "O recorde vale para meses de outubro, e não para todos os meses. Segundo a pauta, é o maior saldo para outubro desde 1989. Não é o maior saldo já registrado.",
-   "A alta de 39,4% compara o saldo de outubro de 2026 com o de outubro de 2025. A alta de 87% nas vendas aos EUA também é do mês, e no ano o comércio com os EUA recua. Não misture o mês com o ano.",
-   "O saldo veio puxado por petróleo e minério com preços altos. O petróleo caiu 13% na semana, então não apresente o saldo como algo que vai durar."
-  ],
-  "editora": {
-   "ok": true,
-   "saida": {
-    "segue_padrao": true,
-    "escolha": "E2",
-    "motivo_desvio": null,
-    "por_que": "A direção do risco não mudou. Nenhuma pressão mudou de lado, e não houve data marcada nem choque grande. Pelo degrau 5, os fatos consumados de tamanho 1 empatam. O fechamento do mercado (E5) fica atrás, e entre os outros a balança comercial saiu em mais jornais. Ela é um dado divulgado, recorde para outubro, e a entrada de dólares mexe no dólar.",
-    "concorrente": "E7",
-    "por_que_perdeu": "A prorrogação do imposto sobre o petróleo exportado é uma decisão tomada e mexe nas Contas do governo. Mas tem o mesmo tamanho, saiu em menos jornais e só mantém uma cobrança que já existia e que o mercado esperava. Não traz informação nova que justifique a troca.",
-    "mesma_historia": [],
-    "cuidados": [
-     "O recorde vale para meses de outubro, e não para todos os meses. Segundo a pauta, é o maior saldo para outubro desde 1989. Não é o maior saldo já registrado.",
-     "A alta de 39,4% compara o saldo de outubro de 2026 com o de outubro de 2025. A alta de 87% nas vendas aos EUA também é do mês, e no ano o comércio com os EUA recua. Não misture o mês com o ano.",
-     "O saldo veio puxado por petróleo e minério com preços altos. O petróleo caiu 13% na semana, então não apresente o saldo como algo que vai durar."
+  "direcao_mudou": false,
+  "historias": [
+   {
+    "id": "ritmo_emprego",
+    "titulo": "Ritmo da economia e emprego: a desaceleração e a previsão de 2027",
+    "pressao": "ritmo",
+    "pressoes": [
+     "ritmo",
+     "emprego",
+     "renda",
+     "juro"
     ],
-    "testes": {
-     "troca": "Sim. Um saldo recorde da balança é um dado oficial, e qualquer governo o teria como fato do dia num dia sem notícia maior.",
-     "fato": "Aconteceu. É um dado divulgado pelo governo sobre exportações e importações de outubro.",
-     "consequencia": "Mexe no dólar. A entrada de dólares ajuda a segurar a moeda americana, o que pesa na Desconfiança de quem investe e no preço dos importados.",
-     "novidade": "A leitora não sabia que o Brasil vendeu US$ 9,3 bilhões a mais do que comprou em outubro, com exportações 20% maiores. O dado não repete nenhum fato do dia anterior do site.",
-     "mais_dada": "O fechamento do mercado (E5) saiu em 6 jornais e 8 manchetes. Ficou de fora porque é o vaivém do mercado do dia, e o topo do site já mostra o dólar e o juro. A fala do presidente sobre as contas foi descartada e é só um anúncio."
-    }
+    "nova": false,
+    "pontos": 2.0,
+    "candidatos": [
+     "E1"
+    ],
+    "jornais": 2,
+    "fato_grande": false
    },
-   "meta": [
-    {
-     "modelo_pedido": "opus",
-     "prompt_sha256": "8b3a040729153be73da8d7fcbce7649b382353be20b9037c398d6108eba43e8f",
-     "system_sha256": "fd8e8c93597c03044e3f4cd47585116ebc601be9f1d516a42bd4991e2173473b",
-     "returncode": 0,
-     "is_error": false,
-     "custo_usd": 0.136874,
-     "modelos": [
-      "claude-opus-5-5"
-     ],
-     "permission_denials": [],
-     "session_id": "96da3fbd-e505-4170-8e18-262e021a7281"
-    }
-   ],
-   "conferencia": "seguiu a escolha padrão"
+   {
+    "id": "contas_governo",
+    "titulo": "Contas do governo: a meta, o ajuste prometido e a dívida",
+    "pressao": "contas",
+    "pressoes": [
+     "contas",
+     "divida_reais",
+     "mercado",
+     "juro"
+    ],
+    "nova": false,
+    "pontos": 1.7,
+    "candidatos": [
+     "E7",
+     "E8"
+    ],
+    "jornais": 5,
+    "fato_grande": false
+   },
+   {
+    "id": "tarifas_eua",
+    "titulo": "Tarifas dos EUA sobre o Brasil",
+    "pressao": "ritmo",
+    "pressoes": [
+     "mercado",
+     "emprego",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E2"
+    ],
+    "jornais": 6,
+    "fato_grande": false
+   },
+   {
+    "id": "desconfianca_eleicao",
+    "titulo": "Desconfiança de quem investe depois da eleição",
+    "pressao": "mercado",
+    "pressoes": [
+     "mercado",
+     "divida_reais",
+     "juro",
+     "inflacao"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E5"
+    ],
+    "jornais": 6,
+    "fato_grande": false
+   },
+   {
+    "id": "fed_juros_eua",
+    "titulo": "O Fed e os juros dos EUA",
+    "pressao": "mercado",
+    "pressoes": [
+     "juro",
+     "mercado"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E3"
+    ],
+    "jornais": 3,
+    "fato_grande": false
+   }
+  ],
+  "temas_esperando": [],
+  "escolha": {
+   "historia": "ritmo_emprego",
+   "titulo": "Ritmo da economia e emprego: a desaceleração e a previsão de 2027",
+   "pontos": 2.0,
+   "motivo": "a história que mais andou",
+   "calmo": false,
+   "nova": false,
+   "pulada": null,
+   "segunda": "contas_governo"
   },
-  "cuidados_cortados": [
-   "A alta de 39,4% compara o saldo de outubro de 2026 com o de outubro de 2025. A alta de 87% nas vendas aos EUA também é do mês, e no ano o comércio com os EUA recua. Não misture o mês com o ano.",
-   "O saldo veio puxado por petróleo e minério com preços altos. O petróleo caiu 13% na semana, então não apresente o saldo como algo que vai durar."
-  ]
+  "final": "E1",
+  "mesma_historia": [],
+  "segunda_historia": [
+   "E7",
+   "E8"
+  ],
+  "refeita_em": "2026-11-10",
+  "antes": {
+   "degrau": 5,
+   "final": "E2",
+   "titulo": "Brasil vende US$ 9,3 bi a mais do que compra em outubro, recorde para o mês"
+  }
  }
 }
