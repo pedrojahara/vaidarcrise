@@ -3159,8 +3159,7 @@
   ],
   "fundo": {
    "versao": 3,
-   "ok": false,
-   "etapa": "pensado",
+   "ok": true,
    "em": "2026-11-10T05:46:49-03:00",
    "voltas": [
     {
@@ -3434,6 +3433,70 @@
      ],
      "permission_denials": [],
      "session_id": "23728192-ab5a-4d6a-8cad-6cfb1ed25540"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "356678419c21bc11d30be5973e0ec8448e889e0bd299f80e4f5790e40d694c65",
+     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.712688,
+     "turnos": 2,
+     "duracao_s": 67,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "a4140a3f-f7c4-4ff8-ab7f-5d8de781a3ae"
+    },
+    {
+     "etapa": "conferencia",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "21591acc0ee17456c53f4adb5adc0629640e8a5d2771c01d96b0f90f33d78fdb",
+     "system_sha256": "014db32c3a98cfd87cb62417008dbee3bc6c60858da38a9ac3f6069aa3aea5eb",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.212366,
+     "turnos": 2,
+     "duracao_s": 77,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "111f5ebc-146b-4178-bbae-f6bb7a5218f7"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "977ce5401c712ae856148c7df67ba3214beaafcb9115d1f10c148edcde891ca2",
+     "system_sha256": "c4dde59a5a33e6456ab6281dcebf960749612919316bf2d1e18e60b42efe2421",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7131772000000001,
+     "turnos": 2,
+     "duracao_s": 51,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "3e68eaa7-a511-49bb-8f09-7c533ed40543"
+    },
+    {
+     "etapa": "editor_fundo",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "e805a359d546e93f7b960d24f6a01a26a809375d14cfcab1666d68348fc88547",
+     "system_sha256": "c051e15dfe2ba0240d641e7b2a26a2ab05de7d68718375f6bd3be448f44a878a",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.36730260000000003,
+     "turnos": 3,
+     "duracao_s": 94,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "3a186b51-1bd5-4b86-bdfd-3f835755f3a0"
     }
    ],
    "offline": false,
@@ -4258,7 +4321,7 @@
     }
    ],
    "duracao_pensar_s": 515,
-   "duracao_s": 515,
+   "duracao_s": 808,
    "curto": {
     "porque": "Na Lei 14.237, o auxílio existe para mitigar o efeito do preço do gás de cozinha no orçamento das famílias de baixa renda. A Secom diz que a prorrogação mantém uma política contra a pobreza energética. Pelo texto da lei, o programa vigorava por 5 anos e acabaria em 19/11/2026.",
     "e_dai": "Pelo texto da lei, o botijão grátis acabaria em 19/11; com a medida provisória, o prazo até 2031 depende de o Congresso votá-la em até 120 dias.",
@@ -4297,7 +4360,244 @@
    "pressao": "contas",
    "pagina_que_falta": "O que é uma medida provisória e o que acontece quando ela caduca? A leitora precisa saber disso para ler o \\\"até 2031\\\" de hoje e a MP das dívidas rurais, que pode perder a validade na quarta.",
    "tese": "A MP 1.400 existe porque a lei de fevereiro, chamada de permanente, não mexeu no artigo que limita o programa a 5 anos: pelo texto da lei, o Gás do Povo acabaria em 19/11/2026. A recarga grátis até 2031 depende de o Congresso converter a MP em até 120 dias, e a MP anterior do programa só foi votada a poucos dias de caducar, em fevereiro (um caso, não um padrão). O dinheiro de cada ano segue no orçamento: R$ 7,6 bi no projeto de 2027, 61,7% acima dos R$ 4,7 bi de 2026, e as reportagens sobre a MP não trazem estimativa de custo própria.",
-   "menor": false
+   "menor": false,
+   "rascunho": {
+    "titulo": "A lei chamada de permanente não mexeu no prazo, e sem a MP o Gás do Povo acabaria em 19 de novembro",
+    "texto": "A lei que em fevereiro foi apresentada como a que tornava o Gás do Povo permanente deixou de fora o artigo que dá prazo ao programa. Na versão atualizada da Lei 14.237, publicada pela Câmara, o artigo 8º ainda diz que ela \"vigorará por 5 (cinco) anos\", contados de 19/11/2021 [c4, c20]. Sem a medida provisória, o programa acabaria em 19/11 [c24].\n\nPor isso a MP 1.400 é menos uma ampliação do que um conserto de prazo, e o conserto ainda não está garantido. A recarga grátis até 2031 depende de o Congresso transformar a medida em lei em até 120 dias [c23], e a última MP do programa só foi votada a poucos dias de perder a validade [c18]. O dinheiro de cada ano continua sendo decidido no orçamento.\n\n### A lei de fevereiro mudou quase tudo no programa, menos o prazo\n\nA Lei 15.348, de 13/2/2026, nasceu da MP 1.313 e mudou boa parte da lei original [c5]. Ela reescreveu os artigos do começo da lei, criou dezenas de artigos novos e revogou outros, mas não tocou no artigo 8º, o do prazo [c21]. Na versão atualizada da Câmara, o artigo 1º traz a anotação da mudança, e o 8º não traz nenhuma [c20].\n\nMesmo assim, a Agência Senado escreveu, ao noticiar a lei, que o programa \"passou a ser uma política pública permanente no Brasil\" [c22]. A leitura fazia sentido pelo espírito da lei, que redesenhou o benefício para durar, mas o texto manteve o relógio de 5 anos correndo. É essa distância entre a notícia e o artigo que a MP publicada em 9/11 fecha [c1].\n\nHá um limite nessa conta, porque a lista de artigos alterados vem de uma leitura resumida da página da lei [c21]. Se o texto oficial mostrar o artigo 8º alterado em fevereiro, essa explicação cai, e a MP passa a ser só a extensão de um programa que já não tinha fim marcado.\n\n### Até 2031 está na medida provisória, mas ainda não está na lei\n\nQuem decidiu foi o presidente, que editou a medida provisória. A MP 1.400 muda o artigo 8º e põe o fim do programa em 19/11/2031 [c19]. Ela vale desde a publicação, mas precisa ser convertida em lei pelo Congresso em até 120 dias [c3, c23].\n\nEsse prazo para de contar durante o recesso do Congresso, e, se deputados e senadores não votarem a medida, ela perde a validade [c24]. Por isso anunciar o programa até 2031 ainda não é ter o programa garantido em lei até 2031, já que a palavra final sobre a duração fica com o Congresso.\n\nA vez parecida é recente. A MP 1.313, a que redesenhou o programa, foi aprovada pela Câmara em 2/2/2026 e pelo Senado no dia seguinte, poucos dias antes de caducar, em 11/2 [c18]. O programa não ficou sem lei, mas a votação chegou perto do limite.\n\nÉ um caso só, e um caso não faz padrão: ele não diz que a MP de agora vai demorar, nem que vai cair. O que ele mostra é que a continuidade do Gás do Povo já dependeu uma vez do calendário do Congresso, e volta a depender agora.\n\n### O dinheiro de cada ano continua sendo decidido no orçamento\n\nO objetivo que a lei escreveu é amplo: o auxílio existe \"para mitigar o efeito do preço do gás liquefeito de petróleo (GLP)\" no orçamento das famílias de baixa renda [c6]. Ao justificar a prorrogação, a Secretaria de Comunicação da Presidência falou em manter uma política \"voltada ao enfrentamento da pobreza energética\" [c7]. Nenhum dos dois textos diz quanto do botijão o governo quer cobrir.\n\nTambém não apareceu, nas reportagens sobre a MP, uma estimativa de custo da prorrogação, e a única cifra é a dos vales liberados em 10/11, acima de R$ 337 milhões [c8]. Isso combina com o que a MP faz, já que ela muda o prazo, e não o valor. Quem decide quanto o programa gasta em cada ano é a lei do orçamento.\n\nE o orçamento já mostra a direção. O projeto de 2027, que o governo mandou ao Congresso, reserva R$ 7,6 bilhões ao Gás do Povo, para cerca de 15,4 milhões de famílias [c25]. A lei orçamentária de 2026 previa R$ 4,7 bilhões [c26], o que faz a verba de 2027 ficar 61,7% acima da deste ano [c27].\n\nNas contas do governo, é um gasto pequeno perto do tamanho da dívida, que estava em 82,93% do PIB em setembro, contra 81,95% em junho [c15]. O que a MP muda é a duração, porque um gasto que tinha data para acabar passa a ter, se o Congresso aprovar, mais cinco anos pela frente [c19].\n\nPara as cerca de 15 milhões de famílias atendidas, ou 45 milhões de pessoas, nada muda hoje [c14]. A recarga de 10/11 libera 3,1 milhões de vales, com 380,5 mil para famílias que entram agora e 2,7 milhões para as que já estavam no programa [c17].\n\nEm 2027, se o orçamento for aprovado como está, o dinheiro reservado dá cerca de R$ 42 por família por mês, em média [c28]. O que muda é a garantia: depois de 19/11, o direito ao botijão grátis passa a se apoiar na medida provisória e, em até 120 dias, na votação do Congresso [c24, c23].\n\nQuem defende a MP tem um argumento forte: o valor de 2027 já estava no projeto de orçamento divulgado em 1º de setembro, antes da MP [c25]. Por essa leitura, o governo só corrigiu um prazo que ficou esquecido na lei de fevereiro, sem criar uma despesa que não estivesse prevista.\n\nQuem critica olha para o ritmo e para o histórico. O gasto sobe 61,7% de 2026 para 2027 [c27], e o programa já teve projeto de orçamento bem abaixo do que custava: em 2024, o projeto de 2025 previa R$ 600 milhões para o então Auxílio Gás, contra R$ 3,5 bilhões de verba naquele ano [c29]. Na época, um ex-secretário do Tesouro criticou esse desenho, por deixar a maior parte do gasto fora do orçamento [c29].\n\nAs duas leituras cabem nos números, e os números não escolhem entre elas. A conta de cada ano fica com o orçamento, que o Congresso vota, e a duração fica com a conversão da MP, que o Congresso também vota.\n\nPara você, a notícia quer dizer que o Gás do Povo não era, no papel, tão permanente quanto se disse em fevereiro. Por enquanto, o botijão grátis segue pela força de uma medida provisória, e o quanto o programa paga em 2027 sai de um orçamento que ainda está em votação. Os 120 dias para o Congresso votar a MP começaram a contar com a publicação, em 9/11 [c1, c23]."
+   },
+   "conferencia": {
+    "codigo_antes": {
+     "graves": [
+      "bloco 4: número ou data sem linha do caderno que confira: 1.313 | trecho: A Lei 15.348, de 13/2/2026, nasceu da MP 1.313 e mudou boa parte da lei original. Ela reescreveu os artigos do começo da",
+      "bloco 10: número ou data sem linha do caderno que confira: 2/2, 1.313 | trecho: A vez parecida é recente. A MP 1.313, a que redesenhou o programa, foi aprovada pela Câmara em 2/2/2026 e pelo Senado no",
+      "bloco 19: número ou data sem linha do caderno que confira: 1/9 | trecho: Quem defende a MP tem um argumento forte: o valor de 2027 já estava no projeto de orçamento divulgado em 1º de setembro,"
+     ],
+     "avisos": [
+      "c8 vem de site fora da lista de fontes conhecidas: https://hojediario.com/2026/11/10/governo-prorroga-gas-do-povo-ate-2031-e-libera-31-milhoes-de-vales/",
+      "c19 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
+      "c23 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
+      "c24 vem de site fora da lista de fontes conhecidas: https://soubrasilia.com/gas-do-povo-mp-1400-prorroga-programa-ate-2031-congresso-120-dias-vale-10-novembro/",
+      "c29 vem de site fora da lista de fontes conhecidas: https://www.abcdoabc.com.br/auxilio-gas-fora-do-orcamento-de-2025-ataca-coracao-do-arcabouco-fiscal-diz-ex-secretario-do-tesouro/",
+      "bloco 20: frase de 44 palavras",
+      "siglas que a leitora não conhece, sem nome por extenso ou link: GLP, MP"
+     ],
+     "palavras": 1048,
+     "intertitulos": 3
+    },
+    "ia": {
+     "correcoes": [
+      {
+       "trecho": "Título: A lei chamada de permanente não mexeu no prazo, e sem a MP o Gás do Povo acabaria em 19 de novembro",
+       "tipo": "forca",
+       "problema": "O título dá como certo que a lei de fevereiro não mexeu no prazo, mas isso vem de c21, que é leitura resumida da página, e de c20, que é a versão atualizada da Câmara. O próprio texto admite o limite.",
+       "como_fica": "Título: Pela versão atualizada da lei, a lei chamada de permanente não mudou o prazo, e sem a MP o Gás do Povo acabaria em 19 de novembro"
+      },
+      {
+       "trecho": "Por isso a MP 1.400 é menos uma ampliação do que um conserto de prazo, e o conserto ainda não está garantido.",
+       "tipo": "troca",
+       "problema": "\"Conserto\" diz que a lei de fevereiro errou. Nenhuma linha diz que o prazo foi erro ou esquecimento, e isso é juízo sobre quem decidiu.",
+       "como_fica": "Por isso a MP 1.400 muda o prazo que a lei de fevereiro não mudou [c19, c20], e essa mudança ainda não está garantida."
+      },
+      {
+       "trecho": "Ela reescreveu os artigos do começo da lei, criou dezenas de artigos novos e revogou outros, mas não tocou no artigo 8º, o do prazo [c21].",
+       "tipo": "numero",
+       "problema": "c21 diz que a lei alterou os artigos 1º, 1º-A, 2º, 3º, 4º, 4º-A a 4º-K e 7º-A a 7º-H. Não diz que criou \"dezenas\" de artigos. Além disso, \"nasceu da MP 1.313\" e \"mudou boa parte da lei\" estão marcados só com c5, que não traz isso no trecho.",
+       "como_fica": "A Lei 15.348, de 13/2/2026, converteu a MP 1.313 [c5, c18]. Ela alterou ou incluiu os artigos 1º, 1º-A, 2º, 3º, 4º, 4º-A a 4º-K e 7º-A a 7º-H, e revogou o § 1º do artigo 2º e os artigos 6º e 7º, mas não tocou no artigo 8º, o do prazo [c21]."
+      },
+      {
+       "trecho": "A leitura fazia sentido pelo espírito da lei, que redesenhou o benefício para durar, mas o texto manteve o relógio de 5 anos correndo. É essa distância entre a notícia e o artigo que a MP publicada em 9/11 fecha [c1].",
+       "tipo": "forca",
+       "problema": "\"Espírito da lei\" e \"redesenhou para durar\" são interpretação que nenhuma linha sustenta. \"Fecha\" dá a MP como resolvida, e c1 só diz que ela foi publicada. Quem diz que ela altera o artigo 8º é c19.",
+       "como_fica": "Na versão atualizada da lei da Câmara, porém, o artigo 8º manteve o prazo de 5 anos [c20]. É essa distância entre a notícia e o artigo que a MP publicada em 9/11 muda [c1, c19]."
+      },
+      {
+       "trecho": "Nenhum dos dois textos diz quanto do botijão o governo quer cobrir.",
+       "tipo": "forca",
+       "problema": "O caderno traz só um trecho de cada texto (c6 e c7). Dizer que nada nos textos inteiros fala disso é afirmar uma ausência que ninguém conferiu.",
+       "como_fica": "Nos trechos que o caderno guarda, nenhum dos dois diz quanto do botijão o governo quer cobrir [c6, c7]."
+      },
+      {
+       "trecho": "Isso combina com o que a MP faz, já que ela muda o prazo, e não o valor.",
+       "tipo": "forca",
+       "problema": "A MP não foi lida no original (c3, c19 vêm de reportagem). O caderno não mostra que ela não mexe em valor, e c3 diz que os efeitos dependem da abertura de créditos.",
+       "como_fica": "Isso combina com o que as reportagens dizem da MP, que altera o artigo 8º, o do prazo, e deixa os efeitos para a abertura dos créditos orçamentários [c3, c19]."
+      },
+      {
+       "trecho": "Nas contas do governo, é um gasto pequeno perto do tamanho da dívida, que estava em 82,93% do PIB em setembro, contra 81,95% em junho [c15]. O que a MP muda é a duração,",
+       "tipo": "forca",
+       "problema": "c15 só traz a dívida. Nenhuma linha usável diz que o gasto é pequeno (o c9 com 0,05% do PIB não abriu). Comparar um gasto anual com o estoque da dívida também não mede tamanho.",
+       "como_fica": "O que a MP muda é a duração,"
+      },
+      {
+       "trecho": "Em 2027, se o orçamento for aprovado como está, o dinheiro reservado dá cerca de R$ 42 por família por mês, em média [c28].",
+       "tipo": "numero",
+       "problema": "A conta c28 divide por 15 milhões, mas o projeto (c25) fala em 15,4 milhões de famílias. A base da conta precisa aparecer.",
+       "como_fica": "Em 2027, se o orçamento for aprovado como está, o dinheiro reservado dá cerca de R$ 42 por família por mês, em média, dividindo pelos cerca de 15 milhões de famílias atendidas hoje [c28]."
+      },
+      {
+       "trecho": "Quem defende a MP tem um argumento forte: o valor de 2027 já estava no projeto de orçamento divulgado em 1º de setembro, antes da MP [c25]. Por essa leitura, o governo só corrigiu um prazo que ficou esquecido na lei de fevereiro, sem criar uma despesa que não estivesse prevista.",
+       "tipo": "troca",
+       "problema": "Nenhuma linha mostra quem defende a MP, nem que o prazo foi \"esquecido\". \"Forte\" é adjetivo de juízo, e \"sem criar despesa\" é afirmação sobre a MP que as linhas não sustentam.",
+       "como_fica": "Um argumento a favor da MP vem dos números: o valor de 2027 já estava no projeto de orçamento divulgado em 1º de setembro, antes da MP [c25]. Por essa leitura, a prorrogação não traz, até agora, uma despesa fora do que o projeto já previa, e as reportagens abertas não trazem custo novo [c8]."
+      },
+      {
+       "trecho": "Quem critica olha para o ritmo e para o histórico. O gasto sobe 61,7% de 2026 para 2027 [c27], e o programa já teve projeto de orçamento bem abaixo do que custava:",
+       "tipo": "troca",
+       "problema": "Nenhuma linha traz um crítico da MP. O ex-secretário de c29 falou em 2024 do desenho do orçamento do Auxílio Gás, não da MP. O 61,7% compara o projeto de 2027 com a lei de 2026 e não é gasto realizado (\"sobe\"). Contra o projeto de 2026 a alta é de 49% (c12).",
+       "como_fica": "Um argumento contra vem do ritmo e do histórico, e não de um crítico da MP. O projeto de 2027 prevê 61,7% a mais que a lei orçamentária de 2026 [c27], e 49% a mais que o projeto de 2026, que previa R$ 5,1 bilhões [c10, c12]. O programa já teve projeto de orçamento bem abaixo do que custava:"
+      },
+      {
+       "trecho": "Os 120 dias para o Congresso votar a MP começaram a contar com a publicação, em 9/11 [c1, c23].",
+       "tipo": "fonte",
+       "problema": "c23 diz só que a MP precisa virar lei em até 120 dias. Nada nas linhas diz de quando a contagem parte, e c24 diz que ela para no recesso, o que o texto omite aqui.",
+       "como_fica": "A MP vale desde a publicação, em 9/11 [c1, c3], e o Congresso tem até 120 dias para votá-la, sem contar o recesso [c23, c24]."
+      },
+      {
+       "trecho": "Para você, a notícia quer dizer que o Gás do Povo não era, no papel, tão permanente quanto se disse em fevereiro.",
+       "tipo": "forca",
+       "problema": "A conclusão repousa em c21, uma leitura resumida da página. Ela está dita sem o limite que o próprio texto reconhece antes.",
+       "como_fica": "Para você, a notícia quer dizer que, pela versão atualizada da lei na Câmara, o Gás do Povo não era, no papel, tão permanente quanto se disse em fevereiro."
+      },
+      {
+       "trecho": "Quem decidiu foi o presidente, que editou a medida provisória. A MP 1.400 muda o artigo 8º e põe o fim do programa em 19/11/2031 [c19].",
+       "tipo": "fonte",
+       "problema": "c19 e c23 vêm de reportagem em site fora da lista de fontes conhecidas (Atlas Público), e c19 diz que a MP não foi lida no Diário Oficial. O texto trata o conteúdo da MP como lido no original.",
+       "como_fica": "Quem decidiu foi o presidente, que editou a medida provisória. Segundo reportagem que cita a MP, a MP 1.400 muda o artigo 8º e põe o fim do programa em 19/11/2031 [c19, c1]."
+      }
+     ],
+     "graves": [
+      "A tese central (a lei de fevereiro não mexeu no prazo, e a MP corrige isso) apoia-se em c21, uma leitura resumida, e em c19, lido de reportagem. O título e o segundo parágrafo a dão como fato. Se o artigo 8º tiver sido alterado, a tese cai.",
+      "As duas leituras de \"quem defende\" e \"quem critica\" não têm fonte no caderno. São objeções montadas pelo texto e atribuídas a lados que ninguém no caderno ocupa."
+     ],
+     "resumo": "O texto acompanha bem o caderno nos números do orçamento, mas dá como certo o que vem de leitura resumida (c21) e de reportagem (c19). Ele chama a MP de \\\"conserto\\\", o que julga quem decidiu. Atribui argumentos a defensores e críticos que o caderno não traz, e compara o gasto com a dívida sem linha que sustente. Há 13 correções, mais um ajuste na base da conta de R$ 42."
+    },
+    "aplicadas": 13,
+    "codigo": {
+     "graves": [
+      "bloco 4: número ou data sem linha do caderno que confira: 1.313 | trecho: A Lei 15.348, de 13/2/2026, nasceu da MP 1.313 e mudou boa parte da lei original. A Lei 15.348, de 13/2/2026, converteu ",
+      "bloco 10: número ou data sem linha do caderno que confira: 2/2, 1.313 | trecho: A vez parecida é recente. A MP 1.313, a que redesenhou o programa, foi aprovada pela Câmara em 2/2/2026 e pelo Senado no",
+      "bloco 19: número ou data sem linha do caderno que confira: 1/9 | trecho: Um argumento a favor da MP vem dos números: o valor de 2027 já estava no projeto de orçamento divulgado em 1º de setembr"
+     ],
+     "avisos": [
+      "c8 vem de site fora da lista de fontes conhecidas: https://hojediario.com/2026/11/10/governo-prorroga-gas-do-povo-ate-2031-e-libera-31-milhoes-de-vales/",
+      "c19 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
+      "c23 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
+      "c24 vem de site fora da lista de fontes conhecidas: https://soubrasilia.com/gas-do-povo-mp-1400-prorroga-programa-ate-2031-congresso-120-dias-vale-10-novembro/",
+      "c29 vem de site fora da lista de fontes conhecidas: https://www.abcdoabc.com.br/auxilio-gas-fora-do-orcamento-de-2025-ataca-coracao-do-arcabouco-fiscal-diz-ex-secretario-do-tesouro/",
+      "bloco 4: frase de 41 palavras",
+      "siglas que a leitora não conhece, sem nome por extenso ou link: GLP, MP",
+      "título da leitura a fundo: até 110 caracteres, afirmativo e sem dois-pontos"
+     ],
+     "palavras": 1111,
+     "intertitulos": 3
+    },
+    "codigo_depois_da_reescrita": {
+     "graves": [],
+     "avisos": [
+      "c8 vem de site fora da lista de fontes conhecidas: https://hojediario.com/2026/11/10/governo-prorroga-gas-do-povo-ate-2031-e-libera-31-milhoes-de-vales/",
+      "c19 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
+      "c23 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
+      "c24 vem de site fora da lista de fontes conhecidas: https://soubrasilia.com/gas-do-povo-mp-1400-prorroga-programa-ate-2031-congresso-120-dias-vale-10-novembro/",
+      "c29 vem de site fora da lista de fontes conhecidas: https://www.abcdoabc.com.br/auxilio-gas-fora-do-orcamento-de-2025-ataca-coracao-do-arcabouco-fiscal-diz-ex-secretario-do-tesouro/",
+      "bloco 1: frase de 36 palavras",
+      "bloco 5: frase de 38 palavras",
+      "bloco 6: frase de 37 palavras",
+      "bloco 19: frase de 40 palavras",
+      "bloco 20: frase de 45 palavras",
+      "siglas que a leitora não conhece, sem nome por extenso ou link: GLP, MP"
+     ],
+     "palavras": 1050,
+     "intertitulos": 3
+    },
+    "final": {
+     "graves": [],
+     "avisos": [
+      "c8 vem de site fora da lista de fontes conhecidas: https://hojediario.com/2026/11/10/governo-prorroga-gas-do-povo-ate-2031-e-libera-31-milhoes-de-vales/",
+      "c19 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
+      "c23 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
+      "c24 vem de site fora da lista de fontes conhecidas: https://soubrasilia.com/gas-do-povo-mp-1400-prorroga-programa-ate-2031-congresso-120-dias-vale-10-novembro/",
+      "c29 vem de site fora da lista de fontes conhecidas: https://www.abcdoabc.com.br/auxilio-gas-fora-do-orcamento-de-2025-ataca-coracao-do-arcabouco-fiscal-diz-ex-secretario-do-tesouro/",
+      "bloco 20: expressão de piloto automático",
+      "siglas que a leitora não conhece, sem nome por extenso ou link: MP"
+     ],
+     "palavras": 1044,
+     "intertitulos": 3
+    }
+   },
+   "edicao": {
+    "sugestoes": [
+     {
+      "trecho": "e a MP só vale até 2031 se o Congresso votar",
+      "problema": "Sigla que a leitora não conhece, no título, sem nome por extenso.",
+      "como_fica": "Pela lei atualizada, o Gás do Povo venceria em 19/11, e a medida provisória até 2031 depende do Congresso"
+     },
+     {
+      "trecho": "A MP 1.400 estende esse prazo até 19/11/2031",
+      "problema": "MP aparece sem nome por extenso.",
+      "como_fica": "A medida provisória (MP) 1.400 estende esse prazo até 19/11/2031"
+     },
+     {
+      "trecho": "gás liquefeito de petróleo (GLP)",
+      "problema": "Sigla desconhecida, e o nome por extenso já diz o que é.",
+      "como_fica": "\"para mitigar o efeito do preço do gás liquefeito de petróleo\" no orçamento das famílias de baixa renda"
+     },
+     {
+      "trecho": "Pela versão atualizada da Lei 14.237 que a Câmara publica, a lei de fevereiro não mexeu no artigo que dá prazo ao Gás do Povo, embora tenha sido apresentada como a que tornava o programa permanente.",
+      "problema": "Frase de 36 palavras, passa de 30.",
+      "como_fica": "Duas frases: a lei de fevereiro não mexeu no artigo do prazo. Ela foi apresentada como a que tornava o programa permanente."
+     },
+     {
+      "trecho": "a Lei 15.348 alterou os artigos 1º, 1º-A, 2º, 3º, 4º, 4º-A a 4º-K e 7º-A a 7º-H, e revogou o § 1º do artigo 2º e os artigos 6º e 7º",
+      "problema": "Frase de 38 palavras, passa de 30.",
+      "como_fica": "A frase termina em \"7º-A a 7º-H\". Depois vem: \"Também revogou o § 1º do artigo 2º e os artigos 6º e 7º [c21].\""
+     },
+     {
+      "trecho": "A lista de artigos vem de uma leitura resumida da página da lei [c21], e a mudança que a MP 1.400 faz no artigo 8º foi lida numa reportagem que cita a medida, e não no Diário Oficial [c19].",
+      "problema": "Frase de 37 palavras, passa de 30.",
+      "como_fica": "Duas frases, cada uma com a sua fonte: a da lista de artigos e a da mudança no artigo 8º."
+     },
+     {
+      "trecho": "a tese cai, e a MP passa a ser só a extensão de um programa que já não tinha data para acabar.",
+      "problema": "Frase de mais de 30 palavras.",
+      "como_fica": "Se o texto oficial mostrar que o artigo 8º mudou em fevereiro, a tese cai. Nesse caso, a MP seria só a extensão de um programa que já não tinha data para acabar."
+     },
+     {
+      "trecho": "O objetivo que a lei escreveu é amplo, já que o auxílio existe \"para mitigar o efeito do preço do gás liquefeito de petróleo (GLP)\" no orçamento das famílias de baixa renda [c6].",
+      "problema": "Frase de 32 palavras.",
+      "como_fica": "O objetivo escrito na lei é amplo, já que o auxílio existe \"para mitigar o efeito do preço do gás liquefeito de petróleo\" no orçamento das famílias de baixa renda [c6]."
+     },
+     {
+      "trecho": "o que faz a medida parecer o ajuste de um prazo, e não uma despesa nova",
+      "problema": "Frase de 40 palavras, e o contraste em espelho (\"X, e não Y\") é fórmula de efeito.",
+      "como_fica": "Isso faz a medida parecer só o ajuste de um prazo."
+     },
+     {
+      "trecho": "A verba de 2027 é 61,7% maior que a de 2026 [c27], e o programa já teve projeto de orçamento bem abaixo do que custava: em 2024, o projeto de 2025 previa R$ 600 milhões para o então Auxílio Gás, contra R$ 3,5 bilhões naquele ano [c29].",
+      "problema": "Frase de 45 palavras, passa de 30.",
+      "como_fica": "A verba de 2027 é 62% maior que a de 2026 [c27]. Além disso, o programa já teve projeto de orçamento bem abaixo do que custava. Em 2024, o projeto de 2025 previa R$ 600 milhões para o então Auxílio Gás, contra R$ 3,5 bilhões naquele ano [c29]."
+     },
+     {
+      "trecho": "de 81,95% para 82,93% do PIB",
+      "problema": "Duas casas sem necessidade; o guia pede número arredondado (o mesmo vale para 61,7%, que vira 62%).",
+      "como_fica": "de 82% para 83% do PIB"
+     },
+     {
+      "trecho": "O que muda é a garantia. Depois de 19/11, o botijão grátis passa a se apoiar",
+      "problema": "Frases curtas empilhadas que deviam estar ligadas por \"porque\".",
+      "como_fica": "O que muda é a garantia, porque depois de 19/11 o botijão grátis passa a se apoiar na medida provisória e, em até 120 dias, na votação do Congresso [c23, c24]."
+     }
+    ],
+    "aplicada": true
+   },
+   "titulo": "Pela lei atualizada, o Gás do Povo venceria em 19/11, e a medida provisória até 2031 depende do Congresso",
+   "texto": "Pela versão atualizada da Lei 14.237 que a Câmara publica, a lei de fevereiro não mexeu no artigo que dá prazo ao Gás do Povo. Ela foi apresentada como a que tornava o programa permanente. O artigo 8º ainda diz que a lei \"vigorará por 5 (cinco) anos\", contados de 19/11/2021, e por isso o programa acabaria em 19/11 sem a medida provisória [c4, c20, c24].\n\nA medida provisória (MP) 1.400 estende esse prazo até 19/11/2031 [c1, c19], mas a extensão ainda não é lei, porque depende de o Congresso converter a medida em até 120 dias [c23]. A medida provisória anterior do programa só foi votada a poucos dias de perder a validade [c18]. E o dinheiro de cada ano continua sendo decidido no orçamento, que prevê R$ 7,6 bilhões para 2027 [c25].\n\n### A lei de fevereiro mudou quase todo o programa, menos o artigo do prazo\n\nA Lei 15.348, de 13/2/2026, transformou em lei a medida provisória anterior do programa, e a Agência Senado a noticiou como a lei que torna o Gás do Povo permanente [c5]. No texto da notícia, o programa \"passou a ser uma política pública permanente no Brasil\" [c22].\n\nPela página da lei no Planalto, a Lei 15.348 alterou os artigos 1º, 1º-A, 2º, 3º, 4º, 4º-A a 4º-K e 7º-A a 7º-H. Também revogou o § 1º do artigo 2º e os artigos 6º e 7º [c21]. O artigo 8º, que é o do prazo, não aparece nessa lista. Na versão atualizada da Câmara, o artigo 1º traz a anotação da mudança, e o 8º segue sem nenhuma [c20].\n\nA explicação tem um limite, e convém dizê-lo logo. A lista de artigos vem de uma leitura resumida da página da lei [c21]. A mudança que a MP 1.400 faz no artigo 8º foi lida numa reportagem que cita a medida, e não no Diário Oficial [c19]. Se o texto oficial mostrar que o artigo 8º mudou em fevereiro, a tese cai. Nesse caso, a MP seria só a extensão de um programa que já não tinha data para acabar.\n\n### Até 2031 está na medida provisória, mas a duração ainda depende do Congresso\n\nQuem decidiu foi o presidente, que editou a medida provisória, publicada no Diário Oficial em 9/11 [c1]. Ela vale desde a publicação, mas precisa ser convertida em lei pelo Congresso em até 120 dias [c3, c23].\n\nO prazo para de contar durante o recesso do Congresso, e, se deputados e senadores não votarem a medida, ela perde a validade [c24]. Por isso, anunciar o programa até 2031 ainda não é ter o programa em lei até 2031, já que a palavra final sobre a duração fica com o Congresso.\n\nA vez parecida é a da medida provisória anterior, a que redesenhou o programa. Câmara e Senado a aprovaram poucos dias antes de ela caducar, em 11/2 [c18]. O programa não ficou sem lei, mas a votação chegou perto do limite.\n\nÉ um caso só, e um caso não faz padrão, porque ele não diz que a MP de agora vai demorar, nem que vai cair. O que ele mostra é que a continuidade do Gás do Povo já dependeu uma vez do calendário do Congresso, e volta a depender agora.\n\n### O dinheiro de cada ano continua sendo decidido no orçamento\n\nO objetivo escrito na lei é amplo, já que o auxílio existe \"para mitigar o efeito do preço do gás liquefeito de petróleo\" no orçamento das famílias de baixa renda [c6]. Ao justificar a prorrogação, a Secretaria de Comunicação da Presidência falou em manter uma política \"voltada ao enfrentamento da pobreza energética\" [c7]. Nenhum dos dois textos diz quanto do preço do botijão o programa quer cobrir.\n\nAs reportagens sobre a MP também não trazem uma estimativa de custo da prorrogação, e a única cifra é a dos vales liberados em 10/11, acima de R$ 337 milhões [c8]. A própria lei já diz que os efeitos do programa dependem da abertura dos créditos orçamentários [c23]. Por isso, quem decide quanto o programa gasta em cada ano é a lei do orçamento, e não a medida provisória.\n\nO orçamento já mostra a direção. O projeto de 2027, que o governo mandou ao Congresso, reserva R$ 7,6 bilhões ao Gás do Povo, para cerca de 15,4 milhões de famílias [c25]. A lei orçamentária de 2026 previa R$ 4,7 bilhões [c26], o que deixa a verba de 2027 62% acima da deste ano [c27].\n\nPerto da dívida do governo, que subiu de 82% para 83% do PIB de junho a setembro [c15], é um gasto pequeno. O que a MP muda é quanto tempo ele dura, porque uma despesa que tinha data para acabar passa a ter, se o Congresso aprovar, mais cinco anos pela frente [c19].\n\nPara as cerca de 15 milhões de famílias atendidas, ou 45 milhões de pessoas, nada muda hoje [c14]. A recarga de 10/11 libera 3,1 milhões de vales, com 380,5 mil para famílias que entram agora e 2,7 milhões para as que já estavam no programa [c17].\n\nEm 2027, se o orçamento for aprovado como está, o dinheiro reservado dá cerca de R$ 42 por família por mês, em média [c28]. O que muda é a garantia, porque depois de 19/11 o botijão grátis passa a se apoiar na medida provisória e, em até 120 dias, na votação do Congresso [c23, c24].\n\nDois fatos do orçamento puxam para lados diferentes. O primeiro é que o valor de 2027 já estava no projeto de orçamento antes da MP [c25], e as reportagens não trazem custo novo [c8]. Isso faz a medida parecer só o ajuste de um prazo.\n\nO segundo vai na outra direção. A verba de 2027 é 62% maior que a de 2026 [c27]. Além disso, o programa já teve projeto de orçamento bem abaixo do que custava. Em 2024, o projeto de 2025 previa R$ 600 milhões para o então Auxílio Gás, contra R$ 3,5 bilhões naquele ano [c29]. Na época, um ex-secretário do Tesouro criticou esse desenho [c29].\n\nOs números sustentam os dois fatos, e nenhum deles anula o outro. O valor de cada ano fica com o orçamento, que o Congresso vota, e a duração fica com a conversão da MP, que o Congresso também vota.\n\nPara você, a notícia quer dizer que, pela versão atualizada da lei na Câmara, o Gás do Povo não era, no papel, tão permanente quanto se disse em fevereiro. Por enquanto, o botijão grátis segue pela força de uma medida provisória, e o valor que o programa paga em 2027 sai de um orçamento que ainda está em votação. A MP vale desde 9/11, e o Congresso tem até 120 dias para votá-la, sem contar o recesso [c1, c23, c24].",
+   "duracao_escrever_s": 293,
+   "tentativas": [
+    {
+     "em": "2026-11-10T06:02:18-03:00",
+     "resultado": "ok"
+    }
+   ]
   },
   "termina_em": "contas",
   "pergunta": "divida-do-governo"
