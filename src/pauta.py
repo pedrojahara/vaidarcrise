@@ -1,30 +1,22 @@
-"""A pauta do fato do dia: os degraus que dão a escolha padrão (CARTA_EDITORIAL.md, "Os degraus").
+"""A pauta do texto do dia: a história em andamento que mais andou ontem (CARTA_EDITORIAL.md).
 
-O código monta a lista de candidatos com as notícias que o classificador leu e escolhe pelo primeiro
-degrau que acontecer:
-1. a direção do risco mudou;
-2. uma das cinco pressões mudou de lado desde a atualização anterior;
-3. um choque grande e raro: tamanho 3, já consumado (dado divulgado ou decisão tomada);
-4. saiu, nos dias que o site leu, uma data marcada que mexe numa linha do topo: o PIB do trimestre,
-   a decisão do Copom e o desemprego da PNAD, nessa ordem;
-5. fora isso, a notícia de estágio mais firme (fato consumado, proposta em votação, anúncio, previsão,
-   rumor), depois a de maior tamanho, depois a que não é o vaivém do mercado do dia, depois a que saiu em
-   mais jornais e em mais manchetes.
+O texto do dia não conta um fato: ele faz um argumento sobre uma história em andamento (base/memoria/historias.json),
+com todos os fatos de ontem sobre ela como prova. O código escolhe a história, sem IA:
 
-O vaivém do mercado do dia (o fechamento do dólar, da Bolsa e dos juros, fator "mercado" e estágio "dado")
-fica atrás dos outros fatos do mesmo estágio e tamanho, porque sai todo dia em todo jornal (a contagem de
-jornais o favoreceria sempre) e o topo já mostra o dólar e o juro de 10 anos. Um movimento grande do mercado
-ganha pelo tamanho que o classificador lhe der.
+1. cada notícia que o classificador leu (src/classify_news.py) diz de qual história ela é um passo e vale
+   tamanho x peso do estágio: decisão tomada ou dado divulgado 1; o marco que a história esperava, mesmo que tenha
+   chegado vazio, 1; a previsão de PIB ou de recessão de uma casa grande que muda de lado, 1; proposta em votação 0,7;
+   anúncio com medida ou previsão comum 0,5; fala sem medida ou rumor 0,25;
+2. a história soma as notícias dela;
+3. se a direção do risco mudou, ou uma pressão mudou de lado, a história dessa pressão é a do dia;
+4. senão, a de maior soma, com duas regras: a mesma história sai no máximo 2 dias seguidos, a não ser que traga uma
+   decisão ou um dado de tamanho 2 ou mais; e no empate vale a que saiu em mais jornais;
+5. se nenhuma história passa de 1,5, o dia é calmo e o texto é curto;
+6. uma segunda história entra num parágrafo só se também passar de 1,5.
 
-Os pontos da pressão das notícias (src/model.py), que o site não mostra, medem para que lado cada assunto é
-empurrado e não decidem a manchete: aqui não há desconto por "o mercado já esperava", cada notícia conta
-sozinha (notícias de sinal oposto do mesmo assunto não se anulam) e a cobertura conta jornais de verdade.
-A IA editora (src/editora.py) lê esta pauta e só sai da escolha padrão por um motivo da lista fechada.
-Os resumos da semana e do mês usam a mesma ordem (`chave_evento`).
-
-Cada candidato leva também o que o fato muda na vida das pessoas (`vida`: o tamanho de 0 a 3, a porta e quem sente),
-que o classificador mede à parte do risco. Ele não entra nos degraus: só pesa quando a editora troca a escolha do
-degrau 5 pelo motivo "muda_a_vida", que o código confere.
+Um fato que não é passo de nenhuma história abre uma história nova no dia se for grande (tamanho 2 ou mais) e já
+consumado; menor, ele espera e abre a história se voltar em 3 dos últimos 7 dias. Nos dois casos, o Pedro recebe o
+aviso. Os resumos da semana e do mês usam a mesma ordem de firmeza das notícias (`chave_evento`).
 """
 from __future__ import annotations
 
@@ -39,7 +31,15 @@ CONSUMADO = {"dado", "decidido"}
 ESTAGIO_TXT = {"dado": "dado divulgado", "decidido": "decisão tomada", "em_votacao": "proposta em votação",
                "anuncio": "anúncio, sem ato formal", "previsao": "previsão (de banco, consultoria ou governo), não fato consumado",
                "rumor": "rumor"}
-# As datas marcadas do degrau 4, na ordem de prioridade, e como achar a notícia de cada uma.
+# O peso de cada estágio na soma da história.
+PESO = {"dado": 1.0, "decidido": 1.0, "em_votacao": 0.7, "anuncio": 0.5, "previsao": 0.5, "rumor": 0.25}
+PESO_SEM_MEDIDA = 0.25
+CALMO = 1.5          # abaixo disso, nenhuma história andou: o dia é calmo
+GRANDE = 2           # o tamanho do fato consumado que abre história no dia e que deixa a história sair 3 dias seguidos
+DIAS_SEGUIDOS = 2
+VOLTAS_PARA_ABRIR = 3  # um tema pequeno abre história se voltar em 3 dos últimos 7 dias
+JANELA_TEMA = 7
+# As datas marcadas, e como achar a notícia de cada uma: chegam como marco da história, mesmo sem novidade.
 MARCADAS = {
     "pib": "o PIB do trimestre (IBGE)",
     "copom": "a decisão do Banco Central sobre a Selic (Copom)",
@@ -48,21 +48,6 @@ MARCADAS = {
 OUTRAS_DATAS = {"ipca": "a inflação do mês, IPCA (IBGE)", "ipca15": "a prévia da inflação, IPCA-15 (IBGE)",
                 "pim": "a produção industrial (IBGE)", "pmc": "as vendas do varejo (IBGE)",
                 "fed": "a decisão de juros dos Estados Unidos (Fed)"}
-# As seis portas por onde a leitora sente a economia (PERSONA.md), como a editora as lê.
-PORTA_TXT = {"renda": "renda (salário, aposentadoria)", "emprego": "emprego", "precos": "preços",
-             "credito": "crédito (parcela, juro do cartão e do financiamento)", "guardado": "dinheiro guardado",
-             "governo": "o que o governo cobra ou paga (imposto, benefício)"}
-VIDA_NADA = {"tamanho": 0, "porta": "nenhuma", "quem": ""}
-
-
-def vida(x: dict | None) -> dict:
-    """O que o fato muda na vida (classificador, campo "vida"), de um evento ou de um candidato. O que veio antes do
-    campo, ou chegou fora do formato, vale como tamanho 0: nada muda."""
-    v = (x or {}).get("vida")
-    if not isinstance(v, dict) or not isinstance(v.get("tamanho"), int) or not 0 <= v["tamanho"] <= 3:
-        return dict(VIDA_NADA)
-    return {"tamanho": v["tamanho"], "porta": v.get("porta") if v.get("porta") in PORTA_TXT else "nenhuma",
-            "quem": str(v.get("quem") or "")}
 
 
 def _bate_data(tipo: str, c: dict) -> bool:
@@ -76,6 +61,8 @@ def _bate_data(tipo: str, c: dict) -> bool:
         return c["fator"] == "atividade" and bool(re.search(r"\bPIB\b", t)) and not re.search(r"prévia|previsão|Focus", t, re.I)
     if tipo == "pnad":
         return c["fator"] == "emprego" and bool(re.search(r"desemprego|desocupa", t, re.I))
+    if tipo in ("ipca", "ipca15"):
+        return c["fator"] == "juro" and c["estagio"] == "dado" and bool(re.search(r"\bIPCA", t))
     return False
 
 
@@ -85,8 +72,8 @@ def vaivem(fator: str, estagio: str) -> bool:
 
 
 def chave(c: dict) -> tuple:
-    """A ordem do degrau 5: estágio, tamanho, o vaivém do mercado atrás, jornais, manchetes; no empate, a ordem do
-    classificador."""
+    """A ordem das notícias dentro de uma história: estágio, tamanho, o vaivém do mercado atrás, jornais, manchetes;
+    no empate, a ordem do classificador."""
     return (RANK.get(c["estagio"], 5), -c["tamanho"], vaivem(c["fator"], c["estagio"]), -len(c["jornais"]),
             -c["n_manchetes"], c.get("ordem", 0))
 
@@ -109,11 +96,20 @@ def cobertura(ids: list[str], cesta_por_id: dict | None, fontes: list[dict]) -> 
     return {"manchetes": len(fontes), "jornais": sorted({f["veiculo"] for f in fontes})}
 
 
+def peso(c: dict) -> float:
+    """O peso de uma notícia na soma da história."""
+    if c.get("marco") or c.get("previsao_virou"):
+        return 1.0
+    if c.get("sem_medida") and c["estagio"] in ("anuncio", "previsao", "em_votacao"):
+        return PESO_SEM_MEDIDA
+    return PESO.get(c["estagio"], PESO_SEM_MEDIDA)
+
+
 def candidatos(llm_eventos: list[dict], novos_ids: list[str], descartados: list[dict], eventos: dict,
                cesta_por_id: dict | None = None, nomes_fatores: dict | None = None) -> list[dict]:
     """Um candidato por evento que o classificador montou, na ordem dele (E1, E2...). run.py guarda, na mesma ordem,
-    os eventos novos e os descartados; o descartado (continuação de um fato já contado ou dado já medido) aparece
-    para a editora, mas não é escolha padrão."""
+    os eventos novos e os descartados; o descartado (continuação de um fato já contado ou dado já medido) fica fora
+    da soma."""
     out, fila = [], list(novos_ids)
     desc = list(descartados)
     for k, ev in enumerate(llm_eventos, 1):
@@ -127,7 +123,7 @@ def candidatos(llm_eventos: list[dict], novos_ids: list[str], descartados: list[
             # O evento guardado é o registro do site (o título pode ter sido reescrito depois): ele vale.
             base = {**ev, **{k: v for k, v in (eventos.get(ev_id) or {}).items()
                              if k in ("titulo_evento", "estagio", "magnitude", "fator", "direcao", "porque", "origem",
-                                      "vida")}}
+                                      "historia", "tema_novo", "marco", "previsao_virou", "sem_medida")}}
             fontes, motivo = (eventos.get(ev_id) or {}).get("fontes", []), None
         cob = cobertura([*ev.get("noticia_ids", []), *ev.get("outras_ids", [])], cesta_por_id, fontes)
         out.append({
@@ -135,7 +131,9 @@ def candidatos(llm_eventos: list[dict], novos_ids: list[str], descartados: list[
             "tamanho": base["magnitude"], "fator": base["fator"], "origem": base.get("origem"),
             "assunto": (nomes_fatores or {}).get(base["fator"], base["fator"]),
             "lado": "pesa" if base["direcao"] > 0 else "alivia", "ja_esperado": bool(ev.get("ja_no_preco")),
-            "porque": base["porque"], "vida": vida(base), "n_manchetes": cob["manchetes"], "jornais": cob["jornais"],
+            "porque": base["porque"], "historia": base.get("historia") or "nova", "tema_novo": base.get("tema_novo") or "",
+            "marco": bool(base.get("marco")), "previsao_virou": bool(base.get("previsao_virou")),
+            "sem_medida": bool(base.get("sem_medida")), "n_manchetes": cob["manchetes"], "jornais": cob["jornais"],
             "descartado": motivo, "fontes": fontes[:6],
         })
     return out
@@ -154,51 +152,164 @@ def datas_lidas(rodada: dict, cal: list[dict]) -> list[dict]:
     return [x for x in cal if x["data"] in dias]
 
 
-def escolha_padrao(cands: list[dict], estado: str | None, estado_ant: str | None, mudaram: list[str],
-                   datas: list[dict]) -> dict:
-    """O primeiro degrau que acontece. Devolve {"degrau", "motivo", "padrao"}; padrao é o id do candidato (E1...),
-    "D" (a direção mudou), "P" (uma pressão mudou de lado) ou None (dia sem notícia que mexa no risco)."""
-    if estado_ant is not None and estado is not None and estado != estado_ant:
-        return {"degrau": 1, "motivo": f"a direção do risco mudou: estava {estado_ant} e ficou {estado}", "padrao": "D"}
-    if mudaram:
-        return {"degrau": 2, "motivo": "uma pressão mudou de lado", "padrao": "P"}
-    ok = [c for c in cands if not c["descartado"]]
-    choque = sorted((c for c in ok if c["tamanho"] == 3 and c["estagio"] in CONSUMADO), key=chave)
-    if choque:
-        return {"degrau": 3, "motivo": "choque grande e raro, já consumado", "padrao": choque[0]["id"]}
-    tipos = {x["tipo"] for x in datas}
-    for t, nome in MARCADAS.items():
-        if t in tipos:
-            m = sorted((c for c in ok if _bate_data(t, c)), key=chave)
-            if m:
-                return {"degrau": 4, "motivo": f"data marcada: {nome}", "padrao": m[0]["id"], "data_marcada": t}
-    if ok:
-        best = sorted(ok, key=chave)[0]
-        return {"degrau": 5, "motivo": "a notícia de estágio mais firme e maior tamanho; no empate, a que não é o vaivém do "
-                                       "mercado do dia e a que saiu em mais jornais",
-                "padrao": best["id"]}
-    return {"degrau": 0, "motivo": "nenhuma notícia lida mexe no risco", "padrao": None}
+def _slug(t: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", (t or "").lower()).strip("-")[:40] or "tema"
+
+
+def voltas_dos_temas(eventos: dict, hoje: str) -> dict[str, set[str]]:
+    """Os dias, entre os 6 anteriores a `hoje`, em que cada tema novo (que não era passo de nenhuma história) apareceu
+    nas notícias (data/eventos.json; o dia é o da rodada que leu a notícia)."""
+    inicio = (dt.date.fromisoformat(hoje) - dt.timedelta(days=JANELA_TEMA - 1)).isoformat()
+    out: dict[str, set[str]] = {}
+    for e in eventos.values():
+        m = re.match(r"ev-(\d{4})(\d{2})(\d{2})-", e.get("id", ""))
+        if not m or e.get("historia") != "nova" or not e.get("tema_novo"):
+            continue
+        dia = "-".join(m.groups())
+        if inicio <= dia < hoje:
+            out.setdefault(_slug(e["tema_novo"]), set()).add(dia)
+    return out
+
+
+def somar(cands: list[dict], historias: list[dict], voltas: dict[str, set[str]], hoje: str) -> tuple[list[dict], list[dict]]:
+    """A soma de cada história com as notícias do dia, e os temas novos: os que abrem história hoje (grandes e
+    consumados, ou que voltaram em 3 dos últimos 7 dias) entram na soma; os outros esperam."""
+    abertas = {h["id"]: h for h in historias}
+    grupos: dict[str, dict] = {}
+    esperando: dict[str, dict] = {}
+    for c in cands:
+        if c["descartado"]:
+            continue
+        hid = c["historia"] if c["historia"] in abertas else None
+        nova = False
+        if hid is None:
+            tema = _slug(c["tema_novo"] or c["titulo"])
+            grande = c["estagio"] in CONSUMADO and c["tamanho"] >= GRANDE
+            if not grande and len(voltas.get(tema, set()) | {hoje}) < VOLTAS_PARA_ABRIR:
+                e = esperando.setdefault(tema, {"tema": tema, "titulo": c["titulo"], "candidatos": [],
+                                                "dias": len(voltas.get(tema, set()) | {hoje})})
+                e["candidatos"].append(c["id"])
+                continue
+            hid, nova = f"nova:{tema}", True
+        g = grupos.setdefault(hid, {"id": hid, "titulo": (abertas.get(hid) or {}).get("titulo") or c["titulo"],
+                                    "pressao": (abertas.get(hid) or {}).get("pressao"),
+                                    "pressoes": (abertas.get(hid) or {}).get("pressoes") or [], "nova": nova,
+                                    "pontos": 0.0, "candidatos": [], "jornais": set(), "fato_grande": False})
+        g["pontos"] += c["tamanho"] * peso(c)
+        g["candidatos"].append(c["id"])
+        g["jornais"] |= set(c["jornais"])
+        if c["estagio"] in CONSUMADO and c["tamanho"] >= GRANDE:
+            g["fato_grande"] = True
+    por_id = {c["id"]: c for c in cands}
+    out = []
+    for g in grupos.values():
+        g["candidatos"].sort(key=lambda i: chave(por_id[i]))
+        out.append({**g, "pontos": round(g["pontos"], 2), "jornais": len(g["jornais"])})
+    out.sort(key=lambda g: (-g["pontos"], -g["jornais"]))
+    return out, list(esperando.values())
+
+
+def escolher(somas: list[dict], historias: list[dict], virada: dict, seguidas: list[str]) -> dict:
+    """A história do dia. `virada` diz se a direção do risco mudou e quais pressões mudaram de lado; `seguidas`, as
+    histórias dos textos do dia anteriores, do mais recente para o mais antigo."""
+    abertas = {h["id"]: h for h in historias}
+    if virada["direcao"] or virada["pressoes"]:
+        # A direção mudou, ou uma pressão mudou de lado: a história dessa pressão é a do dia, mesmo sem notícia.
+        alvo = set(virada["pressoes"])
+
+        def da(x: dict) -> int:
+            # 2: a pressão principal da história mudou; 1: uma das duas primeiras pressões dela; 0: nenhuma.
+            return 2 if x.get("pressao") in alvo else 1 if set((x.get("pressoes") or [])[:2]) & alvo else 0
+        da_pressao = sorted((g for g in somas if da(g)), key=lambda g: (-da(g), -g["pontos"], -g["jornais"]))
+        if not da_pressao:
+            da_pressao = [{"id": h["id"], "titulo": h["titulo"], "pressao": h["pressao"], "pressoes": h.get("pressoes") or [],
+                           "nova": False, "pontos": 0.0, "candidatos": [], "jornais": 0, "fato_grande": False}
+                          for h in sorted(historias, key=lambda h: -da(h)) if da(h)][:1]
+        if da_pressao:
+            g = da_pressao[0]
+            quem = "a direção do risco mudou" if virada["direcao"] else "uma pressão mudou de lado"
+            return {"historia": g, "motivo": f"{quem}: a história é a da pressão que mudou", "calmo": False}
+        if somas:
+            return {"historia": somas[0], "motivo": "a direção do risco mudou: a história que mais andou", "calmo": False}
+        return {"historia": None, "motivo": "a direção do risco mudou, sem notícia", "calmo": False}
+    if not somas:
+        return {"historia": None, "motivo": "nenhuma notícia lida é passo de uma história", "calmo": True}
+    pulada = None
+    escolha = somas[0]
+    repetida = len(seguidas) >= DIAS_SEGUIDOS and all(h == escolha["id"] for h in seguidas[:DIAS_SEGUIDOS])
+    if repetida and not escolha["fato_grande"] and len(somas) > 1 and somas[1]["pontos"] >= CALMO:
+        pulada, escolha = escolha, somas[1]
+    calmo = escolha["pontos"] < CALMO
+    if pulada:
+        motivo = (f"{pulada['titulo']} somou mais ({pulada['pontos']}), mas saiu nos {DIAS_SEGUIDOS} últimos dias sem "
+                  f"decisão ou dado grande hoje; vale a seguinte")
+    elif calmo:
+        motivo = f"nenhuma história passou de {CALMO}: dia calmo"
+    else:
+        motivo = "a história que mais andou" + (" (empate decidido pelos jornais)" if len(somas) > 1
+                                                and somas[1]["pontos"] == escolha["pontos"] else "")
+    return {"historia": escolha, "motivo": motivo, "calmo": calmo, "pulada": pulada["id"] if pulada else None,
+            "nova": bool(escolha.get("nova")), "titulo_historia": (abertas.get(escolha["id"]) or escolha)["titulo"]}
+
+
+def historias_seguidas(rodadas: list[dict], hoje: str) -> list[str]:
+    """As histórias dos textos do dia anteriores a `hoje`, da mais recente para a mais antiga (um por dia)."""
+    por_dia: dict[str, str | None] = {}
+    for r in rodadas:
+        dia = r["gerado_em"][:10]
+        if dia >= hoje or ((r.get("post") or {}).get("tipo") or "dia") != "dia":
+            continue
+        por_dia[dia] = ((r.get("pauta") or {}).get("escolha") or {}).get("historia")
+    return [por_dia[d] for d in sorted(por_dia, reverse=True) if por_dia[d]]
 
 
 def montar(rodada: dict, anterior: dict | None, eventos: dict, cfg: dict, cal: list[dict],
-           cesta_por_id: dict | None = None) -> dict:
-    """A pauta de uma atualização: candidatos, datas marcadas dos dias lidos, pressões que mudaram e escolha padrão.
+           cesta_por_id: dict | None = None, historias: list[dict] | None = None,
+           seguidas: list[str] | None = None) -> dict:
+    """A pauta de uma atualização: candidatos, soma por história, pressões que mudaram e a história do dia.
     Não chama o modelo de linguagem."""
+    import classify_news
+    if historias is None:
+        historias = classify_news.historias_abertas()
     llm = (rodada.get("llm") or {}).get("saida") or {}
     cands = candidatos(llm.get("eventos", []), rodada.get("eventos_novos", []), rodada.get("eventos_descartados", []),
                        eventos, cesta_por_id, cfg.get("fatores"))
+    datas = datas_lidas(rodada, cal)
+    # A data marcada que saiu é o marco da história, mesmo que o classificador não tenha marcado.
+    for x in datas:
+        for c in cands:
+            if _bate_data(x["tipo"], c):
+                c["marco"] = True
     d = ((rodada.get("resultado") or {}).get("direcao") or {})
     da = (((anterior or {}).get("resultado") or {}).get("direcao") or None)
     a, b = _lados(anterior), _lados(rodada)
     mudaram = [k for k in direcao_mod.NA_SOMA if k in a and k in b and a[k] is not None and b[k] is not None and a[k] != b[k]]
-    datas = datas_lidas(rodada, cal)
-    esc = escolha_padrao(cands, d.get("estado"), (da or {}).get("estado") if anterior else None, mudaram, datas)
+    mudou_direcao = bool(anterior and da and d.get("estado") and d.get("estado") != da.get("estado"))
+    hoje = rodada["gerado_em"][:10]
+    somas, esperando = somar(cands, historias, voltas_dos_temas(eventos, hoje), hoje)
+    esc = escolher(somas, historias, {"direcao": mudou_direcao, "pressoes": mudaram}, seguidas or [])
+    h = esc["historia"]
+    segunda = next((g for g in somas if h and g["id"] != h["id"] and g["pontos"] >= CALMO), None)
     nomes = cfg["direcao"]["nomes"]
-    return {"versao": 1, "candidatos": cands, "datas": [{**x, "nome": MARCADAS.get(x["tipo"]) or OUTRAS_DATAS.get(x["tipo"], x["tipo"])}
-                                                       for x in datas],
+    if h and h["candidatos"]:
+        final = h["candidatos"][0]
+    elif mudou_direcao:
+        final = "D"
+    elif mudaram:
+        final = "P"
+    else:
+        final = None
+    return {"versao": 2, "candidatos": cands,
+            "datas": [{**x, "nome": MARCADAS.get(x["tipo"]) or OUTRAS_DATAS.get(x["tipo"], x["tipo"])} for x in datas],
             "pressoes_mudaram": [{"id": k, "nome": nomes.get(k, k), "antes": a[k], "agora": b[k]} for k in mudaram],
-            "estado": d.get("estado"), "estado_anterior": (da or {}).get("estado"),
-            **esc}
+            "estado": d.get("estado"), "estado_anterior": (da or {}).get("estado"), "direcao_mudou": mudou_direcao,
+            "historias": somas, "temas_esperando": esperando,
+            "escolha": {"historia": h["id"] if h else None, "titulo": h["titulo"] if h else None,
+                        "pontos": h["pontos"] if h else 0, "motivo": esc["motivo"], "calmo": esc["calmo"],
+                        "nova": bool(h and h.get("nova")), "pulada": esc.get("pulada"),
+                        "segunda": segunda["id"] if segunda else None},
+            "final": final, "mesma_historia": (h["candidatos"][1:] if h else []),
+            "segunda_historia": (segunda["candidatos"] if segunda else [])}
 
 
 def candidato(p: dict, cid: str | None) -> dict | None:
@@ -206,11 +317,47 @@ def candidato(p: dict, cid: str | None) -> dict | None:
 
 
 def titulo_escolha(p: dict) -> str | None:
-    """O fato que a pauta escolheu, numa linha (para a editora dos dias seguintes e para os resumos)."""
+    """O que a pauta escolheu, numa linha (para os resumos): a história e o passo de ontem."""
+    esc = p.get("escolha") or {}
     cid = p.get("final", p.get("padrao"))
     if cid == "D":
         return f"a direção do risco mudou: estava {p.get('estado_anterior')} e ficou {p.get('estado')}"
     if cid == "P":
         return "mudou de lado: " + ", ".join(x["nome"] for x in p.get("pressoes_mudaram", []))
     c = candidato(p, cid)
+    if c and esc.get("titulo") and not esc.get("nova"):
+        return f"{esc['titulo']}: {c['titulo']}"
     return c["titulo"] if c else None
+
+
+def abrir_historias(pauta: dict, dia: str) -> list[str]:
+    """Abre em base/memoria/historias.json as histórias novas da pauta (o tema grande e consumado, ou o que voltou em
+    3 dos últimos 7 dias), para o classificador as ver a partir de amanhã. A ficha fica para a revisão de domingo
+    (src/memoria.py historias --semana). Devolve os avisos ao Pedro. Não chama o modelo de linguagem."""
+    import json
+    import classify_news
+    novas = [g for g in pauta.get("historias") or [] if g.get("nova")]
+    if not novas:
+        return []
+    arq = classify_news.HISTORIAS
+    try:
+        doc = json.loads(arq.read_text())
+    except (OSError, json.JSONDecodeError):
+        return []
+    ids = {h["id"] for h in doc.get("historias", [])}
+    avisos = []
+    for g in novas:
+        hid = g["id"].split(":", 1)[1].replace("-", "_")[:40]
+        if hid in ids:
+            continue
+        c0 = candidato(pauta, g["candidatos"][0]) or {}
+        doc["historias"].append({"id": hid, "titulo": c0.get("titulo", hid), "desde": dia[:7], "estado": "aberta",
+                                 "pressao": None, "pressoes": [], "o_que_e": c0.get("porque", ""),
+                                 "linha_do_tempo": [{"data": dia, "fato": c0.get("titulo", "")}],
+                                 "proximo_marco": {"data": "", "o_que": ""}, "antigas": [],
+                                 "aberta_em": dia})
+        ids.add(hid)
+        avisos.append(f"O texto do dia de {dia[8:10]}/{dia[5:7]} abriu uma história nova: {c0.get('titulo', hid)}. "
+                      "A revisão de domingo completa a ficha; veja se ela merece ficar.")
+    arq.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n")
+    return avisos

@@ -548,12 +548,19 @@ def post_de(rodada: dict, cfg: dict) -> dict:
         paragrafos = []
         autoria = "O texto deste dia não saiu, por uma falha no programa que escreve os posts."
     link = f"/{dia}/"
-    fundo, ponte = None, None
-    if p.get("ok") and tipo == "dia":
-        try:  # a leitura a fundo (src/fundo.py) não pode derrubar o post
+    fundo, ponte, fontes = None, None, []
+    if p.get("ok") and tipo == "dia" and p.get("formato") == "historia":
+        try:  # o texto do dia pela história (desde 5/11/2026) diz de onde vêm os números logo abaixo dele
+            import fundo as fundo_mod
+            fontes = fundo_mod.fontes(p)
+        except (KeyError, OSError, ValueError, TypeError) as e:
+            print(f"aviso: as fontes do post de {dia} não foram montadas ({e!r})")
+    elif p.get("ok") and tipo == "dia":
+        try:  # a leitura a fundo dos dias até 4/11/2026 (src/fundo.py) não pode derrubar o post
             fundo = base_site.fundo_ctx(p, cfg, com_links)
         except (KeyError, OSError, ValueError, TypeError, StopIteration) as e:
             print(f"aviso: a leitura a fundo do post de {dia} não foi montada ({e!r})")
+    if p.get("ok") and tipo == "dia":
         try:  # a linha que leva ao básico do assunto, logo abaixo do texto
             ponte = base_site.ponte(p, cfg, base_site.assunto_do_fato(rodada), base_site.titulo_do_fato(rodada))
         except (KeyError, OSError, ValueError, TypeError) as e:
@@ -563,7 +570,7 @@ def post_de(rodada: dict, cfg: dict) -> dict:
     return {"dia": dia, "data_extenso": data_extenso(dia), "titulo": titulo, "paragrafos": paragrafos, "secoes": secoes,
             "tipo": tipo, "tipo_nome": TIPOS_POST[tipo], **extra,
             "autoria": autoria, "direcao": d["estado"], "llm": bool(p.get("ok")),
-            "link": link, "fundo": fundo, "ponte": ponte}
+            "link": link, "fundo": fundo, "ponte": ponte, "fontes": fontes}
 
 
 def textos_do_editor() -> list[dict]:

@@ -121,6 +121,44 @@ DIRECAO_REPETIDA = re.compile(r"\b(risco( de recessão)?[^.]{0,30}\b(segue|segui
                               r"direção (do risco )?(segue|continua|está|fica|permanece|é|de)\b|"
                               r"(uma|duas|três|quatro|cinco|\d) das cinco pressões)", re.I)
 
+# O e daí fecha o argumento do texto; "nada muda" para a leitora não é obrigatório e cansa quando repete
+# (Pedro, 10/11/2026). O texto do dia avisa quando dois dias seguidos dizem que nada muda.
+NADA_MUDA = re.compile(r"\bnada (muda|mudou|vai mudar|deve mudar)\b|\bnão muda nada\b|\bcontinua (tudo )?igual para\b", re.I)
+
+# A comparação com a meta precisa da mesma unidade e da margem da regra: "sobra de R$ 18,6 bilhões, abaixo da
+# meta de 0,50% do PIB" mistura reais com porcentagem e esquece os descontos (Pedro, 10/11/2026).
+_COMPARA = re.compile(r"\b(abaixo|acima|aquém|além|longe|perto|dentro|fora|menos|mais) d[aoe]s?\b|\b(cumpr\w*|descumpr\w*|"
+                      r"bate|bater|atinge|atingir|supera|superar|fica aquém)\b", re.I)
+_REAIS = re.compile(r"R\$\s*\d")
+_PCT_PIB = re.compile(r"\d+(?:,\d+)?\s*%\s*do PIB|\d+(?:,\d+)?\s*por cento do PIB", re.I)
+_PCT = re.compile(r"(\d+(?:,\d+)?)\s*%")
+_META = re.compile(r"\b(meta|banda|margem|tolerância|piso|teto da meta)\b", re.I)
+
+
+def comparacoes(texto: str, metas_texto: str = "") -> list[str]:
+    """Comparações com a meta que a leitora não consegue conferir: unidades misturadas, número de meta que a ficha
+    das metas (config/metas.json) não tem e meta sem a margem da regra."""
+    out = []
+    frases = FRASE.split(texto)
+    for i, f in enumerate(frases):
+        if not _META.search(f):
+            continue
+        perto = " ".join(frases[i:i + 2])
+        if _COMPARA.search(f) and _REAIS.search(f) and _PCT_PIB.search(f):
+            out.append("compara reais com porcentagem do PIB na mesma frase: ponha os dois lados na mesma unidade "
+                       f"('R$ 18,6 bilhões, contra uma meta de R$ 73,2 bilhões'): {f.strip()[:80]}")
+        if metas_texto:
+            fora = [m for m in _PCT.findall(f) if m not in metas_texto]
+            if fora:
+                out.append(f"porcentagem de meta que a ficha das metas não tem ({', '.join(fora)}): confira a meta e a margem "
+                           f"em config/metas.json: {f.strip()[:80]}")
+        if _COMPARA.search(f) and re.search(r"\bmeta\b", f, re.I) and not re.search(
+                r"\b(margem|banda|tolerância|piso|descont\w*|abat\w*|entre|de \d+(,\d+)? a \d|até \d)", perto, re.I):
+            out.append("compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, "
+                       f"ou diga na frase seguinte: {f.strip()[:80]}")
+    return out
+
+
 LIMITE_PALAVRAS = {"dia": 120, "semana": 300, "mes": 360}
 MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro",
          "novembro", "dezembro"]
@@ -280,7 +318,8 @@ def problemas_post(post: dict, tipo: str = "dia", dados: str | None = None, hoje
             out.append(f"parágrafo {i}: inflação que 'cai' ou 'recua' sem dizer que os preços sobem mais devagar")
         if re.search(r"\b(eu|nós|nosso|nossa)\b", p, flags=re.IGNORECASE):
             out.append(f"parágrafo {i} em primeira pessoa")
-    # Regra 9 do prompt do fato do dia e src/verifica_base.py: até 100 palavras no total.
+    # Os fatos do dia até 4/11/2026 (as 100 palavras): até 100 palavras no total. O texto do dia pela história tem o
+    # tamanho conferido em src/fundo.py (conferir_codigo).
     total = sum(len(p.split()) for p in post["paragrafos"])
     if tipo == "dia" and total > 100:
         out.append(f"fato do dia com {total} palavras (até 100): corte o que não é o fato, sem mudar os números")

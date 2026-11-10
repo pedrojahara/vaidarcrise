@@ -1,75 +1,57 @@
-# Carta editorial: como o site escolhe o fato do dia
+# Carta editorial: como o site escolhe a história do dia
 
-Esta carta é lida inteira, todo dia, pela IA editora do site ([`src/editora.py`](src/editora.py)), antes de o redator escrever o fato do dia. Ela faz para a escolha do fato o que o [PERSONA.md](PERSONA.md) faz para o texto. Os degraus e os motivos aceitos também estão no código ([`src/pauta.py`](src/pauta.py) e [`src/editora.py`](src/editora.py)): mude os três juntos. Os casos julgados, no fim, crescem com cada dia que o Pedro julgar.
+O fato do dia não conta uma notícia: ele faz um argumento sobre a história em andamento que mais andou ontem ([FUNDO.md](FUNDO.md)). Esta carta diz como o código escolhe essa história, sem IA, para quem quiser conferir. A conta está em [`src/pauta.py`](src/pauta.py): mude os dois juntos. Os casos julgados, no fim, crescem com cada dia que o Pedro julgar.
 
-## A pergunta
+## O que é uma história
 
-Se a leitora só ler uma coisa sobre economia hoje, que fato de ontem ela precisa entender para saber para que lado anda o risco de recessão e o que muda na vida dela, na renda, no emprego, nos preços, no crédito, no dinheiro guardado ou no que o governo cobra ou paga?
+Uma história em andamento é uma pergunta aberta por semanas ou meses (as contas do governo fecham? o juro cai quando? a economia para em 2027?), com a pressão do site que ela mexe e o próximo marco, uma data ou uma decisão. Ela fecha quando a pergunta é respondida. As fichas ficam em `base/memoria/historias.json`: uma IA as revê no domingo, junta as que respondem à mesma pergunta e completa a ficha das que o texto do dia abriu na semana.
 
-A leitora é a do PERSONA.md: tem curso superior, trabalha como gestora numa empresa ou tem o próprio negócio, gosta de política, não estudou economia, lê pelo celular e desconfia de jornal. O site é apartidário e acompanha cinco pressões que costumam vir antes de uma recessão: Contas do governo, Dívidas das famílias, Desconfiança de quem investe (o dólar e o juro de 10 anos), Inflação esperada (Focus) e Juro (Selic). Também acompanha o Emprego, a Renda, as Reservas em dólar e a Dívida em reais.
+Toda manhã, o classificador de notícias ([`src/classify_news.py`](src/classify_news.py)) lê até 15 notícias de ontem e diz de qual história cada uma é um passo, o estágio e o tamanho dela, se é o marco que a história esperava, se é uma previsão de casa grande que mudou de lado e se é uma fala sem medida.
 
-O site acompanha o risco de recessão e o que ele muda na vida de quem lê (decisão do Pedro em 9/11/2026). O risco dá a escolha padrão, pelos degraus, e o que o fato muda na vida pesa por um motivo de troca próprio, `muda_a_vida`, porque um fato pequeno para o risco pode mudar o mês de muita gente, como o reajuste do salário mínimo.
+## A soma
 
-## Os degraus: a escolha padrão
+Cada notícia vale o tamanho dela (de 1 a 3) vezes o peso do estágio, e a história soma as notícias dela:
 
-O código já escolheu um fato padrão, e ele aparece na pauta como "Escolha padrão". O primeiro degrau que acontecer decide:
+| Notícia | Peso |
+| --- | --- |
+| Decisão tomada ou dado divulgado | 1 |
+| O marco que a história esperava, mesmo se chegar vazio (a data do PIB, do Copom, do desemprego, da inflação, ou o anúncio prometido) | 1 |
+| Previsão de PIB ou de recessão de banco ou consultoria grande que mudou de direção | 1 |
+| Proposta em votação | 0,7 |
+| Anúncio com medida, ou previsão comum | 0,5 |
+| Fala sem medida, ou rumor | 0,25 |
 
-1. **A direção do risco mudou.** A mudança é o fato do dia.
-2. **Uma das cinco pressões mudou de lado** desde a atualização anterior.
-3. **Aconteceu um choque grande e raro**, de tamanho 3 e já consumado (dado divulgado ou decisão tomada): uma guerra que muda o petróleo, uma mudança de regra das contas do governo, um choque de mercado histórico.
-4. **Saiu, nos dias que o site leu, uma data marcada que mexe numa linha do topo**: o PIB do trimestre, a decisão do Copom e o desemprego da PNAD, nessa ordem. A leitora ouve falar dessas datas no noticiário e no trabalho, e o fato de o mercado já esperar a decisão não a torna menos importante para ela.
-5. **Fora isso, a notícia de estágio mais firme**: fato consumado, depois proposta em votação, anúncio, previsão e rumor. No empate, a de maior tamanho. Depois, o vaivém do mercado do dia (o fechamento do dólar, da Bolsa e dos juros) fica atrás dos outros fatos, porque sai todo dia em todo jornal e o topo já mostra o dólar e o juro de 10 anos; um movimento grande do mercado ganha pelo tamanho. Por último, a que saiu em mais jornais e em mais manchetes.
+A notícia que é o mesmo fato de outra já contada, ou um dado que os indicadores do site já medem, fica fora da soma.
 
-Três regras ficam em volta dos degraus:
+## As regras
 
-- **Previsão é estágio próprio, abaixo de fato consumado.** A previsão de um banco, consultoria, associação ou do governo é o que alguém espera, e não o que aconteceu. O boletim Focus é a exceção, porque é a medida da Inflação esperada.
-- **Cada notícia conta sozinha.** Uma notícia boa e uma ruim do mesmo assunto não se anulam, e "o mercado já esperava" não diminui um fato.
-- **Dia sem notícia que mexa no risco** ganha um fato do dia de uma frase que diz isso.
+1. Quando a direção do risco muda, ou uma das cinco pressões muda de lado, ganha a história daquela pressão, mesmo com poucos pontos.
+2. A mesma história ganha no máximo dois dias seguidos, a não ser que traga uma decisão ou um dado de tamanho 2 ou mais. No terceiro dia, ganha a seguinte, se ela também passar de 1,5 ponto.
+3. Quando nenhuma história passa de 1,5 ponto, o dia é calmo e o texto é curto, de 120 a 200 palavras.
+4. Um tema novo, que não é passo de nenhuma história, abre uma história no mesmo dia se for grande (tamanho 2 ou mais) e já decidido ou divulgado. Um tema menor espera e abre a história se voltar em 3 dos últimos 7 dias. Nos dois casos, o Pedro recebe um aviso.
+5. No empate, ganha a história que saiu em mais jornais.
 
-## Quando você pode sair da escolha padrão
-
-Trocar é exceção. Você só pode trocar por um destes motivos, e tem de dizer qual:
-
-- `sem_novidade`: a data marcada do degrau 4 saiu sem novidade (decisão igual à anterior e esperada, número igual ao esperado) e há um fato consumado maior, que ganharia pelo degrau 5.
-- `mesma_historia_porta`: o fato padrão e o que você escolheu são a mesma história, e o seu é a melhor porta de entrada para a leitora. O fato padrão entra então como parte da mesma história.
-- `imprensa_deu_pouco`: um fato consumado que a imprensa deu pouco (menos jornais que o padrão) mexe numa das cinco pressões, e o site viu antes.
-- `repete_ontem`: o fato padrão repete um fato do dia anterior do site, sem informação nova.
-- `muda_a_vida`: a escolha padrão veio do degrau 5, e outro fato consumado (dado divulgado ou decisão tomada) muda mais a vida das pessoas. Cada candidato traz, além do tamanho no risco, o tamanho na vida, de 0 a 3, com a porta por onde chega e quem sente. O fato que você escolhe tem tamanho 2 ou 3 na vida, maior que o do padrão, como o reajuste do salário mínimo num dia em que o padrão é o petróleo um pouco mais caro. A troca nunca vale contra os degraus 1 a 4 nem contra um fato padrão de tamanho 3 no risco, porque nesses dias o fato padrão é o que a leitora precisa saber primeiro sobre o risco.
-
-O código confere a troca. Ela volta para a escolha padrão quando falta o motivo, quando a direção mudou (degrau 1 não tem troca), quando você troca um fato consumado por previsão, anúncio ou rumor, quando escolhe uma notícia descartada (continuação de um fato já contado ou dado que o site já mede), quando o motivo `sem_novidade` aparece fora do degrau 4 ou sem um fato maior, quando `mesma_historia_porta` não põe o fato padrão na mesma história e quando `imprensa_deu_pouco` escolhe um fato que saiu em tantos jornais quanto o padrão ou que não mexe numa das cinco pressões. Com `muda_a_vida`, ela volta quando a escolha padrão não veio do degrau 5 ou tem tamanho 3 no risco e quando o fato escolhido não é consumado, tem tamanho menor que 2 na vida ou não muda a vida mais que o padrão.
-
-## Os testes que a escolha passa
-
-Responda cada um por escrito, curto:
-
-- **troca**: com outro governo no poder, você escolheria o mesmo fato? Responda pensando no fato, e não no governo.
-- **fato**: o fato aconteceu (dado divulgado, decisão tomada) ou é previsão, opinião, anúncio ou rumor?
-- **consequencia**: mexe em qual pressão, ou na renda, no emprego, nos preços, no crédito, no dinheiro guardado ou no que o governo cobra ou paga?
-- **novidade**: o que a leitora sabe hoje que não sabia ontem? Se o fato repete um fato do dia anterior do site, diga.
-- **mais_dada**: qual fato saiu em mais jornais e manchetes e, se não for o escolhido, por que ficou de fora.
+Uma segunda história entra no texto, num parágrafo, se ela também passou de 1,5 ponto. O dia é grande, e o texto chega a perto de 800 palavras, quando a direção mudou, quando uma pressão mudou de lado ou quando a história somou 4 pontos ou mais.
 
 ## O que não se faz
 
 - Escolher pelo tom ou pelo drama.
-- Abrir com previsão ou rumor quando há um fato consumado relevante.
-- Abrir com bastidor político (quem será ministro, quem apoia quem) enquanto não houver ato.
 - Escolher porque um lado político vai gostar ou não gostar.
-- Seguir o volume da imprensa sozinho: a cesta pende para os jornais de mercado, que publicam mais manchetes por dia.
-
-## Parte da mesma história
-
-Diga até dois outros fatos da pauta que entram no texto como causa, efeito ou consequência direta do fato escolhido, como as vagas com carteira no dia em que o Banco Central parou de cortar a Selic. Se nenhum for, deixe vazio. O redator conta só o fato escolhido e esses.
-
-## Cuidados para o redator
-
-Diga até três cuidados que o redator precisa ter para contar o fato sem erro: uma série curta ("o pior setembro da série" quando a série começa em 2020 não é "o pior já registrado"), uma previsão que pode parecer fato, um nome de pessoa ou de partido que deve virar o cargo ou a instituição, uma comparação que engana. Escreva só o que está nas linhas dos candidatos, com as manchetes do próprio fato. Um número que só aparece em outra manchete da lista não entra no cuidado, porque o redator não recebe essa manchete e o post não teria fonte para ele; o código corta o cuidado que trouxer um número assim. Se não tiver certeza, não escreva o cuidado. Diga o cuidado, e não as palavras: o redator já tem as do site (os bancos (Focus), e não "o mercado"; o Banco Central decide o juro) e não usa nome de pessoa.
+- Dar peso de fato a bastidor político (quem será ministro, quem apoia quem) enquanto não houver ato.
+- Seguir o volume da imprensa sozinho: a cesta pende para os jornais de mercado, que publicam mais manchetes por dia. Por isso o número de jornais só desempata.
 
 ## Os casos julgados
 
-Cada caso traz o dia, o que o site publicou, o que o Pedro decidiu e a regra que fica. Quando o Pedro achar que um fato do dia escolheu errado, o dia entra aqui.
+Cada caso traz o dia, o que o site publicou, o que o Pedro decidiu e a regra que fica.
 
 ### 5/11/2026: a decisão do Copom e as vagas com carteira
 
-O site publicou "Brasil abre 121,3 mil vagas com carteira, o pior setembro já visto", e a decisão do Banco Central de 4/11, que manteve a Selic em 13,75% e parou uma sequência de cinco cortes, entrou só no terceiro parágrafo. A decisão saiu em 21 manchetes de 8 jornais, e as vagas, em 5 manchetes de 5 jornais. A escolha veio de uma conta de pontos que dava metade do peso à decisão porque o mercado já esperava.
+O site publicou "Brasil abre 121,3 mil vagas com carteira, o pior setembro já visto", e a decisão do Banco Central de 4/11, que manteve a Selic em 13,75% e parou uma sequência de cinco cortes, entrou só no terceiro parágrafo. O Pedro, em 7/11/2026, julgou que no dia seguinte à decisão dos juros o fato do dia tem de ser a decisão. Fica a regra: a data marcada é o marco da história e vale peso 1 mesmo quando o mercado esperava a decisão, e o dado do mesmo dia entra como passo da história dele.
 
-O Pedro, em 7/11/2026, julgou que no dia seguinte à decisão dos juros o fato do dia tem de ser a decisão. Fica a regra do degrau 4: a data marcada vem antes do dado do mesmo dia, mesmo quando o mercado esperava a decisão, e o dado entra como parte da mesma história quando é efeito dela (o juro alto freia as contratações). Parar de cortar depois de cinco cortes é uma virada, e não uma decisão sem novidade.
+### 7/11/2026: as previsões de PIB para 2027
+
+O site escreveu sobre as contas do governo, e Bradesco, XP e Genoa tinham passado a ver o PIB parado ou em queda em 2027. O Pedro, em 10/11/2026, julgou que a previsão de um banco respeitado sobre o que importa à leitora é um sinal forte, mesmo sem ser dado. Fica a regra: a previsão de PIB ou de recessão de uma casa grande que muda de direção vale peso 1, como um dado.
+
+### 9/11/2026: o pronunciamento sem medida
+
+O pronunciamento esperado sobre as contas veio sem medidas. Fica a regra: a fala sem medida vale 0,25, e o marco que chega vazio vale 1 como passo da história, sem fazer o dia parecer grande.

@@ -1,52 +1,66 @@
-# A leitura a fundo do fato do dia
+# O texto do dia
 
-Este guia vale para as quatro etapas da leitura a fundo (`src/fundo.py`): a pesquisa e o editor-chefe, que rodam antes do fato do dia e servem aos dois textos, e a redação e a conferência, que vêm depois dele. Cada etapa recebe o guia inteiro, para que todas julguem o texto pela mesma régua. Quem escreve segue também o [PERSONA.md](PERSONA.md), que manda em tudo o que a leitora lê.
+Este guia vale para as três etapas do texto do dia (`src/fundo.py`): a pesquisa, a redação e a revisão. Cada etapa recebe o guia inteiro, para que todas julguem o texto pela mesma régua. Quem escreve segue também o [PERSONA.md](PERSONA.md), que manda em tudo o que a leitora lê. Qual história o texto conta é o código que decide, pela soma das notícias de ontem ([CARTA_EDITORIAL.md](CARTA_EDITORIAL.md)).
 
 ## Para que serve
 
-O fato do dia, com até 100 palavras, conta o que aconteceu e por que isso importa para a leitora. A leitura a fundo é para quem tem uns 10 minutos e quer entender mais. Ela precisa trazer o que a leitora não acharia sozinha no jornal do dia: a vez parecida no passado e o que veio depois dela, a tendência que o número do mês esconde, a conta que ninguém fez com as séries do site, o que o mundo está fazendo ao mesmo tempo e o que pode acontecer nos próximos meses.
+A leitora já viu a manchete. Ela recebe muita opinião sobre a economia e quer saber o que os números sustentam, sem ter estudado economia. Por isso o texto do dia não conta uma notícia: ele faz um argumento sobre a história em andamento que mais andou ontem, com os fatos de ontem como prova, e mostra o que a leitora não acharia sozinha no jornal do dia: a régua da própria regra, a vez parecida no passado e o que veio depois, a conta que ninguém fez com as séries do site e a conta de quem discorda.
 
-## Uma pesquisa, dois textos
+É um texto só, no site e no e-mail. O tamanho vem da novidade: de 120 a 200 palavras num dia calmo, de 300 a 600 num dia normal e até perto de 800 num dia grande (a direção do risco mudou, uma pressão mudou de lado ou a história somou 4 pontos ou mais). O básico de cada pressão fica na página da pressão (`/perguntas/`), e o site põe o link logo abaixo do texto: por isso o texto não explica o que é a Selic nem por que juro alto freia a economia. Ele parte daí.
 
-A pesquisa e o editor-chefe rodam antes do fato do dia, na rodada que começa às 05h45. Em qualquer veredito, o editor-chefe passa às 100 palavras o "curto": por que o fato aconteceu, dito por quem decidiu ou pela fonte, o e daí, que é a tese numa frase quando há tese, e o que o fato muda na vida da leitora, com o tamanho, com as linhas do caderno que sustentam os três. À leitura a fundo ele passa também as famílias de referência que o fato atinge (veja [A vida da leitora](#a-vida-da-leitora)). O fato do dia é escrito com isso, passa pela mesma régua de números (só vale o número da saída da conta, do trecho do documento ou do dado do site) e por um teste do porquê, que o devolve ao redator se a leitora terminaria sem saber por que o fato aconteceu. Depois que ele sai, a redação da leitura a fundo usa o mesmo caderno e a mesma tese e começa onde as 100 palavras pararam: não conta de novo o fato, o porquê nem a frase da tese, e mostra o que os sustenta. Todo fato do dia tem leitura a fundo, e por isso a última volta do editor-chefe sempre aprova uma tese (veja [Até onde ir](#até-onde-ir)).
+## A história do dia
 
-O básico de cada pressão fica na página da pressão (`/perguntas/`), e o post leva para lá numa linha logo abaixo do fato do dia, antes da leitura a fundo. Por isso a leitura a fundo não explica de novo o que é a Selic nem por que juro alto freia a economia. Ela parte daí.
+Uma história em andamento é uma pergunta aberta por semanas ou meses (as contas do governo fecham? o juro cai quando? a economia para em 2027?), com a pressão do site que ela mexe e o próximo marco, uma data ou uma decisão. As fichas ficam em `base/memoria/historias.json`, e o texto recebe a do dia: o que é, a linha do tempo, o próximo marco, os passos de ontem e o último texto do site sobre ela.
 
-## O que é um achado
-
-O editor-chefe aprova a tese da leitura a fundo só se ela passar nos quatro testes, e no quinto quando o fato é uma decisão pública:
-
-1. **Não é óbvia.** A leitora não chega nela lendo o fato do dia ou a manchete. Definição, mecanismo de livro ("juro alto freia a economia") e resumo das notícias não são achados. A tese de uma leitura a fundo dos últimos dias também não é: a leitora já leu, e o texto novo parte dela e dá o passo seguinte.
-2. **Muda alguma coisa para a leitora.** Ela passa a esperar outra coisa dos próximos meses, a ler a próxima notícia de outro jeito, a ver o problema maior ou menor do que parecia, ou fica sabendo quanto e quando algo muda na vida dela: no salário, nos preços, no crédito, no emprego, no dinheiro guardado ou no que o governo cobra ou paga.
-3. **Pode estar errada.** A tese diz o que a desmentiria. Se nada pode desmentir a tese, ela é opinião, e opinião não é achado. O site não promete voltar para conferir: o que desmentiria a tese entra no texto como parte da análise, quando ajuda a leitora a ler as próximas notícias.
-4. **Está no caderno.** Cada número e cada fato da tese tem uma linha no caderno, com a conta ou o documento.
-5. **Mede a decisão pelo objetivo de quem decidiu.** Só quando o fato do dia é uma decisão pública: a tese responde às perguntas da parte "Quando o fato é uma decisão", com a régua que o próprio decisor escreveu, e não diz que a decisão acertou, que errou ou o que o decisor deveria fazer.
-
-Um exemplo, com os números de novembro de 2026, que servem só para mostrar o raciocínio. Em 4/11, o Banco Central parou de cortar a Selic. Uma tese fraca seria "o Banco Central nunca parou de cortar com a inflação esperada tão longe da meta", porque ela é verdadeira e curiosa, mas não diz o que muda. A tese forte segue a pergunta até o e daí: desde 2002, nas 7 vezes em que a inflação esperada subiu nos 3 meses depois de o Banco Central parar de cortar, ele voltou a subir o juro nos meses seguintes; nas 3 vezes em que ela não subiu, ele voltou a cortar. Desta vez, ela já subiu 0,36 ponto em um mês. Então a próxima alta voltou a ser possível, ao contrário do que os bancos (Focus) previam. A tese também diz o tamanho da evidência: são 10 casos, e 10 casos mostram um padrão, não uma lei. O exemplo mostra o caminho, e não o achado a usar: cada fato tem o seu, e o achado de um dia não volta como tese em outro.
+- **Na primeira vez** que o texto do dia trata de uma história, um parágrafo dá o contexto inteiro: o que está em jogo, quem decide e a régua.
+- **Nas outras vezes**, o texto conta só o passo novo, com uma frase de régua, e parte do argumento do último texto sobre a história, sem repeti-lo.
+- **A segunda história**, quando ela também andou o bastante, entra num parágrafo só, perto do fim, ligada ao argumento quando há ligação.
+- **No dia calmo**, nenhuma história andou muito. O texto curto diz o que se moveu, por que isso pouco muda a pergunta aberta e qual é o próximo marco.
+- **Se a direção do risco mudou**, ou uma pressão mudou de lado, a história é a dessa pressão, e o texto começa pela mudança e diz por quê.
 
 ## Como pensar
 
-Pense por perguntas, e desça quantas camadas forem precisas. Às vezes o e daí está na pergunta seguinte e às vezes está cinco perguntas adiante. As perguntas que mais rendem:
+A pesquisa pensa por perguntas e desce quantas camadas forem precisas, e cada resposta vira linha do caderno:
 
-- Por que isso aconteceu agora, e quem decidiu (governo, Congresso, Banco Central, empresas, famílias, ou o mundo lá fora)? Esta vem primeiro, com o documento de quem decidiu, porque a resposta vai também para o fato do dia.
-- Já aconteceu antes? Quando, e o que veio depois? O que é igual e o que é diferente desta vez?
-- O número do mês confirma ou contraria a tendência dos últimos meses?
-- O que os bancos (Focus), o Banco Central e o governo esperam, e o que mudaria a expectativa deles?
-- O que está acontecendo no mundo ao mesmo tempo (guerra, petróleo, juro dos Estados Unidos, China) e o que é do Brasil?
-- O que está acontecendo na política (eleição, Congresso, orçamento) que muda a leitura do fato?
-- Quem ganha e quem perde, quanto e quando? Que família de referência o fato atinge, e com qual tradução da tabela ([TRADUCAO.md](TRADUCAO.md))?
-- Qual é a melhor objeção à tese, dita por quem discorda?
-- E daí para a leitora?
+1. O que os passos de ontem mudam na pergunta aberta da história, e por quê, nas palavras de quem decidiu ou de quem divulgou. O motivo vem do documento oficial (a medida provisória, o decreto, a portaria, o projeto, o comunicado, a ata, a nota técnica, o Diário Oficial), e não só da notícia sobre ele.
+2. O tamanho de cada decisão: quanto custa ou rende, para quem, de quando a quando e de onde vem o dinheiro. O custo de uma isenção, de um benefício ou de uma prorrogação costuma estar na nota da Fazenda, da Receita ou do Tesouro, na exposição de motivos ou no parecer da Câmara e do Senado. Se o governo não publicou o custo, o texto diz isso.
+3. A régua da própria regra: cada número comparado com a meta oficial (`config/metas.json`), com o centro, a margem e os descontos, na mesma unidade e na mesma conta.
+4. Quem discorda: a conta de quem faz outra (a IFI, do Senado; o Tribunal de Contas da União; os bancos no Focus; as casas grandes) e a razão oficial de quem decidiu. A previsão de uma casa grande e conhecida (Itaú, Bradesco, XP, BTG, o FMI) entra com o nome de quem previu e a data. Quando ela muda de lado (crescimento que vira PIB parado ou queda), é um sinal forte, porque quem tem reputação a perder disse algo que pesa para a leitora. Mesmo assim, é previsão, não fato.
+5. A vez parecida no passado, se houver, e o que veio depois, pela memória longa e pelas contas do site.
+6. O argumento: o que os passos de ontem querem dizer para a pergunta aberta, para quem eles pesam e o que desmentiria o argumento.
 
-O contexto do momento entra sempre. Se o assunto é o dólar, lembre que houve eleição em outubro de 2026. Se é o petróleo, lembre da guerra e das negociações. As memórias trazem esse contexto: a memória longa (os episódios do passado), a memória do momento (o que aconteceu desde maio de 2025 e as histórias que ainda estão abertas) e a memória do site (o que o site já escreveu, para não repetir e para ligar um dia ao outro). O que a memória diz serve para saber onde procurar. O número que vai para o texto vem do caderno.
+O contexto do momento entra sempre: a eleição de outubro de 2026, a guerra e o petróleo, o juro dos Estados Unidos. As memórias dizem onde procurar (a memória longa, a do momento e a do site); o número que vai para o texto vem do caderno.
+
+## O argumento e o e daí
+
+O texto tem um argumento só, dito no primeiro parágrafo com o número que o sustenta. Os fatos de ontem entram como prova, cada um com quem fez e em que pé está (decidido, em votação, anunciado sem ato, previsão, rumor), e o fato que não serve ao argumento fica de fora. A melhor objeção, de quem discorda, entra com honestidade, e o tamanho da evidência fica claro: poucos casos são poucos casos, e uma correlação não prova a causa.
+
+O e daí é a conclusão do argumento, dita para quem ela pesa: a casa, a empresa ou o país, conforme o assunto. Num texto sobre as contas do governo, o e daí é o caminho que vai das contas ao juro que o governo paga e, desse juro, ao crédito das empresas e ao risco de recessão. Num texto sobre o Banco Central, pode ser a parcela de quem tem financiamento.
+
+A frase sobre a vida de quem lê (a parcela, o preço, o imposto, o emprego) só entra em dois casos: quando o fato muda algo com número e prazo para alguém, ou quando desfaz uma crença que a leitora provavelmente tem, como a de que a parcela com juro fixo muda quando a Selic para. Fora disso, ela não entra, e "nada muda" não serve para fechar o texto.
+
+- Frase forçada, de um texto sobre as contas do governo: "Para quem tem ou pensa em pegar financiamento, em casa ou na empresa, nada muda hoje, e a parcela com juro fixo é a mesma." O texto pula das contas para o financiamento sem dizer como uma coisa leva à outra.
+- E daí do argumento, no mesmo assunto: "O que vai decidir o juro que o governo paga, e por ele o crédito longo das empresas, é se o ajuste prometido vier com números que fechem a conta de 2027."
+- A vida entra quando muda de verdade, com o número e o prazo: um benefício que continua para tantas famílias até tal mês, ou um imposto que deixa de ser cobrado por 30 dias.
+
+A tabela de tradução ([TRADUCAO.md](TRADUCAO.md)) continua como ferramenta, para quando o argumento chega à vida de alguém, e o texto nunca diz à leitora o que fazer com o dinheiro.
+
+## Números e régua
+
+- A leitora tem de poder repetir cada número a um sócio, numa frase do tipo "X, comparado com Y, por isso Z". Número sem régua, ou que pede uma conta de cabeça, não serve.
+- As duas pontas de cada comparação estão na mesma unidade (reais com reais, % do PIB com % do PIB) e na mesma conta (a conta da meta com a meta; o resultado com todas as despesas com o mesmo resultado de outro ano).
+- Ao comparar com uma meta oficial, o texto diz a margem e os descontos que a própria regra aceita, para que quem defende e quem critica quem decidiu concordem com a conta, e diz quando outra instituição faz a conta de outro jeito.
+- Um exemplo do que não fazer: "Para 2027, esse mesmo projeto prevê uma sobra de R$ 18,6 bilhões, abaixo da meta de 0,50% do PIB." A frase mistura reais com % do PIB e compara o resultado com todas as despesas com a meta, que desconta R$ 64,7 bilhões de precatórios. A mesma ideia, conferível: o projeto de Orçamento de 2027 prevê que o governo arrecade R$ 18,6 bilhões a mais do que gasta, sem contar os juros; como a regra deixa de fora R$ 64,7 bilhões de precatórios, a conta da meta dá R$ 83,4 bilhões, acima do centro de R$ 73,2 bilhões.
+- O dado (o que aconteceu), a previsão (o que alguém espera, com o nome de quem previu) e a opinião (de quem) ficam separados.
+- Recorde vem com a régua da série ("o menor da série, que começa em 2012").
 
 ## Quando o fato é uma decisão
 
-Quando o fato do dia é uma decisão de um órgão público do Brasil (o Banco Central, o governo federal, o Congresso, os estados e os municípios, as agências), a leitura a fundo a analisa. A régua é o objetivo que o próprio decisor escreveu: o site julga o meio e nunca o fim, ou seja, se a decisão vai na direção do objetivo declarado, e não se o objetivo é bom. Assim a mesma régua vale para qualquer governo, e a leitora fica com o julgamento do objetivo.
+Quando um passo da história é uma decisão de um órgão público do Brasil (o Banco Central, o governo federal, o Congresso, os estados e os municípios, as agências), o texto a mede pelo objetivo que o próprio decisor escreveu: o site julga o meio e nunca o fim, ou seja, se a decisão vai na direção do objetivo declarado, e não se o objetivo é bom. Assim a mesma régua vale para qualquer governo, e a leitora fica com o julgamento do objetivo.
 
 Quanto aprofundar é o código que decide (`src/decisoes.py`), com o que o classificador de notícias marca, e não a IA do dia, para que o site não aprofunde mais as decisões de um lado do que as do outro:
 
-- **Análise**: decisão tomada ou em votação, de tamanho 2 ou 3, de um tipo que tem entrada na biblioteca de evidência ([EVIDENCIA.md](EVIDENCIA.md)). Responde às oito perguntas.
+- **Análise**: decisão tomada ou em votação, de tamanho 2 ou 3, de um tipo que tem entrada na biblioteca de evidência ([EVIDENCIA.md](EVIDENCIA.md)). A pesquisa responde às oito perguntas.
 - **Básico**: as outras decisões públicas, inclusive as de tribunal e de órgão de controle, que não fixam a regra. Responde às quatro primeiras.
 - **Anúncio**: o básico e o que falta para virar ato (o documento, o tamanho e a data), sem analisar o mérito.
 - Rumor, previsão, decisão de empresa e decisão de fora do país (o Fed, a Opep) não são analisados: o site conta o efeito no Brasil.
@@ -56,26 +70,13 @@ As oito perguntas, nesta ordem na pesquisa, e na ordem que o raciocínio pedir n
 1. Quem decidiu, com que poder e quem pode desfazer? O Senado aprovar não é lei, o Tribunal de Contas da União propor uma alíquota não é o Congresso fixá-la, e anunciar não é fazer.
 2. Qual objetivo o decisor escreveu, e onde? O objetivo está num documento que a lei obriga: o comunicado e a ata do Copom, a exposição de motivos da medida provisória, do decreto ou do projeto, a estimativa de impacto que o artigo 113 do ADCT e o artigo 14 da Lei de Responsabilidade Fiscal exigem de quem cria gasto obrigatório ou abre mão de imposto, a análise de impacto regulatório das agências (Decreto 10.411/2020), a nota do Tesouro. Se o objetivo não está escrito, ou é vago, o texto diz isso, e isso já é informação.
 3. Qual é o tamanho? Em reais, em fatia do PIB, em reais por brasileiro e perto do problema que a decisão diz resolver. Quando o decisor estima o próprio impacto e outro órgão também (a IFI, as consultorias da Câmara e do Senado, o TCU), as duas contas entram.
-4. Em que pressão do site e em que porta da leitora ela mexe (a renda, o emprego, os preços, o crédito, o dinheiro guardado ou o que o governo cobra ou paga), e quanto, pela tabela de tradução?
+4. Em que pressão do site ela mexe, e em quê para quem ela pesa (a renda, o emprego, os preços, o crédito, o dinheiro guardado ou o que o governo cobra ou paga), e quanto, pela tabela de tradução?
 5. Por que caminho a decisão chega ao objetivo, e o que a evidência diz desse caminho? O caminho e a força da evidência vêm só da biblioteca, com a nota de força e o estudo que discorda. Escolher o estudo depois de saber a decisão é o caminho mais curto para o viés, porque quase sempre existe um estudo para cada lado.
 6. O que aconteceu das outras vezes? Decisões do mesmo tipo no Brasil desde 2002, em todos os governos, contadas por episódio e não por mês (`src/conta.py episodios`, `pausas` e `ciclos`), porque um episódio longo não vale mais que um curto. Sem casos parecidos, o texto diz isso e não dá chance.
 7. Dá certo se, dá errado se: até duas condições de cada lado, cada uma com o sinal que a mostra e o corte, e o lado que os casos parecidos e a evidência deixam mais provável. Quando a evidência não deixa dizer, o texto diz que ainda não dá para dizer.
 8. Quem ganha, quem paga e quando; a melhor objeção de cada lado, com o número dela; e o espelho, a mesma régua numa decisão parecida de outro governo, para mostrar que o critério não muda com quem decide.
 
-Duas regras valem para todas. A decisão é julgada só com o que se sabia no dia, porque o dado revisado depois muda o julgamento (as contas do site com as séries já cortam no dia). E o site faz a análise do fato e para aí: não guarda placar de acertos, não volta depois para conferir e nunca diz que a decisão acertou, que errou ou o que o decisor deveria fazer.
-
-No fato do dia de 100 palavras, a decisão leva o objetivo que quem decidiu escreveu e a condição principal, que o editor-chefe passa no curto. Nos resumos da semana e do mês, a decisão citada leva quem decidiu, com que poder e o objetivo declarado.
-
-## A vida da leitora
-
-O site acompanha o risco de recessão e o que ele muda na vida de quem lê, e por isso a pesquisa sempre chega à vida da leitora, com o tamanho. A regra de cada tradução está na tabela de tradução ([TRADUCAO.md](TRADUCAO.md)), escrita antes e igual para qualquer governo; o jeito de escrever, no PERSONA.md, em "O que a notícia muda na vida".
-
-- **As traduções do dia já estão no caderno.** O código roda as traduções da tabela que não dependem da notícia (os preços, o dólar dos últimos 12 meses, o juro de cada tipo de crédito, o dinheiro guardado, o salário mínimo e o INSS, a renda e o emprego) e põe cada uma no caderno como linha de conta, a partir de c101. A pesquisa roda as que dependem da notícia, com o número que a fonte deu: `traduz parcela` com o juro novo do financiamento, `traduz dolar` com a alta do dia, `calc` para dividir o valor de um imposto ou benefício pelas pessoas a quem ele vale.
-- **A tradução tem cinco partes**: o que muda, para que lado, quanto, quando e para quem. Quando a tabela não tem regra para o caso, a pesquisa diz a direção e quem decide o tamanho, e diz em "o que falta" a regra que faltou.
-- **"Nada muda agora" é resposta**, quando é verdade, com o porquê e com o que faria mudar. A leitora não é criança: a frase diz o mecanismo com precisão, sem explicar o que é salário ou parcela.
-- **As três famílias de referência**: quem vive do salário mínimo ou da aposentadoria do INSS, quem tem financiamento e cartão, e quem tem dinheiro guardado. O editor-chefe escolhe só as que o fato atinge, quase sempre uma ou duas, cada uma com o número dela; quando quem sente depende do que a pessoa compra ou do trabalho que faz, ele diz para quem vale, sem as famílias. A mesma notícia pode fazer uma família perder e outra ganhar, e o texto mostra as duas sem dizer qual pesa mais.
-- **Na leitura a fundo**, as famílias entram no texto corrido, num ou dois parágrafos com o número de cada uma, no ponto em que o raciocínio chega à vida da leitora. Nas 100 palavras, cabe no máximo uma oração sobre elas.
-- **Sem conselho.** O texto diz o que muda, nunca o que fazer com o dinheiro.
+Duas regras valem para todas. A decisão é julgada só com o que se sabia no dia, porque o dado revisado depois muda o julgamento (as contas do site com as séries já cortam no dia). E o site faz a análise e para aí: não guarda placar de acertos, não volta depois para conferir e nunca diz que a decisão acertou, que errou ou o que o decisor deveria fazer. Nos resumos da semana e do mês, a decisão citada leva quem decidiu, com que poder e o objetivo declarado.
 
 ## O caderno
 
@@ -86,32 +87,34 @@ Cada número e cada fato que vai para o texto tem uma linha no caderno, de um de
 - **site**: um dado que o site já mostra, dos dados do dia que a pesquisa recebe. Um fato da memória do momento não é dado do site: a conferência o procura no jornal que a memória guardou.
 - **biblioteca**: uma afirmação da biblioteca de evidência, com o estudo, o link dele e o trecho copiado da entrada. A conferência procura o trecho na biblioteca, que foi escrita e conferida antes; a pesquisa do dia não acrescenta estudo a ela.
 
-Copie o número como a fonte escreve, sem arredondar diferente. Fato sem linha no caderno não vai para o texto. Prefira o documento oficial (Banco Central, IBGE, Tesouro, Congresso) à notícia sobre ele, e notícia de jornal a texto de opinião.
+Copie o número como a fonte escreve, sem arredondar diferente. Fato sem linha no caderno não vai para o texto, a não ser que esteja na ficha da história, nas metas ou nos dados do site. Prefira o documento oficial (Banco Central, IBGE, Tesouro, Congresso, Diário Oficial) à notícia sobre ele, e notícia de jornal a texto de opinião. Nada depois do dia do texto entra.
 
 ## Como escrever
 
-- Um texto corrido, de 800 a 1.500 palavras, que segue a ordem do pensamento. Nada de formulário com as mesmas partes todo dia.
-- Até 3 intertítulos, e cada um é uma frase que diz a ideia da parte ("Das 10 vezes em que o Banco Central parou de cortar, 7 terminaram em alta"), nunca um rótulo ("Contexto", "O que está em jogo").
-- A tese aparece nos dois primeiros parágrafos, com o que a sustenta e sem copiar as frases do fato do dia, que já a disse numa frase, e o resto do texto a sustenta: a vez parecida no passado, a conta, o mundo e a política em volta, a melhor objeção e o que desmentiria a tese.
-- A melhor objeção entra com honestidade, com quem discorda e por quê. Diga também quão forte é a evidência: poucos casos são poucos casos, e uma correlação não prova a causa.
-- O texto passa pela vida da leitora, com as famílias que o fato atinge e o número de cada uma, e termina no e daí para ela. Ele não promete conferir, acompanhar nem testar nada depois: o site faz a análise do dia e para aí. Pode dizer, como fato, quando sai o próximo dado do assunto.
+- Um texto corrido que segue a ordem do argumento, com parágrafos de 2 a 4 frases. Nada de formulário com as mesmas partes todo dia, nem lista com marcadores.
+- O título é a ideia do texto numa frase afirmativa de até 90 caracteres, sem pergunta e sem dois-pontos. O título e o primeiro parágrafo se entendem sozinhos, num print.
+- Num texto de mais de 450 palavras, até 2 intertítulos, cada um uma frase que diz a ideia da parte, nunca um rótulo ("Contexto", "O que está em jogo").
 - Siga o jeito de escrever do PERSONA.md: frase completa, causa e efeito em ordem, quem faz o quê e para quem, comparação que diz o mês, termo técnico sem definição (o site liga à Wikipédia), sigla por extenso ou com link e nada de fórmula de efeito.
 - Faça o teste da troca: com outro governo no poder, a frase sairia igual? Diga o mecanismo e de quem é a decisão, nunca o lado. Use o cargo (o presidente, o ministro da Fazenda, o presidente do Banco Central), nunca o nome de pessoa ou de partido.
-- Não diga à leitora o que fazer com o dinheiro dela.
-- Marque `[c3]` logo depois da frase que usa a linha c3 do caderno. Na página, as marcas somem e viram a lista de fontes do fim.
+- O texto não fala da pesquisa, do caderno nem da revisão, e não promete conferir, acompanhar nem voltar ao assunto. Pode dizer, como fato, quando sai o próximo dado ou a próxima decisão.
+- Marque `[c3]` logo depois da frase que usa a linha c3 do caderno. Na página, as marcas somem e viram a linha "De onde vêm os números", logo abaixo do texto.
 
-## Até onde ir
+## A revisão
 
-Todo fato do dia tem leitura a fundo, porque a leitora conta com ela todo dia. O tamanho do texto é o tamanho do achado, e um texto longo sem achado gasta o tempo de quem lê. Por isso, quando depois de duas voltas de pesquisa nenhuma tese passa nos quatro testes, o editor-chefe aprova a tese menor que o caderno sustenta. Ele tira da tese da pesquisa o número fraco e a parte sem linha no caderno, e fica com o que ainda muda algo para a leitora: o caminho do fato até a vida dela, quem decide cada parte e quando, a vez parecida no passado e o que ainda não se sabe, com o porquê. A tese menor fala do fato do dia com os números do caderno, e não pode ser mecanismo de livro nem resumo da notícia. Ela passa nos testes "está no caderno" e "pode estar errada", no da decisão quando ele vale e no teste da troca, e o texto dela fica perto das 800 palavras.
+O revisor lê o rascunho como três leitores e devolve objeções, sem reescrever: quem reescreve é a redação, porque revisor que reescreve é de onde vem a cara de IA.
 
-Um exemplo, de 9/11/2026. O petróleo reabriu em leve queda, e a pesquisa propôs que a queda do barril não alivia a bomba, porque parte do preço estava represada. O editor-chefe não aprovou, porque a defasagem medida era de antes de duas quedas do barril e o repasse de 10% na gasolina era uma conta hipotética. A tese menor fica com o que o caderno sustenta: o preço do diesel na bomba depende hoje de duas decisões com data, a subvenção que o governo renovou por 30 dias em 27/10 e o reajuste da Petrobras, e não do barril do dia, e a última medida da diferença para o preço lá fora é de 23/10, antes de duas quedas do barril. O exemplo mostra o caminho, e não a tese a usar em outro dia.
+- **A leitora**: consegue repetir cada número a um sócio? As duas pontas de cada comparação estão na mesma unidade? Sabe por que o fato aconteceu e quem decidiu? Dá para ver o que é dado, o que é previsão e o que é opinião? Alguma frase soa como molde ou pula do argumento para a vida dela?
+- **Quem defende quem decidiu**: a régua é a da regra, com a margem e os descontos da meta? O motivo oficial está no texto? Algum número foi escolhido para pender para um lado?
+- **Quem critica quem decidiu**: o texto aceitou promessa como fato? Faltou o custo, o prazo ou a conta de quem discorda, como a IFI ou os bancos (Focus)?
 
-O editor-chefe também diz se a leitora precisaria de uma página do básico que o site ainda não tem; a rodada só avisa o editor do site, que decide se a página sai. O trabalho de cada dia tem limite de uns 30 minutos para a pesquisa, antes do post, e outros 35 para a redação e a conferência, depois dele. Se a leitura a fundo falhar, a rodada tenta de novo, e se o fato do dia ainda ficar sem ela, o editor do site recebe um aviso no mesmo dia.
+As duas últimas cabeças fazem juntas o teste da troca. O revisor também confere as regras do site e pode pesquisar, para trazer o dado e não só apontar a falta: o que ele acha entra no caderno, com o documento. A redação responde às objeções, e a segunda volta só confere se elas foram respondidas e se a reescrita estragou algo. O que sobrar sem resposta sai do texto ou entra como dúvida dita ("o governo não publicou o custo"). São no máximo duas voltas.
 
 ## A conferência
 
-- O código confere cada número do texto contra o caderno, roda de novo cada conta e abre cada documento para achar o trecho (no Mac, que tem a internet livre). A leitura a fundo feita na nuvem, que não abre as fontes, é conferida de novo na rodada seguinte do Mac, e a frase que se apoia numa fonte que não confere sai do texto.
-- A conferência da IA lê cada frase contra as linhas que ela marca e confere a força das conclusões. "Sempre", "nunca" e "vai" só com evidência que aguenta: com 7 casos, o texto diz "nas 7 vezes desde 2002", e não "sempre".
-- A conferência também refaz o teste da troca e procura conselho sobre dinheiro, juízo sobre quem decidiu ("acertou", "errou", "deveria") e promessa de conferir depois.
-- A linha da biblioteca só vale se o trecho estiver na biblioteca de evidência, com os mesmos números.
-- Depois, o editor de estilo (`src/edita_texto.py`) passa o texto pelo PERSONA.md, sem mudar fato nem número.
+- O código confere cada número do texto contra o caderno, a ficha, as metas e os dados do site, roda de novo cada conta e abre cada documento para achar o trecho (no Mac, que tem a internet livre). O texto feito na nuvem, que não abre as fontes, é conferido de novo na rodada seguinte do Mac, e a frase que se apoia numa fonte que não confere sai do texto.
+- O código confere também o tamanho, os intertítulos, as palavras que o site trocou, as siglas, os nomes de pessoa e de partido, a previsão de recessão e a promessa de conferir depois. Ele avisa quando uma frase compara reais com % do PIB, quando um número de meta não está na ficha das metas, quando a comparação com a meta não diz a margem e quando o texto fecha com "nada muda" dois dias seguidos.
+- A frase que ainda tem número sem linha que confira sai do texto no fim.
+
+## Até onde ir
+
+A rodada das 05h45 tem uns 25 minutos para a pesquisa, o texto e as duas voltas de revisão, para o texto sair no site e no e-mail por volta das 6h. Sem tempo para a pesquisa, o texto sai da ficha da história e dos dados do site. Se o texto falhar, o `src/fundo.py --hoje` tenta de novo no mesmo `run.sh`, e se o dia ainda ficar sem texto, o editor do site recebe um aviso. A pesquisa também diz se a leitora precisaria de uma página do básico que o site ainda não tem; a rodada só avisa o editor do site, que decide se a página sai.

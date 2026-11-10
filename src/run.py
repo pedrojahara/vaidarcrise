@@ -1,16 +1,17 @@
 """A atualização do dia: calcula a direção do risco, lê as manchetes do dia anterior, escreve o post e gera o site.
 
-O post muda de tipo com o dia (src/escreve_post.py): fato do dia de segunda a sábado, resumo da semana
+O post muda de tipo com o dia (src/escreve_post.py): texto do dia de segunda a sábado, resumo da semana
 aos domingos e resumo do mês no primeiro domingo do mês. É sempre um post por dia, nesta mesma atualização.
 
 Uso: python src/run.py             (atualização do dia; não faz nada se já houver uma hoje)
      python src/run.py --coletar   (só junta manchetes ao acervo, sem LLM e sem publicar)
      python src/run.py --forcar    (atualiza mesmo que já haja uma hoje)
      python src/run.py --sem-llm   (só dados)
-     python src/run.py --sem-pesquisa (o fato do dia sai sem a pesquisa do dia antes; a leitura a fundo faz tudo depois)
+     python src/run.py --sem-pesquisa (o texto do dia sai da ficha da história e dos dados, sem a pesquisa)
 
-No fato do dia, a pesquisa do dia (src/fundo.py, pensar) roda antes do post, e o mesmo caderno de fontes serve
-às 100 palavras e à leitura a fundo, escrita depois do post (src/fundo.py --hoje, no run.sh).
+O texto do dia é um argumento sobre a história em andamento que mais andou ontem: o código escolhe a história pela
+soma das notícias (src/pauta.py, CARTA_EDITORIAL.md), e src/fundo.py pesquisa, escreve, revisa com três leitores e
+confere o texto (guia em FUNDO.md). Se ele não sair aqui, src/fundo.py --hoje, no run.sh, tenta de novo.
 
 Os feeds de alguns jornais guardam só as 10 últimas manchetes. A coleta de hora em
 hora junta tudo num acervo local, e a atualização da manhã (05h45) lê o dia anterior inteiro.
@@ -33,7 +34,6 @@ import calendario  # noqa: E402
 import classify_news  # noqa: E402
 import direcao  # noqa: E402
 import dossie as dossie_mod  # noqa: E402
-import editora  # noqa: E402
 import escreve_post  # noqa: E402
 import fetch_data  # noqa: E402
 import fetch_news  # noqa: E402
@@ -225,11 +225,12 @@ def main() -> dict | None:
                                           "ja_no_preco", "porque")},
                     # Quem decidiu, o tipo de decisão e o objetivo declarado (src/decisoes.py).
                     **{k: ev.get(k, d) for k, d in (("decisor", "nenhum"), ("instrumento", "nenhum"), ("objetivo", ""))},
-                    # O que o fato muda na vida de quem lê (a pauta do fato do dia usa, src/pauta.py).
-                    "vida": ev.get("vida"),
+                    # De que história o fato é um passo, e o que muda o peso dele na soma (src/pauta.py).
+                    **{k: ev.get(k, d) for k, d in (("historia", "nova"), ("tema_novo", ""), ("marco", False),
+                                                    ("previsao_virou", False), ("sem_medida", False))},
                     "chance_aprovacao": ev["chance_aprovacao"] if ev["estagio"] == "em_votacao" else None,
                     "veiculos": veiculos, "fontes": fontes}
-            # Quantas manchetes e jornais deram o fato (todas, não só as 6 citadas): a pauta do fato do dia usa.
+            # Quantas manchetes e jornais deram o fato (todas, não só as 6 citadas): a pauta usa no empate.
             novo["cobertura"] = pauta_mod.cobertura([*ev["noticia_ids"], *ev.get("outras_ids", [])], por_id, fontes)
             novo["pontos"] = model.efeito(novo, cfg)
             novos.append(novo)
@@ -260,17 +261,15 @@ def main() -> dict | None:
         "revisao_texto": {"classificacao": revisa_texto.problemas_classificacao(llm["saida"]) if llm["ok"] else []},
     }
 
-    # 4. A pauta do fato do dia: os degraus dão a escolha padrão (src/pauta.py), e a IA editora (src/editora.py)
-    # só sai dela por um motivo da lista fechada da carta editorial (CARTA_EDITORIAL.md).
+    # 4. A pauta: a história em andamento que mais andou ontem, pela soma das notícias (src/pauta.py), sem IA.
     if llm["ok"]:
-        pt = pauta_mod.montar(rodada, ant, {e["id"]: e for e in todos}, cfg, calendario.carregar(), por_id)
-        if escreve_post.tipo_do_dia(hoje) == "dia":
-            pt = editora.escolher(pt, rodada, cfg, editora.fatos_anteriores(todas_r, hoje), cesta)
-        else:
-            pt = {**pt, "final": pt["padrao"], "mesma_historia": [], "cuidados": []}
+        pt = pauta_mod.montar(rodada, ant, {e["id"]: e for e in todos}, cfg, calendario.carregar(), por_id,
+                              seguidas=pauta_mod.historias_seguidas(todas_r, hoje.isoformat()))
         rodada["pauta"] = pt
-        print(f"pauta: degrau {pt['degrau']} ({pt['motivo']}), padrão {pt['padrao']}, final {pt['final']}: "
-              f"{pauta_mod.titulo_escolha(pt)} | editora: {(pt.get('editora') or {}).get('conferencia', 'não rodou')}")
+        esc = pt["escolha"]
+        print(f"pauta: {esc['titulo'] or 'nenhuma história'} ({esc['pontos']}): {esc['motivo']}"
+              + (f" | segunda: {esc['segunda']}" if esc.get("segunda") else "")
+              + (f" | temas esperando: {', '.join(x['tema'] for x in pt['temas_esperando'])}" if pt["temas_esperando"] else ""))
 
     post = {"ok": False, "meta": [{"erro": "pulado: sem leitura de notícias"}]}
     if llm["ok"]:
@@ -280,37 +279,28 @@ def main() -> dict | None:
         corte = (hoje - dt.timedelta(days=45)).isoformat()
         anteriores = [r for r in todas_r if r["id"][:10] >= corte]
         evs = {e["id"]: e for e in todos}
-        # 5. No fato do dia, a pesquisa vem antes do post (src/fundo.py, pensar): a mesma pesquisa e o mesmo
-        # editor-chefe servem às 100 palavras (o porquê e o e daí) e à leitura a fundo, que é escrita depois do post
-        # (fundo.py --hoje, no segundo push do run.sh). Sem a pesquisa, o post sai como antes, só com os dados.
-        pensado, porque = None, None
-        pt = rodada.get("pauta") or {}
-        if (escreve_post.tipo_do_dia(hoje) == "dia" and pt.get("final", pt.get("padrao")) is not None
-                and not args.sem_pesquisa):
+        # 5. O texto do dia sai de src/fundo.py: pesquisa da história, um texto, o revisor de três leitores e a
+        # conferência do código. Os resumos da semana e do mês saem de src/escreve_post.py.
+        avisos_pauta: list[str] = []
+        if escreve_post.tipo_do_dia(hoje) == "dia":
+            import fundo
             try:
-                import fundo
                 cx = escreve_post.contexto(rodada, cfg, datas, evs, ant, "dia", anteriores, snap)
-                pensado = fundo.pensar(rodada, cx, limite_min=float(os.environ.get("VDC_PESQUISA_MIN", "30")))
-                porque = fundo.para_o_post(pensado)
-                print(f"pesquisa do dia: {pensado.get('etapa') or ('sem achado' if pensado.get('sem_achado') else 'erro')}"
-                      f" | {pensado.get('erro') or pensado.get('tese', '')[:120]} | porquê: {'sim' if porque else 'não'}")
+                t = fundo.fazer(rodada, cx, limite_min=float(os.environ.get("VDC_TEXTO_MIN", "25")),
+                                pesquisa_ok=not args.sem_pesquisa)
+                post = fundo.post_do_texto(t)
             except Exception as ex:  # noqa: BLE001
-                print(f"aviso: a pesquisa do dia falhou ({ex!r}); o post sai só com os dados")
-            if porque is None:
-                # Sem a pesquisa, o post ainda termina na vida da leitora, com as contas da tabela de tradução.
-                try:
-                    import fundo
-                    porque = fundo.so_traducoes(hoje)
-                except Exception as ex:  # noqa: BLE001
-                    print(f"aviso: as traduções do dia falharam ({ex!r})")
-        post = escreve_post.escrever(rodada, cfg, datas, eventos=evs, anterior=ant, rodadas=anteriores, snap=snap,
-                                     porque=porque)
-        if pensado is not None:
-            post["fundo"] = pensado
-            if pensado.get("etapa") == "pensado":
-                fundo.ligar(post, pensado)
-        print(f"post ({post.get('tipo', 'dia')}):", post.get("titulo") if post["ok"] else f"falhou: {post.get('erro') or post['meta'][-1].get('erro')}",
-              "| problemas:", post.get("problemas"), "| teste do porquê:", (post.get("teste") or {}).get("ok"))
+                post = {"ok": False, "tipo": "dia", "erro": f"o texto do dia falhou: {ex!r}"[:300], "meta": []}
+            try:
+                avisos_pauta = pauta_mod.abrir_historias(rodada.get("pauta") or {}, hoje.isoformat())
+            except Exception as ex:  # noqa: BLE001
+                print(f"aviso: a história nova não foi aberta ({ex!r})")
+            print("texto do dia:", post.get("titulo") if post["ok"] else f"falhou: {post.get('erro')}",
+                  f"| {(post.get('pesquisa') or {}).get('duracao_s', '?')} s")
+        else:
+            post = escreve_post.escrever(rodada, cfg, datas, eventos=evs, anterior=ant, rodadas=anteriores, snap=snap)
+            print(f"post ({post.get('tipo')}):", post.get("titulo") if post["ok"] else
+                  f"falhou: {post.get('erro') or post['meta'][-1].get('erro')}", "| problemas:", post.get("problemas"))
     rodada["post"] = post
     # O site não cria página de pergunta sozinho (decisão do Pedro em 8/11/2026): quando sente falta de uma, a rodada
     # grava o aviso no registro do dia e o run.sh mostra no Mac. O Pedro decide.
@@ -320,6 +310,7 @@ def main() -> dict | None:
     except Exception as ex:  # noqa: BLE001
         avisos = []
         print(f"aviso: a conta da página que falta não rodou ({ex!r})")
+    avisos = [*avisos_pauta, *avisos] if llm["ok"] else avisos
     if avisos:
         rodada["avisos_ao_pedro"] = avisos
         for a in avisos:

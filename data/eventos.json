@@ -2735,11 +2735,6 @@
   "fator": "juro",
   "direcao": 1,
   "magnitude": 2,
-  "vida": {
-   "tamanho": 2,
-   "porta": "credito",
-   "quem": "quem pede financiamento, usa cartão ou tem dívida com juro variável e quem tem empresa que toma crédito"
-  },
   "ja_no_preco": true,
   "porque": "Com a Selic parada em 13,75%, os bancos seguem cobrando caro das pessoas e das empresas, o que segura consumo e investimento. O Banco Central subiu a previsão do IPCA de 2026 para 5,6%.",
   "chance_aprovacao": null,
@@ -2799,7 +2794,12 @@
     "Poder360",
     "g1"
    ]
-  }
+  },
+  "historia": "juro_inflacao",
+  "marco": true,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261105-02",
@@ -2813,11 +2813,6 @@
   "fator": "emprego",
   "direcao": 1,
   "magnitude": 2,
-  "vida": {
-   "tamanho": 2,
-   "porta": "emprego",
-   "quem": "quem procura vaga com carteira assinada e trabalhadores de setores que contratam menos, como o comércio"
-  },
   "ja_no_preco": false,
   "porque": "As empresas abriram 43% menos vagas que em setembro de 2025, sinal de que o juro alto já freia o emprego e, com ele, a renda que sustenta o consumo das famílias.",
   "chance_aprovacao": null,
@@ -2878,7 +2873,12 @@
     "Poder360",
     "g1"
    ]
-  }
+  },
+  "historia": "ritmo_emprego",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261105-03",
@@ -2892,11 +2892,6 @@
   "fator": "contas",
   "direcao": -1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 1,
-   "porta": "governo",
-   "quem": "quem recebe benefícios do governo ou depende de gasto público, se o corte sair do papel"
-  },
   "ja_no_preco": false,
   "porque": "Se o corte de gastos vier com números, o governo tende a pagar juro menor para pegar dinheiro emprestado, o que abre espaço para a Selic voltar a cair. As medidas ainda não foram detalhadas.",
   "chance_aprovacao": null,
@@ -2932,7 +2927,12 @@
     "Folha",
     "Valor"
    ]
-  }
+  },
+  "historia": "contas_governo",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": true,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261105-04",
@@ -2946,11 +2946,6 @@
   "fator": "mercado",
   "direcao": -1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 0,
-   "porta": "nenhuma",
-   "quem": ""
-  },
   "ja_no_preco": false,
   "porque": "A melhora veio de fora, com o alívio após as eleições nos EUA, e da espera pelo anúncio sobre as contas. Juro futuro menor barateia o crédito de longo prazo para empresas e famílias.",
   "chance_aprovacao": null,
@@ -3003,7 +2998,12 @@
     "Valor",
     "g1"
    ]
-  }
+  },
+  "historia": "desconfianca_eleicao",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261105-05",
@@ -3017,11 +3017,6 @@
   "fator": "externo",
   "direcao": -1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 1,
-   "porta": "emprego",
-   "quem": "trabalhadores e empresas de setores que exportam para os EUA, se as tarifas forem reduzidas"
-  },
   "ja_no_preco": false,
   "porque": "As tarifas dos EUA sobre produtos brasileiros seguem em vigor, mas o novo Congresso pode limitar o presidente americano. Os EUA devem mandar proposta sobre tarifas até a próxima semana.",
   "chance_aprovacao": null,
@@ -3081,7 +3076,12 @@
     "Valor",
     "g1"
    ]
-  }
+  },
+  "historia": "tarifas_eua",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261105-06",
@@ -3095,11 +3095,6 @@
   "fator": "externo",
   "direcao": -1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 1,
-   "porta": "precos",
-   "quem": "quem abastece o carro e quem paga frete embutido no preço dos produtos, se a queda do petróleo chegar às bombas"
-  },
   "ja_no_preco": false,
   "porque": "O petróleo ficou mais barato lá fora, o que alivia o preço do diesel e da gasolina aqui, ajuda os preços a subirem mais devagar e dá margem para a Selic cair.",
   "chance_aprovacao": null,
@@ -3134,7 +3129,12 @@
     "InfoMoney",
     "Valor"
    ]
-  }
+  },
+  "historia": "guerra_petroleo",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261105-07",
@@ -3148,11 +3148,6 @@
   "fator": "atividade",
   "direcao": -1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 0,
-   "porta": "nenhuma",
-   "quem": ""
-  },
   "ja_no_preco": false,
   "porque": "A federação das revendedoras esperava alta de 8,6% e agora vê 12,8%. Mais carros vendidos sustentam a indústria e o comércio mesmo com juro alto.",
   "chance_aprovacao": null,
@@ -3174,7 +3169,12 @@
    "jornais": [
     "Agência Brasil"
    ]
-  }
+  },
+  "historia": "ritmo_emprego",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261105-08",
@@ -3188,11 +3188,6 @@
   "fator": "juro",
   "direcao": 1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 2,
-   "porta": "precos",
-   "quem": "quem compra pão, café e açúcar no mercado, sobretudo famílias de renda mais baixa"
-  },
   "ja_no_preco": false,
   "porque": "Com o real mais fraco desde a eleição, trigo importado, açúcar e café ficam mais caros aqui, o que faz os preços subirem mais rápido e afasta novos cortes da Selic.",
   "chance_aprovacao": null,
@@ -3213,7 +3208,12 @@
    "jornais": [
     "Folha"
    ]
-  }
+  },
+  "historia": "juro_inflacao",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261106-01",
@@ -3227,11 +3227,6 @@
   "fator": "atividade",
   "direcao": 1,
   "magnitude": 2,
-  "vida": {
-   "tamanho": 2,
-   "porta": "emprego",
-   "quem": "quem trabalha na indústria e depende de vagas e horas extras no setor"
-  },
   "ja_no_preco": false,
   "porque": "A indústria recuou 2,2% no terceiro trimestre contra o segundo, puxada por máquinas e equipamentos, o que mostra menos investimento das empresas e pesa no PIB do trimestre.",
   "chance_aprovacao": null,
@@ -3293,7 +3288,12 @@
     "Poder360",
     "Valor"
    ]
-  }
+  },
+  "historia": "ritmo_emprego",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261106-02",
@@ -3307,11 +3307,6 @@
   "fator": "externo",
   "direcao": 1,
   "magnitude": 2,
-  "vida": {
-   "tamanho": 0,
-   "porta": "nenhuma",
-   "quem": ""
-  },
   "ja_no_preco": false,
   "porque": "Lá fora, o medo de menos investimento em inteligência artificial após a vitória democrata derrubou as bolsas, e investidores assustados tiram dinheiro de países como o Brasil.",
   "chance_aprovacao": null,
@@ -3404,7 +3399,12 @@
     "Valor",
     "g1"
    ]
-  }
+  },
+  "historia": "nova",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": "queda-das-acoes-de-tecnologia"
  },
  {
   "id": "ev-20261106-03",
@@ -3418,11 +3418,6 @@
   "fator": "mercado",
   "direcao": 1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 1,
-   "porta": "precos",
-   "quem": "quem compra produtos importados ou viaja para fora com o dólar mais caro"
-  },
   "ja_no_preco": false,
   "porque": "Desde a reeleição, estrangeiros tiraram R$ 8,4 bilhões da Bolsa brasileira, o que encarece o dólar e os importados e torna mais difícil para as empresas captar dinheiro para investir.",
   "chance_aprovacao": null,
@@ -3477,7 +3472,12 @@
     "Valor",
     "g1"
    ]
-  }
+  },
+  "historia": "desconfianca_eleicao",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261106-04",
@@ -3491,11 +3491,6 @@
   "fator": "contas",
   "direcao": -1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 0,
-   "porta": "nenhuma",
-   "quem": ""
-  },
   "ja_no_preco": false,
   "porque": "A fala do presidente fez as taxas do Tesouro recuarem no dia. Como a Fazenda só discute medidas após a viagem à COP, o juro que o governo paga para se financiar segue alto.",
   "chance_aprovacao": null,
@@ -3593,7 +3588,12 @@
     "Valor",
     "g1"
    ]
-  }
+  },
+  "historia": "contas_governo",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": true,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261106-05",
@@ -3607,11 +3607,6 @@
   "fator": "contas",
   "direcao": -1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 1,
-   "porta": "governo",
-   "quem": "quem depende de programas e serviços públicos que podem ter menos verba se o limite de gastos cair"
-  },
   "ja_no_preco": false,
   "porque": "Se a regra mudar, cada congelamento no Orçamento baixa o teto de gastos dos anos seguintes, o que ajuda a frear a dívida e pode abrir espaço para juros menores.",
   "chance_aprovacao": null,
@@ -3640,7 +3635,12 @@
     "Folha",
     "InfoMoney"
    ]
-  }
+  },
+  "historia": "contas_governo",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261106-06",
@@ -3654,11 +3654,6 @@
   "fator": "juro",
   "direcao": 1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 2,
-   "porta": "precos",
-   "quem": "quem compra cigarro, bebida alcoólica e carro, a partir de fevereiro"
-  },
   "ja_no_preco": false,
   "porque": "Cerveja vai pagar 4,2%, vinho 8% e cigarro 66,7%, o que tende a encarecer esses produtos e os carros em 2027 e a tirar um pouco do consumo das famílias.",
   "chance_aprovacao": null,
@@ -3738,7 +3733,12 @@
     "Valor",
     "g1"
    ]
-  }
+  },
+  "historia": "contas_governo",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261106-07",
@@ -3752,11 +3752,6 @@
   "fator": "mercado",
   "direcao": 1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 0,
-   "porta": "nenhuma",
-   "quem": ""
-  },
   "ja_no_preco": false,
   "porque": "Os ataques ao Banco Central fazem investidores temerem pressão política sobre os juros, o que sobe o dólar e o juro que o governo paga para pegar dinheiro por muitos anos.",
   "chance_aprovacao": null,
@@ -3785,7 +3780,12 @@
     "Valor",
     "g1"
    ]
-  }
+  },
+  "historia": "limitar_juro",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": true,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261107-01",
@@ -3799,11 +3799,6 @@
   "fator": "atividade",
   "direcao": 1,
   "magnitude": 2,
-  "vida": {
-   "tamanho": 1,
-   "porta": "precos",
-   "quem": "quem faz compras do mês e depende do emprego, se os preços subirem mais e a economia parar em 2027"
-  },
   "ja_no_preco": false,
   "porque": "Bancos e gestoras passam a esperar preços subindo mais rápido e economia quase parada em 2027, e a Genoa fala em recessão, o que leva empresas e famílias a adiar compras e investimentos.",
   "chance_aprovacao": null,
@@ -3851,7 +3846,12 @@
     "Folha",
     "Valor"
    ]
-  }
+  },
+  "historia": "ritmo_emprego",
+  "marco": false,
+  "previsao_virou": true,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261107-02",
@@ -3865,11 +3865,6 @@
   "fator": "externo",
   "direcao": -1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 0,
-   "porta": "nenhuma",
-   "quem": ""
-  },
   "ja_no_preco": false,
   "porque": "As exportações subiram 20% em outubro, puxadas por petróleo e minério, e a entrada de dólares ajuda a segurar a moeda americana e a sustentar a produção.",
   "chance_aprovacao": null,
@@ -3936,7 +3931,12 @@
     "Poder360",
     "g1"
    ]
-  }
+  },
+  "historia": "tarifas_eua",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261107-03",
@@ -3950,11 +3950,6 @@
   "fator": "externo",
   "direcao": 1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 0,
-   "porta": "nenhuma",
-   "quem": ""
-  },
   "ja_no_preco": false,
   "porque": "Com o emprego forte nos EUA, o mercado vê 80% de chance de o banco central de lá subir os juros, o que tira dinheiro de países como o Brasil e pressiona o dólar aqui.",
   "chance_aprovacao": null,
@@ -3997,7 +3992,12 @@
     "InfoMoney",
     "Valor"
    ]
-  }
+  },
+  "historia": "fed_juros_eua",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261107-04",
@@ -4011,11 +4011,6 @@
   "fator": "mercado",
   "direcao": -1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 0,
-   "porta": "nenhuma",
-   "quem": ""
-  },
   "ja_no_preco": false,
   "porque": "O juro que o governo paga para pegar dinheiro emprestado caiu com os sinais sobre as contas, o que alivia o custo do crédito, mas o dólar subiu 1,54% na semana.",
   "chance_aprovacao": null,
@@ -4062,7 +4057,12 @@
     "Valor",
     "g1"
    ]
-  }
+  },
+  "historia": "desconfianca_eleicao",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261107-05",
@@ -4076,11 +4076,6 @@
   "fator": "contas",
   "direcao": -1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 0,
-   "porta": "nenhuma",
-   "quem": ""
-  },
   "ja_no_preco": true,
   "porque": "A cobrança, que venceria em 7 de novembro, segue trazendo dinheiro para o governo enquanto o petróleo está caro por causa do conflito no Oriente Médio.",
   "chance_aprovacao": null,
@@ -4133,7 +4128,12 @@
     "Poder360",
     "g1"
    ]
-  }
+  },
+  "historia": "contas_governo",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261107-06",
@@ -4147,11 +4147,6 @@
   "fator": "contas",
   "direcao": 1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 0,
-   "porta": "nenhuma",
-   "quem": ""
-  },
   "ja_no_preco": false,
   "porque": "Governadores e prefeitos poderiam trocar dívidas nos últimos 120 dias de mandato, o que abre espaço para empurrar a conta para o próximo gestor e afrouxa as contas dos estados.",
   "chance_aprovacao": 0.6,
@@ -4172,7 +4167,12 @@
    "jornais": [
     "Poder360"
    ]
-  }
+  },
+  "historia": "contas_governo",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261108-01",
@@ -4223,11 +4223,6 @@
   "fator": "contas",
   "direcao": 1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 0,
-   "porta": "nenhuma",
-   "quem": ""
-  },
   "ja_no_preco": false,
   "porque": "O presidente falou em preocupação com a dívida, mas citou programas sociais que elevam o gasto e não disse como fará o ajuste. Sem medidas concretas, a dúvida sobre as contas e sobre o juro longo continua.",
   "decisor": "governo_federal",
@@ -4311,7 +4306,12 @@
     "Valor"
    ]
   },
-  "pontos": 0.3
+  "pontos": 0.3,
+  "historia": "contas_governo",
+  "marco": true,
+  "previsao_virou": false,
+  "sem_medida": true,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261109-02",
@@ -4322,11 +4322,6 @@
   "fator": "atividade",
   "direcao": 1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 1,
-   "porta": "emprego",
-   "quem": "quem trabalha seis dias por semana no comércio e nos serviços"
-  },
   "ja_no_preco": false,
   "porque": "Menos dias de trabalho por semana elevam o custo das empresas, sobretudo em comércio e serviços, que podem contratar menos. O Supremo Tribunal Federal faz audiência na terça-feira sobre o calendário da mudança.",
   "decisor": "governo_federal",
@@ -4362,7 +4357,12 @@
     "Valor"
    ]
   },
-  "pontos": 0.15
+  "pontos": 0.15,
+  "historia": "nova",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": "fim-da-escala-6x1"
  },
  {
   "id": "ev-20261109-03",
@@ -4373,11 +4373,6 @@
   "fator": "externo",
   "direcao": 1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 1,
-   "porta": "precos",
-   "quem": "quem abastece o carro e paga por frete e transporte"
-  },
   "ja_no_preco": true,
   "porque": "O petróleo segue caro lá fora por causa do conflito na região, e isso pressiona combustíveis e preços no Brasil. O Iraque diz ter chegado a um entendimento com os EUA para exportar por Ormuz, o que alivia um pouco a oferta.",
   "decisor": "nenhum",
@@ -4409,7 +4404,12 @@
     "Valor"
    ]
   },
-  "pontos": 0.5
+  "pontos": 0.5,
+  "historia": "guerra_petroleo",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261109-04",
@@ -4420,11 +4420,6 @@
   "fator": "externo",
   "direcao": 1,
   "magnitude": 1,
-  "vida": {
-   "tamanho": 1,
-   "porta": "renda",
-   "quem": "produtores de soja e quem trabalha no agronegócio exportador"
-  },
   "ja_no_preco": false,
   "porque": "A China é a maior compradora de soja do Brasil. Se produzir mais em casa, o país exporta menos para lá, e o agronegócio perde receita nos próximos anos.",
   "decisor": "fora",
@@ -4456,7 +4451,12 @@
     "g1"
    ]
   },
-  "pontos": 0.3
+  "pontos": 0.3,
+  "historia": "nova",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": "china-e-a-soja"
  },
  {
   "id": "ev-20261110-01",
@@ -4472,11 +4472,6 @@
   "decisor": "nenhum",
   "instrumento": "nenhum",
   "objetivo": "",
-  "vida": {
-   "tamanho": 1,
-   "porta": "precos",
-   "quem": "quem sente os preços e o juro altos por mais tempo, com o corte da Selic só em março"
-  },
   "chance_aprovacao": null,
   "veiculos": [
    "Agência Brasil",
@@ -4520,7 +4515,12 @@
     "g1"
    ]
   },
-  "pontos": 0.5
+  "pontos": 0.5,
+  "historia": "juro_inflacao",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261110-02",
@@ -4536,11 +4536,6 @@
   "decisor": "governo_federal",
   "instrumento": "gasto",
   "objetivo": "",
-  "vida": {
-   "tamanho": 2,
-   "porta": "governo",
-   "quem": "cerca de 15 milhões de famílias que recebem a recarga gratuita do botijão de gás"
-  },
   "chance_aprovacao": null,
   "veiculos": [
    "Agência Brasil",
@@ -4575,7 +4570,12 @@
     "g1"
    ]
   },
-  "pontos": 1.0
+  "pontos": 1.0,
+  "historia": "contas_governo",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261110-03",
@@ -4591,11 +4591,6 @@
   "decisor": "nenhum",
   "instrumento": "nenhum",
   "objetivo": "",
-  "vida": {
-   "tamanho": 0,
-   "porta": "nenhuma",
-   "quem": ""
-  },
   "chance_aprovacao": null,
   "veiculos": [
    "Poder360"
@@ -4614,7 +4609,12 @@
     "Poder360"
    ]
   },
-  "pontos": 0.5
+  "pontos": 0.5,
+  "historia": "contas_governo",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261110-04",
@@ -4630,11 +4630,6 @@
   "decisor": "nenhum",
   "instrumento": "nenhum",
   "objetivo": "",
-  "vida": {
-   "tamanho": 0,
-   "porta": "nenhuma",
-   "quem": ""
-  },
   "chance_aprovacao": null,
   "veiculos": [
    "Agência Brasil",
@@ -4670,7 +4665,12 @@
     "Valor"
    ]
   },
-  "pontos": -1.0
+  "pontos": -1.0,
+  "historia": "desconfianca_eleicao",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261110-05",
@@ -4686,11 +4686,6 @@
   "decisor": "nenhum",
   "instrumento": "nenhum",
   "objetivo": "",
-  "vida": {
-   "tamanho": 1,
-   "porta": "precos",
-   "quem": "quem abastece o carro e paga o frete embutido nos preços"
-  },
   "chance_aprovacao": null,
   "veiculos": [
    "InfoMoney",
@@ -4724,7 +4719,12 @@
     "Valor"
    ]
   },
-  "pontos": -1.0
+  "pontos": -1.0,
+  "historia": "guerra_petroleo",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261110-06",
@@ -4740,11 +4740,6 @@
   "decisor": "fora",
   "instrumento": "nenhum",
   "objetivo": "",
-  "vida": {
-   "tamanho": 0,
-   "porta": "nenhuma",
-   "quem": ""
-  },
   "chance_aprovacao": null,
   "veiculos": [
    "InfoMoney",
@@ -4781,7 +4776,12 @@
     "g1"
    ]
   },
-  "pontos": -1.0
+  "pontos": -1.0,
+  "historia": "tarifas_eua",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  },
  {
   "id": "ev-20261110-07",
@@ -4797,11 +4797,6 @@
   "decisor": "congresso",
   "instrumento": "credito_publico",
   "objetivo": "",
-  "vida": {
-   "tamanho": 1,
-   "porta": "credito",
-   "quem": "produtores rurais endividados que contam com a renegociação"
-  },
   "chance_aprovacao": 0.2,
   "veiculos": [
    "Folha",
@@ -4828,6 +4823,11 @@
     "InfoMoney"
    ]
   },
-  "pontos": -0.2
+  "pontos": -0.2,
+  "historia": "credito_inadimplencia",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "tema_novo": ""
  }
 ]

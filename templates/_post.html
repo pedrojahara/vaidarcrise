@@ -16,6 +16,7 @@
   {% for par in post.paragrafos %}<p>{{ par }}</p>{% endfor %}
   {% endif %}
   {% if post.corpo_html %}<div class="corpo">{{ post.corpo_html|safe }}</div>{% endif %}
+  {% if post.fontes %}<p class="fontes">De onde vêm os números: {% for x in post.fontes %}{% if x.url %}<a href="{{ x.url }}" rel="nofollow noopener">{{ x.quem }}</a>{% else %}{{ x.quem }}{% endif %}{{ '; ' if not loop.last else '.' }}{% endfor %}</p>{% endif %}
   {% if post.ponte %}<p class="basico"><span>{{ post.ponte.rotulo }}</span> <a href="{{ post.ponte.url }}">{{ post.ponte.texto }}</a></p>{% endif %}
   {% if post.fundo %}{% set f = post.fundo %}
   <details class="fundo"{% if permalink %} id="leitura"{% endif %}>
