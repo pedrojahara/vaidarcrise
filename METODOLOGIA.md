@@ -244,7 +244,7 @@ A prévia de link (`docs/causas/og.png`) e as versões dos desenhos para a pági
 
 ## Os posts
 
-É um post por dia, escrito na mesma atualização da manhã, que começa às 05h45 e publica por volta das 06h30, e o tipo muda com o dia ([`PERSONA.md`](https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md), "Os tipos de post"):
+É um post por dia, escrito na mesma atualização da manhã, que começa às 05h45 e publica por volta das 6h, e o tipo muda com o dia ([`PERSONA.md`](https://github.com/pedrojahara/vaidarcrise/blob/main/PERSONA.md), "Os tipos de post"):
 
 | Tipo | Quando | O que recebe | Tamanho |
 | --- | --- | --- | --- |

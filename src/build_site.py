@@ -32,7 +32,7 @@ MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "a
          "outubro", "novembro", "dezembro"]
 DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
 JORNAIS = "Folha, Valor, Estadão, g1, InfoMoney, Poder360, Agência Brasil e Gazeta do Povo"
-# Os tipos de post (PERSONA.md): o retrato, escrito à mão, fica fixo no topo; os outros saem da atualização das 06h30.
+# Os tipos de post (PERSONA.md): o retrato, escrito à mão, fica fixo no topo; os outros saem da atualização das 05h45.
 TIPOS_POST = {"dia": "Fato do dia", "semana": "Resumo da semana", "mes": "Resumo do mês", "retrato": "Retrato do Brasil"}
 # O blog é uma rolagem só, do post mais novo ao mais antigo: a página principal traz os primeiros, e o resto
 # chega aos poucos, de docs/posts/, enquanto a leitora rola.

@@ -47,7 +47,7 @@ No alto da página, a placa diz se o risco de recessão, que é o [PIB](https://
 
 A placa não diz quando a recessão vem, porque ninguém acerta essa data com segurança. Ela diz se as cinco pressões que costumam vir antes dela estão piorando ou melhorando. Cada pressão mostra também o número de agora ao lado do de três meses antes, com o mês de cada um, e diz como ele se compara com o passado.
 
-Todo dia, às 06h30, sai um post:
+Todo dia, por volta das 6h da manhã, sai um post:
 
 - **O fato do dia**, de segunda a sábado, conta uma notícia de ontem e o efeito dela no seu bolso.
 - **O resumo da semana**, no domingo, junta o que mudou e diz o que olhar nos dias seguintes.
