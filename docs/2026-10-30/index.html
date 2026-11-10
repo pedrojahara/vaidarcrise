@@ -416,6 +416,38 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
 </article>
 
     
+<section class="receba" aria-labelledby="receba-tit">
+  <h2 id="receba-tit">Receba o fato do dia no seu <span class="nq">e-mail</span></h2>
+  <p>Ele chega cedo, de segunda a sábado, e o resumo da semana chega aos domingos. Para sair, basta um toque no fim de qualquer <span class="nq">e-mail</span>.</p>
+  <form id="receba-f" method="post" action="https://inscricao.vaidarcrise.com.br/inscrever">
+    <label class="so-leitor" for="receba-email">Seu e-mail</label>
+    <input type="email" id="receba-email" name="email" required autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" maxlength="254" placeholder="Seu e-mail">
+    <button type="submit">Quero receber</button>
+    <div class="so-leitor" aria-hidden="true"><label for="receba-site">Deixe este campo em branco</label><input type="text" id="receba-site" name="site" tabindex="-1" autocomplete="off"></div>
+    <div class="r-robo" data-sitekey="0x4AAAAAAF7crznRGgQXMIqs"></div>
+  </form>
+  <p class="r-priv">A lista guarda só o endereço de <span class="nq">e-mail</span>. <a href="/privacidade/">Privacidade</a></p>
+</section>
+<script>
+(function(){
+  var f=document.getElementById("receba-f"),caixa=f.querySelector(".r-robo"),b=f.querySelector("button");
+  var pronto=false,quer=false,veio=false;
+  function manda(){if(quer)f.submit()}
+  function carrega(){
+    if(veio)return;veio=true;
+    window.recebaRobo=function(){turnstile.render(caixa,{sitekey:caixa.getAttribute("data-sitekey"),language:"pt-br",appearance:"interaction-only",callback:function(){pronto=true;manda()}})};
+    var s=document.createElement("script");s.src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=recebaRobo";s.async=true;document.head.appendChild(s);
+  }
+  f.addEventListener("focusin",carrega);
+  f.addEventListener("submit",function(e){
+    if(pronto)return;
+    e.preventDefault();quer=true;b.disabled=true;carrega();
+    /* Se a barreira não responder em 10 segundos, o pedido segue e a página /inscricao/ mostra a barreira. */
+    setTimeout(function(){if(!pronto)f.submit()},10000);
+  });
+})();
+</script>
+
     <section class="continua" aria-label="Posts anteriores">
       <h2>Posts anteriores</h2>
       <p class="mais" id="mais" data-depois="2026-10-30"><a href="/2026-10-29/">Carregar posts anteriores</a></p>
@@ -492,7 +524,7 @@ document.addEventListener("click",function(e){
 
 <footer class="pe"><div class="in">
   <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando. Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias da véspera dão o fato do dia, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
-  <p><a href="/privacidade/">Privacidade</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
+  <p><a href="/inscricao/">Receber por e-mail</a> | <a href="/privacidade/">Privacidade</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
 <script>
 // O menu Grandes perguntas fecha com um toque fora dele ou com Esc.
