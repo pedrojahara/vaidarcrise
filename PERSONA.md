@@ -4,41 +4,49 @@ Todo texto do site e do blog (posts, abas, títulos de evento, nota, imagem de c
 
 ## Em uma tela
 
-Escrevemos para um adulto de uns 35 a 45 anos, sem diploma universitário, que acompanha política pelo celular, tem lado (ou desconfia dos dois) e sente a economia no preço do mercado, na fatura do cartão e no emprego. Ele quer saber em 10 segundos: o risco de crise está subindo ou caindo, e o que isso muda para mim?
+Escrevemos para quem tem curso superior, trabalha como gestor numa empresa ou tem o próprio negócio e não estudou economia. Ela acompanha política, tem lado (ou desconfia dos dois) e sente a economia em três lugares: em casa, pela parcela e pelos preços; no trabalho, pelas vendas, pelo crédito e pelo custo; e no país. Todo dia ela ouve opinião sobre a economia, do jornal, do colega e do grupo de WhatsApp, mas não tem como separar sozinha o que é dado, o que é opinião e o que é boato. Ela quer saber, na primeira frase, se o risco de crise está subindo ou caindo e, nos minutos seguintes, o que os números sustentam e o que isso muda para a vida e para o trabalho dela.
 
 - **Resposta primeiro.** Para que lado anda o risco (subindo, igual ou caindo), em palavras, na primeira frase.
-- **Palavra de conversa.** Nada de economês. Sigla que ela não conhece vai por extenso ou com link.
+- **O dado separado da opinião.** O texto diz o que os números mostram, o que alguém acha e o que ainda não dá para saber, e deixa claro qual é qual. Uma ideia que corre no jornal, no mercado ou nos grupos é testada com os números, pela mesma régua para os dois lados.
+- **O argumento inteiro.** Ela aguenta e quer a corrente toda: o porquê, a comparação com outras vezes e o que pode dar errado. Texto raso e número sem fonte ela percebe na hora.
+- **Palavra de conversa.** Ela lê bem, mas não leu economia, por isso nada de economês, mesmo quando a palavra parece conhecida. Sigla que ela não conhece vai por extenso ou com link.
 - **Um número por ideia**, arredondado e sempre com comparação, dizendo o mês: "se compararmos com julho", contra o normal ou contra um ano atrás.
 - **Risco sem número:** subindo, igual ou caindo, nunca chance em porcentagem. Quando um risco precisa de número, em frequência: "1 chance em 10", nunca "quantil 10%".
 - **Mesma régua para os dois lados.** O texto sairia igual com outro governo no poder.
 - **Calma.** Sem alarme e sem consolo.
 - **Explicação por inteiro.** Frase completa, causa e efeito em ordem, com exemplo. Veja [O jeito de escrever do site](#o-jeito-de-escrever-do-site).
-- **Até a vida dela.** Todo fato termina no que muda para quem lê: o quê, para que lado, quanto, quando e para quem. Veja [O que a notícia muda na vida](#o-que-a-notícia-muda-na-vida).
+- **Até a vida e o trabalho dela.** Todo fato termina no que muda para quem lê, em casa ou no trabalho: o quê, para que lado, quanto, quando e para quem. Veja [O que a notícia muda na vida](#o-que-a-notícia-muda-na-vida).
 
-**Teste de todo texto:** dá para entender lendo só o título e a primeira frase, no celular, em pé no ônibus?
+**Teste de todo texto:** dá para entender lendo só o título e a primeira frase, no celular, entre uma reunião e outra? E quem leu até o fim consegue repetir o argumento a um sócio ou a um cliente, sem errar e sem tomar lado?
 
 ## Quem é
 
-O leitor é o brasileiro típico com um traço a mais: gosta de política. Esse traço pesa mais que a renda ou o estudo, porque ele chega ao site com lado.
+A leitora tem diploma e responsabilidade, mas não estudou economia. As duas pessoas abaixo são inventadas, e cada uma junta traços de leitores reais do site. O guia chama quem lê de "a leitora", e vale para as duas.
 
-> Patrícia, 38 anos, auxiliar administrativa em Contagem (MG). Terminou o ensino médio. A casa vive com uns R$ 5 mil por mês, para três pessoas. Usa a internet só pelo celular. Vê notícia no Instagram e no YouTube e recebe muita coisa no grupo da família no WhatsApp. Discute política, tem candidato e desconfia de jornal. Tem compra parcelada no cartão e um financiamento. Sabe que "o juro subiu", mas não sabe quem decide. Para ela, crise é perder o emprego ou o mercado ficar caro.
+> Carla, 44 anos, diretora comercial de uma empresa grande de serviços em São Paulo, formada em publicidade. Responde por uma meta de vendas, e a comissão dela e o emprego da equipe dependem de os clientes continuarem comprando. Paga o financiamento do apartamento e investe pelo aplicativo do banco. Lê o jornal pela manchete, recebe análise no LinkedIn e no grupo do trabalho e ouve nas reuniões que "o mercado está preocupado". Sabe o que é a Selic, mas não saberia dizer por que as contas do governo mexem no juro do financiamento dela.
+
+> Marcos, 47 anos, engenheiro, dono de uma empresa pequena que presta serviço para construtoras em Curitiba. Tem oito funcionários e decide todo ano se contrata, se pega empréstimo e quanto cobra. As construtoras que ele atende quase não lançaram obra nos últimos dois anos, e ele quer saber se isso vai melhorar. No grupo de empresários, ouve que o país "está virando 2015"; no jornal, lê outra coisa. Não tem como conferir quem tem razão.
+
+O que as duas têm em comum decide como o site escreve:
+
+- **Lê bem e decide com números**, porque trabalha com meta, margem, caixa e prazo. Entende porcentagem, juro de empréstimo e conta de empresa. Por isso aceita um texto mais longo quando ele traz um achado, e larga o texto que só repete a manchete.
+- **Não estudou economia.** Conhece as palavras da manchete (Selic, IPCA, PIB, dólar, déficit), mas não o mecanismo que liga uma à outra. Não sabe dizer por que o déficit do governo sobe o juro do financiamento, por que o PIB cresce enquanto o setor dela para nem se uma previsão de banco é fato.
+- **Recebe opinião demais e conta de menos.** Editorial, colunista, relatório de banco, analista do YouTube e grupo de WhatsApp chegam todo dia, cada um puxando para um lado. Falta quem teste a ideia com os números e diga o que é verdade, o que é exagero e o que ainda não dá para saber.
+- **Sente a economia em três lugares:** em casa (a parcela, os preços, o dinheiro guardado), no trabalho ou na empresa (as vendas, o crédito, o custo, a contratação) e no país. O texto que para no país, sem chegar aos outros dois, não serve a ela.
+- **Tem pouco tempo e lê pelo celular**: o e-mail de manhã, antes da primeira reunião, e o link que alguém mandou no grupo.
+- **Passa adiante o que lê**, para o sócio, o cliente e a família, e só manda o que não a deixa mal diante de quem recebe. Por isso o texto precisa estar certo e não pode ter lado.
 
 | Traço | Dado | Fonte |
 | --- | --- | --- |
-| Idade | Metade dos brasileiros tem menos de 35 anos (2022) | IBGE, Censo |
-| Estudo (25 anos ou mais) | 56% terminaram o ensino médio; 20,5% têm diploma universitário (2024) | IBGE, PNAD Educação |
-| Renda | R$ 2.264 por pessoa da casa, por mês, em média (2025) | IBGE, PNAD |
-| Leitura (15 a 64 anos) | 29% são analfabetos funcionais, 36% param no nível elementar, 10% são proficientes (2024) | Inaf |
-| Dívidas | 82% das famílias têm dívida; 30% têm conta atrasada (jul/2026) | CNC, Peic |
-| Internet | 60% dos usuários entram só pelo celular; 86% nas classes D e E (2024) | Cetic.br, TIC Domicílios |
-| Lado político | 40% se dizem petistas e 34%, bolsonaristas (dez/2025) | Datafolha |
-| O que mais preocupa | Crime (49%), corrupção (40%), saúde (38%) (fev/2026) | Ipsos |
+| Estudo (25 anos ou mais) | 20,5% têm diploma universitário (2024), e a leitora está nesse grupo | IBGE, PNAD Educação |
+| Leitura de quem chegou ao ensino superior | Cerca de 1 em 4 lê no nível proficiente (2024) | Inaf |
+| Lado político (todos os adultos) | 40% se dizem petistas e 34%, bolsonaristas (dez/2025) | Datafolha |
 
-**Ponto cego.** "Brasileiro médio" e "interessado em política" não são a mesma pessoa. Quem acha um site chamado "Vai dar crise?" tende a ter mais estudo que a média. Mesmo assim, escrever para o nível elementar é a escolha certa: texto claro não perde quem sabe mais, e quem sabe mais também prefere texto claro (o guia do GOV.UK cita 80% de preferência, maior entre especialistas). O contrário perde a maioria.
+**Ponto cego.** Escrever para quem tem diploma puxa o texto para o economês, que essa leitora também não lê. Mesmo entre quem chegou ao ensino superior, só cerca de 1 em 4 lê no nível proficiente (Inaf 2024), e quem sabe mais também prefere texto claro (o guia do GOV.UK cita 80% de preferência, maior entre especialistas). O que muda com a leitora nova é a profundidade, e a palavra continua a de conversa: ela quer o argumento inteiro, com o número, a comparação e o que pode dar errado, dito como se fala. Há ainda dois cuidados. A persona saiu de poucos leitores reais e precisa ser conferida com mais gente. E o texto claro continua servindo a quem recebe o link no grupo da família sem ter diploma.
 
 ## O que ela sabe de economia
 
-Ela entende economia pelo bolso, não pelo conceito. Sabe que inflação é o custo de vida subindo, mas só 1 em cada 7 adultos acerta uma conta de juro simples.
+Ela entende economia pela conta da empresa e pelo bolso, e não pelo conceito. Sabe o que é faturamento, custo, margem, caixa e dívida com o banco, e essa é a melhor ponte para explicar o país. Os números abaixo são da população inteira: a leitora tende a acertar mais que a média nas contas, mas as falhas que importam ao site, as do mecanismo, aparecem também em quem tem diploma.
 
 | Pergunta | Resultado | Fonte |
 | --- | --- | --- |
@@ -47,9 +55,9 @@ Ela entende economia pelo bolso, não pelo conceito. Sabe que inflação é o cu
 | Conta de juro simples | 14% acertam | BCB e FGC, 2023 |
 | Quem define a taxa de juros no Brasil | 46% não sabem ou não respondem | Quaest (ano não confirmado) |
 | O que é o arcabouço fiscal | 77% não sabem | PoderData |
-| Jovens de 15 anos abaixo do nível básico em educação financeira | 45% no Brasil, 18% na média da OCDE | OCDE, Pisa 2022 |
+| Quando o banco central sobe o juro, a inflação sobe ou desce? | Boa parte das famílias espera inflação maior; quase todos os especialistas esperam menor (Estados Unidos) | Andre e outros, 2022 |
 
-**Ela conhece a palavra, não o mecanismo.** "Inflação", "juro" e "dólar" são familiares. "Selic", "IPCA" e "PIB" ela reconhece, mas não sabe explicar. "Fiscal", "curva de juros", "IBC-Br" e "Focus" são opacos.
+**Ela conhece a palavra, não o mecanismo.** "Inflação", "juro", "dólar", "Selic", "IPCA", "PIB" e "déficit" ela lê toda semana na manchete, mas não sabe explicar o que liga um ao outro. "Arcabouço fiscal", "curva de juros", "juro real", "IBC-Br" e "Focus" ela já viu e não saberia usar.
 
 Confusões que o texto tem de prevenir:
 
@@ -59,12 +67,20 @@ Confusões que o texto tem de prevenir:
 - **Ponto não é por cento.** Selic de 15% para 13,75% caiu 1,25 ponto, não 1,25%.
 - **Recessão não é crise nem desemprego.** O site mede uma coisa: o PIB cair dois trimestres seguidos.
 - **"O mercado" não é uma pessoa nem um partido.** São bancos, fundos e empresas que emprestam e investem.
+- **Déficit não é dívida.** O déficit é quanto o governo gasta a mais do que arrecada num ano, como o prejuízo de uma empresa no ano; a dívida é tudo o que ele deve, a soma dos anos. Um gasto novo se compara com o déficit e com a meta do ano, e não com a dívida inteira.
+- **Previsão não é fato.** O Focus é a média do que os bancos esperam e muda toda semana, por isso "o mercado prevê" é a aposta de quem empresta dinheiro, e não um dado.
+- **Opinião não é dado.** Editorial, colunista e relatório de banco defendem uma leitura. O texto diz o que os números mostram e quanto da opinião eles sustentam.
+- **O país não é o setor dela.** O PIB pode crescer com a construção parada, porque o agro e os serviços crescem e compensam a queda da construção. A média esconde o setor, e o texto diz quando os dois andam diferente.
+- **O juro que pesa é o que sobra acima da inflação.** Uma Selic de 15% com inflação de 5% freia mais a economia que 15% com inflação de 10%, porque quem empresta ganha mais acima da inflação e quem pega emprestado paga mais.
+- **Um caso não é regra.** "Em 2014 foi assim, e veio a recessão" é um caso só. O texto diz quantas vezes o sinal apareceu e em quantas delas a recessão veio.
 
 **Ela sente a economia por seis portas:** a renda (o salário, a aposentadoria e o reajuste deles), o emprego, os preços (o mercado, a conta de luz, a gasolina, o aluguel), o crédito (a parcela, o juro do cartão e do financiamento), o dinheiro guardado (a poupança, o Tesouro) e o que o governo cobra ou paga (o imposto e o benefício). O dólar chega por duas delas, pelo preço dos importados (gasolina, eletrônico, viagem) e pelo juro. Todo número grande precisa de uma ponte para uma dessas portas: juro alto deixa o crédito caro, e com crédito caro a empresa contrata menos.
 
+**As mesmas portas passam pelo trabalho dela.** As vendas pagam a comissão e decidem se a empresa contrata ou demite, o que chega à renda e ao emprego. O crédito para a empresa e para o cliente chega pelo crédito, e o custo do insumo, do importado e do salário chega pelos preços. Quando a notícia entra pelo trabalho, o texto diz por qual porta ela entra e em que setor.
+
 ## Como ela se informa
 
-Ela se informa pelo celular, em rede social e vídeo, desconfia de notícia e foge dela quando cansa. A confiança dos brasileiros nas notícias caiu para 36% em 2026, a menor em 12 anos.
+Ela se informa pelo celular, entre uma tarefa e outra: a manchete do jornal, que muitas vezes não abre porque é paga, o LinkedIn, o podcast no carro, o vídeo de um analista e os grupos de WhatsApp do trabalho, dos sócios e da família. Recebe muita opinião e pouca conta, e desconfia de notícia. A confiança dos brasileiros nas notícias caiu para 36% em 2026, a menor em 12 anos.
 
 | Hábito | Dado | Fonte |
 | --- | --- | --- |
@@ -74,13 +90,13 @@ Ela se informa pelo celular, em rede social e vídeo, desconfia de notícia e fo
 | Rede social contra TV, como fonte semanal | Rede social 9 pontos à frente (2026) | Reuters Institute, 2026 |
 | Acompanha criadores e influenciadores de notícia | 33% (2026) | Reuters Institute, 2026 |
 | Redes mais usadas para notícia | YouTube e Instagram (37% cada) e WhatsApp (36%) (2025) | Reuters Institute, 2025 |
-| Lê jornal impresso | 10% (2025); eram 50% em 2013 | Reuters Institute, 2025 |
 | Lê a página palavra por palavra | 16%; 79% passam o olho (teste de 1997) | Nielsen |
 
-- **O primeiro contato é um print ou um link no WhatsApp.** O título e a imagem de compartilhamento têm de dizer para que lado anda o risco sozinhos, sem o resto da página. A linha embaixo do título, na prévia do link, é a primeira frase do post, por isso ela tem de dizer o fato e o porquê sem precisar das outras.
+- **O primeiro contato é o e-mail da manhã ou um link no WhatsApp.** O assunto do e-mail, o título e a imagem de compartilhamento têm de dizer sozinhos para que lado anda o risco, sem o resto da página. A linha embaixo do título, na prévia do link, é a primeira frase do post, por isso ela tem de dizer o fato e o porquê sem precisar das outras.
 - **A tela tem uns 7 cm de largura.** Um parágrafo de 3 linhas no computador vira 7 ou 8 no celular.
 - **Ela passa o olho.** A primeira palavra de cada parágrafo e de cada item carrega o assunto.
-- **Confiança se mostra, não se pede.** Cada número leva a fonte (IBGE, Banco Central) a um toque. Marca constante ganha mais confiança que "notícia" em geral.
+- **Confiança se mostra, não se pede.** Cada número leva a fonte (IBGE, Banco Central) a um toque. Ela confere, e um número errado basta para ela parar de mandar o site adiante. Marca constante ganha mais confiança que "notícia" em geral.
+- **Ela chega com a pergunta da semana na cabeça.** "Estamos virando 2015?", "o dólar vai a 7?", "a construção volta no ano que vem?". O texto que responde à pergunta que ela já tem, quando os dados respondem, vale mais que o que responde a uma pergunta que ela não fez.
 - **Notícia ruim em excesso afasta.** Quase metade já evita notícia. O texto termina com o que acompanhar e quando, o que dá controle em vez de medo.
 
 ## Como ela lê economia com a política na cabeça
@@ -89,6 +105,8 @@ Ela lê economia com lente de torcida, e os dois lados acham que o mesmo texto n
 
 - **Quase todo mundo tem lado.** 74% se dizem petistas ou bolsonaristas (Datafolha, dez/2025). Pela Quaest, cerca de um terço se diz independente. Os números mudam com a pergunta; o lado, não.
 - **Efeito da mídia hostil.** Torcedores dos dois lados veem o mesmo texto como enviesado contra si, e o efeito é mais forte em quem acompanha política de perto (Vallone, Ross e Lepper, 1985). É exatamente o nosso leitor.
+- **Estudo não tira o lado.** Num experimento com os mesmos dados, quem era melhor com números acertava mais quando o assunto era neutro, mas se dividia ainda mais pelo próprio lado quando o assunto era político (Kahan e outros, 2017, nos Estados Unidos). A leitora com diploma usa a habilidade para defender o que já pensa, por isso o texto mostra a conta e a régua na própria frase, em vez de pedir confiança.
+- **Cada roda tem a sua certeza.** No grupo de empresários corre "é 2015 de novo"; em outro grupo, "o mercado torce contra o governo". O texto testa as duas ideias com a mesma régua e diz o que os números mostram, o que eles contrariam e o que ainda não dá para saber, sem chamar nenhuma das duas de boato antes da conta.
 - **A divisão chega à imprensa.** No Brasil, esquerda e direita se informam por canais diferentes e julgam a cobertura de forma oposta (Reuters Institute, 2026).
 - **O que ela sente pode não bater com o dado.** Em julho de 2026, 66% disseram que a comida subiu no último mês (Quaest). Dizer "a economia vai bem" a quem sente o contrário perde o leitor. Comece pelo que ela sente e mostre o dado ao lado.
 
@@ -101,7 +119,7 @@ Ela lê economia com lente de torcida, e os dois lados acham que o mesmo texto n
 
 ## Como falar com ela
 
-Fale como alguém que entende de economia explicando no almoço de domingo: calmo, direto, sem se exibir e sem tomar lado.
+Fale como um economista de confiança explicando a uma cliente inteligente que não é da área, num almoço de trabalho: calmo, direto, com o argumento inteiro, sem se exibir e sem tomar lado.
 
 | É | Não é | Exemplo |
 | --- | --- | --- |
@@ -109,6 +127,7 @@ Fale como alguém que entende de economia explicando no almoço de domingo: calm
 | Direto | Professor | "O Banco Central baixou o juro", não "É importante entender que a política monetária..." |
 | Concreto | Abstrato | "Crédito mais caro", não "condições financeiras mais apertadas" |
 | Respeitoso | Condescendente | Explica o termo uma vez, sem "como todo mundo sabe" nem "de forma simples" |
+| Completo | Raso | Diz o que sustenta a conclusão, a comparação com outras vezes e o que pode dar errado, e não só a conclusão |
 | Honesto sobre a dúvida | Cheio de ressalva | Uma frase sobre o que não se sabe, não "talvez" em toda frase |
 | Sem lado | Militante | Fato e número, e a decisão medida pelo objetivo de quem decidiu; nunca o que o governo deveria fazer |
 
@@ -205,7 +224,7 @@ O antes deixa um "mesmo assim" sem resposta, gasta um terço do texto com o meca
 
 ## Os tipos de post
 
-Cada post responde a uma pergunta só e compara com o próprio período. Ela quase nunca volta todo dia: o fato do dia serve a quem volta em 10 segundos, e o domingo é o post que ela lê com calma. Todo post termina com "Mandar no WhatsApp" e "Copiar link", porque é pelo WhatsApp que ela recebe notícia e passa adiante o que leu, seja o fato do dia, seja o resumo. É um post por dia, por volta das 6h da manhã; o tipo muda com o dia. No fato do dia, a pesquisa vem antes do texto: ela começa às 05h45, e a mesma pesquisa serve às 100 palavras e à leitura a fundo.
+Cada post responde a uma pergunta só e compara com o próprio período. Ela recebe o fato do dia no e-mail, de manhã, e lê com calma o post de domingo. Todo post termina com "Mandar no WhatsApp" e "Copiar link", porque é pelo WhatsApp que ela recebe notícia e passa adiante o que leu, seja o fato do dia, seja o resumo. É um post por dia, por volta das 6h da manhã; o tipo muda com o dia. No fato do dia, a pesquisa vem antes do texto: ela começa às 05h45, e a mesma pesquisa serve às 100 palavras e à leitura a fundo.
 
 | Tipo | Pergunta que responde | Quando | Tamanho | Abre com |
 | --- | --- | --- | --- | --- |
@@ -257,19 +276,19 @@ O site acompanha o risco de recessão e o que ele muda na vida de quem lê (deci
 
 **O tamanho vem de uma regra escrita antes.** O número sai da tabela de tradução ([TRADUCAO.md](TRADUCAO.md)), com a conta feita em código (`traduz`, em `src/conta.py`), ou da própria notícia (o juro novo do financiamento, o valor do benefício). Conta de cabeça não vale, e a regra é a mesma para qualquer governo. Quando a tabela não tem regra para o caso, como o preço da gasolina, que depende da Petrobras, o texto diz a direção e quem decide o tamanho.
 
-**"Nada muda agora" também é resposta**, quando é verdade, com o porquê e com o que faria mudar: "quem já tem financiamento com juro fixo continua pagando a mesma parcela; o juro mais alto pesa em quem pede crédito novo". A leitora não é criança: ela sabe o que é salário, parcela e inflação e acompanha política, só não estudou economia. A frase diz o mecanismo com precisão, como para um adulto ocupado, sem explicar o que é um empréstimo, sem diminutivo ("o seu dinheirinho") e sem tom de cartilha.
+**"Nada muda agora" também é resposta**, quando é verdade, com o porquê e com o que faria mudar: "quem já tem financiamento com juro fixo continua pagando a mesma parcela; o juro mais alto pesa em quem pede crédito novo". A leitora não é criança: tem diploma, cuida de uma equipe ou de uma empresa, sabe o que é salário, parcela, juro e inflação e acompanha política; só não estudou economia. A frase diz o mecanismo com precisão, como para um adulto ocupado, sem explicar o que é um empréstimo, sem diminutivo ("o seu dinheirinho") e sem tom de cartilha.
 
 **As três famílias de referência** aparecem pela situação, sem nome inventado:
 
 | Família | Por onde a notícia chega | O que a tabela traduz |
 | --- | --- | --- |
 | Quem vive do salário mínimo ou da aposentadoria do INSS | O reajuste de janeiro, que segue a inflação dos mais pobres (o INPC), e o preço do mercado | Quanto o mínimo perdeu de poder de compra desde o último reajuste e o reajuste que a lei já garante |
-| Quem tem financiamento e cartão, como a Patrícia | O juro do crédito novo, a parcela e o emprego | A primeira parcela de um financiamento de referência e o juro de R$ 1.000 no cartão ou no crédito pessoal |
+| Quem tem financiamento e cartão | O juro do crédito novo, a parcela e o emprego | A primeira parcela de um financiamento de referência e o juro de R$ 1.000 no cartão ou no crédito pessoal |
 | Quem tem dinheiro guardado | O rendimento acima da inflação | Quanto R$ 1.000 guardados rendem por mês e quanto sobra acima da inflação |
 
 - **Na leitura a fundo, só as famílias que o fato atinge**, quase sempre uma ou duas, cada uma com o número dela. Nas 100 palavras, no máximo uma oração, e só com número.
 - **A mesma notícia pode fazer uma família perder e outra ganhar.** O juro alto encarece a parcela de quem pega empréstimo e aumenta o rendimento de quem tem dinheiro guardado. O texto mostra os dois lados sem dizer qual pesa mais.
-- **Quando quem sente depende do que a pessoa compra ou do trabalho que faz**, como no imposto sobre carro, bebida e cigarro ou no fim da escala 6x1, o texto diz para quem vale, sem passar pelas famílias.
+- **Quando quem sente depende do que a pessoa compra ou do trabalho que faz**, como no imposto sobre carro, bebida e cigarro ou no fim da escala 6x1, o texto diz para quem vale, sem passar pelas famílias. Vale o mesmo quando a notícia chega pelo trabalho, como as vendas de um setor, o crédito para empresas ou o custo de um insumo: o texto diz o setor e a porta, com o número da fonte, e não inventa o número do setor quando a fonte não o dá.
 - **Sem conselho e sem lado.** O texto diz o que muda, nunca o que fazer com o dinheiro ("vale renegociar", "é hora de investir" ficam fora). Uma decisão de governo traduzida para a vida diz quem decidiu, o que muda e para quem, e não vira "o governo tirou do seu bolso"; com outro governo no poder, a frase sairia igual.
 
 | Antes | Depois |
@@ -281,9 +300,9 @@ O site acompanha o risco de recessão e o que ele muda na vida de quem lê (deci
 
 O resto do guia cuida da palavra. Esta parte cuida de como ensinar: por que os preços sobem, por que o juro alto tira emprego, por que a dívida do governo cresce. Vale para as abas que explicam, para imagens e vídeos e, em parte, para os posts. A aba [O que causa recessão](https://vaidarcrise.com.br/causas/) é o exemplo.
 
-1. **Comece pela pergunta dela, não pela nossa estrutura.** "Vou perder o emprego?" vem antes de "o que causa recessão". Moldura inventada por nós ("gatilho e fragilidade", "segunda derivada") obriga a leitora a aprender o nosso vocabulário antes do assunto.
+1. **Comece pela pergunta dela, não pela nossa estrutura.** "Vou perder o emprego?" e "a minha empresa vai vender menos no ano que vem?" vêm antes de "o que causa recessão". Moldura inventada por nós ("gatilho e fragilidade", "segunda derivada") obriga a leitora a aprender o nosso vocabulário antes do assunto.
 2. **Ensine a peça-chave antes da corrente.** Sem saber por que os preços sobem, o freio do juro não faz sentido. A peça vem antes, numa parte só dela (pré-treino, Mayer).
-3. **Uma imagem do dia a dia por ideia, do começo ao fim.** Inflação: a padaria com o forno no limite, onde mais clientes fazem o padeiro subir o preço, porque o forno não assa mais pão. Dívida: o rotativo do cartão. Na mesma tela, diga onde a comparação falha ("a dívida do governo é diferente da sua: ele pode cobrar imposto e deve quase tudo em reais").
+3. **Uma imagem do dia a dia por ideia, do começo ao fim.** Inflação: a padaria com o forno no limite, onde mais clientes fazem o padeiro subir o preço, porque o forno não assa mais pão. Dívida: o rotativo do cartão. Contas do governo: o caixa de uma empresa, em que o prejuízo do ano (o déficit) se soma ao que ela já deve ao banco (a dívida). Na mesma tela, diga onde a comparação falha ("a dívida do governo é diferente da sua: ele pode cobrar imposto e deve quase tudo em reais").
 4. **Corrija a crença errada de frente.** Diga o que ela provavelmente acha e, logo depois, por que não é assim. Texto que refuta ensina mais que explicação neutra (Schroeder e Kucera, 2022). As mais comuns: juro alto encarece o mercado (Andre e outros, 2022); economia bombando é sempre bom (Leiser e Aroch, 2009); preço sobe porque alguém quis (Stantcheva, 2024).
 5. **Peça um palpite antes da resposta.** "Quando o juro sobe, os preços sobem mais rápido ou mais devagar?" Quem chuta antes lembra mais (Kim, Reinecke e Hullman, 2017).
 6. **Um caso que ela viveu vale mais que uma regra.** 2015 e 2021 dizem mais que "em 44 países". Dois casos lado a lado, em governos diferentes, passam no teste da troca.
@@ -444,19 +463,16 @@ Um fato, contado até a vida de quem lê, com o tamanho e o prazo. O que o dóla
 
 ## Fontes
 
-O ambiente em que a pesquisa foi feita não abria a maioria dos sites; os números foram conferidos nos resultados de busca, em pelo menos duas reportagens quando havia. Quaest sobre quem define o juro e PoderData sobre o arcabouço têm data não confirmada.
+A leitora descrita em [Quem é](#quem-é) saiu da conversa do Pedro com leitores do site, em 10/11/2026: profissionais com curso superior, gestores ou donos de negócio, que querem entender o que a economia vai fazer com a vida deles e com o país e não estudaram economia. As duas pessoas do exemplo são inventadas. O ambiente em que a pesquisa foi feita não abria a maioria dos sites; os números foram conferidos nos resultados de busca, em pelo menos duas reportagens quando havia. Quaest sobre quem define o juro e PoderData sobre o arcabouço têm data não confirmada.
 
-- IBGE: [Censo 2022, idade](https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-denoticias/noticias/38186-); [PNAD Educação 2024](https://biblioteca.ibge.gov.br/visualizacao/livros/liv102180_informativo.pdf); [PNAD rendimentos 2025](https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2012-agencia-de-noticias/noticias/46579-rendimento-medio-da-populacao-brasileira-atinge-r-3-367-em-2025.html)
-- Inaf 2024, Ação Educativa e Instituto Paulo Montenegro: [Unicef](https://www.unicef.org/brazil/comunicados-de-imprensa/analfabetismo-funcional-nao-apresenta-melhora-e-alcanca-29-por-cento-dos-brasileiros-mesmo-patamar-de-2018-aponta-novo-levantamento-do-inaf); [dados](https://static.poder360.com.br/2025/08/dados-inaf-2024.pdf)
+- IBGE: [PNAD Educação 2024](https://biblioteca.ibge.gov.br/visualizacao/livros/liv102180_informativo.pdf)
+- Inaf 2024, Ação Educativa e Instituto Paulo Montenegro: [Unicef](https://www.unicef.org/brazil/comunicados-de-imprensa/analfabetismo-funcional-nao-apresenta-melhora-e-alcanca-29-por-cento-dos-brasileiros-mesmo-patamar-de-2018-aponta-novo-levantamento-do-inaf); [dados](https://static.poder360.com.br/2025/08/dados-inaf-2024.pdf) (cerca de 1 em 4 de quem chegou ao ensino superior é proficiente)
 - Banco Central e FGC, pesquisa de letramento financeiro 2023: [Convergência Digital](https://convergenciadigital.com.br/governo/banco-central-brasileiro-no-sabe-calcular-juros-mas-conhece-apps-financeiros-e-adora-pix)
-- OCDE: [Pisa 2022, educação financeira no Brasil](https://www.oecd.org/en/publications/pisa-2022-results-volume-iv-factsheets_34d60137-en/brazil_1c815ef9-en.html)
 - CNC: [Peic, julho de 2026](https://mercadoeconsumo.com.br/06/08/2026/noticias/cnc-endividamento-das-familias-sobe-para-82-mas-inadimplencia-cai/)
-- Cetic.br: [TIC Domicílios 2024](https://cetic.br/media/analises/tic_domicilios_2024_principais_resultados.pdf)
 - Reuters Institute: [Digital News Report 2026, Brasil](https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/brazil); [Como os brasileiros se informam](https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/how-brazilians-get-their-news-ahead-years-election-0); [2025, redes](https://canaltech.com.br/internet/instagram-e-youtube-sao-as-redes-mais-usadas-para-consumir-noticias-no-brasil/); [2025, impresso](https://www.poder360.com.br/poder-midia/so-10-dos-brasileiros-leem-jornal-impresso-diz-estudo/)
 - Datafolha, dez/2025: [identificação política](https://www.diariodepernambuco.com.br/politica/2025/12/11703644-datafolha-40-dos-brasileiros-se-identificam-como-petistas-e-34-como-bolsonaristas.html)
 - Quaest: [independentes](https://www.jornalopcao.com.br/ultimas-noticias/lula-amplia-vantagem-sobre-flavio-bolsonaro-apos-caso-master-aponta-quaest-835016/); [preço da comida, jul/2026](https://ohoje.com/2026/07/15/pesquisa-genial-quaest-indica-lula-com-ampla-vantagem-sobre-flavio-bolsonaro-na-disputa-presidencial/); [quem define o juro](https://www.cartacapital.com.br/?p=327550)
 - PoderData: [arcabouço fiscal](https://www.poder360.com.br/pesquisas/77-dos-brasileiros-nao-sabem-o-que-e-o-marco-fiscal-diz-pesquisa/)
-- Ipsos: [O que preocupa o mundo, Brasil, fev/2026](https://www.ipsos.com/sites/default/files/ct/publication/documents/2026-03/WWW%20Brasil%20FEV%2026%20PT-BR.pdf)
 - Vallone, Ross e Lepper (1985), efeito da mídia hostil: [resumo](https://en.wikipedia.org/wiki/Hostile_media_effect)
 - Gigerenzer e Hoffrage (1995), *Psychological Review* 102(4): [registro](https://serval.unil.ch/notice/serval:BIB_285729DDD792)
 - Nielsen (1997), como se lê na web: [NN/g](https://www.nngroup.com/articles/how-users-read-on-the-web/)
@@ -472,3 +488,4 @@ O ambiente em que a pesquisa foi feita não abria a maioria dos sites; os númer
 - Bholat, Broughton, Ter Meer e Walczak (2019), comunicação simples do Banco da Inglaterra, *Journal of Monetary Economics*
 - Meppelink, van Weert, Haven e Smit (2015), animação narrada e leitores com pouca escolaridade, *Journal of Medical Internet Research*
 - Barnes e Hicks (2022), a comparação do governo com a família não muda opinião, *British Journal of Political Science*: [texto](https://discovery-pp.ucl.ac.uk/id/eprint/10129856)
+- Kahan, Peters, Dawson e Slovic (2017), quem é melhor com números também lê os dados pelo próprio lado, *Behavioural Public Policy*: [registro](https://www.cambridge.org/core/journals/behavioural-public-policy/article/abs/motivated-numeracy-and-enlightened-selfgovernment/EC9F2410D5562EF10B7A5E2539063806)

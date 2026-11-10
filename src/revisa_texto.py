@@ -21,7 +21,7 @@ MOLDES = [
     (re.compile(r"\b(metodologia|log-?odds|Shapley|taxa-base|pesam? pouco|composto|regressão|calibra\w*|"
                 r"limite de alerta|nova regra|versão do (site|modelo)|vaivém normal|desvio (absoluto|padrão))\b", re.I),
      "explica a conta ao leitor"),
-    # O leitor (PERSONA.md) não estudou economia e tem lado político.
+    # O leitor (PERSONA.md) tem curso superior, mas não estudou economia, e tem lado político.
     (re.compile(r"\b(política monetária|aperto monetário|interanual|dessazonalizad\w*|commodities|pontos?[- ]base|"
                 r"hiato do produto|PIB potencial|quantil|desancorad\w*|curva de juros|estagflação|spread)\b", re.I),
      "jargão que o leitor não conhece"),

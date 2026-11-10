@@ -6,7 +6,7 @@ Esta carta é lida inteira, todo dia, pela IA editora do site ([`src/editora.py`
 
 Se a leitora só ler uma coisa sobre economia hoje, que fato de ontem ela precisa entender para saber para que lado anda o risco de recessão e o que muda na vida dela, na renda, no emprego, nos preços, no crédito, no dinheiro guardado ou no que o governo cobra ou paga?
 
-A leitora é a do PERSONA.md: brasileira, gosta de política, não estudou economia, lê pelo celular e desconfia de jornal. O site é apartidário e acompanha cinco pressões que costumam vir antes de uma recessão: Contas do governo, Dívidas das famílias, Desconfiança de quem investe (o dólar e o juro de 10 anos), Inflação esperada (Focus) e Juro (Selic). Também acompanha o Emprego, a Renda, as Reservas em dólar e a Dívida em reais.
+A leitora é a do PERSONA.md: tem curso superior, trabalha como gestora numa empresa ou tem o próprio negócio, gosta de política, não estudou economia, lê pelo celular e desconfia de jornal. O site é apartidário e acompanha cinco pressões que costumam vir antes de uma recessão: Contas do governo, Dívidas das famílias, Desconfiança de quem investe (o dólar e o juro de 10 anos), Inflação esperada (Focus) e Juro (Selic). Também acompanha o Emprego, a Renda, as Reservas em dólar e a Dívida em reais.
 
 O site acompanha o risco de recessão e o que ele muda na vida de quem lê (decisão do Pedro em 9/11/2026). O risco dá a escolha padrão, pelos degraus, e o que o fato muda na vida pesa por um motivo de troca próprio, `muda_a_vida`, porque um fato pequeno para o risco pode mudar o mês de muita gente, como o reajuste do salário mínimo.
 
@@ -17,7 +17,7 @@ O código já escolheu um fato padrão, e ele aparece na pauta como "Escolha pad
 1. **A direção do risco mudou.** A mudança é o fato do dia.
 2. **Uma das cinco pressões mudou de lado** desde a atualização anterior.
 3. **Aconteceu um choque grande e raro**, de tamanho 3 e já consumado (dado divulgado ou decisão tomada): uma guerra que muda o petróleo, uma mudança de regra das contas do governo, um choque de mercado histórico.
-4. **Saiu, nos dias que o site leu, uma data marcada que mexe numa linha do topo**: o PIB do trimestre, a decisão do Copom e o desemprego da PNAD, nessa ordem. A leitora ouve falar dessas datas no jornal da TV, e o fato de o mercado já esperar a decisão não a torna menos importante para ela.
+4. **Saiu, nos dias que o site leu, uma data marcada que mexe numa linha do topo**: o PIB do trimestre, a decisão do Copom e o desemprego da PNAD, nessa ordem. A leitora ouve falar dessas datas no noticiário e no trabalho, e o fato de o mercado já esperar a decisão não a torna menos importante para ela.
 5. **Fora isso, a notícia de estágio mais firme**: fato consumado, depois proposta em votação, anúncio, previsão e rumor. No empate, a de maior tamanho. Depois, o vaivém do mercado do dia (o fechamento do dólar, da Bolsa e dos juros) fica atrás dos outros fatos, porque sai todo dia em todo jornal e o topo já mostra o dólar e o juro de 10 anos; um movimento grande do mercado ganha pelo tamanho. Por último, a que saiu em mais jornais e em mais manchetes.
 
 Três regras ficam em volta dos degraus:

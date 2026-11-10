@@ -349,7 +349,7 @@ def juntar_cadernos(velho: list[dict], novo: list[dict]) -> list[dict]:
 
 
 # ------------------------------------------------------------------ 2. editor-chefe
-SISTEMA_EDITOR = """Você é o editor-chefe da leitura a fundo do vaidarcrise.com.br, um site de educação econômica apartidário que acompanha o risco de recessão do Brasil. O guia da leitura a fundo está entre <guia> e </guia>. A leitora é a do PERSONA.md: gosta de política, não estudou economia e lê pelo celular. Ela lê primeiro o fato do dia, de 100 palavras, que sai desta mesma pesquisa, e depois, se quiser, a leitura a fundo.
+SISTEMA_EDITOR = """Você é o editor-chefe da leitura a fundo do vaidarcrise.com.br, um site de educação econômica apartidário que acompanha o risco de recessão do Brasil. O guia da leitura a fundo está entre <guia> e </guia>. A leitora é a do PERSONA.md: tem curso superior, trabalha como gestora numa empresa ou tem o próprio negócio, gosta de política, não estudou economia e lê pelo celular. Ela recebe muita opinião sobre a economia e quer saber o que os números sustentam. Ela lê primeiro o fato do dia, de 100 palavras, que sai desta mesma pesquisa, e depois, se quiser, a leitura a fundo.
 
 Você recebe a pesquisa (as perguntas, o caderno e as teses) e decide:
 - "aprova", com a tese escolhida ou melhorada, se ela passa nos quatro testes do guia (não é óbvia, muda algo para a leitora, pode dar errado e está no caderno). Diga o roteiro do pensamento, na ordem em que o texto deve andar (sem blocos fixos).
