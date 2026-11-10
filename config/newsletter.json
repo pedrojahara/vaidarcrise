@@ -1,0 +1,9 @@
+{
+ "_leia": "O fato do dia por e-mail (src/newsletter.py, serviço de inscrição em inscricao/). A lista e o envio ficam no Resend; a inscrição, num Worker do Cloudflare. Nenhum segredo fica aqui: as chaves ficam no Chaves do Mac e nos segredos do Worker.",
+ "inscricao_aberta": false,
+ "remetente": "\"Vai dar crise?\" <fato@vaidarcrise.com.br>",
+ "responder_para": "fato@vaidarcrise.com.br",
+ "servico": "https://inscricao.vaidarcrise.com.br",
+ "segmento": "Fato do dia",
+ "espera_site_min": 15
+}
