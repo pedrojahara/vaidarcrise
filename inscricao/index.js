@@ -165,7 +165,7 @@ function emailConfirmacao(link) {
 </td></tr>
 <tr><td style="padding:26px 0 8px">
   <h1 style="margin:0 0 14px;font:700 26px/1.2 ${SERIFA};color:#1e1f21">Confirme a inscrição</h1>
-  <p style="margin:0 0 16px;font:18px/1.6 ${SERIFA};color:#1e1f21">Alguém pediu para receber o fato do dia do Vai dar crise? neste endereço. Se foi você, toque no botão abaixo, e o próximo e-mail chega amanhã de manhã.</p>
+  <p style="margin:0 0 16px;font:18px/1.6 ${SERIFA};color:#1e1f21">Alguém pediu para receber o fato do dia do Vai dar crise? neste endereço. Se foi você, toque no botão abaixo, e o próximo e-mail chega na próxima manhã.</p>
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 20px"><tr><td style="background:#1e1f21;border-radius:10px">
     <a href="${link}" style="display:inline-block;padding:14px 20px;font:700 16px/1.2 ${SISTEMA};color:#ffffff;text-decoration:none">Confirmar a inscrição</a>
   </td></tr></table>
@@ -180,7 +180,7 @@ function emailConfirmacao(link) {
 function textoConfirmacao(link) {
   return `Confirme a inscrição no Vai dar crise?
 
-Alguém pediu para receber o fato do dia do Vai dar crise? neste endereço. Se foi você, abra o link abaixo, e o próximo e-mail chega amanhã de manhã.
+Alguém pediu para receber o fato do dia do Vai dar crise? neste endereço. Se foi você, abra o link abaixo, e o próximo e-mail chega na próxima manhã.
 
 ${link}
 

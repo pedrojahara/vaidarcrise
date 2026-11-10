@@ -71,4 +71,22 @@ if [[ "${1:-}" != "--sem-llm" ]]; then
     done
   fi
 fi
+# O fato do dia por e-mail (src/newsletter.py): sai uma vez por dia, para a lista do Resend, depois que a página do dia
+# com a leitura a fundo está no ar. Só roda com "envio_diario" ligado em config/newsletter.json. A chave do Resend fica
+# no Chaves do Mac (serviço vaidarcrise-resend) e só vive no ambiente destes comandos. Quem saiu da lista é apagado
+# (a LGPD pede), e o --saude confere o domínio, a lista e o serviço de inscrição para o e-mail de amanhã.
+avisa_email() {
+  echo "aviso ao Pedro: $1"
+  /usr/bin/osascript -e "display notification \"${1//\"/}\" with title \"Vai dar crise?\" subtitle \"E-mail do fato do dia\"" || true
+}
+if [[ "$(jq -r '.envio_diario' config/newsletter.json)" == "true" ]]; then
+  if chave_resend=$(security find-generic-password -a vaidarcrise -s vaidarcrise-resend -w 2>/dev/null); then
+    RESEND_API_KEY="$chave_resend" .venv/bin/python src/newsletter.py --hoje || avisa_email "o e-mail de hoje não saiu (veja logs/run)"
+    RESEND_API_KEY="$chave_resend" .venv/bin/python src/newsletter.py --limpa || echo "aviso: a limpeza da lista falhou"
+    saude=$(RESEND_API_KEY="$chave_resend" .venv/bin/python src/newsletter.py --saude 2>&1) || avisa_email "${saude//$'\n'/; }"
+    unset chave_resend
+  else
+    avisa_email "a chave do Resend não está no Chaves; o e-mail de hoje não saiu"
+  fi
+fi
 echo "=== $(date '+%Y-%m-%dT%H:%M:%S%z') fim (direção ${direcao})"

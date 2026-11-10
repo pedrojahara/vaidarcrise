@@ -74,7 +74,10 @@ class Api:
 def registros_dns(cf: Api, zona: str) -> list[dict]:
     out, pag = [], 1
     while True:
-        r = cf.s.get(f"{CF}/zones/{zona}/dns_records", params={"per_page": 100, "page": pag}, timeout=60).json()
+        resp = cf.s.get(f"{CF}/zones/{zona}/dns_records", params={"per_page": 100, "page": pag}, timeout=60)
+        r = resp.json() if resp.headers.get("content-type", "").startswith("application/json") else {}
+        if not r.get("success"):
+            raise RuntimeError(f"GET /zones/{zona}/dns_records: {resp.status_code} {resp.text[:500]}")
         out += r["result"]
         if pag >= r["result_info"]["total_pages"]:
             return out

@@ -16,7 +16,8 @@ pelo editor. Regras do envio (Pedro, 7 e 10/11/2026):
 A chave do Resend vem de RESEND_API_KEY (no Mac, o run.sh tira do Chaves) e nunca vai para o repositório, que é público.
 
 Uso:
-  newsletter.py --hoje               manda o post de hoje à lista (o run.sh chama depois do segundo push)
+  newsletter.py --hoje               manda o post de hoje à lista (o run.sh chama depois do segundo push, quando
+                                     "envio_diario" está ligado em config/newsletter.json)
   newsletter.py --previa [DIA]       grava o e-mail de um dia em logs/email-DIA.html, para ver no navegador
   newsletter.py --teste EMAIL [DIA]  manda o e-mail de um dia só para um endereço, fora da lista
   newsletter.py --saude              confere a chave do Resend, o domínio e o serviço de inscrição
@@ -306,7 +307,11 @@ def main() -> None:
     a = ap.parse_args()
     ultimo = sorted(Path(p).name[:10] for p in glob.glob(str(ROOT / "runs" / "*.json")))[-1]
     if a.hoje:
-        print(enviar(dt.date.today().isoformat()))
+        saida = enviar(dt.date.today().isoformat())
+        print(saida)
+        # O que é problema (página que não entrou no ar) sai com erro, para o run.sh avisar o Pedro; dia sem texto ou
+        # e-mail que já saiu não são problema.
+        sys.exit(1 if saida.startswith("não enviado: a página") else 0)
     elif a.previa is not None:
         dia = a.previa or a.dia or ultimo
         e = montar(dia)
