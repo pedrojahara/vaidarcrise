@@ -205,7 +205,7 @@ O antes deixa um "mesmo assim" sem resposta, gasta um terço do texto com o meca
 
 ## Os tipos de post
 
-Cada post responde a uma pergunta só e compara com o próprio período. Ela quase nunca volta todo dia: o fato do dia serve a quem volta em 10 segundos, e o domingo é o post que ela lê com calma. Todo post termina com "Mandar no WhatsApp" e "Copiar link", porque é pelo WhatsApp que ela recebe notícia e passa adiante o que leu, seja o fato do dia, seja o resumo. É um post por dia, por volta das 06h30; o tipo muda com o dia. No fato do dia, a pesquisa vem antes do texto: ela começa às 05h45, e a mesma pesquisa serve às 100 palavras e à leitura a fundo.
+Cada post responde a uma pergunta só e compara com o próprio período. Ela quase nunca volta todo dia: o fato do dia serve a quem volta em 10 segundos, e o domingo é o post que ela lê com calma. Todo post termina com "Mandar no WhatsApp" e "Copiar link", porque é pelo WhatsApp que ela recebe notícia e passa adiante o que leu, seja o fato do dia, seja o resumo. É um post por dia, por volta das 6h da manhã; o tipo muda com o dia. No fato do dia, a pesquisa vem antes do texto: ela começa às 05h45, e a mesma pesquisa serve às 100 palavras e à leitura a fundo.
 
 | Tipo | Pergunta que responde | Quando | Tamanho | Abre com |
 | --- | --- | --- | --- | --- |
