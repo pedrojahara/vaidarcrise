@@ -123,6 +123,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .datas time{font-weight:600;color:var(--tinta)}
 .datas li.chave{background:var(--nota-fundo);padding:6px;margin:2px -6px;border-bottom:0;border-radius:4px}
 .bloco .fontes-datas{margin:10px 0 0}.fontes-datas a{color:var(--meta)}
+.b-receba{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:10px;background:var(--tinta);color:var(--papel);text-decoration:none;font:600 15px/1.2 var(--sistema)}
 
 /* rodapé */
 .pe{font:14px/1.55 var(--sistema);color:var(--meta)}
@@ -386,13 +387,15 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
   </div>
   </div>
   <script>
-  /* O botão só aparece no celular (CSS). Um link para uma linha (/#parte-...) abre a lista e a linha. */
+  /* O botão só aparece no celular (CSS). Um link para uma linha (/#parte-...) abre a lista e a linha; um link para
+     a caixa (#por-que, como o do e-mail) abre a lista. */
   (function(){
     var box=document.getElementById("por-que"),b=box.querySelector(".pq");
     function abre(v){box.classList.toggle("aberto",v);b.setAttribute("aria-expanded",v?"true":"false")}
     b.addEventListener("click",function(){abre(!box.classList.contains("aberto"))});
     function alvo(){
       var h=decodeURIComponent(location.hash.slice(1)),li=h.indexOf("parte-")===0&&document.getElementById(h);
+      if(h==="por-que"){abre(true);box.scrollIntoView();return}
       if(!li)return;abre(true);var d=li.querySelector("details");if(d)d.open=true;li.scrollIntoView();
     }
     alvo();addEventListener("hashchange",alvo);
@@ -450,7 +453,8 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
   </details>
   
   <div class="compartilha"><a class="zap" href="https://wa.me/?text=Governo%20prorroga%20at%C3%A9%202031%20o%20botij%C3%A3o%20gr%C3%A1tis%20do%20G%C3%A1s%20do%20Povo%20https%3A//vaidarcrise.com.br/2026-11-10/" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Mandar no WhatsApp</a><button class="copia" type="button" data-url="https://vaidarcrise.com.br/2026-11-10/"><svg aria-hidden="true"><use href="#i-link"/></svg><span class="c-txt" aria-live="polite"><span>Copiar link</span></span></button></div>
-</article><article class="post">
+</article>
+<article class="post">
   <p class="data"><span class="tipo">Fato do dia</span> | Segunda, 9 de novembro de 2026</p>
   <h2 class="titulo-post"><a href="/2026-11-09/">Petróleo abre em leve queda mesmo com ataques a navios perto de Ormuz</a></h2>
   <p class="autoria">Escrito pelo Claude com a ajuda do Pedro.</p>
@@ -490,7 +494,8 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
   </details>
   
   <div class="compartilha"><a class="zap" href="https://wa.me/?text=Petr%C3%B3leo%20abre%20em%20leve%20queda%20mesmo%20com%20ataques%20a%20navios%20perto%20de%20Ormuz%20https%3A//vaidarcrise.com.br/2026-11-09/" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Mandar no WhatsApp</a><button class="copia" type="button" data-url="https://vaidarcrise.com.br/2026-11-09/"><svg aria-hidden="true"><use href="#i-link"/></svg><span class="c-txt" aria-live="polite"><span>Copiar link</span></span></button></div>
-</article><article class="post">
+</article>
+<article class="post">
   <p class="data"><span class="tipo">Resumo da semana</span> | Domingo, 8 de novembro de 2026</p>
   <h2 class="titulo-post"><a href="/2026-11-08/">Banco Central para de cortar o juro, e a indústria produz menos</a></h2>
   <p class="autoria">Escrito pelo Claude com a ajuda do Pedro.</p>
@@ -516,7 +521,8 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
   
   
   <div class="compartilha"><a class="zap" href="https://wa.me/?text=Banco%20Central%20para%20de%20cortar%20o%20juro%2C%20e%20a%20ind%C3%BAstria%20produz%20menos%20https%3A//vaidarcrise.com.br/2026-11-08/" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Mandar no WhatsApp</a><button class="copia" type="button" data-url="https://vaidarcrise.com.br/2026-11-08/"><svg aria-hidden="true"><use href="#i-link"/></svg><span class="c-txt" aria-live="polite"><span>Copiar link</span></span></button></div>
-</article><article class="post">
+</article>
+<article class="post">
   <p class="data"><span class="tipo">Fato do dia</span> | Sábado, 7 de novembro de 2026</p>
   <h2 class="titulo-post"><a href="/2026-11-07/">Brasil vende US$ 9,3 bi a mais do que compra, maior outubro desde 1989</a></h2>
   <p class="autoria">Escrito pelo Claude com a ajuda do Pedro.</p>
@@ -560,7 +566,8 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
   </details>
   
   <div class="compartilha"><a class="zap" href="https://wa.me/?text=Brasil%20vende%20US%24%209%2C3%20bi%20a%20mais%20do%20que%20compra%2C%20maior%20outubro%20desde%201989%20https%3A//vaidarcrise.com.br/2026-11-07/" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Mandar no WhatsApp</a><button class="copia" type="button" data-url="https://vaidarcrise.com.br/2026-11-07/"><svg aria-hidden="true"><use href="#i-link"/></svg><span class="c-txt" aria-live="polite"><span>Copiar link</span></span></button></div>
-</article><article class="post">
+</article>
+<article class="post">
   <p class="data"><span class="tipo">Fato do dia</span> | Sexta, 6 de novembro de 2026</p>
   <h2 class="titulo-post"><a href="/2026-11-06/">Indústria cai 0,8% em setembro, a quarta queda em cinco meses</a></h2>
   <p class="autoria">Escrito pelo Claude com a ajuda do Pedro.</p>
@@ -606,6 +613,7 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
   
   <div class="compartilha"><a class="zap" href="https://wa.me/?text=Ind%C3%BAstria%20cai%200%2C8%25%20em%20setembro%2C%20a%20quarta%20queda%20em%20cinco%20meses%20https%3A//vaidarcrise.com.br/2026-11-06/" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Mandar no WhatsApp</a><button class="copia" type="button" data-url="https://vaidarcrise.com.br/2026-11-06/"><svg aria-hidden="true"><use href="#i-link"/></svg><span class="c-txt" aria-live="polite"><span>Copiar link</span></span></button></div>
 </article>
+
     <p class="mais" id="mais" data-depois="2026-11-06"><a href="/2026-11-05/">Carregar posts anteriores</a></p>
     
   </main>
@@ -618,6 +626,7 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
     </ul>
     <p class="peq fontes-datas">Fontes: calendário do <a href="https://servicodados.ibge.gov.br/api/v3/calendario/">IBGE</a>, Banco Central (Copom) e Fed.</p>
   </div>
+  
   
   <div class="bloco">
     <h3>Sobre</h3>
@@ -681,7 +690,7 @@ document.addEventListener("click",function(e){
 
 <footer class="pe"><div class="in">
   <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando. Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias da véspera dão o fato do dia, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
-  <p><a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
+  <p><a href="/privacidade/">Privacidade</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
 <script>
 // O menu Grandes perguntas fecha com um toque fora dele ou com Esc.

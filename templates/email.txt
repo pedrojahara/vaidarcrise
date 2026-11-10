@@ -1,0 +1,29 @@
+{#- A versão em texto puro do e-mail (src/newsletter.py), para quem lê e-mail sem HTML. -#}
+VAI DAR CRISE?
+{{ dir.titulo }}.
+{{ dir.pergunta }}: {{ site }}/{{ post.dia }}/#por-que
+
+{{ post.tipo_nome }} | {{ post.data_extenso }}
+
+{{ post.titulo|upper }}
+{{ post.autoria }}
+{% for s in post.secoes %}
+{% if s.titulo %}{{ s.titulo }}
+{% endif %}{% for par in s.paragrafos or [] %}{{ par|texto }}
+
+{% endfor %}{% for i in s.itens or [] %}- {{ i.rotulo }}: {{ i.texto|texto }}
+{% endfor %}{% if s.tabela %}{% for l in s.tabela.linhas %}- {{ l|join(": ") }}
+{% endfor %}{% endif %}{% endfor %}
+{% if post.ponte %}{{ post.ponte.rotulo }}: {{ post.ponte.texto }}
+{{ site }}{{ post.ponte.url }}
+
+{% endif %}{% if post.fundo %}Leitura de {{ post.fundo.minutos }} minutos: {{ post.fundo.titulo }}
+{{ post.url }}#leitura
+
+{% endif %}Mandar no WhatsApp: {{ post.zap }}
+Abrir no site: {{ post.url }}
+
+--
+Este e-mail chega porque você confirmou a inscrição no Vai dar crise?, que manda o fato do dia de segunda a sábado e o resumo da semana aos domingos. Os e-mails não registram quem abre nem em que link cada pessoa toca.
+Sair da lista: {{ sair_url }}
+Privacidade: {{ site }}/privacidade/

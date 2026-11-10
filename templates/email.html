@@ -1,0 +1,126 @@
+{#- O fato do dia por e-mail (src/newsletter.py): o mesmo post da página do dia, com o topo como o celular mostra.
+    E-mail não tem o CSS do site: o estilo vai em cada elemento, porque o Gmail ignora boa parte do <style>, e o
+    desenho usa tabelas, porque o Outlook não entende o resto. O Gmail não carrega a Charis SIL nem abre <details>:
+    a letra cai na serifa do celular, e a leitura a fundo vira um link para o post. O bloco <style> só serve ao
+    modo escuro e ao celular dos aplicativos que o leem (Apple Mail, iOS). -#}
+{%- set serifa = "'Charis SIL',Charter,'Bitstream Charter','Iowan Old Style',Georgia,serif" -%}
+{%- set sistema = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" -%}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>{{ post.titulo }}</title>
+<link href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+body{margin:0;padding:0;-webkit-text-size-adjust:100%}
+a.termo{color:inherit}
+@media (max-width:620px){.e-tit{font-size:26px!important}.e-p{font-size:18px!important}}
+@media (prefers-color-scheme: dark){
+  .e-papel{background:#161718!important}
+  .e-tinta,.e-p,.e-corpo th,.e-corpo td,.e-corpo h3,a.termo{color:#e8e9ea!important}
+  .e-meta,.e-meta a,.e-corpo .e-meta{color:#a3a7ac!important}
+  .e-meta .e-tinta,.e-corpo .e-tinta{color:#e8e9ea!important}
+  .e-link,.e-corpo a.e-link{color:#94b4ff!important}
+  .e-fio{border-color:#2f3134!important}
+  .e-mais{color:#ff7373!important}.e-menos{color:#52c993!important}
+}
+</style>
+</head>
+<body class="e-papel" style="margin:0;padding:0;background:#ffffff">
+<div style="display:none;max-height:0;max-width:0;overflow:hidden;opacity:0;mso-hide:all">{{ post.resumo or dir.titulo }}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="e-papel" style="background:#ffffff">
+<tr><td align="center" style="padding:0 16px">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:660px">
+
+{# o cabeçalho do site #}
+<tr><td class="e-fio" style="padding:24px 0 16px;border-bottom:1px solid #e4e6e8">
+  <a href="{{ site }}/" style="text-decoration:none;color:#1e1f21" class="e-tinta"><img src="{{ site }}/email/marca.png" width="26" height="26" alt="" style="vertical-align:middle;border:0;margin:0 8px 0 0"><span style="font:700 26px/1.1 {{ serifa }};color:#1e1f21;vertical-align:middle" class="e-tinta">Vai dar crise?</span></a>
+  <p class="e-meta" style="margin:8px 0 0;font:16px/1.45 {{ sistema }};color:#62666b">Para onde vai o risco de recessão no Brasil, com dados todo dia.</p>
+</td></tr>
+
+{# o topo: a placa, a direção e o crescimento em 12 meses #}
+<tr><td style="padding:20px 0 0">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td width="102" style="width:102px;padding:0 14px 0 0;vertical-align:middle"><img src="{{ site }}/email/placa-{{ dir.estado }}.png" width="102" height="102" alt="Risco {{ dir.palavra }}" style="display:block;border:0"></td>
+    <td class="e-tinta" style="vertical-align:middle;font:700 20px/1.2 {{ sistema }};color:#1e1f21">{{ dir.titulo }}</td>
+  </tr></table>
+  {% if dir.pendente %}<p class="e-meta" style="margin:10px 0 0;font:14px/1.4 {{ sistema }};color:#62666b">{{ dir.pendente }}</p>{% endif %}
+  {% set r = dir.ritmo %}{% if r %}
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="e-fio" style="margin:14px 0 0;border:1px solid #e4e6e8;border-radius:10px;border-collapse:separate">
+    <tr><td style="padding:12px 12px 10px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td class="e-meta" style="font:600 13px/1.3 {{ sistema }};color:#62666b">Crescimento em 12 meses</td>
+        <td align="right" class="e-{{ r.cls }}" style="font:700 14px/1.3 {{ sistema }};color:{{ cores[r.cls] }};white-space:nowrap">{{ r.seta }} {{ r.muda }}</td>
+      </tr></table>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 0">
+        <tr>
+          <td class="e-meta" style="font:600 12.5px/1.25 {{ sistema }};color:#62666b">Antes</td><td></td>
+          <td class="e-tinta" style="font:600 12.5px/1.25 {{ sistema }};color:#1e1f21">Agora</td>
+          {% if r.previsao %}<td></td><td class="e-meta" style="font:600 12.5px/1.25 {{ sistema }};color:#62666b">Previsão</td>{% endif %}
+        </tr>
+        <tr>
+          <td class="e-tinta" style="font:600 22px/1.15 {{ sistema }};color:#1e1f21;vertical-align:bottom">{{ r.antes }}</td>
+          <td class="e-meta" style="font:18px/1 {{ sistema }};color:#62666b;vertical-align:bottom;padding:0 6px 4px">→</td>
+          <td class="e-tinta" style="font:800 28px/1.15 {{ sistema }};color:#1e1f21;vertical-align:bottom">{{ r.agora }}</td>
+          {% if r.previsao %}<td class="e-meta" style="font:18px/1 {{ sistema }};color:#62666b;vertical-align:bottom;padding:0 6px 4px">→</td>
+          <td class="e-meta" style="font:600 22px/1.15 {{ sistema }};color:#62666b;vertical-align:bottom">{{ r.previsao }}</td>{% endif %}
+        </tr>
+        <tr>
+          <td class="e-meta" style="font:12.5px/1.25 {{ sistema }};color:#62666b">{{ r.ate_antes }}</td><td></td>
+          <td class="e-meta" style="font:12.5px/1.25 {{ sistema }};color:#62666b">{{ r.ate_agora }}</td>
+          {% if r.previsao %}<td></td><td class="e-meta" style="font:12.5px/1.25 {{ sistema }};color:#62666b">dos bancos</td>{% endif %}
+        </tr>
+      </table>
+      {% if r.encolhe %}<p class="e-tinta" style="margin:10px 0 0;font:14px/1.4 {{ sistema }};color:#1e1f21">{{ r.encolhe }}</p>{% endif %}
+    </td></tr>
+  </table>{% endif %}
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="e-fio" style="margin:14px 0 0;border:1px solid #e4e6e8;border-radius:10px;border-collapse:separate">
+    <tr><td style="padding:12px 14px"><a href="{{ site }}/{{ post.dia }}/#por-que" class="e-tinta" style="display:block;font:600 16px/1.35 {{ sistema }};color:#1e1f21;text-decoration:none">{{ dir.pergunta }} <span class="e-meta" style="color:#62666b">→</span></a></td></tr>
+  </table>
+</td></tr>
+
+{# o post, como na página do dia #}
+<tr><td class="e-corpo" style="padding:30px 0 36px">
+  <p class="e-meta" style="margin:0 0 6px;font:600 14px/1.3 {{ sistema }};color:#62666b"><span class="e-tinta" style="color:#1e1f21">{{ post.tipo_nome }}</span> | {{ post.data_extenso }}</p>
+  <h1 class="e-tit e-tinta" style="margin:0 0 10px;font:700 30px/1.2 {{ serifa }};color:#1e1f21"><a href="{{ post.url }}" class="e-tinta" style="color:#1e1f21;text-decoration:none">{{ post.titulo }}</a></h1>
+  {% if post.autoria %}<p class="e-meta" style="margin:0 0 18px;font:14.5px/1.5 {{ sistema }};color:#62666b">{{ post.autoria }}</p>{% endif %}
+  {% for s in post.secoes %}
+  {% if s.titulo %}<h3 class="e-tinta" style="margin:28px 0 10px;font:700 21px/1.3 {{ serifa }};color:#1e1f21">{{ s.titulo }}</h3>{% endif %}
+  {% for par in s.paragrafos or [] %}<p class="e-p" style="margin:0 0 16px;font:19px/1.62 {{ serifa }};color:#1e1f21">{{ par|link_email }}</p>{% endfor %}
+  {% if s.itens %}<ul style="margin:0 0 16px;padding-left:1.1em">{% for i in s.itens %}<li class="e-p" style="margin:0 0 10px;font:19px/1.62 {{ serifa }};color:#1e1f21"><b>{{ i.rotulo }}:</b> {{ i.texto|link_email }}</li>{% endfor %}</ul>{% endif %}
+  {% if s.tabela %}<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px;border-collapse:collapse;font:15px/1.45 {{ sistema }}">
+    <tr>{% for c in s.tabela.cab %}<th align="left" class="e-meta e-fio" style="padding:8px 10px 8px 0;border-bottom:1px solid #e4e6e8;font:600 13px/1.3 {{ sistema }};color:#62666b;text-align:left{% if loop.first %};width:46%{% endif %}">{{ c }}</th>{% endfor %}</tr>
+    {% for l in s.tabela.linhas %}<tr>{% for c in l %}<td class="e-fio" style="padding:8px 10px 8px 0;border-bottom:1px solid #e4e6e8;vertical-align:top;color:#1e1f21;font:{% if loop.first %}600 {% endif %}15px/1.45 {{ sistema }}">{{ c }}</td>{% endfor %}</tr>{% endfor %}
+  </table>{% endif %}
+  {% endfor %}
+  {% if post.ponte %}<p class="e-meta" style="margin:2px 0 18px;font:14px/1.4 {{ sistema }};color:#62666b">{{ post.ponte.rotulo }}<br><a href="{{ site }}{{ post.ponte.url }}" class="e-link" style="display:inline-block;margin-top:2px;font:700 17px/1.35 {{ serifa }};color:#1f4fbf;text-decoration:none">{{ post.ponte.texto }}</a></p>{% endif %}
+  {% if post.fundo %}
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="e-fio" style="margin:4px 0 18px;border:1px solid #e4e6e8;border-radius:10px;border-collapse:separate">
+    <tr><td style="padding:12px 14px">
+      <a href="{{ post.url }}#leitura" style="text-decoration:none;display:block">
+        <span class="e-meta" style="display:block;margin:0 0 3px;font:600 12.5px/1.3 {{ sistema }};color:#62666b;text-transform:uppercase;letter-spacing:.06em">Leitura de {{ post.fundo.minutos }} minutos</span>
+        <span class="e-tinta" style="display:block;font:700 18px/1.35 {{ serifa }};color:#1e1f21">{{ post.fundo.titulo }}</span>
+        <span class="e-link" style="display:block;margin:8px 0 0;font:600 15px/1.3 {{ sistema }};color:#1f4fbf">Ler no site →</span>
+      </a>
+    </td></tr>
+  </table>{% endif %}
+  {% if post.zap %}<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:2px 0 0"><tr>
+    <td class="e-fio" style="border:1px solid #a9acb0;border-radius:10px"><a href="{{ post.zap }}" class="e-tinta" style="display:inline-block;padding:12px 14px;font:600 15px/1.2 {{ sistema }};color:#1e1f21;text-decoration:none">Mandar no WhatsApp</a></td>
+    <td style="padding:0 0 0 14px"><a href="{{ post.url }}" class="e-meta" style="font:15px/1.2 {{ sistema }};color:#62666b">Abrir no site</a></td>
+  </tr></table>{% endif %}
+</td></tr>
+
+{# o rodapé: por que o e-mail chega e como sair #}
+<tr><td class="e-fio" style="padding:20px 0 32px;border-top:1px solid #e4e6e8">
+  <p class="e-meta" style="margin:0 0 10px;font:14px/1.5 {{ sistema }};color:#62666b">Este e-mail chega porque você confirmou a inscrição no Vai dar crise?, que manda o fato do dia de segunda a sábado e o resumo da semana aos domingos. Os e-mails não registram quem abre nem em que link cada pessoa toca.</p>
+  <p class="e-meta" style="margin:0;font:14px/1.5 {{ sistema }};color:#62666b"><a href="{{ sair_url }}" class="e-meta" style="color:#62666b">Sair da lista</a> | <a href="{{ site }}/privacidade/" class="e-meta" style="color:#62666b">Privacidade</a> | <a href="{{ site }}/" class="e-meta" style="color:#62666b">vaidarcrise.com.br</a></p>
+</td></tr>
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

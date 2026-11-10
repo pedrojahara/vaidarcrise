@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{#- As páginas da lista do fato do dia por e-mail (/inscricao/ e as respostas do serviço de inscrição, inscricao/index.js)
+    e a de privacidade. Os textos seguem o PERSONA.md. -#}
+{% block titulo %}{{ titulo }} | Vai dar crise?{% endblock %}
+{% block descricao %}{{ descricao }}{% endblock %}
+{% block estilo %}
+.texto{padding-top:30px;padding-bottom:48px}
+.texto > *{max-width:620px}
+.texto h1{font:700 34px/1.15 var(--serifa);margin:0 0 16px}
+.texto h2{font:700 22px/1.25 var(--serifa);margin:32px 0 8px}
+.texto p{margin:0 0 14px}
+.f-insc{margin:22px 0 18px;padding:18px;border:1px solid var(--fio);border-radius:12px;background:var(--maquina);font-family:var(--sistema)}
+.f-insc label{display:block;font:600 16px/1.3 var(--sistema);margin:0 0 8px}
+.f-insc input[type=email]{display:block;width:100%;min-height:48px;padding:10px 12px;font:18px/1.3 var(--sistema);color:var(--tinta);background:var(--papel);border:1px solid var(--meta);border-radius:8px}
+.f-insc input[type=email]:focus{outline:2px solid var(--link);outline-offset:1px}
+.f-insc button{margin:14px 0 0;min-height:48px;padding:0 20px;border:0;border-radius:10px;background:var(--tinta);color:var(--papel);font:700 16px/1.2 var(--sistema);cursor:pointer}
+.f-insc .cf-turnstile{margin:14px 0 0;min-height:65px}
+.f-insc .peq{font-size:14px;color:var(--meta);margin:12px 0 0}
+.mel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.aviso-f{font:600 16px/1.45 var(--sistema);background:var(--alerta-fundo);padding:10px 14px;border-radius:8px;margin:0 0 14px}
+.botao{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:10px;background:var(--tinta);color:var(--papel);text-decoration:none;font:700 16px/1.2 var(--sistema)}
+.botao:hover{text-decoration:none}
+.nq{white-space:nowrap}
+@media (max-width:620px){.texto h1{font-size:29px}}
+{% endblock %}
+{% block corpo %}
+<main class="in texto">
+{#- "e-mail" não quebra no hífen, no fim da linha -#}
+{% filter replace("e-mail", '<span class="nq">e-mail</span>'|safe) %}
+<h1>{{ titulo }}</h1>
+{% if pg == "form" %}
+<p>De segunda a sábado, o fato do dia chega cedo no seu e-mail, com o mesmo texto e o mesmo topo do site: para que lado anda o risco de recessão e por quê. Aos domingos chega o resumo da semana.</p>
+<p>Para entrar na lista, escreva o seu e-mail abaixo e toque no botão do e-mail de confirmação que chega em seguida. Sem esse toque, o endereço não entra na lista.</p>
+<p class="aviso-f" id="aviso-invalido" hidden>Esse endereço parece incompleto. Confira se ele tem o @ e o final, como .com ou .com.br.</p>
+<p class="aviso-f" id="aviso-robo" hidden>Não deu para confirmar que o pedido veio de uma pessoa. Espere o quadradinho abaixo ficar verde e toque de novo no botão.</p>
+<form class="f-insc" method="post" action="{{ news.servico }}/inscrever">
+  <label for="email">Seu e-mail</label>
+  <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" maxlength="254">
+  <div class="mel" aria-hidden="true"><label for="site">Deixe este campo em branco</label><input type="text" id="site" name="site" tabindex="-1" autocomplete="off"></div>
+  {% if news.turnstile %}<div class="cf-turnstile" data-sitekey="{{ news.turnstile }}" data-language="pt-br" data-theme="auto"></div>{% endif %}
+  <button type="submit">Quero receber</button>
+  <p class="peq">A lista guarda só o endereço de e-mail. Os e-mails não registram quem abre nem em que link cada pessoa toca, e todos trazem no fim o link para sair. Os detalhes estão em <a href="/privacidade/">Privacidade</a>.</p>
+</form>
+<script>
+(function(){var q=location.search;if(q.indexOf("invalido=1")>-1)document.getElementById("aviso-invalido").hidden=false;if(q.indexOf("robo=1")>-1)document.getElementById("aviso-robo").hidden=false})();
+</script>
+{% if news.turnstile %}<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>{% endif %}
+{% elif pg == "confira" %}
+<p>O e-mail de confirmação chega em alguns minutos no endereço que você escreveu, com o assunto "Confirme a inscrição no Vai dar crise?". Toque no botão dele para entrar na lista.</p>
+<p>Se ele não aparecer, procure no lixo eletrônico e, no Gmail, também na aba Promoções. O link do e-mail vale por dois dias.</p>
+<p><a href="/">Voltar para a página Hoje</a></p>
+{% elif pg == "pronto" %}
+<p>O próximo fato do dia chega no seu e-mail na próxima manhã. Para ele não cair no lixo eletrônico, adicione {{ news.responder_para }} aos seus contatos.</p>
+<p>Para sair da lista, toque em "Sair da lista", no fim de qualquer e-mail.</p>
+<p><a class="botao" href="/">Ver o site</a></p>
+{% elif pg == "vencido" %}
+<p>O link de confirmação vale por dois dias depois do pedido, e este já passou do prazo ou chegou incompleto. Para entrar na lista, faça o pedido de novo, o que leva menos de um minuto.</p>
+<p><a class="botao" href="/inscricao/">Pedir de novo</a></p>
+{% elif pg == "erro" %}
+<p>Um problema no site interrompeu o pedido, e ele não foi concluído. Tente de novo daqui a alguns minutos. Se o erro continuar, escreva para <a href="mailto:{{ news.responder_para }}">{{ news.responder_para }}</a>.</p>
+<p><a class="botao" href="/inscricao/">Tentar de novo</a></p>
+{% elif pg == "privacidade" %}
+<p>Quem só lê o site não deixa nada guardado aqui: as páginas não têm cadastro, contador de visitas, anúncio ou botão de rede social. Como em qualquer página da internet, as empresas que entregam o site recebem o endereço de internet de quem abre: o GitHub, que guarda as páginas, o Cloudflare, que fica no caminho, e o Google, de onde vem a letra do texto.</p>
+<h2>A lista do fato do dia por e-mail</h2>
+<p>Quem se inscreve deixa só o endereço de e-mail, que serve para uma coisa: mandar o fato do dia e os resumos do site. O endereço não é vendido nem passado a ninguém.</p>
+<p>O endereço só entra na lista depois do toque no botão do e-mail de confirmação. Esse toque é o consentimento que a <a class="termo" href="https://pt.wikipedia.org/wiki/Lei_Geral_de_Prote%C3%A7%C3%A3o_de_Dados_Pessoais" target="_blank" rel="noopener">Lei Geral de Proteção de Dados</a> pede.</p>
+<p>A lista fica no Resend, a empresa americana que manda os e-mails, e por isso o endereço é guardado nos Estados Unidos. O pedido de inscrição passa pelo Cloudflare, que também confere se quem pede é uma pessoa, e não um programa que inscreve endereços dos outros.</p>
+<p>Os e-mails não registram quem abre nem em que link cada pessoa toca, porque essa medição fica desligada no Resend.</p>
+<h2>Como sair e apagar o endereço</h2>
+<p>Todo e-mail traz no fim o link "Sair da lista". Com um toque, o endereço sai da lista na hora e é apagado do Resend em até um dia.</p>
+<p>Para qualquer outro pedido sobre o seu endereço, como saber se ele está na lista, escreva para <a href="mailto:{{ news.responder_para }}">{{ news.responder_para }}</a>.</p>
+{% endif %}
+{% endfilter %}
+</main>
+{% endblock %}

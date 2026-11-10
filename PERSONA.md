@@ -372,6 +372,7 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 | Diferença entre taxas | pontos, abreviado "pt" em tabela |
 | Tipos de post | Retrato do Brasil, Fato do dia, Resumo da semana, Resumo do mês |
 | Quem escreve o post | "Escrito pelo Claude com a ajuda do Pedro.", a mesma assinatura em todo post, sem horário e sem contar notícias |
+| A lista por e-mail | "Receba o fato do dia por e-mail" na página da lista, o botão "Quero receber" e, no fim de todo e-mail, "Sair da lista". Na lateral, "Receba por e-mail"; no rodapé, "Receber por e-mail" e "Privacidade". A caixa e o link só aparecem quando a lista está aberta |
 | O compartilhar | No fim de todo post, depois do "Entenda a fundo": o botão "Mandar no WhatsApp", que abre o WhatsApp com o título e o link, e ao lado "Copiar link", que vira "Link copiado" por 3 segundos. Nada no topo, nada preso à tela, nenhuma outra rede e nenhuma etiqueta de rastreio no link |
 
 **Palavras com lado.** Fora do texto: "gastança", "rombo", "herança maldita", "austericídio", "desgoverno", "farra". No lugar, o número e o que ele mede.
@@ -437,6 +438,7 @@ Um fato, contado até a vida de quem lê, com o tamanho e o prazo. O que o dóla
 - `src/dossie.py`: as frases de dados de cada assunto, que o post usa como contexto (queda no verbo, mês por extenso, sem sigla solta).
 - `src/build_site.py`, `templates/`, `src/causas.py`, `src/calendario.py` e `src/og_image.py`: rótulos, legendas e datas das páginas; no topo, as frases do crescimento em 12 meses, de cada pressão, do vaivém normal e de quanto espaço ainda sobra saem de `src/build_site.py`.
 - `config/modelo.json`, seção `direcao`: os nomes das pressões e das linhas de Também acompanhamos, por que cada linha de Também acompanhamos importa, a frase de por que a linha não muda a placa e a parte da dívida em reais, posta à mão todo mês.
+- `templates/email.html`, `templates/email.txt`, `inscricao/index.js` e `templates/inscricao.html`: o e-mail do fato do dia, que repete o post e o topo do site sem passar por IA (`src/newsletter.py`), o e-mail de confirmação da inscrição e as páginas da lista e de privacidade. O e-mail não registra quem abre nem em que link a leitora toca.
 - Textos escritos à mão (`editor/`, `templates/`) seguem a lista acima na leitura. `METODOLOGIA.md` é técnica de propósito, para quem quer refazer a conta, mas usa os mesmos nomes do site.
 - `CLAUDE.md` manda qualquer sessão do Claude que escreva no repositório passar o texto por este guia.
 

@@ -123,6 +123,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .datas time{font-weight:600;color:var(--tinta)}
 .datas li.chave{background:var(--nota-fundo);padding:6px;margin:2px -6px;border-bottom:0;border-radius:4px}
 .bloco .fontes-datas{margin:10px 0 0}.fontes-datas a{color:var(--meta)}
+.b-receba{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:10px;background:var(--tinta);color:var(--papel);text-decoration:none;font:600 15px/1.2 var(--sistema)}
 
 /* rodapé */
 .pe{font:14px/1.55 var(--sistema);color:var(--meta)}
@@ -374,13 +375,15 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
   </div>
   </div>
   <script>
-  /* O botão só aparece no celular (CSS). Um link para uma linha (/#parte-...) abre a lista e a linha. */
+  /* O botão só aparece no celular (CSS). Um link para uma linha (/#parte-...) abre a lista e a linha; um link para
+     a caixa (#por-que, como o do e-mail) abre a lista. */
   (function(){
     var box=document.getElementById("por-que"),b=box.querySelector(".pq");
     function abre(v){box.classList.toggle("aberto",v);b.setAttribute("aria-expanded",v?"true":"false")}
     b.addEventListener("click",function(){abre(!box.classList.contains("aberto"))});
     function alvo(){
       var h=decodeURIComponent(location.hash.slice(1)),li=h.indexOf("parte-")===0&&document.getElementById(h);
+      if(h==="por-que"){abre(true);box.scrollIntoView();return}
       if(!li)return;abre(true);var d=li.querySelector("details");if(d)d.open=true;li.scrollIntoView();
     }
     alvo();addEventListener("hashchange",alvo);
@@ -407,7 +410,7 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
   
   <p class="basico"><span>O básico sobre a inflação esperada</span> <a href="/perguntas/inflacao-acima-da-meta/">Por que a inflação do Brasil fica acima da meta?</a></p>
   
-  <details class="fundo">
+  <details class="fundo" id="leitura">
     <summary><span class="f-cab"><span class="f-rot">Leitura de 6 minutos</span><span class="f-tit">Nova carta do Banco Central pela inflação pode vir em 2027, mas a carta costuma seguir o juro e não mudá-lo</span></span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
     <div class="f-corpo">
       <p>Os bancos (Focus) preveem inflação de 5,22% em 2026 e de 4,76% em 2027, as duas acima do teto da meta, de 4,5%. Com isso, segue andando a contagem de meses acima do teto, que leva o Banco Central a escrever uma carta. Em julho de 2025, o Banco Central escreveu uma carta aberta ao ministro da Fazenda porque a meta tinha sido descumprida por seis meses consecutivos. Pelo mesmo critério, uma nova sequência começou em setembro, e, se os bancos estiverem certos, o sexto mês seguido acima do teto será fevereiro de 2027.</p>
@@ -439,6 +442,13 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
   
   <div class="compartilha"><a class="zap" href="https://wa.me/?text=Focus%20sobe%20previs%C3%A3o%20de%20infla%C3%A7%C3%A3o%20de%202026%20para%205%2C22%25%20e%20corta%20a%20do%20PIB%20https%3A//vaidarcrise.com.br/2026-11-04/" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Mandar no WhatsApp</a><button class="copia" type="button" data-url="https://vaidarcrise.com.br/2026-11-04/"><svg aria-hidden="true"><use href="#i-link"/></svg><span class="c-txt" aria-live="polite"><span>Copiar link</span></span></button></div>
 </article>
+<script>
+/* Um link para a leitura a fundo (/AAAA-MM-DD/#leitura, como o do e-mail) abre a leitura. */
+(function(){
+  function abre(){if(location.hash!=="#leitura")return;var d=document.getElementById("leitura");if(d){d.open=true;d.scrollIntoView()}}
+  abre();addEventListener("hashchange",abre);
+})();
+</script>
     <section class="continua" aria-label="Posts anteriores">
       <h2>Posts anteriores</h2>
       <p class="mais" id="mais" data-depois="2026-11-04"><a href="/2026-11-03/">Carregar posts anteriores</a></p>
@@ -454,6 +464,7 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
     </ul>
     <p class="peq fontes-datas">Fontes: calendário do <a href="https://servicodados.ibge.gov.br/api/v3/calendario/">IBGE</a>, Banco Central (Copom) e Fed.</p>
   </div>
+  
   
   <div class="bloco">
     <h3>Sobre</h3>
@@ -515,7 +526,7 @@ document.addEventListener("click",function(e){
 
 <footer class="pe"><div class="in">
   <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando. Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias da véspera dão o fato do dia, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>
-  <p><a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
+  <p><a href="/privacidade/">Privacidade</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
 <script>
 // O menu Grandes perguntas fecha com um toque fora dele ou com Esc.

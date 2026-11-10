@@ -612,6 +612,7 @@ def main() -> None:
         print("nenhuma rodada em runs/")
         return
     agenda = calendario.carregar()
+    news = json.loads((ROOT / "config" / "newsletter.json").read_text())
 
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]))
     env.filters["num"] = num
@@ -664,7 +665,8 @@ def main() -> None:
                 "hora": hora(r["gerado_em"]), "atualizado_iso": r["gerado_em"],
                 "link_inicio": base, "link_nota": "/nota/", "continua": continua(dia),
                 "data_curta": data_curta, "data_extenso": data_extenso, "mes_ano": mes_ano,
-                "og_url": f"{SITE}/og/{dia}.png", "dia_mes": dia_mes, "menu_perguntas": menu_perguntas}
+                "og_url": f"{SITE}/og/{dia}.png", "dia_mes": dia_mes, "menu_perguntas": menu_perguntas,
+                "news": news}
 
     abas = {"index.html": "inicio", "causas.html": "causas", "nota.html": "nota", "pergunta.html": "perguntas"}
 
@@ -745,6 +747,29 @@ def main() -> None:
     gravar(DOCS / "metodologia", "pagina.html", {**ctx, "titulo": "Metodologia", "corpo": met, "og_url": f"{SITE}/og.png"},
            f"{SITE}/metodologia/")
 
+    # O fato do dia por e-mail (src/newsletter.py): a página de inscrição, as respostas do serviço de inscrição
+    # (inscricao/index.js), a de privacidade e as imagens que o e-mail usa. Até o Pedro abrir a lista
+    # ("inscricao_aberta" em config/newsletter.json), a página de inscrição fica fora da busca e sem link no site.
+    paginas_lista = {
+        "inscricao": ("form", "Receba o fato do dia por e-mail",
+                      "O fato do dia do Vai dar crise? no seu e-mail, de segunda a sábado, e o resumo da semana aos domingos."),
+        "inscricao/confira": ("confira", "Falta um passo: confira o seu e-mail", "Confirme a inscrição no e-mail que acabou de chegar."),
+        "inscricao/pronto": ("pronto", "Pronto, a inscrição está confirmada", "A inscrição no fato do dia por e-mail está confirmada."),
+        "inscricao/vencido": ("vencido", "Este link de confirmação venceu", "O link de confirmação vale por dois dias."),
+        "inscricao/erro": ("erro", "A inscrição não foi até o fim", "Um problema no site interrompeu o pedido de inscrição."),
+        "privacidade": ("privacidade", "Privacidade", "O que o Vai dar crise? guarda de quem lê e de quem recebe o fato do dia por e-mail."),
+    }
+    for pasta, (pg, titulo, descricao) in paginas_lista.items():
+        fora_da_busca = pg not in ("form", "privacidade") or (pg == "form" and not news.get("inscricao_aberta"))
+        gravar(DOCS / pasta, "inscricao.html", {**ctx, "pg": pg, "titulo": titulo, "descricao": descricao,
+                                                 "noindex": fora_da_busca, "og_url": f"{SITE}/og.png"},
+               f"{SITE}/{pasta}/")
+    try:
+        import newsletter  # aqui dentro: o newsletter.py importa este arquivo
+        newsletter.imagens(DOCS / "email")
+    except (OSError, ValueError, ImportError) as e:  # as imagens do e-mail não podem derrubar a atualização do dia
+        print(f"aviso: as imagens do e-mail não foram refeitas ({e!r})")
+
     publico = dados_publicos(ultima, ctx)
     publico["post_do_dia"] = {"tipo": posts[dia]["tipo_nome"], "titulo": posts[dia]["titulo"], "url": f"{SITE}/{dia}/",
                               "escrito_por_llm": posts[dia]["llm"]}
@@ -756,7 +781,8 @@ def main() -> None:
     (DOCS / "CNAME").write_text("vaidarcrise.com.br")
     (DOCS / ".nojekyll").touch()
     (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /posts/\nSitemap: {SITE}/sitemap.xml\n")
-    urls = [f"{SITE}/", f"{SITE}/causas/", f"{SITE}/nota/", f"{SITE}/metodologia/"] \
+    urls = [f"{SITE}/", f"{SITE}/causas/", f"{SITE}/nota/", f"{SITE}/metodologia/", f"{SITE}/privacidade/"] \
+        + ([f"{SITE}/inscricao/"] if news.get("inscricao_aberta") else []) \
         + [f"{SITE}/{d}/" for d in dias] + [f"{SITE}{t['link']}" for t in textos] + [f"{SITE}{u}" for u in perguntas]
     (DOCS / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                       + "\n".join(f"<url><loc>{u}</loc></url>" for u in urls) + "\n</urlset>\n")
