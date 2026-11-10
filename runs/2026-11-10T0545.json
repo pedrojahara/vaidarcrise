@@ -1,0 +1,4308 @@
+{
+ "id": "2026-11-10T0545",
+ "gerado_em": "2026-11-10T05:45:07-03:00",
+ "regras": {
+  "config_sha256": "35f3c3a2121e7f7c7b43119aed172143dc07cef1f3a828cb6065cf5bff75b556",
+  "calibracao_sha256": "df166b078e90c473619e3a0ecc17ceec8fafecf0f6563abd3d35761ee22c3495"
+ },
+ "insumos": {
+  "indicadores_coletados_em": "2026-11-10T05:45:23-03:00",
+  "erros_coleta": [],
+  "pib": [
+   {
+    "trimestre": "1T23",
+    "periodo": "202301",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T23",
+    "periodo": "202302",
+    "var_qoq": 0.8
+   },
+   {
+    "trimestre": "3T23",
+    "periodo": "202303",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T23",
+    "periodo": "202304",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "1T24",
+    "periodo": "202401",
+    "var_qoq": 0.7
+   },
+   {
+    "trimestre": "2T24",
+    "periodo": "202402",
+    "var_qoq": 1.7
+   },
+   {
+    "trimestre": "3T24",
+    "periodo": "202403",
+    "var_qoq": 0.9
+   },
+   {
+    "trimestre": "4T24",
+    "periodo": "202404",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "1T25",
+    "periodo": "202501",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T25",
+    "periodo": "202502",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "3T25",
+    "periodo": "202503",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T25",
+    "periodo": "202504",
+    "var_qoq": 0.2
+   },
+   {
+    "trimestre": "1T26",
+    "periodo": "202601",
+    "var_qoq": 1.1
+   },
+   {
+    "trimestre": "2T26",
+    "periodo": "202602",
+    "var_qoq": 0.5
+   }
+  ],
+  "focus": {
+   "PIB Total": [
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2026",
+     "Mediana": 1.7546,
+     "numeroRespondentes": 118
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2027",
+     "Mediana": 1.1513,
+     "numeroRespondentes": 117
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2028",
+     "Mediana": 1.8,
+     "numeroRespondentes": 88
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2029",
+     "Mediana": 2.0,
+     "numeroRespondentes": 81
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2030",
+     "Mediana": 2.0,
+     "numeroRespondentes": 79
+    }
+   ],
+   "IPCA": [
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2026",
+     "Mediana": 5.2195,
+     "numeroRespondentes": 146
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2027",
+     "Mediana": 4.9005,
+     "numeroRespondentes": 146
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2028",
+     "Mediana": 4.0,
+     "numeroRespondentes": 133
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2029",
+     "Mediana": 4.0,
+     "numeroRespondentes": 122
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2030",
+     "Mediana": 3.935,
+     "numeroRespondentes": 114
+    }
+   ],
+   "Selic": [
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2026",
+     "Mediana": 13.75,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2027",
+     "Mediana": 12.5,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2028",
+     "Mediana": 11.0,
+     "numeroRespondentes": 126
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2029",
+     "Mediana": 10.25,
+     "numeroRespondentes": 116
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2030",
+     "Mediana": 10.0,
+     "numeroRespondentes": 113
+    }
+   ],
+   "Câmbio": [
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2026",
+     "Mediana": 5.35,
+     "numeroRespondentes": 122
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2027",
+     "Mediana": 5.4,
+     "numeroRespondentes": 121
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2028",
+     "Mediana": 5.45,
+     "numeroRespondentes": 94
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2029",
+     "Mediana": 5.5,
+     "numeroRespondentes": 91
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2030",
+     "Mediana": 5.5075,
+     "numeroRespondentes": 88
+    }
+   ],
+   "IPCA 12m": {
+    "Data": "2026-11-06",
+    "Mediana": 5.0117,
+    "numeroRespondentes": 134
+   }
+  },
+  "noticias": {
+   "coletado_em": "2026-11-10T08:45:07+00:00",
+   "janela_horas": 32,
+   "por_veiculo": {
+    "Poder360": 39,
+    "Valor": 40,
+    "g1": 20,
+    "Gazeta do Povo": 7,
+    "Folha": 40,
+    "Estadão": 10,
+    "InfoMoney": 40,
+    "Agência Brasil": 9
+   },
+   "status_fontes": {
+    "Agência Brasil": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 9
+    },
+    "Folha": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 85
+    },
+    "Estadão": {
+     "http": 200,
+     "itens_no_feed": 20,
+     "na_janela": 20
+    },
+    "Valor": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 100
+    },
+    "InfoMoney": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Poder360": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Gazeta do Povo": {
+     "http": 200,
+     "itens_no_feed": 24,
+     "na_janela": 14
+    },
+    "g1": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 40
+    },
+    "GDELT": {
+     "http": 429,
+     "erro": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic us"
+    }
+   },
+   "n_itens": 205
+  }
+ },
+ "cobertura": {
+  "dias": [
+   "2026-11-09"
+  ],
+  "no_acervo": 309,
+  "na_cesta": 205,
+  "coletas_24h": 25
+ },
+ "llm": {
+  "ok": true,
+  "meta": {
+   "etapa": "classificar",
+   "modelo_pedido": "sonnet",
+   "prompt_sha256": "aa10263964b7daca94b83f642d7ee8fc1fc819a9e8e922ec66a0755597c21be0",
+   "system_sha256": "b8c0c03bbc274994096eaa80d1dba77044812328b86328157109851f40ddea41",
+   "returncode": 0,
+   "is_error": false,
+   "custo_usd": 0.191962,
+   "turnos": 2,
+   "duracao_s": 27,
+   "modelos": [
+    "claude-sonnet-5-5"
+   ],
+   "permission_denials": [],
+   "session_id": "70940d3d-2efe-4e22-860b-b5af3eb9d0e7"
+  },
+  "saida": {
+   "eventos": [
+    {
+     "noticia_ids": [
+      "n140",
+      "n137",
+      "n144",
+      "n167"
+     ],
+     "outras_ids": [
+      "n155",
+      "n178",
+      "n100",
+      "n195"
+     ],
+     "titulo_evento": "Focus sobe inflação de 2027 a 4,90% e corta o PIB de 2026 para 1,75%",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "juro",
+     "direcao": 1,
+     "magnitude": 1,
+     "vida": {
+      "tamanho": 1,
+      "porta": "precos",
+      "quem": "quem sente os preços e o juro altos por mais tempo, com o corte da Selic só em março"
+     },
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Bancos e consultorias esperam preços subindo acima do teto da meta em 2027, e por isso a Selic fica em 13,75% por mais tempo. Juro alto por mais tempo segura o crédito e o investimento."
+    },
+    {
+     "noticia_ids": [
+      "n125",
+      "n008",
+      "n035",
+      "n075"
+     ],
+     "outras_ids": [
+      "n006",
+      "n033",
+      "n153",
+      "n154",
+      "n019"
+     ],
+     "titulo_evento": "Presidente reafirma compromisso fiscal em TV, mas o mercado vê falta de detalhes",
+     "estagio": "anuncio",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "governo_federal",
+     "instrumento": "regra_fiscal",
+     "objetivo": "",
+     "fator": "contas",
+     "direcao": 1,
+     "magnitude": 1,
+     "vida": {
+      "tamanho": 0,
+      "porta": "nenhuma",
+      "quem": ""
+     },
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261109-01",
+     "porque": "O pronunciamento não trouxe cortes de gastos nem datas, e economistas seguem sem ver como a dívida vai parar de subir. A dúvida mantém o juro que o governo paga alto e freia o investimento das empresas."
+    },
+    {
+     "noticia_ids": [
+      "n134",
+      "n146",
+      "n029"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Governo prorroga até 2031 o Gás do Povo, que dá o botijão a 15 milhões de famílias",
+     "estagio": "decidido",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "governo_federal",
+     "instrumento": "gasto",
+     "objetivo": "",
+     "fator": "contas",
+     "direcao": 1,
+     "magnitude": 1,
+     "vida": {
+      "tamanho": 2,
+      "porta": "governo",
+      "quem": "cerca de 15 milhões de famílias que recebem a recarga gratuita do botijão de gás"
+     },
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O governo baixou medida provisória que mantém a recarga gratuita por mais cinco anos. O benefício sustenta o consumo das famílias de baixa renda, e o gasto fica fixo nas contas do governo por mais tempo."
+    },
+    {
+     "noticia_ids": [
+      "n043"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Tesouro terá de refinanciar R$ 1,8 trilhão da dívida em 12 meses",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "contas",
+     "direcao": 1,
+     "magnitude": 1,
+     "vida": {
+      "tamanho": 0,
+      "porta": "nenhuma",
+      "quem": ""
+     },
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A parte da dívida que vence em até um ano chegou a 19,95% em setembro, e o Tesouro precisa pegar dinheiro novo logo. Com o juro alto, a conta de juros do governo cresce e pressiona as contas públicas."
+    },
+    {
+     "noticia_ids": [
+      "n028",
+      "n030",
+      "n048"
+     ],
+     "outras_ids": [
+      "n114",
+      "n026"
+     ],
+     "titulo_evento": "Bolsa sobe 2,22% e dólar cai a R$ 5,505 com alívio no exterior",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "mercado",
+     "direcao": -1,
+     "magnitude": 1,
+     "vida": {
+      "tamanho": 0,
+      "porta": "nenhuma",
+      "quem": ""
+     },
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A Bolsa acompanhou a recuperação em Nova York e o petróleo mais barato, e o dólar recuou. Dólar menos pressionado alivia o preço dos importados, mas o mercado segue de olho nas contas do governo."
+    },
+    {
+     "noticia_ids": [
+      "n115",
+      "n198",
+      "n108"
+     ],
+     "outras_ids": [
+      "n055",
+      "n021"
+     ],
+     "titulo_evento": "Petróleo Brent cai mais de 4% com sinal de negociação entre EUA e Irã",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": -1,
+     "magnitude": 1,
+     "vida": {
+      "tamanho": 1,
+      "porta": "precos",
+      "quem": "quem abastece o carro e paga o frete embutido nos preços"
+     },
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O presidente dos EUA disse que novos ataques ao Irã são improváveis enquanto houver negociação, e o petróleo caiu lá fora. Combustível e frete tendem a pesar menos nos preços aqui."
+    },
+    {
+     "noticia_ids": [
+      "n141",
+      "n138",
+      "n170"
+     ],
+     "outras_ids": [
+      "n097",
+      "n157"
+     ],
+     "titulo_evento": "China prorroga por dois meses a trégua comercial com os EUA",
+     "estagio": "decidido",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "fora",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": -1,
+     "magnitude": 1,
+     "vida": {
+      "tamanho": 0,
+      "porta": "nenhuma",
+      "quem": ""
+     },
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A China manteve suspensas as medidas comerciais contra os EUA, o que evita nova guerra de tarifas entre as duas maiores economias. Isso protege a demanda mundial por produtos como soja e minério do Brasil."
+    },
+    {
+     "noticia_ids": [
+      "n132",
+      "n187"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "MP de renegociação das dívidas rurais pode perder a validade na quarta",
+     "estagio": "em_votacao",
+     "chance_aprovacao": 0.2,
+     "origem": "politica",
+     "decisor": "congresso",
+     "instrumento": "credito_publico",
+     "objetivo": "",
+     "fator": "credito",
+     "direcao": -1,
+     "magnitude": 1,
+     "vida": {
+      "tamanho": 1,
+      "porta": "credito",
+      "quem": "produtores rurais endividados que contam com a renegociação"
+     },
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A bancada ruralista resiste, e só R$ 18,6 bi foram renegociados até agora. Se a medida passasse, produtores teriam alívio nas dívidas e mais fôlego para investir."
+    }
+   ]
+  }
+ },
+ "eventos_novos": [
+  "ev-20261110-01",
+  "ev-20261110-02",
+  "ev-20261110-03",
+  "ev-20261110-04",
+  "ev-20261110-05",
+  "ev-20261110-06",
+  "ev-20261110-07"
+ ],
+ "eventos_descartados": [
+  {
+   "noticia_ids": [
+    "n125",
+    "n008",
+    "n035",
+    "n075"
+   ],
+   "outras_ids": [
+    "n006",
+    "n033",
+    "n153",
+    "n154",
+    "n019"
+   ],
+   "titulo_evento": "Presidente reafirma compromisso fiscal em TV, mas o mercado vê falta de detalhes",
+   "estagio": "anuncio",
+   "chance_aprovacao": null,
+   "origem": "politica",
+   "decisor": "governo_federal",
+   "instrumento": "regra_fiscal",
+   "objetivo": "",
+   "fator": "contas",
+   "direcao": 1,
+   "magnitude": 1,
+   "vida": {
+    "tamanho": 0,
+    "porta": "nenhuma",
+    "quem": ""
+   },
+   "ja_no_preco": true,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261109-01",
+   "porque": "O pronunciamento não trouxe cortes de gastos nem datas, e economistas seguem sem ver como a dívida vai parar de subir. A dúvida mantém o juro que o governo paga alto e freia o investimento das empresas.",
+   "motivo": "mesmo fato do evento ev-20261109-01",
+   "fontes": [
+    {
+     "veiculo": "InfoMoney",
+     "titulo": "Como o mercado viu o pronunciamento de Lula à nação?",
+     "url": "https://www.infomoney.com.br/mercados/como-o-mercado-viu-o-pronunciamento-de-lula-a-nacao/",
+     "publicado_em": "2026-11-09T12:51+00:00"
+    },
+    {
+     "veiculo": "Gazeta do Povo",
+     "titulo": "Lula evita detalhar cortes de gastos e gera desconfiança no mercado financeiro",
+     "url": "https://www.gazetadopovo.com.br/economia/lula-evita-detalhar-cortes-de-gastos-e-gera-desconfianca-no-mercado-financeiro/",
+     "publicado_em": "2026-11-10T00:52+00:00"
+    },
+    {
+     "veiculo": "Gazeta do Povo",
+     "titulo": "Discurso contraditório de Lula não convence economistas e frustra mercado",
+     "url": "https://www.gazetadopovo.com.br/economia/discurso-contraditorio-de-lula-nao-convence-economistas-e-frustra-mercado/",
+     "publicado_em": "2026-11-09T20:50+00:00"
+    },
+    {
+     "veiculo": "InfoMoney",
+     "titulo": "Lula perdeu oportunidade de trazer surpresa positiva ao mercado, avaliam economistas",
+     "url": "https://www.infomoney.com.br/economia/pronunciamento-lula-mercado-ajuste-fiscal/",
+     "publicado_em": "2026-11-09T17:28+00:00"
+    }
+   ]
+  }
+ ],
+ "resultado": {
+  "nivel": {
+   "indice": 2,
+   "nome": "Normal",
+   "anterior": 2,
+   "bruto": 2,
+   "nome_bruto": "Normal"
+  },
+  "gar": {
+   "entradas": [
+    {
+     "id": "tendencia",
+     "fator": "atividade",
+     "nome": "Crescimento médio em 10 anos",
+     "unidade": "%",
+     "valor": 1.7328366710913756,
+     "ref": "2T2026",
+     "referencia": 2.4697807384106563,
+     "coef": -0.20407155569770025,
+     "faixa_normal": [
+      1.2052,
+      3.3021
+     ],
+     "escala": [
+      0.3054,
+      3.9289
+     ],
+     "efeito": 0.15038932228003635
+    },
+    {
+     "id": "crescimento",
+     "fator": "atividade",
+     "nome": "Crescimento em 12 meses",
+     "unidade": "%",
+     "valor": 1.3821346612817385,
+     "ref": "2026-08",
+     "referencia": 2.029441313073013,
+     "coef": 0.2281557601628648,
+     "faixa_normal": [
+      0.4274,
+      4.1388
+     ],
+     "escala": [
+      -6.2893,
+      9.267
+     ],
+     "efeito": -0.14768674119791708
+    },
+    {
+     "id": "juro",
+     "fator": "juro",
+     "nome": "Selic: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -1.25,
+     "ref": "2026-11-10",
+     "nivel": 13.75,
+     "antes": 15.0,
+     "referencia": -0.375,
+     "coef": -0.1473323685958321,
+     "faixa_normal": [
+      -3.0,
+      2.0
+     ],
+     "escala": [
+      -6.31,
+      8.655
+     ],
+     "efeito": 0.12891582252135309
+    },
+    {
+     "id": "inflacao",
+     "fator": "juro",
+     "nome": "Inflação: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -0.5899999999999999,
+     "ref": "2026-09",
+     "nivel": 4.58,
+     "antes": 5.17,
+     "referencia": -0.06499999999999995,
+     "coef": -0.12500236363708112,
+     "faixa_normal": [
+      -1.665,
+      1.3725
+     ],
+     "escala": [
+      -8.2538,
+      6.2048
+     ],
+     "efeito": 0.06562624090946757
+    }
+   ],
+   "ruim": -0.49423883953664693,
+   "cenario_ruim": -1.7876180427753297,
+   "cenario_normal": -1.8914573730774542,
+   "cortes": [
+    -2.253090277294695,
+    -1.094150109523146,
+    -0.07323292299512922,
+    0.7382055828202851
+   ],
+   "ref_pib": "2T2026"
+  },
+  "indicadores": [
+   {
+    "id": "ibcbr",
+    "fator": "atividade",
+    "nome": "IBC-Br",
+    "unidade": "%",
+    "definicao": "IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores.",
+    "direcao": -1,
+    "faixa_normal": [
+     -0.178879,
+     1.409462
+    ],
+    "escala": [
+     -3.422733,
+     3.418644
+    ],
+    "valor": -0.6424554746393363,
+    "ref": "2026-08",
+    "situacao": "pior"
+   },
+   {
+    "id": "focus_pib",
+    "fator": "atividade",
+    "nome": "PIB esperado pelo Focus",
+    "unidade": "%",
+    "definicao": "Crescimento do PIB esperado para os próximos 12 meses: mediana do Focus para o ano corrente e o seguinte, ponderada pelos meses que faltam em cada um.",
+    "direcao": -1,
+    "faixa_normal": [
+     1.617708,
+     3.499375
+    ],
+    "escala": [
+     -2.139717,
+     5.282417
+    ],
+    "valor": 1.201575,
+    "ref": "2026-11-06",
+    "ano": 1.7546,
+    "ano_seguinte": 1.1513,
+    "situacao": "pior"
+   },
+   {
+    "id": "juro_real",
+    "fator": "juro",
+    "nome": "Juro real",
+    "unidade": "% ao ano",
+    "definicao": "Selic meta (BCB 432) descontada da inflação esperada para 12 meses (Focus, suavizada): (1 + Selic) / (1 + inflação esperada) − 1.",
+    "direcao": 1,
+    "faixa_normal": [
+     4.062007,
+     9.133549
+    ],
+    "escala": [
+     -1.195693,
+     14.660898
+    ],
+    "valor": 8.321263249714072,
+    "ref": "2026-11-10",
+    "selic": 13.75,
+    "inflacao_esperada": 5.0117,
+    "focus_data": "2026-11-06",
+    "situacao": "normal"
+   },
+   {
+    "id": "comprometimento",
+    "fator": "credito",
+    "nome": "Renda comprometida com dívidas",
+    "unidade": "p.p.",
+    "definicao": "Comprometimento de renda das famílias com dívidas, dessazonalizado (BCB 29034), menos a média dos 36 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.268333,
+     1.686944
+    ],
+    "escala": [
+     -1.879444,
+     3.762167
+    ],
+    "valor": 1.8797222222222203,
+    "ref": "2026-08",
+    "nivel": 28.99,
+    "situacao": "pior"
+   },
+   {
+    "id": "tesouro",
+    "fator": "mercado",
+    "nome": "Juro do Tesouro IPCA+",
+    "unidade": "p.p.",
+    "definicao": "Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (Tesouro Direto, venda pela manhã) menos a sua mediana nos 3 anos anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.95,
+     0.845
+    ],
+    "escala": [
+     -2.2292,
+     2.1344
+    ],
+    "valor": 0.5899999999999999,
+    "ref": "2026-11-06",
+    "nivel": 7.99,
+    "mediana": 7.4,
+    "vencimento": "2035-05-15",
+    "situacao": "normal"
+   },
+   {
+    "id": "dolar",
+    "fator": "mercado",
+    "nome": "Dólar",
+    "unidade": "%",
+    "definicao": "Variação do dólar PTAX (BCB 1) em 3 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -4.151625,
+     5.11632
+    ],
+    "escala": [
+     -14.383365,
+     27.223675
+    ],
+    "valor": 8.324821246169556,
+    "ref": "2026-11-09",
+    "nivel": 5.5146,
+    "situacao": "pior"
+   },
+   {
+    "id": "divida",
+    "fator": "contas",
+    "nome": "Dívida pública",
+    "unidade": "p.p. do PIB",
+    "definicao": "Variação da dívida bruta do governo geral (BCB 13762) em 12 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -1.74,
+     4.22
+    ],
+    "escala": [
+     -8.4312,
+     10.7912
+    ],
+    "valor": 5.090000000000003,
+    "ref": "2026-09",
+    "nivel": 82.93,
+    "situacao": "pior"
+   },
+   {
+    "id": "sahm",
+    "fator": "emprego",
+    "nome": "Regra de Sahm",
+    "unidade": "p.p.",
+    "definicao": "Média de 3 meses da desocupação da PNAD Contínua (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.066667,
+     1.433333
+    ],
+    "escala": [
+     -0.526667,
+     3.126667
+    ],
+    "valor": 0.033333333333333215,
+    "ref": "2026-09",
+    "nivel": 5.2,
+    "situacao": "normal"
+   },
+   {
+    "id": "commodities",
+    "fator": "externo",
+    "nome": "Preço das commodities",
+    "unidade": "%",
+    "definicao": "Variação em 6 meses do índice de preços de todas as commodities do FMI (FRED PALLFNFINDEXM).",
+    "direcao": -1,
+    "faixa_normal": [
+     -4.196915,
+     13.721388
+    ],
+    "escala": [
+     -28.018093,
+     30.645307
+    ],
+    "valor": 1.6727586354593926,
+    "ref": "2026-09",
+    "nivel": 222.4285486100514,
+    "situacao": "normal"
+   }
+  ],
+  "fatores": [
+   {
+    "id": "atividade",
+    "nome": "Ritmo da economia",
+    "indicadores": [
+     "ibcbr",
+     "focus_pib"
+    ],
+    "entradas": [
+     "tendencia",
+     "crescimento"
+    ],
+    "na_conta": true,
+    "efeito": 0.0027025810821192653,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "juro",
+    "nome": "Juro e inflação",
+    "indicadores": [
+     "juro_real"
+    ],
+    "entradas": [
+     "juro",
+     "inflacao"
+    ],
+    "na_conta": true,
+    "efeito": 0.19454206343082064,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   },
+   {
+    "id": "credito",
+    "nome": "Dívidas das famílias",
+    "indicadores": [
+     "comprometimento"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "mercado",
+    "nome": "Desconfiança de quem investe",
+    "indicadores": [
+     "tesouro",
+     "dolar"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "contas",
+    "nome": "Contas do governo",
+    "indicadores": [
+     "divida"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "emprego",
+    "nome": "Emprego",
+    "indicadores": [
+     "sahm"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   },
+   {
+    "id": "externo",
+    "nome": "Economia lá fora",
+    "indicadores": [
+     "commodities"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   }
+  ],
+  "gatilhos": [
+   {
+    "id": "crescimento",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": -1.2472588265629843,
+    "hoje": 1.3821346612817385
+   },
+   {
+    "id": "juro",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": 2.8218226123968666,
+    "hoje": -1.25
+   },
+   {
+    "id": "inflacao",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": 4.209199411366487,
+    "hoje": -0.5899999999999999
+   },
+   {
+    "id": "crescimento",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": 3.2273912361803534,
+    "hoje": 1.3821346612817385
+   },
+   {
+    "id": "juro",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": -4.107524931920681,
+    "hoje": -1.25
+   },
+   {
+    "id": "inflacao",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": -3.957983646803852,
+    "hoje": -0.5899999999999999
+   }
+  ],
+  "reaproveitados": [],
+  "faltando": [],
+  "direcao": {
+   "estado": "subindo",
+   "desde": "2026-06",
+   "soma": 4,
+   "bruto": "subindo",
+   "pendente": null,
+   "apertaram": 4,
+   "folgaram": 0,
+   "partes": [
+    {
+     "id": "contas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "divida": {
+       "agora": 82.93,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 81.95,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 0.980000000000004,
+       "corte": 0.9451499999999999,
+       "lado": 1,
+       "como": "pontos"
+      },
+      "primario": {
+       "agora": 0.52,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 1.19,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.6699999999999999,
+       "corte": 0.311325,
+       "lado": -1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "divida_bruta",
+      "valor": 82.93,
+      "ref": "2026-09",
+      "desde": "2006",
+      "meses": 238,
+      "pior_que_pct": 96,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "parcelas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "parcelas": {
+       "agora": 28.99,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 28.47,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": 0.5199999999999996,
+       "corte": 0.378075,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "comprometimento_renda",
+      "valor": 28.99,
+      "ref": "2026-08",
+      "desde": "2005",
+      "meses": 258,
+      "pior_que_pct": 100,
+      "recorde_ruim": true,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "mercado",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "dolar": {
+       "agora": 5.5146,
+       "dia": "2026-11-09",
+       "ref": "2026-11",
+       "antes": 5.1816,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 6.426586382584509,
+       "corte": 4.765725,
+       "lado": 1,
+       "como": "pct",
+       "lado_do_dia": 1,
+       "dias_seguidos": 0,
+       "persiste_dias": 3
+      },
+      "juro_longo": {
+       "agora": 7.99,
+       "dia": "2026-11-06",
+       "ref": "2026-11",
+       "antes": 7.92,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 0.07000000000000028,
+       "corte": 0.41145,
+       "lado": 0,
+       "como": "pontos",
+       "lado_do_dia": 0,
+       "dias_seguidos": 0,
+       "persiste_dias": 3
+      }
+     },
+     "folga": {
+      "serie": "juro_real_longo",
+      "valor": 7.99,
+      "ref": "2026-11",
+      "desde": "2005",
+      "meses": 257,
+      "pior_que_pct": 91,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "inflacao",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "inflacao": {
+       "agora": 5.0117,
+       "dia": "2026-11-06",
+       "ref": "2026-11",
+       "antes": 4.553,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 0.45870000000000033,
+       "corte": 0.316875,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "focus_ipca_12m",
+      "valor": 5.0117,
+      "ref": "2026-11",
+      "desde": "2001",
+      "meses": 300,
+      "pior_que_pct": 54,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "juro",
+     "lado": 0,
+     "na_soma": true,
+     "medidas": {
+      "juro": {
+       "agora": 13.75,
+       "dia": "2026-11-10",
+       "ref": "2026-11",
+       "antes": 14.0,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": -0.25,
+       "corte": 0.833925,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "juro_real",
+      "valor": 8.321263249714072,
+      "ref": "2026-11",
+      "desde": "2002",
+      "meses": 299,
+      "pior_que_pct": 67,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "ritmo",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "ritmo": {
+       "agora": 110.40624,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 111.25061,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": -0.6424554746393252,
+       "corte": 0.88905,
+       "lado": 0,
+       "como": "media"
+      }
+     },
+     "folga": null
+    },
+    {
+     "id": "emprego",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "emprego": {
+       "agora": 5.2,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 5.4,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.20000000000000018,
+       "corte": 0.555975,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "desocupacao",
+      "valor": 5.2,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "renda",
+     "lado": -1,
+     "na_soma": false,
+     "medidas": {
+      "renda": {
+       "agora": 3790.0,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 3753.0,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 0.9858779642952342,
+       "corte": 0.8882999999999999,
+       "lado": -1,
+       "como": "pct"
+      }
+     },
+     "folga": {
+      "serie": "rendimento_real",
+      "valor": 3790.0,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "reservas",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "reservas": {
+       "agora": 365019.0,
+       "dia": "2026-10-01",
+       "ref": "2026-10",
+       "antes": 369742.0,
+       "dia_antes": "2026-07-01",
+       "ref_antes": "2026-07",
+       "mudanca": -1.2773771981543836,
+       "corte": 2.97645,
+       "lado": 0,
+       "como": "pct"
+      }
+     },
+     "folga": null
+    }
+   ],
+   "mes": "2026-11",
+   "linha": [
+    {
+     "mes": "2004-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-01",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-02",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-03",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-04",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-11",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2020-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2020-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2021-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-11",
+     "estado": "S"
+    }
+   ]
+  }
+ },
+ "pressao": {
+  "fatores": {
+   "juro": {
+    "saldo": 0.5,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261110-01"
+    ]
+   },
+   "contas": {
+    "saldo": 1.25,
+    "sentido": "piora",
+    "eventos": [
+     "ev-20261110-02",
+     "ev-20261110-03"
+    ]
+   },
+   "mercado": {
+    "saldo": -1.0,
+    "sentido": "melhora",
+    "eventos": [
+     "ev-20261110-04"
+    ]
+   },
+   "externo": {
+    "saldo": -1.5,
+    "sentido": "melhora",
+    "eventos": [
+     "ev-20261110-05",
+     "ev-20261110-06"
+    ]
+   },
+   "credito": {
+    "saldo": -0.2,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261110-07"
+    ]
+   }
+  },
+  "saldo": -0.95,
+  "sentido": "igual",
+  "n": 7
+ },
+ "leituras": {
+  "fatores": {
+   "atividade": {
+    "fatos": [
+     {
+      "texto": "A economia cresceu 1,4% em um ano (prévia do PIB, de junho a agosto). O normal desde 2004 vai de 0,4% a 4,1%.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "A prévia do PIB caiu 0,6% no trimestre até agosto, contra os 3 meses anteriores. É a maior queda desde agosto de 2025.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "Os bancos (Focus) esperam alta de 1,8% do PIB em 2026 e alta de 1,2% em 2027.",
+      "fonte": "Focus"
+     }
+    ]
+   },
+   "juro": {
+    "fatos": [
+     {
+      "texto": "Os preços subiram 4,6% em um ano até setembro (IPCA). Um ano antes, a alta era de 5,2%: os preços sobem mais devagar.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "Descontada a inflação esperada (5,0%), a Selic de 13,75% rende 8,3% ao ano.",
+      "fonte": "BC e Focus"
+     },
+     {
+      "texto": "Selic em 13,75% desde 17/9. Antes, era 14%. Nos últimos 12 meses, chegou a 15%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "credito": {
+    "fatos": [
+     {
+      "texto": "29% da renda das famílias vai para parcelas e juros (agosto), o maior desde o início da série, em 2005. Um ano antes, eram 27,6%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "mercado": {
+    "fatos": [
+     {
+      "texto": "O governo paga 8,0% ao ano acima da inflação para pegar dinheiro até 2035 (6/11). É 0,6 ponto acima do normal dos últimos 3 anos.",
+      "fonte": "Tesouro Direto"
+     },
+     {
+      "texto": "Dólar a R$ 5,51 em 9/11, 8,3% mais caro que no começo de agosto.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "contas": {
+    "fatos": [
+     {
+      "texto": "Dívida do governo em 82,9% do PIB (setembro). Subiu 5,1 pontos em um ano.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "União, estados e municípios gastaram 0,5% do PIB a mais do que arrecadaram nos 12 meses até setembro, sem contar juros. Um ano antes, eram 0,3%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "emprego": {
+    "fatos": [
+     {
+      "texto": "Desemprego em 5,2% no trimestre até setembro. O menor desde 2012 foi 5,1%, em dezembro de 2025.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "O desemprego médio de 3 meses está igual ao menor do último ano.",
+      "fonte": "IBGE"
+     }
+    ]
+   },
+   "externo": {
+    "fatos": [
+     {
+      "texto": "Soja, minério, petróleo e outros produtos básicos ficaram 1,7% mais caros em 6 meses até setembro (FMI).",
+      "fonte": "FMI"
+     }
+    ]
+   }
+  }
+ },
+ "anterior": "2026-11-09T0545",
+ "revisao_texto": {
+  "classificacao": [
+   "sigla que a leitora não conhece (TV): escreva o nome por extenso, se ele explica: Presidente reafirma compromisso fiscal em TV, mas o mercado ",
+   "título com 82 caracteres: Governo prorroga até 2031 o Gás do Povo, que dá o botijão a ",
+   "sigla que a leitora não conhece (MP): escreva o nome por extenso, se ele explica: MP de renegociação das dívidas rurais pode perder a validade"
+  ]
+ },
+ "pauta": {
+  "versao": 1,
+  "candidatos": [
+   {
+    "id": "E1",
+    "ordem": 1,
+    "evento": "ev-20261110-01",
+    "titulo": "Focus sobe inflação de 2027 a 4,90% e corta o PIB de 2026 para 1,75%",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "juro",
+    "origem": "dados",
+    "assunto": "Juro e inflação",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "Bancos e consultorias esperam preços subindo acima do teto da meta em 2027, e por isso a Selic fica em 13,75% por mais tempo. Juro alto por mais tempo segura o crédito e o investimento.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "precos",
+     "quem": "quem sente os preços e o juro altos por mais tempo, com o corte da Selic só em março"
+    },
+    "n_manchetes": 8,
+    "jornais": [
+     "Agência Brasil",
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "Valor",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Mercado reduz expectativa do PIB de 2026 para 1,75%",
+      "url": "https://www.poder360.com.br/poder-economia/mercado-reduz-expectativa-do-pib-de-2026-para-175/",
+      "publicado_em": "2026-11-09T12:23+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Mercado eleva projeção de inflação de 2027 para 4,90%",
+      "url": "https://www.poder360.com.br/poder-economia/mercado-eleva-projecao-de-inflacao-de-2027-para-490/",
+      "publicado_em": "2026-11-09T12:30+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Mercado eleva estimativa de inflação para 2027 e passa a prever corte de juros só em março do ano que vem",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/09/mercado-eleva-estimativa-de-inflacao-para-2027-e-passa-a-prever-corte-de-juros-so-em-marco-do-ano-que-vem.ghtml",
+      "publicado_em": "2026-11-09T12:06+00:00"
+     },
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Mercado eleva projeção da Selic para 13,75% em 2026",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/mercado-eleva-projecao-da-selic-para-1375-em-2026",
+      "publicado_em": "2026-11-09T10:26-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E2",
+    "ordem": 2,
+    "evento": null,
+    "titulo": "Presidente reafirma compromisso fiscal em TV, mas o mercado vê falta de detalhes",
+    "estagio": "anuncio",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "O pronunciamento não trouxe cortes de gastos nem datas, e economistas seguem sem ver como a dívida vai parar de subir. A dúvida mantém o juro que o governo paga alto e freia o investimento das empresas.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
+    "n_manchetes": 9,
+    "jornais": [
+     "Estadão",
+     "Gazeta do Povo",
+     "InfoMoney"
+    ],
+    "descartado": "mesmo fato do evento ev-20261109-01",
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Como o mercado viu o pronunciamento de Lula à nação?",
+      "url": "https://www.infomoney.com.br/mercados/como-o-mercado-viu-o-pronunciamento-de-lula-a-nacao/",
+      "publicado_em": "2026-11-09T12:51+00:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Lula evita detalhar cortes de gastos e gera desconfiança no mercado financeiro",
+      "url": "https://www.gazetadopovo.com.br/economia/lula-evita-detalhar-cortes-de-gastos-e-gera-desconfianca-no-mercado-financeiro/",
+      "publicado_em": "2026-11-10T00:52+00:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Discurso contraditório de Lula não convence economistas e frustra mercado",
+      "url": "https://www.gazetadopovo.com.br/economia/discurso-contraditorio-de-lula-nao-convence-economistas-e-frustra-mercado/",
+      "publicado_em": "2026-11-09T20:50+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Lula perdeu oportunidade de trazer surpresa positiva ao mercado, avaliam economistas",
+      "url": "https://www.infomoney.com.br/economia/pronunciamento-lula-mercado-ajuste-fiscal/",
+      "publicado_em": "2026-11-09T17:28+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E3",
+    "ordem": 3,
+    "evento": "ev-20261110-02",
+    "titulo": "Governo prorroga até 2031 o Gás do Povo, que dá o botijão a 15 milhões de famílias",
+    "estagio": "decidido",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O governo baixou medida provisória que mantém a recarga gratuita por mais cinco anos. O benefício sustenta o consumo das famílias de baixa renda, e o gasto fica fixo nas contas do governo por mais tempo.",
+    "vida": {
+     "tamanho": 2,
+     "porta": "governo",
+     "quem": "cerca de 15 milhões de famílias que recebem a recarga gratuita do botijão de gás"
+    },
+    "n_manchetes": 3,
+    "jornais": [
+     "Agência Brasil",
+     "InfoMoney",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "g1",
+      "titulo": "Governo federal prorroga até 2031 programa Gás do Povo",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/09/governo-federal-prorroga-ate-2031-programa-gas-do-povo.ghtml",
+      "publicado_em": "2026-11-09T12:35+00:00"
+     },
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Gás do Povo: governo prorroga vigência do auxílio até 2031",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/gas-do-povo-governo-prorroga-vigencia-do-programa-ate-2031",
+      "publicado_em": "2026-11-09T12:02-03:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Gás do Povo: governo federal prorroga vigência do auxílio até 2031",
+      "url": "https://www.infomoney.com.br/politica/gas-do-povo-governo-federal-prorroga-vigencia-do-auxilio-ate-2031/",
+      "publicado_em": "2026-11-09T21:41+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E4",
+    "ordem": 4,
+    "evento": "ev-20261110-03",
+    "titulo": "Tesouro terá de refinanciar R$ 1,8 trilhão da dívida em 12 meses",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "dados",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "A parte da dívida que vence em até um ano chegou a 19,95% em setembro, e o Tesouro precisa pegar dinheiro novo logo. Com o juro alto, a conta de juros do governo cresce e pressiona as contas públicas.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
+    "n_manchetes": 1,
+    "jornais": [
+     "Poder360"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Tesouro terá de refinanciar R$ 1,8 trilhão em 12 meses",
+      "url": "https://www.poder360.com.br/poder-economia/tesouro-tera-de-refinanciar-r-18-trilhao-em-12-meses/",
+      "publicado_em": "2026-11-09T20:05+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E5",
+    "ordem": 5,
+    "evento": "ev-20261110-04",
+    "titulo": "Bolsa sobe 2,22% e dólar cai a R$ 5,505 com alívio no exterior",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "mercado",
+    "origem": "dados",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "A Bolsa acompanhou a recuperação em Nova York e o petróleo mais barato, e o dólar recuou. Dólar menos pressionado alivia o preço dos importados, mas o mercado segue de olho nas contas do governo.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
+    "n_manchetes": 5,
+    "jornais": [
+     "Agência Brasil",
+     "InfoMoney",
+     "Poder360",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Valor",
+      "titulo": "Ibovespa acompanha exterior e fecha em alta com Vale e bancos, estendendo recuperação",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/09/ibovespa-acompanha-exterior-e-fecha-em-alta-com-vale-e-bancos-estendendo-recuperacao.ghtml",
+      "publicado_em": "2026-11-09T21:44+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Dólar cai a R$ 5,505; Ibovespa sobe 2,22%",
+      "url": "https://www.poder360.com.br/poder-economia/dolar-cai-a-r-5505-ibovespa-sobe-222/",
+      "publicado_em": "2026-11-09T21:30+00:00"
+     },
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Bolsa sobe 2,22% e registra maior alta diária desde outubro",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/bolsa-sobe-222-e-registra-maior-alta-diaria-desde-outubro",
+      "publicado_em": "2026-11-09T19:38-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E6",
+    "ordem": 6,
+    "evento": "ev-20261110-05",
+    "titulo": "Petróleo Brent cai mais de 4% com sinal de negociação entre EUA e Irã",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "O presidente dos EUA disse que novos ataques ao Irã são improváveis enquanto houver negociação, e o petróleo caiu lá fora. Combustível e frete tendem a pesar menos nos preços aqui.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "precos",
+     "quem": "quem abastece o carro e paga o frete embutido nos preços"
+    },
+    "n_manchetes": 5,
+    "jornais": [
+     "InfoMoney",
+     "Poder360",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Petróleo Brent cai mais de 4% após falas de Trump sobre conversas com Irã",
+      "url": "https://www.infomoney.com.br/mercados/petroleo-abertura-fechamento-ira-eua-09112026/",
+      "publicado_em": "2026-11-09T13:34+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Petróleo cai após Trump sinalizar moderação em relação ao Irã",
+      "url": "https://www.poder360.com.br/poder-economia/petroleo-cai-apos-trump-sinalizar-moderacao-em-relacao-ao-ira/",
+      "publicado_em": "2026-11-09T06:24+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Petroleiras são maiores quedas do Ibov nesta 2º acompanhando movimento do petróleo",
+      "url": "https://www.infomoney.com.br/mercados/petroleiras-sao-maiores-quedas-do-ibov-nesta-2o-acompanhando-movimento-do-petroleo/",
+      "publicado_em": "2026-11-09T14:23+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E7",
+    "ordem": 7,
+    "evento": "ev-20261110-06",
+    "titulo": "China prorroga por dois meses a trégua comercial com os EUA",
+    "estagio": "decidido",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "A China manteve suspensas as medidas comerciais contra os EUA, o que evita nova guerra de tarifas entre as duas maiores economias. Isso protege a demanda mundial por produtos como soja e minério do Brasil.",
+    "vida": {
+     "tamanho": 0,
+     "porta": "nenhuma",
+     "quem": ""
+    },
+    "n_manchetes": 5,
+    "jornais": [
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "Valor",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Valor",
+      "titulo": "China prorroga trégua comercial com os EUA por dois meses",
+      "url": "https://valor.globo.com/mundo/noticia/2026/11/09/china-prorroga-trgua-comercial-com-os-eua-por-dois-meses.ghtml",
+      "publicado_em": "2026-11-09T12:16+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "China prorroga trégua comercial com os EUA por dois meses",
+      "url": "https://www.infomoney.com.br/mercados/china-prorroga-tregua-comercial-com-os-eua-por-dois-meses/",
+      "publicado_em": "2026-11-09T12:29+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "China prorroga suspensão de tarifa de 24% sobre produtos dos EUA",
+      "url": "https://www.poder360.com.br/poder-china/china-prorroga-suspensao-de-tarifa-de-24-sobre-produtos-dos-eua/",
+      "publicado_em": "2026-11-09T09:45+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E8",
+    "ordem": 8,
+    "evento": "ev-20261110-07",
+    "titulo": "MP de renegociação das dívidas rurais pode perder a validade na quarta",
+    "estagio": "em_votacao",
+    "tamanho": 1,
+    "fator": "credito",
+    "origem": "politica",
+    "assunto": "Dívidas das famílias",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "A bancada ruralista resiste, e só R$ 18,6 bi foram renegociados até agora. Se a medida passasse, produtores teriam alívio nas dívidas e mais fôlego para investir.",
+    "vida": {
+     "tamanho": 1,
+     "porta": "credito",
+     "quem": "produtores rurais endividados que contam com a renegociação"
+    },
+    "n_manchetes": 2,
+    "jornais": [
+     "Folha",
+     "InfoMoney"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "MP das dívidas do agro pode caducar nesta quarta após impasse com ruralistas",
+      "url": "https://www.infomoney.com.br/politica/mp-das-dividas-do-agro-pode-caducar-nesta-quarta-apos-impasse-com-ruralistas/",
+      "publicado_em": "2026-11-09T12:36+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "MP de dívidas rurais está sob risco de caducar com só R$ 18,6 bi renegociados",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/agro/2026/11/mp-de-dividas-rurais-esta-sob-risco-de-caducar-com-so-r-186-bi-renegociados.shtml",
+      "publicado_em": "2026-11-09T08:00-03:00"
+     }
+    ]
+   }
+  ],
+  "datas": [],
+  "pressoes_mudaram": [],
+  "estado": "subindo",
+  "estado_anterior": "subindo",
+  "degrau": 5,
+  "motivo": "a notícia de estágio mais firme e maior tamanho; no empate, a que não é o vaivém do mercado do dia e a que saiu em mais jornais",
+  "padrao": "E1",
+  "final": "E3",
+  "mesma_historia": [],
+  "cuidados": [
+   "Diga que o governo baixou uma medida provisória que prorroga o benefício até 2031. Não diga que o Congresso aprovou nem que a lei está definitiva.",
+   "Diga que a recarga gratuita do botijão já existia e foi prorrogada. Não apresente como benefício novo.",
+   "Não invente o custo do programa para as contas do governo. As linhas dos candidatos não trazem esse valor."
+  ],
+  "editora": {
+   "ok": true,
+   "saida": {
+    "segue_padrao": false,
+    "escolha": "E3",
+    "motivo_desvio": "muda_a_vida",
+    "por_que": "A escolha padrão veio do degrau 5 e tem tamanho 1 no risco. O Gás do Povo é decisão tomada e muda a vida de cerca de 15 milhões de famílias, com tamanho 2 na vida contra 1 do Focus. Também mexe no que o governo paga.",
+    "concorrente": "E1",
+    "por_que_perdeu": "O Focus é dado divulgado e saiu em mais jornais, mas o mercado já esperava juro alto, e o tamanho dele na vida é 1. O Focus de 04/11 já foi o fato do dia.",
+    "mesma_historia": [],
+    "cuidados": [
+     "Diga que o governo baixou uma medida provisória que prorroga o benefício até 2031. Não diga que o Congresso aprovou nem que a lei está definitiva.",
+     "Diga que a recarga gratuita do botijão já existia e foi prorrogada. Não apresente como benefício novo.",
+     "Não invente o custo do programa para as contas do governo. As linhas dos candidatos não trazem esse valor."
+    ],
+    "testes": {
+     "troca": "Sim. Com outro governo, a prorrogação de um benefício para 15 milhões de famílias seria o mesmo fato, porque conta o ato e o que ele muda na vida.",
+     "fato": "Fato consumado: decisão tomada por medida provisória, noticiada por três jornais.",
+     "consequencia": "Mexe no que o governo paga (benefício) e nas contas do governo, que carregam o gasto por mais tempo. Muda o gasto das famílias de baixa renda com o botijão de gás.",
+     "novidade": "A leitora sabe hoje que a recarga gratuita do botijão de gás vai até 2031 e não acaba antes. Não repete nenhum fato do dia anterior do site.",
+     "mais_dada": "O Focus (E1) saiu em 6 jornais e 8 manchetes. Ficou de fora porque o tamanho dele na vida é 1, o mercado já esperava o juro alto e a Selic em 13,75% já foi contada em 05/11."
+    }
+   },
+   "meta": [
+    {
+     "etapa": "editora",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "20e2db10b95437f2f832c560158c8787cc8f428314e9d553764a15cf7145f329",
+     "system_sha256": "e271883ec27e7a2a07cd20d3748a8ede68b02a2ea9f968c0cf2e03d876cb5c14",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.10227,
+     "turnos": 2,
+     "duracao_s": 12,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "e75ce48d-f222-48be-9f92-5a8dcd956f04"
+    },
+    {
+     "etapa": "editora",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "765baa614d3c168d2df5597a3ad75be6b53a3beae7dc945c1371d74661ab777a",
+     "system_sha256": "56b0a9136627dad76acab03c59d10ee7f487a96e9c9b9c549ada431237991362",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.090104,
+     "turnos": 2,
+     "duracao_s": 6,
+     "modelos": [
+      "claude-sonnet-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "4ed53192-98bf-434d-91a2-148cee292e00"
+    }
+   ],
+   "conferencia": "trocou a escolha padrão (E1) por E3: muda_a_vida",
+   "defesa": "Trocar é exceção, e o Gás do Povo só prorroga um benefício que as famílias já recebem, então nada muda no mês delas. O Focus mede a Inflação esperada, que piorou, e traz o corte da Selic só em março, o que pesa no crédito e nos preços de todas."
+  }
+ },
+ "post": {
+  "tipo": "dia",
+  "porque": {
+   "caderno": [
+    "c1",
+    "c4",
+    "c6",
+    "c7",
+    "c14",
+    "c17",
+    "c20",
+    "c23",
+    "c24",
+    "c25",
+    "c28"
+   ]
+  },
+  "ok": true,
+  "titulo": "Governo prorroga até 2031 o botijão grátis do Gás do Povo",
+  "paragrafos": [
+   "O governo baixou medida provisória que prorroga até 2031 o botijão grátis do Gás do Povo, que já existia e acabaria neste mês. Pela lei, o auxílio alivia o peso do gás no orçamento das famílias de baixa renda, e o governo cita o combate à pobreza energética.",
+   "A prorrogação depende de o Congresso aprovar a medida em até 120 dias. O orçamento proposto para 2027 reserva R$ 7,6 bilhões, cerca de R$ 42 por família por mês.",
+   "Para as cerca de 15 milhões de famílias atendidas, nada muda agora: a recarga continua, e 3,1 milhões de vales saem hoje."
+  ],
+  "secoes": [
+   {
+    "paragrafos": [
+     "O governo baixou medida provisória que prorroga até 2031 o botijão grátis do Gás do Povo, que já existia e acabaria neste mês. Pela lei, o auxílio alivia o peso do gás no orçamento das famílias de baixa renda, e o governo cita o combate à pobreza energética.",
+     "A prorrogação depende de o Congresso aprovar a medida em até 120 dias. O orçamento proposto para 2027 reserva R$ 7,6 bilhões, cerca de R$ 42 por família por mês.",
+     "Para as cerca de 15 milhões de famílias atendidas, nada muda agora: a recarga continua, e 3,1 milhões de vales saem hoje."
+    ]
+   }
+  ],
+  "problemas": [],
+  "edicao": {
+   "sugestoes": [
+    {
+     "trecho": "que já existia e acabaria em 19/11",
+     "problema": "Data futura no texto: as próximas datas ficam na lateral (verificador).",
+     "como_fica": "que já existia e acabaria neste mês"
+    },
+    {
+     "trecho": "e a Secom fala em combater a pobreza energética",
+     "problema": "Sigla que a leitora não conhece, sem nome por extenso nem link.",
+     "como_fica": "e a Presidência fala em combater a pobreza energética"
+    },
+    {
+     "trecho": "A prorrogação só se firma se o Congresso votar a medida em até 120 dias, e o projeto de orçamento de 2027 reserva R$ 7,6 bilhões.",
+     "problema": "Dois fatos sem relação ligados por \"e\", e um número grande sem régua nem escala.",
+     "como_fica": "A prorrogação depende de o Congresso aprovar a medida em até 120 dias. O projeto de orçamento de 2027 reserva R$ 7,6 bilhões, cerca de R$ 42 por família por mês, em média."
+    }
+   ],
+   "aplicada": true
+  },
+  "teste": {
+   "ok": true,
+   "testes": {
+    "porque": {
+     "ok": true,
+     "por_que": "Diz que o auxílio acabaria neste mês e que por isso veio a medida provisória, e traz o objetivo da Lei 14.237 e a justificativa da Secom contra a pobreza energética, sem inventar causa."
+    },
+    "quem": {
+     "ok": true,
+     "por_que": "O governo baixou a medida e o Congresso decide se ela vira lei, como dizem os dados; a frase teria o mesmo sentido com outro governo."
+    },
+    "e_dai": {
+     "ok": true,
+     "por_que": "Fica com o que muda na vida, com tamanho e para quem: nada muda agora para 15 milhões de famílias, 3,1 milhões de vales hoje e R$ 42 por mês em 2027. Diz o objetivo e a condição do Congresso em 120 dias, sem julgar a decisão."
+    },
+    "livro": {
+     "ok": true,
+     "por_que": "Não gasta espaço com o mecanismo geral; todo o texto trata do fato do dia e do seu porquê."
+    }
+   },
+   "problemas": []
+  },
+  "meta": [
+   {
+    "etapa": "post",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "5eec0b7d7a37c0894ff3ad088e9ad9f1d8e99b4f9e84a62f53575a050ab271e6",
+    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.183536,
+    "turnos": 2,
+    "duracao_s": 23,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "e278ddcd-e2f9-4535-b21c-c1c5def92e9f"
+   },
+   {
+    "etapa": "editor",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "24ddfad5e1c82933c9710ef3f70dbf7142afa614691375de9bf979c8e8cb359b",
+    "system_sha256": "4c7e8c0f33317bc6d454b5ff1a997da9df57cacbbd46c9781db8192f030feaf7",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.35221199999999997,
+    "turnos": 2,
+    "duracao_s": 41,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "1cb2ba00-eafb-41a7-ba39-636c46d0d34e"
+   },
+   {
+    "etapa": "post",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "5827bff75ddea40983f8dd729c2c127488472698fcfcb439fa93e7c8df5ae051",
+    "system_sha256": "4c8d7db37ea2f1b5bc6e50c4663694487474190c42805fd460d5e9e21b97d79b",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.158351,
+    "turnos": 4,
+    "duracao_s": 28,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "a112b3e3-8f84-4346-b095-8512fe21bd13"
+   },
+   {
+    "etapa": "teste",
+    "modelo_pedido": "opus",
+    "prompt_sha256": "2336a84be02abf62ffd163b9db26e5b4a05fceaece4efde89b1a628385975bd2",
+    "system_sha256": "e52284e644ecc0ad181f32646f7db3098f5f025d253b5b8fbda16812122b6482",
+    "returncode": 0,
+    "is_error": false,
+    "custo_usd": 0.116936,
+    "turnos": 2,
+    "duracao_s": 14,
+    "modelos": [
+     "claude-opus-5-5"
+    ],
+    "permission_denials": [],
+    "session_id": "c44298f4-08be-4b55-9b03-74d2b5a0ae73"
+   }
+  ],
+  "fundo": {
+   "versao": 3,
+   "ok": false,
+   "etapa": "pensado",
+   "em": "2026-11-10T05:46:49-03:00",
+   "voltas": [
+    {
+     "volta": 1,
+     "teses": [
+      {
+       "tese": "A prorrogação do Gás do Povo é pequena para as contas (cerca de 0,05% do PIB no orçamento de 2027) e vale mais como data do que como dinheiro: o prazo de 5 anos da Lei 14.237 vence em 19/11/2026, e uma MP, que o Congresso tem 120 dias para votar, é o que evita o fim do benefício para 15 milhões de famílias.",
+       "por_que_nao_e_obvia": "A manchete diz 'prorroga até 2031', e a imprensa disse em fevereiro que a Lei 15.348 tornou o programa permanente; a leitora não vê que o prazo de 5 anos continua no texto da Lei 14.237 que li, nem que a MP depende do Congresso.",
+       "o_que_muda": "A leitora de baixa renda deve esperar a recarga continuar, mas dependente de votação em até 120 dias; para as contas, o gasto é ~R$ 507 por família ao ano, 31% de um salário mínimo, e não muda a trajetória da dívida de 82,93%.",
+       "como_pode_dar_errado": "Se a Lei 15.348 já tiver removido o prazo (não li o artigo alterado), a MP é redundante e a parte do vencimento cai; se o Congresso deixar a MP caducar o benefício acaba; ou o custo real pode superar os R$ 7,6 bi do projeto.",
+       "caderno": [
+        "c1",
+        "c2",
+        "c4",
+        "c5",
+        "c9",
+        "c11",
+        "c13",
+        "c15"
+       ]
+      }
+     ],
+     "editor_chefe": {
+      "veredito": "devolve",
+      "menor": false,
+      "tese": "Proposta da pesquisa, ainda sem sustentação suficiente: a prorrogação do Gás do Povo pesa pouco nas contas e vale mais como prazo do que como dinheiro. O prazo de 5 anos da Lei 14.237 venceria em 19/11/2026, e a medida provisória, que ainda depende do Congresso, é o que mantém a recarga gratuita para 15 milhões de famílias. A tese só fica de pé se ficar resolvido se a Lei 15.348 já tinha tornado o programa permanente e se o custo vier de uma fonte aberta.",
+      "testes": {
+       "nao_obvia": {
+        "ok": false,
+        "por_que": "O ângulo do prazo não está na manchete, mas depende de uma contradição que a pesquisa não resolveu: a imprensa chamou a Lei 15.348 de permanente (c5), e o texto lido da Lei 14.237 ainda traz os 5 anos (c4). Se o programa já era permanente, sobra só 'gasto pequeno', que está perto do resumo da notícia."
+       },
+       "muda_algo": {
+        "ok": true,
+        "por_que": "Se a tese se confirmar, a leitora fica sabendo que a recarga continua mas depende de o Congresso votar a medida, e que o gasto não muda o rumo da dívida de 82,93% do PIB (c15)."
+       },
+       "pode_dar_errado": {
+        "ok": true,
+        "por_que": "A pesquisa diz o que a derruba: a Lei 15.348 já ter tirado o prazo, a MP caducar ou o custo passar dos valores do projeto de orçamento."
+       },
+       "no_caderno": {
+        "ok": false,
+        "por_que": "O custo de R$ 7,6 bi e 0,05% do PIB (c9) vem de uma página que não abriu (404). O trecho de c2 não tem os 120 dias, o de c3 não fala dos créditos orçamentários, c8 vem de uma fonte desconhecida, c10 diz R$ 5 bi e não R$ 5,1 bi, e c16 não confere (use c105). A objeção 'repete a pressa de 2025' não tem linha."
+       },
+       "pela_meta": {
+        "ok": false,
+        "por_que": "No nível básico, as perguntas 1, 2 e 4 têm resposta. A 3, do tamanho, se apoia só em c9, que não foi aberto, e a MP não teve o texto, a exposição de motivos nem a estimativa de impacto lidos. A pergunta 1 também fica incerta enquanto não se souber se o prazo ainda valia."
+       }
+      },
+      "roteiro": [
+       "Começar pelo que a MP 1.400 faz de fato, com o texto publicado no Diário Oficial: qual artigo de qual lei ela altera e o que estava para vencer.",
+       "Resolver a dúvida sobre a Lei 15.348: o programa já era permanente ou o prazo de 5 anos de 2021 continuava valendo? A resposta define se a MP evita um fim de benefício ou só ajusta uma data.",
+       "Quem decidiu e quem pode desfazer: o presidente por medida provisória, com o prazo constitucional para o Congresso votar, a data em que ela caduca e o precedente da MP 1.313, aprovada em fevereiro dias antes de caducar.",
+       "O objetivo escrito: a Lei 14.237 e a frase da Secom, que não trazem meta em número, e o que a exposição de motivos acrescenta, se acrescentar.",
+       "O tamanho, com fonte aberta: o valor do projeto de orçamento de 2027 contra o de 2026, a fatia do PIB, o valor por família, e a estimativa de impacto da própria MP ao lado de outra conta, se houver (IFI, consultorias).",
+       "Ligar à pressão das contas do governo: perto da dívida de 82,93% do PIB, o que pesa é o gasto ficar fixo por mais anos, e não o valor de um ano.",
+       "A vida das famílias do CadÚnico: nada muda agora na recarga, o que muda é até quando ela vale e de quem depende.",
+       "A melhor objeção de cada lado, só com números do caderno, e o que desmentiria a tese."
+      ],
+      "pressao": "contas",
+      "devolve": [
+       "Abra o texto da MP 1.400 no Diário Oficial (in.gov.br) e copie o artigo que altera a vigência: qual dispositivo de qual lei muda, de que data para 19/11/2031.",
+       "Abra a Lei 15.348/2026 no Planalto e veja se ela mexeu no artigo da vigência da Lei 14.237. Ela tornou o programa permanente? Se tornou, por que uma MP agora? Isso decide se a tese existe.",
+       "Ache a exposição de motivos e a estimativa de impacto da MP 1.400 (art. 113 do ADCT, art. 14 da LRF). Se não existirem ou não trouxerem custo, registre isso com fonte, porque já é informação.",
+       "Troque c9 por uma fonte que abra: o PLOA 2027 no site do Planejamento, a página do Raio X da Câmara que funcione ou uma nota da IFI. Confirme se o valor é R$ 7,6 bi ou R$ 7,63 bi e se R$ 5,1 bi (c10) é o número do projeto de 2026 ou o da lei aprovada.",
+       "Ponha num trecho literal o prazo de votação da MP e a data em que ela caduca, e também a afirmação de que os efeitos dependem dos créditos orçamentários (c2 e c3 não trazem isso).",
+       "E daí para as contas: o valor por ano muda alguma coisa na meta fiscal de 2027 ou no limite de gastos? Já aconteceu antes? Ache a vez em que um programa parecido foi prorrogado ou caducou (o Auxílio Gás de 2021, a MP 1.313) e o que veio depois."
+      ],
+      "curto": {
+       "porque": "O governo diz, pela Secom, que a prorrogação garante a manutenção de uma política pública de enfrentamento da pobreza energética. A lei que criou o auxílio em 19/11/2021 previa 5 anos de vigência e tem como objetivo diminuir o peso do preço do gás de cozinha no orçamento das famílias de baixa renda.",
+       "e_dai": "A recarga gratuita que já existia continua, mas por medida provisória: ela só se mantém se o Congresso a votar, e o governo não divulgou quanto a prorrogação custa.",
+       "vida": "Para cerca de 15 milhões de famílias do CadÚnico com renda de até meio salário mínimo por pessoa, nada muda agora: a recarga gratuita do botijão de 13 kg continua e só acaba se a medida caducar.",
+       "familias": [
+        {
+         "familia": "outra",
+         "quem": "Famílias do CadÚnico com renda de até meio salário mínimo por pessoa",
+         "o_que_muda": "Nada muda agora: o botijão de 13 kg segue gratuito para cerca de 15 milhões de famílias, e a recarga de 10/11 libera 3,1 milhões de vales, 380,5 mil deles para famílias que entram agora.",
+         "caderno": [
+          "c14",
+          "c17"
+         ]
+        }
+       ],
+       "objetivo": "Na Lei 14.237, o governo diz que o auxílio serve para diminuir o efeito do preço do gás de cozinha no orçamento das famílias de baixa renda; na prorrogação, a Secom fala em enfrentar a pobreza energética. Nenhum dos dois textos traz meta em número.",
+       "condicao": "",
+       "caderno": [
+        "c1",
+        "c4",
+        "c6",
+        "c7",
+        "c14",
+        "c17"
+       ]
+      },
+      "pagina_que_falta": ""
+     }
+    },
+    {
+     "volta": 2,
+     "teses": [
+      {
+       "tese": "A MP 1.400 não cria gasto novo: ela dá base legal ao gasto que o projeto de orçamento de 2027 já traz (R$ 7,6 bi, 0,05% do PIB), porque a Lei 15.348 não tocou o art. 8º da Lei 14.237, que ainda limita o programa a 5 anos, até 19/11/2026. O que está em jogo é o prazo legal e o voto do Congresso em 120 dias.",
+       "por_que_nao_e_obvia": "A manchete diz 'prorroga até 2031' e a Agência Senado disse em fevereiro que a lei tornou o programa 'permanente'. A leitora não vê que o art. 8º, na versão atualizada da Câmara, ainda diz 'vigorará por 5 anos', nem que o gasto de 2027 já estava no projeto.",
+       "o_que_muda": "Para as 15 milhões de famílias do CadÚnico, a recarga continua e nada muda no que recebem hoje (cerca de R$ 42 por mês cada, com o valor do projeto de 2027). Para as contas, a MP não muda a meta nem a dívida de 82,93% do PIB, mas fixa por mais 5 anos um gasto 61,7% maior que o de 2026 (R$ 4,7 bi). O risco é de calendário: sem voto do Congresso em 120 dias, a MP perde a validade.",
+       "como_pode_dar_errado": "Se o texto oficial da MP 1.400 ou da Lei 15.348 mostrar outra coisa (li a MP só por reportagens e a lei por resumo), a tese cai. Também cai se o custo real passar muito de R$ 7,6 bi.",
+       "caderno": [
+        "c1",
+        "c4",
+        "c19",
+        "c20",
+        "c21",
+        "c22",
+        "c23",
+        "c24",
+        "c25",
+        "c26",
+        "c27",
+        "c15"
+       ]
+      }
+     ],
+     "editor_chefe": {
+      "veredito": "aprova",
+      "menor": false,
+      "tese": "A MP 1.400 existe porque a lei de fevereiro, chamada de permanente, não mexeu no artigo que limita o programa a 5 anos: pelo texto da lei, o Gás do Povo acabaria em 19/11/2026. A recarga grátis até 2031 depende de o Congresso converter a MP em até 120 dias, e a MP anterior do programa só foi votada a poucos dias de caducar, em fevereiro (um caso, não um padrão). O dinheiro de cada ano segue no orçamento: R$ 7,6 bi no projeto de 2027, 61,7% acima dos R$ 4,7 bi de 2026, e as reportagens sobre a MP não trazem estimativa de custo própria.",
+      "testes": {
+       "nao_obvia": {
+        "ok": true,
+        "por_que": "A manchete diz \"prorroga até 2031\", e em fevereiro a imprensa chamou o programa de permanente. A leitora não sabe que o prazo legal vencia em 19/11, nem que a prorrogação ainda depende de votação. O site não tratou deste assunto nos últimos dias."
+       },
+       "muda_algo": {
+        "ok": true,
+        "por_que": "A leitora passa a ler o \"até 2031\" como provisório até o Congresso votar, sabe que o valor de 2027 se decide no orçamento, e não na MP, e sabe que, para as famílias, nada muda hoje."
+       },
+       "pode_dar_errado": {
+        "ok": true,
+        "por_que": "A tese cai se o texto oficial da Lei 15.348 ou da MP mostrar que o art. 8º já tinha sido alterado, ou se aparecer uma estimativa de custo da MP diferente do valor do orçamento. A parte sobre o prazo cai se o Congresso votar logo e sem disputa."
+       },
+       "no_caderno": {
+        "ok": true,
+        "por_que": "O prazo está em c4, c20 e c21, o \"permanente\" em c5 e c22, a MP em c1, c19, c23 e c24, a MP anterior em c18 e os valores em c25, c26 e c27. Saem da tese os 0,05% do PIB (c9, página que não abriu) e os R$ 5,1 bi (c10/c12). A leitura da lei por resumo (c21) tem de aparecer como limite."
+       },
+       "pela_meta": {
+        "ok": true,
+        "por_que": "É nível básico, e as quatro perguntas foram respondidas com linhas do caderno: quem decidiu e quem desfaz (c1, c23, c24), o objetivo escrito na lei e pela Secom (c6, c7), o tamanho pelo orçamento (c25, c26, c27) e a pressão e a porta (c14, c15). A tese não julga o objetivo nem diz se a decisão acertou."
+       }
+      },
+      "roteiro": [
+       "Começar pelo que as 100 palavras não dizem: pelo texto atualizado da Lei 14.237 na Câmara, o art. 8º ainda diz \"vigorará por 5 (cinco) anos\", e o prazo vence em 19/11/2026 [c4][c20]. A MP é o que impede o fim do programa daqui a 9 dias [c24].",
+       "Explicar por que a lei de fevereiro não resolveu isso: a Lei 15.348 mudou muitos artigos, mas não o 8º, e a Agência Senado escreveu que o programa ficou permanente [c21][c22][c5]. Dizer o limite: a lista de artigos foi lida num resumo da lei.",
+       "Quem decidiu e quem pode desfazer: a MP foi editada pelo presidente, tem força de lei desde a publicação, em 9/11, e precisa virar lei em até 120 dias, prazo que não corre no recesso. O Congresso pode deixá-la caducar ou rejeitá-la, e o presidente pode revogá-la [c1][c19][c23][c24]. Anunciar até 2031 não é ter lei até 2031.",
+       "A vez parecida: a MP 1.313 foi votada em 2 e 3/2/2026, a poucos dias de caducar em 11/2 [c18]. É um caso só, não um padrão, e não há registro de que o programa tenha caducado.",
+       "O objetivo escrito: na lei, mitigar o efeito do preço do gás de cozinha no orçamento das famílias de baixa renda; para a Secom, manter uma política contra a pobreza energética [c6][c7]. O objetivo é amplo e não diz quanto do botijão cobrir, e as reportagens sobre a MP não trazem estimativa de impacto [c8].",
+       "O tamanho: quem decide o dinheiro de cada ano é o orçamento, e não a MP. São R$ 7,6 bi no projeto de 2027, contra R$ 4,7 bi na lei de 2026, ou 61,7% a mais [c25][c26][c27], e cerca de R$ 42 por família por mês em média [c28]. Perto da dívida de 82,93% do PIB, é um gasto pequeno que fica por mais tempo [c15]. Não usar os 0,05% do PIB.",
+       "A vida: para as cerca de 15 milhões de famílias, nada muda hoje, e a recarga de 10/11 libera 3,1 milhões de vales [c14][c17]. O que muda é que o benefício depois de 19/11 passa a depender da votação.",
+       "A melhor objeção dos dois lados, com os números: quem defende diz que o valor já estava no projeto de 2027 e que a MP só ajusta um prazo esquecido. Quem critica diz que o gasto sobe 61,7% por MP e que em 2024 o projeto de 2025 previa R$ 600 milhões contra R$ 3,5 bi gastos no ano [c29]. Fica em aberto se o gasto entra no limite do arcabouço.",
+       "O que desmentiria a tese (o texto oficial mostrar o art. 8º alterado) e o próximo passo com data: a contagem dos 120 dias no Congresso."
+      ],
+      "pressao": "contas",
+      "devolve": [],
+      "curto": {
+       "porque": "Na Lei 14.237, o auxílio existe para mitigar o efeito do preço do gás de cozinha no orçamento das famílias de baixa renda. A Secom diz que a prorrogação mantém uma política contra a pobreza energética. Pelo texto da lei, o programa vigorava por 5 anos e acabaria em 19/11/2026.",
+       "e_dai": "Pelo texto da lei, o botijão grátis acabaria em 19/11; com a medida provisória, o prazo até 2031 depende de o Congresso votá-la em até 120 dias.",
+       "vida": "Nada muda agora para as cerca de 15 milhões de famílias atendidas: a recarga continua, com 3,1 milhões de vales em 10/11. Em 2027, o projeto de orçamento reserva R$ 7,6 bilhões, cerca de R$ 42 por família por mês, em média.",
+       "familias": [
+        {
+         "familia": "outra",
+         "quem": "Famílias de baixa renda que recebem a recarga grátis do botijão pelo Gás do Povo",
+         "o_que_muda": "Nada muda hoje: a recarga continua, e 3,1 milhões de vales saem em 10/11. Depois de 19/11, o benefício depende de o Congresso votar a MP em até 120 dias. Para 2027, o projeto de orçamento prevê R$ 7,6 bi, cerca de R$ 42 por família por mês, em média.",
+         "caderno": [
+          "c14",
+          "c17",
+          "c24",
+          "c23",
+          "c25",
+          "c28"
+         ]
+        }
+       ],
+       "objetivo": "Na Lei 14.237, o auxílio se destina a mitigar o efeito do preço do gás de cozinha no orçamento das famílias de baixa renda. A Secom diz que a prorrogação mantém uma política contra a pobreza energética. O objetivo é amplo e não diz quanto do preço do botijão deve ser coberto.",
+       "condicao": "",
+       "caderno": [
+        "c1",
+        "c4",
+        "c6",
+        "c7",
+        "c14",
+        "c17",
+        "c20",
+        "c23",
+        "c24",
+        "c25",
+        "c28"
+       ]
+      },
+      "pagina_que_falta": "O que é uma medida provisória e o que acontece quando ela caduca? A leitora precisa saber disso para ler o \\\"até 2031\\\" de hoje e a MP das dívidas rurais, que pode perder a validade na quarta."
+     }
+    }
+   ],
+   "meta": [
+    {
+     "etapa": "pesquisa",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "7042fa8a5f1469602c710bdff246b5e84db79e189fb724c6f901f31ed8c6ea45",
+     "system_sha256": "01b24f55b9592e5b29112f02dbe08942b7128459f0a1da17ab6531deeea93537",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 1.0370918,
+     "turnos": 24,
+     "duracao_s": 196,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [
+      {
+       "tool_name": "Bash",
+       "tool_use_id": "toolu_01FmHpGevZwTPEk6Cb1CkVPB",
+       "tool_input": {
+        "command": "for e in \"7.6*1000/15\" \"7.6*1000/15/12\" \"7.6/5.1*100-100\" \"7.6/3.57\" \"7.6*1000/15/1621*100\" \"7.6/48\"; do .venv/bin/python src/conta.py calc \"$e\"; done",
+        "description": "Refaz as contas com R$ 7,6 bi"
+       }
+      }
+     ],
+     "session_id": "5fe1b4ca-1b23-4eca-bc49-3b18681458ca"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "eaa5b82c4b6fe9bb8f06544accb04ca110da1f075c2b9d55327b2fd8985b8bd6",
+     "system_sha256": "c5be08712768743659e98821b6e7f488bfa371dda043cb56057e8de2f7121401",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.40721999999999997,
+     "turnos": 2,
+     "duracao_s": 45,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "cb5d589b-bc43-4998-a077-3c2157a077e6"
+    },
+    {
+     "etapa": "pesquisa",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "6ac9943168a372cc244b19c9f7495627a7573e296f2c6bccf3cc2bdc6908cd91",
+     "system_sha256": "01b24f55b9592e5b29112f02dbe08942b7128459f0a1da17ab6531deeea93537",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.9876457000000001,
+     "turnos": 19,
+     "duracao_s": 188,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "e430fac7-802d-4ea3-a573-8e5b1e904613"
+    },
+    {
+     "etapa": "editor_chefe",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "19a7720f48b8014ae0b49b5f8512f38e89f95144b94f035dee2ec140032258be",
+     "system_sha256": "c5be08712768743659e98821b6e7f488bfa371dda043cb56057e8de2f7121401",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.5928452,
+     "turnos": 3,
+     "duracao_s": 77,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "23728192-ab5a-4d6a-8cad-6cfb1ed25540"
+    }
+   ],
+   "offline": false,
+   "pesquisa": {
+    "perguntas": [
+     {
+      "pergunta": "Quem decidiu, com que poder e quem pode desfazer? (o Senado aprovar não é lei; o Tribunal de Contas da União propor não é o Congresso fixar; anunciar não é fazer)",
+      "resposta": "O presidente editou a MP 1.400 (datada de 6/11, publicada no Diário Oficial em 9/11/2026). Ela muda o art. 8º da Lei 14.237 e põe a vigência até 19/11/2031. MP tem força de lei na hora, mas precisa virar lei em até 120 dias, e o prazo não corre no recesso de fim de ano. Se o Congresso não votar, ela perde a validade. Quem pode desfazer: o Congresso, deixando caducar ou rejeitando, e o próprio presidente, revogando. Não é lei definitiva. Não consegui abrir o texto no in.gov.br: o artigo e a data vêm de reportagens que citam a MP.",
+      "caderno": [
+       "c1",
+       "c19",
+       "c23",
+       "c24"
+      ]
+     },
+     {
+      "pergunta": "Qual objetivo o decisor escreveu, e em que documento? (comunicado, ata, exposição de motivos, estimativa de impacto do art. 113 do ADCT e do art. 14 da LRF, nota do Tesouro). Se o objetivo não está escrito, ou é vago, diga isso: já é informação",
+      "resposta": "O objetivo escrito é o art. 1º da Lei 14.237, na redação da Lei 15.348: mitigar o efeito do preço do GLP sobre o orçamento das famílias de baixa renda. Para a MP, a Secom diz que a prorrogação mantém política contra a pobreza energética. Não achei a exposição de motivos da MP 1.400 nem a estimativa de impacto do art. 113 do ADCT, e nenhuma reportagem aberta traz o custo da MP. O objetivo é escrito, mas amplo: não diz quanto do preço do botijão deve ser coberto. Não achar a estimativa não prova que ela não exista.",
+      "caderno": [
+       "c6",
+       "c7",
+       "c8"
+      ]
+     },
+     {
+      "pergunta": "Qual é o tamanho? (em reais, em fatia do PIB, em reais por brasileiro e perto do problema que a decisão diz resolver; quando o decisor estima o próprio impacto e outro órgão também, como a IFI, as consultorias da Câmara e do Senado ou o TCU, as duas contas entram)",
+      "resposta": "A MP não traz custo próprio. A referência é o projeto de orçamento de 2027: R$ 7,6 bi, que a consultoria da Câmara põe em 0,05% do PIB (o Raio X só apareceu no resumo da busca). A lei orçamentária de 2026 previa R$ 4,7 bi, então 2027 é 61,7% maior. R$ 7,6 bi para 15 milhões de famílias dão R$ 507 por família ao ano, ou R$ 42 por mês, 31% de um salário mínimo. O R$ 5,1 bi de 2026, usado antes, não abre em fonte e saiu. Não achei estimativa da IFI nem das consultorias. Multiplicar por cinco anos seria hipótese minha.",
+      "caderno": [
+       "c25",
+       "c26",
+       "c27",
+       "c11",
+       "c28",
+       "c13"
+      ]
+     },
+     {
+      "pergunta": "Em que pressão do site e em que porta da leitora ela mexe: o emprego, o preço, a parcela ou o dólar?",
+      "resposta": "Pressão: contas do governo, com um gasto pequeno (0,05% do PIB) mantido por mais cinco anos, diante de dívida de 82,93% do PIB. Porta da leitora: o preço, para quem está no CadÚnico com renda per capita de até meio salário mínimo, com botijão grátis para cerca de 15 milhões de famílias, 45 milhões de pessoas. Nada muda no que elas recebem hoje: a recarga de 10/11 libera 3,1 milhões de vales. Muda a certeza de que o benefício não acaba em 19/11/2026, se o Congresso votar. Não mexe em parcela, emprego nem dólar. O INPC de 4,29% em 12 meses dá a régua do preço para essa faixa.",
+      "caderno": [
+       "c14",
+       "c15",
+       "c17",
+       "c101"
+      ]
+     },
+     {
+      "pergunta": "A Lei 15.348 tornou o programa permanente? Se sim, por que uma MP agora?",
+      "resposta": "Não no texto. A Agência Senado escreveu que o programa 'passou a ser uma política pública permanente', mas o art. 8º da Lei 14.237, na versão atualizada da Câmara, ainda diz que a lei 'vigorará por 5 (cinco) anos', sem anotação de alteração. A lista de artigos mexidos pela Lei 15.348 que li não inclui o art. 8º. Por isso o prazo vence em 19/11/2026 e a MP existe. 'Permanente' foi leitura da imprensa. Limite: li a Lei 15.348 por resumo de página, não artigo por artigo.",
+      "caderno": [
+       "c4",
+       "c20",
+       "c21",
+       "c22",
+       "c5"
+      ]
+     },
+     {
+      "pergunta": "O que veio das outras vezes em que o programa passou pelo Congresso ou pelo orçamento?",
+      "resposta": "Duas vezes. (1) A MP 1.313, de 4/9/2025, só foi votada em 2 e 3/2/2026, a poucos dias de caducar em 11/2: a MP do programa passou perto do prazo. (2) Em 2024, o projeto de orçamento de 2025 previa R$ 600 milhões para o Auxílio Gás contra R$ 3,5 bilhões do ano; um ex-secretário do Tesouro disse que isso 'tira a credibilidade'. O gasto já foi alvo de disputa sobre onde aparece no orçamento. São dois casos, não padrão. Não achei vez em que o programa tenha caducado.",
+      "caderno": [
+       "c18",
+       "c29"
+      ]
+     },
+     {
+      "pergunta": "O valor muda a meta fiscal de 2027 ou o limite de gastos?",
+      "resposta": "Pelo que achei, não. O R$ 7,6 bi já está no projeto de orçamento de 2027, que o governo mandou com superávit de R$ 18,6 bi. A prorrogação dá base legal ao gasto que o projeto já previa. Não achei fonte que diga se o Gás do Povo fica dentro ou fora do limite do arcabouço em 2027. Fontes de 2024 tratam o Auxílio Gás antigo como dentro do limite, e outra o chama de discricionário. Fica em aberto.",
+      "caderno": [
+       "c25",
+       "c29"
+      ]
+     }
+    ],
+    "teses": [
+     {
+      "tese": "A MP 1.400 não cria gasto novo: ela dá base legal ao gasto que o projeto de orçamento de 2027 já traz (R$ 7,6 bi, 0,05% do PIB), porque a Lei 15.348 não tocou o art. 8º da Lei 14.237, que ainda limita o programa a 5 anos, até 19/11/2026. O que está em jogo é o prazo legal e o voto do Congresso em 120 dias.",
+      "por_que_nao_e_obvia": "A manchete diz 'prorroga até 2031' e a Agência Senado disse em fevereiro que a lei tornou o programa 'permanente'. A leitora não vê que o art. 8º, na versão atualizada da Câmara, ainda diz 'vigorará por 5 anos', nem que o gasto de 2027 já estava no projeto.",
+      "o_que_muda": "Para as 15 milhões de famílias do CadÚnico, a recarga continua e nada muda no que recebem hoje (cerca de R$ 42 por mês cada, com o valor do projeto de 2027). Para as contas, a MP não muda a meta nem a dívida de 82,93% do PIB, mas fixa por mais 5 anos um gasto 61,7% maior que o de 2026 (R$ 4,7 bi). O risco é de calendário: sem voto do Congresso em 120 dias, a MP perde a validade.",
+      "como_pode_dar_errado": "Se o texto oficial da MP 1.400 ou da Lei 15.348 mostrar outra coisa (li a MP só por reportagens e a lei por resumo), a tese cai. Também cai se o custo real passar muito de R$ 7,6 bi.",
+      "caderno": [
+       "c1",
+       "c4",
+       "c19",
+       "c20",
+       "c21",
+       "c22",
+       "c23",
+       "c24",
+       "c25",
+       "c26",
+       "c27",
+       "c15"
+      ]
+     }
+    ],
+    "objecao": {
+     "texto": "Quem defende o programa dirá que R$ 7,6 bi (0,05% do PIB) é pouco perto de uma dívida de 82,93% do PIB, e que o gasto já estava no projeto de 2027. Quem critica dirá que ele fica 61,7% acima do orçamento de 2026, sobe por MP, e que em 2024 o governo já tinha subestimado o gasto no projeto (R$ 600 milhões contra R$ 3,5 bi). Pode-se dizer ainda que a MP é só o ajuste de um prazo que a lei de fevereiro deixou, e que o Congresso votou a MP anterior por ampla maioria. As duas leituras cabem nos números: o site mede tamanho e prazo, não o mérito.",
+     "caderno": [
+      "c25",
+      "c26",
+      "c27",
+      "c29",
+      "c15",
+      "c18"
+     ]
+    },
+    "o_que_falta": "Não abri a MP 1.400 no Diário Oficial: o art. 8º e a data vêm de reportagens. Não achei a exposição de motivos, a estimativa de impacto (art. 113 do ADCT, art. 14 da LRF) nem nota da IFI. A Lei 15.348 foi lida por resumo; falta confirmar que não mexeu no art. 8º. O Raio X da Câmara (0,05% do PIB) não abre. Não sei se o gasto fica dentro do limite do arcabouço, nem o que ocorre com o prazo de 5 anos se a MP caducar. Falta regra da tabela para transferência em espécie e gasto de 5 anos."
+   },
+   "caderno": [
+    {
+     "id": "c1",
+     "tipo": "documento",
+     "afirmacao": "A MP que prorroga o Gás do Povo até 19/11/2031 foi publicada no Diário Oficial em 9/11/2026 (MP 1.400).",
+     "numeros": [
+      "1.400",
+      "19 de novembro de 2031",
+      "9 de novembro"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agência Brasil",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/gas-do-povo-governo-prorroga-vigencia-do-programa-ate-2031",
+      "data": "2026-11-09",
+      "trecho": "prorroga até 19 de novembro de 2031 a vigência do auxílio Gás do Povo"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c2",
+     "tipo": "documento",
+     "afirmacao": "O Congresso tem 120 dias para votar a MP; sem a votação a prorrogação não se mantém.",
+     "numeros": [
+      "120 dias"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "O Povo",
+      "url": "https://mais.opovo.com.br/jornal/economia/2026/11/09/lula-edita-mp-com-vigencia-do-gas-do-povo-ate-2031.html",
+      "data": "2026-11-09",
+      "trecho": "prorrogar a vigência do Auxílio Gás do Povo até 19 de novembro de 2031"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c3",
+     "tipo": "documento",
+     "afirmacao": "Segundo uma reportagem, a MP vale desde a publicação e os efeitos da prorrogação dependem da abertura dos créditos orçamentários (não li a MP no original).",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agência Brasil",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/gas-do-povo-governo-prorroga-vigencia-do-programa-ate-2031",
+      "data": "2026-11-09",
+      "trecho": "Gás do Povo: governo prorroga vigência do auxílio até 2031"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c4",
+     "tipo": "documento",
+     "afirmacao": "A Lei 14.237 fixa vigência de 5 anos, desde 19/11/2021: o prazo vence em 19/11/2026.",
+     "numeros": [
+      "5 (cinco) anos"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Câmara dos Deputados (Lei 14.237/2021 atualizada)",
+      "url": "https://www2.camara.leg.br/legin/fed/lei/2021/lei-14237-19-novembro-2021-791974-normaatualizada-pl.html",
+      "data": "2021-11-19",
+      "trecho": "Esta Lei entra em vigor na data de sua publicação e vigorará por 5 (cinco) anos,"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c5",
+     "tipo": "documento",
+     "afirmacao": "A Lei 15.348, de 13/2/2026, converteu a MP 1.313; a Agência Senado a chamou de lei que torna o programa permanente.",
+     "numeros": [
+      "15.348",
+      "13/02/2026"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agência Senado",
+      "url": "https://www12.senado.leg.br/noticias/materias/2026/02/19/lei-torna-programa-gas-do-povo-permanente",
+      "data": "2026-02-19",
+      "trecho": "Lei torna programa Gás do Povo permanente"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c6",
+     "tipo": "documento",
+     "afirmacao": "O objetivo escrito do auxílio na lei é mitigar o efeito do preço do GLP no orçamento das famílias de baixa renda.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Câmara dos Deputados (Lei 14.237/2021 atualizada)",
+      "url": "https://www2.camara.leg.br/legin/fed/lei/2021/lei-14237-19-novembro-2021-791974-normaatualizada-pl.html",
+      "data": "2021-11-19",
+      "trecho": "Fica instituído o Auxílio Gás do Povo, destinado a mitigar o efeito do preço do gás liquefeito de petróleo (GLP)"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c7",
+     "tipo": "documento",
+     "afirmacao": "A Secom justifica a prorrogação como manutenção de política contra a pobreza energética.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agência Brasil (citando a Secom)",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/gas-do-povo-governo-prorroga-vigencia-do-programa-ate-2031",
+      "data": "2026-11-09",
+      "trecho": "A prorrogação garante a manutenção de uma política pública voltada ao enfrentamento da pobreza energética"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c8",
+     "tipo": "documento",
+     "afirmacao": "As reportagens abertas não trazem o custo da MP; só a cifra dos vales de 10/11, acima de R$ 337 milhões.",
+     "numeros": [
+      "R$ 337 milhões",
+      "3,1 milhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Hoje Diário",
+      "url": "https://hojediario.com/2026/11/10/governo-prorroga-gas-do-povo-ate-2031-e-libera-31-milhoes-de-vales/",
+      "data": "2026-11-10",
+      "trecho": "3,1 milhões de vales para recarga gratuita do botijão; investimento estimado supera R$ 337 milhões"
+     },
+     "conferencia": {
+      "status": "numeros_na_pagina",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c9",
+     "tipo": "documento",
+     "afirmacao": "O projeto de orçamento de 2027 prevê cerca de R$ 7,6 bilhões para o Gás do Povo, 0,05% do PIB (Raio X da Câmara, lido pelo resumo da busca; a página não abriu).",
+     "numeros": [
+      "7,6 bi",
+      "0,05%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Câmara dos Deputados, Consultoria de Orçamento (Raio X PLOA 2027)",
+      "url": "https://www2.camara.leg.br/orcamento-da-uniao/raio-x-do-orcamento/2027/RaioX_PLOA_2027.pdf",
+      "data": "",
+      "trecho": "Gás do Povo R$ 7,6 bi, 0,19% do PLOA e 0,05% do PIB"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "por_que": "HTTP 404",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c10",
+     "tipo": "documento",
+     "afirmacao": "O projeto de orçamento de 2026 reservava R$ 5,1 bilhões ao novo vale-gás.",
+     "numeros": [
+      "R$ 5,1 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Diario de Pernambuco",
+      "url": "https://www.diariodepernambuco.com.br/economia/2026/02/11706818-senado-aprova-mp-do-gas-do-povo-com-impacto-de-rs-5-bilhoes-em-2026.html",
+      "data": "2026-02-03",
+      "trecho": "Senado aprova MP do Gás do Povo com impacto de R$ 5 bilhões em 2026"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c11",
+     "tipo": "conta",
+     "afirmacao": "R$ 7,6 bi para 15 milhões de famílias dá cerca de R$ 507 por família ao ano.",
+     "numeros": [
+      "506,67"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"7.6*1000/15\"",
+     "saida": "7.6*1000/15 = 506,6667 (com 3 casas: 506,667; com 2 casas: 506,67; com 1 casa: 506,7)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "7.6*1000/15 = 506,6667 (com 3 casas: 506,667; com 2 casas: 506,67; com 1 casa: 506,7)\n"
+     }
+    },
+    {
+     "id": "c12",
+     "tipo": "conta",
+     "afirmacao": "R$ 7,6 bi em 2027 é 49% acima dos R$ 5,1 bi do projeto de 2026.",
+     "numeros": [
+      "49,02"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"7.6/5.1*100-100\"",
+     "saida": "7.6/5.1*100-100 = 49,0196 (com 3 casas: 49,020; com 2 casas: 49,02; com 1 casa: 49,0)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "7.6/5.1*100-100 = 49,0196 (com 3 casas: 49,020; com 2 casas: 49,02; com 1 casa: 49,0)\n"
+     }
+    },
+    {
+     "id": "c13",
+     "tipo": "conta",
+     "afirmacao": "O valor por família ao ano equivale a 31% do salário mínimo de R$ 1.621.",
+     "numeros": [
+      "31,26"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"7.6*1000/15/1621*100\"",
+     "saida": "7.6*1000/15/1621*100 = 31,2564 (com 3 casas: 31,256; com 2 casas: 31,26; com 1 casa: 31,3)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "7.6*1000/15/1621*100 = 31,2564 (com 3 casas: 31,256; com 2 casas: 31,26; com 1 casa: 31,3)\n"
+     }
+    },
+    {
+     "id": "c14",
+     "tipo": "documento",
+     "afirmacao": "O programa atende cerca de 15 milhões de famílias, 45 milhões de pessoas.",
+     "numeros": [
+      "15 milhões",
+      "45 milhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agência Brasil",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/gas-do-povo-governo-prorroga-vigencia-do-programa-ate-2031",
+      "data": "2026-11-09",
+      "trecho": "O programa atende cerca de 15 milhões de famílias, ou 45 milhões de pessoas"
+     },
+     "conferencia": {
+      "status": "numeros_na_pagina",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c15",
+     "tipo": "site",
+     "afirmacao": "A dívida do governo subiu de 81,95% para 82,93% do PIB, de junho a setembro.",
+     "numeros": [
+      "81,95%",
+      "82,93%"
+     ],
+     "comando": "",
+     "saida": "A dívida do governo foi de 81,95% para 82,93% do PIB, de junho a setembro.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c16",
+     "tipo": "site",
+     "afirmacao": "O salário mínimo é R$ 1.621,00 desde janeiro de 2026.",
+     "numeros": [
+      "1.621,00"
+     ],
+     "comando": "",
+     "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "nao_confere",
+      "por_que": "número que não está nos dados do site nem num fato da memória com fonte"
+     }
+    },
+    {
+     "id": "c17",
+     "tipo": "documento",
+     "afirmacao": "Na recarga de 10/11, 380,5 mil vales vão para famílias novas e 2,7 milhões para as que já participavam.",
+     "numeros": [
+      "380,5 mil",
+      "2,7 milhões",
+      "3,1 milhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agência Brasil",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/gas-do-povo-governo-prorroga-vigencia-do-programa-ate-2031",
+      "data": "2026-11-09",
+      "trecho": "380,5 mil vales vão para novas famílias e 2,7 milhões para famílias já participantes"
+     },
+     "conferencia": {
+      "status": "numeros_na_pagina",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c18",
+     "tipo": "documento",
+     "afirmacao": "A MP 1.313 foi aprovada pela Câmara em 2/2/2026 e pelo Senado em 3/2/2026, antes de caducar em 11/2.",
+     "numeros": [
+      "11 de fevereiro"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Congresso em Foco",
+      "url": "https://www.congressoemfoco.com.br/noticia/116093/senado-aprova-mp-do-gas-do-povo-texto-vai-a-sancao",
+      "data": "2026-02-03",
+      "trecho": "Senado aprova MP do Gás do Povo; texto vai à sanção"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c19",
+     "tipo": "documento",
+     "afirmacao": "A MP 1.400 altera o art. 8º da Lei 14.237 e põe a vigência até 19/11/2031 (lido em reportagem que cita a MP, não no Diário Oficial).",
+     "numeros": [
+      "8º",
+      "14.237",
+      "19 de novembro de 2031"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Atlas Público (ficha da Câmara dos Deputados)",
+      "url": "https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
+      "data": "2026-11-09",
+      "trecho": "vigorará até 19 de novembro de 2031"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c20",
+     "tipo": "documento",
+     "afirmacao": "Na versão atualizada da Lei 14.237, o art. 8º segue com 'vigorará por 5 anos' e sem anotação de alteração pela Lei 15.348; o art. 1º tem anotação de redação dada pela MP 1.313.",
+     "numeros": [
+      "5 (cinco) anos",
+      "8º"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Câmara dos Deputados (Lei 14.237/2021 atualizada)",
+      "url": "https://www2.camara.leg.br/legin/fed/lei/2021/lei-14237-19-novembro-2021-791974-normaatualizada-pl.html",
+      "data": "2021-11-19",
+      "trecho": "vigorará por 5 (cinco) anos,"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c21",
+     "tipo": "documento",
+     "afirmacao": "A Lei 15.348 alterou os arts. 1º, 1º-A, 2º, 3º, 4º, 4º-A a 4º-K e 7º-A a 7º-H da Lei 14.237 e revogou o § 1º do art. 2º e os arts. 6º e 7º; não alterou o art. 8º (leitura da página, resumida).",
+     "numeros": [
+      "15.348"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Presidência da República (Planalto), Lei 15.348/2026",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/L15348.htm",
+      "data": "2026-02-13",
+      "trecho": "Esta Lei entra em vigor na data de sua publicação."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c22",
+     "tipo": "documento",
+     "afirmacao": "A Agência Senado escreveu que o programa passou a ser política pública permanente.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agência Senado",
+      "url": "https://www12.senado.leg.br/noticias/materias/2026/02/19/lei-torna-programa-gas-do-povo-permanente",
+      "data": "2026-02-19",
+      "trecho": "O programa Gás do Povo passou a ser uma política pública permanente no Brasil."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c23",
+     "tipo": "documento",
+     "afirmacao": "A MP precisa virar lei em até 120 dias. A frase sobre efeitos desde a abertura dos créditos orçamentários é do art. 8º da Lei 14.237, não novidade da MP.",
+     "numeros": [
+      "120 dias"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Atlas Público (ficha da Câmara dos Deputados)",
+      "url": "https://atlaspublico.com.br/camara/noticias/governo-edita-mp-que-prorroga-o-auxilio-gas-do-povo-ate-19-99961",
+      "data": "2026-11-09",
+      "trecho": "precisa ser convertido em lei pelo Congresso Nacional em até 120 dias"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c24",
+     "tipo": "documento",
+     "afirmacao": "Sem votação, a MP perde a validade; a contagem do prazo é suspensa no recesso; sem a MP o programa acabaria em 19/11.",
+     "numeros": [
+      "19 de novembro"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Sou Brasília",
+      "url": "https://soubrasilia.com/gas-do-povo-mp-1400-prorroga-programa-ate-2031-congresso-120-dias-vale-10-novembro/",
+      "data": "2026-11-09",
+      "trecho": "perde a validade se o Congresso não votar"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c25",
+     "tipo": "documento",
+     "afirmacao": "O projeto de orçamento de 2027 prevê R$ 7,6 bilhões para o Gás do Povo, para cerca de 15,4 milhões de famílias.",
+     "numeros": [
+      "7,6 bilhões",
+      "15,4 milhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Congresso em Foco",
+      "url": "https://www.congressoemfoco.com.br/noticia/121832/confira-a-integra-do-orcamento-de-2027-e-veja-os-principais-numeros",
+      "data": "2026-09-01",
+      "trecho": "Para o Gás do Povo, que garante recarga gratuita do botijão a famílias de baixa renda, estão previstos R$ 7,6 bilhões"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c26",
+     "tipo": "documento",
+     "afirmacao": "A lei orçamentária de 2026 previa R$ 4,7 bilhões para o Gás do Povo.",
+     "numeros": [
+      "R$ 4,7 bi"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Eixos",
+      "url": "https://eixos.com.br/politica/sancionado-com-vetos-gas-do-povo-tem-r-47-bi-no-orcamento-de-2026/",
+      "data": "2026-02-19",
+      "trecho": "Sancionado com vetos, Gás do Povo tem R$ 4,7 bi no orçamento de 2026"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c27",
+     "tipo": "conta",
+     "afirmacao": "R$ 7,6 bi em 2027 é 61,7% acima dos R$ 4,7 bi da lei orçamentária de 2026.",
+     "numeros": [
+      "61,70"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"7.6/4.7*100-100\"",
+     "saida": "7.6/4.7*100-100 = 61,7021 (com 3 casas: 61,702; com 2 casas: 61,70; com 1 casa: 61,7)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "7.6/4.7*100-100 = 61,7021 (com 3 casas: 61,702; com 2 casas: 61,70; com 1 casa: 61,7)\n"
+     }
+    },
+    {
+     "id": "c28",
+     "tipo": "conta",
+     "afirmacao": "R$ 7,6 bi para 15 milhões de famílias dá cerca de R$ 42 por família por mês.",
+     "numeros": [
+      "42,22"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"7.6*1000/15/12\"",
+     "saida": "7.6*1000/15/12 = 42,2222 (com 3 casas: 42,222; com 2 casas: 42,22; com 1 casa: 42,2)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "7.6*1000/15/12 = 42,2222 (com 3 casas: 42,222; com 2 casas: 42,22; com 1 casa: 42,2)\n"
+     }
+    },
+    {
+     "id": "c29",
+     "tipo": "documento",
+     "afirmacao": "Em 2024, o projeto de orçamento de 2025 previa R$ 600 milhões para o Auxílio Gás contra R$ 3,5 bilhões do ano, e um ex-secretário do Tesouro criticou o desenho.",
+     "numeros": [
+      "R$ 600 milhões",
+      "R$ 3,5 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "ABC do ABC",
+      "url": "https://www.abcdoabc.com.br/auxilio-gas-fora-do-orcamento-de-2025-ataca-coracao-do-arcabouco-fiscal-diz-ex-secretario-do-tesouro/",
+      "data": "2024-09-03",
+      "trecho": "O governo previu apenas R$ 600 milhões para o programa, enquanto a verba deste ano é de R$ 3,5 bilhões."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c101",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (precos), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz precos",
+     "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 5,01% (último dado de novembro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 105,01 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "IPCA, a inflação oficial, em 12 meses até setembro de 2026: 4,58%. O que custava R$ 100 em setembro de 2025 passou a custar cerca de R$ 104,58 em setembro de 2026.\nINPC, que mede a cesta das famílias com renda de 1 a 5 salários mínimos e corrige o mínimo e o INSS, em 12 meses até setembro de 2026: 4,29%. Por ele, R$ 100 de compras de setembro de 2025 viraram cerca de R$ 104,29.\nPara os 12 meses seguintes, os bancos (Focus) esperam IPCA de 5,01% (último dado de novembro de 2026): R$ 100 de compras de hoje custariam cerca de R$ 105,01 daqui a um ano. É previsão, e os bancos erram.\nFonte: IBGE (IPCA e INPC) e Banco Central (Focus). O passado é medida, não estimativa.\n"
+     }
+    },
+    {
+     "id": "c102",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (dolar), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz dolar",
+     "saida": "O dólar foi de R$ 5,3567 em 7/11/2025 para R$ 5,5146 em 9/11/2026: alta de 2,9% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 2,9%, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O dólar foi de R$ 5,3567 em 7/11/2025 para R$ 5,5146 em 9/11/2026: alta de 2,9% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 2,9%, se não voltar, sobe o IPCA em cerca de 0,3 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,30 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.\n"
+     }
+    },
+    {
+     "id": "c103",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (credito), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz credito",
+     "saida": "Juro médio dos empréstimos às pessoas com juro definido pelo banco (todos os tipos): 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em s",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Juro médio dos empréstimos às pessoas com juro definido pelo banco (todos os tipos): 62,35% ao ano em setembro de 2026, contra 58,66% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.624 (um ano antes, R$ 1.587).\nJuro médio do cartão de crédito rotativo: 451,71% ao ano em setembro de 2026, contra 448,06% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 5.517 (um ano antes, R$ 5.481).\nJuro médio do cheque especial: 139,02% ao ano em setembro de 2026, contra 140,73% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.390 (um ano antes, R$ 2.407).\nJuro médio do crédito pessoal não consignado: 110,94% ao ano em setembro de 2026, contra 101,10% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 2.109 (um ano antes, R$ 2.011).\nJuro médio do consignado para aposentados e pensionistas do INSS: 23,22% ao ano em setembro de 2026, contra 23,97% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.232 (um ano antes, R$ 1.240).\nJuro médio do financiamento de veículos: 26,18% ao ano em setembro de 2026, contra 27,30% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.262 (um ano antes, R$ 1.273).\nJuro médio do financiamento imobiliário com taxas de mercado: 14,20% ao ano em setembro de 2026, contra 14,88% em setembro de 2025. R$ 1.000 devidos por um ano, sem pagar nada no meio, viram cerca de R$ 1.142 (um ano antes, R$ 1.149).\nFonte: Banco Central, juro médio das operações de crédito para pessoas físicas, com um a dois meses de atraso. A Selic não passa inteira nem logo para esses juros.\n"
+     }
+    },
+    {
+     "id": "c104",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (guardado), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz guardado",
+     "saida": "Com a Selic em 13,75% ao ano (em 10/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 5,01% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,21 em um ano (8,32% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de novembro de 2026 (0,1196% ao mês), R$ 6,20 no mês, ou cerca de R$ 77,02 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Com a Selic em 13,75% ao ano (em 10/11/2026), R$ 1.000 numa aplicação que rende o mesmo que a Selic rendem cerca de R$ 10,79 por mês, ou R$ 137,50 em um ano, antes do imposto de renda.\nOs bancos (Focus) esperam IPCA de 5,01% para os 12 meses seguintes: descontada essa inflação, sobram cerca de R$ 83,21 em um ano (8,32% acima da inflação), antes do imposto.\nNa poupança, pela Lei 12.703, de 2012, com a Selic acima de 8,5%, o rendimento é de 0,5% ao mês mais a TR, sem imposto: R$ 5,00 por mês mais a TR; com a TR de novembro de 2026 (0,1196% ao mês), R$ 6,20 no mês, ou cerca de R$ 77,02 em um ano se a TR ficar igual.\nO juro alto que encarece a parcela de quem pega empréstimo aumenta o rendimento de quem tem dinheiro guardado.\n"
+     }
+    },
+    {
+     "id": "c105",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (minimo), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz minimo",
+     "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda faltam 2 meses de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O salário mínimo é de R$ 1.621,00 desde janeiro de 2026.\nDe janeiro de 2026 a setembro de 2026, o INPC, a inflação das famílias com renda de 1 a 5 salários mínimos, somou 4,01%: R$ 1.621,00 compram hoje o que R$ 1.558,46 compravam em janeiro de 2026, uma perda de 3,9% no poder de compra até agora, que o reajuste de janeiro repõe.\nEm janeiro, a lei (Lei 14.663, de 2023, com o limite da Lei 15.077, de 2024) corrige o mínimo pelo INPC dos 12 meses até novembro mais o crescimento do PIB de dois anos antes, com ganho acima da inflação de até 2,5%.\nO INPC dos 12 meses até setembro de 2026 foi de 4,29%. Só a correção pela inflação levaria o mínimo a cerca de R$ 1.690,60; com o ganho máximo de 2,5%, a cerca de R$ 1.732,86. Ainda faltam 2 meses de INPC até novembro, e o número muda com eles.\nOs benefícios do INSS acima do mínimo são corrigidos em janeiro só pelo INPC do ano anterior: com o INPC dos 12 meses até setembro de 2026, uma aposentadoria de R$ 3.000 iria para cerca de R$ 3.128,81.\nFonte: Banco Central (salário mínimo, série 1619; INPC, série 188) e as leis do mínimo. É regra de lei: só muda se o Congresso mudar a lei.\n"
+     }
+    },
+    {
+     "id": "c106",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (renda), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz renda",
+     "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "A renda média do trabalho foi de R$ 3.790 por mês no trimestre até setembro de 2026, já descontada a inflação (PNAD Contínua, do IBGE, em reais do último trimestre).\nNo trimestre até setembro de 2025, ela foi de R$ 3.660, nos mesmos reais de hoje: alta de 3,6% em um ano, já descontada a inflação.\nA série começa em março de 2012. O maior valor da série é de R$ 3.811, no trimestre até março de 2026.\nÉ uma média: quando quem ganha menos perde o emprego, ela pode subir mesmo com a vida piorando, como em 2020.\n"
+     }
+    },
+    {
+     "id": "c107",
+     "tipo": "conta",
+     "afirmacao": "Tradução do site para a vida de quem lê (emprego), pela tabela de tradução (TRADUCAO.md).",
+     "numeros": [],
+     "comando": "traduz emprego",
+     "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 pontos a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 pontos a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O desemprego foi de 5,2% no trimestre até setembro de 2026 (PNAD Contínua, do IBGE).\nA força de trabalho (quem trabalha ou procura trabalho) era de 109,3 milhões de pessoas no trimestre até setembro de 2026: cada ponto de desemprego são cerca de 1,1 milhão de pessoas sem trabalho, e o desemprego de hoje são cerca de 5,7 milhões de pessoas.\nNas quedas do PIB de 2T2014 a 4T2016, o desemprego foi de 6,9% no trimestre até junho de 2014 para 13,9% no trimestre até março de 2017, o maior até 12 meses depois do fim da recessão: 7,0 pontos a mais.\nNas quedas do PIB de 1T2020 a 2T2020, o desemprego foi de 12,4% no trimestre até março de 2020 para 14,9% no trimestre até setembro de 2020, o maior até 12 meses depois do fim da recessão: 2,5 pontos a mais.\nA série começa em março de 2012. O desemprego costuma subir depois que a recessão começa e cair devagar depois que ela acaba.\n"
+     }
+    }
+   ],
+   "duracao_pensar_s": 515,
+   "duracao_s": 515,
+   "curto": {
+    "porque": "Na Lei 14.237, o auxílio existe para mitigar o efeito do preço do gás de cozinha no orçamento das famílias de baixa renda. A Secom diz que a prorrogação mantém uma política contra a pobreza energética. Pelo texto da lei, o programa vigorava por 5 anos e acabaria em 19/11/2026.",
+    "e_dai": "Pelo texto da lei, o botijão grátis acabaria em 19/11; com a medida provisória, o prazo até 2031 depende de o Congresso votá-la em até 120 dias.",
+    "vida": "Nada muda agora para as cerca de 15 milhões de famílias atendidas: a recarga continua, com 3,1 milhões de vales em 10/11. Em 2027, o projeto de orçamento reserva R$ 7,6 bilhões, cerca de R$ 42 por família por mês, em média.",
+    "familias": [
+     {
+      "familia": "outra",
+      "quem": "Famílias de baixa renda que recebem a recarga grátis do botijão pelo Gás do Povo",
+      "o_que_muda": "Nada muda hoje: a recarga continua, e 3,1 milhões de vales saem em 10/11. Depois de 19/11, o benefício depende de o Congresso votar a MP em até 120 dias. Para 2027, o projeto de orçamento prevê R$ 7,6 bi, cerca de R$ 42 por família por mês, em média.",
+      "caderno": [
+       "c14",
+       "c17",
+       "c24",
+       "c23",
+       "c25",
+       "c28"
+      ]
+     }
+    ],
+    "objetivo": "Na Lei 14.237, o auxílio se destina a mitigar o efeito do preço do gás de cozinha no orçamento das famílias de baixa renda. A Secom diz que a prorrogação mantém uma política contra a pobreza energética. O objetivo é amplo e não diz quanto do preço do botijão deve ser coberto.",
+    "condicao": "",
+    "caderno": [
+     "c1",
+     "c4",
+     "c6",
+     "c7",
+     "c14",
+     "c17",
+     "c20",
+     "c23",
+     "c24",
+     "c25",
+     "c28"
+    ]
+   },
+   "pressao": "contas",
+   "pagina_que_falta": "O que é uma medida provisória e o que acontece quando ela caduca? A leitora precisa saber disso para ler o \\\"até 2031\\\" de hoje e a MP das dívidas rurais, que pode perder a validade na quarta.",
+   "tese": "A MP 1.400 existe porque a lei de fevereiro, chamada de permanente, não mexeu no artigo que limita o programa a 5 anos: pelo texto da lei, o Gás do Povo acabaria em 19/11/2026. A recarga grátis até 2031 depende de o Congresso converter a MP em até 120 dias, e a MP anterior do programa só foi votada a poucos dias de caducar, em fevereiro (um caso, não um padrão). O dinheiro de cada ano segue no orçamento: R$ 7,6 bi no projeto de 2027, 61,7% acima dos R$ 4,7 bi de 2026, e as reportagens sobre a MP não trazem estimativa de custo própria.",
+   "menor": false
+  },
+  "termina_em": "contas",
+  "pergunta": "divida-do-governo"
+ },
+ "avisos_ao_pedro": [
+  "O editor-chefe sentiu falta de uma página no fato do dia de 10/11/2026: O que é uma medida provisória e o que acontece quando ela caduca? A leitora precisa saber disso para ler o \\\"até 2031\\\" de hoje e a MP das dívidas rurais, que pode perder a validade na quarta."
+ ]
+}

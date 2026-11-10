@@ -4276,6 +4276,30 @@
     "titulo": "Em pronunciamento, “quero falar sobre conquistas, soberania e futuro”, diz Lula",
     "url": "https://www.infomoney.com.br/politica/em-pronunciamento-quero-falar-sobre-conquistas-soberania-e-futuro-diz-lula/",
     "publicado_em": "2026-11-08T20:00+00:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Como o mercado viu o pronunciamento de Lula à nação?",
+    "url": "https://www.infomoney.com.br/mercados/como-o-mercado-viu-o-pronunciamento-de-lula-a-nacao/",
+    "publicado_em": "2026-11-09T12:51+00:00"
+   },
+   {
+    "veiculo": "Gazeta do Povo",
+    "titulo": "Lula evita detalhar cortes de gastos e gera desconfiança no mercado financeiro",
+    "url": "https://www.gazetadopovo.com.br/economia/lula-evita-detalhar-cortes-de-gastos-e-gera-desconfianca-no-mercado-financeiro/",
+    "publicado_em": "2026-11-10T00:52+00:00"
+   },
+   {
+    "veiculo": "Gazeta do Povo",
+    "titulo": "Discurso contraditório de Lula não convence economistas e frustra mercado",
+    "url": "https://www.gazetadopovo.com.br/economia/discurso-contraditorio-de-lula-nao-convence-economistas-e-frustra-mercado/",
+    "publicado_em": "2026-11-09T20:50+00:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Lula perdeu oportunidade de trazer surpresa positiva ao mercado, avaliam economistas",
+    "url": "https://www.infomoney.com.br/economia/pronunciamento-lula-mercado-ajuste-fiscal/",
+    "publicado_em": "2026-11-09T17:28+00:00"
    }
   ],
   "cobertura": {
@@ -4433,5 +4457,377 @@
    ]
   },
   "pontos": 0.3
+ },
+ {
+  "id": "ev-20261110-01",
+  "data": "2026-11-09",
+  "titulo_evento": "Focus sobe inflação de 2027 a 4,90% e corta o PIB de 2026 para 1,75%",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "juro",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": true,
+  "porque": "Bancos e consultorias esperam preços subindo acima do teto da meta em 2027, e por isso a Selic fica em 13,75% por mais tempo. Juro alto por mais tempo segura o crédito e o investimento.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "vida": {
+   "tamanho": 1,
+   "porta": "precos",
+   "quem": "quem sente os preços e o juro altos por mais tempo, com o corte da Selic só em março"
+  },
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Agência Brasil",
+   "Poder360",
+   "g1"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Poder360",
+    "titulo": "Mercado reduz expectativa do PIB de 2026 para 1,75%",
+    "url": "https://www.poder360.com.br/poder-economia/mercado-reduz-expectativa-do-pib-de-2026-para-175/",
+    "publicado_em": "2026-11-09T12:23+00:00"
+   },
+   {
+    "veiculo": "Poder360",
+    "titulo": "Mercado eleva projeção de inflação de 2027 para 4,90%",
+    "url": "https://www.poder360.com.br/poder-economia/mercado-eleva-projecao-de-inflacao-de-2027-para-490/",
+    "publicado_em": "2026-11-09T12:30+00:00"
+   },
+   {
+    "veiculo": "g1",
+    "titulo": "Mercado eleva estimativa de inflação para 2027 e passa a prever corte de juros só em março do ano que vem",
+    "url": "https://g1.globo.com/economia/noticia/2026/11/09/mercado-eleva-estimativa-de-inflacao-para-2027-e-passa-a-prever-corte-de-juros-so-em-marco-do-ano-que-vem.ghtml",
+    "publicado_em": "2026-11-09T12:06+00:00"
+   },
+   {
+    "veiculo": "Agência Brasil",
+    "titulo": "Mercado eleva projeção da Selic para 13,75% em 2026",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/mercado-eleva-projecao-da-selic-para-1375-em-2026",
+    "publicado_em": "2026-11-09T10:26-03:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 8,
+   "jornais": [
+    "Agência Brasil",
+    "Folha",
+    "InfoMoney",
+    "Poder360",
+    "Valor",
+    "g1"
+   ]
+  },
+  "pontos": 0.5
+ },
+ {
+  "id": "ev-20261110-02",
+  "data": "2026-11-09",
+  "titulo_evento": "Governo prorroga até 2031 o Gás do Povo, que dá o botijão a 15 milhões de famílias",
+  "estagio": "decidido",
+  "origem": "politica",
+  "fator": "contas",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "O governo baixou medida provisória que mantém a recarga gratuita por mais cinco anos. O benefício sustenta o consumo das famílias de baixa renda, e o gasto fica fixo nas contas do governo por mais tempo.",
+  "decisor": "governo_federal",
+  "instrumento": "gasto",
+  "objetivo": "",
+  "vida": {
+   "tamanho": 2,
+   "porta": "governo",
+   "quem": "cerca de 15 milhões de famílias que recebem a recarga gratuita do botijão de gás"
+  },
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Agência Brasil",
+   "InfoMoney",
+   "g1"
+  ],
+  "fontes": [
+   {
+    "veiculo": "g1",
+    "titulo": "Governo federal prorroga até 2031 programa Gás do Povo",
+    "url": "https://g1.globo.com/economia/noticia/2026/11/09/governo-federal-prorroga-ate-2031-programa-gas-do-povo.ghtml",
+    "publicado_em": "2026-11-09T12:35+00:00"
+   },
+   {
+    "veiculo": "Agência Brasil",
+    "titulo": "Gás do Povo: governo prorroga vigência do auxílio até 2031",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/gas-do-povo-governo-prorroga-vigencia-do-programa-ate-2031",
+    "publicado_em": "2026-11-09T12:02-03:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Gás do Povo: governo federal prorroga vigência do auxílio até 2031",
+    "url": "https://www.infomoney.com.br/politica/gas-do-povo-governo-federal-prorroga-vigencia-do-auxilio-ate-2031/",
+    "publicado_em": "2026-11-09T21:41+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 3,
+   "jornais": [
+    "Agência Brasil",
+    "InfoMoney",
+    "g1"
+   ]
+  },
+  "pontos": 1.0
+ },
+ {
+  "id": "ev-20261110-03",
+  "data": "2026-11-09",
+  "titulo_evento": "Tesouro terá de refinanciar R$ 1,8 trilhão da dívida em 12 meses",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "contas",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "A parte da dívida que vence em até um ano chegou a 19,95% em setembro, e o Tesouro precisa pegar dinheiro novo logo. Com o juro alto, a conta de juros do governo cresce e pressiona as contas públicas.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Poder360"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Poder360",
+    "titulo": "Tesouro terá de refinanciar R$ 1,8 trilhão em 12 meses",
+    "url": "https://www.poder360.com.br/poder-economia/tesouro-tera-de-refinanciar-r-18-trilhao-em-12-meses/",
+    "publicado_em": "2026-11-09T20:05+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "Poder360"
+   ]
+  },
+  "pontos": 0.5
+ },
+ {
+  "id": "ev-20261110-04",
+  "data": "2026-11-09",
+  "titulo_evento": "Bolsa sobe 2,22% e dólar cai a R$ 5,505 com alívio no exterior",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "mercado",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "A Bolsa acompanhou a recuperação em Nova York e o petróleo mais barato, e o dólar recuou. Dólar menos pressionado alivia o preço dos importados, mas o mercado segue de olho nas contas do governo.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Agência Brasil",
+   "Poder360",
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Valor",
+    "titulo": "Ibovespa acompanha exterior e fecha em alta com Vale e bancos, estendendo recuperação",
+    "url": "https://valor.globo.com/financas/noticia/2026/11/09/ibovespa-acompanha-exterior-e-fecha-em-alta-com-vale-e-bancos-estendendo-recuperacao.ghtml",
+    "publicado_em": "2026-11-09T21:44+00:00"
+   },
+   {
+    "veiculo": "Poder360",
+    "titulo": "Dólar cai a R$ 5,505; Ibovespa sobe 2,22%",
+    "url": "https://www.poder360.com.br/poder-economia/dolar-cai-a-r-5505-ibovespa-sobe-222/",
+    "publicado_em": "2026-11-09T21:30+00:00"
+   },
+   {
+    "veiculo": "Agência Brasil",
+    "titulo": "Bolsa sobe 2,22% e registra maior alta diária desde outubro",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/bolsa-sobe-222-e-registra-maior-alta-diaria-desde-outubro",
+    "publicado_em": "2026-11-09T19:38-03:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 5,
+   "jornais": [
+    "Agência Brasil",
+    "InfoMoney",
+    "Poder360",
+    "Valor"
+   ]
+  },
+  "pontos": -1.0
+ },
+ {
+  "id": "ev-20261110-05",
+  "data": "2026-11-09",
+  "titulo_evento": "Petróleo Brent cai mais de 4% com sinal de negociação entre EUA e Irã",
+  "estagio": "dado",
+  "origem": "mundo",
+  "fator": "externo",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "O presidente dos EUA disse que novos ataques ao Irã são improváveis enquanto houver negociação, e o petróleo caiu lá fora. Combustível e frete tendem a pesar menos nos preços aqui.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "vida": {
+   "tamanho": 1,
+   "porta": "precos",
+   "quem": "quem abastece o carro e paga o frete embutido nos preços"
+  },
+  "chance_aprovacao": null,
+  "veiculos": [
+   "InfoMoney",
+   "Poder360"
+  ],
+  "fontes": [
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Petróleo Brent cai mais de 4% após falas de Trump sobre conversas com Irã",
+    "url": "https://www.infomoney.com.br/mercados/petroleo-abertura-fechamento-ira-eua-09112026/",
+    "publicado_em": "2026-11-09T13:34+00:00"
+   },
+   {
+    "veiculo": "Poder360",
+    "titulo": "Petróleo cai após Trump sinalizar moderação em relação ao Irã",
+    "url": "https://www.poder360.com.br/poder-economia/petroleo-cai-apos-trump-sinalizar-moderacao-em-relacao-ao-ira/",
+    "publicado_em": "2026-11-09T06:24+00:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Petroleiras são maiores quedas do Ibov nesta 2º acompanhando movimento do petróleo",
+    "url": "https://www.infomoney.com.br/mercados/petroleiras-sao-maiores-quedas-do-ibov-nesta-2o-acompanhando-movimento-do-petroleo/",
+    "publicado_em": "2026-11-09T14:23+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 5,
+   "jornais": [
+    "InfoMoney",
+    "Poder360",
+    "Valor"
+   ]
+  },
+  "pontos": -1.0
+ },
+ {
+  "id": "ev-20261110-06",
+  "data": "2026-11-09",
+  "titulo_evento": "China prorroga por dois meses a trégua comercial com os EUA",
+  "estagio": "decidido",
+  "origem": "mundo",
+  "fator": "externo",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "A China manteve suspensas as medidas comerciais contra os EUA, o que evita nova guerra de tarifas entre as duas maiores economias. Isso protege a demanda mundial por produtos como soja e minério do Brasil.",
+  "decisor": "fora",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "vida": {
+   "tamanho": 0,
+   "porta": "nenhuma",
+   "quem": ""
+  },
+  "chance_aprovacao": null,
+  "veiculos": [
+   "InfoMoney",
+   "Poder360",
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Valor",
+    "titulo": "China prorroga trégua comercial com os EUA por dois meses",
+    "url": "https://valor.globo.com/mundo/noticia/2026/11/09/china-prorroga-trgua-comercial-com-os-eua-por-dois-meses.ghtml",
+    "publicado_em": "2026-11-09T12:16+00:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "China prorroga trégua comercial com os EUA por dois meses",
+    "url": "https://www.infomoney.com.br/mercados/china-prorroga-tregua-comercial-com-os-eua-por-dois-meses/",
+    "publicado_em": "2026-11-09T12:29+00:00"
+   },
+   {
+    "veiculo": "Poder360",
+    "titulo": "China prorroga suspensão de tarifa de 24% sobre produtos dos EUA",
+    "url": "https://www.poder360.com.br/poder-china/china-prorroga-suspensao-de-tarifa-de-24-sobre-produtos-dos-eua/",
+    "publicado_em": "2026-11-09T09:45+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 5,
+   "jornais": [
+    "Folha",
+    "InfoMoney",
+    "Poder360",
+    "Valor",
+    "g1"
+   ]
+  },
+  "pontos": -1.0
+ },
+ {
+  "id": "ev-20261110-07",
+  "data": "2026-11-09",
+  "titulo_evento": "MP de renegociação das dívidas rurais pode perder a validade na quarta",
+  "estagio": "em_votacao",
+  "origem": "politica",
+  "fator": "credito",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "A bancada ruralista resiste, e só R$ 18,6 bi foram renegociados até agora. Se a medida passasse, produtores teriam alívio nas dívidas e mais fôlego para investir.",
+  "decisor": "congresso",
+  "instrumento": "credito_publico",
+  "objetivo": "",
+  "vida": {
+   "tamanho": 1,
+   "porta": "credito",
+   "quem": "produtores rurais endividados que contam com a renegociação"
+  },
+  "chance_aprovacao": 0.2,
+  "veiculos": [
+   "Folha",
+   "InfoMoney"
+  ],
+  "fontes": [
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "MP das dívidas do agro pode caducar nesta quarta após impasse com ruralistas",
+    "url": "https://www.infomoney.com.br/politica/mp-das-dividas-do-agro-pode-caducar-nesta-quarta-apos-impasse-com-ruralistas/",
+    "publicado_em": "2026-11-09T12:36+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "MP de dívidas rurais está sob risco de caducar com só R$ 18,6 bi renegociados",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/agro/2026/11/mp-de-dividas-rurais-esta-sob-risco-de-caducar-com-so-r-186-bi-renegociados.shtml",
+    "publicado_em": "2026-11-09T08:00-03:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 2,
+   "jornais": [
+    "Folha",
+    "InfoMoney"
+   ]
+  },
+  "pontos": -0.2
  }
 ]
