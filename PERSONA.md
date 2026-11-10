@@ -224,7 +224,7 @@ O antes deixa um "mesmo assim" sem resposta, gasta um terço do texto com o meca
 
 ## Os tipos de post
 
-Cada post responde a uma pergunta só e compara com o próprio período. Ela recebe o fato do dia no e-mail, de manhã, e lê com calma o post de domingo. Todo post termina com "Mandar no WhatsApp" e "Copiar link", porque é pelo WhatsApp que ela recebe notícia e passa adiante o que leu, seja o fato do dia, seja o resumo. É um post por dia, por volta das 6h da manhã; o tipo muda com o dia. No fato do dia, a pesquisa, o texto e a revisão rodam a partir das 05h45, antes do envio, e o texto é um só, no site e no e-mail ([FUNDO.md](FUNDO.md)).
+Cada post responde a uma pergunta só e compara com o próprio período. Ela recebe o fato do dia no e-mail, de manhã, e lê com calma o post de domingo. Todo post termina com "Mandar no WhatsApp" e "Copiar link", porque é pelo WhatsApp que ela recebe notícia e passa adiante o que leu, seja o fato do dia, seja o resumo. É um post por dia, por volta das 6h da manhã; o tipo muda com o dia. No fato do dia, a pesquisa, o texto e a revisão rodam a partir das 5h, antes do envio, e o texto é um só, no site e no e-mail ([FUNDO.md](FUNDO.md)).
 
 | Tipo | Pergunta que responde | Quando | Tamanho | Abre com |
 | --- | --- | --- | --- | --- |

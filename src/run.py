@@ -14,7 +14,7 @@ soma das notícias (src/pauta.py, CARTA_EDITORIAL.md), e src/fundo.py pesquisa, 
 confere o texto (guia em FUNDO.md). Se ele não sair aqui, src/fundo.py --hoje, no run.sh, tenta de novo.
 
 Os feeds de alguns jornais guardam só as 10 últimas manchetes. A coleta de hora em
-hora junta tudo num acervo local, e a atualização da manhã (05h45) lê o dia anterior inteiro.
+hora junta tudo num acervo local, e a atualização da manhã (05h00) lê o dia anterior inteiro.
 """
 from __future__ import annotations
 
@@ -286,7 +286,7 @@ def main() -> dict | None:
             import fundo
             try:
                 cx = escreve_post.contexto(rodada, cfg, datas, evs, ant, "dia", anteriores, snap)
-                t = fundo.fazer(rodada, cx, limite_min=float(os.environ.get("VDC_TEXTO_MIN", "25")),
+                t = fundo.fazer(rodada, cx, limite_min=float(os.environ.get("VDC_TEXTO_MIN", "35")),
                                 pesquisa_ok=not args.sem_pesquisa)
                 post = fundo.post_do_texto(t)
             except Exception as ex:  # noqa: BLE001

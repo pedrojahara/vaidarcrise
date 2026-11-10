@@ -10,7 +10,7 @@ A metodologia está em [METODOLOGIA.md](METODOLOGIA.md), a regra da direção em
 launchd, de hora em hora (minuto 5) → run.sh --coletar
   └─ src/fetch_news.py      RSS de 8 veículos + GDELT     → data/manchetes.json (acervo local, fora do git)
 
-launchd, todo dia às 05h45 → run.sh   (uma publicação por dia; se o Mac dormir, roda ao acordar)
+launchd, todo dia às 05h00 → run.sh   (uma publicação por dia; se o Mac dormir, roda ao acordar)
   ├─ src/fetch_data.py      BCB SGS, Focus, IBGE, Tesouro Direto e FMI (FRED) → data/raw/<dia>/indicadores.json
   ├─ src/calendario.py      calendário de divulgações do IBGE + config/datas.json → data/calendario.json
   ├─ src/direcao.py         a direção do risco: as cinco pressões contra 3 meses antes, com os cortes de
@@ -25,7 +25,7 @@ launchd, todo dia às 05h45 → run.sh   (uma publicação por dia; se o Mac dor
   ├─ src/fundo.py fazer     no fato do dia, a pesquisa da história (claude -p com busca na internet, src/conta.py e as
   │                         metas de config/metas.json), um texto só e o revisor de três leitores, que devolve
   │                         objeções em até duas voltas e uma conferência final só de erros; o código confere
-  │                         cada número (guia em FUNDO.md, uns 25 min)
+  │                         cada número (guia em FUNDO.md, uns 35 min)
   ├─ src/escreve_post.py    claude -p escreve o resumo da semana ou do mês a partir da conta pronta, dos dados oficiais
   │                         (o mês) e dos registros em runs/ (a semana); src/edita_texto.py (o editor) revisa e edita o
   │                         rascunho com o PERSONA.md; src/revisa_texto.py confere
@@ -71,7 +71,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python src/edita_texto.py editor/<texto>.md       # o editor num texto à mão
 ```
 
-Agendamento: copie `launchd/com.pedrojahara.vaidarcrise.plist` (05h45) e `launchd/com.pedrojahara.vaidarcrise.coleta.plist` (de hora em hora) para `~/Library/LaunchAgents` e carregue com `launchctl bootstrap gui/$(id -u) <arquivo>`. Logs em `logs/`.
+Agendamento: copie `launchd/com.pedrojahara.vaidarcrise.plist` (05h00) e `launchd/com.pedrojahara.vaidarcrise.coleta.plist` (de hora em hora) para `~/Library/LaunchAgents` e carregue com `launchctl bootstrap gui/$(id -u) <arquivo>`. Logs em `logs/`.
 
 Textos escritos à mão ficam em `editor/AAAA-MM-DD-slug.md` (cabeçalho, `---`, Markdown) e entram no blog na próxima geração do site. Todo post, do dia ou escrito à mão, entra na rolagem da página principal na data do cabeçalho, do mais novo ao mais antigo: a página traz os 5 primeiros, e o resto vem de `docs/posts/` (um pedaço de HTML por post e `indice.json`) quando a leitora chega ao fim. Com `tipo: retrato` no cabeçalho, o texto vira o Retrato do Brasil e também fica no cartão "Comece por aqui", no topo da página principal (vale o mais novo).
 
