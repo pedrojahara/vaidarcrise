@@ -201,14 +201,14 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
   <label for="email">Seu <span class="nq">e-mail</span></label>
   <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" maxlength="254">
   <div class="mel" aria-hidden="true"><label for="site">Deixe este campo em branco</label><input type="text" id="site" name="site" tabindex="-1" autocomplete="off"></div>
-  
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAAF7crznRGgQXMIqs" data-language="pt-br" data-theme="auto"></div>
   <button type="submit">Quero receber</button>
   <p class="peq">A lista guarda só o endereço de <span class="nq">e-mail</span>. Os <span class="nq">e-mail</span>s não registram quem abre nem em que link cada pessoa toca, e todos trazem no fim o link para sair. Os detalhes estão em <a href="/privacidade/">Privacidade</a>.</p>
 </form>
 <script>
 (function(){var q=location.search;if(q.indexOf("invalido=1")>-1)document.getElementById("aviso-invalido").hidden=false;if(q.indexOf("robo=1")>-1)document.getElementById("aviso-robo").hidden=false})();
 </script>
-
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 
 </main>
