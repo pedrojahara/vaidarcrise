@@ -46,6 +46,6 @@
     alvo();addEventListener("hashchange",alvo);
   })();
   </script>
-  <p class="atual"><a href="/nota/">Como funciona</a> | {% if permalink %}Atualização de {{ dia_mes(dia) }}, às {{ hora }}{% else %}Atualizado em {{ dia_mes(dia) }} | próxima atualização às 06h30{% endif %}</p>
+  <p class="atual"><a href="/nota/">Como funciona</a> | {% if permalink %}Atualização de {{ dia_mes(dia) }}, às {{ hora }}{% else %}Atualizado em {{ dia_mes(dia) }} | próxima atualização por volta das 6h{% endif %}</p>
   {% if not permalink %}<p class="aviso" id="defasado" hidden><strong>Atenção: números velhos.</strong> Esta atualização tem mais de 36 horas. A atualização automática pode ter falhado.</p>{% endif %}
 </section>
