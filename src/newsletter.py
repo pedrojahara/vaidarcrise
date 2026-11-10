@@ -95,7 +95,8 @@ def montar(dia: str) -> dict | None:
     post = build_site.post_de(r, cfg)
     dr = build_site.direcao_ctx(r, cfg, cal)
     env = _env()
-    ctx = {"post": post, "dir": dr, "site": build_site.SITE, "sair_url": SAIR, "cores": CORES}
+    ctx = {"post": post, "dir": dr, "site": build_site.SITE, "sair_url": SAIR, "cores": CORES,
+           "aberta": bool(config().get("inscricao_aberta"))}  # o "Recebeu de alguém?" só com a lista aberta
     corpo = env.get_template("email.html").render(**ctx)
     # No celular, o "R$" não fica no fim de uma linha e o número no começo da outra (como no site).
     corpo = re.sub(r"\b(R|US)\$ (?=\d)", "\\1$\u00a0", corpo)

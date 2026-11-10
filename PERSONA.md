@@ -372,7 +372,7 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 | Diferença entre taxas | pontos, abreviado "pt" em tabela |
 | Tipos de post | Retrato do Brasil, Fato do dia, Resumo da semana, Resumo do mês |
 | Quem escreve o post | "Escrito pelo Claude com a ajuda do Pedro.", a mesma assinatura em todo post, sem horário e sem contar notícias |
-| A lista por e-mail | "Receba o fato do dia por e-mail" na página da lista, o botão "Quero receber" e, no fim de todo e-mail, "Sair da lista". Na lateral, "Receba por e-mail"; no rodapé, "Receber por e-mail" e "Privacidade". A caixa e o link só aparecem quando a lista está aberta |
+| A lista por e-mail | "Receba o fato do dia por e-mail" na página da lista, o botão "Quero receber" e, no fim de todo e-mail, "Sair da lista". A caixa "Receba o fato do dia no seu e-mail" fica no fim do post (na página Hoje, só depois do primeiro); no e-mail, "Recebeu este e-mail de alguém?"; no rodapé, "Receber por e-mail" e "Privacidade". Nada salta na tela, e o cabeçalho não ganha link. A caixa, o "Recebeu" e o link do rodapé só aparecem quando a lista está aberta |
 | O compartilhar | No fim de todo post, depois do "Entenda a fundo": o botão "Mandar no WhatsApp", que abre o WhatsApp com o título e o link, e ao lado "Copiar link", que vira "Link copiado" por 3 segundos. Nada no topo, nada preso à tela, nenhuma outra rede e nenhuma etiqueta de rastreio no link |
 
 **Palavras com lado.** Fora do texto: "gastança", "rombo", "herança maldita", "austericídio", "desgoverno", "farra". No lugar, o número e o que ele mede.
