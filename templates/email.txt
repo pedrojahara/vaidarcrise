@@ -22,7 +22,9 @@ VAI DAR CRISE?
 
 {% endif %}Mandar no WhatsApp: {{ post.zap }}
 Abrir no site: {{ post.url }}
-
+{% if aberta %}
+Recebeu este e-mail de alguém? Para receber o seu toda manhã, inscreva-se: {{ site }}/inscricao/
+{% endif %}
 --
 Este e-mail chega porque você confirmou a inscrição no Vai dar crise?, que manda o fato do dia de segunda a sábado e o resumo da semana aos domingos. Os e-mails não registram quem abre nem em que link cada pessoa toca.
 Sair da lista: {{ sair_url }}

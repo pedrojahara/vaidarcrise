@@ -1,0 +1,37 @@
+{#- A caixa de inscrição no fim do post: na página de cada post e depois do primeiro post da página Hoje. Só aparece
+    com a lista aberta ("inscricao_aberta" em config/newsletter.json). A barreira contra robôs (Turnstile) só carrega
+    quando a pessoa toca no campo, para a página não chamar a Cloudflare à toa; sem JavaScript, o pedido cai na página
+    /inscricao/, que mostra a barreira. -#}
+{% if news and news.inscricao_aberta %}
+<section class="receba" aria-labelledby="receba-tit">
+  <h2 id="receba-tit">Receba o fato do dia no seu <span class="nq">e-mail</span></h2>
+  <p>Ele chega cedo, de segunda a sábado, e o resumo da semana chega aos domingos. Para sair, basta um toque no fim de qualquer <span class="nq">e-mail</span>.</p>
+  <form id="receba-f" method="post" action="{{ news.servico }}/inscrever">
+    <label class="so-leitor" for="receba-email">Seu e-mail</label>
+    <input type="email" id="receba-email" name="email" required autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" maxlength="254" placeholder="Seu e-mail">
+    <button type="submit">Quero receber</button>
+    <div class="so-leitor" aria-hidden="true"><label for="receba-site">Deixe este campo em branco</label><input type="text" id="receba-site" name="site" tabindex="-1" autocomplete="off"></div>
+    {% if news.turnstile %}<div class="r-robo" data-sitekey="{{ news.turnstile }}"></div>{% endif %}
+  </form>
+  <p class="r-priv">A lista guarda só o endereço de <span class="nq">e-mail</span>. <a href="/privacidade/">Privacidade</a></p>
+</section>
+{% if news.turnstile %}<script>
+(function(){
+  var f=document.getElementById("receba-f"),caixa=f.querySelector(".r-robo"),b=f.querySelector("button");
+  var pronto=false,quer=false,veio=false;
+  function manda(){if(quer)f.submit()}
+  function carrega(){
+    if(veio)return;veio=true;
+    window.recebaRobo=function(){turnstile.render(caixa,{sitekey:caixa.getAttribute("data-sitekey"),language:"pt-br",appearance:"interaction-only",callback:function(){pronto=true;manda()}})};
+    var s=document.createElement("script");s.src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=recebaRobo";s.async=true;document.head.appendChild(s);
+  }
+  f.addEventListener("focusin",carrega);
+  f.addEventListener("submit",function(e){
+    if(pronto)return;
+    e.preventDefault();quer=true;b.disabled=true;carrega();
+    /* Se a barreira não responder em 10 segundos, o pedido segue e a página /inscricao/ mostra a barreira. */
+    setTimeout(function(){if(!pronto)f.submit()},10000);
+  });
+})();
+</script>{% endif %}
+{% endif %}

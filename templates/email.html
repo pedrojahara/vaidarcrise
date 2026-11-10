@@ -115,6 +115,7 @@ a.termo{color:inherit}
 
 {# o rodapé: por que o e-mail chega e como sair #}
 <tr><td class="e-fio" style="padding:20px 0 32px;border-top:1px solid #e4e6e8">
+  {% if aberta %}<p class="e-tinta" style="margin:0 0 12px;font:600 15px/1.5 {{ sistema }};color:#1e1f21">Recebeu este e-mail de alguém? Para receber o seu toda manhã, <a href="{{ site }}/inscricao/" class="e-link" style="color:#1f4fbf">inscreva-se no Vai dar crise?</a></p>{% endif %}
   <p class="e-meta" style="margin:0 0 10px;font:14px/1.5 {{ sistema }};color:#62666b">Este e-mail chega porque você confirmou a inscrição no Vai dar crise?, que manda o fato do dia de segunda a sábado e o resumo da semana aos domingos. Os e-mails não registram quem abre nem em que link cada pessoa toca.</p>
   <p class="e-meta" style="margin:0;font:14px/1.5 {{ sistema }};color:#62666b"><a href="{{ sair_url }}" class="e-meta" style="color:#62666b">Sair da lista</a> | <a href="{{ site }}/privacidade/" class="e-meta" style="color:#62666b">Privacidade</a> | <a href="{{ site }}/" class="e-meta" style="color:#62666b">vaidarcrise.com.br</a></p>
 </td></tr>

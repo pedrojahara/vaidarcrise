@@ -1,7 +1,7 @@
 {
  "_leia": "O fato do dia por e-mail (src/newsletter.py, serviço de inscrição em inscricao/). A lista e o envio ficam no Resend; a inscrição, num Worker do Cloudflare. Nenhum segredo fica aqui: a chave do Resend fica no Chaves do Mac e os segredos do serviço, só no Cloudflare. inscricao_aberta mostra a caixa de inscrição no site e põe /inscricao/ na busca (só o Pedro abre). envio_diario liga o envio na rodada do run.sh. turnstile é a chave pública da barreira contra robôs, que inscricao/publica.py mostra.",
  "inscricao_aberta": false,
- "envio_diario": false,
+ "envio_diario": true,
  "remetente": "\"Vai dar crise?\" <fato@vaidarcrise.com.br>",
  "responder_para": "fato@vaidarcrise.com.br",
  "servico": "https://inscricao.vaidarcrise.com.br",
