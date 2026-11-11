@@ -37,6 +37,8 @@ TIPOS_POST = {"dia": "Fato do dia", "semana": "Resumo da semana", "mes": "Resumo
 # O blog é uma rolagem só, do post mais novo ao mais antigo: a página principal traz os primeiros, e o resto
 # chega aos poucos, de docs/posts/, enquanto a leitora rola.
 POSTS_NA_PAGINA = 5
+# Até 31/10/2026, cada dia tinha /resumo/ e /nota/; esses endereços levam ao post do dia e a Como funciona.
+ULTIMO_DIA_COM_RESUMO_E_NOTA = "2026-10-31"
 # ------------------------------------------------------------------ formatos
 def num(x: float, d: int = 1) -> str:
     s = f"{abs(x):,.{d}f}".replace(",", "X").replace(".", ",").replace("X", ".")
@@ -76,17 +78,8 @@ def verbo_pct(x: float) -> str:
     return f"{'cresce' if x > 0 else 'cai'} {num(abs(x))}%"
 
 
-def mes_curto(ref: str) -> str:
-    return f"{MESES[int(ref[5:7]) - 1][:3]}."
-
-
 def mes_nome(ref: str) -> str:
     return MESES[int(ref[5:7]) - 1]
-
-
-def mes_antes(ref: str, n: int) -> str:
-    a, m = divmod(int(ref[:4]) * 12 + int(ref[5:7]) - 1 - n, 12)
-    return f"{a:04d}-{m + 1:02d}"
 
 
 # -------------------------------------------------------------------- direção
@@ -124,6 +117,12 @@ def _casas(m: dict) -> int:
     vista = abs(round(m["agora"], 1) - round(m["antes"], 1))
     passou = m.get("lado") not in (None, 0)
     return 2 if (passou and vista <= m["corte"]) or (not passou and vista > m["corte"]) else 1
+
+
+def _de_para(m: dict, casas: int, unidade: str) -> str:
+    """'foi de 7,6% para 7,9%', ou 'ficou em 7,9%' quando os dois números, arredondados, dão o mesmo."""
+    a, b = num(m["antes"], casas), num(m["agora"], casas)
+    return f"ficou em {b}{unidade}" if a == b else f"foi de {a}{unidade} para {b}{unidade}"
 
 
 def _quanto_normal(m: dict, unidade: str, casas: int = 1, de: str = "") -> str:
@@ -210,7 +209,7 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
     if pid == "contas" and "divida" in ms and ms["divida"]["agora"] is not None:
         d = ms["divida"]
         cd = _casas(d)
-        frases.append(f"A dívida do governo foi de {num(d['antes'], cd)}% para {num(d['agora'], cd)}% do PIB, {_quando(d)}.")
+        frases.append(f"A dívida do governo {_de_para(d, cd, '%')} do PIB, {_quando(d)}.")
         normal = _quanto_normal(d, " ponto", cd)
         pr = ms.get("primario")
         if pr and pr.get("agora") is not None and pr.get("antes") is not None and abs(pr["agora"] - pr["antes"]) >= 0.05:
@@ -227,8 +226,7 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
                 frases.append("A dívida sobe mesmo assim, porque os juros sobre ela pesam mais que essa melhora.")
     elif pid == "parcelas" and m and m["agora"] is not None:
         cd = _casas(m)
-        frases.append(f"A parte da renda das famílias que vai para parcelas e juros foi de {num(m['antes'], cd)}% para "
-                      f"{num(m['agora'], cd)}%, {_quando(m)}.")
+        frases.append(f"A parte da renda das famílias que vai para parcelas e juros {_de_para(m, cd, '%')}, {_quando(m)}.")
         normal = _quanto_normal(m, " ponto", cd)
     elif pid == "mercado" and "dolar" in ms and ms["dolar"]["agora"] is not None:
         # Fechada, a linha mostra os dois números que entram na conta; aberta, explica o juro de 10 anos e o vaivém de cada um.
@@ -238,7 +236,7 @@ def _parte_ctx(x: dict, cfg: dict, hoje: str) -> dict:
         dolar = f"O dólar foi de R$ {num(d['antes'], 2)} para R$ {num(d['agora'], 2)}"
         if j:
             cj = _casas(j)
-            juro = f"o juro de 10 anos foi de {num(j['antes'], cj)}% para {num(j['agora'], cj)}% ao ano"
+            juro = f"o juro de 10 anos {_de_para(j, cj, '%')} ao ano"
             if _quando(d) == _quando(j):
                 frases.append(f"{dolar}, e {juro}, {_quando(d)}.")
             else:
@@ -546,7 +544,8 @@ def post_de(rodada: dict, cfg: dict) -> dict:
         titulo = ("A economia está encolhendo" if d["estado"] == "encolhendo"
                   else f"O risco de recessão está {d['estado']}")
         paragrafos = []
-        autoria = "O texto deste dia não saiu, por uma falha no programa que escreve os posts."
+        # O dia sem texto não entra na rolagem e não diz à leitora por que faltou (o site não mostra bastidor).
+        autoria = None
     link = f"/{dia}/"
     fundo, ponte, fontes = None, None, []
     if p.get("ok") and tipo == "dia" and p.get("formato") == "historia":
@@ -645,7 +644,8 @@ def main() -> None:
     textos = textos_do_editor()
     # Todos os posts numa fila só, do mais novo ao mais antigo: os do dia e os escritos à mão, cada um na sua data.
     # No mesmo dia, o post do dia vem antes do texto à mão (a ordenação é estável).
-    fila = sorted([{**posts[d], "id": d} for d in dias] + [{**t, "id": f"textos-{t['slug']}"} for t in textos],
+    fila = sorted([{**posts[d], "id": d} for d in dias if posts[d]["llm"]]
+                  + [{**t, "id": f"textos-{t['slug']}"} for t in textos],
                   key=lambda x: x["dia"], reverse=True)
     pos_fila = {x["id"]: i for i, x in enumerate(fila)}
     # O retrato mais novo também fica no cartão "Comece por aqui", no topo da página principal.
@@ -659,6 +659,8 @@ def main() -> None:
 
     def continua(depois: str) -> dict | None:
         """O que vem depois de um post na rolagem: o id do último já na página e o link do próximo, para quem não tem JavaScript."""
+        if depois not in pos_fila:
+            return None
         i = pos_fila[depois] + 1
         return {"depois": depois, "link": fila[i]["link"]} if i < len(fila) else None
     def contexto(dia: str, r: dict, permalink: bool) -> dict:
@@ -684,7 +686,7 @@ def main() -> None:
         (caminho / "index.html").write_text(re.sub(r"\b(R|US)\$ (?=\d)", "\\1$\u00a0", html))
 
     def desviar(caminho: Path, destino: str) -> None:
-        """Endereço antigo (Fator por fator e a conta de cada dia) que agora leva a outra página."""
+        """Endereço antigo que agora leva a outra página."""
         caminho.mkdir(parents=True, exist_ok=True)
         (caminho / "index.html").write_text(
             f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Vai dar crise?</title>'
@@ -698,8 +700,9 @@ def main() -> None:
         og_image.gerar(og, {"dir": ctx["dir"], "dia": dia, "data_curta": data_curta,
                             "tipo_nome": posts[dia]["tipo_nome"] if posts[dia]["llm"] else None})
         gravar(DOCS / dia, "index.html", ctx, f"{SITE}/{dia}/")
-        desviar(DOCS / dia / "resumo", f"/{dia}/")
-        desviar(DOCS / dia / "nota", "/nota/")
+        if dia <= ULTIMO_DIA_COM_RESUMO_E_NOTA:
+            desviar(DOCS / dia / "resumo", f"/{dia}/")
+            desviar(DOCS / dia / "nota", "/nota/")
 
     dia = ultima["gerado_em"][:10]
     ctx = contexto(dia, ultima, False)
@@ -729,14 +732,6 @@ def main() -> None:
     for t in textos:
         gravar(DOCS / "textos" / t["slug"], "index.html",
                {**ctx, "post": t, "permalink": True, "continua": continua(f"textos-{t['slug']}")}, f"{SITE}{t['link']}")
-    # Links fixos para encaminhar: /semana/ e /mes/ mostram o último post de cada tipo, com o link do dia como canônico
-    # (por isso ficam fora do sitemap).
-    for tipo, pasta in (("semana", "semana"), ("mes", "mes")):
-        d = next((d for d in reversed(dias) if posts[d]["tipo"] == tipo), None)
-        if d:
-            gravar(DOCS / pasta, "index.html", contexto(d, por_dia[d], True), f"{SITE}/{d}/")
-        elif (DOCS / pasta).exists():
-            shutil.rmtree(DOCS / pasta)
     shutil.copy(DOCS / "og" / f"{dia}.png", DOCS / "og.png")
 
     try:
@@ -748,7 +743,7 @@ def main() -> None:
     # O site não liga para o código (decisão do Pedro em 8/11/2026): os links da METODOLOGIA.md para arquivos do
     # repositório viram só o nome do arquivo.
     met_md = re.sub(r"\[([^\]]+)\]\(https?://github\.com/[^)]*\)", r"\1", (ROOT / "METODOLOGIA.md").read_text())
-    met = ('<p class="intro-met">Esta página é para quem quer conferir ou refazer a conta, com as fórmulas e os testes. '
+    met = ('<p class="intro-met">Esta página é para quem quer conferir ou refazer a conta, com as fórmulas e as séries. '
            'A versão curta está em <a href="/nota/">Como funciona</a>.</p>\n'
            + markdown.markdown(met_md, extensions=["tables", "toc"]))
     gravar(DOCS / "metodologia", "pagina.html", {**ctx, "titulo": "Metodologia", "corpo": met, "og_url": f"{SITE}/og.png"},

@@ -85,13 +85,6 @@
   "validacao_desde": 2004,
   "validacao": "Cada ano, de 2004 em diante, é previsto com coeficientes estimados só com os trimestres cujo PIB 4 trimestres à frente já tinha saído no começo daquele ano.",
   "ajuste": "O cenário ruim mostrado soma à regressão o quantil 10% dos erros fora da amostra no painel, para que 1 em cada 10 resultados fique abaixo dele também fora da amostra.",
-  "percentis_dos_cortes": [
-   10,
-   30,
-   70,
-   90
-  ],
-  "niveis": "Cenário ruim de hoje comparado ao do Brasil em todos os meses desde 2004: entre os 10% piores, Muito acima; entre 10% e 30%, Acima; entre 30% e 70%, Normal; entre 70% e 90%, Abaixo; entre os 10% melhores, Muito abaixo.",
   "candidatas": {
    "bolsa": "acoes_4t",
    "divida_publica": "divida",
@@ -187,16 +180,6 @@
    "defasagem_meses": 1,
    "definicao": "Variação em 6 meses do índice de preços de todas as commodities do FMI (FRED PALLFNFINDEXM)."
   }
- },
- "niveis": {
-  "nomes": [
-   "Muito abaixo",
-   "Abaixo",
-   "Normal",
-   "Acima",
-   "Muito acima"
-  ],
-  "confirmacao": "O nível só muda quando duas atualizações diárias seguidas dão o mesmo nível novo. Assim uma entrada oscilando perto de um corte não faz o nível piscar."
  },
  "noticias": {
   "pontos_por_magnitude": {

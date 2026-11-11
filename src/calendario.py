@@ -26,7 +26,7 @@ PRODUTOS = {
 }
 MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro",
          "novembro", "dezembro"]
-JUROS = {"copom": "Banco Central decide o juro (Copom)", "fed": "Fed decide o juro dos EUA"}
+JUROS = {"copom": "Banco Central decide o juro (Copom)", "fed": "O banco central dos Estados Unidos decide o juro de lá"}
 
 
 def _mes(d: dt.date, atras: int) -> str:
@@ -99,7 +99,7 @@ def janela(eventos: list[dict], dia: dt.date) -> list[dict]:
         data = dt.date.fromisoformat(d)
         decide = [t for t in tipos if t in JUROS]
         if len(decide) > 1:
-            out.append({"data": d, "dia": f"{data.day}/{data.month}", "rotulo": "Banco Central e Fed (EUA) decidem o juro",
+            out.append({"data": d, "dia": f"{data.day}/{data.month}", "rotulo": "Os bancos centrais do Brasil e dos Estados Unidos decidem o juro",
                         "tipo": "juros"})
         elif decide:
             out.append({"data": d, "dia": f"{data.day}/{data.month}", "rotulo": JUROS[decide[0]], "tipo": "juros"})

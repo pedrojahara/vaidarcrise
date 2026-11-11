@@ -8,7 +8,7 @@ A pauta (src/pauta.py) escolhe a história em código, pela soma das notícias d
   2. redação (Opus, sem ferramentas): um texto só, de 300 a 600 palavras (perto de 800 num dia grande; de 120 a 200
      num dia calmo), que fecha no e daí do argumento, para quem o fato pesa;
   3. revisão (Opus, com busca): o revisor lê o texto como três leitores (a leitora, quem defende quem decidiu e quem
-     critica) e devolve objeções, sem reescrever; o código confere cada número contra o caderno, roda de novo cada
+     critica) e um editor (a ordem das perguntas e a voz) e devolve objeções, sem reescrever; o código confere cada número contra o caderno, roda de novo cada
      conta e abre cada documento. A redação responde às objeções, e a segunda volta só confere o que ficou; o que
      ainda sobrar sem resposta sai do texto ou vira dúvida dita. Até 2 voltas, e uma conferência final, sem busca,
      só dos erros que a última reescrita deixou, que a redação corrige sem mexer no resto.
@@ -1201,36 +1201,57 @@ def ligar(post: dict, t: dict) -> None:
         post.pop("pergunta", None)
 
 
+# O nome do jornal pelo endereço, quando a pesquisa deixou só um rótulo interno no lugar do nome.
+NOMES_DO_ENDERECO = {"folha.uol.com.br": "Folha", "valor.globo.com": "Valor", "g1.globo.com": "g1", "estadao.com.br": "Estadão",
+                     "infomoney.com.br": "InfoMoney", "poder360.com.br": "Poder360", "agenciabrasil.ebc.com.br": "Agência Brasil",
+                     "gazetadopovo.com.br": "Gazeta do Povo", "cnnbrasil.com.br": "CNN Brasil",
+                     "agenciagov.ebc.com.br": "Agência Gov"}
+# Palavras da pesquisa que descrevem o trabalho dela, e não a fonte: não aparecem na linha "De onde vêm os números".
+BASTIDOR = r"busca|abert|página|resultado|memória|bloco|entrada|ficha|caderno|manchete|registro|dados do site|relato|resumo|trecho|via\b"
+
+
+def _nome_do_endereco(url: str | None) -> str:
+    if not url or "://" not in url:
+        return ""
+    dom = re.sub(r"^www\d?\.", "", url.split("/")[2])
+    return next((n for d, n in NOMES_DO_ENDERECO.items() if dom == d or dom.endswith("." + d)), dom)
+
+
+def nome_da_fonte(q: str | None, url: str | None, de_fora: bool = False) -> str:
+    """O nome da fonte como a leitora o reconhece: o jornal, o órgão ou o site, sem o bastidor da pesquisa. Num site
+    fora da lista de fontes conhecidas, vale o nome do site, que a pesquisa escreve primeiro ("O Liberal (Estadão
+    Conteúdo)"), e não o de quem ele cita."""
+    q = (q or "").strip()
+    if re.match(r"^(ficha|memória|caderno|dados do site)\b", q, re.I):
+        # "Memória do momento (IBGE, 01/09)": vale quem está entre parênteses, o primeiro da lista.
+        dentro = re.search(r"\(([^)]*)\)", q)
+        q = re.split(r"\s*,", dentro[1])[0] if dentro else ""
+    if de_fora:
+        q = re.split(r"\s*[(,/;]|\s+-\s+", q, maxsplit=1)[0].strip()
+    q = re.sub(rf"\s*\([^)]*({BASTIDOR})[^)]*\)", "", q, flags=re.I)
+    q = re.sub(rf"\s*/\s*[^/]*({BASTIDOR})[^/]*$", "", q, flags=re.I)
+    q = re.sub(r",?\s*\b(conforme|segundo|via|pel[oa]|n[oa]|d[oa])\s+(o |a )?(bloco|entrada|ficha|caderno|resumo|pesquisa|busca)\b.*$",
+               "", q, flags=re.I)
+    q = re.sub(r",?\s*\be (os |o )?(resultados?|trechos?) d[ae] busca\b.*$", "", q, flags=re.I)
+    q = re.sub(r"^\((.*)\)$", r"\1", q).strip(" ,;/")
+    return q or _nome_do_endereco(url) or "fonte"
+
+
 def fontes(post: dict) -> list[dict]:
     """As fontes dos números do texto do dia, para a linha "De onde vêm os números", pelas marcas do texto."""
     t = post.get("pesquisa") or {}
     cad = {c["id"]: c for c in t.get("caderno", [])}
     usadas = [cad[i] for i in dict.fromkeys(marcas(t.get("texto") or "")) if i in cad]
     out, vistas, so_site = [], set(), False
-
-    def quem(q: str, url: str | None) -> str:
-        # O bastidor da pesquisa ("resumo da busca", "página não aberta") fica no registro, não na página.
-        q = re.sub(r"\s*\([^)]*(busca|abert|página|resultado|memória|bloco|entrada|ficha|caderno|manchete)[^)]*\)", "", q or "",
-                   flags=re.I)
-        q = re.sub(r",?\s*\b(conforme|segundo|via|pel[oa]|n[oa]|d[oa])\s+(o |a )?(bloco|entrada|ficha|caderno|resumo|pesquisa|busca)\b.*$",
-                   "", q, flags=re.I)
-        q = re.sub(r",?\s*\be (os |o )?(resultados?|trechos?) d[ae] busca\b.*$", "", q, flags=re.I)
-        q = re.sub(r"^(memória do (momento|site)|dados do site)\b[^(]*", "", q, flags=re.I).strip(" ,;")
-        q = re.sub(r"^\((.*)\)$", r"\1", q).strip()
-        if not q and url:
-            q = re.sub(r"^www\d?\.", "", url.split("/")[2]) if "://" in url else ""
-        return q or "fonte"
-
     for c in usadas:
         if c["tipo"] == "conta":
             continue
         fos = [c.get("fonte") or {}] if (c.get("fonte") or {}).get("url") else c.get("fontes_memoria") or []
         if c["tipo"] == "site" and not fos:
             so_site = True
-        # O documento de um site fora da lista de fontes conhecidas leva o nome do site, e não o de quem ele cita.
         de_fora = c["tipo"] == "documento" and (c.get("conferencia") or {}).get("fonte_conhecida") is False
         for fo in fos:
-            nome = quem("" if de_fora else fo.get("quem"), fo.get("url"))
+            nome = nome_da_fonte(fo.get("quem"), fo.get("url"), de_fora)
             chave = fo.get("url") or fo.get("quem")
             if chave and chave not in vistas and nome not in vistas:
                 vistas |= {chave, nome}
@@ -1243,7 +1264,7 @@ def fontes(post: dict) -> list[dict]:
     if any(c["tipo"] == "conta" for c in usadas):
         out.append({"quem": "contas do site com as séries do Banco Central e do IBGE", "url": None})
     if so_site or not usadas:
-        out.append({"quem": "os dados e as notícias do dia, no registro do site", "url": None})
+        out.append({"quem": "as séries do Banco Central e do IBGE e as manchetes do dia", "url": None})
     return out
 
 

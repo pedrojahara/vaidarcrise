@@ -6,11 +6,11 @@ direcao.nomes em config/modelo.json). Cada fato do dia leva, numa linha logo aba
 fato; se o assunto não tem página, à da pressão da tese da leitura a fundo; se nenhuma tem, à parte da aba O que causa
 recessão que explica a pressão (ponte()). Rascunho (publicada: false) não vira página.
 
-O site não guarda teste nem placar e não promete conferir nada depois (decisão do Pedro em 8/11/2026, repetida em
-9/11): a página mostra a análise e para aí, e src/verifica_base.py barra pergunta com teste ou texto com promessa.
+O site não guarda teste nem placar, não promete conferir nada depois e não mostra bastidor (histórico de mudança,
+conferência, selo de fonte): a página mostra a análise e para aí, e src/verifica_base.py barra pergunta com teste ou
+texto com promessa.
 
-Tudo vem de base/: as afirmações que sustentam cada frase, as perguntas, os episódios e o último relatório do
-verificador (base/conferencia/), que diz se a fonte de cada afirmação já foi conferida. build_site.py chama
+Tudo vem de base/: as afirmações que sustentam cada frase, as perguntas e os episódios. build_site.py chama
 fundo_ctx() em cada post e gravar() no fim; um erro aqui não derruba a atualização do dia.
 """
 from __future__ import annotations
@@ -36,8 +36,6 @@ CARTOES = {"maioria": "A maioria dos estudos aponta", "em_pe": "Os economistas a
 GRUPOS = [({"em_disputa", "minoria"}, "Explica uma parte, e os economistas discordam", "Explicam uma parte, e os economistas discordam"),
           ({"pouco_testada"}, "Ainda pouco testada", "Ainda pouco testadas"),
           ({"testada_e_nao_confirmada"}, "Os dados não confirmaram", "Os dados não confirmaram")]
-NIVEIS = {1: "Revisão de muitos estudos", 2: "Estudo em revista científica", 3: "Órgão oficial",
-          4: "Tese ou dissertação", 5: "Banco, consultoria ou associação", 6: "Notícia", 7: "Comentarista"}
 CAUSAS = {"daqui": "daqui", "de fora": "de fora", "as duas": "as duas"}
 MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro",
          "novembro", "dezembro"]
@@ -59,27 +57,11 @@ def _data(iso: str) -> str:
     return f"{int(iso[8:10])}/{int(iso[5:7])}/{iso[:4]}"
 
 
-def _conferencia() -> dict:
-    """O status de cada afirmação no relatório mais novo do verificador que abriu as páginas (no Mac). O modo offline
-    não abre nenhuma e marca todo documento como "nao_aberta", mas confere por inteiro os dados, os trechos do site e
-    as contas: o relatório offline mais novo, se não for mais velho que o do Mac, vale para esses três tipos e para as
-    afirmações que o do Mac ainda não tinha."""
-    rels = sorted((BASE / "conferencia").glob("*-verifica*.json"), key=lambda p: p.name)
-    com_rede = [p for p in rels if "offline" not in p.name]
-    sem_rede = [p for p in rels if "offline" in p.name]
-    conf = json.loads(com_rede[-1].read_text()).get("afirmacoes", {}) if com_rede else {}
-    if sem_rede and (not com_rede or sem_rede[-1].name[:10] >= com_rede[-1].name[:10]):
-        for i, r in json.loads(sem_rede[-1].read_text()).get("afirmacoes", {}).items():
-            if r.get("tipo") != "documento" or i not in conf:
-                conf[i] = r
-    return conf
-
-
 class _Fontes:
-    """Numera as fontes na ordem em que aparecem na página, para a lista do fim."""
+    """As fontes de cada trecho da página: nome e link, uma vez cada por trecho."""
 
-    def __init__(self, A: dict, conf: dict):
-        self.A, self.conf, self.ordem, self.n = A, conf, [], {}
+    def __init__(self, A: dict):
+        self.A = A
 
     def de(self, ids: list[str]) -> list[dict]:
         out = []
@@ -87,37 +69,12 @@ class _Fontes:
             a = self.A.get(i)
             if not a:
                 continue
-            chave = a["fonte"].get("url") or a["fonte"]["quem"]
-            if chave not in self.n:
-                self.n[chave] = len(self.ordem) + 1
-                self.ordem.append(self._item(i, a))
-            item = {"n": self.n[chave], "quem": a["fonte"]["quem"], "url": a["fonte"].get("url"),
-                    "conferida": self.ordem[self.n[chave] - 1]["conferida"]}
+            item = {"quem": a["fonte"]["quem"], "url": a["fonte"].get("url")}
             # Duas afirmações do mesmo jornal ou do mesmo órgão aparecem uma vez só na linha de fontes.
-            igual = next((x for x in out if x["quem"] == item["quem"]), None)
-            if igual:
-                igual["conferida"] = igual["conferida"] and item["conferida"]
+            if any(x["quem"] == item["quem"] for x in out):
                 continue
             out.append(item)
         return out
-
-    def _item(self, i: str, a: dict) -> dict:
-        st = (self.conf.get(i) or {}).get("status")
-        f = a["fonte"]
-        if a["tipo"] == "dado":
-            como = "número conferido com os dados do site" if st == "conferido" else "número a conferir"
-        elif a["tipo"] == "conta":
-            como = "conta refeita com os dados do site" if st == "conferido" else "conta a refazer"
-        elif a["tipo"] == "site":
-            como = "trecho conferido no site" if st == "conferido" else "trecho a conferir"
-        else:
-            como = "trecho conferido no texto da fonte" if st == "conferido" else "a conferir no texto da fonte"
-        # O título de série ou de arquivo do site é para quem confere a conta, não para a leitora.
-        titulo = f.get("titulo") if a["tipo"] == "documento" else None
-        # A conta é do site, com as séries de órgãos oficiais: não é o órgão falando.
-        nivel = "Conta do site com dados oficiais" if a["tipo"] == "conta" else NIVEIS.get(f["nivel"], "")
-        return {"quem": f["quem"], "titulo": titulo, "url": f.get("url"), "nivel": nivel,
-                "conferida": st == "conferido", "como": como}
 
 
 def _perguntas() -> dict:
@@ -327,7 +284,7 @@ def fundo_ctx(post: dict, cfg: dict, ligar) -> dict | None:
     if any(c["tipo"] == "conta" for c in usadas):
         fontes.append({"quem": "contas do site com as séries do Banco Central e do IBGE", "url": None})
     if so_site:
-        fontes.append({"quem": "os dados e as notícias do dia, no registro do site", "url": None})
+        fontes.append({"quem": "os dados e as notícias do dia", "url": None})
     palavras = sum(len(p.split()) for p in pars)
     return {"titulo": f["titulo"], "minutos": max(3, round(palavras / 200)), "blocos": blocos, "fontes": fontes}
 
@@ -336,12 +293,11 @@ def _paragrafos(texto: str) -> list[str]:
     return [t.strip() for t in texto.split("\n\n") if t.strip()]
 
 
-def pergunta_ctx(p: dict, A: dict, E: dict, conf: dict, cfg: dict, ligar, posts: list[dict], outras: list[dict],
+def pergunta_ctx(p: dict, A: dict, E: dict, cfg: dict, ligar, posts: list[dict], outras: list[dict],
                  hoje: str) -> dict:
     """A página de uma pressão: a resposta, o que muda para a leitora, se é coisa de um governo só (com os casos
-    desde 2002), as explicações da mais aceita à menos, o que está em jogo agora, os fatos do dia ligados e, recolhido
-    no fim, como a página foi conferida."""
-    fontes = _Fontes(A, conf)
+    desde 2002), as explicações da mais aceita à menos, o que está em jogo agora e os fatos do dia ligados."""
+    fontes = _Fontes(A)
     esc = {d["degrau"]: d for d in p["escada"]}
     raiz, depois = esc.get("raiz"), esc.get("o_que_vem_depois")
     gov, agora, medida = p.get("governo"), p.get("agora"), p.get("medida")
@@ -388,8 +344,7 @@ def pergunta_ctx(p: dict, A: dict, E: dict, conf: dict, cfg: dict, ligar, posts:
                     "quem_defende": lt.get("quem_defende")}
             for k in ("melhor_objecao", "resposta"):
                 if lt.get(k) and (k != "melhor_objecao" or com_objecao):
-                    item[k] = {"texto": Markup.escape(lt[k]["texto"]), "fontes": fontes.de(lt[k].get("afirmacoes", [])),
-                               "pendente": bool(lt[k].get("fonte_pendente"))}
+                    item[k] = {"texto": Markup.escape(lt[k]["texto"]), "fontes": fontes.de(lt[k].get("afirmacoes", []))}
             return item
         leituras = sorted(raiz.get("leituras", []), key=lambda x: ORDEM_STATUS.index(x["status"]))
         for lt in leituras:
@@ -411,13 +366,11 @@ def pergunta_ctx(p: dict, A: dict, E: dict, conf: dict, cfg: dict, ligar, posts:
     # "O que está em jogo agora" só aparece quando um fato do dia dos últimos 30 dias terminou nesta pressão.
     em_jogo = None
     if agora and posts and (dt.date.fromisoformat(hoje) - dt.date.fromisoformat(posts[0]["dia"])).days <= DIAS_DO_AGORA:
-        em_jogo = {**bloco(agora), "atualizado": _data(agora["atualizado_em"])}
+        em_jogo = bloco(agora)
 
     return {"pergunta": p["pergunta"], "id": p["id"], "pressao": cfg["direcao"]["nomes"].get(p.get("pressao"), ""),
-            "atualizado": _data(p["atualizado_em"]), "resposta": resposta, "muda": muda, "medida": como_mede, "governo": governo,
-            "episodios": eps, "explicacoes": explic, "agora": em_jogo, "fatos": posts, "outras": outras,
-            "fontes": fontes.ordem, "conferidas": sum(1 for f in fontes.ordem if f["conferida"]), "total": len(fontes.ordem),
-            "mudancas": [{"data": _data(x["data"]), "o_que": x["o_que"], "motivo": x["motivo"]} for x in p.get("mudancas", [])]}
+            "resposta": resposta, "muda": muda, "medida": como_mede, "governo": governo,
+            "episodios": eps, "explicacoes": explic, "agora": em_jogo, "fatos": posts, "outras": outras}
 
 
 def gravar(gravar_pagina, ctx: dict, cfg: dict, docs: Path, site: str, ligar) -> list[str]:
@@ -431,7 +384,6 @@ def gravar(gravar_pagina, ctx: dict, cfg: dict, docs: Path, site: str, ligar) ->
         return []
     A = {a["id"]: a for a in json.loads((BASE / "afirmacoes.json").read_text())["afirmacoes"]}
     E = {e["id"]: e for e in json.loads((BASE / "episodios.json").read_text())["episodios"]}
-    conf = _conferencia()
     ligados = _posts_ligados(cfg)
     nomes = cfg["direcao"]["nomes"]
     ordem = list(nomes)
@@ -442,7 +394,7 @@ def gravar(gravar_pagina, ctx: dict, cfg: dict, docs: Path, site: str, ligar) ->
         pid = q["id"]
         outras = [{"pressao": nomes.get(o.get("pressao"), ""), "pergunta": o["pergunta"], "url": f"/perguntas/{o['id']}/",
                    "aqui": o["id"] == pid} for o in lista] if len(lista) > 1 else []
-        qc = pergunta_ctx(q, A, E, conf, cfg, ligar, ligados.get(pid, []), outras, hoje)
+        qc = pergunta_ctx(q, A, E, cfg, ligar, ligados.get(pid, []), outras, hoje)
         gravar_pagina(pasta / pid, "pergunta.html", {**ctx, "q": qc, "og_url": f"{site}/og.png", "link_inicio": "/"},
                       f"{site}/perguntas/{pid}/")
         feitos.append(f"/perguntas/{pid}/")

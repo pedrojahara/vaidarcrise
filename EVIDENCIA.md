@@ -1,6 +1,6 @@
 # A biblioteca de evidência
 
-Esta biblioteca diz o que a evidência sustenta sobre cada tipo de decisão pública que os posts contam: o juro do Banco Central, o gasto, o imposto, o crédito público, o preço administrado e a regulação, a regra fiscal e a gestão da dívida. A leitura a fundo ([FUNDO.md](FUNDO.md), parte "Quando o fato é uma decisão") só pode usar o que está aqui para dizer por que caminho uma decisão chega ao objetivo de quem decidiu e quão forte é a evidência desse caminho. Os números do dia (a Selic, a inflação esperada, o tamanho da decisão) vêm do caderno da pesquisa, como sempre.
+Esta biblioteca diz o que a evidência sustenta sobre cada tipo de decisão pública que os posts contam: o juro do Banco Central, o gasto, o imposto, o crédito público, o preço administrado e a regulação, a regra fiscal e a gestão da dívida. O texto do dia ([FUNDO.md](FUNDO.md), parte "Quando o fato é uma decisão") só pode usar o que está aqui para dizer por que caminho uma decisão chega ao objetivo de quem decidiu e quão forte é a evidência desse caminho. Os números do dia (a Selic, a inflação esperada, o tamanho da decisão) vêm do caderno da pesquisa, como sempre.
 
 ## Por que a biblioteca é fixa
 

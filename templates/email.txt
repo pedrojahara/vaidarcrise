@@ -19,9 +19,6 @@ VAI DAR CRISE?
 {% endif %}{% if post.ponte %}{{ post.ponte.rotulo }}: {{ post.ponte.texto }}
 {{ site }}{{ post.ponte.url }}
 
-{% endif %}{% if post.fundo %}Leitura de {{ post.fundo.minutos }} minutos: {{ post.fundo.titulo }}
-{{ post.url }}#leitura
-
 {% endif %}Mandar no WhatsApp: {{ post.zap }}
 Abrir no site: {{ post.url }}
 {% if aberta %}

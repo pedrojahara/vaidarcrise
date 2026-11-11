@@ -6,7 +6,7 @@ O fato do dia não conta uma notícia: ele faz um argumento sobre a história em
 
 Uma história em andamento é uma pergunta aberta por semanas ou meses (as contas do governo fecham? o juro cai quando? a economia para em 2027?), com a pressão do site que ela mexe e o próximo marco, uma data ou uma decisão. Ela fecha quando a pergunta é respondida. As fichas ficam em `base/memoria/historias.json`: uma IA as revê no domingo, junta as que respondem à mesma pergunta e completa a ficha das que o texto do dia abriu na semana.
 
-Toda manhã, o classificador de notícias ([`src/classify_news.py`](src/classify_news.py)) lê até 15 notícias de ontem e diz de qual história cada uma é um passo, o estágio e o tamanho dela, se é o marco que a história esperava, se é uma previsão de casa grande que mudou de lado e se é uma fala sem medida.
+Toda manhã, o classificador de notícias ([`src/classify_news.py`](src/classify_news.py)) lê as manchetes de ontem (até 240) e devolve até 15 notícias, dizendo de qual história cada uma é um passo, o estágio e o tamanho dela, se é o marco que a história esperava, se é uma previsão de casa grande que mudou de lado e se é uma fala sem medida.
 
 ## A soma
 

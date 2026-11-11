@@ -418,7 +418,7 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
     <article class="post">
   <p class="data"><span class="tipo">Fato do dia</span> | Segunda, 2 de novembro de 2026</p>
   <h1 class="titulo-post">O risco de recessão está subindo</h1>
-  <p class="autoria">O texto deste dia não saiu, por uma falha no programa que escreve os posts.</p>
+  
   
   
   
@@ -462,10 +462,7 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
 })();
 </script>
 
-    <section class="continua" aria-label="Posts anteriores">
-      <h2>Posts anteriores</h2>
-      <p class="mais" id="mais" data-depois="2026-11-02"><a href="/2026-11-01/">Carregar posts anteriores</a></p>
-    </section>
+    
     
   </main>
   <aside class="lado" aria-label="Datas e fontes">
@@ -473,9 +470,9 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
   <div class="bloco">
     <h3>Datas importantes</h3>
     <ul class="datas">
-      <li><time datetime="2026-11-04">4/11</time><span>Banco Central decide o juro (Copom)</span></li><li><time datetime="2026-11-05">5/11</time><span>Produção industrial de setembro (IBGE)</span></li><li><time datetime="2026-11-12">12/11</time><span>Inflação de outubro, IPCA (IBGE)</span></li><li><time datetime="2026-11-13">13/11</time><span>Vendas do varejo de setembro (IBGE)</span></li><li><time datetime="2026-11-26">26/11</time><span>Prévia da inflação de novembro, IPCA-15 (IBGE)</span></li><li><time datetime="2026-11-27">27/11</time><span>Desemprego até outubro (IBGE)</span></li><li class="chave"><time datetime="2026-12-02">2/12</time><span>PIB do 3º trimestre (IBGE). É o dado que diz se a economia encolheu.</span></li><li><time datetime="2026-12-03">3/12</time><span>Produção industrial de outubro (IBGE)</span></li><li><time datetime="2026-12-08">8/12</time><span>Vendas do varejo de outubro (IBGE)</span></li><li><time datetime="2026-12-09">9/12</time><span>Banco Central e Fed (EUA) decidem o juro</span></li>
+      <li><time datetime="2026-11-04">4/11</time><span>Banco Central decide o juro (Copom)</span></li><li><time datetime="2026-11-05">5/11</time><span>Produção industrial de setembro (IBGE)</span></li><li><time datetime="2026-11-12">12/11</time><span>Inflação de outubro, IPCA (IBGE)</span></li><li><time datetime="2026-11-13">13/11</time><span>Vendas do varejo de setembro (IBGE)</span></li><li><time datetime="2026-11-26">26/11</time><span>Prévia da inflação de novembro, IPCA-15 (IBGE)</span></li><li><time datetime="2026-11-27">27/11</time><span>Desemprego até outubro (IBGE)</span></li><li class="chave"><time datetime="2026-12-02">2/12</time><span>PIB do 3º trimestre (IBGE). É o dado que diz se a economia encolheu.</span></li><li><time datetime="2026-12-03">3/12</time><span>Produção industrial de outubro (IBGE)</span></li><li><time datetime="2026-12-08">8/12</time><span>Vendas do varejo de outubro (IBGE)</span></li><li><time datetime="2026-12-09">9/12</time><span>Os bancos centrais do Brasil e dos Estados Unidos decidem o juro</span></li>
     </ul>
-    <p class="peq fontes-datas">Fontes: calendário do <a href="https://servicodados.ibge.gov.br/api/v3/calendario/">IBGE</a>, Banco Central (Copom) e Fed.</p>
+    <p class="peq fontes-datas">Fontes: calendários do IBGE, do Banco Central e do banco central dos Estados Unidos.</p>
   </div>
   
   <div class="bloco">
@@ -502,39 +499,7 @@ document.addEventListener("click",function(e){
 });
 </script>
 
-<script>
-/* Rolagem sem fim: perto do fim da página, busca os próximos posts em /posts/ e põe embaixo dos que já estão. */
-(function(){
-  var box=document.getElementById("mais");
-  if(!box||!window.fetch||!window.IntersectionObserver)return;
-  var link=box.querySelector("a"),lista=null,pos=0,ocupado=false,obs;
-  function indice(){
-    if(lista)return Promise.resolve();
-    return fetch("/posts/indice.json").then(function(r){return r.json()}).then(function(l){
-      var ids=l.map(function(x){return x.id});
-      pos=ids.indexOf(box.getAttribute("data-depois"))+1;
-      lista=pos?l:[];
-    });
-  }
-  function perto(){return box.isConnected&&box.getBoundingClientRect().top<innerHeight+700}
-  function carregar(){
-    if(ocupado)return;ocupado=true;link.textContent="Carregando…";
-    indice().then(function(){
-      var lote=lista.slice(pos,pos+3);pos+=lote.length;
-      return Promise.all(lote.map(function(x){return fetch("/posts/"+x.id+".html").then(function(r){if(!r.ok)throw new Error(r.status);return r.text()})}));
-    }).then(function(partes){
-      partes.forEach(function(h){box.insertAdjacentHTML("beforebegin",h)});
-      ocupado=false;
-      if(pos>=lista.length){obs.disconnect();box.remove();return}
-      link.textContent="Carregar posts anteriores";link.href=lista[pos].link;
-      if(perto())carregar();
-    }).catch(function(){ocupado=false;link.textContent="Carregar posts anteriores"});
-  }
-  obs=new IntersectionObserver(function(es){if(es[0].isIntersecting)carregar()},{rootMargin:"0px 0px 700px 0px"});
-  obs.observe(box);
-  link.addEventListener("click",function(e){e.preventDefault();carregar()});
-})();
-</script>
+
 
 <footer class="pe"><div class="in">
   <p>O Vai dar crise? mostra para que lado anda o risco de recessão no Brasil: se as cinco pressões que costumam vir antes de uma recessão estão piorando ou melhorando. Recessão, aqui, é o <a class="termo" href="https://pt.wikipedia.org/wiki/Produto_interno_bruto" target="_blank" rel="noopener">PIB</a> cair dois trimestres seguidos. A regra é a mesma para qualquer governo e foi testada com os dados do Brasil desde 2004. As notícias da véspera dão o fato do dia, mas não mudam a direção. <a href="/nota/">Como funciona</a>. Não é previsão nem recomendação de investimento.</p>

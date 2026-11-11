@@ -1,12 +1,12 @@
-"""O nível do dia.
+"""O PIB num ano ruim e os indicadores do dia.
 
-O nível sai do cenário ruim do PIB dos próximos 12 meses (src/gar.py): o crescimento que tem
-só 1 chance em 10 de ser pior, estimado num painel de 44 países a partir de quatro entradas do
-Brasil. O cenário ruim de hoje é comparado ao de todos os meses desde 2004 (config/calibracao.json)
-e vira um de cinco níveis, que só muda quando duas atualizações seguidas concordam.
+O PIB num ano ruim (src/gar.py) é o crescimento dos próximos 12 meses que tem só 1 chance em 10 de
+ser pior, estimado num painel de 44 países a partir de quatro entradas do Brasil. Ele aparece só em
+Como funciona, ao lado do mesmo número em tempos normais, e não decide nada no topo da página, que
+vem da direção do risco (src/direcao.py).
 
-Os nove indicadores do Resumo ficam ao lado, com a sua faixa normal, para contar a história de
-cada fator; não entram no nível. As notícias também não.
+Os indicadores (config/modelo.json, "indicadores") seguem calculados para os textos e para cobrir
+uma falha de coleta na rodada seguinte.
 """
 from __future__ import annotations
 
@@ -18,8 +18,6 @@ import gar
 import indicadores as ind
 
 ROOT = Path(__file__).resolve().parent.parent
-SITUACOES = {"pior": "Pior que o normal", "normal": "Normal", "melhor": "Melhor que o normal", "semdado": "Sem dado"}
-ORDEM_SITUACAO = ["pior", "normal", "melhor", "semdado"]
 # Cada entrada da conta, o fator a que pertence e o seu nome no site.
 ENTRADAS = {
     "tendencia": {"fator": "atividade", "nome": "Crescimento médio em 10 anos", "unidade": "%"},
@@ -95,24 +93,6 @@ def valores(snap: dict) -> dict[str, dict]:
     return v
 
 
-def situacao(x: float, cal: dict, direcao: int) -> str:
-    lo, hi = cal["faixa_normal"]
-    ruim, bom = (x > hi, x < lo) if direcao > 0 else (x < lo, x > hi)
-    return "pior" if ruim else "melhor" if bom else "normal"
-
-
-def nivel_de(g: float, cortes: list[float]) -> int:
-    """Índice do nível (0 = Muito abaixo, 4 = Muito acima): quanto pior o cenário ruim, mais alto."""
-    return sum(1 for c in cortes if g <= c)
-
-
-def confirmar(bruto: int, anterior: int | None, bruto_anterior: int | None) -> int:
-    """O nível publicado muda só quando a conta de hoje repete a da atualização anterior."""
-    if anterior is None or bruto == anterior or bruto == bruto_anterior:
-        return bruto
-    return anterior
-
-
 # ------------------------------------------------------------------ entradas
 def pib_trimestral(snap: dict) -> list[tuple[int, float]]:
     """PIB trimestral do IBGE: a cópia longa em data/historico/pib.json, atualizada pela coleta do dia."""
@@ -164,11 +144,9 @@ def idade_ok(ref: str, hoje: dt.date, defasagem_meses: int = 0) -> bool:
     return hoje < fim + dt.timedelta(days=FOLGA_MENSAL)
 
 
-def calcular(snap: dict, cfg: dict, cal: dict, anterior: int | None, guardados: dict | None = None,
-             bruto_anterior: int | None = None, hoje: dt.date | None = None) -> dict:
-    """O nível de hoje. `anterior` e `bruto_anterior` são o nível publicado e a conta da atualização
-    do dia anterior. `guardados` traz os valores da rodada anterior (indicadores e entradas), usados
-    quando a coleta de um deles falha."""
+def calcular(snap: dict, cfg: dict, cal: dict, guardados: dict | None = None, hoje: dt.date | None = None) -> dict:
+    """O PIB num ano ruim e os indicadores de hoje. `guardados` traz os valores da rodada anterior
+    (indicadores e entradas), usados quando a coleta de um deles falha."""
     hoje = hoje or dt.date.today()
     guardados = guardados or {}
     reaproveitados = []
@@ -183,7 +161,7 @@ def calcular(snap: dict, cfg: dict, cal: dict, anterior: int | None, guardados: 
             reaproveitados.append(k)
     falta = [k for k in gar.ENTRADAS if k not in ent]
     if falta:
-        raise RuntimeError(f"sem dado para a conta do nível: {', '.join(falta)}")
+        raise RuntimeError(f"sem dado para a conta do PIB num ano ruim: {', '.join(falta)}")
     g = cal["gar"]
     coef, ref = g["coeficientes"], g["referencia"]
     valores_e = {k: ent[k]["valor"] for k in gar.ENTRADAS}
@@ -196,26 +174,7 @@ def calcular(snap: dict, cfg: dict, cal: dict, anterior: int | None, guardados: 
                          # Quanto a entrada de hoje, diferente da do Brasil típico, mexe no cenário ruim (pontos do PIB).
                          "efeito": coef[k] * (ent[k]["valor"] - ref[k])})
 
-    niv = cfg["niveis"]
-    cortes = g["cortes"]
-    bruto = nivel_de(ruim, cortes)
-    idx = confirmar(bruto, anterior, bruto_anterior)
-
-    # O que mudaria o nível: o valor que cada entrada (com as outras paradas) precisaria ter para
-    # levar o cenário ruim ao corte do nível vizinho. A tendência de 10 anos quase não se mexe e fica de fora.
-    gatilhos = []
-    for alvo, corte in ((bruto + 1, cortes[::-1][bruto] if bruto < 4 else None),
-                        (bruto - 1, cortes[::-1][bruto - 1] if bruto > 0 else None)):
-        if corte is None:
-            continue
-        for x in linhas_e:
-            if x["id"] == "tendencia":
-                continue
-            novo = x["valor"] + (corte - ruim) / x["coef"]
-            gatilhos.append({"id": x["id"], "nivel": alvo, "nome_nivel": niv["nomes"][alvo], "valor": novo,
-                             "hoje": x["valor"]})
-
-    # 2. Os indicadores do Resumo, com a faixa normal desde 2002.
+    # 2. Os indicadores, com a faixa normal desde 2002.
     vals = valores(snap)
     for k, x in guardados.items():
         if k.startswith("entrada:") or k in vals or x.get("valor") is None:
@@ -230,31 +189,12 @@ def calcular(snap: dict, cfg: dict, cal: dict, anterior: int | None, guardados: 
         linha = {"id": k, "fator": meta["fator"], "nome": meta["nome"], "unidade": meta["unidade"],
                  "definicao": meta["definicao"], "direcao": meta["direcao"],
                  "faixa_normal": c.get("faixa_normal"), "escala": c.get("escala")}
-        if x is None or not c.get("faixa_normal"):
-            linha.update({"valor": None, "situacao": "semdado"})
-        else:
-            linha.update({**x, "situacao": situacao(x["valor"], c, meta["direcao"])})
+        linha.update({"valor": None} if x is None or not c.get("faixa_normal") else x)
         linhas.append(linha)
 
-    fatores = []
-    for fid, nome in cfg["fatores"].items():
-        mine = [x for x in linhas if x["fator"] == fid]
-        das_entradas = [x for x in linhas_e if x["fator"] == fid]
-        sit = min((x["situacao"] for x in mine), key=ORDEM_SITUACAO.index) if mine else "semdado"
-        fatores.append({"id": fid, "nome": nome, "indicadores": [x["id"] for x in mine],
-                        "entradas": [x["id"] for x in das_entradas], "na_conta": bool(das_entradas),
-                        "efeito": sum(x["efeito"] for x in das_entradas) if das_entradas else None,
-                        "situacao": sit, "situacao_nome": SITUACOES[sit]})
-    # Primeiro os fatores da conta, do que mais piora ao que mais alivia; depois os outros.
-    fatores.sort(key=lambda f: (not f["na_conta"], f["efeito"] if f["na_conta"] else 0,
-                                ORDEM_SITUACAO.index(f["situacao"])))
-    return {"nivel": {"indice": idx, "nome": niv["nomes"][idx], "anterior": anterior,
-                      "bruto": bruto, "nome_bruto": niv["nomes"][bruto]},
-            "gar": {"entradas": linhas_e, "ruim": ruim, "cenario_ruim": gar.pct(ruim + g["ajuste"]),
-                    "cenario_normal": gar.pct(g["normal"] + g["ajuste"]), "cortes": cortes,
-                    "ref_pib": ent["tendencia"]["ref"]},
-            "indicadores": linhas, "fatores": fatores, "gatilhos": gatilhos,
-            "reaproveitados": reaproveitados, "faltando": [x["id"] for x in linhas if x["valor"] is None]}
+    return {"gar": {"entradas": linhas_e, "ruim": ruim, "cenario_ruim": gar.pct(ruim + g["ajuste"]),
+                    "cenario_normal": gar.pct(g["normal"] + g["ajuste"]), "ref_pib": ent["tendencia"]["ref"]},
+            "indicadores": linhas, "reaproveitados": reaproveitados, "faltando": [x["id"] for x in linhas if x["valor"] is None]}
 
 
 # ------------------------------------------------------------------ notícias

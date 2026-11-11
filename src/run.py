@@ -11,7 +11,7 @@ Uso: python src/run.py             (atualização do dia; não faz nada se já h
 
 O texto do dia é um argumento sobre a história em andamento que mais andou ontem: o código escolhe a história pela
 soma das notícias (src/pauta.py, CARTA_EDITORIAL.md), e src/fundo.py pesquisa, escreve, revisa com três leitores e
-confere o texto (guia em FUNDO.md). Se ele não sair aqui, src/fundo.py --hoje, no run.sh, tenta de novo.
+um editor e confere o texto (guia em FUNDO.md). Se ele não sair aqui, src/fundo.py --hoje, no run.sh, tenta de novo.
 
 Os feeds de alguns jornais guardam só as 10 últimas manchetes. A coleta de hora em
 hora junta tudo num acervo local, e a atualização da manhã (05h00) lê o dia anterior inteiro.
@@ -65,16 +65,11 @@ def _contexto(res: dict) -> str:
                      for x in res["indicadores"] if x.get("valor") is not None) or "(sem dados)"
 
 
-def ultima_rodada(antes_de: dt.date | None = None) -> dict | None:
-    arqs = sorted(p for p in RUNS.glob("*.json") if antes_de is None or p.name[:10] < antes_de.isoformat())
-    return json.loads(arqs[-1].read_text()) if arqs else None
-
-
 def guardados(rodadas: list[dict]) -> dict:
     """Os valores que podem cobrir uma falha de coleta: para cada indicador e entrada, o da rodada mais
     recente que o tinha (rodadas da mais nova para a mais velha), inclusive os que ela mesma já tinha
     reaproveitado, porque a falha pode durar mais de um dia. A idade (pela data de referência do dado)
-    é conferida em model.calcular. As entradas da conta do nível vão com o prefixo 'entrada:'."""
+    é conferida em model.calcular. As entradas do PIB num ano ruim vão com o prefixo 'entrada:'."""
     out: dict[str, dict] = {}
     for ant in rodadas:
         for x in (ant["resultado"].get("gar") or {}).get("entradas", []):
@@ -157,11 +152,7 @@ def main() -> dict | None:
     todas_r = [json.loads(p.read_text()) for p in sorted(RUNS.glob("*.json"))]
     recentes_r = todas_r[-RODADAS_GUARDADAS:][::-1]
     ant = recentes_r[0] if recentes_r else None
-    # O nível de referência é o do último dia anterior: uma atualização refeita no mesmo dia não confirma a si mesma.
-    ref = ultima_rodada(antes_de=hoje)
-    nivel_ant = ref["resultado"]["nivel"]["indice"] if ref else None
-    bruto_ant = ref["resultado"]["nivel"].get("bruto") if ref else None
-    res = model.calcular(snap, cfg, cal, nivel_ant, guardados(recentes_r), bruto_ant)
+    res = model.calcular(snap, cfg, cal, guardados(recentes_r))
     res["direcao"] = direcao.calcular(snap, cfg, cal, [r for r in todas_r if r["gerado_em"][:10] < hoje.isoformat()], hoje)
     d = res["direcao"]
     print(f"direção: {d['estado']} desde {d['desde']} (soma {d['soma']}; {d['apertaram']} pioraram, {d['folgaram']} melhoraram)"
@@ -279,8 +270,8 @@ def main() -> dict | None:
         corte = (hoje - dt.timedelta(days=45)).isoformat()
         anteriores = [r for r in todas_r if r["id"][:10] >= corte]
         evs = {e["id"]: e for e in todos}
-        # 5. O texto do dia sai de src/fundo.py: pesquisa da história, um texto, o revisor de três leitores e a
-        # conferência do código. Os resumos da semana e do mês saem de src/escreve_post.py.
+        # 5. O texto do dia sai de src/fundo.py: pesquisa da história, um texto, o revisor de três leitores e um
+        # editor e a conferência do código. Os resumos da semana e do mês saem de src/escreve_post.py.
         avisos_pauta: list[str] = []
         if escreve_post.tipo_do_dia(hoje) == "dia":
             import fundo

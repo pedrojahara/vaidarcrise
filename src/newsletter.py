@@ -102,7 +102,7 @@ def montar(dia: str) -> dict | None:
     corpo = re.sub(r"\b(R|US)\$ (?=\d)", "\\1$\u00a0", corpo)
     texto = env.get_template("email.txt").render(**ctx)
     return {"dia": dia, "assunto": post["titulo"], "html": corpo, "texto": texto, "url": post["url"],
-            "titulo": post["titulo"], "fundo": (post.get("fundo") or {}).get("titulo"), "tipo": post["tipo"]}
+            "titulo": post["titulo"], "tipo": post["tipo"]}
 
 
 # ------------------------------------------------------------------ as imagens do e-mail
@@ -197,10 +197,10 @@ def _anota(dia: str, info: dict) -> None:
 
 
 def site_no_ar(email: dict, espera_min: int) -> bool:
-    """Espera a página do dia mostrar o post (e a leitura a fundo, se houver): o push só publica depois do build do
+    """Espera a página do dia mostrar o post: o push só publica depois do build do
     GitHub Pages. Confere pelo título, que é o que muda de um dia para o outro."""
     fim = time.time() + espera_min * 60
-    marcas = [html.escape(email["titulo"], quote=False)] + ([html.escape(email["fundo"], quote=False)] if email["fundo"] else [])
+    marcas = [html.escape(email["titulo"], quote=False)]
     while True:
         try:
             r = requests.get(email["url"], timeout=20, headers={"User-Agent": "vaidarcrise-newsletter",

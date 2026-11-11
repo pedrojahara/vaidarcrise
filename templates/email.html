@@ -1,7 +1,7 @@
 {#- O fato do dia por e-mail (src/newsletter.py): o mesmo post da página do dia, com o topo como o celular mostra.
     E-mail não tem o CSS do site: o estilo vai em cada elemento, porque o Gmail ignora boa parte do <style>, e o
     desenho usa tabelas, porque o Outlook não entende o resto. O Gmail não carrega a Charis SIL nem abre <details>:
-    a letra cai na serifa do celular, e a leitura a fundo vira um link para o post. O bloco <style> só serve ao
+    a letra cai na serifa do celular. O bloco <style> só serve ao
     modo escuro e ao celular dos aplicativos que o leem (Apple Mail, iOS). -#}
 {%- set serifa = "'Charis SIL',Charter,'Bitstream Charter','Iowan Old Style',Georgia,serif" -%}
 {%- set sistema = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" -%}
@@ -98,16 +98,6 @@ a.termo{color:inherit}
   {% endfor %}
   {% if post.fontes %}<p class="e-meta" style="margin:0 0 16px;font:13.5px/1.45 {{ sistema }};color:#62666b">De onde vêm os números: {% for x in post.fontes %}{% if x.url %}<a href="{{ x.url }}" class="e-meta" style="color:#62666b">{{ x.quem }}</a>{% else %}{{ x.quem }}{% endif %}{{ '; ' if not loop.last else '.' }}{% endfor %}</p>{% endif %}
   {% if post.ponte %}<p class="e-meta" style="margin:2px 0 18px;font:14px/1.4 {{ sistema }};color:#62666b">{{ post.ponte.rotulo }}<br><a href="{{ site }}{{ post.ponte.url }}" class="e-link" style="display:inline-block;margin-top:2px;font:700 17px/1.35 {{ serifa }};color:#1f4fbf;text-decoration:none">{{ post.ponte.texto }}</a></p>{% endif %}
-  {% if post.fundo %}
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="e-fio" style="margin:4px 0 18px;border:1px solid #e4e6e8;border-radius:10px;border-collapse:separate">
-    <tr><td style="padding:12px 14px">
-      <a href="{{ post.url }}#leitura" style="text-decoration:none;display:block">
-        <span class="e-meta" style="display:block;margin:0 0 3px;font:600 12.5px/1.3 {{ sistema }};color:#62666b;text-transform:uppercase;letter-spacing:.06em">Leitura de {{ post.fundo.minutos }} minutos</span>
-        <span class="e-tinta" style="display:block;font:700 18px/1.35 {{ serifa }};color:#1e1f21">{{ post.fundo.titulo }}</span>
-        <span class="e-link" style="display:block;margin:8px 0 0;font:600 15px/1.3 {{ sistema }};color:#1f4fbf">Ler no site →</span>
-      </a>
-    </td></tr>
-  </table>{% endif %}
   {% if post.zap %}<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:2px 0 0"><tr>
     <td class="e-fio" style="border:1px solid #a9acb0;border-radius:10px"><a href="{{ post.zap }}" class="e-tinta" style="display:inline-block;padding:12px 14px;font:600 15px/1.2 {{ sistema }};color:#1e1f21;text-decoration:none">Mandar no WhatsApp</a></td>
     <td style="padding:0 0 0 14px"><a href="{{ post.url }}" class="e-meta" style="font:15px/1.2 {{ sistema }};color:#62666b">Abrir no site</a></td>
