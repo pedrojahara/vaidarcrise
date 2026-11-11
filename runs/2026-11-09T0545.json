@@ -2888,7 +2888,7 @@
   "formato": "historia",
   "titulo": "Presidente reafirma o compromisso fiscal sem número, e a conta de 2027 segue em disputa",
   "paragrafos": [
-   "O presidente reafirmou na televisão, no domingo, o compromisso com a responsabilidade fiscal, mas não deu medida, tamanho nem data para o ajuste. Nenhum documento oficial traz uma meta para esse ajuste. O ministro da Casa Civil falou só em levar o investimento de cerca de 17% para 20% ou 21% do PIB.",
+   "Nenhum documento oficial traz uma meta para esse ajuste. O ministro da Casa Civil falou só em levar o investimento de cerca de 17% para 20% ou 21% do PIB.",
    "O que está em jogo é a conta de 2027, cujo Orçamento o Congresso ainda vota. A meta é o governo arrecadar R$ 73,2 bilhões a mais do que gasta, sem contar os juros, e ela já conta como cumprida a partir de R$ 36,6 bilhões. O projeto prevê uma sobra de R$ 18,6 bilhões com todas as despesas. Como a regra deixa de fora R$ 64,7 bilhões, quase tudo precatórios, a conta da meta dá R$ 83,4 bilhões, acima do centro.",
    "A IFI, do Senado, conta todas as despesas, sem esses descontos. Em setembro, ela previu um déficit de R$ 86,1 bilhões, contra a sobra de R$ 18,6 bilhões do projeto na mesma conta. O governo deixou as medidas para depois da conferência do clima da ONU, sem data para anunciá-las, e o número delas vai pesar no juro de 10 anos, que chega ao crédito longo das empresas. Em 6/11, esse juro estava em 8,0% ao ano acima da inflação, mais alto que em 91% dos meses desde 2005."
   ],
@@ -2896,7 +2896,7 @@
    {
     "titulo": null,
     "paragrafos": [
-     "O presidente reafirmou na televisão, no domingo, o compromisso com a responsabilidade fiscal, mas não deu medida, tamanho nem data para o ajuste. Nenhum documento oficial traz uma meta para esse ajuste. O ministro da Casa Civil falou só em levar o investimento de cerca de 17% para 20% ou 21% do PIB.",
+     "Nenhum documento oficial traz uma meta para esse ajuste. O ministro da Casa Civil falou só em levar o investimento de cerca de 17% para 20% ou 21% do PIB.",
      "O que está em jogo é a conta de 2027, cujo Orçamento o Congresso ainda vota. A meta é o governo arrecadar R$ 73,2 bilhões a mais do que gasta, sem contar os juros, e ela já conta como cumprida a partir de R$ 36,6 bilhões. O projeto prevê uma sobra de R$ 18,6 bilhões com todas as despesas. Como a regra deixa de fora R$ 64,7 bilhões, quase tudo precatórios, a conta da meta dá R$ 83,4 bilhões, acima do centro.",
      "A IFI, do Senado, conta todas as despesas, sem esses descontos. Em setembro, ela previu um déficit de R$ 86,1 bilhões, contra a sobra de R$ 18,6 bilhões do projeto na mesma conta. O governo deixou as medidas para depois da conferência do clima da ONU, sem data para anunciá-las, e o número delas vai pesar no juro de 10 anos, que chega ao crédito longo das empresas. Em 6/11, esse juro estava em 8,0% ao ano acima da inflação, mais alto que em 91% dos meses desde 2005."
     ]
@@ -3342,7 +3342,7 @@
       "trecho": "Lula fala em preocupação com dívida e juros e reafirma compromisso com responsabilidade fiscal"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": true
      }
     },
@@ -3363,8 +3363,8 @@
       "trecho": "Governo Federal prorroga Auxílio Gás do Povo até novembro de 2031"
      },
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true
+      "status": "depois_do_dia",
+      "por_que": "publicado em 2026-11-09, depois da véspera de 2026-11-09"
      }
     },
     {
@@ -3385,7 +3385,7 @@
       "trecho": "Rui Costa projeta investimento de até 21% do PIB e cita leilões ainda em 2026"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3410,6 +3410,7 @@
      },
      "conferencia": {
       "status": "nao_aberto",
+      "por_que": "HTTP 404",
       "fonte_conhecida": true
      }
     },
@@ -3471,7 +3472,7 @@
       "trecho": "IFI prevê déficit primário de R$ 86,1 bi em 2027 e alerta para necessidade de contingenciamento"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3492,7 +3493,7 @@
       "trecho": "IFI estima R$ 40 bilhões de desequilíbrio fiscal com medidas anunciadas na campanha"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3513,7 +3514,7 @@
       "trecho": "Pacote de bondades do governo pode levar déficit primário a 1% do PIB em 2027, nota da IFI"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": true
      }
     },
@@ -3535,7 +3536,7 @@
      },
      "conferencia": {
       "status": "depois_do_dia",
-      "por_que": "publicado em 2026-11-10, depois de 2026-11-09"
+      "por_que": "publicado em 2026-11-10, depois da véspera de 2026-11-09"
      }
     },
     {
@@ -3599,8 +3600,8 @@
       "trecho": "A parte da dívida que vence em até um ano chegou a 19,95% em setembro"
      },
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true
+      "status": "depois_do_dia",
+      "por_que": "publicado em 2026-11-09, depois da véspera de 2026-11-09"
      }
     },
     {
@@ -3622,7 +3623,7 @@
       "trecho": "Tesouro prevê dívida bruta em 89,7% do PIB em 2030 com pressão de juros elevados"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3682,14 +3683,33 @@
      ],
      "palavras": 224,
      "intertitulos": 0
+    },
+    "reconferencia": {
+     "em": "2026-11-11T05:11:59-03:00",
+     "ruins": [
+      "c1"
+     ],
+     "frases_cortadas": [
+      "O presidente reafirmou na televisão, no domingo, o compromisso com a responsabilidade fiscal, mas não deu medida, tamanho nem data para o ajuste."
+     ],
+     "abertos": 6,
+     "final": {
+      "graves": [],
+      "avisos": [
+       "o texto tem 201 palavras (o tamanho de hoje é de 120 a 200)"
+      ],
+      "palavras": 201,
+      "intertitulos": 0
+     }
     }
    },
    "titulo": "Presidente reafirma o compromisso fiscal sem número, e a conta de 2027 segue em disputa",
-   "texto": "O presidente reafirmou na televisão, no domingo, o compromisso com a responsabilidade fiscal, mas não deu medida, tamanho nem data para o ajuste [c1]. Nenhum documento oficial traz uma meta para esse ajuste. O ministro da Casa Civil falou só em levar o investimento de cerca de 17% para 20% ou 21% do PIB [c3].\n\nO que está em jogo é a conta de 2027, cujo Orçamento o Congresso ainda vota. A meta é o governo arrecadar R$ 73,2 bilhões a mais do que gasta, sem contar os juros, e ela já conta como cumprida a partir de R$ 36,6 bilhões. O projeto prevê uma sobra de R$ 18,6 bilhões com todas as despesas [c4]. Como a regra deixa de fora R$ 64,7 bilhões, quase tudo precatórios, a conta da meta dá R$ 83,4 bilhões, acima do centro [c4].\n\nA IFI, do Senado, conta todas as despesas, sem esses descontos. Em setembro, ela previu um déficit de R$ 86,1 bilhões, contra a sobra de R$ 18,6 bilhões do projeto na mesma conta [c7, c4]. O governo deixou as medidas para depois da conferência do clima da ONU, sem data para anunciá-las, e o número delas vai pesar no juro de 10 anos, que chega ao crédito longo das empresas. Em 6/11, esse juro estava em 8,0% ao ano acima da inflação, mais alto que em 91% dos meses desde 2005 [c11].",
+   "texto": "Nenhum documento oficial traz uma meta para esse ajuste. O ministro da Casa Civil falou só em levar o investimento de cerca de 17% para 20% ou 21% do PIB [c3].\n\nO que está em jogo é a conta de 2027, cujo Orçamento o Congresso ainda vota. A meta é o governo arrecadar R$ 73,2 bilhões a mais do que gasta, sem contar os juros, e ela já conta como cumprida a partir de R$ 36,6 bilhões. O projeto prevê uma sobra de R$ 18,6 bilhões com todas as despesas [c4]. Como a regra deixa de fora R$ 64,7 bilhões, quase tudo precatórios, a conta da meta dá R$ 83,4 bilhões, acima do centro [c4].\n\nA IFI, do Senado, conta todas as despesas, sem esses descontos. Em setembro, ela previu um déficit de R$ 86,1 bilhões, contra a sobra de R$ 18,6 bilhões do projeto na mesma conta [c7, c4]. O governo deixou as medidas para depois da conferência do clima da ONU, sem data para anunciá-las, e o número delas vai pesar no juro de 10 anos, que chega ao crédito longo das empresas. Em 6/11, esse juro estava em 8,0% ao ano acima da inflação, mais alto que em 91% dos meses desde 2005 [c11].",
    "argumento": "A fala do presidente reafirma o compromisso fiscal sem número e não resolve a conta de 2027, que cumpre a meta pela regra do governo, mas que a IFI vê em déficit de R$ 86,1 bilhões.",
    "porque": "O presidente foi à televisão dizer que a dívida e os juros preocupam e reafirmar o compromisso com a responsabilidade fiscal, sem detalhar como fará o ajuste.",
    "pressao": "contas",
-   "duracao_s": 335
+   "duracao_s": 335,
+   "fontes_abertas": true
   },
   "termina_em": "contas",
   "pergunta": "divida-do-governo",
@@ -3699,8 +3719,7 @@
     "O petróleo reabriu em leve queda lá fora, mesmo com ataques a navios perto de Ormuz, segundo a Folha. Ao Valor, um ministro do Iraque disse que o país se entendeu com os EUA para exportar por Ormuz, o que ainda é declaração, e não acordo fechado.",
     "O barril em queda não baixa a bomba sozinho, porque, pela Abicom, no fim de outubro o diesel da Petrobras custava R$ 3,53 por litro menos que o importado. Por isso nada muda hoje no posto, onde o preço depende da Petrobras e da ajuda do governo ao diesel, renovada por 30 dias."
    ]
-  },
-  "revisao_manual": "Refeito em 10/11/2026 no texto do dia pela história (pedido do Pedro)."
+  }
  },
  "avisos_ao_pedro": [
   "O editor-chefe sentiu falta de uma página no fato do dia de 9/11/2026: Por que o preço da gasolina e do diesel no Brasil não acompanha o petróleo lá fora? Nenhuma página do básico explica a Petrobras, a subvenção e os impostos entre o barril e a bomba, e é isso que a leitora precisa para ler o fato."

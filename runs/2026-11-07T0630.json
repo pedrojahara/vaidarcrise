@@ -2588,7 +2588,7 @@
   "titulo": "Bradesco e XP Investimentos preveem PIB quase parado em 2027, e o emprego ainda não virou",
   "paragrafos": [
    "Bradesco e XP Investimentos cortaram ontem a previsão de crescimento do PIB de 2027 de 1,0% para perto de zero, entre 0,3% e 0,4%. Com o Itaú, que já tinha ido a 0,5% no fim de outubro, são três casas grandes prevendo uma economia quase parada no ano que vem. O último PIB oficial, do segundo trimestre, ainda subiu 0,5%, mas a prévia do Banco Central, que é mais nova, já aponta queda.",
-   "Segundo a imprensa, as duas casas citam a incerteza sobre as contas do governo depois da reeleição, o juro alto e o real mais fraco, e também subiram a previsão de inflação de 2027. A XP Investimentos espera a Selic em 13,75% no fim de 2027, o mesmo nível de hoje, o que deixaria o crédito caro para pessoas e empresas por mais um ano.",
+   "Segundo a imprensa, as duas casas citam a incerteza sobre as contas do governo depois da reeleição, o juro alto e o real mais fraco, e também subiram a previsão de inflação de 2027.",
    "A gestora Genoa, em carta a clientes relatada pelo Valor, foi mais longe e fala em recessão em 2027. Ela também lê a causa de outro jeito, porque, para a Genoa, o risco do juro e da inflação pesa hoje mais que o das contas do governo. Por isso o mesmo corte de previsão chega com duas explicações, e cada uma aponta uma saída diferente.",
    "O PIB cresceu nos últimos oito trimestres, e uma recessão é o PIB cair dois trimestres seguidos. Os dados mais recentes, porém, vão na direção das casas, já que a prévia do PIB do Banco Central caiu 0,6% nos três meses até agosto, contra os três meses anteriores. O consumo das famílias já tinha caído 0,4% no segundo trimestre.",
    "O emprego é a parte que ainda não virou. O desemprego caiu de 5,4% no trimestre até junho para 5,2% no trimestre até setembro, mais baixo que em 99% dos meses desde 2012. Uma economia parada chegaria às casas e às empresas pelo emprego, e esse dado ainda não mostra a mudança que as previsões descrevem.",
@@ -2601,7 +2601,7 @@
     "titulo": null,
     "paragrafos": [
      "Bradesco e XP Investimentos cortaram ontem a previsão de crescimento do PIB de 2027 de 1,0% para perto de zero, entre 0,3% e 0,4%. Com o Itaú, que já tinha ido a 0,5% no fim de outubro, são três casas grandes prevendo uma economia quase parada no ano que vem. O último PIB oficial, do segundo trimestre, ainda subiu 0,5%, mas a prévia do Banco Central, que é mais nova, já aponta queda.",
-     "Segundo a imprensa, as duas casas citam a incerteza sobre as contas do governo depois da reeleição, o juro alto e o real mais fraco, e também subiram a previsão de inflação de 2027. A XP Investimentos espera a Selic em 13,75% no fim de 2027, o mesmo nível de hoje, o que deixaria o crédito caro para pessoas e empresas por mais um ano.",
+     "Segundo a imprensa, as duas casas citam a incerteza sobre as contas do governo depois da reeleição, o juro alto e o real mais fraco, e também subiram a previsão de inflação de 2027.",
      "A gestora Genoa, em carta a clientes relatada pelo Valor, foi mais longe e fala em recessão em 2027. Ela também lê a causa de outro jeito, porque, para a Genoa, o risco do juro e da inflação pesa hoje mais que o das contas do governo. Por isso o mesmo corte de previsão chega com duas explicações, e cada uma aponta uma saída diferente."
     ]
    },
@@ -3078,7 +3078,7 @@
       "trecho": "A XP reduziu a projeção do PIB para 2027 de 1,0% para 0,3%, enquanto o Bradesco cortou a estimativa de 1,0% para 0,4%."
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3100,7 +3100,7 @@
       "trecho": "O Bradesco vê a Selic em 13,75% durante o primeiro semestre de 2027, e a XP projeta a taxa em 13,75% ao fim de 2027."
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": true
      }
     },
@@ -3141,7 +3141,7 @@
       "trecho": "em carta a clientes, ela afirma que o risco monetário é hoje mais grave que o fiscal. Prevê queda de 0,2% do PIB no próximo ano."
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": false
      }
     },
@@ -3163,7 +3163,7 @@
       "trecho": "Itaú atualiza cenário: PIB cresce só 0,5% em 2027, com inflação de 6,1% e parada na Selic em 13,75%"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": false
      }
     },
@@ -3371,7 +3371,7 @@
      },
      "do_revisor": true,
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": false
      }
     },
@@ -3394,7 +3394,7 @@
      },
      "do_revisor": true,
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     }
@@ -3408,14 +3408,34 @@
      ],
      "palavras": 532,
      "intertitulos": 2
+    },
+    "reconferencia": {
+     "em": "2026-11-11T05:11:58-03:00",
+     "ruins": [
+      "c2"
+     ],
+     "frases_cortadas": [
+      "A XP Investimentos espera a Selic em 13,75% no fim de 2027, o mesmo nível de hoje, o que deixaria o crédito caro para pessoas e empresas por mais um ano."
+     ],
+     "abertos": 6,
+     "final": {
+      "graves": [],
+      "avisos": [
+       "c5 vem de site fora da lista de fontes conhecidas: https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
+       "siglas que a leitora não conhece, sem nome por extenso ou link: XP"
+      ],
+      "palavras": 501,
+      "intertitulos": 2
+     }
     }
    },
    "titulo": "Bradesco e XP Investimentos preveem PIB quase parado em 2027, e o emprego ainda não virou",
-   "texto": "Bradesco e XP Investimentos cortaram ontem a previsão de crescimento do PIB de 2027 de 1,0% para perto de zero, entre 0,3% e 0,4% [c1]. Com o Itaú, que já tinha ido a 0,5% no fim de outubro, são três casas grandes prevendo uma economia quase parada no ano que vem [c5]. O último PIB oficial, do segundo trimestre, ainda subiu 0,5%, mas a prévia do Banco Central, que é mais nova, já aponta queda [c8, c12].\n\nSegundo a imprensa, as duas casas citam a incerteza sobre as contas do governo depois da reeleição, o juro alto e o real mais fraco, e também subiram a previsão de inflação de 2027 [c1]. A XP Investimentos espera a Selic em 13,75% no fim de 2027, o mesmo nível de hoje, o que deixaria o crédito caro para pessoas e empresas por mais um ano [c2].\n\nA gestora Genoa, em carta a clientes relatada pelo Valor, foi mais longe e fala em recessão em 2027. Ela também lê a causa de outro jeito, porque, para a Genoa, o risco do juro e da inflação pesa hoje mais que o das contas do governo. Por isso o mesmo corte de previsão chega com duas explicações, e cada uma aponta uma saída diferente.\n\n### Os dados mais recentes perdem força, mas o emprego ainda não virou\n\nO PIB cresceu nos últimos oito trimestres, e uma recessão é o PIB cair dois trimestres seguidos [c8]. Os dados mais recentes, porém, vão na direção das casas, já que a prévia do PIB do Banco Central caiu 0,6% nos três meses até agosto, contra os três meses anteriores [c12]. O consumo das famílias já tinha caído 0,4% no segundo trimestre [c11].\n\nO emprego é a parte que ainda não virou. O desemprego caiu de 5,4% no trimestre até junho para 5,2% no trimestre até setembro, mais baixo que em 99% dos meses desde 2012 [c9, c10]. Uma economia parada chegaria às casas e às empresas pelo emprego, e esse dado ainda não mostra a mudança que as previsões descrevem.\n\nA melhor objeção ao corte vem da mediana do Focus, que reúne bem mais bancos e consultorias e ainda vê 1,15% para 2027, 0,65 ponto acima do Itaú [c6, c3]. Essa mediana caiu nas duas últimas pesquisas, de 1,31% para 1,20% e depois 1,15% [c6]. A queda admite duas leituras: as casas grandes se adiantaram e as outras vão segui-las, ou as grandes exageraram e a mediana para perto de onde está.\n\n### O ajuste das contas, que pesa na previsão, segue sem data\n\nTambém ontem, o comitê executivo da Câmara de Comércio Exterior, do governo, prorrogou até 31/12 o imposto de 12% sobre o petróleo exportado, que venceria em 7 de novembro. O motivo dado é manter a entrada de dinheiro enquanto o petróleo segue caro por causa do conflito no Oriente Médio. As medidas de ajuste que a Fazenda diz preparar ficaram para depois da conferência do clima da ONU, ainda sem data e sem números.\n\nPara as empresas que decidem agora se investem e contratam em 2027, as casas grandes indicam crédito caro e economia fraca por mais tempo. Se o corte vier da dúvida sobre as contas, um ajuste com números pode desfazer parte dele; se vier da inflação, como diz a Genoa, a saída depende mais do Banco Central. O desemprego até outubro sai em 27/11, e o PIB do terceiro trimestre, em 2/12.",
+   "texto": "Bradesco e XP Investimentos cortaram ontem a previsão de crescimento do PIB de 2027 de 1,0% para perto de zero, entre 0,3% e 0,4% [c1]. Com o Itaú, que já tinha ido a 0,5% no fim de outubro, são três casas grandes prevendo uma economia quase parada no ano que vem [c5]. O último PIB oficial, do segundo trimestre, ainda subiu 0,5%, mas a prévia do Banco Central, que é mais nova, já aponta queda [c8, c12].\n\nSegundo a imprensa, as duas casas citam a incerteza sobre as contas do governo depois da reeleição, o juro alto e o real mais fraco, e também subiram a previsão de inflação de 2027 [c1].\n\nA gestora Genoa, em carta a clientes relatada pelo Valor, foi mais longe e fala em recessão em 2027. Ela também lê a causa de outro jeito, porque, para a Genoa, o risco do juro e da inflação pesa hoje mais que o das contas do governo. Por isso o mesmo corte de previsão chega com duas explicações, e cada uma aponta uma saída diferente.\n\n### Os dados mais recentes perdem força, mas o emprego ainda não virou\n\nO PIB cresceu nos últimos oito trimestres, e uma recessão é o PIB cair dois trimestres seguidos [c8]. Os dados mais recentes, porém, vão na direção das casas, já que a prévia do PIB do Banco Central caiu 0,6% nos três meses até agosto, contra os três meses anteriores [c12]. O consumo das famílias já tinha caído 0,4% no segundo trimestre [c11].\n\nO emprego é a parte que ainda não virou. O desemprego caiu de 5,4% no trimestre até junho para 5,2% no trimestre até setembro, mais baixo que em 99% dos meses desde 2012 [c9, c10]. Uma economia parada chegaria às casas e às empresas pelo emprego, e esse dado ainda não mostra a mudança que as previsões descrevem.\n\nA melhor objeção ao corte vem da mediana do Focus, que reúne bem mais bancos e consultorias e ainda vê 1,15% para 2027, 0,65 ponto acima do Itaú [c6, c3]. Essa mediana caiu nas duas últimas pesquisas, de 1,31% para 1,20% e depois 1,15% [c6]. A queda admite duas leituras: as casas grandes se adiantaram e as outras vão segui-las, ou as grandes exageraram e a mediana para perto de onde está.\n\n### O ajuste das contas, que pesa na previsão, segue sem data\n\nTambém ontem, o comitê executivo da Câmara de Comércio Exterior, do governo, prorrogou até 31/12 o imposto de 12% sobre o petróleo exportado, que venceria em 7 de novembro. O motivo dado é manter a entrada de dinheiro enquanto o petróleo segue caro por causa do conflito no Oriente Médio. As medidas de ajuste que a Fazenda diz preparar ficaram para depois da conferência do clima da ONU, ainda sem data e sem números.\n\nPara as empresas que decidem agora se investem e contratam em 2027, as casas grandes indicam crédito caro e economia fraca por mais tempo. Se o corte vier da dúvida sobre as contas, um ajuste com números pode desfazer parte dele; se vier da inflação, como diz a Genoa, a saída depende mais do Banco Central. O desemprego até outubro sai em 27/11, e o PIB do terceiro trimestre, em 2/12.",
    "argumento": "Bradesco, XP Investimentos e Itaú passaram a prever PIB quase parado em 2027; os dados recentes perdem força, mas o emprego ainda não virou, e a mediana do Focus, mais alta, caiu nas duas últimas pesquisas.",
    "porque": "Segundo a imprensa, Bradesco e XP Investimentos cortaram a previsão por causa da incerteza sobre as contas do governo depois da reeleição, do juro alto e do real mais fraco.",
    "pressao": "ritmo",
-   "duracao_s": 470
+   "duracao_s": 470,
+   "fontes_abertas": true
   },
   "termina_em": "ritmo",
   "versao_anterior": {
@@ -3425,8 +3445,7 @@
     "Pelo Ministério do Desenvolvimento, Indústria e Comércio, as exportações subiram 20% contra outubro de 2025, puxadas por 63% mais barris de petróleo. Mesmo com a maior entrada de dólares do ano, o dólar subiu 4,6% em outubro, porque parece seguir mais a desconfiança de quem investe que o comércio.",
     "Se ele seguir 2,9% mais caro que um ano antes, uma compra de R$ 100 sobe cerca de R$ 0,30 em um ano, mais nos importados e no combustível."
    ]
-  },
-  "revisao_manual": "Refeito em 10/11/2026 no texto do dia pela história (pedido do Pedro)."
+  }
  },
  "pauta": {
   "versao": 2,
