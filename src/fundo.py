@@ -359,10 +359,10 @@ def _evitar(e: dict) -> str:
 
 
 def _paginas_do_site() -> str:
-    """O que o menu Grandes perguntas tem: a página O que causa recessão e a página de cada pressão."""
+    """As páginas do básico: a página O que causa recessão e a página de cada pressão."""
     try:
         import base_site
-        return "; ".join(f"{x['pergunta']} ({x['rotulo']})" for x in base_site.menu(CFG))
+        return "; ".join(f"{x['pergunta']} ({x['rotulo']})" for x in base_site.paginas(CFG))
     except Exception:  # noqa: BLE001
         return "O que causa recessão?"
 
