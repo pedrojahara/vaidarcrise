@@ -6,7 +6,7 @@ Todo texto do site e do blog (posts, abas, títulos de evento, nota, imagem de c
 
 Escrevemos para quem tem curso superior, trabalha como gestor numa empresa ou tem o próprio negócio e não estudou economia. Ela acompanha política, tem lado (ou desconfia dos dois) e sente a economia em três lugares: em casa, pela parcela e pelos preços; no trabalho, pelas vendas, pelo crédito e pelo custo; e no país. Todo dia ela ouve opinião sobre a economia, do jornal, do colega e do grupo de WhatsApp, mas não tem como separar sozinha o que é dado, o que é opinião e o que é boato. Ela quer saber, na primeira frase, se o risco de crise está subindo ou caindo e, nos minutos seguintes, o que os números sustentam e o que isso muda para a vida e para o trabalho dela.
 
-- **Resposta primeiro.** Para que lado anda o risco (subindo, igual ou caindo), em palavras, na primeira frase.
+- **Resposta primeiro.** Para que lado anda o risco (subindo, igual ou caindo), em palavras, no topo da página; no texto do dia, o fato e o porquê dele, na primeira frase.
 - **O dado separado da opinião.** O texto diz o que os números mostram, o que alguém acha e o que ainda não dá para saber, e deixa claro qual é qual. Uma ideia que corre no jornal, no mercado ou nos grupos é testada com os números, pela mesma régua para os dois lados.
 - **O argumento inteiro.** Ela aguenta e quer a corrente toda: o porquê, a comparação com outras vezes e o que pode dar errado. Texto raso e número sem fonte ela percebe na hora.
 - **Palavra de conversa.** Ela lê bem, mas não leu economia, por isso nada de economês, mesmo quando a palavra parece conhecida. Sigla que ela não conhece vai por extenso ou com link.
@@ -225,7 +225,7 @@ O depois diz o mês da comparação, troca "o que vem de fora" por importados, l
 
 > **Antes.** O Banco Central parou de cortar o juro e manteve a Selic em 13,75%, como desde setembro. Assim, os bancos seguem cobrando caro de pessoas e empresas. Ao contrário do que muita gente acha, juro alto faz os preços subirem mais devagar, porque comprar a prazo fica caro e as lojas vendem menos. Mesmo assim, o Banco Central subiu para 5,6% a previsão do IPCA de 2026.
 >
-> **Depois.** O Banco Central parou de cortar e manteve a Selic em 13,75%, porque, segundo ele, as incertezas e a inflação esperada subiram. O crédito segue caro para pessoas e empresas, o que segura consumo e investimento. Desde 2002, em 7 de 8 pausas com inflação esperada subindo, a Selic voltou a subir. Os bancos (Focus) preveem corte, mas o passado indica alta, o que deixaria o crédito caro por mais tempo.
+> **Depois.** O Banco Central parou de cortar e manteve a Selic em 13,75%, porque, segundo ele, as incertezas e a inflação esperada subiram. O crédito segue caro para pessoas e empresas, o que segura consumo e investimento. Desde 2002, em 7 de 8 pausas como esta, com a inflação esperada subindo, a Selic voltou a subir. Se o padrão se repetir, o crédito fica caro por mais tempo do que esperam os bancos ouvidos pelo Banco Central, que preveem corte.
 
 O antes deixa um "mesmo assim" sem resposta, gasta um terço do texto com o mecanismo de livro, que a aba e a página do juro já explicam, e põe o banco como quem escolheu cobrar caro. O depois diz por que o fato aconteceu, nas palavras de quem decidiu, a consequência com quem a sente e o e daí do argumento. O porquê e o e daí vêm da pesquisa do dia, que roda antes do texto.
 
@@ -294,7 +294,7 @@ Cada post responde a uma pergunta só e compara com o próprio período. Ela rec
 | Retrato do Brasil | Por que o site existe, e como usá-lo? | No cartão do topo e na rolagem, como o post de 28/10; refeito quando o editor decidir | Até 800 palavras | O que o site faz e para quem |
 | Fato do dia | O que o passo de ontem da história em andamento quer dizer, pelos números? | De segunda a sábado | De 120 a 200 palavras num dia calmo, de 300 a 600 num dia normal, até perto de 800 num dia grande | O passo de ontem e o porquê dele, com os números contra a régua; o argumento vai no título |
 | Resumo da semana | O que a semana mudou, e o que vem na próxima? | Domingo | Até 250 palavras | O que se moveu na semana |
-| Resumo do mês | Estamos melhor ou pior que há um mês, e o que isso muda para mim? | Primeiro domingo do mês, no lugar do resumo da semana | Até 450 palavras, com as tabelas (300 de texto) | O que mudou no mês |
+| Resumo do mês | Estamos melhor ou pior que há um mês, e por quê? | Primeiro domingo do mês, no lugar do resumo da semana | Até 450 palavras, com as tabelas (300 de texto) | O que mudou no mês |
 
 **Cada informação tem um dono.** O post não repete o que a página já mostra ao lado dele. Ele diz o que só ele pode dizer: a ligação entre os fatos, a comparação, a régua e o que o argumento quer dizer para quem ele pesa, inclusive na renda, no emprego, nos preços, no crédito, no dinheiro guardado ou no que o governo cobra ou paga, quando muda.
 
@@ -333,7 +333,7 @@ Ela quer saber se o Banco Central, o governo ou o Congresso fizeram a coisa cert
 
 ## O que a notícia muda na vida
 
-O site acompanha o risco de recessão e o que ele muda na vida de quem lê (decisão do Pedro em 9/11/2026, depois que um leitor pediu as consequências das notícias no "mundo real", como o poder de compra). Em 10/11/2026, o Pedro reviu a forma: o e daí é a conclusão do argumento do texto, para quem ele pesa (a casa, o trabalho ou o país), e a frase sobre a vida só entra em dois casos, quando o fato muda algo com número e prazo para alguém, ou quando desfaz uma crença que a leitora provavelmente tem. Posta em todo texto, ela fica fora de contexto: uma frase sobre o financiamento de quem lê, num texto sobre as contas do governo, sem dizer como uma coisa leva à outra, e o mesmo "nada muda" em quatro textos seguidos.
+O site acompanha o risco de recessão e o que ele muda na vida de quem lê. O e daí é a conclusão do argumento do texto, para quem ele pesa (a casa, o trabalho ou o país), e a frase sobre a vida só entra em dois casos, quando o fato muda algo com número e prazo para alguém, ou quando desfaz uma crença que a leitora provavelmente tem. Posta em todo texto, ela fica fora de contexto: uma frase sobre o financiamento de quem lê, num texto sobre as contas do governo, sem dizer como uma coisa leva à outra, e o mesmo "nada muda" em quatro textos seguidos.
 
 **A tradução tem cinco partes:** o que muda (a parcela, o preço do mercado, o reajuste da aposentadoria), para que lado, quanto, quando e para quem. "Os importados ficam mais caros" para na direção. "Pelas contas do Banco Central, cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano" diz o tamanho e o prazo, e a leitora entende o que isso faz com as compras dela.
 
@@ -375,7 +375,7 @@ O resto do guia cuida da palavra. Esta parte cuida de como ensinar: por que os p
 10. **Causa sem culpado, mas com quem decidiu.** Sem culpado não quer dizer sem quem: diga quem decidiu e o motivo que deu, com a fonte, e não troque quem decidiu por quem só repassa a decisão. Com mais de uma causa, mostre todas. Diga com todas as letras quais vêm de fora (seca, petróleo, guerra, juro dos Estados Unidos) e qual o governo influencia, e como: "Das três causas, o governo influencia uma com as próprias contas: o dólar." Quando os dados não separam duas leituras, mostre as duas.
 11. **Causa e efeito por extenso, com exemplo e tempo.** Diga o que acontece, em ordem, com um caso concreto, e chame causa de fora de causa de fora. As regras e os exemplos estão em [O jeito de escrever do site](#o-jeito-de-escrever-do-site).
 
-**Nos posts**, o porquê do dia vem antes do mecanismo: primeiro por que este fato aconteceu, dito por quem decidiu ou pela fonte, e só depois, se ele precisar, como esse tipo de coisa funciona, numa oração com palavras próprias, sem copiar a aba. Valem 4, 10 e 11, em uma frase cada: a crença errada corrigida de frente quando o fato depende dela, a causa sem culpado e com quem decidiu, e a corrente de causa e efeito por extenso. Regras do prompt em `src/escreve_post.py`.
+**Nos posts**, o porquê do dia vem antes do mecanismo: primeiro por que este fato aconteceu, dito por quem decidiu ou pela fonte, e só depois, se ele precisar, como esse tipo de coisa funciona, numa oração com palavras próprias, sem copiar a aba. Valem 4, 10 e 11, em uma frase cada: a crença errada corrigida de frente quando o fato depende dela, a causa sem culpado e com quem decidiu, e a corrente de causa e efeito por extenso. Regras dos prompts em `src/fundo.py` (fato do dia) e `src/escreve_post.py` (resumos).
 
 **Formato.** Texto simples primeiro: linguagem clara rendeu mais que recurso visual (Bholat e outros, 2019). Depois desenho com legenda. Vídeo narrado ajuda mais quem lê pouco (Meppelink e outros, 2015), com até 2 minutos por ideia. Rolagem animada não ensina mais que texto.
 
@@ -455,7 +455,7 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 | Tipos de post | Retrato do Brasil, Fato do dia, Resumo da semana, Resumo do mês |
 | Quem escreve o post | "Escrito pelo Claude com a ajuda do Pedro.", a mesma assinatura em todo post, sem horário e sem contar notícias |
 | A lista por e-mail | "Receba o fato do dia por e-mail" na página da lista, que liga para o último fato do dia para a pessoa ver o que vai receber, o botão "Quero receber" e, no fim de todo e-mail, "Sair da lista". A caixa "Receba o fato do dia no seu e-mail" fica no fim do post (na página Hoje, só depois do primeiro) e no fim de O que causa recessão, das páginas das Grandes perguntas e de Como funciona, onde ela diz em uma frase o que é o fato do dia; no e-mail, "Recebeu este e-mail de alguém?"; "Receber por e-mail" no cabeçalho, depois de Grandes perguntas, e no rodapé, ao lado de "Privacidade". Nada salta na tela. A caixa, o "Recebeu" e os dois links só aparecem quando a lista está aberta |
-| O compartilhar | No fim de todo post, depois do "Entenda a fundo": o botão "Mandar no WhatsApp", que abre o WhatsApp com o título e o link, e ao lado "Copiar link", que vira "Link copiado" por 3 segundos. Nada no topo, nada preso à tela, nenhuma outra rede e nenhuma etiqueta de rastreio no link |
+| O compartilhar | No fim de todo post: o botão "Mandar no WhatsApp", que abre o WhatsApp com o título e o link, e ao lado "Copiar link", que vira "Link copiado" por 3 segundos. Nada no topo, nada preso à tela, nenhuma outra rede e nenhuma etiqueta de rastreio no link |
 
 **Palavras com lado.** Fora do texto: "gastança", "rombo", "herança maldita", "austericídio", "desgoverno", "farra". No lugar, o número e o que ele mede.
 
@@ -479,37 +479,12 @@ Os itens 3, 5, 9 e 12, e parte do 11, do 16, do 17 e do 19, o código confere no
 12. **Nada repetido.** O texto não repete o que o topo ou a lateral já mostram, nem frase do post anterior do mesmo tipo. Todo número está nos dados.
 13. **Porquê e e daí.** Cada fato diz por que aconteceu, nas palavras de quem decidiu ou da fonte, e o que quer dizer para o argumento, sem lado, com as duas leituras quando houver duas. Cada comparação tem as duas pontas na mesma unidade e, quando é com uma meta oficial, a margem e os descontos da regra. Nenhum "mesmo assim" fica sem resposta.
 14. **Mês, importado, sigla e quem.** Toda comparação diz o mês; produto de fora é importado; sigla que a leitora não conhece vai por extenso ou com link; cada frase diz quem decidiu, por quê e para quem, e quem só repassa a decisão não aparece como autor dela.
-15. **Passou pelo editor.** O fato do dia passa pelo revisor de três leitores (`src/fundo.py`); os resumos passam pelo editor (`src/edita_texto.py`) antes de sair; texto à mão também pode passar pelo editor, com a leitura em voz alta no fim.
+15. **Passou pelo editor.** O fato do dia passa pelo revisor de três leitores e um editor (`src/fundo.py`); os resumos passam pelo editor (`src/edita_texto.py`) antes de sair; texto à mão também pode passar pelo editor, com a leitura em voz alta no fim.
 16. **Decisão pela meta de quem decidiu.** Decisão pública vem com quem decidiu e com que poder e, quando os dados trazem, o objetivo que o decisor escreveu e a condição para chegar lá; nada de "acertou", "errou" ou "deveria", e nenhuma promessa de conferir depois.
 17. **Nenhuma pergunta no ar.** Lida frase a frase, nenhuma deixa a leitora perguntando "em que pé estamos?", "qual?", "quanto, segundo quem?", "por que isso encarece?" ou "e daí?". A menção que não cabe com o conteúdo sai inteira.
 18. **Na ordem das perguntas.** O texto segue as perguntas de "Estrutura de todo texto" (o que aconteceu, por quê, quem pode mexer nisso, o que esperar, o próximo sinal), pula a que não tem resposta e diz cada coisa uma vez, no lugar dela.
 19. **Soa como gente.** Lido ao lado de uma nota do Meio sobre o mesmo assunto, não parece escrito por máquina (regra 23): número só onde carrega o argumento, causa sem "porque" em toda frase, jornal fora da frase, citação curta de quem decidiu quando o documento a traz, frase curta depois de longa e nenhuma palavra deste guia na página.
-
-### Antes e depois: a frase, com o post de 30/10/2026
-
-Este exemplo mostra a frase e o número; a estrutura está no exemplo seguinte. O post do dia 30 tem frases de 18 palavras em média, mas o primeiro parágrafo carrega oito porcentagens. Dois verbos ainda confundem: "o IPCA recuou" soa como preço caindo, e "o crescimento pesa" parece contradição.
-
-> **Antes.** O risco de recessão técnica, que são dois trimestres seguidos de queda do PIB, segue normal, o mesmo nível da atualização anterior. No cenário ruim, com só 1 chance em 10 de ser pior, o PIB cai 1,8% em 12 meses, contra −1,9% em tempos normais. A Selic, juro básico, caiu de 15,00% para 13,75% em um ano, e o IPCA recuou de 5,17% para 4,58%. Os dois aliviam esse cenário. O crescimento de 1,38% em 12 meses pesa, e o IBC-Br, prévia do PIB, caiu 0,6% no trimestre até agosto.
-
-> **Depois.** A Selic caiu de 15% para 13,75% em um ano, o que deixa o crédito um pouco mais barato para quem compra a prazo.
->
-> Os preços sobem mais devagar, 4,6% em um ano contra 5,2% antes, mas a economia cresce menos que o normal: 1,4% em um ano, com a prévia do PIB do Banco Central caindo no trimestre até agosto.
-
-Mesmos fatos, mesma ordem de importância. A diferença está no verbo que não engana ("sobem mais devagar", e não "recuou"), na Selic sem definição, porque o link explica, mas com o que ela muda para quem lê, e em metade dos números.
-
-### Antes e depois: a estrutura, com o post de 31/10/2026
-
-O post de 31/10 tinha 197 palavras, e 97 delas repetiam o dia anterior e algo que já estava na tela: o risco do dia (a placa), o que ajuda e o que atrapalha (a antiga aba Fator por fator) e as próximas datas (a lateral). A direção do risco muda umas duas vezes por ano desde 2004; um post que abre com ela diz "segue subindo" quase todo dia.
-
-> **Antes.** Risco segue normal, e Bolsa cai 18,1% na semana depois da eleição. O risco de recessão segue normal, como ontem. Num ano ruim [...]. Ajuda: a Selic [...]. Nas notícias de sexta, o mercado puxa para pior [...]. O ritmo da economia também puxa para pior [...]. Em 4/11, quarta, o Banco Central decide o juro [...].
-
-> **Depois.** **Bolsa cai 18,1% na semana depois da eleição, e dólar sobe 9%**
->
-> A Bolsa caiu 18,1% na semana depois da eleição, a mesma queda de uma semana de 2001. O dólar subiu 9%, a maior alta em uma semana desde 2008.
->
-> Pelas contas do Banco Central, cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Se a alta da semana não voltar, os importados, como celular e peça de carro, puxam os preços para perto de 1 ponto a mais nos 12 meses seguintes.
-
-Um fato, contado até a vida de quem lê, com o tamanho e o prazo. O que o dólar fez em três meses fica no topo, em "Desconfiança de quem investe".
+20. **Sem bastidor.** A frase fala do fato, e não do nosso trabalho. Nenhuma página mostra histórico de mudança, teste, conferência, selo de fonte, aviso de falha do programa, versão, plano para depois ou nome de quem decidiu no site; a fonte aparece só com o nome e o link.
 
 ## Onde o guia vale no código
 

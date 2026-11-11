@@ -1,4 +1,4 @@
-"""Os nove indicadores do nível, calculados do mesmo jeito na calibração e na conta do dia.
+"""Os indicadores do dia, calculados do mesmo jeito na calibração e na conta do dia.
 
 Cada função recebe a série como era conhecida no momento da conta (lista de
 {"data", "valor"} em ordem) e devolve o valor do indicador, ou None se faltar dado.

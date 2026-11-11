@@ -1,7 +1,5 @@
 """Verificador da base de conhecimento (base/), a parte do código.
 
-Fase 0: a base fica fora do site; nada aqui é lido por build_site.py nem pela rodada diária.
-
 Confere, sem inteligência artificial:
   1. ligações: toda afirmação e episódio citado existe;
   2. dados: cada número de uma afirmação do tipo "dado" bate com as séries do próprio site
@@ -17,13 +15,11 @@ Confere, sem inteligência artificial:
   6. escrita: frase de até 30 palavras, moldes de piloto automático, sigla sem link (src/revisa_texto.py); no passo
      "O que isso muda para você?", parágrafos de até 50 palavras e quatro números e o passo com até 200 palavras.
 
-O agente que tenta derrubar cada afirmação (advogado do diabo, teste da troca) fica em src/pesquisa_base.py.
-
 Uso:
   .venv/bin/python src/verifica_base.py              # tudo, com rede
   .venv/bin/python src/verifica_base.py --offline    # sem abrir as fontes
   .venv/bin/python src/verifica_base.py --json       # o relatório inteiro em JSON
-O relatório vai para base/conferencia/<data>-verifica.json.
+O resultado só aparece na tela: o site não guarda registro de conferência.
 """
 from __future__ import annotations
 
@@ -45,7 +41,6 @@ import revisa_texto  # noqa: E402
 
 BASE = ROOT / "base"
 CACHE = BASE / "cache"
-CONF = BASE / "conferencia"
 ROTULOS = {"consenso", "maioria_com_dissenso", "em_disputa"}
 # Nome de empresa que se escreve em maiúsculas e não é sigla: o texto diz o que ela é ("a corretora XP").
 NOMES_DE_EMPRESA = {"XP"}
@@ -74,14 +69,8 @@ def carregar() -> dict:
     afs = json.loads((BASE / "afirmacoes.json").read_text())["afirmacoes"]
     eps = json.loads((BASE / "episodios.json").read_text())["episodios"]
     perguntas = [json.loads(Path(p).read_text()) for p in sorted(glob.glob(str(BASE / "perguntas" / "*.json")))]
-    # Os fatos do dia com a escada de porquês ficam nos registros do dia (runs/), como os outros posts.
-    posts = []
-    for arq in sorted((ROOT / "runs").glob("*.json")):
-        post = json.loads(arq.read_text()).get("post") or {}
-        if post.get("escada"):
-            posts.append({"dia": arq.stem[:10], "arquivo": f"runs/{arq.name}", **post})
     return {"afirmacoes": {a["id"]: a for a in afs}, "lista_afirmacoes": afs,
-            "episodios": {e["id"]: e for e in eps}, "perguntas": perguntas, "posts": posts}
+            "episodios": {e["id"]: e for e in eps}, "perguntas": perguntas}
 
 
 def series_do_site() -> tuple[dict, dict]:
@@ -373,69 +362,6 @@ def _promessa(texto: str) -> str | None:
     return None
 
 
-def checar_posts(posts: list[dict], perguntas: dict, A: dict) -> tuple[list[str], list[str], set[str]]:
-    """Os fatos do dia com escada (runs/): o tamanho do fato do dia (até 100 palavras, 3 parágrafos de até 50, título
-    de até 70 caracteres), as regras de texto em cada parágrafo e degrau, e as ligações com a pergunta-mãe."""
-    pe: list[str] = []
-    pa: list[str] = []
-    citadas: set[str] = set()
-    nomes = json.loads((ROOT / "config" / "modelo.json").read_text())["direcao"]["nomes"]
-    for x in posts:
-        dia = x["dia"]
-        p = perguntas.get(x.get("pergunta"))
-        termina = x.get("termina_em") or (p or {}).get("pressao")
-        # 7: cada fato do dia leva à pressão onde a corrente termina; a pergunta, se houver, é a dessa pressão.
-        if x.get("pergunta") and not p:
-            pe.append(f"{dia}: aponta para pergunta que não existe ({x.get('pergunta')})")
-            continue
-        if termina not in nomes:
-            pe.append(f"{dia}: não diz em que pressão a corrente termina (termina_em: {termina})")
-        if p and x.get("termina_em") and p.get("pressao") != x["termina_em"]:
-            pe.append(f"{dia}: a pergunta {p['id']} é da pressão {p.get('pressao')}, e a corrente termina em {x['termina_em']}")
-        alvos = ({"agora", "governo"} | {d["degrau"] for d in p["escada"]} | {d["id"] for d in p["escada"] if d.get("id")}) if p else set()
-        divisoes = {d["id"] for q in perguntas.values() for d in q["escada"] if d.get("leituras")}
-        ids_par = x.get("paragrafos_afirmacoes") or []
-        if len(ids_par) != len(x["paragrafos"]):
-            pe.append(f"{dia}: paragrafos_afirmacoes não tem uma lista por parágrafo")
-            ids_par = (ids_par + [[]] * len(x["paragrafos"]))[:len(x["paragrafos"])]
-        if len(x["titulo"]) > 70:
-            pa.append(f"{dia}: título com {len(x['titulo'])} caracteres")
-        _texto_ok(f"{dia}/titulo", x["titulo"], [i for ids in ids_par for i in ids], A, pe, pa)
-        total = 0
-        for k, (t, ids) in enumerate(zip(x["paragrafos"], ids_par)):
-            n = len(t.split())
-            total += n
-            if n > 50:
-                pa.append(f"{dia}/p{k + 1}: parágrafo com {n} palavras")
-            citadas |= set(ids)
-            _texto_ok(f"{dia}/p{k + 1}", t, ids, A, pe, pa)
-        if total > 100:
-            pe.append(f"{dia}: fato do dia com {total} palavras (até 100)")
-        if len(x["paragrafos"]) > 3:
-            pe.append(f"{dia}: fato do dia com {len(x['paragrafos'])} parágrafos (até 3)")
-        pe += promessas({"titulo": x["titulo"], "paragrafos": x["paragrafos"], "escada": x["escada"]}, dia)
-        for k, d in enumerate(x["escada"]):
-            onde = f"{dia}/degrau{k + 1}"
-            # Só o último degrau, o do bolso ("E o que isso muda para você?"), pode ficar sem rótulo.
-            if d.get("rotulo") is None and k != len(x["escada"]) - 1:
-                pe.append(f"{onde}: degrau sem rótulo antes do último")
-            elif d.get("rotulo") is not None and d["rotulo"] not in ROTULOS | {"fato"}:
-                pe.append(f"{onde}: rótulo desconhecido {d['rotulo']}")
-            if d.get("liga") and d["liga"] not in alvos:
-                pe.append(f"{onde}: liga a degrau que não existe ({d['liga']})")
-            if d.get("leituras") and d["leituras"] not in divisoes:
-                pe.append(f"{onde}: leituras de divisão que não existe ({d['leituras']})")
-            if d.get("teste"):
-                pe.append(f"{onde}: degrau com teste ({d['teste']}): o site não guarda teste nem confere depois")
-            if d.get("rotulo") == "consenso":
-                niveis = [A[i]["fonte"]["nivel"] for i in d["afirmacoes"] if i in A]
-                if niveis and min(niveis) >= 5:
-                    pa.append(f"{onde}: consenso apoiado só em notícia ou banco (nível {min(niveis)} ou pior)")
-            citadas |= set(d["afirmacoes"])
-            _texto_ok(onde, d["pergunta"] + " " + d["texto"], d["afirmacoes"], A, pe, pa)
-    return pe, pa, citadas
-
-
 def checar(base: dict, offline: bool) -> dict:
     A, E = base["afirmacoes"], base["episodios"]
     mensal, diario = series_do_site()
@@ -558,13 +484,7 @@ def checar(base: dict, offline: bool) -> dict:
         erros += [f"{p['id']}: {x}" for x in pe]
         avisos += [f"{p['id']}: {x}" for x in pa]
 
-    por_id = {p["id"]: p for p in base["perguntas"]}
-    me, ma, citadas_posts = checar_posts(base.get("posts", []), por_id, A)
-    posts = {"dias": [x["dia"] for x in base.get("posts", [])], "erros": me, "avisos": ma}
-    erros += [f"posts: {x}" for x in me]
-    avisos += [f"posts: {x}" for x in ma]
-
-    soltas = sorted(set(A) - citadas_posts - {i for _, _, ids in
+    soltas = sorted(set(A) - {i for _, _, ids in
                     (t for p in base["perguntas"] for t in textos_da_pergunta(p)) for i in ids}
                     - {i for e in E.values() for i in e["afirmacoes"]})
     if soltas:
@@ -573,16 +493,12 @@ def checar(base: dict, offline: bool) -> dict:
     for r in afirm.values():
         resumo[r["status"]] = resumo.get(r["status"], 0) + 1
     return {"em": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), "offline": offline,
-            "resumo": resumo, "erros": erros, "avisos": avisos, "perguntas": perguntas, "posts": posts,
-            "afirmacoes": afirm}
+            "resumo": resumo, "erros": erros, "avisos": avisos, "perguntas": perguntas, "afirmacoes": afirm}
 
 
 def main() -> None:
     offline = "--offline" in sys.argv
     rel = checar(carregar(), offline)
-    CONF.mkdir(parents=True, exist_ok=True)
-    out = CONF / f"{dt.date.today().isoformat()}-verifica{'-offline' if offline else ''}.json"
-    out.write_text(json.dumps(rel, ensure_ascii=False, indent=1) + "\n")
     if "--json" in sys.argv:
         print(json.dumps(rel, ensure_ascii=False, indent=1))
         return
@@ -593,7 +509,6 @@ def main() -> None:
     print(f"avisos: {len(rel['avisos'])}")
     for a in rel["avisos"]:
         print("  aviso", a)
-    print(f"relatório: {out.relative_to(ROOT)}")
     sys.exit(1 if rel["erros"] else 0)
 
 

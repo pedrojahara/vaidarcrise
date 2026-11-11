@@ -102,7 +102,7 @@ def fatos_de_dados(res: dict, snap: dict, mensal: dict | None = None, hist: dict
     def hist_ind(k: str) -> dict[str, float]:
         return (mensal.get("indicadores") or {}).get(k, {})
 
-    # As entradas da conta do nível vêm primeiro no fator delas.
+    # As entradas do PIB num ano ruim vêm primeiro no fator delas.
     ent = {x["id"]: x for x in (res.get("gar") or {}).get("entradas", [])}
     x = ent.get("crescimento")
     if x:

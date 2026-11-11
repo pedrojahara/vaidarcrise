@@ -102,6 +102,11 @@ GRAVES = [
                 r"(conferir|acompanhar|olhar|observar|monitorar|testar|checar|verificar|dizer|mostrar se|voltar)\b|"
                 r"\bvamos (conferir|acompanhar|ver se|testar|checar|monitorar)\b|o que o site vai conferir", re.I),
      "promete conferir ou acompanhar depois: o site faz a análise do fato e para aí"),
+    # O site não mostra bastidor nosso (Pedro, 11/11/2026): o texto fala do fato, e não da pesquisa, da conferência,
+    # dos testes ou das mudanças do site.
+    (re.compile(r"\b(no registro do site|ficha da história|caderno de fontes|a conferir\b|o site (conferiu|testou|mudou|"
+                r"refez|corrigiu)|nesta versão|versão anterior (do site|deste texto)|falha no programa|o programa que escreve)", re.I),
+     "mostra bastidor do site: o texto fala do fato, e não do nosso trabalho"),
     # O risco de recessão é qualitativo: nunca vira número.
     (re.compile(r"(\d+(,\d+)?\s*(%|por cento)\s*de (chance|probabilidade|risco)|(chance|probabilidade|risco) "
                 r"(de recessão )?(é |fica |sobe para |cai para |vai a |de )?(de )?\d+(,\d+)?\s*(%|por cento)|"

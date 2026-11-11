@@ -5,7 +5,7 @@
     <ul class="datas">
       {% for x in datas %}<li{% if x.tipo == 'pib' %} class="chave"{% endif %}><time datetime="{{ x.data }}">{{ x.dia }}</time><span>{{ x.rotulo }}{% if x.tipo == 'pib' %}. É o dado que diz se a economia encolheu.{% endif %}</span></li>{% endfor %}
     </ul>
-    <p class="peq fontes-datas">Fontes: calendário do <a href="https://servicodados.ibge.gov.br/api/v3/calendario/">IBGE</a>, Banco Central (Copom) e Fed.</p>
+    <p class="peq fontes-datas">Fontes: calendários do IBGE, do Banco Central e do banco central dos Estados Unidos.</p>
   </div>
   {% endif %}
   <div class="bloco">

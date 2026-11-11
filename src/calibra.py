@@ -3,9 +3,9 @@ no fim, os cortes da direção do risco (src/direcao.py).
 
 Segue as regras de config/modelo.json. Lê o painel de países em data/historico/painel_ocde.csv
 e as séries do Brasil em data/historico/series.json (src/historico.py), e grava:
-- config/calibracao.json: o que a conta do dia usa (coeficientes, cortes, faixas normais e a direção);
+- config/calibracao.json: o que a conta do dia usa (coeficientes, faixas normais e os cortes da direção);
 - data/historico/mensal.json: os indicadores e as entradas do Brasil mês a mês, como eram
-  conhecidos em cada mês, o alvo e o nível fora da amostra, para quem quiser refazer a conta.
+  conhecidos em cada mês, o alvo e o PIB num ano ruim fora da amostra, para quem quiser refazer a conta.
 
 Precisa de pandas e statsmodels, que a atualização diária não usa: pip install pandas statsmodels.
 Uso: python src/calibra.py
@@ -171,12 +171,6 @@ def auc(pontos: list[tuple[float, int]]) -> float | None:
     return ganha / (len(pos) * len(neg))
 
 
-def nivel_de(g: float, cortes: list[float]) -> int:
-    """Índice do nível (0 = Muito abaixo, 4 = Muito acima): quanto pior o cenário ruim, mais alto."""
-    return sum(1 for c in cortes if g <= c)
-
-
-# ------------------------------------------------------- crescimento em risco
 def entradas_brasil(series: dict, pib: list[tuple[int, float]], m: str, defas: dict) -> dict[str, float] | None:
     """As quatro entradas do Brasil com o que já tinha sido divulgado no fim do mês m."""
     n = mes_num(m)
@@ -279,7 +273,6 @@ def calibrar_gar(cfg: dict, series: dict, pib: dict[int, float], y: dict, meses:
         if a in coef_ano:
             fora[m] = gar.cenario(e, coef_ano[a])
     ruins = [h["ruim"] for h in hist.values()]
-    cortes = [percentil(ruins, p) for p in g["percentis_dos_cortes"]]
     normal = percentil(ruins, 50)
     referencia = {k: percentil([h["entradas"][k] for h in hist.values()], 50) for k in gar.ENTRADAS}
     faixas = {}
@@ -312,17 +305,9 @@ def calibrar_gar(cfg: dict, series: dict, pib: dict[int, float], y: dict, meses:
         b5.append(r - (c5["const"] + sum(c5[gar.NO_PAINEL[k]] * h[k] for k in gar.ENTRADAS) + c5["acoes_4t"] * b))
     b4, b0, b5 = np.array(b4), np.array(b0), np.array(b5)
 
-    # O nível fora da amostra: o cenário ruim de cada mês com coeficientes que não viram o ano dele,
-    # nos cortes da própria série fora da amostra.
-    vals = list(fora.values())
-    cortes_fora = [percentil(vals, p) for p in g["percentis_dos_cortes"]]
-    nivel_fora = {m: nivel_de(v, cortes_fora) for m, v in fora.items()}
+    # Fora da amostra: o cenário ruim de cada mês com coeficientes que não viram o ano dele.
     com_y = [(m, hist[m]["recessao_a_frente"]) for m in fora if hist[m]["recessao_a_frente"] is not None]
     cobertos = [(fora[m], hist[m]["realizado"]) for m in fora if hist[m]["realizado"] is not None]
-    altos = [hist[m]["realizado"] for m in fora if nivel_fora[m] >= 3 and hist[m]["realizado"] is not None]
-    outros = [hist[m]["realizado"] for m in fora if nivel_fora[m] < 3 and hist[m]["realizado"] is not None]
-    rec_altos = [y for m, y in com_y if nivel_fora[m] >= 3]
-    rec_outros = [y for m, y in com_y if nivel_fora[m] < 3]
     validacao = {
         "painel_ganho_sobre_a_media_do_pais": round(1 - pinball(u) / pinball(u0), 4),
         "painel_cobertura_fora_da_amostra": round(float(np.mean(u < 0)), 4),
@@ -332,29 +317,21 @@ def calibrar_gar(cfg: dict, series: dict, pib: dict[int, float], y: dict, meses:
         "brasil_bolsa_ganho_fora_da_amostra": round(1 - pinball(b5) / pinball(b4), 4),
         "brasil_meses_fora_da_amostra": len(fora),
         "brasil_auc_recessao_a_frente": round(auc([(-fora[m], yy) for m, yy in com_y]), 4),
-        "brasil_auc_nivel": round(auc([(nivel_fora[m], yy) for m, yy in com_y]), 4),
         "brasil_meses_com_resposta": len(com_y),
         "brasil_cobertura_sem_ajuste": round(sum(r < v for v, r in cobertos) / len(cobertos), 4),
         "brasil_cobertura_com_ajuste": round(sum(r < v + ajuste for v, r in cobertos) / len(cobertos), 4),
         "brasil_meses_com_pib_realizado": len(cobertos),
-        "acima_crescimento_medio_seguinte": round(gar.pct(sum(altos) / len(altos)), 2) if altos else None,
-        "demais_crescimento_medio_seguinte": round(gar.pct(sum(outros) / len(outros)), 2) if outros else None,
-        "acima_meses_com_recessao_a_frente": round(sum(rec_altos) / len(rec_altos), 4) if rec_altos else None,
-        "demais_meses_com_recessao_a_frente": round(sum(rec_outros) / len(rec_outros), 4) if rec_outros else None,
-        "acima_pior_crescimento_seguinte": round(gar.pct(min(altos)), 2) if altos else None,
-        "demais_pior_crescimento_seguinte": round(gar.pct(min(outros)), 2) if outros else None,
     }
     bloco = {
         "painel": {"paises": int(painel.pais.nunique()), "trimestres": int(len(treino_total)),
                    "inicio": str(treino_total.q.min()), "fim": str(treino_total.q.max())},
         "coeficientes": q10, "ajuste": ajuste,
-        "referencia": referencia, "faixas": faixas, "cortes": cortes, "normal": normal,
+        "referencia": referencia, "faixas": faixas, "normal": normal,
         "historico": {"inicio": min(hist), "fim": max(hist), "meses": len(hist)},
         "validacao": validacao,
     }
     mensal_gar = {m: {"ruim": round(h["ruim"], 3),
                       "fora_da_amostra": round(fora[m], 3) if m in fora else None,
-                      "nivel_fora_da_amostra": nivel_fora.get(m),
                       **{k: round(v, 3) for k, v in h["entradas"].items()}} for m, h in hist.items()}
     return bloco, mensal_gar
 
@@ -377,7 +354,7 @@ def main() -> None:
     y = {m: alvo(m, eps, ultimo_pib, h) for m in todos_meses}
     amostra = [m for m in todos_meses if y[m] is not None]
 
-    # Os indicadores do Resumo: faixa normal (metade dos meses desde 2002) e a régua de cada um.
+    # Os indicadores: faixa normal (metade dos meses desde 2002) e a régua de cada um.
     indicadores = {}
     for k, s in xs.items():
         vals = [s[m] for m in sorted(s)]
@@ -400,14 +377,11 @@ def main() -> None:
         "indicadores": indicadores,
     }
     SAIDA.write_text(json.dumps(res, ensure_ascii=False, indent=1))
-    historico = [{"mes": m, "nivel": v["nivel_fora_da_amostra"], "recessao_a_frente": y.get(m)}
-                 for m, v in sorted(mensal_gar.items()) if v["nivel_fora_da_amostra"] is not None]
     MENSAL.write_text(json.dumps({
         "gerado_em": res["calibrado_em"],
         "indicadores": {k: {m: round(v, 4) for m, v in sorted(s.items())} for k, s in xs.items()},
         "recessao_a_frente": {m: y[m] for m in todos_meses if y[m] is not None},
         "crescimento_em_risco": mensal_gar,
-        "nivel_fora_da_amostra": historico,
     }, ensure_ascii=False, separators=(",", ":")))
     # Os cortes da direção do risco e o teste desde 2004 (src/direcao.py), com o mesmo histórico.
     res["direcao"] = direcao.calibrar(hist["coletado_em"][:7])
@@ -416,7 +390,7 @@ def main() -> None:
     gb = bloco_gar
     print(f"recessões: {', '.join(f'{num_tri(a)}–{num_tri(b)}' for a, b in eps)}")
     print(f"painel: {gb['painel']} | q10 {({k: round(v, 4) for k, v in gb['coeficientes'].items()})} | ajuste {gb['ajuste']:.3f}")
-    print(f"Brasil {gb['historico']} | cortes {[round(c, 3) for c in gb['cortes']]} | normal {gb['normal']:.3f}")
+    print(f"Brasil {gb['historico']} | normal {gb['normal']:.3f}")
     print(f"referência {({k: round(v, 3) for k, v in gb['referencia'].items()})}")
     print("validação:", json.dumps(gb["validacao"], ensure_ascii=False))
 

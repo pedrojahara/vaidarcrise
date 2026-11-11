@@ -1,6 +1,6 @@
 # A tabela de tradução
 
-Esta tabela diz como o site traduz um fato econômico para a vida de quem lê: o que muda, para que lado, quanto, quando e para quem. Ela existe porque o site acompanha o risco de recessão e o que ele muda na vida das pessoas (decisão do Pedro em 9/11/2026), e "os importados ficam mais caros" diz a direção sem dizer o tamanho. O jeito de escrever a tradução está no [PERSONA.md](PERSONA.md), em "O que a notícia muda na vida"; aqui ficam as regras de conta e de onde vem cada uma.
+Esta tabela diz como o site traduz um fato econômico para a vida de quem lê: o que muda, para que lado, quanto, quando e para quem. Ela existe porque o site acompanha o risco de recessão e o que ele muda na vida das pessoas, em casa e no trabalho, e "os importados ficam mais caros" diz a direção sem dizer o tamanho. O jeito de escrever a tradução está no [PERSONA.md](PERSONA.md), em "O que a notícia muda na vida"; aqui ficam as regras de conta e de onde vem cada uma.
 
 ## Por que a tabela é fixa
 
@@ -30,6 +30,7 @@ O texto as chama pela situação, sem nome inventado. No texto do dia entram só
 | Quem vive do salário mínimo ou da aposentadoria do INSS | Renda, preços | `traduz minimo`, `traduz precos` |
 | Quem tem financiamento e cartão | Crédito, emprego | `traduz parcela`, `traduz credito`, `traduz emprego` |
 | Quem tem dinheiro guardado | Dinheiro guardado | `traduz guardado` |
+| Quem dirige uma empresa, tem o próprio negócio ou trabalha nele | Crédito da empresa, custo, vendas, contratação | `traduz dolar`, `traduz parcela`, `traduz emprego`, `calc`; ver "O trabalho" abaixo |
 
 Quando quem sente depende do que a pessoa compra ou do trabalho que faz (um imposto sobre carro, a escala de trabalho), o texto diz para quem vale sem passar pelas famílias.
 
@@ -106,6 +107,13 @@ Quando quem sente depende do que a pessoa compra ou do trabalho que faz (um impo
 **De onde vem.** A notícia e o documento oficial (a lei, o projeto, a exposição de motivos).
 **Força.** A da fonte. Proposta ainda não é regra, e o texto diz o estágio.
 **Prazo e para quem.** Quando a regra começa a valer, e para quem ela vale.
+
+### O trabalho: crédito, custo e vendas da empresa
+
+**A regra.** A leitora sente a economia também pela empresa que dirige ou em que trabalha, e a tradução usa as mesmas contas, com o número do lado da empresa. O insumo ou o produto importado sobe com o dólar, pela regra do repasse (`traduz dolar`), que é média e vale para o conjunto dos preços, e não para um item. O empréstimo da empresa (capital de giro, desconto de duplicata) só tem conta quando a notícia ou o Banco Central dá o juro: aí a parcela de um empréstimo de exemplo sai de `traduz parcela`, dita como exemplo. As vendas e a produção de um setor vêm do número da fonte (as pesquisas mensais do IBGE do comércio, dos serviços e da indústria), com o mês. O imposto ou o benefício por empresa sai de `calc`, quando a fonte dá quantas empresas ele atinge.
+**De onde vem.** As regras acima; o juro da notícia ou do Banco Central; as pesquisas do IBGE.
+**Força.** A das regras que ela usa. Sem o juro ou o dado do setor na fonte, o texto diz a direção e quem decide o tamanho (o banco, o fornecedor, o governo), sem número.
+**Prazo e para quem.** O do fato. Quem decide preço, compra, crédito ou contratação numa empresa, e quem trabalha nela.
 
 ### Sem número: combustível e conta de luz
 
