@@ -1,0 +1,4774 @@
+{
+ "id": "2026-11-11T0500",
+ "gerado_em": "2026-11-11T05:00:06-03:00",
+ "regras": {
+  "config_sha256": "35f3c3a2121e7f7c7b43119aed172143dc07cef1f3a828cb6065cf5bff75b556",
+  "calibracao_sha256": "df166b078e90c473619e3a0ecc17ceec8fafecf0f6563abd3d35761ee22c3495"
+ },
+ "insumos": {
+  "indicadores_coletados_em": "2026-11-11T05:00:29-03:00",
+  "erros_coleta": [],
+  "pib": [
+   {
+    "trimestre": "1T23",
+    "periodo": "202301",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T23",
+    "periodo": "202302",
+    "var_qoq": 0.8
+   },
+   {
+    "trimestre": "3T23",
+    "periodo": "202303",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T23",
+    "periodo": "202304",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "1T24",
+    "periodo": "202401",
+    "var_qoq": 0.7
+   },
+   {
+    "trimestre": "2T24",
+    "periodo": "202402",
+    "var_qoq": 1.7
+   },
+   {
+    "trimestre": "3T24",
+    "periodo": "202403",
+    "var_qoq": 0.9
+   },
+   {
+    "trimestre": "4T24",
+    "periodo": "202404",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "1T25",
+    "periodo": "202501",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T25",
+    "periodo": "202502",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "3T25",
+    "periodo": "202503",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T25",
+    "periodo": "202504",
+    "var_qoq": 0.2
+   },
+   {
+    "trimestre": "1T26",
+    "periodo": "202601",
+    "var_qoq": 1.1
+   },
+   {
+    "trimestre": "2T26",
+    "periodo": "202602",
+    "var_qoq": 0.5
+   }
+  ],
+  "focus": {
+   "PIB Total": [
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2026",
+     "Mediana": 1.7546,
+     "numeroRespondentes": 118
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2027",
+     "Mediana": 1.1513,
+     "numeroRespondentes": 117
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2028",
+     "Mediana": 1.8,
+     "numeroRespondentes": 88
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2029",
+     "Mediana": 2.0,
+     "numeroRespondentes": 81
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2030",
+     "Mediana": 2.0,
+     "numeroRespondentes": 79
+    }
+   ],
+   "IPCA": [
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2026",
+     "Mediana": 5.2195,
+     "numeroRespondentes": 146
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2027",
+     "Mediana": 4.9005,
+     "numeroRespondentes": 146
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2028",
+     "Mediana": 4.0,
+     "numeroRespondentes": 133
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2029",
+     "Mediana": 4.0,
+     "numeroRespondentes": 122
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2030",
+     "Mediana": 3.935,
+     "numeroRespondentes": 114
+    }
+   ],
+   "Selic": [
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2026",
+     "Mediana": 13.75,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2027",
+     "Mediana": 12.5,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2028",
+     "Mediana": 11.0,
+     "numeroRespondentes": 126
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2029",
+     "Mediana": 10.25,
+     "numeroRespondentes": 116
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2030",
+     "Mediana": 10.0,
+     "numeroRespondentes": 113
+    }
+   ],
+   "Câmbio": [
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2026",
+     "Mediana": 5.35,
+     "numeroRespondentes": 122
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2027",
+     "Mediana": 5.4,
+     "numeroRespondentes": 121
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2028",
+     "Mediana": 5.45,
+     "numeroRespondentes": 94
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2029",
+     "Mediana": 5.5,
+     "numeroRespondentes": 91
+    },
+    {
+     "Data": "2026-11-06",
+     "DataReferencia": "2030",
+     "Mediana": 5.5075,
+     "numeroRespondentes": 88
+    }
+   ],
+   "IPCA 12m": {
+    "Data": "2026-11-06",
+    "Mediana": 5.0117,
+    "numeroRespondentes": 134
+   }
+  },
+  "noticias": {
+   "coletado_em": "2026-11-11T08:00:06+00:00",
+   "janela_horas": 32,
+   "por_veiculo": {
+    "Valor": 40,
+    "Estadão": 17,
+    "Gazeta do Povo": 14,
+    "InfoMoney": 40,
+    "Poder360": 40,
+    "g1": 22,
+    "Folha": 40,
+    "Agência Brasil": 11
+   },
+   "status_fontes": {
+    "Agência Brasil": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Folha": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 85
+    },
+    "Estadão": {
+     "http": 200,
+     "itens_no_feed": 20,
+     "na_janela": 19
+    },
+    "Valor": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 100
+    },
+    "InfoMoney": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Poder360": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Gazeta do Povo": {
+     "http": 200,
+     "itens_no_feed": 30,
+     "na_janela": 23
+    },
+    "g1": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 47
+    },
+    "GDELT": {
+     "http": 200,
+     "erro": "The specified phrase is too short.\n"
+    }
+   },
+   "n_itens": 224
+  }
+ },
+ "cobertura": {
+  "dias": [
+   "2026-11-10"
+  ],
+  "no_acervo": 387,
+  "na_cesta": 224,
+  "coletas_24h": 26
+ },
+ "llm": {
+  "ok": true,
+  "meta": {
+   "etapa": "classificar",
+   "modelo_pedido": "sonnet",
+   "prompt_sha256": "e828ad7aa47f991eb2e632ac83b24ecc296f8febd07666f99d81c109d1cd3aa4",
+   "system_sha256": "a895cc5d3b7347f63da836b29fc891ffbad42ffc9190067251167e64b02314b3",
+   "returncode": 0,
+   "is_error": false,
+   "custo_usd": 0.234132,
+   "turnos": 2,
+   "duracao_s": 46,
+   "modelos": [
+    "claude-sonnet-5-5"
+   ],
+   "permission_denials": [],
+   "session_id": "8cf6ef9b-c19e-41a4-93d7-087365025be3"
+  },
+  "saida": {
+   "eventos": [
+    {
+     "noticia_ids": [
+      "n002",
+      "n028",
+      "n011",
+      "n029",
+      "n039",
+      "n003"
+     ],
+     "outras_ids": [
+      "n210"
+     ],
+     "titulo_evento": "Governo e Senado preparam projeto de ajuste nas contas de R$ 50 bi a R$ 80 bi",
+     "estagio": "anuncio",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "governo_federal",
+     "instrumento": "regra_fiscal",
+     "objetivo": "cumprir a meta das contas em 2027",
+     "fator": "contas",
+     "direcao": -1,
+     "magnitude": 2,
+     "historia": "contas_governo",
+     "tema_novo": "",
+     "marco": true,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O governo quer bloquear gastos, cortar isenções e mudar pisos, o que melhora as contas e acalma o juro longo. O corte também tira dinheiro da economia em 2027, e o projeto só vale se o Congresso aprovar."
+    },
+    {
+     "noticia_ids": [
+      "n173",
+      "n164",
+      "n176",
+      "n161",
+      "n168",
+      "n129"
+     ],
+     "outras_ids": [
+      "n119",
+      "n200",
+      "n169",
+      "n048",
+      "n127",
+      "n148",
+      "n008",
+      "n047",
+      "n053",
+      "n051",
+      "n026",
+      "n101"
+     ],
+     "titulo_evento": "Ata do Copom indica Selic em 13,75% por mais tempo, com inflação e contas em risco",
+     "estagio": "decidido",
+     "chance_aprovacao": null,
+     "origem": "banco_central",
+     "decisor": "banco_central",
+     "instrumento": "juros_cambio",
+     "objetivo": "conter a inflação e as expectativas de preços",
+     "fator": "juro",
+     "direcao": 1,
+     "magnitude": 2,
+     "historia": "juro_inflacao",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O Banco Central listou quatro choques de oferta, entre eles o fim da escala 6x1, e disse que o juro alto vai durar mais. O crédito segue caro para famílias e empresas, e isso segura investimento e consumo."
+    },
+    {
+     "noticia_ids": [
+      "n046",
+      "n037",
+      "n031",
+      "n152",
+      "n187"
+     ],
+     "outras_ids": [
+      "n156"
+     ],
+     "titulo_evento": "Dólar sobe 1,46% e fecha perto de R$ 5,60, o maior valor desde julho de 2025",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "mercado",
+     "direcao": 1,
+     "magnitude": 2,
+     "historia": "desconfianca_eleicao",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": true,
+     "duplicata_de": null,
+     "porque": "A inflação acima do esperado nos EUA e o juro alto por aqui empurraram o dólar. Dólar mais caro encarece importados e alimentos, e a inflação maior segura o corte de juros."
+    },
+    {
+     "noticia_ids": [
+      "n134",
+      "n141",
+      "n175",
+      "n171",
+      "n144"
+     ],
+     "outras_ids": [
+      "n033",
+      "n068",
+      "n124",
+      "n032",
+      "n019"
+     ],
+     "titulo_evento": "Inflação dos EUA sobe 0,4% em outubro, e cresce a aposta de alta de juros em dezembro",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": 1,
+     "magnitude": 2,
+     "historia": "fed_juros_eua",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Preços nos EUA subiram mais que os 0,3% esperados, e dirigentes do banco central americano falam em elevar os juros em dezembro. Juro maior lá fora atrai dinheiro para os EUA e pressiona o dólar e o juro daqui."
+    },
+    {
+     "noticia_ids": [
+      "n036",
+      "n207",
+      "n105",
+      "n162"
+     ],
+     "outras_ids": [
+      "n123",
+      "n158",
+      "n159",
+      "n180",
+      "n182",
+      "n213",
+      "n059"
+     ],
+     "titulo_evento": "Nvidia perde US$ 470 bi em dois dias com investigação sobre o presidente-executivo",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "queda_das_acoes_de_tecnologia",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A queda das ações de tecnologia nos EUA pode chegar ao dólar e à Bolsa daqui, porque investidores vendem ativos de risco no mundo todo. O efeito direto sobre o PIB brasileiro é pequeno por enquanto."
+    },
+    {
+     "noticia_ids": [
+      "n111",
+      "n151",
+      "n167",
+      "n015"
+     ],
+     "outras_ids": [
+      "n139",
+      "n063"
+     ],
+     "titulo_evento": "Petróleo Brent cai abaixo de US$ 90 pela primeira vez desde agosto",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": -1,
+     "magnitude": 1,
+     "historia": "guerra_petroleo",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O mercado aposta num acordo de paz entre EUA e Irã, e o petróleo fica mais barato lá fora. Combustível e frete mais baratos aliviam a inflação aqui, mas a queda ainda depende de a negociação se confirmar."
+    },
+    {
+     "noticia_ids": [
+      "n017",
+      "n021",
+      "n067"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Câmara aprova MP com R$ 13,5 bi de crédito a empresas afetadas pelo tarifaço",
+     "estagio": "em_votacao",
+     "chance_aprovacao": 0.8,
+     "origem": "politica",
+     "decisor": "congresso",
+     "instrumento": "credito_publico",
+     "objetivo": "apoiar exportadores afetados por tarifas dos EUA e custos internacionais",
+     "fator": "credito",
+     "direcao": -1,
+     "magnitude": 1,
+     "historia": "tarifas_eua",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A Câmara aprovou a MP com recursos da União e do BNDES, e o texto segue para o Senado. O crédito dá fôlego de caixa a exportadores atingidos pelas tarifas dos EUA."
+    },
+    {
+     "noticia_ids": [
+      "n012",
+      "n035",
+      "n038",
+      "n115"
+     ],
+     "outras_ids": [
+      "n022",
+      "n052",
+      "n069",
+      "n098",
+      "n062"
+     ],
+     "titulo_evento": "Câmara aprova MP que renegocia dívidas rurais, e o texto vai ao Senado",
+     "estagio": "em_votacao",
+     "chance_aprovacao": 0.8,
+     "origem": "politica",
+     "decisor": "congresso",
+     "instrumento": "credito_publico",
+     "objetivo": "renegociar dívidas de produtores rurais, inclusive os afetados pelo clima",
+     "fator": "credito",
+     "direcao": -1,
+     "magnitude": 1,
+     "historia": "credito_inadimplencia",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261110-07",
+     "porque": "A Câmara aprovou a MP, que vence na quarta, com mudanças pedidas pelo agro. Se o Senado também aprovar, produtores endividados ganham prazo e o campo evita calote em cadeia."
+    },
+    {
+     "noticia_ids": [
+      "n016",
+      "n034",
+      "n094",
+      "n080"
+     ],
+     "outras_ids": [
+      "n165",
+      "n047"
+     ],
+     "titulo_evento": "Ministro do STF diz que decide sobre transição do fim da escala 6x1 nos próximos dias",
+     "estagio": "anuncio",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "tribunal",
+     "instrumento": "outro",
+     "objetivo": "",
+     "fator": "atividade",
+     "direcao": 1,
+     "magnitude": 2,
+     "historia": "nova",
+     "tema_novo": "fim-da-escala-6x1",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O ministro Flávio Dino indicou que aceita flexibilizar a transição por acordo coletivo. A regra define quando as empresas passam a pagar mais por menos horas trabalhadas, o que afeta custo e preços no comércio e na indústria."
+    },
+    {
+     "noticia_ids": [
+      "n102",
+      "n192"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Governo prorroga até 9 de dezembro o fim de impostos sobre gasolina e etanol",
+     "estagio": "decidido",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "governo_federal",
+     "instrumento": "imposto",
+     "objetivo": "",
+     "fator": "contas",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "contas_governo",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O governo abre mão de R$ 3,57 bilhões em 30 dias para segurar o preço do combustível. Isso alivia a inflação no curto prazo, mas piora as contas do governo."
+    },
+    {
+     "noticia_ids": [
+      "n130"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Atraso no cartão de crédito chega a 10% das dívidas no 3º trimestre",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "credito",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "credito_inadimplencia",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O atraso subiu 0,9 ponto contra setembro do ano passado. Famílias que atrasam contas gastam menos, e os bancos ficam mais cautelosos para emprestar."
+    },
+    {
+     "noticia_ids": [
+      "n065"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Recuperação judicial bate recorde, com 8,5 mil empresas até o 3º trimestre",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "credito",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "credito_inadimplencia",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O número subiu 5,4% no trimestre, com o agronegócio na frente. Mais empresas em crise significam menos investimento e mais demissões."
+    },
+    {
+     "noticia_ids": [
+      "n181"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Varejo recua 4% em outubro contra um ano antes, diz índice da Cielo",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "atividade",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "ritmo_emprego",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A queda foi um pouco menor que os 4,2% de setembro, mas as vendas seguem abaixo das de um ano antes. Consumo fraco pesa sobre o PIB do fim do ano."
+    },
+    {
+     "noticia_ids": [
+      "n086",
+      "n084"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Ex-secretário do Tesouro prevê recessão, e gestora vê estagflação em 2027",
+     "estagio": "previsao",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "atividade",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "ritmo_emprego",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Carlos Kawall e a gestora Legacy ligam o risco ao juro alto e à dívida em alta. A Legacy zerou posições no Brasil até conhecer a equipe econômica, o que reduz a entrada de dinheiro."
+    },
+    {
+     "noticia_ids": [
+      "n116"
+     ],
+     "outras_ids": [
+      "n131"
+     ],
+     "titulo_evento": "Executivo da Moody's diz que pressões fiscais aumentaram e podem levar a rebaixamento",
+     "estagio": "rumor",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "mercado",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "desconfianca_eleicao",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Um rebaixamento da nota do país encarece o juro que o governo paga e afasta investidor de fora. O pesa mais se o ajuste das contas não vier no tamanho esperado."
+    }
+   ]
+  }
+ },
+ "eventos_novos": [
+  "ev-20261111-01",
+  "ev-20261111-02",
+  "ev-20261111-03",
+  "ev-20261111-04",
+  "ev-20261111-05",
+  "ev-20261111-06",
+  "ev-20261111-07",
+  "ev-20261111-08",
+  "ev-20261111-09",
+  "ev-20261111-10",
+  "ev-20261111-11",
+  "ev-20261111-12",
+  "ev-20261111-13"
+ ],
+ "eventos_descartados": [
+  {
+   "noticia_ids": [
+    "n046",
+    "n037",
+    "n031",
+    "n152",
+    "n187"
+   ],
+   "outras_ids": [
+    "n156"
+   ],
+   "titulo_evento": "Dólar sobe 1,46% e fecha perto de R$ 5,60, o maior valor desde julho de 2025",
+   "estagio": "dado",
+   "chance_aprovacao": null,
+   "origem": "dados",
+   "decisor": "nenhum",
+   "instrumento": "nenhum",
+   "objetivo": "",
+   "fator": "mercado",
+   "direcao": 1,
+   "magnitude": 2,
+   "historia": "desconfianca_eleicao",
+   "tema_novo": "",
+   "marco": false,
+   "previsao_virou": false,
+   "sem_medida": false,
+   "ja_no_preco": false,
+   "ja_nos_indicadores": true,
+   "duplicata_de": null,
+   "porque": "A inflação acima do esperado nos EUA e o juro alto por aqui empurraram o dólar. Dólar mais caro encarece importados e alimentos, e a inflação maior segura o corte de juros.",
+   "motivo": "já medido pelos indicadores",
+   "fontes": [
+    {
+     "veiculo": "Agência Brasil",
+     "titulo": "Dólar sobe 1,46% e fecha no maior valor em 15 meses",
+     "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-sobe-146-e-fecha-no-maior-valor-em-15-meses",
+     "publicado_em": "2026-11-10T20:25-03:00"
+    },
+    {
+     "veiculo": "Poder360",
+     "titulo": "Dólar vai R$ 5,58, maior valor desde julho de 2025; Bolsa cai",
+     "url": "https://www.poder360.com.br/poder-economia/dolar-vai-a-r-558-maior-valor-desde-julho-de-2025-bolsa-cai/",
+     "publicado_em": "2026-11-10T21:25+00:00"
+    },
+    {
+     "veiculo": "Gazeta do Povo",
+     "titulo": "Dólar dispara e fecha na maior cotação desde julho de 2025",
+     "url": "https://www.gazetadopovo.com.br/economia/dolar-sobe-148-e-fecha-a-r-558-maior-cotacao-desde-julho-de-2025/",
+     "publicado_em": "2026-11-10T21:49+00:00"
+    },
+    {
+     "veiculo": "InfoMoney",
+     "titulo": "Dólar sobe e permanece acima de R$ 5,50 com ata do Copom e inflação dos EUA no radar",
+     "url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-10112026/",
+     "publicado_em": "2026-11-10T12:20+00:00"
+    },
+    {
+     "veiculo": "Folha",
+     "titulo": "Dólar abre em alta com ata do Copom e expectativa por dados de inflação nos EUA",
+     "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/dolar-abre-em-alta-com-ata-do-copom-e-expectativa-por-dados-de-inflacao-nos-eua.shtml",
+     "publicado_em": "2026-11-10T09:55-03:00"
+    }
+   ]
+  },
+  {
+   "noticia_ids": [
+    "n012",
+    "n035",
+    "n038",
+    "n115"
+   ],
+   "outras_ids": [
+    "n022",
+    "n052",
+    "n069",
+    "n098",
+    "n062"
+   ],
+   "titulo_evento": "Câmara aprova MP que renegocia dívidas rurais, e o texto vai ao Senado",
+   "estagio": "em_votacao",
+   "chance_aprovacao": 0.8,
+   "origem": "politica",
+   "decisor": "congresso",
+   "instrumento": "credito_publico",
+   "objetivo": "renegociar dívidas de produtores rurais, inclusive os afetados pelo clima",
+   "fator": "credito",
+   "direcao": -1,
+   "magnitude": 1,
+   "historia": "credito_inadimplencia",
+   "tema_novo": "",
+   "marco": false,
+   "previsao_virou": false,
+   "sem_medida": false,
+   "ja_no_preco": false,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261110-07",
+   "porque": "A Câmara aprovou a MP, que vence na quarta, com mudanças pedidas pelo agro. Se o Senado também aprovar, produtores endividados ganham prazo e o campo evita calote em cadeia.",
+   "motivo": "mesmo fato do evento ev-20261110-07",
+   "fontes": [
+    {
+     "veiculo": "Gazeta do Povo",
+     "titulo": "Câmara aprova MP da dívida rural após acordo com agro e inclusão de jabutis",
+     "url": "https://www.gazetadopovo.com.br/economia/camara-aprova-mp-da-divida-rural-apos-acordo-com-agro-e-inclusao-de-jabutis/",
+     "publicado_em": "2026-11-11T00:16+00:00"
+    },
+    {
+     "veiculo": "Poder360",
+     "titulo": "Câmara aprova MP da renegociação de dívidas rurais",
+     "url": "https://www.poder360.com.br/poder-congresso/camara-aprova-mp-da-renegociacao-de-dividas-rurais/",
+     "publicado_em": "2026-11-10T21:36+00:00"
+    },
+    {
+     "veiculo": "g1",
+     "titulo": "Relator atende agronegócio e MP que renegocia dívidas rurais é aprovada na Câmara",
+     "url": "https://g1.globo.com/politica/noticia/2026/11/10/relator-atende-agronegocio-e-mp-que-renegocia-dividas-rurais-e-aprovada-na-camara.ghtml",
+     "publicado_em": "2026-11-10T21:24+00:00"
+    },
+    {
+     "veiculo": "Folha",
+     "titulo": "Relator faz novas concessões, e renegociação de dívidas rurais avança no Congresso",
+     "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/agro/2026/11/relator-faz-novas-concessoes-e-renegociacao-de-dividas-rurais-avanca-no-congresso.shtml",
+     "publicado_em": "2026-11-10T15:28-03:00"
+    }
+   ]
+  }
+ ],
+ "resultado": {
+  "nivel": {
+   "indice": 2,
+   "nome": "Normal",
+   "anterior": 2,
+   "bruto": 2,
+   "nome_bruto": "Normal"
+  },
+  "gar": {
+   "entradas": [
+    {
+     "id": "tendencia",
+     "fator": "atividade",
+     "nome": "Crescimento médio em 10 anos",
+     "unidade": "%",
+     "valor": 1.7328366710913756,
+     "ref": "2T2026",
+     "referencia": 2.4697807384106563,
+     "coef": -0.20407155569770025,
+     "faixa_normal": [
+      1.2052,
+      3.3021
+     ],
+     "escala": [
+      0.3054,
+      3.9289
+     ],
+     "efeito": 0.15038932228003635
+    },
+    {
+     "id": "crescimento",
+     "fator": "atividade",
+     "nome": "Crescimento em 12 meses",
+     "unidade": "%",
+     "valor": 1.3821346612817385,
+     "ref": "2026-08",
+     "referencia": 2.029441313073013,
+     "coef": 0.2281557601628648,
+     "faixa_normal": [
+      0.4274,
+      4.1388
+     ],
+     "escala": [
+      -6.2893,
+      9.267
+     ],
+     "efeito": -0.14768674119791708
+    },
+    {
+     "id": "juro",
+     "fator": "juro",
+     "nome": "Selic: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -1.25,
+     "ref": "2026-11-11",
+     "nivel": 13.75,
+     "antes": 15.0,
+     "referencia": -0.375,
+     "coef": -0.1473323685958321,
+     "faixa_normal": [
+      -3.0,
+      2.0
+     ],
+     "escala": [
+      -6.31,
+      8.655
+     ],
+     "efeito": 0.12891582252135309
+    },
+    {
+     "id": "inflacao",
+     "fator": "juro",
+     "nome": "Inflação: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -0.5899999999999999,
+     "ref": "2026-09",
+     "nivel": 4.58,
+     "antes": 5.17,
+     "referencia": -0.06499999999999995,
+     "coef": -0.12500236363708112,
+     "faixa_normal": [
+      -1.665,
+      1.3725
+     ],
+     "escala": [
+      -8.2538,
+      6.2048
+     ],
+     "efeito": 0.06562624090946757
+    }
+   ],
+   "ruim": -0.49423883953664693,
+   "cenario_ruim": -1.7876180427753297,
+   "cenario_normal": -1.8914573730774542,
+   "cortes": [
+    -2.253090277294695,
+    -1.094150109523146,
+    -0.07323292299512922,
+    0.7382055828202851
+   ],
+   "ref_pib": "2T2026"
+  },
+  "indicadores": [
+   {
+    "id": "ibcbr",
+    "fator": "atividade",
+    "nome": "IBC-Br",
+    "unidade": "%",
+    "definicao": "IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores.",
+    "direcao": -1,
+    "faixa_normal": [
+     -0.178879,
+     1.409462
+    ],
+    "escala": [
+     -3.422733,
+     3.418644
+    ],
+    "valor": -0.6424554746393363,
+    "ref": "2026-08",
+    "situacao": "pior"
+   },
+   {
+    "id": "focus_pib",
+    "fator": "atividade",
+    "nome": "PIB esperado pelo Focus",
+    "unidade": "%",
+    "definicao": "Crescimento do PIB esperado para os próximos 12 meses: mediana do Focus para o ano corrente e o seguinte, ponderada pelos meses que faltam em cada um.",
+    "direcao": -1,
+    "faixa_normal": [
+     1.617708,
+     3.499375
+    ],
+    "escala": [
+     -2.139717,
+     5.282417
+    ],
+    "valor": 1.201575,
+    "ref": "2026-11-06",
+    "ano": 1.7546,
+    "ano_seguinte": 1.1513,
+    "situacao": "pior"
+   },
+   {
+    "id": "juro_real",
+    "fator": "juro",
+    "nome": "Juro real",
+    "unidade": "% ao ano",
+    "definicao": "Selic meta (BCB 432) descontada da inflação esperada para 12 meses (Focus, suavizada): (1 + Selic) / (1 + inflação esperada) − 1.",
+    "direcao": 1,
+    "faixa_normal": [
+     4.062007,
+     9.133549
+    ],
+    "escala": [
+     -1.195693,
+     14.660898
+    ],
+    "valor": 8.321263249714072,
+    "ref": "2026-11-11",
+    "selic": 13.75,
+    "inflacao_esperada": 5.0117,
+    "focus_data": "2026-11-06",
+    "situacao": "normal"
+   },
+   {
+    "id": "comprometimento",
+    "fator": "credito",
+    "nome": "Renda comprometida com dívidas",
+    "unidade": "p.p.",
+    "definicao": "Comprometimento de renda das famílias com dívidas, dessazonalizado (BCB 29034), menos a média dos 36 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.268333,
+     1.686944
+    ],
+    "escala": [
+     -1.879444,
+     3.762167
+    ],
+    "valor": 1.8797222222222203,
+    "ref": "2026-08",
+    "nivel": 28.99,
+    "situacao": "pior"
+   },
+   {
+    "id": "tesouro",
+    "fator": "mercado",
+    "nome": "Juro do Tesouro IPCA+",
+    "unidade": "p.p.",
+    "definicao": "Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (Tesouro Direto, venda pela manhã) menos a sua mediana nos 3 anos anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.95,
+     0.845
+    ],
+    "escala": [
+     -2.2292,
+     2.1344
+    ],
+    "valor": 0.46999999999999975,
+    "ref": "2026-11-09",
+    "nivel": 7.87,
+    "mediana": 7.4,
+    "vencimento": "2035-05-15",
+    "situacao": "normal"
+   },
+   {
+    "id": "dolar",
+    "fator": "mercado",
+    "nome": "Dólar",
+    "unidade": "%",
+    "definicao": "Variação do dólar PTAX (BCB 1) em 3 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -4.151625,
+     5.11632
+    ],
+    "escala": [
+     -14.383365,
+     27.223675
+    ],
+    "valor": 9.569687812726869,
+    "ref": "2026-11-10",
+    "nivel": 5.584,
+    "situacao": "pior"
+   },
+   {
+    "id": "divida",
+    "fator": "contas",
+    "nome": "Dívida pública",
+    "unidade": "p.p. do PIB",
+    "definicao": "Variação da dívida bruta do governo geral (BCB 13762) em 12 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -1.74,
+     4.22
+    ],
+    "escala": [
+     -8.4312,
+     10.7912
+    ],
+    "valor": 5.090000000000003,
+    "ref": "2026-09",
+    "nivel": 82.93,
+    "situacao": "pior"
+   },
+   {
+    "id": "sahm",
+    "fator": "emprego",
+    "nome": "Regra de Sahm",
+    "unidade": "p.p.",
+    "definicao": "Média de 3 meses da desocupação da PNAD Contínua (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.066667,
+     1.433333
+    ],
+    "escala": [
+     -0.526667,
+     3.126667
+    ],
+    "valor": 0.033333333333333215,
+    "ref": "2026-09",
+    "nivel": 5.2,
+    "situacao": "normal"
+   },
+   {
+    "id": "commodities",
+    "fator": "externo",
+    "nome": "Preço das commodities",
+    "unidade": "%",
+    "definicao": "Variação em 6 meses do índice de preços de todas as commodities do FMI (FRED PALLFNFINDEXM).",
+    "direcao": -1,
+    "faixa_normal": [
+     -4.196915,
+     13.721388
+    ],
+    "escala": [
+     -28.018093,
+     30.645307
+    ],
+    "valor": 1.6727586354593926,
+    "ref": "2026-09",
+    "nivel": 222.4285486100514,
+    "situacao": "normal"
+   }
+  ],
+  "fatores": [
+   {
+    "id": "atividade",
+    "nome": "Ritmo da economia",
+    "indicadores": [
+     "ibcbr",
+     "focus_pib"
+    ],
+    "entradas": [
+     "tendencia",
+     "crescimento"
+    ],
+    "na_conta": true,
+    "efeito": 0.0027025810821192653,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "juro",
+    "nome": "Juro e inflação",
+    "indicadores": [
+     "juro_real"
+    ],
+    "entradas": [
+     "juro",
+     "inflacao"
+    ],
+    "na_conta": true,
+    "efeito": 0.19454206343082064,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   },
+   {
+    "id": "credito",
+    "nome": "Dívidas das famílias",
+    "indicadores": [
+     "comprometimento"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "mercado",
+    "nome": "Desconfiança de quem investe",
+    "indicadores": [
+     "tesouro",
+     "dolar"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "contas",
+    "nome": "Contas do governo",
+    "indicadores": [
+     "divida"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "pior",
+    "situacao_nome": "Pior que o normal"
+   },
+   {
+    "id": "emprego",
+    "nome": "Emprego",
+    "indicadores": [
+     "sahm"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   },
+   {
+    "id": "externo",
+    "nome": "Economia lá fora",
+    "indicadores": [
+     "commodities"
+    ],
+    "entradas": [],
+    "na_conta": false,
+    "efeito": null,
+    "situacao": "normal",
+    "situacao_nome": "Normal"
+   }
+  ],
+  "gatilhos": [
+   {
+    "id": "crescimento",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": -1.2472588265629843,
+    "hoje": 1.3821346612817385
+   },
+   {
+    "id": "juro",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": 2.8218226123968666,
+    "hoje": -1.25
+   },
+   {
+    "id": "inflacao",
+    "nivel": 3,
+    "nome_nivel": "Acima",
+    "valor": 4.209199411366487,
+    "hoje": -0.5899999999999999
+   },
+   {
+    "id": "crescimento",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": 3.2273912361803534,
+    "hoje": 1.3821346612817385
+   },
+   {
+    "id": "juro",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": -4.107524931920681,
+    "hoje": -1.25
+   },
+   {
+    "id": "inflacao",
+    "nivel": 1,
+    "nome_nivel": "Abaixo",
+    "valor": -3.957983646803852,
+    "hoje": -0.5899999999999999
+   }
+  ],
+  "reaproveitados": [],
+  "faltando": [],
+  "direcao": {
+   "estado": "subindo",
+   "desde": "2026-06",
+   "soma": 4,
+   "bruto": "subindo",
+   "pendente": null,
+   "apertaram": 4,
+   "folgaram": 0,
+   "partes": [
+    {
+     "id": "contas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "divida": {
+       "agora": 82.93,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 81.95,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 0.980000000000004,
+       "corte": 0.9451499999999999,
+       "lado": 1,
+       "como": "pontos"
+      },
+      "primario": {
+       "agora": 0.52,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 1.19,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.6699999999999999,
+       "corte": 0.311325,
+       "lado": -1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "divida_bruta",
+      "valor": 82.93,
+      "ref": "2026-09",
+      "desde": "2006",
+      "meses": 238,
+      "pior_que_pct": 96,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "parcelas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "parcelas": {
+       "agora": 28.99,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 28.47,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": 0.5199999999999996,
+       "corte": 0.378075,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "comprometimento_renda",
+      "valor": 28.99,
+      "ref": "2026-08",
+      "desde": "2005",
+      "meses": 258,
+      "pior_que_pct": 100,
+      "recorde_ruim": true,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "mercado",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "dolar": {
+       "agora": 5.584,
+       "dia": "2026-11-10",
+       "ref": "2026-11",
+       "antes": 5.1816,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 7.765941022078104,
+       "corte": 4.765725,
+       "lado": 1,
+       "como": "pct",
+       "lado_do_dia": 1,
+       "dias_seguidos": 0,
+       "persiste_dias": 3
+      },
+      "juro_longo": {
+       "agora": 7.87,
+       "dia": "2026-11-09",
+       "ref": "2026-11",
+       "antes": 7.92,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": -0.04999999999999982,
+       "corte": 0.41145,
+       "lado": 0,
+       "como": "pontos",
+       "lado_do_dia": 0,
+       "dias_seguidos": 0,
+       "persiste_dias": 3
+      }
+     },
+     "folga": {
+      "serie": "juro_real_longo",
+      "valor": 7.87,
+      "ref": "2026-11",
+      "desde": "2005",
+      "meses": 257,
+      "pior_que_pct": 89,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "inflacao",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "inflacao": {
+       "agora": 5.0117,
+       "dia": "2026-11-06",
+       "ref": "2026-11",
+       "antes": 4.553,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 0.45870000000000033,
+       "corte": 0.316875,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "focus_ipca_12m",
+      "valor": 5.0117,
+      "ref": "2026-11",
+      "desde": "2001",
+      "meses": 300,
+      "pior_que_pct": 54,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "juro",
+     "lado": 0,
+     "na_soma": true,
+     "medidas": {
+      "juro": {
+       "agora": 13.75,
+       "dia": "2026-11-11",
+       "ref": "2026-11",
+       "antes": 14.0,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": -0.25,
+       "corte": 0.833925,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "juro_real",
+      "valor": 8.321263249714072,
+      "ref": "2026-11",
+      "desde": "2002",
+      "meses": 299,
+      "pior_que_pct": 67,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "ritmo",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "ritmo": {
+       "agora": 110.40624,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 111.25061,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": -0.6424554746393252,
+       "corte": 0.88905,
+       "lado": 0,
+       "como": "media"
+      }
+     },
+     "folga": null
+    },
+    {
+     "id": "emprego",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "emprego": {
+       "agora": 5.2,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 5.4,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.20000000000000018,
+       "corte": 0.555975,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "desocupacao",
+      "valor": 5.2,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "renda",
+     "lado": -1,
+     "na_soma": false,
+     "medidas": {
+      "renda": {
+       "agora": 3790.0,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 3753.0,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 0.9858779642952342,
+       "corte": 0.8882999999999999,
+       "lado": -1,
+       "como": "pct"
+      }
+     },
+     "folga": {
+      "serie": "rendimento_real",
+      "valor": 3790.0,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "reservas",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "reservas": {
+       "agora": 365019.0,
+       "dia": "2026-10-01",
+       "ref": "2026-10",
+       "antes": 369742.0,
+       "dia_antes": "2026-07-01",
+       "ref_antes": "2026-07",
+       "mudanca": -1.2773771981543836,
+       "corte": 2.97645,
+       "lado": 0,
+       "como": "pct"
+      }
+     },
+     "folga": null
+    }
+   ],
+   "mes": "2026-11",
+   "linha": [
+    {
+     "mes": "2004-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-01",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-02",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-03",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-04",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-11",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2020-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2020-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2021-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-11",
+     "estado": "S"
+    }
+   ]
+  }
+ },
+ "pressao": {
+  "fatores": {
+   "contas": {
+    "saldo": -0.09999999999999998,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261111-01",
+     "ev-20261111-08"
+    ]
+   },
+   "juro": {
+    "saldo": 2.0,
+    "sentido": "piora",
+    "eventos": [
+     "ev-20261111-02"
+    ]
+   },
+   "externo": {
+    "saldo": 1.5,
+    "sentido": "piora",
+    "eventos": [
+     "ev-20261111-03",
+     "ev-20261111-04",
+     "ev-20261111-05"
+    ]
+   },
+   "credito": {
+    "saldo": -0.050000000000000044,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261111-06",
+     "ev-20261111-09",
+     "ev-20261111-10"
+    ]
+   },
+   "atividade": {
+    "saldo": 1.425,
+    "sentido": "piora",
+    "eventos": [
+     "ev-20261111-12",
+     "ev-20261111-07",
+     "ev-20261111-11"
+    ]
+   },
+   "mercado": {
+    "saldo": 0.05,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261111-13"
+    ]
+   }
+  },
+  "saldo": 4.825,
+  "sentido": "piora",
+  "n": 13
+ },
+ "leituras": {
+  "fatores": {
+   "atividade": {
+    "fatos": [
+     {
+      "texto": "A economia cresceu 1,4% em um ano (prévia do PIB, de junho a agosto). O normal desde 2004 vai de 0,4% a 4,1%.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "A prévia do PIB caiu 0,6% no trimestre até agosto, contra os 3 meses anteriores. É a maior queda desde agosto de 2025.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "Os bancos (Focus) esperam alta de 1,8% do PIB em 2026 e alta de 1,2% em 2027.",
+      "fonte": "Focus"
+     }
+    ]
+   },
+   "juro": {
+    "fatos": [
+     {
+      "texto": "Os preços subiram 4,6% em um ano até setembro (IPCA). Um ano antes, a alta era de 5,2%: os preços sobem mais devagar.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "Descontada a inflação esperada (5,0%), a Selic de 13,75% rende 8,3% ao ano.",
+      "fonte": "BC e Focus"
+     },
+     {
+      "texto": "Selic em 13,75% desde 17/9. Antes, era 14%. Nos últimos 12 meses, chegou a 15%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "credito": {
+    "fatos": [
+     {
+      "texto": "29% da renda das famílias vai para parcelas e juros (agosto), o maior desde o início da série, em 2005. Um ano antes, eram 27,6%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "mercado": {
+    "fatos": [
+     {
+      "texto": "O governo paga 7,9% ao ano acima da inflação para pegar dinheiro até 2035 (9/11). É 0,5 ponto acima do normal dos últimos 3 anos.",
+      "fonte": "Tesouro Direto"
+     },
+     {
+      "texto": "Dólar a R$ 5,58 em 10/11, 9,6% mais caro que em meados de agosto.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "contas": {
+    "fatos": [
+     {
+      "texto": "Dívida do governo em 82,9% do PIB (setembro). Subiu 5,1 pontos em um ano.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "União, estados e municípios gastaram 0,5% do PIB a mais do que arrecadaram nos 12 meses até setembro, sem contar juros. Um ano antes, eram 0,3%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "emprego": {
+    "fatos": [
+     {
+      "texto": "Desemprego em 5,2% no trimestre até setembro. O menor desde 2012 foi 5,1%, em dezembro de 2025.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "O desemprego médio de 3 meses está igual ao menor do último ano.",
+      "fonte": "IBGE"
+     }
+    ]
+   },
+   "externo": {
+    "fatos": [
+     {
+      "texto": "Soja, minério, petróleo e outros produtos básicos ficaram 1,7% mais caros em 6 meses até setembro (FMI).",
+      "fonte": "FMI"
+     }
+    ]
+   }
+  }
+ },
+ "anterior": "2026-11-10T0545",
+ "revisao_texto": {
+  "classificacao": [
+   "palavra que o site trocou: diga o juro de 10 anos (o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos) e, para a pressão, Desconfiança de quem investe: Governo e Senado preparam projeto de ajuste nas contas de R$",
+   "título com 82 caracteres: Ata do Copom indica Selic em 13,75% por mais tempo, com infl",
+   "título com 85 caracteres: Inflação dos EUA sobe 0,4% em outubro, e cresce a aposta de ",
+   "título com 82 caracteres: Nvidia perde US$ 470 bi em dois dias com investigação sobre ",
+   "sigla que a leitora não conhece (MP): escreva o nome por extenso, se ele explica: Câmara aprova MP com R$ 13,5 bi de crédito a empresas afetad",
+   "sigla que a leitora não conhece (MP): escreva o nome por extenso, se ele explica: Câmara aprova MP que renegocia dívidas rurais, e o texto vai",
+   "título com 85 caracteres: Ministro do STF diz que decide sobre transição do fim da esc",
+   "jargão que o leitor não conhece: Ex-secretário do Tesouro prevê recessão, e gestora vê estagf",
+   "título com 85 caracteres: Executivo da Moody's diz que pressões fiscais aumentaram e p"
+  ]
+ },
+ "pauta": {
+  "versao": 2,
+  "candidatos": [
+   {
+    "id": "E1",
+    "ordem": 1,
+    "evento": "ev-20261111-01",
+    "titulo": "Governo e Senado preparam projeto de ajuste nas contas de R$ 50 bi a R$ 80 bi",
+    "estagio": "anuncio",
+    "tamanho": 2,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "O governo quer bloquear gastos, cortar isenções e mudar pisos, o que melhora as contas e acalma o juro longo. O corte também tira dinheiro da economia em 2027, e o projeto só vale se o Congresso aprovar.",
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": true,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 7,
+    "jornais": [
+     "Estadão",
+     "Folha",
+     "InfoMoney",
+     "Valor",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Estadão",
+      "titulo": "Governo prepara projeto para bloquear gasto, cortar isenções e mudar piso, em ajuste de R$ 50 bi",
+      "url": "https://www.estadao.com.br/economia/governo-prepara-projeto-para-bloquear-gasto-cortar-isencoes-e-mudar-piso-em-ajuste-de-r-50-bi/",
+      "publicado_em": "2026-11-11T01:31+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Governo acerta com Congresso projeto de ajuste fiscal que pode chegar a R$ 80 bi em 2027",
+      "url": "https://g1.globo.com/economia/blog/ana-flor/post/2026/11/10/governa-acerta-com-congresso-projeto-de-ajuste-fiscal-de-05percent-do-pib-para-2027.ghtml",
+      "publicado_em": "2026-11-10T22:03+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Governo acerta com Congresso projeto de ajuste fiscal de R$ 80 bi em 2027, diz fonte",
+      "url": "https://www.infomoney.com.br/politica/governo-acerta-com-congresso-projeto-de-ajuste-fiscal-de-ate-r-80-bi-em-2027-diz-fonte/",
+      "publicado_em": "2026-11-11T00:21+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Governo sinaliza ao Congresso economia de R$ 70 bi em 2027 e foco em corte de incentivos",
+      "url": "https://valor.globo.com/politica/noticia/2026/11/10/governo-sinaliza-ao-congresso-economia-de-r-70-bi-em-2027-e-foco-em-corte-de-incentivos.ghtml",
+      "publicado_em": "2026-11-10T22:02+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Governo sinaliza ao mercado cancelamento extra de R$ 12,8 bi em gastos em 2027 para cumprir meta",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/governo-sinaliza-ao-mercado-cancelamento-extra-de-r-128-bi-em-gastos-em-2027-para-cumprir-meta.shtml",
+      "publicado_em": "2026-11-10T21:19-03:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Alcolumbre prevê que medidas de ajuste fiscal do governo seja apresentadas na próxima semana",
+      "url": "https://valor.globo.com/politica/noticia/2026/11/10/alcolumbre-prev-que-medidas-de-ajuste-fiscal-do-governo-seja-apresentadas-na-prxima-semana.ghtml",
+      "publicado_em": "2026-11-11T01:18+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E2",
+    "ordem": 2,
+    "evento": "ev-20261111-02",
+    "titulo": "Ata do Copom indica Selic em 13,75% por mais tempo, com inflação e contas em risco",
+    "estagio": "decidido",
+    "tamanho": 2,
+    "fator": "juro",
+    "origem": "banco_central",
+    "assunto": "Juro e inflação",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O Banco Central listou quatro choques de oferta, entre eles o fim da escala 6x1, e disse que o juro alto vai durar mais. O crédito segue caro para famílias e empresas, e isso segura investimento e consumo.",
+    "historia": "juro_inflacao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 18,
+    "jornais": [
+     "Agência Brasil",
+     "Estadão",
+     "Folha",
+     "Gazeta do Povo",
+     "InfoMoney",
+     "Poder360",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Copom indica juros altos por mais tempo para conter inflação",
+      "url": "https://www.poder360.com.br/poder-economia/copom-indica-juros-altos-por-mais-tempo-para-conter-inflacao/",
+      "publicado_em": "2026-11-10T11:12+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Indisciplina fiscal exige juros maiores, diz ata do Copom",
+      "url": "https://www.poder360.com.br/poder-economia/indisciplina-fiscal-exige-juros-maiores-diz-ata-do-copom/",
+      "publicado_em": "2026-11-10T11:44+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Ata do Copom: Banco Central diz que piora nas expectativas de inflação exige juros mais altos por tempo maior",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/10/ata-do-copom-banco-central-diz-que-piora-nas-expectativas-de-inflacao-exige-juros-mais-altos-e-por-tempo-maior.ghtml",
+      "publicado_em": "2026-11-10T11:06+00:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Copom alerta em ata para expectativa de inflação subir diante de risco fiscal e fim da 6x1",
+      "url": "https://www.estadao.com.br/economia/copom-alerta-ata-expectativa-inflacao-subir-risco-fiscal/",
+      "publicado_em": "2026-11-10T11:48+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "BC vê fim da escala 6 X 1 como fator de pressão sobre a inflação",
+      "url": "https://www.poder360.com.br/poder-economia/bc-ve-fim-da-escala-6-x-1-como-fator-de-pressao-sobre-a-inflacao/",
+      "publicado_em": "2026-11-10T11:33+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Ata do Copom aponta 4 riscos à inflação e joga pressão sobre gastos do governo",
+      "url": "https://www.infomoney.com.br/economia/ata-do-copom-aponta-4-riscos-a-inflacao-e-joga-pressao-sobre-gastos-do-governo/",
+      "publicado_em": "2026-11-10T14:12+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E3",
+    "ordem": 3,
+    "evento": null,
+    "titulo": "Dólar sobe 1,46% e fecha perto de R$ 5,60, o maior valor desde julho de 2025",
+    "estagio": "dado",
+    "tamanho": 2,
+    "fator": "mercado",
+    "origem": "dados",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "A inflação acima do esperado nos EUA e o juro alto por aqui empurraram o dólar. Dólar mais caro encarece importados e alimentos, e a inflação maior segura o corte de juros.",
+    "historia": "desconfianca_eleicao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 6,
+    "jornais": [
+     "Agência Brasil",
+     "Folha",
+     "Gazeta do Povo",
+     "InfoMoney",
+     "Poder360",
+     "g1"
+    ],
+    "descartado": "já medido pelos indicadores",
+    "fontes": [
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Dólar sobe 1,46% e fecha no maior valor em 15 meses",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-sobe-146-e-fecha-no-maior-valor-em-15-meses",
+      "publicado_em": "2026-11-10T20:25-03:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Dólar vai R$ 5,58, maior valor desde julho de 2025; Bolsa cai",
+      "url": "https://www.poder360.com.br/poder-economia/dolar-vai-a-r-558-maior-valor-desde-julho-de-2025-bolsa-cai/",
+      "publicado_em": "2026-11-10T21:25+00:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Dólar dispara e fecha na maior cotação desde julho de 2025",
+      "url": "https://www.gazetadopovo.com.br/economia/dolar-sobe-148-e-fecha-a-r-558-maior-cotacao-desde-julho-de-2025/",
+      "publicado_em": "2026-11-10T21:49+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Dólar sobe e permanece acima de R$ 5,50 com ata do Copom e inflação dos EUA no radar",
+      "url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-10112026/",
+      "publicado_em": "2026-11-10T12:20+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Dólar abre em alta com ata do Copom e expectativa por dados de inflação nos EUA",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/dolar-abre-em-alta-com-ata-do-copom-e-expectativa-por-dados-de-inflacao-nos-eua.shtml",
+      "publicado_em": "2026-11-10T09:55-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E4",
+    "ordem": 4,
+    "evento": "ev-20261111-03",
+    "titulo": "Inflação dos EUA sobe 0,4% em outubro, e cresce a aposta de alta de juros em dezembro",
+    "estagio": "dado",
+    "tamanho": 2,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Preços nos EUA subiram mais que os 0,3% esperados, e dirigentes do banco central americano falam em elevar os juros em dezembro. Juro maior lá fora atrai dinheiro para os EUA e pressiona o dólar e o juro daqui.",
+    "historia": "fed_juros_eua",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 10,
+    "jornais": [
+     "Estadão",
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Inflação nos EUA sobe 0,4% em outubro e supera expectativas",
+      "url": "https://www.poder360.com.br/poder-economia/inflacao-nos-eua-sobe-04-em-outubro-e-supera-expectativas/",
+      "publicado_em": "2026-11-10T14:05+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "CPI: Inflação ao consumidor dos EUA sobe 0,4% em outubro, acima esperado",
+      "url": "https://www.infomoney.com.br/economia/inflacao-ao-consumidor-cpi-dos-eua-outubro-2026/",
+      "publicado_em": "2026-11-10T13:30+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Inflação ao consumidor nos EUA sobe 0,4% em outubro, acima do esperado",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/inflacao-ao-consumidor-nos-eua-sobe-04-em-outubro-acima-do-esperado.shtml",
+      "publicado_em": "2026-11-10T11:06-03:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Waller, do Fed, sinaliza alta de juros maior em dezembro",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/10/waller-do-fed-sinaliza-alta-de-juros-maior-em-dezembro.ghtml",
+      "publicado_em": "2026-11-10T11:14+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Dirigente do Fed defende considerar alta de 0,5 ponto nos juros em dezembro",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/dirigente-do-fed-defende-considerar-alta-de-05-ponto-nos-juros-em-dezembro.shtml",
+      "publicado_em": "2026-11-10T13:08-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E5",
+    "ordem": 5,
+    "evento": "ev-20261111-04",
+    "titulo": "Nvidia perde US$ 470 bi em dois dias com investigação sobre o presidente-executivo",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "A queda das ações de tecnologia nos EUA pode chegar ao dólar e à Bolsa daqui, porque investidores vendem ativos de risco no mundo todo. O efeito direto sobre o PIB brasileiro é pequeno por enquanto.",
+    "historia": "queda_das_acoes_de_tecnologia",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 11,
+    "jornais": [
+     "Estadão",
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "Valor",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "g1",
+      "titulo": "Nvidia perde R$ 2,5 trilhões em 2 dias após denúncias de infidelidade e suspeita de espionagem envolvendo CEO",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/10/nvidia-perde-r-25-trilhoes-em-2-dias-apos-denuncias-de-infidelidade-e-suspeita-de-espionagem-envolvendo-ceo.ghtml",
+      "publicado_em": "2026-11-10T21:32+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Crise com CEO faz Nvidia perder cerca de US$ 200 bi",
+      "url": "https://valor.globo.com/empresas/noticia/2026/11/10/crise-com-ceo-faz-nvidia-perder-cerca-de-us-200-bi.ghtml",
+      "publicado_em": "2026-11-10T08:00+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "CEO da Nvidia facilitou envio de US$ 7,5 bi em chips à China, diz site",
+      "url": "https://www.poder360.com.br/poder-tech/ceo-da-nvidia-facilitou-envio-de-us-75-bi-em-chips-a-china-diz-site/",
+      "publicado_em": "2026-11-10T16:40+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Trump: FBI está investigando CEO da Nvidia; polêmica envolvendo China se agrava",
+      "url": "https://www.infomoney.com.br/mundo/trump-fbi-esta-investigando-ceo-da-nvidia-polemica-envolvendo-china-se-agrava/",
+      "publicado_em": "2026-11-10T11:48+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E6",
+    "ordem": 6,
+    "evento": "ev-20261111-05",
+    "titulo": "Petróleo Brent cai abaixo de US$ 90 pela primeira vez desde agosto",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "O mercado aposta num acordo de paz entre EUA e Irã, e o petróleo fica mais barato lá fora. Combustível e frete mais baratos aliviam a inflação aqui, mas a queda ainda depende de a negociação se confirmar.",
+    "historia": "guerra_petroleo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 6,
+    "jornais": [
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "g1",
+      "titulo": "Petróleo Brent cai abaixo de US$ 90 pela primeira vez desde agosto",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/10/petroleo-brent-cai-abaixo-de-us-90-pela-primeira-vez-desde-agosto.ghtml",
+      "publicado_em": "2026-11-10T15:46+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Petróleo Brent cai abaixo de US$ 90 pela primeira vez desde agosto",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/petroleo-brent-cai-abaixo-de-us-90-pela-primeira-vez-desde-agosto.shtml",
+      "publicado_em": "2026-11-10T12:24-03:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Petróleo brent cai abaixo de US$ 90 com apostas sobre resolução para guerra no Irã",
+      "url": "https://www.infomoney.com.br/mercados/petroleo-abertura-fechamento-ira-eua-10112026/",
+      "publicado_em": "2026-11-10T11:36+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Petróleo cai US$ 26 em novembro, mas barril segue acima dos US$ 90",
+      "url": "https://www.poder360.com.br/poder-economia/petroleo-cai-us-26-em-novembro-mas-barril-segue-acima-dos-us-90/",
+      "publicado_em": "2026-11-10T23:47+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E7",
+    "ordem": 7,
+    "evento": "ev-20261111-06",
+    "titulo": "Câmara aprova MP com R$ 13,5 bi de crédito a empresas afetadas pelo tarifaço",
+    "estagio": "em_votacao",
+    "tamanho": 1,
+    "fator": "credito",
+    "origem": "politica",
+    "assunto": "Dívidas das famílias",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "A Câmara aprovou a MP com recursos da União e do BNDES, e o texto segue para o Senado. O crédito dá fôlego de caixa a exportadores atingidos pelas tarifas dos EUA.",
+    "historia": "tarifas_eua",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 3,
+    "jornais": [
+     "Estadão",
+     "Folha",
+     "Poder360"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Estadão",
+      "titulo": "Câmara aprova MP que amplia em R$ 13,5 bi crédito para empresas afetadas pelo tarifaço",
+      "url": "https://www.estadao.com.br/economia/camara-aprova-mp-que-amplia-em-r-135-bi-credito-para-empresas-afetadas-pelo-tarifaco/",
+      "publicado_em": "2026-11-10T23:12+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Câmara aprova MP que reforça crédito do Brasil Soberano em R$ 13,5 bi",
+      "url": "https://www.poder360.com.br/poder-congresso/camara-aprova-mp-que-reforca-credito-do-brasil-soberano-em-r-135-bi/",
+      "publicado_em": "2026-11-10T22:39+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Câmara aprova ampliação de até R$ 13,5 bi em crédito para empresas afetadas por tarifas dos EUA",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/camara-aprova-ampliacao-de-ate-r-135-bi-em-credito-para-empresas-afetadas-por-tarifas-dos-eua.shtml",
+      "publicado_em": "2026-11-10T19:09-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E8",
+    "ordem": 8,
+    "evento": null,
+    "titulo": "Câmara aprova MP que renegocia dívidas rurais, e o texto vai ao Senado",
+    "estagio": "em_votacao",
+    "tamanho": 1,
+    "fator": "credito",
+    "origem": "politica",
+    "assunto": "Dívidas das famílias",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "A Câmara aprovou a MP, que vence na quarta, com mudanças pedidas pelo agro. Se o Senado também aprovar, produtores endividados ganham prazo e o campo evita calote em cadeia.",
+    "historia": "credito_inadimplencia",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 9,
+    "jornais": [
+     "Estadão",
+     "Folha",
+     "Gazeta do Povo",
+     "Poder360",
+     "g1"
+    ],
+    "descartado": "mesmo fato do evento ev-20261110-07",
+    "fontes": [
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Câmara aprova MP da dívida rural após acordo com agro e inclusão de jabutis",
+      "url": "https://www.gazetadopovo.com.br/economia/camara-aprova-mp-da-divida-rural-apos-acordo-com-agro-e-inclusao-de-jabutis/",
+      "publicado_em": "2026-11-11T00:16+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Câmara aprova MP da renegociação de dívidas rurais",
+      "url": "https://www.poder360.com.br/poder-congresso/camara-aprova-mp-da-renegociacao-de-dividas-rurais/",
+      "publicado_em": "2026-11-10T21:36+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Relator atende agronegócio e MP que renegocia dívidas rurais é aprovada na Câmara",
+      "url": "https://g1.globo.com/politica/noticia/2026/11/10/relator-atende-agronegocio-e-mp-que-renegocia-dividas-rurais-e-aprovada-na-camara.ghtml",
+      "publicado_em": "2026-11-10T21:24+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Relator faz novas concessões, e renegociação de dívidas rurais avança no Congresso",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/agro/2026/11/relator-faz-novas-concessoes-e-renegociacao-de-dividas-rurais-avanca-no-congresso.shtml",
+      "publicado_em": "2026-11-10T15:28-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E9",
+    "ordem": 9,
+    "evento": "ev-20261111-07",
+    "titulo": "Ministro do STF diz que decide sobre transição do fim da escala 6x1 nos próximos dias",
+    "estagio": "anuncio",
+    "tamanho": 2,
+    "fator": "atividade",
+    "origem": "politica",
+    "assunto": "Ritmo da economia",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O ministro Flávio Dino indicou que aceita flexibilizar a transição por acordo coletivo. A regra define quando as empresas passam a pagar mais por menos horas trabalhadas, o que afeta custo e preços no comércio e na indústria.",
+    "historia": "nova",
+    "tema_novo": "fim-da-escala-6x1",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 6,
+    "jornais": [
+     "Folha",
+     "Gazeta do Povo",
+     "InfoMoney",
+     "Poder360",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "g1",
+      "titulo": "Escala 6x1: Dino sinaliza que decisão em ação que questiona transição da nova jornada de trabalho sai até sexta",
+      "url": "https://g1.globo.com/politica/noticia/2026/11/10/escala-6x1-dino-sinaliza-que-decisao-em-acao-que-questiona-transicao-da-nova-jornada-de-trabalho-sai-ate-sexta.ghtml",
+      "publicado_em": "2026-11-10T23:21+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Dino diz que enviará 6 X 1 ao plenário do STF na próxima semana",
+      "url": "https://www.poder360.com.br/poder-justica/dino-diz-que-enviara-6-x-1-ao-plenario-do-stf-na-proxima-semana/",
+      "publicado_em": "2026-11-10T21:43+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Dino indica que dará aval à flexibilização do fim da escala 6x1, desde que prevista em acordo coletivo",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/dino-indica-que-dara-aval-a-flexibilizacao-do-fim-da-escala-6x1-desde-que-prevista-em-acordo-coletivo.shtml",
+      "publicado_em": "2026-11-10T17:19-03:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Vieira de Mello Filho defende aplicação imediata do fim da escala 6×1 no varejo",
+      "url": "https://www.gazetadopovo.com.br/economia/vieira-de-mello-filho-defende-aplicacao-imediata-do-fim-da-escala-6x1-no-varejo/",
+      "publicado_em": "2026-11-10T18:11+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E10",
+    "ordem": 10,
+    "evento": "ev-20261111-08",
+    "titulo": "Governo prorroga até 9 de dezembro o fim de impostos sobre gasolina e etanol",
+    "estagio": "decidido",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "O governo abre mão de R$ 3,57 bilhões em 30 dias para segurar o preço do combustível. Isso alivia a inflação no curto prazo, mas piora as contas do governo.",
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "Agência Brasil",
+     "Gazeta do Povo"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Governo prorroga desoneração de gasolina e etanol até 9 de dezembro",
+      "url": "https://www.gazetadopovo.com.br/republica/governo-prorroga-desoneracao-de-gasolina-e-etanol-ate-9-de-dezembro/",
+      "publicado_em": "2026-11-10T16:47+00:00"
+     },
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Governo prorroga até 9 de dezembro desoneração da gasolina e do etanol",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/governo-prorroga-ate-9-de-dezembro-desoneracao-da-gasolina-e-do-etanol",
+      "publicado_em": "2026-11-10T09:33-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E11",
+    "ordem": 11,
+    "evento": "ev-20261111-09",
+    "titulo": "Atraso no cartão de crédito chega a 10% das dívidas no 3º trimestre",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "credito",
+    "origem": "dados",
+    "assunto": "Dívidas das famílias",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O atraso subiu 0,9 ponto contra setembro do ano passado. Famílias que atrasam contas gastam menos, e os bancos ficam mais cautelosos para emprestar.",
+    "historia": "credito_inadimplencia",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "Folha"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "Inadimplência do cartão de crédito chega a 10% do terceiro trimestre de 2026",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/inadimplencia-do-cartao-de-credito-chega-a-10-do-terceiro-trimestre-de-2026.shtml",
+      "publicado_em": "2026-11-10T14:11-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E12",
+    "ordem": 12,
+    "evento": "ev-20261111-10",
+    "titulo": "Recuperação judicial bate recorde, com 8,5 mil empresas até o 3º trimestre",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "credito",
+    "origem": "dados",
+    "assunto": "Dívidas das famílias",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O número subiu 5,4% no trimestre, com o agronegócio na frente. Mais empresas em crise significam menos investimento e mais demissões.",
+    "historia": "credito_inadimplencia",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "InfoMoney"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Recuperação judicial bate recorde e atinge 8,5 mil empresas no Brasil até o 3º tri",
+      "url": "https://www.infomoney.com.br/minhas-financas/recuperacao-judicial-bate-recorde-e-atinge-85-mil-empresas-no-brasil-ate-o-3o-tri/",
+      "publicado_em": "2026-11-10T19:32+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E13",
+    "ordem": 13,
+    "evento": "ev-20261111-11",
+    "titulo": "Varejo recua 4% em outubro contra um ano antes, diz índice da Cielo",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "atividade",
+    "origem": "dados",
+    "assunto": "Ritmo da economia",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "A queda foi um pouco menor que os 4,2% de setembro, mas as vendas seguem abaixo das de um ano antes. Consumo fraco pesa sobre o PIB do fim do ano.",
+    "historia": "ritmo_emprego",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "Folha"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "Varejo no Brasil registra retração de 4% em outubro, diz ICVA",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/varejo-no-brasil-registra-retracao-de-4-em-outubro-diz-icva.shtml",
+      "publicado_em": "2026-11-10T10:34-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E14",
+    "ordem": 14,
+    "evento": "ev-20261111-12",
+    "titulo": "Ex-secretário do Tesouro prevê recessão, e gestora vê estagflação em 2027",
+    "estagio": "previsao",
+    "tamanho": 1,
+    "fator": "atividade",
+    "origem": "dados",
+    "assunto": "Ritmo da economia",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Carlos Kawall e a gestora Legacy ligam o risco ao juro alto e à dívida em alta. A Legacy zerou posições no Brasil até conhecer a equipe econômica, o que reduz a entrada de dinheiro.",
+    "historia": "ritmo_emprego",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "Gazeta do Povo",
+     "InfoMoney"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Ex-secretário do Tesouro prevê recessão e cobra mudança na política fiscal de Lula",
+      "url": "https://www.gazetadopovo.com.br/republica/ex-secretario-do-tesouro-preve-recessao-e-cobra-mudanca-na-politica-fiscal-de-lula/",
+      "publicado_em": "2026-11-10T17:39+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Legacy encerra apostas no Brasil após vitória de Lula e vê estagflação em 2027",
+      "url": "https://www.infomoney.com.br/onde-investir/legacy-encerra-apostas-no-brasil-apos-vitoria-de-lula-e-ve-estagflacao-em-2027/",
+      "publicado_em": "2026-11-10T17:53+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E15",
+    "ordem": 15,
+    "evento": "ev-20261111-13",
+    "titulo": "Executivo da Moody's diz que pressões fiscais aumentaram e podem levar a rebaixamento",
+    "estagio": "rumor",
+    "tamanho": 1,
+    "fator": "mercado",
+    "origem": "dados",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Um rebaixamento da nota do país encarece o juro que o governo paga e afasta investidor de fora. O pesa mais se o ajuste das contas não vier no tamanho esperado.",
+    "historia": "desconfianca_eleicao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "Estadão",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Estadão",
+      "titulo": "Pressões fiscais no Brasil aumentaram e podem rebaixar rating, diz executivo da Moody’s",
+      "url": "https://www.estadao.com.br/economia/pressoes-fiscais-no-brasil-aumentaram-e-podem-rebaixar-rating-diz-executivo-da-moodys/",
+      "publicado_em": "2026-11-10T15:28+00:00"
+     }
+    ]
+   }
+  ],
+  "datas": [],
+  "pressoes_mudaram": [],
+  "estado": "subindo",
+  "estado_anterior": "subindo",
+  "direcao_mudou": false,
+  "historias": [
+   {
+    "id": "contas_governo",
+    "titulo": "Contas do governo: a meta, o ajuste prometido e a dívida",
+    "pressao": "contas",
+    "pressoes": [
+     "contas",
+     "divida_reais",
+     "mercado",
+     "juro"
+    ],
+    "nova": false,
+    "pontos": 3.0,
+    "candidatos": [
+     "E10",
+     "E1"
+    ],
+    "jornais": 7,
+    "fato_grande": false
+   },
+   {
+    "id": "juro_inflacao",
+    "titulo": "Juro e inflação: a Selic parada e a inflação acima do teto",
+    "pressao": "juro",
+    "pressoes": [
+     "juro",
+     "inflacao",
+     "parcelas",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 2.0,
+    "candidatos": [
+     "E2"
+    ],
+    "jornais": 7,
+    "fato_grande": true
+   },
+   {
+    "id": "fed_juros_eua",
+    "titulo": "O Fed e os juros dos EUA",
+    "pressao": "mercado",
+    "pressoes": [
+     "juro",
+     "mercado"
+    ],
+    "nova": false,
+    "pontos": 2.0,
+    "candidatos": [
+     "E4"
+    ],
+    "jornais": 5,
+    "fato_grande": true
+   },
+   {
+    "id": "credito_inadimplencia",
+    "titulo": "Crédito caro e inadimplência recorde",
+    "pressao": "parcelas",
+    "pressoes": [
+     "parcelas",
+     "juro",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 2.0,
+    "candidatos": [
+     "E11",
+     "E12"
+    ],
+    "jornais": 2,
+    "fato_grande": false
+   },
+   {
+    "id": "ritmo_emprego",
+    "titulo": "Ritmo da economia e emprego: a desaceleração e a previsão de 2027",
+    "pressao": "ritmo",
+    "pressoes": [
+     "ritmo",
+     "emprego",
+     "renda",
+     "juro"
+    ],
+    "nova": false,
+    "pontos": 1.5,
+    "candidatos": [
+     "E13",
+     "E14"
+    ],
+    "jornais": 3,
+    "fato_grande": false
+   },
+   {
+    "id": "queda_das_acoes_de_tecnologia",
+    "titulo": "A queda das ações de tecnologia lá fora",
+    "pressao": "mercado",
+    "pressoes": [
+     "mercado",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E5"
+    ],
+    "jornais": 6,
+    "fato_grande": false
+   },
+   {
+    "id": "guerra_petroleo",
+    "titulo": "A guerra no Oriente Médio e o petróleo",
+    "pressao": "inflacao",
+    "pressoes": [
+     "inflacao",
+     "juro",
+     "contas",
+     "mercado"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E6"
+    ],
+    "jornais": 4,
+    "fato_grande": false
+   },
+   {
+    "id": "tarifas_eua",
+    "titulo": "Tarifas dos EUA sobre o Brasil",
+    "pressao": "ritmo",
+    "pressoes": [
+     "mercado",
+     "emprego",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 0.7,
+    "candidatos": [
+     "E7"
+    ],
+    "jornais": 3,
+    "fato_grande": false
+   },
+   {
+    "id": "desconfianca_eleicao",
+    "titulo": "Desconfiança de quem investe depois da eleição",
+    "pressao": "mercado",
+    "pressoes": [
+     "mercado",
+     "divida_reais",
+     "juro",
+     "inflacao"
+    ],
+    "nova": false,
+    "pontos": 0.25,
+    "candidatos": [
+     "E15"
+    ],
+    "jornais": 2,
+    "fato_grande": false
+   }
+  ],
+  "temas_esperando": [
+   {
+    "tema": "fim-da-escala-6x1",
+    "titulo": "Ministro do STF diz que decide sobre transição do fim da escala 6x1 nos próximos dias",
+    "candidatos": [
+     "E9"
+    ],
+    "dias": 2
+   }
+  ],
+  "escolha": {
+   "historia": "juro_inflacao",
+   "titulo": "Juro e inflação: a Selic parada e a inflação acima do teto",
+   "pontos": 2.0,
+   "motivo": "Contas do governo: a meta, o ajuste prometido e a dívida somou mais (3.0), mas saiu nos 2 últimos dias sem decisão ou dado grande hoje; vale a seguinte",
+   "calmo": false,
+   "nova": false,
+   "pulada": "contas_governo",
+   "segunda": "contas_governo"
+  },
+  "final": "E2",
+  "mesma_historia": [],
+  "segunda_historia": [
+   "E10",
+   "E1"
+  ]
+ },
+ "post": {
+  "ok": true,
+  "tipo": "dia",
+  "formato": "historia",
+  "titulo": "Banco Central diz na ata que a Selic fica alta por mais tempo e cita as contas do governo",
+  "paragrafos": [
+   "O Banco Central disse ontem, na ata da reunião que manteve a Selic em 13,75%, que o juro ficará alto por mais tempo porque a inflação esperada piorou. A projeção do próprio Banco Central para o segundo trimestre de 2028, o prazo em que ele mira, é de 3,5%, ainda acima do centro de 3%. Pela ata, esse prazo depende também das contas do governo, que o Banco Central não decide.",
+   "A meta tem margem até 4,5% e só conta como descumprida depois de seis meses seguidos fora dessa faixa. Para 2027, a ata projeta 4,7%, ainda acima do teto.",
+   "A ata lista quatro choques que encarecem a produção: o petróleo, o El Niño, o fim da escala 6x1 sobre o custo do trabalho e o dólar mais caro. Diante deles, todos os integrantes do comitê concordaram que o juro precisará ficar elevado por um período maior.",
+   "A ata também liga o juro mais alto à disciplina das contas do governo. Quem propõe o ajuste dessas contas é o governo, e quem o aprova é o Congresso, por isso uma parte do prazo da Selic não depende só do Banco Central.",
+   "Os bancos ainda esperam corte.",
+   "O passado aponta para o outro lado. Desde 2002, a inflação esperada pelos bancos ficou mais de 1,4 ponto acima do centro da meta em 6 episódios, e do começo ao fim de cada um a Selic subiu em 5 e caiu em 1. São poucos casos, e desta vez o próprio Banco Central atribui parte da pressão ao petróleo, ao clima e ao dólar.",
+   "Quem critica a pausa argumenta que esses choques encarecem a produção e que o juro não os barateia. O juro age pelo crédito e pelas compras, e leva em média 29 meses para pesar todo nos preços, numa revisão de 67 estudos. Enquanto isso, a prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto, contra os 3 meses anteriores.",
+   "O Banco Central responde na ata que a piora das expectativas exige juro mais alto por mais tempo. Os bancos (Focus) esperam que os preços subam 5,0% nos próximos 12 meses, acima do teto de 4,5%.",
+   "O governo tomou uma decisão ontem e anunciou outra que tocam essa conta. Por decreto, prorrogou até 9/12 o corte de impostos sobre gasolina e etanol para segurar o preço do combustível, o que alivia a inflação até lá e pesa nas contas. Pela conta da Fazenda, o custo, com a subvenção ao etanol, é de R$ 3,57 bilhões em 30 dias, num ano em que a meta pede sobra de R$ 34,3 bilhões no centro, com piso em zero. O governo também negocia com o Congresso um projeto de ajuste para 2027, que por ora é um anúncio, sem texto publicado.",
+   "Para pessoas e empresas, o crédito segue caro por mais tempo, por decisão do Banco Central. Pelo que ele escreveu, o prazo depende de a projeção dele voltar ao centro de 3% e da disciplina das contas do governo. O IBGE divulga o IPCA de outubro nesta quinta, 12/11, e o Banco Central decide o juro de novo em 9/12."
+  ],
+  "secoes": [
+   {
+    "titulo": null,
+    "paragrafos": [
+     "O Banco Central disse ontem, na ata da reunião que manteve a Selic em 13,75%, que o juro ficará alto por mais tempo porque a inflação esperada piorou. A projeção do próprio Banco Central para o segundo trimestre de 2028, o prazo em que ele mira, é de 3,5%, ainda acima do centro de 3%. Pela ata, esse prazo depende também das contas do governo, que o Banco Central não decide.",
+     "A meta tem margem até 4,5% e só conta como descumprida depois de seis meses seguidos fora dessa faixa. Para 2027, a ata projeta 4,7%, ainda acima do teto.",
+     "A ata lista quatro choques que encarecem a produção: o petróleo, o El Niño, o fim da escala 6x1 sobre o custo do trabalho e o dólar mais caro. Diante deles, todos os integrantes do comitê concordaram que o juro precisará ficar elevado por um período maior.",
+     "A ata também liga o juro mais alto à disciplina das contas do governo. Quem propõe o ajuste dessas contas é o governo, e quem o aprova é o Congresso, por isso uma parte do prazo da Selic não depende só do Banco Central.",
+     "Os bancos ainda esperam corte.",
+     "O passado aponta para o outro lado. Desde 2002, a inflação esperada pelos bancos ficou mais de 1,4 ponto acima do centro da meta em 6 episódios, e do começo ao fim de cada um a Selic subiu em 5 e caiu em 1. São poucos casos, e desta vez o próprio Banco Central atribui parte da pressão ao petróleo, ao clima e ao dólar.",
+     "Quem critica a pausa argumenta que esses choques encarecem a produção e que o juro não os barateia. O juro age pelo crédito e pelas compras, e leva em média 29 meses para pesar todo nos preços, numa revisão de 67 estudos. Enquanto isso, a prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto, contra os 3 meses anteriores.",
+     "O Banco Central responde na ata que a piora das expectativas exige juro mais alto por mais tempo. Os bancos (Focus) esperam que os preços subam 5,0% nos próximos 12 meses, acima do teto de 4,5%.",
+     "O governo tomou uma decisão ontem e anunciou outra que tocam essa conta. Por decreto, prorrogou até 9/12 o corte de impostos sobre gasolina e etanol para segurar o preço do combustível, o que alivia a inflação até lá e pesa nas contas. Pela conta da Fazenda, o custo, com a subvenção ao etanol, é de R$ 3,57 bilhões em 30 dias, num ano em que a meta pede sobra de R$ 34,3 bilhões no centro, com piso em zero. O governo também negocia com o Congresso um projeto de ajuste para 2027, que por ora é um anúncio, sem texto publicado.",
+     "Para pessoas e empresas, o crédito segue caro por mais tempo, por decisão do Banco Central. Pelo que ele escreveu, o prazo depende de a projeção dele voltar ao centro de 3% e da disciplina das contas do governo. O IBGE divulga o IPCA de outubro nesta quinta, 12/11, e o Banco Central decide o juro de novo em 9/12."
+    ]
+   }
+  ],
+  "pesquisa": {
+   "versao": 4,
+   "ok": true,
+   "em": "2026-11-11T05:01:46-03:00",
+   "meta": [
+    {
+     "etapa": "pesquisa",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "006b17db736f61253b8e3671dcdb706ba4b17f366319d33a48f7c830af916514",
+     "system_sha256": "61b5c38a2d4901b3f840f98a25ae736b411b2051045a97e8fdec79bf58550b85",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7263031000000001,
+     "turnos": 12,
+     "duracao_s": 111,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "aa9d0a62-7c61-4ea8-bae7-9f187a26f9d4"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "48430a1aadb2a8fdc87a6ef542f20b70ec316cfffa2c81b466f1a94bfe240d12",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 1.3974218,
+     "turnos": 2,
+     "duracao_s": 155,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "9a286f04-344c-4c07-9b2d-88b565fd98e3"
+    },
+    {
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "b9389b1fc49acb70640521f1db3309ff78fb5b86ba02e4ec825525017a7bdf3f",
+     "system_sha256": "7cb67fdacc15870258c05ca0f7aa1047ab704bf4626c9fcd66e7967939bbff9c",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7491118,
+     "turnos": 4,
+     "duracao_s": 72,
+     "modelos": [
+      "claude-opus-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "83689e30-5993-4a1e-88f8-318e8b76dbe7"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "bed9acab5bbe405733d761890f38634a1bb1a8d78e6d9b549068f0e55325092d",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.8642776,
+     "turnos": 2,
+     "duracao_s": 69,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "fed51a17-f8e3-4169-9ae7-a08599feef48"
+    },
+    {
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "be18a9c64acc8248c15b035f61bf86af5a208e0676c4b225a01d57860047c074",
+     "system_sha256": "7cb67fdacc15870258c05ca0f7aa1047ab704bf4626c9fcd66e7967939bbff9c",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7893425000000001,
+     "turnos": 5,
+     "duracao_s": 80,
+     "modelos": [
+      "claude-opus-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "47be8ae1-4458-4e96-acbd-14882c698f7b"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "02b3ca4494703021e887c0d44290bfe98be9e0f4121855eb339a2c38a1b99e41",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.8453456,
+     "turnos": 2,
+     "duracao_s": 62,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "e270ba2e-25ba-4192-8719-ca2e55f130e0"
+    },
+    {
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "59675824c4f6d258d109b798e1822059be9426d5810774e9a92541d8e741a3b9",
+     "system_sha256": "7cb67fdacc15870258c05ca0f7aa1047ab704bf4626c9fcd66e7967939bbff9c",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.5627080000000001,
+     "turnos": 2,
+     "duracao_s": 29,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "2d3b56c8-9ffc-4fb1-a082-0667f70a4f72"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "87f1d970a5ff3eb4372dfbc9cce572c74b0e1ab989f031ed17b5492751c63ab5",
+     "system_sha256": "2e84c6cc2cc84896f3816b7f75dc93340069cb4409218ec7d4820a8ab87b8d1d",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7356336000000001,
+     "turnos": 2,
+     "duracao_s": 18,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "92dbf891-78ea-4052-9b01-8e84ba47a565"
+    }
+   ],
+   "offline": false,
+   "voltas": [
+    {
+     "volta": 1,
+     "codigo": {
+      "graves": [
+       "bloco 7: número ou data sem linha do caderno que confira: 30/10 | trecho: Quem critica a decisão diz que o juro não barateia o petróleo nem o custo do trabalho, e que a economia já perde força. "
+      ],
+      "avisos": [
+       "c1 vem de site fora da lista de fontes conhecidas: https://agendadopoder.com.br/em-ata-copom-justifica-juros-altos-por-pressao-da-guerra-do-el-nino-e-fim-da-escala-6x1-sobre-inflacaoem-ata-copom-justifica-juros-altos-por-pressao-da-guerra-do-el-nino-e-fim-da-escala-6x1-sobre-in/",
+       "c2 vem de site fora da lista de fontes conhecidas: https://brasilemfolhas.com.br/2026/11/ata-do-copom-vincula-juros-mais-altos-a-indisciplina-fiscal/",
+       "bloco 6: frase de 39 palavras",
+       "bloco 6: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: Desde 2002, a inflação esperada passou mais de 1,4 ponto acima da meta em 6 epis",
+       "bloco 8: frase de 36 palavras"
+      ],
+      "palavras": 523,
+      "intertitulos": 0
+     },
+     "objecoes": [
+      {
+       "trecho": "Ata do Banco Central prende o próximo corte à inflação de 2027 e às contas do governo",
+       "cabeca": "regras",
+       "problema": "O caderno (c1, c2) diz que a ata manda manter o juro alto por mais tempo e liga essa conta à disciplina fiscal. Ele não diz que a ata põe o próximo corte na dependência da inflação de 2027. O título e a primeira frase afirmam mais do que a fonte mostra, e essa parte é a que circula no print.",
+       "onde_conferir": "c1 e c2. A linha do tempo da ficha só diz 'juro alto vai durar mais'.",
+       "grave": true
+      },
+      {
+       "trecho": "A ata liga o próximo corte à inflação esperada para 2027, que os bancos (Focus) põem em 4,90%, 0,40 ponto acima do teto de 4,5%, e às contas do governo",
+       "cabeca": "regras",
+       "problema": "O texto atribui à ata uma condição que nenhuma linha do caderno sustenta. E os 4,90% são do Focus de 6/11 (c11), mas o texto os apresenta como algo que a ata cita. A frase mistura o que o Banco Central escreveu com a previsão dos bancos.",
+       "onde_conferir": "c1, c2, c11. Pela ficha, o Focus subiu a inflação de 2027 para 4,90% em 9/11, e c11 dá a data de 6/11. É preciso conferir qual pesquisa vale.",
+       "grave": true
+      },
+      {
+       "trecho": "Essa ligação diz onde está a chave do próximo corte. O juro alto freia o crédito e as compras, mas não fecha a conta do governo, e por isso parte do caminho até o corte depende de uma decisão que não é do Banco Central.",
+       "cabeca": "leitora",
+       "problema": "É uma frase de efeito ('a chave') e é opinião do site, sem fonte. 'Uma decisão que não é do Banco Central' deixa de dizer quem decide: o governo propõe e o Congresso aprova. A biblioteca põe essa ligação em 'O que não se sabe', então o texto precisa dizer que é uma leitura, e não um fato.",
+       "onde_conferir": "A biblioteca, em 'O que não se sabe': 'quanto da inflação esperada mais alta vem do juro e quanto vem da dúvida sobre as contas do governo'.",
+       "grave": false
+      },
+      {
+       "trecho": "Desde 2002, a inflação esperada passou mais de 1,4 ponto acima da meta em 6 episódios, contando o atual, que segue aberto, e do começo ao fim de cada um a Selic subiu em 5 e caiu em 1",
+       "cabeca": "regras",
+       "problema": "A saída de c6 não diz se o episódio atual está entre os 6 nem se ele segue aberto. Se estiver, a 'queda' pode ser justamente o corte de 15% para 13,75%, o que mudaria a leitura. Sem a lista dos episódios, 'contando o atual' não tem sustentação. O texto também não diz qual inflação esperada mede a conta (os próximos 12 meses?).",
+       "onde_conferir": "c6. Rodar de novo `episodios \"focus_menos_meta>1.4\"` com a lista de datas e comparar com c5 (distância de 1,60 em setembro de 2026).",
+       "grave": true
+      },
+      {
+       "trecho": "Quem critica a decisão diz que o juro não barateia o petróleo nem o custo do trabalho, e que a economia já perde força.",
+       "cabeca": "leitora",
+       "problema": "A objeção não tem autor: a leitora não sabe quem diz isso. A frase seguinte cita o Itaú, mas ele não criticou a decisão, só cortou a previsão do PIB. Pôr a previsão do banco como prova da crítica cola a opinião no dado.",
+       "onde_conferir": "c19 diz só a previsão do Itaú. A crítica precisa de uma fonte com nome e linha no caderno, ou sai do texto.",
+       "grave": true
+      },
+      {
+       "trecho": "Quem defende a decisão responde que a inflação esperada para os próximos 12 meses já está em 5,0%, acima do teto de 4,5%, e que essa expectativa passa para contratos e reajustes se não for contida",
+       "cabeca": "defensor",
+       "problema": "Quem decidiu foi o Banco Central, e a razão dele está na ata: a piora das expectativas e os quatro choques. O texto põe essa defesa na boca de um 'quem defende' sem nome. O trecho sobre contratos e reajustes também não tem linha no caderno.",
+       "onde_conferir": "c2 ('piora nas expectativas exige juros mais altos'). c16 traz só os 5,0%.",
+       "grave": false
+      },
+      {
+       "trecho": "O governo e o Senado preparam um projeto de ajuste para 2027, de R$ 50 bilhões a R$ 80 bilhões conforme o jornal, com corte de isenções e bloqueio de gastos.",
+       "cabeca": "critico",
+       "problema": "Os R$ 50 bi a R$ 80 bi não têm linha no caderno, e 'conforme o jornal' não diz qual jornal. O número também não tem régua: falta dizer quanto ele significa perto da meta de 2027 (centro de R$ 73,2 bi, piso de R$ 36,6 bi) ou do déficit que a IFI projeta. Sem isso, a leitora não tem como repetir a conta. Pela ficha, quem negocia com o governo é o Congresso, e não só o Senado.",
+       "onde_conferir": "Na ficha da segunda história: Estadão (R$ 50 bi), g1 e InfoMoney (R$ 80 bi), Valor (R$ 70 bi). As metas de 2027 estão no bloco de metas. A conta da IFI (déficit de R$ 86,1 bi) saiu no texto de 9/11.",
+       "grave": true
+      },
+      {
+       "trecho": "O outro assunto de ontem é a condição fiscal que a ata cita.",
+       "cabeca": "critico",
+       "problema": "No mesmo dia, o governo prorrogou o corte de impostos sobre gasolina e etanol, a um custo de R$ 3,57 bi em 30 dias (c3, c4). A medida segura o preço do combustível no curto prazo e piora as contas. Ela pesa nos dois lados da conta da ata, inflação e contas do governo, e o texto a deixou de fora sem dizer por quê.",
+       "onde_conferir": "c3, c4.",
+       "grave": false
+      },
+      {
+       "trecho": "Na última pesquisa Focus, anterior à ata, a Selic esperada para o fim de 2027 é de 12,50%, abaixo dos 13,75% de hoje",
+       "cabeca": "regras",
+       "problema": "c20 é a pesquisa de 6/11, mas a ficha registra outra, de 9/11. Chamar a de 6/11 de 'a última' pode estar errado. O texto precisa dizer a data, ou usar a pesquisa de 9/11.",
+       "onde_conferir": "c20 e a linha do tempo da ficha (2026-11-09).",
+       "grave": false
+      },
+      {
+       "trecho": "e quanto tempo depende de a inflação esperada para 2027 voltar ao teto e de o ajuste vir com números aprovados",
+       "cabeca": "defensor",
+       "problema": "O objetivo escrito pelo Banco Central é o centro de 3%, no segundo trimestre de 2028, e não o teto de 4,5%. Usar 'voltar ao teto' como condição troca a régua do decisor por uma do site.",
+       "onde_conferir": "c2 (meta de 3%, horizonte do segundo trimestre de 2028) e c10.",
+       "grave": true
+      }
+     ],
+     "resumo": "O texto não sai como está. A conclusão central, a de que a ata condiciona o próximo corte à inflação de 2027 e às contas do governo, vai além do caderno. Os R$ 50 bi a R$ 80 bi do ajuste não têm fonte nem régua, a crítica não tem autor e 'contando o atual' não se sustenta em c6. A condição final usa o teto, e não o centro de 3% que o Banco Central mira. Falta também a desoneração da gasolina, de R$ 3,57 bi, decidida no mesmo dia. As duas buscas não acharam a ata no site do Banco Central nem a reportagem do ajuste com o trecho, por isso nenhuma linha entrou no caderno."
+    },
+    {
+     "volta": 2,
+     "codigo": {
+      "graves": [
+       "bloco 5: número ou data sem linha do caderno que confira: 6/11 | trecho: Os bancos ainda esperam corte. Na pesquisa Focus de 6/11, anterior à ata, a Selic esperada para o fim de 2027 é de 12,50",
+       "bloco 9: número ou data sem linha do caderno que confira: 13.159 | trecho: O governo mexeu ontem nas duas pontas dessa conta. Pelo Decreto 13.159, prorrogou até 9/12 o corte de impostos sobre gas"
+      ],
+      "avisos": [
+       "o texto tem 605 palavras (o tamanho de hoje é de 300 a 600)",
+       "c1 vem de site fora da lista de fontes conhecidas: https://agendadopoder.com.br/em-ata-copom-justifica-juros-altos-por-pressao-da-guerra-do-el-nino-e-fim-da-escala-6x1-sobre-inflacaoem-ata-copom-justifica-juros-altos-por-pressao-da-guerra-do-el-nino-e-fim-da-escala-6x1-sobre-in/",
+       "c2 vem de site fora da lista de fontes conhecidas: https://brasilemfolhas.com.br/2026/11/ata-do-copom-vincula-juros-mais-altos-a-indisciplina-fiscal/",
+       "bloco 1: frase de 43 palavras",
+       "bloco 1: porcentagem de meta que a ficha das metas não tem (3,5): confira a meta e a margem em config/metas.json: A ata liga essa conta também à disciplina das contas do governo, e a projeção do",
+       "bloco 7: frase de 43 palavras"
+      ],
+      "palavras": 605,
+      "intertitulos": 0
+     },
+     "objecoes": [
+      {
+       "trecho": "Também negocia com o Congresso um ajuste para 2027, que o Estadão estima em R$ 50 bilhões e o g1 em até R$ 80 bilhões, ainda sem texto publicado.",
+       "cabeca": "regras",
+       "problema": "Os R$ 50 e R$ 80 bilhões continuam sem linha no caderno. Além disso, os jornais não estimaram nada: eles relatam o que o governo prepara, por fontes. O Estadão fala do governo, o g1 cita uma fonte, o Valor diz R$ 70 bilhões e a Folha, R$ 12,8 bilhões em cancelamento extra. Pôr a estimativa na boca do jornal troca quem diz o número.",
+       "onde_conferir": "Manchetes da segunda história (Estadão, g1, InfoMoney, Valor, Folha); falta a linha documento de cada uma, com o trecho literal.",
+       "grave": true
+      },
+      {
+       "trecho": "Para dar a escala, a meta de 2027 pede superávit de R$ 73,2 bilhões no centro, com piso de R$ 36,6 bilhões, numa conta que desconta parte dos precatórios.",
+       "cabeca": "critico",
+       "problema": "A comparação é injusta: o ajuste é um corte que se soma ao projeto, e a meta é o saldo do ano. A leitora vai repetir que o ajuste de R$ 50 a 80 bilhões 'cobre a meta', mas pela regra do governo o projeto já dava R$ 83,4 bilhões, acima do centro. A régua de quem discorda, o déficit de R$ 86,1 bilhões que a IFI projeta, ficou de fora.",
+       "onde_conferir": "Bloco <metas> (2027: resultado efetivo de R$ 18,6 bi e conta da meta de R$ 83,4 bi); texto do site de 9/11 (IFI: déficit de R$ 86,1 bi), que precisa de linha documento no caderno.",
+       "grave": true
+      },
+      {
+       "trecho": "A melhor objeção à decisão sai da própria ata.",
+       "cabeca": "leitora",
+       "problema": "A objeção da primeira volta continua sem autor, e agora o texto a atribui ao Banco Central, que defende a decisão. A ata lista os choques, mas a leitura de que o juro não os barateia é do site. O Itaú continua posto como prova da crítica, quando só cortou a previsão do PIB, o que cola a previsão no argumento.",
+       "onde_conferir": "c1 (a ata lista os choques e não critica a decisão); c19 (é só a previsão do Itaú). Kawall e a Legacy fizeram críticas com nome, mas não têm linha no caderno.",
+       "grave": true
+      },
+      {
+       "trecho": "A ligação com as contas do governo muda quem tem a conta nas mãos.",
+       "cabeca": "leitora",
+       "problema": "Continua frase de efeito e afirma mais do que o texto sustenta: a frase seguinte diz que a evidência não separa as duas causas. Primeiro o texto afirma, depois desdiz, e a frase vai sozinha no print.",
+       "onde_conferir": "Biblioteca, juros e câmbio, \"O que não se sabe\" (que precisa de linha do tipo biblioteca no caderno); c2.",
+       "grave": true
+      },
+      {
+       "trecho": "Pelo Decreto 13.159, prorrogou até 9/12 o corte de impostos sobre gasolina e etanol, que, com a subvenção ao etanol, custa R$ 3,57 bilhões em 30 dias pela conta da Fazenda",
+       "cabeca": "defensor",
+       "problema": "O motivo oficial da prorrogação, segurar o preço do combustível, não entrou, e falta dizer como a medida mexe nas 'duas pontas': ela alivia a inflação até 9/12 e piora as contas. Os R$ 3,57 bilhões também ficaram sem régua: perto do centro da meta de 2026, de R$ 34,3 bilhões, são cerca de um décimo.",
+       "onde_conferir": "c3, c4; bloco <metas> (2026: centro de R$ 34,3 bi); a ficha da segunda história traz o porquê.",
+       "grave": true
+      },
+      {
+       "trecho": "O governo mexeu ontem nas duas pontas dessa conta.",
+       "cabeca": "critico",
+       "problema": "Só a prorrogação é ato. O ajuste é anúncio sem texto, e o próprio parágrafo diz isso depois. 'Mexeu' trata a promessa como fato já na primeira palavra do parágrafo.",
+       "onde_conferir": "Segunda história: \"anúncio, sem ato formal\".",
+       "grave": false
+      },
+      {
+       "trecho": "Desde 2002, essa distância passou de 1,4 ponto em 6 episódios, com a expectativa perto do teto de 4,5% ou acima dele [c6]. Do começo ao fim de cada um, a Selic subiu em 5 e caiu em 1 [c6].",
+       "cabeca": "critico",
+       "problema": "O texto parou de dizer 'contando o atual', mas não diz se o episódio atual, aberto desde setembro, entra nos 6. Se entra, a 'queda' pode ser o corte de 14% para 13,75%, e a conta passa a ser 5 de 5 episódios fechados, o que muda a leitura.",
+       "onde_conferir": "c6 (a saída não lista os episódios); c5 (episódio atual em setembro, com 1,60 ponto).",
+       "grave": false
+      }
+     ],
+     "resumo": "A reescrita resolveu o título, a condição de 2027, a data do Focus e a régua do centro de 3%, e agora dá ao Banco Central a defesa dele. Continuam sem solução o ajuste de R$ 50 a 80 bilhões (sem linha no caderno, com dono errado e régua injusta), a objeção sem autor, que agora é atribuída à ata, e a frase de efeito sobre \"quem tem a conta nas mãos\". A reescrita trouxe dois problemas: a prorrogação do imposto sobre gasolina entrou sem o motivo oficial e sem régua, e \"mexeu ontem nas duas pontas\" trata como ato o que ainda é negociação."
+    },
+    {
+     "volta": 3,
+     "codigo": {
+      "graves": [],
+      "avisos": [
+       "c1 vem de site fora da lista de fontes conhecidas: https://agendadopoder.com.br/em-ata-copom-justifica-juros-altos-por-pressao-da-guerra-do-el-nino-e-fim-da-escala-6x1-sobre-inflacaoem-ata-copom-justifica-juros-altos-por-pressao-da-guerra-do-el-nino-e-fim-da-escala-6x1-sobre-in/",
+       "c2 vem de site fora da lista de fontes conhecidas: https://brasilemfolhas.com.br/2026/11/ata-do-copom-vincula-juros-mais-altos-a-indisciplina-fiscal/",
+       "bloco 6: frase de 37 palavras",
+       "bloco 10: frase de 37 palavras"
+      ],
+      "palavras": 584,
+      "intertitulos": 0
+     },
+     "objecoes": [
+      {
+       "trecho": "O episódio atual entra nessa conta, porque em agosto a inflação esperada já estava em 4,6%, e nele a Selic caiu de 14% para 13,75% até agora.",
+       "cabeca": "regras",
+       "problema": "O caderno não diz quando começou o episódio atual nem a Selic no início dele. A linha c6 só conta os resultados (subiu em 5, caiu em 1). Se a inflação esperada já passava de 1,4 ponto acima da meta antes de agosto, o episódio começou com a Selic em 15% ou 14,75%, e não em 14%. A frase seguinte, sobre os '5 episódios já encerrados', também depende de o atual ser o único em que a Selic caiu, e isso o caderno não mostra.",
+       "onde_conferir": "c6 (episodios \"focus_menos_meta>1.4\" não dá o começo nem o fim de cada episódio); c5; dados do site (expectativa de 4,6% em agosto)",
+       "grave": true
+      },
+      {
+       "trecho": "Na última pesquisa Focus antes da ata, a Selic esperada para o fim de 2027 é de 12,50%, contra 13,75% hoje",
+       "cabeca": "regras",
+       "problema": "A linha c20 é a pesquisa Focus de 6/11, mas a ficha da história registra uma pesquisa Focus de 9/11, que sai antes da ata de 10/11. Por isso a de 6/11 não é a 'última antes da ata', e o número pode ter mudado.",
+       "onde_conferir": "c20 (2026-11-06); linha do tempo da história (2026-11-09: Focus sobe a inflação de 2027 a 4,90%)",
+       "grave": true
+      }
+     ],
+     "resumo": "Dois erros que impedem a saída. O ponto de partida do episódio atual (a Selic em 14%) e a leitura de que os 5 episódios encerrados terminaram com a Selic em alta não estão no caderno. A pesquisa Focus citada como a última antes da ata é a de 6/11, mas houve outra em 9/11."
+    }
+   ],
+   "historia": "juro_inflacao",
+   "segunda": "contas_governo",
+   "modo": "normal",
+   "pesquisa": {
+    "perguntas": [
+     {
+      "pergunta": "1. Quem decidiu, com que poder e quem pode desfazer?",
+      "resposta": "O Copom, do Banco Central, decidiu por unanimidade em 3 e 4/11 manter a Selic em 13,75%, e a ata saiu em 10/11. A decisão é do comitê, pela lei de autonomia do Banco Central, e só ele a desfaz, na reunião de 8 e 9/12. A ata não é decisão nova: explica a de 4/11 e diz que o juro fica alto por mais tempo. O Congresso poderia mudar a lei de autonomia, mas isso não está em votação (a ideia de teto para a Selic é só debate, e a Fazenda nega estudá-la).",
+      "caderno": [
+       "c1",
+       "c2"
+      ]
+     },
+     {
+      "pergunta": "2. Qual objetivo o decisor escreveu, e em que documento?",
+      "resposta": "O objetivo escrito é levar a inflação à meta de 3%. A ata diz que a piora das expectativas de inflação exige política monetária mais restritiva por período prolongado, e lista quatro choques de oferta: petróleo, El Niño, fim da escala 6x1 sobre os custos do trabalho e depreciação do câmbio por incertezas da política doméstica. Também liga a disciplina fiscal ao juro: o enfraquecimento da disciplina e a incerteza sobre a dívida podem exigir juros maiores. Limite da pesquisa: os trechos vêm de reportagens que citam a ata. Não consegui abrir o PDF oficial (o arquivo do BC veio ilegível).",
+      "caderno": [
+       "c1",
+       "c2"
+      ]
+     },
+     {
+      "pergunta": "3. Qual é o tamanho?",
+      "resposta": "A Selic fica em 13,75%, sem mudar. O número que pesa é a projeção do Banco Central: 5,6% para 2026, 1,1 ponto acima do teto de 4,5%, e 3,5% para o 2º trimestre de 2028, o horizonte relevante, 0,5 ponto acima do centro de 3%. A meta só é descumprida com seis meses seguidos fora da faixa (de 1,5% a 4,5%), e a conta do site marca o início da sequência em setembro (4,58%). Não achei estimativa oficial do custo da pausa em reais. O custo para o governo é indireto: cada ponto de Selic custa cerca de R$ 48 bilhões por ano à dívida, segundo a notícia do Poder360 de 1/11.",
+      "caderno": [
+       "c2",
+       "c9",
+       "c10"
+      ]
+     },
+     {
+      "pergunta": "4. Em que pressão do site e em que porta da leitora ela mexe?",
+      "resposta": "Juro, inflação esperada e dívidas das famílias. A porta é a parcela de quem vai pegar crédito novo: juro fixo de 11,7% para 15% ao ano num financiamento de R$ 300 mil em 30 anos leva a primeira parcela SAC de R$ 3.612,29 para R$ 4.347,81. Quem já tem juro fixo continua com a mesma parcela. A parte da renda das famílias que vai para dívidas está em 29,0%, a maior desde 2005.",
+      "caderno": [
+       "c17",
+       "c16"
+      ]
+     },
+     {
+      "pergunta": "5. Por que caminho a decisão chega ao objetivo, e o que a biblioteca diz?",
+      "resposta": "O caminho: Selic alta encarece o crédito, esfria compra e investimento, e os preços sobem mais devagar, com atraso. Meta-análise de 67 estudos (Havranek e Rusnak, 2013): 29 meses em média para pesar todo nos preços; força forte. Logo, a pausa de hoje só aparece na inflação de 2028, e quem decidiu mira esse horizonte. Os bancos (Focus) pesam no caminho: a meta de inflação ancora a expectativa (Carvalho e Minella, 2012; força média, só Brasil). Quem discorda: com dívida alta e medo de calote, o juro alto pode enfraquecer o real e subir a inflação (Blanchard, 2004; força média, só para crise aguda). A ata liga o juro à dúvida fiscal, o que se aproxima dessa objeção.",
+      "caderno": [
+       "c13",
+       "c14",
+       "c15",
+       "c2"
+      ]
+     },
+     {
+      "pergunta": "6. O que aconteceu das outras vezes, por episódio?",
+      "resposta": "Contas do site, por episódio: das vezes em que a inflação esperada ficou mais de 1,4 ponto acima da meta, são 6 episódios (o atual é o sexto); do começo ao fim de cada um a Selic subiu em 5, caiu em 1. Das pausas depois de cortes desde 2002 (11 casos), a Selic voltou a subir em 7 casos, 3 a 9 meses depois do último corte, e caiu de novo em 3 (todas antes do fim do ciclo de corte). O último corte de 2026-09 deixa a expectativa 1,60 ponto acima da meta. Recessão nos 12 meses seguintes: 2003 e 2014-16, 2 dos 5 episódios já fechados. São poucos casos, não uma lei, e a pausa atual vem de choques de oferta e de câmbio, diferentes de 2013-16.",
+      "caderno": [
+       "c5",
+       "c6",
+       "c7",
+       "c8"
+      ]
+     },
+     {
+      "pergunta": "7. Dá certo se, dá errado se.",
+      "resposta": "Dá certo se a inflação esperada (Focus) parar de subir e voltar para perto de 4,5%: hoje o Focus de 2027 está em 4,90%, 0,40 ponto acima do teto, e o de 2026 em 5,22%. O IPCA de outubro (12/11) e o Focus das próximas semanas mostram isso. Dá certo também se o dólar parar de subir com o ajuste fiscal anunciado. Dá errado se a expectativa seguir subindo com a Selic parada, ou se o dólar e o juro de 10 anos subirem juntos por dúvida das contas, o que o juro sozinho não segura (sinais da biblioteca). Com esse prazo de 29 meses e só 2 semanas de dados, ainda não dá para dizer o lado.",
+      "caderno": [
+       "c11",
+       "c12",
+       "c13",
+       "c16"
+      ]
+     },
+     {
+      "pergunta": "8. Quem ganha, quem paga, objeção e espelho.",
+      "resposta": "Ganha quem tem aplicação com a Selic: descontada a inflação esperada, ela rende 8,3% ao ano. Paga quem toma crédito novo, quem atrasa conta (84,2 milhões, recorde da Serasa) e a economia: os bancos Bradesco, XP e Genoa veem PIB parado ou em queda em 2027, e o Itaú cortou o PIB de 2027 para 0,5% (30/10). Objeção de quem critica o BC: o choque de oferta (petróleo, El Niño, 6x1) não é inflação de demanda, e o próprio Copom costuma dizer que não reage ao efeito primário; críticos questionam tratar a escala 6x1 como choque. Objeção de quem defende: a expectativa já passa do teto e a dúvida fiscal afasta a convergência. Espelho: o Banco Central em 2013-16 (governo Dilma) também ficou com a expectativa mais de 1,4 ponto acima da meta por 34 meses e subiu a Selic de 9% a 14,25%; em 2021-23 (governo Bolsonaro, depois Lula) foram 20 meses e a Selic foi a 13,75%. A régua não muda com quem governa.",
+      "caderno": [
+       "c6",
+       "c18",
+       "c19",
+       "c21"
+      ]
+     },
+     {
+      "pergunta": "Extra: o que o governo fez ontem com os combustíveis e o que isso tem a ver com a ata?",
+      "resposta": "O Decreto 13.159, em edição extra do Diário Oficial de 10/11, prorrogou até 9 de dezembro o PIS/Pasep, a Cofins e a Cide zerados sobre gasolina e etanol. Para o Ministério da Fazenda, o custo é R$ 2,76 bilhões em 30 dias, mais R$ 813,41 milhões da subvenção ao etanol: R$ 3,57 bilhões. O objetivo escrito é evitar que o petróleo alto passe para os preços. O ponto: a ata lista o petróleo como choque de oferta, e a medida segura o preço por 30 dias, a um custo que a meta fiscal não cobre com folga. Não achei a exposição de motivos.",
+      "caderno": [
+       "c3",
+       "c4"
+      ]
+     }
+    ],
+    "argumentos": [
+     {
+      "argumento": "A ata de 10/11 põe o fim da escala 6x1 e o câmbio entre quatro choques de oferta e diz que o juro fica alto por mais tempo. Um juro que mira a inflação de 2028 (3,5%, contra 3% da meta) não responde a choques de 2026, e esse prazo é o que a leitora precisa saber antes de esperar corte.",
+      "para_quem": "Para quem vai pegar crédito novo, em casa ou na empresa, e para o país: a Selic só cai quando a expectativa para 2027 (4,90%, contra teto de 4,5%) voltar ao teto.",
+      "o_que_desmente": "O Focus de 2027 cair abaixo de 4,5% e o IPCA de outubro vir abaixo do esperado, com o dólar caindo.",
+      "caderno": [
+       "c1",
+       "c2",
+       "c10",
+       "c11",
+       "c12",
+       "c13"
+      ]
+     },
+     {
+      "argumento": "Dos 6 episódios com expectativa mais de 1,4 ponto acima da meta, a Selic subiu em 5; a pausa de hoje, com a ata ligando juro e fiscal, parece o caso de 2013-16 e 2021-23. São poucos casos e a origem do choque muda.",
+      "para_quem": "Para o país: a leitura da ata é que o ajuste fiscal e o juro são a mesma conta; sem ajuste com números, o Banco Central não corta.",
+      "o_que_desmente": "Um ajuste fiscal com números aprovado em dezembro e o dólar abaixo de R$ 5,18 com o Focus em queda.",
+      "caderno": [
+       "c2",
+       "c5",
+       "c6",
+       "c7",
+       "c20"
+      ]
+     },
+     {
+      "argumento": "O governo gasta R$ 3,57 bilhões em 30 dias para segurar gasolina e etanol, enquanto o Banco Central trata o petróleo como choque a observar: as duas medidas apontam para o mesmo objetivo (preços) por meios diferentes, um com custo fiscal e outro com juro.",
+      "para_quem": "Para o país: o alívio no preço do combustível sai das contas do governo, e quem empresta ao governo cobra isso no juro longo.",
+      "o_que_desmente": "Gasolina cair no mercado e a desoneração não ser renovada em 9/12, sem alta de inflação.",
+      "caderno": [
+       "c3",
+       "c4",
+       "c1"
+      ]
+     }
+    ],
+    "objecao": {
+     "texto": "Se os choques são de oferta (petróleo, El Niño, 6x1, câmbio), o juro não os resolve, e o próprio Banco Central costuma dizer que só reage aos efeitos de segunda ordem. Parar o corte com a atividade já fraca (indústria em queda desde maio, o pior setembro do Caged, Itaú com PIB de 0,5% em 2027) custa emprego sem baixar o preço do petróleo. Críticos também questionam tratar a escala 6x1 como risco para os preços. O prazo de 29 meses que sustenta o juro também enfraquece a defesa: o que se faz hoje só pesa em 2029.",
+     "caderno": [
+      "c1",
+      "c13",
+      "c18",
+      "c19"
+     ]
+    },
+    "o_que_falta": "Não abri a ata oficial do Banco Central: o PDF veio ilegível, e os trechos (quatro choques, 6x1, 5,6%, 4,7%, 3,5%) vêm de reportagens e agregadores (Agenda do Poder, Brasil em Folhas) do dia 10/11; a conferência precisa do texto no bcb.gov.br. O Decreto 13.159 e as duas estimativas da Fazenda também vêm da Agência Brasil, e a exposição de motivos não foi lida. Não achei quanto a pausa custa em reais. Faltam o IPCA de outubro (12/11) e o IBGE; nada de hoje entra. A biblioteca não tem entrada sobre desoneração de combustíveis (tipo imposto), que seria a base do caminho da segunda decisão.",
+    "pagina_que_falta": ""
+   },
+   "pagina_que_falta": "",
+   "rascunho": {
+    "titulo": "Ata do Banco Central prende o próximo corte à inflação de 2027 e às contas do governo",
+    "texto": "O Banco Central disse ontem, na ata da reunião que manteve a Selic em 13,75%, que o juro ficará alto por mais tempo [c1]. A ata liga o próximo corte à inflação esperada para 2027, que os bancos (Focus) põem em 4,90%, 0,40 ponto acima do teto de 4,5%, e às contas do governo [c11, c12].\n\nA meta é de 3%, com margem até 4,5%, e só conta como descumprida depois de seis meses seguidos fora da faixa. Pela ata, a projeção do próprio Banco Central é de 4,7% para 2027, ainda acima do teto, e de 3,5% no segundo trimestre de 2028, o prazo em que ele mira [c2].\n\nA ata lista quatro choques que encarecem a produção: o petróleo, o El Niño, o fim da escala 6x1 sobre o custo do trabalho e o dólar mais caro [c1]. Diante deles, o Banco Central diz que a piora da inflação esperada exige juro alto por mais tempo, e liga essa conta também à disciplina das contas do governo [c2].\n\nEssa ligação diz onde está a chave do próximo corte. O juro alto freia o crédito e as compras, mas não fecha a conta do governo, e por isso parte do caminho até o corte depende de uma decisão que não é do Banco Central.\n\nOs bancos ainda esperam corte. Na última pesquisa Focus, anterior à ata, a Selic esperada para o fim de 2027 é de 12,50%, abaixo dos 13,75% de hoje [c20].\n\nO passado aponta para o outro lado. Desde 2002, a inflação esperada passou mais de 1,4 ponto acima da meta em 6 episódios, contando o atual, que segue aberto, e do começo ao fim de cada um a Selic subiu em 5 e caiu em 1 [c6]. São poucos casos, e desta vez o próprio Banco Central atribui parte da pressão a petróleo, clima e dólar.\n\nQuem critica a decisão diz que o juro não barateia o petróleo nem o custo do trabalho, e que a economia já perde força. A prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto, contra os 3 meses anteriores, e o Itaú prevê, desde 30/10, crescimento de 0,5% em 2027 [c19].\n\nA objeção tem apoio no prazo do juro, que leva em média 29 meses para pesar todo nos preços, numa revisão de 67 estudos [c13]. Quem defende a decisão responde que a inflação esperada para os próximos 12 meses já está em 5,0%, acima do teto de 4,5%, e que essa expectativa passa para contratos e reajustes se não for contida [c16].\n\nO outro assunto de ontem é a condição fiscal que a ata cita. O governo e o Senado preparam um projeto de ajuste para 2027, de R$ 50 bilhões a R$ 80 bilhões conforme o jornal, com corte de isenções e bloqueio de gastos. É anúncio sem texto publicado, e ele depende do Congresso.\n\nO crédito segue caro para pessoas e empresas por mais tempo, e quanto tempo depende de a inflação esperada para 2027 voltar ao teto e de o ajuste vir com números aprovados. O IBGE divulga o IPCA de outubro nesta quinta, 12/11, e o Banco Central decide o juro de novo em 9/12 [c2].",
+    "argumento": "A ata prende o próximo corte da Selic à inflação esperada para 2027, hoje acima do teto, e às contas do governo, que o juro sozinho não resolve; os bancos ainda esperam corte, o passado aponta alta.",
+    "porque": "O Banco Central disse na ata que a piora da inflação esperada, diante de quatro choques (petróleo, El Niño, fim da escala 6x1 e dólar mais caro) e da dúvida sobre as contas do governo, exige juro alto por mais tempo."
+   },
+   "caderno": [
+    {
+     "id": "c1",
+     "tipo": "documento",
+     "afirmacao": "A ata do Copom, divulgada em 10/11, lista quatro choques de oferta: petróleo, El Niño, fim da escala 6x1 sobre os custos do trabalho e depreciação do câmbio, e diz que os juros ficarão elevados por mais tempo.",
+     "numeros": [
+      "quatro choques de oferta",
+      "6×1"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agenda do Poder (cobertura da ata do Copom)",
+      "url": "https://agendadopoder.com.br/em-ata-copom-justifica-juros-altos-por-pressao-da-guerra-do-el-nino-e-fim-da-escala-6x1-sobre-inflacaoem-ata-copom-justifica-juros-altos-por-pressao-da-guerra-do-el-nino-e-fim-da-escala-6x1-sobre-in/",
+      "data": "2026-11-10",
+      "trecho": "os efeitos do fim da escala 6×1 sobre os custos do trabalho; Todos os integrantes concordaram que os juros precisarão permanecer elevados por um período maior"
+     },
+     "conferencia": {
+      "status": "numeros_na_pagina",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c2",
+     "tipo": "documento",
+     "afirmacao": "A ata liga juro maior à piora das expectativas e à disciplina fiscal; projeções: 5,6% em 2026, 4,7% em 2027 e 3,5% no 2º trimestre de 2028, com meta de 3%. Próxima reunião em 8 e 9/12.",
+     "numeros": [
+      "5,6%",
+      "4,7%",
+      "3,5%",
+      "3%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Brasil em Folhas (cobertura da ata do Copom)",
+      "url": "https://brasilemfolhas.com.br/2026/11/ata-do-copom-vincula-juros-mais-altos-a-indisciplina-fiscal/",
+      "data": "2026-11-10",
+      "trecho": "Inflação de 5,6% em 2026, 4,7% em 2027 e 3,5% no segundo trimestre de 2028, com meta de 3%"
+     },
+     "conferencia": {
+      "status": "numeros_na_pagina",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c3",
+     "tipo": "documento",
+     "afirmacao": "O Decreto 13.159 prorrogou até 9/12 a desoneração de gasolina e etanol; a Fazenda estima R$ 2,76 bilhões em 30 dias e R$ 813,41 milhões na subvenção ao etanol.",
+     "numeros": [
+      "2,76 bilhões",
+      "813,41 milhões",
+      "9 de dezembro"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agência Brasil",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/governo-prorroga-ate-9-de-dezembro-desoneracao-da-gasolina-e-do-etanol",
+      "data": "2026-11-10",
+      "trecho": "Ministério da Fazenda estima impacto fiscal de R$ 2,76 bilhões nos próximos 30 dias"
+     },
+     "conferencia": {
+      "status": "numeros_na_pagina",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c4",
+     "tipo": "conta",
+     "afirmacao": "Soma das duas estimativas da Fazenda: R$ 3,57 bilhões em 30 dias.",
+     "numeros": [
+      "3,5734"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"2.76+0.81341\"",
+     "saida": "2.76+0.81341 = 3,5734 (com 3 casas: 3,573; com 2 casas: 3,57; com 1 casa: 3,6)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "2.76+0.81341 = 3,5734 (com 3 casas: 3,573; com 2 casas: 3,57; com 1 casa: 3,6)\n"
+     }
+    },
+    {
+     "id": "c5",
+     "tipo": "conta",
+     "afirmacao": "Último corte em 2026-09: expectativa 1,60 ponto acima da meta, juro real 8,7%.",
+     "numeros": [
+      "1,60",
+      "8,7%"
+     ],
+     "comando": ".venv/bin/python src/conta.py pausas",
+     "saida": "último corte em 2026-09 (Selic 13,75%): expectativa 4,60% (meta 3,00%, distância 1,60), IPCA 12 meses 4,58%, juro real 8,7%; expectativa 1 mês depois +0,36 ponto, 3 meses depois sem dado ponto; ainda parada (2 mês(es) com dado depois do corte).",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Cada vez que o Banco Central cortou a Selic e a deixou parada pelo menos nos 2 meses seguintes (ou até o último mês da série). 'Expectativa' é a inflação que os bancos esperam para os 12 meses seguintes (Focus), no fim do mês; 'meta' é o centro da meta de inflação desses mesmos 12 meses (a média das metas de cada ano, pelo número de meses); a distância é expectativa menos meta.\núltimo corte em 2002-03 (Selic 18,50%): expectativa 4,81% (meta 3,62%, distância 1,18), IPCA 12 meses 7,75%, juro real 13,1%; expectativa 1 mês depois -0,24 ponto, 3 meses depois -0,28 ponto; depois: corte 4 meses depois do último corte; o ciclo foi até 2002-07 e levou a Selic a 18,00% (-0,50 ponto(s)).\núltimo corte em 2002-07 (Selic 18,00%): expectativa 4,73% (meta 3,79%, distância 0,94), IPCA 12 meses 7,51%, juro real 12,7%; expectativa 1 mês depois +0,51 ponto, 3 meses depois +3,71 ponto; depois: alta 3 meses depois do último corte; o ciclo foi até 2003-02 e levou a Selic a 26,50% (+8,50 ponto(s)).\núltimo corte em 2003-12 (Selic 16,50%): expectativa 5,95% (meta 5,50%, distância 0,45), IPCA 12 meses 9,30%, juro real 10,0%; expectativa 1 mês depois -0,10 ponto, 3 meses depois -0,47 ponto; depois: corte 3 meses depois do último corte; o ciclo foi até 2004-04 e levou a Selic a 16,00% (-0,50 ponto(s)).\núltimo corte em 2004-04 (Selic 16,00%): expectativa 5,54% (meta 5,17%, distância 0,37), IPCA 12 meses 5,26%, juro real 9,9%; expectativa 1 mês depois +0,28 ponto, 3 meses depois +0,56 ponto; depois: alta 5 meses depois do último corte; o ciclo foi até 2005-05 e levou a Selic a 19,75% (+3,75 ponto(s)).\núltimo corte em 2007-09 (Selic 11,25%): expectativa 3,84% (meta 4,50%, distância -0,66), IPCA 12 meses 4,15%, juro real 7,1%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,44 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2008-09 e levou a Selic a 13,75% (+2,50 ponto(s)).\núltimo corte em 2009-07 (Selic 8,75%): expectativa 4,08% (meta 4,50%, distância -0,42), IPCA 12 meses 4,50%, juro real 4,5%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,21 ponto; depois: alta 9 meses depois do último corte; o ciclo foi até 2011-07 e levou a Selic a 12,50% (+3,75 ponto(s)).\núltimo corte em 2012-10 (Selic 7,25%): expectativa 5,37% (meta 4,50%, distância 0,87), IPCA 12 meses 5,45%, juro real 1,8%; expectativa 1 mês depois +0,02 ponto, 3 meses depois +0,10 ponto; depois: alta 6 meses depois do último corte; o ciclo foi até 2015-07 e levou a Selic a 14,25% (+7,00 ponto(s)).\núltimo corte em 2018-03 (Selic 6,50%): expectativa 3,95% (meta 4,44%, distância -0,49), IPCA 12 meses 2,68%, juro real 2,5%; expectativa 1 mês depois +0,16 ponto, 3 meses depois +0,07 ponto; depois: corte 17 meses depois do último corte; o ciclo foi até 2020-08 e levou a Selic a 2,00% (-4,50 ponto(s)).\núltimo corte em 2020-08 (Selic 2,00%): expectativa 3,03% (meta 3,83%, distância -0,80), IPCA 12 meses 2,44%, juro real -1,0%; expectativa 1 mês depois +0,20 ponto, 3 meses depois +0,81 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2022-08 e levou a Selic a 13,75% (+11,75 ponto(s)).\núltimo corte em 2024-05 (Selic 10,50%): expectativa 3,64% (meta 3,00%, distância 0,64), IPCA 12 meses 3,93%, juro real 6,6%; expectativa 1 mês depois -0,03 ponto, 3 meses depois +0,23 ponto; depois: alta 4 meses depois do último corte; o ciclo foi até 2025-06 e levou a Selic a 15,00% (+4,50 ponto(s)).\núltimo corte em 2026-09 (Selic 13,75%): expectativa 4,60% (meta 3,00%, distância 1,60), IPCA 12 meses 4,58%, juro real 8,7%; expectativa 1 mês depois +0,36 ponto, 3 meses depois sem dado ponto; ainda parada (2 mês(es) com dado depois do corte).\n"
+     }
+    },
+    {
+     "id": "c6",
+     "tipo": "conta",
+     "afirmacao": "Em 6 episódios com a expectativa mais de 1,4 ponto acima da meta, a Selic subiu em 5 e caiu em 1.",
+     "numeros": [
+      "6",
+      "5",
+      "1"
+     ],
+     "comando": ".venv/bin/python src/conta.py episodios \"focus_menos_meta>1.4\"",
+     "saida": "6 episódio(s). Do começo ao fim de cada um, a Selic subiu em 5, caiu em 1 e ficou igual em 0.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Episódios em que focus_menos_meta > 1,40 (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não por mês: um episódio longo não vale mais que um curto.\nfocus_menos_meta: inflação esperada para 12 meses (Focus) menos o centro da meta desses 12 meses, em pontos.\n\nde 2002-08 a 2003-07 (12 meses): focus_menos_meta de 1,41 a 1,79 (o maior: 8,26); Selic de 18,00% no começo a 24,50% no fim.\n  no começo, 2002-08: selic_meta 18,00; ipca_12m 7,46; focus_ipca_12m 5,24; juro_real 12,12; dolar_ptax 3,0223\n  12 meses depois do fim, 2004-07: selic_meta 16,00; ipca_12m 6,81; focus_ipca_12m 6,10; juro_real 9,33; dolar_ptax 3,0268; ibcbr 75,25; primario_12m -3,61; ibcbr_12m 8,8%\n  recessão começando no episódio ou nos 12 meses seguintes: 1T2003\n\nde 2004-08 a 2004-11 (4 meses): focus_menos_meta de 1,43 a 1,47 (o maior: 1,57); Selic de 16,00% no começo a 17,25% no fim.\n  no começo, 2004-08: selic_meta 16,00; ipca_12m 7,18; focus_ipca_12m 6,26; juro_real 9,17; dolar_ptax 2,9338; ibcbr 75,60; primario_12m -3,68; ibcbr_12m 8,5%\n  12 meses depois do fim, 2005-11: selic_meta 18,50; ipca_12m 6,22; focus_ipca_12m 4,63; juro_real 13,26; juro_real_longo 8,71; dolar_ptax 2,2070; ibcbr 78,21; primario_12m -3,91; ibcbr_12m 2,0%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2013-08 a 2016-05 (34 meses): focus_menos_meta de 1,62 a 1,44 (o maior: 2,53); Selic de 9,00% no começo a 14,25% no fim.\n  no começo, 2013-08: selic_meta 9,00; ipca_12m 6,09; focus_ipca_12m 6,12; juro_real 2,71; juro_real_longo 5,71; dolar_ptax 2,3725; ibcbr 102,97; desocupacao 7,20; divida_bruta 53,44; primario_12m -1,65; ibcbr_12m 2,1%\n  12 meses depois do fim, 2017-05: selic_meta 11,25; ipca_12m 3,60; focus_ipca_12m 4,56; juro_real 6,40; juro_real_longo 5,62; dolar_ptax 3,2437; ibcbr 94,25; desocupacao 13,40; divida_bruta 72,34; primario_12m 2,46; ibcbr_12m 0,5%\n  recessão começando no episódio ou nos 12 meses seguintes: 2T2014, 1T2015, 3T2016\n\nde 2021-10 a 2023-05 (20 meses): focus_menos_meta de 1,58 a 1,52 (o maior: 2,59); Selic de 7,75% no começo a 13,75% no fim.\n  no começo, 2021-10: selic_meta 7,75; ipca_12m 10,67; focus_ipca_12m 5,12; juro_real 2,50; juro_real_longo 5,77; dolar_ptax 5,6430; ibcbr 97,49; desocupacao 12,10; divida_bruta 79,52; primario_12m 0,23; ibcbr_12m 0,2%\n  12 meses depois do fim, 2024-05: selic_meta 10,50; ipca_12m 3,93; focus_ipca_12m 3,64; juro_real 6,62; juro_real_longo 6,26; dolar_ptax 5,2416; ibcbr 105,59; desocupacao 7,10; divida_bruta 75,67; primario_12m 2,49; ibcbr_12m 3,1%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2024-11 a 2025-07 (9 meses): focus_menos_meta de 1,41 a 1,42 (o maior: 2,74); Selic de 11,25% no começo a 15,00% no fim.\n  no começo, 2024-11: selic_meta 11,25; ipca_12m 4,87; focus_ipca_12m 4,41; juro_real 6,55; juro_real_longo 7,24; dolar_ptax 6,0535; ibcbr 108,02; desocupacao 6,10; divida_bruta 77,50; primario_12m 1,64; ibcbr_12m 4,3%\n  12 meses depois do fim, 2026-07: selic_meta 14,25; ipca_12m 4,44; focus_ipca_12m 4,19; juro_real 9,66; juro_real_longo 8,27; dolar_ptax 5,0773; ibcbr 110,03; desocupacao 5,30; divida_bruta 82,55; primario_12m 0,67; ibcbr_12m 1,3%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2026-08 a 2026-11 (4 meses): focus_menos_meta de 1,55 a 2,01 (o maior: 2,01); Selic de 14,00% no começo a 13,75% no fim.\n  no começo, 2026-08: selic_meta 14,00; ipca_12m 4,22; focus_ipca_12m 4,55; juro_real 9,04; juro_real_longo 7,92; dolar_ptax 5,1816; ibcbr 110,41; desocupacao 5,30; divida_bruta 82,87; primario_12m 0,62; ibcbr_12m 1,4%\n  12 meses depois do fim, 2027-11: sem dado\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\n6 episódio(s). Do começo ao fim de cada um, a Selic subiu em 5, caiu em 1 e ficou igual em 0.\n"
+     }
+    },
+    {
+     "id": "c7",
+     "tipo": "conta",
+     "afirmacao": "Depois do último corte de 2024-05, a Selic subiu 4 meses depois, até 15%.",
+     "numeros": [
+      "10,50%",
+      "15,00%"
+     ],
+     "comando": ".venv/bin/python src/conta.py pausas",
+     "saida": "último corte em 2024-05 (Selic 10,50%): expectativa 3,64% (meta 3,00%, distância 0,64), IPCA 12 meses 3,93%, juro real 6,6%; expectativa 1 mês depois -0,03 ponto, 3 meses depois +0,23 ponto; depois: alta 4 meses depois do último corte; o ciclo foi até 2025-06 e levou a Selic a 15,00% (+4,50 ponto(s)).",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Cada vez que o Banco Central cortou a Selic e a deixou parada pelo menos nos 2 meses seguintes (ou até o último mês da série). 'Expectativa' é a inflação que os bancos esperam para os 12 meses seguintes (Focus), no fim do mês; 'meta' é o centro da meta de inflação desses mesmos 12 meses (a média das metas de cada ano, pelo número de meses); a distância é expectativa menos meta.\núltimo corte em 2002-03 (Selic 18,50%): expectativa 4,81% (meta 3,62%, distância 1,18), IPCA 12 meses 7,75%, juro real 13,1%; expectativa 1 mês depois -0,24 ponto, 3 meses depois -0,28 ponto; depois: corte 4 meses depois do último corte; o ciclo foi até 2002-07 e levou a Selic a 18,00% (-0,50 ponto(s)).\núltimo corte em 2002-07 (Selic 18,00%): expectativa 4,73% (meta 3,79%, distância 0,94), IPCA 12 meses 7,51%, juro real 12,7%; expectativa 1 mês depois +0,51 ponto, 3 meses depois +3,71 ponto; depois: alta 3 meses depois do último corte; o ciclo foi até 2003-02 e levou a Selic a 26,50% (+8,50 ponto(s)).\núltimo corte em 2003-12 (Selic 16,50%): expectativa 5,95% (meta 5,50%, distância 0,45), IPCA 12 meses 9,30%, juro real 10,0%; expectativa 1 mês depois -0,10 ponto, 3 meses depois -0,47 ponto; depois: corte 3 meses depois do último corte; o ciclo foi até 2004-04 e levou a Selic a 16,00% (-0,50 ponto(s)).\núltimo corte em 2004-04 (Selic 16,00%): expectativa 5,54% (meta 5,17%, distância 0,37), IPCA 12 meses 5,26%, juro real 9,9%; expectativa 1 mês depois +0,28 ponto, 3 meses depois +0,56 ponto; depois: alta 5 meses depois do último corte; o ciclo foi até 2005-05 e levou a Selic a 19,75% (+3,75 ponto(s)).\núltimo corte em 2007-09 (Selic 11,25%): expectativa 3,84% (meta 4,50%, distância -0,66), IPCA 12 meses 4,15%, juro real 7,1%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,44 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2008-09 e levou a Selic a 13,75% (+2,50 ponto(s)).\núltimo corte em 2009-07 (Selic 8,75%): expectativa 4,08% (meta 4,50%, distância -0,42), IPCA 12 meses 4,50%, juro real 4,5%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,21 ponto; depois: alta 9 meses depois do último corte; o ciclo foi até 2011-07 e levou a Selic a 12,50% (+3,75 ponto(s)).\núltimo corte em 2012-10 (Selic 7,25%): expectativa 5,37% (meta 4,50%, distância 0,87), IPCA 12 meses 5,45%, juro real 1,8%; expectativa 1 mês depois +0,02 ponto, 3 meses depois +0,10 ponto; depois: alta 6 meses depois do último corte; o ciclo foi até 2015-07 e levou a Selic a 14,25% (+7,00 ponto(s)).\núltimo corte em 2018-03 (Selic 6,50%): expectativa 3,95% (meta 4,44%, distância -0,49), IPCA 12 meses 2,68%, juro real 2,5%; expectativa 1 mês depois +0,16 ponto, 3 meses depois +0,07 ponto; depois: corte 17 meses depois do último corte; o ciclo foi até 2020-08 e levou a Selic a 2,00% (-4,50 ponto(s)).\núltimo corte em 2020-08 (Selic 2,00%): expectativa 3,03% (meta 3,83%, distância -0,80), IPCA 12 meses 2,44%, juro real -1,0%; expectativa 1 mês depois +0,20 ponto, 3 meses depois +0,81 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2022-08 e levou a Selic a 13,75% (+11,75 ponto(s)).\núltimo corte em 2024-05 (Selic 10,50%): expectativa 3,64% (meta 3,00%, distância 0,64), IPCA 12 meses 3,93%, juro real 6,6%; expectativa 1 mês depois -0,03 ponto, 3 meses depois +0,23 ponto; depois: alta 4 meses depois do último corte; o ciclo foi até 2025-06 e levou a Selic a 15,00% (+4,50 ponto(s)).\núltimo corte em 2026-09 (Selic 13,75%): expectativa 4,60% (meta 3,00%, distância 1,60), IPCA 12 meses 4,58%, juro real 8,7%; expectativa 1 mês depois +0,36 ponto, 3 meses depois sem dado ponto; ainda parada (2 mês(es) com dado depois do corte).\n"
+     }
+    },
+    {
+     "id": "c8",
+     "tipo": "conta",
+     "afirmacao": "O ciclo de corte atual foi de 15% a 13,75%, 1,25 ponto, de março a setembro de 2026.",
+     "numeros": [
+      "15,00%",
+      "13,75%",
+      "1,25"
+     ],
+     "comando": ".venv/bin/python src/conta.py ciclos",
+     "saida": "corte de 2026-03 a 2026-09: de 15,00% para 13,75% (-1,25 ponto(s))",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Ciclos da Selic desde 2002, mês a mês (uma pausa no meio de um ciclo não o interrompe, se ele segue para o mesmo lado):\ncorte de 2002-02 a 2002-07: de 19,00% para 18,00% (-1,00 ponto(s))\nalta de 2002-10 a 2003-02: de 18,00% para 26,50% (+8,50 ponto(s))\ncorte de 2003-06 a 2004-04: de 26,50% para 16,00% (-10,50 ponto(s))\nalta de 2004-09 a 2005-05: de 16,00% para 19,75% (+3,75 ponto(s))\ncorte de 2005-09 a 2007-09: de 19,75% para 11,25% (-8,50 ponto(s))\nalta de 2008-04 a 2008-09: de 11,25% para 13,75% (+2,50 ponto(s))\ncorte de 2009-01 a 2009-07: de 13,75% para 8,75% (-5,00 ponto(s))\nalta de 2010-04 a 2011-07: de 8,75% para 12,50% (+3,75 ponto(s))\ncorte de 2011-09 a 2012-10: de 12,50% para 7,25% (-5,25 ponto(s))\nalta de 2013-04 a 2015-07: de 7,25% para 14,25% (+7,00 ponto(s))\ncorte de 2016-10 a 2020-08: de 14,25% para 2,00% (-12,25 ponto(s))\nalta de 2021-03 a 2022-08: de 2,00% para 13,75% (+11,75 ponto(s))\ncorte de 2023-08 a 2024-05: de 13,75% para 10,50% (-3,25 ponto(s))\nalta de 2024-09 a 2025-06: de 10,50% para 15,00% (+4,50 ponto(s))\ncorte de 2026-03 a 2026-09: de 15,00% para 13,75% (-1,25 ponto(s))\n"
+     }
+    },
+    {
+     "id": "c9",
+     "tipo": "conta",
+     "afirmacao": "A projeção do BC para 2026 está 1,1 ponto acima do teto de 4,5%.",
+     "numeros": [
+      "1,1"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"5.6-4.5\"",
+     "saida": "5.6-4.5 = 1,1000 (com 3 casas: 1,100; com 2 casas: 1,10; com 1 casa: 1,1)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "5.6-4.5 = 1,1000 (com 3 casas: 1,100; com 2 casas: 1,10; com 1 casa: 1,1)\n"
+     }
+    },
+    {
+     "id": "c10",
+     "tipo": "conta",
+     "afirmacao": "A projeção de 2028 (3,5%) está 0,5 ponto acima do centro de 3%.",
+     "numeros": [
+      "0,5"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"3.5-3\"",
+     "saida": "3.5-3 = 0,5000 (com 3 casas: 0,500; com 2 casas: 0,50; com 1 casa: 0,5)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "3.5-3 = 0,5000 (com 3 casas: 0,500; com 2 casas: 0,50; com 1 casa: 0,5)\n"
+     }
+    },
+    {
+     "id": "c11",
+     "tipo": "conta",
+     "afirmacao": "O Focus de 6/11 prevê IPCA de 5,22% em 2026 e 4,90% em 2027.",
+     "numeros": [
+      "5,22",
+      "4,90"
+     ],
+     "comando": ".venv/bin/python src/conta.py focus --de 2026-10-01 | grep -E \"IPCA 2027|IPCA 2026\" | tail -6",
+     "saida": "2026-11-06: IPCA 2026: 5,22\n2026-11-06: IPCA 2027: 4,90",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Previsões dos bancos (Focus, mediana) na data da pesquisa, como o site guardou:\n2026-10-23: Câmbio 2026: 5,05\n2026-10-23: Câmbio 2027: 5,15\n2026-10-23: Câmbio 2028: 5,20\n2026-10-23: Câmbio 2029: 5,28\n2026-10-23: Câmbio 2030: 5,30\n2026-10-23: IPCA 2026: 5,19\n2026-10-23: IPCA 2027: 4,34\n2026-10-23: IPCA 2028: 3,75\n2026-10-23: IPCA 2029: 3,50\n2026-10-23: IPCA 2030: 3,50\n2026-10-23: IPCA 12m: 4,53\n2026-10-23: PIB Total 2026: 1,80\n2026-10-23: PIB Total 2027: 1,31\n2026-10-23: PIB Total 2028: 1,81\n2026-10-23: PIB Total 2029: 2,00\n2026-10-23: PIB Total 2030: 2,00\n2026-10-23: Selic 2026: 13,25\n2026-10-23: Selic 2027: 11,75\n2026-10-23: Selic 2028: 10,00\n2026-10-23: Selic 2029: 10,00\n2026-10-23: Selic 2030: 10,00\n2026-10-30: Câmbio 2026: 5,34\n2026-10-30: Câmbio 2027: 5,40\n2026-10-30: Câmbio 2028: 5,40\n2026-10-30: Câmbio 2029: 5,45\n2026-10-30: Câmbio 2030: 5,50\n2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76\n2026-10-30: IPCA 2028: 4,00\n2026-10-30: IPCA 2029: 3,98\n2026-10-30: IPCA 2030: 3,81\n2026-10-30: IPCA 12m: 4,96\n2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20\n2026-10-30: PIB Total 2028: 1,80\n2026-10-30: PIB Total 2029: 2,00\n2026-10-30: PIB Total 2030: 2,00\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50\n2026-10-30: Selic 2028: 11,00\n2026-10-30: Selic 2029: 10,25\n2026-10-30: Selic 2030: 10,00\n2026-11-06: Câmbio 2026: 5,35\n2026-11-06: Câmbio 2027: 5,40\n2026-11-06: Câmbio 2028: 5,45\n2026-11-06: Câmbio 2029: 5,50\n2026-11-06: Câmbio 2030: 5,51\n2026-11-06: IPCA 2026: 5,22\n2026-11-06: IPCA 2027: 4,90\n2026-11-06: IPCA 2028: 4,00\n2026-11-06: IPCA 2029: 4,00\n2026-11-06: IPCA 2030: 3,94\n2026-11-06: IPCA 12m: 5,01\n2026-11-06: PIB Total 2026: 1,75\n2026-11-06: PIB Total 2027: 1,15\n2026-11-06: PIB Total 2028: 1,80\n2026-11-06: PIB Total 2029: 2,00\n2026-11-06: PIB Total 2030: 2,00\n2026-11-06: Selic 2026: 13,75\n2026-11-06: Selic 2027: 12,50\n2026-11-06: Selic 2028: 11,00\n2026-11-06: Selic 2029: 10,25\n2026-11-06: Selic 2030: 10,00\n"
+     }
+    },
+    {
+     "id": "c12",
+     "tipo": "conta",
+     "afirmacao": "O Focus de 2027 está 0,40 ponto acima do teto de 4,5%.",
+     "numeros": [
+      "0,40"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"4.90-4.5\"",
+     "saida": "4.90-4.5 = 0,4000 (com 3 casas: 0,400; com 2 casas: 0,40; com 1 casa: 0,4)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "4.90-4.5 = 0,4000 (com 3 casas: 0,400; com 2 casas: 0,40; com 1 casa: 0,4)\n"
+     }
+    },
+    {
+     "id": "c13",
+     "tipo": "biblioteca",
+     "afirmacao": "O juro leva em média 29 meses para pesar todo nos preços (67 estudos). Força forte.",
+     "numeros": [
+      "29 meses",
+      "67 estudos"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Havranek e Rusnak, 2013, International Journal of Central Banking",
+      "url": "https://www.cnb.cz/en/economic-research/research-publications/cnb-working-paper-series/Transmission-Lags-of-Monetary-Policy-A-Meta-Analysis-00001",
+      "data": "",
+      "trecho": "O juro leva em média 29 meses para pesar todo nos preços, numa meta-análise de 67 estudos"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "via": "biblioteca"
+     }
+    },
+    {
+     "id": "c14",
+     "tipo": "biblioteca",
+     "afirmacao": "No Brasil, a meta pesa na inflação que os bancos esperam; força média, só Brasil.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Carvalho e Minella, 2012, Journal of International Money and Finance",
+      "url": "https://econpapers.repec.org/RePEc:eee:jimfin:v:31:y:2012:i:6:p:1371-1391",
+      "data": "",
+      "trecho": "a meta de inflação pesa na inflação que os bancos esperam"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "via": "biblioteca"
+     }
+    },
+    {
+     "id": "c15",
+     "tipo": "biblioteca",
+     "afirmacao": "Com dívida alta e medo de calote, subir o juro pode enfraquecer o real e subir a inflação (dominância fiscal); força média, só para crise aguda.",
+     "numeros": [
+      "2002",
+      "2003"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Blanchard, 2004, NBER",
+      "url": "https://www.nber.org/papers/w10389",
+      "data": "",
+      "trecho": "subir o juro pode enfraquecer o real e subir a inflação, em vez de baixá-la, o que se chama dominância fiscal"
+     },
+     "conferencia": {
+      "status": "nao_confere",
+      "por_que": "números que o trecho da biblioteca não diz: 2002, 2003"
+     }
+    },
+    {
+     "id": "c16",
+     "tipo": "site",
+     "afirmacao": "Os bancos (Focus) esperam 5,0% de inflação nos próximos 12 meses, acima do teto de 4,5%; a Selic descontada rende 8,3% ao ano; 29,0% da renda das famílias vai para dívidas, o maior desde 2005.",
+     "numeros": [
+      "5,0%",
+      "4,5%",
+      "8,3%",
+      "29,0%"
+     ],
+     "comando": "",
+     "saida": "Inflação esperada: Os bancos (Focus) esperam que os preços subam 5,0% nos próximos 12 meses, contra 4,6% em agosto... acima do teto da meta do Banco Central, de 4,5%. Descontada a inflação esperada, a Selic dá 8,3% ao ano.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c17",
+     "tipo": "conta",
+     "afirmacao": "Financiamento de R$ 300 mil em 30 anos: de 11,7% a 15% ao ano a primeira parcela SAC vai de R$ 3.612,29 para R$ 4.347,81; juro fixo já contratado não muda.",
+     "numeros": [
+      "3.612,29",
+      "4.347,81",
+      "20,4%"
+     ],
+     "comando": ".venv/bin/python src/conta.py traduz parcela 300000 360 11.7 15",
+     "saida": "De 11,70% para 15,00% ao ano, a primeira parcela na SAC vai de R$ 3.612,29 para R$ 4.347,81 (+R$ 735,52, +20,4%)... quem já tem financiamento com juro fixo continua com a mesma parcela.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "R$ 300.000 (R$ 300 mil) em 360 meses (30 anos) com juro de 11,70% ao ano (0,93% ao mês): primeira parcela de R$ 3.612,29 na tabela SAC, que começa mais alta e cai todo mês, ou parcela fixa de R$ 2.883,26 na tabela Price, com R$ 1.037.972 pagos no total.\nR$ 300.000 (R$ 300 mil) em 360 meses (30 anos) com juro de 15,00% ao ano (1,17% ao mês): primeira parcela de R$ 4.347,81 na tabela SAC, que começa mais alta e cai todo mês, ou parcela fixa de R$ 3.568,37 na tabela Price, com R$ 1.284.613 pagos no total.\nDe 11,70% para 15,00% ao ano, a primeira parcela na SAC vai de R$ 3.612,29 para R$ 4.347,81 (+R$ 735,52, +20,4%), e a parcela fixa na Price vai de R$ 2.883,26 para R$ 3.568,37 (+23,8%).\nA conta não tem seguro, taxas nem a correção pela TR. Vale para quem pede o crédito com esse juro; quem já tem financiamento com juro fixo continua com a mesma parcela.\n"
+     }
+    },
+    {
+     "id": "c18",
+     "tipo": "documento",
+     "afirmacao": "Bradesco, XP e Genoa veem PIB parado ou em queda em 2027; a Genoa fala em recessão.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Folha de S.Paulo",
+      "url": "https://www1.folha.uol.com.br/mercado/2026/11/bradesco-e-xp-pioram-significativamente-projecoes-para-inflacao-e-atividade-economica-em-2027.shtml",
+      "data": "2026-11-06",
+      "trecho": "Bradesco e XP pioram significativamente projeções para inflação e atividade econômica em 2027"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c19",
+     "tipo": "documento",
+     "afirmacao": "Itaú reduz a previsão do PIB de 2027 para 0,5% e vê inflação acima da meta.",
+     "numeros": [
+      "0,5%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Folha de S.Paulo",
+      "url": "https://www1.folha.uol.com.br/mercado/2026/10/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta.shtml",
+      "data": "2026-10-30",
+      "trecho": "Itaú corta projeção do PIB de 2027 para 0,5% e vê inflação acima da meta"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c20",
+     "tipo": "conta",
+     "afirmacao": "O Focus de 6/11 ainda espera Selic de 12,50% no fim de 2027, abaixo dos 13,75% de hoje.",
+     "numeros": [
+      "12,50"
+     ],
+     "comando": ".venv/bin/python src/conta.py focus | tail -8",
+     "saida": "2026-11-06: Selic 2027: 12,50",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Previsões dos bancos (Focus, mediana) na data da pesquisa, como o site guardou:\n2026-10-23: Câmbio 2026: 5,05\n2026-10-23: Câmbio 2027: 5,15\n2026-10-23: Câmbio 2028: 5,20\n2026-10-23: Câmbio 2029: 5,28\n2026-10-23: Câmbio 2030: 5,30\n2026-10-23: IPCA 2026: 5,19\n2026-10-23: IPCA 2027: 4,34\n2026-10-23: IPCA 2028: 3,75\n2026-10-23: IPCA 2029: 3,50\n2026-10-23: IPCA 2030: 3,50\n2026-10-23: IPCA 12m: 4,53\n2026-10-23: PIB Total 2026: 1,80\n2026-10-23: PIB Total 2027: 1,31\n2026-10-23: PIB Total 2028: 1,81\n2026-10-23: PIB Total 2029: 2,00\n2026-10-23: PIB Total 2030: 2,00\n2026-10-23: Selic 2026: 13,25\n2026-10-23: Selic 2027: 11,75\n2026-10-23: Selic 2028: 10,00\n2026-10-23: Selic 2029: 10,00\n2026-10-23: Selic 2030: 10,00\n2026-10-30: Câmbio 2026: 5,34\n2026-10-30: Câmbio 2027: 5,40\n2026-10-30: Câmbio 2028: 5,40\n2026-10-30: Câmbio 2029: 5,45\n2026-10-30: Câmbio 2030: 5,50\n2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76\n2026-10-30: IPCA 2028: 4,00\n2026-10-30: IPCA 2029: 3,98\n2026-10-30: IPCA 2030: 3,81\n2026-10-30: IPCA 12m: 4,96\n2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20\n2026-10-30: PIB Total 2028: 1,80\n2026-10-30: PIB Total 2029: 2,00\n2026-10-30: PIB Total 2030: 2,00\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50\n2026-10-30: Selic 2028: 11,00\n2026-10-30: Selic 2029: 10,25\n2026-10-30: Selic 2030: 10,00\n2026-11-06: Câmbio 2026: 5,35\n2026-11-06: Câmbio 2027: 5,40\n2026-11-06: Câmbio 2028: 5,45\n2026-11-06: Câmbio 2029: 5,50\n2026-11-06: Câmbio 2030: 5,51\n2026-11-06: IPCA 2026: 5,22\n2026-11-06: IPCA 2027: 4,90\n2026-11-06: IPCA 2028: 4,00\n2026-11-06: IPCA 2029: 4,00\n2026-11-06: IPCA 2030: 3,94\n2026-11-06: IPCA 12m: 5,01\n2026-11-06: PIB Total 2026: 1,75\n2026-11-06: PIB Total 2027: 1,15\n2026-11-06: PIB Total 2028: 1,80\n2026-11-06: PIB Total 2029: 2,00\n2026-11-06: PIB Total 2030: 2,00\n2026-11-06: Selic 2026: 13,75\n2026-11-06: Selic 2027: 12,50\n2026-11-06: Selic 2028: 11,00\n2026-11-06: Selic 2029: 10,25\n2026-11-06: Selic 2030: 10,00\n"
+     }
+    },
+    {
+     "id": "c21",
+     "tipo": "documento",
+     "afirmacao": "Serasa: 84,2 milhões de pessoas com contas atrasadas, mais da metade dos adultos, o maior número da série (2016).",
+     "numeros": [
+      "84,2 milhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Folha de S.Paulo",
+      "url": "https://www1.folha.uol.com.br/mercado/2026/11/inadimplencia-chega-a-842-milhoes-e-atinge-mais-da-metade-dos-adultos-pela-primeira-vez.shtml",
+      "data": "2026-11-03",
+      "trecho": "Inadimplência chega a 84,2 milhões e atinge mais da metade dos adultos pela primeira vez"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true
+     }
+    }
+   ],
+   "conferencia": {
+    "final": {
+     "graves": [],
+     "avisos": [
+      "c1 vem de site fora da lista de fontes conhecidas: https://agendadopoder.com.br/em-ata-copom-justifica-juros-altos-por-pressao-da-guerra-do-el-nino-e-fim-da-escala-6x1-sobre-inflacaoem-ata-copom-justifica-juros-altos-por-pressao-da-guerra-do-el-nino-e-fim-da-escala-6x1-sobre-in/",
+      "c2 vem de site fora da lista de fontes conhecidas: https://brasilemfolhas.com.br/2026/11/ata-do-copom-vincula-juros-mais-altos-a-indisciplina-fiscal/",
+      "bloco 6: frase de 37 palavras",
+      "bloco 9: frase de 37 palavras"
+     ],
+     "palavras": 522,
+     "intertitulos": 0
+    },
+    "frases_cortadas": [
+     "Na pesquisa Focus de 6/11, a Selic esperada para o fim de 2027 era de 12,50%, contra 13,75% hoje."
+    ]
+   },
+   "titulo": "Banco Central diz na ata que a Selic fica alta por mais tempo e cita as contas do governo",
+   "texto": "O Banco Central disse ontem, na ata da reunião que manteve a Selic em 13,75%, que o juro ficará alto por mais tempo porque a inflação esperada piorou [c1, c2]. A projeção do próprio Banco Central para o segundo trimestre de 2028, o prazo em que ele mira, é de 3,5%, ainda acima do centro de 3% [c2, c10]. Pela ata, esse prazo depende também das contas do governo, que o Banco Central não decide [c2].\n\nA meta tem margem até 4,5% e só conta como descumprida depois de seis meses seguidos fora dessa faixa. Para 2027, a ata projeta 4,7%, ainda acima do teto [c2].\n\nA ata lista quatro choques que encarecem a produção: o petróleo, o El Niño, o fim da escala 6x1 sobre o custo do trabalho e o dólar mais caro [c1]. Diante deles, todos os integrantes do comitê concordaram que o juro precisará ficar elevado por um período maior [c1].\n\nA ata também liga o juro mais alto à disciplina das contas do governo [c2]. Quem propõe o ajuste dessas contas é o governo, e quem o aprova é o Congresso, por isso uma parte do prazo da Selic não depende só do Banco Central.\n\nOs bancos ainda esperam corte.\n\nO passado aponta para o outro lado. Desde 2002, a inflação esperada pelos bancos ficou mais de 1,4 ponto acima do centro da meta em 6 episódios, e do começo ao fim de cada um a Selic subiu em 5 e caiu em 1 [c6]. São poucos casos, e desta vez o próprio Banco Central atribui parte da pressão ao petróleo, ao clima e ao dólar [c1].\n\nQuem critica a pausa argumenta que esses choques encarecem a produção e que o juro não os barateia. O juro age pelo crédito e pelas compras, e leva em média 29 meses para pesar todo nos preços, numa revisão de 67 estudos [c13]. Enquanto isso, a prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto, contra os 3 meses anteriores.\n\nO Banco Central responde na ata que a piora das expectativas exige juro mais alto por mais tempo [c2]. Os bancos (Focus) esperam que os preços subam 5,0% nos próximos 12 meses, acima do teto de 4,5% [c16].\n\nO governo tomou uma decisão ontem e anunciou outra que tocam essa conta. Por decreto, prorrogou até 9/12 o corte de impostos sobre gasolina e etanol para segurar o preço do combustível, o que alivia a inflação até lá e pesa nas contas [c3]. Pela conta da Fazenda, o custo, com a subvenção ao etanol, é de R$ 3,57 bilhões em 30 dias, num ano em que a meta pede sobra de R$ 34,3 bilhões no centro, com piso em zero [c3, c4]. O governo também negocia com o Congresso um projeto de ajuste para 2027, que por ora é um anúncio, sem texto publicado.\n\nPara pessoas e empresas, o crédito segue caro por mais tempo, por decisão do Banco Central. Pelo que ele escreveu, o prazo depende de a projeção dele voltar ao centro de 3% e da disciplina das contas do governo [c2]. O IBGE divulga o IPCA de outubro nesta quinta, 12/11, e o Banco Central decide o juro de novo em 9/12 [c2].",
+   "argumento": "A ata mantém o juro alto por mais tempo porque a projeção do Banco Central para 2028 segue acima de 3%, e liga esse prazo às contas do governo, que dependem do governo e do Congresso.",
+   "porque": "O Banco Central disse na ata que a piora da inflação esperada, diante de quatro choques (petróleo, El Niño, fim da escala 6x1 e dólar mais caro) e da disciplina das contas do governo, exige juro alto por mais tempo.",
+   "pressao": "juro",
+   "duracao_s": 603
+  },
+  "termina_em": "juro",
+  "pergunta": "juro-alto"
+ }
+}
