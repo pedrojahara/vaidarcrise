@@ -766,10 +766,15 @@ def main() -> None:
         "inscricao/erro": ("erro", "A inscrição não foi até o fim", "Um problema no site interrompeu o pedido de inscrição."),
         "privacidade": ("privacidade", "Privacidade", "O que o Vai dar crise? guarda de quem lê e de quem recebe o fato do dia por e-mail."),
     }
+    # A página de inscrição liga para o último fato do dia com texto, para a pessoa ver o que vai receber.
+    d_ex = next((d for d in reversed(dias) if posts[d]["llm"] and posts[d]["tipo"] == "dia"), None)
+    exemplo = ({"link": posts[d_ex]["link"], "titulo": posts[d_ex]["titulo"],
+                "data": f"{int(d_ex[8:10])} de {MESES[int(d_ex[5:7]) - 1]}"} if d_ex else None)
     for pasta, (pg, titulo, descricao) in paginas_lista.items():
         fora_da_busca = pg not in ("form", "privacidade") or (pg == "form" and not news.get("inscricao_aberta"))
         gravar(DOCS / pasta, "inscricao.html", {**ctx, "pg": pg, "titulo": titulo, "descricao": descricao,
-                                                 "noindex": fora_da_busca, "og_url": f"{SITE}/og.png"},
+                                                 "noindex": fora_da_busca, "og_url": f"{SITE}/og.png",
+                                                 "exemplo": exemplo},
                f"{SITE}/{pasta}/")
     try:
         import newsletter  # aqui dentro: o newsletter.py importa este arquivo
