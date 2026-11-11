@@ -10,8 +10,9 @@ Uso: python src/run.py             (atualização do dia; não faz nada se já h
      python src/run.py --sem-pesquisa (o texto do dia sai da ficha da história e dos dados, sem a pesquisa)
 
 O texto do dia é um argumento sobre a história em andamento que mais andou ontem: o código escolhe a história pela
-soma das notícias (src/pauta.py, CARTA_EDITORIAL.md), e src/fundo.py pesquisa, escreve, revisa com três leitores e
-um editor e confere o texto (guia em FUNDO.md). Se ele não sair aqui, src/fundo.py --hoje, no run.sh, tenta de novo.
+soma das notícias (src/pauta.py, CARTA_EDITORIAL.md), e src/fundo.py pesquisa, monta o esqueleto, escreve, revisa
+com um leitor que só recebe o texto, três leitores e um editor, e confere o texto (guia em FUNDO.md). Se ele não
+sair aqui, src/fundo.py --hoje, no run.sh, tenta de novo.
 
 Os feeds de alguns jornais guardam só as 10 últimas manchetes. A coleta de hora em
 hora junta tudo num acervo local, e a atualização da manhã (05h00) lê o dia anterior inteiro.
@@ -270,8 +271,9 @@ def main() -> dict | None:
         corte = (hoje - dt.timedelta(days=45)).isoformat()
         anteriores = [r for r in todas_r if r["id"][:10] >= corte]
         evs = {e["id"]: e for e in todos}
-        # 5. O texto do dia sai de src/fundo.py: pesquisa da história, um texto, o revisor de três leitores e um
-        # editor e a conferência do código. Os resumos da semana e do mês saem de src/escreve_post.py.
+        # 5. O texto do dia sai de src/fundo.py: pesquisa da história, esqueleto, um texto, o leitor que só recebe
+        # o texto, o revisor de três leitores e um editor e a conferência do código. Os resumos da semana e do mês
+        # saem de src/escreve_post.py.
         avisos_pauta: list[str] = []
         if escreve_post.tipo_do_dia(hoje) == "dia":
             import fundo

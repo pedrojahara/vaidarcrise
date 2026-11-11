@@ -1,6 +1,6 @@
 # O texto do dia
 
-Este guia vale para as três etapas do texto do dia (`src/fundo.py`): a pesquisa, a redação e a revisão. Cada etapa recebe o guia inteiro, para que todas julguem o texto pela mesma régua. Quem escreve segue também o [PERSONA.md](PERSONA.md), que manda em tudo o que a leitora lê. Qual história o texto conta é o código que decide, pela soma das notícias de ontem ([CARTA_EDITORIAL.md](CARTA_EDITORIAL.md)).
+Este guia vale para as quatro etapas do texto do dia (`src/fundo.py`): a pesquisa, o esqueleto, a redação e a revisão. Cada etapa recebe o guia inteiro, para que todas julguem o texto pela mesma régua. A exceção é o leitor frio, que entra duas vezes e recebe só o que a leitora receberia: primeiro o esqueleto, depois o texto. Quem escreve segue também o [PERSONA.md](PERSONA.md), que manda em tudo o que a leitora lê. Qual história o texto conta é o código que decide, pela soma das notícias de ontem ([CARTA_EDITORIAL.md](CARTA_EDITORIAL.md)).
 
 ## Para que serve
 
@@ -46,9 +46,19 @@ A frase sobre a vida de quem lê (a parcela, o preço, o imposto, o emprego) só
 - E daí do argumento, no mesmo assunto: "O que vai decidir o juro que o governo paga, e por ele o crédito longo das empresas, é se o ajuste prometido vier com números que fechem a conta de 2027."
 - A vida entra quando muda de verdade, com o número e o prazo: um benefício que continua para tantas famílias até tal mês, ou um imposto que deixa de ser cobrado por 30 dias.
 
-## A ordem do texto
+## O esqueleto
 
-A ordem é a das perguntas que a leitora faz, uma depois da outra, e não um molde por tipo de notícia (Pedro, 11/11/2026). O texto pula a pergunta que não tem resposta no dia, e a parte maior é a que andou mais ontem:
+Entre a pesquisa e a redação, uma etapa pensa a estrutura do argumento antes de existir uma frase (Pedro, 11/11/2026). O texto de teste sobre o ajuste das contas de 2027 cumpria as regras de frase e enfileirava respostas: o fato que explicava a conclusão, a meta que não conta os juros da dívida nem os precatórios, estava no meio do texto, e a leitora não tinha como seguir o raciocínio. O esqueleto é curto e tem sete partes:
+
+- **A pergunta** que a leitora faria depois de ler a manchete, uma só, nas palavras dela.
+- **A resposta**, em até duas frases que o caderno sustenta. O título e a abertura saem daqui.
+- **O fato-chave**: o que faz a resposta fazer sentido e que a leitora não acharia sozinha no jornal (o que a conta deixa de fora, a regra que muda o tamanho do número, quem pode desfazer a decisão). Ele entra num dos três primeiros parágrafos.
+- **Os passos**, em ordem: de 2 a 3 num dia calmo, de 4 a 6 num dia normal e de 6 a 8 num dia grande. Cada passo vira um parágrafo, ou dois curtos, e tem a afirmação numa frase, a conta já feita ("faltam R$ 72 bilhões: a meta é de R$ 73,2 bilhões e a previsão, de R$ 0,9 bilhão") e as linhas do caderno que o provam. Lidas em sequência, as afirmações contam o argumento inteiro.
+- **Os nomes**: um por coisa, do começo ao fim, com a explicação que vai junto na primeira vez e, entre parênteses, o termo que a leitora vai ver nos jornais. Depois da primeira vez, o nome é curto e comum, ou o próprio termo já explicado.
+- **Quem controla o quê**: para cada um que aparece no argumento, o que ele decide, no que ele influi sem decidir e o que ele não alcança.
+- **O que fica de fora**, cada coisa com o motivo.
+
+O primeiro passo diz o que aconteceu e quanto é, e o último, o próximo sinal. No meio, a ordem é a de dependência: um passo só usa um nome, um número ou uma ideia que um passo anterior já pôs na página. O roteiro são as perguntas que a leitora faz, uma depois da outra, e não um molde por tipo de notícia. O esqueleto pula a pergunta que não tem resposta no dia, e a parte maior é a que andou mais ontem:
 
 1. **O que aconteceu, e quanto isso é.** O fato e o número contra a régua: a meta, o mês de antes, o que se esperava. Numa decisão, o que foi decidido e o motivo que quem decidiu deu, nos números dele.
 2. **Por quê.** As causas, nas palavras de quem decidiu ou de quem divulgou. Quando são várias, uma frase diz quantas são e quais, e o texto explica uma a uma, na mesma ordem, cada uma com o que encarece, quanto e de onde vem (regras 17 e 22).
@@ -56,7 +66,17 @@ A ordem é a das perguntas que a leitora faz, uma depois da outra, e não um mol
 4. **O que esperar.** Quem prevê o quê, com número e prazo (os bancos no Focus, uma casa grande), contra o que o passado diz (a conta por frequência, sem o caso de hoje), e o melhor argumento de cada lado, com o número dele.
 5. **O próximo sinal.** O dado ou a decisão que vai mostrar para que lado a coisa vai, com a data, e o e daí do argumento.
 
-A mesma ordem serve para qualquer história. Num IPCA, a 1 é o número contra a meta e contra o mês de antes, e a 2 é o que puxou os preços. Numa revisão de previsão de um banco, a 1 é quem mudou o quê, e a 2 são os motivos dele. Numa decisão do Copom, a 1 é a Selic e a inflação projetada contra a meta, e a 2 são as causas da ata. Num dia calmo, cabem a 1 e a 5. Duas regras valem sempre: o fato vem antes da conclusão, e cada coisa aparece uma vez, no lugar dela, sem ser citada antes da lista nem voltar depois com outro nome. Os intertítulos, quando há, marcam as partes.
+O mesmo roteiro serve para qualquer história. Num IPCA, a 1 é o número contra a meta e contra o mês de antes, e a 2 é o que puxou os preços. Numa revisão de previsão de um banco, a 1 é quem mudou o quê, e a 2 são os motivos dele. Numa decisão do Copom, a 1 é a Selic e a inflação projetada contra a meta, e a 2 são as causas da ata. Num dia calmo, cabem a 1 e a 5. Duas regras valem sempre: o fato vem antes da conclusão, e cada coisa aparece uma vez, no lugar dela, sem ser citada antes da lista nem voltar depois com outro nome. Os intertítulos, quando há, marcam as partes.
+
+Antes de a redação começar, um leitor que só vê o esqueleto, sem a pesquisa e sem este guia, diz se a resposta sai dos passos, o que ele teve de supor e onde um passo usa o que ainda não foi dito, esconde uma conta, contradiz outro ou não serve à resposta. O esqueleto é refeito uma vez com o que ele achou. No teste de 11/11/2026, um esqueleto comparava os juros da dívida com a meta das contas, e esse leitor perguntou por que a dívida para de crescer se a meta continua menor que os juros: faltava um passo. A versão seguinte respondeu com duas fontes que davam números diferentes para a mesma pergunta, e as duas, lado a lado, se contradiziam na página.
+
+Três cuidados ao montar o esqueleto:
+
+- **O passo mais difícil leva uma fonte só** e, se couber, uma comparação do dia a dia. A outra fonte fica de fora, a não ser que a diferença entre as duas seja o próprio argumento.
+- **A imparcialidade sai de dizer quem controla o quê**, com exatidão, e não de dar uma frase a cada lado. "O governo não escolhe o juro que paga" é falso ao pé da letra, porque as contas do governo influem no juro; "o governo não fixa o juro, mas influi nele" é exato. Pela mesma razão, o tamanho ou a direção de um efeito leva junto em que se apoia ("é um efeito pequeno, porque o corte equivale a um centésimo do gasto do ano"): sem a base, "pequeno" e "pode ser grande" soam como defesa ou ataque.
+- **Se não cabe tudo, sai um passo inteiro.** Explicar bem custa palavras: no mesmo teste, cada conserto de clareza aumentou o texto. O que sai vai para o que fica de fora, e nunca a explicação dos passos que ficam.
+
+Se o esqueleto falhar, o texto sai na ordem do roteiro acima.
 
 A tabela de tradução ([TRADUCAO.md](TRADUCAO.md)) continua como ferramenta, para quando o argumento chega à vida de alguém, e o texto nunca diz à leitora o que fazer com o dinheiro.
 
@@ -108,10 +128,12 @@ Copie o número como a fonte escreve, sem arredondar diferente. Fato sem linha n
 
 ## Como escrever
 
-- Um texto corrido que segue a ordem do argumento, com parágrafos de 2 a 4 frases. Nada de formulário com as mesmas partes todo dia, nem lista com marcadores.
+- Um texto corrido que segue o esqueleto, com parágrafos de 2 a 4 frases: um por passo, ou dois quando um só ficaria longo no celular, com a afirmação do passo na primeira frase. Nada de formulário com as mesmas partes todo dia, nem lista com marcadores.
+- Primeiro claro, depois exato, depois curto. A frase que só se entende voltando atrás não serve, mesmo curta e exata: "A distância entre esse número e a meta cabe na faixa que os jornais relatam" cumpria todas as regras e deixava três contas para a leitora. Faça a conta e diga o resultado ("faltariam R$ 72 bilhões, e é essa falta que o ajuste vem cobrir"), e repita o nome ou o número em vez de apontar para ele ("esse número", "essa distância", "a faixa").
+- A mesma coisa tem o mesmo nome do começo ao fim. O termo que a leitora vai ver nos jornais e que o site não liga à Wikipédia entra na primeira vez entre parênteses, logo depois da explicação em palavras comuns: "dívidas que a Justiça mandou o governo pagar (precatórios)", "arrecadar mais do que gasta, sem contar os juros da dívida (superávit primário)". Depois de explicado, o termo pode ser o nome da coisa no resto do texto. Rótulo inventado ("a sobra", "o valor cheio") não serve, porque a leitora não o conhece nem o acha no jornal.
 - O título é a ideia do texto numa frase afirmativa de até 90 caracteres, sem pergunta e sem dois-pontos. O título e o primeiro parágrafo se entendem sozinhos, num print.
-- Num texto de mais de 450 palavras, até 2 intertítulos, cada um uma frase curta, de até 10 palavras, que diz a ideia da parte, nunca um rótulo ("Contexto", "O que está em jogo").
-- Siga o jeito de escrever do PERSONA.md: frase completa, causa e efeito em ordem, quem faz o quê e para quem, comparação que diz o mês, termo técnico sem definição (o site liga à Wikipédia), sigla por extenso ou com link e nada de fórmula de efeito.
+- Num texto de mais de 450 palavras, até 2 intertítulos, cada um uma frase curta, de até 10 palavras, que diz a ideia da parte, nunca um rótulo ("Contexto", "O que está em jogo"). O título e cada intertítulo se entendem sozinhos, com o complemento: "Cumprir a meta não faz a dívida parar de crescer", e não "Cumprir a meta não faz a dívida parar".
+- Siga o jeito de escrever do PERSONA.md: frase completa, causa e efeito em ordem, quem faz o quê e para quem, comparação que diz o mês, termo técnico do glossário sem definição (o site liga à Wikipédia), sigla por extenso ou com link e nada de fórmula de efeito.
 - Soe como gente (regra 23): número só onde carrega o argumento, causa contada como fatos em sequência ou num verbo que a diz, e não com "porque" em toda frase; na frase, só quem disse, decidiu ou estimou, e o jornal vai na linha "De onde vêm os números"; um trecho curto de quem decidiu entre aspas, copiado palavra por palavra do caderno; frases de tamanhos diferentes, e o parágrafo fechando num fato ou numa citação. As palavras deste guia ("a melhor objeção", "casos parecidos", "vai na direção da meta", "dá certo se", "a régua") não vão para a página.
 - Faça o teste da troca: com outro governo no poder, a frase sairia igual? Diga o mecanismo e de quem é a decisão, nunca o lado. Use o cargo (o presidente, o ministro da Fazenda, o presidente do Banco Central), nunca o nome de pessoa ou de partido.
 - O texto não fala da pesquisa, do caderno nem da revisão, e não promete conferir, acompanhar nem voltar ao assunto. Pode dizer, como fato, quando sai o próximo dado ou a próxima decisão.
@@ -119,13 +141,17 @@ Copie o número como a fonte escreve, sem arredondar diferente. Fato sem linha n
 
 ## A revisão
 
-O revisor lê o rascunho como três leitores e um editor e devolve objeções, sem reescrever: quem reescreve é a redação, porque revisor que reescreve é de onde vem a cara de IA.
+A revisão tem dois tipos de leitor. O primeiro não sabe a resposta, e o segundo sabe.
+
+**O leitor frio** recebe só o texto, sem este guia, o caderno nem o esqueleto, como a leitora. Quem revisa com a pesquisa na mão já sabe a resposta, e para ele "a sobra" e "a distância entre esse número e a meta" são claros (Pedro, 11/11/2026). O leitor frio devolve o que entendeu de cada parágrafo, com as palavras dele, as palavras cujo sentido teve de adivinhar, as frases em que teve de fazer conta ou voltar atrás, as frases que se contradizem, as que não são verdade ao pé da letra ou parecem ter lado e, sem olhar o texto de novo, a ideia principal, o porquê e quem decide. Um segundo leitor recebe só o título e os intertítulos e diz o que falta para cada um se entender sozinho. O que eles acham vai para a redação como objeção. O parágrafo que o leitor frio não entendeu, as duas frases que se contradizem e a frase falsa ao pé da letra são graves; o resto é melhoria, e só vai para a redação na primeira volta. Ele não corrige o texto com o que só um economista sabe: diz se dá para entender e repetir. Ele aponta e não barra: pedido para ser severo, sempre acha alguma coisa, e por isso nunca decide se o texto sai.
+
+**O revisor** lê o rascunho como três leitores e um editor e devolve objeções, sem reescrever: quem reescreve é a redação, porque revisor que reescreve é de onde vem a cara de IA. Ele recebe o esqueleto e o que o leitor frio entendeu, e compara os dois: onde o leitor frio entendeu outra coisa que o passo afirma, a objeção é grave.
 
 - **A leitora**: consegue repetir cada número a um sócio? As duas pontas de cada comparação estão na mesma unidade? Sabe por que o fato aconteceu e quem decidiu? Dá para ver o que é dado, o que é previsão e o que é opinião? Alguma frase soa como molde ou pula do argumento para a vida dela? E o teste da pergunta seguinte: cada frase responde ao que ela perguntaria logo depois ("em que pé estamos?", "qual ajuste?", "quanto, e segundo quem?", "por que isso encarece?", "e o que isso muda?"), ou deixa a pergunta no ar? A conta do passado se repete de primeira, sem o caso de hoje? Alguma ideia aparece duas vezes, ou alguma frase só diz quem decide quando o mecanismo já mostrou?
 - **Quem defende quem decidiu**: a régua é a da regra, com a margem e os descontos da meta? O motivo oficial está no texto? Algum número foi escolhido para pender para um lado?
 - **Quem critica quem decidiu**: o texto aceitou promessa como fato? Faltou o custo, o prazo ou a conta de quem discorda, como a IFI ou os bancos (Focus)?
 
-- **O editor**: o texto segue a ordem das perguntas, com o fato antes da conclusão e cada coisa uma vez, no lugar dela? A abertura dá o fato e o porquê com os números, ou encadeia conclusões? Soa como gente, lido ao lado de uma nota do Meio (regra 23), ou tem número em toda frase, "porque" em toda frase, jornal no meio da frase, nenhuma voz de quem decidiu e palavras deste guia na página?
+- **O editor**: o texto segue o esqueleto, passo a passo, com a afirmação de cada passo na primeira frase, o fato-chave no começo e os mesmos nomes do começo ao fim, com o fato antes da conclusão e cada coisa uma vez, no lugar dela? O que o leitor frio entendeu de cada parágrafo bate com o que o passo afirma? A abertura dá o fato e o porquê com os números, ou encadeia conclusões? Soa como gente, lido ao lado de uma nota do Meio (regra 23), ou tem número em toda frase, "porque" em toda frase, jornal no meio da frase, nenhuma voz de quem decidiu e palavras deste guia na página?
 
 As cabeças de quem defende e de quem critica fazem juntas o teste da troca. O revisor também confere as regras do site e pode pesquisar, para trazer o dado e não só apontar a falta: o que ele acha entra no caderno, com o documento. O que a ficha da história sustenta (a linha do tempo, os passos de ontem e as manchetes deles) vale como base mesmo sem linha no caderno: quando é relato de jornal ou anúncio, o revisor pede que o texto diga quem relata, e não que tire o conteúdo. A redação responde às objeções, e a segunda volta só confere se elas foram respondidas e se a reescrita estragou algo. O que sobrar sem resposta sai do texto ou entra como dúvida dita ("o governo não publicou o custo"), e sai a ideia inteira: tirar o número e deixar "um projeto de ajuste" sem dizer qual, ou "os bancos ainda esperam corte" sem o número do Focus, deixa uma menção que parece informação e não diz nada. São no máximo duas voltas de objeções. Depois da última reescrita, uma conferência final lê o texto só atrás de erro, sem pesquisar: o número dito dentro da margem quando está fora dela, a causa posta depois do efeito, o fato que o caderno não sustenta, a frase que ficou sem conteúdo e a conta do passado que conta o caso de hoje como terminado. A redação corrige só esses trechos, ou corta a frase, sem acrescentar nada.
 
@@ -138,4 +164,4 @@ As cabeças de quem defende e de quem critica fazem juntas o teste da troca. O r
 
 ## Até onde ir
 
-A rodada das 5h tem uns 35 minutos para a pesquisa, o texto, as duas voltas de revisão e a conferência final, para o texto sair no site e no e-mail por volta das 6h. Sem tempo para a pesquisa, o texto sai da ficha da história e dos dados do site. Se o texto falhar, o `src/fundo.py --hoje` tenta de novo no mesmo `run.sh`, e se o dia ainda ficar sem texto, o editor do site recebe um aviso. A pesquisa também diz se a leitora precisaria de uma página do básico que o site ainda não tem; a rodada só avisa o editor do site, que decide se a página sai.
+A rodada das 5h tem uns 35 minutos para a pesquisa, o esqueleto, o texto, as duas voltas de revisão e a conferência final, para o texto sair no site e no e-mail por volta das 6h. Sem tempo para a pesquisa, o texto sai da ficha da história e dos dados do site. Se o esqueleto ou o leitor frio falharem, o texto sai sem eles, na ordem do roteiro e só com o revisor. Se o texto falhar, o `src/fundo.py --hoje` tenta de novo no mesmo `run.sh`, e se o dia ainda ficar sem texto, o editor do site recebe um aviso. A pesquisa também diz se a leitora precisaria de uma página do básico que o site ainda não tem; a rodada só avisa o editor do site, que decide se a página sai.
