@@ -16,8 +16,7 @@ O texto é o post do dia: o site e o e-mail mostram o mesmo texto (post.formato 
 pesquisa e da revisão fica em post.pesquisa, no registro do dia (runs/<id>.json).
 
 Na nuvem (sem abrir as páginas), use --offline: a rodada seguinte do Mac roda --reconfere, abre as fontes e tira a
-frase que se apoia num documento que não confere. Os fatos do dia até 4/11/2026 ficam como saíram, com as 100 palavras
-e a leitura a fundo (post.fundo), que a página ainda mostra.
+frase que se apoia num documento que não confere.
 
 Uso:
   .venv/bin/python src/fundo.py runs/2026-11-10T0545.json            # pesquisa, texto e revisão, sem gravar
@@ -49,9 +48,8 @@ import revisa_texto  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 RUNS = ROOT / "runs"
 METAS = ROOT / "config" / "metas.json"
-VERSAO = 4  # 4: o texto do dia pela história (um texto só); 3: as 100 palavras e a leitura a fundo
+VERSAO = 4  # 4: o texto do dia pela história (um texto só)
 FORMATO = "historia"
-INICIO_HISTORIA = "2026-11-05"  # o primeiro texto do dia pela história; antes dele, as 100 palavras e a leitura a fundo
 CONTA = memoria.CONTA
 MARCA = re.compile(r"\s*\[(c\d+(?:\s*,\s*c\d+)*)\]")
 INTERTITULO = re.compile(r"^#{2,4}\s+(.+?)\s*$")
@@ -1280,30 +1278,6 @@ def resumo_do_dia(post: dict) -> dict:
 
 
 # ------------------------------------------------------------------ as rodadas guardadas
-def _ids(itens: list[str]) -> list[str]:
-    """Os ids do caderno citados (c3; c1-c5 vale de c1 a c5), mesmo dentro de uma frase."""
-    out = []
-    for t in itens:
-        for a, b in re.findall(r"\bc(\d+)(?:\s*[-–a]\s*c(\d+))?\b", t):
-            out += [f"c{k}" for k in range(int(a), int(b or a) + 1)] if not b or int(b) - int(a) < 20 else [f"c{a}", f"c{b}"]
-    return out
-
-
-def fontes_do_curto(f: dict | None) -> tuple[dict, list[str], list[str], str]:
-    """Os fatos do dia até 4/11/2026 (as 100 palavras e a leitura a fundo): o curto do antigo editor-chefe, as linhas
-    do caderno que ele cita e que conferem, os ids e a base dos números, para os resumos da semana e do mês."""
-    f = f or {}
-    curto = f.get("curto") or {}
-    cad = {c["id"]: c for c in f.get("caderno") or []}
-    validas = {i: c for i, c in cad.items() if (c.get("conferencia") or {}).get("status") not in RUINS}
-    citados = [*(curto.get("caderno") or []), *(i for fa in curto.get("familias") or [] for i in fa.get("caderno") or [])]
-    ids = [i for i in dict.fromkeys(_ids(citados)) if i in validas]
-    linhas = [f"- {validas[i]['afirmacao']}" + (f" | números: {', '.join(validas[i]['numeros'])}" if validas[i].get("numeros") else "")
-              for i in ids]
-    est = (f.get("versao") or 0) >= 3
-    return curto, linhas, ids, " ".join(_texto_item(validas[i], est) for i in ids)
-
-
 def reconferir(rodada: dict, log=print, offline: bool = False, reabrir: bool = True, texto: str | None = None,
                reparo: bool = True) -> dict | None:
     """Abre de novo os documentos de um texto feito sem abrir as fontes (--offline, na nuvem). A frase que se apoia num
@@ -1345,15 +1319,9 @@ def reconferir(rodada: dict, log=print, offline: bool = False, reabrir: bool = T
 
 
 def gravar(arq: Path, t: dict, nota: str | None = None) -> None:
-    """Grava o texto como o post do dia da rodada. O texto anterior fica em post.versao_anterior (título e
-    parágrafos), e a leitura a fundo antiga sai (fica no histórico do git)."""
+    """Grava o texto como o post do dia da rodada, no lugar do que havia (o texto anterior fica só no git)."""
     alvo = json.loads(arq.read_text())
-    velho = alvo.get("post") or {}
     post = post_do_texto(t)
-    if velho.get("ok") and velho.get("formato") != FORMATO:
-        post["versao_anterior"] = {k: velho[k] for k in ("titulo", "paragrafos") if velho.get(k)}
-    elif velho.get("versao_anterior"):
-        post["versao_anterior"] = velho["versao_anterior"]
     if nota:
         post["revisao_manual"] = nota
     alvo["post"] = post
@@ -1361,32 +1329,18 @@ def gravar(arq: Path, t: dict, nota: str | None = None) -> None:
 
 
 # ------------------------------------------------------------------ o guarda
-INICIO = "2026-11-03"  # o primeiro fato do dia com leitura a fundo; antes dele, os fatos do dia não tinham
+INICIO = "2026-10-29"  # o primeiro fato do dia do site
 
 
 def falta(rodada: dict) -> str | None:
-    """Por que um fato do dia publicado está no site sem o texto completo; None quando ele está na página. Do texto
-    pela história (desde 5/11/2026), o texto; dos dias de 3 e 4/11/2026, a leitura a fundo antiga. O resumo da semana
-    e o do mês ficam de fora."""
+    """Por que um fato do dia publicado está no site sem o texto; None quando ele está na página. O resumo da semana e
+    o do mês ficam de fora."""
     post = rodada.get("post") or {}
     if (post.get("tipo") or "dia") != "dia":
         return None
-    if post.get("formato") == FORMATO:
-        return None if post.get("ok") and post.get("paragrafos") else str(post.get("erro") or "o texto do dia não saiu")[:300]
-    if not post.get("ok") or not post.get("titulo"):
-        return "o texto do dia não saiu" if rodada["gerado_em"][:10] >= INICIO_HISTORIA else None
-    if rodada["gerado_em"][:10] >= INICIO_HISTORIA:
-        return "o fato do dia ainda está no formato antigo (100 palavras e leitura a fundo)"
-    f = post.get("fundo") or {}
-    if not (f.get("ok") and f.get("texto")):
-        return str(f.get("erro") or "a leitura a fundo não foi escrita")[:300]
-    try:
-        import base_site
-        if base_site.fundo_ctx(post, CFG, lambda textos, cfg: textos):
-            return None
-        return "a leitura a fundo existe, mas a página não a monta"
-    except Exception as ex:  # noqa: BLE001
-        return f"a página não monta a leitura a fundo ({ex!r})"[:300]
+    if post.get("formato") != FORMATO:
+        return "o texto do dia não saiu" if not post.get("ok") else "o fato do dia ainda está no formato antigo"
+    return None if post.get("ok") and post.get("paragrafos") else str(post.get("erro") or "o texto do dia não saiu")[:300]
 
 
 def _por_dia() -> dict[str, Path]:

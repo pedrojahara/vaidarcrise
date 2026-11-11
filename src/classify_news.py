@@ -185,7 +185,7 @@ def chamar_claude(system: str, prompt: str, schema: dict, budget_usd: float, eta
                   ferramentas: list[str] | None = None, permitidas: list[str] | None = None, timeout: int = 900) -> dict:
     """Chama `claude -p` com saída em esquema. Nunca levanta exceção.
 
-    Sem `ferramentas`, a chamada não tem ferramenta nenhuma. Com elas (a pesquisa da leitura a fundo e a carga das
+    Sem `ferramentas`, a chamada não tem ferramenta nenhuma. Com elas (a pesquisa do texto do dia e a carga das
     memórias), só as de `permitidas` rodam sem pedir permissão, e o que pediria permissão é negado, porque ninguém
     responde no modo -p; por isso a pesquisa não lê nem escreve arquivo e só roda o comando de src/conta.py.
 

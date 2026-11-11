@@ -2183,11 +2183,1331 @@
   "classificacao": []
  },
  "post": {
-  "ok": false,
-  "meta": [
+  "ok": true,
+  "tipo": "dia",
+  "formato": "historia",
+  "titulo": "Quem investe cobra mais do Tesouro, e os próximos leilões dirão quanto o governo paga",
+  "paragrafos": [
+   "Na semana depois do segundo turno, o risco-país subiu 18%, e títulos do Tesouro perderam até 17% do valor, segundo os jornais. Quem investe passou a cobrar 15,36% ao ano para comprar um título prefixado do governo, acima da Selic de 13,75%. No título protegido da inflação, passou a cobrar 7,89% ao ano acima do IPCA. O presidente foi reeleito contra o que o mercado esperava, e quem investe cobra duas coisas que ainda não saíram, o nome do ministro da Fazenda e um plano para as contas do novo mandato.",
+   "Essas taxas são as do mercado, onde investidores trocam títulos que já existem, e o preço de um título cai quando a taxa cobrada por ele sobe. O governo paga uma taxa parecida quando vende títulos novos nos leilões do Tesouro, que na semana passada recomprou títulos para conter a oscilação.",
+   "A Fazenda anunciou um projeto de lei para mirar o centro da meta das contas, mas ainda não disse que gastos corta nem que receitas cria. A IFI, do Senado, contou do outro lado R$ 40 bilhões em medidas de campanha que pioram as contas. Entre elas estão o reajuste do Bolsa Família, a arrecadação que se perde com as apostas online e um pacote para microempreendedores.",
+   "A desconfiança também chega aos preços, pelo dólar. Pela conta do Banco Central, a alta de 8,2% do dólar no dia seguinte à eleição, se não voltar, soma cerca de 0,8 ponto ao IPCA em 12 meses. E ela não voltou: em 30/10, o dólar estava em R$ 5,42, contra R$ 5,403 no fechamento de 26/10, o dia da alta.",
+   "Os jornais relataram que as previsões de inflação para 2027 subiram depois do segundo turno, por duas causas. Uma é o dólar mais caro, que vem da desconfiança daqui. A outra é o El Niño, que vem do clima e pode encarecer a comida, sem tamanho medido ainda; o juro não age sobre ele, e ele pode passar sozinho.",
+   "No Focus de 30/10, os bancos esperam que os preços subam 5,22% em 2026 e 4,76% em 2027. As duas previsões passam do teto da meta, de 4,5%, que é o centro de 3% mais a margem de 1,5 ponto. Pela regra, a meta só conta como descumprida depois de seis meses seguidos fora dessa faixa.",
+   "Os bancos ainda esperam a Selic em 13,50% no fim de 2026 e em 12,50% no fim de 2027, contra 13,75% hoje. Se a inflação esperada continuar subindo, fica mais difícil cortar, e a Selic alta por mais tempo chega às contas do governo. Em agosto, 52,74% da dívida seguia a Selic, e cada ponto dela custa cerca de R$ 48 bilhões por ano. O dólar mexe menos nessa conta, porque 96% da dívida federal é em reais.",
+   "O Banco Central decide a Selic na quarta, 4/11, e o IBGE divulga o IPCA de outubro em 12/11. O nome do ministro da Fazenda, o plano das contas e os próximos leilões do Tesouro não têm data. Quando o Tesouro vender títulos novos, a taxa que ele aceitar pagar vai mostrar quanto dessa cobrança ficou. É dessa taxa que parte o crédito longo das empresas, que já adiam investimentos à espera do plano do novo mandato, segundo os jornais."
+  ],
+  "secoes": [
    {
-    "erro": "pulado: sem leitura de notícias"
+    "titulo": null,
+    "paragrafos": [
+     "Na semana depois do segundo turno, o risco-país subiu 18%, e títulos do Tesouro perderam até 17% do valor, segundo os jornais. Quem investe passou a cobrar 15,36% ao ano para comprar um título prefixado do governo, acima da Selic de 13,75%. No título protegido da inflação, passou a cobrar 7,89% ao ano acima do IPCA. O presidente foi reeleito contra o que o mercado esperava, e quem investe cobra duas coisas que ainda não saíram, o nome do ministro da Fazenda e um plano para as contas do novo mandato.",
+     "Essas taxas são as do mercado, onde investidores trocam títulos que já existem, e o preço de um título cai quando a taxa cobrada por ele sobe. O governo paga uma taxa parecida quando vende títulos novos nos leilões do Tesouro, que na semana passada recomprou títulos para conter a oscilação.",
+     "A Fazenda anunciou um projeto de lei para mirar o centro da meta das contas, mas ainda não disse que gastos corta nem que receitas cria. A IFI, do Senado, contou do outro lado R$ 40 bilhões em medidas de campanha que pioram as contas. Entre elas estão o reajuste do Bolsa Família, a arrecadação que se perde com as apostas online e um pacote para microempreendedores.",
+     "A desconfiança também chega aos preços, pelo dólar. Pela conta do Banco Central, a alta de 8,2% do dólar no dia seguinte à eleição, se não voltar, soma cerca de 0,8 ponto ao IPCA em 12 meses. E ela não voltou: em 30/10, o dólar estava em R$ 5,42, contra R$ 5,403 no fechamento de 26/10, o dia da alta.",
+     "Os jornais relataram que as previsões de inflação para 2027 subiram depois do segundo turno, por duas causas. Uma é o dólar mais caro, que vem da desconfiança daqui. A outra é o El Niño, que vem do clima e pode encarecer a comida, sem tamanho medido ainda; o juro não age sobre ele, e ele pode passar sozinho.",
+     "No Focus de 30/10, os bancos esperam que os preços subam 5,22% em 2026 e 4,76% em 2027. As duas previsões passam do teto da meta, de 4,5%, que é o centro de 3% mais a margem de 1,5 ponto. Pela regra, a meta só conta como descumprida depois de seis meses seguidos fora dessa faixa.",
+     "Os bancos ainda esperam a Selic em 13,50% no fim de 2026 e em 12,50% no fim de 2027, contra 13,75% hoje. Se a inflação esperada continuar subindo, fica mais difícil cortar, e a Selic alta por mais tempo chega às contas do governo. Em agosto, 52,74% da dívida seguia a Selic, e cada ponto dela custa cerca de R$ 48 bilhões por ano. O dólar mexe menos nessa conta, porque 96% da dívida federal é em reais.",
+     "O Banco Central decide a Selic na quarta, 4/11, e o IBGE divulga o IPCA de outubro em 12/11. O nome do ministro da Fazenda, o plano das contas e os próximos leilões do Tesouro não têm data. Quando o Tesouro vender títulos novos, a taxa que ele aceitar pagar vai mostrar quanto dessa cobrança ficou. É dessa taxa que parte o crédito longo das empresas, que já adiam investimentos à espera do plano do novo mandato, segundo os jornais."
+    ]
    }
+  ],
+  "pesquisa": {
+   "versao": 4,
+   "ok": true,
+   "em": "2026-11-11T18:03:17+00:00",
+   "meta": [
+    {
+     "etapa": "pesquisa",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "f135921b46349b296b62ca50b56d8b33c6178429cc22bad5528d8f1239b062c6",
+     "system_sha256": "8b315c503c4144985b7bd6945d245c16c6d5c8cad733f64c94f113f06e444348",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.42143569999999997,
+     "turnos": 9,
+     "duracao_s": 69,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "f8915a38-e1a0-4294-9c4e-5a18a2c804a9"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "2e0bc90be2e31f8cdbbe306fa7a5ebc5ec5e894d40ff57ad80ff41f675af85e6",
+     "system_sha256": "9010879deba9ad26a003a680f3f67f52f2cbd0fffe7d65e790dc9b82a3ff95e3",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7452826,
+     "turnos": 2,
+     "duracao_s": 75,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "9cf11909-f82f-4607-8b5b-ca39ecf2d2d5"
+    },
+    {
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "54b63906dda1eee43357cb8ad64e5183aea6f1c4197e5833b33c3859b459b916",
+     "system_sha256": "648c59fc84c4a9305b7f64f8a21d266e58c58d85786a1dfecb70b37c4d02e434",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.6802453999999999,
+     "turnos": 3,
+     "duracao_s": 81,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "609b2ed0-2e9c-4c1f-ab10-3b105833c691"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "d3d3e565c0a6d1699c67baeb439c6bf7d19c11f516bd84d06b27699cd3a0e294",
+     "system_sha256": "9010879deba9ad26a003a680f3f67f52f2cbd0fffe7d65e790dc9b82a3ff95e3",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7619826,
+     "turnos": 2,
+     "duracao_s": 56,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "2ce133f9-4524-43f0-8f1a-3e6511ff6e18"
+    },
+    {
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "a4b5c2ba1ac49b1c4c83343fd6a95a80dbec45ff9b0d66df883965d0d2fc573c",
+     "system_sha256": "648c59fc84c4a9305b7f64f8a21d266e58c58d85786a1dfecb70b37c4d02e434",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7879191999999999,
+     "turnos": 7,
+     "duracao_s": 89,
+     "modelos": [
+      "claude-opus-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "db111730-564a-4e94-ae37-de15803ce4a4"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "08f84de75a60225cdd6f1408a6b2df9101fddab0f20bc1c4dd671a54ddbfc586",
+     "system_sha256": "9010879deba9ad26a003a680f3f67f52f2cbd0fffe7d65e790dc9b82a3ff95e3",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7841306,
+     "turnos": 2,
+     "duracao_s": 71,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "23fd7e53-2b4d-4e76-b491-58c93ca19b13"
+    },
+    {
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "672182ffca3695eefee5c375d2284b71d5f3f5bb24d29ccd17595ed255929d04",
+     "system_sha256": "648c59fc84c4a9305b7f64f8a21d266e58c58d85786a1dfecb70b37c4d02e434",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.474037,
+     "turnos": 2,
+     "duracao_s": 26,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "894bbcac-5333-4f10-9c05-dd2625daae90"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "77595be1c221d5fc76bd0fdb20e10f662a30fcfeb1ce5df95ffc9d3d8d56114d",
+     "system_sha256": "9010879deba9ad26a003a680f3f67f52f2cbd0fffe7d65e790dc9b82a3ff95e3",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.6627746,
+     "turnos": 2,
+     "duracao_s": 20,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "4825eb56-f656-4ea6-878b-e5a62f656326"
+    }
+   ],
+   "offline": true,
+   "voltas": [
+    {
+     "volta": 1,
+     "codigo": {
+      "graves": [
+       "bloco 1: número ou data sem linha do caderno que confira: 2032 | trecho: Na semana depois do segundo turno, o risco-país subiu 18%, e os títulos do Tesouro perderam até 17% do valor. Para empre",
+       "bloco 3: número ou data sem linha do caderno que confira: 27/10 | trecho: Quem investe diz o que espera ver: um plano para as contas e um nome para a Fazenda no novo mandato. A Fazenda anunciou ",
+       "bloco 6: número ou data sem linha do caderno que confira: 0,25 | trecho: Na inflação, o recado já chegou às previsões. No Focus de 30/10, os bancos esperam o IPCA em 5,22% em 2026 e 4,76% em 20",
+       "bloco 7: número ou data sem linha do caderno que confira: 2032 | trecho: O Banco Central decide a Selic na quarta, 4/11, e o IBGE divulga o IPCA de outubro em 12/11. O nome do ministro da Fazen",
+       "bloco 8: número ou data sem linha do caderno que confira: 2032 | trecho: Tesouro paga 15,36% para tomar até 2032, acima da Selic que os bancos esperam"
+      ],
+      "avisos": [
+       "bloco 4: palavra que o site trocou: diga o juro de 10 anos (o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos) e, para a pressão, Desconfiança de quem investe",
+       "bloco 6: porcentagem de meta que a ficha das metas não tem (5,22, 4,76): confira a meta e a margem em config/metas.json: No Focus de 30/10, os bancos esperam o IPCA em 5,22% em 2026 e 4,76% em 2027, os",
+       "bloco 7: frase de 42 palavras"
+      ],
+      "palavras": 491,
+      "intertitulos": 0
+     },
+     "objecoes": [
+      {
+       "trecho": "Tesouro paga 15,36% para tomar até 2032, acima da Selic que os bancos esperam",
+       "cabeca": "regras",
+       "problema": "O título diz mais do que os dados mostram. 15,36% é a taxa que o título de 2032 passou a valer no mercado, entre investidores. O Tesouro não pagou essa taxa: pela c9, cancelou leilões e recomprou títulos. Dizer que ele \"paga\" trata como dívida nova algo que não foi emitido. A data de 2032 só tem a c9, fonte fraca.",
+       "onde_conferir": "c9 (cancelou leilões) e c8. Diga que essa é a taxa que quem investe cobra no mercado, ou ponha no título o fato que a ficha sustenta (risco-país e títulos). A mesma correção vale para \"Enquanto o governo pagar mais de 15%\" no último parágrafo. O próximo marco da ficha, os leilões do Tesouro, é quando o governo volta a pagar de fato.",
+       "grave": true
+      },
+      {
+       "trecho": "Na semana depois do segundo turno, o risco-país subiu 18%, e os títulos do Tesouro perderam até 17% do valor",
+       "cabeca": "leitora",
+       "problema": "Os números não têm régua. Subiu 18% de quanto para quanto? Qual título perdeu 17%? Os 15,36% da frase seguinte também não dizem quanto eram antes da eleição. A leitora não consegue dizer ao sócio \"X, contra Y\".",
+       "onde_conferir": "c9: o prefixado de 2032 era 12,89% e foi a 15,36%, e quem perdeu 17,19% foi o IPCA+ 2050 (fonte fraca, a conferência decide). Dê o antes e o depois do mesmo título. Se o nível do risco-país não estiver na fonte, deixe só a variação e diga que é na semana.",
+       "grave": true
+      },
+      {
+       "trecho": "Para emprestar ao governo até 2032 com taxa fixa, quem investe passou a cobrar 15,36% ao ano, e no título protegido da inflação, 7,89% ao ano acima do IPCA",
+       "cabeca": "editor",
+       "problema": "A abertura tem o fato, mas não tem o porquê. A ficha dá o motivo: reeleição contra o que o mercado esperava, sem plano para as contas e sem nome para a Fazenda. Esse motivo só aparece no terceiro parágrafo, depois da mecânica de preço dos títulos.",
+       "onde_conferir": "Ficha da história, \"O que é\", e o parágrafo 3 do próprio texto. O porquê deve subir para o primeiro parágrafo e sair do terceiro, para não aparecer duas vezes.",
+       "grave": true
+      },
+      {
+       "trecho": "A distância entre os 15,36% e a Selic que os próprios bancos preveem é o que quem investe cobra a mais para ficar seis anos com o dinheiro preso ao governo. Ele só exige esse extra quando espera algo pior pela frente, como inflação mais alta ou juro mais alto por mais tempo.",
+       "cabeca": "critico",
+       "problema": "A comparação não fecha. Os 15,36% valem até 2032, e os 12,50% são a Selic de um único momento, o fim de 2027. A Selic dos anos até 2032 ninguém previu no caderno. A diferença entre os dois números não mede um \"extra\". Ainda há o \"só exige\", conclusão mais forte do que a evidência, e os \"seis anos\", que não batem com a data (de novembro de 2026 a 2032 são uns cinco).",
+       "onde_conferir": "c5 só tem a Selic do fim de 2026 e do fim de 2027. Compare o título com ele mesmo, antes e depois da eleição (c9), ou tire a frase da distância inteira.",
+       "grave": true
+      },
+      {
+       "trecho": "O juro longo do Tesouro é a base do crédito longo das empresas, e o de 10 anos, acima da inflação, ficou em 8,00% em outubro, mais alto que em 91% dos meses desde 2005",
+       "cabeca": "defensor",
+       "problema": "O número foi escolhido para um lado. Pelos dados do site, o mesmo juro de 10 anos caiu de 8,3% para 8,0% entre o fim de julho e 30/10. Citar só o nível alto sugere uma piora que a série dessa mesma fonte não mostra. A leitora também fica com dois juros acima da inflação sem saber qual é qual: 7,89% (c8) e 8,00%.",
+       "onde_conferir": "c16 e dados do site (Desconfiança de quem investe). Se o 8,00% ficar, diga que ele estava em 8,3% em julho. Se não, use um número só.",
+       "grave": true
+      },
+      {
+       "trecho": "Há uma diferença grande para a eleição de 2002, quando o dólar disparou e boa parte da dívida do governo era em dólar.",
+       "cabeca": "regras",
+       "problema": "Nenhuma linha do caderno sustenta a parte da dívida ligada ao dólar em 2002, e \"boa parte\" é vago. A comparação também não segue as mesmas linhas: só um dos dois casos ganha número. E o parágrafo para no dólar: não diz qual canal pesa hoje.",
+       "onde_conferir": "c14: hoje 52,74% da dívida segue a Selic, e cada ponto de Selic custa cerca de R$ 48 bilhões por ano. Esse é o canal que a frase \"passa pelo juro\" promete e não mostra. Sem fonte para 2002, a frase sobre 2002 sai, e o parágrafo fica com os 96% e o custo de c14.",
+       "grave": true
+      },
+      {
+       "trecho": "Os mesmos bancos ainda esperam a Selic em 13,50% no fim de 2026, 0,25 ponto abaixo de hoje",
+       "cabeca": "leitora",
+       "problema": "O Focus da Selic já apareceu no primeiro parágrafo (12,50% em 2027), e a mesma linha c5 volta aqui com outro número. O \"ainda\" deixa no ar a tensão entre a inflação acima do teto e a previsão de corte, sem dizer para que lado ela empurra.",
+       "onde_conferir": "c5. Junte as duas menções num lugar só, na parte do que esperar, e diga numa frase por que a inflação esperada acima do teto aperta essa previsão (segunda história, ficha).",
+       "grave": false
+      },
+      {
+       "trecho": "No Focus de 30/10, os bancos esperam o IPCA em 5,22% em 2026 e 4,76% em 2027, os dois acima do teto da meta, de 4,5%, e longe do centro de 3%",
+       "cabeca": "defensor",
+       "problema": "A meta é contínua. Ela só conta como descumprida depois de seis meses seguidos fora da faixa, e o texto não diz isso nem que horizonte o Banco Central mira. Esse parágrafo é da segunda história, que pede um parágrafo só, ligado ao argumento.",
+       "onde_conferir": "Bloco <metas> (Decreto 12.079/2024): diga a regra dos seis meses numa oração.",
+       "grave": false
+      },
+      {
+       "trecho": "Até domingo, nem o plano com números nem o nome tinham saído.",
+       "cabeca": "critico",
+       "problema": "Falta o tamanho do que o plano precisa cobrir, pela conta de quem não é o governo. Sem isso, \"sem as medidas\" repete o argumento do texto de 29/10 (\"o ajuste segue sem número\") e não acrescenta nada.",
+       "onde_conferir": "c11: a IFI vê R$ 40 bilhões em medidas novas e um déficit que pode chegar a 1% do PIB em 2027. Diga que a conta é da IFI, do Senado. Senão, encurte a frase para não repetir o texto de 29/10.",
+       "grave": false
+      },
+      {
+       "trecho": "o crédito longo das empresas, que costuma custar mais que o do governo, parte desse patamar, e é com ele que construtoras e indústrias decidem o que investir em 2027",
+       "cabeca": "regras",
+       "problema": "O caderno não sustenta \"costuma custar mais que o do governo\". Construtoras e indústrias entram sem fonte para esse setor. O fecho repete o parágrafo 4 (o juro longo é a base do crédito longo, e as empresas adiam investimento). É a mesma ideia duas vezes.",
+       "onde_conferir": "c13 só fala de \"empresas\" em geral. Feche no c13 ou no próximo marco (leilões do Tesouro, nome da Fazenda) e tire a menção ao setor que não tem fonte.",
+       "grave": false
+      },
+      {
+       "trecho": "Quando a taxa pedida sobe, o título comprado antes, que paga menos, vale menos na hora da venda. Foi assim que os títulos longos perderam até 17%.",
+       "cabeca": "editor",
+       "problema": "Gasta duas frases com a mecânica de livro do preço do título e adia o porquê do fato. Vale uma oração, presa à primeira menção dos 17%.",
+       "onde_conferir": "Regra 'Nos posts, o porquê do dia vem antes do mecanismo' (PERSONA.md).",
+       "grave": false
+      }
+     ],
+     "resumo": "Seis objeções graves e cinco de melhoria. O título e o fecho dizem que o Tesouro \\\"paga\\\" 15,36%, mas ele cancelou leilões (c9), e essa é a taxa do mercado. A abertura não tem antes e depois nem o porquê. A diferença entre 15,36% e a Selic do fim de 2027 compara prazos diferentes e conclui demais. O juro de 10 anos aparece só no nível alto, e pelos dados do site caiu desde julho. A comparação com 2002 não tem fonte, e o custo da dívida que segue a Selic (c14) ficou de fora. Não pesquisei e não acrescentei linha ao caderno."
+    },
+    {
+     "volta": 2,
+     "codigo": {
+      "graves": [],
+      "avisos": [
+       "c9 vem de site fora da lista de fontes conhecidas: https://brapi.dev/news/tesouro-recompra-r-31-6-bi-em-dois-dias-e-ipca-longo-3d6ae01c",
+       "bloco 5: frase de 38 palavras",
+       "bloco 5: parágrafo de 122 palavras",
+       "bloco 5: porcentagem de meta que a ficha das metas não tem (5,22, 4,76): confira a meta e a margem em config/metas.json: No Focus de 30/10, os bancos esperam que os preços subam 5,22% em 2026 e 4,76% e",
+       "bloco 5: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: No Focus de 30/10, os bancos esperam que os preços subam 5,22% em 2026 e 4,76% e"
+      ],
+      "palavras": 471,
+      "intertitulos": 0
+     },
+     "objecoes": [
+      {
+       "trecho": "A IFI, do Senado, faz a conta de quanto o plano precisa cobrir. Ela contou R$ 40 bilhões em medidas novas e vê o déficit podendo chegar a 1% do PIB em 2027",
+       "cabeca": "leitora",
+       "problema": "A leitora não sabe o que são os R$ 40 bilhões (gasto novo? corte?). A IFI também não calculou quanto o plano precisa cobrir: a frase atribui a ela uma conta que ela não fez. O 1% do PIB não tem nenhum dos dois lados da comparação, nem a meta de 2027 nem a previsão do governo, e é um cenário de risco tratado como previsão.",
+       "onde_conferir": "c201: os R$ 40 bilhões são medidas de campanha que pioram as contas (Bolsa Família, bets, microempreendedores), e o 1,0% é um cenário de risco. Diga isso e ponha ao lado a previsão do próprio governo para 2027, que a ficha das metas não traz. Se não der, tire o 1% e deixe os R$ 40 bilhões com o que eles são.",
+       "grave": true
+      },
+      {
+       "trecho": "A mesma desconfiança chegou à inflação esperada, e os jornais relataram que as previsões para 2027 e 2028 subiram depois do segundo turno.",
+       "cabeca": "regras",
+       "problema": "A ficha dá duas causas, o dólar mais alto e o El Niño. O texto põe tudo na conta da desconfiança e deixa o clima de fora, uma causa que não depende de ninguém no Brasil. Isso empurra a conclusão para um lado. O 2028 aparece sem número.",
+       "onde_conferir": "Ficha da segunda história, no 'por quê' (dólar e El Niño). Diga as duas causas e de onde vem cada uma. Tire o 2028, porque o caderno não tem o número dele.",
+       "grave": true
+      },
+      {
+       "trecho": "A parte da dívida que segue a Selic bateu recorde, 52,74% em agosto, e cada ponto de Selic custa cerca de R$ 48 bilhões por ano",
+       "cabeca": "leitora",
+       "problema": "O recorde não diz desde quando a série começa. O parágrafo também não liga a Selic à história do dia: a desconfiança mexe no juro longo, e os bancos esperam a Selic caindo. A leitora fica sem saber para que lado esses R$ 48 bilhões empurram agora e o que eles têm a ver com o risco-país.",
+       "onde_conferir": "c14. Ponha a régua da série, ou diga 'a maior fatia desde [início]' só se a fonte der. Ligue o parágrafo à inflação esperada: se ela tirar espaço do corte, a Selic fica alta por mais tempo e cada ponto custa R$ 48 bilhões por ano. Se não couber, o parágrafo sai.",
+       "grave": true
+      },
+      {
+       "trecho": "Na semana depois do segundo turno, o risco-país subiu 18%, e títulos do Tesouro perderam até 17% do valor",
+       "cabeca": "leitora",
+       "problema": "Os 18% continuam sem os dois níveis, e o 'até 17%' não diz qual título perdeu isso. A leitora não consegue repetir 'de X para Y'.",
+       "onde_conferir": "c202 traz os níveis (de 119 para 141 pontos), mas de fonte fraca: só entra se um jornal da lista os confirmar. Pela c9, o título que perdeu 17% foi o atrelado à inflação de 2050. Se não houver fonte boa, fique com o título nomeado e tire o 18% da abertura, deixando-o no título.",
+       "grave": false
+      },
+      {
+       "trecho": "O Tesouro reagiu: cancelou leilões e recomprou cerca de R$ 31,6 bilhões em títulos em dois dias, para conter a oscilação",
+       "cabeca": "leitora",
+       "problema": "A recompra foi o assunto do texto de 29/10 ('Tesouro recompra títulos para conter o susto'), e a frase repete esse fato inteiro. O fato também se apoia só na c9, fonte fraca de fora da lista.",
+       "onde_conferir": "Memória do site, 29/10. Basta uma oração que sirva à ideia de que o governo não pagou os 15,36% ('com os leilões suspensos desde a semana passada'), sem repetir o valor da recompra.",
+       "grave": false
+      },
+      {
+       "trecho": "Risco-país sobe 18% na semana, e quem investe espera um plano com números para as contas",
+       "cabeca": "editor",
+       "problema": "A segunda metade do título repete o argumento do texto de 29/10 ('o ajuste da Fazenda segue sem número'). O passo novo é o preço que quem investe passou a cobrar, e o título não diz o que isso quer dizer.",
+       "onde_conferir": "Memória do site, 29/10. O argumento novo do texto está no último parágrafo: a taxa do próximo leilão mostra quanto da cobrança ficou.",
+       "grave": false
+      },
+      {
+       "trecho": "O canal que pesa é o juro.",
+       "cabeca": "editor",
+       "problema": "Tem uma abstração como sujeito e usa o 'pesa', que o guia pede para evitar. A frase seguinte já diz o canal, então esta sobra.",
+       "onde_conferir": "A frase sai. A seguinte, com sujeito concreto, já carrega a ideia.",
+       "grave": false
+      }
+     ],
+     "resumo": "A reescrita resolveu o 'paga' do título, a comparação com a Selic até 2032, a escolha do juro de 10 anos, o caso de 2002 e a margem da meta de inflação. Três pontos ainda impedem a publicação: os R$ 40 bilhões e o 1% da IFI estão sem conteúdo e sem régua, com uma conta que ela não fez; a inflação esperada vai só na conta da desconfiança, sem o El Niño; e o parágrafo da Selic não se liga à história e diz recorde sem a série. Os outros ajustes melhoram o texto, mas não seguram a publicação."
+    },
+    {
+     "volta": 3,
+     "codigo": {
+      "graves": [],
+      "avisos": [
+       "bloco 3: frase de 39 palavras",
+       "bloco 6: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: Pela regra, a meta só conta como descumprida depois de seis meses seguidos fora "
+      ],
+      "palavras": 557,
+      "intertitulos": 0
+     },
+     "objecoes": [
+      {
+       "trecho": "No título protegido da inflação, o juro ficou em 8,00% em outubro, mais alto que em 91% dos meses desde 2005.",
+       "cabeca": "leitora",
+       "problema": "O primeiro parágrafo diz que, no título protegido da inflação, quem investe passou a cobrar 7,89% acima do IPCA. Este parágrafo dá 8,00% para o mesmo título. A leitora lê dois números diferentes para a mesma coisa e não sabe qual repetir. Pelos dados do site, os 8,00% são o juro de 10 anos, que caiu de 8,3% no fim de julho para 8,0% em 30/10, e não subiu depois da eleição.",
+       "onde_conferir": "c2 e c16 (o juro de 10 anos, de 8,3% para 8,0% do fim de julho a 30/10) contra c8 (o IPCA+ a 7,89%). Diga que os 8,00% são o juro de 10 anos, outro prazo que o dos 7,89%, ou tire a frase inteira.",
+       "grave": true
+      },
+      {
+       "trecho": "E ela não voltou: em 30/10, o dólar estava em R$ 5,42, contra R$ 5,08 no fim de julho.",
+       "cabeca": "leitora",
+       "problema": "A alta de 8,2% foi do dia anterior à eleição para 26/10, quando o dólar fechou em R$ 5,403. Comparar com julho não mostra que essa alta ficou. Entre R$ 5,08 e R$ 5,42 a alta é de uns 7%, menos que 8,2%, e a leitora pode entender que parte da alta voltou.",
+       "onde_conferir": "Na ficha da história, a linha de 26/10: dólar a R$ 5,403. Compare os R$ 5,42 de 30/10 (c16) com os R$ 5,403 de 26/10, ou tire o \"e ela não voltou\".",
+       "grave": true
+      }
+     ],
+     "resumo": "Achei dois erros que impedem o texto de sair. O título protegido da inflação aparece com dois juros diferentes, 7,89% e 8,00%, sem dizer que o segundo é o juro de 10 anos, outro prazo, que caiu desde julho. E a prova de que a alta do dólar não voltou compara com julho, quando a comparação certa é com os R$ 5,403 de 26/10. O resto bate com o caderno, a ficha e as metas."
+    }
+   ],
+   "contas_ate": "2026-11-01",
+   "historia": "desconfianca_eleicao",
+   "segunda": "juro_inflacao",
+   "modo": "normal",
+   "pesquisa": {
+    "perguntas": [
+     {
+      "pergunta": "O que mudou na história com os passos de ontem, e por quê?",
+      "resposta": "Ontem (31/10 e 01/11) não houve decisão nova: saiu o balanço da semana. O risco-país subiu 18% e os títulos do Tesouro perderam até 17%. Segundo o relato, o prefixado de 2032 foi a 15,36% ao ano (era 12,89% antes do segundo turno), e o IPCA+ chegou a 7,89%. O Tesouro cancelou leilões e recomprou cerca de R$ 31,6 bi em dois dias, para conter a oscilação. Não achei o documento oficial do Tesouro nem o do risco-país: o que há é relato de jornal, e o brapi é texto feito por IA a partir de três veículos. O que ficou aberto: o motivo que o mercado dá é a falta de nome para a Fazenda e de plano para as contas.",
+      "caderno": [
+       "c8",
+       "c9",
+       "c10",
+       "c14"
+      ]
+     },
+     {
+      "pergunta": "Qual o tamanho do choque contra a régua e contra o passado?",
+      "resposta": "O dólar foi de R$ 5,18 (fim de setembro) a R$ 5,42 (fim de outubro), alta de 4,6% no mês; a alta de 8,2% é a de um dia, 26/10. Pela conta do Banco Central, 8,2% de alta que não volte sobe o IPCA em cerca de 0,8 ponto em 12 meses. O juro longo protegido da inflação (NTN-B) está em 8,00%, acima de 91% dos meses desde 2005. Na eleição de 2002, o dólar foi de R$ 2,42 a R$ 3,89 e a Selic a 26,5%: o caso é de uma economia com dívida em dólar, hoje 96% da dívida federal é em reais, o que limita a analogia.",
+      "caderno": [
+       "c1",
+       "c2",
+       "c3",
+       "c6",
+       "c7"
+      ]
+     },
+     {
+      "pergunta": "Quem pode mexer nisso e o que fez?",
+      "resposta": "O Tesouro agiu (cancelou leilões de NTN-B e de prefixados e recomprou títulos de 2030 a 2045). A Fazenda anunciou em 27/10 um projeto de lei para mirar o centro da meta fiscal, sem medidas detalhadas. O presidente indicará seis diretores do BC até o fim de 2027 (Folha, 02/11), e investidores temem mudança de perfil. O ministro da Articulação disse que ajuste não está em discussão. Nenhuma dessas é ato com custo publicado.",
+      "caderno": [
+       "c9",
+       "c10",
+       "c12",
+       "c17"
+      ]
+     },
+     {
+      "pergunta": "Quem discorda e o que se espera?",
+      "resposta": "A IFI (Senado) vê R$ 40 bi em medidas novas e déficit que pode chegar a 1% do PIB em 2027, e dívida de 124% do PIB em 2036. O Focus de 30/10 espera IPCA de 5,22% em 2026 e 4,76% em 2027, Selic de 13,50% no fim de 2026 e 12,50% no de 2027. O Itaú prevê PIB de 0,5% em 2027. O Tesouro, via recompra, trata o movimento como oscilação de mercado. Empresas adiam investimento à espera do plano (Folha, 01/11).",
+      "caderno": [
+       "c4",
+       "c5",
+       "c11",
+       "c13",
+       "c15"
+      ]
+     },
+     {
+      "pergunta": "Qual o próximo sinal?",
+      "resposta": "Sem data: nome do ministro da Fazenda e plano das contas; leilões do Tesouro. Com data: Copom em 4/11 (a Selic deve ficar em 13,75% pelas apostas) e IPCA de outubro em 12/11.",
+      "caderno": [
+       "c5",
+       "c17"
+      ]
+     }
+    ],
+    "argumentos": [
+     {
+      "argumento": "O susto dos títulos longos é, por enquanto, o mercado cobrando um plano que ainda não existe: o Tesouro segurou a oscilação, mas só um número para o ajuste (e um nome na Fazenda) muda o preço do dinheiro longo, que pesa no investimento de 2027.",
+      "para_quem": "Empresas que dependem de crédito longo e o país, pelo custo da dívida (52,74% dela ligada à Selic).",
+      "o_que_desmente": "Se o juro longo cair sem plano com números, ou se subir mesmo com um plano detalhado, a leitura de 'falta de plano' não se sustenta.",
+      "caderno": [
+       "c8",
+       "c9",
+       "c10",
+       "c11",
+       "c13",
+       "c14"
+      ]
+     },
+     {
+      "argumento": "O alerta é mais sobre a inflação do que sobre a dívida em dólar: o dólar a R$ 5,42 soma cerca de 0,8 ponto ao IPCA em um ano se ficar, e o Focus já vê 5,22% em 2026, o que tira a Selic de queda e torna a pausa do Copom a primeira prova.",
+      "para_quem": "Quem tem crédito e a empresa que precisa de juro menor; as famílias com 29% da renda em dívidas.",
+      "o_que_desmente": "Dólar voltando perto de R$ 5,10 e Focus de 2027 recuando desmentem.",
+      "caderno": [
+       "c1",
+       "c3",
+       "c4",
+       "c5",
+       "c17"
+      ]
+     }
+    ],
+    "objecao": {
+     "texto": "A hipótese de 'falta de plano' é incompleta: o dólar e o juro longo também refletem o juro americano alto, a queda das ações de tecnologia e o petróleo, e a Fazenda já anunciou um projeto de lei para o centro da meta. Além disso, o déficit primário de 12 meses é pequeno (0,38% do PIB, conta sem descontos) e a dívida é 96% em reais, ao contrário de 2002.",
+     "caderno": [
+      "c10",
+      "c16",
+      "c7"
+     ]
+    },
+    "o_que_falta": "Não abri nenhum documento oficial (WebFetch bloqueado): o edital da recompra do Tesouro e os números do risco-país são só de jornal (o brapi é texto de IA). Não achei custo da recompra. Os dados do site dão juro de 10 anos de 8,3% para 8,0% e dizem 'piorou', o que parece contraditório com o salto pós-eleição (memória longa: 6,9% a 8,1% em 26/10); conferir a série antes de citar. Falta o Relatório bimestral de receitas e despesas de setembro para o ponto de partida da meta fiscal.",
+    "pagina_que_falta": ""
+   },
+   "pagina_que_falta": "",
+   "rascunho": {
+    "titulo": "Tesouro paga 15,36% para tomar até 2032, acima da Selic que os bancos esperam",
+    "texto": "Na semana depois do segundo turno, o risco-país subiu 18%, e os títulos do Tesouro perderam até 17% do valor [c8]. Para emprestar ao governo até 2032 com taxa fixa, quem investe passou a cobrar 15,36% ao ano, e no título protegido da inflação, 7,89% ao ano acima do IPCA [c8]. A Selic está em 13,75%, e os bancos ouvidos pelo Banco Central (Focus) esperam que ela termine 2027 em 12,50% [c5].\n\nQuando a taxa pedida sobe, o título comprado antes, que paga menos, vale menos na hora da venda. Foi assim que os títulos longos perderam até 17%. A distância entre os 15,36% e a Selic que os próprios bancos preveem é o que quem investe cobra a mais para ficar seis anos com o dinheiro preso ao governo. Ele só exige esse extra quando espera algo pior pela frente, como inflação mais alta ou juro mais alto por mais tempo.\n\nQuem investe diz o que espera ver: um plano para as contas e um nome para a Fazenda no novo mandato. A Fazenda anunciou em 27/10 um projeto de lei para mirar o centro da meta fiscal, ainda sem as medidas [c10]. Até domingo, nem o plano com números nem o nome tinham saído.\n\nO custo não fica só no governo. O juro longo do Tesouro é a base do crédito longo das empresas, e o de 10 anos, acima da inflação, ficou em 8,00% em outubro, mais alto que em 91% dos meses desde 2005 [c2]. Empresas já adiam investimentos à espera do plano econômico do novo mandato, os jornais relataram [c13].\n\nHá uma diferença grande para a eleição de 2002, quando o dólar disparou e boa parte da dívida do governo era em dólar. Em agosto de 2026, 96% da dívida do governo federal era em reais. Por isso o dólar mais caro não faz a dívida crescer de uma vez, e o risco de agora passa pelo juro e pela inflação, e não pela falta de dólar para pagar.\n\nNa inflação, o recado já chegou às previsões. No Focus de 30/10, os bancos esperam o IPCA em 5,22% em 2026 e 4,76% em 2027, os dois acima do teto da meta, de 4,5%, e longe do centro de 3% [c4]. Pela conta do Banco Central, se a alta de 8,2% do dólar no dia seguinte à eleição não voltar, ela soma cerca de 0,8 ponto ao IPCA em 12 meses [c1]. Os mesmos bancos ainda esperam a Selic em 13,50% no fim de 2026, 0,25 ponto abaixo de hoje [c5].\n\nO Banco Central decide a Selic na quarta, 4/11, e o IBGE divulga o IPCA de outubro em 12/11. O nome do ministro da Fazenda e o plano das contas não têm data. Enquanto o governo pagar mais de 15% para tomar dinheiro até 2032, o crédito longo das empresas, que costuma custar mais que o do governo, parte desse patamar, e é com ele que construtoras e indústrias decidem o que investir em 2027.",
+    "argumento": "O Tesouro paga 15,36% para tomar dinheiro até 2032, acima da Selic que os bancos esperam; esse extra é o preço da dúvida sobre as contas, e ele chega ao crédito longo e ao investimento das empresas.",
+    "porque": "Quem investe passou a cobrar mais para emprestar ao governo depois da eleição, à espera de um plano com números para as contas e de um nome para a Fazenda, que até domingo não tinham saído."
+   },
+   "caderno": [
+    {
+     "id": "c1",
+     "tipo": "conta",
+     "afirmacao": "Pela conta do Banco Central, alta de 8,2% do dólar que não volte sobe o IPCA em cerca de 0,8 ponto em 12 meses.",
+     "numeros": [
+      "8,2%",
+      "0,8 ponto"
+     ],
+     "comando": ".venv/bin/python src/conta.py traduz dolar 8.2",
+     "saida": "Uma alta de 8,2%, se não voltar, sobe o IPCA em cerca de 0,8 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,80 mais caros do que ficariam sem essa mudança do dólar.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Mudança do dólar dada: +8,2%.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 8,2%, se não voltar, sobe o IPCA em cerca de 0,8 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 0,80 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.\n"
+     }
+    },
+    {
+     "id": "c2",
+     "tipo": "conta",
+     "afirmacao": "O juro longo protegido da inflação está em 8,00% em outubro, acima de 91% dos meses da série.",
+     "numeros": [
+      "8,00",
+      "91%",
+      "255"
+     ],
+     "comando": ".venv/bin/python src/conta.py recorde juro_real_longo 2026-10",
+     "saida": "Dos 255 meses antes de 2026-10, 233 tiveram valor menor (91%).",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "juro_real_longo em 2026-10: 8,00. A série começa em 2005-07.\nÉ o maior valor desde 2026-07, quando foi 8,27.\nDos 255 meses antes de 2026-10, 233 tiveram valor menor (91%).\n"
+     }
+    },
+    {
+     "id": "c3",
+     "tipo": "conta",
+     "afirmacao": "O dólar subiu 4,6% de setembro a outubro, de R$ 5,1809 a R$ 5,4212 (Ptax de fim de mês).",
+     "numeros": [
+      "5,1809",
+      "5,4212",
+      "4,6%"
+     ],
+     "comando": ".venv/bin/python src/conta.py variacao dolar_ptax 2026-09 2026-10",
+     "saida": "dolar_ptax: 5,1809 em 2026-09 e 5,4212 em 2026-10; diferença de 0,2403 (em pontos) e de 4,6% (em %).",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "dolar_ptax: 5,1809 em 2026-09 e 5,4212 em 2026-10; diferença de 0,2403 (em pontos) e de 4,6% (em %).\n"
+     }
+    },
+    {
+     "id": "c4",
+     "tipo": "conta",
+     "afirmacao": "Focus de 30/10: IPCA 2026 em 5,22% e 2027 em 4,76%.",
+     "numeros": [
+      "5,22",
+      "4,76"
+     ],
+     "comando": ".venv/bin/python src/conta.py focus",
+     "saida": "2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Previsões dos bancos (Focus, mediana) na data da pesquisa, como o site guardou:\n2026-10-23: Câmbio 2026: 5,05\n2026-10-23: Câmbio 2027: 5,15\n2026-10-23: Câmbio 2028: 5,20\n2026-10-23: Câmbio 2029: 5,28\n2026-10-23: Câmbio 2030: 5,30\n2026-10-23: IPCA 2026: 5,19\n2026-10-23: IPCA 2027: 4,34\n2026-10-23: IPCA 2028: 3,75\n2026-10-23: IPCA 2029: 3,50\n2026-10-23: IPCA 2030: 3,50\n2026-10-23: IPCA 12m: 4,53\n2026-10-23: PIB Total 2026: 1,80\n2026-10-23: PIB Total 2027: 1,31\n2026-10-23: PIB Total 2028: 1,81\n2026-10-23: PIB Total 2029: 2,00\n2026-10-23: PIB Total 2030: 2,00\n2026-10-23: Selic 2026: 13,25\n2026-10-23: Selic 2027: 11,75\n2026-10-23: Selic 2028: 10,00\n2026-10-23: Selic 2029: 10,00\n2026-10-23: Selic 2030: 10,00\n2026-10-30: Câmbio 2026: 5,34\n2026-10-30: Câmbio 2027: 5,40\n2026-10-30: Câmbio 2028: 5,40\n2026-10-30: Câmbio 2029: 5,45\n2026-10-30: Câmbio 2030: 5,50\n2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76\n2026-10-30: IPCA 2028: 4,00\n2026-10-30: IPCA 2029: 3,98\n2026-10-30: IPCA 2030: 3,81\n2026-10-30: IPCA 12m: 4,96\n2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20\n2026-10-30: PIB Total 2028: 1,80\n2026-10-30: PIB Total 2029: 2,00\n2026-10-30: PIB Total 2030: 2,00\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50\n2026-10-30: Selic 2028: 11,00\n2026-10-30: Selic 2029: 10,25\n2026-10-30: Selic 2030: 10,00\n"
+     }
+    },
+    {
+     "id": "c5",
+     "tipo": "conta",
+     "afirmacao": "Focus de 30/10: Selic de 13,50 no fim de 2026 e 12,50 no fim de 2027.",
+     "numeros": [
+      "13,50",
+      "12,50"
+     ],
+     "comando": ".venv/bin/python src/conta.py focus",
+     "saida": "2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Previsões dos bancos (Focus, mediana) na data da pesquisa, como o site guardou:\n2026-10-23: Câmbio 2026: 5,05\n2026-10-23: Câmbio 2027: 5,15\n2026-10-23: Câmbio 2028: 5,20\n2026-10-23: Câmbio 2029: 5,28\n2026-10-23: Câmbio 2030: 5,30\n2026-10-23: IPCA 2026: 5,19\n2026-10-23: IPCA 2027: 4,34\n2026-10-23: IPCA 2028: 3,75\n2026-10-23: IPCA 2029: 3,50\n2026-10-23: IPCA 2030: 3,50\n2026-10-23: IPCA 12m: 4,53\n2026-10-23: PIB Total 2026: 1,80\n2026-10-23: PIB Total 2027: 1,31\n2026-10-23: PIB Total 2028: 1,81\n2026-10-23: PIB Total 2029: 2,00\n2026-10-23: PIB Total 2030: 2,00\n2026-10-23: Selic 2026: 13,25\n2026-10-23: Selic 2027: 11,75\n2026-10-23: Selic 2028: 10,00\n2026-10-23: Selic 2029: 10,00\n2026-10-23: Selic 2030: 10,00\n2026-10-30: Câmbio 2026: 5,34\n2026-10-30: Câmbio 2027: 5,40\n2026-10-30: Câmbio 2028: 5,40\n2026-10-30: Câmbio 2029: 5,45\n2026-10-30: Câmbio 2030: 5,50\n2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76\n2026-10-30: IPCA 2028: 4,00\n2026-10-30: IPCA 2029: 3,98\n2026-10-30: IPCA 2030: 3,81\n2026-10-30: IPCA 12m: 4,96\n2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20\n2026-10-30: PIB Total 2028: 1,80\n2026-10-30: PIB Total 2029: 2,00\n2026-10-30: PIB Total 2030: 2,00\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50\n2026-10-30: Selic 2028: 11,00\n2026-10-30: Selic 2029: 10,25\n2026-10-30: Selic 2030: 10,00\n"
+     }
+    },
+    {
+     "id": "c6",
+     "tipo": "conta",
+     "afirmacao": "Em 2002 (set a mar/2003) a Selic foi de 18% a 26,5% e o IPCA em 12 meses de 7,93% a 16,57%; recessão veio em 1T2003.",
+     "numeros": [
+      "18,00",
+      "26,50",
+      "7,93",
+      "16,57"
+     ],
+     "comando": ".venv/bin/python src/conta.py depois 2002-09 --meses 6",
+     "saida": "2003-03: selic_meta 26,50; ipca_12m 16,57; focus_ipca_12m 9,30; juro_real 15,74; dolar_ptax 3,3531; ibcbr 71,07; primario_12m -3,33\nRecessão (2 trimestres seguidos de queda do PIB) começando nos 12 meses seguintes: 1T2003",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Valores do mês e de depois (ibcbr_12m é o crescimento da prévia do PIB em 12 meses):\n2002-09: selic_meta 18,00; ipca_12m 7,93; focus_ipca_12m 5,64; juro_real 11,70; dolar_ptax 3,8949\n2002-12: selic_meta 25,00; ipca_12m 12,53; focus_ipca_12m 12,26; juro_real 11,35; dolar_ptax 3,5333; primario_12m -3,19\n2003-03: selic_meta 26,50; ipca_12m 16,57; focus_ipca_12m 9,30; juro_real 15,74; dolar_ptax 3,3531; ibcbr 71,07; primario_12m -3,33\nRecessão (2 trimestres seguidos de queda do PIB) começando nos 12 meses seguintes: 1T2003\n"
+     }
+    },
+    {
+     "id": "c7",
+     "tipo": "conta",
+     "afirmacao": "Nas vezes com dólar acima de R$ 5 (2020-22, 2022-23, 2023), só a primeira teve recessão; o episódio atual fica fora da conta.",
+     "numeros": [
+      "5,00",
+      "1T2020"
+     ],
+     "comando": ".venv/bin/python src/conta.py episodios \"dolar_ptax>5\"",
+     "saida": "recessão começando no episódio ou nos 12 meses seguintes: 1T2020 | nenhuma | nenhuma; de 2024-04 até agora, ainda aberto (31 meses com dado)... Fica fora da conta, porque ainda não terminou.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Episódios em que dolar_ptax > 5,00 (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não por mês: um episódio longo não vale mais que um curto. O episódio que ainda não terminou fica fora da conta.\n\nde 2020-03 a 2022-02 (24 meses): dolar_ptax de 5,20 a 5,14 (o maior: 5,77); Selic de 3,75% no começo a 10,75% no fim.\n  no começo, 2020-03: selic_meta 3,75; ipca_12m 3,30; focus_ipca_12m 3,32; juro_real 0,42; juro_real_longo 3,78; dolar_ptax 5,1987; ibcbr 91,27; desocupacao 12,40; divida_bruta 76,78; primario_12m 0,85; ibcbr_12m -4,7%\n  12 meses depois do fim, 2023-02: selic_meta 13,75; ipca_12m 5,60; focus_ipca_12m 5,60; juro_real 7,71; juro_real_longo 6,52; dolar_ptax 5,2078; ibcbr 103,08; desocupacao 8,60; divida_bruta 71,77; primario_12m -0,91; ibcbr_12m 4,7%\n  recessão começando no episódio ou nos 12 meses seguintes: 1T2020\n\nde 2022-06 a 2023-05 (12 meses): dolar_ptax de 5,24 a 5,10 (o maior: 5,41); Selic de 13,25% no começo a 13,75% no fim.\n  no começo, 2022-06: selic_meta 13,25; ipca_12m 11,89; focus_ipca_12m 5,56; juro_real 7,29; juro_real_longo 6,01; dolar_ptax 5,2380; ibcbr 99,50; desocupacao 9,30; divida_bruta 75,61; primario_12m -2,11; ibcbr_12m 2,8%\n  12 meses depois do fim, 2024-05: selic_meta 10,50; ipca_12m 3,93; focus_ipca_12m 3,64; juro_real 6,62; juro_real_longo 6,26; dolar_ptax 5,2416; ibcbr 105,59; desocupacao 7,10; divida_bruta 75,67; primario_12m 2,49; ibcbr_12m 3,1%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2023-09 a 2023-10 (2 meses): dolar_ptax de 5,01 a 5,06 (o maior: 5,06); Selic de 12,75% no começo a 12,75% no fim.\n  no começo, 2023-09: selic_meta 12,75; ipca_12m 5,19; focus_ipca_12m 4,02; juro_real 8,39; juro_real_longo 5,82; dolar_ptax 5,0076; ibcbr 102,52; desocupacao 7,70; divida_bruta 73,01; primario_12m 0,95; ibcbr_12m 1,3%\n  12 meses depois do fim, 2024-10: selic_meta 10,75; ipca_12m 4,76; focus_ipca_12m 4,01; juro_real 6,48; juro_real_longo 6,87; dolar_ptax 5,7779; ibcbr 108,27; desocupacao 6,20; divida_bruta 77,38; primario_12m 1,91; ibcbr_12m 5,3%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2024-04 até agora, ainda aberto (31 meses com dado): dolar_ptax de 5,17 a 5,42 (o maior: 6,19); Selic de 10,75% no começo a 13,75% no último mês com dado. Fica fora da conta, porque ainda não terminou.\n  no começo, 2024-04: selic_meta 10,75; ipca_12m 3,69; focus_ipca_12m 3,56; juro_real 6,94; juro_real_longo 6,23; dolar_ptax 5,1718; ibcbr 104,62; desocupacao 7,50; divida_bruta 75,15; primario_12m 2,38; ibcbr_12m 0,7%\n  12 meses depois do fim, 2027-10: sem dado\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\n4 episódio(s): 3 encerrado(s) e 1 ainda aberto(s). Do começo ao fim de cada episódio encerrado, a Selic subiu em 2, caiu em 0 e ficou igual em 1.\nPor frequência, do começo ao fim de cada vez encerrada: em 2 das 3 vezes, a Selic terminou mais alta; em 1, ficou igual.\nAs vezes encerradas duraram de 2 a 24 meses.\nO episódio aberto começou em 2024-04: até agora, a Selic foi de 10,75% para 13,75%.\nPara este terminar como a maioria das vezes encerradas, a Selic teria de passar de 10,75%, o nível do começo (2024-04); no último mês com dado, estava em 13,75%.\nOutros cortes, para saber quanto a conta depende do corte: com dolar_ptax > 4,50, nenhuma vez encerrada; com dolar_ptax > 5,50, em 3 das 5 vezes, a Selic terminou mais alta; em 2, ficou igual. O texto usa o corte da biblioteca (EVIDENCIA.md), escrito antes, e não o que deixa a conta mais limpa.\n"
+     }
+    },
+    {
+     "id": "c8",
+     "tipo": "site",
+     "afirmacao": "Risco-país sobe 18% na semana; prefixado a 15,36% e IPCA+ a 7,89% ao ano.",
+     "numeros": [
+      "18%",
+      "17%",
+      "15,36%",
+      "7,89%"
+     ],
+     "comando": "",
+     "saida": "Risco-país sobe 18% na semana, e títulos do Tesouro perdem até 17% (Investidores cobram mais para emprestar ao Brasil: o prefixado chega a 15,36% e o IPCA+ a 7,89% ao ano.) Fonte: Poder360",
+     "fonte": {
+      "quem": "Poder360",
+      "url": "https://www.poder360.com.br/poder-economia/risco-pais-sobe-18-em-uma-semana/",
+      "data": "2026-10-31",
+      "trecho": "Risco país sobe 18% em uma semana"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c9",
+     "tipo": "documento",
+     "afirmacao": "O Tesouro cancelou leilões e recomprou cerca de R$ 31,6 bi em dois dias; o IPCA+ 2050 perdeu 17,19% e o prefixado 2032 foi a 15,36% (era 12,89%). Fonte fraca: texto de IA sobre três veículos.",
+     "numeros": [
+      "R$ 31,6 bilhões",
+      "17,19%",
+      "15,36%",
+      "12,89%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "brapi.dev (resumo de notícias)",
+      "url": "https://brapi.dev/news/tesouro-recompra-r-31-6-bi-em-dois-dias-e-ipca-longo-3d6ae01c",
+      "data": "2026-10-29",
+      "trecho": "o total foi de cerca de R$ 31,6 bilhões em dois dias"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c10",
+     "tipo": "site",
+     "afirmacao": "A Fazenda anunciou em 27/10 projeto de lei para mirar o centro da meta fiscal, sem medidas detalhadas.",
+     "numeros": [
+      ""
+     ],
+     "comando": "",
+     "saida": "Fazenda anuncia projeto de lei para cumprir o centro da meta fiscal (Por enquanto é só anúncio, sem medidas detalhadas.) Fonte: g1",
+     "fonte": {
+      "quem": "g1",
+      "url": "https://g1.globo.com/economia/noticia/2026/10/27/ministro-da-fazenda-anuncia-projeto-para-mirar-centro-da-meta-fiscal-e-diz-que-espera-racionalidade-do-mercado.ghtml",
+      "data": "2026-10-27",
+      "trecho": "Ministro da Fazenda anuncia projeto para mirar centro da meta fiscal"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c11",
+     "tipo": "site",
+     "afirmacao": "A IFI vê R$ 40 bi em medidas novas e déficit que pode ir a 1% do PIB em 2027; dívida de 124% do PIB em 2036.",
+     "numeros": [
+      "R$ 40 bi",
+      "1%",
+      "124%"
+     ],
+     "comando": "",
+     "saida": "IFI, do Senado, vê R$ 40 bi em medidas novas e gasto acima da arrecadação em 2027 (... dívida de 124% do PIB em 2036)",
+     "fonte": {
+      "quem": "Valor",
+      "url": "https://valor.globo.com/brasil/noticia/2026/10/29/pacote-de-bondades-do-governo-pode-levar-deficit-primario-a-1percent-do-pib-em-2027-nota-ifi.ghtml",
+      "data": "2026-10-29",
+      "trecho": "pacote de bondades do governo pode levar déficit primário a 1% do PIB em 2027"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c12",
+     "tipo": "site",
+     "afirmacao": "O presidente vai indicar seis diretores do BC até o fim de 2027 e investidores temem mudança de perfil (relato da Folha).",
+     "numeros": [
+      "seis"
+     ],
+     "comando": "",
+     "saida": "Presidente vai indicar seis diretores do Banco Central até o fim de 2027 (Investidores temem uma diretoria mais disposta a cortar juro mesmo com preços subindo...)",
+     "fonte": {
+      "quem": "Folha",
+      "url": "https://www1.folha.uol.com.br/mercado/2026/11/lula-indicara-seis-diretores-do-banco-central-ate-o-fim-de-2027-e-mercado-teme-mudanca-de-perfil.shtml",
+      "data": "2026-11-01",
+      "trecho": "Lula indicará seis diretores do Banco Central até o fim de 2027"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c13",
+     "tipo": "site",
+     "afirmacao": "Empresas adiam investimentos à espera do plano econômico do novo mandato (Folha).",
+     "numeros": [
+      ""
+     ],
+     "comando": "",
+     "saida": "Empresas adiam investimentos à espera do plano econômico do novo mandato",
+     "fonte": {
+      "quem": "Folha",
+      "url": "https://c-level.folha.uol.com.br/negocios/2026/11/empresas-seguram-novos-investimentos-a-espera-da-politica-economica-do-lula-4.shtml",
+      "data": "2026-11-01",
+      "trecho": "Empresas seguram novos investimentos à espera da política econômica do Lula"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c14",
+     "tipo": "site",
+     "afirmacao": "Dívida ligada à Selic em recorde de 52,74% em agosto; cada ponto de Selic custa cerca de R$ 48 bi por ano.",
+     "numeros": [
+      "52,74%",
+      "R$ 48 bilhões"
+     ],
+     "comando": "",
+     "saida": "Dívida do governo ligada à Selic bate recorde de 52,74% em agosto (Cada ponto a mais na Selic custa cerca de R$ 48 bilhões por ano ao governo)",
+     "fonte": {
+      "quem": "Poder360",
+      "url": "https://www.poder360.com.br/poder-economia/divida-atrelada-a-selic-bate-recorde-historico-em-2026/",
+      "data": "2026-11-01",
+      "trecho": "Dívida atrelada à Selic bate recorde histórico em 2026"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c15",
+     "tipo": "site",
+     "afirmacao": "O Itaú reduziu a previsão do PIB de 2027 para 0,5% e vê inflação acima do teto (30/10).",
+     "numeros": [
+      "0,5%"
+     ],
+     "comando": "",
+     "saida": "Itaú reduz a previsão do PIB de 2027 para 0,5% e vê inflação acima do teto",
+     "fonte": {
+      "quem": "Folha",
+      "url": "https://www1.folha.uol.com.br/mercado/2026/10/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta.shtml",
+      "data": "2026-10-30",
+      "trecho": "Itaú corta projeção do PIB de 2027 para 0,5%"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c16",
+     "tipo": "site",
+     "afirmacao": "Dados do site: dólar de R$ 5,08 a R$ 5,42 e juro de 10 anos de 8,3% a 8,0%, do fim de julho a 30/10; o juro de 10 anos está mais alto que em 91% dos meses desde 2005.",
+     "numeros": [
+      "5,08",
+      "5,42",
+      "8,3%",
+      "8,0%",
+      "91%"
+     ],
+     "comando": "",
+     "saida": "O dólar foi de R$ 5,08 para R$ 5,42, e o juro de 10 anos foi de 8,3% para 8,0% ao ano, do fim de julho a 30/10.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c17",
+     "tipo": "site",
+     "afirmacao": "Economistas esperam que o Copom pare de cortar e mantenha a Selic em 13,75% em 4/11.",
+     "numeros": [
+      "13,75%"
+     ],
+     "comando": "",
+     "saida": "Economistas esperam que o Copom pare de cortar e mantenha a Selic em 13,75%",
+     "fonte": {
+      "quem": "InfoMoney",
+      "url": "https://www.infomoney.com.br/economia/bc-deve-manter-selic-em-1375-em-uma-pausa-apos-a-reeleicao-de-lula/",
+      "data": "2026-11-02",
+      "trecho": "BC deve manter Selic em 13,75% em uma pausa após a reeleição de Lula"
+     },
+     "conferencia": {
+      "status": "depois_do_dia",
+      "por_que": "publicado em 2026-11-02, depois da véspera de 2026-11-02"
+     }
+    },
+    {
+     "id": "c201",
+     "tipo": "documento",
+     "afirmacao": "Pela IFI, do Senado (Relatório de Acompanhamento Fiscal 117, out/2026), os R$ 40 bilhões são medidas de campanha que pioram as contas, como o reajuste do Bolsa Família, a perda de arrecadação das bets e o pacote para microempreendedores. O déficit de 1,0% do PIB em 2027 é um cenário de risco, e não a projeção central. Trecho tirado do resumo da busca; o PDF não abriu (sinal fraco).",
+     "numeros": [
+      "R$ 40 bilhões",
+      "1,0%",
+      "0,5%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Instituição Fiscal Independente (Senado), RAF nº 117",
+      "url": "https://www12.senado.leg.br/ifi/pdf/raf117_out2026.pdf",
+      "data": "2026-10-29",
+      "trecho": "a estimativa é de déficit primário efetivo potencial de 1,0% do PIB."
+     },
+     "do_revisor": true,
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true
+     }
+    },
+    {
+     "id": "c202",
+     "tipo": "documento",
+     "afirmacao": "O CDS de 5 anos do Brasil (risco-país) foi de 119,26 para 141,02 pontos entre 23/10 e 31/10, uma alta de 18,25%. Fonte fraca: resumo de notícias, fora da lista; o número precisa de um jornal da lista para entrar.",
+     "numeros": [
+      "119,26",
+      "141,02",
+      "18,25%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "brapi.dev (resumo de notícias)",
+      "url": "https://brapi.dev/news/cds-do-brasil-salta-18-25-na-semana-e-chega-a-141-5d360a1c",
+      "data": "2026-10-31",
+      "trecho": "CDS do Brasil salta 18,25% na semana e chega a 141"
+     },
+     "do_revisor": true,
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": false
+     }
+    }
+   ],
+   "conferencia": {
+    "final": {
+     "graves": [],
+     "avisos": [
+      "bloco 3: frase de 39 palavras",
+      "bloco 6: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: Pela regra, a meta só conta como descumprida depois de seis meses seguidos fora "
+     ],
+     "palavras": 540,
+     "intertitulos": 0
+    }
+   },
+   "titulo": "Quem investe cobra mais do Tesouro, e os próximos leilões dirão quanto o governo paga",
+   "texto": "Na semana depois do segundo turno, o risco-país subiu 18%, e títulos do Tesouro perderam até 17% do valor, segundo os jornais [c8]. Quem investe passou a cobrar 15,36% ao ano para comprar um título prefixado do governo, acima da Selic de 13,75%. No título protegido da inflação, passou a cobrar 7,89% ao ano acima do IPCA [c8]. O presidente foi reeleito contra o que o mercado esperava, e quem investe cobra duas coisas que ainda não saíram, o nome do ministro da Fazenda e um plano para as contas do novo mandato.\n\nEssas taxas são as do mercado, onde investidores trocam títulos que já existem, e o preço de um título cai quando a taxa cobrada por ele sobe. O governo paga uma taxa parecida quando vende títulos novos nos leilões do Tesouro, que na semana passada recomprou títulos para conter a oscilação.\n\nA Fazenda anunciou um projeto de lei para mirar o centro da meta das contas, mas ainda não disse que gastos corta nem que receitas cria [c10]. A IFI, do Senado, contou do outro lado R$ 40 bilhões em medidas de campanha que pioram as contas [c201]. Entre elas estão o reajuste do Bolsa Família, a arrecadação que se perde com as apostas online e um pacote para microempreendedores [c201].\n\nA desconfiança também chega aos preços, pelo dólar. Pela conta do Banco Central, a alta de 8,2% do dólar no dia seguinte à eleição, se não voltar, soma cerca de 0,8 ponto ao IPCA em 12 meses [c1]. E ela não voltou: em 30/10, o dólar estava em R$ 5,42, contra R$ 5,403 no fechamento de 26/10, o dia da alta [c16].\n\nOs jornais relataram que as previsões de inflação para 2027 subiram depois do segundo turno, por duas causas. Uma é o dólar mais caro, que vem da desconfiança daqui. A outra é o El Niño, que vem do clima e pode encarecer a comida, sem tamanho medido ainda; o juro não age sobre ele, e ele pode passar sozinho.\n\nNo Focus de 30/10, os bancos esperam que os preços subam 5,22% em 2026 e 4,76% em 2027 [c4]. As duas previsões passam do teto da meta, de 4,5%, que é o centro de 3% mais a margem de 1,5 ponto. Pela regra, a meta só conta como descumprida depois de seis meses seguidos fora dessa faixa.\n\nOs bancos ainda esperam a Selic em 13,50% no fim de 2026 e em 12,50% no fim de 2027, contra 13,75% hoje [c5]. Se a inflação esperada continuar subindo, fica mais difícil cortar, e a Selic alta por mais tempo chega às contas do governo. Em agosto, 52,74% da dívida seguia a Selic, e cada ponto dela custa cerca de R$ 48 bilhões por ano [c14]. O dólar mexe menos nessa conta, porque 96% da dívida federal é em reais.\n\nO Banco Central decide a Selic na quarta, 4/11, e o IBGE divulga o IPCA de outubro em 12/11. O nome do ministro da Fazenda, o plano das contas e os próximos leilões do Tesouro não têm data. Quando o Tesouro vender títulos novos, a taxa que ele aceitar pagar vai mostrar quanto dessa cobrança ficou. É dessa taxa que parte o crédito longo das empresas, que já adiam investimentos à espera do plano do novo mandato, segundo os jornais [c13].",
+   "argumento": "Quem investe passou a cobrar mais caro para emprestar ao governo enquanto não saem um nome na Fazenda e um plano com números; a taxa dos próximos leilões do Tesouro vai mostrar quanto dessa cobrança fica.",
+   "porque": "Depois da reeleição, contra o que o mercado esperava, quem investe passou a cobrar mais para emprestar ao Brasil, enquanto espera o nome do ministro da Fazenda e um plano para as contas do novo mandato.",
+   "pressao": "mercado",
+   "duracao_s": 494
+  },
+  "termina_em": "mercado",
+  "pergunta": "dolar-alto"
+ },
+ "pauta": {
+  "versao": 2,
+  "candidatos": [
+   {
+    "id": "E1",
+    "ordem": 1,
+    "evento": "ev-20261101-01",
+    "titulo": "Previsões de inflação para 2027 e 2028 sobem após o segundo turno",
+    "estagio": "dado",
+    "tamanho": 2,
+    "fator": "juro",
+    "origem": "dados",
+    "assunto": "Juro e inflação",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Com o dólar mais alto e o El Niño, os economistas esperam preços subindo mais rápido. Assim o Banco Central fica sem espaço para baixar o juro, e o crédito caro segura consumo e investimento.",
+    "historia": "juro_inflacao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "Folha"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "Expectativas de inflação para 2027 e 2028 saltam após segundo turno",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/expectativas-de-inflacao-para-2027-e-2028-saltam-apos-segundo-turno.shtml",
+      "publicado_em": "2026-10-31T13:00-03:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Dólar alto após eleições se soma a El Niño e ameaça inflação",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/dolar-alto-apos-eleicoes-se-soma-a-el-nino-e-ameaca-inflacao.shtml",
+      "publicado_em": "2026-10-31T23:00-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E2",
+    "ordem": 2,
+    "evento": "ev-20261101-02",
+    "titulo": "Risco-país sobe 18% na semana, e títulos do Tesouro perdem até 17%",
+    "estagio": "dado",
+    "tamanho": 2,
+    "fator": "mercado",
+    "origem": "dados",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Investidores cobram mais para emprestar ao Brasil: o prefixado chega a 15,36% e o IPCA+ a 7,89% ao ano. Isso encarece o dinheiro para governo e empresas, que investem menos.",
+    "historia": "desconfianca_eleicao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "InfoMoney",
+     "Poder360"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Risco país sobe 18% em uma semana",
+      "url": "https://www.poder360.com.br/poder-economia/risco-pais-sobe-18-em-uma-semana/",
+      "publicado_em": "2026-10-31T12:45+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Títulos do Tesouro perdem até 17% na semana após 2º turno e apagam rali eleitoral",
+      "url": "https://www.infomoney.com.br/onde-investir/titulos-do-tesouro-perdem-ate-17-na-semana-apos-2o-turno-e-apagam-rali-eleitoral/",
+      "publicado_em": "2026-10-31T08:00+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E3",
+    "ordem": 3,
+    "evento": null,
+    "titulo": "Bolsa cai 9,88% em outubro e empresas perdem R$ 948,8 bi em uma semana",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "mercado",
+    "origem": "dados",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "É a mesma queda da semana após a eleição, agora fechada no mês. Com ações mais baratas, as empresas têm mais dificuldade para levantar dinheiro e adiam projetos.",
+    "historia": "nova",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 3,
+    "jornais": [
+     "Poder360",
+     "g1"
+    ],
+    "descartado": "mesmo fato do evento ev-20261031-01",
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Ibovespa cai 9,88% em outubro; dólar turismo e comercial avançam 5%",
+      "url": "https://www.poder360.com.br/poder-economia/ibovespa-cai-988-em-outubro-dolar-turismo-e-comercial-avancam-5/",
+      "publicado_em": "2026-10-31T11:08+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "B3 perde R$ 948,8 bilhões em valor de mercado em uma semana",
+      "url": "https://www.poder360.com.br/poder-economia/b3-perde-r-9488-bilhoes-em-valor-de-mercado-em-uma-semana/",
+      "publicado_em": "2026-10-31T10:57+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Ibovespa: tombo de 18% iguala semana de 11 de Setembro e chega perto da pandemia; o que esperar?",
+      "url": "https://g1.globo.com/economia/noticia/2026/10/31/ibovespa-o-que-esperar-apos-o-tombo.ghtml",
+      "publicado_em": "2026-10-31T07:00+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E4",
+    "ordem": 4,
+    "evento": null,
+    "titulo": "Ministro chama de chantagem a pressão do mercado por ajuste nas contas",
+    "estagio": "rumor",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O ministro propõe rever R$ 600 bi em descontos de impostos, mas descarta corte de gastos. Com a dívida em 82,9% do PIB, a falta de um plano claro mantém o juro alto.",
+    "historia": "nova",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "InfoMoney",
+     "Poder360"
+    ],
+    "descartado": "mesmo fato do evento ev-20261029-03",
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Boulos diz ser “chantagem” pressão do mercado por ajuste fiscal",
+      "url": "https://www.poder360.com.br/poder-economia/boulos-diz-ser-chantagem-pressao-do-mercado-por-ajuste-fiscal/",
+      "publicado_em": "2026-10-31T23:16+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Boulos cita R$ 600 bi em desonerações e fala em ‘chantagem’ do mercado",
+      "url": "https://www.infomoney.com.br/politica/boulos-cita-r-600-bi-em-desoneracoes-e-fala-em-chantagem-do-mercado/",
+      "publicado_em": "2026-10-31T18:25+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E5",
+    "ordem": 5,
+    "evento": null,
+    "titulo": "Citi avalia que vice-presidente na Fazenda agradaria mais ao mercado",
+    "estagio": "rumor",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O nome do próximo ministro da Fazenda segue sem definição. Enquanto ele não sai, o investidor fica sem saber o rumo das contas do governo e cobra juro mais alto.",
+    "historia": "nova",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 3,
+    "jornais": [
+     "Folha",
+     "Poder360",
+     "Valor"
+    ],
+    "descartado": "mesmo fato do evento ev-20261028-07",
+    "fontes": [
+     {
+      "veiculo": "Valor",
+      "titulo": "Para o Citi, Alckmin na Fazenda estaria mais ao gosto do mercado",
+      "url": "https://valor.globo.com/financas/intraday/post/2026/10/para-o-citi-alckmin-na-fazenda-estaria-mais-ao-gosto-do-mercado.ghtml",
+      "publicado_em": "2026-10-31T11:01+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Tabata defende Alckmin na Fazenda e admite disputar SP em 2028",
+      "url": "https://www.poder360.com.br/poder-congresso/tabata-defende-alckmin-na-fazenda-e-admite-disputar-sp-em-2028/",
+      "publicado_em": "2026-11-01T00:57+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "A bola está com a liderança",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/colunas/samuelpessoa/2026/10/a-bola-esta-com-a-lideranca.shtml",
+      "publicado_em": "2026-10-31T10:00-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E6",
+    "ordem": 6,
+    "evento": "ev-20261101-03",
+    "titulo": "Acordo Mercosul-União Europeia eleva exportações brasileiras em 21%",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "dados",
+    "assunto": "Economia lá fora",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "Com tarifas menores, de maio a setembro o Brasil vendeu mais produtos do campo e da indústria para a Europa. Mais vendas lá fora sustentam a produção e o emprego aqui.",
+    "historia": "nova",
+    "tema_novo": "acordo-mercosul-uniao-europeia",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "Agência Brasil",
+     "Poder360"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Acordo Mercosul-UE eleva exportações brasileiras em 21%",
+      "url": "https://www.poder360.com.br/poder-economia/acordo-mercosul-ue-eleva-exportacoes-brasileiras-em-21/",
+      "publicado_em": "2026-10-31T20:26+00:00"
+     },
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Acordo Mercosul-UE eleva exportações brasileiras em 21%",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/acordo-mercosul-ue-eleva-exportacoes-brasileiras-em-21",
+      "publicado_em": "2026-10-31T09:52-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E7",
+    "ordem": 7,
+    "evento": null,
+    "titulo": "Senado debate a partir de 11 de novembro a alíquota de 11,3% da CBS",
+    "estagio": "em_votacao",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "A comissão tem até 15 de dezembro para discutir o valor proposto pelo TCU. Somado aos impostos de estados e municípios, o imposto sobre consumo pode passar de 30%, o que pesa no bolso de quem compra.",
+    "historia": "nova",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 6,
+    "jornais": [
+     "Estadão",
+     "InfoMoney",
+     "Poder360",
+     "Valor",
+     "g1"
+    ],
+    "descartado": "mesmo fato do evento ev-20261028-10",
+    "fontes": [
+     {
+      "veiculo": "Estadão",
+      "titulo": "Tributária: Comissão do Senado confirma Braga como relator da CBS e vai convidar Durigan para debate",
+      "url": "https://www.estadao.com.br/economia/tributaria-comissao-do-senado-confirma-braga-como-relator-da-cbs-e-vai-convidar-durigan-para-debate/",
+      "publicado_em": "2026-10-31T16:04+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Comissão do Senado fará audiências sobre alíquota da CBS a partir de 11 de novembro",
+      "url": "https://valor.globo.com/politica/noticia/2026/10/31/comissao-do-senado-fara-audiencias-sobre-aliquota-da-cbs-a-partir-de-11-de-novembro.ghtml",
+      "publicado_em": "2026-10-31T15:53+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Comissão do Senado analisa alíquota da CBS a partir de 11 de novembro",
+      "url": "https://www.poder360.com.br/poder-congresso/comissao-do-senado-analisa-aliquota-da-cbs-a-partir-de-11-de-novembro/",
+      "publicado_em": "2026-10-31T15:52+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Eduardo Braga será relator da alíquota da CBS; CAE convidará Durigan",
+      "url": "https://www.infomoney.com.br/mercados/eduardo-braga-relator-aliquota-cbs-senado/",
+      "publicado_em": "2026-10-31T13:58+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Eduardo Braga será relator da alíquota da CBS; CAE convidará Durigan",
+      "url": "https://www.infomoney.com.br/politica/eduardo-braga-relator-aliquota-cbs-senado/",
+      "publicado_em": "2026-10-31T13:58+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Reforma tributária: novo imposto sobre consumo pode ficar acima de 30% e superar o de países ricos; veja a comparação",
+      "url": "https://g1.globo.com/economia/noticia/2026/10/31/reforma-tributaria-novo-imposto-sobre-consumo-pode-ficar-acima-de-30percent-e-superar-o-de-paises-ricos-veja-a-comparacao.ghtml",
+      "publicado_em": "2026-10-31T03:00+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E8",
+    "ordem": 8,
+    "evento": "ev-20261101-04",
+    "titulo": "El Niño pode encarecer a conta de luz em 2027, alerta centro de infraestrutura",
+    "estagio": "rumor",
+    "tamanho": 1,
+    "fator": "juro",
+    "origem": "natureza",
+    "assunto": "Juro e inflação",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Com menos chuva e mais consumo, as hidrelétricas produzem menos e a energia fica mais cara. A conta de luz maior empurra os preços para cima e dificulta a queda do juro.",
+    "historia": "nova",
+    "tema_novo": "el-nino",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "Poder360"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Infra em 1 Minuto: El Niño pode impactar conta de luz",
+      "url": "https://www.poder360.com.br/poder-infra/infra-em-1-minuto-el-nino-pode-impactar-conta-de-luz/",
+      "publicado_em": "2026-10-31T09:00+00:00"
+     }
+    ]
+   }
+  ],
+  "datas": [],
+  "pressoes_mudaram": [],
+  "estado": "subindo",
+  "estado_anterior": "subindo",
+  "direcao_mudou": false,
+  "historias": [
+   {
+    "id": "desconfianca_eleicao",
+    "titulo": "Desconfiança de quem investe depois da eleição",
+    "pressao": "mercado",
+    "pressoes": [
+     "mercado",
+     "divida_reais",
+     "juro",
+     "inflacao"
+    ],
+    "nova": false,
+    "pontos": 2.0,
+    "candidatos": [
+     "E2"
+    ],
+    "jornais": 2,
+    "fato_grande": true
+   },
+   {
+    "id": "juro_inflacao",
+    "titulo": "Juro e inflação: a Selic parada e a inflação acima do teto",
+    "pressao": "juro",
+    "pressoes": [
+     "juro",
+     "inflacao",
+     "parcelas",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 2.0,
+    "candidatos": [
+     "E1"
+    ],
+    "jornais": 1,
+    "fato_grande": true
+   },
+   {
+    "id": "nova:el-nino",
+    "titulo": "El Niño pode encarecer a conta de luz em 2027, alerta centro de infraestrutura",
+    "pressao": null,
+    "pressoes": [],
+    "nova": true,
+    "pontos": 0.25,
+    "candidatos": [
+     "E8"
+    ],
+    "jornais": 1,
+    "fato_grande": false
+   }
+  ],
+  "temas_esperando": [
+   {
+    "tema": "acordo-mercosul-uniao-europeia",
+    "titulo": "Acordo Mercosul-União Europeia eleva exportações brasileiras em 21%",
+    "candidatos": [
+     "E6"
+    ],
+    "dias": 2
+   }
+  ],
+  "escolha": {
+   "historia": "desconfianca_eleicao",
+   "titulo": "Desconfiança de quem investe depois da eleição",
+   "pontos": 2.0,
+   "motivo": "a história que mais andou (empate decidido pelos jornais)",
+   "calmo": false,
+   "nova": false,
+   "pulada": null,
+   "segunda": "juro_inflacao"
+  },
+  "final": "E2",
+  "mesma_historia": [],
+  "segunda_historia": [
+   "E1"
   ]
  }
 }

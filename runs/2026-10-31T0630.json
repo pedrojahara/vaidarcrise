@@ -2403,81 +2403,1335 @@
   ]
  },
  "post": {
-  "tipo": "dia",
   "ok": true,
-  "titulo": "Bolsa cai 18,1% e dólar sobe 9% na semana, maior alta desde 2008",
+  "tipo": "dia",
+  "formato": "historia",
+  "titulo": "Desemprego cai a 5,2%, mas o Itaú já prevê o PIB de 2027 em 0,5% e inflação acima do teto",
   "paragrafos": [
-   "A Bolsa caiu 18,1% na semana da reeleição do presidente, a mesma queda de uma semana de 2001, e o dólar subiu 9%, a maior alta semanal desde 2008.",
-   "A alta tem duas leituras: quem investe reagiu demais à eleição, ou passou a desconfiar das contas do governo.",
-   "Se o dólar seguir 6,8% acima do fim de julho, R$ 100 de compras sobem cerca de R$ 0,70 em um ano, pelas contas do Banco Central. O peso é maior nos importados, como peças e combustível."
+   "O IBGE divulgou ontem que o desemprego ficou em 5,2% no trimestre até setembro, o menor para essa época do ano desde 2012. No mesmo dia, os jornais relataram que o Itaú cortou a previsão de crescimento do PIB de 2027 de 1,2% para 0,5%. O banco também subiu a inflação que espera para 2027 de 4,6% para 6,1%, acima do teto da meta, de 4,5%. O banco atribui a maior parte dessa alta a um dólar mais caro e a mudanças de impostos e de regras que ainda não foram detalhadas.",
+   "As duas notícias tratam da mesma dúvida: se a economia, que perde ritmo com o juro alto, chega a parar em 2027. O PIB cresceu 1,1% no primeiro trimestre de 2026 e 0,5% no segundo, cada um contra o trimestre anterior. Recessão é o PIB cair dois trimestres seguidos, o que ainda não aconteceu. A prévia do PIB feita pelo Banco Central, porém, caiu 0,6% nos três meses até agosto, contra os três meses anteriores.",
+   "O desemprego caiu de 5,4% no trimestre até junho e ficou perto do menor da série, de 5,1%, em dezembro de 2025. A renda média do trabalho, descontada a inflação, ficou em R$ 3.790, igual à do trimestre anterior e 3,6% acima de um ano antes. Mesmo assim, o consumo das famílias caiu 0,4% no segundo trimestre. O consumo do terceiro trimestre ainda não saiu, e o IBGE o divulga junto com o PIB, em 2/12.",
+   "Pelo que os jornais relataram, o Itaú espera a Selic parada em 13,75%, o nível de hoje. A revisão saiu na semana seguinte à eleição, quando o dólar e a Bolsa reagiram com força, e é a conta de um banco só. Se o dólar voltar ao nível de antes, cai a parte da inflação prevista que vem do câmbio. O próprio banco não espera isso: prevê o dólar a R$ 5,60 em média em 2027, acima dos R$ 5,42 de 30/10.",
+   "A Confederação Nacional da Indústria divulgou ontem, como os jornais relataram, que as pequenas indústrias estão na pior situação financeira em cinco anos. A confederação apontou os juros, os impostos e as vendas fracas. Empresa com pouco dinheiro em caixa tende a adiar investimento e contratação. Na quarta-feira, 28, a mesma confederação já tinha cortado a previsão do PIB de 2026 de 2% para 1,6%.",
+   "O Banco Central decide a Selic na quarta-feira, 4/11, e o IBGE divulga a produção da indústria de setembro no dia 5. O dado maior sai em 2/12, com o PIB do terceiro trimestre. Se ele cair, como a prévia de agosto indica, o emprego perto do menor da série vai conviver com uma economia que encolhe, e o 0,5% do Itaú ganha um dado a favor. Se crescer, ganha força a leitura de que a revisão pesou o susto da semana da eleição. Para a empresa que planeja contratar em 2027, é esse número que separa a previsão do fato."
   ],
   "secoes": [
    {
+    "titulo": null,
     "paragrafos": [
-     "A Bolsa caiu 18,1% na semana da reeleição do presidente, a mesma queda de uma semana de 2001, e o dólar subiu 9%, a maior alta semanal desde 2008.",
-     "A alta tem duas leituras: quem investe reagiu demais à eleição, ou passou a desconfiar das contas do governo.",
-     "Se o dólar seguir 6,8% acima do fim de julho, R$ 100 de compras sobem cerca de R$ 0,70 em um ano, pelas contas do Banco Central. O peso é maior nos importados, como peças e combustível."
+     "O IBGE divulgou ontem que o desemprego ficou em 5,2% no trimestre até setembro, o menor para essa época do ano desde 2012. No mesmo dia, os jornais relataram que o Itaú cortou a previsão de crescimento do PIB de 2027 de 1,2% para 0,5%. O banco também subiu a inflação que espera para 2027 de 4,6% para 6,1%, acima do teto da meta, de 4,5%. O banco atribui a maior parte dessa alta a um dólar mais caro e a mudanças de impostos e de regras que ainda não foram detalhadas.",
+     "As duas notícias tratam da mesma dúvida: se a economia, que perde ritmo com o juro alto, chega a parar em 2027. O PIB cresceu 1,1% no primeiro trimestre de 2026 e 0,5% no segundo, cada um contra o trimestre anterior. Recessão é o PIB cair dois trimestres seguidos, o que ainda não aconteceu. A prévia do PIB feita pelo Banco Central, porém, caiu 0,6% nos três meses até agosto, contra os três meses anteriores."
+    ]
+   },
+   {
+    "titulo": "Quase todo mundo empregado, e o consumo caindo",
+    "paragrafos": [
+     "O desemprego caiu de 5,4% no trimestre até junho e ficou perto do menor da série, de 5,1%, em dezembro de 2025. A renda média do trabalho, descontada a inflação, ficou em R$ 3.790, igual à do trimestre anterior e 3,6% acima de um ano antes. Mesmo assim, o consumo das famílias caiu 0,4% no segundo trimestre. O consumo do terceiro trimestre ainda não saiu, e o IBGE o divulga junto com o PIB, em 2/12."
+    ]
+   },
+   {
+    "titulo": "O Itaú não conta com a volta do dólar",
+    "paragrafos": [
+     "Pelo que os jornais relataram, o Itaú espera a Selic parada em 13,75%, o nível de hoje. A revisão saiu na semana seguinte à eleição, quando o dólar e a Bolsa reagiram com força, e é a conta de um banco só. Se o dólar voltar ao nível de antes, cai a parte da inflação prevista que vem do câmbio. O próprio banco não espera isso: prevê o dólar a R$ 5,60 em média em 2027, acima dos R$ 5,42 de 30/10.",
+     "A Confederação Nacional da Indústria divulgou ontem, como os jornais relataram, que as pequenas indústrias estão na pior situação financeira em cinco anos. A confederação apontou os juros, os impostos e as vendas fracas. Empresa com pouco dinheiro em caixa tende a adiar investimento e contratação. Na quarta-feira, 28, a mesma confederação já tinha cortado a previsão do PIB de 2026 de 2% para 1,6%.",
+     "O Banco Central decide a Selic na quarta-feira, 4/11, e o IBGE divulga a produção da indústria de setembro no dia 5. O dado maior sai em 2/12, com o PIB do terceiro trimestre. Se ele cair, como a prévia de agosto indica, o emprego perto do menor da série vai conviver com uma economia que encolhe, e o 0,5% do Itaú ganha um dado a favor. Se crescer, ganha força a leitura de que a revisão pesou o susto da semana da eleição. Para a empresa que planeja contratar em 2027, é esse número que separa a previsão do fato."
     ]
    }
   ],
-  "problemas": [],
-  "edicao": {
-   "sugestoes": [
+  "pesquisa": {
+   "versao": 4,
+   "ok": true,
+   "em": "2026-11-11T17:53:39+00:00",
+   "meta": [
     {
-     "trecho": "A Bolsa caiu 18,1% e o dólar subiu 9% na semana da reeleição do presidente, a maior alta semanal do dólar desde 2008.",
-     "problema": "A queda de 18,1% da Bolsa não tem comparação, e o guia pede que todo número venha com uma régua. Os dados trazem essa régua: a perda iguala a de uma semana de 2001.",
-     "como_fica": "A Bolsa caiu 18,1% na semana da reeleição do presidente, a mesma queda de uma semana de 2001, e o dólar subiu 9%, a maior alta semanal desde 2008."
+     "etapa": "pesquisa",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "845320cf3235a5ac9c375ca1fa0e0998719774113ef07e4841c00a949e966134",
+     "system_sha256": "8b315c503c4144985b7bd6945d245c16c6d5c8cad733f64c94f113f06e444348",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.4260096,
+     "turnos": 8,
+     "duracao_s": 51,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [
+      {
+       "tool_name": "Bash",
+       "tool_use_id": "toolu_01AbkRg3sVcTWuSq8BCfi1sD",
+       "tool_input": {
+        "command": "cd /home/user/vaidarcrise; for c in \"valores desemprego --de 2026-06\" \"focus --de 2026-10-01\" \"recorde desemprego 2026-09\" \"traduz emprego\" \"recessoes\"; do echo \"## $c\"; .venv/bin/python src/conta.py $c 2>&1 | tail -25; done"
+       }
+      }
+     ],
+     "session_id": "9658ab97-868b-4b75-8a8e-9cd9ce9cb3e7"
     },
     {
-     "trecho": "Com o dólar a R$ 5,42, 6,8% mais caro que no fim de julho, peças, combustível e outros importados ficam mais caros nos meses seguintes. A alta tem duas leituras: [...]",
-     "problema": "O parágrafo tem 55 palavras, e o guia permite até 50. Ele vira dois parágrafos, e o valor em reais sai para o texto não passar de 100 palavras. A comparação com julho continua.",
-     "como_fica": "Com o dólar 6,8% mais caro que no fim de julho, peças, combustível e outros importados ficam mais caros nos meses seguintes. (A frase das duas leituras passa para um terceiro parágrafo.)"
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "ec31f4e8d7346c7458167226533b421206ec602d43cfb87d94d3186c76040d3d",
+     "system_sha256": "9010879deba9ad26a003a680f3f67f52f2cbd0fffe7d65e790dc9b82a3ff95e3",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7612760000000001,
+     "turnos": 2,
+     "duracao_s": 58,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "c8c62718-aa92-456b-b855-a52b96fd9fe6"
     },
     {
-     "trecho": "A alta tem duas leituras: quem investe exagerou na reação à eleição, ou desconfia das contas do governo, com a dívida subindo de 82,0% para 82,9% do PIB desde junho.",
-     "problema": "A frase passa de 30 palavras, e o \"com\" não deixa claro que a dívida maior é o motivo da desconfiança. O certo é ligar a causa com \"já que\".",
-     "como_fica": "A alta tem duas leituras: quem investe reagiu demais à eleição, ou desconfia das contas do governo, já que a dívida subiu de 82,0% para 82,9% do PIB desde junho."
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "b4f8401def476e3201989523767579bd63437a93d1d285be9f9180dc2ab4246b",
+     "system_sha256": "648c59fc84c4a9305b7f64f8a21d266e58c58d85786a1dfecb70b37c4d02e434",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7312665,
+     "turnos": 6,
+     "duracao_s": 73,
+     "modelos": [
+      "claude-opus-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "d83bd219-486b-4783-9c4a-bbb602ee136f"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "cfc49fb2b6485b9eb8333261369a2bdaed4458a16388dcf9dbb44804e98f7cfb",
+     "system_sha256": "9010879deba9ad26a003a680f3f67f52f2cbd0fffe7d65e790dc9b82a3ff95e3",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7662306,
+     "turnos": 2,
+     "duracao_s": 54,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "aba521ad-40df-487a-82eb-20d9923d8d26"
+    },
+    {
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "1d643818797a0b641bf259297a9df5fe60ff06ee0953ada29c8cafb2366a4a6c",
+     "system_sha256": "648c59fc84c4a9305b7f64f8a21d266e58c58d85786a1dfecb70b37c4d02e434",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7612017,
+     "turnos": 6,
+     "duracao_s": 88,
+     "modelos": [
+      "claude-opus-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "1cf68fba-f2dd-4f7d-ba26-b5e303e46050"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "2ad8fa9f34921edac0a50b70c52a86f0f3e4e5b0533b72d2aab07aeaacef0057",
+     "system_sha256": "9010879deba9ad26a003a680f3f67f52f2cbd0fffe7d65e790dc9b82a3ff95e3",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7727706000000001,
+     "turnos": 2,
+     "duracao_s": 59,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "3016a2b7-f653-4500-bee1-c32109ff1cb9"
+    },
+    {
+     "etapa": "revisor",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "d850baf7b92f75310d3333570422a0a081193149a1ca52c933b93316179f2151",
+     "system_sha256": "648c59fc84c4a9305b7f64f8a21d266e58c58d85786a1dfecb70b37c4d02e434",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.471389,
+     "turnos": 2,
+     "duracao_s": 19,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "f783911d-dbc1-45a9-abfb-e8e1b26b7a0b"
+    },
+    {
+     "etapa": "redacao",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "5654fa1b11d6f3fb83f7f04a35b881840fb4be7a81ce12cf76fdab45487949da",
+     "system_sha256": "9010879deba9ad26a003a680f3f67f52f2cbd0fffe7d65e790dc9b82a3ff95e3",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.6627346,
+     "turnos": 2,
+     "duracao_s": 16,
+     "modelos": [
+      "claude-opus-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "d61d2409-a813-4cb2-bfdc-1c21c11a9111"
     }
    ],
-   "aplicada": true
-  },
-  "meta": [
-   {
-    "modelo_pedido": "opus",
-    "prompt_sha256": "f086b92a9be48b07ab3b594dc27a1ede68da818abef6a5c253e4aab1befa92c4",
-    "system_sha256": "fd9a8be54c94ed707c0b33221d75dd0e5cfea05070c681fc31e30145ca999d63",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.0861648,
-    "modelos": [
-     "claude-opus-5-5"
+   "offline": true,
+   "voltas": [
+    {
+     "volta": 1,
+     "codigo": {
+      "graves": [],
+      "avisos": [
+       "c1 vem de site fora da lista de fontes conhecidas: https://www.bemparana.com.br/noticias/economia/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta/",
+       "c2 vem de site fora da lista de fontes conhecidas: https://movimentoeconomico.com.br/economia/2026/10/30/desemprego-cai-para-52-e-brasil-registra-menor-indice-desde-2012/",
+       "bloco 1: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: No mesmo dia, o Itaú cortou a previsão de crescimento do PIB de 2027 de 1,2% par",
+       "bloco 4: frase de 36 palavras",
+       "bloco 6: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: Com a inflação acima do teto da meta, de 4,5%, o Banco Central tem menos espaço ",
+       "bloco 7: frase de 36 palavras",
+       "bloco 8: frase de 36 palavras"
+      ],
+      "palavras": 565,
+      "intertitulos": 2
+     },
+     "objecoes": [
+      {
+       "trecho": "Desemprego em 5,2% segura o consumo, mas o Itaú já vê a economia quase parada em 2027",
+       "cabeca": "leitora",
+       "problema": "O título diz que o desemprego segura o consumo, mas o próprio texto mostra o consumo das famílias caindo 0,4% no segundo trimestre (c3). A leitora que repetir o título ao sócio vai ser desmentida pelo número do segundo parágrafo.",
+       "onde_conferir": "c3. O título precisa afirmar só o que os dados sustentam: o desemprego baixo e a renda parada, ou o emprego firme contra a previsão do Itaú.",
+       "grave": true
+      },
+      {
+       "trecho": "Com quase todo mundo empregado, as famílias continuam comprando, e o consumo delas é a maior parte do PIB.",
+       "cabeca": "leitora",
+       "problema": "\"As famílias continuam comprando\" contradiz o consumo caindo 0,4% no 2º trimestre (c3). A frase repete o \"por quê\" da ficha como se fosse fato, e \"a maior parte do PIB\" não tem linha no caderno.",
+       "onde_conferir": "c3. Diga o que o dado mostra: o emprego alto, com o consumo já em queda no 2º trimestre. Tire \"a maior parte do PIB\" ou ponha a fonte.",
+       "grave": true
+      },
+      {
+       "trecho": "No mesmo dia, o Itaú cortou a previsão de crescimento do PIB de 2027 de 1,2% para 0,5% e passou a esperar inflação bem acima do teto da meta",
+       "cabeca": "leitora",
+       "problema": "\"Bem acima do teto\" não tem número. A abertura também não dá o porquê de nenhum dos dois fatos: por que o desemprego caiu e por que o Itaú cortou. O Itaú previu IPCA de 6,1% em 2027, contra 4,6% antes, e atribuiu a maior parte da alta a mudanças tributárias e regulatórias e ao dólar mais caro. A meta é 3%, com tolerância até 4,5%.",
+       "onde_conferir": "c201 e c202, e o bloco de metas (centro de 3%, margem de 1,5 ponto, teto de 4,5%). Ponha a inflação prevista contra o teto e o motivo que o banco deu. Para o desemprego, as vagas na construção, pela manchete da Folha na ficha.",
+       "grave": true
+      },
+      {
+       "trecho": "O Itaú conta com o crédito caro por mais tempo",
+       "cabeca": "regras",
+       "problema": "O intertítulo atribui ao Itaú um motivo que nenhuma linha sustenta. Pelo que foi publicado, o banco explica a revisão da inflação pelos impostos, pelas regras e pelo dólar, e o caderno não tem o motivo dele para o corte do PIB. Uma Selic parada em 13,75% aparece só no título do JB.",
+       "onde_conferir": "c201 e c202. Use o motivo que o banco deu, com quem relata. Se não houver motivo publicado para o PIB, diga isso.",
+       "grave": true
+      },
+      {
+       "trecho": "Com a inflação acima do teto da meta, de 4,5%, o Banco Central tem menos espaço para cortar a Selic, e o crédito segue caro para pessoas e empresas.",
+       "cabeca": "defensor",
+       "problema": "A frase não diz qual inflação. A do Focus para 12 meses está em 4,53% (c6), só 0,03 ponto acima do teto, e a do Itaú para 2027 é 6,1%. Sem dizer qual número, nem que o centro é 3% com margem de 1,5 ponto, a frase puxa a conclusão sem mostrar a conta. Quem tem menos espaço também é uma leitura, e falta dizer de quem.",
+       "onde_conferir": "c6, c201 e as metas. Diga qual inflação, contra o teto de 4,5% e o centro de 3%, e de quem é a leitura (o Itaú, segundo quem relata).",
+       "grave": true
+      },
+      {
+       "trecho": "Os bancos e consultorias que o Banco Central ouve toda semana (Focus) esperam crescimento de 1,4% nos próximos 12 meses [c4], numa conta de prazo diferente da do banco, mas bem acima dela.",
+       "cabeca": "critico",
+       "problema": "A frase compara uma previsão para os próximos 12 meses com a previsão do ano de 2027. Ela mesma admite que as contas são diferentes e, mesmo assim, diz \"bem acima\". O número de quem discorda precisa ser o do Focus para o PIB de 2027, que o caderno não tem e que a busca não confirmou para a semana de 26/10.",
+       "onde_conferir": "Boletim Focus de 26/10/2026, no site do Banco Central, previsão do PIB de 2027. Sem esse número, a comparação sai inteira, porque prazos diferentes não se comparam.",
+       "grave": true
+      },
+      {
+       "trecho": "O Itaú também refez a conta na pior semana do mercado em anos: a Bolsa caiu 18,1% depois da eleição, e o dólar subiu 9%, a maior alta semanal desde 2008, e chegou a R$ 5,42 [c8].",
+       "cabeca": "leitora",
+       "problema": "A ressalva não diz para que lado empurra a conclusão. Ela insinua que o número do Itaú está inflado pelo pânico da semana, mas não diz isso nem prova. A queda da Bolsa e a alta do dólar também já foram o texto de 29/10 (memória do site).",
+       "onde_conferir": "c201: o dólar mais caro entra como motivo declarado pelo próprio Itaú para a inflação. Se ficar, diga isso. Senão, a frase sai.",
+       "grave": false
+      },
+      {
+       "trecho": "Se o dólar voltar, a inflação perde uma parte da força que tira espaço para cortar o juro. Se ficar, os importados chegam mais caros aos preços.",
+       "cabeca": "editor",
+       "problema": "É um par simétrico (\"Se voltar... Se ficar...\") que para na direção, sem o tamanho. A tabela de tradução dá o tamanho: cada 10% de alta do dólar soma cerca de 1 ponto ao IPCA em um ano. O dólar subiu 6,8% desde o fim de julho.",
+       "onde_conferir": "A tabela de tradução (TRADUCAO.md, conta em src/conta.py traduz) e os dados do site: o dólar 6,8% mais caro que no fim de julho.",
+       "grave": false
+      },
+      {
+       "trecho": "O Banco Central decide a Selic, que está em 13,75%, ou 8,8% acima da inflação esperada [c6].",
+       "cabeca": "editor",
+       "problema": "A frase existe só para dizer quem decide e entra solta no parágrafo de contexto, longe do argumento. O nível da Selic já reaparece no fim do texto.",
+       "onde_conferir": "Junte a frase ao ponto em que o juro entra no argumento, ou tire-a. Se ficar, diga \"8,8% ao ano acima da inflação esperada, mais alta que em 73% dos meses desde 2002\" (dados do site).",
+       "grave": false
+      },
+      {
+       "trecho": "Os jornais relataram que boa parte das vagas novas veio da construção.",
+       "cabeca": "regras",
+       "problema": "A manchete da Folha diz que houve \"criação de vagas na construção\", e não que boa parte das vagas veio dela. \"Boa parte\" é mais forte que a fonte.",
+       "onde_conferir": "Manchete da Folha na ficha. Deixe só \"com vagas novas na construção\", e leve isso para a abertura como o porquê do dado.",
+       "grave": false
+      },
+      {
+       "trecho": "e 29% da renda delas já vai para parcelas e juros, a maior fatia desde 2005.",
+       "cabeca": "leitora",
+       "problema": "O mesmo número e a mesma comparação foram o centro do texto de 30/10. Aqui o número não tem comparação nova, e \"desde 2005\" esconde que a série começa em 2005.",
+       "onde_conferir": "Dados do site: \"o maior desde o início da série, em 2005\". Encurte ou tire, porque o texto anterior já disse.",
+       "grave": false
+      },
+      {
+       "trecho": "Para quem tem empresa, o desemprego baixo mostra como está a procura hoje. A procura de 2027 depende de quanto tempo a Selic fica em 13,75%.",
+       "cabeca": "leitora",
+       "problema": "O fecho pula para a empresa sem número nem prazo e reduz a procura de 2027 a uma causa só, a Selic. O próprio texto acabou de citar a renda parada, o crédito caro e o dólar. A conclusão é mais forte que a evidência.",
+       "onde_conferir": "Feche no próximo sinal, o PIB de 2/12, que já está na frase anterior. Ou diga o caminho por inteiro, com o que a fonte sustenta, ou tire a frase.",
+       "grave": false
+      }
+     ],
+     "resumo": "O texto tem seis problemas graves. O título e o primeiro parágrafo dizem que o emprego sustenta o consumo, mas o consumo caiu 0,4% no 2º trimestre. A abertura não dá o porquê de nenhum dos dois fatos. A inflação \\\"bem acima do teto\\\" não tem número (o Itaú prevê 6,1% em 2027, c201). O intertítulo dá ao Itaú um motivo que nenhuma linha sustenta. A frase sobre o teto não diz qual inflação. O Focus de 12 meses é comparado com a previsão do ano de 2027. Há ainda uma ressalva sem direção, a repetição de textos anteriores e um fecho que pula para a empresa sem número."
+    },
+    {
+     "volta": 2,
+     "codigo": {
+      "graves": [],
+      "avisos": [
+       "c1 vem de site fora da lista de fontes conhecidas: https://www.bemparana.com.br/noticias/economia/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta/",
+       "c2 vem de site fora da lista de fontes conhecidas: https://movimentoeconomico.com.br/economia/2026/10/30/desemprego-cai-para-52-e-brasil-registra-menor-indice-desde-2012/",
+       "c201 vem de site fora da lista de fontes conhecidas: https://www.bemparana.com.br/noticias/economia/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta/",
+       "c202 vem de site fora da lista de fontes conhecidas: https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
+       "1.6 número por frase: deixe só o número que carrega o argumento, e diga o resto por comparação ('acima do teto', 'o maior desde 2005')",
+       "frases quase todas do mesmo tamanho: depois de uma frase longa, feche a ideia com uma curta"
+      ],
+      "palavras": 556,
+      "intertitulos": 2
+     },
+     "objecoes": [
+      {
+       "trecho": "Com a inflação prevista acima do teto, o Itaú passou a ver a Selic parada em 13,75%, pelo que os jornais relataram",
+       "cabeca": "regras",
+       "problema": "A ligação 'com a inflação acima do teto, por isso a Selic parada' é do texto, e não do banco. A c202 é só o título da página do JB, que não abriu, e não traz nenhum motivo. A frase também não diz até quando a Selic fica parada.",
+       "onde_conferir": "c202, que só sustenta 'Selic parada em 13,75%' como relato. A frase pode ficar sem a causa e com o prazo, se ele for achado. Sem prazo, diga 'pelo que os jornais relataram, o Itaú espera a Selic parada em 13,75%'.",
+       "grave": true
+      },
+      {
+       "trecho": "Os relatos da revisão não trazem o motivo do banco para o corte do PIB.",
+       "cabeca": "regras",
+       "problema": "A frase fala do que a apuração achou ou não achou (bastidor), e deixa o corte de 0,5%, que é o centro do título, sem porquê. A leitora fica sem saber por que o banco cortou, e o intertítulo de cima parece responder por ele.",
+       "onde_conferir": "Se o motivo não for achado em fonte que abra, diga 'o banco não detalhou, nos relatos publicados, o motivo do corte do PIB' junto do fato, no primeiro parágrafo, e corte esta frase solta. Os resumos de busca falam da Selic em dois dígitos pesando sobre consumo e investimento, mas nenhuma página abriu para confirmar, por isso esse motivo não entra.",
+       "grave": true
+      },
+      {
+       "trecho": "O Banco Central decide a Selic, hoje em 13,75%, ou 8,8% ao ano acima da inflação esperada, mais alta que em 73% dos meses desde 2002",
+       "cabeca": "editor",
+       "problema": "Esta objeção da primeira volta não foi resolvida. A frase existe para dizer quem decide e ainda empilha três números, um deles uma porcentagem de meses que não serve ao argumento do Itaú.",
+       "onde_conferir": "c6. Fica, no máximo, a Selic em 13,75% dentro da frase do Itaú. O '73% dos meses' sai.",
+       "grave": false
+      },
+      {
+       "trecho": "Quem duvida do número tem um argumento: o banco refez a conta na semana seguinte à eleição, quando o dólar teve a maior alta semanal desde 2008.",
+       "cabeca": "leitora",
+       "problema": "'Quem duvida' não diz quem: é uma opinião sem dono. O parágrafo também não diz para que lado a ressalva empurra. Pela própria conta do texto, 6,8% de dólar dão cerca de 0,7 ponto de IPCA, e a revisão do Itaú foi de 1,5 ponto (de 4,6% para 6,1%), quase toda atribuída a impostos e regras. Além disso, o Itaú prevê o dólar mais alto (R$ 5,60), e não a volta dele.",
+       "onde_conferir": "c201 e c8, e a tabela de tradução. O texto pode dizer que, mesmo que o dólar volte, a maior parte da alta, a que o banco liga a impostos e regras, fica. Sem essa conta, o parágrafo sai. Diga também que a ressalva é do texto, e não de alguém. A alta semanal do dólar já foi assunto do texto de 29/10.",
+       "grave": true
+      },
+      {
+       "trecho": "A parte dos impostos e das regras não depende do mercado.",
+       "cabeca": "leitora",
+       "problema": "Quais impostos e quais regras? Pela regra 16, é uma menção sem conteúdo, e é ela que carrega a maior parte da alta da inflação do Itaú. A frase também tem a forma de contraste cortado.",
+       "onde_conferir": "c201 só diz 'mudanças tributárias e regulatórias' e veio do resumo da busca. Se não houver o conteúdo, diga uma vez, no primeiro parágrafo, que o banco não detalhou quais são, e corte esta frase.",
+       "grave": true
+      },
+      {
+       "trecho": "Com a renda parada, ele só volta a crescer se mais gente for contratada ou se as famílias pegarem mais crédito, que segue caro.",
+       "cabeca": "leitora",
+       "problema": "O 'só' é uma conclusão mais forte que a evidência e não tem quem a diga. 'Renda parada' também confunde, porque a frase anterior mostra a renda 3,6% acima de um ano antes: ela está parada contra o trimestre anterior, e não contra o ano.",
+       "onde_conferir": "c2. Diga 'igual ao trimestre anterior' e tire o 'só', ou corte a frase.",
+       "grave": false
+      },
+      {
+       "trecho": "Empresa com pouco caixa adia a compra de máquinas e as contratações, e as vendas de máquinas caíram 13,4% no ano até setembro [c10].",
+       "cabeca": "regras",
+       "problema": "A c10 está marcada como dado do site, mas os dados do site não têm o 13,4%. O texto também não diz quem mediu, nem contra que período é a queda.",
+       "onde_conferir": "c10. Só fica com a fonte (quem mediu) e a régua ('contra o mesmo período de 2025'). Sem isso, a oração do número sai e a frase termina em 'contratações'.",
+       "grave": true
+      },
+      {
+       "trecho": "A Confederação Nacional da Indústria mostrou ontem quem sente o crédito caro primeiro.",
+       "cabeca": "editor",
+       "problema": "A frase de abertura do parágrafo é uma conclusão que a pesquisa não sustenta: a confederação não disse que a pequena indústria sente 'primeiro'. Ela citou juros, impostos e vendas fracas, e não só o crédito.",
+       "onde_conferir": "Ficha da história, no passo da confederação. O parágrafo pode abrir pelo fato.",
+       "grave": false
+      },
+      {
+       "trecho": "O PIB cresceu 2,3% em 2025, 1,1% no primeiro trimestre de 2026 e 0,5% no segundo [c3].",
+       "cabeca": "leitora",
+       "problema": "A frase mistura o crescimento do ano com o crescimento de cada trimestre contra o anterior, sem dizer que são contas diferentes. A leitora lê '2,3%, 1,1%, 0,5%' como uma mesma série.",
+       "onde_conferir": "c3. Diga 'contra o trimestre anterior' nos dois trimestres, ou deixe só os trimestres.",
+       "grave": false
+      },
+      {
+       "trecho": "O dado que mais pesa sai em 2/12, com o PIB do terceiro trimestre. Se ele confirmar a queda da prévia de agosto, será o primeiro trimestre de queda, com o desemprego ainda perto do menor da série.",
+       "cabeca": "editor",
+       "problema": "'Primeiro trimestre de queda' desde quando? O fecho também não diz o que isso quer dizer para o argumento do título (emprego firme contra PIB de 2027 fraco), nem para quem: a empresa que contrata, ou a família. Repete ainda o 'pesa' e o desemprego perto do menor da série, já dito acima.",
+       "onde_conferir": "c4 e ficha da história, no próximo marco. Diga desde quando seria a primeira queda, se os dados derem, ou só 'uma queda'. O fecho deve dizer o que a queda mudaria na pergunta da história.",
+       "grave": false
+      }
+     ],
+     "resumo": "A reescrita resolveu o título, a inflação sem número, o Focus com prazo diferente e o fecho na empresa. Ainda falta: a Selic parada do Itaú vem com uma causa que a fonte não dá; a frase de bastidor deixa o corte do PIB sem porquê; a ressalva do dólar não tem dono e não diz para que lado empurra (cerca de 0,7 ponto, contra 1,5 de revisão); 'impostos e regras' fica sem conteúdo; as vendas de máquinas não têm fonte nem régua. Não abri página nova com o motivo do Itaú."
+    },
+    {
+     "volta": 3,
+     "codigo": {
+      "graves": [],
+      "avisos": [
+       "c1 vem de site fora da lista de fontes conhecidas: https://www.bemparana.com.br/noticias/economia/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta/",
+       "c2 vem de site fora da lista de fontes conhecidas: https://movimentoeconomico.com.br/economia/2026/10/30/desemprego-cai-para-52-e-brasil-registra-menor-indice-desde-2012/",
+       "c201 vem de site fora da lista de fontes conhecidas: https://www.bemparana.com.br/noticias/economia/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta/",
+       "c202 vem de site fora da lista de fontes conhecidas: https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
+       "bloco 1: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: O banco também subiu a inflação que espera para 2027 de 4,6% para 6,1%, acima do",
+       "bloco 8: frase de 37 palavras"
+      ],
+      "palavras": 506,
+      "intertitulos": 2
+     },
+     "objecoes": [
+      {
+       "trecho": "Pelo que os jornais relataram, o Itaú espera a Selic parada em 13,75%, o nível em que o Banco Central a deixou no corte de setembro",
+       "cabeca": "regras",
+       "problema": "Nem o caderno nem a ficha dizem que houve corte em setembro. Os dados do site só dizem que a Selic caiu de 14,25% para 13,75% entre julho e outubro, sem dizer o mês do último corte.",
+       "onde_conferir": "Dados do site, linha Juro: 'A Selic caiu de 14,25% para 13,75%, de julho a outubro'. A frase fica só com 'o nível de hoje' ou sai o trecho 'no corte de setembro'.",
+       "grave": true
+      },
+      {
+       "trecho": "Mesmo assim, o consumo das famílias caiu 0,4% no segundo trimestre [c3]. Quem tem emprego continua comprando, e o salário parado desde o trimestre anterior limita quanto mais ele compra.",
+       "cabeca": "leitora",
+       "problema": "O texto explica a queda do consumo no segundo trimestre (abril a junho) com o emprego e a renda parada do terceiro (julho a setembro), ou seja, com uma causa que veio depois do efeito. Além disso, 'continua comprando' logo depois de 'o consumo caiu' pode ser lido ao contrário.",
+       "onde_conferir": "c3 (consumo do 2º tri) e c2 (renda estável no 3º tri). Diga que a queda de 0,4% é do segundo trimestre e que o consumo do terceiro ainda não saiu (sai com o PIB em 2/12). Ou tire a ligação de causa entre as duas frases.",
+       "grave": true
+      }
+     ],
+     "resumo": "O texto ainda tem dois erros que impedem a publicação. Ele fala num corte da Selic em setembro, que nem o caderno nem a ficha sustentam. E explica a queda do consumo no segundo trimestre com a renda parada do terceiro, que veio depois. Fora isso, os números conferem com o caderno, a ficha e os dados do site."
+    }
+   ],
+   "contas_ate": "2026-10-30",
+   "historia": "ritmo_emprego",
+   "segunda": "desconfianca_eleicao",
+   "modo": "normal",
+   "pesquisa": {
+    "perguntas": [
+     {
+      "pergunta": "O que mudou na história com os passos de ontem, e por quê?",
+      "resposta": "Dois sinais foram para lados opostos. O IBGE mostrou desemprego de 5,2% no trimestre até setembro, o menor para o período desde 2012, com renda estável em R$ 3.790. O Itaú, em revisão de cenário de 30/10, cortou o PIB de 2027 de 1,2% para 0,5% e passou a esperar inflação bem acima do teto. A primeira notícia diz que o emprego ainda sustenta o consumo. A segunda diz que o juro alto por mais tempo, com dólar e inflação mais altos, tira o crescimento do ano que vem. Não consegui abrir o relatório do Itaú nem o comunicado do IBGE, só trechos de busca, então o motivo oficial fica sem citação direta.",
+      "caderno": [
+       "c1",
+       "c2",
+       "c3"
+      ]
+     },
+     {
+      "pergunta": "Qual é o tamanho de cada passo e contra que régua?",
+      "resposta": "Para o PIB, a régua é o ritmo recente: 2,3% em 2025, 1,1% no 1º tri e 0,5% no 2º de 2026. Os bancos no Focus esperam 1,4% nos próximos 12 meses. O Itaú passa a esperar 0,5% em 2027, que é perto da estagnação. Para o emprego, 5,2% está acima do menor da série (5,1% em dezembro de 2025). Recessão técnica pede dois trimestres seguidos de queda do PIB, e o 2º tri ainda foi de alta. A prévia do PIB do Banco Central, porém, caiu 0,6% no trimestre até agosto.",
+      "caderno": [
+       "c1",
+       "c2",
+       "c3",
+       "c4",
+       "c5"
+      ]
+     },
+     {
+      "pergunta": "O que o Itaú e a CNI citam como causa, e de onde ela vem?",
+      "resposta": "O Itaú cita inflação acima do teto, o que limita cortes da Selic; o dólar caro vem da reação pós-eleição (de dentro) e o El Niño vem do clima. A CNI cita juros elevados, carga tributária e demanda fraca nas pequenas indústrias. O dólar a R$ 5,42 e a Selic em 13,75% estão nos dados do site. A estimativa em pontos de inflação por causa do dólar saiu de `traduz dolar`, que não consegui rodar.",
+      "caderno": [
+       "c1",
+       "c6",
+       "c7",
+       "c8"
+      ]
+     },
+     {
+      "pergunta": "Quem discorda ou faz outra conta?",
+      "resposta": "O Focus (1,4% em 12 meses) ainda é bem mais alto que os 0,5% do Itaú para 2027; o Itaú é uma casa só. A CNI cortou o PIB de 2026 de 2% para 1,6%. Contra a leitura de desaceleração, o emprego de 5,2% e a renda real 3,6% acima de um ano antes. A razão de quem acha que o consumo segura é o mercado de trabalho apertado.",
+      "caderno": [
+       "c1",
+       "c4",
+       "c2",
+       "c7"
+      ]
+     },
+     {
+      "pergunta": "Houve vez parecida no passado?",
+      "resposta": "Não rodei `episodios`, `parecidos` nem `depois` porque o comando foi negado neste ambiente. A memória traz 2014-2015: confiança da indústria e revisões em série de PIB antes da recessão, com desemprego de 6,6% no fim de 2014 a 12,1% no fim de 2016. Não há contagem por frequência.",
+      "caderno": [
+       "c9"
+      ]
+     }
     ],
-    "permission_denials": [],
-    "session_id": "f2618fa1-9a75-4618-9139-15aa603ef5d4"
+    "argumentos": [
+     {
+      "argumento": "O emprego ainda segura o consumo, mas a previsão de 2027 já conta com o juro alto por mais tempo: o desemprego perto do menor da série convive com o Itaú vendo o PIB de 2027 em 0,5%, e quem vai sentir primeiro é a empresa, não o trabalhador.",
+      "para_quem": "A empresa pequena e média, que depende de crédito, e depois o emprego formal.",
+      "o_que_desmente": "Um PIB do 3º trimestre (2/12) acima de 0,5% e um consumo das famílias que volte a subir desmentiriam a leitura. O mesmo vale para a previsão de outros bancos mantida perto de 1,4%.",
+      "caderno": [
+       "c1",
+       "c2",
+       "c3",
+       "c4",
+       "c10"
+      ]
+     },
+     {
+      "argumento": "A desaceleração não é recessão: recessão técnica pede dois trimestres seguidos de queda, e o último trimestre fechado cresceu 0,5%. O que mudou foi a previsão, não o dado.",
+      "para_quem": "A leitora que lê a manchete de 0,5% como recessão.",
+      "o_que_desmente": "Queda do PIB no 3º trimestre e no 4º; a prévia do BC já caiu 0,6% no trimestre até agosto.",
+      "caderno": [
+       "c3",
+       "c4",
+       "c1"
+      ]
+     }
+    ],
+    "objecao": {
+     "texto": "O Itaú é uma casa só, e a revisão foi feita numa semana de choque (dólar +9%, Bolsa -18%) que pode se atenuar. O Focus ainda espera 1,4% em 12 meses, e o desemprego perto do menor da série e a renda real 3,6% acima de um ano antes sustentam o consumo. Previsão não é fato.",
+     "caderno": [
+      "c1",
+      "c2",
+      "c4"
+     ]
+    },
+    "o_que_falta": "O comando `conta.py` foi negado, então não há linhas de conta (episodios, pausas, parecidos, calc, traduz dolar). O WebFetch falhou (proxy), então os trechos do Itaú e do IBGE vêm de busca e de um agregador, sem o relatório do Itaú nem o comunicado do IBGE. Falta o motivo literal do Itaú, as previsões de outras casas (Bradesco, XP, BTG) com data até 30/10, o Caged de setembro, a produção industrial e a conta do passado por frequência.",
+    "pagina_que_falta": ""
+   },
+   "pagina_que_falta": "",
+   "rascunho": {
+    "titulo": "Desemprego em 5,2% segura o consumo, mas o Itaú já vê a economia quase parada em 2027",
+    "texto": "O IBGE divulgou ontem que o desemprego ficou em 5,2% no trimestre até setembro, o menor para essa época do ano desde 2012 [c2]. No trimestre até junho, era 5,4%, e o menor da série foi 5,1%, em dezembro de 2025 [c5]. No mesmo dia, o Itaú cortou a previsão de crescimento do PIB de 2027 de 1,2% para 0,5% e passou a esperar inflação bem acima do teto da meta [c1].\n\nAs duas notícias falam da mesma dúvida: se a economia, que vem perdendo ritmo com o juro alto, chega a parar. O PIB cresceu 2,3% em 2025, 1,1% no primeiro trimestre de 2026 e 0,5% no segundo, quando o consumo das famílias caiu 0,4% [c3]. Recessão é o PIB cair dois trimestres seguidos, o que ainda não aconteceu, mas a prévia do PIB feita pelo Banco Central caiu 0,6% nos três meses até agosto [c4]. O Banco Central decide a Selic, que está em 13,75%, ou 8,8% acima da inflação esperada [c6].\n\n### O emprego segue firme, e a renda parou\n\nCom quase todo mundo empregado, as famílias continuam comprando, e o consumo delas é a maior parte do PIB. Os jornais relataram que boa parte das vagas novas veio da construção. A renda média do trabalho, descontada a inflação, ficou em R$ 3.790, igual à do trimestre anterior e 3,6% acima de um ano antes [c2]. Com a renda parada, o consumo só cresce se mais gente for contratada ou se as famílias pegarem mais crédito, e 29% da renda delas já vai para parcelas e juros, a maior fatia desde 2005.\n\n### O Itaú conta com o crédito caro por mais tempo\n\nPor enquanto, os 0,5% do Itaú são a previsão de um banco. Se acontecerem, ficarão abaixo do que o Brasil cresce num ano normal, de 0,8% a 3,9% desde 2004. Com a inflação acima do teto da meta, de 4,5%, o Banco Central tem menos espaço para cortar a Selic, e o crédito segue caro para pessoas e empresas.\n\nA Confederação Nacional da Indústria mostrou ontem quem sente esse custo primeiro: as pequenas indústrias estão na pior situação financeira em cinco anos, e a confederação cita os juros altos, os impostos e as vendas fracas. Empresa com pouco dinheiro em caixa adia a compra de máquinas e as contratações, e as vendas de máquinas caíram 13,4% no ano até setembro [c10]. Na quarta-feira, a mesma confederação já tinha cortado a previsão do PIB de 2026 de 2% para 1,6% [c7].\n\nQuem discorda do Itaú também tem números. Os bancos e consultorias que o Banco Central ouve toda semana (Focus) esperam crescimento de 1,4% nos próximos 12 meses [c4], numa conta de prazo diferente da do banco, mas bem acima dela. O Itaú também refez a conta na pior semana do mercado em anos: a Bolsa caiu 18,1% depois da eleição, e o dólar subiu 9%, a maior alta semanal desde 2008, e chegou a R$ 5,42 [c8]. Se o dólar voltar, a inflação perde uma parte da força que tira espaço para cortar o juro. Se ficar, os importados chegam mais caros aos preços.\n\nO Banco Central decide a Selic na quarta-feira, 4/11, e o IBGE divulga a produção da indústria de setembro no dia 5. O dado que mais pesa nessa dúvida sai em 2/12, com o PIB do terceiro trimestre, que vai mostrar se a queda da prévia de agosto se confirmou. Para quem tem empresa, o desemprego baixo mostra como está a procura hoje. A procura de 2027 depende de quanto tempo a Selic fica em 13,75%.",
+    "argumento": "O desemprego perto do menor da série ainda sustenta o consumo, mas com a renda parada e o crédito caro, a previsão do Itaú para 2027 já conta com crescimento abaixo do normal, sentido primeiro pelas empresas.",
+    "porque": "O IBGE mostrou desemprego de 5,2% no trimestre até setembro, e o Itaú, numa revisão de cenário, cortou o PIB de 2027 de 1,2% para 0,5% e passou a esperar inflação bem acima do teto da meta."
+   },
+   "caderno": [
+    {
+     "id": "c1",
+     "tipo": "documento",
+     "afirmacao": "O Itaú cortou o PIB de 2027 de 1,2% para 0,5% em revisão de cenário divulgada na sexta-feira, 30/10, e espera inflação bem acima do teto.",
+     "numeros": [
+      "0,5%",
+      "1,2%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Bem Paraná (reprodução da Folha)",
+      "url": "https://www.bemparana.com.br/noticias/economia/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta/",
+      "data": "2026-10-30",
+      "trecho": "Em revisão de cenário divulgada nesta sexta-feira (30), o banco disse que projeta um PIB de 0,5% em 2027, ante 1,2% na projeção anterior."
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c2",
+     "tipo": "documento",
+     "afirmacao": "O desemprego foi de 5,2% no 3º trimestre de 2026, o menor para o período desde 2012; o rendimento real ficou em R$ 3.790, estável no trimestre.",
+     "numeros": [
+      "5,2%",
+      "R$ 3.790",
+      "3,6%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Movimento Econômico (dados do IBGE)",
+      "url": "https://movimentoeconomico.com.br/economia/2026/10/30/desemprego-cai-para-52-e-brasil-registra-menor-indice-desde-2012/",
+      "data": "2026-10-30",
+      "trecho": "Desemprego cai para 5,2% e Brasil registra menor índice desde 2012"
+     },
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c3",
+     "tipo": "site",
+     "afirmacao": "O PIB do 2º trimestre de 2026 cresceu 0,5% sobre o 1º, e o consumo das famílias recuou 0,4%.",
+     "numeros": [
+      "0,5%",
+      "1,1%",
+      "0,4%"
+     ],
+     "comando": "",
+     "saida": "O IBGE informou que o PIB do 2º trimestre de 2026 cresceu 0,5% frente ao 1º trimestre, desacelerando dos 1,1% anteriores; o consumo das famílias recuou 0,4%.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "fontes_memoria": [
+      {
+       "quem": "Agência Gov / IBGE",
+       "url": "https://agenciagov.ebc.com.br/noticias/202609/pib-cresce-0-5-no-segundo-trimestre-aponta-ibge",
+       "data": "2026-09-01",
+       "trecho": "O IBGE informou que o PIB do 2º trimestre de 2026 cresceu 0,5% frente ao 1º trimestre, desacelerando dos 1,1% anteriores; alta de 2,0% sobre um ano antes e 1,9% em quatro trimestres. A agropecuária subiu 2,8% no trimestre e o consumo das famílias recuou 0,4%."
+      }
+     ],
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true,
+      "via": "memória do momento"
+     }
+    },
+    {
+     "id": "c4",
+     "tipo": "site",
+     "afirmacao": "Os bancos (Focus) esperam crescimento de 1,4% nos próximos 12 meses, e a prévia do PIB do BC caiu 0,6% no trimestre até agosto.",
+     "numeros": [
+      "1,4%",
+      "0,6%"
+     ],
+     "comando": "",
+     "saida": "Os bancos (Focus) esperam 1,4% nos próximos 12 meses. A prévia do PIB do Banco Central caiu 0,6% nos 3 meses até agosto, contra os 3 meses anteriores.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c5",
+     "tipo": "site",
+     "afirmacao": "O menor desemprego desde 2012 foi 5,1%, em dezembro de 2025.",
+     "numeros": [
+      "5,1%",
+      "5,2%"
+     ],
+     "comando": "",
+     "saida": "Desemprego em 5,2% no trimestre até setembro. O menor desde 2012 foi 5,1%, em dezembro de 2025.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c6",
+     "tipo": "site",
+     "afirmacao": "A inflação esperada pelo Focus é de 4,53% em 12 meses, acima do teto de 4,5%; a Selic é 13,75% e, descontada a inflação esperada, 8,8%.",
+     "numeros": [
+      "4,53%",
+      "4,5%",
+      "13,75%",
+      "8,8%"
+     ],
+     "comando": "",
+     "saida": "Os bancos (Focus) esperam que os preços subam 4,53% nos próximos 12 meses ... acima do teto da meta do Banco Central, de 4,5%. A Selic caiu de 14,25% para 13,75%. Descontada a inflação esperada, a Selic dá 8,8% ao ano.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c7",
+     "tipo": "site",
+     "afirmacao": "A CNI reduziu o PIB de 2026 de 2% para 1,6% e elevou a inflação para 5,15%.",
+     "numeros": [
+      "1,6%",
+      "2%",
+      "5,15%"
+     ],
+     "comando": "",
+     "saida": "2026-10-28: Confederação da Indústria reduz a previsão do PIB de 2026 de 2% para 1,6% (A CNI também elevou as projeções de inflação, para 5,15%, e de dívida, para 83,7% do PIB.)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "fontes_memoria": [
+      {
+       "quem": "InfoMoney",
+       "url": "https://www.infomoney.com.br/economia/cni-reduz-projecao-para-o-pib-e-eleva-estimativas-de-inflacao-e-divida-publica/",
+       "data": "2026-10-28",
+       "trecho": "CNI reduz projeção para o PIB e eleva estimativas de inflação e dívida pública"
+      }
+     ],
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true,
+      "via": "memória do momento"
+     }
+    },
+    {
+     "id": "c8",
+     "tipo": "site",
+     "afirmacao": "O dólar foi de R$ 5,08 para R$ 5,42, do fim de julho a 30/10.",
+     "numeros": [
+      "R$ 5,08",
+      "R$ 5,42"
+     ],
+     "comando": "",
+     "saida": "O dólar foi de R$ 5,08 para R$ 5,42, do fim de julho a 30/10.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c9",
+     "tipo": "site",
+     "afirmacao": "Na recessão de 2015-2016, o desemprego subiu de 6,6% para 12,1%.",
+     "numeros": [
+      "6,6%",
+      "12,1%"
+     ],
+     "comando": "",
+     "saida": "ep-fam-2015: o desemprego subiu de 6,6% no fim de 2014 para 12,1% no fim de 2016.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "nao_confere",
+      "por_que": "número que não está nos dados do site nem num fato da memória com fonte"
+     }
+    },
+    {
+     "id": "c10",
+     "tipo": "site",
+     "afirmacao": "Vendas de máquinas caem 13,4% no ano até setembro, e a intenção de consumo das famílias cai 0,8% em outubro.",
+     "numeros": [
+      "13,4%",
+      "0,8%"
+     ],
+     "comando": "",
+     "saida": "Vendas de máquinas e equipamentos acumulam queda de 13,4% no ano até setembro; Intenção de consumo das famílias cai 0,8% em outubro, terceira queda seguida.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "fontes_memoria": [
+      {
+       "quem": "Valor",
+       "url": "https://valor.globo.com/empresas/noticia/2026/10/28/vendas-de-maquinas-acumulam-queda-de-134percent-no-ano-ate-setembro.ghtml",
+       "data": "2026-10-28",
+       "trecho": "Vendas de máquinas acumulam queda de 13,4% no ano até setembro"
+      },
+      {
+       "quem": "Gazeta do Povo",
+       "url": "https://www.gazetadopovo.com.br/economia/consumo-familias-cai-terceiro-mes-seguido-temor-empregos/",
+       "data": "2026-10-28",
+       "trecho": "Consumo das famílias cai pelo terceiro mês seguido com temor sobre empregos"
+      }
+     ],
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": true,
+      "via": "memória do momento"
+     }
+    },
+    {
+     "id": "c201",
+     "tipo": "documento",
+     "afirmacao": "O Itaú elevou a previsão do IPCA de 2027 de 4,6% para 6,1% e a de 2026 de 5,1% para 5,2%. A maior parte da revisão de 2027 vem de mudanças tributárias e regulatórias no cenário-base e de um dólar mais caro em média. O banco prevê o dólar a R$ 5,60 em 2027.",
+     "numeros": [
+      "6,1%",
+      "4,6%",
+      "5,2%",
+      "5,1%",
+      "R$ 5,60"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Bem Paraná (reprodução da Folha), sobre a revisão de cenário do Itaú",
+      "url": "https://www.bemparana.com.br/noticias/economia/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta/",
+      "data": "2026-10-30",
+      "trecho": "a maior parte da revisão do IPCA de 2027 vem de mudanças tributárias e regulatórias incluídas no cenário-base, além de um dólar mais caro em média (trecho do resumo da busca, página não abriu)"
+     },
+     "do_revisor": true,
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": false
+     }
+    },
+    {
+     "id": "c202",
+     "tipo": "documento",
+     "afirmacao": "O Itaú atualizou o cenário com PIB de 0,5% em 2027, inflação de 6,1% e a Selic parada em 13,75%.",
+     "numeros": [
+      "0,5%",
+      "6,1%",
+      "13,75%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Jornal do Brasil",
+      "url": "https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
+      "data": "2026-10-30",
+      "trecho": "Itaú atualiza cenário: PIB cresce só 0,5% em 2027 com inflação de 6,1% e parada na Selic em 13,75% (título, pelo endereço da página; página não abriu)"
+     },
+     "do_revisor": true,
+     "conferencia": {
+      "status": "nao_aberto",
+      "fonte_conhecida": false
+     }
+    }
+   ],
+   "conferencia": {
+    "final": {
+     "graves": [],
+     "avisos": [
+      "c1 vem de site fora da lista de fontes conhecidas: https://www.bemparana.com.br/noticias/economia/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta/",
+      "c2 vem de site fora da lista de fontes conhecidas: https://movimentoeconomico.com.br/economia/2026/10/30/desemprego-cai-para-52-e-brasil-registra-menor-indice-desde-2012/",
+      "c201 vem de site fora da lista de fontes conhecidas: https://www.bemparana.com.br/noticias/economia/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta/",
+      "c202 vem de site fora da lista de fontes conhecidas: https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
+      "bloco 1: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: O banco também subiu a inflação que espera para 2027 de 4,6% para 6,1%, acima do",
+      "bloco 8: frase de 37 palavras"
+     ],
+     "palavras": 498,
+     "intertitulos": 2
+    }
+   },
+   "titulo": "Desemprego cai a 5,2%, mas o Itaú já prevê o PIB de 2027 em 0,5% e inflação acima do teto",
+   "texto": "O IBGE divulgou ontem que o desemprego ficou em 5,2% no trimestre até setembro, o menor para essa época do ano desde 2012 [c2]. No mesmo dia, os jornais relataram que o Itaú cortou a previsão de crescimento do PIB de 2027 de 1,2% para 0,5% [c1]. O banco também subiu a inflação que espera para 2027 de 4,6% para 6,1%, acima do teto da meta, de 4,5% [c201]. O banco atribui a maior parte dessa alta a um dólar mais caro e a mudanças de impostos e de regras que ainda não foram detalhadas [c201].\n\nAs duas notícias tratam da mesma dúvida: se a economia, que perde ritmo com o juro alto, chega a parar em 2027. O PIB cresceu 1,1% no primeiro trimestre de 2026 e 0,5% no segundo, cada um contra o trimestre anterior [c3]. Recessão é o PIB cair dois trimestres seguidos, o que ainda não aconteceu. A prévia do PIB feita pelo Banco Central, porém, caiu 0,6% nos três meses até agosto, contra os três meses anteriores [c4].\n\n### Quase todo mundo empregado, e o consumo caindo\n\nO desemprego caiu de 5,4% no trimestre até junho e ficou perto do menor da série, de 5,1%, em dezembro de 2025 [c5]. A renda média do trabalho, descontada a inflação, ficou em R$ 3.790, igual à do trimestre anterior e 3,6% acima de um ano antes [c2]. Mesmo assim, o consumo das famílias caiu 0,4% no segundo trimestre [c3]. O consumo do terceiro trimestre ainda não saiu, e o IBGE o divulga junto com o PIB, em 2/12.\n\n### O Itaú não conta com a volta do dólar\n\nPelo que os jornais relataram, o Itaú espera a Selic parada em 13,75%, o nível de hoje [c202]. A revisão saiu na semana seguinte à eleição, quando o dólar e a Bolsa reagiram com força, e é a conta de um banco só. Se o dólar voltar ao nível de antes, cai a parte da inflação prevista que vem do câmbio. O próprio banco não espera isso: prevê o dólar a R$ 5,60 em média em 2027, acima dos R$ 5,42 de 30/10 [c201, c8].\n\nA Confederação Nacional da Indústria divulgou ontem, como os jornais relataram, que as pequenas indústrias estão na pior situação financeira em cinco anos. A confederação apontou os juros, os impostos e as vendas fracas. Empresa com pouco dinheiro em caixa tende a adiar investimento e contratação. Na quarta-feira, 28, a mesma confederação já tinha cortado a previsão do PIB de 2026 de 2% para 1,6% [c7].\n\nO Banco Central decide a Selic na quarta-feira, 4/11, e o IBGE divulga a produção da indústria de setembro no dia 5. O dado maior sai em 2/12, com o PIB do terceiro trimestre. Se ele cair, como a prévia de agosto indica, o emprego perto do menor da série vai conviver com uma economia que encolhe, e o 0,5% do Itaú ganha um dado a favor. Se crescer, ganha força a leitura de que a revisão pesou o susto da semana da eleição. Para a empresa que planeja contratar em 2027, é esse número que separa a previsão do fato.",
+   "argumento": "O desemprego perto do menor da série convive com renda parada e consumo em queda, e o Itaú já prevê para 2027 crescimento de 0,5%, inflação acima do teto e a Selic parada em 13,75%.",
+   "porque": "Pelo que os jornais relataram, o Itaú atribuiu a maior parte da alta da inflação prevista para 2027 a mudanças de impostos e de regras e a um dólar mais caro, sem detalhar o motivo do corte do PIB.",
+   "pressao": "ritmo",
+   "duracao_s": 426
+  },
+  "termina_em": "ritmo"
+ },
+ "pauta": {
+  "versao": 2,
+  "candidatos": [
+   {
+    "id": "E1",
+    "ordem": 1,
+    "evento": "ev-20261031-01",
+    "titulo": "Bolsa cai 18,1% na semana e dólar sobe 9%, a maior alta desde 2008",
+    "estagio": "dado",
+    "tamanho": 2,
+    "fator": "mercado",
+    "origem": "dados",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "A perda semanal iguala a de 2001, e os fundos perderam R$ 157,5 bilhões em patrimônio. Ativos mais baratos e câmbio mais fraco encarecem o capital e pressionam a inflação.",
+    "historia": "desconfianca_eleicao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 8,
+    "jornais": [
+     "Agência Brasil",
+     "Folha",
+     "Gazeta do Povo",
+     "Poder360",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Bolsa tem 5ª maior queda desde Plano Real após reeleição de Lula",
+      "url": "https://www.poder360.com.br/poder-economia/bolsa-tem-5a-maior-queda-desde-plano-real-apos-reeleicao-de-lula/",
+      "publicado_em": "2026-10-30T21:56+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Bolsa cai 18% na semana da vitória de Lula e tem pior resultado desde 2020; dólar tem maior alta desde 2008",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/bolsa-cai-175-na-semana-da-vitoria-de-lula-e-tem-pior-resultado-desde-2020.shtml",
+      "publicado_em": "2026-10-30T17:45-03:00"
+     },
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Dólar fecha a R$ 5,44 e registra maior alta semanal desde 2008",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-fecha-r-544-e-registra-maior-alta-semanal-desde-2008",
+      "publicado_em": "2026-10-30T19:40-03:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Após reeleição de Lula, Ibovespa tem pior semana desde a pandemia e dólar dispara",
+      "url": "https://www.gazetadopovo.com.br/economia/apos-reeleicao-de-lula-ibovespa-tem-pior-semana-desde-a-pandemia-e-dolar-dispara/",
+      "publicado_em": "2026-10-30T23:04+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Fundos de investimento perdem R$ 157,5 bilhões após reeleição de Lula",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/financas/2026/10/fundos-de-investimento-perdem-r-1575-bilhoes-apos-reeleicao-de-lula.shtml",
+      "publicado_em": "2026-10-30T23:00-03:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Ibovespa cai 9,88% em outubro; dólar turismo e comercial avançam 5%",
+      "url": "https://www.poder360.com.br/poder-economia/ibovespa-cai-988-em-outubro-dolar-turismo-e-comercial-avancam-5/",
+      "publicado_em": "2026-10-31T11:08+00:00"
+     }
+    ]
    },
    {
-    "modelo_pedido": "opus",
-    "prompt_sha256": "281dc67ff3013bd097115483c3062232859e87a6c3771478b82e5339281e653d",
-    "system_sha256": "742a9166ecb7708349c5ccb68828d68c7cf9d6db13c33b0eb25536b9574c5d87",
-    "returncode": 0,
-    "is_error": false,
-    "custo_usd": 0.2692692,
-    "modelos": [
-     "claude-opus-5-5"
+    "id": "E2",
+    "ordem": 2,
+    "evento": "ev-20261031-02",
+    "titulo": "Itaú reduz a previsão do PIB de 2027 para 0,5% e vê inflação acima do teto",
+    "estagio": "previsao",
+    "tamanho": 2,
+    "fator": "atividade",
+    "origem": "dados",
+    "assunto": "Ritmo da economia",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Com crescimento de 0,5% em 2027, a economia fica perto da estagnação. Inflação acima do teto limita o espaço para cortes da Selic.",
+    "historia": "ritmo_emprego",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "Folha"
     ],
-    "permission_denials": [],
-    "session_id": "6d893ec3-b07a-4e47-b8bb-caaf4d782db2"
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "Itaú corta projeção do PIB de 2027 para 0,5% e vê inflação acima da meta",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta.shtml",
+      "publicado_em": "2026-10-30T22:45-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E3",
+    "ordem": 3,
+    "evento": "ev-20261031-03",
+    "titulo": "Desemprego cai a 5,2% no trimestre até setembro, menor da série para o período",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "emprego",
+    "origem": "dados",
+    "assunto": "Emprego",
+    "lado": "alivia",
+    "ja_esperado": true,
+    "porque": "Com quase todo mundo empregado, as famílias continuam comprando. A renda parou de crescer, o que limita esse apoio nos próximos meses.",
+    "historia": "ritmo_emprego",
+    "tema_novo": "",
+    "marco": true,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 6,
+    "jornais": [
+     "Agência Brasil",
+     "Estadão",
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Estadão",
+      "titulo": "Desemprego até setembro fica em 5,2%, menor taxa para o período da série histórica, aponta IBGE",
+      "url": "https://www.estadao.com.br/economia/ibge-pnad-desemprego-setembro-2026/",
+      "publicado_em": "2026-10-30T12:07+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Brasil tem desemprego de 5,2% no tri até setembro, em linha com o esperado",
+      "url": "https://www.infomoney.com.br/economia/brasil-tem-desemprego-de-52-no-tri-ate-setembro-em-linha-com-o-esperado/",
+      "publicado_em": "2026-10-30T12:02+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Desemprego cai para 5,2% no trimestre encerrado em setembro, diz IBGE",
+      "url": "https://www.poder360.com.br/poder-economia/desemprego-cai-para-52-no-trimestre-encerrado-em-setembro-diz-ibge/",
+      "publicado_em": "2026-10-30T12:01+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Desemprego cai no Brasil e atinge menor taxa para o terceiro trimestre em 14 anos",
+      "url": "https://g1.globo.com/economia/noticia/2026/10/30/desocupacao-fica-em-52percent-a-menor-para-um-terceiro-trimestre-desde-2012.ghtml",
+      "publicado_em": "2026-10-30T12:00+00:00"
+     },
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Desemprego de 5,2% no 3° trimestre é o menor para o período desde 2012",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/desemprego-de-52-no-3deg-trimestre-e-o-menor-para-o-periodo-desde-2012",
+      "publicado_em": "2026-10-30T09:50-03:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Desemprego é o menor até setembro com criação de vagas na construção; renda estaciona",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/desemprego-fica-em-52-e-tem-menor-taxa-ate-setembro-na-serie-historica.shtml",
+      "publicado_em": "2026-10-30T09:01-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E4",
+    "ordem": 4,
+    "evento": "ev-20261031-04",
+    "titulo": "Petróleo sobe mais de 14% em outubro com o conflito no Irã",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Petróleo mais caro pressiona combustíveis e expectativas de inflação no Brasil. Juros altos por mais tempo tendem a frear a atividade.",
+    "historia": "guerra_petroleo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "Folha",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "Petróleo sobe mais de 14% em outubro e encerra mês no maior valor desde maio",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/petroleo-sobe-mais-de-14-em-outubro-e-encerra-mes-no-maior-valor-desde-maio.shtml",
+      "publicado_em": "2026-10-30T19:35-03:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Ouro fica abaixo de US$ 4 mil, no menor nível em um ano, diante de expectativa de juros mais altos",
+      "url": "https://valor.globo.com/financas/noticia/2026/10/30/ouro-fica-abaixo-de-us-4-mil-no-menor-nivel-em-um-ano-diante-de-expectativa-de-juros-mais-altos.ghtml",
+      "publicado_em": "2026-10-30T18:41+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E5",
+    "ordem": 5,
+    "evento": "ev-20261031-05",
+    "titulo": "Nasdaq, bolsa dos EUA, cai 2,9%, e a Bolsa da China tem o pior mês desde 2016",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "A venda de ações de tecnologia reduz o apetite global por risco. Emergentes como o Brasil tendem a perder capital estrangeiro nesse ambiente.",
+    "historia": "nova",
+    "tema_novo": "queda-das-acoes-de-tecnologia",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 5,
+    "jornais": [
+     "Folha",
+     "Poder360",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Bolsas dos EUA fecham em forte queda com tombo da tecnologia",
+      "url": "https://www.poder360.com.br/poder-economia/bolsas-dos-eua-fecham-em-forte-queda-com-tombo-da-tecnologia/",
+      "publicado_em": "2026-10-31T01:56+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Ações de tecnologia desabam nos EUA com novas dúvidas sobre gastos em IA",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/nasdaq-cai-ao-menor-nivel-em-tres-meses-com-duvidas-sobre-gastos-com-ia.shtml",
+      "publicado_em": "2026-10-30T15:30-03:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Big techs perdem quase US$ 900 bilhões após manterem investimentos bilionários em IA",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/10/big-techs-perdem-quase-us-900-bilhoes-apos-manterem-investimentos-bilionarios-em-ia.shtml",
+      "publicado_em": "2026-10-30T11:21-03:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Gastos e perda de receita com IA derrubam ações do Google",
+      "url": "https://valor.globo.com/impresso/noticia/2026/10/30/gastos-e-perda-de-receita-com-ia-derrubam-acoes-do-google.ghtml",
+      "publicado_em": "2026-10-30T08:00+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Bolsa da China cai 8,5% em outubro e tem pior mês em mais de uma década",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://aovivo.folha.uol.com.br/mercado/2026/10/25/6568-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post468003",
+      "publicado_em": "2026-10-30T08:13-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E6",
+    "ordem": 6,
+    "evento": "ev-20261031-06",
+    "titulo": "Base governista pressiona contra cortes de gastos e pelo fim do arcabouço",
+    "estagio": "rumor",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Sem regra fiscal clara, o prêmio de risco e os juros longos tendem a subir. O Copom fica como única âncora, o que mantém o crédito caro.",
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": true,
+    "n_manchetes": 3,
+    "jornais": [
+     "Gazeta do Povo",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Base governista pressiona Lula para descartar cortes de gastos e fim de regras",
+      "url": "https://www.gazetadopovo.com.br/economia/base-governista-pressiona-lula-para-descartar-cortes-de-gastos-e-fim-de-regras/",
+      "publicado_em": "2026-10-30T18:31+00:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Aliados de Lula rejeitam ajuste nas contas e já falam em derrubar o arcabouço fiscal",
+      "url": "https://www.gazetadopovo.com.br/economia/aliados-lula-rejeitam-ajuste-fiscal-contas-publicas/",
+      "publicado_em": "2026-10-30T14:31+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Análise: Sem rumo fiscal claro no Lula 4, Copom enfrenta teste como única âncora da economia",
+      "url": "https://valor.globo.com/financas/noticia/2026/10/30/analise-sem-rumo-fiscal-claro-no-lula-4-copom-enfrenta-teste-como-unica-ancora-da-economia.ghtml",
+      "publicado_em": "2026-10-30T14:26+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E7",
+    "ordem": 7,
+    "evento": "ev-20261031-07",
+    "titulo": "Pequenas indústrias têm a pior situação financeira em 5 anos, diz a confederação",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "atividade",
+    "origem": "dados",
+    "assunto": "Ritmo da economia",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Juros elevados, carga tributária e demanda fraca deixam as pequenas indústrias com menos dinheiro em caixa. Com isso, o investimento e as contratações devem desacelerar.",
+    "historia": "ritmo_emprego",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "Gazeta do Povo"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Pequenas indústrias registram pior situação financeira em cinco anos, aponta CNI",
+      "url": "https://www.gazetadopovo.com.br/economia/pequenas-industrias-registram-pior-situacao-financeira-cinco-anos-aponta-cni/",
+      "publicado_em": "2026-10-30T17:49+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E8",
+    "ordem": 8,
+    "evento": "ev-20261031-08",
+    "titulo": "Saldo de crédito sobe 0,4% em setembro e expansão perde força",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "credito",
+    "origem": "dados",
+    "assunto": "Dívidas das famílias",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O saldo chega a R$ 7,444 trilhões, com alta de 8,6% em 12 meses e ritmo em queda. Menos crédito novo tende a esfriar o consumo e o investimento.",
+    "historia": "credito_inadimplencia",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Valor",
+      "titulo": "Expansão do crédito perde força",
+      "url": "https://valor.globo.com/financas/noticia/2026/10/30/expansao-do-credito-perde-forca.ghtml",
+      "publicado_em": "2026-10-30T08:00+00:00"
+     }
+    ]
    }
   ],
-  "escrito_em": "2026-11-01T18:50:00-03:00",
-  "revisao_manual": "2026-10-31: reescrito como fato do dia (PERSONA.md, Os tipos de post), com os mesmos números e datas. 2026-10-31: tirada a frase sobre o dólar ficar fora da conta, porque o dólar passou a contar na direção do risco. 2026-11-01, à noite: refeito pelo mesmo programa no jeito de escrever novo, a pedido do Pedro: frases ligadas em vez de empilhadas, sem definir PIB, IPCA, Selic e Focus (o site liga esses termos à Wikipédia) e com o \"e daí\" de cada fato. Mesmos números e datas. 2026-11-01, mais tarde: refeito pelo redator e pelo editor novo (src/edita_texto.py), a pedido do Pedro: comparação com o mês (e não \"contra 3 meses antes\"), importados no lugar de \"o que vem de fora\", sigla por extenso ou com link e quem paga o quê. As sugestões do editor estão em edicao. Mesmos números e datas. Correções à mão, sem mudar número: \"ou desconfia das contas do governo, já que a dívid\" → \"ou passou a desconfiar das contas do governo.\". 2026-11-09: à mão, a pedido do Pedro (o fato do dia termina na vida de quem lê, com o tamanho da tabela de tradução, TRADUCAO.md): o mesmo fato, com os mesmos números e datas, e a última frase com a conta do site (src/conta.py traduz) no lugar da direção sozinha.",
-  "versao_anterior": {
-   "titulo": "Bolsa cai 18,1% e dólar sobe 9% na semana, maior alta desde 2008",
-   "paragrafos": [
-    "A Bolsa caiu 18,1% na semana da reeleição do presidente, a mesma queda de uma semana de 2001, e o dólar subiu 9%, a maior alta semanal desde 2008. A queda da Bolsa não muda a direção do risco, porque a Bolsa fica fora da conta.",
-    "Com o dólar 6,8% mais caro que no fim de julho, peças, combustível e outros importados ficam mais caros nos meses seguintes.",
-    "A alta tem duas leituras: quem investe reagiu demais à eleição, ou passou a desconfiar das contas do governo."
-   ]
-  }
+  "datas": [
+   {
+    "data": "2026-10-30",
+    "tipo": "pnad",
+    "nome": "o desemprego da PNAD (IBGE)"
+   }
+  ],
+  "pressoes_mudaram": [],
+  "estado": "subindo",
+  "estado_anterior": "subindo",
+  "direcao_mudou": false,
+  "historias": [
+   {
+    "id": "ritmo_emprego",
+    "titulo": "Ritmo da economia e emprego: a desaceleração e a previsão de 2027",
+    "pressao": "ritmo",
+    "pressoes": [
+     "ritmo",
+     "emprego",
+     "renda",
+     "juro"
+    ],
+    "nova": false,
+    "pontos": 3.0,
+    "candidatos": [
+     "E3",
+     "E7",
+     "E2"
+    ],
+    "jornais": 7,
+    "fato_grande": false
+   },
+   {
+    "id": "desconfianca_eleicao",
+    "titulo": "Desconfiança de quem investe depois da eleição",
+    "pressao": "mercado",
+    "pressoes": [
+     "mercado",
+     "divida_reais",
+     "juro",
+     "inflacao"
+    ],
+    "nova": false,
+    "pontos": 2.0,
+    "candidatos": [
+     "E1"
+    ],
+    "jornais": 5,
+    "fato_grande": true
+   },
+   {
+    "id": "guerra_petroleo",
+    "titulo": "A guerra no Oriente Médio e o petróleo",
+    "pressao": "inflacao",
+    "pressoes": [
+     "inflacao",
+     "juro",
+     "contas",
+     "mercado"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E4"
+    ],
+    "jornais": 2,
+    "fato_grande": false
+   },
+   {
+    "id": "credito_inadimplencia",
+    "titulo": "Crédito caro e inadimplência recorde",
+    "pressao": "parcelas",
+    "pressoes": [
+     "parcelas",
+     "juro",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E8"
+    ],
+    "jornais": 1,
+    "fato_grande": false
+   },
+   {
+    "id": "contas_governo",
+    "titulo": "Contas do governo: a meta, o ajuste prometido e a dívida",
+    "pressao": "contas",
+    "pressoes": [
+     "contas",
+     "divida_reais",
+     "mercado",
+     "juro"
+    ],
+    "nova": false,
+    "pontos": 0.25,
+    "candidatos": [
+     "E6"
+    ],
+    "jornais": 2,
+    "fato_grande": false
+   }
+  ],
+  "temas_esperando": [
+   {
+    "tema": "queda-das-acoes-de-tecnologia",
+    "titulo": "Nasdaq, bolsa dos EUA, cai 2,9%, e a Bolsa da China tem o pior mês desde 2016",
+    "candidatos": [
+     "E5"
+    ],
+    "dias": 1
+   }
+  ],
+  "escolha": {
+   "historia": "ritmo_emprego",
+   "titulo": "Ritmo da economia e emprego: a desaceleração e a previsão de 2027",
+   "pontos": 3.0,
+   "motivo": "a história que mais andou",
+   "calmo": false,
+   "nova": false,
+   "pulada": null,
+   "segunda": "desconfianca_eleicao"
+  },
+  "final": "E3",
+  "mesma_historia": [
+   "E7",
+   "E2"
+  ],
+  "segunda_historia": [
+   "E1"
+  ]
  }
 }

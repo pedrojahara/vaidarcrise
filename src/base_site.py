@@ -1,17 +1,17 @@
-"""O que o site mostra da base de conhecimento (base/): a leitura a fundo dos fatos do dia (post.fundo em runs/, feita
-por src/fundo.py) e a página de cada pressão do topo que já tem pergunta publicada, em /perguntas/<id>/.
+"""O que o site mostra da base de conhecimento (base/): a página de cada pressão do topo que já tem pergunta publicada,
+em /perguntas/<id>/, e a linha que leva o fato do dia a ela.
 
 Uma página por pressão: cada pergunta de base/perguntas diz a pressão dela (pressao, uma das chaves de
 direcao.nomes em config/modelo.json). Cada fato do dia leva, numa linha logo abaixo do texto, à página do assunto do
-fato; se o assunto não tem página, à da pressão da tese da leitura a fundo; se nenhuma tem, à parte da aba O que causa
+fato; se o assunto não tem página, à da pressão da história do dia; se nenhuma tem, à parte da aba O que causa
 recessão que explica a pressão (ponte()). Rascunho (publicada: false) não vira página.
 
 O site não guarda teste nem placar, não promete conferir nada depois e não mostra bastidor (histórico de mudança,
 conferência, selo de fonte): a página mostra a análise e para aí, e src/verifica_base.py barra pergunta com teste ou
 texto com promessa.
 
-Tudo vem de base/: as afirmações que sustentam cada frase, as perguntas e os episódios. build_site.py chama
-fundo_ctx() em cada post e gravar() no fim; um erro aqui não derruba a atualização do dia.
+Tudo vem de base/: as afirmações que sustentam cada frase, as perguntas e os episódios. build_site.py chama ponte()
+em cada post e gravar() no fim; um erro aqui não derruba a atualização do dia.
 """
 from __future__ import annotations
 
@@ -117,7 +117,7 @@ SOBRE = {"juro": "o juro", "inflacao": "a inflação esperada", "contas": "as co
 
 
 # No assunto "Juro e inflação", o título do fato diz qual das duas páginas ele pede: o Copom e a Selic levam à do juro;
-# o Focus, o IPCA e os preços, à da inflação esperada. Sem pista no título, vale a tese da leitura a fundo.
+# o Focus, o IPCA e os preços, à da inflação esperada. Sem pista no título, vale a pressão da história do dia.
 PISTAS_DO_TITULO = [("juro", re.compile(r"\b(Copom|Selic)\b", re.I)),
                     ("inflacao", re.compile(r"\b(Focus|IPCA|IPCA-15|infla[çc][ãa]o|pre[çc]os?)\b", re.I))]
 # A rodada avisa o Pedro quando um assunto sem página aparece neste tanto de fatos do dia nestes dias (decisão do Pedro
@@ -170,12 +170,12 @@ def _posts_ligados(cfg: dict) -> dict[str, list[dict]]:
 def ponte(post: dict, cfg: dict, assunto: str | None, titulo: str | None = None) -> dict | None:
     """A linha logo abaixo do fato do dia, que leva ao básico do assunto. A ordem segue o que a leitora acabou de ler:
     1. a página de uma pressão do assunto do fato (em "Juro e inflação", que tem duas, o título do fato decide: Copom
-       ou Selic, a do juro; Focus, IPCA ou preços, a da inflação esperada; sem pista, a da tese da leitura a fundo);
-    2. a página da pressão da tese da leitura a fundo (post.termina_em, gravado por src/fundo.py);
-    3. a parte da aba O que causa recessão que explica o assunto (ou, sem ele, a pressão da tese), com o título da
-       parte no link.
-    No texto do dia pela história (desde 5/11/2026), a página da pressão da história vem primeiro.
-    Sem assunto nem tese (posts antigos, dias sem pauta), não há linha."""
+       ou Selic, a do juro; Focus, IPCA ou preços, a da inflação esperada; sem pista, a da história);
+    2. a página da pressão da história do dia (post.termina_em, gravado por src/fundo.py);
+    3. a parte da aba O que causa recessão que explica o assunto (ou, sem ele, a pressão da história), com o título
+       da parte no link.
+    No texto do dia pela história, a página da pressão da história vem primeiro. Sem assunto nem pressão, não há
+    linha."""
     pags = {q["pressao"]: q for q in publicadas().values() if q.get("pressao")}
     tese = post.get("termina_em")
     do_assunto = PRESSOES_DO_ASSUNTO.get(assunto or "", [])
@@ -213,7 +213,7 @@ def falta_pagina(rodadas: list[dict], cfg: dict, hoje: str) -> list[str]:
     """Os avisos ao Pedro de que talvez falte uma página (decisão dele em 8/11/2026: o site não cria pergunta sozinho).
     Dois sinais: um assunto sem página de pressão em VEZES_DO_AVISO fatos do dia ou mais nos últimos DIAS_DO_AVISO
     dias (o link do fato caiu na página O que causa recessão), e a pesquisa do texto do dia dizendo que sentiu falta de
-    uma página (post.pesquisa.pagina_que_falta; até 4/11/2026, post.fundo). Uma rodada por dia, a última."""
+    uma página (post.pesquisa.pagina_que_falta). Uma rodada por dia, a última."""
     por_dia: dict[str, dict] = {}
     for r in rodadas:
         por_dia[(r.get("gerado_em") or r.get("id") or "")[:10]] = r
@@ -229,7 +229,7 @@ def falta_pagina(rodadas: list[dict], cfg: dict, hoje: str) -> list[str]:
         pt = ponte(post, cfg, assunto, titulo_do_fato(r))
         if assunto and (pt is None or pt.get("aba")):
             sem_pagina.setdefault(assunto, []).append(dia)
-        falta = ((post.get("pesquisa") or post.get("fundo") or {}).get("pagina_que_falta") or "").strip()
+        falta = ((post.get("pesquisa") or {}).get("pagina_que_falta") or "").strip()
         if dia == hoje and falta:
             avisos.append(f"A pesquisa do texto do dia de {_data(dia)} sentiu falta de uma página: {falta}")
     nomes = cfg.get("fatores", {})
@@ -238,55 +238,6 @@ def falta_pagina(rodadas: list[dict], cfg: dict, hoje: str) -> list[str]:
             avisos.append(f"{len(dias)} fatos do dia nos últimos {DIAS_DO_AVISO} dias foram sobre {nomes.get(assunto, assunto)}, "
                           f"que não tem página própria ({', '.join(_data(d)[:-5] for d in dias)}). Vale uma página?")
     return avisos
-
-
-def fundo_ctx(post: dict, cfg: dict, ligar) -> dict | None:
-    """A leitura a fundo de um fato do dia (post.fundo em runs/, feita por src/fundo.py), para o post: a tese no botão,
-    o texto corrido com os termos ligados à Wikipédia, as fontes e o link da página da pressão. O site não promete
-    conferir nada depois (decisão do Pedro em 8/11/2026): a previsão com data que as leituras antigas tinham não aparece.
-    As marcas do caderno ([c3]) saem do texto e viram a lista de fontes."""
-    import fundo as fundo_mod
-    f = post.get("fundo") or {}
-    if not f.get("ok") or not f.get("texto"):
-        return None
-    bl = fundo_mod.blocos(f["texto"])
-    pars = [fundo_mod.sem_marcas(b["p"]).strip() for b in bl if "p" in b]
-    # Os termos já ligados no post não são ligados de novo na leitura a fundo.
-    n = len(post.get("paragrafos", []))
-    lig = iter(ligar([*post.get("paragrafos", []), *pars], cfg)[n:])
-    blocos = [{"h": b["h"]} if "h" in b else {"p": next(lig)} for b in bl]
-    cad = {c["id"]: c for c in f.get("caderno", [])}
-    usadas = [cad[i] for i in dict.fromkeys(fundo_mod.marcas(f["texto"])) if i in cad]
-    fontes, vistas = [], set()
-
-    def quem(q: str, url: str | None) -> str:
-        # O bastidor da pesquisa ("resumo da busca", "página não aberta") fica no registro, não na página.
-        q = re.sub(r"\s*\([^)]*(busca|abert|página|resultado|memória)[^)]*\)", "", q or "", flags=re.I)
-        q = re.sub(r"^(memória do (momento|site)|dados do site)\b[^(]*", "", q, flags=re.I).strip(" ,;")
-        q = re.sub(r"^\((.*)\)$", r"\1", q).strip()
-        if not q and url:
-            q = re.sub(r"^www\d?\.", "", url.split("/")[2]) if "://" in url else ""
-        return q or "fonte"
-
-    so_site = False
-    for c in usadas:
-        if c["tipo"] == "conta":
-            continue
-        fos = [c.get("fonte") or {}] if (c.get("fonte") or {}).get("url") else c.get("fontes_memoria") or []
-        if c["tipo"] == "site" and not fos:
-            so_site = True
-        for fo in fos if c["tipo"] != "documento" else [c.get("fonte") or {}]:
-            nome = quem(fo.get("quem"), fo.get("url"))
-            chave = fo.get("url") or fo.get("quem")
-            if chave and chave not in vistas and nome not in vistas:
-                vistas |= {chave, nome}
-                fontes.append({"quem": nome, "url": fo.get("url")})
-    if any(c["tipo"] == "conta" for c in usadas):
-        fontes.append({"quem": "contas do site com as séries do Banco Central e do IBGE", "url": None})
-    if so_site:
-        fontes.append({"quem": "os dados e as notícias do dia", "url": None})
-    palavras = sum(len(p.split()) for p in pars)
-    return {"titulo": f["titulo"], "minutos": max(3, round(palavras / 200)), "blocos": blocos, "fontes": fontes}
 
 
 def _paragrafos(texto: str) -> list[str]:

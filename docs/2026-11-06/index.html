@@ -223,21 +223,6 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .comece .rot{display:block;font-size:13px;font-weight:600;color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
 .comece b{display:block;font:700 20px/1.3 var(--serifa);margin-bottom:4px}
 
-/* a leitura a fundo do fato do dia (src/fundo.py): o texto corrido, fechado até o toque */
-.fundo{margin:4px 0 18px;max-width:660px;border:1px solid var(--fio);border-radius:10px}
-.fundo>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 12px 12px 14px;cursor:pointer;list-style:none;font:600 16px/1.35 var(--sistema)}
-.fundo .f-cab{display:block;min-width:0}
-.fundo .f-rot{display:block;font:600 12.5px/1.3 var(--sistema);color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
-.fundo .f-tit{display:block;font:700 18px/1.35 var(--serifa);color:var(--tinta)}
-.fundo>summary::-webkit-details-marker{display:none}
-.fundo>summary .seta{width:18px;height:18px;flex:none;transition:transform .15s}
-.fundo[open]>summary .seta{transform:rotate(180deg)}
-.fundo[open]>summary{border-bottom:1px solid var(--fio);margin-bottom:16px}
-.fundo .f-corpo{padding:0 14px 4px}
-.post .fundo .f-corpo p{margin:0 0 14px;font-size:17px;line-height:1.6}
-.fundo .f-h{font:700 18px/1.35 var(--serifa);margin:22px 0 8px}
-.post .fundo p.f-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:10px 0 6px;overflow-wrap:anywhere}
-.fundo .f-fontes a{color:var(--meta)}
 /* A linha logo abaixo do fato do dia, que leva ao básico do assunto (src/base_site.py, ponte). */
 .post p.fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:4px 0 16px;max-width:660px;overflow-wrap:anywhere}
 .post p.fontes a{color:var(--meta)}
@@ -245,7 +230,6 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .basico span{display:block}
 .basico a{display:inline-block;margin-top:2px;font:700 17px/1.35 var(--serifa);color:var(--link);text-decoration:none}
 .basico a:hover,.basico a:focus-visible{text-decoration:underline}
-@media (prefers-reduced-motion: reduce){.fundo>summary .seta{transition:none}}
 
 /* a rolagem: um post embaixo do outro, do mais novo ao mais antigo */
 .post+.post{border-top:1px solid var(--fio);padding-top:30px}
@@ -440,10 +424,8 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
   
   <p class="fontes">De onde vêm os números: <a href="https://forbes.com.br/geral/2026/11/industria-cai-setembro-maior-queda-dois-anos-e-meio/" rel="nofollow noopener">Safras &amp; Mercado / Forbes Brasil (dados do IBGE)</a>; <a href="https://agenciagov.ebc.com.br/noticias/202611/brasil-gera-121-3-mil-empregos-formais-em-setembro-e-saldo-no-ano-chega-a-1-24-milhao-de-novos-postos-com-carteira-assinada" rel="nofollow noopener">Agência Gov (Ministério do Trabalho e Emprego)</a>; as séries do Banco Central e do IBGE e as manchetes do dia.</p>
   <p class="basico"><span>O básico, na página O que causa recessão</span> <a href="/causas/#t-freio">O remédio: juro alto</a></p>
-  
   <div class="compartilha"><a class="zap" href="https://wa.me/?text=Ind%C3%BAstria%20cai%20de%20novo%20em%20setembro%2C%20e%20o%20freio%20chega%20%C3%A0s%20m%C3%A1quinas%20antes%20do%20desemprego%20https%3A//vaidarcrise.com.br/2026-11-06/" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Mandar no WhatsApp</a><button class="copia" type="button" data-url="https://vaidarcrise.com.br/2026-11-06/"><svg aria-hidden="true"><use href="#i-link"/></svg><span class="c-txt" aria-live="polite"><span>Copiar link</span></span></button></div>
 </article>
-
     
 <section class="receba" id="receba" aria-labelledby="receba-tit">
   <h2 id="receba-tit">Receba o fato do dia no seu <span class="nq">e-mail</span></h2>

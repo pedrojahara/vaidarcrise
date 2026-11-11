@@ -387,34 +387,21 @@ def _decisoes_do_periodo(eventos: dict | None, ini: dt.date, fim: dt.date, quand
 def porques_do_periodo(rodadas: list[dict], quando: str) -> dict | None:
     """O argumento de cada texto do dia do período (src/fundo.py), para os resumos: o bloco que o redator lê e a base
     dos números, só com as fontes que conferem. Os resumos continuam saindo dos dados, e não dos posts: o argumento é o
-    da pesquisa, a mesma que o texto do dia usou. Os dias de antes do texto pela história trazem o porquê e o e daí da
-    leitura a fundo."""
+    da pesquisa, a mesma que o texto do dia usou."""
     import fundo
     linhas, bases = [], []
     for r in por_dia(rodadas):
         post = r.get("post") or {}
         if (post.get("tipo") or "dia") != "dia" or not post.get("ok"):
             continue
-        t = pauta_mod.titulo_escolha(r["pauta"]) if r.get("pauta") else post.get("titulo")
-        if post.get("formato") == fundo.FORMATO:
-            x = fundo.resumo_do_dia(post)
-            if not (x["argumento"] or x["porque"]):
-                continue
-            linhas.append(f"- Texto do dia de {_dm(r['gerado_em'][:10])} ({post['titulo']}). O argumento: {x['argumento']} "
-                          f"Por quê: {x['porque']}")
-            bases.append(x["base"])
+        if post.get("formato") != fundo.FORMATO:
             continue
-        curto, fontes, _, base = fundo.fontes_do_curto(post.get("fundo"))
-        if not (curto.get("porque") or curto.get("e_dai")):
+        x = fundo.resumo_do_dia(post)
+        if not (x["argumento"] or x["porque"]):
             continue
-        dec = "".join(f" {rot}: {curto[k]}" for k, rot in (("objetivo", "O objetivo que quem decidiu escreveu"),
-                                                             ("condicao", "A condição para a decisão chegar lá"))
-                      if curto.get(k))
-        vida = f" Na vida: {curto['vida']}" if curto.get("vida") else ""
-        linhas.append(f"- Fato do dia de {_dm(r['gerado_em'][:10])} ({t}). Por quê: {curto.get('porque', '')} "
-                      f"E daí: {curto.get('e_dai', '')}{vida}{dec}")
-        linhas += [f"  {x}" for x in fontes]
-        bases.append(base)
+        linhas.append(f"- Texto do dia de {_dm(r['gerado_em'][:10])} ({post['titulo']}). O argumento: {x['argumento']} "
+                      f"Por quê: {x['porque']}")
+        bases.append(x["base"])
     if not linhas:
         return None
     return {"texto": "\n".join([f"O QUE OS TEXTOS DO DIA {quando.upper()} DISSERAM, da pesquisa do site (diga por que "
@@ -920,13 +907,10 @@ def escrever(rodada: dict, cfg: dict, datas: list[dict] | None = None, budget_us
 
 
 def _gravar_reescrito(arq: Path, novo: dict, nota: str | None = None) -> None:
-    """Troca o texto do post de uma rodada pelo novo e guarda o que não é texto (a leitura a fundo e os links) e o
-    texto anterior, em versao_anterior."""
+    """Troca o texto do post de uma rodada pelo novo e guarda o que não é texto (os links)."""
     alvo = json.loads(arq.read_text())
     velho = alvo.get("post") or {}
-    alvo["post"] = {**novo, **{k: velho[k] for k in ("fundo", "termina_em", "pergunta") if k in velho}}
-    if velho.get("ok"):
-        alvo["post"]["versao_anterior"] = {k: velho[k] for k in ("titulo", "paragrafos", "revisao_manual") if velho.get(k)}
+    alvo["post"] = {**novo, **{k: velho[k] for k in ("termina_em", "pergunta") if k in velho}}
     if nota:
         alvo["post"]["revisao_manual"] = nota
     arq.write_text(json.dumps(alvo, ensure_ascii=False, indent=1) + "\n")
