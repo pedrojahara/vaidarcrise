@@ -5,12 +5,12 @@
 <script>document.documentElement.className+=" js"</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>O site nasceu na eleição para explicar a economia sem torcida | Vai dar crise?</title>
-<meta name="description" content="Este site explica a economia do Brasil para quem nunca estudou o assunto, sem torcer por nenhum lado.">
+<meta name="description" content="Este site explica a economia do Brasil para quem decide com números no trabalho, como gestor ou dono de negócio, mas nunca estudou economia.">
 <link rel="canonical" href="https://vaidarcrise.com.br/textos/retrato-do-brasil/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vai dar crise?">
 <meta property="og:title" content="O site nasceu na eleição para explicar a economia sem torcida | Vai dar crise?">
-<meta property="og:description" content="Este site explica a economia do Brasil para quem nunca estudou o assunto, sem torcer por nenhum lado.">
+<meta property="og:description" content="Este site explica a economia do Brasil para quem decide com números no trabalho, como gestor ou dono de negócio, mas nunca estudou economia.">
 <meta property="og:url" content="https://vaidarcrise.com.br/textos/retrato-do-brasil/">
 <meta property="og:image" content="https://vaidarcrise.com.br/og/2026-11-11.png">
 <meta property="og:image:width" content="1200">
@@ -223,21 +223,6 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .comece .rot{display:block;font-size:13px;font-weight:600;color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
 .comece b{display:block;font:700 20px/1.3 var(--serifa);margin-bottom:4px}
 
-/* a leitura a fundo do fato do dia (src/fundo.py): o texto corrido, fechado até o toque */
-.fundo{margin:4px 0 18px;max-width:660px;border:1px solid var(--fio);border-radius:10px}
-.fundo>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 12px 12px 14px;cursor:pointer;list-style:none;font:600 16px/1.35 var(--sistema)}
-.fundo .f-cab{display:block;min-width:0}
-.fundo .f-rot{display:block;font:600 12.5px/1.3 var(--sistema);color:var(--meta);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
-.fundo .f-tit{display:block;font:700 18px/1.35 var(--serifa);color:var(--tinta)}
-.fundo>summary::-webkit-details-marker{display:none}
-.fundo>summary .seta{width:18px;height:18px;flex:none;transition:transform .15s}
-.fundo[open]>summary .seta{transform:rotate(180deg)}
-.fundo[open]>summary{border-bottom:1px solid var(--fio);margin-bottom:16px}
-.fundo .f-corpo{padding:0 14px 4px}
-.post .fundo .f-corpo p{margin:0 0 14px;font-size:17px;line-height:1.6}
-.fundo .f-h{font:700 18px/1.35 var(--serifa);margin:22px 0 8px}
-.post .fundo p.f-fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:10px 0 6px;overflow-wrap:anywhere}
-.fundo .f-fontes a{color:var(--meta)}
 /* A linha logo abaixo do fato do dia, que leva ao básico do assunto (src/base_site.py, ponte). */
 .post p.fontes{font:13.5px/1.45 var(--sistema);color:var(--meta);margin:4px 0 16px;max-width:660px;overflow-wrap:anywhere}
 .post p.fontes a{color:var(--meta)}
@@ -245,7 +230,6 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .basico span{display:block}
 .basico a{display:inline-block;margin-top:2px;font:700 17px/1.35 var(--serifa);color:var(--link);text-decoration:none}
 .basico a:hover,.basico a:focus-visible{text-decoration:underline}
-@media (prefers-reduced-motion: reduce){.fundo>summary .seta{transition:none}}
 
 /* a rolagem: um post embaixo do outro, do mais novo ao mais antigo */
 .post+.post{border-top:1px solid var(--fio);padding-top:30px}
@@ -434,45 +418,35 @@ p.mais{font:15.5px/1.4 var(--sistema);text-align:center;margin:8px 0 28px}  /* s
   
   
   
-  <div class="corpo"><p>Este site explica a economia do Brasil para quem nunca estudou o assunto, sem torcer por nenhum lado. Ele mostra, com dados e estudos, se o risco de recessão está subindo ou caindo, e por quê.</p>
+  <div class="corpo"><p>Este site explica a economia do Brasil para quem decide com números no trabalho, como gestor ou dono de negócio, mas nunca estudou economia. Ele mostra, com dados, se o risco de recessão está subindo ou caindo, por quê e o que isso muda em casa, na empresa e no país.</p>
 <h3>Por que o site nasceu</h3>
-<p>A ideia veio da eleição de 2026. No grupo da família, nos vídeos e na TV, todo mundo tinha certeza sobre a economia, e cada lado mostrava o número que o ajudava: o emprego ou a dívida do governo.</p>
-<p>Muitas vezes, os dois números eram verdadeiros, e cada um contava metade da história. Nos debates, quase nunca se ouviu quanto custava cada promessa e quem pagaria a conta.</p>
-<p>Depois do segundo turno, a Bolsa caiu e o dólar subiu muito em poucos dias. Uns viram ali o sinal de que o Brasil vai quebrar, e outros, o mercado fazendo pressão porque só pensa em lucro.</p>
-<p>Para julgar as duas leituras, é preciso entender como a economia funciona, e é isso que o site quer ensinar, com fatos e estudos.</p>
+<p>A ideia veio da eleição de 2026. No grupo do trabalho, no LinkedIn e na TV, cada lado mostrava o número que o ajudava, o emprego ou a dívida do governo. Muitas vezes os dois eram verdadeiros, e cada um contava metade da história.</p>
+<p>Depois do segundo turno, a Bolsa caiu e o dólar subiu muito. Uns viram ali o sinal de que o Brasil vai quebrar, e outros, o mercado fazendo pressão porque só pensa em lucro. Os números permitem testar as duas leituras do mesmo jeito, e o site faz esse teste todo dia.</p>
 <h3>O Brasil vai quebrar?</h3>
-<p>Quebrar lembra uma família que não paga o banco, e o Brasil já passou por isso em 1987, quando parou de pagar os juros da dívida em dólar. Em 1990, o governo bloqueou o dinheiro da poupança para tentar parar uma inflação de mais de 80% ao mês.</p>
-<p>Hoje é diferente, porque o governo deve quase tudo em reais, a maior parte a brasileiros, e não depende de dólar para pagar. O Banco Central guarda mais dólares do que o governo deve lá fora e, desde 2021, tem autonomia por lei para segurar os preços.</p>
-<p>Por isso, o Brasil dificilmente quebra de um dia para o outro, e o risco que existe chega devagar.</p>
-<p>Quando o governo gasta mais do que arrecada, põe dinheiro na mão das pessoas, e isso ajuda a economia agora. Nos anos seguintes, a dívida cresce e quem empresta ao governo cobra mais juro, que aumenta a dívida de novo.</p>
-<p>É a bola de neve que a aba <a href="/causas/#t-divida">O que causa recessão</a> compara ao rotativo do cartão. A conta chega às famílias como parcela mais cara, preço maior e menos dinheiro para saúde e escola. Quem diz que a dívida não importa também se engana, porque esse custo aparece todo ano.</p>
+<p>Quebrar lembra uma empresa que deixa de pagar o banco, e o Brasil já passou por isso em 1987, quando parou de pagar os juros da dívida em dólar.</p>
+<p>Hoje o governo deve quase tudo em reais, a maior parte a brasileiros, e não precisa de dólar para pagar. O Banco Central guarda mais dólares do que o governo deve lá fora e, desde 2021, tem autonomia por lei para segurar os preços.</p>
+<p>Com isso, o Brasil dificilmente quebra de um dia para o outro, e o risco que existe chega devagar. Quando o governo gasta mais do que arrecada, põe dinheiro na mão das pessoas e das empresas, e as vendas crescem no começo.</p>
+<p>Nos anos seguintes, a dívida cresce, quem empresta ao governo cobra mais juro, e o juro aumenta a dívida de novo. É a bola de neve que a aba <a href="/causas/#t-divida">O que causa recessão</a> compara ao rotativo do cartão.</p>
+<p>A conta chega à casa como parcela e preço maiores, à empresa como crédito mais caro, e ao país como menos dinheiro para saúde e escola. Quem diz que a dívida não importa também se engana: esse custo aparece todo ano.</p>
 <h3>O mercado é um inimigo?</h3>
-<p>Mercado é o nome de bancos, fundos e empresas que emprestam e investem. Boa parte desse dinheiro é de gente comum, guardado na previdência, em fundos e no <a href="https://pt.wikipedia.org/wiki/Tesouro_Direto">Tesouro Direto</a>. Quem empresta quer ganhar, como quem deixa dinheiro na poupança quer rendimento.</p>
-<p>Quando quem empresta desconfia das contas do governo, cobra mais juro do governo ou leva o dinheiro para fora. Aí o dólar sobe, e nos meses seguintes sobem o pão, a gasolina e o celular.</p>
-<p>Foi assim em 2015, 2021 e 2024, com presidentes de lados opostos: nas três vezes, as contas do governo pareceram piores, e o dólar subiu.</p>
-<p>Em 2002, o dólar subiu muito, porque quem investe tinha medo de que o novo governo não pagasse a dívida. O governo que assumiu pagou e manteve as regras, e em 2003 o dólar caiu.</p>
-<p>Há quem diga que o mercado exagerou, e há quem diga que o medo fez o governo manter as regras. Em qualquer caso, o dólar mais caro chega ao seu bolso.</p>
-<p>Por isso, uma das cinco pressões que o site acompanha é a "Desconfiança de quem investe". Ela é medida pelo dólar e pelo juro de 10 anos, o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos.</p>
+<p>Mercado é o nome de bancos, fundos e empresas que emprestam e investem. Boa parte desse dinheiro é de gente comum, guardado na previdência, em fundos e no <a href="https://pt.wikipedia.org/wiki/Tesouro_Direto">Tesouro Direto</a>.</p>
+<p>Quando quem empresta desconfia das contas do governo, cobra mais juro dele ou leva o dinheiro para fora. O dólar sobe, e nos meses seguintes ficam mais caros os importados, da gasolina ao celular e à peça que a fábrica compra lá fora.</p>
+<p>Foi assim em 2015, 2021 e 2024, com presidentes de lados opostos: nas três vezes, as contas do governo pareceram piores, e o dólar subiu. Em 2002, o dólar subiu com o medo de que o novo governo não pagasse a dívida, e caiu em 2003, quando ele pagou e manteve as regras.</p>
+<p>Há quem diga que o mercado exagerou, e há quem diga que o medo fez o governo manter as regras. Nas duas leituras, o dólar mais caro chegou aos preços e ao custo das empresas.</p>
 <h3>Como usar o site</h3>
-<p>No alto da página, a placa diz se o risco de recessão, que é o <a href="https://pt.wikipedia.org/wiki/Produto_interno_bruto">PIB</a> cair dois trimestres seguidos, está subindo, igual ou caindo.</p>
-<p>A placa não diz quando a recessão vem, porque ninguém acerta essa data com segurança. Ela diz se as cinco pressões que costumam vir antes dela estão piorando ou melhorando. Cada pressão mostra também o número de agora ao lado do de três meses antes, com o mês de cada um, e diz como ele se compara com o passado.</p>
-<p>Todo dia, por volta das 6h da manhã, sai um post:</p>
-<ul>
-<li><strong>O fato do dia</strong>, de segunda a sábado, conta uma notícia de ontem e o efeito dela no seu bolso.</li>
-<li><strong>O resumo da semana</strong>, no domingo, junta o que mudou e diz o que olhar nos dias seguintes.</li>
-<li><strong>O resumo do mês</strong>, no primeiro domingo, diz o que piorou e o que melhorou desde o mês anterior.</li>
-</ul>
-<p>A aba <a href="/causas/">O que causa recessão</a> explica como preço, juro e dívida levam a uma recessão. A aba <a href="/nota/">Como funciona</a> mostra a regra inteira, para quem quer conferir.</p>
+<p>No alto da página, a placa diz se o risco de recessão, que é o <a href="https://pt.wikipedia.org/wiki/Produto_interno_bruto">PIB</a> cair dois trimestres seguidos, está subindo, igual ou caindo. Ela não diz quando a recessão vem, porque ninguém acerta essa data com segurança.</p>
+<p>Logo abaixo da placa ficam as cinco pressões que costumam vir antes de uma recessão, cada uma dizendo se piorou ou melhorou e com que mês se compara. São as contas do governo, as dívidas das famílias, a desconfiança de quem investe, a inflação esperada e o juro.</p>
+<p>Todo dia, por volta das 6h, sai um texto no site e no e-mail de quem se inscreve. De segunda a sábado, o fato do dia explica, pelos números, o passo de ontem da história que mais andou, como o juro ou as contas do governo.</p>
+<p>Aos domingos sai o resumo da semana e, no primeiro domingo do mês, o resumo do mês, com o que piorou, o que melhorou e por quê.</p>
+<p>A aba <a href="/causas/">O que causa recessão</a> explica como preço, juro e dívida levam a uma recessão, e as Grandes perguntas explicam cada pressão. A aba <a href="/nota/">Como funciona</a> mostra a regra inteira, para quem quer refazer a conta.</p>
 <h3>Como o site evita tomar lado</h3>
-<p>Todo texto do site segue um teste: com outro governo no poder, a frase sairia igual? Se não sairia, ela tem de ser reescrita. Os números vêm de fontes públicas, como o IBGE e o Banco Central.</p>
-<p>O site não dá nota ao governo nem recomenda investimento. Ele explica o que depende do governo, do Congresso e do Banco Central e o que vem de fora do país, e quem julga é você.</p>
-<p>Faça o mesmo teste com o que chega no seu WhatsApp, inclusive com o que sai daqui.</p></div>
-  
+<p>Todo texto do site passa por uma pergunta: com outro governo no poder, a frase sairia igual? Se não sairia, ela é reescrita. Os números vêm de fontes públicas, como o IBGE e o Banco Central, e cada um leva o link da fonte.</p>
+<p>O site não dá nota ao governo nem recomenda investimento. Quando o fato é uma decisão, o texto a mede pelo objetivo que quem decidiu escreveu, como a meta de inflação do Banco Central. E diz o que depende do governo, do Congresso e do Banco Central e o que vem de fora do país.</p>
+<p>Se o objetivo vale o custo, quem julga é você. Faça o mesmo teste com o que chega no seu WhatsApp, inclusive com o que sai daqui.</p></div>
   
   
   <div class="compartilha"><a class="zap" href="https://wa.me/?text=O%20site%20nasceu%20na%20elei%C3%A7%C3%A3o%20para%20explicar%20a%20economia%20sem%20torcida%20https%3A//vaidarcrise.com.br/textos/retrato-do-brasil/" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Mandar no WhatsApp</a><button class="copia" type="button" data-url="https://vaidarcrise.com.br/textos/retrato-do-brasil/"><svg aria-hidden="true"><use href="#i-link"/></svg><span class="c-txt" aria-live="polite"><span>Copiar link</span></span></button></div>
 </article>
-
     
 <section class="receba" id="receba" aria-labelledby="receba-tit">
   <h2 id="receba-tit">Receba o fato do dia no seu <span class="nq">e-mail</span></h2>

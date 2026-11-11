@@ -1,4 +1,4 @@
-"""Contas com as séries do próprio site, para a pesquisa da leitura a fundo (src/fundo.py) e para quem quiser refazer.
+"""Contas com as séries do próprio site, para a pesquisa do texto do dia (src/fundo.py) e para quem quiser refazer.
 
 A IA da pesquisa roda este programa pelo terminal com uma permissão que só aceita este comando, e cada número que
 ela tira daqui vai para o caderno com o comando exato; a conferência roda o mesmo comando de novo e confere o número.
@@ -96,7 +96,7 @@ PRINCIPAIS = ["selic_meta", "ipca_12m", "focus_ipca_12m", "juro_real", "juro_rea
 
 
 def _carregar() -> tuple[dict, dict]:
-    """As séries mês a mês e dia a dia. Com VDC_ATE=AAAA-MM-DD (a leitura a fundo de um dia passado), só o que já se
+    """As séries mês a mês e dia a dia. Com VDC_ATE=AAAA-MM-DD (o texto de um dia passado), só o que já se
     sabia naquele dia: os meses antes do mês da data e os dias até ela."""
     import os
 

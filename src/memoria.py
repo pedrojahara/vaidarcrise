@@ -5,7 +5,7 @@
 2. Memória do momento (base/memoria/momento/AAAA-MM.json e base/memoria/historias.json): o que aconteceu mês a mês
    desde maio de 2025, com fonte, e as histórias que ainda estão abertas (a eleição, a guerra, o orçamento). Todo dia
    a rodada junta os fatos das notícias do dia (sem IA); no domingo, uma IA revê as histórias.
-3. Memória do site (runs/): o que o site já escreveu e o argumento de cada texto do dia (e, até 4/11/2026, as teses das leituras a fundo), para não repetir e para ligar
+3. Memória do site (runs/): o que o site já escreveu e o argumento de cada texto do dia, para não repetir e para ligar
    um dia ao outro. Sai do registro, sem IA.
 
 A carga inicial das memórias longa e do momento usa a internet (WebSearch e, no Mac, WebFetch), porque o site ainda
@@ -389,7 +389,7 @@ def episodios(jobs: int) -> None:
     existentes = _episodios_existentes()
     with cf.ThreadPoolExecutor(max_workers=max(1, jobs)) as ex:
         res = list(ex.map(lambda e: episodios_da_era(*e, existentes), ERAS))
-    doc = _ler(LONGA, {"_sobre": "Memória longa da leitura a fundo (src/memoria.py). Os 8 primeiros episódios ficam em "
+    doc = _ler(LONGA, {"_sobre": "Memória longa do texto do dia (src/memoria.py). Os 8 primeiros episódios ficam em "
                                  "base/episodios.json, com as afirmações da base.", "episodios": []})
     ids = {e["id"] for e in existentes}
     for r in res:
@@ -463,17 +463,12 @@ def _memoria_site(dia: dt.date, n: int = 14) -> str:
         if not p.get("ok"):
             continue
         tipo = {"dia": "texto do dia", "semana": "resumo da semana", "mes": "resumo do mês"}.get(p.get("tipo") or "dia")
-        f = p.get("fundo") or {}
         l = f"- {arq.stem[:10]} ({tipo}): {p['titulo']}."
         if p.get("formato") == "historia":
             pq = p.get("pesquisa") or {}
             l += f" História: {((r.get('pauta') or {}).get('escolha') or {}).get('titulo') or 'dia calmo'}."
             if pq.get("argumento"):
                 l += f" Argumento: {pq['argumento']}"
-        elif f.get("ok") and f.get("titulo"):
-            l += f" Leitura a fundo: {f['titulo']}."
-            if f.get("tese"):
-                l += f" Tese: {f['tese']}"
         linhas.append(l)
         if len(linhas) >= n:
             break

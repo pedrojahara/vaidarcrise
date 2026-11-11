@@ -18,22 +18,5 @@
   {% if post.corpo_html %}<div class="corpo">{{ post.corpo_html|safe }}</div>{% endif %}
   {% if post.fontes %}<p class="fontes">De onde vêm os números: {% for x in post.fontes %}{% if x.url %}<a href="{{ x.url }}" rel="nofollow noopener">{{ x.quem }}</a>{% else %}{{ x.quem }}{% endif %}{{ '; ' if not loop.last else '.' }}{% endfor %}</p>{% endif %}
   {% if post.ponte %}<p class="basico"><span>{{ post.ponte.rotulo }}</span> <a href="{{ post.ponte.url }}">{{ post.ponte.texto }}</a></p>{% endif %}
-  {% if post.fundo %}{% set f = post.fundo %}
-  <details class="fundo"{% if permalink %} id="leitura"{% endif %}>
-    <summary><span class="f-cab"><span class="f-rot">Leitura de {{ f.minutos }} minutos</span><span class="f-tit">{{ f.titulo }}</span></span><svg class="seta" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-    <div class="f-corpo">
-      {% for b in f.blocos %}{% if b.h %}<h4 class="f-h">{{ b.h }}</h4>{% else %}<p>{{ b.p }}</p>{% endif %}
-      {% endfor %}
-      {% if f.fontes %}<p class="f-fontes">De onde vêm os números: {% for x in f.fontes %}{% if x.url %}<a href="{{ x.url }}" rel="nofollow noopener">{{ x.quem }}</a>{% else %}{{ x.quem }}{% endif %}{{ '; ' if not loop.last else '.' }}{% endfor %}</p>{% endif %}
-    </div>
-  </details>
-  {% endif %}
   {% if post.zap %}<div class="compartilha"><a class="zap" href="{{ post.zap }}" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Mandar no WhatsApp</a><button class="copia" type="button" data-url="{{ post.url }}"><svg aria-hidden="true"><use href="#i-link"/></svg><span class="c-txt" aria-live="polite"><span>Copiar link</span></span></button></div>{% endif %}
 </article>
-{% if permalink and post.fundo %}<script>
-/* Um link para a leitura a fundo (/AAAA-MM-DD/#leitura, como o do e-mail) abre a leitura. */
-(function(){
-  function abre(){if(location.hash!=="#leitura")return;var d=document.getElementById("leitura");if(d){d.open=true;d.scrollIntoView()}}
-  abre();addEventListener("hashchange",abre);
-})();
-</script>{% endif %}

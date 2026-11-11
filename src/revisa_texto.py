@@ -460,11 +460,7 @@ def problemas_post(post: dict, tipo: str = "dia", dados: str | None = None, hoje
             out.append(f"parágrafo {i}: inflação que 'cai' ou 'recua' sem dizer que os preços sobem mais devagar")
         if re.search(r"\b(eu|nós|nosso|nossa)\b", p, flags=re.IGNORECASE):
             out.append(f"parágrafo {i} em primeira pessoa")
-    # Os fatos do dia até 4/11/2026 (as 100 palavras): até 100 palavras no total. O texto do dia pela história tem o
-    # tamanho conferido em src/fundo.py (conferir_codigo).
-    total = sum(len(p.split()) for p in post["paragrafos"])
-    if tipo == "dia" and total > 100:
-        out.append(f"fato do dia com {total} palavras (até 100): corte o que não é o fato, sem mudar os números")
+    # O tamanho do texto do dia é conferido em src/fundo.py (conferir_codigo).
     out += perguntas_no_ar(" ".join(post["paragrafos"]))
     out += soa_como_maquina(" ".join(post["paragrafos"]), numeros=False)
     sig = siglas_soltas(" ".join(_prosa(post)))
