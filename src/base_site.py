@@ -95,13 +95,18 @@ def pergunta_da_pressao(pid: str) -> dict | None:
 
 
 def menu(cfg: dict) -> list[dict]:
-    """O menu Grandes perguntas do cabeçalho: primeiro a aba O que causa recessão, que explica como as pressões levam à
-    recessão, e depois as páginas publicadas, na ordem das pressões do topo."""
+    """O menu Perguntas do cabeçalho: as páginas publicadas, na ordem das pressões do topo. A aba O que causa recessão
+    tem item próprio no cabeçalho, ao lado de Hoje (Pedro, 11/11/2026), e não entra aqui."""
     ordem = list(cfg["direcao"]["nomes"])
     lista = sorted(publicadas().values(), key=lambda q: ordem.index(q["pressao"]) if q.get("pressao") in ordem else 99)
-    return [{"url": "/causas/", "pergunta": "O que causa recessão?", "rotulo": "Para começar"}] + [
-        {"url": f"/perguntas/{q['id']}/", "pergunta": q["pergunta"],
-         "rotulo": cfg["direcao"]["nomes"].get(q.get("pressao"), "")} for q in lista]
+    return [{"url": f"/perguntas/{q['id']}/", "pergunta": q["pergunta"],
+             "rotulo": cfg["direcao"]["nomes"].get(q.get("pressao"), "")} for q in lista]
+
+
+def paginas(cfg: dict) -> list[dict]:
+    """Todas as páginas do básico: a aba O que causa recessão, que explica como as pressões levam à recessão, e depois
+    as do menu Perguntas."""
+    return [{"url": "/causas/", "pergunta": "O que causa recessão?", "rotulo": "Para começar"}] + menu(cfg)
 
 
 # O assunto das notícias (fator, em config/modelo.json "fatores") e as pressões do topo que ele cobre. "Juro e

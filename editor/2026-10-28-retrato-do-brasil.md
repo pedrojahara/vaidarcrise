@@ -43,7 +43,7 @@ Todo dia, por volta das 6h, sai um texto no site e no e-mail de quem se inscreve
 
 Aos domingos sai o resumo da semana e, no primeiro domingo do mês, o resumo do mês, com o que piorou, o que melhorou e por quê.
 
-A aba [O que causa recessão](/causas/) explica como preço, juro e dívida levam a uma recessão, e as Grandes perguntas explicam cada pressão. A aba [Como funciona](/nota/) mostra a regra inteira, para quem quer refazer a conta.
+A aba [O que causa recessão](/causas/) explica como preço, juro e dívida levam a uma recessão, e o menu Perguntas tem uma página para cada pressão. A aba [Como funciona](/nota/) mostra a regra inteira, para quem quer refazer a conta.
 
 ### Como o site evita tomar lado
 

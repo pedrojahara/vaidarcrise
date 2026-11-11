@@ -55,7 +55,8 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .marca b{font:700 30px/1.1 var(--serifa);letter-spacing:-.01em}
 .linha-fina{margin:8px 0 12px;font:16px/1.45 var(--sistema);color:var(--meta)}
 .cab nav{display:flex;flex-wrap:wrap;gap:6px 18px;font:15px/1.4 var(--sistema)}
-/* No celular, os três itens do menu (Hoje, Grandes perguntas e Receber por e-mail) cabem numa linha a partir de 390 px. */
+/* No celular, os três itens do menu (Hoje, O que causa recessão e Perguntas) cabem numa linha a partir de 360 px, mesmo com o
+   item da página aberta em negrito. Um quarto item não cabe em celular nenhum: por isso "Receba por e-mail" fica na linha fina. */
 @media (max-width:420px){.cab nav{column-gap:14px}}
 
 /* a direção do risco (bloco próprio em _nota.html) */
@@ -149,8 +150,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .so-leitor{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .nq{white-space:nowrap}
 @media (max-width:620px){ #receba button{flex:1 1 100%}}
-/* Menu Grandes perguntas: a aba O que causa recessão e uma página por pressão do topo (base/perguntas), aberto por
-   toque, sem JavaScript. A lista
+/* Menu Perguntas: uma página por pressão do topo (base/perguntas), aberto por toque, sem JavaScript. A lista
    abre embaixo do menu inteiro, alinhada à esquerda, para caber no celular em qualquer linha em que o item caia. */
 .cab nav{position:relative}
 .menu-p{position:static}
@@ -234,8 +234,8 @@ details.estudos>summary{cursor:pointer;color:var(--link);text-decoration:underli
 <body>
 <header class="cab"><div class="in"><div class="faixa">
   <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
-  <p class="linha-fina">Para onde vai o risco de recessão no Brasil, com dados todo dia.</p>
-  <nav aria-label="Seções"><a href="/">Hoje</a><details class="menu-p"><summary class="atual"><span>Grandes perguntas</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul><li><a href="/causas/"><span class="pn">Para começar</span>O que causa recessão?</a></li><li><a href="/perguntas/divida-do-governo/"><span class="pn">Contas do governo</span>Por que a dívida do governo cresce tanto?</a></li><li><a href="/perguntas/dividas-das-familias/" aria-current="page"><span class="pn">Dívidas das famílias</span>Por que as famílias gastam tanto da renda com dívidas?</a></li><li><a href="/perguntas/dolar-alto/"><span class="pn">Desconfiança de quem investe</span>Por que o dólar sobe tanto no Brasil?</a></li><li><a href="/perguntas/inflacao-acima-da-meta/"><span class="pn">Inflação esperada</span>Por que a inflação do Brasil fica acima da meta?</a></li><li><a href="/perguntas/juro-alto/"><span class="pn">Juro</span>Por que o juro do Brasil é tão alto?</a></li></ul></details><a href="/inscricao/">Receber por e-mail</a></nav>
+  <p class="linha-fina">Para onde vai o risco de recessão no Brasil, com dados todo dia. <a class="nq" href="/inscricao/">Receba por e-mail</a>.</p>
+  <nav aria-label="Seções"><a href="/">Hoje</a><a href="/causas/">O que causa recessão</a><details class="menu-p"><summary class="atual"><span>Perguntas</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul><li><a href="/perguntas/divida-do-governo/"><span class="pn">Contas do governo</span>Por que a dívida do governo cresce tanto?</a></li><li><a href="/perguntas/dividas-das-familias/" aria-current="page"><span class="pn">Dívidas das famílias</span>Por que as famílias gastam tanto da renda com dívidas?</a></li><li><a href="/perguntas/dolar-alto/"><span class="pn">Desconfiança de quem investe</span>Por que o dólar sobe tanto no Brasil?</a></li><li><a href="/perguntas/inflacao-acima-da-meta/"><span class="pn">Inflação esperada</span>Por que a inflação do Brasil fica acima da meta?</a></li><li><a href="/perguntas/juro-alto/"><span class="pn">Juro</span>Por que o juro do Brasil é tão alto?</a></li></ul></details></nav>
 </div></div></header>
 
 <main class="in perg">
@@ -385,7 +385,7 @@ details.estudos>summary{cursor:pointer;color:var(--link);text-decoration:underli
   <p><a href="/inscricao/">Receber por e-mail</a> | <a href="/privacidade/">Privacidade</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
 <script>
-// O menu Grandes perguntas fecha com um toque fora dele ou com Esc.
+// O menu Perguntas fecha com um toque fora dele ou com Esc.
 document.addEventListener("click", function (e) {
   document.querySelectorAll("details.menu-p[open]").forEach(function (d) { if (!d.contains(e.target)) d.open = false; });
 });

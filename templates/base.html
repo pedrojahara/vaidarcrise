@@ -56,7 +56,8 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .marca b{font:700 30px/1.1 var(--serifa);letter-spacing:-.01em}
 .linha-fina{margin:8px 0 12px;font:16px/1.45 var(--sistema);color:var(--meta)}
 .cab nav{display:flex;flex-wrap:wrap;gap:6px 18px;font:15px/1.4 var(--sistema)}
-/* No celular, os três itens do menu (Hoje, Grandes perguntas e Receber por e-mail) cabem numa linha a partir de 390 px. */
+/* No celular, os três itens do menu (Hoje, O que causa recessão e Perguntas) cabem numa linha a partir de 360 px, mesmo com o
+   item da página aberta em negrito. Um quarto item não cabe em celular nenhum: por isso "Receba por e-mail" fica na linha fina. */
 @media (max-width:420px){.cab nav{column-gap:14px}}
 
 /* a direção do risco (bloco próprio em _nota.html) */
@@ -150,8 +151,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .so-leitor{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .nq{white-space:nowrap}
 @media (max-width:620px){ #receba button{flex:1 1 100%}}
-/* Menu Grandes perguntas: a aba O que causa recessão e uma página por pressão do topo (base/perguntas), aberto por
-   toque, sem JavaScript. A lista
+/* Menu Perguntas: uma página por pressão do topo (base/perguntas), aberto por toque, sem JavaScript. A lista
    abre embaixo do menu inteiro, alinhada à esquerda, para caber no celular em qualquer linha em que o item caia. */
 .cab nav{position:relative}
 .menu-p{position:static}
@@ -185,8 +185,8 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 <body>
 <header class="cab"><div class="in"><div class="faixa">
   <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
-  <p class="linha-fina">Para onde vai o risco de recessão no Brasil, com dados todo dia.</p>
-  <nav aria-label="Seções"><a href="{{ link_inicio or '/' }}"{% if aba == 'inicio' %} aria-current="page"{% endif %}>Hoje</a>{% if menu_perguntas %}<details class="menu-p"><summary{% if aba in ('perguntas', 'causas') %} class="atual"{% endif %}><span>Grandes perguntas</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul>{% for q in menu_perguntas %}<li><a href="{{ q.url }}"{% if canonical and canonical.endswith(q.url) %} aria-current="page"{% endif %}><span class="pn">{{ q.rotulo }}</span>{{ q.pergunta }}</a></li>{% endfor %}</ul></details>{% endif %}{% if news and news.inscricao_aberta %}<a href="/inscricao/"{% if canonical and canonical.endswith("/inscricao/") %} aria-current="page"{% endif %}>Receber por e-mail</a>{% endif %}</nav>
+  <p class="linha-fina">Para onde vai o risco de recessão no Brasil, com dados todo dia.{% if news and news.inscricao_aberta and not (canonical and "/inscricao/" in canonical) %} <a class="nq" href="/inscricao/">Receba por e-mail</a>.{% endif %}</p>
+  <nav aria-label="Seções"><a href="{{ link_inicio or '/' }}"{% if aba == 'inicio' %} aria-current="page"{% endif %}>Hoje</a><a href="/causas/"{% if aba == 'causas' %} aria-current="page"{% endif %}>O que causa recessão</a>{% if menu_perguntas %}<details class="menu-p"><summary{% if aba == 'perguntas' %} class="atual"{% endif %}><span>Perguntas</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul>{% for q in menu_perguntas %}<li><a href="{{ q.url }}"{% if canonical and canonical.endswith(q.url) %} aria-current="page"{% endif %}><span class="pn">{{ q.rotulo }}</span>{{ q.pergunta }}</a></li>{% endfor %}</ul></details>{% endif %}</nav>
 </div></div></header>
 {% block corpo %}{% endblock %}
 <footer class="pe"><div class="in">
@@ -194,7 +194,7 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
   <p>{% if news and news.inscricao_aberta %}<a href="/inscricao/">Receber por e-mail</a> | {% endif %}<a href="/privacidade/">Privacidade</a> | <a href="/data.json">data.json</a> | <a href="/historico.json">historico.json</a></p>
 </div></footer>
 {% if menu_perguntas %}<script>
-// O menu Grandes perguntas fecha com um toque fora dele ou com Esc.
+// O menu Perguntas fecha com um toque fora dele ou com Esc.
 document.addEventListener("click", function (e) {
   document.querySelectorAll("details.menu-p[open]").forEach(function (d) { if (!d.contains(e.target)) d.open = false; });
 });

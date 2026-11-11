@@ -646,11 +646,11 @@ def main() -> None:
     # O retrato mais novo também fica no cartão "Comece por aqui", no topo da página principal.
     retrato = next((t for t in textos if t["tipo"] == "retrato"), None)
 
-    try:  # o menu Grandes perguntas do cabeçalho; um erro na base não derruba a atualização do dia
+    try:  # o menu Perguntas do cabeçalho; um erro na base não derruba a atualização do dia
         menu_perguntas = base_site.menu(cfg)
     except (KeyError, OSError, ValueError, TypeError) as e:
         menu_perguntas = []
-        print(f"aviso: o menu Grandes perguntas não saiu ({e!r})")
+        print(f"aviso: o menu Perguntas não saiu ({e!r})")
 
     def continua(depois: str) -> dict | None:
         """O que vem depois de um post na rolagem: o id do último já na página e o link do próximo, para quem não tem JavaScript."""
