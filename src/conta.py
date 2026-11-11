@@ -495,8 +495,18 @@ def cmd_episodios(mensal: dict, a) -> None:
     contados = subiu + caiu + igual  # os encerrados com a Selic do começo e do fim
     if contados:
         print(f"Por frequência, do começo ao fim de cada vez encerrada: {_frase_frequencia(contados, subiu, caiu, igual)}.")
+    duracoes = [(int(e["ate"][:4]) - int(e["de"][:4])) * 12 + int(e["ate"][5:]) - int(e["de"][5:]) + 1
+                for e in eps if not _aberto(e)]
+    if duracoes:
+        print(f"As vezes encerradas duraram de {min(duracoes)} a {max(duracoes)} meses.")
+    # O caso aberto se diz pelo que repetir o passado quer dizer agora, com o nível (Pedro, 11/11/2026): "repetir o
+    # passado seria a Selic passar de 14%", e não pelo caminho até aqui ("começou em agosto com 14% e caiu para 13,75%").
     for e, s0, s1 in abertos:
         print(f"O episódio aberto começou em {e['de']}: até agora, a Selic foi de {_br(s0)}% para {_br(s1)}%.")
+        if s0 is not None and contados and max(subiu, caiu) * 2 > contados:
+            rumo = "passar de" if subiu > caiu else "ficar abaixo de"
+            print(f"Para este terminar como a maioria das vezes encerradas, a Selic teria de {rumo} {_br(s0)}%, o nível "
+                  f"do começo ({e['de']}); no último mês com dado, estava em {_br(s1)}%.")
     # O corte da condição muda a conta: com a inflação esperada mais de 1,4 ponto acima do centro, a Selic terminou mais
     # alta em todas as 5 vezes; com o teto da meta (1,5 ponto), em 4 das 6, e ficou igual nas outras 2. Os cortes
     # vizinhos mostram quanto a conta depende do corte; o texto usa o corte da biblioteca (EVIDENCIA.md), escrito antes.

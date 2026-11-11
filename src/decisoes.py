@@ -77,7 +77,7 @@ PERGUNTAS_ANALISE = [
     "caminho, com a força (forte, média ou fraca) e o estudo que discorda?",
     "O que aconteceu das outras vezes, no Brasil, desde 2002, em todos os governos, contadas por episódio e não por "
     "mês (src/conta.py episodios, pausas e ciclos; o episódio longo não vale mais que o curto), e sem o caso de hoje, "
-    "que ainda não terminou? Conte por frequência ('em todas as 5 vezes', 'em 3 das 7'). Sem casos parecidos, "
+    "que ainda não terminou? Conte por frequência ('sempre: foram 5 vezes', 'em 3 das 7', nunca porcentagem com poucos casos), e diga o que repetir o passado quer dizer agora, com o nível. Sem casos parecidos, "
     "diga isso e não dê chance",
     "Dá certo se, dá errado se: até duas condições de cada lado, cada uma com o sinal que a mostra e o corte (a "
     "inflação esperada parar de subir; a arrecadação ficar abaixo da estimativa do próprio governo), e qual lado os "

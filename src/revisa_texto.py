@@ -187,6 +187,12 @@ _PASSADO_DIFICIL = re.compile(r"\b(subiu|caiu|ficou igual) em \d+\b[^.]{0,40}\b(
 _QUEM_DECIDE_SO = re.compile(r"\bquem (propõe|decide|aprova|vota|define)\b[^.]{0,60}\b(é|são)\b|"
                              r"^(o governo|a Presidência|o Executivo) (propõe|envia|manda)\b[^.]{0,60}\be o Congresso\b"
                              r"[^.]{0,30}\b(vota|aprova|decide)\b[^.,;]*\.?$", re.I)
+# O caso de hoje pelo caminho ("começou em agosto, com a Selic em 14%, e até aqui ela caiu para 13,75%", 11/11/2026), e a
+# porcentagem de poucas vezes ("80%" com cinco casos): a conta do passado vai por frequência, e o caso aberto, pelo que
+# repetir o passado quer dizer agora (Pedro, 11/11/2026).
+_CASO_PELO_CAMINHO = re.compile(r"\bcomeçou em [^.]{0,60}\b(até aqui|até agora|desde então)\b[^.]{0,40}\b(caiu|subiu|"
+                                r"foi para|passou para|recuou|cedeu)\b", re.I)
+_PORCENTO_DAS_VEZES = re.compile(r"\b\d+(,\d+)?\s*%\s*(das vezes|dos casos|dos episódios)\b", re.I)
 # A menção que pede "como?" ou "qual?" e não responde: "a IFI faz a projeção de outro jeito" (10/11/2026) e "as medidas
 # do ajuste que a Fazenda diz preparar" (10/11/2026), sem dizer qual jeito nem quais medidas.
 _VAGO = re.compile(r"\bde (outro|outra) (jeito|forma|maneira)\b", re.I)
@@ -196,9 +202,10 @@ _MEDIDA_SEM_CONTEUDO = re.compile(r"\b(ajuste|medidas|pacote|projeto)\b[^.]{0,60
 _CONTEUDO = re.compile(r"\d|\b(corta|cortar|corte de|bloque\w*|isenç\w*|imposto|piso|teto|gasto com|reajuste)\b", re.I)
 
 
-def perguntas_no_ar(texto: str) -> list[str]:
+def perguntas_no_ar(texto: str, depois: str = "") -> list[str]:
     """As frases que levantam uma pergunta e não a respondem: cada uma vira aviso para a redação (PERSONA.md, regras
-    16 a 20 do jeito de escrever do site)."""
+    16 a 20 do jeito de escrever do site). `depois` é o texto que vem logo depois do parágrafo: a lista anunciada no
+    fim de um parágrafo pode ser detalhada nos parágrafos seguintes (regra 22)."""
     out = []
     frases = [f.strip() for f in FRASE.split(texto) if f.strip()]
     for i, f in enumerate(frases):
@@ -206,13 +213,20 @@ def perguntas_no_ar(texto: str) -> list[str]:
         if _PREVISAO_SOLTA.search(f) and not re.search(r"\d", f + " " + seguinte) and len(f.split()) <= 14:
             out.append("previsão solta: diga quem prevê (os bancos no Focus, a casa com o nome), o quê, quanto e para "
                        f"quando, ou corte a frase: {f[:80]}")
-        if _LISTA_CAUSAS.search(f) and not _MECANISMO.search(f.split(":", 1)[-1] + " " + seguinte):
+        if _LISTA_CAUSAS.search(f) and not _MECANISMO.search(f.split(":", 1)[-1] + " " + (seguinte or depois)):
             out.append("lista de causas sem o mecanismo: diga o que cada uma encarece, com um exemplo e o tamanho quando a "
                        f"fonte dá, e de onde ela vem (de fora, do governo, do Congresso): {f[:80]}")
         if _PASSADO_DIFICIL.search(f):
             out.append("estatística do passado difícil de repetir: diga numa frase, por frequência, a condição e o que "
-                       "veio ('em todas as 5 vezes desde 2002 em que..., a Selic terminou mais alta'), com o caso de hoje, "
-                       f"ainda aberto, fora da conta e dito à parte; 'vezes', e não 'episódios': {f[:80]}")
+                       "veio ('Desde 2002, sempre que..., a Selic terminou mais alta do que começou. Foram 5 vezes.'), "
+                       "com o caso de hoje, ainda aberto, fora da conta e dito pelo que repetir o passado quer dizer "
+                       f"agora; 'vezes', e não 'episódios': {f[:80]}")
+        if _CASO_PELO_CAMINHO.search(f):
+            out.append("o caso de hoje contado pelo caminho até aqui obriga a leitora a fazer a conta: diga o que repetir "
+                       "o passado quer dizer agora, com o nível ('seria a Selic passar dos 14% de agosto'): " + f[:80])
+        if _PORCENTO_DAS_VEZES.search(f):
+            out.append("porcentagem das vezes: com poucos casos, diga quantas de quantas ('em 4 das 5 vezes'), porque "
+                       f"'80%' parece medida fina e um caso a mais muda a conta: {f[:80]}")
         if _QUEM_DECIDE_SO.search(f):
             out.append("frase só para dizer quem decide: se o mecanismo já mostra de quem é a decisão, ela está "
                        f"implícita; diga quem decide na frase do fato, uma vez: {f[:80]}")
@@ -222,6 +236,57 @@ def perguntas_no_ar(texto: str) -> list[str]:
         if _MEDIDA_SEM_CONTEUDO.search(f) and not _CONTEUDO.search(f + " " + seguinte):
             out.append("medida citada sem o conteúdo: diga o que ela faz (que gasto corta, que imposto muda), o tamanho e "
                        f"quem relata, ou corte a frase inteira: {f[:80]}")
+    return out
+
+
+# O que faz o texto soar como máquina (PERSONA.md, regra 23). Na medição de 11/11/2026, contra cinco notas de economia
+# do Meio (73 frases), o texto do dia tinha 1,9 número por frase e as notas, 0,6; as notas não usaram "porque" nem "pesa"
+# e puseram o jornal entre parênteses no fim do parágrafo, com quem disse na frase; e as frases do texto do dia tinham
+# quase o mesmo tamanho (variação de 0,24 a 0,38 do tamanho médio, e de 0,43 a 0,56 nas notas). São avisos.
+PALAVRAS_DO_GUIA = re.compile(r"\b(a melhor objeção|o melhor argumento de quem discorda|casos parecidos|dá (certo|errado) "
+                              r"se|a régua|pela régua|em que pé|o e daí|vai na direção d[ao] (meta|objetivo)|pergunta no "
+                              r"ar|a leitora|o leitor)\b", re.I)
+VEICULO_NA_FRASE = re.compile(r"\b(Valor Econômico|(o|do|ao|pelo|no) Valor|(a|da|à|pela|na) Folha|Folha de S\. ?Paulo|"
+                              r"Estadão|O Globo|g1|InfoMoney|CNN( Brasil)?|Poder360|Broadcast|Reuters|Bloomberg|"
+                              r"(a|da|à|pela|na) Exame|UOL|Metrópoles|Agência Brasil|Agência Senado|Agência Câmara|"
+                              r"Correio Braziliense|BBC|JOTA|(a|da|à|pela|na) Veja|CartaCapital|Brazil Journal|NeoFeed|"
+                              r"Money Times|Seu Dinheiro)\b")
+# "os jornais relataram" fica: diz o estágio do fato (relato, ainda sem texto), e não o nome do jornal.
+_PORQUE = re.compile(r"\b(porque|por isso)\b", re.I)
+_PESA = re.compile(r"\bpes(a|am|ou|aram|ar|ará|aria|ando)\b", re.I)
+_NUMERO_SOLTO = re.compile(r"\d+(?:[.,]\d+)?")
+
+
+def soa_como_maquina(texto: str, numeros: bool = True) -> list[str]:
+    """Os sinais de texto escrito por máquina num texto inteiro (sem marcas e sem intertítulos): cada um vira aviso.
+    Sem `numeros`, fica de fora a conta de números por frase (os resumos da semana e do mês dão número e régua em cada
+    movimento, e a reescrita deles não pode mudar os números)."""
+    import statistics
+    out = []
+    frases = [f.strip() for f in FRASE.split(texto) if f.strip()]
+    guia = sorted({m.group(0).lower() for m in PALAVRAS_DO_GUIA.finditer(texto)})
+    if guia:
+        out.append(f"palavra do guia na página ({', '.join(guia)}): diga o que ela quer dizer com as palavras do fato")
+    veic = sorted({m.group(0) for m in VEICULO_NA_FRASE.finditer(texto)})
+    if veic:
+        out.append(f"o jornal dentro da frase ({', '.join(veic)}): na frase vai só quem disse, decidiu ou estimou, e o "
+                   "jornal fica em De onde vêm os números")
+    n = len(_PORQUE.findall(texto))
+    if n > 2:
+        out.append(f"\"porque\" ou \"por isso\" {n} vezes: ligue a causa por um verbo que já a diz (encarece, segura), "
+                   "pela ordem dos fatos ou por uma comparação, e deixe o conectivo para uma ou duas vezes")
+    n = len(_PESA.findall(texto))
+    if n > 1:
+        out.append(f"\"pesa\" {n} vezes: diga o que acontece (encarece, sobe, adia), com quem sente")
+    if len(frases) >= 8:
+        nums = len(_NUMERO_SOLTO.findall(_sem_datas(texto)))
+        if numeros and nums / len(frases) > 1.6:
+            out.append(f"{nums / len(frases):.1f} número por frase: deixe só o número que carrega o argumento, e diga o "
+                       "resto por comparação ('acima do teto', 'o maior desde 2005')")
+        ls = [len(f.split()) for f in frases]
+        cv = statistics.pstdev(ls) / statistics.mean(ls)
+        if cv < 0.3:
+            out.append("frases quase todas do mesmo tamanho: depois de uma frase longa, feche a ideia com uma curta")
     return out
 
 
@@ -396,6 +461,7 @@ def problemas_post(post: dict, tipo: str = "dia", dados: str | None = None, hoje
     if tipo == "dia" and total > 100:
         out.append(f"fato do dia com {total} palavras (até 100): corte o que não é o fato, sem mudar os números")
     out += perguntas_no_ar(" ".join(post["paragrafos"]))
+    out += soa_como_maquina(" ".join(post["paragrafos"]), numeros=False)
     sig = siglas_soltas(" ".join(_prosa(post)))
     if sig:
         out.append(f"sigla que a leitora não conhece ({', '.join(sig)}): escreva o nome por extenso quando ele explica "
