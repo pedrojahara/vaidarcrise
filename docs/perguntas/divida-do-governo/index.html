@@ -55,6 +55,8 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .marca b{font:700 30px/1.1 var(--serifa);letter-spacing:-.01em}
 .linha-fina{margin:8px 0 12px;font:16px/1.45 var(--sistema);color:var(--meta)}
 .cab nav{display:flex;flex-wrap:wrap;gap:6px 18px;font:15px/1.4 var(--sistema)}
+/* No celular, os três itens do menu (Hoje, Grandes perguntas e Receber por e-mail) cabem numa linha a partir de 390 px. */
+@media (max-width:420px){.cab nav{column-gap:14px}}
 
 /* a direção do risco (bloco próprio em _nota.html) */
 .nota{margin-bottom:30px;min-width:0;font-family:var(--sistema)}
@@ -130,6 +132,23 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .pe p{margin:0 0 8px;max-width:640px}
 .pe a{color:var(--meta)}
 .cab nav a[aria-current="page"]{color:var(--tinta);font-weight:700;text-decoration:none}
+/* A caixa de inscrição (_receba.html): no fim do post e no fim das páginas fixas (O que causa recessão, as Grandes
+   perguntas e Como funciona). Ela aparece uma vez por página e é presa pelo id, para o estilo de cada página (as seções
+   com linha em cima, os títulos e parágrafos de cada aba) não mudar a caixa. */
+#receba{margin:30px 0 8px;padding:18px;border:1px solid var(--fio);border-radius:12px;background:var(--maquina);max-width:660px;font-family:var(--sistema)}
+#receba h2{font:700 21px/1.25 var(--serifa);margin:0 0 6px;padding:0;border:0;text-wrap:balance}
+#receba p{font:15.5px/1.5 var(--sistema);margin:0 0 12px;color:var(--tinta)}
+#receba form{display:flex;flex-wrap:wrap;gap:10px}
+#receba input[type=email]{flex:1 1 220px;min-width:0;min-height:48px;padding:10px 12px;font:17px/1.3 var(--sistema);color:var(--tinta);background:var(--papel);border:1px solid var(--meta);border-radius:8px}
+#receba input[type=email]:focus{outline:2px solid var(--link);outline-offset:1px}
+#receba button{flex:0 0 auto;min-height:48px;padding:0 18px;border:0;border-radius:10px;background:var(--tinta);color:var(--papel);font:700 16px/1.2 var(--sistema);cursor:pointer}
+#receba button:disabled{opacity:.6;cursor:wait}
+#receba .r-robo:empty{display:none}
+#receba .r-priv{font-size:13.5px;color:var(--meta);margin:10px 0 0}
+#receba .r-priv a{color:var(--meta)}
+.so-leitor{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.nq{white-space:nowrap}
+@media (max-width:620px){ #receba button{flex:1 1 100%}}
 /* Menu Grandes perguntas: a aba O que causa recessão e uma página por pressão do topo (base/perguntas), aberto por
    toque, sem JavaScript. A lista
    abre embaixo do menu inteiro, alinhada à esquerda, para caber no celular em qualquer linha em que o item caia. */
@@ -224,7 +243,7 @@ details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
 <header class="cab"><div class="in"><div class="faixa">
   <a class="marca" href="/"><span class="mini" aria-hidden="true"></span><b>Vai dar crise?</b></a>
   <p class="linha-fina">Para onde vai o risco de recessão no Brasil, com dados todo dia.</p>
-  <nav aria-label="Seções"><a href="/">Hoje</a><details class="menu-p"><summary class="atual"><span>Grandes perguntas</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul><li><a href="/causas/"><span class="pn">Para começar</span>O que causa recessão?</a></li><li><a href="/perguntas/divida-do-governo/" aria-current="page"><span class="pn">Contas do governo</span>Por que a dívida do governo cresce tanto?</a></li><li><a href="/perguntas/dividas-das-familias/"><span class="pn">Dívidas das famílias</span>Por que as famílias gastam tanto da renda com dívidas?</a></li><li><a href="/perguntas/dolar-alto/"><span class="pn">Desconfiança de quem investe</span>Por que o dólar sobe tanto no Brasil?</a></li><li><a href="/perguntas/inflacao-acima-da-meta/"><span class="pn">Inflação esperada</span>Por que a inflação do Brasil fica acima da meta?</a></li><li><a href="/perguntas/juro-alto/"><span class="pn">Juro</span>Por que o juro do Brasil é tão alto?</a></li></ul></details></nav>
+  <nav aria-label="Seções"><a href="/">Hoje</a><details class="menu-p"><summary class="atual"><span>Grandes perguntas</span><svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul><li><a href="/causas/"><span class="pn">Para começar</span>O que causa recessão?</a></li><li><a href="/perguntas/divida-do-governo/" aria-current="page"><span class="pn">Contas do governo</span>Por que a dívida do governo cresce tanto?</a></li><li><a href="/perguntas/dividas-das-familias/"><span class="pn">Dívidas das famílias</span>Por que as famílias gastam tanto da renda com dívidas?</a></li><li><a href="/perguntas/dolar-alto/"><span class="pn">Desconfiança de quem investe</span>Por que o dólar sobe tanto no Brasil?</a></li><li><a href="/perguntas/inflacao-acima-da-meta/"><span class="pn">Inflação esperada</span>Por que a inflação do Brasil fica acima da meta?</a></li><li><a href="/perguntas/juro-alto/"><span class="pn">Juro</span>Por que o juro do Brasil é tão alto?</a></li></ul></details><a href="/inscricao/">Receber por e-mail</a></nav>
 </div></div></header>
 
 <main class="in perg">
@@ -370,6 +389,39 @@ details.conferimos h3{font:700 16px/1.35 var(--sistema);margin:18px 0 6px}
 
 </ul>
 </details>
+
+<section class="receba" id="receba" aria-labelledby="receba-tit">
+  <h2 id="receba-tit">Receba o fato do dia no seu <span class="nq">e-mail</span></h2>
+  <p>De segunda a sábado, chega cedo o fato do dia: o assunto da economia que mais se moveu na véspera, explicado pelos números, e para que lado vai o risco de recessão. Aos domingos chega o resumo da semana. Para sair, basta um toque no fim de qualquer <span class="nq">e-mail</span>.</p>
+  <form id="receba-f" method="post" action="https://inscricao.vaidarcrise.com.br/inscrever">
+    <label class="so-leitor" for="receba-email">Seu e-mail</label>
+    <input type="email" id="receba-email" name="email" required autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" maxlength="254" placeholder="Seu e-mail">
+    <button type="submit">Quero receber</button>
+    <div class="so-leitor" aria-hidden="true"><label for="receba-site">Deixe este campo em branco</label><input type="text" id="receba-site" name="site" tabindex="-1" autocomplete="off"></div>
+    <div class="r-robo" data-sitekey="0x4AAAAAAF7crznRGgQXMIqs"></div>
+  </form>
+  <p class="r-priv">A lista guarda só o endereço de <span class="nq">e-mail</span>. <a href="/privacidade/">Privacidade</a></p>
+</section>
+<script>
+(function(){
+  var f=document.getElementById("receba-f"),caixa=f.querySelector(".r-robo"),b=f.querySelector("button");
+  var pronto=false,quer=false,veio=false;
+  function manda(){if(quer)f.submit()}
+  function carrega(){
+    if(veio)return;veio=true;
+    window.recebaRobo=function(){turnstile.render(caixa,{sitekey:caixa.getAttribute("data-sitekey"),language:"pt-br",appearance:"interaction-only",callback:function(){pronto=true;manda()}})};
+    var s=document.createElement("script");s.src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=recebaRobo";s.async=true;document.head.appendChild(s);
+  }
+  f.addEventListener("focusin",carrega);
+  f.addEventListener("submit",function(e){
+    if(pronto)return;
+    e.preventDefault();quer=true;b.disabled=true;carrega();
+    /* Se a barreira não responder em 10 segundos, o pedido segue e a página /inscricao/ mostra a barreira. */
+    setTimeout(function(){if(!pronto)f.submit()},10000);
+  });
+})();
+</script>
+
 </main>
 
 <footer class="pe"><div class="in">

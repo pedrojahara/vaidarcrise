@@ -429,7 +429,7 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 
 | Coisa | Nome no site |
 | --- | --- |
-| Cabeçalho | Hoje e Grandes perguntas, só. Grandes perguntas é um menu que abre com "O que causa recessão?" (rótulo "Para começar") e a página de cada pressão (rótulo com o nome da pressão). Como funciona fica fora do cabeçalho: no topo, ao lado da data da atualização, e no rodapé. O site não liga para o código em nenhuma página |
+| Cabeçalho | Hoje, Grandes perguntas e, com a lista aberta, "Receber por e-mail". Grandes perguntas é um menu que abre com "O que causa recessão?" (rótulo "Para começar") e a página de cada pressão (rótulo com o nome da pressão). Como funciona fica fora do cabeçalho: no topo, ao lado da data da atualização, e no rodapé. O site não liga para o código em nenhuma página |
 | Abas, no texto | O que causa recessão, Como funciona |
 | O link do fato do dia para o básico | Logo abaixo do texto: "O básico sobre o juro" e a pergunta da página; sem página da pressão, "O básico, na página O que causa recessão" e o título da parte |
 | A direção | "O risco de recessão está subindo", "está igual" ou "está caindo"; nos resumos, com desde quando ("desde junho de 2026"); "A economia está encolhendo" quando a prévia do PIB cai mais de 1,5% em 3 meses. Na placa: Subindo, Igual, Caindo, Encolhendo |
@@ -454,7 +454,7 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 | Diferença entre taxas | pontos, abreviado "pt" em tabela |
 | Tipos de post | Retrato do Brasil, Fato do dia, Resumo da semana, Resumo do mês |
 | Quem escreve o post | "Escrito pelo Claude com a ajuda do Pedro.", a mesma assinatura em todo post, sem horário e sem contar notícias |
-| A lista por e-mail | "Receba o fato do dia por e-mail" na página da lista, o botão "Quero receber" e, no fim de todo e-mail, "Sair da lista". A caixa "Receba o fato do dia no seu e-mail" fica no fim do post (na página Hoje, só depois do primeiro); no e-mail, "Recebeu este e-mail de alguém?"; no rodapé, "Receber por e-mail" e "Privacidade". Nada salta na tela, e o cabeçalho não ganha link. A caixa, o "Recebeu" e o link do rodapé só aparecem quando a lista está aberta |
+| A lista por e-mail | "Receba o fato do dia por e-mail" na página da lista, que liga para o último fato do dia para a pessoa ver o que vai receber, o botão "Quero receber" e, no fim de todo e-mail, "Sair da lista". A caixa "Receba o fato do dia no seu e-mail" fica no fim do post (na página Hoje, só depois do primeiro) e no fim de O que causa recessão, das páginas das Grandes perguntas e de Como funciona, onde ela diz em uma frase o que é o fato do dia; no e-mail, "Recebeu este e-mail de alguém?"; "Receber por e-mail" no cabeçalho, depois de Grandes perguntas, e no rodapé, ao lado de "Privacidade". Nada salta na tela. A caixa, o "Recebeu" e os dois links só aparecem quando a lista está aberta |
 | O compartilhar | No fim de todo post, depois do "Entenda a fundo": o botão "Mandar no WhatsApp", que abre o WhatsApp com o título e o link, e ao lado "Copiar link", que vira "Link copiado" por 3 segundos. Nada no topo, nada preso à tela, nenhuma outra rede e nenhuma etiqueta de rastreio no link |
 
 **Palavras com lado.** Fora do texto: "gastança", "rombo", "herança maldita", "austericídio", "desgoverno", "farra". No lugar, o número e o que ele mede.

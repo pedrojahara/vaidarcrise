@@ -20,7 +20,6 @@
 .aviso-f{font:600 16px/1.45 var(--sistema);background:var(--alerta-fundo);padding:10px 14px;border-radius:8px;margin:0 0 14px}
 .botao{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:10px;background:var(--tinta);color:var(--papel);text-decoration:none;font:700 16px/1.2 var(--sistema)}
 .botao:hover{text-decoration:none}
-.nq{white-space:nowrap}
 @media (max-width:620px){.texto h1{font-size:29px}}
 {% endblock %}
 {% block corpo %}
@@ -30,6 +29,7 @@
 <h1>{{ titulo }}</h1>
 {% if pg == "form" %}
 <p>De segunda a sábado, o fato do dia chega cedo no seu e-mail, com o mesmo texto e o mesmo topo do site: para que lado anda o risco de recessão e por quê. Aos domingos chega o resumo da semana.</p>
+{% if exemplo %}<p>Para ver como ele é, leia o último, de {{ exemplo.data }}: <a href="{{ exemplo.link }}">{{ exemplo.titulo }}</a>{% if exemplo.titulo[-1:] not in ("?", "!", ".") %}.{% endif %}</p>{% endif %}
 <p>Para entrar na lista, escreva o seu e-mail abaixo e toque no botão do e-mail de confirmação que chega em seguida. Sem esse toque, o endereço não entra na lista.</p>
 <p class="aviso-f" id="aviso-invalido" hidden>Esse endereço parece incompleto. Confira se ele tem o @ e o final, como .com ou .com.br.</p>
 <p class="aviso-f" id="aviso-robo" hidden>Não deu para confirmar que o pedido veio de uma pessoa. Espere o quadradinho abaixo ficar verde e toque de novo no botão.</p>

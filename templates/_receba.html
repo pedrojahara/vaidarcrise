@@ -1,11 +1,13 @@
-{#- A caixa de inscrição no fim do post: na página de cada post e depois do primeiro post da página Hoje. Só aparece
-    com a lista aberta ("inscricao_aberta" em config/newsletter.json). A barreira contra robôs (Turnstile) só carrega
+{#- A caixa de inscrição: na página de cada post, depois do primeiro post da página Hoje e no fim das páginas fixas
+    (O que causa recessão, as Grandes perguntas e Como funciona, que a incluem com receba_fixa, para dizer o que é o
+    fato do dia a quem ainda não leu um). Só aparece com a lista aberta ("inscricao_aberta" em config/newsletter.json). A barreira contra robôs (Turnstile) só carrega
     quando a pessoa toca no campo, para a página não chamar a Cloudflare à toa; sem JavaScript, o pedido cai na página
     /inscricao/, que mostra a barreira. -#}
 {% if news and news.inscricao_aberta %}
-<section class="receba" aria-labelledby="receba-tit">
+<section class="receba" id="receba" aria-labelledby="receba-tit">
   <h2 id="receba-tit">Receba o fato do dia no seu <span class="nq">e-mail</span></h2>
-  <p>Ele chega cedo, de segunda a sábado, e o resumo da semana chega aos domingos. Para sair, basta um toque no fim de qualquer <span class="nq">e-mail</span>.</p>
+  {% if receba_fixa %}<p>De segunda a sábado, chega cedo o fato do dia: o assunto da economia que mais se moveu na véspera, explicado pelos números, e para que lado vai o risco de recessão. Aos domingos chega o resumo da semana. Para sair, basta um toque no fim de qualquer <span class="nq">e-mail</span>.</p>
+  {%- else %}<p>Ele chega cedo, de segunda a sábado, e o resumo da semana chega aos domingos. Para sair, basta um toque no fim de qualquer <span class="nq">e-mail</span>.</p>{% endif %}
   <form id="receba-f" method="post" action="{{ news.servico }}/inscrever">
     <label class="so-leitor" for="receba-email">Seu e-mail</label>
     <input type="email" id="receba-email" name="email" required autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" maxlength="254" placeholder="Seu e-mail">
