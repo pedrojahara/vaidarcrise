@@ -157,6 +157,71 @@ def comparacoes(texto: str, metas_texto: str = "") -> list[str]:
                 r"de \d+(,\d+)? a \d|até \d)", perto, re.I):
             out.append("compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, "
                        f"ou diga na frase seguinte: {f.strip()[:80]}")
+        # A régua tem duas pontas: a meta e onde a conta está agora. "R$ 3,57 bilhões, num ano em que a meta pede sobra
+        # de R$ 34,3 bilhões" não diz se o custo pesa, porque falta dizer se o ano já está perto do piso (Pedro, 11/11/2026).
+        if (_REAIS.search(f) or _PCT_PIB.search(f)) and re.search(r"\bmeta\b", f, re.I) and not _POSICAO.search(
+                " ".join(frases[max(0, i - 1):i + 2])):
+            out.append("compara com a meta das contas sem dizer em que pé a conta está (a projeção oficial mais recente "
+                       f"do ano, ou o resultado até agora, e quanto falta ou sobra): {f.strip()[:80]}")
+    return out
+
+
+# Onde a conta está agora: a projeção oficial, o resultado até um mês, o que falta ou sobra para a meta.
+_POSICAO = re.compile(r"\b(projet(a|am|ou|aram|ava|avam|ando)|projeç\w+|prev[êe](em)?|previu|previs\w+|acumulad\w*|até (janeiro|fevereiro|março|abril|"
+                      r"maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)|nos \d+ meses|falta\w*|sobra\w* para|"
+                      r"folga|abaixo do piso|acima do piso|no piso|congel\w*|contingenci\w*|bloque\w*|está em|ficou em|"
+                      r"fechou|chega\w* a|dá R\$)", re.I)
+
+
+# Perguntas que a frase levanta e não responde (Pedro, 11/11/2026, sobre o texto do dia): a previsão sem quem, quanto
+# e quando; a lista de causas sem o que cada uma encarece; a estatística do passado em "subiu em 5 e caiu em 1"; a
+# frase que só diz quem decide. São avisos: pedem a reescrita, e o revisor de três leitores confere o resto.
+_PREVISAO_SOLTA = re.compile(r"\b(bancos|mercado|analistas|economistas|investidores|consultorias)\b[^.]{0,30}\b(esperam?|"
+                             r"preveem|prevê|apostam?|veem|vê|projetam?|contam com)\b", re.I)
+_LISTA_CAUSAS = re.compile(r"\b(choques?|riscos?|fatores|causas|motivos|razões|pressões)\b[^.:]{0,80}:\s*[^.]{1,120},"
+                           r"[^.]{1,120},?[^.]{0,120}\be\s", re.I)
+_MECANISMO = re.compile(r"\b(porque|encarec\w*|que (sobe|sobem|deixa|deixam|pesa|pesam)|o que (sobe|encarece|deixa)|"
+                        r"pelo (frete|preço|custo)|no preço|nos preços d[eo])\b", re.I)
+_PASSADO_DIFICIL = re.compile(r"\b(subiu|caiu|ficou igual) em \d+\b[^.]{0,40}\b(subiu|caiu|ficou igual) em \d+\b|"
+                              r"\b\d+ episódios?\b|\bdo começo ao fim de cada um\b", re.I)
+_QUEM_DECIDE_SO = re.compile(r"\bquem (propõe|decide|aprova|vota|define)\b[^.]{0,60}\b(é|são)\b|"
+                             r"^(o governo|a Presidência|o Executivo) (propõe|envia|manda)\b[^.]{0,60}\be o Congresso\b"
+                             r"[^.]{0,30}\b(vota|aprova|decide)\b[^.,;]*\.?$", re.I)
+# A menção que pede "como?" ou "qual?" e não responde: "a IFI faz a projeção de outro jeito" (10/11/2026) e "as medidas
+# do ajuste que a Fazenda diz preparar" (10/11/2026), sem dizer qual jeito nem quais medidas.
+_VAGO = re.compile(r"\bde (outro|outra) (jeito|forma|maneira)\b", re.I)
+_MEDIDA_SEM_CONTEUDO = re.compile(r"\b(ajuste|medidas|pacote|projeto)\b[^.]{0,60}\b(que )?(a Fazenda|o governo|o "
+                                  r"ministro|o presidente)\b[^.]{0,20}\b(diz|promete|prepara|negocia|estuda|anunciou)\b",
+                                  re.I)
+_CONTEUDO = re.compile(r"\d|\b(corta|cortar|corte de|bloque\w*|isenç\w*|imposto|piso|teto|gasto com|reajuste)\b", re.I)
+
+
+def perguntas_no_ar(texto: str) -> list[str]:
+    """As frases que levantam uma pergunta e não a respondem: cada uma vira aviso para a redação (PERSONA.md, regras
+    16 a 20 do jeito de escrever do site)."""
+    out = []
+    frases = [f.strip() for f in FRASE.split(texto) if f.strip()]
+    for i, f in enumerate(frases):
+        seguinte = frases[i + 1] if i + 1 < len(frases) else ""
+        if _PREVISAO_SOLTA.search(f) and not re.search(r"\d", f + " " + seguinte) and len(f.split()) <= 14:
+            out.append("previsão solta: diga quem prevê (os bancos no Focus, a casa com o nome), o quê, quanto e para "
+                       f"quando, ou corte a frase: {f[:80]}")
+        if _LISTA_CAUSAS.search(f) and not _MECANISMO.search(f.split(":", 1)[-1] + " " + seguinte):
+            out.append("lista de causas sem o mecanismo: diga o que cada uma encarece, com um exemplo e o tamanho quando a "
+                       f"fonte dá, e de onde ela vem (de fora, do governo, do Congresso): {f[:80]}")
+        if _PASSADO_DIFICIL.search(f):
+            out.append("estatística do passado difícil de repetir: diga numa frase, por frequência, a condição e o que "
+                       "veio ('em todas as 5 vezes desde 2002 em que..., a Selic terminou mais alta'), com o caso de hoje, "
+                       f"ainda aberto, fora da conta e dito à parte; 'vezes', e não 'episódios': {f[:80]}")
+        if _QUEM_DECIDE_SO.search(f):
+            out.append("frase só para dizer quem decide: se o mecanismo já mostra de quem é a decisão, ela está "
+                       f"implícita; diga quem decide na frase do fato, uma vez: {f[:80]}")
+        if _VAGO.search(f):
+            out.append("\"de outro jeito\" pede \"de que jeito, e com que resultado?\": diga como a conta muda e o número, "
+                       f"ou corte a comparação: {f[:80]}")
+        if _MEDIDA_SEM_CONTEUDO.search(f) and not _CONTEUDO.search(f + " " + seguinte):
+            out.append("medida citada sem o conteúdo: diga o que ela faz (que gasto corta, que imposto muda), o tamanho e "
+                       f"quem relata, ou corte a frase inteira: {f[:80]}")
     return out
 
 
@@ -170,9 +235,15 @@ NUM = re.compile(r"(?<![A-Za-z0-9_,.])(\d{1,3}(?:\.\d{3})+|\d+)(?:,(\d+))?(?![\d
 CONSTANTES = "2004 3 12 5"
 
 
+# A data como as séries e o Focus a guardam (2026-11-06): sustenta o "6/11" do texto (a frase "Na pesquisa Focus de
+# 6/11..." saiu do texto de 11/11/2026 porque a conferência só reconhecia a data escrita como 6/11 ou 6 de novembro).
+DATA_ISO = re.compile(r"(?<!\d)(\d{4})-(\d{2})-(\d{2})(?!\d)")
+
+
 def _datas(texto: str) -> set[tuple[int, int]]:
     out = {(int(d), int(m)) for d, m, _ in DATA_BARRA.findall(texto)}
     out |= {(int(d), MESES.index(m.lower()) + 1) for d, m in DATA_EXTENSO.findall(texto)}
+    out |= {(int(d), int(m)) for _, m, d in DATA_ISO.findall(texto)}
     return {(d, m) for d, m in out if 1 <= d <= 31 and 1 <= m <= 12}
 
 
@@ -324,6 +395,7 @@ def problemas_post(post: dict, tipo: str = "dia", dados: str | None = None, hoje
     total = sum(len(p.split()) for p in post["paragrafos"])
     if tipo == "dia" and total > 100:
         out.append(f"fato do dia com {total} palavras (até 100): corte o que não é o fato, sem mudar os números")
+    out += perguntas_no_ar(" ".join(post["paragrafos"]))
     sig = siglas_soltas(" ".join(_prosa(post)))
     if sig:
         out.append(f"sigla que a leitora não conhece ({', '.join(sig)}): escreva o nome por extenso quando ele explica "

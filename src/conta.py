@@ -414,6 +414,31 @@ def _episodios(mensal: dict, conds: list[tuple[str, str, float]], folga: int = 2
     return out
 
 
+def _contagem(mensal: dict, conds: list[tuple[str, str, float]]) -> tuple[int, int, int, int]:
+    """(encerrados, subiu, caiu, igual): a Selic do começo ao fim de cada episódio encerrado, sem o que ainda vale."""
+    eps = _episodios(mensal, conds)
+    if not eps:
+        return 0, 0, 0, 0
+    s = mensal["selic_meta"]
+    ultimo = max(set.intersection(*[set(_derivada(mensal, k)) for k, _, _ in conds]))
+    n = subiu = caiu = igual = 0
+    for e in eps:
+        if (int(ultimo[:4]) - int(e["ate"][:4])) * 12 + int(ultimo[5:]) - int(e["ate"][5:]) <= 2:
+            continue
+        s0, s1 = s.get(e["de"]), s.get(e["ate"])
+        if s0 is None or s1 is None:
+            continue
+        n, subiu, caiu, igual = n + 1, subiu + (s1 > s0 + 1e-9), caiu + (s1 < s0 - 1e-9), igual + (abs(s1 - s0) <= 1e-9)
+    return n, subiu, caiu, igual
+
+
+def _frase_frequencia(n: int, subiu: int, caiu: int, igual: int) -> str:
+    partes = [(subiu, "terminou mais alta"), (igual, "ficou igual"), (caiu, "terminou mais baixa")]
+    ditas = [f"{'todas as ' + str(n) if q == n else str(q) + ' das ' + str(n)} vezes, a Selic {o}" if i == 0
+             else f"em {q}, {o.replace('terminou ', '')}" for i, (q, o) in enumerate(x for x in partes if x[0])]
+    return "em " + "; ".join(ditas) if ditas else "nenhuma vez encerrada"
+
+
 def cmd_episodios(mensal: dict, a) -> None:
     conds = []
     for c in a.condicoes:
@@ -427,28 +452,63 @@ def cmd_episodios(mensal: dict, a) -> None:
     eps = _episodios(mensal, conds)
     s = mensal["selic_meta"]
     nomes = [k for k, _, _ in conds]
+    # O episódio que ainda vale no fim da série (ou que parou há 2 meses ou menos, o que a folga ainda junta) não
+    # terminou: o que a Selic fez nele até agora não é o fim dele, e ele fica fora da conta. No texto de 11/11/2026, o
+    # "subiu em 5 e caiu em 1" contava como queda o episódio de agora, em que a Selic foi de 14% para 13,75%; nos 5 que
+    # terminaram, ela subiu em todos.
+    ultimo = max(set.intersection(*[set(_derivada(mensal, k)) for k in nomes])) if eps else None
+
+    def _aberto(e: dict) -> bool:
+        return ultimo is not None and (int(ultimo[:4]) - int(e["ate"][:4])) * 12 + int(ultimo[5:]) - int(e["ate"][5:]) <= 2
+
     print("Episódios em que " + " e ".join(f"{k} {o} {_br(v)}" for k, o, v in conds)
           + " (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não "
-          "por mês: um episódio longo não vale mais que um curto.")
+          "por mês: um episódio longo não vale mais que um curto. O episódio que ainda não terminou fica fora da conta.")
     for k in nomes:
         if k in DERIVADAS:
             print(f"{k}: {DERIVADAS[k]}.")
     subiu = caiu = igual = 0
+    abertos = []
     for e in eps:
         ser = {k: _derivada(mensal, k) for k in nomes}
         vals = "; ".join(f"{k} de {_br(ser[k][e['de']])} a {_br(ser[k][e['ate']])} (o maior: {_br(max(ser[k][m] for m in e['meses']))})"
                          for k in nomes)
         s0, s1 = s.get(e["de"]), s.get(e["ate"])
-        if s0 is not None and s1 is not None:
+        aberto = _aberto(e)
+        if aberto:
+            abertos.append((e, s0, s1))
+        elif s0 is not None and s1 is not None:
             subiu, caiu, igual = subiu + (s1 > s0 + 1e-9), caiu + (s1 < s0 - 1e-9), igual + (abs(s1 - s0) <= 1e-9)
         n = (int(e["ate"][:4]) - int(e["de"][:4])) * 12 + int(e["ate"][5:]) - int(e["de"][5:]) + 1
-        print(f"\nde {e['de']} a {e['ate']} ({n} meses): {vals}; Selic de {_br(s0)}% no começo a {_br(s1)}% no fim.")
+        if aberto:
+            print(f"\nde {e['de']} até agora, ainda aberto ({n} meses com dado): {vals}; Selic de {_br(s0)}% no começo a "
+                  f"{_br(s1)}% no último mês com dado. Fica fora da conta, porque ainda não terminou.")
+        else:
+            print(f"\nde {e['de']} a {e['ate']} ({n} meses): {vals}; Selic de {_br(s0)}% no começo a {_br(s1)}% no fim.")
         print("  no começo, " + _linha_mes(mensal, e["de"]))
         print("  12 meses depois do fim, " + _linha_mes(mensal, _mais(e["ate"], 12)))
         rec = [r["de"] for r in _recessoes() if e["de"] <= _tri_mes(r["de"]) <= _mais(e["ate"], 12)]
         print("  recessão começando no episódio ou nos 12 meses seguintes: " + (", ".join(rec) or "nenhuma"))
-    print(f"\n{len(eps)} episódio(s). Do começo ao fim de cada um, a Selic subiu em {subiu}, caiu em {caiu} e ficou "
-          f"igual em {igual}.")
+    fechados = len(eps) - len(abertos)
+    print(f"\n{len(eps)} episódio(s): {fechados} encerrado(s) e {len(abertos)} ainda aberto(s). Do começo ao fim de cada "
+          f"episódio encerrado, a Selic subiu em {subiu}, caiu em {caiu} e ficou igual em {igual}.")
+    contados = subiu + caiu + igual  # os encerrados com a Selic do começo e do fim
+    if contados:
+        print(f"Por frequência, do começo ao fim de cada vez encerrada: {_frase_frequencia(contados, subiu, caiu, igual)}.")
+    for e, s0, s1 in abertos:
+        print(f"O episódio aberto começou em {e['de']}: até agora, a Selic foi de {_br(s0)}% para {_br(s1)}%.")
+    # O corte da condição muda a conta: com a inflação esperada mais de 1,4 ponto acima do centro, a Selic terminou mais
+    # alta em todas as 5 vezes; com o teto da meta (1,5 ponto), em 4 das 6, e ficou igual nas outras 2. Os cortes
+    # vizinhos mostram quanto a conta depende do corte; o texto usa o corte da biblioteca (EVIDENCIA.md), escrito antes.
+    if len(conds) == 1 and contados:
+        k, o, v = conds[0]
+        outros = []
+        for alt in sorted({round(v - 0.5, 2), round(v + 0.5, 2)} | ({1.5} if k == "focus_menos_meta" else set())):
+            if abs(alt - v) < 1e-9:
+                continue
+            outros.append(f"com {k} {o} {_br(alt)}, " + _frase_frequencia(*_contagem(mensal, [(k, o, alt)])))
+        print("Outros cortes, para saber quanto a conta depende do corte: " + "; ".join(outros) + ". O texto usa o "
+              "corte da biblioteca (EVIDENCIA.md), escrito antes, e não o que deixa a conta mais limpa.")
 
 
 def cmd_focus(_m: dict, a) -> None:
