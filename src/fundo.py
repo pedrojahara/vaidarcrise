@@ -114,7 +114,7 @@ SCHEMA_TEXTO = {
         "porque": {"type": "string", "maxLength": 400},
     },
 }
-CABECAS = ["leitora", "defensor", "critico", "regras"]
+CABECAS = ["leitora", "defensor", "critico", "editor", "regras"]
 SCHEMA_REVISOR = {
     "type": "object", "additionalProperties": False, "required": ["objecoes", "caderno", "resumo"],
     "properties": {
@@ -328,12 +328,12 @@ def _ajuda_conta() -> str:
 SISTEMA_PESQUISA = """Você é o pesquisador do texto do dia do vaidarcrise.com.br, um site de educação econômica apartidário que acompanha o risco de recessão do Brasil. O guia do texto do dia está entre <guia> e </guia>: siga-o. O texto do dia não conta uma notícia: ele faz um argumento sobre a história em andamento que mais andou ontem, com os fatos de ontem como prova. O seu trabalho é pensar e pesquisar, não escrever o texto.
 
 Você recebe a ficha da história (bloco <historia>: o que é, a linha do tempo, o próximo marco, os passos de ontem e o último texto do site sobre ela), talvez uma segunda história que também andou, as metas oficiais que servem de régua (bloco <metas>), os dados do site e as três memórias. Responda a estas perguntas, cada resposta com linhas do caderno:
-1. O que mudou na história com os passos de ontem, e por quê, nas palavras de quem decidiu ou de quem divulgou. Ache o documento oficial (a medida provisória, o decreto, a portaria, o projeto de lei, o comunicado, a ata, a nota técnica, o relatório, o Diário Oficial) e anote o trecho que dá o motivo.
+1. O que mudou na história com os passos de ontem, e por quê, nas palavras de quem decidiu ou de quem divulgou. Ache o documento oficial (a medida provisória, o decreto, a portaria, o projeto de lei, o comunicado, a ata, a nota técnica, o relatório, o Diário Oficial), leia-o inteiro, e não só a notícia sobre ele, e anote o trecho que dá o motivo. A notícia resume e às vezes inverte: em 11/11/2026, as notícias diziam que a ata do Copom apontava quatro riscos, e a ata dizia também que o Banco Central não reage ao primeiro efeito desses choques, só se eles se espalharem para a inflação esperada. Anote também uma ou duas frases curtas do documento, copiadas palavra por palavra no "trecho" da linha, que o texto possa citar entre aspas.
 2. O tamanho de cada decisão ou medida: quanto custa ou rende, para quem, a partir de quando e até quando, e de onde vem o dinheiro. O custo de uma isenção, de um benefício ou de uma prorrogação costuma estar na nota da Fazenda, da Receita ou do Tesouro, na exposição de motivos da medida provisória ou no parecer da Câmara e do Senado: procure lá antes de dizer que não achou.
 3. A régua. Compare cada número com a régua da própria regra: o bloco <metas> traz o centro, a margem que a regra aceita e o que ela desconta. Compare sempre na mesma unidade (R$ com R$, % do PIB com % do PIB) e na mesma conta (a conta da meta com a meta, o resultado com todas as despesas com o mesmo resultado de outro ano). Anote no caderno as duas contas quando elas dão leituras diferentes. A régua tem duas pontas, a meta e o ponto em que a conta está agora, porque a meta sozinha não diz se um custo pesa: anote a projeção oficial mais recente do ano pela conta da meta (nas contas do governo, o Relatório de Avaliação de Receitas e Despesas Primárias, que o Planejamento e a Fazenda publicam a cada dois meses, com o bloqueio e o contingenciamento), o resultado até o último mês e quanto falta ou sobra para o centro e para o piso; na inflação, o IPCA de 12 meses e a projeção do Banco Central.
 4. O conteúdo de cada coisa citada. Para cada causa que quem decidiu cita (na ata, no comunicado, na exposição de motivos), anote o que ela encarece, com um exemplo do dia a dia, o tamanho estimado e quem estimou (a tabela de tradução tem o do dólar: `traduz dolar`), e de onde ela vem: de fora do país, do clima, do governo ou do Congresso. Para cada medida anunciada ou relatada, anote o que ela faz (que gasto corta, que imposto muda), o tamanho e quem relata. Para cada previsão, quem previu, o número e o prazo (o Focus diz a Selic esperada no fim de cada ano: `focus`). O texto não pode citar uma coisa sem o conteúdo dela.
 5. Quem discorda: a conta de quem faz outra (a IFI, do Senado; o Tribunal de Contas da União; o Focus; os bancos e as consultorias grandes) e a razão oficial de quem decidiu. A previsão de uma casa grande e conhecida (Itaú, Bradesco, XP, BTG, o FMI) entra com o nome de quem previu e a data, e quando ela muda de lado (crescimento que vira queda) é um sinal forte, que vale anotar com o número de antes e o de agora. Previsão é previsão, não fato.
-6. A vez parecida no passado, se houver, e o que veio depois (a memória longa e as contas do site). Conte por frequência e deixe o caso de hoje, ainda aberto, fora da conta (a saída de `episodios` já separa o aberto).
+6. A vez parecida no passado, se houver, e o que veio depois (a memória longa e as contas do site). Conte por frequência e deixe o caso de hoje, ainda aberto, fora da conta (a saída de `episodios` já separa o aberto e diz o nível que repetir o passado pediria agora e quanto as outras vezes duraram).
 7. O argumento do dia: o que os passos de ontem querem dizer sobre a pergunta aberta da história, para quem eles pesam (a casa, a empresa ou o país), e o que desmentiria o argumento.
 Procure também os passos recentes da mesma história que as manchetes de ontem podem não trazer, como uma medida publicada no Diário Oficial ou o custo que a Fazenda divulgou no mesmo dia. Quando o fato é uma decisão pública, a entrada traz o bloco <decisao>, com as perguntas que o site faz a toda decisão daquele nível: responda a elas também. O site mede a decisão pelo objetivo que quem decidiu escreveu, com o que se sabia no dia, e nunca diz que ela acertou, que errou ou o que o decisor deveria fazer.
 
@@ -394,16 +394,22 @@ SISTEMA_TEXTO = """Você escreve o texto do dia do vaidarcrise.com.br, um site d
 
 O texto do dia faz um argumento só sobre a história em andamento que mais andou ontem (bloco <historia>), com os fatos de ontem como prova. A leitora já viu a manchete: o texto diz o que os números sustentam sobre a pergunta aberta da história, por que o passo de ontem aconteceu e o que isso quer dizer.
 
-Como o texto anda:
-- O primeiro parágrafo diz o passo de ontem e o argumento, com o número que o sustenta. O título e o primeiro parágrafo se entendem sozinhos, num print.
+Como o texto anda: na ordem das perguntas que a leitora faz, uma depois da outra, pulando a que não tem resposta no dia. Não é um molde por tipo de notícia, e a parte maior é a que andou mais ontem:
+1. O que aconteceu, e quanto isso é, contra a régua (a meta, o mês de antes, o que se esperava). Numa decisão, o que foi decidido e o motivo que quem decidiu deu, nos números dele, cada número contra a ponta da meta que conta para ele: na inflação, o ano de agora contra o teto e o prazo em que o Banco Central mira contra o centro.
+2. Por quê: as causas, nas palavras de quem decidiu ou de quem divulgou. Quando são várias, uma frase diz quantas são e quais, e o texto explica uma a uma, na mesma ordem.
+3. Quem pode mexer nisso, e o que fez: as decisões e os anúncios de ontem que mexem nessas causas, cada um com o que ajuda e o que custa.
+4. O que esperar: quem prevê o quê, com número e prazo, contra o que o passado diz, e o melhor argumento de cada lado.
+5. O próximo sinal, com a data, e o e daí do argumento.
+Num IPCA, a 1 é o número contra a meta e o mês de antes, e a 2 é o que puxou; numa revisão de previsão de um banco, a 1 é quem mudou o quê, e a 2, os motivos dele; num dia calmo, cabem a 1 e a 5. O fato vem antes da conclusão: o argumento vai no título, e a abertura não encadeia conclusões que a leitora ainda não tem como seguir. Cada coisa aparece uma vez, no lugar dela: nenhuma causa é citada antes da lista nem volta depois com outro nome.
+- O título e o primeiro parágrafo se entendem sozinhos, num print.
 - Se é a primeira vez que o texto do dia trata da história, dê o contexto inteiro em um parágrafo: o que está em jogo, quem decide e a régua. Se não é, conte só o passo novo, com uma frase de régua, sem repetir o que o site já escreveu.
 - Os fatos de ontem da história entram como prova do argumento, cada um com quem fez e em que pé está (decidido, em votação, anunciado sem ato, previsão, rumor). Fato que não serve ao argumento fica de fora.
-- A melhor objeção, de quem discorda, entra com honestidade, e o tamanho da evidência fica claro.
-- O texto fecha no e daí do argumento: o que ele quer dizer para quem o fato pesa, a casa, a empresa ou o país, conforme o assunto. A frase sobre a vida da leitora (a parcela, o preço, o imposto, o emprego) só entra quando o fato muda algo com número e prazo, ou quando ela acharia que muda e não muda. Não force essa frase e não feche com "nada muda" para cumprir tabela.
+- O melhor argumento de quem discorda entra com honestidade, e o tamanho da evidência fica claro.
+- O texto fecha no próximo sinal e no e daí do argumento: o que ele quer dizer para quem o fato pesa, a casa, a empresa ou o país, conforme o assunto. A frase sobre a vida da leitora (a parcela, o preço, o imposto, o emprego) só entra quando o fato muda algo com número e prazo, ou quando ela acharia que muda e não muda. Não force essa frase e não feche com "nada muda" para cumprir tabela.
 - Se vier o bloco <segunda_historia>, ela entra num parágrafo só, perto do fim, ligada ao argumento se houver ligação, ou dita como o outro assunto que andou ontem.
 - Se a direção do risco mudou, ou uma pressão mudou de lado (os dados do site dizem), o texto começa por isso e diz por quê.
 
-Tamanho: {tamanho} Parágrafos de 2 a 4 frases, separados por uma linha em branco. Num texto de mais de 450 palavras, até 2 intertítulos, cada um numa linha própria que começa com "### " e é uma frase com a ideia da parte. Nada de lista com marcadores.
+Tamanho: {tamanho} Parágrafos de 2 a 4 frases, separados por uma linha em branco. Num texto de mais de 450 palavras, até 2 intertítulos, cada um numa linha própria que começa com "### " e é uma frase curta, de até 10 palavras, com a ideia da parte. Nada de lista com marcadores.
 
 Números e comparações:
 - Todo número, data e fato vem do caderno, da ficha da história, das metas ou dos dados do site. Marque [c3] logo depois da frase que usa a linha c3 do caderno (ou [c3, c7]). Não arredonde diferente da linha. Se precisar de um número que não está em nenhum deles, não use.
@@ -416,7 +422,16 @@ Cada frase responde à pergunta que ela levanta. Leia cada frase como a leitora 
 - "Qual? Quanto? Segundo quem?" Medida, projeto ou previsão citados levam o conteúdo (que gasto corta ou que imposto muda, o tamanho, o prazo) e quem o diz. "Um projeto de ajuste para 2027" sem dizer qual, e "os bancos ainda esperam corte" sem dizer quanto e quando, não entram.
 - "Por que isso encarece, e quanto?" Cada causa citada leva o que ela encarece, com um exemplo, o tamanho quando a fonte ou a tabela de tradução o dão (ou "ninguém mediu ainda"), e de onde vem: de fora do país, do clima, do governo ou do Congresso. Uma lista de causas sem isso é rótulo. Se não cabe explicar todas, explique as que pesam mais e diga que são as maiores.
 - "E o que isso muda?" Toda ressalva diz para que lado empurra a conclusão e por quê. Uma causa de fora, por exemplo, muda quem pode agir sobre ela e se ela pode passar sozinha; se a ressalva não muda nada, ela sai.
-Poucas ideias, cada uma inteira: se o tamanho não dá para explicar tudo, tire uma ideia, e não a explicação das que ficam. A conta do passado vai numa frase, por frequência, com a condição e o que veio ("em todas as 5 vezes desde 2002 em que a inflação esperada pelos bancos passou de 1,4 ponto acima do centro da meta, a Selic terminou mais alta"); o caso de hoje, que ainda não acabou, fica fora da conta e é dito à parte, e a palavra é "vezes", e não "episódios". Diga cada ideia uma vez. Quem decide entra na frase do fato, como sujeito, e não ganha frase própria quando o mecanismo já mostra de quem é a decisão.
+Poucas ideias, cada uma inteira: se o tamanho não dá para explicar tudo, tire uma ideia, e não a explicação das que ficam. A conta do passado vai numa frase, por frequência, com a condição e o que veio: quando foi em todas, "sempre" e quantas foram ("Desde 2002, sempre que a inflação esperada pelos bancos passou de 1,4 ponto acima do centro da meta, a Selic terminou mais alta do que começou. Foram 5 vezes."); quando não, quantas de quantas ("em 4 das 5 vezes"), nunca a porcentagem de poucos casos. O caso de hoje, que ainda não acabou, fica fora da conta e vem numa frase, pelo que repetir o passado quer dizer agora, com o nível ("Agora, repetir o passado seria a Selic subir de novo e passar dos 14% de agosto, quando a inflação esperada cruzou esse limite"), e não pelo caminho do caso até aqui. A palavra é "vezes", e não "episódios". Diga cada ideia uma vez. Quem decide entra na frase do fato, como sujeito, e não ganha frase própria quando o mecanismo já mostra de quem é a decisão.
+
+Soe como gente, e não como máquina (regra 23 do jeito de escrever). Ao lado de uma nota de economia do Meio, o texto que soa como IA tem número em toda frase, "porque" e "por isso" em toda frase, o jornal no meio da frase, nenhuma voz de quem decidiu e frases do mesmo tamanho. Então:
+- Número só onde ele carrega o argumento: muitas frases ficam sem número, e nenhuma tem mais de dois sem precisar.
+- A causa contada como fatos em sequência, ou num verbo que a diz ("encarece", "chega à", "segura"); "porque" e "por isso" cabem uma ou duas vezes no texto.
+- Na frase, só quem disse, decidiu ou estimou (o Banco Central, o Ipea, o presidente do Senado). O jornal que relatou fica na linha "De onde vêm os números", que o site monta com as marcas; quando o fato é só um relato, basta "os jornais relataram". Nada de "segundo Estadão, g1, InfoMoney e Valor".
+- Quando o caderno traz a frase de quem decidiu, cite um trecho curto entre aspas, dentro da paráfrase, copiado palavra por palavra do trecho do caderno. Citação que não está no caderno é erro grave.
+- Frases de tamanhos diferentes: uma curta depois de uma longa fecha a ideia. O parágrafo fecha num fato ou numa citação, e não numa frase que resume o parágrafo.
+- Sujeito concreto, gente ou instituição, com verbo de fazer ou de dizer. Abstração como sujeito de verbo de ligação ("a ata liga X a Y", "esse custo pesa", "o ajuste andou como anúncio") soa como máquina.
+- As palavras do guia não vão para a página: "a melhor objeção", "casos parecidos", "vai na direção da meta", "dá certo se", "a régua", "em que pé está", "o e daí". Diga a coisa ("A própria ata traz um motivo para os bancos esperarem corte").
 
 As regras do site:
 - Use o cargo ou a instituição, nunca o nome de pessoa ou de partido. Sem adjetivo de juízo, e o mesmo critério para fatos que agradam a qualquer lado.
@@ -497,7 +512,7 @@ def redigir(e: dict, pesquisa: dict | None, cad: list[dict], objecoes: list[dict
 
 
 # ------------------------------------------------------------------ 3. revisão
-SISTEMA_REVISOR = """Você é o revisor do texto do dia do vaidarcrise.com.br, um site de educação econômica apartidário que acompanha o risco de recessão do Brasil. O guia está entre <guia> e </guia> e a leitora, entre <persona> e </persona>. Você lê o texto como três leitores ao mesmo tempo e devolve objeções. Você não reescreve o texto: quem escreve responde às suas objeções.
+SISTEMA_REVISOR = """Você é o revisor do texto do dia do vaidarcrise.com.br, um site de educação econômica apartidário que acompanha o risco de recessão do Brasil. O guia está entre <guia> e </guia> e a leitora, entre <persona> e </persona>. Você lê o texto como três leitores e um editor ao mesmo tempo e devolve objeções. Você não reescreve o texto: quem escreve responde às suas objeções.
 
 1. A leitora (cabeça "leitora"): tem curso superior, é gestora ou tem o próprio negócio, gosta de política, não estudou economia, lê pelo celular e recebe muita opinião sobre a economia.
    - Ela consegue repetir cada número a um sócio, como "X, comparado com Y, por isso Z"? Número sem régua, ou frase que ela não entende de primeira, é objeção. Exemplo: "o projeto prevê uma sobra de R$ 18,6 bilhões, abaixo da meta de 0,50% do PIB" não se entende (sobra de quê? a meta é de quanto em reais? abaixo por quê?) e mistura reais com % do PIB.
@@ -506,8 +521,8 @@ SISTEMA_REVISOR = """Você é o revisor do texto do dia do vaidarcrise.com.br, u
    - O dado, a previsão e a opinião estão separados, cada um com quem disse?
    - Alguma frase é molde, de efeito ou repete o que o site já escreveu (o bloco <memoria_do_site>)? Alguma frase pula do argumento para a vida dela sem o caminho de uma coisa à outra (uma frase sobre o financiamento dela num texto sobre as contas do governo, sem dizer como uma coisa leva à outra)? "Nada muda" posto só para fechar o texto é objeção.
    - O teste da pergunta seguinte: para cada frase, o que ela perguntaria logo depois, e o texto responde? São objeções graves: a comparação com a meta sem dizer em que pé a conta está (a projeção oficial do ano, o resultado até agora, quanto falta ou sobra); a medida, o projeto ou a previsão citados sem o conteúdo (qual, quanto, quando, segundo quem), como "um projeto de ajuste" sem dizer qual ou "os bancos esperam corte" sem número; a lista de causas sem o que cada uma encarece e de onde vem; a ressalva que não diz para que lado empurra a conclusão ("desta vez a causa vem de fora", e daí?). Em "onde_conferir", diga onde está a resposta (a linha do caderno, a ficha, a meta) ou que a frase deve sair inteira.
-   - A conta do passado ela repete de primeira, por frequência ("em todas as 5 vezes desde 2002 em que..., a Selic terminou mais alta")? O caso de hoje, ainda aberto, ficou fora da conta?
    - Alguma ideia aparece duas vezes, com outras palavras? Alguma frase existe só para dizer quem decide, quando o mecanismo já mostrou de quem é a decisão? As duas são objeção, não grave.
+   - A conta do passado ela repete de primeira, numa frase, com "sempre" e quantas vezes (ou "em 4 das 5"), e o caso de hoje, ainda aberto, fora da conta e dito pelo que repetir o passado quer dizer agora, com o nível? Contar o caminho do caso até aqui ("começou em agosto, com a Selic em 14%, e até aqui caiu para 13,75%") é objeção.
 2. Quem defende quem decidiu (cabeça "defensor": o governo, o Banco Central ou o Congresso, conforme o fato):
    - A régua é a da própria regra? A margem de tolerância e os descontos da meta (bloco <metas>) entraram na comparação, ou o texto comparou um número com o centro da meta como se a margem não existisse?
    - A razão oficial de quem decidiu está no texto, como foi dada?
@@ -516,7 +531,10 @@ SISTEMA_REVISOR = """Você é o revisor do texto do dia do vaidarcrise.com.br, u
    - Uma promessa ou um anúncio foi tratado como fato?
    - Falta o custo, o prazo, de onde vem o dinheiro ou o número de quem discorda (a IFI, o Tribunal de Contas da União, o Focus, as casas grandes)?
    - O texto aceitou a conta oficial sem dizer o que ela deixa de fora?
-4. As regras do site (cabeça "regras"): número que o caderno não sustenta ou que vem de linha marcada como NÃO CONFERE (o que está na ficha da história, com a linha do tempo, os passos de ontem e as manchetes deles, nas metas e nos dados do site sustenta o fato mesmo sem linha no caderno: quando é relato de jornal ou anúncio, peça só que o texto diga quem relata, e não que tire o conteúdo); conclusão mais forte que a evidência; conselho sobre o que fazer com o dinheiro; frase que julga quem decidiu ("acertou", "errou", "deveria"); promessa de que o site vai conferir ou acompanhar depois; fato posterior ao dia; nome de pessoa ou de partido no lugar do cargo; frase que fala da pesquisa, do caderno, de busca ou do site.
+4. O editor (cabeça "editor"), que edita uma newsletter de jornalismo como o Meio e lê o texto como quem vai publicá-lo:
+   - A ordem: o texto segue as perguntas da leitora (o que aconteceu e quanto é, por quê, quem pode mexer nisso e o que fez, o que esperar, o próximo sinal)? A abertura dá o fato e o porquê com os números contra a régua, ou encadeia conclusões que a leitora ainda não tem como seguir? Quando há várias causas, elas vêm anunciadas numa frase e depois uma a uma, ou alguma aparece antes da lista, fora do lugar ou duas vezes? Abertura que encadeia conclusões e causa citada antes da lista são objeções graves.
+   - A voz: soa como gente? Aponte, com o trecho, o número que não carrega o argumento, o "porque", o "por isso" e o "pesa" em frase atrás de frase, o jornal no meio da frase ("segundo Estadão, g1 e Valor"), a abstração como sujeito ("a ata liga", "esse custo pesa"), o parágrafo que fecha numa síntese, as frases todas do mesmo tamanho e as palavras do guia na página ("a melhor objeção", "casos parecidos", "vai na direção da meta", "a régua"). Quando o caderno traz uma frase de quem decidiu e o texto só parafraseia, sugira citar um trecho curto. Palavra do guia na página é grave; o resto é objeção, não grave.
+5. As regras do site (cabeça "regras"): número que o caderno não sustenta ou que vem de linha marcada como NÃO CONFERE (o que está na ficha da história, com a linha do tempo, os passos de ontem e as manchetes deles, nas metas e nos dados do site sustenta o fato mesmo sem linha no caderno: quando é relato de jornal ou anúncio, peça só que o texto diga quem relata, e não que tire o conteúdo); conclusão mais forte que a evidência; conselho sobre o que fazer com o dinheiro; frase que julga quem decidiu ("acertou", "errou", "deveria"); promessa de que o site vai conferir ou acompanhar depois; fato posterior ao dia; nome de pessoa ou de partido no lugar do cargo; frase que fala da pesquisa, do caderno, de busca ou do site.
 
 Você pode pesquisar (WebSearch, e WebFetch quando a página abrir) para conferir um número ou achar o que falta, nos documentos oficiais primeiro: até umas 6 buscas. Quando achar um número que o texto precisa (o custo de uma medida, a conta de quem discorda), anote-o em "caderno", numa linha do tipo "documento" com id de c201 em diante, com quem publicou, o link, a data (AAAA-MM-DD, até a véspera do dia do texto) e o trecho literal, e cite o id em "onde_conferir". Não escreva o texto por ninguém.
 
@@ -526,7 +544,7 @@ Na segunda volta, você recebe as objeções da primeira e o texto reescrito: de
 
 # A conferência final: depois da segunda reescrita, uma leitura só dos erros, sem busca, para pegar o que a última
 # reescrita estragou (um número dito dentro da margem quando está fora dela, uma causa na ordem errada).
-FINAL_REVISOR = """Esta é a conferência final, depois da última reescrita. Leia o texto como ficou e aponte só o que está errado e não pode sair: um número ou uma comparação que contradiz o próprio texto, o caderno, as metas ou os dados do site (por exemplo, um número dito dentro da margem da meta quando está fora dela); uma causa na ordem errada ou um efeito posto antes da causa; um fato que nem o caderno nem a ficha sustentam; uma frase que a leitora entende ao contrário; uma frase que ficou sem conteúdo ou sem o que a sustentava (a menção a um projeto sem dizer qual, a previsão sem quem, quanto e quando, a frase que anuncia o que foi cortado); a conta do passado que conta o caso de hoje, ainda aberto, como se tivesse terminado. Todas com "grave": true. Não aponte melhoria, estilo nem o que já estava certo, não pesquise e devolva "caderno" vazio. Se não houver erro, devolva a lista vazia."""
+FINAL_REVISOR = """Esta é a conferência final, depois da última reescrita. Leia o texto como ficou e aponte só o que está errado e não pode sair: uma citação entre aspas que não está, palavra por palavra, no trecho de uma linha do caderno; um número ou uma comparação que contradiz o próprio texto, o caderno, as metas ou os dados do site (por exemplo, um número dito dentro da margem da meta quando está fora dela); uma causa na ordem errada ou um efeito posto antes da causa; um fato que nem o caderno nem a ficha sustentam; uma frase que a leitora entende ao contrário; uma frase que ficou sem conteúdo ou sem o que a sustentava (a menção a um projeto sem dizer qual, a previsão sem quem, quanto e quando, a frase que anuncia o que foi cortado); a conta do passado que conta o caso de hoje, ainda aberto, como se tivesse terminado. Todas com "grave": true. Não aponte melhoria, estilo nem o que já estava certo, não pesquise e devolva "caderno" vazio. Se não houver erro, devolva a lista vazia."""
 
 
 def revisar(e: dict, texto: dict, cad: list[dict], codigo: dict, antes: list[dict] | None = None,
@@ -752,6 +770,38 @@ def _base_site(e: dict) -> str:
     return e["dados"]
 
 
+# A citação entre aspas é a fala de quem decidiu, palavra por palavra (PERSONA.md, regra 23): ela tem de estar no trecho
+# de uma linha do caderno, na saída de uma conta, nos dados do site ou na ficha da história. Uma citação que não está em
+# nenhum deles foi resumida ou inventada pela redação. Com CITACAO_MIN palavras ou mais, é erro grave e a frase sai na
+# conferência final, como número sem fonte; mais curta, costuma ser um nome ("Gás do Povo") ou um termo, e fica como aviso.
+ASPAS = re.compile(r'["“]([^"“”\n]{3,600}?)["”]')
+CITACAO_MIN = 5
+_RETICENCIAS = re.compile(r"\s*(?:\.\.\.|…|\[\.\.\.\]|\(\.\.\.\))\s*")
+
+
+def _base_citacoes(cad: list[dict], e: dict) -> str:
+    import verifica_base
+    partes = [(c.get("fonte") or {}).get("trecho", "") for c in cad] + [c.get("saida", "") for c in cad]
+    partes += [(c.get("conferencia") or {}).get("saida", "") for c in cad]
+    partes += [e.get("dados", ""), e.get("base_historia", "")]
+    return verifica_base.normalizar(" ".join(p for p in partes if p))
+
+
+def citacoes_fora(texto: str, base_norm: str) -> list[str]:
+    """As citações entre aspas, de três palavras ou mais, que não estão palavra por palavra em `base_norm` (o texto das
+    fontes, normalizado). As reticências separam pedaços, e cada pedaço tem de estar nas fontes."""
+    import verifica_base
+    out = []
+    for m in ASPAS.finditer(sem_marcas(texto)):
+        q = m.group(1).strip()
+        if len(q.split()) < 3:
+            continue
+        pedacos = [verifica_base.normalizar(x).strip(" .,;:!?") for x in _RETICENCIAS.split(q)]
+        if any(x and x not in base_norm for x in pedacos):
+            out.append(q)
+    return out
+
+
 def conferir_codigo(t: dict, cad: list[dict], e: dict, anterior: str | None = None) -> dict:
     """O que o código confere no texto: tamanho, intertítulos, marcas, números e datas, as regras do verificador e as
     comparações (a mesma unidade, a régua das metas, o "nada muda" repetido)."""
@@ -765,6 +815,12 @@ def conferir_codigo(t: dict, cad: list[dict], e: dict, anterior: str | None = No
         graves.append(f"o texto tem {n} palavras (o tamanho de hoje é de {alvo[0]} a {alvo[1]})")
     elif not alvo[0] <= n <= alvo[1]:
         avisos.append(f"o texto tem {n} palavras (o tamanho de hoje é de {alvo[0]} a {alvo[1]})")
+    base_cit = _base_citacoes(cad, e)
+    for q in citacoes_fora(texto + "\n\n" + t["titulo"], base_cit):
+        if len(q.split()) >= CITACAO_MIN:
+            graves.append(f"citação entre aspas que não está, palavra por palavra, em nenhuma fonte do caderno: \"{q[:100]}\"")
+        else:
+            avisos.append(f"entre aspas e fora das fontes: \"{q[:60]}\"; se é fala de alguém, copie do trecho da fonte")
     hs = [b["h"] for b in bl if "h" in b]
     if len(hs) > 2:
         graves.append(f"{len(hs)} intertítulos (até 2)")
@@ -803,7 +859,9 @@ def conferir_codigo(t: dict, cad: list[dict], e: dict, anterior: str | None = No
             avisos.append(f"bloco {i}: parágrafo de {len(x.split())} palavras")
         avisos += [f"bloco {i}: {m}" for m in revisa_texto.comparacoes(x, _texto_metas(e["metas"]))]
         if "p" in b:  # o intertítulo resume o parágrafo de baixo, que traz o número
-            avisos += [f"bloco {i}: {m}" for m in revisa_texto.perguntas_no_ar(x)]
+            depois = " ".join(sem_marcas(y["p"]) for y in bl[i:i + 3] if "p" in y)
+            avisos += [f"bloco {i}: {m}" for m in revisa_texto.perguntas_no_ar(x, depois)]
+    avisos += revisa_texto.soa_como_maquina(corpo)
     if anterior and revisa_texto.NADA_MUDA.search(corpo) and revisa_texto.NADA_MUDA.search(anterior):
         avisos.append("\"nada muda\" de novo: o texto de ontem também fechou assim; feche no e daí do argumento")
     sig = revisa_texto.siglas_soltas(corpo)
@@ -855,9 +913,14 @@ def _cortar(texto: str, tira) -> tuple[str, list[str]]:
     return _limpar("".join(out)), cortadas
 
 
-def cortar_frases(texto: str, base_ok: str) -> tuple[str, list[str]]:
-    """Último recurso: tira a frase que ainda tem número ou data sem linha que confira."""
-    return _cortar(texto, lambda f: bool(revisa_texto.numeros_fora([sem_marcas(f)], base_ok)))
+def cortar_frases(texto: str, base_ok: str, base_cit: str | None = None) -> tuple[str, list[str]]:
+    """Último recurso: tira a frase que ainda tem número ou data sem linha que confira e, com `base_cit`, a que cita
+    entre aspas, com CITACAO_MIN palavras ou mais, o que não está nas fontes."""
+    def tira(f: str) -> bool:
+        if revisa_texto.numeros_fora([sem_marcas(f)], base_ok):
+            return True
+        return base_cit is not None and any(len(q.split()) >= CITACAO_MIN for q in citacoes_fora(f, base_cit))
+    return _cortar(texto, tira)
 
 
 def cortar_marcas(texto: str, ruins: set[str], fracos: set[str] | None = None, base_ok: str = "") -> tuple[str, list[str]]:
@@ -906,9 +969,10 @@ def cortar_e_reparar(e: dict, pesquisa: dict | None, cad: list[dict], t: dict, l
     alguma saiu, a redação conserta os parágrafos (`reparo`) e o corte roda de novo no texto consertado, para pegar o que
     o conserto tenha trazido sem base. Devolve o texto, as frases cortadas e o registro do conserto."""
     base = _base_ok(cad, e)
+    base_cit = _base_citacoes(cad, e)
     ruins, fracos = _ruins_e_fracos(cad, t["texto"])
     texto, cortadas = cortar_marcas(t["texto"], ruins, fracos, base)
-    texto, mais = cortar_frases(texto, base)
+    texto, mais = cortar_frases(texto, base, base_cit)
     cortadas += mais
     if not cortadas or not reparo:
         return texto, cortadas, None
@@ -920,7 +984,7 @@ def cortar_e_reparar(e: dict, pesquisa: dict | None, cad: list[dict], t: dict, l
         return texto, cortadas, reg
     ruins2, fracos2 = _ruins_e_fracos(cad, rp["texto"])
     t2, c2 = cortar_marcas(rp["texto"], ruins2, fracos2, base)
-    t2, c2b = cortar_frases(t2, base)
+    t2, c2b = cortar_frases(t2, base, base_cit)
     if c2 + c2b:
         reg["cortadas_depois"] = c2 + c2b
     return t2, cortadas + c2 + c2b, reg
