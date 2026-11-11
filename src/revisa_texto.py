@@ -42,8 +42,8 @@ MOLDES = [
     (re.compile(r"(PIB, tudo o que o país produz|IPCA, a inflação oficial|Selic é o juro que o Banco Central decide|"
                 r"\bIBC-Br\b)", re.I),
      "define termo que o link da Wikipédia já explica (PIB, IPCA, Selic) ou usa IBC-Br em vez de 'a prévia do PIB'"),
-    (re.compile(r"\b(cenário ruim|inadimplência|(déficit|superávit) primário|crédito livre)\b", re.I),
-     "palavra que o site trocou (num ano ruim, atraso nas dívidas, gasta mais do que arrecada)"),
+    (re.compile(r"\b(cenário ruim|inadimplência|crédito livre)\b", re.I),
+     "palavra que o site trocou (num ano ruim, atraso nas dívidas)"),
     # PERSONA.md, "Os nomes do site": o juro de 10 anos se explica pelo que é; a pressão se chama Desconfiança de quem investe.
     (re.compile(r"\b(juros? longos?|juros futuros|prêmios? de risco|dólar e juro longo)\b", re.I),
      "palavra que o site trocou: diga o juro de 10 anos (o que o governo paga, acima da inflação, para pegar dinheiro "
@@ -205,6 +205,45 @@ _MEDIDA_SEM_CONTEUDO = re.compile(r"\b(ajuste|medidas|pacote|projeto)\b[^.]{0,60
                                   r"ministro|o presidente)\b[^.]{0,20}\b(diz|promete|prepara|negocia|estuda|anunciou)\b",
                                   re.I)
 _CONTEUDO = re.compile(r"\d|\b(corta|cortar|corte de|bloque\w*|isenç\w*|imposto|piso|teto|gasto com|reajuste)\b", re.I)
+
+
+# O termo que a leitora vai ver nos jornais e que o site não liga à Wikipédia entra primeiro entre parênteses, logo
+# depois da explicação em palavras comuns (Pedro, 11/11/2026): "dívidas que a Justiça mandou o governo pagar
+# (precatórios)". Depois de explicado, ele pode ser o nome da coisa no resto do texto. É aviso.
+_TERMO_DOS_JORNAIS = re.compile(r"\b((?:déficit|superávit) primário|precatórios?|arcabouço fiscal)\b", re.I)
+
+
+def termos_sem_explicacao(texto: str) -> list[str]:
+    """Os termos dos jornais cuja primeira vez no texto não vem entre parênteses, depois da explicação."""
+    out, vistos = [], set()
+    for m in _TERMO_DOS_JORNAIS.finditer(texto):
+        termo = m.group(1).lower().rstrip("s")
+        if termo in vistos:
+            continue
+        vistos.add(termo)
+        if texto[max(0, m.start() - 1):m.start()] != "(":
+            out.append(f"\"{m.group(1)}\" aparece sem a explicação antes: na primeira vez, diga o que é em palavras "
+                       "comuns e ponha o termo entre parênteses logo depois ('dívidas que a Justiça mandou o governo "
+                       "pagar (precatórios)', 'arrecadar mais do que gasta, sem contar os juros da dívida (superávit "
+                       "primário)')")
+    return out
+
+
+# A frase que aponta para um número em vez de dizê-lo obriga a leitora a voltar atrás e a fazer a conta (Pedro,
+# 11/11/2026: "A distância entre esse número e a meta cabe na faixa que os jornais relatam"). É aviso.
+_PONTEIRO = re.compile(r"\b(ess[ea]s?|aquel[ea]s?|tais?) (números?|distâncias?|diferenças?|faixas?|montantes?|cifras?|"
+                       r"percentua(?:l|is)|patamar(?:es)?)\b|\ba distância entre\b|\bcabe na faixa\b", re.I)
+
+
+def ponteiros(texto: str) -> list[str]:
+    """As frases que apontam para um número ("esse número", "essa distância", "a faixa") em vez de dizê-lo."""
+    out = []
+    for f in FRASE.split(texto):
+        m = _PONTEIRO.search(f)
+        if m:
+            out.append(f"aponta para um número em vez de dizê-lo (\"{m.group(0)}\"): repita o número ou o nome e diga o "
+                       f"resultado da conta: {f.strip()[:80]}")
+    return out
 
 
 def perguntas_no_ar(texto: str, depois: str = "") -> list[str]:
@@ -462,6 +501,7 @@ def problemas_post(post: dict, tipo: str = "dia", dados: str | None = None, hoje
             out.append(f"parágrafo {i} em primeira pessoa")
     # O tamanho do texto do dia é conferido em src/fundo.py (conferir_codigo).
     out += perguntas_no_ar(" ".join(post["paragrafos"]))
+    out += termos_sem_explicacao(" ".join(post["paragrafos"]))
     out += soa_como_maquina(" ".join(post["paragrafos"]), numeros=False)
     sig = siglas_soltas(" ".join(_prosa(post)))
     if sig:
