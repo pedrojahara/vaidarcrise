@@ -29,8 +29,10 @@ import hashlib
 import html
 import io
 import json
+import os
 import re
 import sys
+import threading
 import unicodedata
 from pathlib import Path
 
@@ -312,6 +314,15 @@ def baixar(url: str, limite: int = TAMANHO_MAXIMO) -> tuple[bytes, str, str]:
     raise ValueError("redirecionamentos demais")
 
 
+# Um pedido por endereço de cada vez. As linhas do caderno abrem em paralelo, e várias citam o mesmo documento: pedido
+# em rajada, o servidor do Supremo devolve o PDF vazio a parte dos pedidos. Em fila, a primeira linha baixa e as outras
+# leem a cópia. O endereço que demorou a falhar não é tentado de novo por dois minutos, para a fila não somar as esperas.
+_TRAVAS: dict[str, threading.Lock] = {}
+_TRAVA_DAS_TRAVAS = threading.Lock()
+_FALHAS_LENTAS: dict[str, tuple[str, float]] = {}
+_LENTA_DESDE, _LENTA_VALE = 10, 120  # segundos
+
+
 def abrir(url: str, validade_h: float | None = None) -> tuple[str | None, str | None]:
     """(texto, erro). Guarda a página em base/cache para não abrir de novo; com `validade_h`, a cópia mais velha que
     isso é aberta de novo (a página de lista, que muda)."""
@@ -320,8 +331,29 @@ def abrir(url: str, validade_h: float | None = None) -> tuple[str | None, str | 
     # ".v4": a cópia guardada até 12/11/2026 podia ser a página inicial ou um aviso do site (manutenção, verificação de
     # segurança) no lugar do documento, ou o lixo de uma planilha, e a resposta em JSON vinha sem os números
     arq = CACHE / (hashlib.sha256(url.encode()).hexdigest()[:24] + ".v4.txt")
-    if arq.exists() and (validade_h is None or time.time() - arq.stat().st_mtime < validade_h * 3600):
-        return arq.read_text(), None
+    with _TRAVA_DAS_TRAVAS:
+        trava = _TRAVAS.setdefault(url, threading.Lock())
+    with trava:
+        if arq.exists() and (validade_h is None or time.time() - arq.stat().st_mtime < validade_h * 3600):
+            return arq.read_text(), None
+        lenta = _FALHAS_LENTAS.get(url)
+        if lenta and time.time() - lenta[1] < _LENTA_VALE:
+            return None, lenta[0]
+        inicio = time.time()
+        t, erro = _da_rede(url)
+        if erro:
+            if time.time() - inicio > _LENTA_DESDE:
+                _FALHAS_LENTAS[url] = (erro, time.time())
+            return None, erro
+        # A cópia só aparece inteira, para outro programa que abra o mesmo endereço não ler um arquivo pela metade.
+        tmp = arq.with_name(f"{arq.name}.{os.getpid()}.{threading.get_ident()}.tmp")
+        tmp.write_text(t)
+        tmp.replace(arq)
+        return t, None
+
+
+def _da_rede(url: str) -> tuple[str | None, str | None]:
+    """(texto, erro) do endereço aberto agora, sem a cópia."""
     try:
         dados, tipo, _ = baixar(url)
         motivo = formato_que_nao_le(dados, tipo)
@@ -334,12 +366,6 @@ def abrir(url: str, validade_h: float | None = None) -> tuple[str | None, str | 
         return None, motivo
     if len(t.strip()) < 200:
         return None, "página sem texto (talvez só JavaScript ou paywall)"
-    # A cópia só aparece inteira: as linhas do caderno abrem em paralelo, e duas podem pedir o mesmo endereço.
-    import os
-    import threading
-    tmp = arq.with_name(f"{arq.name}.{os.getpid()}.{threading.get_ident()}.tmp")
-    tmp.write_text(t)
-    tmp.replace(arq)
     return t, None
 
 

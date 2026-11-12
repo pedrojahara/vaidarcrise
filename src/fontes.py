@@ -701,97 +701,188 @@ def ato(ref: str, ate: str | None = None) -> list[dict]:
 
 # ------------------------------------------------------------------ o mapa: onde mora cada tipo de documento
 # Cada entrada: o que é, quem é o dono, as palavras que a reconhecem nos passos do dia e onde ela mora. Os endereços
-# foram abertos em 12/11/2026; o que não tem endereço fixo vai com o site do dono e o jeito de achar.
+# foram abertos em 12/11/2026; o que não tem endereço fixo vai com o site do dono e o jeito de achar, e o site que
+# barra robô ou só monta o texto com JavaScript vai dito assim, para a pesquisa não gastar a busca nele.
 MAPA = [
     {"id": "copom", "o_que": "Comunicado e ata do Copom (a decisão da Selic e o porquê)", "dono": "Banco Central",
      "reconhece": r"copom|selic|ata do (banco central|bc)|comunicado do (banco central|bc)|juros? básic",
-     "onde": f"`{FONTES} ato Copom` dá o endereço do último comunicado e da última ata, com o texto inteiro."},
+     "onde": f"`{FONTES} ato Copom` dá o endereço do último comunicado e da última ata, com o texto inteiro; para uma "
+             "reunião anterior, troque o número no fim do endereço (nro_reuniao=281). As páginas de bcb.gov.br só montam "
+             "o texto com JavaScript e não abrem no leitor: use o endereço que o comando dá."},
     {"id": "focus", "o_que": "Relatório Focus (o que os bancos e as consultorias esperam)", "dono": "Banco Central",
      "reconhece": r"focus|expectativas? de mercado|mercado (espera|prev[eê]|projeta)",
-     "onde": f"O site guarda a série (comando focus de src/conta.py). O PDF da semana: `{FONTES} ato Focus`."},
+     "onde": f"O site guarda a série (comando focus de src/conta.py). O PDF da semana: `{FONTES} ato Focus`; o de outra "
+             "semana é https://www.bcb.gov.br/content/focus/focus/RAAAAMMDD.pdf, com a data da sexta-feira."},
     {"id": "bc_outros", "o_que": "Relatório de Política Monetária, estatísticas de crédito, fiscais e do setor externo",
      "dono": "Banco Central", "reconhece": r"relat[oó]rio de (pol[ií]tica monet[aá]ria|infla[cç][aã]o)|estat[ií]sticas (fiscais|de cr[eé]dito)|"
                                            r"setor externo|contas externas|d[ií]vida bruta|inadimpl[eê]ncia",
-     "onde": "bcb.gov.br: as notas para a imprensa ficam em https://www.bcb.gov.br/estatisticas (fiscais, crédito, setor "
-             "externo). O site já guarda as séries principais: confira primeiro com src/conta.py series."},
+     "onde": "O texto de cada nota para a imprensa abre em PDF, com o ano e o mês em que ela saiu no endereço (a de 202610 "
+             "saiu no fim de outubro, com os dados de setembro). Fiscais (resultado e dívida do setor público): "
+             "https://www.bcb.gov.br/content/estatisticas/hist_estatisticasfiscais/AAAAMM_Texto_de_estatisticas_fiscais.pdf. "
+             "Crédito: https://www.bcb.gov.br/content/estatisticas/hist_estatisticasmonetariascredito/AAAAMM_Texto_de_estatisticas_monetarias_e_de_credito.pdf. "
+             "Setor externo: https://www.bcb.gov.br/content/estatisticas/hist_estatisticassetorexterno/AAAAMM_Texto_de_estatisticas_do_setor_externo.pdf. "
+             "Relatório de Política Monetária (março, junho, setembro e dezembro): "
+             "https://www.bcb.gov.br/content/ri/relatorioinflacao/AAAAMM/rpmAAAAMMp.pdf. Resolução do Conselho Monetário ou do "
+             f"Banco Central: `{FONTES} ato \"Resolução CMN 5.141\"`. As páginas de bcb.gov.br só montam o texto com "
+             "JavaScript e não abrem no leitor. O site já guarda as séries principais: confira primeiro com src/conta.py series."},
     {"id": "projeto", "o_que": "Projeto de lei, medida provisória e PEC: o texto, o autor, a justificativa e em que pé está",
      "dono": "Senado e Câmara", "reconhece": r"projeto|\bpec\b|\bplp\b|\bmp\b|medida provis[oó]ria|senado|c[aâ]mara|congresso|relator|vota[cç][aã]o",
-     "onde": f"`{FONTES} ato \"PLP 299/2026\"` (também MP, PEC, PL e PLN) dá o autor, a data, o andamento e o endereço do "
-             "texto inteiro, que traz a justificativa. O parecer do relator e o quadro com o valor de cada medida costumam "
-             "sair na Agência Senado (www12.senado.leg.br/noticias) e na Agência Câmara (camara.leg.br/noticias)."},
+     "onde": f"`{FONTES} ato \"PLP 299/2026\"` (também MP, PEC, PL e PLN) dá o autor, a data, o andamento, o endereço do "
+             "texto inteiro, que traz a justificativa, e os documentos do andamento: o relatório do relator, que costuma "
+             "trazer a estimativa de impacto de cada medida, as emendas e os requerimentos. Na página do projeto no Senado "
+             "(a \"página para ler\" que o comando dá), --links --procura \"PDF\" lista todos os documentos. A notícia do dia "
+             "sai na Agência Senado (https://www12.senado.leg.br/noticias) e na Agência Câmara "
+             "(https://www.camara.leg.br/noticias): use --links."},
     {"id": "lei", "o_que": "Lei, lei complementar, emenda constitucional e decreto em vigor", "dono": "Congresso e Presidência",
      "reconhece": r"lei complementar|\blei\b|emenda constitucional|decreto|arcabou[cç]o|lei de responsabilidade",
-     "onde": f"`{FONTES} ato \"Lei Complementar 200/2023\"` dá o texto no portal de normas do Congresso (normas.leg.br). O "
-             "Planalto (planalto.gov.br/ccivil_03) tem o texto compilado, mas só responde a quem está no Brasil. O ato do "
-             "dia sai no Diário Oficial: procure na busca com \"site:in.gov.br\" e o número."},
+     "onde": f"`{FONTES} ato \"Lei Complementar 200/2023\"` (também lei, emenda constitucional e decreto) dá o endereço do "
+             "texto inteiro, no portal de normas do Congresso ou no site do Senado, que abrem de qualquer lugar. O Planalto "
+             "(planalto.gov.br/ccivil_03) tem o texto compilado, mas só responde a quem está no Brasil. O ato do dia sai no "
+             "Diário Oficial: a página de um ato (https://www.in.gov.br/web/dou/-/...) abre com o texto inteiro, mas a busca "
+             "de in.gov.br não mostra a lista de resultados no leitor. Chegue ao ato pelo link da notícia do órgão ou pela "
+             "busca com \"site:in.gov.br\" e o número."},
     {"id": "contas", "o_que": "Contas do governo: a avaliação bimestral de receitas e despesas (com bloqueio e "
                               "contingenciamento), o resultado do Tesouro do mês e a dívida",
      "dono": "Ministérios do Planejamento e da Fazenda e Tesouro Nacional",
      "reconhece": r"meta fiscal|resultado prim[aá]rio|contingenciamento|bloqueio|d[eé]ficit|super[aá]vit|arrecada[cç][aã]o|"
                   r"tesouro|contas p[uú]blicas|contas do governo|ajuste fiscal|precat[oó]rio",
-     "onde": "O Relatório de Avaliação de Receitas e Despesas Primárias sai a cada dois meses (dia 22 de março, maio, julho, "
-             "setembro e novembro): busque o nome com o bimestre, o ano e \"site:gov.br\". As consultorias de orçamento "
-             "resumem cada relatório: https://www2.camara.leg.br/orcamento-da-uniao/raio-x-do-orcamento/raio_x_avaliacao_receitas_despesas "
-             "e www12.senado.leg.br/orcamento. O resultado do mês (Resultado do Tesouro Nacional) e o Relatório Mensal da "
-             "Dívida ficam em tesourotransparente.gov.br/publicacoes e nas notícias de gov.br/tesouronacional. A arrecadação: "
-             "https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/relatorios/arrecadacao-federal"},
+     "onde": "O Relatório de Avaliação de Receitas e Despesas Primárias sai a cada dois meses (por volta do dia 22 de março, "
+             "maio, julho, setembro e novembro). A lista com o PDF e a apresentação de cada bimestre: "
+             "https://www.gov.br/planejamento/pt-br/assuntos/orcamento/relatorios-de-avaliacao-fiscal (--links --procura "
+             "\"2026\"; o PDF só abre com /@@display-file/file no fim do endereço, como vem no link). As consultorias de "
+             "orçamento resumem cada relatório: a da Câmara em "
+             "https://www2.camara.leg.br/orcamento-da-uniao/raio-x-do-orcamento/raio_x_avaliacao_receitas_despesas (--links "
+             "--procura \"2026\") e a do Senado em "
+             "https://www12.senado.leg.br/orcamento/documentos/estudos/tipos-de-estudos/notas-tecnicas-e-informativos (--links "
+             "--procura \"rardp\"; tire o /view do fim do link para abrir o PDF). O resultado do mês (Resultado do Tesouro "
+             "Nacional) e o Relatório Mensal da Dívida: "
+             "https://www.tesourotransparente.gov.br/publicacoes/boletim-resultado-do-tesouro-nacional-rtn e "
+             "https://www.tesourotransparente.gov.br/publicacoes/relatorio-mensal-da-divida-rmd levam à edição mais recente; se "
+             "não abrirem, a nota de estatísticas fiscais do Banco Central traz o resultado e a dívida do mês, na conta dele. "
+             "As notícias do Tesouro só aparecem pela busca do site: "
+             "https://www.gov.br/tesouronacional/++api++/pt-br/noticias/@search?SearchableText=Governo+Central&sort_on=effective&sort_order=descending&b_size=10 "
+             "(troque os termos). A arrecadação: "
+             "https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/relatorios/arrecadacao-federal/AAAA "
+             "(--links --procura \"analise-mensal\"; tire o /view do fim do link para abrir o PDF)."},
     {"id": "orcamento", "o_que": "Orçamento: o projeto da lei orçamentária (PLOA), a LDO e as notas das consultorias",
      "dono": "Ministério do Planejamento e Congresso", "reconhece": r"or[cç]amento|ploa|\bldo\b|\bloa\b|emendas parlamentares",
-     "onde": "O projeto do ano: https://www.gov.br/planejamento/pt-br/assuntos/orcamento/orcamento/orcamentos-anuais/AAAA "
-             f"(troque AAAA pelo ano). No Congresso ele é um PLN: `{FONTES} ato \"PLN 15/2026\"`. O resumo das consultorias: "
-             "https://www2.camara.leg.br/orcamento-da-uniao/raio-x-do-orcamento"},
+     "onde": "O projeto do ano no Planejamento: https://www.gov.br/planejamento/pt-br/assuntos/orcamento/orcamento/orcamentos-anuais/AAAA "
+             "(troque AAAA pelo ano; --links --procura com o ano; o de 2027, com o texto, a mensagem presidencial e os volumes em PDF, está em "
+             "https://www.gov.br/planejamento/pt-br/assuntos/orcamento/orcamentos-anuais/2027/ploa-2027). No Congresso ele é um "
+             f"PLN, com um número que muda todo ano: `{FONTES} ato \"PLOA 2027\"` acha o projeto do Orçamento (o de 2027 é o "
+             "PLN 24/2026) e `ato \"PLDO 2027\"`, o da LDO (PLN 2/2026). O andamento e as notas das consultorias do "
+             "Congresso: https://www.congressonacional.leg.br/web/orcamento/acompanhe/orcamento-anual/-/loa/AAAA e "
+             "https://www.congressonacional.leg.br/web/orcamento/acompanhe/orcamento-anual/-/loa/AAAA/informacoes/notas-tecnicas "
+             "(--links --procura \"pdf\"). O resumo da Consultoria de Orçamento da Câmara (Raio-X): "
+             "https://www2.camara.leg.br/orcamento-da-uniao/raio-x-do-orcamento/raio-x-do-orcamento, depois o ano (o de 2027: "
+             "https://www2.camara.leg.br/orcamento-da-uniao/raio-x-do-orcamento/2027/raio-x-do-orcamento-ploa-2027)."},
     {"id": "ifi", "o_que": "A conta de quem confere o governo: IFI, consultorias do Congresso e TCU",
      "dono": "Instituição Fiscal Independente (Senado), consultorias de orçamento, Tribunal de Contas da União",
      "reconhece": r"\bifi\b|institui[cç][aã]o fiscal|\btcu\b|tribunal de contas|consultoria de or[cç]amento",
-     "onde": "IFI: o Relatório de Acompanhamento Fiscal do mês e as notas em https://www12.senado.leg.br/ifi/publicacoes-ifi?tipo=relatorio "
-             "(use --links). TCU: https://portal.tcu.gov.br/imprensa/noticias e o acórdão pelo número."},
+     "onde": "IFI: a lista dos Relatórios de Acompanhamento Fiscal está em https://www12.senado.leg.br/ifi/publicacoes-ifi?tipo=relatorio "
+             "(use --links --procura \"Relatório de Acompanhamento Fiscal\" para ver o número e o mês do último). O link da "
+             "lista vai para a biblioteca do Senado (www2.senado.leg.br/bdsf), que barra robô; o mesmo PDF abre em "
+             "https://www12.senado.leg.br/ifi/pdf/rafNÚMERO_mêsANO.pdf, em minúsculas e com o mês em três letras (o de outubro "
+             "de 2026 é https://www12.senado.leg.br/ifi/pdf/raf117_out2026.pdf). TCU: as notícias em "
+             "https://portal.tcu.gov.br/imprensa/noticias (use --links); os acórdãos mais recentes, com número, relator, "
+             "resumo e o endereço do texto inteiro, em "
+             "https://dados-abertos.apps.tcu.gov.br/api/acordao/recupera-acordaos?inicio=0&quantidade=50 (use --procura com o "
+             "número, como \"3103/2026\", e aumente \"inicio\" para chegar aos mais antigos). A pesquisa do TCU "
+             "(pesquisa.apps.tcu.gov.br) não abre no leitor."},
     {"id": "ibge", "o_que": "Inflação (IPCA, INPC), PIB, desemprego (PNAD), indústria, comércio e serviços",
      "dono": "IBGE", "reconhece": r"\bipca\b|\binpc\b|\bpib\b|desemprego|pnad|produ[cç][aã]o industrial|vendas do com[eé]rcio|servi[cç]os|ibge",
-     "onde": "O site já guarda o IPCA, o desemprego e o PIB (src/conta.py series). O texto da divulgação fica em "
-             "agenciadenoticias.ibge.gov.br (a página de cada pesquisa); os números de qualquer tabela, em "
-             "https://apisidra.ibge.gov.br (por exemplo /values/t/1737/n1/all/v/2265/p/last%201 para o IPCA de 12 meses)."},
+     "onde": "O site já guarda o IPCA, o desemprego e o PIB (src/conta.py series). O texto de cada divulgação está no caderno "
+             "\"Indicadores IBGE\", em PDF, no servidor de arquivos do IBGE: abra a pasta com --links --procura \"2026\" e "
+             "pegue o arquivo mais recente. IPCA e INPC: "
+             "https://ftp.ibge.gov.br/Precos_Indices_de_Precos_ao_Consumidor/IPCA/Fasciculo_Indicadores_IBGE/ (o de outubro de "
+             "2026 é ipca-inpc_202610caderno.pdf). IPCA-15: "
+             "https://ftp.ibge.gov.br/Precos_Indices_de_Precos_ao_Consumidor/IPCA_15/Fasciculo_Indicadores_IBGE/. PIB: "
+             "https://ftp.ibge.gov.br/Contas_Nacionais/Contas_Nacionais_Trimestrais/Fasciculo_Indicadores_IBGE/. Desemprego: "
+             "https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Mensal/Fasciculos_Indicadores_IBGE/. "
+             "Indústria: https://ftp.ibge.gov.br/Industrias_Extrativas_e_de_Transformacao/Pesquisa_Industrial_Mensal_Producao_Fisica/Fasciculos/Fasciculo_Indicadores_IBGE_Brasil/. "
+             "Comércio: https://ftp.ibge.gov.br/Comercio_e_Servicos/Pesquisa_Mensal_de_Comercio/Fasciculo_Indicadores_IBGE/. "
+             "Serviços: https://ftp.ibge.gov.br/Comercio_e_Servicos/Pesquisa_Mensal_de_Servicos/Fasciculo_Indicadores_IBGE/. Os "
+             "números de qualquer tabela: https://apisidra.ibge.gov.br (por exemplo /values/t/1737/n1/all/v/2265/p/last%201 "
+             "para o IPCA de 12 meses). Os sites agenciadenoticias.ibge.gov.br, www.ibge.gov.br e sidra.ibge.gov.br barram "
+             "robô (erro 403)."},
     {"id": "emprego", "o_que": "Emprego com carteira (Caged)", "dono": "Ministério do Trabalho",
      "reconhece": r"caged|emprego formal|vagas com carteira|carteira assinada",
-     "onde": "O painel do Novo Caged e o sumário do mês: gov.br/trabalho-e-emprego (busque \"Novo Caged\" com o mês e \"site:gov.br\")."},
+     "onde": "A página do Novo Caged leva ao mês mais recente: "
+             "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/acoes-e-programas/programas-projetos-acoes-obras-e-atividades/estatisticas-trabalho/novo-caged "
+             "(use --links --procura \"sumario; apresentacao\"). Os números da página estão em imagem; o texto está no sumário "
+             "executivo, em PDF, no mesmo endereço mais /2026/setembro/sumario-executivo_setembro-de-2026.pdf (troque o ano e "
+             "o mês). A notícia do ministério: https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/AAAA/MÊS, com o "
+             "mês por extenso (use --links --procura \"caged\")."},
     {"id": "justica", "o_que": "Decisão do Supremo e de outros tribunais", "dono": "o tribunal",
      "reconhece": r"\bstf\b|supremo|ministro .{0,30}(suspende|decide|manda|libera)|tribunal|liminar|julgamento|\bstj\b",
-     "onde": "A notícia do próprio tribunal traz o número do processo: https://noticias.stf.jus.br/ (use --links com o "
-             "assunto). A decisão inteira fica na página do processo, em portal.stf.jus.br, pela classe e pelo número (ADPF, "
-             "ADI, RE)."},
+     "onde": "A notícia do próprio tribunal traz a classe e o número do processo: https://noticias.stf.jus.br/ (use --links) "
+             "ou a busca https://noticias.stf.jus.br/?s=ASSUNTO. A página do processo: "
+             "https://portal.stf.jus.br/processos/listarProcessos.asp?classe=ADI&numeroProcesso=7633 (troque a classe, ADPF, "
+             "ADI, RE ou ARE, e o número); com --links --procura \"incidente\" ela mostra o número do incidente. Com ele, as "
+             "decisões abrem em https://portal.stf.jus.br/processos/abaDecisoes.asp?incidente=NÚMERO (com --links --procura "
+             "\"downloadPeca\", o PDF de cada decisão e do acórdão) e o andamento em "
+             "https://portal.stf.jus.br/processos/abaAndamentos.asp?incidente=NÚMERO&imprimir= . Em processo muito grande "
+             "essas páginas podem dar erro 504: tente de novo."},
     {"id": "regulacao", "o_que": "Decisão de agência reguladora (tarifa de energia, combustível, plano de saúde)",
      "dono": "a agência (Aneel, ANP, ANS, Anatel, ANTT)", "reconhece": r"aneel|\banp\b|\bans\b|anatel|bandeira tarif[aá]ria|tarifa|reajuste",
-     "onde": "No site da agência em gov.br (gov.br/aneel, gov.br/anp, gov.br/ans), nas notícias e nas resoluções; o ato "
-             "sai no Diário Oficial (busca com \"site:in.gov.br\")."},
+     "onde": "No site da agência em gov.br. Aneel: a lista de notícias só aparece pela busca do site, "
+             "https://www.gov.br/aneel/++api++/pt-br/assuntos/noticias/@search?SearchableText=bandeira+tarif%C3%A1ria&sort_on=effective&sort_order=descending&b_size=5 "
+             "(troque os termos). ANP: https://www.gov.br/anp/pt-br/canais_atendimento/imprensa/noticias-comunicados. ANS: "
+             "https://www.gov.br/ans/pt-br/assuntos/noticias (as duas com --links). A resolução ou o despacho sai no Diário "
+             "Oficial: chegue ao ato pelo link da notícia da agência ou pela busca com \"site:in.gov.br\"."},
     {"id": "empresa", "o_que": "Resultado, fato relevante, preço e plano de empresa (Petrobras, Vale, bancos, varejo)",
      "dono": "a empresa", "reconhece": r"petrobras|\bvale\b|lucro|preju[ií]zo|balan[cç]o|resultado (do|no) (trimestre|\d)|"
                                        r"fato relevante|dividendo|pre[cç]o d[aoe] (gasolina|diesel|g[aá]s)",
-     "onde": "A página de relações com investidores da empresa (\"RI\" mais o nome na busca; a da Petrobras é "
-             "investidorpetrobras.com.br, e os preços saem em agencia.petrobras.com.br) e os documentos entregues à CVM "
-             "(rad.cvm.gov.br). O comunicado da empresa é a fonte; o jornal é o relato."},
+     "onde": "Petrobras: as notícias da própria empresa (resultado, dividendo, mudança de preço) saem em "
+             "https://agencia.petrobras.com.br/ (use --links --procura \"/w/\"), e a composição do preço está em "
+             "https://precos.petrobras.com.br/precos-diesel, /precos-gasolina e /precos-glp. A página de relações com "
+             "investidores (\"RI\" mais o nome da empresa na busca; a da Petrobras é investidorpetrobras.com.br) abre, mas a "
+             "lista de comunicados da Petrobras só aparece com JavaScript. Documento entregue à CVM (fato relevante, "
+             "comunicado ao mercado, resultado): o link de cada documento abre no leitor "
+             "(https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?...), mas a consulta da CVM é um formulário que o "
+             "leitor não preenche. Chegue ao documento pelo link da notícia ou pela busca com o nome da empresa e \"fato "
+             "relevante\". O comunicado da empresa é a fonte; o jornal é o relato."},
     {"id": "banco", "o_que": "Previsão e análise de banco, corretora ou consultoria", "dono": "a casa que previu",
      "reconhece": r"ita[uú]|bradesco|santander|\bbtg\b|\bxp\b|goldman|jp ?morgan|morgan stanley|citi|ubs|bank of america|"
                   r"consultoria|economista-chefe|revis(a|ou) (a )?(previs|proje)|relat[oó]rio (do|da) (banco|corretora)",
-     "onde": "A página de análises da casa: Itaú (itau.com.br/itaubba-pt/analises-economicas), Bradesco "
-             "(economiaemdia.com.br), XP (conteudos.xpi.com.br/economia), BTG (btgpactual.com/research). Muitos relatórios "
-             "só vão para clientes: aí vale o jornal conhecido que o leu, e a frase diz de quem é a previsão e a data."},
+     "onde": "As páginas de análise dos bancos não abrem no leitor: Itaú (itau.com.br/itaubba-pt/analises-economicas), XP "
+             "(conteudos.xpi.com.br/economia) e Santander (santander.com.br/analise-economica) barram robô (erro 403), e "
+             "Bradesco (economiaemdia.com.br) e BTG (btgpactual.com/research) só montam o texto com JavaScript. Para o que os "
+             "bancos esperam em conjunto, use o Focus. Para a previsão de uma casa, vale o jornal conhecido que leu o "
+             "relatório, e a frase diz de quem é a previsão e a data; se a busca mostrar o trecho no site do banco, anote a "
+             "linha com ele, e a conferência do Mac tenta abrir."},
     {"id": "entidade", "o_que": "Pesquisa e sondagem de entidade (indústria, comércio, veículos, supermercados, crédito)",
      "dono": "a entidade (CNI, CNC, FGV, Anfavea, Fenabrave, Abras, Abecip, Serasa, Dieese)",
      "reconhece": r"\bcni\b|\bcnc\b|fgv|anfavea|fenabrave|abras|abecip|serasa|dieese|sondagem|confian[cç]a (do|da)|"
                   r"endividamento|igp-?m|ind[ií]ce de confian[cç]a",
-     "onde": "A página de pesquisas ou de imprensa da própria entidade (o nome dela e o da pesquisa na busca). A entidade "
-             "é a dona do número que mediu e parte interessada no que defende: a frase diz o nome dela."},
+     "onde": "A página de pesquisas ou de imprensa da própria entidade (o nome dela e o da pesquisa na busca). Abrem no "
+             "leitor: CNI (https://www.portaldaindustria.com.br/estatisticas/), Fenabrave "
+             "(https://www.fenabrave.org.br/portalv2/Conteudo/emplacamentos), Abras (https://www.abras.com.br/economia-e-pesquisa), "
+             "Abecip (https://www.abecip.org.br/imprensa/noticias) e Serasa (https://www.serasaexperian.com.br/sala-de-imprensa/). "
+             "A entidade é a dona do número que mediu e parte interessada no que defende: a frase diz o nome dela."},
     {"id": "fora", "o_que": "Dado e decisão de fora: juros dos Estados Unidos, inflação e emprego de lá, petróleo, tarifas",
      "dono": "o órgão de fora (Fed, BLS, BEA, Casa Branca, Banco Central Europeu, Opep, FMI, Banco Mundial, OCDE)",
      "reconhece": r"\bfed\b|federal reserve|estados unidos|\beua\b|tarifa|trump|casa branca|china|opep|petr[oó]leo|\bfmi\b|"
                   r"banco mundial|ocde|zona do euro|\bbce\b",
      "onde": "Fed: o comunicado e a ata de cada reunião em https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm "
-             "(use --links). Inflação e emprego dos Estados Unidos: bls.gov; PIB: bea.gov. Tarifas: whitehouse.gov e "
-             "federalregister.gov. Opep: opec.org. FMI (imf.org) e BLS barram robôs: quando a página não abrir, vale o "
-             "trecho que a busca mostra do próprio site, e a conferência do Mac tenta de novo."},
+             "(use --links --procura \"monetary2026; fomcminutes2026\"); o comunicado é "
+             "https://www.federalreserve.gov/newsevents/pressreleases/monetaryAAAAMMDDa.htm, com a data do último dia da "
+             "reunião. Inflação dos Estados Unidos: https://www.bls.gov/news.release/cpi.nr0.htm; emprego: "
+             "https://www.bls.gov/news.release/empsit.nr0.htm (os dois sempre trazem a divulgação mais recente). PIB: "
+             "https://www.bea.gov/data/gdp/gross-domestic-product e a lista https://www.bea.gov/news/current-releases. Banco "
+             "Central Europeu: as decisões do ano em https://www.ecb.europa.eu/press/govcdec/mopo/2026/html/index_include.en.html "
+             "e as atas em https://www.ecb.europa.eu/press/accounts/2026/html/index_include.en.html (troque o ano). FMI: "
+             "https://www.imf.org/en/Publications/WEO (use --links --procura \"world-economic-outlook\"). Tarifas e atos do "
+             "governo dos Estados Unidos: https://www.whitehouse.gov/presidential-actions/ e "
+             "https://www.federalregister.gov/api/v1/documents.json?per_page=5&order=newest&conditions[term]=tariff (troque o "
+             "termo). Opep (opec.org), Agência Internacional de Energia (iea.org) e OCDE (oecd.org) barram robô: quando a "
+             "página não abrir, vale o trecho que a busca mostra do próprio site, e a conferência do Mac tenta de novo."},
     {"id": "risco", "o_que": "Nota de crédito do país e de empresas", "dono": "a agência de classificação de risco",
      "reconhece": r"s&p|standard & poor|moody|fitch|nota de cr[eé]dito|grau de investimento|rating|risco[- ]pa[ií]s",
-     "onde": "O comunicado da própria agência: spglobal.com/ratings, moodys.com, fitchratings.com (o nome do país e "
-             "\"rating action\" na busca)."},
+     "onde": "O comunicado da própria agência (o nome do país e \"rating action\" na busca): spglobal.com/ratings barra robô "
+             "(erro 403), fitchratings.com só monta o texto com JavaScript e moodys.com abre. Quando a página não abrir, vale "
+             "o trecho que a busca mostra do próprio site, e a conferência do Mac tenta de novo. Se a nota é de uma empresa "
+             "de capital aberto, o comunicado dela ao mercado repete a decisão."},
 ]
 
 
