@@ -3018,7 +3018,7 @@
       "trecho": "o Copom manteve a Selic em 13,75% ao ano, por unanimidade, na 282ª reunião (resumo da busca; página não aberta)"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": false
      }
     },
@@ -3039,6 +3039,7 @@
      },
      "conferencia": {
       "status": "nao_aberto",
+      "por_que": "página sem texto (talvez só JavaScript ou paywall)",
       "fonte_conhecida": true
      }
     },
@@ -3063,7 +3064,7 @@
       "trecho": "projeção para ele subiu para 3,5% no cenário de referência; passou de 3,2% para 3,5%; a tabela do comunicado projeta 5,6% em 2026 e 4,7% em 2027 (resumo da busca)"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": false
      }
     },
@@ -3374,7 +3375,7 @@
       "trecho": "Copom interrompe ciclo de cortes e mantém Selic em 13,75%"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3395,7 +3396,7 @@
       "trecho": "Brasil cria 121.305 empregos formais em setembro de 2026"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3416,7 +3417,7 @@
       "trecho": "Itaú corta projeção do PIB de 2027 para 0,5% e vê inflação acima da meta"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3437,7 +3438,7 @@
       "trecho": "Dívida atrelada à Selic bate recorde histórico em 2026"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3499,7 +3500,7 @@
       "trecho": "Petróleo continua em queda com o aumento das expectativas de fim do conflito envolvendo o Irã"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3517,7 +3518,7 @@
       "trecho": "Lula fará pronunciamento no fim de semana para anunciar medidas de ajuste e tentar acalmar mercado"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": true
      }
     }
@@ -3537,6 +3538,31 @@
      "objecoes": [],
      "caderno": [],
      "resumo": "Conferência final sem erro grave. Os números batem com o caderno, a ficha, as metas e os dados do site. A contagem de seis meses fora da faixa vai de setembro a fevereiro e está certa. A conta do passado deixa fora o caso de hoje, que ainda não terminou, e diz o nível de 14% que repetir o passado pediria. As previsões do Focus e do Itaú vêm com quem previu, o número e o prazo."
+    },
+    "reconferencia": {
+     "em": "2026-11-12T05:19:37-03:00",
+     "ruins": [
+      "c1",
+      "c3"
+     ],
+     "fracos": [
+      "c1",
+      "c3"
+     ],
+     "frases_cortadas": [],
+     "abertos": 11,
+     "final": {
+      "graves": [],
+      "avisos": [
+       "c1 não confere (trecho_nao_achado: ) e está marcada no texto",
+       "c1 vem de site fora da lista de fontes conhecidas: https://www.nomadglobal.com/portal/analises/analise-do-copom-novembro-de-2026",
+       "c3 não confere (trecho_nao_achado: ) e está marcada no texto",
+       "c3 vem de site fora da lista de fontes conhecidas: https://www.nomadglobal.com/portal/analises/analise-do-copom-novembro-de-2026",
+       "bloco 1: porcentagem de meta que a ficha das metas não tem (5,6, 4,7): confira a meta e a margem em config/metas.json: O motivo é a inflação que ele projeta: 5,6% em 2026 e 4,7% em 2027, as duas acim"
+      ],
+      "palavras": 585,
+      "intertitulos": 2
+     }
     }
    },
    "titulo": "Selic para em 13,75%, e com inflação esperada bem acima da meta ela sempre acabou maior",
@@ -3544,11 +3570,11 @@
    "argumento": "O Banco Central parou de cortar com a inflação projetada acima da meta; nas 5 vezes desde 2002 com inflação esperada tão alta, a Selic terminou mais alta, e só o petróleo em queda pode mudar isso.",
    "porque": "O Banco Central disse que a inflação projetada subiu, para 5,6% em 2026 e 3,5% no segundo trimestre de 2028, com um ambiente externo mais adverso para o petróleo e choques de oferta.",
    "pressao": "juro",
-   "duracao_s": 473
+   "duracao_s": 473,
+   "fontes_abertas": true
   },
   "termina_em": "juro",
-  "pergunta": "juro-alto",
-  "revisao_manual": "Refeito na nuvem em 11/11/2026 com a estrutura e a voz novas (segunda crítica do Pedro ao texto de 11/11: abertura com o fato e o porquê nos números contra a régua, o texto na ordem das perguntas da leitora, a lista anunciada antes do detalhe, a conta do passado com 'sempre' e o caso de hoje pelo que repetir o passado quer dizer agora, e a voz de gente, comparada às notas do Meio). a reconferência do Mac abre as fontes."
+  "pergunta": "juro-alto"
  },
  "pauta": {
   "versao": 2,

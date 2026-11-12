@@ -3082,7 +3082,7 @@
       "trecho": "Primeiro Focus pós-eleição eleva projeções de inflação, Selic e dólar para 2026"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -3282,8 +3282,7 @@
       }
      ],
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true,
+      "status": "conferido",
       "via": "memória do momento"
      }
     },
@@ -3330,7 +3329,7 @@
      },
      "do_revisor": true,
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": false
      }
     }
@@ -3345,6 +3344,21 @@
      ],
      "palavras": 498,
      "intertitulos": 2
+    },
+    "reconferencia": {
+     "em": "2026-11-12T05:19:35-03:00",
+     "ruins": [],
+     "fracos": [],
+     "frases_cortadas": [],
+     "abertos": 3,
+     "final": {
+      "graves": [],
+      "avisos": [
+       "c201 vem de site fora da lista de fontes conhecidas: https://muitainformacao.com.br/negocios/mercado-eleva-projecoes-para-inflacao-selic-e-dolar-e-reduz-previsao-do-pib-em-2026/"
+      ],
+      "palavras": 500,
+      "intertitulos": 2
+     }
     }
    },
    "titulo": "Primeiro Focus depois da eleição prevê inflação acima do teto e menos cortes da Selic",
@@ -3352,7 +3366,8 @@
    "argumento": "O primeiro Focus depois da eleição subiu a inflação esperada para acima do teto em 2026 e 2027 e passou a prever menos cortes da Selic, com o dólar da eleição chegando aos preços.",
    "porque": "O Focus não traz o motivo de cada banco; a pesquisa veio depois de o dólar subir 8,2% no dia seguinte à eleição, e pela conta do Banco Central uma alta assim soma cerca de 0,8 ponto ao IPCA em 12 meses, se não voltar.",
    "pressao": "juro",
-   "duracao_s": 513
+   "duracao_s": 513,
+   "fontes_abertas": true
   },
   "termina_em": "juro",
   "pergunta": "juro-alto"

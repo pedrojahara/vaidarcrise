@@ -2926,7 +2926,7 @@
       "trecho": "Em revisão de cenário divulgada nesta sexta-feira (30), o banco disse que projeta um PIB de 0,5% em 2027, ante 1,2% na projeção anterior."
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -2948,7 +2948,7 @@
       "trecho": "Desemprego cai para 5,2% e Brasil registra menor índice desde 2012"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -2978,8 +2978,7 @@
       }
      ],
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true,
+      "status": "numeros_na_pagina",
       "via": "memória do momento"
      }
     },
@@ -3071,8 +3070,7 @@
       }
      ],
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true,
+      "status": "conferido",
       "via": "memória do momento"
      }
     },
@@ -3148,8 +3146,7 @@
       }
      ],
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true,
+      "status": "conferido",
       "via": "memória do momento"
      }
     },
@@ -3174,7 +3171,7 @@
      },
      "do_revisor": true,
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": false
      }
     },
@@ -3197,7 +3194,7 @@
      },
      "do_revisor": true,
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": false
      }
     }
@@ -3215,6 +3212,27 @@
      ],
      "palavras": 498,
      "intertitulos": 2
+    },
+    "reconferencia": {
+     "em": "2026-11-12T05:19:14-03:00",
+     "ruins": [],
+     "fracos": [],
+     "frases_cortadas": [],
+     "abertos": 7,
+     "final": {
+      "graves": [],
+      "avisos": [
+       "c1 vem de site fora da lista de fontes conhecidas: https://www.bemparana.com.br/noticias/economia/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta/",
+       "c2 vem de site fora da lista de fontes conhecidas: https://movimentoeconomico.com.br/economia/2026/10/30/desemprego-cai-para-52-e-brasil-registra-menor-indice-desde-2012/",
+       "c201 vem de site fora da lista de fontes conhecidas: https://www.bemparana.com.br/noticias/economia/itau-corta-projecao-do-pib-de-2027-para-05-e-ve-inflacao-acima-da-meta/",
+       "c202 vem de site fora da lista de fontes conhecidas: https://www.jb.com.br/economia/2026/10/1061411-itau-atualiza-cenario-pib-cresce-so-05-em-2027-com-inflacao-de-61-e-parada-na-selic-em-1375.html",
+       "bloco 1: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: O banco também subiu a inflação que espera para 2027 de 4,6% para 6,1%, acima do",
+       "bloco 8: aponta para um número em vez de dizê-lo (\"esse número\"): repita o número ou o nome e diga o resultado da conta: Para a empresa que planeja contratar em 2027, é esse número que separa a previsã",
+       "frases quase todas do mesmo tamanho: depois de uma frase longa, feche a ideia com uma curta"
+      ],
+      "palavras": 491,
+      "intertitulos": 2
+     }
     }
    },
    "titulo": "Desemprego cai a 5,2%, mas o Itaú já prevê o PIB de 2027 em 0,5% e inflação acima do teto",
@@ -3222,7 +3240,8 @@
    "argumento": "O desemprego perto do menor da série convive com renda parada e consumo em queda, e o Itaú já prevê para 2027 crescimento de 0,5%, inflação acima do teto e a Selic parada em 13,75%.",
    "porque": "Pelo que os jornais relataram, o Itaú atribuiu a maior parte da alta da inflação prevista para 2027 a mudanças de impostos e de regras e a um dólar mais caro, sem detalhar o motivo do corte do PIB.",
    "pressao": "ritmo",
-   "duracao_s": 426
+   "duracao_s": 426,
+   "fontes_abertas": true
   },
   "termina_em": "ritmo"
  },

@@ -2902,8 +2902,7 @@
       }
      ],
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true,
+      "status": "conferido",
       "via": "memória do momento"
      }
     },
@@ -2924,7 +2923,7 @@
       "trecho": "Brent cai 8% proposta de paz do Irã plano de dois dias para Ormuz novembro 2026"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": false
      }
     },
@@ -2988,7 +2987,7 @@
       "trecho": "Governo prorroga por um mês subvenção de R$ 2,12 ao diesel"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -3052,7 +3051,7 @@
       "trecho": ""
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": true
      }
     },
@@ -3115,7 +3114,7 @@
       "trecho": "Itaú reduz a previsão do PIB de 2027 para 0,5%"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3136,7 +3135,7 @@
       "trecho": "Dívida atrelada à Selic bate recorde histórico em 2026"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3159,7 +3158,7 @@
      },
      "do_revisor": true,
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3181,7 +3180,7 @@
      },
      "do_revisor": true,
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     }
@@ -3199,6 +3198,26 @@
      ],
      "palavras": 576,
      "intertitulos": 2
+    },
+    "reconferencia": {
+     "em": "2026-11-12T05:19:34-03:00",
+     "ruins": [],
+     "fracos": [],
+     "frases_cortadas": [],
+     "abertos": 8,
+     "final": {
+      "graves": [],
+      "avisos": [
+       "c5 vem de site fora da lista de fontes conhecidas: https://mercadoeconsumo.com.br/27/10/2026/noticias/governo-prorroga-por-um-mes-subvencao-de-r-212-ao-diesel/",
+       "c202 vem de site fora da lista de fontes conhecidas: https://www.novacana.com/noticias/prorrogacao-da-subvencao-ao-diesel-em-r-2-12-custara-r-10-5-bilhoes",
+       "bloco 4: frase só para dizer quem decide: se o mecanismo já mostra de quem é a decisão, ela está implícita; diga quem decide na frase do fato, uma vez: Na refinaria, quem decide o preço é a Petrobras.",
+       "bloco 5: porcentagem de meta que a ficha das metas não tem (4,58): confira a meta e a margem em config/metas.json: O IPCA subiu 4,58% nos 12 meses até setembro, acima do teto da meta.",
+       "bloco 5: porcentagem de meta que a ficha das metas não tem (4,22): confira a meta e a margem em config/metas.json: Em agosto, o IPCA estava em 4,22%, dentro da faixa, e a regra só considera a met",
+       "bloco 5: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: Em agosto, o IPCA estava em 4,22%, dentro da faixa, e a regra só considera a met"
+      ],
+      "palavras": 576,
+      "intertitulos": 2
+     }
     }
    },
    "titulo": "Petróleo cai quase 8% com sinal de paz, mas segue 19% acima do fim de julho",
@@ -3206,7 +3225,8 @@
    "argumento": "A queda de quase 8% do petróleo é aposta numa negociação, e não um acordo: o barril segue 19% acima do fim de julho, a inflação passou do teto e o dólar também empurra os preços.",
    "porque": "O barril caiu com a expectativa de que os Estados Unidos e o Irã voltem a negociar, depois de três dias de conversa do Irã com mediadores do Catar e de o presidente dos Estados Unidos dizer que um acordo pode acontecer.",
    "pressao": "inflacao",
-   "duracao_s": 390
+   "duracao_s": 390,
+   "fontes_abertas": true
   },
   "termina_em": "inflacao",
   "pergunta": "inflacao-acima-da-meta"

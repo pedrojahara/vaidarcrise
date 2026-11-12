@@ -5781,6 +5781,18 @@
     "titulo": "Legacy encerra apostas no Brasil após vitória de Lula e vê estagflação em 2027",
     "url": "https://www.infomoney.com.br/onde-investir/legacy-encerra-apostas-no-brasil-apos-vitoria-de-lula-e-ve-estagflacao-em-2027/",
     "publicado_em": "2026-11-10T17:53+00:00"
+   },
+   {
+    "veiculo": "Estadão",
+    "titulo": "Juro alto e dívida crescente fazem analistas reduzir projeções de crescimento econômico",
+    "url": "https://www.estadao.com.br/economia/juro-alto-e-divida-crescente-fazem-analistas-reduzir-projecoes-de-crescimento-economico/",
+    "publicado_em": "2026-11-11T08:30+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "A conta da demora fiscal",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/colunas/solange-srour/2026/11/a-conta-da-demora-fiscal.shtml",
+    "publicado_em": "2026-11-11T14:30-03:00"
    }
   ],
   "cobertura": {
@@ -5831,5 +5843,800 @@
    ]
   },
   "pontos": 0.05
+ },
+ {
+  "id": "ev-20261112-01",
+  "data": "2026-11-11",
+  "titulo_evento": "Governo envia ao Senado projeto de ajuste de até R$ 60 bi nas contas de 2027",
+  "estagio": "em_votacao",
+  "origem": "politica",
+  "fator": "contas",
+  "direcao": -1,
+  "magnitude": 2,
+  "ja_no_preco": false,
+  "porque": "O projeto corta benefícios de impostos e limita o crescimento dos gastos de 2,5% para 2%, para o governo gastar menos do que arrecada. Parte do mercado vê o ajuste como pequeno e a base do governo resiste, o que pode reduzir o efeito.",
+  "decisor": "governo_federal",
+  "instrumento": "regra_fiscal",
+  "objetivo": "buscar o centro da meta de resultado primário e reforçar as contas públicas",
+  "historia": "contas_governo",
+  "tema_novo": "",
+  "marco": true,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": 0.6,
+  "veiculos": [
+   "Agência Brasil",
+   "Gazeta do Povo",
+   "InfoMoney",
+   "Poder360",
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Gazeta do Povo",
+    "titulo": "Governo Lula envia ao Senado projeto de ajuste fiscal com corte de benefícios tributários",
+    "url": "https://www.gazetadopovo.com.br/economia/governo-lula-envia-ao-senado-projeto-de-ajuste-fiscal-com-corte-de-beneficios-tributarios/",
+    "publicado_em": "2026-11-12T00:07+00:00"
+   },
+   {
+    "veiculo": "Valor",
+    "titulo": "Proposta de ajuste fiscal do governo prevê gatilho que reduz crescimento real de despesas de 2,5% para 2%",
+    "url": "https://valor.globo.com/politica/noticia/2026/11/11/proposta-de-ajuste-fiscal-do-governo-preve-gatilho-que-reduz-crescimento-de-despesas-de-25percent-para-2percent.ghtml",
+    "publicado_em": "2026-11-11T20:16+00:00"
+   },
+   {
+    "veiculo": "Agência Brasil",
+    "titulo": "Governo anuncia medidas de ajuste para economia de até R$ 60 bilhões",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/governo-anuncia-medidas-de-ajuste-para-economia-de-ate-r-60-bilhoes",
+    "publicado_em": "2026-11-11T17:48-03:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Governo prevê ajuste de até R$ 60 bilhões em 2027 e propõe trava para gastos",
+    "url": "https://www.infomoney.com.br/politica/governo-preve-ajuste-de-ate-r-60-bilhoes-em-2027-e-propoe-trava-para-gastos/",
+    "publicado_em": "2026-11-11T18:42+00:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Governo apresenta ao Senado projeto para ajuste fiscal em 2027",
+    "url": "https://www.infomoney.com.br/politica/governo-apresenta-ao-senado-projeto-para-ajuste-fiscal-em-2027/",
+    "publicado_em": "2026-11-11T20:54+00:00"
+   },
+   {
+    "veiculo": "Poder360",
+    "titulo": "Ajuste fiscal proposto pode chegar a R$ 60 bilhões em 2027, diz Moretti",
+    "url": "https://www.poder360.com.br/poder-economia/ajuste-fiscal-proposto-pode-chegar-a-r-60-bilhoes-em-2027-diz-moretti/",
+    "publicado_em": "2026-11-11T18:46+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 26,
+   "jornais": [
+    "Agência Brasil",
+    "Estadão",
+    "Folha",
+    "Gazeta do Povo",
+    "InfoMoney",
+    "Poder360",
+    "Valor",
+    "g1"
+   ]
+  },
+  "pontos": -1.2
+ },
+ {
+  "id": "ev-20261112-02",
+  "data": "2026-11-11",
+  "titulo_evento": "Projeto tira até R$ 10,5 bi de subsídio ao diesel da meta das contas",
+  "estagio": "em_votacao",
+  "origem": "politica",
+  "fator": "contas",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "O governo poderia gastar até R$ 10,5 bilhões com o diesel sem que isso conte na meta de 2026. A meta fica menos exigente, e as contas dependem menos de corte de gastos.",
+  "decisor": "governo_federal",
+  "instrumento": "regra_fiscal",
+  "objetivo": "",
+  "historia": "contas_governo",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": 0.5,
+  "veiculos": [
+   "Agência Brasil",
+   "Estadão",
+   "Folha",
+   "Poder360"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Poder360",
+    "titulo": "Governo propõe tirar R$ 10,5 bi em diesel da meta fiscal",
+    "url": "https://www.poder360.com.br/poder-infra/governo-propoe-tirar-r-105-bi-em-diesel-da-meta-fiscal/",
+    "publicado_em": "2026-11-11T23:23+00:00"
+   },
+   {
+    "veiculo": "Estadão",
+    "titulo": "Em projeto de ajuste, governo propõe tirar da meta até R$ 10,5 bi em subsídio ao diesel",
+    "url": "https://www.estadao.com.br/economia/em-projeto-com-medidas-fiscais-governo-propoe-tirar-ate-r-105-bi-em-subsidio-ao-diesel-da-meta/",
+    "publicado_em": "2026-11-11T21:43+00:00"
+   },
+   {
+    "veiculo": "Agência Brasil",
+    "titulo": "Projeto quer retirar R$ 10,5 bi em subsídios ao diesel da meta fiscal",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/projeto-quer-retirar-r-105-bi-em-subsidios-ao-diesel-da-meta-fiscal",
+    "publicado_em": "2026-11-11T19:13-03:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Projeto de ajuste fiscal autoriza tirar até R$ 10,5 bi de subvenção ao diesel da meta de 2026",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/projeto-de-ajuste-fiscal-autoriza-tirar-ate-r-105-bi-de-subvencao-ao-diesel-da-meta-de-2026.shtml",
+    "publicado_em": "2026-11-11T19:09-03:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 4,
+   "jornais": [
+    "Agência Brasil",
+    "Estadão",
+    "Folha",
+    "Poder360"
+   ]
+  },
+  "pontos": 0.5
+ },
+ {
+  "id": "ev-20261112-03",
+  "data": "2026-11-11",
+  "titulo_evento": "Lucro do Banco do Brasil cai 66,5% com atraso nas dívidas do agro",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "credito",
+  "direcao": 1,
+  "magnitude": 2,
+  "ja_no_preco": false,
+  "porque": "O Banco do Brasil lucrou R$ 1,27 bilhão no 3º trimestre e agora prevê carteira de crédito entre queda de 2% e estabilidade. Com mais atraso no agro e no cartão, o banco empresta menos.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "credito_inadimplencia",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Agência Brasil",
+   "Folha",
+   "Gazeta do Povo",
+   "InfoMoney",
+   "g1"
+  ],
+  "fontes": [
+   {
+    "veiculo": "g1",
+    "titulo": "Lucro do Banco do Brasil cai 66,5% no 3º trimestre, para R$ 1,27 bilhão",
+    "url": "https://g1.globo.com/economia/noticia/2026/11/11/banco-do-brasil-bb-resultados-3t26.ghtml",
+    "publicado_em": "2026-11-11T23:03+00:00"
+   },
+   {
+    "veiculo": "Agência Brasil",
+    "titulo": "Lucro do BB cai 66,5% no 3º trimestre com inadimplência do agro",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/lucro-do-bb-cai-665-no-3o-trimestre-com-inadimplencia-do-agro",
+    "publicado_em": "2026-11-11T22:20-03:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "BB corta projeção de lucro pela metade e eleva previsão de perdas com crédito",
+    "url": "https://www.infomoney.com.br/mercados/bb-corta-projecao-de-lucro-pela-metade-e-eleva-previsao-de-perdas-com-credito/",
+    "publicado_em": "2026-11-11T22:53+00:00"
+   },
+   {
+    "veiculo": "Gazeta do Povo",
+    "titulo": "Banco do Brasil registra tombo no lucro com disparada da inadimplência do agro",
+    "url": "https://www.gazetadopovo.com.br/economia/banco-do-brasil-tem-tombo-no-lucro-com-disparada-da-inadimplencia-do-agro/",
+    "publicado_em": "2026-11-12T01:07+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Banco do Brasil tem queda de 66,5% no lucro com inadimplência do agronegócio",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/financas/2026/11/banco-do-brasil-tem-queda-de-65-no-lucro-com-inadimplencia-do-agronegocio.shtml",
+    "publicado_em": "2026-11-11T19:31-03:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "BB traz decepção generalizada e coloca recuperação em xeque: como mercado leu o 3T",
+    "url": "https://www.infomoney.com.br/mercados/banco-do-brasil-bbas3-traz-decepcao-generalizada-alertas-e-coloca-recuperacao-em-xeque-como-mercado-leu-o-3t/",
+    "publicado_em": "2026-11-12T02:54+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 10,
+   "jornais": [
+    "Agência Brasil",
+    "Folha",
+    "Gazeta do Povo",
+    "InfoMoney",
+    "Poder360",
+    "g1"
+   ]
+  },
+  "pontos": 2.0
+ },
+ {
+  "id": "ev-20261112-04",
+  "data": "2026-11-11",
+  "titulo_evento": "Senado aprova MP que renegocia dívidas rurais",
+  "estagio": "decidido",
+  "origem": "politica",
+  "fator": "credito",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "A MP estava perto de perder a validade e o Senado a aprovou no limite do prazo. Produtores rurais ganham como renegociar o que devem, o que pode aliviar o atraso no campo.",
+  "decisor": "congresso",
+  "instrumento": "credito_publico",
+  "objetivo": "",
+  "historia": "credito_inadimplencia",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Estadão",
+   "g1"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Estadão",
+    "titulo": "Senado aprova renegociação das dívidas rurais após concessões para o agro",
+    "url": "https://www.estadao.com.br/economia/agronegocios/senado-aprova-renegociacao-das-dividas-rurais-texto-segue-para-sancao/",
+    "publicado_em": "2026-11-11T23:09+00:00"
+   },
+   {
+    "veiculo": "g1",
+    "titulo": "Senado aprova MP que renegocia dívidas rurais e retira mudanças em regras propostas pela Câmara sobre cigarros eletrônicos",
+    "url": "https://g1.globo.com/politica/noticia/2026/11/11/senado-aprova-mp-que-renegocia-dividas-rurais-e-retira-mudancas-em-regras-propostas-pela-camara-sobre-cigarros-eletronicos.ghtml",
+    "publicado_em": "2026-11-11T21:41+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 2,
+   "jornais": [
+    "Estadão",
+    "g1"
+   ]
+  },
+  "pontos": -1.0
+ },
+ {
+  "id": "ev-20261112-05",
+  "data": "2026-11-11",
+  "titulo_evento": "Galípolo diz que cenário é mais difícil e que Selic sai reunião a reunião",
+  "estagio": "anuncio",
+  "origem": "banco_central",
+  "fator": "juro",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": true,
+  "porque": "O presidente do Banco Central vê economia mais fraca e expectativas de inflação em alta, sem dar prazo nem valor para a Selic. O juro tende a ficar onde está por mais tempo.",
+  "decisor": "banco_central",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "juro_inflacao",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": true,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Estadão",
+   "Folha",
+   "Valor",
+   "g1"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Valor",
+    "titulo": "Galípolo: Cenário atual é ‘mais desafiador’, com atividade mais fraca e expectativas de inflação subindo",
+    "url": "https://valor.globo.com/financas/noticia/2026/11/11/galpolo-cenrio-atual-mais-desafiador-com-atividade-mais-fraca-e-expectativas-de-inflao-subindo.ghtml",
+    "publicado_em": "2026-11-11T18:40+00:00"
+   },
+   {
+    "veiculo": "g1",
+    "titulo": "Galípolo cita incertezas e diz que BC decidirá sobre juros 'reunião a reunião'",
+    "url": "https://g1.globo.com/economia/noticia/2026/11/11/galipolo-decisoes-sobre-juros.ghtml",
+    "publicado_em": "2026-11-11T20:12+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Galípolo defende que Banco Central não antecipe decisão sobre juros em meio a incertezas",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/galipolo-defende-que-banco-central-nao-antecipe-trajetoria-de-juros-em-meio-a-incertezas.shtml",
+    "publicado_em": "2026-11-11T16:44-03:00"
+   },
+   {
+    "veiculo": "Estadão",
+    "titulo": "Galípolo: Há segmentos de crédito com grande descolamento à taxa básica",
+    "url": "https://www.estadao.com.br/economia/galipolo-ha-segmentos-de-credito-com-grande-descolamento-a-taxa-basica/",
+    "publicado_em": "2026-11-11T20:06+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 5,
+   "jornais": [
+    "Estadão",
+    "Folha",
+    "Valor",
+    "g1"
+   ]
+  },
+  "pontos": 0.15
+ },
+ {
+  "id": "ev-20261112-06",
+  "data": "2026-11-11",
+  "titulo_evento": "Galípolo descarta mudar a meta de inflação",
+  "estagio": "anuncio",
+  "origem": "banco_central",
+  "fator": "juro",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": true,
+  "porque": "O presidente do Banco Central disse que não vê espaço para experimentos com o regime de metas. Isso mantém a regra atual de inflação, sem a ideia de baixar o juro por decisão política.",
+  "decisor": "banco_central",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "limitar_juro",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": true,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "InfoMoney"
+  ],
+  "fontes": [
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Galípolo diz respeitar debates, mas descarta mudar regime de metas de inflação",
+    "url": "https://www.infomoney.com.br/economia/galipolo-diz-respeitar-debates-mas-descarta-mudar-regime-de-metas-de-inflacao/",
+    "publicado_em": "2026-11-11T19:23+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "InfoMoney"
+   ]
+  },
+  "pontos": -0.075
+ },
+ {
+  "id": "ev-20261112-07",
+  "data": "2026-11-11",
+  "titulo_evento": "Serviços recuam 0,1% em setembro e interrompem 29 altas seguidas contra um ano antes",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "atividade",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "O volume de serviços, setor que mais emprega, caiu 0,1% sobre agosto e ficou abaixo do esperado, com queda em transportes e em informação e comunicação.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "ritmo_emprego",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Agência Brasil",
+   "Estadão",
+   "Gazeta do Povo",
+   "Poder360",
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Valor",
+    "titulo": "Serviços têm leve queda em setembro, a primeira para o mês desde 2023",
+    "url": "https://valor.globo.com/brasil/noticia/2026/11/11/servicos-tem-leve-queda-em-setembro-a-primeira-para-o-mes-desde-2023.ghtml",
+    "publicado_em": "2026-11-11T12:23+00:00"
+   },
+   {
+    "veiculo": "Poder360",
+    "titulo": "Serviços recuam 0,1% em setembro, diz IBGE",
+    "url": "https://www.poder360.com.br/poder-economia/servicos-recuam-01-em-setembro-diz-ibge/",
+    "publicado_em": "2026-11-11T12:03+00:00"
+   },
+   {
+    "veiculo": "Estadão",
+    "titulo": "Volume de serviços prestados no País cai 0,1% em setembro, abaixo do esperado",
+    "url": "https://www.estadao.com.br/economia/ibge-volume-servicos-prestados-cai-setembro-2026/",
+    "publicado_em": "2026-11-11T12:42+00:00"
+   },
+   {
+    "veiculo": "Gazeta do Povo",
+    "titulo": "Setor de serviços cai 0,1% em setembro e interrompe sequência de resultados positivos",
+    "url": "https://www.gazetadopovo.com.br/economia/setor-de-servicos-cai-01-em-setembro-e-interrompe-sequencia-de-resultados-positivos/",
+    "publicado_em": "2026-11-11T15:35+00:00"
+   },
+   {
+    "veiculo": "Agência Brasil",
+    "titulo": "Setor de serviços varia -0,1% em setembro, impactado pelos transportes",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/setor-de-servicos-varia-01-em-setembro-impactado-pelos-transportes",
+    "publicado_em": "2026-11-11T10:15-03:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 6,
+   "jornais": [
+    "Agência Brasil",
+    "Estadão",
+    "Gazeta do Povo",
+    "Poder360",
+    "Valor"
+   ]
+  },
+  "pontos": 1.0
+ },
+ {
+  "id": "ev-20261112-08",
+  "data": "2026-11-11",
+  "titulo_evento": "Gestoras elevam caixa e fundo Verde reduz ações locais e compra dólar",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "mercado",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "Com a incerteza sobre as contas, gestoras guardam mais dinheiro e o fundo Verde vendeu ações brasileiras e comprou dólar. Menos dinheiro vai para ativos daqui, e o dólar tende a subir.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "desconfianca_eleicao",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Estadão",
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Estadão",
+    "titulo": "Incerteza fiscal faz gestoras elevarem caixa e reverem aposta em ativos locais",
+    "url": "https://www.estadao.com.br/economia/coluna-da-broad/incerteza-fiscal-faz-gestoras-elevar-caixa-e-rever-aposta-em-ativos-locais/",
+    "publicado_em": "2026-11-12T01:00+00:00"
+   },
+   {
+    "veiculo": "Valor",
+    "titulo": "Verde reduz posição em ações locais e compra dólar após eleição: ‘Não há boas notícias’",
+    "url": "https://valor.globo.com/financas/noticia/2026/11/11/verde-reduz-posio-em-aes-locais-e-compra-dlar-aps-eleio-no-h-boas-notcias.ghtml",
+    "publicado_em": "2026-11-11T20:46+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 3,
+   "jornais": [
+    "Estadão",
+    "Valor"
+   ]
+  },
+  "pontos": 1.0
+ },
+ {
+  "id": "ev-20261112-09",
+  "data": "2026-11-11",
+  "titulo_evento": "Dólar cai a R$ 5,562, Bolsa sobe 0,42% e juros futuros recuam com plano fiscal",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "mercado",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "O mercado recebeu bem o pacote de ajuste das contas, e o juro que o governo paga para se financiar recuou. O entusiasmo é limitado, porque muitos veem o plano como pequeno.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "desconfianca_eleicao",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Agência Brasil",
+   "InfoMoney",
+   "Poder360"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Poder360",
+    "titulo": "Dólar cai 0,43% e fecha em R$ 5,562; Ibovespa sobe 0,42%",
+    "url": "https://www.poder360.com.br/poder-economia/dolar-cai-043-e-fecha-em-r-5562-ibovespa-sobe-042/",
+    "publicado_em": "2026-11-11T21:24+00:00"
+   },
+   {
+    "veiculo": "Agência Brasil",
+    "titulo": "Dólar cai 0,42% e fecha a R$ 5,56 com foco em pacote fiscal",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-cai-042-e-fecha-r-556-com-foco-em-pacote-fiscal",
+    "publicado_em": "2026-11-11T19:51-03:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Taxas dos DIs fecham em queda com plano fiscal do governo no foco",
+    "url": "https://www.infomoney.com.br/mercados/taxas-dos-dis-fecham-em-queda-com-plano-fiscal-do-governo-no-foco/",
+    "publicado_em": "2026-11-11T20:20+00:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Ibovespa sobe com exterior e noticiário fiscal e corporativo – apesar de Petrobras",
+    "url": "https://www.infomoney.com.br/mercados/ibovespa-sobe-com-exterior-e-noticiario-fiscal-e-corporativo-apesar-de-petrobras/",
+    "publicado_em": "2026-11-11T14:42+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 5,
+   "jornais": [
+    "Agência Brasil",
+    "InfoMoney",
+    "Poder360",
+    "g1"
+   ]
+  },
+  "pontos": -1.0
+ },
+ {
+  "id": "ev-20261112-10",
+  "data": "2026-11-11",
+  "titulo_evento": "Gilmar Mendes suspende ações sobre tabela do SUS e trava precatórios",
+  "estagio": "decidido",
+  "origem": "politica",
+  "fator": "contas",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "A decisão impede a liberação de precatórios até o julgamento, e a União indica risco de R$ 243 bilhões. O governo adia pagamentos, o que alivia as contas por enquanto.",
+  "decisor": "tribunal",
+  "instrumento": "outro",
+  "objetivo": "",
+  "historia": "contas_governo",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Folha",
+   "Poder360"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Poder360",
+    "titulo": "Gilmar suspende ações sobre tabela SUS e trava precatórios em todo país",
+    "url": "https://www.poder360.com.br/poder-justica/gilmar-suspende-acoes-sobre-tabela-sus-e-trava-precatorios-em-todo-pais/",
+    "publicado_em": "2026-11-11T22:24+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Gilmar manda suspender todos os processos sobre valores pagos pelo SUS a hospitais privados",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/gilmar-manda-suspender-todos-os-processos-sobre-valores-pagos-pelo-sus-a-hospitais-privados.shtml",
+    "publicado_em": "2026-11-11T19:46-03:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 2,
+   "jornais": [
+    "Folha",
+    "Poder360"
+   ]
+  },
+  "pontos": -1.0
+ },
+ {
+  "id": "ev-20261112-11",
+  "data": "2026-11-11",
+  "titulo_evento": "Governo descarta adiar a reforma tributária e propõe regras de transição",
+  "estagio": "anuncio",
+  "origem": "politica",
+  "fator": "atividade",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "A Receita manteve a cobrança da CBS em 2027, com seis meses sem multa e 30 dias a mais para pagar. Empresas pedem adiamento por falhas no sistema, e a transição menos dura reduz o custo de adaptação.",
+  "decisor": "governo_federal",
+  "instrumento": "imposto",
+  "objetivo": "facilitar a adaptação das empresas sem multas",
+  "historia": "nova",
+  "tema_novo": "reforma-tributaria-2027",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "InfoMoney",
+   "g1"
+  ],
+  "fontes": [
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Governo descarta adiar reforma tributária para 2028 e promete adaptação sem multas",
+    "url": "https://www.infomoney.com.br/politica/governo-descarta-adiar-reforma-tributaria-para-2028-e-promete-adaptacao-sem-multas/",
+    "publicado_em": "2026-11-11T14:34+00:00"
+   },
+   {
+    "veiculo": "g1",
+    "titulo": "Governo descarta adiamento da reforma tributária",
+    "url": "https://g1.globo.com/economia/blog/ana-flor/post/2026/11/11/governo-descarta-adiamento-da-reforma-tributaria.ghtml",
+    "publicado_em": "2026-11-11T16:25+00:00"
+   },
+   {
+    "veiculo": "g1",
+    "titulo": "Reforma tributária: governo vai propor que CBS comece em fevereiro de 2027 e diz que contribuinte que agir de boa-fé não será multado",
+    "url": "https://g1.globo.com/economia/noticia/2026/11/11/reforma-tributaria-receita-confirma-inicio-da-cbs-em-janeiro-de-2027-e-diz-que-contribuinte-que-agir-de-boa-fe-nao-sera-multado.ghtml",
+    "publicado_em": "2026-11-11T13:11+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 13,
+   "jornais": [
+    "Agência Brasil",
+    "Estadão",
+    "Folha",
+    "InfoMoney",
+    "Poder360",
+    "Valor",
+    "g1"
+   ]
+  },
+  "pontos": -0.3
+ },
+ {
+  "id": "ev-20261112-12",
+  "data": "2026-11-11",
+  "titulo_evento": "Bolsas de Nova York sobem com tecnologia e Nvidia recupera parte da queda",
+  "estagio": "dado",
+  "origem": "mundo",
+  "fator": "externo",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "As ações de tecnologia dos EUA se recuperaram depois de dois dias de perdas, com resultado forte da CoreWeave. Diminui o risco de a queda lá fora chegar ao dólar e à Bolsa daqui.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "queda_das_acoes_de_tecnologia",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Folha",
+   "InfoMoney",
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Valor",
+    "titulo": "Bolsas de NY sobem com apoio de 'tecjs'; Nvidia e CoreWeave se destacam",
+    "url": "https://valor.globo.com/financas/noticia/2026/11/11/bolsas-de-ny-sobem-com-apoio-de-tecjs-nvidia-e-coreweave-se-destacam.ghtml",
+    "publicado_em": "2026-11-11T21:31+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Ações da Nvidia têm forte alta e chegam a subir mais de 5% após perderem US$ 428 bilhões",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/11/acoes-da-nvidia-tem-forte-alta-e-chegam-a-subir-mais-de-5-apos-perderem-us-428-bilhoes.shtml",
+    "publicado_em": "2026-11-11T07:54-03:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Wall Street sobe com impulso da CoreWeave a negociações relacionadas à IA",
+    "url": "https://www.infomoney.com.br/mercados/wall-street-sobe-com-impulso-da-coreweave-a-negociacoes-relacionadas-a-ia/",
+    "publicado_em": "2026-11-11T15:19+00:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "CoreWeave dissipa temores sobre IA com perspectivas otimistas e ações saltam 20%",
+    "url": "https://www.infomoney.com.br/mercados/coreweave-dissipa-temores-sobre-ia-com-perspectivas-otimistas-e-acoes-saltam-20/",
+    "publicado_em": "2026-11-11T15:31+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 5,
+   "jornais": [
+    "Folha",
+    "InfoMoney",
+    "Valor"
+   ]
+  },
+  "pontos": -1.0
+ },
+ {
+  "id": "ev-20261112-13",
+  "data": "2026-11-11",
+  "titulo_evento": "Dirigente do banco central dos EUA vê inflação de outubro como perturbadora",
+  "estagio": "anuncio",
+  "origem": "mundo",
+  "fator": "externo",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": true,
+  "porque": "A inflação de outubro nos EUA reforça a aposta de alta de juros lá. Juro maior nos EUA tende a tirar dinheiro de países como o Brasil e a pressionar o dólar.",
+  "decisor": "fora",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "fed_juros_eua",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": true,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Valor",
+    "titulo": "Dados de inflação nos EUA são ‘perturbadores’, diz Goolsbee, do Fed",
+    "url": "https://valor.globo.com/financas/noticia/2026/11/11/dados-de-inflacao-nos-eua-sao-perturbadores-diz-goolsbee-do-fed.ghtml",
+    "publicado_em": "2026-11-11T09:47+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "Valor"
+   ]
+  },
+  "pontos": 0.075
+ },
+ {
+  "id": "ev-20261112-14",
+  "data": "2026-11-11",
+  "titulo_evento": "Gilmar Mendes defende negociação coletiva para viabilizar o fim da escala 6x1",
+  "estagio": "anuncio",
+  "origem": "politica",
+  "fator": "atividade",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "O ministro do STF aponta a negociação entre sindicatos e empresas como caminho, sem ato nem prazo. Empresas de mão de obra intensiva, como o varejo, calculam aumento de custos com a nova escala.",
+  "decisor": "tribunal",
+  "instrumento": "outro",
+  "objetivo": "",
+  "historia": "nova",
+  "tema_novo": "fim-da-escala-6x1",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": true,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Folha"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Folha",
+    "titulo": "Gilmar Mendes defende negociação coletiva para viabilizar fim da escala 6x1",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/gilmar-mendes-defende-negociacao-coletiva-para-viabilizar-fim-da-escala-6x1.shtml",
+    "publicado_em": "2026-11-11T12:23-03:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 2,
+   "jornais": [
+    "Folha",
+    "Valor"
+   ]
+  },
+  "pontos": 0.15
  }
 ]

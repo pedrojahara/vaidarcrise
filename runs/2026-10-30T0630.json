@@ -3043,7 +3043,7 @@
       "trecho": "O índice chegou a 8,1% para as pessoas físicas, alta de 0,1 ponto percentual em relação a agosto"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -3066,7 +3066,7 @@
       "trecho": "estoque de crédito do sistema financeiro cresceu 0,4% em setembro, na comparação com agosto, e atingiu R$ 7,444 trilhões"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3130,7 +3130,7 @@
       "trecho": "Bradesco sobe o juro mínimo da casa própria de 11,7% para 15% ao ano"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3151,7 +3151,7 @@
       "trecho": "O Itaú anunciou nesta quinta-feira (29) a alta da taxa mínima do financiamento imobiliário, de 11,99% para 12,95% ao ano, mais TR"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -3216,7 +3216,7 @@
       "trecho": "Crédito por fora da meta fiscal cresce em 2026 e chega a R$ 180 bilhões, aponta IFI"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -3283,7 +3283,7 @@
       "trecho": "O documento autoriza a celebração do primeiro termo aditivo ao contrato nº 682/2026/CAFIN, firmado entre a União e o BNDES."
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -3305,7 +3305,7 @@
       "trecho": "Número de superendividados no Brasil cresceu 75% em cinco anos, diz BC"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -3411,6 +3411,29 @@
      ],
      "palavras": 745,
      "intertitulos": 2
+    },
+    "reconferencia": {
+     "em": "2026-11-12T05:19:13-03:00",
+     "ruins": [],
+     "fracos": [],
+     "frases_cortadas": [],
+     "abertos": 7,
+     "final": {
+      "graves": [],
+      "avisos": [
+       "c1 vem de site fora da lista de fontes conhecidas: https://www.bahianoticias.com.br/folha/noticia/414894-inadimplencia-das-familias-com-bancos-volta-a-bater-recorde-em-setembro-mostra-bc",
+       "c6 vem de site fora da lista de fontes conhecidas: https://paraibabusiness.com.br/itau-segue-o-bradesco-e-sobe-juros-do-financiamento-imobiliario/",
+       "c9 vem de site fora da lista de fontes conhecidas: https://www.folhape.com.br/economia/credito-por-fora-da-meta-fiscal-cresce-em-2026-e-chega-a-r-180/521338/",
+       "c12 vem de site fora da lista de fontes conhecidas: https://diariodotransporte.com.br/2026/10/29/ministerio-da-fazenda-autoriza-aditivo-de-credito-de-ate-r-30-bilhoes-para-taxistas-e-motoristas-de-aplicativos-lei-federal-tambem-contempla-transporte-escolar/",
+       "c13 vem de site fora da lista de fontes conhecidas: https://www.acessa.com/economia/2026/10/343133-numero-de-superendividados-no-brasil-cresceu-75-em-cinco-anos-diz-bc.html",
+       "bloco 1: recorde sem a régua: diga 'da série' ou desde quando a série existe, como a fonte diz",
+       "bloco 6: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: O governo empresta por fora da conta da meta",
+       "bloco 9: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: Fora da meta, o dinheiro sai do caixa do mesmo jeito.",
+       "siglas que a leitora não conhece: escreva o nome por extenso, sem link (o site liga sozinho as siglas do glossário): SAC, TR"
+      ],
+      "palavras": 744,
+      "intertitulos": 2
+     }
     }
    },
    "titulo": "Atraso recorde nas dívidas é de antes da eleição, e os bancos já encarecem a casa própria",
@@ -3418,7 +3441,8 @@
    "argumento": "O atraso recorde de setembro veio com o juro alto, antes da eleição; agora os bancos encarecem a casa própria para famílias que já entregam 29% da renda às dívidas, enquanto o governo amplia crédito fora da meta.",
    "porque": "O Banco Central divulgou o atraso recorde de setembro com a Selic em 13,75% e as famílias entregando 29% da renda a parcelas e juros, e o Itaú atribuiu sua alta do imobiliário ao custo de captar dinheiro.",
    "pressao": "parcelas",
-   "duracao_s": 571
+   "duracao_s": 571,
+   "fontes_abertas": true
   },
   "termina_em": "parcelas",
   "pergunta": "dividas-das-familias"
