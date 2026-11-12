@@ -464,7 +464,8 @@ def _memoria_site(dia: dt.date, n: int = 14) -> str:
         p = r.get("post") or {}
         if not p.get("ok"):
             continue
-        tipo = {"dia": "texto do dia", "semana": "resumo da semana", "mes": "resumo do mês"}.get(p.get("tipo") or "dia")
+        tipo = {"dia": "texto do dia", "pergunta": "pergunta da semana", "semana": "resumo da semana",
+                "mes": "resumo do mês"}.get(p.get("tipo") or "dia")
         l = f"- {arq.stem[:10]} ({tipo}): {p['titulo']}."
         if p.get("formato") == "historia":
             pq = p.get("pesquisa") or {}

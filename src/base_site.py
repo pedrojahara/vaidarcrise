@@ -154,8 +154,8 @@ def _partes_da_aba() -> dict[str, str]:
 
 
 def _posts_ligados(cfg: dict) -> dict[str, list[dict]]:
-    """Os fatos do dia (runs/) que levam a cada página, pela mesma regra da linha do post: o mais novo primeiro, um
-    por dia (a última rodada do dia, como no site)."""
+    """Os fatos do dia e as perguntas da semana (runs/) que levam a cada página, pela mesma regra da linha do post: o
+    mais novo primeiro, um por dia (a última rodada do dia, como no site)."""
     por_dia: dict[str, dict] = {}
     for arq in sorted((ROOT / "runs").glob("*.json")):
         por_dia[arq.stem[:10]] = json.loads(arq.read_text())
@@ -163,7 +163,7 @@ def _posts_ligados(cfg: dict) -> dict[str, list[dict]]:
     for dia in sorted(por_dia, reverse=True):
         r = por_dia[dia]
         post = r.get("post") or {}
-        if not post.get("ok") or (post.get("tipo") or "dia") != "dia":
+        if not post.get("ok") or (post.get("tipo") or "dia") not in ("dia", "pergunta"):
             continue
         pt = ponte(post, cfg, assunto_do_fato(r), titulo_do_fato(r))
         if pt and not pt.get("aba"):

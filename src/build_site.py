@@ -32,8 +32,10 @@ MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "a
          "outubro", "novembro", "dezembro"]
 DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
 JORNAIS = "Folha, Valor, Estadão, g1, InfoMoney, Poder360, Agência Brasil e Gazeta do Povo"
-# Os tipos de post (PERSONA.md): o retrato, escrito à mão, fica fixo no topo; os outros saem da atualização das 05h00.
-TIPOS_POST = {"dia": "Fato do dia", "semana": "Resumo da semana", "mes": "Resumo do mês", "retrato": "Retrato do Brasil"}
+# Os tipos de post (PERSONA.md): o retrato, escrito à mão, fica fixo no topo; os outros saem da atualização das 04h00.
+# Os resumos da semana e do mês saíram até 8/11/2026; o domingo agora é a pergunta da semana (src/fundo.py).
+TIPOS_POST = {"dia": "Fato do dia", "pergunta": "Pergunta da semana", "semana": "Resumo da semana", "mes": "Resumo do mês",
+              "retrato": "Retrato do Brasil"}
 # O blog é uma rolagem só, do post mais novo ao mais antigo: a página principal traz os primeiros, e o resto
 # chega aos poucos, de docs/posts/, enquanto a leitora rola.
 POSTS_NA_PAGINA = 5
@@ -559,13 +561,13 @@ def post_de(rodada: dict, cfg: dict) -> dict:
         autoria = None
     link = f"/{dia}/"
     ponte, fontes = None, []
-    if p.get("ok") and tipo == "dia" and p.get("formato") == "historia":
+    if p.get("ok") and tipo in ("dia", "pergunta") and p.get("formato") == "historia":
         try:  # o texto do dia diz de onde vêm os números logo abaixo dele
             import fundo as fundo_mod
             fontes = fundo_mod.fontes(p)
         except (KeyError, OSError, ValueError, TypeError) as e:
             print(f"aviso: as fontes do post de {dia} não foram montadas ({e!r})")
-    if p.get("ok") and tipo == "dia":
+    if p.get("ok") and tipo in ("dia", "pergunta"):
         try:  # a linha que leva ao básico do assunto, logo abaixo do texto
             ponte = base_site.ponte(p, cfg, base_site.assunto_do_fato(rodada), base_site.titulo_do_fato(rodada))
         except (KeyError, OSError, ValueError, TypeError) as e:
@@ -574,6 +576,7 @@ def post_de(rodada: dict, cfg: dict) -> dict:
     extra = {**compartilhar(titulo, link), "resumo": primeira_frase(paragrafos[0])} if p.get("ok") and paragrafos else {}
     return {"dia": dia, "data_extenso": data_extenso(dia), "titulo": titulo, "paragrafos": paragrafos, "secoes": secoes,
             "tipo": tipo, "tipo_nome": TIPOS_POST[tipo], **extra,
+            "pergunta_semana": (p.get("pergunta_semana") or None) if p.get("ok") else None,
             "autoria": autoria, "direcao": d["estado"], "llm": bool(p.get("ok")),
             "link": link, "ponte": ponte, "fontes": fontes}
 
@@ -760,7 +763,7 @@ def main() -> None:
     # ("inscricao_aberta" em config/newsletter.json), a página de inscrição fica fora da busca e sem link no site.
     paginas_lista = {
         "inscricao": ("form", "Receba o fato do dia por e-mail",
-                      "O fato do dia do Vai dar crise? no seu e-mail, de segunda a sábado, e o resumo da semana aos domingos."),
+                      "O fato do dia do Vai dar crise? no seu e-mail, de segunda a sábado, e a pergunta da semana aos domingos."),
         "inscricao/confira": ("confira", "Falta um passo: confira o seu e-mail", "Confirme a inscrição no e-mail que acabou de chegar."),
         "inscricao/pronto": ("pronto", "Pronto, a inscrição está confirmada", "A inscrição no fato do dia por e-mail está confirmada."),
         "inscricao/vencido": ("vencido", "Este link de confirmação venceu", "O link de confirmação vale por dois dias."),
