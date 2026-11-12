@@ -3306,7 +3306,7 @@
       "trecho": "Lula vai à TV, diz que trajetória da dívida preocupa, mas não detalha como pretende controlá-la"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3326,7 +3326,7 @@
       "trecho": "Lula vai à TV e fala sobre dívida, mas não detalha medidas de controle"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -3390,7 +3390,7 @@
       "trecho": "IFI estima R$ 40 bilhões de desequilíbrio fiscal com medidas anunciadas na campanha"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3413,7 +3413,7 @@
       "trecho": "Durigan: governo fez ajuste de 2 pp do PIB no primário e tem esse compromisso por mais 4 anos"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3508,7 +3508,7 @@
       "trecho": "RARDP do 4º bimestre de 2026"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3529,7 +3529,7 @@
       "trecho": "informativo do projeto da LDO 2026"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3687,8 +3687,7 @@
       }
      ],
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true,
+      "status": "conferido",
       "via": "memória do momento"
      }
     },
@@ -3726,6 +3725,19 @@
      "objecoes": [],
      "caderno": [],
      "resumo": "Não há erro que impeça o texto de sair. Cada fato tem base em c1, c7, c9, c10, c11, na ficha da história ou nas metas: a fala sem medida, as medidas para depois da COP, a meta de R$ 34,3 bilhões com piso zero, o congelamento de R$ 13,6 bilhões e o juro de 10 anos em 8,0% na sexta, 6/11. O texto não usa nenhuma linha marcada NÃO CONFERE, não tem citação entre aspas nem conta do passado. A frase do congelamento se apoia em c10, que só foi vista no resumo da busca, mas a linha não está marcada NÃO CONFERE."
+    },
+    "reconferencia": {
+     "em": "2026-11-12T05:20:23-03:00",
+     "ruins": [],
+     "fracos": [],
+     "frases_cortadas": [],
+     "abertos": 7,
+     "final": {
+      "graves": [],
+      "avisos": [],
+      "palavras": 176,
+      "intertitulos": 0
+     }
     }
    },
    "titulo": "Presidente reafirma compromisso fiscal sem medida, num ano que só fecha no piso da meta",
@@ -3733,11 +3745,11 @@
    "argumento": "O presidente reafirmou o compromisso fiscal sem ato nem tamanho de ajuste, num ano que só chega ao piso da meta com gasto congelado, e o juro longo segue alto à espera dos números.",
    "porque": "O presidente disse na televisão que a trajetória da dívida preocupa e reafirmou o compromisso com as contas, e as medidas do ajuste ficaram para depois da conferência do clima da ONU, ainda sem data.",
    "pressao": "contas",
-   "duracao_s": 351
+   "duracao_s": 351,
+   "fontes_abertas": true
   },
   "termina_em": "contas",
-  "pergunta": "divida-do-governo",
-  "revisao_manual": "Refeito na nuvem em 11/11/2026 com a estrutura e a voz novas (segunda crítica do Pedro ao texto de 11/11: abertura com o fato e o porquê nos números contra a régua, o texto na ordem das perguntas da leitora, a lista anunciada antes do detalhe, a conta do passado com 'sempre' e o caso de hoje pelo que repetir o passado quer dizer agora, e a voz de gente, comparada às notas do Meio). a reconferência do Mac abre as fontes."
+  "pergunta": "divida-do-governo"
  },
  "avisos_ao_pedro": [
   "O editor-chefe sentiu falta de uma página no fato do dia de 9/11/2026: Por que o preço da gasolina e do diesel no Brasil não acompanha o petróleo lá fora? Nenhuma página do básico explica a Petrobras, a subvenção e os impostos entre o barril e a bomba, e é isso que a leitora precisa para ler o fato."

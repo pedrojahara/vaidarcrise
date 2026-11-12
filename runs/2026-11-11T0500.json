@@ -4350,7 +4350,7 @@
       "trecho": "Ata do Copom diz que expectativas desancoradas exigem juros altos por mais tempo; Selic ficou em 13,75%"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -4370,7 +4370,7 @@
       "trecho": "Copom interrompe ciclo de calibração e mantém taxa Selic em 13,75% ao ano"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": false
      }
     },
@@ -4534,7 +4534,7 @@
      },
      "conferencia": {
       "status": "conferido",
-      "saida": "Episódios em que focus_menos_meta > 1,40 (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não por mês: um episódio longo não vale mais que um curto. O episódio que ainda não terminou fica fora da conta.\nfocus_menos_meta: inflação esperada para 12 meses (Focus) menos o centro da meta desses 12 meses, em pontos.\n\nde 2002-08 a 2003-07 (12 meses): focus_menos_meta de 1,41 a 1,79 (o maior: 8,26); Selic de 18,00% no começo a 24,50% no fim.\n  no começo, 2002-08: selic_meta 18,00; ipca_12m 7,46; focus_ipca_12m 5,24; juro_real 12,12; dolar_ptax 3,0223\n  12 meses depois do fim, 2004-07: selic_meta 16,00; ipca_12m 6,81; focus_ipca_12m 6,10; juro_real 9,33; dolar_ptax 3,0268; ibcbr 75,25; primario_12m -3,61; ibcbr_12m 8,8%\n  recessão começando no episódio ou nos 12 meses seguintes: 1T2003\n\nde 2004-08 a 2004-11 (4 meses): focus_menos_meta de 1,43 a 1,47 (o maior: 1,57); Selic de 16,00% no começo a 17,25% no fim.\n  no começo, 2004-08: selic_meta 16,00; ipca_12m 7,18; focus_ipca_12m 6,26; juro_real 9,17; dolar_ptax 2,9338; ibcbr 75,60; primario_12m -3,68; ibcbr_12m 8,5%\n  12 meses depois do fim, 2005-11: selic_meta 18,50; ipca_12m 6,22; focus_ipca_12m 4,63; juro_real 13,26; juro_real_longo 8,71; dolar_ptax 2,2070; ibcbr 78,21; primario_12m -3,91; ibcbr_12m 2,0%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2013-08 a 2016-05 (34 meses): focus_menos_meta de 1,62 a 1,44 (o maior: 2,53); Selic de 9,00% no começo a 14,25% no fim.\n  no começo, 2013-08: selic_meta 9,00; ipca_12m 6,09; focus_ipca_12m 6,12; juro_real 2,71; juro_real_longo 5,71; dolar_ptax 2,3725; ibcbr 102,97; desocupacao 7,20; divida_bruta 53,44; primario_12m -1,65; ibcbr_12m 2,1%\n  12 meses depois do fim, 2017-05: selic_meta 11,25; ipca_12m 3,60; focus_ipca_12m 4,56; juro_real 6,40; juro_real_longo 5,62; dolar_ptax 3,2437; ibcbr 94,25; desocupacao 13,40; divida_bruta 72,34; primario_12m 2,46; ibcbr_12m 0,5%\n  recessão começando no episódio ou nos 12 meses seguintes: 2T2014, 1T2015, 3T2016\n\nde 2021-10 a 2023-05 (20 meses): focus_menos_meta de 1,58 a 1,52 (o maior: 2,59); Selic de 7,75% no começo a 13,75% no fim.\n  no começo, 2021-10: selic_meta 7,75; ipca_12m 10,67; focus_ipca_12m 5,12; juro_real 2,50; juro_real_longo 5,77; dolar_ptax 5,6430; ibcbr 97,49; desocupacao 12,10; divida_bruta 79,52; primario_12m 0,23; ibcbr_12m 0,2%\n  12 meses depois do fim, 2024-05: selic_meta 10,50; ipca_12m 3,93; focus_ipca_12m 3,64; juro_real 6,62; juro_real_longo 6,26; dolar_ptax 5,2416; ibcbr 105,59; desocupacao 7,10; divida_bruta 75,67; primario_12m 2,49; ibcbr_12m 3,1%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2024-11 a 2025-07 (9 meses): focus_menos_meta de 1,41 a 1,42 (o maior: 2,74); Selic de 11,25% no começo a 15,00% no fim.\n  no começo, 2024-11: selic_meta 11,25; ipca_12m 4,87; focus_ipca_12m 4,41; juro_real 6,55; juro_real_longo 7,24; dolar_ptax 6,0535; ibcbr 108,02; desocupacao 6,10; divida_bruta 77,50; primario_12m 1,64; ibcbr_12m 4,3%\n  12 meses depois do fim, 2026-07: selic_meta 14,25; ipca_12m 4,44; focus_ipca_12m 4,19; juro_real 9,66; juro_real_longo 8,27; dolar_ptax 5,0773; ibcbr 110,03; desocupacao 5,30; divida_bruta 82,55; primario_12m 0,67; ibcbr_12m 1,3%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2026-08 até agora, ainda aberto (4 meses com dado): focus_menos_meta de 1,55 a 2,01 (o maior: 2,01); Selic de 14,00% no começo a 13,75% no último mês com dado. Fica fora da conta, porque ainda não terminou.\n  no começo, 2026-08: selic_meta 14,00; ipca_12m 4,22; focus_ipca_12m 4,55; juro_real 9,04; juro_real_longo 7,92; dolar_ptax 5,1816; ibcbr 110,41; desocupacao 5,30; divida_bruta 82,87; primario_12m 0,62; ibcbr_12m 1,4%\n  12 meses depois do fim, 2027-11: sem dado\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\n6 episódio(s): 5 encerrado(s) e 1 ainda aberto(s). Do começo ao fim de cada episódio encerrado, a Selic subiu em 5, caiu em 0 e ficou igual em 0.\nPor frequência: em todas as 5 vezes encerradas, a Selic terminou mais alta do que começou.\nO episódio aberto começou em 2026-08: até agora, a Selic foi de 14,00% para 13,75%.\n"
+      "saida": "Episódios em que focus_menos_meta > 1,40 (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não por mês: um episódio longo não vale mais que um curto. O episódio que ainda não terminou fica fora da conta.\nfocus_menos_meta: inflação esperada para 12 meses (Focus) menos o centro da meta desses 12 meses, em pontos.\n\nde 2002-08 a 2003-07 (12 meses): focus_menos_meta de 1,41 a 1,79 (o maior: 8,26); Selic de 18,00% no começo a 24,50% no fim.\n  no começo, 2002-08: selic_meta 18,00; ipca_12m 7,46; focus_ipca_12m 5,24; juro_real 12,12; dolar_ptax 3,0223\n  12 meses depois do fim, 2004-07: selic_meta 16,00; ipca_12m 6,81; focus_ipca_12m 6,10; juro_real 9,33; dolar_ptax 3,0268; ibcbr 75,25; primario_12m -3,61; ibcbr_12m 8,8%\n  recessão começando no episódio ou nos 12 meses seguintes: 1T2003\n\nde 2004-08 a 2004-11 (4 meses): focus_menos_meta de 1,43 a 1,47 (o maior: 1,57); Selic de 16,00% no começo a 17,25% no fim.\n  no começo, 2004-08: selic_meta 16,00; ipca_12m 7,18; focus_ipca_12m 6,26; juro_real 9,17; dolar_ptax 2,9338; ibcbr 75,60; primario_12m -3,68; ibcbr_12m 8,5%\n  12 meses depois do fim, 2005-11: selic_meta 18,50; ipca_12m 6,22; focus_ipca_12m 4,63; juro_real 13,26; juro_real_longo 8,71; dolar_ptax 2,2070; ibcbr 78,21; primario_12m -3,91; ibcbr_12m 2,0%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2013-08 a 2016-05 (34 meses): focus_menos_meta de 1,62 a 1,44 (o maior: 2,53); Selic de 9,00% no começo a 14,25% no fim.\n  no começo, 2013-08: selic_meta 9,00; ipca_12m 6,09; focus_ipca_12m 6,12; juro_real 2,71; juro_real_longo 5,71; dolar_ptax 2,3725; ibcbr 102,97; desocupacao 7,20; divida_bruta 53,44; primario_12m -1,65; ibcbr_12m 2,1%\n  12 meses depois do fim, 2017-05: selic_meta 11,25; ipca_12m 3,60; focus_ipca_12m 4,56; juro_real 6,40; juro_real_longo 5,62; dolar_ptax 3,2437; ibcbr 94,25; desocupacao 13,40; divida_bruta 72,34; primario_12m 2,46; ibcbr_12m 0,5%\n  recessão começando no episódio ou nos 12 meses seguintes: 2T2014, 1T2015, 3T2016\n\nde 2021-10 a 2023-05 (20 meses): focus_menos_meta de 1,58 a 1,52 (o maior: 2,59); Selic de 7,75% no começo a 13,75% no fim.\n  no começo, 2021-10: selic_meta 7,75; ipca_12m 10,67; focus_ipca_12m 5,12; juro_real 2,50; juro_real_longo 5,77; dolar_ptax 5,6430; ibcbr 97,49; desocupacao 12,10; divida_bruta 79,52; primario_12m 0,23; ibcbr_12m 0,2%\n  12 meses depois do fim, 2024-05: selic_meta 10,50; ipca_12m 3,93; focus_ipca_12m 3,64; juro_real 6,62; juro_real_longo 6,26; dolar_ptax 5,2416; ibcbr 105,59; desocupacao 7,10; divida_bruta 75,67; primario_12m 2,49; ibcbr_12m 3,1%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2024-11 a 2025-07 (9 meses): focus_menos_meta de 1,41 a 1,42 (o maior: 2,74); Selic de 11,25% no começo a 15,00% no fim.\n  no começo, 2024-11: selic_meta 11,25; ipca_12m 4,87; focus_ipca_12m 4,41; juro_real 6,55; juro_real_longo 7,24; dolar_ptax 6,0535; ibcbr 108,02; desocupacao 6,10; divida_bruta 77,50; primario_12m 1,64; ibcbr_12m 4,3%\n  12 meses depois do fim, 2026-07: selic_meta 14,25; ipca_12m 4,44; focus_ipca_12m 4,19; juro_real 9,66; juro_real_longo 8,27; dolar_ptax 5,0773; ibcbr 110,03; desocupacao 5,30; divida_bruta 82,55; primario_12m 0,67; ibcbr_12m 1,3%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2026-08 até agora, ainda aberto (3 meses com dado): focus_menos_meta de 1,55 a 1,96 (o maior: 1,96); Selic de 14,00% no começo a 13,75% no último mês com dado. Fica fora da conta, porque ainda não terminou.\n  no começo, 2026-08: selic_meta 14,00; ipca_12m 4,22; focus_ipca_12m 4,55; juro_real 9,04; juro_real_longo 7,92; dolar_ptax 5,1816; ibcbr 110,41; desocupacao 5,30; divida_bruta 82,87; primario_12m 0,62; ibcbr_12m 1,4%\n  12 meses depois do fim, 2027-10: sem dado\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\n6 episódio(s): 5 encerrado(s) e 1 ainda aberto(s). Do começo ao fim de cada episódio encerrado, a Selic subiu em 5, caiu em 0 e ficou igual em 0.\nPor frequência, do começo ao fim de cada vez encerrada: em todas as 5 vezes, a Selic terminou mais alta.\nAs vezes encerradas duraram de 4 a 34 meses.\nO episódio aberto começou em 2026-08: até agora, a Selic foi de 14,00% para 13,75%.\nPara este terminar como a maioria das vezes encerradas, a Selic teria de passar de 14,00%, o nível do começo (2026-08); no último mês com dado, estava em 13,75%.\nOutros cortes, para saber quanto a conta depende do corte: com focus_menos_meta > 0,90, em 3 das 6 vezes, a Selic terminou mais alta; em 2, ficou igual; em 1, mais baixa; com focus_menos_meta > 1,50, em 4 das 6 vezes, a Selic terminou mais alta; em 2, ficou igual; com focus_menos_meta > 1,90, em 4 das 5 vezes, a Selic terminou mais alta; em 1, ficou igual. O texto usa o corte da biblioteca (EVIDENCIA.md), escrito antes, e não o que deixa a conta mais limpa.\n"
      }
     },
     {
@@ -4555,7 +4555,7 @@
      },
      "conferencia": {
       "status": "conferido",
-      "saida": "Cada vez que o Banco Central cortou a Selic e a deixou parada pelo menos nos 2 meses seguintes (ou até o último mês da série). 'Expectativa' é a inflação que os bancos esperam para os 12 meses seguintes (Focus), no fim do mês; 'meta' é o centro da meta de inflação desses mesmos 12 meses (a média das metas de cada ano, pelo número de meses); a distância é expectativa menos meta.\núltimo corte em 2002-03 (Selic 18,50%): expectativa 4,81% (meta 3,62%, distância 1,18), IPCA 12 meses 7,75%, juro real 13,1%; expectativa 1 mês depois -0,24 ponto, 3 meses depois -0,28 ponto; depois: corte 4 meses depois do último corte; o ciclo foi até 2002-07 e levou a Selic a 18,00% (-0,50 ponto(s)).\núltimo corte em 2002-07 (Selic 18,00%): expectativa 4,73% (meta 3,79%, distância 0,94), IPCA 12 meses 7,51%, juro real 12,7%; expectativa 1 mês depois +0,51 ponto, 3 meses depois +3,71 ponto; depois: alta 3 meses depois do último corte; o ciclo foi até 2003-02 e levou a Selic a 26,50% (+8,50 ponto(s)).\núltimo corte em 2003-12 (Selic 16,50%): expectativa 5,95% (meta 5,50%, distância 0,45), IPCA 12 meses 9,30%, juro real 10,0%; expectativa 1 mês depois -0,10 ponto, 3 meses depois -0,47 ponto; depois: corte 3 meses depois do último corte; o ciclo foi até 2004-04 e levou a Selic a 16,00% (-0,50 ponto(s)).\núltimo corte em 2004-04 (Selic 16,00%): expectativa 5,54% (meta 5,17%, distância 0,37), IPCA 12 meses 5,26%, juro real 9,9%; expectativa 1 mês depois +0,28 ponto, 3 meses depois +0,56 ponto; depois: alta 5 meses depois do último corte; o ciclo foi até 2005-05 e levou a Selic a 19,75% (+3,75 ponto(s)).\núltimo corte em 2007-09 (Selic 11,25%): expectativa 3,84% (meta 4,50%, distância -0,66), IPCA 12 meses 4,15%, juro real 7,1%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,44 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2008-09 e levou a Selic a 13,75% (+2,50 ponto(s)).\núltimo corte em 2009-07 (Selic 8,75%): expectativa 4,08% (meta 4,50%, distância -0,42), IPCA 12 meses 4,50%, juro real 4,5%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,21 ponto; depois: alta 9 meses depois do último corte; o ciclo foi até 2011-07 e levou a Selic a 12,50% (+3,75 ponto(s)).\núltimo corte em 2012-10 (Selic 7,25%): expectativa 5,37% (meta 4,50%, distância 0,87), IPCA 12 meses 5,45%, juro real 1,8%; expectativa 1 mês depois +0,02 ponto, 3 meses depois +0,10 ponto; depois: alta 6 meses depois do último corte; o ciclo foi até 2015-07 e levou a Selic a 14,25% (+7,00 ponto(s)).\núltimo corte em 2018-03 (Selic 6,50%): expectativa 3,95% (meta 4,44%, distância -0,49), IPCA 12 meses 2,68%, juro real 2,5%; expectativa 1 mês depois +0,16 ponto, 3 meses depois +0,07 ponto; depois: corte 17 meses depois do último corte; o ciclo foi até 2020-08 e levou a Selic a 2,00% (-4,50 ponto(s)).\núltimo corte em 2020-08 (Selic 2,00%): expectativa 3,03% (meta 3,83%, distância -0,80), IPCA 12 meses 2,44%, juro real -1,0%; expectativa 1 mês depois +0,20 ponto, 3 meses depois +0,81 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2022-08 e levou a Selic a 13,75% (+11,75 ponto(s)).\núltimo corte em 2024-05 (Selic 10,50%): expectativa 3,64% (meta 3,00%, distância 0,64), IPCA 12 meses 3,93%, juro real 6,6%; expectativa 1 mês depois -0,03 ponto, 3 meses depois +0,23 ponto; depois: alta 4 meses depois do último corte; o ciclo foi até 2025-06 e levou a Selic a 15,00% (+4,50 ponto(s)).\núltimo corte em 2026-09 (Selic 13,75%): expectativa 4,60% (meta 3,00%, distância 1,60), IPCA 12 meses 4,58%, juro real 8,7%; expectativa 1 mês depois +0,36 ponto, 3 meses depois sem dado ponto; ainda parada (2 mês(es) com dado depois do corte).\n"
+      "saida": "Cada vez que o Banco Central cortou a Selic e a deixou parada pelo menos nos 2 meses seguintes (ou até o último mês da série). 'Expectativa' é a inflação que os bancos esperam para os 12 meses seguintes (Focus), no fim do mês; 'meta' é o centro da meta de inflação desses mesmos 12 meses (a média das metas de cada ano, pelo número de meses); a distância é expectativa menos meta.\núltimo corte em 2002-03 (Selic 18,50%): expectativa 4,81% (meta 3,62%, distância 1,18), IPCA 12 meses 7,75%, juro real 13,1%; expectativa 1 mês depois -0,24 ponto, 3 meses depois -0,28 ponto; depois: corte 4 meses depois do último corte; o ciclo foi até 2002-07 e levou a Selic a 18,00% (-0,50 ponto(s)).\núltimo corte em 2002-07 (Selic 18,00%): expectativa 4,73% (meta 3,79%, distância 0,94), IPCA 12 meses 7,51%, juro real 12,7%; expectativa 1 mês depois +0,51 ponto, 3 meses depois +3,71 ponto; depois: alta 3 meses depois do último corte; o ciclo foi até 2003-02 e levou a Selic a 26,50% (+8,50 ponto(s)).\núltimo corte em 2003-12 (Selic 16,50%): expectativa 5,95% (meta 5,50%, distância 0,45), IPCA 12 meses 9,30%, juro real 10,0%; expectativa 1 mês depois -0,10 ponto, 3 meses depois -0,47 ponto; depois: corte 3 meses depois do último corte; o ciclo foi até 2004-04 e levou a Selic a 16,00% (-0,50 ponto(s)).\núltimo corte em 2004-04 (Selic 16,00%): expectativa 5,54% (meta 5,17%, distância 0,37), IPCA 12 meses 5,26%, juro real 9,9%; expectativa 1 mês depois +0,28 ponto, 3 meses depois +0,56 ponto; depois: alta 5 meses depois do último corte; o ciclo foi até 2005-05 e levou a Selic a 19,75% (+3,75 ponto(s)).\núltimo corte em 2007-09 (Selic 11,25%): expectativa 3,84% (meta 4,50%, distância -0,66), IPCA 12 meses 4,15%, juro real 7,1%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,44 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2008-09 e levou a Selic a 13,75% (+2,50 ponto(s)).\núltimo corte em 2009-07 (Selic 8,75%): expectativa 4,08% (meta 4,50%, distância -0,42), IPCA 12 meses 4,50%, juro real 4,5%; expectativa 1 mês depois -0,01 ponto, 3 meses depois +0,21 ponto; depois: alta 9 meses depois do último corte; o ciclo foi até 2011-07 e levou a Selic a 12,50% (+3,75 ponto(s)).\núltimo corte em 2012-10 (Selic 7,25%): expectativa 5,37% (meta 4,50%, distância 0,87), IPCA 12 meses 5,45%, juro real 1,8%; expectativa 1 mês depois +0,02 ponto, 3 meses depois +0,10 ponto; depois: alta 6 meses depois do último corte; o ciclo foi até 2015-07 e levou a Selic a 14,25% (+7,00 ponto(s)).\núltimo corte em 2018-03 (Selic 6,50%): expectativa 3,95% (meta 4,44%, distância -0,49), IPCA 12 meses 2,68%, juro real 2,5%; expectativa 1 mês depois +0,16 ponto, 3 meses depois +0,07 ponto; depois: corte 17 meses depois do último corte; o ciclo foi até 2020-08 e levou a Selic a 2,00% (-4,50 ponto(s)).\núltimo corte em 2020-08 (Selic 2,00%): expectativa 3,03% (meta 3,83%, distância -0,80), IPCA 12 meses 2,44%, juro real -1,0%; expectativa 1 mês depois +0,20 ponto, 3 meses depois +0,81 ponto; depois: alta 7 meses depois do último corte; o ciclo foi até 2022-08 e levou a Selic a 13,75% (+11,75 ponto(s)).\núltimo corte em 2024-05 (Selic 10,50%): expectativa 3,64% (meta 3,00%, distância 0,64), IPCA 12 meses 3,93%, juro real 6,6%; expectativa 1 mês depois -0,03 ponto, 3 meses depois +0,23 ponto; depois: alta 4 meses depois do último corte; o ciclo foi até 2025-06 e levou a Selic a 15,00% (+4,50 ponto(s)).\núltimo corte em 2026-09 (Selic 13,75%): expectativa 4,60% (meta 3,00%, distância 1,60), IPCA 12 meses 4,58%, juro real 8,7%; expectativa 1 mês depois +0,36 ponto, 3 meses depois sem dado ponto; ainda parada (1 mês(es) com dado depois do corte).\n"
      }
     },
     {
@@ -4603,8 +4603,7 @@
       }
      ],
      "conferencia": {
-      "status": "nao_aberto",
-      "fonte_conhecida": true,
+      "status": "conferido",
       "via": "memória do momento"
      }
     },
@@ -4647,7 +4646,7 @@
      },
      "do_revisor": true,
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -4670,7 +4669,7 @@
      },
      "do_revisor": true,
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -4693,7 +4692,7 @@
      },
      "do_revisor": true,
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -4717,8 +4716,7 @@
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": true,
-      "por_que": "conferido no Mac em 11/11/2026 (conferir_documento, página aberta)"
+      "fonte_conhecida": true
      }
     },
     {
@@ -4736,8 +4734,7 @@
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": true,
-      "por_que": "conferido no Mac em 11/11/2026 (conferir_documento, página aberta)"
+      "fonte_conhecida": true
      }
     },
     {
@@ -4757,8 +4754,7 @@
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": true,
-      "por_que": "conferido no Mac em 11/11/2026 (conferir_documento, página aberta)"
+      "fonte_conhecida": true
      }
     },
     {
@@ -4776,8 +4772,7 @@
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": true,
-      "por_que": "conferido no Mac em 11/11/2026 (conferir_documento, página aberta)"
+      "fonte_conhecida": true
      }
     },
     {
@@ -4795,8 +4790,7 @@
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": true,
-      "por_que": "conferido no Mac em 11/11/2026 (conferir_documento, página aberta)"
+      "fonte_conhecida": true
      }
     },
     {
@@ -4819,8 +4813,7 @@
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": true,
-      "por_que": "conferido no Mac em 11/11/2026 (conferir_documento, página aberta)"
+      "fonte_conhecida": true
      }
     },
     {
@@ -4838,8 +4831,7 @@
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": true,
-      "por_que": "conferido no Mac em 11/11/2026 (conferir_documento, página aberta)"
+      "fonte_conhecida": true
      }
     },
     {
@@ -4857,8 +4849,7 @@
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": true,
-      "por_que": "conferido no Mac em 11/11/2026 (conferir_documento, página aberta)"
+      "fonte_conhecida": true
      }
     },
     {
@@ -4878,8 +4869,7 @@
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": true,
-      "por_que": "conferido no Mac em 11/11/2026 (conferir_documento, página aberta)"
+      "fonte_conhecida": true
      }
     },
     {
@@ -4900,8 +4890,7 @@
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": false,
-      "por_que": "conferido no Mac em 11/11/2026 (conferir_documento, página aberta)"
+      "fonte_conhecida": false
      }
     },
     {
@@ -4922,8 +4911,7 @@
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": true,
-      "por_que": "conferido no Mac em 11/11/2026 (conferir_documento, página aberta)"
+      "fonte_conhecida": true
      }
     },
     {
@@ -4943,8 +4931,7 @@
      },
      "conferencia": {
       "status": "conferido",
-      "fonte_conhecida": true,
-      "por_que": "conferido no Mac em 11/11/2026 (conferir_documento, página aberta)"
+      "fonte_conhecida": true
      }
     },
     {
@@ -4976,7 +4963,7 @@
      "saida": "Episódios em que focus_menos_meta > 1,40 (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não por mês: um episódio longo não vale mais que um curto. O episódio que ainda não terminou fica fora da conta.\nfocus_menos_meta: inflação esperada para 12 meses (Focus) menos o centro da meta desses 12 meses, em pontos.\n\nde 2002-08 a 2003-07 (12 meses): focus_menos_meta de 1,41 a 1,79 (o maior: 8,26); Selic de 18,00% no começo a 24,50% no fim.\n  no começo, 2002-08: selic_meta 18,00; ipca_12m 7,46; focus_ipca_12m 5,24; juro_real 12,12; dolar_ptax 3,0223",
      "conferencia": {
       "status": "conferido",
-      "saida": "Episódios em que focus_menos_meta > 1,40 (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não por mês: um episódio longo não vale mais que um curto. O episódio que ainda não terminou fica fora da conta.\nfocus_menos_meta: inflação esperada para 12 meses (Focus) menos o centro da meta desses 12 meses, em pontos.\n\nde 2002-08 a 2003-07 (12 meses): focus_menos_meta de 1,41 a 1,79 (o maior: 8,26); Selic de 18,00% no começo a 24,50% no fim.\n  no começo, 2002-08: selic_meta 18,00; ipca_12m 7,46; focus_ipca_12m 5,24; juro_real 12,12; dolar_ptax 3,0223\n  12 meses depois do fim, 2004-07: selic_meta 16,00; ipca_12m 6,81; focus_ipca_12m 6,10; juro_real 9,33; dolar_ptax 3,0268; ibcbr 75,25; primario_12m -3,61; ibcbr_12m 8,8%\n  recessão começando no episódio ou nos 12 meses seguintes: 1T2003\n\nde 2004-08 a 2004-11 (4 meses): focus_menos_meta de 1,43 a 1,47 (o maior: 1,57); Selic de 16,00% no começo a 17,25% no fim.\n  no começo, 2004-08: selic_meta 16,00; ipca_12m 7,18; focus_ipca_12m 6,26; juro_real 9,17; dolar_ptax 2,9338; ibcbr 75,60; primario_12m -3,68; ibcbr_12m 8,5%\n  12 meses depois do fim, 2005-11: selic_meta 18,50; ipca_12m 6,22; focus_ipca_12m 4,63; juro_real 13,26; juro_real_longo 8,71; dolar_ptax 2,2070; ibcbr 78,21; primario_12m -3,91; ibcbr_12m 2,0%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2013-08 a 2016-05 (34 meses): focus_menos_meta de 1,62 a 1,44 (o maior: 2,53); Selic de 9,00% no começo a 14,25% no fim.\n  no começo, 2013-08: selic_meta 9,00; ipca_12m 6,09; focus_ipca_12m 6,12; juro_real 2,71; juro_real_longo 5,71; dolar_ptax 2,3725; ibcbr 102,97; desocupacao 7,20; divida_bruta 53,44; primario_12m -1,65; ibcbr_12m 2,1%\n  12 meses depois do fim, 2017-05: selic_meta 11,25; ipca_12m 3,60; focus_ipca_12m 4,56; juro_real 6,40; juro_real_longo 5,62; dolar_ptax 3,2437; ibcbr 94,25; desocupacao 13,40; divida_bruta 72,34; primario_12m 2,46; ibcbr_12m 0,5%\n  recessão começando no episódio ou nos 12 meses seguintes: 2T2014, 1T2015, 3T2016\n\nde 2021-10 a 2023-05 (20 meses): focus_menos_meta de 1,58 a 1,52 (o maior: 2,59); Selic de 7,75% no começo a 13,75% no fim.\n  no começo, 2021-10: selic_meta 7,75; ipca_12m 10,67; focus_ipca_12m 5,12; juro_real 2,50; juro_real_longo 5,77; dolar_ptax 5,6430; ibcbr 97,49; desocupacao 12,10; divida_bruta 79,52; primario_12m 0,23; ibcbr_12m 0,2%\n  12 meses depois do fim, 2024-05: selic_meta 10,50; ipca_12m 3,93; focus_ipca_12m 3,64; juro_real 6,62; juro_real_longo 6,26; dolar_ptax 5,2416; ibcbr 105,59; desocupacao 7,10; divida_bruta 75,67; primario_12m 2,49; ibcbr_12m 3,1%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2024-11 a 2025-07 (9 meses): focus_menos_meta de 1,41 a 1,42 (o maior: 2,74); Selic de 11,25% no começo a 15,00% no fim.\n  no começo, 2024-11: selic_meta 11,25; ipca_12m 4,87; focus_ipca_12m 4,41; juro_real 6,55; juro_real_longo 7,24; dolar_ptax 6,0535; ibcbr 108,02; desocupacao 6,10; divida_bruta 77,50; primario_12m 1,64; ibcbr_12m 4,3%\n  12 meses depois do fim, 2026-07: selic_meta 14,25; ipca_12m 4,44; focus_ipca_12m 4,19; juro_real 9,66; juro_real_longo 8,27; dolar_ptax 5,0773; ibcbr 110,03; desocupacao 5,30; divida_bruta 82,55; primario_12m 0,67; ibcbr_12m 1,3%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2026-08 até agora, ainda aberto (4 meses com dado): focus_menos_meta de 1,55 a 2,01 (o maior: 2,01); Selic de 14,00% no começo a 13,75% no último mês com dado. Fica fora da conta, porque ainda não terminou.\n  no começo, 2026-08: selic_meta 14,00; ipca_12m 4,22; focus_ipca_12m 4,55; juro_real 9,04; juro_real_longo 7,92; dolar_ptax 5,1816; ibcbr 110,41; desocupacao 5,30; divida_bruta 82,87; primario_12m 0,62; ibcbr_12m 1,4%\n  12 meses depois do fim, 2027-11: sem dado\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\n6 episódio(s): 5 encerrado(s) e 1 ainda aberto(s). Do começo ao fim de cada episódio encerrado, a Selic subiu em 5, caiu em 0 e ficou igual em 0.\nPor frequência, do começo ao fim de cada vez encerrada: em todas as 5 vezes, a Selic terminou mais alta.\nAs vezes encerradas duraram de 4 a 34 meses.\nO episódio aberto começou em 2026-08: até agora, a Selic foi de 14,00% para 13,75%.\nPara este terminar como a maioria das vezes encerradas, a Selic teria de passar de 14,00%, o nível do começo (2026-08); no último mês com dado, estava em 13,75%.\nOutros cortes, para saber quanto a conta depende do corte: com focus_menos_meta > 0,90, em 3 das 6 vezes, a Selic terminou mais alta; em 2, ficou igual; em 1, mais baixa; com focus_menos_meta > 1,50, em 4 das 6 vezes, a Selic terminou mais alta; em 2, ficou igual; com focus_menos_meta > 1,90, em 4 das 5 vezes, a Selic terminou mais alta; em 1, ficou igual. O texto usa o corte da biblioteca (EVIDENCIA.md), escrito antes, e não o que deixa a conta mais limpa.\n"
+      "saida": "Episódios em que focus_menos_meta > 1,40 (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não por mês: um episódio longo não vale mais que um curto. O episódio que ainda não terminou fica fora da conta.\nfocus_menos_meta: inflação esperada para 12 meses (Focus) menos o centro da meta desses 12 meses, em pontos.\n\nde 2002-08 a 2003-07 (12 meses): focus_menos_meta de 1,41 a 1,79 (o maior: 8,26); Selic de 18,00% no começo a 24,50% no fim.\n  no começo, 2002-08: selic_meta 18,00; ipca_12m 7,46; focus_ipca_12m 5,24; juro_real 12,12; dolar_ptax 3,0223\n  12 meses depois do fim, 2004-07: selic_meta 16,00; ipca_12m 6,81; focus_ipca_12m 6,10; juro_real 9,33; dolar_ptax 3,0268; ibcbr 75,25; primario_12m -3,61; ibcbr_12m 8,8%\n  recessão começando no episódio ou nos 12 meses seguintes: 1T2003\n\nde 2004-08 a 2004-11 (4 meses): focus_menos_meta de 1,43 a 1,47 (o maior: 1,57); Selic de 16,00% no começo a 17,25% no fim.\n  no começo, 2004-08: selic_meta 16,00; ipca_12m 7,18; focus_ipca_12m 6,26; juro_real 9,17; dolar_ptax 2,9338; ibcbr 75,60; primario_12m -3,68; ibcbr_12m 8,5%\n  12 meses depois do fim, 2005-11: selic_meta 18,50; ipca_12m 6,22; focus_ipca_12m 4,63; juro_real 13,26; juro_real_longo 8,71; dolar_ptax 2,2070; ibcbr 78,21; primario_12m -3,91; ibcbr_12m 2,0%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2013-08 a 2016-05 (34 meses): focus_menos_meta de 1,62 a 1,44 (o maior: 2,53); Selic de 9,00% no começo a 14,25% no fim.\n  no começo, 2013-08: selic_meta 9,00; ipca_12m 6,09; focus_ipca_12m 6,12; juro_real 2,71; juro_real_longo 5,71; dolar_ptax 2,3725; ibcbr 102,97; desocupacao 7,20; divida_bruta 53,44; primario_12m -1,65; ibcbr_12m 2,1%\n  12 meses depois do fim, 2017-05: selic_meta 11,25; ipca_12m 3,60; focus_ipca_12m 4,56; juro_real 6,40; juro_real_longo 5,62; dolar_ptax 3,2437; ibcbr 94,25; desocupacao 13,40; divida_bruta 72,34; primario_12m 2,46; ibcbr_12m 0,5%\n  recessão começando no episódio ou nos 12 meses seguintes: 2T2014, 1T2015, 3T2016\n\nde 2021-10 a 2023-05 (20 meses): focus_menos_meta de 1,58 a 1,52 (o maior: 2,59); Selic de 7,75% no começo a 13,75% no fim.\n  no começo, 2021-10: selic_meta 7,75; ipca_12m 10,67; focus_ipca_12m 5,12; juro_real 2,50; juro_real_longo 5,77; dolar_ptax 5,6430; ibcbr 97,49; desocupacao 12,10; divida_bruta 79,52; primario_12m 0,23; ibcbr_12m 0,2%\n  12 meses depois do fim, 2024-05: selic_meta 10,50; ipca_12m 3,93; focus_ipca_12m 3,64; juro_real 6,62; juro_real_longo 6,26; dolar_ptax 5,2416; ibcbr 105,59; desocupacao 7,10; divida_bruta 75,67; primario_12m 2,49; ibcbr_12m 3,1%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2024-11 a 2025-07 (9 meses): focus_menos_meta de 1,41 a 1,42 (o maior: 2,74); Selic de 11,25% no começo a 15,00% no fim.\n  no começo, 2024-11: selic_meta 11,25; ipca_12m 4,87; focus_ipca_12m 4,41; juro_real 6,55; juro_real_longo 7,24; dolar_ptax 6,0535; ibcbr 108,02; desocupacao 6,10; divida_bruta 77,50; primario_12m 1,64; ibcbr_12m 4,3%\n  12 meses depois do fim, 2026-07: selic_meta 14,25; ipca_12m 4,44; focus_ipca_12m 4,19; juro_real 9,66; juro_real_longo 8,27; dolar_ptax 5,0773; ibcbr 110,03; desocupacao 5,30; divida_bruta 82,55; primario_12m 0,67; ibcbr_12m 1,3%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2026-08 até agora, ainda aberto (3 meses com dado): focus_menos_meta de 1,55 a 1,96 (o maior: 1,96); Selic de 14,00% no começo a 13,75% no último mês com dado. Fica fora da conta, porque ainda não terminou.\n  no começo, 2026-08: selic_meta 14,00; ipca_12m 4,22; focus_ipca_12m 4,55; juro_real 9,04; juro_real_longo 7,92; dolar_ptax 5,1816; ibcbr 110,41; desocupacao 5,30; divida_bruta 82,87; primario_12m 0,62; ibcbr_12m 1,4%\n  12 meses depois do fim, 2027-10: sem dado\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\n6 episódio(s): 5 encerrado(s) e 1 ainda aberto(s). Do começo ao fim de cada episódio encerrado, a Selic subiu em 5, caiu em 0 e ficou igual em 0.\nPor frequência, do começo ao fim de cada vez encerrada: em todas as 5 vezes, a Selic terminou mais alta.\nAs vezes encerradas duraram de 4 a 34 meses.\nO episódio aberto começou em 2026-08: até agora, a Selic foi de 14,00% para 13,75%.\nPara este terminar como a maioria das vezes encerradas, a Selic teria de passar de 14,00%, o nível do começo (2026-08); no último mês com dado, estava em 13,75%.\nOutros cortes, para saber quanto a conta depende do corte: com focus_menos_meta > 0,90, em 3 das 6 vezes, a Selic terminou mais alta; em 2, ficou igual; em 1, mais baixa; com focus_menos_meta > 1,50, em 4 das 6 vezes, a Selic terminou mais alta; em 2, ficou igual; com focus_menos_meta > 1,90, em 4 das 5 vezes, a Selic terminou mais alta; em 1, ficou igual. O texto usa o corte da biblioteca (EVIDENCIA.md), escrito antes, e não o que deixa a conta mais limpa.\n"
      }
     }
    ],
@@ -5014,6 +5001,26 @@
        "resumo": "Na conferência final não há erro que impeça a publicação. As duas citações estão palavra por palavra em c305 e c308. Os números batem com o caderno, a ficha e os dados do site, e as projeções de 2026 e 2027 estão corretamente acima do teto. O ajuste vem como relato, ainda sem texto. A conta do passado deixa de fora o caso aberto e diz o que repetir o passado quer dizer agora, com o nível de 14%. Os avisos do código (tamanho, frase longa, margem da meta) não foram repetidos."
       }
      }
+    },
+    "reconferencia": {
+     "em": "2026-11-12T05:20:32-03:00",
+     "ruins": [],
+     "fracos": [],
+     "frases_cortadas": [],
+     "abertos": 21,
+     "final": {
+      "graves": [],
+      "avisos": [
+       "o texto tem 682 palavras (o tamanho de hoje é de 300 a 600)",
+       "c2 vem de site fora da lista de fontes conhecidas: https://www.oliberal.com/economia/bc-copom-interrompe-ciclo-de-calibracao-e-mantem-taxa-selic-em-13-75-ao-ano-1.1190560",
+       "c313 vem de site fora da lista de fontes conhecidas: https://www.brasildefato.com.br/2026/10/16/promulgada-escala-5x2-passa-a-valer-na-semana-anterior-ao-natal/",
+       "bloco 1: porcentagem de meta que a ficha das metas não tem (5,6): confira a meta e a margem em config/metas.json: Para 2026, são 5,6%, e para 2027, 4,7%, os dois acima do teto da meta, de 4,5%.",
+       "bloco 2: compara com a meta sem dizer a margem ou os descontos que a regra permite: diga a régua inteira, ou diga na frase seguinte: Na ata da reunião, publicada ontem, ele conclui que, com a inflação esperada tão",
+       "bloco 10: frase de 39 palavras"
+      ],
+      "palavras": 682,
+      "intertitulos": 2
+     }
     }
    },
    "titulo": "Ata do Copom diz que o juro fica alto por mais tempo, e o governo influi nesse prazo",
@@ -5021,10 +5028,10 @@
    "argumento": "A ata diz que a inflação esperada longe da meta exige juro alto por mais tempo, e o governo influi nesse prazo pelo dólar e pelas próprias contas; desde 2002, sempre que a inflação esperada ficou tão longe da meta, a Selic terminou mais alta, e os bancos esperam corte.",
    "porque": "O Banco Central manteve a Selic em 13,75% porque projeta a inflação acima do teto da meta em 2026 e 2027 e acima do centro no segundo trimestre de 2028, e a ata diz que, com a inflação esperada desancorada, o juro tem de ficar alto por mais tempo.",
    "pressao": "juro",
-   "duracao_s": 498
+   "duracao_s": 498,
+   "fontes_abertas": true
   },
   "termina_em": "juro",
-  "pergunta": "juro-alto",
-  "revisao_manual": "Reescrito à mão em 11/11/2026 com a estrutura e a voz novas (segunda crítica do Pedro ao texto de 11/11) e aprovado por ele na thread antes de publicar; números e citações ligados às fontes no caderno, conferidos pelo código e pela conferência final do revisor; as fontes novas foram abertas no Mac."
+  "pergunta": "juro-alto"
  }
 }

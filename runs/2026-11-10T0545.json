@@ -3567,7 +3567,7 @@
       "trecho": "A validade da legislação segue ativa até o dia 19 de novembro de 2031."
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": false
      }
     },
@@ -3587,7 +3587,7 @@
       "trecho": "Governo prorroga Gás do Povo até 2031 por meio da MP 1.400/2026"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": false
      }
     },
@@ -3608,7 +3608,7 @@
       "trecho": "Governo federal prorroga até 2031 programa Gás do Povo"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3630,7 +3630,7 @@
       "trecho": "Lula edita MP com vigência do Gás do Povo até novembro 2031"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3654,6 +3654,7 @@
      },
      "conferencia": {
       "status": "nao_aberto",
+      "por_que": "HTTP 404",
       "fonte_conhecida": true
      }
     },
@@ -3716,7 +3717,7 @@
       "trecho": "passou de 16,39% para 19,95%"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": true
      }
     },
@@ -3737,7 +3738,7 @@
       "trecho": "Tesouro terá de refinanciar R$ 1,8 trilhão em 12 meses"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "conferido",
       "fonte_conhecida": true
      }
     },
@@ -3758,7 +3759,7 @@
       "trecho": "Em 12 meses o déficit é de R$ 49,51 bilhões"
      },
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "trecho_nao_achado",
       "fonte_conhecida": true
      }
     },
@@ -3781,7 +3782,7 @@
      },
      "do_revisor": true,
      "conferencia": {
-      "status": "nao_aberto",
+      "status": "numeros_na_pagina",
       "fonte_conhecida": false
      }
     },
@@ -3804,6 +3805,7 @@
      "do_revisor": true,
      "conferencia": {
       "status": "nao_aberto",
+      "por_que": "HTTP 404",
       "fonte_conhecida": true
      }
     }
@@ -3828,6 +3830,25 @@
       "caderno": [],
       "resumo": "Conferência final sem erro grave. Os números da meta de 2027 (R$ 83,4 bi, R$ 10,2 bi acima do centro de R$ 73,2 bi) batem com as metas e com c5 e c6. A soma de c7 dá R$ 83,3 bi, diferença de arredondamento sobre o número oficial. Os prazos da medida provisória (19/11/2031, 120 dias, vencimento em 19/11 sem ela) e a dependência dos créditos do Orçamento estão em c1, c2 e c201. O juro de 10 anos vem dos dados do site. Não há citação, conta do passado nem causa fora de ordem."
      }
+    },
+    "reconferencia": {
+     "em": "2026-11-12T05:20:28-03:00",
+     "ruins": [],
+     "fracos": [],
+     "frases_cortadas": [],
+     "abertos": 8,
+     "final": {
+      "graves": [],
+      "avisos": [
+       "c1 vem de site fora da lista de fontes conhecidas: https://atlaspublico.com.br/noticias/medida-provisoria-1-400-prorroga-ate-19-de-novembro-de-2031-99704",
+       "c2 vem de site fora da lista de fontes conhecidas: https://cenarioenergia.com.br/2026/11/09/governo-prorroga-gas-do-povo-ate-2031-por-meio-da-mp-1-400-2026/",
+       "c201 vem de site fora da lista de fontes conhecidas: https://www.cut.org.br/noticias/governo-federal-prorroga-auxilio-gas-do-povo-ate-novembro-de-2031-c9f2/",
+       "bloco 7: frase de 36 palavras",
+       "\"precatórios\" aparece sem a explicação antes: na primeira vez, diga o que é em palavras comuns e ponha o termo entre parênteses logo depois ('dívidas que a Justiça mandou o governo pagar (precatórios)', 'arrecadar mais do que gasta, sem contar os juros da dívida (superávit primário)')"
+      ],
+      "palavras": 403,
+      "intertitulos": 0
+     }
     }
    },
    "titulo": "Gás do Povo vai até 2031 e leva ao próximo mandato um gasto de R$ 7,6 bilhões em 2027",
@@ -3835,11 +3856,11 @@
    "argumento": "A prorrogação do Gás do Povo não muda a conta de 2027, que já tinha R$ 7,6 bilhões para ele, mas fixa o gasto nos Orçamentos até 2031, sem custo conhecido para os anos seguintes.",
    "porque": "O auxílio, criado em 2021 com prazo de cinco anos, venceria em 19 de novembro de 2026, e o governo baixou a medida provisória 1.400 para manter a recarga gratuita do botijão por mais cinco anos.",
    "pressao": "contas",
-   "duracao_s": 412
+   "duracao_s": 412,
+   "fontes_abertas": true
   },
   "termina_em": "contas",
-  "pergunta": "divida-do-governo",
-  "revisao_manual": "Refeito na nuvem em 11/11/2026 com a estrutura e a voz novas (segunda crítica do Pedro ao texto de 11/11: abertura com o fato e o porquê nos números contra a régua, o texto na ordem das perguntas da leitora, a lista anunciada antes do detalhe, a conta do passado com 'sempre' e o caso de hoje pelo que repetir o passado quer dizer agora, e a voz de gente, comparada às notas do Meio). Depois da rodada, editado à mão onde ainda havia bastidor, ideia repetida ou frase sem fonte, e conferido de novo pelo código e pela conferência final do revisor; a reconferência do Mac abre as fontes."
+  "pergunta": "divida-do-governo"
  },
  "avisos_ao_pedro": [
   "O editor-chefe sentiu falta de uma página no fato do dia de 10/11/2026: O que é uma medida provisória e o que acontece quando ela caduca? A leitora precisa saber disso para ler o \\\"até 2031\\\" de hoje e a MP das dívidas rurais, que pode perder a validade na quarta."
