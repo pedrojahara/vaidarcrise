@@ -742,7 +742,8 @@ def _bloco_esqueleto(esq: dict) -> str:
 
 def redigir(e: dict, pesquisa: dict | None, cad: list[dict], objecoes: list[dict] | None = None,
             problemas: list[str] | None = None, rascunho: dict | None = None, final: bool = False,
-            so_corrige: bool = False, timeout: int = 900, esqueleto: dict | None = None) -> dict:
+            so_corrige: bool = False, timeout: int = 900, esqueleto: dict | None = None,
+            nao_voltar: list[dict] | None = None) -> dict:
     """O texto (Opus, sem ferramentas), um parágrafo por passo do `esqueleto`; sem ele, na ordem fixa das perguntas. Com
     `rascunho`, a reescrita que responde às objeções do leitor frio e do revisor e aos problemas do código; na última
     (`final`), o que não tem resposta sai do texto ou vira dúvida dita; na correção da conferência final
@@ -767,9 +768,16 @@ def redigir(e: dict, pesquisa: dict | None, cad: list[dict], objecoes: list[dict
                           "está difícil para quem lê, mesmo que esteja certo), e pelo revisor, como a leitora, como quem "
                           "defende quem decidiu, como quem critica e como editor. Responda a cada objeção no texto, com o "
                           "caderno: corrija o número, ponha a régua, explique a frase com palavras mais simples ou corte o "
-                          "que não se sustenta:\n"
+                          "que não se sustenta. O leitor que só recebeu o texto sabe o que está difícil, e o revisor, que tem "
+                          "o caderno, sabe o que é verdade: uma objeção do leitor_frio nunca se resolve tirando um fato que o "
+                          "caderno sustenta nem trocando uma afirmação exata por outra mais simples e errada. Quando duas "
+                          "objeções brigam, vale a do revisor:\n"
                           + "\n".join(f"- [{o['cabeca']}{', grave' if o.get('grave') else ''}] \"{o['trecho']}\": "
                                       f"{o['problema']} (onde conferir: {o['onde_conferir']})" for o in objecoes))
+        if nao_voltar:
+            partes.append("Erros graves que o revisor apontou nas voltas anteriores. O que já foi corrigido não volta, "
+                          "nem com outras palavras, nem no título:\n"
+                          + "\n".join(f"- \"{o['trecho']}\": {o['problema']}" for o in nao_voltar))
         if problemas:
             partes.append("O código achou estes problemas; resolva os graves:\n- " + "\n- ".join(problemas))
         if so_corrige:
@@ -874,7 +882,9 @@ def objecoes_do_frio(frio: dict | None) -> list[dict]:
                "coisa de cada vez, na ordem em que acontecem", True)
     for x in lt.get("contradicoes") or []:
         ob(x["frase_a"], f"para quem só leu o texto, contradiz \"{x['frase_b'][:200]}\": {x['por_que']}",
-           "o caderno: fique com uma fonte só para essa pergunta, ou diga por que os dois números são diferentes", True)
+           "o caderno: se ele sustenta os dois fatos, os dois ficam, e a frase diz o que cada um conta; o que muda é a "
+           "frase que generaliza (\"só\", \"todos\", \"nenhum\"). Se são duas fontes para a mesma pergunta, fique com a que "
+           "responde e diga de quem é", True)
     lado = [x for x in lt.get("ao_pe_da_letra") or [] if x["tipo"] != "falsa"]
     for x in lt.get("ao_pe_da_letra") or []:
         if x["tipo"] == "falsa":
@@ -939,7 +949,8 @@ FINAL_REVISOR = """Esta é a conferência final, depois da última reescrita. Le
 
 
 def revisar(e: dict, texto: dict, cad: list[dict], codigo: dict, antes: list[dict] | None = None,
-            timeout: int = 600, final: bool = False, esqueleto: dict | None = None, frio: dict | None = None) -> dict:
+            timeout: int = 600, final: bool = False, esqueleto: dict | None = None, frio: dict | None = None,
+            graves_antes: list[dict] | None = None) -> dict:
     partes = [f"<persona>\n{_persona()}\n</persona>", f"<guia>\n{guia()}\n</guia>", _bloco_base(e),
               *([e["decisao"]] if e.get("decisao") else []),
               f"<memoria_do_site>\nO que o site já publicou nos últimos dias:\n{e['site']}\n</memoria_do_site>",
@@ -953,6 +964,13 @@ def revisar(e: dict, texto: dict, cad: list[dict], codigo: dict, antes: list[dic
                                                      ensure_ascii=False, indent=1) + "\n</leitor_frio>")
     if final:
         partes.append(FINAL_REVISOR)
+        if graves_antes:
+            # A última reescrita, ao responder a uma objeção, pode trazer de volta um erro que outra volta já tinha
+            # corrigido (12/11/2026: o título voltou a dizer "só a trava de gasto tem valor publicado").
+            partes.append("Erros graves que as voltas anteriores apontaram. Confira, um a um, se o texto como ficou traz "
+                          "algum de volta, com as mesmas palavras ou com outras, no título, num intertítulo ou num "
+                          "parágrafo. O que voltou é objeção grave:\n"
+                          + "\n".join(f"- \"{o['trecho']}\": {o['problema']}" for o in graves_antes))
     elif antes:
         partes.append("Esta é a segunda volta. As objeções da primeira:\n"
                       + "\n".join(f"- [{o['cabeca']}] \"{o['trecho']}\": {o['problema']}" for o in antes)
@@ -1492,6 +1510,7 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 30, offline:
     # devolve objeções; a redação responde às dos dois; a segunda volta só confere o que ficou; a terceira só procura o
     # erro que a última reescrita deixou, e a redação corrige só ele.
     objecoes: list[dict] = []
+    graves_antes: list[dict] = []  # os erros graves que o revisor já apontou: a reescrita seguinte não os traz de volta
     for volta in (1, 2, 3):
         codigo = conferir_codigo(t, cad, e, ontem)
         if resta() < (300 if volta == 3 else 420):
@@ -1512,7 +1531,8 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 30, offline:
         log(f"texto do dia: revisão, volta {volta} ({len(codigo['graves'])} problemas graves do código, "
             f"{len(frias)} objeções do leitor frio)")
         rv = revisar(e, t, cad, codigo, antes=objecoes if volta == 2 else None, final=volta == 3,
-                     timeout=min(600 if volta < 3 else 300, resta() - 180), esqueleto=esq, frio=frio)
+                     timeout=min(600 if volta < 3 else 300, resta() - 180), esqueleto=esq, frio=frio,
+                     graves_antes=graves_antes)
         reg["meta"].append(rv["meta"])
         if rv["ok"]:
             novas = _linhas_do_revisor(rv["saida"]["caderno"], cad)
@@ -1535,7 +1555,9 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 30, offline:
             break
         log(f"texto do dia: a redação responde a {len(frias) + len(objecoes)} objeções")
         r = redigir(e, pesquisa, cad, frias + objecoes, codigo["graves"] + (codigo["avisos"][:10] if volta < 3 else []), t,
-                    final=volta >= 2, so_corrige=volta == 3, esqueleto=esq)
+                    final=volta >= 2, so_corrige=volta == 3, esqueleto=esq, nao_voltar=graves_antes)
+        ja = {(o["trecho"], o["problema"]) for o in graves_antes}  # se o revisor falha na volta 2, as objeções se repetem
+        graves_antes = graves_antes + [o for o in objecoes if o.get("grave") and (o["trecho"], o["problema"]) not in ja]
         reg["meta"].append(r["meta"])
         if not r["ok"]:
             break
