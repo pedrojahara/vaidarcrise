@@ -9,14 +9,19 @@ A pauta (src/pauta.py) escolhe a história em código, pela soma das notícias d
      dono de cada dado. Depois, a segunda busca (Opus, com a busca e o leitor) procura o que o código aponta (o
      documento que ninguém leu e a linha cuja página não é a do dono do dado, para trocar a fonte), o que a pesquisa
      disse que não achou e o tamanho das medidas que ficaram sem ele, porque o que a pesquisa não achou não é fato
-     sobre o que foi publicado;
-  2. esqueleto (Opus, sem ferramentas): antes de existir qualquer frase, a pergunta da leitora, a resposta em duas
+     sobre o que foi publicado. A pesquisa junta os fatos e não faz a análise;
+  2. investigação (src/investiga.py; FUNDO.md, "A investigação"), fora do dia calmo: uma leitora leiga faz as
+     perguntas, explicações rivais escrevem até quatro testes com o corte escrito antes, testadores cegos medem contra
+     o dado de quem mediu, um cético tenta derrubar cada resultado e um juiz decide o que ficou e responde a cada
+     pergunta da leitora; uma segunda volta, se o juiz pedir e o tempo der. O resultado (as respostas, os achados, o
+     que caiu e os próximos sinais) vai ao esqueleto, à redação e ao revisor;
+  3. esqueleto (Opus, sem ferramentas): antes de existir qualquer frase, a pergunta da leitora, a resposta em duas
      frases, o fato que faz a resposta fazer sentido, os passos em ordem de dependência (cada um com a conta já feita),
      um nome por coisa e quem decide, quem influi e quem não alcança. Um leitor que só vê o esqueleto (Sonnet) diz se a
      resposta sai dos passos, e o esqueleto é refeito uma vez com o que ele achou;
-  3. redação (Opus, sem ferramentas): um texto só, de 300 a 600 palavras (perto de 800 num dia grande; de 120 a 200
+  4. redação (Opus, sem ferramentas): um texto só, de 300 a 600 palavras (perto de 800 num dia grande; de 120 a 200
      num dia calmo), um parágrafo por passo do esqueleto, que fecha no e daí do argumento, para quem o fato pesa;
-  4. revisão: o leitor frio (Sonnet, sem ferramentas) recebe só o texto, sem o guia, o caderno nem o esqueleto, e diz
+  5. revisão: o leitor frio (Sonnet, sem ferramentas) recebe só o texto, sem o guia, o caderno nem o esqueleto, e diz
      o que entendeu de cada parágrafo, o que teve de adivinhar e o que não é verdade ao pé da letra; o título e os
      intertítulos são lidos sozinhos. Depois, o revisor (Opus, com busca) lê o texto como três leitores (a leitora,
      quem defende quem decidiu e quem critica) e um editor (o esqueleto e a voz), compara o que o leitor frio entendeu
@@ -27,6 +32,11 @@ A pauta (src/pauta.py) escolhe a história em código, pela soma das notícias d
      barra: o que barra o texto é só a conferência do código.
 O texto é o post do dia: o site e o e-mail mostram o mesmo texto (post.formato = "historia"). Tudo o que veio da
 pesquisa e da revisão fica em post.pesquisa, no registro do dia (runs/<id>.json).
+
+No domingo, o mesmo caminho faz a pergunta da semana (fazer(..., semana=True); FUNDO.md, "A pergunta da semana"): a
+história é a que mais andou na semana, pela soma das notícias dos sete dias (pauta_da_semana), os passos são os da
+semana inteira, a leitora da investigação diz a pergunta que todo mundo está fazendo sobre ela, e a investigação tem
+mais tempo e até três voltas. O post sai com o tipo "pergunta" e a pergunta da semana em cima do título.
 
 Na nuvem (sem abrir as páginas), use --offline: a rodada seguinte do Mac roda --reconfere, abre as fontes e tira a
 frase que se apoia num documento que não confere.
@@ -39,9 +49,10 @@ Uso:
   .venv/bin/python src/fundo.py --confere                            # lista os fatos do dia sem texto
   .venv/bin/python src/fundo.py runs/2026-11-10T0545.json --fontes   # num texto publicado, troca o relato pela página
                                                                      # do dono do dado e corrige o que ela desmente
-Opções: --limite-min 30 (o tempo máximo), --offline (não abre os documentos), --refaz (com --hoje, refaz o texto que
+Opções: --limite-min 65 (o tempo máximo), --offline (não abre os documentos), --refaz (com --hoje, refaz o texto que
 já existe), --evitar (um achado que o texto não pode repetir), --sem-esqueleto (o texto sem o esqueleto e sem o leitor
-frio, na ordem fixa das perguntas, para comparar).
+frio, na ordem fixa das perguntas, para comparar), --sem-investigacao (o texto só com a pesquisa, sem a investigação de
+src/investiga.py, para comparar), --semana (a pergunta da semana numa rodada que não é de domingo, para testar).
 """
 from __future__ import annotations
 
@@ -49,6 +60,7 @@ import argparse
 import concurrent.futures as cf
 import datetime as dt
 import json
+import os
 import re
 import sys
 import time
@@ -59,6 +71,7 @@ import classify_news  # noqa: E402
 import conta  # noqa: E402
 import decisoes  # noqa: E402
 import fontes as origem  # noqa: E402  (a fonte original: o leitor, a classe de cada página e o mapa dos documentos)
+import investiga  # noqa: E402  (a análise antes do texto: perguntas, explicações rivais, testes, cético e juiz)
 import memoria  # noqa: E402
 import revisa_texto  # noqa: E402
 
@@ -67,6 +80,7 @@ RUNS = ROOT / "runs"
 METAS = ROOT / "config" / "metas.json"
 VERSAO = 4  # 4: o texto do dia pela história (um texto só)
 FORMATO = "historia"
+TIPOS = ("dia", "pergunta")  # o fato do dia, de segunda a sábado, e a pergunta da semana, no domingo
 CONTA = memoria.CONTA
 LEITOR = origem.FONTES
 MARCA = re.compile(r"\s*\[(c\d+(?:\s*,\s*c\d+)*)\]")
@@ -74,6 +88,13 @@ INTERTITULO = re.compile(r"^#{2,4}\s+(.+?)\s*$")
 # O tamanho do texto: o alvo e, entre parênteses no código, o limite que barra.
 TAMANHO = {"calmo": ((120, 200), (90, 260)), "normal": ((300, 600), (220, 720)), "grande": ((500, 800), (300, 950))}
 GRANDE = 4.0  # a soma da história que faz o dia grande
+INVESTIGA_S = int(60 * float(os.environ.get("VDC_INVESTIGA_MIN", "22")))  # o tempo da investigação
+# A pergunta da semana: a investigação tem mais tempo e até três voltas, e olha os sete dias de notícia até ontem.
+INVESTIGA_SEMANA_S = int(60 * float(os.environ.get("VDC_INVESTIGA_SEMANA_MIN", "35")))
+VOLTAS_SEMANA = 3
+DIAS_DA_SEMANA = 7
+PASSOS_DA_SEMANA = 14  # os passos da semana que a história leva, dos mais firmes aos menos
+PERGUNTA_MAX = 120  # a pergunta da semana que vai em cima do título, em caracteres
 CFG = json.loads((ROOT / "config" / "modelo.json").read_text())
 PRESSOES = list(CFG["direcao"]["nomes"])
 
@@ -108,20 +129,13 @@ _ITEM_TROCA = {**_ITEM, "required": [*_ITEM["required"], "troca"],
 _IDS = {"type": "array", "maxItems": 12, "items": {"type": "string"}}
 SCHEMA_PESQUISA = {
     "type": "object", "additionalProperties": False,
-    "required": ["perguntas", "caderno", "argumentos", "objecao", "o_que_falta", "pagina_que_falta"],
+    "required": ["perguntas", "caderno", "o_que_falta", "pagina_que_falta"],
     "properties": {
         "perguntas": {"type": "array", "minItems": 3, "maxItems": 12, "items": {
             "type": "object", "additionalProperties": False, "required": ["pergunta", "resposta", "caderno"],
             "properties": {"pergunta": {"type": "string", "maxLength": 300}, "resposta": {"type": "string", "maxLength": 1200},
                            "caderno": _IDS}}},
         "caderno": {"type": "array", "minItems": 3, "maxItems": 45, "items": _ITEM},
-        "argumentos": {"type": "array", "minItems": 1, "maxItems": 3, "items": {
-            "type": "object", "additionalProperties": False,
-            "required": ["argumento", "para_quem", "o_que_desmente", "caderno"],
-            "properties": {"argumento": {"type": "string", "maxLength": 600}, "para_quem": {"type": "string", "maxLength": 300},
-                           "o_que_desmente": {"type": "string", "maxLength": 400}, "caderno": _IDS}}},
-        "objecao": {"type": "object", "additionalProperties": False, "required": ["texto", "caderno"],
-                    "properties": {"texto": {"type": "string", "maxLength": 800}, "caderno": _IDS}},
         "o_que_falta": {"type": "string", "maxLength": 600},
         # O site não cria página sozinho (Pedro, 8/11/2026): a pesquisa só diz se sentiu falta de uma, e a rodada
         # avisa o Pedro (src/base_site.py, falta_pagina()).
@@ -294,18 +308,20 @@ def ficha(hid: str | None, dia: dt.date, pauta: dict | None = None) -> dict | No
     return {**h, "linha_do_tempo": [x for x in h.get("linha_do_tempo") or [] if (x.get("data") or "") <= dia.isoformat()]}
 
 
+def historia_do_post(r: dict) -> str | None:
+    """A história de que o texto de uma rodada tratou: a da semana no domingo, a da pauta nos outros dias."""
+    return ((r.get("post") or {}).get("pesquisa") or {}).get("historia") or ((r.get("pauta") or {}).get("escolha") or {}).get("historia")
+
+
 def ultimo_passo(hid: str | None, dia: dt.date) -> dict | None:
-    """O último texto do dia que o site publicou sobre a história, antes de `dia` (a última rodada de cada dia)."""
+    """O último texto que o site publicou sobre a história, antes de `dia` (a última rodada de cada dia)."""
     if not hid:
         return None
-    por_dia: dict[str, Path] = {}
-    for arq in sorted(RUNS.glob("*.json")):
-        if arq.stem[:10] < dia.isoformat():
-            por_dia[arq.stem[:10]] = arq
+    por_dia = {d: arq for d, arq in _por_dia().items() if d < dia.isoformat()}
     for d in sorted(por_dia, reverse=True):
         r = _ler(por_dia[d], {})
         post = r.get("post") or {}
-        if post.get("ok") and post.get("formato") == FORMATO and ((r.get("pauta") or {}).get("escolha") or {}).get("historia") == hid:
+        if post.get("ok") and post.get("formato") == FORMATO and historia_do_post(r) == hid:
             return {"data": d, "titulo": post["titulo"], "argumento": (post.get("pesquisa") or {}).get("argumento", "")}
     return None
 
@@ -318,7 +334,8 @@ def _linha_passo(c: dict, eventos: dict | None) -> str:
     extra = [x for x, ok in (("o marco que a história esperava", c.get("marco")),
                              ("previsão de casa grande que mudou de lado", c.get("previsao_virou")),
                              ("fala sem medida", c.get("sem_medida"))) if ok]
-    return (f"- {c['titulo']} | {pauta_mod.ESTAGIO_TXT.get(c['estagio'], c['estagio'])}"
+    quando = f"{c['dia'][8:10]}/{c['dia'][5:7]} | " if c.get("dia") else ""
+    return (f"- {quando}{c['titulo']} | {pauta_mod.ESTAGIO_TXT.get(c['estagio'], c['estagio'])}"
             + (f" ({'; '.join(extra)})" if extra else "")
             + f" | {c['lado']} o risco | por quê: {c['porque']} | jornais: {len(c['jornais'])} ({', '.join(c['jornais'])})"
             + f" | manchetes: {escreve_post._manchetes(fontes, 6)}")
@@ -341,10 +358,16 @@ def _bloco_historia(h: dict | None, pauta: dict, eventos: dict | None, ult: dict
     pm = h.get("proximo_marco") or {}
     if pm.get("o_que"):
         l.append(f"Próximo marco: {pm.get('data') or 'sem data'}, {pm['o_que']}")
-    l.append(f"Os passos de ontem (soma {g['pontos']}):")
+    semana = pauta.get("semana")
+    l.append(f"Os passos da semana (soma {g['pontos']}), do mais firme ao menos firme, com o dia das notícias:"
+             if semana else f"Os passos de ontem (soma {g['pontos']}):")
     l += [_linha_passo(c, eventos) for c in (pauta_mod.candidato(pauta, i) for i in g["candidatos"]) if c]
     if nome == "historia":
-        if ult:
+        if semana:
+            l.append("Hoje o texto é a pergunta da semana: ele não conta o passo de ontem nem repete os textos do dia "
+                     "(bloco <ja_dito>, quando vem). Ele responde à pergunta que a semana deixou sobre esta história, com "
+                     "os passos da semana como prova e com o contexto inteiro para quem não leu os textos do dia.")
+        elif ult:
             l.append(f"O último texto do site sobre esta história saiu em {ult['data'][8:10]}/{ult['data'][5:7]}: "
                      f"\"{ult['titulo']}\". O argumento dele: {ult['argumento']} Conte só o passo novo, com uma frase de "
                      "régua; não repita o contexto nem o argumento daquele dia.")
@@ -356,6 +379,8 @@ def _bloco_historia(h: dict | None, pauta: dict, eventos: dict | None, ult: dict
 
 def modo(pauta: dict) -> str:
     esc = pauta.get("escolha") or {}
+    if pauta.get("semana") and esc.get("historia"):
+        return "grande"
     if esc.get("calmo"):
         return "calmo"
     if pauta.get("direcao_mudou") or pauta.get("pressoes_mudaram") or (esc.get("pontos") or 0) >= GRANDE:
@@ -363,15 +388,73 @@ def modo(pauta: dict) -> str:
     return "normal"
 
 
-def entrada(rodada: dict, cx: dict | None = None) -> dict:
+def _id_da_historia(hid: str, conhecidas: set[str]) -> str:
+    """A história nova de um dia ("nova:tema-x") ganha, na pauta do dia seguinte, o id "tema_x" (pauta.abrir_historias).
+    A que ainda não tem ficha fica com o id de nova, e a ficha sai do título do tema (ficha())."""
+    if not hid.startswith("nova:"):
+        return hid
+    x = hid.split(":", 1)[1].replace("-", "_")[:40]
+    return x if x in conhecidas else hid
+
+
+def pauta_da_semana(rodada: dict) -> dict:
+    """A pauta do domingo, sem IA: a história que mais andou na semana, pela soma das pautas de cada dia (src/pauta.py)
+    dos sete dias até hoje, com os passos da semana inteira, do mais firme ao menos firme. No empate, vale a que saiu
+    em mais jornais. Cada passo leva o dia das notícias e um id novo (o dia e o id do candidato)."""
+    import pauta as pauta_mod
+    dia = dt.date.fromisoformat(rodada["gerado_em"][:10])
+    ini = (dia - dt.timedelta(days=DIAS_DA_SEMANA - 1)).isoformat()
+    pautas = [(d, _ler(arq, {}).get("pauta") or {}) for d, arq in sorted(_por_dia().items()) if ini <= d < dia.isoformat()]
+    pautas.append((dia.isoformat(), rodada.get("pauta") or {}))
+    conhecidas = {h["id"] for h in _ler(memoria.HISTORIAS, {}).get("historias", [])}
+    grupos: dict[str, dict] = {}
+    cands: list[dict] = []
+    for d, p in pautas:
+        noticia = (dt.date.fromisoformat(d) - dt.timedelta(days=1)).isoformat()
+        for g in p.get("historias") or []:
+            hid = _id_da_historia(g["id"], conhecidas)
+            x = grupos.setdefault(hid, {**{k: g.get(k) for k in ("titulo", "pressao", "pressoes")}, "id": hid,
+                                        "nova": hid.startswith("nova:"),
+                                        "pontos": 0.0, "candidatos": [], "jornais": 0, "fato_grande": False, "dias": []})
+            if not g.get("nova"):
+                x.update({k: g.get(k) or x.get(k) for k in ("titulo", "pressao", "pressoes")})
+            x["pontos"] += g.get("pontos") or 0
+            x["jornais"] = max(x["jornais"], g.get("jornais") or 0)
+            x["fato_grande"] = x["fato_grande"] or bool(g.get("fato_grande"))
+            x["dias"].append(noticia)
+            for cid in g.get("candidatos") or []:
+                c = pauta_mod.candidato(p, cid)
+                if c:
+                    cands.append({**c, "id": f"{d}:{cid}", "dia": noticia})
+                    x["candidatos"].append(cands[-1]["id"])
+    por_id = {c["id"]: c for c in cands}
+    somas = sorted(grupos.values(), key=lambda g: (-g["pontos"], -g["jornais"]))
+    for g in somas:
+        g["pontos"] = round(g["pontos"], 2)
+        g["candidatos"] = sorted(g["candidatos"], key=lambda i: (pauta_mod.chave(por_id[i]), por_id[i]["dia"]))[:PASSOS_DA_SEMANA]
+    h = somas[0] if somas else None
+    return {"semana": {"de": (dia - dt.timedelta(days=DIAS_DA_SEMANA)).isoformat(),
+                       "ate": (dia - dt.timedelta(days=1)).isoformat(), "dias": len(pautas)},
+            "candidatos": cands, "historias": somas[:5],
+            "datas": [x for _, p in pautas for x in p.get("datas") or []],
+            "pressoes_mudaram": [x for _, p in pautas for x in p.get("pressoes_mudaram") or []],
+            "direcao_mudou": any(p.get("direcao_mudou") for _, p in pautas), "estado": (rodada.get("pauta") or {}).get("estado"),
+            "escolha": {"historia": h["id"] if h else None, "titulo": h["titulo"] if h else None,
+                        "pontos": h["pontos"] if h else 0, "motivo": "a história que mais andou na semana",
+                        "calmo": not h, "nova": False, "pulada": None, "segunda": None},
+            "final": h["candidatos"][0] if h and h["candidatos"] else None}
+
+
+def entrada(rodada: dict, cx: dict | None = None, semana: bool = False) -> dict:
     """O que todas as etapas recebem: a história do dia e a segunda, os passos de ontem, as metas, os dados do site,
     as próximas datas e as três memórias, tudo até o dia da rodada. `cx` é o contexto montado na rodada da manhã
-    (src/escreve_post.py, contexto()), quando a rodada ainda não está em runs/."""
+    (src/escreve_post.py, contexto()), quando a rodada ainda não está em runs/. Com `semana`, a história e os passos
+    são os da semana (pauta_da_semana), para a pergunta da semana do domingo."""
     import calendario
     import escreve_post
     dia = dt.date.fromisoformat(rodada["gerado_em"][:10])
     cx = cx or escreve_post.contexto_da_rodada(rodada)
-    p = rodada.get("pauta") or {}
+    p = pauta_da_semana(rodada) if semana else rodada.get("pauta") or {}
     esc = p.get("escolha") or {}
     eventos = cx.get("eventos")
     h = ficha(esc.get("historia"), dia, p)
@@ -383,7 +466,7 @@ def entrada(rodada: dict, cx: dict | None = None) -> dict:
     cal = "\n".join(f"- {int(x['data'][8:10])}/{int(x['data'][5:7])}/{x['data'][:4]}: "
                     + (calendario.JUROS.get(x["tipo"]) or calendario.rotulo(x["tipo"], dt.date.fromisoformat(x["data"])))
                     for x in futuras)
-    ev = evento_do_dia(rodada, eventos)
+    ev = evento_do_dia({"pauta": p}, eventos)
     passos = passos_de_ontem(p, [x for x in (esc.get("historia"), esc.get("segunda")) if x], eventos)
     blocos_h = [_bloco_historia(h, p, eventos, ult), _bloco_historia(h2, p, eventos, None, "segunda_historia")]
     base_h = " ".join([json.dumps(h or {}, ensure_ascii=False), json.dumps(h2 or {}, ensure_ascii=False), *blocos_h])
@@ -391,7 +474,7 @@ def entrada(rodada: dict, cx: dict | None = None) -> dict:
             "escolha": esc, "historia": h, "segunda": h2, "ultimo": ult, "metas": ms, "modo": modo(p),
             "bloco_historia": "\n\n".join(b for b in blocos_h if b), "base_historia": base_h,
             "evento": ev, "nivel_decisao": decisoes.nivel(ev), "decisao": decisoes.bloco_pesquisa(ev),
-            "passos": passos, "documentos": None,
+            "passos": passos, "documentos": None, "semana": bool(semana), "pergunta_semana": "",
             "memoria": memoria.contexto(dia), "memoria_curta": memoria.contexto(dia, fatos=False),
             "site": memoria._memoria_site(dia), "cfg": cx["cfg"]}
 
@@ -425,7 +508,8 @@ def _bloco_noticias(e: dict) -> str:
             l += [f"  - {f.get('veiculo', '')}: {f['url'].split('*')[-1]}" for f in fs]
     if not l:
         return ""
-    return ("<noticias_de_ontem>\nAs notícias dos passos de ontem, com o endereço. A notícia é a ponte até a fonte: abra com "
+    return ("<noticias_de_ontem>\nAs notícias dos passos " + ("da semana" if e.get("semana") else "de ontem")
+            + ", com o endereço. A notícia é a ponte até a fonte: abra com "
             "o leitor a que você precisar, veja de onde ela tirou o número ou a fala (o nome do relatório, o número do "
             "projeto, o link) e vá até lá.\n" + "\n".join(l) + "\n</noticias_de_ontem>")
 
@@ -447,12 +531,22 @@ def evento_do_dia(rodada: dict, eventos: dict | None = None) -> dict | None:
     return eventos.get(c.get("evento"))
 
 
+SEMANA_TXT = ("Hoje é domingo, e o texto é a pergunta da semana (o guia, \"A pergunta da semana\"): a história que mais "
+              "andou na semana, a pergunta que todo mundo está fazendo sobre ela e a resposta que os números sustentam, "
+              "com os passos da semana como prova. A leitora o lê com calma e o passa adiante.")
+
+
 def _bloco_base(e: dict) -> str:
     ontem = e["dia"] - dt.timedelta(days=1)
+    semana = ""
+    if e.get("semana"):
+        semana = SEMANA_TXT + (f" A pergunta da semana, nas palavras da leitora: \"{e['pergunta_semana']}\". O esqueleto "
+                               "parte dela, como está, e o texto a responde." if e.get("pergunta_semana") else "") + "\n\n"
     return (f"Hoje é {e['dia'].strftime('%d/%m/%Y')}, e o texto sai por volta das 6h da manhã. Escreva como nessa manhã: "
             f"entra só o que foi publicado até ontem, {ontem.strftime('%d/%m/%Y')}, e nada do que saiu hoje ou depois "
-            "entra no caderno nem no texto.\n\n" + (e["bloco_historia"] or "<historia>\nNenhuma notícia de ontem é passo de "
-                                                     "uma história em andamento: o dia é calmo.\n</historia>")
+            "entra no caderno nem no texto.\n\n" + semana
+            + (e["bloco_historia"] or "<historia>\nNenhuma notícia de ontem é passo de "
+                                      "uma história em andamento: o dia é calmo.\n</historia>")
             + ("\n\n" + _bloco_metas(e["metas"]) if e["metas"] else "")
             + f"\n\n<dados_do_site>\n{e['dados']}\n</dados_do_site>\n\n<proximas_datas>\n{e['calendario']}\n</proximas_datas>")
 
@@ -500,8 +594,8 @@ Você recebe a ficha da história (bloco <historia>: o que é, a linha do tempo,
 3. A régua. Compare cada número com a régua da própria regra: o bloco <metas> traz o centro, a margem que a regra aceita e o que ela desconta. Compare sempre na mesma unidade (R$ com R$, % do PIB com % do PIB) e na mesma conta (a conta da meta com a meta, o resultado com todas as despesas com o mesmo resultado de outro ano). Anote no caderno as duas contas quando elas dão leituras diferentes. A régua tem duas pontas, a meta e o ponto em que a conta está agora, porque a meta sozinha não diz se um custo pesa: anote a projeção oficial mais recente do ano pela conta da meta (nas contas do governo, o Relatório de Avaliação de Receitas e Despesas Primárias, que o Planejamento e a Fazenda publicam a cada dois meses, com o bloqueio e o contingenciamento), o resultado até o último mês e quanto falta ou sobra para o centro e para o piso; na inflação, o IPCA de 12 meses e a projeção do Banco Central.
 4. O conteúdo de cada coisa citada. Para cada causa que quem decidiu cita (na ata, no comunicado, na exposição de motivos), anote o que ela encarece, com um exemplo do dia a dia, o tamanho estimado e quem estimou (a tabela de tradução tem o do dólar: `traduz dolar`), e de onde ela vem: de fora do país, do clima, do governo ou do Congresso. Para cada medida anunciada ou relatada, anote o que ela faz (que gasto corta, que imposto muda), o tamanho e quem relata. Para cada previsão, quem previu, o número e o prazo (o Focus diz a Selic esperada no fim de cada ano: `focus`). O texto não pode citar uma coisa sem o conteúdo dela.
 5. Quem discorda: a conta de quem faz outra (a IFI, do Senado; o Tribunal de Contas da União; o Focus; os bancos e as consultorias grandes) e a razão oficial de quem decidiu. A previsão de uma casa grande e conhecida (Itaú, Bradesco, XP, BTG, o FMI) entra com o nome de quem previu e a data, e quando ela muda de lado (crescimento que vira queda) é um sinal forte, que vale anotar com o número de antes e o de agora. Previsão é previsão, não fato.
-6. A vez parecida no passado, se houver, e o que veio depois (a memória longa e as contas do site). Conte por frequência e deixe o caso de hoje, ainda aberto, fora da conta (a saída de `episodios` já separa o aberto e diz o nível que repetir o passado pediria agora e quanto as outras vezes duraram).
-7. O argumento do dia: o que os passos de ontem querem dizer sobre a pergunta aberta da história, para quem eles pesam (a casa, a empresa ou o país), e o que desmentiria o argumento.
+6. As projeções de quem projeta para aquilo que a história mexe (a dívida, o juro, os preços, o crescimento): a do governo (no projeto de lei de diretrizes, no relatório bimestral), a do Focus, a da IFI e a do Banco Central, cada uma com a data.
+Você junta os fatos e não faz a análise: depois de você, uma investigação faz as perguntas da leitora, escreve as explicações rivais e testa cada uma contra o dado, a partir do seu caderno. Por isso o caderno vale mais que as respostas: tudo o que você achar e puder ser prova entra nele.
 Procure também os passos recentes da mesma história que as manchetes de ontem podem não trazer, como uma medida publicada no Diário Oficial ou o custo que a Fazenda divulgou no mesmo dia. Quando o fato é uma decisão pública, a entrada traz o bloco <decisao>, com as perguntas que o site faz a toda decisão daquele nível: responda a elas também. O site mede a decisão pelo objetivo que quem decidiu escreveu, com o que se sabia no dia, e nunca diz que ela acertou, que errou ou o que o decisor deveria fazer.
 
 Você pode rodar dois comandos, e só eles (outro será negado). O das séries do site:
@@ -522,7 +616,7 @@ Regras do caderno:
 
 Use a internet de verdade, e não só as memórias: faça pelo menos umas 8 buscas e abra com o leitor o documento de cada passo, atrás do motivo, do custo e do prazo, da conta de quem discorda e do que os jornais daqui e de fora disseram. Rode também as contas que podem mostrar o que ninguém mostrou (pausas, ciclos, recorde, parecidos, depois). Em "pagina_que_falta", diga só se a leitora precisaria de uma página do básico que o site ainda não tem (a lista vem na entrada); quase sempre fica vazio.
 
-No fim, proponha de 1 a 3 argumentos, a melhor objeção e o que você não conseguiu achar. Em "o_que_falta", diga cada coisa que não achou ou não leu e onde procurou: uma segunda busca vai atrás só disso. Não achar não prova que a coisa não existe: não monte argumento em cima do que você não achou ("só esta medida tem valor", "o governo não publicou o custo"). Trabalhe por no máximo uns 12 minutos e umas 25 buscas."""
+No fim, diga o que você não conseguiu achar. Em "o_que_falta", diga cada coisa que não achou ou não leu e onde procurou: uma segunda busca vai atrás só disso. Não achar não prova que a coisa não existe: não monte argumento em cima do que você não achou ("só esta medida tem valor", "o governo não publicou o custo"). Trabalhe por no máximo uns 12 minutos e umas 25 buscas."""
 
 
 def _evitar(e: dict) -> str:
@@ -553,8 +647,8 @@ def pesquisar(e: dict, timeout: int = 720) -> dict:
     partes[2:2] = [b for b in (origem.bloco_documentos(e.get("documentos")), _bloco_noticias(e)) if b]
     if e.get("evitar"):
         partes.append(_evitar(e))
-    partes.append("Pesquise e devolva o JSON do esquema: as perguntas com as respostas, o caderno, os argumentos, a melhor "
-                  "objeção, o que falta e a página que falta.")
+    partes.append("Pesquise e devolva o JSON do esquema: as perguntas com as respostas, o caderno, o que falta e a "
+                  "página que falta.")
     sistema = SISTEMA_PESQUISA.replace("{ajuda}", _ajuda_conta()).replace("{leitor}", origem.AJUDA)
     return classify_news.chamar_claude(sistema, "\n\n".join(partes), SCHEMA_PESQUISA, 5.0, etapa="pesquisa",
                                        ferramentas=FERRAMENTAS, permitidas=[*PERMITIDAS, f"Bash({CONTA}:*)"], timeout=timeout)
@@ -567,7 +661,7 @@ SISTEMA_SEGUNDA = """Você faz a segunda busca do texto do dia do vaidarcrise.co
 2. Para cada coisa, faça no mínimo três buscas diferentes antes de desistir, e só diga que não achou depois delas: uma com o nome da agência de notícias ou do site do órgão em que a coisa tramita ou foi decidida ("Agência Senado", "Agência Câmara", "Agência Brasil", o ministério, o Banco Central, o tribunal), que costumam publicar o quadro com o valor de cada medida; uma com o que se quer achar dito como os jornais dizem ("impacto de cada medida", "quanto rende", "estimativa do relator", "parecer", "quadro", com o ano); e uma com o número ou o nome do documento (o número do projeto, da medida provisória, da portaria, do processo), que as duas primeiras costumam revelar. Abra a página com o leitor de documentos. Em "onde_procurei", copie as buscas que você fez.
 3. Devolva em "lacunas", para cada coisa: "o_que" (o que faltava), "achou", "resposta" (o que você achou, com o número, de quem é a estimativa e a data; vazio se não achou), "onde_procurei" (os lugares e as palavras da busca) e "caderno" (os ids das linhas novas que sustentam a resposta).
 4. O que você achar vira linha em "caderno", com id de c101 em diante, pelas regras do caderno da pesquisa: tipo "documento", em "dono" quem mediu, decidiu, previu ou declarou o dado, em "fonte" quem publica no endereço, o link, a data de publicação (AAAA-MM-DD) e um trecho literal da página que diz o número ou o fato, copiado da saída do leitor, palavra por palavra (só se a página não abrir no leitor, o trecho que a busca mostrou); em "numeros", os números como a fonte escreve; "comando" e "saida" vazios; "troca" vazio quando a linha é nova. Só entra o que foi publicado até ontem. A página do dono vale mais que a notícia sobre ela, e o site que você não conhece não sustenta fato. Quando duas fontes dão números diferentes para a mesma coisa, anote as duas, cada uma com quem estimou.
-5. Em "muda_o_argumento", diga em uma ou duas frases se o que você achou derruba uma resposta ou um argumento da primeira pesquisa (ela concluiu que só uma medida tinha valor, e você achou o valor das outras); vazio se não derruba.
+5. Em "muda_o_argumento", diga em uma ou duas frases se o que você achou derruba uma resposta da primeira pesquisa (ela concluiu que só uma medida tinha valor, e você achou o valor das outras); vazio se não derruba.
 
 O leitor de documentos é o único comando que você pode rodar (outro será negado). Ele abre qualquer endereço público, página ou PDF, e devolve o texto ao pé da letra; use-o no lugar do WebFetch sempre que for copiar um trecho:
 """ + "{leitor}" + """
@@ -584,7 +678,7 @@ def buscar_o_que_falta(e: dict, pesquisa: dict, cad: list[dict], timeout: int = 
               *[b for b in (origem.bloco_documentos(e.get("documentos")), _bloco_noticias(e)) if b],
               f"<caderno>\n{_caderno_txt(cad) or '(vazio)'}\n</caderno>",
               *([origem.bloco_do_que_falta(falta)] if falta and any(falta.values()) else []),
-              "<pesquisa>\n" + json.dumps({k: pesquisa.get(k) for k in ("perguntas", "argumentos", "o_que_falta")},
+              "<pesquisa>\n" + json.dumps({k: pesquisa.get(k) for k in ("perguntas", "o_que_falta")},
                                           ensure_ascii=False, indent=1) + "\n</pesquisa>",
               f"Procure o que falta e devolva o JSON do esquema. Você tem uns {max(2, timeout // 60 - 1)} minutos: devolva o "
               "que achou antes disso, porque depois a resposta se perde."]
@@ -636,7 +730,7 @@ def juntar_segunda(pesquisa: dict, cad: list[dict], seg: dict) -> list[dict]:
 def _bloco_pesquisa(pesquisa: dict) -> str:
     """A pesquisa como o esqueleto e a redação a recebem. O que ela não achou vai com o nome do que é: limite da
     pesquisa, e não fato sobre o que foi publicado."""
-    d = {k: pesquisa.get(k) for k in ("perguntas", "argumentos", "objecao")}
+    d = {"perguntas": pesquisa.get("perguntas")}
     mudou = ((pesquisa.get("segunda_busca") or {}).get("muda_o_argumento") or "").strip()
     if mudou:
         d["o_que_a_segunda_busca_mudou"] = mudou
@@ -645,7 +739,58 @@ def _bloco_pesquisa(pesquisa: dict) -> str:
             + "\nO que a pesquisa não achou é limite da pesquisa, e não fato: o texto não diz que isso não existe, que não "
               "foi publicado nem que só o que ela achou tem valor."
             + (" A segunda busca achou parte do que faltava (as últimas perguntas): vale o que ela achou, e o argumento "
-               "que dependia da falta cai." if mudou else ""))
+               "que dependia da falta cai." if mudou else "")
+            + (f"\n\n<investigacao>\n{json.dumps(pesquisa['investigacao'], ensure_ascii=False, indent=1)}\n</investigacao>\n"
+               + INVESTIGACAO if pesquisa.get("investigacao") else ""))
+
+
+# A investigação (src/investiga.py) chega ao esqueleto, à redação e ao revisor por este bloco: o resultado, e não o
+# caminho. O caminho (os testes, o cético, as explicações) fica no registro da rodada e não vai para a página.
+INVESTIGACAO = ("A investigação (bloco <investigacao>) veio antes do texto: uma leitora leiga fez as perguntas, explicações "
+                "rivais foram testadas contra o dado de quem mediu, com o corte escrito antes, um cético tentou derrubar "
+                "cada resultado, e um juiz decidiu o que ficou. \"respostas\" é a melhor resposta a cada pergunta da "
+                "leitora, e \"achados\" são o que o dado sustenta, cada um com a força. A pergunta e a resposta do "
+                "texto saem das respostas, e os passos se apoiam nos achados e nas linhas do caderno deles. A força entra "
+                "em palavras e com a ressalva (\"em 9 anos, nenhum ficou a menos de...\"), e o achado fraco não vira "
+                "conclusão. \"caiu\" é o que se dizia e o dado derrubou: não entra como fato, e pode entrar como a "
+                "crença errada corrigida de frente, com o dado que a derrubou. O texto não conta como a análise foi "
+                "feita: nada de investigação, teste, corte, cético ou juiz na página, e a conta do passado entra como "
+                "conta (\"nos cinco anúncios desde 2015...\").")
+
+
+def bloco_da_leitora(e: dict) -> str:
+    """O que a leitora da investigação vê: o dia e a história com os passos de ontem (no domingo, os da semana), sem
+    a pesquisa."""
+    return (f"Hoje é {e['dia'].strftime('%d/%m/%Y')}" + (", domingo: olhe a semana inteira" if e.get("semana") else "")
+            + ".\n\n" + (e["bloco_historia"] or "(nenhuma história andou ontem)"))
+
+
+def bloco_da_investigacao(e: dict, pesquisa: dict | None) -> str:
+    """O que as explicações rivais e o cético veem: a ficha, as metas, os dados do site, a decisão e as respostas da
+    pesquisa (o caderno vai à parte)."""
+    partes = [_bloco_base(e), *([e["decisao"]] if e.get("decisao") else [])]
+    if pesquisa:
+        partes.append("As respostas da pesquisa:\n" + json.dumps({k: pesquisa.get(k) for k in ("perguntas", "o_que_falta")},
+                                                                 ensure_ascii=False, indent=1))
+    return "\n\n".join(partes)
+
+
+def bloco_do_ja_dito(e: dict, n: int = 3) -> str:
+    """A régua do novo: o que o site já publicou sobre a história, nos últimos `n` textos sobre ela."""
+    hid = (e.get("escolha") or {}).get("historia")
+    por_dia = {d: arq for d, arq in _por_dia().items() if d < e["dia"].isoformat()}
+    textos = []
+    for d in sorted(por_dia, reverse=True):
+        r = _ler(por_dia[d], {})
+        post = r.get("post") or {}
+        if hid and post.get("ok") and historia_do_post(r) == hid:
+            textos.append(f"Em {d[8:10]}/{d[5:7]}, \"{post.get('titulo', '')}\": " + " ".join(post.get("paragrafos") or [])[:3000])
+        if len(textos) >= n:
+            break
+    ficha_h = (e.get("historia") or {}).get("o_que_e") or ""
+    return ((f"A história: {ficha_h}\n\n" if ficha_h else "")
+            + ("O que o site já publicou sobre ela:\n" + "\n\n".join(textos) if textos
+               else "O site ainda não publicou texto sobre esta história."))
 
 
 def aplicar_trocas(cad: list[dict], novas: list[dict], log=print) -> tuple[list[dict], dict[str, str]]:
@@ -1294,7 +1439,8 @@ def _num_set(texto: str) -> list[float]:
 def conferir_conta(c: dict) -> dict:
     cmd = c.get("comando") or ""
     if "conta.py" not in cmd and cmd.split(" ")[0] not in ("series", "valores", "variacao", "recorde", "depois", "ciclos",
-                                                            "pausas", "parecidos", "recessoes", "focus", "episodios", "traduz", "calc"):
+                                                            "pausas", "parecidos", "recessoes", "focus", "episodios", "traduz", "calc",
+                                                            "stats"):
         return {"status": "nao_confere", "por_que": "conta sem comando de src/conta.py"}
     try:
         saida = conta.rodar(cmd)
@@ -1837,7 +1983,7 @@ def trocar_fontes(rodada: dict, limite_min: float = 25, log=print) -> dict | Non
     if not any(falta.values()):
         log("texto do dia: nenhuma linha para trocar de fonte")
         return None
-    pesquisa = json.loads(json.dumps(t.get("pesquisa") or {})) or {"perguntas": [], "argumentos": [], "o_que_falta": ""}
+    pesquisa = json.loads(json.dumps(t.get("pesquisa") or {})) or {"perguntas": [], "o_que_falta": ""}
     metas_novas = []
     log(f"texto do dia: troca de fontes: {len(falta['ler'])} documentos sem ler e {len(falta['trocar'])} linhas para trocar")
     r2 = buscar_o_que_falta(e, pesquisa, cad, timeout=max(180, min(600, resta() - 780)), falta=falta)
@@ -1904,17 +2050,18 @@ def _texto_de_ontem(dia: dt.date) -> str | None:
             por_dia[arq.stem[:10]] = arq
     for d in sorted(por_dia, reverse=True):
         post = (_ler(por_dia[d], {}).get("post") or {})
-        if post.get("ok") and (post.get("tipo") or "dia") == "dia":
+        if post.get("ok") and (post.get("tipo") or "dia") in TIPOS:
             return " ".join(post.get("paragrafos") or [])
     return None
 
 
-def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 30, offline: bool = False, log=print,
-          evitar: list[str] | None = None, pesquisa_ok: bool = True, esqueleto_ok: bool = True) -> dict:
+def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline: bool = False, log=print,
+          evitar: list[str] | None = None, pesquisa_ok: bool = True, esqueleto_ok: bool = True,
+          investigacao_ok: bool = True, semana: bool = False) -> dict:
     """A pesquisa, o esqueleto, o texto e a revisão do dia. Devolve o registro que vai para post.pesquisa, com o título
     e o texto (com as marcas) quando ele sai. Sem a pesquisa, o texto sai da ficha da história e dos dados do site. Se
     o esqueleto ou o leitor frio falharem, ou sem `esqueleto_ok`, o texto sai como antes deles: na ordem fixa das
-    perguntas e só com o revisor. Nunca levanta exceção."""
+    perguntas e só com o revisor. Com `semana`, é a pergunta da semana do domingo. Nunca levanta exceção."""
     t0 = time.time()
     fim = t0 + 60 * limite_min
     reg: dict = {"versao": VERSAO, "ok": False, "em": _agora(), "meta": [], "offline": offline, "voltas": []}
@@ -1923,18 +2070,26 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 30, offline:
         return int(fim - time.time())
 
     try:
-        e = entrada(rodada, cx)
+        e = entrada(rodada, cx, semana)
     except Exception as ex:  # noqa: BLE001
         return {**reg, "erro": f"entrada: {ex!r}"[:300]}
     _preparar(e, reg, evitar)
     reg.update({"historia": e["escolha"].get("historia"), "segunda": e["escolha"].get("segunda"), "modo": e["modo"]})
+    if semana:
+        reg["semana"] = {**e["pauta"]["semana"], "pontos": e["escolha"].get("pontos"),
+                         "historias": [{k: g[k] for k in ("id", "pontos", "jornais")} for g in e["pauta"]["historias"]]}
     ontem = _texto_de_ontem(e["dia"])
+    # O tempo do texto (esqueleto, redação e revisão) e, antes dele, o da investigação, que não roda no dia calmo.
+    reserva = 1260 if esqueleto_ok else 900
+    investigar = investigacao_ok and e["modo"] != "calmo" and bool(e["historia"])
+    tempo_investiga = INVESTIGA_SEMANA_S if semana else INVESTIGA_S
+    reserva_inv = reserva + (tempo_investiga if investigar else 0)
 
     # 1. pesquisa. Antes dela, o código busca sozinho os documentos originais dos passos de ontem (src/fontes.py).
     pesquisa, cad = None, []
     if pesquisa_ok and e["historia"]:
         buscar_documentos(e, offline, log)
-        tempo = min(720, resta() - (1260 if esqueleto_ok else 900))
+        tempo = min(720, resta() - reserva_inv)
         if tempo >= 240:
             log(f"texto do dia: pesquisa da história {e['escolha'].get('historia')} (até {tempo // 60} min)")
             r = pesquisar(e, timeout=tempo)
@@ -1946,7 +2101,7 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 30, offline:
                 # A segunda busca usa o tempo que a pesquisa deixou: procura o que o código aponta (o documento que
                 # ninguém leu, a linha cuja página não é a do dono do dado) e o que a pesquisa disse que não achou.
                 falta = origem.o_que_falta(cad, e.get("documentos"), e["passos"])
-                tempo2 = min(480 if any(falta.values()) else 420, resta() - (1260 if esqueleto_ok else 900))
+                tempo2 = min(480 if any(falta.values()) else 420, resta() - reserva_inv)
                 if tempo2 >= 150:
                     log(f"texto do dia: segunda busca, atrás do que a pesquisa não achou (até {tempo2 // 60} min; o código "
                         f"aponta {len(falta['ler'])} documentos sem ler e {len(falta['trocar'])} linhas para trocar de fonte)")
@@ -1968,10 +2123,34 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 30, offline:
                         log(f"texto do dia: a segunda busca falhou ({ex!r}); o texto segue sem ela")
             else:
                 log(f"texto do dia: a pesquisa falhou ({r['meta'].get('erro')}); o texto sai da ficha e dos dados")
+    # 2. a investigação: a análise antes do texto (src/investiga.py; FUNDO.md, "A investigação"). O resultado vai para
+    # a pesquisa, que o esqueleto, a redação e o revisor recebem; as linhas que os testes e o cético abriram passam pela
+    # mesma conferência das outras.
+    if pesquisa and investigar:
+        tempo_inv = min(tempo_investiga, resta() - reserva)
+        if tempo_inv >= 600:
+            log(f"texto do dia: investigação (até {tempo_inv // 60} min)")
+            inv = investiga.investigar(bloco_da_leitora(e), bloco_da_investigacao(e, pesquisa),
+                                       bloco_do_ja_dito(e, 6 if semana else 3), _caderno_txt(cad),
+                                       (e["dia"] - dt.timedelta(days=1)).isoformat(), tempo_inv, {c["id"] for c in cad},
+                                       _ITEM, log, **({"voltas": VOLTAS_SEMANA, "semana": True} if semana else {}))
+            reg["meta"] += inv["meta"]
+            e["pergunta_semana"] = (inv["dossie"].get("pergunta_da_semana") or "").strip()
+            if inv["caderno"]:
+                conferir_caderno(inv["caderno"], e["dia"], offline, _base_site(e))
+                cad = juntar_cadernos(cad, inv["caderno"])
+            if inv["ok"]:
+                pesquisa["investigacao"] = investiga.para_o_texto(inv["dossie"], {c["id"] for c in cad})
+            else:
+                log(f"texto do dia: a investigação parou ({inv.get('erro')}); o texto segue com o que ela deixou")
+                if inv["dossie"].get("respostas"):
+                    pesquisa["investigacao"] = investiga.para_o_texto(inv["dossie"], {c["id"] for c in cad})
+            reg["investigacao"] = {**inv["dossie"], "ok": inv["ok"], **({"erro": inv["erro"]} if inv.get("erro") else {}),
+                                   "duracao_s": inv.get("duracao_s")}
     reg["pesquisa"] = {k: v for k, v in (pesquisa or {}).items() if k != "caderno"}
     reg["pagina_que_falta"] = ((pesquisa or {}).get("pagina_que_falta") or "").strip()
 
-    # 2. esqueleto: a estrutura do argumento, pensada e lida por quem só vê o esqueleto, antes de existir uma frase.
+    # 3. esqueleto: a estrutura do argumento, pensada e lida por quem só vê o esqueleto, antes de existir uma frase.
     esq = None
     if esqueleto_ok and resta() >= 900:
         try:
@@ -2079,6 +2258,10 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 30, offline:
     reg.update({"titulo": t["titulo"].strip(), "texto": t["texto"].strip(), "argumento": t["argumento"].strip(),
                 "porque": t["porque"].strip(), "pressao": (e["historia"] or {}).get("pressao"),
                 "duracao_s": int(time.time() - t0)})
+    if semana:
+        # A pergunta que a página mostra em cima do título: a da leitora; sem ela, a do esqueleto, se for curta.
+        q = e["pergunta_semana"] or ((esq or {}).get("pergunta") or "").strip()
+        reg["pergunta_semana"] = q if 0 < len(q) <= PERGUNTA_MAX and q.endswith("?") else ""
     reg["ok"] = not final["graves"]
     if final["graves"]:
         reg["erro"] = "a conferência final ainda tem problema grave: " + "; ".join(final["graves"][:3])
@@ -2109,11 +2292,13 @@ def secoes(texto: str) -> list[dict]:
 def post_do_texto(t: dict) -> dict:
     """O post do dia, a partir do registro de fazer(): o título, os parágrafos e as seções, e o registro em
     post.pesquisa. Sem texto, o post sai sem texto (a página diz que o texto não saiu, e fundo.py --hoje tenta de novo)."""
+    tipo = "pergunta" if t.get("semana") else "dia"
     if not t.get("texto"):
-        return {"ok": False, "tipo": "dia", "formato": FORMATO, "erro": t.get("erro"), "pesquisa": t, "meta": t.get("meta", [])}
+        return {"ok": False, "tipo": tipo, "formato": FORMATO, "erro": t.get("erro"), "pesquisa": t, "meta": t.get("meta", [])}
     ss = secoes(sem_links(t["texto"]))
-    post = {"ok": bool(t.get("ok")), "tipo": "dia", "formato": FORMATO, "titulo": t["titulo"],
-            "paragrafos": [p for s in ss for p in s["paragrafos"]], "secoes": ss, "pesquisa": t}
+    post = {"ok": bool(t.get("ok")), "tipo": tipo, "formato": FORMATO, "titulo": t["titulo"],
+            "paragrafos": [p for s in ss for p in s["paragrafos"]], "secoes": ss, "pesquisa": t,
+            **({"pergunta_semana": t["pergunta_semana"]} if t.get("pergunta_semana") else {})}
     if not t.get("ok"):
         post["erro"] = t.get("erro")
     ligar(post, t)
@@ -2204,17 +2389,6 @@ def fontes(post: dict) -> list[dict]:
     return out
 
 
-def resumo_do_dia(post: dict) -> dict:
-    """O que o texto de um dia passa aos resumos da semana e do mês (src/escreve_post.py): o porquê, o argumento e a
-    base dos números (as linhas do caderno que o texto marca e que conferem)."""
-    t = post.get("pesquisa") or {}
-    cad = {c["id"]: c for c in t.get("caderno", [])}
-    ids = [i for i in dict.fromkeys(marcas(t.get("texto") or "")) if i in cad
-           and (cad[i].get("conferencia") or {}).get("status") not in RUINS]
-    return {"porque": t.get("porque", ""), "argumento": t.get("argumento", ""), "texto": " ".join(post.get("paragrafos") or []),
-            "base": " ".join([*(_texto_item(cad[i]) for i in ids), *(post.get("paragrafos") or [])])}
-
-
 # ------------------------------------------------------------------ as rodadas guardadas
 def reconferir(rodada: dict, log=print, offline: bool = False, reabrir: bool = True, texto: str | None = None,
                reparo: bool = True) -> dict | None:
@@ -2272,10 +2446,10 @@ INICIO = "2026-10-29"  # o primeiro fato do dia do site
 
 
 def falta(rodada: dict) -> str | None:
-    """Por que um fato do dia publicado está no site sem o texto; None quando ele está na página. O resumo da semana e
-    o do mês ficam de fora."""
+    """Por que um fato do dia (ou a pergunta da semana) publicado está no site sem o texto; None quando ele está na
+    página. Os resumos da semana e do mês, que o site publicou até 8/11/2026, ficam de fora."""
     post = rodada.get("post") or {}
-    if (post.get("tipo") or "dia") != "dia":
+    if (post.get("tipo") or "dia") not in TIPOS:
         return None
     if post.get("formato") != FORMATO:
         return "o texto do dia não saiu" if not post.get("ok") else "o fato do dia ainda está no formato antigo"
@@ -2364,7 +2538,7 @@ def main() -> int:
     ap.add_argument("rodada", nargs="?")
     ap.add_argument("--hoje", action="store_true")
     ap.add_argument("--grava", action="store_true")
-    ap.add_argument("--limite-min", type=float, default=30)
+    ap.add_argument("--limite-min", type=float, default=65)
     ap.add_argument("--offline", action="store_true")
     ap.add_argument("--refaz", action="store_true", help="com --hoje, refaz o texto que já existe")
     ap.add_argument("--reconfere", action="store_true",
@@ -2372,6 +2546,10 @@ def main() -> int:
     ap.add_argument("--evitar", action="append", default=[], help="achado de outro texto que este não pode repetir")
     ap.add_argument("--sem-esqueleto", action="store_true",
                     help="o texto sem o esqueleto e sem o leitor frio, na ordem fixa das perguntas (para comparar)")
+    ap.add_argument("--sem-investigacao", action="store_true",
+                    help="o texto sem a investigação, só com a pesquisa (para comparar)")
+    ap.add_argument("--semana", action="store_true",
+                    help="a pergunta da semana numa rodada que não é de domingo (para testar)")
     ap.add_argument("--nota", help="com --grava, a nota que fica no registro (post.revisao_manual)")
     ap.add_argument("--confere", action="store_true", help="lista os fatos do dia publicados sem o texto (sai com 1 se faltar)")
     ap.add_argument("--fontes", action="store_true",
@@ -2423,9 +2601,12 @@ def main() -> int:
 
 
 def _uma_rodada(a: argparse.Namespace, arq: Path) -> int:
+    import escreve_post
     rodada = json.loads(arq.read_text())
     post = rodada.get("post") or {}
-    if (post.get("tipo") or "dia") != "dia" or not (rodada.get("pauta") or {}).get("escolha") and not a.rodada:
+    # O tipo sai do calendário (o domingo é a pergunta da semana), como na rodada da manhã.
+    tipo = escreve_post.tipo_do_dia(dt.date.fromisoformat(rodada["gerado_em"][:10]))
+    if tipo not in TIPOS or not (rodada.get("pauta") or {}).get("escolha") and not a.rodada:
         print(f"texto do dia: {arq.name} não é um fato do dia pela história; nada a fazer")
         return 0
     if a.hoje and post.get("ok") and post.get("formato") == FORMATO and not a.refaz:
@@ -2435,7 +2616,8 @@ def _uma_rodada(a: argparse.Namespace, arq: Path) -> int:
     if not (rodada.get("pauta") or {}).get("escolha"):
         print(f"texto do dia: {arq.name} não tem a pauta pela história (src/pauta.py); refaça a pauta antes")
         return 1
-    t = fazer(rodada, None, a.limite_min, a.offline, evitar=a.evitar, esqueleto_ok=not a.sem_esqueleto)
+    t = fazer(rodada, None, a.limite_min, a.offline, evitar=a.evitar, esqueleto_ok=not a.sem_esqueleto,
+              investigacao_ok=not a.sem_investigacao, semana=a.semana or tipo == "pergunta")
     mostrar(t)
     if a.grava and t.get("texto"):
         gravar(arq, t, a.nota)

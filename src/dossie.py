@@ -1,6 +1,6 @@
 """Os fatos de dados de cada parte da economia: o valor de hoje contra a história desde 2002.
 
-Saem de código, todo dia, para nunca ficarem velhos, e vão para o post (src/escreve_post.py) como
+Saem de código, todo dia, para nunca ficarem velhos, e vão para o texto do dia (src/escreve_post.py, dados_texto) como
 contexto, com a mesma frase em todas as atualizações. O site não faz previsão para os próximos meses.
 """
 from __future__ import annotations

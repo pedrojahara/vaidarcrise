@@ -1,20 +1,16 @@
 """O editor do site: lê o rascunho de um texto com o guia de escrita (PERSONA.md), aponta o que foge do estilo,
 diz como fica e devolve o texto editado.
 
-Roda sozinho nos resumos da semana e do mês, entre o redator e a publicação (src/escreve_post.py), e à mão em
-qualquer texto. O texto do dia tem o revisor de três leitores dele (src/fundo.py), que também lê o PERSONA.md.
+Roda à mão nos textos de editor/, como o Retrato do Brasil. O fato do dia e a pergunta da semana têm o leitor frio e
+o revisor de três leitores e um editor (src/fundo.py), que também leem o PERSONA.md.
 
-  python src/edita_texto.py runs/2026-11-08T0630.json             # mostra as sugestões e o resumo editado
-  python src/edita_texto.py runs/2026-11-08T0630.json --grava     # grava o resumo editado na rodada
-  python src/edita_texto.py editor/2026-10-28-retrato-do-brasil.md [--grava]
+  python src/edita_texto.py editor/2026-10-28-retrato-do-brasil.md           # mostra as sugestões e o texto editado
+  python src/edita_texto.py editor/2026-10-28-retrato-do-brasil.md --grava   # grava o texto editado
 
-O editor não muda fato, número nem data: o post editado passa de novo pelo verificador (src/revisa_texto.py), e a
-versão do editor só fica se não tiver mais problemas que o rascunho. As sugestões ficam no registro do post
-(post.edicao em runs/), para quem quiser ver o que mudou e por quê.
+O editor não muda fato, número nem data. Depois dele, leia o texto em voz alta.
 """
 from __future__ import annotations
 
-import copy
 import json
 import sys
 from pathlib import Path
@@ -34,13 +30,7 @@ _SUGESTOES = {
         "properties": {"trecho": {"type": "string", "maxLength": 400}, "problema": {"type": "string", "maxLength": 300},
                        "como_fica": {"type": "string", "maxLength": 600}}}}
 
-LIMITES = {
-    "semana": "resumo da semana: título de até 70 caracteres; abertura, de 2 a 3 movimentos com rótulo (nome de pressão "
-              "ou de assunto das notícias, sem mudar) e fecho; até 250 palavras",
-    "mes": "resumo do mês: título de até 70 caracteres; abertura, de 1 a 3 parágrafos de história e 1 a 2 de fecho; "
-           "até 300 palavras (a tabela das cinco pressões é feita por código e não entra no texto)",
-    "texto": "texto à mão: mesmo tamanho ou menor, com os mesmos títulos de seção, links e lista",
-}
+LIMITES = "texto à mão: mesmo tamanho ou menor, com os mesmos títulos de seção, links e lista"
 
 SISTEMA = """Você é o editor do blog vaidarcrise.com.br. Um redator escreveu o rascunho abaixo, e o seu trabalho é deixá-lo pronto para publicar no estilo do site, que está no guia entre <guia> e </guia>. Leia o rascunho como a leitora do guia: com curso superior e sem ter estudado economia, no celular, com pouco tempo e gostando de política.
 
@@ -69,24 +59,14 @@ def guia() -> str:
     return txt.strip()
 
 
-def esquema(tipo: str) -> dict:
-    """O esquema do redator para o tipo, com as sugestões do editor."""
-    if tipo == "texto":
-        base = {"type": "object", "additionalProperties": False, "required": ["texto"],
-                "properties": {"texto": {"type": "string", "maxLength": 20000}}}
-    else:
-        import escreve_post
-        base = copy.deepcopy(escreve_post.SCHEMAS[tipo])
-    base["properties"]["sugestoes"] = _SUGESTOES
-    base["required"] = ["sugestoes", *base["required"]]
-    return base
+ESQUEMA = {"type": "object", "additionalProperties": False, "required": ["sugestoes", "texto"],
+           "properties": {"sugestoes": _SUGESTOES, "texto": {"type": "string", "maxLength": 20000}}}
 
 
-def editar(rascunho: dict, tipo: str, dados: str | None = None, problemas: list[str] | None = None,
-           budget_usd: float = 1.0) -> dict:
-    """Edita um rascunho no esquema do redator (ou {"texto": ...} para texto à mão).
+def editar(rascunho: dict, dados: str | None = None, problemas: list[str] | None = None, budget_usd: float = 1.0) -> dict:
+    """Edita um texto à mão ({"texto": ...}).
 
-    Devolve {"ok", "saida" (o texto editado no mesmo esquema), "sugestoes", "meta"}. Nunca levanta exceção."""
+    Devolve {"ok", "saida" ({"texto": ...}), "sugestoes", "meta"}. Nunca levanta exceção."""
     partes = [f"<guia>\n{guia()}\n</guia>"]
     if dados:
         partes.append(f"<dados>\n{dados}\n</dados>")
@@ -94,7 +74,7 @@ def editar(rascunho: dict, tipo: str, dados: str | None = None, problemas: list[
     if problemas:
         partes.append("Problemas que o verificador achou no rascunho:\n- " + "\n- ".join(problemas))
     partes.append("Edite o rascunho conforme o guia e devolva o JSON do esquema: as sugestões e o texto editado.")
-    r = classify_news.chamar_claude(SISTEMA.format(limites=LIMITES[tipo]), "\n\n".join(partes), esquema(tipo), budget_usd,
+    r = classify_news.chamar_claude(SISTEMA.format(limites=LIMITES), "\n\n".join(partes), ESQUEMA, budget_usd,
                                    etapa="editor")
     if not r["ok"]:
         return {"ok": False, "saida": None, "sugestoes": [], "meta": r["meta"]}
@@ -118,50 +98,9 @@ def _mostra(sugestoes: list[dict]) -> None:
         print(f"{i}. {s['problema']}\n   Antes: {s['trecho']}\n   Depois: {s['como_fica']}\n")
 
 
-def _edita_rodada(caminho: Path, grava: bool) -> int:
-    import datetime as dt
-
-    import escreve_post
-    import revisa_texto
-    alvo = json.loads(caminho.read_text())
-    post = alvo.get("post") or {}
-    if not post.get("ok"):
-        print("Esta rodada não tem post publicado.")
-        return 1
-    tipo = post.get("tipo") or "dia"
-    if tipo == "dia":
-        print("O texto do dia passa pelo revisor de src/fundo.py; para refazer: src/fundo.py runs/<id>.json --grava")
-        return 1
-    cx = escreve_post.contexto_da_rodada(alvo)
-    rascunho = escreve_post.saida_do_post(tipo, post)
-    probs = revisa_texto.problemas_post(post, **cx["ctx"])
-    ed = editar(rascunho, tipo, cx["dados"], probs)
-    if not ed["ok"]:
-        print("O editor falhou:", ed["meta"].get("erro"))
-        return 1
-    _mostra(ed["sugestoes"])
-    novo = escreve_post.post_da_saida(tipo, ed["saida"], alvo, cx)
-    pr, gr = revisa_texto.problemas_post(novo, **cx["ctx"]), revisa_texto.graves_post(novo, **cx["ctx"])
-    print("Texto editado:\n")
-    print(novo["titulo"] + "\n\n" + "\n\n".join(novo["paragrafos"]) + "\n")
-    print("Verificador:", pr or "nenhum problema", gr or "")
-    if grava:
-        if gr:
-            print("Não gravei: o texto editado tem problema grave.")
-            return 1
-        hoje = dt.datetime.now().astimezone().isoformat(timespec="seconds")
-        post.update({k: novo[k] for k in ("titulo", "paragrafos", "secoes")})
-        post["problemas"] = pr
-        post.setdefault("meta", []).append(ed["meta"])
-        post["edicao"] = {"sugestoes": ed["sugestoes"], "aplicada": True, "em": hoje}
-        caminho.write_text(json.dumps(alvo, ensure_ascii=False, indent=1) + "\n")
-        print(f"Gravado em {caminho}.")
-    return 0
-
-
 def _edita_md(caminho: Path, grava: bool) -> int:
     cab, corpo = _texto_md(caminho)
-    ed = editar({"texto": corpo.strip()}, "texto")
+    ed = editar({"texto": corpo.strip()})
     if not ed["ok"]:
         print("O editor falhou:", ed["meta"].get("erro"))
         return 1
@@ -183,4 +122,8 @@ if __name__ == "__main__":
     alvo_ = Path(args[0])
     alvo_ = alvo_ if alvo_.is_absolute() else ROOT / alvo_
     grava_ = "--grava" in sys.argv
-    sys.exit(_edita_md(alvo_, grava_) if alvo_.suffix == ".md" else _edita_rodada(alvo_, grava_))
+    if alvo_.suffix != ".md":
+        print("O editor roda nos textos à mão de editor/. O fato do dia e a pergunta da semana se refazem com "
+              "src/fundo.py runs/<id>.json --grava.")
+        sys.exit(2)
+    sys.exit(_edita_md(alvo_, grava_))

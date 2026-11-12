@@ -1,5 +1,6 @@
 <article class="post">
   <p class="data">{% if post.tipo_nome %}<span class="tipo">{{ post.tipo_nome }}</span> | {% endif %}{{ post.data_extenso }}</p>
+  {% if post.pergunta_semana %}<p class="pergunta-semana">{{ post.pergunta_semana }}</p>{% endif %}
   {% if permalink %}<h1 class="titulo-post">{{ post.titulo }}</h1>{% else %}<h2 class="titulo-post"><a href="{{ post.link }}">{{ post.titulo }}</a></h2>{% endif %}
   {% if post.autoria %}<p class="autoria">{{ post.autoria }}</p>{% endif %}
   {% if post.secoes %}

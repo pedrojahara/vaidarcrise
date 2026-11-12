@@ -21,6 +21,11 @@ Uso (os meses em AAAA-MM):
   python src/conta.py focus [--de AAAA-MM-DD]             # as previsões dos bancos (Focus) que o site guardou, semana a semana
   python src/conta.py calc "EXPRESSAO"                    # a conta feita à mão: números, + - * / e parênteses,
                                                           # com ponto ou vírgula nos decimais e sem separador de milhar
+  python src/conta.py stats "N1 N2 N3 ..." [--dif] [--valor X] [--acima X] [--abaixo X]
+                                                          # média, desvio-padrão, mínimo e máximo de números de fora
+                                                          # do site (a série que o leitor de documentos abriu); --dif
+                                                          # usa a variação de um número para o seguinte; --valor diz a
+                                                          # quantos desvios-padrão X fica; --acima e --abaixo contam
 A tradução do fato na vida de quem lê (as regras, as fontes e a força de cada uma estão em TRADUCAO.md):
   python src/conta.py traduz precos                       # o que custava R$ 100 um ano antes, pelo IPCA e pelo INPC,
                                                           # e daqui a um ano, pelo Focus
@@ -46,6 +51,7 @@ import contextlib
 import datetime as dt
 import io
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -900,6 +906,51 @@ def cmd_calc(_mensal, a) -> None:
     print(f"{a.expr} = {_br(v, 4)} (com 3 casas: {_br(v, 3)}; com 2 casas: {_br(v, 2)}; com 1 casa: {_br(v, 1)})")
 
 
+def _lista_de_numeros(texto: str) -> list[float]:
+    """Os números de `stats`, separados por espaço ou ponto e vírgula, com ponto ou vírgula nos decimais e sem
+    separador de milhar ("75,48 75,78; -0,4")."""
+    vals = []
+    for x in re.split(r"[\s;]+", texto.strip()):
+        if not x:
+            continue
+        if not re.fullmatch(r"[-+]?\d+(?:[.,]\d+)?", x):
+            raise SystemExit(f"stats: \"{x}\" não é um número (use ponto ou vírgula nos decimais, sem separador de milhar)")
+        vals.append(float(x.replace(",", ".")))
+    if len(vals) > 3000:
+        raise SystemExit("stats: no máximo 3.000 números")
+    return vals
+
+
+def _resumo(nome: str, v: list[float]) -> str:
+    n = len(v)
+    media = sum(v) / n
+    dp = (sum((x - media) ** 2 for x in v) / (n - 1)) ** 0.5 if n > 1 else 0.0
+    return (f"{nome}: {n} números; média {_br(media, 4)}; desvio-padrão {_br(dp, 4)}; mínimo {_br(min(v), 4)}; "
+            f"máximo {_br(max(v), 4)}; primeiro {_br(v[0], 4)}; último {_br(v[-1], 4)}"), media, dp
+
+
+def cmd_stats(_mensal, a) -> None:
+    """O resumo de uma lista de números que vem de fora do site (a série do Banco Central que o leitor de documentos
+    abriu, a tabela de um relatório): para a conta do passado ser refeita pela conferência com o mesmo comando."""
+    v = _lista_de_numeros(a.numeros)
+    if len(v) < 2:
+        raise SystemExit("stats: pelo menos 2 números")
+    if a.dif:
+        v = [b - x for x, b in zip(v, v[1:])]
+    linha, media, dp = _resumo("as variações de um número para o seguinte" if a.dif else "os números", v)
+    print(linha)
+    if a.valor is not None:
+        x = float(a.valor.replace(",", "."))
+        z = (x - media) / dp if dp else 0.0
+        print(f"{_br(x, 4)} fica a {_br(z, 2)} desvios-padrão da média")
+    for lim, acima in ((a.acima, True), (a.abaixo, False)):
+        if lim is None:
+            continue
+        x = float(lim.replace(",", "."))
+        k = sum(1 for y in v if (y > x if acima else y < x))
+        print(f"{k} de {len(v)} {'acima' if acima else 'abaixo'} de {_br(x, 4)}")
+
+
 def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -931,12 +982,18 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--de")
     p = sub.add_parser("calc")
     p.add_argument("expr")
+    p = sub.add_parser("stats")
+    p.add_argument("numeros")
+    p.add_argument("--dif", action="store_true")
+    p.add_argument("--valor")
+    p.add_argument("--acima")
+    p.add_argument("--abaixo")
     p = sub.add_parser("traduz")
     p.add_argument("qual", choices=list(TRADUZ))
     p.add_argument("args", nargs="*")
     a = ap.parse_args(argv)
-    if a.cmd == "calc":
-        cmd_calc(None, a)
+    if a.cmd in ("calc", "stats"):
+        {"calc": cmd_calc, "stats": cmd_stats}[a.cmd](None, a)
         return
     if getattr(a, "meses", 1) > 60 or getattr(a, "passo", 1) < 1:
         raise SystemExit("--meses vai até 60 e --passo é de pelo menos 1")

@@ -9,7 +9,9 @@ CORREÇÃO
 
 {{ post.tipo_nome }} | {{ post.data_extenso }}
 
-{{ post.titulo|upper }}
+{% if post.pergunta_semana %}{{ post.pergunta_semana }}
+
+{% endif %}{{ post.titulo|upper }}
 {{ post.autoria }}
 {% for s in post.secoes %}
 {% if s.titulo %}{{ s.titulo }}
@@ -29,6 +31,6 @@ Abrir no site: {{ post.url }}
 Recebeu este e-mail de alguém? Para receber o seu toda manhã, inscreva-se: {{ site }}/inscricao/
 {% endif %}
 --
-Este e-mail chega porque você confirmou a inscrição no Vai dar crise?, que manda o fato do dia de segunda a sábado e o resumo da semana aos domingos. Os e-mails não registram quem abre nem em que link cada pessoa toca.
+Este e-mail chega porque você confirmou a inscrição no Vai dar crise?, que manda o fato do dia de segunda a sábado e a pergunta da semana aos domingos. Os e-mails não registram quem abre nem em que link cada pessoa toca.
 Sair da lista: {{ sair_url }}
 Privacidade: {{ site }}/privacidade/

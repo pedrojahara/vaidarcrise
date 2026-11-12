@@ -1,6 +1,6 @@
 # O texto do dia
 
-Este guia vale para as quatro etapas do texto do dia (`src/fundo.py`): a pesquisa, o esqueleto, a redação e a revisão. Cada etapa recebe o guia inteiro, para que todas julguem o texto pela mesma régua. A exceção é o leitor frio, que entra duas vezes e recebe só o que a leitora receberia: primeiro o esqueleto, depois o texto. Quem escreve segue também o [PERSONA.md](PERSONA.md), que manda em tudo o que a leitora lê. Qual história o texto conta é o código que decide, pela soma das notícias de ontem ([CARTA_EDITORIAL.md](CARTA_EDITORIAL.md)).
+Este guia vale para as etapas do texto do dia e da pergunta da semana do domingo (`src/fundo.py`): a pesquisa, a investigação, o esqueleto, a redação e a revisão. Cada etapa recebe o guia inteiro, para que todas julguem o texto pela mesma régua. A exceção é o leitor frio, que entra duas vezes e recebe só o que a leitora receberia: primeiro o esqueleto, depois o texto. Quem escreve segue também o [PERSONA.md](PERSONA.md), que manda em tudo o que a leitora lê. Qual história o texto conta é o código que decide, pela soma das notícias de ontem ([CARTA_EDITORIAL.md](CARTA_EDITORIAL.md)).
 
 ## Para que serve
 
@@ -47,6 +47,31 @@ A frase sobre a vida de quem lê (a parcela, o preço, o imposto, o emprego) só
 - Frase forçada, de um texto sobre as contas do governo: "Para quem tem ou pensa em pegar financiamento, em casa ou na empresa, nada muda hoje, e a parcela com juro fixo é a mesma." O texto pula das contas para o financiamento sem dizer como uma coisa leva à outra.
 - E daí do argumento, no mesmo assunto: "O que vai decidir o juro que o governo paga, e por ele o crédito longo das empresas, é se o ajuste prometido vier com números que fechem a conta de 2027."
 - A vida entra quando muda de verdade, com o número e o prazo: um benefício que continua para tantas famílias até tal mês, ou um imposto que deixa de ser cobrado por 30 dias.
+
+## A investigação
+
+A análise vem antes do texto (Pedro, 12/11/2026). A pesquisa junta os fatos e as fontes; depois dela, fora do dia calmo, a investigação (`src/investiga.py`) testa contra o dado o que se diz sobre a história, e só então o esqueleto pensa o argumento. Num teste à mão sobre o ajuste das contas de 2027, o que a rodada de antes não teria achado saiu daqui: o artigo do projeto que deixa o congelado de 2027 virar gasto em 2028, a conta dos cinco anúncios de pacote desde 2015 em que o juro longo nunca caiu fora do normal no dia, e um número errado da IFI que só o cético pegou, abrindo o relatório. Cada papel vê uma coisa diferente ou quer o contrário do outro, e quem decide é o dado:
+
+- **A leitora** vê só a história e os passos de ontem, e faz as perguntas que uma leitora leiga faria, na ordem do texto, inclusive a do que esperar para aquilo que a decisão quer mexer: "como vai ficar a dívida se o plano sair?". A pergunta sobre o que mais importa não pode ficar de fora porque a resposta já era conhecida.
+- **As explicações rivais**, duas ou três, cada uma do jeito mais forte que quem a defende diria, escrevem até quatro testes que dá para fazer no dia com o dado de quem mediu, e o corte de cada um ANTES do teste ("pior em 5 de 9 anos ou mais"). A conta do passado diz a lista inteira dos casos e por que eles. Para a pergunta sobre o futuro, o teste é pôr lado a lado as projeções de quem projeta (o governo, o Focus, a IFI, o Banco Central) e medir quanto a decisão muda nelas.
+- **O testador** é cego: recebe só o que medir, onde está o dado e o corte, e não sabe quem espera o quê. Abre o dado na página de quem mediu, faz toda conta com `calc` e `stats` e para no tempo dado; sem o dado, diz que não deu, e número de memória não entra na conta.
+- **O cético** tenta derrubar cada resultado: abre a fonte, confere o número, o conceito, a unidade e a janela, e lê como quem defende e como quem critica a decisão. Ele escreve a frase mais forte que o dado sustenta, ou derruba o resultado.
+- **O juiz** aplica a todos o mesmo critério (é novo, está sustentado, sobreviveu, muda a resposta da leitora), responde a cada pergunta da leitora com o melhor que há e diz se uma segunda volta, com um teste só, pode mudar a resposta. O novo ordena os achados e nunca tira a resposta de uma pergunta: o que só confirma o que o site já disse continua sendo a resposta.
+
+O esqueleto e a redação recebem o resultado: as respostas, os achados com a força, o que caiu e os próximos sinais. A pergunta e a resposta do texto saem das respostas. A força entra em palavras, e o achado fraco entra com a ressalva e não vira conclusão. O que caiu é a crença errada que o texto pode corrigir de frente, com o dado que a derrubou. O caminho fica fora da página: o texto nunca fala de investigação, teste, corte, cético nem juiz, e a conta do passado entra como conta ("nos cinco anúncios desde 2015, o juro de prazo longo nunca caiu fora do normal no dia"). A investigação mostra a direção e em que ela se apoia, e os limites do site valem para a conclusão: a decisão é medida pelo objetivo de quem decidiu, a previsão é de quem a fez e o texto não prevê o tamanho do efeito.
+
+No domingo, a investigação é a da pergunta da semana: a história que mais andou na semana, a pergunta que todo mundo está fazendo sobre ela e até três voltas (ver "A pergunta da semana").
+
+## A pergunta da semana
+
+O domingo não tem fato do dia nem resumo: tem a pergunta da semana (Pedro, 12/11/2026). Num resumo, a semana vira uma lista do que se moveu, e a leitora já leu cada item no seu dia; o que ela não teve foi a análise que um dia de rodada não dá tempo de fazer. A pergunta da semana é essa análise, sobre uma história só:
+
+- **A história** é a que mais andou na semana, pela soma das notícias dos sete dias, a mesma conta da pauta de cada dia, sem IA e sem gosto do redator. No empate, vale a que saiu em mais jornais. Os passos são os da semana inteira, do mais firme ao menos firme, cada um com o dia.
+- **A pergunta** é a que todo mundo está fazendo sobre ela depois da semana, nas palavras da leitora, curta e com ponto de interrogação ("O plano do governo segura a dívida?"). Quem a escreve é a leitora da investigação, antes de ver qualquer análise, e a página a mostra em cima do título. O título é a resposta, como em todo texto.
+- **A investigação** tem até 35 minutos e até três voltas, e a pergunta da semana é a primeira que ela responde. O texto parte da resposta do juiz e dos achados, como no dia.
+- **O texto** é o de um dia grande, até perto de 800 palavras, com o contexto inteiro para quem não leu os textos do dia da semana e sem repetir o que eles já disseram: a régua do novo são os textos da semana sobre a mesma história.
+
+O resto vale como no texto do dia: o caderno, a fonte original, o esqueleto, a revisão, a conferência e o que não entra na página.
 
 ## O esqueleto
 
@@ -115,7 +140,7 @@ As oito perguntas, nesta ordem na pesquisa, e na ordem que o raciocínio pedir n
 7. Dá certo se, dá errado se: até duas condições de cada lado, cada uma com o sinal que a mostra e o corte, e o lado que os casos parecidos e a evidência deixam mais provável. Quando a evidência não deixa dizer, o texto diz que ainda não dá para dizer.
 8. Quem ganha, quem paga e quando; a melhor objeção de cada lado, com o número dela; e o espelho, a mesma régua numa decisão parecida de outro governo, para mostrar que o critério não muda com quem decide.
 
-Duas regras valem para todas. A decisão é julgada só com o que se sabia no dia, porque o dado revisado depois muda o julgamento (as contas do site com as séries já cortam no dia). E o site faz a análise e para aí: não guarda placar de acertos, não volta depois para conferir e nunca diz que a decisão acertou, que errou ou o que o decisor deveria fazer. Nos resumos da semana e do mês, a decisão citada leva quem decidiu, com que poder e o objetivo declarado.
+Duas regras valem para todas. A decisão é julgada só com o que se sabia no dia, porque o dado revisado depois muda o julgamento (as contas do site com as séries já cortam no dia). E o site faz a análise e para aí: não guarda placar de acertos, não volta depois para conferir e nunca diz que a decisão acertou, que errou ou o que o decisor deveria fazer. Na pergunta da semana, a decisão citada leva quem decidiu, com que poder e o objetivo declarado, como no dia.
 
 ## O caderno
 
@@ -179,4 +204,4 @@ As cabeças de quem defende e de quem critica fazem juntas o teste da troca. O r
 
 ## Até onde ir
 
-A rodada das 5h tem uns 35 minutos para a pesquisa, a segunda busca, o esqueleto, o texto, as duas voltas de revisão e a conferência final, para o texto sair no site e no e-mail por volta das 6h. Sem tempo para a pesquisa, o texto sai da ficha da história e dos dados do site. A busca dos documentos pelo código leva menos de um minuto, e a pesquisa segue sem ela se a rede falhar. A segunda busca usa até 8 minutos do tempo que a pesquisa deixou, e se falhar o texto segue sem ela. Se o esqueleto ou o leitor frio falharem, o texto sai sem eles, na ordem do roteiro e só com o revisor. Se o texto falhar, o `src/fundo.py --hoje` tenta de novo no mesmo `run.sh`, e se o dia ainda ficar sem texto, o editor do site recebe um aviso. A pesquisa também diz se a leitora precisaria de uma página do básico que o site ainda não tem; a rodada só avisa o editor do site, que decide se a página sai.
+A rodada começa às 4h e tem uns 65 minutos para a pesquisa, a segunda busca, a investigação (até 22 minutos, com os testes em paralelo), o esqueleto, o texto, as duas voltas de revisão e a conferência final, para o texto sair no site e no e-mail por volta das 6h. No domingo, a pergunta da semana tem uns 85 minutos, dos quais até 35 de investigação. No dia calmo não há investigação. Se a investigação falhar no meio, o texto segue com o que ela deixou, ou só com a pesquisa. Sem tempo para a pesquisa, o texto sai da ficha da história e dos dados do site. A busca dos documentos pelo código leva menos de um minuto, e a pesquisa segue sem ela se a rede falhar. A segunda busca usa até 8 minutos do tempo que a pesquisa deixou, e se falhar o texto segue sem ela. Se o esqueleto ou o leitor frio falharem, o texto sai sem eles, na ordem do roteiro e só com o revisor. Se o texto falhar, o `src/fundo.py --hoje` tenta de novo no mesmo `run.sh`, e se o dia ainda ficar sem texto, o editor do site recebe um aviso. A pesquisa também diz se a leitora precisaria de uma página do básico que o site ainda não tem; a rodada só avisa o editor do site, que decide se a página sai.

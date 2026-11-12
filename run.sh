@@ -60,7 +60,7 @@ if [[ "${1:-}" != "--sem-llm" ]]; then
   fi
   # Texto feito na nuvem (que não abre as fontes): o Mac abre as fontes e tira a frase que não confere.
   .venv/bin/python src/fundo.py --reconfere --grava || echo "aviso: a reconferência das fontes falhou"
-  /usr/bin/caffeinate -i .venv/bin/python src/fundo.py --hoje --grava --limite-min 35 || echo "aviso: o texto do dia falhou"
+  /usr/bin/caffeinate -i .venv/bin/python src/fundo.py --hoje --grava --limite-min 65 || echo "aviso: o texto do dia falhou"
   .venv/bin/python src/build_site.py > /dev/null || echo "aviso: o site não foi gerado de novo"
   git add -A runs base/memoria docs
   if ! git diff --cached --quiet; then

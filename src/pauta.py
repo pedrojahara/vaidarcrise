@@ -16,7 +16,7 @@ com todos os fatos de ontem sobre ela como prova. O código escolhe a história,
 
 Um fato que não é passo de nenhuma história abre uma história nova no dia se for grande (tamanho 2 ou mais) e já
 consumado; menor, ele espera e abre a história se voltar em 3 dos últimos 7 dias. Nos dois casos, o Pedro recebe o
-aviso. Os resumos da semana e do mês usam a mesma ordem de firmeza das notícias (`chave_evento`).
+aviso. A pergunta da semana do domingo (src/fundo.py, pauta_da_semana) soma as pautas dos sete dias pela mesma conta.
 """
 from __future__ import annotations
 
@@ -76,15 +76,6 @@ def chave(c: dict) -> tuple:
     no empate, a ordem do classificador."""
     return (RANK.get(c["estagio"], 5), -c["tamanho"], vaivem(c["fator"], c["estagio"]), -len(c["jornais"]),
             -c["n_manchetes"], c.get("ordem", 0))
-
-
-def chave_evento(e: dict) -> tuple:
-    """A mesma ordem para um evento guardado em data/eventos.json (resumos da semana e do mês)."""
-    cob = e.get("cobertura") or {}
-    jornais = cob.get("jornais") or e.get("veiculos") or sorted({f["veiculo"] for f in e.get("fontes", [])})
-    n = cob.get("manchetes") or len(e.get("fontes", []))
-    return (RANK.get(e.get("estagio"), 5), -e.get("magnitude", 1), vaivem(e.get("fator"), e.get("estagio")),
-            -len(jornais), -n, e.get("data", ""), e["id"])
 
 
 def cobertura(ids: list[str], cesta_por_id: dict | None, fontes: list[dict]) -> dict:
@@ -314,20 +305,6 @@ def montar(rodada: dict, anterior: dict | None, eventos: dict, cfg: dict, cal: l
 
 def candidato(p: dict, cid: str | None) -> dict | None:
     return next((c for c in p.get("candidatos", []) if c["id"] == cid), None)
-
-
-def titulo_escolha(p: dict) -> str | None:
-    """O que a pauta escolheu, numa linha (para os resumos): a história e o passo de ontem."""
-    esc = p.get("escolha") or {}
-    cid = p.get("final", p.get("padrao"))
-    if cid == "D":
-        return f"a direção do risco mudou: estava {p.get('estado_anterior')} e ficou {p.get('estado')}"
-    if cid == "P":
-        return "mudou de lado: " + ", ".join(x["nome"] for x in p.get("pressoes_mudaram", []))
-    c = candidato(p, cid)
-    if c and esc.get("titulo") and not esc.get("nova"):
-        return f"{esc['titulo']}: {c['titulo']}"
-    return c["titulo"] if c else None
 
 
 def abrir_historias(pauta: dict, dia: str) -> list[str]:
