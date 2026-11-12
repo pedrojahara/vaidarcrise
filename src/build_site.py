@@ -318,15 +318,21 @@ def _divida_reais_ctx(cfg: dict, hoje: str) -> dict:
 
 
 def ritmo_ctx(dia: str, rodada: dict, cal: dict, enc: str | None) -> dict | None:
-    """O bloco do crescimento logo abaixo da placa: agora, um ano antes e a previsão dos bancos."""
+    """O bloco do crescimento logo abaixo da placa: agora, um ano antes e a previsão dos bancos, cada número com os
+    12 meses que ele cobre ("set/2025 a ago/2026"), tirados dos dados de cada dia."""
     b = ritmo.bloco(dia, rodada, cal)
     if not b:
         return None
-    def ate(ref: str) -> str:
-        return f"até {MESES[int(ref[5:7]) - 1][:3]}/{ref[:4]}"
+    def curto(ref: str) -> str:
+        return f"{MESES[int(ref[5:7]) - 1][:3]}/{ref[:4]}"
+    def periodo(j: tuple[str, str]) -> str:
+        return f"{curto(j[0])} a {curto(j[1])}"
     seta, cls = {"acelerando": ("↑", "menos"), "desacelerando": ("↓", "mais"), "no mesmo ritmo": ("→", "igual")}[b["muda"]]
-    return {"agora": num(b["agora"]) + "%", "ate_agora": ate(b["ref"]), "antes": num(b["antes"]) + "%", "ate_antes": ate(b["ref_antes"]),
-            "previsao": num(b["previsao"]) + "%" if b["previsao"] is not None else None,
+    tem_prev = b["previsao"] is not None
+    return {"agora": num(b["agora"]) + "%", "antes": num(b["antes"]) + "%",
+            "per_agora": periodo(b["janela"]), "per_antes": periodo(b["janela_antes"]),
+            "per_prev": periodo(b["janela_previsao"]) if tem_prev else None,
+            "previsao": num(b["previsao"]) + "%" if tem_prev else None,
             "muda": b["muda"][0].upper() + b["muda"][1:], "seta": seta, "cls": cls,
             "faixa": f"O normal desde 2004 vai de {num(b['faixa'][0])}% a {num(b['faixa'][1])}% ao ano.",
             "erro": f"A previsão é dos bancos (Focus), que erram, em média, {num(b['erro'])} ponto." if b["previsao"] is not None else "",

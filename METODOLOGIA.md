@@ -91,13 +91,13 @@ A folga não entra na soma. Nível alto e parado não marca a data de recessão 
 
 Abaixo da placa vêm, nesta ordem, o crescimento em 12 meses, as cinco pressões e Também acompanhamos. Cada linha diz o que a medida fez em 3 meses (Piorou, Igual ou Melhorou, nas pressões, no emprego, na renda e nas reservas; a dívida em reais ainda não tem palavra) e, aberta, o vaivém normal e a frase da folga; nas linhas de Também acompanhamos, também por que ela importa (`direcao.por_que_importa` em `config/modelo.json`).
 
-**Crescimento em 12 meses.** É o bloco logo abaixo da placa. O título tem à direita a palavra do bloco, no mesmo lugar e no mesmo estilo do Piorou de cada pressão. O bloco não tem frase de rodapé: a faixa normal e o erro do Focus continuam calculados (seção `ritmo` de `config/calibracao.json`) e ficam explicados em Como funciona. Os três números saem de [`src/ritmo.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/ritmo.py):
+**Crescimento em 12 meses.** É o bloco logo abaixo da placa. O título tem à direita a palavra do bloco, no mesmo lugar e no mesmo estilo do Piorou de cada pressão. Cada número fica numa linha, ao lado dos 12 meses que ele cobre, com o mês de início e o de fim abreviados ("set/2025 a ago/2026"), e o bloco fecha com uma linha de fonte: a prévia do PIB e o Focus, os dois do Banco Central. A faixa normal e o erro do Focus continuam calculados (seção `ritmo` de `config/calibracao.json`) e ficam explicados em Como funciona. Os três números e os períodos saem de [`src/ritmo.py`](https://github.com/pedrojahara/vaidarcrise/blob/main/src/ritmo.py):
 
-| Número | Conta | Hoje |
+| Linha | Conta | Hoje |
 | --- | --- | --- |
-| Agora | IBC-Br dessazonalizado (BCB 24364): soma dos 12 meses até o último dado contra a soma dos 12 meses anteriores | 1,4%, até agosto de 2026 |
-| Antes | A mesma conta, 12 meses antes | 3,5%, até agosto de 2025 |
-| Previsão | Mediana do Focus para o PIB do ano corrente e do seguinte, com peso pelos meses que faltam: ((12 − m) × ano corrente + m × ano seguinte) / 12, com m o mês do Focus (`indicadores.focus_pib`) | 1,4%, para os próximos 12 meses |
+| Os 12 meses até o último dado (em destaque) | IBC-Br dessazonalizado (BCB 24364): soma dos 12 meses até o último dado contra a soma dos 12 meses anteriores | 1,4%, de setembro de 2025 a agosto de 2026 |
+| Um ano antes | A mesma conta, 12 meses antes | 3,5%, de setembro de 2024 a agosto de 2025 |
+| Previsão | Mediana do Focus para o PIB do ano corrente e do seguinte, com peso pelos meses que faltam: ((12 − m) × ano corrente + m × ano seguinte) / 12, com m o mês do Focus (`indicadores.focus_pib`). Os pesos são os dos 12 meses do mês seguinte ao do Focus até o mesmo mês do ano seguinte, e é esse o período que a linha mostra (`ritmo.janela_previsao`) | 1,2%, de dezembro de 2026 a novembro de 2027 (Focus de 6/11/2026) |
 
 - **A palavra do bloco** (Acelerando, Desacelerando ou No mesmo ritmo, à direita do título) compara agora e antes, os dois com uma casa, como a página mostra. Diferença de até 0,1 ponto é "no mesmo ritmo"; acima disso, "acelerando" ou "desacelerando". A palavra descreve e não é sinal: o crescimento do Brasil varia muito de um ano para o outro, e a direção não usa esta conta.
 - **O normal** são os percentis 25 e 75 do crescimento em 12 meses desde 2004, hoje de 0,8% a 3,9% ao ano (`config/calibracao.json`, `ritmo.faixa`). Não aparece no bloco; Como funciona o explica.
