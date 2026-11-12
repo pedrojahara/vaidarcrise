@@ -147,9 +147,11 @@ def texto_da_pagina(conteudo: bytes, tipo: str) -> str:
                     return ""
     t = _decodificar(conteudo, tipo)
     if "json" in tipo or t.lstrip()[:1] in ("{", "["):
-        try:  # API que devolve a página dentro de um JSON (Banco Central): junta os textos
+        try:  # API que devolve a página dentro de um JSON (Banco Central): junta os textos e os números
             j = json.loads(t)
-            t = " ".join(_texto_da_norma(j) if _e_norma(j) else _textos_json(j))
+            # O número entra como a página o escreve ("13.75"): sem ele, a lista das reuniões vinha sem a taxa.
+            t = " ".join(_texto_da_norma(j) if _e_norma(j)
+                         else _textos_json(json.loads(t, parse_int=str, parse_float=str)))
         except ValueError:
             pass
     t = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", t)
@@ -202,6 +204,42 @@ def _texto_da_norma(j) -> list[str]:
     return out
 
 
+# O arquivo que não é página nem PDF, pelos primeiros bytes: o leitor não tira texto dele.
+_BINARIOS = ((b"PK\x03\x04", "planilha, documento do Office ou arquivo compactado: .xlsx, .docx, .zip"),
+             (b"\xd0\xcf\x11\xe0", "planilha ou documento antigo do Office: .xls, .doc"),
+             (b"\x1f\x8b", "arquivo compactado: .gz"), (b"Rar!", "arquivo compactado: .rar"),
+             (b"7z\xbc\xaf", "arquivo compactado: .7z"), (b"\x89PNG", "imagem"), (b"\xff\xd8\xff", "imagem"),
+             (b"GIF8", "imagem"))
+# O aviso que o site devolve no lugar do documento, com resposta de página boa. Só vale na página curta: a matéria
+# que cita uma destas frases é mais longa.
+_AVISOS = ((re.compile(r"verifica[cç][aã]o de seguran[cç]a.{0,120}verificando sua conex[aã]o", re.I),
+            "o site pediu uma verificação de segurança no lugar do documento (barra robô)"),
+           (re.compile(r"estamos em manuten[cç][aã]o", re.I), "o site está em manutenção"),
+           (re.compile(r"falha na integra[cç][aã]o", re.I),
+            "o site não conseguiu buscar o documento (falha na integração com o sistema de publicações)"))
+_AVISO_ATE = 1500  # caracteres
+
+
+def formato_que_nao_le(conteudo: bytes, tipo: str) -> str | None:
+    """Por que o leitor não lê um arquivo; None quando é página, PDF ou texto. A planilha, o arquivo compactado e a
+    imagem viravam um texto de lixo, e a leitura passava por boa."""
+    if b"%PDF" in conteudo[:1024] or "pdf" in tipo:
+        return None
+    nome = next((n for marca, n in _BINARIOS if conteudo.startswith(marca)), None)
+    if not nome and b"\x00" in conteudo[:1024] and not conteudo.startswith((b"\xff\xfe", b"\xfe\xff")):
+        nome = "arquivo que não é texto"
+    return f"formato que o leitor não lê ({nome}); procure o mesmo documento em PDF ou em página" if nome else None
+
+
+def aviso_do_site(texto: str) -> str | None:
+    """O aviso que veio no lugar do documento (manutenção, verificação de segurança, falha do sistema de publicações
+    do Tesouro); None na página normal."""
+    t = re.sub(r"\s+", " ", html.unescape(texto)).strip()
+    if len(t) > _AVISO_ATE:
+        return None
+    return next((motivo for rx, motivo in _AVISOS if rx.search(t)), None)
+
+
 TAMANHO_MAXIMO = 60 * 1024 * 1024  # um documento maior que isto não é lido (o projeto do Orçamento inteiro, por exemplo)
 
 
@@ -237,15 +275,21 @@ def baixar(url: str, limite: int = TAMANHO_MAXIMO) -> tuple[bytes, str, str]:
     no tamanho máximo. Levanta ValueError com o motivo quando não abre."""
     import requests
     from urllib.parse import urljoin, urlparse
-    atual = url
-    for _ in range(7):
+    atual, pedido = url, {"User-Agent": UA}
+    for _ in range(8):
         motivo = endereco_publico(atual)
         if motivo:
             raise ValueError(motivo)
-        r = requests.get(atual, headers={"User-Agent": UA}, timeout=40, allow_redirects=False, stream=True)
+        r = requests.get(atual, headers=pedido, timeout=40, allow_redirects=False, stream=True)
         if r.status_code in (301, 302, 303, 307, 308) and r.headers.get("location"):
             r.close()
             atual = urljoin(atual, r.headers["location"])
+            continue
+        # O gov.br responde 404 ao endereço que mudou de lugar quando o pedido não diz que quer uma página; dizendo,
+        # ele manda para o endereço novo. Só o 404 é pedido de novo: a página que já abria recebe o mesmo pedido.
+        if r.status_code == 404 and "Accept" not in pedido:
+            r.close()
+            pedido = {**pedido, "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8"}
             continue
         if r.status_code >= 400:
             r.close()
@@ -256,10 +300,13 @@ def baixar(url: str, limite: int = TAMANHO_MAXIMO) -> tuple[bytes, str, str]:
             if len(dados) > limite:
                 r.close()
                 raise ValueError("documento grande demais para ler inteiro")
-        # O site que manda todo endereço para a página inicial (o do Planalto, fora do Brasil) não abriu o documento.
+        # O site que manda todo endereço para a página inicial (o do Planalto, fora do Brasil) não abriu o documento. A
+        # página inicial de um órgão no gov.br tem duas partes, o órgão e a língua (gov.br/planalto/pt-br).
         a, b = urlparse(url), urlparse(atual)
         partes = [x for x in a.path.split("/") if x]
-        if atual != url and len(partes) >= 2 and len([x for x in b.path.split("/") if x]) <= 1 and partes[-1] not in atual:
+        finais = [x for x in b.path.split("/") if x]
+        inicial = len(finais) <= 1 or (len(finais) == 2 and finais[1].lower() in ("pt-br", "en", "es"))
+        if atual != url and len(partes) >= 2 and inicial and partes[-1] not in atual:
             raise ValueError("o endereço leva à página inicial do site, e não ao documento")
         return dados, r.headers.get("content-type", ""), atual
     raise ValueError("redirecionamentos demais")
@@ -270,18 +317,29 @@ def abrir(url: str, validade_h: float | None = None) -> tuple[str | None, str | 
     isso é aberta de novo (a página de lista, que muda)."""
     import time
     CACHE.mkdir(parents=True, exist_ok=True)
-    # ".v3": a cópia guardada antes de 12/11/2026 podia ser a página inicial de um site que redirecionou o endereço
-    arq = CACHE / (hashlib.sha256(url.encode()).hexdigest()[:24] + ".v3.txt")
+    # ".v4": a cópia guardada até 12/11/2026 podia ser a página inicial ou um aviso do site (manutenção, verificação de
+    # segurança) no lugar do documento, ou o lixo de uma planilha, e a resposta em JSON vinha sem os números
+    arq = CACHE / (hashlib.sha256(url.encode()).hexdigest()[:24] + ".v4.txt")
     if arq.exists() and (validade_h is None or time.time() - arq.stat().st_mtime < validade_h * 3600):
         return arq.read_text(), None
     try:
         dados, tipo, _ = baixar(url)
-        t = texto_da_pagina(dados, tipo)
+        motivo = formato_que_nao_le(dados, tipo)
+        t = "" if motivo else texto_da_pagina(dados, tipo)
     except Exception as e:  # noqa: BLE001
         return None, str(e)[:160] if isinstance(e, ValueError) else f"{type(e).__name__}: {str(e)[:120]}"
+    # O que não é o documento não vira texto nem fica guardado: a conferência tenta de novo na rodada seguinte.
+    motivo = motivo or aviso_do_site(t)
+    if motivo:
+        return None, motivo
     if len(t.strip()) < 200:
         return None, "página sem texto (talvez só JavaScript ou paywall)"
-    arq.write_text(t)
+    # A cópia só aparece inteira: as linhas do caderno abrem em paralelo, e duas podem pedir o mesmo endereço.
+    import os
+    import threading
+    tmp = arq.with_name(f"{arq.name}.{os.getpid()}.{threading.get_ident()}.tmp")
+    tmp.write_text(t)
+    tmp.replace(arq)
     return t, None
 
 

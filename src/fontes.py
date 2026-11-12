@@ -17,7 +17,8 @@ ela: resume, escolhe uma parte e às vezes inverte. Este programa faz três cois
 
 Uso:
   python src/fontes.py abre "ENDERECO" [--procura "termo" --procura "outro"] [--de POSICAO] [--links]
-  python src/fontes.py ato "PLP 299/2026"          # também MP, PEC, PL, PLN, "Lei Complementar 200/2023", "Copom"
+  python src/fontes.py ato "PLP 299/2026"          # também MP, PEC, PL, PLN, "Lei Complementar 200/2023", "Copom",
+                                                   # "PLOA 2027", "Resolução CMN 5.141"
   python src/fontes.py onde [ASSUNTO]              # onde mora cada tipo de documento
 O programa só lê: abre endereços http e https da internet pública e não escreve nada além da cópia das páginas em
 base/cache.
@@ -44,8 +45,10 @@ AJUDA = f"""  {FONTES} abre "ENDERECO"                    # o texto da página o
   {FONTES} abre "ENDERECO" --procura "termo" --procura "outro termo"   # só os trechos em volta de cada termo
   {FONTES} abre "ENDERECO" --de POSICAO         # continua a leitura a partir da posição
   {FONTES} abre "ENDERECO" --links [--procura "termo"]    # os links da página: o caminho até a fonte que ela cita
-  {FONTES} ato "PLP 299/2026"                   # o projeto, a medida provisória, a PEC ou a lei pelo número: autor, data,
-                                                          # em que pé está e o endereço do texto inteiro; também "Copom"
+  {FONTES} ato "PLP 299/2026"                   # o projeto, a medida provisória, a PEC, a lei ou o decreto pelo número: autor,
+                                                          # data, em que pé está, o endereço do texto inteiro e os documentos do
+                                                          # andamento (o relatório do relator); também "Copom", "Focus",
+                                                          # "PLOA 2027" e "Resolução CMN 5.141"
   {FONTES} onde ASSUNTO                         # onde mora o documento de um assunto (orçamento, dívida, IBGE, balanço...)
 O endereço vai sempre entre aspas, e um comando por vez, sem juntar comandos."""
 
@@ -255,6 +258,9 @@ def pagina_para_ler(url: str | None) -> str | None:
     m = re.search(r"normas\.leg\.br/api/public/normas\?urn=([^&]+)", url)
     if m:
         return "https://normas.leg.br/?urn=" + m.group(1)
+    m = re.search(r"bcb\.gov\.br/api/conteudo/app/normativos/exibenormativo\?p1=([^&]+)&p2=(\d+)", url)
+    if m:
+        return f"https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?tipo={m.group(1)}&numero={m.group(2)}"
     return url
 
 
@@ -271,8 +277,12 @@ def legivel(t: str) -> str:
 
 
 def _para_busca(t: str) -> str:
-    """O texto sem acento e em minúsculas, com o mesmo comprimento, para achar a posição de um termo."""
-    return "".join((unicodedata.normalize("NFD", c)[0] if c.isalpha() else c) for c in t).lower()
+    """O texto sem acento e em minúsculas, com o mesmo comprimento, para achar a posição de um termo. O "º" de "Art.
+    2º" e o "ª" de "282ª" viram "o" e "a", como no texto que o leitor mostra (legivel)."""
+    def um(c: str) -> str:
+        k = unicodedata.normalize("NFKD", c)
+        return k[0] if c.isalpha() else k if len(k) == 1 else c
+    return "".join(um(c) for c in t).lower()
 
 
 def _termos(procura) -> list[str]:
@@ -336,6 +346,10 @@ def links(endereco: str, procura: str | None = None, maximo: int = 60) -> dict:
         return {"ok": False, "erro": str(e)[:160]}
     if b"%PDF" in dados[:1024] or "pdf" in tipo:
         return {"ok": False, "erro": "o endereço é um PDF, e a lista de links só sai de página; leia o texto com abre"}
+    # A planilha e o aviso do site (manutenção, verificação de segurança) não são a página: não têm os links dela.
+    motivo = verifica_base.formato_que_nao_le(dados, tipo) or verifica_base.aviso_do_site(verifica_base.texto_da_pagina(dados, tipo))
+    if motivo:
+        return {"ok": False, "erro": motivo}
     pagina = verifica_base._decodificar(dados, tipo)
     achados: dict[str, str] = {}
     for m in ANCORA.finditer(pagina):
@@ -377,6 +391,12 @@ TIPO_DA_LEI = {"lei complementar": ("LCP", "lei.complementar", "Lei Complementar
                "lei": ("LEI", "lei", "Lei"), "emenda constitucional": ("EMC", "emenda.constitucional", "Emenda Constitucional"),
                "ec": ("EMC", "emenda.constitucional", "Emenda Constitucional"), "decreto": ("DEC", "decreto", "Decreto"),
                "decreto-lei": ("DEL", "decreto.lei", "Decreto-Lei")}
+NORMA_DO_BC = re.compile(r"\bresolu[cç][aã]o\s+(?:do\s+)?(cmn|bcb|conselho monet[aá]rio(?: nacional)?|banco central)\s*" + _NUM, re.I)
+NORMAS_DO_BC = "https://www.bcb.gov.br/api/conteudo/app/normativos/exibenormativo"
+# O projeto do Orçamento e o das diretrizes pelo nome que os jornais usam; no Congresso cada um é um PLN.
+ORCAMENTO = re.compile(r"\b(PLOA|PLDO)\s*(?:de\s+)?(\d{4})\b", re.I)
+EMENTA_DO_ORCAMENTO = {"PLOA": "estima a receita e fixa a despesa da uniao para o exercicio financeiro de {ano}",
+                       "PLDO": "dispoe sobre as diretrizes para a elaboracao e a execucao da lei orcamentaria de {ano}"}
 
 
 def _json(url: str, tempo: int = 15, **params):
@@ -437,6 +457,20 @@ def _ano(a: str | None, padrao: int) -> int:
     return int(a) if len(a) == 4 else 2000 + int(a) if int(a) < 60 else 1900 + int(a)
 
 
+def _anexos(itens: list[dict], ate: str, texto: str = "") -> list[dict]:
+    """Os documentos do andamento de um projeto publicados até `ate`: no máximo 6, sem repetir endereço, os mais
+    recentes primeiro. Quando passam de 6, o relatório e o parecer ficam na frente das emendas e dos requerimentos,
+    porque é neles que o relator põe a conta do impacto de cada medida. Cada item chega com "quando" (data e hora)."""
+    vistos, bons = {texto}, []
+    for x in sorted(itens, key=lambda x: x["quando"], reverse=True):
+        if x["url"] and x["url"] not in vistos and x["data"] and x["data"] <= ate:
+            vistos.add(x["url"])
+            bons.append(x)
+    bons.sort(key=lambda x: 0 if re.search(r"relat[oó]rio|parecer", x["o_que"], re.I) else 1)
+    return [{k: x[k] for k in ("o_que", "autor", "data", "url")}
+            for x in sorted(bons[:6], key=lambda x: x["quando"], reverse=True)]
+
+
 def _no_senado(sigla: str, numero: int, ano: int, ate: str) -> dict | None:
     try:
         itens = _lista(_json(SENADO + "processo", sigla=sigla, numero=numero, ano=ano))
@@ -457,6 +491,18 @@ def _no_senado(sigla: str, numero: int, ano: int, ate: str) -> dict | None:
                             for d, t in sorted((x for x in informes if x[0] and x[0] <= ate), key=lambda x: x[0])[-6:]]
         if not doc["url"]:
             doc["url"] = ((det.get("documento") or {}).get("url") or "").replace("legis.senado.gov.br", "legis.senado.leg.br")
+        # Os documentos que chegam com o andamento: o relatório do relator, as emendas, os requerimentos.
+        soltos = []
+        for a in _lista(det.get("autuacoes")):
+            for i in _lista(a.get("informesLegislativos")):
+                for d in _lista(i.get("documentosAssociados")):
+                    quando = str(d.get("data") or i.get("data") or "").replace(" ", "T")
+                    tipo, desc = (re.sub(r"\s+", " ", str(d.get(k) or "")).strip(" -") for k in ("tipo", "descricao"))
+                    soltos.append({"o_que": (f"{tipo}: {desc[:200]}" if tipo and desc and desc != tipo else tipo or desc[:200]),
+                                   "autor": re.sub(r"\s+", " ", str(d.get("autoria") or "")).strip()[:140],
+                                   "data": _data(quando), "quando": quando,
+                                   "url": str(d.get("url") or "").replace("legis.senado.gov.br", "legis.senado.leg.br")})
+        doc["anexos"] = _anexos(soltos, ate, doc["url"])
     except Exception:  # noqa: BLE001
         pass
     return doc if doc["url"] or doc["pagina"] else None
@@ -478,6 +524,15 @@ def _na_camara(sigla: str, numero: int, ano: int, ate: str) -> dict | None:
     if _data(st.get("dataHora")) and _data(st.get("dataHora")) <= ate:
         doc["andamento"] = [f"{_data(st['dataHora'])[8:10]}/{_data(st['dataHora'])[5:7]}: "
                             + re.sub(r"\s+", " ", " ".join(str(st.get(k) or "") for k in ("descricaoSituacao", "despacho"))).strip()[:260]]
+    try:  # os documentos que a tramitação traz (parecer do relator, emendas, ofícios); a Câmara não diz o autor à parte
+        soltos = []
+        for t in _json(CAMARA + f"proposicoes/{p.get('id')}/tramitacoes", tempo=8).get("dados") or []:
+            tipo, desc = (re.sub(r"\s+", " ", str(t.get(k) or "")).strip() for k in ("descricaoTramitacao", "despacho"))
+            soltos.append({"o_que": (f"{tipo}: {desc[:200]}" if tipo and desc else tipo or desc[:200]), "autor": "",
+                           "data": _data(t.get("dataHora")), "quando": str(t.get("dataHora") or ""), "url": str(t.get("url") or "")})
+        doc["anexos"] = _anexos(soltos, ate, doc["url"])
+    except Exception:  # noqa: BLE001
+        pass
     return doc if doc["url"] else None
 
 
@@ -504,10 +559,78 @@ def lei(tipo: str, numero: int, ano: int | None) -> list[dict]:
         return []
     u = f"urn:lex:br:federal:{urn}:{achado.group(1)};{numero}"
     apelido = re.search(r"'apelido': '([^']*)'", str(j))
-    return [{"ref": f"{nome} {numero}/{achado.group(1)[:4]}", "dono": "Congresso Nacional", "data": achado.group(1),
-             "o_que": (apelido.group(1) if apelido else "").strip(),
-             "url": "https://normas.leg.br/api/public/normas?urn=" + quote(u, safe=":;.") + "&tipo_documento=maior-detalhe",
-             "pagina": "https://normas.leg.br/?urn=" + u}]
+    doc = {"ref": f"{nome} {numero}/{achado.group(1)[:4]}", "dono": "Congresso Nacional", "data": achado.group(1),
+           "o_que": (apelido.group(1) if apelido else "").strip(),
+           "url": "https://normas.leg.br/api/public/normas?urn=" + quote(u, safe=":;.") + "&tipo_documento=maior-detalhe",
+           "pagina": "https://normas.leg.br/?urn=" + u}
+    if sig in ("DEC", "DEL"):
+        # O decreto é do presidente, e o portal de normas só guarda a ficha dele: o texto está no site do Senado.
+        doc["dono"] = "Presidência da República"
+        texto = _texto_do_decreto(j, f"{sig}-{numero}-{achado.group(1)}")
+        if texto:
+            doc["url"] = doc["pagina"] = texto
+    return [doc]
+
+
+def _texto_do_decreto(j, norma: str) -> str | None:
+    """O endereço do texto de um decreto: a página da norma no site do Senado liga à publicação com o texto inteiro.
+    None quando a página não responde ou não traz a ligação."""
+    def codigo(x) -> str | None:
+        if isinstance(x, dict):
+            ident = x.get("identificacao")
+            if x.get("id") and norma in (x.get("norma"), ident.get("norma") if isinstance(ident, dict) else None):
+                return str(x["id"])
+            x = list(x.values())
+        return next((c for c in map(codigo, x) if c), None) if isinstance(x, list) else None
+    cod = codigo(j)
+    if not cod or not cod.isdigit():
+        return None
+    try:
+        import requests
+        r = requests.get(f"https://legis.senado.leg.br/norma/{cod}", headers={"User-Agent": verifica_base.UA}, timeout=15)
+        m = re.search(rf"[\"'/]{cod}/publicacao/(\d+)", r.text) if r.ok else None
+    except Exception:  # noqa: BLE001
+        return None
+    return f"https://legis.senado.leg.br/norma/{cod}/publicacao/{m.group(1)}" if m else None
+
+
+def norma_do_bc(orgao: str, numero: int, ate: str) -> list[dict]:
+    """A resolução do Conselho Monetário Nacional ou do Banco Central pelo número, no endereço do Banco Central que
+    traz o texto inteiro. Só a que foi publicada até `ate`."""
+    tipo = "Resolução BCB" if re.match(r"bcb|banco", orgao, re.I) else "Resolução CMN"
+    try:
+        c = (_json(NORMAS_DO_BC, p1=tipo, p2=numero).get("conteudo") or [None])[0]
+    except Exception:  # noqa: BLE001
+        return []
+    if not isinstance(c, dict) or not c.get("Texto"):
+        return []
+    m = re.match(r"(\d{1,2})/(\d{1,2})/(\d{4})", str(c.get("DataTexto") or ""))  # a data no horário de Brasília
+    data = f"{m.group(3)}-{int(m.group(2)):02d}-{int(m.group(1)):02d}" if m else _data(c.get("Data"))
+    if data and data > ate:
+        return []
+    url = f"{NORMAS_DO_BC}?p1={quote(tipo)}&p2={numero}"
+    return [{"ref": f"{tipo} {numero}", "dono": "Banco Central" if tipo.endswith("BCB") else "Conselho Monetário Nacional",
+             "data": data, "url": url, "pagina": pagina_para_ler(url),
+             "o_que": re.sub(r"\s+", " ", re.sub(r"(?s)<[^>]+>", " ", html.unescape(str(c.get("Assunto") or "")))).strip()}]
+
+
+def orcamento(nome: str, ano: int, ate: str) -> list[dict]:
+    """O projeto do Orçamento (PLOA) ou o das diretrizes (PLDO) de um ano. No Congresso ele é um PLN apresentado no ano
+    anterior, com um número que muda todo ano (o PLOA 2027 é o PLN 24/2026): acha pelo apelido ou pela ementa."""
+    nome = nome.upper()
+    try:
+        itens = _lista(_json(SENADO + "processo", sigla="PLN", ano=ano - 1, tempo=20))
+    except Exception:  # noqa: BLE001
+        return []
+    ementa = EMENTA_DO_ORCAMENTO[nome].format(ano=ano)
+    for p in itens:
+        if not isinstance(p, dict):
+            continue
+        m = re.match(r"PLN (\d+)/(\d{4})$", p.get("identificacao") or "")
+        if m and (re.sub(r"\s+", " ", p.get("apelido") or "").strip().upper() == f"{nome} {ano}"
+                  or _sem_acento(re.sub(r"\s+", " ", p.get("ementa") or "")).strip().startswith(ementa)):
+            return projeto("PLN", int(m.group(1)), int(m.group(2)), ate)
+    return []
 
 
 def recentes(ate: str, dias: int = 5) -> list[dict]:
@@ -556,13 +679,17 @@ def referencias(texto: str, ano: int) -> list[tuple[str, str, int, int | None]]:
 
 def ato(ref: str, ate: str | None = None) -> list[dict]:
     """Os documentos de uma referência escrita como os jornais escrevem ("PLP 299/2026", "MP 1.400", "Lei Complementar
-    200/2023", "ata do Copom", "Focus"), até `ate` (por padrão, ontem)."""
+    200/2023", "ata do Copom", "Focus", "PLOA 2027", "Resolução CMN 5.141"), até `ate` (por padrão, ontem)."""
     ate = ate or (dt.date.today() - dt.timedelta(days=1)).isoformat()
     out: list[dict] = []
     if re.search(r"\bcopom\b|\bselic\b", ref, re.I):
         out += copom(ate)
     if re.search(r"\bfocus\b", ref, re.I):
         out += focus(ate)
+    for m in NORMA_DO_BC.finditer(ref):
+        out += norma_do_bc(m.group(1), int(m.group(2).replace(".", "")), ate)
+    for m in ORCAMENTO.finditer(ref):
+        out += orcamento(m.group(1), int(m.group(2)), ate)
     for classe_, a, numero, ano in referencias(ref, int(ate[:4])):
         if classe_ == "projeto":
             achou = projeto(a, numero, ano, ate) or (projeto(a, numero, ano - 1, ate) if not re.search(r"\d{4}", ref) else [])
@@ -734,7 +861,18 @@ def linha_do_documento(d: dict, k: str = "") -> str:
     if d.get("andamento"):
         partes.append("andamento: " + " | ".join(d["andamento"]))
     partes.append(f"texto inteiro: {d['url']}")
-    return " | ".join(partes)
+    linha = " | ".join(partes)
+    if d.get("anexos"):
+        linha += "\n  documentos do andamento:"
+        for x in d["anexos"]:
+            dia = f"{x['data'][8:10]}/{x['data'][5:7]}/{x['data'][:4]}"
+            linha += f"\n  - {x['o_que']}" + (f" | {x['autor']}" if x.get("autor") else "") + f" | {dia} | {x['url']}"
+    return linha
+
+
+# O que a IA e quem roda o comando leem depois de um projeto que tem documentos do andamento.
+SOBRE_OS_ANEXOS = ("Os documentos do andamento abrem com o leitor, como o texto do projeto. O relatório do relator costuma "
+                   "trazer a estimativa de impacto de cada medida e dizer de quem ela é.")
 
 
 def bloco_documentos(achado: dict | None) -> str:
@@ -746,6 +884,8 @@ def bloco_documentos(achado: dict | None) -> str:
         l.append("O código já achou os documentos originais abaixo, publicados até ontem. Abra cada um com o leitor, leia e "
                  "escreva as linhas do caderno a partir dele, com o endereço do texto inteiro:")
         l += [linha_do_documento(d, f"D{i}. ") for i, d in enumerate(achado["documentos"], 1)]
+        if any(d.get("anexos") for d in achado["documentos"]):
+            l.append(SOBRE_OS_ANEXOS)
     if achado.get("recentes"):
         l.append("Apresentados no Senado nos últimos dias (o projeto de que as notícias falam, sem dar o número, pode ser "
                  "um destes: confira pela ementa e pelo autor antes de usar):")
@@ -827,6 +967,8 @@ def _mostrar_documentos(docs: list[dict]) -> None:
         print(linha_do_documento(d))
         if d.get("pagina"):
             print(f"  página para ler: {d['pagina']}")
+    if any(d.get("anexos") for d in docs):
+        print(SOBRE_OS_ANEXOS)
 
 
 def main() -> int:

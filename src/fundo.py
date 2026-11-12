@@ -653,20 +653,22 @@ def aplicar_trocas(cad: list[dict], novas: list[dict], log=print) -> tuple[list[
     (`novas` com "troca" igual ao id da linha velha, já conferidas). A linha velha fica com o mesmo id, para as marcas
     e as respostas da pesquisa continuarem valendo, e passa a ter a afirmação, os números e a fonte da nova; a fonte de
     antes fica em "fonte_anterior". Só troca por página melhor (a do dono no lugar do relato, o jornal conhecido no
-    lugar do site fora da lista) e que a conferência não tenha recusado. Devolve as linhas que continuam novas e, das
-    trocadas, {id da linha nova: id da linha velha}."""
+    lugar do site fora da lista) e que a conferência tenha aberto e conferido: a página que não abriu não toma o lugar
+    de uma linha conferida. Devolve as linhas que continuam novas e, das trocadas, {id da linha nova: id da linha
+    velha}; a troca recusada que não serve como linha nova não entra em nenhuma das duas."""
     por_id = {c["id"]: c for c in cad}
     ficam, trocadas = [], {}
     for n in novas:
         alvo = por_id.get(n.get("troca") or "")
-        if not alvo or alvo.get("tipo") != "documento":
+        # Só um documento troca a fonte de outro: a conta que veio com "troca" entra como linha nova.
+        if not alvo or alvo.get("tipo") != "documento" or n.get("tipo") != "documento":
             ficam.append(n)
             continue
         st = (n.get("conferencia") or {}).get("status")
         melhor = origem.PESO.get(_classe(n), 0) > origem.PESO.get(_classe(alvo), 0) or (
             origem.PESO.get(_classe(n), 0) == origem.PESO.get(_classe(alvo), 0) > 0
             and (alvo.get("conferencia") or {}).get("status") in RUINS)
-        if st in RUINS or not melhor:
+        if st not in CONFERIDAS or not melhor:
             log(f"texto do dia: a troca de {alvo['id']} não valeu ({st or 'sem conferência'}; página: {_classe(n) or 'sem link'})")
             if st not in RUINS and origem.PESO.get(_classe(n), 0) >= origem.PESO["jornal"]:
                 ficam.append(n)  # não é melhor que a velha, mas serve como linha nova
@@ -1234,22 +1236,27 @@ def revisar(e: dict, texto: dict, cad: list[dict], codigo: dict, antes: list[dic
                                        permitidas=[] if final else PERMITIDAS, timeout=timeout)
 
 
-def _linhas_do_revisor(novas: list[dict], cad: list[dict]) -> list[dict]:
-    """As linhas que o revisor achou, com ids que não colidem com o caderno (c201 em diante)."""
-    usados = {c["id"] for c in cad}
-    k = max([ID_REVISOR - 1, *(int(c["id"][1:]) for c in cad if int(c["id"][1:]) >= ID_REVISOR)]) + 1
-    out = []
+def _linhas_do_revisor(novas: list[dict], cad: list[dict]) -> tuple[list[dict], dict[str, str]]:
+    """As linhas que o revisor achou, com ids que não colidem com o caderno (c201 em diante), e, das que mudaram de
+    id sem que o id dado fosse o de outra linha, {id que o revisor deu: id que ficou}, para acertar as objeções."""
     velhas = {c["id"] for c in cad}
+    usados = velhas | {c["id"] for c in novas if int(c["id"][1:]) >= ID_REVISOR}
+    k = max([ID_REVISOR - 1, *(int(i[1:]) for i in velhas if int(i[1:]) >= ID_REVISOR)]) + 1
+    out, vistos, de_para = [], set(velhas), {}
     for c in novas:
         c = dict(c)
         c["troca"] = c.get("troca") if c.get("troca") in velhas else ""
-        if c["id"] in usados or int(c["id"][1:]) < ID_REVISOR:
+        if c["id"] in vistos or int(c["id"][1:]) < ID_REVISOR:
+            while f"c{k}" in usados:  # nem o id de uma linha do caderno nem o de outra linha nova do revisor
+                k += 1
+            if c["id"] not in vistos:
+                de_para.setdefault(c["id"], f"c{k}")
             c["id"] = f"c{k}"
-            k += 1
-        usados.add(c["id"])
+            usados.add(c["id"])
+        vistos.add(c["id"])
         c["do_revisor"] = True
         out.append(c)
-    return out
+    return out, de_para
 
 
 # ------------------------------------------------------------------ a conferência do código
@@ -1335,8 +1342,11 @@ def _conferir_pagina(c: dict, dia: dt.date, offline: bool) -> dict:
     if erro:
         return {"status": "nao_aberto", "por_que": erro, "fonte_conhecida": conhecida}
     pag = verifica_base.normalizar(texto)
-    trecho = re.sub(r"\s*\[[^\]]*\]\s*", " ", f.get("trecho") or "").strip(" .…")
-    if trecho and verifica_base.normalizar(trecho) in pag:
+    # O trecho vale como veio, com os colchetes que a página tem (a nota "[1]"); sem eles, só quando são da pesquisa
+    # (o "[...]" de um corte).
+    inteiro = (f.get("trecho") or "").strip(" .…")
+    sem_colchetes = re.sub(r"\s*\[[^\]]*\]\s*", " ", inteiro).strip(" .…")
+    if any(x and verifica_base.normalizar(x) in pag for x in (inteiro, sem_colchetes)):
         return {"status": "conferido", "fonte_conhecida": conhecida}
     nums = [x for n in c.get("numeros") or [] for x in revisa_texto._numeros(n)]
     base = _num_set(texto)
@@ -1395,6 +1405,11 @@ def conferir_site(c: dict, dia: dt.date, offline: bool, base_site: str, fatos: l
             txt = " ".join([f.get("fato", ""), f.get("por_que_importa", ""), fm["trecho"]])
             nums = [n for n in c.get("numeros") or [] if not revisa_texto.numeros_fora([n], txt)]
             rs.append(conferir_documento({"fonte": fm, "numeros": nums}, dia, offline))
+        # O site fora da lista não derruba o fato que uma fonte conhecida também guarda: vale a conhecida, e ele deixa
+        # de ser fonte da linha. Só quando todas são de fora a linha não sustenta frase.
+        conhecidas = [(fm, r) for fm, r in zip(c["fontes_memoria"], rs) if r.get("classe") != "fora"]
+        if conhecidas:
+            c["fontes_memoria"], rs = [fm for fm, _ in conhecidas], [r for _, r in conhecidas]
         for st in (*RUINS, "nao_aberto"):
             ruim = next((r for r in rs if r["status"] == st), None)
             if ruim:
@@ -1431,6 +1446,7 @@ def conferir_caderno(cad: list[dict], dia: dt.date, offline: bool, base_site: st
 # "fonte_fora": a linha de um site fora da lista de fontes conhecidas, que não é a página do dono do dado (FUNDO.md, "A
 # fonte original"). Ela serve de pista para a troca de fonte e não sustenta frase.
 RUINS = ("nao_confere", "trecho_nao_achado", "depois_do_dia", "fonte_fora")
+CONFERIDAS = ("conferido", "numeros_na_pagina")  # a página abriu e diz o trecho ou os números da linha
 
 
 def _texto_item(c: dict, estrito: bool = True) -> str:
@@ -1653,6 +1669,9 @@ def _ruins_e_fracos(cad: list[dict], texto: str) -> tuple[set[str], set[str]]:
     usadas = set(marcas(texto))
     ruins = {c["id"] for c in cad if c.get("conferencia", {}).get("status") in RUINS} & usadas
     fracos = {c["id"] for c in cad if c.get("conferencia", {}).get("status") in FRACOS} & usadas
+    # A marca de uma linha que não está no caderno (a troca que a conferência recusou) não sustenta nada: a frase
+    # sai, como a da linha que não confere, e o dia não fica sem texto por causa da marca.
+    ruins |= usadas - {c["id"] for c in cad}
     return ruins, fracos
 
 
@@ -1753,16 +1772,32 @@ def buscar_documentos(e: dict, offline: bool = False, log=print) -> None:
 
 def juntar_do_revisor(saida: dict, cad: list[dict], e: dict, offline: bool, log=print) -> tuple[list[dict], bool]:
     """Junta ao caderno as linhas que o revisor achou: confere cada uma, troca a fonte das linhas que ele leu de novo
-    na página do dono e acerta, nas objeções, o id da linha trocada. Devolve o caderno e se ele mudou."""
-    novas = _linhas_do_revisor(saida.get("caderno") or [], cad)
+    na página do dono e acerta, nas objeções, o id das linhas que não ficaram com o id que ele deu. A que trocou a
+    fonte de outra e a troca que a conferência recusou passam a ser citadas pelo id da linha velha, que é a que está
+    no caderno: a redação não recebe id de linha que não existe. Devolve o caderno e se ele mudou."""
+    novas, renomeadas = _linhas_do_revisor(saida.get("caderno") or [], cad)
     if not novas:
         return cad, False
     conferir_caderno(novas, e["dia"], offline, _base_site(e))
-    novas, de_para = aplicar_trocas(cad, novas, log)
+    velha_de = {n["id"]: n["troca"] for n in novas if n.get("troca")}
+    novas, trocadas = aplicar_trocas(cad, novas, log)
+    cad = juntar_cadernos(cad, novas)
+    ids = {c["id"] for c in cad}
+    recusadas = {i: v for i, v in velha_de.items() if i not in ids and i not in trocadas}
     for o in saida.get("objecoes") or []:
-        for novo, velho in de_para.items():
-            o["onde_conferir"] = re.sub(rf"\b{novo}\b", velho, o.get("onde_conferir") or "")
-    return juntar_cadernos(cad, novas), True
+        sem_pagina = set()
+
+        def acerta(m: re.Match) -> str:
+            i = renomeadas.get(m[0], m[0])
+            if i in recusadas:
+                sem_pagina.add(recusadas[i])
+            return trocadas.get(i) or recusadas.get(i) or i
+        for k in ("problema", "onde_conferir"):
+            o[k] = re.sub(r"\bc\d+\b", acerta, o.get(k) or "")
+        if sem_pagina:
+            o["onde_conferir"] += (" (a página nova que o revisor leu para " + ", ".join(sorted(sem_pagina))
+                                   + " não conferiu: vale o que a linha do caderno diz)")
+    return cad, True
 
 
 SO_FONTES = ("Esta é uma revisão só das fontes de um texto que já está publicado. O caderno teve linhas trocadas: o mesmo "
