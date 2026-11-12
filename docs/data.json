@@ -2,7 +2,7 @@
  "direcao": "subindo",
  "desde": "2026-06",
  "pergunta": "Para que lado anda o risco de recessão no Brasil: as pressões que costumam vir antes de uma recessão estão piorando ou melhorando?",
- "atualizado_em": "2026-11-11T05:00:06-03:00",
+ "atualizado_em": "2026-11-12T05:00:06-03:00",
  "soma": 4,
  "pioraram": 4,
  "melhoraram": 0,
@@ -86,13 +86,13 @@
    "lado": "piorou",
    "medidas": {
     "dolar": {
-     "agora": 5.584,
-     "dia": "2026-11-10",
+     "agora": 5.5606,
+     "dia": "2026-11-11",
      "ref": "2026-11",
      "antes": 5.1816,
      "dia_antes": "2026-08-31",
      "ref_antes": "2026-08",
-     "mudanca": 7.7659,
+     "mudanca": 7.3143,
      "corte": 4.7657,
      "lado": 1,
      "como": "pct",
@@ -101,13 +101,13 @@
      "persiste_dias": 3
     },
     "juro_longo": {
-     "agora": 7.87,
-     "dia": "2026-11-09",
+     "agora": 7.83,
+     "dia": "2026-11-10",
      "ref": "2026-11",
      "antes": 7.92,
      "dia_antes": "2026-08-31",
      "ref_antes": "2026-08",
-     "mudanca": -0.05,
+     "mudanca": -0.09,
      "corte": 0.4114,
      "lado": 0,
      "como": "pontos",
@@ -118,11 +118,11 @@
    },
    "folga": {
     "serie": "juro_real_longo",
-    "valor": 7.87,
+    "valor": 7.83,
     "ref": "2026-11",
     "desde": "2005",
     "meses": 257,
-    "pior_que_pct": 89,
+    "pior_que_pct": 88,
     "recorde_ruim": false,
     "recorde_bom": false
    }
@@ -165,7 +165,7 @@
    "medidas": {
     "juro": {
      "agora": 13.75,
-     "dia": "2026-11-11",
+     "dia": "2026-11-12",
      "ref": "2026-11",
      "antes": 14.0,
      "dia_antes": "2026-08-31",
@@ -296,20 +296,20 @@
   "o_que_e": "Crescimento do PIB nos 4 trimestres seguintes ao último divulgado que tem 1 chance em 10 de ser pior (conta dos 44 países)."
  },
  "pressao_noticias": {
-  "sentido": "piora",
+  "sentido": "igual",
   "fatores": {
-   "contas": "igual",
-   "juro": "piora",
-   "externo": "piora",
-   "credito": "igual",
-   "atividade": "piora",
-   "mercado": "igual"
+   "contas": "melhora",
+   "credito": "piora",
+   "juro": "igual",
+   "atividade": "igual",
+   "mercado": "igual",
+   "externo": "igual"
   }
  },
  "post_do_dia": {
   "tipo": "Fato do dia",
-  "titulo": "Ata do Copom diz que o juro fica alto por mais tempo, e o governo influi nesse prazo",
-  "url": "https://vaidarcrise.com.br/2026-11-11/",
+  "titulo": "Ajuste enviado ao Senado prevê até R$ 60 bi, e só a trava de gasto tem valor publicado",
+  "url": "https://vaidarcrise.com.br/2026-11-12/",
   "escrito_por_llm": true
  }
 }
