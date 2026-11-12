@@ -25,6 +25,7 @@ a.termo{color:inherit}
   .e-meta .e-tinta,.e-corpo .e-tinta{color:#e8e9ea!important}
   .e-link,.e-corpo a.e-link{color:#94b4ff!important}
   .e-fio{border-color:#2f3134!important}
+  .e-maquina{background:#1f2123!important}
   .e-mais{color:#ff7373!important}.e-menos{color:#52c993!important}
 }
 </style>
@@ -49,29 +50,34 @@ a.termo{color:inherit}
   </tr></table>
   {% if dir.pendente %}<p class="e-meta" style="margin:10px 0 0;font:14px/1.4 {{ sistema }};color:#62666b">{{ dir.pendente }}</p>{% endif %}
   {% set r = dir.ritmo %}{% if r %}
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="e-fio" style="margin:14px 0 0;border:1px solid #e4e6e8;border-radius:10px;border-collapse:separate">
-    <tr><td style="padding:12px 12px 10px">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:16px 0 0">
+    <tr><td style="padding:0">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
         <td class="e-meta" style="font:600 13px/1.3 {{ sistema }};color:#62666b">Crescimento em 12 meses</td>
         <td align="right" class="e-{{ r.cls }}" style="font:700 14px/1.3 {{ sistema }};color:{{ cores[r.cls] }};white-space:nowrap">{{ r.seta }} {{ r.muda }}</td>
       </tr></table>
-      {# cada número com os 12 meses que ele cobre, um por linha, como no site #}
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 0">
+      {# os três números do mesmo tamanho, cada um no seu bloco, com os 12 meses que ele cobre embaixo, como no site #}
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 0;border-collapse:separate">
         <tr>
-          <td class="e-meta" style="padding:1px 12px 1px 0;font:14px/1.35 {{ sistema }};color:#62666b">{{ r.per_antes }}</td>
-          <td align="right" class="e-tinta" style="padding:1px 0;font:600 17px/1.25 {{ sistema }};color:#1e1f21;white-space:nowrap">{{ r.antes }}</td>
+          <td width="33%" valign="top" class="e-maquina" style="background:#f4f5f6;border-radius:12px;padding:11px 6px 10px 10px">
+            <div class="e-tinta" style="font:700 28px/1.05 {{ sistema }};color:#1e1f21;letter-spacing:-0.5px">{{ r.antes }}</div>
+            <div class="e-meta" style="margin-top:6px;font:12px/1.3 {{ sistema }};color:#62666b;white-space:nowrap">{{ r.per_antes }}</div>
+          </td>
+          <td width="6" style="width:6px;font-size:0;line-height:0">&nbsp;</td>
+          <td width="33%" valign="top" class="e-maquina" style="background:#f4f5f6;border-radius:12px;padding:11px 6px 10px 10px">
+            <div class="e-tinta" style="font:700 28px/1.05 {{ sistema }};color:#1e1f21;letter-spacing:-0.5px">{{ r.agora }}</div>
+            <div class="e-meta" style="margin-top:6px;font:12px/1.3 {{ sistema }};color:#62666b;white-space:nowrap">{{ r.per_agora }}</div>
+          </td>
+          {% if r.previsao %}<td width="6" style="width:6px;font-size:0;line-height:0">&nbsp;</td>
+          <td width="33%" valign="top" class="e-fio" style="border:1px solid #e4e6e8;border-radius:12px;padding:10px 5px 9px 9px">
+            <div class="e-meta" style="font:700 28px/1.05 {{ sistema }};color:#62666b;letter-spacing:-0.5px">{{ r.previsao }}</div>
+            <div class="e-meta" style="margin-top:6px;font:12px/1.3 {{ sistema }};color:#62666b;white-space:nowrap">{{ r.per_prev }}</div>
+            <div class="e-meta" style="font:12px/1.3 {{ sistema }};color:#62666b">previsão</div>
+          </td>{% endif %}
         </tr>
-        <tr>
-          <td class="e-tinta" style="padding:1px 12px 1px 0;font:600 14px/1.35 {{ sistema }};color:#1e1f21">{{ r.per_agora }}</td>
-          <td align="right" class="e-tinta" style="padding:1px 0;font:800 23px/1.15 {{ sistema }};color:#1e1f21;white-space:nowrap">{{ r.agora }}</td>
-        </tr>
-        {% if r.previsao %}<tr>
-          <td class="e-meta" style="padding:1px 12px 1px 0;font:14px/1.35 {{ sistema }};color:#62666b">Previsão para <span style="white-space:nowrap">{{ r.per_prev }}</span></td>
-          <td align="right" class="e-meta" style="padding:1px 0;font:600 17px/1.25 {{ sistema }};color:#62666b;white-space:nowrap">{{ r.previsao }}</td>
-        </tr>{% endif %}
       </table>
       {% if r.encolhe %}<p class="e-tinta" style="margin:10px 0 0;font:14px/1.4 {{ sistema }};color:#1e1f21">{{ r.encolhe }}</p>{% endif %}
-      <p class="e-meta" style="margin:6px 0 0;font:12.5px/1.4 {{ sistema }};color:#62666b">{% if r.previsao %}Fontes: prévia do PIB e pesquisa com os bancos (Focus), as duas do Banco Central.{% else %}Fonte: prévia do PIB do Banco Central.{% endif %}</p>
+      <p class="e-meta" style="margin:10px 0 0;font:12px/1.45 {{ sistema }};color:#62666b">{% if r.previsao %}Fontes: prévia do PIB e pesquisa com os bancos (Focus), as duas do Banco Central.{% else %}Fonte: prévia do PIB do Banco Central.{% endif %}</p>
     </td></tr>
   </table>{% endif %}
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="e-fio" style="margin:14px 0 0;border:1px solid #e4e6e8;border-radius:10px;border-collapse:separate">
