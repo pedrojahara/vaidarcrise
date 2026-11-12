@@ -86,20 +86,23 @@ a.termo{color:inherit;text-decoration-style:dotted;text-decoration-thickness:1px
 .p-mais p{margin:0 0 6px}
 .p-mais .p-fora{color:var(--meta);font-size:13.5px}
 .nota .cab-p.tb{margin-top:28px}
-.ritmo{margin:14px 0 0;padding:12px 12px 10px;border:1px solid var(--fio);border-radius:10px}
-.ritmo .r-tit{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font:600 13px/1.3 var(--sistema);color:var(--meta);margin:0 0 6px;letter-spacing:.02em}
+.ritmo{margin:16px 0 0}
+.ritmo .r-tit{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font:600 13px/1.3 var(--sistema);color:var(--meta);margin:0 0 8px;letter-spacing:.02em}
 .r-muda{font:700 14px/1.3 var(--sistema);letter-spacing:0;white-space:nowrap}
-/* cada número com os 12 meses que ele cobre, um por linha: o período à esquerda, o número à direita */
-.r-lista{margin:0}
-.r-lin{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:1px 0}
-.r-lin dt{font:14px/1.35 var(--sistema);color:var(--meta)}
-.r-lin dt span{white-space:nowrap}
-.r-lin dd{margin:0;font:600 17px/1.25 var(--sistema);font-variant-numeric:tabular-nums;white-space:nowrap}
-.r-lin.agora dt{color:var(--tinta);font-weight:600}
-.r-lin.agora dd{font-size:23px;line-height:1.15;font-weight:800}
-.r-lin.prev dd{color:var(--meta)}
+/* os três números do mesmo tamanho, cada um no seu bloco, com os 12 meses que ele cobre embaixo; a previsão,
+   que ainda não é dado, só com o contorno */
+.r-nums{list-style:none;margin:0;padding:0;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:6px}
+.r-nums li{min-width:0;background:var(--maquina);border-radius:12px;padding:11px 6px 10px 10px}
+.r-nums li.prev{background:transparent;box-shadow:inset 0 0 0 1px var(--fio)}
+.r-v{display:block;font:700 28px/1.05 var(--sistema);letter-spacing:-.02em}
+.r-nums .prev .r-v{color:var(--meta)}
+.r-p{display:block;font:12px/1.3 var(--sistema);color:var(--meta);margin-top:6px;white-space:nowrap}
+.r-p+.r-p{margin-top:0}
+/* na coluna estreita do computador (310 px), o período cabe com um pouco menos de margem dentro do bloco */
+@media (min-width:821px){.r-nums{gap:5px}.r-nums li{padding-left:9px;padding-right:3px}}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .r-enc{font:14px/1.4 var(--sistema);margin:10px 0 0}
-.r-fonte{font:12.5px/1.4 var(--sistema);color:var(--meta);margin:6px 0 0}
+.r-fonte{font:12px/1.45 var(--sistema);color:var(--meta);margin:10px 0 0}
 .r-fonte a{color:inherit}
 @media (prefers-reduced-motion: reduce){.p-cab .seta{transition:none}}
 /* no celular, as pressões ficam atrás deste botão; sem JavaScript ou no computador, a lista fica aberta e o botão some */

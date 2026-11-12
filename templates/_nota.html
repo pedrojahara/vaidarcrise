@@ -11,11 +11,11 @@
   {% set r = dir.ritmo %}{% if r %}
   <div class="ritmo">
     <p class="r-tit"><span>Crescimento em 12 meses</span><b class="r-muda {{ r.cls }}"><span aria-hidden="true">{{ r.seta }}</span> {{ r.muda }}</b></p>
-    <dl class="r-lista">
-      <div class="r-lin"><dt>{{ r.per_antes }}</dt><dd>{{ r.antes }}</dd></div>
-      <div class="r-lin agora"><dt>{{ r.per_agora }}</dt><dd>{{ r.agora }}</dd></div>
-      {% if r.previsao %}<div class="r-lin prev"><dt>Previsão para <span>{{ r.per_prev }}</span></dt><dd>{{ r.previsao }}</dd></div>{% endif %}
-    </dl>
+    <ul class="r-nums">
+      <li><span class="r-v">{{ r.antes }}</span><span class="r-p" aria-hidden="true">{{ r.per_antes }}</span><span class="vh">de {{ r.ext_antes }}</span></li>
+      <li><span class="r-v">{{ r.agora }}</span><span class="r-p" aria-hidden="true">{{ r.per_agora }}</span><span class="vh">de {{ r.ext_agora }}</span></li>
+      {% if r.previsao %}<li class="prev"><span class="r-v">{{ r.previsao }}</span><span class="r-p" aria-hidden="true">{{ r.per_prev }}</span><span class="r-p">previsão</span><span class="vh">de {{ r.ext_prev }}</span></li>{% endif %}
+    </ul>
     {% if r.encolhe %}<p class="r-enc">{{ r.encolhe }}</p>{% endif %}
     <p class="r-fonte">{% if r.previsao %}Fontes: prévia do PIB e pesquisa com os bancos (<a class="termo" href="https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Focus" target="_blank" rel="noopener">Focus</a>), as duas do Banco Central.{% else %}Fonte: prévia do PIB do Banco Central.{% endif %}</p>
   </div>{% endif %}

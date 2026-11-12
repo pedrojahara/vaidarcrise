@@ -168,10 +168,10 @@ def _linhas_partes(rodada: dict, cfg: dict) -> list[str]:
     out = [t["conta"]]
     r = t.get("ritmo")
     if r:
-        prev = (f" Os bancos (Focus) esperam {r['previsao']} de {r['per_prev']}. {r['erro']}"
+        prev = (f" Os bancos (Focus) esperam {r['previsao']} de {r['ext_prev']}. {r['erro']}"
                 if r.get("previsao") else "")
-        out.append(f"- Crescimento em 12 meses (logo abaixo da placa; não muda a direção): {r['agora']} de {r['per_agora']}, "
-                   f"contra {r['antes']} de {r['per_antes']} ({r['muda'].lower()}). {r['faixa']}{prev}")
+        out.append(f"- Crescimento em 12 meses (logo abaixo da placa; não muda a direção): {r['agora']} de {r['ext_agora']}, "
+                   f"contra {r['antes']} de {r['ext_antes']} ({r['muda'].lower()}). {r['faixa']}{prev}")
     rp = t.get("ritmo_parte")
     if rp:
         out.append(f"- Ritmo da economia (não aparece como linha; só decide se o topo diz que a economia está encolhendo): "

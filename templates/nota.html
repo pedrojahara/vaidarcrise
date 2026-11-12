@@ -58,7 +58,7 @@ svg text{font-family:var(--sistema)}
 
   <section aria-labelledby="t-tambem">
     <h2 id="t-tambem">E o crescimento, o emprego e a dívida em reais?</h2>
-    <p>Logo abaixo da placa ficam três números de crescimento, cada um ao lado dos 12 meses que ele cobre: quanto a economia cresceu nos 12 meses até o último dado, quanto ela crescia um ano antes e quanto os bancos esperam para os 12 meses seguintes.</p>
+    <p>Logo abaixo da placa ficam três números de crescimento, cada um com os 12 meses que ele cobre logo embaixo: quanto a economia cresceu nos 12 meses até o último dado, quanto ela crescia um ano antes e quanto os bancos esperam para os 12 meses seguintes.</p>
     <p>Os dois primeiros vêm da prévia do PIB do Banco Central, que sai todo mês, com dois meses de atraso.{% if cal.ritmo %} Em metade dos meses desde 2004, o crescimento em 12 meses ficou entre {{ cal.ritmo.faixa[0]|num }}% e {{ cal.ritmo.faixa[1]|num }}%, e é isso que a página chama de normal.{% endif %}</p>
     <p>A previsão é a dos bancos que o Banco Central consulta toda semana (Focus), e o site só a mostra. Ela cobre os 12 meses a partir do mês seguinte ao da pesquisa e junta o que os bancos esperam para este ano e para o próximo.{% if cal.ritmo %} Desde 2004, ela errou o crescimento desses 12 meses em {{ cal.ritmo.erro_focus|num }} ponto, em média, para mais ou para menos.{% endif %}</p>
     <p>Nenhum desses números muda a placa, que olha só as pressões, porque elas costumam piorar antes de o crescimento cair.</p>

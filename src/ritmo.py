@@ -7,7 +7,7 @@ da prévia do PIB. A previsão é de fora (Focus) e fica só na tela, nunca na c
 As contas:
 - Crescimento em 12 meses: prévia do PIB do Banco Central (IBC-Br dessazonalizado, BCB 24364), soma dos 12 meses
   até o último dado contra a soma dos 12 meses anteriores. O número de um ano antes é a mesma conta 12 meses antes. A página mostra
-  cada número com os 12 meses que ele cobre ("set/2025 a ago/2026"), e a previsão também (janela_previsao).
+  cada número com os 12 meses que ele cobre ("set/25–ago/26"), e a previsão também (janela_previsao).
 - Acelerando ou desacelerando: compara "agora" com "antes", os dois com uma casa, como a página mostra. Diferença
   de até 0,1 ponto é "no mesmo ritmo". É descrição, não sinal: o crescimento do Brasil varia muito de um ano para
   o outro, e a direção do risco não usa esta conta.
