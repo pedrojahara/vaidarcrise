@@ -23,7 +23,8 @@ launchd, todo dia às 05h00 → run.sh   (uma publicação por dia; se o Mac dor
   ├─ src/pauta.py           a história do dia, sem IA: a soma das notícias por história, tamanho x estágio
   │                         (CARTA_EDITORIAL.md)
   ├─ src/fundo.py fazer     no fato do dia, a pesquisa da história (claude -p com busca na internet, src/conta.py e as
-  │                         metas de config/metas.json), o esqueleto do argumento, um texto só, o leitor que só
+  │                         metas de config/metas.json), a segunda busca só do que a pesquisa não achou, o
+  │                         esqueleto do argumento, um texto só, o leitor que só
   │                         recebe o texto e o revisor de três leitores e um editor, que devolvem objeções em até
   │                         duas voltas, e uma conferência final só de erros; o código confere cada número (guia
   │                         em FUNDO.md, até 35 min)
@@ -66,7 +67,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python src/escreve_post.py --so-dados            # os dados do site que o texto do dia recebe, sem chamar o LLM
 .venv/bin/python src/escreve_post.py --tipo semana --so-dados  # força o tipo (dia, semana ou mes)
 .venv/bin/python src/escreve_post.py runs/<id>.json --grava  # refaz o resumo da semana ou do mês guardado
-.venv/bin/python src/fundo.py runs/<id>.json --grava         # refaz o texto do dia: pesquisa, esqueleto, texto e revisão (--offline na nuvem;
+.venv/bin/python src/fundo.py runs/<id>.json --grava         # refaz o texto do dia: pesquisa, segunda busca, esqueleto, texto e revisão (--offline na nuvem;
                                                               # --sem-esqueleto roda sem o esqueleto e sem o leitor frio)
 .venv/bin/python src/fundo.py --confere                       # lista os fatos do dia sem texto
 .venv/bin/python src/edita_texto.py runs/<id>.json         # o editor num resumo guardado: sugestões e texto editado (--grava grava)
