@@ -246,6 +246,38 @@ def ponteiros(texto: str) -> list[str]:
     return out
 
 
+# O texto não sabe o que não foi publicado: sabe só o que a pesquisa não achou. Em 12/11/2026, o título dizia "só a trava
+# de gasto tem valor publicado" e o texto, "o governo não publicou quanto isso rende", com o valor de quatro medidas
+# publicado na véspera pela agência do Senado. AUSENCIA acha a frase que diz que algo não foi dito, publicado ou
+# detalhado, para o revisor conferir uma a uma. AUSENCIA_GERAL acha a que diz isso como fato geral, sem documento nem
+# ocasião ("o governo não publicou", "não se sabe quanto", "só X tem valor"): essa não sai.
+_O_QUE_FALTA = (r"(?:quanto|quant[oa]s|quando|qual|quais|como|por ?qu[eê]|de onde|onde|o valor|os valores|o número|"
+                r"os números|o custo|os custos|a estimativa|as estimativas|o cálculo|os cálculos|o impacto|a data|"
+                r"o prazo|o motivo|a razão|a fonte|detalhes|a conta|o tamanho|a origem|o total|a divisão)")
+_NEGA = r"(?:não|nem|nunca|ninguém|nenhum\w*(?: \w+){0,3})"
+_SO_UM = (r"\b(?:só|apenas|somente|únic[oa]s?)\b[^.;]{0,60}?\b(?:tem|têm|traz|trazem|ganhou|ganharam|recebeu|receberam) "
+          r"(?:\w+ )?(?:valor|valores|número|números|estimativa|estimativas|cálculo|cálculos)\b")
+AUSENCIA_GERAL = re.compile(
+    rf"\b{_NEGA} (?:\w+ ){{0,2}}?(?:public\w+|divulg\w+)\b"
+    rf"|\b(?:não se sabe|ninguém sabe|não é possível saber|não dá para saber)\b[^.;]{{0,15}}?\b{_O_QUE_FALTA}\b"
+    r"|\bsem (?:\w+ ){0,3}?(?:publicad\w+|divulgad\w+)\b"
+    rf"|{_SO_UM}", re.I)
+AUSENCIA = re.compile(
+    AUSENCIA_GERAL.pattern
+    + rf"|\b{_NEGA} (?:\w+ ){{0,2}}?(?:se )?(?:inform\w+|detalh\w+|estim\w+|calcul\w+|explic\w+|revel\w+)\b"
+    + rf"|\b{_NEGA} (?:\w+ ){{0,2}}?(?:diss\w+|diz|dizem|dizia\w*|cit\w+|traz|trazem|trouxe\w*|apresent\w+|deu|deram|dá|"
+      rf"dão|tem|têm|tinha\w*|há|havia|existe\w*)\b[^.;]{{0,25}}?\b{_O_QUE_FALTA}\b", re.I)
+_ENTRE_ASPAS = re.compile(r"[\"“][^\"“”]{0,600}[\"”]")
+
+
+def ausencias(texto: str, geral: bool = False) -> list[str]:
+    """As frases que dizem que algo não foi dito, publicado ou detalhado, ou que só uma coisa tem valor. Com `geral`, só
+    as que dizem isso como fato geral. O que vem entre aspas é fala de quem disse, e a citação é conferida palavra por
+    palavra em outro lugar."""
+    rx = AUSENCIA_GERAL if geral else AUSENCIA
+    return [f.strip() for f in FRASE.split(texto) if rx.search(_ENTRE_ASPAS.sub(" ", f))]
+
+
 def perguntas_no_ar(texto: str, depois: str = "") -> list[str]:
     """As frases que levantam uma pergunta e não a respondem: cada uma vira aviso para a redação (PERSONA.md, regras
     16 a 20 do jeito de escrever do site). `depois` é o texto que vem logo depois do parágrafo: a lista anunciada no

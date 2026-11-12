@@ -19,12 +19,13 @@ ROOT = Path(__file__).resolve().parent.parent
 CLAUDE = os.environ.get("CLAUDE_BIN", "/Users/pedrojahara/.local/bin/claude")
 # O modelo de cada etapa. Opus só onde a qualidade do pensamento decide o texto: a redação do texto do dia e o revisor
 # dele (src/fundo.py), e o post da semana e do mês com o editor dele (src/escreve_post.py, src/edita_texto.py). O resto
-# vai de Sonnet: a leitura das notícias, a pesquisa da história e as memórias. O esqueleto do texto do dia, que pensa a
-# ordem do argumento antes da redação, vai de Opus; o leitor frio, que lê só o texto (e, antes, só o esqueleto), vai de
-# Sonnet, para quem lê não ser o mesmo modelo que escreveu. Cada etapa troca de modelo pelo ambiente
-# (VDC_MODELO_<ETAPA>, por exemplo VDC_MODELO_POST=sonnet); VDC_LLM_MODEL troca todas de uma vez.
-MODELOS = {"classificar": "sonnet", "post": "opus", "editor": "opus", "pesquisa": "sonnet", "memoria": "sonnet",
-           "esqueleto": "opus", "redacao": "opus", "revisor": "opus", "leitor_frio": "sonnet"}
+# vai de Sonnet: a leitura das notícias, a pesquisa da história e as memórias. A segunda busca, que procura só o que a
+# pesquisa não achou, vai de Opus: com a pesquisa de 12/11/2026, o Sonnet desistiu cedo e o Opus achou os valores. O
+# esqueleto do texto do dia, que pensa a ordem do argumento antes da redação, vai de Opus; o leitor frio, que lê só o
+# texto (e, antes, só o esqueleto), vai de Sonnet, para quem lê não ser o mesmo modelo que escreveu. Cada etapa troca de
+# modelo pelo ambiente (VDC_MODELO_<ETAPA>, por exemplo VDC_MODELO_POST=sonnet); VDC_LLM_MODEL troca todas de uma vez.
+MODELOS = {"classificar": "sonnet", "post": "opus", "editor": "opus", "pesquisa": "sonnet", "segunda_busca": "opus",
+           "memoria": "sonnet", "esqueleto": "opus", "redacao": "opus", "revisor": "opus", "leitor_frio": "sonnet"}
 
 
 def modelo(etapa: str) -> str:
