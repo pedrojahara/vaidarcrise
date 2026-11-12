@@ -10,6 +10,9 @@ pelo editor. Regras do envio (Pedro, 7 e 10/11/2026):
 - nunca dois no mesmo dia, nem com ./run.sh --forcar: o registro local (logs/envios.json) e o nome do envio no Resend
   ("fato-AAAA-MM-DD") barram o segundo;
 - se o texto for refeito mais tarde no mesmo dia, o e-mail sai nessa hora, até as 20h;
+- o e-mail que já saiu não muda. Quando o Pedro manda corrigir (12/11/2026), a correção é outro e-mail, uma só
+  por dia: o post corrigido com uma nota curta no topo, escrita à mão em editor/correcoes/AAAA-MM-DD.md, que diz
+  que o primeiro e-mail tinha erros;
 - espera a página do dia estar no ar (o GitHub Pages leva uns minutos depois do push), para o link não dar em nada;
 - o rastreio de abertura e de clique fica desligado no domínio: o site não mede quem lê.
 
@@ -18,7 +21,9 @@ A chave do Resend vem de RESEND_API_KEY (no Mac, o run.sh tira do Chaves) e nunc
 Uso:
   newsletter.py --hoje               manda o post de hoje à lista (o run.sh chama depois do segundo push, quando
                                      "envio_diario" está ligado em config/newsletter.json)
-  newsletter.py --previa [DIA]       grava o e-mail de um dia em logs/email-DIA.html, para ver no navegador
+  newsletter.py --correcao           manda de novo o post de hoje à lista, com a nota de correção do dia no topo
+  newsletter.py --previa [DIA]       grava o e-mail de um dia em logs/email-DIA.html, para ver no navegador (e a
+                                     correção em logs/email-DIA-correcao.html, se o dia tiver a nota)
   newsletter.py --teste EMAIL [DIA]  manda o e-mail de um dia só para um endereço, fora da lista
   newsletter.py --saude              confere a chave do Resend, o domínio e o serviço de inscrição
   newsletter.py --limpa              apaga da lista quem saiu (a LGPD pede apagar o dado quando o consentimento acaba)
@@ -48,6 +53,7 @@ import model  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "newsletter.json"
 ENVIOS = ROOT / "logs" / "envios.json"
+CORRECOES = ROOT / "editor" / "correcoes"
 API = "https://api.resend.com"
 SAIR = "{{{RESEND_UNSUBSCRIBE_URL}}}"
 CORES = {"mais": "#c3102b", "menos": "#00733a", "igual": "#1e1f21"}
@@ -85,8 +91,17 @@ def rodada_do_dia(dia: str) -> dict | None:
     return json.loads(Path(arqs[-1]).read_text()) if arqs else None
 
 
-def montar(dia: str) -> dict | None:
-    """O e-mail de um dia: assunto, HTML, texto puro e o que o envio precisa conferir. Sem texto do dia, None."""
+def nota_da_correcao(dia: str) -> list[str]:
+    """Os parágrafos da nota de correção de um dia, de editor/correcoes/AAAA-MM-DD.md. Sem arquivo, nada."""
+    arq = CORRECOES / f"{dia}.md"
+    if not arq.exists():
+        return []
+    return [" ".join(p.split()) for p in re.split(r"\n\s*\n", arq.read_text()) if p.strip()]
+
+
+def montar(dia: str, correcao: list[str] | None = None) -> dict | None:
+    """O e-mail de um dia: assunto, HTML, texto puro e o que o envio precisa conferir. Sem texto do dia, None.
+    Com a nota de correção, o assunto começa com "Correção:" e a nota abre o e-mail."""
     r = rodada_do_dia(dia)
     if not r or not (r.get("post") or {}).get("ok"):
         return None
@@ -96,12 +111,14 @@ def montar(dia: str) -> dict | None:
     dr = build_site.direcao_ctx(r, cfg, cal)
     env = _env()
     ctx = {"post": post, "dir": dr, "site": build_site.SITE, "sair_url": SAIR, "cores": CORES,
+           "correcao": correcao or [],
            "aberta": bool(config().get("inscricao_aberta"))}  # o "Recebeu de alguém?" só com a lista aberta
     corpo = env.get_template("email.html").render(**ctx)
     # No celular, o "R$" não fica no fim de uma linha e o número no começo da outra (como no site).
     corpo = re.sub(r"\b(R|US)\$ (?=\d)", "\\1$\u00a0", corpo)
     texto = env.get_template("email.txt").render(**ctx)
-    return {"dia": dia, "assunto": post["titulo"], "html": corpo, "texto": texto, "url": post["url"],
+    return {"dia": dia, "assunto": ("Correção: " if correcao else "") + post["titulo"], "html": corpo,
+            "texto": texto, "url": post["url"],
             "titulo": post["titulo"], "tipo": post["tipo"]}
 
 
@@ -226,36 +243,50 @@ def site_no_ar(email: dict, espera_min: int) -> bool:
         time.sleep(30)
 
 
-def enviar(dia: str, agora: dt.datetime | None = None, esperar: bool = True) -> str:
-    """Manda o post de um dia à lista. Devolve o que aconteceu, numa linha, para o registro do run.sh."""
+def enviar(dia: str, agora: dt.datetime | None = None, esperar: bool = True, correcao: bool = False) -> str:
+    """Manda o post de um dia à lista. Devolve o que aconteceu, numa linha, para o registro do run.sh.
+    Com correcao, manda o post de novo, com a nota de correção do dia no topo: só depois que o primeiro e-mail do
+    dia saiu, e uma vez só."""
     agora = agora or dt.datetime.now()
     cfg = config()
+    chave = f"{dia}-correcao" if correcao else dia
+    o_que = "a correção" if correcao else "o e-mail"
     if dia != agora.date().isoformat():
         return f"não enviado: {dia} não é hoje"
     if agora.hour >= HORA_LIMITE:
         return f"não enviado: passou das {HORA_LIMITE}h, e o e-mail do dia não sai à noite"
-    if dia in _envios():
-        return f"não enviado: o e-mail de {dia} já saiu ({_envios()[dia].get('id')})"
-    email = montar(dia)
+    if chave in _envios():
+        return f"não enviado: {o_que} de {dia} já saiu ({_envios()[chave].get('id')})"
+    nota = nota_da_correcao(dia) if correcao else []
+    if correcao and not nota:
+        return f"não enviado: falta a nota da correção em editor/correcoes/{dia}.md"
+    email = montar(dia, nota)
     if not email:
         return f"não enviado: {dia} não tem texto"
     api = Resend()
-    nome = f"fato-{dia}"
+    if correcao and dia not in _envios():  # sem o registro local (outra máquina), vale o que o Resend diz
+        primeiro = api.envio_do_dia(f"fato-{dia}")
+        if not primeiro or primeiro.get("status") not in ("sent", "queued", "sending"):
+            return f"não enviado: o e-mail de {dia} ainda não saiu, e não há o que corrigir"
+    nome = f"fato-{chave}"
     ja = api.envio_do_dia(nome)
     if ja and ja.get("status") in ("sent", "queued", "scheduled", "sending"):
-        _anota(dia, {"id": ja["id"], "quando": agora.isoformat(timespec="seconds"), "obs": "já estava no Resend"})
+        _anota(chave, {"id": ja["id"], "quando": agora.isoformat(timespec="seconds"), "obs": "já estava no Resend"})
         return f"não enviado: o Resend já tem o envio {nome} ({ja.get('status')})"
     if esperar and not site_no_ar(email, int(cfg.get("espera_site_min", 15))):
         return f"não enviado: a página {email['url']} não mostrou o post de hoje em {cfg.get('espera_site_min', 15)} min"
     seg = api.segmento(cfg["segmento"])
+    conteudo = {"subject": email["assunto"], "html": email["html"], "text": email["texto"]}
     if ja:  # rascunho de uma tentativa que caiu no meio: reaproveita
         bid = ja["id"]
+        if correcao:  # a nota pode ter mudado desde a tentativa: o rascunho fica com o texto de agora
+            api.pedir("PATCH", f"/broadcasts/{bid}", conteudo)
     else:
         bid = api.pedir("POST", "/broadcasts", {
             "segment_id": seg, "name": nome, "from": cfg["remetente"], "reply_to": cfg["responder_para"],
-            "subject": email["assunto"], "html": email["html"], "text": email["texto"]})["id"]
+            **conteudo})["id"]
     api.pedir("POST", f"/broadcasts/{bid}/send", {})
-    _anota(dia, {"id": bid, "quando": agora.isoformat(timespec="seconds"), "assunto": email["assunto"]})
+    _anota(chave, {"id": bid, "quando": agora.isoformat(timespec="seconds"), "assunto": email["assunto"]})
     return f"enviado: {nome} ({bid}), {email['assunto']}"
 
 
@@ -310,6 +341,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--hoje", action="store_true")
+    g.add_argument("--correcao", action="store_true")
     g.add_argument("--previa", nargs="?", const="", metavar="DIA")
     g.add_argument("--teste", metavar="EMAIL")
     g.add_argument("--saude", action="store_true")
@@ -324,6 +356,10 @@ def main() -> None:
         # O que é problema (página que não entrou no ar) sai com erro, para o run.sh avisar o Pedro; dia sem texto ou
         # e-mail que já saiu não são problema.
         sys.exit(1 if saida.startswith("não enviado: a página") else 0)
+    elif a.correcao:  # só à mão, quando o Pedro manda: tudo o que impede o envio é problema
+        saida = enviar(dt.date.today().isoformat(), correcao=True)
+        print(saida)
+        sys.exit(0 if saida.startswith("enviado") else 1)
     elif a.previa is not None:
         dia = a.previa or a.dia or ultimo
         e = montar(dia)
@@ -333,6 +369,11 @@ def main() -> None:
         saida.parent.mkdir(exist_ok=True)
         saida.write_text(e["html"])
         print(saida)
+        nota = nota_da_correcao(dia)
+        if nota:
+            saida = ROOT / "logs" / f"email-{dia}-correcao.html"
+            saida.write_text(montar(dia, nota)["html"])
+            print(saida)
     elif a.teste:
         print(teste(a.teste, a.dia or ultimo))
     elif a.saude:
