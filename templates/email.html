@@ -55,26 +55,23 @@ a.termo{color:inherit}
         <td class="e-meta" style="font:600 13px/1.3 {{ sistema }};color:#62666b">Crescimento em 12 meses</td>
         <td align="right" class="e-{{ r.cls }}" style="font:700 14px/1.3 {{ sistema }};color:{{ cores[r.cls] }};white-space:nowrap">{{ r.seta }} {{ r.muda }}</td>
       </tr></table>
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 0">
+      {# cada número com os 12 meses que ele cobre, um por linha, como no site #}
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 0">
         <tr>
-          <td class="e-meta" style="font:600 12.5px/1.25 {{ sistema }};color:#62666b">Antes</td><td></td>
-          <td class="e-tinta" style="font:600 12.5px/1.25 {{ sistema }};color:#1e1f21">Agora</td>
-          {% if r.previsao %}<td></td><td class="e-meta" style="font:600 12.5px/1.25 {{ sistema }};color:#62666b">Previsão</td>{% endif %}
+          <td class="e-meta" style="padding:1px 12px 1px 0;font:14px/1.35 {{ sistema }};color:#62666b">{{ r.per_antes }}</td>
+          <td align="right" class="e-tinta" style="padding:1px 0;font:600 17px/1.25 {{ sistema }};color:#1e1f21;white-space:nowrap">{{ r.antes }}</td>
         </tr>
         <tr>
-          <td class="e-tinta" style="font:600 22px/1.15 {{ sistema }};color:#1e1f21;vertical-align:bottom">{{ r.antes }}</td>
-          <td class="e-meta" style="font:18px/1 {{ sistema }};color:#62666b;vertical-align:bottom;padding:0 6px 4px">→</td>
-          <td class="e-tinta" style="font:800 28px/1.15 {{ sistema }};color:#1e1f21;vertical-align:bottom">{{ r.agora }}</td>
-          {% if r.previsao %}<td class="e-meta" style="font:18px/1 {{ sistema }};color:#62666b;vertical-align:bottom;padding:0 6px 4px">→</td>
-          <td class="e-meta" style="font:600 22px/1.15 {{ sistema }};color:#62666b;vertical-align:bottom">{{ r.previsao }}</td>{% endif %}
+          <td class="e-tinta" style="padding:1px 12px 1px 0;font:600 14px/1.35 {{ sistema }};color:#1e1f21">{{ r.per_agora }}</td>
+          <td align="right" class="e-tinta" style="padding:1px 0;font:800 23px/1.15 {{ sistema }};color:#1e1f21;white-space:nowrap">{{ r.agora }}</td>
         </tr>
-        <tr>
-          <td class="e-meta" style="font:12.5px/1.25 {{ sistema }};color:#62666b">{{ r.ate_antes }}</td><td></td>
-          <td class="e-meta" style="font:12.5px/1.25 {{ sistema }};color:#62666b">{{ r.ate_agora }}</td>
-          {% if r.previsao %}<td></td><td class="e-meta" style="font:12.5px/1.25 {{ sistema }};color:#62666b">dos bancos</td>{% endif %}
-        </tr>
+        {% if r.previsao %}<tr>
+          <td class="e-meta" style="padding:1px 12px 1px 0;font:14px/1.35 {{ sistema }};color:#62666b">Previsão para <span style="white-space:nowrap">{{ r.per_prev }}</span></td>
+          <td align="right" class="e-meta" style="padding:1px 0;font:600 17px/1.25 {{ sistema }};color:#62666b;white-space:nowrap">{{ r.previsao }}</td>
+        </tr>{% endif %}
       </table>
       {% if r.encolhe %}<p class="e-tinta" style="margin:10px 0 0;font:14px/1.4 {{ sistema }};color:#1e1f21">{{ r.encolhe }}</p>{% endif %}
+      <p class="e-meta" style="margin:6px 0 0;font:12.5px/1.4 {{ sistema }};color:#62666b">{% if r.previsao %}Fontes: prévia do PIB e pesquisa com os bancos (Focus), as duas do Banco Central.{% else %}Fonte: prévia do PIB do Banco Central.{% endif %}</p>
     </td></tr>
   </table>{% endif %}
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="e-fio" style="margin:14px 0 0;border:1px solid #e4e6e8;border-radius:10px;border-collapse:separate">

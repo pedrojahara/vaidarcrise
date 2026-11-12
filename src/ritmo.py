@@ -6,7 +6,8 @@ da prévia do PIB. A previsão é de fora (Focus) e fica só na tela, nunca na c
 
 As contas:
 - Crescimento em 12 meses: prévia do PIB do Banco Central (IBC-Br dessazonalizado, BCB 24364), soma dos 12 meses
-  até o último dado contra a soma dos 12 meses anteriores. "Antes" é a mesma conta 12 meses antes.
+  até o último dado contra a soma dos 12 meses anteriores. O número de um ano antes é a mesma conta 12 meses antes. A página mostra
+  cada número com os 12 meses que ele cobre ("set/2025 a ago/2026"), e a previsão também (janela_previsao).
 - Acelerando ou desacelerando: compara "agora" com "antes", os dois com uma casa, como a página mostra. Diferença
   de até 0,1 ponto é "no mesmo ritmo". É descrição, não sinal: o crescimento do Brasil varia muito de um ano para
   o outro, e a direção do risco não usa esta conta.
@@ -123,6 +124,19 @@ def calibrar() -> dict:
     }
 
 
+def janela(ate: str) -> tuple[str, str]:
+    """Os 12 meses que terminam em `ate` (AAAA-MM): de setembro de 2025 a agosto de 2026 para agosto de 2026."""
+    return _ms(_mn(ate) - 11), ate
+
+
+def janela_previsao(data_focus: str) -> tuple[str, str]:
+    """Os 12 meses da previsão do Focus, pela mesma ponderação de indicadores.focus_pib: com a pesquisa no mês m, o ano
+    corrente pesa 12 − m meses e o seguinte, m, que são os 12 meses do mês seguinte ao da pesquisa até o mesmo mês do
+    ano que vem (pesquisa de novembro de 2026: de dezembro de 2026 a novembro de 2027)."""
+    n = _mn(data_focus[:7])
+    return _ms(n + 1), _ms(n + 12)
+
+
 def bloco(dia: str, rodada: dict, cal: dict) -> dict | None:
     """Os números do bloco para um dia: agora, um ano antes, a previsão dos bancos e o rótulo da mudança."""
     c = cal.get("ritmo")
@@ -142,7 +156,9 @@ def bloco(dia: str, rodada: dict, cal: dict) -> dict | None:
     muda = "acelerando" if dif > 0.15 else "desacelerando" if dif < -0.15 else "no mesmo ritmo"
     f = next((x for x in rodada["resultado"].get("indicadores", []) if x.get("id") == "focus_pib" and x.get("valor") is not None), None)
     return {"agora": agora, "ref": ref, "antes": antes, "ref_antes": ref_antes, "muda": muda,
+            "janela": janela(ref), "janela_antes": janela(ref_antes),
             "previsao": f["valor"] if f else None, "previsao_data": f["ref"] if f else None,
+            "janela_previsao": janela_previsao(f["ref"]) if f else None,
             "faixa": c["faixa"], "erro": c["erro_focus"]}
 
 
