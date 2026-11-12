@@ -1,6 +1,10 @@
 {#- A versão em texto puro do e-mail (src/newsletter.py), para quem lê e-mail sem HTML. -#}
 VAI DAR CRISE?
-{{ dir.titulo }}.
+{% if correcao %}
+CORREÇÃO
+{% for par in correcao %}{{ par }}
+
+{% endfor %}{% endif %}{{ dir.titulo }}.
 {{ dir.pergunta }}: {{ site }}/{{ post.dia }}/#por-que
 
 {{ post.tipo_nome }} | {{ post.data_extenso }}
