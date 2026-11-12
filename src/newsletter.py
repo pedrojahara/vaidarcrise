@@ -196,17 +196,28 @@ def _anota(dia: str, info: dict) -> None:
     ENVIOS.write_text(json.dumps(e, ensure_ascii=False, indent=1))
 
 
+def _plano(texto: str) -> str:
+    """O texto para comparar o título com a página: sem entidades do HTML (as aspas viram &#34; na página) e com
+    todo espaço, inclusive o que não quebra entre "R$" e o número (build_site.gravar), virando um espaço só."""
+    return re.sub(r"\s+", " ", html.unescape(texto)).strip()
+
+
+def titulo_na_pagina(titulo: str, pagina: str) -> bool:
+    return _plano(titulo) in _plano(pagina)
+
+
 def site_no_ar(email: dict, espera_min: int) -> bool:
     """Espera a página do dia mostrar o post: o push só publica depois do build do
-    GitHub Pages. Confere pelo título, que é o que muda de um dia para o outro."""
+    GitHub Pages. Confere pelo título, que é o que muda de um dia para o outro. Em 12/11/2026 o título tinha
+    "R$ 60 bi", a página tinha o espaço que não quebra depois do "R$", e o e-mail não saiu: compare sempre
+    pelo texto plano."""
     fim = time.time() + espera_min * 60
-    marcas = [html.escape(email["titulo"], quote=False)]
     while True:
         try:
             r = requests.get(email["url"], timeout=20, headers={"User-Agent": "vaidarcrise-newsletter",
                                                                 "Cache-Control": "no-cache"},
                              params={"_": int(time.time())})
-            if r.ok and all(m in r.text for m in marcas):
+            if r.ok and titulo_na_pagina(email["titulo"], r.text):
                 return True
         except requests.RequestException:
             pass
