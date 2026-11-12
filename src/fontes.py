@@ -60,7 +60,19 @@ JANELA = 450  # quanto texto vai de cada lado do termo procurado
 # Sites oficiais: órgãos públicos daqui (pelo fim do endereço), de fora e os organismos internacionais.
 OFICIAIS = (".gov.br", ".leg.br", ".jus.br", ".mp.br", ".def.br", ".mil.br", ".gov", ".europa.eu", ".gov.uk", ".gc.ca",
             ".go.jp", ".gov.cn", ".gob.ar", ".gob.mx", ".gov.au", "imf.org", "worldbank.org", "oecd.org", "bis.org",
-            "un.org", "wto.org", "iea.org", "opec.org", "ilo.org", "fao.org", "normas.leg.br")
+            "un.org", "wto.org", "iea.org", "opec.org", "ilo.org", "fao.org", "normas.leg.br",
+            # Governos de outros países, pelo fim do endereço que só o governo de lá registra, e organismos (.int).
+            ".int", ".gob.cl", ".gov.co", ".gob.pe", ".gub.uy", ".gov.py", ".gouv.fr", ".gob.es", ".gov.it", ".gov.pt",
+            ".bund.de", ".admin.ch", ".gov.in", ".go.kr", ".gov.za", ".gov.tr", ".gov.sg", ".govt.nz",
+            # Bancos centrais e institutos de estatística com endereço próprio, e os bancos de desenvolvimento da região.
+            "bcentral.cl", "banxico.org.mx", "bankofengland.co.uk", "boj.or.jp", "bundesbank.de", "banque-france.fr",
+            "bancaditalia.it", "bde.es", "bportugal.pt", "bankofcanada.ca", "snb.ch", "riksbank.se", "norges-bank.no",
+            "rbi.org.in", "bok.or.kr", "cbr.ru", "resbank.co.za", "newyorkfed.org", "stlouisfed.org", "atlantafed.org",
+            "frbsf.org", "chicagofed.org", "dallasfed.org", "philadelphiafed.org", "kansascityfed.org", "richmondfed.org",
+            "clevelandfed.org", "bostonfed.org", "minneapolisfed.org", "insee.fr", "destatis.de", "ine.es", "istat.it",
+            "inegi.org.mx", "iadb.org", "caf.com", "cepal.org",
+            # O site do Tesouro Nacional com a bolsa.
+            "tesourodireto.com.br")
 # A notícia do próprio órgão: a agência pública de notícias e a área de imprensa do site oficial.
 AGENCIAS = ("agenciabrasil.ebc.com.br", "agenciagov.ebc.com.br", "ebc.com.br", "agenciadenoticias.ibge.gov.br",
             "noticias.stf.jus.br", "agencia.petrobras.com.br")
@@ -72,19 +84,33 @@ INSTITUICOES = ("fgv.br", "usp.br", "unicamp.br", "insper.edu.br", "puc-rio.br",
                 "spglobal.com", "moodys.com", "fitchratings.com", "iif.com", "itau.com.br", "bradesco.com.br",
                 "btgpactual.com", "xpi.com.br", "genialinvestimentos.com.br", "santander.com.br", "cnabrasil.org.br",
                 "safras.com.br", "b3.com.br", "anbima.com.br", "febraban.org.br", "cni.com.br", "portaldaindustria.com.br",
-                "fiesp.com.br", "cnc.org.br", "abecs.org.br", "serasaexperian.com.br", "tesourodireto.com.br")
+                "fiesp.com.br", "cnc.org.br", "abecs.org.br", "serasaexperian.com.br")
 # Onde as empresas de capital aberto guardam os próprios documentos, fora do site delas.
 CASAS_DE_RI = ("mziq.com", "cvm.gov.br")
-# O dono pelo nome, quando o nome não está no endereço.
+# O dono pelo nome, quando o nome não está no endereço: a sigla que não é a do endereço, o nome por extenso e a casa
+# que publica em mais de um endereço. O nome vai sem acento e em minúsculas.
 ENDERECO_DO_DONO = {"xp": "xpi.com.br", "btg": "btgpactual.com", "fmi": "imf.org", "banco mundial": "worldbank.org",
                     "ocde": "oecd.org", "opep": "opec.org", "fed": "federalreserve.gov", "federal reserve": "federalreserve.gov",
                     "bce": "ecb.europa.eu", "cni": "portaldaindustria.com.br", "s&p": "spglobal.com",
                     "standard & poor": "spglobal.com", "fitch": "fitchratings.com", "moody": "moodys.com",
                     "fgv": "fgv.br", "ibre": "fgv.br", "itau": "itau.com.br", "petrobras": "petrobras.com.br",
                     "vale": "vale.com", "bndes": "bndes.gov.br", "caixa": "caixa.gov.br", "banco do brasil": "bb.com.br",
-                    "aie": "iea.org", "bis": "bis.org", "omc": "wto.org", "onu": "un.org"}
+                    "aie": "iea.org", "bis": "bis.org", "omc": "wto.org", "onu": "un.org",
+                    "bradesco": "economiaemdia.com.br", "serasa": "serasaexperian.com.br", "b3": "b3.com.br",
+                    "getulio vargas": "fgv.br", "confederacao nacional da industria": ("portaldaindustria.com.br", "cni.com.br"),
+                    "cnc": ("cnc.org.br", "portaldocomercio.org.br"),
+                    "confederacao nacional do comercio": ("cnc.org.br", "portaldocomercio.org.br"),
+                    "cna": "cnabrasil.org.br", "confederacao da agricultura": "cnabrasil.org.br",
+                    "federacao brasileira de bancos": "febraban.org.br",
+                    "associacao brasileira de supermercados": "abras.com.br",
+                    "fabricantes de veiculos automotores": "anfavea.com.br",
+                    "distribuicao de veiculos automotores": "fenabrave.org.br",
+                    "credito imobiliario e poupanca": "abecip.org.br", "departamento intersindical": "dieese.org.br",
+                    "operador nacional do sistema": "ons.org.br", "central unica dos trabalhadores": "cut.org.br"}
 # Quem só publica em endereço oficial: um site qualquer que diga ser a página de um destes não é.
-DONO_PUBLICO = re.compile(r"\b(minist[eé]rio|banco central|copom|senado|c[aâ]mara|congresso|tesouro|receita federal|ibge|"
+# A "câmara" é a dos Deputados ou a de uma cidade; a Câmara Brasileira da Indústria da Construção é uma entidade.
+DONO_PUBLICO = re.compile(r"\b(minist[eé]rio|banco central|copom|senado|congresso|tesouro|receita federal|ibge|"
+                          r"c[aâ]mara(?=\s+(?:dos\s+deputados|municipal|legislativa|de\s+vereadores|federal|e\b)|\s*(?:[,;/()]|$))|"
                           r"governo|presid[eê]ncia|planalto|stf|supremo|tribunal|tcu|cgu|ifi|ipea|aneel|anp|anatel|ans|"
                           r"anvisa|antt|cvm|cade|inss|prefeitura|secretaria|assembleia|di[aá]rio oficial|conselho monet[aá]rio)\b",
                           re.I)
@@ -93,6 +119,12 @@ PALAVRAS_COMUNS = {"brasil", "brasileiro", "brasileira", "nacional", "federal", 
                    "noticias", "jornal", "portal", "economia", "pesquisa", "relatorio", "estudo", "consultoria",
                    "investimentos", "corretora", "holding", "unibanco", "para", "pela", "pelo", "dos", "das", "com", "por",
                    "the", "and", "for", "sul", "rio", "sao", "new", "org", "gov", "net", "www", "que", "uma", "seu", "sua"}
+# O fim de um endereço que diz o tipo do site, e não de quem ele é (itau.com.br, inter.co, boj.or.jp, bb.b.br).
+SUFIXOS = {"com", "org", "net", "edu", "gov", "leg", "jus", "mil", "int", "co", "or", "ac", "ind", "coop", "b"}
+# O que uma casa costuma juntar ao próprio nome no endereço: investidorpetrobras.com.br, bancointer.com.br.
+AFIXOS = ("ri", "investidor", "investidores", "portal", "grupo", "banco", "agencia", "global")
+# As palavras de ligação: valem dentro do nome do endereço ("mercadoeconsumo", "oliberal") e ficam fora da sigla.
+LIGACOES = ("de", "da", "do", "das", "dos", "e", "a", "o", "as", "os", "em", "para", "of", "the", "and", "for")
 CLASSES = ("oficial", "dono", "agencia", "jornal", "fora")
 # Quanto vale cada classe na troca de uma fonte por outra: a página do dono vale mais que a notícia do órgão, que vale
 # mais que o jornal conhecido; o site fora da lista não sustenta frase.
@@ -120,17 +152,49 @@ def _palavras_do_dono(dono: str) -> list[str]:
     return [p for p in re.split(r"[^a-z0-9&]+", _sem_acento(dono)) if len(p) >= 3 and p not in PALAVRAS_COMUNS]
 
 
+def _rotulos(host: str) -> list[str]:
+    """Os nomes de um endereço que dizem de quem ele é: o nome registrado, sem "www", o país e o tipo ("magazineluiza"
+    em ri.magazineluiza.com.br). Dentro de uma instituição conhecida, o nome da frente também vale: é o do centro que
+    publica (cepea.esalq.usp.br)."""
+    partes = [p for p in re.sub(r"^www\d*\.", "", host).split(".") if p]
+    if len(partes) > 1 and len(partes[-1]) == 2:
+        partes.pop()
+    if len(partes) > 1 and partes[-1] in SUFIXOS:
+        partes.pop()
+    return [p.replace("-", "") for p in (partes if _no_dominio(host, INSTITUICOES) else partes[-1:])]
+
+
+def _feito_de(nome: str, palavras: list[str]) -> bool:
+    """O nome é feito só destas palavras, uma depois da outra? ("bancointer" de "banco" e "inter")"""
+    ate = [True] + [False] * len(nome)
+    for i in range(len(nome)):
+        if ate[i]:
+            for p in palavras:
+                if p and nome.startswith(p, i):
+                    ate[i + len(p)] = True
+    return ate[-1]
+
+
 def _e_do_dono(host: str, dono: str) -> bool:
-    """O endereço é o site do dono do dado? Pelo nome dentro do endereço ("abras" em abras.com.br) ou pela lista dos
-    donos cujo nome não está no endereço."""
+    """O endereço é o site do dono do dado? Pela lista dos donos cujo nome não está no endereço, ou pelo nome: o nome
+    registrado do endereço tem de ser feito só de palavras do nome do dono, com ou sem uma palavra de ligação ou um
+    acréscimo de costume ("magazineluiza", "bancointer", "mercadoeconsumo", "investidorpetrobras"). A palavra do dono
+    dentro de outro nome não basta: "abras" em abrasel.com.br e "pan" em jovempan.com.br são de terceiros, como o
+    blog que leva o nome do banco."""
     d = _sem_acento(dono)
     if not d or not host:
         return False
     for nome, dom in ENDERECO_DO_DONO.items():
-        if re.search(rf"(?<![a-z0-9]){re.escape(nome)}(?![a-z0-9])", d) and _no_dominio(host, (dom,)):
+        if re.search(rf"(?<![a-z0-9]){re.escape(nome)}(?![a-z0-9])", d) and _no_dominio(host, (dom,) if isinstance(dom, str) else dom):
             return True
-    junto = re.sub(r"\.(com|org|net|edu|gov|leg|jus)?(\.[a-z]{2})?$", "", host).replace("-", "").replace(".", " ")
-    return any(p in junto for p in _palavras_do_dono(dono))
+    proprias = _palavras_do_dono(dono)
+    palavras = [p for p in re.split(r"[^a-z0-9]+", d) if p]
+    todas = [p for p in palavras if len(p) >= 2] + [*AFIXOS, *LIGACOES[:10]]
+    # A sigla do nome por extenso também é o nome do endereço: cbic.org.br da Câmara Brasileira da Indústria da
+    # Construção. Só com quatro letras ou mais, porque sigla de três letras tem dono demais.
+    sigla = "".join(p[0] for p in palavras if p not in LIGACOES)
+    return any((any(p in r for p in proprias) and _feito_de(r, todas)) or (len(r) >= 4 and r == sigla)
+               for r in _rotulos(host))
 
 
 def classe(url: str | None, dono: str = "") -> str:
@@ -210,39 +274,78 @@ NOMES = {
 _NOMES_EM_ORDEM = sorted(NOMES.items(), key=lambda kv: -len(kv[0]))
 
 
-def nome_do_endereco(url: str | None) -> str:
-    """O nome de quem publica no endereço, pela tabela; sem entrada na tabela, "" (quem chama decide o que mostrar)."""
+def _nomes_do_endereco(url: str | None) -> list[str]:
+    """Todos os nomes da tabela que servem ao endereço, o do endereço mais comprido primeiro: em
+    camara.leg.br/noticias, a Agência Câmara e a Câmara dos Deputados."""
     host = re.sub(r"^www\.", "", _host(url))
     if not host:
-        return ""
+        return []
     caminho = urlparse(url).path or "/"
+    out = []
     for chave, nome in _NOMES_EM_ORDEM:
         dom, _, sub = chave.partition("/")
         dom = re.sub(r"^www\.", "", dom)
-        if sub:
-            if host == dom and (caminho + "/").startswith(f"/{sub}/"):
-                return nome
-        elif host == dom or host.endswith("." + dom):
-            return nome
-    return ""
+        if (host == dom and (caminho + "/").startswith(f"/{sub}/")) if sub else (host == dom or host.endswith("." + dom)):
+            out.append(nome)
+    return out
+
+
+def nome_do_endereco(url: str | None) -> str:
+    """O nome de quem publica no endereço, pela tabela; sem entrada na tabela, "" (quem chama decide o que mostrar)."""
+    return next(iter(_nomes_do_endereco(url)), "")
 
 
 def dominio(url: str | None) -> str:
     return re.sub(r"^www\d*\.", "", _host(url))
 
 
+def _curto(nome: str) -> str:
+    """O nome de uma casa da tabela sem a explicação: "federal reserve" de "Federal Reserve, o banco central dos
+    Estados Unidos"."""
+    return _sem_acento(re.split(r"[,(]", nome)[0]).strip()
+
+
+_CURTOS = {_curto(n) for n in NOMES.values()}
+
+
+def _palavra_em(palavra: str, texto: str) -> bool:
+    return bool(re.search(rf"(?<![a-z0-9]){re.escape(palavra)}(?![a-z0-9])", texto))
+
+
+def _de_outra(q: str, url: str | None) -> bool:
+    """O nome escrito (sem acento) traz o de outra casa da tabela, que não publica neste endereço? "Banco Central
+    Europeu" num endereço do Banco Central, "Folha" num endereço do g1."""
+    daqui = [_sem_acento(n) for n in _nomes_do_endereco(url)]
+    return any(_palavra_em(c, q) for c in _CURTOS if not any(c in n for n in daqui))
+
+
+def _do_mesmo(q: str, url: str | None) -> bool:
+    """O nome escrito (sem acento) é o de quem publica no endereço, pela tabela? Tem de trazer o nome da casa, uma
+    palavra que só o nome dela tem ou o apelido entre parênteses ("Tesouro", "Planalto"), e não o nome de outra casa:
+    "Folha, via Bahia Notícias" num endereço do Bahia Notícias não é o nome de quem publica ali."""
+    tabela = nome_do_endereco(url)
+    curto = _curto(tabela)
+    if not curto or _de_outra(q, url):
+        return False
+    proprias = [p for p in _palavras_do_dono(curto) if len(p) >= 4] + [_sem_acento(x) for x in re.findall(r"\(([^)]+)\)", tabela)
+                                                                         if x != x.upper()]
+    return curto in q or any(_palavra_em(p, q) for p in proprias)
+
+
 def nome_na_pagina(quem: str | None, url: str | None) -> str:
     """O nome que vai na linha "De onde vêm os números": o do dono do link. Vale o nome que a pesquisa escreveu quando
     ele é o de quem publica naquele endereço ("Banco Central, ata da 282ª reunião do Copom" num endereço do Banco
-    Central); quando não é (o nome de uma agência com o link de um site que a reproduz), vale o nome do endereço."""
+    Central); quando não é (o nome de uma agência com o link de um site que a reproduz), vale o nome do endereço. No
+    site oficial que não está na tabela, vale o nome do órgão que a pesquisa escreveu ("Ministério da Agricultura" em
+    gov.br/agricultura), a não ser que ele seja o de uma casa da tabela, que publica em outro endereço."""
     quem = (quem or "").strip()
-    tabela = nome_do_endereco(url)
-    if not _host(url):
+    host, tabela = _host(url), nome_do_endereco(url)
+    if not host:
         return quem
+    q = _sem_acento(quem)
     if tabela:
-        q, curto = _sem_acento(quem), _sem_acento(re.split(r"[,(]", tabela)[0]).strip()
-        return quem if quem and (curto in q or any(p in q for p in _palavras_do_dono(tabela) if len(p) >= 4)) else tabela
-    if quem and _e_do_dono(_host(url), quem):
+        return quem if quem and _do_mesmo(q, url) else tabela
+    if quem and (_e_do_dono(host, quem) or (_no_dominio(host, OFICIAIS) and not _de_outra(q, url))):
         return quem
     return dominio(url)
 
@@ -265,11 +368,18 @@ def pagina_para_ler(url: str | None) -> str | None:
 
 
 # ------------------------------------------------------------------ o leitor
+# As letras e os números pequenos ("º", "ª", "²", o "¹" da nota de rodapé, "½") ficam como a página os escreve. Trocados
+# por letra e número comuns, a nota de rodapé grudava no número: "2,5¹" virava "2,51".
+_PEQUENOS = re.compile("([" + "".join(c for c in map(chr, range(0xA0, 0x3000))
+                                      if unicodedata.decomposition(c).startswith(("<super>", "<sub>", "<fraction>"))) + "]+)")
+
+
 def legivel(t: str) -> str:
-    """O texto da página como a IA o lê e copia: com as mesmas trocas da conferência (verifica_base.normalizar), menos
-    as minúsculas, para que o trecho copiado daqui seja achado na página quando a conferência a abrir."""
+    """O texto da página como a IA o lê e copia, ao pé da letra: com as trocas da conferência (verifica_base.normalizar)
+    que não mudam o que está escrito, sem as minúsculas e sem mexer nas letras e nos números pequenos. O trecho
+    copiado daqui é achado na página quando a conferência a abrir, porque ela faz as mesmas trocas dos dois lados."""
     t = html.unescape(t)
-    t = unicodedata.normalize("NFKC", t).replace("­", "")
+    t = "".join(x if i % 2 else unicodedata.normalize("NFKC", x) for i, x in enumerate(_PEQUENOS.split(t))).replace("­", "")
     t = re.sub("[​‌‍⁠﻿]", "", t)
     t = re.sub(r"\\[nrt]", " ", t)
     t = re.sub(r"[-‐-―−]\s*\n\s*", "", t)
@@ -278,7 +388,7 @@ def legivel(t: str) -> str:
 
 def _para_busca(t: str) -> str:
     """O texto sem acento e em minúsculas, com o mesmo comprimento, para achar a posição de um termo. O "º" de "Art.
-    2º" e o "ª" de "282ª" viram "o" e "a", como no texto que o leitor mostra (legivel)."""
+    2º" e o "ª" de "282ª" viram "o" e "a", e o "²" vira "2": o termo é achado escrito de um jeito ou do outro."""
     def um(c: str) -> str:
         k = unicodedata.normalize("NFKD", c)
         return k[0] if c.isalpha() else k if len(k) == 1 else c
@@ -329,7 +439,36 @@ def ler(endereco: str, procura: str | None = None, de: int = 0) -> dict:
     return r
 
 
-ANCORA = re.compile(r"<a\s[^>]*?href\s*=\s*[\"']([^\"'#][^\"']*)[\"'][^>]*>(.*?)</a>", re.S | re.I)
+_ABRE_A = re.compile(r"<a\s", re.I)
+_HREF = re.compile(r"href\s*=\s*[\"']", re.I)
+_VALOR = re.compile(r"([^\"'#][^\"']*)[\"'][^>]*>")
+_FECHA_A = re.compile(r"</a>", re.I)
+
+
+def _ancoras(pagina: str) -> list[tuple[str, str]]:
+    """(endereço, miolo) de cada link da página (<a href="...">miolo</a>), em ordem. Anda pela página uma vez só: a
+    etiqueta sem href e o link que não fecha não fazem a procura recomeçar do zero, o que levava minutos numa página
+    com milhares deles."""
+    out, i, fim = [], 0, -1
+    for m in _ABRE_A.finditer(pagina):
+        if m.start() < i:
+            continue
+        if fim < m.end():  # o ">" que fecha esta etiqueta
+            fim = pagina.find(">", m.end())
+            if fim < 0:
+                break
+        v = next((v for v in (_VALOR.match(pagina, h.end()) for h in _HREF.finditer(pagina, m.end(), fim)) if v), None)
+        if not v:
+            i = fim  # as etiquetas abertas dentro desta não têm outro href
+            continue
+        fecha = _FECHA_A.search(pagina, v.end())
+        if not fecha:
+            break
+        out.append((v.group(1), pagina[v.end():fecha.start()]))
+        i = fecha.end()
+    return out
+
+
 DOCUMENTO = re.compile(r"\.(pdf|xlsx?|csv|docx?|odt|zip)(\?|$)|download|inteiro.?teor|documento|anexo|integra|relatorio|"
                        r"nota.?tecnica|apresentacao|publicac", re.I)
 
@@ -352,11 +491,11 @@ def links(endereco: str, procura: str | None = None, maximo: int = 60) -> dict:
         return {"ok": False, "erro": motivo}
     pagina = verifica_base._decodificar(dados, tipo)
     achados: dict[str, str] = {}
-    for m in ANCORA.finditer(pagina):
-        alvo = urljoin(final, html.unescape(m.group(1)).strip())
+    for href, miolo in _ancoras(pagina):
+        alvo = urljoin(final, html.unescape(href).strip())
         if not alvo.startswith(("http://", "https://")) or alvo.split("#")[0] == final.split("#")[0]:
             continue
-        texto = re.sub(r"\s+", " ", html.unescape(re.sub(r"(?s)<[^>]+>", " ", m.group(2)))).strip()[:110]
+        texto = re.sub(r"\s+", " ", html.unescape(verifica_base._sem_etiquetas(miolo))).strip()[:110]
         if alvo not in achados or (texto and not achados[alvo]):
             achados[alvo] = texto
     itens = list(achados.items())
@@ -994,9 +1133,35 @@ def _oficial(c: dict) -> bool:
     return (c.get("conferencia") or {}).get("classe") in ("oficial", "dono")
 
 
+def _fala_por_si(url: str | None, dono: str) -> bool:
+    """A notícia do órgão é sobre o que ele mesmo decidiu ou mediu? O dono do dado é quem publica no endereço: pelo
+    site dele, pelo nome da tabela (o nome ou a sigla entre parênteses) ou, no site oficial sem nome na tabela, pelo
+    nome do órgão no endereço (gov.br/agricultura, tst.jus.br)."""
+    d, host = _sem_acento(dono).strip(), _host(url)
+    if not d or not host:
+        return False
+    if _e_do_dono(host, dono):
+        return True
+    tabela = nome_do_endereco(url)
+    if tabela:
+        siglas = [_sem_acento(x) for x in re.findall(r"\(([^)]+)\)", tabela)]
+        return not _de_outra(d, url) and (_curto(tabela) in d or (len(d) >= 3 and d in _curto(tabela))
+                                          or any(_palavra_em(x, d) for x in siglas)
+                                          or any(p in d for p in _palavras_do_dono(tabela) if len(p) >= 4))
+    if not _no_dominio(host, OFICIAIS):
+        return False
+    caminho = [x for x in urlparse(url).path.split("/") if x]
+    orgao = caminho[0].replace("-", "") if dominio(url) == "gov.br" and caminho else _rotulos(host)[-1]
+    palavras = [p for p in re.split(r"[^a-z0-9]+", d) if p]
+    return len(orgao) >= 3 and (orgao == "".join(p[0] for p in palavras if p not in LIGACOES)
+                                or (any(p in orgao for p in _palavras_do_dono(dono)) and _feito_de(orgao, [*palavras, *LIGACOES[:10]])))
+
+
 def o_que_falta(cad: list[dict], achado: dict | None, passos: list[dict], so: set[str] | None = None) -> dict:
     """O que a segunda busca tem de procurar por ordem do código, e não só pelo que a pesquisa disse que faltava:
-    - "ler": os documentos que o código achou e que nenhuma linha do caderno usa;
+    - "ler": os documentos que o código achou e que nenhuma linha do caderno usa, e depois deles os documentos do
+      andamento de cada projeto (o relatório do relator, o parecer) que nenhuma linha cita pelo endereço: até 3 por
+      projeto, o relatório e o parecer na frente e, entre os outros, os mais recentes;
     - "trocar": as linhas cujo dado tem dono e cuja página não é a dele (primeiro o site fora da lista, depois o
       jornal e a notícia do órgão que relatam número de outro);
     - "sem_documento": os passos de ontem que são decisão pública, quando o caderno não tem linha nenhuma de página
@@ -1004,7 +1169,16 @@ def o_que_falta(cad: list[dict], achado: dict | None, passos: list[dict], so: se
     Com `so` (um texto já escrito), só as linhas desses ids entram na troca, as que o texto usa, mesmo sem o dono
     declarado (as linhas de antes de 12/11/2026 não o têm)."""
     urls = {((c.get("fonte") or {}).get("url") or "").split("#")[0] for c in cad}
-    ler_ = [d for d in (achado or {}).get("documentos") or [] if d["url"] not in urls]
+    docs = (achado or {}).get("documentos") or []
+    ler_ = [d for d in docs if d["url"] not in urls]
+    anexos = []
+    for d in docs:
+        soltos = [x for x in d.get("anexos") or [] if x.get("url") and x["url"].split("#")[0] not in urls]
+        soltos.sort(key=lambda x: 0 if re.search(r"relat[oó]rio|parecer", x.get("o_que") or "", re.I) else 1)
+        anexos += [{"ref": f"Documento do andamento do {d['ref']}", "casa": d.get("casa"), "dono": d.get("dono") or "",
+                    "autor": x.get("autor") or "", "data": x.get("data") or "", "o_que": x.get("o_que") or "", "url": x["url"],
+                    "anexo": True}
+                   for x in soltos[:3]]
     trocar = []
     for c in cad:
         if c.get("tipo") != "documento" or (so is not None and c["id"] not in so):
@@ -1015,13 +1189,14 @@ def o_que_falta(cad: list[dict], achado: dict | None, passos: list[dict], so: se
             trocar.append(c)
         elif cl in ("jornal", "agencia") and c.get("numeros") and (dono or so is not None):
             # A notícia do órgão sobre o que ele mesmo decidiu ou mediu já é a voz do dono: fica.
-            proprio = cl == "agencia" and dono and any(p in _sem_acento(dono) for p in _palavras_do_dono(nome_do_endereco(url)) if len(p) >= 4)
-            if not proprio:
+            if not (cl == "agencia" and _fala_por_si(url, dono)):
                 trocar.append(c)
     trocar.sort(key=lambda c: PESO.get((c.get("conferencia") or {}).get("classe") or "", 0))
     decisoes_ = [p for p in passos if p.get("decisor") in PUBLICOS and p.get("estagio") in ("decidido", "em_votacao", "anuncio")]
     sem = decisoes_ if decisoes_ and not any(_oficial(c) for c in cad) else []
-    return {"ler": ler_[:4], "trocar": trocar[:10], "sem_documento": sem[:3]}
+    # O projeto que entra inteiro em "ler" vai sem a lista dos documentos do andamento: os que ninguém leu vêm logo depois.
+    return {"ler": [{k: v for k, v in d.items() if k != "anexos"} for d in ler_[:4]] + anexos[:4],
+            "trocar": trocar[:10], "sem_documento": sem[:3]}
 
 
 def bloco_do_que_falta(falta: dict) -> str:
@@ -1032,6 +1207,8 @@ def bloco_do_que_falta(falta: dict) -> str:
         l.append("Documentos originais que o código achou e que nenhuma linha do caderno usa. Abra com o leitor e anote o "
                  "que o texto precisa (o motivo, o tamanho, o prazo, quem assina):")
         l += ["- " + linha_do_documento(d) for d in falta["ler"]]
+        if any(d.get("anexo") for d in falta["ler"]):
+            l.append(SOBRE_OS_ANEXOS)
     if falta["sem_documento"]:
         l.append("Passos de ontem que são decisão pública, e o caderno não tem linha nenhuma de página oficial. Ache o "
                  "documento de quem decidiu (o projeto, a medida, a decisão, o comunicado):")

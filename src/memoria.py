@@ -73,6 +73,7 @@ FONTES_CONHECIDAS = (
     "b3.com.br", "anbima.com.br", "febraban.org.br", "cni.com.br", "portaldaindustria.com.br", "fiesp.com.br",
     "cnc.org.br", "abecs.org.br", "serasaexperian.com.br", "tesourotransparente.gov.br", "tesourodireto.com.br",
     "conjur.com.br", "jota.info", "migalhas.com.br", "oglobo.globo.com", "extra.globo.com",
+    "folhape.com.br", "jb.com.br",
 )
 
 

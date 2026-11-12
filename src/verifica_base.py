@@ -28,6 +28,7 @@ import glob
 import hashlib
 import html
 import io
+import ipaddress
 import json
 import os
 import re
@@ -128,8 +129,10 @@ def normalizar(t: str) -> str:
     t = re.sub(r"[“”«»]", '"', t)
     t = re.sub(r"[‐-―−]", "-", t)
     t = re.sub(r"-\s*\n\s*", "", t)  # palavra quebrada no fim da linha do PDF
-    t = re.sub(r"\s+([.,;:!?)])", r"\1", t)  # espaço antes do ponto ("R$ 5,508 .")
-    return re.sub(r"\s+", " ", t).strip().lower()
+    # O espaço antes do ponto sai ("R$ 5,508 ."). Os espaços se juntam antes: numa página com milhares de espaços
+    # seguidos, procurar o ponto depois de cada um levava minutos.
+    t = re.sub(r"\s+", " ", t)
+    return re.sub(r" ([.,;:!?)])", r"\1", t).strip().lower()
 
 
 def texto_da_pagina(conteudo: bytes, tipo: str) -> str:
@@ -156,8 +159,41 @@ def texto_da_pagina(conteudo: bytes, tipo: str) -> str:
                          else _textos_json(json.loads(t, parse_int=str, parse_float=str)))
         except ValueError:
             pass
-    t = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", t)
-    return re.sub(r"(?s)<[^>]+>", " ", t)
+    return _sem_etiquetas(_sem_blocos(t))
+
+
+_ABRE_BLOCO = re.compile(r"(?i)<(script|style|noscript)")
+_FECHA_BLOCO = {n: re.compile(rf"(?i)</{n}>") for n in ("script", "style", "noscript")}
+
+
+def _sem_blocos(t: str) -> str:
+    """A página sem os blocos de programa e de estilo (<script>, <style>, <noscript>), cada um da abertura ao fim. Anda
+    pelo texto uma vez só: o bloco que não fecha fica como está e o nome dele não é procurado de novo, porque uma
+    página com milhares de aberturas sem fim levava minutos."""
+    out, i, sem_fim, maior = [], 0, set(), -1
+    for m in _ABRE_BLOCO.finditer(t):
+        nome = m.group(1).lower()
+        if m.start() < i or nome in sem_fim:
+            continue
+        if maior < m.end():  # o ">" que fecha a etiqueta de abertura
+            maior = t.find(">", m.end())
+            if maior < 0:
+                break
+        fim = _FECHA_BLOCO[nome].search(t, maior + 1)
+        if not fim:
+            sem_fim.add(nome)
+            continue
+        out.append(t[i:m.start()])
+        i = fim.end()
+    out.append(t[i:])
+    return " ".join(out)
+
+
+def _sem_etiquetas(t: str) -> str:
+    """O texto sem as etiquetas (<p>, <a href="...">), cada uma trocada por um espaço. Depois do último ">" não há
+    etiqueta para tirar, e procurar ali o fim de cada "<" levava minutos numa página com milhares deles."""
+    fim = t.rfind(">") + 1
+    return re.sub(r"(?s)<[^>]+>", " ", t[:fim]) + t[fim:]
 
 
 def _decodificar(conteudo: bytes, tipo: str) -> str:
@@ -243,74 +279,215 @@ def aviso_do_site(texto: str) -> str | None:
 
 
 TAMANHO_MAXIMO = 60 * 1024 * 1024  # um documento maior que isto não é lido (o projeto do Orçamento inteiro, por exemplo)
+# O prazo de uma página: quatro minutos para baixar, com os redirecionamentos, e mais o tempo de tirar o texto (o PDF
+# mais demorado leva dois minutos). Sem prazo, um site que segura a conexão segurava a conferência inteira.
+PRAZO_PARA_BAIXAR = 240  # segundos
+PRAZO_DA_PAGINA = PRAZO_PARA_BAIXAR + 150
+DEMOROU = "a página demorou demais para abrir"
+SO_HTTP = "só abre endereço http ou https, sem senha e na porta de costume"
+# A barra invertida e os caracteres de controle não existem em endereço de verdade, e cada programa lê um computador
+# diferente no endereço que os traz: em "http://127.0.0.1\.site.com", um lê site.com e o que abre a página lê 127.0.0.1.
+_FORA_DE_ENDERECO = re.compile(r"[\\\x00-\x1f\x7f]")
+_NAT64 = ipaddress.ip_network("64:ff9b::/96")
 
 
 def endereco_publico(url: str) -> str | None:
     """Por que um endereço não pode ser aberto; None quando pode. O endereço vem da IA, que o tira das páginas que leu,
     e uma página pode pedir o que não deve: só abre http e https, nas portas de costume, e nunca um computador da
-    rede de dentro."""
-    import ipaddress
-    import socket
+    rede de dentro. O computador é lido no endereço como o lê o programa que abre a página (requests)."""
     from urllib.parse import urlparse
-    try:
-        u = urlparse(url)
-        porta = u.port
-    except ValueError:
+    if not isinstance(url, str) or _FORA_DE_ENDERECO.search(url):
         return "endereço inválido"
-    host = (u.hostname or "").lower()
-    if u.scheme not in ("http", "https") or not host or u.username or u.password or porta not in (None, 80, 443):
-        return "só abre endereço http ou https, sem senha e na porta de costume"
+    try:
+        if urlparse(url).scheme not in ("http", "https"):
+            return SO_HTTP
+        import requests
+        from urllib3.util import parse_url
+        pronto = requests.Request("GET", url).prepare().url
+        u, v = urlparse(pronto), parse_url(pronto)
+        porta, host = u.port, (u.hostname or "").lower()
+    except Exception:  # noqa: BLE001
+        return "endereço inválido"
+    if (u.scheme, host, porta) != (v.scheme, (v.host or "").lower().strip("[]"), v.port):
+        return "endereço inválido"
+    if u.scheme not in ("http", "https") or not host or u.username or u.password or v.auth or porta not in (None, 80, 443):
+        return SO_HTTP
+    host = host.rstrip(".")
     if host == "localhost" or host.endswith((".localhost", ".local", ".internal", ".lan", ".home", ".intranet")):
         return "endereço da rede interna"
     try:
         ips = [ipaddress.ip_address(host)]
     except ValueError:
-        try:  # com a rede por trás de um intermediário (a nuvem), o nome não se resolve aqui: quem abre é ele
-            ips = [ipaddress.ip_address(x[4][0]) for x in socket.getaddrinfo(host, None)]
-        except (OSError, ValueError):
+        ips = _numeros_do_nome(host)
+        if ips is None:
+            # Com a rede por trás de um intermediário (a nuvem), o nome não se resolve aqui: quem abre é ele. Em
+            # conexão direta, o nome que não se resolve não abre.
+            if _vai_direto(pronto):
+                return "o nome do endereço não foi achado na rede"
             ips = []
-    return None if all(ip.is_global for ip in ips) else "endereço da rede interna"
+    return None if all(_de_fora(ip) for ip in ips) else "endereço da rede interna"
 
 
-def baixar(url: str, limite: int = TAMANHO_MAXIMO) -> tuple[bytes, str, str]:
-    """(conteúdo, tipo, endereço final). Segue os redirecionamentos um a um, conferindo cada endereço, e para de ler
-    no tamanho máximo. Levanta ValueError com o motivo quando não abre."""
+def _numeros_do_nome(host: str) -> list | None:
+    """Os endereços numéricos de um nome; None quando ele não se resolve (tenta duas vezes: a falha pode ser da rede)."""
+    import socket
+    for _ in range(2):
+        try:
+            return [ipaddress.ip_address(x[4][0].split("%")[0]) for x in socket.getaddrinfo(host, None)]
+        except (OSError, ValueError):
+            continue
+    return None
+
+
+def _de_fora(ip) -> bool:
+    """O endereço numérico é de um computador da internet pública? O IPv4 embrulhado num IPv6 vale pelo de dentro:
+    "::ffff:10.0.0.1" e "64:ff9b::a00:1" chegam ao 10.0.0.1 da rede de dentro."""
+    if ip.version == 6:
+        if ip.ipv4_mapped is not None:
+            return ip.ipv4_mapped.is_global
+        dentro = ip.sixtofour or (ipaddress.ip_address(int(ip) & 0xFFFFFFFF) if ip in _NAT64 else None)
+        if dentro is not None and not dentro.is_global:
+            return False
+    return ip.is_global
+
+
+def _vai_direto(url: str) -> bool:
+    """O pedido sai daqui direto para o site, sem intermediário (proxy)?"""
+    try:
+        from requests.utils import get_environ_proxies, select_proxy
+        return not select_proxy(url, get_environ_proxies(url))
+    except Exception:  # noqa: BLE001
+        return False
+
+
+def _par_de_fora(sock) -> bool:
+    """O computador do outro lado da conexão é da internet pública? Quando não dá para saber, vale a conferência do
+    nome, feita antes."""
+    try:
+        return _de_fora(ipaddress.ip_address(sock.getpeername()[0].split("%")[0]))
+    except (OSError, ValueError, IndexError, TypeError, AttributeError):
+        return True
+
+
+_ADAPTADOR = None
+
+
+def _adaptador():
+    """O encaixe que confere o computador do outro lado logo depois de conectar e antes de mandar o pedido. O nome que
+    passou na conferência pode apontar para a rede de dentro um instante depois; o número de quem atendeu não muda.
+    Só vale na conexão direta: com intermediário (a nuvem), quem atende é ele, e a conexão dele usa outro encaixe."""
+    global _ADAPTADOR
+    if _ADAPTADOR is None:
+        from requests.adapters import HTTPAdapter
+        from urllib3.connection import HTTPConnection, HTTPSConnection
+        from urllib3.connectionpool import HTTPConnectionPool, HTTPSConnectionPool
+
+        class Confere:
+            def _new_conn(self):
+                sock = super()._new_conn()
+                if not getattr(self, "proxy", None) and not _par_de_fora(sock):
+                    sock.close()
+                    raise ValueError("endereço da rede interna")
+                return sock
+
+        class Http(Confere, HTTPConnection):
+            pass
+
+        class Https(Confere, HTTPSConnection):
+            pass
+
+        class FilaHttp(HTTPConnectionPool):
+            ConnectionCls = Http
+
+        class FilaHttps(HTTPSConnectionPool):
+            ConnectionCls = Https
+
+        class Adaptador(HTTPAdapter):
+            def init_poolmanager(self, *args, **kwargs):
+                super().init_poolmanager(*args, **kwargs)
+                self.poolmanager.pool_classes_by_scheme = {"http": FilaHttp, "https": FilaHttps}
+
+        _ADAPTADOR = Adaptador
+    return _ADAPTADOR()
+
+
+def _sessao():
+    """A sessão que abre uma página: guarda os cookies de um redirecionamento para o outro (o site que só responde a
+    quem volta com o cookie que ele deu) e confere o computador do outro lado (_adaptador)."""
     import requests
-    from urllib.parse import urljoin, urlparse
-    atual, pedido = url, {"User-Agent": UA}
-    for _ in range(8):
-        motivo = endereco_publico(atual)
-        if motivo:
-            raise ValueError(motivo)
-        r = requests.get(atual, headers=pedido, timeout=40, allow_redirects=False, stream=True)
-        if r.status_code in (301, 302, 303, 307, 308) and r.headers.get("location"):
-            r.close()
-            atual = urljoin(atual, r.headers["location"])
-            continue
-        # O gov.br responde 404 ao endereço que mudou de lugar quando o pedido não diz que quer uma página; dizendo,
-        # ele manda para o endereço novo. Só o 404 é pedido de novo: a página que já abria recebe o mesmo pedido.
-        if r.status_code == 404 and "Accept" not in pedido:
-            r.close()
-            pedido = {**pedido, "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8"}
-            continue
-        if r.status_code >= 400:
-            r.close()
-            raise ValueError(f"HTTP {r.status_code}")
-        dados = b""
-        for parte in r.iter_content(1 << 16):
-            dados += parte
-            if len(dados) > limite:
+    s = requests.Session()
+    # Quem segue o redirecionamento é o baixar(). A biblioteca não precisa ler o destino, e parava com erro no destino
+    # com acento escrito fora do UTF-8 (os endereços antigos do governo).
+    s.get_redirect_target = lambda resposta: None
+    try:
+        for esquema in ("http://", "https://"):
+            s.mount(esquema, _adaptador())
+    except Exception:  # noqa: BLE001  (a biblioteca mudou por dentro: a página abre só com a conferência do nome)
+        pass
+    return s
+
+
+def _destino(atual: str, para: str) -> str:
+    """O endereço para onde o site manda. O cabeçalho chega lido byte a byte, e a letra com acento ("notícias") viria
+    trocada: cada byte fora do alfabeto básico volta a ser o que o site mandou, escrito como %XX."""
+    from urllib.parse import urljoin
+    return urljoin(atual, "".join(f"%{ord(c):02X}" if "\x80" <= c <= "\xff" else c for c in para.strip()))
+
+
+def baixar(url: str, limite: int = TAMANHO_MAXIMO, ate: float | None = None) -> tuple[bytes, str, str]:
+    """(conteúdo, tipo, endereço final). Segue os redirecionamentos um a um, conferindo cada endereço, e para de ler
+    no tamanho máximo ou no fim do prazo (`ate`, na contagem de time.monotonic). Levanta ValueError com o motivo
+    quando não abre."""
+    import time
+    from urllib.parse import urlparse
+    ate = ate or time.monotonic() + PRAZO_PARA_BAIXAR
+    atual, pedido, vazias = url, {"User-Agent": UA}, 0
+    with _sessao() as sessao:
+        for _ in range(8):
+            motivo = endereco_publico(atual)
+            if motivo:
+                raise ValueError(motivo)
+            resta = ate - time.monotonic()
+            if resta <= 0:
+                raise ValueError(DEMOROU)
+            r = sessao.get(atual, headers=pedido, timeout=min(40, resta + 1), allow_redirects=False, stream=True)
+            if r.status_code in (301, 302, 303, 307, 308) and r.headers.get("location"):
                 r.close()
-                raise ValueError("documento grande demais para ler inteiro")
-        # O site que manda todo endereço para a página inicial (o do Planalto, fora do Brasil) não abriu o documento. A
-        # página inicial de um órgão no gov.br tem duas partes, o órgão e a língua (gov.br/planalto/pt-br).
-        a, b = urlparse(url), urlparse(atual)
-        partes = [x for x in a.path.split("/") if x]
-        finais = [x for x in b.path.split("/") if x]
-        inicial = len(finais) <= 1 or (len(finais) == 2 and finais[1].lower() in ("pt-br", "en", "es"))
-        if atual != url and len(partes) >= 2 and inicial and partes[-1] not in atual:
-            raise ValueError("o endereço leva à página inicial do site, e não ao documento")
-        return dados, r.headers.get("content-type", ""), atual
+                atual = _destino(atual, r.headers["location"])
+                continue
+            # O gov.br responde 404 ao endereço que mudou de lugar quando o pedido não diz que quer uma página; dizendo,
+            # ele manda para o endereço novo. Só o 404 é pedido de novo: a página que já abria recebe o mesmo pedido.
+            if r.status_code == 404 and "Accept" not in pedido:
+                r.close()
+                pedido = {**pedido, "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8"}
+                continue
+            if r.status_code >= 400:
+                r.close()
+                raise ValueError(f"HTTP {r.status_code}")
+            dados = bytearray()
+            for parte in r.iter_content(1 << 16):
+                dados += parte
+                if len(dados) > limite:
+                    r.close()
+                    raise ValueError("documento grande demais para ler inteiro")
+                if time.monotonic() > ate:
+                    r.close()
+                    raise ValueError(DEMOROU)
+            # O servidor do Supremo devolve o documento vazio a parte dos pedidos, mesmo a um pedido de cada vez: a
+            # resposta boa sem nada dentro é pedida de novo, até três vezes.
+            if not dados and vazias < 3 and ate - time.monotonic() > 10:
+                vazias += 1
+                time.sleep(2)
+                continue
+            # O site que manda todo endereço para a página inicial (o do Planalto, fora do Brasil) não abriu o documento.
+            # A página inicial de um órgão no gov.br tem duas partes, o órgão e a língua (gov.br/planalto/pt-br).
+            a, b = urlparse(url), urlparse(atual)
+            partes = [x for x in a.path.split("/") if x]
+            finais = [x for x in b.path.split("/") if x]
+            inicial = len(finais) <= 1 or (len(finais) == 2 and finais[1].lower() in ("pt-br", "en", "es"))
+            if atual != url and len(partes) >= 2 and inicial and partes[-1] not in atual:
+                raise ValueError("o endereço leva à página inicial do site, e não ao documento")
+            return bytes(dados), r.headers.get("content-type", ""), atual
     raise ValueError("redirecionamentos demais")
 
 
@@ -321,6 +498,7 @@ _TRAVAS: dict[str, threading.Lock] = {}
 _TRAVA_DAS_TRAVAS = threading.Lock()
 _FALHAS_LENTAS: dict[str, tuple[str, float]] = {}
 _LENTA_DESDE, _LENTA_VALE = 10, 120  # segundos
+_ABRINDO: dict[str, threading.Thread] = {}  # o ajudante que passou do prazo e ainda está abrindo o endereço
 
 
 def abrir(url: str, validade_h: float | None = None) -> tuple[str | None, str | None]:
@@ -340,16 +518,49 @@ def abrir(url: str, validade_h: float | None = None) -> tuple[str | None, str | 
         if lenta and time.time() - lenta[1] < _LENTA_VALE:
             return None, lenta[0]
         inicio = time.time()
-        t, erro = _da_rede(url)
+        t, erro = _com_prazo(url, arq)
         if erro:
             if time.time() - inicio > _LENTA_DESDE:
                 _FALHAS_LENTAS[url] = (erro, time.time())
             return None, erro
-        # A cópia só aparece inteira, para outro programa que abra o mesmo endereço não ler um arquivo pela metade.
-        tmp = arq.with_name(f"{arq.name}.{os.getpid()}.{threading.get_ident()}.tmp")
-        tmp.write_text(t)
-        tmp.replace(arq)
         return t, None
+
+
+def _com_prazo(url: str, arq: Path) -> tuple[str | None, str | None]:
+    """(texto, erro) do endereço aberto agora, em até PRAZO_DA_PAGINA segundos. Quem abre é um ajudante: se o site
+    segurar a conexão, a conferência segue sem a página, e o ajudante guarda a cópia quando terminar, para a tentativa
+    seguinte achar."""
+    antes = _ABRINDO.get(url)
+    if antes is not None and antes.is_alive():
+        return None, DEMOROU
+    saida: list[tuple[str | None, str | None]] = []
+
+    def busca() -> None:
+        try:
+            saida.append(_da_rede(url))
+        except Exception as e:  # noqa: BLE001
+            saida.append((None, f"{type(e).__name__}: {str(e)[:120]}"))
+        if saida[0][0] is not None and not saida[0][1]:
+            # A cópia só aparece inteira, para outro programa que abra o mesmo endereço não ler um arquivo pela metade.
+            try:
+                tmp = arq.with_name(f"{arq.name}.{os.getpid()}.{threading.get_ident()}.tmp")
+                tmp.write_text(saida[0][0])
+                tmp.replace(arq)
+            except OSError:  # sem a cópia, a página é aberta de novo na próxima vez
+                pass
+
+    ajudante = threading.Thread(target=busca, daemon=True)
+    try:
+        ajudante.start()
+    except RuntimeError:  # o computador não abre mais um ajudante: abre aqui mesmo
+        busca()
+        return saida[0]
+    ajudante.join(PRAZO_DA_PAGINA)
+    if ajudante.is_alive():
+        _ABRINDO[url] = ajudante
+        return None, DEMOROU
+    _ABRINDO.pop(url, None)
+    return saida[0] if saida else (None, DEMOROU)
 
 
 def _da_rede(url: str) -> tuple[str | None, str | None]:
