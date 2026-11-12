@@ -148,7 +148,8 @@ def texto_da_pagina(conteudo: bytes, tipo: str) -> str:
     t = _decodificar(conteudo, tipo)
     if "json" in tipo or t.lstrip()[:1] in ("{", "["):
         try:  # API que devolve a página dentro de um JSON (Banco Central): junta os textos
-            t = " ".join(_textos_json(json.loads(t)))
+            j = json.loads(t)
+            t = " ".join(_texto_da_norma(j) if _e_norma(j) else _textos_json(j))
         except ValueError:
             pass
     t = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", t)
@@ -178,21 +179,106 @@ def _textos_json(x) -> list[str]:
     return []
 
 
-def abrir(url: str) -> tuple[str | None, str | None]:
-    """(texto, erro). Guarda a página em base/cache para não abrir de novo."""
+def _e_norma(j) -> bool:
+    return isinstance(j, dict) and j.get("@type") == "Legislation" and "hasPart" in j
+
+
+def _texto_da_norma(j) -> list[str]:
+    """O texto de uma lei como normas.leg.br (o portal de normas do Congresso) a devolve: o título, a ementa e cada
+    dispositivo, em ordem, sem os endereços e os rótulos que vêm no meio."""
+    out = [str(j.get(k)) for k in ("headline", "alternateName", "abstract") if isinstance(j.get(k), str)]
+
+    def anda(x) -> None:
+        if isinstance(x, list):
+            for y in x:
+                anda(y)
+        elif isinstance(x, dict):
+            ex = x.get("workExample")
+            for w in ex if isinstance(ex, list) else [ex]:
+                if isinstance(w, dict):
+                    out.extend(str(w[k]) for k in ("name", "text") if isinstance(w.get(k), str))
+            anda(x.get("hasPart"))
+    anda(j.get("hasPart"))
+    return out
+
+
+TAMANHO_MAXIMO = 60 * 1024 * 1024  # um documento maior que isto não é lido (o projeto do Orçamento inteiro, por exemplo)
+
+
+def endereco_publico(url: str) -> str | None:
+    """Por que um endereço não pode ser aberto; None quando pode. O endereço vem da IA, que o tira das páginas que leu,
+    e uma página pode pedir o que não deve: só abre http e https, nas portas de costume, e nunca um computador da
+    rede de dentro."""
+    import ipaddress
+    import socket
+    from urllib.parse import urlparse
+    try:
+        u = urlparse(url)
+        porta = u.port
+    except ValueError:
+        return "endereço inválido"
+    host = (u.hostname or "").lower()
+    if u.scheme not in ("http", "https") or not host or u.username or u.password or porta not in (None, 80, 443):
+        return "só abre endereço http ou https, sem senha e na porta de costume"
+    if host == "localhost" or host.endswith((".localhost", ".local", ".internal", ".lan", ".home", ".intranet")):
+        return "endereço da rede interna"
+    try:
+        ips = [ipaddress.ip_address(host)]
+    except ValueError:
+        try:  # com a rede por trás de um intermediário (a nuvem), o nome não se resolve aqui: quem abre é ele
+            ips = [ipaddress.ip_address(x[4][0]) for x in socket.getaddrinfo(host, None)]
+        except (OSError, ValueError):
+            ips = []
+    return None if all(ip.is_global for ip in ips) else "endereço da rede interna"
+
+
+def baixar(url: str, limite: int = TAMANHO_MAXIMO) -> tuple[bytes, str, str]:
+    """(conteúdo, tipo, endereço final). Segue os redirecionamentos um a um, conferindo cada endereço, e para de ler
+    no tamanho máximo. Levanta ValueError com o motivo quando não abre."""
+    import requests
+    from urllib.parse import urljoin, urlparse
+    atual = url
+    for _ in range(7):
+        motivo = endereco_publico(atual)
+        if motivo:
+            raise ValueError(motivo)
+        r = requests.get(atual, headers={"User-Agent": UA}, timeout=40, allow_redirects=False, stream=True)
+        if r.status_code in (301, 302, 303, 307, 308) and r.headers.get("location"):
+            r.close()
+            atual = urljoin(atual, r.headers["location"])
+            continue
+        if r.status_code >= 400:
+            r.close()
+            raise ValueError(f"HTTP {r.status_code}")
+        dados = b""
+        for parte in r.iter_content(1 << 16):
+            dados += parte
+            if len(dados) > limite:
+                r.close()
+                raise ValueError("documento grande demais para ler inteiro")
+        # O site que manda todo endereço para a página inicial (o do Planalto, fora do Brasil) não abriu o documento.
+        a, b = urlparse(url), urlparse(atual)
+        partes = [x for x in a.path.split("/") if x]
+        if atual != url and len(partes) >= 2 and len([x for x in b.path.split("/") if x]) <= 1 and partes[-1] not in atual:
+            raise ValueError("o endereço leva à página inicial do site, e não ao documento")
+        return dados, r.headers.get("content-type", ""), atual
+    raise ValueError("redirecionamentos demais")
+
+
+def abrir(url: str, validade_h: float | None = None) -> tuple[str | None, str | None]:
+    """(texto, erro). Guarda a página em base/cache para não abrir de novo; com `validade_h`, a cópia mais velha que
+    isso é aberta de novo (a página de lista, que muda)."""
+    import time
     CACHE.mkdir(parents=True, exist_ok=True)
-    # ".v2": a cópia guardada antes de 7/11/2026 lia mal acentos (windows-1252) e páginas em JSON; abre de novo
-    arq = CACHE / (hashlib.sha256(url.encode()).hexdigest()[:24] + ".v2.txt")
-    if arq.exists():
+    # ".v3": a cópia guardada antes de 12/11/2026 podia ser a página inicial de um site que redirecionou o endereço
+    arq = CACHE / (hashlib.sha256(url.encode()).hexdigest()[:24] + ".v3.txt")
+    if arq.exists() and (validade_h is None or time.time() - arq.stat().st_mtime < validade_h * 3600):
         return arq.read_text(), None
     try:
-        import requests
-        r = requests.get(url, headers={"User-Agent": UA}, timeout=40, allow_redirects=True)
-        if r.status_code >= 400:
-            return None, f"HTTP {r.status_code}"
-        t = texto_da_pagina(r.content, r.headers.get("content-type", ""))
+        dados, tipo, _ = baixar(url)
+        t = texto_da_pagina(dados, tipo)
     except Exception as e:  # noqa: BLE001
-        return None, f"{type(e).__name__}: {str(e)[:120]}"
+        return None, str(e)[:160] if isinstance(e, ValueError) else f"{type(e).__name__}: {str(e)[:120]}"
     if len(t.strip()) < 200:
         return None, "página sem texto (talvez só JavaScript ou paywall)"
     arq.write_text(t)
