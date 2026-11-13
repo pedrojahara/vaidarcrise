@@ -39,7 +39,7 @@ No alto da página, a placa diz se o risco de recessão, que é o [PIB](https://
 
 Logo abaixo da placa ficam as cinco pressões que costumam vir antes de uma recessão, cada uma dizendo se piorou ou melhorou e com que mês se compara. São as contas do governo, as dívidas das famílias, a desconfiança de quem investe, a inflação esperada e o juro.
 
-Todo dia, por volta das 6h, sai um texto no site e no e-mail de quem se inscreve. De segunda a sábado, o fato do dia explica, pelos números, o passo de ontem da história que mais andou, como o juro ou as contas do governo.
+Todo dia, por volta das 5h, sai um texto no site e no e-mail de quem se inscreve. De segunda a sábado, o fato do dia explica, pelos números, o passo de ontem da história que mais andou, como o juro ou as contas do governo.
 
 Aos domingos sai a pergunta da semana: a dúvida que mais se ouviu sobre a história que mais andou nos sete dias, respondida com os números de quem os mediu.
 
