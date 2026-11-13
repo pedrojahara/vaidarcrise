@@ -150,6 +150,8 @@ def texto_da_pagina(conteudo: bytes, tipo: str) -> str:
                     return subprocess.run(["pdftotext", "-layout", f.name, "-"], capture_output=True, text=True, timeout=120).stdout
                 except Exception:  # noqa: BLE001
                     return ""
+    if _e_planilha(conteudo):
+        return planilha(conteudo)
     t = _decodificar(conteudo, tipo)
     if "json" in tipo or t.lstrip()[:1] in ("{", "["):
         try:  # API que devolve a página dentro de um JSON (Banco Central): junta os textos e os números
@@ -242,6 +244,101 @@ def _texto_da_norma(j) -> list[str]:
     return out
 
 
+# A planilha .xlsx (a tabela da Conab, do Caged, do Tesouro) vira texto: cada aba com o nome dela e cada linha com as
+# células separadas por " | ", o número como a planilha o guarda. Só com a biblioteca padrão, e com teto no que se
+# descompacta (o arquivo pequeno que vira gigabytes) e no texto que sai.
+PLANILHA_MAXIMA = 80 * 1024 * 1024  # bytes descompactados
+PLANILHA_TEXTO = 4_000_000  # caracteres
+_XL = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
+_XL_REL = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id"
+
+
+def _zip(conteudo: bytes):
+    import zipfile
+    try:
+        return zipfile.ZipFile(io.BytesIO(conteudo))
+    except (zipfile.BadZipFile, ValueError):
+        return None
+
+
+def _e_planilha(conteudo: bytes) -> bool:
+    if not conteudo.startswith(b"PK\x03\x04"):
+        return False
+    z = _zip(conteudo)
+    return bool(z) and "xl/workbook.xml" in z.namelist()
+
+
+def _tamanho_da_planilha(conteudo: bytes) -> int:
+    z = _zip(conteudo)
+    return sum(i.file_size for i in z.infolist()) if z else 0
+
+
+def _celula(v: str) -> str:
+    """O número de ponto flutuante da planilha sem o resto da conta binária (171480.50000000003 vira 171480.5)."""
+    try:
+        f = float(v)
+    except ValueError:
+        return v
+    return format(f, ".12g") if ("." in v or "E" in v.upper()) else v
+
+
+def _coluna(ref: str | None, seguinte: int) -> int:
+    """A coluna da célula pela referência dela ("C5" é a 2, contando de 0); sem referência, a seguinte."""
+    m = re.match(r"([A-Z]{1,3})\d", ref or "")
+    if not m:
+        return seguinte
+    n = 0
+    for ch in m.group(1):
+        n = n * 26 + ord(ch) - 64
+    return min(n - 1, 500)
+
+
+def planilha(conteudo: bytes) -> str:
+    import posixpath
+    import xml.etree.ElementTree as ET
+    z = _zip(conteudo)
+    if not z or _tamanho_da_planilha(conteudo) > PLANILHA_MAXIMA:
+        return ""
+    nomes = set(z.namelist())
+    comuns: list[str] = []
+    if "xl/sharedStrings.xml" in nomes:
+        for si in ET.fromstring(z.read("xl/sharedStrings.xml")).iter(f"{_XL}si"):
+            comuns.append("".join(t.text or "" for t in si.iter(f"{_XL}t")))
+    rels = {}
+    if "xl/_rels/workbook.xml.rels" in nomes:
+        for r in ET.fromstring(z.read("xl/_rels/workbook.xml.rels")):
+            alvo = r.get("Target") or ""
+            rels[r.get("Id")] = alvo.lstrip("/") if alvo.startswith("/") else posixpath.normpath(posixpath.join("xl", alvo))
+    partes, total = [], 0
+    for aba in ET.fromstring(z.read("xl/workbook.xml")).iter(f"{_XL}sheet"):
+        caminho = rels.get(aba.get(_XL_REL))
+        if caminho not in nomes:
+            continue
+        linhas = [f"[aba {aba.get('name')}]"]
+        for row in ET.fromstring(z.read(caminho)).iter(f"{_XL}row"):
+            cels: dict[int, str] = {}
+            for c in row.iter(f"{_XL}c"):
+                t, v = c.get("t"), c.find(f"{_XL}v")
+                if t == "s" and v is not None and (v.text or "").isdigit() and int(v.text) < len(comuns):
+                    x = comuns[int(v.text)]
+                elif t == "inlineStr":
+                    x = "".join(y.text or "" for y in c.iter(f"{_XL}t"))
+                elif v is not None and v.text is not None:
+                    x = _celula(v.text) if t in (None, "n") else v.text
+                else:
+                    continue
+                cels[_coluna(c.get("r"), len(cels))] = " ".join(x.split())
+            if any(cels.values()):
+                # A célula vazia fica no lugar dela, para o número cair embaixo do título da coluna certa.
+                linhas.append(" | ".join(cels.get(i, "") for i in range(max(cels) + 1)).rstrip(" |"))
+        bloco = "\n".join(linhas)
+        partes.append(bloco)
+        total += len(bloco)
+        if total > PLANILHA_TEXTO:
+            break
+    return "\n\n".join(partes)[:PLANILHA_TEXTO]
+
+
 # O arquivo que não é página nem PDF, pelos primeiros bytes: o leitor não tira texto dele.
 _BINARIOS = ((b"PK\x03\x04", "planilha, documento do Office ou arquivo compactado: .xlsx, .docx, .zip"),
              (b"\xd0\xcf\x11\xe0", "planilha ou documento antigo do Office: .xls, .doc"),
@@ -259,10 +356,13 @@ _AVISO_ATE = 1500  # caracteres
 
 
 def formato_que_nao_le(conteudo: bytes, tipo: str) -> str | None:
-    """Por que o leitor não lê um arquivo; None quando é página, PDF ou texto. A planilha, o arquivo compactado e a
-    imagem viravam um texto de lixo, e a leitura passava por boa."""
+    """Por que o leitor não lê um arquivo; None quando é página, PDF, planilha .xlsx ou texto. O arquivo compactado, a
+    planilha antiga (.xls) e a imagem viravam um texto de lixo, e a leitura passava por boa."""
     if b"%PDF" in conteudo[:1024] or "pdf" in tipo:
         return None
+    if _e_planilha(conteudo):
+        return None if _tamanho_da_planilha(conteudo) <= PLANILHA_MAXIMA else \
+            "planilha grande demais para o leitor; procure a mesma tabela em partes, em PDF ou na página de quem a publica"
     nome = next((n for marca, n in _BINARIOS if conteudo.startswith(marca)), None)
     if not nome and b"\x00" in conteudo[:1024] and not conteudo.startswith((b"\xff\xfe", b"\xfe\xff")):
         nome = "arquivo que não é texto"
@@ -575,9 +675,15 @@ def _da_rede(url: str) -> tuple[str | None, str | None]:
     motivo = motivo or aviso_do_site(t)
     if motivo:
         return None, motivo
-    if len(t.strip()) < 200:
+    # A resposta em JSON de uma API (a série do Banco Central em dois meses) é o próprio dado, mesmo curta; a página
+    # curta é a que só monta o texto com JavaScript ou fica atrás de paywall.
+    if not t.strip() or (len(t.strip()) < 200 and not _e_json(dados, tipo)):
         return None, "página sem texto (talvez só JavaScript ou paywall)"
     return t, None
+
+
+def _e_json(conteudo: bytes, tipo: str) -> bool:
+    return "json" in (tipo or "") or conteudo.lstrip()[:1] in (b"{", b"[")
 
 
 def conferir_trecho(a: dict, offline: bool) -> dict:

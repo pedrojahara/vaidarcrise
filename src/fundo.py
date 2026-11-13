@@ -11,9 +11,10 @@ A pauta (src/pauta.py) escolhe a história em código, pela soma das notícias d
      disse que não achou e o tamanho das medidas que ficaram sem ele, porque o que a pesquisa não achou não é fato
      sobre o que foi publicado. A pesquisa junta os fatos e não faz a análise;
   2. investigação (src/investiga.py; FUNDO.md, "A investigação"), fora do dia calmo: uma leitora leiga faz as
-     perguntas, explicações rivais escrevem até quatro testes com o corte escrito antes, testadores cegos medem contra
-     o dado de quem mediu, um cético tenta derrubar cada resultado e um juiz decide o que ficou e responde a cada
-     pergunta da leitora; uma segunda volta, se o juiz pedir e o tempo der. O resultado (as respostas, os achados, o
+     perguntas, explicações rivais desmontam o fenômeno nas partes que o movem e escrevem até quatro testes com o
+     corte escrito antes, testadores cegos medem contra o dado de quem mediu (o mapa config/dados.json), um cético
+     tenta derrubar cada resultado e um juiz decide o que ficou e responde a cada pergunta, pesando as partes; até três
+     voltas, enquanto a leitora achar uma resposta pela metade e o tempo der. O resultado (as respostas, os achados, o
      que caiu e os próximos sinais) vai ao esqueleto, à redação e ao revisor;
   3. esqueleto (Opus, sem ferramentas): antes de existir qualquer frase, a pergunta da leitora, a resposta em duas
      frases, o fato que faz a resposta fazer sentido, os passos em ordem de dependência (cada um com a conta já feita),
@@ -88,7 +89,7 @@ INTERTITULO = re.compile(r"^#{2,4}\s+(.+?)\s*$")
 # O tamanho do texto: o alvo e, entre parênteses no código, o limite que barra.
 TAMANHO = {"calmo": ((120, 200), (90, 260)), "normal": ((300, 600), (220, 720)), "grande": ((500, 800), (300, 950))}
 GRANDE = 4.0  # a soma da história que faz o dia grande
-INVESTIGA_S = int(60 * float(os.environ.get("VDC_INVESTIGA_MIN", "22")))  # o tempo da investigação
+INVESTIGA_S = int(60 * float(os.environ.get("VDC_INVESTIGA_MIN", "25")))  # o tempo da investigação, até 3 voltas
 # A pergunta da semana: a investigação tem mais tempo e até três voltas, e olha os sete dias de notícia até ontem.
 INVESTIGA_SEMANA_S = int(60 * float(os.environ.get("VDC_INVESTIGA_SEMANA_MIN", "35")))
 VOLTAS_SEMANA = 3

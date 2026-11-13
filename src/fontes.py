@@ -14,12 +14,16 @@ ela: resume, escolhe uma parte e às vezes inverte. Este programa faz três cois
    código consegue montar sozinho (a ata do Copom, o projeto de lei, a medida provisória, a lei) e, para o resto,
    onde procurar. O mapa é um atalho e nunca uma cerca: o dado novo, o órgão que mudou de endereço e o dono que não
    está aqui se acham com a busca livre e seguindo os links da notícia.
+4. Os dados (`dado`): a série de quem mede cada parte de um fenômeno (o atraso do crédito rural, o preço do agro, a
+   safra), no mapa conferido de config/dados.json e no catálogo do Banco Central, com o nome que o dono dá a ela e os
+   últimos números. É o que a investigação (src/investiga.py) usa para medir cada parte, e também é atalho e não cerca.
 
 Uso:
   python src/fontes.py abre "ENDERECO" [--procura "termo" --procura "outro"] [--de POSICAO] [--links]
   python src/fontes.py ato "PLP 299/2026"          # também MP, PEC, PL, PLN, "Lei Complementar 200/2023", "Copom",
                                                    # "PLOA 2027", "Resolução CMN 5.141"
   python src/fontes.py onde [ASSUNTO]              # onde mora cada tipo de documento
+  python src/fontes.py dado PALAVRAS|CODIGO        # a série de quem mede (mapa config/dados.json e catálogo do BC)
 O programa só lê: abre endereços http e https da internet pública e não escreve nada além da cópia das páginas em
 base/cache.
 """
@@ -29,6 +33,7 @@ import argparse
 import concurrent.futures as cf
 import datetime as dt
 import html
+import json
 import re
 import sys
 import unicodedata
@@ -50,6 +55,9 @@ AJUDA = f"""  {FONTES} abre "ENDERECO"                    # o texto da página o
                                                           # andamento (o relatório do relator); também "Copom", "Focus",
                                                           # "PLOA 2027" e "Resolução CMN 5.141"
   {FONTES} onde ASSUNTO                         # onde mora o documento de um assunto (orçamento, dívida, IBGE, balanço...)
+  {FONTES} dado PALAVRAS                        # a série de quem mede uma coisa ("atraso crédito rural", "preço agro",
+                                                          # "safra soja"): o mapa conferido e o catálogo do Banco Central
+  {FONTES} dado 21146                           # o nome que o Banco Central dá à série e os últimos números, com o endereço
 O endereço vai sempre entre aspas, e um comando por vez, sem juntar comandos."""
 
 PARTE = 9000  # quanto texto uma leitura devolve de cada vez
@@ -80,7 +88,8 @@ CAMINHO_DE_NOTICIA = re.compile(r"/(noticias?|imprensa|radio|tv|agencia|sala-de-
                                 r"newsevents/pressreleases|news|press-releases?)(/|$)", re.I)
 # Quem fala por si e não é órgão público: bancos, bolsa, entidades, institutos e universidades da lista de fontes
 # conhecidas. A página delas é a fonte original do que elas mesmas mediram, previram ou defendem.
-INSTITUICOES = ("fgv.br", "usp.br", "unicamp.br", "insper.edu.br", "puc-rio.br", "nber.org", "brookings.edu", "piie.com",
+INSTITUICOES = ("fgv.br", "usp.br", "cepea.org.br", "unicamp.br", "insper.edu.br", "puc-rio.br", "nber.org",
+                "brookings.edu", "piie.com",
                 "spglobal.com", "moodys.com", "fitchratings.com", "iif.com", "itau.com.br", "bradesco.com.br",
                 "btgpactual.com", "xpi.com.br", "genialinvestimentos.com.br", "santander.com.br", "cnabrasil.org.br",
                 "safras.com.br", "b3.com.br", "anbima.com.br", "febraban.org.br", "cni.com.br", "portaldaindustria.com.br",
@@ -97,7 +106,8 @@ ENDERECO_DO_DONO = {"xp": "xpi.com.br", "btg": "btgpactual.com", "fmi": "imf.org
                     "vale": "vale.com", "bndes": "bndes.gov.br", "caixa": "caixa.gov.br", "banco do brasil": "bb.com.br",
                     "aie": "iea.org", "bis": "bis.org", "omc": "wto.org", "onu": "un.org",
                     "bradesco": "economiaemdia.com.br", "serasa": "serasaexperian.com.br", "b3": "b3.com.br",
-                    "getulio vargas": "fgv.br", "confederacao nacional da industria": ("portaldaindustria.com.br", "cni.com.br"),
+                    "getulio vargas": "fgv.br", "cepea": "cepea.org.br",
+                    "confederacao nacional da industria": ("portaldaindustria.com.br", "cni.com.br"),
                     "cnc": ("cnc.org.br", "portaldocomercio.org.br"),
                     "confederacao nacional do comercio": ("cnc.org.br", "portaldocomercio.org.br"),
                     "cna": "cnabrasil.org.br", "confederacao da agricultura": "cnabrasil.org.br",
@@ -269,6 +279,7 @@ NOMES = {
     "santander.com.br": "Santander", "b3.com.br": "B3", "anbima.com.br": "Anbima", "febraban.org.br": "Febraban",
     "portaldaindustria.com.br": "Confederação Nacional da Indústria (CNI)", "cni.com.br": "Confederação Nacional da Indústria (CNI)",
     "fiesp.com.br": "Fiesp", "cnc.org.br": "Confederação Nacional do Comércio (CNC)", "fgv.br": "FGV",
+    "cepea.org.br": "Cepea (Esalq/USP)",
     "spglobal.com": "S&P Global", "moodys.com": "Moody's", "fitchratings.com": "Fitch", "wikipedia.org": "Wikipédia",
 }
 _NOMES_EM_ORDEM = sorted(NOMES.items(), key=lambda kv: -len(kv[0]))
@@ -944,6 +955,14 @@ MAPA = [
              "números de qualquer tabela: https://apisidra.ibge.gov.br (por exemplo /values/t/1737/n1/all/v/2265/p/last%201 "
              "para o IPCA de 12 meses). Os sites agenciadenoticias.ibge.gov.br, www.ibge.gov.br e sidra.ibge.gov.br barram "
              "robô (erro 403)."},
+    {"id": "agro", "o_que": "Safra, preço e crédito do agro (soja, milho, boi, café; o atraso e o juro do crédito rural)",
+     "dono": "Conab, IBGE, Cepea e Banco Central",
+     "reconhece": r"\bagro|safra|soja|milho|\bboi\b|caf[eé]|algod[aã]o|produtor(es)? rura|cr[eé]dito rural|conab|cepea|lavoura",
+     "onde": f"A produção de cada grão na safra em curso e na anterior, por estado: o boletim da Conab (`{FONTES} dado safra`), "
+             "com a planilha por produto que o leitor abre como texto, e o levantamento mensal do IBGE (SIDRA 6588). O preço: "
+             "o indicador do dia no Cepea (cepea.org.br/br/indicador/soja.aspx, troque o produto) e, para comparar com um "
+             "ano antes, o IC-Br agro do Banco Central (SGS 27575). O atraso, o juro, o saldo e o crédito novo do crédito "
+             f"rural, a juro de mercado e a juro tabelado: `{FONTES} dado crédito rural`."},
     {"id": "emprego", "o_que": "Emprego com carteira (Caged)", "dono": "Ministério do Trabalho",
      "reconhece": r"caged|emprego formal|vagas com carteira|carteira assinada",
      "onde": "A página do Novo Caged leva ao mês mais recente: "
@@ -1033,6 +1052,140 @@ def onde(assunto: str = "") -> list[dict]:
     achadas = [m for m in MAPA if re.search(m["reconhece"], assunto, re.I) or re.search(_sem_acento(m["reconhece"]), a)
                or any(p in _sem_acento(m["o_que"] + " " + m["dono"]) for p in a.split() if len(p) >= 4)]
     return achadas or MAPA
+
+
+# ------------------------------------------------------------------ os dados de quem mede (config/dados.json)
+DADOS = Path(__file__).resolve().parent.parent / "config" / "dados.json"
+CATALOGO_BC = "https://dadosabertos.bcb.gov.br/api/3/action/package_search"
+NOME_SGS = ("https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarGraficoPorId"
+            "&hdOidSeriesSelecionadas={}")
+SERIE_SGS = "https://api.bcb.gov.br/dados/serie/bcdata.sgs.{}/dados"
+
+
+def mapa_de_dados() -> dict:
+    """O mapa conferido: {"como": [regras por dono], "dados": [linhas]}; vazio se o arquivo faltar."""
+    try:
+        m = json.loads(DADOS.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {"como": [], "dados": []}
+    return {"como": m.get("como") or [], "dados": m.get("dados") or []}
+
+
+def _raizes(t: str) -> list[str]:
+    """As palavras de um texto pela raiz (as 5 primeiras letras, sem acento): "atrasos" e "atraso" se acham."""
+    return [p[:5] for p in re.split(r"[^a-z0-9]+", _sem_acento(t)) if len(p) >= 3 and p not in PALAVRAS_COMUNS]
+
+
+def dados(busca: str, maximo: int = 8) -> list[dict]:
+    """As linhas do mapa que servem às palavras, as que têm mais palavras em comum primeiro."""
+    pedidas = list(dict.fromkeys(_raizes(busca)))
+    if not pedidas:
+        return []
+    achadas = []
+    for i, d in enumerate(mapa_de_dados()["dados"]):
+        tem = set(_raizes(" ".join(str(d.get(k) or "") for k in ("assunto", "parte", "nome", "dono", "codigo"))))
+        n = sum(1 for p in pedidas if p in tem)
+        if n:
+            achadas.append((-n, i, d))
+    if not achadas:
+        return []
+    melhor = -min(a[0] for a in achadas)
+    corte = melhor if len(pedidas) <= 2 else max(1, melhor - 1)
+    return [d for n, _, d in sorted(achadas, key=lambda a: a[:2]) if -n >= corte][:maximo]
+
+
+def catalogo_bc(busca: str, maximo: int = 10) -> list[dict]:
+    """As séries do catálogo de dados abertos do Banco Central que respondem à busca: [{codigo, nome}]. Sem rede, []."""
+    try:
+        r = _json(CATALOGO_BC, 20, q=busca, rows=maximo, fl="name,title")
+    except Exception:  # noqa: BLE001 - sem o catálogo, o mapa e a busca livre continuam
+        return []
+    out = []
+    for x in ((r or {}).get("result") or {}).get("results") or []:
+        m = re.match(r"(\d+)-", x.get("name") or "")
+        if m:
+            out.append({"codigo": m.group(1), "nome": (x.get("title") or "").strip()})
+    return out
+
+
+def nome_sgs(codigo: str) -> str:
+    """O nome que o Banco Central dá a uma série do SGS: o do catálogo (em português) ou, sem ele, o da página da série."""
+    for c in catalogo_bc(codigo, 20):
+        if c["codigo"] == codigo:
+            return c["nome"]
+    try:
+        conteudo, _, _ = verifica_base.baixar(NOME_SGS.format(codigo))
+    except Exception:  # noqa: BLE001
+        return ""
+    m = re.search(rf"Y Axis {codigo} (.+?) Primary", conteudo.decode("utf-8", "replace"))
+    return html.unescape(m.group(1)).strip() if m else ""
+
+
+def numeros_sgs(codigo: str, dias: int = 800) -> list[tuple[str, str]]:
+    """Os números da série nos últimos dias, do mais antigo ao mais novo: [(data, valor)]. Sem rede, []."""
+    hoje = dt.date.today()
+    try:
+        r = _json(SERIE_SGS.format(codigo), 30, formato="json", dataInicial=(hoje - dt.timedelta(days=dias)).strftime("%d/%m/%Y"),
+                  dataFinal=hoje.strftime("%d/%m/%Y"))
+    except Exception:  # noqa: BLE001
+        return []
+    return [(x.get("data") or "", x.get("valor") or "") for x in r if isinstance(x, dict)] if isinstance(r, list) else []
+
+
+def _linha_de_dado(d: dict) -> str:
+    s = f"{d['parte']} | dono: {d['dono']} | {d['codigo']}: {d['nome']}\n  {d['endereco']}"
+    return s + (f"\n  {d['como']}" if d.get("como") else "")
+
+
+def _mostrar_dado(pedido: str) -> int:
+    pedido = pedido.strip()
+    m = re.fullmatch(r"(?:(sgs|sidra)(?:\s+tabela)?\s+)?(\d{1,6})", pedido, re.I)
+    mapa = mapa_de_dados()
+    regras = {c["dono"].split(" (")[0]: c["regra"] for c in mapa["como"]}
+    if m:
+        tipo = (m.group(1) or "sgs").upper()
+        codigo = m.group(2)
+        no_mapa = [d for d in mapa["dados"] if d["codigo"] == f"{tipo} {codigo}" or d["codigo"] == f"{tipo} tabela {codigo}"]
+        for d in no_mapa:
+            print(_linha_de_dado(d))
+        if tipo == "SIDRA":
+            print(regras.get("IBGE", ""))
+            return 0
+        nome = no_mapa[0]["nome"] if no_mapa else nome_sgs(codigo)
+        if not no_mapa:
+            print(f"SGS {codigo}: {nome or '(o Banco Central não deu o nome; confira o código antes de usar)'} | dono: Banco Central")
+        nums = numeros_sgs(codigo)
+        if not nums:
+            print(f"Os números não vieram agora. Endereço: {SERIE_SGS.format(codigo)}?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA")
+            return 1
+        print(f"Últimos números (data: valor), de {SERIE_SGS.format(codigo)}?formato=json&dataInicial=...&dataFinal=...:")
+        print("  " + "; ".join(f"{d}: {v}" for d, v in nums[-13:]))
+        if len(nums) > 13:
+            ultimo = dt.datetime.strptime(nums[-1][0], "%d/%m/%Y").date() if re.fullmatch(r"\d{2}/\d{2}/\d{4}", nums[-1][0]) else None
+            if ultimo:
+                antes = [x for x in nums if dt.datetime.strptime(x[0], "%d/%m/%Y").date() <= ultimo - dt.timedelta(days=365)]
+                if antes:
+                    print(f"  Um ano antes do último: {antes[-1][0]}: {antes[-1][1]}")
+        print("Para o caderno, abra no leitor o endereço com as datas do período (`abre`) e copie o trecho de lá, com o "
+              "nome da série na linha; para outro período, troque as datas.")
+        return 0
+    achadas = dados(pedido)
+    if achadas:
+        print("No mapa conferido (cada linha abriu e teve o nome lido na página do dono):")
+        for d in achadas:
+            print(_linha_de_dado(d))
+    no_bc = catalogo_bc(pedido)
+    if no_bc:
+        print("No catálogo do Banco Central (o nome é o do dono; confira com `dado CODIGO` antes de usar):")
+        for c in no_bc:
+            print(f"- SGS {c['codigo']}: {c['nome']}")
+    if not achadas and not no_bc:
+        print("Nada no mapa nem no catálogo do Banco Central com essas palavras. Tente as palavras que o dono usa "
+              "(inadimplência, concessões, saldo, taxa média de juros, produção, volume) ou a busca livre.")
+    for dono in sorted({d["dono"].split(" (")[0] for d in achadas} | ({"Banco Central"} if no_bc else set())):
+        if dono in regras:
+            print(f"Como usar os dados do {dono}: {regras[dono]}")
+    return 0
 
 
 # ------------------------------------------------------------------ os documentos do dia, antes da pesquisa
@@ -1252,7 +1405,11 @@ def main() -> int:
     a2.add_argument("--ate")
     a3 = sub.add_parser("onde")
     a3.add_argument("assunto", nargs="*")
+    a4 = sub.add_parser("dado")
+    a4.add_argument("busca", nargs="+")
     a = ap.parse_args()
+    if a.cmd == "dado":
+        return _mostrar_dado(" ".join(a.busca))
     if a.cmd == "ato":
         _mostrar_documentos(ato(" ".join(a.referencia), a.ate))
         return 0

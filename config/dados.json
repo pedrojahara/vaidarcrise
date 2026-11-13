@@ -1,0 +1,801 @@
+{
+ "sobre": "O mapa dos dados de quem mede, conferido: cada linha abriu e teve o nome lido na página do dono. O comando `.venv/bin/python src/fontes.py dado PALAVRAS` procura aqui e no catálogo do Banco Central; `dado CODIGO` mostra o nome e os últimos números da série.",
+ "como": [
+  {
+   "dono": "Banco Central (séries do SGS)",
+   "regra": "Os números de qualquer série saem de https://api.bcb.gov.br/dados/serie/bcdata.sgs.CODIGO/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA (o endereço com /ultimos/N às vezes volta vazio: use o das datas). Para achar a série que mede uma parte, procure no catálogo: https://dadosabertos.bcb.gov.br/api/3/action/package_search?q=PALAVRAS&rows=20&fl=name,title (o nome começa pelo código; as palavras vão como o Banco Central escreve: inadimplência, concessões, saldo, taxa média de juros, recursos livres ou direcionados, pessoas físicas ou jurídicas, crédito rural). O nome de qualquer código, para conferir antes de usar: https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarGraficoPorId&hdOidSeriesSelecionadas=CODIGO. O IC-Br (preço das commodities) não está no catálogo: use os códigos deste mapa."
+  },
+  {
+   "dono": "IBGE (tabelas do SIDRA)",
+   "regra": "Os números saem de https://apisidra.ibge.gov.br/values/t/TABELA/n1/all/v/VARIAVEL/p/PERIODOS/cCLASSIFICACAO/CATEGORIAS; PERIODOS é last%2013 (os 13 últimos), um período (202609) ou um intervalo (202509-202609). n1/all é o Brasil; n3/all dá cada estado. Para ver as categorias de uma classificação com o nome, peça cCLASSIFICACAO/all com p/last%201: a primeira linha da resposta traz o nome de cada coluna. As páginas sidra.ibge.gov.br e www.ibge.gov.br barram robô; o texto de cada divulgação está no servidor de arquivos (fontes.py onde ibge)."
+  },
+  {
+   "dono": "Conab e Cepea",
+   "regra": "Veja as duas linhas de Agro: a planilha da Conab abre como texto no leitor; o Cepea mostra só os últimos dias."
+  },
+  {
+   "dono": "Comércio exterior",
+   "regra": "A consulta do Comex Stat não abre no leitor. O saldo da balança e as contas externas estão no Banco Central (linhas de Câmbio e setor externo); o preço do que o país vende ao exterior, no IC-Br."
+  }
+ ],
+ "dados": [
+  {
+   "assunto": "Juro e crédito",
+   "parte": "O juro básico do dia (Selic, ao ano)",
+   "dono": "Banco Central",
+   "codigo": "SGS 1178",
+   "nome": "Taxa de juros - Selic anualizada base 252",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1178/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Juro médio dos empréstimos novos: todos",
+   "dono": "Banco Central",
+   "codigo": "SGS 20714",
+   "nome": "Taxa média de juros das operações de crédito - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20714/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Juro médio dos empréstimos novos: pessoas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20716",
+   "nome": "Taxa média de juros das operações de crédito - Pessoas físicas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20716/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Juro médio dos empréstimos novos: empresas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20715",
+   "nome": "Taxa média de juros das operações de crédito - Pessoas jurídicas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20715/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Juro médio com juro livre: pessoas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20740",
+   "nome": "Taxa média de juros das operações de crédito com recursos livres - Pessoas físicas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20740/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Juro médio com juro livre: empresas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20718",
+   "nome": "Taxa média de juros das operações de crédito com recursos livres - Pessoas jurídicas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20718/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Juro do capital de giro das empresas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20725",
+   "nome": "Taxa média de juros das operações de crédito com recursos livres - Pessoas jurídicas - Capital de giro total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20725/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Juro do crédito rural das pessoas, a juro de mercado",
+   "dono": "Banco Central",
+   "codigo": "SGS 20769",
+   "nome": "Taxa média de juros das operações de crédito com recursos direcionados - Pessoas físicas - Crédito rural com taxas de mercado",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20769/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Juro do crédito rural das empresas, a juro de mercado",
+   "dono": "Banco Central",
+   "codigo": "SGS 20758",
+   "nome": "Taxa média de juros das operações de crédito com recursos direcionados - Pessoas jurídicas - Crédito rural com taxas de mercado",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20758/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Juro do crédito rural das empresas, a juro tabelado",
+   "dono": "Banco Central",
+   "codigo": "SGS 20759",
+   "nome": "Taxa média de juros das operações de crédito com recursos direcionados - Pessoas jurídicas - Crédito rural com taxas reguladas",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20759/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Spread dos empréstimos novos: todos",
+   "dono": "Banco Central",
+   "codigo": "SGS 20783",
+   "nome": "Spread médio das operações de crédito - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20783/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Spread com juro livre: pessoas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20809",
+   "nome": "Spread médio das operações de crédito com recursos livres - Pessoas físicas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20809/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Spread com juro livre: empresas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20787",
+   "nome": "Spread médio das operações de crédito com recursos livres - Pessoas jurídicas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20787/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Atraso de mais de 90 dias: todo o crédito",
+   "dono": "Banco Central",
+   "codigo": "SGS 21082",
+   "nome": "Inadimplência da carteira de crédito - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21082/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Atraso de mais de 90 dias: pessoas",
+   "dono": "Banco Central",
+   "codigo": "SGS 21084",
+   "nome": "Inadimplência da carteira de crédito - Pessoas físicas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21084/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Atraso de mais de 90 dias com juro livre: pessoas",
+   "dono": "Banco Central",
+   "codigo": "SGS 21112",
+   "nome": "Inadimplência da carteira de crédito com recursos livres - Pessoas físicas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21112/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Atraso de mais de 90 dias com juro livre: empresas",
+   "dono": "Banco Central",
+   "codigo": "SGS 21086",
+   "nome": "Inadimplência da carteira de crédito com recursos livres - Pessoas jurídicas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21086/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Atraso no capital de giro das empresas",
+   "dono": "Banco Central",
+   "codigo": "SGS 21093",
+   "nome": "Inadimplência da carteira de crédito com recursos livres - Pessoas jurídicas - Capital de giro total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21093/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Atraso no cartão de crédito das pessoas",
+   "dono": "Banco Central",
+   "codigo": "SGS 21129",
+   "nome": "Inadimplência da carteira de crédito com recursos livres - Pessoas físicas - Cartão de crédito total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21129/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Atraso no financiamento da casa das pessoas",
+   "dono": "Banco Central",
+   "codigo": "SGS 21151",
+   "nome": "Inadimplência da carteira de crédito com recursos direcionados - Pessoas físicas - Financiamento imobiliário total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21151/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Atraso no crédito rural das pessoas: total",
+   "dono": "Banco Central",
+   "codigo": "SGS 21148",
+   "nome": "Inadimplência da carteira de crédito com recursos direcionados - Pessoas físicas - Crédito rural total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21148/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Atraso no crédito rural das pessoas, a juro de mercado",
+   "dono": "Banco Central",
+   "codigo": "SGS 21146",
+   "nome": "Inadimplência da carteira de crédito com recursos direcionados - Pessoas físicas - Crédito rural com taxas de mercado",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21146/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Atraso no crédito rural das pessoas, a juro tabelado",
+   "dono": "Banco Central",
+   "codigo": "SGS 21147",
+   "nome": "Inadimplência da carteira de crédito com recursos direcionados - Pessoas físicas - Crédito rural com taxas reguladas",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21147/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Atraso no crédito rural das empresas: total",
+   "dono": "Banco Central",
+   "codigo": "SGS 21136",
+   "nome": "Inadimplência da carteira de crédito com recursos direcionados - Pessoas jurídicas - Crédito rural total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21136/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Atraso no crédito rural das empresas, a juro de mercado",
+   "dono": "Banco Central",
+   "codigo": "SGS 21134",
+   "nome": "Inadimplência da carteira de crédito com recursos direcionados - Pessoas jurídicas - Crédito rural com taxas de mercado",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21134/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Atraso no crédito rural das empresas, a juro tabelado",
+   "dono": "Banco Central",
+   "codigo": "SGS 21135",
+   "nome": "Inadimplência da carteira de crédito com recursos direcionados - Pessoas jurídicas - Crédito rural com taxas reguladas",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21135/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Saldo do crédito: todo",
+   "dono": "Banco Central",
+   "codigo": "SGS 20539",
+   "nome": "Saldo da carteira de crédito - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20539/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Saldo do crédito: pessoas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20541",
+   "nome": "Saldo da carteira de crédito - Pessoas físicas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20541/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Saldo do crédito: empresas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20540",
+   "nome": "Saldo da carteira de crédito - Pessoas jurídicas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20540/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Saldo do crédito com juro livre",
+   "dono": "Banco Central",
+   "codigo": "SGS 20542",
+   "nome": "Saldo da carteira de crédito com recursos livres - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20542/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Saldo do crédito direcionado (juro e destino definidos em lei)",
+   "dono": "Banco Central",
+   "codigo": "SGS 20593",
+   "nome": "Saldo da carteira de crédito com recursos direcionados - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20593/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Saldo do crédito rural das pessoas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20609",
+   "nome": "Saldo da carteira de crédito com recursos direcionados - Pessoas físicas - Crédito rural total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20609/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Saldo do crédito rural das empresas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20597",
+   "nome": "Saldo da carteira de crédito com recursos direcionados - Pessoas jurídicas - Crédito rural total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20597/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Saldo do crédito rural das pessoas, a juro de mercado",
+   "dono": "Banco Central",
+   "codigo": "SGS 20607",
+   "nome": "Saldo da carteira de crédito com recursos direcionados - Pessoas físicas - Crédito rural com taxas de mercado",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20607/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Saldo do crédito rural das pessoas, a juro tabelado",
+   "dono": "Banco Central",
+   "codigo": "SGS 20608",
+   "nome": "Saldo da carteira de crédito com recursos direcionados - Pessoas físicas - Crédito rural com taxas reguladas",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20608/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Empréstimos novos no mês (concessões): todos",
+   "dono": "Banco Central",
+   "codigo": "SGS 20631",
+   "nome": "Concessões de crédito - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20631/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Empréstimos novos no mês: pessoas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20633",
+   "nome": "Concessões de crédito - Pessoas físicas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20633/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Empréstimos novos no mês: empresas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20632",
+   "nome": "Concessões de crédito - Pessoas jurídicas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20632/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Empréstimos novos no mês, sem o efeito da época do ano: todos",
+   "dono": "Banco Central",
+   "codigo": "SGS 24439",
+   "nome": "Concessões de crédito sazonalmente ajustadas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.24439/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Crédito rural novo no mês: pessoas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20701",
+   "nome": "Concessões de crédito com recursos direcionados - Pessoas físicas - Crédito rural total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20701/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Crédito rural novo no mês: empresas",
+   "dono": "Banco Central",
+   "codigo": "SGS 20689",
+   "nome": "Concessões de crédito com recursos direcionados - Pessoas jurídicas - Crédito rural total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20689/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Parte da renda das famílias que paga dívidas (juros e amortização)",
+   "dono": "Banco Central",
+   "codigo": "SGS 29034",
+   "nome": "Comprometimento de renda das famílias com o serviço da dívida com o Sistema Financeiro Nacional - Com ajuste sazonal (RNDBF)",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.29034/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Parte da renda das famílias que paga juros",
+   "dono": "Banco Central",
+   "codigo": "SGS 29033",
+   "nome": "Comprometimento de renda das famílias com juros da dívida com o Sistema Financeiro Nacional - Com ajuste sazonal (RNDBF)",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.29033/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Parte da renda das famílias que paga amortização",
+   "dono": "Banco Central",
+   "codigo": "SGS 29036",
+   "nome": "Comprometimento de renda das famílias com amortização da dívida com o Sistema Financeiro Nacional - Com ajuste sazonal (RNDBF)",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.29036/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Dívida das famílias com os bancos, em relação à renda de 12 meses",
+   "dono": "Banco Central",
+   "codigo": "SGS 29037",
+   "nome": "Endividamento das famílias com o Sistema Financeiro Nacional em relação à renda acumulada dos últimos doze meses (RNDBF)",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.29037/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Dívida das famílias sem o financiamento da casa, em relação à renda",
+   "dono": "Banco Central",
+   "codigo": "SGS 29038",
+   "nome": "Endividamento das famílias com o Sistema Financeiro Nacional exceto crédito habitacional em relação à renda acumulada dos últimos 12 meses (RNDBF)",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.29038/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Provisões dos bancos para calote, em relação à carteira",
+   "dono": "Banco Central",
+   "codigo": "SGS 13645",
+   "nome": "Percentual do total de provisões em relação à carteira de crédito do Sistema Financeiro Nacional",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.13645/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "O juro básico (meta da Selic)",
+   "dono": "Banco Central",
+   "codigo": "SGS 432",
+   "nome": "Taxa de juros - Meta Selic definida pelo Copom",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Juro do crédito rural das pessoas, a juro tabelado",
+   "dono": "Banco Central",
+   "codigo": "SGS 20770",
+   "nome": "Taxa média de juros das operações de crédito com recursos direcionados - Pessoas físicas - Crédito rural com taxas reguladas",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.20770/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Atraso de mais de 90 dias: empresas",
+   "dono": "Banco Central",
+   "codigo": "SGS 21083",
+   "nome": "Inadimplência da carteira de crédito - Pessoas jurídicas - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21083/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Agro",
+   "parte": "Produção das lavouras na safra em curso (levantamento mensal de safras), por produto; por estado com n3/all",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 6588",
+   "nome": "Produção (1.15 Milho (1ª Safra); 1.16 Milho (2ª Safra); 1.17 Soja)",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/6588/n1/all/v/35/p/PERIODOS/c48/39441,39442,39443"
+  },
+  {
+   "assunto": "Agro",
+   "parte": "Produção das lavouras no ano fechado (produção agrícola municipal), por produto",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 5457",
+   "nome": "Quantidade produzida (Soja (em grão))",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/5457/n1/all/v/214/p/PERIODOS/c782/40124"
+  },
+  {
+   "assunto": "Agro",
+   "parte": "Rebanho de bois (pesquisa da pecuária municipal)",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 3939",
+   "nome": "Efetivo dos rebanhos (Bovino)",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/3939/n1/all/v/105/p/PERIODOS/c79/2670"
+  },
+  {
+   "assunto": "Agro",
+   "parte": "Bois abatidos no trimestre",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 1092",
+   "nome": "Animais abatidos (Total do trimestre / Total / Total)",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/1092/n1/all/v/284/p/PERIODOS/c12716/115236/c18/992/c12529/118225"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "Inflação oficial (IPCA) no mês",
+   "dono": "Banco Central",
+   "codigo": "SGS 433",
+   "nome": "Índice nacional de preços ao consumidor-amplo (IPCA) - variação mensal",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "Inflação oficial (IPCA) em 12 meses",
+   "dono": "Banco Central",
+   "codigo": "SGS 13522",
+   "nome": "Índice nacional de preços ao consumidor-amplo (IPCA) - em 12 meses",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.13522/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "IPCA dos preços livres",
+   "dono": "Banco Central",
+   "codigo": "SGS 11428",
+   "nome": "Índice nacional de preços ao consumidor - Amplo (IPCA) - Itens livres",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11428/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "IPCA dos preços monitorados (energia, combustível, tarifas)",
+   "dono": "Banco Central",
+   "codigo": "SGS 4449",
+   "nome": "Índice nacional de preços ao consumidor-Amplo (IPCA) - Preços monitorados - Total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.4449/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "IPCA dos serviços",
+   "dono": "Banco Central",
+   "codigo": "SGS 10844",
+   "nome": "Índice de Preços ao Consumidor-Amplo (IPCA) - Serviços",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.10844/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "IPCA dos bens que se compram e vendem com o exterior (comercializáveis)",
+   "dono": "Banco Central",
+   "codigo": "SGS 4447",
+   "nome": "Índice nacional de preços ao consumidor-Amplo (IPCA) - Comercializáveis",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.4447/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "IPCA dos bens e serviços que não se compram de fora (não comercializáveis)",
+   "dono": "Banco Central",
+   "codigo": "SGS 4448",
+   "nome": "Índice de Preços ao Consumidor-Amplo (IPCA) - Não comercializáveis",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.4448/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "Núcleo do IPCA: médias aparadas com suavização",
+   "dono": "Banco Central",
+   "codigo": "SGS 4466",
+   "nome": "Índice nacional de preços ao consumidor-Amplo (IPCA) - Núcleo médias aparadas com suavização",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.4466/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "Núcleo do IPCA: sem alimentos e preços monitorados (EX0)",
+   "dono": "Banco Central",
+   "codigo": "SGS 11427",
+   "nome": "Índice nacional de preços ao consumidor - Amplo (IPCA) - Núcleo por exclusão - Sem monitorados e alimentos no domicílio",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11427/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "Preço das commodities em reais (IC-Br)",
+   "dono": "Banco Central",
+   "codigo": "SGS 27574",
+   "nome": "Índice de Commodities - Brasil (IC-Br), em reais",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.27574/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "Preço das commodities agropecuárias em reais (IC-Br agro)",
+   "dono": "Banco Central",
+   "codigo": "SGS 27575",
+   "nome": "Índice de Commodities - Brasil (IC-Br) - Agropecuária, em reais",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.27575/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "Preço das commodities metálicas em reais (IC-Br metal)",
+   "dono": "Banco Central",
+   "codigo": "SGS 27576",
+   "nome": "Índice de Commodities - Brasil (IC-Br) - Metal, em reais",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.27576/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "Preço das commodities de energia em reais (IC-Br energia)",
+   "dono": "Banco Central",
+   "codigo": "SGS 27577",
+   "nome": "Índice de Commodities - Brasil (IC-Br) - Energia, em reais",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.27577/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "Preço das commodities em dólar (IC-Br)",
+   "dono": "Banco Central",
+   "codigo": "SGS 29042",
+   "nome": "Índice de Commodities - Brasil (IC-Br), em dólares",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.29042/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Preços",
+   "parte": "Inflação de cada grupo do IPCA no mês (alimentação, habitação, transportes...)",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 7060",
+   "nome": "IPCA - Variação mensal (1.Alimentação e bebidas; 2.Habitação; 3.Artigos de residência; 4.Vestuário; 5.Transportes; 6.Saúde e cuidados pessoais; 7.Despesas pessoais; 8.Educação; 9.Comunicação; Índice geral)",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/7060/n1/all/v/63/p/PERIODOS/c315/7169,7170,7445,7486,7558,7625,7660,7712,7766,7786"
+  },
+  {
+   "assunto": "Atividade",
+   "parte": "Prévia do PIB do Banco Central (IBC-Br), sem o efeito da época do ano",
+   "dono": "Banco Central",
+   "codigo": "SGS 24364",
+   "nome": "Índice de Atividade Econômica do Banco Central (IBC-Br) - com ajuste sazonal",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.24364/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Atividade",
+   "parte": "IBC-Br da agropecuária, sem o efeito da época do ano",
+   "dono": "Banco Central",
+   "codigo": "SGS 29602",
+   "nome": "Índice de Atividade Econômica do Banco Central (IBC-Br) Agropecuária - com ajuste sazonal",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.29602/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Atividade",
+   "parte": "IBC-Br da indústria, sem o efeito da época do ano",
+   "dono": "Banco Central",
+   "codigo": "SGS 29604",
+   "nome": "Índice de Atividade Econômica do Banco Central (IBC-Br) Indústria - com ajuste sazonal",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.29604/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Atividade",
+   "parte": "IBC-Br dos serviços, sem o efeito da época do ano",
+   "dono": "Banco Central",
+   "codigo": "SGS 29606",
+   "nome": "Índice de Atividade Econômica do Banco Central (IBC-Br) Serviços - com ajuste sazonal",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.29606/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Atividade",
+   "parte": "Produção da indústria por grande categoria (bens de capital, intermediários, duráveis, semi e não duráveis), índice sem o efeito da época do ano",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 8887",
+   "nome": "PIMPF - Número-índice com ajuste sazonal (2022=100) (1 Bens de capital; 110 Bens de capital, exceto equipamentos de transporte industrial; 120 Equipamentos de transporte industrial; 2 Bens intermediários; 210 Alimentos e bebidas básicos, destinados principalmente à indústria; 220 Alimentos e bebidas elaborados, destinados principalmente à indústria; 2)",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/8887/n1/all/v/12607/p/PERIODOS/c543/all"
+  },
+  {
+   "assunto": "Atividade",
+   "parte": "Produção da indústria por ramo (alimentos, veículos, extrativa...), variação no mês sem o efeito da época do ano",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 8888",
+   "nome": "PIMPF - Variação mês/mês imediatamente anterior, com ajuste sazonal (M/M-1) (1 Indústria geral; 2 Indústrias extrativas; 3 Indústrias de transformação; 3.10 Fabricação de produtos alimentícios; 3.11 Fabricação de bebidas; 3.12 Fabricação de produtos do fumo; 3.13 Fabricação de produtos têxteis; 3.14 Confecção de artigos do vestuário e acessórios; 3.15 Preparação de couros e )",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/8888/n1/all/v/11601/p/PERIODOS/c544/all"
+  },
+  {
+   "assunto": "Atividade",
+   "parte": "Vendas do varejo (volume), índice sem o efeito da época do ano",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 8880",
+   "nome": "PMC - Número-índice com ajuste sazonal (2022=100) (Índice de volume de vendas no comércio varejista)",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/8880/n1/all/v/7170/p/PERIODOS/c11046/56734"
+  },
+  {
+   "assunto": "Atividade",
+   "parte": "Vendas do varejo por atividade (combustível, supermercado, móveis e eletrodomésticos...), volume contra o mesmo mês do ano anterior",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 8882",
+   "nome": "PMC - Variação mês/mesmo mês do ano anterior (M/M-12) (Índice de volume de vendas no comércio varejista / Artigos farmacêuticos, médicos, ortopédicos, de perfumaria e cosméticos; Índice de volume de vendas no comércio varejista / Combustíveis e lubrificantes; Índice de volume de vendas no comércio varejista / Eletrodomésticos; Índice de volume de vendas)",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/8882/n1/all/v/11709/p/PERIODOS/c11046/56734/c85/all"
+  },
+  {
+   "assunto": "Atividade",
+   "parte": "Volume dos serviços, índice sem o efeito da época do ano",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 5906",
+   "nome": "PMS - Número-índice com ajuste sazonal (2022=100) (Índice de volume de serviços)",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/5906/n1/all/v/7168/p/PERIODOS/c11046/56726"
+  },
+  {
+   "assunto": "Atividade",
+   "parte": "PIB por setor, variação contra o trimestre anterior",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 5932",
+   "nome": "Taxa trimestre contra trimestre imediatamente anterior (Administração, saúde e educação públicas e seguridade social; Agropecuária - total; Atividades financeiras, de seguros e serviços relacionados; Atividades imobiliárias; Comércio; Construção; Despesa de consumo da administração pública; Despesa de consumo das famílias; Eletricidade e gás, água, esgot)",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/5932/n1/all/v/6564/p/PERIODOS/c11255/all"
+  },
+  {
+   "assunto": "Atividade",
+   "parte": "PIB, índice de volume sem o efeito da época do ano",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 1621",
+   "nome": "Série encadeada do índice de volume trimestral com ajuste sazonal (Base: média 1995 = 100) (PIB a preços de mercado)",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/1621/n1/all/v/584/p/PERIODOS/c11255/90707"
+  },
+  {
+   "assunto": "Emprego e renda",
+   "parte": "Desemprego (PNAD Contínua, trimestre móvel)",
+   "dono": "Banco Central",
+   "codigo": "SGS 24369",
+   "nome": "Taxa de desocupação - PNAD Contínua",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.24369/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Emprego e renda",
+   "parte": "Desemprego (PNAD Contínua, trimestre móvel), pelo IBGE",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 6381",
+   "nome": "Taxa de desocupação, na semana de referência, das pessoas de 14 anos ou mais de idade",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/6381/n1/all/v/4099/p/PERIODOS"
+  },
+  {
+   "assunto": "Emprego e renda",
+   "parte": "Renda média do trabalho, descontada a inflação (PNAD Contínua)",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 6390",
+   "nome": "Rendimento médio mensal real das pessoas de 14 anos ou mais de idade ocupadas na semana de referência com rendimento de trabalho, habitualmente recebido em todos os trabalhos",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/6390/n1/all/v/5933/p/PERIODOS"
+  },
+  {
+   "assunto": "Câmbio e setor externo",
+   "parte": "Dólar do dia (Ptax de venda)",
+   "dono": "Banco Central",
+   "codigo": "SGS 1",
+   "nome": "Taxa de câmbio - Livre - Dólar americano (venda) - diário",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Câmbio e setor externo",
+   "parte": "Dólar, média do mês (Ptax de venda)",
+   "dono": "Banco Central",
+   "codigo": "SGS 3698",
+   "nome": "Taxa de câmbio - Livre - Dólar americano (venda) - média de período - mensal",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.3698/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Câmbio e setor externo",
+   "parte": "Saldo da balança de bens no mês",
+   "dono": "Banco Central",
+   "codigo": "SGS 22707",
+   "nome": "Balança comercial - Balanço de Pagamentos - mensal - saldo",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.22707/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Câmbio e setor externo",
+   "parte": "Saldo das contas externas (transações correntes) no mês",
+   "dono": "Banco Central",
+   "codigo": "SGS 22701",
+   "nome": "Transações correntes - mensal - saldo",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.22701/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Câmbio e setor externo",
+   "parte": "Investimento direto de fora no país, no mês",
+   "dono": "Banco Central",
+   "codigo": "SGS 22885",
+   "nome": "Investimentos diretos no país - IDP - mensal - líquido",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.22885/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Câmbio e setor externo",
+   "parte": "Reservas internacionais",
+   "dono": "Banco Central",
+   "codigo": "SGS 3546",
+   "nome": "Reservas internacionais - Total - mensal (US$ milhões)",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.3546/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Contas do governo",
+   "parte": "Dívida bruta do governo, em % do PIB",
+   "dono": "Banco Central",
+   "codigo": "SGS 13762",
+   "nome": "Dívida bruta do governo geral (% PIB) - Metodologia utilizada a partir de 2008",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Contas do governo",
+   "parte": "Dívida líquida do setor público, em % do PIB",
+   "dono": "Banco Central",
+   "codigo": "SGS 4513",
+   "nome": "Dívida Líquida do Setor Público (% PIB) - Total - Setor público consolidado",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.4513/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Contas do governo",
+   "parte": "Resultado sem juros do setor público em 12 meses, em % do PIB",
+   "dono": "Banco Central",
+   "codigo": "SGS 5793",
+   "nome": "NFSP sem desvalorização cambial (% PIB) - Fluxo acumulado em 12 meses - Resultado primário - Total - Setor público consolidado",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.5793/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Contas do governo",
+   "parte": "Juros da dívida do setor público em 12 meses, em % do PIB",
+   "dono": "Banco Central",
+   "codigo": "SGS 5760",
+   "nome": "NFSP sem desvalorização cambial (% PIB) - Fluxo acumulado em 12 meses - Juros nominais - Total - Setor público consolidado",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.5760/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Contas do governo",
+   "parte": "Resultado com os juros (nominal) do setor público em 12 meses, em % do PIB",
+   "dono": "Banco Central",
+   "codigo": "SGS 5727",
+   "nome": "NFSP sem desvalorização cambial (% PIB) - Fluxo acumulado em 12 meses - Resultado nominal - Total - Setor público consolidado",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.5727/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Contas do governo",
+   "parte": "Resultado sem juros do setor público no mês, em R$",
+   "dono": "Banco Central",
+   "codigo": "SGS 4649",
+   "nome": "NFSP sem desvalorização cambial - Fluxo mensal corrente - Resultado primário - Total - Setor público consolidado",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.4649/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Agro",
+   "parte": "Produção, área e produtividade de cada grão na safra em curso e na anterior, por estado (boletim mensal de safras)",
+   "dono": "Conab",
+   "codigo": "boletim da safra de grãos",
+   "nome": "Boletim da safra de grãos (levantamento mensal da Conab)",
+   "endereco": "https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/safras/safra-de-graos/boletim-da-safra-de-graos",
+   "como": "Abra a página com --links --procura \"levantamento\" e entre no levantamento mais recente; nele, --links --procura \"xlsx\" dá a planilha por produto (site_previsao_de_safra-por_produto-MÊS-ANO.xlsx), que o leitor abre como texto, com uma linha por produto e estado e as duas safras lado a lado; o PDF do boletim traz o texto com o porquê de cada número. O site da Conab em gov.br às vezes recusa a conexão: tente de novo."
+  },
+  {
+   "assunto": "Agro",
+   "parte": "Preço da soja, do milho, do boi, do café, do algodão, do trigo, do leite e de outros produtos do agro, no dia",
+   "dono": "Cepea (Esalq/USP)",
+   "codigo": "indicadores do Cepea",
+   "nome": "Indicadores de preços do Cepea",
+   "endereco": "https://www.cepea.org.br/br/indicador/soja.aspx",
+   "como": "Troque soja pelo produto (milho, boi-gordo, cafe, algodao, trigo, leite, frango, suino, acucar, etanol, arroz, feijao). A página mostra os últimos dias; a série longa (o botão de baixar) não abre no leitor. Para comparar com um ano antes, use o IC-Br agro do Banco Central (SGS 27575), que mede o preço do conjunto do agro em reais, ou a busca com o nome do indicador e o mês."
+  }
+ ]
+}
