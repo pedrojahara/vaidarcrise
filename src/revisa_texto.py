@@ -390,10 +390,21 @@ def _numeros(texto: str) -> list[tuple[str, float, int]]:
 PONTO_DECIMAL = re.compile(r"(?<![\d.,])(\d+)\.(\d+)(?![\d.,])")
 
 
+def _em_por_cento(valores: list[tuple[float, int]]) -> set[float]:
+    """A razão que uma conta devolve ("-0,0671" ou "0,9329", com três casas ou mais) dita em por cento: 6,71. O texto
+    diz "caiu 6,7%", e a linha do caderno traz a conta que deu a razão."""
+    out = set()
+    for v, casas in valores:
+        if casas >= 3 and v < 2:
+            out |= {round(v * 100, casas), round(abs(v - 1) * 100, casas)}
+    return out
+
+
 def numeros_fora(textos: list[str], dados: str) -> list[str]:
     """Números e datas do texto que não estão nos dados, com a folga de arredondamento da casa decimal usada."""
-    base = sorted({v for _, v, _ in _numeros(dados + " " + CONSTANTES)}
-                  | {float(f"{a}.{b}") for a, b in PONTO_DECIMAL.findall(_sem_datas(dados))})
+    ponto = [(float(f"{a}.{b}"), len(b)) for a, b in PONTO_DECIMAL.findall(_sem_datas(dados))]
+    virgula = [(v, casas) for _, v, casas in _numeros(dados + " " + CONSTANTES)]
+    base = sorted({v for v, _ in virgula} | {v for v, _ in ponto} | _em_por_cento(virgula + ponto))
     datas = _datas(dados)
     out = []
     for t in textos:

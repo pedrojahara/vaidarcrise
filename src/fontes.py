@@ -955,14 +955,19 @@ MAPA = [
              "números de qualquer tabela: https://apisidra.ibge.gov.br (por exemplo /values/t/1737/n1/all/v/2265/p/last%201 "
              "para o IPCA de 12 meses). Os sites agenciadenoticias.ibge.gov.br, www.ibge.gov.br e sidra.ibge.gov.br barram "
              "robô (erro 403)."},
-    {"id": "agro", "o_que": "Safra, preço e crédito do agro (soja, milho, boi, café; o atraso e o juro do crédito rural)",
-     "dono": "Conab, IBGE, Cepea e Banco Central",
-     "reconhece": r"\bagro|safra|soja|milho|\bboi\b|caf[eé]|algod[aã]o|produtor(es)? rura|cr[eé]dito rural|conab|cepea|lavoura",
+    {"id": "agro", "o_que": "Safra, preço, custo e crédito do agro (soja, milho, boi, café; o custo da lavoura; o atraso e o juro do crédito rural)",
+     "dono": "Conab, IBGE, Cepea, ANP, Banco Mundial e Banco Central",
+     "reconhece": r"\bagro|safra|soja|milho|\bboi\b|caf[eé]|algod[aã]o|produtor(es)? rura|cr[eé]dito rural|conab|cepea|lavoura"
+                  r"|adubo|fertilizante|custo de produ",
      "onde": f"A produção de cada grão na safra em curso e na anterior, por estado: o boletim da Conab (`{FONTES} dado safra`), "
              "com a planilha por produto que o leitor abre como texto, e o levantamento mensal do IBGE (SIDRA 6588). O preço: "
              "o indicador do dia no Cepea (cepea.org.br/br/indicador/soja.aspx, troque o produto) e, para comparar com um "
-             "ano antes, o IC-Br agro do Banco Central (SGS 27575). O atraso, o juro, o saldo e o crédito novo do crédito "
-             f"rural, a juro de mercado e a juro tabelado: `{FONTES} dado crédito rural`."},
+             "ano antes, o IC-Br agro do Banco Central (SGS 27575). O custo da lavoura por hectare (adubo, sementes, "
+             "defensivos, máquinas e diesel, juros, custo total), por município e safra: as séries da Conab "
+             f"(`{FONTES} dado custo da lavoura`), em planilha que o leitor abre como texto; o diesel na bomba, da ANP "
+             f"(`{FONTES} dado diesel`); o adubo no mercado mundial, do Banco Mundial (`{FONTES} dado fertilizantes`). O "
+             "atraso, o juro, o saldo e o crédito novo do crédito rural, a juro de mercado e a juro tabelado: "
+             f"`{FONTES} dado crédito rural`."},
     {"id": "emprego", "o_que": "Emprego com carteira (Caged)", "dono": "Ministério do Trabalho",
      "reconhece": r"caged|emprego formal|vagas com carteira|carteira assinada",
      "onde": "A página do Novo Caged leva ao mês mais recente: "
