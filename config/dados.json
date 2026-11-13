@@ -413,6 +413,46 @@
   },
   {
    "assunto": "Juro e crédito",
+   "parte": "Custo da dívida rural que já existe, das pessoas: total (o juro médio de toda a carteira, e não só do empréstimo novo)",
+   "dono": "Banco Central",
+   "codigo": "SGS 27712",
+   "nome": "Indicador de Custo do Crédito - ICC - Recursos Direcionados - Pessoas físicas - Crédito rural total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.27712/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Custo da dívida rural que já existe, das pessoas, a juro de mercado (o juro médio da carteira, e não só do empréstimo novo)",
+   "dono": "Banco Central",
+   "codigo": "SGS 27710",
+   "nome": "Indicador de Custo do Crédito - ICC - Recursos Direcionados - Pessoas físicas - Crédito rural com taxas de mercado",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.27710/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Custo da dívida rural que já existe, das pessoas, a juro tabelado (o juro médio da carteira, e não só do empréstimo novo)",
+   "dono": "Banco Central",
+   "codigo": "SGS 27711",
+   "nome": "Indicador de Custo do Crédito - ICC - Recursos Direcionados - Pessoas físicas - Crédito rural com taxas reguladas",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.27711/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Custo da dívida rural que já existe, das empresas, a juro de mercado (o juro médio da carteira, e não só do empréstimo novo)",
+   "dono": "Banco Central",
+   "codigo": "SGS 27688",
+   "nome": "Indicador de Custo do Crédito - ICC - Recursos Direcionados - Pessoas jurídicas - Crédito rural com taxas de mercado",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.27688/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Custo da dívida rural que já existe, das empresas, a juro tabelado (o juro médio da carteira, e não só do empréstimo novo)",
+   "dono": "Banco Central",
+   "codigo": "SGS 27689",
+   "nome": "Indicador de Custo do Crédito - ICC - Recursos Direcionados - Pessoas jurídicas - Crédito rural com taxas reguladas",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.27689/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
    "parte": "Atraso de mais de 90 dias: empresas",
    "dono": "Banco Central",
    "codigo": "SGS 21083",
