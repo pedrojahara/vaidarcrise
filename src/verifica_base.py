@@ -152,6 +152,8 @@ def texto_da_pagina(conteudo: bytes, tipo: str) -> str:
                     return ""
     if _e_planilha(conteudo):
         return planilha(conteudo)
+    if conteudo.startswith(_OLE) and _e_xls(conteudo):
+        return planilha_xls(conteudo)
     t = _decodificar(conteudo, tipo)
     if "json" in tipo or t.lstrip()[:1] in ("{", "["):
         try:  # API que devolve a página dentro de um JSON (Banco Central): junta os textos e os números
@@ -339,9 +341,252 @@ def planilha(conteudo: bytes) -> str:
     return "\n\n".join(partes)[:PLANILHA_TEXTO]
 
 
+# A planilha antiga do Excel (.xls, o formato da Conab nas séries de custo de produção) vira texto como a .xlsx: cada
+# aba com o nome dela e cada linha com as células separadas por " | ". O arquivo é um contêiner de "fluxos" (o formato
+# OLE2 do Office), e a planilha fica no fluxo "Workbook", em registros do Excel 97 (BIFF8). Só com a biblioteca padrão.
+_OLE = b"\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1"
+_FIM_DA_CADEIA = 0xFFFFFFFE
+
+
+def _fluxo_xls(conteudo: bytes) -> bytes | None:
+    """O fluxo "Workbook" (ou "Book") do contêiner OLE2; None quando não é planilha antiga (o .doc também é OLE2)."""
+    import struct
+    if not conteudo.startswith(_OLE) or len(conteudo) < 512 or len(conteudo) > PLANILHA_MAXIMA:
+        return None
+    try:
+        setor = 1 << struct.unpack_from("<H", conteudo, 0x1E)[0]
+        mini = 1 << struct.unpack_from("<H", conteudo, 0x20)[0]
+        if setor not in (512, 4096) or mini != 64:
+            return None
+        (n_fat, dir1, corte, mfat1, n_mfat, difat1, n_difat) = struct.unpack_from("<I I 4x I I I I I", conteudo, 0x2C)
+        n_setores = (len(conteudo) - setor) // setor
+        por_setor = setor // 4
+
+        def bloco(i: int) -> bytes:
+            if i >= n_setores:
+                raise ValueError("setor fora do arquivo")
+            return conteudo[(i + 1) * setor:(i + 2) * setor]
+
+        difat = list(struct.unpack_from("<109I", conteudo, 0x4C))
+        s, visto = difat1, 0
+        while s < _FIM_DA_CADEIA and visto < min(n_difat, n_setores):
+            b = bloco(s)
+            difat += struct.unpack_from(f"<{por_setor - 1}I", b)
+            s = struct.unpack_from("<I", b, setor - 4)[0]
+            visto += 1
+        fat: list[int] = []
+        for f in difat[:n_fat]:
+            fat += struct.unpack(f"<{por_setor}I", bloco(f))
+
+        def cadeia(inicio: int, tabela: list[int]) -> list[int]:
+            out, i = [], inicio
+            while i < _FIM_DA_CADEIA:
+                if i >= len(tabela) or len(out) > len(tabela):
+                    raise ValueError("cadeia quebrada")
+                out.append(i)
+                i = tabela[i]
+            return out
+
+        diretorio = b"".join(bloco(i) for i in cadeia(dir1, fat))
+        entradas = []
+        for k in range(0, len(diretorio) - 127, 128):
+            e = diretorio[k:k + 128]
+            n = struct.unpack_from("<H", e, 0x40)[0]
+            nome = e[:max(0, n - 2)].decode("utf-16-le", "replace")
+            entradas.append((nome, e[0x42], struct.unpack_from("<I", e, 0x74)[0], struct.unpack_from("<I", e, 0x78)[0]))
+        raiz = next((x for x in entradas if x[1] == 5), None)
+        alvo = next((x for x in entradas if x[1] == 2 and x[0] in ("Workbook", "Book")), None)
+        if not raiz or not alvo:
+            return None
+        _, _, inicio, tamanho = alvo
+        if tamanho >= corte:
+            return b"".join(bloco(i) for i in cadeia(inicio, fat))[:tamanho]
+        # O fluxo pequeno mora no "mini fluxo" da raiz, em pedaços de 64 bytes com a tabela própria.
+        mfat: list[int] = []
+        if n_mfat:
+            for i in cadeia(mfat1, fat):
+                mfat += struct.unpack(f"<{por_setor}I", bloco(i))
+        mini_fluxo = b"".join(bloco(i) for i in cadeia(raiz[2], fat))
+        return b"".join(mini_fluxo[i * mini:(i + 1) * mini] for i in cadeia(inicio, mfat))[:tamanho]
+    except (ValueError, struct.error, IndexError):
+        return None
+
+
+def _e_xls(conteudo: bytes) -> bool:
+    return _fluxo_xls(conteudo) is not None
+
+
+def _rk(v: int) -> float:
+    import struct
+    x = float(v >> 2 if v < (1 << 31) else (v >> 2) - (1 << 30)) if v & 2 else \
+        struct.unpack("<d", struct.pack("<Q", (v & 0xFFFFFFFC) << 32))[0]
+    return x / 100 if v & 1 else x
+
+
+def _numero_xls(x: float) -> str:
+    return str(int(x)) if x == int(x) and abs(x) < 1e15 else format(x, ".12g")
+
+
+def _textos_sst(pedacos: list[bytes]) -> list[str]:
+    """As palavras da planilha (a tabela SST), que podem continuar nos registros seguintes (CONTINUE). Quando a
+    continuação corta as letras de uma palavra, ela começa com um byte que diz se as letras seguintes têm 1 ou 2 bytes."""
+    import struct
+    out: list[str] = []
+    if not pedacos or len(pedacos[0]) < 8:
+        return out
+    # Cada palavra ocupa ao menos 3 bytes: o total que o arquivo declara não passa do que cabe nele.
+    total = min(struct.unpack_from("<I", pedacos[0], 4)[0], sum(len(x) for x in pedacos) // 3 + 1)
+    try:
+        _sst(pedacos, total, out)
+    except (struct.error, IndexError):
+        pass
+    return out
+
+
+def _sst(pedacos: list[bytes], total: int, out: list[str]) -> None:
+    import struct
+    k, dados, pos = 0, pedacos[0], 8
+    for _ in range(total):
+        if pos >= len(dados):
+            k += 1
+            if k >= len(pedacos):
+                break
+            dados, pos = pedacos[k], 0
+        n, op = struct.unpack_from("<HB", dados, pos)
+        pos += 3
+        runs = fon = 0
+        if op & 0x08:
+            runs = struct.unpack_from("<H", dados, pos)[0]
+            pos += 2
+        if op & 0x04:
+            fon = max(0, struct.unpack_from("<i", dados, pos)[0])
+            pos += 4
+        partes, tem = [], 0
+        while True:
+            falta = n - tem
+            if op & 1:
+                pega = min((len(dados) - pos) // 2, falta)
+                partes.append(dados[pos:pos + 2 * pega].decode("utf-16-le", "replace"))
+                pos += 2 * pega
+            else:
+                pega = min(len(dados) - pos, falta)
+                partes.append(dados[pos:pos + pega].decode("latin-1"))
+                pos += pega
+            tem += pega
+            if tem >= n:
+                break
+            k += 1
+            if k >= len(pedacos):
+                break
+            dados, op, pos = pedacos[k], pedacos[k][0], 1
+        pos += 4 * runs + fon
+        while pos > len(dados) and k + 1 < len(pedacos):
+            pos -= len(dados)
+            k += 1
+            dados = pedacos[k]
+        out.append("".join(partes))
+
+
+def planilha_xls(conteudo: bytes) -> str:
+    """A planilha .xls como texto, no mesmo jeito da .xlsx; vazio se o arquivo não é planilha que o leitor entende."""
+    import struct
+    wb = _fluxo_xls(conteudo)
+    if not wb:
+        return ""
+    abas: dict[int, str] = {}
+    sst: list[str] = []
+    pedacos_sst: list[bytes] | None = None
+    partes, total = [], 0
+    nome, prof, celulas = None, 0, {}
+    texto_da_formula = None
+    pos = 0
+
+    def fecha():
+        nonlocal total
+        if nome is None or not celulas:
+            return
+        linhas = [f"[aba {nome}]"]
+        for r in sorted(celulas):
+            cels = celulas[r]
+            if any(v.strip() for v in cels.values()):
+                linhas.append(" | ".join(cels.get(i, "") for i in range(max(cels) + 1)).rstrip(" |"))
+        bloco = "\n".join(linhas)
+        partes.append(bloco)
+        total += len(bloco)
+
+    def poe(r: int, c: int, v: str):
+        if c <= 500:
+            celulas.setdefault(r, {})[c] = " ".join(v.split())
+
+    try:
+        while pos + 4 <= len(wb) and total <= PLANILHA_TEXTO:
+            tipo, n = struct.unpack_from("<HH", wb, pos)
+            inicio = pos
+            d = wb[pos + 4:pos + 4 + n]
+            pos += 4 + n
+            if tipo == 0x003C and pedacos_sst is not None:  # CONTINUE da tabela de palavras
+                pedacos_sst.append(d)
+                continue
+            if pedacos_sst is not None:
+                sst, pedacos_sst = _textos_sst(pedacos_sst), None
+            if tipo == 0x0809:  # BOF
+                prof += 1
+                if prof == 1 and inicio in abas:
+                    nome, celulas = abas[inicio], {}
+            elif tipo == 0x000A:  # EOF
+                if prof == 1 and nome is not None:
+                    fecha()
+                    nome, celulas = None, {}
+                prof = max(0, prof - 1)
+            elif tipo == 0x0085 and len(d) >= 8:  # BOUNDSHEET: onde começa cada aba e o nome dela
+                desloc, _, tipo_aba, cch, op = struct.unpack_from("<IBBBB", d, 0)
+                if tipo_aba == 0:
+                    bruto = d[8:8 + cch * (2 if op & 1 else 1)]
+                    abas[desloc] = bruto.decode("utf-16-le" if op & 1 else "latin-1", "replace")
+            elif tipo == 0x00FC:  # SST
+                pedacos_sst = [d]
+            elif nome is None or prof != 1:
+                continue
+            elif tipo == 0x00FD and len(d) >= 10:  # LABELSST
+                r, c, _, i = struct.unpack_from("<HHHI", d)
+                if i < len(sst):
+                    poe(r, c, sst[i])
+            elif tipo == 0x0203 and len(d) >= 14:  # NUMBER
+                r, c, _, x = struct.unpack_from("<HHHd", d)
+                poe(r, c, _numero_xls(x))
+            elif tipo == 0x027E and len(d) >= 10:  # RK
+                r, c, _, v = struct.unpack_from("<HHHI", d)
+                poe(r, c, _numero_xls(_rk(v)))
+            elif tipo == 0x00BD and len(d) >= 6:  # MULRK
+                r, c = struct.unpack_from("<HH", d)
+                for j in range((len(d) - 6) // 6):
+                    poe(r, c + j, _numero_xls(_rk(struct.unpack_from("<I", d, 6 + 6 * j)[0])))
+            elif tipo == 0x0006 and len(d) >= 20:  # FORMULA: o resultado guardado
+                r, c = struct.unpack_from("<HH", d)
+                if d[12:14] == b"\xff\xff":
+                    if d[6] == 0:
+                        texto_da_formula = (r, c)
+                    elif d[6] == 1:
+                        poe(r, c, "VERDADEIRO" if d[8] else "FALSO")
+                else:
+                    poe(r, c, _numero_xls(struct.unpack_from("<d", d, 6)[0]))
+            elif tipo == 0x0207 and texto_da_formula and len(d) >= 3:  # STRING, o texto da fórmula anterior
+                cch, op = struct.unpack_from("<HB", d)
+                poe(*texto_da_formula, d[3:3 + cch * (2 if op & 1 else 1)].decode(
+                    "utf-16-le" if op & 1 else "latin-1", "replace"))
+                texto_da_formula = None
+            elif tipo == 0x0204 and len(d) >= 9:  # LABEL
+                r, c, _, cch, op = struct.unpack_from("<HHHHB", d)
+                poe(r, c, d[9:9 + cch * (2 if op & 1 else 1)].decode("utf-16-le" if op & 1 else "latin-1", "replace"))
+    except struct.error:
+        pass
+    fecha()
+    return "\n\n".join(partes)[:PLANILHA_TEXTO]
+
+
 # O arquivo que não é página nem PDF, pelos primeiros bytes: o leitor não tira texto dele.
 _BINARIOS = ((b"PK\x03\x04", "planilha, documento do Office ou arquivo compactado: .xlsx, .docx, .zip"),
-             (b"\xd0\xcf\x11\xe0", "planilha ou documento antigo do Office: .xls, .doc"),
+             (b"\xd0\xcf\x11\xe0", "documento antigo do Office: .doc, .ppt"),
              (b"\x1f\x8b", "arquivo compactado: .gz"), (b"Rar!", "arquivo compactado: .rar"),
              (b"7z\xbc\xaf", "arquivo compactado: .7z"), (b"\x89PNG", "imagem"), (b"\xff\xd8\xff", "imagem"),
              (b"GIF8", "imagem"))
@@ -356,13 +601,15 @@ _AVISO_ATE = 1500  # caracteres
 
 
 def formato_que_nao_le(conteudo: bytes, tipo: str) -> str | None:
-    """Por que o leitor não lê um arquivo; None quando é página, PDF, planilha .xlsx ou texto. O arquivo compactado, a
-    planilha antiga (.xls) e a imagem viravam um texto de lixo, e a leitura passava por boa."""
+    """Por que o leitor não lê um arquivo; None quando é página, PDF, planilha (.xlsx ou .xls) ou texto. O arquivo
+    compactado, o documento antigo do Office (.doc) e a imagem viravam um texto de lixo, e a leitura passava por boa."""
     if b"%PDF" in conteudo[:1024] or "pdf" in tipo:
         return None
     if _e_planilha(conteudo):
         return None if _tamanho_da_planilha(conteudo) <= PLANILHA_MAXIMA else \
             "planilha grande demais para o leitor; procure a mesma tabela em partes, em PDF ou na página de quem a publica"
+    if conteudo.startswith(_OLE) and _e_xls(conteudo):
+        return None
     nome = next((n for marca, n in _BINARIOS if conteudo.startswith(marca)), None)
     if not nome and b"\x00" in conteudo[:1024] and not conteudo.startswith((b"\xff\xfe", b"\xfe\xff")):
         nome = "arquivo que não é texto"

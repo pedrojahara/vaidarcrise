@@ -413,6 +413,46 @@
   },
   {
    "assunto": "Juro e crédito",
+   "parte": "Custo da dívida rural que já existe, das pessoas: total (o juro médio de toda a carteira, e não só do empréstimo novo)",
+   "dono": "Banco Central",
+   "codigo": "SGS 27712",
+   "nome": "Indicador de Custo do Crédito - ICC - Recursos Direcionados - Pessoas físicas - Crédito rural total",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.27712/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Custo da dívida rural que já existe, das pessoas, a juro de mercado (o juro médio da carteira, e não só do empréstimo novo)",
+   "dono": "Banco Central",
+   "codigo": "SGS 27710",
+   "nome": "Indicador de Custo do Crédito - ICC - Recursos Direcionados - Pessoas físicas - Crédito rural com taxas de mercado",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.27710/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Custo da dívida rural que já existe, das pessoas, a juro tabelado (o juro médio da carteira, e não só do empréstimo novo)",
+   "dono": "Banco Central",
+   "codigo": "SGS 27711",
+   "nome": "Indicador de Custo do Crédito - ICC - Recursos Direcionados - Pessoas físicas - Crédito rural com taxas reguladas",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.27711/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Custo da dívida rural que já existe, das empresas, a juro de mercado (o juro médio da carteira, e não só do empréstimo novo)",
+   "dono": "Banco Central",
+   "codigo": "SGS 27688",
+   "nome": "Indicador de Custo do Crédito - ICC - Recursos Direcionados - Pessoas jurídicas - Crédito rural com taxas de mercado",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.27688/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
+   "parte": "Custo da dívida rural que já existe, das empresas, a juro tabelado (o juro médio da carteira, e não só do empréstimo novo)",
+   "dono": "Banco Central",
+   "codigo": "SGS 27689",
+   "nome": "Indicador de Custo do Crédito - ICC - Recursos Direcionados - Pessoas jurídicas - Crédito rural com taxas reguladas",
+   "endereco": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.27689/dados?formato=json&dataInicial=DD/MM/AAAA&dataFinal=DD/MM/AAAA"
+  },
+  {
+   "assunto": "Juro e crédito",
    "parte": "Atraso de mais de 90 dias: empresas",
    "dono": "Banco Central",
    "codigo": "SGS 21083",
@@ -796,6 +836,42 @@
    "nome": "Indicadores de preços do Cepea",
    "endereco": "https://www.cepea.org.br/br/indicador/soja.aspx",
    "como": "Troque soja pelo produto (milho, boi-gordo, cafe, algodao, trigo, leite, frango, suino, acucar, etanol, arroz, feijao). A página mostra os últimos dias; a série longa (o botão de baixar) não abre no leitor. Para comparar com um ano antes, use o IC-Br agro do Banco Central (SGS 27575), que mede o preço do conjunto do agro em reais, ou a busca com o nome do indicador e o mês."
+  },
+  {
+   "assunto": "Agro",
+   "parte": "Custo da lavoura de soja por hectare (adubo e fertilizantes, sementes, defensivos, máquinas e diesel, juros, custo total), por município e safra",
+   "dono": "Conab",
+   "codigo": "custos de produção - soja",
+   "nome": "Custos de produção - série histórica - soja",
+   "endereco": "https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/custos-de-producao/arquivos-custo-de-producao/agricolas/serie-historica-custos-soja-1997-a-2026.xls",
+   "como": "Uma aba por município e ano, e a aba Índice lista os municípios e os anos de cada um. O nome da aba é o município e o ano da estimativa: OGM-Sorriso-MT-2025 é a safra 2025/26 em Sorriso (MT), e o custo é o estimado em março desse ano, antes do plantio (\"Tipo do Relatório: Estimado\", \"Mês/Ano: Março/2025\"). Ache a aba com --procura \"[aba OGM-Sorriso-MT-2025]\" e leia com --de e a posição que a busca deu: o trecho começa no fim da aba anterior, e a aba vai de [aba NOME] até a próxima [aba. Cada linha traz o custo por hectare em reais, o custo por saca de 60 kg e a participação no custo; as que mais pesam são 9 - Fertilizantes, 10 - Agrotóxicos, 8 - Sementes e mudas, 3.1 - Tratores e Colheitadeiras (o diesel entra aqui), 24 - Juros do Financiamento, CUSTO VARIÁVEL e CUSTO TOTAL. Compare a mesma linha do mesmo município de um ano para o outro. As outras lavouras (algodão, arroz, café, feijão, trigo) estão em https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/custos-de-producao/planilhas-de-custos-de-producao/copy_of_agricolas. O site da Conab em gov.br às vezes recusa a conexão: tente de novo."
+  },
+  {
+   "assunto": "Agro",
+   "parte": "Custo da lavoura de milho de segunda safra (safrinha) por hectare (adubo e fertilizantes, sementes, defensivos, máquinas e diesel, juros, custo total), por município e safra",
+   "dono": "Conab",
+   "codigo": "custos de produção - milho 2ª safra",
+   "nome": "Custos de produção - série histórica - milho 2ª safra",
+   "endereco": "https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/custos-de-producao/arquivos-custo-de-producao/agricolas/milho/milho_2a_safra_serie_historica_2005-2026.xls",
+   "como": "Uma aba por município e ano, e a aba Índice lista os municípios e os anos de cada um. O nome da aba é o município e o ano da estimativa: Sorriso-MT-2025 é a safra 2025/26 em Sorriso (MT), e o custo é o estimado em março desse ano, antes do plantio (\"Tipo do Relatório: Estimado\", \"Mês/Ano: Março/2025\"). Ache a aba com --procura \"[aba Sorriso-MT-2025]\" e leia com --de e a posição que a busca deu: o trecho começa no fim da aba anterior, e a aba vai de [aba NOME] até a próxima [aba. Cada linha traz o custo por hectare em reais, o custo por saca de 60 kg e a participação no custo; as que mais pesam são 9 - Fertilizantes, 10 - Agrotóxicos, 8 - Sementes e mudas, 3.1 - Tratores e Colheitadeiras (o diesel entra aqui), 24 - Juros do Financiamento, CUSTO VARIÁVEL e CUSTO TOTAL. Compare a mesma linha do mesmo município de um ano para o outro. As outras lavouras (algodão, arroz, café, feijão, trigo) estão em https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/custos-de-producao/planilhas-de-custos-de-producao/copy_of_agricolas. O site da Conab em gov.br às vezes recusa a conexão: tente de novo. O milho de primeira safra (verão) está em https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/custos-de-producao/arquivos-custo-de-producao/agricolas/milho/milho_1a_safra_serie_historica_1997-2026.xls."
+  },
+  {
+   "assunto": "Preços",
+   "parte": "Preço do diesel nos postos (e da gasolina, do etanol e do gás de cozinha), média do mês no Brasil, em reais por litro",
+   "dono": "ANP",
+   "codigo": "levantamento de preços de combustíveis - mensal - Brasil",
+   "nome": "Série histórica do levantamento de preços - mensal - Brasil, desde janeiro de 2013",
+   "endereco": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/precos-revenda-e-de-distribuicao-combustiveis/shlp/mensal/mensal-brasil-desde-jan2013.xlsx",
+   "como": "Uma linha por mês e combustível, com as colunas MÊS | PRODUTO | NÚMERO DE POSTOS PESQUISADOS | UNIDADE DE MEDIDA | PREÇO MÉDIO REVENDA | ... O mês vem como número de série do Excel: 45901 é setembro de 2025, 46235 é agosto de 2026 e 46266, setembro de 2026 (cada mês soma 28 a 31). Procure \"OLEO DIESEL S10\" (o diesel das máquinas e dos caminhões novos; \"OLEO DIESEL\" é o S500): o preço médio na bomba, em R$ por litro, é o primeiro número depois de \"R$/l\". Para um mês, procure o número do mês (--procura \"46266\"). Os estados e as regiões estão nos arquivos mensal-estados-desde-jan2013.xlsx e mensal-regioes-desde-jan2013.xlsx, no mesmo endereço; a página da série é https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/precos-revenda-e-de-distribuicao-combustiveis/serie-historica-do-levantamento-de-precos."
+  },
+  {
+   "assunto": "Agro",
+   "parte": "Preço do adubo no mercado mundial (fertilizantes: ureia, DAP, cloreto de potássio entregue no Brasil), média do mês, do trimestre e do ano, em dólares por tonelada",
+   "dono": "Banco Mundial",
+   "codigo": "Pink Sheet",
+   "nome": "World Bank Commodities Price Data (The Pink Sheet)",
+   "endereco": "https://www.worldbank.org/en/research/commodity-markets",
+   "como": "Abra a página com --links --procura \"Pink\": o link \"Latest Commodity Prices Published\" é o PDF do mês (CMO-Pink-Sheet-MÊS-ANO.pdf). Nele, procure \"Fertilizers\": as linhas DAP, Phosphate rock, Potassium chloride (o cloreto de potássio, com o preço de entrega no Brasil, CFR Brazil), TSP e Urea trazem, nesta ordem, as médias dos três últimos anos, as dos últimos cinco trimestres e as dos últimos três meses; o cabeçalho \"Annual Averages Quarterly Averages Monthly Averages\", no começo do PDF, diz quais são. O preço é em dólar: para reais, use o dólar do Banco Central (SGS 3698, média do mês). A série mês a mês desde 1960 está na planilha CMO-Historical-Data-Monthly.xlsx (link \"Monthly prices\"), mas a linha do mês vem sem o nome das colunas: prefira o PDF."
   }
  ]
 }
