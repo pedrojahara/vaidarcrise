@@ -25,8 +25,9 @@ launchd, todo dia às 04h00 → run.sh   (uma publicação por dia; se o Mac dor
   ├─ src/fundo.py fazer     no fato do dia e na pergunta da semana (domingo), a pesquisa da história (claude -p com
   │                         busca na internet, src/conta.py e as metas de config/metas.json), a segunda busca só do
   │                         que a pesquisa não achou, a
-  │                         investigação (src/investiga.py: perguntas da leitora, explicações rivais, testes cegos
-  │                         contra o dado, cético e juiz), o esqueleto do argumento, um texto só, o leitor que só
+  │                         investigação (src/investiga.py: perguntas da leitora, a desmontagem do fenômeno em
+  │                         partes, explicações rivais, testes cegos contra o dado do mapa config/dados.json, cético
+  │                         e juiz, em até três voltas), o esqueleto do argumento, um texto só, o leitor que só
   │                         recebe o texto e o revisor de três leitores e um editor, que devolvem objeções em até
   │                         duas voltas, e uma conferência final só de erros; o código confere cada número (guia
   │                         em FUNDO.md, até 65 min; no domingo, até 85, sobre a história que mais andou na semana)
@@ -69,6 +70,8 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
                                                               # --sem-esqueleto roda sem o esqueleto e sem o leitor frio;
                                                               # --semana faz a pergunta da semana numa rodada que não é de domingo)
 .venv/bin/python src/investiga.py runs/<id>.json [--semana]   # só a investigação de uma rodada, sem texto e sem gravar
+.venv/bin/python src/fontes.py dado atraso crédito rural      # a série de quem mede (o mapa config/dados.json e o catálogo do BC)
+.venv/bin/python src/fontes.py dado 21146                     # o nome da série no Banco Central e os últimos números
 .venv/bin/python src/fundo.py --confere                       # lista os fatos do dia sem texto
 .venv/bin/python src/edita_texto.py editor/<texto>.md       # o editor num texto à mão
 ```

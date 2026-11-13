@@ -24,11 +24,14 @@ CLAUDE = os.environ.get("CLAUDE_BIN", "/Users/pedrojahara/.local/bin/claude")
 # esqueleto do texto do dia, que pensa a ordem do argumento antes da redação, vai de Opus; o leitor frio, que lê só o
 # texto (e, antes, só o esqueleto), vai de Sonnet, para quem lê não ser o mesmo modelo que escreveu. Na investigação
 # (src/investiga.py), a leitora que faz as perguntas e o testador que segue a especificação vão de Sonnet; as explicações
-# rivais, que escolhem os testes, o cético e o juiz vão de Opus, porque é ali que um erro passa ou é pego. Cada etapa troca de
+# rivais, que desmontam o fenômeno e escolhem os testes da primeira volta, o cético e o juiz final vão de Opus, porque é
+# ali que um erro passa ou é pego. O plano das voltas seguintes, que só acrescenta testes à desmontagem já feita, e o
+# juiz de cada volta, que só dá à leitora as respostas para ela reagir, vão de Sonnet. Cada etapa troca de
 # modelo pelo ambiente (VDC_MODELO_<ETAPA>, por exemplo VDC_MODELO_JUIZ=sonnet); VDC_LLM_MODEL troca todas de uma vez.
 MODELOS = {"classificar": "sonnet", "editor": "opus", "pesquisa": "sonnet", "segunda_busca": "opus",
            "memoria": "sonnet", "esqueleto": "opus", "redacao": "opus", "revisor": "opus", "leitor_frio": "sonnet",
-           "perguntas": "sonnet", "explicacoes": "opus", "teste": "sonnet", "cetico": "opus", "juiz": "opus"}
+           "perguntas": "sonnet", "explicacoes": "opus", "plano": "sonnet", "teste": "sonnet", "cetico": "opus",
+           "juiz_volta": "sonnet", "juiz": "opus"}
 
 
 def modelo(etapa: str) -> str:

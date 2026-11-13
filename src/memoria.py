@@ -51,7 +51,7 @@ MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "a
 FONTES_CONHECIDAS = (
     ".gov.br", ".leg.br", ".jus.br", ".mp.br", ".gov", ".europa.eu", "imf.org", "worldbank.org", "oecd.org", "bis.org",
     "un.org", "wto.org", "iea.org", "opec.org", "ecb.europa.eu", "federalreserve.gov", "bls.gov", "bea.gov",
-    "ipea.gov.br", "fgv.br", "portal.fgv.br", "ibre.fgv.br", "usp.br", "unicamp.br", "insper.edu.br", "puc-rio.br",
+    "ipea.gov.br", "fgv.br", "portal.fgv.br", "ibre.fgv.br", "usp.br", "cepea.org.br", "unicamp.br", "insper.edu.br", "puc-rio.br",
     "nber.org", "brookings.edu", "piie.com", "wikipedia.org",
     "globo.com", "uol.com.br", "folha.uol.com.br", "estadao.com.br", "cnnbrasil.com.br", "infomoney.com.br",
     "exame.com", "veja.abril.com.br", "abril.com.br", "poder360.com.br", "agenciabrasil.ebc.com.br", "ebc.com.br",
