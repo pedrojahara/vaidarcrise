@@ -1,7 +1,7 @@
 """A atualização do dia: calcula a direção do risco, lê as manchetes do dia anterior, escreve o post e gera o site.
 
-O post muda de tipo com o dia (src/escreve_post.py): texto do dia de segunda a sábado, resumo da semana
-aos domingos e resumo do mês no primeiro domingo do mês. É sempre um post por dia, nesta mesma atualização.
+O post muda de tipo com o dia (src/escreve_post.py, tipo_do_dia): o fato do dia de segunda a sábado e a pergunta da
+semana no domingo. É sempre um post por dia, nesta mesma atualização.
 
 Uso: python src/run.py             (atualização do dia; não faz nada se já houver uma hoje)
      python src/run.py --coletar   (só junta manchetes ao acervo, sem LLM e sem publicar)
@@ -11,11 +11,13 @@ Uso: python src/run.py             (atualização do dia; não faz nada se já h
 
 O texto do dia é um argumento sobre a história em andamento que mais andou ontem: o código escolhe a história pela
 soma das notícias (src/pauta.py, CARTA_EDITORIAL.md), e src/fundo.py pesquisa, monta o esqueleto, escreve, revisa
-com um leitor que só recebe o texto, três leitores e um editor, e confere o texto (guia em FUNDO.md). Se ele não
-sair aqui, src/fundo.py --hoje, no run.sh, tenta de novo.
+com um leitor que só recebe o texto, três leitores e um editor, e confere o texto (guia em FUNDO.md). Antes do
+esqueleto, a investigação (src/investiga.py) testa contra o dado o que se diz sobre a história. No domingo, o mesmo
+caminho faz a pergunta da semana, sobre a história que mais andou na semana, com mais tempo para a investigação. Se o
+texto não sair aqui, src/fundo.py --hoje, no run.sh, tenta de novo.
 
 Os feeds de alguns jornais guardam só as 10 últimas manchetes. A coleta de hora em
-hora junta tudo num acervo local, e a atualização da manhã (05h00) lê o dia anterior inteiro.
+hora junta tudo num acervo local, e a atualização da manhã (04h00) lê o dia anterior inteiro.
 """
 from __future__ import annotations
 
@@ -266,34 +268,29 @@ def main() -> dict | None:
     post = {"ok": False, "meta": [{"erro": "pulado: sem leitura de notícias"}]}
     if llm["ok"]:
         datas = calendario.janela(calendario.carregar(), hoje)
-        # A semana sai do registro das rodadas; o mês, dos dados do dia e da rodada do começo do mês, se houver.
-        # 45 dias cobrem o mês anterior inteiro e os dias antes dele.
-        corte = (hoje - dt.timedelta(days=45)).isoformat()
+        # As rodadas dos últimos dias dão o texto anterior, que o de hoje não repete.
+        corte = (hoje - dt.timedelta(days=10)).isoformat()
         anteriores = [r for r in todas_r if r["id"][:10] >= corte]
         evs = {e["id"]: e for e in todos}
-        # 5. O texto do dia sai de src/fundo.py: pesquisa da história, esqueleto, um texto, o leitor que só recebe
-        # o texto, o revisor de três leitores e um editor e a conferência do código. Os resumos da semana e do mês
-        # saem de src/escreve_post.py.
+        # 5. O texto sai de src/fundo.py: pesquisa da história, investigação, esqueleto, um texto, o leitor que só
+        # recebe o texto, o revisor de três leitores e um editor e a conferência do código. No domingo, a pergunta da
+        # semana, sobre a história que mais andou na semana, com mais tempo (VDC_PERGUNTA_MIN).
+        import fundo
+        tipo = escreve_post.tipo_do_dia(hoje)
+        minutos = float(os.environ.get("VDC_PERGUNTA_MIN", "85") if tipo == "pergunta" else os.environ.get("VDC_TEXTO_MIN", "65"))
         avisos_pauta: list[str] = []
-        if escreve_post.tipo_do_dia(hoje) == "dia":
-            import fundo
-            try:
-                cx = escreve_post.contexto(rodada, cfg, datas, evs, ant, "dia", anteriores, snap)
-                t = fundo.fazer(rodada, cx, limite_min=float(os.environ.get("VDC_TEXTO_MIN", "35")),
-                                pesquisa_ok=not args.sem_pesquisa)
-                post = fundo.post_do_texto(t)
-            except Exception as ex:  # noqa: BLE001
-                post = {"ok": False, "tipo": "dia", "erro": f"o texto do dia falhou: {ex!r}"[:300], "meta": []}
-            try:
-                avisos_pauta = pauta_mod.abrir_historias(rodada.get("pauta") or {}, hoje.isoformat())
-            except Exception as ex:  # noqa: BLE001
-                print(f"aviso: a história nova não foi aberta ({ex!r})")
-            print("texto do dia:", post.get("titulo") if post["ok"] else f"falhou: {post.get('erro')}",
-                  f"| {(post.get('pesquisa') or {}).get('duracao_s', '?')} s")
-        else:
-            post = escreve_post.escrever(rodada, cfg, datas, eventos=evs, anterior=ant, rodadas=anteriores, snap=snap)
-            print(f"post ({post.get('tipo')}):", post.get("titulo") if post["ok"] else
-                  f"falhou: {post.get('erro') or post['meta'][-1].get('erro')}", "| problemas:", post.get("problemas"))
+        try:
+            cx = escreve_post.contexto(rodada, cfg, datas, evs, ant, tipo, anteriores)
+            t = fundo.fazer(rodada, cx, limite_min=minutos, pesquisa_ok=not args.sem_pesquisa, semana=tipo == "pergunta")
+            post = fundo.post_do_texto(t)
+        except Exception as ex:  # noqa: BLE001
+            post = {"ok": False, "tipo": tipo, "erro": f"o texto do dia falhou: {ex!r}"[:300], "meta": []}
+        try:
+            avisos_pauta = pauta_mod.abrir_historias(rodada.get("pauta") or {}, hoje.isoformat())
+        except Exception as ex:  # noqa: BLE001
+            print(f"aviso: a história nova não foi aberta ({ex!r})")
+        print(f"{escreve_post.TIPOS[tipo].lower()}:", post.get("titulo") if post["ok"] else f"falhou: {post.get('erro')}",
+              f"| {(post.get('pesquisa') or {}).get('duracao_s', '?')} s")
     rodada["post"] = post
     # O site não cria página de pergunta sozinho (decisão do Pedro em 8/11/2026): quando sente falta de uma, a rodada
     # grava o aviso no registro do dia e o run.sh mostra no Mac. O Pedro decide.

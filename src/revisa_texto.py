@@ -1,8 +1,9 @@
-"""Confere o texto do LLM contra os moldes que denunciam piloto automático.
+"""As conferências de texto que o código faz: os moldes que denunciam piloto automático, as afirmações que o texto
+não pode fazer e os números que não estão na base.
 
-Devolve a lista de problemas, que o post usa para pedir uma reescrita e a rodada
-grava no registro. Os problemas graves (afirmações que o texto não pode fazer)
-barram o post se sobrarem depois da reescrita; os moldes só pedem a reescrita.
+O texto do dia e a pergunta da semana (src/fundo.py, conferir_codigo) e a base das páginas (src/verifica_base.py) usam
+estas listas; a leitura das notícias (src/run.py) usa problemas_classificacao. Os graves barram o texto; os moldes só
+pedem a reescrita.
 """
 from __future__ import annotations
 
@@ -83,8 +84,6 @@ MOLDES = [
 
 FRASE = re.compile(r"(?<=[.!?])\s+(?=[A-ZÀÁÉÍÓÚÂÊÔÃÕÇ0-9\"“])")
 NUMERO = re.compile(r"\d+(?:,\d+)?\s*(?:%|pontos?\b)|R\$\s*\d")
-# "A inflação recuou" soa como preço caindo; o leitor precisa ler que os preços sobem mais devagar.
-INFLACAO_CAI = re.compile(r"\b(inflação|IPCA)\b[^.]{0,60}\b(recu\w*|ca(i|iu|ía|indo|em|ir)|diminu\w*)\b", re.I)
 
 
 # Afirmações erradas por construção: o post não sabe por que um nome faltou nem tem motivo para dar
@@ -113,18 +112,6 @@ GRAVES = [
                 r"\d+(,\d+)?\s*(×|vezes o normal|vezes a chance)|\bvezes o normal\b)", re.I), "dá número ao risco de recessão"),
 ]
 
-
-# O post conta o fato; como a conta funciona fica na aba Como funciona. Uma frase só pode dizer que um
-# fato fica fora da conta, quando ele parece contradizer a direção (regra 6 do prompt do post).
-CONTA_FUNCIONA = re.compile(r"\b((não|nem) (entra|entram|mexe|mexem|move|movem|muda|mudam|altera|alteram) "
-                            r"(n[oa] |o |a )?(número|conta|soma|direção)|entram? n[oa] (número|conta|soma|direção)|"
-                            r"só se (mexe|move)|(fora|dentro) d[oa] (número|conta|soma|direção))\b", re.I)
-
-# Fato do dia com a direção parada: o topo da página já mostra a direção e o que cada pressão fez em 3 meses.
-DIRECAO_REPETIDA = re.compile(r"\b(risco( de recessão)?[^.]{0,30}\b(segue|seguiu|continua|continuou|está|fica|ficou|"
-                              r"permanece|permaneceu)\b[^.]{0,12}\b(subindo|igual|caindo|em alta|em queda)|"
-                              r"direção (do risco )?(segue|continua|está|fica|permanece|é|de)\b|"
-                              r"(uma|duas|três|quatro|cinco|\d) das cinco pressões)", re.I)
 
 # O e daí fecha o argumento do texto; "nada muda" para a leitora não é obrigatório e cansa quando repete
 # (Pedro, 10/11/2026). O texto do dia avisa quando dois dias seguidos dizem que nada muda.
@@ -333,10 +320,8 @@ _PESA = re.compile(r"\bpes(a|am|ou|aram|ar|ará|aria|ando)\b", re.I)
 _NUMERO_SOLTO = re.compile(r"\d+(?:[.,]\d+)?")
 
 
-def soa_como_maquina(texto: str, numeros: bool = True) -> list[str]:
-    """Os sinais de texto escrito por máquina num texto inteiro (sem marcas e sem intertítulos): cada um vira aviso.
-    Sem `numeros`, fica de fora a conta de números por frase (os resumos da semana e do mês dão número e régua em cada
-    movimento, e a reescrita deles não pode mudar os números)."""
+def soa_como_maquina(texto: str) -> list[str]:
+    """Os sinais de texto escrito por máquina num texto inteiro (sem marcas e sem intertítulos): cada um vira aviso."""
     import statistics
     out = []
     frases = [f.strip() for f in FRASE.split(texto) if f.strip()]
@@ -356,7 +341,7 @@ def soa_como_maquina(texto: str, numeros: bool = True) -> list[str]:
         out.append(f"\"pesa\" {n} vezes: diga o que acontece (encarece, sobe, adia), com quem sente")
     if len(frases) >= 8:
         nums = len(_NUMERO_SOLTO.findall(_sem_datas(texto)))
-        if numeros and nums / len(frases) > 1.6:
+        if nums / len(frases) > 1.6:
             out.append(f"{nums / len(frases):.1f} número por frase: deixe só o número que carrega o argumento, e diga o "
                        "resto por comparação ('acima do teto', 'o maior desde 2005')")
         ls = [len(f.split()) for f in frases]
@@ -366,7 +351,6 @@ def soa_como_maquina(texto: str, numeros: bool = True) -> list[str]:
     return out
 
 
-LIMITE_PALAVRAS = {"dia": 120, "semana": 300, "mes": 360}
 MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro",
          "novembro", "dezembro"]
 DATA_BARRA = re.compile(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?:/(\d{4}))?(?![\d/])")
@@ -418,39 +402,6 @@ def numeros_fora(textos: list[str], dados: str) -> list[str]:
     return list(dict.fromkeys(out))
 
 
-def _prosa(post: dict) -> list[str]:
-    return [post["titulo"], *post["paragrafos"]]
-
-
-def _frases(textos: list[str]) -> list[str]:
-    return [f.strip() for t in textos for f in FRASE.split(t) if f.strip()]
-
-
-def graves_post(post: dict, tipo: str = "dia", dados: str | None = None, **_) -> list[str]:
-    textos = _prosa(post)
-    out = [f"{'título' if i == 0 else f'parágrafo {i}'}: {nome}"
-           for i, t in enumerate(textos) for rx, nome in GRAVES if rx.search(t)]
-    if CONTA_FUNCIONA.search(post["titulo"]):
-        out.append("título: explica como a conta da direção funciona")
-    n = sum(1 for f in _frases(post["paragrafos"]) if CONTA_FUNCIONA.search(f))
-    if n > 1:
-        out.append(f"{n} frases explicam como a conta funciona (o post pode ter uma, quando o fato parece contradizer a direção)")
-    if dados is not None:
-        fora = numeros_fora(textos, dados)
-        if fora:
-            out.append("número ou data que não está nos dados: " + ", ".join(fora[:6])
-                       + " (use só os números dos dados, sem recalcular)")
-    return out
-
-
-def _nomes_do_site() -> set[str]:
-    """Os nomes das pressões, das linhas do topo e dos assuntos das notícias (config/modelo.json)."""
-    import json
-    from pathlib import Path
-    cfg = json.loads((Path(__file__).resolve().parent.parent / "config" / "modelo.json").read_text())
-    return {*cfg["direcao"]["nomes"].values(), *cfg["fatores"].values()}
-
-
 # Siglas que todo mundo conhece; as outras vão por extenso ou com link (glossario em config/modelo.json).
 SIGLAS_CONHECIDAS = {"PIB", "IBGE", "EUA", "INSS", "FGTS", "SUS", "STF", "ONU", "US", "PIX", "CPF", "MEI", "IPVA", "IPTU"}
 SIGLA = re.compile(r"\b[A-Z][A-Z0-9]{1,5}\b")
@@ -496,76 +447,3 @@ def problemas_classificacao(saida: dict) -> list[str]:
             out.append(f"sigla que a leitora não conhece ({', '.join(sig)}): escreva o nome por extenso, se ele explica: {t[:60]}")
     out += _aberturas([ev["porque"] for ev in saida.get("eventos", [])])
     return out
-
-
-def problemas_post(post: dict, tipo: str = "dia", dados: str | None = None, hoje=None, anterior: dict | None = None,
-                   direcao_mudou: bool = True, **_) -> list[str]:
-    """Moldes de texto e, nos posts, o que repete a página: direção parada, data da lateral, frase do post anterior."""
-    import datetime as dt
-    from difflib import SequenceMatcher
-
-    out = []
-    t = post["titulo"]
-    if len(t) > 80:
-        out.append(f"título com {len(t)} caracteres")
-    if t.rstrip().endswith("?"):
-        out.append("título em forma de pergunta")
-    out += [f"título: {m}" for m in _moldes(t) if m in ("travessão", "ponto de exclamação", "palavra de alarme", "palavra com lado")
-            or m.startswith(("palavra que o site trocou", "conta as pressões"))]
-    # Os rótulos do resumo da semana usam os nomes do site: uma pressão ou um assunto das notícias.
-    nomes = _nomes_do_site()
-    for sec in post.get("secoes") or []:
-        for it in sec.get("itens") or []:
-            if it.get("rotulo") and it["rotulo"] not in nomes:
-                out.append(f"rótulo \"{it['rotulo']}\" não é nome do site: use o nome de uma pressão ou de um assunto das notícias")
-    for i, p in enumerate(post["paragrafos"], 1):
-        out += [f"parágrafo {i}: {m}" for m in _moldes(p)]
-        if len(p.split()) > 65:
-            out.append(f"parágrafo {i} com {len(p.split())} palavras")
-        longas = [len(f.split()) for f in FRASE.split(p) if len(f.split()) > 32]
-        if longas:
-            out.append(f"parágrafo {i} com frase de {max(longas)} palavras")
-        if len(NUMERO.findall(p)) > 4:
-            out.append(f"parágrafo {i} com {len(NUMERO.findall(p))} números")
-        if any(INFLACAO_CAI.search(f) and "mais devagar" not in f for f in FRASE.split(p)):
-            out.append(f"parágrafo {i}: inflação que 'cai' ou 'recua' sem dizer que os preços sobem mais devagar")
-        if re.search(r"\b(eu|nós|nosso|nossa)\b", p, flags=re.IGNORECASE):
-            out.append(f"parágrafo {i} em primeira pessoa")
-    # O tamanho do texto do dia é conferido em src/fundo.py (conferir_codigo).
-    out += perguntas_no_ar(" ".join(post["paragrafos"]))
-    out += termos_sem_explicacao(" ".join(post["paragrafos"]))
-    out += soa_como_maquina(" ".join(post["paragrafos"]), numeros=False)
-    sig = siglas_soltas(" ".join(_prosa(post)))
-    if sig:
-        out.append(f"sigla que a leitora não conhece ({', '.join(sig)}): escreva o nome por extenso quando ele explica "
-                   "(Confederação Nacional da Indústria, Tribunal de Contas da União); IFI e BNDES podem ficar, porque o site liga")
-    dez = len(re.findall(r"\bpor (uns |cerca de )?10 anos\b", " ".join(post["paragrafos"])))
-    if dez > 1:
-        out.append("repete 'por 10 anos': depois da primeira vez, 'quando o governo paga mais para pegar dinheiro emprestado' basta")
-    out += _aberturas(post["paragrafos"], limite=1)
-    palavras = sum(len(p.split()) for p in post["paragrafos"])
-    if palavras > LIMITE_PALAVRAS.get(tipo, 10**6):
-        out.append(f"texto com {palavras} palavras (o limite é {LIMITE_PALAVRAS[tipo] * 5 // 6})")
-    if tipo == "dia" and not direcao_mudou:
-        rep = [f for f in _frases(_prosa(post)) if DIRECAO_REPETIDA.search(f) and not CONTA_FUNCIONA.search(f)]
-        if rep:
-            out.append("repete a direção do risco, que não mudou e já está no topo da página: " + rep[0][:70])
-    if tipo == "dia" and hoje is not None:
-        hoje = hoje if isinstance(hoje, dt.date) else dt.date.fromisoformat(str(hoje)[:10])
-        futuras = []
-        for d, m in _datas(" ".join(_prosa(post))):
-            ano = hoje.year + (1 if m < hoje.month - 6 else 0)
-            try:
-                if dt.date(ano, m, d) > hoje:
-                    futuras.append(f"{d}/{m}")
-            except ValueError:
-                pass
-        if futuras:
-            out.append("data futura (as próximas datas ficam na lateral): " + ", ".join(sorted(futuras)))
-    if anterior and anterior.get("paragrafos"):
-        velhas = [f for f in _frases([anterior.get("titulo", ""), *anterior["paragrafos"]]) if len(f.split()) >= 6]
-        for f in _frases(_prosa(post)):
-            # A frase da regra 6 ("Isso não muda a direção do risco, porque...") é fórmula: pode repetir.
-            if len(f.split()) >= 6 and not CONTA_FUNCIONA.search(f) and any(SequenceMatcher(None, f.lower(), v.lower()).ratio() > 0.8 for v in velhas):
-                out.append(f"frase copiada do post anterior: {f[:70]}")
-    return out + graves_post(post, tipo=tipo, dados=dados)

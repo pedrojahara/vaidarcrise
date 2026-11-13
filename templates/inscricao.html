@@ -28,7 +28,7 @@
 {% filter replace("e-mail", '<span class="nq">e-mail</span>'|safe) %}
 <h1>{{ titulo }}</h1>
 {% if pg == "form" %}
-<p>De segunda a sábado, o fato do dia chega cedo no seu e-mail, com o mesmo texto e o mesmo topo do site: para que lado anda o risco de recessão e por quê. Aos domingos chega o resumo da semana.</p>
+<p>De segunda a sábado, o fato do dia chega cedo no seu e-mail, com o mesmo texto e o mesmo topo do site: para que lado anda o risco de recessão e por quê. Aos domingos chega a pergunta da semana.</p>
 {% if exemplo %}<p>Para ver como ele é, leia o último, de {{ exemplo.data }}: <a href="{{ exemplo.link }}">{{ exemplo.titulo }}</a>{% if exemplo.titulo[-1:] not in ("?", "!", ".") %}.{% endif %}</p>{% endif %}
 <p>Para entrar na lista, escreva o seu e-mail abaixo e toque no botão do e-mail de confirmação que chega em seguida. Sem esse toque, o endereço não entra na lista.</p>
 <p class="aviso-f" id="aviso-invalido" hidden>Esse endereço parece incompleto. Confira se ele tem o @ e o final, como .com ou .com.br.</p>
@@ -62,7 +62,7 @@
 {% elif pg == "privacidade" %}
 <p>Quem só lê o site não deixa nada guardado aqui: as páginas não têm cadastro, contador de visitas, anúncio ou botão de rede social. Como em qualquer página da internet, as empresas que entregam o site recebem o endereço de internet de quem abre: o GitHub, que guarda as páginas, o Cloudflare, que fica no caminho, e o Google, de onde vem a letra do texto.</p>
 <h2>A lista do fato do dia por e-mail</h2>
-<p>Quem se inscreve deixa só o endereço de e-mail, que serve para uma coisa: mandar o fato do dia e os resumos do site. O endereço não é vendido nem passado a ninguém.</p>
+<p>Quem se inscreve deixa só o endereço de e-mail, que serve para uma coisa: mandar o fato do dia e a pergunta da semana. O endereço não é vendido nem passado a ninguém.</p>
 <p>O endereço só entra na lista depois do toque no botão do e-mail de confirmação. Esse toque é o consentimento que a <a class="termo" href="https://pt.wikipedia.org/wiki/Lei_Geral_de_Prote%C3%A7%C3%A3o_de_Dados_Pessoais" target="_blank" rel="noopener">Lei Geral de Proteção de Dados</a> pede.</p>
 <p>A lista fica no Resend, a empresa americana que manda os e-mails, e por isso o endereço é guardado nos Estados Unidos. O pedido de inscrição passa pelo Cloudflare, que também confere se quem pede é uma pessoa, e não um programa que inscreve endereços dos outros.</p>
 <p>Os e-mails não registram quem abre nem em que link cada pessoa toca, porque essa medição fica desligada no Resend.</p>
