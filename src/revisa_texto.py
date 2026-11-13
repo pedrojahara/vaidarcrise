@@ -385,9 +385,15 @@ def _numeros(texto: str) -> list[tuple[str, float, int]]:
     return out
 
 
+# O número com ponto decimal, como as APIs o escrevem ("15.82" na série do Banco Central, "12.5" na Focus): sustenta o
+# "15,82" do texto. Só vale para os dados, e não para o texto, que escreve como se escreve aqui ("1.234" é mil e tanto).
+PONTO_DECIMAL = re.compile(r"(?<![\d.,])(\d+)\.(\d+)(?![\d.,])")
+
+
 def numeros_fora(textos: list[str], dados: str) -> list[str]:
     """Números e datas do texto que não estão nos dados, com a folga de arredondamento da casa decimal usada."""
-    base = sorted({v for _, v, _ in _numeros(dados + " " + CONSTANTES)})
+    base = sorted({v for _, v, _ in _numeros(dados + " " + CONSTANTES)}
+                  | {float(f"{a}.{b}") for a, b in PONTO_DECIMAL.findall(_sem_datas(dados))})
     datas = _datas(dados)
     out = []
     for t in textos:
