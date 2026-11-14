@@ -192,6 +192,13 @@ _MEDIDA_SEM_CONTEUDO = re.compile(r"\b(ajuste|medidas|pacote|projeto)\b[^.]{0,60
                                   r"ministro|o presidente)\b[^.]{0,20}\b(diz|promete|prepara|negocia|estuda|anunciou)\b",
                                   re.I)
 _CONTEUDO = re.compile(r"\d|\b(corta|cortar|corte de|bloque\w*|isenç\w*|imposto|piso|teto|gasto com|reajuste)\b", re.I)
+# Uma alta de custo vai para a margem de quem paga, para o preço de quem compra ou para a quantidade, e a leitora que tem
+# um negócio pergunta primeiro para onde ela foi (PERSONA.md, regra 16; Pedro, 14/11/2026).
+_ALTA_DE_CUSTO = re.compile(r"\b(custos?|despesas?)\b[^.;:]{0,50}\b(sub(iu|iram|indo|ir)|dobr\w+|aument\w+|encarec\w+|"
+                            r"ficou mais caro|ficaram mais caros)\b|\b(alta|aumento|disparada|subida)\s+d[oa]s?\s+"
+                            r"(custos?|despesas?)\b", re.I)
+_OUTRO_LADO = re.compile(r"\b(receitas?|repass\w+|margem|margens|sobra|lucros?|renda|faturamento|arrecada\w+|rendeu|"
+                         r"preços? (que|de venda|recebidos?|cobrados?|da colheita|d[oa]s? produtos?)|acompanh\w+)\b", re.I)
 
 
 # O termo que a leitora vai ver nos jornais e que o site não liga à Wikipédia entra primeiro entre parênteses, logo
@@ -296,6 +303,10 @@ def perguntas_no_ar(texto: str, depois: str = "") -> list[str]:
         if _VAGO.search(f):
             out.append("\"de outro jeito\" pede \"de que jeito, e com que resultado?\": diga como a conta muda e o número, "
                        f"ou corte a comparação: {f[:80]}")
+        if _ALTA_DE_CUSTO.search(f) and not _OUTRO_LADO.search(texto + " " + depois):
+            out.append("alta de custo sem dizer para onde foi: diga, no mesmo período, se o preço, a receita ou a renda "
+                       "acompanhou ou se a alta comeu a margem (a receita em reais que sobe só com a inflação não basta), "
+                       f"ou corte o custo que é só de passagem: {f[:80]}")
         if _MEDIDA_SEM_CONTEUDO.search(f) and not _CONTEUDO.search(f + " " + seguinte):
             out.append("medida citada sem o conteúdo: diga o que ela faz (que gasto corta, que imposto muda), o tamanho e "
                        f"quem relata, ou corte a frase inteira: {f[:80]}")

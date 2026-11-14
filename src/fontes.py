@@ -978,8 +978,9 @@ MAPA = [
              "https://dados-abertos.apps.tcu.gov.br/api/acordao/recupera-acordaos?inicio=0&quantidade=50 (use --procura com o "
              "número, como \"3103/2026\", e aumente \"inicio\" para chegar aos mais antigos). A pesquisa do TCU "
              "(pesquisa.apps.tcu.gov.br) não abre no leitor."},
-    {"id": "ibge", "o_que": "Inflação (IPCA, INPC), PIB, desemprego (PNAD), indústria, comércio e serviços",
-     "dono": "IBGE", "reconhece": r"\bipca\b|\binpc\b|\bpib\b|desemprego|pnad|produ[cç][aã]o industrial|vendas do com[eé]rcio|servi[cç]os|ibge",
+    {"id": "ibge", "o_que": "Inflação (IPCA, INPC), PIB, desemprego (PNAD), indústria, comércio e serviços (volume e receita em reais), preço que a indústria cobra (IPP)",
+     "dono": "IBGE", "reconhece": r"\bipca\b|\binpc\b|\bpib\b|desemprego|pnad|produ[cç][aã]o industrial|vendas do com[eé]rcio|servi[cç]os|ibge|"
+                  r"pre[cç]os? (ao|do) produtor|\bipp\b|receita nominal",
      "onde": "O site já guarda o IPCA, o desemprego e o PIB (src/conta.py series). O texto de cada divulgação está no caderno "
              "\"Indicadores IBGE\", em PDF, no servidor de arquivos do IBGE: abra a pasta com --links --procura \"2026\" e "
              "pegue o arquivo mais recente. IPCA e INPC: "
@@ -992,7 +993,9 @@ MAPA = [
              "Comércio: https://ftp.ibge.gov.br/Comercio_e_Servicos/Pesquisa_Mensal_de_Comercio/Fasciculo_Indicadores_IBGE/. "
              "Serviços: https://ftp.ibge.gov.br/Comercio_e_Servicos/Pesquisa_Mensal_de_Servicos/Fasciculo_Indicadores_IBGE/. Os "
              "números de qualquer tabela: https://apisidra.ibge.gov.br (por exemplo /values/t/1737/n1/all/v/2265/p/last%201 "
-             "para o IPCA de 12 meses). Os sites agenciadenoticias.ibge.gov.br, www.ibge.gov.br e sidra.ibge.gov.br barram "
+             "para o IPCA de 12 meses); o preço que a indústria cobra (IPP), por ramo, na tabela 6903, e a receita em reais "
+             "ao lado do volume do varejo e dos serviços nas tabelas 8880, 8882 e 8688 (`dado receita varejo`, `dado preço "
+             "indústria`). Os sites agenciadenoticias.ibge.gov.br, www.ibge.gov.br e sidra.ibge.gov.br barram "
              "robô (erro 403)."},
     {"id": "agro", "o_que": "Safra, preço, custo, receita e crédito do agro (soja, milho, boi, café; o custo e a receita da lavoura; o atraso e o juro do crédito rural)",
      "dono": "Conab, IBGE, Ministério da Agricultura, Cepea, ANP, Banco Mundial e Banco Central",
@@ -1035,9 +1038,9 @@ MAPA = [
              "(troque os termos). ANP: https://www.gov.br/anp/pt-br/canais_atendimento/imprensa/noticias-comunicados. ANS: "
              "https://www.gov.br/ans/pt-br/assuntos/noticias (as duas com --links). A resolução ou o despacho sai no Diário "
              "Oficial: chegue ao ato pelo link da notícia da agência ou pela busca com \"site:in.gov.br\"."},
-    {"id": "empresa", "o_que": "Resultado, fato relevante, preço e plano de empresa (Petrobras, Vale, bancos, varejo)",
+    {"id": "empresa", "o_que": "Resultado, margem, fato relevante, preço e plano de empresa (Petrobras, Vale, bancos, varejo)",
      "dono": "a empresa", "reconhece": r"petrobras|\bvale\b|lucro|preju[ií]zo|balan[cç]o|resultado (do|no) (trimestre|\d)|"
-                                       r"fato relevante|dividendo|pre[cç]o d[aoe] (gasolina|diesel|g[aá]s)",
+                                       r"fato relevante|dividendo|pre[cç]o d[aoe] (gasolina|diesel|g[aá]s)|margem (bruta|de lucro|operacional)",
      "onde": "Petrobras: as notícias da própria empresa (resultado, dividendo, mudança de preço) saem em "
              "https://agencia.petrobras.com.br/ (use --links --procura \"/w/\"), e a composição do preço está em "
              "https://precos.petrobras.com.br/precos-diesel, /precos-gasolina e /precos-glp. A página de relações com "
@@ -1046,7 +1049,9 @@ MAPA = [
              "comunicado ao mercado, resultado): o link de cada documento abre no leitor "
              "(https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?...), mas a consulta da CVM é um formulário que o "
              "leitor não preenche. Chegue ao documento pelo link da notícia ou pela busca com o nome da empresa e \"fato "
-             "relevante\". O comunicado da empresa é a fonte; o jornal é o relato."},
+             "relevante\". A receita líquida, o custo dos produtos vendidos e a margem do trimestre estão no release de "
+             "resultados, na página de relações com investidores (muitas guardam o arquivo em mziq.com). O comunicado da "
+             "empresa é a fonte; o jornal é o relato."},
     {"id": "banco", "o_que": "Previsão e análise de banco, corretora ou consultoria", "dono": "a casa que previu",
      "reconhece": r"ita[uú]|bradesco|santander|\bbtg\b|\bxp\b|goldman|jp ?morgan|morgan stanley|citi|ubs|bank of america|"
                   r"consultoria|economista-chefe|revis(a|ou) (a )?(previs|proje)|relat[oó]rio (do|da) (banco|corretora)",
@@ -1061,7 +1066,8 @@ MAPA = [
      "reconhece": r"\bcni\b|\bcnc\b|fgv|anfavea|fenabrave|abras|abecip|serasa|dieese|sondagem|confian[cç]a (do|da)|"
                   r"endividamento|igp-?m|ind[ií]ce de confian[cç]a",
      "onde": "A página de pesquisas ou de imprensa da própria entidade (o nome dela e o da pesquisa na busca). Abrem no "
-             "leitor: CNI (https://www.portaldaindustria.com.br/estatisticas/), Fenabrave "
+             "leitor: CNI (https://www.portaldaindustria.com.br/estatisticas/; a Sondagem Industrial traz, a cada trimestre, a "
+             "margem de lucro e o preço das matérias-primas pela avaliação dos empresários), Fenabrave "
              "(https://www.fenabrave.org.br/portalv2/Conteudo/emplacamentos), Abras (https://www.abras.com.br/economia-e-pesquisa), "
              "Abecip (https://www.abecip.org.br/imprensa/noticias) e Serasa (https://www.serasaexperian.com.br/sala-de-imprensa/). "
              "A entidade é a dona do número que mediu e parte interessada no que defende: a frase diz o nome dela."},

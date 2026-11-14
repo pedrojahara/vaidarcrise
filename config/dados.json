@@ -16,6 +16,10 @@
   {
    "dono": "Comércio exterior",
    "regra": "A consulta do Comex Stat não abre no leitor. O saldo da balança e as contas externas estão no Banco Central (linhas de Câmbio e setor externo); o preço do que o país vende ao exterior, no IC-Br."
+  },
+  {
+   "dono": "Empresas abertas",
+   "regra": "A receita líquida, o custo dos produtos vendidos e o lucro bruto de uma empresa aberta estão no release de resultados do trimestre, na página de relações com investidores dela (muitas guardam o arquivo em mziq.com). A margem bruta é o lucro bruto dividido pela receita líquida (`calc`), comparada com a do mesmo trimestre do ano anterior; é o dado da própria empresa, com o nome dela na frase."
   }
  ],
  "dados": [
@@ -700,6 +704,33 @@
    "endereco": "https://apisidra.ibge.gov.br/values/t/1621/n1/all/v/584/p/PERIODOS/c11255/90707"
   },
   {
+   "assunto": "Atividade",
+   "parte": "Receita das vendas do varejo em reais (receita nominal) ao lado do volume vendido, contra o mesmo mês do ano anterior: a receita que sobe mais que o volume subiu pelo preço; no total e por atividade (combustíveis, supermercados, móveis e eletrodomésticos, vestuário)",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 8880",
+   "nome": "PMC - Variação mês/mesmo mês do ano anterior (M/M-12) (Índice de receita nominal de vendas no comércio varejista; Índice de volume de vendas no comércio varejista)",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/8880/n1/all/v/11709/p/PERIODOS/c11046/56733,56734",
+   "como": "56733 é a receita em reais e 56734 o volume; v/11709 é a variação contra o mesmo mês do ano anterior, e v/11711 a de 12 meses. Por atividade, a tabela 8882 com c11046/56733,56734/c85/all (90671 combustíveis, 103154 supermercados, 2759 móveis e eletrodomésticos...); o varejo ampliado, com veículos e material de construção, é a tabela 8881 (56735 receita, 56736 volume). A receita em reais não é a margem: ela diz se o preço subiu, e o custo de quem vende vem de outra linha."
+  },
+  {
+   "assunto": "Atividade",
+   "parte": "Receita dos serviços em reais (receita nominal) ao lado do volume, contra o mesmo mês do ano anterior, no total e por atividade (alimentação fora de casa, transporte de cargas e de passageiros, tecnologia, aluguéis): a receita que sobe mais que o volume subiu pelo preço",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 8688",
+   "nome": "PMS - Variação mês/mesmo mês do ano anterior (M/M-12) (Índice de receita nominal de serviços; Índice de volume de serviços / Atividades de serviços)",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/8688/n1/all/v/11624/p/PERIODOS/c11046/56725,56726/c12355/all",
+   "como": "56725 é a receita em reais e 56726 o volume; v/11624 é a variação contra o mesmo mês do ano anterior. c12355/all traz o total (107071) e cada atividade (56693 alimentação, 56696 transporte rodoviário de cargas, 31424 transporte aéreo, 39322 tecnologia da informação...). A receita em reais não é a margem: ela diz se o preço subiu, e o custo de quem presta o serviço vem de outra linha."
+  },
+  {
+   "assunto": "Atividade",
+   "parte": "Margem de lucro da indústria e preço das matérias-primas pela avaliação dos empresários, a cada trimestre (índices de 0 a 100: abaixo de 50, insatisfação com a margem; acima de 50, matéria-prima mais cara), e os principais problemas que eles apontam, como o custo da matéria-prima",
+   "dono": "Confederação Nacional da Indústria (CNI)",
+   "codigo": "Sondagem Industrial",
+   "nome": "Sondagem Industrial - Condições financeiras da indústria (satisfação com a margem de lucro operacional; preço médio das matérias-primas)",
+   "endereco": "https://www.portaldaindustria.com.br/estatisticas/sondagem-industrial/",
+   "como": "Abra com --links --procura \"ondagem\": o primeiro link é o PDF do mês (sondagemindustrial_MÊSANO.pdf). As perguntas do trimestre (a margem de lucro, a situação financeira, o preço das matérias-primas, o acesso ao crédito e os principais problemas) saem na edição do último mês de cada trimestre (a de setembro traz o 3º trimestre), na seção \"Condições financeiras da indústria\": procure \"margem de lucro\" e \"matérias-primas\". É a avaliação dos empresários, e não a conta do balanço: entra como o que a CNI calcula pela resposta deles. A planilha da série (o link Download .xlsx) traz as datas em número de série do Excel; use o PDF de cada trimestre. O site da CNI às vezes demora: tente de novo."
+  },
+  {
    "assunto": "Emprego e renda",
    "parte": "Desemprego (PNAD Contínua, trimestre móvel)",
    "dono": "Banco Central",
@@ -890,6 +921,15 @@
    "nome": "Série histórica do levantamento de preços - mensal - Brasil, desde janeiro de 2013",
    "endereco": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/precos-revenda-e-de-distribuicao-combustiveis/shlp/mensal/mensal-brasil-desde-jan2013.xlsx",
    "como": "Uma linha por mês e combustível, com as colunas MÊS | PRODUTO | NÚMERO DE POSTOS PESQUISADOS | UNIDADE DE MEDIDA | PREÇO MÉDIO REVENDA | ... O mês vem como número de série do Excel: 45901 é setembro de 2025, 46235 é agosto de 2026 e 46266, setembro de 2026 (cada mês soma 28 a 31). Procure \"OLEO DIESEL S10\" (o diesel das máquinas e dos caminhões novos; \"OLEO DIESEL\" é o S500): o preço médio na bomba, em R$ por litro, é o primeiro número depois de \"R$/l\". Para um mês, procure o número do mês (--procura \"46266\"). Os estados e as regiões estão nos arquivos mensal-estados-desde-jan2013.xlsx e mensal-regioes-desde-jan2013.xlsx, no mesmo endereço; a página da série é https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/precos-revenda-e-de-distribuicao-combustiveis/serie-historica-do-levantamento-de-precos."
+  },
+  {
+   "assunto": "Preços",
+   "parte": "Preço que a indústria cobra na porta da fábrica (sem impostos e frete), no total e por ramo: a ponta da receita de quem produz, para ver se uma alta de custo foi repassada ao preço ou saiu da margem",
+   "dono": "IBGE",
+   "codigo": "SIDRA tabela 6903",
+   "nome": "IPP - Variação mês/mesmo mês do ano anterior (M/M-12) (Indústria geral, indústrias extrativas e indústrias de transformação e atividades (CNAE 2.0))",
+   "endereco": "https://apisidra.ibge.gov.br/values/t/6903/n1/all/v/1394/p/PERIODOS/c842/all",
+   "como": "v/1394 é a variação contra o mesmo mês do ano anterior, em %; v/10008 é o número-índice (dezembro de 2018 = 100), que dá a variação entre dois meses quaisquer com `calc`. c842/all traz a indústria geral (46608), a extrativa, a de transformação e cada ramo (46611 alimentos, 46628 derivados do petróleo, 46641 metalurgia, 46653 veículos...). O preço que um ramo cobra é custo para quem compra dele (a metalurgia para os veículos, a química para os plásticos): para saber se um ramo repassou uma alta de custo, compare, no mesmo mês, o preço dele com o de quem o abastece, ou com o IC-Br, o dólar e o diesel. Para a indústria inteira, a tabela 6904 (c543) separa o preço dos bens intermediários (33585), o que uma indústria vende a outra e, portanto, custo de quem compra, do preço dos bens de consumo (33584) e de capital (33583): o bem de consumo que sobe menos que o intermediário mostra a alta que não chegou ao preço final."
   },
   {
    "assunto": "Agro",
