@@ -2,7 +2,7 @@
  "direcao": "subindo",
  "desde": "2026-06",
  "pergunta": "Para que lado anda o risco de recessão no Brasil: as pressões que costumam vir antes de uma recessão estão piorando ou melhorando?",
- "atualizado_em": "2026-11-13T05:00:04-03:00",
+ "atualizado_em": "2026-11-14T04:00:06-03:00",
  "soma": 4,
  "pioraram": 4,
  "melhoraram": 0,
@@ -14,13 +14,13 @@
    "lado": "piorou",
    "medidas": {
     "divida": {
-     "agora": 82.93,
+     "agora": 82.95,
      "dia": "2026-09-01",
      "ref": "2026-09",
      "antes": 81.95,
      "dia_antes": "2026-06-01",
      "ref_antes": "2026-06",
-     "mudanca": 0.98,
+     "mudanca": 1.0,
      "corte": 0.9451,
      "lado": 1,
      "como": "pontos"
@@ -40,7 +40,7 @@
    },
    "folga": {
     "serie": "divida_bruta",
-    "valor": 82.93,
+    "valor": 82.95,
     "ref": "2026-09",
     "desde": "2006",
     "meses": 238,
@@ -86,13 +86,13 @@
    "lado": "piorou",
    "medidas": {
     "dolar": {
-     "agora": 5.6143,
-     "dia": "2026-11-12",
+     "agora": 5.6518,
+     "dia": "2026-11-13",
      "ref": "2026-11",
      "antes": 5.1816,
      "dia_antes": "2026-08-31",
      "ref_antes": "2026-08",
-     "mudanca": 8.3507,
+     "mudanca": 9.0744,
      "corte": 4.7657,
      "lado": 1,
      "como": "pct",
@@ -101,13 +101,13 @@
      "persiste_dias": 3
     },
     "juro_longo": {
-     "agora": 7.82,
-     "dia": "2026-11-11",
+     "agora": 7.84,
+     "dia": "2026-11-12",
      "ref": "2026-11",
      "antes": 7.92,
      "dia_antes": "2026-08-31",
      "ref_antes": "2026-08",
-     "mudanca": -0.1,
+     "mudanca": -0.08,
      "corte": 0.4114,
      "lado": 0,
      "como": "pontos",
@@ -118,7 +118,7 @@
    },
    "folga": {
     "serie": "juro_real_longo",
-    "valor": 7.82,
+    "valor": 7.84,
     "ref": "2026-11",
     "desde": "2005",
     "meses": 257,
@@ -165,7 +165,7 @@
    "medidas": {
     "juro": {
      "agora": 13.75,
-     "dia": "2026-11-13",
+     "dia": "2026-11-14",
      "ref": "2026-11",
      "antes": 14.0,
      "dia_antes": "2026-08-31",
@@ -298,18 +298,17 @@
  "pressao_noticias": {
   "sentido": "piora",
   "fatores": {
-   "contas": "igual",
-   "mercado": "piora",
+   "contas": "melhora",
+   "atividade": "piora",
    "credito": "piora",
-   "juro": "melhora",
-   "atividade": "igual",
-   "externo": "piora"
+   "externo": "igual",
+   "mercado": "igual"
   }
  },
  "post_do_dia": {
   "tipo": "Fato do dia",
-  "titulo": "Lucro do Banco do Brasil cai pelo agro, mas o dinheiro atrasado cresce mais fora do campo",
-  "url": "https://vaidarcrise.com.br/2026-11-13/",
+  "titulo": "Caixa empresta 23,0% menos ao campo, e o atraso quadruplicou com o juro quase parado",
+  "url": "https://vaidarcrise.com.br/2026-11-14/",
   "escrito_por_llm": true
  }
 }
