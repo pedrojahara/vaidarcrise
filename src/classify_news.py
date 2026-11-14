@@ -59,6 +59,7 @@ CODEX_DESLIGAR = ["shell_tool", "unified_exec", "apps", "plugins", "browser_use"
                   "skill_mcp_dependency_install", "code_mode_host", "workspace_dependencies", "view_image", "sleep_tool",
                   "in_app_local_automation", "fast_mode", "ultrafast_mode"]
 _FEATURES: dict[str, set[str]] = {}
+_CODEX_FORA: str | None = None  # o erro da primeira falha do Codex neste processo
 
 
 def motor(etapa: str) -> str:
@@ -306,15 +307,23 @@ def chamar_claude(system: str, prompt: str, schema: dict, budget_usd: float, eta
     Nas etapas que vão para o Codex (MOTORES), sem ferramentas, a chamada vai primeiro ao Codex; se ele falhar, vai ao
     Claude, e o meta guarda o erro do Codex em "codex_falhou".
     """
+    global _CODEX_FORA
     if not ferramentas and motor(etapa) == "codex":
-        # O Codex levou 97 s no rascunho de 14/11; o teto deixa tempo para o Claude se ele falhar.
-        rc = chamar_codex(system, prompt, schema, etapa, timeout=max(120, min(timeout, 600)))
+        # Depois da primeira falha na rodada, as chamadas seguintes vão direto ao Claude: um Codex travado até o tempo
+        # de cada chamada comeria a rodada inteira antes de o Claude escrever.
+        if _CODEX_FORA:
+            r = _chamar_claude(system, prompt, schema, budget_usd, etapa, None, None, timeout)
+            r["meta"]["codex_falhou"] = f"pulado nesta rodada: {_CODEX_FORA}"[:400]
+            return r
+        # O Codex levou de 30 s a 3 min por redação no teste de 14/11.
+        rc = chamar_codex(system, prompt, schema, etapa, timeout=min(timeout, 600))
         if rc["ok"]:
             return rc
+        _CODEX_FORA = rc["meta"].get("erro") or "erro"
         r = _chamar_claude(system, prompt, schema, budget_usd, etapa, None, None, timeout)
         r["meta"]["codex_falhou"] = rc["meta"].get("erro")
-        print(f"aviso: o Codex falhou na etapa {etapa} ({rc['meta'].get('erro')}); a chamada foi para o Claude",
-              file=sys.stderr)
+        print(f"aviso: o Codex falhou na etapa {etapa} ({rc['meta'].get('erro')}); a chamada e as seguintes vão para o "
+              "Claude", file=sys.stderr)
         return r
     return _chamar_claude(system, prompt, schema, budget_usd, etapa, ferramentas, permitidas, timeout)
 
