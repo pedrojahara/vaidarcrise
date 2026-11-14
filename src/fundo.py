@@ -2443,7 +2443,7 @@ def fontes(post: dict) -> list[dict]:
             vistas.add(m["fonte"]["url"])
             out.append({"quem": m["fonte"]["quem"], "url": m["fonte"]["url"]})
     if any(c["tipo"] == "conta" for c in usadas):
-        out.append({"quem": "contas do site com as séries do Banco Central e do IBGE", "url": None})
+        out.append({"quem": "contas do site com os números dessas fontes", "url": None})
     if so_site or not usadas:
         out.append({"quem": "as séries do Banco Central e do IBGE e as manchetes do dia", "url": None})
     return out
