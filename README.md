@@ -27,7 +27,8 @@ launchd, todo dia às 04h00 → run.sh   (uma publicação por dia; se o Mac dor
   │                         que a pesquisa não achou, a
   │                         investigação (src/investiga.py: perguntas da leitora, a desmontagem do fenômeno em
   │                         partes, explicações rivais, testes cegos contra o dado do mapa config/dados.json, cético
-  │                         e juiz, em até três voltas), o esqueleto do argumento, um texto só, o leitor que só
+  │                         e juiz, em até três voltas), o esqueleto do argumento, um texto só (escrito pelo Codex,
+  │                         codex exec com o login do ChatGPT, e pelo Claude se ele falhar), o leitor que só
   │                         recebe o texto e o revisor de três leitores e um editor, que devolvem objeções em até
   │                         duas voltas, e uma conferência final só de erros; o código confere cada número (guia
   │                         em FUNDO.md, até 65 min; no domingo, até 85, sobre a história que mais andou na semana)
