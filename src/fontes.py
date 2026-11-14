@@ -250,6 +250,7 @@ NOMES = {
     "gov.br/trabalho-e-emprego": "Ministério do Trabalho", "gov.br/mdic": "Ministério do Desenvolvimento, Indústria e Comércio",
     "gov.br/mme": "Ministério de Minas e Energia", "gov.br/previdencia": "Ministério da Previdência",
     "gov.br/aneel": "Aneel", "gov.br/anp": "ANP", "gov.br/cvm": "CVM", "gov.br/inss": "INSS",
+    "gov.br/agricultura": "Ministério da Agricultura", "gov.br/conab": "Conab",
     "gov.br/planalto": "Presidência da República", "agenciadenoticias.ibge.gov.br": "IBGE", "ibge.gov.br": "IBGE",
     "ipea.gov.br": "Ipea", "noticias.stf.jus.br": "Supremo Tribunal Federal", "stf.jus.br": "Supremo Tribunal Federal",
     "stj.jus.br": "Superior Tribunal de Justiça", "tcu.gov.br": "Tribunal de Contas da União", "cvm.gov.br": "CVM",
@@ -327,7 +328,9 @@ def _palavra_em(palavra: str, texto: str) -> bool:
 
 def _de_outra(q: str, url: str | None) -> bool:
     """O nome escrito (sem acento) traz o de outra casa da tabela, que não publica neste endereço? "Banco Central
-    Europeu" num endereço do Banco Central, "Folha" num endereço do g1."""
+    Europeu" num endereço do Banco Central, "Folha" num endereço do g1. O que vem entre parênteses descreve o documento
+    e não conta: "Valor Bruto da Produção" não é o jornal Valor."""
+    q = re.sub(r"\([^)]*\)", " ", q)
     daqui = [_sem_acento(n) for n in _nomes_do_endereco(url)]
     return any(_palavra_em(c, q) for c in _CURTOS if not any(c in n for n in daqui))
 
@@ -350,7 +353,9 @@ def nome_na_pagina(quem: str | None, url: str | None) -> str:
     ele é o de quem publica naquele endereço ("Banco Central, ata da 282ª reunião do Copom" num endereço do Banco
     Central); quando não é (o nome de uma agência com o link de um site que a reproduz), vale o nome do endereço. No
     site oficial que não está na tabela, vale o nome do órgão que a pesquisa escreveu ("Ministério da Agricultura" em
-    gov.br/agricultura), a não ser que ele seja o de uma casa da tabela, que publica em outro endereço."""
+    gov.br/agricultura), a não ser que ele seja o de uma casa da tabela, que publica em outro endereço. O mesmo vale
+    para onde as empresas guardam os próprios documentos (CASAS_DE_RI): "Caixa, Relações com Investidores", e não o
+    endereço do arquivo."""
     quem = (quem or "").strip()
     host, tabela = _host(url), nome_do_endereco(url)
     if not host:
@@ -359,6 +364,9 @@ def nome_na_pagina(quem: str | None, url: str | None) -> str:
     if tabela:
         return quem if quem and _do_mesmo(q, url) else tabela
     if quem and (_e_do_dono(host, quem) or (_no_dominio(host, OFICIAIS) and not _de_outra(q, url))):
+        return quem
+    if quem and _no_dominio(host, CASAS_DE_RI):
+        # Ali só a empresa publica os próprios documentos, e o nome dela é sempre o de outro endereço.
         return quem
     return dominio(url)
 
