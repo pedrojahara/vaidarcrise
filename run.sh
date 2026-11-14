@@ -4,26 +4,68 @@
 # Uso manual: ./run.sh            (atualização do dia; se já houver uma hoje, só coleta)
 #             ./run.sh --forcar   (publica de novo hoje)
 #             ./run.sh --sem-llm  (só dados, sem ler notícias)
-#             ./run.sh --coletar  (só junta manchetes ao acervo local; sem git e sem publicar)
+#             ./run.sh --coletar  (só junta manchetes ao acervo local; sem git e sem publicar; e refaz a rodada
+#                                  do dia que não terminou, ver abaixo)
 set -u
 cd "$(dirname "$0")"
 export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export LANG=pt_BR.UTF-8
 mkdir -p logs
 
+# O dia terminou quando o registro tem a linha "fim" de hoje e, com o e-mail diário ligado, o e-mail de hoje saiu.
+dia_completo() {
+  local hoje=$(date +%Y-%m-%d)
+  grep -q "^=== ${hoje}T[^ ]* fim" "logs/run-$(date +%Y-%m).log" 2>/dev/null || return 1
+  [[ "$(jq -r '.envio_diario' config/newsletter.json)" != "true" ]] && return 0
+  jq -e --arg d "$hoje" 'has($d)' logs/envios.json > /dev/null 2>&1
+}
+# Uma rodada inteira está em andamento: a trava dela existe e tem menos de 4 horas. A mais velha é de uma rodada que o
+# Mac interrompeu (desligou, travou) e não vale mais.
+rodando() {
+  [[ -n "$(find logs/.rodada -maxdepth 0 -mmin -240 2>/dev/null)" ]]
+}
+
 if [[ "${1:-}" == "--coletar" ]]; then
   exec >> "logs/coleta-$(date +%Y-%m).log" 2>&1
   echo "$(date '+%Y-%m-%dT%H:%M:%S%z') $(.venv/bin/python src/run.py --coletar | tail -1)"
+  # A rodada das 4h que não terminou (em 13/11/2026 o Mac ficou horas sem rede; uma rodada pode cair no meio) roda de
+  # novo aqui, na hora cheia, entre 5h e 17h, até duas vezes por dia, só com rede e sem outra rodada em andamento. A
+  # rodada inteira roda de novo, e o que já saiu não sai duas vezes: o post sai uma vez por dia (src/run.py), o e-mail
+  # também (src/newsletter.py), e o texto que faltou tenta de novo (o guarda de src/fundo.py --hoje).
+  hora=$((10#$(date +%H)))
+  if (( hora >= 5 && hora < 18 )) && ! dia_completo && ! rodando; then
+    feitas=$(grep -c "^=== $(date +%Y-%m-%d)T[^ ]* início (de novo" "logs/run-$(date +%Y-%m).log" 2>/dev/null)
+    if (( ${feitas:-0} >= 2 )); then
+      exit 0
+    elif ! curl -fsS -o /dev/null --max-time 20 https://github.com; then
+      echo "$(date '+%Y-%m-%dT%H:%M:%S%z') a rodada de hoje não terminou e o Mac está sem rede; tenta na próxima hora"
+    else
+      echo "$(date '+%Y-%m-%dT%H:%M:%S%z') a rodada de hoje não terminou; roda de novo (vez $(( ${feitas:-0} + 1 )))"
+      VDC_DE_NOVO=$(( ${feitas:-0} + 1 )) exec /bin/zsh ./run.sh
+    fi
+  fi
   exit 0
 fi
 
 exec >> "logs/run-$(date +%Y-%m).log" 2>&1
-echo "=== $(date '+%Y-%m-%dT%H:%M:%S%z') início"
+# Uma rodada inteira por vez: a que roda de novo (acima) não começa no meio de outra.
+if ! mkdir logs/.rodada 2>/dev/null; then
+  if rodando; then
+    echo "=== $(date '+%Y-%m-%dT%H:%M:%S%z') outra rodada em andamento; esta não roda"
+    exit 0
+  fi
+  touch logs/.rodada
+fi
+trap 'rmdir logs/.rodada 2>/dev/null' EXIT
+echo "=== $(date '+%Y-%m-%dT%H:%M:%S%z') início${VDC_DE_NOVO:+ (de novo, vez $VDC_DE_NOVO, porque a rodada de hoje não terminou)}"
 
 git pull --rebase --quiet origin main || echo "aviso: git pull falhou; seguindo com a cópia local"
 
 if ! /usr/bin/caffeinate -i .venv/bin/python src/run.py "$@"; then
   echo "ERRO: a rodada falhou; nada foi publicado"
+  if [[ "${VDC_DE_NOVO:-}" == "2" ]]; then
+    /usr/bin/osascript -e 'display notification "A rodada de hoje falhou de novo; o post e o e-mail não saíram (veja logs/run)" with title "Vai dar crise?"' || true
+  fi
   exit 1
 fi
 
