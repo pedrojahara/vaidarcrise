@@ -1057,7 +1057,7 @@ O texto do dia faz um argumento só sobre a história em andamento que mais ando
 Tamanho: {tamanho} Parágrafos de 2 a 4 frases, separados por uma linha em branco. Num texto de mais de 450 palavras, até 2 intertítulos, cada um numa linha própria que começa com "### " e é uma frase curta, de até 10 palavras, com a ideia da parte. Nada de lista com marcadores.
 
 Números e comparações:
-- Todo número, data e fato vem do caderno, da ficha da história, das metas ou dos dados do site. Marque [c3] logo depois da frase que usa a linha c3 do caderno (ou [c3, c7]). Não arredonde diferente da linha. Se precisar de um número que não está em nenhum deles, não use.
+- Todo número, data e fato vem do caderno, da ficha da história, das metas ou dos dados do site. Marque [c3] no fim da frase que usa a linha c3 do caderno, antes do ponto final ("... divulgou ontem [c3]." ou [c3, c7]). Não arredonde diferente da linha. Se precisar de um número que não está em nenhum deles, não use.
 - Cada número vem com a régua dele, na mesma unidade e na mesma conta: R$ com R$, % do PIB com % do PIB, a conta da meta com a meta. Ao comparar com uma meta oficial, diga a margem e os descontos que a própria regra aceita (bloco <metas>), para que quem defende e quem critica quem decidiu concordem com a conta, e diga quando outra instituição faz a conta de outro jeito.
 - A leitora tem de poder repetir cada número a um sócio: "X, comparado com Y, por isso Z". Número sem régua ou que pede uma conta de cabeça não serve.
 - Separe o dado (o que aconteceu), a previsão (o que alguém espera, com o nome de quem previu) e a opinião (de quem).
@@ -1153,7 +1153,7 @@ def redigir(e: dict, pesquisa: dict | None, cad: list[dict], objecoes: list[dict
             problemas: list[str] | None = None, rascunho: dict | None = None, final: bool = False,
             so_corrige: bool = False, timeout: int = 900, esqueleto: dict | None = None,
             nao_voltar: list[dict] | None = None) -> dict:
-    """O texto (Opus, sem ferramentas), um parágrafo por passo do `esqueleto`; sem ele, na ordem fixa das perguntas. Com
+    """O texto (Codex, ou Claude se ele falhar; sem ferramentas), um parágrafo por passo do `esqueleto`; sem ele, na ordem fixa das perguntas. Com
     `rascunho`, a reescrita que responde às objeções do leitor frio e do revisor e aos problemas do código; na última
     (`final`), o que não tem resposta sai do texto ou vira dúvida dita; na correção da conferência final
     (`so_corrige`), só os trechos errados mudam."""
@@ -1203,7 +1203,20 @@ def redigir(e: dict, pesquisa: dict | None, cad: list[dict], objecoes: list[dict
         partes.append("Escreva o texto do dia e devolva o JSON do esquema.")
     sistema = (SISTEMA_TEXTO.replace("{ordem}", ORDEM_ESQUELETO if esqueleto else ORDEM_PERGUNTAS)
                .replace("{prioridade}", PRIORIDADE).replace("{tamanho}", TAMANHOS[e["modo"]]))
-    return classify_news.chamar_claude(sistema, "\n\n".join(partes), SCHEMA_TEXTO, 4.0, etapa="redacao", timeout=timeout)
+    r = classify_news.chamar_claude(sistema, "\n\n".join(partes), SCHEMA_TEXTO, 4.0, etapa="redacao", timeout=timeout)
+    if r["ok"]:
+        r["saida"]["texto"] = marcas_antes_do_ponto(r["saida"]["texto"])
+    return r
+
+
+# A marca vai antes do ponto ("divulgou ontem [c4]."). O Codex, no teste de 14/11/2026, pôs depois ("divulgou ontem.
+# [c4] O banco..."), e aí a frase seguinte começa com "[" e a divisão em frases (revisa_texto.FRASE) junta as duas: a
+# conferência cortaria as duas juntas e mediria o tamanho errado.
+MARCA_DEPOIS = re.compile(r"([.!?])([\"”»]?)[ \t]*(\[c\d+(?:\s*,\s*c\d+)*\])")
+
+
+def marcas_antes_do_ponto(texto: str) -> str:
+    return MARCA_DEPOIS.sub(lambda m: f"{m.group(2)} {m.group(3)}{m.group(1)}", texto)
 
 
 # ------------------------------------------------------------------ 4. revisão: o leitor frio e o revisor
