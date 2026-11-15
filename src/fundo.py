@@ -69,19 +69,13 @@ import revisa_texto  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 RUNS = ROOT / "runs"
 METAS = ROOT / "config" / "metas.json"
-VERSAO = 4  # 4: o texto do dia pela história (um texto só)
+VERSAO = 5  # 5: a escrita nova (src/escrita.py): redator, leitor frio e aprovador
 FORMATO = "historia"
 TIPOS = ("dia", "pergunta")  # o fato do dia, de segunda a sábado, e a pergunta da semana, no domingo
 CONTA = memoria.CONTA
 LEITOR = origem.FONTES
 MARCA = re.compile(r"\s*\[(c\d+(?:\s*,\s*c\d+)*)\]")
 INTERTITULO = re.compile(r"^#{2,4}\s+(.+?)\s*$")
-# O tamanho do texto: o alvo e, entre parênteses no código, o limite que barra.
-TAMANHO = {"calmo": ((120, 200), (90, 260)), "normal": ((300, 600), (220, 720)), "grande": ((500, 800), (300, 950))}
-# A folga acima do alvo (Pedro, 13/11/2026: "um pouco mais de 800 palavras, vamos deixar 10% de sobra"): o texto que
-# passa do alvo para explicar a resposta não recebe aviso até 10% acima dele.
-FOLGA = 1.1
-TETO = {m: round(alvo[1] * FOLGA) for m, (alvo, _) in TAMANHO.items()}
 GRANDE = 4.0  # a soma da história que faz o dia grande
 INVESTIGA_S = int(60 * float(os.environ.get("VDC_INVESTIGA_MIN", "25")))  # o tempo da investigação, até 3 voltas
 # A pergunta da semana: a investigação tem mais tempo e até três voltas, e olha os sete dias de notícia até ontem.
@@ -91,7 +85,6 @@ DIAS_DA_SEMANA = 7
 PASSOS_DA_SEMANA = 14  # os passos da semana que a história leva, dos mais firmes aos menos
 PERGUNTA_MAX = 120  # a pergunta da semana que vai em cima do título, em caracteres
 CFG = json.loads((ROOT / "config" / "modelo.json").read_text())
-PRESSOES = list(CFG["direcao"]["nomes"])
 
 
 def guia() -> str:
@@ -155,15 +148,7 @@ SCHEMA_SEGUNDA = {
         "muda_o_argumento": {"type": "string", "maxLength": 600},
     },
 }
-# O esqueleto: a estrutura do argumento, pensada e conferida antes da redação (Pedro, 11/11/2026: o texto de teste do
-# ajuste de 2027 enfileirava respostas, e o fato que explicava a conclusão, a meta que não conta os juros nem os
-# precatórios, tinha ficado no meio).
-PASSOS = {"calmo": (2, 3), "normal": (4, 6), "grande": (6, 8)}
-TIPOS_DO_PLANO = ["usa_antes_de_explicar", "conta_escondida", "contradiz", "repete", "nao_serve", "nao_entendi",
-                  "falso_ou_com_lado"]
-# O leitor frio: quem lê só o texto. As listas têm folga, e o código fica com as primeiras de cada uma.
 _CURTO = {"type": "string", "maxLength": 500}
-CABECAS = ["leitora", "defensor", "critico", "editor", "regras"]
 ID_REVISOR = 201
 
 
@@ -636,47 +621,6 @@ def juntar_segunda(pesquisa: dict, cad: list[dict], seg: dict) -> list[dict]:
     pesquisa["segunda_busca"] = {"achou": len(achadas), "nao_achou": len(faltam),
                                  "muda_o_argumento": (seg.get("muda_o_argumento") or "").strip() if achadas else ""}
     return novas
-
-
-def _bloco_pesquisa(pesquisa: dict) -> str:
-    """A pesquisa como o esqueleto e a redação a recebem. O que ela não achou vai com o nome do que é: limite da
-    pesquisa, e não fato sobre o que foi publicado."""
-    d = {"perguntas": pesquisa.get("perguntas")}
-    mudou = ((pesquisa.get("segunda_busca") or {}).get("muda_o_argumento") or "").strip()
-    if mudou:
-        d["o_que_a_segunda_busca_mudou"] = mudou
-    d["o_que_a_pesquisa_nao_achou"] = pesquisa.get("o_que_falta") or ""
-    return ("A pesquisa:\n" + json.dumps(d, ensure_ascii=False, indent=1)
-            + "\nO que a pesquisa não achou é limite da pesquisa, e não fato: o texto não diz que isso não existe, que não "
-              "foi publicado nem que só o que ela achou tem valor."
-            + (" A segunda busca achou parte do que faltava (as últimas perguntas): vale o que ela achou, e o argumento "
-               "que dependia da falta cai." if mudou else "")
-            + (f"\n\n<investigacao>\n{json.dumps(pesquisa['investigacao'], ensure_ascii=False, indent=1)}\n</investigacao>\n"
-               + INVESTIGACAO if pesquisa.get("investigacao") else ""))
-
-
-# A investigação (src/investiga.py) chega ao esqueleto, à redação e ao revisor por este bloco: o resultado, e não o
-# caminho. O caminho (os testes, o cético, as explicações) fica no registro da rodada e não vai para a página.
-INVESTIGACAO = ("A investigação (bloco <investigacao>) veio antes do texto: uma leitora leiga fez as perguntas, explicações "
-                "rivais foram testadas contra o dado de quem mediu, com o corte escrito antes, um cético tentou derrubar "
-                "cada resultado, e um juiz decidiu o que ficou. \"respostas\" é a melhor resposta a cada pergunta da "
-                "leitora, e \"achados\" são o que o dado sustenta, cada um com a força. \"conclusao\" é a pergunta "
-                "que a investigação mais mudou e a resposta que o dado favorece: a pergunta e a resposta do texto saem "
-                "dela, e o título e a abertura dizem a resposta, com o número que a carrega (\"numero_chave\") e a "
-                "força em palavras. Os passos se apoiam nos achados e nas linhas do caderno deles, e o que ficou sem "
-                "medida (\"sem_medida\") entra como a ressalva, com o que mudaria a resposta. A força entra em "
-                "palavras e com a ressalva (\"em 9 anos, nenhum ficou a menos de...\"). Força fraca não apaga a "
-                "conclusão: o texto diz para onde os números apontam e com que força, e não a dá como certa. A força que "
-                "o juiz deu (\"forca\" da \"conclusao\") é a do texto inteiro: o esqueleto, a redação e o revisor não a "
-                "sobem nem a apagam, e quando a resposta do esqueleto soa mais certa que a conclusão, vale a conclusão. "
-                "Quando a força não é forte, o título e a abertura dizem a resposta com ela em palavras (\"os números "
-                "apontam\", \"numa conta aproximada\"), e a ressalva aparece uma vez, junto da conta que ela qualifica. "
-                "Dizer só o "
-                "que não é a causa, ou listar as causas sem dizer qual pesa mais, deixa a leitora sem a resposta que a "
-                "investigação achou. \"caiu\" é o que se dizia e o dado derrubou: não entra como fato, e pode entrar como a "
-                "crença errada corrigida de frente, com o dado que a derrubou. O texto não conta como a análise foi "
-                "feita: nada de investigação, teste, corte, cético ou juiz na página, e a conta do passado entra como "
-                "conta (\"nos cinco anúncios desde 2015...\").")
 
 
 def bloco_da_leitora(e: dict) -> str:
