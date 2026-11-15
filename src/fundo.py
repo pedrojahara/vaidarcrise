@@ -168,8 +168,8 @@ def metas(ids: list[str]) -> list[dict]:
 def _bloco_metas(ms: list[dict]) -> str:
     if not ms:
         return ""
-    l = ["<metas>", "As metas oficiais que servem de régua, conferidas à mão nos documentos oficiais (uso livre no texto, "
-         "como régua; a fonte vai junto):"]
+    l = ["<metas>", "As metas oficiais, conferidas à mão nos documentos oficiais, para comparar os números (uso livre no "
+         "texto; a fonte vai junto):"]
     for m in ms:
         l.append(f"- {m['o_que']}: centro {m['centro']}; margem: {m['margem']}; piso: {m['piso']}; o que a regra "
                  f"desconta: {m['descontos']}; como se mede: {m['como_se_mede']}. Fonte: {m['fonte']['quem']}, "
@@ -264,11 +264,11 @@ def _bloco_historia(h: dict | None, pauta: dict, eventos: dict | None, ult: dict
                          "de ontem.")
             if ult:
                 l.append(f"O último texto do site sobre esta história saiu em {ult['data'][8:10]}/{ult['data'][5:7]}: "
-                         f"\"{ult['titulo']}\". O argumento dele: {ult['argumento']} Conte só o passo novo, com uma frase "
-                         "de régua; não repita o contexto nem o argumento daquele dia.")
+                         f"\"{ult['titulo']}\". O argumento dele: {ult['argumento']} O texto de hoje conta o que é novo "
+                         "desde aquele dia e não repete o contexto nem o argumento dele.")
             else:
                 l.append("É a primeira vez que o texto do dia trata desta história: dê o contexto inteiro em um parágrafo "
-                         "(o que está em jogo, quem decide, a régua).")
+                         "(o que está em jogo e quem decide).")
     return "\n".join([*l, f"</{nome}>"])
 
 

@@ -64,7 +64,7 @@ Escreva com a mesma exigência de evidência para qualquer governo, instituiçã
 
 Como referência, um dia calmo pede aproximadamente 120 a 200 palavras; um dia normal, 300 a 600; um dia grande ou a pergunta da semana, 500 a 800. Esses intervalos orientam a seleção. Ultrapassá-los pode ser necessário para completar uma explicação essencial; o tamanho, isoladamente, não justifica retirar uma camada indispensável. Não encha um texto para atingir o mínimo.
 
-O texto publicado não mostra instruções, etapas de produção ou avaliações internas. Não promete que o site fará uma verificação futura. Um próximo dado ou decisão pode ser mencionado quando já estiver previsto no material.
+O texto publicado não mostra instruções, etapas de produção ou avaliações internas, nem as palavras de trabalho do material, como régua, passo, caderno, pauta ou investigação. Não promete que o site fará uma verificação futura. Um próximo dado ou decisão pode ser mencionado quando já estiver previsto no material.
 
 Identifique internamente as evidências que sustentam as afirmações. Essas marcas serão convertidas em fontes pelo código.
 
