@@ -1,6 +1,5 @@
 {
- "atualizado_em": "2026-11-10",
- "juntadas_em": "2026-11-10",
+ "atualizado_em": "2026-11-15",
  "historias": [
   {
    "id": "contas_governo",
@@ -14,31 +13,19 @@
     "mercado",
     "juro"
    ],
-   "o_que_e": "O governo central fechou 2025 com déficit primário de R$ 61,7 bi. A meta de 2026 é superávit de 0,25% do PIB, com margem até zero, e a de 2027, de 0,50% do PIB; nas duas a regra desconta parte dos precatórios (ver config/metas.json). Depois da eleição, quem investe cobra um ajuste com números, e a Fazenda diz preparar um gradual, sem data. A dívida bruta passa de 80% do PIB, mais da metade ligada à Selic, e cada medida de gasto ou imposto (subvenção ao diesel, imposto sobre o petróleo exportado, isenções de combustível) entra nessa conta.",
+   "o_que_e": "O governo central fechou 2025 com déficit primário de R$ 61,7 bi. A meta de 2026 é superávit de 0,25% do PIB, com margem até zero, e a de 2027, de 0,50% do PIB; a regra desconta parte dos precatórios (ver config/metas.json). Depois da eleição, o governo mandou um projeto de ajuste de até R$ 60 bi para 2027 (corta benefícios de impostos e limita o crescimento do gasto de 2,5% para 2%); o Senado aprovou até R$ 56 bi e a decisão agora é da Câmara. O mercado vê o ajuste como pequeno, a dívida bruta passa de 80% do PIB e o Tesouro precisa refinanciar R$ 1,8 trilhão em 12 meses.",
    "linha_do_tempo": [
     {
      "data": "2026-01-30",
      "fato": "2025 fecha com déficit primário de R$ 61,7 bi."
     },
     {
-     "data": "2026-05-22",
-     "fato": "Bloqueio do Orçamento sobe a R$ 23,7 bi, com a meta de 2026 mantida."
-    },
-    {
      "data": "2026-08-31",
      "fato": "Projeto de Orçamento de 2027 prevê resultado efetivo de R$ 18,6 bi (0,13% do PIB); com os R$ 64,7 bi que a regra desconta, a conta da meta dá R$ 83,4 bi, acima do centro de R$ 73,2 bi (0,50% do PIB)."
     },
     {
-     "data": "2026-10-29",
-     "fato": "Superávit de R$ 4,8 bi em setembro; déficit de 12 meses em R$ 49,5 bi (0,38% do PIB), conta sem os descontos da meta."
-    },
-    {
-     "data": "2026-11-01",
-     "fato": "Dívida ligada à Selic bate recorde de 52,74% em agosto."
-    },
-    {
      "data": "2026-11-03",
-     "fato": "Fazenda diz preparar ajuste gradual sem data; Tesouro projeta dívida de 83,7% do PIB em 2026 e 89,7% em 2030."
+     "fato": "Tesouro projeta dívida de 83,7% do PIB em 2026 e 89,7% em 2030; Fazenda diz preparar ajuste gradual sem data."
     },
     {
      "data": "2026-11-06",
@@ -46,12 +33,24 @@
     },
     {
      "data": "2026-11-09",
-     "fato": "Presidente reafirma o compromisso fiscal na TV, sem detalhar o ajuste; Gás do Povo prorrogado até 2031."
+     "fato": "Tesouro terá de refinanciar R$ 1,8 trilhão em 12 meses; dívida que vence em até um ano chega a 19,95%. Gás do Povo é prorrogado até 2031."
+    },
+    {
+     "data": "2026-11-11",
+     "fato": "Governo envia ao Senado projeto de ajuste de até R$ 60 bi em 2027; o texto também tira até R$ 10,5 bi de subsídio ao diesel da meta de 2026."
+    },
+    {
+     "data": "2026-11-12",
+     "fato": "Senado aprova por 45 a 31 o ajuste de até R$ 56 bi; o texto vai à Câmara. Congresso aprova crédito de R$ 149,4 bi para benefícios sociais."
+    },
+    {
+     "data": "2026-11-14",
+     "fato": "Mercado vê o ajuste entre R$ 27,9 bi e R$ 56,1 bi, abaixo dos R$ 60 bi do governo, e pede mais medidas; equipe estuda PEC para gastos fora do limite do arcabouço."
     }
    ],
    "proximo_marco": {
-    "data": "",
-    "o_que": "Anúncio das medidas de ajuste e do ministro da Fazenda do novo mandato, depois da COP; votação do Orçamento de 2027 no Congresso; fim do imposto sobre o petróleo exportado em 31/12."
+    "data": "2026-11-18",
+    "o_que": "Votação do projeto de ajuste na Câmara, onde parte da base do governo resiste; depois, o nome do ministro da Fazenda do novo mandato, a votação do Orçamento de 2027 e o fim do imposto sobre o petróleo exportado em 31/12."
    },
    "antigas": [
     "fiscal_2026_ajuste",
@@ -62,7 +61,7 @@
   },
   {
    "id": "juro_inflacao",
-   "titulo": "Juro e inflação: a Selic parada e a inflação acima do teto",
+   "titulo": "Juro e inflação: a Selic parada, a inflação acima do teto e a pressão política",
    "desde": "2025-05",
    "estado": "aberta",
    "pressao": "juro",
@@ -70,9 +69,9 @@
     "juro",
     "inflacao",
     "parcelas",
-    "ritmo"
+    "mercado"
    ],
-   "o_que_e": "O Copom subiu a Selic a 15% em junho de 2025, cortou a partir de março de 2026 até 13,75% e parou em 4/11/2026, com a inflação de 12 meses acima do teto de 4,5% e o dólar mais caro depois da eleição. A meta é 3%, com margem até 4,5%, e conta como descumprida só depois de seis meses seguidos fora da faixa (ver config/metas.json). O Focus sobe a inflação esperada de 2026 e de 2027, o que tira espaço para novos cortes.",
+   "o_que_e": "O Copom subiu a Selic a 15% em junho de 2025, cortou desde março de 2026 até 13,75% e parou em 4/11/2026. A inflação de 12 meses está acima do teto de 4,5% (4,63% em outubro) e o Focus vê 4,90% em 2027. A meta é 3%, com margem até 4,5%, e conta como descumprida só depois de seis meses seguidos fora da faixa (ver config/metas.json). A Selic é decisão do Copom, pela lei de autonomia; propostas de aliados do presidente para baixar o juro por decisão política foram negadas pela Fazenda, e Galípolo descartou mudar a meta.",
    "linha_do_tempo": [
     {
      "data": "2025-06-18",
@@ -83,37 +82,38 @@
      "fato": "Primeiro corte, de 15% para 14,75%."
     },
     {
-     "data": "2026-06-12",
-     "fato": "IPCA de maio vai a 4,72% em 12 meses, acima do teto."
-    },
-    {
      "data": "2026-09-16",
      "fato": "Quinto corte seguido, a 13,75%, por unanimidade."
-    },
-    {
-     "data": "2026-10-09",
-     "fato": "IPCA de setembro sobe 0,82%."
-    },
-    {
-     "data": "2026-11-03",
-     "fato": "Focus sobe a previsão de IPCA de 2026 para 5,22%."
     },
     {
      "data": "2026-11-04",
      "fato": "Copom para de cortar e mantém a Selic em 13,75%; a previsão do Banco Central para o IPCA de 2026 sobe para 5,6%."
     },
     {
-     "data": "2026-11-09",
-     "fato": "Focus sobe a inflação de 2027 a 4,90%."
+     "data": "2026-11-05",
+     "fato": "Partido do governo critica o Banco Central por parar de cortar; proposta de limitar juros divide aliados e preocupa o mercado."
+    },
+    {
+     "data": "2026-11-10",
+     "fato": "Ata do Copom indica Selic em 13,75% por mais tempo, com quatro choques de oferta, entre eles o fim da escala 6x1."
+    },
+    {
+     "data": "2026-11-11",
+     "fato": "Galípolo diz que a Selic sai reunião a reunião e descarta mudar a meta de inflação."
+    },
+    {
+     "data": "2026-11-12",
+     "fato": "IPCA de outubro sobe 0,14%, abaixo do esperado, e vai a 4,63% em 12 meses; alimentos sobem 1,04%."
     }
    ],
    "proximo_marco": {
-    "data": "2026-11-12",
-    "o_que": "IPCA de outubro (IBGE); depois, a reunião do Copom de 9/12."
+    "data": "2026-12-09",
+    "o_que": "Reunião do Copom; antes, o Focus semanal. Se alguma proposta de limitar o juro vira projeto no Congresso."
    },
    "antigas": [
     "ciclo_selic",
-    "inflacao_meta"
+    "inflacao_meta",
+    "limitar_juro"
    ]
   },
   {
@@ -128,7 +128,7 @@
     "juro",
     "inflacao"
    ],
-   "o_que_e": "O presidente foi reeleito em 25/10/2026, contra o que o mercado esperava. No dia seguinte a Bolsa caiu 13,9% e o dólar subiu 8,2%, e os juros longos do Tesouro foram ao maior nível em anos. Quem investe cobra um plano para as contas e acompanha quem vai para a Fazenda e para a diretoria do Banco Central, que o presidente renova até o fim de 2027. O dólar caro chega aos preços dos importados, e o juro longo, ao custo da dívida e do crédito longo.",
+   "o_que_e": "O presidente foi reeleito em 25/10/2026, contra o que o mercado esperava. No dia seguinte a Bolsa caiu 13,9% e o dólar subiu 8,2%, e os juros longos foram ao maior nível em anos. Quem investe cobra um plano maior para as contas e espera o nome do ministro da Fazenda e dos diretores do Banco Central. O dólar chegou a R$ 5,65, o maior valor desde junho de 2025, e bancos e gestoras reduzem exposição ao Brasil; a Moody's foi citada sobre risco de rebaixamento. O dólar caro chega aos importados, e o juro longo, à dívida e ao crédito.",
    "linha_do_tempo": [
     {
      "data": "2026-04-30",
@@ -143,74 +143,34 @@
      "fato": "Bolsa perde 18,1% na semana e dólar sobe 9%, maior alta desde 2008."
     },
     {
-     "data": "2026-10-31",
-     "fato": "Risco-país sobe 18% na semana; títulos do Tesouro perdem até 17%."
-    },
-    {
-     "data": "2026-11-02",
-     "fato": "Presidente vai indicar seis diretores do Banco Central até o fim de 2027."
-    },
-    {
-     "data": "2026-11-03",
-     "fato": "Dólar fecha a R$ 5,487 e juros futuros sobem."
-    },
-    {
      "data": "2026-11-06",
-     "fato": "Dólar a R$ 5,508 e Bolsa sobe 1,39%; estrangeiros tiram R$ 8,4 bi."
+     "fato": "Dólar a R$ 5,508 e Bolsa sobe 1,39%; estrangeiros tiraram R$ 8,4 bi desde a eleição."
     },
     {
-     "data": "2026-11-09",
-     "fato": "Bolsa sobe 2,22% e dólar cai a R$ 5,505 com alívio lá fora."
+     "data": "2026-11-10",
+     "fato": "Executivo da Moody's diz que pressões fiscais aumentaram e podem levar a rebaixamento; gestora Legacy zera posições no Brasil até conhecer a equipe econômica."
+    },
+    {
+     "data": "2026-11-11",
+     "fato": "Gestoras elevam caixa e fundo Verde reduz ações locais e compra dólar; dólar cai a R$ 5,562 com o plano fiscal."
+    },
+    {
+     "data": "2026-11-12",
+     "fato": "Dólar fecha a R$ 5,65, maior valor desde junho de 2025, com juros futuros em alta: o pacote é visto como insuficiente."
+    },
+    {
+     "data": "2026-11-13",
+     "fato": "UBS rebaixa ações do Brasil e JPMorgan pede cautela, citando contas, preços resistentes e juro alto."
     }
    ],
    "proximo_marco": {
     "data": "",
-    "o_que": "Nome do ministro da Fazenda e plano das contas do novo mandato; leilões do Tesouro."
+    "o_que": "Nome do ministro da Fazenda e plano das contas do novo mandato; votação do ajuste na Câmara (18/11); leilões do Tesouro."
    },
    "antigas": [
     "eleicao_2026",
     "dolar_mercado"
    ]
-  },
-  {
-   "id": "limitar_juro",
-   "titulo": "A ideia de baixar o juro por decisão política",
-   "desde": "2026-11",
-   "estado": "aberta",
-   "pressao": "mercado",
-   "pressoes": [
-    "mercado",
-    "juro",
-    "inflacao"
-   ],
-   "o_que_e": "Depois da eleição, aliados do presidente passaram a defender propostas para baixar o juro sem esperar o Banco Central, como um teto para a Selic ou a ideia de um economista que já trabalhou no governo de usar outro instrumento para conter a inflação. A Fazenda nega que estude a mudança. A decisão sobre a Selic é do Copom, pela lei de autonomia do Banco Central, e qualquer mudança nisso dependeria do Congresso. Quem investe lê a discussão como risco de a inflação subir, e cobra mais para emprestar ao governo.",
-   "linha_do_tempo": [
-    {
-     "data": "2026-11-01",
-     "fato": "Proposta de teto para a Selic entra no radar do presidente, e a Fazenda nega."
-    },
-    {
-     "data": "2026-11-03",
-     "fato": "Coordenador do programa de governo apoia a ideia de um economista para baixar o juro; a Fazenda critica."
-    },
-    {
-     "data": "2026-11-05",
-     "fato": "Proposta de limitar juros divide aliados do presidente e pesa na Bolsa."
-    },
-    {
-     "data": "2026-11-05",
-     "fato": "Partido do governo critica o Banco Central por parar de cortar a Selic."
-    },
-    {
-     "data": "2026-11-08",
-     "fato": "Proposta para baixar juros preocupa o mercado."
-    }
-   ],
-   "proximo_marco": {
-    "data": "",
-    "o_que": "Se alguma proposta vira projeto no Congresso ou se o governo a descarta por escrito."
-   },
-   "antigas": []
   },
   {
    "id": "ritmo_emprego",
@@ -224,27 +184,15 @@
     "renda",
     "juro"
    ],
-   "o_que_e": "A economia perdeu ritmo com o juro alto: o PIB cresceu 2,3% em 2025, 1,1% no 1º trimestre de 2026 e 0,5% no 2º, com o consumo das famílias em queda. A indústria cai desde maio. O desemprego segue perto do menor da série (5,2% até setembro), mas as vagas com carteira crescem cada vez menos. Bancos e consultorias cortam a previsão do PIB de 2027. Recessão técnica pede dois trimestres seguidos de queda do PIB.",
+   "o_que_e": "A economia perdeu ritmo com o juro alto: o PIB cresceu 2,3% em 2025, 1,1% no 1º trimestre de 2026 e 0,5% no 2º, com o consumo das famílias em queda. Indústria, varejo e serviços caíram no 3º trimestre e a confiança da indústria está no menor nível desde maio de 2020. O desemprego segue perto do menor da série (5,2% até setembro), mas as vagas com carteira crescem cada vez menos. O Focus corta o PIB de 2026 para 1,75% e bancos e consultorias veem 2027 parado ou em queda; alguns falam em recessão. Recessão técnica pede dois trimestres seguidos de queda do PIB.",
    "linha_do_tempo": [
-    {
-     "data": "2026-03-03",
-     "fato": "PIB de 2025 fecha em 2,3%."
-    },
     {
      "data": "2026-09-01",
      "fato": "PIB do 2º tri de 2026 cresce 0,5%; consumo das famílias cai 0,4%."
     },
     {
-     "data": "2026-10-28",
-     "fato": "CNI reduz a previsão do PIB de 2026 de 2% para 1,6%."
-    },
-    {
      "data": "2026-10-30",
-     "fato": "Desemprego cai a 5,2% no trimestre até setembro."
-    },
-    {
-     "data": "2026-10-30",
-     "fato": "Itaú reduz a previsão do PIB de 2027 para 0,5%."
+     "fato": "Desemprego cai a 5,2% no trimestre até setembro; Itaú reduz a previsão do PIB de 2027 para 0,5%."
     },
     {
      "data": "2026-11-04",
@@ -257,6 +205,18 @@
     {
      "data": "2026-11-06",
      "fato": "Bradesco, XP e Genoa pioram as previsões e veem PIB parado ou em queda em 2027."
+    },
+    {
+     "data": "2026-11-10",
+     "fato": "Ex-secretário do Tesouro prevê recessão e gestora vê estagflação em 2027."
+    },
+    {
+     "data": "2026-11-13",
+     "fato": "Confiança da indústria cai a 40,2 pontos, o menor nível desde maio de 2020; varejo sobe 0,2% em setembro."
+    },
+    {
+     "data": "2026-11-14",
+     "fato": "Indústria, varejo e serviços caem no 3º trimestre contra o 2º, segundo o IBGE."
     }
    ],
    "proximo_marco": {
@@ -279,19 +239,11 @@
     "juro",
     "ritmo"
    ],
-   "o_que_e": "Com a Selic alta, a inadimplência subiu: crédito livre a 5,5% em janeiro de 2026 e atrasos acima de 90 dias nas famílias a 8,1% em setembro. Os bancos concedem menos e o financiamento da casa própria encareceu depois da eleição. O governo usa linhas subsidiadas, que ficam fora da meta fiscal.",
+   "o_que_e": "Com a Selic alta, a inadimplência subiu: crédito livre a 5,5% em janeiro de 2026, atrasos acima de 90 dias nas famílias a 8,1% em setembro, atraso no cartão em 10% das dívidas e 75,55 milhões de consumidores com contas atrasadas em outubro. Empresas e o agro também atrasam: BB e Caixa cortam crédito ao campo, e os quatro maiores bancos reservam R$ 49,9 bi para calotes. O financiamento da casa própria encareceu e a Caixa avalia subir a taxa. O governo usa linhas subsidiadas e renegociações, que ficam fora da meta fiscal.",
    "linha_do_tempo": [
-    {
-     "data": "2025-08-13",
-     "fato": "Plano Brasil Soberano cria R$ 30 bi de crédito a exportadores."
-    },
     {
      "data": "2026-02-25",
      "fato": "Inadimplência do crédito livre vai a 5,5%, a maior desde 2017."
-    },
-    {
-     "data": "2026-10-27",
-     "fato": "BC: 20,3 milhões de pessoas com dívida de risco."
     },
     {
      "data": "2026-10-28",
@@ -299,24 +251,32 @@
     },
     {
      "data": "2026-10-29",
-     "fato": "Atraso de mais de 90 dias nas famílias sobe a 8,1%, recorde."
+     "fato": "Atraso de mais de 90 dias nas famílias sobe a 8,1%, recorde; Fazenda libera até R$ 30 bi do BNDES para carro de aplicativo e táxi."
     },
     {
-     "data": "2026-10-29",
-     "fato": "Fazenda libera até R$ 30 bi do BNDES para carro de aplicativo e táxi."
+     "data": "2026-11-10",
+     "fato": "Atraso no cartão chega a 10% das dívidas no 3º tri; recuperação judicial bate recorde, com 8,5 mil empresas."
     },
     {
-     "data": "2026-10-30",
-     "fato": "Saldo de crédito sobe só 0,4% em setembro."
+     "data": "2026-11-11",
+     "fato": "Lucro do Banco do Brasil cai 66,5% com atraso no agro; Senado aprova a MP que renegocia dívidas rurais no limite do prazo."
     },
     {
-     "data": "2026-11-03",
-     "fato": "Serasa: 84,2 milhões com contas atrasadas, recorde."
+     "data": "2026-11-12",
+     "fato": "Quatro maiores bancos reservam R$ 49,9 bi para calotes; 9,4 milhões de empresas com dívidas atrasadas."
+    },
+    {
+     "data": "2026-11-13",
+     "fato": "75,55 milhões de consumidores com contas atrasadas (44,94% dos adultos); Caixa corta crédito ao agro e avalia subir juros do imobiliário."
+    },
+    {
+     "data": "2026-11-14",
+     "fato": "Intenção de compra de imóveis cai a 35%, diz FipeZAP."
     }
    ],
    "proximo_marco": {
     "data": "",
-    "o_que": "Novos dados de crédito e inadimplência do Banco Central."
+    "o_que": "Novos dados de crédito e inadimplência do Banco Central; decisão da Caixa sobre os juros do imobiliário."
    },
    "antigas": []
   },
@@ -332,27 +292,15 @@
     "contas",
     "mercado"
    ],
-   "o_que_e": "A guerra Israel-Irã em 2025 foi breve. Em 28/2/2026 os EUA e Israel entraram em guerra contra o Irã e o Brent passou de US$ 100. Sinais de paz derrubam o preço e escaladas o elevam. O petróleo, preço externo, afeta combustíveis, inflação e a margem do Banco Central, e o governo respondeu com subvenção ao diesel.",
+   "o_que_e": "A guerra Israel-Irã em 2025 foi breve. Em 28/2/2026 os EUA e Israel entraram em guerra contra o Irã e o Brent passou de US$ 100. Sinais de paz derrubam o preço e escaladas o elevam: em novembro o Brent foi de cerca de US$ 97 a menos de US$ 90, conforme a negociação entre EUA e Irã. O petróleo, preço externo, afeta combustíveis, inflação e a margem do Banco Central. O governo respondeu com subvenção ao diesel e corte de impostos sobre combustíveis; o subsídio ao diesel importado venceu em 13/11.",
    "linha_do_tempo": [
     {
-     "data": "2025-06-13",
-     "fato": "Israel ataca o Irã; Brent sobe até 10%."
-    },
-    {
-     "data": "2025-06-24",
-     "fato": "Cessar-fogo; petróleo volta ao patamar anterior."
-    },
-    {
      "data": "2026-03-03",
-     "fato": "Guerra dos EUA e de Israel contra o Irã derruba a bolsa e eleva o Brent a cerca de US$ 82."
+     "fato": "Guerra dos EUA e de Israel contra o Irã derruba a bolsa e eleva o Brent."
     },
     {
      "data": "2026-04-06",
      "fato": "Governo lança desconto no diesel importado, com custo fiscal estimado em R$ 10 bi."
-    },
-    {
-     "data": "2026-06-15",
-     "fato": "Acordo provisório EUA-Irã para reabrir Ormuz derruba o Brent a US$ 78-84."
     },
     {
      "data": "2026-07-31",
@@ -363,13 +311,25 @@
      "fato": "Petróleo sobe mais de 14% em outubro."
     },
     {
-     "data": "2026-11-04",
-     "fato": "Petróleo cai mais de 8% com expectativa de fim do conflito."
+     "data": "2026-11-10",
+     "fato": "Brent cai abaixo de US$ 90 pela primeira vez desde agosto, com aposta em acordo de paz."
+    },
+    {
+     "data": "2026-11-12",
+     "fato": "Petróleo sobe após o presidente dos EUA dizer que um acordo com o Irã não é necessário."
+    },
+    {
+     "data": "2026-11-13",
+     "fato": "Agência Internacional de Energia vê oferta acima da demanda no 4º trimestre; Fazenda deixa vencer o subsídio ao diesel importado."
+    },
+    {
+     "data": "2026-11-14",
+     "fato": "Fontes dizem que Trump pode adiar ataques ao Irã se não houver novas provocações."
     }
    ],
    "proximo_marco": {
     "data": "",
-    "o_que": "Se a negociação de paz entre EUA e Irã se confirma e o petróleo segue caindo."
+    "o_que": "Se a negociação de paz entre EUA e Irã se confirma e o petróleo segue caindo; se a Fazenda reavalia o subsídio ao diesel rodoviário."
    },
    "antigas": []
   },
@@ -384,7 +344,7 @@
     "emprego",
     "ritmo"
    ],
-   "o_que_e": "Os EUA decidiram uma tarifa de 50% sobre produtos brasileiros em 2025, com exceções, e o governo respondeu com crédito a exportadores. Em novembro de 2025 foi retirada a sobretaxa sobre café e carne. Em novembro de 2026 as tarifas seguem em vigor, e o novo Congresso americano pode limitar o presidente. O acordo Mercosul-UE ajuda a diversificar as exportações.",
+   "o_que_e": "Os EUA decidiram uma tarifa de 50% sobre produtos brasileiros em 2025, com exceções, e o governo respondeu com crédito a exportadores. Em novembro de 2025 foi retirada a sobretaxa sobre café e carne. Em novembro de 2026 as tarifas seguem em vigor, e o novo Congresso americano, de maioria democrata, pode limitar o presidente. A Câmara aprovou MP com R$ 13,5 bi de crédito a empresas afetadas, que segue ao Senado. O acordo Mercosul-UE ajuda a diversificar as exportações.",
    "linha_do_tempo": [
     {
      "data": "2025-07-09",
@@ -412,12 +372,16 @@
     },
     {
      "data": "2026-11-04",
-     "fato": "Democratas ganham o Congresso dos EUA; os EUA devem mandar proposta sobre tarifas até a próxima semana."
+     "fato": "Democratas ganham o Congresso dos EUA; os EUA devem mandar proposta sobre tarifas até a semana seguinte."
+    },
+    {
+     "data": "2026-11-10",
+     "fato": "Câmara aprova MP com R$ 13,5 bi de crédito a empresas afetadas pelo tarifaço; texto vai ao Senado."
     }
    ],
    "proximo_marco": {
-    "data": "2026-11-13",
-    "o_que": "Proposta dos EUA sobre as tarifas, esperada até a semana seguinte a 4/11."
+    "data": "",
+    "o_que": "Proposta dos EUA sobre as tarifas, esperada até 13/11 e ainda sem registro; votação da MP de crédito no Senado."
    },
    "antigas": []
   },
@@ -431,12 +395,8 @@
     "juro",
     "mercado"
    ],
-   "o_que_e": "O Fed, fora do controle do Brasil, manteve juros em 2025, cortou até 3,50%-3,75% e parou. Sob Kevin Warsh, retirou o viés de cortes e passou a ter votos por alta; em outubro de 2026 os juros estavam em 3,75%-4,00%. Juro americano alto limita o espaço para o real e para cortes da Selic.",
+   "o_que_e": "O Fed, fora do controle do Brasil, cortou os juros até 3,50%-3,75% e parou. Sob Kevin Warsh, retirou o viés de cortes, subiu os juros em setembro de 2026 e os mantém em 3,75%-4,00%, com dois votos por alta em outubro. A inflação de outubro nos EUA veio acima do esperado (0,4%) e dirigentes falam em alta em dezembro. Juro americano alto atrai dinheiro para os EUA, pressiona o dólar e limita o espaço para cortes da Selic.",
    "linha_do_tempo": [
-    {
-     "data": "2025-07-30",
-     "fato": "Fed mantém juros em 4,25%-4,50%."
-    },
     {
      "data": "2026-01-28",
      "fato": "Fed mantém 3,50%-3,75% após três cortes."
@@ -450,10 +410,6 @@
      "fato": "Fed retira o viés de cortes."
     },
     {
-     "data": "2026-08-28",
-     "fato": "Warsh fala duro sobre inflação em Jackson Hole."
-    },
-    {
      "data": "2026-09",
      "fato": "Fed sobe os juros pela primeira vez desde 2023."
     },
@@ -463,12 +419,20 @@
     },
     {
      "data": "2026-11-06",
-     "fato": "Emprego forte nos EUA: mercado vê 80% de chance de alta."
+     "fato": "EUA criam 165 mil vagas em outubro: mercado vê 80% de chance de alta."
+    },
+    {
+     "data": "2026-11-10",
+     "fato": "Inflação dos EUA sobe 0,4% em outubro, acima dos 0,3% esperados; cresce a aposta de alta em dezembro."
+    },
+    {
+     "data": "2026-11-14",
+     "fato": "Dirigentes dizem que os juros podem subir além do esperado e defendem altas graduais."
     }
    ],
    "proximo_marco": {
     "data": "",
-    "o_que": "Próxima reunião do Fed, com apostas de alta de juros."
+    "o_que": "Próxima reunião do Fed, em dezembro, com apostas de alta de juros."
    },
    "antigas": []
   },
@@ -482,56 +446,91 @@
     "mercado",
     "ritmo"
    ],
-   "o_que_e": "As bolsas dos Estados Unidos e da Ásia caíram com o medo de que as empresas de tecnologia invistam menos em inteligência artificial. Quando quem investe lá fora se assusta, costuma tirar dinheiro de países como o Brasil, o que pesa no dólar e na Bolsa daqui; a decisão não está nas mãos do governo nem do Banco Central do Brasil.",
+   "o_que_e": "As bolsas dos Estados Unidos e da Ásia caíram com o medo de que as empresas de tecnologia invistam menos em inteligência artificial, e a Nvidia perdeu US$ 470 bi em dois dias com uma investigação sobre o presidente-executivo, que depois renunciou. Quando quem investe lá fora se assusta, costuma tirar dinheiro de países como o Brasil, o que pesa no dólar e na Bolsa daqui. A decisão não está nas mãos do governo nem do Banco Central do Brasil, e o efeito direto sobre o PIB brasileiro é pequeno por enquanto.",
    "linha_do_tempo": [
     {
-     "data": "2026-11-06",
-     "fato": "Nasdaq, bolsa dos EUA, cai até 6,4% e Bolsa do Japão perde mais de 6%"
+     "data": "2026-11-05",
+     "fato": "Nasdaq, bolsa dos EUA, cai até 6,4% e Bolsa do Japão perde mais de 6%."
+    },
+    {
+     "data": "2026-11-10",
+     "fato": "Nvidia perde US$ 470 bi em dois dias com investigação sobre o presidente-executivo."
+    },
+    {
+     "data": "2026-11-11",
+     "fato": "Bolsas de Nova York sobem e a Nvidia recupera parte da queda."
+    },
+    {
+     "data": "2026-11-12",
+     "fato": "CEO da Nvidia renuncia e ações de tecnologia caem em Nova York e Hong Kong."
     }
    ],
    "proximo_marco": {
     "data": "",
     "o_que": "Se a queda das bolsas de tecnologia continua e chega ao dólar e à Bolsa daqui."
    },
-   "antigas": [],
-   "aberta_em": "2026-11-06"
+   "antigas": []
   },
   {
    "id": "fim_da_escala_6x1",
-   "titulo": "Gilmar Mendes defende negociação coletiva para viabilizar o fim da escala 6x1",
+   "titulo": "Fim da escala 6x1: o STF, a transição e o custo das empresas",
    "desde": "2026-11",
    "estado": "aberta",
-   "pressao": null,
-   "pressoes": [],
-   "o_que_e": "O ministro do STF aponta a negociação entre sindicatos e empresas como caminho, sem ato nem prazo. Empresas de mão de obra intensiva, como o varejo, calculam aumento de custos com a nova escala.",
+   "pressao": "emprego",
+   "pressoes": [
+    "emprego",
+    "inflacao",
+    "ritmo"
+   ],
+   "o_que_e": "O fim da escala 6x1 reduz os dias de trabalho por semana e eleva o custo das empresas, sobretudo no comércio e nos serviços, que podem contratar menos ou automatizar. A decisão sobre a regra e a transição está com o STF: Dino liberou jornada de 8h24 por dia na transição e, com Moraes, votou pelo fim a partir de 16/12; Fux levou o caso ao plenário físico, e Câmara e Senado pedem que o plenário rejeite pontos. O Banco Central citou a medida entre os choques de oferta que seguram a Selic.",
    "linha_do_tempo": [
     {
+     "data": "2026-11-08",
+     "fato": "Governo deve publicar decreto que regulamenta o fim da escala 6x1; STF faz audiência sobre o calendário."
+    },
+    {
+     "data": "2026-11-10",
+     "fato": "Ata do Copom lista o fim da escala 6x1 entre os quatro choques de oferta; Dino indica que aceita flexibilizar a transição por acordo coletivo."
+    },
+    {
+     "data": "2026-11-11",
+     "fato": "Gilmar Mendes defende negociação coletiva para viabilizar o fim da escala 6x1, sem ato nem prazo."
+    },
+    {
      "data": "2026-11-12",
-     "fato": "Gilmar Mendes defende negociação coletiva para viabilizar o fim da escala 6x1"
+     "fato": "Dino libera jornada de 8h24 por dia na transição, sem hora extra e com folgas flexíveis; entidades dizem que o efeito prático será pequeno."
+    },
+    {
+     "data": "2026-11-13",
+     "fato": "STF tem dois votos pelo fim da escala a partir de 16/12; varejistas testam automação."
+    },
+    {
+     "data": "2026-11-14",
+     "fato": "Fux leva o julgamento ao plenário físico, e a regra de transição segue indefinida."
     }
    ],
    "proximo_marco": {
     "data": "",
-    "o_que": ""
+    "o_que": "Julgamento no plenário físico do STF e definição da regra de transição; os votos propuseram 16/12 como data de início."
    },
-   "antigas": [],
-   "aberta_em": "2026-11-12"
+   "antigas": []
   }
  ],
  "meta": {
   "etapa": "memoria",
+  "motor": "claude",
   "modelo_pedido": "sonnet",
-  "prompt_sha256": "3ac81c0b976043036584d4e9199e69019fe5b97d50f430d01e19a96af1e37ff0",
-  "system_sha256": "3a5b71f54b327cb72d4f74cc1795fa604d24d285714d1d2291cc7a7fc77f0dd5",
+  "prompt_sha256": "0be75b594b7cce47e2f5dfb32eb74c0b317c23c7e3dd1e48a914600760eba79c",
+  "system_sha256": "0dcc7e2bc32a7e8b33fc77482d0a9fcc6962cc632d62e24d0f41201bd4edf1c3",
   "returncode": 0,
   "is_error": false,
-  "custo_usd": 0.26807000000000003,
-  "turnos": 2,
-  "duracao_s": 50,
+  "custo_usd": 0.3640244,
+  "turnos": 3,
+  "duracao_s": 107,
   "modelos": [
    "claude-sonnet-5-5"
   ],
   "permission_denials": [],
-  "session_id": "c4ad4049-988c-4df5-b8f6-121cbb88bf68"
+  "session_id": "7856c486-0123-43ff-afea-11b32fa156ba"
  }
 }
