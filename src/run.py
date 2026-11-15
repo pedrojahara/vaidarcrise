@@ -255,10 +255,12 @@ def main() -> dict | None:
         "revisao_texto": {"classificacao": revisa_texto.problemas_classificacao(llm["saida"]) if llm["ok"] else []},
     }
 
-    # 4. A pauta: a história em andamento que mais andou ontem, pela soma das notícias (src/pauta.py), sem IA.
+    # 4. A pauta: a história em andamento que mais andou ontem, pela soma das notícias (src/pauta.py), sem IA. Na
+    # segunda, a soma inclui as notícias de sábado, que o domingo (pergunta da semana) não contou num texto do dia.
     if llm["ok"]:
         pt = pauta_mod.montar(rodada, ant, {e["id"]: e for e in todos}, cfg, calendario.carregar(), por_id,
-                              seguidas=pauta_mod.historias_seguidas(todas_r, hoje.isoformat()))
+                              seguidas=pauta_mod.historias_seguidas(todas_r, hoje.isoformat()),
+                              herdados=pauta_mod.herdados(todas_r, hoje.isoformat()))
         rodada["pauta"] = pt
         esc = pt["escolha"]
         print(f"pauta: {esc['titulo'] or 'nenhuma história'} ({esc['pontos']}): {esc['motivo']}"

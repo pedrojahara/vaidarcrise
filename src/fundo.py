@@ -367,21 +367,28 @@ def _bloco_historia(h: dict | None, pauta: dict, eventos: dict | None, ult: dict
     if pm.get("o_que"):
         l.append(f"Próximo marco: {pm.get('data') or 'sem data'}, {pm['o_que']}")
     semana = pauta.get("semana")
+    desde = pauta.get("desde")
     l.append(f"Os passos da semana (soma {g['pontos']}), do mais firme ao menos firme, com o dia das notícias:"
-             if semana else f"Os passos de ontem (soma {g['pontos']}):")
+             if semana else f"Os passos desde o último texto do dia (soma {g['pontos']}), com o dia das notícias:"
+             if desde else f"Os passos de ontem (soma {g['pontos']}):")
     l += [_linha_passo(c, eventos) for c in (pauta_mod.candidato(pauta, i) for i in g["candidatos"]) if c]
     if nome == "historia":
         if semana:
             l.append("Hoje o texto é a pergunta da semana: ele não conta o passo de ontem nem repete os textos do dia "
                      "(bloco <ja_dito>, quando vem). Ele responde à pergunta que a semana deixou sobre esta história, com "
                      "os passos da semana como prova e com o contexto inteiro para quem não leu os textos do dia.")
-        elif ult:
-            l.append(f"O último texto do site sobre esta história saiu em {ult['data'][8:10]}/{ult['data'][5:7]}: "
-                     f"\"{ult['titulo']}\". O argumento dele: {ult['argumento']} Conte só o passo novo, com uma frase de "
-                     "régua; não repita o contexto nem o argumento daquele dia.")
         else:
-            l.append("É a primeira vez que o texto do dia trata desta história: dê o contexto inteiro em um parágrafo "
-                     "(o que está em jogo, quem decide, a régua).")
+            if desde:
+                l.append(f"Os passos vêm de mais de um dia, desde {desde[8:10]}/{desde[5:7]}, porque o texto de domingo "
+                         "foi a pergunta da semana. Diga o dia de cada fato (\"no sábado\"); \"ontem\" só para o que é "
+                         "de ontem.")
+            if ult:
+                l.append(f"O último texto do site sobre esta história saiu em {ult['data'][8:10]}/{ult['data'][5:7]}: "
+                         f"\"{ult['titulo']}\". O argumento dele: {ult['argumento']} Conte só o passo novo, com uma frase "
+                         "de régua; não repita o contexto nem o argumento daquele dia.")
+            else:
+                l.append("É a primeira vez que o texto do dia trata desta história: dê o contexto inteiro em um parágrafo "
+                         "(o que está em jogo, quem decide, a régua).")
     return "\n".join([*l, f"</{nome}>"])
 
 
@@ -426,13 +433,14 @@ def pauta_da_semana(rodada: dict) -> dict:
                                         "pontos": 0.0, "candidatos": [], "jornais": 0, "fato_grande": False, "dias": []})
             if not g.get("nova"):
                 x.update({k: g.get(k) or x.get(k) for k in ("titulo", "pressao", "pressoes")})
-            x["pontos"] += g.get("pontos") or 0
+            # O que a pauta do dia herdou de um dia sem texto do dia já entrou na soma daquele dia.
+            x["pontos"] += (g.get("pontos") or 0) - (g.get("herdados") or 0)
             x["jornais"] = max(x["jornais"], g.get("jornais") or 0)
             x["fato_grande"] = x["fato_grande"] or bool(g.get("fato_grande"))
             x["dias"].append(noticia)
             for cid in g.get("candidatos") or []:
                 c = pauta_mod.candidato(p, cid)
-                if c:
+                if c and not c.get("herdado"):
                     cands.append({**c, "id": f"{d}:{cid}", "dia": noticia})
                     x["candidatos"].append(cands[-1]["id"])
     por_id = {c["id"]: c for c in cands}

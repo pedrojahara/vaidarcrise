@@ -17,6 +17,11 @@ com todos os fatos de ontem sobre ela como prova. O código escolhe a história,
 Um fato que não é passo de nenhuma história abre uma história nova no dia se for grande (tamanho 2 ou mais) e já
 consumado; menor, ele espera e abre a história se voltar em 3 dos últimos 7 dias. Nos dois casos, o Pedro recebe o
 aviso. A pergunta da semana do domingo (src/fundo.py, pauta_da_semana) soma as pautas dos sete dias pela mesma conta.
+
+O texto do dia soma as notícias desde o último texto do dia (Pedro, 15/11/2026): a pauta do dia que não teve texto do
+dia (o domingo, que é a pergunta da semana) entra na soma do dia seguinte, com o dia de cada notícia. Na segunda,
+o texto pesa as notícias de sábado e de domingo. A pergunta da semana seguinte não conta duas vezes o que veio de
+trás ("herdado").
 """
 from __future__ import annotations
 
@@ -187,6 +192,8 @@ def somar(cands: list[dict], historias: list[dict], voltas: dict[str, set[str]],
                                     "pressoes": (abertas.get(hid) or {}).get("pressoes") or [], "nova": nova,
                                     "pontos": 0.0, "candidatos": [], "jornais": set(), "fato_grande": False})
         g["pontos"] += c["tamanho"] * peso(c)
+        if c.get("herdado"):
+            g["herdados"] = g.get("herdados", 0.0) + c["tamanho"] * peso(c)
         g["candidatos"].append(c["id"])
         g["jornais"] |= set(c["jornais"])
         if c["estagio"] in CONSUMADO and c["tamanho"] >= GRANDE:
@@ -195,7 +202,8 @@ def somar(cands: list[dict], historias: list[dict], voltas: dict[str, set[str]],
     out = []
     for g in grupos.values():
         g["candidatos"].sort(key=lambda i: chave(por_id[i]))
-        out.append({**g, "pontos": round(g["pontos"], 2), "jornais": len(g["jornais"])})
+        out.append({**g, "pontos": round(g["pontos"], 2), "jornais": len(g["jornais"]),
+                    **({"herdados": round(g["herdados"], 2)} if "herdados" in g else {})})
     out.sort(key=lambda g: (-g["pontos"], -g["jornais"]))
     return out, list(esperando.values())
 
@@ -254,10 +262,30 @@ def historias_seguidas(rodadas: list[dict], hoje: str) -> list[str]:
     return [por_dia[d] for d in sorted(por_dia, reverse=True) if por_dia[d]]
 
 
+def herdados(rodadas: list[dict], hoje: str) -> list[dict]:
+    """As notícias que nenhum texto do dia contou ainda: as das pautas dos dias anteriores a `hoje` que não tiveram
+    texto do dia (o domingo, da pergunta da semana), até o último dia que teve. Cada uma leva o dia da notícia, um id
+    com o dia da pauta e a marca de herdada."""
+    import escreve_post
+    por_dia = {r["gerado_em"][:10]: r for r in rodadas if r["gerado_em"][:10] < hoje}
+    out: list[dict] = []
+    for dia in sorted(por_dia, reverse=True):
+        r = por_dia[dia]
+        tipo = (r.get("post") or {}).get("tipo") or escreve_post.tipo_do_dia(dt.date.fromisoformat(dia))
+        if tipo == "dia":
+            break
+        noticia = ((r.get("cobertura") or {}).get("dias") or
+                   [(dt.date.fromisoformat(dia) - dt.timedelta(days=1)).isoformat()])[-1]
+        out = [{**c, "id": f"{dia}:{c['id']}", "dia": c.get("dia") or noticia, "herdado": True}
+               for c in (r.get("pauta") or {}).get("candidatos") or [] if not c.get("herdado")] + out
+    return out
+
+
 def montar(rodada: dict, anterior: dict | None, eventos: dict, cfg: dict, cal: list[dict],
            cesta_por_id: dict | None = None, historias: list[dict] | None = None,
-           seguidas: list[str] | None = None) -> dict:
+           seguidas: list[str] | None = None, herdados: list[dict] | None = None) -> dict:
     """A pauta de uma atualização: candidatos, soma por história, pressões que mudaram e a história do dia.
+    `herdados` são as notícias dos dias sem texto do dia (herdados()), que entram na soma com o dia delas.
     Não chama o modelo de linguagem."""
     import classify_news
     if historias is None:
@@ -271,6 +299,11 @@ def montar(rodada: dict, anterior: dict | None, eventos: dict, cfg: dict, cal: l
         for c in cands:
             if _bate_data(x["tipo"], c):
                 c["marco"] = True
+    if herdados:
+        # Com notícias de mais de um dia, toda notícia diz o dia dela.
+        dia = ((rodada.get("cobertura") or {}).get("dias") or
+               [(dt.date.fromisoformat(rodada["gerado_em"][:10]) - dt.timedelta(days=1)).isoformat()])[-1]
+        cands = [*herdados, *({**c, "dia": c.get("dia") or dia} for c in cands)]
     d = ((rodada.get("resultado") or {}).get("direcao") or {})
     da = (((anterior or {}).get("resultado") or {}).get("direcao") or None)
     a, b = _lados(anterior), _lados(rodada)
@@ -290,7 +323,7 @@ def montar(rodada: dict, anterior: dict | None, eventos: dict, cfg: dict, cal: l
         final = "P"
     else:
         final = None
-    return {"versao": 2, "candidatos": cands,
+    return {"versao": 2, "candidatos": cands, **({"desde": min(c["dia"] for c in herdados)} if herdados else {}),
             "datas": [{**x, "nome": MARCADAS.get(x["tipo"]) or OUTRAS_DATAS.get(x["tipo"], x["tipo"])} for x in datas],
             "pressoes_mudaram": [{"id": k, "nome": nomes.get(k, k), "antes": a[k], "agora": b[k]} for k in mudaram],
             "estado": d.get("estado"), "estado_anterior": (da or {}).get("estado"), "direcao_mudou": mudou_direcao,
