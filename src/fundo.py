@@ -2094,7 +2094,7 @@ def _foi_grave(frase: str, graves: list[dict]) -> bool:
     return any(o.get("grave", True) for o in _apontadas(frase, graves))
 
 
-LOTE = 12  # frases mudadas (e frases que saíram) por leitor: em 15/11/2026, 42 de uma vez levaram 117 s, e 52 passaram de 150
+LOTE = 8  # frases mudadas (e frases que saíram) por leitor: em 15/11/2026, 42 de uma vez levaram 117 s, e 52 passaram de 150
 
 
 def _lotes(xs: list[str], n: int) -> list[list[str]]:
@@ -2127,15 +2127,18 @@ def _ler_mudancas(e: dict, cad: list[dict], esq: dict | None, lida: dict, t: dic
     if c:
         plano += f"\nConclusão da investigação: {c.get('resposta', '')} (força: {c.get('forca', '')})"
     n = max(1, -(-max(len(mudaram), len(sairam)) // LOTE))
+    # Todo lote recebe as linhas que os dois textos citam: a marca costuma vir no fim do parágrafo, e o lote que só
+    # tivesse as linhas das próprias frases chamaria de "sem base" o número que está numa linha citada ao lado.
+    ids = set(marcas(f"{lida['texto']} {t['texto']}"))
+    cad_txt = _caderno_txt([x for x in cad if x["id"] in ids]) or "(vazio)"
 
     def ler(mud: list[str], sai: list[str]) -> dict:
-        ids = set(marcas(" ".join(mud + sai))) or set(marcas(t["texto"]))
         prompt = (f"<antes>\nTÍTULO: {lida['titulo']}\n\n{lida['texto']}\n</antes>\n\n"
                   f"<depois>\nTÍTULO: {t['titulo']}\n\n{t['texto']}\n</depois>\n\n"
                   "<mudaram>\n" + ("\n".join(f"- {u}" for u in mud) or "(nenhuma)") + "\n</mudaram>\n\n"
                   "<sairam>\n" + ("\n".join(f"- {u}" for u in sai) or "(nenhuma)") + "\n</sairam>\n\n"
                   f"<plano>\n{plano or '(sem plano)'}\n</plano>\n\n"
-                  f"<caderno>\n{_caderno_txt([x for x in cad if x['id'] in ids]) or '(vazio)'}\n</caderno>\n\n"
+                  f"<caderno>\n{cad_txt}\n</caderno>\n\n"
                   "Devolva o JSON do esquema.")
         return classify_news.chamar_claude(SISTEMA_ULTIMA, prompt, SCHEMA_ULTIMA, 0.5, etapa=etapa, timeout=timeout)
 
