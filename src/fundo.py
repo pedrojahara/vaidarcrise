@@ -2012,7 +2012,7 @@ def _limpar(t: str) -> str:
 # grave (o leitor frio travou nela, ou o revisor a achou confusa), a reescrita respondeu à objeção, mas perdeu a data
 # de um número ("o nível de dez/2025") ou afirmou mais do que a ata do Banco Central. Voltar traria de volta
 # a frase que confundia, e no fim não há como consertar. Por isso a mesma comparação roda também logo depois da
-# reescrita da volta 2, junto com o revisor da volta 3, que lê o texto sozinho e não viu as três: o leitor da comparação
+# reescrita da volta 2, antes do revisor da volta 3, que lê o texto sozinho e não viu as três: o leitor da comparação
 # viu porque tem as duas frases e o caderno lado a lado. O que ele acha vira objeção grave da volta 3, que é a correção
 # pontual, com a objeção antiga junto: a redação mantém a resposta a ela e devolve o que a reescrita perdeu. No fim, a
 # frase que piorou volta, a menos que a anterior tenha sido apontada como grave; nesse caso, ela sai quando nenhum passo
@@ -2162,10 +2162,10 @@ def comparar_reescrita(e: dict, cad: list[dict], esq: dict | None, lida: dict, t
             if any(o.get("grave") for o in velhas):
                 prob += (" Não volte à versão anterior como estava, porque ela tinha esse problema: escreva a frase de "
                          "novo, de um jeito que resolva a objeção antiga e diga de novo o que a reescrita perdeu, com as "
-                         "marcas das duas.")
+                         "marcas das duas. O que outra frase do texto já diz não se repete.")
             else:
                 prob += (" Mantenha a resposta a essa objeção e diga de novo o que a reescrita perdeu, com as marcas das "
-                         "duas; se não couber, volte à versão anterior.")
+                         "duas; se não couber, volte à versão anterior. O que outra frase do texto já diz não se repete.")
         elif ant:
             prob += " Volte ao que a versão anterior dizia, com as marcas dela, ou corrija a frase com o caderno."
         else:
@@ -2570,15 +2570,22 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline:
                 frio, frias = None, []
         log(f"texto do dia: revisão, volta {volta} ({len(codigo['graves'])} problemas graves do código, "
             f"{len(frias)} objeções do leitor frio)")
-        # Na volta 3, o leitor da comparação lê a reescrita da volta 2 ao lado da versão que o revisor leu, enquanto o
-        # revisor lê o texto sozinho; o que ele acha entra como objeção grave da correção.
-        comparacao, cmp_pool = None, None
-        if volta == 3 and lida:
-            cmp_pool = cf.ThreadPoolExecutor(max_workers=1)
-            comparacao = cmp_pool.submit(comparar_reescrita, e, cad, esq,
-                                         {"titulo": lida["titulo"], "texto": sem_links(lida["texto"])},
-                                         {"titulo": t["titulo"], "texto": sem_links(t["texto"])}, objetadas,
-                                         max(45, min(150, resta() - 240)))
+        # Na volta 3, antes do revisor, que lê o texto sozinho, o leitor da comparação lê a reescrita da volta 2 ao lado
+        # da versão que o revisor leu; o que ele acha entra como objeção grave da correção.
+        comp: list[dict] = []
+        if volta == 3 and lida and resta() >= 360:
+            try:
+                comp, rcmp = comparar_reescrita(e, cad, esq, {"titulo": lida["titulo"], "texto": sem_links(lida["texto"])},
+                                                {"titulo": t["titulo"], "texto": sem_links(t["texto"])}, objetadas,
+                                                timeout=max(45, min(120, resta() - 300)))
+            except Exception as ex:  # noqa: BLE001
+                comp, rcmp = [], {"erro": repr(ex)}
+            if rcmp:
+                if rcmp.get("meta"):
+                    reg["meta"].append(rcmp.pop("meta"))
+                reg["comparacao"] = rcmp
+                log(f"texto do dia: a comparação viu {rcmp.get('mudaram', 0)} frases mudadas na reescrita; "
+                    f"{len(comp)} vão para a correção" + (f" (falhou: {rcmp['erro']})" if rcmp.get("erro") else ""))
         rv = revisar(e, t, cad, codigo, antes=objecoes if volta == 2 else None, final=volta == 3,
                      timeout=min(600 if volta < 3 else 300, resta() - 180), esqueleto=esq, frio=frio,
                      graves_antes=graves_antes)
@@ -2595,19 +2602,7 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline:
         else:
             log(f"texto do dia: o revisor falhou ({rv['meta'].get('erro')})")
             objecoes = objecoes if volta == 2 else []
-        if comparacao:
-            try:
-                comp, rcmp = comparacao.result(timeout=max(5, min(150, resta() - 240)))
-            except Exception as ex:  # noqa: BLE001
-                comp, rcmp = [], {"erro": repr(ex)}
-            cmp_pool.shutdown(wait=False, cancel_futures=True)
-            if rcmp:
-                if rcmp.get("meta"):
-                    reg["meta"].append(rcmp.pop("meta"))
-                reg["comparacao"] = rcmp
-                log(f"texto do dia: a comparação viu {rcmp.get('mudaram', 0)} frases mudadas na reescrita; "
-                    f"{len(comp)} vão para a correção" + (f" (falhou: {rcmp['erro']})" if rcmp.get("erro") else ""))
-            objecoes = objecoes + comp  # a do revisor e a da comparação, se apontam a mesma frase, vão juntas
+        objecoes = objecoes + comp  # a do revisor e a da comparação, se apontam a mesma frase, vão juntas
         if volta < 3:
             objetadas += objecoes + [o for o in frias if o.get("grave")]
         reg["voltas"].append({"volta": volta, "codigo": codigo, "objecoes": objecoes,
