@@ -30,13 +30,15 @@ CLAUDE = os.environ.get("CLAUDE_BIN", "/Users/pedrojahara/.local/bin/claude")
 # ali que um erro passa ou é pego. O plano das voltas seguintes, que só acrescenta testes à desmontagem já feita, e o
 # juiz de cada volta, que só dá à leitora as respostas para ela reagir, vão de Sonnet. Cada etapa troca de
 # modelo pelo ambiente (VDC_MODELO_<ETAPA>, por exemplo VDC_MODELO_JUIZ=sonnet); VDC_LLM_MODEL troca todas de uma vez.
-# A leitura do que mudou depois da última revisão e a releitura dos intertítulos novos vão de Haiku: no teste de
-# 14/11/2026, com as versões guardadas de 13/11, 14/11 e do ensaio de domingo, o Haiku pegou os títulos que passaram a
-# dizer mais em todas as tentativas, por meio centavo, e nem o Sonnet nem o Opus pegaram mais.
+# A leitura do que mudou depois da última revisão (no fim e logo depois da reescrita da volta 2) e a releitura dos
+# intertítulos novos vão de Haiku: no teste de 14/11/2026, com as versões guardadas de 13/11, 14/11 e do ensaio de
+# domingo, o Haiku pegou os títulos que passaram a dizer mais em todas as tentativas, por meio centavo, e nem o Sonnet
+# nem o Opus pegaram mais.
 MODELOS = {"classificar": "sonnet", "editor": "opus", "pesquisa": "sonnet", "segunda_busca": "opus",
            "memoria": "sonnet", "esqueleto": "opus", "redacao": "opus", "revisor": "opus", "leitor_frio": "sonnet",
            "perguntas": "sonnet", "explicacoes": "opus", "plano": "sonnet", "teste": "sonnet", "cetico": "opus",
-           "juiz_volta": "sonnet", "juiz": "opus", "ultima_leitura": "haiku", "titulos_fim": "haiku"}
+           "juiz_volta": "sonnet", "juiz": "opus", "ultima_leitura": "haiku", "comparacao": "haiku",
+           "titulos_fim": "haiku"}
 
 
 def modelo(etapa: str) -> str:
