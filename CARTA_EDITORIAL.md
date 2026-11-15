@@ -23,6 +23,8 @@ Cada notícia vale o tamanho dela (de 1 a 3) vezes o peso do estágio, e a hist�
 
 A notícia que é o mesmo fato de outra já contada, ou um dado que os indicadores do site já medem, fica fora da soma.
 
+O texto do dia soma as notícias desde o último texto do dia (Pedro, 15/11/2026). Na segunda, entram as de sábado e as de domingo, porque o texto de domingo é a pergunta da semana e não conta os fatos de sábado; cada fato leva o dia dele. A pergunta da semana seguinte não conta essas notícias de sábado de novo.
+
 ## As regras
 
 1. Quando a direção do risco muda, ou uma das cinco pressões muda de lado, ganha a história daquela pressão, mesmo com poucos pontos.
