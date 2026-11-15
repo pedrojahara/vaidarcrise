@@ -1234,6 +1234,12 @@ def material(e: dict, pesquisa: dict | None, cad: list[dict], investigacao: dict
     return "\n\n".join(partes)
 
 
+# O número de uma lei, medida provisória ou projeto ("MP 1.376", "Lei 15.263/2025") é nome, e não dado: a conferência
+# dos números o deixa de fora (no teste de 14/11/2026, a "MP 1.376" travou três correções).
+NUMERO_DE_LEI = re.compile(r"\b(?:MPs?|PLP?|PEC|PDL|Leis?|Decretos?|Portarias?|Resoluç(?:ão|ões)|Medidas? Provisórias?|"
+                           r"Projetos? de Lei(?: Complementar)?)\s*(?:n[º°.]?\s*)?\d[\d.]*(?:/\d{2,4})?", re.I)
+
+
 def conferir_objetivo(t: dict, cad: list[dict], e: dict) -> dict:
     """O que o código determina sozinho (src/escrita.py): os impedimentos barram a versão (a marca sem linha, o número
     que nenhuma linha que confere sustenta, a citação que não está no trecho), e os diagnósticos vão ao aprovador."""
@@ -1245,7 +1251,7 @@ def conferir_objetivo(t: dict, cad: list[dict], e: dict) -> dict:
     base_ok = _base_ok(cad, e)
     for i, b in enumerate([*bl, {"h": t["titulo"]}], 1):
         x = sem_marcas(b.get("p") or b.get("h") or "")
-        fora = revisa_texto.numeros_fora([x], base_ok)
+        fora = revisa_texto.numeros_fora([NUMERO_DE_LEI.sub("", x)], base_ok)
         if fora:
             imp.append(f"bloco {i}: número ou data que nenhuma linha do caderno que confere, das metas ou dos dados do "
                        f"site sustenta: {', '.join(fora[:6])} | trecho: {x[:120]}")
