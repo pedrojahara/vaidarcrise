@@ -7394,6 +7394,12 @@
     "titulo": "Governo não renova subsídio de R$ 1,40 ao diesel importado",
     "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/governo-nao-renova-subsidio-de-r-140-ao-diesel-importado",
     "publicado_em": "2026-11-13T19:54-03:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Fazenda deixa vencer subvenção extra do diesel importado",
+    "url": "https://www.infomoney.com.br/mercados/fazenda-deixa-vencer-subvencao-extra-do-diesel-importado/",
+    "publicado_em": "2026-11-14T11:25+00:00"
    }
   ],
   "cobertura": {
@@ -7889,5 +7895,368 @@
    ]
   },
   "pontos": 0.6
+ },
+ {
+  "id": "ev-20261115-01",
+  "data": "2026-11-14",
+  "titulo_evento": "Indústria, varejo e serviços caem no 3º trimestre, mostra o IBGE",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "atividade",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": true,
+  "porque": "Os três setores recuaram contra o trimestre anterior, o que mostra economia mais fraca na entrada do 4º trimestre e pesa no PIB que o IBGE divulga em dezembro.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "ritmo_emprego",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Valor",
+    "titulo": "Indústria, varejo e serviços caem no 3º trimestre, mostra IBGE",
+    "url": "https://valor.globo.com/brasil/noticia/2026/11/14/industria-varejo-e-servicos-caem-no-3o-trimestre-mostra-ibge.ghtml",
+    "publicado_em": "2026-11-14T16:03+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "Valor"
+   ]
+  },
+  "pontos": 0.25
+ },
+ {
+  "id": "ev-20261115-02",
+  "data": "2026-11-14",
+  "titulo_evento": "Mercado vê ajuste das contas abaixo de R$ 60 bi e pede mais medidas",
+  "estagio": "previsao",
+  "origem": "dados",
+  "fator": "contas",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "As projeções do mercado para o efeito do ajuste em 2027 vão de R$ 27,9 bi a R$ 56,1 bi, abaixo dos R$ 60 bi do governo, e a dúvida mantém o juro longo alto, o que encarece o crédito.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "contas_governo",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Folha",
+   "Poder360",
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Poder360",
+    "titulo": "Mercado estima impacto do ajuste fiscal abaixo de R$ 60 bilhões",
+    "url": "https://www.poder360.com.br/poder-economia/mercado-estima-impacto-do-ajuste-fiscal-abaixo-de-r-60-bilhoes/",
+    "publicado_em": "2026-11-14T17:00+00:00"
+   },
+   {
+    "veiculo": "Valor",
+    "titulo": "Pacote fiscal frustra e amplia distância entre mercado e governo",
+    "url": "https://valor.globo.com/financas/intraday/post/2026/11/pacote-fiscal-frustra-e-amplia-distancia-entre-mercado-e-governo.ghtml",
+    "publicado_em": "2026-11-14T11:01+00:00"
+   },
+   {
+    "veiculo": "Poder360",
+    "titulo": "Mercado espera mais medidas fiscais, mas aliados de Lula resistem",
+    "url": "https://www.poder360.com.br/poder-economia/mercado-espera-mais-medidas-fiscais-mas-aliados-de-lula-resistem/",
+    "publicado_em": "2026-11-14T13:00+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Plano fiscal precisa ir além e mudar regras do mínimo, da saúde e da educação, dizem economistas",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/plano-fiscal-precisa-ir-alem-e-mudar-regras-do-minimo-da-saude-e-da-educacao-dizem-economistas.shtml",
+    "publicado_em": "2026-11-14T12:30-03:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 6,
+   "jornais": [
+    "Folha",
+    "InfoMoney",
+    "Poder360",
+    "Valor"
+   ]
+  },
+  "pontos": 1.0
+ },
+ {
+  "id": "ev-20261115-03",
+  "data": "2026-11-14",
+  "titulo_evento": "Deputados do PT apresentam projetos para taxar grandes fortunas e dividendos",
+  "estagio": "em_votacao",
+  "origem": "politica",
+  "fator": "contas",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "Os projetos criam imposto sobre grandes fortunas e taxam lucros, dividendos, LCI e LCA, o que daria mais receita ao governo, mas precisam passar pela Câmara e pelo Senado, onde há resistência.",
+  "decisor": "congresso",
+  "instrumento": "imposto",
+  "objetivo": "reforçar o ajuste fiscal",
+  "historia": "contas_governo",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": 0.2,
+  "veiculos": [
+   "Gazeta do Povo",
+   "Poder360"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Gazeta do Povo",
+    "titulo": "Bancada do PT protocola projetos para aumentar impostos sobre renda e patrimônio",
+    "url": "https://www.gazetadopovo.com.br/economia/bancada-do-pt-protocola-projetos-para-aumentar-impostos-sobre-renda-e-patrimonio/",
+    "publicado_em": "2026-11-14T19:10+00:00"
+   },
+   {
+    "veiculo": "Poder360",
+    "titulo": "Ala do PT defende ajuste fiscal com mais impostos",
+    "url": "https://www.poder360.com.br/poder-congresso/ala-do-pt-defende-ajuste-fiscal-com-mais-impostos/",
+    "publicado_em": "2026-11-14T18:38+00:00"
+   },
+   {
+    "veiculo": "Gazeta do Povo",
+    "titulo": "PT apresenta pacote para tributar LCIs, LCAs e grandes fortunas e taxar em 15% lucros e dividendos",
+    "url": "https://www.gazetadopovo.com.br/economia/pt-impostos-lucros-dividendos-lci-lca-grandes-fortunas/",
+    "publicado_em": "2026-11-14T15:09+00:00"
+   },
+   {
+    "veiculo": "Poder360",
+    "titulo": "PT, PC do B e Psol articulam pacote contra ajuste fiscal de Lula",
+    "url": "https://www.poder360.com.br/poder-congresso/pt-pc-do-b-e-psol-articulam-pacote-contra-ajuste-fiscal-de-lula/",
+    "publicado_em": "2026-11-14T17:00+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 4,
+   "jornais": [
+    "Gazeta do Povo",
+    "Poder360"
+   ]
+  },
+  "pontos": -0.2
+ },
+ {
+  "id": "ev-20261115-04",
+  "data": "2026-11-14",
+  "titulo_evento": "Fux leva ao plenário físico do STF o julgamento do fim da escala 6x1",
+  "estagio": "em_votacao",
+  "origem": "politica",
+  "fator": "atividade",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "O ministro interrompeu o julgamento virtual, que já tinha votos pelo fim da escala 6x1, e a regra de transição segue indefinida, o que mantém a dúvida das empresas sobre o custo de pessoal.",
+  "decisor": "tribunal",
+  "instrumento": "outro",
+  "objetivo": "",
+  "historia": "fim_da_escala_6x1",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": 0.5,
+  "veiculos": [
+   "Folha",
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Valor",
+    "titulo": "Fux interrompe julgamento sobre fim da 6x1 e leva caso ao plenário físico do STF",
+    "url": "https://valor.globo.com/politica/noticia/2026/11/14/fux-interrompe-julgamento-sobre-fim-da-6x1-e-leva-caso-ao-plenario-fisico-do-stf.ghtml",
+    "publicado_em": "2026-11-14T20:44+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Fux interrompe julgamento virtual da escala 6x1 e manda caso para plenário do STF",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/fux-interrompe-julgamento-virtual-da-escala-6x1-e-manda-caso-para-plenario-do-stf.shtml",
+    "publicado_em": "2026-11-14T17:06-03:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 2,
+   "jornais": [
+    "Folha",
+    "Valor"
+   ]
+  },
+  "pontos": 0.5
+ },
+ {
+  "id": "ev-20261115-05",
+  "data": "2026-11-14",
+  "titulo_evento": "Dirigente do banco central dos EUA defende altas graduais de juros",
+  "estagio": "anuncio",
+  "origem": "mundo",
+  "fator": "externo",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": true,
+  "porque": "A presidente do banco central de Boston diz que altas graduais de juros nos EUA são adequadas, e juro maior lá fora atrai dinheiro para os EUA e pressiona o dólar e o juro aqui.",
+  "decisor": "fora",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "fed_juros_eua",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": true,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Valor",
+    "titulo": "Collins, do Fed, diz que aumentos ‘estáveis e graduais’ dos juros são apropriados",
+    "url": "https://valor.globo.com/financas/noticia/2026/11/14/collins-do-fed-diz-que-aumentos-estaveis-e-graduais-dos-juros-sao-apropriados.ghtml",
+    "publicado_em": "2026-11-14T15:47+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "Valor"
+   ]
+  },
+  "pontos": 0.075
+ },
+ {
+  "id": "ev-20261115-06",
+  "data": "2026-11-14",
+  "titulo_evento": "Mercado prevê juros de dois dígitos até 2030",
+  "estagio": "previsao",
+  "origem": "dados",
+  "fator": "juro",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": true,
+  "porque": "A projeção do mercado financeiro é de Selic acima de 10% até 2030, e crédito caro por tanto tempo segura investimento das empresas e consumo das famílias.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "juro_inflacao",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "g1"
+  ],
+  "fontes": [
+   {
+    "veiculo": "g1",
+    "titulo": "Mercado financeiro prevê juros de dois dígitos até 2030, ao longo dos dois mandatos de Lula",
+    "url": "https://g1.globo.com/economia/noticia/2026/11/14/mercado-financeiro-preve-juros-de-dois-digitos-ate-2030-ao-longo-dos-dois-mandatos-de-lula.ghtml",
+    "publicado_em": "2026-11-14T03:00+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "g1"
+   ]
+  },
+  "pontos": 0.25
+ },
+ {
+  "id": "ev-20261115-07",
+  "data": "2026-11-14",
+  "titulo_evento": "Intenção de compra de imóveis cai a 35%, diz FipeZAP",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "credito",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "Com preços altos e crédito caro, menos gente quer comprar imóvel, e os vendedores dão descontos em 67% dos negócios, o que freia construção e venda.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "credito_inadimplencia",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "InfoMoney"
+  ],
+  "fontes": [
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Imóveis: intenção de compra cai a 35% e descontos atingem 67%, diz FipeZAP",
+    "url": "https://www.infomoney.com.br/minhas-financas/imoveis-intencao-de-compra-cai-a-35-e-descontos-atingem-67-diz-fipezap/",
+    "publicado_em": "2026-11-14T08:00+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "InfoMoney"
+   ]
+  },
+  "pontos": 0.5
+ },
+ {
+  "id": "ev-20261115-08",
+  "data": "2026-11-14",
+  "titulo_evento": "Trump pode adiar ataques ao Irã se não houver novas provocações, dizem fontes",
+  "estagio": "rumor",
+  "origem": "mundo",
+  "fator": "externo",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "Segundo fontes, o presidente dos EUA disse a assessores que pode desistir de atacar o Irã, e menos risco de guerra ajuda o petróleo a ficar mais barato, o que alivia combustíveis e preços aqui.",
+  "decisor": "fora",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "guerra_petroleo",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Valor",
+    "titulo": "Trump diz a assessores que pode adiar ataques ao Irã caso não haja novas provocações, dizem fontes",
+    "url": "https://valor.globo.com/mundo/noticia/2026/11/14/trump-diz-a-assessores-que-pode-adiar-ataques-ao-ir-caso-no-haja-novas-provocaes-dizem-fontes.ghtml",
+    "publicado_em": "2026-11-14T13:53+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "Valor"
+   ]
+  },
+  "pontos": -0.05
  }
 ]
