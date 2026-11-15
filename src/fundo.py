@@ -547,7 +547,7 @@ def evento_do_dia(rodada: dict, eventos: dict | None = None) -> dict | None:
     return eventos.get(c.get("evento"))
 
 
-SEMANA_TXT = ("Hoje é domingo, e o texto é a pergunta da semana (o guia, \"A pergunta da semana\"): a história que mais "
+SEMANA_TXT = ("Hoje é domingo, e o texto é a pergunta da semana: a história que mais "
               "andou na semana, a pergunta que todo mundo está fazendo sobre ela e a resposta que os números sustentam, "
               "com os passos da semana como prova. A leitora o lê com calma e o passa adiante.")
 
@@ -556,8 +556,8 @@ def _bloco_base(e: dict) -> str:
     ontem = e["dia"] - dt.timedelta(days=1)
     semana = ""
     if e.get("semana"):
-        semana = SEMANA_TXT + (f" A pergunta da semana, nas palavras da leitora: \"{e['pergunta_semana']}\". O esqueleto "
-                               "parte dela, como está, e o texto a responde." if e.get("pergunta_semana") else "") + "\n\n"
+        semana = SEMANA_TXT + (f" A pergunta da semana, nas palavras da leitora: \"{e['pergunta_semana']}\". O texto "
+                               "parte dela e a responde." if e.get("pergunta_semana") else "") + "\n\n"
     return (f"Hoje é {e['dia'].strftime('%d/%m/%Y')}, e o texto sai por volta das 5h da manhã. Escreva como nessa manhã: "
             f"entra só o que foi publicado até ontem, {ontem.strftime('%d/%m/%Y')}, e nada do que saiu hoje ou depois "
             "entra no caderno nem no texto.\n\n" + semana
@@ -2461,8 +2461,10 @@ def _texto_de_ontem(dia: dt.date) -> str | None:
 
 def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline: bool = False, log=print,
           evitar: list[str] | None = None, pesquisa_ok: bool = True, esqueleto_ok: bool = True,
-          investigacao_ok: bool = True, semana: bool = False) -> dict:
-    """A pesquisa, o esqueleto, o texto e a revisão do dia. Devolve o registro que vai para post.pesquisa, com o título
+          investigacao_ok: bool = True, semana: bool = False, salvo: dict | None = None) -> dict:
+    """A pesquisa, a investigação e a escrita do dia (src/escrita.py). Com `salvo` (o post.pesquisa de uma rodada já
+    feita), só a escrita, sobre a análise que a rodada guardou.
+    A pesquisa, o esqueleto, o texto e a revisão do dia. Devolve o registro que vai para post.pesquisa, com o título
     e o texto (com as marcas) quando ele sai. Sem a pesquisa, o texto sai da ficha da história e dos dados do site. Se
     o esqueleto ou o leitor frio falharem, ou sem `esqueleto_ok`, o texto sai como antes deles: na ordem fixa das
     perguntas e só com o revisor. Com `semana`, é a pergunta da semana do domingo. Nunca levanta exceção."""
@@ -2491,7 +2493,14 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline:
 
     # 1. pesquisa. Antes dela, o código busca sozinho os documentos originais dos passos de ontem (src/fontes.py).
     pesquisa, cad = None, []
-    if pesquisa_ok and e["historia"]:
+    if salvo:
+        pesquisa = {**(salvo.get("pesquisa") or {}), "caderno": salvo.get("caderno") or []}
+        cad = pesquisa["caderno"]
+        if salvo.get("investigacao"):
+            reg["investigacao"] = salvo["investigacao"]
+        e["conclusao"] = (pesquisa.get("investigacao") or {}).get("conclusao")
+        e["pergunta_semana"] = (salvo.get("investigacao") or {}).get("pergunta_da_semana") or salvo.get("pergunta_semana") or ""
+    if pesquisa_ok and e["historia"] and not salvo:
         buscar_documentos(e, offline, log)
         tempo = min(720, resta() - reserva_inv)
         if tempo >= 240:
@@ -2530,7 +2539,7 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline:
     # 2. a investigação: a análise antes do texto (src/investiga.py; FUNDO.md, "A investigação"). O resultado vai para
     # a pesquisa, que o esqueleto, a redação e o revisor recebem; as linhas que os testes e o cético abriram passam pela
     # mesma conferência das outras.
-    if pesquisa and investigar:
+    if pesquisa and investigar and not salvo:
         tempo_inv = min(tempo_investiga, resta() - reserva)
         if tempo_inv >= 600:
             log(f"texto do dia: investigação (até {tempo_inv // 60} min)")
@@ -2556,185 +2565,83 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline:
     reg["pesquisa"] = {k: v for k, v in (pesquisa or {}).items() if k != "caderno"}
     reg["pagina_que_falta"] = ((pesquisa or {}).get("pagina_que_falta") or "").strip()
 
-    # 3. esqueleto: a estrutura do argumento, pensada e lida por quem só vê o esqueleto, antes de existir uma frase.
-    esq = None
-    if esqueleto_ok and resta() >= 900:
-        try:
-            esq = montar_esqueleto(e, pesquisa, cad, reg, resta, log)
-        except Exception as ex:  # noqa: BLE001
-            log(f"texto do dia: o esqueleto falhou ({ex!r}); o texto sai na ordem das perguntas")
-            esq = None
-            reg.pop("esqueleto", None)
-
-    # 3. redação.
-    log("texto do dia: redação")
-    r = redigir(e, pesquisa, cad, esqueleto=esq)
-    reg["meta"].append(r["meta"])
-    if not r["ok"]:
-        reg["caderno"] = cad
-        return {**reg, "erro": f"redação: {r['meta'].get('erro')}", "duracao_s": int(time.time() - t0)}
-    t = r["saida"]
-    reg["rascunho"] = dict(t)
-
-    # 4. revisão: 2 voltas de objeções e a conferência final. Em cada volta, o leitor frio lê só o texto e o revisor
-    # devolve objeções; a redação responde às dos dois; a segunda volta só confere o que ficou; a terceira só procura o
-    # erro que a última reescrita deixou, e a redação corrige só ele.
-    objecoes: list[dict] = []
-    graves_antes: list[dict] = []  # os erros graves que o revisor já apontou: a reescrita seguinte não os traz de volta
-    lida: dict | None = None  # a última versão que o revisor leu inteira (a conferência final só procura erros)
-    titulos_lidos: set[str] | None = None  # o título e os intertítulos que o leitor de títulos leu por último
-    objetadas: list[dict] = []  # o que o revisor apontou nas voltas, e o grave do leitor frio: na última leitura, não volta
-    for volta in (1, 2, 3):
-        codigo = conferir_codigo(t, cad, e, ontem)
-        if resta() < (300 if volta == 3 else 420):
-            log(f"texto do dia: sem tempo para a volta {volta} da revisão")
-            break
-        frio, frias = None, []
-        if esqueleto_ok and volta < 3 and resta() >= 600:
-            log(f"texto do dia: leitor frio, volta {volta}")
-            try:
-                frio, metas_frio = ler_frio(t, timeout=min(180, resta() - 480))
-                reg["meta"] += metas_frio
-                if frio and frio.get("titulos") is not None:
-                    titulos_lidos = {_norm(s) for s in _texto_numerado(t)[1]}
-                # Na segunda volta só vai o grave: pedido para ser severo, ele sempre acha melhoria, e a reescrita que
-                # responde a tudo de novo troca o que já estava bom.
-                frias = [o for o in objecoes_do_frio(frio) if volta == 1 or o["grave"]]
-            except Exception as ex:  # noqa: BLE001
-                log(f"texto do dia: o leitor frio falhou ({ex!r}); a revisão segue sem ele")
-                frio, frias = None, []
-        log(f"texto do dia: revisão, volta {volta} ({len(codigo['graves'])} problemas graves do código, "
-            f"{len(frias)} objeções do leitor frio)")
-        # Na volta 3, antes do revisor, que lê o texto sozinho, o leitor da comparação lê a reescrita da volta 2 ao lado
-        # da versão que o revisor leu; o que ele acha entra como objeção grave da correção.
-        comp: list[dict] = []
-        if volta == 3 and lida and resta() >= 360:
-            try:
-                comp, rcmp = comparar_reescrita(e, cad, esq, {"titulo": lida["titulo"], "texto": sem_links(lida["texto"])},
-                                                {"titulo": t["titulo"], "texto": sem_links(t["texto"])}, objetadas,
-                                                timeout=max(60, min(150, resta() - 300)))
-            except Exception as ex:  # noqa: BLE001
-                comp, rcmp = [], {"erro": repr(ex)}
-            if rcmp:
-                reg["meta"] += rcmp.pop("metas", [])
-                reg["comparacao"] = rcmp
-                log(f"texto do dia: a comparação viu {rcmp.get('mudaram', 0)} frases mudadas na reescrita; "
-                    f"{len(comp)} vão para a correção" + (f" (falhou: {rcmp['erro']})" if rcmp.get("erro") else ""))
-        rv = revisar(e, t, cad, codigo, antes=objecoes if volta == 2 else None, final=volta == 3,
-                     timeout=min(600 if volta < 3 else 300, resta() - 180), esqueleto=esq, frio=frio,
-                     graves_antes=graves_antes)
-        reg["meta"].append(rv["meta"])
-        if rv["ok"] and volta < 3:
-            lida = {"titulo": t["titulo"], "texto": t["texto"]}
-        if rv["ok"]:
-            objecoes = rv["saida"]["objecoes"]
-            cad, mudou = juntar_do_revisor(rv["saida"], cad, e, offline, log)
-            if mudou:
-                codigo = conferir_codigo(t, cad, e, ontem)
-            if volta == 3:
-                objecoes = [o for o in objecoes if o.get("grave")]
-        else:
-            log(f"texto do dia: o revisor falhou ({rv['meta'].get('erro')})")
-            objecoes = objecoes if volta == 2 else []
-        objecoes = objecoes + comp  # a do revisor e a da comparação, se apontam a mesma frase, vão juntas
-        if volta < 3:
-            objetadas += objecoes + [o for o in frias if o.get("grave")]
-        reg["voltas"].append({"volta": volta, "codigo": codigo, "objecoes": objecoes,
-                              **({"leitor_frio": {**frio, "objecoes": frias}} if frio else {}),
-                              "resumo": (rv.get("saida") or {}).get("resumo") if rv["ok"] else rv["meta"].get("erro")})
-        if not objecoes and not frias and not codigo["graves"]:
-            break
-        if resta() < 300:
-            break
-        log(f"texto do dia: a redação responde a {len(frias) + len(objecoes)} objeções")
-        r = redigir(e, pesquisa, cad, frias + objecoes, codigo["graves"] + (codigo["avisos"][:10] if volta < 3 else []), t,
-                    final=volta >= 2, so_corrige=volta == 3, esqueleto=esq, nao_voltar=graves_antes)
-        ja = {(o["trecho"], o["problema"]) for o in graves_antes}  # se o revisor falha na volta 2, as objeções se repetem
-        graves_antes = graves_antes + [o for o in objecoes if o.get("grave") and (o["trecho"], o["problema"]) not in ja]
-        reg["meta"].append(r["meta"])
-        if not r["ok"]:
-            break
-        novo = r["saida"]
-        c2 = conferir_codigo(novo, cad, e, ontem)
-        if len(c2["graves"]) > len(codigo["graves"]) + 1 and resta() >= 240:
-            # A reescrita respondeu às objeções, mas criou problema que o código pega (o tamanho, um número sem
-            # linha): a redação corrige só isso, uma vez, para a resposta às objeções não se perder.
-            log(f"texto do dia: a reescrita tem {len(c2['graves'])} problemas graves do código; a redação corrige")
-            r = redigir(e, pesquisa, cad, None, c2["graves"], novo, so_corrige=True, esqueleto=esq)
-            reg["meta"].append(r["meta"])
-            if r["ok"]:
-                c3 = conferir_codigo(r["saida"], cad, e, ontem)
-                if len(c3["graves"]) < len(c2["graves"]):
-                    novo, c2 = r["saida"], c3
-        if len(c2["graves"]) <= len(codigo["graves"]) + 1:
-            t = novo
-        else:
-            reg["voltas"][-1]["reescrita_recusada"] = c2["graves"][:6]
-            break
-
-    # 4. a frase que se apoia numa linha que não confere sai, e o que ainda tem número sem linha que confira também;
-    # se alguma saiu, a redação conserta os parágrafos de onde ela saiu.
-    t["texto"] = sem_links(t["texto"])
-    texto_antes = t["texto"]
-    t["texto"], cortadas, conserto = cortar_e_reparar(e, pesquisa, cad, t, log, reparo=resta() >= 150,
-                                                      timeout=max(60, min(300, resta() - 30)), esqueleto=esq)
-    if conserto and conserto.get("meta"):
-        reg["meta"].append(conserto.pop("meta"))
-
-    # 5. a última leitura: o que mudou depois da última revisão inteira (a correção final, o conserto depois dos cortes)
-    # é lido de novo por quem compara com a versão lida, com saída fixa; e o intertítulo novo, pelo leitor de títulos.
-    if lida and resta() >= 60:
-        lida_sl = {"titulo": lida["titulo"], "texto": sem_links(lida["texto"])}
-        antes_ult = conferir_codigo(t, cad, e, ontem)
-        try:
-            novo, rul = ultima_leitura(e, cad, esq, lida_sl, t, graves_antes + [o for o in objetadas if o.get("grave")],
-                                       timeout=max(45, min(150, resta() - 30)))
-        except Exception as ex:  # noqa: BLE001
-            novo, rul = t, {"erro": repr(ex)}
-        if rul:
-            reg["meta"] += rul.pop("metas", [])
-            if rul.get("feitas"):
-                novo["texto"], cort_ult = cortar_frases(novo["texto"], _base_ok(cad, e), _base_citacoes(cad, e))
-                depois_ult = conferir_codigo(novo, cad, e, ontem)
-                if len(depois_ult["graves"]) > len(antes_ult["graves"]):
-                    rul["desfeita"] = depois_ult["graves"][:3]  # a saída fixa não pode criar problema que barra o texto
-                else:
-                    t["titulo"], t["texto"] = novo["titulo"], novo["texto"]
-                    if cort_ult:
-                        rul["cortadas_depois"] = cort_ult
-            reg["ultima_leitura"] = rul
-            log(f"texto do dia: a última leitura viu {rul.get('mudaram', 0)} frases mudadas e {rul.get('sairam', 0)} que "
-                f"saíram; {len(rul.get('feitas') or [])} voltaram ou saíram"
-                + (" (desfeito: criaria problema grave)" if rul.get("desfeita") else "")
-                + (f" (falhou: {rul['erro']})" if rul.get("erro") else ""))
-    if titulos_lidos is not None and resta() >= 30:
-        try:
-            t["texto"], rti = intertitulos_novos(t, titulos_lidos, timeout=max(30, min(90, resta() - 15)))
-        except Exception as ex:  # noqa: BLE001
-            rti = {"erro": repr(ex)}
-        if rti:
-            if rti.get("meta"):
-                reg["meta"].append(rti.pop("meta"))
-            reg["intertitulos_novos"] = rti
-            if rti.get("tirados"):
-                log(f"texto do dia: sai o intertítulo novo que não se entende sozinho: {'; '.join(rti['tirados'])}")
-    final = conferir_codigo(t, cad, e, ontem)
+    # 3. a escrita (src/escrita.py; contrato em PERSONA.md): redator, leitor frio e aprovador, até haver versão pronta.
+    import escrita
+    log("texto do dia: escrita")
+    mat = material(e, pesquisa, cad, reg.get("investigacao"))
+    esc = escrita.produzir(mat, lambda a: conferir_objetivo(a, cad, e), sem_marcas, fim - 30, log=log)
+    reg["escrita"] = {k: v for k, v in esc.items() if k != "artigo"}
     reg["caderno"] = cad
-    reg["conferencia"] = {"final": final, **({"frases_cortadas": cortadas, "texto_antes_dos_cortes": texto_antes}
-                                              if cortadas else {}), **({"conserto": conserto} if conserto else {})}
-    if cortadas:
-        log(f"texto do dia: {len(cortadas)} frases cortadas na conferência")
-    reg.update({"titulo": t["titulo"].strip(), "texto": t["texto"].strip(), "argumento": t["argumento"].strip(),
-                "porque": t["porque"].strip(), "pressao": (e["historia"] or {}).get("pressao"),
+    if esc["estado"] == "falhou":
+        return {**reg, "erro": f"escrita: {esc.get('erro')}", "duracao_s": int(time.time() - t0)}
+    a = esc["artigo"]
+    texto = sem_links(a["texto"]).strip()
+    reg["conferencia"] = {"final": conferir_objetivo({**a, "texto": texto}, cad, e)}
+    reg.update({"titulo": a["titulo"].strip(), "texto": texto, "argumento": a["argumento"].strip(),
+                "porque": a["porque"].strip(), "pressao": (e["historia"] or {}).get("pressao"),
                 "duracao_s": int(time.time() - t0)})
     if semana:
-        # A pergunta que a página mostra em cima do título: a da leitora; sem ela, a do esqueleto, se for curta.
-        q = e["pergunta_semana"] or ((esq or {}).get("pergunta") or "").strip()
+        q = (a.get("pergunta_semana") or e["pergunta_semana"] or "").strip()
         reg["pergunta_semana"] = q if 0 < len(q) <= PERGUNTA_MAX and q.endswith("?") else ""
-    reg["ok"] = not final["graves"]
-    if final["graves"]:
-        reg["erro"] = "a conferência final ainda tem problema grave: " + "; ".join(final["graves"][:3])
+    # Todo dia sai um texto (Pedro, 15/11/2026): sem versão aprovada no prazo, sai a última, concentrada, com aviso.
+    reg["ok"] = bool(texto)
+    if esc["estado"] == "sem_aprovacao":
+        abertos = [o["problema"] for o in esc["objecoes"] if o["estado"] == "aberta"][:3]
+        reg["aviso"] = "o texto saiu sem aprovação: " + "; ".join(abertos)
+        log(f"texto do dia: {reg['aviso']}")
     return reg
+
+
+def material(e: dict, pesquisa: dict | None, cad: list[dict], investigacao: dict | None) -> str:
+    """O pacote da escrita (src/escrita.py): o que a análise entregou, como dado. A instrução fica no contrato."""
+    tipo = "a pergunta da semana" if e.get("semana") else "o texto do dia"
+    ext = {"calmo": "dia calmo", "normal": "dia normal", "grande": "dia grande"}.get(e["modo"], "dia normal")
+    partes = [f"Hoje o texto é {tipo}; a extensão de referência é a de um {ext}.", _bloco_base(e)]
+    if e.get("decisao"):
+        partes.append(e["decisao"])
+    partes += [f"<memorias>\n{e['memoria_curta']}\n</memorias>", f"<caderno>\n{_caderno_txt(cad) or '(vazio)'}\n</caderno>"]
+    if pesquisa:
+        d = {"perguntas": pesquisa.get("perguntas"), "o_que_a_pesquisa_nao_achou": pesquisa.get("o_que_falta") or ""}
+        partes.append("<pesquisa>\n" + json.dumps(d, ensure_ascii=False, indent=1) + "\n</pesquisa>\nO que a pesquisa "
+                      "não achou é limite da pesquisa, e não fato sobre o que foi publicado.")
+    inv = {**((pesquisa or {}).get("investigacao") or {})}
+    perguntas = [{k: p.get(k) for k in ("pergunta", "por_que")} for p in (investigacao or {}).get("perguntas") or []]
+    if perguntas:
+        inv = {"perguntas_da_leitora": perguntas, **inv}
+    if inv:
+        partes.append("<investigacao>\nAs perguntas que a leitora fez sobre a história, as respostas que o dado "
+                      "sustenta (com a força), os achados, o que caiu e os próximos sinais.\n"
+                      + json.dumps(inv, ensure_ascii=False, indent=1) + "\n</investigacao>")
+    if e.get("evitar"):
+        partes.append(_evitar(e))
+    return "\n\n".join(partes)
+
+
+def conferir_objetivo(t: dict, cad: list[dict], e: dict) -> dict:
+    """O que o código determina sozinho (src/escrita.py): os impedimentos barram a versão (a marca sem linha, o número
+    que nenhuma linha que confere sustenta, a citação que não está no trecho), e os diagnósticos vão ao aprovador."""
+    imp, diag = [], []
+    texto = t["texto"]
+    bl = blocos(texto)
+    usadas = marcas(texto)
+    imp += [f"marca [{m}] sem linha no caderno" for m in sorted(set(usadas) - {c["id"] for c in cad})]
+    base_ok = _base_ok(cad, e)
+    for i, b in enumerate([*bl, {"h": t["titulo"]}], 1):
+        x = sem_marcas(b.get("p") or b.get("h") or "")
+        fora = revisa_texto.numeros_fora([x], base_ok)
+        if fora:
+            imp.append(f"bloco {i}: número ou data que nenhuma linha do caderno que confere, das metas ou dos dados do "
+                       f"site sustenta: {', '.join(fora[:6])} | trecho: {x[:120]}")
+        diag += [f"bloco {i}: pode estar dizendo como fato que algo não foi publicado ou que não se sabe | trecho: {f[:120]}"
+                 for f in revisa_texto.ausencias(x, geral=True)]
+    for q in citacoes_fora(texto + "\n\n" + t["titulo"], _base_citacoes(cad, e)):
+        (imp if len(q.split()) >= CITACAO_MIN else diag).append(
+            f"citação entre aspas que não está, palavra por palavra, em nenhum trecho do caderno: \"{q[:100]}\"")
+    diag += [f"{c['id']} está marcada no texto e não confere ({c['conferencia']['status']})" for c in cad
+             if c["id"] in usadas and (c.get("conferencia") or {}).get("status") in RUINS]
+    corpo = sem_marcas(" ".join(b.get("p", "") for b in bl))
+    diag.append(f"o texto tem {len(corpo.split())} palavras e {sum(1 for b in bl if 'h' in b)} intertítulos")
+    return {"impedimentos": imp, "diagnosticos": diag}
 
 
 # ------------------------------------------------------------------ o post
@@ -2985,21 +2892,23 @@ def mostrar(t: dict) -> None:
     if not t.get("texto"):
         print("Sem texto:", t.get("erro"))
         return
-    plano = (t.get("esqueleto") or {}).get("plano")
-    if plano:
-        print(f"Esqueleto: {plano['pergunta']}\n  {plano['resposta']}\n  Fato-chave: {plano['fato_chave']}")
-        for i, ps in enumerate(plano["passos"], 1):
-            print(f"  {i}. {ps['afirmacao']}")
+    esc = t.get("escrita") or {}
+    pl = esc.get("plano") or {}
+    if pl:
+        print(f"Plano: {pl.get('pergunta_central')}\n  {pl.get('resposta_central')}")
+        for q in pl.get("perguntas_seguintes") or []:
+            print(f"  - {q['pergunta']}")
         print()
     print(f"# {t['titulo']}\n\n{t['texto']}\n\nArgumento: {t.get('argumento')}\n")
-    fin = (t.get("conferencia") or {}).get("final", {})
-    print("Conferência final:", fin.get("graves") or "sem problema grave", "| avisos:", fin.get("avisos"))
-    for v in t.get("voltas") or []:
-        fr = v.get("leitor_frio") or {}
-        print(f"Revisão, volta {v['volta']}: {len(v['objecoes'])} objeções do revisor"
-              + (f", {len(fr.get('objecoes') or [])} do leitor frio ({sum(1 for o in fr.get('objecoes') or [] if o['grave'])} graves)"
-                 if fr else "") + " |", v.get("resumo"))
-    print("Duração:", t.get("duracao_s"), "s | custo:", round(sum((m.get("custo_usd") or 0) for m in t.get("meta", [])), 2), "US$")
+    for i, v in enumerate(esc.get("versoes") or [], 1):
+        par = v.get("parecer") or {}
+        print(f"Versão {i}: {len(par.get('problemas') or [])} problemas apontados, {len(v.get('bloqueios') or [])} barram"
+              + (" | pronta" if v.get("pronta") else "") + (" | concentrada" if v.get("concentrada") else ""))
+    print("Estado:", esc.get("estado"), "| fornecedor:", esc.get("provedor"), "| trocas:", esc.get("trocas") or "nenhuma")
+    print("Conferência final:", (t.get("conferencia") or {}).get("final"))
+    custo = sum((m.get("custo_usd") or 0) for m in [*t.get("meta", []), *esc.get("chamadas", [])])
+    print("Duração:", t.get("duracao_s"), "s | custo do Claude:", round(custo, 2), "US$ | chamadas da escrita:",
+          len(esc.get("chamadas") or []))
 
 
 def main() -> int:
@@ -3019,6 +2928,8 @@ def main() -> int:
                     help="o texto sem a investigação, só com a pesquisa (para comparar)")
     ap.add_argument("--semana", action="store_true",
                     help="a pergunta da semana numa rodada que não é de domingo (para testar)")
+    ap.add_argument("--so-escrita", action="store_true",
+                    help="só a escrita, sobre a pesquisa, o caderno e a investigação que a rodada guardou")
     ap.add_argument("--nota", help="com --grava, a nota que fica no registro (post.revisao_manual)")
     ap.add_argument("--confere", action="store_true", help="lista os fatos do dia publicados sem o texto (sai com 1 se faltar)")
     ap.add_argument("--fontes", action="store_true",
@@ -3086,7 +2997,8 @@ def _uma_rodada(a: argparse.Namespace, arq: Path) -> int:
         print(f"texto do dia: {arq.name} não tem a pauta pela história (src/pauta.py); refaça a pauta antes")
         return 1
     t = fazer(rodada, None, a.limite_min, a.offline, evitar=a.evitar, esqueleto_ok=not a.sem_esqueleto,
-              investigacao_ok=not a.sem_investigacao, semana=a.semana or tipo == "pergunta")
+              investigacao_ok=not a.sem_investigacao, semana=a.semana or tipo == "pergunta",
+              salvo=post.get("pesquisa") if a.so_escrita else None)
     mostrar(t)
     if a.grava and t.get("texto"):
         gravar(arq, t, a.nota)

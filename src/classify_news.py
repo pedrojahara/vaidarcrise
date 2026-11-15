@@ -87,7 +87,8 @@ def _features_codex() -> set[str]:
     return _FEATURES[CODEX]
 
 
-def chamar_codex(system: str, prompt: str, schema: dict, etapa: str, timeout: int = 600) -> dict:
+def chamar_codex(system: str, prompt: str, schema: dict, etapa: str, timeout: int = 600, modelo: str | None = None,
+                 raciocinio: str | None = None) -> dict:
     """Chama `codex exec` com saída em esquema, sem ferramentas, só leitura, sem histórico e sem a configuração pessoal
     do Codex (que tem servidores MCP). As instruções do sistema substituem as de programação do Codex, como o
     --system-prompt do `claude -p`. Só o login do ChatGPT vale: sem chave de API, nada é cobrado à parte. Nunca levanta
@@ -95,6 +96,7 @@ def chamar_codex(system: str, prompt: str, schema: dict, etapa: str, timeout: in
     import tempfile
     import time
     mod, esforco = modelo_codex(etapa)
+    mod, esforco = modelo or mod, raciocinio or esforco
     meta = {"etapa": etapa, "motor": "codex", "modelo_pedido": mod, "raciocinio": esforco, "modelos": [mod],
             "prompt_sha256": hashlib.sha256((system + prompt).encode()).hexdigest(),
             "system_sha256": hashlib.sha256(system.encode()).hexdigest()}
@@ -135,7 +137,9 @@ def chamar_codex(system: str, prompt: str, schema: dict, etapa: str, timeout: in
         if ev.get("type") == "item.completed" and it.get("type") not in ("agent_message", "reasoning", "error"):
             ferramentas.append(it.get("type"))
     if ferramentas:
-        meta["ferramentas"] = ferramentas
+        # O Codex roda sem ferramentas: se usou alguma, a chamada não vale.
+        meta.update({"ferramentas": ferramentas, "erro": f"o codex usou ferramentas: {', '.join(map(str, ferramentas))}"})
+        return {"ok": False, "saida": None, "meta": meta}
     if p.returncode != 0 or not saida_txt.strip():
         meta["erro"] = f"codex devolveu erro ou nenhuma saída: {'; '.join(erros) or p.stderr[-300:]}"[:400]
         return {"ok": False, "saida": None, "meta": meta}
@@ -333,9 +337,16 @@ def chamar_claude(system: str, prompt: str, schema: dict, budget_usd: float, eta
     return _chamar_claude(system, prompt, schema, budget_usd, etapa, ferramentas, permitidas, timeout)
 
 
+def chamar_claude_direto(system: str, prompt: str, schema: dict, budget_usd: float, etapa: str, mod: str,
+                         timeout: int = 900) -> dict:
+    """O Claude, sem ferramentas e com o modelo dito pela chamada (a escrita, quando a OpenAI cai: src/escrita.py)."""
+    return _chamar_claude(system, prompt, schema, budget_usd, etapa, None, None, timeout, mod)
+
+
 def _chamar_claude(system: str, prompt: str, schema: dict, budget_usd: float, etapa: str,
-                   ferramentas: list[str] | None, permitidas: list[str] | None, timeout: int) -> dict:
-    mod = modelo(etapa)
+                   ferramentas: list[str] | None, permitidas: list[str] | None, timeout: int,
+                   mod: str | None = None) -> dict:
+    mod = mod or modelo(etapa)
     meta = {"etapa": etapa, "motor": "claude", "modelo_pedido": mod, "prompt_sha256": hashlib.sha256((system + prompt).encode()).hexdigest(),
             "system_sha256": hashlib.sha256(system.encode()).hexdigest()}
     env = {k: v for k, v in os.environ.items() if not k.startswith(("CLAUDECODE", "CLAUDE_CODE_", "ANTHROPIC_"))}
