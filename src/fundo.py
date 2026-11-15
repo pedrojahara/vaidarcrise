@@ -1028,7 +1028,8 @@ def montar_esqueleto(e: dict, pesquisa: dict | None, cad: list[dict], reg: dict,
                       timeout=min(300, resta() - 600))
     reg["meta"].append(r2["meta"])
     if r2["ok"]:
-        reg["esqueleto"] = {"plano": _limpar_esqueleto(r2["saida"], cad), **({"leitura": conf} if conf else {})}
+        reg["esqueleto"] = {"plano": _limpar_esqueleto(r2["saida"], cad), **({"leitura": conf} if conf else {}),
+                            **({"regua_pela_metade": regua} if regua else {})}
         return reg["esqueleto"]["plano"]
     return esq
 
