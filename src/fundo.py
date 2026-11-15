@@ -2094,16 +2094,31 @@ def _foi_grave(frase: str, graves: list[dict]) -> bool:
     return any(o.get("grave", True) for o in _apontadas(frase, graves))
 
 
+LOTE = 12  # frases mudadas (e frases que saíram) por leitor: em 15/11/2026, 42 de uma vez levaram 117 s, e 52 passaram de 150
+
+
+def _lotes(xs: list[str], n: int) -> list[list[str]]:
+    """`xs` em `n` partes seguidas, quase do mesmo tamanho (a primeira parte de cada lista é o começo do texto)."""
+    q, r = divmod(len(xs), n)
+    out, i = [], 0
+    for k in range(n):
+        j = i + q + (k < r)
+        out.append(xs[i:j])
+        i = j
+    return out
+
+
 def _ler_mudancas(e: dict, cad: list[dict], esq: dict | None, lida: dict, t: dict, etapa: str,
                   timeout: int) -> tuple[dict, dict] | None:
-    """O leitor da comparação: as frases de `t` que mudaram desde `lida` e o que ele achou nelas. None sem mudança."""
+    """O leitor da comparação: as frases de `t` que mudaram desde `lida` e o que ele achou nelas. None sem mudança.
+    As frases vão em lotes seguidos, lidos ao mesmo tempo, cada um com os dois textos inteiros: o tempo não cresce com
+    o tamanho da reescrita, e cada lote devolve até 8 problemas. O lote que falha fica de fora, e os outros valem."""
     un_lida, un_t = _unidades(lida), _unidades(t)
     vistas, ficam = {_norm(u) for u in un_lida}, {_norm(u) for u in un_t}
     mudaram = [u for u in un_t if _norm(u) not in vistas]
     sairam = [u for u in un_lida if _norm(u) not in ficam]
     if not mudaram and not sairam:
         return None
-    ids = set(marcas(" ".join(mudaram + sairam))) or set(marcas(t["texto"]))
     plano = ""
     if esq:
         plano = "\n".join([f"Pergunta: {esq.get('pergunta', '')}", f"Resposta: {esq.get('resposta', '')}",
@@ -2111,20 +2126,29 @@ def _ler_mudancas(e: dict, cad: list[dict], esq: dict | None, lida: dict, t: dic
     c = e.get("conclusao") or {}
     if c:
         plano += f"\nConclusão da investigação: {c.get('resposta', '')} (força: {c.get('forca', '')})"
-    prompt = (f"<antes>\nTÍTULO: {lida['titulo']}\n\n{lida['texto']}\n</antes>\n\n"
-              f"<depois>\nTÍTULO: {t['titulo']}\n\n{t['texto']}\n</depois>\n\n"
-              "<mudaram>\n" + ("\n".join(f"- {u}" for u in mudaram) or "(nenhuma)") + "\n</mudaram>\n\n"
-              "<sairam>\n" + ("\n".join(f"- {u}" for u in sairam) or "(nenhuma)") + "\n</sairam>\n\n"
-              f"<plano>\n{plano or '(sem plano)'}\n</plano>\n\n"
-              f"<caderno>\n{_caderno_txt([x for x in cad if x['id'] in ids]) or '(vazio)'}\n</caderno>\n\n"
-              "Devolva o JSON do esquema.")
-    r = classify_news.chamar_claude(SISTEMA_ULTIMA, prompt, SCHEMA_ULTIMA, 0.5, etapa=etapa, timeout=timeout)
-    reg = {"mudaram": len(mudaram), "sairam": len(sairam), "meta": r["meta"]}
-    if not r["ok"]:
-        reg["erro"] = r["meta"].get("erro")
-    else:
-        reg["devolvidos"] = len(r["saida"]["problemas"])
-    return {"r": r, "mudaram": mudaram, "un_lida": un_lida}, reg
+    n = max(1, -(-max(len(mudaram), len(sairam)) // LOTE))
+
+    def ler(mud: list[str], sai: list[str]) -> dict:
+        ids = set(marcas(" ".join(mud + sai))) or set(marcas(t["texto"]))
+        prompt = (f"<antes>\nTÍTULO: {lida['titulo']}\n\n{lida['texto']}\n</antes>\n\n"
+                  f"<depois>\nTÍTULO: {t['titulo']}\n\n{t['texto']}\n</depois>\n\n"
+                  "<mudaram>\n" + ("\n".join(f"- {u}" for u in mud) or "(nenhuma)") + "\n</mudaram>\n\n"
+                  "<sairam>\n" + ("\n".join(f"- {u}" for u in sai) or "(nenhuma)") + "\n</sairam>\n\n"
+                  f"<plano>\n{plano or '(sem plano)'}\n</plano>\n\n"
+                  f"<caderno>\n{_caderno_txt([x for x in cad if x['id'] in ids]) or '(vazio)'}\n</caderno>\n\n"
+                  "Devolva o JSON do esquema.")
+        return classify_news.chamar_claude(SISTEMA_ULTIMA, prompt, SCHEMA_ULTIMA, 0.5, etapa=etapa, timeout=timeout)
+
+    lotes = [(m, s_) for m, s_ in zip(_lotes(mudaram, n), _lotes(sairam, n)) if m or s_]
+    with cf.ThreadPoolExecutor(max_workers=len(lotes)) as ex:
+        rs = list(ex.map(lambda ms: ler(*ms), lotes))
+    ok = [r for r in rs if r["ok"]]
+    problemas = [p for r in ok for p in r["saida"]["problemas"]]
+    reg = {"mudaram": len(mudaram), "sairam": len(sairam), "lotes": len(lotes), "metas": [r["meta"] for r in rs],
+           "devolvidos": len(problemas)}
+    if len(ok) < len(rs):
+        reg["erro"] = f"{len(rs) - len(ok)} de {len(rs)} lotes falharam: " + str(next(r["meta"].get("erro") for r in rs if not r["ok"]))[:200]
+    return {"ok": bool(ok), "problemas": problemas, "mudaram": mudaram, "un_lida": un_lida}, reg
 
 
 def comparar_reescrita(e: dict, cad: list[dict], esq: dict | None, lida: dict, t: dict, apontadas: list[dict],
@@ -2136,10 +2160,10 @@ def comparar_reescrita(e: dict, cad: list[dict], esq: dict | None, lida: dict, t
     if not lido:
         return [], None
     x, reg = lido
-    if not x["r"]["ok"]:
+    if not x["ok"]:
         return [], reg
     por_frase: dict[str, dict] = {}  # um pedido por frase, com tudo o que a comparação achou nela
-    for p in x["r"]["saida"]["problemas"]:
+    for p in x["problemas"]:
         tr = (_achar(p["trecho"], x["mudaram"]) or p["trecho"].strip()) if p["trecho"].strip() else ""
         ant = p["anterior"].strip()
         if not tr and not ant:
@@ -2188,12 +2212,12 @@ def ultima_leitura(e: dict, cad: list[dict], esq: dict | None, lida: dict, t: di
     if not lido:
         return t, None
     x, reg = lido
-    if not x["r"]["ok"]:
+    if not x["ok"]:
         return t, reg
     mudaram, un_lida = x["mudaram"], x["un_lida"]
     chave = _numero_chave(e, cad)
     titulo, texto, feitas, ficou = t["titulo"].strip(), t["texto"], [], []
-    for p in x["r"]["saida"]["problemas"]:
+    for p in x["problemas"]:
         tr = _achar(p["trecho"], mudaram) if p["trecho"].strip() else None
         ant = _achar(p["anterior"], un_lida) if p["anterior"].strip() else None
         grave_antes = bool(ant and _foi_grave(ant, graves))
@@ -2577,12 +2601,11 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline:
             try:
                 comp, rcmp = comparar_reescrita(e, cad, esq, {"titulo": lida["titulo"], "texto": sem_links(lida["texto"])},
                                                 {"titulo": t["titulo"], "texto": sem_links(t["texto"])}, objetadas,
-                                                timeout=max(45, min(120, resta() - 300)))
+                                                timeout=max(60, min(150, resta() - 300)))
             except Exception as ex:  # noqa: BLE001
                 comp, rcmp = [], {"erro": repr(ex)}
             if rcmp:
-                if rcmp.get("meta"):
-                    reg["meta"].append(rcmp.pop("meta"))
+                reg["meta"] += rcmp.pop("metas", [])
                 reg["comparacao"] = rcmp
                 log(f"texto do dia: a comparação viu {rcmp.get('mudaram', 0)} frases mudadas na reescrita; "
                     f"{len(comp)} vão para a correção" + (f" (falhou: {rcmp['erro']})" if rcmp.get("erro") else ""))
@@ -2658,8 +2681,7 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline:
         except Exception as ex:  # noqa: BLE001
             novo, rul = t, {"erro": repr(ex)}
         if rul:
-            if rul.get("meta"):
-                reg["meta"].append(rul.pop("meta"))
+            reg["meta"] += rul.pop("metas", [])
             if rul.get("feitas"):
                 novo["texto"], cort_ult = cortar_frases(novo["texto"], _base_ok(cad, e), _base_citacoes(cad, e))
                 depois_ult = conferir_codigo(novo, cad, e, ontem)
