@@ -158,10 +158,12 @@ def comparacoes(texto: str, metas_texto: str = "") -> list[str]:
     return out
 
 
-# Onde a conta está agora: a projeção oficial, o resultado até um mês, o que falta ou sobra para a meta.
-_POSICAO = re.compile(r"\b(projet(a|am|ou|aram|ava|avam|ando)|projeç\w+|prev[êe](em)?|previu|previs\w+|acumulad\w*|até (janeiro|fevereiro|março|abril|"
+# Onde a conta está agora: a projeção oficial, o resultado até um mês, o que falta ou sobra para a meta. "Previa" e
+# "acima do centro" também dizem onde a conta está: no teste de 14/11/2026, o esqueleto refeito dizia que o Orçamento
+# "previa R$ 83,4 bi, R$ 10,2 bi acima do centro", e a conferência acusava a frase de novo.
+_POSICAO = re.compile(r"\b(projet(a|am|ou|aram|ava|avam|ando)|projeç\w+|prev[êe](em)?|previu|previa\w*|previs\w+|acumulad\w*|até (janeiro|fevereiro|março|abril|"
                       r"maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)|nos \d+ meses|falta\w*|sobra\w* para|"
-                      r"folga|abaixo do piso|acima do piso|no piso|congel\w*|contingenci\w*|bloque\w*|está em|ficou em|"
+                      r"folga|(abaixo|acima) d[oa] (piso|centro|teto)|no piso|congel\w*|contingenci\w*|bloque\w*|está em|ficou em|"
                       r"fechou|chega\w* a|dá R\$)", re.I)
 
 
