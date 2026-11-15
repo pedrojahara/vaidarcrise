@@ -101,7 +101,7 @@ def parecer(problemas=(), resolvidas=()):
 
 
 class Ciclo(unittest.TestCase):
-    def rodar(self, pareceres, impedimentos=None, prazo=3600, redator_falha_em=None):
+    def rodar(self, pareceres, impedimentos=None, prazo=3600, redator_falha_em=None, alerta=None, avisos=None):
         """Cada parecer é a resposta do aprovador a uma versão; o redator e o leitor sempre respondem."""
         pareceres, imp = list(pareceres), list(impedimentos or [])
         n = {"v": 0}
@@ -118,7 +118,8 @@ class Ciclo(unittest.TestCase):
         classify_news.chamar_codex = codex
         try:
             conferir = lambda a: {"impedimentos": imp.pop(0) if imp else [], "diagnosticos": []}  # noqa: E731
-            return escrita.produzir("material", conferir, lambda x: x, time.time() + prazo, log=lambda *a: None)
+            return escrita.produzir("material", conferir, lambda x: x, time.time() + prazo, log=lambda *a: None,
+                                    alerta=alerta, avisar=(avisos.append if avisos is not None else None))
         finally:
             classify_news.chamar_codex = orig
 
@@ -160,6 +161,20 @@ class Ciclo(unittest.TestCase):
     def test_sem_nenhuma_aprovada_sai_a_ultima_com_aviso(self):
         reg = self.rodar([parecer([problema("")])], prazo=1000)
         self.assertEqual(reg["estado"], "sem_aprovacao")
+
+
+    def test_as_8h05_a_versao_aprovada_sai_sem_mais_correcao(self):
+        # A versão 1 só tem melhoria média: já pode sair; depois das 8h05 ela sai, sem a correção que a fase pediria.
+        reg = self.rodar([parecer([problema("", "medio")])], alerta=time.time() - 1)
+        self.assertEqual(reg["estado"], "aprovado")
+        self.assertEqual((reg["artigo"]["titulo"], reg["correcoes"]), ("T1", 0))
+
+    def test_as_8h05_sem_aprovada_avisa_concentra_e_segue(self):
+        avisos = []
+        reg = self.rodar([parecer([problema("")]), parecer(resolvidas=["R1"])], alerta=time.time() - 1, avisos=avisos)
+        self.assertEqual(len(avisos), 1)
+        self.assertEqual(reg["estado"], "aprovado")
+        self.assertTrue(reg["versoes"][-1]["concentrada"])
 
 
 if __name__ == "__main__":

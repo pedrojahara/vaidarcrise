@@ -237,12 +237,18 @@ def _sha(artigo: dict) -> str:
 
 
 # ------------------------------------------------------------------ o ciclo
-def produzir(material: str, conferir, sem_marcas, prazo: float, reg: dict | None = None, log=print) -> dict:
+def produzir(material: str, conferir, sem_marcas, prazo: float, reg: dict | None = None, log=print,
+             artigo_inicial: dict | None = None, alerta: float | None = None, avisar=None) -> dict:
     """O ciclo da escrita até haver versão pronta ou acabar o prazo (time.time() de quando parar). `conferir(artigo)`
     devolve {"impedimentos": [...], "diagnosticos": [...]}: o que o código determina sozinho. Devolve o registro, com
-    "artigo" (a versão que sai), "estado" ("aprovado", "versao_anterior" ou "sem_aprovacao") e o caminho."""
+    "artigo" (a versão que sai), "estado" ("aprovado", "versao_anterior" ou "sem_aprovacao") e o caminho.
+    Com `artigo_inicial` (um texto já publicado, depois de a análise trocar fontes ou reabrir documentos), o ciclo
+    parte dele, já na fase estreita: só problema de alto impacto e alta confiança muda o que está no ar.
+    `alerta` (o horário das 8h05, Pedro, 15/11/2026): sem versão pronta até lá, sai a última aprovada do dia; se não
+    houver nenhuma, o Pedro recebe o aviso (`avisar`), o artigo é concentrado e o ciclo segue até o `prazo` (as 10h),
+    quando sai a última versão, mesmo com o problema em aberto."""
     reg = reg if reg is not None else {}
-    reg.update({"chamadas": reg.get("chamadas", []), "versoes": [], "objecoes": [], "correcoes": 0})
+    reg.update({"chamadas": reg.get("chamadas", []), "versoes": [], "objecoes": [], "correcoes": 1 if artigo_inicial else 0})
     objecoes: dict[str, dict] = {}
     vistas: set[str] = set()
     aprovada = None
@@ -251,7 +257,10 @@ def produzir(material: str, conferir, sem_marcas, prazo: float, reg: dict | None
     def resta() -> float:
         return prazo - time.time()
 
-    r = redigir(material, reg, log=log)
+    if artigo_inicial:
+        r = {"ok": True, "saida": {"plano": {}, "artigo": artigo_inicial, "respostas_a_revisao": []}}
+    else:
+        r = redigir(material, reg, log=log)
     if not r["ok"]:
         reg.update({"estado": "falhou", "erro": f"redação: {r['meta'].get('erro')}"})
         return reg
@@ -305,6 +314,15 @@ def produzir(material: str, conferir, sem_marcas, prazo: float, reg: dict | None
             f"conferência{'; pronta para sair' if pronta else ''}")
         if not bloqueios and not impedimentos:
             break
+        if alerta and time.time() >= alerta and not reg.get("alertado"):
+            if aprovada:
+                log("escrita: 8h05 sem versão pronta; sai a última versão aprovada do dia")
+                break
+            reg["alertado"] = True
+            concentrar = True
+            if avisar:
+                avisar("O texto de hoje ainda não passou pela revisão às 8h05. A escrita segue, concentrada na "
+                       "explicação central; às 10h o texto sai mesmo com o problema em aberto.")
         if resta() < TIMEOUT["redator"] + TIMEOUT["aprovador"]:
             log("escrita: sem tempo para outra correção")
             break
