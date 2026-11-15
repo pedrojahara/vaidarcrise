@@ -2004,8 +2004,8 @@ def _limpar(t: str) -> str:
 # na volta 2 não passou pelo leitor de títulos; em 14/11, o título reescrito pôs na conta da Caixa o atraso de todos os
 # bancos. Um leitor barato (Haiku, sem ferramentas) compara o texto que vai sair com a última versão que o revisor leu
 # inteira, só nas frases que mudaram depois dela, e a saída é fixa: a frase lida volta, ou a frase nova sem base sai.
-# Nada é reescrito aqui, porque reescrever de novo seria outra mudança que ninguém lê; e a frase que o revisor apontou
-# como grave não volta.
+# Nada é reescrito aqui, porque reescrever de novo seria outra mudança que ninguém lê; e a frase que o revisor
+# apontou, ou que o leitor frio achou grave, não volta.
 SISTEMA_ULTIMA = """Você confere a última reescrita de um texto de economia antes de ele sair. Você recebe a versão que o revisor leu inteira (ANTES), a versão que vai sair (DEPOIS), as frases de DEPOIS que mudaram depois dessa leitura (MUDARAM), as frases de ANTES que não estão mais em DEPOIS (SAIRAM), o plano do texto, com a conclusão da investigação e a força dela, e as linhas do caderno que essas frases citam com [cN]. Ninguém leu essas mudanças. Sua tarefa é achar só o que elas estragaram ou trouxeram sem base. Não julgue estilo, e não aponte frase que não está em MUDARAM ou SAIRAM.
 
 1. Para cada frase de MUDARAM, inclusive o título e os intertítulos, compare com a frase de ANTES que ela substitui, com o plano e com o caderno, e aponte o que ela passou a dizer de errado, com o "motivo":
@@ -2455,6 +2455,7 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline:
     graves_antes: list[dict] = []  # os erros graves que o revisor já apontou: a reescrita seguinte não os traz de volta
     lida: dict | None = None  # a última versão que o revisor leu inteira (a conferência final só procura erros)
     titulos_lidos: set[str] | None = None  # o título e os intertítulos que o leitor de títulos leu por último
+    objetadas: list[dict] = []  # o que o revisor apontou nas voltas, e o grave do leitor frio: na última leitura, não volta
     for volta in (1, 2, 3):
         codigo = conferir_codigo(t, cad, e, ontem)
         if resta() < (300 if volta == 3 else 420):
@@ -2492,6 +2493,8 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline:
         else:
             log(f"texto do dia: o revisor falhou ({rv['meta'].get('erro')})")
             objecoes = objecoes if volta == 2 else []
+        if volta < 3:
+            objetadas += objecoes + [o for o in frias if o.get("grave")]
         reg["voltas"].append({"volta": volta, "codigo": codigo, "objecoes": objecoes,
                               **({"leitor_frio": {**frio, "objecoes": frias}} if frio else {}),
                               "resumo": (rv.get("saida") or {}).get("resumo") if rv["ok"] else rv["meta"].get("erro")})
@@ -2540,7 +2543,8 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline:
         lida_sl = {"titulo": lida["titulo"], "texto": sem_links(lida["texto"])}
         antes_ult = conferir_codigo(t, cad, e, ontem)
         try:
-            novo, rul = ultima_leitura(e, cad, esq, lida_sl, t, graves_antes, timeout=max(45, min(150, resta() - 30)))
+            novo, rul = ultima_leitura(e, cad, esq, lida_sl, t, graves_antes + objetadas,
+                                       timeout=max(45, min(150, resta() - 30)))
         except Exception as ex:  # noqa: BLE001
             novo, rul = t, {"erro": repr(ex)}
         if rul:
