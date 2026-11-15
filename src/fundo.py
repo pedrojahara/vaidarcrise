@@ -1180,9 +1180,10 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline:
     log("texto do dia: escrita")
     mat = material(e, pesquisa, cad, reg.get("investigacao"))
     # Na rodada do dia, a escrita segue até haver versão pronta: às 8h05 sai a última aprovada (ou o Pedro é avisado)
-    # e às 10h sai a última versão (Pedro, 15/11/2026). Num dia refeito depois, vale o limite da chamada.
+    # e às 10h sai a última versão (Pedro, 15/11/2026). Num dia refeito depois, ou só na escrita (--so-escrita), vale o
+    # limite da chamada.
     alerta, prazo = None, fim - 30
-    if e["dia"] == dt.date.today():
+    if e["dia"] == dt.date.today() and not salvo:
         hora = lambda h, m: dt.datetime.combine(e["dia"], dt.time(h, m)).timestamp()  # noqa: E731
         alerta, prazo = hora(8, 5), max(prazo, hora(10, 0))
     esc = escrita.produzir(mat, lambda a: conferir_objetivo(a, cad, e), sem_marcas, prazo, log=log, alerta=alerta,
