@@ -14,6 +14,11 @@ com todos os fatos de ontem sobre ela como prova. O código escolhe a história,
 5. se nenhuma história passa de 1,5, o dia é calmo e o texto é curto;
 6. uma segunda história entra num parágrafo só se também passar de 1,5.
 
+O dia de novidade (Pedro, 16/11/2026) é o dia em que sai o número de uma pressão (a data marcada do PIB, do Copom, do
+desemprego ou da inflação, ou a medida mensal do site que passa a um mês mais novo) ou em que um órgão público toma
+uma decisão que o código manda analisar (src/decisoes.py). Nele, a história da novidade é a do dia, depois da regra 3,
+e o texto explica a novidade a fundo; nos outros dias, o texto conta o que mudou em cada história que andou.
+
 Um fato que não é passo de nenhuma história abre uma história nova no dia se for grande (tamanho 2 ou mais) e já
 consumado; menor, ele espera e abre a história se voltar em 3 dos últimos 7 dias. Nos dois casos, o Pedro recebe o
 aviso. A pergunta da semana do domingo (src/fundo.py, pauta_da_semana) soma as pautas dos sete dias pela mesma conta.
@@ -53,6 +58,12 @@ MARCADAS = {
 OUTRAS_DATAS = {"ipca": "a inflação do mês, IPCA (IBGE)", "ipca15": "a prévia da inflação, IPCA-15 (IBGE)",
                 "pim": "a produção industrial (IBGE)", "pmc": "as vendas do varejo (IBGE)",
                 "fed": "a decisão de juros dos Estados Unidos (Fed)"}
+# O dia de novidade: a data marcada que é o número de uma pressão, e a pressão dela.
+DATA_DA_PRESSAO = {"pib": "ritmo", "copom": "juro", "pnad": "emprego", "ipca": "inflacao", "ipca15": "inflacao"}
+# As medidas mensais do site, e o fator das notícias de cada uma: a pressão tem número novo quando a medida passa a um
+# mês mais novo que o da rodada anterior (a dívida e o resultado das contas, as parcelas, o ritmo da economia e o
+# emprego). A renda sai com o emprego, na mesma pesquisa.
+MENSAIS = {"contas": "contas", "parcelas": "credito", "ritmo": "atividade", "emprego": "emprego"}
 
 
 def _bate_data(tipo: str, c: dict) -> bool:
@@ -148,6 +159,68 @@ def datas_lidas(rodada: dict, cal: list[dict]) -> list[dict]:
     return [x for x in cal if x["data"] in dias]
 
 
+def _refs(r: dict | None) -> dict[tuple[str, str], str]:
+    out = {}
+    for p in (((r or {}).get("resultado") or {}).get("direcao") or {}).get("partes") or []:
+        if p.get("id") in MENSAIS:
+            for k, m in (p.get("medidas") or {}).items():
+                if (m or {}).get("ref"):
+                    out[(p["id"], k)] = m["ref"]
+    return out
+
+
+def dados_novos(rodada: dict, anterior: dict | None) -> list[dict]:
+    """As pressões mensais com número novo desde a rodada anterior: a medida que passou a um mês mais novo."""
+    a, b = _refs(anterior), _refs(rodada)
+    out: dict[str, dict] = {}
+    for (pid, k), ref in sorted(b.items()):
+        if a.get((pid, k)) and ref > a[(pid, k)]:
+            out.setdefault(pid, {"pressao": pid, "medidas": [], "ref": ref, "ref_antes": a[(pid, k)]})["medidas"].append(k)
+    return list(out.values())
+
+
+MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro",
+         "novembro", "dezembro"]
+
+
+def novidades(cands: list[dict], datas: list[dict], novos: list[dict], eventos: dict, somas: list[dict],
+              nomes: dict) -> list[dict]:
+    """As novidades do dia, cada uma com a notícia que a conta e a história em que ela entra (o id do grupo de
+    `somas`, ou None quando nenhuma notícia da soma fala dela): a data marcada de uma pressão, o número novo de uma
+    pressão mensal e a decisão pública tomada que o código manda analisar (src/decisoes.py, nível "analise"). O marco
+    que a história esperava não basta: o marco que chega vazio não faz o dia parecer grande (CARTA_EDITORIAL.md)."""
+    import decisoes
+    vivos = sorted((c for c in cands if not c["descartado"]), key=chave)
+    grupo = {i: g["id"] for g in somas for i in g["candidatos"]}
+    out: list[dict] = []
+
+    def junta(tipo: str, o_que: str, pressao: str | None, c: dict | None) -> None:
+        if c and any(n["candidato"] == c["id"] for n in out):
+            return
+        hid = grupo.get(c["id"]) if c else None
+        if hid is None and pressao:
+            hid = next((g["id"] for g in somas if g.get("pressao") == pressao), None)
+        out.append({"tipo": tipo, "o_que": o_que, "pressao": pressao, "candidato": c["id"] if c else None,
+                    "historia": hid})
+
+    for x in datas:
+        p = DATA_DA_PRESSAO.get(x["tipo"])
+        if p:
+            c = next((c for c in vivos if _bate_data(x["tipo"], c)), None)
+            junta("decisao" if x["tipo"] == "copom" else "dado", MARCADAS.get(x["tipo"]) or OUTRAS_DATAS[x["tipo"]], p, c)
+    for n in novos:
+        if any(o["pressao"] == n["pressao"] for o in out):
+            continue
+        c = next((c for c in vivos if c["estagio"] == "dado" and c["fator"] == MENSAIS[n["pressao"]]), None)
+        mes = MESES[int(n["ref"][5:7]) - 1] if len(n["ref"]) >= 7 else n["ref"]
+        junta("dado", f"o número de {mes} de {nomes.get(n['pressao'], n['pressao'])}", n["pressao"], c)
+    for c in vivos:
+        ev = {**c, "magnitude": c["tamanho"], **(eventos.get(c.get("evento")) or {})}
+        if c["estagio"] == "decidido" and decisoes.nivel(ev) == "analise":
+            junta("decisao", c["titulo"], None, c)
+    return out
+
+
 def _slug(t: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", (t or "").lower()).strip("-")[:40] or "tema"
 
@@ -208,9 +281,11 @@ def somar(cands: list[dict], historias: list[dict], voltas: dict[str, set[str]],
     return out, list(esperando.values())
 
 
-def escolher(somas: list[dict], historias: list[dict], virada: dict, seguidas: list[str]) -> dict:
+def escolher(somas: list[dict], historias: list[dict], virada: dict, seguidas: list[str],
+             novas: list[dict] | None = None) -> dict:
     """A história do dia. `virada` diz se a direção do risco mudou e quais pressões mudaram de lado; `seguidas`, as
-    histórias dos textos do dia anteriores, do mais recente para o mais antigo."""
+    histórias dos textos do dia anteriores, do mais recente para o mais antigo; `novas`, as novidades do dia
+    (novidades()): sem virada, a história de uma novidade é a do dia, a de maior soma se houver mais de uma."""
     abertas = {h["id"]: h for h in historias}
     if virada["direcao"] or virada["pressoes"]:
         # A direção mudou, ou uma pressão mudou de lado: a história dessa pressão é a do dia, mesmo sem notícia.
@@ -233,6 +308,12 @@ def escolher(somas: list[dict], historias: list[dict], virada: dict, seguidas: l
         return {"historia": None, "motivo": "a direção do risco mudou, sem notícia", "calmo": False}
     if not somas:
         return {"historia": None, "motivo": "nenhuma notícia lida é passo de uma história", "calmo": True}
+    com = [g for g in somas if any(n["historia"] == g["id"] for n in novas or [])]
+    if com:
+        g = com[0]  # somas vem da maior soma para a menor
+        o_que = "; ".join(n["o_que"] for n in novas or [] if n["historia"] == g["id"])
+        return {"historia": g, "motivo": f"dia de novidade ({o_que}): a história dela", "calmo": False,
+                "nova": bool(g.get("nova")), "titulo_historia": (abertas.get(g["id"]) or g)["titulo"]}
     pulada = None
     escolha = somas[0]
     repetida = len(seguidas) >= DIAS_SEGUIDOS and all(h == escolha["id"] for h in seguidas[:DIAS_SEGUIDOS])
@@ -311,12 +392,16 @@ def montar(rodada: dict, anterior: dict | None, eventos: dict, cfg: dict, cal: l
     mudou_direcao = bool(anterior and da and d.get("estado") and d.get("estado") != da.get("estado"))
     hoje = rodada["gerado_em"][:10]
     somas, esperando = somar(cands, historias, voltas_dos_temas(eventos, hoje), hoje)
-    esc = escolher(somas, historias, {"direcao": mudou_direcao, "pressoes": mudaram}, seguidas or [])
-    h = esc["historia"]
-    segunda = next((g for g in somas if h and g["id"] != h["id"] and g["pontos"] >= CALMO), None)
     nomes = cfg["direcao"]["nomes"]
+    novos = dados_novos(rodada, anterior)
+    novs = novidades(cands, datas, novos, eventos, somas, nomes)
+    esc = escolher(somas, historias, {"direcao": mudou_direcao, "pressoes": mudaram}, seguidas or [], novs)
+    h = esc["historia"]
+    da_historia = [n for n in novs if h and n["historia"] == h["id"]]
+    segunda = next((g for g in somas if h and g["id"] != h["id"] and g["pontos"] >= CALMO), None)
     if h and h["candidatos"]:
-        final = h["candidatos"][0]
+        # O passo principal é a novidade, quando ela está na história; senão, o mais firme.
+        final = next((n["candidato"] for n in da_historia if n["candidato"] in h["candidatos"]), h["candidatos"][0])
     elif mudou_direcao:
         final = "D"
     elif mudaram:
@@ -327,11 +412,11 @@ def montar(rodada: dict, anterior: dict | None, eventos: dict, cfg: dict, cal: l
             "datas": [{**x, "nome": MARCADAS.get(x["tipo"]) or OUTRAS_DATAS.get(x["tipo"], x["tipo"])} for x in datas],
             "pressoes_mudaram": [{"id": k, "nome": nomes.get(k, k), "antes": a[k], "agora": b[k]} for k in mudaram],
             "estado": d.get("estado"), "estado_anterior": (da or {}).get("estado"), "direcao_mudou": mudou_direcao,
-            "historias": somas, "temas_esperando": esperando,
+            "historias": somas, "temas_esperando": esperando, "dados_novos": novos, "novidades": novs,
             "escolha": {"historia": h["id"] if h else None, "titulo": h["titulo"] if h else None,
                         "pontos": h["pontos"] if h else 0, "motivo": esc["motivo"], "calmo": esc["calmo"],
                         "nova": bool(h and h.get("nova")), "pulada": esc.get("pulada"),
-                        "segunda": segunda["id"] if segunda else None},
+                        "segunda": segunda["id"] if segunda else None, "novidade": da_historia},
             "final": final, "mesma_historia": (h["candidatos"][1:] if h else []),
             "segunda_historia": (segunda["candidatos"] if segunda else [])}
 

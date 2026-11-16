@@ -572,13 +572,19 @@ def post_de(rodada: dict, cfg: dict) -> dict:
             ponte = base_site.ponte(p, cfg, base_site.assunto_do_fato(rodada), base_site.titulo_do_fato(rodada))
         except (KeyError, OSError, ValueError, TypeError) as e:
             print(f"aviso: o link do post de {dia} para o básico não saiu ({e!r})")
+    # Os textos anteriores sobre os assuntos do texto, logo abaixo dele (Pedro, 16/11/2026): o texto de hoje não repete
+    # o que eles disseram e leva a eles.
+    antes = []
+    if p.get("ok") and tipo == "dia":
+        antes = [{"url": f"/{x['data']}/", "titulo": x["titulo"], "dia": f"{int(x['data'][8:10])}/{int(x['data'][5:7])}"}
+                 for x in (p.get("pesquisa") or {}).get("antes") or [] if x.get("data") and x.get("titulo")]
     # Todo post com texto ganha o compartilhar e a primeira frase na prévia; o dia sem texto, não.
     extra = {**compartilhar(titulo, link), "resumo": primeira_frase(paragrafos[0])} if p.get("ok") and paragrafos else {}
     return {"dia": dia, "data_extenso": data_extenso(dia), "titulo": titulo, "paragrafos": paragrafos, "secoes": secoes,
             "tipo": tipo, "tipo_nome": TIPOS_POST[tipo], **extra,
             "pergunta_semana": (p.get("pergunta_semana") or None) if p.get("ok") else None,
             "autoria": autoria, "direcao": d["estado"], "llm": bool(p.get("ok")),
-            "link": link, "ponte": ponte, "fontes": fontes}
+            "link": link, "ponte": ponte, "fontes": fontes, "antes": antes}
 
 
 def textos_do_editor() -> list[dict]:
