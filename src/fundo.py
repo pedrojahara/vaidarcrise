@@ -1485,9 +1485,10 @@ def material(e: dict, pesquisa: dict | None, cad: list[dict], investigacao: dict
         if e.get("o_que_mudou"):
             resp = {r["item"]: r for r in e.get("apanhado") or []}
             partes.append("<o_que_mudou>\nAs histórias que andaram desde o último texto do dia, da que mais andou para a "
-                          "que menos andou, com as notícias de cada uma. A primeira parte do texto passa por elas, na "
-                          "ordem que a importância pedir, e diz de cada uma o que mudou e o que isso faz, ou não faz, "
-                          "com as pressões do site, com uma lente: "
+                          "que menos andou, com as notícias de cada uma. A primeira parte do texto abre com a resposta "
+                          "do dia e passa por elas na ordem que a importância pedir, um parágrafo curto por história, e "
+                          "diz de cada uma o que mudou e o que isso faz, ou não faz, com as pressões do site, com uma "
+                          "lente: "
                           + "; ".join(LENTES.values()) + ". A pesquisa (bloco <pesquisa>) cobre a história do dia e a "
                           "segunda; o apanhado, as outras.\n" + _bloco_itens(e["o_que_mudou"], resp,
                                                                               lentes_da_semana(recentes))
@@ -1542,7 +1543,9 @@ def conferir_objetivo(t: dict, cad: list[dict], e: dict) -> dict:
     diag += [f"{c['id']} está marcada no texto e não confere ({c['conferencia']['status']})" for c in cad
              if c["id"] in usadas and (c.get("conferencia") or {}).get("status") in RUINS]
     corpo = sem_marcas(" ".join(b.get("p", "") for b in bl))
-    diag.append(f"o texto tem {len(corpo.split())} palavras e {sum(1 for b in bl if 'h' in b)} intertítulos")
+    alvo = EXTENSAO.get(e.get("modo") or "")
+    diag.append(f"o texto tem {len(corpo.split())} palavras e {sum(1 for b in bl if 'h' in b)} intertítulos"
+                + (f" (o tipo do dia pede {alvo})" if alvo else ""))
     return {"impedimentos": imp, "diagnosticos": diag}
 
 

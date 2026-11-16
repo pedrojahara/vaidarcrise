@@ -213,7 +213,8 @@ def novidades(cands: list[dict], datas: list[dict], novos: list[dict], eventos: 
             continue
         c = next((c for c in vivos if c["estagio"] == "dado" and c["fator"] == MENSAIS[n["pressao"]]), None)
         mes = MESES[int(n["ref"][5:7]) - 1] if len(n["ref"]) >= 7 else n["ref"]
-        junta("dado", f"o número de {mes} de {nomes.get(n['pressao'], n['pressao'])}", n["pressao"], c)
+        nome = nomes.get(n["pressao"], n["pressao"])
+        junta("dado", f"o número de {mes} de {nome[:1].lower() + nome[1:]}", n["pressao"], c)
     for c in vivos:
         ev = {**c, "magnitude": c["tamanho"], **(eventos.get(c.get("evento")) or {})}
         if c["estagio"] == "decidido" and decisoes.nivel(ev) == "analise":
