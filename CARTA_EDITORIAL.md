@@ -1,6 +1,6 @@
 # Carta editorial: como o site escolhe a história do dia
 
-O fato do dia não conta uma notícia: ele faz um argumento sobre a história em andamento que mais andou ontem ([FUNDO.md](FUNDO.md)). Esta carta diz como o código escolhe essa história, sem IA, para quem quiser conferir. A conta está em [`src/pauta.py`](src/pauta.py): mude os dois juntos. Os casos julgados, no fim, crescem com cada dia que o Pedro julgar.
+O fato do dia conta o que mudou desde o último texto e, no dia de novidade, faz um argumento sobre a história em andamento da novidade ([FUNDO.md](FUNDO.md)). Esta carta diz como o código escolhe essa história, sem IA, para quem quiser conferir. A conta está em [`src/pauta.py`](src/pauta.py): mude os dois juntos. Os casos julgados, no fim, crescem com cada dia que o Pedro julgar.
 
 ## O que é uma história
 
@@ -28,12 +28,13 @@ O texto do dia soma as notícias desde o último texto do dia (Pedro, 15/11/2026
 ## As regras
 
 1. Quando a direção do risco muda, ou uma das cinco pressões muda de lado, ganha a história daquela pressão, mesmo com poucos pontos.
-2. A mesma história ganha no máximo dois dias seguidos, a não ser que traga uma decisão ou um dado de tamanho 2 ou mais. No terceiro dia, ganha a seguinte, se ela também passar de 1,5 ponto.
-3. Quando nenhuma história passa de 1,5 ponto, o dia é calmo e o texto é curto, de 120 a 200 palavras.
-4. Um tema novo, que não é passo de nenhuma história, abre uma história no mesmo dia se for grande (tamanho 2 ou mais) e já decidido ou divulgado. Um tema menor espera e abre a história se voltar em 3 dos últimos 7 dias. Nos dois casos, o Pedro recebe um aviso.
-5. No empate, ganha a história que saiu em mais jornais.
+2. No dia de novidade (Pedro, 16/11/2026), ganha a história da novidade, mesmo com poucos pontos, se alguma notícia da soma fala dela; com mais de uma, a de maior soma. O dia é de novidade quando sai o número de uma pressão (a data do PIB, do Copom, do desemprego, do IPCA ou do IPCA-15; ou uma medida mensal do site que passa a um mês mais novo: as contas do governo, as parcelas das famílias, o ritmo da economia e o emprego) ou quando um órgão público do Brasil toma uma decisão que o código manda analisar (`src/decisoes.py`, nível de análise). O marco que chega vazio não faz dia de novidade.
+3. A mesma história ganha no máximo dois dias seguidos, a não ser que traga uma decisão ou um dado de tamanho 2 ou mais. No terceiro dia, ganha a seguinte, se ela também passar de 1,5 ponto.
+4. Quando nenhuma história passa de 1,5 ponto, o dia é calmo e o texto é curto, de 120 a 200 palavras.
+5. Um tema novo, que não é passo de nenhuma história, abre uma história no mesmo dia se for grande (tamanho 2 ou mais) e já decidido ou divulgado. Um tema menor espera e abre a história se voltar em 3 dos últimos 7 dias. Nos dois casos, o Pedro recebe um aviso.
+6. No empate, ganha a história que saiu em mais jornais.
 
-Uma segunda história entra no texto, num parágrafo, se ela também passou de 1,5 ponto. O dia é grande, e o texto chega a perto de 800 palavras, quando a direção mudou, quando uma pressão mudou de lado ou quando a história somou 4 pontos ou mais.
+O texto começa pelo que mudou desde o último texto: a história do dia e mais até três, as de 1 ponto ou mais, da maior soma para a menor, cada uma com o que faz com as pressões do site ([FUNDO.md](FUNDO.md), "O que mudou"). A parte que explica a fundo só vem no dia de novidade e quando a direção do risco ou uma pressão muda, e o texto chega a perto de 600 palavras; nos outros dias, ele tem de 200 a 300.
 
 ## O que não se faz
 

@@ -22,6 +22,8 @@ CORREÇÃO
 {% endfor %}{% endif %}{% endfor %}
 {% if post.fontes %}De onde vêm os números: {% for x in post.fontes %}{{ x.quem }}{% if x.url %} ({{ x.url }}){% endif %}{{ '; ' if not loop.last else '.' }}{% endfor %}
 
+{% endif %}{% if post.antes %}Os textos anteriores sobre estes assuntos: {% for x in post.antes %}{{ x.titulo }} ({{ x.dia }}, {{ site }}{{ x.url }}){{ '; ' if not loop.last else '.' }}{% endfor %}
+
 {% endif %}{% if post.ponte %}{{ post.ponte.rotulo }}: {{ post.ponte.texto }}
 {{ site }}{{ post.ponte.url }}
 

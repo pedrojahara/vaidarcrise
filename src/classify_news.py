@@ -26,7 +26,7 @@ CLAUDE = os.environ.get("CLAUDE_BIN", "/Users/pedrojahara/.local/bin/claude")
 # seguintes e o juiz de cada volta vão de Sonnet. Cada etapa troca de modelo pelo ambiente (VDC_MODELO_<ETAPA>, por
 # exemplo VDC_MODELO_JUIZ=sonnet); VDC_LLM_MODEL troca todas de uma vez. A escrita do texto do dia escolhe os modelos
 # dela (src/escrita.py, PAPEIS): OpenAI, e o Claude só quando a OpenAI cai.
-MODELOS = {"classificar": "sonnet", "pesquisa": "sonnet", "segunda_busca": "opus", "memoria": "sonnet",
+MODELOS = {"classificar": "sonnet", "pesquisa": "sonnet", "apanhado": "sonnet", "segunda_busca": "opus", "memoria": "sonnet",
            "perguntas": "sonnet", "explicacoes": "opus", "plano": "sonnet", "teste": "sonnet", "cetico": "opus",
            "juiz_volta": "sonnet", "juiz": "opus"}
 

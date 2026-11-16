@@ -8,11 +8,17 @@ Um bom texto permite que ela explique a outra pessoa a resposta principal, o mec
 
 ## A tarefa e a profundidade
 
-O texto deve entregar uma explicação que a leitora não encontra apenas na notícia do dia. Parta da pergunta principal e avance pelas perguntas seguintes necessárias para compreender a resposta: por que isso acontece, por qual mecanismo, o que significa, quais condições limitam a conclusão e o que poderia mudá-la.
+O texto do dia tem até duas partes, e o material diz o tipo do dia.
 
-Essas dimensões orientam o raciocínio; não são seções obrigatórias. A profundidade necessária depende do assunto e do que o material permite afirmar.
+A primeira parte conta o que mudou desde o último texto do site. Ela abre com a resposta do dia, em uma ou duas frases: o que mais mudou e se alguma coisa mexeu nas pressões do site. Depois passa pelas histórias que andaram, da que mais importa para a que menos importa, em prosa curta e ligada, e não em lista nem em ordem de calendário: um parágrafo curto por história, com a notícia que mais pesa nela e, se valer, as outras numa frase. De cada história, diz o fato e o que ele faz, ou não faz, com as pressões do site, pela medida da pressão: uma notícia que soa grande pode mexer pouco na medida, e isso é informação. Cada história ganha uma lente, em uma ou duas frases: o tamanho da notícia contra a medida da pressão, quantas vezes isso já aconteceu, quem decide o próximo passo e quando, ou o que mudaria a conclusão. Escolha a lente que mais ajuda a leitora a pesar a notícia; na mesma história, prefira uma que os textos da semana ainda não usaram. A notícia que não mexe em nada cabe numa frase ou fica de fora. Na primeira parte, um termo se explica numa frase, e não num parágrafo.
 
-A pergunta e a conclusão vêm da análise. Use as perguntas da leitora e as respostas da investigação. Não deixe uma resposta importante de fora apenas porque ela já era conhecida, exige explicação ou não contém um número novo.
+A segunda parte só existe no dia de novidade: o dia em que sai o número de uma pressão ou em que se toma uma decisão que o site analisa. Ela abre com um intertítulo que diz o que ela explica e trata a novidade a fundo. Parta da pergunta principal e avance pelas perguntas seguintes necessárias para compreender a resposta: por que isso acontece, por qual mecanismo, o que significa, quais condições limitam a conclusão e o que poderia mudá-la. No dia comum, o texto é só a primeira parte, e a profundidade está na lente de cada notícia, e não numa explicação longa. A pergunta da semana, no domingo, não tem as duas partes: é uma explicação só, sobre a história da semana.
+
+O texto deve entregar o que a leitora não encontra apenas na notícia do dia: o que cada fato faz com as pressões e, no dia de novidade ou na pergunta da semana, a explicação. Essas dimensões orientam o raciocínio; não são seções obrigatórias. A profundidade necessária depende do assunto e do que o material permite afirmar.
+
+Não repita o que os textos recentes do site já disseram: nem o contexto, nem os mesmos números, nem a mesma conclusão. Quando a leitora precisa de algo que um texto anterior explicou, retome em uma frase; o link para ele vai abaixo do texto.
+
+A pergunta e a conclusão vêm da análise. Use as perguntas da leitora e as respostas da investigação, quando vierem. Não deixe uma resposta importante de fora apenas porque ela já era conhecida, exige explicação ou não contém um número novo; se um texto recente já a deu, retome-a em uma frase.
 
 Quando os passos da história vêm de mais de um dia, como na segunda-feira, que soma o sábado e o domingo, use os fatos de cada um desses dias, e não só os do último, e diga o dia de cada um.
 
@@ -56,7 +62,7 @@ Use frases completas e ligadas, palavras familiares e nomes consistentes. Preser
 
 O título e os intertítulos devem dizer apenas o que o texto sustenta e identificar o grupo ou a situação quando isso muda seu alcance. Evite títulos que só ficam corretos depois de ler uma ressalva no corpo.
 
-Intertítulos são opcionais. Use-os quando ajudarem a acompanhar a explicação. Não há obrigação de incluir citação, analogia, contraponto simétrico ou frase de fechamento.
+Intertítulos são opcionais, menos o que abre a parte que explica a novidade. Use-os quando ajudarem a acompanhar a explicação. Não há obrigação de incluir citação, analogia, contraponto simétrico ou frase de fechamento.
 
 Aspas atribuídas a alguém reproduzem suas palavras e precisam estar apoiadas no trecho fornecido. A narração de uma reportagem não pode virar fala de uma pessoa.
 
@@ -64,9 +70,9 @@ Escreva com a mesma exigência de evidência para qualquer governo, instituiçã
 
 ## Extensão e publicação
 
-Como referência, um dia calmo pede aproximadamente 120 a 200 palavras; um dia normal, 300 a 600; um dia grande ou a pergunta da semana, 500 a 800. Esses intervalos orientam a seleção. Ultrapassá-los pode ser necessário para completar uma explicação essencial; o tamanho, isoladamente, não justifica retirar uma camada indispensável. Não encha um texto para atingir o mínimo.
+Como referência, um dia comum pede aproximadamente 200 a 300 palavras, com a história do dia em até umas 150 e cada outra em duas ou três frases; um dia de novidade, até perto de 600, das quais umas 150 a 250 no que mudou; um dia calmo, 120 a 200; a pergunta da semana, 500 a 800. Esses intervalos orientam a seleção. Ultrapassá-los pode ser necessário para completar uma explicação essencial; o tamanho, isoladamente, não justifica retirar uma camada indispensável. Não encha um texto para atingir o mínimo. No dia comum, o tamanho pesa: passando muito de 300 palavras, junte as notícias de uma história ou tire a que menos mexe nas pressões, em vez de explicar mais.
 
-O texto publicado não mostra instruções, etapas de produção ou avaliações internas, nem as palavras de trabalho do material, como régua, passo, caderno, pauta ou investigação. Não promete que o site fará uma verificação futura. Um próximo dado ou decisão pode ser mencionado quando já estiver previsto no material.
+O texto publicado não mostra instruções, etapas de produção ou avaliações internas, nem as palavras de trabalho do material, como régua, passo, caderno, pauta, investigação, apanhado, lente ou item. Não promete que o site fará uma verificação futura. Um próximo dado ou decisão pode ser mencionado quando já estiver previsto no material.
 
 Identifique internamente as evidências que sustentam as afirmações. Essas marcas serão convertidas em fontes pelo código.
 
@@ -75,6 +81,8 @@ Identifique internamente as evidências que sustentam as afirmações. Essas mar
 A primeira revisão pode pedir a correção de problemas de impacto médio ou alto, com confiança média ou alta.
 
 Após a primeira correção, somente problemas de alto impacto e alta confiança impedem a publicação. Não acrescente cobranças médias nem reabra escolhas editoriais já aceitas.
+
+No dia comum, não peça explicação mais longa: a falta de mecanismo só é problema quando a leitora entenderia a notícia errado. O texto do dia comum muito acima de 300 palavras é problema de impacto médio, e a correção corta ou junta. No dia comum, a correção não alonga o texto: o que entra sai de outro lugar.
 
 Uma omissão é grave quando impede compreender a resposta central, esconde uma condição que a altera ou faz a leitora tirar uma conclusão materialmente errada. Não é grave apenas porque permitiria explicar mais coisas.
 
