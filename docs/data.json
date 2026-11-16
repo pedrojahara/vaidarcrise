@@ -2,7 +2,7 @@
  "direcao": "subindo",
  "desde": "2026-06",
  "pergunta": "Para que lado anda o risco de recessão no Brasil: as pressões que costumam vir antes de uma recessão estão piorando ou melhorando?",
- "atualizado_em": "2026-11-15T04:00:04-03:00",
+ "atualizado_em": "2026-11-16T04:00:05-03:00",
  "soma": 4,
  "pioraram": 4,
  "melhoraram": 0,
@@ -165,7 +165,7 @@
    "medidas": {
     "juro": {
      "agora": 13.75,
-     "dia": "2026-11-15",
+     "dia": "2026-11-16",
      "ref": "2026-11",
      "antes": 14.0,
      "dia_antes": "2026-08-31",
@@ -298,17 +298,16 @@
  "pressao_noticias": {
   "sentido": "piora",
   "fatores": {
-   "atividade": "igual",
-   "contas": "igual",
+   "contas": "piora",
    "externo": "igual",
    "juro": "igual",
-   "credito": "igual"
+   "atividade": "igual"
   }
  },
  "post_do_dia": {
-  "tipo": "Pergunta da semana",
-  "titulo": "Ajuste do Senado parece insuficiente para segurar a dívida, mais pressionada pelos juros",
-  "url": "https://vaidarcrise.com.br/2026-11-15/",
+  "tipo": "Fato do dia",
+  "titulo": "Aporte dos Correios já estava no Orçamento, e juros parecem limitar o ajuste",
+  "url": "https://vaidarcrise.com.br/2026-11-16/",
   "escrito_por_llm": true
  }
 }
