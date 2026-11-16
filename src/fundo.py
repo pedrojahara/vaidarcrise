@@ -259,9 +259,11 @@ def _bloco_historia(h: dict | None, pauta: dict, eventos: dict | None, ult: dict
                      "os passos da semana como prova e com o contexto inteiro para quem não leu os textos do dia.")
         else:
             if desde:
+                # No teste de 16/11/2026, a escrita contou só o domingo e deixou de fora o ajuste discutido no sábado.
                 l.append(f"Os passos vêm de mais de um dia, desde {desde[8:10]}/{desde[5:7]}, porque o texto de domingo "
-                         "foi a pergunta da semana. Diga o dia de cada fato (\"no sábado\"); \"ontem\" só para o que é "
-                         "de ontem.")
+                         "foi a pergunta da semana. A leitora não leu nada sobre esses dias: o texto conta o que mudou em "
+                         "cada um deles, e não só no último. Diga o dia de cada fato (\"no sábado\"); \"ontem\" só para o "
+                         "que é de ontem.")
             if ult:
                 l.append(f"O último texto do site sobre esta história saiu em {ult['data'][8:10]}/{ult['data'][5:7]}: "
                          f"\"{ult['titulo']}\". O argumento dele: {ult['argumento']} O texto de hoje conta o que é novo "
