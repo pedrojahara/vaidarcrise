@@ -14,6 +14,8 @@ Essas dimensões orientam o raciocínio; não são seções obrigatórias. A pro
 
 A pergunta e a conclusão vêm da análise. Use as perguntas da leitora e as respostas da investigação. Não deixe uma resposta importante de fora apenas porque ela já era conhecida, exige explicação ou não contém um número novo.
 
+Quando os passos da história vêm de mais de um dia, como na segunda-feira, que soma o sábado e o domingo, use os fatos de cada um desses dias, e não só os do último, e diga o dia de cada um.
+
 Apresente cedo a resposta e o fato que a torna inteligível. Organize o restante conforme o que a leitora precisa entender a seguir. Não existe uma ordem obrigatória de seções ou uma quantidade obrigatória de argumentos.
 
 Uma resposta indispensável pode ocupar mais espaço que o fato que abriu o texto. Prefira retirar um assunto lateral a deixar pela metade a explicação principal.
