@@ -28,7 +28,7 @@ O mesmo nome em todas as páginas, no post e nas frases geradas por código. Os 
 | Copom | o Banco Central decide o juro (Copom) |
 | Diferença entre taxas | pontos, abreviado "pt" em tabela |
 | Tipos de post | Retrato do Brasil, Fato do dia, Pergunta da semana (os Resumos da semana e do mês de 1/11 e 8/11/2026 ficam no ar com o nome que tinham) |
-| Quem escreve o post | "Escrito pelo Claude com a ajuda do Pedro.", a mesma assinatura em todo post, sem horário e sem contar notícias |
+| Quem escreve o post | "Escrito pelo Claude, com a ajuda do Pedro.", a mesma assinatura em todo post, sem horário e sem contar notícias |
 | A lista por e-mail | "Receba o fato do dia por e-mail" na página da lista, que liga para o último fato do dia para a pessoa ver o que vai receber, o botão "Quero receber" e, no fim de todo e-mail, "Sair da lista". A caixa "Receba o fato do dia no seu e-mail" fica no fim do post (na página Hoje, só depois do primeiro) e no fim de O que causa recessão, das páginas do menu Perguntas e de Como funciona, onde ela diz em uma frase o que é o fato do dia; no e-mail, "Recebeu este e-mail de alguém?"; "Receba por e-mail" no fim da frase embaixo do nome do site e "Receber por e-mail" no rodapé, ao lado de "Privacidade". Nada salta na tela. A caixa, o "Recebeu" e os dois links só aparecem quando a lista está aberta |
 | O compartilhar | No fim de todo post: o botão "Mandar no WhatsApp", que abre o WhatsApp com o título e o link, e ao lado "Copiar link", que vira "Link copiado" por 3 segundos. Nada no topo, nada preso à tela, nenhuma outra rede e nenhuma etiqueta de rastreio no link |
 
