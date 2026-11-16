@@ -70,7 +70,7 @@ Escreva com a mesma exigência de evidência para qualquer governo, instituiçã
 
 ## Extensão e publicação
 
-Como referência, um dia comum pede aproximadamente 200 a 300 palavras; um dia de novidade, até perto de 600, das quais umas 150 a 250 no que mudou; um dia calmo, 120 a 200; a pergunta da semana, 500 a 800. Esses intervalos orientam a seleção. Ultrapassá-los pode ser necessário para completar uma explicação essencial; o tamanho, isoladamente, não justifica retirar uma camada indispensável. Não encha um texto para atingir o mínimo. No dia comum, o tamanho pesa: passando muito de 300 palavras, junte as notícias de uma história ou tire a que menos mexe nas pressões, em vez de explicar mais.
+Como referência, um dia comum pede aproximadamente 200 a 300 palavras, com a história do dia em até umas 150 e cada outra em duas ou três frases; um dia de novidade, até perto de 600, das quais umas 150 a 250 no que mudou; um dia calmo, 120 a 200; a pergunta da semana, 500 a 800. Esses intervalos orientam a seleção. Ultrapassá-los pode ser necessário para completar uma explicação essencial; o tamanho, isoladamente, não justifica retirar uma camada indispensável. Não encha um texto para atingir o mínimo. No dia comum, o tamanho pesa: passando muito de 300 palavras, junte as notícias de uma história ou tire a que menos mexe nas pressões, em vez de explicar mais.
 
 O texto publicado não mostra instruções, etapas de produção ou avaliações internas, nem as palavras de trabalho do material, como régua, passo, caderno, pauta, investigação, apanhado, lente ou item. Não promete que o site fará uma verificação futura. Um próximo dado ou decisão pode ser mencionado quando já estiver previsto no material.
 

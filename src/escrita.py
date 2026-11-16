@@ -239,8 +239,52 @@ def _sha(artigo: dict) -> str:
 
 
 # ------------------------------------------------------------------ o ciclo
+def _palavras(artigo: dict, sem_marcas) -> int:
+    return len(sem_marcas(re.sub(r"(?m)^#+ .*$", "", artigo["texto"])).split())
+
+
+def _enxugar(material: str, conferir, sem_marcas, teto: int, reg: dict, objecoes: list[dict], log=print) -> bool:
+    """A passada de corte da versão aprovada que passou muito do tamanho do dia (`teto` palavras): o redator só corta, e
+    a versão enxuta entra se a conferência do código não tiver impedimento e o aprovador, na fase estreita, não vir
+    problema de alto impacto e alta confiança. Devolve se ela entrou."""
+    artigo = reg["versoes"][-1]["artigo"]
+    n = _palavras(artigo, sem_marcas)
+    if n <= teto * 1.1:
+        return False
+    problema = {"id": "T1", "impacto": "medio", "confianca": "alta", "tipo": "tamanho", "local": "o texto inteiro",
+                "trecho": "", "problema": f"O texto tem {n} palavras, e o tipo do dia pede até {teto}.",
+                "efeito_para_a_leitora": "No celular, o texto longo esconde o que mais mudou.", "evidencias": [],
+                "correcao_necessaria": f"Corte para perto de {teto} palavras, sem acrescentar nada: junte numa frase as "
+                                       "notícias da mesma história, tire a notícia que menos mexe nas pressões e os "
+                                       "números que não mudam a conclusão. Mantenha a abertura com a resposta do dia, "
+                                       "o intertítulo e o mecanismo da parte que explica, quando houver, a explicação "
+                                       "dos termos de que a conclusão depende, as ressalvas e as marcas."}
+    r = redigir(material, reg, artigo, [problema], False, log)
+    if not r["ok"]:
+        log(f"escrita: o corte falhou ({r['meta'].get('erro')}); fica a versão aprovada")
+        return False
+    reg["correcoes"] += 1
+    novo = r["saida"]["artigo"]
+    m = _palavras(novo, sem_marcas)
+    chk = conferir(novo)
+    if m >= n or chk["impedimentos"]:
+        log(f"escrita: o corte não serviu ({m} palavras, {len(chk['impedimentos'])} da conferência); fica a versão "
+            "aprovada")
+        return False
+    ap = aprovar(novo, material, chk, None, reg["correcoes"], [], objecoes, artigo, reg, log)
+    par = ap["saida"] if ap["ok"] else None
+    graves = [p for p in (par or {}).get("problemas", []) if p["impacto"] == "alto" and p["confianca"] == "alta"]
+    pronta = bool(par) and not graves and bool(par.get("pode_publicar"))
+    reg["versoes"].append({"sha": _sha(novo), "artigo": novo, "checagens": chk, "leitura": None,
+                           "parecer": par, "bloqueios": [p["id"] for p in graves],
+                           "pronta": pronta, "concentrada": False, "corte": True})
+    log(f"escrita: corte de {n} para {m} palavras; {'sai a versão enxuta' if pronta else 'fica a versão aprovada'}")
+    return pronta
+
+
 def produzir(material: str, conferir, sem_marcas, prazo: float, reg: dict | None = None, log=print,
-             artigo_inicial: dict | None = None, alerta: float | None = None, avisar=None) -> dict:
+             artigo_inicial: dict | None = None, alerta: float | None = None, avisar=None,
+             teto: int | None = None) -> dict:
     """O ciclo da escrita até haver versão pronta ou acabar o prazo (time.time() de quando parar). `conferir(artigo)`
     devolve {"impedimentos": [...], "diagnosticos": [...]}: o que o código determina sozinho. Devolve o registro, com
     "artigo" (a versão que sai), "estado" ("aprovado", "versao_anterior" ou "sem_aprovacao") e o caminho.
@@ -248,7 +292,10 @@ def produzir(material: str, conferir, sem_marcas, prazo: float, reg: dict | None
     parte dele, já na fase estreita: só problema de alto impacto e alta confiança muda o que está no ar.
     `alerta` (o horário das 8h05, Pedro, 15/11/2026): sem versão pronta até lá, sai a última aprovada do dia; se não
     houver nenhuma, o Pedro recebe o aviso (`avisar`), o artigo é concentrado e o ciclo segue até o `prazo` (as 10h),
-    quando sai a última versão, mesmo com o problema em aberto."""
+    quando sai a última versão, mesmo com o problema em aberto.
+    `teto` (o tamanho do tipo do dia, Pedro, 16/11/2026): a versão aprovada que passa muito dele em palavras ganha uma
+    última passada só de corte, que sai se a conferência do código e o aprovador, na fase estreita, a deixarem sair;
+    senão, fica a aprovada."""
     reg = reg if reg is not None else {}
     reg.update({"chamadas": reg.get("chamadas", []), "versoes": [], "objecoes": [], "correcoes": 1 if artigo_inicial else 0})
     objecoes: dict[str, dict] = {}
@@ -341,6 +388,11 @@ def produzir(material: str, conferir, sem_marcas, prazo: float, reg: dict | None
         reg["correcoes"] += 1
         anterior, saida = artigo, r["saida"]
         reg.setdefault("respostas", []).append(saida["respostas_a_revisao"])
+    if (teto and aprovada and aprovada == len(reg["versoes"]) and not (alerta and time.time() >= alerta)
+            and resta() > TIMEOUT["redator"] + TIMEOUT["aprovador"]):
+        if _enxugar(material, conferir, sem_marcas, teto, reg,
+                    [o for o in objecoes.values() if o["estado"] != "aberta"], log):
+            aprovada = len(reg["versoes"])
     reg["objecoes"] = list(objecoes.values())
     if aprovada == len(reg["versoes"]):
         reg.update({"estado": "aprovado", "artigo": reg["versoes"][-1]["artigo"]})

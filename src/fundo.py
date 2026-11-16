@@ -89,9 +89,13 @@ ITEM_MIN = 1.0
 ID_APANHADO = 601  # as linhas do caderno do apanhado: c601 em diante
 APANHADO_S = int(60 * float(os.environ.get("VDC_APANHADO_MIN", "7")))
 # A extensão de referência de cada tipo de dia (PERSONA.md, "Extensão e publicação").
-EXTENSAO = {"calmo": "de 120 a 200 palavras", "comum": "de 200 a 300 palavras",
+EXTENSAO = {"calmo": "de 120 a 200 palavras",
+            "comum": "de 200 a 300 palavras: a história do dia em até umas 150, cada outra em duas ou três frases",
             "aprofundar": "até perto de 600 palavras, das quais umas 150 a 250 no que mudou",
             "pergunta": "de 500 a 800 palavras", "antigo": "de 300 a 600 palavras"}
+# O teto de cada tipo de dia, em palavras: a versão aprovada que passa muito dele ganha uma passada só de corte, que
+# só sai se o aprovador não vir perda grave (src/escrita.py, _enxugar). O domingo fica de fora.
+TETO = {"comum": 300, "calmo": 200, "aprofundar": 600}
 # As lentes de cada notícia no que mudou: uma por notícia, sem repetir na mesma história a da semana.
 LENTES = {"tamanho": "o tamanho contra a medida da pressão", "frequencia": "quantas vezes isso já aconteceu",
           "quem_decide": "quem decide o próximo passo e quando", "o_que_mudaria": "o que mudaria a conclusão"}
@@ -1446,7 +1450,7 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline:
         hora = lambda h, m: dt.datetime.combine(e["dia"], dt.time(h, m)).timestamp()  # noqa: E731
         alerta, prazo = hora(8, 5), max(prazo, hora(10, 0))
     esc = escrita.produzir(mat, lambda a: conferir_objetivo(a, cad, e), sem_marcas, prazo, log=log, alerta=alerta,
-                           avisar=lambda m: avisar([m], log=log))
+                           avisar=lambda m: avisar([m], log=log), teto=TETO.get(e["modo"]))
     reg["escrita"] = {k: v for k, v in esc.items() if k != "artigo"}
     reg["caderno"] = cad
     if esc["estado"] == "falhou":

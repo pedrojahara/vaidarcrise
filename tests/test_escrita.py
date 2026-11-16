@@ -85,9 +85,10 @@ class Fornecedor(unittest.TestCase):
         self.assertEqual(f.chamadas[0][2], escrita.PAPEIS["leitor"]["claude"])
 
 
-def artigo(n):
+def artigo(n, texto=None):
     return {"plano": {}, "respostas_a_revisao": [],
-            "artigo": {"titulo": f"T{n}", "pergunta_semana": "", "texto": f"Texto {n}.", "argumento": "a", "porque": "p"}}
+            "artigo": {"titulo": f"T{n}", "pergunta_semana": "", "texto": texto or f"Texto {n}.", "argumento": "a",
+                       "porque": "p"}}
 
 
 def problema(pid, impacto="alto", confianca="alta"):
@@ -101,15 +102,19 @@ def parecer(problemas=(), resolvidas=()):
 
 
 class Ciclo(unittest.TestCase):
-    def rodar(self, pareceres, impedimentos=None, prazo=3600, redator_falha_em=None, alerta=None, avisos=None):
-        """Cada parecer é a resposta do aprovador a uma versão; o redator e o leitor sempre respondem."""
-        pareceres, imp = list(pareceres), list(impedimentos or [])
+    def rodar(self, pareceres, impedimentos=None, prazo=3600, redator_falha_em=None, alerta=None, avisos=None,
+              teto=None, palavras=()):
+        """Cada parecer é a resposta do aprovador a uma versão; o redator e o leitor sempre respondem. `palavras` dá o
+        tamanho de cada versão do redator, na ordem."""
+        pareceres, imp, palavras = list(pareceres), list(impedimentos or []), list(palavras)
         n = {"v": 0}
 
         def codex(system, prompt, schema, etapa, timeout=600, modelo=None, raciocinio=None):
             if etapa == "redator":
                 n["v"] += 1
-                return _erro("saída do codex fora do esquema") if redator_falha_em and n["v"] >= redator_falha_em else _ok(artigo(n["v"]))
+                if redator_falha_em and n["v"] >= redator_falha_em:
+                    return _erro("saída do codex fora do esquema")
+                return _ok(artigo(n["v"], " ".join(["palavra"] * palavras.pop(0)) if palavras else None))
             if etapa == "leitor":
                 return _ok({"entendi": {}, "dificuldades": [], "perguntas_que_ficaram": [], "titulos_ambiguos": []})
             return _ok(pareceres.pop(0))
@@ -119,7 +124,7 @@ class Ciclo(unittest.TestCase):
         try:
             conferir = lambda a: {"impedimentos": imp.pop(0) if imp else [], "diagnosticos": []}  # noqa: E731
             return escrita.produzir("material", conferir, lambda x: x, time.time() + prazo, log=lambda *a: None,
-                                    alerta=alerta, avisar=(avisos.append if avisos is not None else None))
+                                    alerta=alerta, avisar=(avisos.append if avisos is not None else None), teto=teto)
         finally:
             classify_news.chamar_codex = orig
 
@@ -175,6 +180,27 @@ class Ciclo(unittest.TestCase):
         self.assertEqual(len(avisos), 1)
         self.assertEqual(reg["estado"], "aprovado")
         self.assertTrue(reg["versoes"][-1]["concentrada"])
+
+    def test_aprovada_longa_ganha_um_corte_que_sai_se_o_aprovador_deixar(self):
+        reg = self.rodar([parecer(), parecer()], teto=300, palavras=[400, 310])
+        self.assertEqual((reg["estado"], reg["artigo"]["titulo"]), ("aprovado", "T2"))
+        self.assertTrue(reg["versoes"][-1]["corte"])
+
+    def test_corte_com_erro_grave_deixa_sair_a_aprovada(self):
+        reg = self.rodar([parecer(), parecer([problema("")])], teto=300, palavras=[400, 300])
+        self.assertEqual((reg["estado"], reg["artigo"]["titulo"]), ("versao_anterior", "T1"))
+
+    def test_corte_que_nao_encurta_nem_vai_ao_aprovador(self):
+        reg = self.rodar([parecer()], teto=300, palavras=[400, 420])
+        self.assertEqual((reg["estado"], reg["artigo"]["titulo"], len(reg["versoes"])), ("aprovado", "T1", 1))
+
+    def test_dentro_do_teto_nao_ha_corte(self):
+        reg = self.rodar([parecer()], teto=300, palavras=[320])
+        self.assertEqual((reg["artigo"]["titulo"], reg["correcoes"]), ("T1", 0))
+
+    def test_depois_das_8h05_nao_ha_corte(self):
+        reg = self.rodar([parecer()], teto=300, palavras=[400], alerta=time.time() - 1)
+        self.assertEqual((reg["artigo"]["titulo"], reg["correcoes"]), ("T1", 0))
 
 
 if __name__ == "__main__":
