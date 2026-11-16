@@ -3,7 +3,7 @@
 O post muda de tipo com o dia (PERSONA.md, "Os tipos de post"), e só o calendário decide:
 - o fato do dia, de segunda a sábado: um argumento sobre a história em andamento que mais andou ontem;
 - a pergunta da semana, no domingo: a pergunta que todo mundo está fazendo sobre a história que mais andou na semana.
-Os dois saem de src/fundo.py (guia em FUNDO.md), com a pesquisa, a investigação, o esqueleto, a redação e a revisão.
+Os dois saem de src/fundo.py (guia em FUNDO.md), com a pesquisa, a investigação e a escrita.
 Daqui eles recebem só os dados do site, com os mesmos números que a página mostra (dados_texto). Os resumos da semana e
 do mês, que o site publicou até 8/11/2026, saíram do ar como tipo novo: os dois que existem continuam na página.
 

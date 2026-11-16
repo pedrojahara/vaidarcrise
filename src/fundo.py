@@ -1149,7 +1149,7 @@ def fazer(rodada: dict, cx: dict | None = None, limite_min: float = 65, offline:
             else:
                 log(f"texto do dia: a pesquisa falhou ({r['meta'].get('erro')}); o texto sai da ficha e dos dados")
     # 2. a investigação: a análise antes do texto (src/investiga.py; FUNDO.md, "A investigação"). O resultado vai para
-    # a pesquisa, que o esqueleto, a redação e o revisor recebem; as linhas que os testes e o cético abriram passam pela
+    # a pesquisa, que a escrita recebe; as linhas que os testes e o cético abriram passam pela
     # mesma conferência das outras.
     if pesquisa and investigar and not salvo:
         tempo_inv = min(tempo_investiga, resta() - reserva)

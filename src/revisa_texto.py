@@ -169,7 +169,7 @@ _POSICAO = re.compile(r"\b(projet(a|am|ou|aram|ava|avam|ando)|projeç\w+|prev[ê
 
 # Perguntas que a frase levanta e não responde (Pedro, 11/11/2026, sobre o texto do dia): a previsão sem quem, quanto
 # e quando; a lista de causas sem o que cada uma encarece; a estatística do passado em "subiu em 5 e caiu em 1"; a
-# frase que só diz quem decide. São avisos: pedem a reescrita, e o revisor de três leitores confere o resto.
+# frase que só diz quem decide. São avisos: pedem a reescrita.
 _PREVISAO_SOLTA = re.compile(r"\b(bancos|mercado|analistas|economistas|investidores|consultorias)\b[^.]{0,30}\b(esperam?|"
                              r"preveem|prevê|apostam?|veem|vê|projetam?|contam com)\b", re.I)
 _LISTA_CAUSAS = re.compile(r"\b(choques?|riscos?|fatores|causas|motivos|razões|pressões)\b[^.:]{0,80}:\s*[^.]{1,120},"

@@ -10,9 +10,9 @@ Uso: python src/run.py             (atualização do dia; não faz nada se já h
      python src/run.py --sem-pesquisa (o texto do dia sai da ficha da história e dos dados, sem a pesquisa)
 
 O texto do dia é um argumento sobre a história em andamento que mais andou ontem: o código escolhe a história pela
-soma das notícias (src/pauta.py, CARTA_EDITORIAL.md), e src/fundo.py pesquisa, monta o esqueleto, escreve, revisa
-com um leitor que só recebe o texto, três leitores e um editor, e confere o texto (guia em FUNDO.md). Antes do
-esqueleto, a investigação (src/investiga.py) testa contra o dado o que se diz sobre a história. No domingo, o mesmo
+soma das notícias (src/pauta.py, CARTA_EDITORIAL.md), e src/fundo.py pesquisa, investiga (src/investiga.py testa
+contra o dado o que se diz sobre a história) e escreve (src/escrita.py: redator, leitor frio e aprovador, com o
+contrato em PERSONA.md; guia em FUNDO.md). No domingo, o mesmo
 caminho faz a pergunta da semana, sobre a história que mais andou na semana, com mais tempo para a investigação. Se o
 texto não sair aqui, src/fundo.py --hoje, no run.sh, tenta de novo.
 
@@ -274,8 +274,8 @@ def main() -> dict | None:
         corte = (hoje - dt.timedelta(days=10)).isoformat()
         anteriores = [r for r in todas_r if r["id"][:10] >= corte]
         evs = {e["id"]: e for e in todos}
-        # 5. O texto sai de src/fundo.py: pesquisa da história, investigação, esqueleto, um texto, o leitor que só
-        # recebe o texto, o revisor de três leitores e um editor e a conferência do código. No domingo, a pergunta da
+        # 5. O texto sai de src/fundo.py: pesquisa da história, investigação e a escrita (src/escrita.py), com a
+        # conferência do código. No domingo, a pergunta da
         # semana, sobre a história que mais andou na semana, com mais tempo (VDC_PERGUNTA_MIN).
         import fundo
         tipo = escreve_post.tipo_do_dia(hoje)

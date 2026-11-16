@@ -1,6 +1,6 @@
 """A investigação do texto do dia: a análise vem antes do texto (regra em FUNDO.md, "A investigação").
 
-Depois da pesquisa, que junta os fatos e as fontes, e antes do esqueleto, cinco papéis trabalham em voltas. Cada um vê
+Depois da pesquisa, que junta os fatos e as fontes, e antes da escrita, cinco papéis trabalham em voltas. Cada um vê
 uma coisa diferente ou quer o contrário do outro, e quem decide é o dado:
 1. A leitora (etapa "perguntas", Sonnet, sem ferramentas) só vê a história e os passos de ontem, e faz as perguntas
    que uma leitora leiga faria, inclusive a do que esperar para o que a decisão quer mexer (o juro, a dívida, os
@@ -579,7 +579,7 @@ def investigar(historia: str, contexto: str, base: str, caderno: str, limite: st
 
 
 def para_o_texto(dossie: dict, ids_ok: set[str] | None = None) -> dict:
-    """O que o esqueleto e a redação recebem: a conclusão, as respostas, os achados, o que caiu e os próximos sinais. Sem
+    """O que a escrita recebe: a conclusão, as respostas, os achados, o que caiu e os próximos sinais. Sem
     os testes, o cético e as explicações, que são o caminho e não o resultado."""
     d = {k: dossie.get(k) or [] for k in ("respostas", "achados", "caiu", "sinais")}
     if dossie.get("conclusao"):
