@@ -18,27 +18,17 @@ import jsonschema
 
 ROOT = Path(__file__).resolve().parent.parent
 CLAUDE = os.environ.get("CLAUDE_BIN", "/Users/pedrojahara/.local/bin/claude")
-# O modelo do Claude em cada etapa. Opus só onde a qualidade do pensamento decide o texto: a redação do texto do dia e o
-# revisor dele (src/fundo.py), e o editor dos textos à mão (src/edita_texto.py); a redação e o editor vão antes ao Codex
-# (MOTORES, abaixo), e o Opus fica para quando ele falha. O resto
-# vai de Sonnet: a leitura das notícias, a pesquisa da história e as memórias. A segunda busca, que procura só o que a
-# pesquisa não achou, vai de Opus: com a pesquisa de 12/11/2026, o Sonnet desistiu cedo e o Opus achou os valores. O
-# esqueleto do texto do dia, que pensa a ordem do argumento antes da redação, vai de Opus; o leitor frio, que lê só o
-# texto (e, antes, só o esqueleto), vai de Sonnet, para quem lê não ser o mesmo modelo que escreveu. Na investigação
-# (src/investiga.py), a leitora que faz as perguntas e o testador que segue a especificação vão de Sonnet; as explicações
-# rivais, que desmontam o fenômeno e escolhem os testes da primeira volta, o cético e o juiz final vão de Opus, porque é
-# ali que um erro passa ou é pego. O plano das voltas seguintes, que só acrescenta testes à desmontagem já feita, e o
-# juiz de cada volta, que só dá à leitora as respostas para ela reagir, vão de Sonnet. Cada etapa troca de
-# modelo pelo ambiente (VDC_MODELO_<ETAPA>, por exemplo VDC_MODELO_JUIZ=sonnet); VDC_LLM_MODEL troca todas de uma vez.
-# A leitura do que mudou depois da última revisão (no fim e logo depois da reescrita da volta 2) e a releitura dos
-# intertítulos novos vão de Haiku: no teste de 14/11/2026, com as versões guardadas de 13/11, 14/11 e do ensaio de
-# domingo, o Haiku pegou os títulos que passaram a dizer mais em todas as tentativas, por meio centavo, e nem o Sonnet
-# nem o Opus pegaram mais.
-MODELOS = {"classificar": "sonnet", "editor": "opus", "pesquisa": "sonnet", "segunda_busca": "opus",
-           "memoria": "sonnet", "esqueleto": "opus", "redacao": "opus", "revisor": "opus", "leitor_frio": "sonnet",
+# O modelo do Claude em cada etapa da análise. A leitura das notícias, a pesquisa da história e as memórias vão de
+# Sonnet. A segunda busca, que procura só o que a pesquisa não achou, vai de Opus: com a pesquisa de 12/11/2026, o Sonnet
+# desistiu cedo e o Opus achou os valores. Na investigação (src/investiga.py), a leitora que faz as perguntas e o
+# testador que segue a especificação vão de Sonnet; as explicações rivais, que desmontam o fenômeno e escolhem os testes
+# da primeira volta, o cético e o juiz final vão de Opus, porque é ali que um erro passa ou é pego. O plano das voltas
+# seguintes e o juiz de cada volta vão de Sonnet. Cada etapa troca de modelo pelo ambiente (VDC_MODELO_<ETAPA>, por
+# exemplo VDC_MODELO_JUIZ=sonnet); VDC_LLM_MODEL troca todas de uma vez. A escrita do texto do dia escolhe os modelos
+# dela (src/escrita.py, PAPEIS): OpenAI, e o Claude só quando a OpenAI cai.
+MODELOS = {"classificar": "sonnet", "pesquisa": "sonnet", "segunda_busca": "opus", "memoria": "sonnet",
            "perguntas": "sonnet", "explicacoes": "opus", "plano": "sonnet", "teste": "sonnet", "cetico": "opus",
-           "juiz_volta": "sonnet", "juiz": "opus", "ultima_leitura": "haiku", "comparacao": "haiku",
-           "titulos_fim": "haiku"}
+           "juiz_volta": "sonnet", "juiz": "opus"}
 
 
 def modelo(etapa: str) -> str:
@@ -46,17 +36,9 @@ def modelo(etapa: str) -> str:
             or MODELOS.get(etapa, "sonnet"))
 
 
-# O Codex escreve, e o Claude confere (Pedro, 14/11/2026). No teste cego do texto de 14/11, Pedro preferiu o texto do
-# Codex (GPT-6 Astra, raciocínio alto) ao do Claude, com o mesmo material; por isso a redação do texto do dia (src/fundo.py:
-# o rascunho, as reescritas, a correção final e o conserto depois dos cortes) e o editor dos textos à mão
-# (src/edita_texto.py) vão para o Codex, com o login do ChatGPT do Pedro e sem API paga. O leitor frio, o revisor e o
-# cético ficam no Claude: quem confere é de outra família de modelo que quem escreve. Se o Codex falha (limite do plano,
-# login, tempo, saída fora do esquema), a mesma chamada vai para o Claude, e o dia não fica sem texto. Cada etapa troca
-# de motor pelo ambiente (VDC_MOTOR_REDACAO=claude) e de modelo do Codex por VDC_CODEX_MODELO_<ETAPA> e
-# VDC_CODEX_RACIOCINIO_<ETAPA>.
-MOTORES = {"redacao": "codex", "editor": "codex"}
+# A escrita do texto do dia vai ao Codex (src/escrita.py), com o login do ChatGPT do Pedro e sem API paga (Pedro,
+# 14/11 e 15/11/2026).
 CODEX = os.environ.get("CODEX_BIN", "/opt/homebrew/bin/codex")
-CODEX_MODELOS = {"redacao": ("gpt-6-astra", "high"), "editor": ("gpt-6-astra", "high")}
 # O Codex é um agente de programação: sem ferramentas, ele só lê o pedido e devolve o JSON, como o `claude -p` sem
 # ferramentas. As que existirem nesta versão do Codex são desligadas (uma desconhecida faz o Codex recusar o comando).
 CODEX_DESLIGAR = ["shell_tool", "unified_exec", "apps", "plugins", "browser_use", "browser_use_external", "computer_use",
@@ -64,17 +46,6 @@ CODEX_DESLIGAR = ["shell_tool", "unified_exec", "apps", "plugins", "browser_use"
                   "skill_mcp_dependency_install", "code_mode_host", "workspace_dependencies", "view_image", "sleep_tool",
                   "in_app_local_automation", "fast_mode", "ultrafast_mode"]
 _FEATURES: dict[str, set[str]] = {}
-_CODEX_FORA: str | None = None  # o erro da primeira falha do Codex neste processo
-
-
-def motor(etapa: str) -> str:
-    return (os.environ.get(f"VDC_MOTOR_{etapa.upper()}") or MOTORES.get(etapa, "claude")).lower()
-
-
-def modelo_codex(etapa: str) -> tuple[str, str]:
-    mod, esforco = CODEX_MODELOS.get(etapa, ("gpt-6-astra", "high"))
-    return (os.environ.get(f"VDC_CODEX_MODELO_{etapa.upper()}") or mod,
-            os.environ.get(f"VDC_CODEX_RACIOCINIO_{etapa.upper()}") or esforco)
 
 
 def _features_codex() -> set[str]:
@@ -87,14 +58,14 @@ def _features_codex() -> set[str]:
     return _FEATURES[CODEX]
 
 
-def chamar_codex(system: str, prompt: str, schema: dict, etapa: str, timeout: int = 600) -> dict:
+def chamar_codex(system: str, prompt: str, schema: dict, etapa: str, timeout: int, modelo: str, raciocinio: str) -> dict:
     """Chama `codex exec` com saída em esquema, sem ferramentas, só leitura, sem histórico e sem a configuração pessoal
     do Codex (que tem servidores MCP). As instruções do sistema substituem as de programação do Codex, como o
     --system-prompt do `claude -p`. Só o login do ChatGPT vale: sem chave de API, nada é cobrado à parte. Nunca levanta
     exceção. Devolve {"ok": bool, "saida": dict|None, "meta": {...}}."""
     import tempfile
     import time
-    mod, esforco = modelo_codex(etapa)
+    mod, esforco = modelo, raciocinio
     meta = {"etapa": etapa, "motor": "codex", "modelo_pedido": mod, "raciocinio": esforco, "modelos": [mod],
             "prompt_sha256": hashlib.sha256((system + prompt).encode()).hexdigest(),
             "system_sha256": hashlib.sha256(system.encode()).hexdigest()}
@@ -135,7 +106,9 @@ def chamar_codex(system: str, prompt: str, schema: dict, etapa: str, timeout: in
         if ev.get("type") == "item.completed" and it.get("type") not in ("agent_message", "reasoning", "error"):
             ferramentas.append(it.get("type"))
     if ferramentas:
-        meta["ferramentas"] = ferramentas
+        # O Codex roda sem ferramentas: se usou alguma, a chamada não vale.
+        meta.update({"ferramentas": ferramentas, "erro": f"o codex usou ferramentas: {', '.join(map(str, ferramentas))}"})
+        return {"ok": False, "saida": None, "meta": meta}
     if p.returncode != 0 or not saida_txt.strip():
         meta["erro"] = f"codex devolveu erro ou nenhuma saída: {'; '.join(erros) or p.stderr[-300:]}"[:400]
         return {"ok": False, "saida": None, "meta": meta}
@@ -308,34 +281,20 @@ def chamar_claude(system: str, prompt: str, schema: dict, budget_usd: float, eta
     responde no modo -p; por isso a pesquisa não lê nem escreve arquivo e só roda o comando de src/conta.py.
 
     Devolve {"ok": bool, "saida": dict|None, "meta": {...}}.
-
-    Nas etapas que vão para o Codex (MOTORES), sem ferramentas, a chamada vai primeiro ao Codex; se ele falhar, vai ao
-    Claude, e o meta guarda o erro do Codex em "codex_falhou".
     """
-    global _CODEX_FORA
-    if not ferramentas and motor(etapa) == "codex":
-        # Depois da primeira falha na rodada, as chamadas seguintes vão direto ao Claude: um Codex travado até o tempo
-        # de cada chamada comeria a rodada inteira antes de o Claude escrever.
-        if _CODEX_FORA:
-            r = _chamar_claude(system, prompt, schema, budget_usd, etapa, None, None, timeout)
-            r["meta"]["codex_falhou"] = f"pulado nesta rodada: {_CODEX_FORA}"[:400]
-            return r
-        # O Codex levou de 30 s a 3 min por redação no teste de 14/11.
-        rc = chamar_codex(system, prompt, schema, etapa, timeout=min(timeout, 600))
-        if rc["ok"]:
-            return rc
-        _CODEX_FORA = rc["meta"].get("erro") or "erro"
-        r = _chamar_claude(system, prompt, schema, budget_usd, etapa, None, None, timeout)
-        r["meta"]["codex_falhou"] = rc["meta"].get("erro")
-        print(f"aviso: o Codex falhou na etapa {etapa} ({rc['meta'].get('erro')}); a chamada e as seguintes vão para o "
-              "Claude", file=sys.stderr)
-        return r
     return _chamar_claude(system, prompt, schema, budget_usd, etapa, ferramentas, permitidas, timeout)
 
 
+def chamar_claude_direto(system: str, prompt: str, schema: dict, budget_usd: float, etapa: str, mod: str,
+                         timeout: int = 900) -> dict:
+    """O Claude, sem ferramentas e com o modelo dito pela chamada (a escrita, quando a OpenAI cai: src/escrita.py)."""
+    return _chamar_claude(system, prompt, schema, budget_usd, etapa, None, None, timeout, mod)
+
+
 def _chamar_claude(system: str, prompt: str, schema: dict, budget_usd: float, etapa: str,
-                   ferramentas: list[str] | None, permitidas: list[str] | None, timeout: int) -> dict:
-    mod = modelo(etapa)
+                   ferramentas: list[str] | None, permitidas: list[str] | None, timeout: int,
+                   mod: str | None = None) -> dict:
+    mod = mod or modelo(etapa)
     meta = {"etapa": etapa, "motor": "claude", "modelo_pedido": mod, "prompt_sha256": hashlib.sha256((system + prompt).encode()).hexdigest(),
             "system_sha256": hashlib.sha256(system.encode()).hexdigest()}
     env = {k: v for k, v in os.environ.items() if not k.startswith(("CLAUDECODE", "CLAUDE_CODE_", "ANTHROPIC_"))}

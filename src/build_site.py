@@ -485,7 +485,7 @@ def svg_direcao(linha: list[dict], recessoes: list[dict]) -> str:
 
 # --------------------------------------------------------------------- posts
 # A assinatura de todo post escrito pelo modelo (Pedro, 1/11): sem horário, sem contagem de notícias.
-ASSINATURA = "Escrito pelo Claude com a ajuda do Pedro."
+ASSINATURA = "Escrito pelo Claude, com a ajuda do Pedro."
 
 
 def primeira_frase(texto: str) -> str:

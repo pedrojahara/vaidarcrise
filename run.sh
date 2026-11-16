@@ -19,10 +19,10 @@ dia_completo() {
   [[ "$(jq -r '.envio_diario' config/newsletter.json)" != "true" ]] && return 0
   jq -e --arg d "$hoje" 'has($d)' logs/envios.json > /dev/null 2>&1
 }
-# Uma rodada inteira está em andamento: a trava dela existe e tem menos de 4 horas. A mais velha é de uma rodada que o
-# Mac interrompeu (desligou, travou) e não vale mais.
+# Uma rodada inteira está em andamento: a trava dela existe e tem menos de 7 horas (a escrita pode seguir corrigindo
+# até as 10h). A mais velha é de uma rodada que o Mac interrompeu (desligou, travou) e não vale mais.
 rodando() {
-  [[ -n "$(find logs/.rodada -maxdepth 0 -mmin -240 2>/dev/null)" ]]
+  [[ -n "$(find logs/.rodada -maxdepth 0 -mmin -420 2>/dev/null)" ]]
 }
 
 if [[ "${1:-}" == "--coletar" ]]; then
