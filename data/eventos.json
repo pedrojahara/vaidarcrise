@@ -7448,6 +7448,12 @@
     "titulo": "Fazenda deixa vencer subvenção extra do diesel importado",
     "url": "https://www.infomoney.com.br/mercados/fazenda-deixa-vencer-subvencao-extra-do-diesel-importado/",
     "publicado_em": "2026-11-14T11:25+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Fim de subsídio ao diesel importado eleva custo e preço deve subir nas bombas",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/fim-de-subsidio-ao-diesel-importado-eleva-custo-e-preco-deve-subir-nas-bombas.shtml",
+    "publicado_em": "2026-11-16T12:54-03:00"
    }
   ],
   "cobertura": {
@@ -8555,5 +8561,581 @@
    ]
   },
   "pontos": 0.5
+ },
+ {
+  "id": "ev-20261117-01",
+  "data": "2026-11-16",
+  "titulo_evento": "Bolsa cai 1,83% e fecha em 169 mil pontos com temor sobre as contas",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "mercado",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "A Bolsa caiu com a incerteza sobre o ajuste das contas, a queda da Vale e o rebaixamento de ações brasileiras. Bolsa mais fraca encarece o dinheiro que as empresas captam para investir.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "desconfianca_eleicao",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "InfoMoney",
+   "Poder360",
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Poder360",
+    "titulo": "Bolsa cai 1,83% e fecha em 169 mil pontos com temor fiscal",
+    "url": "https://www.poder360.com.br/poder-economia/bolsa-cai-183-e-fecha-em-169-mil-pontos-com-temor-fiscal/",
+    "publicado_em": "2026-11-16T21:27+00:00"
+   },
+   {
+    "veiculo": "Valor",
+    "titulo": "Ibovespa cede 1,8% com incerteza fiscal e rebaixamento de ações brasileiras",
+    "url": "https://valor.globo.com/financas/noticia/2026/11/16/ibovespa-cede-18percent-com-incerteza-fiscal-e-rebaixamento-de-acoes-brasileiras.ghtml",
+    "publicado_em": "2026-11-16T21:24+00:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Ibovespa cai cerca de 2% e fica abaixo dos 170 mil pontos: o que explica forte queda?",
+    "url": "https://www.infomoney.com.br/mercados/ibovespa-cai-15-e-fica-abaixo-dos-170-mil-pontos-o-que-explica-queda-nesta-2a/",
+    "publicado_em": "2026-11-16T18:18+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 4,
+   "jornais": [
+    "InfoMoney",
+    "Poder360",
+    "Valor"
+   ]
+  },
+  "pontos": 1.0
+ },
+ {
+  "id": "ev-20261117-02",
+  "data": "2026-11-16",
+  "titulo_evento": "Focus: inflação de 2027 vai a 5%, PIB de 2026 cai e Selic de 2027 sobe",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "juro",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": true,
+  "porque": "Os bancos preveem preços subindo mais em 2027 e um corte menor da Selic. Juro alto por mais tempo mantém crédito caro para pessoas e empresas e segura investimento e consumo.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "juro_inflacao",
+  "tema_novo": "",
+  "marco": true,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Estadão",
+   "Folha",
+   "Poder360",
+   "g1"
+  ],
+  "fontes": [
+   {
+    "veiculo": "g1",
+    "titulo": "Mercado eleva estimativa de inflação para 5% em 2027 e prevê corte menor nos juros",
+    "url": "https://g1.globo.com/economia/noticia/2026/11/16/mercado-eleva-estimativa-de-inflacao-para-5percent-em-2027-e-preve-corte-menor-nos-juros.ghtml",
+    "publicado_em": "2026-11-16T11:33+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Economistas reduzem previsão da inflação e do PIB neste ano e elevam a da Selic para 2027",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/economistas-reduzem-previsao-da-inflacao-e-do-pib-neste-ano-e-elevam-a-selic-para-2027.shtml",
+    "publicado_em": "2026-11-16T08:46-03:00"
+   },
+   {
+    "veiculo": "Poder360",
+    "titulo": "Mercado reduz projeção de inflação para 5,11% em 2026",
+    "url": "https://www.poder360.com.br/poder-economia/mercado-reduz-projecao-de-inflacao-para-511-em-2026/",
+    "publicado_em": "2026-11-16T11:44+00:00"
+   },
+   {
+    "veiculo": "Estadão",
+    "titulo": "Mercado reduz projeção para inflação e PIB no ano e prevê Selic mais alta em 2027",
+    "url": "https://www.estadao.com.br/economia/mercado-reduz-projecao-inflacao-pib-preve-selic-mais-alta-2027/",
+    "publicado_em": "2026-11-16T12:31+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 7,
+   "jornais": [
+    "Agência Brasil",
+    "Estadão",
+    "Folha",
+    "Gazeta do Povo",
+    "Poder360",
+    "Valor",
+    "g1"
+   ]
+  },
+  "pontos": 0.5
+ },
+ {
+  "id": "ev-20261117-03",
+  "data": "2026-11-16",
+  "titulo_evento": "Câmara vota nesta terça o ajuste das contas de até R$ 60 bi",
+  "estagio": "em_votacao",
+  "origem": "politica",
+  "fator": "contas",
+  "direcao": -1,
+  "magnitude": 2,
+  "ja_no_preco": false,
+  "porque": "O projeto passou no Senado e vai à Câmara, onde parte da base resiste e mudanças podem reduzir a economia. Se passar quase inteiro, o governo gasta menos e a dívida pesa menos nos juros longos.",
+  "decisor": "congresso",
+  "instrumento": "regra_fiscal",
+  "objetivo": "cumprir a meta das contas em 2027",
+  "historia": "contas_governo",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": 0.6,
+  "veiculos": [
+   "Folha",
+   "Poder360",
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Valor",
+    "titulo": "Pimenta atribui resistência a pacote do ajuste fiscal a desconhecimento e descarta envio de PEC",
+    "url": "https://valor.globo.com/politica/noticia/2026/11/16/pimenta-atribui-resistencia-ao-plp-do-ajuste-a-desconhecimento-e-descarta-envio-de-pec.ghtml",
+    "publicado_em": "2026-11-16T22:43+00:00"
+   },
+   {
+    "veiculo": "Poder360",
+    "titulo": "Pimenta diz que destaques do Senado podem descaracterizar ajuste fiscal",
+    "url": "https://www.poder360.com.br/poder-congresso/pimenta-diz-que-destaques-do-senado-podem-descaracterizar-ajuste-fiscal/",
+    "publicado_em": "2026-11-16T22:35+00:00"
+   },
+   {
+    "veiculo": "Poder360",
+    "titulo": "PT reunirá bancada e ouvirá sugestões ao ajuste fiscal",
+    "url": "https://www.poder360.com.br/poder-congresso/pt-reunira-bancada-e-ouvira-sugestoes-ao-ajuste-fiscal/",
+    "publicado_em": "2026-11-16T22:00+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "PT deve declarar apoio a 'plano Moretti' apesar de críticas da sigla a ajuste",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/pt-deve-declarar-apoio-a-plano-moretti-apesar-de-criticas-da-sigla-a-ajuste.shtml",
+    "publicado_em": "2026-11-16T18:39-03:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 11,
+   "jornais": [
+    "Estadão",
+    "Folha",
+    "Gazeta do Povo",
+    "InfoMoney",
+    "Poder360",
+    "Valor"
+   ]
+  },
+  "pontos": -1.2
+ },
+ {
+  "id": "ev-20261117-04",
+  "data": "2026-11-16",
+  "titulo_evento": "Mercadante está cotado para comandar a Fazenda no novo mandato",
+  "estagio": "rumor",
+  "origem": "politica",
+  "fator": "mercado",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "A escolha de um nome com ideias de mais participação do Estado na economia pode piorar a confiança de quem investe. O dólar e o juro futuro subiram no dia em que o nome circulou.",
+  "decisor": "governo_federal",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "desconfianca_eleicao",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Poder360"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Poder360",
+    "titulo": "Mercadante está cotado para comandar Fazenda no Lula 4",
+    "url": "https://www.poder360.com.br/poder-governo/mercadante-esta-cotado-para-comandar-fazenda-no-lula-4/",
+    "publicado_em": "2026-11-16T13:33+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "Poder360"
+   ]
+  },
+  "pontos": 0.05
+ },
+ {
+  "id": "ev-20261117-05",
+  "data": "2026-11-16",
+  "titulo_evento": "Mercado vê chance de alta da Selic em dezembro e juro de 15,50% em 2027",
+  "estagio": "dado",
+  "origem": "dados",
+  "fator": "mercado",
+  "direcao": 1,
+  "magnitude": 2,
+  "ja_no_preco": false,
+  "porque": "Os juros futuros subiram com o estresse do dia e passaram a apostar em Selic mais alta. Juro maior encarece financiamento e investimento e pressiona o crédito de pessoas e empresas.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "juro_inflacao",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Valor",
+    "titulo": "Mercado precifica possibilidade de alta de juros em dezembro e Selic de 15,50% em 2027",
+    "url": "https://valor.globo.com/financas/noticia/2026/11/16/mercado-precifica-possibilidade-de-alta-de-juros-em-dezembro-e-selic-de-1550-pontos-percentuais-em-2027.ghtml",
+    "publicado_em": "2026-11-16T18:54+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "Valor"
+   ]
+  },
+  "pontos": 1.0
+ },
+ {
+  "id": "ev-20261117-06",
+  "data": "2026-11-16",
+  "titulo_evento": "Morgan Stanley rebaixa Brasil e vê Ibovespa a 160 mil pontos em 2027",
+  "estagio": "previsao",
+  "origem": "dados",
+  "fator": "mercado",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "O Morgan Stanley passou a ver o Brasil como o pior mercado da América Latina em 2027. Menos dinheiro de fora na Bolsa deixa o capital mais caro para as empresas.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "desconfianca_eleicao",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Folha",
+   "Poder360"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Poder360",
+    "titulo": "Morgan Stanley vê Brasil como pior mercado da América Latina em 2027",
+    "url": "https://www.poder360.com.br/poder-economia/morgan-stanley-ve-brasil-como-pior-mercado-da-america-latina-em-2027/",
+    "publicado_em": "2026-11-16T17:11+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Morgan Stanley rebaixa recomendação para Bolsa brasileira e prevê queda de 7%",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/morgan-stanley-rebaixa-recomendacao-para-bolsa-brasileira-e-preve-queda-de-7.shtml",
+    "publicado_em": "2026-11-16T12:31-03:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 4,
+   "jornais": [
+    "Folha",
+    "InfoMoney",
+    "Poder360"
+   ]
+  },
+  "pontos": 1.0
+ },
+ {
+  "id": "ev-20261117-07",
+  "data": "2026-11-16",
+  "titulo_evento": "Bolsas de Nova York e da Europa caem com ações de tecnologia",
+  "estagio": "dado",
+  "origem": "mundo",
+  "fator": "externo",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "A preocupação com a inteligência artificial e a espera pelo balanço da Nvidia levaram investidores lá fora a vender ações. Menos apetite por risco reduz o capital que chega a países emergentes como o Brasil.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "queda_das_acoes_de_tecnologia",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "InfoMoney",
+   "Valor"
+  ],
+  "fontes": [
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Wall Street cai com preocupação sobre IA, antes de dados da Nvidia e IPO da Anthropic",
+    "url": "https://www.infomoney.com.br/mercados/wall-street-cai-com-preocupacao-sobre-ia-antes-de-dados-da-nvidia-e-ipo-da-anthropic/",
+    "publicado_em": "2026-11-16T21:42+00:00"
+   },
+   {
+    "veiculo": "Valor",
+    "titulo": "Bolsas em NY caem com peso de 'techs' diante de cautela antes de resultados da Nvidia",
+    "url": "https://valor.globo.com/financas/noticia/2026/11/16/bolsas-em-ny-caem-com-peso-de-techs-diante-de-cautela-antes-de-resultados-da-nvidia.ghtml",
+    "publicado_em": "2026-11-16T14:55+00:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Nasdaq cai 1% com cautela antes de balanço da Nvidia",
+    "url": "https://www.infomoney.com.br/mercados/nasdaq-cai-1-com-cautela-antes-de-balanco-da-nvidia/",
+    "publicado_em": "2026-11-16T15:00+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 7,
+   "jornais": [
+    "Folha",
+    "InfoMoney",
+    "Valor"
+   ]
+  },
+  "pontos": 1.0
+ },
+ {
+  "id": "ev-20261117-08",
+  "data": "2026-11-16",
+  "titulo_evento": "China produz e vende menos que o esperado e minério de ferro cai a US$ 88",
+  "estagio": "dado",
+  "origem": "mundo",
+  "fator": "externo",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "A indústria da China cresceu 4,8% em outubro, abaixo dos 5,3% esperados, e o minério de ferro foi ao menor preço desde setembro de 2024. Isso reduz a receita de exportadores brasileiros como a Vale.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "nova",
+  "tema_novo": "desaceleracao-da-china",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Folha",
+   "InfoMoney",
+   "Poder360"
+  ],
+  "fontes": [
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Economia da China vacila com produção industrial e venda no varejo abaixo do esperado",
+    "url": "https://www.infomoney.com.br/economia/economia-da-china-vacila-com-producao-industrial-e-venda-no-varejo-abaixo-do-esperado/",
+    "publicado_em": "2026-11-16T10:42+00:00"
+   },
+   {
+    "veiculo": "Poder360",
+    "titulo": "Produção industrial e vendas no varejo da China frustram expectativas",
+    "url": "https://www.poder360.com.br/poder-china/producao-industrial-e-vendas-no-varejo-da-china-frustram-expectativas/",
+    "publicado_em": "2026-11-16T09:38+00:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Vendas no varejo, produção industrial e investimentos desaceleram na China",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://aovivo.folha.uol.com.br/mercado/2026/10/25/6568-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post468055",
+    "publicado_em": "2026-11-16T08:09-03:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Minério de ferro atinge mínima em mais de 16 meses após dados fracos da China",
+    "url": "https://www.infomoney.com.br/mercados/minerio-de-ferro-atinge-minima-em-mais-de-16-meses-apos-dados-fracos-da-china/",
+    "publicado_em": "2026-11-16T12:23+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 7,
+   "jornais": [
+    "Folha",
+    "InfoMoney",
+    "Poder360",
+    "Valor"
+   ]
+  },
+  "pontos": 1.0
+ },
+ {
+  "id": "ev-20261117-09",
+  "data": "2026-11-16",
+  "titulo_evento": "Fazenda vai propor corte de gastos obrigatórios e de incentivos fiscais",
+  "estagio": "anuncio",
+  "origem": "politica",
+  "fator": "contas",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "Depois do ajuste atual, a equipe econômica quer frear a alta dos gastos obrigatórios, e o corte de incentivos pode render R$ 15 bi. Sem detalhes e prazos, o efeito nas contas ainda é incerto.",
+  "decisor": "governo_federal",
+  "instrumento": "regra_fiscal",
+  "objetivo": "cumprir a meta das contas de 2027",
+  "historia": "contas_governo",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "InfoMoney",
+   "g1"
+  ],
+  "fontes": [
+   {
+    "veiculo": "g1",
+    "titulo": "Depois do ajuste fiscal, equipe econômica vai propor medidas para reduzir o crescimento das despesas obrigatórias",
+    "url": "https://g1.globo.com/politica/blog/valdo-cruz/post/2026/11/16/depois-do-ajuste-fiscal-equipe-economica-vai-propor-medidas-para-reduzir-o-crescimento-das-despesas-obrigatorias.ghtml",
+    "publicado_em": "2026-11-16T12:57+00:00"
+   },
+   {
+    "veiculo": "InfoMoney",
+    "titulo": "Governo vê corte de incentivos fiscais como essencial para cumprir meta de 2027",
+    "url": "https://www.infomoney.com.br/politica/governo-ve-corte-de-incentivos-fiscais-como-essencial-para-cumprir-meta-de-2027/",
+    "publicado_em": "2026-11-16T14:01+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 2,
+   "jornais": [
+    "InfoMoney",
+    "g1"
+   ]
+  },
+  "pontos": -0.3
+ },
+ {
+  "id": "ev-20261117-10",
+  "data": "2026-11-16",
+  "titulo_evento": "Decreto do fim da escala 6x1 deve encarecer a hora extra",
+  "estagio": "rumor",
+  "origem": "politica",
+  "fator": "atividade",
+  "direcao": 1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "O decreto do Ministério do Trabalho deve fixar um cálculo que aumenta o valor das horas extras na transição. Isso eleva o custo das empresas com pessoal e pode frear contratações.",
+  "decisor": "governo_federal",
+  "instrumento": "preco_regulacao",
+  "objetivo": "",
+  "historia": "fim_da_escala_6x1",
+  "tema_novo": "",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Folha"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Folha",
+    "titulo": "Decreto da 6x1 deve ter regra que torna hora extra mais cara",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/decreto-da-6x1-deve-ter-regra-que-torna-hora-extra-mais-cara.shtml",
+    "publicado_em": "2026-11-16T23:00-03:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 1,
+   "jornais": [
+    "Folha"
+   ]
+  },
+  "pontos": 0.05
+ },
+ {
+  "id": "ev-20261117-11",
+  "data": "2026-11-16",
+  "titulo_evento": "Fazenda estima ganho de até R$ 50,6 bi por ano com regras para big techs",
+  "estagio": "previsao",
+  "origem": "politica",
+  "fator": "atividade",
+  "direcao": -1,
+  "magnitude": 1,
+  "ja_no_preco": false,
+  "porque": "A Fazenda calcula que o projeto de concorrência digital reduza custos entre R$ 15,3 bi e R$ 50,6 bi por ano. É estimativa do governo, e o projeto ainda depende do Congresso.",
+  "decisor": "nenhum",
+  "instrumento": "nenhum",
+  "objetivo": "",
+  "historia": "nova",
+  "tema_novo": "regulacao-das-big-techs",
+  "marco": false,
+  "previsao_virou": false,
+  "sem_medida": false,
+  "chance_aprovacao": null,
+  "veiculos": [
+   "Agência Brasil",
+   "Estadão",
+   "Folha",
+   "Poder360"
+  ],
+  "fontes": [
+   {
+    "veiculo": "Poder360",
+    "titulo": "Regulação das big techs pode render até R$ 50,6 bi, diz Fazenda",
+    "url": "https://www.poder360.com.br/poder-economia/regulacao-das-big-techs-pode-render-ate-r-506-bi-diz-fazenda/",
+    "publicado_em": "2026-11-16T23:29+00:00"
+   },
+   {
+    "veiculo": "Agência Brasil",
+    "titulo": "Regulação de big techs pode reduzir custos em até R$ 50 bilhões",
+    "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/regulacao-de-big-techs-pode-reduzir-custos-em-ate-r-50-bilhoes",
+    "publicado_em": "2026-11-16T19:59-03:00"
+   },
+   {
+    "veiculo": "Folha",
+    "titulo": "Regulação concorrencial das big techs pode reduzir custos em até R$ 50 bi ao ano, projeta Fazenda",
+    "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/11/regulacao-concorrencial-das-big-techs-pode-reduzir-custos-em-ate-r-50-bi-ao-ano-projeta-fazenda.shtml",
+    "publicado_em": "2026-11-16T18:03-03:00"
+   },
+   {
+    "veiculo": "Estadão",
+    "titulo": "Projeto que regula concorrência de big techs pode gerar ganho de até R$ 50 bi por ano, diz Fazenda",
+    "url": "https://www.estadao.com.br/economia/projeto-que-regula-concorrencia-de-big-techs-pode-gerar-ganho-de-ate-r-50-bi-por-ano-diz-fazenda/",
+    "publicado_em": "2026-11-16T23:49+00:00"
+   }
+  ],
+  "cobertura": {
+   "manchetes": 4,
+   "jornais": [
+    "Agência Brasil",
+    "Estadão",
+    "Folha",
+    "Poder360"
+   ]
+  },
+  "pontos": -1.0
  }
 ]
