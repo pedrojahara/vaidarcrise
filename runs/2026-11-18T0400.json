@@ -1,0 +1,5058 @@
+{
+ "id": "2026-11-18T0400",
+ "gerado_em": "2026-11-18T04:00:06-03:00",
+ "regras": {
+  "config_sha256": "3f34308470417b0207935a0098e476eab51124f97677203ef39464acf3110cef",
+  "calibracao_sha256": "569a199f8e82bb1d54e6c68aceb9fa43b57f2a2b17789704187a20895b2d55c9"
+ },
+ "insumos": {
+  "indicadores_coletados_em": "2026-11-18T04:00:30-03:00",
+  "erros_coleta": [],
+  "pib": [
+   {
+    "trimestre": "1T23",
+    "periodo": "202301",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T23",
+    "periodo": "202302",
+    "var_qoq": 0.8
+   },
+   {
+    "trimestre": "3T23",
+    "periodo": "202303",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T23",
+    "periodo": "202304",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "1T24",
+    "periodo": "202401",
+    "var_qoq": 0.7
+   },
+   {
+    "trimestre": "2T24",
+    "periodo": "202402",
+    "var_qoq": 1.7
+   },
+   {
+    "trimestre": "3T24",
+    "periodo": "202403",
+    "var_qoq": 0.9
+   },
+   {
+    "trimestre": "4T24",
+    "periodo": "202404",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "1T25",
+    "periodo": "202501",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T25",
+    "periodo": "202502",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "3T25",
+    "periodo": "202503",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T25",
+    "periodo": "202504",
+    "var_qoq": 0.2
+   },
+   {
+    "trimestre": "1T26",
+    "periodo": "202601",
+    "var_qoq": 1.1
+   },
+   {
+    "trimestre": "2T26",
+    "periodo": "202602",
+    "var_qoq": 0.5
+   }
+  ],
+  "focus": {
+   "PIB Total": [
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2026",
+     "Mediana": 1.7215,
+     "numeroRespondentes": 119
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2027",
+     "Mediana": 1.0224,
+     "numeroRespondentes": 118
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2028",
+     "Mediana": 1.8,
+     "numeroRespondentes": 89
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2029",
+     "Mediana": 2.0,
+     "numeroRespondentes": 81
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2030",
+     "Mediana": 2.0,
+     "numeroRespondentes": 79
+    }
+   ],
+   "IPCA": [
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2026",
+     "Mediana": 5.1082,
+     "numeroRespondentes": 146
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2027",
+     "Mediana": 5.0,
+     "numeroRespondentes": 146
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2028",
+     "Mediana": 4.0,
+     "numeroRespondentes": 133
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2029",
+     "Mediana": 4.0,
+     "numeroRespondentes": 122
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2030",
+     "Mediana": 3.935,
+     "numeroRespondentes": 114
+    }
+   ],
+   "Selic": [
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2026",
+     "Mediana": 13.75,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2027",
+     "Mediana": 12.75,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2028",
+     "Mediana": 11.0,
+     "numeroRespondentes": 126
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2029",
+     "Mediana": 10.5,
+     "numeroRespondentes": 116
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2030",
+     "Mediana": 10.0,
+     "numeroRespondentes": 113
+    }
+   ],
+   "Câmbio": [
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2026",
+     "Mediana": 5.4,
+     "numeroRespondentes": 121
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2027",
+     "Mediana": 5.45,
+     "numeroRespondentes": 120
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2028",
+     "Mediana": 5.4821,
+     "numeroRespondentes": 93
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2029",
+     "Mediana": 5.5,
+     "numeroRespondentes": 90
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2030",
+     "Mediana": 5.55,
+     "numeroRespondentes": 87
+    }
+   ],
+   "IPCA 12m": {
+    "Data": "2026-11-13",
+    "Mediana": 5.1484,
+    "numeroRespondentes": 135
+   }
+  },
+  "noticias": {
+   "coletado_em": "2026-11-18T07:00:06+00:00",
+   "janela_horas": 32,
+   "por_veiculo": {
+    "Valor": 40,
+    "Poder360": 40,
+    "Estadão": 18,
+    "Gazeta do Povo": 11,
+    "Folha": 40,
+    "InfoMoney": 40,
+    "g1": 21,
+    "Agência Brasil": 7
+   },
+   "status_fontes": {
+    "Agência Brasil": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Folha": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 91
+    },
+    "Estadão": {
+     "http": 200,
+     "itens_no_feed": 20,
+     "na_janela": 19
+    },
+    "Valor": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 100
+    },
+    "InfoMoney": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Poder360": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Gazeta do Povo": {
+     "http": 200,
+     "itens_no_feed": 28,
+     "na_janela": 22
+    },
+    "g1": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 35
+    },
+    "GDELT": {
+     "http": 429,
+     "erro": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic us"
+    }
+   },
+   "n_itens": 217
+  }
+ },
+ "cobertura": {
+  "dias": [
+   "2026-11-16",
+   "2026-11-17"
+  ],
+  "no_acervo": 384,
+  "na_cesta": 217,
+  "coletas_24h": 24
+ },
+ "llm": {
+  "ok": true,
+  "meta": {
+   "etapa": "classificar",
+   "motor": "claude",
+   "modelo_pedido": "sonnet",
+   "prompt_sha256": "ecf1417a19daa0201aedb4c094dd7b92447990785412c304ccadec97387364b8",
+   "system_sha256": "e1c9e1ea22680d7c6442d88926322247950401b8241436be5c34be120379e68a",
+   "returncode": 0,
+   "is_error": false,
+   "custo_usd": 0.3003998,
+   "turnos": 4,
+   "duracao_s": 57,
+   "modelos": [
+    "claude-sonnet-5-5"
+   ],
+   "permission_denials": [],
+   "session_id": "0cf74f88-4216-4880-803f-2107f193765c"
+  },
+  "saida": {
+   "eventos": [
+    {
+     "noticia_ids": [
+      "n031",
+      "n034",
+      "n038",
+      "n006",
+      "n007"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Senado aprova MP com R$ 13,5 bi de crédito a empresas afetadas pelo tarifaço",
+     "estagio": "em_votacao",
+     "chance_aprovacao": 0.8,
+     "origem": "politica",
+     "decisor": "congresso",
+     "instrumento": "credito_publico",
+     "objetivo": "conter os efeitos do tarifaço dos EUA sobre as empresas",
+     "fator": "credito",
+     "direcao": -1,
+     "magnitude": 1,
+     "historia": "tarifas_eua",
+     "tema_novo": "",
+     "marco": true,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261111-06",
+     "porque": "O Senado aprovou a MP que libera até R$ 13,5 bilhões em crédito para empresas atingidas pelo tarifaço dos EUA, e o texto segue para sanção. O dinheiro ajuda essas empresas a manter produção e emprego."
+    },
+    {
+     "noticia_ids": [
+      "n039",
+      "n044",
+      "n035",
+      "n054",
+      "n091",
+      "n018"
+     ],
+     "outras_ids": [
+      "n050",
+      "n002",
+      "n048",
+      "n070",
+      "n129",
+      "n139",
+      "n152",
+      "n190",
+      "n128",
+      "n072",
+      "n171",
+      "n132"
+     ],
+     "titulo_evento": "Senado adia votação dos destaques do ajuste das contas, e Câmara vota em seguida",
+     "estagio": "em_votacao",
+     "chance_aprovacao": 0.7,
+     "origem": "politica",
+     "decisor": "congresso",
+     "instrumento": "regra_fiscal",
+     "objetivo": "equilibrar as contas públicas com ajuste de até R$ 56 bi",
+     "fator": "contas",
+     "direcao": -1,
+     "magnitude": 2,
+     "historia": "contas_governo",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Sem acordo entre os líderes, o Senado deixou os destaques para quarta-feira, e o governo já conta com um texto menor na Câmara. Se o ajuste passar enxuto, as contas melhoram menos do que o mercado quer."
+    },
+    {
+     "noticia_ids": [
+      "n121",
+      "n161",
+      "n184",
+      "n199",
+      "n156"
+     ],
+     "outras_ids": [
+      "n025",
+      "n084",
+      "n131",
+      "n163",
+      "n118",
+      "n179"
+     ],
+     "titulo_evento": "Dólar chega a R$ 5,81 e juros futuros sobem com a votação do ajuste das contas",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "mercado",
+     "direcao": 1,
+     "magnitude": 2,
+     "historia": "desconfianca_eleicao",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": true,
+     "duplicata_de": null,
+     "porque": "O dólar subiu ao maior valor em 19 meses por dúvida sobre as contas do novo mandato, e o juro que o governo paga para se financiar subiu junto. Dólar mais caro encarece importados e insumos."
+    },
+    {
+     "noticia_ids": [
+      "n010"
+     ],
+     "outras_ids": [
+      "n206"
+     ],
+     "titulo_evento": "Goldman Sachs rebaixa Brasil para neutro na Bolsa e cita incerteza fiscal",
+     "estagio": "previsao",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "mercado",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "desconfianca_eleicao",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O Goldman Sachs reduziu a recomendação para ações brasileiras e aponta a incerteza com as contas como principal risco. Menos dinheiro de fora na Bolsa encarece o capital das empresas e pesa no investimento."
+    },
+    {
+     "noticia_ids": [
+      "n062",
+      "n086",
+      "n157",
+      "n098"
+     ],
+     "outras_ids": [
+      "n094"
+     ],
+     "titulo_evento": "Ministro da Fazenda diz que pacote é o primeiro passo e prega ajuste gradual",
+     "estagio": "anuncio",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "governo_federal",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "contas",
+     "direcao": -1,
+     "magnitude": 1,
+     "historia": "contas_governo",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": true,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O ministro da Fazenda disse ao Senado que o pacote é só o começo e que a meta de 2027 não é ilusória, mas não apresentou novas medidas nem prazos. O mercado segue esperando o plano completo."
+    },
+    {
+     "noticia_ids": [
+      "n144",
+      "n178"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Presidente do Itaú vê dívida acima de 100% do PIB em quatro anos sem medidas",
+     "estagio": "previsao",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "contas",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "contas_governo",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O presidente do Itaú Unibanco disse que, sem medidas nas contas, a dívida pública pode passar de 100% do PIB ao fim do mandato. Dívida maior mantém o juro alto e limita o crédito e o investimento."
+    },
+    {
+     "noticia_ids": [
+      "n130",
+      "n126"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Dirigente do banco central dos EUA prevê várias altas de juros antes da primavera",
+     "estagio": "previsao",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "fed_juros_eua",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O presidente do banco central dos Estados Unidos em St. Louis disse que o juro americano deve subir várias vezes até a primavera de 2027, porque a inflação segue alta demais. Isso atrai dinheiro para lá e pressiona o dólar aqui."
+    },
+    {
+     "noticia_ids": [
+      "n101",
+      "n105",
+      "n085"
+     ],
+     "outras_ids": [
+      "n191",
+      "n177",
+      "n208",
+      "n109"
+     ],
+     "titulo_evento": "China promete retaliar restrições dos EUA a chips, e bolsas chinesas caem",
+     "estagio": "anuncio",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "fora",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "queda_das_acoes_de_tecnologia",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Os EUA apertaram o acesso da China a chips de inteligência artificial, e a China ameaça responder. Nova disputa entre as duas maiores economias esfria o comércio mundial e a demanda por produtos brasileiros."
+    },
+    {
+     "noticia_ids": [
+      "n024",
+      "n032",
+      "n148"
+     ],
+     "outras_ids": [
+      "n065",
+      "n170"
+     ],
+     "titulo_evento": "Bolsas de Nova York fecham em queda com ações de tecnologia sob pressão",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "mercado",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "queda_das_acoes_de_tecnologia",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Investidores cortaram ações de tecnologia no ritmo mais forte desde 2006, e as bolsas americanas caíram de novo. Se a queda chegar ao Brasil, o dólar sobe e a Bolsa daqui perde fôlego."
+    },
+    {
+     "noticia_ids": [
+      "n159",
+      "n137"
+     ],
+     "outras_ids": [
+      "n066"
+     ],
+     "titulo_evento": "União Europeia adia decisão e mantém veto a frango e mel do Brasil",
+     "estagio": "decidido",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "fora",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "nova",
+     "tema_novo": "exportacao-de-aves-uniao-europeia",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Os países da União Europeia adiaram a votação que liberaria de volta o frango e o mel brasileiros, e o veto continua. Os exportadores seguem sem esse mercado."
+    },
+    {
+     "noticia_ids": [
+      "n041",
+      "n153"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Petróleo sobe com ataques a petroleiros e fogo em navio no Estreito de Ormuz",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "guerra_petroleo",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Drones iranianos atacaram uma base dos EUA no Barein e um superpetroleiro pegou fogo em Ormuz, e o petróleo subiu. Combustível mais caro aqui pressiona a inflação e o custo das empresas."
+    },
+    {
+     "noticia_ids": [
+      "n019"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Renegociação de dívidas rurais chega a R$ 28 bi, abaixo do esperado",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "credito",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "credito_inadimplencia",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A renegociação alcançou R$ 28 bilhões em 70 mil operações, menos que o esperado. Produtores seguem com dívida atrasada, o que afeta bancos e o crédito ao campo."
+    },
+    {
+     "noticia_ids": [
+      "n059"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Congresso instala comissão do novo Desenrola, com até R$ 15 bi para renegociar dívidas",
+     "estagio": "em_votacao",
+     "chance_aprovacao": 0.6,
+     "origem": "politica",
+     "decisor": "congresso",
+     "instrumento": "credito_publico",
+     "objetivo": "renegociar dívidas de famílias",
+     "fator": "credito",
+     "direcao": -1,
+     "magnitude": 1,
+     "historia": "credito_inadimplencia",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A comissão do Congresso quer votar o programa ainda neste ano, com relatório previsto para o início de dezembro. Se passar, famílias com dívida atrasada voltam a ter acesso a crédito e a consumir."
+    },
+    {
+     "noticia_ids": [
+      "n021"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Banco Central anuncia leilões de até US$ 1 bi com compromisso de recompra",
+     "estagio": "decidido",
+     "chance_aprovacao": null,
+     "origem": "banco_central",
+     "decisor": "banco_central",
+     "instrumento": "juros_cambio",
+     "objetivo": "",
+     "fator": "mercado",
+     "direcao": -1,
+     "magnitude": 1,
+     "historia": "desconfianca_eleicao",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O Banco Central vai vender até US$ 1 bilhão em dois leilões na quarta-feira, com compromisso de recompra. Mais dólar no mercado alivia a pressão sobre a moeda num momento de alta."
+    },
+    {
+     "noticia_ids": [
+      "n090"
+     ],
+     "outras_ids": [
+      "n187"
+     ],
+     "titulo_evento": "Câmara analisa projeto que regulamenta as big techs",
+     "estagio": "em_votacao",
+     "chance_aprovacao": 0.6,
+     "origem": "politica",
+     "decisor": "congresso",
+     "instrumento": "imposto",
+     "objetivo": "",
+     "fator": "contas",
+     "direcao": -1,
+     "magnitude": 1,
+     "historia": "nova",
+     "tema_novo": "regulacao-das-big-techs",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Os deputados votam o projeto com regras para mercados digitais, e a Fazenda estima ganho de até R$ 50,6 bilhões por ano. Mais receita ajuda as contas do governo."
+    }
+   ]
+  }
+ },
+ "eventos_novos": [
+  "ev-20261118-01",
+  "ev-20261118-02",
+  "ev-20261118-03",
+  "ev-20261118-04",
+  "ev-20261118-05",
+  "ev-20261118-06",
+  "ev-20261118-07",
+  "ev-20261118-08",
+  "ev-20261118-09",
+  "ev-20261118-10",
+  "ev-20261118-11",
+  "ev-20261118-12",
+  "ev-20261118-13"
+ ],
+ "eventos_descartados": [
+  {
+   "noticia_ids": [
+    "n031",
+    "n034",
+    "n038",
+    "n006",
+    "n007"
+   ],
+   "outras_ids": [],
+   "titulo_evento": "Senado aprova MP com R$ 13,5 bi de crédito a empresas afetadas pelo tarifaço",
+   "estagio": "em_votacao",
+   "chance_aprovacao": 0.8,
+   "origem": "politica",
+   "decisor": "congresso",
+   "instrumento": "credito_publico",
+   "objetivo": "conter os efeitos do tarifaço dos EUA sobre as empresas",
+   "fator": "credito",
+   "direcao": -1,
+   "magnitude": 1,
+   "historia": "tarifas_eua",
+   "tema_novo": "",
+   "marco": true,
+   "previsao_virou": false,
+   "sem_medida": false,
+   "ja_no_preco": true,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261111-06",
+   "porque": "O Senado aprovou a MP que libera até R$ 13,5 bilhões em crédito para empresas atingidas pelo tarifaço dos EUA, e o texto segue para sanção. O dinheiro ajuda essas empresas a manter produção e emprego.",
+   "motivo": "mesmo fato do evento ev-20261111-06",
+   "fontes": [
+    {
+     "veiculo": "Folha",
+     "titulo": "Senado aprova crédito de até R$ 13,5 bi para empresas afetadas por tarifaços dos EUA",
+     "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/senado-aprova-credito-de-ate-r-135-bi-para-empresas-afetadas-por-tarifacos-dos-eua.shtml",
+     "publicado_em": "2026-11-17T21:17-03:00"
+    },
+    {
+     "veiculo": "InfoMoney",
+     "titulo": "Senado aprova MP do Brasil Soberano 3, para empresas afetadas por tarifaço",
+     "url": "https://www.infomoney.com.br/politica/senado-aprova-mp-do-brasil-soberano-3-para-empresas-afetadas-por-tarifaco/",
+     "publicado_em": "2026-11-17T20:57+00:00"
+    },
+    {
+     "veiculo": "Poder360",
+     "titulo": "Senado amplia em R$ 13,5 bi o crédito para o Plano Brasil Soberano 3",
+     "url": "https://www.poder360.com.br/poder-congresso/senado-amplia-em-r-135-bi-o-credito-para-o-plano-brasil-soberano-3/",
+     "publicado_em": "2026-11-17T20:46+00:00"
+    },
+    {
+     "veiculo": "Gazeta do Povo",
+     "titulo": "Senado aprova R$ 13,5 bilhões para empresas afetadas pelo tarifaço dos EUA",
+     "url": "https://www.gazetadopovo.com.br/economia/senado-aprova-r-135-bilhoes-para-empresas-afetadas-pelo-tarifaco-dos-eua/",
+     "publicado_em": "2026-11-18T01:48+00:00"
+    },
+    {
+     "veiculo": "Estadão",
+     "titulo": "Senado aprova crédito de até R$ 13,5 bi a empresas afetadas por tarifaço de Trump e guerras",
+     "url": "https://www.estadao.com.br/economia/senado-aprova-credito-de-ate-r-135-bi-a-empresas-afetadas-por-tarifaco-de-trump-e-guerras/",
+     "publicado_em": "2026-11-18T01:44+00:00"
+    }
+   ]
+  },
+  {
+   "noticia_ids": [
+    "n121",
+    "n161",
+    "n184",
+    "n199",
+    "n156"
+   ],
+   "outras_ids": [
+    "n025",
+    "n084",
+    "n131",
+    "n163",
+    "n118",
+    "n179"
+   ],
+   "titulo_evento": "Dólar chega a R$ 5,81 e juros futuros sobem com a votação do ajuste das contas",
+   "estagio": "dado",
+   "chance_aprovacao": null,
+   "origem": "dados",
+   "decisor": "nenhum",
+   "instrumento": "nenhum",
+   "objetivo": "",
+   "fator": "mercado",
+   "direcao": 1,
+   "magnitude": 2,
+   "historia": "desconfianca_eleicao",
+   "tema_novo": "",
+   "marco": false,
+   "previsao_virou": false,
+   "sem_medida": false,
+   "ja_no_preco": false,
+   "ja_nos_indicadores": true,
+   "duplicata_de": null,
+   "porque": "O dólar subiu ao maior valor em 19 meses por dúvida sobre as contas do novo mandato, e o juro que o governo paga para se financiar subiu junto. Dólar mais caro encarece importados e insumos.",
+   "motivo": "já medido pelos indicadores",
+   "fontes": [
+    {
+     "veiculo": "Poder360",
+     "titulo": "Dólar atinge R$ 5,81 em dia de votação de ajuste fiscal",
+     "url": "https://www.poder360.com.br/poder-economia/dolar-atinge-r-581-em-dia-de-votacao-de-ajuste-fiscal/",
+     "publicado_em": "2026-11-17T14:47+00:00"
+    },
+    {
+     "veiculo": "InfoMoney",
+     "titulo": "Dólar sobe e se aproxima de R$ 5,80 em dia de votação de ajustes fiscais no Senado",
+     "url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-17112026/",
+     "publicado_em": "2026-11-17T12:22+00:00"
+    },
+    {
+     "veiculo": "Folha",
+     "titulo": "Dólar abre em alta e chega a R$ 5,79 com mercado à espera de votação de projeto fiscal no Senado",
+     "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/dolar-abre-em-alta-e-chega-a-r-579-com-mercado-a-espera-de-votacao-de-projeto-fiscal-no-senado.shtml",
+     "publicado_em": "2026-11-17T09:47-03:00"
+    },
+    {
+     "veiculo": "Valor",
+     "titulo": "Temor com Lula 4 leva dólar a R$ 5,77 e gera disparada dos juros",
+     "url": "https://valor.globo.com/financas/noticia/2026/11/17/temor-com-lula-4-leva-dolar-a-r-577-e-gera-disparada-dos-juros.ghtml",
+     "publicado_em": "2026-11-17T08:00+00:00"
+    },
+    {
+     "veiculo": "Valor",
+     "titulo": "Dólar ronda estabilidade, sem alívio após subir ao maior nível em 19 meses na véspera",
+     "url": "https://valor.globo.com/financas/noticia/2026/11/17/dolar-ronda-estabilidade-sem-alivio-apos-subir-ao-maior-nivel-em-19-meses-na-vespera.ghtml",
+     "publicado_em": "2026-11-17T12:37+00:00"
+    }
+   ]
+  }
+ ],
+ "resultado": {
+  "gar": {
+   "entradas": [
+    {
+     "id": "tendencia",
+     "fator": "atividade",
+     "nome": "Crescimento médio em 10 anos",
+     "unidade": "%",
+     "valor": 1.7328366710913756,
+     "ref": "2T2026",
+     "referencia": 2.4697807384106563,
+     "coef": -0.20407155569770025,
+     "faixa_normal": [
+      1.2052,
+      3.3021
+     ],
+     "escala": [
+      0.3054,
+      3.9289
+     ],
+     "efeito": 0.15038932228003635
+    },
+    {
+     "id": "crescimento",
+     "fator": "atividade",
+     "nome": "Crescimento em 12 meses",
+     "unidade": "%",
+     "valor": 1.099285274025721,
+     "ref": "2026-09",
+     "referencia": 2.029441313073013,
+     "coef": 0.2281557601628648,
+     "faixa_normal": [
+      0.4274,
+      4.1388
+     ],
+     "escala": [
+      -6.2893,
+      9.267
+     ],
+     "efeito": -0.21222045815891427
+    },
+    {
+     "id": "juro",
+     "fator": "juro",
+     "nome": "Selic: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -1.25,
+     "ref": "2026-11-18",
+     "nivel": 13.75,
+     "antes": 15.0,
+     "referencia": -0.375,
+     "coef": -0.1473323685958321,
+     "faixa_normal": [
+      -3.0,
+      2.0
+     ],
+     "escala": [
+      -6.31,
+      8.655
+     ],
+     "efeito": 0.12891582252135309
+    },
+    {
+     "id": "inflacao",
+     "fator": "juro",
+     "nome": "Inflação: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -0.04999999999999982,
+     "ref": "2026-10",
+     "nivel": 4.63,
+     "antes": 4.68,
+     "referencia": -0.06499999999999995,
+     "coef": -0.12500236363708112,
+     "faixa_normal": [
+      -1.665,
+      1.3725
+     ],
+     "escala": [
+      -8.2538,
+      6.2048
+     ],
+     "efeito": -0.0018750354545562322
+    }
+   ],
+   "ruim": -0.6262738328616679,
+   "cenario_ruim": -1.9172071844033245,
+   "cenario_normal": -1.8914573730774542,
+   "ref_pib": "2T2026"
+  },
+  "indicadores": [
+   {
+    "id": "ibcbr",
+    "fator": "atividade",
+    "nome": "IBC-Br",
+    "unidade": "%",
+    "definicao": "IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores.",
+    "direcao": -1,
+    "faixa_normal": [
+     -0.178879,
+     1.409462
+    ],
+    "escala": [
+     -3.422733,
+     3.418644
+    ],
+    "valor": -0.8605488709830245,
+    "ref": "2026-09"
+   },
+   {
+    "id": "focus_pib",
+    "fator": "atividade",
+    "nome": "PIB esperado pelo Focus",
+    "unidade": "%",
+    "definicao": "Crescimento do PIB esperado para os próximos 12 meses: mediana do Focus para o ano corrente e o seguinte, ponderada pelos meses que faltam em cada um.",
+    "direcao": -1,
+    "faixa_normal": [
+     1.617708,
+     3.499375
+    ],
+    "escala": [
+     -2.139717,
+     5.282417
+    ],
+    "valor": 1.0806583333333333,
+    "ref": "2026-11-13",
+    "ano": 1.7215,
+    "ano_seguinte": 1.0224
+   },
+   {
+    "id": "juro_real",
+    "fator": "juro",
+    "nome": "Juro real",
+    "unidade": "% ao ano",
+    "definicao": "Selic meta (BCB 432) descontada da inflação esperada para 12 meses (Focus, suavizada): (1 + Selic) / (1 + inflação esperada) − 1.",
+    "direcao": 1,
+    "faixa_normal": [
+     4.062007,
+     9.133549
+    ],
+    "escala": [
+     -1.195693,
+     14.660898
+    ],
+    "valor": 8.180438313849736,
+    "ref": "2026-11-18",
+    "selic": 13.75,
+    "inflacao_esperada": 5.1484,
+    "focus_data": "2026-11-13"
+   },
+   {
+    "id": "comprometimento",
+    "fator": "credito",
+    "nome": "Renda comprometida com dívidas",
+    "unidade": "p.p.",
+    "definicao": "Comprometimento de renda das famílias com dívidas, dessazonalizado (BCB 29034), menos a média dos 36 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.268333,
+     1.686944
+    ],
+    "escala": [
+     -1.879444,
+     3.762167
+    ],
+    "valor": 1.8797222222222203,
+    "ref": "2026-08",
+    "nivel": 28.99
+   },
+   {
+    "id": "tesouro",
+    "fator": "mercado",
+    "nome": "Juro do Tesouro IPCA+",
+    "unidade": "p.p.",
+    "definicao": "Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (Tesouro Direto, venda pela manhã) menos a sua mediana nos 3 anos anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.95,
+     0.845
+    ],
+    "escala": [
+     -2.2292,
+     2.1344
+    ],
+    "valor": 0.4900000000000002,
+    "ref": "2026-11-16",
+    "nivel": 7.9,
+    "mediana": 7.41,
+    "vencimento": "2035-05-15"
+   },
+   {
+    "id": "dolar",
+    "fator": "mercado",
+    "nome": "Dólar",
+    "unidade": "%",
+    "definicao": "Variação do dólar PTAX (BCB 1) em 3 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -4.151625,
+     5.11632
+    ],
+    "escala": [
+     -14.383365,
+     27.223675
+    ],
+    "valor": 11.221978698042845,
+    "ref": "2026-11-17",
+    "nivel": 5.7851
+   },
+   {
+    "id": "divida",
+    "fator": "contas",
+    "nome": "Dívida pública",
+    "unidade": "p.p. do PIB",
+    "definicao": "Variação da dívida bruta do governo geral (BCB 13762) em 12 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -1.74,
+     4.22
+    ],
+    "escala": [
+     -8.4312,
+     10.7912
+    ],
+    "valor": 5.109999999999999,
+    "ref": "2026-09",
+    "nivel": 82.95
+   },
+   {
+    "id": "sahm",
+    "fator": "emprego",
+    "nome": "Regra de Sahm",
+    "unidade": "p.p.",
+    "definicao": "Média de 3 meses da desocupação da PNAD Contínua (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.066667,
+     1.433333
+    ],
+    "escala": [
+     -0.526667,
+     3.126667
+    ],
+    "valor": 0.033333333333333215,
+    "ref": "2026-09",
+    "nivel": 5.2
+   },
+   {
+    "id": "commodities",
+    "fator": "externo",
+    "nome": "Preço das commodities",
+    "unidade": "%",
+    "definicao": "Variação em 6 meses do índice de preços de todas as commodities do FMI (FRED PALLFNFINDEXM).",
+    "direcao": -1,
+    "faixa_normal": [
+     -4.196915,
+     13.721388
+    ],
+    "escala": [
+     -28.018093,
+     30.645307
+    ],
+    "valor": 1.6727586354593926,
+    "ref": "2026-09",
+    "nivel": 222.4285486100514
+   }
+  ],
+  "reaproveitados": [],
+  "faltando": [],
+  "direcao": {
+   "estado": "subindo",
+   "desde": "2026-06",
+   "soma": 4,
+   "bruto": "subindo",
+   "pendente": null,
+   "apertaram": 4,
+   "folgaram": 0,
+   "partes": [
+    {
+     "id": "contas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "divida": {
+       "agora": 82.95,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 81.95,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 1.0,
+       "corte": 0.9451499999999999,
+       "lado": 1,
+       "como": "pontos"
+      },
+      "primario": {
+       "agora": 0.52,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 1.19,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.6699999999999999,
+       "corte": 0.311325,
+       "lado": -1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "divida_bruta",
+      "valor": 82.95,
+      "ref": "2026-09",
+      "desde": "2006",
+      "meses": 238,
+      "pior_que_pct": 96,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "parcelas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "parcelas": {
+       "agora": 28.99,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 28.47,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": 0.5199999999999996,
+       "corte": 0.378075,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "comprometimento_renda",
+      "valor": 28.99,
+      "ref": "2026-08",
+      "desde": "2005",
+      "meses": 258,
+      "pior_que_pct": 100,
+      "recorde_ruim": true,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "mercado",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "dolar": {
+       "agora": 5.7851,
+       "dia": "2026-11-17",
+       "ref": "2026-11",
+       "antes": 5.1816,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 11.646981627296583,
+       "corte": 4.765725,
+       "lado": 1,
+       "como": "pct",
+       "lado_do_dia": 1,
+       "dias_seguidos": 0,
+       "persiste_dias": 3
+      },
+      "juro_longo": {
+       "agora": 7.9,
+       "dia": "2026-11-16",
+       "ref": "2026-11",
+       "antes": 7.92,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": -0.019999999999999574,
+       "corte": 0.41145,
+       "lado": 0,
+       "como": "pontos",
+       "lado_do_dia": 0,
+       "dias_seguidos": 0,
+       "persiste_dias": 3
+      }
+     },
+     "folga": {
+      "serie": "juro_real_longo",
+      "valor": 7.9,
+      "ref": "2026-11",
+      "desde": "2005",
+      "meses": 257,
+      "pior_que_pct": 89,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "inflacao",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "inflacao": {
+       "agora": 5.1484,
+       "dia": "2026-11-13",
+       "ref": "2026-11",
+       "antes": 4.553,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 0.5953999999999997,
+       "corte": 0.316875,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "focus_ipca_12m",
+      "valor": 5.1484,
+      "ref": "2026-11",
+      "desde": "2001",
+      "meses": 300,
+      "pior_que_pct": 57,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "juro",
+     "lado": 0,
+     "na_soma": true,
+     "medidas": {
+      "juro": {
+       "agora": 13.75,
+       "dia": "2026-11-18",
+       "ref": "2026-11",
+       "antes": 14.0,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": -0.25,
+       "corte": 0.833925,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "juro_real",
+      "valor": 8.180438313849736,
+      "ref": "2026-11",
+      "desde": "2002",
+      "meses": 299,
+      "pior_que_pct": 66,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "ritmo",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "ritmo": {
+       "agora": 109.77734,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 110.31795,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.8605488709830356,
+       "corte": 0.88905,
+       "lado": 0,
+       "como": "media"
+      }
+     },
+     "folga": null
+    },
+    {
+     "id": "emprego",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "emprego": {
+       "agora": 5.2,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 5.4,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.20000000000000018,
+       "corte": 0.555975,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "desocupacao",
+      "valor": 5.2,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "renda",
+     "lado": -1,
+     "na_soma": false,
+     "medidas": {
+      "renda": {
+       "agora": 3790.0,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 3753.0,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 0.9858779642952342,
+       "corte": 0.8882999999999999,
+       "lado": -1,
+       "como": "pct"
+      }
+     },
+     "folga": {
+      "serie": "rendimento_real",
+      "valor": 3790.0,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "reservas",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "reservas": {
+       "agora": 365019.0,
+       "dia": "2026-10-01",
+       "ref": "2026-10",
+       "antes": 369742.0,
+       "dia_antes": "2026-07-01",
+       "ref_antes": "2026-07",
+       "mudanca": -1.2773771981543836,
+       "corte": 2.97645,
+       "lado": 0,
+       "como": "pct"
+      }
+     },
+     "folga": null
+    }
+   ],
+   "mes": "2026-11",
+   "linha": [
+    {
+     "mes": "2004-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-01",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-02",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-03",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-04",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-11",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2020-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2020-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2021-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-11",
+     "estado": "S"
+    }
+   ]
+  }
+ },
+ "pressao": {
+  "fatores": {
+   "contas": {
+    "saldo": -1.0875,
+    "sentido": "melhora",
+    "eventos": [
+     "ev-20261118-01",
+     "ev-20261118-04",
+     "ev-20261118-13",
+     "ev-20261118-03"
+    ]
+   },
+   "mercado": {
+    "saldo": 0.625,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261118-07",
+     "ev-20261118-12",
+     "ev-20261118-02"
+    ]
+   },
+   "externo": {
+    "saldo": 1.4125,
+    "sentido": "piora",
+    "eventos": [
+     "ev-20261118-08",
+     "ev-20261118-05",
+     "ev-20261118-09",
+     "ev-20261118-06"
+    ]
+   },
+   "credito": {
+    "saldo": 0.2,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261118-10",
+     "ev-20261118-11"
+    ]
+   }
+  },
+  "saldo": 1.1500000000000001,
+  "sentido": "igual",
+  "n": 13
+ },
+ "leituras": {
+  "fatores": {
+   "atividade": {
+    "fatos": [
+     {
+      "texto": "A economia cresceu 1,1% em um ano (prévia do PIB, de julho a setembro). O normal desde 2004 vai de 0,4% a 4,1%.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "A prévia do PIB caiu 0,9% no trimestre até setembro, contra os 3 meses anteriores. É a maior queda desde maio de 2021.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "Os bancos (Focus) esperam alta de 1,7% do PIB em 2026 e alta de 1% em 2027.",
+      "fonte": "Focus"
+     }
+    ]
+   },
+   "juro": {
+    "fatos": [
+     {
+      "texto": "Os preços subiram 4,6% em um ano até outubro (IPCA). Um ano antes, a alta era de 4,7%: os preços sobem no mesmo ritmo.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "Descontada a inflação esperada (5,1%), a Selic de 13,75% rende 8,2% ao ano.",
+      "fonte": "BC e Focus"
+     },
+     {
+      "texto": "Selic em 13,75% desde 17/9. Antes, era 14%. Nos últimos 12 meses, chegou a 15%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "credito": {
+    "fatos": [
+     {
+      "texto": "29% da renda das famílias vai para parcelas e juros (agosto), o maior desde o início da série, em 2005. Um ano antes, eram 27,6%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "mercado": {
+    "fatos": [
+     {
+      "texto": "O governo paga 7,9% ao ano acima da inflação para pegar dinheiro até 2035 (16/11). É 0,5 ponto acima do normal dos últimos 3 anos.",
+      "fonte": "Tesouro Direto"
+     },
+     {
+      "texto": "Dólar a R$ 5,79 em 17/11, 11,2% mais caro que em meados de agosto.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "contas": {
+    "fatos": [
+     {
+      "texto": "Dívida do governo em 83,0% do PIB (setembro). Subiu 5,1 pontos em um ano.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "União, estados e municípios gastaram 0,5% do PIB a mais do que arrecadaram nos 12 meses até setembro, sem contar juros. Um ano antes, eram 0,3%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "emprego": {
+    "fatos": [
+     {
+      "texto": "Desemprego em 5,2% no trimestre até setembro. O menor desde 2012 foi 5,1%, em dezembro de 2025.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "O desemprego médio de 3 meses está igual ao menor do último ano.",
+      "fonte": "IBGE"
+     }
+    ]
+   },
+   "externo": {
+    "fatos": [
+     {
+      "texto": "Soja, minério, petróleo e outros produtos básicos ficaram 1,7% mais caros em 6 meses até setembro (FMI).",
+      "fonte": "FMI"
+     }
+    ]
+   }
+  }
+ },
+ "anterior": "2026-11-17T0400",
+ "revisao_texto": {
+  "classificacao": [
+   "sigla que a leitora não conhece (MP): escreva o nome por extenso, se ele explica: Senado aprova MP com R$ 13,5 bi de crédito a empresas afetad",
+   "palavra que o site trocou: diga o juro de 10 anos (o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos) e, para a pressão, Desconfiança de quem investe: Dólar chega a R$ 5,81 e juros futuros sobem com a votação do",
+   "título com 81 caracteres: Dirigente do banco central dos EUA prevê várias altas de jur",
+   "palavra que o site trocou: cada pressão piorou, ficou igual ou melhorou: China promete retaliar restrições dos EUA a chips, e bolsas ",
+   "título com 86 caracteres: Congresso instala comissão do novo Desenrola, com até R$ 15 "
+  ]
+ },
+ "pauta": {
+  "versao": 2,
+  "candidatos": [
+   {
+    "id": "E1",
+    "ordem": 1,
+    "evento": null,
+    "titulo": "Senado aprova MP com R$ 13,5 bi de crédito a empresas afetadas pelo tarifaço",
+    "estagio": "em_votacao",
+    "tamanho": 1,
+    "fator": "credito",
+    "origem": "politica",
+    "assunto": "Dívidas das famílias",
+    "lado": "alivia",
+    "ja_esperado": true,
+    "porque": "O Senado aprovou a MP que libera até R$ 13,5 bilhões em crédito para empresas atingidas pelo tarifaço dos EUA, e o texto segue para sanção. O dinheiro ajuda essas empresas a manter produção e emprego.",
+    "historia": "tarifas_eua",
+    "tema_novo": "",
+    "marco": true,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 5,
+    "jornais": [
+     "Estadão",
+     "Folha",
+     "Gazeta do Povo",
+     "InfoMoney",
+     "Poder360"
+    ],
+    "descartado": "mesmo fato do evento ev-20261111-06",
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "Senado aprova crédito de até R$ 13,5 bi para empresas afetadas por tarifaços dos EUA",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/senado-aprova-credito-de-ate-r-135-bi-para-empresas-afetadas-por-tarifacos-dos-eua.shtml",
+      "publicado_em": "2026-11-17T21:17-03:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Senado aprova MP do Brasil Soberano 3, para empresas afetadas por tarifaço",
+      "url": "https://www.infomoney.com.br/politica/senado-aprova-mp-do-brasil-soberano-3-para-empresas-afetadas-por-tarifaco/",
+      "publicado_em": "2026-11-17T20:57+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Senado amplia em R$ 13,5 bi o crédito para o Plano Brasil Soberano 3",
+      "url": "https://www.poder360.com.br/poder-congresso/senado-amplia-em-r-135-bi-o-credito-para-o-plano-brasil-soberano-3/",
+      "publicado_em": "2026-11-17T20:46+00:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Senado aprova R$ 13,5 bilhões para empresas afetadas pelo tarifaço dos EUA",
+      "url": "https://www.gazetadopovo.com.br/economia/senado-aprova-r-135-bilhoes-para-empresas-afetadas-pelo-tarifaco-dos-eua/",
+      "publicado_em": "2026-11-18T01:48+00:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Senado aprova crédito de até R$ 13,5 bi a empresas afetadas por tarifaço de Trump e guerras",
+      "url": "https://www.estadao.com.br/economia/senado-aprova-credito-de-ate-r-135-bi-a-empresas-afetadas-por-tarifaco-de-trump-e-guerras/",
+      "publicado_em": "2026-11-18T01:44+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E2",
+    "ordem": 2,
+    "evento": "ev-20261118-01",
+    "titulo": "Senado adia votação dos destaques do ajuste das contas, e Câmara vota em seguida",
+    "estagio": "em_votacao",
+    "tamanho": 2,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "Sem acordo entre os líderes, o Senado deixou os destaques para quarta-feira, e o governo já conta com um texto menor na Câmara. Se o ajuste passar enxuto, as contas melhoram menos do que o mercado quer.",
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 18,
+    "jornais": [
+     "Estadão",
+     "Folha",
+     "Gazeta do Povo",
+     "InfoMoney",
+     "Poder360",
+     "Valor",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Senado adia votação de destaques ao ajuste fiscal de Lula",
+      "url": "https://www.poder360.com.br/poder-congresso/senado-adia-votacao-de-destaques-ao-ajuste-fiscal-de-lula/",
+      "publicado_em": "2026-11-17T20:46+00:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Senado adia votação do ajuste fiscal em meio a risco de desidratar impacto de R$ 56 bi",
+      "url": "https://www.estadao.com.br/economia/senado-adia-votacao-do-ajuste-fiscal-em-meio-a-risco-de-desidratar-impacto-de-r-56-bi/",
+      "publicado_em": "2026-11-17T20:32+00:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Senado adia votação de destaques que podem mudar ajuste fiscal de Lula",
+      "url": "https://www.gazetadopovo.com.br/economia/senado-adia-votacao-de-destaques-que-podem-mudar-ajuste-fiscal-de-lula/",
+      "publicado_em": "2026-11-17T20:56+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Ajuste fiscal: governo teme perder nos destaques e já conta com desidratação do texto na Câmara",
+      "url": "https://valor.globo.com/politica/noticia/2026/11/17/ajuste-fiscal-governo-teme-perder-nos-destaques-e-ja-conta-com-desidratacao-do-texto-na-camara.ghtml",
+      "publicado_em": "2026-11-17T19:56+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Ao vivo: Senado vota destaques do projeto de ajuste fiscal",
+      "url": "https://www.poder360.com.br/poder-congresso/ao-vivo-senado-vota-destaques-do-projeto-de-ajuste-fiscal/",
+      "publicado_em": "2026-11-17T17:00+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Governo recusou proposta de R$ 75 bi no ajuste fiscal, diz Marinho",
+      "url": "https://www.poder360.com.br/poder-congresso/governo-recusou-proposta-de-r-75-bi-no-ajuste-fiscal-diz-marinho/",
+      "publicado_em": "2026-11-17T22:42+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E3",
+    "ordem": 3,
+    "evento": null,
+    "titulo": "Dólar chega a R$ 5,81 e juros futuros sobem com a votação do ajuste das contas",
+    "estagio": "dado",
+    "tamanho": 2,
+    "fator": "mercado",
+    "origem": "dados",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O dólar subiu ao maior valor em 19 meses por dúvida sobre as contas do novo mandato, e o juro que o governo paga para se financiar subiu junto. Dólar mais caro encarece importados e insumos.",
+    "historia": "desconfianca_eleicao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 11,
+    "jornais": [
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "Valor",
+     "g1"
+    ],
+    "descartado": "já medido pelos indicadores",
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Dólar atinge R$ 5,81 em dia de votação de ajuste fiscal",
+      "url": "https://www.poder360.com.br/poder-economia/dolar-atinge-r-581-em-dia-de-votacao-de-ajuste-fiscal/",
+      "publicado_em": "2026-11-17T14:47+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Dólar sobe e se aproxima de R$ 5,80 em dia de votação de ajustes fiscais no Senado",
+      "url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-17112026/",
+      "publicado_em": "2026-11-17T12:22+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Dólar abre em alta e chega a R$ 5,79 com mercado à espera de votação de projeto fiscal no Senado",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/dolar-abre-em-alta-e-chega-a-r-579-com-mercado-a-espera-de-votacao-de-projeto-fiscal-no-senado.shtml",
+      "publicado_em": "2026-11-17T09:47-03:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Temor com Lula 4 leva dólar a R$ 5,77 e gera disparada dos juros",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/17/temor-com-lula-4-leva-dolar-a-r-577-e-gera-disparada-dos-juros.ghtml",
+      "publicado_em": "2026-11-17T08:00+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Dólar ronda estabilidade, sem alívio após subir ao maior nível em 19 meses na véspera",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/17/dolar-ronda-estabilidade-sem-alivio-apos-subir-ao-maior-nivel-em-19-meses-na-vespera.ghtml",
+      "publicado_em": "2026-11-17T12:37+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E4",
+    "ordem": 4,
+    "evento": "ev-20261118-02",
+    "titulo": "Goldman Sachs rebaixa Brasil para neutro na Bolsa e cita incerteza fiscal",
+    "estagio": "previsao",
+    "tamanho": 1,
+    "fator": "mercado",
+    "origem": "dados",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "O Goldman Sachs reduziu a recomendação para ações brasileiras e aponta a incerteza com as contas como principal risco. Menos dinheiro de fora na Bolsa encarece o capital das empresas e pesa no investimento.",
+    "historia": "desconfianca_eleicao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "Estadão",
+     "InfoMoney"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Estadão",
+      "titulo": "Goldman Sachs rebaixa o Brasil para ‘neutro’ na Bolsa e coloca incerteza fiscal como principal risco",
+      "url": "https://www.estadao.com.br/economia/goldman-sachs-rebaixa-o-brasil-para-neutro-na-bolsa-e-coloca-incerteza-fiscal-como-principal-risco/",
+      "publicado_em": "2026-11-18T00:24+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E5",
+    "ordem": 5,
+    "evento": "ev-20261118-03",
+    "titulo": "Ministro da Fazenda diz que pacote é o primeiro passo e prega ajuste gradual",
+    "estagio": "anuncio",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "alivia",
+    "ja_esperado": true,
+    "porque": "O ministro da Fazenda disse ao Senado que o pacote é só o começo e que a meta de 2027 não é ilusória, mas não apresentou novas medidas nem prazos. O mercado segue esperando o plano completo.",
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": true,
+    "n_manchetes": 5,
+    "jornais": [
+     "Estadão",
+     "Folha",
+     "InfoMoney",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Ministro da Fazenda diz que pacote fiscal é “primeiro passo” e prega ajuste gradual",
+      "url": "https://www.infomoney.com.br/economia/ministro-da-fazenda-diz-que-pacote-fiscal-e-primeiro-passo-e-prega-ajuste-gradual/",
+      "publicado_em": "2026-11-17T18:57+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Ministro da Fazenda diz que pacote fiscal é só o 'primeiro passo' e prega ajuste gradual 'sem negacionismo' para baixar juros",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/17/ministro-da-fazenda-que-pacote-e-so-o-primeiro-passo-e-prega-ajuste-gradual-sem-negacionismo-para-baixar-juro.ghtml",
+      "publicado_em": "2026-11-17T17:10+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Ministro da Fazenda defende disciplina fiscal e diz que meta para 2027 não é ilusória",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/ministro-da-fazenda-defende-disciplina-fiscal-e-diz-que-meta-para-2027-nao-e-ilusoria.shtml",
+      "publicado_em": "2026-11-17T12:30-03:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Durigan diz que reduzir privilégios para equilibrar contas públicas é ‘único caminho’ para o País",
+      "url": "https://www.estadao.com.br/economia/durigan-reduzir-privilegios-caminho-equilibrar-contas/",
+      "publicado_em": "2026-11-17T16:36+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E6",
+    "ordem": 6,
+    "evento": "ev-20261118-04",
+    "titulo": "Presidente do Itaú vê dívida acima de 100% do PIB em quatro anos sem medidas",
+    "estagio": "previsao",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "dados",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "O presidente do Itaú Unibanco disse que, sem medidas nas contas, a dívida pública pode passar de 100% do PIB ao fim do mandato. Dívida maior mantém o juro alto e limita o crédito e o investimento.",
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "Estadão",
+     "Folha"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Estadão",
+      "titulo": "Dívida pode superar 100% do PIB se nada for feito nos próximos 4 anos, diz presidente do Itaú",
+      "url": "https://www.estadao.com.br/economia/itau-maluhy-divida-publica-pib-se-nada-for-feito-proximos-4-anos/",
+      "publicado_em": "2026-11-17T13:19+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Se nada for feito, risco é dívida estar acima de 100% do PIB em 4 anos, diz CEO do Itaú",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/financas/2026/11/se-nada-for-feito-risco-e-divida-estar-acima-de-100-do-pib-em-4-anos-diz-ceo-do-itau.shtml",
+      "publicado_em": "2026-11-17T10:47-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E7",
+    "ordem": 7,
+    "evento": "ev-20261118-05",
+    "titulo": "Dirigente do banco central dos EUA prevê várias altas de juros antes da primavera",
+    "estagio": "previsao",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "O presidente do banco central dos Estados Unidos em St. Louis disse que o juro americano deve subir várias vezes até a primavera de 2027, porque a inflação segue alta demais. Isso atrai dinheiro para lá e pressiona o dólar aqui.",
+    "historia": "fed_juros_eua",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "InfoMoney",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Valor",
+      "titulo": "‘Vários aumentos’ nas taxas de juros provavelmente serão necessários antes de março, diz Musalem, do Fed",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/17/varios-aumentos-nas-taxas-de-juros-provavelmente-serao-necessarios-antes-de-marco-diz-musalem-do-fed.ghtml",
+      "publicado_em": "2026-11-17T14:02+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Membro do Fed prevê várias altas dos juros antes da primavera para conter inflação",
+      "url": "https://www.infomoney.com.br/mercados/membro-do-fed-preve-varias-altas-dos-juros-antes-da-primavera-para-conter-inflacao/",
+      "publicado_em": "2026-11-17T14:33+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E8",
+    "ordem": 8,
+    "evento": "ev-20261118-06",
+    "titulo": "China promete retaliar restrições dos EUA a chips, e bolsas chinesas caem",
+    "estagio": "anuncio",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Os EUA apertaram o acesso da China a chips de inteligência artificial, e a China ameaça responder. Nova disputa entre as duas maiores economias esfria o comércio mundial e a demanda por produtos brasileiros.",
+    "historia": "queda_das_acoes_de_tecnologia",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 7,
+    "jornais": [
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "g1",
+      "titulo": "China ameaça retaliar contra EUA por restrições a chips de IA que também afetam o Brasil",
+      "url": "https://g1.globo.com/tecnologia/noticia/2026/11/17/china-ameaca-retaliar-contra-eua-por-restricoes-a-chips-de-ia-que-tambem-afetam-o-brasil.ghtml",
+      "publicado_em": "2026-11-17T16:05+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "China diz que adotará contramedidas caso EUA imponham novas restrições a chips",
+      "url": "https://www.infomoney.com.br/mercados/china-diz-que-adotara-contramedidas-caso-eua-imponham-novas-restricoes-a-chips/",
+      "publicado_em": "2026-11-17T15:52+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "China diz que adotará contramedidas após restrição dos EUA a chips",
+      "url": "https://www.poder360.com.br/poder-internacional/china-diz-que-adotara-contramedidas-apos-restricao-dos-eua-a-chips/",
+      "publicado_em": "2026-11-17T17:14+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E9",
+    "ordem": 9,
+    "evento": "ev-20261118-07",
+    "titulo": "Bolsas de Nova York fecham em queda com ações de tecnologia sob pressão",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "mercado",
+    "origem": "mundo",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Investidores cortaram ações de tecnologia no ritmo mais forte desde 2006, e as bolsas americanas caíram de novo. Se a queda chegar ao Brasil, o dólar sobe e a Bolsa daqui perde fôlego.",
+    "historia": "queda_das_acoes_de_tecnologia",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 5,
+    "jornais": [
+     "Folha",
+     "InfoMoney",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Bolsas de NY fecham em queda com bancos pressionados e techs em foco com Nvidia",
+      "url": "https://www.infomoney.com.br/mercados/nasdaq-pregao-volatil-com-resultados-da-nvidia-em-foco/",
+      "publicado_em": "2026-11-17T21:53+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Bolsas de NY caem com cautela antes do resultado da Nvidia",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/17/bolsas-de-ny-caem-com-cautela-antes-do-resultado-da-nvidia.ghtml",
+      "publicado_em": "2026-11-17T21:14+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Investidores reduzem alocações em tecnologia no ritmo mais forte desde 2006",
+      "url": "https://www.infomoney.com.br/mercados/investidores-reduzem-alocacoes-em-tecnologia-no-ritmo-mais-forte-desde-2006/",
+      "publicado_em": "2026-11-17T13:01+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E10",
+    "ordem": 10,
+    "evento": "ev-20261118-08",
+    "titulo": "União Europeia adia decisão e mantém veto a frango e mel do Brasil",
+    "estagio": "decidido",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Os países da União Europeia adiaram a votação que liberaria de volta o frango e o mel brasileiros, e o veto continua. Os exportadores seguem sem esse mercado.",
+    "historia": "nova",
+    "tema_novo": "exportacao-de-aves-uniao-europeia",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 3,
+    "jornais": [
+     "Folha",
+     "Poder360",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "União Europeia adia votação e mantém veto a frango e mel importados do Brasil",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/agro/2026/11/uniao-europeia-adia-votacao-e-mantem-veto-a-frango-e-mel-importados-do-brasil.shtml",
+      "publicado_em": "2026-11-17T12:28-03:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "UE adia reunião que poderia liberar exportações de frango e mel do Brasil, diz associação",
+      "url": "https://g1.globo.com/economia/agronegocios/noticia/2026/11/17/ue-adia-reuniao-que-poderia-liberar-exportacoes-de-frango-e-mel-do-brasil.ghtml",
+      "publicado_em": "2026-11-17T13:51+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E11",
+    "ordem": 11,
+    "evento": "ev-20261118-09",
+    "titulo": "Petróleo sobe com ataques a petroleiros e fogo em navio no Estreito de Ormuz",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Drones iranianos atacaram uma base dos EUA no Barein e um superpetroleiro pegou fogo em Ormuz, e o petróleo subiu. Combustível mais caro aqui pressiona a inflação e o custo das empresas.",
+    "historia": "guerra_petroleo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "InfoMoney"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Petróleo sobe em meio a ataques a petroleiros e previsão de queda nos estoques",
+      "url": "https://www.infomoney.com.br/mercados/petroleo-sobe-em-meio-a-ataques-a-petroleiros-e-previsao-de-queda-nos-estoques/",
+      "publicado_em": "2026-11-17T20:43+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Navio-tanque pega fogo no Estreito de Ormuz; tripulação está desaparecida",
+      "url": "https://www.infomoney.com.br/mundo/navio-tanque-pega-fogo-no-estreito-de-ormuz-tripulacao-esta-desaparecida/",
+      "publicado_em": "2026-11-17T12:48+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E12",
+    "ordem": 12,
+    "evento": "ev-20261118-10",
+    "titulo": "Renegociação de dívidas rurais chega a R$ 28 bi, abaixo do esperado",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "credito",
+    "origem": "dados",
+    "assunto": "Dívidas das famílias",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "A renegociação alcançou R$ 28 bilhões em 70 mil operações, menos que o esperado. Produtores seguem com dívida atrasada, o que afeta bancos e o crédito ao campo.",
+    "historia": "credito_inadimplencia",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "Estadão"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Estadão",
+      "titulo": "Renegociação de dívidas rurais alcança R$ 28 bi em R$ 70 mil operações, aquém do esperado",
+      "url": "https://www.estadao.com.br/economia/agronegocios/renegociacao-de-dividas-rurais-alcanca-r-28-bi-em-r-70-mil-operacoes-aquem-do-esperado/",
+      "publicado_em": "2026-11-17T22:37+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E13",
+    "ordem": 13,
+    "evento": "ev-20261118-11",
+    "titulo": "Congresso instala comissão do novo Desenrola, com até R$ 15 bi para renegociar dívidas",
+    "estagio": "em_votacao",
+    "tamanho": 1,
+    "fator": "credito",
+    "origem": "politica",
+    "assunto": "Dívidas das famílias",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "A comissão do Congresso quer votar o programa ainda neste ano, com relatório previsto para o início de dezembro. Se passar, famílias com dívida atrasada voltam a ter acesso a crédito e a consumir.",
+    "historia": "credito_inadimplencia",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "InfoMoney"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Congresso instala comissão do novo Desenrola e tenta votar medida ainda neste ano",
+      "url": "https://www.infomoney.com.br/politica/congresso-instala-comissao-do-novo-desenrola-e-tenta-votar-medida-ainda-neste-ano/",
+      "publicado_em": "2026-11-17T19:16+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E14",
+    "ordem": 14,
+    "evento": "ev-20261118-12",
+    "titulo": "Banco Central anuncia leilões de até US$ 1 bi com compromisso de recompra",
+    "estagio": "decidido",
+    "tamanho": 1,
+    "fator": "mercado",
+    "origem": "banco_central",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "O Banco Central vai vender até US$ 1 bilhão em dois leilões na quarta-feira, com compromisso de recompra. Mais dólar no mercado alivia a pressão sobre a moeda num momento de alta.",
+    "historia": "desconfianca_eleicao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "Folha"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "BC anuncia leilões de linha no total de US$1 bilhão para quarta-feira (18)",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://aovivo.folha.uol.com.br/mercado/2026/10/25/6568-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post468058",
+      "publicado_em": "2026-11-17T22:20-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E15",
+    "ordem": 15,
+    "evento": "ev-20261118-13",
+    "titulo": "Câmara analisa projeto que regulamenta as big techs",
+    "estagio": "em_votacao",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "Os deputados votam o projeto com regras para mercados digitais, e a Fazenda estima ganho de até R$ 50,6 bilhões por ano. Mais receita ajuda as contas do governo.",
+    "historia": "nova",
+    "tema_novo": "regulacao-das-big-techs",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "Poder360"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Ao vivo: Câmara analisa projeto que regulamenta big techs",
+      "url": "https://www.poder360.com.br/poder-congresso/ao-vivo-camara-analisa-projeto-que-regulamenta-big-techs/",
+      "publicado_em": "2026-11-17T17:00+00:00"
+     }
+    ]
+   }
+  ],
+  "datas": [],
+  "pressoes_mudaram": [],
+  "estado": "subindo",
+  "estado_anterior": "subindo",
+  "direcao_mudou": false,
+  "historias": [
+   {
+    "id": "contas_governo",
+    "titulo": "Contas do governo: a meta, o ajuste prometido e a dívida",
+    "pressao": "contas",
+    "pressoes": [
+     "contas",
+     "divida_reais",
+     "mercado",
+     "juro"
+    ],
+    "nova": false,
+    "pontos": 2.15,
+    "candidatos": [
+     "E2",
+     "E5",
+     "E6"
+    ],
+    "jornais": 7,
+    "fato_grande": false
+   },
+   {
+    "id": "credito_inadimplencia",
+    "titulo": "Crédito caro e inadimplência recorde",
+    "pressao": "parcelas",
+    "pressoes": [
+     "parcelas",
+     "juro",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 1.7,
+    "candidatos": [
+     "E12",
+     "E13"
+    ],
+    "jornais": 2,
+    "fato_grande": false
+   },
+   {
+    "id": "queda_das_acoes_de_tecnologia",
+    "titulo": "A queda das ações de tecnologia lá fora",
+    "pressao": "mercado",
+    "pressoes": [
+     "mercado",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 1.5,
+    "candidatos": [
+     "E9",
+     "E8"
+    ],
+    "jornais": 5,
+    "fato_grande": false
+   },
+   {
+    "id": "desconfianca_eleicao",
+    "titulo": "Desconfiança de quem investe depois da eleição",
+    "pressao": "mercado",
+    "pressoes": [
+     "mercado",
+     "divida_reais",
+     "juro",
+     "inflacao"
+    ],
+    "nova": false,
+    "pontos": 1.5,
+    "candidatos": [
+     "E14",
+     "E4"
+    ],
+    "jornais": 3,
+    "fato_grande": false
+   },
+   {
+    "id": "guerra_petroleo",
+    "titulo": "A guerra no Oriente Médio e o petróleo",
+    "pressao": "inflacao",
+    "pressoes": [
+     "inflacao",
+     "juro",
+     "contas",
+     "mercado"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E11"
+    ],
+    "jornais": 1,
+    "fato_grande": false
+   },
+   {
+    "id": "fed_juros_eua",
+    "titulo": "O Fed e os juros dos EUA",
+    "pressao": "mercado",
+    "pressoes": [
+     "juro",
+     "mercado"
+    ],
+    "nova": false,
+    "pontos": 0.5,
+    "candidatos": [
+     "E7"
+    ],
+    "jornais": 2,
+    "fato_grande": false
+   }
+  ],
+  "temas_esperando": [
+   {
+    "tema": "exportacao-de-aves-uniao-europeia",
+    "titulo": "União Europeia adia decisão e mantém veto a frango e mel do Brasil",
+    "candidatos": [
+     "E10"
+    ],
+    "dias": 1
+   },
+   {
+    "tema": "regulacao-das-big-techs",
+    "titulo": "Câmara analisa projeto que regulamenta as big techs",
+    "candidatos": [
+     "E15"
+    ],
+    "dias": 2
+   }
+  ],
+  "dados_novos": [],
+  "novidades": [],
+  "escolha": {
+   "historia": "contas_governo",
+   "titulo": "Contas do governo: a meta, o ajuste prometido e a dívida",
+   "pontos": 2.15,
+   "motivo": "a história que mais andou",
+   "calmo": false,
+   "nova": false,
+   "pulada": null,
+   "segunda": "credito_inadimplencia",
+   "novidade": []
+  },
+  "final": "E2",
+  "mesma_historia": [
+   "E5",
+   "E6"
+  ],
+  "segunda_historia": [
+   "E12",
+   "E13"
+  ]
+ },
+ "post": {
+  "ok": true,
+  "tipo": "dia",
+  "formato": "historia",
+  "titulo": "Senado adia conclusão do ajuste, e alívio para as contas segue incerto",
+  "paragrafos": [
+   "O Senado adiou ontem a conclusão da votação do ajuste, mantendo incerto o alívio prometido para as contas. A votação deve voltar hoje, com uma disputa sobre adiar repasses a estados e municípios. Governistas admitem manter esses pagamentos no prazo, reduzindo o alívio federal, e temem novas perdas na Câmara. Durigan chamou o pacote de “primeiro passo”, mas não anunciou novas medidas naquela audiência. Aprovar o texto também não garante toda a melhora estimada: o bloqueio de gastos é autorizado, não obrigatório.",
+   "No crédito, a comissão do novo Desenrola foi instalada ontem, com parecer prometido por Cid Gomes para o início de dezembro. A medida provisória já autoriza a União a comprar até R$ 15 bilhões em dívidas de pessoas físicas, mas condiciona isso à disponibilidade orçamentária e financeira. Esse teto não é dinheiro já aplicado nem redução comprovada do peso das dívidas das famílias.",
+   "O Goldman Sachs reduziu sua recomendação para ações brasileiras a neutra e apontou a incerteza fiscal como principal obstáculo de curto prazo para o real — uma avaliação, não uma medida de saída de dinheiro. Segundo a Folha, o Banco Central fará hoje leilões de até US$ 1 bilhão com compromisso de recompra: uma oferta temporária de dólares, que não resolve a dúvida sobre as contas públicas.",
+   "Lá fora, gestores ouvidos pelo BofA reduziram o peso da tecnologia nas carteiras no ritmo mensal mais forte desde junho de 2006. O temor principal é de uma bolha de inteligência artificial; só 3% preveem recessão. A pesquisa mostra cautela com essas ações, mas não mede saída de dinheiro do Brasil nem efeito sobre o dólar daqui."
+  ],
+  "secoes": [
+   {
+    "titulo": null,
+    "paragrafos": [
+     "O Senado adiou ontem a conclusão da votação do ajuste, mantendo incerto o alívio prometido para as contas. A votação deve voltar hoje, com uma disputa sobre adiar repasses a estados e municípios. Governistas admitem manter esses pagamentos no prazo, reduzindo o alívio federal, e temem novas perdas na Câmara. Durigan chamou o pacote de “primeiro passo”, mas não anunciou novas medidas naquela audiência. Aprovar o texto também não garante toda a melhora estimada: o bloqueio de gastos é autorizado, não obrigatório.",
+     "No crédito, a comissão do novo Desenrola foi instalada ontem, com parecer prometido por Cid Gomes para o início de dezembro. A medida provisória já autoriza a União a comprar até R$ 15 bilhões em dívidas de pessoas físicas, mas condiciona isso à disponibilidade orçamentária e financeira. Esse teto não é dinheiro já aplicado nem redução comprovada do peso das dívidas das famílias.",
+     "O Goldman Sachs reduziu sua recomendação para ações brasileiras a neutra e apontou a incerteza fiscal como principal obstáculo de curto prazo para o real — uma avaliação, não uma medida de saída de dinheiro. Segundo a Folha, o Banco Central fará hoje leilões de até US$ 1 bilhão com compromisso de recompra: uma oferta temporária de dólares, que não resolve a dúvida sobre as contas públicas.",
+     "Lá fora, gestores ouvidos pelo BofA reduziram o peso da tecnologia nas carteiras no ritmo mensal mais forte desde junho de 2006. O temor principal é de uma bolha de inteligência artificial; só 3% preveem recessão. A pesquisa mostra cautela com essas ações, mas não mede saída de dinheiro do Brasil nem efeito sobre o dólar daqui."
+    ]
+   }
+  ],
+  "pesquisa": {
+   "versao": 5,
+   "ok": true,
+   "em": "2026-11-18T04:02:12-03:00",
+   "meta": [
+    {
+     "etapa": "pesquisa",
+     "motor": "claude",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "192778131923272a24d2782f8df61e450e0bcbde6aaa1ed39d1e8e39300bbfff",
+     "system_sha256": "7d338b0f7faababd8db8f53189e7a32546b848b561061d4e294f3b79f5f9098d",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 1.0211161,
+     "turnos": 18,
+     "duracao_s": 140,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "0306dac4-565a-42dc-a763-ed3fad133ef7"
+    },
+    {
+     "etapa": "segunda_busca",
+     "motor": "claude",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "349b023db1ed6675ba0408e1748764508d4dd8ada0b23e1b8fa0c65e08f48c9d",
+     "system_sha256": "edc8fb889d3204a6945878dc908b6b0c58281bc0d34401d5e7f337f88940f5f6",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.7476127,
+     "turnos": 15,
+     "duracao_s": 112,
+     "modelos": [
+      "claude-opus-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "d3e0c7cf-d9f2-48e7-aef2-3f25539d8012"
+    },
+    {
+     "etapa": "apanhado",
+     "motor": "claude",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "a9670ffec77c9161e7be9eabb7742e510c1473202eb247e1f578ec19a8730089",
+     "system_sha256": "63503df868de074bda4a59d070d732e2a28c75bce4b5849cec298d2a72a698ea",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.3743587,
+     "turnos": 14,
+     "duracao_s": 90,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "e11bf6c7-a6d9-41d3-8e96-9a8308c80ee7"
+    }
+   ],
+   "offline": false,
+   "historia": "contas_governo",
+   "segunda": "credito_inadimplencia",
+   "modo": "comum",
+   "o_que_mudou": [
+    {
+     "item": 1,
+     "id": "contas_governo",
+     "titulo": "Contas do governo: a meta, o ajuste prometido e a dívida",
+     "pontos": 2.15,
+     "principal": true,
+     "segunda": false
+    },
+    {
+     "item": 2,
+     "id": "credito_inadimplencia",
+     "titulo": "Crédito caro e inadimplência recorde",
+     "pontos": 1.7,
+     "principal": false,
+     "segunda": true
+    },
+    {
+     "item": 3,
+     "id": "queda_das_acoes_de_tecnologia",
+     "titulo": "A queda das ações de tecnologia lá fora",
+     "pontos": 1.5,
+     "principal": false,
+     "segunda": false
+    },
+    {
+     "item": 4,
+     "id": "desconfianca_eleicao",
+     "titulo": "Desconfiança de quem investe depois da eleição",
+     "pontos": 1.5,
+     "principal": false,
+     "segunda": false
+    }
+   ],
+   "apanhado": {
+    "ok": true,
+    "historias": [
+     {
+      "item": 3,
+      "o_que_mudou": "O que a notícia mostra é uma pesquisa, não o preço das ações. O BofA ouviu 169 gestores de fundos: o peso de tecnologia nas carteiras caiu de 37% para 12%, a maior queda em um mês desde junho de 2006. A mesma pesquisa diz que o Nasdaq perdeu mais de 5% em outubro. Os gestores temem um corte nos gastos com data centers de IA depois da eleição americana de meio de mandato. Estágio: dado de pesquisa. Na China, o Ministério do Comércio chinês ameaçou contramedidas à nova regra dos EUA para exportar chips de IA, que inclui o Brasil entre os países sujeitos a autorização. Estágio: anúncio, sem ato formal.",
+      "pressao": "Desconfiança de quem investe; Ritmo da economia",
+      "efeito": "Pouco, por enquanto. A pesquisa do BofA diz que os gestores não temem recessão: só 3% a preveem. O medo é de uma bolha de IA, que mexe com o preço das ações americanas e só chega ao Brasil se o dólar subir ou o dinheiro de fora sair daqui. A medida do site é o dólar (R$ 5,79, 11,2% mais caro que em meados de agosto) e o juro de 10 anos (7,9% ao ano, 0,5 ponto acima do normal dos últimos 3 anos). Esses números já subiram antes desta notícia, e nada nela os move. A retaliação chinesa é só ameaça; sem ato, não há conta a fazer sobre o comércio brasileiro.",
+      "quem_decide_e_quando": "Não há data marcada. A regra dos EUA vale pela decisão do governo americano. O g1 diz que Trump tem encontro previsto com Xi Jinping na viagem à Ásia, e a China diz que só retalia se Washington insistir na medida. A Nvidia divulga resultado, segundo as manchetes do Valor e do InfoMoney, mas o dia não aparece nas páginas que abri.",
+      "o_que_mudaria": "Pesaria mais se a China transformar a ameaça em ato (tarifa, limite à exportação), ou se o dólar e o juro de 10 anos subirem junto com a queda das techs, o que indicaria dinheiro saindo do Brasil. Pesaria menos se o encontro Trump–Xi reduzir a tensão ou se o dólar ficar parado. O sinal de que a queda virou questão de crescimento seria um corte de gastos anunciado por uma grande empresa de IA, o que 52% dos gestores esperam em seis meses.",
+      "vezes": "",
+      "caderno": [
+       "c601",
+       "c602",
+       "c603",
+       "c604",
+       "c605",
+       "c606",
+       "c611"
+      ]
+     },
+     {
+      "item": 4,
+      "o_que_mudou": "O Goldman Sachs rebaixou as ações brasileiras para neutro (marketweight) em relatório de 17/11. Ele cita a desaceleração da economia, o espaço limitado para cortes de juros em 2027 e o risco de revisão para baixo dos lucros. Projeta o PIB de 1,6% neste ano e 0,6% em 2027, e chama a incerteza fiscal de principal obstáculo no curto prazo para o real. Estágio: previsão de banco. Sobre o BC: a Folha noticia leilões de linha de US$ 1 bilhão para quarta-feira (18), com compromisso de recompra. Não consegui abrir a página da Folha nem achar o comunicado do BC, então o fato fica como relato do jornal, sem documento do dono.",
+      "pressao": "Desconfiança de quem investe; Dívida em reais; Juro",
+      "efeito": "Desconfiança: o rebaixamento é opinião de um banco e não mexe sozinho no dólar nem no juro de 10 anos (R$ 5,79; 7,9% ao ano). Ele confirma o motivo que o site já mostra: dúvida sobre as contas. Juro: o Goldman acha exagerada a alta de 150 pontos-base (1,5 ponto) embutida nos juros curtos e vê espaço para queda, mas só com sinal fiscal. Leilão: US$ 1 bilhão é 0,27% dos US$ 365,0 bilhões de reservas, alívio pequeno e temporário ao câmbio. Dívida em reais: nada na notícia mexe nela.",
+      "quem_decide_e_quando": "O Estadão diz que o governo tenta aprovar no Congresso o ajuste fiscal e que o Senado adiou a votação sem acordo; é o sinal que o Goldman diz esperar. A data da nova votação não aparece nas páginas que abri. O BC faz os leilões na quarta-feira, 18, segundo a Folha.",
+      "o_que_mudaria": "Pesaria menos se o Congresso aprovar o ajuste sem esvaziá-lo: o Goldman diz que precisaria de um impulso fiscal para ter convicção nos juros. Pesaria mais se o ajuste for desidratado e o juro de 10 anos e o dólar continuarem subindo. Nos leilões, vale ver se o BC repete a oferta: leilões seguidos indicariam pressão maior no câmbio.",
+      "vezes": "",
+      "caderno": [
+       "c607",
+       "c608",
+       "c609",
+       "c610",
+       "c611",
+       "c612",
+       "c613",
+       "c614"
+      ]
+     }
+    ]
+   },
+   "pesquisa": {
+    "perguntas": [
+     {
+      "pergunta": "1. Quem decidiu, com que poder e quem pode desfazer?",
+      "resposta": "O PLP 299/2026 é do senador Jaques Wagner (PT/BA), não um projeto formal do governo; o relator é Eduardo Braga (MDB/AM). Aprovado no Senado por 45 a 31 em 12/11 (substitutivo), ainda não é lei: em 17/11 o Senado adiou os 4 destaques para 18/11, às 16h, e cada um precisa de 41 votos para ser rejeitado. Depois vai à Câmara, que pode mudar o texto; é lei complementar (muda a LC 200/2023) e depende de sanção. O título do passo diz que a Câmara vota 'em seguida', mas pelo andamento o projeto ainda está no Senado.",
+      "caderno": [
+       "c1",
+       "c6",
+       "c7"
+      ]
+     },
+     {
+      "pergunta": "2. Qual objetivo o decisor escreveu, e em que documento?",
+      "resposta": "A ementa diz que o projeto dá ao Executivo 'novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País'. O parecer de Braga liga isso ao centro da meta de 2027 (contingenciamento 'com foco no centro da meta'). O objetivo está escrito, mas é genérico, sem número de dívida ou juro. Durigan, na CAE em 17/11, disse que o resultado fiscal é 'uma das principais alavancas' para baixar juros e dívida.",
+      "caderno": [
+       "c1",
+       "c2",
+       "c9",
+       "c18"
+      ]
+     },
+     {
+      "pergunta": "3. Qual é o tamanho?",
+      "resposta": "Pelo parecer, com números do Executivo, o projeto melhora o resultado primário de 2027 em R$ 45,1 bi a R$ 56,1 bi (não 'até R$ 60 bi') e a margem da regra de ouro em R$ 100 bi, sem economia de despesa. As quatro parcelas somam exatamente isso: contingenciamento R$ 12,8–18,3 bi; menos compensação cruzada de créditos R$ 12,8–18,3 bi; corte de 10% do gasto tributário R$ 15 bi; teto do benefício ao DGT de 2026 corrigido pelo IPCA R$ 4,5 bi. O teto de R$ 56,1 bi é 76,6% do centro da meta (R$ 73,2 bi). Na conta da meta, a regra desconta R$ 64,7 bi, e o resultado necessário cai a R$ 8,5 bi (Poder360). Mercado vê R$ 27,9–56,1 bi.",
+      "caderno": [
+       "c2",
+       "c3",
+       "c4",
+       "c5",
+       "c15",
+       "c13"
+      ]
+     },
+     {
+      "pergunta": "4. Em que pressão do site e em que porta da leitora ela mexe?",
+      "resposta": "Contas do governo (dívida a 83,0% do PIB em setembro) e, pelo juro longo (7,9%) e pelo dólar (R$ 5,79), a desconfiança de quem investe. Para a leitora, o canal é o juro e o dólar que chegam à parcela e aos preços; Durigan e Maluhy ligam o ajuste à queda do juro. Parte do custo cai sobre empresas (CNI, CNA e Fiesp criticam a restrição à compensação) e sobre estados e municípios (CNM calcula R$ 32 bi até 2030), partes interessadas.",
+      "caderno": [
+       "c8",
+       "c9",
+       "c10",
+       "c16",
+       "c12"
+      ]
+     },
+     {
+      "pergunta": "5. Por que caminho a decisão chega ao objetivo, e o que a evidência da biblioteca diz?",
+      "resposta": "Caminho: a regra limita o gasto e dá instrumentos de bloqueio; se quem empresta acredita, cobra juro menor. Evidência: ter regra por si só melhora pouco as contas (forte; limite: regra bem desenhada pode ajudar, média). Regra rígida faz o ajuste cair sobre o investimento (média, ligação e não causa). Aqui o art. 6º-C autoriza, não obriga, o bloqueio até o centro, e o destaque de Marinho quer torná-lo obrigatório: o texto é mais flexível que rígido.",
+      "caderno": [
+       "c14",
+       "c21",
+       "c17",
+       "c7"
+      ]
+     },
+     {
+      "pergunta": "6. O que aconteceu das outras vezes, desde 2002?",
+      "resposta": "Não rodei `episodios` nesta rodada. Pela memória longa do site: em 2019 (Previdência) o Congresso reduziu a economia de cerca de R$ 1,2 tri para R$ 800 bi; em 2016 (teto) e 2021 (PEC dos Precatórios) a regra mudou. Poucos casos, sem chance numérica. Repetir o passado agora seria o Congresso aprovar menos que os R$ 56,1 bi.",
+      "caderno": [
+       "c19"
+      ]
+     },
+     {
+      "pergunta": "7. Dá certo se, dá errado se",
+      "resposta": "Dá certo se: o texto passar na Câmara sem perder os trechos mais atacados (compensação cruzada R$ 12,8–18,3 bi; repasse a estados R$ 12 bi) e o juro de 10 anos cair depois. Dá errado se: os destaques ou a Câmara tirarem esses trechos (o governo já conta com desidratação, diz o Valor) ou a meta só fechar com exceção, como o desconto do diesel de R$ 10,5 bi em 2026. Ainda não dá para dizer o lado.",
+      "caderno": [
+       "c8",
+       "c6",
+       "c7",
+       "c12"
+      ]
+     },
+     {
+      "pergunta": "8. Quem ganha, quem paga e quando; melhor objeção; espelho",
+      "resposta": "Paga em 2027: empresas com crédito cruzado, quem usa benefícios tributários (corte de 10%) e estados e municípios (Comsefaz: R$ 3 bi em 2027, R$ 12 bi até 2030). Ganha o governo, com espaço para Bolsa Família e Desenrola (Poder360). Objeção da oposição: Marinho propõe limite de 0,6% real e diz que renderia R$ 75 bi (o governo recusou). Objeção do setor produtivo: sair da restrição às compensações. Espelho: 2019, Previdência, desidratada pelo Congresso.",
+      "caderno": [
+       "c6",
+       "c7",
+       "c16",
+       "c8",
+       "c19"
+      ]
+     },
+     {
+      "pergunta": "O que mudou ontem na história, e quanto pesa contra a meta?",
+      "resposta": "Nada foi aprovado: o Senado adiou os 4 destaques para 18/11 e o governo já admite ceder. Compensação e contingenciamento (R$ 12,8 bi cada no piso) são 56,8% do piso do ajuste (R$ 45,1 bi). O teto de R$ 56,1 bi é 76,6% do centro de 2027 (R$ 73,2 bi).",
+      "caderno": [
+       "c3",
+       "c4",
+       "c5",
+       "c6",
+       "c8",
+       "c20"
+      ]
+     },
+     {
+      "pergunta": "A fala do ministro e a do CEO do Itaú trazem fato novo?",
+      "resposta": "Durigan disse na CAE que o pacote é 'primeiro passo' e repetiu a trajetória da PLDO, sem medida nova. Maluhy (Itaú) alertou que a dívida, a 83%, pode passar de 100% em 4 anos 'se nada for feito': previsão de uma casa grande, não fato, sem cenário publicado.",
+      "caderno": [
+       "c9",
+       "c10"
+      ]
+     },
+     {
+      "pergunta": "Segunda história: o que o Desenrola e a renegociação rural mudam?",
+      "resposta": "A MP do novo Desenrola (editada em setembro) autoriza a União a comprar carteiras de dívidas atrasadas de pessoas físicas até R$ 15 bi; a comissão mista foi instalada em 17/11 e quer votar o relatório (relator Cid Gomes) até 3/12. Não achei o custo fiscal. A renegociação rural (R$ 28 bi em 70 mil operações) só li pela manchete.",
+      "caderno": [
+       "c11"
+      ]
+     },
+     {
+      "pergunta": "O que a primeira busca não tinha achado: Trocar c6 (adiamento dos destaques) pela página do Senado",
+      "resposta": "Agência Senado, 17/11/2026: Alcolumbre remarcou os destaques do PLP 299/2026 para quarta (18) a pedido do relator Braga, que quer acordo sobre os quatro pontos pendentes. Dois deles: impedir o adiamento dos repasses da Lei Kandir e tirar o teto de R$ 3 bi ao ano da compensação previdenciária. O Executivo estima melhora de até R$ 56 bi no primário de 2027. A notícia não traz o horário das 16h nem os 41 votos.",
+      "caderno": [
+       "c6"
+      ]
+     },
+     {
+      "pergunta": "O que a primeira busca não tinha achado: Trocar c7 (destaque de Marinho, limite de 0,6% e R$ 75 bi) pelo documento do Senado",
+      "resposta": "A Emenda 40 de plenário (Marinho) limita a 0,6% ao ano o crescimento real da despesa a partir de 2027, nos anos em que houver contenção. Ela também obriga, e não só autoriza, o Executivo a conter despesas até o centro da meta. O documento não traz os R$ 75 bi: esse número é declaração de Marinho, contada pelos jornais.",
+      "caderno": [
+       "c7"
+      ]
+     },
+     {
+      "pergunta": "O que a primeira busca não tinha achado: Trocar c11 (Desenrola, R$ 15 bi) pela página do Congresso",
+      "resposta": "Agência Senado, 17/11/2026: a MP de 25/9 autoriza a União a comprar dívidas de pessoas físicas até o limite de R$ 15 bi, condicionado à disponibilidade orçamentária e financeira. O relator Cid Gomes promete o parecer para o início de dezembro, e a MP vale até 4/3/2027. Não achei o custo fiscal estimado.",
+      "caderno": [
+       "c11"
+      ]
+     }
+    ],
+    "o_que_falta": "Continua sem resposta depois de duas buscas: Trocar c16 (CNM: perda de mais de R$ 32 bi até 2030) pela página da CNM; tamanho das medidas que tiram dinheiro de estados e municípios (procurado em: WebSearch 'CNM compensação previdenciária Lei Kandir PLP 299 R$ 32 bilhões municípios'; WebSearch 'cnm.org.br PLP 299/2026 perda municípios 2030 compensação previdenciária'; leitor no parecer de Braga --procura 'Kandir' 'compensação previdenciária' 'R$ 3'; leitor na Nota do Comsefaz); Trocar c8 (Valor: base teme não ter 41 votos e conta com desidratação na Câmara) e c10 (Itaú, dívida acima de 100%) (procurado em: Agência Senado (últimas, --procura 'ajuste'); página da matéria 176328; documentos de Itaú na lista do bloco <documentos> (itau.com.br barra robô))",
+    "pagina_que_falta": "",
+    "segunda_busca": {
+     "achou": 3,
+     "nao_achou": 2,
+     "muda_o_argumento": "A Emenda 40 de Marinho não traz valor em reais: os R$ 75 bi são só uma fala dele, contada pelos jornais. O documento também obriga, e não só autoriza, o bloqueio até o centro da meta. A Agência Senado não confirma as 16h nem os 41 votos da c6. O teto de R$ 3 bi da compensação previdenciária e o adiamento da Lei Kandir, que são os destaques em disputa, não têm valor no parecer."
+    }
+   },
+   "pagina_que_falta": "",
+   "escrita": {
+    "chamadas": [
+     {
+      "etapa": "redator",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6-astra",
+      "raciocinio": "high",
+      "modelos": [
+       "gpt-6-astra"
+      ],
+      "prompt_sha256": "2c00da6bb12405a73ad269310017144a6e2602107b63db71a5b09fb2e533f44b",
+      "system_sha256": "54024dbb2b3b4ae95e9ac280108ece2be18542460e1e75e1327b255dd63a7b89",
+      "returncode": 0,
+      "duracao_s": 90,
+      "tokens_entrada": 47256,
+      "tokens_saida": 2809,
+      "tokens_raciocinio": 1433
+     },
+     {
+      "etapa": "leitor",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6-luna",
+      "raciocinio": "medium",
+      "modelos": [
+       "gpt-6-luna"
+      ],
+      "prompt_sha256": "fa8fe6a1dfdb3b8513fdbaf01ffe65fc0dea1382c930a95b2955559f126d9b0d",
+      "system_sha256": "7e2e85c97ff1316fe0679433702bd03f479ad18937418dae52590161394b6695",
+      "returncode": 0,
+      "duracao_s": 23,
+      "tokens_entrada": 7046,
+      "tokens_saida": 1176,
+      "tokens_raciocinio": 235
+     },
+     {
+      "etapa": "aprovador",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6.1-sol",
+      "raciocinio": "high",
+      "modelos": [
+       "gpt-6.1-sol"
+      ],
+      "prompt_sha256": "f08f349b7a66b7f42d468aa2031f1ef45b6b92745dc5d3e93b8f14e353006f8d",
+      "system_sha256": "9e69dfc129f721342956193b64354d59b3d0c64a31098f472f287bd2899cad0d",
+      "returncode": 0,
+      "duracao_s": 85,
+      "tokens_entrada": 48927,
+      "tokens_saida": 2063,
+      "tokens_raciocinio": 1712
+     },
+     {
+      "etapa": "redator",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6-astra",
+      "raciocinio": "high",
+      "modelos": [
+       "gpt-6-astra"
+      ],
+      "prompt_sha256": "0a1af6a77870b19fb4aa8db686a53d893279c092a9fc8f0ef7a5942f1b104bb7",
+      "system_sha256": "54024dbb2b3b4ae95e9ac280108ece2be18542460e1e75e1327b255dd63a7b89",
+      "returncode": 0,
+      "duracao_s": 41,
+      "tokens_entrada": 48140,
+      "tokens_saida": 1804,
+      "tokens_raciocinio": 516
+     },
+     {
+      "etapa": "leitor",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6-luna",
+      "raciocinio": "medium",
+      "modelos": [
+       "gpt-6-luna"
+      ],
+      "prompt_sha256": "1947f1ec620248dbf02842a5d7a9b5c77f0889b08a9e9cc56006ec45f1856520",
+      "system_sha256": "7e2e85c97ff1316fe0679433702bd03f479ad18937418dae52590161394b6695",
+      "returncode": 0,
+      "duracao_s": 11,
+      "tokens_entrada": 7046,
+      "tokens_saida": 497,
+      "tokens_raciocinio": 0
+     },
+     {
+      "etapa": "aprovador",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6.1-sol",
+      "raciocinio": "high",
+      "modelos": [
+       "gpt-6.1-sol"
+      ],
+      "prompt_sha256": "eeb1284eb0a7ed1b3f98d3867e1c7c40f0a05e3041c088a2d7e54fdc7a9d6ca3",
+      "system_sha256": "0e678a3b0fdeeaae7c64aeac36704563657a627c13557eb96dd9c9b6b302ba31",
+      "returncode": 0,
+      "duracao_s": 13,
+      "tokens_entrada": 49058,
+      "tokens_saida": 277,
+      "tokens_raciocinio": 161
+     }
+    ],
+    "versoes": [
+     {
+      "sha": "6d67ad53a96ce524",
+      "artigo": {
+       "titulo": "Senado adia conclusão do ajuste, e alívio para as contas segue incerto",
+       "pergunta_semana": "",
+       "texto": "O Senado adiou ontem a conclusão da votação do ajuste, mantendo incerto o alívio prometido para as contas [c6, c8]. O relator pediu tempo para negociar quatro pontos, que devem voltar à votação hoje [c6]. O risco é de um ajuste menor: governistas admitem ceder nos repasses a estados e temem novas perdas na Câmara [c8]. Durigan chamou o pacote de “primeiro passo”, mas não anunciou novas medidas naquela audiência [c9]. Aprovar o texto também não garante toda a melhora estimada: o bloqueio de gastos é autorizado, não obrigatório [c17].\n\nNo crédito, a comissão do novo Desenrola foi instalada ontem, com parecer prometido por Cid Gomes para o início de dezembro [c11]. A medida provisória já autoriza a União a comprar até R$ 15 bilhões em dívidas de pessoas físicas, mas condiciona isso à disponibilidade orçamentária e financeira [c11]. Esse teto não é dinheiro já aplicado nem redução comprovada do peso das dívidas das famílias [c11].\n\nO Goldman Sachs reduziu sua recomendação para ações brasileiras a neutra e apontou a incerteza fiscal como principal obstáculo de curto prazo para o real — uma avaliação, não uma medida de saída de dinheiro [c607, c609]. Segundo a Folha, o Banco Central fará hoje leilões de até US$ 1 bilhão com compromisso de recompra: uma oferta temporária de dólares, que não resolve a dúvida sobre as contas públicas [c612, c609].\n\nLá fora, gestores ouvidos pelo BofA reduziram o peso da tecnologia nas carteiras no ritmo mensal mais forte desde junho de 2006 [c601]. O temor principal é de uma bolha de inteligência artificial; só 3% preveem recessão [c602]. A pesquisa mostra cautela com essas ações, mas não mede saída de dinheiro do Brasil nem efeito sobre o dólar daqui [c601, c602].",
+       "argumento": "O adiamento mantém o alívio fiscal pendente, sujeito a perdas no Congresso e à execução das medidas, enquanto as demais notícias ainda não comprovam redução das pressões.",
+       "porque": "O Senado adiou a votação a pedido do relator Eduardo Braga, que solicitou mais tempo para buscar acordo sobre quatro pontos pendentes.",
+       "lentes": [
+        {
+         "item": 1,
+         "lente": "o_que_mudaria"
+        },
+        {
+         "item": 2,
+         "lente": "quem_decide"
+        },
+        {
+         "item": 4,
+         "lente": "quem_decide"
+        },
+        {
+         "item": 3,
+         "lente": "frequencia"
+        }
+       ]
+      },
+      "checagens": {
+       "impedimentos": [],
+       "diagnosticos": [
+        "o texto tem 271 palavras e 0 intertítulos (o tipo do dia pede de 200 a 300 palavras: a história do dia em até umas 150, cada outra em duas ou três frases)"
+       ]
+      },
+      "leitura": {
+       "entendi": {
+        "resposta": "O alívio fiscal segue incerto: o Senado adiou a votação do ajuste, e o texto pode ficar menor. Nos outros assuntos, o novo Desenrola ainda está em fase de análise e não significa que dívidas já foram pagas; o Goldman Sachs vê risco fiscal para o real, enquanto o BC deve oferecer dólares temporariamente; e investidores reduziram o peso da tecnologia por receio de uma bolha de IA. O tema que mais pesa é o ajuste fiscal, porque sua aprovação e execução afetam diretamente a melhora prometida para as contas.",
+        "por_que": "O adiamento abriu tempo para negociar quatro pontos. Governistas admitem ceder em repasses a estados e temem novas perdas na Câmara. Além disso, o bloqueio de gastos é autorizado, mas não obrigatório, e a autorização do Desenrola depende de disponibilidade orçamentária e financeira.",
+        "consequencia": "Mesmo que o ajuste seja aprovado, a melhora estimada pode não se concretizar por inteiro. As demais notícias indicam medidas e avaliações, não resultados já comprovados: o teto do Desenrola não é gasto realizado, a oferta de dólares é temporária e a pesquisa do BofA não mede impacto no Brasil.",
+        "limite": "O texto não informa quais são os quatro pontos em negociação nem quantifica a melhora fiscal estimada ou quanto ela poderia diminuir. Também não demonstra que a avaliação do Goldman Sachs ou a cautela com tecnologia já tenham provocado saídas de dinheiro ou alterado o dólar no Brasil."
+       },
+       "dificuldades": [
+        {
+         "local": "p1",
+         "trecho": "“O relator pediu tempo para negociar quatro pontos”",
+         "o_que_entendi": "Há quatro pontos pendentes que serão negociados antes de voltarem à votação.",
+         "o_que_precisei_adivinhar": "O texto não identifica os pontos; precisei entender que são itens do ajuste, sem saber o que está em disputa em cada um."
+        },
+        {
+         "local": "p1",
+         "trecho": "“o alívio prometido para as contas”",
+         "o_que_entendi": "Entendi “contas” como contas públicas, isto é, a situação fiscal do governo.",
+         "o_que_precisei_adivinhar": "Isolada, a expressão poderia se referir a outros tipos de contas; o restante do parágrafo permite essa leitura fiscal."
+        },
+        {
+         "local": "p2",
+         "trecho": "“a União [pode] comprar até R$ 15 bilhões em dívidas”",
+         "o_que_entendi": "A medida permite que a União compre dívidas de pessoas físicas, até o limite indicado.",
+         "o_que_precisei_adivinhar": "O texto não explica como a compra seria feita nem como reduziria o peso das dívidas; apenas deixa claro que o teto não equivale a aplicação ou alívio já ocorrido."
+        }
+       ],
+       "perguntas_que_ficaram": [
+        {
+         "pergunta": "Quais são os quatro pontos que ainda serão negociados?",
+         "trecho_que_a_provocou": "p1: “O relator pediu tempo para negociar quatro pontos”",
+         "por_que_importa_para_entender_a_resposta": "Sem saber quais são, não dá para avaliar o conteúdo da negociação nem o que pode tornar o ajuste menor."
+        },
+        {
+         "pergunta": "Qual é o valor da melhora estimada e qual parte dela depende do bloqueio de gastos?",
+         "trecho_que_a_provocou": "p1: “Aprovar o texto também não garante toda a melhora estimada”",
+         "por_que_importa_para_entender_a_resposta": "A informação permitiria dimensionar quanto do alívio prometido está em risco e qual é o papel do bloqueio autorizado, mas não obrigatório."
+        }
+       ],
+       "titulos_ambiguos": [
+        {
+         "titulo": "Senado adia conclusão do ajuste, e alívio para as contas segue incerto",
+         "como_li": "Li “contas” como contas públicas, em linha com o ajuste e o alívio fiscal tratados no texto. Sozinho, o título não explicita a que tipo de contas se refere."
+        }
+       ]
+      },
+      "parecer": {
+       "pode_publicar": true,
+       "problemas": [
+        {
+         "id": "",
+         "impacto": "medio",
+         "confianca": "alta",
+         "tipo": "compreensao",
+         "local": "Primeiro parágrafo",
+         "trecho": "O relator pediu tempo para negociar quatro pontos [...] governistas admitem ceder nos repasses a estados",
+         "problema": "A negociação fica abstrata: não se explica o que o projeto faz com esses repasses nem qual concessão reduziria o ajuste. O leitor frio compreendeu a incerteza, mas não conseguiu explicar o conteúdo dessa disputa.",
+         "efeito_para_a_leitora": "Entende que o ajuste pode encolher, mas precisa inferir por que ceder aos estados diminuiria a melhora das contas federais.",
+         "evidencias": [
+          "c6: um dos destaques busca impedir o adiamento dos repasses da Lei Kandir a estados e municípios.",
+          "c8: governistas admitem ceder nos repasses e temem maior redução do ajuste na Câmara.",
+          "Leitor frio: não conseguiu identificar o que está em disputa nos pontos pendentes."
+         ],
+         "correcao_necessaria": "Substituir a referência genérica aos quatro pontos por um exemplo concreto: a disputa sobre adiar repasses a estados e municípios, cuja manutenção reduziria o alívio federal. Não é necessário listar os quatro pontos nem alongar o texto."
+        }
+       ],
+       "resolvidas": [],
+       "pendencia_da_analise": ""
+      },
+      "bloqueios": [
+       "R1"
+      ],
+      "pronta": true,
+      "concentrada": false
+     },
+     {
+      "sha": "f1254d226e1b8160",
+      "artigo": {
+       "titulo": "Senado adia conclusão do ajuste, e alívio para as contas segue incerto",
+       "pergunta_semana": "",
+       "texto": "O Senado adiou ontem a conclusão da votação do ajuste, mantendo incerto o alívio prometido para as contas [c6, c8]. A votação deve voltar hoje, com uma disputa sobre adiar repasses a estados e municípios [c6]. Governistas admitem manter esses pagamentos no prazo, reduzindo o alívio federal, e temem novas perdas na Câmara [c6, c8]. Durigan chamou o pacote de “primeiro passo”, mas não anunciou novas medidas naquela audiência [c9]. Aprovar o texto também não garante toda a melhora estimada: o bloqueio de gastos é autorizado, não obrigatório [c17].\n\nNo crédito, a comissão do novo Desenrola foi instalada ontem, com parecer prometido por Cid Gomes para o início de dezembro [c11]. A medida provisória já autoriza a União a comprar até R$ 15 bilhões em dívidas de pessoas físicas, mas condiciona isso à disponibilidade orçamentária e financeira [c11]. Esse teto não é dinheiro já aplicado nem redução comprovada do peso das dívidas das famílias [c11].\n\nO Goldman Sachs reduziu sua recomendação para ações brasileiras a neutra e apontou a incerteza fiscal como principal obstáculo de curto prazo para o real — uma avaliação, não uma medida de saída de dinheiro [c607, c609]. Segundo a Folha, o Banco Central fará hoje leilões de até US$ 1 bilhão com compromisso de recompra: uma oferta temporária de dólares, que não resolve a dúvida sobre as contas públicas [c612, c609].\n\nLá fora, gestores ouvidos pelo BofA reduziram o peso da tecnologia nas carteiras no ritmo mensal mais forte desde junho de 2006 [c601]. O temor principal é de uma bolha de inteligência artificial; só 3% preveem recessão [c602]. A pesquisa mostra cautela com essas ações, mas não mede saída de dinheiro do Brasil nem efeito sobre o dólar daqui [c601, c602].",
+       "argumento": "O adiamento mantém incerto o alívio fiscal, porque preservar repasses que seriam adiados diminui a melhora das contas federais.",
+       "porque": "O Senado adiou a votação a pedido do relator Eduardo Braga, que solicitou mais tempo para buscar acordo sobre os pontos pendentes.",
+       "lentes": [
+        {
+         "item": 1,
+         "lente": "o_que_mudaria"
+        },
+        {
+         "item": 2,
+         "lente": "quem_decide"
+        },
+        {
+         "item": 4,
+         "lente": "quem_decide"
+        },
+        {
+         "item": 3,
+         "lente": "frequencia"
+        }
+       ]
+      },
+      "checagens": {
+       "impedimentos": [],
+       "diagnosticos": [
+        "o texto tem 269 palavras e 0 intertítulos (o tipo do dia pede de 200 a 300 palavras: a história do dia em até umas 150, cada outra em duas ou três frases)"
+       ]
+      },
+      "leitura": {
+       "entendi": {
+        "resposta": "O quadro principal é que o alívio para as contas públicas segue incerto: o Senado adiou a conclusão da votação, e mesmo a aprovação não obriga o bloqueio de gastos. Em paralelo, o novo Desenrola ainda está em fase de análise e o teto de R$ 15 bilhões não significa dinheiro já aplicado. No mercado, há cautela com ações brasileiras e com tecnologia, mas os sinais citados não comprovam saída de recursos do Brasil. O que mais pesa é a incerteza fiscal e a possibilidade de o ajuste entregar menos alívio do que o estimado.",
+        "por_que": "A votação foi adiada em meio à disputa sobre o prazo dos repasses a estados e municípios. Manter os pagamentos no prazo reduziria o alívio federal, e há receio de novas perdas na Câmara. Além disso, o bloqueio de gastos é autorizado, mas não obrigatório. O Desenrola depende de disponibilidade orçamentária e financeira. Já a recomendação do Goldman Sachs e a pesquisa do BofA expressam avaliações e cautela, não medidas de fluxo de dinheiro.",
+        "consequencia": "Até que a votação seja concluída e se saiba como o texto será aplicado, não é possível contar com toda a melhora estimada nas contas. O Desenrola também não permite concluir que o peso das dívidas das famílias já caiu. A oferta temporária de dólares pelo Banco Central não elimina a dúvida fiscal, e a cautela com ações de tecnologia não demonstra, por si só, um efeito sobre o dólar no Brasil.",
+        "limite": "O texto não informa o resultado da votação, o tamanho do alívio que efetivamente será obtido nem se o bloqueio de gastos será usado. Também não mostra quanto do teto do Desenrola será utilizado ou os efeitos da medida. Os dados de mercado citados não quantificam fluxos de recursos nem permitem prever o comportamento do real ou do dólar."
+       },
+       "dificuldades": [],
+       "perguntas_que_ficaram": [],
+       "titulos_ambiguos": [
+        {
+         "titulo": "Senado adia conclusão do ajuste, e alívio para as contas segue incerto",
+         "como_li": "O título apresenta a incerteza sobre o alívio como consequência do adiamento. O texto explica que a disputa sobre repasses e o caráter não obrigatório do bloqueio também contribuem para essa incerteza."
+        }
+       ]
+      },
+      "parecer": {
+       "pode_publicar": true,
+       "problemas": [],
+       "resolvidas": [
+        {
+         "id": "R1",
+         "prova": "O texto explicita a disputa sobre adiar repasses a estados e municípios e explica que manter os pagamentos no prazo reduz o alívio federal, conforme c6 e c8. O leitor frio conseguiu reproduzir esse mecanismo e não relatou dificuldades."
+        }
+       ],
+       "pendencia_da_analise": ""
+      },
+      "bloqueios": [],
+      "pronta": true,
+      "concentrada": false
+     }
+    ],
+    "objecoes": [
+     {
+      "id": "R1",
+      "impacto": "medio",
+      "confianca": "alta",
+      "tipo": "compreensao",
+      "local": "Primeiro parágrafo",
+      "trecho": "O relator pediu tempo para negociar quatro pontos [...] governistas admitem ceder nos repasses a estados",
+      "problema": "A negociação fica abstrata: não se explica o que o projeto faz com esses repasses nem qual concessão reduziria o ajuste. O leitor frio compreendeu a incerteza, mas não conseguiu explicar o conteúdo dessa disputa.",
+      "efeito_para_a_leitora": "Entende que o ajuste pode encolher, mas precisa inferir por que ceder aos estados diminuiria a melhora das contas federais.",
+      "evidencias": [
+       "c6: um dos destaques busca impedir o adiamento dos repasses da Lei Kandir a estados e municípios.",
+       "c8: governistas admitem ceder nos repasses e temem maior redução do ajuste na Câmara.",
+       "Leitor frio: não conseguiu identificar o que está em disputa nos pontos pendentes."
+      ],
+      "correcao_necessaria": "Substituir a referência genérica aos quatro pontos por um exemplo concreto: a disputa sobre adiar repasses a estados e municípios, cuja manutenção reduziria o alívio federal. Não é necessário listar os quatro pontos nem alongar o texto.",
+      "estado": "resolvida",
+      "desde_versao": 1,
+      "resolvida_na_versao": 2,
+      "prova": "O texto explicita a disputa sobre adiar repasses a estados e municípios e explica que manter os pagamentos no prazo reduz o alívio federal, conforme c6 e c8. O leitor frio conseguiu reproduzir esse mecanismo e não relatou dificuldades."
+     }
+    ],
+    "correcoes": 1,
+    "provedor": "openai",
+    "plano": {
+     "pergunta_central": "O que o adiamento do ajuste muda no alívio esperado para as contas?",
+     "resposta_central": "Mantém o alívio pendente e seu tamanho incerto: o texto pode perder medidas no Congresso, e parte da execução não é obrigatória.",
+     "perguntas_seguintes": [
+      {
+       "pergunta": "O que ainda pode reduzir a melhora prometida?",
+       "por_que_e_necessaria": "Distingue proposta, aprovação e execução, sem repetir a comparação do ajuste com os juros.",
+       "resposta_que_o_texto_da": "Governistas admitem concessões e temem perdas na Câmara; o bloqueio de gastos permanece facultativo.",
+       "evidencias": [
+        "c6",
+        "c8",
+        "c9",
+        "c17"
+       ]
+      },
+      {
+       "pergunta": "O avanço do Desenrola já representa menos dívida para as famílias?",
+       "por_que_e_necessaria": "Evita tratar autorização financeira como alívio realizado.",
+       "resposta_que_o_texto_da": "A comissão foi instalada, mas o limite autorizado depende de disponibilidade orçamentária e financeira.",
+       "evidencias": [
+        "c11"
+       ]
+      },
+      {
+       "pergunta": "O rebaixamento do Goldman e os leilões do BC mudam a desconfiança?",
+       "por_que_e_necessaria": "Separa avaliação de banco, fluxo observado e oferta temporária de dólares.",
+       "resposta_que_o_texto_da": "O Goldman mudou sua recomendação; os leilões previstos para hoje oferecem dólares temporariamente, sem resolver a dúvida fiscal.",
+       "evidencias": [
+        "c607",
+        "c609",
+        "c612"
+       ]
+      },
+      {
+       "pergunta": "A redução das posições em tecnologia já mostra pressão adicional no Brasil?",
+       "por_que_e_necessaria": "Impede confundir uma pesquisa internacional com efeito medido no câmbio brasileiro.",
+       "resposta_que_o_texto_da": "O corte foi o maior em um mês desde junho de 2006, mas a pesquisa não mede saída de dinheiro do Brasil.",
+       "evidencias": [
+        "c601",
+        "c602"
+       ]
+      }
+     ],
+     "limite_que_muda_a_leitura": "O ajuste ainda não está concluído, e aprovação não equivale à realização integral da melhora estimada.",
+     "deixadas_de_fora": [
+      {
+       "pergunta": "A dívida ultrapassará 100% do PIB?",
+       "motivo": "O alerta do presidente do Itaú é condicional e não acrescenta uma medida ao andamento legislativo."
+      },
+      {
+       "pergunta": "Quanto a renegociação rural resolveu dos atrasos?",
+       "motivo": "A pesquisa só dispõe da manchete, sem base suficiente para dimensionar a cobertura ou o resultado."
+      },
+      {
+       "pergunta": "Quanto o ajuste precisa crescer para estabilizar a dívida?",
+       "motivo": "Foi a explicação dos textos recentes; repeti-la deslocaria a novidade do dia."
+      },
+      {
+       "pergunta": "Qual será o efeito da ameaça chinesa sobre o comércio brasileiro?",
+       "motivo": "Ainda é ameaça, sem efeito dimensionado; é uma ramificação dispensável neste texto curto."
+      }
+     ]
+    },
+    "respostas": [
+     [
+      {
+       "id": "R1",
+       "resposta": "corrigido",
+       "explicacao": "Substituí a referência genérica aos quatro pontos pela disputa sobre adiar repasses a estados e municípios e explicitei que manter os pagamentos no prazo reduz o alívio federal, conforme c6 e c8. Preservei o restante do artigo."
+      }
+     ]
+    ],
+    "estado": "aprovado"
+   },
+   "caderno": [
+    {
+     "id": "c1",
+     "tipo": "documento",
+     "dono": "Senado Federal",
+     "afirmacao": "O PLP 299/2026 é de autoria do senador Jaques Wagner (PT/BA), apresentado em 11/11/2026; em 17/11 foi incluído na Ordem do Dia de 18/11 e recebeu emendas ao substitutivo para o turno suplementar.",
+     "numeros": [
+      "11/11/2026",
+      "Emenda nº 75"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Senado Federal (via leitor, comando ato)",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176328",
+      "data": "2026-11-17",
+      "trecho": "PLP 299/2026 (Senado) | autor: Senador Jaques Wagner (PT/BA) | data: 11/11/2026"
+     },
+     "conferencia": {
+      "status": "numeros_na_pagina",
+      "fonte_conhecida": true,
+      "classe": "oficial"
+     }
+    },
+    {
+     "id": "c2",
+     "tipo": "documento",
+     "dono": "Senado Federal (relator Eduardo Braga)",
+     "afirmacao": "O parecer, com informações do Executivo, estima que o projeto melhora o resultado primário de 2027 em R$ 45,1 a 56,1 bi e a margem da regra de ouro em R$ 100 bi.",
+     "numeros": [
+      "45,1",
+      "56,1",
+      "100,0 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Senado Federal",
+      "url": "https://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/9085c41c-5734-40ec-ba13-0f3e46ecdc13",
+      "data": "2026-11-12",
+      "trecho": "De acordo com informações do Poder Executivo, a proposição tem os seguintes impactos fiscais para o exercício financeiro de 2027: a) melhora o resultado primário entre R$ 45,1 bilhões e 56,1 bilhões; e b) melhora a margem da regra de ouro em R$ 100,0 bilhões"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "oficial"
+     }
+    },
+    {
+     "id": "c3",
+     "tipo": "documento",
+     "dono": "Senado Federal (relator Eduardo Braga)",
+     "afirmacao": "As quatro parcelas do ajuste de 2027 no parecer: contingenciamento, redução da compensação cruzada, corte de 10% do gasto tributário e teto do benefício ao DGT de 2026.",
+     "numeros": [
+      "12,8",
+      "18,3",
+      "15,0",
+      "4,5"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Senado Federal",
+      "url": "https://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/9085c41c-5734-40ec-ba13-0f3e46ecdc13",
+      "data": "2026-11-12",
+      "trecho": "a) contingenciamento com foco no centro da meta (contenção de despesas em cerca de R$ 12,8 bilhões a R$ 18,3 bilhões); b) redução de compensação entre débitos e créditos dos contribuintes de tributos (aumento da arrecadação entre R$ 12,8 bilhões e R$ 18,3 bilhões); c) redução do gasto tributário em 10% (aumento da arrecadação de R$ 15,0 bilhões)"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "oficial"
+     }
+    },
+    {
+     "id": "c4",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "As parcelas somam R$ 45,1 bi (piso).",
+     "numeros": [
+      "45,1"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"12.8+12.8+15+4.5\"",
+     "saida": "12.8+12.8+15+4.5 = 45,1000 (com 3 casas: 45,100; com 2 casas: 45,10; com 1 casa: 45,1)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "12.8+12.8+15+4.5 = 45,1000 (com 3 casas: 45,100; com 2 casas: 45,10; com 1 casa: 45,1)\n"
+     }
+    },
+    {
+     "id": "c5",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "O teto do ajuste (R$ 56,1 bi) equivale a 76,6% do centro da meta de 2027 (R$ 73,2 bi).",
+     "numeros": [
+      "76,6"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"56.1/73.2*100\"",
+     "saida": "56.1/73.2*100 = 76,6393 (com 3 casas: 76,639; com 2 casas: 76,64; com 1 casa: 76,6)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "56.1/73.2*100 = 76,6393 (com 3 casas: 76,639; com 2 casas: 76,64; com 1 casa: 76,6)\n"
+     }
+    },
+    {
+     "id": "c6",
+     "tipo": "documento",
+     "dono": "Senado Federal (presidente Davi Alcolumbre, a pedido do relator Eduardo Braga)",
+     "afirmacao": "A votação dos destaques ao PLP 299/2026, prevista para 17/11, foi remarcada para 18/11 a pedido do relator Braga, para buscar acordo sobre quatro pontos; entre eles, o adiamento dos repasses da Lei Kandir e o teto de R$ 3 bi anuais da compensação previdenciária.",
+     "numeros": [
+      "17/11/2026",
+      "18",
+      "R$ 3 bilhões",
+      "R$ 56 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agência Senado",
+      "url": "https://www12.senado.leg.br/noticias/materias/2026/11/17/votacao-de-destaques-ao-ajuste-fiscal-e-remarcada-na-quarta-feira",
+      "data": "2026-11-17",
+      "trecho": "O presidente do Senado, Davi Alcolumbre, atendeu ao pedido do relator da matéria, senador Eduardo Braga (MDB-AM), que pediu mais tempo para tentar um acordo sobre os quatros pontos pendentes da votação da semana passada. Entre os destaques apresentados estão o que busca impedir o adiamento dos repasses a estados e municípios previstos na Lei Kandir e o que pretende retirar o teto de R$ 3 bilhões anuais aos pagamentos federais de compensação previdenciária."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "agencia"
+     },
+     "fonte_anterior": {
+      "quem": "Poder360",
+      "url": "https://www.poder360.com.br/poder-congresso/senado-adia-votacao-de-destaques-ao-ajuste-fiscal-de-lula/",
+      "data": "2026-11-17",
+      "trecho": "O Senado Federal adiou nesta 3ª feira (17.nov.2026) a votação dos 4 destaques ao projeto de ajuste fiscal (PLP 299 de 2026) do governo federal. O projeto foi reagendado para às 16h da 4ª feira (18.nov). A análise foi adiada a pedido do próprio relator, Eduardo Braga (MDB-AM).",
+      "afirmacao": "O Senado adiou em 17/11 os 4 destaques a pedido do relator Braga, sem acordo entre líderes; nova votação na quarta (18) às 16h.",
+      "numeros": [
+       "4 destaques",
+       "41 votos",
+       "16h"
+      ]
+     }
+    },
+    {
+     "id": "c7",
+     "tipo": "documento",
+     "dono": "Senador Rogério Marinho (PL-RN), autor da Emenda 40",
+     "afirmacao": "A Emenda 40 de plenário limita a 0,6% ao ano o crescimento real da despesa a partir de 2027, nos anos de contenção, e obriga o Executivo a mirar o centro da meta; o documento não traz estimativa em reais (os R$ 75 bi são fala de Marinho).",
+     "numeros": [
+      "0,6% a.a.",
+      "2027"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Senado Federal",
+      "url": "https://legis.senado.gov.br/sdleg-getter/documento/download/5633ec95-0274-45a0-a09b-ea11e6c5cfee?ts=1794956046350&disposition=inline&ts=1794956046350",
+      "data": "2026-11-12",
+      "trecho": "Propomos ampliar o esforço de contenção das despesas primárias, limitando o crescimento real do limite de despesas a 0,6% no ano, que é o limite mínimo admitido no arcabouço fiscal."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "oficial"
+     },
+     "fonte_anterior": {
+      "quem": "Poder360",
+      "url": "https://www.poder360.com.br/poder-congresso/senado-adia-votacao-de-destaques-ao-ajuste-fiscal-de-lula/",
+      "data": "2026-11-17",
+      "trecho": "propõe reduzir de 2% para 0,6% o limite de crescimento real das despesas públicas. O texto também prevê corte linear de 10 pontos percentuais nos benefícios tributários e impede mecanismos que permitam ampliar gastos com saúde e educação. Segundo Marinho, as mudanças poderiam gerar economia de R$ 75 bilhões.",
+      "afirmacao": "Marinho propõe, em destaque, cortar de 2% para 0,6% o limite de crescimento real da despesa; diz que renderia R$ 75 bi (cálculo dele, parte interessada).",
+      "numeros": [
+       "0,6%",
+       "R$ 75 bilhões",
+       "10 pontos percentuais"
+      ]
+     }
+    },
+    {
+     "id": "c8",
+     "tipo": "documento",
+     "dono": "Valor Econômico",
+     "afirmacao": "A base teme não ter 41 votos para manter dois trechos; governistas dizem que o projeto pode ser mais desidratado na Câmara e admitem ceder o repasse de R$ 12 bi a estados.",
+     "numeros": [
+      "41",
+      "R$ 12 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Valor",
+      "url": "https://valor.globo.com/politica/noticia/2026/11/17/ajuste-fiscal-governo-teme-perder-nos-destaques-e-ja-conta-com-desidratacao-do-texto-na-camara.ghtml",
+      "data": "2026-11-17",
+      "trecho": "Segundo senadores governistas, o esforço para que este artigo não saia do PLP no Senado se justifica pela avaliação de que, na Câmara, o projeto pode sofrer uma desidratação maior."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c9",
+     "tipo": "documento",
+     "dono": "Dario Durigan, ministro da Fazenda",
+     "afirmacao": "Em audiência na CAE do Senado em 17/11, Durigan disse que o ajuste gradual é o único caminho e chamou o pacote de primeiro passo.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney (Estadão Conteúdo)",
+      "url": "https://www.infomoney.com.br/economia/ministro-da-fazenda-diz-que-pacote-fiscal-e-primeiro-passo-e-prega-ajuste-gradual/",
+      "data": "2026-11-17",
+      "trecho": "“O único caminho é de um ajuste gradual, que respeite o gasto social, mas sem dúvida nenhuma, sem negacionismo, com a necessidade de a gente avançar nessa melhoria das contas públicas”, disse o ministro."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c10",
+     "tipo": "documento",
+     "dono": "Itaú Unibanco (Milton Maluhy Filho)",
+     "afirmacao": "O presidente do Itaú alertou que a dívida pode passar de 100% do PIB em 4 anos 'se nada for feito' (previsão, não fato).",
+     "numeros": [
+      "100%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Estadão",
+      "url": "https://www.estadao.com.br/economia/itau-maluhy-divida-publica-pib-se-nada-for-feito-proximos-4-anos/",
+      "data": "2026-11-17",
+      "trecho": "O presidente do Itaú Unibanco, Milton Maluhy Filho , alertou nesta terça-feira, 17, para o risco de que a dívida pública no Brasil supere a marca de 100% nos próximos quatro anos, “se nada for feito”."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c11",
+     "tipo": "documento",
+     "dono": "Governo federal (MP do Desenrola) / Comissão mista do Congresso",
+     "afirmacao": "A MP do novo Desenrola, editada em 25/9, autoriza a União a comprar dívidas de pessoas físicas até R$ 15 bi, condicionado à disponibilidade orçamentária; o relator Cid Gomes promete parecer no início de dezembro.",
+     "numeros": [
+      "R$ 15 bilhões",
+      "25 de setembro",
+      "4 de março de 2027"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agência Senado",
+      "url": "https://www12.senado.leg.br/noticias/materias/2026/11/17/cid-gomes-promete-relatorio-do-novo-desenrola-para-inicio-de-dezembro",
+      "data": "2026-11-17",
+      "trecho": "A iniciativa autoriza a União a comprar débitos de bancos, prestadores de serviços e estabelecimentos comerciais, com limite de R$ 15 bilhões, condicionado à disponibilidade orçamentária e financeira."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "agencia"
+     },
+     "fonte_anterior": {
+      "quem": "InfoMoney (Agência O Globo)",
+      "url": "https://www.infomoney.com.br/politica/congresso-instala-comissao-do-novo-desenrola-e-tenta-votar-medida-ainda-neste-ano/",
+      "data": "2026-11-17",
+      "trecho": "a medida provisória autoriza a União a adquirir carteiras de dívidas em atraso de pessoas físicas, até o limite de R$ 15 bilhões, para viabilizar renegociações com descontos ou parcelamentos.",
+      "afirmacao": "A comissão mista da MP do novo Desenrola foi instalada em 17/11; a MP autoriza a União a comprar carteiras de dívidas atrasadas de pessoas físicas até R$ 15 bi.",
+      "numeros": [
+       "R$ 15 bilhões"
+      ]
+     }
+    },
+    {
+     "id": "c12",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "Focus de 13/11: Selic 2027 em 12,75%, contra 11,75% em 23/10.",
+     "numeros": [
+      "12,75",
+      "11,75"
+     ],
+     "comando": ".venv/bin/python src/conta.py focus",
+     "saida": "2026-11-13: Selic 2027: 12,75",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Previsões dos bancos (Focus, mediana) na data da pesquisa, como o site guardou:\n2026-10-23: Câmbio 2026: 5,05\n2026-10-23: Câmbio 2027: 5,15\n2026-10-23: Câmbio 2028: 5,20\n2026-10-23: Câmbio 2029: 5,28\n2026-10-23: Câmbio 2030: 5,30\n2026-10-23: IPCA 2026: 5,19\n2026-10-23: IPCA 2027: 4,34\n2026-10-23: IPCA 2028: 3,75\n2026-10-23: IPCA 2029: 3,50\n2026-10-23: IPCA 2030: 3,50\n2026-10-23: IPCA 12m: 4,53\n2026-10-23: PIB Total 2026: 1,80\n2026-10-23: PIB Total 2027: 1,31\n2026-10-23: PIB Total 2028: 1,81\n2026-10-23: PIB Total 2029: 2,00\n2026-10-23: PIB Total 2030: 2,00\n2026-10-23: Selic 2026: 13,25\n2026-10-23: Selic 2027: 11,75\n2026-10-23: Selic 2028: 10,00\n2026-10-23: Selic 2029: 10,00\n2026-10-23: Selic 2030: 10,00\n2026-10-30: Câmbio 2026: 5,34\n2026-10-30: Câmbio 2027: 5,40\n2026-10-30: Câmbio 2028: 5,40\n2026-10-30: Câmbio 2029: 5,45\n2026-10-30: Câmbio 2030: 5,50\n2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76\n2026-10-30: IPCA 2028: 4,00\n2026-10-30: IPCA 2029: 3,98\n2026-10-30: IPCA 2030: 3,81\n2026-10-30: IPCA 12m: 4,96\n2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20\n2026-10-30: PIB Total 2028: 1,80\n2026-10-30: PIB Total 2029: 2,00\n2026-10-30: PIB Total 2030: 2,00\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50\n2026-10-30: Selic 2028: 11,00\n2026-10-30: Selic 2029: 10,25\n2026-10-30: Selic 2030: 10,00\n2026-11-06: Câmbio 2026: 5,35\n2026-11-06: Câmbio 2027: 5,40\n2026-11-06: Câmbio 2028: 5,45\n2026-11-06: Câmbio 2029: 5,50\n2026-11-06: Câmbio 2030: 5,51\n2026-11-06: IPCA 2026: 5,22\n2026-11-06: IPCA 2027: 4,90\n2026-11-06: IPCA 2028: 4,00\n2026-11-06: IPCA 2029: 4,00\n2026-11-06: IPCA 2030: 3,94\n2026-11-06: IPCA 12m: 5,01\n2026-11-06: PIB Total 2026: 1,75\n2026-11-06: PIB Total 2027: 1,15\n2026-11-06: PIB Total 2028: 1,80\n2026-11-06: PIB Total 2029: 2,00\n2026-11-06: PIB Total 2030: 2,00\n2026-11-06: Selic 2026: 13,75\n2026-11-06: Selic 2027: 12,50\n2026-11-06: Selic 2028: 11,00\n2026-11-06: Selic 2029: 10,25\n2026-11-06: Selic 2030: 10,00\n2026-11-13: Câmbio 2026: 5,40\n2026-11-13: Câmbio 2027: 5,45\n2026-11-13: Câmbio 2028: 5,48\n2026-11-13: Câmbio 2029: 5,50\n2026-11-13: Câmbio 2030: 5,55\n2026-11-13: IPCA 2026: 5,11\n2026-11-13: IPCA 2027: 5,00\n2026-11-13: IPCA 2028: 4,00\n2026-11-13: IPCA 2029: 4,00\n2026-11-13: IPCA 2030: 3,94\n2026-11-13: IPCA 12m: 5,15\n2026-11-13: PIB Total 2026: 1,72\n2026-11-13: PIB Total 2027: 1,02\n2026-11-13: PIB Total 2028: 1,80\n2026-11-13: PIB Total 2029: 2,00\n2026-11-13: PIB Total 2030: 2,00\n2026-11-13: Selic 2026: 13,75\n2026-11-13: Selic 2027: 12,75\n2026-11-13: Selic 2028: 11,00\n2026-11-13: Selic 2029: 10,50\n2026-11-13: Selic 2030: 10,00\n"
+     }
+    },
+    {
+     "id": "c13",
+     "tipo": "site",
+     "dono": "",
+     "afirmacao": "Meta de 2027: centro 0,50% do PIB (R$ 73,2 bi); o projeto de Orçamento desconta R$ 64,7 bi; a conta da meta dá R$ 83,4 bi.",
+     "numeros": [
+      "73,2",
+      "64,7",
+      "83,4"
+     ],
+     "comando": "",
+     "saida": "o projeto de Orçamento de 2027 tira da conta da meta R$ 64,7 bilhões, quase tudo precatórios; com os descontos, a conta da meta dá R$ 83,4 bilhões, acima do centro.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "nao_confere",
+      "por_que": "número que não está nos dados do site nem num fato da memória com fonte"
+     }
+    },
+    {
+     "id": "c14",
+     "tipo": "biblioteca",
+     "dono": "",
+     "afirmacao": "Ter regra fiscal por si só melhora pouco as contas (força forte).",
+     "numeros": [
+      "30 estudos"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Heinemann, Moessinger e Yeter, 2018, European Journal of Political Economy",
+      "url": "https://econpapers.repec.org/RePEc:eee:poleco:v:51:y:2018:i:c:p:69-92",
+      "data": "",
+      "trecho": "Ter regra, por si só, melhora pouco as contas: numa meta-análise de 30 estudos, o efeito das regras encolhe muito quando se leva em conta que os países já disciplinados são os que adotam regras, e há viés de publicação"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "via": "biblioteca"
+     }
+    },
+    {
+     "id": "c15",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "Centro (R$ 73,2 bi) menos o resultado necessário citado pelo Poder360 (R$ 8,5 bi) dá R$ 64,7 bi, igual ao desconto da regra.",
+     "numeros": [
+      "64,7"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"73.2-8.5\"",
+     "saida": "73.2-8.5 = 64,7000 (com 3 casas: 64,700; com 2 casas: 64,70; com 1 casa: 64,7)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "73.2-8.5 = 64,7000 (com 3 casas: 64,700; com 2 casas: 64,70; com 1 casa: 64,7)\n"
+     }
+    },
+    {
+     "id": "c16",
+     "tipo": "documento",
+     "dono": "Confederação Nacional de Municípios (parte interessada)",
+     "afirmacao": "A CNM calcula perda de mais de R$ 32 bi de estados e municípios até 2030.",
+     "numeros": [
+      "R$ 32 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Poder360",
+      "url": "https://www.poder360.com.br/poder-congresso/senado-adia-votacao-de-destaques-ao-ajuste-fiscal-de-lula/",
+      "data": "2026-11-17",
+      "trecho": "A CNM (Confederação Nacional de Municípios) estima que as mudanças nas compensações previdenciárias e nos repasses da Lei Kandir podem retirar mais de R$ 32 bilhões de Estados e municípios até 2030."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c17",
+     "tipo": "documento",
+     "dono": "Senado Federal (relator Eduardo Braga)",
+     "afirmacao": "O art. 6º-C do substitutivo autoriza, e não obriga, o Executivo a limitar empenho dentro do intervalo inferior de tolerância.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Senado Federal",
+      "url": "https://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/9085c41c-5734-40ec-ba13-0f3e46ecdc13",
+      "data": "2026-11-12",
+      "trecho": "Fica o Poder Executivo federal autorizado, com fundamento na alínea “d” do inciso VIII do art. 163 da Constituição Federal, a estabelecer limitação de empenho e movimentação financeira"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "oficial"
+     }
+    },
+    {
+     "id": "c18",
+     "tipo": "documento",
+     "dono": "Senado Federal (relator Eduardo Braga)",
+     "afirmacao": "A ementa do substitutivo dá o objetivo escrito: estabilidade macroeconômica; genérico, sem número.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Senado Federal",
+      "url": "https://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/9085c41c-5734-40ec-ba13-0f3e46ecdc13",
+      "data": "2026-11-12",
+      "trecho": "para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "oficial"
+     }
+    },
+    {
+     "id": "c19",
+     "tipo": "site",
+     "dono": "",
+     "afirmacao": "Em 2019 o governo mandou a Previdência com economia de cerca de R$ 1,2 tri e o Congresso a reduziu para cerca de R$ 800 bi.",
+     "numeros": [
+      "R$ 1,2 trilhão",
+      "R$ 800 bilhões"
+     ],
+     "comando": "",
+     "saida": "O governo enviou a reforma da Previdência em fevereiro de 2019 com economia prevista de cerca de R$ 1,2 trilhão em dez anos. O Congresso a reduziu para cerca de R$ 800 bilhões.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "nao_confere",
+      "por_que": "número que não está nos dados do site nem num fato da memória com fonte"
+     }
+    },
+    {
+     "id": "c20",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "Contenção mais compensação (R$ 12,8 bi cada, piso) são 56,8% do piso do ajuste de R$ 45,1 bi.",
+     "numeros": [
+      "56,8"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"(12.8+12.8)/45.1*100\"",
+     "saida": "(12.8+12.8)/45.1*100 = 56,7627 (com 3 casas: 56,763; com 2 casas: 56,76; com 1 casa: 56,8)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "(12.8+12.8)/45.1*100 = 56,7627 (com 3 casas: 56,763; com 2 casas: 56,76; com 1 casa: 56,8)\n"
+     }
+    },
+    {
+     "id": "c21",
+     "tipo": "biblioteca",
+     "dono": "",
+     "afirmacao": "Regra rígida faz o ajuste cair sobre o investimento público; some com regra flexível (força média).",
+     "numeros": [
+      "75 países",
+      "10%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Ardanaz, Cavallo, Izquierdo e Puig, 2021, Journal of International Money and Finance",
+      "url": "https://publications.iadb.org/en/growth-friendly-fiscal-rules-safeguarding-public-investment-budget-cuts-through-fiscal-rule-0",
+      "data": "",
+      "trecho": "Regra rígida faz o ajuste cair sobre o investimento: em 75 países, de 1990 a 2018, um ajuste de 2% do PIB ou mais veio com investimento público 10% menor, em média, onde não havia regra ou a regra era rígida, e o efeito some com regra flexível"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "via": "biblioteca"
+     }
+    },
+    {
+     "id": "c104",
+     "tipo": "documento",
+     "dono": "Senado Federal (relator Eduardo Braga)",
+     "afirmacao": "O substitutivo limita a R$ 3 bi ao ano, de 2027 a 2030, a despesa federal com compensação previdenciária (Lei 9.796/1999); o parecer não dá o quanto isso rende.",
+     "numeros": [
+      "R$ 3.000.000.000,00",
+      "2027",
+      "2030"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Senado Federal",
+      "url": "https://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/9085c41c-5734-40ec-ba13-0f3e46ecdc13",
+      "data": "2026-11-12",
+      "trecho": "Parágrafo único. Entre os exercícios de 2027 e 2030, a despesa de que trata o caput fica limitada a R$ 3.000.000.000,00 (três bilhões de reais) ao ano, corrigidos pelo crescimento anual do limite de despesa a que se refere o art. 3º da Lei Complementar nº 200, de 30 de agosto de 2023"
+     },
+     "troca": "",
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "oficial"
+     }
+    },
+    {
+     "id": "c601",
+     "tipo": "documento",
+     "dono": "BofA (pesquisa mensal com gestores de fundos), pela Reuters",
+     "afirmacao": "A pesquisa do BofA mostra gestores cortando tecnologia no ritmo mais forte desde 2006: o peso do setor nas carteiras foi de 37% para 12%.",
+     "numeros": [
+      "12%",
+      "37%",
+      "169 investidores",
+      "US$461 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney (Reuters)",
+      "url": "https://www.infomoney.com.br/mercados/investidores-reduzem-alocacoes-em-tecnologia-no-ritmo-mais-forte-desde-2006/",
+      "data": "2026-11-17",
+      "trecho": "Os investidores reduziram suas alocações em ações de tecnologia no ritmo mais forte em um mês desde junho de 2006, segundo a pesquisa, que revelou que os investidores reduziram o peso do setor de tecnologia em suas carteiras para 12%, ante 37% no mês anterior."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c602",
+     "tipo": "documento",
+     "dono": "BofA (pesquisa mensal com gestores de fundos), pela Reuters",
+     "afirmacao": "Na mesma pesquisa, os gestores não preveem recessão (3%), e o principal risco apontado é uma bolha de IA.",
+     "numeros": [
+      "3%",
+      "52%",
+      "38%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney (Reuters)",
+      "url": "https://www.infomoney.com.br/mercados/investidores-reduzem-alocacoes-em-tecnologia-no-ritmo-mais-forte-desde-2006/",
+      "data": "2026-11-17",
+      "trecho": "Os investidores não estão preocupados com a economia global. Apenas 3% preveem uma recessão, e suas posições em dinheiro estão no nível mais baixo dos últimos três meses."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c603",
+     "tipo": "documento",
+     "dono": "Reuters/InfoMoney: Nasdaq",
+     "afirmacao": "O Nasdaq perdeu mais de 5% em outubro, e as techs caíram por temor de desaceleração dos gastos com data centers.",
+     "numeros": [
+      "5%",
+      "3%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney (Reuters)",
+      "url": "https://www.infomoney.com.br/mercados/investidores-reduzem-alocacoes-em-tecnologia-no-ritmo-mais-forte-desde-2006/",
+      "data": "2026-11-17",
+      "trecho": "O Nasdaq perdeu mais de 5% em outubro e acumulou uma queda adicional de 3% no acumulado do ano."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c604",
+     "tipo": "documento",
+     "dono": "Ministério do Comércio da China",
+     "afirmacao": "A China ameaçou contramedidas à nova regra dos EUA sobre chips de IA, caso Washington insista.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "g1",
+      "url": "https://g1.globo.com/tecnologia/noticia/2026/11/17/china-ameaca-retaliar-contra-eua-por-restricoes-a-chips-de-ia-que-tambem-afetam-o-brasil.ghtml",
+      "data": "2026-11-17",
+      "trecho": "Segundo a agência Reuters, em comunicado, o Ministério do Comércio chinês disse esperar que os americanos retornem ao “caminho correto” e resolvam as divergências por meio de consultas e cooperação."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c605",
+     "tipo": "documento",
+     "dono": "Governo dos EUA",
+     "afirmacao": "A regra americana exige autorização para exportar certos chips de IA a países como o Brasil; não proíbe a compra.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "g1",
+      "url": "https://g1.globo.com/tecnologia/noticia/2026/11/17/china-ameaca-retaliar-contra-eua-por-restricoes-a-chips-de-ia-que-tambem-afetam-o-brasil.ghtml",
+      "data": "2026-11-17",
+      "trecho": "Isso não significa que o Brasil esteja proibido de comprar componentes dos Estados Unidos. A norma estabelece exigências adicionais para a exportação de determinados produtos, e sua aplicação depende do tipo de chip e das condições de cada operação."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c606",
+     "tipo": "documento",
+     "dono": "Governo dos EUA",
+     "afirmacao": "A decisão dos EUA foi anunciada durante viagem de Trump à Ásia, com encontro previsto com Xi Jinping.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "g1",
+      "url": "https://g1.globo.com/tecnologia/noticia/2026/11/17/china-ameaca-retaliar-contra-eua-por-restricoes-a-chips-de-ia-que-tambem-afetam-o-brasil.ghtml",
+      "data": "2026-11-17",
+      "trecho": "A decisão foi anunciada durante uma viagem de Trump à Ásia, que inclui um encontro previsto com o presidente chinês, Xi Jinping."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c607",
+     "tipo": "documento",
+     "dono": "Goldman Sachs",
+     "afirmacao": "O Goldman Sachs rebaixou as ações brasileiras para neutro, esperando recuperação pós-eleição menos rápida.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Estadão",
+      "url": "https://www.estadao.com.br/economia/goldman-sachs-rebaixa-o-brasil-para-neutro-na-bolsa-e-coloca-incerteza-fiscal-como-principal-risco/",
+      "data": "2026-11-17",
+      "trecho": "“Rebaixamos o Brasil para marketweight, pois acreditamos que uma rápida recuperação pós-eleição é menos provável”, afirma o Goldman em relatório divulgado nesta terça-feira, 17."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c608",
+     "tipo": "documento",
+     "dono": "Goldman Sachs",
+     "afirmacao": "O Goldman projeta PIB de 1,6% neste ano e 0,6% em 2027 e vê espaço limitado para corte de juros.",
+     "numeros": [
+      "1,6%",
+      "0,6%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Estadão",
+      "url": "https://www.estadao.com.br/economia/goldman-sachs-rebaixa-o-brasil-para-neutro-na-bolsa-e-coloca-incerteza-fiscal-como-principal-risco/",
+      "data": "2026-11-17",
+      "trecho": "Os economistas do banco projetam desaceleração do crescimento do Produto Interno Bruto (PIB) , de 1,6% neste ano para 0,6% em 2027 e também avaliam que o espaço para cortes de juros no próximo ano “parece limitado”."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c609",
+     "tipo": "documento",
+     "dono": "Goldman Sachs",
+     "afirmacao": "O Goldman diz que a incerteza fiscal é o principal obstáculo no curto prazo para o real.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Estadão",
+      "url": "https://www.estadao.com.br/economia/goldman-sachs-rebaixa-o-brasil-para-neutro-na-bolsa-e-coloca-incerteza-fiscal-como-principal-risco/",
+      "data": "2026-11-17",
+      "trecho": "“No entanto, a incerteza fiscal continua sendo o principal obstáculo no curto prazo”, acrescenta."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c610",
+     "tipo": "documento",
+     "dono": "Goldman Sachs",
+     "afirmacao": "O Goldman considera exagerada a alta de juros de 1,5 ponto embutida nos juros futuros curtos e vê espaço de queda, mas pede sinal fiscal.",
+     "numeros": [
+      "150 pontos-base",
+      "1,5 ponto porcentual",
+      "190 pontos-base"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Estadão",
+      "url": "https://www.estadao.com.br/economia/goldman-sachs-rebaixa-o-brasil-para-neutro-na-bolsa-e-coloca-incerteza-fiscal-como-principal-risco/",
+      "data": "2026-11-17",
+      "trecho": "Na ponta curta da curva, o Goldman considera excessiva a precificação atual de 150 pontos-base de alta (1,5 ponto porcentual)."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c611",
+     "tipo": "site",
+     "dono": "",
+     "afirmacao": "O dólar está em R$ 5,79, 11,2% mais caro que em meados de agosto, e o juro de 10 anos em 7,9% ao ano, 0,5 ponto acima do normal dos últimos 3 anos.",
+     "numeros": [
+      "5,79",
+      "11,2%",
+      "7,9%",
+      "0,5 ponto"
+     ],
+     "comando": "",
+     "saida": "Dólar a R$ 5,79 em 17/11, 11,2% mais caro que em meados de agosto. O governo paga 7,9% ao ano acima da inflação para pegar dinheiro até 2035 (16/11). É 0,5 ponto acima do normal dos últimos 3 anos.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c612",
+     "tipo": "site",
+     "dono": "",
+     "afirmacao": "A Folha noticia que o BC fará leilões de linha de US$ 1 bilhão na quarta-feira (18), com compromisso de recompra. Não consegui abrir a página nem achar o comunicado do BC.",
+     "numeros": [
+      "US$1 bilhão"
+     ],
+     "comando": "",
+     "saida": "BC anuncia leilões de linha no total de US$1 bilhão para quarta-feira (18) (manchete da Folha, conforme o bloco de notícias do site)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c613",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "US$ 1 bilhão equivale a 0,27% dos US$ 365,0 bilhões de reservas do BC em outubro.",
+     "numeros": [
+      "0,27%",
+      "365,0 bilhões"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"1/365.019*100\"",
+     "saida": "1/365.019*100 = 0,2740 (com 3 casas: 0,274; com 2 casas: 0,27; com 1 casa: 0,3)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "nao_confere",
+      "por_que": "números que a conta não dá: 365,0"
+     }
+    },
+    {
+     "id": "c614",
+     "tipo": "site",
+     "dono": "",
+     "afirmacao": "As reservas em dólar do BC eram de US$ 365,0 bilhões em outubro.",
+     "numeros": [
+      "365,0 bilhões"
+     ],
+     "comando": "",
+     "saida": "O Banco Central tinha US$ 365,0 bilhões guardados em dólar em outubro.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    }
+   ],
+   "conferencia": {
+    "final": {
+     "impedimentos": [],
+     "diagnosticos": [
+      "o texto tem 269 palavras e 0 intertítulos (o tipo do dia pede de 200 a 300 palavras: a história do dia em até umas 150, cada outra em duas ou três frases)"
+     ]
+    }
+   },
+   "lentes": [
+    {
+     "historia": "contas_governo",
+     "lente": "o_que_mudaria"
+    },
+    {
+     "historia": "credito_inadimplencia",
+     "lente": "quem_decide"
+    },
+    {
+     "historia": "desconfianca_eleicao",
+     "lente": "quem_decide"
+    },
+    {
+     "historia": "queda_das_acoes_de_tecnologia",
+     "lente": "frequencia"
+    }
+   ],
+   "antes": [
+    {
+     "data": "2026-11-16",
+     "titulo": "Aporte dos Correios já estava no Orçamento, e juros parecem limitar o ajuste"
+    },
+    {
+     "data": "2026-11-14",
+     "titulo": "Caixa empresta 23,0% menos ao campo, onde o atraso cresceu depois de uma safra sem sobra"
+    },
+    {
+     "data": "2026-11-02",
+     "titulo": "Quem investe cobra mais do Tesouro, e os próximos leilões dirão quanto o governo paga"
+    }
+   ],
+   "titulo": "Senado adia conclusão do ajuste, e alívio para as contas segue incerto",
+   "texto": "O Senado adiou ontem a conclusão da votação do ajuste, mantendo incerto o alívio prometido para as contas [c6, c8]. A votação deve voltar hoje, com uma disputa sobre adiar repasses a estados e municípios [c6]. Governistas admitem manter esses pagamentos no prazo, reduzindo o alívio federal, e temem novas perdas na Câmara [c6, c8]. Durigan chamou o pacote de “primeiro passo”, mas não anunciou novas medidas naquela audiência [c9]. Aprovar o texto também não garante toda a melhora estimada: o bloqueio de gastos é autorizado, não obrigatório [c17].\n\nNo crédito, a comissão do novo Desenrola foi instalada ontem, com parecer prometido por Cid Gomes para o início de dezembro [c11]. A medida provisória já autoriza a União a comprar até R$ 15 bilhões em dívidas de pessoas físicas, mas condiciona isso à disponibilidade orçamentária e financeira [c11]. Esse teto não é dinheiro já aplicado nem redução comprovada do peso das dívidas das famílias [c11].\n\nO Goldman Sachs reduziu sua recomendação para ações brasileiras a neutra e apontou a incerteza fiscal como principal obstáculo de curto prazo para o real — uma avaliação, não uma medida de saída de dinheiro [c607, c609]. Segundo a Folha, o Banco Central fará hoje leilões de até US$ 1 bilhão com compromisso de recompra: uma oferta temporária de dólares, que não resolve a dúvida sobre as contas públicas [c612, c609].\n\nLá fora, gestores ouvidos pelo BofA reduziram o peso da tecnologia nas carteiras no ritmo mensal mais forte desde junho de 2006 [c601]. O temor principal é de uma bolha de inteligência artificial; só 3% preveem recessão [c602]. A pesquisa mostra cautela com essas ações, mas não mede saída de dinheiro do Brasil nem efeito sobre o dólar daqui [c601, c602].",
+   "argumento": "O adiamento mantém incerto o alívio fiscal, porque preservar repasses que seriam adiados diminui a melhora das contas federais.",
+   "porque": "O Senado adiou a votação a pedido do relator Eduardo Braga, que solicitou mais tempo para buscar acordo sobre os pontos pendentes.",
+   "pressao": "contas",
+   "duracao_s": 518
+  },
+  "termina_em": "contas",
+  "pergunta": "divida-do-governo"
+ }
+}
