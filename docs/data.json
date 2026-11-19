@@ -2,7 +2,7 @@
  "direcao": "subindo",
  "desde": "2026-06",
  "pergunta": "Para que lado anda o risco de recessão no Brasil: as pressões que costumam vir antes de uma recessão estão piorando ou melhorando?",
- "atualizado_em": "2026-11-18T04:00:06-03:00",
+ "atualizado_em": "2026-11-19T04:00:05-03:00",
  "soma": 4,
  "pioraram": 4,
  "melhoraram": 0,
@@ -86,13 +86,13 @@
    "lado": "piorou",
    "medidas": {
     "dolar": {
-     "agora": 5.7851,
-     "dia": "2026-11-17",
+     "agora": 5.8102,
+     "dia": "2026-11-18",
      "ref": "2026-11",
      "antes": 5.1816,
      "dia_antes": "2026-08-31",
      "ref_antes": "2026-08",
-     "mudanca": 11.647,
+     "mudanca": 12.1314,
      "corte": 4.7657,
      "lado": 1,
      "como": "pct",
@@ -101,13 +101,13 @@
      "persiste_dias": 3
     },
     "juro_longo": {
-     "agora": 7.9,
-     "dia": "2026-11-16",
+     "agora": 7.88,
+     "dia": "2026-11-17",
      "ref": "2026-11",
      "antes": 7.92,
      "dia_antes": "2026-08-31",
      "ref_antes": "2026-08",
-     "mudanca": -0.02,
+     "mudanca": -0.04,
      "corte": 0.4114,
      "lado": 0,
      "como": "pontos",
@@ -118,7 +118,7 @@
    },
    "folga": {
     "serie": "juro_real_longo",
-    "valor": 7.9,
+    "valor": 7.88,
     "ref": "2026-11",
     "desde": "2005",
     "meses": 257,
@@ -165,7 +165,7 @@
    "medidas": {
     "juro": {
      "agora": 13.75,
-     "dia": "2026-11-18",
+     "dia": "2026-11-19",
      "ref": "2026-11",
      "antes": 14.0,
      "dia_antes": "2026-08-31",
@@ -296,18 +296,20 @@
   "o_que_e": "Crescimento do PIB nos 4 trimestres seguintes ao último divulgado que tem 1 chance em 10 de ser pior (conta dos 44 países)."
  },
  "pressao_noticias": {
-  "sentido": "igual",
+  "sentido": "piora",
   "fatores": {
    "contas": "melhora",
-   "mercado": "igual",
+   "mercado": "piora",
+   "atividade": "piora",
+   "emprego": "melhora",
    "externo": "piora",
-   "credito": "igual"
+   "juro": "piora"
   }
  },
  "post_do_dia": {
   "tipo": "Fato do dia",
-  "titulo": "Senado adia conclusão do ajuste, e alívio para as contas segue incerto",
-  "url": "https://vaidarcrise.com.br/2026-11-18/",
+  "titulo": "FGV estima queda da economia, mas recessão ainda não está confirmada",
+  "url": "https://vaidarcrise.com.br/2026-11-19/",
   "escrito_por_llm": true
  }
 }
