@@ -1,0 +1,4505 @@
+{
+ "id": "2026-11-21T0400",
+ "gerado_em": "2026-11-21T04:00:05-03:00",
+ "regras": {
+  "config_sha256": "3f34308470417b0207935a0098e476eab51124f97677203ef39464acf3110cef",
+  "calibracao_sha256": "569a199f8e82bb1d54e6c68aceb9fa43b57f2a2b17789704187a20895b2d55c9"
+ },
+ "insumos": {
+  "indicadores_coletados_em": "2026-11-21T04:00:27-03:00",
+  "erros_coleta": [],
+  "pib": [
+   {
+    "trimestre": "1T23",
+    "periodo": "202301",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T23",
+    "periodo": "202302",
+    "var_qoq": 0.8
+   },
+   {
+    "trimestre": "3T23",
+    "periodo": "202303",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T23",
+    "periodo": "202304",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "1T24",
+    "periodo": "202401",
+    "var_qoq": 0.7
+   },
+   {
+    "trimestre": "2T24",
+    "periodo": "202402",
+    "var_qoq": 1.7
+   },
+   {
+    "trimestre": "3T24",
+    "periodo": "202403",
+    "var_qoq": 0.9
+   },
+   {
+    "trimestre": "4T24",
+    "periodo": "202404",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "1T25",
+    "periodo": "202501",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T25",
+    "periodo": "202502",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "3T25",
+    "periodo": "202503",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T25",
+    "periodo": "202504",
+    "var_qoq": 0.2
+   },
+   {
+    "trimestre": "1T26",
+    "periodo": "202601",
+    "var_qoq": 1.1
+   },
+   {
+    "trimestre": "2T26",
+    "periodo": "202602",
+    "var_qoq": 0.5
+   }
+  ],
+  "focus": {
+   "PIB Total": [
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2026",
+     "Mediana": 1.7215,
+     "numeroRespondentes": 119
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2027",
+     "Mediana": 1.0224,
+     "numeroRespondentes": 118
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2028",
+     "Mediana": 1.8,
+     "numeroRespondentes": 89
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2029",
+     "Mediana": 2.0,
+     "numeroRespondentes": 81
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2030",
+     "Mediana": 2.0,
+     "numeroRespondentes": 79
+    }
+   ],
+   "IPCA": [
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2026",
+     "Mediana": 5.1082,
+     "numeroRespondentes": 146
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2027",
+     "Mediana": 5.0,
+     "numeroRespondentes": 146
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2028",
+     "Mediana": 4.0,
+     "numeroRespondentes": 133
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2029",
+     "Mediana": 4.0,
+     "numeroRespondentes": 122
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2030",
+     "Mediana": 3.935,
+     "numeroRespondentes": 114
+    }
+   ],
+   "Selic": [
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2026",
+     "Mediana": 13.75,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2027",
+     "Mediana": 12.75,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2028",
+     "Mediana": 11.0,
+     "numeroRespondentes": 126
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2029",
+     "Mediana": 10.5,
+     "numeroRespondentes": 116
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2030",
+     "Mediana": 10.0,
+     "numeroRespondentes": 113
+    }
+   ],
+   "Câmbio": [
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2026",
+     "Mediana": 5.4,
+     "numeroRespondentes": 121
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2027",
+     "Mediana": 5.45,
+     "numeroRespondentes": 120
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2028",
+     "Mediana": 5.4821,
+     "numeroRespondentes": 93
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2029",
+     "Mediana": 5.5,
+     "numeroRespondentes": 90
+    },
+    {
+     "Data": "2026-11-13",
+     "DataReferencia": "2030",
+     "Mediana": 5.55,
+     "numeroRespondentes": 87
+    }
+   ],
+   "IPCA 12m": {
+    "Data": "2026-11-13",
+    "Mediana": 5.1484,
+    "numeroRespondentes": 135
+   }
+  },
+  "noticias": {
+   "coletado_em": "2026-11-21T07:00:05+00:00",
+   "janela_horas": 32,
+   "por_veiculo": {
+    "Poder360": 40,
+    "g1": 14,
+    "Valor": 40,
+    "Gazeta do Povo": 1,
+    "InfoMoney": 39,
+    "Folha": 38,
+    "Estadão": 3
+   },
+   "status_fontes": {
+    "Agência Brasil": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 3
+    },
+    "Folha": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 62
+    },
+    "Estadão": {
+     "http": 200,
+     "itens_no_feed": 20,
+     "na_janela": 16
+    },
+    "Valor": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 100
+    },
+    "InfoMoney": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Poder360": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Gazeta do Povo": {
+     "http": 200,
+     "itens_no_feed": 24,
+     "na_janela": 3
+    },
+    "g1": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 27
+    },
+    "GDELT": {
+     "http": 429,
+     "erro": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic us"
+    }
+   },
+   "n_itens": 175
+  }
+ },
+ "cobertura": {
+  "dias": [
+   "2026-11-20"
+  ],
+  "no_acervo": 192,
+  "na_cesta": 175,
+  "coletas_24h": 24
+ },
+ "llm": {
+  "ok": true,
+  "meta": {
+   "etapa": "classificar",
+   "motor": "claude",
+   "modelo_pedido": "sonnet",
+   "prompt_sha256": "db4a5befb71e516cfdbb9e73bfe0dad6e3a2ce8a2d4db94d779bc624b8642141",
+   "system_sha256": "e1c9e1ea22680d7c6442d88926322247950401b8241436be5c34be120379e68a",
+   "returncode": 0,
+   "is_error": false,
+   "custo_usd": 0.284175,
+   "turnos": 3,
+   "duracao_s": 53,
+   "modelos": [
+    "claude-sonnet-5-5"
+   ],
+   "permission_denials": [],
+   "session_id": "220f0d58-9329-424f-86b7-265903d24569"
+  },
+  "saida": {
+   "eventos": [
+    {
+     "noticia_ids": [
+      "n013",
+      "n017",
+      "n119",
+      "n054",
+      "n049"
+     ],
+     "outras_ids": [
+      "n014",
+      "n077",
+      "n057",
+      "n099",
+      "n132",
+      "n136",
+      "n072",
+      "n095",
+      "n111",
+      "n162",
+      "n157"
+     ],
+     "titulo_evento": "Bolsas de Nova York caem forte e ações de tecnologia seguem em queda",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": 1,
+     "magnitude": 2,
+     "historia": "queda_das_acoes_de_tecnologia",
+     "tema_novo": "",
+     "marco": true,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "As ações de tecnologia caíram de novo em Nova York, e as bolsas de países emergentes ficaram perto de uma queda de 20%. Com menos apetite por risco lá fora, o dólar sobe aqui e o dinheiro para investir fica mais curto."
+    },
+    {
+     "noticia_ids": [
+      "n004",
+      "n152",
+      "n027"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Dólar sobe 15,3% desde a eleição e o BC vende US$ 1 bi sem conter a alta",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "mercado",
+     "direcao": 1,
+     "magnitude": 2,
+     "historia": "desconfianca_eleicao",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O real perde valor por causa dos juros mais altos nos EUA e das dúvidas sobre o ajuste das contas daqui. Dólar mais caro encarece importados e insumos, e pressiona os preços e a atividade em 2027."
+    },
+    {
+     "noticia_ids": [
+      "n053",
+      "n079",
+      "n018"
+     ],
+     "outras_ids": [
+      "n044",
+      "n047",
+      "n040",
+      "n120",
+      "n143",
+      "n075",
+      "n046"
+     ],
+     "titulo_evento": "Dirigentes do Fed defendem alta de juros, e Tesouro dos EUA pede alta menor",
+     "estagio": "previsao",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "fora",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "fed_juros_eua",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Com a expectativa de novas altas de juros nos EUA, o ouro cai ao menor nível desde agosto de 2025 e o dólar fica forte. Isso segura a entrada de dinheiro em países como o Brasil."
+    },
+    {
+     "noticia_ids": [
+      "n045",
+      "n051",
+      "n067",
+      "n043"
+     ],
+     "outras_ids": [
+      "n007",
+      "n050",
+      "n022"
+     ],
+     "titulo_evento": "Trump diz que Filipinas vão trocar produtos agrícolas do Brasil pelos dos EUA",
+     "estagio": "anuncio",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "fora",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "tarifas_eua",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O presidente dos EUA disse que as Filipinas comprarão 100% desses produtos dos EUA a partir de janeiro. As Filipinas lideram a compra de carne suína do Brasil, mas são só o 22º destino do agro."
+    },
+    {
+     "noticia_ids": [
+      "n145",
+      "n034",
+      "n155"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Mercado teme nome do futuro ministro da Fazenda, e Lula diz não ter pressa",
+     "estagio": "rumor",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "governo_federal",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "mercado",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "desconfianca_eleicao",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": true,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Sem o nome do ministro, quem investe não sabe como o novo mandato vai tratar as contas, e o dólar e os juros futuros ficam pressionados. Cotam o atual ministro do Planejamento para o cargo."
+    },
+    {
+     "noticia_ids": [
+      "n169"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "IFI: governo precisa achar R$ 20 bi no Orçamento de 2027 para promessas de campanha",
+     "estagio": "previsao",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "contas",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "contas_governo",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A IFI, do Senado, calcula que as medidas anunciadas na campanha ainda não têm espaço no Orçamento de 2027. Sem corte em outro lugar, a meta das contas fica mais difícil de cumprir."
+    },
+    {
+     "noticia_ids": [
+      "n142"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Comissões do Congresso pedem R$ 85,9 bi em emendas ao Orçamento de 2027",
+     "estagio": "em_votacao",
+     "chance_aprovacao": 0.5,
+     "origem": "politica",
+     "decisor": "congresso",
+     "instrumento": "gasto",
+     "objetivo": "",
+     "fator": "contas",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "contas_governo",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Dezesseis comissões propuseram gastos que ainda dependem da Comissão Mista de Orçamento e do plenário. Se passarem, o governo tem menos folga para cumprir a meta das contas de 2027."
+    },
+    {
+     "noticia_ids": [
+      "n096"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Projeto cobra 1% das grandes exportadoras agrícolas para fundo da agricultura familiar",
+     "estagio": "em_votacao",
+     "chance_aprovacao": 0.2,
+     "origem": "politica",
+     "decisor": "congresso",
+     "instrumento": "imposto",
+     "objetivo": "",
+     "fator": "atividade",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "nova",
+     "tema_novo": "fundo-agricultura-familiar",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A contribuição vale para empresas com receita acima de R$ 500 milhões e encarece a exportação de produtos agrícolas, setor que sustenta a safra e o comércio exterior."
+    },
+    {
+     "noticia_ids": [
+      "n097"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Congresso aprova crédito de R$ 149 bi para Previdência e Bolsa Família",
+     "estagio": "decidido",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "congresso",
+     "instrumento": "gasto",
+     "objetivo": "",
+     "fator": "contas",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "contas_governo",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261113-09",
+     "porque": "O crédito paga aposentadorias, pensões e Bolsa Família e já tinha passado antes pelo Congresso, agora segue para sanção."
+    },
+    {
+     "noticia_ids": [
+      "n161"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Governo volta a estudar imposto sobre LCI, LCA e debêntures de infraestrutura",
+     "estagio": "rumor",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "governo_federal",
+     "instrumento": "imposto",
+     "objetivo": "",
+     "fator": "contas",
+     "direcao": -1,
+     "magnitude": 1,
+     "historia": "contas_governo",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A cobrança traria receita ao governo, mas pode encarecer o financiamento de imóveis, do agro e de obras de infraestrutura."
+    },
+    {
+     "noticia_ids": [
+      "n086"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "CEO do Bradesco pede prudência aos bancos e vê economia mais lenta em 2027",
+     "estagio": "previsao",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "credito",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "credito_inadimplencia",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O presidente do segundo maior banco privado do país vê desaceleração no ano que vem, e bancos mais cautelosos emprestam menos a pessoas e empresas."
+    },
+    {
+     "noticia_ids": [
+      "n002"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Quase 100 milhões recebem 13º salário, com R$ 400 bi a circular na economia",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "atividade",
+     "direcao": -1,
+     "magnitude": 1,
+     "historia": "ritmo_emprego",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A primeira parcela reforça as vendas do fim do ano, mas muita gente vai usar o dinheiro para quitar dívidas, o que reduz o efeito no consumo."
+    }
+   ]
+  }
+ },
+ "eventos_novos": [
+  "ev-20261121-01",
+  "ev-20261121-02",
+  "ev-20261121-03",
+  "ev-20261121-04",
+  "ev-20261121-05",
+  "ev-20261121-06",
+  "ev-20261121-07",
+  "ev-20261121-08",
+  "ev-20261121-09",
+  "ev-20261121-10",
+  "ev-20261121-11"
+ ],
+ "eventos_descartados": [
+  {
+   "noticia_ids": [
+    "n097"
+   ],
+   "outras_ids": [],
+   "titulo_evento": "Congresso aprova crédito de R$ 149 bi para Previdência e Bolsa Família",
+   "estagio": "decidido",
+   "chance_aprovacao": null,
+   "origem": "politica",
+   "decisor": "congresso",
+   "instrumento": "gasto",
+   "objetivo": "",
+   "fator": "contas",
+   "direcao": 1,
+   "magnitude": 1,
+   "historia": "contas_governo",
+   "tema_novo": "",
+   "marco": false,
+   "previsao_virou": false,
+   "sem_medida": false,
+   "ja_no_preco": true,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261113-09",
+   "porque": "O crédito paga aposentadorias, pensões e Bolsa Família e já tinha passado antes pelo Congresso, agora segue para sanção.",
+   "motivo": "mesmo fato do evento ev-20261113-09",
+   "fontes": [
+    {
+     "veiculo": "Poder360",
+     "titulo": "Previdência e Bolsa Família terão crédito de R$ 149 bi após aval do Congresso",
+     "url": "https://www.poder360.com.br/poder-congresso/previdencia-e-bolsa-familia-terao-credito-de-r-149-bi-apos-aval-do-congresso/",
+     "publicado_em": "2026-11-20T14:30+00:00"
+    }
+   ]
+  }
+ ],
+ "resultado": {
+  "gar": {
+   "entradas": [
+    {
+     "id": "tendencia",
+     "fator": "atividade",
+     "nome": "Crescimento médio em 10 anos",
+     "unidade": "%",
+     "valor": 1.7328366710913756,
+     "ref": "2T2026",
+     "referencia": 2.4697807384106563,
+     "coef": -0.20407155569770025,
+     "faixa_normal": [
+      1.2052,
+      3.3021
+     ],
+     "escala": [
+      0.3054,
+      3.9289
+     ],
+     "efeito": 0.15038932228003635
+    },
+    {
+     "id": "crescimento",
+     "fator": "atividade",
+     "nome": "Crescimento em 12 meses",
+     "unidade": "%",
+     "valor": 1.099285274025721,
+     "ref": "2026-09",
+     "referencia": 2.029441313073013,
+     "coef": 0.2281557601628648,
+     "faixa_normal": [
+      0.4274,
+      4.1388
+     ],
+     "escala": [
+      -6.2893,
+      9.267
+     ],
+     "efeito": -0.21222045815891427
+    },
+    {
+     "id": "juro",
+     "fator": "juro",
+     "nome": "Selic: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -1.25,
+     "ref": "2026-11-21",
+     "nivel": 13.75,
+     "antes": 15.0,
+     "referencia": -0.375,
+     "coef": -0.1473323685958321,
+     "faixa_normal": [
+      -3.0,
+      2.0
+     ],
+     "escala": [
+      -6.31,
+      8.655
+     ],
+     "efeito": 0.12891582252135309
+    },
+    {
+     "id": "inflacao",
+     "fator": "juro",
+     "nome": "Inflação: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -0.04999999999999982,
+     "ref": "2026-10",
+     "nivel": 4.63,
+     "antes": 4.68,
+     "referencia": -0.06499999999999995,
+     "coef": -0.12500236363708112,
+     "faixa_normal": [
+      -1.665,
+      1.3725
+     ],
+     "escala": [
+      -8.2538,
+      6.2048
+     ],
+     "efeito": -0.0018750354545562322
+    }
+   ],
+   "ruim": -0.6262738328616679,
+   "cenario_ruim": -1.9172071844033245,
+   "cenario_normal": -1.8914573730774542,
+   "ref_pib": "2T2026"
+  },
+  "indicadores": [
+   {
+    "id": "ibcbr",
+    "fator": "atividade",
+    "nome": "IBC-Br",
+    "unidade": "%",
+    "definicao": "IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores.",
+    "direcao": -1,
+    "faixa_normal": [
+     -0.178879,
+     1.409462
+    ],
+    "escala": [
+     -3.422733,
+     3.418644
+    ],
+    "valor": -0.8605488709830245,
+    "ref": "2026-09"
+   },
+   {
+    "id": "focus_pib",
+    "fator": "atividade",
+    "nome": "PIB esperado pelo Focus",
+    "unidade": "%",
+    "definicao": "Crescimento do PIB esperado para os próximos 12 meses: mediana do Focus para o ano corrente e o seguinte, ponderada pelos meses que faltam em cada um.",
+    "direcao": -1,
+    "faixa_normal": [
+     1.617708,
+     3.499375
+    ],
+    "escala": [
+     -2.139717,
+     5.282417
+    ],
+    "valor": 1.0806583333333333,
+    "ref": "2026-11-13",
+    "ano": 1.7215,
+    "ano_seguinte": 1.0224
+   },
+   {
+    "id": "juro_real",
+    "fator": "juro",
+    "nome": "Juro real",
+    "unidade": "% ao ano",
+    "definicao": "Selic meta (BCB 432) descontada da inflação esperada para 12 meses (Focus, suavizada): (1 + Selic) / (1 + inflação esperada) − 1.",
+    "direcao": 1,
+    "faixa_normal": [
+     4.062007,
+     9.133549
+    ],
+    "escala": [
+     -1.195693,
+     14.660898
+    ],
+    "valor": 8.180438313849736,
+    "ref": "2026-11-21",
+    "selic": 13.75,
+    "inflacao_esperada": 5.1484,
+    "focus_data": "2026-11-13"
+   },
+   {
+    "id": "comprometimento",
+    "fator": "credito",
+    "nome": "Renda comprometida com dívidas",
+    "unidade": "p.p.",
+    "definicao": "Comprometimento de renda das famílias com dívidas, dessazonalizado (BCB 29034), menos a média dos 36 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.268333,
+     1.686944
+    ],
+    "escala": [
+     -1.879444,
+     3.762167
+    ],
+    "valor": 1.8797222222222203,
+    "ref": "2026-08",
+    "nivel": 28.99
+   },
+   {
+    "id": "tesouro",
+    "fator": "mercado",
+    "nome": "Juro do Tesouro IPCA+",
+    "unidade": "p.p.",
+    "definicao": "Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (Tesouro Direto, venda pela manhã) menos a sua mediana nos 3 anos anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.95,
+     0.845
+    ],
+    "escala": [
+     -2.2292,
+     2.1344
+    ],
+    "valor": 0.5700000000000003,
+    "ref": "2026-11-19",
+    "nivel": 7.98,
+    "mediana": 7.41,
+    "vencimento": "2035-05-15"
+   },
+   {
+    "id": "dolar",
+    "fator": "mercado",
+    "nome": "Dólar",
+    "unidade": "%",
+    "definicao": "Variação do dólar PTAX (BCB 1) em 3 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -4.151625,
+     5.11632
+    ],
+    "escala": [
+     -14.383365,
+     27.223675
+    ],
+    "valor": 13.874386046331733,
+    "ref": "2026-11-19",
+    "nivel": 5.8889
+   },
+   {
+    "id": "divida",
+    "fator": "contas",
+    "nome": "Dívida pública",
+    "unidade": "p.p. do PIB",
+    "definicao": "Variação da dívida bruta do governo geral (BCB 13762) em 12 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -1.74,
+     4.22
+    ],
+    "escala": [
+     -8.4312,
+     10.7912
+    ],
+    "valor": 5.109999999999999,
+    "ref": "2026-09",
+    "nivel": 82.95
+   },
+   {
+    "id": "sahm",
+    "fator": "emprego",
+    "nome": "Regra de Sahm",
+    "unidade": "p.p.",
+    "definicao": "Média de 3 meses da desocupação da PNAD Contínua (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.066667,
+     1.433333
+    ],
+    "escala": [
+     -0.526667,
+     3.126667
+    ],
+    "valor": 0.033333333333333215,
+    "ref": "2026-09",
+    "nivel": 5.2
+   },
+   {
+    "id": "commodities",
+    "fator": "externo",
+    "nome": "Preço das commodities",
+    "unidade": "%",
+    "definicao": "Variação em 6 meses do índice de preços de todas as commodities do FMI (FRED PALLFNFINDEXM).",
+    "direcao": -1,
+    "faixa_normal": [
+     -4.196915,
+     13.721388
+    ],
+    "escala": [
+     -28.018093,
+     30.645307
+    ],
+    "valor": 1.6727586354593926,
+    "ref": "2026-09",
+    "nivel": 222.4285486100514
+   }
+  ],
+  "reaproveitados": [],
+  "faltando": [],
+  "direcao": {
+   "estado": "subindo",
+   "desde": "2026-06",
+   "soma": 4,
+   "bruto": "subindo",
+   "pendente": null,
+   "apertaram": 4,
+   "folgaram": 0,
+   "partes": [
+    {
+     "id": "contas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "divida": {
+       "agora": 82.95,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 81.95,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 1.0,
+       "corte": 0.9451499999999999,
+       "lado": 1,
+       "como": "pontos"
+      },
+      "primario": {
+       "agora": 0.52,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 1.19,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.6699999999999999,
+       "corte": 0.311325,
+       "lado": -1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "divida_bruta",
+      "valor": 82.95,
+      "ref": "2026-09",
+      "desde": "2006",
+      "meses": 238,
+      "pior_que_pct": 96,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "parcelas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "parcelas": {
+       "agora": 28.99,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 28.47,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": 0.5199999999999996,
+       "corte": 0.378075,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "comprometimento_renda",
+      "valor": 28.99,
+      "ref": "2026-08",
+      "desde": "2005",
+      "meses": 258,
+      "pior_que_pct": 100,
+      "recorde_ruim": true,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "mercado",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "dolar": {
+       "agora": 5.8889,
+       "dia": "2026-11-19",
+       "ref": "2026-11",
+       "antes": 5.1816,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 13.650223869075173,
+       "corte": 4.765725,
+       "lado": 1,
+       "como": "pct",
+       "lado_do_dia": 1,
+       "dias_seguidos": 0,
+       "persiste_dias": 3
+      },
+      "juro_longo": {
+       "agora": 7.98,
+       "dia": "2026-11-19",
+       "ref": "2026-11",
+       "antes": 7.92,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 0.0600000000000005,
+       "corte": 0.41145,
+       "lado": 0,
+       "como": "pontos",
+       "lado_do_dia": 0,
+       "dias_seguidos": 0,
+       "persiste_dias": 3
+      }
+     },
+     "folga": {
+      "serie": "juro_real_longo",
+      "valor": 7.98,
+      "ref": "2026-11",
+      "desde": "2005",
+      "meses": 257,
+      "pior_que_pct": 91,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "inflacao",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "inflacao": {
+       "agora": 5.1484,
+       "dia": "2026-11-13",
+       "ref": "2026-11",
+       "antes": 4.553,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 0.5953999999999997,
+       "corte": 0.316875,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "focus_ipca_12m",
+      "valor": 5.1484,
+      "ref": "2026-11",
+      "desde": "2001",
+      "meses": 300,
+      "pior_que_pct": 57,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "juro",
+     "lado": 0,
+     "na_soma": true,
+     "medidas": {
+      "juro": {
+       "agora": 13.75,
+       "dia": "2026-11-21",
+       "ref": "2026-11",
+       "antes": 14.0,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": -0.25,
+       "corte": 0.833925,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "juro_real",
+      "valor": 8.180438313849736,
+      "ref": "2026-11",
+      "desde": "2002",
+      "meses": 299,
+      "pior_que_pct": 66,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "ritmo",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "ritmo": {
+       "agora": 109.77734,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 110.31795,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.8605488709830356,
+       "corte": 0.88905,
+       "lado": 0,
+       "como": "media"
+      }
+     },
+     "folga": null
+    },
+    {
+     "id": "emprego",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "emprego": {
+       "agora": 5.2,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 5.4,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.20000000000000018,
+       "corte": 0.555975,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "desocupacao",
+      "valor": 5.2,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "renda",
+     "lado": -1,
+     "na_soma": false,
+     "medidas": {
+      "renda": {
+       "agora": 3790.0,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 3753.0,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 0.9858779642952342,
+       "corte": 0.8882999999999999,
+       "lado": -1,
+       "como": "pct"
+      }
+     },
+     "folga": {
+      "serie": "rendimento_real",
+      "valor": 3790.0,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "reservas",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "reservas": {
+       "agora": 365019.0,
+       "dia": "2026-10-01",
+       "ref": "2026-10",
+       "antes": 369742.0,
+       "dia_antes": "2026-07-01",
+       "ref_antes": "2026-07",
+       "mudanca": -1.2773771981543836,
+       "corte": 2.97645,
+       "lado": 0,
+       "como": "pct"
+      }
+     },
+     "folga": null
+    }
+   ],
+   "mes": "2026-11",
+   "linha": [
+    {
+     "mes": "2004-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-01",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-02",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-03",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-04",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-11",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2020-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2020-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2021-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-11",
+     "estado": "S"
+    }
+   ]
+  }
+ },
+ "pressao": {
+  "fatores": {
+   "externo": {
+    "saldo": 2.325,
+    "sentido": "piora",
+    "eventos": [
+     "ev-20261121-01",
+     "ev-20261121-03",
+     "ev-20261121-04"
+    ]
+   },
+   "mercado": {
+    "saldo": 1.025,
+    "sentido": "piora",
+    "eventos": [
+     "ev-20261121-02",
+     "ev-20261121-05"
+    ]
+   },
+   "contas": {
+    "saldo": 0.575,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261121-06",
+     "ev-20261121-07",
+     "ev-20261121-09"
+    ]
+   },
+   "atividade": {
+    "saldo": -0.15,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261121-11",
+     "ev-20261121-08"
+    ]
+   },
+   "credito": {
+    "saldo": 0.5,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261121-10"
+    ]
+   }
+  },
+  "saldo": 4.275,
+  "sentido": "piora",
+  "n": 11
+ },
+ "leituras": {
+  "fatores": {
+   "atividade": {
+    "fatos": [
+     {
+      "texto": "A economia cresceu 1,1% em um ano (prévia do PIB, de julho a setembro). O normal desde 2004 vai de 0,4% a 4,1%.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "A prévia do PIB caiu 0,9% no trimestre até setembro, contra os 3 meses anteriores. É a maior queda desde maio de 2021.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "Os bancos (Focus) esperam alta de 1,7% do PIB em 2026 e alta de 1% em 2027.",
+      "fonte": "Focus"
+     }
+    ]
+   },
+   "juro": {
+    "fatos": [
+     {
+      "texto": "Os preços subiram 4,6% em um ano até outubro (IPCA). Um ano antes, a alta era de 4,7%: os preços sobem no mesmo ritmo.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "Descontada a inflação esperada (5,1%), a Selic de 13,75% rende 8,2% ao ano.",
+      "fonte": "BC e Focus"
+     },
+     {
+      "texto": "Selic em 13,75% desde 17/9. Antes, era 14%. Nos últimos 12 meses, chegou a 15%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "credito": {
+    "fatos": [
+     {
+      "texto": "29% da renda das famílias vai para parcelas e juros (agosto), o maior desde o início da série, em 2005. Um ano antes, eram 27,6%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "mercado": {
+    "fatos": [
+     {
+      "texto": "O governo paga 8,0% ao ano acima da inflação para pegar dinheiro até 2035 (19/11). É 0,6 ponto acima do normal dos últimos 3 anos.",
+      "fonte": "Tesouro Direto"
+     },
+     {
+      "texto": "Dólar a R$ 5,89 em 19/11, 13,9% mais caro que em meados de agosto.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "contas": {
+    "fatos": [
+     {
+      "texto": "Dívida do governo em 83,0% do PIB (setembro). Subiu 5,1 pontos em um ano.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "União, estados e municípios gastaram 0,5% do PIB a mais do que arrecadaram nos 12 meses até setembro, sem contar juros. Um ano antes, eram 0,3%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "emprego": {
+    "fatos": [
+     {
+      "texto": "Desemprego em 5,2% no trimestre até setembro. O menor desde 2012 foi 5,1%, em dezembro de 2025.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "O desemprego médio de 3 meses está igual ao menor do último ano.",
+      "fonte": "IBGE"
+     }
+    ]
+   },
+   "externo": {
+    "fatos": [
+     {
+      "texto": "Soja, minério, petróleo e outros produtos básicos ficaram 1,7% mais caros em 6 meses até setembro (FMI).",
+      "fonte": "FMI"
+     }
+    ]
+   }
+  }
+ },
+ "anterior": "2026-11-20T0400",
+ "revisao_texto": {
+  "classificacao": [
+   "sigla que a leitora não conhece (BC): escreva o nome por extenso, se ele explica: Dólar sobe 15,3% desde a eleição e o BC vende US$ 1 bi sem c",
+   "nome de pessoa ou partido: use o cargo ou a instituição (o presidente, a Fazenda, o partido do governo): Trump diz que Filipinas vão trocar produtos agrícolas do Bra",
+   "nome de pessoa ou partido: use o cargo ou a instituição (o presidente, a Fazenda, o partido do governo): Mercado teme nome do futuro ministro da Fazenda, e Lula diz ",
+   "palavra que o site trocou: diga o juro de 10 anos (o que o governo paga, acima da inflação, para pegar dinheiro emprestado por uns 10 anos) e, para a pressão, Desconfiança de quem investe: Mercado teme nome do futuro ministro da Fazenda, e Lula diz ",
+   "título com 83 caracteres: IFI: governo precisa achar R$ 20 bi no Orçamento de 2027 par",
+   "palavra que o site trocou: cada pressão piorou, ficou igual ou melhorou: Comissões do Congresso pedem R$ 85,9 bi em emendas ao Orçame",
+   "título com 86 caracteres: Projeto cobra 1% das grandes exportadoras agrícolas para fun",
+   "sigla que a leitora não conhece (LCA, LCI): escreva o nome por extenso, se ele explica: Governo volta a estudar imposto sobre LCI, LCA e debêntures ",
+   "sigla que a leitora não conhece (CEO): escreva o nome por extenso, se ele explica: CEO do Bradesco pede prudência aos bancos e vê economia mais"
+  ]
+ },
+ "pauta": {
+  "versao": 2,
+  "candidatos": [
+   {
+    "id": "E1",
+    "ordem": 1,
+    "evento": "ev-20261121-01",
+    "titulo": "Bolsas de Nova York caem forte e ações de tecnologia seguem em queda",
+    "estagio": "dado",
+    "tamanho": 2,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "As ações de tecnologia caíram de novo em Nova York, e as bolsas de países emergentes ficaram perto de uma queda de 20%. Com menos apetite por risco lá fora, o dólar sobe aqui e o dinheiro para investir fica mais curto.",
+    "historia": "queda_das_acoes_de_tecnologia",
+    "tema_novo": "",
+    "marco": true,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 16,
+    "jornais": [
+     "Folha",
+     "InfoMoney",
+     "Valor",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Valor",
+      "titulo": "Queda das ações em Wall Street reacende dúvidas sobre o fôlego do rali da IA",
+      "url": "https://valor.globo.com/financas/intraday/post/2026/11/queda-das-acoes-em-wall-street-reacende-duvidas-sobre-o-folego-do-rali-da-ia.ghtml",
+      "publicado_em": "2026-11-20T22:40+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Aversão a risco derruba bolsas de NY em meio a dúvidas sobre IA",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/20/aversao-a-risco-derruba-bolsas-de-ny-em-meio-a-duvidas-sobre-ia.ghtml",
+      "publicado_em": "2026-11-20T21:29+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Ações globais registram maior sequência de perdas desde 2023",
+      "url": "https://www.infomoney.com.br/mercados/acoes-globais-registram-maior-sequencia-de-perdas-desde-2023/",
+      "publicado_em": "2026-11-20T12:52+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Ações de emergentes ficam próximas a “bear market” com expansão da crise de IA",
+      "url": "https://www.infomoney.com.br/mercados/acoes-de-emergentes-ficam-proximas-a-bear-market-com-expansao-da-crise-de-ia/",
+      "publicado_em": "2026-11-20T18:30+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Ações da Nvidia têm pior sequência de quedas na bolsa desde 2008",
+      "url": "https://g1.globo.com/tecnologia/noticia/2026/11/20/acoes-da-nvidia-tem-pior-sequencia-de-quedas-na-bolsa-desde-2008.ghtml",
+      "publicado_em": "2026-11-20T18:47+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E2",
+    "ordem": 2,
+    "evento": "ev-20261121-02",
+    "titulo": "Dólar sobe 15,3% desde a eleição e o BC vende US$ 1 bi sem conter a alta",
+    "estagio": "dado",
+    "tamanho": 2,
+    "fator": "mercado",
+    "origem": "dados",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "O real perde valor por causa dos juros mais altos nos EUA e das dúvidas sobre o ajuste das contas daqui. Dólar mais caro encarece importados e insumos, e pressiona os preços e a atividade em 2027.",
+    "historia": "desconfianca_eleicao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 3,
+    "jornais": [
+     "Estadão",
+     "Poder360",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "g1",
+      "titulo": "Juros nos EUA e ajuste fiscal no Brasil: o que está por trás da disparada do dólar",
+      "url": "https://g1.globo.com/jornal-nacional/noticia/2026/11/20/juros-nos-eua-e-ajuste-fiscal-no-brasil-o-que-esta-por-tras-da-disparada-do-dolar.ghtml",
+      "publicado_em": "2026-11-21T01:01+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Real perde 7,50% em 2026 e tem 5º pior desempenho ante o dólar",
+      "url": "https://www.poder360.com.br/poder-economia/real-perde-752-em-2026-e-tem-5o-pior-desempenho-ante-o-dolar/",
+      "publicado_em": "2026-11-20T09:00+00:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Nem US$ 1 bilhão do BC conteve a alta do dólar; o que isso revela sobre a economia?",
+      "url": "https://www.estadao.com.br/economia/celso-ming/nem-us-1-bilhao-do-bc-conteve-a-alta-do-dolar-o-que-isso-revela-sobre-a-economia/",
+      "publicado_em": "2026-11-20T20:52+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E3",
+    "ordem": 3,
+    "evento": "ev-20261121-03",
+    "titulo": "Dirigentes do Fed defendem alta de juros, e Tesouro dos EUA pede alta menor",
+    "estagio": "previsao",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "Com a expectativa de novas altas de juros nos EUA, o ouro cai ao menor nível desde agosto de 2025 e o dólar fica forte. Isso segura a entrada de dinheiro em países como o Brasil.",
+    "historia": "fed_juros_eua",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 10,
+    "jornais": [
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Valor",
+      "titulo": "Bessent defende alta mais moderada dos juros pelo Fed e cita choque de energia",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/20/bessent-defende-alta-mais-moderada-dos-juros-pelo-fed-e-cita-choque-de-energia.ghtml",
+      "publicado_em": "2026-11-20T18:30+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Bessent defende alta mais moderada dos juros pelo Fed e cita choque de energia",
+      "url": "https://www.infomoney.com.br/economia/bessent-defende-alta-mais-moderada-dos-juros-pelo-fed-e-cita-choque-de-energia/",
+      "publicado_em": "2026-11-20T16:36+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "CME: Mercado vê chance de manutenção de juro pelo Fed em dezembro",
+      "url": "https://www.infomoney.com.br/economia/cme-mercado-ve-chance-de-manutencao-de-juro-pelo-fed-em-dezembro/",
+      "publicado_em": "2026-11-20T21:29+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E4",
+    "ordem": 4,
+    "evento": "ev-20261121-04",
+    "titulo": "Trump diz que Filipinas vão trocar produtos agrícolas do Brasil pelos dos EUA",
+    "estagio": "anuncio",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O presidente dos EUA disse que as Filipinas comprarão 100% desses produtos dos EUA a partir de janeiro. As Filipinas lideram a compra de carne suína do Brasil, mas são só o 22º destino do agro.",
+    "historia": "tarifas_eua",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 7,
+    "jornais": [
+     "Estadão",
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "Valor",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "g1",
+      "titulo": "Trump diz que convenceu Filipinas a substituir produtos agrícolas do Brasil pelos dos EUA",
+      "url": "https://g1.globo.com/mundo/noticia/2026/11/20/trump-brasil-filipinas.ghtml",
+      "publicado_em": "2026-11-20T19:16+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Trump diz que Filipinas deixarão de comprar produtos agrícolas do Brasil",
+      "url": "https://www.poder360.com.br/poder-internacional/trump-diz-que-filipinas-deixarao-de-comprar-produtos-agricolas-do-brasil/",
+      "publicado_em": "2026-11-20T18:36+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Trump diz ter exigido que Filipinas comprem produtos agrícolas dos EUA e cancelem negócios com Brasil",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/agro/2026/11/trump-diz-ter-exigido-que-filipinas-comprem-produtos-agricolas-dos-eua-e-cancelem-negocios-com-brasil.shtml",
+      "publicado_em": "2026-11-20T17:39-03:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Trump diz que Filipinas compravam mais produtos do agro brasileiro e agora comprarão apenas dos EUA",
+      "url": "https://www.estadao.com.br/economia/agronegocios/trump-filipinas-produtos-agro-brasileiro-compras-eua/",
+      "publicado_em": "2026-11-20T19:28+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E5",
+    "ordem": 5,
+    "evento": "ev-20261121-05",
+    "titulo": "Mercado teme nome do futuro ministro da Fazenda, e Lula diz não ter pressa",
+    "estagio": "rumor",
+    "tamanho": 1,
+    "fator": "mercado",
+    "origem": "politica",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "Sem o nome do ministro, quem investe não sabe como o novo mandato vai tratar as contas, e o dólar e os juros futuros ficam pressionados. Cotam o atual ministro do Planejamento para o cargo.",
+    "historia": "desconfianca_eleicao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": true,
+    "n_manchetes": 3,
+    "jornais": [
+     "Folha",
+     "InfoMoney",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Valor",
+      "titulo": "Moretti e o temor crescente da Faria Lima com a próxima Fazenda",
+      "url": "https://valor.globo.com/financas/intraday/post/2026/11/moretti-e-o-temor-crescente-da-faria-lima-com-a-proxima-fazenda.ghtml",
+      "publicado_em": "2026-11-20T10:02+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Lula perde tempo brigando com o mercado",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/colunas/adriana-fernandes/2026/11/lula-perde-tempo-brigando-com-o-mercado.shtml",
+      "publicado_em": "2026-11-20T20:00-03:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Novo ministro da Fazenda precisa ser alguém que Lula possa demitir, diz analista",
+      "url": "https://www.infomoney.com.br/politica/novo-ministro-da-fazenda-precisa-ser-alguem-que-lula-possa-demitir-diz-analista/",
+      "publicado_em": "2026-11-20T09:00+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E6",
+    "ordem": 6,
+    "evento": "ev-20261121-06",
+    "titulo": "IFI: governo precisa achar R$ 20 bi no Orçamento de 2027 para promessas de campanha",
+    "estagio": "previsao",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "A IFI, do Senado, calcula que as medidas anunciadas na campanha ainda não têm espaço no Orçamento de 2027. Sem corte em outro lugar, a meta das contas fica mais difícil de cumprir.",
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "Folha"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Folha",
+      "titulo": "Governo ainda precisa encontrar espaço no Orçamento para R$ 20 bi de promessas de campanha, diz IFI",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/governo-ainda-precisa-encontrar-espaco-no-orcamento-para-r-20-bi-de-promessas-de-campanha-diz-ifi.shtml",
+      "publicado_em": "2026-11-20T04:00-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E7",
+    "ordem": 7,
+    "evento": "ev-20261121-07",
+    "titulo": "Comissões do Congresso pedem R$ 85,9 bi em emendas ao Orçamento de 2027",
+    "estagio": "em_votacao",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Dezesseis comissões propuseram gastos que ainda dependem da Comissão Mista de Orçamento e do plenário. Se passarem, o governo tem menos folga para cumprir a meta das contas de 2027.",
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "Poder360"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Comissões pedem R$ 85,9 bilhões em emendas ao Orçamento de 2027",
+      "url": "https://www.poder360.com.br/poder-congresso/comissoes-pedem-r-859-bilhoes-em-emendas-ao-orcamento-de-2027/",
+      "publicado_em": "2026-11-20T11:13+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E8",
+    "ordem": 8,
+    "evento": "ev-20261121-08",
+    "titulo": "Projeto cobra 1% das grandes exportadoras agrícolas para fundo da agricultura familiar",
+    "estagio": "em_votacao",
+    "tamanho": 1,
+    "fator": "atividade",
+    "origem": "politica",
+    "assunto": "Ritmo da economia",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "A contribuição vale para empresas com receita acima de R$ 500 milhões e encarece a exportação de produtos agrícolas, setor que sustenta a safra e o comércio exterior.",
+    "historia": "nova",
+    "tema_novo": "fundo-agricultura-familiar",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "Poder360"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Projeto cria fundo para agricultura familiar pago por exportadores",
+      "url": "https://www.poder360.com.br/poder-congresso/projeto-cria-fundo-para-agricultura-familiar-pago-por-exportadores/",
+      "publicado_em": "2026-11-20T14:36+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E9",
+    "ordem": 9,
+    "evento": null,
+    "titulo": "Congresso aprova crédito de R$ 149 bi para Previdência e Bolsa Família",
+    "estagio": "decidido",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "O crédito paga aposentadorias, pensões e Bolsa Família e já tinha passado antes pelo Congresso, agora segue para sanção.",
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "Poder360"
+    ],
+    "descartado": "mesmo fato do evento ev-20261113-09",
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Previdência e Bolsa Família terão crédito de R$ 149 bi após aval do Congresso",
+      "url": "https://www.poder360.com.br/poder-congresso/previdencia-e-bolsa-familia-terao-credito-de-r-149-bi-apos-aval-do-congresso/",
+      "publicado_em": "2026-11-20T14:30+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E10",
+    "ordem": 10,
+    "evento": "ev-20261121-09",
+    "titulo": "Governo volta a estudar imposto sobre LCI, LCA e debêntures de infraestrutura",
+    "estagio": "rumor",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "A cobrança traria receita ao governo, mas pode encarecer o financiamento de imóveis, do agro e de obras de infraestrutura.",
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "InfoMoney"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Tributação de títulos isentos: como o imposto pode mexer com o seu bolso?",
+      "url": "https://www.infomoney.com.br/onde-investir/tributacao-de-titulos-isentos-como-o-imposto-pode-mexer-com-o-seu-bolso/",
+      "publicado_em": "2026-11-20T08:00+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E11",
+    "ordem": 11,
+    "evento": "ev-20261121-10",
+    "titulo": "CEO do Bradesco pede prudência aos bancos e vê economia mais lenta em 2027",
+    "estagio": "previsao",
+    "tamanho": 1,
+    "fator": "credito",
+    "origem": "dados",
+    "assunto": "Dívidas das famílias",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O presidente do segundo maior banco privado do país vê desaceleração no ano que vem, e bancos mais cautelosos emprestam menos a pessoas e empresas.",
+    "historia": "credito_inadimplencia",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "InfoMoney"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "CEO do Bradesco afirma que é hora de ‘prudência’ nos bancos brasileiros",
+      "url": "https://www.infomoney.com.br/mercados/ceo-do-bradesco-afirma-que-e-hora-de-prudencia-nos-bancos-brasileiros/",
+      "publicado_em": "2026-11-20T15:41+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E12",
+    "ordem": 12,
+    "evento": "ev-20261121-11",
+    "titulo": "Quase 100 milhões recebem 13º salário, com R$ 400 bi a circular na economia",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "atividade",
+    "origem": "dados",
+    "assunto": "Ritmo da economia",
+    "lado": "alivia",
+    "ja_esperado": true,
+    "porque": "A primeira parcela reforça as vendas do fim do ano, mas muita gente vai usar o dinheiro para quitar dívidas, o que reduz o efeito no consumo.",
+    "historia": "ritmo_emprego",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 1,
+    "jornais": [
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "g1",
+      "titulo": "Quase 100 milhões de brasileiros começam a receber o 13º salário; benefício deve movimentar R$ 400 bilhões na economia",
+      "url": "https://g1.globo.com/jornal-nacional/noticia/2026/11/20/quase-100-milhoes-de-brasileiros-comecam-a-receber-o-13o-salario-beneficio-deve-movimentar-r-400-bilhoes-na-economia.ghtml",
+      "publicado_em": "2026-11-21T01:16+00:00"
+     }
+    ]
+   }
+  ],
+  "datas": [],
+  "pressoes_mudaram": [],
+  "estado": "subindo",
+  "estado_anterior": "subindo",
+  "direcao_mudou": false,
+  "historias": [
+   {
+    "id": "desconfianca_eleicao",
+    "titulo": "Desconfiança de quem investe depois da eleição",
+    "pressao": "mercado",
+    "pressoes": [
+     "mercado",
+     "divida_reais",
+     "juro",
+     "inflacao"
+    ],
+    "nova": false,
+    "pontos": 2.25,
+    "candidatos": [
+     "E2",
+     "E5"
+    ],
+    "jornais": 6,
+    "fato_grande": true
+   },
+   {
+    "id": "queda_das_acoes_de_tecnologia",
+    "titulo": "A queda das ações de tecnologia lá fora",
+    "pressao": "mercado",
+    "pressoes": [
+     "mercado",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 2.0,
+    "candidatos": [
+     "E1"
+    ],
+    "jornais": 4,
+    "fato_grande": true
+   },
+   {
+    "id": "contas_governo",
+    "titulo": "Contas do governo: a meta, o ajuste prometido e a dívida",
+    "pressao": "contas",
+    "pressoes": [
+     "contas",
+     "divida_reais",
+     "mercado",
+     "juro"
+    ],
+    "nova": false,
+    "pontos": 1.45,
+    "candidatos": [
+     "E7",
+     "E6",
+     "E10"
+    ],
+    "jornais": 3,
+    "fato_grande": false
+   },
+   {
+    "id": "ritmo_emprego",
+    "titulo": "Ritmo da economia e emprego: a desaceleração e a previsão de 2027",
+    "pressao": "ritmo",
+    "pressoes": [
+     "ritmo",
+     "emprego",
+     "renda",
+     "juro"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E12"
+    ],
+    "jornais": 1,
+    "fato_grande": false
+   },
+   {
+    "id": "tarifas_eua",
+    "titulo": "Tarifas dos EUA sobre o Brasil",
+    "pressao": "ritmo",
+    "pressoes": [
+     "mercado",
+     "emprego",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 0.5,
+    "candidatos": [
+     "E4"
+    ],
+    "jornais": 6,
+    "fato_grande": false
+   },
+   {
+    "id": "fed_juros_eua",
+    "titulo": "O Fed e os juros dos EUA",
+    "pressao": "mercado",
+    "pressoes": [
+     "juro",
+     "mercado"
+    ],
+    "nova": false,
+    "pontos": 0.5,
+    "candidatos": [
+     "E3"
+    ],
+    "jornais": 4,
+    "fato_grande": false
+   },
+   {
+    "id": "credito_inadimplencia",
+    "titulo": "Crédito caro e inadimplência recorde",
+    "pressao": "parcelas",
+    "pressoes": [
+     "parcelas",
+     "juro",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 0.5,
+    "candidatos": [
+     "E11"
+    ],
+    "jornais": 1,
+    "fato_grande": false
+   }
+  ],
+  "temas_esperando": [
+   {
+    "tema": "fundo-agricultura-familiar",
+    "titulo": "Projeto cobra 1% das grandes exportadoras agrícolas para fundo da agricultura familiar",
+    "candidatos": [
+     "E8"
+    ],
+    "dias": 1
+   }
+  ],
+  "dados_novos": [],
+  "novidades": [],
+  "escolha": {
+   "historia": "desconfianca_eleicao",
+   "titulo": "Desconfiança de quem investe depois da eleição",
+   "pontos": 2.25,
+   "motivo": "a história que mais andou",
+   "calmo": false,
+   "nova": false,
+   "pulada": null,
+   "segunda": "queda_das_acoes_de_tecnologia",
+   "novidade": []
+  },
+  "final": "E2",
+  "mesma_historia": [
+   "E5"
+  ],
+  "segunda_historia": [
+   "E1"
+  ]
+ },
+ "post": {
+  "ok": true,
+  "tipo": "dia",
+  "formato": "historia",
+  "titulo": "Venda de US$ 1 bilhão não sustentou queda do dólar",
+  "paragrafos": [
+   "A venda de US$ 1 bilhão pelo Banco Central na quinta-feira trouxe apenas alívio momentâneo: o dólar caiu após a operação e voltou a subir à tarde, sem aliviar de forma sustentada essa medida da desconfiança de quem investe. André Galhardo, economista ouvido pelo g1, atribui a pressão mais aguda sobre o real às dúvidas sobre a equipe econômica e as contas públicas, além do cenário global. O que poderia ajudar a mudar o quadro, segundo Marcelo Fonseca, da CVPAR, seria equacionar as contas públicas, favorecendo a retomada dos cortes de juros — uma avaliação, não uma decisão do BC.",
+   "Lá fora, o Nasdaq, que concentra empresas de tecnologia e comunicação, caiu 5,28% ontem e acumulou perda de 10,02% na semana. A dimensão do tombo pesa sobre a disposição de investir em países emergentes, mas não deve ser confundida com nova alta observada no dólar brasileiro ontem: o mercado doméstico de câmbio ficou fechado pelo feriado.",
+   "Nas contas públicas, o levantamento divulgado ontem aponta R$ 85,9 bilhões em emendas propostas por comissões ao Orçamento de 2027, ainda dependentes da Comissão Mista de Orçamento e do Congresso. São pressão por espaço, não despesa já incorporada: segundo o relator da LDO, não há reserva para elas. As condições para acomodá-las serão definidas no parecer preliminar, cuja votação está prevista para 26 de novembro.",
+   "No consumo, o Dieese estima quase R$ 400 bilhões em pagamentos do 13º salário, mas esse total é renda sazonal já esperada, não dinheiro adicional à previsão da economia. O pagamento ajuda o comércio, porém parte deve quitar dívidas; por isso, o montante não comprova reversão da atividade fraca."
+  ],
+  "secoes": [
+   {
+    "titulo": null,
+    "paragrafos": [
+     "A venda de US$ 1 bilhão pelo Banco Central na quinta-feira trouxe apenas alívio momentâneo: o dólar caiu após a operação e voltou a subir à tarde, sem aliviar de forma sustentada essa medida da desconfiança de quem investe. André Galhardo, economista ouvido pelo g1, atribui a pressão mais aguda sobre o real às dúvidas sobre a equipe econômica e as contas públicas, além do cenário global. O que poderia ajudar a mudar o quadro, segundo Marcelo Fonseca, da CVPAR, seria equacionar as contas públicas, favorecendo a retomada dos cortes de juros — uma avaliação, não uma decisão do BC.",
+     "Lá fora, o Nasdaq, que concentra empresas de tecnologia e comunicação, caiu 5,28% ontem e acumulou perda de 10,02% na semana. A dimensão do tombo pesa sobre a disposição de investir em países emergentes, mas não deve ser confundida com nova alta observada no dólar brasileiro ontem: o mercado doméstico de câmbio ficou fechado pelo feriado.",
+     "Nas contas públicas, o levantamento divulgado ontem aponta R$ 85,9 bilhões em emendas propostas por comissões ao Orçamento de 2027, ainda dependentes da Comissão Mista de Orçamento e do Congresso. São pressão por espaço, não despesa já incorporada: segundo o relator da LDO, não há reserva para elas. As condições para acomodá-las serão definidas no parecer preliminar, cuja votação está prevista para 26 de novembro.",
+     "No consumo, o Dieese estima quase R$ 400 bilhões em pagamentos do 13º salário, mas esse total é renda sazonal já esperada, não dinheiro adicional à previsão da economia. O pagamento ajuda o comércio, porém parte deve quitar dívidas; por isso, o montante não comprova reversão da atividade fraca."
+    ]
+   }
+  ],
+  "pesquisa": {
+   "versao": 5,
+   "ok": true,
+   "em": "2026-11-21T04:02:00-03:00",
+   "meta": [
+    {
+     "etapa": "pesquisa",
+     "motor": "claude",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "278478a3094a192ad3670172915e389a2a48f1279bd7b32d9893e1cb286840f7",
+     "system_sha256": "7d338b0f7faababd8db8f53189e7a32546b848b561061d4e294f3b79f5f9098d",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 1.0338688,
+     "turnos": 25,
+     "duracao_s": 123,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "81bf343d-bf10-4e44-afda-8abc5a004fbf"
+    },
+    {
+     "etapa": "segunda_busca",
+     "motor": "claude",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "23c5f6b0a05f5b84163612a68efe1246e5804133c239cbd49bc74f1a1e00a3e3",
+     "system_sha256": "edc8fb889d3204a6945878dc908b6b0c58281bc0d34401d5e7f337f88940f5f6",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.4787446000000001,
+     "turnos": 11,
+     "duracao_s": 67,
+     "modelos": [
+      "claude-opus-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "cd34f57e-980b-47b5-a68e-25f08a1ab4b5"
+    },
+    {
+     "etapa": "apanhado",
+     "motor": "claude",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "2c163389642756e1cb27c0cfe996489cda2f8cdbe404c45e854bc79610513bb6",
+     "system_sha256": "63503df868de074bda4a59d070d732e2a28c75bce4b5849cec298d2a72a698ea",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.44524650000000005,
+     "turnos": 16,
+     "duracao_s": 112,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "99022f6f-0694-410d-b897-1eeaecad8a30"
+    }
+   ],
+   "offline": false,
+   "historia": "desconfianca_eleicao",
+   "segunda": "queda_das_acoes_de_tecnologia",
+   "modo": "comum",
+   "o_que_mudou": [
+    {
+     "item": 1,
+     "id": "desconfianca_eleicao",
+     "titulo": "Desconfiança de quem investe depois da eleição",
+     "pontos": 2.25,
+     "principal": true,
+     "segunda": false
+    },
+    {
+     "item": 2,
+     "id": "queda_das_acoes_de_tecnologia",
+     "titulo": "A queda das ações de tecnologia lá fora",
+     "pontos": 2.0,
+     "principal": false,
+     "segunda": true
+    },
+    {
+     "item": 3,
+     "id": "contas_governo",
+     "titulo": "Contas do governo: a meta, o ajuste prometido e a dívida",
+     "pontos": 1.45,
+     "principal": false,
+     "segunda": false
+    },
+    {
+     "item": 4,
+     "id": "ritmo_emprego",
+     "titulo": "Ritmo da economia e emprego: a desaceleração e a previsão de 2027",
+     "pontos": 1.0,
+     "principal": false,
+     "segunda": false
+    }
+   ],
+   "apanhado": {
+    "ok": true,
+    "historias": [
+     {
+      "item": 3,
+      "o_que_mudou": "Proposta em votação: 16 comissões aprovaram 96 emendas de R$ 85,9 bi ao Orçamento de 2027 (Agência Senado, via Poder360); o relator da LDO, Eduardo Gomes, disse que não há reserva para elas. Previsão da IFI: medidas pós-PLOA custam R$ 40,1 bi e cortam R$ 6,4 bi de receita; ~R$ 20 bi seguem sem espaço. Rumor: InfoMoney diz que o governo volta a estudar tributar LCI/LCA; a BPtax diz que não há alíquota nem anúncio.",
+      "pressao": "Contas do governo (e, por tabela, desconfiança de quem investe)",
+      "efeito": "As emendas somam ~0,59% do PIB (PIB implícito na meta), mas sem reserva e só pesam se a CMO abrir espaço. A IFI: perdas de receita baixam a conta da meta de R$ 83,4 bi para R$ 77 bi, ainda acima do centro de R$ 73,2 bi; o aperto vai para o teto e as discricionárias (R$ 138 bi, a ~R$ 98 bi contra R$ 103,5 bi necessários). Pesa mais sobre a folga do teto do que sobre a meta. O imposto sobre isentos é rumor: traria receita, mas encarece crédito imobiliário e agro.",
+      "quem_decide_e_quando": "CMO e Congresso: emendas até 24/11; preliminar em 26/11 (define espaço para emendas de comissão); setoriais 30/11 a 2/12; geral na CMO 16/12; Congresso 17/12. PLP 299/2026 segue para a Câmara. Sobre LCI/LCA, nada marcado: IR exige lei ou MP; IOF pode ser decreto.",
+      "o_que_mudaria": "Pesaria mais: preliminar abrir espaço às emendas; Câmara desidratar o PLP 299; MP do Imposto Seletivo não virar lei até 31/12; IFI cortar o PIB de 2027 para ~1% em dezembro; herança de até R$ 45 bi de subsídios a combustíveis. Menos: governo indicar os cortes dos R$ 20 bi ou preliminar fechar as emendas.",
+      "vezes": "",
+      "caderno": [
+       "c601",
+       "c602",
+       "c603",
+       "c604",
+       "c605",
+       "c606",
+       "c607",
+       "c608",
+       "c609",
+       "c610",
+       "c611",
+       "c612"
+      ]
+     },
+     {
+      "item": 4,
+      "o_que_mudou": "Dado divulgado: quase 100 milhões de brasileiros têm direito ao 13º; 1ª parcela até 30/11, 2ª até 18/12; valor médio pouco mais de R$ 3,7 mil; o Dieese estima quase R$ 400 bi injetados (g1). A reportagem diz que muita gente vai priorizar quitar dívidas.",
+      "pressao": "Ritmo da economia (consumo de fim de ano), com efeito indireto nas dívidas das famílias",
+      "efeito": "É sazonal, não choque novo. R$ 400 bi seriam ~2,7% do PIB (PIB implícito na meta), mas é fluxo bruto de renda esperada, não dinheiro extra, e parte vai para quitar dívida. Contra a medida do site (prévia do PIB −0,9% em 3 meses, maior queda desde maio de 2021), no máximo suaviza o 4º trimestre. O 29% de inadimplência da reportagem não é o 29,0% do site (renda comprometida com parcelas e juros): são medidas diferentes.",
+      "quem_decide_e_quando": "Empregadores pagam até 30/11 e 18/12. Efeitos aparecem no varejo e serviços de novembro/dezembro (IBGE) e no PIB do 4º trimestre, em 2027.",
+      "o_que_mudaria": "Mais alívio: vendas de dezembro acima do esperado e prévia do PIB de outubro/novembro voltando a subir. Menos: pesquisas mostrando que o 13º foi para quitar dívida, ou vendas fracas.",
+      "vezes": "",
+      "caderno": [
+       "c613",
+       "c614",
+       "c615",
+       "c616"
+      ]
+     }
+    ]
+   },
+   "pesquisa": {
+    "perguntas": [
+     {
+      "pergunta": "O que mudou na desconfiança de quem investe com os passos de ontem (20/11) e por quê?",
+      "resposta": "O dólar fechou a R$ 5,934 em 19/11 (maior valor desde abril de 2025), sexta alta seguida, mesmo depois de o BC vender US$ 1 bi (0,27% das reservas). Em 12 meses sobe 10,4%; da véspera do 2º turno a 18/11, 15,3% pela Ptax. As explicações são de fora (juro dos EUA, China e commodities mais fracas) e de dentro (nome da Fazenda e ajuste ainda sem plano completo), segundo economistas ouvidos pelo g1. O nome da Fazenda segue sem data: Lula disse que a pressa é dele, não do mercado.",
+      "caderno": [
+       "c1",
+       "c2",
+       "c3",
+       "c4",
+       "c5",
+       "c6",
+       "c7",
+       "c8"
+      ]
+     },
+     {
+      "pergunta": "Qual o tamanho da intervenção do BC e do repasse do dólar para os preços?",
+      "resposta": "O BC vendeu US$ 1 bi à vista em 19/11 (taxa de corte R$ 5,86, 5 propostas), 0,27% das reservas de US$ 365 bi. O dólar recuou e voltou a passar de R$ 5,90. Pela conta do BC, 10,4% de alta do dólar em 12 meses elevam o IPCA em cerca de 1 ponto em um ano, se não reverter. Não achei nota oficial do BC sobre o leilão.",
+      "caderno": [
+       "c3",
+       "c9",
+       "c10",
+       "c11",
+       "c12"
+      ]
+     },
+     {
+      "pergunta": "Onde está a régua: o dólar de agora contra as previsões e contra o passado?",
+      "resposta": "O Focus de 13/11 previa câmbio de R$ 5,40 para 2026; o dólar de 19/11 está 9,9% acima. O juro de 10 anos (7,98%) está acima de 91% dos meses desde 2005. Na única vez encerrada em que dólar acima de R$ 5,50 e juro longo acima de 7,5% coincidiram (dez/2024 a abr/2025), a Selic terminou mais alta e não veio recessão; o caso de agora segue aberto.",
+      "caderno": [
+       "c13",
+       "c14",
+       "c15",
+       "c16"
+      ]
+     },
+     {
+      "pergunta": "A queda das ações de tecnologia lá fora chegou ao Brasil?",
+      "resposta": "Pelo apetite por risco, sim: em 20/11 o Nasdaq caiu 5,28% e o S&P 500 3,69% (semana: -10,02% e -8,61%); o MSCI de emergentes ficou perto de bear market. A Bloomberg diz que moedas latino-americanas estão entre as mais afetadas e que o Brasil interveio. O efeito direto no PIB segue pequeno; o canal é dólar e Bolsa.",
+      "caderno": [
+       "c17",
+       "c18",
+       "c19"
+      ]
+     },
+     {
+      "pergunta": "Quem discorda ou aposta em outro rumo?",
+      "resposta": "Estrangeiros veem espaço para o dólar testar R$ 6,50 e criticam a intervenção (manchete do Valor, texto fechado). O economista da CVPAR diz que um plano fiscal crível ajudaria o BC a voltar a cortar juros.",
+      "caderno": [
+       "c5",
+       "c20",
+       "c21"
+      ]
+     },
+     {
+      "pergunta": "O que a primeira busca não tinha achado: Página do dono para c3 (alta do dólar pela Ptax desde a eleição)",
+      "resposta": "Série 1 do BC (Ptax de venda): R$ 5,0377 em 23/10 e R$ 5,8102 em 18/11, como no Poder360, e R$ 5,8889 em 19/11. A alta até 19/11 dá cerca de 16,9%, conta feita de cabeça e ainda sem conferir. O ranking de 27 moedas (7,50% no ano) é do Poder360 e não está na série.",
+      "caderno": [
+       "c3"
+      ]
+     }
+    ],
+    "o_que_falta": "Continua sem resposta depois de duas buscas: Nota oficial do BC sobre o leilão de US$ 1 bi de 19/11 (c9) (procurado em: WebSearch: 'Banco Central comunicado leilão de venda de dólares à vista 19 de novembro 2026 US$ 1 bilhão'; 'bcb.gov.br leilão de câmbio à vista 19/11/2026 resultado taxa de corte 5,86'; leitor em bcb.gov.br/api/servico/sitebcb/notas e /leiloesCambio (HTTP 400); leitor no SBT News); Fonte original da Bloomberg sobre emergentes perto do bear market (c18) (procurado em: WebSearch: 'Bloomberg emerging market stocks near bear market AI selloff November 20 2026'; leitor no InfoMoney com --procura MSCI e 20%); Página do dono para c1 (fechamento do dólar), c5 (texto do Valor sobre estrangeiros e R$ 6,50) e c17 (fechamento das bolsas dos EUA) (procurado em: Série Ptax do BC (só a taxa de referência); buscas do leilão (mostraram também SBT 'Dólar sobe 1,15% e fecha a R$ 5,93 após",
+    "pagina_que_falta": "",
+    "segunda_busca": {
+     "achou": 1,
+     "nao_achou": 3,
+     "muda_o_argumento": "Pela Ptax do BC, a alta desde a véspera do 2º turno chega a cerca de 16,9% em 19/11, contra os 15,3% até 18/11 do Poder360. É conta de cabeça e precisa ser conferida antes de entrar no texto. Na sexta, 20/11, o câmbio do Brasil esteve fechado por feriado, então a queda de Nova York ainda não passou pelo dólar daqui."
+    }
+   },
+   "pagina_que_falta": "",
+   "escrita": {
+    "chamadas": [
+     {
+      "etapa": "redator",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6-astra",
+      "raciocinio": "high",
+      "modelos": [
+       "gpt-6-astra"
+      ],
+      "prompt_sha256": "a05d51a230dac2ed8c6c30e053fd9febac5f2d1d94ce296132784adc13483890",
+      "system_sha256": "54024dbb2b3b4ae95e9ac280108ece2be18542460e1e75e1327b255dd63a7b89",
+      "returncode": 0,
+      "duracao_s": 93,
+      "tokens_entrada": 44348,
+      "tokens_saida": 2490,
+      "tokens_raciocinio": 1034
+     },
+     {
+      "etapa": "leitor",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6-luna",
+      "raciocinio": "medium",
+      "modelos": [
+       "gpt-6-luna"
+      ],
+      "prompt_sha256": "75e549a458e740db3db1968063782fbc64a1b8c4a5df24ff6ea2451b0540fa37",
+      "system_sha256": "7e2e85c97ff1316fe0679433702bd03f479ad18937418dae52590161394b6695",
+      "returncode": 0,
+      "duracao_s": 18,
+      "tokens_entrada": 7063,
+      "tokens_saida": 851,
+      "tokens_raciocinio": 399
+     },
+     {
+      "etapa": "aprovador",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6.1-sol",
+      "raciocinio": "high",
+      "modelos": [
+       "gpt-6.1-sol"
+      ],
+      "prompt_sha256": "a9c38d454091a99431afc686aed763498e93a348c35f3a67d29483d42882fd9a",
+      "system_sha256": "9e69dfc129f721342956193b64354d59b3d0c64a31098f472f287bd2899cad0d",
+      "returncode": 0,
+      "duracao_s": 17,
+      "tokens_entrada": 45543,
+      "tokens_saida": 456,
+      "tokens_raciocinio": 410
+     }
+    ],
+    "versoes": [
+     {
+      "sha": "08b718be27a6bb45",
+      "artigo": {
+       "titulo": "Venda de US$ 1 bilhão não sustentou queda do dólar",
+       "pergunta_semana": "",
+       "texto": "A venda de US$ 1 bilhão pelo Banco Central na quinta-feira trouxe apenas alívio momentâneo: o dólar caiu após a operação e voltou a subir à tarde, sem aliviar de forma sustentada essa medida da desconfiança de quem investe [c9, c102, c8]. André Galhardo, economista ouvido pelo g1, atribui a pressão mais aguda sobre o real às dúvidas sobre a equipe econômica e as contas públicas, além do cenário global [c2]. O que poderia ajudar a mudar o quadro, segundo Marcelo Fonseca, da CVPAR, seria equacionar as contas públicas, favorecendo a retomada dos cortes de juros — uma avaliação, não uma decisão do BC [c20].\n\nLá fora, o Nasdaq, que concentra empresas de tecnologia e comunicação, caiu 5,28% ontem e acumulou perda de 10,02% na semana [c17]. A dimensão do tombo pesa sobre a disposição de investir em países emergentes, mas não deve ser confundida com nova alta observada no dólar brasileiro ontem: o mercado doméstico de câmbio ficou fechado pelo feriado [c18, c103].\n\nNas contas públicas, o levantamento divulgado ontem aponta R$ 85,9 bilhões em emendas propostas por comissões ao Orçamento de 2027, ainda dependentes da Comissão Mista de Orçamento e do Congresso [c601]. São pressão por espaço, não despesa já incorporada: segundo o relator da LDO, não há reserva para elas [c602]. As condições para acomodá-las serão definidas no parecer preliminar, cuja votação está prevista para 26 de novembro [c602, c603].\n\nNo consumo, o Dieese estima quase R$ 400 bilhões em pagamentos do 13º salário, mas esse total é renda sazonal já esperada, não dinheiro adicional à previsão da economia [c613, c615]. O pagamento ajuda o comércio, porém parte deve quitar dívidas; por isso, o montante não comprova reversão da atividade fraca [c614, c616].",
+       "argumento": "A intervenção trouxe alívio cambial passageiro, enquanto a turbulência externa e as disputas por espaço no Orçamento mantêm pressões que o reforço sazonal do 13º não permite considerar superadas.",
+       "porque": "Segundo André Galhardo, as incertezas sobre a equipe econômica e o equilíbrio das contas públicas tornam a pressão sobre o real mais aguda, além do cenário global.",
+       "lentes": [
+        {
+         "item": 1,
+         "lente": "o_que_mudaria"
+        },
+        {
+         "item": 2,
+         "lente": "tamanho"
+        },
+        {
+         "item": 3,
+         "lente": "quem_decide"
+        },
+        {
+         "item": 4,
+         "lente": "tamanho"
+        }
+       ]
+      },
+      "checagens": {
+       "impedimentos": [],
+       "diagnosticos": [
+        "o texto tem 270 palavras e 0 intertítulos (o tipo do dia pede de 200 a 300 palavras: a história do dia em até umas 150, cada outra em duas ou três frases)"
+       ]
+      },
+      "leitura": {
+       "entendi": {
+        "resposta": "A venda de US$ 1 bilhão pelo BC fez o dólar cair só por um momento. O texto atribui a pressão sobre o real a dúvidas sobre a política econômica e as contas públicas, além do cenário global. As perdas do Nasdaq ajudam a explicar a cautela com emergentes, mas não significam que o dólar brasileiro tenha subido naquele dia, pois o mercado de câmbio estava fechado. As emendas ao Orçamento ainda são propostas, não despesas aprovadas; e o 13º salário pode ajudar o comércio, mas não prova que a atividade fraca esteja se revertendo. O tema que mais pesa é a pressão sobre o real e a dificuldade de sustentar a queda do dólar.",
+        "por_que": "A intervenção cambial teve efeito breve, enquanto o texto aponta fatores mais amplos que mantêm a pressão. No orçamento, há pedidos por espaço sem reserva prevista; no consumo, o 13º é uma renda sazonal já esperada e parte pode ir para dívidas.",
+        "consequencia": "Sem equacionar as contas públicas, pode faltar uma condição favorável para retomar cortes de juros, segundo a avaliação citada. As emendas ainda dependem de decisões futuras, e o impulso do 13º ao comércio pode ser limitado pelo pagamento de dívidas.",
+        "limite": "O texto não apresenta uma decisão do BC sobre juros nem afirma que a venda cambial resolveria as causas da pressão. Também não quantifica quanto do 13º será usado para consumo ou dívidas, nem permite concluir que as emendas serão aprovadas ou incorporadas ao Orçamento."
+       },
+       "dificuldades": [],
+       "perguntas_que_ficaram": [],
+       "titulos_ambiguos": [
+        {
+         "titulo": "Venda de US$ 1 bilhão não sustentou queda do dólar",
+         "como_li": "Lido sozinho, entendi que a venda do BC provocou uma queda inicial do dólar, mas não conseguiu mantê-la. O texto confirma essa leitura."
+        }
+       ]
+      },
+      "parecer": {
+       "pode_publicar": true,
+       "problemas": [],
+       "resolvidas": [],
+       "pendencia_da_analise": ""
+      },
+      "bloqueios": [],
+      "pronta": true,
+      "concentrada": false
+     }
+    ],
+    "objecoes": [],
+    "correcoes": 0,
+    "provedor": "openai",
+    "plano": {
+     "pergunta_central": "A venda de dólares pelo BC trouxe alívio à desconfiança de quem investe?",
+     "resposta_central": "Trouxe alívio momentâneo, mas não sustentou a queda da cotação; as dúvidas internas e a turbulência externa continuam pesando.",
+     "perguntas_seguintes": [
+      {
+       "pergunta": "O que aconteceu depois da intervenção e o que poderia ajudar a mudar o quadro?",
+       "por_que_e_necessaria": "Distingue efeito passageiro de alívio duradouro, sem tratar a operação como inútil.",
+       "resposta_que_o_texto_da": "O dólar caiu e voltou a subir na quinta; um economista aponta o equacionamento fiscal como ajuda para retomar cortes de juros.",
+       "evidencias": [
+        "c9",
+        "c102",
+        "c2",
+        "c20"
+       ]
+      },
+      {
+       "pergunta": "Qual foi o tamanho da queda externa e houve nova reação cambial brasileira?",
+       "por_que_e_necessaria": "Dimensiona a turbulência sem atribuir ao câmbio doméstico uma reação durante o feriado.",
+       "resposta_que_o_texto_da": "O Nasdaq perdeu 10,02% na semana; a turbulência pesa sobre emergentes, mas o câmbio brasileiro esteve fechado na sexta.",
+       "evidencias": [
+        "c17",
+        "c18",
+        "c103"
+       ]
+      },
+      {
+       "pergunta": "As emendas já aumentaram o gasto previsto?",
+       "por_que_e_necessaria": "Evita confundir pedidos de despesa com aprovação definitiva.",
+       "resposta_que_o_texto_da": "Não estão incorporadas; o parecer preliminar definirá as condições para acomodá-las.",
+       "evidencias": [
+        "c601",
+        "c602",
+        "c603"
+       ]
+      },
+      {
+       "pergunta": "O 13º salário pode ser lido como retomada do consumo?",
+       "por_que_e_necessaria": "O valor anunciado é renda sazonal prevista, e parte deve quitar dívidas.",
+       "resposta_que_o_texto_da": "Ajuda o comércio, mas não representa integralmente consumo adicional nem comprova reversão da atividade fraca.",
+       "evidencias": [
+        "c613",
+        "c614",
+        "c615",
+        "c616"
+       ]
+      }
+     ],
+     "limite_que_muda_a_leitura": "A intervenção teve efeito inicial, embora não sustentado; a queda externa de sexta não pode ser apresentada como nova alta observada no câmbio doméstico, fechado pelo feriado.",
+     "deixadas_de_fora": [
+      {
+       "pergunta": "Quanto o dólar vai acrescentar à inflação?",
+       "motivo": "A estimativa exige horizonte e condição de persistência; não é necessária à resposta curta sobre a intervenção."
+      },
+      {
+       "pergunta": "Quem será o ministro e até onde irá o dólar?",
+       "motivo": "Há especulação e resumo de texto fechado, não decisão nem previsão suficientemente documentada."
+      },
+      {
+       "pergunta": "Como acomodar as promessas de campanha e tributar títulos isentos?",
+       "motivo": "Os custos principais já foram apresentados recentemente, e a tributação permanece rumor; as emendas concentram a novidade fiscal."
+      },
+      {
+       "pergunta": "O episódio anterior de dólar e juro altos prevê nova alta da Selic?",
+       "motivo": "Uma única ocorrência encerrada não sustenta previsão e desviaria da notícia do dia."
+      }
+     ]
+    },
+    "estado": "aprovado"
+   },
+   "caderno": [
+    {
+     "id": "c1",
+     "tipo": "documento",
+     "dono": "g1 / Jornal Nacional",
+     "afirmacao": "O dólar começou a segunda (16/11) a R$ 5,69 e fechou quinta (19/11) a R$ 5,93, alta de 4% na semana, o maior valor desde 8/4/2025 (R$ 5,99).",
+     "numeros": [
+      "5,69",
+      "5,93",
+      "4%",
+      "5,99"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "g1",
+      "url": "https://g1.globo.com/jornal-nacional/noticia/2026/11/20/juros-nos-eua-e-ajuste-fiscal-no-brasil-o-que-esta-por-tras-da-disparada-do-dolar.ghtml",
+      "data": "2026-11-20",
+      "trecho": "Alta de 4% em apenas uma semana. É o maior valor desde 8 de abril de 2025, quando custava R$5,99."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c2",
+     "tipo": "documento",
+     "dono": "André Galhardo (Análise Econômica), via g1",
+     "afirmacao": "Economista atribui a alta mais aguda do real à incerteza sobre a Fazenda e o Planejamento, além do cenário global.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "g1",
+      "url": "https://g1.globo.com/jornal-nacional/noticia/2026/11/20/juros-nos-eua-e-ajuste-fiscal-no-brasil-o-que-esta-por-tras-da-disparada-do-dolar.ghtml",
+      "data": "2026-11-20",
+      "trecho": "É claro que aqui tem sido mais aguda em função das incertezas em relação à composição da Fazenda e do Planejamento, em relação ao controle e ao equilíbrio das contas públicas.\", comentou André Galhardo, economista-chefe da Análise Econômica."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c3",
+     "tipo": "documento",
+     "dono": "Banco Central (Ptax, série SGS 1)",
+     "afirmacao": "Pela Ptax de venda do Banco Central, o dólar foi de R$ 5,0377 em 23/10/2026 a R$ 5,8102 em 18/11 e a R$ 5,8889 em 19/11; em 16/11 estava em R$ 5,7324.",
+     "numeros": [
+      "5.0377",
+      "5.8102",
+      "5.8889",
+      "5.7324"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Banco Central do Brasil (SGS, série 1: Taxa de câmbio - Livre - Dólar americano (venda) - diário)",
+      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados?formato=json&dataInicial=23/10/2026&dataFinal=19/11/2026",
+      "data": "2026-11-19",
+      "trecho": "23/10/2026 5.0377 26/10/2026 5.5007 ... 16/11/2026 5.7324 17/11/2026 5.7851 18/11/2026 5.8102 19/11/2026 5.8889"
+     },
+     "conferencia": {
+      "status": "numeros_na_pagina",
+      "fonte_conhecida": true,
+      "classe": "oficial"
+     },
+     "fonte_anterior": {
+      "quem": "Poder360",
+      "url": "https://www.poder360.com.br/poder-economia/real-perde-752-em-2026-e-tem-5o-pior-desempenho-ante-o-dolar/",
+      "data": "2026-11-20",
+      "trecho": "A moeda norte-americana subiu 15,3% de 23 de outubro, último dia útil antes do 2º turno das eleições presidenciais, a 18 de novembro, segundo a Ptax, taxa de câmbio de referência calculada pelo Banco Central. Passou de R$ 5,0377 para R$ 5,8102 no período.",
+      "afirmacao": "O dólar subiu 15,3% pela Ptax entre 23/10 e 18/11; o real perdeu 7,50% em 2026, 5º pior entre 27 moedas.",
+      "numeros": [
+       "15,3%",
+       "5,0377",
+       "5,8102",
+       "7,50%"
+      ]
+     }
+    },
+    {
+     "id": "c4",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "Conferência da alta do dólar pela Ptax de 23/10 a 18/11.",
+     "numeros": [
+      "15,3344"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"(5.8102/5.0377-1)*100\"",
+     "saida": "(5.8102/5.0377-1)*100 = 15,3344 (com 3 casas: 15,334; com 2 casas: 15,33; com 1 casa: 15,3)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "(5.8102/5.0377-1)*100 = 15,3344 (com 3 casas: 15,334; com 2 casas: 15,33; com 1 casa: 15,3)\n"
+     }
+    },
+    {
+     "id": "c5",
+     "tipo": "documento",
+     "dono": "Valor",
+     "afirmacao": "O Valor diz que a possibilidade de Moretti na Fazenda já alimenta temores no mercado; manchete relacionada: estrangeiros criticam a intervenção do BC e veem o dólar testar R$ 6,50 (texto fechado, só resumo).",
+     "numeros": [
+      "6,50"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Valor",
+      "url": "https://valor.globo.com/financas/intraday/post/2026/11/moretti-e-o-temor-crescente-da-faria-lima-com-a-proxima-fazenda.ghtml",
+      "data": "2026-11-20",
+      "trecho": "A ansiedade no mercado com a indicação de quem será o futuro ministro da Fazenda segue forte."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c6",
+     "tipo": "documento",
+     "dono": "Lula, via Folha (coluna de Adriana Fernandes)",
+     "afirmacao": "Lula admitiu que a pressa para o nome da Fazenda é dele, não do mercado.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Folha",
+      "url": "https://www1.folha.uol.com.br/colunas/adriana-fernandes/2026/11/lula-perde-tempo-brigando-com-o-mercado.shtml",
+      "data": "2026-11-20",
+      "trecho": "Porém, ele próprio, num trecho pouco explorado da sua fala, admitiu: \"A pressa é minha, não é deles\"."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c7",
+     "tipo": "documento",
+     "dono": "Mayra Goulart (UFRJ), via InfoMoney",
+     "afirmacao": "Opinião da cientista política: o ministro da Fazenda precisa ser alguém que Lula possa demitir.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney",
+      "url": "https://www.infomoney.com.br/politica/novo-ministro-da-fazenda-precisa-ser-alguem-que-lula-possa-demitir-diz-analista/",
+      "data": "2026-11-20",
+      "trecho": "\"Provavelmente, o ministro da Fazenda tem que ser alguém demissível\", afirmou."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c8",
+     "tipo": "site",
+     "dono": "",
+     "afirmacao": "O dólar foi de R$ 5,18 para R$ 5,89 do fim de agosto a 19/11; o juro de 10 anos de 7,9% para 8,0%.",
+     "numeros": [
+      "5,18",
+      "5,89",
+      "7,9%",
+      "8,0%"
+     ],
+     "comando": "",
+     "saida": "O dólar foi de R$ 5,18 para R$ 5,89, e o juro de 10 anos foi de 7,9% para 8,0% ao ano, do fim de agosto a 19/11.",
+     "fonte": {
+      "quem": "Dados do site",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c9",
+     "tipo": "documento",
+     "dono": "Banco Central (leilão), relatado pelo Poder360",
+     "afirmacao": "O BC vendeu US$ 1 bi em leilão à vista em 19/11, taxa de corte R$ 5,86, 5 propostas.",
+     "numeros": [
+      "US$ 1 bilhão",
+      "5,86",
+      "5 propostas"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Poder360",
+      "url": "https://www.poder360.com.br/poder-economia/bc-vende-us-1-bilhao-em-leilao-a-vista-para-conter-alta-do-dolar/",
+      "data": "2026-11-19",
+      "trecho": "A taxa de corte da operação foi de R$ 5,86. A autoridade monetária aceitou 5 propostas."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c10",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "US$ 1 bi equivale a 0,27% das reservas de US$ 365,0 bi (outubro).",
+     "numeros": [
+      "0,2740"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"1/365.019*100\"",
+     "saida": "1/365.019*100 = 0,2740 (com 3 casas: 0,274; com 2 casas: 0,27; com 1 casa: 0,3)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "1/365.019*100 = 0,2740 (com 3 casas: 0,274; com 2 casas: 0,27; com 1 casa: 0,3)\n"
+     }
+    },
+    {
+     "id": "c11",
+     "tipo": "documento",
+     "dono": "Celso Ming, Estadão (opinião)",
+     "afirmacao": "Opinião do colunista: o leilão extraordinário corre o risco de virar operação ordinária.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Estadão",
+      "url": "https://www.estadao.com.br/economia/celso-ming/nem-us-1-bilhao-do-bc-conteve-a-alta-do-dolar-o-que-isso-revela-sobre-a-economia/",
+      "data": "2026-11-20",
+      "trecho": "O que foi um leilão extraordinário de dólares das reservas corre o risco de se tornar uma operação ordinária."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c12",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "Repasse pela conta do BC: alta de 10,4% do dólar em 12 meses sobe o IPCA cerca de 1,0 ponto em 12 meses (força média).",
+     "numeros": [
+      "10,4%",
+      "1,0 ponto"
+     ],
+     "comando": ".venv/bin/python src/conta.py traduz dolar",
+     "saida": "Uma alta de 10,4%, se não voltar, sobe o IPCA em cerca de 1,0 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 1,00 mais caros do que ficariam sem essa mudança do dólar.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "O dólar foi de R$ 5,3346 em 19/11/2025 para R$ 5,8889 em 19/11/2026: alta de 10,4% em 12 meses.\nPelas contas do Banco Central (repasse de 0,10 para o IPCA em quatro trimestres, Relatório de Política Monetária de março de 2026), cada 10% de alta do dólar sobe o IPCA em cerca de 1 ponto em um ano. Uma alta de 10,4%, se não voltar, sobe o IPCA em cerca de 1,0 ponto em 12 meses: R$ 100 de compras ficam cerca de R$ 1,00 mais caros do que ficariam sem essa mudança do dólar.\nForça: média. É a estimativa do próprio Banco Central, uma média de muitos anos; o repasse muda com o momento da economia e com quanto a mudança do dólar parece durar. Pesa mais nos importados e no combustível.\n"
+     }
+    },
+    {
+     "id": "c13",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "Focus (13/11) previa câmbio de 5,40 para 2026; o dólar de 19/11 (R$ 5,934) está 9,9% acima.",
+     "numeros": [
+      "5,40",
+      "9,889"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"(5.934/5.40-1)*100\"",
+     "saida": "(5.934/5.40-1)*100 = 9,8889 (com 3 casas: 9,889; com 2 casas: 9,89; com 1 casa: 9,9)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "nao_confere",
+      "por_que": "números que a conta não dá: 5,40"
+     }
+    },
+    {
+     "id": "c14",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "Focus de 13/11: câmbio 2027 em 5,45, IPCA 2027 em 5,00, Selic 2027 em 12,75.",
+     "numeros": [
+      "5,45",
+      "5,00",
+      "12,75"
+     ],
+     "comando": ".venv/bin/python src/conta.py focus --de 2026-10-20",
+     "saida": "2026-11-13: Câmbio 2027: 5,45\n2026-11-13: IPCA 2027: 5,00\n2026-11-13: Selic 2027: 12,75",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Previsões dos bancos (Focus, mediana) na data da pesquisa, como o site guardou:\n2026-10-23: Câmbio 2026: 5,05\n2026-10-23: Câmbio 2027: 5,15\n2026-10-23: Câmbio 2028: 5,20\n2026-10-23: Câmbio 2029: 5,28\n2026-10-23: Câmbio 2030: 5,30\n2026-10-23: IPCA 2026: 5,19\n2026-10-23: IPCA 2027: 4,34\n2026-10-23: IPCA 2028: 3,75\n2026-10-23: IPCA 2029: 3,50\n2026-10-23: IPCA 2030: 3,50\n2026-10-23: IPCA 12m: 4,53\n2026-10-23: PIB Total 2026: 1,80\n2026-10-23: PIB Total 2027: 1,31\n2026-10-23: PIB Total 2028: 1,81\n2026-10-23: PIB Total 2029: 2,00\n2026-10-23: PIB Total 2030: 2,00\n2026-10-23: Selic 2026: 13,25\n2026-10-23: Selic 2027: 11,75\n2026-10-23: Selic 2028: 10,00\n2026-10-23: Selic 2029: 10,00\n2026-10-23: Selic 2030: 10,00\n2026-10-30: Câmbio 2026: 5,34\n2026-10-30: Câmbio 2027: 5,40\n2026-10-30: Câmbio 2028: 5,40\n2026-10-30: Câmbio 2029: 5,45\n2026-10-30: Câmbio 2030: 5,50\n2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76\n2026-10-30: IPCA 2028: 4,00\n2026-10-30: IPCA 2029: 3,98\n2026-10-30: IPCA 2030: 3,81\n2026-10-30: IPCA 12m: 4,96\n2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20\n2026-10-30: PIB Total 2028: 1,80\n2026-10-30: PIB Total 2029: 2,00\n2026-10-30: PIB Total 2030: 2,00\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50\n2026-10-30: Selic 2028: 11,00\n2026-10-30: Selic 2029: 10,25\n2026-10-30: Selic 2030: 10,00\n2026-11-06: Câmbio 2026: 5,35\n2026-11-06: Câmbio 2027: 5,40\n2026-11-06: Câmbio 2028: 5,45\n2026-11-06: Câmbio 2029: 5,50\n2026-11-06: Câmbio 2030: 5,51\n2026-11-06: IPCA 2026: 5,22\n2026-11-06: IPCA 2027: 4,90\n2026-11-06: IPCA 2028: 4,00\n2026-11-06: IPCA 2029: 4,00\n2026-11-06: IPCA 2030: 3,94\n2026-11-06: IPCA 12m: 5,01\n2026-11-06: PIB Total 2026: 1,75\n2026-11-06: PIB Total 2027: 1,15\n2026-11-06: PIB Total 2028: 1,80\n2026-11-06: PIB Total 2029: 2,00\n2026-11-06: PIB Total 2030: 2,00\n2026-11-06: Selic 2026: 13,75\n2026-11-06: Selic 2027: 12,50\n2026-11-06: Selic 2028: 11,00\n2026-11-06: Selic 2029: 10,25\n2026-11-06: Selic 2030: 10,00\n2026-11-13: Câmbio 2026: 5,40\n2026-11-13: Câmbio 2027: 5,45\n2026-11-13: Câmbio 2028: 5,48\n2026-11-13: Câmbio 2029: 5,50\n2026-11-13: Câmbio 2030: 5,55\n2026-11-13: IPCA 2026: 5,11\n2026-11-13: IPCA 2027: 5,00\n2026-11-13: IPCA 2028: 4,00\n2026-11-13: IPCA 2029: 4,00\n2026-11-13: IPCA 2030: 3,94\n2026-11-13: IPCA 12m: 5,15\n2026-11-13: PIB Total 2026: 1,72\n2026-11-13: PIB Total 2027: 1,02\n2026-11-13: PIB Total 2028: 1,80\n2026-11-13: PIB Total 2029: 2,00\n2026-11-13: PIB Total 2030: 2,00\n2026-11-13: Selic 2026: 13,75\n2026-11-13: Selic 2027: 12,75\n2026-11-13: Selic 2028: 11,00\n2026-11-13: Selic 2029: 10,50\n2026-11-13: Selic 2030: 10,00\n"
+     }
+    },
+    {
+     "id": "c15",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "O juro do título de 10 anos (7,98%) está acima de 91% dos meses desde 2005.",
+     "numeros": [
+      "7,98",
+      "91%"
+     ],
+     "comando": ".venv/bin/python src/conta.py recorde juro_real_longo 2026-11",
+     "saida": "Dos 256 meses antes de 2026-11, 233 tiveram valor menor (91%).",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "juro_real_longo em 2026-11: 7,98. A série começa em 2005-07.\nÉ o menor valor desde 2026-09, quando foi 7,55.\nDos 256 meses antes de 2026-11, 233 tiveram valor menor (91%).\n"
+     }
+    },
+    {
+     "id": "c16",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "Única vez encerrada com dólar acima de R$ 5,50 e juro longo acima de 7,5%: dez/2024 a abr/2025 (5 meses); a Selic terminou mais alta. O caso de 2026-11 segue aberto.",
+     "numeros": [
+      "1 vez",
+      "5 meses"
+     ],
+     "comando": ".venv/bin/python src/conta.py episodios \"dolar_ptax>5.5\" \"juro_real_longo>7.5\"",
+     "saida": "Por frequência, do começo ao fim de cada vez encerrada: em todas as 1 vezes, a Selic terminou mais alta.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Episódios em que dolar_ptax > 5,50 e juro_real_longo > 7,50 (meses seguidos; até 2 meses fora da condição no meio não quebram o episódio). Conte por episódio, e não por mês: um episódio longo não vale mais que um curto. O episódio que ainda não terminou fica fora da conta.\n\nde 2024-12 a 2025-04 (5 meses): dolar_ptax de 6,19 a 5,66 (o maior: 6,19); juro_real_longo de 7,64 a 7,54 (o maior: 7,97); Selic de 12,25% no começo a 14,25% no fim.\n  no começo, 2024-12: selic_meta 12,25; ipca_12m 4,83; focus_ipca_12m 4,95; juro_real 6,96; juro_real_longo 7,64; dolar_ptax 6,1923; ibcbr 107,40; desocupacao 6,20; divida_bruta 76,27; primario_12m 0,40; ibcbr_12m 2,4%\n  12 meses depois do fim, 2026-04: selic_meta 14,50; ipca_12m 4,39; focus_ipca_12m 4,05; juro_real 10,04; juro_real_longo 7,52; dolar_ptax 4,9886; ibcbr 111,01; desocupacao 5,80; divida_bruta 80,10; primario_12m 0,97; ibcbr_12m 1,4%\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\nde 2026-11 até agora, ainda aberto (1 meses com dado): dolar_ptax de 5,89 a 5,89 (o maior: 5,89); juro_real_longo de 7,98 a 7,98 (o maior: 7,98); Selic de 13,75% no começo a 13,75% no último mês com dado. Fica fora da conta, porque ainda não terminou.\n  no começo, 2026-11: selic_meta 13,75; focus_ipca_12m 5,15; juro_real 8,18; juro_real_longo 7,98; dolar_ptax 5,8889\n  12 meses depois do fim, 2027-11: sem dado\n  recessão começando no episódio ou nos 12 meses seguintes: nenhuma\n\n2 episódio(s): 1 encerrado(s) e 1 ainda aberto(s). Do começo ao fim de cada episódio encerrado, a Selic subiu em 1, caiu em 0 e ficou igual em 0.\nPor frequência, do começo ao fim de cada vez encerrada: em todas as 1 vezes, a Selic terminou mais alta.\nAs vezes encerradas duraram de 5 a 5 meses.\nO episódio aberto começou em 2026-11: até agora, a Selic foi de 13,75% para 13,75%.\nPara este terminar como a maioria das vezes encerradas, a Selic teria de passar de 13,75%, o nível do começo (2026-11); no último mês com dado, estava em 13,75%.\n"
+     }
+    },
+    {
+     "id": "c17",
+     "tipo": "documento",
+     "dono": "Valor (fechamento das bolsas dos EUA)",
+     "afirmacao": "Em 20/11 o Nasdaq caiu 5,28%, o S&P 500 3,69% e o Dow Jones 1,93%; na semana, -10,02%, -8,61% e -8,02%.",
+     "numeros": [
+      "5,28%",
+      "3,69%",
+      "1,93%",
+      "10,02%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Valor",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/20/aversao-a-risco-derruba-bolsas-de-ny-em-meio-a-duvidas-sobre-ia.ghtml",
+      "data": "2026-11-20",
+      "trecho": "O Nasdaq, que concentra empresas de tecnologia e comunicação, afundou 5,28%, aos 22.617,733 pontos apagando a valorização acumulada no ano até então."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c18",
+     "tipo": "documento",
+     "dono": "Bloomberg, via InfoMoney",
+     "afirmacao": "O MSCI de emergentes ficou perto de bear market (queda de mais de 20% desde junho); o Brasil interveio no câmbio na quinta sem estancar a desvalorização.",
+     "numeros": [
+      "20%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney (Bloomberg)",
+      "url": "https://www.infomoney.com.br/mercados/acoes-de-emergentes-ficam-proximas-a-bear-market-com-expansao-da-crise-de-ia/",
+      "data": "2026-11-20",
+      "trecho": "A queda foi tão acentuada que o Brasil precisou intervir no mercado cambial na quinta-feira, embora não tenha conseguido estancar a desvalorização."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c19",
+     "tipo": "documento",
+     "dono": "Greg Lesko (Deltec), via InfoMoney/Bloomberg",
+     "afirmacao": "O gestor diz que os emergentes perdem nas duas frentes: ações de IA em queda e Fed apontando inflação e juro mais altos.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney (Bloomberg)",
+      "url": "https://www.infomoney.com.br/mercados/acoes-de-emergentes-ficam-proximas-a-bear-market-com-expansao-da-crise-de-ia/",
+      "data": "2026-11-20",
+      "trecho": "\"Parece que as duas coisas não podem ser verdadeiras, mas os mercados emergentes estão perdendo em ambas as frentes.\""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c20",
+     "tipo": "documento",
+     "dono": "Marcelo Fonseca (CVPAR), via g1",
+     "afirmacao": "O economista diz que um plano fiscal crível ajudaria o BC a voltar a cortar juros.",
+     "numeros": [],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "g1",
+      "url": "https://g1.globo.com/jornal-nacional/noticia/2026/11/20/juros-nos-eua-e-ajuste-fiscal-no-brasil-o-que-esta-por-tras-da-disparada-do-dolar.ghtml",
+      "data": "2026-11-20",
+      "trecho": "equacionamento da situação fiscal deverá em breve ajudar o Banco Central a, a voltar a cortar juros\", disse Marcelo Fonseca, economista-chefe da CVPAR."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c21",
+     "tipo": "site",
+     "dono": "",
+     "afirmacao": "O governo paga 8,0% ao ano acima da inflação até 2035, 0,6 ponto acima do normal de 3 anos; dólar a R$ 5,89 em 19/11, 13,9% mais caro que em meados de agosto.",
+     "numeros": [
+      "8,0%",
+      "0,6 ponto",
+      "5,89",
+      "13,9%"
+     ],
+     "comando": "",
+     "saida": "O governo paga 8,0% ao ano acima da inflação para pegar dinheiro até 2035 (19/11). É 0,6 ponto acima do normal dos últimos 3 anos. Dólar a R$ 5,89 em 19/11, 13,9% mais caro que em meados de agosto.",
+     "fonte": {
+      "quem": "Dados do site",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c102",
+     "tipo": "documento",
+     "dono": "Banco Central (leilão de 19/11), relatado pelo SBT News",
+     "afirmacao": "Segundo comunicado do BC citado pelo SBT News, o leilão à vista de 19/11 recebeu propostas entre 12h03 e 12h08, aceitou cinco ofertas e teve taxa de corte de R$ 5,8600; o dólar recuou a R$ 5,897 e voltou a subir à tarde.",
+     "numeros": [
+      "5,8600",
+      "cinco ofertas",
+      "5,897"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "SBT News",
+      "url": "https://sbtnews.sbt.com.br/noticia/economia/banco-central-vende-us-1-bi-para-conter-alta-do-dolar",
+      "data": "2026-11-19",
+      "trecho": "Segundo comunicado da autoridade monetária, foram aceitas cinco ofertas, com taxa de corte fixada em R$ 5,8600. Logo após a intervenção, o dólar à vista recuou e chegou a ser negociado a R$ 5,897, às 12h42."
+     },
+     "troca": "",
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c103",
+     "tipo": "documento",
+     "dono": "Bloomberg, via InfoMoney",
+     "afirmacao": "Na sexta (20/11) o mercado de câmbio do Brasil esteve fechado por feriado; o índice MSCI de emergentes acumulava queda de mais de 20% desde o pico de junho, rumo à pior semana desde março de 2020.",
+     "numeros": [
+      "20%",
+      "março de 2020"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney (Bloomberg)",
+      "url": "https://www.infomoney.com.br/mercados/acoes-de-emergentes-ficam-proximas-a-bear-market-com-expansao-da-crise-de-ia/",
+      "data": "2026-11-20",
+      "trecho": "A queda foi tão acentuada que o Brasil precisou intervir no mercado cambial na quinta-feira, embora não tenha conseguido estancar a desvalorização. O mercado de câmbio está fechado nesta sexta-feira devido a um feriado nacional."
+     },
+     "troca": "",
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c601",
+     "tipo": "documento",
+     "dono": "Agência Senado (levantamento das comissões do Congresso)",
+     "afirmacao": "Comissões aprovaram 96 emendas de apropriação de R$ 85,9 bilhões ao Orçamento de 2027, votadas por 16 colegiados em 17 e 18/11; dependem da CMO e do Congresso.",
+     "numeros": [
+      "96",
+      "85,9 bilhões",
+      "16 colegiados"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Poder360 (cita levantamento da Agência Senado)",
+      "url": "https://www.poder360.com.br/poder-congresso/comissoes-pedem-r-859-bilhoes-em-emendas-ao-orcamento-de-2027/",
+      "data": "2026-11-20",
+      "trecho": "Comissões do Senado e do Congresso Nacional aprovaram 96 emendas que propõem destinar R$ 85,9 bilhões a despesas do Orçamento de 2027. As indicações foram votadas por 16 colegiados na 3ª feira (17.nov.2026) e na 4ª feira (18.nov), segundo levantamento da Agência Senado ."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c602",
+     "tipo": "documento",
+     "dono": "Senador Eduardo Gomes, relator da LDO",
+     "afirmacao": "O relator da LDO disse que não há reserva para emendas de comissão; as condições serão definidas no parecer preliminar.",
+     "numeros": [
+      "R$ 44,8 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Poder360",
+      "url": "https://www.poder360.com.br/poder-congresso/comissoes-pedem-r-859-bilhoes-em-emendas-ao-orcamento-de-2027/",
+      "data": "2026-11-20",
+      "trecho": "“Não há reserva para as emendas de comissão” , afirmou o senador Eduardo Gomes (PL-TO), relator da LDO (Lei de Diretrizes Orçamentárias). Segundo ele, as condições para atender às indicações serão definidas no parecer preliminar do Orçamento."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c603",
+     "tipo": "documento",
+     "dono": "Comissão Mista de Orçamento (cronograma)",
+     "afirmacao": "Calendário: preliminar 26/11; setoriais 30/11 a 2/12; geral na CMO 16/12; Congresso 17/12.",
+     "numeros": [
+      "26.nov",
+      "16.dez",
+      "17.dez"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Poder360",
+      "url": "https://www.poder360.com.br/poder-congresso/comissoes-pedem-r-859-bilhoes-em-emendas-ao-orcamento-de-2027/",
+      "data": "2026-11-20",
+      "trecho": "26.nov – votação do relatório preliminar, que estabelece regras e limites para a análise das despesas e das emendas; 30.nov a 2.dez – votação dos 16 relatórios setoriais, divididos por áreas de atuação do governo; 16.dez – votação do relatório geral na CMO; 17.dez – votação do projeto no Congresso Nacional."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c604",
+     "tipo": "documento",
+     "dono": "IFI (Instituição Fiscal Independente do Senado)",
+     "afirmacao": "A IFI (RAF 118) estima que as medidas após o PLOA somam R$ 40,1 bi de despesa e cortam R$ 6,4 bi de receita, com o limite já ocupado; o PLP 299/2026 tem efeito de R$ 45,1 a R$ 56,1 bi, mas abre pouco espaço sob o limite.",
+     "numeros": [
+      "40,1 bilhões",
+      "6,4 bilhões",
+      "45,1 bilhões",
+      "56,1 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "IFI, do Senado",
+      "url": "https://www12.senado.leg.br/ifi/noticias/cenario-de-2027-e-complexo-desafiador-e-aponta-para-desaceleracao-expressiva-do-crescimento-diz-ifi",
+      "data": "2026-11-19",
+      "trecho": "as medidas anunciadas após o envio do PLOA acrescentam R$ 40,1 bilhões em despesas e reduzem receitas em R$ 6,4 bilhões, com o limite de despesas já integralmente ocupado. O PLP nº 299/2026 amplia os instrumentos de ajuste, com efeito estimado entre R$ 45,1 bilhões e R$ 56,1 bilhões, cerca de 70% pela receita, mas abre pouco espaço sob o limite."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "agencia"
+     }
+    },
+    {
+     "id": "c605",
+     "tipo": "documento",
+     "dono": "IFI (Instituição Fiscal Independente do Senado)",
+     "afirmacao": "A IFI prevê que a herança de subsídios a combustíveis para 2027 pode chegar a R$ 45,0 bi; o PIB de 2027 da IFI (1,8%) será revisto para baixo, contra 2,5% do PLOA.",
+     "numeros": [
+      "1,8%",
+      "2,5%",
+      "45,0 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "IFI, do Senado",
+      "url": "https://www12.senado.leg.br/ifi/noticias/cenario-de-2027-e-complexo-desafiador-e-aponta-para-desaceleracao-expressiva-do-crescimento-diz-ifi",
+      "data": "2026-11-19",
+      "trecho": "Como a meta é apurada pelo critério de caixa, o que não for pago neste ano passará para 2027, e essa herança pode chegar a R$ 45,0 bilhões, prevê a Instituição Fiscal Independente."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "agencia"
+     }
+    },
+    {
+     "id": "c606",
+     "tipo": "documento",
+     "dono": "IFI (Instituição Fiscal Independente do Senado), via Folha",
+     "afirmacao": "Segundo a IFI, o custo de seis medidas é R$ 40,1 bi em 2027; o Planejamento disse em outubro que remanejaria ~R$ 20 bi.",
+     "numeros": [
+      "R$ 40,1 bilhões",
+      "R$ 20 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Folha",
+      "url": "https://www1.folha.uol.com.br/mercado/2026/11/governo-ainda-precisa-encontrar-espaco-no-orcamento-para-r-20-bi-de-promessas-de-campanha-diz-ifi.shtml",
+      "data": "2026-11-20",
+      "trecho": "Um levantamento da IFI estima em R$ 40,1 bilhões o custo, em 2027, de seis medidas: reajuste de 15,04% do Bolsa Família , Desenrola 3.0, ampliação do Pé-de-Meia para todos os estudantes do ensino médio público, criação do Pé-de-Meia universitário, oferta de canetas emagrecedoras no SUS e eventual linha de crédito para MEIs (microempreendedores individuais)."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c607",
+     "tipo": "documento",
+     "dono": "IFI (Instituição Fiscal Independente do Senado), via Folha",
+     "afirmacao": "Com as perdas de arrecadação, a conta da meta cai de R$ 83,4 bi para R$ 77 bi, ainda acima do centro de R$ 73,2 bi.",
+     "numeros": [
+      "R$ 83,4 bilhões",
+      "R$ 77 bilhões",
+      "R$ 73,2 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Folha",
+      "url": "https://www1.folha.uol.com.br/mercado/2026/11/governo-ainda-precisa-encontrar-espaco-no-orcamento-para-r-20-bi-de-promessas-de-campanha-diz-ifi.shtml",
+      "data": "2026-11-20",
+      "trecho": "As perdas de arrecadação, por outro lado, reduzem o resultado considerado para o cumprimento da meta: de R$ 83,4 bilhões para R$ 77 bilhões. Mesmo com a queda, o valor permaneceria acima do centro da meta, de R$ 73,2 bilhões."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c608",
+     "tipo": "documento",
+     "dono": "IFI (Instituição Fiscal Independente do Senado), via Folha",
+     "afirmacao": "As discricionárias não rígidas somam ~R$ 138 bi; cobrir tudo com elas as levaria a ~R$ 98 bi, abaixo dos R$ 103,5 bi necessários.",
+     "numeros": [
+      "R$ 138 bilhões",
+      "R$ 98 bilhões",
+      "R$ 103,5 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Folha",
+      "url": "https://www1.folha.uol.com.br/mercado/2026/11/governo-ainda-precisa-encontrar-espaco-no-orcamento-para-r-20-bi-de-promessas-de-campanha-diz-ifi.shtml",
+      "data": "2026-11-20",
+      "trecho": "Caso todo o custo das novas medidas seja coberto com cortes nesse grupo, o montante cairia para cerca de R$ 98 bilhões —abaixo dos R$ 103,5 bilhões que a IFI considera necessários para manter a máquina pública em funcionamento."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c609",
+     "tipo": "documento",
+     "dono": "IFI (Instituição Fiscal Independente do Senado), via Folha",
+     "afirmacao": "Para a IFI, o maior risco para 2027 está na arrecadação: a MP do Imposto Seletivo precisa virar lei até 31/12.",
+     "numeros": [
+      "31 de dezembro"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Folha",
+      "url": "https://www1.folha.uol.com.br/mercado/2026/11/governo-ainda-precisa-encontrar-espaco-no-orcamento-para-r-20-bi-de-promessas-de-campanha-diz-ifi.shtml",
+      "data": "2026-11-20",
+      "trecho": "Para os analistas da IFI Alexandre Andrade e Rafael Bacciotti, os principais riscos para as contas de 2027 estão na arrecadação. As alíquotas do Imposto Seletivo foram definidas por medida provisória, que precisa ser convertida em lei até 31 de dezembro para produzir efeitos no ano que vem."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c610",
+     "tipo": "documento",
+     "dono": "BPtax (consultoria tributária), via InfoMoney",
+     "afirmacao": "A BPtax diz que não há alíquota, forma de cobrança nem anúncio oficial de tributação dos títulos isentos. É rumor.",
+     "numeros": [
+      ""
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney",
+      "url": "https://www.infomoney.com.br/onde-investir/tributacao-de-titulos-isentos-como-o-imposto-pode-mexer-com-o-seu-bolso/",
+      "data": "2026-11-20",
+      "trecho": "A BPtax lembra que, por enquanto, não há alíquota, forma de cobrança nem anúncio oficial."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c611",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "R$ 85,9 bi equivalem a ~0,59% do PIB, com o PIB implícito na meta de 2027 (R$ 73,2 bi = 0,50%).",
+     "numeros": [
+      "0,5867"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"85.9/(73.2/0.5*100)*100\"",
+     "saida": "85.9/(73.2/0.5*100)*100 = 0,5867 (com 3 casas: 0,587; com 2 casas: 0,59; com 1 casa: 0,6)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "85.9/(73.2/0.5*100)*100 = 0,5867 (com 3 casas: 0,587; com 2 casas: 0,59; com 1 casa: 0,6)\n"
+     }
+    },
+    {
+     "id": "c612",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "R$ 40,1 bi menos ~R$ 20,1 bi já acomodados dá R$ 20 bi sem espaço.",
+     "numeros": [
+      "20,0000"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"40.1-20.1\"",
+     "saida": "40.1-20.1 = 20,0000 (com 3 casas: 20,000; com 2 casas: 20,00; com 1 casa: 20,0)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "40.1-20.1 = 20,0000 (com 3 casas: 20,000; com 2 casas: 20,00; com 1 casa: 20,0)\n"
+     }
+    },
+    {
+     "id": "c613",
+     "tipo": "documento",
+     "dono": "Dieese",
+     "afirmacao": "Quase 100 milhões têm direito ao 13º; valor médio pouco mais de R$ 3,7 mil; o Dieese estima quase R$ 400 bi injetados; a reportagem cita inadimplência de 29% das famílias.",
+     "numeros": [
+      "100 milhões",
+      "3,7 mil",
+      "400 bilhões",
+      "29%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "g1 (Jornal Nacional)",
+      "url": "https://g1.globo.com/jornal-nacional/noticia/2026/11/20/quase-100-milhoes-de-brasileiros-comecam-a-receber-o-13o-salario-beneficio-deve-movimentar-r-400-bilhoes-na-economia.ghtml",
+      "data": "2026-11-20",
+      "trecho": "Quase R$ 400 bilhões devem ser injetados na economia, segundo o Dieese. O valor médio do décimo terceiro é de pouco mais de R$ 3,7mil. Dinheiro que chega no momento em que a inadimplência atinge 29% da famílias brasileiras."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c614",
+     "tipo": "documento",
+     "dono": "g1 (Jornal Nacional)",
+     "afirmacao": "A prioridade de muita gente é quitar dívidas em atraso, mas o dinheiro também vai aquecer o comércio.",
+     "numeros": [
+      ""
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "g1 (Jornal Nacional)",
+      "url": "https://g1.globo.com/jornal-nacional/noticia/2026/11/20/quase-100-milhoes-de-brasileiros-comecam-a-receber-o-13o-salario-beneficio-deve-movimentar-r-400-bilhoes-na-economia.ghtml",
+      "data": "2026-11-20",
+      "trecho": "A prioridade de muita gente é quitar dívidas em atraso. Mas, o dinheiro também vai aquecer o comércio, neste fim de ano."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c615",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "R$ 400 bi do 13º equivalem a ~2,7% do PIB, com o PIB implícito na meta de 2027; é fluxo bruto, não renda extra.",
+     "numeros": [
+      "2,7322"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"400/(73.2/0.5*100)*100\"",
+     "saida": "400/(73.2/0.5*100)*100 = 2,7322 (com 3 casas: 2,732; com 2 casas: 2,73; com 1 casa: 2,7)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "400/(73.2/0.5*100)*100 = 2,7322 (com 3 casas: 2,732; com 2 casas: 2,73; com 1 casa: 2,7)\n"
+     }
+    },
+    {
+     "id": "c616",
+     "tipo": "site",
+     "dono": "",
+     "afirmacao": "A prévia do PIB caiu 0,9% nos 3 meses até setembro, a maior queda desde maio de 2021; 29% da renda das famílias vai para parcelas e juros (agosto).",
+     "numeros": [
+      "0,9%",
+      "29%"
+     ],
+     "comando": "",
+     "saida": "A prévia do PIB caiu 0,9% no trimestre até setembro, contra os 3 meses anteriores. É a maior queda desde maio de 2021. ... 29% da renda das famílias vai para parcelas e juros (agosto), o maior desde o início da série, em 2005.",
+     "fonte": {
+      "quem": "vaidarcrise.com.br (dados do site)",
+      "url": "",
+      "data": "",
+      "trecho": "A prévia do PIB caiu 0,9% no trimestre até setembro, contra os 3 meses anteriores. É a maior queda desde maio de 2021."
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    }
+   ],
+   "conferencia": {
+    "final": {
+     "impedimentos": [],
+     "diagnosticos": [
+      "o texto tem 270 palavras e 0 intertítulos (o tipo do dia pede de 200 a 300 palavras: a história do dia em até umas 150, cada outra em duas ou três frases)"
+     ]
+    }
+   },
+   "lentes": [
+    {
+     "historia": "desconfianca_eleicao",
+     "lente": "o_que_mudaria"
+    },
+    {
+     "historia": "queda_das_acoes_de_tecnologia",
+     "lente": "tamanho"
+    },
+    {
+     "historia": "contas_governo",
+     "lente": "quem_decide"
+    },
+    {
+     "historia": "ritmo_emprego",
+     "lente": "tamanho"
+    }
+   ],
+   "antes": [
+    {
+     "data": "2026-11-19",
+     "titulo": "FGV estima queda da economia, mas recessão ainda não está confirmada"
+    },
+    {
+     "data": "2026-11-18",
+     "titulo": "Senado adia conclusão do ajuste, e alívio para as contas segue incerto"
+    },
+    {
+     "data": "2026-11-02",
+     "titulo": "Quem investe cobra mais do Tesouro, e os próximos leilões dirão quanto o governo paga"
+    }
+   ],
+   "titulo": "Venda de US$ 1 bilhão não sustentou queda do dólar",
+   "texto": "A venda de US$ 1 bilhão pelo Banco Central na quinta-feira trouxe apenas alívio momentâneo: o dólar caiu após a operação e voltou a subir à tarde, sem aliviar de forma sustentada essa medida da desconfiança de quem investe [c9, c102, c8]. André Galhardo, economista ouvido pelo g1, atribui a pressão mais aguda sobre o real às dúvidas sobre a equipe econômica e as contas públicas, além do cenário global [c2]. O que poderia ajudar a mudar o quadro, segundo Marcelo Fonseca, da CVPAR, seria equacionar as contas públicas, favorecendo a retomada dos cortes de juros — uma avaliação, não uma decisão do BC [c20].\n\nLá fora, o Nasdaq, que concentra empresas de tecnologia e comunicação, caiu 5,28% ontem e acumulou perda de 10,02% na semana [c17]. A dimensão do tombo pesa sobre a disposição de investir em países emergentes, mas não deve ser confundida com nova alta observada no dólar brasileiro ontem: o mercado doméstico de câmbio ficou fechado pelo feriado [c18, c103].\n\nNas contas públicas, o levantamento divulgado ontem aponta R$ 85,9 bilhões em emendas propostas por comissões ao Orçamento de 2027, ainda dependentes da Comissão Mista de Orçamento e do Congresso [c601]. São pressão por espaço, não despesa já incorporada: segundo o relator da LDO, não há reserva para elas [c602]. As condições para acomodá-las serão definidas no parecer preliminar, cuja votação está prevista para 26 de novembro [c602, c603].\n\nNo consumo, o Dieese estima quase R$ 400 bilhões em pagamentos do 13º salário, mas esse total é renda sazonal já esperada, não dinheiro adicional à previsão da economia [c613, c615]. O pagamento ajuda o comércio, porém parte deve quitar dívidas; por isso, o montante não comprova reversão da atividade fraca [c614, c616].",
+   "argumento": "A intervenção trouxe alívio cambial passageiro, enquanto a turbulência externa e as disputas por espaço no Orçamento mantêm pressões que o reforço sazonal do 13º não permite considerar superadas.",
+   "porque": "Segundo André Galhardo, as incertezas sobre a equipe econômica e o equilíbrio das contas públicas tornam a pressão sobre o real mais aguda, além do cenário global.",
+   "pressao": "mercado",
+   "duracao_s": 319
+  },
+  "termina_em": "mercado",
+  "pergunta": "dolar-alto"
+ }
+}
