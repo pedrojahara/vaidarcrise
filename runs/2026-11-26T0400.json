@@ -1,0 +1,4879 @@
+{
+ "id": "2026-11-26T0400",
+ "gerado_em": "2026-11-26T04:00:04-03:00",
+ "regras": {
+  "config_sha256": "3f34308470417b0207935a0098e476eab51124f97677203ef39464acf3110cef",
+  "calibracao_sha256": "569a199f8e82bb1d54e6c68aceb9fa43b57f2a2b17789704187a20895b2d55c9"
+ },
+ "insumos": {
+  "indicadores_coletados_em": "2026-11-26T04:00:28-03:00",
+  "erros_coleta": [],
+  "pib": [
+   {
+    "trimestre": "1T23",
+    "periodo": "202301",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T23",
+    "periodo": "202302",
+    "var_qoq": 0.8
+   },
+   {
+    "trimestre": "3T23",
+    "periodo": "202303",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T23",
+    "periodo": "202304",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "1T24",
+    "periodo": "202401",
+    "var_qoq": 0.7
+   },
+   {
+    "trimestre": "2T24",
+    "periodo": "202402",
+    "var_qoq": 1.7
+   },
+   {
+    "trimestre": "3T24",
+    "periodo": "202403",
+    "var_qoq": 0.9
+   },
+   {
+    "trimestre": "4T24",
+    "periodo": "202404",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "1T25",
+    "periodo": "202501",
+    "var_qoq": 1.3
+   },
+   {
+    "trimestre": "2T25",
+    "periodo": "202502",
+    "var_qoq": 0.4
+   },
+   {
+    "trimestre": "3T25",
+    "periodo": "202503",
+    "var_qoq": 0.1
+   },
+   {
+    "trimestre": "4T25",
+    "periodo": "202504",
+    "var_qoq": 0.2
+   },
+   {
+    "trimestre": "1T26",
+    "periodo": "202601",
+    "var_qoq": 1.1
+   },
+   {
+    "trimestre": "2T26",
+    "periodo": "202602",
+    "var_qoq": 0.5
+   }
+  ],
+  "focus": {
+   "PIB Total": [
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2026",
+     "Mediana": 1.7018,
+     "numeroRespondentes": 119
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2027",
+     "Mediana": 0.9995,
+     "numeroRespondentes": 118
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2028",
+     "Mediana": 1.7071,
+     "numeroRespondentes": 90
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2029",
+     "Mediana": 2.0,
+     "numeroRespondentes": 81
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2030",
+     "Mediana": 2.0,
+     "numeroRespondentes": 79
+    }
+   ],
+   "IPCA": [
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2026",
+     "Mediana": 5.1505,
+     "numeroRespondentes": 147
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2027",
+     "Mediana": 5.1214,
+     "numeroRespondentes": 146
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2028",
+     "Mediana": 4.0,
+     "numeroRespondentes": 134
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2029",
+     "Mediana": 4.0,
+     "numeroRespondentes": 123
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2030",
+     "Mediana": 3.95,
+     "numeroRespondentes": 116
+    }
+   ],
+   "Selic": [
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2026",
+     "Mediana": 13.75,
+     "numeroRespondentes": 145
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2027",
+     "Mediana": 13.0,
+     "numeroRespondentes": 144
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2028",
+     "Mediana": 11.0,
+     "numeroRespondentes": 126
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2029",
+     "Mediana": 10.5,
+     "numeroRespondentes": 117
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2030",
+     "Mediana": 10.25,
+     "numeroRespondentes": 114
+    }
+   ],
+   "Câmbio": [
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2026",
+     "Mediana": 5.55,
+     "numeroRespondentes": 121
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2027",
+     "Mediana": 5.5,
+     "numeroRespondentes": 120
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2028",
+     "Mediana": 5.5,
+     "numeroRespondentes": 95
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2029",
+     "Mediana": 5.5469,
+     "numeroRespondentes": 92
+    },
+    {
+     "Data": "2026-11-19",
+     "DataReferencia": "2030",
+     "Mediana": 5.6,
+     "numeroRespondentes": 90
+    }
+   ],
+   "IPCA 12m": {
+    "Data": "2026-11-19",
+    "Mediana": 5.4092,
+    "numeroRespondentes": 135
+   }
+  },
+  "noticias": {
+   "coletado_em": "2026-11-26T07:00:04+00:00",
+   "janela_horas": 32,
+   "por_veiculo": {
+    "Poder360": 21,
+    "Valor": 40,
+    "Estadão": 26,
+    "Gazeta do Povo": 11,
+    "Folha": 40,
+    "InfoMoney": 40,
+    "g1": 27,
+    "Agência Brasil": 6
+   },
+   "status_fontes": {
+    "Agência Brasil": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 8
+    },
+    "Folha": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 86
+    },
+    "Estadão": {
+     "http": 200,
+     "itens_no_feed": 20,
+     "na_janela": 19
+    },
+    "Valor": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 100
+    },
+    "InfoMoney": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Poder360": {
+     "http": 200,
+     "itens_no_feed": 10,
+     "na_janela": 10
+    },
+    "Gazeta do Povo": {
+     "http": 200,
+     "itens_no_feed": 33,
+     "na_janela": 19
+    },
+    "g1": {
+     "http": 200,
+     "itens_no_feed": 100,
+     "na_janela": 41
+    },
+    "GDELT": {
+     "http": 429,
+     "erro": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic us"
+    }
+   },
+   "n_itens": 211
+  }
+ },
+ "cobertura": {
+  "dias": [
+   "2026-11-25"
+  ],
+  "no_acervo": 391,
+  "na_cesta": 211,
+  "coletas_24h": 19
+ },
+ "llm": {
+  "ok": true,
+  "meta": {
+   "etapa": "classificar",
+   "motor": "claude",
+   "modelo_pedido": "sonnet",
+   "prompt_sha256": "a9466b505db00d85dad739ff58913ec6035107fef0bd9171115988afd9fea9a5",
+   "system_sha256": "e1c9e1ea22680d7c6442d88926322247950401b8241436be5c34be120379e68a",
+   "returncode": 0,
+   "is_error": false,
+   "custo_usd": 0.3257236,
+   "turnos": 3,
+   "duracao_s": 64,
+   "modelos": [
+    "claude-sonnet-5-5"
+   ],
+   "permission_denials": [],
+   "session_id": "a1742162-e9ba-4b38-8c83-3666e69dece1"
+  },
+  "saida": {
+   "eventos": [
+    {
+     "noticia_ids": [
+      "n153",
+      "n157",
+      "n185",
+      "n150",
+      "n154",
+      "n091"
+     ],
+     "outras_ids": [
+      "n127",
+      "n118",
+      "n134",
+      "n186",
+      "n149",
+      "n147",
+      "n132",
+      "n006",
+      "n010",
+      "n014",
+      "n015",
+      "n023",
+      "n024",
+      "n027",
+      "n029",
+      "n036",
+      "n037",
+      "n061",
+      "n102",
+      "n129",
+      "n133",
+      "n138",
+      "n145",
+      "n178",
+      "n046",
+      "n095",
+      "n096",
+      "n106",
+      "n107",
+      "n155",
+      "n032",
+      "n003"
+     ],
+     "titulo_evento": "EUA propõem tarifa de 10% sobre aviões e mais imposto sobre açúcar do Brasil",
+     "estagio": "em_votacao",
+     "chance_aprovacao": 0.6,
+     "origem": "mundo",
+     "decisor": "fora",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": 1,
+     "magnitude": 2,
+     "historia": "tarifas_eua",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O governo dos EUA abriu consulta pública, com audiência em 14 de janeiro, para cobrar mais sobre aviões e açúcar brasileiros. Se passar, as exportações da Embraer e do setor de açúcar ficam mais caras no maior mercado."
+    },
+    {
+     "noticia_ids": [
+      "n041",
+      "n064",
+      "n022",
+      "n016",
+      "n028",
+      "n004"
+     ],
+     "outras_ids": [
+      "n123"
+     ],
+     "titulo_evento": "Conselho Monetário Nacional e Banco Central apertam regras de crédito e cartão",
+     "estagio": "decidido",
+     "chance_aprovacao": null,
+     "origem": "banco_central",
+     "decisor": "banco_central",
+     "instrumento": "outro",
+     "objetivo": "conter o endividamento excessivo das famílias",
+     "fator": "credito",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "credito_inadimplencia",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Os bancos terão de reduzir o limite de quem financia a fatura no rotativo e seguir critérios mais rigorosos para emprestar. O crédito fica mais curto para o consumo, num momento de juro alto e atraso recorde nas dívidas."
+    },
+    {
+     "noticia_ids": [
+      "n042",
+      "n065",
+      "n122",
+      "n099",
+      "n172"
+     ],
+     "outras_ids": [
+      "n190"
+     ],
+     "titulo_evento": "Banco Central vende US$ 2 bi em leilão, e o dólar cai a R$ 5,82",
+     "estagio": "decidido",
+     "chance_aprovacao": null,
+     "origem": "banco_central",
+     "decisor": "banco_central",
+     "instrumento": "juros_cambio",
+     "objetivo": "ampliar a oferta e dar liquidez ao mercado de câmbio",
+     "fator": "mercado",
+     "direcao": -1,
+     "magnitude": 1,
+     "historia": "desconfianca_eleicao",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O Banco Central vendeu dólares com compromisso de recompra, e a moeda recuou 1,58% com o ajuste das contas em pauta. A Bolsa subiu 1,6%, mas o dólar segue bem acima do nível de antes da eleição."
+    },
+    {
+     "noticia_ids": [
+      "n009",
+      "n108",
+      "n087",
+      "n073",
+      "n044",
+      "n039"
+     ],
+     "outras_ids": [
+      "n005",
+      "n020",
+      "n079"
+     ],
+     "titulo_evento": "Lula sonda o presidente do conselho do Bradesco para comandar a Fazenda",
+     "estagio": "rumor",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "governo_federal",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "mercado",
+     "direcao": -1,
+     "magnitude": 1,
+     "historia": "desconfianca_eleicao",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261117-04",
+     "porque": "O presidente conversou com um banqueiro de nome bem visto pelo mercado, e o dólar caiu no dia em que o nome circulou. Sem anúncio oficial, a dúvida sobre quem cuida das contas continua."
+    },
+    {
+     "noticia_ids": [
+      "n137",
+      "n139",
+      "n111",
+      "n085",
+      "n058",
+      "n169"
+     ],
+     "outras_ids": [
+      "n170",
+      "n117",
+      "n090",
+      "n063",
+      "n204",
+      "n207",
+      "n026"
+     ],
+     "titulo_evento": "Governo fala em nova etapa do ajuste das contas sem detalhar as medidas",
+     "estagio": "anuncio",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "governo_federal",
+     "instrumento": "regra_fiscal",
+     "objetivo": "melhorar as contas públicas e conter gastos obrigatórios",
+     "fator": "contas",
+     "direcao": -1,
+     "magnitude": 1,
+     "historia": "contas_governo",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": true,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261125-03",
+     "porque": "O Planejamento fala em um conjunto de medidas e nega uma PEC pronta, e o presidente do Senado admite votar novo pacote ainda em 2026. Sem valores e prazos, o mercado segue esperando o formato do corte de gastos."
+    },
+    {
+     "noticia_ids": [
+      "n001",
+      "n148",
+      "n035"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Comissão eleva em R$ 37,1 bi a receita prevista no Orçamento de 2027",
+     "estagio": "em_votacao",
+     "chance_aprovacao": 0.7,
+     "origem": "politica",
+     "decisor": "congresso",
+     "instrumento": "gasto",
+     "objetivo": "",
+     "fator": "contas",
+     "direcao": -1,
+     "magnitude": 1,
+     "historia": "contas_governo",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O texto conta com royalties do petróleo, a estreia da reforma tributária e o pacote fiscal, mas já usa PIB menor, de 1,8% contra 2,5%. A receita maior abre espaço para gastar, e o relator deixa R$ 17,6 bi reservados para despesas novas."
+    },
+    {
+     "noticia_ids": [
+      "n152",
+      "n177"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Governo deve prorrogar por 30 dias a subvenção de R$ 2,12 por litro de diesel",
+     "estagio": "anuncio",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "governo_federal",
+     "instrumento": "gasto",
+     "objetivo": "",
+     "fator": "contas",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "guerra_petroleo",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "Com o petróleo em alta por causa da guerra no Oriente Médio, o Tesouro segue pagando parte do diesel, e as medidas somam R$ 75 bi no ano. O frete e os preços ficam mais baixos, e o custo recai sobre as contas do governo."
+    },
+    {
+     "noticia_ids": [
+      "n104",
+      "n074"
+     ],
+     "outras_ids": [
+      "n120"
+     ],
+     "titulo_evento": "Itaú vê 50% de chance de queda do PIB em 2027, e JP Morgan fala em risco real",
+     "estagio": "previsao",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "atividade",
+     "direcao": 1,
+     "magnitude": 2,
+     "historia": "ritmo_emprego",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O Itaú mantém alta de 0,5% do PIB em 2027, mas vê metade de chance de queda, pelo efeito dos juros altos e de menos gasto do governo. O JP Morgan diz que a perda de confiança pode agravar a piora."
+    },
+    {
+     "noticia_ids": [
+      "n136"
+     ],
+     "outras_ids": [
+      "n210"
+     ],
+     "titulo_evento": "JP Morgan projeta IPCA de 6% em 12 meses no 1º trimestre de 2027",
+     "estagio": "previsao",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "juro",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "juro_inflacao",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O JP Morgan vê os preços subindo 6% em 12 meses no início de 2027 e 5,5% no fim do ano. Inflação alta mantém o juro alto por mais tempo, o que pesa sobre o crédito e a atividade."
+    },
+    {
+     "noticia_ids": [
+      "n059",
+      "n128"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Intenção de consumo cai 0,9% em novembro, a quarta queda seguida",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "dados",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "atividade",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "ritmo_emprego",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "A Confederação Nacional do Comércio registra 102,7 pontos, o menor nível desde novembro de 2025. As famílias estão cautelosas com renda, emprego e dívidas, e isso reduz as compras de fim de ano."
+    },
+    {
+     "noticia_ids": [
+      "n135",
+      "n051",
+      "n054",
+      "n052"
+     ],
+     "outras_ids": [
+      "n141"
+     ],
+     "titulo_evento": "Inflação nos EUA acelera a 3,8% no ano, e o Fed pode subir os juros",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "externo",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "fed_juros_eua",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O indicador de preços preferido do banco central dos EUA subiu 0,3% em outubro, e o Livro Bege vê a alta continuar. Juro maior lá fora atrai dinheiro para os EUA e pressiona o dólar e os juros daqui."
+    },
+    {
+     "noticia_ids": [
+      "n094",
+      "n030"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Bolsas de Nova York caem com tarifas de Trump e queda das ações de tecnologia",
+     "estagio": "dado",
+     "chance_aprovacao": null,
+     "origem": "mundo",
+     "decisor": "nenhum",
+     "instrumento": "nenhum",
+     "objetivo": "",
+     "fator": "mercado",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "fed_juros_eua",
+     "tema_novo": "",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": true,
+     "ja_nos_indicadores": false,
+     "duplicata_de": "ev-20261125-08",
+     "porque": "A nova rodada de tarifas dos EUA e a pressão sobre as ações de tecnologia derrubaram as bolsas americanas. Menos apetite por risco lá fora tende a reduzir o dinheiro que chega ao Brasil."
+    },
+    {
+     "noticia_ids": [
+      "n048",
+      "n088",
+      "n125",
+      "n066"
+     ],
+     "outras_ids": [],
+     "titulo_evento": "Caixa avalia comprar o BRB, que fica sem empréstimo para se salvar",
+     "estagio": "rumor",
+     "chance_aprovacao": null,
+     "origem": "politica",
+     "decisor": "governo_federal",
+     "instrumento": "credito_publico",
+     "objetivo": "",
+     "fator": "credito",
+     "direcao": 1,
+     "magnitude": 1,
+     "historia": "nova",
+     "tema_novo": "crise-do-brb",
+     "marco": false,
+     "previsao_virou": false,
+     "sem_medida": false,
+     "ja_no_preco": false,
+     "ja_nos_indicadores": false,
+     "duplicata_de": null,
+     "porque": "O Distrito Federal não conseguiu empréstimo para sustentar o banco, e a governadora fala em federalização. Se a Caixa assumir, o custo da crise ligada ao Master pode ir para o caixa do governo federal."
+    }
+   ]
+  }
+ },
+ "eventos_novos": [
+  "ev-20261126-01",
+  "ev-20261126-02",
+  "ev-20261126-03",
+  "ev-20261126-04",
+  "ev-20261126-05",
+  "ev-20261126-06",
+  "ev-20261126-07",
+  "ev-20261126-08",
+  "ev-20261126-09",
+  "ev-20261126-10"
+ ],
+ "eventos_descartados": [
+  {
+   "noticia_ids": [
+    "n009",
+    "n108",
+    "n087",
+    "n073",
+    "n044",
+    "n039"
+   ],
+   "outras_ids": [
+    "n005",
+    "n020",
+    "n079"
+   ],
+   "titulo_evento": "Lula sonda o presidente do conselho do Bradesco para comandar a Fazenda",
+   "estagio": "rumor",
+   "chance_aprovacao": null,
+   "origem": "politica",
+   "decisor": "governo_federal",
+   "instrumento": "nenhum",
+   "objetivo": "",
+   "fator": "mercado",
+   "direcao": -1,
+   "magnitude": 1,
+   "historia": "desconfianca_eleicao",
+   "tema_novo": "",
+   "marco": false,
+   "previsao_virou": false,
+   "sem_medida": false,
+   "ja_no_preco": false,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261117-04",
+   "porque": "O presidente conversou com um banqueiro de nome bem visto pelo mercado, e o dólar caiu no dia em que o nome circulou. Sem anúncio oficial, a dúvida sobre quem cuida das contas continua.",
+   "motivo": "mesmo fato do evento ev-20261117-04",
+   "fontes": [
+    {
+     "veiculo": "Estadão",
+     "titulo": "Lula sondou Trabuco para o Ministério da Fazenda; banqueiro ainda avalia proposta",
+     "url": "https://www.estadao.com.br/economia/lula-sondou-trabuco-para-o-ministerio-da-fazenda-banqueiro-ainda-avalia-proposta/",
+     "publicado_em": "2026-11-25T23:56+00:00"
+    },
+    {
+     "veiculo": "Estadão",
+     "titulo": "Luiz Carlos Trabuco, do Bradesco, entra na lista de cotados para o Ministério da Fazenda",
+     "url": "https://www.estadao.com.br/economia/luiz-carlos-trabuco-bradesco-cotados-ministerio-da-fazenda/",
+     "publicado_em": "2026-11-25T15:59+00:00"
+    },
+    {
+     "veiculo": "Poder360",
+     "titulo": "Trabuco se fortalece para ir para o Ministério da Fazenda de Lula 4",
+     "url": "https://www.poder360.com.br/poder-governo/trabuco-se-fortalece-para-ir-para-o-ministerio-da-fazenda-de-lula-4/",
+     "publicado_em": "2026-11-25T17:43+00:00"
+    },
+    {
+     "veiculo": "Valor",
+     "titulo": "Encontro de Lula com Trabuco pode ter sido de aconselhamento, mas aliados não descartam convite para a Fazenda",
+     "url": "https://valor.globo.com/financas/noticia/2026/11/25/encontro-de-lula-com-trabuco-pode-ter-sido-de-aconselhamento-mas-aliados-nao-descartam-convite-para-a-fazenda.ghtml",
+     "publicado_em": "2026-11-25T18:25+00:00"
+    },
+    {
+     "veiculo": "g1",
+     "titulo": "Luiz Trabuco: quem é o executivo do Bradesco que está entre os cotados para assumir Ministério da Fazenda",
+     "url": "https://g1.globo.com/politica/noticia/2026/11/25/luiz-trabuco-quem-e-o-executivo-cotado-para-ser-ministro-da-fazenda.ghtml",
+     "publicado_em": "2026-11-25T20:33+00:00"
+    },
+    {
+     "veiculo": "Folha",
+     "titulo": "Lula quer Trabuco na Fazenda. Para fazer o quê?",
+     "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/colunas/viniciustorres/2026/11/lula-quer-trabuco-na-fazenda-para-fazer-o-que.shtml",
+     "publicado_em": "2026-11-25T21:01-03:00"
+    }
+   ]
+  },
+  {
+   "noticia_ids": [
+    "n137",
+    "n139",
+    "n111",
+    "n085",
+    "n058",
+    "n169"
+   ],
+   "outras_ids": [
+    "n170",
+    "n117",
+    "n090",
+    "n063",
+    "n204",
+    "n207",
+    "n026"
+   ],
+   "titulo_evento": "Governo fala em nova etapa do ajuste das contas sem detalhar as medidas",
+   "estagio": "anuncio",
+   "chance_aprovacao": null,
+   "origem": "politica",
+   "decisor": "governo_federal",
+   "instrumento": "regra_fiscal",
+   "objetivo": "melhorar as contas públicas e conter gastos obrigatórios",
+   "fator": "contas",
+   "direcao": -1,
+   "magnitude": 1,
+   "historia": "contas_governo",
+   "tema_novo": "",
+   "marco": false,
+   "previsao_virou": false,
+   "sem_medida": true,
+   "ja_no_preco": false,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261125-03",
+   "porque": "O Planejamento fala em um conjunto de medidas e nega uma PEC pronta, e o presidente do Senado admite votar novo pacote ainda em 2026. Sem valores e prazos, o mercado segue esperando o formato do corte de gastos.",
+   "motivo": "mesmo fato do evento ev-20261125-03",
+   "fontes": [
+    {
+     "veiculo": "g1",
+     "titulo": "Ministro do Planejamento não cita PEC e sim 'conjunto de medidas' para melhorar contas públicas, mas não detalha propostas",
+     "url": "https://g1.globo.com/economia/noticia/2026/11/25/ministro-do-planejamento-diz-que-equipe-economica-tem-conjunto-de-medidas-para-melhorar-contas-publicas-mas-nao-antecipa.ghtml",
+     "publicado_em": "2026-11-25T14:15+00:00"
+    },
+    {
+     "veiculo": "Estadão",
+     "titulo": "Ministro promete orçamento no azul no Lula 4 e evita discussão sobre PEC: ‘Não tem bala de prata’",
+     "url": "https://www.estadao.com.br/economia/ministro-cita-dever-cumprido-e-promete-orcamento-no-azul-no-lula-4-em-meio-a-preocupacao-fiscal/",
+     "publicado_em": "2026-11-25T14:11+00:00"
+    },
+    {
+     "veiculo": "InfoMoney",
+     "titulo": "Moretti diz que governo não tem PEC sobre despesas e mantém debate fiscal contínuo",
+     "url": "https://www.infomoney.com.br/politica/moretti-diz-que-governo-nao-tem-pec-sobre-despesas-e-mantem-debate-fiscal-continuo/",
+     "publicado_em": "2026-11-25T15:41+00:00"
+    },
+    {
+     "veiculo": "InfoMoney",
+     "titulo": "Ceron: não devem criar expectativa por bala de prata com PEC ou PLP de ajuste fiscal",
+     "url": "https://www.infomoney.com.br/politica/ceron-nao-devem-criar-expectativa-por-bala-de-prata-com-pec-ou-plp-de-ajuste-fiscal/",
+     "publicado_em": "2026-11-25T17:45+00:00"
+    },
+    {
+     "veiculo": "Gazeta do Povo",
+     "titulo": "Segunda parte do ajuste fiscal de Lula mira emendas parlamentares e supersalários",
+     "url": "https://www.gazetadopovo.com.br/republica/segunda-parte-ajuste-fiscal-lula-mira-emendas-parlamentares-supersalarios/",
+     "publicado_em": "2026-11-25T19:46+00:00"
+    },
+    {
+     "veiculo": "InfoMoney",
+     "titulo": "Ajuste fiscal de R$ 50 bi foi aprovado. Por que Lula já prepara outro?",
+     "url": "https://www.infomoney.com.br/politica/ajuste-fiscal-de-r-50-bi-foi-aprovado-por-que-lula-ja-prepara-outro/",
+     "publicado_em": "2026-11-25T12:28+00:00"
+    }
+   ]
+  },
+  {
+   "noticia_ids": [
+    "n094",
+    "n030"
+   ],
+   "outras_ids": [],
+   "titulo_evento": "Bolsas de Nova York caem com tarifas de Trump e queda das ações de tecnologia",
+   "estagio": "dado",
+   "chance_aprovacao": null,
+   "origem": "mundo",
+   "decisor": "nenhum",
+   "instrumento": "nenhum",
+   "objetivo": "",
+   "fator": "mercado",
+   "direcao": 1,
+   "magnitude": 1,
+   "historia": "fed_juros_eua",
+   "tema_novo": "",
+   "marco": false,
+   "previsao_virou": false,
+   "sem_medida": false,
+   "ja_no_preco": true,
+   "ja_nos_indicadores": false,
+   "duplicata_de": "ev-20261125-08",
+   "porque": "A nova rodada de tarifas dos EUA e a pressão sobre as ações de tecnologia derrubaram as bolsas americanas. Menos apetite por risco lá fora tende a reduzir o dinheiro que chega ao Brasil.",
+   "motivo": "mesmo fato do evento ev-20261125-08",
+   "fontes": [
+    {
+     "veiculo": "g1",
+     "titulo": "Tarifas de Trump e crise da IA provocam dia de queda em Wall Street",
+     "url": "https://g1.globo.com/economia/noticia/2026/11/25/trump-tarifas-ia-bolsa-de-ny-wall-street.ghtml",
+     "publicado_em": "2026-11-25T16:55+00:00"
+    },
+    {
+     "veiculo": "InfoMoney",
+     "titulo": "Nasdaq e S&P 500 caem, mas longe de mínima com investidor de olho em oportunidade",
+     "url": "https://www.infomoney.com.br/mercados/nasdaq-e-sp-500-caem-mas-longe-de-minima-com-investidor-de-olho-em-oportunidade/",
+     "publicado_em": "2026-11-25T21:40+00:00"
+    }
+   ]
+  }
+ ],
+ "resultado": {
+  "gar": {
+   "entradas": [
+    {
+     "id": "tendencia",
+     "fator": "atividade",
+     "nome": "Crescimento médio em 10 anos",
+     "unidade": "%",
+     "valor": 1.7328366710913756,
+     "ref": "2T2026",
+     "referencia": 2.4697807384106563,
+     "coef": -0.20407155569770025,
+     "faixa_normal": [
+      1.2052,
+      3.3021
+     ],
+     "escala": [
+      0.3054,
+      3.9289
+     ],
+     "efeito": 0.15038932228003635
+    },
+    {
+     "id": "crescimento",
+     "fator": "atividade",
+     "nome": "Crescimento em 12 meses",
+     "unidade": "%",
+     "valor": 1.099285274025721,
+     "ref": "2026-09",
+     "referencia": 2.029441313073013,
+     "coef": 0.2281557601628648,
+     "faixa_normal": [
+      0.4274,
+      4.1388
+     ],
+     "escala": [
+      -6.2893,
+      9.267
+     ],
+     "efeito": -0.21222045815891427
+    },
+    {
+     "id": "juro",
+     "fator": "juro",
+     "nome": "Selic: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -1.25,
+     "ref": "2026-11-26",
+     "nivel": 13.75,
+     "antes": 15.0,
+     "referencia": -0.375,
+     "coef": -0.1473323685958321,
+     "faixa_normal": [
+      -3.0,
+      2.0
+     ],
+     "escala": [
+      -6.31,
+      8.655
+     ],
+     "efeito": 0.12891582252135309
+    },
+    {
+     "id": "inflacao",
+     "fator": "juro",
+     "nome": "Inflação: variação em 12 meses",
+     "unidade": "pontos",
+     "valor": -0.04999999999999982,
+     "ref": "2026-10",
+     "nivel": 4.63,
+     "antes": 4.68,
+     "referencia": -0.06499999999999995,
+     "coef": -0.12500236363708112,
+     "faixa_normal": [
+      -1.665,
+      1.3725
+     ],
+     "escala": [
+      -8.2538,
+      6.2048
+     ],
+     "efeito": -0.0018750354545562322
+    }
+   ],
+   "ruim": -0.6262738328616679,
+   "cenario_ruim": -1.9172071844033245,
+   "cenario_normal": -1.8914573730774542,
+   "ref_pib": "2T2026"
+  },
+  "indicadores": [
+   {
+    "id": "ibcbr",
+    "fator": "atividade",
+    "nome": "IBC-Br",
+    "unidade": "%",
+    "definicao": "IBC-Br dessazonalizado (BCB 24364): média dos últimos 3 meses contra a dos 3 anteriores.",
+    "direcao": -1,
+    "faixa_normal": [
+     -0.178879,
+     1.409462
+    ],
+    "escala": [
+     -3.422733,
+     3.418644
+    ],
+    "valor": -0.8605488709830245,
+    "ref": "2026-09"
+   },
+   {
+    "id": "focus_pib",
+    "fator": "atividade",
+    "nome": "PIB esperado pelo Focus",
+    "unidade": "%",
+    "definicao": "Crescimento do PIB esperado para os próximos 12 meses: mediana do Focus para o ano corrente e o seguinte, ponderada pelos meses que faltam em cada um.",
+    "direcao": -1,
+    "faixa_normal": [
+     1.617708,
+     3.499375
+    ],
+    "escala": [
+     -2.139717,
+     5.282417
+    ],
+    "valor": 1.058025,
+    "ref": "2026-11-19",
+    "ano": 1.7018,
+    "ano_seguinte": 0.9995
+   },
+   {
+    "id": "juro_real",
+    "fator": "juro",
+    "nome": "Juro real",
+    "unidade": "% ao ano",
+    "definicao": "Selic meta (BCB 432) descontada da inflação esperada para 12 meses (Focus, suavizada): (1 + Selic) / (1 + inflação esperada) − 1.",
+    "direcao": 1,
+    "faixa_normal": [
+     4.062007,
+     9.133549
+    ],
+    "escala": [
+     -1.195693,
+     14.660898
+    ],
+    "valor": 7.912781806521618,
+    "ref": "2026-11-26",
+    "selic": 13.75,
+    "inflacao_esperada": 5.4092,
+    "focus_data": "2026-11-19"
+   },
+   {
+    "id": "comprometimento",
+    "fator": "credito",
+    "nome": "Renda comprometida com dívidas",
+    "unidade": "p.p.",
+    "definicao": "Comprometimento de renda das famílias com dívidas, dessazonalizado (BCB 29034), menos a média dos 36 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.268333,
+     1.686944
+    ],
+    "escala": [
+     -1.879444,
+     3.762167
+    ],
+    "valor": 1.8797222222222203,
+    "ref": "2026-08",
+    "nivel": 28.99
+   },
+   {
+    "id": "tesouro",
+    "fator": "mercado",
+    "nome": "Juro do Tesouro IPCA+",
+    "unidade": "p.p.",
+    "definicao": "Taxa do Tesouro IPCA+ com vencimento mais perto de 10 anos (Tesouro Direto, venda pela manhã) menos a sua mediana nos 3 anos anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.95,
+     0.845
+    ],
+    "escala": [
+     -2.2292,
+     2.1344
+    ],
+    "valor": 0.5700000000000003,
+    "ref": "2026-11-19",
+    "nivel": 7.98,
+    "mediana": 7.41,
+    "vencimento": "2035-05-15"
+   },
+   {
+    "id": "dolar",
+    "fator": "mercado",
+    "nome": "Dólar",
+    "unidade": "%",
+    "definicao": "Variação do dólar PTAX (BCB 1) em 3 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -4.151625,
+     5.11632
+    ],
+    "escala": [
+     -14.383365,
+     27.223675
+    ],
+    "valor": 14.245484560108768,
+    "ref": "2026-11-25",
+    "nivel": 5.8825
+   },
+   {
+    "id": "divida",
+    "fator": "contas",
+    "nome": "Dívida pública",
+    "unidade": "p.p. do PIB",
+    "definicao": "Variação da dívida bruta do governo geral (BCB 13762) em 12 meses.",
+    "direcao": 1,
+    "faixa_normal": [
+     -1.74,
+     4.22
+    ],
+    "escala": [
+     -8.4312,
+     10.7912
+    ],
+    "valor": 5.109999999999999,
+    "ref": "2026-09",
+    "nivel": 82.95
+   },
+   {
+    "id": "sahm",
+    "fator": "emprego",
+    "nome": "Regra de Sahm",
+    "unidade": "p.p.",
+    "definicao": "Média de 3 meses da desocupação da PNAD Contínua (BCB 24369) menos o menor valor dessa média nos 12 meses anteriores.",
+    "direcao": 1,
+    "faixa_normal": [
+     -0.066667,
+     1.433333
+    ],
+    "escala": [
+     -0.526667,
+     3.126667
+    ],
+    "valor": 0.033333333333333215,
+    "ref": "2026-09",
+    "nivel": 5.2
+   },
+   {
+    "id": "commodities",
+    "fator": "externo",
+    "nome": "Preço das commodities",
+    "unidade": "%",
+    "definicao": "Variação em 6 meses do índice de preços de todas as commodities do FMI (FRED PALLFNFINDEXM).",
+    "direcao": -1,
+    "faixa_normal": [
+     -4.196915,
+     13.721388
+    ],
+    "escala": [
+     -28.018093,
+     30.645307
+    ],
+    "valor": 1.6727586354593926,
+    "ref": "2026-09",
+    "nivel": 222.4285486100514
+   }
+  ],
+  "reaproveitados": [],
+  "faltando": [],
+  "direcao": {
+   "estado": "subindo",
+   "desde": "2026-06",
+   "soma": 4,
+   "bruto": "subindo",
+   "pendente": null,
+   "apertaram": 4,
+   "folgaram": 0,
+   "partes": [
+    {
+     "id": "contas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "divida": {
+       "agora": 82.95,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 81.95,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 1.0,
+       "corte": 0.9451499999999999,
+       "lado": 1,
+       "como": "pontos"
+      },
+      "primario": {
+       "agora": 0.52,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 1.19,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.6699999999999999,
+       "corte": 0.311325,
+       "lado": -1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "divida_bruta",
+      "valor": 82.95,
+      "ref": "2026-09",
+      "desde": "2006",
+      "meses": 238,
+      "pior_que_pct": 96,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "parcelas",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "parcelas": {
+       "agora": 28.99,
+       "dia": "2026-08-01",
+       "ref": "2026-08",
+       "antes": 28.47,
+       "dia_antes": "2026-05-01",
+       "ref_antes": "2026-05",
+       "mudanca": 0.5199999999999996,
+       "corte": 0.378075,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "comprometimento_renda",
+      "valor": 28.99,
+      "ref": "2026-08",
+      "desde": "2005",
+      "meses": 258,
+      "pior_que_pct": 100,
+      "recorde_ruim": true,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "mercado",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "dolar": {
+       "agora": 5.8825,
+       "dia": "2026-11-25",
+       "ref": "2026-11",
+       "antes": 5.1816,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 13.526709896557044,
+       "corte": 4.765725,
+       "lado": 1,
+       "como": "pct",
+       "lado_do_dia": 1,
+       "dias_seguidos": 0,
+       "persiste_dias": 3
+      },
+      "juro_longo": {
+       "agora": 7.98,
+       "dia": "2026-11-19",
+       "ref": "2026-11",
+       "antes": 7.92,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 0.0600000000000005,
+       "corte": 0.41145,
+       "lado": 0,
+       "como": "pontos",
+       "lado_do_dia": 0,
+       "dias_seguidos": 0,
+       "persiste_dias": 3
+      }
+     },
+     "folga": {
+      "serie": "juro_real_longo",
+      "valor": 7.98,
+      "ref": "2026-11",
+      "desde": "2005",
+      "meses": 257,
+      "pior_que_pct": 91,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "inflacao",
+     "lado": 1,
+     "na_soma": true,
+     "medidas": {
+      "inflacao": {
+       "agora": 5.4092,
+       "dia": "2026-11-19",
+       "ref": "2026-11",
+       "antes": 4.553,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": 0.8562000000000003,
+       "corte": 0.316875,
+       "lado": 1,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "focus_ipca_12m",
+      "valor": 5.4092,
+      "ref": "2026-11",
+      "desde": "2001",
+      "meses": 300,
+      "pior_que_pct": 67,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "juro",
+     "lado": 0,
+     "na_soma": true,
+     "medidas": {
+      "juro": {
+       "agora": 13.75,
+       "dia": "2026-11-26",
+       "ref": "2026-11",
+       "antes": 14.0,
+       "dia_antes": "2026-08-31",
+       "ref_antes": "2026-08",
+       "mudanca": -0.25,
+       "corte": 0.833925,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "juro_real",
+      "valor": 7.912781806521618,
+      "ref": "2026-11",
+      "desde": "2002",
+      "meses": 299,
+      "pior_que_pct": 63,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "ritmo",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "ritmo": {
+       "agora": 109.77734,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 110.31795,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.8605488709830356,
+       "corte": 0.88905,
+       "lado": 0,
+       "como": "media"
+      }
+     },
+     "folga": null
+    },
+    {
+     "id": "emprego",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "emprego": {
+       "agora": 5.2,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 5.4,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": -0.20000000000000018,
+       "corte": 0.555975,
+       "lado": 0,
+       "como": "pontos"
+      }
+     },
+     "folga": {
+      "serie": "desocupacao",
+      "valor": 5.2,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "renda",
+     "lado": -1,
+     "na_soma": false,
+     "medidas": {
+      "renda": {
+       "agora": 3790.0,
+       "dia": "2026-09-01",
+       "ref": "2026-09",
+       "antes": 3753.0,
+       "dia_antes": "2026-06-01",
+       "ref_antes": "2026-06",
+       "mudanca": 0.9858779642952342,
+       "corte": 0.8882999999999999,
+       "lado": -1,
+       "como": "pct"
+      }
+     },
+     "folga": {
+      "serie": "rendimento_real",
+      "valor": 3790.0,
+      "ref": "2026-09",
+      "desde": "2012",
+      "meses": 175,
+      "pior_que_pct": 1,
+      "recorde_ruim": false,
+      "recorde_bom": false
+     }
+    },
+    {
+     "id": "reservas",
+     "lado": 0,
+     "na_soma": false,
+     "medidas": {
+      "reservas": {
+       "agora": 365019.0,
+       "dia": "2026-10-01",
+       "ref": "2026-10",
+       "antes": 369742.0,
+       "dia_antes": "2026-07-01",
+       "ref_antes": "2026-07",
+       "mudanca": -1.2773771981543836,
+       "corte": 2.97645,
+       "lado": 0,
+       "como": "pct"
+      }
+     },
+     "folga": null
+    }
+   ],
+   "mes": "2026-11",
+   "linha": [
+    {
+     "mes": "2004-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2004-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2004-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2004-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2005-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2006-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2006-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2007-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2007-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2008-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-01",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-02",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-03",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-04",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2009-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2009-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2009-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2010-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2011-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2012-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-11",
+     "estado": "C"
+    },
+    {
+     "mes": "2012-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2013-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2013-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2014-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2014-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2014-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2015-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-10",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-11",
+     "estado": "E"
+    },
+    {
+     "mes": "2015-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2016-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2016-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2016-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-09",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-10",
+     "estado": "C"
+    },
+    {
+     "mes": "2017-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2017-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2018-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2018-12",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2019-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2019-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-04",
+     "estado": "C"
+    },
+    {
+     "mes": "2020-05",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-06",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-08",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-09",
+     "estado": "E"
+    },
+    {
+     "mes": "2020-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2020-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2020-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-04",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-05",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-07",
+     "estado": "E"
+    },
+    {
+     "mes": "2021-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2021-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2021-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2022-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2022-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-01",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-02",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-05",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-06",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-07",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-08",
+     "estado": "C"
+    },
+    {
+     "mes": "2023-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2023-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-01",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-02",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-03",
+     "estado": "C"
+    },
+    {
+     "mes": "2024-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2024-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-11",
+     "estado": "S"
+    },
+    {
+     "mes": "2024-12",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-03",
+     "estado": "S"
+    },
+    {
+     "mes": "2025-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-06",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-07",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-08",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-09",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-10",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-11",
+     "estado": "I"
+    },
+    {
+     "mes": "2025-12",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-01",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-02",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-03",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-04",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-05",
+     "estado": "I"
+    },
+    {
+     "mes": "2026-06",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-07",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-08",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-09",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-10",
+     "estado": "S"
+    },
+    {
+     "mes": "2026-11",
+     "estado": "S"
+    }
+   ]
+  }
+ },
+ "pressao": {
+  "fatores": {
+   "externo": {
+    "saldo": 1.45,
+    "sentido": "piora",
+    "eventos": [
+     "ev-20261126-01",
+     "ev-20261126-09"
+    ]
+   },
+   "credito": {
+    "saldo": 1.05,
+    "sentido": "piora",
+    "eventos": [
+     "ev-20261126-02",
+     "ev-20261126-10"
+    ]
+   },
+   "mercado": {
+    "saldo": -1.0,
+    "sentido": "melhora",
+    "eventos": [
+     "ev-20261126-03"
+    ]
+   },
+   "contas": {
+    "saldo": -0.39999999999999997,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261126-04",
+     "ev-20261126-05"
+    ]
+   },
+   "atividade": {
+    "saldo": 1.5,
+    "sentido": "piora",
+    "eventos": [
+     "ev-20261126-06",
+     "ev-20261126-08"
+    ]
+   },
+   "juro": {
+    "saldo": 0.5,
+    "sentido": "igual",
+    "eventos": [
+     "ev-20261126-07"
+    ]
+   }
+  },
+  "saldo": 3.1,
+  "sentido": "piora",
+  "n": 10
+ },
+ "leituras": {
+  "fatores": {
+   "atividade": {
+    "fatos": [
+     {
+      "texto": "A economia cresceu 1,1% em um ano (prévia do PIB, de julho a setembro). O normal desde 2004 vai de 0,4% a 4,1%.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "A prévia do PIB caiu 0,9% no trimestre até setembro, contra os 3 meses anteriores. É a maior queda desde maio de 2021.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "Os bancos (Focus) esperam alta de 1,7% do PIB em 2026 e alta de 1% em 2027.",
+      "fonte": "Focus"
+     }
+    ]
+   },
+   "juro": {
+    "fatos": [
+     {
+      "texto": "Os preços subiram 4,6% em um ano até outubro (IPCA). Um ano antes, a alta era de 4,7%: os preços sobem no mesmo ritmo.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "Descontada a inflação esperada (5,4%), a Selic de 13,75% rende 7,9% ao ano.",
+      "fonte": "BC e Focus"
+     },
+     {
+      "texto": "Selic em 13,75% desde 17/9. Antes, era 14%. Nos últimos 12 meses, chegou a 15%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "credito": {
+    "fatos": [
+     {
+      "texto": "29% da renda das famílias vai para parcelas e juros (agosto), o maior desde o início da série, em 2005. Um ano antes, eram 27,6%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "mercado": {
+    "fatos": [
+     {
+      "texto": "O governo paga 8,0% ao ano acima da inflação para pegar dinheiro até 2035 (19/11). É 0,6 ponto acima do normal dos últimos 3 anos.",
+      "fonte": "Tesouro Direto"
+     },
+     {
+      "texto": "Dólar a R$ 5,88 em 25/11, 14,2% mais caro que no fim de agosto.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "contas": {
+    "fatos": [
+     {
+      "texto": "Dívida do governo em 83,0% do PIB (setembro). Subiu 5,1 pontos em um ano.",
+      "fonte": "BC"
+     },
+     {
+      "texto": "União, estados e municípios gastaram 0,5% do PIB a mais do que arrecadaram nos 12 meses até setembro, sem contar juros. Um ano antes, eram 0,3%.",
+      "fonte": "BC"
+     }
+    ]
+   },
+   "emprego": {
+    "fatos": [
+     {
+      "texto": "Desemprego em 5,2% no trimestre até setembro. O menor desde 2012 foi 5,1%, em dezembro de 2025.",
+      "fonte": "IBGE"
+     },
+     {
+      "texto": "O desemprego médio de 3 meses está igual ao menor do último ano.",
+      "fonte": "IBGE"
+     }
+    ]
+   },
+   "externo": {
+    "fatos": [
+     {
+      "texto": "Soja, minério, petróleo e outros produtos básicos ficaram 1,7% mais caros em 6 meses até setembro (FMI).",
+      "fonte": "FMI"
+     }
+    ]
+   }
+  }
+ },
+ "anterior": "2026-11-25T0400",
+ "revisao_texto": {
+  "classificacao": [
+   "palavra que o site trocou: cada pressão piorou, ficou igual ou melhorou: Conselho Monetário Nacional e Banco Central apertam regras d",
+   "nome de pessoa ou partido: use o cargo ou a instituição (o presidente, a Fazenda, o partido do governo): Lula sonda o presidente do conselho do Bradesco para comanda",
+   "sigla que a leitora não conhece (JP): escreva o nome por extenso, se ele explica: Itaú vê 50% de chance de queda do PIB em 2027, e JP Morgan f",
+   "sigla que a leitora não conhece (JP): escreva o nome por extenso, se ele explica: JP Morgan projeta IPCA de 6% em 12 meses no 1º trimestre de ",
+   "nome de pessoa ou partido: use o cargo ou a instituição (o presidente, a Fazenda, o partido do governo): Bolsas de Nova York caem com tarifas de Trump e queda das aç",
+   "sigla que a leitora não conhece (BRB): escreva o nome por extenso, se ele explica: Caixa avalia comprar o BRB, que fica sem empréstimo para se "
+  ]
+ },
+ "pauta": {
+  "versao": 2,
+  "candidatos": [
+   {
+    "id": "E1",
+    "ordem": 1,
+    "evento": "ev-20261126-01",
+    "titulo": "EUA propõem tarifa de 10% sobre aviões e mais imposto sobre açúcar do Brasil",
+    "estagio": "em_votacao",
+    "tamanho": 2,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O governo dos EUA abriu consulta pública, com audiência em 14 de janeiro, para cobrar mais sobre aviões e açúcar brasileiros. Se passar, as exportações da Embraer e do setor de açúcar ficam mais caras no maior mercado.",
+    "historia": "tarifas_eua",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 38,
+    "jornais": [
+     "Agência Brasil",
+     "Estadão",
+     "Folha",
+     "Gazeta do Povo",
+     "InfoMoney",
+     "Poder360",
+     "Valor",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Valor",
+      "titulo": "EUA propõem novas tarifas sobre produtos do Brasil",
+      "url": "https://valor.globo.com/mundo/noticia/2026/11/25/eua-propem-novas-tarifas-sobre-produtos-do-brasil.ghtml",
+      "publicado_em": "2026-11-25T13:28+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Tarifaço de Trump: EUA propõem tarifa de 10% sobre aviões brasileiros e aumento de imposto sobre açúcar",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/25/eua-propoem-tarifas-mais-altas-sobre-importacoes-do-brasil.ghtml",
+      "publicado_em": "2026-11-25T13:16+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "EUA propõem elevar tarifas sobre importações do Brasil, incluindo taxa de 10% sobre aviões",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/eua-realizara-audiencia-em-janeiro-sobre-proposta-de-alteracao-das-tarifas-aplicadas-ao-brasil.shtml",
+      "publicado_em": "2026-11-25T10:34-03:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "EUA propõem mais tarifa sobre importações do Brasil, com alíquota de 10% de aeronaves",
+      "url": "https://www.infomoney.com.br/mundo/eua-propoem-mais-tarifa-sobre-importacoes-do-brasil-com-aliquota-de-10-de-aeronaves/",
+      "publicado_em": "2026-11-25T13:33+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Após propor novas tarifas sobre aviões e açúcar do Brasil, EUA marcam audiência para janeiro",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/25/eua-discutir-tarifas-2027.ghtml",
+      "publicado_em": "2026-11-25T13:27+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "EUA querem mudar taxação sobre açúcar brasileiro; veja como pode ficar",
+      "url": "https://g1.globo.com/economia/agronegocios/noticia/2026/11/25/eua-querem-mudar-taxacao-sobre-acucar-brasileiro-veja-como-pode-ficar.ghtml",
+      "publicado_em": "2026-11-25T17:25+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E2",
+    "ordem": 2,
+    "evento": "ev-20261126-02",
+    "titulo": "Conselho Monetário Nacional e Banco Central apertam regras de crédito e cartão",
+    "estagio": "decidido",
+    "tamanho": 1,
+    "fator": "credito",
+    "origem": "banco_central",
+    "assunto": "Dívidas das famílias",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Os bancos terão de reduzir o limite de quem financia a fatura no rotativo e seguir critérios mais rigorosos para emprestar. O crédito fica mais curto para o consumo, num momento de juro alto e atraso recorde nas dívidas.",
+    "historia": "credito_inadimplencia",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 7,
+    "jornais": [
+     "Agência Brasil",
+     "Folha",
+     "InfoMoney",
+     "Poder360",
+     "Valor",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "CMN e BC anunciam novas regras para conter endividamento das famílias",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/cmn-e-bc-anunciam-novas-regras-para-conter-endividamento-das-familias",
+      "publicado_em": "2026-11-25T20:37-03:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Governo e BC anunciam medidas para reduzir endividamento, com regras para cartão de crédito e empréstimos",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/financas/2026/11/governo-e-bc-anunciam-medidas-para-reduzir-endividamento-com-regras-para-cartao-de-credito-e-emprestimos.shtml",
+      "publicado_em": "2026-11-25T19:19-03:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "CMN anuncia medidas para conter o endividamento das famílias",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/25/cmn-anuncia-medidas-para-conter-o-endividamento-das-familias.ghtml",
+      "publicado_em": "2026-11-25T22:10+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "CMN aperta regras do cartão e limita crédito para cliente que recorre ao rotativo",
+      "url": "https://www.infomoney.com.br/economia/cmn-e-bc-aprovam-medidas-para-conter-riscos-do-endividamento/",
+      "publicado_em": "2026-11-25T22:34+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "BC reforça recomendação de cautela na concessão de crédito diante de juros altos e inadimplência",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/25/bc-reforca-recomendacao-de-cautela-na-concessao-de-credito-diante-de-juros-altos-e-inadimplencia.ghtml",
+      "publicado_em": "2026-11-25T21:48+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "CMN e BC anunciam medidas para conter o endividamento das famílias",
+      "url": "https://www.poder360.com.br/poder-economia/cmn-e-bc-anunciam-medidas-para-conter-o-endividamento-das-familias/",
+      "publicado_em": "2026-11-26T00:32+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E3",
+    "ordem": 3,
+    "evento": "ev-20261126-03",
+    "titulo": "Banco Central vende US$ 2 bi em leilão, e o dólar cai a R$ 5,82",
+    "estagio": "decidido",
+    "tamanho": 1,
+    "fator": "mercado",
+    "origem": "banco_central",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "O Banco Central vendeu dólares com compromisso de recompra, e a moeda recuou 1,58% com o ajuste das contas em pauta. A Bolsa subiu 1,6%, mas o dólar segue bem acima do nível de antes da eleição.",
+    "historia": "desconfianca_eleicao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 6,
+    "jornais": [
+     "Agência Brasil",
+     "Folha",
+     "Gazeta do Povo",
+     "Poder360",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Dólar cai 1,58% a R$ 5,817 com leilões do BC e ajuste fiscal",
+      "url": "https://www.poder360.com.br/poder-economia/dolar-cai-158-a-r-5817-com-leiloes-do-bc-e-ajuste-fiscal/",
+      "publicado_em": "2026-11-25T20:36+00:00"
+     },
+     {
+      "veiculo": "Agência Brasil",
+      "titulo": "Dólar cai para R$ 5,81, em meio à discussão de nomes para Fazenda",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-cai-para-r-581-em-meio-discussao-de-nomes-para-fazenda",
+      "publicado_em": "2026-11-25T19:08-03:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "BC injeta US$ 2 bilhões no mercado com leilão de dólares",
+      "url": "https://www.poder360.com.br/poder-economia/bc-injeta-us-2-bilhoes-no-mercado-com-leilao-de-dolares/",
+      "publicado_em": "2026-11-25T14:58+00:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "BC soma US$ 4 bi em intervenções no câmbio em meio a desconfiança sobre ajuste fiscal de Lula",
+      "url": "https://www.gazetadopovo.com.br/economia/bc-soma-4-bilhoes-em-intervencoes-no-cambio-em-meio-a-desconfianca-sobre-ajuste-fiscal-de-lula/",
+      "publicado_em": "2026-11-25T16:27+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Dólar abre em alta e vai a R$ 5,97, com foco em inflação e PIB dos EUA e medidas econômicas de Lula",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/25/dolar-ibovespa.ghtml",
+      "publicado_em": "2026-11-25T12:00+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E4",
+    "ordem": 4,
+    "evento": null,
+    "titulo": "Lula sonda o presidente do conselho do Bradesco para comandar a Fazenda",
+    "estagio": "rumor",
+    "tamanho": 1,
+    "fator": "mercado",
+    "origem": "politica",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "O presidente conversou com um banqueiro de nome bem visto pelo mercado, e o dólar caiu no dia em que o nome circulou. Sem anúncio oficial, a dúvida sobre quem cuida das contas continua.",
+    "historia": "desconfianca_eleicao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 9,
+    "jornais": [
+     "Estadão",
+     "Folha",
+     "Gazeta do Povo",
+     "Poder360",
+     "Valor",
+     "g1"
+    ],
+    "descartado": "mesmo fato do evento ev-20261117-04",
+    "fontes": [
+     {
+      "veiculo": "Estadão",
+      "titulo": "Lula sondou Trabuco para o Ministério da Fazenda; banqueiro ainda avalia proposta",
+      "url": "https://www.estadao.com.br/economia/lula-sondou-trabuco-para-o-ministerio-da-fazenda-banqueiro-ainda-avalia-proposta/",
+      "publicado_em": "2026-11-25T23:56+00:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Luiz Carlos Trabuco, do Bradesco, entra na lista de cotados para o Ministério da Fazenda",
+      "url": "https://www.estadao.com.br/economia/luiz-carlos-trabuco-bradesco-cotados-ministerio-da-fazenda/",
+      "publicado_em": "2026-11-25T15:59+00:00"
+     },
+     {
+      "veiculo": "Poder360",
+      "titulo": "Trabuco se fortalece para ir para o Ministério da Fazenda de Lula 4",
+      "url": "https://www.poder360.com.br/poder-governo/trabuco-se-fortalece-para-ir-para-o-ministerio-da-fazenda-de-lula-4/",
+      "publicado_em": "2026-11-25T17:43+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Encontro de Lula com Trabuco pode ter sido de aconselhamento, mas aliados não descartam convite para a Fazenda",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/25/encontro-de-lula-com-trabuco-pode-ter-sido-de-aconselhamento-mas-aliados-nao-descartam-convite-para-a-fazenda.ghtml",
+      "publicado_em": "2026-11-25T18:25+00:00"
+     },
+     {
+      "veiculo": "g1",
+      "titulo": "Luiz Trabuco: quem é o executivo do Bradesco que está entre os cotados para assumir Ministério da Fazenda",
+      "url": "https://g1.globo.com/politica/noticia/2026/11/25/luiz-trabuco-quem-e-o-executivo-cotado-para-ser-ministro-da-fazenda.ghtml",
+      "publicado_em": "2026-11-25T20:33+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Lula quer Trabuco na Fazenda. Para fazer o quê?",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/colunas/viniciustorres/2026/11/lula-quer-trabuco-na-fazenda-para-fazer-o-que.shtml",
+      "publicado_em": "2026-11-25T21:01-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E5",
+    "ordem": 5,
+    "evento": null,
+    "titulo": "Governo fala em nova etapa do ajuste das contas sem detalhar as medidas",
+    "estagio": "anuncio",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "O Planejamento fala em um conjunto de medidas e nega uma PEC pronta, e o presidente do Senado admite votar novo pacote ainda em 2026. Sem valores e prazos, o mercado segue esperando o formato do corte de gastos.",
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": true,
+    "n_manchetes": 13,
+    "jornais": [
+     "Estadão",
+     "Folha",
+     "Gazeta do Povo",
+     "InfoMoney",
+     "Poder360",
+     "Valor",
+     "g1"
+    ],
+    "descartado": "mesmo fato do evento ev-20261125-03",
+    "fontes": [
+     {
+      "veiculo": "g1",
+      "titulo": "Ministro do Planejamento não cita PEC e sim 'conjunto de medidas' para melhorar contas públicas, mas não detalha propostas",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/25/ministro-do-planejamento-diz-que-equipe-economica-tem-conjunto-de-medidas-para-melhorar-contas-publicas-mas-nao-antecipa.ghtml",
+      "publicado_em": "2026-11-25T14:15+00:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Ministro promete orçamento no azul no Lula 4 e evita discussão sobre PEC: ‘Não tem bala de prata’",
+      "url": "https://www.estadao.com.br/economia/ministro-cita-dever-cumprido-e-promete-orcamento-no-azul-no-lula-4-em-meio-a-preocupacao-fiscal/",
+      "publicado_em": "2026-11-25T14:11+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Moretti diz que governo não tem PEC sobre despesas e mantém debate fiscal contínuo",
+      "url": "https://www.infomoney.com.br/politica/moretti-diz-que-governo-nao-tem-pec-sobre-despesas-e-mantem-debate-fiscal-continuo/",
+      "publicado_em": "2026-11-25T15:41+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Ceron: não devem criar expectativa por bala de prata com PEC ou PLP de ajuste fiscal",
+      "url": "https://www.infomoney.com.br/politica/ceron-nao-devem-criar-expectativa-por-bala-de-prata-com-pec-ou-plp-de-ajuste-fiscal/",
+      "publicado_em": "2026-11-25T17:45+00:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Segunda parte do ajuste fiscal de Lula mira emendas parlamentares e supersalários",
+      "url": "https://www.gazetadopovo.com.br/republica/segunda-parte-ajuste-fiscal-lula-mira-emendas-parlamentares-supersalarios/",
+      "publicado_em": "2026-11-25T19:46+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Ajuste fiscal de R$ 50 bi foi aprovado. Por que Lula já prepara outro?",
+      "url": "https://www.infomoney.com.br/politica/ajuste-fiscal-de-r-50-bi-foi-aprovado-por-que-lula-ja-prepara-outro/",
+      "publicado_em": "2026-11-25T12:28+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E6",
+    "ordem": 6,
+    "evento": "ev-20261126-04",
+    "titulo": "Comissão eleva em R$ 37,1 bi a receita prevista no Orçamento de 2027",
+    "estagio": "em_votacao",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "alivia",
+    "ja_esperado": false,
+    "porque": "O texto conta com royalties do petróleo, a estreia da reforma tributária e o pacote fiscal, mas já usa PIB menor, de 1,8% contra 2,5%. A receita maior abre espaço para gastar, e o relator deixa R$ 17,6 bi reservados para despesas novas.",
+    "historia": "contas_governo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 3,
+    "jornais": [
+     "Estadão",
+     "Poder360"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Comissão eleva estimativa de receita do Orçamento de 2027 em R$ 37,1 bi",
+      "url": "https://www.poder360.com.br/poder-congresso/comissao-eleva-estimativa-de-receita-do-orcamento-de-2027-em-r-371-bi/",
+      "publicado_em": "2026-11-26T02:15+00:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Orçamento 2027: Congresso aumenta projeção de receitas em R$ 37 bilhões após pacote fiscal de Lula",
+      "url": "https://www.estadao.com.br/economia/orcamento-2027-congresso-aumenta-projecao-de-receitas-em-r-37-bilhoes-apos-pacote-fiscal-de-lula/",
+      "publicado_em": "2026-11-25T13:36+00:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Orçamento de 2027: Relator deixa reserva de R$ 17,6 bilhões para novas despesas à espera do governo",
+      "url": "https://www.estadao.com.br/economia/orcamento-de-2027-relator-deixa-reserva-de-r-176-bilhoes-para-novas-despesas-a-espera-do-governo/",
+      "publicado_em": "2026-11-25T21:14+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E7",
+    "ordem": 7,
+    "evento": "ev-20261126-05",
+    "titulo": "Governo deve prorrogar por 30 dias a subvenção de R$ 2,12 por litro de diesel",
+    "estagio": "anuncio",
+    "tamanho": 1,
+    "fator": "contas",
+    "origem": "politica",
+    "assunto": "Contas do governo",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "Com o petróleo em alta por causa da guerra no Oriente Médio, o Tesouro segue pagando parte do diesel, e as medidas somam R$ 75 bi no ano. O frete e os preços ficam mais baixos, e o custo recai sobre as contas do governo.",
+    "historia": "guerra_petroleo",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "Folha",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "g1",
+      "titulo": "Em meio à alta do petróleo, governo deve prorrogar subvenção ao diesel por mais 30 dias, diz ministro",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/25/em-meio-a-alta-do-petroleo-governo-deve-prorrogar-subvencao-ao-diesel-por-mais-30-dias-diz-ministro.ghtml",
+      "publicado_em": "2026-11-25T13:30+00:00"
+     },
+     {
+      "veiculo": "Folha",
+      "titulo": "Governo deve renovar subvenção ao diesel por mais 30 dias; custo das medidas chega a R$ 75 bi no ano",
+      "url": "https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/governo-deve-renovar-subvencao-ao-diesel-por-mais-30-dias-custo-das-medidas-chega-a-r-75-bi-no-ano.shtml",
+      "publicado_em": "2026-11-25T11:28-03:00"
+     }
+    ]
+   },
+   {
+    "id": "E8",
+    "ordem": 8,
+    "evento": "ev-20261126-06",
+    "titulo": "Itaú vê 50% de chance de queda do PIB em 2027, e JP Morgan fala em risco real",
+    "estagio": "previsao",
+    "tamanho": 2,
+    "fator": "atividade",
+    "origem": "dados",
+    "assunto": "Ritmo da economia",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O Itaú mantém alta de 0,5% do PIB em 2027, mas vê metade de chance de queda, pelo efeito dos juros altos e de menos gasto do governo. O JP Morgan diz que a perda de confiança pode agravar a piora.",
+    "historia": "ritmo_emprego",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 3,
+    "jornais": [
+     "Estadão",
+     "InfoMoney"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Itaú vê 50% de chance de variação negativa do PIB ao fim de 2027",
+      "url": "https://www.infomoney.com.br/economia/itau-ve-50-chance-pib-negativo-2027/",
+      "publicado_em": "2026-11-25T16:19+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "JP Morgan diz que risco de uma recessão no Brasil no próximo ano é real",
+      "url": "https://www.infomoney.com.br/economia/jp-morgan-diz-que-risco-de-uma-recessao-no-brasil-no-proximo-ano-e-real/",
+      "publicado_em": "2026-11-25T18:22+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E9",
+    "ordem": 9,
+    "evento": "ev-20261126-07",
+    "titulo": "JP Morgan projeta IPCA de 6% em 12 meses no 1º trimestre de 2027",
+    "estagio": "previsao",
+    "tamanho": 1,
+    "fator": "juro",
+    "origem": "dados",
+    "assunto": "Juro e inflação",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O JP Morgan vê os preços subindo 6% em 12 meses no início de 2027 e 5,5% no fim do ano. Inflação alta mantém o juro alto por mais tempo, o que pesa sobre o crédito e a atividade.",
+    "historia": "juro_inflacao",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "InfoMoney",
+     "g1"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Inflação vai piorar antes de melhorar, alerta JP Morgan em relatório sobre 2027",
+      "url": "https://www.infomoney.com.br/economia/inflacao-vai-piorar-antes-de-melhorar-alerta-jp-morgan-em-relatorio-sobre-2027/",
+      "publicado_em": "2026-11-25T14:22+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E10",
+    "ordem": 10,
+    "evento": "ev-20261126-08",
+    "titulo": "Intenção de consumo cai 0,9% em novembro, a quarta queda seguida",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "atividade",
+    "origem": "dados",
+    "assunto": "Ritmo da economia",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "A Confederação Nacional do Comércio registra 102,7 pontos, o menor nível desde novembro de 2025. As famílias estão cautelosas com renda, emprego e dívidas, e isso reduz as compras de fim de ano.",
+    "historia": "ritmo_emprego",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "Gazeta do Povo",
+     "InfoMoney"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Intenção de consumo cai 0,9% em novembro e registra quarta queda seguida, diz CNC",
+      "url": "https://www.infomoney.com.br/economia/intencao-de-consumo-das-familias-cai-novembro-cnc/",
+      "publicado_em": "2026-11-25T19:43+00:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Intenção de consumo das famílias cai ao menor nível do ano antes da Black Friday",
+      "url": "https://www.gazetadopovo.com.br/economia/intencao-consumo-familias-cai-menor-nivel-do-ano-antes-black-friday/",
+      "publicado_em": "2026-11-25T14:41+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E11",
+    "ordem": 11,
+    "evento": "ev-20261126-09",
+    "titulo": "Inflação nos EUA acelera a 3,8% no ano, e o Fed pode subir os juros",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "externo",
+    "origem": "mundo",
+    "assunto": "Economia lá fora",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "O indicador de preços preferido do banco central dos EUA subiu 0,3% em outubro, e o Livro Bege vê a alta continuar. Juro maior lá fora atrai dinheiro para os EUA e pressiona o dólar e os juros daqui.",
+    "historia": "fed_juros_eua",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 5,
+    "jornais": [
+     "InfoMoney",
+     "Poder360",
+     "Valor"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "Poder360",
+      "titulo": "Inflação nos EUA acelera e acumula alta de 3,8% no ano",
+      "url": "https://www.poder360.com.br/poder-economia/inflacao-nos-eua-acelera-e-acumula-alta-de-38-no-ano/",
+      "publicado_em": "2026-11-25T14:22+00:00"
+     },
+     {
+      "veiculo": "Valor",
+      "titulo": "Livro Bege do Fed mostra alta moderada da inflação nos Estados Unidos em novembro",
+      "url": "https://valor.globo.com/financas/noticia/2026/11/25/livro-bege-do-fed-mostra-alta-moderada-da-inflao-nos-estados-unidos-em-novembro.ghtml",
+      "publicado_em": "2026-11-25T20:02+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Livro Bege do Fed: empresários preveem que alta de preços nos EUA siga no curto prazo",
+      "url": "https://www.infomoney.com.br/economia/livro-bege-do-fed-empresarios-preveem-que-alta-de-precos-nos-eua-siga-no-curto-prazo/",
+      "publicado_em": "2026-11-25T19:56+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Ouro fecha em queda com perspectiva de alta nos juros do Fed com inflação persistente",
+      "url": "https://www.infomoney.com.br/mercados/ouro-fecha-em-queda-com-perspectiva-de-alta-nos-juros-do-fed-com-inflacao-persistente/",
+      "publicado_em": "2026-11-25T20:00+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E12",
+    "ordem": 12,
+    "evento": null,
+    "titulo": "Bolsas de Nova York caem com tarifas de Trump e queda das ações de tecnologia",
+    "estagio": "dado",
+    "tamanho": 1,
+    "fator": "mercado",
+    "origem": "mundo",
+    "assunto": "Desconfiança de quem investe",
+    "lado": "pesa",
+    "ja_esperado": true,
+    "porque": "A nova rodada de tarifas dos EUA e a pressão sobre as ações de tecnologia derrubaram as bolsas americanas. Menos apetite por risco lá fora tende a reduzir o dinheiro que chega ao Brasil.",
+    "historia": "fed_juros_eua",
+    "tema_novo": "",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 2,
+    "jornais": [
+     "InfoMoney",
+     "g1"
+    ],
+    "descartado": "mesmo fato do evento ev-20261125-08",
+    "fontes": [
+     {
+      "veiculo": "g1",
+      "titulo": "Tarifas de Trump e crise da IA provocam dia de queda em Wall Street",
+      "url": "https://g1.globo.com/economia/noticia/2026/11/25/trump-tarifas-ia-bolsa-de-ny-wall-street.ghtml",
+      "publicado_em": "2026-11-25T16:55+00:00"
+     },
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Nasdaq e S&P 500 caem, mas longe de mínima com investidor de olho em oportunidade",
+      "url": "https://www.infomoney.com.br/mercados/nasdaq-e-sp-500-caem-mas-longe-de-minima-com-investidor-de-olho-em-oportunidade/",
+      "publicado_em": "2026-11-25T21:40+00:00"
+     }
+    ]
+   },
+   {
+    "id": "E13",
+    "ordem": 13,
+    "evento": "ev-20261126-10",
+    "titulo": "Caixa avalia comprar o BRB, que fica sem empréstimo para se salvar",
+    "estagio": "rumor",
+    "tamanho": 1,
+    "fator": "credito",
+    "origem": "politica",
+    "assunto": "Dívidas das famílias",
+    "lado": "pesa",
+    "ja_esperado": false,
+    "porque": "O Distrito Federal não conseguiu empréstimo para sustentar o banco, e a governadora fala em federalização. Se a Caixa assumir, o custo da crise ligada ao Master pode ir para o caixa do governo federal.",
+    "historia": "nova",
+    "tema_novo": "crise-do-brb",
+    "marco": false,
+    "previsao_virou": false,
+    "sem_medida": false,
+    "n_manchetes": 4,
+    "jornais": [
+     "Estadão",
+     "Gazeta do Povo",
+     "InfoMoney"
+    ],
+    "descartado": null,
+    "fontes": [
+     {
+      "veiculo": "InfoMoney",
+      "titulo": "Caixa avalia compra do BRB em meio à crise ligada ao Banco Master",
+      "url": "https://www.infomoney.com.br/politica/caixa-avalia-possivel-aquisicao-do-brb-em-crise-financeira-provocada-por-caso-master/",
+      "publicado_em": "2026-11-25T20:07+00:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Caixa avalia compra do BRB após Distrito Federal não conseguir empréstimo para salvar o banco",
+      "url": "https://www.estadao.com.br/economia/caixa-avalia-compra-do-brb-apos-distrito-federal-nao-conseguir-emprestimo-para-salvar-o-banco/",
+      "publicado_em": "2026-11-25T17:41+00:00"
+     },
+     {
+      "veiculo": "Gazeta do Povo",
+      "titulo": "Caixa tem interesse em comprar BRB, diz Celina Leão",
+      "url": "https://www.gazetadopovo.com.br/economia/caixa-tem-interesse-em-comprar-brb-diz-celina-leao/",
+      "publicado_em": "2026-11-25T14:50+00:00"
+     },
+     {
+      "veiculo": "Estadão",
+      "titulo": "Presidente do BRB diz a funcionários que federalização se tornou mais viável após eleições",
+      "url": "https://www.estadao.com.br/economia/presidente-do-brb-diz-a-funcionarios-que-federalizacao-se-tornou-mais-viavel-apos-eleicoes/",
+      "publicado_em": "2026-11-25T19:07+00:00"
+     }
+    ]
+   }
+  ],
+  "datas": [],
+  "pressoes_mudaram": [],
+  "estado": "subindo",
+  "estado_anterior": "subindo",
+  "direcao_mudou": false,
+  "historias": [
+   {
+    "id": "ritmo_emprego",
+    "titulo": "Ritmo da economia e emprego: a desaceleração e a previsão de 2027",
+    "pressao": "ritmo",
+    "pressoes": [
+     "ritmo",
+     "emprego",
+     "renda",
+     "juro"
+    ],
+    "nova": false,
+    "pontos": 2.0,
+    "candidatos": [
+     "E10",
+     "E8"
+    ],
+    "jornais": 3,
+    "fato_grande": false
+   },
+   {
+    "id": "tarifas_eua",
+    "titulo": "Tarifas dos EUA sobre o Brasil",
+    "pressao": "ritmo",
+    "pressoes": [
+     "mercado",
+     "emprego",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 1.4,
+    "candidatos": [
+     "E1"
+    ],
+    "jornais": 8,
+    "fato_grande": false
+   },
+   {
+    "id": "credito_inadimplencia",
+    "titulo": "Crédito caro e inadimplência recorde",
+    "pressao": "parcelas",
+    "pressoes": [
+     "parcelas",
+     "juro",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E2"
+    ],
+    "jornais": 6,
+    "fato_grande": false
+   },
+   {
+    "id": "desconfianca_eleicao",
+    "titulo": "Desconfiança de quem investe depois da eleição",
+    "pressao": "mercado",
+    "pressoes": [
+     "mercado",
+     "divida_reais",
+     "juro",
+     "inflacao"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E3"
+    ],
+    "jornais": 5,
+    "fato_grande": false
+   },
+   {
+    "id": "fed_juros_eua",
+    "titulo": "Juros dos EUA e bolsas lá fora: o Fed e a queda das ações de tecnologia",
+    "pressao": "mercado",
+    "pressoes": [
+     "juro",
+     "mercado",
+     "ritmo"
+    ],
+    "nova": false,
+    "pontos": 1.0,
+    "candidatos": [
+     "E11"
+    ],
+    "jornais": 3,
+    "fato_grande": false
+   },
+   {
+    "id": "contas_governo",
+    "titulo": "Contas do governo: a meta, o ajuste prometido e a dívida",
+    "pressao": "contas",
+    "pressoes": [
+     "contas",
+     "divida_reais",
+     "mercado",
+     "juro"
+    ],
+    "nova": false,
+    "pontos": 0.7,
+    "candidatos": [
+     "E6"
+    ],
+    "jornais": 2,
+    "fato_grande": false
+   },
+   {
+    "id": "guerra_petroleo",
+    "titulo": "A guerra no Oriente Médio e o petróleo",
+    "pressao": "inflacao",
+    "pressoes": [
+     "inflacao",
+     "juro",
+     "contas",
+     "mercado"
+    ],
+    "nova": false,
+    "pontos": 0.5,
+    "candidatos": [
+     "E7"
+    ],
+    "jornais": 2,
+    "fato_grande": false
+   },
+   {
+    "id": "juro_inflacao",
+    "titulo": "Juro e inflação: a Selic parada, a inflação acima do teto e a pressão política",
+    "pressao": "juro",
+    "pressoes": [
+     "juro",
+     "inflacao",
+     "parcelas",
+     "mercado"
+    ],
+    "nova": false,
+    "pontos": 0.5,
+    "candidatos": [
+     "E9"
+    ],
+    "jornais": 2,
+    "fato_grande": false
+   }
+  ],
+  "temas_esperando": [
+   {
+    "tema": "crise-do-brb",
+    "titulo": "Caixa avalia comprar o BRB, que fica sem empréstimo para se salvar",
+    "candidatos": [
+     "E13"
+    ],
+    "dias": 2
+   }
+  ],
+  "dados_novos": [],
+  "novidades": [],
+  "escolha": {
+   "historia": "ritmo_emprego",
+   "titulo": "Ritmo da economia e emprego: a desaceleração e a previsão de 2027",
+   "pontos": 2.0,
+   "motivo": "a história que mais andou",
+   "calmo": false,
+   "nova": false,
+   "pulada": null,
+   "segunda": null,
+   "novidade": []
+  },
+  "final": "E10",
+  "mesma_historia": [
+   "E8"
+  ],
+  "segunda_historia": []
+ },
+ "post": {
+  "ok": true,
+  "tipo": "dia",
+  "formato": "historia",
+  "titulo": "Quarta queda da intenção de consumo reforça alerta para a atividade",
+  "paragrafos": [
+   "O novo sinal de fraqueza está na disposição de comprar, não em vendas já medidas: a intenção de consumo da CNC caiu 0,9% em novembro, descontados os efeitos sazonais, pela quarta vez seguida. A repetição reforça o risco para a atividade; o presidente da entidade atribui a cautela à desaceleração do trabalho e à preocupação com a renda. No relatório noticiado ontem pelo InfoMoney, o Itaú estima perto de 50% de chance de queda no resultado anual do PIB de 2027, embora mantenha cenário-base de alta de 0,5%. Para o banco, o juro alto pesa mais nos cenários fracos.",
+   "No comércio exterior, o órgão de comércio dos EUA, USTR, propôs cobrar 10% sobre aviões brasileiros hoje isentos, criando risco para as exportações, não uma perda já ocorrida. Cabe ao USTR decidir após a consulta, com audiência em 14 de janeiro de 2027 e sem data para decisão final.",
+   "No crédito, segundo a Agência Brasil, o Conselho Monetário Nacional e o Banco Central aprovaram redução gradual do limite do cartão de quem não pagou integralmente três ou mais faturas nos últimos seis meses, recorrendo ao financiamento do saldo. A maior parte das medidas só entra em vigor em 1º de julho de 2027: pode restringir compras a crédito adiante, mas não reduz hoje o peso das dívidas na renda.",
+   "Já o dólar caiu 1,58%, para R$ 5,817, na terceira baixa seguida, segundo o Poder360. Houve alívio no câmbio, mas não retorno ao nível de agosto; os US$ 2 bilhões vendidos pelo BC têm compromisso de recompra, ampliando a oferta apenas temporariamente."
+  ],
+  "secoes": [
+   {
+    "titulo": null,
+    "paragrafos": [
+     "O novo sinal de fraqueza está na disposição de comprar, não em vendas já medidas: a intenção de consumo da CNC caiu 0,9% em novembro, descontados os efeitos sazonais, pela quarta vez seguida. A repetição reforça o risco para a atividade; o presidente da entidade atribui a cautela à desaceleração do trabalho e à preocupação com a renda. No relatório noticiado ontem pelo InfoMoney, o Itaú estima perto de 50% de chance de queda no resultado anual do PIB de 2027, embora mantenha cenário-base de alta de 0,5%. Para o banco, o juro alto pesa mais nos cenários fracos.",
+     "No comércio exterior, o órgão de comércio dos EUA, USTR, propôs cobrar 10% sobre aviões brasileiros hoje isentos, criando risco para as exportações, não uma perda já ocorrida. Cabe ao USTR decidir após a consulta, com audiência em 14 de janeiro de 2027 e sem data para decisão final.",
+     "No crédito, segundo a Agência Brasil, o Conselho Monetário Nacional e o Banco Central aprovaram redução gradual do limite do cartão de quem não pagou integralmente três ou mais faturas nos últimos seis meses, recorrendo ao financiamento do saldo. A maior parte das medidas só entra em vigor em 1º de julho de 2027: pode restringir compras a crédito adiante, mas não reduz hoje o peso das dívidas na renda.",
+     "Já o dólar caiu 1,58%, para R$ 5,817, na terceira baixa seguida, segundo o Poder360. Houve alívio no câmbio, mas não retorno ao nível de agosto; os US$ 2 bilhões vendidos pelo BC têm compromisso de recompra, ampliando a oferta apenas temporariamente."
+    ]
+   }
+  ],
+  "pesquisa": {
+   "versao": 5,
+   "ok": true,
+   "em": "2026-11-26T04:02:13-03:00",
+   "meta": [
+    {
+     "etapa": "pesquisa",
+     "motor": "claude",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "cd9cf045f0730af4a717998b3083527f4e84d6d577cf363dc3f621ef9b12dba4",
+     "system_sha256": "7d338b0f7faababd8db8f53189e7a32546b848b561061d4e294f3b79f5f9098d",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.9056756000000001,
+     "turnos": 16,
+     "duracao_s": 85,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "3011147e-1447-49f2-8c9b-a244fa1d9cc8"
+    },
+    {
+     "etapa": "segunda_busca",
+     "motor": "claude",
+     "modelo_pedido": "opus",
+     "prompt_sha256": "47085cd0982b3a9be56ea1053d79f1aa05bddb0b7b2166e2f1ea06ca860870f0",
+     "system_sha256": "edc8fb889d3204a6945878dc908b6b0c58281bc0d34401d5e7f337f88940f5f6",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.6338125000000001,
+     "turnos": 12,
+     "duracao_s": 87,
+     "modelos": [
+      "claude-opus-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "8fee8834-34ab-41e1-824c-147ae8daba0c"
+    },
+    {
+     "etapa": "apanhado",
+     "motor": "claude",
+     "modelo_pedido": "sonnet",
+     "prompt_sha256": "d35deb94d1874fc50101449149227c08f014975a6ee3fbc66c3bf16c6bd650e1",
+     "system_sha256": "63503df868de074bda4a59d070d732e2a28c75bce4b5849cec298d2a72a698ea",
+     "returncode": 0,
+     "is_error": false,
+     "custo_usd": 0.2640958,
+     "turnos": 10,
+     "duracao_s": 49,
+     "modelos": [
+      "claude-sonnet-5-5",
+      "claude-haiku-5-5"
+     ],
+     "permission_denials": [],
+     "session_id": "5c289996-3354-40a6-a899-e03252206ee3"
+    }
+   ],
+   "offline": false,
+   "historia": "ritmo_emprego",
+   "segunda": null,
+   "modo": "comum",
+   "o_que_mudou": [
+    {
+     "item": 1,
+     "id": "ritmo_emprego",
+     "titulo": "Ritmo da economia e emprego: a desaceleração e a previsão de 2027",
+     "pontos": 2.0,
+     "principal": true,
+     "segunda": false
+    },
+    {
+     "item": 2,
+     "id": "tarifas_eua",
+     "titulo": "Tarifas dos EUA sobre o Brasil",
+     "pontos": 1.4,
+     "principal": false,
+     "segunda": false
+    },
+    {
+     "item": 3,
+     "id": "credito_inadimplencia",
+     "titulo": "Crédito caro e inadimplência recorde",
+     "pontos": 1.0,
+     "principal": false,
+     "segunda": false
+    },
+    {
+     "item": 4,
+     "id": "desconfianca_eleicao",
+     "titulo": "Desconfiança de quem investe depois da eleição",
+     "pontos": 1.0,
+     "principal": false,
+     "segunda": false
+    }
+   ],
+   "apanhado": {
+    "ok": true,
+    "historias": [
+     {
+      "item": 2,
+      "o_que_mudou": "O USTR (Escritório do Representante Comercial dos EUA) propôs, em 25/11, acabar com a isenção das aeronaves prontas brasileiras e cobrar 10% sobre elas, e elevar a tarifa do açúcar fora da cota. Aeronaves prontas são o 4º maior produto que o Brasil exporta aos EUA, segundo o USTR. Estágio: proposta aberta a consulta pública, ainda sem tarifa em vigor.",
+      "pressao": "Desconfiança de quem investe e Ritmo da economia, mas por ora só como risco",
+      "efeito": "A tarifa de julho (25%) já existe e o texto mantém isenções para carne, café e aeronaves até aqui. A proposta tira uma isenção de um produto grande (Embraer) e atinge o açúcar. Não há valor em dólar nas fontes abertas, então não dá para comparar com o PIB (1,4% em 12 meses). Hoje não muda nenhuma medida do site; o dólar já caiu 1,58% no dia em que saiu.",
+      "quem_decide_e_quando": "O USTR decide. Pedidos para falar na audiência vão até 7/12, comentários por escrito até 30/12 e a audiência é em 14/01/2027. A decisão final não tem data.",
+      "o_que_mudaria": "Uma decisão final do USTR mantendo os 10% e o açúcar, sem negociação. Ou uma resposta brasileira por retaliação: o USTR diz que o Brasil já deu passos legais para isso. Se o dólar voltar a subir por causa disso, a pressão da desconfiança pesa mais.",
+      "vezes": "",
+      "caderno": [
+       "c601",
+       "c602",
+       "c603"
+      ]
+     },
+     {
+      "item": 3,
+      "o_que_mudou": "O CMN e o Banco Central aprovaram, na noite de 25/11, regras de crédito: os bancos devem reduzir aos poucos o limite do cartão de quem deixou de pagar a fatura inteira em 3 ou mais meses nos últimos 6; e não podem dar novo empréstimo sem garantia a quem está há 90 dias ou mais em atraso. Estágio: decisão tomada, mas a maior parte só vale em 1/7/2027; as consultas públicas ficam abertas por 90 dias.",
+      "pressao": "Dívidas das famílias (parcelas e juros)",
+      "efeito": "As regras não derrubam hoje a parcela da renda que vai para dívidas (29,0% em agosto, a maior desde 2005). Elas só valem a partir de julho de 2027. Servem para frear o rotativo e o superendividamento adiante, mas podem encurtar o crédito para quem já está apertado. Não mexem no juro (Selic em 13,75%).",
+      "quem_decide_e_quando": "O Banco Central dá entrevista coletiva em 26/11 para explicar as medidas. As consultas públicas ficam abertas por 90 dias. A maior parte entra em vigor em 1/7/2027, e a venda de dívidas em 1/11/2027.",
+      "o_que_mudaria": "A coletiva do BC pode trazer números, como quantos clientes seriam afetados, que ainda não vi. Se o atraso das famílias subir antes de julho de 2027, ou se o corte de limite fizer o crédito cair, a notícia pesa mais.",
+      "vezes": "",
+      "caderno": [
+       "c604",
+       "c605",
+       "c608"
+      ]
+     },
+     {
+      "item": 4,
+      "o_que_mudou": "O dólar fechou a R$ 5,817 em 25/11, queda de 1,58%, a 3ª baixa seguida, segundo o Poder360. O BC vendeu US$ 2 bilhões em leilões de linha, com compromisso de recompra. O mercado também reagiu às falas do ministro Bruno Moretti sobre medidas fiscais e ao nome de Trabuco para a Fazenda, sem confirmação. Estágio: decisão tomada (leilão) e especulação (nomes).",
+      "pressao": "Desconfiança de quem investe",
+      "efeito": "Alivia pouco. O leilão de linha só amplia a oferta de dólar por um tempo. Pelos dados do site, o dólar a R$ 5,88 está 14,2% acima do fim de agosto (R$ 5,18), então a queda do dia desfez só uma parte da alta. O juro de 10 anos, o outro termômetro, está em 8,0%, mais alto que em 91% dos meses desde 2005. Moretti disse que não há PEC pronta.",
+      "quem_decide_e_quando": "O governo decide as medidas fiscais e o nome da Fazenda, sem data. O BC decide novos leilões, também sem data.",
+      "o_que_mudaria": "Medidas fiscais com número e um nome confirmado para a Fazenda, com dólar e juro de 10 anos caindo juntos. Ou o contrário: fim da calmaria do dólar com a inflação alta nos EUA (3,8% em 12 meses, PCE) e a tarifa dos EUA.",
+      "vezes": "",
+      "caderno": [
+       "c606",
+       "c607"
+      ]
+     }
+    ]
+   },
+   "pesquisa": {
+    "perguntas": [
+     {
+      "pergunta": "O que mudou na história com os passos de ontem, e por quê?",
+      "resposta": "Nada saiu de dado oficial novo: ontem vieram duas previsões de bancos e uma pesquisa de entidade, todas apontando o mesmo lado. O Itaú manteve 0,5% para 2027, mas disse que a chance de o PIB fechar o ano negativo é de cerca de 50%, porque o juro alto pesa mais nos cenários fracos (o modelo move o resultado mais provável de 0,5% para perto de 0%). O JPMorgan prevê 0,6% e diz que o risco de recessão é real, pelo canal do crédito. A CNC registrou a 4ª queda seguida da intenção de consumo, 102,7 pontos. Previsão é previsão, não fato.",
+      "caderno": [
+       "c1",
+       "c2",
+       "c3",
+       "c6",
+       "c7",
+       "c8",
+       "c9"
+      ]
+     },
+     {
+      "pergunta": "Qual é a régua: o que seria recessão técnica e onde a economia está?",
+      "resposta": "Pela regra do site, recessão é 2 trimestres seguidos de queda do PIB (IBGE). Até o 2º tri de 2026 o PIB cresceu 0,5%; o 3º tri sai em 2/12. A prévia do Banco Central (IBC-Br) foi de 111,28 em maio para 109,78 em setembro. O desemprego, 5,2%, está entre os 1% menores da série desde 2012.",
+      "caderno": [
+       "c10",
+       "c14",
+       "c15",
+       "c17"
+      ]
+     },
+     {
+      "pergunta": "Quem prevê o quê para 2027, e as casas grandes mudaram de lado?",
+      "resposta": "O Focus (mediana dos bancos) caiu de 1,31% em 23/10 para 1,00% em 19/11. O Itaú cortou de 1,2% para 0,5% (0,7 ponto) e a XP vê 0,3%. Os cenários-base seguem positivos, mas as probabilidades de queda subiram. O JPMorgan vê 0,6%. O Itaú diz que 50% está abaixo dos mais de 80% das três últimas recessões.",
+      "caderno": [
+       "c2",
+       "c3",
+       "c5",
+       "c6",
+       "c11",
+       "c12",
+       "c13",
+       "c16"
+      ]
+     },
+     {
+      "pergunta": "O que o Itaú diz que mudaria a chance de queda?",
+      "resposta": "Segundo o Itaú, com ajuste fiscal crível e Selic de 12,75% no fim de 2027, a chance cairia para cerca de 45%; com Selic a 15%, subiria para cerca de 57%. É conta do banco, não do site.",
+      "caderno": [
+       "c4"
+      ]
+     },
+     {
+      "pergunta": "Por que o consumo preocupa se o emprego resiste?",
+      "resposta": "A CNC diz que o mercado de trabalho mais frio pesa nas decisões de compra, e o JPMorgan aponta o serviço da dívida das famílias (cerca de 40% da renda entre as de baixa renda, pelo banco) e o crédito mais fraco. A CNC mede percepção, não vendas: o índice segue 0,5% acima de um ano antes.",
+      "caderno": [
+       "c7",
+       "c8",
+       "c9"
+      ]
+     },
+     {
+      "pergunta": "O que a primeira busca não tinha achado: A página da dona (CNC) para a intenção de consumo de novembro (troca de c8 e c9)",
+      "resposta": "Comunicado da CNC no Portal do Comércio, de 25/11/2026: ICF −0,9% no mês, quarta queda seguida, 102,7 pontos, o menor desde novembro de 2025 (102,1). Emprego Atual −1% (125,3), a terceira queda seguida e igual a um ano antes. Tadros, presidente da CNC, atribui a cautela à desaceleração do trabalho e ao endividamento. Não encontrei no comunicado a alta de 0,5% do índice geral em um ano que o InfoMoney publica. A CNC dá só as faixas: +0,4% para quem ganha até 10 salários mínimos e +0,7% acima disso.",
+      "caderno": [
+       "c8",
+       "c9"
+      ]
+     }
+    ],
+    "o_que_falta": "Continua sem resposta depois de duas buscas: A página do dono (Itaú) para a chance de 50% de queda do PIB em 2027 e as sensibilidades de 41%, 45%, 57% e 80% (troca de c1 a c5) (procurado em: WebSearch 'Itaú Macro Visão probabilidade PIB negativo 2027 50%'; WebSearch em itau.com.br '\"qual a probabilidade de PIB negativo em 2027\"'; leitor na página do Itaú (HTTP 403), sem trecho com números na busca. Ficam as linhas do InfoMoney. A página do Itaú tem data de 17/11, então o estudo pode ser de antes de ontem.); O relatório do JPMorgan com PIB de 0,6% em 2027 e o comprometimento de cerca de 40% da renda das famílias de baixa renda (troca de c6 e c7) (procurado em: WebSearch 'JPMorgan recessão Brasil 2027 risco real PIB 0,6% Estadão Valor'. Não apareceu o relatório nem outro jornal com esses números. O relatório parece ser só para clientes, e ficam as linhas do InfoMoney.)",
+    "pagina_que_falta": "",
+    "segunda_busca": {
+     "achou": 1,
+     "nao_achou": 2,
+     "muda_o_argumento": "O comunicado da CNC confirma 0,9%, 102,7 pontos e Emprego Atual −1%, mas não traz a alta de 0,5% do índice geral em um ano que o InfoMoney publica: essa conta sai do texto, ou fica como dado do jornal. A CNC culpa também o endividamento das famílias, a inflação e a alta do dólar, e não só o mercado de trabalho."
+    }
+   },
+   "pagina_que_falta": "",
+   "escrita": {
+    "chamadas": [
+     {
+      "etapa": "redator",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6-astra",
+      "raciocinio": "high",
+      "modelos": [
+       "gpt-6-astra"
+      ],
+      "prompt_sha256": "ad7aeb095c9a54aac3b934a2c7cd4c6bca397712094f77a43ccaede7f9f506a3",
+      "system_sha256": "54024dbb2b3b4ae95e9ac280108ece2be18542460e1e75e1327b255dd63a7b89",
+      "returncode": 0,
+      "duracao_s": 88,
+      "tokens_entrada": 41598,
+      "tokens_saida": 2576,
+      "tokens_raciocinio": 1034
+     },
+     {
+      "etapa": "leitor",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6-luna",
+      "raciocinio": "medium",
+      "modelos": [
+       "gpt-6-luna"
+      ],
+      "prompt_sha256": "7c1433371a846af14457d030a27938e966105a0fffa835f120760bf46c08bc86",
+      "system_sha256": "7e2e85c97ff1316fe0679433702bd03f479ad18937418dae52590161394b6695",
+      "returncode": 0,
+      "duracao_s": 26,
+      "tokens_entrada": 7046,
+      "tokens_saida": 1198,
+      "tokens_raciocinio": 330
+     },
+     {
+      "etapa": "aprovador",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6.1-sol",
+      "raciocinio": "high",
+      "modelos": [
+       "gpt-6.1-sol"
+      ],
+      "prompt_sha256": "0f3ede6f2fc847ef2d18473847f33725b3c03dcf62e8c4aedd69b44b4beb166c",
+      "system_sha256": "9e69dfc129f721342956193b64354d59b3d0c64a31098f472f287bd2899cad0d",
+      "returncode": 0,
+      "duracao_s": 39,
+      "tokens_entrada": 43190,
+      "tokens_saida": 1344,
+      "tokens_raciocinio": 1022
+     },
+     {
+      "etapa": "redator",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6-astra",
+      "raciocinio": "high",
+      "modelos": [
+       "gpt-6-astra"
+      ],
+      "prompt_sha256": "713a3af2c1b2621a3eaa25b57cb7c2b466fb4157974f775043ad5262b021c5c4",
+      "system_sha256": "54024dbb2b3b4ae95e9ac280108ece2be18542460e1e75e1327b255dd63a7b89",
+      "returncode": 0,
+      "duracao_s": 44,
+      "tokens_entrada": 42449,
+      "tokens_saida": 1878,
+      "tokens_raciocinio": 506
+     },
+     {
+      "etapa": "leitor",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6-luna",
+      "raciocinio": "medium",
+      "modelos": [
+       "gpt-6-luna"
+      ],
+      "prompt_sha256": "5e5f070efbd4929fe5f8e8deb8973def56e71d4b1086f056a7c131e93abd56c0",
+      "system_sha256": "7e2e85c97ff1316fe0679433702bd03f479ad18937418dae52590161394b6695",
+      "returncode": 0,
+      "duracao_s": 23,
+      "tokens_entrada": 7051,
+      "tokens_saida": 1019,
+      "tokens_raciocinio": 0
+     },
+     {
+      "etapa": "aprovador",
+      "motor": "codex",
+      "modelo_pedido": "gpt-6.1-sol",
+      "raciocinio": "high",
+      "modelos": [
+       "gpt-6.1-sol"
+      ],
+      "prompt_sha256": "c3011047de92798e21d20417fcf4f45b2a980a4f08758d6dda6e56c4779ea9f8",
+      "system_sha256": "0e678a3b0fdeeaae7c64aeac36704563657a627c13557eb96dd9c9b6b302ba31",
+      "returncode": 0,
+      "duracao_s": 13,
+      "tokens_entrada": 43844,
+      "tokens_saida": 302,
+      "tokens_raciocinio": 191
+     }
+    ],
+    "versoes": [
+     {
+      "sha": "62b8d025ab89dfa4",
+      "artigo": {
+       "titulo": "Quarta queda da intenção de consumo reforça alerta para a atividade",
+       "pergunta_semana": "",
+       "texto": "O novo sinal de fraqueza está na disposição de comprar, não em vendas já medidas: a intenção de consumo da CNC caiu 0,9% em novembro, descontados os efeitos sazonais, pela quarta vez seguida [c8]. A repetição reforça o risco para a atividade; o presidente da entidade atribui a cautela à desaceleração do trabalho e à preocupação com a renda [c8, c9]. No relatório noticiado ontem pelo InfoMoney, o Itaú estima perto de 50% de chance de queda do PIB em 2027, embora mantenha cenário-base de alta de 0,5% [c1]. Para o banco, o juro alto pesa mais nos cenários fracos [c3].\n\nNo comércio exterior, o órgão de comércio dos EUA, USTR, propôs cobrar 10% sobre aviões brasileiros hoje isentos, criando risco para as exportações, não uma perda já ocorrida [c601]. Cabe ao USTR decidir após a consulta, com audiência em 14 de janeiro de 2027 e sem data para decisão final [c602].\n\nNo crédito, segundo a Agência Brasil, o Conselho Monetário Nacional e o Banco Central aprovaram redução gradual do limite do cartão de quem não pagou integralmente três ou mais faturas nos últimos seis meses, recorrendo ao financiamento do saldo [c604]. A maior parte das medidas só entra em vigor em 1º de julho de 2027: pode restringir compras a crédito adiante, mas não reduz hoje o peso das dívidas na renda [c604, c605, c608].\n\nJá o dólar caiu 1,58%, para R$ 5,817, na terceira baixa seguida, segundo o Poder360 [c606]. Houve alívio no câmbio, mas não retorno ao nível de agosto; os US$ 2 bilhões vendidos pelo BC têm compromisso de recompra, ampliando a oferta apenas temporariamente [c606, c607].",
+       "argumento": "A quarta queda seguida da intenção de consumo reforça o alerta para a atividade, sem equivaler a vendas menores já observadas nem tornar a contração de 2027 uma certeza.",
+       "porque": "Segundo o presidente da CNC, a cautela das famílias reflete a desaceleração do mercado de trabalho e a preocupação com o futuro da renda.",
+       "lentes": [
+        {
+         "item": 1,
+         "lente": "frequencia"
+        },
+        {
+         "item": 2,
+         "lente": "quem_decide"
+        },
+        {
+         "item": 3,
+         "lente": "quem_decide"
+        },
+        {
+         "item": 4,
+         "lente": "frequencia"
+        }
+       ]
+      },
+      "checagens": {
+       "impedimentos": [],
+       "diagnosticos": [
+        "o texto tem 257 palavras e 0 intertítulos (o tipo do dia pede de 200 a 300 palavras: a história do dia em até umas 150, cada outra em duas ou três frases)"
+       ]
+      },
+      "leitura": {
+       "entendi": {
+        "resposta": "O principal alerta é que a intenção de consumo caiu pela quarta vez seguida. Isso não prova que as vendas já estejam caindo, mas sugere cautela das famílias e aumenta o risco para a atividade. Entre os demais assuntos, há riscos futuros para exportações e compras a crédito, enquanto o dólar recuou, mas sem voltar ao nível de agosto.",
+        "por_que": "A CNC registrou queda de 0,9% na intenção de consumo em novembro. Seu presidente relaciona a cautela à desaceleração do trabalho e à preocupação com a renda; o Itaú também aponta o juro alto como um peso nos cenários mais fracos para o PIB.",
+        "consequencia": "A sequência de quedas reforça o risco de atividade econômica mais fraca. Além disso, a proposta dos EUA pode encarecer aviões brasileiros exportados, e a futura redução do limite do cartão pode restringir compras a crédito. A baixa do dólar trouxe alívio cambial, mas a venda de dólares pelo BC aumenta a oferta apenas temporariamente.",
+        "limite": "O texto relata sinais e riscos, não resultados já confirmados: intenção de consumo não é venda medida; a tarifa ainda é uma proposta; as medidas do cartão só entram em vigor em sua maior parte em 2027; e a baixa do dólar não significa retorno ao nível de agosto. O cenário-base do Itaú continua sendo crescimento de 0,5% em 2027, apesar da estimativa de perto de 50% de chance de queda do PIB."
+       },
+       "dificuldades": [
+        {
+         "local": "p1",
+         "trecho": "perto de 50% de chance de queda do PIB em 2027",
+         "o_que_entendi": "O Itaú considera quase igualmente possíveis uma queda e outros resultados, embora seu cenário-base seja de crescimento de 0,5%.",
+         "o_que_precisei_adivinhar": "O texto não esclarece se “queda” significa contração do PIB no ano ou em algum trimestre, nem explicita a base usada para calcular essa probabilidade."
+        },
+        {
+         "local": "p3",
+         "trecho": "redução gradual do limite do cartão",
+         "o_que_entendi": "O limite de crédito será reduzido para quem se enquadra na condição descrita, o que pode restringir compras futuras.",
+         "o_que_precisei_adivinhar": "Não se informa quanto o limite será reduzido nem como será calculada a redução para cada pessoa."
+        }
+       ],
+       "perguntas_que_ficaram": [
+        {
+         "pergunta": "O que o Itaú considera “queda do PIB em 2027” para chegar à probabilidade de perto de 50%?",
+         "trecho_que_a_provocou": "“perto de 50% de chance de queda do PIB em 2027”",
+         "por_que_importa_para_entender_a_resposta": "Sem saber se a queda se refere ao ano ou a um trimestre, fica difícil interpretar o risco que essa probabilidade representa, especialmente diante do cenário-base de crescimento de 0,5%."
+        },
+        {
+         "pergunta": "Quanto será reduzido o limite do cartão e de que forma essa redução será definida?",
+         "trecho_que_a_provocou": "“redução gradual do limite do cartão”",
+         "por_que_importa_para_entender_a_resposta": "O tamanho e o critério da redução determinam se a medida terá efeito pequeno ou relevante sobre a capacidade de compra a crédito."
+        }
+       ],
+       "titulos_ambiguos": [
+        {
+         "titulo": "Quarta queda da intenção de consumo reforça alerta para a atividade",
+         "como_li": "A intenção de consumo caiu pela quarta vez seguida, reforçando um alerta sobre a atividade econômica. O texto deixa claro que o indicador mede disposição de comprar, não vendas já realizadas."
+        }
+       ]
+      },
+      "parecer": {
+       "pode_publicar": true,
+       "problemas": [
+        {
+         "id": "",
+         "impacto": "medio",
+         "confianca": "alta",
+         "tipo": "compreensao",
+         "local": "p1",
+         "trecho": "perto de 50% de chance de queda do PIB em 2027",
+         "problema": "Falta explicitar o período da queda estimada. O leitor frio compreendeu o alerta, mas não conseguiu distinguir contração no resultado anual de queda em algum trimestre.",
+         "efeito_para_a_leitora": "A resposta principal permanece compreensível, mas o alcance da probabilidade apresentada pelo Itaú fica incerto.",
+         "evidencias": [
+          "c1: a estimativa do Itaú trata da possibilidade de variação negativa ao final de 2027.",
+          "c2: o cenário-base apresentado para o PIB de 2027 é de crescimento de 0,5%.",
+          "O leitor frio perguntou expressamente se a queda se refere ao ano ou a algum trimestre."
+         ],
+         "correcao_necessaria": "Explicitar que a probabilidade se refere ao resultado anual do PIB de 2027, não apenas a um trimestre negativo. Fazer a precisão sem alongar o texto; não é necessário explicar o cálculo do modelo."
+        }
+       ],
+       "resolvidas": [],
+       "pendencia_da_analise": ""
+      },
+      "bloqueios": [
+       "R1"
+      ],
+      "pronta": true,
+      "concentrada": false
+     },
+     {
+      "sha": "985a22db6b44ee51",
+      "artigo": {
+       "titulo": "Quarta queda da intenção de consumo reforça alerta para a atividade",
+       "pergunta_semana": "",
+       "texto": "O novo sinal de fraqueza está na disposição de comprar, não em vendas já medidas: a intenção de consumo da CNC caiu 0,9% em novembro, descontados os efeitos sazonais, pela quarta vez seguida [c8]. A repetição reforça o risco para a atividade; o presidente da entidade atribui a cautela à desaceleração do trabalho e à preocupação com a renda [c8, c9]. No relatório noticiado ontem pelo InfoMoney, o Itaú estima perto de 50% de chance de queda no resultado anual do PIB de 2027, embora mantenha cenário-base de alta de 0,5% [c1]. Para o banco, o juro alto pesa mais nos cenários fracos [c3].\n\nNo comércio exterior, o órgão de comércio dos EUA, USTR, propôs cobrar 10% sobre aviões brasileiros hoje isentos, criando risco para as exportações, não uma perda já ocorrida [c601]. Cabe ao USTR decidir após a consulta, com audiência em 14 de janeiro de 2027 e sem data para decisão final [c602].\n\nNo crédito, segundo a Agência Brasil, o Conselho Monetário Nacional e o Banco Central aprovaram redução gradual do limite do cartão de quem não pagou integralmente três ou mais faturas nos últimos seis meses, recorrendo ao financiamento do saldo [c604]. A maior parte das medidas só entra em vigor em 1º de julho de 2027: pode restringir compras a crédito adiante, mas não reduz hoje o peso das dívidas na renda [c604, c605, c608].\n\nJá o dólar caiu 1,58%, para R$ 5,817, na terceira baixa seguida, segundo o Poder360 [c606]. Houve alívio no câmbio, mas não retorno ao nível de agosto; os US$ 2 bilhões vendidos pelo BC têm compromisso de recompra, ampliando a oferta apenas temporariamente [c606, c607].",
+       "argumento": "A quarta queda seguida da intenção de consumo reforça o alerta para a atividade, sem representar vendas já perdidas ou confirmar as previsões de contração anual em 2027.",
+       "porque": "Segundo o presidente da CNC, a desaceleração do mercado de trabalho e a preocupação com a renda tornam as famílias mais cautelosas.",
+       "lentes": [
+        {
+         "item": 1,
+         "lente": "frequencia"
+        },
+        {
+         "item": 2,
+         "lente": "quem_decide"
+        },
+        {
+         "item": 3,
+         "lente": "quem_decide"
+        },
+        {
+         "item": 4,
+         "lente": "frequencia"
+        }
+       ]
+      },
+      "checagens": {
+       "impedimentos": [],
+       "diagnosticos": [
+        "o texto tem 260 palavras e 0 intertítulos (o tipo do dia pede de 200 a 300 palavras: a história do dia em até umas 150, cada outra em duas ou três frases)"
+       ]
+      },
+      "leitura": {
+       "entendi": {
+        "resposta": "O texto reúne quatro sinais: a intenção de consumo caiu pelo quarto mês seguido, o que pesa mais para a atividade porque pode antecipar menor demanda; há risco, ainda não uma perda, para exportações de aviões aos EUA; uma regra futura pode limitar compras de alguns clientes de cartão, sem aliviar suas dívidas atuais; e o dólar recuou, mas segue acima do nível de agosto e parte da oferta de dólares do BC é temporária. O alerta principal é a fraqueza do consumo e seu possível efeito sobre a atividade.",
+        "por_que": "A queda repetida na intenção de compra sugere cautela dos consumidores. O presidente da CNC a relaciona à desaceleração do trabalho e à preocupação com a renda. No cenário fraco do Itaú, o juro alto também pesa; por isso, embora o banco estime perto de 50% de chance de queda do PIB em 2027, seu cenário-base ainda é de alta de 0,5%.",
+        "consequencia": "Se a cautela se converter em menos compras, pode enfraquecer a atividade. As outras notícias apontam riscos ou efeitos delimitados: possível cobrança sobre aviões brasileiros, limite futuro de crédito para certos clientes e alívio cambial parcial e temporário.",
+        "limite": "A intenção de consumo não é uma medida de vendas realizadas, e a estimativa do Itaú é para 2027, não uma previsão certa. A proposta dos EUA ainda aguarda decisão; as medidas do cartão só entram em vigor em sua maior parte em julho de 2027 e não diminuem as dívidas atuais; e a queda do dólar não o levou ao nível de agosto."
+       },
+       "dificuldades": [
+        {
+         "local": "p1",
+         "trecho": "No relatório noticiado ontem pelo InfoMoney",
+         "o_que_entendi": "A estimativa do Itaú para o PIB de 2027 foi divulgada em um relatório que o InfoMoney noticiou no dia anterior à publicação do texto.",
+         "o_que_precisei_adivinhar": "Sem a data de publicação do texto, não dá para situar quando foi esse “ontem”."
+        },
+        {
+         "local": "p3",
+         "trecho": "redução gradual do limite do cartão de quem não pagou integralmente três ou mais faturas nos últimos seis meses, recorrendo ao financiamento do saldo",
+         "o_que_entendi": "A redução se aplica a clientes com ao menos três faturas não pagas integralmente nesse período e que financiaram o saldo.",
+         "o_que_precisei_adivinhar": "A construção não deixa totalmente claro se o financiamento do saldo é uma condição adicional para todos os clientes citados ou uma explicação do que significa não pagar integralmente."
+        }
+       ],
+       "perguntas_que_ficaram": [
+        {
+         "pergunta": "Como a repetição da queda da intenção de consumo se traduziria em menor atividade, e em que medida?",
+         "trecho_que_a_provocou": "A repetição reforça o risco para a atividade",
+         "por_que_importa_para_entender_a_resposta": "O texto apresenta a queda como alerta, mas não mostra o caminho entre intenção de compra e resultado da atividade nem dimensiona esse efeito."
+        },
+        {
+         "pergunta": "Por que o Itaú atribui maior peso ao juro alto nos cenários fracos, e como isso se relaciona com a chance de queda do PIB?",
+         "trecho_que_a_provocou": "Para o banco, o juro alto pesa mais nos cenários fracos.",
+         "por_que_importa_para_entender_a_resposta": "A frase aponta um fator importante, mas não explica o mecanismo nem sua relação com a estimativa de risco e o cenário-base."
+        },
+        {
+         "pergunta": "Qual é o alcance da redução do limite do cartão e como ela será aplicada gradualmente?",
+         "trecho_que_a_provocou": "Aprovam redução gradual do limite do cartão de quem não pagou integralmente três ou mais faturas nos últimos seis meses",
+         "por_que_importa_para_entender_a_resposta": "Sem a regra de cálculo ou o ritmo da redução, não é possível avaliar como a medida restringirá compras a crédito."
+        }
+       ],
+       "titulos_ambiguos": [
+        {
+         "titulo": "Quarta queda da intenção de consumo reforça alerta para a atividade",
+         "como_li": "A intenção de consumo da CNC caiu pela quarta vez seguida e isso reforça um alerta sobre a atividade econômica. O título não indica que as vendas já caíram."
+        }
+       ]
+      },
+      "parecer": {
+       "pode_publicar": true,
+       "problemas": [],
+       "resolvidas": [
+        {
+         "id": "R1",
+         "prova": "O texto agora explicita “chance de queda no resultado anual do PIB de 2027”, distinguindo a estimativa anual de uma queda trimestral e preservando a atribuição ao Itaú e o cenário-base positivo."
+        }
+       ],
+       "pendencia_da_analise": ""
+      },
+      "bloqueios": [],
+      "pronta": true,
+      "concentrada": false
+     }
+    ],
+    "objecoes": [
+     {
+      "id": "R1",
+      "impacto": "medio",
+      "confianca": "alta",
+      "tipo": "compreensao",
+      "local": "p1",
+      "trecho": "perto de 50% de chance de queda do PIB em 2027",
+      "problema": "Falta explicitar o período da queda estimada. O leitor frio compreendeu o alerta, mas não conseguiu distinguir contração no resultado anual de queda em algum trimestre.",
+      "efeito_para_a_leitora": "A resposta principal permanece compreensível, mas o alcance da probabilidade apresentada pelo Itaú fica incerto.",
+      "evidencias": [
+       "c1: a estimativa do Itaú trata da possibilidade de variação negativa ao final de 2027.",
+       "c2: o cenário-base apresentado para o PIB de 2027 é de crescimento de 0,5%.",
+       "O leitor frio perguntou expressamente se a queda se refere ao ano ou a algum trimestre."
+      ],
+      "correcao_necessaria": "Explicitar que a probabilidade se refere ao resultado anual do PIB de 2027, não apenas a um trimestre negativo. Fazer a precisão sem alongar o texto; não é necessário explicar o cálculo do modelo.",
+      "estado": "resolvida",
+      "desde_versao": 1,
+      "resolvida_na_versao": 2,
+      "prova": "O texto agora explicita “chance de queda no resultado anual do PIB de 2027”, distinguindo a estimativa anual de uma queda trimestral e preservando a atribuição ao Itaú e o cenário-base positivo."
+     }
+    ],
+    "correcoes": 1,
+    "provedor": "openai",
+    "plano": {
+     "pergunta_central": "O que a nova queda da intenção de consumo acrescenta ao alerta sobre a economia?",
+     "resposta_central": "A quarta queda seguida mostra persistência da cautela para comprar, reforçando o risco para a atividade, mas não mede vendas realizadas; a chance de contração estimada pelo Itaú também não substitui seu cenário-base ainda positivo.",
+     "perguntas_seguintes": [
+      {
+       "pergunta": "É um recuo isolado e por que as famílias estão cautelosas?",
+       "por_que_e_necessaria": "A sequência permite pesar o sinal, sem confundir percepção com consumo realizado.",
+       "resposta_que_o_texto_da": "É a quarta queda mensal seguida; o presidente da CNC atribui a cautela à desaceleração do trabalho e à preocupação com a renda.",
+       "evidencias": [
+        "c8",
+        "c9"
+       ]
+      },
+      {
+       "pergunta": "O Itaú passou a prever queda da economia?",
+       "por_que_e_necessaria": "A probabilidade de contração não pode ser apresentada como previsão central nem como resultado observado.",
+       "resposta_que_o_texto_da": "O banco estima chance próxima de 50%, mas mantém alta de 0,5% no cenário-base; considera que o juro alto pesa mais nos cenários fracos.",
+       "evidencias": [
+        "c1",
+        "c3"
+       ]
+      },
+      {
+       "pergunta": "A tarifa sobre aviões já começou a afetar as exportações?",
+       "por_que_e_necessaria": "É preciso distinguir proposta de cobrança efetiva.",
+       "resposta_que_o_texto_da": "Os 10% são uma proposta do USTR, com audiência em janeiro e decisão final sem data.",
+       "evidencias": [
+        "c601",
+        "c602"
+       ]
+      },
+      {
+       "pergunta": "As regras de crédito aliviam agora as dívidas?",
+       "por_que_e_necessaria": "A aprovação não equivale a efeito imediato sobre o comprometimento da renda.",
+       "resposta_que_o_texto_da": "A maior parte vale em julho de 2027; pode restringir compras financiadas adiante, sem reduzir hoje o peso das dívidas.",
+       "evidencias": [
+        "c604",
+        "c605",
+        "c608"
+       ]
+      },
+      {
+       "pergunta": "A queda do dólar encerrou a pressão cambial?",
+       "por_que_e_necessaria": "O alívio precisa ser reconhecido sem transformar uma sequência curta em reversão consolidada.",
+       "resposta_que_o_texto_da": "Foi a terceira baixa seguida, mas a moeda permanece acima de agosto e a oferta dos leilões tem caráter temporário.",
+       "evidencias": [
+        "c606",
+        "c607"
+       ]
+      }
+     ],
+     "limite_que_muda_a_leitura": "A CNC mede intenção, não vendas. A probabilidade do Itaú é uma estimativa relatada pelo InfoMoney; como o estudo pode anteceder a notícia, o texto não apresenta seus resultados como revisão feita ontem.",
+     "deixadas_de_fora": [
+      {
+       "pergunta": "Como funcionam as sensibilidades do modelo do Itaú?",
+       "motivo": "Não são necessárias para distinguir risco de cenário-base neste dia comum."
+      },
+      {
+       "pergunta": "O que acrescentam as projeções do JPMorgan e os números anteriores de emprego e PIB?",
+       "motivo": "As projeções duplicariam o alerta; os números observados retomariam contexto já explicado pelo site."
+      },
+      {
+       "pergunta": "Qual seria o impacto agregado das tarifas, incluindo o açúcar?",
+       "motivo": "O material não quantifica esse impacto; o texto concentra a notícia na proposta documentada para aeronaves."
+      },
+      {
+       "pergunta": "Por que a referência cambial do site difere do fechamento noticiado?",
+       "motivo": "O material não resolve a diferença; o texto usa apenas o fechamento do jornal e não aplica a ele a variação percentual calculada para outra cotação."
+      }
+     ]
+    },
+    "respostas": [
+     [
+      {
+       "id": "R1",
+       "resposta": "corrigido",
+       "explicacao": "A expressão passou a ser “queda no resultado anual do PIB de 2027”, explicitando o período estimado pelo Itaú conforme c1 e c2. O restante do artigo foi preservado."
+      }
+     ]
+    ],
+    "estado": "aprovado"
+   },
+   "caderno": [
+    {
+     "id": "c1",
+     "tipo": "documento",
+     "dono": "Itaú (Departamento de Pesquisa Macroeconômica, relatório Macro Visão)",
+     "afirmacao": "O Itaú estima probabilidade próxima de 50% de o PIB registrar variação negativa ao fim de 2027, mantendo projeção-base de alta de 0,5%.",
+     "numeros": [
+      "50%",
+      "0,5%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney",
+      "url": "https://www.infomoney.com.br/economia/itau-ve-50-chance-pib-negativo-2027/",
+      "data": "2026-11-25",
+      "trecho": "As estimativas do Itaú sobre o crescimento do país no próximo ano apontam para uma probabilidade próxima de 50% de o Produto Interno Bruto (PIB) registrar variação negativa ao final de 2027."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c2",
+     "tipo": "documento",
+     "dono": "Itaú",
+     "afirmacao": "Cenário-base do Itaú: 1,6% em 2026 e 0,5% em 2027, abaixo dos 1,7% e 1,2% anteriores; o Focus recuou de 2,0% para 1,70% em 2026 e de 1,7% para 1% em 2027 desde o início do 2º semestre.",
+     "numeros": [
+      "1,6%",
+      "0,5%",
+      "1,7%",
+      "1,2%",
+      "1,70%",
+      "1%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney",
+      "url": "https://www.infomoney.com.br/economia/itau-ve-50-chance-pib-negativo-2027/",
+      "data": "2026-11-25",
+      "trecho": "No cenário-base do banco, a economia deve crescer 1,6% em 2026 e desacelerar para 0,5% em 2027 — abaixo das estimativas anteriores da própria casa, que eram de 1,7% e 1,2%, respectivamente."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c3",
+     "tipo": "documento",
+     "dono": "Itaú",
+     "afirmacao": "Com riscos simétricos a chance de queda seria de cerca de 41%; o juro alto pesa mais nos cenários fracos e leva o resultado mais provável a perto de 0%, sem mudar premissas.",
+     "numeros": [
+      "41%",
+      "50%",
+      "0%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney",
+      "url": "https://www.infomoney.com.br/economia/itau-ve-50-chance-pib-negativo-2027/",
+      "data": "2026-11-25",
+      "trecho": "o resultado mais provável do modelo recua de 0,5% para perto de 0% no encerramento de 2027 , sem que nenhuma premissa econômica seja alterada."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c4",
+     "tipo": "documento",
+     "dono": "Itaú",
+     "afirmacao": "Sensibilidade do Itaú: com ajuste fiscal crível e Selic a 12,75% no fim de 2027 a chance cai a cerca de 45%; com Selic a 15%, sobe a cerca de 57%.",
+     "numeros": [
+      "45%",
+      "57%",
+      "12,75%",
+      "15%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney",
+      "url": "https://www.infomoney.com.br/economia/itau-ve-50-chance-pib-negativo-2027/",
+      "data": "2026-11-25",
+      "trecho": "Caso a Selic suba para 15% ao ano, o risco de contração do PIB avançaria para aproximadamente 57%"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c5",
+     "tipo": "documento",
+     "dono": "Itaú",
+     "afirmacao": "O Itaú compara: nas três últimas recessões a probabilidade de queda superou 80%.",
+     "numeros": [
+      "80%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney",
+      "url": "https://www.infomoney.com.br/economia/itau-ve-50-chance-pib-negativo-2027/",
+      "data": "2026-11-25",
+      "trecho": "a probabilidade de queda do PIB superou 80% durante as três últimas recessões registradas no país"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c6",
+     "tipo": "documento",
+     "dono": "JPMorgan (relatório Perspectivas Econômicas do Brasil para 2027)",
+     "afirmacao": "O JPMorgan diz que o risco de recessão em 2027 é real e prevê PIB de cerca de 0,6% em 2027, com queda da produção agrícola em parte pelo El Niño.",
+     "numeros": [
+      "0,6%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney",
+      "url": "https://www.infomoney.com.br/economia/jp-morgan-diz-que-risco-de-uma-recessao-no-brasil-no-proximo-ano-e-real/",
+      "data": "2026-11-25",
+      "trecho": "“Para o próximo ano, esperamos crescimento do PIB de cerca de 0,6% na comparação anual, com um primeiro trimestre mais forte devido a efeitos sazonais residuais"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c7",
+     "tipo": "documento",
+     "dono": "JPMorgan",
+     "afirmacao": "Para o JPMorgan, o canal de crédito é o ponto de maior tensão: serviço da dívida em máximas de décadas, cerca de 40% da renda entre famílias de baixa renda.",
+     "numeros": [
+      "40%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "InfoMoney",
+      "url": "https://www.infomoney.com.br/economia/jp-morgan-diz-que-risco-de-uma-recessao-no-brasil-no-proximo-ano-e-real/",
+      "data": "2026-11-25",
+      "trecho": "“O canal de crédito é o ponto de maior tensão. O serviço da dívida de empresas e famílias está nos maiores níveis em várias décadas, com o comprometimento da renda com o serviço da dívida chegando a cerca de 40% entre as famílias de baixa renda”"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c8",
+     "tipo": "documento",
+     "dono": "Confederação Nacional do Comércio de Bens, Serviços e Turismo (CNC)",
+     "afirmacao": "A Intenção de Consumo das Famílias (ICF) da CNC recuou 0,9% em novembro de 2026 contra outubro, com ajuste sazonal, na quarta queda mensal seguida, e chegou a 102,7 pontos, o menor nível desde novembro de 2025 (102,1). A Perspectiva de Consumo caiu 1,6%, a maior queda entre os componentes.",
+     "numeros": [
+      "0,9%",
+      "102,7",
+      "102,1",
+      "1,6%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "CNC (Portal do Comércio)",
+      "url": "https://portaldocomercio.org.br/acoes-institucionais/intencao-de-consumo-das-familias-icf-cai-em-novembro-e-atinge-menor-nivel-em-um-ano/",
+      "data": "2026-11-25",
+      "trecho": "a Intenção de Consumo das Famílias (ICF) recuou 0,9% na comparação ao mês anterior, já descontados os efeitos sazonais. Com a quarta queda mensal consecutiva, o indicador pesquisado pela Confederação Nacional do Comércio de Bens, Serviços e Turismo (CNC) atingiu os 102,7 pontos, menor patamar desde novembro de 2025 (102,1 pontos)."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": false,
+      "classe": "dono"
+     },
+     "fonte_anterior": {
+      "quem": "InfoMoney",
+      "url": "https://www.infomoney.com.br/economia/intencao-de-consumo-das-familias-cai-novembro-cnc/",
+      "data": "2026-11-25",
+      "trecho": "o indicador completou quatro meses seguidos de queda e atingiu 102,7 pontos, o menor nível desde novembro de 2025, quando marcou 102,1 pontos, destaca a CNC.",
+      "afirmacao": "A intenção de consumo da CNC caiu 0,9% em novembro, 4ª queda seguida, a 102,7 pontos, menor desde novembro de 2025; ainda 0,5% acima de um ano antes.",
+      "numeros": [
+       "0,9%",
+       "102,7",
+       "0,5%"
+      ]
+     }
+    },
+    {
+     "id": "c9",
+     "tipo": "documento",
+     "dono": "Confederação Nacional do Comércio de Bens, Serviços e Turismo (CNC)",
+     "afirmacao": "Segundo o presidente da CNC, José Roberto Tadros, o brasileiro está mais cauteloso por causa da desaceleração do mercado de trabalho. O componente Emprego Atual caiu 1% (125,3 pontos), a terceira queda seguida, e ficou igual ao de um ano antes. A parcela de famílias que veem o emprego atual como mais seguro caiu para 41,5%.",
+     "numeros": [
+      "1%",
+      "125,3",
+      "41,5%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "CNC (Portal do Comércio)",
+      "url": "https://portaldocomercio.org.br/acoes-institucionais/intencao-de-consumo-das-familias-icf-cai-em-novembro-e-atinge-menor-nivel-em-um-ano/",
+      "data": "2026-11-25",
+      "trecho": "os resultados de novembro mostram que o brasileiro está cada vez mais cauteloso diante da desaceleração do mercado de trabalho e da preocupação com o futuro de seus rendimentos”, comenta Tadros. [...] as contratações temporárias de fim de ano não impediram a terceira queda mensal seguida do Emprego Atual (-1%) no ICF, que zerou sua variação na comparação anual. A parcela de famílias que avaliam o momento atual do emprego como mais seguro recuou para 41,5%."
+     },
+     "conferencia": {
+      "status": "numeros_na_pagina",
+      "fonte_conhecida": false,
+      "classe": "dono"
+     },
+     "fonte_anterior": {
+      "quem": "InfoMoney",
+      "url": "https://www.infomoney.com.br/economia/intencao-de-consumo-das-familias-cai-novembro-cnc/",
+      "data": "2026-11-25",
+      "trecho": "a desaceleração no ritmo do mercado de trabalho passou a pesar nas decisões de compra, mesmo com as contratações temporárias de fim de ano.",
+      "afirmacao": "Segundo a CNC, a desaceleração do mercado de trabalho passou a pesar nas decisões de compra; Emprego Atual caiu 1,0% no mês.",
+      "numeros": [
+       "1,0%",
+       "125,3"
+      ]
+     }
+    },
+    {
+     "id": "c10",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "Últimos trimestres do PIB: 2T2026 +0,5%.",
+     "numeros": [
+      "0,5%",
+      "1,1%"
+     ],
+     "comando": ".venv/bin/python src/conta.py recessoes",
+     "saida": "Últimos 8 trimestres: 3T2024 0,9%, 4T2024 0,1%, 1T2025 1,3%, 2T2025 0,4%, 3T2025 0,1%, 4T2025 0,2%, 1T2026 1,1%, 2T2026 0,5%",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "PIB contra o trimestre anterior, com ajuste sazonal (IBGE, tabela 5932, variável 6564: PIB dessazonalizado contra o trimestre imediatamente anterior, uma casa decimal.). Último: 2T2026 (0,5%).\nRecessões, contadas como 2 ou mais trimestres seguidos de queda:\nde 2T2001 a 4T2001: quedas de -0,5%, -0,5%, -0,3%\nde 1T2003 a 2T2003: quedas de -0,4%, -0,8%\nde 4T2008 a 1T2009: quedas de -3,8%, -1,4%\nde 2T2014 a 3T2014: quedas de -1,5%, -0,1%\nde 1T2015 a 1T2016: quedas de -0,8%, -2,4%, -1,6%, -0,8%, -1,4%\nde 3T2016 a 4T2016: quedas de -0,5%, -0,1%\nde 1T2020 a 2T2020: quedas de -2,3%, -8,9%\nÚltimos 8 trimestres: 3T2024 0,9%, 4T2024 0,1%, 1T2025 1,3%, 2T2025 0,4%, 3T2025 0,1%, 4T2025 0,2%, 1T2026 1,1%, 2T2026 0,5%\n"
+     }
+    },
+    {
+     "id": "c11",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "Focus de 19/11: PIB 2027 em 1,00%.",
+     "numeros": [
+      "1,00"
+     ],
+     "comando": ".venv/bin/python src/conta.py focus",
+     "saida": "2026-11-19: PIB Total 2027: 1,00",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Previsões dos bancos (Focus, mediana) na data da pesquisa, como o site guardou:\n2026-10-23: Câmbio 2026: 5,05\n2026-10-23: Câmbio 2027: 5,15\n2026-10-23: Câmbio 2028: 5,20\n2026-10-23: Câmbio 2029: 5,28\n2026-10-23: Câmbio 2030: 5,30\n2026-10-23: IPCA 2026: 5,19\n2026-10-23: IPCA 2027: 4,34\n2026-10-23: IPCA 2028: 3,75\n2026-10-23: IPCA 2029: 3,50\n2026-10-23: IPCA 2030: 3,50\n2026-10-23: IPCA 12m: 4,53\n2026-10-23: PIB Total 2026: 1,80\n2026-10-23: PIB Total 2027: 1,31\n2026-10-23: PIB Total 2028: 1,81\n2026-10-23: PIB Total 2029: 2,00\n2026-10-23: PIB Total 2030: 2,00\n2026-10-23: Selic 2026: 13,25\n2026-10-23: Selic 2027: 11,75\n2026-10-23: Selic 2028: 10,00\n2026-10-23: Selic 2029: 10,00\n2026-10-23: Selic 2030: 10,00\n2026-10-30: Câmbio 2026: 5,34\n2026-10-30: Câmbio 2027: 5,40\n2026-10-30: Câmbio 2028: 5,40\n2026-10-30: Câmbio 2029: 5,45\n2026-10-30: Câmbio 2030: 5,50\n2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76\n2026-10-30: IPCA 2028: 4,00\n2026-10-30: IPCA 2029: 3,98\n2026-10-30: IPCA 2030: 3,81\n2026-10-30: IPCA 12m: 4,96\n2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20\n2026-10-30: PIB Total 2028: 1,80\n2026-10-30: PIB Total 2029: 2,00\n2026-10-30: PIB Total 2030: 2,00\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50\n2026-10-30: Selic 2028: 11,00\n2026-10-30: Selic 2029: 10,25\n2026-10-30: Selic 2030: 10,00\n2026-11-06: Câmbio 2026: 5,35\n2026-11-06: Câmbio 2027: 5,40\n2026-11-06: Câmbio 2028: 5,45\n2026-11-06: Câmbio 2029: 5,50\n2026-11-06: Câmbio 2030: 5,51\n2026-11-06: IPCA 2026: 5,22\n2026-11-06: IPCA 2027: 4,90\n2026-11-06: IPCA 2028: 4,00\n2026-11-06: IPCA 2029: 4,00\n2026-11-06: IPCA 2030: 3,94\n2026-11-06: IPCA 12m: 5,01\n2026-11-06: PIB Total 2026: 1,75\n2026-11-06: PIB Total 2027: 1,15\n2026-11-06: PIB Total 2028: 1,80\n2026-11-06: PIB Total 2029: 2,00\n2026-11-06: PIB Total 2030: 2,00\n2026-11-06: Selic 2026: 13,75\n2026-11-06: Selic 2027: 12,50\n2026-11-06: Selic 2028: 11,00\n2026-11-06: Selic 2029: 10,25\n2026-11-06: Selic 2030: 10,00\n2026-11-13: Câmbio 2026: 5,40\n2026-11-13: Câmbio 2027: 5,45\n2026-11-13: Câmbio 2028: 5,48\n2026-11-13: Câmbio 2029: 5,50\n2026-11-13: Câmbio 2030: 5,55\n2026-11-13: IPCA 2026: 5,11\n2026-11-13: IPCA 2027: 5,00\n2026-11-13: IPCA 2028: 4,00\n2026-11-13: IPCA 2029: 4,00\n2026-11-13: IPCA 2030: 3,94\n2026-11-13: IPCA 12m: 5,15\n2026-11-13: PIB Total 2026: 1,72\n2026-11-13: PIB Total 2027: 1,02\n2026-11-13: PIB Total 2028: 1,80\n2026-11-13: PIB Total 2029: 2,00\n2026-11-13: PIB Total 2030: 2,00\n2026-11-13: Selic 2026: 13,75\n2026-11-13: Selic 2027: 12,75\n2026-11-13: Selic 2028: 11,00\n2026-11-13: Selic 2029: 10,50\n2026-11-13: Selic 2030: 10,00\n2026-11-19: Câmbio 2026: 5,55\n2026-11-19: Câmbio 2027: 5,50\n2026-11-19: Câmbio 2028: 5,50\n2026-11-19: Câmbio 2029: 5,55\n2026-11-19: Câmbio 2030: 5,60\n2026-11-19: IPCA 2026: 5,15\n2026-11-19: IPCA 2027: 5,12\n2026-11-19: IPCA 2028: 4,00\n2026-11-19: IPCA 2029: 4,00\n2026-11-19: IPCA 2030: 3,95\n2026-11-19: IPCA 12m: 5,41\n2026-11-19: PIB Total 2026: 1,70\n2026-11-19: PIB Total 2027: 1,00\n2026-11-19: PIB Total 2028: 1,71\n2026-11-19: PIB Total 2029: 2,00\n2026-11-19: PIB Total 2030: 2,00\n2026-11-19: Selic 2026: 13,75\n2026-11-19: Selic 2027: 13,00\n2026-11-19: Selic 2028: 11,00\n2026-11-19: Selic 2029: 10,50\n2026-11-19: Selic 2030: 10,25\n"
+     }
+    },
+    {
+     "id": "c12",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "Focus de 23/10: PIB 2027 em 1,31%.",
+     "numeros": [
+      "1,31"
+     ],
+     "comando": ".venv/bin/python src/conta.py focus",
+     "saida": "2026-10-23: PIB Total 2027: 1,31",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "Previsões dos bancos (Focus, mediana) na data da pesquisa, como o site guardou:\n2026-10-23: Câmbio 2026: 5,05\n2026-10-23: Câmbio 2027: 5,15\n2026-10-23: Câmbio 2028: 5,20\n2026-10-23: Câmbio 2029: 5,28\n2026-10-23: Câmbio 2030: 5,30\n2026-10-23: IPCA 2026: 5,19\n2026-10-23: IPCA 2027: 4,34\n2026-10-23: IPCA 2028: 3,75\n2026-10-23: IPCA 2029: 3,50\n2026-10-23: IPCA 2030: 3,50\n2026-10-23: IPCA 12m: 4,53\n2026-10-23: PIB Total 2026: 1,80\n2026-10-23: PIB Total 2027: 1,31\n2026-10-23: PIB Total 2028: 1,81\n2026-10-23: PIB Total 2029: 2,00\n2026-10-23: PIB Total 2030: 2,00\n2026-10-23: Selic 2026: 13,25\n2026-10-23: Selic 2027: 11,75\n2026-10-23: Selic 2028: 10,00\n2026-10-23: Selic 2029: 10,00\n2026-10-23: Selic 2030: 10,00\n2026-10-30: Câmbio 2026: 5,34\n2026-10-30: Câmbio 2027: 5,40\n2026-10-30: Câmbio 2028: 5,40\n2026-10-30: Câmbio 2029: 5,45\n2026-10-30: Câmbio 2030: 5,50\n2026-10-30: IPCA 2026: 5,22\n2026-10-30: IPCA 2027: 4,76\n2026-10-30: IPCA 2028: 4,00\n2026-10-30: IPCA 2029: 3,98\n2026-10-30: IPCA 2030: 3,81\n2026-10-30: IPCA 12m: 4,96\n2026-10-30: PIB Total 2026: 1,76\n2026-10-30: PIB Total 2027: 1,20\n2026-10-30: PIB Total 2028: 1,80\n2026-10-30: PIB Total 2029: 2,00\n2026-10-30: PIB Total 2030: 2,00\n2026-10-30: Selic 2026: 13,50\n2026-10-30: Selic 2027: 12,50\n2026-10-30: Selic 2028: 11,00\n2026-10-30: Selic 2029: 10,25\n2026-10-30: Selic 2030: 10,00\n2026-11-06: Câmbio 2026: 5,35\n2026-11-06: Câmbio 2027: 5,40\n2026-11-06: Câmbio 2028: 5,45\n2026-11-06: Câmbio 2029: 5,50\n2026-11-06: Câmbio 2030: 5,51\n2026-11-06: IPCA 2026: 5,22\n2026-11-06: IPCA 2027: 4,90\n2026-11-06: IPCA 2028: 4,00\n2026-11-06: IPCA 2029: 4,00\n2026-11-06: IPCA 2030: 3,94\n2026-11-06: IPCA 12m: 5,01\n2026-11-06: PIB Total 2026: 1,75\n2026-11-06: PIB Total 2027: 1,15\n2026-11-06: PIB Total 2028: 1,80\n2026-11-06: PIB Total 2029: 2,00\n2026-11-06: PIB Total 2030: 2,00\n2026-11-06: Selic 2026: 13,75\n2026-11-06: Selic 2027: 12,50\n2026-11-06: Selic 2028: 11,00\n2026-11-06: Selic 2029: 10,25\n2026-11-06: Selic 2030: 10,00\n2026-11-13: Câmbio 2026: 5,40\n2026-11-13: Câmbio 2027: 5,45\n2026-11-13: Câmbio 2028: 5,48\n2026-11-13: Câmbio 2029: 5,50\n2026-11-13: Câmbio 2030: 5,55\n2026-11-13: IPCA 2026: 5,11\n2026-11-13: IPCA 2027: 5,00\n2026-11-13: IPCA 2028: 4,00\n2026-11-13: IPCA 2029: 4,00\n2026-11-13: IPCA 2030: 3,94\n2026-11-13: IPCA 12m: 5,15\n2026-11-13: PIB Total 2026: 1,72\n2026-11-13: PIB Total 2027: 1,02\n2026-11-13: PIB Total 2028: 1,80\n2026-11-13: PIB Total 2029: 2,00\n2026-11-13: PIB Total 2030: 2,00\n2026-11-13: Selic 2026: 13,75\n2026-11-13: Selic 2027: 12,75\n2026-11-13: Selic 2028: 11,00\n2026-11-13: Selic 2029: 10,50\n2026-11-13: Selic 2030: 10,00\n2026-11-19: Câmbio 2026: 5,55\n2026-11-19: Câmbio 2027: 5,50\n2026-11-19: Câmbio 2028: 5,50\n2026-11-19: Câmbio 2029: 5,55\n2026-11-19: Câmbio 2030: 5,60\n2026-11-19: IPCA 2026: 5,15\n2026-11-19: IPCA 2027: 5,12\n2026-11-19: IPCA 2028: 4,00\n2026-11-19: IPCA 2029: 4,00\n2026-11-19: IPCA 2030: 3,95\n2026-11-19: IPCA 12m: 5,41\n2026-11-19: PIB Total 2026: 1,70\n2026-11-19: PIB Total 2027: 1,00\n2026-11-19: PIB Total 2028: 1,71\n2026-11-19: PIB Total 2029: 2,00\n2026-11-19: PIB Total 2030: 2,00\n2026-11-19: Selic 2026: 13,75\n2026-11-19: Selic 2027: 13,00\n2026-11-19: Selic 2028: 11,00\n2026-11-19: Selic 2029: 10,50\n2026-11-19: Selic 2030: 10,25\n"
+     }
+    },
+    {
+     "id": "c13",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "Corte do Focus 2027 de 1,7% para 1% (citado pelo Itaú): 0,7 ponto.",
+     "numeros": [
+      "0,7"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"1.7-1.0\"",
+     "saida": "1.7-1.0 = 0,7000 (com 3 casas: 0,700; com 2 casas: 0,70; com 1 casa: 0,7)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "1.7-1.0 = 0,7000 (com 3 casas: 0,700; com 2 casas: 0,70; com 1 casa: 0,7)\n"
+     }
+    },
+    {
+     "id": "c14",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "Desemprego de 5,2% em set/2026: só 1% dos meses da série (desde 2012) teve valor menor.",
+     "numeros": [
+      "5,20",
+      "1%"
+     ],
+     "comando": ".venv/bin/python src/conta.py recorde desocupacao 2026-09",
+     "saida": "Dos 174 meses antes de 2026-09, 1 tiveram valor menor (1%).",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "desocupacao em 2026-09: 5,20. A série começa em 2012-03.\nÉ o menor valor desde 2025-12, quando foi 5,10.\nDos 174 meses antes de 2026-09, 1 tiveram valor menor (1%).\n"
+     }
+    },
+    {
+     "id": "c15",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "IBC-Br (prévia do PIB do BC) caiu de 111,28 em maio para 109,78 em setembro.",
+     "numeros": [
+      "111,28",
+      "109,78"
+     ],
+     "comando": ".venv/bin/python src/conta.py valores ibcbr --de 2026-04",
+     "saida": "2026-05: 111,28 ... 2026-09: 109,78",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "ibcbr (índice):\n2026-04: 111,01\n2026-05: 111,28\n2026-06: 110,32\n2026-07: 109,92\n2026-08: 110,05\n2026-09: 109,78\n"
+     }
+    },
+    {
+     "id": "c16",
+     "tipo": "conta",
+     "dono": "",
+     "afirmacao": "Revisão do Itaú para 2027: de 1,2% para 0,5%, ou 0,7 ponto.",
+     "numeros": [
+      "0,7"
+     ],
+     "comando": ".venv/bin/python src/conta.py calc \"1.2-0.5\"",
+     "saida": "1.2-0.5 = 0,7000 (com 3 casas: 0,700; com 2 casas: 0,70; com 1 casa: 0,7)",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "conferido",
+      "saida": "1.2-0.5 = 0,7000 (com 3 casas: 0,700; com 2 casas: 0,70; com 1 casa: 0,7)\n"
+     }
+    },
+    {
+     "id": "c17",
+     "tipo": "site",
+     "dono": "",
+     "afirmacao": "A prévia do PIB do Banco Central caiu 0,9% nos 3 meses até setembro contra os 3 anteriores, a maior queda desde maio de 2021.",
+     "numeros": [
+      "0,9%"
+     ],
+     "comando": "",
+     "saida": "A prévia do PIB caiu 0,9% no trimestre até setembro, contra os 3 meses anteriores. É a maior queda desde maio de 2021.",
+     "fonte": {
+      "quem": "",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c601",
+     "tipo": "documento",
+     "dono": "USTR (Escritório do Representante Comercial dos EUA)",
+     "afirmacao": "O USTR considera acabar com a isenção das aeronaves prontas e impor 10% sobre elas; aeronaves prontas são o 4º maior produto de exportação do Brasil aos EUA.",
+     "numeros": [
+      "10%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "USTR (ustr.gov)",
+      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/november/ustr-invites-public-comment-proposed-modifications-section-301-action-regarding-brazils-unreasonable",
+      "data": "2026-11-25",
+      "trecho": "Second, USTR is considering terminating the current Section 301 action’s exemption for finished aircraft and imposing a 10% ad valorem duty on such imports from Brazil. Finished aircraft are Brazil’s fourth-largest export to the United States."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "agencia"
+     }
+    },
+    {
+     "id": "c602",
+     "tipo": "documento",
+     "dono": "USTR (Escritório do Representante Comercial dos EUA)",
+     "afirmacao": "Prazos da consulta: pedidos para a audiência até 7/12, comentários até 30/12 e audiência em 14/01/2027.",
+     "numeros": [
+      "7 de dezembro",
+      "30 de dezembro",
+      "14 de janeiro de 2027"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "USTR (ustr.gov)",
+      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/november/ustr-invites-public-comment-proposed-modifications-section-301-action-regarding-brazils-unreasonable",
+      "data": "2026-11-25",
+      "trecho": "To be assured of consideration, interested persons should submit requests to appear at the hearing, along with a summary of the testimony, by December 7, 2026 . Written comments are due by December 30, 2026 . USTR will hold a hearing about the proposed modification on January 14, 2027 ."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "agencia"
+     }
+    },
+    {
+     "id": "c603",
+     "tipo": "documento",
+     "dono": "USTR (Escritório do Representante Comercial dos EUA)",
+     "afirmacao": "A tarifa de 25% de julho de 2026 já está em vigor, e o USTR diz que o Brasil deu passos legais para retaliar.",
+     "numeros": [
+      "25%"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "USTR (ustr.gov)",
+      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/november/ustr-invites-public-comment-proposed-modifications-section-301-action-regarding-brazils-unreasonable",
+      "data": "2026-11-25",
+      "trecho": "On July 20, 2026, the Trade Representative took final action, at President Trump’s direction, by imposing a 25% tariff on certain goods of Brazil. Since the publication of the July 20, 2026 notice, Brazil has responded by taking legal steps to retaliate against the United States"
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "agencia"
+     }
+    },
+    {
+     "id": "c604",
+     "tipo": "documento",
+     "dono": "Conselho Monetário Nacional e Banco Central",
+     "afirmacao": "O CMN e o BC aprovaram regras que mandam reduzir o limite do cartão de quem deixou de pagar a fatura inteira em 3 ou mais meses nos últimos 6 e vedam novo empréstimo sem garantia a quem está há 90 dias ou mais em atraso. Pelo relato da Agência Brasil; o ato do CMN/BC não foi aberto.",
+     "numeros": [
+      "3 ou mais faturas",
+      "seis meses",
+      "90 dias"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agência Brasil (agência pública de notícias)",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/cmn-e-bc-anunciam-novas-regras-para-conter-endividamento-das-familias",
+      "data": "2026-11-25",
+      "trecho": "Os bancos deverão reduzir gradualmente os limites dos cartões de clientes que, nos últimos seis meses, deixarem de pagar integralmente três ou mais faturas, em meses diferentes, recorrendo ao crédito rotativo."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "agencia"
+     }
+    },
+    {
+     "id": "c605",
+     "tipo": "documento",
+     "dono": "Conselho Monetário Nacional e Banco Central",
+     "afirmacao": "A maior parte das medidas entra em vigor em 1/7/2027; o BC dá entrevista coletiva em 26/11 e as consultas públicas ficam abertas por 90 dias.",
+     "numeros": [
+      "1º de julho de 2027",
+      "90 dias"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Agência Brasil (agência pública de notícias)",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/cmn-e-bc-anunciam-novas-regras-para-conter-endividamento-das-familias",
+      "data": "2026-11-25",
+      "trecho": "Nesta quinta-feira (26), o BC concederá uma entrevista coletiva para explicar as medidas. A maior parte das medidas entrará em vigor em 1º de julho de 2027."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "agencia"
+     }
+    },
+    {
+     "id": "c606",
+     "tipo": "documento",
+     "dono": "Banco Central",
+     "afirmacao": "O dólar fechou a R$ 5,817 em 25/11, queda de 1,58%; o BC vendeu US$ 2 bilhões em leilões de linha, com compromisso de recompra. Moretti negou que haja PEC pronta, segundo o Poder360. A fonte é o jornal, e não o comunicado do BC.",
+     "numeros": [
+      "R$ 5,817",
+      "1,58%",
+      "US$ 2 bilhões"
+     ],
+     "comando": "",
+     "saida": "",
+     "fonte": {
+      "quem": "Poder360 (jornal)",
+      "url": "https://www.poder360.com.br/poder-economia/dolar-cai-158-a-r-5817-com-leiloes-do-bc-e-ajuste-fiscal/",
+      "data": "2026-11-25",
+      "trecho": "O BC vendeu US$ 2 bilhões em leilões de linha realizados pela manhã. Nessas operações, a autoridade monetária oferece dólares com compromisso de recompra futura."
+     },
+     "conferencia": {
+      "status": "conferido",
+      "fonte_conhecida": true,
+      "classe": "jornal"
+     }
+    },
+    {
+     "id": "c607",
+     "tipo": "site",
+     "dono": "",
+     "afirmacao": "O dólar a R$ 5,88 em 25/11 está 14,2% acima do fim de agosto (R$ 5,18); o juro de 10 anos, 8,0%, está mais alto que em 91% dos meses desde 2005.",
+     "numeros": [
+      "5,88",
+      "5,18",
+      "14,2%",
+      "8,0%",
+      "91%"
+     ],
+     "comando": "",
+     "saida": "Dólar a R$ 5,88 em 25/11, 14,2% mais caro que no fim de agosto. O juro de 10 anos está mais alto que em 91% dos meses desde 2005.",
+     "fonte": {
+      "quem": "dados do site vaidarcrise",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    },
+    {
+     "id": "c608",
+     "tipo": "site",
+     "dono": "",
+     "afirmacao": "A parte da renda das famílias que vai para dívidas é de 29,0% em agosto, a maior desde 2005.",
+     "numeros": [
+      "29,0%",
+      "28,5%",
+      "2005"
+     ],
+     "comando": "",
+     "saida": "A parte da renda das famílias que vai para parcelas e juros foi de 28,5% para 29,0%, de maio a agosto. A parte da renda que vai para dívidas é a maior desde 2005, quando começa a série.",
+     "fonte": {
+      "quem": "dados do site vaidarcrise",
+      "url": "",
+      "data": "",
+      "trecho": ""
+     },
+     "conferencia": {
+      "status": "site"
+     }
+    }
+   ],
+   "conferencia": {
+    "final": {
+     "impedimentos": [],
+     "diagnosticos": [
+      "o texto tem 260 palavras e 0 intertítulos (o tipo do dia pede de 200 a 300 palavras: a história do dia em até umas 150, cada outra em duas ou três frases)"
+     ]
+    }
+   },
+   "lentes": [
+    {
+     "historia": "ritmo_emprego",
+     "lente": "frequencia"
+    },
+    {
+     "historia": "tarifas_eua",
+     "lente": "quem_decide"
+    },
+    {
+     "historia": "credito_inadimplencia",
+     "lente": "quem_decide"
+    },
+    {
+     "historia": "desconfianca_eleicao",
+     "lente": "frequencia"
+    }
+   ],
+   "antes": [
+    {
+     "data": "2026-11-23",
+     "titulo": "Dólar digital sinaliza pressão, mas não substitui o comercial"
+    },
+    {
+     "data": "2026-11-19",
+     "titulo": "FGV estima queda da economia, mas recessão ainda não está confirmada"
+    },
+    {
+     "data": "2026-11-14",
+     "titulo": "Caixa empresta 23,0% menos ao campo, onde o atraso cresceu depois de uma safra sem sobra"
+    }
+   ],
+   "titulo": "Quarta queda da intenção de consumo reforça alerta para a atividade",
+   "texto": "O novo sinal de fraqueza está na disposição de comprar, não em vendas já medidas: a intenção de consumo da CNC caiu 0,9% em novembro, descontados os efeitos sazonais, pela quarta vez seguida [c8]. A repetição reforça o risco para a atividade; o presidente da entidade atribui a cautela à desaceleração do trabalho e à preocupação com a renda [c8, c9]. No relatório noticiado ontem pelo InfoMoney, o Itaú estima perto de 50% de chance de queda no resultado anual do PIB de 2027, embora mantenha cenário-base de alta de 0,5% [c1]. Para o banco, o juro alto pesa mais nos cenários fracos [c3].\n\nNo comércio exterior, o órgão de comércio dos EUA, USTR, propôs cobrar 10% sobre aviões brasileiros hoje isentos, criando risco para as exportações, não uma perda já ocorrida [c601]. Cabe ao USTR decidir após a consulta, com audiência em 14 de janeiro de 2027 e sem data para decisão final [c602].\n\nNo crédito, segundo a Agência Brasil, o Conselho Monetário Nacional e o Banco Central aprovaram redução gradual do limite do cartão de quem não pagou integralmente três ou mais faturas nos últimos seis meses, recorrendo ao financiamento do saldo [c604]. A maior parte das medidas só entra em vigor em 1º de julho de 2027: pode restringir compras a crédito adiante, mas não reduz hoje o peso das dívidas na renda [c604, c605, c608].\n\nJá o dólar caiu 1,58%, para R$ 5,817, na terceira baixa seguida, segundo o Poder360 [c606]. Houve alívio no câmbio, mas não retorno ao nível de agosto; os US$ 2 bilhões vendidos pelo BC têm compromisso de recompra, ampliando a oferta apenas temporariamente [c606, c607].",
+   "argumento": "A quarta queda seguida da intenção de consumo reforça o alerta para a atividade, sem representar vendas já perdidas ou confirmar as previsões de contração anual em 2027.",
+   "porque": "Segundo o presidente da CNC, a desaceleração do mercado de trabalho e a preocupação com a renda tornam as famílias mais cautelosas.",
+   "pressao": "ritmo",
+   "duracao_s": 406
+  },
+  "termina_em": "ritmo"
+ },
+ "avisos_ao_pedro": [
+  "5 fatos do dia nos últimos 30 dias foram sobre Ritmo da economia, que não tem página própria (6/11, 7/11, 19/11, 20/11, 26/11). Vale uma página?"
+ ]
+}
