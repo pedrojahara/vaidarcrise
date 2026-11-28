@@ -2,9 +2,9 @@
  "direcao": "subindo",
  "desde": "2026-06",
  "pergunta": "Para que lado anda o risco de recessão no Brasil: as pressões que costumam vir antes de uma recessão estão piorando ou melhorando?",
- "atualizado_em": "2026-11-27T04:00:02-03:00",
- "soma": 4,
- "pioraram": 4,
+ "atualizado_em": "2026-11-28T04:00:04-03:00",
+ "soma": 3,
+ "pioraram": 3,
  "melhoraram": 0,
  "partes": [
   {
@@ -53,27 +53,27 @@
    "id": "parcelas",
    "nome": "Dívidas das famílias",
    "na_soma": true,
-   "lado": "piorou",
+   "lado": "igual",
    "medidas": {
     "parcelas": {
-     "agora": 28.99,
-     "dia": "2026-08-01",
-     "ref": "2026-08",
-     "antes": 28.47,
-     "dia_antes": "2026-05-01",
-     "ref_antes": "2026-05",
-     "mudanca": 0.52,
+     "agora": 29.02,
+     "dia": "2026-09-01",
+     "ref": "2026-09",
+     "antes": 28.68,
+     "dia_antes": "2026-06-01",
+     "ref_antes": "2026-06",
+     "mudanca": 0.34,
      "corte": 0.3781,
-     "lado": 1,
+     "lado": 0,
      "como": "pontos"
     }
    },
    "folga": {
     "serie": "comprometimento_renda",
-    "valor": 28.99,
-    "ref": "2026-08",
+    "valor": 29.02,
+    "ref": "2026-09",
     "desde": "2005",
-    "meses": 258,
+    "meses": 259,
     "pior_que_pct": 100,
     "recorde_ruim": true,
     "recorde_bom": false
@@ -86,13 +86,13 @@
    "lado": "piorou",
    "medidas": {
     "dolar": {
-     "agora": 5.7446,
-     "dia": "2026-11-26",
+     "agora": 5.543,
+     "dia": "2026-11-27",
      "ref": "2026-11",
      "antes": 5.1816,
      "dia_antes": "2026-08-31",
      "ref_antes": "2026-08",
-     "mudanca": 10.8654,
+     "mudanca": 6.9747,
      "corte": 4.7657,
      "lado": 1,
      "como": "pct",
@@ -101,13 +101,13 @@
      "persiste_dias": 3
     },
     "juro_longo": {
-     "agora": 7.99,
-     "dia": "2026-11-25",
+     "agora": 7.85,
+     "dia": "2026-11-26",
      "ref": "2026-11",
      "antes": 7.92,
      "dia_antes": "2026-08-31",
      "ref_antes": "2026-08",
-     "mudanca": 0.07,
+     "mudanca": -0.07,
      "corte": 0.4114,
      "lado": 0,
      "como": "pontos",
@@ -118,11 +118,11 @@
    },
    "folga": {
     "serie": "juro_real_longo",
-    "valor": 7.99,
+    "valor": 7.85,
     "ref": "2026-11",
     "desde": "2005",
     "meses": 257,
-    "pior_que_pct": 91,
+    "pior_que_pct": 88,
     "recorde_ruim": false,
     "recorde_bom": false
    }
@@ -165,7 +165,7 @@
    "medidas": {
     "juro": {
      "agora": 13.75,
-     "dia": "2026-11-27",
+     "dia": "2026-11-28",
      "ref": "2026-11",
      "antes": 14.0,
      "dia_antes": "2026-08-31",
@@ -215,12 +215,12 @@
    "lado": "igual",
    "medidas": {
     "emprego": {
-     "agora": 5.2,
-     "dia": "2026-09-01",
-     "ref": "2026-09",
-     "antes": 5.4,
-     "dia_antes": "2026-06-01",
-     "ref_antes": "2026-06",
+     "agora": 5.1,
+     "dia": "2026-10-01",
+     "ref": "2026-10",
+     "antes": 5.3,
+     "dia_antes": "2026-07-01",
+     "ref_antes": "2026-07",
      "mudanca": -0.2,
      "corte": 0.556,
      "lado": 0,
@@ -229,13 +229,13 @@
    },
    "folga": {
     "serie": "desocupacao",
-    "valor": 5.2,
-    "ref": "2026-09",
+    "valor": 5.1,
+    "ref": "2026-10",
     "desde": "2012",
-    "meses": 175,
-    "pior_que_pct": 1,
+    "meses": 176,
+    "pior_que_pct": 0,
     "recorde_ruim": false,
-    "recorde_bom": false
+    "recorde_bom": true
    }
   },
   {
@@ -245,24 +245,24 @@
    "lado": "melhorou",
    "medidas": {
     "renda": {
-     "agora": 3790.0,
-     "dia": "2026-09-01",
-     "ref": "2026-09",
-     "antes": 3753.0,
-     "dia_antes": "2026-06-01",
-     "ref_antes": "2026-06",
-     "mudanca": 0.9859,
-     "corte": 0.8883,
+     "agora": 3812.0,
+     "dia": "2026-10-01",
+     "ref": "2026-10",
+     "antes": 3775.0,
+     "dia_antes": "2026-07-01",
+     "ref_antes": "2026-07",
+     "mudanca": 0.9801,
+     "corte": 0.8602,
      "lado": -1,
      "como": "pct"
     }
    },
    "folga": {
     "serie": "rendimento_real",
-    "valor": 3790.0,
-    "ref": "2026-09",
+    "valor": 3812.0,
+    "ref": "2026-10",
     "desde": "2012",
-    "meses": 175,
+    "meses": 176,
     "pior_que_pct": 1,
     "recorde_ruim": false,
     "recorde_bom": false
@@ -296,19 +296,20 @@
   "o_que_e": "Crescimento do PIB nos 4 trimestres seguintes ao último divulgado que tem 1 chance em 10 de ser pior (conta dos 44 países)."
  },
  "pressao_noticias": {
-  "sentido": "melhora",
+  "sentido": "igual",
   "fatores": {
    "mercado": "melhora",
-   "contas": "igual",
-   "juro": "melhora",
-   "externo": "igual",
-   "atividade": "igual"
+   "contas": "melhora",
+   "emprego": "igual",
+   "credito": "piora",
+   "atividade": "igual",
+   "juro": "igual"
   }
  },
  "post_do_dia": {
   "tipo": "Fato do dia",
-  "titulo": "Prévia sugere alívio além dos combustíveis, sem garantir juro menor",
-  "url": "https://vaidarcrise.com.br/2026-11-27/",
+  "titulo": "Juros respondem pela maior parte da alta do peso das dívidas na renda",
+  "url": "https://vaidarcrise.com.br/2026-11-28/",
   "escrito_por_llm": true
  }
 }
